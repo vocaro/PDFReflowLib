@@ -1,0 +1,28 @@
+{
+  "reconstructing": {
+    "cancellationStage": "reconstructing",
+    "cancelled": true,
+    "elapsedSeconds": 69.43621098995209,
+    "outputAbsent": true,
+    "reconstructionTriggerPage": 900,
+    "sourcePages": 1834,
+    "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+    "stagingRemoved": true,
+    "progressMonotonic": true,
+    "triggerVerified": true,
+    "noFalseCompletion": true
+  },
+  "writing": {
+    "cancellationStage": "writing",
+    "cancelled": true,
+    "elapsedSeconds": 99.88234305381775,
+    "outputAbsent": true,
+    "reconstructionTriggerPage": 900,
+    "sourcePages": 1834,
+    "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+    "stagingRemoved": true,
+    "progressMonotonic": true,
+    "triggerVerified": true,
+    "noFalseCompletion": true
+  }
+}

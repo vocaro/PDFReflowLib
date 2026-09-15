@@ -237,8 +237,14 @@ A failed fresh fetch returns nonzero and does not create a substitute. The origi
 NOAA's published SHA-512 as well as the manifest's SHA-256. NOAA declares CC0/Public Domain.
 
 The [full-run baseline](../measurements/noaa-nca5-2023/record.md) fails the image-output ceiling
-after reconstruction page 598. It is retained as a regression workload, not a passing EPUB or
-memory qualification. [Output-budget issue #5](https://github.com/vocaro/PDFReflowLib/issues/5)
+after reconstruction page 598; the latest default run fails after page 599. The
+[explicit-policy comparison](../measurements/noaa-output-policies/record.md) completes all
+1,834 pages with automatic references, PNG crops and either PNG or JPEG 0.90 full pages under
+4 GiB experimental entry/final caps. Both pass EPUBCheck and preserve identical chapter text,
+source anchors and crop bytes, with selected source-image review and late cancellation checks.
+Peak converter RSS is about 1.04 billion bytes in these single Mac runs; no case RSS ceiling
+or physical-device budget is established. Default-budget failure remains outside the passing
+corpus lane. [Output-budget issue #5](https://github.com/vocaro/PDFReflowLib/issues/5)
 and [chapter-aware splitting issue #15](https://github.com/vocaro/PDFReflowLib/issues/15) track
 separate gaps. The current writer's approximate 60,000-byte file splitting does not follow PDF
 chapters or bound the memory of whole-document reconstruction.

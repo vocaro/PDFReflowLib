@@ -1,0 +1,34 @@
+{
+  "all1834OrderedPageAnchors": true,
+  "allSpineXHTMLIdenticalExceptImageExtensions": true,
+  "allImageOrderAndDimensionsIdentical": true,
+  "unchangedPNGImages": 10389,
+  "fullPageJPEGImages": 856,
+  "sourceReviewedTextChecks": 3,
+  "sourceReviewedImagePresenceChecks": 4,
+  "png": {
+    "epubBytes": 1466266570,
+    "entryBytes": 1516406112,
+    "epubSHA256": "1d0dae81928a5a798e55779c3b083f8e392d966a90e7e67d9c7c6d5b2402ecf6",
+    "pageCount": 1834,
+    "reflowedPageCount": 1823,
+    "recognizedPageCount": 0,
+    "imageCount": 11245
+  },
+  "jpeg": {
+    "epubBytes": 1461859121,
+    "entryBytes": 1522700828,
+    "epubSHA256": "1cf27a1f22c7110c7a210e19e5a094159ac38d805167cef8b53fc865013e1f11",
+    "pageCount": 1834,
+    "reflowedPageCount": 1823,
+    "recognizedPageCount": 0,
+    "imageCount": 11245
+  },
+  "warningsIdentical": true,
+  "reviewedSourceTextPreservedOnlyAsImage": {
+    "1834": [
+      "nca2023.globalchange.gov",
+      "U.S. Global Change Research Program"
+    ]
+  }
+}

@@ -58,10 +58,13 @@ physical-device memory/performance remain unqualified.
   [shading measurement](../measurements/shading-support/record.md).
 
 - The NOAA Fifth National Climate Assessment adds a 1,834-page, 219.9 MB stress workload.
-  It reaches the [image-output ceiling](https://github.com/vocaro/PDFReflowLib/issues/5) after
-  reconstruction page 598. Establish full completion and memory budgets before qualification;
+  Default conversion still reaches the [image-output ceiling](https://github.com/vocaro/PDFReflowLib/issues/5).
+  [Explicit-policy full-book measurements](../measurements/noaa-output-policies/record.md) complete
+  all pages with PNG or JPEG full-page images under 4 GiB experimental storage caps, with
+  identical text and cropped images. JPEG barely changes final size and increases entry bytes.
+  Qualify broader content and physical-device memory/storage budgets before general support;
   use its 32 chapter bookmarks to investigate [chapter-aware splitting and bounded processing](https://github.com/vocaro/PDFReflowLib/issues/15).
-  Evidence: [NOAA baseline](../measurements/noaa-nca5-2023/record.md).
+  The [original default failure](../measurements/noaa-nca5-2023/record.md) remains historical evidence.
 
 - The 56-page Our Flag booklet supplies a quick illustrated baseline with ten checked table rows.
   Its populated structure tree has Marked=false and lacks table roles and figure alternate text.

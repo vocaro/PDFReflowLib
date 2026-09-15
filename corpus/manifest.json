@@ -493,11 +493,11 @@
         1700,
         1834
       ],
-      "reviewStatus": "Full default conversion fails image-output ceiling after last completed reconstruction page 598/1834. Source chapter and visual references retained; full EPUB, full-book memory and fidelity remain unqualified.",
+      "reviewStatus": "Default image-output budget still fails (latest last completed reconstruction page 599/1834). Explicit 4 GiB entry/final caps complete all 1834 pages with PNG or JPEG full pages; full-book structure, exact policy comparison, selected source images and Mac resource measurements are retained in measurements/noaa-output-policies/record.md. Broad fidelity and physical-device budgets remain unqualified.",
       "knownFidelityIssues": [],
       "downloadStatus": "Automated fetch returns HTTP 403; supplied cache matches pinned identity and publisher SHA-512. See measurements/noaa-nca5-2023/download-status.json.",
       "chapterReference": "corpus/noaa-nca5-2023-chapters.json",
-      "baselineStatus": "Failed full-run resource baseline; no configured memory ceiling until full completion.",
+      "baselineStatus": "Default-budget failure remains excluded from the passing corpus gate. Explicit-policy full conversions measured on Mac; no configured case RSS ceiling or physical-device budget.",
       "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/5",
       "chapterTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/15"
     },

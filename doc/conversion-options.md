@@ -66,6 +66,14 @@ source checksums, implementation identities and OS/hardware details bound these 
 The 64 MiB and 512 MiB final-file caps in those runs demonstrate successful configurations
 for that book; they do not establish recommended caps for all books.
 
+The [complete NOAA comparison](../measurements/noaa-output-policies/record.md) illustrates why
+the scan recommendation does not predict every large report. With automatic references and
+PNG regions, PNG and JPEG 0.90 full pages both complete all 1,834 pages under explicit 4 GiB
+entry/final caps. JPEG reduces the final EPUB by only 4.20 MiB (1,398.34 to 1,394.14 MiB),
+while increasing uncompressed entries by 6.00 MiB. All 10,389 cropped PNGs remain identical.
+The default 512 MiB entry budget still fails. The larger caps are experimental configurations,
+not new defaults or recommended device budgets; selected image review does not qualify the book.
+
 Two useful client configurations follow from that evidence. These are documented starting
 configurations, not additional preset APIs or automatic document classifiers:
 

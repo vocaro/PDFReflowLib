@@ -1,0 +1,203 @@
+{
+  "baseline": "58da4de7c1481dba7455cc9df88eaf813fe9ee3c",
+  "sourceSHA256": {
+    "Sources/PDFReflowLib/NativeTextReader.swift": "890ed93f29394dd6b82d190d727f00fb71191ec72d4c4b960800722a303b089c",
+    "Tests/PDFReflowLibTests/ExtractionCancellationTests.swift": "cc64ca9d2276d7df8c235a4a1644aa50680a6ea12bea0a7e3092f6375cc5fda9",
+    "measurements/extraction-cancellation/collect.py": "cebdf01e6aeab3be88255b0cd8712b01d761e0e671f55707d2479301222c4adf"
+  },
+  "comparison": [
+    {
+      "case": "faa-phak-8083-25c",
+      "identicalEntries": 623,
+      "identicalImages": 588,
+      "pages": 522
+    },
+    {
+      "case": "wallace-algebra-2010",
+      "identicalEntries": 2068,
+      "identicalImages": 2050,
+      "pages": 489
+    },
+    {
+      "case": "gpo-911-2004",
+      "identicalEntries": 362,
+      "identicalImages": 331,
+      "pages": 585
+    },
+    {
+      "case": "fed-explained-2021",
+      "identicalEntries": 324,
+      "identicalImages": 315,
+      "pages": 135
+    },
+    {
+      "case": "dga-2025-2030",
+      "identicalEntries": 32,
+      "identicalImages": 27,
+      "pages": 10
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "identicalEntries": 153,
+      "identicalImages": 147,
+      "pages": 56
+    },
+    {
+      "case": "cdc-zombie-pandemic-2011",
+      "identicalEntries": 47,
+      "identicalImages": 42,
+      "pages": 42
+    },
+    {
+      "case": "cia-blue-book-14-1955",
+      "identicalEntries": 444,
+      "identicalImages": 422,
+      "pages": 312
+    }
+  ],
+  "comparisonExclusion": "EPUB/package.opf has dynamic identifier/timestamp; not compared here.",
+  "corpus": {
+    "passed": true,
+    "results": [
+      {
+        "case": "faa-phak-8083-25c",
+        "passed": true,
+        "reviewPages": [
+          16,
+          121,
+          91,
+          511,
+          211,
+          212,
+          50,
+          325,
+          81,
+          191
+        ],
+        "contentChecks": 52,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "wallace-algebra-2010",
+        "passed": true,
+        "reviewPages": [
+          2,
+          12,
+          347,
+          343,
+          26
+        ],
+        "contentChecks": 17,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "gpo-911-2004",
+        "passed": true,
+        "reviewPages": [
+          15,
+          19,
+          20,
+          21,
+          65,
+          67,
+          451,
+          472
+        ],
+        "contentChecks": 30,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "fed-explained-2021",
+        "passed": true,
+        "reviewPages": [
+          9,
+          13,
+          32,
+          45,
+          46,
+          54,
+          75,
+          77,
+          103,
+          109,
+          123,
+          1
+        ],
+        "contentChecks": 37,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "dga-2025-2030",
+        "passed": true,
+        "reviewPages": [
+          1,
+          2,
+          3
+        ],
+        "contentChecks": 9,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "gpo-our-flag-2003",
+        "passed": true,
+        "reviewPages": [
+          27,
+          31,
+          33,
+          34,
+          42,
+          43,
+          7,
+          9,
+          30,
+          29
+        ],
+        "contentChecks": 57,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "cdc-zombie-pandemic-2011",
+        "passed": true,
+        "reviewPages": [
+          5,
+          13,
+          39
+        ],
+        "contentChecks": 10,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "cia-blue-book-14-1955",
+        "passed": true,
+        "reviewPages": [
+          12,
+          74,
+          150
+        ],
+        "contentChecks": 9,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      }
+    ],
+    "notRun": [],
+    "knownUnsupportedFullConversions": [
+      {
+        "id": "gpo-warren-1964",
+        "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+        "issue": 5
+      },
+      {
+        "id": "noaa-nca5-2023",
+        "reason": "Known default image-output ceiling failure; full completion is unqualified.",
+        "issue": 5
+      }
+    ]
+  }
+}

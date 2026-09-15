@@ -161,3 +161,9 @@ stress gates retain crashes/timeouts and verify text/font positive controls; a p
 protects independent output, progress and cancellation. See [the evidence](../measurements/pdfkit-concurrency/record.md).
 Physical-device concurrency and host PDFKit calls outside the library lock remain unqualified;
 Apple's underlying exception and the separate attributed-text memory leak are not resolved.
+
+Queued native extraction now checks cancellation between timed lock waits under #21.
+Native-reader and public-conversion regressions require cancellation and staging cleanup while
+another extraction still holds the lock, with a surviving waiter and styled-text controls.
+See [contention cancellation evidence](../measurements/extraction-cancellation/record.md).
+This does not interrupt a PDFKit call already executing or qualify physical-device latency.

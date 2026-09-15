@@ -16,11 +16,26 @@ enum NativeTextReader {
     // Host code using PDFKit independently does not participate in this library-local lock.
     private static let extractionLock = NSLock()
 
-    static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true) throws -> [TextLine] {
+    static func withExtractionLock<T>(_ operation: () throws -> T) throws -> T {
         try Task.checkCancellation()
-        extractionLock.lock()
+        // Keep the uncontended path immediate. A queued conversion checks cancellation
+        // between timed waits instead of waiting for another document's page to finish.
+        // This does not interrupt a PDFKit call already executing inside the gate.
+        if !extractionLock.try() {
+            while !extractionLock.lock(before: Date(timeIntervalSinceNow: 0.05)) {
+                try Task.checkCancellation()
+            }
+        }
         defer { extractionLock.unlock() }
         try Task.checkCancellation()
+        return try operation()
+    }
+
+    static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true) throws -> [TextLine] {
+        try withExtractionLock { try extractLines(on: page, limit: limit, includeStyle: includeStyle) }
+    }
+
+    private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool) throws -> [TextLine] {
         guard page.numberOfCharacters <= limit else {
             throw ConversionError.resourceLimit("too many characters")
         }

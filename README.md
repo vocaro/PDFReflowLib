@@ -52,7 +52,8 @@ a successful archive is not a claim that every source page reflows.
 
 Run conversion inside a Swift `Task` and cancel that task to stop. Cancellation is cooperative
 at page, line and archive-chunk boundaries; an in-progress system PDF rendering or recognition
-operation may take time to return. Cancellation or failure removes staging files. An existing
+operation may take time to return. Conversions waiting for the library's native-text extraction
+lock check cancellation between timed waits. Cancellation or failure removes staging files. An existing
 output is never overwritten. Input and output must be local file URLs. The caller keeps any
 security-scoped access alive until conversion returns and owns the destination's lifetime.
 

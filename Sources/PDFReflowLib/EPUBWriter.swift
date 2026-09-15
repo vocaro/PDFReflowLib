@@ -2,7 +2,8 @@ import Foundation
 import ZIPFoundation
 
 enum EPUBWriter {
-    private struct Chapter { var name: String; var blocks: [ReflowBlock] }
+    // A serialized body target, not a limit on an indivisible paragraph, heading or figure.
+    private static let bodyTargetBytes = 60_000
 
     static func write(_ book: ReflowDocument, maximumOutputBytes: Int64, directory: URL,
                       progress: @Sendable (Double) async -> Void) async throws -> URL {
@@ -12,18 +13,6 @@ enum EPUBWriter {
         // resource bytes stream directly from neutral staging files into ZIP entries.
         let imagePaths = book.assets.enumerated().map { "images/image-\($0.offset + 1).\($0.element.format.fileExtension)" }
         let imagePathByID = Dictionary(uniqueKeysWithValues: zip(book.assets.map(\.id), imagePaths))
-        var chapters: [Chapter] = []
-        var current: [ReflowBlock] = []
-        var count = 0
-        for block in book.blocks {
-            try Task.checkCancellation()
-            if count > 60_000, !current.isEmpty {
-                chapters.append(Chapter(name: "chapter-\(chapters.count + 1).xhtml", blocks: current))
-                current = []; count = 0
-            }
-            current.append(block); count += try EPUBTextEncoder.payload(block, imagePaths: imagePathByID).utf8.count
-        }
-        if !current.isEmpty { chapters.append(Chapter(name: "chapter-\(chapters.count + 1).xhtml", blocks: current)) }
         let publication = directory.appendingPathComponent("EPUB")
         try FileManager.default.createDirectory(at: directory.appendingPathComponent("META-INF"),
                                                 withIntermediateDirectories: true)
@@ -39,32 +28,78 @@ enum EPUBWriter {
         var toc: [String] = [], pages: [String] = []
         var consumed: Int64 = 0
         func writeText(_ string: String, _ url: URL) throws {
+            try Task.checkCancellation()
             consumed += Int64(string.utf8.count)
             guard consumed <= maximumOutputBytes else { throw ConversionError.resourceLimit("EPUB text size") }
             try string.write(to: url, atomically: true, encoding: .utf8)
         }
-        for (i, chapter) in chapters.enumerated() {
-            try Task.checkCancellation()
-            var body = ""
-            for block in chapter.blocks {
-                for number in block.sourcePages {
-                    pages.append("<li><a href=\"\(chapter.name)#page-\(number)\">\(number)</a></li>")
-                }
-                let payload = try EPUBTextEncoder.payload(block, imagePaths: imagePathByID)
-                switch block.content {
-                case .paragraph: body += "<p>\(payload)</p>\n"
-                case let .heading(id, _):
-                    body += "<h2 id=\"\(xml(id))\">\(payload)</h2>\n"
-                    toc.append("<li><a href=\"\(chapter.name)#\(xml(id))\">\(xml(block.text))</a></li>")
-                case .preformatted: body += "<pre>\(payload)</pre>\n"
-                case .image: body += payload + "\n"
-                case .sourcePage: body += payload
-                }
-            }
-            try writeText(document(body, name: title), publication.appendingPathComponent(chapter.name))
-            await progress(Double(i + 1) / Double(chapters.count + imagePaths.count + 5) * 0.5)
+        var chapters: [String] = []
+        var body = ""
+        var bodyBytes = 0
+        var pendingPage: (number: Int, markup: String)?
+        func nextChapterName() -> String { "chapter-\(chapters.count + 1).xhtml" }
+        func finishChapter() throws {
+            guard !body.isEmpty else { return }
+            let name = nextChapterName()
+            try writeText(document(body, name: title), publication.appendingPathComponent(name))
+            chapters.append(name)
+            body = ""; bodyBytes = 0
         }
-        if toc.isEmpty { toc = ["<li><a href=\"\(chapters[0].name)\">\(xml(title))</a></li>"] }
+        func append(_ markup: String, sourcePages: [Int], heading: (id: String, text: String)? = nil) throws {
+            try Task.checkCancellation()
+            let size = markup.utf8.count
+            guard Int64(size) <= maximumOutputBytes - consumed else {
+                throw ConversionError.resourceLimit("EPUB text size")
+            }
+            if bodyBytes > 0, bodyBytes + size > bodyTargetBytes { try finishChapter() }
+            let name = nextChapterName()
+            for number in sourcePages {
+                pages.append("<li><a href=\"\(name)#page-\(number)\">\(number)</a></li>")
+            }
+            if let heading {
+                toc.append("<li><a href=\"\(name)#\(xml(heading.id))\">\(xml(heading.text))</a></li>")
+            }
+            body += markup; bodyBytes += size
+            // Never split an atomic block merely to satisfy the target. Oversized blocks
+            // are isolated, retain their styles and anchors, and still obey the total budget.
+            if bodyBytes >= bodyTargetBytes { try finishChapter() }
+        }
+        await progress(0)
+        for (i, block) in book.blocks.enumerated() {
+            try Task.checkCancellation()
+            let completedChapters = chapters.count
+            if case let .sourcePage(number) = block.content {
+                // Consecutive boundaries describe empty source pages. Only the last boundary
+                // needs to travel with the following content; earlier ones can be packed normally.
+                if let pendingPage { try append(pendingPage.markup, sourcePages: [pendingPage.number]) }
+                pendingPage = (number, EPUBTextEncoder.sourcePage(number))
+            } else {
+                let payload = try EPUBTextEncoder.payload(block, imagePaths: imagePathByID)
+                let markup: String
+                var heading: (id: String, text: String)?
+                switch block.content {
+                case .paragraph: markup = "<p>\(payload)</p>\n"
+                case let .heading(id, _):
+                    markup = "<h2 id=\"\(xml(id))\">\(payload)</h2>\n"
+                    heading = (id, block.text)
+                case .preformatted: markup = "<pre>\(payload)</pre>\n"
+                case .image: markup = payload + "\n"
+                case .sourcePage: preconditionFailure("Source boundaries are handled above")
+                }
+                try append((pendingPage?.markup ?? "") + markup,
+                           sourcePages: pendingPage.map { [$0.number] + block.sourcePages } ?? block.sourcePages,
+                           heading: heading)
+                pendingPage = nil
+            }
+            // Report input-block work without requiring a second serialization pass to count
+            // chapters. Bound callback frequency for documents with many tiny blocks.
+            if chapters.count != completedChapters || (i + 1).isMultiple(of: 128) || i + 1 == book.blocks.count {
+                await progress(0.45 * Double(i + 1) / Double(book.blocks.count))
+            }
+        }
+        if let pendingPage { try append(pendingPage.markup, sourcePages: [pendingPage.number]) }
+        try finishChapter()
+        if toc.isEmpty { toc = ["<li><a href=\"\(chapters[0])\">\(xml(title))</a></li>"] }
         let nav = """
         <nav epub:type="toc" id="toc"><h1>Contents</h1><ol>\(toc.joined())</ol></nav>
         <nav epub:type="page-list" hidden="hidden"><h2>Source pages</h2><ol>\(pages.joined())</ol></nav>
@@ -80,7 +115,7 @@ enum EPUBWriter {
         let modified = ISO8601DateFormatter().string(from: Date())
         let author = book.metadata.author.map { "<dc:creator>\(xml($0))</dc:creator>" } ?? ""
         let manifest = chapters.enumerated().map {
-            "<item id=\"c\($0.offset)\" href=\"\($0.element.name)\" media-type=\"application/xhtml+xml\"/>"
+            "<item id=\"c\($0.offset)\" href=\"\($0.element)\" media-type=\"application/xhtml+xml\"/>"
         }.joined() + imagePaths.enumerated().map {
             "<item id=\"img\($0.offset)\" href=\"\($0.element)\" media-type=\"\(book.assets[$0.offset].format.mediaType)\"/>"
         }.joined()
@@ -97,9 +132,11 @@ enum EPUBWriter {
         """, directory.appendingPathComponent("META-INF/container.xml"))
         try writeText("application/epub+zip", directory.appendingPathComponent("mimetype"))
         let paths = ["mimetype", "META-INF/container.xml", "EPUB/package.opf", "EPUB/nav.xhtml", "EPUB/style.css"]
-            + chapters.map { "EPUB/" + $0.name }
+            + chapters.map { "EPUB/" + $0 }
         let entries = paths.map { (path: $0, url: directory.appendingPathComponent($0)) }
             + zip(imagePaths, book.assets).map { (path: "EPUB/" + $0.0, url: $0.1.fileURL) }
+        await progress(0.5)
+        try Task.checkCancellation()
         let archiveURL = directory.appendingPathComponent("publication.epub")
         let archive = try Archive(url: archiveURL, accessMode: .create)
         var bytes: Int64 = 0

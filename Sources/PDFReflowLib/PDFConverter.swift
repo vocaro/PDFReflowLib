@@ -24,7 +24,7 @@ public actor PDFConverter {
         try fm.createDirectory(at: staging, withIntermediateDirectories: true)
         defer { try? fm.removeItem(at: staging) }
         let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: options, workspace: staging) { event in
-            await progress(.init(stage: event.stage, fractionCompleted: 0.02 + 0.80 * event.fractionCompleted,
+            await progress(.init(stage: event.stage, fractionCompleted: min(0.82, 0.02 + 0.80 * event.fractionCompleted),
                 page: event.page, totalPages: event.totalPages))
         }
         let total = result.pageCount

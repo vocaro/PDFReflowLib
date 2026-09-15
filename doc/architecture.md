@@ -133,10 +133,21 @@ whole image collection into another staging tree. Asset identifiers are opaque a
 choose archive paths. Model validation rejects missing/duplicate assets and empty documents.
 
 `EPUBTextEncoder` owns XML escaping, style tags, page markers and figure markup. `EPUBWriter`
-owns chapter splitting, heading/page navigation, OPF metadata, CSS, resource naming and
+owns spine splitting, heading/page navigation, OPF metadata, CSS, resource naming and
 ZIPFoundation packaging. It accepts a `ReflowDocument` and an output-size ceiling, with no PDF
 or OCR dependency. EPUB progress is combined with pipeline progress by `PDFConverter`; only
 publication emits completion. Each stage checks cancellation at its available boundaries.
+The writer serializes each block once and writes completed spine documents as it goes. It keeps
+one current body string plus navigation/filename lists; it does not first build a second collection
+of all chapter blocks. Packing checks the complete UTF-8 body markup against a 60,000-byte target
+before admitting a block. A standalone source-page marker travels with the following content;
+inline markers retain their exact location. Oversized individual paragraphs, headings, code blocks
+or figures occupy their own document without being split or losing styles. This is a soft body-size
+target, excluding document metadata, and is not a memory ceiling or semantic chapter detection.
+Progress reports serialization work by input blocks, then metadata completion and archive entries.
+The reconstruction endpoint is clamped to its allocated fraction so floating-point rounding cannot
+make the first writing update step backward.
+
 The entry-byte budget remains independent of an optional final ZIP-file cap. `PDFConverter`
 checks final archive size before publication and uses the same cleanup path on failure.
 

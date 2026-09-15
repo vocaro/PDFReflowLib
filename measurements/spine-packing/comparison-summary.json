@@ -1,0 +1,588 @@
+[
+  {
+    "case": "faa-phak-8083-25c",
+    "beforeEPUBSHA256": "55f9a75f270e16220032a84ae046457f70959dc5c62b7fce02107db7a0bc1c28",
+    "afterEPUBSHA256": "1791998ff494661e3af0d18e8ac59ea82e417ab1efd27992ffac14e4ee13a73d",
+    "identicalParsedPages": true,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 588,
+    "before": {
+      "documents": 30,
+      "maximumBodyBytes": 63816,
+      "oversizedAtomicBlocks": 0,
+      "violations": [
+        {
+          "document": "EPUB/chapter-1.xhtml",
+          "bodyBytes": 61599,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-2.xhtml",
+          "bodyBytes": 62556,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-3.xhtml",
+          "bodyBytes": 63426,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-4.xhtml",
+          "bodyBytes": 62323,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-5.xhtml",
+          "bodyBytes": 62248,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-6.xhtml",
+          "bodyBytes": 62488,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-7.xhtml",
+          "bodyBytes": 62742,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-8.xhtml",
+          "bodyBytes": 62003,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-9.xhtml",
+          "bodyBytes": 62419,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-10.xhtml",
+          "bodyBytes": 62131,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-11.xhtml",
+          "bodyBytes": 62257,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-12.xhtml",
+          "bodyBytes": 63518,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-13.xhtml",
+          "bodyBytes": 62171,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-14.xhtml",
+          "bodyBytes": 62127,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-15.xhtml",
+          "bodyBytes": 62780,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-16.xhtml",
+          "bodyBytes": 62675,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-17.xhtml",
+          "bodyBytes": 62675,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-18.xhtml",
+          "bodyBytes": 62300,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-19.xhtml",
+          "bodyBytes": 63108,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-20.xhtml",
+          "bodyBytes": 62501,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-21.xhtml",
+          "bodyBytes": 63816,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-22.xhtml",
+          "bodyBytes": 62689,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-23.xhtml",
+          "bodyBytes": 62256,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-24.xhtml",
+          "bodyBytes": 62337,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-25.xhtml",
+          "bodyBytes": 62420,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-26.xhtml",
+          "bodyBytes": 61744,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-27.xhtml",
+          "bodyBytes": 63094,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-28.xhtml",
+          "bodyBytes": 63005,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-29.xhtml",
+          "bodyBytes": 63110,
+          "reason": "spine body exceeds target with multiple blocks"
+        }
+      ]
+    },
+    "after": {
+      "documents": 31,
+      "maximumBodyBytes": 60000,
+      "oversizedAtomicBlocks": 0,
+      "violations": []
+    }
+  },
+  {
+    "case": "wallace-algebra-2010",
+    "beforeEPUBSHA256": "0021ab3aaf8a32ceed31d654e661003f5c15792ac9fa0783eea5f93b3d76cc9e",
+    "afterEPUBSHA256": "2db4b0c26db1e30f30f0e100ff9ea24aa5e6fb4b38098879d3a35dec762d0ecd",
+    "identicalParsedPages": true,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 2050,
+    "before": {
+      "documents": 12,
+      "maximumBodyBytes": 77152,
+      "oversizedAtomicBlocks": 0,
+      "violations": [
+        {
+          "document": "EPUB/chapter-1.xhtml",
+          "bodyBytes": 65694,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-2.xhtml",
+          "bodyBytes": 64753,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-3.xhtml",
+          "bodyBytes": 64525,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-4.xhtml",
+          "bodyBytes": 64482,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-5.xhtml",
+          "bodyBytes": 66236,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-6.xhtml",
+          "bodyBytes": 70525,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-7.xhtml",
+          "bodyBytes": 64227,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-8.xhtml",
+          "bodyBytes": 63795,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-9.xhtml",
+          "bodyBytes": 63999,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-10.xhtml",
+          "bodyBytes": 65227,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-11.xhtml",
+          "bodyBytes": 77152,
+          "reason": "spine body exceeds target with multiple blocks"
+        }
+      ]
+    },
+    "after": {
+      "documents": 14,
+      "maximumBodyBytes": 59997,
+      "oversizedAtomicBlocks": 0,
+      "violations": []
+    }
+  },
+  {
+    "case": "gpo-911-2004",
+    "beforeEPUBSHA256": "ec55a2b399e21855bb32d6c8f93598caae18aa7297f39c3073248fd530193d03",
+    "afterEPUBSHA256": "a6f3ef35aad4a2eb31cb877470452faec8bfec41e8a22193c2df41ec4461fe40",
+    "identicalParsedPages": true,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 331,
+    "before": {
+      "documents": 26,
+      "maximumBodyBytes": 64300,
+      "oversizedAtomicBlocks": 0,
+      "violations": [
+        {
+          "document": "EPUB/chapter-1.xhtml",
+          "bodyBytes": 62244,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-2.xhtml",
+          "bodyBytes": 62760,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-3.xhtml",
+          "bodyBytes": 60567,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-4.xhtml",
+          "bodyBytes": 61521,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-5.xhtml",
+          "bodyBytes": 60886,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-6.xhtml",
+          "bodyBytes": 60445,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-7.xhtml",
+          "bodyBytes": 61479,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-8.xhtml",
+          "bodyBytes": 60939,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-9.xhtml",
+          "bodyBytes": 61042,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-10.xhtml",
+          "bodyBytes": 62271,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-11.xhtml",
+          "bodyBytes": 60717,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-12.xhtml",
+          "bodyBytes": 61332,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-13.xhtml",
+          "bodyBytes": 61765,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-14.xhtml",
+          "bodyBytes": 62051,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-15.xhtml",
+          "bodyBytes": 64300,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-16.xhtml",
+          "bodyBytes": 63188,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-17.xhtml",
+          "bodyBytes": 63431,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-18.xhtml",
+          "bodyBytes": 63808,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-19.xhtml",
+          "bodyBytes": 62847,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-20.xhtml",
+          "bodyBytes": 63603,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-21.xhtml",
+          "bodyBytes": 63283,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-22.xhtml",
+          "bodyBytes": 62422,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-23.xhtml",
+          "bodyBytes": 63147,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-24.xhtml",
+          "bodyBytes": 63382,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-25.xhtml",
+          "bodyBytes": 62797,
+          "reason": "spine body exceeds target with multiple blocks"
+        }
+      ]
+    },
+    "after": {
+      "documents": 27,
+      "maximumBodyBytes": 59977,
+      "oversizedAtomicBlocks": 0,
+      "violations": []
+    }
+  },
+  {
+    "case": "fed-explained-2021",
+    "beforeEPUBSHA256": "99ad9102aa10b81c4ce84a4e5f57bc24f0acb4f69b9bc89becfd1d85c77fc9ed",
+    "afterEPUBSHA256": "06e678c7724355e51187b6f5bcbe924b64c39bf731a1fb37418239fb2d01660c",
+    "identicalParsedPages": true,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 315,
+    "before": {
+      "documents": 5,
+      "maximumBodyBytes": 63657,
+      "oversizedAtomicBlocks": 0,
+      "violations": [
+        {
+          "document": "EPUB/chapter-1.xhtml",
+          "bodyBytes": 63657,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-2.xhtml",
+          "bodyBytes": 62625,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-3.xhtml",
+          "bodyBytes": 62995,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-4.xhtml",
+          "bodyBytes": 62382,
+          "reason": "spine body exceeds target with multiple blocks"
+        }
+      ]
+    },
+    "after": {
+      "documents": 5,
+      "maximumBodyBytes": 60000,
+      "oversizedAtomicBlocks": 0,
+      "violations": []
+    }
+  },
+  {
+    "case": "dga-2025-2030",
+    "beforeEPUBSHA256": "0f68bfa54633329fb769aea36d0f6de83ef81ce9954355102c0018b6c33fc6c4",
+    "afterEPUBSHA256": "93a311974412d8f68453ba3832a19360a977c14f5f716eedce5a96aee46722fc",
+    "identicalParsedPages": true,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 27,
+    "before": {
+      "documents": 1,
+      "maximumBodyBytes": 21617,
+      "oversizedAtomicBlocks": 0,
+      "violations": []
+    },
+    "after": {
+      "documents": 1,
+      "maximumBodyBytes": 21617,
+      "oversizedAtomicBlocks": 0,
+      "violations": []
+    }
+  },
+  {
+    "case": "gpo-our-flag-2003",
+    "beforeEPUBSHA256": "ccc96f204ad7b2041cf0d2aea7bc3af02cc405b30ac822a0a4eda6a0cffb4b46",
+    "afterEPUBSHA256": "374816e640ae7c94d957bcfa33b7b68c413535d240b8ef014ec4b55a61f601e5",
+    "identicalParsedPages": true,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 147,
+    "before": {
+      "documents": 2,
+      "maximumBodyBytes": 64421,
+      "oversizedAtomicBlocks": 0,
+      "violations": [
+        {
+          "document": "EPUB/chapter-1.xhtml",
+          "bodyBytes": 64421,
+          "reason": "spine body exceeds target with multiple blocks"
+        }
+      ]
+    },
+    "after": {
+      "documents": 2,
+      "maximumBodyBytes": 59943,
+      "oversizedAtomicBlocks": 0,
+      "violations": []
+    }
+  },
+  {
+    "case": "cdc-zombie-pandemic-2011",
+    "beforeEPUBSHA256": "5bd99dcd24764e1e9b5c33bc6d3c1a239a4f36a29b1cf01e463608d5fc9fb0e5",
+    "afterEPUBSHA256": "ac8782b3a0ad3d3c9d564301409394f8239a72c7d131282732b40c48f0adf47a",
+    "identicalParsedPages": true,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 42,
+    "before": {
+      "documents": 1,
+      "maximumBodyBytes": 31318,
+      "oversizedAtomicBlocks": 0,
+      "violations": []
+    },
+    "after": {
+      "documents": 1,
+      "maximumBodyBytes": 31318,
+      "oversizedAtomicBlocks": 0,
+      "violations": []
+    }
+  },
+  {
+    "case": "cia-blue-book-14-1955",
+    "beforeEPUBSHA256": "07af7a76d085ec52c73177216f8f0116328547eeb25111bbe87ac7ba9fe5ef08",
+    "afterEPUBSHA256": "735916c506df19db8d0e0264ccd6b259ca6594f2e1d6e9921e73fb732d9f633a",
+    "identicalParsedPages": true,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 422,
+    "before": {
+      "documents": 15,
+      "maximumBodyBytes": 78706,
+      "oversizedAtomicBlocks": 0,
+      "violations": [
+        {
+          "document": "EPUB/chapter-1.xhtml",
+          "bodyBytes": 66956,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-2.xhtml",
+          "bodyBytes": 75601,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-3.xhtml",
+          "bodyBytes": 70940,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-4.xhtml",
+          "bodyBytes": 78706,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-5.xhtml",
+          "bodyBytes": 72592,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-6.xhtml",
+          "bodyBytes": 74388,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-7.xhtml",
+          "bodyBytes": 73604,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-8.xhtml",
+          "bodyBytes": 75677,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-9.xhtml",
+          "bodyBytes": 72995,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-10.xhtml",
+          "bodyBytes": 74240,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-11.xhtml",
+          "bodyBytes": 73624,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-12.xhtml",
+          "bodyBytes": 70416,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-13.xhtml",
+          "bodyBytes": 70857,
+          "reason": "spine body exceeds target with multiple blocks"
+        },
+        {
+          "document": "EPUB/chapter-14.xhtml",
+          "bodyBytes": 73491,
+          "reason": "spine body exceeds target with multiple blocks"
+        }
+      ]
+    },
+    "after": {
+      "documents": 18,
+      "maximumBodyBytes": 60000,
+      "oversizedAtomicBlocks": 0,
+      "violations": []
+    }
+  }
+]

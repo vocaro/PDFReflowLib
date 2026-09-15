@@ -28,6 +28,28 @@ EXPECTED = {
 }
 
 
+def check_spine_document(data):
+    """Check the converter's 60,000-byte body target, allowing one indivisible large block."""
+    tree = ET.fromstring(data)
+    body = tree.find('html:body', NS)
+    assert body is not None, "missing spine body"
+    # Count the exact emitted UTF-8/escaped markup, not ElementTree's reserialization.
+    assert data.count(b'<body>') == 1 and data.count(b'</body>') == 1
+    encoded = data.split(b'<body>', 1)[1].split(b'</body>', 1)[0]
+    size = len(encoded)
+    if size > 60_000:
+        def boundary(node):
+            return (node.tag == '{http://www.w3.org/1999/xhtml}span'
+                    and 'pagebreak' in node.get('{http://www.idpf.org/2007/ops}type', '').split())
+        content = [node for node in body if not boundary(node)]
+        assert len(content) == 1, "spine body exceeds target with multiple blocks"
+        assert len(body) - len(content) <= 1, "oversized block includes unrelated page markers"
+        assert content[0].tag in {'{http://www.w3.org/1999/xhtml}' + tag
+                                  for tag in ('p', 'h2', 'pre', 'figure')}, "unexpected oversized block"
+        assert not (body.text or '').strip() and all(not (n.tail or '').strip() for n in body), "unwrapped body text"
+    return {'bodyBytes': size, 'oversizedAtomicBlock': size > 60_000}
+
+
 def check(path):
     with zipfile.ZipFile(path) as archive:
         names = archive.namelist()
@@ -45,7 +67,9 @@ def check(path):
         assert any(item.get("properties") == "nav" for item in manifest.values())
         chapters = []
         for ref in opf.findall("opf:spine/opf:itemref", NS):
-            chapters.append(documents["EPUB/" + manifest[ref.attrib["idref"]]["href"]])
+            name = "EPUB/" + manifest[ref.attrib["idref"]]["href"]
+            check_spine_document(archive.read(name))
+            chapters.append(documents[name])
         ids = {}
         for name, tree in documents.items():
             found = [node.attrib["id"] for node in tree.iter() if "id" in node.attrib]

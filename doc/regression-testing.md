@@ -193,3 +193,16 @@ specified source page. A phrase spread over separate paragraphs, headings or pre
 cannot pass. The parser preserves inline styles and page boundaries and excludes figure captions.
 Tests deliberately replace prose with headings, split it, or move it to another page to verify
 that these checks reject semantic regressions.
+
+## Spine packing and navigation
+
+`SpineWriterTests.swift` covers exact serialized body-size boundaries, many tiny paragraphs,
+UTF-8 and escaped text, oversized atomic blocks, source-page/heading navigation, trailing empty
+pages, semantic-model preservation, ordered progress and cancellation. The independent EPUB
+checker enforces the 60,000-byte body target on every converted fixture and corpus document;
+an oversized document may contain only one indivisible content block and its optional preceding
+source-page marker. Python negative controls reject multi-block overflow and unwrapped text.
+
+This target is an EPUB packing policy, not a limit on individual source paragraphs, whole-document
+memory, or a promise that spine boundaries correspond to actual book chapters. See the
+[packing evidence](../measurements/spine-packing/record.md).

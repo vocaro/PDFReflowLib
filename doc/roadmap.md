@@ -113,3 +113,10 @@ protect body text and modest-size section titles. The [heading evidence](../meas
 includes the failing original case and a rejected threshold change that lost six genuine headings.
 The complete corpus has 145 reviewed content checks across 40 pages. General heading precision,
 PDF tag consumption and table transcription remain unqualified.
+
+EPUB spine packing under #15 counts complete UTF-8 markup before crossing its 60,000-byte body
+target, keeps source-page markers with following content, and isolates oversized atomic blocks.
+Serialization writes completed documents in one pass with ordered progress; six Swift regressions
+and independent corpus size/navigation checks cover the policy. See [spine-packing evidence](../measurements/spine-packing/record.md).
+Validated chapter bookmarks, subdivision within oversized blocks, bounded reconstruction and
+full NOAA/device qualification remain open; this work does not close #15.

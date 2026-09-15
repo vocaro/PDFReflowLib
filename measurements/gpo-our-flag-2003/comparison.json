@@ -1,0 +1,849 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "sourceName": "CDOC-108hdoc97.pdf",
+  "commands": [
+    {
+      "command": [
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/corpus-cli/out/Products/Release/pdf-reflow",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pdfreflow.epub"
+      ],
+      "seconds": 1.6753578329989978,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "7",
+        "-l",
+        "7",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/7/simple.html"
+      ],
+      "seconds": 0.10437658399678185,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "7",
+        "-l",
+        "7",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/7/positioned.html"
+      ],
+      "seconds": 0.10712608299945714,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "7",
+        "-l",
+        "7",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/7/source"
+      ],
+      "seconds": 0.20819641599882743,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "15",
+        "-l",
+        "15",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/15/simple.html"
+      ],
+      "seconds": 0.10632575000272482,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "15",
+        "-l",
+        "15",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/15/positioned.html"
+      ],
+      "seconds": 0.10736616700160084,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "15",
+        "-l",
+        "15",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/15/source"
+      ],
+      "seconds": 0.3145184999993944,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "22",
+        "-l",
+        "22",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/22/simple.html"
+      ],
+      "seconds": 0.10712483300085296,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "22",
+        "-l",
+        "22",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/22/positioned.html"
+      ],
+      "seconds": 0.10750737500347896,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "22",
+        "-l",
+        "22",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/22/source"
+      ],
+      "seconds": 0.31458233300145366,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "27",
+        "-l",
+        "27",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/27/simple.html"
+      ],
+      "seconds": 0.10714312499840162,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "27",
+        "-l",
+        "27",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/27/positioned.html"
+      ],
+      "seconds": 0.10626141699685832,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "27",
+        "-l",
+        "27",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/27/source"
+      ],
+      "seconds": 0.21250691699970048,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "32",
+        "-l",
+        "32",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/32/simple.html"
+      ],
+      "seconds": 0.10706249999930151,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "32",
+        "-l",
+        "32",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/32/positioned.html"
+      ],
+      "seconds": 0.10754595899925334,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "32",
+        "-l",
+        "32",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/32/source"
+      ],
+      "seconds": 0.3139528749998135,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "33",
+        "-l",
+        "33",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/33/simple.html"
+      ],
+      "seconds": 0.10713241600024048,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "33",
+        "-l",
+        "33",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/33/positioned.html"
+      ],
+      "seconds": 0.10775025000111782,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "33",
+        "-l",
+        "33",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/33/source"
+      ],
+      "seconds": 0.21219791700059432,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "41",
+        "-l",
+        "41",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/41/simple.html"
+      ],
+      "seconds": 0.10466620800070814,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "41",
+        "-l",
+        "41",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/41/positioned.html"
+      ],
+      "seconds": 0.10785604099874035,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "41",
+        "-l",
+        "41",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/41/source"
+      ],
+      "seconds": 0.20846166699993773,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "48",
+        "-l",
+        "48",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/48/simple.html"
+      ],
+      "seconds": 0.10714549999829615,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "48",
+        "-l",
+        "48",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/48/positioned.html"
+      ],
+      "seconds": 0.10721737499989104,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "48",
+        "-l",
+        "48",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pages/48/source"
+      ],
+      "seconds": 0.2119479999964824,
+      "exitCode": 0
+    }
+  ],
+  "pages": [
+    {
+      "number": 7,
+      "epub": "epub/EPUB/chapter-1.html#page-7",
+      "simple": "pages/7/simple.html",
+      "positioned": "pages/7/positioned.html",
+      "source": "pages/7/source.png"
+    },
+    {
+      "number": 15,
+      "epub": "epub/EPUB/chapter-1.html#page-15",
+      "simple": "pages/15/simple.html",
+      "positioned": "pages/15/positioned.html",
+      "source": "pages/15/source.png"
+    },
+    {
+      "number": 22,
+      "epub": "epub/EPUB/chapter-1.html#page-22",
+      "simple": "pages/22/simple.html",
+      "positioned": "pages/22/positioned.html",
+      "source": "pages/22/source.png"
+    },
+    {
+      "number": 27,
+      "epub": "epub/EPUB/chapter-1.html#page-27",
+      "simple": "pages/27/simple.html",
+      "positioned": "pages/27/positioned.html",
+      "source": "pages/27/source.png"
+    },
+    {
+      "number": 32,
+      "epub": "epub/EPUB/chapter-1.html#page-32",
+      "simple": "pages/32/simple.html",
+      "positioned": "pages/32/positioned.html",
+      "source": "pages/32/source.png"
+    },
+    {
+      "number": 33,
+      "epub": "epub/EPUB/chapter-1.html#page-33",
+      "simple": "pages/33/simple.html",
+      "positioned": "pages/33/positioned.html",
+      "source": "pages/33/source.png"
+    },
+    {
+      "number": 41,
+      "epub": "epub/EPUB/chapter-2.html#page-41",
+      "simple": "pages/41/simple.html",
+      "positioned": "pages/41/positioned.html",
+      "source": "pages/41/source.png"
+    },
+    {
+      "number": 48,
+      "epub": "epub/EPUB/chapter-2.html#page-48",
+      "simple": "pages/48/simple.html",
+      "positioned": "pages/48/positioned.html",
+      "source": "pages/48/source.png"
+    }
+  ],
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "source": {
+    "bytes": 1103159,
+    "sha256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8"
+  },
+  "converter": {
+    "path": "/Users/trevorharmon/Development/PDFReflowLib/.build/corpus-cli/out/Products/Release/pdf-reflow",
+    "bytes": 864344,
+    "sha256": "9fed7af9cb6872ef13a596f1df9512fb9236e66a67e43db96e3637a9eeb4a0e8"
+  },
+  "harness": {
+    "compare_pdf.py": {
+      "bytes": 12039,
+      "sha256": "c4841ba4a964707265758815dbac6036dd42e20337ef3e7caa1c9fae900a4013"
+    },
+    "serve_comparison.py": {
+      "bytes": 2884,
+      "sha256": "0e88e2a5bdbf3d7ec5353019725a036e6c5f1f759bd039c490eca807a588d389"
+    },
+    "comparison/index.html": {
+      "bytes": 3787,
+      "sha256": "2a36074ea68fb337a3ec5e57d5c3c637d73c819bdbeabdcf73492ae48a4d72b9"
+    },
+    "comparison/viewer.css": {
+      "bytes": 2834,
+      "sha256": "d5aea5b08898f2798f3884ef88510f32a54126a9affeb993310a9063693e10a3"
+    },
+    "comparison/viewer.js": {
+      "bytes": 6856,
+      "sha256": "bd20b93c03783be3fee134221a48fd9ff3c54c710b74a8af21949dbe263bb260"
+    }
+  },
+  "popplerVersion": "pdftohtml version 26.04.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1999-2003 Gueorgui Ovtcharov and Rainer Dorsch\nCopyright 1996-2011, 2022 Glyph & Cog, LLC",
+  "pageCount": 56,
+  "report": {
+    "imageCount": 128,
+    "outputURL": "file:///Users/trevorharmon/Development/PDFReflowLib/.build/our-flag-comparison/pdfreflow.epub",
+    "pageCount": 56,
+    "recognizedPageCount": 5,
+    "reflowedPageCount": 55,
+    "warnings": [
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 1
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 1
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 19
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 20
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 21
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 55
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 1
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 2
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 3
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 4
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 5
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 7
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 8
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 9
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 10
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 11
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 12
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 13
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 14
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 15
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 16
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 17
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 18
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 19
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 20
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 21
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 22
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 23
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 24
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 25
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 26
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 27
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 28
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 28
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 29
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 30
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 30
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 31
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 32
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 33
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 34
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 35
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 36
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 37
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 38
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 39
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 40
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 41
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 42
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 43
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 44
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 45
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 46
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 47
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 48
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 49
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 50
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 50
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 51
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 52
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 53
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 54
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 55
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 56
+      }
+    ]
+  },
+  "epub": {
+    "bytes": 13485334,
+    "sha256": "4a78c339dfb497a3aa7fbc189dd7874cf5964a827c10f12b88694477a706279d"
+  }
+}

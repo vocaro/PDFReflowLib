@@ -1,0 +1,8 @@
+{
+  "downloadURL": "https://www.govinfo.gov/content/pkg/CDOC-108hdoc97/pdf/CDOC-108hdoc97.pdf",
+  "bytes": 1103159,
+  "sha256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
+  "matchedOwnerSuppliedIdentity": true,
+  "fetcherSHA256": "f5fd6b52244c1f5959cac2f2c5bd93abc8a759ab4b709ebf43076c4f0987db64",
+  "scope": "Fresh download through Tools/fetch_corpus.py into an empty temporary cache, independently matching the owner-supplied original."
+}

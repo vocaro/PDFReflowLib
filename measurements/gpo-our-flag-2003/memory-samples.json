@@ -1,0 +1,104 @@
+[
+  {
+    "seconds": 0.001947332999407081,
+    "progress": "starting",
+    "residentBytes": 131072,
+    "physicalFootprintBytes": 180344
+  },
+  {
+    "seconds": 0.10714166699835914,
+    "progress": "2% recognizing page 1/56",
+    "residentBytes": 61472768,
+    "physicalFootprintBytes": 149095264
+  },
+  {
+    "seconds": 0.21223504199952004,
+    "progress": "4% extracting page 3/56",
+    "residentBytes": 56721408,
+    "physicalFootprintBytes": 138855216
+  },
+  {
+    "seconds": 0.3175419579965819,
+    "progress": "19% recognizing page 19/56",
+    "residentBytes": 78184448,
+    "physicalFootprintBytes": 156795744
+  },
+  {
+    "seconds": 0.4210684999998193,
+    "progress": "19% recognizing page 19/56",
+    "residentBytes": 94011392,
+    "physicalFootprintBytes": 169493392
+  },
+  {
+    "seconds": 0.5249233749964333,
+    "progress": "20% recognizing page 20/56",
+    "residentBytes": 101695488,
+    "physicalFootprintBytes": 177079184
+  },
+  {
+    "seconds": 0.6262037499982398,
+    "progress": "21% recognizing page 21/56",
+    "residentBytes": 102350848,
+    "physicalFootprintBytes": 173949840
+  },
+  {
+    "seconds": 0.7313492919965938,
+    "progress": "21% recognizing page 21/56",
+    "residentBytes": 105234432,
+    "physicalFootprintBytes": 175440808
+  },
+  {
+    "seconds": 0.8364455419978185,
+    "progress": "23% extracting page 22/56",
+    "residentBytes": 94683136,
+    "physicalFootprintBytes": 166380432
+  },
+  {
+    "seconds": 0.9417640419997042,
+    "progress": "43% extracting page 42/56",
+    "residentBytes": 95453184,
+    "physicalFootprintBytes": 167183248
+  },
+  {
+    "seconds": 1.0462889579976036,
+    "progress": "57% extracting page 56/56",
+    "residentBytes": 111493120,
+    "physicalFootprintBytes": 184206224
+  },
+  {
+    "seconds": 1.151380249997601,
+    "progress": "61% reconstructing page 9/56",
+    "residentBytes": 98729984,
+    "physicalFootprintBytes": 166626192
+  },
+  {
+    "seconds": 1.2564563329979137,
+    "progress": "69% reconstructing page 28/56",
+    "residentBytes": 99368960,
+    "physicalFootprintBytes": 169591696
+  },
+  {
+    "seconds": 1.3615244579996215,
+    "progress": "74% reconstructing page 40/56",
+    "residentBytes": 98729984,
+    "physicalFootprintBytes": 168870800
+  },
+  {
+    "seconds": 1.466594666999299,
+    "progress": "81% reconstructing page 55/56",
+    "residentBytes": 103038976,
+    "physicalFootprintBytes": 171918224
+  },
+  {
+    "seconds": 1.5716705829981947,
+    "progress": "92% writing",
+    "residentBytes": 99516416,
+    "physicalFootprintBytes": 167822224
+  },
+  {
+    "seconds": 1.6739603329988313,
+    "progress": "100% completed",
+    "residentBytes": 99532800,
+    "physicalFootprintBytes": 167838608
+  }
+]

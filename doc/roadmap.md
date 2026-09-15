@@ -46,3 +46,10 @@ physical-device memory/performance remain unqualified.
   reconstruction page 598. Establish full completion and memory budgets before qualification;
   use its 32 chapter bookmarks to investigate [chapter-aware splitting and bounded processing](https://github.com/vocaro/PDFReflowLib/issues/15).
   Evidence: [NOAA baseline](../measurements/noaa-nca5-2023/record.md).
+
+- The 56-page Our Flag booklet supplies a quick illustrated baseline with ten checked table rows.
+  Its populated structure tree has Marked=false and lacks table roles and figure alternate text.
+  Implement [validated tag consumption with spatial fallback](https://github.com/vocaro/PDFReflowLib/issues/17)
+  and [table preservation](https://github.com/vocaro/PDFReflowLib/issues/16); correct drop-cap
+  ordering and flag image/name/description groups. The [baseline](../measurements/gpo-our-flag-2003/record.md)
+  passes validity, progress and the 192 MiB Mac RSS gate, but fails those fidelity targets.

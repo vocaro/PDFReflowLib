@@ -1,0 +1,113 @@
+{
+  "case": "gpo-our-flag-2003",
+  "pageNumbering": "Physical PDF pages, one-based; page 27 is printed 21",
+  "qualifiedForFidelity": false,
+  "structureCaveat": "Populated StructTreeRoot with MarkInfo.Marked=false; no Table/TR/TH/TD roles or Figure Alt text. Tag associations require validation; current converter does not consume the tree.",
+  "reviewPoints": [
+    {
+      "page": 7,
+      "target": "Drop-cap prose and heading",
+      "acceptance": "Join the initial T to its word and retain first-line-before-second-line order; only the section title is a heading."
+    },
+    {
+      "page": 15,
+      "target": "Historical flags",
+      "acceptance": "Keep each illustration with its label and historical explanation."
+    },
+    {
+      "page": 22,
+      "target": "Flag display illustrations",
+      "acceptance": "Preserve orientation and placement information with its applicable rule."
+    },
+    {
+      "page": 27,
+      "target": "Flag-size table and drop-cap prose",
+      "acceptance": "Preserve two headers and all ten row associations; use a readable table image with warning if semantics are uncertain. Keep both body openings in paragraph order."
+    },
+    {
+      "page": 32,
+      "target": "State flags, first page",
+      "acceptance": "Group each state image, name and full description before the next group."
+    },
+    {
+      "page": 33,
+      "target": "California, Colorado, Connecticut and Delaware",
+      "acceptance": "Preserve all four distinct images with their correct names and complete descriptions, without interleaved prose."
+    },
+    {
+      "page": 41,
+      "target": "Oregon and neighboring flags",
+      "acceptance": "Preserve front/back or other meaningful visual distinctions and their correct explanations."
+    },
+    {
+      "page": 48,
+      "target": "Obverse of the Great Seal",
+      "acceptance": "Keep visual symbols and descriptions associated; preserve meaningful details."
+    }
+  ],
+  "tableReference": {
+    "page": 27,
+    "headers": [
+      "Flagpole height (ft.)",
+      "Flag size (ft.)"
+    ],
+    "rows": [
+      [
+        20,
+        4,
+        6
+      ],
+      [
+        25,
+        5,
+        8
+      ],
+      [
+        40,
+        6,
+        10
+      ],
+      [
+        50,
+        8,
+        12
+      ],
+      [
+        60,
+        10,
+        15
+      ],
+      [
+        70,
+        12,
+        18
+      ],
+      [
+        90,
+        15,
+        25
+      ],
+      [
+        125,
+        20,
+        30
+      ],
+      [
+        200,
+        30,
+        40
+      ],
+      [
+        250,
+        40,
+        50
+      ]
+    ],
+    "rowFields": [
+      "poleHeightFeet",
+      "flagWidthFeet",
+      "flagLengthFeet"
+    ],
+    "basis": "Manually transcribed and checked against source-page-27.png; future fidelity assertions, not currently passing converter tests."
+  }
+}

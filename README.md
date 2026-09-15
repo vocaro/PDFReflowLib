@@ -168,7 +168,8 @@ interchange format; the supported public output remains EPUB 3. See
 (FAA-H-8083-25C), Tyler Wallace's 489-page Beginning and Intermediate Algebra, and the
 920-page scanned Warren Commission report, the 585-page digital 9/11 Commission report, and
 135-page The Fed Explained, plus the 10-page illustrated Dietary Guidelines for Americans
-(2025–2030), and the 1,834-page Fifth National Climate Assessment, by exact byte identity.
+(2025–2030), the 1,834-page Fifth National Climate Assessment, and the 56-page Our Flag booklet,
+by exact byte identity.
 Fetch originals with
 `python3 Tools/fetch_corpus.py --all`; verified copies live in gitignored `Corpus/cache/`.
 Tests do not download documents. Some publisher endpoints require a manually supplied cache

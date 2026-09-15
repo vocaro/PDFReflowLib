@@ -1,0 +1,329 @@
+{
+  "imageCount" : 128,
+  "outputURL" : "file:\/\/\/Users\/trevorharmon\/Development\/PDFReflowLib\/.build\/our-flag-baseline\/gpo-our-flag-2003.epub",
+  "pageCount" : 56,
+  "recognizedPageCount" : 5,
+  "reflowedPageCount" : 55,
+  "warnings" : [
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 1
+    },
+    {
+      "code" : "ocrUsed",
+      "message" : "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+      "page" : 1
+    },
+    {
+      "code" : "ocrUsed",
+      "message" : "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+      "page" : 19
+    },
+    {
+      "code" : "ocrUsed",
+      "message" : "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+      "page" : 20
+    },
+    {
+      "code" : "ocrUsed",
+      "message" : "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+      "page" : 21
+    },
+    {
+      "code" : "ocrUsed",
+      "message" : "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+      "page" : 55
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 1
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 2
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 3
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 4
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 5
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 7
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 8
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 9
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 10
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 11
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 12
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 13
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 14
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 15
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 16
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 17
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 18
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 19
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 20
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 21
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 22
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 23
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 24
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 25
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 26
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 27
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 28
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 28
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 29
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 30
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 30
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 31
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 32
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 33
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 34
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 35
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 36
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 37
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 38
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 39
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 40
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 41
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 42
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 43
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 44
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 45
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 46
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 47
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 48
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 49
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 50
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 50
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 51
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 52
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 53
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 54
+    },
+    {
+      "code" : "pageImageFallback",
+      "message" : "This page is preserved as an image and does not reflow.",
+      "page" : 55
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 56
+    }
+  ]
+}

@@ -29,6 +29,7 @@ work offline. Tests and conversion never fetch sources automatically.
 | `fed-explained-2021` | 135 | Tagged text, recurring tables, organization charts and flow diagrams | 768 MiB |
 | `dga-2025-2030` | 10 | Illustrated section bands, gradients, bullet columns and callouts | 192 MiB |
 | `noaa-nca5-2023` | 1,834 | Large tagged report, mixed orientations, 32 chapter starts, uneven graphics | Unset: default conversion fails |
+| `gpo-our-flag-2003` | 56 | Structure-tree inconsistencies, flag illustrations, drop capitals, one visible table | 192 MiB |
 
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
@@ -229,3 +230,28 @@ memory qualification. [Output-budget issue #5](https://github.com/vocaro/PDFRefl
 and [chapter-aware splitting issue #15](https://github.com/vocaro/PDFReflowLib/issues/15) track
 separate gaps. The current writer's approximate 60,000-byte file splitting does not follow PDF
 chapters or bound the memory of whole-document reconstruction.
+
+
+## Our Flag
+
+The 56-page House Document 108-97 is a quick illustrated baseline. Its populated structure tree
+coexists with MarkInfo.Marked=false; it has heading and figure roles but no table roles or
+figure alternate text. The converter does not currently consume the tree. Correct visual output
+alone cannot prove tag use, and this source is not a fully validated semantic reference.
+
+```sh
+python3 Tools/fetch_corpus.py --case gpo-our-flag-2003
+swift build -c release --scratch-path .build/corpus-cli
+python3 Tools/evaluate-real-document.py --case gpo-our-flag-2003 \
+  --pdf Corpus/cache/CDOC-108hdoc97.pdf --converter .build/corpus-cli/release/pdf-reflow \
+  --output /tmp/our-flag-baseline --epubcheck /opt/homebrew/bin/epubcheck
+scripts/compare-pdf-reflow.sh --pdf Corpus/cache/CDOC-108hdoc97.pdf \
+  --pages 7,15,22,27,32,33,41,48 --output /tmp/our-flag-review --serve
+```
+
+The [baseline](../measurements/gpo-our-flag-2003/record.md) passes full conversion, EPUBCheck,
+progress and the 192 MiB Mac RSS gate. [Review references](../Corpus/gpo-our-flag-2003-review.json)
+include all ten table rows and meaning-bearing flag groups. Table flattening, drop-cap ordering
+and interleaved state descriptions remain failures. [Table preservation #16](https://github.com/vocaro/PDFReflowLib/issues/16)
+and [validated tag consumption #17](https://github.com/vocaro/PDFReflowLib/issues/17) track distinct
+requirements; existing issues #2 and #12 contain the column/heading reproductions.

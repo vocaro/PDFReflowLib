@@ -490,6 +490,71 @@
       "baselineStatus": "Failed full-run resource baseline; no configured memory ceiling until full completion.",
       "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/5",
       "chapterTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/15"
+    },
+    {
+      "id": "gpo-our-flag-2003",
+      "title": "Our Flag",
+      "author": "Joint Committee on Printing, United States Congress",
+      "publicationYear": 2003,
+      "url": "https://www.govinfo.gov/app/details/CDOC-108hdoc97",
+      "downloadURL": "https://www.govinfo.gov/content/pkg/CDOC-108hdoc97/pdf/CDOC-108hdoc97.pdf",
+      "filename": "CDOC-108hdoc97.pdf",
+      "bytes": 1103159,
+      "sha256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
+      "pages": 56,
+      "role": "development",
+      "identity": {
+        "suppliedBy": "owner"
+      },
+      "provenance": "Owner-supplied PDF, unchanged. Official GovInfo record identifies House Document 108-97, Our Flag, with the matching package PDF.",
+      "rightsBasis": "U.S. Government publication credited to the Joint Committee on Printing and GPO on physical page 3. External development material, not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "tentative",
+        "scope": "Government-publication provenance recorded for development; no new owner-confirmed rights determination or shipped-catalog admission."
+      },
+      "coverage": [
+        "short illustrated native-text baseline",
+        "structure tree with MarkInfo.Marked false",
+        "heading and figure tags",
+        "untagged visible table",
+        "meaning-bearing flag illustrations",
+        "drop capitals",
+        "two-column state descriptions"
+      ],
+      "reviewPages": [
+        7,
+        15,
+        22,
+        27,
+        32,
+        33,
+        41,
+        48
+      ],
+      "reviewStatus": "Full conversion, EPUBCheck and 192 MiB Mac RSS gate pass. Source and rendered spot checks on pages 27 and 33 expose table, drop-cap and flag-group ordering failures; exact XHTML retained for eight review pages. Not full-document fidelity qualification.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 192,
+        "scope": "macOS 27 arm64 isolated release CLI, library defaults; regression ceiling, not a physical iOS device budget"
+      },
+      "downloadVerification": "measurements/gpo-our-flag-2003/download-verification.json",
+      "knownFidelityIssues": [
+        {
+          "page": 27,
+          "issue": "Table rows collapse into one paragraph without a table or table image.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/16"
+        },
+        {
+          "page": 27,
+          "issue": "Drop-cap body openings become headings and follow their own continuation lines.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/12"
+        },
+        {
+          "page": 33,
+          "issue": "State-flag descriptions interleave across columns; figure/name/description ownership is lost.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/2"
+        }
+      ],
+      "structureCaveat": "Populated StructTreeRoot with MarkInfo.Marked=false; no Table/TR/TH/TD roles or Figure Alt text. Tag associations require validation; current converter does not consume the tree."
     }
   ]
 }

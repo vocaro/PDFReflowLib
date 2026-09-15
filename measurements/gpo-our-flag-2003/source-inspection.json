@@ -1,0 +1,4609 @@
+{
+  "tool": "pypdf 6.10.0",
+  "pages": 56,
+  "marked": false,
+  "hasStructureTree": true,
+  "roleMap": {},
+  "roles": {
+    "/P": 361,
+    "/Part": 1,
+    "/H1": 1,
+    "/Figure": 103,
+    "/Span": 204,
+    "/Sect": 35,
+    "/H2": 23,
+    "/H3": 9,
+    "/H4": 2,
+    "/LI": 15
+  },
+  "structureEntries": [
+    {
+      "role": "/P",
+      "page": 3,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 3,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Part",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H1",
+      "page": 3,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 3,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 3,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 3,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 3,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 3,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 4,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 4,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 4,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 4,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 4,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 4,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 4,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 4,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 4,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 4,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 4,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 4,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 4,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 4,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 4,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/P",
+      "page": 5,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 5,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 5,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 5,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 5,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 5,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 6,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 6,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 6,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 6,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H3",
+      "page": 7,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 7,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 7,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 7,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 7,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 7,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 7,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 8,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 8,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 8,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 8,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 8,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 8,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 8,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 8,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 8,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 8,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 8,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 9,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 9,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 9,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 9,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 9,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 9,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 9,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 9,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 9,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 9,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 10,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 10,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 10,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 10,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 10,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 10,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 10,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 10,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 10,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 10,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 10,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 11,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 11,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 11,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 11,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 11,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 11,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 11,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 11,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 12,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 13,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 13,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 13,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 13,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 13,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 13,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 13,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 13,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 13,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 14,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 14,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 14,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 14,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 14,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 14,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 15,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 16,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 16,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 16,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 16,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 16,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 16,
+      "alt": " \u0000",
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 16,
+      "alt": " \u0000",
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 16,
+      "alt": " \u0000",
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 16,
+      "alt": " \u0000",
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 16,
+      "alt": " \u0000",
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 16,
+      "alt": " \u0000",
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H3",
+      "page": 16,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 16,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 16,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 17,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 17,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H3",
+      "page": 17,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 17,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 17,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 17,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 17,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 17,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 17,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H4",
+      "page": 18,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 18,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 18,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 18,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 18,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 18,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 18,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 18,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H4",
+      "page": 18,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 18,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 18,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 19,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 19,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 19,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 19,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 19,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 19,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 19,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 19,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 19,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 20,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 20,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 20,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 20,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 20,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 20,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 20,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 20,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 20,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 21,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 21,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 21,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 21,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 21,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 21,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 21,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 21,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 21,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 21,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 21,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 22,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 22,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 22,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 22,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 22,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 22,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 22,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 23,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 23,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 23,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 23,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 23,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 23,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 24,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 24,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 24,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 24,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 24,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 24,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H3",
+      "page": 24,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 24,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 24,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 24,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 24,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 24,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 25,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 25,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 25,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 25,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 25,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 25,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 25,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 25,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 25,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 25,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 25,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 26,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 26,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 26,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 26,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 26,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/LI",
+      "page": 26,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/LI",
+      "page": 26,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/LI",
+      "page": 26,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/LI",
+      "page": 26,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/LI",
+      "page": 26,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/LI",
+      "page": 26,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/LI",
+      "page": 26,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 27,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 27,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 27,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 27,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 27,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 27,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 27,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 27,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 27,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/LI",
+      "page": 27,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/LI",
+      "page": 27,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/LI",
+      "page": 27,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/LI",
+      "page": 27,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/LI",
+      "page": 27,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/LI",
+      "page": 27,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/LI",
+      "page": 27,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 27,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 28,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/LI",
+      "page": 28,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 28,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 28,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 28,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 28,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 28,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 28,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 28,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 28,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H3",
+      "page": 29,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 29,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 29,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 29,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 29,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 29,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 30,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 30,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 30,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 30,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 30,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 30,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 30,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 30,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 30,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 30,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 30,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 30,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H3",
+      "page": 31,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 31,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 31,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 31,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 31,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 31,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 32,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 33,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 34,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 35,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 36,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 37,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 38,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 39,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 40,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 40,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 40,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 40,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 40,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 40,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 40,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 40,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 40,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 40,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 40,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 40,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 40,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 40,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 40,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 41,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 42,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 43,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 44,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 45,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 46,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 46,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 46,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 46,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 46,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 46,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 46,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 46,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 46,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H3",
+      "page": 47,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 47,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 47,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 47,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 47,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 47,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 47,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 47,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 48,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 49,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 49,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 49,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 49,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 49,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Figure",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Span",
+      "page": 49,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Span",
+      "page": 49,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 49,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 50,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 50,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 50,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 50,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 50,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 50,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 50,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 50,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 51,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H3",
+      "page": 51,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 51,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 51,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 51,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 51,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 52,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H3",
+      "page": 52,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 52,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 52,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 52,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/Sect",
+      "page": null,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/H2",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "ArrayObject"
+    },
+    {
+      "role": "/Figure",
+      "page": 53,
+      "alt": null,
+      "childKind": "IndirectObject"
+    },
+    {
+      "role": "/Span",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 53,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    },
+    {
+      "role": "/P",
+      "page": 54,
+      "alt": null,
+      "childKind": "NumberObject"
+    }
+  ],
+  "pagesWithStructParents": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54
+  ],
+  "pageText": {
+    "7": "The History of the Stars and Stripes \nT \nhe Stars and Stripes originated as a result of a resolution \nadopted by the Marine Committee of the Second \nContinental Congress at Philadelphia on June 14, 1777. \nThe resolution read: \n\u201cResolved, that the flag of the United States be thir teen \nstripes, alternate red and white; that the union be thir teen \nstars, white in a blue field representing a new constellation.\u201d \nThe resolution gave no instruction as to how many points the stars \nshould have, nor how the stars should be arranged on the blue union. \nConsequently, some flags had stars scattered on the blue field without \nany specific design, some arranged the stars in rows, and some in a circle. \nThe first Navy Stars and Stripes had the stars arranged in staggered forma\u00ad\ntion in alternate rows of threes and twos on a blue field. Other Stars and \nStripes flags had stars arranged in alternate rows of four , five and four . \nSome stars had six points while others had eight. \nStrong evidence indicates that Francis Hopkinson of New Jersey , a \nsigner of the Declaration of Independence, was responsible for the stars \nin the U.S. flag. At the time that the flag resolution was adopted, \nHopkinson was the Chairman of the Continental Navy Board\u2019 s Middle \nDepartment. Hopkinson also helped design other devices for the \nGovernment including the Great Seal of the United States. For his ser v\u00ad\nices, Hopkinson submitted a letter to the Continental Admiralty Board \nasking \u201cwhether a Quarter Cask of the public W ine will not be a proper \n& reasonable Reward for these Labours of Fancy and a suitable \nEncouragement to future Exertions of a like Nature.\u201d His request was \nturned down since the Congress regarded him as a public ser vant. \n1 ",
+    "15": "Historical Flags\nFORT MOULTRIE \nSouth Carolinians defending Fort \nMoultrie in Charleston Harbor in 1776 \nraised one of the earliest flags of American \nliberty. The blue corresponded to their uni\u00ad\nform, the silver crescent appeared as a badge \nworn on their caps. The cause for which \nthey fought\u2014liberty\u2014was emblazoned on \nthe crescent. \nRHODE ISLAND REGIMENT \nThe State flags of America found their \nearliest forms during the Revolutionary War. \nThe starry canton in the flag of the Rhode \nIsland Regiment symbolized national unity, \nbut the white field corresponded to the uni\u00ad\nform of the State troops. The anchor symbol \nand motto which completed the design had \nbeen used for more than a century. The orig\u00ad\ninal flag may be found in the State House in \nProvidence. \nBENNINGTON FLAG \nOriginally believed to have been carried \nduring the Revolution, this flag is now seen as \nhaving probably been made for the 50th \nanniversary of the Declaration of Independ\u00ad\nence in 1826. Its design is typical of the ex\u00ad\nuberant artistic expressions found in flags of \nthe 19th century. \nGREEN MOUNTAIN BOYS \nGeneral John Stark of New Hampshire \ncommanded a militia brigade known as the \n\u201cGreen Mountain Boys.\u201d T radition relates \nthat its green flag was flown at the Battle of \nBennington on August 16, 1777, As in many \nAmerican flags, the stars here were arranged \nin an arbitrar y fashion. Nevertheless they \nsignified the unity of the Thirteen Colonies \nin their struggle for independence. \nCOMMODORE PERRY'S FLAG \nDuring the W ar of 1812 Captain James \nLawrence of the Chesapeake encouraged his \nmen, as he lay dying, by exhorting \u201cDon't \nGive Up the Ship.\u201d Three months later at \nthe Battle of Lake Erie, Commodore Perr y \nemblazoned these words on a flag which \ncarried him to victor y. Similar flags and \nmottoes have inspired Americans through-\nout our two centuries of existence. \nCAVALRY GUIDON \nDuring the Civil War a special version of \nthe United States flag-with swallowtail and \nstars of gold instead of white\u2014was carried by \nthe cavalry. General Custer and others used \nthe flag in succeeding decades in the West. \n9 ",
+    "22": "(b) The flag should not be draped over the hood, top, sides, or back \nof a vehicle or of a railroad train or a boat. When the flag is displayed \non a motor car, the staff shall be fixed firmly to the chassis or \nclamped to the right fender. \n(c) No other flag or pennant should be placed above or , if on the \nsame level, to the right of the flag of the United States of America, \nexcept during chur ch services conducted by naval chaplains at sea, \nwhen the chur ch pennant may be flown above the flag during \nchurch services for the personnel of the Navy . No person shall dis\u00ad\nplay the flag of the United Nations or any other national or interna\u00ad\ntional flag equal, above, or in a position of superior prominence or \nhonor to, or in place of, the flag of the United States at any place \nwithin the United States or any T erritory or possession thereof: \nProvided, That nothing in this section shall make unlawful the con\u00ad\ntinuance of the practice heretofore followed of displaying the flag of \nthe United Nations in a position of superior prominence or honor , \nand other national flags in positions of equal prominence or honor , \nwith that of the flag of the United States at the headquarters of the \nUnited Nations. \n(d) The flag of the United States of America, when it is displayed with \nanother flag against a wall from crossed staffs, should be on the \nright, the flag's own right, and its staff should be in front of the staff \nof the other flag. \n(e) The flag of the United States of America should be at the center \nand at the highest point of the group when a number of flags of \nStates or localities or pennants of societies are grouped and displayed \nfrom staffs. \n(f) When flags of States, cities, or localities, or pennants of societies \nare flown on the same halyard with the flag of the United States, the \nlatter should always be at the peak. When the flags are flown from \nadjacent staffs, the flag of the United States should be hoisted first \nand lowered last. No such flag or pennant may be placed above the \nflag of the United States or to the United States flag's right. \n(g) When flags of two or more nations are displayed, they are to be \nflown from separate staffs of the same height. The flags should be of \napproximately equal size. International usage forbids the display of \nthe flag of one nation above that of another nation in time of peace. \n(h) When the flag of the United States is displayed from a staff pro\u00ad\njecting horizontally or at an angle from the window sill, balcony , or \nfront of a building, the union of the flag should be placed at the peak \nof the staff unless the flag is at half staff. When the flag is suspend\u00ad\ned over a sidewalk from a rope extending from a house to a pole at \n16 ",
+    "27": "Care of Your Flag\nT \nhe life of your flag depends on your care. Dirt can cut fab\u00ad\nrics, dull colors, and cause wear . Most outdoor flags can be \nwashed in mild detergent and thoroughly rinsed. Indoor \nand parade flags should be dr y-cleaned. Many dr y cleaners offer free \ncleaning of U.S. flags during the months of June and July. Damaged flags \ncan be repaired and utilized as long as the overall dimensions are not \nnoticeably altered. American Legion Posts and local governments often \nhave facilities to dispose of unser viceable flags. Store your flags in a well \nventilated area away from any harsh chemicals or cleaning compounds. \nIf your flag gets wet, never store it until it is completely dr y. Wet folds \ncause permanent creases. Dampness ruins fabric and causes mildew. Pole \ncare is also related to flag care. Rust and scale cause permanent stains and \nsome metallic oxides actually eat holes in fabric. \nSizes of Flags \nT \nhe size of the flag is determined by the exposed height of the \nflagpole from which it is flying. The only consideration is \nfor the flag to be in proper proportion to its pole. Flags \nwhich fly from angled poles on homes and those which are displayed on \nstanding poles in offices and other indoor displays are usually either 3\u2019 x \n5\u2019 or 4\u2019 x 6\u2019. Color guards usually carry flags measuring 4\u2019 x 6\u2019. Other rec\u00ad\nommended sizes are shown in the following table: \nFLAGPOLE HEIGHT (FT.) FLAG SIZE (FT.) \n20 . . . . . . . . . . . . . . . . . . . . . . . .4 x 6 \n25 . . . . . . . . . . . . . . . . . . . . . . . .5 x 8 \n40 . . . . . . . . . . . . . . . . . . . . . . .6 x 10 \n50 . . . . . . . . . . . . . . . . . . . . . . .8 x 12 \n60 . . . . . . . . . . . . . . . . . . . . . .10 x 15 \n70 . . . . . . . . . . . . . . . . . . . . . .12 x 18 \n90 . . . . . . . . . . . . . . . . . . . . . .15 x 25 \n125 . . . . . . . . . . . . . . . . . . . . .20 x 30 \n200 . . . . . . . . . . . . . . . . . . . . .30 x 40 \n250 . . . . . . . . . . . . . . . . . . . . .40 x 50 \n21 ",
+    "32": "Flags of States and Territories\nALABAMA \nEntered the Union in 1819 as the 22nd \nState; flag adopted in 1895. The diagonal \ncross and the square shape of the flag recall \nthe Battle Flag of the Confederacy , organ\u00ad\nized in Februar y of 1861 in Montgomer y, \nAlabama\u2019s capital. \nARIZONA \nEntered the Union in 1912 as the 48th \nstate; flag adopted in 1917. Red and yellow \nare the colors of Spain, while blue is for the \nUnited States and the copper star symbol\u00ad\nizes mineral resources. The rays suggest the \nsetting sun over the desert. \nALASKA \nEntered the Union in 1959 as the 49th \nState; flag adopted in 1927. Benny Benson, \na 13-year-old student, chose the North Star \nand the Big Dipper when he designed \nAlaska's flag in a territorial school contest. \nIts colors recall the Alaskan sky and its gold. \nARKANSAS \nEntered the Union in 1836 as the 25th \nState; flag adopted in 1913, modified in \n1923 and 1924. Arkansas\u2019 rank in the Union \nis indicated by the stars which border the \ndiamond, recalling that it is the only State \nwhere minerals are mined. The four stars in \nthe diamond refer to important aspects of \nArkansas history. \n26 ",
+    "33": "CALIFORNIA \nEntered the Union in 1850 as the 31st \nState; flag adopted in 1911, modified in \n1953. Americans, in what was then Mexican \nterritory, proclaimed the independence of \nCalifornia on June 14, 1846. The banner of \ntheir \u201cBear Flag Republic\u201d was later adopted \nby the State. \nCONNECTICUT \nRatified the Constitution in 1788 as the \nfifth State; flag adopted in 1897. The \ngrapevines in the coat of arms refer to the \nthree original colonies\u2014Connecticut, New \nHaven, and Saybrook. The motto \u201cHe Who \nBrought Us Over W ill Sustain Us,\u201d is based \non the 80th Psalm. \nCOLORADO \nEntered the Union in 1876 as the 38th \nState; flag adopted in 1911, modified in \n1964. Yellow and white refer to the mining \nof gold and silver , while these colors plus \nblue are found in the Rocky Mountain \ncolumbine, the State flower . Red is also for \nthe Spanish word for that color\u2014colorado. \nDELAWARE \nRatified the Constitution on December 1, \n1787, as the first State; flag adopted in 1913. \nRevolutionary War uniforms are honored in \nthe blue and buff colors while commer ce \n(the ship), and agriculture (wheat, corn, ox, \nfarmer) are featured in the coat of arms. \n27 ",
+    "41": "OREGON \nEntered the Union in 1859 as the 33rd \nState; flag adopted in 1925. The ox wagon of \npioneers combines with scenes of nature and \nsymbols of agriculture and shipping. The \nreverse of the flag is blue with a gold beaver. \nRHODE ISLAND \nRatified the Constitution in 1790 as the \n13th State; flag adopted in 1897. An anchor \ntraditional symbol of hope, was first adopt\u00ad\ned by Rhode Island as a symbol in 1647. \nRhode Island troops in the Revolutionar y \nWar carried flags of white with an anchor \nand thirteen stars. \nPENNSYLVANIA \nRatified the Constitution in 1787 as the \nsecond State; flag adopted in 1907. The \ncoat of arms incorporates a ship for com\u00ad\nmerce and a plow and wheat sheaves for \nagriculture. Draft horses, the American \neagle, and the State motto complete the \ndesign. \nSOUTH CAROLINA \nRatified the Constitution in 1788 as the \neighth State; flag adopted in 1861. T roops \ndefending harbor forts during the \nRevolutionary War displayed a blue flag with \na white crescent. The State tree, a palmetto, \nwas added to the flag when South Carolina \nproclaimed its independence in 1861. \n35 ",
+    "48": "Obverse\nThe American bald eagle is prominently featured supporting a shield\ncomposed of 13 red and white stripes (pales) representing the Thirteen\nOriginal States with a blue bar (chief) uniting the shield and representing\nCongress. The motto of the United States, \nE Pluribus Unum(meaning out of\nmany, one), refers to this union. The olive branch and 13 arrows grasped\nby the eagle allude to peace and war, powers solely vested in the Congress,\nand the constellation of stars symbolizes the new Nation taking its place\namong the sovereign powers.\nReverse\nThe pyramid signifies strength and duration: The eye over it and the\nmotto, Annuit Coeptis (meaning He, [God] has favored our undertakings),\nallude to the many interventions of Providence in favor of the American\ncause. The Roman numerals below are the date of the Declaration of\nIndependence. The words under it, Novus Ordo Seclorum (meaning a new\norder of the ages), signify the beginning of the new American era in 1776.\n42\n"
+  }
+}

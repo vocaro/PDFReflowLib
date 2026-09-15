@@ -1,0 +1,169 @@
+{
+  "case": "noaa-nca5-2023",
+  "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "pageNumbering": "One-based physical PDF pages",
+  "basis": "Numbered chapter bookmarks; endPage is inferred as the page before the next top-level bookmark. All chapter openings are not visually adjudicated.",
+  "chapterCount": 32,
+  "chapters": [
+    {
+      "title": "Chapter 1 Overview: Understanding Risks, Impacts, and Responses",
+      "startPage": 33,
+      "endPage": 79
+    },
+    {
+      "title": "Chapter 2 Climate Trends",
+      "startPage": 80,
+      "endPage": 138
+    },
+    {
+      "title": "Chapter 3 Earth Systems Processes",
+      "startPage": 139,
+      "endPage": 209
+    },
+    {
+      "title": "Chapter 4 Water",
+      "startPage": 210,
+      "endPage": 255
+    },
+    {
+      "title": "Chapter 5 Energy Supply, Delivery, and Demand",
+      "startPage": 256,
+      "endPage": 299
+    },
+    {
+      "title": "Chapter 6 Land Cover and Land-Use Change",
+      "startPage": 300,
+      "endPage": 341
+    },
+    {
+      "title": "Chapter 7 Forests",
+      "startPage": 342,
+      "endPage": 383
+    },
+    {
+      "title": "Chapter 8 Ecosystems, Ecosystem Services, and Biodiversity",
+      "startPage": 384,
+      "endPage": 443
+    },
+    {
+      "title": "Chapter 9 Coastal Effects",
+      "startPage": 444,
+      "endPage": 486
+    },
+    {
+      "title": "Chapter 10 Ocean Ecosystems and Marine Resources",
+      "startPage": 487,
+      "endPage": 525
+    },
+    {
+      "title": "Chapter 11 Agriculture, Food Systems, and Rural Communities",
+      "startPage": 526,
+      "endPage": 566
+    },
+    {
+      "title": "Chapter 12 Built Environment, Urban Systems, and Cities",
+      "startPage": 567,
+      "endPage": 608
+    },
+    {
+      "title": "Chapter 13 Transportation",
+      "startPage": 609,
+      "endPage": 641
+    },
+    {
+      "title": "Chapter 14 Air Quality",
+      "startPage": 642,
+      "endPage": 690
+    },
+    {
+      "title": "Chapter 15 Human Health",
+      "startPage": 691,
+      "endPage": 738
+    },
+    {
+      "title": "Chapter 16 Tribes and Indigenous Peoples",
+      "startPage": 739,
+      "endPage": 778
+    },
+    {
+      "title": "Chapter 17 Climate Effects on US International Interests",
+      "startPage": 779,
+      "endPage": 814
+    },
+    {
+      "title": "Chapter 18 Sector Interactions, Multiple Stressors, and Complex Systems",
+      "startPage": 815,
+      "endPage": 854
+    },
+    {
+      "title": "Chapter 19 Economics",
+      "startPage": 855,
+      "endPage": 892
+    },
+    {
+      "title": "Chapter 20 Social Systems and Justice",
+      "startPage": 893,
+      "endPage": 933
+    },
+    {
+      "title": "Chapter 21 Northeast",
+      "startPage": 934,
+      "endPage": 984
+    },
+    {
+      "title": "Chapter 22 Southeast",
+      "startPage": 985,
+      "endPage": 1049
+    },
+    {
+      "title": "Chapter 23 US Caribbean",
+      "startPage": 1050,
+      "endPage": 1106
+    },
+    {
+      "title": "Chapter 24 Midwest",
+      "startPage": 1107,
+      "endPage": 1164
+    },
+    {
+      "title": "Chapter 25 Northern Great Plains",
+      "startPage": 1165,
+      "endPage": 1222
+    },
+    {
+      "title": "Chapter 26 Southern Great Plains",
+      "startPage": 1223,
+      "endPage": 1284
+    },
+    {
+      "title": "Chapter 27 Northwest",
+      "startPage": 1285,
+      "endPage": 1353
+    },
+    {
+      "title": "Chapter 28 Southwest",
+      "startPage": 1354,
+      "endPage": 1419
+    },
+    {
+      "title": "Chapter 29 Alaska",
+      "startPage": 1420,
+      "endPage": 1484
+    },
+    {
+      "title": "Chapter 30 Hawaiʻi and US-Affiliated Pacific Islands",
+      "startPage": 1485,
+      "endPage": 1559
+    },
+    {
+      "title": "Chapter 31 Adaptation",
+      "startPage": 1560,
+      "endPage": 1618
+    },
+    {
+      "title": "Chapter 32 Mitigation",
+      "startPage": 1619,
+      "endPage": 1688
+    }
+  ]
+}

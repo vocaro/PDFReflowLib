@@ -168,9 +168,11 @@ interchange format; the supported public output remains EPUB 3. See
 (FAA-H-8083-25C), Tyler Wallace's 489-page Beginning and Intermediate Algebra, and the
 920-page scanned Warren Commission report, the 585-page digital 9/11 Commission report, and
 135-page The Fed Explained, plus the 10-page illustrated Dietary Guidelines for Americans
-(2025–2030), by exact byte identity. Fetch originals with
+(2025–2030), and the 1,834-page Fifth National Climate Assessment, by exact byte identity.
+Fetch originals with
 `python3 Tools/fetch_corpus.py --all`; verified copies live in gitignored `Corpus/cache/`.
-Tests do not download documents.
+Tests do not download documents. Some publisher endpoints require a manually supplied cache
+copy; the corpus guide records current fetch limitations.
 [Corpus guide](doc/corpus.md) lists their coverage, attribution and review commands. The manifest lists review points and known reading-order/raster defects, so a
 successful conversion is not mistaken for a fidelity qualification.
 

@@ -40,3 +40,9 @@ physical-device memory/performance remain unqualified.
   Bounded shading is supported; the ten-page DGA case now reflows text on nine pages. Qualify
   section-local bullet order and remove object placeholders exposed by that reflow. See the
   [shading measurement](../measurements/shading-support/record.md).
+
+- The NOAA Fifth National Climate Assessment adds a 1,834-page, 219.9 MB stress workload.
+  It reaches the [image-output ceiling](https://github.com/vocaro/PDFReflowLib/issues/5) after
+  reconstruction page 598. Establish full completion and memory budgets before qualification;
+  use its 32 chapter bookmarks to investigate [chapter-aware splitting and bounded processing](https://github.com/vocaro/PDFReflowLib/issues/15).
+  Evidence: [NOAA baseline](../measurements/noaa-nca5-2023/record.md).

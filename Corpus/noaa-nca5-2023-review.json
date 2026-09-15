@@ -1,0 +1,67 @@
+{
+  "case": "noaa-nca5-2023",
+  "pageNumbering": "One-based physical PDF pages",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 1,
+      "target": "Cover and landscape geometry",
+      "acceptance": "Preserve source aspect ratio and title."
+    },
+    {
+      "page": 8,
+      "target": "Contents and bookmarks",
+      "acceptance": "Compare visible chapter names with destinations."
+    },
+    {
+      "page": 33,
+      "target": "Chapter 1 opening",
+      "acceptance": "Begin logical chapter navigation at this boundary."
+    },
+    {
+      "page": 48,
+      "target": "Figure 1.5 beside prose and a full-width callout",
+      "acceptance": "Preserve legend, axes, caption and paragraph order."
+    },
+    {
+      "page": 79,
+      "target": "End of landscape overview",
+      "acceptance": "Do not lose the final overview content at a chapter boundary."
+    },
+    {
+      "page": 80,
+      "target": "Chapter 2 and portrait transition",
+      "acceptance": "Separate chapters without losing page anchors or changing aspect ratio."
+    },
+    {
+      "page": 84,
+      "target": "Chapter 2 key message",
+      "acceptance": "Keep key-message heading and body together."
+    },
+    {
+      "page": 95,
+      "target": "Chapter 2 extreme events section",
+      "acceptance": "Retain charts and their surrounding text."
+    },
+    {
+      "page": 139,
+      "target": "Chapter 3 opening",
+      "acceptance": "Validate another chapter boundary."
+    },
+    {
+      "page": 900,
+      "target": "Middle-book workload sample",
+      "acceptance": "Measure graphics and text handling beyond the failed reconstruction prefix."
+    },
+    {
+      "page": 1700,
+      "target": "Late focus-section sample",
+      "acceptance": "Distinguish unnumbered focus sections from numbered chapters."
+    },
+    {
+      "page": 1834,
+      "target": "Back cover and completion",
+      "acceptance": "Finish the entire source before reporting successful completion."
+    }
+  ]
+}

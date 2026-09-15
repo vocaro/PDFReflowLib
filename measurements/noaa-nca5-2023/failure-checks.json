@@ -1,0 +1,13 @@
+{
+  "scope": "Failure-path observations, not a successful conversion/progress gate",
+  "progressEvents": 2433,
+  "fractionsMonotonic": true,
+  "fractionsWithinBounds": true,
+  "extractedPages": 1834,
+  "lastCompletedReconstructionPage": 598,
+  "lastFractionPercent": 65,
+  "completionEventPresent": false,
+  "epubPublished": false,
+  "partialWorkspaceRetained": false,
+  "terminalError": "Conversion resource limit: image output bytes"
+}

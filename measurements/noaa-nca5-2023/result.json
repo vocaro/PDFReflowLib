@@ -1,0 +1,75 @@
+{
+  "case": {
+    "id": "noaa-nca5-2023",
+    "title": "Fifth National Climate Assessment",
+    "author": "U.S. Global Change Research Program",
+    "publicationYear": 2023,
+    "url": "https://repository.library.noaa.gov/view/noaa/61592",
+    "publisherPageURL": "https://repository.library.noaa.gov/view/noaa/61592",
+    "downloadURL": "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf",
+    "filename": "noaa_61592_DS1.pdf",
+    "bytes": 219876258,
+    "sha256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+    "publisherSHA512": "6a9a7e03b55802e89025dc2b38de1deac4af8ee4407821b5756fe8ca093db618cc63e919a8411ac62aa96eed93d1770b57f60af8d66e46d8092460daf7f96a4c",
+    "pages": 1834,
+    "role": "development",
+    "identity": {
+      "suppliedBy": "owner"
+    },
+    "provenance": "Owner-supplied PDF, unchanged. NOAA repository record identifies the report, links the direct download and supplies a SHA-512 checksum matching these bytes.",
+    "license": "CC0-1.0",
+    "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "rightsBasis": "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+    "rightsClearance": {
+      "status": "publisher-declared",
+      "scope": "NOAA repository declares CC0 Public Domain; attribution retained. No new owner confirmation is asserted."
+    },
+    "coverage": [
+      "1834-page scale and memory stress",
+      "219876258-byte compressed input",
+      "tagged InDesign report",
+      "PDF chapter bookmarks",
+      "mixed page geometries",
+      "uneven figure density",
+      "charts and maps",
+      "chapter openings and references",
+      "AES-256 permissions encryption with no opening password"
+    ],
+    "reviewPages": [
+      1,
+      8,
+      33,
+      48,
+      79,
+      80,
+      84,
+      95,
+      139,
+      900,
+      1700,
+      1834
+    ],
+    "reviewStatus": "Scale and chapter-boundary targets registered; full-book fidelity unqualified.",
+    "knownFidelityIssues": []
+  },
+  "converterSHA256": "9fed7af9cb6872ef13a596f1df9512fb9236e66a67e43db96e3637a9eeb4a0e8",
+  "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "options": "library defaults",
+  "qualifiedForFidelity": false,
+  "conversionExitCode": 1,
+  "sampledPeakPhysicalFootprintBytes": 359450040,
+  "conversionSeconds": 64.78312837499834,
+  "converterPeakRSSBytes": 918814720,
+  "converterCPUSeconds": 68.799609,
+  "measurementScope": "One process run; RSS excludes separate Apple services. Timing excludes validation. Not a latency distribution or physical mobile-device measurement.",
+  "progressCheck": {
+    "passed": false,
+    "events": 2433,
+    "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+  },
+  "memoryGate": {
+    "status": "not configured"
+  },
+  "runPassed": false
+}

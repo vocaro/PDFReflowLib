@@ -1,8 +1,8 @@
 # Real-document development corpus
 
 `Corpus/manifest.json` pins every external PDF by byte count and SHA-256. PDFs and generated
-EPUBs remain local; routine tests download nothing. The owner confirms commercial use and
-redistribution for all registered sources; retain the attribution and license recorded in the manifest. The original six synthetic fixtures remain
+EPUBs remain local; routine tests download nothing. Rights declarations, owner confirmations and attribution are recorded per source in the
+manifest. Retain the applicable attribution and license. The original six synthetic fixtures remain
 in `Tests/PDFReflowLibTests/Fixtures` and run without any external documents.
 
 Fetch all registered originals explicitly with Python 3.11+:
@@ -28,6 +28,7 @@ work offline. Tests and conversion never fetch sources automatically.
 | `gpo-911-2004` | 585 | Untagged digital text, alternating headers, tracked lettering, endnotes | 256 MiB |
 | `fed-explained-2021` | 135 | Tagged text, recurring tables, organization charts and flow diagrams | 768 MiB |
 | `dga-2025-2030` | 10 | Illustrated section bands, gradients, bullet columns and callouts | 192 MiB |
+| `noaa-nca5-2023` | 1,834 | Large tagged report, mixed orientations, 32 chapter starts, uneven graphics | Unset: default conversion fails |
 
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
@@ -200,3 +201,31 @@ records nine pages with reflowed text, with column-order and placeholder defects
 and bullet roles map to paragraphs, so tag names alone are not a reliable semantic reference.
 [Graphics fallback #13](https://github.com/vocaro/PDFReflowLib/issues/13) and
 [native text/label defects #14](https://github.com/vocaro/PDFReflowLib/issues/14) track the gaps.
+
+
+## Fifth National Climate Assessment
+
+The NOAA-hosted full report is 219,876,258 bytes and 1,834 pages, close to the converter's
+256 MiB / 2,000-page input limits. Its [chapter reference](../Corpus/noaa-nca5-2023-chapters.json)
+records 32 numbered chapters from PDF bookmarks. [Review points](../Corpus/noaa-nca5-2023-review.json)
+span chapter boundaries, charts, the landscape/portrait transition and late-book pages.
+
+```sh
+python3 Tools/fetch_corpus.py --case noaa-nca5-2023
+swift build -c release --scratch-path .build/corpus-cli
+python3 Tools/evaluate-real-document.py --case noaa-nca5-2023 \
+  --pdf Corpus/cache/noaa_61592_DS1.pdf --converter .build/corpus-cli/release/pdf-reflow \
+  --output /tmp/noaa-baseline --timeout 900 --epubcheck /opt/homebrew/bin/epubcheck
+```
+
+The publisher endpoint currently returns HTTP 403 to automated downloads. Place the exact
+supplied/downloaded original in the indicated cache; the same fetch command verifies it offline.
+A failed fresh fetch returns nonzero and does not create a substitute. The original matches
+NOAA's published SHA-512 as well as the manifest's SHA-256. NOAA declares CC0/Public Domain.
+
+The [full-run baseline](../measurements/noaa-nca5-2023/record.md) fails the image-output ceiling
+after reconstruction page 598. It is retained as a regression workload, not a passing EPUB or
+memory qualification. [Output-budget issue #5](https://github.com/vocaro/PDFReflowLib/issues/5)
+and [chapter-aware splitting issue #15](https://github.com/vocaro/PDFReflowLib/issues/15) track
+separate gaps. The current writer's approximate 60,000-byte file splitting does not follow PDF
+chapters or bound the memory of whole-document reconstruction.

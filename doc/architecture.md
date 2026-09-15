@@ -98,8 +98,13 @@ belong in reconstruction; new output syntax belongs in writers.
 
 
 Development corpus acquisition is separate from the Swift runtime. A standard-library Python
-fetcher reads pinned URLs, byte counts and SHA-256 identities from `Corpus/manifest.json` and
-atomically publishes verified PDFs into ignored `Corpus/cache/`. Cache hits are reverified;
+fetcher reads pinned URLs, byte counts and SHA-256 identities from `corpus/manifest.json` and
+atomically publishes verified PDFs into ignored `corpus/cache/`. Cache hits are reverified;
 failed refreshes leave existing copies intact. Conversion and tests remain offline unless a
 developer explicitly runs the fetcher. Corpus licenses and owner clearance are separate from
 the library's MIT license.
+
+Repository source and test directories follow SwiftPM conventions: `Sources/PDFReflowLib/`,
+`Sources/PDFReflowLibCLI/` and `Tests/PDFReflowLibTests/`. Supporting directories and the
+`fixtures/` test-resource directory use lowercase names. Public module and product names remain
+unchanged. Recorded measurement outputs retain historical paths and hashes from their measured builds.

@@ -31,7 +31,7 @@ SOFTWARE.
 Source: https://github.com/johnfactotum/foliate-js/tree/78914aef4466eb960965702401634c2cb348e9b1
 
 Used by the standalone test viewer only; not linked into the PDFReflowLib Swift library.
-The pinned files and hashes are recorded in `Tools/epub-reader/assets.json`.
+The pinned files and hashes are recorded in `tools/epub-reader/assets.json`.
 
 MIT License
 

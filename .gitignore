@@ -2,6 +2,6 @@
 .swiftpm/
 __pycache__/
 *.pyc
-Corpus/*.pdf
+corpus/*.pdf
 .DS_Store
-Corpus/cache/
+corpus/cache/

@@ -1,19 +1,19 @@
 # Real-document development corpus
 
-`Corpus/manifest.json` pins every external PDF by byte count and SHA-256. PDFs and generated
+`corpus/manifest.json` pins every external PDF by byte count and SHA-256. PDFs and generated
 EPUBs remain local; routine tests download nothing. Rights declarations, owner confirmations and attribution are recorded per source in the
 manifest. Retain the applicable attribution and license. The original six synthetic fixtures remain
-in `Tests/PDFReflowLibTests/Fixtures` and run without any external documents.
+in `Tests/PDFReflowLibTests/fixtures` and run without any external documents.
 
 Fetch all registered originals explicitly with Python 3.11+:
 
 ```sh
-python3 Tools/fetch_corpus.py --all
+python3 tools/fetch_corpus.py --all
 # Or select one document:
-python3 Tools/fetch_corpus.py --case wallace-algebra-2010
+python3 tools/fetch_corpus.py --case wallace-algebra-2010
 ```
 
-Downloads live in gitignored `Corpus/cache/`. The fetcher checks byte count and SHA-256 on
+Downloads live in gitignored `corpus/cache/`. The fetcher checks byte count and SHA-256 on
 both downloads and cache hits. It publishes downloads atomically; a failed refresh preserves
 the existing copy. `--refresh` verifies the remote copy again, and `--cache-dir` selects another
 location. A changed publisher file fails verification instead of silently replacing a fixture.
@@ -52,10 +52,10 @@ repository root, with full Xcode selected and Python 3.11+ available:
 
 ```sh
 swift build -c release
-python3 Tools/evaluate-real-document.py --case wallace-algebra-2010 \
-  --pdf Corpus/cache/Beginning_and_Intermediate_Algebra.pdf --converter .build/release/pdf-reflow \
+python3 tools/evaluate-real-document.py --case wallace-algebra-2010 \
+  --pdf corpus/cache/Beginning_and_Intermediate_Algebra.pdf --converter .build/release/pdf-reflow \
   --output /tmp/wallace-baseline --epubcheck /opt/homebrew/bin/epubcheck
-scripts/compare-pdf-reflow.sh --pdf Corpus/cache/Beginning_and_Intermediate_Algebra.pdf \
+scripts/compare-pdf-reflow.sh --pdf corpus/cache/Beginning_and_Intermediate_Algebra.pdf \
   --pages 2,12,16,119,266,293,343,347,438,479,483 --output /tmp/wallace-review --serve
 ```
 
@@ -63,7 +63,7 @@ Output directories must be new. `--epubcheck` is optional. The memory runner enf
 case's ceiling automatically. The root `check-all.sh` currently selects the FAA workload for
 its optional real-document gate; run the command above explicitly for algebra.
 
-[Review points](../Corpus/wallace-algebra-2010-review.json) list physical PDF pages and
+[Review points](../corpus/wallace-algebra-2010-review.json) list physical PDF pages and
 acceptance questions. Four spot checks show displayed mathematics retained in images, but page
 343's inline squared exponent loses superscript semantics. The book is not fidelity-qualified.
 [Baseline and visual evidence](../measurements/wallace-algebra-2010/record.md) separate valid
@@ -82,8 +82,8 @@ under MIT; the owner confirms commercial use and redistribution.
 
 ```sh
 swift build -c release --scratch-path .build/corpus-cli
-python3 Tools/evaluate-real-document.py --case gpo-warren-1964 \
-  --pdf Corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf --converter .build/corpus-cli/release/pdf-reflow \
+python3 tools/evaluate-real-document.py --case gpo-warren-1964 \
+  --pdf corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/warren-baseline --epubcheck /opt/homebrew/bin/epubcheck
 ```
 
@@ -96,7 +96,7 @@ A bounded nine-page excerpt permits visual diagnosis while full conversion is bl
 
 ```sh
 python3 measurements/gpo-warren-1964/prepare-excerpt.py \
-  --pdf Corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf --output /tmp/warren-excerpt.pdf
+  --pdf corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf --output /tmp/warren-excerpt.pdf
 scripts/compare-pdf-reflow.sh --pdf /tmp/warren-excerpt.pdf \
   --pages all --output /tmp/warren-review --serve
 ```
@@ -107,7 +107,7 @@ All output paths must be new. The excerpt's page numbers 1-9 map to original phy
 qualify the full document. Select **Positioned HTML** for Poppler: simple image URLs currently
 break in the local comparison server. The original-page pane remains the visual reference.
 
-[Review points](../Corpus/gpo-warren-1964-review.json) and
+[Review points](../corpus/gpo-warren-1964-review.json) and
 [measurement evidence](../measurements/gpo-warren-1964/record.md) record confirmed OCR,
 preformatted-text, column-order and placeholder-count defects. The excerpt passes EPUBCheck
 but is not fidelity-qualified. This case exercises trust in an existing OCR layer as well as
@@ -132,10 +132,10 @@ the library MIT license does not relicense the document.
 
 ```sh
 swift build -c release --scratch-path .build/corpus-cli
-python3 Tools/evaluate-real-document.py --case gpo-911-2004 \
-  --pdf Corpus/cache/GPO-911REPORT.pdf --converter .build/corpus-cli/release/pdf-reflow \
+python3 tools/evaluate-real-document.py --case gpo-911-2004 \
+  --pdf corpus/cache/GPO-911REPORT.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/911-baseline --epubcheck /opt/homebrew/bin/epubcheck
-scripts/compare-pdf-reflow.sh --pdf Corpus/cache/GPO-911REPORT.pdf \
+scripts/compare-pdf-reflow.sh --pdf corpus/cache/GPO-911REPORT.pdf \
   --pages 15,19,20,21,22,65,66,471,472,584 --output /tmp/911-review --serve
 ```
 
@@ -143,7 +143,7 @@ Output directories must be new. The full run passes the 256 MiB Mac RSS ceiling 
 but header and note fidelity remain unqualified. The PDF permits copying/printing despite
 permissions encryption and opens without a password prompt; the source is not rewritten.
 Its metadata title is a print-job filename; set `ConversionOptions.title` for a reader-facing
-title. [Review points](../Corpus/gpo-911-2004-review.json) and
+title. [Review points](../corpus/gpo-911-2004-review.json) and
 [baseline evidence](../measurements/gpo-911-2004/record.md) distinguish successful word-spacing
 examples from retained headers, false notes headings and flattened note markers.
 
@@ -165,16 +165,16 @@ Current reconstruction uses spatial extraction rather than those semantic tags. 
 regions remain raster images with warnings; diagrams are not rebuilt as editable vector graphs.
 
 ```sh
-python3 Tools/fetch_corpus.py --case fed-explained-2021
+python3 tools/fetch_corpus.py --case fed-explained-2021
 swift build -c release --scratch-path .build/corpus-cli
-python3 Tools/evaluate-real-document.py --case fed-explained-2021 \
-  --pdf Corpus/cache/the-fed-explained.pdf --converter .build/corpus-cli/release/pdf-reflow \
+python3 tools/evaluate-real-document.py --case fed-explained-2021 \
+  --pdf corpus/cache/the-fed-explained.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/fed-baseline --epubcheck /opt/homebrew/bin/epubcheck
-scripts/compare-pdf-reflow.sh --pdf Corpus/cache/the-fed-explained.pdf \
+scripts/compare-pdf-reflow.sh --pdf corpus/cache/the-fed-explained.pdf \
   --pages 9,17,20,45,46,51,82,83,120,121 --output /tmp/fed-review --serve
 ```
 
-[Review points](../Corpus/fed-explained-2021-review.json) cover tables, organization charts,
+[Review points](../corpus/fed-explained-2021-review.json) cover tables, organization charts,
 flow arrows and adjacent prose. The [baseline](../measurements/fed-explained-2021/record.md)
 passes EPUB validation and the Mac memory gate. Spot checks expose undersized whole-page
 fallback and ordinary prose rendered as headings. Full-book fidelity remains unqualified.
@@ -187,16 +187,16 @@ columns and full-width callouts. The supplied source is pinned separately from a
 accessibility revision. Its direct CDN download matches the original bytes.
 
 ```sh
-python3 Tools/fetch_corpus.py --case dga-2025-2030
+python3 tools/fetch_corpus.py --case dga-2025-2030
 swift build -c release --scratch-path .build/corpus-cli
-python3 Tools/evaluate-real-document.py --case dga-2025-2030 \
-  --pdf Corpus/cache/DGA.pdf --converter .build/corpus-cli/release/pdf-reflow \
+python3 tools/evaluate-real-document.py --case dga-2025-2030 \
+  --pdf corpus/cache/DGA.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/dga-baseline --epubcheck /opt/homebrew/bin/epubcheck
-scripts/compare-pdf-reflow.sh --pdf Corpus/cache/DGA.pdf \
+scripts/compare-pdf-reflow.sh --pdf corpus/cache/DGA.pdf \
   --pages all --output /tmp/dga-review --serve
 ```
 
-All ten pages are small enough to prepare together. [Review points](../Corpus/dga-2025-2030-review.json)
+All ten pages are small enough to prepare together. [Review points](../corpus/dga-2025-2030-review.json)
 and the [baseline](../measurements/dga-2025-2030/record.md) distinguish valid EPUB packaging from
 usable reflow. The [shading-support measurement](../measurements/shading-support/record.md)
 records nine pages with reflowed text, with column-order and placeholder defects still open. The source has tags, but custom heading
@@ -208,15 +208,15 @@ and bullet roles map to paragraphs, so tag names alone are not a reliable semant
 ## Fifth National Climate Assessment
 
 The NOAA-hosted full report is 219,876,258 bytes and 1,834 pages, close to the converter's
-256 MiB / 2,000-page input limits. Its [chapter reference](../Corpus/noaa-nca5-2023-chapters.json)
-records 32 numbered chapters from PDF bookmarks. [Review points](../Corpus/noaa-nca5-2023-review.json)
+256 MiB / 2,000-page input limits. Its [chapter reference](../corpus/noaa-nca5-2023-chapters.json)
+records 32 numbered chapters from PDF bookmarks. [Review points](../corpus/noaa-nca5-2023-review.json)
 span chapter boundaries, charts, the landscape/portrait transition and late-book pages.
 
 ```sh
-python3 Tools/fetch_corpus.py --case noaa-nca5-2023
+python3 tools/fetch_corpus.py --case noaa-nca5-2023
 swift build -c release --scratch-path .build/corpus-cli
-python3 Tools/evaluate-real-document.py --case noaa-nca5-2023 \
-  --pdf Corpus/cache/noaa_61592_DS1.pdf --converter .build/corpus-cli/release/pdf-reflow \
+python3 tools/evaluate-real-document.py --case noaa-nca5-2023 \
+  --pdf corpus/cache/noaa_61592_DS1.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/noaa-baseline --timeout 900 --epubcheck /opt/homebrew/bin/epubcheck
 ```
 
@@ -241,17 +241,17 @@ figure alternate text. The converter does not currently consume the tree. Correc
 alone cannot prove tag use, and this source is not a fully validated semantic reference.
 
 ```sh
-python3 Tools/fetch_corpus.py --case gpo-our-flag-2003
+python3 tools/fetch_corpus.py --case gpo-our-flag-2003
 swift build -c release --scratch-path .build/corpus-cli
-python3 Tools/evaluate-real-document.py --case gpo-our-flag-2003 \
-  --pdf Corpus/cache/CDOC-108hdoc97.pdf --converter .build/corpus-cli/release/pdf-reflow \
+python3 tools/evaluate-real-document.py --case gpo-our-flag-2003 \
+  --pdf corpus/cache/CDOC-108hdoc97.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/our-flag-baseline --epubcheck /opt/homebrew/bin/epubcheck
-scripts/compare-pdf-reflow.sh --pdf Corpus/cache/CDOC-108hdoc97.pdf \
+scripts/compare-pdf-reflow.sh --pdf corpus/cache/CDOC-108hdoc97.pdf \
   --pages 7,15,22,27,32,33,41,48 --output /tmp/our-flag-review --serve
 ```
 
 The [baseline](../measurements/gpo-our-flag-2003/record.md) passes full conversion, EPUBCheck,
-progress and the 192 MiB Mac RSS gate. [Review references](../Corpus/gpo-our-flag-2003-review.json)
+progress and the 192 MiB Mac RSS gate. [Review references](../corpus/gpo-our-flag-2003-review.json)
 include all ten table rows and meaning-bearing flag groups. Table flattening, drop-cap ordering
 and interleaved state descriptions remain failures. [Table preservation #16](https://github.com/vocaro/PDFReflowLib/issues/16)
 and [validated tag consumption #17](https://github.com/vocaro/PDFReflowLib/issues/17) track distinct
@@ -263,21 +263,21 @@ requirements; existing issues #2 and #12 contain the column/heading reproduction
 The CDC graphic novel tests dialogue embedded in artwork, damaged existing extraction and
 panel reading order. The publisher declares Public Domain and supplies a SHA-512 matching the
 owner's PDF. The automated endpoint returns HTTP 403; manually place the original in
-`Corpus/cache/cdc_6023_DS1.pdf`. The fetch command verifies that cached identity offline.
+`corpus/cache/cdc_6023_DS1.pdf`. The fetch command verifies that cached identity offline.
 
 ```sh
-python3 Tools/fetch_corpus.py --case cdc-zombie-pandemic-2011
+python3 tools/fetch_corpus.py --case cdc-zombie-pandemic-2011
 swift build -c release --scratch-path .build/corpus-cli
-python3 Tools/evaluate-real-document.py --case cdc-zombie-pandemic-2011 \
-  --pdf Corpus/cache/cdc_6023_DS1.pdf --converter .build/corpus-cli/release/pdf-reflow \
+python3 tools/evaluate-real-document.py --case cdc-zombie-pandemic-2011 \
+  --pdf corpus/cache/cdc_6023_DS1.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/cdc-comic-baseline --epubcheck /opt/homebrew/bin/epubcheck
-scripts/compare-pdf-reflow.sh --pdf Corpus/cache/cdc_6023_DS1.pdf \
+scripts/compare-pdf-reflow.sh --pdf corpus/cache/cdc_6023_DS1.pdf \
   --pages 3,5,13,16,21,37,39 --output /tmp/cdc-comic-review --serve
 ```
 
 The [baseline](../measurements/cdc-zombie-pandemic-2011/record.md) passes EPUB validity,
 progress and the 512 MiB Mac RSS gate, retaining 42 page images. The
-[review targets](../Corpus/cdc-zombie-pandemic-2011-review.json) expose damaged existing dialogue
+[review targets](../corpus/cdc-zombie-pandemic-2011-review.json) expose damaged existing dialogue
 on page 5 and fresh-OCR panel-order failure on page 13. [Suspect text #7](https://github.com/vocaro/PDFReflowLib/issues/7)
 and [comic grouping #18](https://github.com/vocaro/PDFReflowLib/issues/18) track those gaps.
 The measured 3,341 extracted whitespace tokens include OCR noise; they are not dialogue coverage.

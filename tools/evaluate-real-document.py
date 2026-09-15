@@ -60,7 +60,7 @@ def main():
     parser.add_argument("--timeout", type=float, default=1800)
     parser.add_argument("--max-peak-rss-mib", type=float, help="override the case memory ceiling; fails after conversion when exceeded")
     args = parser.parse_args()
-    cases = json.loads((ROOT / "Corpus/manifest.json").read_text())["documents"]
+    cases = json.loads((ROOT / "corpus/manifest.json").read_text())["documents"]
     case = next((item for item in cases if item["id"] == args.case), None)
     if case is None:
         parser.error("unknown corpus case")
@@ -144,7 +144,7 @@ def main():
             if report["pageCount"] != case["pages"]:
                 raise ValueError("source page count mismatch")
             receipt["outputBytes"] = output.stat().st_size
-            spec = importlib.util.spec_from_file_location("epub_contracts", ROOT / "Tools/check-epubs.py")
+            spec = importlib.util.spec_from_file_location("epub_contracts", ROOT / "tools/check-epubs.py")
             module = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(module)
             text = module.check(output)

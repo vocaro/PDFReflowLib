@@ -15,6 +15,6 @@ let package = Package(
         .target(name: "PDFReflowLib", dependencies: ["ZIPFoundation"], path: "Sources/PDFReflowLib"),
         .executableTarget(name: "PDFReflowLibCLI", dependencies: ["PDFReflowLib"]),
         .testTarget(name: "PDFReflowLibTests", dependencies: ["PDFReflowLib", "ZIPFoundation"],
-                    resources: [.copy("Fixtures")]),
+                    resources: [.copy("fixtures")]),
     ]
 )

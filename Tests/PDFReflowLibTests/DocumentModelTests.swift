@@ -156,7 +156,7 @@ private func line(_ text: String, x: Double, y: Double, width: Double = 200,
 @Test func realPDFCanBeReconstructedWithoutAnEPUBWriter() async throws {
     let directory = FileManager.default.temporaryDirectory.appendingPathComponent("pdfreflow-pipeline-" + UUID().uuidString)
     defer { try? FileManager.default.removeItem(at: directory) }
-    let source = Bundle.module.resourceURL!.appendingPathComponent("Fixtures/prose.pdf")
+    let source = Bundle.module.resourceURL!.appendingPathComponent("fixtures/prose.pdf")
     let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: .init(), workspace: directory,
                                                         progress: { _ in })
     #expect(result.pageCount == 3)

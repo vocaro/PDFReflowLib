@@ -58,7 +58,7 @@
         "scope": "Commercial use and redistribution of the development corpus; retain applicable license attribution."
       },
       "downloadURL": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf",
-      "downloadVerification": "A fresh download through Tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
+      "downloadVerification": "A fresh download through tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
     },
     {
       "id": "wallace-algebra-2010",
@@ -123,7 +123,7 @@
       },
       "downloadURL": "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf",
       "downloadProvenance": "Direct MyOpenMath-hosted PDF URL supplied by the owner; downloaded bytes must match the owner-supplied source identity.",
-      "downloadVerification": "A fresh download through Tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
+      "downloadVerification": "A fresh download through tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
     },
     {
       "id": "gpo-warren-1964",
@@ -207,7 +207,7 @@
         "scope": "Commercial use and redistribution of the development corpus; retain applicable license attribution."
       },
       "downloadURL": "https://www.govinfo.gov/content/pkg/GPO-WARRENCOMMISSIONREPORT/pdf/GPO-WARRENCOMMISSIONREPORT.pdf",
-      "downloadVerification": "A fresh download through Tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
+      "downloadVerification": "A fresh download through tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
     },
     {
       "id": "gpo-911-2004",
@@ -304,7 +304,7 @@
         "scope": "Commercial use and redistribution of the development corpus; retain applicable license attribution."
       },
       "downloadURL": "https://www.govinfo.gov/content/pkg/GPO-911REPORT/pdf/GPO-911REPORT.pdf",
-      "downloadVerification": "A fresh download through Tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
+      "downloadVerification": "A fresh download through tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
     },
     {
       "id": "fed-explained-2021",
@@ -368,7 +368,7 @@
         "scope": "Commercial use and redistribution of the development corpus; retain applicable license attribution."
       },
       "downloadURL": "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf",
-      "downloadVerification": "A fresh download through Tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
+      "downloadVerification": "A fresh download through tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
     },
     {
       "id": "dga-2025-2030",
@@ -486,7 +486,7 @@
       "reviewStatus": "Full default conversion fails image-output ceiling after last completed reconstruction page 598/1834. Source chapter and visual references retained; full EPUB, full-book memory and fidelity remain unqualified.",
       "knownFidelityIssues": [],
       "downloadStatus": "Automated fetch returns HTTP 403; supplied cache matches pinned identity and publisher SHA-512. See measurements/noaa-nca5-2023/download-status.json.",
-      "chapterReference": "Corpus/noaa-nca5-2023-chapters.json",
+      "chapterReference": "corpus/noaa-nca5-2023-chapters.json",
       "baselineStatus": "Failed full-run resource baseline; no configured memory ceiling until full completion.",
       "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/5",
       "chapterTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/15"
@@ -606,7 +606,7 @@
         "maxPeakRSSMiB": 512,
         "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
       },
-      "downloadVerification": "Publisher SHA-512 matches owner-supplied original; automatic fresh fetch returns HTTP 403. Seed the ignored cache manually; Tools/fetch_corpus.py verifies exact bytes offline. See measurements/cdc-zombie-pandemic-2011/download-status.json.",
+      "downloadVerification": "Publisher SHA-512 matches owner-supplied original; automatic fresh fetch returns HTTP 403. Seed the ignored cache manually; tools/fetch_corpus.py verifies exact bytes offline. See measurements/cdc-zombie-pandemic-2011/download-status.json.",
       "knownFidelityIssues": [
         {
           "page": 5,

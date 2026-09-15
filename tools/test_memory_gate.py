@@ -27,14 +27,14 @@ class MemoryGateTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.root = Path(self.temp.name)
-        (self.root / "Corpus").mkdir()
-        (self.root / "Tools").mkdir()
-        shutil.copyfile(TOOLS / "check-epubs.py", self.root / "Tools/check-epubs.py")
+        (self.root / "corpus").mkdir()
+        (self.root / "tools").mkdir()
+        shutil.copyfile(TOOLS / "check-epubs.py", self.root / "tools/check-epubs.py")
         self.pdf = self.root / "control.pdf"
         self.pdf.write_bytes(b"instrumentation control input")
         case = {"id": "control", "bytes": self.pdf.stat().st_size,
                 "sha256": hashlib.sha256(self.pdf.read_bytes()).hexdigest(), "pages": 1}
-        (self.root / "Corpus/manifest.json").write_text(json.dumps({"documents": [case]}))
+        (self.root / "corpus/manifest.json").write_text(json.dumps({"documents": [case]}))
         self.book = self.root / "control.epub"
         with zipfile.ZipFile(self.book, "w") as archive:
             archive.writestr("mimetype", "application/epub+zip")
@@ -93,7 +93,7 @@ print(json.dumps({{"pageCount": 1, "reflowedPageCount": 1, "recognizedPageCount"
         self.assertLess(result["converterPeakRSSBytes"], 160 * 1024 * 1024)
 
     def test_manifest_ceiling_is_enforced_without_override(self):
-        manifest = self.root / "Corpus/manifest.json"
+        manifest = self.root / "corpus/manifest.json"
         data = json.loads(manifest.read_text())
         data["documents"][0]["memoryBudget"] = {"maxPeakRSSMiB": 16}
         manifest.write_text(json.dumps(data))

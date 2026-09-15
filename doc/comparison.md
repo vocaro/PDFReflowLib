@@ -1,6 +1,6 @@
 # Comparing PDF conversion quality
 
-`Tools/compare_pdf.py` builds a local review bundle from one PDF snapshot. The viewer places
+`tools/compare_pdf.py` builds a local review bundle from one PDF snapshot. The viewer places
 PDFReflowLib's EPUB beside Poppler's `pdftohtml` output, with an optional third pane rendered from
 the original PDF by `pdftoppm`. It is a manual development aid, not a fidelity score or a speed
 benchmark. Poppler can make different mistakes, and both Poppler views share the same parser.
@@ -17,7 +17,7 @@ From the repository root:
 
 ```sh
 swift build -c release
-python3 Tools/compare_pdf.py --converter .build/release/pdf-reflow \
+python3 tools/compare_pdf.py --converter .build/release/pdf-reflow \
   --pdf /path/to/book.pdf --pages 1,16,90-92,121 \
   --output /tmp/book-comparison --serve
 ```
@@ -52,7 +52,7 @@ disk or runtime budget on Poppler.
 printed URL; `--port` selects a different port. To reopen retained results without conversion:
 
 ```sh
-python3 Tools/serve_comparison.py /tmp/book-comparison --port 8765
+python3 tools/serve_comparison.py /tmp/book-comparison --port 8765
 ```
 
 Use this server rather than opening `index.html` as a file. The viewer fetches a local manifest,
@@ -102,7 +102,7 @@ durations have different scopes and include polling overhead; use the dedicated 
 for converter performance qualification.
 
 ```sh
-python3 -m unittest discover -s Tools -p 'test_*.py'
+python3 -m unittest discover -s tools -p 'test_*.py'
 ```
 
 The comparison controls cover page selection, inline source boundaries, browser serialization,

@@ -6,7 +6,7 @@ import CryptoKit
 @testable import PDFReflowLib
 
 private func fixture(_ name: String) -> URL {
-    Bundle.module.resourceURL!.appendingPathComponent("Fixtures/" + name + ".pdf")
+    Bundle.module.resourceURL!.appendingPathComponent("fixtures/" + name + ".pdf")
 }
 
 private func scratch() throws -> URL {
@@ -182,7 +182,7 @@ private actor ProgressLog {
         struct Item: Decodable { let file: String; let bytes: Int; let sha256: String }
         let fixtures: [Item]
     }
-    let directory = Bundle.module.resourceURL!.appendingPathComponent("Fixtures")
+    let directory = Bundle.module.resourceURL!.appendingPathComponent("fixtures")
     let manifest = try JSONDecoder().decode(Manifest.self, from: Data(contentsOf: directory.appendingPathComponent("manifest.json")))
     #expect(manifest.fixtures.count == 6)
     for item in manifest.fixtures {

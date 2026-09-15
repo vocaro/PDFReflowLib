@@ -7,7 +7,7 @@ EPUBCheck; unrelated earlier children cannot contaminate it. This kernel high-wa
 captures transient spikes between samples. Separately, 100 ms samples record the converter's
 physical footprint and progress stage; the sampled peak can miss short spikes.
 
-`Corpus/manifest.json` supplies each document's default ceiling. The FAA handbook's initial
+`corpus/manifest.json` supplies each document's default ceiling. The FAA handbook's initial
 macOS arm64 ceiling is **1,280 MiB peak RSS**. This prevents a return to the measured multi-GB
 behavior; it is not a mobile shipping budget. OS/framework versions, hardware and release/debug
 builds affect memory. Establish separate baselines on physical iPhone and iPad before claiming
@@ -17,10 +17,10 @@ it but is a different metric. Apple services such as OCR can use memory outside 
 From the package directory, with a full Xcode selected:
 
 ```sh
-python3 Tools/fetch_corpus.py --case faa-phak-8083-25c
+python3 tools/fetch_corpus.py --case faa-phak-8083-25c
 swift build -c release
-python3 Tools/evaluate-real-document.py --case faa-phak-8083-25c \
-    --pdf Corpus/cache/faa-h-8083-25c.pdf --converter .build/release/pdf-reflow \
+python3 tools/evaluate-real-document.py --case faa-phak-8083-25c \
+    --pdf corpus/cache/faa-h-8083-25c.pdf --converter .build/release/pdf-reflow \
     --output /tmp/phak-memory-run --epubcheck /opt/homebrew/bin/epubcheck
 ```
 
@@ -34,7 +34,7 @@ forced termination can leave a staging directory, unlike cooperative library can
 The memory ceiling is a regression gate, not a runtime allocation limiter. A successful package
 and memory result does not mean the book has passed fidelity review. The FAA case explicitly
 records known column-order and raster-sizing defects. Large PDF/EPUB files are not test resources
-or committed artifacts. The explicit corpus fetcher verifies sources into `Corpus/cache/`;
+or committed artifacts. The explicit corpus fetcher verifies sources into `corpus/cache/`;
 tests never download them automatically.
 
 The repository's `scripts/check-pdf-reflow-memory.sh` builds and runs this gate.
@@ -46,18 +46,18 @@ The fast instrumentation controls exercise real child allocations above/below th
 source verification and isolation from an earlier child's high-water mark:
 
 ```sh
-python3 -m unittest discover -s Tools -p 'test_*.py' -v
+python3 -m unittest discover -s tools -p 'test_*.py' -v
 ```
 
 ## Isolating PDFKit growth
 
-`Tools/probe-pdfkit-memory.swift` imports only Apple SDKs. It repeatedly opens each source page
+`tools/probe-pdfkit-memory.swift` imports only Apple SDKs. It repeatedly opens each source page
 in an autorelease pool and discards every extracted object. `plain` reads selection strings,
 `line` reads each line's attributed string, and `page` reads the page's attributed string.
 Run modes in separate processes. Output records peak RSS and physical footprint after each pass.
 
 ```sh
-xcrun swiftc -O Tools/probe-pdfkit-memory.swift -o /tmp/pdfkit-memory-probe
+xcrun swiftc -O tools/probe-pdfkit-memory.swift -o /tmp/pdfkit-memory-probe
 /tmp/pdfkit-memory-probe /path/to/faa-h-8083-25c.pdf plain 3
 /tmp/pdfkit-memory-probe /path/to/faa-h-8083-25c.pdf page 3
 MallocStackLogging=1 leaks --atExit -- \

@@ -91,13 +91,13 @@ def main(argv=None):
     selection = parser.add_mutually_exclusive_group(required=True)
     selection.add_argument('--case', action='append', dest='cases', help='case ID; may be repeated')
     selection.add_argument('--all', action='store_true', help='fetch every registered case')
-    parser.add_argument('--cache-dir', type=Path, default=ROOT / 'Corpus/cache')
+    parser.add_argument('--cache-dir', type=Path, default=ROOT / 'corpus/cache')
     parser.add_argument('--refresh', action='store_true', help='refetch even when cached bytes match')
     parser.add_argument('--timeout', type=float, default=60, help='network operation timeout in seconds')
     args = parser.parse_args(argv)
     if not math.isfinite(args.timeout) or args.timeout <= 0:
         parser.error('timeout must be finite and positive')
-    cases = json.loads((ROOT / 'Corpus/manifest.json').read_text())['documents']
+    cases = json.loads((ROOT / 'corpus/manifest.json').read_text())['documents']
     if len({c['id'] for c in cases}) != len(cases) or len({c['filename'] for c in cases}) != len(cases):
         parser.error('duplicate corpus case ID or filename')
     selected = cases if args.all else [c for c in cases if c['id'] in args.cases]

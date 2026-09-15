@@ -16,7 +16,7 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.utils import ImageReader
 
 
-DESTINATION = Path(__file__).resolve().parents[1] / "Tests/PDFReflowLibTests/Fixtures"
+DESTINATION = Path(__file__).resolve().parents[1] / "Tests/PDFReflowLibTests/fixtures"
 
 
 def page(c, lines, x=54, y=690, size=12, step=18, font="Helvetica"):

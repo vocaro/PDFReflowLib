@@ -16,7 +16,7 @@ import zipfile
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-FIXTURES = ROOT / "Tests/PDFReflowLibTests/Fixtures"
+FIXTURES = ROOT / "Tests/PDFReflowLibTests/fixtures"
 NS = {"opf": "http://www.idpf.org/2007/opf", "html": "http://www.w3.org/1999/xhtml"}
 EXPECTED = {
     "prose": (3, 3, ["reliable conversion", "remains well-known", "losing the original sentence"]),

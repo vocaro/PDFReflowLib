@@ -10,6 +10,9 @@ The only package dependency is ZIPFoundation
 0.9.20 (MIT), pinned in the manifest and resolution file. The macOS `pdf-reflow` executable is a
 small developer client of the same public API.
 
+SwiftPM directories use `Sources/` and `Tests/` with target-matching subdirectories.
+Supporting directories (`corpus/`, `tools/`, `scripts/`, `doc/`, `measurements/`) use lowercase names.
+
 ## Swift API
 
 Add `https://github.com/vocaro/PDFReflowLib.git` as a Swift package dependency and link the
@@ -133,7 +136,7 @@ development tool EPUBCheck and run:
 
 ```sh
 swift build
-python3 Tools/check-epubs.py --converter .build/debug/pdf-reflow \
+python3 tools/check-epubs.py --converter .build/debug/pdf-reflow \
     --output /tmp/pdfreflow-validation --epubcheck /opt/homebrew/bin/epubcheck
 ```
 
@@ -141,7 +144,7 @@ The output directory must be new. Omitting `--epubcheck` runs only the independe
 content checks. The command retains EPUBs, per-book validator logs and JSON reports. Recorded
 elapsed time includes the validator and is not a conversion benchmark.
 
-`Tools/generate-fixtures.py` regenerates the corpus and manifest using ReportLab, Pillow and
+`tools/generate-fixtures.py` regenerates the corpus and manifest using ReportLab, Pillow and
 Poppler's `pdftoppm`, available only for development. It uses original text/drawings and references
 standard PDF fonts without embedding font programs. These tools are not runtime dependencies.
 Pass `--renderer /absolute/path/to/pdftoppm` when needed. Regenerate PDFs and their manifest
@@ -164,20 +167,20 @@ interchange format; the supported public output remains EPUB 3. See
 
 ## Real-document corpus and memory gates
 
-`Corpus/manifest.json` registers the 522-page FAA Pilot's Handbook of Aeronautical Knowledge
+`corpus/manifest.json` registers the 522-page FAA Pilot's Handbook of Aeronautical Knowledge
 (FAA-H-8083-25C), Tyler Wallace's 489-page Beginning and Intermediate Algebra, and the
 920-page scanned Warren Commission report, the 585-page digital 9/11 Commission report, and
 135-page The Fed Explained, plus the 10-page illustrated Dietary Guidelines for Americans
 (2025–2030), the 1,834-page Fifth National Climate Assessment, the 56-page Our Flag booklet, and the 42-page CDC Zombie Pandemic comic,
 by exact byte identity.
 Fetch originals with
-`python3 Tools/fetch_corpus.py --all`; verified copies live in gitignored `Corpus/cache/`.
+`python3 tools/fetch_corpus.py --all`; verified copies live in gitignored `corpus/cache/`.
 Tests do not download documents. Some publisher endpoints require a manually supplied cache
 copy; the corpus guide records current fetch limitations.
 [Corpus guide](doc/corpus.md) lists their coverage, attribution and review commands. The manifest lists review points and known reading-order/raster defects, so a
 successful conversion is not mistaken for a fidelity qualification.
 
-`Tools/evaluate-real-document.py` checks source identity, runs a fresh converter process,
+`tools/evaluate-real-document.py` checks source identity, runs a fresh converter process,
 checks EPUB structure and progress, and enforces a configurable peak-memory ceiling. It retains
 reports and memory traces. [Memory testing](doc/memory-testing.md) explains the initial Mac
 budget, commands, physical-device limitations and standalone PDFKit leak investigation tool.
@@ -209,7 +212,7 @@ provides contents, source-page jumps, chapter navigation, text size and reading 
 the pinned MIT foliate-js parser and local browser rendering, without importing into an external book library:
 
 ```sh
-python3 Tools/view_epub.py /path/to/output.epub
+python3 tools/view_epub.py /path/to/output.epub
 ```
 
 ## Distribution

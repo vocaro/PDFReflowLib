@@ -18,7 +18,7 @@ is needed to read an existing EPUB. Python 3.11+ and a modern browser are suffic
 The equivalent direct Python command is:
 
 ```sh
-python3 Tools/view_epub.py /path/to/output.epub --port 8768
+python3 tools/view_epub.py /path/to/output.epub --port 8768
 ```
 
 The command verifies the reader's vendored file identities, copies the EPUB into a temporary
@@ -33,7 +33,7 @@ there is no annotation library, saved reading position, account, DRM support or 
 [foliate-js](https://github.com/johnfactotum/foliate-js) supplies EPUB container, metadata, spine
 and contents parsing at pinned commit `78914aef4466eb960965702401634c2cb348e9b1`. The
 package carries only its MIT-licensed EPUB parser and CFI dependency, with identities in
-`Tools/epub-reader/assets.json` and the license text beside the files. It does not load foliate's
+`tools/epub-reader/assets.json` and the license text beside the files. It does not load foliate's
 full pagination UI, ZIP handler or non-EPUB format loaders. The test shell uses browser chapter
 scrolling. No new Swift package dependency is introduced.
 
@@ -60,7 +60,7 @@ sandboxing and Content Security Policy. The parser reads only inventoried public
 ## Verification
 
 ```sh
-python3 -m unittest discover -s Tools -p 'test_*.py'
+python3 -m unittest discover -s tools -p 'test_*.py'
 ```
 
 Reader controls verify the vendor pin, reject active/external content, preserve original EPUB

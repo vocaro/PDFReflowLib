@@ -125,3 +125,38 @@ class CorpusContentTests(unittest.TestCase):
         marker = '<span epub:type="pagebreak" id="page-1"/>'
         with self.assertRaises(ValueError):
             read_pages(self.epub(marker, marker))
+
+    def test_script_must_have_correct_style_page_and_context(self):
+        expectation = {'tag': 'sup', 'text': '2', 'before': 'quadratic is ax', 'after': '+ bx + c = 0.'}
+        self.contract['pages'][0]['scripts'] = [expectation]
+        body = '<span epub:type="pagebreak" id="page-1"/><p>alpha beta quadratic is ax<sup><em>2</em> </sup>+ bx + c = 0.</p><img src="picture.png"/>'
+        second = '<span epub:type="pagebreak" id="page-2"/><p>omega</p>'
+        self.pages, _ = read_pages(self.epub(body, second))
+        self.assertTrue(self.check()['passed'])
+        for broken in [body.replace('<sup>', '<sub>').replace('</sup>', '</sub>'),
+                       body.replace('<sup>', '').replace('</sup>', ''),
+                       body.replace('is ax', 'is bx'), body.replace('+ bx', '+ cx')]:
+            pages, _ = read_pages(self.epub(broken, second))
+            self.assertFalse(self.check(pages=pages)['passed'])
+        self.pages[2]['scripts'] = self.pages[1]['scripts']
+        self.pages[1]['scripts'] = []
+        self.assertFalse(self.check()['passed'])
+
+    def test_caption_or_literal_markup_cannot_supply_a_script(self):
+        for content in ['<figcaption>ax<sup>2</sup>+ b</figcaption>',
+                        '<p>ax&lt;sup&gt;2&lt;/sup&gt;+ b</p>']:
+            pages, _ = read_pages(self.epub('<span epub:type="pagebreak" id="page-1"/>' + content, ''))
+            self.assertEqual(pages[1]['scripts'], [])
+
+    def test_script_crossing_page_boundary_keeps_context_on_its_own_page(self):
+        body = '<span epub:type="pagebreak" id="page-1"/><p>x<sup>2<span epub:type="pagebreak" id="page-2"/>3</sup>y</p>'
+        pages, _ = read_pages(self.epub(body, ''))
+        self.assertEqual(pages[1]['scripts'], [{'tag': 'sup', 'text': '2', 'before': 'x', 'after': ''}])
+        self.assertEqual(pages[2]['scripts'], [{'tag': 'sup', 'text': '3', 'before': '', 'after': 'y'}])
+
+    def test_invalid_script_contract_is_not_ignored(self):
+        for script in [{}, {'tag': 'span', 'text': '2', 'before': 'a', 'after': 'b'},
+                       {'tag': 'sup', 'text': '', 'before': 'a', 'after': 'b'}]:
+            self.contract['pages'][0]['scripts'] = [script]
+            with self.assertRaises(ValueError):
+                self.check()

@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order.",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right.",
       "pages": [
         {
           "page": 16,
@@ -22,13 +22,31 @@
             "Normal, slipping, and skidding turns at a constant altitude."
           ],
           "minimumImages": 1
+        },
+        {
+          "page": 91,
+          "orderedText": [
+            "must be defined.",
+            "identify the same level.",
+            "The computation of density altitude"
+          ]
+        },
+        {
+          "page": 511,
+          "orderedText": [
+            "Wind direction indicators.",
+            "Wind shear.",
+            "restricted areas, obstructions and other pertinent data.",
+            "Zone of confusion.",
+            "Zulu time."
+          ]
         }
       ]
     },
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image.",
+      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional.",
       "pages": [
         {
           "page": 2,
@@ -54,6 +72,22 @@
             "Solve each equation with the quadratic formula."
           ],
           "minimumImages": 1
+        },
+        {
+          "page": 343,
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "2",
+              "before": "The general from of a quadratic is ax",
+              "after": "+ bx + c = 0."
+            }
+          ],
+          "text": [
+            "Objective: Solve quadratic equations by using the quadratic formula.",
+            "Example 465."
+          ],
+          "minimumImages": 1
         }
       ]
     },
@@ -72,6 +106,19 @@
           "page": 19,
           "text": [
             "Tuesday, September 11, 2001"
+          ]
+        },
+        {
+          "page": 451,
+          "orderedText": [
+            "Abdullah bin Abdul Aziz",
+            "Crown Prince and de facto regent",
+            "Mohdar Abdullah",
+            "Yemeni; student in San Diego",
+            "Sayf al Adl",
+            "Egyptian; high-ranking member",
+            "Mahmud Ahmed",
+            "Director General of Pakistan’s Inter-Services"
           ]
         }
       ]
@@ -123,7 +170,7 @@
     {
       "id": "gpo-our-flag-2003",
       "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
-      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order.",
+      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions.",
       "pages": [
         {
           "page": 27,
@@ -132,6 +179,10 @@
             "If your flag gets wet, never store it until it is completely dry.",
             "Pole care is also related to flag care.",
             "Sizes of Flags"
+          ],
+          "minimumImages": 3,
+          "warningCodesAnyOf": [
+            "imageRegion"
           ]
         },
         {

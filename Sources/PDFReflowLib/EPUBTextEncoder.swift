@@ -26,6 +26,8 @@ enum EPUBTextEncoder {
                 var run = xml(text)
                 if style.contains(.italic) { run = "<em>\(run)</em>" }
                 if style.contains(.bold) { run = "<strong>\(run)</strong>" }
+                if style.contains(.superscript) { run = "<sup>\(run)</sup>" }
+                else if style.contains(.subscript) { run = "<sub>\(run)</sub>" }
                 return run
             case let .sourcePage(page): return sourcePage(page)
             }

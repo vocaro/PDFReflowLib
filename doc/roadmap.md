@@ -12,17 +12,13 @@ physical-device memory/performance remain unqualified.
   table cells, equation structure, image appearance and chapter continuity as those issues are
   addressed. Keep known failures separate from passing baselines; never regenerate expected
   content from converter output alone. See [the regression workflow](regression-testing.md).
-- Correct FAA handbook [column order on physical pages 91 and 511](https://github.com/vocaro/PDFReflowLib/issues/2).
-  Add source-derived regressions and compare against original pages.
 - Investigate [PDFKit attributed-text leaks](https://github.com/vocaro/PDFReflowLib/issues/4)
   without losing formatting; keep the
   fresh-process high-water-mark gate and establish physical iPhone/iPad memory budgets.
 - Group [detached fractions with their numerators, exponents and denominators](https://github.com/vocaro/PDFReflowLib/issues/20).
   The synthetic reproducer runs as an explicit known failure, separate from passing fidelity controls.
-- Preserve [inline mathematical superscripts](https://github.com/vocaro/PDFReflowLib/issues/1):
-  the Wallace algebra corpus exposes a flattened
-  squared exponent on page 343 despite preserved displayed formulas. Add a targeted regression
-  when implementing the fix; review exercise and answer-key numbering across the book.
+- Expand mathematical qualification beyond native inline scripts: review exercise/answer-key
+  numbering, detached fractions and unsupported formula structures across the algebra book.
 - Support the Warren Commission scanned report: [full conversion exhausts the image-output
   ceiling](https://github.com/vocaro/PDFReflowLib/issues/5); [invisible OCR fonts misclassify
   prose and headings](https://github.com/vocaro/PDFReflowLib/issues/6), and notes/index columns
@@ -59,9 +55,10 @@ physical-device memory/performance remain unqualified.
 - The 56-page Our Flag booklet supplies a quick illustrated baseline with ten checked table rows.
   Its populated structure tree has Marked=false and lacks table roles and figure alternate text.
   Implement [validated tag consumption with spatial fallback](https://github.com/vocaro/PDFReflowLib/issues/17)
-  and [table preservation](https://github.com/vocaro/PDFReflowLib/issues/16); correct drop-cap
+  and general table semantics; correct drop-cap
   ordering and flag image/name/description groups. The [baseline](../measurements/gpo-our-flag-2003/record.md)
-  passes validity, progress and the 192 MiB Mac RSS gate, but fails those fidelity targets.
+  passes validity, progress and the 192 MiB Mac RSS gate. Its page-27 numeric table is preserved
+  as a warned image; tag consumption and drop-cap/figure ownership remain unqualified.
 
 - The 42-page CDC Zombie Pandemic comic adds sparse/noisy text and image-only speech balloons.
   Detect suspect inherited dialogue and preserve [panel/balloon order](https://github.com/vocaro/PDFReflowLib/issues/18)
@@ -71,7 +68,7 @@ physical-device memory/performance remain unqualified.
 - The 312-page Blue Book statistical scan supplies a warning/refusal contract. The converter
   reports unverified text layers and preserves source images; reliable scanned-table detection
   and reconstruction remain open under [suspect inherited OCR](https://github.com/vocaro/PDFReflowLib/issues/7)
-  and [table preservation](https://github.com/vocaro/PDFReflowLib/issues/16).
+  and general table reconstruction.
   Passing the signaling contract does not qualify table transcription.
 
 Attachment-placeholder filtering, actionable source-layer warnings and correct whole-page raster
@@ -79,3 +76,8 @@ scaling are covered by [regressions and source-derived measurements](../measurem
 
 Merged-region clipping is covered by source-derived algebra geometry, formula/table pixel tests,
 and a complete eight-document rerun; see [preserved-region regressions](../measurements/preserved-region-regressions/record.md).
+
+Native inline superscripts/subscripts, FAA page-91/511 column order and Our Flag page-27 numeric
+table preservation are covered by [source-derived regressions and full-corpus evidence](../measurements/three-fidelity-fixes/record.md).
+Controls also protect 9/11 name/description rows and CDC OCR line spacing. These targeted fixes
+resolve #1, #2 and #16; they do not qualify arbitrary math, table transcription or every column layout.

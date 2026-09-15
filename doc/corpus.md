@@ -63,12 +63,12 @@ scripts/compare-pdf-reflow.sh --pdf corpus/cache/Beginning_and_Intermediate_Alge
 ```
 
 Output directories must be new. `--epubcheck` is optional. The memory runner enforces the
-case's ceiling automatically. The root `check-all.sh` currently selects the FAA workload for
-its optional real-document gate; run the command above explicitly for algebra.
+case's ceiling automatically. `scripts/check-all.sh --corpus` includes algebra in the eight-document gate.
 
 [Review points](../corpus/wallace-algebra-2010-review.json) list physical PDF pages and
-acceptance questions. Four spot checks show displayed mathematics retained in images, but page
-343's inline squared exponent loses superscript semantics. The book is not fidelity-qualified.
+acceptance questions. Page 343's inline squared exponent has superscript semantics, while
+displayed mathematics remains in images; see [current regressions](../measurements/three-fidelity-fixes/record.md).
+Detached fractions and broader exercise/answer-key fidelity remain unqualified.
 [Baseline and visual evidence](../measurements/wallace-algebra-2010/record.md) separate valid
 EPUB packaging from accurate mathematical content.
 
@@ -256,10 +256,11 @@ scripts/compare-pdf-reflow.sh --pdf corpus/cache/CDOC-108hdoc97.pdf \
 
 The [baseline](../measurements/gpo-our-flag-2003/record.md) passes full conversion, EPUBCheck,
 progress and the 192 MiB Mac RSS gate. [Review references](../corpus/gpo-our-flag-2003-review.json)
-include all ten table rows and meaning-bearing flag groups. Table flattening, drop-cap ordering
-and interleaved state descriptions remain failures. [Table preservation #16](https://github.com/vocaro/PDFReflowLib/issues/16)
-and [validated tag consumption #17](https://github.com/vocaro/PDFReflowLib/issues/17) track distinct
-requirements; existing issues #2 and #12 contain the column/heading reproductions.
+include all ten table rows and meaning-bearing flag groups. The page-27 table retains both
+headers and all rows in a warned region image; see [current evidence](../measurements/three-fidelity-fixes/record.md).
+Drop-cap ordering and general figure/name/description association remain unqualified under
+[heading classification #12](https://github.com/vocaro/PDFReflowLib/issues/12) and
+[validated structure #17](https://github.com/vocaro/PDFReflowLib/issues/17).
 
 
 ## Preparedness 101: Zombie Pandemic

@@ -28,7 +28,7 @@ see [corpus instructions](corpus.md). Large originals and output EPUBs remain gi
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 55 targeted checks on 18 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 77 targeted checks on 22 reviewed pages
 across eight books: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic and Blue Book. All source-page anchors must also remain complete and ordered, and semantic
 text must contain no image attachment placeholders.
@@ -40,7 +40,7 @@ exclude navigation/captions from source-text matching. They do not freeze serial
 or broken output such as interleaved columns and flattened exponents.
 
 The checker has negative controls for deleted text, text moved to the wrong page, reversed order,
-missing images, missing/wrong-page warnings, changed source identity, failed conversion, missing
+missing images, flattened or misplaced superscripts/subscripts, missing/wrong-page warnings, changed source identity, failed conversion, missing
 or duplicate page markers, and captions masquerading as source text. A list of assertions without
 such controls could silently pass despite a broken checker.
 
@@ -99,3 +99,29 @@ The capture tool rejects any source checksum other than the pinned book. Review 
 geometry changes before replacing the bundled fixture; never regenerate it merely to make a test
 pass. The extracted text remains Tyler Wallace's CC BY 3.0 material, with attribution in the
 fixture and [third-party notices](third-party-notices.md).
+
+## Source-derived fidelity controls
+
+`FidelityIssueTests.swift` checks the FAA page-91/511 columns, all ten Our Flag page-27 table
+pairs and both headers, and algebra page-343's inline exponent. Positive controls cover spanning
+headings/figures, ordinary prose, dot-leader contents entries, code, ellipses and sparse numeric
+rows. The 9/11 page-451 name/description fixture protects row associations from narrow-column
+cuts. `BaselineStyleTests.swift` checks both native baseline-attribute keys, unchanged small
+fonts and noisy positioning, a real PDF-to-EPUB superscript/subscript path, and CDC page-5 OCR
+line spacing that must not become inline scripts.
+
+These small JSONs capture native extraction from checksum-pinned sources, not converter output.
+They run offline on macOS and iOS. Capture another page with full Xcode selected:
+
+```sh
+swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/ConversionTypes.swift \
+  Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
+  Sources/PDFReflowLib/GraphicsReader.swift tools/capture-layout-fixture.swift \
+  -o /tmp/capture-layout-fixture
+/tmp/capture-layout-fixture faa-phak-8083-25c 91 /tmp/faa-91-layout.json
+```
+
+Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
+Source review, baseline failures, cross-document safeguards and full-run evidence are retained
+in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
+58 Swift tests, including the explicitly known detached-fraction failure, and 49 Python tests.

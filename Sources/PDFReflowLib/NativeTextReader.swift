@@ -1,5 +1,6 @@
 import Foundation
 import PDFKit
+import CoreText
 #if os(macOS)
 import AppKit
 private typealias PlatformFont = NSFont
@@ -38,17 +39,7 @@ enum NativeTextReader {
             var styled: InlineText?
             if let attributed, attributed.string.replacingOccurrences(of: "\u{FFFC}", with: " ")
                 .trimmingCharacters(in: .whitespacesAndNewlines) == text {
-                var runs: [InlineText.Element] = []
-                attributed.enumerateAttribute(.font, in: NSRange(location: 0, length: attributed.length)) { value, range, _ in
-                    let name = (value as? PlatformFont)?.fontName.lowercased() ?? ""
-                    let run = (attributed.string as NSString).substring(with: range)
-                        .replacingOccurrences(of: "\u{FFFC}", with: " ")
-                    var style: TextStyle = []
-                    if name.contains("italic") || name.contains("oblique") { style.insert(.italic) }
-                    if name.contains("bold") { style.insert(.bold) }
-                    runs.append(.text(run, style))
-                }
-                styled = InlineText(elements: runs).trimmingCharacters(in: .whitespacesAndNewlines)
+                styled = inlineText(from: attributed)
             }
             // Keep each selection's own text with its geometry. PDFKit's characterBounds offsets
             // need not agree with string offsets at synthesized newlines on current OS builds.
@@ -56,5 +47,31 @@ enum NativeTextReader {
                 fontSize: size, monospaced: mono))
         }
         return result
+    }
+
+    static func inlineText(from attributed: NSAttributedString) -> InlineText {
+        var runs: [InlineText.Element] = []
+        attributed.enumerateAttributes(in: NSRange(location: 0, length: attributed.length)) { attributes, range, _ in
+            let font = attributes[.font] as? PlatformFont
+            let name = font?.fontName.lowercased() ?? ""
+            let run = (attributed.string as NSString).substring(with: range)
+                .replacingOccurrences(of: "\u{FFFC}", with: " ")
+            var style: TextStyle = []
+            if name.contains("italic") || name.contains("oblique") { style.insert(.italic) }
+            if name.contains("bold") { style.insert(.bold) }
+            // PDFKit supplies Core Text baseline offsets even when font size/name do not
+            // change. Preserve that evidence instead of guessing from character offsets.
+            let offset = (attributes[NSAttributedString.Key(kCTBaselineOffsetAttributeName as String)] as? NSNumber
+                ?? attributes[.baselineOffset] as? NSNumber)?.doubleValue ?? 0
+            let tolerance = max(0.5, (font?.pointSize ?? 12) * 0.12)
+            // Some PDFKit selections combine several OCR lines, represented as baseline
+            // shifts of a full line height. Those are layout offsets, not inline scripts.
+            if offset.isFinite, abs(offset) <= (font?.pointSize ?? 12) * 0.75 {
+                if offset > tolerance { style.insert(.superscript) }
+                else if offset < -tolerance { style.insert(.subscript) }
+            }
+            runs.append(.text(run, style))
+        }
+        return InlineText(elements: runs).trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }

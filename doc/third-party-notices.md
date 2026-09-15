@@ -62,8 +62,17 @@ SOFTWARE.
 [author's site](http://wallace.ccfaculty.org/book/book.html),
 [Creative Commons Attribution 3.0 Unported](https://creativecommons.org/licenses/by/3.0/).
 
-`Tests/PDFReflowLibTests/fixtures/algebra-17-layout.json` contains extracted text and bounding
-geometry from physical page 17, transformed into a test-only JSON representation. Algebra source
-rasters and EPUB crop comparisons in `measurements/preserved-region-regressions/` are rendered
+`Tests/PDFReflowLibTests/fixtures/algebra-{17,343}-layout.json` contains extracted text,
+bounding geometry and attributed runs from those physical pages, transformed into test-only
+JSON representations. Algebra source rasters and EPUB comparisons in
+`measurements/preserved-region-regressions/` and `measurements/three-fidelity-fixes/` are rendered
 and/or arranged review derivatives. These derivatives retain CC BY 3.0 attribution and are not
 relicensed under MIT. They are not resources of the shipped library target.
+
+## Government-document development fixtures
+
+The `faa-91`, `faa-511`, `flag-27`, `911-451` and `cdc-5` layout JSONs under the test fixtures
+contain extracted text and geometry from the corresponding U.S. government corpus documents.
+Each records its publisher URL, title and pinned source checksum. The source and output renders
+in `measurements/three-fidelity-fixes/` retain the same provenance. These are development and
+review resources, separate from the shipped library target; see `corpus/manifest.json`.

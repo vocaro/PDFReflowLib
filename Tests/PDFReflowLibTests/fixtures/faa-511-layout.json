@@ -1,0 +1,1359 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        535.76859999999999,
+        33.709700000000005,
+        22.230000000000018,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "G-35"
+        }
+      ],
+      "text" : "G-35"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        719.43970000000002,
+        237.04599999999999,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "Wind direction indicators."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " Indicators that include a"
+        }
+      ],
+      "text" : "Wind direction indicators. Indicators that include a"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        707.22969999999998,
+        237.00099999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "wind sock, wind tee, or tetrahedron. Visual reference will"
+        }
+      ],
+      "text" : "wind sock, wind tee, or tetrahedron. Visual reference will"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        694.72969999999998,
+        178.58000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "determine wind direction and runway in use."
+        }
+      ],
+      "text" : "determine wind direction and runway in use."
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        669.43970000000002,
+        237.07999999999998,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "Wind shear."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " A sudden, drastic shift in windspeed, direction,"
+        }
+      ],
+      "text" : "Wind shear. A sudden, drastic shift in windspeed, direction,"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        657.22969999999998,
+        228.56999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or both that may occur in the horizontal or vertical plane."
+        }
+      ],
+      "text" : "or both that may occur in the horizontal or vertical plane."
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        631.93970000000002,
+        237.01200000000006,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "Winds and temperature aloft forecast (FB)."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " A twice daily"
+        }
+      ],
+      "text" : "Winds and temperature aloft forecast (FB). A twice daily"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        619.72969999999998,
+        236.98700000000019,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "forecast that provides wind and temperature forecasts for"
+        }
+      ],
+      "text" : "forecast that provides wind and temperature forecasts for"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        607.22969999999998,
+        199.70999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "specific locations in the contiguous United States."
+        }
+      ],
+      "text" : "specific locations in the contiguous United States."
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        581.93970000000002,
+        236.99999999999994,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "Wing area."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " The total surface of the wing (in square feet),"
+        }
+      ],
+      "text" : "Wing area. The total surface of the wing (in square feet),"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        569.72969999999998,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "which includes control surfaces and may include wing area"
+        }
+      ],
+      "text" : "which includes control surfaces and may include wing area"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        557.22969999999998,
+        237.01699999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "covered by the fuselage (main body of the airplane), and"
+        }
+      ],
+      "text" : "covered by the fuselage (main body of the airplane), and"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        544.72969999999998,
+        63.870000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "engine nacelles."
+        }
+      ],
+      "text" : "engine nacelles."
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        519.43970000000002,
+        236.98500000000001,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "Wings."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " Airfoils attached to each side of the fuselage and are"
+        }
+      ],
+      "text" : "Wings. Airfoils attached to each side of the fuselage and are"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        507.22969999999998,
+        233.30999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the main lifting surfaces that support the airplane in flight."
+        }
+      ],
+      "text" : "the main lifting surfaces that support the airplane in flight."
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        481.93969999999996,
+        237.02799999999996,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "Wing root."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " The wing root is the part of the wing on a fixed-"
+        }
+      ],
+      "text" : "Wing root. The wing root is the part of the wing on a fixed-"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        469.72969999999998,
+        236.84200000000016,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "wing aircraft that is closest to the fuselage. Wing roots"
+        }
+      ],
+      "text" : "wing aircraft that is closest to the fuselage. Wing roots"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        457.22969999999998,
+        236.98999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "usually bear the highest bending forces in flight and during"
+        }
+      ],
+      "text" : "usually bear the highest bending forces in flight and during"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        444.72969999999998,
+        237.02899999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "landing, and they often have fairings to reduce interference"
+        }
+      ],
+      "text" : "landing, and they often have fairings to reduce interference"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        432.22969999999998,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "drag between the wing and the fuselage. The opposite end"
+        }
+      ],
+      "text" : "drag between the wing and the fuselage. The opposite end"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        419.72969999999998,
+        177.49000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of a wing from the wing root is the wing tip."
+        }
+      ],
+      "text" : "of a wing from the wing root is the wing tip."
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        394.43969999999996,
+        237.03599999999994,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "Wing span."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " The maximum distance from wingtip to wingtip."
+        }
+      ],
+      "text" : "Wing span. The maximum distance from wingtip to wingtip."
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        369.43969999999996,
+        237.00500000000005,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "Wingtip vortices."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " The rapidly rotating air that spills over an"
+        }
+      ],
+      "text" : "Wingtip vortices. The rapidly rotating air that spills over an"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        357.22969999999998,
+        237.01999999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "airplane’s wings during flight. The intensity of the turbulence"
+        }
+      ],
+      "text" : "airplane’s wings during flight. The intensity of the turbulence"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        344.72969999999998,
+        237.02299999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "depends on the airplane’s weight, speed, and configuration."
+        }
+      ],
+      "text" : "depends on the airplane’s weight, speed, and configuration."
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        332.22969999999998,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Also referred to as wake turbulence. Vortices from heavy"
+        }
+      ],
+      "text" : "Also referred to as wake turbulence. Vortices from heavy"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        319.72969999999998,
+        214.37999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft may be extremely hazardous to small aircraft."
+        }
+      ],
+      "text" : "aircraft may be extremely hazardous to small aircraft."
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        294.43969999999996,
+        236.99700000000007,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "Wing twist."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " A design feature incorporated into some wings"
+        }
+      ],
+      "text" : "Wing twist. A design feature incorporated into some wings"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        282.22969999999998,
+        237.00500000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to improve aileron control effectiveness at high angles of"
+        }
+      ],
+      "text" : "to improve aileron control effectiveness at high angles of"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        269.72969999999998,
+        142.47000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "attack during an approach to a stall."
+        }
+      ],
+      "text" : "attack during an approach to a stall."
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        244.43969999999999,
+        234.65000000000003,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "Work."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " A measurement of force used to produce movement."
+        }
+      ],
+      "text" : "Work. A measurement of force used to produce movement."
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        219.43969999999999,
+        237.03500000000003,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "World Aeronautical Charts (WAC). "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A standard series"
+        }
+      ],
+      "text" : "World Aeronautical Charts (WAC). A standard series"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        207.22969999999998,
+        237.01500000000004,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of aeronautical charts covering land areas of the world at a"
+        }
+      ],
+      "text" : "of aeronautical charts covering land areas of the world at a"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        194.72969999999998,
+        237.00900000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "size and scale convenient for navigation (1:1,000,000) by"
+        }
+      ],
+      "text" : "size and scale convenient for navigation (1:1,000,000) by"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        182.22969999999998,
+        237.0089999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "moderate speed aircraft. Topographic information includes"
+        }
+      ],
+      "text" : "moderate speed aircraft. Topographic information includes"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        169.72969999999998,
+        237.02800000000019,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "cities and towns, principal roads, railroads, distinctive"
+        }
+      ],
+      "text" : "cities and towns, principal roads, railroads, distinctive"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        157.22969999999998,
+        236.98100000000017,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "landmarks, drainage, and relief. Aeronautical information"
+        }
+      ],
+      "text" : "landmarks, drainage, and relief. Aeronautical information"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        144.72969999999998,
+        236.83999999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "includes visual and radio aids to navigation, airports, airways,"
+        }
+      ],
+      "text" : "includes visual and radio aids to navigation, airports, airways,"
+    },
+    {
+      "rect" : [
+        71.998599999999954,
+        132.22969999999998,
+        213.83999999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "restricted areas, obstructions and other pertinent data."
+        }
+      ],
+      "text" : "restricted areas, obstructions and other pertinent data."
+    },
+    {
+      "rect" : [
+        321,
+        715.97970000000009,
+        7.3319999999999936,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "Z"
+        }
+      ],
+      "text" : "Z"
+    },
+    {
+      "rect" : [
+        321,
+        700.92370000000005,
+        237.03099999999995,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "Zone of confusion."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " Volume of space above the station where"
+        }
+      ],
+      "text" : "Zone of confusion. Volume of space above the station where"
+    },
+    {
+      "rect" : [
+        321,
+        688.71370000000002,
+        237.00200000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a lack of adequate navigation signal directly above the VOR"
+        }
+      ],
+      "text" : "a lack of adequate navigation signal directly above the VOR"
+    },
+    {
+      "rect" : [
+        321,
+        676.21370000000002,
+        142.75000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "station causes the needle to deviate."
+        }
+      ],
+      "text" : "station causes the needle to deviate."
+    },
+    {
+      "rect" : [
+        321,
+        650.92370000000005,
+        237.05000000000018,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "Zulu time."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " A term used in aviation for coordinated universal"
+        }
+      ],
+      "text" : "Zulu time. A term used in aviation for coordinated universal"
+    },
+    {
+      "rect" : [
+        321,
+        638.71370000000002,
+        237.02400000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "time (UTC) which places the entire world on one time standard."
+        }
+      ],
+      "text" : "time (UTC) which places the entire world on one time standard."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        535.76859999999999,
+        33.709700000000005,
+        22.230000000000018,
+        12.310000000000002
+      ],
+      "text" : "G-35"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        719.43970000000002,
+        237.04599999999999,
+        12.019999999999982
+      ],
+      "text" : "Wind direction indicators. Indicators that include a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        707.22969999999998,
+        237.00099999999992,
+        11.470000000000027
+      ],
+      "text" : "wind sock, wind tee, or tetrahedron. Visual reference will"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        694.72969999999998,
+        178.58000000000004,
+        11.470000000000027
+      ],
+      "text" : "determine wind direction and runway in use."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        669.43970000000002,
+        237.07999999999998,
+        12.019999999999982
+      ],
+      "text" : "Wind shear. A sudden, drastic shift in windspeed, direction,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        657.22969999999998,
+        228.56999999999999,
+        11.470000000000027
+      ],
+      "text" : "or both that may occur in the horizontal or vertical plane."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        631.93970000000002,
+        237.01200000000006,
+        12.019999999999982
+      ],
+      "text" : "Winds and temperature aloft forecast (FB). A twice daily"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        619.72969999999998,
+        236.98700000000019,
+        11.470000000000027
+      ],
+      "text" : "forecast that provides wind and temperature forecasts for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        607.22969999999998,
+        199.70999999999998,
+        11.470000000000027
+      ],
+      "text" : "specific locations in the contiguous United States."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        581.93970000000002,
+        236.99999999999994,
+        12.019999999999982
+      ],
+      "text" : "Wing area. The total surface of the wing (in square feet),"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        569.72969999999998,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "text" : "which includes control surfaces and may include wing area"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        557.22969999999998,
+        237.01699999999988,
+        11.470000000000027
+      ],
+      "text" : "covered by the fuselage (main body of the airplane), and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        544.72969999999998,
+        63.870000000000005,
+        11.470000000000027
+      ],
+      "text" : "engine nacelles."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        519.43970000000002,
+        236.98500000000001,
+        12.019999999999982
+      ],
+      "text" : "Wings. Airfoils attached to each side of the fuselage and are"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        507.22969999999998,
+        233.30999999999989,
+        11.470000000000027
+      ],
+      "text" : "the main lifting surfaces that support the airplane in flight."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        481.93969999999996,
+        237.02799999999996,
+        12.019999999999982
+      ],
+      "text" : "Wing root. The wing root is the part of the wing on a fixed-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        469.72969999999998,
+        236.84200000000016,
+        11.470000000000027
+      ],
+      "text" : "wing aircraft that is closest to the fuselage. Wing roots"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        457.22969999999998,
+        236.98999999999995,
+        11.470000000000027
+      ],
+      "text" : "usually bear the highest bending forces in flight and during"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        444.72969999999998,
+        237.02899999999988,
+        11.470000000000027
+      ],
+      "text" : "landing, and they often have fairings to reduce interference"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        432.22969999999998,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "text" : "drag between the wing and the fuselage. The opposite end"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        419.72969999999998,
+        177.49000000000001,
+        11.470000000000027
+      ],
+      "text" : "of a wing from the wing root is the wing tip."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        394.43969999999996,
+        237.03599999999994,
+        12.019999999999982
+      ],
+      "text" : "Wing span. The maximum distance from wingtip to wingtip."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        369.43969999999996,
+        237.00500000000005,
+        12.019999999999982
+      ],
+      "text" : "Wingtip vortices. The rapidly rotating air that spills over an"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        357.22969999999998,
+        237.01999999999992,
+        11.470000000000027
+      ],
+      "text" : "airplane’s wings during flight. The intensity of the turbulence"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        344.72969999999998,
+        237.02299999999991,
+        11.470000000000027
+      ],
+      "text" : "depends on the airplane’s weight, speed, and configuration."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        332.22969999999998,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "text" : "Also referred to as wake turbulence. Vortices from heavy"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        319.72969999999998,
+        214.37999999999994,
+        11.470000000000027
+      ],
+      "text" : "aircraft may be extremely hazardous to small aircraft."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        294.43969999999996,
+        236.99700000000007,
+        12.019999999999982
+      ],
+      "text" : "Wing twist. A design feature incorporated into some wings"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        282.22969999999998,
+        237.00500000000005,
+        11.470000000000027
+      ],
+      "text" : "to improve aileron control effectiveness at high angles of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        269.72969999999998,
+        142.47000000000006,
+        11.470000000000027
+      ],
+      "text" : "attack during an approach to a stall."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        244.43969999999999,
+        234.65000000000003,
+        12.02000000000001
+      ],
+      "text" : "Work. A measurement of force used to produce movement."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        219.43969999999999,
+        237.03500000000003,
+        12.02000000000001
+      ],
+      "text" : "World Aeronautical Charts (WAC). A standard series"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        207.22969999999998,
+        237.01500000000004,
+        11.469999999999999
+      ],
+      "text" : "of aeronautical charts covering land areas of the world at a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        194.72969999999998,
+        237.00900000000001,
+        11.469999999999999
+      ],
+      "text" : "size and scale convenient for navigation (1:1,000,000) by"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        182.22969999999998,
+        237.0089999999999,
+        11.469999999999999
+      ],
+      "text" : "moderate speed aircraft. Topographic information includes"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        169.72969999999998,
+        237.02800000000019,
+        11.469999999999999
+      ],
+      "text" : "cities and towns, principal roads, railroads, distinctive"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        157.22969999999998,
+        236.98100000000017,
+        11.469999999999999
+      ],
+      "text" : "landmarks, drainage, and relief. Aeronautical information"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        144.72969999999998,
+        236.83999999999997,
+        11.469999999999999
+      ],
+      "text" : "includes visual and radio aids to navigation, airports, airways,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.998599999999954,
+        132.22969999999998,
+        213.83999999999992,
+        11.469999999999999
+      ],
+      "text" : "restricted areas, obstructions and other pertinent data."
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        715.97970000000009,
+        7.3319999999999936,
+        15.827999999999975
+      ],
+      "text" : "Z"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        700.92370000000005,
+        237.03099999999995,
+        12.019999999999982
+      ],
+      "text" : "Zone of confusion. Volume of space above the station where"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        688.71370000000002,
+        237.00200000000007,
+        11.470000000000027
+      ],
+      "text" : "a lack of adequate navigation signal directly above the VOR"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        676.21370000000002,
+        142.75000000000006,
+        11.470000000000027
+      ],
+      "text" : "station causes the needle to deviate."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        650.92370000000005,
+        237.05000000000018,
+        12.019999999999982
+      ],
+      "text" : "Zulu time. A term used in aviation for coordinated universal"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        638.71370000000002,
+        237.02400000000011,
+        11.470000000000027
+      ],
+      "text" : "time (UTC) which places the entire world on one time standard."
+    }
+  ],
+  "page" : 511,
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

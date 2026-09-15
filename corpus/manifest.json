@@ -40,7 +40,9 @@
         {
           "page": 91,
           "issue": "Two-column prose interleaves left and right lines; left paragraph ending must be defined. should precede The computation of density altitude.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/2"
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/2",
+          "status": "resolved",
+          "resolution": "Source-derived regression, positive controls and complete corpus evaluation: measurements/three-fidelity-fixes/record.md."
         },
         {
           "page": 121,
@@ -52,7 +54,9 @@
         {
           "page": 511,
           "issue": "Two-column glossary interleaves Wind direction indicators. and Zone of confusion. before Wind shear.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/2"
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/2",
+          "status": "resolved",
+          "resolution": "Source-derived regression, positive controls and complete corpus evaluation: measurements/three-fidelity-fixes/record.md."
         }
       ],
       "rightsClearance": {
@@ -116,7 +120,9 @@
         {
           "page": 343,
           "issue": "Inline superscript flattens into baseline text: the introductory ax-squared expression is serialized as ax2, without superscript markup. The displayed derivation is retained as an image, so passing EPUB validation and preserving displayed math do not establish inline-math fidelity.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/1"
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/1",
+          "status": "resolved",
+          "resolution": "Source-derived regression, positive controls and complete corpus evaluation: measurements/three-fidelity-fixes/record.md."
         }
       ],
       "rightsClearance": {
@@ -535,7 +541,7 @@
         41,
         48
       ],
-      "reviewStatus": "Full conversion, EPUBCheck and 192 MiB Mac RSS gate pass. Source and rendered spot checks on pages 27 and 33 expose table, drop-cap and flag-group ordering failures; exact XHTML retained for eight review pages. Not full-document fidelity qualification.",
+      "reviewStatus": "Full conversion and resource gates pass. Page-27 table headers and ten rows are preserved in a warned image. Drop-cap and general flag-group ownership remain unqualified; see measurements/three-fidelity-fixes/record.md.",
       "memoryBudget": {
         "maxPeakRSSMiB": 192,
         "scope": "macOS 27 arm64 isolated release CLI, library defaults; regression ceiling, not a physical iOS device budget"
@@ -545,7 +551,9 @@
         {
           "page": 27,
           "issue": "Table rows collapse into one paragraph without a table or table image.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/16"
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/16",
+          "status": "resolved",
+          "resolution": "Source-derived regression, positive controls and complete corpus evaluation: measurements/three-fidelity-fixes/record.md."
         },
         {
           "page": 27,
@@ -555,7 +563,7 @@
         {
           "page": 33,
           "issue": "State-flag descriptions interleave across columns; figure/name/description ownership is lost.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/2"
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/17"
         }
       ],
       "structureCaveat": "Populated StructTreeRoot with MarkInfo.Marked=false; no Table/TR/TH/TD roles or Figure Alt text. Tag associations require validation; current converter does not consume the tree."

@@ -1,0 +1,32 @@
+[
+  {
+    "fixture": "Tests/PDFReflowLibTests/fixtures/faa-91-layout.json",
+    "sha256": "0f5055a3e9947ad509619dbb9a22465b9f520e69c5e60305f1cc6d25948d8900",
+    "recaptureMatches": true
+  },
+  {
+    "fixture": "Tests/PDFReflowLibTests/fixtures/faa-511-layout.json",
+    "sha256": "425dfda2c94446140d8c2c7fd13544704452f4a828f694e473958ff8b46c70b9",
+    "recaptureMatches": true
+  },
+  {
+    "fixture": "Tests/PDFReflowLibTests/fixtures/algebra-343-layout.json",
+    "sha256": "3ecf96b5822ad3fdc5b82fa4a40acd67207ae026c0b78ea6e68b4b7636469cc7",
+    "recaptureMatches": true
+  },
+  {
+    "fixture": "Tests/PDFReflowLibTests/fixtures/flag-27-layout.json",
+    "sha256": "a712a179e8129d875e0be57417e6a57d523e555dd678f057e14b5fe4170e4c42",
+    "recaptureMatches": true
+  },
+  {
+    "fixture": "Tests/PDFReflowLibTests/fixtures/911-451-layout.json",
+    "sha256": "a4f75860a40a666e29028f09f8640c84760519552cb0b676d4bf3651f1f8a49e",
+    "recaptureMatches": true
+  },
+  {
+    "fixture": "Tests/PDFReflowLibTests/fixtures/cdc-5-layout.json",
+    "sha256": "2bdb534ff99f672abfae596666a4a90d896029bb2cd988392f622cff6dd6ee89",
+    "recaptureMatches": true
+  }
+]

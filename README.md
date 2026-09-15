@@ -81,7 +81,7 @@ that fall back to images skip unused attributed-text decoding. Failures use
   source breaks. Typography supplies flat heading navigation.
 - Core Graphics scans placed images, nested forms and painted paths. The original page renderer
   supplies crops containing figures, ruled tables, labels and recognizable displayed formulas.
-  OCR table regions also become images. Images preserve compositing and appearance rather than
+  Numeric dot-leader tables with supported geometry and OCR table regions also become images. Images preserve compositing and appearance rather than
   exposing raw image resources with missing masks or detached labels.
 - Vision recognizes pages with missing/damaged text by default. OCR text is explicitly reported
   as transcription, with an accompanying original-page image preserving unrecognized figures.

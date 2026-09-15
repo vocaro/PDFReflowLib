@@ -1,0 +1,2625 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        14.450000000000003,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "4-4"
+        }
+      ],
+      "text" : "4-4"
+    },
+    {
+      "rect" : [
+        36,
+        719.5696999999999,
+        237.01300000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Since aircraft performance is compared and evaluated with"
+        }
+      ],
+      "text" : "Since aircraft performance is compared and evaluated with"
+    },
+    {
+      "rect" : [
+        36,
+        707.0696999999999,
+        237.06500000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "respect to the standard atmosphere, all aircraft instruments are"
+        }
+      ],
+      "text" : "respect to the standard atmosphere, all aircraft instruments are"
+    },
+    {
+      "rect" : [
+        36,
+        694.5696999999999,
+        237.01499999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "calibrated for the standard atmosphere. In order to properly"
+        }
+      ],
+      "text" : "calibrated for the standard atmosphere. In order to properly"
+    },
+    {
+      "rect" : [
+        36,
+        682.0696999999999,
+        236.85999999999979,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "account for the nonstandard atmosphere, certain related terms"
+        }
+      ],
+      "text" : "account for the nonstandard atmosphere, certain related terms"
+    },
+    {
+      "rect" : [
+        36,
+        669.5696999999999,
+        66.38000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "must be defined."
+        }
+      ],
+      "text" : "must be defined."
+    },
+    {
+      "rect" : [
+        36,
+        643.99969999999985,
+        82.800000000000011,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Pressure Altitude"
+        }
+      ],
+      "text" : "Pressure Altitude"
+    },
+    {
+      "rect" : [
+        36,
+        631.5696999999999,
+        237.00799999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Pressure altitude is the height above a standard datum plane"
+        }
+      ],
+      "text" : "Pressure altitude is the height above a standard datum plane"
+    },
+    {
+      "rect" : [
+        36,
+        619.0696999999999,
+        237.00799999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(SDP), which is a theoretical level where the weight of the"
+        }
+      ],
+      "text" : "(SDP), which is a theoretical level where the weight of the"
+    },
+    {
+      "rect" : [
+        36,
+        606.5696999999999,
+        236.8900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "atmosphere is 29.92 \"Hg (1,013.2 mb) as measured by a"
+        }
+      ],
+      "text" : "atmosphere is 29.92 \"Hg (1,013.2 mb) as measured by a"
+    },
+    {
+      "rect" : [
+        36,
+        594.0696999999999,
+        237.01199999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "barometer. An altimeter is essentially a sensitive barometer"
+        }
+      ],
+      "text" : "barometer. An altimeter is essentially a sensitive barometer"
+    },
+    {
+      "rect" : [
+        36,
+        581.5696999999999,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "calibrated to indicate altitude in the standard atmosphere. If"
+        }
+      ],
+      "text" : "calibrated to indicate altitude in the standard atmosphere. If"
+    },
+    {
+      "rect" : [
+        36,
+        569.0696999999999,
+        237.00999999999982,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the altimeter is set for 29.92 \"Hg SDP, the altitude indicated"
+        }
+      ],
+      "text" : "the altimeter is set for 29.92 \"Hg SDP, the altitude indicated"
+    },
+    {
+      "rect" : [
+        36,
+        556.5696999999999,
+        236.93999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is the pressure altitude. As atmospheric pressure changes, the"
+        }
+      ],
+      "text" : "is the pressure altitude. As atmospheric pressure changes, the"
+    },
+    {
+      "rect" : [
+        36,
+        544.0696999999999,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "SDP may be below, at, or above sea level. Pressure altitude"
+        }
+      ],
+      "text" : "SDP may be below, at, or above sea level. Pressure altitude"
+    },
+    {
+      "rect" : [
+        36,
+        531.5696999999999,
+        237.01700000000017,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is important as a basis for determining airplane performance,"
+        }
+      ],
+      "text" : "is important as a basis for determining airplane performance,"
+    },
+    {
+      "rect" : [
+        36,
+        519.0696999999999,
+        236.99599999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "as well as for assigning flight levels to airplanes operating at"
+        }
+      ],
+      "text" : "as well as for assigning flight levels to airplanes operating at"
+    },
+    {
+      "rect" : [
+        36,
+        506.5696999999999,
+        84.700000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or above 18,000 feet."
+        }
+      ],
+      "text" : "or above 18,000 feet."
+    },
+    {
+      "rect" : [
+        36,
+        481.5696999999999,
+        236.84000000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The pressure altitude can be determined by one of the"
+        }
+      ],
+      "text" : "The pressure altitude can be determined by one of the"
+    },
+    {
+      "rect" : [
+        36,
+        469.0696999999999,
+        78.059999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "following methods:"
+        }
+      ],
+      "text" : "following methods:"
+    },
+    {
+      "rect" : [
+        45,
+        452.06640000000004,
+        227.99099999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "1. Setting the barometric scale of the altimeter to 29.92"
+        }
+      ],
+      "text" : "1. Setting the barometric scale of the altimeter to 29.92"
+    },
+    {
+      "rect" : [
+        63,
+        439.56640000000004,
+        133.31000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and reading the indicated altitude"
+        }
+      ],
+      "text" : "and reading the indicated altitude"
+    },
+    {
+      "rect" : [
+        45,
+        422.56640000000004,
+        228.01200000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "2. Applying a correction factor to the indicated altitude"
+        }
+      ],
+      "text" : "2. Applying a correction factor to the indicated altitude"
+    },
+    {
+      "rect" : [
+        63,
+        410.06640000000004,
+        167.47000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "according to the reported altimeter setting"
+        }
+      ],
+      "text" : "according to the reported altimeter setting"
+    },
+    {
+      "rect" : [
+        36,
+        384.49640000000005,
+        76.120000000000005,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Density Altitude"
+        }
+      ],
+      "text" : "Density Altitude"
+    },
+    {
+      "rect" : [
+        36,
+        372.06640000000004,
+        237.02000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "SDP is a theoretical pressure altitude, but aircraft operate in a"
+        }
+      ],
+      "text" : "SDP is a theoretical pressure altitude, but aircraft operate in a"
+    },
+    {
+      "rect" : [
+        36,
+        359.56640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "nonstandard atmosphere and the term density altitude is used"
+        }
+      ],
+      "text" : "nonstandard atmosphere and the term density altitude is used"
+    },
+    {
+      "rect" : [
+        36,
+        347.06640000000004,
+        237.06500000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "for correlating aerodynamic performance in the nonstandard"
+        }
+      ],
+      "text" : "for correlating aerodynamic performance in the nonstandard"
+    },
+    {
+      "rect" : [
+        36,
+        334.56640000000004,
+        236.86199999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "atmosphere. Density altitude is the vertical distance above sea"
+        }
+      ],
+      "text" : "atmosphere. Density altitude is the vertical distance above sea"
+    },
+    {
+      "rect" : [
+        36,
+        322.06640000000004,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "level in the standard atmosphere at which a given density is"
+        }
+      ],
+      "text" : "level in the standard atmosphere at which a given density is"
+    },
+    {
+      "rect" : [
+        36,
+        309.56640000000004,
+        237.00699999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to be found. The density of air has significant effects on the"
+        }
+      ],
+      "text" : "to be found. The density of air has significant effects on the"
+    },
+    {
+      "rect" : [
+        36,
+        297.06640000000004,
+        237.00899999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft’s performance because as air becomes less dense,"
+        }
+      ],
+      "text" : "aircraft’s performance because as air becomes less dense,"
+    },
+    {
+      "rect" : [
+        36,
+        284.56640000000004,
+        41.379999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "it reduces:"
+        }
+      ],
+      "text" : "it reduces:"
+    },
+    {
+      "rect" : [
+        45,
+        267.56639999999999,
+        185.46000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Power because the engine takes in less air"
+        }
+      ],
+      "text" : "• Power because the engine takes in less air"
+    },
+    {
+      "rect" : [
+        45,
+        250.56640000000002,
+        227.67999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Thrust because a propeller is less efficient in thin air"
+        }
+      ],
+      "text" : "• Thrust because a propeller is less efficient in thin air"
+    },
+    {
+      "rect" : [
+        45,
+        233.56640000000002,
+        228.05999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Lift because the thin air exerts less force on the airfoils"
+        }
+      ],
+      "text" : "• Lift because the thin air exerts less force on the airfoils"
+    },
+    {
+      "rect" : [
+        36,
+        208.56640000000002,
+        237.0100000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Density altitude is pressure altitude corrected for nonstandard"
+        }
+      ],
+      "text" : "Density altitude is pressure altitude corrected for nonstandard"
+    },
+    {
+      "rect" : [
+        36,
+        196.06640000000002,
+        237.12999999999988,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "temperature. As the density of the air increases (lower"
+        }
+      ],
+      "text" : "temperature. As the density of the air increases (lower"
+    },
+    {
+      "rect" : [
+        36,
+        183.56640000000002,
+        237.01999999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "density altitude), aircraft performance increases; conversely"
+        }
+      ],
+      "text" : "density altitude), aircraft performance increases; conversely"
+    },
+    {
+      "rect" : [
+        36,
+        171.06640000000002,
+        237.16000000000008,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "as air density decreases (higher density altitude), aircraft"
+        }
+      ],
+      "text" : "as air density decreases (higher density altitude), aircraft"
+    },
+    {
+      "rect" : [
+        36,
+        158.56640000000002,
+        237.01900000000035,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "performance decreases. A decrease in air density means"
+        }
+      ],
+      "text" : "performance decreases. A decrease in air density means"
+    },
+    {
+      "rect" : [
+        36,
+        146.06640000000002,
+        236.99199999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a high density altitude; an increase in air density means a"
+        }
+      ],
+      "text" : "a high density altitude; an increase in air density means a"
+    },
+    {
+      "rect" : [
+        36,
+        133.56640000000002,
+        237.02799999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "lower density altitude. Density altitude is used in calculating"
+        }
+      ],
+      "text" : "lower density altitude. Density altitude is used in calculating"
+    },
+    {
+      "rect" : [
+        36,
+        121.06640000000002,
+        236.94999999999987,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft performance because under standard atmospheric"
+        }
+      ],
+      "text" : "aircraft performance because under standard atmospheric"
+    },
+    {
+      "rect" : [
+        36,
+        108.56640000000002,
+        237,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "conditions, air at each level in the atmosphere not only has"
+        }
+      ],
+      "text" : "conditions, air at each level in the atmosphere not only has"
+    },
+    {
+      "rect" : [
+        36,
+        96.066400000000016,
+        237.01599999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a specific density, its pressure altitude and density altitude"
+        }
+      ],
+      "text" : "a specific density, its pressure altitude and density altitude"
+    },
+    {
+      "rect" : [
+        36,
+        83.566400000000016,
+        93.319999999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "identify the same level."
+        }
+      ],
+      "text" : "identify the same level."
+    },
+    {
+      "rect" : [
+        285,
+        719.56640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The computation of density altitude involves consideration"
+        }
+      ],
+      "text" : "The computation of density altitude involves consideration"
+    },
+    {
+      "rect" : [
+        285,
+        707.06640000000004,
+        236.8599999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of pressure (pressure altitude) and temperature. Since aircraft"
+        }
+      ],
+      "text" : "of pressure (pressure altitude) and temperature. Since aircraft"
+    },
+    {
+      "rect" : [
+        285,
+        694.56640000000004,
+        236.93999999999983,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "performance data at any level is based upon air density under"
+        }
+      ],
+      "text" : "performance data at any level is based upon air density under"
+    },
+    {
+      "rect" : [
+        285,
+        682.06640000000004,
+        236.96000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "standard day conditions, such performance data apply to"
+        }
+      ],
+      "text" : "standard day conditions, such performance data apply to"
+    },
+    {
+      "rect" : [
+        285,
+        669.56640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "air density levels that may not be identical with altimeter"
+        }
+      ],
+      "text" : "air density levels that may not be identical with altimeter"
+    },
+    {
+      "rect" : [
+        285,
+        657.06640000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "indications. Under conditions higher or lower than standard,"
+        }
+      ],
+      "text" : "indications. Under conditions higher or lower than standard,"
+    },
+    {
+      "rect" : [
+        285,
+        644.56640000000004,
+        237.13999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "these levels cannot be determined directly from the altimeter."
+        }
+      ],
+      "text" : "these levels cannot be determined directly from the altimeter."
+    },
+    {
+      "rect" : [
+        285,
+        619.56640000000004,
+        237.12100000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Density altitude is determined by first finding pressure"
+        }
+      ],
+      "text" : "Density altitude is determined by first finding pressure"
+    },
+    {
+      "rect" : [
+        285,
+        607.06640000000004,
+        237.09999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "altitude, and then correcting this altitude for nonstandard"
+        }
+      ],
+      "text" : "altitude, and then correcting this altitude for nonstandard"
+    },
+    {
+      "rect" : [
+        285,
+        594.56640000000004,
+        237.08799999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "temperature variations. Since density varies directly with"
+        }
+      ],
+      "text" : "temperature variations. Since density varies directly with"
+    },
+    {
+      "rect" : [
+        285,
+        582.06640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pressure and inversely with temperature, a given pressure"
+        }
+      ],
+      "text" : "pressure and inversely with temperature, a given pressure"
+    },
+    {
+      "rect" : [
+        285,
+        569.56640000000004,
+        237.13000000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "altitude may exist for a wide range of temperatures by"
+        }
+      ],
+      "text" : "altitude may exist for a wide range of temperatures by"
+    },
+    {
+      "rect" : [
+        285,
+        557.06640000000004,
+        237.03999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "allowing the density to vary. However, a known density"
+        }
+      ],
+      "text" : "allowing the density to vary. However, a known density"
+    },
+    {
+      "rect" : [
+        285,
+        544.56640000000004,
+        236.995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "occurs for any one temperature and pressure altitude. The"
+        }
+      ],
+      "text" : "occurs for any one temperature and pressure altitude. The"
+    },
+    {
+      "rect" : [
+        285,
+        532.06640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "density of the air has a pronounced effect on aircraft and"
+        }
+      ],
+      "text" : "density of the air has a pronounced effect on aircraft and"
+    },
+    {
+      "rect" : [
+        285,
+        519.56640000000004,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "engine performance. Regardless of the actual altitude of the"
+        }
+      ],
+      "text" : "engine performance. Regardless of the actual altitude of the"
+    },
+    {
+      "rect" : [
+        285,
+        507.06640000000004,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft, it will perform as though it were operating at an"
+        }
+      ],
+      "text" : "aircraft, it will perform as though it were operating at an"
+    },
+    {
+      "rect" : [
+        285,
+        494.56640000000004,
+        179.72000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "altitude equal to the existing density altitude."
+        }
+      ],
+      "text" : "altitude equal to the existing density altitude."
+    },
+    {
+      "rect" : [
+        285,
+        469.56640000000004,
+        237.02199999999982,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Air density is affected by changes in altitude, temperature,"
+        }
+      ],
+      "text" : "Air density is affected by changes in altitude, temperature,"
+    },
+    {
+      "rect" : [
+        285,
+        457.06640000000004,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and humidity. High density altitude refers to thin air, while"
+        }
+      ],
+      "text" : "and humidity. High density altitude refers to thin air, while"
+    },
+    {
+      "rect" : [
+        285,
+        444.56640000000004,
+        237.024,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "low density altitude refers to dense air. The conditions that"
+        }
+      ],
+      "text" : "low density altitude refers to dense air. The conditions that"
+    },
+    {
+      "rect" : [
+        285,
+        432.06640000000004,
+        236.89000000000033,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "result in a high density altitude are high elevations, low"
+        }
+      ],
+      "text" : "result in a high density altitude are high elevations, low"
+    },
+    {
+      "rect" : [
+        285,
+        419.56640000000004,
+        236.99800000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "atmospheric pressures, high temperatures, high humidity, or"
+        }
+      ],
+      "text" : "atmospheric pressures, high temperatures, high humidity, or"
+    },
+    {
+      "rect" : [
+        285,
+        407.06640000000004,
+        236.995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "some combination of these factors. Lower elevations, high"
+        }
+      ],
+      "text" : "some combination of these factors. Lower elevations, high"
+    },
+    {
+      "rect" : [
+        285,
+        394.56640000000004,
+        237.01400000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "atmospheric pressure, low temperatures, and low humidity"
+        }
+      ],
+      "text" : "atmospheric pressure, low temperatures, and low humidity"
+    },
+    {
+      "rect" : [
+        285,
+        382.06640000000004,
+        171.92000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are more indicative of low density altitude."
+        }
+      ],
+      "text" : "are more indicative of low density altitude."
+    },
+    {
+      "rect" : [
+        285,
+        355.84340000000003,
+        133.21000000000004,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Effect of Pressure on Density"
+        }
+      ],
+      "text" : "Effect of Pressure on Density"
+    },
+    {
+      "rect" : [
+        285,
+        342.06640000000004,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Since air is a gas, it can be compressed or expanded. When"
+        }
+      ],
+      "text" : "Since air is a gas, it can be compressed or expanded. When"
+    },
+    {
+      "rect" : [
+        285,
+        329.56640000000004,
+        236.91000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "air is compressed, a greater amount of air can occupy a given"
+        }
+      ],
+      "text" : "air is compressed, a greater amount of air can occupy a given"
+    },
+    {
+      "rect" : [
+        285,
+        317.06640000000004,
+        236.86800000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "volume. Conversely, when pressure on a given volume of air"
+        }
+      ],
+      "text" : "volume. Conversely, when pressure on a given volume of air"
+    },
+    {
+      "rect" : [
+        285,
+        304.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is decreased, the air expands and occupies a greater space."
+        }
+      ],
+      "text" : "is decreased, the air expands and occupies a greater space."
+    },
+    {
+      "rect" : [
+        285,
+        292.06640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "At a lower pressure, the original column of air contains a"
+        }
+      ],
+      "text" : "At a lower pressure, the original column of air contains a"
+    },
+    {
+      "rect" : [
+        285,
+        279.56640000000004,
+        237.00999999999976,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "smaller mass of air. The density is decreased because density"
+        }
+      ],
+      "text" : "smaller mass of air. The density is decreased because density"
+    },
+    {
+      "rect" : [
+        285,
+        267.06640000000004,
+        236.93000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is directly proportional to pressure. If the pressure is doubled,"
+        }
+      ],
+      "text" : "is directly proportional to pressure. If the pressure is doubled,"
+    },
+    {
+      "rect" : [
+        285,
+        254.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the density is doubled; if the pressure is lowered, the density is"
+        }
+      ],
+      "text" : "the density is doubled; if the pressure is lowered, the density is"
+    },
+    {
+      "rect" : [
+        285,
+        242.06640000000004,
+        237.02099999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "lowered. This statement is true only at a constant temperature."
+        }
+      ],
+      "text" : "lowered. This statement is true only at a constant temperature."
+    },
+    {
+      "rect" : [
+        285,
+        215.8434,
+        152.15200000000004,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Effect of Temperature on Density"
+        }
+      ],
+      "text" : "Effect of Temperature on Density"
+    },
+    {
+      "rect" : [
+        285,
+        202.06640000000002,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Increasing the temperature of a substance decreases its"
+        }
+      ],
+      "text" : "Increasing the temperature of a substance decreases its"
+    },
+    {
+      "rect" : [
+        285,
+        189.56640000000002,
+        237.0139999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "density. Conversely, decreasing the temperature increases"
+        }
+      ],
+      "text" : "density. Conversely, decreasing the temperature increases"
+    },
+    {
+      "rect" : [
+        285,
+        177.06640000000002,
+        236.99999999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the density. Thus, the density of air varies inversely with"
+        }
+      ],
+      "text" : "the density. Thus, the density of air varies inversely with"
+    },
+    {
+      "rect" : [
+        285,
+        164.56640000000002,
+        237.07999999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "temperature. This statement is true only at a constant pressure."
+        }
+      ],
+      "text" : "temperature. This statement is true only at a constant pressure."
+    },
+    {
+      "rect" : [
+        285,
+        139.56640000000002,
+        237.01299999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "In the atmosphere, both temperature and pressure decrease"
+        }
+      ],
+      "text" : "In the atmosphere, both temperature and pressure decrease"
+    },
+    {
+      "rect" : [
+        285,
+        127.06640000000002,
+        236.97000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "with altitude and have conflicting effects upon density."
+        }
+      ],
+      "text" : "with altitude and have conflicting effects upon density."
+    },
+    {
+      "rect" : [
+        285,
+        114.56640000000002,
+        237.03999999999985,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "However, a fairly rapid drop in pressure as altitude increases"
+        }
+      ],
+      "text" : "However, a fairly rapid drop in pressure as altitude increases"
+    },
+    {
+      "rect" : [
+        285,
+        102.06640000000002,
+        237.01699999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "usually has a dominating effect. Hence, pilots can expect the"
+        }
+      ],
+      "text" : "usually has a dominating effect. Hence, pilots can expect the"
+    },
+    {
+      "rect" : [
+        285,
+        89.566400000000016,
+        131.37,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "density to decrease with altitude."
+        }
+      ],
+      "text" : "density to decrease with altitude."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        14.450000000000003,
+        12.310000000000002
+      ],
+      "text" : "4-4"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        719.5696999999999,
+        237.01300000000003,
+        11.470000000000027
+      ],
+      "text" : "Since aircraft performance is compared and evaluated with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        707.0696999999999,
+        237.06500000000011,
+        11.470000000000027
+      ],
+      "text" : "respect to the standard atmosphere, all aircraft instruments are"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        694.5696999999999,
+        237.01499999999993,
+        11.470000000000027
+      ],
+      "text" : "calibrated for the standard atmosphere. In order to properly"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        682.0696999999999,
+        236.85999999999979,
+        11.470000000000027
+      ],
+      "text" : "account for the nonstandard atmosphere, certain related terms"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        669.5696999999999,
+        66.38000000000001,
+        11.470000000000027
+      ],
+      "text" : "must be defined."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        643.99969999999985,
+        82.800000000000011,
+        13.190000000000055
+      ],
+      "text" : "Pressure Altitude"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        631.5696999999999,
+        237.00799999999998,
+        11.470000000000027
+      ],
+      "text" : "Pressure altitude is the height above a standard datum plane"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        619.0696999999999,
+        237.00799999999998,
+        11.470000000000027
+      ],
+      "text" : "(SDP), which is a theoretical level where the weight of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        606.5696999999999,
+        236.8900000000001,
+        11.470000000000027
+      ],
+      "text" : "atmosphere is 29.92 \"Hg (1,013.2 mb) as measured by a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        594.0696999999999,
+        237.01199999999989,
+        11.470000000000027
+      ],
+      "text" : "barometer. An altimeter is essentially a sensitive barometer"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        581.5696999999999,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "text" : "calibrated to indicate altitude in the standard atmosphere. If"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        569.0696999999999,
+        237.00999999999982,
+        11.470000000000027
+      ],
+      "text" : "the altimeter is set for 29.92 \"Hg SDP, the altitude indicated"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        556.5696999999999,
+        236.93999999999994,
+        11.470000000000027
+      ],
+      "text" : "is the pressure altitude. As atmospheric pressure changes, the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        544.0696999999999,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "text" : "SDP may be below, at, or above sea level. Pressure altitude"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        531.5696999999999,
+        237.01700000000017,
+        11.470000000000027
+      ],
+      "text" : "is important as a basis for determining airplane performance,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        519.0696999999999,
+        236.99599999999998,
+        11.470000000000027
+      ],
+      "text" : "as well as for assigning flight levels to airplanes operating at"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        506.5696999999999,
+        84.700000000000003,
+        11.470000000000027
+      ],
+      "text" : "or above 18,000 feet."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        481.5696999999999,
+        236.84000000000015,
+        11.470000000000027
+      ],
+      "text" : "The pressure altitude can be determined by one of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        469.0696999999999,
+        78.059999999999988,
+        11.470000000000027
+      ],
+      "text" : "following methods:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        452.06640000000004,
+        227.99099999999999,
+        11.470000000000027
+      ],
+      "text" : "1. Setting the barometric scale of the altimeter to 29.92"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        439.56640000000004,
+        133.31000000000006,
+        11.470000000000027
+      ],
+      "text" : "and reading the indicated altitude"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        422.56640000000004,
+        228.01200000000006,
+        11.470000000000027
+      ],
+      "text" : "2. Applying a correction factor to the indicated altitude"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        410.06640000000004,
+        167.47000000000008,
+        11.470000000000027
+      ],
+      "text" : "according to the reported altimeter setting"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        384.49640000000005,
+        76.120000000000005,
+        13.189999999999998
+      ],
+      "text" : "Density Altitude"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        372.06640000000004,
+        237.02000000000004,
+        11.470000000000027
+      ],
+      "text" : "SDP is a theoretical pressure altitude, but aircraft operate in a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        359.56640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "text" : "nonstandard atmosphere and the term density altitude is used"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        347.06640000000004,
+        237.06500000000005,
+        11.470000000000027
+      ],
+      "text" : "for correlating aerodynamic performance in the nonstandard"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        334.56640000000004,
+        236.86199999999997,
+        11.470000000000027
+      ],
+      "text" : "atmosphere. Density altitude is the vertical distance above sea"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        322.06640000000004,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "text" : "level in the standard atmosphere at which a given density is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        309.56640000000004,
+        237.00699999999989,
+        11.470000000000027
+      ],
+      "text" : "to be found. The density of air has significant effects on the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        297.06640000000004,
+        237.00899999999996,
+        11.470000000000027
+      ],
+      "text" : "aircraft’s performance because as air becomes less dense,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        284.56640000000004,
+        41.379999999999995,
+        11.470000000000027
+      ],
+      "text" : "it reduces:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        267.56639999999999,
+        185.46000000000004,
+        11.470000000000027
+      ],
+      "text" : "• Power because the engine takes in less air"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        250.56640000000002,
+        227.67999999999995,
+        11.469999999999999
+      ],
+      "text" : "• Thrust because a propeller is less efficient in thin air"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        233.56640000000002,
+        228.05999999999995,
+        11.469999999999999
+      ],
+      "text" : "• Lift because the thin air exerts less force on the airfoils"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        208.56640000000002,
+        237.0100000000001,
+        11.469999999999999
+      ],
+      "text" : "Density altitude is pressure altitude corrected for nonstandard"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        196.06640000000002,
+        237.12999999999988,
+        11.469999999999999
+      ],
+      "text" : "temperature. As the density of the air increases (lower"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        183.56640000000002,
+        237.01999999999992,
+        11.469999999999999
+      ],
+      "text" : "density altitude), aircraft performance increases; conversely"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        171.06640000000002,
+        237.16000000000008,
+        11.469999999999999
+      ],
+      "text" : "as air density decreases (higher density altitude), aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        158.56640000000002,
+        237.01900000000035,
+        11.469999999999999
+      ],
+      "text" : "performance decreases. A decrease in air density means"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        146.06640000000002,
+        236.99199999999996,
+        11.469999999999999
+      ],
+      "text" : "a high density altitude; an increase in air density means a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        133.56640000000002,
+        237.02799999999996,
+        11.469999999999999
+      ],
+      "text" : "lower density altitude. Density altitude is used in calculating"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        121.06640000000002,
+        236.94999999999987,
+        11.469999999999999
+      ],
+      "text" : "aircraft performance because under standard atmospheric"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        108.56640000000002,
+        237,
+        11.469999999999999
+      ],
+      "text" : "conditions, air at each level in the atmosphere not only has"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        96.066400000000016,
+        237.01599999999996,
+        11.469999999999999
+      ],
+      "text" : "a specific density, its pressure altitude and density altitude"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        83.566400000000016,
+        93.319999999999993,
+        11.469999999999999
+      ],
+      "text" : "identify the same level."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        719.56640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "text" : "The computation of density altitude involves consideration"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        707.06640000000004,
+        236.8599999999999,
+        11.470000000000027
+      ],
+      "text" : "of pressure (pressure altitude) and temperature. Since aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        694.56640000000004,
+        236.93999999999983,
+        11.470000000000027
+      ],
+      "text" : "performance data at any level is based upon air density under"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        682.06640000000004,
+        236.96000000000004,
+        11.470000000000027
+      ],
+      "text" : "standard day conditions, such performance data apply to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        669.56640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "text" : "air density levels that may not be identical with altimeter"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        657.06640000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "text" : "indications. Under conditions higher or lower than standard,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        644.56640000000004,
+        237.13999999999999,
+        11.470000000000027
+      ],
+      "text" : "these levels cannot be determined directly from the altimeter."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        619.56640000000004,
+        237.12100000000009,
+        11.470000000000027
+      ],
+      "text" : "Density altitude is determined by first finding pressure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        607.06640000000004,
+        237.09999999999991,
+        11.470000000000027
+      ],
+      "text" : "altitude, and then correcting this altitude for nonstandard"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        594.56640000000004,
+        237.08799999999997,
+        11.470000000000027
+      ],
+      "text" : "temperature variations. Since density varies directly with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        582.06640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "text" : "pressure and inversely with temperature, a given pressure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        569.56640000000004,
+        237.13000000000011,
+        11.470000000000027
+      ],
+      "text" : "altitude may exist for a wide range of temperatures by"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        557.06640000000004,
+        237.03999999999996,
+        11.470000000000027
+      ],
+      "text" : "allowing the density to vary. However, a known density"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        544.56640000000004,
+        236.995,
+        11.470000000000027
+      ],
+      "text" : "occurs for any one temperature and pressure altitude. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        532.06640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "text" : "density of the air has a pronounced effect on aircraft and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        519.56640000000004,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "text" : "engine performance. Regardless of the actual altitude of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        507.06640000000004,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "text" : "aircraft, it will perform as though it were operating at an"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        494.56640000000004,
+        179.72000000000003,
+        11.470000000000027
+      ],
+      "text" : "altitude equal to the existing density altitude."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        469.56640000000004,
+        237.02199999999982,
+        11.470000000000027
+      ],
+      "text" : "Air density is affected by changes in altitude, temperature,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        457.06640000000004,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "text" : "and humidity. High density altitude refers to thin air, while"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        444.56640000000004,
+        237.024,
+        11.470000000000027
+      ],
+      "text" : "low density altitude refers to dense air. The conditions that"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        432.06640000000004,
+        236.89000000000033,
+        11.470000000000027
+      ],
+      "text" : "result in a high density altitude are high elevations, low"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        419.56640000000004,
+        236.99800000000005,
+        11.470000000000027
+      ],
+      "text" : "atmospheric pressures, high temperatures, high humidity, or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        407.06640000000004,
+        236.995,
+        11.470000000000027
+      ],
+      "text" : "some combination of these factors. Lower elevations, high"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        394.56640000000004,
+        237.01400000000012,
+        11.470000000000027
+      ],
+      "text" : "atmospheric pressure, low temperatures, and low humidity"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        382.06640000000004,
+        171.92000000000007,
+        11.470000000000027
+      ],
+      "text" : "are more indicative of low density altitude."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        355.84340000000003,
+        133.21000000000004,
+        13.310000000000002
+      ],
+      "text" : "Effect of Pressure on Density"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        342.06640000000004,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "text" : "Since air is a gas, it can be compressed or expanded. When"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        329.56640000000004,
+        236.91000000000008,
+        11.470000000000027
+      ],
+      "text" : "air is compressed, a greater amount of air can occupy a given"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        317.06640000000004,
+        236.86800000000005,
+        11.470000000000027
+      ],
+      "text" : "volume. Conversely, when pressure on a given volume of air"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        304.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "text" : "is decreased, the air expands and occupies a greater space."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        292.06640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "text" : "At a lower pressure, the original column of air contains a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        279.56640000000004,
+        237.00999999999976,
+        11.470000000000027
+      ],
+      "text" : "smaller mass of air. The density is decreased because density"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        267.06640000000004,
+        236.93000000000006,
+        11.470000000000027
+      ],
+      "text" : "is directly proportional to pressure. If the pressure is doubled,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        254.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "text" : "the density is doubled; if the pressure is lowered, the density is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        242.06640000000004,
+        237.02099999999996,
+        11.469999999999999
+      ],
+      "text" : "lowered. This statement is true only at a constant temperature."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        215.8434,
+        152.15200000000004,
+        13.310000000000002
+      ],
+      "text" : "Effect of Temperature on Density"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        202.06640000000002,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "text" : "Increasing the temperature of a substance decreases its"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        189.56640000000002,
+        237.0139999999999,
+        11.469999999999999
+      ],
+      "text" : "density. Conversely, decreasing the temperature increases"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        177.06640000000002,
+        236.99999999999989,
+        11.469999999999999
+      ],
+      "text" : "the density. Thus, the density of air varies inversely with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        164.56640000000002,
+        237.07999999999993,
+        11.469999999999999
+      ],
+      "text" : "temperature. This statement is true only at a constant pressure."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        139.56640000000002,
+        237.01299999999992,
+        11.469999999999999
+      ],
+      "text" : "In the atmosphere, both temperature and pressure decrease"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        127.06640000000002,
+        236.97000000000003,
+        11.469999999999999
+      ],
+      "text" : "with altitude and have conflicting effects upon density."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        114.56640000000002,
+        237.03999999999985,
+        11.469999999999999
+      ],
+      "text" : "However, a fairly rapid drop in pressure as altitude increases"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        102.06640000000002,
+        237.01699999999994,
+        11.469999999999999
+      ],
+      "text" : "usually has a dominating effect. Hence, pilots can expect the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        89.566400000000016,
+        131.37,
+        11.469999999999999
+      ],
+      "text" : "density to decrease with altitude."
+    }
+  ],
+  "page" : 91,
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

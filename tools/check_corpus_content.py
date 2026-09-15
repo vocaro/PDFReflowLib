@@ -37,11 +37,19 @@ def read_pages(path):
             chapter = PurePosixPath('EPUB') / manifest[reference.get('idref')]
             tree = ET.fromstring(archive.read(str(chapter)))
 
-            def append(text):
-                if current is not None:
-                    pages[current]['text'] += text or ''
+            def append(text, script=None):
+                if current is not None and text:
+                    page = pages[current]
+                    start = len(page['text'])
+                    page['text'] += text
+                    if script:
+                        spans = page['scripts']
+                        if spans and spans[-1]['tag'] == script and spans[-1]['end'] == start:
+                            spans[-1]['end'] += len(text)
+                        else:
+                            spans.append({'tag': script, 'start': start, 'end': start + len(text)})
 
-            def walk(element):
+            def walk(element, script=None):
                 nonlocal current
                 if 'pagebreak' in element.get(EPUB + 'type', '').split():
                     anchor = element.get('id', '')
@@ -51,7 +59,7 @@ def read_pages(path):
                     if current in pages:
                         raise ValueError('Duplicate page boundary')
                     markers.append(current)
-                    pages[current] = {'text': '', 'images': []}
+                    pages[current] = {'text': '', 'images': [], 'scripts': []}
                 if element.tag == HTML + 'img' and current is not None:
                     asset = str(chapter.parent / element.attrib['src'])
                     if asset not in archive.namelist():
@@ -60,16 +68,23 @@ def read_pages(path):
                 # Generic converter captions must not satisfy source-text expectations.
                 if element.tag == HTML + 'figcaption':
                     return
-                append(element.text)
+                if element.tag in (HTML + 'sup', HTML + 'sub'):
+                    script = element.tag[len(HTML):]
+                append(element.text, script)
                 for child in element:
-                    walk(child)
-                    append(child.tail)
+                    walk(child, script)
+                    append(child.tail, script)
                 if element.tag in BLOCKS:
                     append(' ')
 
             walk(tree.find(HTML + 'body'))
     for page in pages.values():
-        page['text'] = normalized(page['text'])
+        raw = page['text']
+        page['scripts'] = [{'tag': span['tag'], 'text': normalized(raw[span['start']:span['end']]),
+                            'before': normalized(raw[max(0, span['start'] - 128):span['start']]),
+                            'after': normalized(raw[span['end']:span['end'] + 128])}
+                           for span in page['scripts']]
+        page['text'] = normalized(raw)
     return pages, markers
 
 
@@ -93,7 +108,7 @@ def assess(case, contract, result, report, pages, markers):
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'scripts')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -111,6 +126,17 @@ def assess(case, contract, result, report, pages, markers):
                 errors.append(f'Page {number}: missing or reordered text {phrase!r}')
             else:
                 cursor = index + len(normalized(phrase))
+        for script in item.get('scripts', []):
+            if (script.get('tag') not in ('sup', 'sub')
+                    or any(not isinstance(script.get(k), str) or not 1 <= len(normalized(script[k])) <= 96
+                           for k in ('text', 'before', 'after'))):
+                raise ValueError('Script check requires sup/sub and nonempty bounded text/context')
+            checks += 1
+            if not any(span['tag'] == script['tag'] and span['text'] == normalized(script['text'])
+                       and span['before'].endswith(normalized(script['before']))
+                       and span['after'].startswith(normalized(script['after']))
+                       for span in page.get('scripts', [])):
+                errors.append(f'Page {number}: missing script or incorrect context {script!r}')
         if 'minimumImages' in item:
             minimum = item['minimumImages']
             if type(minimum) is not int or minimum < 1:
@@ -129,7 +155,7 @@ def assess(case, contract, result, report, pages, markers):
         raise ValueError('Contract has no content checks')
     return {'case': case['id'], 'passed': not errors, 'reviewPages': numbers,
             'contentChecks': checks, 'errors': errors,
-            'scope': 'Reviewed positive text/order/image-presence checks; not full-book fidelity or image legibility qualification.'}
+            'scope': 'Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification.'}
 
 
 def check_evaluation(case, contract, directory):

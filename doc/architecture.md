@@ -24,7 +24,7 @@ object graph or a serialized interchange file.
 
 `PageContent` is the spatial extraction representation. Each physical page contains bounds,
 positioned `TextLine` values, font sizes, monospaced/wrap hints, graphic rectangles and fallback
-flags. A text line contains `InlineText`: raw Unicode text runs with bold/italic style flags.
+flags. A text line contains `InlineText`: raw Unicode text runs with bold, italic, superscript and subscript style flags.
 Geometry remains in unrotated PDF page coordinates with a bottom-left origin. This stage retains
 the evidence needed to infer reading order, paragraphs, image crops and word joins.
 
@@ -34,7 +34,7 @@ the evidence needed to infer reading order, paragraphs, image crops and word joi
 | --- | --- |
 | Metadata | Title, language and optional author |
 | Ordered blocks | Paragraph, heading with logical identifier, preformatted text, image, source-page boundary |
-| Inline text | Text runs carrying bold/italic flags, interspersed with source-page boundaries |
+| Inline text | Text runs carrying bold/italic/superscript/subscript flags, interspersed with source-page boundaries |
 | Image block | Logical asset identifier, alternative text and caption |
 | Asset registry | Identifier, local file URL and image format |
 | Block provenance | Physical source page where the block begins |
@@ -57,14 +57,20 @@ The caller supplies a workspace and keeps it alive until serialization finishes.
 can run without calling `EPUBWriter`, as the direct PDF-to-model test demonstrates.
 
 `NativeTextReader` obtains PDFKit line selections, geometry and attributed runs; it immediately
-copies text and style flags into values. Object-only selections are discarded before attributed-string access
+copies text and style flags into values. Explicit Core Text/Foundation baseline offsets preserve
+inline scripts; tiny positioning noise and full-line OCR offsets do not become script styles.
+Font size alone does not establish a superscript. Object-only selections are discarded before attributed-string access
 to avoid unnecessary PDFKit image-attachment decoding. `GraphicsReader` scans bounded Core Graphics paint
 operations and nested Form XObjects. It resolves shading resources and bounds gradient regions
 with conservative clipping, Form bounds and optional shading bounds. Core Graphics rasterizes
 the original region; the model stores an image asset, not an editable gradient. Unsafe or
 page-spanning bounds retain the page fallback. `OCRReader` uses Vision when policy requests it.
 `LayoutReconstructor` handles furniture, whitespace cuts, paragraphs, styled word joins and
-cross-page continuation. Graphic-region merging and whole-line expansion repeat until the bounds
+cross-page continuation. Narrow whitespace cuts require substantial text on both sides, so
+short name/description cells do not become independent prose columns. `TableRegionDetector`
+recognizes aligned numeric dot-leader rows with a nearby textual header and preserves their
+complete region with `imageRegion` warnings. It does not infer general table semantics.
+Graphic-region merging and whole-line expansion repeat until the bounds
 stabilize, so a merged crop cannot cut through a newly intersecting text line. Only text outside
 those regions reflows. Detached fractions without a connecting graphic/recognized equation remain
 an open grouping problem. Attachment placeholders become word boundaries at native extraction,

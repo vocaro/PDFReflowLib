@@ -46,6 +46,8 @@ struct TextStyle: OptionSet, Sendable, Equatable {
     let rawValue: UInt8
     static let bold = TextStyle(rawValue: 1 << 0)
     static let italic = TextStyle(rawValue: 1 << 1)
+    static let superscript = TextStyle(rawValue: 1 << 2)
+    static let `subscript` = TextStyle(rawValue: 1 << 3)
 }
 
 struct InlineText: Sendable, Equatable {

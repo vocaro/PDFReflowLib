@@ -1,0 +1,3198 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        84.9602,
+        746.01924480000002,
+        14.966047540736,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "9.4"
+        }
+      ],
+      "text" : "9.4"
+    },
+    {
+      "rect" : [
+        166.43990000000002,
+        716.84303639999996,
+        262.08834235147214,
+        16.919463599999972
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 16.936400000000003,
+          "text" : "Quadratics - Quadratic Formula"
+        }
+      ],
+      "text" : "Quadratics - Quadratic Formula"
+    },
+    {
+      "rect" : [
+        84.960200000000015,
+        666.35110000000009,
+        407.40894140870398,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Objective: Solve quadratic equations by using the quadratic formula."
+        }
+      ],
+      "text" : "Objective: Solve quadratic equations by using the quadratic formula."
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        640.41924480000011,
+        425.21717578659855,
+        13.178337699999929
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The general from of a quadratic is ax"
+        },
+        {
+          "baselineOffset" : 4.2000000000000455,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ bx + c = 0. We will now solve this for-"
+        }
+      ],
+      "text" : "The general from of a quadratic is ax2 + bx + c = 0. We will now solve this for-"
+    },
+    {
+      "rect" : [
+        84.960340000000031,
+        625.77944480000008,
+        187.24150634936331,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "mula for x by completing the square"
+        }
+      ],
+      "text" : "mula for x by completing the square"
+    },
+    {
+      "rect" : [
+        84.960340000000059,
+        582.95120000000009,
+        79.690012202869781,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 465."
+        }
+      ],
+      "text" : "Example 465."
+    },
+    {
+      "rect" : [
+        296.40026000000012,
+        545.49944480000011,
+        162.29690210664967,
+        13.298257699999908
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Separate constant from variables"
+        }
+      ],
+      "text" : "Separate constant from variables"
+    },
+    {
+      "rect" : [
+        296.40000000000003,
+        519.38340800000003,
+        129.17508246289918,
+        20.454947199999992
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Subtract c from both sides"
+        }
+      ],
+      "text" : "Subtract c from both sides"
+    },
+    {
+      "rect" : [
+        296.40008,
+        501.74280799999997,
+        106.58497280000006,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Divide each term by a"
+        }
+      ],
+      "text" : "Divide each term by a"
+    },
+    {
+      "rect" : [
+        91.439900000000023,
+        403.86103919999999,
+        9.2723584100000096,
+        12.616443299999958
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "b2"
+    },
+    {
+      "rect" : [
+        87.960210000000018,
+        387.50300800000002,
+        28.740935599999986,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.3601600000000076,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 4.319940000000031,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "−"
+        }
+      ],
+      "text" : "4a2−"
+    },
+    {
+      "rect" : [
+        89.400000000000034,
+        350.37924479999998,
+        21.949702399999993,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+"
+        }
+      ],
+      "text" : "x2 +"
+    },
+    {
+      "rect" : [
+        115.08004000000003,
+        358.1411392,
+        4.9733631999999943,
+        10.974873600000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        }
+      ],
+      "text" : "b"
+    },
+    {
+      "rect" : [
+        120.48010000000001,
+        403.86105920000006,
+        5.0331392000000079,
+        10.974873600000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "c"
+        }
+      ],
+      "text" : "c"
+    },
+    {
+      "rect" : [
+        119.88010000000001,
+        380.27260799999999,
+        15.038927200000003,
+        35.985152000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a"
+        }
+      ],
+      "text" : "a"
+    },
+    {
+      "rect" : [
+        121.92,
+        350.37924479999998,
+        17.750092399999986,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x +"
+        }
+      ],
+      "text" : "x +"
+    },
+    {
+      "rect" : [
+        137.1602,
+        403.2990848,
+        12.024662800000016,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4a"
+        }
+      ],
+      "text" : "4a"
+    },
+    {
+      "rect" : [
+        137.1602,
+        380.27260799999999,
+        23.198827200000011,
+        35.985152000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4a"
+        }
+      ],
+      "text" : "4a"
+    },
+    {
+      "rect" : [
+        146.40002999999999,
+        358.1411392,
+        9.1520484099999919,
+        12.736363299999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "b2"
+    },
+    {
+      "rect" : [
+        296.39999999999998,
+        388.29916480000003,
+        171.35611774842897,
+        19.6591904
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Get common denominator on right"
+        }
+      ],
+      "text" : "Get common denominator on right"
+    },
+    {
+      "rect" : [
+        114.48004000000003,
+        343.1411392,
+        6.144972800000005,
+        10.974873600000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a"
+        }
+      ],
+      "text" : "a"
+    },
+    {
+      "rect" : [
+        201.48034000000007,
+        545.49944480000011,
+        79.183266444800097,
+        13.298257699999908
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "ax"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ bc +c =0 "
+        }
+      ],
+      "text" : "ax2 + bc +c =0 "
+    },
+    {
+      "rect" : [
+        245.76046000000011,
+        519.38340800000003,
+        34.912849200000011,
+        20.454947199999992
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.00040000000001327862,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− c− c "
+        }
+      ],
+      "text" : "− c− c "
+    },
+    {
+      "rect" : [
+        188.88006000000001,
+        501.74280799999997,
+        91.792959199999984,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "ax"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ bx=− c "
+        }
+      ],
+      "text" : "ax2 + bx=− c "
+    },
+    {
+      "rect" : [
+        194.64007999999998,
+        493.1411392,
+        82.104892800000044,
+        10.974873600000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a a a"
+        }
+      ],
+      "text" : "a a a"
+    },
+    {
+      "rect" : [
+        219.84002999999998,
+        479.22144920000005,
+        4.9733631999999943,
+        10.974873600000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        }
+      ],
+      "text" : "b"
+    },
+    {
+      "rect" : [
+        194.03999999999999,
+        471.33924480000002,
+        21.950092399999988,
+        13.298647700000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 4.3203100000000063,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+"
+        }
+      ],
+      "text" : "x2 +"
+    },
+    {
+      "rect" : [
+        226.56,
+        470.18331800000004,
+        52.912839200000008,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.3203100000000063,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x ="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− c"
+        }
+      ],
+      "text" : "x =− c"
+    },
+    {
+      "rect" : [
+        219.24002999999999,
+        464.22144920000005,
+        6.144972800000005,
+        10.974873600000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a"
+        }
+      ],
+      "text" : "a"
+    },
+    {
+      "rect" : [
+        268.19986,
+        464.22144920000005,
+        6.144972800000005,
+        10.974873600000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a"
+        }
+      ],
+      "text" : "a"
+    },
+    {
+      "rect" : [
+        195.48008000000002,
+        456.86778250000003,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "2"
+    },
+    {
+      "rect" : [
+        244.68008,
+        456.86778250000003,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "2"
+    },
+    {
+      "rect" : [
+        161.55902720000006,
+        426.35260800000003,
+        341.60027972529929,
+        56.96574720000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Find the number that completes the square"
+        }
+      ],
+      "text" : "Find the number that completes the square"
+    },
+    {
+      "rect" : [
+        163.79980000000003,
+        449.37947479999997,
+        5.8580479999999966,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "1"
+        }
+      ],
+      "text" : "1"
+    },
+    {
+      "rect" : [
+        179.88008000000002,
+        449.94113920000001,
+        4.9733631999999943,
+        10.974873600000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        }
+      ],
+      "text" : "b"
+    },
+    {
+      "rect" : [
+        163.79980000000003,
+        433.70300800000001,
+        12.323745599999967,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7997700000000236,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "·"
+        }
+      ],
+      "text" : "2·"
+    },
+    {
+      "rect" : [
+        179.28008000000003,
+        426.35260800000003,
+        17.318947199999997,
+        35.985152000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a"
+        }
+      ],
+      "text" : "a"
+    },
+    {
+      "rect" : [
+        201.60000000000002,
+        426.35261800000001,
+        18.879127200000028,
+        35.985152000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "="
+    },
+    {
+      "rect" : [
+        226.20000000000002,
+        449.94137920000003,
+        4.9733631999999943,
+        10.974873600000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        }
+      ],
+      "text" : "b"
+    },
+    {
+      "rect" : [
+        222.71992000000003,
+        426.35260800000003,
+        23.079107199999982,
+        35.985152000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2a"
+        }
+      ],
+      "text" : "2a"
+    },
+    {
+      "rect" : [
+        266.76011999999997,
+        449.94134920000005,
+        9.1520484099999635,
+        12.736363299999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "b2"
+    },
+    {
+      "rect" : [
+        250.91991999999999,
+        442.17945480000003,
+        9.1098623999999973,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "="
+    },
+    {
+      "rect" : [
+        263.16011999999995,
+        434.37947480000003,
+        122.41159440000007,
+        19.778880399999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7997699999999668,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4a"
+        },
+        {
+          "baselineOffset" : -4.4399999999999409,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Add to both sides,"
+        }
+      ],
+      "text" : "4a2 Add to both sides,"
+    },
+    {
+      "rect" : [
+        161.16,
+        395.97914480000003,
+        9.1098623999999973,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "="
+    },
+    {
+      "rect" : [
+        176.99979999999999,
+        403.86095920000008,
+        9.1520484099999919,
+        12.616443299999958
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "b2"
+    },
+    {
+      "rect" : [
+        173.39979999999997,
+        387.50300800000002,
+        28.86134560000005,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.3601600000000076,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 4.3200199999999427,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "−"
+        }
+      ],
+      "text" : "4a2−"
+    },
+    {
+      "rect" : [
+        205.43970000000002,
+        403.29916480000003,
+        17.993326548480013,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4ac"
+        }
+      ],
+      "text" : "4ac"
+    },
+    {
+      "rect" : [
+        206.27994000000001,
+        388.29916480000003,
+        16.232128410000001,
+        12.338497700000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -1.6800799999999754,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4a"
+        },
+        {
+          "baselineOffset" : 1.6800800000000322,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "4a2"
+    },
+    {
+      "rect" : [
+        238.91980000000001,
+        403.86105920000006,
+        9.2723584100000096,
+        12.616443299999958
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "b2"
+    },
+    {
+      "rect" : [
+        226.68000000000001,
+        395.9792448,
+        9.1098623999999973,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "="
+    },
+    {
+      "rect" : [
+        250.07995000000003,
+        394.82292800000005,
+        29.392937964159984,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 4ac"
+        }
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "rect" : [
+        251.03972000000005,
+        388.29916480000003,
+        16.352438409999991,
+        19.6591904
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.6800799999999754,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4a"
+        },
+        {
+          "baselineOffset" : -4.3199199999999678,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        }
+      ],
+      "text" : "4a2 "
+    },
+    {
+      "rect" : [
+        178.08020000000002,
+        358.1411392,
+        9.2719684099999711,
+        12.736363299999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "b2"
+    },
+    {
+      "rect" : [
+        206.52009999999999,
+        357.57924479999997,
+        16.960693637887999,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4ac"
+        }
+      ],
+      "text" : "4ac"
+    },
+    {
+      "rect" : [
+        238.91980000000001,
+        358.1411392,
+        9.2723584100000096,
+        12.736363299999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "b2"
+    },
+    {
+      "rect" : [
+        250.07995000000003,
+        349.10300799999999,
+        29.392937964159984,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 4ac"
+        }
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "rect" : [
+        162.24000000000001,
+        350.37924479999998,
+        9.1098623999999973,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "="
+    },
+    {
+      "rect" : [
+        142.80002999999996,
+        342.57926479999998,
+        16.352048410000009,
+        12.458417699999984
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -1.7400400000000218,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4a"
+        },
+        {
+          "baselineOffset" : 1.7400399999999649,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "4a2"
+    },
+    {
+      "rect" : [
+        174.60012,
+        341.903008,
+        28.7410256,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.4800799999999867,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 4.3199000000000183,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "−"
+        }
+      ],
+      "text" : "4a2−"
+    },
+    {
+      "rect" : [
+        226.68000000000001,
+        350.37924479999998,
+        9.1098623999999973,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "="
+    },
+    {
+      "rect" : [
+        206.88025999999996,
+        342.57924479999997,
+        16.232128410000001,
+        12.458417699999984
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -1.7400399999999649,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4a"
+        },
+        {
+          "baselineOffset" : 1.7400400000000218,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "4a2"
+    },
+    {
+      "rect" : [
+        176.43902720000006,
+        290.75280799999996,
+        148.14443138383359,
+        71.605547200000046
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.8000000000000114,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4a"
+        },
+        {
+          "baselineOffset" : -4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Factor"
+        }
+      ],
+      "text" : "4a2 Factor"
+    },
+    {
+      "rect" : [
+        201.96027000000004,
+        314.22123920000001,
+        4.9733631999999943,
+        10.974873600000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        }
+      ],
+      "text" : "b"
+    },
+    {
+      "rect" : [
+        177.48023000000003,
+        306.4593448,
+        17.74970239999999,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x +"
+        }
+      ],
+      "text" : "x +"
+    },
+    {
+      "rect" : [
+        198.48019000000005,
+        290.75260800000001,
+        23.078837199999953,
+        35.985152000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2a"
+        }
+      ],
+      "text" : "2a"
+    },
+    {
+      "rect" : [
+        220.43968999999998,
+        321.14747249999999,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "2"
+    },
+    {
+      "rect" : [
+        238.91971999999998,
+        314.22103920000001,
+        9.2723584100000096,
+        12.736363299999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "b2"
+    },
+    {
+      "rect" : [
+        250.07987,
+        305.182908,
+        29.392937964159984,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 4ac"
+        }
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "rect" : [
+        226.67991999999998,
+        306.45914479999999,
+        9.1098623999999973,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "="
+    },
+    {
+      "rect" : [
+        144.19497999999999,
+        244.07283800000002,
+        51.765100000000018,
+        35.985151999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "2"
+    },
+    {
+      "rect" : [
+        151.95902720000007,
+        239.032408,
+        306.13960702584336,
+        79.405947199999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.8000999999999863,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4a"
+        },
+        {
+          "baselineOffset" : -4.3200199999999995,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Solve using the even root property"
+        }
+      ],
+      "text" : "4a2 Solve using the even root property"
+    },
+    {
+      "rect" : [
+        177.47988000000004,
+        262.50123919999999,
+        4.9733631999999943,
+        10.974873600000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        }
+      ],
+      "text" : "b"
+    },
+    {
+      "rect" : [
+        152.99984000000003,
+        254.73934479999997,
+        17.74970239999999,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x +"
+        }
+      ],
+      "text" : "x +"
+    },
+    {
+      "rect" : [
+        173.87988000000004,
+        239.03260800000001,
+        23.199147199999999,
+        35.985151999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2a"
+        }
+      ],
+      "text" : "2a"
+    },
+    {
+      "rect" : [
+        202.80000000000001,
+        246.26300800000001,
+        44.792258410000017,
+        28.974494499999992
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.6000000000000227,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "=± "
+        },
+        {
+          "baselineOffset" : 3.5999999999999659,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        },
+        {
+          "baselineOffset" : 7.9199199999999905,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "=± b2"
+    },
+    {
+      "rect" : [
+        249.48005000000003,
+        253.463008,
+        29.392937964159984,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 4ac"
+        }
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "rect" : [
+        232.63473539749998,
+        241.31260799999998,
+        133.89973993810327,
+        35.985151999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.8000000000000114,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4a"
+        },
+        {
+          "baselineOffset" : -4.3203100000000063,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Simplify roots"
+        }
+      ],
+      "text" : "4a2 Simplify roots"
+    },
+    {
+      "rect" : [
+        217.08019999999999,
+        203.063008,
+        30.512158410000012,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "± b"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "± b2"
+    },
+    {
+      "rect" : [
+        228.36022000000003,
+        213.50280799999999,
+        9.9586816000000056,
+        20.443391999999989
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√"
+        }
+      ],
+      "text" : "√"
+    },
+    {
+      "rect" : [
+        249.48015000000001,
+        203.063008,
+        29.392937964159984,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 4ac"
+        }
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "rect" : [
+        168.60000000000002,
+        204.33924480000002,
+        17.74970239999999,
+        11.967155200000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x +"
+        }
+      ],
+      "text" : "x +"
+    },
+    {
+      "rect" : [
+        204.72,
+        204.33924480000002,
+        9.1098623999999973,
+        11.967155200000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "="
+    },
+    {
+      "rect" : [
+        189.59996000000004,
+        196.53924480000001,
+        11.905132800000018,
+        11.967155200000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2a"
+        }
+      ],
+      "text" : "2a"
+    },
+    {
+      "rect" : [
+        242.28,
+        196.53924480000001,
+        12.025052799999997,
+        11.967155200000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2a"
+        }
+      ],
+      "text" : "2a"
+    },
+    {
+      "rect" : [
+        296.40000000000003,
+        204.33924480000002,
+        55.973363199999994,
+        18.736767999999955
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Subtract "
+        },
+        {
+          "baselineOffset" : 7.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        }
+      ],
+      "text" : "Subtract b"
+    },
+    {
+      "rect" : [
+        343.91992000000005,
+        196.53924480000001,
+        12.025052800000026,
+        11.967155200000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2a"
+        }
+      ],
+      "text" : "2a"
+    },
+    {
+      "rect" : [
+        359.04000000000002,
+        204.33924480000002,
+        75.894639657395203,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "from both sides"
+        }
+      ],
+      "text" : "from both sides"
+    },
+    {
+      "rect" : [
+        228.36016000000001,
+        169.70280799999998,
+        9.9586816000000056,
+        20.443391999999989
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√"
+        }
+      ],
+      "text" : "√"
+    },
+    {
+      "rect" : [
+        177.60000000000002,
+        159.38290799999999,
+        69.992298409999989,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x ="
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− b ± b"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "x =− b ± b2"
+    },
+    {
+      "rect" : [
+        233.03999999999999,
+        152.8592448,
+        12.025052799999997,
+        11.967155200000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2a"
+        }
+      ],
+      "text" : "2a"
+    },
+    {
+      "rect" : [
+        249.48009000000002,
+        159.38290799999999,
+        29.392937964159955,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 4ac"
+        }
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "rect" : [
+        296.40000000000003,
+        160.65924480000001,
+        64.583829217356822,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
+        }
+      ],
+      "text" : "Our Solution"
+    },
+    {
+      "rect" : [
+        193.08004000000003,
+        212.10113919999998,
+        4.9733631999999943,
+        10.974873599999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        }
+      ],
+      "text" : "b"
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        113.73934479999998,
+        425.22237884026879,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "This solution is a very important one to us. As we solved a general equation by"
+        }
+      ],
+      "text" : "This solution is a very important one to us. As we solved a general equation by"
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        99.099144799999991,
+        425.17344191070725,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "completing the square, we can use this formula to solve any quadratic equation."
+        }
+      ],
+      "text" : "completing the square, we can use this formula to solve any quadratic equation."
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        84.459344799999982,
+        425.20339953812481,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Once we identify what a, b, and c are in the quadratic, we can substitute those"
+        }
+      ],
+      "text" : "Once we identify what a, b, and c are in the quadratic, we can substitute those"
+    },
+    {
+      "rect" : [
+        297.12,
+        52.37905319999998,
+        15.061000995093593,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "343"
+        }
+      ],
+      "text" : "343"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      243.28000000000003,
+      526.70000000000005,
+      38.919999999999959,
+      4
+    ],
+    [
+      188.80000000000001,
+      499.94000000000005,
+      17.920000000000016,
+      4
+    ],
+    [
+      217.48000000000002,
+      499.94000000000005,
+      17.919999999999987,
+      4
+    ],
+    [
+      264.76000000000005,
+      499.94000000000005,
+      17.919999999999959,
+      4
+    ],
+    [
+      216.64000000000001,
+      475.10000000000002,
+      11.319999999999993,
+      4
+    ],
+    [
+      260.56000000000006,
+      475.10000000000002,
+      21.519999999999982,
+      4
+    ],
+    [
+      161.20000000000002,
+      445.81999999999999,
+      11.080000000000013,
+      4
+    ],
+    [
+      176.68000000000004,
+      445.81999999999999,
+      11.439999999999969,
+      4
+    ],
+    [
+      220.12000000000003,
+      445.81999999999999,
+      17.200000000000017,
+      4
+    ],
+    [
+      260.56000000000006,
+      445.81999999999999,
+      21.519999999999982,
+      4
+    ],
+    [
+      85.360200000000006,
+      399.74000000000001,
+      21.519799999999989,
+      4
+    ],
+    [
+      117.28,
+      399.74000000000001,
+      11.320000000000022,
+      4
+    ],
+    [
+      134.56000000000003,
+      399.74000000000001,
+      17.319999999999993,
+      4
+    ],
+    [
+      170.80000000000001,
+      399.74000000000001,
+      21.52000000000001,
+      4
+    ],
+    [
+      202.84000000000003,
+      399.74000000000001,
+      23.199999999999989,
+      4
+    ],
+    [
+      236.32000000000005,
+      399.74000000000001,
+      45.759999999999991,
+      4
+    ],
+    [
+      111.88,
+      354.14000000000004,
+      11.440000000000012,
+      4
+    ],
+    [
+      140.20000000000002,
+      354.14000000000004,
+      21.52000000000001,
+      4
+    ],
+    [
+      172,
+      354.14000000000004,
+      21.400000000000006,
+      4
+    ],
+    [
+      203.92000000000004,
+      354.14000000000004,
+      22.119999999999976,
+      4
+    ],
+    [
+      236.32000000000005,
+      354.14000000000004,
+      45.759999999999991,
+      4
+    ],
+    [
+      195.88000000000002,
+      310.22000000000003,
+      17.200000000000017,
+      4
+    ],
+    [
+      236.32000000000005,
+      310.22000000000003,
+      45.759999999999991,
+      4
+    ],
+    [
+      171.28000000000003,
+      258.5,
+      17.319999999999993,
+      4
+    ],
+    [
+      141.88000000000002,
+      277.58000000000004,
+      60.280000000000001,
+      4
+    ],
+    [
+      235.72000000000003,
+      258.5,
+      45.759999999999991,
+      4
+    ],
+    [
+      234.75999999999999,
+      274.82000000000005,
+      47.32000000000005,
+      4
+    ],
+    [
+      187,
+      208.10000000000002,
+      17.200000000000017,
+      4
+    ],
+    [
+      235.96000000000001,
+      223.10000000000002,
+      44.920000000000044,
+      4
+    ],
+    [
+      214.48000000000002,
+      208.10000000000002,
+      67.600000000000023,
+      4
+    ],
+    [
+      341.32000000000005,
+      208.10000000000002,
+      17.199999999999989,
+      4
+    ],
+    [
+      235.96000000000001,
+      179.42000000000002,
+      44.920000000000044,
+      4
+    ],
+    [
+      196,
+      164.42000000000002,
+      86.080000000000041,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        746.01924480000002,
+        14.966047540736,
+        11.979110399999968
+      ],
+      "text" : "9.4"
+    },
+    {
+      "fontSize" : 16.936400000000003,
+      "monospaced" : false,
+      "rect" : [
+        166.43990000000002,
+        716.84303639999996,
+        262.08834235147214,
+        16.919463599999972
+      ],
+      "text" : "Quadratics - Quadratic Formula"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960200000000015,
+        666.35110000000009,
+        407.40894140870398,
+        11.955199999999991
+      ],
+      "text" : "Objective: Solve quadratic equations by using the quadratic formula."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        640.41924480000011,
+        425.21717578659855,
+        13.178337699999929
+      ],
+      "text" : "The general from of a quadratic is ax2 + bx + c = 0. We will now solve this for-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960340000000031,
+        625.77944480000008,
+        187.24150634936331,
+        11.979110399999968
+      ],
+      "text" : "mula for x by completing the square"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960340000000059,
+        582.95120000000009,
+        79.690012202869781,
+        11.955199999999991
+      ],
+      "text" : "Example 465."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        296.40026000000012,
+        545.49944480000011,
+        162.29690210664967,
+        13.298257699999908
+      ],
+      "text" : "Separate constant from variables"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        296.40000000000003,
+        519.38340800000003,
+        129.17508246289918,
+        20.454947199999992
+      ],
+      "text" : "Subtract c from both sides"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        296.40008,
+        501.74280799999997,
+        106.58497280000006,
+        21.774494499999946
+      ],
+      "text" : "Divide each term by a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        91.439900000000023,
+        403.86103919999999,
+        9.2723584100000096,
+        12.616443299999958
+      ],
+      "text" : "b2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        87.960210000000018,
+        387.50300800000002,
+        28.740935599999986,
+        20.443392000000017
+      ],
+      "text" : "4a2−"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        89.400000000000034,
+        350.37924479999998,
+        21.949702399999993,
+        13.298257700000022
+      ],
+      "text" : "x2 +"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        115.08004000000003,
+        358.1411392,
+        4.9733631999999943,
+        10.974873600000024
+      ],
+      "text" : "b"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        120.48010000000001,
+        403.86105920000006,
+        5.0331392000000079,
+        10.974873600000024
+      ],
+      "text" : "c"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        119.88010000000001,
+        380.27260799999999,
+        15.038927200000003,
+        35.985152000000028
+      ],
+      "text" : "a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        121.92,
+        350.37924479999998,
+        17.750092399999986,
+        11.967155199999979
+      ],
+      "text" : "x +"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        137.1602,
+        403.2990848,
+        12.024662800000016,
+        11.967155199999979
+      ],
+      "text" : "4a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        137.1602,
+        380.27260799999999,
+        23.198827200000011,
+        35.985152000000028
+      ],
+      "text" : "4a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        146.40002999999999,
+        358.1411392,
+        9.1520484099999919,
+        12.736363299999994
+      ],
+      "text" : "b2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        296.39999999999998,
+        388.29916480000003,
+        171.35611774842897,
+        19.6591904
+      ],
+      "text" : "Get common denominator on right"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        114.48004000000003,
+        343.1411392,
+        6.144972800000005,
+        10.974873600000024
+      ],
+      "text" : "a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        201.48034000000007,
+        545.49944480000011,
+        79.183266444800097,
+        13.298257699999908
+      ],
+      "text" : "ax2 + bc +c =0"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        245.76046000000011,
+        519.38340800000003,
+        34.912849200000011,
+        20.454947199999992
+      ],
+      "text" : "− c− c"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        188.88006000000001,
+        501.74280799999997,
+        91.792959199999984,
+        21.774494499999946
+      ],
+      "text" : "ax2 + bx=− c"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        194.64007999999998,
+        493.1411392,
+        82.104892800000044,
+        10.974873600000024
+      ],
+      "text" : "a a a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        219.84002999999998,
+        479.22144920000005,
+        4.9733631999999943,
+        10.974873600000024
+      ],
+      "text" : "b"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        194.03999999999999,
+        471.33924480000002,
+        21.950092399999988,
+        13.298647700000004
+      ],
+      "text" : "x2 +"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        226.56,
+        470.18331800000004,
+        52.912839200000008,
+        20.443392000000017
+      ],
+      "text" : "x =− c"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        219.24002999999999,
+        464.22144920000005,
+        6.144972800000005,
+        10.974873600000024
+      ],
+      "text" : "a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        268.19986,
+        464.22144920000005,
+        6.144972800000005,
+        10.974873600000024
+      ],
+      "text" : "a"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        195.48008000000002,
+        456.86778250000003,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "text" : "2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        244.68008,
+        456.86778250000003,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "text" : "2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        161.55902720000006,
+        426.35260800000003,
+        341.60027972529929,
+        56.96574720000001
+      ],
+      "text" : "Find the number that completes the square"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        163.79980000000003,
+        449.37947479999997,
+        5.8580479999999966,
+        11.967155199999979
+      ],
+      "text" : "1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        179.88008000000002,
+        449.94113920000001,
+        4.9733631999999943,
+        10.974873600000024
+      ],
+      "text" : "b"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        163.79980000000003,
+        433.70300800000001,
+        12.323745599999967,
+        20.443392000000017
+      ],
+      "text" : "2·"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        179.28008000000003,
+        426.35260800000003,
+        17.318947199999997,
+        35.985152000000028
+      ],
+      "text" : "a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        201.60000000000002,
+        426.35261800000001,
+        18.879127200000028,
+        35.985152000000028
+      ],
+      "text" : "="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        226.20000000000002,
+        449.94137920000003,
+        4.9733631999999943,
+        10.974873600000024
+      ],
+      "text" : "b"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        222.71992000000003,
+        426.35260800000003,
+        23.079107199999982,
+        35.985152000000028
+      ],
+      "text" : "2a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        266.76011999999997,
+        449.94134920000005,
+        9.1520484099999635,
+        12.736363299999994
+      ],
+      "text" : "b2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        250.91991999999999,
+        442.17945480000003,
+        9.1098623999999973,
+        11.967155199999979
+      ],
+      "text" : "="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        263.16011999999995,
+        434.37947480000003,
+        122.41159440000007,
+        19.778880399999991
+      ],
+      "text" : "4a2 Add to both sides,"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        161.16,
+        395.97914480000003,
+        9.1098623999999973,
+        11.967155199999979
+      ],
+      "text" : "="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        176.99979999999999,
+        403.86095920000008,
+        9.1520484099999919,
+        12.616443299999958
+      ],
+      "text" : "b2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        173.39979999999997,
+        387.50300800000002,
+        28.86134560000005,
+        20.443392000000017
+      ],
+      "text" : "4a2−"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        205.43970000000002,
+        403.29916480000003,
+        17.993326548480013,
+        11.967155199999979
+      ],
+      "text" : "4ac"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        206.27994000000001,
+        388.29916480000003,
+        16.232128410000001,
+        12.338497700000005
+      ],
+      "text" : "4a2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        238.91980000000001,
+        403.86105920000006,
+        9.2723584100000096,
+        12.616443299999958
+      ],
+      "text" : "b2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        226.68000000000001,
+        395.9792448,
+        9.1098623999999973,
+        11.967155199999979
+      ],
+      "text" : "="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        250.07995000000003,
+        394.82292800000005,
+        29.392937964159984,
+        20.443392000000017
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        251.03972000000005,
+        388.29916480000003,
+        16.352438409999991,
+        19.6591904
+      ],
+      "text" : "4a2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        178.08020000000002,
+        358.1411392,
+        9.2719684099999711,
+        12.736363299999994
+      ],
+      "text" : "b2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        206.52009999999999,
+        357.57924479999997,
+        16.960693637887999,
+        11.979110400000025
+      ],
+      "text" : "4ac"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        238.91980000000001,
+        358.1411392,
+        9.2723584100000096,
+        12.736363299999994
+      ],
+      "text" : "b2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        250.07995000000003,
+        349.10300799999999,
+        29.392937964159984,
+        20.443392000000017
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        162.24000000000001,
+        350.37924479999998,
+        9.1098623999999973,
+        11.967155199999979
+      ],
+      "text" : "="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        142.80002999999996,
+        342.57926479999998,
+        16.352048410000009,
+        12.458417699999984
+      ],
+      "text" : "4a2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.60012,
+        341.903008,
+        28.7410256,
+        20.443392000000017
+      ],
+      "text" : "4a2−"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        226.68000000000001,
+        350.37924479999998,
+        9.1098623999999973,
+        11.967155199999979
+      ],
+      "text" : "="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        206.88025999999996,
+        342.57924479999997,
+        16.232128410000001,
+        12.458417699999984
+      ],
+      "text" : "4a2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        176.43902720000006,
+        290.75280799999996,
+        148.14443138383359,
+        71.605547200000046
+      ],
+      "text" : "4a2 Factor"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        201.96027000000004,
+        314.22123920000001,
+        4.9733631999999943,
+        10.974873600000024
+      ],
+      "text" : "b"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        177.48023000000003,
+        306.4593448,
+        17.74970239999999,
+        11.967155199999979
+      ],
+      "text" : "x +"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        198.48019000000005,
+        290.75260800000001,
+        23.078837199999953,
+        35.985152000000028
+      ],
+      "text" : "2a"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        220.43968999999998,
+        321.14747249999999,
+        4.2321284100000014,
+        7.9701099999999769
+      ],
+      "text" : "2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        238.91971999999998,
+        314.22103920000001,
+        9.2723584100000096,
+        12.736363299999994
+      ],
+      "text" : "b2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        250.07987,
+        305.182908,
+        29.392937964159984,
+        20.443392000000017
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        226.67991999999998,
+        306.45914479999999,
+        9.1098623999999973,
+        11.967155199999979
+      ],
+      "text" : "="
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        144.19497999999999,
+        244.07283800000002,
+        51.765100000000018,
+        35.985151999999999
+      ],
+      "text" : "2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        151.95902720000007,
+        239.032408,
+        306.13960702584336,
+        79.405947199999986
+      ],
+      "text" : "4a2 Solve using the even root property"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        177.47988000000004,
+        262.50123919999999,
+        4.9733631999999943,
+        10.974873600000024
+      ],
+      "text" : "b"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        152.99984000000003,
+        254.73934479999997,
+        17.74970239999999,
+        11.967155199999979
+      ],
+      "text" : "x +"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        173.87988000000004,
+        239.03260800000001,
+        23.199147199999999,
+        35.985151999999999
+      ],
+      "text" : "2a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        202.80000000000001,
+        246.26300800000001,
+        44.792258410000017,
+        28.974494499999992
+      ],
+      "text" : "=± b2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        249.48005000000003,
+        253.463008,
+        29.392937964159984,
+        20.443392000000017
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        232.63473539749998,
+        241.31260799999998,
+        133.89973993810327,
+        35.985151999999999
+      ],
+      "text" : "4a2 Simplify roots"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        217.08019999999999,
+        203.063008,
+        30.512158410000012,
+        21.774494500000003
+      ],
+      "text" : "± b2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        228.36022000000003,
+        213.50280799999999,
+        9.9586816000000056,
+        20.443391999999989
+      ],
+      "text" : "√"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        249.48015000000001,
+        203.063008,
+        29.392937964159984,
+        20.443392000000017
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        168.60000000000002,
+        204.33924480000002,
+        17.74970239999999,
+        11.967155200000008
+      ],
+      "text" : "x +"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        204.72,
+        204.33924480000002,
+        9.1098623999999973,
+        11.967155200000008
+      ],
+      "text" : "="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        189.59996000000004,
+        196.53924480000001,
+        11.905132800000018,
+        11.967155200000008
+      ],
+      "text" : "2a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        242.28,
+        196.53924480000001,
+        12.025052799999997,
+        11.967155200000008
+      ],
+      "text" : "2a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        296.40000000000003,
+        204.33924480000002,
+        55.973363199999994,
+        18.736767999999955
+      ],
+      "text" : "Subtract b"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        343.91992000000005,
+        196.53924480000001,
+        12.025052800000026,
+        11.967155200000008
+      ],
+      "text" : "2a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        359.04000000000002,
+        204.33924480000002,
+        75.894639657395203,
+        11.979110399999996
+      ],
+      "text" : "from both sides"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        228.36016000000001,
+        169.70280799999998,
+        9.9586816000000056,
+        20.443391999999989
+      ],
+      "text" : "√"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        177.60000000000002,
+        159.38290799999999,
+        69.992298409999989,
+        21.774494500000003
+      ],
+      "text" : "x =− b ± b2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        233.03999999999999,
+        152.8592448,
+        12.025052799999997,
+        11.967155200000008
+      ],
+      "text" : "2a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        249.48009000000002,
+        159.38290799999999,
+        29.392937964159955,
+        20.443392000000017
+      ],
+      "text" : "− 4ac"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        296.40000000000003,
+        160.65924480000001,
+        64.583829217356822,
+        11.979110399999996
+      ],
+      "text" : "Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        193.08004000000003,
+        212.10113919999998,
+        4.9733631999999943,
+        10.974873599999995
+      ],
+      "text" : "b"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        113.73934479999998,
+        425.22237884026879,
+        11.979110399999996
+      ],
+      "text" : "This solution is a very important one to us. As we solved a general equation by"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        99.099144799999991,
+        425.17344191070725,
+        11.979110399999996
+      ],
+      "text" : "completing the square, we can use this formula to solve any quadratic equation."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        84.459344799999982,
+        425.20339953812481,
+        11.979110399999996
+      ],
+      "text" : "Once we identify what a, b, and c are in the quadratic, we can substitute those"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        297.12,
+        52.37905319999998,
+        15.061000995093593,
+        9.8729762399999998
+      ],
+      "text" : "343"
+    }
+  ],
+  "page" : 343,
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

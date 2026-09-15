@@ -52,7 +52,7 @@ enum LayoutReconstructor {
             let equation = line.text.contains("=") && line.text.split(whereSeparator: \.isWhitespace).count <= 12
             return mathSymbols || equation
         }.map { $0.rect.insetBy(dx: -4, dy: -8) }
-        var regions = clusters(page.graphics + formulas, distance: 3)
+        var regions = clusters(page.graphics + formulas + TableRegionDetector.regions(in: page), distance: 3)
         var previous: [CGRect] = []
         while regions != previous {
             previous = regions
@@ -91,8 +91,20 @@ enum LayoutReconstructor {
             var best: (CGFloat, CGFloat)?
             for interval in intervals.dropFirst() {
                 let width = interval.0 - end
-                if width > bodySize * (horizontal ? 1.5 : 1.1), width > (best?.0 ?? 0) {
-                    best = (width, (end + interval.0) / 2)
+                if width > bodySize * (horizontal ? 0.75 : 1.1), width > (best?.0 ?? 0) {
+                    let middle = (end + interval.0) / 2
+                    // A narrow gutter is evidence for prose columns only when both sides
+                    // contain substantial text lines. Short labels and numeric answer cells
+                    // need row associations; the whitespace alone must not separate them.
+                    if horizontal, width <= bodySize * 1.5 {
+                        let left = elements.filter { $0.rect.maxX < middle }
+                        let right = elements.filter { $0.rect.minX > middle }
+                        let proseColumns = [left, right].allSatisfy { column in
+                            column.filter { $0.line != nil && $0.rect.width >= bodySize * 12 }.count >= 2
+                        }
+                        if !proseColumns { end = max(end, interval.1); continue }
+                    }
+                    best = (width, middle)
                 }
                 end = max(end, interval.1)
             }

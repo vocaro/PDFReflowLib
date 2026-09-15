@@ -39,6 +39,62 @@ These are regression limits for release CLI processes on macOS arm64, not physic
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
 before conversion and records progress, timing, memory, output structure and optional EPUBCheck.
 
+## Comparing conversion runs
+
+Builds launched from different execution environments can produce different rasters and OCR
+results on the same Mac. The [controlled CDC/DGA investigation](../measurements/raster-environment/record.md)
+reproduces this with the same retained binaries. An OS string or a caller-supplied context label
+alone does not establish comparable capabilities.
+
+For strict drift comparisons, compile one capability probe and reuse that exact executable for
+both evaluations. Run the probe through the evaluator so it executes immediately before each
+conversion, against physical page 1 of the same verified PDF, in the same launch environment:
+
+```sh
+mkdir -p .build/raster-environment
+xcrun swiftc -parse-as-library -O \
+  -module-cache-path .build/raster-environment/module-cache \
+  Sources/PDFReflowLib/PageRasterizer.swift Sources/PDFReflowLib/ConversionTypes.swift \
+  Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
+  tools/probe-raster-environment.swift -o .build/raster-environment/probe
+python3 tools/evaluate-real-document.py --case dga-2025-2030 \
+  --pdf corpus/cache/DGA.pdf --converter .build/release/pdf-reflow \
+  --output /tmp/dga-candidate --epubcheck /opt/homebrew/bin/epubcheck \
+  --environment-probe .build/raster-environment/probe --execution-context host-terminal
+python3 tools/compare_conversion_runs.py --baseline /tmp/dga-baseline \
+  --candidate /tmp/dga-candidate --output /tmp/dga-drift.json
+```
+
+Capture `/tmp/dga-baseline` with the baseline converter and the same probe before comparing.
+`run_corpus_regressions.py` accepts both new flags and forwards them to every selected case.
+Keep resource measurements sequential. The probe requires the same macOS/Vision SDK as the
+library. Compiling it again changes its identity; recapture both runs if that identity changes.
+
+The evaluator records a fresh run ID, converter and probe executable SHA-256, source identity,
+system/build/architecture, probe result SHA-256, and EPUB SHA-256. The probe reports its own
+executable/source/run identities, packed raster pixels without alignment padding, dimensions,
+color-space metadata, available Metal device, and Vision success or failure plus recognized
+lines. A probe timeout, launch failure, malformed output, stale identity, or OCR failure fails
+the requested capability gate while retaining conversion diagnostics and a failed receipt.
+The declared `--execution-context` is supplemental and may be absent or differ between two
+otherwise compatible captures.
+
+The comparator refuses missing, failed, stale, or incompatible capability receipts before
+reporting output drift. It verifies the retained EPUB, probe JSON, and conversion report against
+their evaluation receipt. Under compatible measured conditions it compares normalized page
+records, source-page markers, encoded image assets, and conversion report fields; generated
+output paths and ZIP timestamps/identifiers are not drift. A changed EPUB hash is permitted
+between runs, but each EPUB must match its own receipt. Exit status is 0 only for compatible
+runs with no differences in this scope. Historical receipts without this evidence must be
+recaptured; manually adding context labels cannot qualify them.
+
+These local receipts provide consistency checks, not signed attestation. A page-1 probe samples
+capability at one instant and cannot prove all pages or later service states equivalent. The
+comparison does not cover every EPUB semantic detail (for example CSS, navigation, and inline
+styling), decoded image equivalence, or visual fidelity. Keep the existing content, resource,
+EPUB, and human-review gates. Evaluations without `--environment-probe` retain their existing
+gate behavior but are ineligible for strict comparison.
+
 ## Wallace algebra
 
 *Beginning and Intermediate Algebra*, Tyler Wallace, copyright 2010. The supplied PDF is

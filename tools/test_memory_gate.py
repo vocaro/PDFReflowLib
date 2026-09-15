@@ -62,11 +62,11 @@ print(json.dumps({{"pageCount": 1, "reflowedPageCount": 1, "recognizedPageCount"
         self.root_patch.stop()
         self.temp.cleanup()
 
-    def invoke(self, limit):
+    def invoke(self, limit, extra=()):
         output = self.root / "result"
         arguments = ["runner", "--case", "control", "--pdf", str(self.pdf),
                      "--converter", str(self.converter), "--output", str(output),
-                     "--max-peak-rss-mib", str(limit)]
+                     "--max-peak-rss-mib", str(limit), '--execution-context', 'test-child'] + list(extra)
         with patch.object(sys, "argv", arguments), contextlib.redirect_stdout(io.StringIO()):
             code = runner.main()
         return code, json.loads((output / "result.json").read_text())
@@ -82,6 +82,8 @@ print(json.dumps({{"pageCount": 1, "reflowedPageCount": 1, "recognizedPageCount"
 
     def test_peak_below_limit_passes(self):
         code, result = self.invoke(512)
+        self.assertEqual(result['executionContext'], 'test-child')
+        self.assertTrue(result['systemBuild'])
         self.assertTrue(result["memoryGate"]["passed"])
         self.assertTrue(result["runPassed"])
         self.assertEqual(code, 0)
@@ -91,6 +93,68 @@ print(json.dumps({{"pageCount": 1, "reflowedPageCount": 1, "recognizedPageCount"
         code, result = self.invoke(160)
         self.assertEqual(code, 0)
         self.assertLess(result["converterPeakRSSBytes"], 160 * 1024 * 1024)
+
+    def test_probe_is_executed_with_source_and_launch_context(self):
+        probe = self.make_probe()
+        code, result = self.invoke(512, ['--environment-probe', str(probe)])
+        self.assertEqual(code, 0)
+        self.assertTrue(result['environmentProbeCheck']['passed'])
+        self.assertEqual(result['environmentProbe']['runID'], result['runID'])
+        self.assertEqual(result['environmentProbeCapture']['executableSHA256'], runner.digest(probe))
+        self.assertEqual(result['outputSHA256'], runner.digest(self.root / 'result/control.epub'))
+
+    def make_probe(self, tail=''):
+        probe = self.root / 'probe'
+        probe.write_text(f'''#!{sys.executable}
+import hashlib, json, pathlib, sys, time
+assert sys.argv[1:4] == [{str(self.pdf.resolve())!r}, '1', 'test-child']
+payload = {{'schemaVersion': 1, 'runID': sys.argv[4], 'page': 1, 'system': 'test system',
+    'sourceSHA256': hashlib.sha256(pathlib.Path(sys.argv[1]).read_bytes()).hexdigest(),
+    'probeSHA256': hashlib.sha256(pathlib.Path(sys.argv[0]).read_bytes()).hexdigest(),
+    'packedPixelSHA256': 'a' * 64, 'width': 10, 'height': 10, 'bitsPerPixel': 32, 'rasterDPI': 180,
+    'metalDevice': 'test device', 'colorSpaceName': 'DeviceRGB', 'colorSpaceICC_SHA256': 'unavailable',
+    'ocr': {{'status': 'succeeded', 'lines': ['Control']}}}}
+{tail}
+pathlib.Path(sys.argv[5]).write_text(json.dumps(payload))
+''')
+        probe.chmod(0o700)
+        return probe
+
+    def test_failed_capability_probe_fails_otherwise_passing_evaluation(self):
+        probe = self.make_probe("payload['ocr'] = {'status': 'failed'}")
+        code, result = self.invoke(512, ['--environment-probe', str(probe)])
+        self.assertEqual(result['conversionExitCode'], 0)
+        self.assertFalse(result['runPassed'])
+        self.assertEqual(code, 1)
+
+    def test_probe_failure_modes_retain_failed_receipts(self):
+        for name, tail in [('exit', 'sys.exit(7)'), ('missing', 'sys.exit(0)'),
+                           ('invalid-json', "pathlib.Path(sys.argv[5]).write_text('{'); sys.exit(0)"),
+                           ('malformed', "payload = ['not an object']"),
+                           ('stale', "payload['runID'] = 'previous-run'"),
+                           ('wrong-source', "payload['sourceSHA256'] = 'b' * 64"),
+                           ('wrong-binary', "payload['probeSHA256'] = 'b' * 64")]:
+            with self.subTest(name=name):
+                probe = self.make_probe(tail)
+                code, result = self.invoke(512, ['--environment-probe', str(probe)])
+                self.assertEqual(code, 1)
+                self.assertEqual(result['conversionExitCode'], 0)
+                self.assertFalse(result['environmentProbeCheck']['passed'])
+                shutil.rmtree(self.root / 'result')
+
+    def test_probe_launch_failure_retains_receipt(self):
+        probe = self.make_probe()
+        probe.chmod(0o600)
+        code, result = self.invoke(512, ['--environment-probe', str(probe)])
+        self.assertEqual(code, 1)
+        self.assertEqual(result['conversionExitCode'], 0)
+        self.assertTrue(result['environmentProbeCapture']['error'])
+
+    def test_probe_timeout_retains_failure_and_reaps_probe(self):
+        probe = self.make_probe('time.sleep(30)')
+        code, result = self.invoke(512, ['--environment-probe', str(probe), '--timeout', '0.1'])
+        self.assertEqual(code, 1)
+        self.assertIn('timed out', result['environmentProbeCapture']['error'])
 
     def test_manifest_ceiling_is_enforced_without_override(self):
         manifest = self.root / "corpus/manifest.json"

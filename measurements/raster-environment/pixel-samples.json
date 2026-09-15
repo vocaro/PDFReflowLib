@@ -1,0 +1,40 @@
+[
+  {
+    "case": "cdc",
+    "changedPixelBounds": [
+      0,
+      0,
+      1530,
+      1980
+    ],
+    "image": "image-1.png",
+    "meanAbsoluteRGBDifference": [
+      0.36524262230144583,
+      0.3560143922889021,
+      0.6441341519772892
+    ],
+    "size": [
+      1530,
+      1980
+    ]
+  },
+  {
+    "case": "dga",
+    "changedPixelBounds": [
+      0,
+      0,
+      1530,
+      194
+    ],
+    "image": "image-3.png",
+    "meanAbsoluteRGBDifference": [
+      0.3966339869281046,
+      0.21279738562091502,
+      0.29169063180827887
+    ],
+    "size": [
+      1530,
+      300
+    ]
+  }
+]

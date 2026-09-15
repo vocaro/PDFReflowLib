@@ -52,13 +52,16 @@ class CorpusRunnerTests(unittest.TestCase):
         visited = []
 
         def launch(command, **kwargs):
+            self.assertEqual(command[command.index('--execution-context') + 1], 'test-host')
+            self.assertEqual(command[command.index('--environment-probe') + 1], str(self.executable.resolve()))
             name = command[command.index('--case') + 1]; visited.append(name)
             Path(command[command.index('--output') + 1]).mkdir()
             return SimpleNamespace(returncode=1 if name == 'first' else 0)
 
         with patch.object(runner.subprocess, 'run', side_effect=launch), \
                 patch.object(runner, 'check_evaluation', return_value={'case': 'second', 'passed': True}):
-            self.assertEqual(self.run_main(), 1)
+            self.assertEqual(self.run_main(['--execution-context', 'test-host',
+                                           '--environment-probe', str(self.executable)]), 1)
         summary = json.loads((self.root / 'output/summary.json').read_text())
         self.assertEqual(visited, ['first', 'second'])
         self.assertFalse(summary['passed'])

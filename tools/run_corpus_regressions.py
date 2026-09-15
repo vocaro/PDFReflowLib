@@ -18,6 +18,8 @@ def main():
     parser.add_argument('--epubcheck', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--case', action='append', dest='selected')
+    parser.add_argument('--execution-context', help='caller-declared launch context recorded in each evaluation')
+    parser.add_argument('--environment-probe', type=Path, help='compiled raster/Vision capability probe')
     args = parser.parse_args()
     manifest = json.loads((ROOT / 'corpus/manifest.json').read_text())['documents']
     definitions = json.loads((ROOT / 'corpus/regressions.json').read_text())
@@ -32,6 +34,7 @@ def main():
         parser.error('Missing cached PDFs; fetch explicitly with tools/fetch_corpus.py or supply verified originals: ' + ', '.join(missing))
     converter = args.converter.resolve(strict=True)
     epubcheck = args.epubcheck.resolve(strict=True)
+    probe = args.environment_probe.resolve(strict=True) if args.environment_probe else None
     args.output.mkdir(parents=True, exist_ok=False)
     results = []
     for name in selected:
@@ -40,7 +43,9 @@ def main():
         with (args.output / (name + '.log')).open('w') as log:
             run = subprocess.run([sys.executable, str(ROOT / 'tools/evaluate-real-document.py'),
                 '--case', name, '--pdf', str(ROOT / 'corpus/cache' / cases[name]['filename']),
-                '--converter', str(converter), '--output', str(directory), '--epubcheck', str(epubcheck)],
+                '--converter', str(converter), '--output', str(directory), '--epubcheck', str(epubcheck)]
+                + (['--execution-context', args.execution_context] if args.execution_context else [])
+                + (['--environment-probe', str(probe)] if probe else []),
                 stdout=log, stderr=subprocess.STDOUT)
         if run.returncode:
             assessment = {'case': name, 'passed': False, 'errors': ['Conversion/resource/EPUB gate failed; see case log']}

@@ -6,7 +6,6 @@ A successful run measures conversion and package conformance, not content fideli
 """
 import argparse
 import ctypes
-import hashlib
 import importlib.util
 import json
 import math
@@ -18,13 +17,11 @@ import signal
 import subprocess
 import sys
 import time
+import uuid
+
+from conversion_provenance import digest, probe_errors
 
 ROOT = Path(__file__).resolve().parents[1]
-
-
-def digest(path):
-    with path.open("rb") as stream:
-        return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
 class MemorySample(ctypes.Structure):
@@ -57,6 +54,9 @@ def main():
     parser.add_argument("--converter", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True, help="new directory")
     parser.add_argument("--epubcheck", type=Path)
+    parser.add_argument("--execution-context", help="supplemental caller-declared launch label, e.g. host-terminal or codex-sandbox; not capability evidence")
+    parser.add_argument("--environment-probe", type=Path,
+                        help="compiled probe-raster-environment; executes in this launch context before conversion")
     parser.add_argument("--timeout", type=float, default=1800)
     parser.add_argument("--max-peak-rss-mib", type=float, help="override the case memory ceiling; fails after conversion when exceeded")
     args = parser.parse_args()
@@ -74,16 +74,42 @@ def main():
     if args.pdf.stat().st_size != case["bytes"] or digest(args.pdf) != case["sha256"]:
         parser.error("PDF identity differs from the pinned corpus case")
     converter = args.converter.resolve(strict=True)
+    probe = args.environment_probe.resolve(strict=True) if args.environment_probe else None
     args.output.mkdir(parents=True, exist_ok=False)
     output = args.output / (case["id"] + ".epub")
     receipt = {
+        "provenanceSchemaVersion": 1,
+        "runID": str(uuid.uuid4()),
         "case": case,
         "converterSHA256": digest(converter),
         "system": platform.platform(),
+        "systemBuild": platform.version(),
         "machine": platform.machine(),
+        "executionContext": args.execution_context,
         "options": "library defaults",
         "qualifiedForFidelity": False,
     }
+    if probe:
+        probe_result = args.output / 'environment-probe.json'
+        command = [str(probe), str(args.pdf.resolve()), '1', args.execution_context or 'unspecified',
+                   receipt['runID'], str(probe_result.resolve())]
+        capture = {'executableSHA256': digest(probe), 'command': command}
+        receipt['environmentProbeCapture'] = capture
+        try:
+            with (args.output / 'environment-probe.log').open('w') as log:
+                run = subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT,
+                                     timeout=args.timeout)
+            capture['exitCode'] = run.returncode
+            if run.returncode != 0:
+                raise ValueError('probe process failed')
+            capture['resultSHA256'] = digest(probe_result)
+            receipt['environmentProbe'] = json.loads(probe_result.read_text())
+            if digest(probe) != capture['executableSHA256']:
+                raise ValueError('probe executable changed during capture')
+        except (OSError, ValueError, subprocess.TimeoutExpired) as error:
+            capture['error'] = str(error)
+        receipt['environmentProbeCheck'] = {'errors': probe_errors(receipt)}
+        receipt['environmentProbeCheck']['passed'] = not receipt['environmentProbeCheck']['errors']
     report_path = args.output / "conversion-report.json"
     start = time.monotonic()
     with report_path.open("w") as report, (args.output / "progress.log").open("w") as log:
@@ -124,6 +150,8 @@ def main():
     receipt["converterCPUSeconds"] = usage.ru_utime + usage.ru_stime
     receipt["measurementScope"] = "One process run; RSS excludes separate Apple services. Timing excludes validation. Not a latency distribution or physical mobile-device measurement."
     success = receipt["conversionExitCode"] == 0
+    if probe:
+        success = success and receipt['environmentProbeCheck']['passed']
     events = re.findall(r"^(\d+)% (\w+)(?: page (\d+)/(\d+))?$",
                         (args.output / "progress.log").read_text(), re.MULTILINE)
     fractions = [int(event[0]) for event in events]
@@ -144,6 +172,7 @@ def main():
             if report["pageCount"] != case["pages"]:
                 raise ValueError("source page count mismatch")
             receipt["outputBytes"] = output.stat().st_size
+            receipt["outputSHA256"] = digest(output)
             spec = importlib.util.spec_from_file_location("epub_contracts", ROOT / "tools/check-epubs.py")
             module = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(module)

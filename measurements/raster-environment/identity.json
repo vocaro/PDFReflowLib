@@ -1,0 +1,25 @@
+{
+  "binaries": {
+    "baseline": "be1d8ee5b2f9a2a6e11b1c66a5de29e5e086f9a8dfee8ff85411d2125c2a942d",
+    "candidate": "24bcbbee40b130d3b24d311f9bfe70475e7a3443ad63d366c84757298549b04e"
+  },
+  "collectorSHA256": "37b4c8a50c8c34df8dac0a856dce4113c694f580338adf1df7503ffbae7a0db7",
+  "currentProbeSourceSHA256": "5f82c70d3561a5be248b19f0fd5c7e3115c04fb8d7cc6d345ccfbf6d69020961",
+  "historicalBaselineRevision": "0eba8d4",
+  "legacyProbeSHA256": "d06167f7e3b066bca61634aaf973b98a6e5b2234d8ed63d73c92ff2b99f5e6c0",
+  "sourceRevision": "7f0e25d",
+  "sources": {
+    "cdc": {
+      "id": "cdc-zombie-pandemic-2011",
+      "pages": 42,
+      "sha256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3"
+    },
+    "dga": {
+      "id": "dga-2025-2030",
+      "pages": 10,
+      "sha256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472"
+    }
+  },
+  "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "systemBuild": "Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:40 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6050"
+}

@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "provenanceErrors": [
+    "candidate evaluation did not pass",
+    "candidate raster/Vision capability probe missing or failed",
+    "capability probe metalDevice differs",
+    "capability probe ocr differs"
+  ]
+}

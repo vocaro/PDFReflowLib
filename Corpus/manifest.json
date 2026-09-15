@@ -39,15 +39,18 @@
       "knownFidelityIssues": [
         {
           "page": 91,
-          "issue": "Two-column prose interleaves left and right lines; left paragraph ending must be defined. should precede The computation of density altitude."
+          "issue": "Two-column prose interleaves left and right lines; left paragraph ending must be defined. should precede The computation of density altitude.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/2"
         },
         {
           "page": 121,
-          "issue": "Whole-page fallback has excessive white margins and undersized content."
+          "issue": "Whole-page fallback has excessive white margins and undersized content.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/3"
         },
         {
           "page": 511,
-          "issue": "Two-column glossary interleaves Wind direction indicators. and Zone of confusion. before Wind shear."
+          "issue": "Two-column glossary interleaves Wind direction indicators. and Zone of confusion. before Wind shear.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/2"
         }
       ]
     },
@@ -104,7 +107,8 @@
       "knownFidelityIssues": [
         {
           "page": 343,
-          "issue": "Inline superscript flattens into baseline text: the introductory ax-squared expression is serialized as ax2, without superscript markup. The displayed derivation is retained as an image, so passing EPUB validation and preserving displayed math do not establish inline-math fidelity."
+          "issue": "Inline superscript flattens into baseline text: the introductory ax-squared expression is serialized as ax2, without superscript markup. The displayed derivation is retained as an image, so passing EPUB validation and preserving displayed math do not establish inline-math fidelity.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/1"
         }
       ]
     }

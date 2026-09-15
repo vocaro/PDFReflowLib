@@ -4,11 +4,14 @@ The library converts PDFs to EPUB 3 on Apple platforms 27+. Synthetic regression
 layout, OCR, images, EPUB packaging, progress and cancellation. General textbook fidelity and
 physical-device memory/performance remain unqualified.
 
-- Correct FAA handbook column order on physical pages 91 and 511, and whole-page fallback
-  scaling on page 121. Add source-derived regressions and compare against original pages.
-- Investigate PDFKit attributed-text memory growth without losing formatting; keep the
+- Correct FAA handbook [column order on physical pages 91 and 511](https://github.com/vocaro/PDFReflowLib/issues/2),
+  and [whole-page fallback scaling on page 121](https://github.com/vocaro/PDFReflowLib/issues/3).
+  Add source-derived regressions and compare against original pages.
+- Investigate [PDFKit attributed-text leaks](https://github.com/vocaro/PDFReflowLib/issues/4)
+  without losing formatting; keep the
   fresh-process high-water-mark gate and establish physical iPhone/iPad memory budgets.
-- Preserve inline mathematical superscripts: the Wallace algebra corpus exposes a flattened
+- Preserve [inline mathematical superscripts](https://github.com/vocaro/PDFReflowLib/issues/1):
+  the Wallace algebra corpus exposes a flattened
   squared exponent on page 343 despite preserved displayed formulas. Add a targeted regression
   when implementing the fix; review exercise and answer-key numbering across the book.
 - The development corpus includes the FAA handbook and Wallace algebra textbook, with source

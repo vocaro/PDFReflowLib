@@ -1,0 +1,1734 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        39.660000000000004,
+        562.53440000000012,
+        230.34080000000003,
+        8.6069999999999709
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.5,
+          "text" : "32 THE 9/11 COMMISSION REPORT"
+        }
+      ],
+      "text" : "32 THE 9/11 COMMISSION REPORT"
+    },
+    {
+      "rect" : [
+        39.660000000000004,
+        537.25240000000008,
+        136.12499999999997,
+        9.88900000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11,
+          "text" : "American Airlines Flight 11 "
+        }
+      ],
+      "text" : "American Airlines Flight 11 "
+    },
+    {
+      "rect" : [
+        195.66749999999996,
+        537.25240000000008,
+        126.34930000000003,
+        9.88900000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11,
+          "text" : "United Airlines Flight 175"
+        }
+      ],
+      "text" : "United Airlines Flight 175"
+    },
+    {
+      "rect" : [
+        39.660000000000004,
+        526.00270000000012,
+        199.62690000000001,
+        9.88900000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11,
+          "text" : "(AA 11) (UA 175)"
+        }
+      ],
+      "text" : "(AA 11) (UA 175)"
+    },
+    {
+      "rect" : [
+        39.660000000000004,
+        514.92265000000009,
+        88.297600000000017,
+        9.2147499999999809
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Boston to Los Angeles "
+        }
+      ],
+      "text" : "Boston to Los Angeles "
+    },
+    {
+      "rect" : [
+        195.66500000000002,
+        514.92265000000009,
+        88.297600000000102,
+        9.2147499999999809
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.25,
+          "text" : "Boston to Los Angeles"
+        }
+      ],
+      "text" : "Boston to Los Angeles"
+    },
+    {
+      "rect" : [
+        153.84360000000001,
+        486.48140000000006,
+        22.324000000000041,
+        7.2479999999999905
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Boston"
+        }
+      ],
+      "text" : "Boston"
+    },
+    {
+      "rect" : [
+        313.32640000000004,
+        463.71320000000003,
+        22.323999999999955,
+        7.2479999999999905
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "Boston"
+        }
+      ],
+      "text" : "Boston"
+    },
+    {
+      "rect" : [
+        262.10200000000003,
+        422.16960000000006,
+        48.022400000000005,
+        7.2479999999999905
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "New York City"
+        }
+      ],
+      "text" : "New York City"
+    },
+    {
+      "rect" : [
+        93.562100000000001,
+        399.53160000000003,
+        48.021600000000021,
+        7.2479999999999905
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "New York City"
+        }
+      ],
+      "text" : "New York City"
+    },
+    {
+      "rect" : [
+        39.660000000000004,
+        366.98730000000006,
+        62.411400000000008,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "7:59 Takeoff"
+        }
+      ],
+      "text" : "7:59 Takeoff"
+    },
+    {
+      "rect" : [
+        39.660000000000004,
+        356.98740000000004,
+        98.682299999999998,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:14 Last routine radio"
+        }
+      ],
+      "text" : "8:14 Last routine radio"
+    },
+    {
+      "rect" : [
+        75.660899999999998,
+        346.98750000000001,
+        111.18869999999998,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "communication; likely takeover"
+        }
+      ],
+      "text" : "communication; likely takeover"
+    },
+    {
+      "rect" : [
+        39.659999999999997,
+        336.98759999999999,
+        15.572699999999998,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:19 "
+        }
+      ],
+      "text" : "8:19 "
+    },
+    {
+      "rect" : [
+        75.659099999999995,
+        336.98759999999999,
+        108.01439999999999,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Flight attendant notifies AA of"
+        }
+      ],
+      "text" : "Flight attendant notifies AA of"
+    },
+    {
+      "rect" : [
+        75.659999999999997,
+        326.98769999999996,
+        32.44319999999999,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "hijacking"
+        }
+      ],
+      "text" : "hijacking"
+    },
+    {
+      "rect" : [
+        39.659999999999997,
+        316.98779999999994,
+        126.39869999999999,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:21 Transponder is turned off"
+        }
+      ],
+      "text" : "8:21 Transponder is turned off"
+    },
+    {
+      "rect" : [
+        39.659999999999997,
+        306.98789999999991,
+        15.572699999999998,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:23 "
+        }
+      ],
+      "text" : "8:23 "
+    },
+    {
+      "rect" : [
+        75.659099999999995,
+        306.98789999999991,
+        96.412499999999994,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "AA attempts to contact the"
+        }
+      ],
+      "text" : "AA attempts to contact the"
+    },
+    {
+      "rect" : [
+        75.659999999999997,
+        296.98799999999989,
+        26.348399999999998,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "cockpit"
+        }
+      ],
+      "text" : "cockpit"
+    },
+    {
+      "rect" : [
+        39.659999999999997,
+        286.98809999999986,
+        120.51720000000003,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:25 Boston Center aware of"
+        }
+      ],
+      "text" : "8:25 Boston Center aware of"
+    },
+    {
+      "rect" : [
+        75.660899999999998,
+        276.98819999999984,
+        32.44319999999999,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "hijacking"
+        }
+      ],
+      "text" : "hijacking"
+    },
+    {
+      "rect" : [
+        39.659999999999997,
+        266.98829999999981,
+        149.20739999999998,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:38 Boston Center notifies NEADS"
+        }
+      ],
+      "text" : "8:38 Boston Center notifies NEADS"
+    },
+    {
+      "rect" : [
+        75.659999999999997,
+        256.98839999999979,
+        42.075900000000019,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "of hijacking"
+        }
+      ],
+      "text" : "of hijacking"
+    },
+    {
+      "rect" : [
+        39.659999999999997,
+        246.98849999999976,
+        145.29329999999999,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:46 NEADS scrambles Otis fighter"
+        }
+      ],
+      "text" : "8:46 NEADS scrambles Otis fighter"
+    },
+    {
+      "rect" : [
+        75.659999999999997,
+        236.98859999999976,
+        80.055000000000007,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "jets in search of AA 11"
+        }
+      ],
+      "text" : "jets in search of AA 11"
+    },
+    {
+      "rect" : [
+        39.659999999999997,
+        226.98869999999977,
+        26.735399999999998,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:46:40 "
+        }
+      ],
+      "text" : "8:46:40 "
+    },
+    {
+      "rect" : [
+        75.656399999999991,
+        226.98869999999977,
+        97.250400000000013,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "AA 11 crashes into 1 WTC"
+        }
+      ],
+      "text" : "AA 11 crashes into 1 WTC"
+    },
+    {
+      "rect" : [
+        75.659999999999997,
+        216.98879999999977,
+        51.661799999999999,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "(North Tower)"
+        }
+      ],
+      "text" : "(North Tower)"
+    },
+    {
+      "rect" : [
+        39.659999999999997,
+        206.98889999999977,
+        123.44489999999999,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:53 Otis fighter jets airborne"
+        }
+      ],
+      "text" : "8:53 Otis fighter jets airborne"
+    },
+    {
+      "rect" : [
+        39.659999999999997,
+        196.98899999999978,
+        134.3304,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "9:16 AA headquarters aware that"
+        }
+      ],
+      "text" : "9:16 AA headquarters aware that"
+    },
+    {
+      "rect" : [
+        75.660899999999998,
+        186.98909999999978,
+        91.237500000000011,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Flight 11 has crashed into"
+        }
+      ],
+      "text" : "Flight 11 has crashed into"
+    },
+    {
+      "rect" : [
+        75.660899999999998,
+        176.98919999999978,
+        21.657600000000002,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "WTC"
+        }
+      ],
+      "text" : "WTC"
+    },
+    {
+      "rect" : [
+        39.659999999999997,
+        166.98929999999979,
+        146.32919999999999,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "9:21 Boston Center advises NEADS"
+        }
+      ],
+      "text" : "9:21 Boston Center advises NEADS"
+    },
+    {
+      "rect" : [
+        75.659999999999997,
+        156.98939999999979,
+        108.08279999999999,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "that AA 11 is airborne heading"
+        }
+      ],
+      "text" : "that AA 11 is airborne heading"
+    },
+    {
+      "rect" : [
+        75.659999999999997,
+        146.98949999999979,
+        53.02079999999998,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "for Washington"
+        }
+      ],
+      "text" : "for Washington"
+    },
+    {
+      "rect" : [
+        39.659999999999997,
+        136.9895999999998,
+        132.00570000000002,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "9:24 NEADS scrambles Langley"
+        }
+      ],
+      "text" : "9:24 NEADS scrambles Langley"
+    },
+    {
+      "rect" : [
+        75.659999999999997,
+        126.98969999999981,
+        80.518500000000017,
+        8.1540000000000106
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "fighter jets in search of"
+        }
+      ],
+      "text" : "fighter jets in search of"
+    },
+    {
+      "rect" : [
+        75.659999999999997,
+        116.98979999999982,
+        23.511599999999987,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "AA 11"
+        }
+      ],
+      "text" : "AA 11"
+    },
+    {
+      "rect" : [
+        201.66,
+        366.99020000000002,
+        65.4084,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:14 Takeoff"
+        }
+      ],
+      "text" : "8:14 Takeoff"
+    },
+    {
+      "rect" : [
+        201.66,
+        356.99029999999999,
+        132.08670000000004,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:42 Last radio communication"
+        }
+      ],
+      "text" : "8:42 Last radio communication"
+    },
+    {
+      "rect" : [
+        201.66,
+        346.99039999999997,
+        92.939400000000006,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:42-8:46 Likely takeover"
+        }
+      ],
+      "text" : "8:42-8:46 Likely takeover"
+    },
+    {
+      "rect" : [
+        201.66,
+        336.99049999999994,
+        133.13970000000003,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:47 Transponder code changes"
+        }
+      ],
+      "text" : "8:47 Transponder code changes"
+    },
+    {
+      "rect" : [
+        201.66,
+        326.99059999999992,
+        15.572699999999998,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:52 "
+        }
+      ],
+      "text" : "8:52 "
+    },
+    {
+      "rect" : [
+        240.65879999999999,
+        326.99059999999992,
+        109.18080000000003,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Flight attendant notifies UA of"
+        }
+      ],
+      "text" : "Flight attendant notifies UA of"
+    },
+    {
+      "rect" : [
+        240.65969999999999,
+        316.99069999999989,
+        32.44319999999999,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "hijacking"
+        }
+      ],
+      "text" : "hijacking"
+    },
+    {
+      "rect" : [
+        201.65999999999997,
+        306.99079999999987,
+        15.572699999999998,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:54 "
+        }
+      ],
+      "text" : "8:54 "
+    },
+    {
+      "rect" : [
+        240.65879999999996,
+        306.99079999999987,
+        96.861600000000038,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "UA attempts to contact the"
+        }
+      ],
+      "text" : "UA attempts to contact the"
+    },
+    {
+      "rect" : [
+        240.65969999999999,
+        296.99089999999984,
+        26.34839999999997,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "cockpit"
+        }
+      ],
+      "text" : "cockpit"
+    },
+    {
+      "rect" : [
+        201.65999999999997,
+        286.99099999999981,
+        132.31709999999998,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "8:55 New York Center suspects"
+        }
+      ],
+      "text" : "8:55 New York Center suspects"
+    },
+    {
+      "rect" : [
+        240.66059999999996,
+        276.99109999999979,
+        32.443200000000019,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "hijacking"
+        }
+      ],
+      "text" : "hijacking"
+    },
+    {
+      "rect" : [
+        201.65999999999997,
+        266.99119999999976,
+        26.735399999999998,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "9:03:11 "
+        }
+      ],
+      "text" : "9:03:11 "
+    },
+    {
+      "rect" : [
+        240.65789999999998,
+        266.99119999999976,
+        110.2869,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Flight 175 crashes into 2 WTC"
+        }
+      ],
+      "text" : "Flight 175 crashes into 2 WTC"
+    },
+    {
+      "rect" : [
+        240.65969999999999,
+        256.99129999999974,
+        50.225399999999979,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "(South Tower)"
+        }
+      ],
+      "text" : "(South Tower)"
+    },
+    {
+      "rect" : [
+        201.65999999999997,
+        246.99139999999971,
+        128.65320000000003,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "9:15 New York Center advises"
+        }
+      ],
+      "text" : "9:15 New York Center advises"
+    },
+    {
+      "rect" : [
+        240.66059999999996,
+        236.99149999999972,
+        105.80760000000001,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "NEADS that UA 175 was the"
+        }
+      ],
+      "text" : "NEADS that UA 175 was the"
+    },
+    {
+      "rect" : [
+        240.66059999999996,
+        226.99159999999972,
+        96.684299999999979,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "second aircraft crashed into"
+        }
+      ],
+      "text" : "second aircraft crashed into"
+    },
+    {
+      "rect" : [
+        240.66059999999996,
+        216.99169999999972,
+        21.657599999999974,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "WTC"
+        }
+      ],
+      "text" : "WTC"
+    },
+    {
+      "rect" : [
+        201.65999999999997,
+        206.99179999999973,
+        137.78370000000001,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "9:20 UA headquarters aware that"
+        }
+      ],
+      "text" : "9:20 UA headquarters aware that"
+    },
+    {
+      "rect" : [
+        240.66059999999996,
+        196.99189999999973,
+        97.430400000000049,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Flight 175 had crashed into"
+        }
+      ],
+      "text" : "Flight 175 had crashed into"
+    },
+    {
+      "rect" : [
+        240.66059999999996,
+        186.99199999999973,
+        21.657599999999974,
+        8.1539999999999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "WTC"
+        }
+      ],
+      "text" : "WTC"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    396,
+    612
+  ],
+  "caseID" : "gpo-911-2004",
+  "graphics" : [
+    [
+      39.660004000000001,
+      384.038025,
+      317.11753800000002,
+      123.10201999999998
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 9.5,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000004,
+        562.53440000000012,
+        230.34080000000003,
+        8.6069999999999709
+      ],
+      "text" : "32 THE 9/11 COMMISSION REPORT"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000004,
+        537.25240000000008,
+        136.12499999999997,
+        9.88900000000001
+      ],
+      "text" : "American Airlines Flight 11"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        195.66749999999996,
+        537.25240000000008,
+        126.34930000000003,
+        9.88900000000001
+      ],
+      "text" : "United Airlines Flight 175"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000004,
+        526.00270000000012,
+        199.62690000000001,
+        9.88900000000001
+      ],
+      "text" : "(AA 11) (UA 175)"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000004,
+        514.92265000000009,
+        88.297600000000017,
+        9.2147499999999809
+      ],
+      "text" : "Boston to Los Angeles"
+    },
+    {
+      "fontSize" : 10.25,
+      "monospaced" : false,
+      "rect" : [
+        195.66500000000002,
+        514.92265000000009,
+        88.297600000000102,
+        9.2147499999999809
+      ],
+      "text" : "Boston to Los Angeles"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        153.84360000000001,
+        486.48140000000006,
+        22.324000000000041,
+        7.2479999999999905
+      ],
+      "text" : "Boston"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        313.32640000000004,
+        463.71320000000003,
+        22.323999999999955,
+        7.2479999999999905
+      ],
+      "text" : "Boston"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        262.10200000000003,
+        422.16960000000006,
+        48.022400000000005,
+        7.2479999999999905
+      ],
+      "text" : "New York City"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        93.562100000000001,
+        399.53160000000003,
+        48.021600000000021,
+        7.2479999999999905
+      ],
+      "text" : "New York City"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000004,
+        366.98730000000006,
+        62.411400000000008,
+        8.1539999999999964
+      ],
+      "text" : "7:59 Takeoff"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        39.660000000000004,
+        356.98740000000004,
+        98.682299999999998,
+        8.1539999999999964
+      ],
+      "text" : "8:14 Last routine radio"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.660899999999998,
+        346.98750000000001,
+        111.18869999999998,
+        8.1539999999999964
+      ],
+      "text" : "communication; likely takeover"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        39.659999999999997,
+        336.98759999999999,
+        15.572699999999998,
+        8.1539999999999964
+      ],
+      "text" : "8:19"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.659099999999995,
+        336.98759999999999,
+        108.01439999999999,
+        8.1539999999999964
+      ],
+      "text" : "Flight attendant notifies AA of"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.659999999999997,
+        326.98769999999996,
+        32.44319999999999,
+        8.1539999999999964
+      ],
+      "text" : "hijacking"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        39.659999999999997,
+        316.98779999999994,
+        126.39869999999999,
+        8.1539999999999964
+      ],
+      "text" : "8:21 Transponder is turned off"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        39.659999999999997,
+        306.98789999999991,
+        15.572699999999998,
+        8.1539999999999964
+      ],
+      "text" : "8:23"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.659099999999995,
+        306.98789999999991,
+        96.412499999999994,
+        8.1539999999999964
+      ],
+      "text" : "AA attempts to contact the"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.659999999999997,
+        296.98799999999989,
+        26.348399999999998,
+        8.1539999999999964
+      ],
+      "text" : "cockpit"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        39.659999999999997,
+        286.98809999999986,
+        120.51720000000003,
+        8.1539999999999964
+      ],
+      "text" : "8:25 Boston Center aware of"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.660899999999998,
+        276.98819999999984,
+        32.44319999999999,
+        8.1539999999999964
+      ],
+      "text" : "hijacking"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        39.659999999999997,
+        266.98829999999981,
+        149.20739999999998,
+        8.1539999999999964
+      ],
+      "text" : "8:38 Boston Center notifies NEADS"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.659999999999997,
+        256.98839999999979,
+        42.075900000000019,
+        8.1539999999999964
+      ],
+      "text" : "of hijacking"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        39.659999999999997,
+        246.98849999999976,
+        145.29329999999999,
+        8.1539999999999964
+      ],
+      "text" : "8:46 NEADS scrambles Otis fighter"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.659999999999997,
+        236.98859999999976,
+        80.055000000000007,
+        8.1539999999999964
+      ],
+      "text" : "jets in search of AA 11"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        39.659999999999997,
+        226.98869999999977,
+        26.735399999999998,
+        8.1539999999999964
+      ],
+      "text" : "8:46:40"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.656399999999991,
+        226.98869999999977,
+        97.250400000000013,
+        8.1539999999999964
+      ],
+      "text" : "AA 11 crashes into 1 WTC"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.659999999999997,
+        216.98879999999977,
+        51.661799999999999,
+        8.1539999999999964
+      ],
+      "text" : "(North Tower)"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        39.659999999999997,
+        206.98889999999977,
+        123.44489999999999,
+        8.1539999999999964
+      ],
+      "text" : "8:53 Otis fighter jets airborne"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        39.659999999999997,
+        196.98899999999978,
+        134.3304,
+        8.1539999999999964
+      ],
+      "text" : "9:16 AA headquarters aware that"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.660899999999998,
+        186.98909999999978,
+        91.237500000000011,
+        8.1539999999999964
+      ],
+      "text" : "Flight 11 has crashed into"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.660899999999998,
+        176.98919999999978,
+        21.657600000000002,
+        8.1539999999999964
+      ],
+      "text" : "WTC"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        39.659999999999997,
+        166.98929999999979,
+        146.32919999999999,
+        8.1539999999999964
+      ],
+      "text" : "9:21 Boston Center advises NEADS"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.659999999999997,
+        156.98939999999979,
+        108.08279999999999,
+        8.1539999999999964
+      ],
+      "text" : "that AA 11 is airborne heading"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.659999999999997,
+        146.98949999999979,
+        53.02079999999998,
+        8.1539999999999964
+      ],
+      "text" : "for Washington"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        39.659999999999997,
+        136.9895999999998,
+        132.00570000000002,
+        8.1539999999999964
+      ],
+      "text" : "9:24 NEADS scrambles Langley"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.659999999999997,
+        126.98969999999981,
+        80.518500000000017,
+        8.1540000000000106
+      ],
+      "text" : "fighter jets in search of"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.659999999999997,
+        116.98979999999982,
+        23.511599999999987,
+        8.1539999999999964
+      ],
+      "text" : "AA 11"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        201.66,
+        366.99020000000002,
+        65.4084,
+        8.1539999999999964
+      ],
+      "text" : "8:14 Takeoff"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        201.66,
+        356.99029999999999,
+        132.08670000000004,
+        8.1539999999999964
+      ],
+      "text" : "8:42 Last radio communication"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        201.66,
+        346.99039999999997,
+        92.939400000000006,
+        8.1539999999999964
+      ],
+      "text" : "8:42-8:46 Likely takeover"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        201.66,
+        336.99049999999994,
+        133.13970000000003,
+        8.1539999999999964
+      ],
+      "text" : "8:47 Transponder code changes"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        201.66,
+        326.99059999999992,
+        15.572699999999998,
+        8.1539999999999964
+      ],
+      "text" : "8:52"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        240.65879999999999,
+        326.99059999999992,
+        109.18080000000003,
+        8.1539999999999964
+      ],
+      "text" : "Flight attendant notifies UA of"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        240.65969999999999,
+        316.99069999999989,
+        32.44319999999999,
+        8.1539999999999964
+      ],
+      "text" : "hijacking"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        201.65999999999997,
+        306.99079999999987,
+        15.572699999999998,
+        8.1539999999999964
+      ],
+      "text" : "8:54"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        240.65879999999996,
+        306.99079999999987,
+        96.861600000000038,
+        8.1539999999999964
+      ],
+      "text" : "UA attempts to contact the"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        240.65969999999999,
+        296.99089999999984,
+        26.34839999999997,
+        8.1539999999999964
+      ],
+      "text" : "cockpit"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        201.65999999999997,
+        286.99099999999981,
+        132.31709999999998,
+        8.1539999999999964
+      ],
+      "text" : "8:55 New York Center suspects"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        240.66059999999996,
+        276.99109999999979,
+        32.443200000000019,
+        8.1539999999999964
+      ],
+      "text" : "hijacking"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        201.65999999999997,
+        266.99119999999976,
+        26.735399999999998,
+        8.1539999999999964
+      ],
+      "text" : "9:03:11"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        240.65789999999998,
+        266.99119999999976,
+        110.2869,
+        8.1539999999999964
+      ],
+      "text" : "Flight 175 crashes into 2 WTC"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        240.65969999999999,
+        256.99129999999974,
+        50.225399999999979,
+        8.1539999999999964
+      ],
+      "text" : "(South Tower)"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        201.65999999999997,
+        246.99139999999971,
+        128.65320000000003,
+        8.1539999999999964
+      ],
+      "text" : "9:15 New York Center advises"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        240.66059999999996,
+        236.99149999999972,
+        105.80760000000001,
+        8.1539999999999964
+      ],
+      "text" : "NEADS that UA 175 was the"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        240.66059999999996,
+        226.99159999999972,
+        96.684299999999979,
+        8.1539999999999964
+      ],
+      "text" : "second aircraft crashed into"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        240.66059999999996,
+        216.99169999999972,
+        21.657599999999974,
+        8.1539999999999964
+      ],
+      "text" : "WTC"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        201.65999999999997,
+        206.99179999999973,
+        137.78370000000001,
+        8.1539999999999964
+      ],
+      "text" : "9:20 UA headquarters aware that"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        240.66059999999996,
+        196.99189999999973,
+        97.430400000000049,
+        8.1539999999999964
+      ],
+      "text" : "Flight 175 had crashed into"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        240.66059999999996,
+        186.99199999999973,
+        21.657599999999974,
+        8.1539999999999964
+      ],
+      "text" : "WTC"
+    }
+  ],
+  "page" : 50,
+  "rightsBasis" : "Official U.S. Government commission report, retained as external development material. Source PDF is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+  "sourceTitle" : "The 9/11 Commission Report",
+  "sourceURL" : "https://www.govinfo.gov/content/pkg/GPO-911REPORT/pdf/GPO-911REPORT.pdf"
+}

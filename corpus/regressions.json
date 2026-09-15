@@ -325,6 +325,42 @@
             "9. For the FBI source’s claims",
             "in chapter 5.This speculation was based on reporting that Khallad was in the United States"
           ]
+        },
+        {
+          "page": 581,
+          "absentText": ["NOTES TO CHAPTER 12"],
+          "minimumImages": 2
+        },
+        {
+          "page": 486,
+          "absentText": ["NOTES TO CHAPTER 2"],
+          "text": ["Intelligence report", "Wali Khan’s relationship with Bin Ladin"]
+        },
+        {
+          "page": 488,
+          "absentText": ["NOTES TO CHAPTER 2"],
+          "text": ["KSM, Bin Ladin moved to Kandahar", "Intelligence report"]
+        },
+        {
+          "page": 574,
+          "absentText": ["NOTES TO CHAPTER 10"],
+          "text": ["chaired by former senators Gary Hart and Warren Rudman", "Ashcroft told us"]
+        },
+        {
+          "page": 576,
+          "absentText": ["NOTES TO CHAPTER 10"],
+          "text": ["Jack S. interview", "The FBI checked"]
+        },
+        {
+          "page": 582,
+          "absentText": ["NOTES TO CHAPTER 12"],
+          "minimumImages": 2
+        },
+        {
+          "page": 583,
+          "absentText": ["NOTES TO CHAPTER 12"],
+          "headings": ["How to Do It? A Different Way of Organizing the Government"],
+          "minimumImages": 2
         }
       ]
     },
@@ -333,6 +369,13 @@
       "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
       "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text.",
       "pages": [
+        {
+          "page": 50,
+          "absentText": ["46 Promoting Financial System Stability"],
+          "headings": ["Promoting Financial System", "Stability"],
+          "text": ["What Is Financial Stability?", "Monitoring Risk across the Financial System"],
+          "minimumImages": 1
+        },
         {
           "page": 9,
           "orderedText": [

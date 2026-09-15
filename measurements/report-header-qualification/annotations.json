@@ -1,0 +1,18 @@
+{
+  "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+  "sourceScope": "Full report, physical pages 19-64 (Chapter 1), not the external Chapter 1 granule",
+  "method": "Source-render annotation of chapter/numbered section titles, plus classification of every emitted heading in the 46-page sample. Subordinate bold and run-in titles are outside the recall denominator. One reviewer; no inter-rater measurement.",
+  "logicalHeadings": [
+    {"page": 19, "text": "1 “WE HAVE SOME PLANES”", "sourceLines": ["1", "“WE HAVE", "SOME PLANES”"], "kind": "chapter"},
+    {"page": 19, "text": "1.1 INSIDE THE FOUR FLIGHTS", "sourceLines": ["1.1 INSIDE THE FOUR FLIGHTS"], "kind": "numbered-section"},
+    {"page": 32, "text": "1.2 IMPROVISING A HOMELAND DEFENSE", "sourceLines": ["1.2 IMPROVISING A HOMELAND DEFENSE"], "kind": "numbered-section"},
+    {"page": 53, "text": "1.3 NATIONAL CRISIS MANAGEMENT", "sourceLines": ["1.3 NATIONAL CRISIS MANAGEMENT"], "kind": "numbered-section"}
+  ],
+  "reviewedMapLabels": [
+    {"page": 33, "sourceLabels": ["BOSTON", "NEW YORK", "INDIANAPOLIS"], "nativeFragments": ["BOST", "ORK", "INDIANAPOLIS"], "preservedRegions": 2},
+    {"page": 50, "sourceLabels": ["Boston", "New York City"], "preservedRegions": 1},
+    {"page": 51, "sourceLabels": ["Dulles", "Pentagon", "Newark", "Shanksville, PA"], "preservedRegions": 1}
+  ],
+  "notesRun": {"pages": [581, 582, 583], "text": "NOTES TO CHAPTER 12", "physicalFolioOffset": -18, "neighboringTwoPageRuns": [[579, 580], [584, 585]]},
+  "limitations": ["No full-book heading recall or subordinate-heading score", "Map labels are visually readable in preserved images, not reconstructed semantic labels", "Timeline row/column associations are not qualified by the label review", "Multi-line running headers and fewer than three occurrences remain unsupported"]
+}

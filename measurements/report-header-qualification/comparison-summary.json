@@ -1,0 +1,153 @@
+[
+  {
+    "passed": true,
+    "provenanceErrors": [],
+    "case": "faa-phak-8083-25c",
+    "executionContexts": {
+      "baseline": "codex-host",
+      "candidate": "codex-host"
+    },
+    "baselineConverterSHA256": "873b740697a1b000d194677cdbc2d0e48cad9d6d759eeac5ca3b6f3d67ca026c",
+    "candidateConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+    "changedPages": [],
+    "changedImages": [],
+    "pageMarkersEqual": true,
+    "changedReportFields": [],
+    "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification.",
+    "reviewedChangeBoundaryPassed": true
+  },
+  {
+    "passed": true,
+    "provenanceErrors": [],
+    "case": "wallace-algebra-2010",
+    "executionContexts": {
+      "baseline": "codex-host",
+      "candidate": "codex-host"
+    },
+    "baselineConverterSHA256": "873b740697a1b000d194677cdbc2d0e48cad9d6d759eeac5ca3b6f3d67ca026c",
+    "candidateConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+    "changedPages": [],
+    "changedImages": [],
+    "pageMarkersEqual": true,
+    "changedReportFields": [],
+    "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification.",
+    "reviewedChangeBoundaryPassed": true
+  },
+  {
+    "passed": false,
+    "provenanceErrors": [],
+    "case": "gpo-911-2004",
+    "executionContexts": {
+      "baseline": "codex-host",
+      "candidate": "codex-host"
+    },
+    "baselineConverterSHA256": "873b740697a1b000d194677cdbc2d0e48cad9d6d759eeac5ca3b6f3d67ca026c",
+    "candidateConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+    "changedPages": [
+      486,
+      488,
+      574,
+      576,
+      581,
+      582,
+      583
+    ],
+    "changedImages": [],
+    "pageMarkersEqual": true,
+    "changedReportFields": [
+      "reflowedPageCount",
+      "warnings"
+    ],
+    "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification.",
+    "reviewedChangeBoundaryPassed": true
+  },
+  {
+    "passed": false,
+    "provenanceErrors": [],
+    "case": "fed-explained-2021",
+    "executionContexts": {
+      "baseline": "codex-host",
+      "candidate": "codex-host"
+    },
+    "baselineConverterSHA256": "873b740697a1b000d194677cdbc2d0e48cad9d6d759eeac5ca3b6f3d67ca026c",
+    "candidateConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+    "changedPages": [
+      50
+    ],
+    "changedImages": [],
+    "pageMarkersEqual": true,
+    "changedReportFields": [
+      "warnings"
+    ],
+    "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification.",
+    "reviewedChangeBoundaryPassed": true
+  },
+  {
+    "passed": true,
+    "provenanceErrors": [],
+    "case": "dga-2025-2030",
+    "executionContexts": {
+      "baseline": "codex-host",
+      "candidate": "codex-host"
+    },
+    "baselineConverterSHA256": "873b740697a1b000d194677cdbc2d0e48cad9d6d759eeac5ca3b6f3d67ca026c",
+    "candidateConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+    "changedPages": [],
+    "changedImages": [],
+    "pageMarkersEqual": true,
+    "changedReportFields": [],
+    "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification.",
+    "reviewedChangeBoundaryPassed": true
+  },
+  {
+    "passed": true,
+    "provenanceErrors": [],
+    "case": "gpo-our-flag-2003",
+    "executionContexts": {
+      "baseline": "codex-host",
+      "candidate": "codex-host"
+    },
+    "baselineConverterSHA256": "873b740697a1b000d194677cdbc2d0e48cad9d6d759eeac5ca3b6f3d67ca026c",
+    "candidateConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+    "changedPages": [],
+    "changedImages": [],
+    "pageMarkersEqual": true,
+    "changedReportFields": [],
+    "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification.",
+    "reviewedChangeBoundaryPassed": true
+  },
+  {
+    "passed": true,
+    "provenanceErrors": [],
+    "case": "cdc-zombie-pandemic-2011",
+    "executionContexts": {
+      "baseline": "codex-host",
+      "candidate": "codex-host"
+    },
+    "baselineConverterSHA256": "873b740697a1b000d194677cdbc2d0e48cad9d6d759eeac5ca3b6f3d67ca026c",
+    "candidateConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+    "changedPages": [],
+    "changedImages": [],
+    "pageMarkersEqual": true,
+    "changedReportFields": [],
+    "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification.",
+    "reviewedChangeBoundaryPassed": true
+  },
+  {
+    "passed": true,
+    "provenanceErrors": [],
+    "case": "cia-blue-book-14-1955",
+    "executionContexts": {
+      "baseline": "codex-host",
+      "candidate": "codex-host"
+    },
+    "baselineConverterSHA256": "873b740697a1b000d194677cdbc2d0e48cad9d6d759eeac5ca3b6f3d67ca026c",
+    "candidateConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+    "changedPages": [],
+    "changedImages": [],
+    "pageMarkersEqual": true,
+    "changedReportFields": [],
+    "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification.",
+    "reviewedChangeBoundaryPassed": true
+  }
+]

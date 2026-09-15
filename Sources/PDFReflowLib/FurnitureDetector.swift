@@ -66,6 +66,14 @@ enum FurnitureDetector {
                         guard !overflow else { continue }
                         normalized[index] = "#(offset=\(offset))"
                         groups[edge + normalized.joined(separator: " "), default: []].append(candidate)
+                        // A facing-page folio can move from before to after the same
+                        // header. Share evidence across both sides without erasing
+                        // internal chapter/date digits or reducing the three-page minimum.
+                        if words.count > 1 {
+                            var title = words
+                            title.remove(at: index)
+                            groups[edge + "folio(\(offset)):" + title.joined(separator: " "), default: []].append(candidate)
+                        }
                     }
                 }
             }

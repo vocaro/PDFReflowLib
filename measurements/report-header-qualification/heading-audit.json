@@ -1,0 +1,53 @@
+{
+  "physicalPages": [
+    19,
+    64
+  ],
+  "emittedHeadingElements": 3,
+  "elementsMatchingSourceHeadingLines": 3,
+  "falsePositiveElements": 0,
+  "logicalMajorHeadings": 4,
+  "majorHeadingsWithAllLinesDetected": 1,
+  "singleElementMajorHeadings": 0,
+  "missingMajorHeadings": [
+    {
+      "page": 19,
+      "text": "1.1 INSIDE THE FOUR FLIGHTS",
+      "sourceLines": [
+        "1.1 INSIDE THE FOUR FLIGHTS"
+      ],
+      "kind": "numbered-section"
+    },
+    {
+      "page": 32,
+      "text": "1.2 IMPROVISING A HOMELAND DEFENSE",
+      "sourceLines": [
+        "1.2 IMPROVISING A HOMELAND DEFENSE"
+      ],
+      "kind": "numbered-section"
+    },
+    {
+      "page": 53,
+      "text": "1.3 NATIONAL CRISIS MANAGEMENT",
+      "sourceLines": [
+        "1.3 NATIONAL CRISIS MANAGEMENT"
+      ],
+      "kind": "numbered-section"
+    }
+  ],
+  "emitted": [
+    {
+      "page": 19,
+      "text": "1"
+    },
+    {
+      "page": 19,
+      "text": "“WE HAVE"
+    },
+    {
+      "page": 19,
+      "text": "SOME PLANES”"
+    }
+  ],
+  "negativeControlsPassed": true
+}

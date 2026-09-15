@@ -39,6 +39,58 @@ private func furniturePage(_ number: Int, header: String, y: Double = 752,
     #expect(pages[..<10].allSatisfy { $0.lines.count == 2 })
 }
 
+@Test func shortSourceNotesRunCombinesLeadingAndTrailingFolios() throws {
+    var pages = try (579...585).map { try SourceLayoutFixture.load("911-\($0)").content() }
+    let original = pages
+    let warnings = LayoutReconstructor.stripFurniture(&pages)
+    #expect(warnings.map(\.page) == [581, 582, 583])
+    for (before, after) in zip(original, pages) {
+        // Only chapter 12 supplies three occurrences. Neighboring two-page runs
+        // retain their text; shortening the minimum would overstate the evidence.
+        let expected = (581...583).contains(before.number)
+            ? before.lines.filter { $0.rect.midY < 550 } : before.lines
+        #expect(after.lines.map(\.text) == expected.map(\.text))
+    }
+}
+
+@Test func mirroredBoundaryFoliosRequireMatchingOffsetsAndMeaningfulInternalDigits() {
+    var pages = (1...3).map { n in
+        furniturePage(n, header: n.isMultiple(of: 2) ? "\(n + 18) NOTES TO CHAPTER 12" : "NOTES TO CHAPTER 12 \(n + 18)")
+    }
+    #expect(LayoutReconstructor.stripFurniture(&pages).count == 3)
+    let controls = [
+        ["NOTES TO CHAPTER 12 19", "21 NOTES TO CHAPTER 12", "NOTES TO CHAPTER 12 21"],
+        ["NOTES TO CHAPTER 11 19", "20 NOTES TO CHAPTER 12", "NOTES TO CHAPTER 13 21"],
+        ["SECTION 1 SUMMARY", "SECTION 2 SUMMARY", "SECTION 3 SUMMARY"],
+    ]
+    for headers in controls {
+        var pages = headers.enumerated().map { furniturePage($0.offset + 1, header: $0.element) }
+        #expect(LayoutReconstructor.stripFurniture(&pages).isEmpty)
+        #expect(pages.map { $0.lines[0].text } == headers)
+    }
+}
+
+@Test(arguments: [33, 50, 51])
+func reportMapLabelsRemainInsidePreservedGraphics(number: Int) throws {
+    let page = try SourceLayoutFixture.load("911-\(number)").content()
+    let names = number == 33 ? ["BOST", "ORK", "INDIANAPOLIS", "Indianapolis Center"]
+        : number == 50 ? ["Boston", "New York City"] : ["Dulles", "Pentagon", "Newark", "Shanksville, PA"]
+    let labels = page.lines.filter { names.contains($0.text) && $0.rect.midY > 350 && $0.rect.midY < 500 }
+    #expect(labels.count == (number == 33 ? 5 : 4))
+    let regions = LayoutReconstructor.graphicsWithLabels(page)
+    #expect(regions.count == (number == 33 ? 2 : 1))
+    for label in labels {
+        #expect(regions.contains { $0.contains(label.rect) })
+    }
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: regions.enumerated().map { ($0.element, "image-\($0.offset)") },
+        vocabulary: LayoutReconstructor.vocabulary(in: [page]), warnings: &warnings)
+    // Geographic names in timeline prose can legitimately reappear. Only the
+    // detached map-label blocks and their heading promotion are forbidden here.
+    #expect(!blocks.contains { names.contains($0.text) })
+    #expect(blocks.filter { if case .image = $0.content { true } else { false } }.count == regions.count)
+}
+
 @Test func furnitureRequiresStablePositionStyleAndNearbyDistinctPages() {
     let controls: [[PageContent]] = [
         (1...6).map { furniturePage($0 * 10, header: "Scattered heading") },

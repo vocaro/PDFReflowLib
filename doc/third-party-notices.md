@@ -72,7 +72,7 @@ relicensed under MIT. They are not resources of the shipped library target.
 
 ## Government-document development fixtures
 
-The `faa-{91,363…365,437…439,511}`, `fed-{13,32,45,46,54,75,77,103,109,123}`, `flag-{27,31}`, `911-{19…26,65…71,451,471…476}`, `cdc-5`, `dga-1`, `warren-50`, `warren-910`, `blue-5`, `blue-12` and `noaa-{33,80,139,1619}` layout JSONs under the test fixtures
+The `faa-{91,363…365,437…439,511}`, `fed-{13,32,45,46,54,75,77,103,109,123}`, `flag-{27,31}`, `911-{19…26,33,50,51,65…71,451,471…476,579…585}`, `cdc-5`, `dga-1`, `warren-50`, `warren-910`, `blue-5`, `blue-12` and `noaa-{33,80,139,1619}` layout JSONs under the test fixtures
 contain extracted text and geometry from the corresponding U.S. government corpus documents.
 Each records its publisher URL, title and pinned source checksum. The source and output renders
 in `measurements/three-fidelity-fixes/`, `measurements/fractions-and-invisible-text/`,
@@ -80,3 +80,7 @@ in `measurements/three-fidelity-fixes/`, `measurements/fractions-and-invisible-t
 `measurements/raster-dpi/` retain
 the same provenance. These are development and
 review resources, separate from the shipped library target; see `corpus/manifest.json`.
+
+The four `map-region-*.png` review crops in `measurements/report-header-qualification/` come
+from the 9/11 report's physical pages 33/50/51. Page 33 credits its graphics to ESRI. These
+source-derived review images retain the report's provenance and are not relicensed under MIT.

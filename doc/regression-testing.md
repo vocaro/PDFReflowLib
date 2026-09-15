@@ -188,6 +188,14 @@ heading parsing retains inline styles and page boundaries, including across spin
 The 9/11 contract protects chapter titles, source body text and removal of four running-header
 examples; FAA page-16/91 folios supply cross-document controls.
 
+The [follow-up header qualification](../measurements/report-header-qualification/record.md) adds
+seven 9/11 notes-header contracts and the Fed page-50 chapter-title control. Leading/trailing
+folios share repetition evidence only with the same physical-page offset; internal chapter digits
+remain significant. Seven source fixtures protect the three-page chapter-12 notes run and neighboring
+two-page runs. Three additional source fixtures require detached map labels on pages 33/50/51
+to remain wholly inside preserved graphic regions and out of standalone prose/heading blocks.
+The retained heading audit reports missed sections explicitly; it is not a passing golden for them.
+
 [Local-header evidence](../measurements/local-header-regressions/record.md) includes the failing
 baseline, complete corpus receipts and before/after text and image comparisons. Corpus assertions
 remain selected contracts, not comprehensive quality scores; inspecting differences also catches

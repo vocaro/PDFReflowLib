@@ -123,8 +123,14 @@ regressions with server containment intact; see [the evidence](../measurements/p
 Chapter-local and alternating margin removal is covered by 29 source-layout pages, body/caption/
 folio controls, public-option tests, and 119 corpus content checks on 31 pages across eight PDFs.
 The [header measurement](../measurements/local-header-regressions/record.md) records baseline
-failures and image/text comparisons. Multi-line headers, very short runs, general heading precision
-and timeline graphic ownership remain unqualified; #10 stays open for that broader qualification.
+failures and image/text comparisons. The [follow-up qualification](../measurements/report-header-qualification/record.md)
+combines leading/trailing folios without lowering the three-occurrence minimum: seven additional
+9/11 notes headers disappear, and Fed page 50 retains its genuine chapter title. Source-derived
+map-label controls cover 9/11 pages 33/50/51. A separately annotated Chapter 1 major-heading sample
+finds three correct title fragments, no false heading elements, and three missed numbered sections;
+this is not full-book or subordinate-heading recall. Multi-line headers, fewer than three occurrences,
+the remaining native margin layouts, heading reconstruction and timeline row/column ownership
+remain unqualified; #10 stays open.
 
 Small-font labels inside preserved graphics no longer promote surrounding Fed prose into
 headings (#12). Ten source-layout pages, seven Swift tests and paragraph/heading corpus contracts

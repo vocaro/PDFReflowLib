@@ -74,3 +74,13 @@ Apple report **FB24783799** tracks the framework-path leak. The
 [submission evidence](../measurements/apple-feedback-pdfkit/record.md) includes the standalone
 reproducer, fresh plain/attributed measurements and full allocation diagnostics. The issue remains
 unresolved; a submitted report is not an Apple-confirmed diagnosis.
+
+## Output storage budget
+
+`ConversionOptions.maximumOutputBytes` defaults to 512 MiB. It bounds image bytes during
+reconstruction and total EPUB entry bytes before ZIP compression during packaging. It is
+separate from peak RAM and the corpus RSS gates. This initial configurable engineering budget
+is not an EPUB, Apple SDK or measured hardware limit. Clients may set another positive budget;
+raising it does not qualify memory, readability or reader performance. The
+[Warren encoding experiment](../measurements/warren-image-encoding/record.md) uses a 2 GiB
+override to measure a complete book while leaving the production default unchanged.

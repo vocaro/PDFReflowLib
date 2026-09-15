@@ -90,9 +90,10 @@ python3 tools/evaluate-real-document.py --case gpo-warren-1964 \
   --output /tmp/warren-baseline --epubcheck /opt/homebrew/bin/epubcheck
 ```
 
-This default run currently exits unsuccessfully: page-image output exceeds 512 MiB after the
-last completed reconstruction page 390. No full EPUB is available to validate. The measurement
-runner retains the failure and memory/progress evidence. There is no case memory ceiling yet;
+The recorded default-budget baseline exits unsuccessfully after reconstruction page 390
+when page-image output exceeds 512 MiB. The measurement runner retains that failure and
+memory/progress evidence. A [full-book encoding experiment](../measurements/warren-image-encoding/record.md)
+completes with an explicit 2 GiB experimental override; the default-budget gate remains unresolved. There is no case memory ceiling yet;
 do not treat a failed run as successful resource qualification or raise limits just to pass.
 
 A bounded nine-page excerpt permits visual diagnosis while full conversion is blocked:
@@ -107,8 +108,9 @@ scripts/compare-pdf-reflow.sh --pdf /tmp/warren-excerpt.pdf \
 Excerpt preparation requires the development-only `pypdf` package (measured with 6.10.0).
 All output paths must be new. The excerpt's page numbers 1-9 map to original physical pages
 1, 7, 21, 30, 50, 100, 890, 910 and 920. It loses whole-book context, so its results cannot
-qualify the full document. Select **Positioned HTML** for Poppler: simple image URLs currently
-break in the local comparison server. The original-page pane remains the visual reference.
+qualify the full document. Both Poppler previews use relative image URLs with
+[real-tool regression coverage](../measurements/poppler-relative-images/record.md).
+The original-page pane remains the visual reference.
 
 [Review points](../corpus/gpo-warren-1964-review.json) and
 [measurement evidence](../measurements/gpo-warren-1964/record.md) record OCR and column-order defects. Synthetic OCR font classification is addressed by the

@@ -1,0 +1,9 @@
+{
+  "revision": "774452a7c952f58b9cde0b35082900997b59589c",
+  "inputSHA256": "cea5f5151381c609b5b81bb75af4865f921c91e676d9f39c7f709db165b41158",
+  "files": {
+    "tools/compare_pdf.py": "122152ffecacb104d21aed160529a7627fa3471875d3a46612c188907cd6d37f",
+    "tools/test_comparison.py": "5db3901e080b2c58f58819aa553b58ef2df9b6d5bec7c43051da27012003cd1a",
+    "tools/serve_comparison.py": "0e88e2a5bdbf3d7ec5353019725a036e6c5f1f759bd039c490eca807a588d389"
+  }
+}

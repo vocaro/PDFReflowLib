@@ -1,0 +1,109 @@
+{
+  "source": {
+    "path": "corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf",
+    "sha256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+    "bytes": 81216909
+  },
+  "revision": "774452a7c952f58b9cde0b35082900997b59589c",
+  "os": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0\nBuildVersion:\t\t26A428\n",
+  "hardware": "Mac17,6",
+  "imageSummary": {
+    "90": {
+      "pageImages": 920,
+      "pngBytes": 1242927198,
+      "jpegBytes": 533041469,
+      "weightedRGBPSNRdB": 43.394258357347724,
+      "minimumPageRGBPSNRdB": 41.02255002893258
+    },
+    "95": {
+      "pageImages": 920,
+      "pngBytes": 1242927198,
+      "jpegBytes": 561873366,
+      "weightedRGBPSNRdB": 43.87288169379736,
+      "minimumPageRGBPSNRdB": 41.67999549866434
+    }
+  },
+  "controls": [
+    {
+      "height": 337,
+      "image": "png/control-table.png",
+      "pngBytes": 29258,
+      "variants": [
+        {
+          "bytes": 49792,
+          "fractionChannelsErrorOver16": 0,
+          "maximumChannelError": 7,
+          "quality": 90,
+          "rgbMSE": 0.6690357870651746,
+          "rgbPSNRdB": 49.87631011845613
+        },
+        {
+          "bytes": 52357,
+          "fractionChannelsErrorOver16": 0,
+          "maximumChannelError": 6,
+          "quality": 95,
+          "rgbMSE": 0.4971005684458904,
+          "rgbPSNRdB": 51.16636101102935
+        }
+      ],
+      "width": 415
+    },
+    {
+      "height": 114,
+      "image": "png/control-fraction.png",
+      "pngBytes": 4390,
+      "variants": [
+        {
+          "bytes": 5369,
+          "fractionChannelsErrorOver16": 0.015182610614586782,
+          "maximumChannelError": 129,
+          "quality": 90,
+          "rgbMSE": 26.133189892971423,
+          "rgbPSNRdB": 33.95887936660608
+        },
+        {
+          "bytes": 5583,
+          "fractionChannelsErrorOver16": 0.015160542866600464,
+          "maximumChannelError": 134,
+          "quality": 95,
+          "rgbMSE": 25.811894516164624,
+          "rgbPSNRdB": 34.01260479232964
+        }
+      ],
+      "width": 265
+    }
+  ],
+  "xcode": "Xcode 27.0\nBuild version 27A266a\n",
+  "swift": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0\nswift-driver version: 1.168.6 ",
+  "poppler": "pdftohtml version 26.04.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1999-2003 Gueorgui Ovtcharov and Rainer Dorsch\nCopyright 1996-2011, 2022 Glyph & Cog, LLC\n\n",
+  "producers": {
+    "convert.swift": {
+      "bytes": 844,
+      "sha256": "fbee2364bc3533d28a0046dbe57ce97534154ccc2f20eaa5e43b51a84110042a"
+    },
+    "encode.swift": {
+      "bytes": 3941,
+      "sha256": "3c260f2f9aaa25a7298c3016b7074a741cb385229ae22b754568367a5cead3ec"
+    },
+    "prepare.py": {
+      "bytes": 1803,
+      "sha256": "1d5beda9eeb6e4181bbfc4b5594babfda7abea6ba9e0aa0098bb33f42bd11142"
+    },
+    "package.py": {
+      "bytes": 2868,
+      "sha256": "9a60ca3f66a3eb3047dc4e1194192d0fa938fc607766ed197e1907c1cac9d65e"
+    },
+    "review.py": {
+      "bytes": 2271,
+      "sha256": "14aacdc369db463906972a653ca9161c342fb6883b3bdd087d18f771957e95be"
+    },
+    "convert": {
+      "bytes": 873176,
+      "sha256": "26484246d6a8e619c742e4fa609e28d2aecd170f069bc8ab1cdf7a2fd139625c"
+    },
+    "encode": {
+      "bytes": 93480,
+      "sha256": "60b979b72cd7ccfd19f4a11a63b92ca80cbf88e55fff72a69434ac47ed1ebc82"
+    }
+  }
+}

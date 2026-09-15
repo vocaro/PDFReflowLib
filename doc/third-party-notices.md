@@ -75,6 +75,7 @@ relicensed under MIT. They are not resources of the shipped library target.
 The `faa-91`, `faa-511`, `flag-27`, `911-451`, `cdc-5`, `warren-50` and `warren-910` layout JSONs under the test fixtures
 contain extracted text and geometry from the corresponding U.S. government corpus documents.
 Each records its publisher URL, title and pinned source checksum. The source and output renders
-in `measurements/three-fidelity-fixes/` and `measurements/fractions-and-invisible-text/` retain
+in `measurements/three-fidelity-fixes/`, `measurements/fractions-and-invisible-text/`,
+`measurements/warren-image-encoding/` and `measurements/poppler-relative-images/` retain
 the same provenance. These are development and
 review resources, separate from the shipped library target; see `corpus/manifest.json`.

@@ -1,0 +1,23 @@
+[
+  {
+    "mode": "simple",
+    "src": "simple-5_1.png",
+    "httpStatus": 200,
+    "bytes": 253790,
+    "sha256": "44e81693bc323c6eff0737920ec009cea52ad5d53c2afb6d4ade499adf304b78"
+  },
+  {
+    "mode": "simple",
+    "src": "simple-5_2.png",
+    "httpStatus": 200,
+    "bytes": 5315619,
+    "sha256": "a0480a7323a017fe5b099424f9ed38ba3517e633b94f044b50ddfc8b73eae833"
+  },
+  {
+    "mode": "positioned",
+    "src": "positioned005.png",
+    "httpStatus": 200,
+    "bytes": 466987,
+    "sha256": "2970c5de8b4d51581e7e4e36358d0521ab416cb35c625c520e95fe86fc5a4823"
+  }
+]

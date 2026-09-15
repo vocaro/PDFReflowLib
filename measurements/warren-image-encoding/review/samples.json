@@ -1,0 +1,275 @@
+[
+  {
+    "sample": "page-21",
+    "label": "Warren physical page 21",
+    "mode": "png",
+    "sourceImage": "png/image-21.png",
+    "crop": [
+      117,
+      135,
+      737,
+      415
+    ],
+    "file": "page-21-png.png"
+  },
+  {
+    "sample": "page-21",
+    "label": "Warren physical page 21",
+    "mode": "q90",
+    "sourceImage": "q90/image-21.jpg",
+    "crop": [
+      117,
+      135,
+      737,
+      415
+    ],
+    "file": "page-21-q90.png"
+  },
+  {
+    "sample": "page-21",
+    "label": "Warren physical page 21",
+    "mode": "q95",
+    "sourceImage": "q95/image-21.jpg",
+    "crop": [
+      117,
+      135,
+      737,
+      415
+    ],
+    "file": "page-21-q95.png"
+  },
+  {
+    "sample": "page-50",
+    "label": "Warren physical page 50",
+    "mode": "png",
+    "sourceImage": "png/image-50.png",
+    "crop": [
+      117,
+      135,
+      737,
+      415
+    ],
+    "file": "page-50-png.png"
+  },
+  {
+    "sample": "page-50",
+    "label": "Warren physical page 50",
+    "mode": "q90",
+    "sourceImage": "q90/image-50.jpg",
+    "crop": [
+      117,
+      135,
+      737,
+      415
+    ],
+    "file": "page-50-q90.png"
+  },
+  {
+    "sample": "page-50",
+    "label": "Warren physical page 50",
+    "mode": "q95",
+    "sourceImage": "q95/image-50.jpg",
+    "crop": [
+      117,
+      135,
+      737,
+      415
+    ],
+    "file": "page-50-q95.png"
+  },
+  {
+    "sample": "page-100",
+    "label": "Warren physical page 100",
+    "mode": "png",
+    "sourceImage": "png/image-101.png",
+    "crop": [
+      117,
+      135,
+      737,
+      415
+    ],
+    "file": "page-100-png.png"
+  },
+  {
+    "sample": "page-100",
+    "label": "Warren physical page 100",
+    "mode": "q90",
+    "sourceImage": "q90/image-101.jpg",
+    "crop": [
+      117,
+      135,
+      737,
+      415
+    ],
+    "file": "page-100-q90.png"
+  },
+  {
+    "sample": "page-100",
+    "label": "Warren physical page 100",
+    "mode": "q95",
+    "sourceImage": "q95/image-101.jpg",
+    "crop": [
+      117,
+      135,
+      737,
+      415
+    ],
+    "file": "page-100-q95.png"
+  },
+  {
+    "sample": "page-890",
+    "label": "Warren physical page 890",
+    "mode": "png",
+    "sourceImage": "png/image-901.png",
+    "crop": [
+      115,
+      134,
+      735,
+      414
+    ],
+    "file": "page-890-png.png"
+  },
+  {
+    "sample": "page-890",
+    "label": "Warren physical page 890",
+    "mode": "q90",
+    "sourceImage": "q90/image-901.jpg",
+    "crop": [
+      115,
+      134,
+      735,
+      414
+    ],
+    "file": "page-890-q90.png"
+  },
+  {
+    "sample": "page-890",
+    "label": "Warren physical page 890",
+    "mode": "q95",
+    "sourceImage": "q95/image-901.jpg",
+    "crop": [
+      115,
+      134,
+      735,
+      414
+    ],
+    "file": "page-890-q95.png"
+  },
+  {
+    "sample": "page-910",
+    "label": "Warren physical page 910",
+    "mode": "png",
+    "sourceImage": "png/image-921.png",
+    "crop": [
+      115,
+      134,
+      735,
+      414
+    ],
+    "file": "page-910-png.png"
+  },
+  {
+    "sample": "page-910",
+    "label": "Warren physical page 910",
+    "mode": "q90",
+    "sourceImage": "q90/image-921.jpg",
+    "crop": [
+      115,
+      134,
+      735,
+      414
+    ],
+    "file": "page-910-q90.png"
+  },
+  {
+    "sample": "page-910",
+    "label": "Warren physical page 910",
+    "mode": "q95",
+    "sourceImage": "q95/image-921.jpg",
+    "crop": [
+      115,
+      134,
+      735,
+      414
+    ],
+    "file": "page-910-q95.png"
+  },
+  {
+    "sample": "control-table",
+    "label": "Our Flag numeric table (cropped-region control)",
+    "mode": "png",
+    "sourceImage": "png/control-table.png",
+    "crop": [
+      0,
+      0,
+      415,
+      337
+    ],
+    "file": "control-table-png.png"
+  },
+  {
+    "sample": "control-table",
+    "label": "Our Flag numeric table (cropped-region control)",
+    "mode": "q90",
+    "sourceImage": "q90/control-table.jpg",
+    "crop": [
+      0,
+      0,
+      415,
+      337
+    ],
+    "file": "control-table-q90.png"
+  },
+  {
+    "sample": "control-table",
+    "label": "Our Flag numeric table (cropped-region control)",
+    "mode": "q95",
+    "sourceImage": "q95/control-table.jpg",
+    "crop": [
+      0,
+      0,
+      415,
+      337
+    ],
+    "file": "control-table-q95.png"
+  },
+  {
+    "sample": "control-fraction",
+    "label": "Detached fraction (cropped-region control)",
+    "mode": "png",
+    "sourceImage": "png/control-fraction.png",
+    "crop": [
+      0,
+      0,
+      265,
+      114
+    ],
+    "file": "control-fraction-png.png"
+  },
+  {
+    "sample": "control-fraction",
+    "label": "Detached fraction (cropped-region control)",
+    "mode": "q90",
+    "sourceImage": "q90/control-fraction.jpg",
+    "crop": [
+      0,
+      0,
+      265,
+      114
+    ],
+    "file": "control-fraction-q90.png"
+  },
+  {
+    "sample": "control-fraction",
+    "label": "Detached fraction (cropped-region control)",
+    "mode": "q95",
+    "sourceImage": "q95/control-fraction.jpg",
+    "crop": [
+      0,
+      0,
+      265,
+      114
+    ],
+    "file": "control-fraction-q95.png"
+  }
+]

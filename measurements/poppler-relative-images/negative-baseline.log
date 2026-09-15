@@ -1,0 +1,17 @@
+test_actual_poppler_images_resolve_through_safe_server (test_comparison.ComparisonTests.test_actual_poppler_images_resolve_through_safe_server) ... Converting the complete PDF with PDFReflowLib…
+Preparing comparison 1/1 · source page 1/1
+FAIL
+
+======================================================================
+FAIL: test_actual_poppler_images_resolve_through_safe_server (test_comparison.ComparisonTests.test_actual_poppler_images_resolve_through_safe_server)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/pdfreflow-preview-negative/test_comparison.py", line 137, in test_actual_poppler_images_resolve_through_safe_server
+    self.assertFalse(urlsplit(source).scheme or source.startswith("/"), source)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false : /private/var/folders/bv/5jyd7l7x49xgp93rt64qlf0c0000gn/T/poppler preview u5n4zsji/review with spaces/pages/1/simple-1_1.png
+
+----------------------------------------------------------------------
+Ran 1 test in 0.340s
+
+FAILED (failures=1)

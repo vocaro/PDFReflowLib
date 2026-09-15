@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "sourceName": "next-warren-excerpt.pdf",
+  "commands": [
+    {
+      "command": [
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/out/Products/Release/pdf-reflow",
+        "/private/tmp/pdfreflow-encoding-experiment/preview/input.pdf",
+        "/private/tmp/pdfreflow-encoding-experiment/preview/pdfreflow.epub",
+        "--no-ocr"
+      ],
+      "seconds": 3.53375162500015,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "5",
+        "-l",
+        "5",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/private/tmp/pdfreflow-encoding-experiment/preview/input.pdf",
+        "simple.html"
+      ],
+      "seconds": 18.45866766600375,
+      "exitCode": 0,
+      "cwd": "/private/tmp/pdfreflow-encoding-experiment/preview/pages/5"
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "5",
+        "-l",
+        "5",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/private/tmp/pdfreflow-encoding-experiment/preview/input.pdf",
+        "positioned.html"
+      ],
+      "seconds": 0.946204542000487,
+      "exitCode": 0,
+      "cwd": "/private/tmp/pdfreflow-encoding-experiment/preview/pages/5"
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "5",
+        "-l",
+        "5",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/private/tmp/pdfreflow-encoding-experiment/preview/input.pdf",
+        "/private/tmp/pdfreflow-encoding-experiment/preview/pages/5/source"
+      ],
+      "seconds": 1.0452217499987455,
+      "exitCode": 0
+    }
+  ],
+  "pages": [
+    {
+      "number": 5,
+      "epub": "epub/EPUB/chapter-1.html#page-5",
+      "simple": "pages/5/simple.html",
+      "positioned": "pages/5/positioned.html",
+      "source": "pages/5/source.png"
+    }
+  ],
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "source": {
+    "bytes": 81670531,
+    "sha256": "cea5f5151381c609b5b81bb75af4865f921c91e676d9f39c7f709db165b41158"
+  },
+  "converter": {
+    "path": "/Users/trevorharmon/Development/PDFReflowLib/.build/out/Products/Release/pdf-reflow",
+    "bytes": 908136,
+    "sha256": "46f82ed7841c582cc61f24ccf677b886a31f0edf2c4202d9ec99e54ba41fdbe9"
+  },
+  "harness": {
+    "compare_pdf.py": {
+      "bytes": 12305,
+      "sha256": "122152ffecacb104d21aed160529a7627fa3471875d3a46612c188907cd6d37f"
+    },
+    "serve_comparison.py": {
+      "bytes": 2884,
+      "sha256": "0e88e2a5bdbf3d7ec5353019725a036e6c5f1f759bd039c490eca807a588d389"
+    },
+    "comparison/index.html": {
+      "bytes": 3787,
+      "sha256": "2a36074ea68fb337a3ec5e57d5c3c637d73c819bdbeabdcf73492ae48a4d72b9"
+    },
+    "comparison/viewer.css": {
+      "bytes": 2834,
+      "sha256": "d5aea5b08898f2798f3884ef88510f32a54126a9affeb993310a9063693e10a3"
+    },
+    "comparison/viewer.js": {
+      "bytes": 6856,
+      "sha256": "bd20b93c03783be3fee134221a48fd9ff3c54c710b74a8af21949dbe263bb260"
+    }
+  },
+  "popplerVersion": "pdftohtml version 26.04.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1999-2003 Gueorgui Ovtcharov and Rainer Dorsch\nCopyright 1996-2011, 2022 Glyph & Cog, LLC",
+  "pageCount": 9,
+  "report": {
+    "imageCount": 9,
+    "outputURL": "file:///private/tmp/pdfreflow-encoding-experiment/preview/pdfreflow.epub",
+    "pageCount": 9,
+    "recognizedPageCount": 0,
+    "reflowedPageCount": 7,
+    "warnings": [
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 1
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 2
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 3
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 4
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 5
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 6
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 7
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 8
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 1
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 2
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 3
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 4
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 4
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 5
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 5
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 6
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 6
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 7
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 7
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 8
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 9
+      }
+    ]
+  },
+  "epub": {
+    "bytes": 14824513,
+    "sha256": "5ea3d51f6962908f85484061b744f34126744fbcf7f053c2909ae7a9499a98ba"
+  }
+}

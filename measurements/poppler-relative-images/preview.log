@@ -1,0 +1,40 @@
+Converting the complete PDF with PDFReflowLib…
+0% opening
+8% extracting page 1/9
+14% extracting page 2/9
+20% extracting page 3/9
+26% extracting page 4/9
+32% extracting page 5/9
+38% extracting page 6/9
+44% extracting page 7/9
+50% extracting page 8/9
+57% extracting page 9/9
+59% reconstructing page 1/9
+62% reconstructing page 2/9
+65% reconstructing page 3/9
+68% reconstructing page 4/9
+70% reconstructing page 5/9
+73% reconstructing page 6/9
+76% reconstructing page 7/9
+79% reconstructing page 8/9
+82% reconstructing page 9/9
+82% writing
+91% writing
+91% writing
+92% writing
+92% writing
+93% writing
+93% writing
+94% writing
+95% writing
+95% writing
+96% writing
+96% writing
+97% writing
+97% writing
+98% writing
+99% writing
+100% completed
+Preparing comparison 1/1 · source page 5/9
+Comparison ready: /private/tmp/pdfreflow-encoding-experiment/preview
+Open with: /opt/homebrew/opt/python@3.14/bin/python3.14 /Users/trevorharmon/Development/PDFReflowLib/tools/serve_comparison.py /private/tmp/pdfreflow-encoding-experiment/preview

@@ -23,8 +23,9 @@ physical-device memory/performance remain unqualified.
   remains unqualified. Exclusively invisible image-backed text no longer supplies font-based
   code or heading evidence. [Detect suspect inherited OCR](https://github.com/vocaro/PDFReflowLib/issues/7)
   beyond the conservative unverified-layer warning. Evidence: [Warren baseline](../measurements/gpo-warren-1964/record.md).
-- Correct [absolute image URLs in the Poppler simple preview](https://github.com/vocaro/PDFReflowLib/issues/9) without weakening
-  local server containment; retain raw Poppler output and a reproducible rendered comparison.
+  The [full-book JPEG experiment](../measurements/warren-image-encoding/record.md) substantially
+  reduces file size but both tested variants still exceed the default entry-byte budget.
+  PNG and reference-image defaults remain unchanged pending product decisions.
 - Investigate [9/11 report header/heading confusion](https://github.com/vocaro/PDFReflowLib/issues/10),
   keeping the external ALL-CAPS prototype counts distinct from library measurements. Qualify
   [endnote markers/links](https://github.com/vocaro/PDFReflowLib/issues/11) and timeline-label ownership; retain the successful native word-spacing
@@ -86,3 +87,6 @@ Bounded detached-fraction preservation (#20) and suppression of synthetic OCR fo
 [fraction and invisible-text measurements](../measurements/fractions-and-invisible-text/record.md).
 Math outside the detector, mixed text layers, inherited OCR accuracy and full scanned-book
 completion remain unqualified.
+
+Poppler preview image URLs (#9) are relative to each page bundle and have real-tool HTTP
+regressions with server containment intact; see [the evidence](../measurements/poppler-relative-images/record.md).

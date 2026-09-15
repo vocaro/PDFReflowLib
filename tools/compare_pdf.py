@@ -106,11 +106,11 @@ def unpack_epub(path, output, maximum_bytes=512 * 1024 * 1024):
     return pages
 
 
-def run(command, output, log, timeout, *, echo=False):
+def run(command, output, log, timeout, *, echo=False, cwd=None):
     """Keep exact commands, status and durations; relay the converter's own progress unchanged."""
     started = time.monotonic()
     with output.open("wb") as stdout, log.open("wb") as stderr:
-        child = subprocess.Popen(command, stdout=stdout, stderr=stderr)
+        child = subprocess.Popen(command, stdout=stdout, stderr=stderr, cwd=cwd)
         try:
             with log.open("rb") as progress:
                 while child.poll() is None:
@@ -129,6 +129,8 @@ def run(command, output, log, timeout, *, echo=False):
             child.wait()
     result = {"command": command, "seconds": time.monotonic() - started,
               "exitCode": child.returncode}
+    if cwd is not None:
+        result["cwd"] = str(Path(cwd).resolve())
     if child.returncode:
         raise RuntimeError(f"Command failed ({child.returncode}); see {log} and {output}")
     return result
@@ -193,9 +195,11 @@ def build(args):
             directory.mkdir(parents=True)
             common = [poppler, "-f", str(page), "-l", str(page), "-noframes", "-enc", "UTF-8"]
             for mode, flags in (("simple", []), ("positioned", ["-c", "-s"])):
-                command = common + flags + [str(snapshot), str(directory / f"{mode}.html")]
+                # A relative output basename keeps Poppler's image URLs bundle-relative.
+                # Record cwd alongside the exact command; raw HTML is never rewritten.
+                command = common + flags + [str(snapshot), f"{mode}.html"]
                 manifest["commands"].append(run(command, directory / f"{mode}.stdout.log",
-                                                 directory / f"{mode}.stderr.log", args.timeout))
+                                                 directory / f"{mode}.stderr.log", args.timeout, cwd=directory))
                 if not (directory / f"{mode}.html").is_file():
                     raise ValueError(f"Poppler did not produce {mode}.html")
             command = [renderer, "-f", str(page), "-l", str(page), "-singlefile",

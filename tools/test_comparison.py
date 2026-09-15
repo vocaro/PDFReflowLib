@@ -1,6 +1,9 @@
-"""Deterministic comparison controls. No Poppler or Apple frameworks needed."""
+"""Comparison controls; the optional real-Poppler test skips when its tools are absent."""
 import io
 import json
+import shutil
+from html.parser import HTMLParser
+from urllib.parse import urljoin, urlsplit, unquote
 from pathlib import Path
 import stat
 import sys
@@ -87,6 +90,63 @@ class ComparisonTests(unittest.TestCase):
             with self.assertRaises(TimeoutError):
                 comparison.run([sys.executable, "-c", "import time; time.sleep(60)"],
                                root / "out", root / "err", 0.1)
+
+    def test_child_working_directory_is_explicit_and_recorded(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); work = root / "page with spaces"; work.mkdir()
+            result = comparison.run([sys.executable, "-c",
+                "from pathlib import Path; Path('asset').write_text('local')"],
+                root / "out", root / "err", 10, cwd=work)
+            self.assertEqual((work / "asset").read_text(), "local")
+            self.assertEqual(result["cwd"], str(work.resolve()))
+
+    @unittest.skipUnless(shutil.which("pdftohtml") and shutil.which("pdftoppm"),
+                         "Poppler integration requires pdftohtml and pdftoppm")
+    def test_actual_poppler_images_resolve_through_safe_server(self):
+        from argparse import Namespace
+        class Images(HTMLParser):
+            def __init__(self): super().__init__(); self.sources = []
+            def handle_starttag(self, tag, attrs):
+                if tag == "img": self.sources.append(dict(attrs)["src"])
+        class Connection:
+            def __init__(self, request): self.input = io.BytesIO(request); self.output = io.BytesIO()
+            def makefile(self, *args, **kwargs): return self.input
+            def sendall(self, data): self.output.write(data)
+        original_run = comparison.run
+        def converter_stub(command, output, log, timeout, **kwargs):
+            if command[-1].endswith("pdfreflow.epub"):
+                # Only stub conversion; real Poppler consumes the committed image-bearing PDF.
+                output.write_text(json.dumps({"pageCount": 1})); log.write_text("")
+                with zipfile.ZipFile(command[-1], "w") as archive:
+                    archive.writestr("EPUB/chapter.xhtml", CHAPTER.replace('id="page-2" epub:type="pagebreak"', 'id="inside"'))
+                    archive.writestr("EPUB/images/a.png", b"unused converter stub")
+                return {"command": command, "exitCode": 0}
+            return original_run(command, output, log, timeout, **kwargs)
+        with tempfile.TemporaryDirectory(prefix="poppler preview ") as directory:
+            root = Path(directory)
+            args = Namespace(converter=sys.executable, pdftohtml="pdftohtml", pdftoppm="pdftoppm",
+                pdf=comparison.TOOLS.parent / "Tests/PDFReflowLibTests/fixtures/scanned.pdf",
+                output=root / "review with spaces", no_ocr=False, pages="1", timeout=30)
+            with patch.object(comparison, "run", side_effect=converter_stub): comparison.build(args)
+            manifest = json.loads((args.output / "comparison.json").read_text())
+            for mode in ["simple", "positioned"]:
+                path = manifest["pages"][0][mode]
+                parser = Images(); parser.feed((args.output / path).read_text())
+                self.assertTrue(parser.sources, mode)
+                for source in parser.sources:
+                    self.assertFalse(urlsplit(source).scheme or source.startswith("/"), source)
+                    url = urljoin("/" + path, source)
+                    expected = args.output / unquote(urlsplit(url).path).lstrip("/")
+                    self.assertTrue(expected.is_file(), source)
+                    connection = Connection(f"GET {url} HTTP/1.0\r\n\r\n".encode())
+                    with patch.object(ReviewHandler, "log_message"):
+                        ReviewHandler(connection, ("127.0.0.1", 0), None, directory=str(args.output))
+                    header, payload = connection.output.getvalue().split(b"\r\n\r\n", 1)
+                    self.assertIn(b"HTTP/1.0 200", header)
+                    self.assertEqual(payload, expected.read_bytes())
+            poppler_runs = [r for r in manifest["commands"] if "-noframes" in r["command"]]
+            self.assertEqual(len(poppler_runs), 2)
+            self.assertTrue(all(r["cwd"] == str((args.output / "pages/1").resolve()) for r in poppler_runs))
 
     def test_failed_bundle_is_recorded_and_existing_output_is_protected(self):
         from argparse import Namespace

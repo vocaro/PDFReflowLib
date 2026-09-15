@@ -64,18 +64,26 @@ no undocumented API or exception-swallowing shim is used.
 
 ## Runtime policy and regressions
 
-`NativeTextReader` holds one static NSLock for its synchronous page-text extraction. The lock
-covers plain selections, attributed reads and copying results into value types. It is released
-before returning to progress, OCR, graphics or packaging work. Cancellation is checked before
-waiting and after acquisition; the lock wait itself is not cancellable. Concurrent imports
-trade extraction throughput for serialization. A single converter retains its page-by-page
-flow and all attributed formatting.
+The mitigation recorded here shipped in `58da4de`, the baseline for the later cancellation
+work. At that revision, `NativeTextReader` held one static NSLock for its synchronous page-text
+extraction. The lock covered plain selections, attributed reads and copying results into value
+types. It was released before returning to progress, OCR, graphics or packaging work.
+Cancellation was checked before waiting and after acquisition; the lock wait itself was not
+cancellable. Concurrent imports traded extraction throughput for serialization. A single
+converter retained its page-by-page flow and all attributed formatting.
 
 This cannot coordinate PDFKit calls outside this copy of the library, nor establish safety for
-all framework rendering/document operations. Full physical-device concurrency, cancellation
-latency under contention and interaction with a host's own PDFKit reader remain unqualified.
-The issue stays open for those limits and the upstream exception. The public API and
-conversion/image/resource defaults are unchanged.
+all framework rendering/document operations. These measurements did not qualify full
+physical-device concurrency, cancellation latency under contention or interaction with a
+host's own PDFKit reader. #21 remains open for the upstream exception and limits beyond queued
+cancellation. The public API and conversion/image/resource defaults are unchanged.
+
+Since `ea7ddfd`, acquisition tries the lock immediately and checks cancellation between 50 ms
+timed waits when contended, as well as before and after acquisition. A cancelled waiter can
+return while another extraction still holds the lock. Each timed wait still blocks its worker
+thread, the interval is not a hard latency guarantee, and a PDFKit call already executing cannot
+be interrupted. See the [later cancellation evidence](../extraction-cancellation/record.md)
+for the regression and results; the historical measurements in this record are unchanged.
 
 Every normal gate lane now runs eight fresh native processes: two fixtures, one/eight workers,
 50 iterations per worker, two trials (1,800 verified iterations). The raw SDK control is an

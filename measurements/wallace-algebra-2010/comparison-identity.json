@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "popplerVersion": "pdftohtml version 26.04.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1999-2003 Gueorgui Ovtcharov and Rainer Dorsch\nCopyright 1996-2011, 2022 Glyph & Cog, LLC",
+  "pageCount": 489,
+  "harness": {
+    "compare_pdf.py": {
+      "bytes": 12039,
+      "sha256": "c4841ba4a964707265758815dbac6036dd42e20337ef3e7caa1c9fae900a4013"
+    },
+    "serve_comparison.py": {
+      "bytes": 2884,
+      "sha256": "0e88e2a5bdbf3d7ec5353019725a036e6c5f1f759bd039c490eca807a588d389"
+    },
+    "comparison/index.html": {
+      "bytes": 3787,
+      "sha256": "2a36074ea68fb337a3ec5e57d5c3c637d73c819bdbeabdcf73492ae48a4d72b9"
+    },
+    "comparison/viewer.css": {
+      "bytes": 2834,
+      "sha256": "d5aea5b08898f2798f3884ef88510f32a54126a9affeb993310a9063693e10a3"
+    },
+    "comparison/viewer.js": {
+      "bytes": 6856,
+      "sha256": "bd20b93c03783be3fee134221a48fd9ff3c54c710b74a8af21949dbe263bb260"
+    }
+  },
+  "source": {
+    "bytes": 2183036,
+    "sha256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678"
+  },
+  "converter": {
+    "bytes": 860696,
+    "sha256": "6672eff6c9c2e5d1391f3f7320aa14e59c8ee4fa9c19711f7d0131a8d776ff7f"
+  },
+  "epub": {
+    "bytes": 45747605,
+    "sha256": "c886559f66d5f248f9d1ce8ecd3c50be70e7433e0cbf69c99702b8fe733347f8"
+  },
+  "reviewPages": [
+    2,
+    12,
+    16,
+    119,
+    266,
+    293,
+    343,
+    347,
+    438,
+    479,
+    483
+  ],
+  "visuallyInspectedPages": [
+    16,
+    343,
+    347,
+    479
+  ],
+  "libraryCommit": "5c38c48aa107c789d2e2f6d80c0869dca53159eb",
+  "comparisonBundle": ".build/wallace-comparison (local, not committed)"
+}

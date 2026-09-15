@@ -50,6 +50,63 @@
           "issue": "Two-column glossary interleaves Wind direction indicators. and Zone of confusion. before Wind shear."
         }
       ]
+    },
+    {
+      "id": "wallace-algebra-2010",
+      "title": "Beginning and Intermediate Algebra",
+      "author": "Tyler Wallace",
+      "publicationYear": 2010,
+      "url": "http://wallace.ccfaculty.org/book/book.html",
+      "filename": "Beginning_and_Intermediate_Algebra.pdf",
+      "sha256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+      "bytes": 2183036,
+      "pages": 489,
+      "role": "development",
+      "identity": {
+        "suppliedBy": "owner"
+      },
+      "provenance": "Owner-supplied PDF. The title and license pages identify Tyler Wallace and the author website. No automated source download or publisher-byte equivalence is claimed.",
+      "rightsBasis": "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+      "license": "CC-BY-3.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "Beginning and Intermediate Algebra by Tyler Wallace, copyright 2010, CC BY 3.0. Source: http://wallace.ccfaculty.org/book/book.html. The supplied PDF is unmodified.",
+      "coverage": [
+        "stacked fractions",
+        "radicals and root indices",
+        "superscripts and subscripts",
+        "numbered worked examples",
+        "aligned equation steps with explanations",
+        "two-column exercise sets",
+        "multi-column answer keys",
+        "number-line inequality diagrams",
+        "coordinate graphs",
+        "trigonometric diagrams",
+        "untagged PDF"
+      ],
+      "reviewPages": [
+        2,
+        12,
+        16,
+        119,
+        266,
+        293,
+        343,
+        347,
+        438,
+        479,
+        483
+      ],
+      "reviewStatus": "11 pages prepared for comparison. Visual spot checks cover pages 16, 343, 347 and 479; not full-book fidelity qualification.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 256,
+        "scope": "macOS 27 arm64 release CLI, library defaults; initial per-document regression ceiling with headroom above the measured baseline, not an iOS memory guarantee"
+      },
+      "knownFidelityIssues": [
+        {
+          "page": 343,
+          "issue": "Inline superscript flattens into baseline text: the introductory ax-squared expression is serialized as ax2, without superscript markup. The displayed derivation is retained as an image, so passing EPUB validation and preserving displayed math do not establish inline-math fidelity."
+        }
+      ]
     }
   ]
 }

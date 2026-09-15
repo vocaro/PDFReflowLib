@@ -8,7 +8,11 @@ physical-device memory/performance remain unqualified.
   scaling on page 121. Add source-derived regressions and compare against original pages.
 - Investigate PDFKit attributed-text memory growth without losing formatting; keep the
   fresh-process high-water-mark gate and establish physical iPhone/iPad memory budgets.
-- Expand the corpus with redistribution-cleared documents covering borderless tables, math,
+- Preserve inline mathematical superscripts: the Wallace algebra corpus exposes a flattened
+  squared exponent on page 343 despite preserved displayed formulas. Add a targeted regression
+  when implementing the fix; review exercise and answer-key numbering across the book.
+- The development corpus includes the FAA handbook and Wallace algebra textbook, with source
+  identities, review points and baseline measurements. Expand it with borderless tables,
   footnotes, damaged encodings and non-Latin layouts. Measure coverage and reading order.
 - Evaluate OS 27's native progress composition APIs while retaining ordered client reporting.
   The minimum deployment version remains 27.

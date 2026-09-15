@@ -1,0 +1,20 @@
+{
+  "system": "macOS 27.0 (26A428)",
+  "xcode": "27.0 (27A266a)",
+  "probeBinarySHA256": "e165435d616fce096e5dec0baf94a624af75d81c206369736852663f9a941c05",
+  "inputSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "stackLogging": true,
+  "getTaskAllow": true,
+  "command": "MallocStackLogging=1 leaks --atExit -- probe faa-h-8083-25c.pdf page 1",
+  "fullDiagnosticLogSHA256": "47a1b7675593179e599dfd85315e885c86ffe7b180c2d18d3732bc3e3a0d2d33",
+  "fullDiagnosticLogBytes": 12939823,
+  "leakedAllocationCount": 74930,
+  "reportedLeakedBytes": 247585696,
+  "attributedStringRootLeakStacks": 506,
+  "historicalProbeSourceSHA256": "9b44b015f6a5f3af01b300ae8615d59db2f2724a4bf7e16a666a98960e614ee7",
+  "currentProbeSource": {
+    "path": "Tools/probe-pdfkit-memory.swift",
+    "sha256": "28f7fd9a24e894a6551236d2c1181149f5220f404896446f99e10ec84eb09a69"
+  },
+  "provenance": "Retained diagnostic from 2026-09-14, before the standalone publication. The current reusable probe has the standalone library name in its comment. These are historical observations, not a fresh leak run."
+}

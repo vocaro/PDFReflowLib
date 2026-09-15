@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "caseID": "wallace-algebra-2010",
+  "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "pageNumbering": "one-based physical PDF pages",
+  "points": [
+    {
+      "page": 2,
+      "focus": "CC BY 3.0 attribution and license text; preserve in derived editions."
+    },
+    {
+      "page": 12,
+      "focus": "Fraction introduction and numbered worked examples; numerator/denominator relationships."
+    },
+    {
+      "page": 16,
+      "focus": "Two-column fraction exercises; keep each problem number attached to its full expression.",
+      "observed": "Visible initial fractions are retained as image crops; this spot check does not verify every exercise."
+    },
+    {
+      "page": 119,
+      "focus": "Inequality signs, number-line endpoints and diagram labels."
+    },
+    {
+      "page": 266,
+      "focus": "Nested complex fractions; keep inner and outer fraction structure together."
+    },
+    {
+      "page": 293,
+      "focus": "Cubed-root indices, numbered examples and aligned explanatory steps."
+    },
+    {
+      "page": 343,
+      "focus": "Quadratic-formula derivation with aligned explanations, radicals and inline powers.",
+      "observed": "Displayed derivation is rasterized. Introductory ax-squared is flattened to ax2 in selectable XHTML; confirmed defect.",
+      "acceptance": "Keep the introductory squared exponent as superscript (or preserve the entire inline expression as an image), while retaining the surrounding prose and the displayed derivation."
+    },
+    {
+      "page": 347,
+      "focus": "Quadratic exercise set; powers and problem numbering.",
+      "observed": "Visible left-column equations retain powers in an image region. Verify the remaining column and all problem numbers before qualification."
+    },
+    {
+      "page": 438,
+      "focus": "Start of multi-column chapter answer key; section identifiers and answer-number associations."
+    },
+    {
+      "page": 479,
+      "focus": "Complex roots and fractions; transition between answer sections.",
+      "observed": "Visible answer numbers 33-38 and complex-root expressions are preserved by a mix of images and text; the full page is not yet adjudicated."
+    },
+    {
+      "page": 483,
+      "focus": "Quadratic graph answer keys; coordinate axes, labels and correct problem association."
+    }
+  ]
+}

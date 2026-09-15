@@ -1,0 +1,93 @@
+{"charactersVisited":1678654,"mode":"page","pages":522,"pass":1,"peakRSSBytes":1533919232,"physicalFootprintAfterPassBytes":1011648432}
+Process:         pdfreflow-pdfkit-probe [37616]
+Path:            /private/tmp/pdfreflow-pdfkit-probe
+Load Address:    0x102b60000
+Identifier:      pdfreflow-pdfkit-probe
+Version:         0
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  leaks [37212]
+Target Type:     live task
+
+Date/Time:       2026-09-14 15:29:11.747 -0700
+Launch Time:     2026-09-14 15:25:08.549 -0700
+OS Version:      macOS 27.0 (26A428)
+Report Version:  7
+Analysis Tool:   /usr/bin/leaks
+
+Physical footprint:         964.8M
+Physical footprint (peak):  964.8M
+Idle exit:                  untracked
+----
+
+leaks Report Version: 4.0, multi-line stacks
+Process 37616: 89232 nodes malloced for 253102 KB
+Process 37616: 74930 leaks for 247585696 total leaked bytes.
+
+STACK OF 506 INSTANCES OF 'ROOT LEAK: <NSConcreteMutableAttributedString>':
+13  dyld                                  0x1864efe80 start + 6688
+12  pdfreflow-pdfkit-probe                0x102b613c0 main + 1616
+11  com.apple.PDFKit                      0x1b986c3c8 -[PDFPage attributedString] + 80
+10  com.apple.PDFKit                      0x1b986cdc4 -[PDFPage _createAttributedString] + 32
+9   com.apple.PDFKit                      0x1b984f8b4 -[PDFSelection attributedString] + 84
+8   com.apple.PDFKit                      0x1b9852dc4 -[PDFSelection attributedStringScaled:] + 204
+7   com.apple.PDFKit                      0x1b9852378 -[PDFSelection createAttributedStringForCGSelection:scaled:] + 60
+6   com.apple.CoreGraphics                0x18dae5c28 CGPDFSelectionCreateAttributedString + 820
+5   com.apple.CoreGraphics                0x18dba6fa8 PageLayout::CreateAttributedStringForStringRanges(std::__1::span<CFRange, 18446744073709551615ul> const&) const + 468
+4   libobjc.A.dylib                       0x1864785dc objc_alloc_init + 80
+3   com.apple.Foundation                  0x188032118 NSAllocateObject + 28
+2   libobjc.A.dylib                       0x1864433b4 class_createInstance + 76
+1   libsystem_malloc.dylib                0x1866cbe38 _calloc + 88
+0   libsystem_malloc.dylib                0x1866ec820 _malloc_zone_calloc_instrumented_or_legacy + 132
+====
+    74669 (219M) << TOTAL >>
+      ----
+      22 (11.1M) ROOT LEAK: <NSConcreteMutableAttributedString 0x7964446e20> [48]  "15-1\n￼\nIntroduction\nThe two categories of airspace are: regulatory and\nnonregulatory. Withi..."
+         19 (11.1M) mutableAttributes --> <NSMutableRLEArray 0x7964ff4100> [32]
+            18 (11.1M) theList --> <NSMutableRLEArray.theList (struct _NSRefCountedRunArray) 0x7d3c80a1c0> [320]
+               7 (11.1M) <NSAttributeDictionary 0x7964aae380> [128]
+                  6 (11.1M) <CGImage 0x7963febe80> [320]
+                     5 (11.1M) <CGDataProvider 0x796418f980> [320]
+                        4 (11.1M) <CFData 0x7964a1c2c0> [64]  content length 8033256 at 0x7d44c00000: 0x1C3357FF1C3357FF1C3357FF1C3357FF1C3357FF1D3358FF1D3459..."
+                           1 (11.1M) <CFData (Bytes Storage) 0x7d44c00000> [11649024]
+                           2 (304 bytes) _bytesDeallocator --> <CFAllocator 0x7940d1e900> [256]
+                              1 (48 bytes) <malloc in CGDataProviderCreateWithDataNoCopy 0x7962a454a0> [48]
+               10 (1.50K) <NSAttributeDictionary 0x7942c77db0> [112]
+                  7 (1.22K) elements + 16 --> <NSCTFont 0x79640d1900> [640]
+                     3 (224 bytes) <NSCTFontDescriptor 0x79637ef870> [112]
+                        2 (112 bytes) _attributes --> <NSMutableDictionary 0x7964446220> [48]  item count: 2
+                           1 (64 bytes) <NSMutableDictionary (Storage) 0x7942856a00> [64]
+                     2 (192 bytes) <NSCTFontDescriptor 0x79637ec0e0> [112]
+                        1 (80 bytes) _attributes --> <NSDictionary 0x7943747c50> [80]  item count: 2
+                     1 (192 bytes) <__NSFontExtraData 0x794121a340> [192]
+                  1 (128 bytes) <CGColor 0x7942c57a80> [128]
+                  1 (48 bytes) <NSNumber 0x7942c127f0> [48]  type Float64  value: -44.45310000000001
+         2 (2.56K) mutableString --> <CFString 0x7942858880> [64]  length: 669  mutable non-inline Unicode:  "15-1\n￼\nIntroduction\nThe two categories of airspace..."
+            1 (2.50K) <CFString (Storage) 0x7942c7e800> [2560]
+      ----
+      22 (8.02M) ROOT LEAK: <NSConcreteMutableAttributedString 0x7943c1ed00> [48]  "6-1\n￼\nIntroduction\nThis chapter focuses on the flight control systems a pilot uses\nto contr..."
+         19 (8.02M) mutableAttributes --> <NSMutableRLEArray 0x79430b64a0> [32]
+            18 (8.02M) theList --> <NSMutableRLEArray.theList (struct _NSRefCountedRunArray) 0x7d382483c0> [192]
+               7 (8.02M) <NSAttributeDictionary 0x7963dc9480> [128]
+                  6 (8.02M) <CGImage 0x7963e09b80> [320]
+                     5 (8.02M) <CGDataProvider 0x7963e03ac0> [320]
+                        4 (8.02M) <CFData 0x7963715a80> [64]  content length 8033256 at 0x7d3ec14000: 0x0864B3FF0864B3FF0764B3FF0765B2FF0665B3FF0664B3FF0663B4..."
+                           1 (8.02M) <CFData (Bytes Storage) 0x7d3ec14000> [8404992]
+                           2 (304 bytes) _bytesDeallocator --> <CFAllocator 0x794196c100> [256]
+                              1 (48 bytes) <malloc in CGDataProviderCreateWithDataNoCopy 0x79430c9650> [48]
+               10 (1.50K) <NSAttributeDictionary 0x7942c75ff0> [112]
+                  7 (1.22K) elements + 16 --> <NSCTFont 0x7963e88500> [640]
+                     3 (224 bytes) <NSCTFontDescriptor 0x79430a5ea0> [112]
+                        2 (112 bytes) _attributes --> <NSMutableDictionary 0x7943c1ed60> [48]  item count: 2
+                           1 (64 bytes) <NSMutableDictionary (Storage) 0x79427c5c80> [64]
+                     2 (192 bytes) <NSCTFontDescriptor 0x79430a7bf0> [112]
+                        1 (80 bytes) _attributes --> <NSDictionary 0x7943746580> [80]  item count: 2
+                     1 (192 bytes) <__NSFontExtraData 0x7942c26b80> [192]
+                  1 (128 bytes) <CGColor 0x7942c56c00> [128]
+                  1 (48 bytes) <NSNumber 0x79427d39f0> [48]  type Float64  value: 44.45309999999995
+         2 (3.06K) mutableString --> <CFString 0x7942844540> [64]  length: 741  mutable non-inline Unicode:  "6-1\n￼\nIntroduction\nThis chapter focuses on the fli..."
+            1 (3.00K) <CFString (Storage) 0x7942da3000> [3072]
+      ----
+      12 (7.69M) ROOT LEAK: <NSConcreteMutableAttributedString 0x7943c1d7a0> [48]  "4-1\n￼\nIntroduction\nThis chapter examines the fundamental physical laws\ngoverning the forces..."
+         9 (7.69M) mutableAttributes --> <NSMutableRLEArray 0x79430b5ac0> [32]
+[Remaining allocation trees omitted.]

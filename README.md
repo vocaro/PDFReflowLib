@@ -165,8 +165,9 @@ interchange format; the supported public output remains EPUB 3. See
 ## Real-document corpus and memory gates
 
 `Corpus/manifest.json` registers the 522-page FAA Pilot's Handbook of Aeronautical Knowledge
-(FAA-H-8083-25C) by exact byte identity. Supply that PDF separately; it is not bundled or fetched
-by the tests. The manifest lists review points and known reading-order/raster defects, so a
+(FAA-H-8083-25C) and Tyler Wallace's 489-page Beginning and Intermediate Algebra by exact byte
+identity. Supply these PDFs separately; they are not bundled or fetched by the tests.
+[Corpus guide](doc/corpus.md) lists their coverage, attribution and review commands. The manifest lists review points and known reading-order/raster defects, so a
 successful conversion is not mistaken for a fidelity qualification.
 
 `Tools/evaluate-real-document.py` checks source identity, runs a fresh converter process,

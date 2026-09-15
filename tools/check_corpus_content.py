@@ -27,6 +27,7 @@ def read_pages(path):
     pages, markers = {}, []
     current = None
     heading_id = 0
+    paragraph_id = 0
     with zipfile.ZipFile(path) as archive:
         if (len(archive.infolist()) > 10_000
                 or sum(e.file_size for e in archive.infolist()) > 512 * 1024 * 1024):
@@ -39,13 +40,15 @@ def read_pages(path):
             chapter = PurePosixPath('EPUB') / manifest[reference.get('idref')]
             tree = ET.fromstring(archive.read(str(chapter)))
 
-            def append(text, script=None, heading=None):
+            def append(text, script=None, heading=None, paragraph=None):
                 if current is not None and text:
                     page = pages[current]
                     start = len(page['text'])
                     page['text'] += text
                     if heading is not None:
                         page['headings'][heading] = page['headings'].get(heading, '') + text
+                    if paragraph is not None:
+                        page['paragraphs'][paragraph] = page['paragraphs'].get(paragraph, '') + text
                     if script:
                         spans = page['scripts']
                         if spans and spans[-1]['tag'] == script and spans[-1]['end'] == start:
@@ -53,8 +56,8 @@ def read_pages(path):
                         else:
                             spans.append({'tag': script, 'start': start, 'end': start + len(text)})
 
-            def walk(element, script=None, heading=None):
-                nonlocal current, heading_id
+            def walk(element, script=None, heading=None, paragraph=None):
+                nonlocal current, heading_id, paragraph_id
                 if 'pagebreak' in element.get(EPUB + 'type', '').split():
                     anchor = element.get('id', '')
                     if not re.fullmatch(r'page-[1-9]\d*', anchor):
@@ -63,7 +66,7 @@ def read_pages(path):
                     if current in pages:
                         raise ValueError('Duplicate page boundary')
                     markers.append(current)
-                    pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {}}
+                    pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {}, 'paragraphs': {}}
                 if element.tag == HTML + 'img' and current is not None:
                     asset = str(chapter.parent / element.attrib['src'])
                     if asset not in archive.namelist():
@@ -77,10 +80,13 @@ def read_pages(path):
                 if element.tag in HEADINGS:
                     heading_id += 1
                     heading = heading_id
-                append(element.text, script, heading)
+                if element.tag == HTML + 'p':
+                    paragraph_id += 1
+                    paragraph = paragraph_id
+                append(element.text, script, heading, paragraph)
                 for child in element:
-                    walk(child, script, heading)
-                    append(child.tail, script, heading)
+                    walk(child, script, heading, paragraph)
+                    append(child.tail, script, heading, paragraph)
                 if element.tag in BLOCKS:
                     append(' ')
 
@@ -93,6 +99,7 @@ def read_pages(path):
                            for span in page['scripts']]
         page['text'] = normalized(raw)
         page['headings'] = [normalized(text) for text in page['headings'].values()]
+        page['paragraphs'] = [normalized(text) for text in page['paragraphs'].values()]
     return pages, markers
 
 
@@ -116,7 +123,7 @@ def assess(case, contract, result, report, pages, markers):
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'scripts', 'absentText', 'headings')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'scripts', 'absentText', 'headings', 'paragraphs')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -136,6 +143,12 @@ def assess(case, contract, result, report, pages, markers):
             checks += 1
             if not any(normalized(phrase) in heading for heading in page.get('headings', [])):
                 errors.append(f'Page {number}: missing heading {phrase!r}')
+        for phrase in item.get('paragraphs', []):
+            if not isinstance(phrase, str) or not normalized(phrase):
+                raise ValueError('Empty or invalid paragraph phrase')
+            checks += 1
+            if not any(normalized(phrase) in paragraph for paragraph in page.get('paragraphs', [])):
+                errors.append(f'Page {number}: missing paragraph {phrase!r}')
         cursor = 0
         for phrase in item.get('orderedText', []):
             if not normalized(phrase):

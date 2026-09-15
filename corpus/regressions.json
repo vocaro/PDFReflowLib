@@ -170,7 +170,7 @@
             "Sayf al Adl",
             "Egyptian; high-ranking member",
             "Mahmud Ahmed",
-            "Director General of Pakistan\u2019s Inter-Services"
+            "Director General of Pakistan’s Inter-Services"
           ]
         },
         {
@@ -189,13 +189,13 @@
     {
       "id": "fed-explained-2021",
       "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
-      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed.",
+      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics.",
       "pages": [
         {
           "page": 9,
           "orderedText": [
             "The Federal Reserve System is the central bank of the United States.",
-            "conducts the nation\u2019s monetary policy",
+            "conducts the nation’s monetary policy",
             "promotes the stability of the financial system",
             "promotes the safety and soundness",
             "fosters payment and settlement system safety",
@@ -204,8 +204,89 @@
           "minimumImages": 1
         },
         {
+          "page": 13,
+          "minimumImages": 1,
+          "paragraphs": [
+            "Despite the need for coordination and consistency"
+          ]
+        },
+        {
+          "page": 32,
+          "minimumImages": 1,
+          "headings": [
+            "How the FOMC Determines the Appropriate Stance of Monetary Policy"
+          ]
+        },
+        {
           "page": 45,
           "minimumImages": 1
+        },
+        {
+          "page": 46,
+          "paragraphs": [
+            "funds rate and other short-term interest rates is exercised primarily through the setting of",
+            "risks to the economic outlook were implemented and significantly boosted the level of reserves"
+          ],
+          "minimumImages": 2,
+          "orderedText": [
+            "funds rate and other short-term interest rates",
+            "In recent years, the Federal Reserve",
+            "risks to the economic outlook"
+          ]
+        },
+        {
+          "page": 54,
+          "minimumImages": 1,
+          "headings": [
+            "Asset Valuations and Risk Appetite"
+          ],
+          "paragraphs": [
+            "These vulnerability assessments inform internal"
+          ]
+        },
+        {
+          "page": 75,
+          "minimumImages": 1,
+          "paragraphs": [
+            "By statute, state member banks must be examined"
+          ]
+        },
+        {
+          "page": 77,
+          "minimumImages": 1,
+          "headings": [
+            "Examination Report"
+          ],
+          "paragraphs": [
+            "BHCs and SLHCs with less than $100 billion"
+          ]
+        },
+        {
+          "page": 103,
+          "minimumImages": 1,
+          "headings": [
+            "Establishing and Maintaining a Reliable U.S. Currency"
+          ],
+          "paragraphs": [
+            "Although the issuance of paper money"
+          ]
+        },
+        {
+          "page": 109,
+          "minimumImages": 1,
+          "headings": [
+            "Expedited Funds Availability Act"
+          ],
+          "paragraphs": [
+            "During the last two decades, Congress has directed"
+          ]
+        },
+        {
+          "page": 123,
+          "minimumImages": 1,
+          "headings": [
+            "Interagency Initiatives"
+          ]
         }
       ]
     },

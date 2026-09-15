@@ -1,0 +1,98 @@
+[
+  {
+    "case": "faa-phak-8083-25c",
+    "beforeEPUBSHA256": "89b7652304f6f4b95b0ea44d01045ba570618a72e60a75724d3c0810ed498471",
+    "afterEPUBSHA256": "55f9a75f270e16220032a84ae046457f70959dc5c62b7fce02107db7a0bc1c28",
+    "changedPages": [],
+    "removedBodyHeadings": 0,
+    "beforeHeadings": 42,
+    "afterHeadings": 42,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 588
+  },
+  {
+    "case": "wallace-algebra-2010",
+    "beforeEPUBSHA256": "b50c4158fbf55e10aefac1fedb08b24fdca1bd5f33ff26df51a7c857e663c9b4",
+    "afterEPUBSHA256": "0021ab3aaf8a32ceed31d654e661003f5c15792ac9fa0783eea5f93b3d76cc9e",
+    "changedPages": [],
+    "removedBodyHeadings": 0,
+    "beforeHeadings": 222,
+    "afterHeadings": 222,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 2050
+  },
+  {
+    "case": "gpo-911-2004",
+    "beforeEPUBSHA256": "0541246cd3067c53243c0b4b5f607063fbb966e62c6a306eff27cfa3358a704e",
+    "afterEPUBSHA256": "ec55a2b399e21855bb32d6c8f93598caae18aa7297f39c3073248fd530193d03",
+    "changedPages": [],
+    "removedBodyHeadings": 0,
+    "beforeHeadings": 87,
+    "afterHeadings": 87,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 331
+  },
+  {
+    "case": "fed-explained-2021",
+    "beforeEPUBSHA256": "de6f158bdc2a60284e0d03a6ecd4a5babf3e0bc84a9117f3b348216e55b6d70a",
+    "afterEPUBSHA256": "99ad9102aa10b81c4ce84a4e5f57bc24f0acb4f69b9bc89becfd1d85c77fc9ed",
+    "changedPages": [
+      13,
+      46,
+      54,
+      75,
+      77,
+      103,
+      109
+    ],
+    "removedBodyHeadings": 85,
+    "beforeHeadings": 240,
+    "afterHeadings": 155,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 315
+  },
+  {
+    "case": "dga-2025-2030",
+    "beforeEPUBSHA256": "b548428e66f0bcdd9a059555f56ef7977d323d697c5194652383642a7c59feb8",
+    "afterEPUBSHA256": "0f68bfa54633329fb769aea36d0f6de83ef81ce9954355102c0018b6c33fc6c4",
+    "changedPages": [],
+    "removedBodyHeadings": 0,
+    "beforeHeadings": 14,
+    "afterHeadings": 14,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 27
+  },
+  {
+    "case": "gpo-our-flag-2003",
+    "beforeEPUBSHA256": "4c1e921cd03e68683e4cd22cce97825fd39993d3e9905c09215249a4afe1af8c",
+    "afterEPUBSHA256": "ccc96f204ad7b2041cf0d2aea7bc3af02cc405b30ac822a0a4eda6a0cffb4b46",
+    "changedPages": [],
+    "removedBodyHeadings": 0,
+    "beforeHeadings": 79,
+    "afterHeadings": 79,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 147
+  },
+  {
+    "case": "cdc-zombie-pandemic-2011",
+    "beforeEPUBSHA256": "601acff63b52643dd909a8c8575e9ddacf940aa04388988be90ca43e3143ee7d",
+    "afterEPUBSHA256": "5bd99dcd24764e1e9b5c33bc6d3c1a239a4f36a29b1cf01e463608d5fc9fb0e5",
+    "changedPages": [],
+    "removedBodyHeadings": 0,
+    "beforeHeadings": 15,
+    "afterHeadings": 15,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 42
+  },
+  {
+    "case": "cia-blue-book-14-1955",
+    "beforeEPUBSHA256": "268ace66d9ae80ca3c6e5e0033ae2da2354c82785ca8ff6441defaa715a3ca76",
+    "afterEPUBSHA256": "07af7a76d085ec52c73177216f8f0116328547eeb25111bbe87ac7ba9fe5ef08",
+    "changedPages": [],
+    "removedBodyHeadings": 0,
+    "beforeHeadings": 0,
+    "afterHeadings": 0,
+    "identicalImageBytesAndPageOrder": true,
+    "imageCount": 422
+  }
+]

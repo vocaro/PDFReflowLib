@@ -101,10 +101,24 @@ enum LayoutReconstructor {
         return CGFloat(weights.max { $0.value < $1.value }?.key ?? 12)
     }
 
+    /// Small labels inside preserved images must not turn the surrounding prose into headings.
+    /// Keep the page estimate when too little reflowable text remains to establish a body size.
+    static func headingBodySize(_ lines: [TextLine], pageBody: CGFloat) -> CGFloat {
+        let candidate = bodySize(lines)
+        let matching = lines.filter { Int($0.fontSize.rounded()) == Int(candidate) }
+        guard matching.count >= 3, matching.reduce(0, { $0 + $1.text.count }) >= 200 else {
+            return pageBody
+        }
+        return max(pageBody, candidate)
+    }
+
     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
                        warnings: inout [ConversionWarning]) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         let lines = page.lines.filter { line in !images.contains { $0.0.intersects(line.rect) } }
+        // Preserve existing modest-size headings, but reject candidates within 10% of the
+        // supported reflowable body size. This only narrows the original page-size heuristic.
+        let headingThreshold = max(body * 1.25, headingBodySize(lines, pageBody: body) * 1.1)
         let elements = ordered(lines.map { Element(rect: $0.rect, line: $0) }
             + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: body)
         var result: [ReflowBlock] = []
@@ -127,7 +141,7 @@ enum LayoutReconstructor {
             }
             guard let line = element.line else { continue }
             if !line.monospaced { codeOrigin = nil }
-            if !page.hasSyntheticTextStyle && line.fontSize >= body * 1.25 && line.text.count < 200 {
+            if !page.hasSyntheticTextStyle && line.fontSize >= headingThreshold && line.text.count < 200 {
                 flush()
                 result.append(ReflowBlock(content: .heading(id: "heading-\(page.number)-\(result.count)", text: line.content),
                     page: page.number))

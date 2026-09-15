@@ -88,6 +88,28 @@ class CorpusContentTests(unittest.TestCase):
         self.assertNotIn('caption', pages[2]['text'])
         self.assertIn('another heading prose', pages[2]['text'])
 
+    def test_paragraph_contract_requires_semantics_continuity_and_page(self):
+        self.contract['pages'][0]['paragraphs'] = ['alpha beta']
+        self.pages[1]['paragraphs'] = ['alpha beta']
+        self.assertTrue(self.check()['passed'])
+        for fragments in [[], ['alpha', 'beta']]:
+            self.pages[1]['paragraphs'] = fragments
+            self.pages[1]['headings'] = ['alpha beta']
+            self.pages[2]['paragraphs'] = ['alpha beta']
+            self.assertFalse(self.check()['passed'])
+        for phrase in ['', '  ', 123]:
+            self.contract['pages'][0]['paragraphs'] = [phrase]
+            with self.assertRaises(ValueError):
+                self.check()
+
+    def test_paragraph_parser_keeps_inline_styles_and_cross_page_ownership(self):
+        path = self.epub('<span epub:type="pagebreak" id="page-1"/><h2>title</h2>'
+                         '<p>al<strong>pha</strong> beta<span epub:type="pagebreak" id="page-2"/> gamma</p>',
+                         '<pre>code</pre><figure><figcaption><p>caption</p></figcaption></figure><p>delta</p>')
+        pages, _ = read_pages(path)
+        self.assertEqual(pages[1]['paragraphs'], ['alpha beta'])
+        self.assertEqual(pages[2]['paragraphs'], ['gamma', 'delta'])
+
     def test_invalid_or_empty_contracts_fail(self):
         for pages in [[], [{'page': 1}], [{'page': 3, 'text': ['x']}],
                       [{'page': 1, 'text': ['']}], [{'page': 1, 'text': []}],

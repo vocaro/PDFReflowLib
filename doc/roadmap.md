@@ -45,8 +45,7 @@ physical-device memory/performance remain unqualified.
   Commission scanned report, 9/11 digital report, The Fed Explained and the illustrated Dietary
   Guidelines booklet, with identities, review
   points and baselines. Originals are fetched explicitly into a checksum-verified ignored cache.
-  Correct [Fed prose classified as headings](https://github.com/vocaro/PDFReflowLib/issues/12);
-  qualify tagged table/figure semantics and mixed diagram/prose pages; expand with borderless tables,
+  Qualify tagged table/figure semantics and mixed diagram/prose pages; expand with borderless tables,
   footnotes, damaged encodings and non-Latin layouts. Measure coverage and reading order.
 - Evaluate OS 27's native progress composition APIs while retaining ordered client reporting.
   The minimum deployment version remains 27.
@@ -107,3 +106,10 @@ folio controls, public-option tests, and 119 corpus content checks on 31 pages a
 The [header measurement](../measurements/local-header-regressions/record.md) records baseline
 failures and image/text comparisons. Multi-line headers, very short runs, general heading precision
 and timeline graphic ownership remain unqualified; #10 stays open for that broader qualification.
+
+Small-font labels inside preserved graphics no longer promote surrounding Fed prose into
+headings (#12). Ten source-layout pages, seven Swift tests and paragraph/heading corpus contracts
+protect body text and modest-size section titles. The [heading evidence](../measurements/heading-body-regressions/record.md)
+includes the failing original case and a rejected threshold change that lost six genuine headings.
+The complete corpus has 145 reviewed content checks across 40 pages. General heading precision,
+PDF tag consumption and table transcription remain unqualified.

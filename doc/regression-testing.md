@@ -28,12 +28,12 @@ see [corpus instructions](corpus.md). Large originals and output EPUBs remain gi
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 119 targeted checks on 31 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 145 targeted checks on 40 reviewed pages
 across eight books: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic and Blue Book. All source-page anchors must also remain complete and ordered, and semantic
 text must contain no image attachment placeholders.
 
-The checks preserve selected correct words, paragraph/list order, license attribution, image
+The checks preserve selected correct words, paragraph semantics and continuity, paragraph/list order, license attribution, image
 presence and explicit transcription/fallback warnings. They read the actual EPUB spine, track
 page boundaries inside styled text, preserve ownership across chapter-file continuations, and
 exclude navigation/captions from source-text matching. They do not freeze serialization details
@@ -179,3 +179,17 @@ layout work before it can preserve this reading-order contract.
 Blue Book pages 5/12 provide source-derived synthetic-layer margin controls. Existing repeated
 edge-artifact cleanup remains separate from native-header inference; the page-12 corpus check
 rejects reintroduced margin noise while retaining body text, its source image and uncertainty warning.
+
+## Heading and paragraph semantics
+
+`HeadingTests.swift` uses ten native Fed pages, including 45/46 to protect prose beside preserved tables and
+sidebars. Small-font text inside an image must not promote the surrounding ordinary prose to
+headings. Synthetic controls preserve real headings and short titles beside images; 9/11 chapter
+openings provide independent source-derived heading controls. Six modest-size Fed section titles
+have explicit guards against over-suppression.
+
+The corpus `paragraphs` expectation requires a phrase inside one actual spine paragraph on the
+specified source page. A phrase spread over separate paragraphs, headings or preformatted text
+cannot pass. The parser preserves inline styles and page boundaries and excludes figure captions.
+Tests deliberately replace prose with headings, split it, or move it to another page to verify
+that these checks reject semantic regressions.

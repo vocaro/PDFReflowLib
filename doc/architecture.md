@@ -66,7 +66,13 @@ with conservative clipping, Form bounds and optional shading bounds. Core Graphi
 the original region; the model stores an image asset, not an editable gradient. Unsafe or
 page-spanning bounds retain the page fallback. `OCRReader` uses Vision when policy requests it.
 `LayoutReconstructor` handles whitespace cuts, paragraphs, styled word joins and
-cross-page continuation. `FurnitureDetector` removes short outermost margin rows supported by
+cross-page continuation. Heading-size evidence excludes text already preserved inside images
+when at least three remaining lines and 200 characters support the dominant reflowable font size.
+Candidates within 10% of that supported body size are suppressed, while the original 25%
+page-size threshold still applies. This retains existing modestly larger section headings. Short titles
+beside images retain the existing page evidence. The separate page-size estimate still governs
+whitespace cuts and paragraph geometry. This does not infer headings from tags or guarantee
+heading precision in arbitrary mixed layouts. `FurnitureDetector` removes short outermost margin rows supported by
 at least three neighboring or alternating physical pages, stable vertical position and typography.
 The top candidate band is 10% of page height; the footer band remains 7% to retain existing
 whitespace-cut behavior around illustrated rows. Textual headers require separation from inward

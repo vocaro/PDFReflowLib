@@ -1,0 +1,65 @@
+{
+  "faaPage121": {
+    "before": {
+      "size": [
+        1485,
+        1935
+      ],
+      "inkBounds": [
+        481,
+        627,
+        968,
+        1318
+      ],
+      "inkWidthFraction": 0.32794612794612793,
+      "inkHeightFraction": 0.3571059431524548
+    },
+    "afterExplicitWholePageRender": {
+      "size": [
+        1485,
+        1935
+      ],
+      "inkBounds": [
+        89,
+        116,
+        1305,
+        1845
+      ],
+      "inkWidthFraction": 0.8188552188552188,
+      "inkHeightFraction": 0.8935400516795866
+    },
+    "popplerSource": {
+      "size": [
+        1485,
+        1935
+      ],
+      "inkBounds": [
+        89,
+        116,
+        1305,
+        1844
+      ],
+      "inkWidthFraction": 0.8188552188552188,
+      "inkHeightFraction": 0.8930232558139535
+    },
+    "passed": true
+  },
+  "warrenExcerpt": {
+    "textlessPages": [
+      1,
+      9
+    ],
+    "sourcePages": [
+      1,
+      920
+    ],
+    "reflowedPageCount": 7,
+    "textlessPagesHaveOnlyImageAndSourceBoundary": true
+  },
+  "noObjectPlaceholdersInXHTML": [
+    "full FAA",
+    "full Blue Book",
+    "nine-page Warren excerpt"
+  ],
+  "scope": "Selected EPUB assets/XHTML plus an explicit whole-page raster of FAA page 121. Page 121 now reflows with region images; the explicit raster exercises the historically affected fallback transform. Ink bounds qualify scaling, not transcription or full-book fidelity."
+}

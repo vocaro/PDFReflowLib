@@ -110,8 +110,9 @@ break in the local comparison server. The original-page pane remains the visual 
 
 [Review points](../corpus/gpo-warren-1964-review.json) and
 [measurement evidence](../measurements/gpo-warren-1964/record.md) record confirmed OCR,
-preformatted-text, column-order and placeholder-count defects. The excerpt passes EPUBCheck
-but is not fidelity-qualified. This case exercises trust in an existing OCR layer as well as
+preformatted-text and column-order defects. The [current excerpt check](../measurements/quality-and-raster-fixes/record.md)
+excludes placeholders and counts seven reflowed pages, preserving the two textless pages as
+images. The excerpt passes EPUBCheck but is not fidelity-qualified. This case exercises trust in an existing OCR layer as well as
 new recognition: the default full run attempts fresh OCR on only one page.
 
 Tracked defects: [full-book resource limit](https://github.com/vocaro/PDFReflowLib/issues/5),
@@ -200,8 +201,8 @@ scripts/compare-pdf-reflow.sh --pdf corpus/cache/DGA.pdf \
 All ten pages are small enough to prepare together. [Review points](../corpus/dga-2025-2030-review.json)
 and the [baseline](../measurements/dga-2025-2030/record.md) distinguish valid EPUB packaging from
 usable reflow. The [shading-support measurement](../measurements/shading-support/record.md)
-records nine pages with reflowed text, with column-order and placeholder defects still open. The source has tags, but custom heading
-and bullet roles map to paragraphs, so tag names alone are not a reliable semantic reference.
+records nine pages with reflowed text before placeholder filtering; column-order defects remain
+open. The source has tags, but custom heading and bullet roles map to paragraphs, so tag names alone are not a reliable semantic reference.
 [Graphics fallback #13](https://github.com/vocaro/PDFReflowLib/issues/13) and
 [native text/label defects #14](https://github.com/vocaro/PDFReflowLib/issues/14) track the gaps.
 
@@ -302,12 +303,14 @@ python3 tools/check_corpus_quality.py --case cia-blue-book-14-1955 \
   --evaluation /tmp/blue-book-baseline
 ```
 
-The final command currently exits 1, reporting missing actionable warnings on pages 74 and 150.
-The [baseline](../measurements/cia-blue-book-14-1955/record.md) passes EPUB validity, progress
-and the Mac memory gate while failing this separate quality contract. Crashes, timeouts, resource
-failures and generic image-preservation warnings do not satisfy it. No production quality-refusal
+The converter now emits `unverifiedTextLayer` on pages with existing text over a page-sized
+image. The [current measurement](../measurements/quality-and-raster-fixes/record.md) checks pages
+74 and 150 separately from the [historical failing baseline](../measurements/cia-blue-book-14-1955/record.md).
+Crashes, timeouts, resource failures and generic image-preservation warnings do not satisfy it. No production quality-refusal
 error exists yet; the manifest's approved diagnostic list is empty. Future dedicated quality
-warnings/refusals need explicit semantics and matching contract entries.
+warnings/refusals need explicit semantics and matching contract entries. The present warning
+asks the client to review transcription, tables, numbers and order against the preserved source;
+it does not assert that an individual cell is wrong.
 
 [Review references](../corpus/cia-blue-book-14-1955-review.json) include the typewritten table's
 printed rows and handwritten-sheet review targets. [Issue #19](https://github.com/vocaro/PDFReflowLib/issues/19)

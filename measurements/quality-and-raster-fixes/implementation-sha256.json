@@ -1,0 +1,33 @@
+{
+  "baseRevision": "896e283dd76e258bb96b80780fa27a99dea127a1",
+  "sources": {
+    "Sources/PDFReflowLib/PDFReflowLibPipeline.swift": "1a0a5fc4ede8cdafba0b159419d4e36610bfba0569fa3234e7fe0ce448b6b5a3",
+    "Sources/PDFReflowLib/PDFPageSource.swift": "9ab9814d52d392d462b35ee1ca2c2b4f8d2063b83b9bce5af135ffd8defa266e",
+    "Sources/PDFReflowLib/DocumentModel.swift": "1555ae7445ad57937a84229740d8b97a9ee450e53053ee31366e56e8eb140523",
+    "Sources/PDFReflowLib/EPUBWriter.swift": "98db5de8b57bafea45275a60c49992a41c32e50279125bb2a8a79e4cb7fd2de1",
+    "Sources/PDFReflowLib/ReflowDocument.swift": "e4564984d07b573204793c6745c29c747a42de3c8ddb568aca988c906affdff1",
+    "Sources/PDFReflowLib/GraphicsReader.swift": "bd5fbc22a58b94513553d8405b2727c62b2242ca5ceb325d1d42b8db0edce765",
+    "Sources/PDFReflowLib/OCRReader.swift": "34127110eac8485165972b2b3e104845dc7bec163e9d499201459ddf8e640c26",
+    "Sources/PDFReflowLib/NativeTextReader.swift": "6e0adaf80c80ffffe9c6365e598626e95ef001030b0bcc9323a559db72399477",
+    "Sources/PDFReflowLib/PDFConverter.swift": "22bb90e73aa7aeda6e74b07240c41cfbaf8ad31bb9acbc91ada8a539a2af9693",
+    "Sources/PDFReflowLib/LayoutReconstructor.swift": "cdf21498d283608fa2e8107379062cdacf5d030aee3cc9a3cb0f7a724b8335bf",
+    "Sources/PDFReflowLib/EPUBTextEncoder.swift": "c2225df427b2190b119f77875b44ad2743f9cc5224e30249bfa0953f20401bfb",
+    "Sources/PDFReflowLib/ConversionTypes.swift": "c7fb8ccca1418286973d9ca023421d641b9622ae42b1d813d232b3b9634cd371",
+    "Sources/PDFReflowLib/PageRasterizer.swift": "38e62784062128df317f902399d9b628ea227491bad1df311aaaa812fe62cd51",
+    "Sources/PDFReflowLibCLI/Main.swift": "483c0fff244c2541a9b7066e79829232b4d15eeb3a970ede1cd4ad7ca9dfccf6",
+    "Tests/PDFReflowLibTests/TextLayerTests.swift": "f66c7cc0399c551eef5f03a527c7d294ff29eaebd67debf862c4fa53e57875fc",
+    "Tests/PDFReflowLibTests/ShadingTests.swift": "08959cf218980d5cf82356e395f1141f8b4747d4445922f96fb5d6835cd35781",
+    "Tests/PDFReflowLibTests/PageRasterizerTests.swift": "3553f266e0f49ad393b286d3a1f36833d2819840e20b6565ce673507a030dcb2",
+    "Tests/PDFReflowLibTests/ConversionTests.swift": "b732939bf74704f258f1366b7cadb731cf5345314ee569c94995ad14540e4b70",
+    "Tests/PDFReflowLibTests/DocumentModelTests.swift": "cdf9b52ffeabe9220911600233b70b7c3ca56bfcdd0c67dad50f2da86c8f2363",
+    "Tests/PDFReflowLibTests/PDFTestSupport.swift": "1af018a09d60894d37e3e6e88de66243fe2f618130b0b48cbc3e0fc1f65eb93b",
+    "tools/check_corpus_quality.py": "940c29c91acf09bc7ff66df5e45f1dd4cb05b108ff825bbfb5f2a412633afd37",
+    "tools/evaluate-real-document.py": "ba7974ce10352d5e0864fce3a881735e3b7026a7df97f30368b60ed5442d8b41",
+    "Package.swift": "9b59bb9ce05d03347a48d2a82abc2a5cf7212b92e76bd253271a6f8f8dd81d0f",
+    "Package.resolved": "704ad50011ab38d7cc077e2037d860d9cf8c8f200a759cb1624d075b215c9035"
+  },
+  "historicalInputs": {
+    "corpus/manifest.json": "107f288f145d7842858ad6eaad5359329487da35cbc3cac163b3fcb32c02590b"
+  },
+  "inputNote": "Evaluation result.json files embed their measured manifest case. The live manifest subsequently records resolution status; source PDF identities and quality warning codes are unchanged."
+}

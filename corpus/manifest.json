@@ -45,7 +45,9 @@
         {
           "page": 121,
           "issue": "Whole-page fallback has excessive white margins and undersized content.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/3"
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/3",
+          "status": "resolved",
+          "resolution": "Explicit page-121 raster matches source proportions after the scaling fix; current EPUB reflows this page with region images. See measurements/quality-and-raster-fixes/record.md."
         },
         {
           "page": 511,
@@ -170,7 +172,7 @@
       "knownFidelityIssues": [
         {
           "page": 50,
-          "issue": "Existing OCR errors survive without transcription-quality warnings; invisible Courier text becomes preformatted prose with hard wraps and spurious headings.",
+          "issue": "Existing OCR errors survive despite an unverifiedTextLayer review warning; invisible Courier text becomes preformatted prose with hard wraps and spurious headings.",
           "trackingURLs": [
             "https://github.com/vocaro/PDFReflowLib/issues/6",
             "https://github.com/vocaro/PDFReflowLib/issues/7"
@@ -197,7 +199,9 @@
           "issue": "Object-replacement placeholders are emitted as paragraphs and counted as reflowed text on a textless scan; cover page 1 behaves similarly.",
           "trackingURLs": [
             "https://github.com/vocaro/PDFReflowLib/issues/8"
-          ]
+          ],
+          "status": "resolved",
+          "resolution": "Source pages 1 and 920 retain image-only fallback; the pinned nine-page excerpt has seven reflowed pages. See measurements/quality-and-raster-fixes/record.md."
         }
       ],
       "baselineStatus": "Fails maximumOutputBytes (image output) after the last completed reconstruction page 390/920; no EPUB is published. See measurements/gpo-warren-1964/record.md.",
@@ -603,23 +607,24 @@
           150
         ],
         "warningCodes": [
+          "unverifiedTextLayer",
           "complexLayout",
           "pageImageFallback"
         ],
         "qualityRejectionDiagnostics": [],
-        "basis": "Inspected typewritten and handwritten table pages need explicit complexity/fallback signaling, not merely imageRegion or furnitureRemoved. No current quality-refusal error exists; approved diagnostics remain empty until an explicit API contract is implemented. A future dedicated unreliable-text warning can be added when defined."
+        "basis": "Inspected typewritten and handwritten table pages need explicit quality/fallback signaling, not merely imageRegion or furnitureRemoved. unverifiedTextLayer flags existing text over a page-sized graphic for human review without asserting measured OCR confidence. No quality-refusal error exists; approved diagnostics remain empty."
       },
       "downloadVerification": "Owner-supplied identity verified by corpus fetcher; fresh publisher download returns HTTP 403. Seed the ignored cache with exact original bytes; see measurements/cia-blue-book-14-1955/download-status.json.",
       "knownFidelityIssues": [
         {
           "page": 74,
-          "issue": "Scan artifacts and object placeholder become headings; table rows become prose without an actionable quality warning.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/19"
+          "issue": "Scan-edge artifacts become headings and table rows become prose. An unverifiedTextLayer warning and source image signal the need for review; transcription remains unqualified.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/7"
         },
         {
           "page": 150,
-          "issue": "Damaged handwriting/numeric OCR is emitted as prose and headings; only generic imageRegion and furnitureRemoved warnings.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/19"
+          "issue": "Damaged handwriting/numeric OCR becomes prose and headings. An unverifiedTextLayer warning and source image signal the need for review; cells are not reconstructed reliably.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/7"
         }
       ],
       "qualityTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/19"

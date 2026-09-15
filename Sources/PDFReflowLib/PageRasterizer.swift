@@ -26,16 +26,25 @@ enum PageRasterizer {
         context.setFillColor(gray: 1, alpha: 1)
         context.fill(CGRect(x: 0, y: 0, width: width, height: height))
         if applyRotation {
+            // Ask Core Graphics for crop/rotation in page units, then scale to pixels
+            // explicitly. getDrawingTransform can leave larger destinations at 1:1 scale.
+            context.scaleBy(x: CGFloat(width) / size.width, y: CGFloat(height) / size.height)
             context.concatenate(reference.getDrawingTransform(.cropBox,
-                rect: CGRect(x: 0, y: 0, width: width, height: height), rotate: 0,
-                preserveAspectRatio: true))
+                rect: CGRect(origin: .zero, size: size), rotate: 0, preserveAspectRatio: true))
         } else {
             context.scaleBy(x: CGFloat(width) / rect.width, y: CGFloat(height) / rect.height)
             context.translateBy(x: -rect.minX, y: -rect.minY)
         }
+        context.saveGState()
         context.drawPDFPage(reference)
+        context.restoreGState()
         for annotation in page.annotations where annotation.shouldDisplay {
+            // PDFKit annotation drawing applies the page's crop/rotation itself, unlike
+            // drawPDFPage. Undo that extra mapping so both use the same source coordinates.
+            context.saveGState()
+            context.concatenate(page.transform(for: .cropBox).inverted())
             annotation.draw(with: .cropBox, in: context)
+            context.restoreGState()
         }
         guard let image = context.makeImage() else {
             throw ConversionError.resourceLimit("raster creation failed")

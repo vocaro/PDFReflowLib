@@ -1,0 +1,17 @@
+{
+  "case": "cia-blue-book-14-1955",
+  "passed": true,
+  "identityMatches": true,
+  "conversionSucceeded": true,
+  "explicitQualityRefusal": false,
+  "requiredWarningPages": [
+    74,
+    150
+  ],
+  "pagesWithAcceptedWarnings": [
+    74,
+    150
+  ],
+  "missingWarningPages": [],
+  "scope": "Client-visible quality signaling only; not EPUB or transcription fidelity qualification."
+}

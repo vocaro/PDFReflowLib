@@ -87,6 +87,10 @@ enum PDFReflowLibPipeline {
                 // reference rather than treating the full-page scan as one figure covering all text.
                 content.preservePageReference = true
                 content.graphics = []
+                warnings.append(.init(code: .unverifiedTextLayer, page: i + 1,
+                    message: "Text overlapping a page-sized graphic has not been verified against the source. "
+                        + "Transcription, tables, numbers and reading order may be inaccurate. "
+                        + "Check the accompanying source-page image before relying on the reflowed text."))
             }
             if content.lines.isEmpty && !content.requiresPageImage {
                 content.requiresPageImage = true

@@ -4,8 +4,7 @@ The library converts PDFs to EPUB 3 on Apple platforms 27+. Synthetic regression
 layout, OCR, images, EPUB packaging, progress and cancellation. General textbook fidelity and
 physical-device memory/performance remain unqualified.
 
-- Correct FAA handbook [column order on physical pages 91 and 511](https://github.com/vocaro/PDFReflowLib/issues/2),
-  and [whole-page fallback scaling on page 121](https://github.com/vocaro/PDFReflowLib/issues/3).
+- Correct FAA handbook [column order on physical pages 91 and 511](https://github.com/vocaro/PDFReflowLib/issues/2).
   Add source-derived regressions and compare against original pages.
 - Investigate [PDFKit attributed-text leaks](https://github.com/vocaro/PDFReflowLib/issues/4)
   without losing formatting; keep the
@@ -18,7 +17,7 @@ physical-device memory/performance remain unqualified.
   ceiling](https://github.com/vocaro/PDFReflowLib/issues/5); [invisible OCR fonts misclassify
   prose and headings](https://github.com/vocaro/PDFReflowLib/issues/6), and notes/index columns
   interleave. [Detect suspect inherited OCR](https://github.com/vocaro/PDFReflowLib/issues/7)
-  and [exclude object placeholders](https://github.com/vocaro/PDFReflowLib/issues/8) from text/counts. Evidence: [Warren baseline](../measurements/gpo-warren-1964/record.md).
+  beyond the conservative unverified-layer warning. Evidence: [Warren baseline](../measurements/gpo-warren-1964/record.md).
 - Correct [absolute image URLs in the Poppler simple preview](https://github.com/vocaro/PDFReflowLib/issues/9) without weakening
   local server containment; retain raw Poppler output and a reproducible rendered comparison.
 - Investigate [9/11 report header/heading confusion](https://github.com/vocaro/PDFReflowLib/issues/10),
@@ -38,7 +37,7 @@ physical-device memory/performance remain unqualified.
 - Improve [region preservation around shading/complex graphics](https://github.com/vocaro/PDFReflowLib/issues/13)
   and [native word boundaries/graphic labels](https://github.com/vocaro/PDFReflowLib/issues/14).
   Bounded shading is supported; the ten-page DGA case now reflows text on nine pages. Qualify
-  section-local bullet order and remove object placeholders exposed by that reflow. See the
+  section-local bullet order. See the
   [shading measurement](../measurements/shading-support/record.md).
 
 - The NOAA Fifth National Climate Assessment adds a 1,834-page, 219.9 MB stress workload.
@@ -59,8 +58,11 @@ physical-device memory/performance remain unqualified.
   or clearly signal readable image fallback. The [baseline](../measurements/cdc-zombie-pandemic-2011/record.md)
   passes validity, progress and the 512 MiB Mac RSS gate; dialogue quality remains unqualified.
 
-- The 312-page Blue Book statistical scan supplies a [negative warning/refusal contract](../measurements/cia-blue-book-14-1955/record.md).
-  Its valid EPUB contains damaged table OCR without actionable quality warnings on pages 74 and
-  150. Implement [explicit quality signaling or refusal](https://github.com/vocaro/PDFReflowLib/issues/19)
-  and distinguish signal coverage from actual transcription fidelity. The opt-in quality gate
-  currently fails; resource/progress/package checks pass.
+- The 312-page Blue Book statistical scan supplies a warning/refusal contract. The converter
+  reports unverified text layers and preserves source images; reliable scanned-table detection
+  and reconstruction remain open under [suspect inherited OCR](https://github.com/vocaro/PDFReflowLib/issues/7)
+  and [table preservation](https://github.com/vocaro/PDFReflowLib/issues/16).
+  Passing the signaling contract does not qualify table transcription.
+
+Attachment-placeholder filtering, actionable source-layer warnings and correct whole-page raster
+scaling are covered by [regressions and source-derived measurements](../measurements/quality-and-raster-fixes/record.md).

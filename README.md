@@ -69,6 +69,8 @@ that fall back to images skip unused attributed-text decoding. Failures use
 ## Conversion behavior
 
 - PDFKit line selections pair text with geometry; font runs preserve bold and italic emphasis.
+  Image attachment placeholders are excluded from semantic text and reflow counts; their
+  visible content remains in images. Placeholder-only pages follow the selected OCR policy.
   Whitespace cuts recover ordinary columns and spanning headings. Paragraph reconstruction
   joins hard wraps and narrowly supported cross-page continuations.
 - Soft hyphens are removed at wraps. A hard hyphen is removed only when the unbroken word occurs
@@ -83,7 +85,10 @@ that fall back to images skip unused attributed-text decoding. Failures use
   exposing raw image resources with missing masks or detached labels.
 - Vision recognizes pages with missing/damaged text by default. OCR text is explicitly reported
   as transcription, with an accompanying original-page image preserving unrecognized figures.
-  Scans with existing native OCR layers likewise retain a source reference image.
+  Existing text over a page-sized graphic retains a source reference image and reports
+  `unverifiedTextLayer`: transcription, tables, numbers and reading order need human review.
+  This conservative signal is not an OCR confidence score; it can also flag illustrated pages
+  with valid text. Smaller graphics and undetected scans can still contain transcription errors.
 - Rotated pages, unsupported drawing operations and pages without recoverable text use an
   explicitly warned whole-page image fallback. Visible annotations get a source reference
   image; link/form interactions are not reconstructed.

@@ -43,6 +43,9 @@ public struct ConversionWarning: Sendable, Codable, Equatable {
         case ocrUsed, ocrFailed, uncertainHyphen, furnitureRemoved
         case imageRegion, pageImageFallback, unsupportedGraphics, emptyPage
         case complexLayout, annotationsNotConverted
+        /// Existing text over a page-sized graphic has not been checked against its image.
+        /// This is a conservative review signal, not a measured OCR confidence score.
+        case unverifiedTextLayer
     }
     public let code: Code
     public let page: Int

@@ -57,14 +57,24 @@ The caller supplies a workspace and keeps it alive until serialization finishes.
 can run without calling `EPUBWriter`, as the direct PDF-to-model test demonstrates.
 
 `NativeTextReader` obtains PDFKit line selections, geometry and attributed runs; it immediately
-copies text and style flags into values. Object-only selections skip attributed-string access
+copies text and style flags into values. Object-only selections are discarded before attributed-string access
 to avoid unnecessary PDFKit image-attachment decoding. `GraphicsReader` scans bounded Core Graphics paint
 operations and nested Form XObjects. It resolves shading resources and bounds gradient regions
 with conservative clipping, Form bounds and optional shading bounds. Core Graphics rasterizes
 the original region; the model stores an image asset, not an editable gradient. Unsafe or
 page-spanning bounds retain the page fallback. `OCRReader` uses Vision when policy requests it.
 `LayoutReconstructor` handles furniture, whitespace cuts, paragraphs, styled word joins and
-cross-page continuation. `PageRasterizer` renders source-composited regions to bounded PNGs.
+cross-page continuation. Attachment placeholders become word boundaries at native extraction,
+with empty selections discarded before layout, vocabulary, OCR selection and coverage counting.
+
+Existing text over a graphic covering more than 75% of the page gets `unverifiedTextLayer` and
+an accompanying source-page image. This conservative review signal does not establish that
+text is OCR, detect every corrupted layer, or assess individual table cells. Fresh OCR keeps
+its separate `ocrUsed` notice; image-only fallbacks keep `pageImageFallback`.
+
+`PageRasterizer` renders source-composited regions to bounded PNGs. Whole-page crop/rotation is
+computed in page units, with explicit scaling to raster pixels. Annotation drawing compensates
+for PDFKit's own crop/rotation transform so annotations and source content share coordinates.
 
 `PDFPageSource` reopens the PDF in eight-page windows and between extraction and reconstruction.
 Synchronous page work drains autoreleased objects. Image-only fallbacks skip unused formatting

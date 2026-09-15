@@ -28,7 +28,7 @@ see [corpus instructions](corpus.md). Large originals and output EPUBs remain gi
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 145 targeted checks on 40 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 151 targeted checks on 42 reviewed pages
 across eight books: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic and Blue Book. All source-page anchors must also remain complete and ordered, and semantic
 text must contain no image attachment placeholders.
@@ -206,3 +206,16 @@ source-page marker. Python negative controls reject multi-block overflow and unw
 This target is an EPUB packing policy, not a limit on individual source paragraphs, whole-document
 memory, or a promise that spine boundaries correspond to actual book chapters. See the
 [packing evidence](../measurements/spine-packing/record.md).
+
+## Native combined-line word boundaries
+
+`NativeLineBoundaryTests.swift` uses the checksum-pinned DGA cover's attributed title runs to
+require the missing space between “Guidelines” and “For Americans”. It tests both native baseline
+attribute keys, existing spaces/newlines, line-end hyphens, opposite inline scripts, unequal-size
+drop caps and ordinary same-baseline style runs. Ambiguous spaces inside a single run remain
+explicitly unchanged. The EPUB corpus contract requires the complete title on physical page 1
+and rejects its former concatenation, with the source image retained.
+
+Our Flag physical page 31 supplies a second native case with negative baseline offsets: its
+two-line “Burial Flag / for a Veteran” heading must preserve the word boundary and heading
+semantics. The source photograph remains; this does not accept its unrelated drop-cap order.

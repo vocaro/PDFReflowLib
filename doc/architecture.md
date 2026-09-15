@@ -59,7 +59,12 @@ can run without calling `EPUBWriter`, as the direct PDF-to-model test demonstrat
 `NativeTextReader` obtains PDFKit line selections, geometry and attributed runs; it immediately
 copies text and style flags into values. Explicit Core Text/Foundation baseline offsets preserve
 inline scripts; tiny positioning noise and full-line OCR offsets do not become script styles.
-Font size alone does not establish a superscript. Object-only selections are discarded before attributed-string access
+Font size alone does not establish a superscript. When adjacent similarly sized attributed runs
+jump by more than the inline-script range and one carries a full-line offset, native extraction
+inserts a missing word boundary. Existing whitespace and line-ending hyphens remain unchanged;
+drop caps with different sizes and opposite inline scripts do not supply this evidence. This
+handles PDFKit selections that concatenate multiple visual lines, not arbitrary within-line
+spacing or OCR spelling repair. Object-only selections are discarded before attributed-string access
 to avoid unnecessary PDFKit image-attachment decoding. `GraphicsReader` scans bounded Core Graphics paint
 operations and nested Form XObjects. It resolves shading resources and bounds gradient regions
 with conservative clipping, Form bounds and optional shading bounds. Core Graphics rasterizes

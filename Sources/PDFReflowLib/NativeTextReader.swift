@@ -51,6 +51,7 @@ enum NativeTextReader {
 
     static func inlineText(from attributed: NSAttributedString) -> InlineText {
         var runs: [InlineText.Element] = []
+        var previous: (offset: Double, size: Double, text: String)?
         attributed.enumerateAttributes(in: NSRange(location: 0, length: attributed.length)) { attributes, range, _ in
             let font = attributes[.font] as? PlatformFont
             let name = font?.fontName.lowercased() ?? ""
@@ -63,6 +64,20 @@ enum NativeTextReader {
             // change. Preserve that evidence instead of guessing from character offsets.
             let offset = (attributes[NSAttributedString.Key(kCTBaselineOffsetAttributeName as String)] as? NSNumber
                 ?? attributes[.baselineOffset] as? NSNumber)?.doubleValue ?? 0
+            let size = Double(font?.pointSize ?? 12)
+            // PDFKit can concatenate separate visual lines without a space while retaining
+            // their full-line baseline offsets. Require matching font sizes and a jump beyond
+            // the inline-script range; opposite superscripts/subscripts alone are not evidence.
+            if let previous, font != nil, size.isFinite, size > 0, offset.isFinite,
+               abs(size - previous.size) <= max(0.5, max(size, previous.size) * 0.1),
+               abs(offset - previous.offset) > max(size, previous.size) * 0.75,
+               (abs(offset) > size * 0.75 || abs(previous.offset) > previous.size * 0.75),
+               let last = previous.text.last, let first = run.first,
+               !last.isWhitespace, !first.isWhitespace, last != "-", last != "\u{00ad}" {
+                runs.append(.text(" ", []))
+            }
+            previous = font != nil && size.isFinite && size > 0 && offset.isFinite
+                ? (offset, size, run) : nil
             let tolerance = max(0.5, (font?.pointSize ?? 12) * 0.12)
             // Some PDFKit selections combine several OCR lines, represented as baseline
             // shifts of a full line height. Those are layout offsets, not inline scripts.

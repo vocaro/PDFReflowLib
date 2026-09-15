@@ -293,8 +293,18 @@
     {
       "id": "dga-2025-2030",
       "sourceSHA256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
-      "basis": "Page 2 source raster reviewed; protects letter paragraph order and imagery, not the known page-3 protein-column defect.",
+      "basis": "Page 2 source raster reviewed; protects letter paragraph order and imagery, not the known page-3 protein-column defect. Page 1 source title visually reviewed: the distinct Guidelines / For Americans lines must retain their word boundary; single-run label spacing and graphic ownership remain unqualified.",
       "pages": [
+        {
+          "page": 1,
+          "text": [
+            "Dietary Guidelines For Americans"
+          ],
+          "absentText": [
+            "GuidelinesFor Americans"
+          ],
+          "minimumImages": 1
+        },
         {
           "page": 2,
           "orderedText": [
@@ -314,7 +324,7 @@
     {
       "id": "gpo-our-flag-2003",
       "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
-      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification.",
+      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified.",
       "pages": [
         {
           "page": 27,
@@ -328,6 +338,16 @@
           "warningCodesAnyOf": [
             "imageRegion"
           ]
+        },
+        {
+          "page": 31,
+          "headings": [
+            "How to Obtain a Burial Flag for a Veteran"
+          ],
+          "absentText": [
+            "Burial Flagfor a Veteran"
+          ],
+          "minimumImages": 1
         },
         {
           "page": 33,

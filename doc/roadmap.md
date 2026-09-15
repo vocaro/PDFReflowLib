@@ -120,3 +120,10 @@ Serialization writes completed documents in one pass with ordered progress; six 
 and independent corpus size/navigation checks cover the policy. See [spine-packing evidence](../measurements/spine-packing/record.md).
 Validated chapter bookmarks, subdivision within oversized blocks, bounded reconstruction and
 full NOAA/device qualification remain open; this work does not close #15.
+
+Native combined-line extraction under #14 restores the missing DGA cover boundary between
+“Guidelines” and “For Americans” using full-line baseline evidence. The Our Flag page-31 heading supplies a second source case. Seven Swift tests protect
+both baseline keys, scripts, drop caps, existing whitespace and hyphens; the corpus title check
+runs with the full document. See [native-line-boundary evidence](../measurements/native-line-boundaries/record.md).
+Single-run label spacing (“Dair y”, “Ve getables”) and diagram-label ownership remain open;
+this bounded repair does not close #14.

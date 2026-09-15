@@ -64,7 +64,10 @@ with conservative clipping, Form bounds and optional shading bounds. Core Graphi
 the original region; the model stores an image asset, not an editable gradient. Unsafe or
 page-spanning bounds retain the page fallback. `OCRReader` uses Vision when policy requests it.
 `LayoutReconstructor` handles furniture, whitespace cuts, paragraphs, styled word joins and
-cross-page continuation. Attachment placeholders become word boundaries at native extraction,
+cross-page continuation. Graphic-region merging and whole-line expansion repeat until the bounds
+stabilize, so a merged crop cannot cut through a newly intersecting text line. Only text outside
+those regions reflows. Detached fractions without a connecting graphic/recognized equation remain
+an open grouping problem. Attachment placeholders become word boundaries at native extraction,
 with empty selections discarded before layout, vocabulary, OCR selection and coverage counting.
 
 Existing text over a graphic covering more than 75% of the page gets `unverifiedTextLayer` and

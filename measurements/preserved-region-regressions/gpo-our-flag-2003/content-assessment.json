@@ -1,0 +1,11 @@
+{
+  "case": "gpo-our-flag-2003",
+  "passed": true,
+  "reviewPages": [
+    27,
+    33
+  ],
+  "contentChecks": 9,
+  "errors": [],
+  "scope": "Reviewed positive text/order/image-presence checks; not full-book fidelity or image legibility qualification."
+}

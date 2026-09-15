@@ -1,0 +1,73 @@
+{
+  "baseCommit": "716c107083188c7fb6b537649d0756955bc1b732",
+  "files": [
+    {
+      "path": "Sources/PDFReflowLib/PDFReflowLibPipeline.swift",
+      "sha256": "1a0a5fc4ede8cdafba0b159419d4e36610bfba0569fa3234e7fe0ce448b6b5a3"
+    },
+    {
+      "path": "Sources/PDFReflowLib/PDFPageSource.swift",
+      "sha256": "9ab9814d52d392d462b35ee1ca2c2b4f8d2063b83b9bce5af135ffd8defa266e"
+    },
+    {
+      "path": "Sources/PDFReflowLib/DocumentModel.swift",
+      "sha256": "1555ae7445ad57937a84229740d8b97a9ee450e53053ee31366e56e8eb140523"
+    },
+    {
+      "path": "Sources/PDFReflowLib/EPUBWriter.swift",
+      "sha256": "98db5de8b57bafea45275a60c49992a41c32e50279125bb2a8a79e4cb7fd2de1"
+    },
+    {
+      "path": "Sources/PDFReflowLib/ReflowDocument.swift",
+      "sha256": "e4564984d07b573204793c6745c29c747a42de3c8ddb568aca988c906affdff1"
+    },
+    {
+      "path": "Sources/PDFReflowLib/GraphicsReader.swift",
+      "sha256": "bd5fbc22a58b94513553d8405b2727c62b2242ca5ceb325d1d42b8db0edce765"
+    },
+    {
+      "path": "Sources/PDFReflowLib/OCRReader.swift",
+      "sha256": "34127110eac8485165972b2b3e104845dc7bec163e9d499201459ddf8e640c26"
+    },
+    {
+      "path": "Sources/PDFReflowLib/NativeTextReader.swift",
+      "sha256": "6e0adaf80c80ffffe9c6365e598626e95ef001030b0bcc9323a559db72399477"
+    },
+    {
+      "path": "Sources/PDFReflowLib/PDFConverter.swift",
+      "sha256": "22bb90e73aa7aeda6e74b07240c41cfbaf8ad31bb9acbc91ada8a539a2af9693"
+    },
+    {
+      "path": "Sources/PDFReflowLib/LayoutReconstructor.swift",
+      "sha256": "5648985eae44cd9b294ad6860b368085165371a836c191f38dcd791649c26075"
+    },
+    {
+      "path": "Sources/PDFReflowLib/EPUBTextEncoder.swift",
+      "sha256": "c2225df427b2190b119f77875b44ad2743f9cc5224e30249bfa0953f20401bfb"
+    },
+    {
+      "path": "Sources/PDFReflowLib/ConversionTypes.swift",
+      "sha256": "c7fb8ccca1418286973d9ca023421d641b9622ae42b1d813d232b3b9634cd371"
+    },
+    {
+      "path": "Sources/PDFReflowLib/PageRasterizer.swift",
+      "sha256": "38e62784062128df317f902399d9b628ea227491bad1df311aaaa812fe62cd51"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/PreservedRegionTests.swift",
+      "sha256": "b3fb4a3df1a001ebaf96a770f702c9a9f2061d934c1693d5062a83ebbee21a3c"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/fixtures/algebra-17-layout.json",
+      "sha256": "ed1059410501488bd20bff627257b53de59e3046b758fd71a7b9c9bcc9594168"
+    },
+    {
+      "path": "tools/capture-algebra-layout.swift",
+      "sha256": "b8f8793e1e995e54c636b827afb18a6e8ff37cc0e4e607f744b9a5b78c8776d5"
+    },
+    {
+      "path": "corpus/regressions.json",
+      "sha256": "faa3b2544b59dcb256c8b33dbf7968aac914e8ec32aeedacd17dd6ef0fa2bcd1"
+    }
+  ]
+}

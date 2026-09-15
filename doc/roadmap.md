@@ -17,6 +17,8 @@ physical-device memory/performance remain unqualified.
 - Investigate [PDFKit attributed-text leaks](https://github.com/vocaro/PDFReflowLib/issues/4)
   without losing formatting; keep the
   fresh-process high-water-mark gate and establish physical iPhone/iPad memory budgets.
+- Group [detached fractions with their numerators, exponents and denominators](https://github.com/vocaro/PDFReflowLib/issues/20).
+  The synthetic reproducer runs as an explicit known failure, separate from passing fidelity controls.
 - Preserve [inline mathematical superscripts](https://github.com/vocaro/PDFReflowLib/issues/1):
   the Wallace algebra corpus exposes a flattened
   squared exponent on page 343 despite preserved displayed formulas. Add a targeted regression
@@ -74,3 +76,6 @@ physical-device memory/performance remain unqualified.
 
 Attachment-placeholder filtering, actionable source-layer warnings and correct whole-page raster
 scaling are covered by [regressions and source-derived measurements](../measurements/quality-and-raster-fixes/record.md).
+
+Merged-region clipping is covered by source-derived algebra geometry, formula/table pixel tests,
+and a complete eight-document rerun; see [preserved-region regressions](../measurements/preserved-region-regressions/record.md).

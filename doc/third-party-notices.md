@@ -54,3 +54,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Wallace algebra development fixture
+
+*Beginning and Intermediate Algebra*, copyright 2010 Tyler Wallace.
+[Source PDF](https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf),
+[author's site](http://wallace.ccfaculty.org/book/book.html),
+[Creative Commons Attribution 3.0 Unported](https://creativecommons.org/licenses/by/3.0/).
+
+`Tests/PDFReflowLibTests/fixtures/algebra-17-layout.json` contains extracted text and bounding
+geometry from physical page 17, transformed into a test-only JSON representation. Algebra source
+rasters and EPUB crop comparisons in `measurements/preserved-region-regressions/` are rendered
+and/or arranged review derivatives. These derivatives retain CC BY 3.0 attribution and are not
+relicensed under MIT. They are not resources of the shipped library target.

@@ -3,7 +3,9 @@
 `corpus/manifest.json` pins every external PDF by byte count and SHA-256. PDFs and generated
 EPUBs remain local; routine tests download nothing. Rights declarations, owner confirmations and attribution are recorded per source in the
 manifest. Retain the applicable attribution and license. The original six synthetic fixtures remain
-in `Tests/PDFReflowLibTests/fixtures` and run without any external documents.
+in `Tests/PDFReflowLibTests/fixtures` and run without any external documents. A small CC BY 3.0
+text/geometry extraction of Wallace algebra page 17 accompanies them for offline layout regression;
+its source PDF remains in the ignored cache. See [regression testing](regression-testing.md).
 
 Fetch all registered originals explicitly with Python 3.11+:
 

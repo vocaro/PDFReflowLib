@@ -1,0 +1,300 @@
+import CoreGraphics
+import Foundation
+import ImageIO
+import PDFKit
+import Testing
+import ZIPFoundation
+@testable import PDFReflowLib
+
+// Original fixtures isolate the spatial notation seen in algebra and statistical tables.
+// Colors identify independent glyph groups; expectations come from these PDF coordinates,
+// never from a golden image emitted by the converter.
+private func regionPDF(table: Bool, separatedFraction: Bool = false) -> Data {
+    let drawing: String
+    if table {
+        drawing = """
+        0 G 1 w 80 180 240 150 re S
+        200 180 m 200 330 l S
+        80 230 m 320 230 l S 80 280 m 320 280 l S
+        1 0 0 rg BT /F1 14 Tf 100 300 Td (36) Tj ET
+        1 0 0 rg BT /F1 14 Tf 220 300 Td (84) Tj ET
+        0 1 0 rg BT /F1 14 Tf 100 250 Td (9) Tj ET
+        0 1 0 rg BT /F1 14 Tf 220 250 Td (21) Tj ET
+        0 0 1 rg BT /F1 14 Tf 100 200 Td (3) Tj ET
+        0 0 1 rg BT /F1 14 Tf 220 200 Td (7) Tj ET
+        """
+    } else {
+        drawing = """
+        0 g BT /F1 12 Tf \(separatedFraction ? 100 : 140) 247 Td (x =) Tj ET
+        0 G 1 w 160 250 m 200 250 l S
+        1 0 0 rg BT /F1 12 Tf 165 257 Td (36) Tj ET
+        0 1 0 rg BT /F1 8 Tf 181 265 Td (2) Tj ET
+        0 0 1 rg BT /F1 12 Tf 165 232 Td (84) Tj ET
+        """
+    }
+    return testPDF(objects: [
+        "<< /Type /Catalog /Pages 2 0 R >>",
+        "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 400 500] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>",
+        testPDFStream("""
+        0 g BT /F1 12 Tf 40 420 Td (Read the worked example before continuing.) Tj ET
+        \(drawing)
+        0 g BT /F1 12 Tf 40 80 Td (The following paragraph must remain reflowable.) Tj ET
+        """),
+        "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+    ])
+}
+
+private struct RegionPixels: CustomStringConvertible {
+    var description: String { "\(width)×\(height) raster" }
+    var width: Int
+    var height: Int
+    var bytes: [UInt8]
+
+    init(_ data: Data) throws {
+        let source = try #require(CGImageSourceCreateWithData(data as CFData, nil))
+        let image = try #require(CGImageSourceCreateImageAtIndex(source, 0, nil))
+        width = image.width; height = image.height
+        var pixels = [UInt8](repeating: 0, count: width * height * 4)
+        try pixels.withUnsafeMutableBytes { buffer in
+            let context = try #require(CGContext(data: buffer.baseAddress, width: image.width,
+                height: image.height, bitsPerComponent: 8, bytesPerRow: image.width * 4,
+                space: CGColorSpaceCreateDeviceRGB(),
+                bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
+            context.draw(image, in: CGRect(x: 0, y: 0, width: image.width, height: image.height))
+        }
+        bytes = pixels
+    }
+
+    // Top-left raster coordinates. Saturated interiors avoid antialiasing/platform noise.
+    func bounds(channel: Int, leftHalf: Bool? = nil) -> CGRect? {
+        var result = CGRect.null
+        for y in 0..<height {
+            for x in 0..<width {
+                if let leftHalf, (x < width / 2) != leftHalf { continue }
+                let i = (y * width + x) * 4
+                if bytes[i + channel] > 200 && (0..<3).filter({ $0 != channel }).allSatisfy({ bytes[i + $0] < 60 }) {
+                    result = result.union(CGRect(x: x, y: y, width: 1, height: 1))
+                }
+            }
+        }
+        return result.isNull ? nil : result
+    }
+}
+
+private func convertRegion(table: Bool, directory: URL, dpi: Double, separatedFraction: Bool = false) async throws -> (ConversionReport, String, [Data]) {
+    let source = directory.appendingPathComponent("source.pdf")
+    let output = directory.appendingPathComponent("book.epub")
+    try regionPDF(table: table, separatedFraction: separatedFraction).write(to: source)
+    var options = ConversionOptions(); options.ocr = .never; options.rasterDPI = dpi
+    let report = try await PDFConverter().convert(from: source, to: output, options: options)
+    let archive = try Archive(url: output, accessMode: .read)
+    func read(_ path: String) throws -> Data {
+        let entry = try #require(archive[path]); var data = Data()
+        _ = try archive.extract(entry) { data += $0 }
+        return data
+    }
+    let html = String(decoding: try read("EPUB/chapter-1.xhtml"), as: UTF8.self)
+    let images = try archive.filter { $0.path.hasSuffix(".png") }.map { try read($0.path) }
+    return (report, html, images)
+}
+
+@Test(arguments: [72.0, 144.0]) func displayedFractionAndExponentSurviveInEPUBPixels(dpi: Double) async throws {
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    let (report, html, images) = try await convertRegion(table: false, directory: dir, dpi: dpi)
+    #expect(report.reflowedPageCount == 1)
+    #expect(report.recognizedPageCount == 0)
+    #expect(!report.warnings.contains { $0.code == .pageImageFallback })
+    #expect(report.warnings.contains { $0.code == .imageRegion && $0.page == 1 })
+    #expect(html.contains("Read the worked example before continuing."))
+    #expect(html.contains("The following paragraph must remain reflowable."))
+    #expect(!html.contains("x =")) // The spatial expression must not also appear flattened as prose.
+    #expect(images.count == 1)
+    let pixels = try RegionPixels(#require(images.first))
+    let numerator = try #require(pixels.bounds(channel: 0))
+    let exponent = try #require(pixels.bounds(channel: 1))
+    let denominator = try #require(pixels.bounds(channel: 2))
+    let scale = dpi / 72
+    #expect(exponent.maxY < numerator.maxY)
+    #expect(exponent.minX > numerator.maxX)
+    #expect(exponent.height < numerator.height)
+    #expect(numerator.maxY < denominator.minY)
+    #expect(abs(numerator.minX - denominator.minX) <= scale * 2)
+    #expect(abs(denominator.minY - numerator.minY - 25 * scale) <= scale * 2)
+    // A fraction bar must span the gap; a PNG containing only the colored glyphs is insufficient.
+    var barRows = 0
+    for y in Int(numerator.maxY)..<Int(denominator.minY) {
+        let dark = (0..<pixels.width).filter { x in
+            let i = (y * pixels.width + x) * 4
+            return pixels.bytes[i..<i + 3].allSatisfy { $0 < 80 }
+        }
+        if dark.count >= Int(38 * scale) { barRows += 1 }
+    }
+    #expect(barRows >= 1)
+    #expect(pixels.width < Int(130 * scale) && pixels.height < Int(90 * scale))
+}
+
+@Test(arguments: [72.0, 144.0]) func ruledTableKeepsEveryCellInItsRowAndColumn(dpi: Double) async throws {
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    let (report, html, images) = try await convertRegion(table: true, directory: dir, dpi: dpi)
+    #expect(report.reflowedPageCount == 1 && report.recognizedPageCount == 0)
+    #expect(!report.warnings.contains { $0.code == .pageImageFallback })
+    #expect(images.count == 1)
+    let imagePosition = try #require(html.range(of: "<img "))
+    #expect(try #require(html.range(of: "Read the worked example")).lowerBound < imagePosition.lowerBound)
+    #expect(try #require(html.range(of: "The following paragraph")).lowerBound > imagePosition.lowerBound)
+    for cell in ["36", "84", "9", "21", "3", "7"] {
+        #expect(!html.contains(">\(cell)<"))
+    }
+    let pixels = try RegionPixels(#require(images.first))
+    let scale = dpi / 72
+    #expect(abs(Double(pixels.width) - 244 * scale) <= 2)
+    #expect(abs(Double(pixels.height) - 154 * scale) <= 2)
+    var priorY: CGFloat?
+    for color in 0..<3 {
+        let left = try #require(pixels.bounds(channel: color, leftHalf: true))
+        let right = try #require(pixels.bounds(channel: color, leftHalf: false))
+        #expect(abs(left.minY - right.minY) <= scale * 2)
+        #expect(abs(right.minX - left.minX - 120 * scale) <= scale * 2)
+        #expect(left.width > 4 * scale && left.height > 7 * scale)
+        #expect(right.width > 4 * scale && right.height > 7 * scale)
+        if let priorY { #expect(abs(left.minY - priorY - 50 * scale) <= scale * 2) }
+        priorY = left.minY
+    }
+}
+
+@Test func equationRecognitionDoesNotRasterizeCodeOrOrdinaryProse() {
+    let bounds = CGRect(x: 0, y: 0, width: 400, height: 500)
+    for text in ["value = 42", "if a <= b:"] {
+        let page = PageContent(number: 1, bounds: bounds, lines: [
+            TextLine(text: text, rect: CGRect(x: 40, y: 300, width: 200, height: 12), fontSize: 12, monospaced: true),
+        ], graphics: [])
+        #expect(LayoutReconstructor.graphicsWithLabels(page).isEmpty)
+        var warnings: [ConversionWarning] = []
+        #expect(LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
+            .map(\.text) == [text])
+    }
+    let page = PageContent(number: 1, bounds: bounds, lines: [
+        TextLine(text: "Example 15. Reduce each fraction.", rect: CGRect(x: 40, y: 300, width: 220, height: 12),
+            fontSize: 12, monospaced: false),
+    ], graphics: [])
+    #expect(LayoutReconstructor.graphicsWithLabels(page).isEmpty)
+}
+
+@Test func formulaDetectionPreservesUnruledExpressionsAndWholeIntersectingLabels() throws {
+    for expression in ["a = b + c", "√25", "x ≤ 3", "∫ f(x)"] {
+        let expressionRect = CGRect(x: 100, y: 250, width: 90, height: 12)
+        let labelRect = CGRect(x: 185, y: 251, width: 50, height: 12)
+        let bodyRect = CGRect(x: 40, y: 100, width: 280, height: 12)
+        let page = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 400, height: 500), lines: [
+            TextLine(text: expression, rect: expressionRect, fontSize: 12, monospaced: false),
+            TextLine(text: "(15)", rect: labelRect, fontSize: 12, monospaced: false),
+            TextLine(text: "Continue with the next example.", rect: bodyRect, fontSize: 12, monospaced: false),
+        ], graphics: [])
+        let regions = LayoutReconstructor.graphicsWithLabels(page)
+        #expect(regions.count == 1)
+        let region = try #require(regions.first)
+        #expect(region.contains(expressionRect) && region.contains(labelRect))
+        #expect(!region.intersects(bodyRect))
+    }
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/20"))
+func disconnectedFractionRemainsAnExplicitKnownFidelityFailure() async throws {
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    let (_, _, images) = try await convertRegion(table: false, directory: dir, dpi: 144, separatedFraction: true)
+    let rasters = try images.map(RegionPixels.init)
+    // Only this fidelity predicate is expected to fail. Conversion/PNG decoding errors still fail
+    // normally. An unexpected fix also fails, prompting removal of the known-issue wrapper.
+    let intactFraction = rasters.contains { image in
+        (0..<3).allSatisfy { image.bounds(channel: $0) != nil }
+    }
+    withKnownIssue("A detached fraction bar is not grouped with its numerator, exponent and denominator.") {
+        #expect(intactFraction)
+    }
+}
+
+@Test func mergingGraphicsCannotClipNewlyIntersectingLabels() throws {
+    let bounds = CGRect(x: 0, y: 0, width: 400, height: 500)
+    let first = CGRect(x: 100, y: 250, width: 20, height: 20)
+    let second = CGRect(x: 122, y: 240, width: 20, height: 20)
+    // The label intersects only the bounding box of the union, not either input rectangle.
+    let label = CGRect(x: 130, y: 263, width: 45, height: 12)
+    let nearby = CGRect(x: 174, y: 263, width: 20, height: 12)
+    for graphics in [[first, second], [second, first]] {
+        for rects in [[label, nearby], [nearby, label]] {
+            let page = PageContent(number: 1, bounds: bounds, lines: rects.map {
+                TextLine(text: "label", rect: $0, fontSize: 12, monospaced: false)
+            }, graphics: graphics)
+            let regions = LayoutReconstructor.graphicsWithLabels(page)
+            #expect(regions.count == 1)
+            let region = try #require(regions.first)
+            #expect(region.contains(label) && region.contains(nearby))
+            #expect(region.contains(first) && region.contains(second))
+        }
+    }
+}
+
+@Test func regionGrowthStaysInsidePageAndLeavesDistantTextSelectable() throws {
+    let bounds = CGRect(x: 0, y: 0, width: 400, height: 500)
+    let edge = TextLine(text: "Edge label", rect: CGRect(x: 390, y: 300, width: 30, height: 12),
+        fontSize: 12, monospaced: false)
+    let prose = TextLine(text: "Unrelated prose remains selectable.",
+        rect: CGRect(x: 40, y: 100, width: 250, height: 12), fontSize: 12, monospaced: false)
+    let page = PageContent(number: 1, bounds: bounds, lines: [edge, prose],
+        graphics: [CGRect(x: 380, y: 295, width: 20, height: 30)])
+    let regions = LayoutReconstructor.graphicsWithLabels(page)
+    #expect(regions.count == 1)
+    let region = try #require(regions.first)
+    #expect(bounds.contains(region))
+    #expect(region.contains(edge.rect.intersection(bounds)))
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [(region, "figure")], vocabulary: [], warnings: &warnings)
+    #expect(blocks.filter(\.hasReflowedText).map(\.text) == [prose.text])
+}
+
+@Test func algebraExerciseLayoutPreservesWholeNumberedExpressions() throws {
+    struct Fixture: Decodable {
+        struct Line: Decodable {
+            var text: String
+            var rect: [Double]
+            var fontSize: Double
+            var monospaced: Bool
+        }
+        var sourceSHA256: String
+        var page: Int
+        var bounds: [Double]
+        var lines: [Line]
+        var graphics: [[Double]]
+    }
+    let url = Bundle.module.resourceURL!.appendingPathComponent("fixtures/algebra-17-layout.json")
+    let fixture = try JSONDecoder().decode(Fixture.self, from: Data(contentsOf: url))
+    #expect(fixture.sourceSHA256 == "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678")
+    #expect(fixture.page == 17)
+    func rect(_ values: [Double]) throws -> CGRect {
+        try #require(values.count == 4)
+        return CGRect(x: values[0], y: values[1], width: values[2], height: values[3])
+    }
+    let page = PageContent(number: fixture.page, bounds: try rect(fixture.bounds), lines: try fixture.lines.map {
+        TextLine(text: $0.text, rect: try rect($0.rect), fontSize: $0.fontSize, monospaced: $0.monospaced)
+    }, graphics: try fixture.graphics.map(rect))
+    let regions = LayoutReconstructor.graphicsWithLabels(page)
+    try #require(!regions.isEmpty)
+    for line in page.lines {
+        for region in regions where region.intersects(line.rect) {
+            #expect(region.contains(line.rect.intersection(page.bounds)), "Partially clipped source text: \(line.text)")
+        }
+    }
+    // Source review identifies these three exercise prefixes as part of their expressions,
+    // not independent prose. Previous crops left them detached from their fractions.
+    for prefix in ["67)", "71)", "60)"] {
+        let line = try #require(page.lines.first { $0.text.hasPrefix(prefix) })
+        #expect(regions.contains { $0.contains(line.rect) })
+    }
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: regions.enumerated().map { ($0.element, "region-\($0.offset)") },
+        vocabulary: [], warnings: &warnings)
+    for instruction in ["Find each quotient.", "Evaluate each expression."] {
+        #expect(blocks.contains { $0.hasReflowedText && $0.text == instruction })
+    }
+}

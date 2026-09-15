@@ -1,0 +1,12 @@
+{
+  "case": "cdc-zombie-pandemic-2011",
+  "passed": true,
+  "reviewPages": [
+    5,
+    13,
+    39
+  ],
+  "contentChecks": 10,
+  "errors": [],
+  "scope": "Reviewed positive text/order/image-presence checks; not full-book fidelity or image legibility qualification."
+}

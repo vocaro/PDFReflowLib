@@ -231,6 +231,7 @@ python3 tools/view_epub.py /path/to/output.epub
 
 The library, original test fixtures and development tools are distributed under the
 [MIT license](LICENSE). [Third-party notices](doc/third-party-notices.md) cover dependencies.
+The bundled algebra text/geometry test fixture retains CC BY 3.0 attribution in those notices.
 Separately supplied corpus documents retain their own rights status; see [corpus guide](doc/corpus.md).
 
 `PDFReflowLib` is the package, library product and Swift module name. The command-line executable

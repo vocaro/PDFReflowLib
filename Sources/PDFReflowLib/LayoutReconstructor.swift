@@ -52,18 +52,26 @@ enum LayoutReconstructor {
             let equation = line.text.contains("=") && line.text.split(whereSeparator: \.isWhitespace).count <= 12
             return mathSymbols || equation
         }.map { $0.rect.insetBy(dx: -4, dy: -8) }
-        var regions = page.graphics + formulas
-        for i in regions.indices {
-            var prior = CGRect.null
-            while prior != regions[i] {
-                prior = regions[i]
-                for line in page.lines where regions[i].intersects(line.rect) {
-                    regions[i] = regions[i].union(line.rect.insetBy(dx: -2, dy: -2))
+        var regions = clusters(page.graphics + formulas, distance: 3)
+        var previous: [CGRect] = []
+        while regions != previous {
+            previous = regions
+            for i in regions.indices {
+                var prior = CGRect.null
+                while prior != regions[i] {
+                    prior = regions[i]
+                    for line in page.lines where regions[i].intersects(line.rect) {
+                        regions[i] = regions[i].union(line.rect.insetBy(dx: -2, dy: -2))
+                    }
                 }
+                regions[i] = regions[i].intersection(page.bounds)
             }
-            regions[i] = regions[i].intersection(page.bounds)
+            // A merged bounding rectangle can newly intersect a label that neither component
+            // touched. Expand again before rasterizing, or its text is removed from prose while
+            // the image clips part of it (for example, a raised exponent beside a fraction).
+            regions = clusters(regions, distance: 3)
         }
-        return clusters(regions, distance: 3)
+        return regions
     }
 
     struct Element {

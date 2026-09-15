@@ -8,7 +8,9 @@ A valid EPUB can still contain incorrect text, wrong reading order or unreadable
 
 - `scripts/check-all.sh --fast`: Swift extraction/model/raster/EPUB tests, Python tool tests,
   and six small fixture conversions. No external PDFs are required. The raster tests inspect
-  pixels, including crop origins, rotations, annotations and resource ceilings.
+  pixels, including crop origins, rotations, annotations and resource ceilings. Preserved-region
+  tests also inspect fraction bars, raised exponents and all six cells of a ruled table in actual
+  EPUB images at 72/144 DPI, with surrounding-prose and code controls.
 - `scripts/check-all.sh --corpus`: the same checks plus eight complete PDF conversions,
   sequentially, with EPUBCheck, monotonic progress, pinned source identities, memory budgets
   and reviewed page-specific content contracts. All selected cached sources and EPUBCheck
@@ -68,3 +70,32 @@ The manifest consistency test requires every corpus document to be covered or ex
 
 [Issue-fix measurements](../measurements/quality-and-raster-fixes/record.md) and the
 [cross-corpus content run](../measurements/cross-corpus-regressions/record.md) document current evidence.
+
+## Preserved-region fixtures and known failures
+
+`PreservedRegionTests.swift` includes original in-memory PDFs and a small, attributed extraction
+of algebra page 17. The JSON fixture contains source text and geometry, not the original PDF or
+font programs. It runs offline on both platforms and checks whole-line crop containment, exercise
+prefix ownership and selectable instructions. It is an internal test schema, not a public
+intermediate-format contract. See [evidence and negative controls](../measurements/preserved-region-regressions/record.md).
+
+The detached-fraction test executes under `withKnownIssue` for [#20](https://github.com/vocaro/PDFReflowLib/issues/20).
+Only its intact-fraction assertion is expected to fail; conversion/decoding errors remain ordinary
+failures. Swift Testing reports the known issue explicitly. An unexpected fix fails the test until
+the wrapper is removed. Do not count this case as qualified fidelity or wrap a whole test in a
+blanket expected-failure handler.
+
+To recapture the algebra geometry with full Xcode selected:
+
+```sh
+swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/ConversionTypes.swift \
+  Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
+  Sources/PDFReflowLib/GraphicsReader.swift tools/capture-algebra-layout.swift \
+  -o /tmp/capture-algebra-layout
+/tmp/capture-algebra-layout corpus/cache/Beginning_and_Intermediate_Algebra.pdf /tmp/algebra-17-layout.json
+```
+
+The capture tool rejects any source checksum other than the pinned book. Review source and
+geometry changes before replacing the bundled fixture; never regenerate it merely to make a test
+pass. The extracted text remains Tyler Wallace's CC BY 3.0 material, with attribution in the
+fixture and [third-party notices](third-party-notices.md).

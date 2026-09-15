@@ -1,0 +1,82 @@
+[
+  {
+    "converterSHA256": "a0b41e852b61ffc49e5b0196d7256605465ee45ff5cbdeed08d887394540fce8",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "options": "library defaults",
+    "conversionSeconds": 38.80203262499708,
+    "converterPeakRSSBytes": 820133888,
+    "outputBytes": 271283201,
+    "runPassed": true,
+    "case": "faa-phak-8083-25c"
+  },
+  {
+    "converterSHA256": "a0b41e852b61ffc49e5b0196d7256605465ee45ff5cbdeed08d887394540fce8",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "options": "library defaults",
+    "conversionSeconds": 8.352630916997441,
+    "converterPeakRSSBytes": 80543744,
+    "outputBytes": 46023006,
+    "runPassed": true,
+    "case": "wallace-algebra-2010"
+  },
+  {
+    "converterSHA256": "a0b41e852b61ffc49e5b0196d7256605465ee45ff5cbdeed08d887394540fce8",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "options": "library defaults",
+    "conversionSeconds": 10.236939874994277,
+    "converterPeakRSSBytes": 121503744,
+    "outputBytes": 67662422,
+    "runPassed": true,
+    "case": "gpo-911-2004"
+  },
+  {
+    "converterSHA256": "a0b41e852b61ffc49e5b0196d7256605465ee45ff5cbdeed08d887394540fce8",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "options": "library defaults",
+    "conversionSeconds": 9.796673167002155,
+    "converterPeakRSSBytes": 262914048,
+    "outputBytes": 72934868,
+    "runPassed": true,
+    "case": "fed-explained-2021"
+  },
+  {
+    "converterSHA256": "a0b41e852b61ffc49e5b0196d7256605465ee45ff5cbdeed08d887394540fce8",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "options": "library defaults",
+    "conversionSeconds": 0.7319150830007857,
+    "converterPeakRSSBytes": 105021440,
+    "outputBytes": 7848684,
+    "runPassed": true,
+    "case": "dga-2025-2030"
+  },
+  {
+    "converterSHA256": "a0b41e852b61ffc49e5b0196d7256605465ee45ff5cbdeed08d887394540fce8",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "options": "library defaults",
+    "conversionSeconds": 1.2508053749988903,
+    "converterPeakRSSBytes": 96845824,
+    "outputBytes": 13295814,
+    "runPassed": true,
+    "case": "gpo-our-flag-2003"
+  },
+  {
+    "converterSHA256": "a0b41e852b61ffc49e5b0196d7256605465ee45ff5cbdeed08d887394540fce8",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "options": "library defaults",
+    "conversionSeconds": 9.069754208001541,
+    "converterPeakRSSBytes": 398032896,
+    "outputBytes": 149716846,
+    "runPassed": true,
+    "case": "cdc-zombie-pandemic-2011"
+  },
+  {
+    "converterSHA256": "a0b41e852b61ffc49e5b0196d7256605465ee45ff5cbdeed08d887394540fce8",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "options": "library defaults",
+    "conversionSeconds": 58.02812962499593,
+    "converterPeakRSSBytes": 365985792,
+    "outputBytes": 213824595,
+    "runPassed": true,
+    "case": "cia-blue-book-14-1955"
+  }
+]

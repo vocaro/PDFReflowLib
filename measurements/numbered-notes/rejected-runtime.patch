@@ -1,0 +1,152 @@
+diff --git a/Sources/PDFReflowLib/LayoutReconstructor.swift b/Sources/PDFReflowLib/LayoutReconstructor.swift
+index c8ec3c3..aa74ef8 100644
+--- a/Sources/PDFReflowLib/LayoutReconstructor.swift
++++ b/Sources/PDFReflowLib/LayoutReconstructor.swift
+@@ -113,7 +113,7 @@ enum LayoutReconstructor {
+     }
+ 
+     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
+-                       warnings: inout [ConversionWarning]) -> [ReflowBlock] {
++                       warnings: inout [ConversionWarning], numberedNotePage: Bool = false) -> [ReflowBlock] {
+         let body = max(4, bodySize(page.lines))
+         let lines = page.lines.filter { line in !images.contains { $0.0.intersects(line.rect) } }
+         // Preserve existing modest-size headings, but reject candidates within 10% of the
+@@ -122,7 +122,13 @@ enum LayoutReconstructor {
+         let spatial = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
+             + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: body)
+         let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
++        let noteGroups = NumberedNoteDetector.groups(in: elements, page: page, headingEvidence: numberedNotePage)
+         var result: [ReflowBlock] = []
++        var note: (Int, InlineText)?
++        func flushNote() {
++            if let (_, text) = note { result.append(ReflowBlock(content: .paragraph(text), page: page.number)) }
++            note = nil
++        }
+         var tagged: (TextStructure, InlineText)?
+         func flushTagged() {
+             guard let (tag, text) = tagged else { return }
+@@ -141,7 +147,19 @@ enum LayoutReconstructor {
+             paragraph = InlineText()
+             previous = nil
+         }
+-        for element in elements {
++        for (index, element) in elements.enumerated() {
++            if let group = noteGroups[index], let line = element.line {
++                flushTagged()
++                flush()
++                codeOrigin = nil
++                if note?.0 != group { flushNote() }
++                if let current = note {
++                    note = (group, join(current.1, line.content, vocabulary: vocabulary,
++                        page: page.number, warnings: &warnings))
++                } else { note = (group, line.content) }
++                continue
++            }
++            flushNote()
+             if let path = element.image {
+                 flushTagged()
+                 flush()
+@@ -199,6 +217,7 @@ enum LayoutReconstructor {
+                 previous = line
+             }
+         }
++        flushNote()
+         flushTagged()
+         flush()
+         return result
+diff --git a/Sources/PDFReflowLib/PDFReflowLibPipeline.swift b/Sources/PDFReflowLib/PDFReflowLibPipeline.swift
+index 422a89a..79887ac 100644
+--- a/Sources/PDFReflowLib/PDFReflowLibPipeline.swift
++++ b/Sources/PDFReflowLib/PDFReflowLibPipeline.swift
+@@ -139,6 +139,8 @@ enum PDFReflowLibPipeline {
+         }
+         document.releaseCachedPages()
+         let vocabulary = LayoutReconstructor.vocabulary(in: pages)
++        // Retain heading evidence before removing furniture, after all extraction/OCR work.
++        let numberedNotePages = Set(pages.filter { NumberedNoteDetector.hasHeading(on: $0) }.map(\.number))
+         if options.removeRepeatedHeadersAndFooters { warnings += LayoutReconstructor.stripFurniture(&pages) }
+         var blocks: [ReflowBlock] = [], assets: [ReflowDocument.Asset] = []
+         var reflowed = 0
+@@ -176,7 +178,8 @@ enum PDFReflowLibPipeline {
+                             message: "Graphical regions retain source appearance as images; their internal text does not reflow."))
+                     }
+                     pageBlocks = LayoutReconstructor.blocks(page: content, images: images,
+-                        vocabulary: vocabulary, warnings: &warnings)
++                        vocabulary: vocabulary, warnings: &warnings,
++                        numberedNotePage: numberedNotePages.contains(content.number))
+                     if pageBlocks.contains(where: \.hasReflowedText) {
+                         reflowed += 1
+                     }
+diff --git a/Sources/PDFReflowLib/NumberedNoteDetector.swift b/Sources/PDFReflowLib/NumberedNoteDetector.swift
+new file mode 100644
+index 0000000..1cbdf64
+--- /dev/null
++++ b/Sources/PDFReflowLib/NumberedNoteDetector.swift
+@@ -0,0 +1,67 @@
++import Foundation
++
++/// Bounded native endnote layout, not a reference-to-note ownership detector.
++enum NumberedNoteDetector {
++    static func hasHeading(on page: PageContent) -> Bool {
++        guard !page.recognized, !page.hasSyntheticTextStyle, !page.requiresPageImage else { return false }
++        return page.lines.contains { line in
++            guard line.rect.midY >= page.bounds.minY + page.bounds.height * 0.9 else { return false }
++            var words = line.text.split(whereSeparator: \.isWhitespace)
++            func number(_ text: Substring) -> Bool {
++                !text.isEmpty && text.utf8.allSatisfy { (48...57).contains($0) }
++            }
++            if words.first.map(number) == true { words.removeFirst() }
++            guard (4...5).contains(words.count), words[0] == "NOTES", words[1] == "TO",
++                  words[2] == "CHAPTER", number(words[3]), Int(words[3]).map({ $0 > 0 }) == true else { return false }
++            return words.count == 4 || number(words[4])
++        }
++    }
++
++    /// Element indices map to a note's first element. Refuse the page if any later content
++    /// breaks the sequence, typography, close line spacing or first-line indentation pattern.
++    /// Preceding content may be a previous page's continuation and remains spatial prose.
++    static func groups(in elements: [LayoutReconstructor.Element], page: PageContent,
++                       headingEvidence: Bool = false) -> [Int: Int] {
++        guard !page.recognized, !page.hasSyntheticTextStyle, !page.requiresPageImage,
++              headingEvidence || hasHeading(on: page) else { return [:] }
++        func number(_ line: TextLine) -> Int? {
++            guard line.text.range(of: "^[1-9][0-9]{0,3}\\.\\s*\\p{L}", options: .regularExpression) != nil,
++                  let end = line.text.firstIndex(of: ".") else { return nil }
++            return Int(line.text[..<end])
++        }
++        guard let first = elements.firstIndex(where: { $0.line.flatMap(number) != nil }),
++              let initial = elements[first].line else { return [:] }
++        let size = initial.fontSize
++        guard size.isFinite, size >= 4 else { return [:] }
++        var result: [Int: Int] = [:]
++        var start = first, expected = number(initial)!, count = 0
++        var continuationX: CGFloat?
++        var previous: TextLine?
++        for index in first..<elements.count {
++            guard let line = elements[index].line, !line.monospaced, line.structure == nil,
++                  abs(line.fontSize - size) <= size * 0.1 else { return [:] }
++            if let previous {
++                let gap = previous.rect.minY - line.rect.maxY
++                guard gap >= -size * 0.2, gap <= size * 0.8 else { return [:] }
++            }
++            if abs(line.rect.minX - initial.rect.minX) <= size * 0.25, let value = number(line) {
++                guard value == expected,
++                      line.text.filter(\.isLetter).count >= 10 else { return [:] }
++                expected += 1
++                count += 1
++                start = index
++            } else {
++                let indent = initial.rect.minX - line.rect.minX
++                guard let previous, previous.wraps != false,
++                      indent >= size * 0.8, indent <= size * 3,
++                      previous.rect.width >= size * 12,
++                      line.text.range(of: "^(?:[•*−-]|[A-Za-z][.)])\\s", options: .regularExpression) == nil,
++                      continuationX.map({ abs($0 - line.rect.minX) <= size * 0.25 }) ?? true else { return [:] }
++                continuationX = line.rect.minX
++            }
++            result[index] = start
++            previous = line
++        }
++        return count >= 3 && continuationX != nil ? result : [:]
++    }
++}

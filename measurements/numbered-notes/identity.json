@@ -1,0 +1,9 @@
+{
+  "baselineRevision": "0eba8d4",
+  "collectorSHA256": "c6992d522d7e3e9b6f20b63c3cff23fc6ed761f63251d21520f6dcf365b5204a",
+  "rejectedRefinementPatchSHA256": "028ea8b8e5acd12055f3a51667f538cb90c17125f1555838193ed8a65dc26df9",
+  "rejectedTestsSHA256": "f8f3eebac77a3fe18f58d18556ceff3073f22631d1474197bf9e8ac9d3d4ca0b",
+  "captureToolSourceSHA256": "8f84ff2535565923d4edb0a4f9b28697e4c39f45eb61131a4bfebf724fc17fa0",
+  "retainedContractSHA256": "e20d1b2d8b1c5da59e7abff8f8dc5fb63ab308609ba3f37c02f67a24b2b0d7d1",
+  "note": "Candidate receipts predate the runtime revert; the rejected-runtime patch is the subsequent extraction-untouched refinement."
+}

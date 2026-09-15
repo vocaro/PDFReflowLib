@@ -187,3 +187,11 @@ Native-reader and public-conversion regressions require cancellation and staging
 another extraction still holds the lock, with a surviving waiter and styled-text controls.
 See [contention cancellation evidence](../measurements/extraction-cancellation/record.md).
 This does not interrupt a PDFKit call already executing or qualify physical-device latency.
+
+The [endnote investigation](../measurements/numbered-notes/record.md) under #11 adds native and
+full-corpus controls for the already-supported raised reference 4 on 9/11 page 20. A bounded
+note-paragraph prototype passed targeted and full-corpus checks but was rejected after unrelated
+rendering/OCR differences appeared in strict output comparisons; [#26](https://github.com/vocaro/PDFReflowLib/issues/26)
+tracks that separate reproducibility investigation. No note-grouping runtime change is retained.
+Number/text association, multi-paragraph and cross-page notes, chapter-scoped links and return
+navigation remain open under #11.

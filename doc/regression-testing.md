@@ -229,6 +229,15 @@ This target is an EPUB packing policy, not a limit on individual source paragrap
 memory, or a promise that spine boundaries correspond to actual book chapters. See the
 [packing evidence](../measurements/spine-packing/record.md).
 
+## Endnote reference typography
+
+`EndnoteMarkerTests.swift` protects the native superscript 4 after `7:45.` on 9/11 page 20.
+The full-corpus script assertion also checks its preceding and following source context.
+This is coverage for the existing baseline-offset repair, not a new link or note-ownership feature.
+The [endnote investigation](../measurements/numbered-notes/record.md) retains a rejected numbered-
+paragraph prototype and its failing baseline tests outside the active test target. Note grouping
+and chapter-scoped reference relationships remain open under #11.
+
 ## Native combined-line word boundaries
 
 `NativeLineBoundaryTests.swift` uses the checksum-pinned DGA cover's attributed title runs to

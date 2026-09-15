@@ -1,0 +1,11 @@
+{
+  "case": "gpo-911-2004",
+  "passed": true,
+  "reviewPages": [
+    15,
+    19
+  ],
+  "contentChecks": 2,
+  "errors": [],
+  "scope": "Reviewed positive text/order/image-presence checks; not full-book fidelity or image legibility qualification."
+}

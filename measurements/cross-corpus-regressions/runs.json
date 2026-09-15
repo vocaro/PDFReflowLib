@@ -1,0 +1,132 @@
+[
+  {
+    "case": "faa-phak-8083-25c",
+    "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+    "pages": 522,
+    "converterSHA256": "5275579f7a238cf38ebc591b74315f37b1cf9256a1ff7fed826a2951aba3dc96",
+    "seconds": 73.0440118750048,
+    "peakRSSBytes": 756482048,
+    "memoryLimitBytes": 1342177280,
+    "outputBytes": 271200759,
+    "reviewPages": [
+      16,
+      121
+    ],
+    "contentChecks": 6,
+    "passed": true
+  },
+  {
+    "case": "wallace-algebra-2010",
+    "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+    "pages": 489,
+    "converterSHA256": "5275579f7a238cf38ebc591b74315f37b1cf9256a1ff7fed826a2951aba3dc96",
+    "seconds": 19.747912750004616,
+    "peakRSSBytes": 90013696,
+    "memoryLimitBytes": 268435456,
+    "outputBytes": 45747611,
+    "reviewPages": [
+      2,
+      12,
+      347
+    ],
+    "contentChecks": 10,
+    "passed": true
+  },
+  {
+    "case": "gpo-911-2004",
+    "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+    "pages": 585,
+    "converterSHA256": "5275579f7a238cf38ebc591b74315f37b1cf9256a1ff7fed826a2951aba3dc96",
+    "seconds": 17.2547976249989,
+    "peakRSSBytes": 146866176,
+    "memoryLimitBytes": 268435456,
+    "outputBytes": 67662423,
+    "reviewPages": [
+      15,
+      19
+    ],
+    "contentChecks": 2,
+    "passed": true
+  },
+  {
+    "case": "fed-explained-2021",
+    "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+    "pages": 135,
+    "converterSHA256": "5275579f7a238cf38ebc591b74315f37b1cf9256a1ff7fed826a2951aba3dc96",
+    "seconds": 7.041128707998723,
+    "peakRSSBytes": 293142528,
+    "memoryLimitBytes": 805306368,
+    "outputBytes": 72934870,
+    "reviewPages": [
+      9,
+      45
+    ],
+    "contentChecks": 8,
+    "passed": true
+  },
+  {
+    "case": "dga-2025-2030",
+    "sourceSHA256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
+    "pages": 10,
+    "converterSHA256": "5275579f7a238cf38ebc591b74315f37b1cf9256a1ff7fed826a2951aba3dc96",
+    "seconds": 0.727825624999241,
+    "peakRSSBytes": 105185280,
+    "memoryLimitBytes": 201326592,
+    "outputBytes": 7848686,
+    "reviewPages": [
+      2,
+      3
+    ],
+    "contentChecks": 6,
+    "passed": true
+  },
+  {
+    "case": "gpo-our-flag-2003",
+    "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
+    "pages": 56,
+    "converterSHA256": "5275579f7a238cf38ebc591b74315f37b1cf9256a1ff7fed826a2951aba3dc96",
+    "seconds": 2.8121346250045463,
+    "peakRSSBytes": 102727680,
+    "memoryLimitBytes": 201326592,
+    "outputBytes": 13295812,
+    "reviewPages": [
+      27,
+      33
+    ],
+    "contentChecks": 9,
+    "passed": true
+  },
+  {
+    "case": "cdc-zombie-pandemic-2011",
+    "sourceSHA256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
+    "pages": 42,
+    "converterSHA256": "5275579f7a238cf38ebc591b74315f37b1cf9256a1ff7fed826a2951aba3dc96",
+    "seconds": 14.907974041998386,
+    "peakRSSBytes": 393953280,
+    "memoryLimitBytes": 536870912,
+    "outputBytes": 149716845,
+    "reviewPages": [
+      5,
+      13,
+      39
+    ],
+    "contentChecks": 10,
+    "passed": true
+  },
+  {
+    "case": "cia-blue-book-14-1955",
+    "sourceSHA256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
+    "pages": 312,
+    "converterSHA256": "5275579f7a238cf38ebc591b74315f37b1cf9256a1ff7fed826a2951aba3dc96",
+    "seconds": 58.09831616700103,
+    "peakRSSBytes": 416874496,
+    "memoryLimitBytes": 536870912,
+    "outputBytes": 213824453,
+    "reviewPages": [
+      74,
+      150
+    ],
+    "contentChecks": 4,
+    "passed": true
+  }
+]

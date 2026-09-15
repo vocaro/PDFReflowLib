@@ -109,6 +109,12 @@ the internal seams and extension points.
 
 ## Development and regression tests
 
+For changes to extraction, layout or rendering, run `scripts/check-all.sh --corpus` before
+pushing. This opt-in lane converts eight complete cached documents and checks reviewed content,
+EPUB conformance, progress and resource budgets. Missing sources fail with acquisition instructions;
+there are no automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic lane.
+See [regression testing](doc/regression-testing.md) for coverage, limitations and adding a case.
+
 ```sh
 swift test
 xcodebuild test -scheme PDFReflowLib-Package \

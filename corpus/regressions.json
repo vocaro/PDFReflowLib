@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "scope": "Known-good spot checks and conservative warnings, not golden whole-book output. Image counts establish presence only.",
+  "cases": [
+    {
+      "id": "faa-phak-8083-25c",
+      "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order.",
+      "pages": [
+        {
+          "page": 16,
+          "orderedText": [
+            "Introduction To Flying",
+            "provides basic knowledge for the student pilot learning to fly",
+            "This chapter offers a brief history of flight"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 121,
+          "text": [
+            "Normal, slipping, and skidding turns at a constant altitude."
+          ],
+          "minimumImages": 1
+        }
+      ]
+    },
+    {
+      "id": "wallace-algebra-2010",
+      "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image.",
+      "pages": [
+        {
+          "page": 2,
+          "text": [
+            "Beginning and Intermediate Algebra by Tyler Wallace",
+            "Creative Commons Attribution 3.0 Unported License"
+          ]
+        },
+        {
+          "page": 12,
+          "orderedText": [
+            "Reduce, add, subtract, multiply, and divide with fractions.",
+            "Working with fractions is a very important foundation to algebra.",
+            "Example 15.",
+            "Both numerator and denominator are divisible by 4",
+            "Both numerator and denominator are still divisible by 3"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 347,
+          "text": [
+            "Solve each equation with the quadratic formula."
+          ],
+          "minimumImages": 1
+        }
+      ]
+    },
+    {
+      "id": "gpo-911-2004",
+      "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive.",
+      "pages": [
+        {
+          "page": 15,
+          "text": [
+            "We present the narrative of this report"
+          ]
+        },
+        {
+          "page": 19,
+          "text": [
+            "Tuesday, September 11, 2001"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fed-explained-2021",
+      "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed.",
+      "pages": [
+        {
+          "page": 9,
+          "orderedText": [
+            "The Federal Reserve System is the central bank of the United States.",
+            "conducts the nation’s monetary policy",
+            "promotes the stability of the financial system",
+            "promotes the safety and soundness",
+            "fosters payment and settlement system safety",
+            "promotes consumer protection and community development"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 45,
+          "minimumImages": 1
+        }
+      ]
+    },
+    {
+      "id": "dga-2025-2030",
+      "sourceSHA256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
+      "basis": "Page 2 source raster reviewed; protects letter paragraph order and imagery, not the known page-3 protein-column defect.",
+      "pages": [
+        {
+          "page": 2,
+          "orderedText": [
+            "These Guidelines mark the most significant reset",
+            "The message is simple: eat real food.",
+            "The United States is amid a health emergency.",
+            "This changes today."
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 3,
+          "minimumImages": 1
+        }
+      ]
+    },
+    {
+      "id": "gpo-our-flag-2003",
+      "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
+      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order.",
+      "pages": [
+        {
+          "page": 27,
+          "orderedText": [
+            "Care of Your Flag",
+            "If your flag gets wet, never store it until it is completely dry.",
+            "Pole care is also related to flag care.",
+            "Sizes of Flags"
+          ]
+        },
+        {
+          "page": 33,
+          "text": [
+            "CALIFORNIA",
+            "COLORADO",
+            "CONNECTICUT",
+            "DELAWARE"
+          ],
+          "minimumImages": 4
+        }
+      ]
+    },
+    {
+      "id": "cdc-zombie-pandemic-2011",
+      "sourceSHA256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
+      "basis": "Page 39 checklist source raster reviewed. Page 5/13 only protect artwork and transcription warnings; damaged dialogue and comic narrative order remain unqualified.",
+      "pages": [
+        {
+          "page": 5,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer",
+            "pageImageFallback"
+          ]
+        },
+        {
+          "page": 13,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "ocrUsed",
+            "pageImageFallback"
+          ]
+        },
+        {
+          "page": 39,
+          "orderedText": [
+            "Assemble the following items to create a kit",
+            "Flashlight",
+            "Extra batteries",
+            "Cell phone with charger",
+            "Consider the needs of all family members"
+          ],
+          "minimumImages": 1
+        }
+      ]
+    },
+    {
+      "id": "cia-blue-book-14-1955",
+      "sourceSHA256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
+      "basis": "Reviewed negative quality case: require a source image and explicit review/fallback signal. No correct table-transcription claim.",
+      "pages": [
+        {
+          "page": 74,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer",
+            "complexLayout",
+            "pageImageFallback"
+          ]
+        },
+        {
+          "page": 150,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer",
+            "complexLayout",
+            "pageImageFallback"
+          ]
+        }
+      ]
+    }
+  ],
+  "excludedFullConversions": [
+    {
+      "id": "gpo-warren-1964",
+      "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+      "issue": 5
+    },
+    {
+      "id": "noaa-nca5-2023",
+      "reason": "Known default image-output ceiling failure; full completion is unqualified.",
+      "issue": 5
+    }
+  ]
+}

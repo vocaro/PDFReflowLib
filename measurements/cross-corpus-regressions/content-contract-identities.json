@@ -1,0 +1,7 @@
+{
+  "corpus/regressions.json": "faa3b2544b59dcb256c8b33dbf7968aac914e8ec32aeedacd17dd6ef0fa2bcd1",
+  "tools/check_corpus_content.py": "ef8b8703dd74634c2fd5accf2a4a05f5b7d7fcd524739aa077883ce1455685ea",
+  "tools/run_corpus_regressions.py": "2c1c930e9d4f15d2c1e9707da1e9fcd06ec589767ae30c272967d6dcd0164be3",
+  "tools/test_corpus_content.py": "ed9e296b606913c61aabbc8d0ed571c160cae8d5ecb2a0b3d7179ba4fa63bc6e",
+  "tools/test_corpus_runner.py": "e9bb4feab113d0e1f3af7d0cf0d4bebbf104a5d57af56ef8ed6e22319be08b84"
+}

@@ -4,6 +4,14 @@ The library converts PDFs to EPUB 3 on Apple platforms 27+. Synthetic regression
 layout, OCR, images, EPUB packaging, progress and cancellation. General textbook fidelity and
 physical-device memory/performance remain unqualified.
 
+- **First priority: regression coverage across document types.** Run
+  `scripts/check-all.sh --corpus` for extraction, layout and rendering changes. The reviewed
+  [content contracts](../corpus/regressions.json) protect text, selected reading order, images
+  and warnings across eight complete PDFs; they do not qualify all pages. Every fidelity fix
+  needs a failing source-derived case plus positive controls in other layouts. Expand checked
+  table cells, equation structure, image appearance and chapter continuity as those issues are
+  addressed. Keep known failures separate from passing baselines; never regenerate expected
+  content from converter output alone. See [the regression workflow](regression-testing.md).
 - Correct FAA handbook [column order on physical pages 91 and 511](https://github.com/vocaro/PDFReflowLib/issues/2).
   Add source-derived regressions and compare against original pages.
 - Investigate [PDFKit attributed-text leaks](https://github.com/vocaro/PDFReflowLib/issues/4)

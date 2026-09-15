@@ -1,0 +1,11 @@
+{
+  "case": "cia-blue-book-14-1955",
+  "passed": true,
+  "reviewPages": [
+    74,
+    150
+  ],
+  "contentChecks": 4,
+  "errors": [],
+  "scope": "Reviewed positive text/order/image-presence checks; not full-book fidelity or image legibility qualification."
+}

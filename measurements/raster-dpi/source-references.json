@@ -1,0 +1,205 @@
+[
+  {
+    "target": "warren-50",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "50",
+      "-l",
+      "50",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf",
+      "/Users/trevorharmon/Development/PDFReflowLib/.build/raster-dpi-final/review/warren-50-source-360"
+    ],
+    "sourceRasterSHA256": "fe51833fa7647aff2c6b9ae89e35c450aa307a809f855211d3df70576f13d7e6",
+    "sourceCropSHA256": "f9d1279bb5251057588b03be959951a4fd47b8fd6c389c0f94d4a39ccff61df5",
+    "sourceRasterDimensions": [
+      1965,
+      3195
+    ],
+    "cropPixelBounds": [
+      373,
+      185,
+      1877,
+      307
+    ]
+  },
+  {
+    "target": "warren-890",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "890",
+      "-l",
+      "890",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf",
+      "/Users/trevorharmon/Development/PDFReflowLib/.build/raster-dpi-final/review/warren-890-source-360"
+    ],
+    "sourceRasterSHA256": "50fcef71f4af5cadd0a52e5c8d56368e10d2bbc5127a6ee6507b0d2aedbea7c3",
+    "sourceCropSHA256": "d3f8b6e4bb311c1c0e3a7a97eb1416776a09dab787d16dfa4fa89861fb64af86",
+    "sourceRasterDimensions": [
+      1920,
+      3165
+    ],
+    "cropPixelBounds": [
+      227,
+      234,
+      995,
+      472
+    ]
+  },
+  {
+    "target": "blue-150",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "150",
+      "-l",
+      "150",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/corpus/cache/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf",
+      "/Users/trevorharmon/Development/PDFReflowLib/.build/raster-dpi-final/review/blue-150-source-360"
+    ],
+    "sourceRasterSHA256": "0810bd4beec139d21014789c9409d77a39d4c4a5fa135b7ba14da1889b10fa0e",
+    "sourceCropSHA256": "a1c6d7aaa1aa2df1972a0214ce26f93af8e45ef9194fc182013be13004921feb",
+    "sourceRasterDimensions": [
+      3053,
+      3935
+    ],
+    "cropPixelBounds": [
+      623,
+      484,
+      1151,
+      929
+    ]
+  },
+  {
+    "target": "faa-121",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "121",
+      "-l",
+      "121",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/corpus/cache/faa-h-8083-25c.pdf",
+      "/Users/trevorharmon/Development/PDFReflowLib/.build/raster-dpi-final/review/faa-121-source-360"
+    ],
+    "sourceRasterSHA256": "c5453303f3b352dd0056c09e69572eabaa55e121ed961ef491f0fedc87ad8d8c",
+    "sourceCropSHA256": "af09cfd9c21ad5f845f31cbacdbf30ac7e3abf423415a5603fa5f889e28601b3",
+    "sourceRasterDimensions": [
+      2970,
+      3870
+    ],
+    "cropPixelBounds": [
+      2020,
+      2736,
+      2628,
+      2937
+    ]
+  },
+  {
+    "target": "dga-3",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "3",
+      "-l",
+      "3",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/corpus/cache/DGA.pdf",
+      "/Users/trevorharmon/Development/PDFReflowLib/.build/raster-dpi-final/review/dga-3-source-360"
+    ],
+    "sourceRasterSHA256": "9e57f85be829f9825a3b2f65a30d566b0b62f361222c42058cc7699e0f51e5be",
+    "sourceCropSHA256": "607a52de99725fb7aac2fd125908f3cebdde82668fcfb74286b7e7c46a2c837d",
+    "sourceRasterDimensions": [
+      3060,
+      3960
+    ],
+    "cropPixelBounds": [
+      147,
+      903,
+      1509,
+      1243
+    ]
+  },
+  {
+    "target": "flag-27",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "27",
+      "-l",
+      "27",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/corpus/cache/CDOC-108hdoc97.pdf",
+      "/Users/trevorharmon/Development/PDFReflowLib/.build/raster-dpi-final/review/flag-27-source-360"
+    ],
+    "sourceRasterSHA256": "0cb1385747875d005ed6135f531fe8825838e6a1badade6bf65d8b8d0445269c",
+    "sourceCropSHA256": "d4060db2626417085423d587dfbf6f78a2c67fd311b016eae443e8bcd626ac0b",
+    "sourceRasterDimensions": [
+      2115,
+      3260
+    ],
+    "cropPixelBounds": [
+      396,
+      2197,
+      1242,
+      2866
+    ]
+  },
+  {
+    "target": "algebra-343",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "343",
+      "-l",
+      "343",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/corpus/cache/Beginning_and_Intermediate_Algebra.pdf",
+      "/Users/trevorharmon/Development/PDFReflowLib/.build/raster-dpi-final/review/algebra-343-source-360"
+    ],
+    "sourceRasterSHA256": "cbd381d24ca34c18dcc3eacb048c5dc952a8ce2178e33cc06c77f7769b9adcf2",
+    "sourceCropSHA256": "900c4cb2f5dc57f84df08b8fe4e10a7f50d818f297e7e68e419d57060b69971d",
+    "sourceRasterDimensions": [
+      2975,
+      4210
+    ],
+    "cropPixelBounds": [
+      646,
+      2800,
+      1404,
+      3469
+    ]
+  }
+]

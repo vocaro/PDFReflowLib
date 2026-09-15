@@ -50,11 +50,11 @@ The current recommendations are provisional where evidence covers only selected 
 
 | Dial | Recommended starting point | Evidence and qualification |
 | --- | --- | --- |
-| Full-page scans | `.jpeg(quality: 0.90)` when lossy encoding is acceptable | Both 0.90 and 0.95 have whole-Warren size measurements and sampled visual comparisons. Use 0.90–0.95 as an initial tuning range; only the endpoints are measured, and this is not a guarantee for every scan. |
+| Full-page scans | `.jpeg(quality: 0.90)` for tinted/noisy scans when lossy encoding is acceptable; compare PNG for clean black-and-white scans | Both 0.90 and 0.95 have whole-Warren size measurements and sampled visual comparisons. Use 0.90–0.95 as an initial tuning range; only the endpoints are measured. At 180 DPI, JPEG saves about 57% on two Warren pages but less than 1% on the checked Blue Book table page. |
 | Equations, tables, cropped diagrams | `.png` | The clean table and colored fraction controls are smaller as PNG, with no encoding loss. Start lossless for these regions; other figure types may benefit from separate measurements. |
 | Mixed full-page artwork | `.png` until reviewed, or explicitly trial `.smallest(jpegQuality: 0.90)` | Smallest avoids choosing a larger encoded file, but chooses by bytes, not legibility. Its clean/noisy controls pass; broad real-book visual qualification remains outstanding. |
 | Supplementary references | `.automatic` for a publication intended to carry its own source-page references | `.never` is a compact-reading choice when the client retains the PDF for review and accepts omitted visual context. Whole-book Warren runs quantify both choices; neither validates inherited OCR. Reserve `.always` for deliberate page-by-page reference use. |
-| Resolution | Keep 180 DPI as the starting baseline | Existing corpus runs exercise it, subject to the pixel ceiling. There is no comparative sweep establishing an optimal DPI range. The supported 72–600 range is a validation bound, not a recommendation. |
+| Resolution | Start at 180 DPI; compare 240 DPI for dense small print or fine diagram labels | A seven-page, six-document raster sweep shows sharper fine detail at 240, with about 47–49% more full-page image bytes than 180 at fixed encoding. At 120 DPI, small notes and labels have visibly coarser edges. This supports a targeted 240-DPI trial, not a universal range or device budget. Actual resolution can be reduced by the pixel ceiling. |
 | Raster pixel ceiling | Keep the 12-million-pixel starting bound while profiling the target device | There is no qualified physical iPhone/iPad memory range. The supported 1–48 million range is not a safe-device recommendation. |
 | Output budgets | Choose separate entry and final-file caps from the client's storage allowance and measured workload, with headroom | The 512 MiB entry default is a configurable guard, not a measured universal recommendation. A file can pass its final ZIP cap while exceeding the entry cap. Disabling the entry budget in an experiment is not a general shipping recommendation. |
 
@@ -65,6 +65,21 @@ reference inclusion/omission, runtime, memory, image retention and warning check
 source checksums, implementation identities and OS/hardware details bound these conclusions.
 The 64 MiB and 512 MiB final-file caps in those runs demonstrate successful configurations
 for that book; they do not establish recommended caps for all books.
+
+The [raster-DPI comparison](../measurements/raster-dpi/record.md) separates resolution from
+encoding on tinted scans, handwritten and clean numeric tables, colored diagram labels,
+photographs beside text, and equations. Each PNG/JPEG pair comes from the same production
+raster. The clean table and equation crops stay smaller as PNG; the FAA colored-label crop
+gets smaller as JPEG but acquires visible edge artifacts. Review labels at the intended reading
+size before choosing a lossy region policy. These are sampled raster results, not whole-book
+conversion, OCR-accuracy or EPUB-size measurements.
+
+`rasterDPI` is a requested resolution. The pixel ceiling applies to each full page or cropped
+region independently. A 12-million-pixel ceiling does not bind these pages at 240 DPI; a
+separate 1-million-pixel control reduces the FAA full page to about 106 DPI while its small
+crop still reaches about 239 DPI after pixel rounding. Raising DPI alone cannot overcome a
+binding pixel ceiling. That control explains the behavior; it does not recommend lowering the
+ceiling or increasing it without profiling the target device.
 
 The [complete NOAA comparison](../measurements/noaa-output-policies/record.md) illustrates why
 the scan recommendation does not predict every large report. With automatic references and
@@ -82,7 +97,8 @@ configurations, not additional preset APIs or automatic document classifiers:
 | Scanned reading copy with embedded references | `.automatic` | `.jpeg(quality: 0.90)` | `.png` |
 | Compact reading copy with the source PDF retained separately | `.never` | `.jpeg(quality: 0.90)` | `.png` |
 
-For either configuration, start at 180 DPI and select storage caps separately. Keep PNG for
+For either configuration, start at 180 DPI, review a 240-DPI trial when small detail matters,
+and select storage caps separately. Keep PNG for
 full pages when avoiding encoding loss matters more than their measured size. Omitting
 references still retains required fallback pages, region images and quality warnings.
 
@@ -91,7 +107,8 @@ broadly. Revising defaults or widening recommended ranges requires cross-documen
 readability comparisons, the corpus regression gate, and target-device measurements for
 resource claims. Include scan text, fine colored labels, equations, tables and image-heavy
 pages; archive the measured settings and results alongside each recommendation. JPEG quality
-below 0.90, comparative DPI choices and physical-device raster budgets remain unqualified.
+below 0.90, DPI choices outside the sampled 120/180/240 settings, full-book/OCR effects of
+changing DPI, and physical-device raster budgets remain unqualified.
 
 ## Supplementary references versus required images
 

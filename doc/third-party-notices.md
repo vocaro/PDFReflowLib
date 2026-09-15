@@ -66,7 +66,7 @@ SOFTWARE.
 bounding geometry and attributed runs from those physical pages, transformed into test-only
 JSON representations. Algebra source rasters and EPUB comparisons in
 `measurements/preserved-region-regressions/`, `measurements/three-fidelity-fixes/` and
-`measurements/fractions-and-invisible-text/` are rendered
+`measurements/fractions-and-invisible-text/` and `measurements/raster-dpi/` are rendered
 and/or arranged review derivatives. These derivatives retain CC BY 3.0 attribution and are not
 relicensed under MIT. They are not resources of the shipped library target.
 
@@ -76,6 +76,7 @@ The `faa-{91,363…365,437…439,511}`, `fed-{13,32,45,46,54,75,77,103,109,123}`
 contain extracted text and geometry from the corresponding U.S. government corpus documents.
 Each records its publisher URL, title and pinned source checksum. The source and output renders
 in `measurements/three-fidelity-fixes/`, `measurements/fractions-and-invisible-text/`,
-`measurements/warren-image-encoding/` and `measurements/poppler-relative-images/` retain
+`measurements/warren-image-encoding/`, `measurements/poppler-relative-images/` and
+`measurements/raster-dpi/` retain
 the same provenance. These are development and
 review resources, separate from the shipped library target; see `corpus/manifest.json`.

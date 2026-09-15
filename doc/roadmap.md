@@ -13,10 +13,14 @@ physical-device memory/performance remain unqualified.
   addressed. Keep known failures separate from passing baselines; never regenerate expected
   content from converter output alone. See [the regression workflow](regression-testing.md).
 - Refine [recommended conversion settings](conversion-options.md#recommended-starting-settings)
-  from cross-document measurements. JPEG 0.90 is the initial scan recommendation; 0.90–0.95
-  is provisional from measured endpoints, with PNG for clean cropped regions. Compare fine
-  colored labels, scans, tables and image-heavy pages before changing runtime defaults;
-  establish DPI tradeoffs and physical-device raster budgets before recommending ranges.
+  from cross-document measurements. JPEG 0.90 is the initial tinted/noisy-scan recommendation;
+  0.90–0.95 is provisional from measured endpoints, with PNG for clean cropped regions.
+  A [seven-page raster sweep](../measurements/raster-dpi/record.md) compares 120/180/240 DPI
+  and PNG/JPEG 0.90 across six documents, including fine colored labels, scans, tables,
+  photographs and equations. It supports retaining 180 DPI as the baseline and reviewing
+  240 DPI for small detail, with measured storage costs and pixel-cap behavior. Qualify
+  broader pages, full-book/OCR effects of changing DPI and physical-device raster budgets
+  before changing defaults or recommending general ranges.
 - Investigate [PDFKit attributed-text leaks](https://github.com/vocaro/PDFReflowLib/issues/4)
   without losing formatting; Apple report **FB24783799** has a
   [standalone reproducer and fresh diagnostics](../measurements/apple-feedback-pdfkit/record.md). Keep the

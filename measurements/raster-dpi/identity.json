@@ -1,0 +1,142 @@
+{
+  "baseCommit": "ad8bba4da55ff119b5a455e4aa9ea0c982bcca12",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "hardwareModel": "Mac17,6",
+  "swVersion": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0\nBuildVersion:\t\t26A428\n",
+  "xcodeVersion": "Xcode 27.0\nBuild version 27A266a\n",
+  "swiftVersion": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0\n",
+  "popplerVersion": "pdftoppm version 26.04.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC\n",
+  "compileCommand": [
+    "xcrun",
+    "swiftc",
+    "-O",
+    "-parse-as-library",
+    "-module-cache-path",
+    "/Users/trevorharmon/Development/PDFReflowLib/.build/raster-dpi-final/module-cache",
+    "/Users/trevorharmon/Development/PDFReflowLib/Sources/PDFReflowLib/PageRasterizer.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/Sources/PDFReflowLib/ConversionTypes.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/Sources/PDFReflowLib/DocumentModel.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/Sources/PDFReflowLib/ReflowDocument.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/measurements/raster-dpi/probe.swift",
+    "-o",
+    "/Users/trevorharmon/Development/PDFReflowLib/.build/raster-dpi-final/probe"
+  ],
+  "binarySHA256": "8ad726f0484785b4137a3a28355b2486c79cdb31bbf35b3d58a8d259b52347ac",
+  "producerSHA256": {
+    "Sources/PDFReflowLib/PageRasterizer.swift": "6783ac9d4f221fb69c170c01bc3073d2cf3a8d0bc22e04b41834498c838f0852",
+    "Sources/PDFReflowLib/ConversionTypes.swift": "134b339a5a8d6449b37bd9c986e64a575adf3404f737d8fb4d6dcdb27a898fb6",
+    "Sources/PDFReflowLib/DocumentModel.swift": "7a604342b536d599b82f8c32d57f34f324d5539bd5657cd40a4013293b378dbc",
+    "Sources/PDFReflowLib/ReflowDocument.swift": "4d264e5c55549fdf9787a8a28229c3e3a18c140845e0f9c7160718160e6c066e",
+    "measurements/raster-dpi/probe.swift": "90f9a7857fdaeb519f2da99ae4fb1ad15fe7fbfc6a02f0162c5bd822eba264f0",
+    "measurements/raster-dpi/measure.py": "bd4fadfd8a0fddbdaabe622a4bc16125c4ff7c166dd428d2a4749253038a3da2",
+    "measurements/raster-dpi/targets.json": "a71c4cbd11ac9af64b8dde4f16fa7b4c6e439aea3d50f752b4c827acb5eef5bd"
+  },
+  "targets": [
+    {
+      "id": "warren-50",
+      "case": "gpo-warren-1964",
+      "page": 50,
+      "region": [
+        0.19,
+        0.058,
+        0.765,
+        0.038
+      ],
+      "review": "Two opening scan lines: September 26 to October 3, 1963, and his known contacts with / the Soviet Embassy in the United States. Check thin serifs, commas and the date digits.",
+      "source": "/Users/trevorharmon/Development/PDFReflowLib/corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf",
+      "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+      "sourceBytes": 81216909
+    },
+    {
+      "id": "warren-890",
+      "case": "gpo-warren-1964",
+      "page": 890,
+      "region": [
+        0.118,
+        0.074,
+        0.4,
+        0.075
+      ],
+      "review": "Small notes 415-421: 415. 8 H 232 (Delgado).; 416. Id. at 233, 241, 246-248.; 417. Id. at 233.; 418. See id. at 240-241, 243-244, 255.; 419. Id. at 240.; 420. Id. at 241.; 421. Id. at 241-243. Check small numerals and punctuation, without accepting inherited OCR.",
+      "source": "/Users/trevorharmon/Development/PDFReflowLib/corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf",
+      "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+      "sourceBytes": 81216909
+    },
+    {
+      "id": "blue-150",
+      "case": "cia-blue-book-14-1955",
+      "page": 150,
+      "region": [
+        0.204,
+        0.123,
+        0.173,
+        0.113
+      ],
+      "review": "Top table TOTALS header, Certain/Doubtful/Total labels and first handwritten row: 270, 180, 450; 8.4, 5.6, 14.0. Check tiny printed headers, decimal points and ruled-cell boundaries. Remaining handwritten cells are not qualified.",
+      "source": "/Users/trevorharmon/Development/PDFReflowLib/corpus/cache/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf",
+      "sourceSHA256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
+      "sourceBytes": 24433155
+    },
+    {
+      "id": "faa-121",
+      "case": "faa-phak-8083-25c",
+      "page": 121,
+      "region": [
+        0.68,
+        0.707,
+        0.205,
+        0.052
+      ],
+      "review": "Figure 5-37 orange callout: Level flight / forces balanced / constant speed; nearby blue lift arrow and thin orange border. Check small black text against the colored background and edge artifacts.",
+      "source": "/Users/trevorharmon/Development/PDFReflowLib/corpus/cache/faa-h-8083-25c.pdf",
+      "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+      "sourceBytes": 77598564
+    },
+    {
+      "id": "dga-3",
+      "case": "dga-2025-2030",
+      "page": 3,
+      "region": [
+        0.048,
+        0.228,
+        0.445,
+        0.086
+      ],
+      "review": "Food photograph, left portion of the green gradient title Prioritize Protein Foods at and blue bullet beginning Prioritize high-quality, nutrient-dense. The source-coordinate crop intentionally cuts the continuation at its right edge. Check photograph detail, colored text and adjacent small body type.",
+      "source": "/Users/trevorharmon/Development/PDFReflowLib/corpus/cache/DGA.pdf",
+      "sourceSHA256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
+      "sourceBytes": 3422452
+    },
+    {
+      "id": "flag-27",
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "region": [
+        0.187,
+        0.674,
+        0.4,
+        0.205
+      ],
+      "review": "Clean numeric table: headers FLAGPOLE HEIGHT (FT.) and FLAG SIZE (FT.); ten pairs 20/4 x 6, 25/5 x 8, 40/6 x 10, 50/8 x 12, 60/10 x 15, 70/12 x 18, 90/15 x 25, 125/20 x 30, 200/30 x 40, 250/40 x 50. Check small-cap header, dot leaders and digits.",
+      "source": "/Users/trevorharmon/Development/PDFReflowLib/corpus/cache/CDOC-108hdoc97.pdf",
+      "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
+      "sourceBytes": 1103159
+    },
+    {
+      "id": "algebra-343",
+      "case": "wallace-algebra-2010",
+      "page": 343,
+      "region": [
+        0.217,
+        0.665,
+        0.255,
+        0.159
+      ],
+      "review": "Bottom three equation steps: square roots, squared parenthesized left side, plus/minus sign, b-squared minus 4ac numerator and 2a denominators, ending x = (-b +/- sqrt(b^2 - 4ac)) / 2a. Check exponents, fraction rules and radical bars. Source: Tyler Wallace, Beginning and Intermediate Algebra, copyright 2010, CC BY 3.0.",
+      "source": "/Users/trevorharmon/Development/PDFReflowLib/corpus/cache/Beginning_and_Intermediate_Algebra.pdf",
+      "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+      "sourceBytes": 2183036
+    }
+  ]
+}

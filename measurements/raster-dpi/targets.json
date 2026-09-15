@@ -1,0 +1,51 @@
+[
+  {
+    "id": "warren-50",
+    "case": "gpo-warren-1964",
+    "page": 50,
+    "region": [0.19, 0.058, 0.765, 0.038],
+    "review": "Two opening scan lines: September 26 to October 3, 1963, and his known contacts with / the Soviet Embassy in the United States. Check thin serifs, commas and the date digits."
+  },
+  {
+    "id": "warren-890",
+    "case": "gpo-warren-1964",
+    "page": 890,
+    "region": [0.118, 0.074, 0.4, 0.075],
+    "review": "Small notes 415-421: 415. 8 H 232 (Delgado).; 416. Id. at 233, 241, 246-248.; 417. Id. at 233.; 418. See id. at 240-241, 243-244, 255.; 419. Id. at 240.; 420. Id. at 241.; 421. Id. at 241-243. Check small numerals and punctuation, without accepting inherited OCR."
+  },
+  {
+    "id": "blue-150",
+    "case": "cia-blue-book-14-1955",
+    "page": 150,
+    "region": [0.204, 0.123, 0.173, 0.113],
+    "review": "Top table TOTALS header, Certain/Doubtful/Total labels and first handwritten row: 270, 180, 450; 8.4, 5.6, 14.0. Check tiny printed headers, decimal points and ruled-cell boundaries. Remaining handwritten cells are not qualified."
+  },
+  {
+    "id": "faa-121",
+    "case": "faa-phak-8083-25c",
+    "page": 121,
+    "region": [0.68, 0.707, 0.205, 0.052],
+    "review": "Figure 5-37 orange callout: Level flight / forces balanced / constant speed; nearby blue lift arrow and thin orange border. Check small black text against the colored background and edge artifacts."
+  },
+  {
+    "id": "dga-3",
+    "case": "dga-2025-2030",
+    "page": 3,
+    "region": [0.048, 0.228, 0.445, 0.086],
+    "review": "Food photograph, left portion of the green gradient title Prioritize Protein Foods at and blue bullet beginning Prioritize high-quality, nutrient-dense. The source-coordinate crop intentionally cuts the continuation at its right edge. Check photograph detail, colored text and adjacent small body type."
+  },
+  {
+    "id": "flag-27",
+    "case": "gpo-our-flag-2003",
+    "page": 27,
+    "region": [0.187, 0.674, 0.4, 0.205],
+    "review": "Clean numeric table: headers FLAGPOLE HEIGHT (FT.) and FLAG SIZE (FT.); ten pairs 20/4 x 6, 25/5 x 8, 40/6 x 10, 50/8 x 12, 60/10 x 15, 70/12 x 18, 90/15 x 25, 125/20 x 30, 200/30 x 40, 250/40 x 50. Check small-cap header, dot leaders and digits."
+  },
+  {
+    "id": "algebra-343",
+    "case": "wallace-algebra-2010",
+    "page": 343,
+    "region": [0.217, 0.665, 0.255, 0.159],
+    "review": "Bottom three equation steps: square roots, squared parenthesized left side, plus/minus sign, b-squared minus 4ac numerator and 2a denominators, ending x = (-b +/- sqrt(b^2 - 4ac)) / 2a. Check exponents, fraction rules and radical bars. Source: Tyler Wallace, Beginning and Intermediate Algebra, copyright 2010, CC BY 3.0."
+  }
+]

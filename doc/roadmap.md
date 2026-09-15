@@ -14,11 +14,12 @@ physical-device memory/performance remain unqualified.
   the Wallace algebra corpus exposes a flattened
   squared exponent on page 343 despite preserved displayed formulas. Add a targeted regression
   when implementing the fix; review exercise and answer-key numbering across the book.
-- Support the Warren Commission scanned report: full conversion exhausts the default
-  image-output ceiling; invisible OCR fonts produce preformatted prose, spurious headings and
-  interleaved notes/index columns. Detect suspect inherited OCR and exclude object placeholders
-  from readable text/counts. Evidence: [Warren baseline](../measurements/gpo-warren-1964/record.md).
-- Correct absolute image URLs in the Poppler simple comparison preview without weakening
+- Support the Warren Commission scanned report: [full conversion exhausts the image-output
+  ceiling](https://github.com/vocaro/PDFReflowLib/issues/5); [invisible OCR fonts misclassify
+  prose and headings](https://github.com/vocaro/PDFReflowLib/issues/6), and notes/index columns
+  interleave. [Detect suspect inherited OCR](https://github.com/vocaro/PDFReflowLib/issues/7)
+  and [exclude object placeholders](https://github.com/vocaro/PDFReflowLib/issues/8) from text/counts. Evidence: [Warren baseline](../measurements/gpo-warren-1964/record.md).
+- Correct [absolute image URLs in the Poppler simple preview](https://github.com/vocaro/PDFReflowLib/issues/9) without weakening
   local server containment; retain raw Poppler output and a reproducible rendered comparison.
 - The development corpus includes the FAA handbook, Wallace algebra textbook and Warren
   Commission scanned report, with source identities, review points and baseline measurements. Expand it with borderless tables,

@@ -91,3 +91,10 @@ break in the local comparison server. The original-page pane remains the visual 
 preformatted-text, column-order and placeholder-count defects. The excerpt passes EPUBCheck
 but is not fidelity-qualified. This case exercises trust in an existing OCR layer as well as
 new recognition: the default full run attempts fresh OCR on only one page.
+
+Tracked defects: [full-book resource limit](https://github.com/vocaro/PDFReflowLib/issues/5),
+[OCR font/layout inference](https://github.com/vocaro/PDFReflowLib/issues/6),
+[text-layer quality](https://github.com/vocaro/PDFReflowLib/issues/7),
+[placeholder text/counts](https://github.com/vocaro/PDFReflowLib/issues/8), and
+[Poppler image URLs](https://github.com/vocaro/PDFReflowLib/issues/9). Additional source-derived
+examples are linked from the existing reading-order and memory investigations.

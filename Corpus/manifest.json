@@ -157,22 +157,38 @@
       "knownFidelityIssues": [
         {
           "page": 50,
-          "issue": "Existing OCR errors survive without transcription-quality warnings; invisible Courier text becomes preformatted prose with hard wraps and spurious headings."
+          "issue": "Existing OCR errors survive without transcription-quality warnings; invisible Courier text becomes preformatted prose with hard wraps and spurious headings.",
+          "trackingURLs": [
+            "https://github.com/vocaro/PDFReflowLib/issues/6",
+            "https://github.com/vocaro/PDFReflowLib/issues/7"
+          ]
         },
         {
           "page": 890,
-          "issue": "Excerpt notes interleave columns: 415, 477, 416, continuation of 477."
+          "issue": "Excerpt notes interleave columns: 415, 477, 416, continuation of 477.",
+          "trackingURLs": [
+            "https://github.com/vocaro/PDFReflowLib/issues/2",
+            "https://github.com/vocaro/PDFReflowLib/issues/6"
+          ]
         },
         {
           "page": 910,
-          "issue": "Excerpt index interleaves Federal Bureau of Investigation into De Mohrenschildt and promotes entries to headings."
+          "issue": "Excerpt index interleaves Federal Bureau of Investigation into De Mohrenschildt and promotes entries to headings.",
+          "trackingURLs": [
+            "https://github.com/vocaro/PDFReflowLib/issues/2",
+            "https://github.com/vocaro/PDFReflowLib/issues/6"
+          ]
         },
         {
           "page": 920,
-          "issue": "Object-replacement placeholders are emitted as paragraphs and counted as reflowed text on a textless scan; cover page 1 behaves similarly."
+          "issue": "Object-replacement placeholders are emitted as paragraphs and counted as reflowed text on a textless scan; cover page 1 behaves similarly.",
+          "trackingURLs": [
+            "https://github.com/vocaro/PDFReflowLib/issues/8"
+          ]
         }
       ],
-      "baselineStatus": "Fails maximumOutputBytes (image output) after the last completed reconstruction page 390/920; no EPUB is published. See measurements/gpo-warren-1964/record.md."
+      "baselineStatus": "Fails maximumOutputBytes (image output) after the last completed reconstruction page 390/920; no EPUB is published. See measurements/gpo-warren-1964/record.md.",
+      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/5"
     }
   ]
 }

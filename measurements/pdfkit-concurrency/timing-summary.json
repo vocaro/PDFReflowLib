@@ -1,0 +1,85 @@
+{
+  "results": [
+    {
+      "case": "fed-explained-2021",
+      "order": 1,
+      "variant": "before",
+      "seconds": 12.01983029198891,
+      "cpuSeconds": 11.487143,
+      "peakRSSBytes": 319946752,
+      "epubSHA256": "cc992d71c2645e525ff8295c1aca69702f121c00a2b15333d87ab4af61b26dcd",
+      "resultSHA256": "d1c4f1acbceb2b82035ef01871a0fc396b977abf66d22516e235f5eb25380800"
+    },
+    {
+      "case": "fed-explained-2021",
+      "order": 2,
+      "variant": "after",
+      "seconds": 7.1560441670008,
+      "cpuSeconds": 7.385643,
+      "peakRSSBytes": 301301760,
+      "epubSHA256": "05365c20d962de6545ba4765e3bf2c82264eae829e2498ef96359bbf8726cd8f",
+      "resultSHA256": "11d6534edfbf56d510c9bd7e1c2b922433e1b59538856cfedb94672535ad12f7"
+    },
+    {
+      "case": "fed-explained-2021",
+      "order": 3,
+      "variant": "after",
+      "seconds": 12.352110041989363,
+      "cpuSeconds": 12.30565,
+      "peakRSSBytes": 305774592,
+      "epubSHA256": "d4f2fabd849e9d4de2ab5cf9a393517602417cb57a3b826ccf44eabb9cf9a079",
+      "resultSHA256": "ac1cb0443327c0d8d97397d7b017bea2c070cb6f6162814c21a2ddf12ae17875"
+    },
+    {
+      "case": "fed-explained-2021",
+      "order": 4,
+      "variant": "before",
+      "seconds": 15.229076125004212,
+      "cpuSeconds": 15.152849,
+      "peakRSSBytes": 312082432,
+      "epubSHA256": "6ba41df43724a9b9793991b0ef1ea94b02b60ea0a1dca9542b583f2bcb5547d1",
+      "resultSHA256": "f7cb60fdc1de17988b3427b65dcacee89cdeeed73b2c7e0b805ff0354cc8db68"
+    },
+    {
+      "case": "faa-phak-8083-25c",
+      "order": 1,
+      "variant": "before",
+      "seconds": 42.08543458399072,
+      "cpuSeconds": 42.016055,
+      "peakRSSBytes": 946733056,
+      "epubSHA256": "8c9ba40536b8fb95edbb791b16a6cd0b379f2df680f1245f2231d1201bada053",
+      "resultSHA256": "273918516fcf3bc03e19639667ba5da414d92281744b53671a8ff62a5ef26423"
+    },
+    {
+      "case": "faa-phak-8083-25c",
+      "order": 2,
+      "variant": "after",
+      "seconds": 37.85521791699284,
+      "cpuSeconds": 38.673190999999996,
+      "peakRSSBytes": 849248256,
+      "epubSHA256": "2e870aecd35cc1b9c93c3d904f14b347833f3396a79c734751e6862243ee1eb4",
+      "resultSHA256": "9f9c02cba96fb09cc485fdf6186e869e0a387eba2d876e01b4107b4bab6a749d"
+    },
+    {
+      "case": "faa-phak-8083-25c",
+      "order": 3,
+      "variant": "after",
+      "seconds": 38.018823000005796,
+      "cpuSeconds": 38.814036,
+      "peakRSSBytes": 848920576,
+      "epubSHA256": "33db5894e9fc0d7ea8e39486e190da0325cd8235aefa4b7fd45f881e7a71c199",
+      "resultSHA256": "2f40e0a02f4408e95418f917c058497407dfed626ddeebed5a5c4d0df6761423"
+    },
+    {
+      "case": "faa-phak-8083-25c",
+      "order": 4,
+      "variant": "before",
+      "seconds": 37.72367141699942,
+      "cpuSeconds": 38.46326,
+      "peakRSSBytes": 849084416,
+      "epubSHA256": "047b20921c711749ce618973e8d303759a372d142c5b05f636d5363a89e902db",
+      "resultSHA256": "90e9a4c6f9437a4ad595ec0da7c71146d8dc450f99d2ee5287ad222142183daa"
+    }
+  ],
+  "archiveSHA256": "73a033a46dc9d459dbcdcd4d0743df62ef7f20ef58b6f50145493fa1a6309bdf"
+}

@@ -19,6 +19,10 @@ swift build -c release
 BINARY_DIR="$(swift build -c release --show-bin-path)"
 WORK="$(mktemp -d "${TMPDIR:-/tmp}/pdfreflow-checks.XXXXXX")"
 echo "Validation results: $WORK"
+# Exercise the real extraction path in fresh processes. Raw PDFKit controls are an
+# explicit diagnostic campaign because they can reproduce the upstream exception.
+python3 tools/check_pdfkit_concurrency.py --output "$WORK/concurrency" \
+    --modes native --workers 1 8 --trials 2 --iterations 50
 EPUBCHECK=()
 if command -v epubcheck >/dev/null; then EPUBCHECK=(--epubcheck "$(command -v epubcheck)"); fi
 python3 tools/check-epubs.py --converter "$BINARY_DIR/pdf-reflow" --output "$WORK/epubs" "${EPUBCHECK[@]}"

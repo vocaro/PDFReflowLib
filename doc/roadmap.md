@@ -155,7 +155,9 @@ gates remain unchanged. Full table/figure/alternate-text semantics, Form text, l
 malformed-authoring coverage and physical-device budgets remain open; #17 is not closed.
 
 
-Investigate the [intermittent PDFKit NSFont exception under concurrent extraction](https://github.com/vocaro/PDFReflowLib/issues/21).
-One synthetic run aborts inside attributed-string creation; its trigger is unconfirmed and
-separate from the memory leak. The [stack and qualification limits](../measurements/structure-tags/record.md)
-are retained; isolating parser unit tests from PDFKit is not a runtime crash mitigation.
+The [PDFKit NSFont exception under concurrent extraction](https://github.com/vocaro/PDFReflowLib/issues/21)
+has an Apple-SDK-only reproduction and a library-local serialization mitigation. Fresh-process
+stress gates retain crashes/timeouts and verify text/font positive controls; a public-API test
+protects independent output, progress and cancellation. See [the evidence](../measurements/pdfkit-concurrency/record.md).
+Physical-device concurrency and host PDFKit calls outside the library lock remain unqualified;
+Apple's underlying exception and the separate attributed-text memory leak are not resolved.

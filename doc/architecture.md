@@ -59,7 +59,17 @@ The caller supplies a workspace and keeps it alive until serialization finishes.
 can run without calling `EPUBWriter`, as the direct PDF-to-model test demonstrates.
 
 `NativeTextReader` obtains PDFKit line selections, geometry and attributed runs; it immediately
-copies text and style flags into values. Explicit Core Text/Foundation baseline offsets preserve
+copies text and style flags into values. A process-wide library lock serializes this synchronous
+page-extraction step across converter instances to mitigate the observed PDFKit `NSFont` exception
+under concurrent attributed extraction (#21). Cancellation is checked before waiting and after
+acquisition; the lock wait itself is not cancellable. Concurrent imports trade extraction
+throughput for serialization. The lock is released before
+progress callbacks, OCR, graphics work and writing. It preserves attributed styles and does not
+marshal work to the main actor. Host PDFKit calls outside `NativeTextReader` do not participate
+in the lock, so this is a bounded mitigation rather than a framework-wide thread-safety guarantee.
+See [the concurrency evidence](../measurements/pdfkit-concurrency/record.md).
+
+Explicit Core Text/Foundation baseline offsets preserve
 inline scripts; tiny positioning noise and full-line OCR offsets do not become script styles.
 Font size alone does not establish a superscript. A bounded native drop-cap pattern uses the
 following body runs' font size and a top-aligned body-height `readingRect` for ordering. The

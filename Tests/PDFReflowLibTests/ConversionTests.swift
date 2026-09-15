@@ -291,3 +291,51 @@ private final class WeakDocument {
     #expect(second.value == nil)
     #expect(try source.page(at: 0).string?.contains("A Small Book of Conversion") == true)
 }
+
+@Test func independentConcurrentConversionsKeepOutputProgressAndCancellationSeparate() async throws {
+    let dir = try scratch(); defer { try? FileManager.default.removeItem(at: dir) }
+    let names = ["prose", "columns", "lists-code", "graphics"]
+    let markers = ["reliable conversion", "LEFT FIRST", "print(value)", "Text after the table"]
+    try await withThrowingTaskGroup(of: Void.self) { group in
+        for index in names.indices {
+            group.addTask {
+                let output = dir.appendingPathComponent("book-\(index).epub")
+                let log = ProgressLog()
+                var options = ConversionOptions()
+                options.title = "Independent publication \(index)"
+                let report = try await PDFConverter().convert(from: fixture(names[index]), to: output, options: options) { event in
+                    await log.append(event)
+                    await Task.yield()
+                    if event.stage == .completed { #expect(FileManager.default.fileExists(atPath: output.path)) }
+                }
+                let html = try chapter(output)
+                #expect(html.contains(markers[index]))
+                for other in names.indices where other != index { #expect(!html.contains(markers[other])) }
+                let opf = String(decoding: try entry("EPUB/package.opf", in: output), as: UTF8.self)
+                #expect(opf.contains("Independent publication \(index)"))
+                #expect(report.outputURL == output)
+                let events = await log.events
+                #expect(events.first?.fractionCompleted == 0)
+                #expect(events.last?.stage == .completed && events.last?.fractionCompleted == 1)
+                #expect(zip(events, events.dropFirst()).allSatisfy { $0.fractionCompleted <= $1.fractionCompleted })
+                if names[index] == "lists-code" {
+                    #expect(html.contains("<strong>bold</strong>") && html.contains("<em>italic</em>"))
+                }
+                if names[index] == "graphics" { #expect(report.imageCount == 3) }
+            }
+        }
+        group.addTask {
+            let log = ProgressLog()
+            await #expect(throws: CancellationError.self) {
+                try await PDFConverter().convert(from: fixture("prose"), to: dir.appendingPathComponent("cancelled.epub")) { event in
+                    await log.append(event)
+                    if event.stage == .extracting { withUnsafeCurrentTask { $0?.cancel() } }
+                }
+            }
+            #expect(await log.events.allSatisfy { $0.stage != .completed })
+        }
+        try await group.waitForAll()
+    }
+    #expect(try FileManager.default.contentsOfDirectory(atPath: dir.path).sorted()
+        == names.indices.map { "book-\($0).epub" })
+}

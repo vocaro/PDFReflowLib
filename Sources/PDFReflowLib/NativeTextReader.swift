@@ -10,7 +10,17 @@ private typealias PlatformFont = UIFont
 #endif
 
 enum NativeTextReader {
+    // PDFKit attributed extraction can raise an NSFont exception when separate documents
+    // are read concurrently (#21). Serialize this synchronous page step across converter
+    // instances; never hold the lock across async progress, OCR, graphics or EPUB writing.
+    // Host code using PDFKit independently does not participate in this library-local lock.
+    private static let extractionLock = NSLock()
+
     static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true) throws -> [TextLine] {
+        try Task.checkCancellation()
+        extractionLock.lock()
+        defer { extractionLock.unlock() }
+        try Task.checkCancellation()
         guard page.numberOfCharacters <= limit else {
             throw ConversionError.resourceLimit("too many characters")
         }

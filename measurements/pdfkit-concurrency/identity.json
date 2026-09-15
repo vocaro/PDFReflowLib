@@ -1,0 +1,16 @@
+{
+  "baseline": "d40fe2f437af9777211a84d8d88b1e154cc95969",
+  "implementationSHA256": {
+    "Sources/PDFReflowLib/NativeTextReader.swift": "7baf9fefc16f917847833b57f972449d3a2bad02cd73716f68a2be9f52201a58",
+    "Tests/PDFReflowLibTests/ConversionTests.swift": "741c829a8967ee05c00ec8895fafae82017a152f5ad7942f3ecfa45654a0d520",
+    "scripts/check-all.sh": "e4bbdc1aaf932df324746259f9645c466b1c58e270207b4fd3019310276319de",
+    "tools/check_pdfkit_concurrency.py": "aaae8c8a79767a23bf1f340cbefab010929bb7f50689c273a99b4a87e52a8743",
+    "tools/probe-pdfkit-concurrency.swift": "64d20e9299949c38a409282887ac7f3dab6dc50f97286c784bd40aca3b5ec514",
+    "tools/test_pdfkit_concurrency.py": "7d26936e325242f48d67f5c213004aa0936b1dcdf20b6523591e5e75693be051",
+    "measurements/pdfkit-concurrency/collect.py": "ba58e864b6fa676449d3b62322ad0f251c9a5541fdf3e3afcfe92d2f1481dd37",
+    "corpus/manifest.json": "89382b0c4f6a4219a6f2637741e30f64202496acf6af18ddd7cf96d8fb9e3f60",
+    "corpus/regressions.json": "eb0822219d5399d7907fad955acf343f969b9a5237e9788197a2249010f4c513"
+  },
+  "campaignArchiveSHA256": "5552450a7b53db276ec6aa471d553534bca95f66cacd129ad88de0ba8a53e684",
+  "corpusReceiptArchiveSHA256": "a21663c50a55996b4d07fb803325bda4d006c3ba0fa8b9b06d980bbd3e874367"
+}

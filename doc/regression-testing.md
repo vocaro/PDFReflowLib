@@ -257,3 +257,42 @@ checksum-verified FAA source. Its 192 MiB Mac RSS ceiling protects the initial s
 from eager loading of sparse ParentTree arrays; `--maximum-rss-mib` overrides the development
 limit. Full conversion retains its separate per-book memory gates. Neither budget qualifies
 physical iPhone/iPad performance.
+
+
+## Concurrent native extraction
+
+Every `check-all.sh` lane runs a fresh-process native-extraction smoke gate (two trials per
+fixture, one/eight background workers, 50 independent document opens per worker). It asserts
+exact line text and 12/24-point fonts on original RoleMap/MCR and structure-tree-absent fixtures.
+It complements the public-API test that overlaps four different conversions and one cancelled
+conversion, checking output ownership, styles, images, monotonic progress and staging cleanup.
+
+For a longer native campaign:
+
+```sh
+python3 tools/check_pdfkit_concurrency.py --output /tmp/native-stress \
+  --modes native --workers 0 1 8 --iterations 1000 --trials 10
+```
+
+Worker count zero runs on the main thread; one runs serially on a background thread. Higher
+counts start independent threads together; no PDFKit document, selection or attributed string
+crosses threads. Each iteration opens its own document inside an autorelease pool. Use
+`--optimization debug` for an unoptimized build. The diagnostic compiles the actual native
+reader and value types; it does not duplicate the extraction implementation.
+
+For the unmitigated Apple-SDK control, which can deliberately reproduce a process abort:
+
+```sh
+python3 tools/check_pdfkit_concurrency.py --output /tmp/pdfkit-sdk-stress \
+  --sdk-only --workers 1 8 --iterations 1000 --trials 5
+```
+
+This build excludes all library sources and compares plain versus attributed selections.
+A new output directory is mandatory. The runner preserves every child exit code, stdout/stderr,
+input/producer/binary identity and trial result; it never retries a failed trial. Timeouts kill
+and reap the child process group. A zero exit without a complete matching positive-control
+receipt is a failure. Python negative tests enforce these properties. A finite passing campaign
+is bounded evidence, not proof that all concurrent PDFKit use is safe. The smoke gate runs
+only the mitigated native path; raw attributed controls belong to explicit diagnostic runs.
+
+See [measured failures, mitigation and limits](../measurements/pdfkit-concurrency/record.md).

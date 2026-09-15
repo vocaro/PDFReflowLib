@@ -1,0 +1,239 @@
+[
+  {
+    "campaign": "release",
+    "settings": {
+      "trials": 3,
+      "iterations": 100,
+      "workers": [
+        0,
+        1,
+        8
+      ],
+      "modes": [
+        "plain",
+        "attributed",
+        "native"
+      ],
+      "timeout": 60,
+      "optimization": "release"
+    },
+    "outcomes": [
+      {
+        "mode": "attributed",
+        "workers": 0,
+        "status": "passed",
+        "processes": 6
+      },
+      {
+        "mode": "attributed",
+        "workers": 1,
+        "status": "passed",
+        "processes": 6
+      },
+      {
+        "mode": "attributed",
+        "workers": 8,
+        "status": "passed",
+        "processes": 5
+      },
+      {
+        "mode": "attributed",
+        "workers": 8,
+        "status": "signal",
+        "processes": 1
+      },
+      {
+        "mode": "native",
+        "workers": 0,
+        "status": "passed",
+        "processes": 6
+      },
+      {
+        "mode": "native",
+        "workers": 1,
+        "status": "passed",
+        "processes": 6
+      },
+      {
+        "mode": "native",
+        "workers": 8,
+        "status": "passed",
+        "processes": 6
+      },
+      {
+        "mode": "plain",
+        "workers": 0,
+        "status": "passed",
+        "processes": 6
+      },
+      {
+        "mode": "plain",
+        "workers": 1,
+        "status": "passed",
+        "processes": 6
+      },
+      {
+        "mode": "plain",
+        "workers": 8,
+        "status": "passed",
+        "processes": 6
+      }
+    ],
+    "verifiedCompletedIterations": 17200,
+    "failures": [
+      "rolemap-attributed-w8-trial1"
+    ]
+  },
+  {
+    "campaign": "native-before",
+    "settings": {
+      "trials": 10,
+      "iterations": 1000,
+      "workers": [
+        8
+      ],
+      "modes": [
+        "native"
+      ],
+      "timeout": 60,
+      "optimization": "release"
+    },
+    "outcomes": [
+      {
+        "mode": "native",
+        "workers": 8,
+        "status": "passed",
+        "processes": 19
+      },
+      {
+        "mode": "native",
+        "workers": 8,
+        "status": "signal",
+        "processes": 1
+      }
+    ],
+    "verifiedCompletedIterations": 152000,
+    "failures": [
+      "rolemap-native-w8-trial7"
+    ]
+  },
+  {
+    "campaign": "native-after",
+    "settings": {
+      "trials": 10,
+      "iterations": 1000,
+      "workers": [
+        8
+      ],
+      "modes": [
+        "native"
+      ],
+      "timeout": 60,
+      "optimization": "release"
+    },
+    "outcomes": [
+      {
+        "mode": "native",
+        "workers": 8,
+        "status": "passed",
+        "processes": 20
+      }
+    ],
+    "verifiedCompletedIterations": 160000,
+    "failures": []
+  },
+  {
+    "campaign": "sdk-only",
+    "settings": {
+      "trials": 5,
+      "iterations": 1000,
+      "workers": [
+        1,
+        8
+      ],
+      "modes": [
+        "plain",
+        "attributed"
+      ],
+      "sdk_only": true,
+      "timeout": 60,
+      "optimization": "release"
+    },
+    "outcomes": [
+      {
+        "mode": "attributed",
+        "workers": 1,
+        "status": "passed",
+        "processes": 10
+      },
+      {
+        "mode": "attributed",
+        "workers": 8,
+        "status": "passed",
+        "processes": 9
+      },
+      {
+        "mode": "attributed",
+        "workers": 8,
+        "status": "signal",
+        "processes": 1
+      },
+      {
+        "mode": "plain",
+        "workers": 1,
+        "status": "passed",
+        "processes": 10
+      },
+      {
+        "mode": "plain",
+        "workers": 8,
+        "status": "passed",
+        "processes": 10
+      }
+    ],
+    "verifiedCompletedIterations": 172000,
+    "failures": [
+      "rolemap-attributed-w8-trial1"
+    ]
+  },
+  {
+    "campaign": "native-debug",
+    "settings": {
+      "trials": 3,
+      "iterations": 1000,
+      "workers": [
+        0,
+        1,
+        8
+      ],
+      "modes": [
+        "native"
+      ],
+      "sdk_only": false,
+      "timeout": 60,
+      "optimization": "debug"
+    },
+    "outcomes": [
+      {
+        "mode": "native",
+        "workers": 0,
+        "status": "passed",
+        "processes": 6
+      },
+      {
+        "mode": "native",
+        "workers": 1,
+        "status": "passed",
+        "processes": 6
+      },
+      {
+        "mode": "native",
+        "workers": 8,
+        "status": "passed",
+        "processes": 6
+      }
+    ],
+    "verifiedCompletedIterations": 60000,
+    "failures": []
+  }
+]

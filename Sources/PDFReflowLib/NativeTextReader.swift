@@ -40,8 +40,11 @@ enum NativeTextReader {
             throw ConversionError.resourceLimit("too many characters")
         }
         guard let selection = page.selection(for: page.bounds(for: .cropBox)) else { return [] }
+        let selections = selection.selectionsByLine()
+        let boundsByLine = selections.map { $0.bounds(for: page) }
+        let spacing = includeStyle ? page.pageRef.map(NativeSpacingReader.read) ?? [] : []
         var result: [TextLine] = []
-        for line in selection.selectionsByLine() {
+        for line in selections {
             try Task.checkCancellation()
             guard let raw = line.string else { continue }
             // U+FFFC names an attachment, not a word. Retain a boundary between adjacent
@@ -53,7 +56,13 @@ enum NativeTextReader {
             // Object-only selections were discarded before requesting attributed text,
             // which can make PDFKit decode large image attachments.
             let attributed = includeStyle ? line.attributedString : nil
-            result.append(textLine(semantic: semantic, bounds: bounds, attributed: attributed))
+            let repaired = attributed.map {
+                $0.string == raw ? NativeSpacingReader.apply(spacing, to: $0, bounds: bounds, allBounds: boundsByLine) : $0
+            }
+            let corrected = repaired?.string != attributed?.string
+                ? repaired?.string.replacingOccurrences(of: "\u{FFFC}", with: " ") : nil
+            result.append(textLine(semantic: corrected ?? semantic,
+                                   bounds: bounds, attributed: repaired))
         }
         return result
     }

@@ -158,8 +158,12 @@ Native combined-line extraction under #14 restores the missing DGA cover boundar
 “Guidelines” and “For Americans” using full-line baseline evidence. The Our Flag page-31 heading supplies a second source case. Seven Swift tests protect
 both baseline keys, scripts, drop caps, existing whitespace and hyphens; the corpus title check
 runs with the full document. See [native-line-boundary evidence](../measurements/native-line-boundaries/record.md).
-Single-run label spacing (“Dair y”, “Ve getables”) and diagram-label ownership remain open;
-this bounded repair does not close #14.
+That slice left single-run label spacing and diagram-label ownership open. The subsequent
+[native label-spacing repair](../measurements/native-label-spacing/record.md) restores “Dairy”
+and “Vegetables” only when a supported Type3 character map and tiny TJ adjustment contradict
+the extra space in a uniquely matched native line. Explicit word spaces, other fonts, unsupported
+text state, ambiguous placement and arbitrary spelling remain unchanged. Diagram-label ownership
+still remains open: the cover retains its source image and review warning, and #14 is not closed.
 
 
 Preformatted list/code blocks retain native inline styles instead of flattening them to strings.

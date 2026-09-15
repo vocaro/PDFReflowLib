@@ -92,6 +92,8 @@ that fall back to images skip unused attributed-text decoding. Failures use
   visible content remains in images. Placeholder-only pages follow the selected OCR policy.
   Whitespace cuts recover ordinary columns and spanning headings. Paragraph reconstruction
   joins hard wraps and narrowly supported cross-page continuations.
+  A bounded Type3 source-text check removes an extra native space only at a tiny kerning
+  adjustment with matching character-map, text and placement evidence; ambiguous spacing remains.
 - Validated PDF paragraph and H1–H6 tags supply grouping and heading levels. Complete tagged
   text groups can follow logical order inside spatial barriers. Unsupported or ambiguous tags
   report `structureFallback`; figures, lists, captions and OCR retain spatial reconstruction.

@@ -271,6 +271,19 @@ Our Flag physical page 31 supplies a second native case with negative baseline o
 two-line “Burial Flag / for a Veteran” heading must preserve the word boundary and heading
 semantics. The source photograph remains; this does not accept its unrelated drop-cap order.
 
+`NativeSpacingTests.swift` adds separate source-derived Type3 spacing evidence for DGA's
+“Dairy” and “Vegetables”. The fixture contains the original one-byte ToUnicode map and complete
+text-show objects, with source object numbers and checksum provenance. Seven tests require an
+exact full-line match and a tiny negative TJ adjustment at each removed space; protect explicit
+spaces, genuine word-size gaps, style attributes and ambiguous geometry; and reject unsupported
+fonts, transforms, Forms, character maps, text state and excessive work. The original single-run
+test still requires unchanged text when source-operator evidence is unavailable.
+
+The complete DGA contract requires the corrected words, the existing title, source image and
+`unverifiedTextLayer` warning. The [comparison evidence](../measurements/native-label-spacing/record.md)
+uses compatible per-run capability receipts and permits only these two exact literal replacements
+in parsed pages and XHTML. It does not claim correct diagram-label ownership or general spacing repair.
+
 
 ## Styles in lists and code
 

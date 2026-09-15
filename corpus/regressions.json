@@ -488,17 +488,22 @@
     {
       "id": "dga-2025-2030",
       "sourceSHA256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
-      "basis": "Page 2 source raster reviewed; protects letter paragraph order and imagery, not the known page-3 protein-column defect. Page 1 source title visually reviewed: the distinct Guidelines / For Americans lines must retain their word boundary; single-run label spacing and graphic ownership remain unqualified.",
+      "basis": "Page 2 source raster reviewed; protects letter paragraph order and imagery, not the known page-3 protein-column defect. Page 1 source title and labels visually reviewed: the distinct Guidelines / For Americans lines retain their word boundary, and source Type3 character maps/TJ adjustments support intact Dairy and Vegetables. Graphic-label ownership remains unqualified; retain the source image and review warning.",
       "pages": [
         {
           "page": 1,
           "text": [
-            "Dietary Guidelines For Americans"
+            "Dietary Guidelines For Americans",
+            "Protein, Dairy",
+            "Vegetables"
           ],
           "absentText": [
-            "GuidelinesFor Americans"
+            "GuidelinesFor Americans",
+            "Dair y",
+            "Ve getables"
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "warningCodesAnyOf": ["unverifiedTextLayer"]
         },
         {
           "page": 2,

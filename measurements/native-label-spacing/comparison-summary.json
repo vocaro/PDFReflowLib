@@ -1,0 +1,207 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "faa-phak-8083-25c",
+      "accepted": true,
+      "strictDriftComparison": {
+        "passed": true,
+        "provenanceErrors": [],
+        "case": "faa-phak-8083-25c",
+        "executionContexts": {
+          "baseline": "host",
+          "candidate": "host"
+        },
+        "baselineConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+        "candidateConverterSHA256": "0b3b56eb12ad00a13c946f69743a25b2906214aa237fab603e834c50eeaec9c4",
+        "changedPages": [],
+        "changedImages": [],
+        "pageMarkersEqual": true,
+        "changedReportFields": [],
+        "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification."
+      },
+      "pageCount": 522,
+      "imageCount": 588,
+      "exactXHTMLWithOnlyReviewedReplacements": true,
+      "beforeEPUBSHA256": "57928a6a88c4c192a84d16016bb7f556655d593a9cfe863f9722ed0010955f24",
+      "afterEPUBSHA256": "a3e2fdf60576811f2a3d45643fc6a7878e320e371124d3687a6a2b3fadca79a5"
+    },
+    {
+      "case": "wallace-algebra-2010",
+      "accepted": true,
+      "strictDriftComparison": {
+        "passed": true,
+        "provenanceErrors": [],
+        "case": "wallace-algebra-2010",
+        "executionContexts": {
+          "baseline": "host",
+          "candidate": "host"
+        },
+        "baselineConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+        "candidateConverterSHA256": "0b3b56eb12ad00a13c946f69743a25b2906214aa237fab603e834c50eeaec9c4",
+        "changedPages": [],
+        "changedImages": [],
+        "pageMarkersEqual": true,
+        "changedReportFields": [],
+        "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification."
+      },
+      "pageCount": 489,
+      "imageCount": 2050,
+      "exactXHTMLWithOnlyReviewedReplacements": true,
+      "beforeEPUBSHA256": "b93474debdebf83ef09b0fef5d5147bbf4d7cf41a943277216b83e27788d7b57",
+      "afterEPUBSHA256": "fe677fbfd52f40167417e25eb169af222735aa45cce846b9fb9c8dfbae53651e"
+    },
+    {
+      "case": "gpo-911-2004",
+      "accepted": true,
+      "strictDriftComparison": {
+        "passed": true,
+        "provenanceErrors": [],
+        "case": "gpo-911-2004",
+        "executionContexts": {
+          "baseline": "host",
+          "candidate": "host"
+        },
+        "baselineConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+        "candidateConverterSHA256": "0b3b56eb12ad00a13c946f69743a25b2906214aa237fab603e834c50eeaec9c4",
+        "changedPages": [],
+        "changedImages": [],
+        "pageMarkersEqual": true,
+        "changedReportFields": [],
+        "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification."
+      },
+      "pageCount": 585,
+      "imageCount": 331,
+      "exactXHTMLWithOnlyReviewedReplacements": true,
+      "beforeEPUBSHA256": "3e8a1797a8c8baf63414ed048949e4a84f410d2a8f1a6adbcac789a91a383c61",
+      "afterEPUBSHA256": "cd65fc69111db8a3176857d1b5d8c3b2d92ed478e90fc1e5792f90097d8c4a44"
+    },
+    {
+      "case": "fed-explained-2021",
+      "accepted": true,
+      "strictDriftComparison": {
+        "passed": true,
+        "provenanceErrors": [],
+        "case": "fed-explained-2021",
+        "executionContexts": {
+          "baseline": "host",
+          "candidate": "host"
+        },
+        "baselineConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+        "candidateConverterSHA256": "0b3b56eb12ad00a13c946f69743a25b2906214aa237fab603e834c50eeaec9c4",
+        "changedPages": [],
+        "changedImages": [],
+        "pageMarkersEqual": true,
+        "changedReportFields": [],
+        "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification."
+      },
+      "pageCount": 135,
+      "imageCount": 315,
+      "exactXHTMLWithOnlyReviewedReplacements": true,
+      "beforeEPUBSHA256": "eead71b8f63e1e7c923a52f21c9412f3252cd2850555e1d1252c73c33ad34952",
+      "afterEPUBSHA256": "bd1b5cb4b183907423db2b50070c1a29ef9cffeb5cee329f62eb56540250c0e8"
+    },
+    {
+      "case": "dga-2025-2030",
+      "accepted": true,
+      "strictDriftComparison": {
+        "passed": false,
+        "provenanceErrors": [],
+        "case": "dga-2025-2030",
+        "executionContexts": {
+          "baseline": "host",
+          "candidate": "host"
+        },
+        "baselineConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+        "candidateConverterSHA256": "0b3b56eb12ad00a13c946f69743a25b2906214aa237fab603e834c50eeaec9c4",
+        "changedPages": [
+          1
+        ],
+        "changedImages": [],
+        "pageMarkersEqual": true,
+        "changedReportFields": [],
+        "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification."
+      },
+      "pageCount": 10,
+      "imageCount": 27,
+      "exactXHTMLWithOnlyReviewedReplacements": true,
+      "beforeEPUBSHA256": "7157037248c64814d6098beb6a03b5e5f69c46496492af66efaf5e9eb4862f76",
+      "afterEPUBSHA256": "1bc2f9379e267a37aaae0ef7be4bf4ad9ad1b9c2427e8d7cc750a90ef21345c1"
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "accepted": true,
+      "strictDriftComparison": {
+        "passed": true,
+        "provenanceErrors": [],
+        "case": "gpo-our-flag-2003",
+        "executionContexts": {
+          "baseline": "host",
+          "candidate": "host"
+        },
+        "baselineConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+        "candidateConverterSHA256": "0b3b56eb12ad00a13c946f69743a25b2906214aa237fab603e834c50eeaec9c4",
+        "changedPages": [],
+        "changedImages": [],
+        "pageMarkersEqual": true,
+        "changedReportFields": [],
+        "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification."
+      },
+      "pageCount": 56,
+      "imageCount": 147,
+      "exactXHTMLWithOnlyReviewedReplacements": true,
+      "beforeEPUBSHA256": "1cc7c7a4df3adbd007b0294306ee37298d561af294a056ac78a4047ead89cf8f",
+      "afterEPUBSHA256": "9e8a5f2271ce80d6b97df20763268dc0c54cb43459a6b1c0c30568beb74eece1"
+    },
+    {
+      "case": "cdc-zombie-pandemic-2011",
+      "accepted": true,
+      "strictDriftComparison": {
+        "passed": true,
+        "provenanceErrors": [],
+        "case": "cdc-zombie-pandemic-2011",
+        "executionContexts": {
+          "baseline": "host",
+          "candidate": "host"
+        },
+        "baselineConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+        "candidateConverterSHA256": "0b3b56eb12ad00a13c946f69743a25b2906214aa237fab603e834c50eeaec9c4",
+        "changedPages": [],
+        "changedImages": [],
+        "pageMarkersEqual": true,
+        "changedReportFields": [],
+        "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification."
+      },
+      "pageCount": 42,
+      "imageCount": 42,
+      "exactXHTMLWithOnlyReviewedReplacements": true,
+      "beforeEPUBSHA256": "89de95ce624714d4835e53174f49ca79c6f0f170b92899d97356f545afcb43ed",
+      "afterEPUBSHA256": "cab53ce47aee2373c64af9cc01ff825f2c3d0cde205ec9c99a338c94d16cdad8"
+    },
+    {
+      "case": "cia-blue-book-14-1955",
+      "accepted": true,
+      "strictDriftComparison": {
+        "passed": true,
+        "provenanceErrors": [],
+        "case": "cia-blue-book-14-1955",
+        "executionContexts": {
+          "baseline": "host",
+          "candidate": "host"
+        },
+        "baselineConverterSHA256": "779a0db1544808b46c32b85dff869ce1cec7e4ea8f1a9faf97ca2f70fdb21167",
+        "candidateConverterSHA256": "0b3b56eb12ad00a13c946f69743a25b2906214aa237fab603e834c50eeaec9c4",
+        "changedPages": [],
+        "changedImages": [],
+        "pageMarkersEqual": true,
+        "changedReportFields": [],
+        "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification."
+      },
+      "pageCount": 312,
+      "imageCount": 422,
+      "exactXHTMLWithOnlyReviewedReplacements": true,
+      "beforeEPUBSHA256": "66847b94549ba2073d99aeadd973b3f447557297e6231954be5acf003c4a9658",
+      "afterEPUBSHA256": "33fd43890fd2b53c177302c3228647646c64d3f36322ed0400d861269d5b67a6"
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "baseline": "6992fb3",
+  "status": "Rejected: demotes the genuine CDC page-15 title. No runtime fix retained.",
+  "sourceSHA256": {
+    "Sources/PDFReflowLib/LayoutReconstructor.swift": "ea47e3f5e792e3df581b278b78dfd21acffd9171cee98ee3ddf1e3decd00c93b",
+    "Sources/PDFReflowLib/OCRReader.swift": "1253acb45a2ba9306a281f14e3129f38d9f1335b7ab31dbf2828c4c1f5bac11f",
+    "Tests/PDFReflowLibTests/OCRHeadingTests.swift": "ce11facadb0188f244ce1307903de57b724dc6ccb81d71889231ee57790305c7",
+    "Tests/PDFReflowLibTests/SourceLayoutFixture.swift": "e70851adc1b7abb8656606eeea1a265bf6994b2c76a175b3d4b37ef25306adf7",
+    "Tests/PDFReflowLibTests/fixtures/cdc-13-ocr-layout.json": "eea3e70718fec6e2f5a4faf27b1c3dc22c887ded620add70230059636daddf96",
+    "corpus/regressions.json": "7c7b5672837456ea54a9dcb4b9fe0cc6bd07f970524541060b1c0086ff2e5d60",
+    "tools/capture-ocr-layout-fixture.swift": "a37a57dbc985481a5ab11c4908566edc8564850740f1a075201f873664637c37",
+    "measurements/ocr-headings/collect.py": "aec0bbf164aca90f6e3bbaf7db82cd3df8134ecad4f0d9b9b5d304241c386f38"
+  },
+  "comparison": [
+    {
+      "case": "faa-phak-8083-25c",
+      "pages": 522,
+      "identicalImages": 588,
+      "beforeEPUBSHA256": "0123310990110e555232b03531d2c174c0e9d95f05b01402bee8c7f236c95f96",
+      "afterEPUBSHA256": "ec0f2230eb57250bfe30350da46581f5b033561567f664f74d2dd5af08e7127e",
+      "changedOCRPages": []
+    },
+    {
+      "case": "wallace-algebra-2010",
+      "pages": 489,
+      "identicalImages": 2050,
+      "beforeEPUBSHA256": "f7f49a39a7cf405a19e141856913958ec9494ce69f05aa7593fe836c5b42aabf",
+      "afterEPUBSHA256": "cbb30542c657fdd364ea2cdcf7b9dd565fa7f0886d9dadc97f40ec957a383ff9",
+      "changedOCRPages": []
+    },
+    {
+      "case": "gpo-911-2004",
+      "pages": 585,
+      "identicalImages": 331,
+      "beforeEPUBSHA256": "bfbe496e9c9fe1f7b5a6a9b421cd4e52769997386c05c385cddf7727b1c072c9",
+      "afterEPUBSHA256": "fe1c577d50d66981fcff29dfda0244d4e77d526fddef1f35862d9688e266d642",
+      "changedOCRPages": []
+    },
+    {
+      "case": "fed-explained-2021",
+      "pages": 135,
+      "identicalImages": 315,
+      "beforeEPUBSHA256": "ce926dd18b1cc85ad050a6614453713509ec4465fd64f5644bd074b5ba2d9bbd",
+      "afterEPUBSHA256": "4ff6882e2e2984d4400c5968e6a4c29e581dcd5dd250cd259e8d145687b0d486",
+      "changedOCRPages": []
+    },
+    {
+      "case": "dga-2025-2030",
+      "pages": 10,
+      "identicalImages": 27,
+      "beforeEPUBSHA256": "89f57eea20107def2c69dfa37f0c29702c8c1cc1d9bd91321327b70a263583e4",
+      "afterEPUBSHA256": "9a45d19e09ab9edb8fbd6f16d34c3daf1b9129ed91c5fcd2432d2f08c9ffc0b2",
+      "changedOCRPages": []
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "pages": 56,
+      "identicalImages": 147,
+      "beforeEPUBSHA256": "ae174af79a49be45886621ba4da6ad00c425fda83dbdedfe2cfbaa5c8bf80889",
+      "afterEPUBSHA256": "96469c2dd730758f552ac7f0b5c5eb7d61d5e74480175bbc38352765b698eb34",
+      "changedOCRPages": []
+    },
+    {
+      "case": "cdc-zombie-pandemic-2011",
+      "pages": 42,
+      "identicalImages": 42,
+      "beforeEPUBSHA256": "d34b1efbe2b6b0514c38ad0a06beeceb2f1648f172d2ebba1a9d3d1f1c13f2f8",
+      "afterEPUBSHA256": "2d69d71c0390aa8bd1438503813bd753d35d23847c396fe90801e780649cdeb4",
+      "changedOCRPages": [
+        {
+          "page": 13,
+          "beforeHeadings": [
+            "AND SEE WHAT'S HAPPENING...",
+            "UН? WHД?"
+          ],
+          "afterParagraphs": [
+            "OKAY, OKAY... I'M COMING.",
+            "LET'S TAKE A PEEK OUTSIDE AND SEE WHAT'S HAPPENING...",
+            "UН? WHД?",
+            "(WHINE!)",
+            "WHAT IS IT MAX?",
+            "IT'S STILL DARK OUT.",
+            "WHAT THE... ?!!"
+          ]
+        },
+        {
+          "page": 15,
+          "beforeHeadings": [
+            "ZOMBIE PANDEMIC"
+          ],
+          "afterParagraphs": [
+            "PREPAREDNESS 101:",
+            "ZOMBIE PANDEMIC",
+            "PART 2"
+          ]
+        },
+        {
+          "page": 16,
+          "beforeHeadings": [
+            "JCDC"
+          ],
+          "afterParagraphs": [
+            "УďпG",
+            "CONTROL ARD PREVE",
+            "CERTERG",
+            "FOE",
+            "JCDC"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "cia-blue-book-14-1955",
+      "pages": 312,
+      "identicalImages": 422,
+      "beforeEPUBSHA256": "3c1b0a2a770dd10ca6823e450a1978027b7034f3903cf39fe927f4ff13b15eb1",
+      "afterEPUBSHA256": "efc493536ea694f9004f2b13f1ec60e077b70582d622711e089cb26e1808324c",
+      "changedOCRPages": []
+    }
+  ],
+  "corpus": {
+    "passed": true,
+    "results": [
+      {
+        "case": "faa-phak-8083-25c",
+        "passed": true,
+        "reviewPages": [
+          16,
+          121,
+          91,
+          511,
+          211,
+          212,
+          50,
+          325,
+          81,
+          191
+        ],
+        "contentChecks": 52,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "wallace-algebra-2010",
+        "passed": true,
+        "reviewPages": [
+          2,
+          12,
+          347,
+          343,
+          26
+        ],
+        "contentChecks": 17,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "gpo-911-2004",
+        "passed": true,
+        "reviewPages": [
+          15,
+          19,
+          20,
+          21,
+          65,
+          67,
+          451,
+          472
+        ],
+        "contentChecks": 30,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "fed-explained-2021",
+        "passed": true,
+        "reviewPages": [
+          9,
+          13,
+          32,
+          45,
+          46,
+          54,
+          75,
+          77,
+          103,
+          109,
+          123,
+          1
+        ],
+        "contentChecks": 37,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "dga-2025-2030",
+        "passed": true,
+        "reviewPages": [
+          1,
+          2,
+          3
+        ],
+        "contentChecks": 9,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "gpo-our-flag-2003",
+        "passed": true,
+        "reviewPages": [
+          27,
+          31,
+          33,
+          34,
+          42,
+          43,
+          7,
+          9,
+          30,
+          29
+        ],
+        "contentChecks": 57,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "cdc-zombie-pandemic-2011",
+        "passed": true,
+        "reviewPages": [
+          5,
+          13,
+          39
+        ],
+        "contentChecks": 11,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "cia-blue-book-14-1955",
+        "passed": true,
+        "reviewPages": [
+          12,
+          74,
+          150
+        ],
+        "contentChecks": 9,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      }
+    ],
+    "notRun": [],
+    "knownUnsupportedFullConversions": [
+      {
+        "id": "gpo-warren-1964",
+        "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+        "issue": 5
+      },
+      {
+        "id": "noaa-nca5-2023",
+        "reason": "Known default image-output ceiling failure; full completion is unqualified.",
+        "issue": 5
+      }
+    ]
+  },
+  "scope": "Every page has identical text, inline scripts and images; heading/paragraph changes are restricted to fresh OCR pages. Navigation remains covered by the gate."
+}

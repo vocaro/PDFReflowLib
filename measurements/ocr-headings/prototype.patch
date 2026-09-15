@@ -1,0 +1,259 @@
+diff --git a/Sources/PDFReflowLib/LayoutReconstructor.swift b/Sources/PDFReflowLib/LayoutReconstructor.swift
+index c8ec3c3..2a5ce00 100644
+--- a/Sources/PDFReflowLib/LayoutReconstructor.swift
++++ b/Sources/PDFReflowLib/LayoutReconstructor.swift
+@@ -162,7 +162,11 @@ enum LayoutReconstructor {
+             }
+             flushTagged()
+             if !line.monospaced { codeOrigin = nil }
+-            if !page.hasSyntheticTextStyle && line.fontSize >= headingThreshold && line.text.count < 200 {
++            // Fresh OCR supplies bounding-box height, not measured font size. Tilted speech
++            // and multi-line boxes can be taller without being headings (#18). Validated
++            // structure roles above remain separate from this native-typography heuristic.
++            if !page.recognized && !page.hasSyntheticTextStyle
++                && line.fontSize >= headingThreshold && line.text.count < 200 {
+                 flush()
+                 result.append(ReflowBlock(content: .heading(id: "heading-\(page.number)-\(result.count)", text: line.content),
+                     page: page.number))
+diff --git a/Sources/PDFReflowLib/OCRReader.swift b/Sources/PDFReflowLib/OCRReader.swift
+index 5ab3771..d0cc948 100644
+--- a/Sources/PDFReflowLib/OCRReader.swift
++++ b/Sources/PDFReflowLib/OCRReader.swift
+@@ -26,6 +26,7 @@ enum OCRReader {
+             // Preserve uncertain transcription rather than dropping low-confidence words silently.
+             let normalized = observation.boundingRegion.boundingBox.cgRect
+             let rect = pageRect(normalized)
++            // A layout scale only: this is not native typography or heading-role evidence.
+             return TextLine(text: candidate.string, rect: rect, fontSize: rect.height,
+                             wraps: observation.shouldWrapToNextLine)
+         }
+diff --git a/Tests/PDFReflowLibTests/SourceLayoutFixture.swift b/Tests/PDFReflowLibTests/SourceLayoutFixture.swift
+index 3700c4e..c77a7cd 100644
+--- a/Tests/PDFReflowLibTests/SourceLayoutFixture.swift
++++ b/Tests/PDFReflowLibTests/SourceLayoutFixture.swift
+@@ -15,6 +15,7 @@ struct SourceLayoutFixture: Decodable {
+         var rect: [Double]
+         var fontSize: Double
+         var monospaced: Bool
++        var wraps: Bool?
+     }
+     struct AttributedLine: Decodable {
+         struct Run: Decodable {
+@@ -54,7 +55,8 @@ struct SourceLayoutFixture: Decodable {
+             return CGRect(x: values[0], y: values[1], width: values[2], height: values[3])
+         }
+         return PageContent(number: page, bounds: rect(bounds), lines: lines.map {
+-            TextLine(text: $0.text, rect: rect($0.rect), fontSize: $0.fontSize, monospaced: $0.monospaced)
++            TextLine(text: $0.text, rect: rect($0.rect), fontSize: $0.fontSize,
++                     monospaced: $0.monospaced, wraps: $0.wraps)
+         }, graphics: graphics.map(rect))
+     }
+ }
+diff --git a/corpus/regressions.json b/corpus/regressions.json
+index 330f89a..30cac03 100644
+--- a/corpus/regressions.json
++++ b/corpus/regressions.json
+@@ -594,7 +594,7 @@
+     {
+       "id": "cdc-zombie-pandemic-2011",
+       "sourceSHA256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
+-      "basis": "Page 39 checklist source raster reviewed. Page 5/13 only protect artwork and transcription warnings; damaged dialogue and comic narrative order remain unqualified.",
++      "basis": "Page 39 checklist source raster reviewed. Page 13 speech balloons reviewed: AND SEE WHAT'S HAPPENING is dialogue, not a heading. Page 5/13 protect artwork and transcription warnings; damaged dialogue and comic narrative order remain unqualified.",
+       "pages": [
+         {
+           "page": 5,
+@@ -607,6 +607,9 @@
+         {
+           "page": 13,
+           "minimumImages": 1,
++          "paragraphs": [
++            "AND SEE WHAT'S HAPPENING..."
++          ],
+           "warningCodesAnyOf": [
+             "ocrUsed",
+             "pageImageFallback"
+diff --git a/Tests/PDFReflowLibTests/OCRHeadingTests.swift b/Tests/PDFReflowLibTests/OCRHeadingTests.swift
+new file mode 100644
+index 0000000..1a45c37
+--- /dev/null
++++ b/Tests/PDFReflowLibTests/OCRHeadingTests.swift
+@@ -0,0 +1,56 @@
++import Foundation
++import Testing
++@testable import PDFReflowLib
++
++private func ocrHeadingBlocks(_ page: PageContent) -> [ReflowBlock] {
++    var warnings: [ConversionWarning] = []
++    return LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
++}
++
++@Test func freshOCRBoxHeightsDoNotDeclareHeadings() {
++    let lines = [
++        TextLine(text: "WHAT IS IT MAX?", rect: CGRect(x: 40, y: 240, width: 140, height: 18), fontSize: 18),
++        TextLine(text: "Several smaller dialogue fragments establish the usual box height.",
++                 rect: CGRect(x: 40, y: 200, width: 250, height: 10), fontSize: 10),
++        TextLine(text: "Another ordinary line.", rect: CGRect(x: 40, y: 180, width: 160, height: 10), fontSize: 10),
++    ]
++    var page = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 400, height: 300), lines: lines, graphics: [])
++    page.recognized = true
++    let blocks = ocrHeadingBlocks(page)
++    #expect(!blocks.contains { if case .heading = $0.content { return true }; return false })
++    #expect(blocks.contains { if case let .paragraph(text) = $0.content { return text.text == lines[0].text }; return false })
++    // Identical geometry with actual native typography remains eligible for heading inference.
++    page.recognized = false
++    #expect(ocrHeadingBlocks(page).contains { if case .heading = $0.content { return true }; return false })
++}
++
++@Test func comicSourceOCRDialogueRemainsParagraphText() throws {
++    var page = try SourceLayoutFixture.load("cdc-13-ocr").content()
++    page.recognized = true
++    let blocks = ocrHeadingBlocks(page)
++    #expect(!blocks.contains { if case .heading = $0.content { return true }; return false })
++    // Source review identifies speech, not a title; this does not assert panel or balloon order.
++    #expect(blocks.contains { if case let .paragraph(text) = $0.content { return text.text.contains("AND SEE WHAT'S HAPPENING...") }; return false })
++    for line in page.lines {
++        #expect(blocks.map(\.text).joined(separator: " ").contains(line.text))
++    }
++}
++
++@Test func nativeSourceTitlesRemainHeadings() throws {
++    for name in ["fed-77", "flag-31"] {
++        let source = try SourceLayoutFixture.load(name)
++        #expect(ocrHeadingBlocks(source.content()).contains { if case .heading = $0.content { return true }; return false })
++    }
++}
++
++@Test func freshOCRConversionKeepsTextAndSourceReference() async throws {
++    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
++    let source = Bundle.module.resourceURL!.appendingPathComponent("fixtures/scanned.pdf")
++    let result = try await PDFReflowLibPipeline.reconstruct(from: source, options: ConversionOptions(),
++        workspace: dir, progress: { _ in })
++    #expect(result.recognizedPageCount == 1)
++    #expect(result.document.blocks.contains { $0.text.contains("clear scanned paragraph") })
++    #expect(!result.document.blocks.contains { if case .heading = $0.content { return true }; return false })
++    #expect(result.document.assets.count == 1)
++    #expect(result.warnings.contains { $0.code == .ocrUsed })
++}
+diff --git a/Tests/PDFReflowLibTests/fixtures/cdc-13-ocr-layout.json b/Tests/PDFReflowLibTests/fixtures/cdc-13-ocr-layout.json
+new file mode 100644
+index 0000000..254cff5
+--- /dev/null
++++ b/Tests/PDFReflowLibTests/fixtures/cdc-13-ocr-layout.json
+@@ -0,0 +1,117 @@
++{
++  "attributedLines" : [
++
++  ],
++  "bounds" : [
++    0,
++    0,
++    612,
++    792
++  ],
++  "caseID" : "cdc-zombie-pandemic-2011",
++  "extraction" : "Vision RecognizeDocumentsRequest, default ConversionOptions",
++  "graphics" : [
++
++  ],
++  "lines" : [
++    {
++      "fontSize" : 9.8999999999999648,
++      "monospaced" : false,
++      "rect" : [
++        51.137466222655519,
++        336.60000000642856,
++        130.31805929919136,
++        9.8999999999999648
++      ],
++      "text" : "OKAY, OKAY... I'M COMING.",
++      "wraps" : false
++    },
++    {
++      "fontSize" : 9.8999999999999648,
++      "monospaced" : false,
++      "rect" : [
++        49.487869914285739,
++        326.70000005499998,
++        133.61725067385447,
++        9.8999999999999648
++      ],
++      "text" : "LET'S TAKE A PEEK OUTSIDE",
++      "wraps" : true
++    },
++    {
++      "fontSize" : 13.278786706924397,
++      "monospaced" : false,
++      "rect" : [
++        44.439741379657114,
++        313.40085643944133,
++        145.38155667287,
++        13.278786706924397
++      ],
++      "text" : "AND SEE WHAT'S HAPPENING...",
++      "wraps" : false
++    },
++    {
++      "fontSize" : 9.8999999999999648,
++      "monospaced" : false,
++      "rect" : [
++        460.23719686859846,
++        699.60000006187499,
++        42.889487870619945,
++        9.8999999999999648
++      ],
++      "text" : "(WHINE!)",
++      "wraps" : false
++    },
++    {
++      "fontSize" : 13.609115266799892,
++      "monospaced" : false,
++      "rect" : [
++        344.71511603444424,
++        654.84544239568436,
++        52.887827130340796,
++        13.609115266799892
++      ],
++      "text" : "UН? WHД?",
++      "wraps" : false
++    },
++    {
++      "fontSize" : 9.8999999999999648,
++      "monospaced" : false,
++      "rect" : [
++        466.83557943234496,
++        498.30000000989997,
++        85.77897574123989,
++        9.8999999999999648
++      ],
++      "text" : "WHAT IS IT MAX?",
++      "wraps" : false
++    },
++    {
++      "fontSize" : 9.8999999999999648,
++      "monospaced" : false,
++      "rect" : [
++        455.28840962102419,
++        486.75000000785718,
++        107.22371967654983,
++        9.8999999999999648
++      ],
++      "text" : "IT'S STILL DARK OUT.",
++      "wraps" : false
++    },
++    {
++      "fontSize" : 11.549999999999958,
++      "monospaced" : false,
++      "rect" : [
++        433.84366569056596,
++        94.050000016985308,
++        72.582210242587649,
++        11.549999999999958
++      ],
++      "text" : "WHAT THE... ?!!",
++      "wraps" : false
++    }
++  ],
++  "page" : 13,
++  "sourceSHA256" : "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
++  "sourceTitle" : "Preparedness 101: Zombie Pandemic"
++}

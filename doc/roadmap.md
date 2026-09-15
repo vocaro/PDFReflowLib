@@ -72,6 +72,9 @@ physical-device memory/performance remain unqualified.
   Detect suspect inherited dialogue and preserve [panel/balloon order](https://github.com/vocaro/PDFReflowLib/issues/18)
   or clearly signal readable image fallback. The [baseline](../measurements/cdc-zombie-pandemic-2011/record.md)
   passes validity, progress and the 512 MiB Mac RSS gate; dialogue quality remains unqualified.
+  The [OCR-heading investigation](../measurements/ocr-headings/record.md) rejects blanket
+  suppression because it loses the genuine Part 2 title; quadrilateral height and Vision's
+  title flag alone also fail source controls. No runtime repair is retained from that experiment.
 
 - The 312-page Blue Book statistical scan supplies a warning/refusal contract. The converter
   reports unverified text layers and preserves source images; reliable scanned-table detection

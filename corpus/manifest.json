@@ -557,6 +557,74 @@
       "structureCaveat": "Populated StructTreeRoot with MarkInfo.Marked=false; no Table/TR/TH/TD roles or Figure Alt text. Tag associations require validation; current converter does not consume the tree."
     },
     {
+      "id": "cia-blue-book-14-1955",
+      "title": "Project Blue Book Special Report No. 14",
+      "author": "Air Technical Intelligence Center, United States Air Force",
+      "publicationYear": 1955,
+      "url": "https://www.war.gov/UFO/",
+      "downloadURL": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf",
+      "filename": "CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf",
+      "bytes": 24433155,
+      "sha256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
+      "pages": 312,
+      "role": "development",
+      "identity": {
+        "suppliedBy": "owner"
+      },
+      "provenance": "Owner-supplied CIA-UAP-015 release copy. Official PURSUE publisher page identifies Release 03 (June 12, 2026); indexed official PDF URL identifies this exact filename.",
+      "rightsBasis": "Government report; physical page 4 states no copyright material is contained in the publication. Source unchanged; PDF copy permissions are a separate technical constraint.",
+      "rightsClearance": {
+        "status": "tentative",
+        "scope": "Government-publication provenance recorded for development; no new owner-confirmed rights determination or shipped-catalog admission."
+      },
+      "coverage": [
+        "typewritten scan with inherited OCR",
+        "dense statistical tables",
+        "damaged OCR and scan artifacts",
+        "permission-encrypted copy-disabled PDF",
+        "safe refusal and warning contract"
+      ],
+      "reviewPages": [
+        4,
+        9,
+        74,
+        111,
+        150,
+        250
+      ],
+      "reviewStatus": "Full conversion, EPUBCheck, progress and 512 MiB Mac RSS gate pass. The separate warning/refusal quality gate fails on pages 74 and 150. No table-transcription fidelity qualification.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 512,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; resource regression ceiling, not quality approval or a mobile device budget"
+      },
+      "qualityExpectation": {
+        "warningPages": [
+          74,
+          150
+        ],
+        "warningCodes": [
+          "complexLayout",
+          "pageImageFallback"
+        ],
+        "qualityRejectionDiagnostics": [],
+        "basis": "Inspected typewritten and handwritten table pages need explicit complexity/fallback signaling, not merely imageRegion or furnitureRemoved. No current quality-refusal error exists; approved diagnostics remain empty until an explicit API contract is implemented. A future dedicated unreliable-text warning can be added when defined."
+      },
+      "downloadVerification": "Owner-supplied identity verified by corpus fetcher; fresh publisher download returns HTTP 403. Seed the ignored cache with exact original bytes; see measurements/cia-blue-book-14-1955/download-status.json.",
+      "knownFidelityIssues": [
+        {
+          "page": 74,
+          "issue": "Scan artifacts and object placeholder become headings; table rows become prose without an actionable quality warning.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/19"
+        },
+        {
+          "page": 150,
+          "issue": "Damaged handwriting/numeric OCR is emitted as prose and headings; only generic imageRegion and furnitureRemoved warnings.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/19"
+        }
+      ],
+      "qualityTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/19"
+    },
+    {
       "id": "cdc-zombie-pandemic-2011",
       "title": "Preparedness 101: Zombie Pandemic",
       "author": "Maggie Silver, James Archer, Bob Hobbs, Alissa Eckert and Mark Conner; CDC",

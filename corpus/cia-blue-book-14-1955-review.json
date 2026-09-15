@@ -1,0 +1,107 @@
+{
+  "case": "cia-blue-book-14-1955",
+  "pageNumbering": "Physical PDF pages, one-based; page 74 is printed 64, page 150 is printed 141",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 4,
+      "target": "Title and provenance",
+      "acceptance": "Preserve title and publication identity without treating archival markings as instructions."
+    },
+    {
+      "page": 9,
+      "target": "Summary prose",
+      "acceptance": "Report suspect inherited OCR; do not infer accuracy from a populated text layer."
+    },
+    {
+      "page": 74,
+      "target": "Table IV: chi-square comparison by shape",
+      "acceptance": "Flag uncertain reconstruction or preserve readable table appearance. Keep row/column associations and avoid scan-edge or object-placeholder headings."
+    },
+    {
+      "page": 111,
+      "target": "Appendix tabulations",
+      "acceptance": "Preserve column headers and numeric associations; qualify against source before claiming usable reflow."
+    },
+    {
+      "page": 150,
+      "target": "Table AA3: handwritten multi-section sheet",
+      "acceptance": "Do not present damaged handwriting and numeric OCR as reliable prose. Preserve readable original appearance and issue an actionable quality warning or refuse explicitly."
+    },
+    {
+      "page": 250,
+      "target": "Late appendix tables",
+      "acceptance": "Apply the same quality policy through the end of a table-heavy document."
+    }
+  ],
+  "tableReference": {
+    "page": 74,
+    "rowLabels": [
+      "Elliptical",
+      "Rocket and aircraft",
+      "Meteor or comet",
+      "Teardrop, lenticular, or conical",
+      "Flame",
+      "Other",
+      "Not stated",
+      "Total"
+    ],
+    "numericColumns": [
+      "Number of KNOWNS",
+      "Adjusted number of KNOWNS (K)",
+      "Number of UNKNOWNS (n)",
+      "Chi-square contribution"
+    ],
+    "rows": [
+      [
+        838,
+        206,
+        195,
+        "0.59"
+      ],
+      [
+        80,
+        20,
+        33,
+        "8.45"
+      ],
+      [
+        55,
+        14,
+        4,
+        "7.14"
+      ],
+      [
+        103,
+        25,
+        22,
+        "0.36"
+      ],
+      [
+        96,
+        24,
+        10,
+        "8.17"
+      ],
+      [
+        193,
+        47,
+        54,
+        "1.04"
+      ],
+      [
+        400,
+        98,
+        116,
+        "3.30"
+      ],
+      [
+        1765,
+        434,
+        434,
+        "29.05"
+      ]
+    ],
+    "basis": "Manually checked against source-page-74.png; reference values reproduce the printed table, not a recalculation. Not currently enforced as a passing cell-fidelity test."
+  }
+}

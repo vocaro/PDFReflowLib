@@ -31,6 +31,7 @@ work offline. Tests and conversion never fetch sources automatically.
 | `noaa-nca5-2023` | 1,834 | Large tagged report, mixed orientations, 32 chapter starts, uneven graphics | Unset: default conversion fails |
 | `gpo-our-flag-2003` | 56 | Structure-tree inconsistencies, flag illustrations, drop capitals, one visible table | 192 MiB |
 | `cdc-zombie-pandemic-2011` | 42 | Comic artwork, noisy inherited text, image-only dialogue, panel order | 512 MiB |
+| `cia-blue-book-14-1955` | 312 | Scanned statistical tables, inherited OCR, negative warning/refusal contract | 512 MiB |
 
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
@@ -281,3 +282,33 @@ progress and the 512 MiB Mac RSS gate, retaining 42 page images. The
 on page 5 and fresh-OCR panel-order failure on page 13. [Suspect text #7](https://github.com/vocaro/PDFReflowLib/issues/7)
 and [comic grouping #18](https://github.com/vocaro/PDFReflowLib/issues/18) track those gaps.
 The measured 3,341 extracted whitespace tokens include OCR noise; they are not dialogue coverage.
+
+
+## Project Blue Book Special Report No. 14
+
+This 312-page typewritten/handwritten scan is a negative quality-signaling case. Its inherited
+OCR and figure-only structure tree do not establish usable table semantics. The supplied release
+copy remains in the ignored cache; automatic publisher download returns HTTP 403. The fetcher
+verifies the exact supplied identity when the cache is manually seeded.
+
+```sh
+python3 tools/fetch_corpus.py --case cia-blue-book-14-1955
+swift build -c release --scratch-path .build/corpus-cli
+python3 tools/evaluate-real-document.py --case cia-blue-book-14-1955 \
+  --pdf corpus/cache/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf \
+  --converter .build/corpus-cli/release/pdf-reflow \
+  --output /tmp/blue-book-baseline --epubcheck /opt/homebrew/bin/epubcheck
+python3 tools/check_corpus_quality.py --case cia-blue-book-14-1955 \
+  --evaluation /tmp/blue-book-baseline
+```
+
+The final command currently exits 1, reporting missing actionable warnings on pages 74 and 150.
+The [baseline](../measurements/cia-blue-book-14-1955/record.md) passes EPUB validity, progress
+and the Mac memory gate while failing this separate quality contract. Crashes, timeouts, resource
+failures and generic image-preservation warnings do not satisfy it. No production quality-refusal
+error exists yet; the manifest's approved diagnostic list is empty. Future dedicated quality
+warnings/refusals need explicit semantics and matching contract entries.
+
+[Review references](../corpus/cia-blue-book-14-1955-review.json) include the typewritten table's
+printed rows and handwritten-sheet review targets. [Issue #19](https://github.com/vocaro/PDFReflowLib/issues/19)
+tracks the warning/refusal behavior; passing the signal contract will not establish correct cells.

@@ -1,0 +1,3465 @@
+{
+  "case": {
+    "id": "cia-blue-book-14-1955",
+    "title": "Project Blue Book Special Report No. 14",
+    "author": "Air Technical Intelligence Center, United States Air Force",
+    "publicationYear": 1955,
+    "url": "https://www.war.gov/UFO/",
+    "downloadURL": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf",
+    "filename": "CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf",
+    "bytes": 24433155,
+    "sha256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
+    "pages": 312,
+    "role": "development",
+    "identity": {
+      "suppliedBy": "owner"
+    },
+    "provenance": "Owner-supplied CIA-UAP-015 release copy. Official PURSUE publisher page identifies Release 03 (June 12, 2026); indexed official PDF URL identifies this exact filename.",
+    "rightsBasis": "Government report; physical page 4 states no copyright material is contained in the publication. Source unchanged; PDF copy permissions are a separate technical constraint.",
+    "rightsClearance": {
+      "status": "tentative",
+      "scope": "Government-publication provenance recorded for development; no new owner-confirmed rights determination or shipped-catalog admission."
+    },
+    "coverage": [
+      "typewritten scan with inherited OCR",
+      "dense statistical tables",
+      "damaged OCR and scan artifacts",
+      "permission-encrypted copy-disabled PDF",
+      "safe refusal and warning contract"
+    ],
+    "reviewPages": [
+      4,
+      9,
+      74,
+      111,
+      150,
+      250
+    ],
+    "reviewStatus": "Inspecting default refusal and warning behavior; no fidelity qualification.",
+    "memoryBudget": {
+      "maxPeakRSSMiB": 512,
+      "scope": "macOS 27 arm64 isolated release CLI, defaults; resource regression ceiling, not quality approval or a mobile device budget"
+    },
+    "qualityExpectation": {
+      "warningPages": [
+        74,
+        150
+      ],
+      "warningCodes": [
+        "complexLayout",
+        "pageImageFallback"
+      ],
+      "qualityRejectionDiagnostics": [],
+      "basis": "Inspected typewritten and handwritten table pages need explicit complexity/fallback signaling, not merely imageRegion or furnitureRemoved. No current quality-refusal error exists; approved diagnostics remain empty until an explicit API contract is implemented. A future dedicated unreliable-text warning can be added when defined."
+    }
+  },
+  "converterSHA256": "9fed7af9cb6872ef13a596f1df9512fb9236e66a67e43db96e3637a9eeb4a0e8",
+  "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "options": "library defaults",
+  "qualifiedForFidelity": false,
+  "conversionExitCode": 0,
+  "sampledPeakPhysicalFootprintBytes": 291177360,
+  "conversionSeconds": 37.38076908300354,
+  "converterPeakRSSBytes": 307970048,
+  "converterCPUSeconds": 37.230391,
+  "measurementScope": "One process run; RSS excludes separate Apple services. Timing excludes validation. Not a latency distribution or physical mobile-device measurement.",
+  "progressCheck": {
+    "passed": true,
+    "events": 1066,
+    "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+  },
+  "conversionReport": {
+    "imageCount": 397,
+    "pageCount": 312,
+    "recognizedPageCount": 0,
+    "reflowedPageCount": 227,
+    "warnings": [
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 5
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 6
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 7
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 8
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 9
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 10
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 11
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 12
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 13
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 14
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 15
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 16
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 17
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 18
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 19
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 20
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 21
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 22
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 23
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 24
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 25
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 26
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 27
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 28
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 29
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 32
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 34
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 37
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 38
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 56
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 57
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 61
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 64
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 65
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 66
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 68
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 70
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 71
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 72
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 73
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 74
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 75
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 76
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 77
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 78
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 79
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 80
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 81
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 82
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 83
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 84
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 85
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 86
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 87
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 88
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 89
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 90
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 91
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 92
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 93
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 94
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 95
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 96
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 97
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 98
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 99
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 100
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 101
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 102
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 103
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 104
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 105
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 106
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 107
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 108
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 109
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 110
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 111
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 112
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 113
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 114
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 115
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 116
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 117
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 118
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 119
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 120
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 121
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 122
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 123
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 124
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 125
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 126
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 127
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 128
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 129
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 130
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 131
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 132
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 133
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 134
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 135
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 136
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 137
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 138
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 139
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 140
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 141
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 142
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 143
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 144
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 145
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 146
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 147
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 148
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 149
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 150
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 151
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 152
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 153
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 154
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 155
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 156
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 157
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 158
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 159
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 160
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 161
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 162
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 163
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 164
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 165
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 166
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 167
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 168
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 169
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 170
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 171
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 172
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 173
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 174
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 175
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 176
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 177
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 178
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 179
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 180
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 181
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 182
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 183
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 184
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 185
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 186
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 187
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 188
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 189
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 190
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 191
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 192
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 193
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 194
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 195
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 196
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 197
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 198
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 199
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 200
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 201
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 202
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 203
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 204
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 205
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 206
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 207
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 208
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 209
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 210
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 211
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 212
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 213
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 214
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 215
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 216
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 217
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 218
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 219
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 220
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 221
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 222
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 223
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 224
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 225
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 226
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 227
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 228
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 229
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 230
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 231
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 232
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 233
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 234
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 235
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 236
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 237
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 238
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 239
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 240
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 241
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 242
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 243
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 244
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 245
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 246
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 247
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 248
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 249
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 250
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 251
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 252
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 253
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 254
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 255
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 256
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 257
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 258
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 259
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 260
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 261
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 262
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 263
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 264
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 265
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 266
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 267
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 268
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 269
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 270
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 271
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 272
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 273
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 274
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 275
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 276
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 277
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 278
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 279
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 280
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 281
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 282
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 283
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 284
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 285
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 286
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 287
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 288
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 289
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 290
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 291
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 292
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 293
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 294
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 295
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 296
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 297
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 298
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 299
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 300
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 301
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 302
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 303
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 304
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 305
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 306
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 307
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 308
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 309
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 310
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 312
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 1
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 2
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 3
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 3
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 4
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 5
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 6
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 7
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 8
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 9
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 10
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 11
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 12
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 13
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 14
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 15
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 16
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 17
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 18
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 19
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 20
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 21
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 22
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 23
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 24
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 25
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 26
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 27
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 27
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 28
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 28
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 29
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 29
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 30
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 31
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 31
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 32
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 33
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 34
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 34
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 35
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 36
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 37
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 37
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 38
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 38
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 39
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 39
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 40
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 41
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 41
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 42
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 42
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 43
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 44
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 45
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 46
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 47
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 48
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 49
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 50
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 51
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 52
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 53
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 54
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 55
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 56
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 57
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 58
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 59
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 60
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 61
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 62
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 63
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 64
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 65
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 65
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 66
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 67
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 68
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 69
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 70
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 71
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 72
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 73
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 74
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 75
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 76
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 77
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 78
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 79
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 80
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 81
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 82
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 83
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 84
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 85
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 86
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 87
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 88
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 89
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 90
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 91
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 92
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 93
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 94
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 95
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 96
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 97
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 98
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 99
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 100
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 101
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 102
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 103
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 104
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 105
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 106
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 107
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 108
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 109
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 110
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 111
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 112
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 113
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 114
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 115
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 116
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 117
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 118
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 119
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 119
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 120
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 120
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 121
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 121
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 122
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 123
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 124
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 124
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 125
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 126
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 126
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 127
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 128
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 129
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 129
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 130
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 130
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 131
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 132
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 132
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 133
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 133
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 134
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 135
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 135
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 136
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 136
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 137
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 137
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 138
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 138
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 139
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 140
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 141
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 141
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 142
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 143
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 143
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 144
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 145
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 145
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 146
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 146
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 147
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 147
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 148
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 148
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 149
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 150
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 151
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 151
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 152
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 153
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 153
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 154
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 154
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 155
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 155
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 156
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 156
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 157
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 157
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 158
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 159
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 159
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 160
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 161
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 162
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 163
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 163
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 164
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 164
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 165
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 166
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 166
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 167
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 167
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 168
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 168
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 169
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 169
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 170
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 171
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 171
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 172
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 173
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 174
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 175
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 176
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 177
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 178
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 179
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 180
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 180
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 181
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 182
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 183
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 184
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 185
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 186
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 187
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 188
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 189
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 190
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 191
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 192
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 193
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 193
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 194
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 195
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 196
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 196
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 197
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 197
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 198
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 199
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 199
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 200
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 201
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 202
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 203
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 203
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 204
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 204
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 205
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 205
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 206
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 206
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 207
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 208
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 209
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 209
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 210
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 211
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 211
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 212
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 213
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 213
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 214
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 214
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 215
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 215
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 216
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 217
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 218
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 218
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 219
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 219
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 220
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 221
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 221
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 222
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 222
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 223
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 223
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 224
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 224
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 225
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 226
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 226
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 227
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 228
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 228
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 229
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 229
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 230
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 231
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 232
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 232
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 233
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 233
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 234
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 235
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 235
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 236
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 236
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 237
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 237
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 238
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 239
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 239
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 240
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 241
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 241
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 242
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 243
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 244
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 245
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 245
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 246
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 247
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 248
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 248
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 249
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 249
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 250
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 251
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 252
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 253
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 254
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 255
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 256
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 257
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 257
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 258
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 259
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 260
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 261
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 262
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 262
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 263
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 264
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 265
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 266
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 267
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 268
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 269
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 270
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 271
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 272
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 273
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 274
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 275
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 276
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 277
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 278
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 279
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 280
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 281
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 282
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 283
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 284
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 285
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 286
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 287
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 288
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 289
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 290
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 291
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 292
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 293
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 294
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 294
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 295
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 296
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 297
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 298
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 299
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 299
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 300
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 301
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 302
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 302
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 303
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 304
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 305
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 306
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 307
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 308
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 309
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 309
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 310
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 311
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 311
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 312
+      }
+    ]
+  },
+  "outputBytes": 266665782,
+  "structuralCheck": "passed",
+  "outputTextCharacters": 485780,
+  "epubcheckExitCode": 0,
+  "memoryGate": {
+    "limitBytes": 536870912,
+    "passed": true,
+    "metric": "converter process peak RSS from wait/rusage"
+  },
+  "runPassed": true
+}

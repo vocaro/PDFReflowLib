@@ -58,3 +58,9 @@ physical-device memory/performance remain unqualified.
   Detect suspect inherited dialogue and preserve [panel/balloon order](https://github.com/vocaro/PDFReflowLib/issues/18)
   or clearly signal readable image fallback. The [baseline](../measurements/cdc-zombie-pandemic-2011/record.md)
   passes validity, progress and the 512 MiB Mac RSS gate; dialogue quality remains unqualified.
+
+- The 312-page Blue Book statistical scan supplies a [negative warning/refusal contract](../measurements/cia-blue-book-14-1955/record.md).
+  Its valid EPUB contains damaged table OCR without actionable quality warnings on pages 74 and
+  150. Implement [explicit quality signaling or refusal](https://github.com/vocaro/PDFReflowLib/issues/19)
+  and distinguish signal coverage from actual transcription fidelity. The opt-in quality gate
+  currently fails; resource/progress/package checks pass.

@@ -108,3 +108,9 @@ Repository source and test directories follow SwiftPM conventions: `Sources/PDFR
 `Sources/PDFReflowLibCLI/` and `Tests/PDFReflowLibTests/`. Supporting directories and the
 `fixtures/` test-resource directory use lowercase names. Public module and product names remain
 unchanged. Recorded measurement outputs retain historical paths and hashes from their measured builds.
+
+Opt-in corpus quality signaling is checked separately from EPUB validity and resource limits.
+`tools/check_corpus_quality.py` applies manifest expectations to a real-document evaluation:
+page-specific warnings on a valid conversion, or an explicitly approved quality-refusal diagnostic
+with no published output or false completion. The converter currently has no quality-refusal API;
+this development contract exposes gaps without changing runtime behavior.

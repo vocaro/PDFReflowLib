@@ -1,0 +1,6 @@
+.build/
+.swiftpm/
+__pycache__/
+*.pyc
+Corpus/*.pdf
+.DS_Store

@@ -1,0 +1,21 @@
+{
+  "component": "foliate-js",
+  "repository": "https://github.com/johnfactotum/foliate-js",
+  "commit": "78914aef4466eb960965702401634c2cb348e9b1",
+  "license": "MIT",
+  "provenance": "Pinned upstream EPUB parser and CFI dependency. The test shell uses native browser chapter scrolling.",
+  "files": {
+    "lib/LICENSE": {
+      "bytes": 1070,
+      "sha256": "b621ffc351fe263bc9b09dd0bc1c9332fda9c462a3904c1e4f0b4d3236b9c28c"
+    },
+    "lib/epub.js": {
+      "bytes": 43685,
+      "sha256": "dfe347495039e9b5991478986ec6b7713cf9efbcd8f475a77ef7b967c5176298"
+    },
+    "lib/epubcfi.js": {
+      "bytes": 13233,
+      "sha256": "e1a688ad5c84bf31f33cef467f92c7a6d060a0f17ec37c1d3c048e9c7b1cf645"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PDFReflowLib test reader</title><link rel="stylesheet" href="reader.css"><script type="module" src="reader.js"></script></head>
+<body>
+<header>
+  <div class="eyebrow">PDFREFLOW · TEST READER · FOLIATE-JS</div>
+  <h1 id="title">Opening EPUB…</h1>
+  <div class="controls">
+    <label>Contents <select id="contents" aria-label="Book contents"></select></label>
+    <label>Source page <select id="page" aria-label="Source PDF page"></select></label>
+    <label>Text <select id="size"><option value="16">16 px</option><option value="20" selected>20 px</option><option value="24">24 px</option><option value="30">30 px</option></select></label>
+    <label>Width <select id="width"><option value="100%">Fill window</option><option value="390px">390 px</option><option value="768px">768 px</option></select></label>
+    <a href="book.epub" download>Original EPUB</a>
+  </div>
+</header>
+<main><iframe id="reader" title="EPUB chapter" sandbox="allow-same-origin"></iframe></main>
+<footer><button id="previous">← Previous chapter</button><span id="position" role="status">Loading book…</span><button id="next">Next chapter →</button></footer>
+<p id="error" role="alert" hidden></p>
+</body></html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PDF conversion comparison</title>
+  <link rel="stylesheet" href="viewer.css">
+  <script src="viewer.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">PDFREFLOW · DEVELOPMENT REVIEW</div>
+    <h1 id="title">PDF conversion comparison</h1>
+    <p id="summary" role="status">Loading comparison…</p>
+    <div class="toolbar">
+      <div class="page-controls">
+        <button id="previous" aria-label="Previous reviewed page">←</button>
+        <label>Source page <select id="page" aria-label="Physical PDF page"></select></label>
+        <button id="next" aria-label="Next reviewed page">→</button>
+        <span id="page-count"></span>
+      </div>
+      <label>Poppler <select id="mode"><option value="simple">Simple HTML</option><option value="positioned">Positioned HTML</option></select></label>
+      <label>Reading width <select id="width"><option value="full">Fill pane</option><option value="390">390 px</option><option value="768">768 px</option></select></label>
+      <label class="check"><input id="show-source" type="checkbox"> Original page</label>
+      <button id="reset">Return to page start</button>
+    </div>
+  </header>
+  <main>
+    <div id="panes">
+      <section class="pane">
+        <div class="pane-heading"><h2>PDFReflowLib <span>EPUB 3</span></h2><a href="pdfreflow.epub" download>Download EPUB</a></div>
+        <p class="pane-note">Chapter aligned to the source marker; includes neighboring pages and joined paragraphs.</p>
+        <div class="frame-well"><iframe id="epub" title="PDFReflowLib EPUB chapter" sandbox="allow-same-origin"></iframe></div>
+      </section>
+      <section class="pane">
+        <div class="pane-heading"><h2>Poppler <span id="mode-label">Simple HTML</span></h2></div>
+        <p class="pane-note" id="poppler-note">Original pdftohtml output for this page; hard line breaks are retained.</p>
+        <div class="frame-well"><iframe id="poppler" title="Poppler HTML output" sandbox="allow-same-origin"></iframe></div>
+      </section>
+      <section class="pane" id="source-pane" hidden>
+        <div class="pane-heading"><h2>Original <span>PDF raster</span></h2><a href="input.pdf" download>Download PDF</a></div>
+        <p class="pane-note">Rendered by pdftoppm. Use the original PDF to resolve ambiguous rendering.</p>
+        <div class="source-well"><img id="source" alt="Original PDF page"></div>
+      </section>
+    </div>
+    <details id="warnings"><summary id="warning-count">Page warnings</summary><ul id="warning-list"></ul></details>
+    <details><summary>Run details &amp; review notes</summary>
+      <p>Compare reading order, word joins, missing text, figures and fallback scale. Neither output is a fidelity oracle. Scroll panes independently; page navigation aligns their starting points. Width changes do not turn positioned content into reflowable text.</p>
+      <p>Views use the EPUB's own styling and Poppler's generated styling. Positioned HTML is scaled to fit its pane. Scripts and remote resources in document previews are blocked.</p>
+      <pre id="run-details"></pre>
+      <p><a href="comparison.json" download>Run manifest</a> · <a href="conversion-report.json" download>Conversion report</a> · <a href="progress.log" download>Converter progress</a></p>
+      <label class="notes-label">Review notes for this source page (kept in this tab until exported)<textarea id="notes" rows="3" placeholder="Observed defect, expected behavior, source evidence…"></textarea></label>
+      <button id="export-notes">Export review notes</button>
+      <span id="notes-status" role="status"></span>
+    </details>
+  </main>
+</body>
+</html>

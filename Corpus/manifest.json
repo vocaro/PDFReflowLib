@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "documents": [
+    {
+      "id": "faa-phak-8083-25c",
+      "title": "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+      "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf",
+      "filename": "faa-h-8083-25c.pdf",
+      "sha256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+      "bytes": 77598564,
+      "pages": 522,
+      "role": "development",
+      "provenance": "Owner-supplied PDF, pinned by byte count and SHA-256. The official FAA publisher URL is retained for reproducibility.",
+      "rightsBasis": "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+      "coverage": [
+        "long native-text handbook",
+        "two columns",
+        "illustrations and detached labels",
+        "tables",
+        "equations",
+        "contents and index",
+        "glossary",
+        "tagged PDF"
+      ],
+      "reviewPages": [
+        1,
+        16,
+        91,
+        121,
+        176,
+        401,
+        511
+      ],
+      "reviewStatus": "Initial inspection points only; no independently annotated full-book fidelity reference yet.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 1280,
+        "scope": "macOS arm64 release CLI, library defaults; initial regression ceiling, not an iOS memory guarantee"
+      },
+      "knownFidelityIssues": [
+        {
+          "page": 91,
+          "issue": "Two-column prose interleaves left and right lines; left paragraph ending must be defined. should precede The computation of density altitude."
+        },
+        {
+          "page": 121,
+          "issue": "Whole-page fallback has excessive white margins and undersized content."
+        },
+        {
+          "page": 511,
+          "issue": "Two-column glossary interleaves Wind direction indicators. and Zone of confusion. before Wind shear."
+        }
+      ]
+    }
+  ]
+}

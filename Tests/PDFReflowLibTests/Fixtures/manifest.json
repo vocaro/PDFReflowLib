@@ -1,0 +1,35 @@
+{
+  "provenance": "Original synthetic text and drawings; no external documents or embedded font programs.",
+  "fixtures": [
+    {
+      "file": "columns.pdf",
+      "bytes": 1525,
+      "sha256": "93958797d8e5acd6fc5a94b60279dae1d9ddc385feca435a969679ab3c1a94f4"
+    },
+    {
+      "file": "graphics.pdf",
+      "bytes": 2970,
+      "sha256": "20e699323d14bf5be8e918a7e296c29fe32acf4f38713fd39debdda4744ac10b"
+    },
+    {
+      "file": "lists-code.pdf",
+      "bytes": 2027,
+      "sha256": "0bbe19a4ca62163de971abf2861dc63b13c8e609cd97473ef38cdac10aa72b89"
+    },
+    {
+      "file": "prose.pdf",
+      "bytes": 2996,
+      "sha256": "845a3ff4758b1ddd9510c1ffabca0c754920b0788d409f255a72bc565a93db4e"
+    },
+    {
+      "file": "rotated.pdf",
+      "bytes": 1423,
+      "sha256": "ec8bde940d19079fbbce8e67dda2d7425b4b98957e6829edd24dd9be6ab61fc0"
+    },
+    {
+      "file": "scanned.pdf",
+      "bytes": 36694,
+      "sha256": "3133aa54185250cda4359e328d690e42ea0731b19a808a840a19278c993e8a03"
+    }
+  ]
+}

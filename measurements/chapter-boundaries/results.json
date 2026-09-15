@@ -1,0 +1,361 @@
+{
+  "baselineCommit": "2ea9065",
+  "retainedRuntimeBaselineCommit": "193f807",
+  "issue": 15,
+  "issueRemainsOpen": true,
+  "supportedScheme": "English Chapter 1...N, Arabic consecutive numbering, root-level ordered local destinations, exact adjacent native source number/title lines in upper half of page",
+  "identity": {
+    "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+    "sourceBytes": 219876258,
+    "converterSHA256": "3698a8220cde5b578ccc5d9a5dc94a023d500351872d6f38cc06ae8897a7a2f5",
+    "launcherSHA256": "efdee94230cf97b1ca36ef299ff989466b9c7181f2e311aa3a2b568c2883ecff",
+    "cancellationProbeSHA256": "8bb482800c9ece8da36444d6e1a77b44b18acad865d0775d2750fdd59f52efbc",
+    "implementationSHA256": {
+      "Sources/PDFReflowLib/ChapterBoundaryReader.swift": "96f7d96d3b6c6f923a92fbe617123c589488cfc73ea1b6f0193e6038077e91bb",
+      "Sources/PDFReflowLib/ConversionTypes.swift": "134b339a5a8d6449b37bd9c986e64a575adf3404f737d8fb4d6dcdb27a898fb6",
+      "Sources/PDFReflowLib/DocumentModel.swift": "7a604342b536d599b82f8c32d57f34f324d5539bd5657cd40a4013293b378dbc",
+      "Sources/PDFReflowLib/EPUBTextEncoder.swift": "e06f491b4c1fe8b58e506b9cfb867ead7aa8feb2a2f27469c80a8ed81f308bb8",
+      "Sources/PDFReflowLib/EPUBWriter.swift": "518297ece3638b7cc4e28341d989abaf715240a3d78234949ebde43a41f628ca",
+      "Sources/PDFReflowLib/FractionRegionDetector.swift": "8ffe329eaf97b1933771953028f8d1b5892796dc6a755ea3c40b0f365c7b904a",
+      "Sources/PDFReflowLib/FurnitureDetector.swift": "2bfa92217e1fa50148e72596449c3ff4deb4548f9cddd1d689fb05aece68f938",
+      "Sources/PDFReflowLib/GraphicsReader.swift": "c43afa0e44c0cd509409e932442abc1a0cb43a9a356043738750bfef7533fd20",
+      "Sources/PDFReflowLib/LayoutReconstructor.swift": "b9286ccc0ac340b4034094328b5badf7db980a134cb2b967469bb32886facce5",
+      "Sources/PDFReflowLib/MarkedTextReader.swift": "1bd00dafabd5a43c6ede6b2041b034a7f6c7b40c6dc9307cdc71215c96bcdfaa",
+      "Sources/PDFReflowLib/NativeTextReader.swift": "890ed93f29394dd6b82d190d727f00fb71191ec72d4c4b960800722a303b089c",
+      "Sources/PDFReflowLib/OCRReader.swift": "34127110eac8485165972b2b3e104845dc7bec163e9d499201459ddf8e640c26",
+      "Sources/PDFReflowLib/PDFConverter.swift": "2f1da064e8715e20ab9caea31d091191cf6219981f9b873858678e43f22eaaf4",
+      "Sources/PDFReflowLib/PDFPageSource.swift": "9ab9814d52d392d462b35ee1ca2c2b4f8d2063b83b9bce5af135ffd8defa266e",
+      "Sources/PDFReflowLib/PDFReflowLibPipeline.swift": "c89beff4d56646c670f1ee552c1fb95d2895c63e34407243546391b1aa655ae1",
+      "Sources/PDFReflowLib/PageRasterizer.swift": "6783ac9d4f221fb69c170c01bc3073d2cf3a8d0bc22e04b41834498c838f0852",
+      "Sources/PDFReflowLib/ReflowDocument.swift": "4d264e5c55549fdf9787a8a28229c3e3a18c140845e0f9c7160718160e6c066e",
+      "Sources/PDFReflowLib/StructureTreeReader.swift": "3c617afcb54e893a15e1ec02284cd01a6b04ff4492a6d432bd41b80ad7ff4e22",
+      "Sources/PDFReflowLib/TableRegionDetector.swift": "7ff5eb5095180d5d7fca0835cadb101f2e6ea16f611378be3922f6f1e14ee395",
+      "Tests/PDFReflowLibTests/ChapterBoundaryTests.swift": "4ccd9c0887fa09b859af90999c9faded6bc4a2640b116fa1b8803b0cfba10cfd",
+      "Tests/PDFReflowLibTests/SpineWriterTests.swift": "72babb3b1084e308bc9daeca53586743740be8b6dbdeee1ae75b676ab2817723",
+      "Tests/PDFReflowLibTests/fixtures/noaa-139-layout.json": "56888c8b98311eba1a8e54d348d12faed266b61025a7e14e494e93961989ce4e",
+      "Tests/PDFReflowLibTests/fixtures/noaa-1619-layout.json": "583de271f022ae71b28a09481eb837d797c3bf10f1dc6ff3908e804cf2c3cb27",
+      "Tests/PDFReflowLibTests/fixtures/noaa-33-layout.json": "04a5f00b99f061851deb1f7c363f41f0ada8eb038d91b9389f1b3dced54d6186",
+      "Tests/PDFReflowLibTests/fixtures/noaa-80-layout.json": "ff7acd625fad44300ae4f975b4838f58e2e8e915196c40ee9eaae06f5f152df5",
+      "measurements/chapter-boundaries/compare.py": "8a894a9b02fca55188535ac2e8d79823dfcd0fa5a1c065a817694296277cd19e",
+      "measurements/chapter-boundaries/noaa.sh": "efdee94230cf97b1ca36ef299ff989466b9c7181f2e311aa3a2b568c2883ecff",
+      "measurements/chapter-boundaries/test_compare.py": "22b3facc68b1f97e4d4a405ea0ae29c2a9b38bc029d0d7e90cd45acc7fe1030d",
+      "tools/inspect-chapter-boundaries.swift": "3ce8a4596ff633b3a895b0bafa2df4201f68305e3cb87d930aa41bd9aba7eb0f"
+    }
+  },
+  "tests": {
+    "macOSSwift": 160,
+    "iOSSimulatorSwift": 160,
+    "pythonTools": 77,
+    "measurementTests": 3,
+    "structureIndexPeakRSSBytes": 119881728,
+    "structureIndexRSSCeilingMiB": 192
+  },
+  "corpus": {
+    "passed": true,
+    "results": [
+      {
+        "case": "faa-phak-8083-25c",
+        "passed": true,
+        "reviewPages": [
+          16,
+          121,
+          91,
+          511,
+          211,
+          212,
+          50,
+          325,
+          81,
+          191
+        ],
+        "contentChecks": 52,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "wallace-algebra-2010",
+        "passed": true,
+        "reviewPages": [
+          2,
+          12,
+          347,
+          343,
+          26
+        ],
+        "contentChecks": 17,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "gpo-911-2004",
+        "passed": true,
+        "reviewPages": [
+          15,
+          19,
+          20,
+          21,
+          65,
+          67,
+          451,
+          472
+        ],
+        "contentChecks": 30,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "fed-explained-2021",
+        "passed": true,
+        "reviewPages": [
+          9,
+          13,
+          32,
+          45,
+          46,
+          54,
+          75,
+          77,
+          103,
+          109,
+          123,
+          1
+        ],
+        "contentChecks": 37,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "dga-2025-2030",
+        "passed": true,
+        "reviewPages": [
+          1,
+          2,
+          3
+        ],
+        "contentChecks": 9,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "gpo-our-flag-2003",
+        "passed": true,
+        "reviewPages": [
+          27,
+          31,
+          33,
+          34,
+          42,
+          43,
+          7,
+          9,
+          30,
+          29
+        ],
+        "contentChecks": 57,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "cdc-zombie-pandemic-2011",
+        "passed": true,
+        "reviewPages": [
+          5,
+          13,
+          39
+        ],
+        "contentChecks": 10,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      },
+      {
+        "case": "cia-blue-book-14-1955",
+        "passed": true,
+        "reviewPages": [
+          12,
+          74,
+          150
+        ],
+        "contentChecks": 9,
+        "errors": [],
+        "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+      }
+    ],
+    "notRun": [],
+    "knownUnsupportedFullConversions": [
+      {
+        "id": "gpo-warren-1964",
+        "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+        "issue": 5
+      },
+      {
+        "id": "noaa-nca5-2023",
+        "reason": "Known default image-output ceiling failure. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
+        "issue": 5
+      }
+    ]
+  },
+  "corpusComparison": {
+    "cdc-zombie-pandemic-2011": {
+      "beforeSpineCount": 1,
+      "afterSpineCount": 1,
+      "pages": 42,
+      "identicalImages": 42,
+      "completeBodyMarkupIdentical": true,
+      "pageSemanticsIdentical": true,
+      "navigationTargetsIdentical": true,
+      "chapterPages": [],
+      "baselineMissingChapterStarts": [],
+      "bodySHA256": "e629e22a0d557869bf8dc079dfc77395279cfe059b5e00241b8eb9f26428deda",
+      "warningsIdentical": true
+    },
+    "cia-blue-book-14-1955": {
+      "beforeSpineCount": 18,
+      "afterSpineCount": 18,
+      "pages": 312,
+      "identicalImages": 422,
+      "completeBodyMarkupIdentical": true,
+      "pageSemanticsIdentical": true,
+      "navigationTargetsIdentical": true,
+      "chapterPages": [],
+      "baselineMissingChapterStarts": [],
+      "bodySHA256": "f5116cf089615c3ea1fbf8c6de9b32669effc99a8f8620060357877caccef75b",
+      "warningsIdentical": true
+    },
+    "dga-2025-2030": {
+      "beforeSpineCount": 1,
+      "afterSpineCount": 1,
+      "pages": 10,
+      "identicalImages": 27,
+      "completeBodyMarkupIdentical": true,
+      "pageSemanticsIdentical": true,
+      "navigationTargetsIdentical": true,
+      "chapterPages": [],
+      "baselineMissingChapterStarts": [],
+      "bodySHA256": "bbe07fb5bd021938f3b3ca86f1bb2f89ae9e38d79688828953f798bc4cc3f076",
+      "warningsIdentical": true
+    },
+    "faa-phak-8083-25c": {
+      "beforeSpineCount": 31,
+      "afterSpineCount": 31,
+      "pages": 522,
+      "identicalImages": 588,
+      "completeBodyMarkupIdentical": true,
+      "pageSemanticsIdentical": true,
+      "navigationTargetsIdentical": true,
+      "chapterPages": [],
+      "baselineMissingChapterStarts": [],
+      "bodySHA256": "82f7c96f61626c6fb076944cc04ef8311dcaae146a55de57a17e334b69d4cbdd",
+      "warningsIdentical": true
+    },
+    "fed-explained-2021": {
+      "beforeSpineCount": 5,
+      "afterSpineCount": 5,
+      "pages": 135,
+      "identicalImages": 315,
+      "completeBodyMarkupIdentical": true,
+      "pageSemanticsIdentical": true,
+      "navigationTargetsIdentical": true,
+      "chapterPages": [],
+      "baselineMissingChapterStarts": [],
+      "bodySHA256": "57ac35e698e4675dc25c911467079a4f4d8b357be49c75ec7e640d5ef2266d62",
+      "warningsIdentical": true
+    },
+    "gpo-911-2004": {
+      "beforeSpineCount": 27,
+      "afterSpineCount": 27,
+      "pages": 585,
+      "identicalImages": 331,
+      "completeBodyMarkupIdentical": true,
+      "pageSemanticsIdentical": true,
+      "navigationTargetsIdentical": true,
+      "chapterPages": [],
+      "baselineMissingChapterStarts": [],
+      "bodySHA256": "5819aa286100aa369c809f9a5c695b5fa66f44fc77c03b105b60df378d4caf63",
+      "warningsIdentical": true
+    },
+    "gpo-our-flag-2003": {
+      "beforeSpineCount": 2,
+      "afterSpineCount": 2,
+      "pages": 56,
+      "identicalImages": 147,
+      "completeBodyMarkupIdentical": true,
+      "pageSemanticsIdentical": true,
+      "navigationTargetsIdentical": true,
+      "chapterPages": [],
+      "baselineMissingChapterStarts": [],
+      "bodySHA256": "36c730b8346f0b918cbd03aa00d1a180ba9e9a180b4ee79abfd0f11e17469e1b",
+      "warningsIdentical": true
+    },
+    "wallace-algebra-2010": {
+      "beforeSpineCount": 14,
+      "afterSpineCount": 14,
+      "pages": 489,
+      "identicalImages": 2050,
+      "completeBodyMarkupIdentical": true,
+      "pageSemanticsIdentical": true,
+      "navigationTargetsIdentical": true,
+      "chapterPages": [],
+      "baselineMissingChapterStarts": [],
+      "bodySHA256": "078b2f846432d97cbaf452d338735c4842017ca15e991c8b876091efc025bb38",
+      "warningsIdentical": true
+    }
+  },
+  "noaa": {
+    "effectiveOptions": {
+      "fullPageImageEncoding": "png",
+      "regionImageEncoding": "png",
+      "referenceImages": "automatic",
+      "ocr": "automatic",
+      "rasterDPI": 180,
+      "maximumOutputBytes": 4294967296,
+      "maximumEPUBBytes": 4294967296,
+      "otherOptions": "unchanged library defaults"
+    },
+    "rawEvaluatorOptionsAreLauncherBlind": true,
+    "rawReceiptSHA256": "7bb4b4ce27617a9996f73ff334394ef81bc8c2b094899bb21896c9bbdef5ccb7",
+    "fullSource": true,
+    "pageCount": 1834,
+    "beforeSpineCount": 81,
+    "afterSpineCount": 96,
+    "validatedChapterStarts": 32,
+    "largestBodyBytes": 59998,
+    "uncompressedEntryBytes": 1516411937,
+    "outputBytes": 1466261501,
+    "conversionSeconds": 216.41314716699708,
+    "converterPeakRSSBytes": 974536704,
+    "sampledPeakPhysicalFootprintBytes": 450758240,
+    "progressCheck": {
+      "passed": true,
+      "events": 15348,
+      "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+    },
+    "epubcheckExitCode": 0,
+    "structuralCheck": "passed",
+    "runPassed": true,
+    "stagingRemoved": true,
+    "identicalImages": 11245,
+    "bodyMarkupAndPageSemanticsIdentical": true,
+    "warningsIdentical": true,
+    "navigationTargetsIdentical": true
+  },
+  "cancellation": {
+    "cancellationStage": "writing",
+    "cancelled": true,
+    "elapsedSeconds": 183.10490500926971,
+    "outputAbsent": true,
+    "reconstructionTriggerPage": 900,
+    "sourcePages": 1834,
+    "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+    "stagingRemoved": true,
+    "actualTrigger": "writing handoff after all1834 source pages extracted and reconstructed",
+    "progressMonotonic": true,
+    "noFalseCompletion": true
+  },
+  "limitations": [
+    "Whole-document positioned text, vocabulary and furniture evidence remain retained.",
+    "Nested, Roman-numbered, unnumbered and other-language chapters keep ordinary packing.",
+    "Not a general inherited OCR detector.",
+    "Default image-output ceiling and physical-device budgets remain unqualified.",
+    "One full NOAA run; not a performance or memory improvement claim."
+  ]
+}

@@ -119,7 +119,8 @@ that fall back to images skip unused attributed-text decoding. Failures use
   image by default; link/form interactions are not reconstructed.
 - EPUB output includes XHTML chapters, styles, metadata, heading navigation, a source page-list,
   an OPF 3.0 package, and the required first/uncompressed `mimetype` ZIP entry. Chapter files
-  split near 60 KB at block boundaries. XML escapes source markup; source scripts, attachments,
+  split near 60 KB at block boundaries and start at [validated numbered chapter bookmarks](doc/architecture.md).
+  XML escapes source markup; source scripts, attachments,
   actions and remote resources are not copied into the EPUB.
 
 PDF structure is ambiguous. The synthetic regression suite and initial FAA handbook evaluation

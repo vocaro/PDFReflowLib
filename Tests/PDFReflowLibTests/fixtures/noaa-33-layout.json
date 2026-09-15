@@ -1,0 +1,99 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        43.740000000000002,
+        571.98800000000006,
+        246.63959999999997,
+        15.923999999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12,
+          "text" : "Fifth National Climate Assessment: Chapter 1"
+        }
+      ],
+      "text" : "Fifth National Climate Assessment: Chapter 1"
+    },
+    {
+      "rect" : [
+        43.740000000000002,
+        539.93600000000004,
+        608.21039999999994,
+        31.847999999999956
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "Overview: Understanding Risks, Impacts, and Responses"
+        }
+      ],
+      "text" : "Overview: Understanding Risks, Impacts, and Responses"
+    },
+    {
+      "rect" : [
+        -0.1208191,
+        -0.2412407,
+        792.24160549999999,
+        510.48103450000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    792,
+    612
+  ],
+  "caseID" : "noaa-nca5-2023",
+  "graphics" : [
+    [
+      0,
+      0,
+      792,
+      526.88
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        43.740000000000002,
+        571.98800000000006,
+        246.63959999999997,
+        15.923999999999978
+      ],
+      "text" : "Fifth National Climate Assessment: Chapter 1"
+    },
+    {
+      "fontSize" : 24,
+      "monospaced" : false,
+      "rect" : [
+        43.740000000000002,
+        539.93600000000004,
+        608.21039999999994,
+        31.847999999999956
+      ],
+      "text" : "Overview: Understanding Risks, Impacts, and Responses"
+    }
+  ],
+  "page" : 33,
+  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle" : "Fifth National Climate Assessment",
+  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

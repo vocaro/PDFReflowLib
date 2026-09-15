@@ -116,3 +116,38 @@ private actor SpineProgress {
         #expect(throws: ReflowDocument.ValidationError.invalidHeadingLevel(level)) { try invalid.validate() }
     }
 }
+
+@Test func validatedChaptersStartNewSpineDocumentsAndKeepSizeSubdivisions() async throws {
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    let blocks: [ReflowBlock] = [.init(content: .sourcePage(1), page: 1), paragraph("front matter"),
+        .init(content: .sourcePage(2), page: 2),
+        .init(content: .heading(id: "chapter-one", text: InlineText("Chapter 1")), page: 2),
+        paragraph(String(repeating: "x", count: 59_800)), paragraph(String(repeating: "y", count: 30_000)),
+        .init(content: .sourcePage(3), page: 3),
+        .init(content: .heading(id: "chapter-two", text: InlineText("Chapter 2")), page: 3), paragraph("last")]
+    var book = spineBook(blocks)
+    book.chapterStartPages = [2, 3]
+    let chapters = try await writtenChapters(book, directory: dir)
+    try #require(chapters.count == 4)
+    #expect(body(chapters[0]).contains("front matter"))
+    #expect(body(chapters[1]).hasPrefix(EPUBTextEncoder.sourcePage(2)))
+    #expect(body(chapters[2]).hasPrefix("<p>yyy"))
+    #expect(body(chapters[3]).hasPrefix(EPUBTextEncoder.sourcePage(3)))
+    #expect(chapters.allSatisfy { body($0).utf8.count <= 60_000 })
+    let nav = try String(contentsOf: dir.appendingPathComponent("EPUB/nav.xhtml"), encoding: .utf8)
+    for id in ["page-2", "chapter-one"] { #expect(nav.contains("chapter-2.xhtml#\(id)")) }
+    for id in ["page-3", "chapter-two"] { #expect(nav.contains("chapter-4.xhtml#\(id)")) }
+    let control = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: control) }
+    let ordinary = try await writtenChapters(spineBook(blocks), directory: control)
+    #expect(chapters.map(body).joined() == ordinary.map(body).joined())
+}
+
+@Test func chapterStartAfterEmptyPagesAndExactSizeDoesNotEmitEmptyDocuments() async throws {
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    var book = spineBook([paragraph(String(repeating: "x", count: 59_992)),
+        .init(content: .sourcePage(1), page: 1), .init(content: .sourcePage(2), page: 2), paragraph("chapter")])
+    book.chapterStartPages = [2]
+    let chapters = try await writtenChapters(book, directory: dir)
+    #expect(chapters.map(body) == ["<p>\(String(repeating: "x", count: 59_992))</p>\n",
+                                  EPUBTextEncoder.sourcePage(1), EPUBTextEncoder.sourcePage(2) + "<p>chapter</p>\n"])
+}

@@ -1,0 +1,8 @@
+test_content_image_and_link_damage_fail (test_compare.ComparisonTests.test_content_image_and_link_damage_fail) ... ok
+test_original_packing_fails_chapter_contract (test_compare.ComparisonTests.test_original_packing_fails_chapter_contract) ... ok
+test_repackaging_preserves_all_content (test_compare.ComparisonTests.test_repackaging_preserves_all_content) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.006s
+
+OK

@@ -1,0 +1,336 @@
+{
+  "case" : "noaa-nca5-2023",
+  "chapters" : [
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 1",
+        "Overview: Understanding Risks, Impacts, and Responses"
+      ],
+      "matches" : true,
+      "number" : 1,
+      "page" : 33,
+      "title" : "Overview: Understanding Risks, Impacts, and Responses"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 2",
+        "Climate Trends"
+      ],
+      "matches" : true,
+      "number" : 2,
+      "page" : 80,
+      "title" : "Climate Trends"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 3",
+        "Earth Systems Processes"
+      ],
+      "matches" : true,
+      "number" : 3,
+      "page" : 139,
+      "title" : "Earth Systems Processes"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 4",
+        "Water"
+      ],
+      "matches" : true,
+      "number" : 4,
+      "page" : 210,
+      "title" : "Water"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 5",
+        "Energy Supply, Delivery,",
+        "and Demand"
+      ],
+      "matches" : true,
+      "number" : 5,
+      "page" : 256,
+      "title" : "Energy Supply, Delivery, and Demand"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 6",
+        "Land Cover and",
+        "Land-Use Change"
+      ],
+      "matches" : true,
+      "number" : 6,
+      "page" : 300,
+      "title" : "Land Cover and Land-Use Change"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 7",
+        "Forests"
+      ],
+      "matches" : true,
+      "number" : 7,
+      "page" : 342,
+      "title" : "Forests"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 8",
+        "Ecosystems, Ecosystem",
+        "Services, and Biodiversity"
+      ],
+      "matches" : true,
+      "number" : 8,
+      "page" : 384,
+      "title" : "Ecosystems, Ecosystem Services, and Biodiversity"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 9",
+        "Coastal Effects"
+      ],
+      "matches" : true,
+      "number" : 9,
+      "page" : 444,
+      "title" : "Coastal Effects"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 10",
+        "Ocean Ecosystems and",
+        "Marine Resources"
+      ],
+      "matches" : true,
+      "number" : 10,
+      "page" : 487,
+      "title" : "Ocean Ecosystems and Marine Resources"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 11",
+        "Agriculture, Food Systems,",
+        "and Rural Communities"
+      ],
+      "matches" : true,
+      "number" : 11,
+      "page" : 526,
+      "title" : "Agriculture, Food Systems, and Rural Communities"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 12",
+        "Built Environment,",
+        "Urban Systems, and Cities"
+      ],
+      "matches" : true,
+      "number" : 12,
+      "page" : 567,
+      "title" : "Built Environment, Urban Systems, and Cities"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 13",
+        "Transportation"
+      ],
+      "matches" : true,
+      "number" : 13,
+      "page" : 609,
+      "title" : "Transportation"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 14",
+        "Air Quality"
+      ],
+      "matches" : true,
+      "number" : 14,
+      "page" : 642,
+      "title" : "Air Quality"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 15",
+        "Human Health"
+      ],
+      "matches" : true,
+      "number" : 15,
+      "page" : 691,
+      "title" : "Human Health"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 16",
+        "Tribes and Indigenous",
+        "Peoples"
+      ],
+      "matches" : true,
+      "number" : 16,
+      "page" : 739,
+      "title" : "Tribes and Indigenous Peoples"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 17",
+        "Climate Effects on",
+        "US International Interests"
+      ],
+      "matches" : true,
+      "number" : 17,
+      "page" : 779,
+      "title" : "Climate Effects on US International Interests"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 18",
+        "Sector Interactions, Multiple",
+        "Stressors, and Complex Systems"
+      ],
+      "matches" : true,
+      "number" : 18,
+      "page" : 815,
+      "title" : "Sector Interactions, Multiple Stressors, and Complex Systems"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 19",
+        "Economics"
+      ],
+      "matches" : true,
+      "number" : 19,
+      "page" : 855,
+      "title" : "Economics"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 20",
+        "Social Systems and Justice"
+      ],
+      "matches" : true,
+      "number" : 20,
+      "page" : 893,
+      "title" : "Social Systems and Justice"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 21",
+        "Northeast"
+      ],
+      "matches" : true,
+      "number" : 21,
+      "page" : 934,
+      "title" : "Northeast"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 22",
+        "Southeast"
+      ],
+      "matches" : true,
+      "number" : 22,
+      "page" : 985,
+      "title" : "Southeast"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 23",
+        "US Caribbean"
+      ],
+      "matches" : true,
+      "number" : 23,
+      "page" : 1050,
+      "title" : "US Caribbean"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 24",
+        "Midwest"
+      ],
+      "matches" : true,
+      "number" : 24,
+      "page" : 1107,
+      "title" : "Midwest"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 25",
+        "Northern Great Plains"
+      ],
+      "matches" : true,
+      "number" : 25,
+      "page" : 1165,
+      "title" : "Northern Great Plains"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 26",
+        "Southern Great Plains"
+      ],
+      "matches" : true,
+      "number" : 26,
+      "page" : 1223,
+      "title" : "Southern Great Plains"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 27",
+        "Northwest"
+      ],
+      "matches" : true,
+      "number" : 27,
+      "page" : 1285,
+      "title" : "Northwest"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 28",
+        "Southwest"
+      ],
+      "matches" : true,
+      "number" : 28,
+      "page" : 1354,
+      "title" : "Southwest"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 29",
+        "Alaska"
+      ],
+      "matches" : true,
+      "number" : 29,
+      "page" : 1420,
+      "title" : "Alaska"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 30",
+        "Hawaiʻi and",
+        "US-Affiliated Pacific Islands"
+      ],
+      "matches" : true,
+      "number" : 30,
+      "page" : 1485,
+      "title" : "Hawaiʻi and US-Affiliated Pacific Islands"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 31",
+        "Adaptation"
+      ],
+      "matches" : true,
+      "number" : 31,
+      "page" : 1560,
+      "title" : "Adaptation"
+    },
+    {
+      "lines" : [
+        "Fifth National Climate Assessment: Chapter 32",
+        "Mitigation"
+      ],
+      "matches" : true,
+      "number" : 32,
+      "page" : 1619,
+      "title" : "Mitigation"
+    }
+  ],
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf"
+}

@@ -22,6 +22,8 @@ enum PDFReflowLibPipeline {
                                                  withIntermediateDirectories: true)
 
         let structure = try StructureTreeReader.read(source)
+        let chapterCandidates = try ChapterBoundaryReader.read(source)
+        var chapterStartPages: Set<Int> = []
         var pages: [PageContent] = []
         var warnings: [ConversionWarning] = []
         if structure.rejected {
@@ -128,6 +130,10 @@ enum PDFReflowLibPipeline {
             characters += content.lines.reduce(0) { $0 + $1.text.count }
             guard characters <= options.maximumCharacters else { throw ConversionError.resourceLimit("document text") }
             pages.append(content)
+            if let chapter = chapterCandidates.first(where: { $0.page == content.number }),
+               ChapterBoundaryReader.matches(chapter, page: content) {
+                chapterStartPages.insert(content.number)
+            }
             await progress(.init(stage: .extracting, fractionCompleted: 0.6875 * Double(i + 1) / Double(total),
                 page: i + 1, totalPages: total))
         }
@@ -187,7 +193,8 @@ enum PDFReflowLibPipeline {
                                 + "Compare the source PDF for visual content and transcription accuracy."))
                     }
                 }
-                LayoutReconstructor.appendPage(pageBlocks, page: content, previousPage: i > 0 ? pages[i - 1] : nil,
+                LayoutReconstructor.appendPage(pageBlocks, page: content,
+                    previousPage: i > 0 && !chapterStartPages.contains(content.number) ? pages[i - 1] : nil,
                     to: &blocks, vocabulary: vocabulary, warnings: &warnings)
             }
             await progress(.init(stage: .reconstructing, fractionCompleted: 0.6875 + 0.3125 * Double(i + 1) / Double(total),
@@ -197,7 +204,8 @@ enum PDFReflowLibPipeline {
         let title = options.title ?? document.title
             ?? source.deletingPathExtension().lastPathComponent
         let reflowedDocument = ReflowDocument(metadata: .init(title: title.isEmpty ? "Untitled" : title,
-            language: options.language, author: options.author), blocks: blocks, assets: assets)
+            language: options.language, author: options.author), blocks: blocks, assets: assets,
+            chapterStartPages: chapterStartPages)
         return Result(document: reflowedDocument, pageCount: total, reflowedPageCount: reflowed,
             recognizedPageCount: pages.filter(\.recognized).count, warnings: warnings)
     }

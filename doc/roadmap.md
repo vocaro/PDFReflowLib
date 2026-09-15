@@ -63,7 +63,8 @@ physical-device memory/performance remain unqualified.
   all pages with PNG or JPEG full-page images under 4 GiB experimental storage caps, with
   identical text and cropped images. JPEG barely changes final size and increases entry bytes.
   Qualify broader content and physical-device memory/storage budgets before general support;
-  use its 32 chapter bookmarks to investigate [chapter-aware splitting and bounded processing](https://github.com/vocaro/PDFReflowLib/issues/15).
+  extend the validated numbered-chapter splitting to broader bookmark schemes and
+  [bounded processing](https://github.com/vocaro/PDFReflowLib/issues/15).
   The [original default failure](../measurements/noaa-nca5-2023/record.md) remains historical evidence.
 
 - The 56-page Our Flag booklet supplies a quick illustrated baseline with ten checked table rows.
@@ -125,8 +126,16 @@ EPUB spine packing under #15 counts complete UTF-8 markup before crossing its 60
 target, keeps source-page markers with following content, and isolates oversized atomic blocks.
 Serialization writes completed documents in one pass with ordered progress; six Swift regressions
 and independent corpus size/navigation checks cover the policy. See [spine-packing evidence](../measurements/spine-packing/record.md).
-Validated chapter bookmarks, subdivision within oversized blocks, bounded reconstruction and
-full NOAA/device qualification remain open; this work does not close #15.
+Broader chapter schemes, subdivision within oversized blocks, bounded reconstruction and
+broader NOAA content/device qualification remain open; this work does not close #15.
+
+The supported English, Arabic-numbered, root-level chapter-bookmark sequence under #15 now
+requires matching source chapter-number/title lines before starting a new spine document.
+[Chapter-boundary evidence](../measurements/chapter-boundaries/record.md) includes four reviewed
+NOAA covers, invalid/nested/remote and native/OCR controls, and full-book EPUB checks. All 32
+NOAA chapter covers start spine files; 96 files retain the existing byte-size subdivisions
+(largest body 59,998 bytes). All 1,834 pages' markup and 11,245 images match the explicit-policy
+baseline. Broader chapter schemes, bounded reconstruction and physical-device budgets remain open.
 
 Native combined-line extraction under #14 restores the missing DGA cover boundary between
 “Guidelines” and “For Americans” using full-line baseline evidence. The Our Flag page-31 heading supplies a second source case. Seven Swift tests protect

@@ -1,0 +1,99 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        54,
+        735.508009765,
+        246.4559999999999,
+        15.923999999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12,
+          "text" : "Fifth National Climate Assessment: Chapter 2"
+        }
+      ],
+      "text" : "Fifth National Climate Assessment: Chapter 2"
+    },
+    {
+      "rect" : [
+        54,
+        685.80399755799999,
+        244.99440005493602,
+        47.772000000000048
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 36,
+          "text" : "Climate Trends"
+        }
+      ],
+      "text" : "Climate Trends"
+    },
+    {
+      "rect" : [
+        -112.1161499,
+        -1.7720130679999999,
+        917.7962,
+        608.49888080000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 36,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "noaa-nca5-2023",
+  "graphics" : [
+    [
+      0,
+      0,
+      612,
+      630.96101953100003
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        735.508009765,
+        246.4559999999999,
+        15.923999999999978
+      ],
+      "text" : "Fifth National Climate Assessment: Chapter 2"
+    },
+    {
+      "fontSize" : 36,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        685.80399755799999,
+        244.99440005493602,
+        47.772000000000048
+      ],
+      "text" : "Climate Trends"
+    }
+  ],
+  "page" : 80,
+  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. This records the publisher declaration, not a new owner-confirmed rights determination or shipped-catalog admission.",
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle" : "Fifth National Climate Assessment",
+  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

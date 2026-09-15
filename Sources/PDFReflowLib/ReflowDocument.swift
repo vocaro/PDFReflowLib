@@ -23,9 +23,11 @@ struct ReflowDocument: Sendable, Equatable {
     var metadata: Metadata
     var blocks: [ReflowBlock]
     var assets: [Asset]
+    /// Validated chapter starts, always represented by standalone source-page blocks.
+    var chapterStartPages: Set<Int> = []
 
     enum ValidationError: Error, Equatable {
-        case emptyDocument, duplicateAsset(String), missingAsset(String), invalidHeadingLevel(Int)
+        case emptyDocument, duplicateAsset(String), missingAsset(String), invalidHeadingLevel(Int), invalidChapterBoundary(Int)
     }
 
     func validate() throws {
@@ -40,6 +42,11 @@ struct ReflowDocument: Sendable, Equatable {
             }
             if case let .image(image) = block.content, !identifiers.contains(image.assetID) {
                 throw ValidationError.missingAsset(image.assetID)
+            }
+        }
+        for page in chapterStartPages {
+            guard blocks.contains(where: { $0.content == .sourcePage(page) }) else {
+                throw ValidationError.invalidChapterBoundary(page)
             }
         }
     }

@@ -199,7 +199,26 @@ of all chapter blocks. Packing checks the complete UTF-8 body markup against a 6
 before admitting a block. A standalone source-page marker travels with the following content;
 inline markers retain their exact location. Oversized individual paragraphs, headings, code blocks
 or figures occupy their own document without being split or losing styles. This is a soft body-size
-target, excluding document metadata, and is not a memory ceiling or semantic chapter detection.
+target, excluding document metadata, and is not a memory ceiling.
+
+`ChapterBoundaryReader` separately admits a conservative bookmark scheme: at least two
+root-level English `Chapter 1 ...` through `Chapter N ...` entries, consecutive Arabic numbers
+and strictly increasing local destination pages. Local direct/named destinations and GoTo
+actions are supported. Missing, remote, duplicate or backward chapter destinations reject the
+sequence. Nested, Roman-numbered, unnumbered and other-language schemes keep ordinary packing.
+Each candidate additionally needs its chapter number and full title on adjacent native text
+lines among the first six lines in the upper half of its page. Matching normalizes whitespace
+and case, permits a publication-name prefix, and rejects freshly recognized pages and exclusively
+invisible image-backed text. It does not detect every inherited OCR layer.
+Only matching candidates become chapter boundaries. This is a bounded supported scheme, not
+general bookmark interpretation or heading classification.
+
+The logical document carries these physical chapter-start pages; reconstruction keeps their
+source markers standalone and prevents cross-boundary paragraph joins. The writer flushes the
+preceding document before each such marker, then applies the same byte-size subdivisions within
+the chapter. Existing heading/page navigation resolves to the resulting files. Bookmarks do
+not manufacture headings or new link semantics. Whole-document positioned text, vocabulary
+and furniture evidence are still retained; this does not bound reconstruction memory.
 Progress reports serialization work by input blocks, then metadata completion and archive entries.
 The reconstruction endpoint is clamped to its allocated fraction so floating-point rounding cannot
 make the first writing update step backward.

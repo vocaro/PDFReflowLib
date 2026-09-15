@@ -1,0 +1,560 @@
+{
+  "beforeSpineCount": 81,
+  "afterSpineCount": 96,
+  "pages": 1834,
+  "identicalImages": 11245,
+  "completeBodyMarkupIdentical": true,
+  "pageSemanticsIdentical": true,
+  "navigationTargetsIdentical": true,
+  "chapterPages": [
+    33,
+    80,
+    139,
+    210,
+    256,
+    300,
+    342,
+    384,
+    444,
+    487,
+    526,
+    567,
+    609,
+    642,
+    691,
+    739,
+    779,
+    815,
+    855,
+    893,
+    934,
+    985,
+    1050,
+    1107,
+    1165,
+    1223,
+    1285,
+    1354,
+    1420,
+    1485,
+    1560,
+    1619
+  ],
+  "baselineMissingChapterStarts": [
+    33,
+    80,
+    139,
+    210,
+    256,
+    300,
+    342,
+    384,
+    444,
+    487,
+    526,
+    567,
+    609,
+    642,
+    691,
+    739,
+    779,
+    815,
+    855,
+    893,
+    934,
+    985,
+    1050,
+    1107,
+    1165,
+    1223,
+    1285,
+    1354,
+    1420,
+    1485,
+    1560,
+    1619
+  ],
+  "newSpineDocuments": [
+    {
+      "file": "EPUB/chapter-1.xhtml",
+      "firstID": "page-1",
+      "bodyBytes": 27315
+    },
+    {
+      "file": "EPUB/chapter-2.xhtml",
+      "firstID": "page-33",
+      "bodyBytes": 59829
+    },
+    {
+      "file": "EPUB/chapter-3.xhtml",
+      "firstID": null,
+      "bodyBytes": 5657
+    },
+    {
+      "file": "EPUB/chapter-4.xhtml",
+      "firstID": "page-80",
+      "bodyBytes": 59544
+    },
+    {
+      "file": "EPUB/chapter-5.xhtml",
+      "firstID": null,
+      "bodyBytes": 59998
+    },
+    {
+      "file": "EPUB/chapter-6.xhtml",
+      "firstID": null,
+      "bodyBytes": 46197
+    },
+    {
+      "file": "EPUB/chapter-7.xhtml",
+      "firstID": "page-139",
+      "bodyBytes": 59859
+    },
+    {
+      "file": "EPUB/chapter-8.xhtml",
+      "firstID": null,
+      "bodyBytes": 59332
+    },
+    {
+      "file": "EPUB/chapter-9.xhtml",
+      "firstID": null,
+      "bodyBytes": 59958
+    },
+    {
+      "file": "EPUB/chapter-10.xhtml",
+      "firstID": null,
+      "bodyBytes": 36212
+    },
+    {
+      "file": "EPUB/chapter-11.xhtml",
+      "firstID": "page-210",
+      "bodyBytes": 59723
+    },
+    {
+      "file": "EPUB/chapter-12.xhtml",
+      "firstID": null,
+      "bodyBytes": 50292
+    },
+    {
+      "file": "EPUB/chapter-13.xhtml",
+      "firstID": "page-256",
+      "bodyBytes": 59150
+    },
+    {
+      "file": "EPUB/chapter-14.xhtml",
+      "firstID": null,
+      "bodyBytes": 59922
+    },
+    {
+      "file": "EPUB/chapter-15.xhtml",
+      "firstID": null,
+      "bodyBytes": 15090
+    },
+    {
+      "file": "EPUB/chapter-16.xhtml",
+      "firstID": "page-300",
+      "bodyBytes": 59718
+    },
+    {
+      "file": "EPUB/chapter-17.xhtml",
+      "firstID": "page-324",
+      "bodyBytes": 54554
+    },
+    {
+      "file": "EPUB/chapter-18.xhtml",
+      "firstID": "page-342",
+      "bodyBytes": 59931
+    },
+    {
+      "file": "EPUB/chapter-19.xhtml",
+      "firstID": null,
+      "bodyBytes": 35622
+    },
+    {
+      "file": "EPUB/chapter-20.xhtml",
+      "firstID": "page-384",
+      "bodyBytes": 59849
+    },
+    {
+      "file": "EPUB/chapter-21.xhtml",
+      "firstID": null,
+      "bodyBytes": 59867
+    },
+    {
+      "file": "EPUB/chapter-22.xhtml",
+      "firstID": null,
+      "bodyBytes": 14379
+    },
+    {
+      "file": "EPUB/chapter-23.xhtml",
+      "firstID": "page-444",
+      "bodyBytes": 59458
+    },
+    {
+      "file": "EPUB/chapter-24.xhtml",
+      "firstID": null,
+      "bodyBytes": 59891
+    },
+    {
+      "file": "EPUB/chapter-25.xhtml",
+      "firstID": null,
+      "bodyBytes": 760
+    },
+    {
+      "file": "EPUB/chapter-26.xhtml",
+      "firstID": "page-487",
+      "bodyBytes": 58036
+    },
+    {
+      "file": "EPUB/chapter-27.xhtml",
+      "firstID": null,
+      "bodyBytes": 53040
+    },
+    {
+      "file": "EPUB/chapter-28.xhtml",
+      "firstID": "page-526",
+      "bodyBytes": 59687
+    },
+    {
+      "file": "EPUB/chapter-29.xhtml",
+      "firstID": null,
+      "bodyBytes": 44483
+    },
+    {
+      "file": "EPUB/chapter-30.xhtml",
+      "firstID": "page-567",
+      "bodyBytes": 59501
+    },
+    {
+      "file": "EPUB/chapter-31.xhtml",
+      "firstID": null,
+      "bodyBytes": 58424
+    },
+    {
+      "file": "EPUB/chapter-32.xhtml",
+      "firstID": "page-609",
+      "bodyBytes": 59845
+    },
+    {
+      "file": "EPUB/chapter-33.xhtml",
+      "firstID": null,
+      "bodyBytes": 30751
+    },
+    {
+      "file": "EPUB/chapter-34.xhtml",
+      "firstID": "page-642",
+      "bodyBytes": 58476
+    },
+    {
+      "file": "EPUB/chapter-35.xhtml",
+      "firstID": null,
+      "bodyBytes": 59911
+    },
+    {
+      "file": "EPUB/chapter-36.xhtml",
+      "firstID": null,
+      "bodyBytes": 16511
+    },
+    {
+      "file": "EPUB/chapter-37.xhtml",
+      "firstID": "page-691",
+      "bodyBytes": 59616
+    },
+    {
+      "file": "EPUB/chapter-38.xhtml",
+      "firstID": null,
+      "bodyBytes": 59955
+    },
+    {
+      "file": "EPUB/chapter-39.xhtml",
+      "firstID": null,
+      "bodyBytes": 13749
+    },
+    {
+      "file": "EPUB/chapter-40.xhtml",
+      "firstID": "page-739",
+      "bodyBytes": 59812
+    },
+    {
+      "file": "EPUB/chapter-41.xhtml",
+      "firstID": null,
+      "bodyBytes": 45301
+    },
+    {
+      "file": "EPUB/chapter-42.xhtml",
+      "firstID": "page-779",
+      "bodyBytes": 59791
+    },
+    {
+      "file": "EPUB/chapter-43.xhtml",
+      "firstID": null,
+      "bodyBytes": 39962
+    },
+    {
+      "file": "EPUB/chapter-44.xhtml",
+      "firstID": "page-815",
+      "bodyBytes": 59860
+    },
+    {
+      "file": "EPUB/chapter-45.xhtml",
+      "firstID": null,
+      "bodyBytes": 50594
+    },
+    {
+      "file": "EPUB/chapter-46.xhtml",
+      "firstID": "page-855",
+      "bodyBytes": 58348
+    },
+    {
+      "file": "EPUB/chapter-47.xhtml",
+      "firstID": null,
+      "bodyBytes": 50849
+    },
+    {
+      "file": "EPUB/chapter-48.xhtml",
+      "firstID": "page-893",
+      "bodyBytes": 59754
+    },
+    {
+      "file": "EPUB/chapter-49.xhtml",
+      "firstID": null,
+      "bodyBytes": 59930
+    },
+    {
+      "file": "EPUB/chapter-50.xhtml",
+      "firstID": null,
+      "bodyBytes": 3041
+    },
+    {
+      "file": "EPUB/chapter-51.xhtml",
+      "firstID": "page-934",
+      "bodyBytes": 59970
+    },
+    {
+      "file": "EPUB/chapter-52.xhtml",
+      "firstID": null,
+      "bodyBytes": 59923
+    },
+    {
+      "file": "EPUB/chapter-53.xhtml",
+      "firstID": null,
+      "bodyBytes": 19855
+    },
+    {
+      "file": "EPUB/chapter-54.xhtml",
+      "firstID": "page-985",
+      "bodyBytes": 59436
+    },
+    {
+      "file": "EPUB/chapter-55.xhtml",
+      "firstID": null,
+      "bodyBytes": 59925
+    },
+    {
+      "file": "EPUB/chapter-56.xhtml",
+      "firstID": null,
+      "bodyBytes": 59933
+    },
+    {
+      "file": "EPUB/chapter-57.xhtml",
+      "firstID": null,
+      "bodyBytes": 949
+    },
+    {
+      "file": "EPUB/chapter-58.xhtml",
+      "firstID": "page-1050",
+      "bodyBytes": 59497
+    },
+    {
+      "file": "EPUB/chapter-59.xhtml",
+      "firstID": "page-1075",
+      "bodyBytes": 59925
+    },
+    {
+      "file": "EPUB/chapter-60.xhtml",
+      "firstID": null,
+      "bodyBytes": 38729
+    },
+    {
+      "file": "EPUB/chapter-61.xhtml",
+      "firstID": "page-1107",
+      "bodyBytes": 59031
+    },
+    {
+      "file": "EPUB/chapter-62.xhtml",
+      "firstID": null,
+      "bodyBytes": 59534
+    },
+    {
+      "file": "EPUB/chapter-63.xhtml",
+      "firstID": null,
+      "bodyBytes": 53546
+    },
+    {
+      "file": "EPUB/chapter-64.xhtml",
+      "firstID": "page-1165",
+      "bodyBytes": 59716
+    },
+    {
+      "file": "EPUB/chapter-65.xhtml",
+      "firstID": null,
+      "bodyBytes": 59170
+    },
+    {
+      "file": "EPUB/chapter-66.xhtml",
+      "firstID": null,
+      "bodyBytes": 51483
+    },
+    {
+      "file": "EPUB/chapter-67.xhtml",
+      "firstID": "page-1223",
+      "bodyBytes": 59903
+    },
+    {
+      "file": "EPUB/chapter-68.xhtml",
+      "firstID": null,
+      "bodyBytes": 59913
+    },
+    {
+      "file": "EPUB/chapter-69.xhtml",
+      "firstID": null,
+      "bodyBytes": 39071
+    },
+    {
+      "file": "EPUB/chapter-70.xhtml",
+      "firstID": "page-1285",
+      "bodyBytes": 59410
+    },
+    {
+      "file": "EPUB/chapter-71.xhtml",
+      "firstID": null,
+      "bodyBytes": 59681
+    },
+    {
+      "file": "EPUB/chapter-72.xhtml",
+      "firstID": null,
+      "bodyBytes": 59865
+    },
+    {
+      "file": "EPUB/chapter-73.xhtml",
+      "firstID": null,
+      "bodyBytes": 21497
+    },
+    {
+      "file": "EPUB/chapter-74.xhtml",
+      "firstID": "page-1354",
+      "bodyBytes": 59958
+    },
+    {
+      "file": "EPUB/chapter-75.xhtml",
+      "firstID": null,
+      "bodyBytes": 59878
+    },
+    {
+      "file": "EPUB/chapter-76.xhtml",
+      "firstID": null,
+      "bodyBytes": 59985
+    },
+    {
+      "file": "EPUB/chapter-77.xhtml",
+      "firstID": null,
+      "bodyBytes": 19571
+    },
+    {
+      "file": "EPUB/chapter-78.xhtml",
+      "firstID": "page-1420",
+      "bodyBytes": 59816
+    },
+    {
+      "file": "EPUB/chapter-79.xhtml",
+      "firstID": null,
+      "bodyBytes": 59978
+    },
+    {
+      "file": "EPUB/chapter-80.xhtml",
+      "firstID": null,
+      "bodyBytes": 42725
+    },
+    {
+      "file": "EPUB/chapter-81.xhtml",
+      "firstID": "page-1485",
+      "bodyBytes": 59674
+    },
+    {
+      "file": "EPUB/chapter-82.xhtml",
+      "firstID": null,
+      "bodyBytes": 59689
+    },
+    {
+      "file": "EPUB/chapter-83.xhtml",
+      "firstID": null,
+      "bodyBytes": 59978
+    },
+    {
+      "file": "EPUB/chapter-84.xhtml",
+      "firstID": null,
+      "bodyBytes": 25277
+    },
+    {
+      "file": "EPUB/chapter-85.xhtml",
+      "firstID": "page-1560",
+      "bodyBytes": 59043
+    },
+    {
+      "file": "EPUB/chapter-86.xhtml",
+      "firstID": null,
+      "bodyBytes": 59480
+    },
+    {
+      "file": "EPUB/chapter-87.xhtml",
+      "firstID": "page-1595",
+      "bodyBytes": 59980
+    },
+    {
+      "file": "EPUB/chapter-88.xhtml",
+      "firstID": null,
+      "bodyBytes": 7261
+    },
+    {
+      "file": "EPUB/chapter-89.xhtml",
+      "firstID": "page-1619",
+      "bodyBytes": 59544
+    },
+    {
+      "file": "EPUB/chapter-90.xhtml",
+      "firstID": null,
+      "bodyBytes": 59901
+    },
+    {
+      "file": "EPUB/chapter-91.xhtml",
+      "firstID": null,
+      "bodyBytes": 59749
+    },
+    {
+      "file": "EPUB/chapter-92.xhtml",
+      "firstID": null,
+      "bodyBytes": 58947
+    },
+    {
+      "file": "EPUB/chapter-93.xhtml",
+      "firstID": null,
+      "bodyBytes": 58619
+    },
+    {
+      "file": "EPUB/chapter-94.xhtml",
+      "firstID": null,
+      "bodyBytes": 59655
+    },
+    {
+      "file": "EPUB/chapter-95.xhtml",
+      "firstID": null,
+      "bodyBytes": 59905
+    },
+    {
+      "file": "EPUB/chapter-96.xhtml",
+      "firstID": null,
+      "bodyBytes": 6873
+    }
+  ],
+  "bodySHA256": "2d144014b8f4cacc51f65e5dcb07b9c343510912f3d0441fede5ae3dd73d521b"
+}

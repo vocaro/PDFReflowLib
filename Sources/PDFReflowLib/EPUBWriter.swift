@@ -72,6 +72,7 @@ enum EPUBWriter {
                 // Consecutive boundaries describe empty source pages. Only the last boundary
                 // needs to travel with the following content; earlier ones can be packed normally.
                 if let pendingPage { try append(pendingPage.markup, sourcePages: [pendingPage.number]) }
+                if book.chapterStartPages.contains(number) { try finishChapter() }
                 pendingPage = (number, EPUBTextEncoder.sourcePage(number))
             } else {
                 let payload = try EPUBTextEncoder.payload(block, imagePaths: imagePathByID)

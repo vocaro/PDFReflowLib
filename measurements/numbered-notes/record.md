@@ -1,5 +1,9 @@
 # Endnote investigation: marker coverage retained, paragraph prototype rejected
 
+Historical record: the runtime rejection below predates the resolution of #26.
+The [compatible-environment recheck](recheck/record.md) now supports a bounded paragraph repair.
+The original evidence and rejected files remain intact; #11 still has unresolved note semantics.
+
 Issue [#11](https://github.com/vocaro/PDFReflowLib/issues/11) remains open. The retained change
 adds a native-source test and a full-book corpus assertion for the raised reference **4** after
 `7:45.` on physical page 20 of the 9/11 report. This already works in baseline `0eba8d4` through

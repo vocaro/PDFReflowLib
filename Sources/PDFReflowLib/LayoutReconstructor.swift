@@ -113,7 +113,7 @@ enum LayoutReconstructor {
     }
 
     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
-                       warnings: inout [ConversionWarning]) -> [ReflowBlock] {
+                       warnings: inout [ConversionWarning], numberedNotePage: Bool = false) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         let lines = page.lines.filter { line in !images.contains { $0.0.intersects(line.rect) } }
         // Preserve existing modest-size headings, but reject candidates within 10% of the
@@ -122,7 +122,13 @@ enum LayoutReconstructor {
         let spatial = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
             + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: body)
         let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
+        let noteGroups = NumberedNoteDetector.groups(in: elements, page: page, headingEvidence: numberedNotePage)
         var result: [ReflowBlock] = []
+        var note: (Int, InlineText)?
+        func flushNote() {
+            if let (_, text) = note { result.append(ReflowBlock(content: .paragraph(text), page: page.number)) }
+            note = nil
+        }
         var tagged: (TextStructure, InlineText)?
         func flushTagged() {
             guard let (tag, text) = tagged else { return }
@@ -141,7 +147,19 @@ enum LayoutReconstructor {
             paragraph = InlineText()
             previous = nil
         }
-        for element in elements {
+        for (index, element) in elements.enumerated() {
+            if let group = noteGroups[index], let line = element.line {
+                flushTagged()
+                flush()
+                codeOrigin = nil
+                if note?.0 != group { flushNote() }
+                if let current = note {
+                    note = (group, join(current.1, line.content, vocabulary: vocabulary,
+                        page: page.number, warnings: &warnings))
+                } else { note = (group, line.content) }
+                continue
+            }
+            flushNote()
             if let path = element.image {
                 flushTagged()
                 flush()
@@ -199,6 +217,7 @@ enum LayoutReconstructor {
                 previous = line
             }
         }
+        flushNote()
         flushTagged()
         flush()
         return result

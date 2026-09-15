@@ -139,6 +139,8 @@ enum PDFReflowLibPipeline {
         }
         document.releaseCachedPages()
         let vocabulary = LayoutReconstructor.vocabulary(in: pages)
+        // Retain heading evidence before removing furniture, after all extraction/OCR work.
+        let numberedNotePages = Set(pages.filter { NumberedNoteDetector.hasHeading(on: $0) }.map(\.number))
         if options.removeRepeatedHeadersAndFooters { warnings += LayoutReconstructor.stripFurniture(&pages) }
         var blocks: [ReflowBlock] = [], assets: [ReflowDocument.Asset] = []
         var reflowed = 0
@@ -176,7 +178,8 @@ enum PDFReflowLibPipeline {
                             message: "Graphical regions retain source appearance as images; their internal text does not reflow."))
                     }
                     pageBlocks = LayoutReconstructor.blocks(page: content, images: images,
-                        vocabulary: vocabulary, warnings: &warnings)
+                        vocabulary: vocabulary, warnings: &warnings,
+                        numberedNotePage: numberedNotePages.contains(content.number))
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }

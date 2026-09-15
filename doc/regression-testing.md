@@ -229,14 +229,26 @@ This target is an EPUB packing policy, not a limit on individual source paragrap
 memory, or a promise that spine boundaries correspond to actual book chapters. See the
 [packing evidence](../measurements/spine-packing/record.md).
 
-## Endnote reference typography
+## Endnote reference typography and bounded paragraphs
 
 `EndnoteMarkerTests.swift` protects the native superscript 4 after `7:45.` on 9/11 page 20.
 The full-corpus script assertion also checks its preceding and following source context.
 This is coverage for the existing baseline-offset repair, not a new link or note-ownership feature.
-The [endnote investigation](../measurements/numbered-notes/record.md) retains a rejected numbered-
-paragraph prototype and its failing baseline tests outside the active test target. Note grouping
-and chapter-scoped reference relationships remain open under #11.
+The [original investigation](../measurements/numbered-notes/record.md) retains the previously
+rejected prototype. Its raster/OCR drift was subsequently traced to mixed execution environments
+under #26. The [compatible-environment recheck](../measurements/numbered-notes/recheck/record.md)
+supports a bounded native paragraph repair: a top-margin chapter-note heading, consecutive
+indented note starts, and consistent dedented continuations must agree. Ambiguous layouts
+retain spatial reconstruction.
+
+`NumberedNoteTests.swift` checks every source line belonging to notes 38–54 on page 472
+and notes 3–13 on page 532, including the dedented `5.This` inside note 9. Additional controls
+cover styles, repeated chapter numbering, header retention, rejected images/tags/OCR/geometry,
+page 473's second paragraph within note 66, and cross-page text/page-marker conservation.
+The existing lowercase continuation heuristic is exercised without claiming general note identity.
+The full-corpus contract protects selected note paragraphs and the existing raised marker.
+Multi-paragraph/cross-page ownership, chapter-scoped reference links, multiple-reference
+relationships and return navigation remain open under #11.
 
 ## Native combined-line word boundaries
 

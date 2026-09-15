@@ -1,0 +1,15 @@
+{
+  "baselineRevision": "b82dbe7",
+  "baselineConverterSHA256": "3698a8220cde5b578ccc5d9a5dc94a023d500351872d6f38cc06ae8897a7a2f5",
+  "candidateConverterSHA256": "873b740697a1b000d194677cdbc2d0e48cad9d6d759eeac5ca3b6f3d67ca026c",
+  "collectorSHA256": "a3147ff2545a13482412f067233dfb0888a0a4fcb74951673582505a6243e960",
+  "files": {
+    "Sources/PDFReflowLib/NumberedNoteDetector.swift": "0a8aceabe0f17d06865481a417d4d6ee7348ef0be2374731914610e726b2ff5e",
+    "Sources/PDFReflowLib/LayoutReconstructor.swift": "424e06b5be4feead08f1046078eb9f768847278425b4f2037df71d77184609dd",
+    "Sources/PDFReflowLib/PDFReflowLibPipeline.swift": "69fe23c0ad72b225cab30eeccef47f66c618d99c7b503b80aa42f14006a88370",
+    "Tests/PDFReflowLibTests/NumberedNoteTests.swift": "320fe8c0fb5e87307616fc6ede67f9766a3f67d33631487465ab88be82c2409f",
+    "Tests/PDFReflowLibTests/fixtures/911-532-layout.json": "96d604c3b971442796533e09d85b40a39e0e97e23c555d15f7d27ed91da9b0b3",
+    "corpus/regressions.json": "2bc25692301c9dce4f105da4042da6fdf30f6143a0937c71177967f35df5c012"
+  },
+  "scope": "Same-page source-line ownership for admitted numbered paragraphs; no reference-to-note links or general cross-page/multi-paragraph identity."
+}

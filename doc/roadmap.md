@@ -196,9 +196,9 @@ See [contention cancellation evidence](../measurements/extraction-cancellation/r
 This does not interrupt a PDFKit call already executing or qualify physical-device latency.
 
 The [endnote investigation](../measurements/numbered-notes/record.md) under #11 adds native and
-full-corpus controls for the already-supported raised reference 4 on 9/11 page 20. A bounded
-note-paragraph prototype passed targeted and full-corpus checks but was rejected after unrelated
-rendering/OCR differences appeared in strict output comparisons; [#26](https://github.com/vocaro/PDFReflowLib/issues/26)
-tracks that separate reproducibility investigation. No note-grouping runtime change is retained.
-Number/text association, multi-paragraph and cross-page notes, chapter-scoped links and return
-navigation remain open under #11.
+full-corpus controls for the already-supported raised reference 4 on 9/11 page 20. After
+[#26](https://github.com/vocaro/PDFReflowLib/issues/26) traced the unrelated rendering/OCR drift to
+execution environment, the [compatible-environment recheck](../measurements/numbered-notes/recheck/record.md)
+accepts a bounded page-local repair joining supported numbered-note source lines into ordinary
+paragraphs. Multi-paragraph and cross-page note identity, chapter-scoped reference association,
+links to notes and return navigation remain open under #11; this repair does not resolve the issue.

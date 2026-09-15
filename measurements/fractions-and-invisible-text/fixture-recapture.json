@@ -1,0 +1,17 @@
+[
+  {
+    "path": "Tests/PDFReflowLibTests/fixtures/algebra-479-layout.json",
+    "sha256": "825e60a485da57ac9ba81b5a75a87704d1c9823bae85d665bb83147d9125b1b3",
+    "recaptureIdentical": true
+  },
+  {
+    "path": "Tests/PDFReflowLibTests/fixtures/warren-50-layout.json",
+    "sha256": "a300f4002bd9f4afc38c74075be9a8f5bdb76836166f21e040076c15cb86d361",
+    "recaptureIdentical": true
+  },
+  {
+    "path": "Tests/PDFReflowLibTests/fixtures/warren-910-layout.json",
+    "sha256": "76e42ce22d6140e46e70adc3cfe5211abcc15813d169326c3cf5db72c9fb85e9",
+    "recaptureIdentical": true
+  }
+]

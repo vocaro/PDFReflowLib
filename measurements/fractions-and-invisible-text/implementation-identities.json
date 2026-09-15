@@ -1,0 +1,246 @@
+{
+  "baseCommit": "5b1402601da8730ed43bff0096d30669e7fee281",
+  "converterSHA256": "46f82ed7841c582cc61f24ccf677b886a31f0edf2c4202d9ec99e54ba41fdbe9",
+  "files": [
+    {
+      "path": "Package.swift",
+      "sha256": "9b59bb9ce05d03347a48d2a82abc2a5cf7212b92e76bd253271a6f8f8dd81d0f"
+    },
+    {
+      "path": "Sources/PDFReflowLib/ConversionTypes.swift",
+      "sha256": "c7fb8ccca1418286973d9ca023421d641b9622ae42b1d813d232b3b9634cd371"
+    },
+    {
+      "path": "Sources/PDFReflowLib/DocumentModel.swift",
+      "sha256": "e47630d34a2ac2efcff0b19063ad95fa23c195ee200c7e52f266dd33f231e38a"
+    },
+    {
+      "path": "Sources/PDFReflowLib/EPUBTextEncoder.swift",
+      "sha256": "45737c73a054dcb16192bf85ade6b13cb7beaa1a9148fa7eaaafb3913d8a27d0"
+    },
+    {
+      "path": "Sources/PDFReflowLib/EPUBWriter.swift",
+      "sha256": "98db5de8b57bafea45275a60c49992a41c32e50279125bb2a8a79e4cb7fd2de1"
+    },
+    {
+      "path": "Sources/PDFReflowLib/FractionRegionDetector.swift",
+      "sha256": "8ffe329eaf97b1933771953028f8d1b5892796dc6a755ea3c40b0f365c7b904a"
+    },
+    {
+      "path": "Sources/PDFReflowLib/GraphicsReader.swift",
+      "sha256": "c43afa0e44c0cd509409e932442abc1a0cb43a9a356043738750bfef7533fd20"
+    },
+    {
+      "path": "Sources/PDFReflowLib/LayoutReconstructor.swift",
+      "sha256": "034a7848b6508e457acddfa270c2ea4526c5ca19fdfc878f3f96097ecaf07e53"
+    },
+    {
+      "path": "Sources/PDFReflowLib/NativeTextReader.swift",
+      "sha256": "af0f293a45ef526e35ab6c00ee2e45af676b9dc9bfcbd20d65dd8de80a748d00"
+    },
+    {
+      "path": "Sources/PDFReflowLib/OCRReader.swift",
+      "sha256": "34127110eac8485165972b2b3e104845dc7bec163e9d499201459ddf8e640c26"
+    },
+    {
+      "path": "Sources/PDFReflowLib/PDFConverter.swift",
+      "sha256": "22bb90e73aa7aeda6e74b07240c41cfbaf8ad31bb9acbc91ada8a539a2af9693"
+    },
+    {
+      "path": "Sources/PDFReflowLib/PDFPageSource.swift",
+      "sha256": "9ab9814d52d392d462b35ee1ca2c2b4f8d2063b83b9bce5af135ffd8defa266e"
+    },
+    {
+      "path": "Sources/PDFReflowLib/PDFReflowLibPipeline.swift",
+      "sha256": "055f295d72804996c3baaa068f3adfac9325074b0d24db14c9e22e76175e2124"
+    },
+    {
+      "path": "Sources/PDFReflowLib/PageRasterizer.swift",
+      "sha256": "38e62784062128df317f902399d9b628ea227491bad1df311aaaa812fe62cd51"
+    },
+    {
+      "path": "Sources/PDFReflowLib/ReflowDocument.swift",
+      "sha256": "8ec1ba4aa3886529ee162a3ac9f4ef4b5e699e5bee6dd72a66c8763766691370"
+    },
+    {
+      "path": "Sources/PDFReflowLib/TableRegionDetector.swift",
+      "sha256": "7ff5eb5095180d5d7fca0835cadb101f2e6ea16f611378be3922f6f1e14ee395"
+    },
+    {
+      "path": "Sources/PDFReflowLibCLI/Main.swift",
+      "sha256": "483c0fff244c2541a9b7066e79829232b4d15eeb3a970ede1cd4ad7ca9dfccf6"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/BaselineStyleTests.swift",
+      "sha256": "c126b0ff99a3cda274fc4d68e2487cff03ab22f9e0d962f521de345d259191cf"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/ConversionTests.swift",
+      "sha256": "b732939bf74704f258f1366b7cadb731cf5345314ee569c94995ad14540e4b70"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/DocumentModelTests.swift",
+      "sha256": "cdf9b52ffeabe9220911600233b70b7c3ca56bfcdd0c67dad50f2da86c8f2363"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/FidelityIssueTests.swift",
+      "sha256": "30a3d51be3a4eb62a7ce5c8af15ca25bda2de0f8f9e7c83483d7fec30fd455e5"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/FractionRegionTests.swift",
+      "sha256": "7c265c9637f8d7466238378046454f2a41effe16f1439240a92c75d6043320e5"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/InvisibleTextTests.swift",
+      "sha256": "075e560147913804771741eb9639df2b516d7131bc702264d5069766e5d9a36f"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/PDFTestSupport.swift",
+      "sha256": "1af018a09d60894d37e3e6e88de66243fe2f618130b0b48cbc3e0fc1f65eb93b"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/PageRasterizerTests.swift",
+      "sha256": "3553f266e0f49ad393b286d3a1f36833d2819840e20b6565ce673507a030dcb2"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/PreservedRegionTests.swift",
+      "sha256": "0a92ad11550eb4b2e75b4ad2657e4ea69faf74537277de14fd92a2df79402e23"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/ShadingTests.swift",
+      "sha256": "08959cf218980d5cf82356e395f1141f8b4747d4445922f96fb5d6835cd35781"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/SourceLayoutFixture.swift",
+      "sha256": "7d56036ddf0e366307cdcda261776898b5819a4f91dda6a34c625c1fb485eecd"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/TextLayerTests.swift",
+      "sha256": "f66c7cc0399c551eef5f03a527c7d294ff29eaebd67debf862c4fa53e57875fc"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/fixtures/911-451-layout.json",
+      "sha256": "a4f75860a40a666e29028f09f8640c84760519552cb0b676d4bf3651f1f8a49e"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/fixtures/algebra-17-layout.json",
+      "sha256": "ed1059410501488bd20bff627257b53de59e3046b758fd71a7b9c9bcc9594168"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/fixtures/algebra-343-layout.json",
+      "sha256": "3ecf96b5822ad3fdc5b82fa4a40acd67207ae026c0b78ea6e68b4b7636469cc7"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/fixtures/algebra-479-layout.json",
+      "sha256": "825e60a485da57ac9ba81b5a75a87704d1c9823bae85d665bb83147d9125b1b3"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/fixtures/cdc-5-layout.json",
+      "sha256": "2bdb534ff99f672abfae596666a4a90d896029bb2cd988392f622cff6dd6ee89"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/fixtures/faa-511-layout.json",
+      "sha256": "425dfda2c94446140d8c2c7fd13544704452f4a828f694e473958ff8b46c70b9"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/fixtures/faa-91-layout.json",
+      "sha256": "0f5055a3e9947ad509619dbb9a22465b9f520e69c5e60305f1cc6d25948d8900"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/fixtures/flag-27-layout.json",
+      "sha256": "a712a179e8129d875e0be57417e6a57d523e555dd678f057e14b5fe4170e4c42"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/fixtures/manifest.json",
+      "sha256": "755896b20ca5955bff050777e9937e60a7c9f32c045e3292759cb1e528cef4df"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/fixtures/warren-50-layout.json",
+      "sha256": "a300f4002bd9f4afc38c74075be9a8f5bdb76836166f21e040076c15cb86d361"
+    },
+    {
+      "path": "Tests/PDFReflowLibTests/fixtures/warren-910-layout.json",
+      "sha256": "76e42ce22d6140e46e70adc3cfe5211abcc15813d169326c3cf5db72c9fb85e9"
+    },
+    {
+      "path": "corpus/manifest.json",
+      "sha256": "89382b0c4f6a4219a6f2637741e30f64202496acf6af18ddd7cf96d8fb9e3f60"
+    },
+    {
+      "path": "corpus/regressions.json",
+      "sha256": "76be2ca7a55730b85ecc30d8e8eba5d44e47db2ef6911b1747cbbb3e4d21c7ec"
+    },
+    {
+      "path": "tools/capture-layout-fixture.swift",
+      "sha256": "8f84ff2535565923d4edb0a4f9b28697e4c39f45eb61131a4bfebf724fc17fa0"
+    },
+    {
+      "path": "tools/check-epubs.py",
+      "sha256": "b3443ae4660ca7691fe912682490a9914e463d1c2387318f5f07123984475320"
+    },
+    {
+      "path": "tools/check_corpus_content.py",
+      "sha256": "c0f552b5e7a0284d8b17a8df3763787adfcf568cd742f5b7ec110b46fd674753"
+    },
+    {
+      "path": "tools/check_corpus_quality.py",
+      "sha256": "940c29c91acf09bc7ff66df5e45f1dd4cb05b108ff825bbfb5f2a412633afd37"
+    },
+    {
+      "path": "tools/compare_pdf.py",
+      "sha256": "c4841ba4a964707265758815dbac6036dd42e20337ef3e7caa1c9fae900a4013"
+    },
+    {
+      "path": "tools/evaluate-real-document.py",
+      "sha256": "ba7974ce10352d5e0864fce3a881735e3b7026a7df97f30368b60ed5442d8b41"
+    },
+    {
+      "path": "tools/fetch_corpus.py",
+      "sha256": "69d483b1db73a55044795dc97d15b88698ceb07d17078f7c84aca098c7610f9f"
+    },
+    {
+      "path": "tools/generate-fixtures.py",
+      "sha256": "39a52268f2b13200b84ffb07fa4a7d6f9ff3dc6942edd7f13858c1765af827d4"
+    },
+    {
+      "path": "tools/run_corpus_regressions.py",
+      "sha256": "2c1c930e9d4f15d2c1e9707da1e9fcd06ec589767ae30c272967d6dcd0164be3"
+    },
+    {
+      "path": "tools/serve_comparison.py",
+      "sha256": "0e88e2a5bdbf3d7ec5353019725a036e6c5f1f759bd039c490eca807a588d389"
+    },
+    {
+      "path": "tools/test_comparison.py",
+      "sha256": "663711fbc628182dcfeda0f07ff254c0d0c9beaeebbc3d936d99a0ad2e9d3df7"
+    },
+    {
+      "path": "tools/test_corpus_content.py",
+      "sha256": "281de2f514babd1f853b2eff98bf9997313184e92124d89a64e5efe7f6e160c1"
+    },
+    {
+      "path": "tools/test_corpus_quality.py",
+      "sha256": "4005d2bcd0a5b6bf5fc975e7fb61cd27fe5f5a29a5705bad62823a75e76a26b6"
+    },
+    {
+      "path": "tools/test_corpus_runner.py",
+      "sha256": "e9bb4feab113d0e1f3af7d0cf0d4bebbf104a5d57af56ef8ed6e22319be08b84"
+    },
+    {
+      "path": "tools/test_epub_reader.py",
+      "sha256": "b40f42df5291b7a15cf7f805dcb2769edcd92679afdfdbc719eb4d5bc556dd06"
+    },
+    {
+      "path": "tools/test_fetch_corpus.py",
+      "sha256": "5c8dbf3de80de416c7b5f33d34a0071901397ff47d6adb0a4128ef4bcc00517e"
+    },
+    {
+      "path": "tools/test_memory_gate.py",
+      "sha256": "7e349675210c1a6ba0827811d867b27dd09f8abacc637401ebfb3b9d24d20266"
+    },
+    {
+      "path": "tools/view_epub.py",
+      "sha256": "0d3386471244da788216377c95bf3daa98696640be7ed0c6ff69507a820664b9"
+    }
+  ]
+}

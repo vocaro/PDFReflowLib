@@ -111,8 +111,10 @@ qualify the full document. Select **Positioned HTML** for Poppler: simple image 
 break in the local comparison server. The original-page pane remains the visual reference.
 
 [Review points](../corpus/gpo-warren-1964-review.json) and
-[measurement evidence](../measurements/gpo-warren-1964/record.md) record confirmed OCR,
-preformatted-text and column-order defects. The [current excerpt check](../measurements/quality-and-raster-fixes/record.md)
+[measurement evidence](../measurements/gpo-warren-1964/record.md) record OCR and column-order defects. Synthetic OCR font classification is addressed by the
+[fraction and invisible-text checks](../measurements/fractions-and-invisible-text/record.md):
+ordinary invisible Courier prose no longer becomes code, and OCR font geometry does not create
+headings. True heading recovery and index grouping remain unqualified. The [excerpt check](../measurements/quality-and-raster-fixes/record.md)
 excludes placeholders and counts seven reflowed pages, preserving the two textless pages as
 images. The excerpt passes EPUBCheck but is not fidelity-qualified. This case exercises trust in an existing OCR layer as well as
 new recognition: the default full run attempts fresh OCR on only one page.

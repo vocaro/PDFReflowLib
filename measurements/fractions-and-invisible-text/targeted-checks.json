@@ -1,0 +1,16 @@
+[
+  {
+    "case": "warren",
+    "progressMonotonic": true,
+    "completion": 100,
+    "events": 36,
+    "epubcheckPassed": true
+  },
+  {
+    "case": "fraction",
+    "progressMonotonic": true,
+    "completion": 100,
+    "events": 12,
+    "epubcheckPassed": true
+  }
+]

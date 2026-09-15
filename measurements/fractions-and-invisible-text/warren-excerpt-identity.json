@@ -1,0 +1,43 @@
+{
+  "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+  "excerptSHA256": "cea5f5151381c609b5b81bb75af4865f921c91e676d9f39c7f709db165b41158",
+  "excerptBytes": 81670531,
+  "pageMap": [
+    {
+      "excerptPage": 1,
+      "sourcePage": 1
+    },
+    {
+      "excerptPage": 2,
+      "sourcePage": 7
+    },
+    {
+      "excerptPage": 3,
+      "sourcePage": 21
+    },
+    {
+      "excerptPage": 4,
+      "sourcePage": 30
+    },
+    {
+      "excerptPage": 5,
+      "sourcePage": 50
+    },
+    {
+      "excerptPage": 6,
+      "sourcePage": 100
+    },
+    {
+      "excerptPage": 7,
+      "sourcePage": 890
+    },
+    {
+      "excerptPage": 8,
+      "sourcePage": 910
+    },
+    {
+      "excerptPage": 9,
+      "sourcePage": 920
+    }
+  ]
+}

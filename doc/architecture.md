@@ -72,14 +72,25 @@ recognizes aligned numeric dot-leader rows with a nearby textual header and pres
 complete region with `imageRegion` warnings. It does not infer general table semantics.
 Graphic-region merging and whole-line expansion repeat until the bounds
 stabilize, so a merged crop cannot cut through a newly intersecting text line. Only text outside
-those regions reflows. Detached fractions without a connecting graphic/recognized equation remain
-an open grouping problem. Attachment placeholders become word boundaries at native extraction,
+those regions reflows. `FractionRegionDetector` groups short horizontal bars with nearby compact
+mathematical terms above and below, optionally including a nearby equation prefix. It leaves
+long rules, prose, code and connected table grids to existing handling. Whole-line expansion
+supplies the crop margin once; fraction detection does not repeatedly enlarge already complete
+regions. Arbitrary mathematical structures remain outside this bounded detector. Attachment placeholders become word boundaries at native extraction,
 with empty selections discarded before layout, vocabulary, OCR selection and coverage counting.
 
 Existing text over a graphic covering more than 75% of the page gets `unverifiedTextLayer` and
 an accompanying source-page image. This conservative review signal does not establish that
 text is OCR, detect every corrupted layer, or assess individual table cells. Fresh OCR keeps
 its separate `ocrUsed` notice; image-only fallbacks keep `pageImageFallback`.
+
+`GraphicsReader` tracks text rendering mode across saved graphics state and nested forms. When
+all observed text uses invisible mode 3 and a graphic covers most of the page, extraction skips
+attributed text and marks the page's typography as synthetic. Layout then uses ordinary prose
+rather than Courier/code or font-size heading inference; numbered lists retain their existing
+representation. Mixed visible/invisible text, text clipping and unsupported streams do not enter
+this path. Source images and unverified-layer warnings remain. This does not recover headings
+from the scan or correct inherited transcription, and it is not a PDFKit leak fix.
 
 `PageRasterizer` renders source-composited regions to bounded PNGs. Whole-page crop/rotation is
 computed in page units, with explicit scaling to raster pixels. Annotation drawing compensates

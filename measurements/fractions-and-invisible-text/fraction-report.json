@@ -1,0 +1,14 @@
+{
+  "imageCount" : 1,
+  "outputURL" : "file:\/\/\/tmp\/next-fraction-final.epub",
+  "pageCount" : 1,
+  "recognizedPageCount" : 0,
+  "reflowedPageCount" : 1,
+  "warnings" : [
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 1
+    }
+  ]
+}

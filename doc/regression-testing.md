@@ -71,7 +71,7 @@ The manifest consistency test requires every corpus document to be covered or ex
 [Issue-fix measurements](../measurements/quality-and-raster-fixes/record.md) and the
 [cross-corpus content run](../measurements/cross-corpus-regressions/record.md) document current evidence.
 
-## Preserved-region fixtures and known failures
+## Preserved-region fixtures
 
 `PreservedRegionTests.swift` includes original in-memory PDFs and a small, attributed extraction
 of algebra page 17. The JSON fixture contains source text and geometry, not the original PDF or
@@ -79,11 +79,12 @@ font programs. It runs offline on both platforms and checks whole-line crop cont
 prefix ownership and selectable instructions. It is an internal test schema, not a public
 intermediate-format contract. See [evidence and negative controls](../measurements/preserved-region-regressions/record.md).
 
-The detached-fraction test executes under `withKnownIssue` for [#20](https://github.com/vocaro/PDFReflowLib/issues/20).
-Only its intact-fraction assertion is expected to fail; conversion/decoding errors remain ordinary
-failures. Swift Testing reports the known issue explicitly. An unexpected fix fails the test until
-the wrapper is removed. Do not count this case as qualified fidelity or wrap a whole test in a
-blanket expected-failure handler.
+The detached-fraction regression is enforced normally: its numerator, exponent and denominator
+must share one image, surrounding prose stays selectable and the conversion reports image
+preservation. The known-failure wrapper is removed. Ordinary rules, underlines, code, connected
+table grids and nearby prose supply negative controls; algebra page 479 supplies source-derived
+answer-key fraction checks. See [fraction and OCR-typography evidence](../measurements/fractions-and-invisible-text/record.md).
+Future unresolved cases must stay explicit rather than becoming passing golden output.
 
 To recapture the algebra geometry with full Xcode selected:
 
@@ -124,4 +125,11 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-58 Swift tests, including the explicitly known detached-fraction failure, and 49 Python tests.
+65 Swift tests with no known-issue wrappers, and 49 Python tests.
+
+`InvisibleTextTests.swift` covers exclusively hidden OCR text, visible Courier and genuine
+font-size headings, mixed text modes, saved graphics state, nested forms and malformed modes.
+Warren pages 50/910 supply pinned source geometry; ordinary prose/index entries must not become
+code/headings, while source points 10/11 retain list formatting. The nine-page real Warren excerpt
+is evaluated separately because the full 920-page conversion remains outside the successful
+complete-conversion gate. A passing excerpt does not qualify the complete book.

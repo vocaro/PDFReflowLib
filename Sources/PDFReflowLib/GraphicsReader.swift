@@ -4,10 +4,13 @@ import Foundation
 /// Finds painted regions, not just raw image resources. Cropping the original rendering preserves
 /// masks, clipping, vector paths and labels without reimplementing their PDF compositing semantics.
 enum GraphicsReader {
-    struct Result { var regions: [CGRect]; var unsupported: Bool }
+    struct Result { var regions: [CGRect]; var unsupported: Bool; var hasOnlyInvisibleText = false }
     private final class State {
         var matrix = CGAffineTransform.identity
-        var saved: [(CGAffineTransform, Bool, CGRect)] = []
+        var saved: [(CGAffineTransform, Bool, CGRect, Int)] = []
+        var textRenderingMode = 0
+        var invisibleText = false
+        var visibleText = false
         // Conservative page-space bounds, not a replacement for Core Graphics clipping.
         var clip = CGRect.zero
         var pendingClip = false
@@ -64,12 +67,28 @@ enum GraphicsReader {
         CGPDFOperatorTableSetCallback(table, "q") { _, info in
             let s = Self.state(info)
             guard s.accept(), s.saved.count < 128 else { s.unsupported = true; return }
-            s.saved.append((s.matrix, s.white, s.clip))
+            s.saved.append((s.matrix, s.white, s.clip, s.textRenderingMode))
         }
         CGPDFOperatorTableSetCallback(table, "Q") { _, info in
             let s = Self.state(info)
-            if let saved = s.saved.popLast() { (s.matrix, s.white, s.clip) = saved }
+            if let saved = s.saved.popLast() { (s.matrix, s.white, s.clip, s.textRenderingMode) = saved }
             else { s.unsupported = true }
+        }
+        CGPDFOperatorTableSetCallback(table, "Tr") { scanner, info in
+            let s = Self.state(info)
+            var mode: CGPDFInteger = 0
+            guard s.accept(), CGPDFScannerPopInteger(scanner, &mode), (0...7).contains(mode) else {
+                s.unsupported = true; return
+            }
+            s.textRenderingMode = mode
+        }
+        for op in ["Tj", "TJ", "'", "\""] {
+            CGPDFOperatorTableSetCallback(table, op) { _, info in
+                let s = Self.state(info)
+                guard s.accept() else { return }
+                if s.textRenderingMode == 3 { s.invisibleText = true }
+                else { s.visibleText = true }
+            }
         }
         CGPDFOperatorTableSetCallback(table, "cm") { scanner, info in
             let s = Self.state(info)
@@ -205,7 +224,7 @@ enum GraphicsReader {
         scan(stream, state: s)
         let bounds = page.getBoxRect(.cropBox)
         return Result(regions: clusters(s.regions.map { $0.intersection(bounds) }, distance: 4),
-                      unsupported: s.unsupported)
+                      unsupported: s.unsupported, hasOnlyInvisibleText: !s.unsupported && s.invisibleText && !s.visibleText)
     }
 
     private static func rectangle(_ dictionary: CGPDFDictionaryRef, key: String) -> CGRect? {
@@ -267,9 +286,11 @@ enum GraphicsReader {
         guard s.depth < 12 else { s.unsupported = true; return }
         let oldMatrix = s.matrix, oldPath = s.path, oldSaved = s.saved, oldWhite = s.white
         let oldResources = s.resources
+        let oldTextRenderingMode = s.textRenderingMode
         let oldClip = s.clip, oldPendingClip = s.pendingClip
         defer {
             s.matrix = oldMatrix; s.path = oldPath; s.saved = oldSaved; s.white = oldWhite
+            s.textRenderingMode = oldTextRenderingMode
             s.resources = oldResources; s.clip = oldClip; s.pendingClip = oldPendingClip; s.depth -= 1
         }
         s.depth += 1

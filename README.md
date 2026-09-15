@@ -78,9 +78,11 @@ that fall back to images skip unused attributed-text decoding. Failures use
   joins retain the hyphen and produce a warning.
 - Short recurring headers and footers can be removed when at least three pages support the
   decision. Monospaced code retains line breaks and indentation; list markers retain their
-  source breaks. Typography supplies flat heading navigation.
+  source breaks. Visible typography supplies flat heading navigation. Exclusively invisible
+  text over scan images does not supply reliable code or heading typography.
 - Core Graphics scans placed images, nested forms and painted paths. The original page renderer
-  supplies crops containing figures, ruled tables, labels and recognizable displayed formulas.
+  supplies crops containing figures, ruled tables, labels and recognizable displayed formulas,
+  including bounded detached fractions.
   Numeric dot-leader tables with supported geometry and OCR table regions also become images. Images preserve compositing and appearance rather than
   exposing raw image resources with missing masks or detached labels.
 - Vision recognizes pages with missing/damaged text by default. OCR text is explicitly reported

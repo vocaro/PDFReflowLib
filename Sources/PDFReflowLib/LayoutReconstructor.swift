@@ -52,7 +52,8 @@ enum LayoutReconstructor {
             let equation = line.text.contains("=") && line.text.split(whereSeparator: \.isWhitespace).count <= 12
             return mathSymbols || equation
         }.map { $0.rect.insetBy(dx: -4, dy: -8) }
-        var regions = clusters(page.graphics + formulas + TableRegionDetector.regions(in: page), distance: 3)
+        var regions = clusters(page.graphics + formulas + TableRegionDetector.regions(in: page)
+            + FractionRegionDetector.regions(in: page), distance: 3)
         var previous: [CGRect] = []
         while regions != previous {
             previous = regions
@@ -156,11 +157,11 @@ enum LayoutReconstructor {
             }
             guard let line = element.line else { continue }
             if !line.monospaced { codeOrigin = nil }
-            if line.fontSize >= body * 1.25 && line.text.count < 200 {
+            if !page.hasSyntheticTextStyle && line.fontSize >= body * 1.25 && line.text.count < 200 {
                 flush()
                 result.append(ReflowBlock(content: .heading(id: "heading-\(page.number)-\(result.count)", text: line.content),
                     page: page.number))
-            } else if line.monospaced {
+            } else if !page.hasSyntheticTextStyle && line.monospaced {
                 flush()
                 if let origin = codeOrigin, let last = result.last, case let .preformatted(previousText) = last.content {
                     let indent = min(80, max(0, Int(((line.rect.minX - origin) / (line.fontSize * 0.6)).rounded())))

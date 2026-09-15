@@ -32,6 +32,7 @@ struct PageContent {
     var graphics: [CGRect]
     var requiresPageImage = false
     var recognized = false
+    var hasSyntheticTextStyle = false
     var preservePageReference = false
 }
 

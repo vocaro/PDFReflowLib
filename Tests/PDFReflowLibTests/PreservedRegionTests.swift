@@ -200,18 +200,18 @@ private func convertRegion(table: Bool, directory: URL, dpi: Double, separatedFr
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/20"))
-func disconnectedFractionRemainsAnExplicitKnownFidelityFailure() async throws {
+func detachedFractionKeepsNumeratorExponentAndDenominatorTogether() async throws {
     let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
-    let (_, _, images) = try await convertRegion(table: false, directory: dir, dpi: 144, separatedFraction: true)
+    let (report, html, images) = try await convertRegion(table: false, directory: dir, dpi: 144, separatedFraction: true)
+    #expect(report.reflowedPageCount == 1 && images.count == 1)
+    #expect(report.warnings.contains { $0.code == .imageRegion })
+    #expect(html.contains("Read the worked example before continuing."))
+    #expect(html.contains("The following paragraph must remain reflowable."))
     let rasters = try images.map(RegionPixels.init)
-    // Only this fidelity predicate is expected to fail. Conversion/PNG decoding errors still fail
-    // normally. An unexpected fix also fails, prompting removal of the known-issue wrapper.
     let intactFraction = rasters.contains { image in
         (0..<3).allSatisfy { image.bounds(channel: $0) != nil }
     }
-    withKnownIssue("A detached fraction bar is not grouped with its numerator, exponent and denominator.") {
-        #expect(intactFraction)
-    }
+    #expect(intactFraction)
 }
 
 @Test func mergingGraphicsCannotClipNewlyIntersectingLabels() throws {

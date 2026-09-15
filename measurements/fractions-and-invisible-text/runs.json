@@ -1,0 +1,202 @@
+[
+  {
+    "converterSHA256": "46f82ed7841c582cc61f24ccf677b886a31f0edf2c4202d9ec99e54ba41fdbe9",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "conversionSeconds": 7.311454167000193,
+    "converterPeakRSSBytes": 384630784,
+    "sampledPeakPhysicalFootprintBytes": 223921160,
+    "memoryGate": {
+      "limitBytes": 536870912,
+      "passed": true,
+      "metric": "converter process peak RSS from wait/rusage"
+    },
+    "progressCheck": {
+      "passed": true,
+      "events": 144,
+      "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+    },
+    "runPassed": true,
+    "case": "cdc-zombie-pandemic-2011",
+    "counts": {
+      "pageCount": 42,
+      "reflowedPageCount": 38,
+      "recognizedPageCount": 9,
+      "imageCount": 42
+    }
+  },
+  {
+    "converterSHA256": "46f82ed7841c582cc61f24ccf677b886a31f0edf2c4202d9ec99e54ba41fdbe9",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "conversionSeconds": 31.05110670800059,
+    "converterPeakRSSBytes": 174309376,
+    "sampledPeakPhysicalFootprintBytes": 158696264,
+    "memoryGate": {
+      "limitBytes": 536870912,
+      "passed": true,
+      "metric": "converter process peak RSS from wait/rusage"
+    },
+    "progressCheck": {
+      "passed": true,
+      "events": 1083,
+      "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+    },
+    "runPassed": true,
+    "case": "cia-blue-book-14-1955",
+    "counts": {
+      "pageCount": 312,
+      "reflowedPageCount": 312,
+      "recognizedPageCount": 0,
+      "imageCount": 422
+    }
+  },
+  {
+    "converterSHA256": "46f82ed7841c582cc61f24ccf677b886a31f0edf2c4202d9ec99e54ba41fdbe9",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "conversionSeconds": 0.7639181249978719,
+    "converterPeakRSSBytes": 105201664,
+    "sampledPeakPhysicalFootprintBytes": 72024856,
+    "memoryGate": {
+      "limitBytes": 201326592,
+      "passed": true,
+      "metric": "converter process peak RSS from wait/rusage"
+    },
+    "progressCheck": {
+      "passed": true,
+      "events": 56,
+      "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+    },
+    "runPassed": true,
+    "case": "dga-2025-2030",
+    "counts": {
+      "pageCount": 10,
+      "reflowedPageCount": 9,
+      "recognizedPageCount": 0,
+      "imageCount": 27
+    }
+  },
+  {
+    "converterSHA256": "46f82ed7841c582cc61f24ccf677b886a31f0edf2c4202d9ec99e54ba41fdbe9",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "conversionSeconds": 37.466465292003704,
+    "converterPeakRSSBytes": 794411008,
+    "sampledPeakPhysicalFootprintBytes": 533824544,
+    "memoryGate": {
+      "limitBytes": 1342177280,
+      "passed": true,
+      "metric": "converter process peak RSS from wait/rusage"
+    },
+    "progressCheck": {
+      "passed": true,
+      "events": 1699,
+      "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+    },
+    "runPassed": true,
+    "case": "faa-phak-8083-25c",
+    "counts": {
+      "pageCount": 522,
+      "reflowedPageCount": 508,
+      "recognizedPageCount": 0,
+      "imageCount": 588
+    }
+  },
+  {
+    "converterSHA256": "46f82ed7841c582cc61f24ccf677b886a31f0edf2c4202d9ec99e54ba41fdbe9",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "conversionSeconds": 6.869748582998,
+    "converterPeakRSSBytes": 290029568,
+    "sampledPeakPhysicalFootprintBytes": 244351936,
+    "memoryGate": {
+      "limitBytes": 805306368,
+      "passed": true,
+      "metric": "converter process peak RSS from wait/rusage"
+    },
+    "progressCheck": {
+      "passed": true,
+      "events": 609,
+      "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+    },
+    "runPassed": true,
+    "case": "fed-explained-2021",
+    "counts": {
+      "pageCount": 135,
+      "reflowedPageCount": 129,
+      "recognizedPageCount": 7,
+      "imageCount": 315
+    }
+  },
+  {
+    "converterSHA256": "46f82ed7841c582cc61f24ccf677b886a31f0edf2c4202d9ec99e54ba41fdbe9",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "conversionSeconds": 10.80895829200017,
+    "converterPeakRSSBytes": 125992960,
+    "sampledPeakPhysicalFootprintBytes": 166789960,
+    "memoryGate": {
+      "limitBytes": 268435456,
+      "passed": true,
+      "metric": "converter process peak RSS from wait/rusage"
+    },
+    "progressCheck": {
+      "passed": true,
+      "events": 1568,
+      "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+    },
+    "runPassed": true,
+    "case": "gpo-911-2004",
+    "counts": {
+      "pageCount": 585,
+      "reflowedPageCount": 577,
+      "recognizedPageCount": 8,
+      "imageCount": 331
+    }
+  },
+  {
+    "converterSHA256": "46f82ed7841c582cc61f24ccf677b886a31f0edf2c4202d9ec99e54ba41fdbe9",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "conversionSeconds": 1.276555541997368,
+    "converterPeakRSSBytes": 90603520,
+    "sampledPeakPhysicalFootprintBytes": 164053832,
+    "memoryGate": {
+      "limitBytes": 201326592,
+      "passed": true,
+      "metric": "converter process peak RSS from wait/rusage"
+    },
+    "progressCheck": {
+      "passed": true,
+      "events": 272,
+      "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+    },
+    "runPassed": true,
+    "case": "gpo-our-flag-2003",
+    "counts": {
+      "pageCount": 56,
+      "reflowedPageCount": 55,
+      "recognizedPageCount": 2,
+      "imageCount": 147
+    }
+  },
+  {
+    "converterSHA256": "46f82ed7841c582cc61f24ccf677b886a31f0edf2c4202d9ec99e54ba41fdbe9",
+    "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "conversionSeconds": 9.747911582999222,
+    "converterPeakRSSBytes": 82509824,
+    "sampledPeakPhysicalFootprintBytes": 63423280,
+    "memoryGate": {
+      "limitBytes": 268435456,
+      "passed": true,
+      "metric": "converter process peak RSS from wait/rusage"
+    },
+    "progressCheck": {
+      "passed": true,
+      "events": 3059,
+      "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+    },
+    "runPassed": true,
+    "case": "wallace-algebra-2010",
+    "counts": {
+      "pageCount": 489,
+      "reflowedPageCount": 481,
+      "recognizedPageCount": 0,
+      "imageCount": 2050
+    }
+  }
+]

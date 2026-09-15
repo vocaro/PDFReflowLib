@@ -1,0 +1,114 @@
+{
+  "imageCount" : 9,
+  "outputURL" : "file:\/\/\/tmp\/next-warren-final.epub",
+  "pageCount" : 9,
+  "recognizedPageCount" : 0,
+  "reflowedPageCount" : 7,
+  "warnings" : [
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 1
+    },
+    {
+      "code" : "unverifiedTextLayer",
+      "message" : "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+      "page" : 2
+    },
+    {
+      "code" : "unverifiedTextLayer",
+      "message" : "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+      "page" : 3
+    },
+    {
+      "code" : "unverifiedTextLayer",
+      "message" : "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+      "page" : 4
+    },
+    {
+      "code" : "unverifiedTextLayer",
+      "message" : "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+      "page" : 5
+    },
+    {
+      "code" : "unverifiedTextLayer",
+      "message" : "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+      "page" : 6
+    },
+    {
+      "code" : "unverifiedTextLayer",
+      "message" : "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+      "page" : 7
+    },
+    {
+      "code" : "unverifiedTextLayer",
+      "message" : "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+      "page" : 8
+    },
+    {
+      "code" : "pageImageFallback",
+      "message" : "This page is preserved as an image and does not reflow.",
+      "page" : 1
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 2
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 3
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 4
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 4
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 5
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 5
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 6
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 6
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 7
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 7
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 8
+    },
+    {
+      "code" : "pageImageFallback",
+      "message" : "This page is preserved as an image and does not reflow.",
+      "page" : 9
+    }
+  ]
+}

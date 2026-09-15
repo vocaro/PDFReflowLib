@@ -40,12 +40,17 @@ enum PDFReflowLibPipeline {
                 }
                 let graphics = GraphicsReader.read(reference)
                 let requiresPageImage = graphics.unsupported || page.rotation % 360 != 0
+                let syntheticStyle = graphics.hasOnlyInvisibleText && graphics.regions.contains {
+                    $0.width * $0.height > bounds.width * bounds.height * 0.75
+                }
+                // Invisible text over a scan supplies transcription, not source typography.
                 // Fallback pages contribute vocabulary and furniture evidence, but their
                 // formatting is never emitted. Avoid decoding attributed image attachments.
                 var content = PageContent(number: i + 1, bounds: bounds,
                     lines: try NativeTextReader.lines(on: page, limit: options.maximumCharacters - characters,
-                        includeStyle: !requiresPageImage), graphics: graphics.regions)
+                        includeStyle: !requiresPageImage && !syntheticStyle), graphics: graphics.regions)
                 content.requiresPageImage = requiresPageImage
+                content.hasSyntheticTextStyle = syntheticStyle
                 if graphics.unsupported {
                     warnings.append(.init(code: .unsupportedGraphics, page: i + 1,
                         message: "Unsupported or excessive drawing operations require the original page image."))
@@ -69,6 +74,7 @@ enum PDFReflowLibPipeline {
                     let recognized = try await OCRReader.read(page: try document.page(at: i), options: options)
                     content.lines = recognized.lines
                     content.recognized = true
+                    content.hasSyntheticTextStyle = false
                     content.preservePageReference = content.preservePageReference || !recognized.lines.isEmpty
                     content.graphics = recognized.tables
                     content.requiresPageImage = recognized.lines.isEmpty

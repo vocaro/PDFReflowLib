@@ -15,14 +15,12 @@ physical-device memory/performance remain unqualified.
 - Investigate [PDFKit attributed-text leaks](https://github.com/vocaro/PDFReflowLib/issues/4)
   without losing formatting; keep the
   fresh-process high-water-mark gate and establish physical iPhone/iPad memory budgets.
-- Group [detached fractions with their numerators, exponents and denominators](https://github.com/vocaro/PDFReflowLib/issues/20).
-  The synthetic reproducer runs as an explicit known failure, separate from passing fidelity controls.
 - Expand mathematical qualification beyond native inline scripts: review exercise/answer-key
   numbering, detached fractions and unsupported formula structures across the algebra book.
 - Support the Warren Commission scanned report: [full conversion exhausts the image-output
-  ceiling](https://github.com/vocaro/PDFReflowLib/issues/5); [invisible OCR fonts misclassify
-  prose and headings](https://github.com/vocaro/PDFReflowLib/issues/6), and notes/index columns
-  interleave. [Detect suspect inherited OCR](https://github.com/vocaro/PDFReflowLib/issues/7)
+  ceiling](https://github.com/vocaro/PDFReflowLib/issues/5), and general notes/index ownership
+  remains unqualified. Exclusively invisible image-backed text no longer supplies font-based
+  code or heading evidence. [Detect suspect inherited OCR](https://github.com/vocaro/PDFReflowLib/issues/7)
   beyond the conservative unverified-layer warning. Evidence: [Warren baseline](../measurements/gpo-warren-1964/record.md).
 - Correct [absolute image URLs in the Poppler simple preview](https://github.com/vocaro/PDFReflowLib/issues/9) without weakening
   local server containment; retain raw Poppler output and a reproducible rendered comparison.
@@ -81,3 +79,9 @@ Native inline superscripts/subscripts, FAA page-91/511 column order and Our Flag
 table preservation are covered by [source-derived regressions and full-corpus evidence](../measurements/three-fidelity-fixes/record.md).
 Controls also protect 9/11 name/description rows and CDC OCR line spacing. These targeted fixes
 resolve #1, #2 and #16; they do not qualify arbitrary math, table transcription or every column layout.
+
+Bounded detached-fraction preservation (#20) and suppression of synthetic OCR font semantics
+(#6) have enforced regressions, visible-typography controls and source review; see
+[fraction and invisible-text measurements](../measurements/fractions-and-invisible-text/record.md).
+Math outside the detector, mixed text layers, inherited OCR accuracy and full scanned-book
+completion remain unqualified.

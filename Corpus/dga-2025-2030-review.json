@@ -1,0 +1,42 @@
+{
+  "case": "dga-2025-2030",
+  "pageNumbering": "Physical PDF pages, one-based; printed numbers lag by one",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 1,
+      "target": "Cover title and food pyramid",
+      "acceptance": "Preserve word boundaries and attach labels to the correct graphic group."
+    },
+    {
+      "page": 2,
+      "target": "Letter, signatories and footnotes",
+      "acceptance": "Keep each name with its title; retain footnote associations."
+    },
+    {
+      "page": 3,
+      "target": "Three section bands and Gut Health callout",
+      "acceptance": "Read each section before advancing, left/right bullets within sections; separate the full-width callout."
+    },
+    {
+      "page": 4,
+      "target": "Food groups and serving sub-bullets",
+      "acceptance": "Preserve nested bullet grouping and numeric ranges."
+    },
+    {
+      "page": 5,
+      "target": "Two-column restrictions and Added Sugars callout",
+      "acceptance": "Keep body bullets separate from full-width callout."
+    },
+    {
+      "page": 7,
+      "target": "Life-stage section groups",
+      "acceptance": "Keep each age-group heading with its guidance."
+    },
+    {
+      "page": 10,
+      "target": "Final guidance sections",
+      "acceptance": "Preserve headings, images and bullet ordering through the last page."
+    }
+  ]
+}

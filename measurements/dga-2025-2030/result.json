@@ -1,0 +1,218 @@
+{
+  "case": {
+    "id": "dga-2025-2030",
+    "title": "Dietary Guidelines for Americans, 2025\u20132030",
+    "author": "U.S. Department of Health and Human Services; U.S. Department of Agriculture",
+    "publicationYear": 2026,
+    "url": "https://realfood.gov/",
+    "publisherPageURL": "https://realfood.gov/",
+    "downloadURL": "https://cdn.realfood.gov/DGA.pdf",
+    "filename": "DGA.pdf",
+    "bytes": 3422452,
+    "sha256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
+    "pages": 10,
+    "role": "development",
+    "identity": {
+      "suppliedBy": "owner"
+    },
+    "provenance": "Owner-supplied PDF. The title/footer identify realfood.gov; a fresh download from its official CDN matches the supplied byte count and SHA-256. Current publisher resources can point to a separate accessibility revision, which is not substituted for this fixture.",
+    "rightsBasis": "U.S. Government HHS/USDA publication; development corpus only, not relicensed under MIT.",
+    "rightsClearance": {
+      "status": "owner-confirmed",
+      "scope": "Commercial use and redistribution of the development corpus; retain source attribution."
+    },
+    "coverage": [
+      "tagged InDesign digital original",
+      "illustrated section headings",
+      "two-column bullet groups",
+      "full-width callouts",
+      "food pyramid labels",
+      "decorative images and gradient backgrounds",
+      "reading order across repeated horizontal sections"
+    ],
+    "reviewPages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      10
+    ],
+    "reviewStatus": "Review targets selected; not fidelity-qualified.",
+    "knownFidelityIssues": [],
+    "memoryBudget": {
+      "maxPeakRSSMiB": 192,
+      "scope": "macOS 27 arm64 isolated release CLI, defaults; initial regression ceiling, not an iOS device budget"
+    }
+  },
+  "converterSHA256": "6ae1a17ef314531255ad1e768c4c75c6739483fe793de6627d8f9b5b2021602f",
+  "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "options": "library defaults",
+  "qualifiedForFidelity": false,
+  "conversionExitCode": 0,
+  "sampledPeakPhysicalFootprintBytes": 83673928,
+  "conversionSeconds": 1.3526698749992647,
+  "converterPeakRSSBytes": 111099904,
+  "converterCPUSeconds": 1.213965,
+  "measurementScope": "One process run; RSS excludes separate Apple services. Timing excludes validation. Not a latency distribution or physical mobile-device measurement.",
+  "progressCheck": {
+    "passed": true,
+    "events": 40,
+    "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+  },
+  "conversionReport": {
+    "imageCount": 11,
+    "pageCount": 10,
+    "recognizedPageCount": 0,
+    "reflowedPageCount": 2,
+    "warnings": [
+      {
+        "code": "unsupportedGraphics",
+        "message": "Unsupported or excessive drawing operations require the original page image.",
+        "page": 3
+      },
+      {
+        "code": "unsupportedGraphics",
+        "message": "Unsupported or excessive drawing operations require the original page image.",
+        "page": 4
+      },
+      {
+        "code": "unsupportedGraphics",
+        "message": "Unsupported or excessive drawing operations require the original page image.",
+        "page": 5
+      },
+      {
+        "code": "unsupportedGraphics",
+        "message": "Unsupported or excessive drawing operations require the original page image.",
+        "page": 6
+      },
+      {
+        "code": "unsupportedGraphics",
+        "message": "Unsupported or excessive drawing operations require the original page image.",
+        "page": 7
+      },
+      {
+        "code": "unsupportedGraphics",
+        "message": "Unsupported or excessive drawing operations require the original page image.",
+        "page": 8
+      },
+      {
+        "code": "unsupportedGraphics",
+        "message": "Unsupported or excessive drawing operations require the original page image.",
+        "page": 9
+      },
+      {
+        "code": "unsupportedGraphics",
+        "message": "Unsupported or excessive drawing operations require the original page image.",
+        "page": 10
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 2
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 3
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 4
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 5
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 6
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 7
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 8
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 9
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 10
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 1
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 2
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 3
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 4
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 5
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 6
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 7
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 8
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 9
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 10
+      }
+    ]
+  },
+  "outputBytes": 3967138,
+  "structuralCheck": "passed",
+  "outputTextCharacters": 3478,
+  "epubcheckExitCode": 0,
+  "memoryGate": {
+    "limitBytes": 201326592,
+    "passed": true,
+    "metric": "converter process peak RSS from wait/rusage"
+  },
+  "runPassed": true
+}

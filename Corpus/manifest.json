@@ -369,6 +369,69 @@
       },
       "downloadURL": "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf",
       "downloadVerification": "A fresh download through Tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
+    },
+    {
+      "id": "dga-2025-2030",
+      "title": "Dietary Guidelines for Americans, 2025–2030",
+      "author": "U.S. Department of Health and Human Services; U.S. Department of Agriculture",
+      "publicationYear": 2026,
+      "url": "https://realfood.gov/",
+      "publisherPageURL": "https://realfood.gov/",
+      "downloadURL": "https://cdn.realfood.gov/DGA.pdf",
+      "filename": "DGA.pdf",
+      "bytes": 3422452,
+      "sha256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
+      "pages": 10,
+      "role": "development",
+      "identity": {
+        "suppliedBy": "owner"
+      },
+      "provenance": "Owner-supplied PDF. The title/footer identify realfood.gov; a fresh download from its official CDN matches the supplied byte count and SHA-256. Current publisher resources can point to a separate accessibility revision, which is not substituted for this fixture.",
+      "rightsBasis": "U.S. Government HHS/USDA publication; development corpus only, not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "owner-confirmed",
+        "scope": "Commercial use and redistribution of the development corpus; retain source attribution."
+      },
+      "coverage": [
+        "tagged InDesign digital original",
+        "illustrated section headings",
+        "two-column bullet groups",
+        "full-width callouts",
+        "food pyramid labels",
+        "decorative images and gradient backgrounds",
+        "reading order across repeated horizontal sections"
+      ],
+      "reviewPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        10
+      ],
+      "reviewStatus": "Shading support permits reflowed text on nine pages; EPUBCheck and 192 MiB Mac gate pass. Ten pages prepared for comparison. Native word/label, protein-column order and placeholder-heading defects remain; not fidelity-qualified.",
+      "knownFidelityIssues": [
+        {
+          "page": 1,
+          "issue": "Title words join, native words split, and food-pyramid labels lose grouping.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/14"
+        },
+        {
+          "page": 3,
+          "issue": "Protein bullet columns interleave; object placeholders become headings. Large connected graphics retain a full-page reference image.",
+          "trackingURLs": [
+            "https://github.com/vocaro/PDFReflowLib/issues/2",
+            "https://github.com/vocaro/PDFReflowLib/issues/8",
+            "https://github.com/vocaro/PDFReflowLib/issues/13"
+          ]
+        }
+      ],
+      "memoryBudget": {
+        "maxPeakRSSMiB": 192,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial regression ceiling, not an iOS device budget"
+      },
+      "downloadVerification": "measurements/dga-2025-2030/download-verification.json"
     }
   ]
 }

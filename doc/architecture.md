@@ -57,8 +57,12 @@ The caller supplies a workspace and keeps it alive until serialization finishes.
 can run without calling `EPUBWriter`, as the direct PDF-to-model test demonstrates.
 
 `NativeTextReader` obtains PDFKit line selections, geometry and attributed runs; it immediately
-copies text and style flags into values. `GraphicsReader` scans bounded Core Graphics paint
-operations and nested Form XObjects. `OCRReader` uses Vision when policy requests it.
+copies text and style flags into values. Object-only selections skip attributed-string access
+to avoid unnecessary PDFKit image-attachment decoding. `GraphicsReader` scans bounded Core Graphics paint
+operations and nested Form XObjects. It resolves shading resources and bounds gradient regions
+with conservative clipping, Form bounds and optional shading bounds. Core Graphics rasterizes
+the original region; the model stores an image asset, not an editable gradient. Unsafe or
+page-spanning bounds retain the page fallback. `OCRReader` uses Vision when policy requests it.
 `LayoutReconstructor` handles furniture, whitespace cuts, paragraphs, styled word joins and
 cross-page continuation. `PageRasterizer` renders source-composited regions to bounded PNGs.
 

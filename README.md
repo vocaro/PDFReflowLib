@@ -167,7 +167,8 @@ interchange format; the supported public output remains EPUB 3. See
 `Corpus/manifest.json` registers the 522-page FAA Pilot's Handbook of Aeronautical Knowledge
 (FAA-H-8083-25C), Tyler Wallace's 489-page Beginning and Intermediate Algebra, and the
 920-page scanned Warren Commission report, the 585-page digital 9/11 Commission report, and
-135-page The Fed Explained by exact byte identity. Fetch originals with
+135-page The Fed Explained, plus the 10-page illustrated Dietary Guidelines for Americans
+(2025–2030), by exact byte identity. Fetch originals with
 `python3 Tools/fetch_corpus.py --all`; verified copies live in gitignored `Corpus/cache/`.
 Tests do not download documents.
 [Corpus guide](doc/corpus.md) lists their coverage, attribution and review commands. The manifest lists review points and known reading-order/raster defects, so a

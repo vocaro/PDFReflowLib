@@ -1,0 +1,14 @@
+{
+  "swiftTests": 35,
+  "pythonTests": 27,
+  "fixtureConversions": 6,
+  "epubcheck": "5.3.0; fixture and DGA/FAA/Fed conversions pass",
+  "iosBuild": "swift build --scratch-path .build/ios-shading --triple arm64-apple-ios27.0 --sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk",
+  "iosBuildResult": "pass; device SDK compilation, not a physical-device runtime measurement",
+  "memoryGateCases": [
+    "faa-phak-8083-25c",
+    "fed-explained-2021",
+    "dga-2025-2030"
+  ],
+  "memoryGateResult": "all pass existing limits"
+}

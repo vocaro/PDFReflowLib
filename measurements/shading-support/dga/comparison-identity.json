@@ -1,0 +1,740 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "sourceName": "DGA.pdf",
+  "commands": [
+    {
+      "command": [
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/corpus-cli/out/Products/Release/pdf-reflow",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pdfreflow.epub"
+      ],
+      "seconds": 0.6287112499994691,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "1",
+        "-l",
+        "1",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/1/simple.html"
+      ],
+      "seconds": 0.10677208400011295,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "1",
+        "-l",
+        "1",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/1/positioned.html"
+      ],
+      "seconds": 0.7353316669978085,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "1",
+        "-l",
+        "1",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/1/source"
+      ],
+      "seconds": 0.8424664999984088,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "2",
+        "-l",
+        "2",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/2/simple.html"
+      ],
+      "seconds": 0.10665670800153748,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "2",
+        "-l",
+        "2",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/2/positioned.html"
+      ],
+      "seconds": 0.10470100000020466,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "2",
+        "-l",
+        "2",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/2/source"
+      ],
+      "seconds": 0.3169173749993206,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "3",
+        "-l",
+        "3",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/3/simple.html"
+      ],
+      "seconds": 0.1071256249997532,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "3",
+        "-l",
+        "3",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/3/positioned.html"
+      ],
+      "seconds": 0.10350470800040057,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "3",
+        "-l",
+        "3",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/3/source"
+      ],
+      "seconds": 0.21173708399874158,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "4",
+        "-l",
+        "4",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/4/simple.html"
+      ],
+      "seconds": 0.1043780420004623,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "4",
+        "-l",
+        "4",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/4/positioned.html"
+      ],
+      "seconds": 0.1072542079964478,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "4",
+        "-l",
+        "4",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/4/source"
+      ],
+      "seconds": 0.20904562500072643,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "5",
+        "-l",
+        "5",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/5/simple.html"
+      ],
+      "seconds": 0.10671791699860478,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "5",
+        "-l",
+        "5",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/5/positioned.html"
+      ],
+      "seconds": 0.10744508299831068,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "5",
+        "-l",
+        "5",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/5/source"
+      ],
+      "seconds": 0.317114458001015,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "6",
+        "-l",
+        "6",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/6/simple.html"
+      ],
+      "seconds": 0.10729854199962574,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "6",
+        "-l",
+        "6",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/6/positioned.html"
+      ],
+      "seconds": 0.10356404100093641,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "6",
+        "-l",
+        "6",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/6/source"
+      ],
+      "seconds": 0.21185487500042655,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "7",
+        "-l",
+        "7",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/7/simple.html"
+      ],
+      "seconds": 0.10721191699849442,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "7",
+        "-l",
+        "7",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/7/positioned.html"
+      ],
+      "seconds": 0.10751741700005368,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "7",
+        "-l",
+        "7",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/7/source"
+      ],
+      "seconds": 0.312396458000876,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "8",
+        "-l",
+        "8",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/8/simple.html"
+      ],
+      "seconds": 0.1075164579997363,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "8",
+        "-l",
+        "8",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/8/positioned.html"
+      ],
+      "seconds": 0.1072930840018671,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "8",
+        "-l",
+        "8",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/8/source"
+      ],
+      "seconds": 0.21174766599870054,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "9",
+        "-l",
+        "9",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/9/simple.html"
+      ],
+      "seconds": 0.1066789999968023,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "9",
+        "-l",
+        "9",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/9/positioned.html"
+      ],
+      "seconds": 0.1074575000020559,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "9",
+        "-l",
+        "9",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/9/source"
+      ],
+      "seconds": 0.21189254199998686,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "10",
+        "-l",
+        "10",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/10/simple.html"
+      ],
+      "seconds": 0.10699020800166181,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "10",
+        "-l",
+        "10",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/10/positioned.html"
+      ],
+      "seconds": 0.10754024999914691,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "10",
+        "-l",
+        "10",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pages/10/source"
+      ],
+      "seconds": 0.2117192920013622,
+      "exitCode": 0
+    }
+  ],
+  "pages": [
+    {
+      "number": 1,
+      "epub": "epub/EPUB/chapter-1.html#page-1",
+      "simple": "pages/1/simple.html",
+      "positioned": "pages/1/positioned.html",
+      "source": "pages/1/source.png"
+    },
+    {
+      "number": 2,
+      "epub": "epub/EPUB/chapter-1.html#page-2",
+      "simple": "pages/2/simple.html",
+      "positioned": "pages/2/positioned.html",
+      "source": "pages/2/source.png"
+    },
+    {
+      "number": 3,
+      "epub": "epub/EPUB/chapter-1.html#page-3",
+      "simple": "pages/3/simple.html",
+      "positioned": "pages/3/positioned.html",
+      "source": "pages/3/source.png"
+    },
+    {
+      "number": 4,
+      "epub": "epub/EPUB/chapter-1.html#page-4",
+      "simple": "pages/4/simple.html",
+      "positioned": "pages/4/positioned.html",
+      "source": "pages/4/source.png"
+    },
+    {
+      "number": 5,
+      "epub": "epub/EPUB/chapter-1.html#page-5",
+      "simple": "pages/5/simple.html",
+      "positioned": "pages/5/positioned.html",
+      "source": "pages/5/source.png"
+    },
+    {
+      "number": 6,
+      "epub": "epub/EPUB/chapter-1.html#page-6",
+      "simple": "pages/6/simple.html",
+      "positioned": "pages/6/positioned.html",
+      "source": "pages/6/source.png"
+    },
+    {
+      "number": 7,
+      "epub": "epub/EPUB/chapter-1.html#page-7",
+      "simple": "pages/7/simple.html",
+      "positioned": "pages/7/positioned.html",
+      "source": "pages/7/source.png"
+    },
+    {
+      "number": 8,
+      "epub": "epub/EPUB/chapter-1.html#page-8",
+      "simple": "pages/8/simple.html",
+      "positioned": "pages/8/positioned.html",
+      "source": "pages/8/source.png"
+    },
+    {
+      "number": 9,
+      "epub": "epub/EPUB/chapter-1.html#page-9",
+      "simple": "pages/9/simple.html",
+      "positioned": "pages/9/positioned.html",
+      "source": "pages/9/source.png"
+    },
+    {
+      "number": 10,
+      "epub": "epub/EPUB/chapter-1.html#page-10",
+      "simple": "pages/10/simple.html",
+      "positioned": "pages/10/positioned.html",
+      "source": "pages/10/source.png"
+    }
+  ],
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "source": {
+    "bytes": 3422452,
+    "sha256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472"
+  },
+  "converter": {
+    "path": "/Users/trevorharmon/Development/PDFReflowLib/.build/corpus-cli/out/Products/Release/pdf-reflow",
+    "bytes": 864344,
+    "sha256": "9fed7af9cb6872ef13a596f1df9512fb9236e66a67e43db96e3637a9eeb4a0e8"
+  },
+  "harness": {
+    "compare_pdf.py": {
+      "bytes": 12039,
+      "sha256": "c4841ba4a964707265758815dbac6036dd42e20337ef3e7caa1c9fae900a4013"
+    },
+    "serve_comparison.py": {
+      "bytes": 2884,
+      "sha256": "0e88e2a5bdbf3d7ec5353019725a036e6c5f1f759bd039c490eca807a588d389"
+    },
+    "comparison/index.html": {
+      "bytes": 3787,
+      "sha256": "2a36074ea68fb337a3ec5e57d5c3c637d73c819bdbeabdcf73492ae48a4d72b9"
+    },
+    "comparison/viewer.css": {
+      "bytes": 2834,
+      "sha256": "d5aea5b08898f2798f3884ef88510f32a54126a9affeb993310a9063693e10a3"
+    },
+    "comparison/viewer.js": {
+      "bytes": 6856,
+      "sha256": "bd20b93c03783be3fee134221a48fd9ff3c54c710b74a8af21949dbe263bb260"
+    }
+  },
+  "popplerVersion": "pdftohtml version 26.04.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1999-2003 Gueorgui Ovtcharov and Rainer Dorsch\nCopyright 1996-2011, 2022 Glyph & Cog, LLC",
+  "pageCount": 10,
+  "report": {
+    "imageCount": 27,
+    "outputURL": "file:///Users/trevorharmon/Development/PDFReflowLib/.build/dga-supported-comparison/pdfreflow.epub",
+    "pageCount": 10,
+    "recognizedPageCount": 0,
+    "reflowedPageCount": 9,
+    "warnings": [
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 2
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 3
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 4
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 5
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 6
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 7
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 8
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 9
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 10
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 1
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 2
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 3
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 4
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 5
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 6
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 7
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 8
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 9
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 10
+      }
+    ]
+  },
+  "epub": {
+    "bytes": 7848858,
+    "sha256": "ed80991b14f316d86a5d87d914779548ddfdffaacb03836af653153f22f8d2b3"
+  }
+}

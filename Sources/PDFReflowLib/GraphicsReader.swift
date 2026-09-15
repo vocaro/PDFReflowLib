@@ -7,7 +7,10 @@ enum GraphicsReader {
     struct Result { var regions: [CGRect]; var unsupported: Bool }
     private final class State {
         var matrix = CGAffineTransform.identity
-        var saved: [(CGAffineTransform, Bool)] = []
+        var saved: [(CGAffineTransform, Bool, CGRect)] = []
+        // Conservative page-space bounds, not a replacement for Core Graphics clipping.
+        var clip = CGRect.zero
+        var pendingClip = false
         var white = false
         var path = CGRect.null
         var regions: [CGRect] = []
@@ -23,11 +26,19 @@ enum GraphicsReader {
             if operations > 100_000 { unsupported = true; return false }
             return true
         }
+        func finishPath() {
+            if pendingClip {
+                if !path.isNull && !path.isFinite { unsupported = true }
+                else { clip = clip.intersection(path) }
+            }
+            pendingClip = false
+            path = .null
+        }
         func paint() {
-            guard accept(), !path.isNull else { path = .null; return }
+            defer { finishPath() }
+            guard accept(), !path.isNull else { return }
             if regions.count < 10_000 { regions.append(path.insetBy(dx: -2, dy: -2)) }
             else { unsupported = true }
-            path = .null
         }
     }
 
@@ -53,11 +64,11 @@ enum GraphicsReader {
         CGPDFOperatorTableSetCallback(table, "q") { _, info in
             let s = Self.state(info)
             guard s.accept(), s.saved.count < 128 else { s.unsupported = true; return }
-            s.saved.append((s.matrix, s.white))
+            s.saved.append((s.matrix, s.white, s.clip))
         }
         CGPDFOperatorTableSetCallback(table, "Q") { _, info in
             let s = Self.state(info)
-            if let saved = s.saved.popLast() { (s.matrix, s.white) = saved }
+            if let saved = s.saved.popLast() { (s.matrix, s.white, s.clip) = saved }
             else { s.unsupported = true }
         }
         CGPDFOperatorTableSetCallback(table, "cm") { scanner, info in
@@ -114,12 +125,18 @@ enum GraphicsReader {
         for op in ["f", "F", "f*"] {
             CGPDFOperatorTableSetCallback(table, op) { _, info in
                 let s = Self.state(info)
-                if s.white { s.path = .null } else { s.paint() }
+                if s.white { s.finishPath() } else { s.paint() }
             }
         }
-        CGPDFOperatorTableSetCallback(table, "n") { _, info in Self.state(info).path = .null }
+        CGPDFOperatorTableSetCallback(table, "n") { _, info in Self.state(info).finishPath() }
+        for op in ["W", "W*"] {
+            CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).pendingClip = true }
+        }
+        CGPDFOperatorTableSetCallback(table, "sh") { scanner, info in
+            Self.shading(scanner, state: Self.state(info))
+        }
         // Unsupported placement/compositing must remain visible, never silently disappear.
-        for op in ["EI", "sh"] {
+        for op in ["EI"] {
             CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).unsupported = true }
         }
         CGPDFOperatorTableSetCallback(table, "Do") { scanner, info in
@@ -179,6 +196,7 @@ enum GraphicsReader {
         let s = State()
         s.table = table
         s.pageBounds = page.getBoxRect(.cropBox)
+        s.clip = s.pageBounds
         if let dictionary = page.dictionary {
             CGPDFDictionaryGetDictionary(dictionary, "Resources", &s.resources)
         }
@@ -188,6 +206,54 @@ enum GraphicsReader {
         let bounds = page.getBoxRect(.cropBox)
         return Result(regions: clusters(s.regions.map { $0.intersection(bounds) }, distance: 4),
                       unsupported: s.unsupported)
+    }
+
+    private static func rectangle(_ dictionary: CGPDFDictionaryRef, key: String) -> CGRect? {
+        var array: CGPDFArrayRef?
+        guard CGPDFDictionaryGetArray(dictionary, key, &array), let array,
+              CGPDFArrayGetCount(array) == 4 else { return nil }
+        var n = [CGPDFReal](repeating: 0, count: 4)
+        guard (0..<4).allSatisfy({ CGPDFArrayGetNumber(array, $0, &n[$0]) && n[$0].isFinite }) else { return nil }
+        // PDF rectangles can name either pair of opposite corners (InDesign uses both orders).
+        let rect = CGRect(x: n[0], y: n[1], width: n[2] - n[0], height: n[3] - n[1]).standardized
+        return rect.isFinite ? rect : nil
+    }
+
+    // The sh operator paints within the active clip and optional shading BBox. Do not infer
+    // extents from axial/radial Coords: extension and mesh/function shadings can paint beyond
+    // them. Core Graphics renders the original region, including masks, colors and labels.
+    private static func shading(_ scanner: CGPDFScannerRef, state s: State) {
+        guard s.accept() else { return }
+        var name: UnsafePointer<CChar>?
+        let parent = CGPDFScannerGetContentStream(scanner)
+        guard CGPDFScannerPopName(scanner, &name), let name,
+              let resource = CGPDFContentStreamGetResource(parent, "Shading", name) else {
+            s.unsupported = true; return
+        }
+        var dictionary: CGPDFDictionaryRef?
+        var stream: CGPDFStreamRef?
+        if !CGPDFObjectGetValue(resource, .dictionary, &dictionary),
+           CGPDFObjectGetValue(resource, .stream, &stream), let stream {
+            dictionary = CGPDFStreamGetDictionary(stream)
+        }
+        var type: CGPDFInteger = 0
+        guard let dictionary, CGPDFDictionaryGetInteger(dictionary, "ShadingType", &type),
+              (1...7).contains(type) else { s.unsupported = true; return }
+        var region = s.clip
+        var boxObject: CGPDFObjectRef?
+        if CGPDFDictionaryGetObject(dictionary, "BBox", &boxObject) {
+            guard let box = rectangle(dictionary, key: "BBox") else { s.unsupported = true; return }
+            let transformed = box.applying(s.matrix)
+            guard transformed.isFinite else { s.unsupported = true; return }
+            region = region.intersection(transformed)
+        }
+        if region.isNull || region.isEmpty { return }
+        guard region.isFinite, s.regions.count < 10_000 else { s.unsupported = true; return }
+        // Without a tighter bound, preserve the page rather than inventing a small crop.
+        guard region.width * region.height < s.pageBounds.width * s.pageBounds.height * 0.75 else {
+            s.unsupported = true; return
+        }
+        s.regions.append(region.insetBy(dx: -2, dy: -2).intersection(s.pageBounds))
     }
 
     private static func scan(_ stream: CGPDFContentStreamRef, state s: State) {
@@ -201,13 +267,15 @@ enum GraphicsReader {
         guard s.depth < 12 else { s.unsupported = true; return }
         let oldMatrix = s.matrix, oldPath = s.path, oldSaved = s.saved, oldWhite = s.white
         let oldResources = s.resources
+        let oldClip = s.clip, oldPendingClip = s.pendingClip
         defer {
             s.matrix = oldMatrix; s.path = oldPath; s.saved = oldSaved; s.white = oldWhite
-            s.resources = oldResources; s.depth -= 1
+            s.resources = oldResources; s.clip = oldClip; s.pendingClip = oldPendingClip; s.depth -= 1
         }
         s.depth += 1
         s.saved = []
         s.path = .null
+        s.pendingClip = false
         var array: CGPDFArrayRef?
         if CGPDFDictionaryGetArray(dictionary, "Matrix", &array), let array {
             guard CGPDFArrayGetCount(array) == 6 else { s.unsupported = true; return }
@@ -222,6 +290,10 @@ enum GraphicsReader {
             s.matrix = CGAffineTransform(a: n[0], b: n[1], c: n[2], d: n[3], tx: n[4], ty: n[5])
                 .concatenating(s.matrix)
         }
+        guard let box = rectangle(dictionary, key: "BBox") else { s.unsupported = true; return }
+        let transformed = box.applying(s.matrix)
+        guard transformed.isFinite else { s.unsupported = true; return }
+        s.clip = s.clip.intersection(transformed)
         var resources: CGPDFDictionaryRef?
         CGPDFDictionaryGetDictionary(dictionary, "Resources", &resources)
         guard let resources = resources ?? s.resources else { s.unsupported = true; return }

@@ -20,7 +20,12 @@ enum NativeTextReader {
             guard let raw = line.string, !raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { continue }
             let bounds = line.bounds(for: page)
             guard bounds.isFinite, !bounds.isNull, bounds.width > 0, bounds.height > 0 else { continue }
-            let attributed = includeStyle ? line.attributedString : nil
+            // PDFKit may decode image attachments while obtaining attributed text. An object-only
+            // selection has no typographic style to preserve; its graphics are rasterized separately.
+            let objectOnly = raw.unicodeScalars.allSatisfy {
+                $0.value == 0xFFFC || CharacterSet.whitespacesAndNewlines.contains($0)
+            }
+            let attributed = includeStyle && !objectOnly ? line.attributedString : nil
             let font = (attributed?.length ?? 0) > 0
                 ? attributed?.attribute(.font, at: 0, effectiveRange: nil) as? PlatformFont : nil
             let name = font?.fontName.lowercased() ?? ""

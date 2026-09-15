@@ -1,0 +1,12 @@
+{
+  "screenshotConverterSHA256": "60c42d30a7acf64deb23ac17e7f9034a8f0d8a803f60ac965011475736cb2197",
+  "finalConverterSHA256": "9fed7af9cb6872ef13a596f1df9512fb9236e66a67e43db96e3637a9eeb4a0e8",
+  "scope": "Page-3 screenshot precedes the object-only attributed-string guard. Page-3 XHTML, referenced image and CSS are byte-identical in the final output; other pages are not covered by this equivalence check.",
+  "matchingSHA256": {
+    "page3XHTML": "24c795ef58af2953d1f4d8f0e60cea4db4981cff203f8b5502435e162cc76c18",
+    "css": "b5d8f12aa4ccb3dce0950509fabc07c57491f019ec5b2eb402b28b35ef3cc91c",
+    "assets": {
+      "images/image-4.png": "306521d2c12f1a2723b110b0637aaeff13cac8bda467bba51207639933ce1b5b"
+    }
+  }
+}

@@ -27,6 +27,7 @@ work offline. Tests and conversion never fetch sources automatically.
 | `gpo-warren-1964` | 920 | Scans, noisy existing OCR, notes, index, large image output | Unset: default conversion fails |
 | `gpo-911-2004` | 585 | Untagged digital text, alternating headers, tracked lettering, endnotes | 256 MiB |
 | `fed-explained-2021` | 135 | Tagged text, recurring tables, organization charts and flow diagrams | 768 MiB |
+| `dga-2025-2030` | 10 | Illustrated section bands, gradients, bullet columns and callouts | 192 MiB |
 
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
@@ -174,3 +175,28 @@ scripts/compare-pdf-reflow.sh --pdf Corpus/cache/the-fed-explained.pdf \
 flow arrows and adjacent prose. The [baseline](../measurements/fed-explained-2021/record.md)
 passes EPUB validation and the Mac memory gate. Spot checks expose undersized whole-page
 fallback and ordinary prose rendered as headings. Full-book fidelity remains unqualified.
+
+
+## Dietary Guidelines for Americans, 2025–2030
+
+The 10-page InDesign booklet combines food illustrations, gradient section headings, bullet
+columns and full-width callouts. The supplied source is pinned separately from any publisher
+accessibility revision. Its direct CDN download matches the original bytes.
+
+```sh
+python3 Tools/fetch_corpus.py --case dga-2025-2030
+swift build -c release --scratch-path .build/corpus-cli
+python3 Tools/evaluate-real-document.py --case dga-2025-2030 \
+  --pdf Corpus/cache/DGA.pdf --converter .build/corpus-cli/release/pdf-reflow \
+  --output /tmp/dga-baseline --epubcheck /opt/homebrew/bin/epubcheck
+scripts/compare-pdf-reflow.sh --pdf Corpus/cache/DGA.pdf \
+  --pages all --output /tmp/dga-review --serve
+```
+
+All ten pages are small enough to prepare together. [Review points](../Corpus/dga-2025-2030-review.json)
+and the [baseline](../measurements/dga-2025-2030/record.md) distinguish valid EPUB packaging from
+usable reflow. The [shading-support measurement](../measurements/shading-support/record.md)
+records nine pages with reflowed text, with column-order and placeholder defects still open. The source has tags, but custom heading
+and bullet roles map to paragraphs, so tag names alone are not a reliable semantic reference.
+[Graphics fallback #13](https://github.com/vocaro/PDFReflowLib/issues/13) and
+[native text/label defects #14](https://github.com/vocaro/PDFReflowLib/issues/14) track the gaps.

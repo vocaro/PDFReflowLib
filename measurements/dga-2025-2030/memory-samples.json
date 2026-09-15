@@ -1,0 +1,80 @@
+[
+  {
+    "seconds": 0.0023977079981705174,
+    "progress": "starting",
+    "residentBytes": 147456,
+    "physicalFootprintBytes": 196728
+  },
+  {
+    "seconds": 0.10607679199893028,
+    "progress": "7% extracting page 1/10",
+    "residentBytes": 30244864,
+    "physicalFootprintBytes": 17711824
+  },
+  {
+    "seconds": 0.20679000000018277,
+    "progress": "7% extracting page 1/10",
+    "residentBytes": 38240256,
+    "physicalFootprintBytes": 21267176
+  },
+  {
+    "seconds": 0.3120371669974702,
+    "progress": "57% extracting page 10/10",
+    "residentBytes": 56672256,
+    "physicalFootprintBytes": 36061976
+  },
+  {
+    "seconds": 0.4122951249992184,
+    "progress": "57% extracting page 10/10",
+    "residentBytes": 82919424,
+    "physicalFootprintBytes": 60244784
+  },
+  {
+    "seconds": 0.516537999999855,
+    "progress": "57% extracting page 10/10",
+    "residentBytes": 93421568,
+    "physicalFootprintBytes": 69534512
+  },
+  {
+    "seconds": 0.6207973329983361,
+    "progress": "57% extracting page 10/10",
+    "residentBytes": 88702976,
+    "physicalFootprintBytes": 64815920
+  },
+  {
+    "seconds": 0.7229652919995715,
+    "progress": "59% reconstructing page 1/10",
+    "residentBytes": 89767936,
+    "physicalFootprintBytes": 63390536
+  },
+  {
+    "seconds": 0.8277742079990276,
+    "progress": "64% reconstructing page 3/10",
+    "residentBytes": 106364928,
+    "physicalFootprintBytes": 79774536
+  },
+  {
+    "seconds": 0.9319010420003906,
+    "progress": "69% reconstructing page 5/10",
+    "residentBytes": 109871104,
+    "physicalFootprintBytes": 82756424
+  },
+  {
+    "seconds": 1.0370069169985072,
+    "progress": "74% reconstructing page 7/10",
+    "residentBytes": 111050752,
+    "physicalFootprintBytes": 83673928
+  },
+  {
+    "seconds": 1.1420829579983547,
+    "progress": "82% reconstructing page 10/10",
+    "residentBytes": 96124928,
+    "physicalFootprintBytes": 70435656
+  },
+  {
+    "seconds": 1.247160916998837,
+    "progress": "97% writing",
+    "residentBytes": 97320960,
+    "physicalFootprintBytes": 70599496
+  }
+]

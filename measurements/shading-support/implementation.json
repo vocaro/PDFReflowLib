@@ -1,0 +1,9 @@
+{
+  "baseCommit": "178ccf0b7e86a5d674538b372fca8a2188521a26",
+  "sourceSHA256": {
+    "Sources/PDFReflowLib/GraphicsReader.swift": "bd5fbc22a58b94513553d8405b2727c62b2242ca5ceb325d1d42b8db0edce765",
+    "Sources/PDFReflowLib/NativeTextReader.swift": "16733cf38f21b0e8693ebf9eaa530f389c2c7d43f9c7da2d92f606ba7a5e5f8c",
+    "Tests/PDFReflowLibTests/ShadingTests.swift": "08959cf218980d5cf82356e395f1141f8b4747d4445922f96fb5d6835cd35781"
+  },
+  "converterSHA256": "9fed7af9cb6872ef13a596f1df9512fb9236e66a67e43db96e3637a9eeb4a0e8"
+}

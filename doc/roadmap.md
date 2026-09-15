@@ -13,7 +13,8 @@ physical-device memory/performance remain unqualified.
   addressed. Keep known failures separate from passing baselines; never regenerate expected
   content from converter output alone. See [the regression workflow](regression-testing.md).
 - Investigate [PDFKit attributed-text leaks](https://github.com/vocaro/PDFReflowLib/issues/4)
-  without losing formatting; keep the
+  without losing formatting; Apple report **FB24783799** has a
+  [standalone reproducer and fresh diagnostics](../measurements/apple-feedback-pdfkit/record.md). Keep the
   fresh-process high-water-mark gate and establish physical iPhone/iPad memory budgets.
 - Expand mathematical qualification beyond native inline scripts: review exercise/answer-key
   numbering, detached fractions and unsupported formula structures across the algebra book.

@@ -69,3 +69,8 @@ this entitlement never belongs in the distributed library. Allocation-stack logg
 memory and timing, so those runs diagnose ownership and do not set performance baselines.
 A growing footprint alone does not prove a leak. Compare plain/attributed modes, object
 lifetimes and unreachable allocations before attributing a defect to PDFKit.
+
+Apple report **FB24783799** tracks the framework-path leak. The
+[submission evidence](../measurements/apple-feedback-pdfkit/record.md) includes the standalone
+reproducer, fresh plain/attributed measurements and full allocation diagnostics. The issue remains
+unresolved; a submitted report is not an Apple-confirmed diagnosis.

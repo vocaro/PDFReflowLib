@@ -8,6 +8,7 @@ import argparse
 import json
 from pathlib import Path, PurePosixPath
 import re
+import sys
 import xml.etree.ElementTree as ET
 import zipfile
 
@@ -17,22 +18,46 @@ OPF = '{http://www.idpf.org/2007/opf}'
 EPUB = '{http://www.idpf.org/2007/ops}'
 HEADINGS = {HTML + 'h' + str(n) for n in range(1, 7)}
 BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'figure', 'li')}
+DEFAULT_MAX_ENTRIES = 10_000
+DEFAULT_MAX_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
+
+
+def inspection_limit(value, name):
+    if type(value) is not int or not 1 <= value <= sys.maxsize:
+        raise ValueError(f'{name} must be an integer from 1 to {sys.maxsize}')
+    return value
+
+
+def cli_inspection_limit(value):
+    try:
+        return inspection_limit(int(value), 'inspection limit')
+    except ValueError as error:
+        raise argparse.ArgumentTypeError(str(error)) from error
 
 
 def normalized(text):
     return ' '.join(text.split())
 
 
-def read_pages(path):
+def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
+               max_uncompressed_bytes=DEFAULT_MAX_UNCOMPRESSED_BYTES):
+    """Read spine content with explicit ZIP entry-count and total expanded-byte ceilings.
+
+    These admission limits are not process-memory budgets. Images are not expanded;
+    chapter XML and accumulated page text still consume memory after admission.
+    """
+    inspection_limit(max_entries, 'max_entries')
+    inspection_limit(max_uncompressed_bytes, 'max_uncompressed_bytes')
     pages, markers = {}, []
     current = None
     heading_id = 0
     paragraph_id = 0
     with zipfile.ZipFile(path) as archive:
-        if (len(archive.infolist()) > 10_000
-                or sum(e.file_size for e in archive.infolist()) > 512 * 1024 * 1024):
+        if (len(archive.infolist()) > max_entries
+                or sum(e.file_size for e in archive.infolist()) > max_uncompressed_bytes):
             raise ValueError('EPUB exceeds inspection bounds')
-        if len(set(archive.namelist())) != len(archive.namelist()):
+        names = set(archive.namelist())
+        if len(names) != len(archive.infolist()):
             raise ValueError('Duplicate archive entries')
         package = ET.fromstring(archive.read('EPUB/package.opf'))
         manifest = {e.get('id'): e.get('href') for e in package.find(OPF + 'manifest')}
@@ -69,7 +94,7 @@ def read_pages(path):
                     pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {}, 'paragraphs': {}}
                 if element.tag == HTML + 'img' and current is not None:
                     asset = str(chapter.parent / element.attrib['src'])
-                    if asset not in archive.namelist():
+                    if asset not in names:
                         raise ValueError('Missing image asset: ' + asset)
                     pages[current]['images'].append(asset)
                 # Generic converter captions must not satisfy source-text expectations.
@@ -191,10 +216,12 @@ def assess(case, contract, result, report, pages, markers):
             'scope': 'Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification.'}
 
 
-def check_evaluation(case, contract, directory):
+def check_evaluation(case, contract, directory, *, max_entries=DEFAULT_MAX_ENTRIES,
+                     max_uncompressed_bytes=DEFAULT_MAX_UNCOMPRESSED_BYTES):
     result = json.loads((directory / 'result.json').read_text())
     report = json.loads((directory / 'conversion-report.json').read_text())
-    pages, markers = read_pages(directory / (case['id'] + '.epub'))
+    pages, markers = read_pages(directory / (case['id'] + '.epub'),
+                                max_entries=max_entries, max_uncompressed_bytes=max_uncompressed_bytes)
     return assess(case, contract, result, report, pages, markers)
 
 
@@ -202,6 +229,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--case', required=True)
     parser.add_argument('--evaluation', type=Path, required=True)
+    parser.add_argument('--max-entries', type=cli_inspection_limit, default=DEFAULT_MAX_ENTRIES,
+                        help=f'maximum ZIP entries (default: {DEFAULT_MAX_ENTRIES})')
+    parser.add_argument('--max-uncompressed-bytes', type=cli_inspection_limit,
+                        default=DEFAULT_MAX_UNCOMPRESSED_BYTES,
+                        help=f'maximum total expanded ZIP bytes (default: {DEFAULT_MAX_UNCOMPRESSED_BYTES})')
     args = parser.parse_args()
     cases = json.loads((ROOT / 'corpus/manifest.json').read_text())['documents']
     contracts = json.loads((ROOT / 'corpus/regressions.json').read_text())['cases']
@@ -210,7 +242,9 @@ def main():
     if case is None or contract is None:
         parser.error('case has no reviewed content contract')
     try:
-        assessment = check_evaluation(case, contract, args.evaluation)
+        assessment = check_evaluation(case, contract, args.evaluation,
+                                      max_entries=args.max_entries,
+                                      max_uncompressed_bytes=args.max_uncompressed_bytes)
     except (OSError, ValueError, KeyError, TypeError, AttributeError, ET.ParseError, zipfile.BadZipFile) as error:
         assessment = {'case': args.case, 'passed': False, 'errors': [str(error)]}
     print(json.dumps(assessment, indent=2))

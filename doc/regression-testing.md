@@ -26,6 +26,28 @@ Fetch originals explicitly with `tools/fetch_corpus.py --case <id>`. Downloads a
 checksum-verified. Publisher-blocked downloads require an owner-supplied matching original;
 see [corpus instructions](corpus.md). Large originals and output EPUBs remain gitignored.
 
+### Inspecting large outputs
+
+The content inspector defaults to at most **10,000 ZIP entries and 536,870,912 total
+uncompressed bytes (512 MiB)**. For an existing evaluation with a reviewed content contract,
+explicitly set `--max-entries 20000 --max-uncompressed-bytes 4294967296` to admit up to
+20,000 entries and 4 GiB. Both flags are optional, independent, inclusive ceilings; values
+must be positive integers no greater than Python's `sys.maxsize`. There is no unlimited value.
+Invalid CLI values exit with status 2; an archive exceeding either ceiling fails inspection.
+
+Python callers can pass the same keyword-only `max_entries` and `max_uncompressed_bytes`
+arguments to `read_pages(path, ...)` or `check_evaluation(case, contract, directory, ...)` in
+`tools/check_corpus_content.py`. Existing callers keep the defaults. Limits are checked before
+reading package/chapter contents, and all duplicate-entry, page-boundary, image-presence and
+content-contract checks still apply. ZIP metadata is read when the archive opens; chapters
+are parsed individually and page content accumulates in memory. These are admission ceilings,
+not process-memory budgets or general EPUB security/conformance validation.
+
+The [large-inspection evidence](../measurements/large-epub-inspection/record.md) exercises
+NOAA-scale synthetic data and both retained full NOAA EPUBs with explicit limits. NOAA still
+has no passing default-budget content contract: larger inspection ceilings do not change
+conversion policies, routine corpus exclusions, or fidelity qualification.
+
 ## Current content coverage
 
 [corpus/regressions.json](../corpus/regressions.json) has 186 targeted checks on 48 reviewed pages

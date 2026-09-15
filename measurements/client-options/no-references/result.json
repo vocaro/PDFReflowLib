@@ -1,0 +1,123 @@
+{
+  "case": {
+    "id": "gpo-warren-1964",
+    "title": "Report of the President\u2019s Commission on the Assassination of President John F. Kennedy",
+    "author": "President\u2019s Commission on the Assassination of President Kennedy",
+    "publicationYear": 1964,
+    "url": "https://www.govinfo.gov/content/pkg/GPO-WARRENCOMMISSIONREPORT/pdf/GPO-WARRENCOMMISSIONREPORT.pdf",
+    "publisherPageURL": "https://www.govinfo.gov/features/warren-commission-report-and-hearings",
+    "filename": "GPO-WARRENCOMMISSIONREPORT.pdf",
+    "sha256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+    "bytes": 81216909,
+    "pages": 920,
+    "role": "development",
+    "identity": {
+      "suppliedBy": "owner"
+    },
+    "provenance": "Owner-supplied PDF, copied without modification and verified against its byte count and SHA-256. GovInfo identifies this report and links its official PDF from the publisher feature page. PDF metadata credits Internet Archive digitization.",
+    "rightsBasis": "U.S. Government commission report published by GPO in 1964, retained as an external development corpus source. The PDF is not bundled or relicensed under MIT.",
+    "coverage": [
+      "scanned pages with existing OCR text",
+      "JPEG 2000 image layers",
+      "untagged PDF",
+      "noisy OCR and punctuation",
+      "hard-wrapped and hyphenated prose",
+      "contents with page-number leaders",
+      "footnote markers and two-column notes",
+      "multi-column index",
+      "blank and sparsely lettered pages",
+      "photographs and document facsimiles",
+      "920-page resource and progress stress"
+    ],
+    "reviewPages": [
+      1,
+      7,
+      21,
+      30,
+      50,
+      100,
+      890,
+      910,
+      920
+    ],
+    "reviewStatus": "Full default conversion fails the image-output ceiling; nine-page excerpt spot checks expose text-layer, reflow and column-order defects. Full-book fidelity is unqualified.",
+    "knownFidelityIssues": [
+      {
+        "page": 50,
+        "issue": "Existing OCR errors survive despite an unverifiedTextLayer review warning; invisible Courier text becomes preformatted prose with hard wraps and spurious headings.",
+        "trackingURLs": [
+          "https://github.com/vocaro/PDFReflowLib/issues/6",
+          "https://github.com/vocaro/PDFReflowLib/issues/7"
+        ]
+      },
+      {
+        "page": 890,
+        "issue": "Excerpt notes interleave columns: 415, 477, 416, continuation of 477.",
+        "trackingURLs": [
+          "https://github.com/vocaro/PDFReflowLib/issues/2",
+          "https://github.com/vocaro/PDFReflowLib/issues/6"
+        ]
+      },
+      {
+        "page": 910,
+        "issue": "Excerpt index interleaves Federal Bureau of Investigation into De Mohrenschildt and promotes entries to headings.",
+        "trackingURLs": [
+          "https://github.com/vocaro/PDFReflowLib/issues/2",
+          "https://github.com/vocaro/PDFReflowLib/issues/6"
+        ]
+      },
+      {
+        "page": 920,
+        "issue": "Object-replacement placeholders are emitted as paragraphs and counted as reflowed text on a textless scan; cover page 1 behaves similarly.",
+        "trackingURLs": [
+          "https://github.com/vocaro/PDFReflowLib/issues/8"
+        ],
+        "status": "resolved",
+        "resolution": "Source pages 1 and 920 retain image-only fallback; the pinned nine-page excerpt has seven reflowed pages. See measurements/quality-and-raster-fixes/record.md."
+      }
+    ],
+    "baselineStatus": "Fails maximumOutputBytes (image output) after the last completed reconstruction page 390/920; no EPUB is published. See measurements/gpo-warren-1964/record.md.",
+    "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/5",
+    "rightsClearance": {
+      "status": "owner-confirmed",
+      "scope": "Commercial use and redistribution of the development corpus; retain applicable license attribution."
+    },
+    "downloadURL": "https://www.govinfo.gov/content/pkg/GPO-WARRENCOMMISSIONREPORT/pdf/GPO-WARRENCOMMISSIONREPORT.pdf",
+    "downloadVerification": "A fresh download through tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
+  },
+  "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "options": {
+    "referenceImages": "never",
+    "fullPageImageEncoding": {
+      "jpegQuality": 0.9
+    },
+    "regionImageEncoding": "png",
+    "maximumOutputBytes": 536870912,
+    "maximumEPUBBytes": 67108864
+  },
+  "qualifiedForFidelity": false,
+  "conversionExitCode": 0,
+  "sampledPeakPhysicalFootprintBytes": 327058872,
+  "conversionSeconds": 13.73929466700065,
+  "converterPeakRSSBytes": 966115328,
+  "converterCPUSeconds": 13.136398,
+  "measurementScope": "One process run; RSS excludes separate Apple services. Timing excludes validation. Not a latency distribution or physical mobile-device measurement.",
+  "progressCheck": {
+    "passed": true,
+    "events": 1962,
+    "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+  },
+  "outputBytes": 4843061,
+  "structuralCheck": "passed",
+  "outputTextCharacters": 2424675,
+  "epubcheckExitCode": 0,
+  "memoryGate": {
+    "status": "not configured"
+  },
+  "runPassed": true,
+  "rawResultSHA256": "5f3af5963de58faa5762b0f67c8c9bdcdd07d5906b2203fddd71c31fb6747eb2",
+  "launcherSHA256": "1e18919b2349ebe4518efe669863f696404fd90091b426b1e721e963ded1d488",
+  "converterSHA256": "b3477926bca89d8bb30ac03f339a36ad12f516d340dbec5505055c71d44e5950",
+  "receiptNote": "Effective CLI options are supplied by the exec launcher; the preserved raw evaluator receipt assumes library defaults. This derived receipt records the effective options and underlying implementation separately."
+}

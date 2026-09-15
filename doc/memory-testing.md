@@ -80,7 +80,11 @@ unresolved; a submitted report is not an Apple-confirmed diagnosis.
 `ConversionOptions.maximumOutputBytes` defaults to 512 MiB. It bounds image bytes during
 reconstruction and total EPUB entry bytes before ZIP compression during packaging. It is
 separate from peak RAM and the corpus RSS gates. This initial configurable engineering budget
-is not an EPUB, Apple SDK or measured hardware limit. Clients may set another positive budget;
+is not an EPUB, Apple SDK or measured hardware limit. Clients may set another positive budget or `Int64.max` to effectively disable it;
 raising it does not qualify memory, readability or reader performance. The
 [Warren encoding experiment](../measurements/warren-image-encoding/record.md) uses a 2 GiB
 override to measure a complete book while leaving the production default unchanged.
+
+`maximumEPUBBytes` independently caps the finished archive, including ZIP overhead, before
+publication. It defaults to nil and does not bound intermediate disk use or RAM. Reference
+inclusion and page/region encoding are also client options; see [the policy guide](conversion-options.md).

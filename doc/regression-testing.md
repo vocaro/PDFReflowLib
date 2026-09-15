@@ -125,7 +125,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-65 Swift tests with no known-issue wrappers, and 51 Python tests.
+72 Swift tests with no known-issue wrappers, and 53 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -135,3 +135,16 @@ Warren pages 50/910 supply pinned source geometry; ordinary prose/index entries 
 code/headings, while source points 10/11 retain list formatting. The nine-page real Warren excerpt
 is evaluated separately because the full 920-page conversion remains outside the successful
 complete-conversion gate. A passing excerpt does not qualify the complete book.
+
+## Conversion policy coverage
+
+`ConversionPolicyTests.swift` exercises reference policies on inherited text, real Vision OCR,
+prose, graphical crops and required page fallbacks. It verifies independent page/region JPEG
+and PNG bytes with matching EPUB media types, clean/noisy smallest-encoding choices, unchanged
+raster dimensions, invalid qualities, and size-failure cleanup without false completion.
+
+`check-conversion-policies.py` runs four actual CLI policy combinations through independent
+EPUB structure checks, optional EPUBCheck and the internal reader. Ten invalid/over-budget
+requests must fail without output or completion. It runs in `check-all.sh` alongside the six
+default fixture conversions. Reader tests check JPEG MIME admission and both ZIP/expanded
+byte limits while preserving existing active-content and traversal rejection controls.

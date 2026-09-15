@@ -43,6 +43,36 @@ class EPUBReaderTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     view_epub.validate_resources(root)
 
+    def test_jpeg_resources_require_matching_inert_media_types(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "mimetype").write_text("application/epub+zip")
+            for suffix in ["jpg", "jpeg"]:
+                path = root / ("image." + suffix)
+                path.write_bytes(b"\xff\xd8\xff\xd9")
+                package = root / "package.opf"
+                package.write_text(f'<package><item href="{path.name}" media-type="image/jpeg"/></package>')
+                self.assertIn(path.name, view_epub.validate_resources(root))
+                for media in ["image/png", "image/svg+xml", "application/javascript"]:
+                    package.write_text(f'<package><item href="{path.name}" media-type="{media}"/></package>')
+                    with self.assertRaises(ValueError): view_epub.validate_resources(root)
+                path.unlink()
+
+    def test_configured_reader_limit_checks_both_zip_and_expanded_size(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "book.epub"
+            chapter = '<html xmlns:epub="http://www.idpf.org/2007/ops"><head/><body><span id="page-1" epub:type="pagebreak"/>' + "x" * 10000 + '</body></html>'
+            with zipfile.ZipFile(source, "w", compression=zipfile.ZIP_DEFLATED) as book:
+                book.writestr("mimetype", "application/epub+zip")
+                book.writestr("EPUB/chapter-1.xhtml", chapter)
+            self.assertLess(source.stat().st_size, 1000)
+            for limit in [0, 1, 1000]:
+                with self.assertRaises(ValueError):
+                    view_epub.prepare(source, root / str(limit), maximum_bytes=limit)
+            manifest = view_epub.prepare(source, root / "accepted", maximum_bytes=20000)
+            self.assertIn("EPUB/chapter-1.xhtml", manifest["resources"])
+
     def test_preparation_keeps_original_xhtml_and_page_navigation(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

@@ -93,7 +93,10 @@ python3 tools/evaluate-real-document.py --case gpo-warren-1964 \
 The recorded default-budget baseline exits unsuccessfully after reconstruction page 390
 when page-image output exceeds 512 MiB. The measurement runner retains that failure and
 memory/progress evidence. A [full-book encoding experiment](../measurements/warren-image-encoding/record.md)
-completes with an explicit 2 GiB experimental override; the default-budget gate remains unresolved. There is no case memory ceiling yet;
+completes with an explicit 2 GiB experimental override; the default-budget gate remains unresolved.
+The [production client-policy runs](../measurements/client-options/record.md) also complete all
+920 pages, with JPEG references or with supplementary references omitted, under explicit final
+EPUB caps. Both validate; source-layer fidelity and physical-device memory remain unqualified. There is no case memory ceiling yet;
 do not treat a failed run as successful resource qualification or raise limits just to pass.
 
 A bounded nine-page excerpt permits visual diagnosis while full conversion is blocked:

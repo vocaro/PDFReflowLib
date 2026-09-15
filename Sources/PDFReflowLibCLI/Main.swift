@@ -5,16 +5,63 @@ import PDFReflowLib
 struct PDFReflowLibCommand {
     static func main() async {
         let args = Array(CommandLine.arguments.dropFirst())
-        guard args.count >= 2, args.count <= 3 else {
-            FileHandle.standardError.write(Data("Usage: pdf-reflow input.pdf output.epub [--no-ocr]\n".utf8))
-            exit(args == ["--help"] ? 0 : 2)
+        let usage = """
+        Usage: pdf-reflow input.pdf output.epub [options]
+          --no-ocr
+          --reference-images automatic|always|never
+          --full-page-image-encoding png|jpeg:QUALITY|smallest:QUALITY
+          --region-image-encoding png|jpeg:QUALITY|smallest:QUALITY
+          --maximum-output-bytes BYTES|unlimited  (uncompressed entry budget)
+          --maximum-epub-bytes BYTES|unlimited    (final ZIP file cap)
+        JPEG QUALITY must be in 0...1. Defaults: automatic references, PNG, 512 MiB entry
+        budget, no separate final ZIP cap. Required image-only fallback pages are retained.
+        """
+        if args == ["--help"] {
+            print(usage); return
         }
-        guard args.count == 2 || args[2] == "--no-ocr" else {
-            FileHandle.standardError.write(Data("Unknown option: \(args[2])\n".utf8)); exit(2)
+        guard args.count >= 2 else {
+            FileHandle.standardError.write(Data((usage + "\n").utf8)); exit(2)
         }
         var options = ConversionOptions()
-        if args.count == 3 { options.ocr = .never }
         do {
+            func encoding(_ value: String) throws -> ConversionOptions.ImageEncoding {
+                if value == "png" { return .png }
+                let parts = value.split(separator: ":", omittingEmptySubsequences: false)
+                if parts.count == 2, let quality = Double(parts[1]), quality.isFinite,
+                   (0...1).contains(quality) {
+                    if parts[0] == "jpeg" { return .jpeg(quality: quality) }
+                    if parts[0] == "smallest" { return .smallest(jpegQuality: quality) }
+                }
+                throw ConversionError.invalidOptions("expected png, jpeg:QUALITY or smallest:QUALITY")
+            }
+            func byteLimit(_ value: String) throws -> Int64? {
+                if value == "unlimited" { return nil }
+                guard let limit = Int64(value), limit > 0 else {
+                    throw ConversionError.invalidOptions("byte limit must be a positive integer or unlimited")
+                }
+                return limit
+            }
+            var index = 2
+            while index < args.count {
+                let flag = args[index]; index += 1
+                if flag == "--no-ocr" { options.ocr = .never; continue }
+                guard index < args.count else { throw ConversionError.invalidOptions("missing value for \(flag)") }
+                let value = args[index]; index += 1
+                switch flag {
+                case "--reference-images":
+                    switch value {
+                    case "automatic": options.referenceImages = .automatic
+                    case "always": options.referenceImages = .always
+                    case "never": options.referenceImages = .never
+                    default: throw ConversionError.invalidOptions("unknown reference-image policy: \(value)")
+                    }
+                case "--full-page-image-encoding": options.fullPageImageEncoding = try encoding(value)
+                case "--region-image-encoding": options.regionImageEncoding = try encoding(value)
+                case "--maximum-output-bytes": options.maximumOutputBytes = try byteLimit(value) ?? .max
+                case "--maximum-epub-bytes": options.maximumEPUBBytes = try byteLimit(value)
+                default: throw ConversionError.invalidOptions("unknown option: \(flag)")
+                }
+            }
             let report = try await PDFConverter().convert(from: URL(fileURLWithPath: args[0]),
                 to: URL(fileURLWithPath: args[1]), options: options) { event in
                     let line = "\(Int(event.fractionCompleted * 100))% \(event.stage.rawValue)"

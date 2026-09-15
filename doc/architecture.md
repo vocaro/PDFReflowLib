@@ -80,7 +80,7 @@ regions. Arbitrary mathematical structures remain outside this bounded detector.
 with empty selections discarded before layout, vocabulary, OCR selection and coverage counting.
 
 Existing text over a graphic covering more than 75% of the page gets `unverifiedTextLayer` and
-an accompanying source-page image. This conservative review signal does not establish that
+an accompanying source-page image under the default reference policy. This conservative review signal does not establish that
 text is OCR, detect every corrupted layer, or assess individual table cells. Fresh OCR keeps
 its separate `ocrUsed` notice; image-only fallbacks keep `pageImageFallback`.
 
@@ -92,7 +92,13 @@ representation. Mixed visible/invisible text, text clipping and unsupported stre
 this path. Source images and unverified-layer warnings remain. This does not recover headings
 from the scan or correct inherited transcription, and it is not a PDFKit leak fix.
 
-`PageRasterizer` renders source-composited regions to bounded PNGs. Whole-page crop/rotation is
+`PageRasterizer` renders source-composited regions to bounded rasters. Client policy independently
+selects PNG, JPEG quality, or the smaller encoding for full-page images and cropped regions.
+The asset registry records the actual format and file URL; the writer uses matching extensions
+and MIME types. Encoding selection retains at most one raster and two candidate files at a time.
+Supplementary reference policy is independent of mandatory fallback pages and region preservation.
+Omitted recommended references have explicit warnings that refer to the source PDF.
+See [conversion options](conversion-options.md). Whole-page crop/rotation is
 computed in page units, with explicit scaling to raster pixels. Annotation drawing compensates
 for PDFKit's own crop/rotation transform so annotations and source content share coordinates.
 
@@ -115,6 +121,8 @@ owns chapter splitting, heading/page navigation, OPF metadata, CSS, resource nam
 ZIPFoundation packaging. It accepts a `ReflowDocument` and an output-size ceiling, with no PDF
 or OCR dependency. EPUB progress is combined with pipeline progress by `PDFConverter`; only
 publication emits completion. Each stage checks cancellation at its available boundaries.
+The entry-byte budget remains independent of an optional final ZIP-file cap. `PDFConverter`
+checks final archive size before publication and uses the same cleanup path on failure.
 
 The model is internal, `Sendable` and `Equatable`. It has no public persistence or compatibility
 promise. Another writer can consume it without changing extraction/reconstruction; a public

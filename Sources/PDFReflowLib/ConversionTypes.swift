@@ -9,6 +9,35 @@ public struct ConversionOptions: Sendable {
         case always
     }
 
+    public enum ReferenceImagePolicy: Sendable {
+        /// Include references for OCR, unverified text layers and annotations (the default).
+        case automatic
+        /// Include a reference for every reconstructed page.
+        case always
+        /// Omit supplementary references; required fallback pages and figure crops remain.
+        case never
+    }
+
+    public enum ImageEncoding: Sendable, Equatable {
+        case png
+        /// ImageIO quality in 0...1. Lossy even at quality 1; no resizing is implied.
+        case jpeg(quality: Double)
+        /// Encode both and keep the smaller file (PNG on ties). Uses extra encoding work.
+        case smallest(jpegQuality: Double)
+
+        var isValid: Bool {
+            switch self {
+            case .png: true
+            case .jpeg(let quality), .smallest(let quality): quality.isFinite && (0...1).contains(quality)
+            }
+        }
+    }
+
+    public var referenceImages: ReferenceImagePolicy = .automatic
+    /// Encoding for supplementary references and required full-page fallbacks.
+    public var fullPageImageEncoding: ImageEncoding = .png
+    /// Encoding for figures, tables, equations and other preserved regions.
+    public var regionImageEncoding: ImageEncoding = .png
     public var title: String?
     public var author: String?
     /// BCP 47 language tag for EPUB metadata and OCR (when the recognizer supports it).
@@ -19,7 +48,12 @@ public struct ConversionOptions: Sendable {
     public var maximumInputBytes: Int64 = 256 * 1_024 * 1_024
     public var maximumPages = 2_000
     public var maximumCharacters = 20_000_000
+    /// Budget for image assets and total entry bytes before ZIP compression, not RAM or ZIP size.
+    /// Set Int64.max to effectively disable this budget while retaining other resource bounds.
     public var maximumOutputBytes: Int64 = 512 * 1_024 * 1_024
+    /// Optional cap on the final EPUB file, including ZIP overhead. Nil imposes no separate cap.
+    /// Enforced before publication; exceeding it cleans staging and emits no completion event.
+    public var maximumEPUBBytes: Int64?
     public var maximumRasterPixels = 12_000_000
     public var rasterDPI: Double = 180
 
@@ -43,6 +77,8 @@ public struct ConversionWarning: Sendable, Codable, Equatable {
         case ocrUsed, ocrFailed, uncertainHyphen, furnitureRemoved
         case imageRegion, pageImageFallback, unsupportedGraphics, emptyPage
         case complexLayout, annotationsNotConverted
+        /// A supplementary reference recommended by analysis was omitted by client policy.
+        case referenceImageOmitted
         /// Existing text over a page-sized graphic has not been checked against its image.
         /// This is a conservative review signal, not a measured OCR confidence score.
         case unverifiedTextLayer

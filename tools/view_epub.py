@@ -29,7 +29,7 @@ def verify_assets():
 
 
 def validate_resources(directory):
-    """Restrict the test viewer to PDFReflowLib's inert XHTML/CSS/PNG EPUB profile.
+    """Restrict the test viewer to PDFReflowLib's inert XHTML/CSS/PNG/JPEG EPUB profile.
 
     Reject active content before the engine sees it, rather than accepting arbitrary EPUBs
     or modifying publisher content. The chapter iframe additionally disables scripts.
@@ -41,7 +41,7 @@ def validate_resources(directory):
             continue
         name = path.relative_to(directory).as_posix()
         suffix = path.suffix.lower()
-        if suffix not in MARKUP | {".png", ".css"} and name != "mimetype":
+        if suffix not in MARKUP | {".png", ".jpg", ".jpeg", ".css"} and name != "mimetype":
             raise ValueError(f"Outside PDFReflowLib's test-reader profile: {name}")
         if suffix in MARKUP:
             text = path.read_text()
@@ -66,7 +66,7 @@ def validate_resources(directory):
                     raise ValueError(f"Unsupported resource-bearing attribute in {name}")
                 if tag == "item":
                     href = attrs.get("href", "")
-                    expected = {".xhtml": "application/xhtml+xml", ".png": "image/png", ".css": "text/css"}
+                    expected = {".xhtml": "application/xhtml+xml", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".css": "text/css"}
                     if Path(href).suffix not in expected or attrs.get("media-type") != expected[Path(href).suffix]:
                         raise ValueError(f"Unsupported EPUB manifest media type in {name}")
         elif suffix == ".css":
@@ -79,13 +79,15 @@ def validate_resources(directory):
     return resources
 
 
-def prepare(book, output):
+def prepare(book, output, maximum_bytes=512 * 1024 * 1024):
     verify_assets()
-    if book.stat().st_size > 512 * 1024 * 1024:
-        raise ValueError("EPUB exceeds the 512 MiB reader limit")
+    if maximum_bytes <= 0:
+        raise ValueError("Reader byte limit must be positive")
+    if book.stat().st_size > maximum_bytes:
+        raise ValueError("EPUB exceeds the configured reader byte limit")
     output.mkdir(exist_ok=False)
     shutil.copyfile(book, output / "book.epub")
-    pages = unpack_epub(output / "book.epub", output / "epub")
+    pages = unpack_epub(output / "book.epub", output / "epub", maximum_bytes=maximum_bytes)
     resources = validate_resources(output / "epub")
     for file in ASSETS.iterdir():
         if file.is_dir():
@@ -111,11 +113,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("epub", type=Path)
     parser.add_argument("--port", type=int, default=8768)
+    parser.add_argument("--maximum-bytes", type=int, default=512 * 1024 * 1024,
+                        help="maximum archive and uncompressed entry bytes (default: 512 MiB)")
     args = parser.parse_args()
     try:
         with tempfile.TemporaryDirectory(prefix="pdfreflow-reader-") as temporary:
             output = Path(temporary) / "reader"
-            manifest = prepare(args.epub.resolve(strict=True), output)
+            manifest = prepare(args.epub.resolve(strict=True), output, maximum_bytes=args.maximum_bytes)
             print(f"EPUB SHA-256: {manifest['identity']['sha256']}", flush=True)
             with ThreadingHTTPServer(("127.0.0.1", args.port), partial(ReaderHandler, directory=str(output))) as server:
                 print(f"Reader: http://127.0.0.1:{server.server_port}/ (Ctrl-C to stop)", flush=True)

@@ -25,7 +25,10 @@ physical-device memory/performance remain unqualified.
   beyond the conservative unverified-layer warning. Evidence: [Warren baseline](../measurements/gpo-warren-1964/record.md).
   The [full-book JPEG experiment](../measurements/warren-image-encoding/record.md) substantially
   reduces file size but both tested variants still exceed the default entry-byte budget.
-  PNG and reference-image defaults remain unchanged pending product decisions.
+  Clients now control reference inclusion, page/region encoding and independent entry/final-file
+  budgets. [Production policy measurements](../measurements/client-options/record.md) complete all
+  920 Warren pages with explicit policies; defaults remain unchanged. Qualify physical-device
+  memory and broader long-book configurations before treating that evidence as general support.
 - Investigate [9/11 report header/heading confusion](https://github.com/vocaro/PDFReflowLib/issues/10),
   keeping the external ALL-CAPS prototype counts distinct from library measurements. Qualify
   [endnote markers/links](https://github.com/vocaro/PDFReflowLib/issues/11) and timeline-label ownership; retain the successful native word-spacing

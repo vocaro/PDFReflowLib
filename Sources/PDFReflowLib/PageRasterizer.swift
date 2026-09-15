@@ -52,12 +52,40 @@ enum PageRasterizer {
         return image
     }
 
-    static func write(_ image: CGImage, to url: URL) throws {
+    /// Returns the actual format and file. At most one raster and two encoded files are live.
+    static func encode(_ image: CGImage, at baseURL: URL,
+                       encoding: ConversionOptions.ImageEncoding) throws -> (url: URL, format: ReflowDocument.Asset.Format) {
+        guard encoding.isValid else { throw ConversionError.invalidOptions("JPEG quality must be finite and in 0...1") }
+        let png = baseURL.appendingPathExtension("png"), jpeg = baseURL.appendingPathExtension("jpg")
+        switch encoding {
+        case .png:
+            try write(image, to: png)
+            return (png, .png)
+        case .jpeg(let quality):
+            try write(image, to: jpeg, jpegQuality: quality)
+            return (jpeg, .jpeg)
+        case .smallest(let quality):
+            try write(image, to: png)
+            try Task.checkCancellation()
+            try write(image, to: jpeg, jpegQuality: quality)
+            let pngBytes = try png.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
+            let jpegBytes = try jpeg.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
+            if jpegBytes < pngBytes {
+                try FileManager.default.removeItem(at: png)
+                return (jpeg, .jpeg)
+            }
+            try FileManager.default.removeItem(at: jpeg)
+            return (png, .png)
+        }
+    }
+
+    static func write(_ image: CGImage, to url: URL, jpegQuality: Double? = nil) throws {
         guard let destination = CGImageDestinationCreateWithURL(url as CFURL,
-            UTType.png.identifier as CFString, 1, nil) else {
+            (jpegQuality == nil ? UTType.png : UTType.jpeg).identifier as CFString, 1, nil) else {
             throw CocoaError(.fileWriteUnknown)
         }
-        CGImageDestinationAddImage(destination, image, nil)
+        let properties = jpegQuality.map { [kCGImageDestinationLossyCompressionQuality: $0] as CFDictionary }
+        CGImageDestinationAddImage(destination, image, properties)
         guard CGImageDestinationFinalize(destination) else { throw CocoaError(.fileWriteUnknown) }
     }
 }

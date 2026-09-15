@@ -33,6 +33,10 @@ public actor PDFConverter {
                 await progress(.init(stage: .writing, fractionCompleted: 0.82 + 0.17 * fraction, page: nil, totalPages: total))
             }
         try Task.checkCancellation()
+        if let limit = options.maximumEPUBBytes {
+            let bytes = try archive.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
+            guard Int64(bytes) <= limit else { throw ConversionError.resourceLimit("final EPUB file bytes") }
+        }
         // Same-parent rename publishes an entire EPUB, never a half-written destination.
         try fm.moveItem(at: archive, to: destination)
         let report = ConversionReport(outputURL: destination, pageCount: total, reflowedPageCount: result.reflowedPageCount,
@@ -50,8 +54,10 @@ public actor PDFConverter {
               (1...100_000).contains(options.maximumPages),
               (1...100_000_000).contains(options.maximumCharacters),
               (1...48_000_000).contains(options.maximumRasterPixels),
-              options.maximumInputBytes > 0, options.maximumOutputBytes > 0 else {
-            throw ConversionError.invalidOptions("language or resource bounds are invalid")
+              options.maximumInputBytes > 0, options.maximumOutputBytes > 0,
+              options.maximumEPUBBytes.map({ $0 > 0 }) ?? true,
+              options.fullPageImageEncoding.isValid, options.regionImageEncoding.isValid else {
+            throw ConversionError.invalidOptions("language, resource bounds or image encoding are invalid")
         }
         guard !FileManager.default.fileExists(atPath: destination.path) else { throw ConversionError.outputExists }
         guard source.resolvingSymlinksInPath() != destination.resolvingSymlinksInPath() else {

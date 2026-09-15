@@ -56,7 +56,23 @@ operation may take time to return. Cancellation or failure removes staging files
 output is never overwritten. Input and output must be local file URLs. The caller keeps any
 security-scoped access alive until conversion returns and owns the destination's lifetime.
 
-Options select automatic/disabled/always OCR, language, title, author, recurring header/footer
+Clients independently control reference inclusion, full-page and cropped-region encoding,
+JPEG quality, and output size. Existing defaults remain automatic references and PNG.
+
+```swift
+options.referenceImages = .never          // Supplementary references only
+options.fullPageImageEncoding = .jpeg(quality: 0.90)
+options.regionImageEncoding = .png        // Independently selectable
+options.maximumOutputBytes = .max         // Disable the entry-byte budget
+options.maximumEPUBBytes = 512 * 1_024 * 1_024 // Cap the final ZIP file
+```
+
+`.smallest(jpegQuality: 0.90)` encodes PNG and JPEG and keeps the smaller file; it does not
+assess visual fidelity. `.always` adds references on every reconstructed page; `.never` retains
+required image-only fallbacks and figure crops, with warnings when recommended references are
+omitted. [Conversion options](doc/conversion-options.md) explains each control and its tradeoffs.
+
+Other options select automatic/disabled/always OCR, language, title, author, recurring header/footer
 removal, raster resolution, and ceilings for input bytes, pages, characters, raster pixels and
 uncompressed output bytes. Default ceilings are 256 MiB input, 2,000 pages, 20 million characters,
 12 million pixels per raster, 180 DPI and 512 MiB output content. These are input/work bounds,
@@ -86,14 +102,14 @@ that fall back to images skip unused attributed-text decoding. Failures use
   Numeric dot-leader tables with supported geometry and OCR table regions also become images. Images preserve compositing and appearance rather than
   exposing raw image resources with missing masks or detached labels.
 - Vision recognizes pages with missing/damaged text by default. OCR text is explicitly reported
-  as transcription, with an accompanying original-page image preserving unrecognized figures.
-  Existing text over a page-sized graphic retains a source reference image and reports
+  as transcription, with an accompanying original-page image by default.
+  Existing text over a page-sized graphic retains a source reference image by default and reports
   `unverifiedTextLayer`: transcription, tables, numbers and reading order need human review.
   This conservative signal is not an OCR confidence score; it can also flag illustrated pages
   with valid text. Smaller graphics and undetected scans can still contain transcription errors.
 - Rotated pages, unsupported drawing operations and pages without recoverable text use an
   explicitly warned whole-page image fallback. Visible annotations get a source reference
-  image; link/form interactions are not reconstructed.
+  image by default; link/form interactions are not reconstructed.
 - EPUB output includes XHTML chapters, styles, metadata, heading navigation, a source page-list,
   an OPF 3.0 package, and the required first/uncompressed `mimetype` ZIP entry. Chapter files
   split near 60 KB at block boundaries. XML escapes source markup; source scripts, attachments,

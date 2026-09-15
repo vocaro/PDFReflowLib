@@ -4,7 +4,7 @@ import Testing
 import ZIPFoundation
 @testable import PDFReflowLib
 
-private func textLayerPDF(_ text: String, imageSize: Int = 300, invisible: Bool = true) -> Data {
+func textLayerPDF(_ text: String, imageSize: Int = 300, invisible: Bool = true) -> Data {
     testPDF(objects: [
         "<< /Type /Catalog /Pages 2 0 R >>",
         "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",

@@ -58,7 +58,9 @@ enum PDFReflowLibPipeline {
                 if !page.annotations.isEmpty {
                     content.preservePageReference = true
                     warnings.append(.init(code: .annotationsNotConverted, page: i + 1,
-                        message: "A page image preserves visible annotations. Link and form interactions are not reconstructed."))
+                        message: options.referenceImages == .never
+                            ? "Visible annotations and link/form interactions are not reconstructed; supplementary references are disabled."
+                            : "A page image preserves visible annotations. Link and form interactions are not reconstructed."))
                 }
                 return content
             }
@@ -79,7 +81,9 @@ enum PDFReflowLibPipeline {
                     content.graphics = recognized.tables
                     content.requiresPageImage = recognized.lines.isEmpty
                     warnings.append(.init(code: .ocrUsed, page: i + 1,
-                        message: "Text is OCR transcription. The original page image preserves unrecognized visual content."))
+                        message: "Text is OCR transcription. " + (options.referenceImages == .never && !recognized.lines.isEmpty
+                            ? "Supplementary references are disabled; compare unrecognized visual content with the source PDF."
+                            : "The original page image preserves unrecognized visual content.")))
                 } catch is CancellationError { throw CancellationError() }
                 catch {
                     try Task.checkCancellation()
@@ -96,7 +100,9 @@ enum PDFReflowLibPipeline {
                 warnings.append(.init(code: .unverifiedTextLayer, page: i + 1,
                     message: "Text overlapping a page-sized graphic has not been verified against the source. "
                         + "Transcription, tables, numbers and reading order may be inaccurate. "
-                        + "Check the accompanying source-page image before relying on the reflowed text."))
+                        + (options.referenceImages == .never
+                            ? "Check the source PDF before relying on the reflowed text; supplementary references are disabled."
+                            : "Check the accompanying source-page image before relying on the reflowed text.")))
             }
             if content.lines.isEmpty && !content.requiresPageImage {
                 content.requiresPageImage = true
@@ -117,22 +123,22 @@ enum PDFReflowLibPipeline {
             try Task.checkCancellation()
             try autoreleasepool {
                 let page = try document.page(at: i)
-                func saveImage(_ rect: CGRect, rotate: Bool = false) throws -> String {
+                func saveImage(_ rect: CGRect, fullPage: Bool = false, rotate: Bool = false) throws -> String {
                     try Task.checkCancellation()
                     let assetID = "image-\(assets.count + 1)"
-                    let url = workspace.appendingPathComponent("assets/" + assetID + ".png")
-                    try autoreleasepool {
+                    let encoded = try autoreleasepool {
                         let image = try PageRasterizer.image(page: page, rect: rect, options: options, applyRotation: rotate)
-                        try PageRasterizer.write(image, to: url)
+                        return try PageRasterizer.encode(image, at: workspace.appendingPathComponent("assets/" + assetID),
+                            encoding: fullPage ? options.fullPageImageEncoding : options.regionImageEncoding)
                     }
-                    imageBytes += Int64(try url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0)
+                    imageBytes += Int64(try encoded.url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0)
                     guard imageBytes <= options.maximumOutputBytes else { throw ConversionError.resourceLimit("image output bytes") }
-                    assets.append(.init(id: assetID, fileURL: url))
+                    assets.append(.init(id: assetID, fileURL: encoded.url, format: encoded.format))
                     return assetID
                 }
                 var pageBlocks: [ReflowBlock]
                 if content.requiresPageImage {
-                    let path = try saveImage(content.bounds, rotate: true)
+                    let path = try saveImage(content.bounds, fullPage: true, rotate: true)
                     pageBlocks = [LayoutReconstructor.imageBlock(assetID: path, page: i + 1)]
                     warnings.append(.init(code: .pageImageFallback, page: i + 1,
                         message: "This page is preserved as an image and does not reflow."))
@@ -150,11 +156,17 @@ enum PDFReflowLibPipeline {
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }
-                    if content.preservePageReference {
-                        pageBlocks.append(LayoutReconstructor.imageBlock(assetID: try saveImage(content.bounds),
+                    let includeReference = options.referenceImages == .always
+                        || (options.referenceImages == .automatic && content.preservePageReference)
+                    if includeReference {
+                        pageBlocks.append(LayoutReconstructor.imageBlock(assetID: try saveImage(content.bounds, fullPage: true),
                             page: i + 1, reference: true))
                         warnings.append(.init(code: .imageRegion, page: i + 1,
                             message: "A source-page reference image accompanies reflowed text to preserve all visual content."))
+                    } else if content.preservePageReference {
+                        warnings.append(.init(code: .referenceImageOmitted, page: i + 1,
+                            message: "Client policy omits a supplementary source-page image recommended for this page. "
+                                + "Compare the source PDF for visual content and transcription accuracy."))
                     }
                 }
                 LayoutReconstructor.appendPage(pageBlocks, page: content, previousPage: i > 0 ? pages[i - 1] : nil,

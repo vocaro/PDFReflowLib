@@ -11,9 +11,9 @@ struct ReflowDocument: Sendable, Equatable {
 
     struct Asset: Sendable, Equatable {
         enum Format: Sendable {
-            case png
-            var mediaType: String { switch self { case .png: "image/png" } }
-            var fileExtension: String { switch self { case .png: "png" } }
+            case png, jpeg
+            var mediaType: String { switch self { case .png: "image/png"; case .jpeg: "image/jpeg" } }
+            var fileExtension: String { switch self { case .png: "png"; case .jpeg: "jpg" } }
         }
         var id: String
         var fileURL: URL

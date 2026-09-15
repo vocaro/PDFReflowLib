@@ -1,0 +1,49 @@
+{
+  "jpeg-references": {
+    "epubBytes": 532335513,
+    "entryBytes": 537060659,
+    "pageCount": 920,
+    "imageCount": 931,
+    "pngCount": 11,
+    "jpegCount": 920,
+    "reflowedPageCount": 910,
+    "recognizedPageCount": 10,
+    "warningCounts": {
+      "annotationsNotConverted": 1,
+      "ocrUsed": 10,
+      "unverifiedTextLayer": 910,
+      "furnitureRemoved": 815,
+      "pageImageFallback": 10,
+      "imageRegion": 921,
+      "uncertainHyphen": 231
+    },
+    "canonicalTextSHA256": "f60642f50a9abb4df8edeaeb5ffb28a6439029ba014fa9e34969cdeebad09aac"
+  },
+  "no-references": {
+    "epubBytes": 4843061,
+    "entryBytes": 6685937,
+    "pageCount": 920,
+    "imageCount": 21,
+    "pngCount": 11,
+    "jpegCount": 10,
+    "reflowedPageCount": 910,
+    "recognizedPageCount": 10,
+    "warningCounts": {
+      "annotationsNotConverted": 1,
+      "ocrUsed": 10,
+      "unverifiedTextLayer": 910,
+      "furnitureRemoved": 815,
+      "pageImageFallback": 10,
+      "referenceImageOmitted": 910,
+      "uncertainHyphen": 237,
+      "imageRegion": 11
+    },
+    "canonicalTextSHA256": "f60642f50a9abb4df8edeaeb5ffb28a6439029ba014fa9e34969cdeebad09aac"
+  },
+  "checks": {
+    "all920SourceAnchors": true,
+    "canonicalTextEqual": true,
+    "canonicalization": "Paragraph/preformatted/heading text excluding figure captions, with whitespace, ASCII hyphens and soft hyphens removed to allow cross-page joins. Not exact body-byte equality.",
+    "remainingImagesByteIdentical": true
+  }
+}

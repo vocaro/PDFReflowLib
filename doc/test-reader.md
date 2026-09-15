@@ -51,11 +51,15 @@ not just the comparison tool's selected review pages. A marker can sit inside a 
 preceding context can remain visible when scrolling reaches the chapter's end. The source-page
 selector follows scrolling, while Contents is a jump menu rather than a current-heading label.
 
-Admission deliberately covers PDFReflowLib's current XHTML/CSS/PNG output profile, with source-page
+Admission deliberately covers PDFReflowLib's current XHTML/CSS/PNG/JPEG output profile, with source-page
 markers. This is not a general-purpose EPUB importer. Active markup, script files, resource-loading
 CSS, external links, unsupported resources, invalid archive paths and oversized archives are
 rejected before serving. Chapter frames also disable scripts, forms and remote resources through
 sandboxing and Content Security Policy. The parser reads only inventoried publication resources.
+
+The default admission budget is 512 MiB for both ZIP size and expanded entry bytes. Set
+`--maximum-bytes BYTES` to inspect a larger client-authorized publication; path containment,
+active-content rejection and manifest MIME checks still apply.
 
 ## Verification
 

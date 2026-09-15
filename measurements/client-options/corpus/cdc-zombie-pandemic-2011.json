@@ -1,0 +1,525 @@
+{
+  "case": {
+    "id": "cdc-zombie-pandemic-2011",
+    "title": "Preparedness 101: Zombie Pandemic",
+    "author": "Maggie Silver, James Archer, Bob Hobbs, Alissa Eckert and Mark Conner; CDC",
+    "publicationYear": 2011,
+    "url": "https://stacks.cdc.gov/view/cdc/6023",
+    "downloadURL": "https://stacks.cdc.gov/view/cdc/6023/cdc_6023_DS1.pdf",
+    "filename": "cdc_6023_DS1.pdf",
+    "bytes": 8448697,
+    "sha256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
+    "publisherSHA512": "5c75d416bb4da2aa6d61a5153f47b13d78208d50a55b63b8f6df1120ca1bd7e3e8a26140cf584f3640ede07d07dc8543b21a8c6c23e52855e9d8d5815624ae84",
+    "pages": 42,
+    "role": "development",
+    "identity": {
+      "suppliedBy": "owner"
+    },
+    "provenance": "Owner-supplied PDF. CDC Stacks record links this PDF and supplies the matching SHA-512.",
+    "rightsBasis": "CDC Stacks declares Public Domain. Attribution retained; document is not relicensed under MIT.",
+    "rightsClearance": {
+      "status": "publisher-declared",
+      "scope": "CDC Stacks Public Domain declaration; no new owner confirmation or shipped-catalog admission."
+    },
+    "coverage": [
+      "comic panels and speech balloons",
+      "dialogue embedded in artwork",
+      "sparse and noisy inherited OCR",
+      "image-only pages",
+      "speaker and panel reading order",
+      "illustrated checklist"
+    ],
+    "reviewPages": [
+      3,
+      5,
+      13,
+      16,
+      21,
+      37,
+      39
+    ],
+    "reviewStatus": "EPUBCheck, progress and 512 MiB Mac RSS gate pass. Source and comparison spot checks expose damaged inherited dialogue on page 5 and fresh-OCR panel ordering on page 13. Whole-comic fidelity is unqualified.",
+    "ownerReportedFindings": [
+      {
+        "finding": "Approximately 2000 extracted words across 42 pages; dialogue is part of the artwork.",
+        "status": "Owner-reported estimate; independent pypdf 6.10.0 extraction yields 3341 whitespace-delimited tokens, including damaged OCR, not a reliable dialogue word count."
+      }
+    ],
+    "memoryBudget": {
+      "maxPeakRSSMiB": 512,
+      "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+    },
+    "downloadVerification": "Publisher SHA-512 matches owner-supplied original; automatic fresh fetch returns HTTP 403. Seed the ignored cache manually; tools/fetch_corpus.py verifies exact bytes offline. See measurements/cdc-zombie-pandemic-2011/download-status.json.",
+    "knownFidelityIssues": [
+      {
+        "page": 5,
+        "issue": "Damaged existing text and omitted small balloon survive without a suspect-text warning; complete artwork is present as an image.",
+        "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/7"
+      },
+      {
+        "page": 13,
+        "issue": "Fresh OCR places lower-left panel dialogue before upper-right dialogue and promotes speech to headings.",
+        "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/18"
+      }
+    ]
+  },
+  "converterSHA256": "b3477926bca89d8bb30ac03f339a36ad12f516d340dbec5505055c71d44e5950",
+  "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "options": "library defaults",
+  "qualifiedForFidelity": false,
+  "conversionExitCode": 0,
+  "sampledPeakPhysicalFootprintBytes": 219137008,
+  "conversionSeconds": 10.637261625000974,
+  "converterPeakRSSBytes": 382435328,
+  "converterCPUSeconds": 6.983706,
+  "measurementScope": "One process run; RSS excludes separate Apple services. Timing excludes validation. Not a latency distribution or physical mobile-device measurement.",
+  "progressCheck": {
+    "passed": true,
+    "events": 144,
+    "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+  },
+  "conversionReport": {
+    "imageCount": 42,
+    "pageCount": 42,
+    "recognizedPageCount": 9,
+    "reflowedPageCount": 38,
+    "warnings": [
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 1
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 2
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 3
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 4
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 5
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 6
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 7
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 8
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 9
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 10
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 11
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 12
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 13
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 14
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 15
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 16
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 17
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 18
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 19
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 20
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 21
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 22
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 23
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 24
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 25
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 26
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 27
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 28
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 29
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 30
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 31
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 32
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 33
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 34
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 35
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 36
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 37
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 38
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 39
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 39
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 40
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 41
+      },
+      {
+        "code": "unverifiedTextLayer",
+        "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+        "page": 42
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 1
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 2
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 3
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 4
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 5
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 6
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 7
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 8
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 9
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 10
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 11
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 12
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 13
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 14
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 15
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 16
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 17
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 18
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 19
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 20
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 21
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 22
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 23
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 24
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 25
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 26
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 27
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 28
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 29
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 30
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 31
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 32
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 33
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 34
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 35
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 36
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 37
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 38
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 39
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 40
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 41
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 42
+      }
+    ]
+  },
+  "outputBytes": 149716902,
+  "structuralCheck": "passed",
+  "outputTextCharacters": 13115,
+  "epubcheckExitCode": 0,
+  "memoryGate": {
+    "limitBytes": 536870912,
+    "passed": true,
+    "metric": "converter process peak RSS from wait/rusage"
+  },
+  "runPassed": true
+}

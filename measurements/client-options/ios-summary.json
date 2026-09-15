@@ -1,0 +1,52 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "C4966BA9-56CD-4F21-9829-68567AAE8E6F",
+        "deviceName" : "iPhone 18 Pro",
+        "modelName" : "iPhone 18 Pro",
+        "osBuildNumber" : "24A434",
+        "osVersion" : "27.0",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 0,
+      "passedTests" : 77,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "PDFReflowLib-Package · Built with macOS 27.0",
+  "expectedFailures" : 0,
+  "failedTests" : 0,
+  "finishTime" : 1789455889.976,
+  "passedTests" : 72,
+  "result" : "Passed",
+  "runtimeWarnings" : [
+
+  ],
+  "skippedTests" : 0,
+  "startTime" : 1789455879.268,
+  "statistics" : [
+    {
+      "subtitle" : "10 test runs",
+      "title" : "5 tests ran with dynamic parameters"
+    }
+  ],
+  "testFailures" : [
+
+  ],
+  "title" : "Test - PDFReflowLib-Package",
+  "topInsights" : [
+    {
+      "category" : "Longest Test Runs",
+      "impact" : "28% of duration",
+      "text" : "2 longest test runs with outlier durations exceeding 0.75s (three standard deviations)"
+    }
+  ],
+  "totalTestCount" : 72
+}

@@ -1,0 +1,41 @@
+{
+  "scope": "Explicit fresh downloads into an initially empty temporary cache through Tools/fetch_corpus.py, independently checked against the supplied local originals. No conversion fidelity claim.",
+  "fetcherSHA256": "f5fd6b52244c1f5959cac2f2c5bd93abc8a759ab4b709ebf43076c4f0987db64",
+  "documents": [
+    {
+      "case": "faa-phak-8083-25c",
+      "downloadURL": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf",
+      "bytes": 77598564,
+      "sha256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+      "matchedOwnerSuppliedIdentity": true
+    },
+    {
+      "case": "wallace-algebra-2010",
+      "downloadURL": "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf",
+      "bytes": 2183036,
+      "sha256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+      "matchedOwnerSuppliedIdentity": true
+    },
+    {
+      "case": "gpo-warren-1964",
+      "downloadURL": "https://www.govinfo.gov/content/pkg/GPO-WARRENCOMMISSIONREPORT/pdf/GPO-WARRENCOMMISSIONREPORT.pdf",
+      "bytes": 81216909,
+      "sha256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+      "matchedOwnerSuppliedIdentity": true
+    },
+    {
+      "case": "gpo-911-2004",
+      "downloadURL": "https://www.govinfo.gov/content/pkg/GPO-911REPORT/pdf/GPO-911REPORT.pdf",
+      "bytes": 2475163,
+      "sha256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+      "matchedOwnerSuppliedIdentity": true
+    },
+    {
+      "case": "fed-explained-2021",
+      "downloadURL": "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf",
+      "bytes": 4032813,
+      "sha256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+      "matchedOwnerSuppliedIdentity": true
+    }
+  ]
+}

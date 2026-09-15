@@ -1,0 +1,200 @@
+{
+  "sha256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "bytes": 4032813,
+  "pages": 135,
+  "hasStructureTree": true,
+  "marked": true,
+  "rawStructureRoles": {
+    "/Document": 1,
+    "/Sect": 9,
+    "/P": 681,
+    "/H4": 59,
+    "/Part": 13,
+    "/Span": 23,
+    "/Figure": 41,
+    "/Caption": 50,
+    "/Link": 238,
+    "/L": 44,
+    "/LI": 146,
+    "/LBody": 146,
+    "/Lbl": 127,
+    "/HyphenSpan": 4,
+    "/H3": 29,
+    "/Note": 53,
+    "/Reference": 118,
+    "/H5": 55,
+    "/Quote": 39,
+    "/Table": 11,
+    "/TR": 94,
+    "/TD": 93,
+    "/TH": 147,
+    "/TOC": 15,
+    "/TOCI": 56,
+    "/H2": 7,
+    "/H6": 2,
+    "/H1": 1
+  },
+  "figureAndTableExamples": [
+    {
+      "role": "/Figure",
+      "alt": "\u6546\u6564\u6172\u206c\u6552\u6573\u7672\u2065\u7473\u6661\u2066\u6e61\u2064\u666f\u6966\u6963\u6c61\u2073\u6f72\u7475\u6e69\u6c65\u2079\u6f63\u766e\u6e65\u2065\u6f63\u666e\u7265\u6e65\u6563\u2073\u6e61\u2064\u7665\u6e65\u7374\u6620\u636f\u7375\u6465\u6f20\u206e\u6f63\u6d6d\u6e75\u7469\u2079\u6564\u6576\u6f6c\u6d70\u6e65\u2074\u7369\u7573\u7365\u202e\u6e49\u4d20\u7961\u3220\u3130\u2c39\u4320\u6168\u7269\u5020\u776f\u6c65\u206c\u6167\u6576\u6f20\u6570\u696e\u676e\u7220\u6d65\u7261\u736b\u6120\u2074\u2061\u7953\u7473\u6d65\u6220\u6569\u6e6e\u6169\u206c\u6f63\u6d6d\u6e75\u7469\u2079\u6564\u6576\u6f6c\u6d70\u6e65\u2074\u6572\u6573\u7261\u6863\u6320\u6e6f\u6566\u6572\u636e\u2c65\u8d20\u6552\u656e\u6977\u676e\u7420\u6568\u5020\u6f72\u696d\u6573\u6f20\u2066\u6874\u2065\u694d\u6464\u656c\u4320\u616c\u7373\u208e\u7328\u6570\u6365\u2068\u7661\u6961\u616c\u6c62\u2065\u7461\u6820\u7474\u7370\u2f3a\u772f\u7777\u662e\u6465\u7265\u6c61\u6572\u6573\u7672\u2e65\u6f67\u2f76\u656e\u7377\u7665\u6e65\u7374\u732f\u6570\u6365\u2f68\u6f70\u6577\u6c6c\u3032\u3931\u3530\u3930\u2e61\u7468\u296d\u0a0d\u6f42x"
+    },
+    {
+      "role": "/Figure",
+      "alt": "Map of the United States of America showing the boundaries of the 12 Federal Reserve Districts and the location of the Reserve Bank (and any Branch or Branches) within each District. 1: Boston, 2: New York, 3: Philadelphia, 4: Cleveland, 5: Richmond,"
+    },
+    {
+      "role": "/Figure",
+      "alt": "Bar chart showing \u201cWho would pay unexpected $400 expense with cash or its equivalent, 2013\u221219\u201d beginning at 50 percent in 2013 and increasing annually to end at 63 percent in 2019.  "
+    },
+    {
+      "role": "/Figure",
+      "alt": "Screenshot of Federal Reserve Consumer Help website (https://www.federalreserveconsumerhelp.gov/). Across top level from left to right: Federal Reserve Consumer Help. Woman reading a document. Need Help? Call 888-851-1920. Bottom level has three pane"
+    },
+    {
+      "role": "/Table",
+      "alt": ""
+    },
+    {
+      "role": "/Figure",
+      "alt": "Figure shows the percent of U.S. households that have the following types of financial accounts or balances: Transaction account=98.2. Transaction account includes checking, savings, and money market deposit accounts; money market mutual funds; call "
+    },
+    {
+      "role": "/Figure",
+      "alt": "This is a line graph that represents the number of noncash payments in billions. There are five lines running from left to right that are labeled \u2018Non-prepaid debit cards,\u2019 \u2018Credit cards,\u2019 \u2018ACH,\u2019 \u2018Checks,\u2019 and \u2018Prepaid debit cards.\u2019\r\n\r\nThe X-axis rep"
+    },
+    {
+      "role": "/Figure",
+      "alt": "There is a double line graph. The two lines represent \u2018Peak daylight overdraft\u2019 and \u2018Average daylight overdraft.\u2019 The values in the line graph represent billions.\r\n\r\nThe X-axis represents the years 1986\u20142019, in intervals of three years. The Y-axis r"
+    },
+    {
+      "role": "/Table",
+      "alt": ""
+    },
+    {
+      "role": "/Figure",
+      "alt": " This is a line graph with data points along the line that represent billions of dollars. The X-axis represents the years 1940 to 2019, in intervals of 10 years, except for the interval of 2010 to 2019. The data points are 1940=8.2. 1950=26.2. 1960=3"
+    },
+    {
+      "role": "/Figure",
+      "alt": "This figure is a graphic of a $100 bill. There four blocks of text below the graphic with arrows pointing to places on the bill. \r\n\r\nThe first block is pointing to the middle left of the $100 bill. \r\n\u2018Security thread.  Hold the note to light to see a"
+    },
+    {
+      "role": "/Figure",
+      "alt": "This is a line graph with data points along the line that represent billions of dollars. The X-axis represents the years 1989 to 2019, in intervals of three years. The data points are 1989=95,654. 1992=139,676. 1995=149,764. 1998=197,782. 2001=212,34"
+    },
+    {
+      "role": "/Figure",
+      "alt": "There is a line graph with data points along the line that represent billions of dollars. The X-axis represents the years 1987 to 2019, in intervals of four years. The data points are 1987=152,454. 1991=192,255. 1995=222,955. 1999=343,382. 2003=447,3"
+    },
+    {
+      "role": "/Figure",
+      "alt": "There is a line graph with data points along the line that represents billions of dollars. The X-axis represents the years 1920 to 2019, in intervals of 10 years, except from 2010 to 2019. The data points are 1989=3,840. 1992=6,531. 1995=7,817. 1998="
+    },
+    {
+      "role": "/Table",
+      "alt": ""
+    },
+    {
+      "role": "/Figure",
+      "alt": "This is a line graph with data points along the line that represents millions of items. The X-axis represents the years 1920 to 2019, in intervals of 10 years, except for the interval between 2010 and 2019. The data points are 1920=424. 1930=905. 194"
+    },
+    {
+      "role": "/Figure",
+      "alt": "Figure uses a picture of a check. There are three blocks of text below the check image.\r\n\r\nThe first block of text has an arrow point it to the routing number in the lower left corner of the check: \r\n\u2018Bank routing number The Federal Reserve and the b"
+    },
+    {
+      "role": "/Figure",
+      "alt": "The figure uses an inverted pyramid and a pyramid next to each other. \r\n\r\nThe inverted pyramid separated into five horizontal sections. The sections from top to bottom are \u2018Wire transfers (1,134.6),\u2019 \u2018ACH (69.9),\u2019 \u2018Checks (25.8),\u2019 \u2018Credit cards (4.0)"
+    },
+    {
+      "role": "/Figure",
+      "alt": "The figure uses four boxes, organized in a square.\r\nThe top left box is Currency. There is a picture of a \u2018Parent with cash\u2019 and a \u2018Babysitter.\u2019 The pictures are connected with arrows to each other to \u2018The Federal Reserve issues paper currency (Feder"
+    },
+    {
+      "role": "/Table",
+      "alt": ""
+    },
+    {
+      "role": "/Table",
+      "alt": ""
+    },
+    {
+      "role": "/Table",
+      "alt": ""
+    },
+    {
+      "role": "/Table",
+      "alt": ""
+    },
+    {
+      "role": "/Figure",
+      "alt": "Figures shows a world map with six continents labelled: North America, South America, Europe, Africa, Asia, and Australia."
+    },
+    {
+      "role": "/Figure",
+      "alt": "Figure shows the various types/groupings of banking organizations and their primary supervisors\u2014Federal Reserve (FR), National Credit Union Administration (NCUA); Federal Deposit Insurance Corporation (FDIC), and Office of the Comptroller of the Curr"
+    },
+    {
+      "role": "/Figure",
+      "alt": "Pie chart showing the number of institutions/entities, as of year-end 2020: Bank holding companies (3,413); State member banks (734); Domestic financial holding companies (556); Savings and loan holding companies (328); Foreign banking organizations "
+    },
+    {
+      "role": "/Figure",
+      "alt": "Figure shows two rows of graphics: the first row labelled \u201cRegulation\u201d and the second row labelled \u201cSupervision.\u201d In the Regulation row, the first graphic is CONGRESS (votes to approve legislation; President signs into law); an arrow leads right to F"
+    },
+    {
+      "role": "/Table",
+      "alt": ""
+    },
+    {
+      "role": "/Figure",
+      "alt": "Figure uses a wheel graphic to describe the framework of the Financial Stability Oversight Council. Clockwise from top is the list of council members: FSOC Chair (Secretary of the Treasury), state securities commissioner or officer\u2014non-voting member "
+    },
+    {
+      "role": "/Figure",
+      "alt": "Series: Household, Business, Total.\r\nHorizon: March 31, 1980 through March 31, 2020, quarterly (Q1 noted only).\r\nUnit measure: ratio.\r\nThe ratio of borrowing by Household to nominal U.S. GDP series curve starts at 0.480 and ends at 0.755; the ratio o"
+    },
+    {
+      "role": "/Figure",
+      "alt": "Series: Total (tier 1 + tier 2), Common equity tier 1 ratio, Leverage ratio* \r\nHorizon: March 31, 1997 through March 31, 2020, quarterly (Q1 noted only).\r\nUnit measure: percent.\r\nTotal (tier 1 + tier 2) series curve starts at 13 percent at 1997:Q1 an"
+    },
+    {
+      "role": "/Table",
+      "alt": ""
+    },
+    {
+      "role": "/Figure",
+      "alt": "Figure uses a flowchart of graphics to describe the U.S. and global financial systems. Top level is indirect finance, and its participants are financial intermediaries. Indirect finance graphic is positioned above a second and third level. Second lev"
+    },
+    {
+      "role": "/Table",
+      "alt": ""
+    },
+    {
+      "role": "/Table",
+      "alt": ""
+    },
+    {
+      "role": "/Figure",
+      "alt": "FOMC decides to make policy more accommodative (\u201cease\u201d policy). Arrow points from FOMC graphic to the left and down to OPEN MARKET DESK The Fed instructs the Desk to reduce the overnight reverse repurchase agreement (ON RRP) offering rate. Arrow poin"
+    },
+    {
+      "role": "/Figure",
+      "alt": "Series: Reserves curve, left axis (unit measure = billions of dollars); Reserves-to-nominal GDP curve, right axis (unit measure = percent).\r\nHorizon: 1/1/2007 to 9/30/2020.\r\nThe Reserves curve begins at 1/1/2007 at $92 billion and ends at 9/30/2020 a"
+    },
+    {
+      "role": "/Figure",
+      "alt": "Series: interest on excess reserves, 3-month Treasury bill, 3-month AA financial commercial paper, and target federal funds range.\r\nHorizon: 1/4/2016 to 1/20/2021.\r\nUnit Measure: basis points, daily.\r\nThe target federal funds range is plotted as a ra"
+    },
+    {
+      "role": "/Figure",
+      "alt": "Series: Treasury General Collateral Finance repo, interest on excess reserves, Eurodollar, and the federal funds rate. The target federal funds range is plotted as a range.\r\nHorizon: 1/4/2016 to 1/20/2021.\r\nUnit Measure: basis points, daily.\r\nThe tar"
+    },
+    {
+      "role": "/Figure",
+      "alt": "Series: Repos, Loans, LLCs, Swaps.\r\nHorizon: August 28, 2019 through July 20, 2020, weekly.\r\nUnit measure: billions of dollars.\r\nRepos bars start at about $75 billion, spike at about $4.20 trillion in March 2020, and end at about about $40 billion; L"
+    }
+  ],
+  "scope": "Counts traverse raw structure roles without applying RoleMap; tags are evidence to inspect, not proof of correct reading order."
+}

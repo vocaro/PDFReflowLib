@@ -14,7 +14,7 @@ echo "Validation results: $WORK"
 EPUBCHECK=()
 if command -v epubcheck >/dev/null; then EPUBCHECK=(--epubcheck "$(command -v epubcheck)"); fi
 python3 Tools/check-epubs.py --converter "$BINARY_DIR/pdf-reflow" --output "$WORK/epubs" "${EPUBCHECK[@]}"
-if [[ $FAST == 0 && -f "${PDFREFLOW_REAL_PDF:-Corpus/faa-h-8083-25c.pdf}" ]]; then
+if [[ $FAST == 0 && -f "${PDFREFLOW_REAL_PDF:-Corpus/cache/faa-h-8083-25c.pdf}" ]]; then
     scripts/check-pdf-reflow-memory.sh "${EPUBCHECK[@]}"
 else
     echo "Skipped real-document memory gate (--fast or source absent; set PDFREFLOW_REAL_PDF)."

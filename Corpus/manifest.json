@@ -52,7 +52,13 @@
           "issue": "Two-column glossary interleaves Wind direction indicators. and Zone of confusion. before Wind shear.",
           "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/2"
         }
-      ]
+      ],
+      "rightsClearance": {
+        "status": "owner-confirmed",
+        "scope": "Commercial use and redistribution of the development corpus; retain applicable license attribution."
+      },
+      "downloadURL": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf",
+      "downloadVerification": "A fresh download through Tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
     },
     {
       "id": "wallace-algebra-2010",
@@ -68,7 +74,7 @@
       "identity": {
         "suppliedBy": "owner"
       },
-      "provenance": "Owner-supplied PDF. The title and license pages identify Tyler Wallace and the author website. No automated source download or publisher-byte equivalence is claimed.",
+      "provenance": "Owner-supplied PDF. The title and license pages identify Tyler Wallace and the author website.",
       "rightsBasis": "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
       "license": "CC-BY-3.0",
       "licenseURL": "https://creativecommons.org/licenses/by/3.0/",
@@ -110,7 +116,14 @@
           "issue": "Inline superscript flattens into baseline text: the introductory ax-squared expression is serialized as ax2, without superscript markup. The displayed derivation is retained as an image, so passing EPUB validation and preserving displayed math do not establish inline-math fidelity.",
           "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/1"
         }
-      ]
+      ],
+      "rightsClearance": {
+        "status": "owner-confirmed",
+        "scope": "Commercial use and redistribution of the development corpus; retain applicable license attribution."
+      },
+      "downloadURL": "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf",
+      "downloadProvenance": "Direct MyOpenMath-hosted PDF URL supplied by the owner; downloaded bytes must match the owner-supplied source identity.",
+      "downloadVerification": "A fresh download through Tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
     },
     {
       "id": "gpo-warren-1964",
@@ -127,8 +140,8 @@
       "identity": {
         "suppliedBy": "owner"
       },
-      "provenance": "Owner-supplied PDF, copied without modification and verified against its byte count and SHA-256. GovInfo identifies this report and links its official PDF from the publisher feature page. No independent re-fetch or publisher-byte equivalence is claimed. PDF metadata credits Internet Archive digitization.",
-      "rightsBasis": "U.S. Government commission report published by GPO in 1964, retained as an external development corpus source. No blanket rights claim is made for third-party exhibits. The PDF is not bundled or relicensed under MIT.",
+      "provenance": "Owner-supplied PDF, copied without modification and verified against its byte count and SHA-256. GovInfo identifies this report and links its official PDF from the publisher feature page. PDF metadata credits Internet Archive digitization.",
+      "rightsBasis": "U.S. Government commission report published by GPO in 1964, retained as an external development corpus source. The PDF is not bundled or relicensed under MIT.",
       "coverage": [
         "scanned pages with existing OCR text",
         "JPEG 2000 image layers",
@@ -188,7 +201,13 @@
         }
       ],
       "baselineStatus": "Fails maximumOutputBytes (image output) after the last completed reconstruction page 390/920; no EPUB is published. See measurements/gpo-warren-1964/record.md.",
-      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/5"
+      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/5",
+      "rightsClearance": {
+        "status": "owner-confirmed",
+        "scope": "Commercial use and redistribution of the development corpus; retain applicable license attribution."
+      },
+      "downloadURL": "https://www.govinfo.gov/content/pkg/GPO-WARRENCOMMISSIONREPORT/pdf/GPO-WARRENCOMMISSIONREPORT.pdf",
+      "downloadVerification": "A fresh download through Tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
     },
     {
       "id": "gpo-911-2004",
@@ -205,8 +224,8 @@
       "identity": {
         "suppliedBy": "owner"
       },
-      "provenance": "Owner-supplied PDF; local copy verified against byte count and SHA-256. GovInfo identifies the official government edition and links the PDF. No independent publisher re-fetch or byte-equivalence claim is made.",
-      "rightsBasis": "Official U.S. Government commission report, retained as external development material. Source PDF is not bundled or relicensed under MIT; no blanket rights claim covers third-party illustrations.",
+      "provenance": "Owner-supplied PDF; local copy verified against byte count and SHA-256. GovInfo identifies the official government edition and links the PDF.",
+      "rightsBasis": "Official U.S. Government commission report, retained as external development material. Source PDF is not bundled or relicensed under MIT.",
       "coverage": [
         "untagged digital original",
         "alternating report/chapter headers",
@@ -279,7 +298,77 @@
       "memoryBudget": {
         "maxPeakRSSMiB": 256,
         "scope": "macOS 27 arm64 isolated release CLI, defaults; initial ceiling verified by the retained baseline, not a mobile-device budget"
-      }
+      },
+      "rightsClearance": {
+        "status": "owner-confirmed",
+        "scope": "Commercial use and redistribution of the development corpus; retain applicable license attribution."
+      },
+      "downloadURL": "https://www.govinfo.gov/content/pkg/GPO-911REPORT/pdf/GPO-911REPORT.pdf",
+      "downloadVerification": "A fresh download through Tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
+    },
+    {
+      "id": "fed-explained-2021",
+      "title": "The Fed Explained: What the Central Bank Does",
+      "author": "Board of Governors of the Federal Reserve System",
+      "edition": "Eleventh Edition, August 2021",
+      "publicationYear": 2021,
+      "url": "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf",
+      "publisherPageURL": "https://www.federalreserve.gov/publications/2022-annual-performance-report.htm",
+      "filename": "the-fed-explained.pdf",
+      "sha256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+      "bytes": 4032813,
+      "pages": 135,
+      "role": "development",
+      "identity": {
+        "suppliedBy": "owner"
+      },
+      "provenance": "Owner-supplied PDF, copied unchanged and checksum-verified. Page 4 identifies the eleventh edition, August 2021. The Federal Reserve Board annual performance report links this official download.",
+      "rightsBasis": "Federal Reserve Board educational publication, retained as external development material. PDF is not bundled or relicensed under MIT.",
+      "coverage": [
+        "tagged digital original",
+        "recurring tables",
+        "multi-page tables",
+        "organization charts",
+        "vector flow diagrams and arrows",
+        "text labels inside figures",
+        "tagged figures and alternate text",
+        "mixed body text and diagrams"
+      ],
+      "reviewPages": [
+        9,
+        17,
+        20,
+        45,
+        46,
+        51,
+        82,
+        83,
+        120,
+        121
+      ],
+      "reviewStatus": "Full default conversion passes EPUBCheck and the 768 MiB Mac memory gate. Browser/source spot checks on pages 45 and 46 expose fallback scaling and false headings; ten review pages prepared, full-book fidelity unqualified.",
+      "knownFidelityIssues": [
+        {
+          "page": 45,
+          "issue": "Whole-page raster fallback is displayed too small for normal reading.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/3"
+        },
+        {
+          "page": 46,
+          "issue": "Ordinary prose lines become separate h2 headings.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/12"
+        }
+      ],
+      "memoryBudget": {
+        "maxPeakRSSMiB": 768,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial regression ceiling, not a mobile-device budget"
+      },
+      "rightsClearance": {
+        "status": "owner-confirmed",
+        "scope": "Commercial use and redistribution of the development corpus; retain applicable license attribution."
+      },
+      "downloadURL": "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf",
+      "downloadVerification": "A fresh download through Tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json."
     }
   ]
 }

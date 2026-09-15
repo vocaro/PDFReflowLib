@@ -91,3 +91,11 @@ The real-document corpus starts with the FAA handbook, including known fidelity 
 Mac memory gate. Broader qualification needs source-derived reading order, text/image coverage
 and physical-device measurements. Tagged-PDF semantics, richer structure and stronger detection
 belong in reconstruction; new output syntax belongs in writers.
+
+
+Development corpus acquisition is separate from the Swift runtime. A standard-library Python
+fetcher reads pinned URLs, byte counts and SHA-256 identities from `Corpus/manifest.json` and
+atomically publishes verified PDFs into ignored `Corpus/cache/`. Cache hits are reverified;
+failed refreshes leave existing copies intact. Conversion and tests remain offline unless a
+developer explicitly runs the fetcher. Corpus licenses and owner clearance are separate from
+the library's MIT license.

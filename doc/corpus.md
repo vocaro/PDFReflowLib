@@ -1,8 +1,24 @@
 # Real-document development corpus
 
 `Corpus/manifest.json` pins every external PDF by byte count and SHA-256. PDFs and generated
-EPUBs remain local; routine tests download nothing. The original six synthetic fixtures remain
+EPUBs remain local; routine tests download nothing. The owner confirms commercial use and
+redistribution for all registered sources; retain the attribution and license recorded in the manifest. The original six synthetic fixtures remain
 in `Tests/PDFReflowLibTests/Fixtures` and run without any external documents.
+
+Fetch all registered originals explicitly with Python 3.11+:
+
+```sh
+python3 Tools/fetch_corpus.py --all
+# Or select one document:
+python3 Tools/fetch_corpus.py --case wallace-algebra-2010
+```
+
+Downloads live in gitignored `Corpus/cache/`. The fetcher checks byte count and SHA-256 on
+both downloads and cache hits. It publishes downloads atomically; a failed refresh preserves
+the existing copy. `--refresh` verifies the remote copy again, and `--cache-dir` selects another
+location. A changed publisher file fails verification instead of silently replacing a fixture.
+The manifest separates source/attribution URLs from direct `downloadURL` values. Cached files
+work offline. Tests and conversion never fetch sources automatically.
 
 | Case | Pages | Coverage | Initial Mac peak-RSS ceiling |
 | --- | ---: | --- | ---: |
@@ -10,6 +26,7 @@ in `Tests/PDFReflowLibTests/Fixtures` and run without any external documents.
 | `wallace-algebra-2010` | 489 | Fractions, radicals, powers, examples, exercises, answer keys | 256 MiB |
 | `gpo-warren-1964` | 920 | Scans, noisy existing OCR, notes, index, large image output | Unset: default conversion fails |
 | `gpo-911-2004` | 585 | Untagged digital text, alternating headers, tracked lettering, endnotes | 256 MiB |
+| `fed-explained-2021` | 135 | Tagged text, recurring tables, organization charts and flow diagrams | 768 MiB |
 
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
@@ -21,21 +38,20 @@ before conversion and records progress, timing, memory, output structure and opt
 2,183,036 bytes; its SHA-256 is
 `856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678`.
 Page 2 identifies [CC BY 3.0 Unported](https://creativecommons.org/licenses/by/3.0/) and the
-[author's website](http://wallace.ccfaculty.org/book/book.html). The source is owner-supplied;
-no successful current download from the author website or byte-equivalence claim is implied.
+[author's website](http://wallace.ccfaculty.org/book/book.html). The owner-supplied original is pinned alongside an owner-provided MyOpenMath download URL.
+That download is checked against the same identity.
 The local PDF is unmodified and is not covered by the library's MIT license. Retain the author,
 title, license and source attribution in shared derivatives and identify modifications.
 
-Place the supplied file at `Corpus/Beginning_and_Intermediate_Algebra.pdf`, or pass another
-local path containing the same bytes. From the repository root, with full Xcode selected and
-Python 3.11+ available:
+Fetch the source as above, or pass another local path containing the same bytes. From the
+repository root, with full Xcode selected and Python 3.11+ available:
 
 ```sh
 swift build -c release
 python3 Tools/evaluate-real-document.py --case wallace-algebra-2010 \
-  --pdf Corpus/Beginning_and_Intermediate_Algebra.pdf --converter .build/release/pdf-reflow \
+  --pdf Corpus/cache/Beginning_and_Intermediate_Algebra.pdf --converter .build/release/pdf-reflow \
   --output /tmp/wallace-baseline --epubcheck /opt/homebrew/bin/epubcheck
-scripts/compare-pdf-reflow.sh --pdf Corpus/Beginning_and_Intermediate_Algebra.pdf \
+scripts/compare-pdf-reflow.sh --pdf Corpus/cache/Beginning_and_Intermediate_Algebra.pdf \
   --pages 2,12,16,119,266,293,343,347,438,479,483 --output /tmp/wallace-review --serve
 ```
 
@@ -56,14 +72,14 @@ The owner-supplied 1964 report contains 920 scanned pages with a separate text l
 structure tags. Its identity is pinned at 81,216,909 bytes, SHA-256
 `341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19`.
 [GovInfo's publisher page](https://www.govinfo.gov/features/warren-commission-report-and-hearings)
-identifies the report and links its official PDF. The local bytes are owner-supplied, without
-an independent publisher re-fetch claim. The PDF is external development material, not bundled
-or relicensed under MIT; no blanket rights determination covers every third-party exhibit.
+identifies the report and links its official PDF. The pinned identity comes from the
+owner-supplied original. The PDF is external development material, not bundled or relicensed
+under MIT; the owner confirms commercial use and redistribution.
 
 ```sh
 swift build -c release --scratch-path .build/corpus-cli
 python3 Tools/evaluate-real-document.py --case gpo-warren-1964 \
-  --pdf Corpus/GPO-WARRENCOMMISSIONREPORT.pdf --converter .build/corpus-cli/release/pdf-reflow \
+  --pdf Corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/warren-baseline --epubcheck /opt/homebrew/bin/epubcheck
 ```
 
@@ -76,7 +92,7 @@ A bounded nine-page excerpt permits visual diagnosis while full conversion is bl
 
 ```sh
 python3 measurements/gpo-warren-1964/prepare-excerpt.py \
-  --pdf Corpus/GPO-WARRENCOMMISSIONREPORT.pdf --output /tmp/warren-excerpt.pdf
+  --pdf Corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf --output /tmp/warren-excerpt.pdf
 scripts/compare-pdf-reflow.sh --pdf /tmp/warren-excerpt.pdf \
   --pages all --output /tmp/warren-review --serve
 ```
@@ -106,16 +122,16 @@ examples are linked from the existing reading-order and memory investigations.
 The owner-supplied 2004 full report is a 585-page digital original with no structure tags.
 [GovInfo](https://www.govinfo.gov/features/911-commission-report) identifies the official
 edition and links the PDF. Local bytes are pinned at 2,475,163 bytes, SHA-256
-`657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b`;
-no independent publisher re-fetch is claimed. This is external development material, not a
-catalog admission, bundled PDF or MIT relicensing of third-party illustrations.
+`657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b`.
+This is external development material, with owner-confirmed commercial use and redistribution;
+the library MIT license does not relicense the document.
 
 ```sh
 swift build -c release --scratch-path .build/corpus-cli
 python3 Tools/evaluate-real-document.py --case gpo-911-2004 \
-  --pdf Corpus/GPO-911REPORT.pdf --converter .build/corpus-cli/release/pdf-reflow \
+  --pdf Corpus/cache/GPO-911REPORT.pdf --converter .build/corpus-cli/release/pdf-reflow \
   --output /tmp/911-baseline --epubcheck /opt/homebrew/bin/epubcheck
-scripts/compare-pdf-reflow.sh --pdf Corpus/GPO-911REPORT.pdf \
+scripts/compare-pdf-reflow.sh --pdf Corpus/cache/GPO-911REPORT.pdf \
   --pages 15,19,20,21,22,65,66,471,472,584 --output /tmp/911-review --serve
 ```
 
@@ -135,3 +151,26 @@ provenance, not promoted to independently reproduced library measurements.
 
 [Issue #11](https://github.com/vocaro/PDFReflowLib/issues/11) tracks note-marker semantics,
 number/text associations and future endnote linking; full note coverage remains unqualified.
+
+
+## The Fed Explained
+
+The 135-page eleventh edition (August 2021) is a tagged Federal Reserve Board publication.
+Its structure tree contains table, figure and heading roles, including figure alternate text.
+Current reconstruction uses spatial extraction rather than those semantic tags. Difficult
+regions remain raster images with warnings; diagrams are not rebuilt as editable vector graphs.
+
+```sh
+python3 Tools/fetch_corpus.py --case fed-explained-2021
+swift build -c release --scratch-path .build/corpus-cli
+python3 Tools/evaluate-real-document.py --case fed-explained-2021 \
+  --pdf Corpus/cache/the-fed-explained.pdf --converter .build/corpus-cli/release/pdf-reflow \
+  --output /tmp/fed-baseline --epubcheck /opt/homebrew/bin/epubcheck
+scripts/compare-pdf-reflow.sh --pdf Corpus/cache/the-fed-explained.pdf \
+  --pages 9,17,20,45,46,51,82,83,120,121 --output /tmp/fed-review --serve
+```
+
+[Review points](../Corpus/fed-explained-2021-review.json) cover tables, organization charts,
+flow arrows and adjacent prose. The [baseline](../measurements/fed-explained-2021/record.md)
+passes EPUB validation and the Mac memory gate. Spot checks expose undersized whole-page
+fallback and ordinary prose rendered as headings. Full-book fidelity remains unqualified.

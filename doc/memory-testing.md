@@ -17,9 +17,10 @@ it but is a different metric. Apple services such as OCR can use memory outside 
 From the package directory, with a full Xcode selected:
 
 ```sh
+python3 Tools/fetch_corpus.py --case faa-phak-8083-25c
 swift build -c release
 python3 Tools/evaluate-real-document.py --case faa-phak-8083-25c \
-    --pdf /path/to/faa-h-8083-25c.pdf --converter .build/release/pdf-reflow \
+    --pdf Corpus/cache/faa-h-8083-25c.pdf --converter .build/release/pdf-reflow \
     --output /tmp/phak-memory-run --epubcheck /opt/homebrew/bin/epubcheck
 ```
 
@@ -33,7 +34,8 @@ forced termination can leave a staging directory, unlike cooperative library can
 The memory ceiling is a regression gate, not a runtime allocation limiter. A successful package
 and memory result does not mean the book has passed fidelity review. The FAA case explicitly
 records known column-order and raster-sizing defects. Large PDF/EPUB files are not test resources
-or committed artifacts; supply the exact pinned PDF separately. There are no automatic downloads.
+or committed artifacts. The explicit corpus fetcher verifies sources into `Corpus/cache/`;
+tests never download them automatically.
 
 The repository's `scripts/check-pdf-reflow-memory.sh` builds and runs this gate.
 `check-all.sh` includes it outside `--fast` when the local handbook exists; source absence is

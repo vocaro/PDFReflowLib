@@ -2,7 +2,7 @@
 # Explicit real-document gate: source absence is an error; no downloads or silent passes.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd -P)"
-PDF="${PDFREFLOW_REAL_PDF:-$ROOT/Corpus/faa-h-8083-25c.pdf}"
+PDF="${PDFREFLOW_REAL_PDF:-$ROOT/Corpus/cache/faa-h-8083-25c.pdf}"
 if [[ ! -f "$PDF" ]]; then
     echo "Missing handbook PDF: $PDF (set PDFREFLOW_REAL_PDF to the pinned corpus source)" >&2
     exit 2

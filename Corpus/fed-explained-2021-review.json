@@ -1,0 +1,57 @@
+{
+  "case": "fed-explained-2021",
+  "pageNumbering": "Physical PDF pages, one-based",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 9,
+      "target": "Figure 1.1 organization overview",
+      "acceptance": "Keep labels associated with the diagram; preserve body bullet semantics."
+    },
+    {
+      "page": 17,
+      "target": "Figure 2.2 board terms",
+      "acceptance": "Retain chronology and terms."
+    },
+    {
+      "page": 20,
+      "target": "Figure 2.4 FOMC composition",
+      "acceptance": "Preserve membership grouping."
+    },
+    {
+      "page": 45,
+      "target": "Figure 3.3 policy implementation flow",
+      "acceptance": "Retain arrows and labels at readable size; separate adjacent prose where reliable."
+    },
+    {
+      "page": 46,
+      "target": "Table 3.1 and body/sidebar prose",
+      "acceptance": "Retain three columns and row associations; prose must not become headings."
+    },
+    {
+      "page": 51,
+      "target": "Figure 4.1 finance flow",
+      "acceptance": "Preserve nodes, paths and arrow directions."
+    },
+    {
+      "page": 82,
+      "target": "Figure 5.7 regulations table",
+      "acceptance": "Preserve header and cell associations."
+    },
+    {
+      "page": 83,
+      "target": "Figure 5.7 continuation",
+      "acceptance": "Preserve continuation and row order."
+    },
+    {
+      "page": 120,
+      "target": "Figure 7.2 laws and regulations",
+      "acceptance": "Retain headers and associations."
+    },
+    {
+      "page": 121,
+      "target": "Figure 7.2 continuation",
+      "acceptance": "Preserve continued rows without duplication."
+    }
+  ]
+}

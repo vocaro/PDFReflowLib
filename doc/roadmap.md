@@ -26,7 +26,10 @@ physical-device memory/performance remain unqualified.
   [endnote markers/links](https://github.com/vocaro/PDFReflowLib/issues/11) and timeline-label ownership; retain the successful native word-spacing
   examples as positive review targets. See the [baseline](../measurements/gpo-911-2004/record.md).
 - The development corpus includes the FAA handbook, Wallace algebra textbook, Warren
-  Commission scanned report and 9/11 digital report, with identities, review points and baselines. Expand it with borderless tables,
+  Commission scanned report, 9/11 digital report and The Fed Explained, with identities, review
+  points and baselines. Originals are fetched explicitly into a checksum-verified ignored cache.
+  Correct [Fed prose classified as headings](https://github.com/vocaro/PDFReflowLib/issues/12);
+  qualify tagged table/figure semantics and mixed diagram/prose pages; expand with borderless tables,
   footnotes, damaged encodings and non-Latin layouts. Measure coverage and reading order.
 - Evaluate OS 27's native progress composition APIs while retaining ordered client reporting.
   The minimum deployment version remains 27.

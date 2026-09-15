@@ -1,0 +1,2820 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "sourceName": "the-fed-explained.pdf",
+  "commands": [
+    {
+      "command": [
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/corpus-cli/out/Products/Release/pdf-reflow",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pdfreflow.epub"
+      ],
+      "seconds": 25.54079929100044,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "9",
+        "-l",
+        "9",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/9/simple.html"
+      ],
+      "seconds": 0.21244312500130036,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "9",
+        "-l",
+        "9",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/9/positioned.html"
+      ],
+      "seconds": 0.10743966699737939,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "9",
+        "-l",
+        "9",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/9/source"
+      ],
+      "seconds": 0.20985475000270526,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "17",
+        "-l",
+        "17",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/17/simple.html"
+      ],
+      "seconds": 0.10841716700088,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "17",
+        "-l",
+        "17",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/17/positioned.html"
+      ],
+      "seconds": 0.10719762499866192,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "17",
+        "-l",
+        "17",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/17/source"
+      ],
+      "seconds": 0.21019499999965774,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "20",
+        "-l",
+        "20",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/20/simple.html"
+      ],
+      "seconds": 0.107102500001929,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "20",
+        "-l",
+        "20",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/20/positioned.html"
+      ],
+      "seconds": 0.10738012500223704,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "20",
+        "-l",
+        "20",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/20/source"
+      ],
+      "seconds": 0.21242441699723713,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "45",
+        "-l",
+        "45",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/45/simple.html"
+      ],
+      "seconds": 0.1070825419992616,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "45",
+        "-l",
+        "45",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/45/positioned.html"
+      ],
+      "seconds": 0.10743216699847835,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "45",
+        "-l",
+        "45",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/45/source"
+      ],
+      "seconds": 0.20915154199974495,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "46",
+        "-l",
+        "46",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/46/simple.html"
+      ],
+      "seconds": 0.10700391700083856,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "46",
+        "-l",
+        "46",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/46/positioned.html"
+      ],
+      "seconds": 0.10621204099879833,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "46",
+        "-l",
+        "46",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/46/source"
+      ],
+      "seconds": 0.21215470799870673,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "51",
+        "-l",
+        "51",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/51/simple.html"
+      ],
+      "seconds": 0.10360845800096286,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "51",
+        "-l",
+        "51",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/51/positioned.html"
+      ],
+      "seconds": 0.10717600000134553,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "51",
+        "-l",
+        "51",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/51/source"
+      ],
+      "seconds": 0.21047762499802047,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "82",
+        "-l",
+        "82",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/82/simple.html"
+      ],
+      "seconds": 0.10712966599749052,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "82",
+        "-l",
+        "82",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/82/positioned.html"
+      ],
+      "seconds": 0.10716612500254996,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "82",
+        "-l",
+        "82",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/82/source"
+      ],
+      "seconds": 0.2122397919993091,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "83",
+        "-l",
+        "83",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/83/simple.html"
+      ],
+      "seconds": 0.1064519579995249,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "83",
+        "-l",
+        "83",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/83/positioned.html"
+      ],
+      "seconds": 0.1073378330002015,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "83",
+        "-l",
+        "83",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/83/source"
+      ],
+      "seconds": 0.21128925000084564,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "120",
+        "-l",
+        "120",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/120/simple.html"
+      ],
+      "seconds": 0.10676991700165672,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "120",
+        "-l",
+        "120",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/120/positioned.html"
+      ],
+      "seconds": 0.10417887500079814,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "120",
+        "-l",
+        "120",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/120/source"
+      ],
+      "seconds": 0.212237957999605,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "121",
+        "-l",
+        "121",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/121/simple.html"
+      ],
+      "seconds": 0.10347004199866205,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "121",
+        "-l",
+        "121",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/121/positioned.html"
+      ],
+      "seconds": 0.10707095800171373,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "121",
+        "-l",
+        "121",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pages/121/source"
+      ],
+      "seconds": 0.21245783300037147,
+      "exitCode": 0
+    }
+  ],
+  "pages": [
+    {
+      "number": 9,
+      "epub": "epub/EPUB/chapter-1.html#page-9",
+      "simple": "pages/9/simple.html",
+      "positioned": "pages/9/positioned.html",
+      "source": "pages/9/source.png"
+    },
+    {
+      "number": 17,
+      "epub": "epub/EPUB/chapter-1.html#page-17",
+      "simple": "pages/17/simple.html",
+      "positioned": "pages/17/positioned.html",
+      "source": "pages/17/source.png"
+    },
+    {
+      "number": 20,
+      "epub": "epub/EPUB/chapter-1.html#page-20",
+      "simple": "pages/20/simple.html",
+      "positioned": "pages/20/positioned.html",
+      "source": "pages/20/source.png"
+    },
+    {
+      "number": 45,
+      "epub": "epub/EPUB/chapter-2.html#page-45",
+      "simple": "pages/45/simple.html",
+      "positioned": "pages/45/positioned.html",
+      "source": "pages/45/source.png"
+    },
+    {
+      "number": 46,
+      "epub": "epub/EPUB/chapter-2.html#page-46",
+      "simple": "pages/46/simple.html",
+      "positioned": "pages/46/positioned.html",
+      "source": "pages/46/source.png"
+    },
+    {
+      "number": 51,
+      "epub": "epub/EPUB/chapter-2.html#page-51",
+      "simple": "pages/51/simple.html",
+      "positioned": "pages/51/positioned.html",
+      "source": "pages/51/source.png"
+    },
+    {
+      "number": 82,
+      "epub": "epub/EPUB/chapter-3.html#page-82",
+      "simple": "pages/82/simple.html",
+      "positioned": "pages/82/positioned.html",
+      "source": "pages/82/source.png"
+    },
+    {
+      "number": 83,
+      "epub": "epub/EPUB/chapter-3.html#page-83",
+      "simple": "pages/83/simple.html",
+      "positioned": "pages/83/positioned.html",
+      "source": "pages/83/source.png"
+    },
+    {
+      "number": 120,
+      "epub": "epub/EPUB/chapter-5.html#page-120",
+      "simple": "pages/120/simple.html",
+      "positioned": "pages/120/positioned.html",
+      "source": "pages/120/source.png"
+    },
+    {
+      "number": 121,
+      "epub": "epub/EPUB/chapter-5.html#page-121",
+      "simple": "pages/121/simple.html",
+      "positioned": "pages/121/positioned.html",
+      "source": "pages/121/source.png"
+    }
+  ],
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "source": {
+    "bytes": 4032813,
+    "sha256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60"
+  },
+  "converter": {
+    "path": "/Users/trevorharmon/Development/PDFReflowLib/.build/corpus-cli/out/Products/Release/pdf-reflow",
+    "bytes": 862152,
+    "sha256": "6ae1a17ef314531255ad1e768c4c75c6739483fe793de6627d8f9b5b2021602f"
+  },
+  "harness": {
+    "compare_pdf.py": {
+      "bytes": 12039,
+      "sha256": "c4841ba4a964707265758815dbac6036dd42e20337ef3e7caa1c9fae900a4013"
+    },
+    "serve_comparison.py": {
+      "bytes": 2884,
+      "sha256": "0e88e2a5bdbf3d7ec5353019725a036e6c5f1f759bd039c490eca807a588d389"
+    },
+    "comparison/index.html": {
+      "bytes": 3787,
+      "sha256": "2a36074ea68fb337a3ec5e57d5c3c637d73c819bdbeabdcf73492ae48a4d72b9"
+    },
+    "comparison/viewer.css": {
+      "bytes": 2834,
+      "sha256": "d5aea5b08898f2798f3884ef88510f32a54126a9affeb993310a9063693e10a3"
+    },
+    "comparison/viewer.js": {
+      "bytes": 6856,
+      "sha256": "bd20b93c03783be3fee134221a48fd9ff3c54c710b74a8af21949dbe263bb260"
+    }
+  },
+  "popplerVersion": "pdftohtml version 26.04.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1999-2003 Gueorgui Ovtcharov and Rainer Dorsch\nCopyright 1996-2011, 2022 Glyph & Cog, LLC",
+  "pageCount": 135,
+  "report": {
+    "imageCount": 281,
+    "outputURL": "file:///Users/trevorharmon/Development/PDFReflowLib/.build/fed-comparison/pdfreflow.epub",
+    "pageCount": 135,
+    "recognizedPageCount": 27,
+    "reflowedPageCount": 127,
+    "warnings": [
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 1
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 2
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 4
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 5
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 6
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 7
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 8
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 9
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 10
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 10
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 11
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 11
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 12
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 13
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 14
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 15
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 16
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 18
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 19
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 20
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 21
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 22
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 23
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 24
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 25
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 26
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 27
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 28
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 30
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 31
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 32
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 33
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 34
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 35
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 36
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 37
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 38
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 39
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 39
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 40
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 41
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 42
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 43
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 44
+      },
+      {
+        "code": "unsupportedGraphics",
+        "message": "Unsupported or excessive drawing operations require the original page image.",
+        "page": 45
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 46
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 47
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 49
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 50
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 53
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 54
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 55
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 55
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 56
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 57
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 58
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 59
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 60
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 61
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 62
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 62
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 63
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 64
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 65
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 66
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 67
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 68
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 69
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 70
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 70
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 72
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 73
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 75
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 77
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 78
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 79
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 80
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 81
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 83
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 85
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 87
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 88
+      },
+      {
+        "code": "unsupportedGraphics",
+        "message": "Unsupported or excessive drawing operations require the original page image.",
+        "page": 89
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 92
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 93
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 94
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 95
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 96
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 96
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 97
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 98
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 98
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 100
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 100
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 101
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 102
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 103
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 104
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 105
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 109
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 111
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 111
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 112
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 113
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 113
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 114
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 115
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 116
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 117
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 118
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 119
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 122
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 123
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 125
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 126
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 128
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 129
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 130
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 131
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 132
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 134
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 18
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 19
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 20
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 21
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 22
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 24
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 26
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 28
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 30
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 32
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 34
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 36
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 38
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 39
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 40
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 42
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 44
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 46
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 48
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 52
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 54
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 55
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 56
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 58
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 59
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 60
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 62
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 64
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 66
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 67
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 68
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 69
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 71
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 72
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 73
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 74
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 75
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 76
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 77
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 78
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 79
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 80
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 81
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 82
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 83
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 84
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 85
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 86
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 88
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 89
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 90
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 91
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 92
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 93
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 94
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 95
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 96
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 97
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 98
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 99
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 100
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 101
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 102
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 103
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 104
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 105
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 106
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 107
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 108
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 109
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 110
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 111
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 112
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 113
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 114
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 116
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 117
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 118
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 119
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 120
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 121
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 122
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 123
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 124
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 125
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 126
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 127
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 128
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 129
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 130
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 131
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 132
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 133
+      },
+      {
+        "code": "furnitureRemoved",
+        "message": "Repeated header or footer omitted from the reflowed text.",
+        "page": 135
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 1
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 2
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 3
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 4
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 5
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 6
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 7
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 8
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 9
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 10
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 11
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 12
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 12
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 13
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 13
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 14
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 15
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 16
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 16
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 16
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 17
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 17
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 18
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 19
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 19
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 19
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 20
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 20
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 21
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 21
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 22
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 22
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 23
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 24
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 25
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 25
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 26
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 26
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 27
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 27
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 27
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 28
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 28
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 29
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 30
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 30
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 31
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 31
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 31
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 32
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 32
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 33
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 33
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 34
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 34
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 34
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 35
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 35
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 36
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 36
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 37
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 37
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 38
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 38
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 39
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 40
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 40
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 41
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 41
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 42
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 42
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 43
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 43
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 43
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 44
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 44
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 45
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 46
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 46
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 47
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 47
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 48
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 49
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 50
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 51
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 52
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 53
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 53
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 54
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 54
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 55
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 56
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 56
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 57
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 57
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 58
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 58
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 59
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 60
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 60
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 61
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 61
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 62
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 63
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 63
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 64
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 64
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 65
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 66
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 67
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 68
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 68
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 69
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 69
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 70
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 71
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 72
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 72
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 72
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 73
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 73
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 74
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 75
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 75
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 76
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 77
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 77
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 78
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 78
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 79
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 79
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 80
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 80
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 81
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 81
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 81
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 82
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 83
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 83
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 84
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 85
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 85
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 86
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 87
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 88
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 89
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 90
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 91
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 92
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 92
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 93
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 93
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 94
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 94
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 95
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 95
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 96
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 97
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 97
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 98
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 99
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 100
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 100
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 101
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 101
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 102
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 102
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 103
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 103
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 104
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 104
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 104
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 105
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 105
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 106
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 107
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 108
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 109
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 109
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 110
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 111
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 112
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 112
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 113
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 114
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 114
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 115
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 116
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 117
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 117
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 118
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 118
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 119
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 119
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 120
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 121
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 122
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 122
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 122
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 123
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 123
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 124
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 125
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 125
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 126
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 126
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 127
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 128
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 128
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 129
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 129
+      },
+      {
+        "code": "uncertainHyphen",
+        "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+        "page": 130
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 130
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 131
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 131
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 132
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 132
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 133
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 134
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 135
+      }
+    ]
+  },
+  "epub": {
+    "bytes": 72194447,
+    "sha256": "773a991f3fabe3204d55bc4d208962289f3b4c45694a09e3266386448a839103"
+  }
+}

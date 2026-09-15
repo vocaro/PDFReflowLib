@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 Corpus/*.pdf
 .DS_Store
+Corpus/cache/

@@ -5,6 +5,10 @@ public struct ConversionOptions: Sendable {
     public enum OCRPolicy: Sendable {
         /// Recognize pages with absent or visibly damaged native text.
         case automatic
+        /// Automatic recognition plus retry of existing text over a graphic covering more
+        /// than 75% of the page. This conservative signal also matches valid illustrated
+        /// pages; fresh OCR replaces their native text and does not guarantee better accuracy.
+        case automaticIncludingImageBackedText
         case never
         case always
     }

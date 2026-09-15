@@ -74,7 +74,8 @@ required image-only fallbacks and figure crops, with warnings when recommended r
 omitted. [Conversion options](doc/conversion-options.md#recommended-starting-settings) gives measured starting
 settings, provisional recommended ranges, and each control's tradeoffs.
 
-Other options select automatic/disabled/always OCR, language, title, author, recurring header/footer
+Other options select automatic/disabled/always OCR or opt-in retries of image-backed existing
+text (`.automaticIncludingImageBackedText`), language, title, author, recurring header/footer
 removal, raster resolution, and ceilings for input bytes, pages, characters, raster pixels and
 uncompressed output bytes. Default ceilings are 256 MiB input, 2,000 pages, 20 million characters,
 12 million pixels per raster, 180 DPI and 512 MiB output content. These are input/work bounds,

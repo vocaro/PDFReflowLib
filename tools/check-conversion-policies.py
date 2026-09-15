@@ -31,6 +31,10 @@ def main():
         ('fallback-smallest', 'scanned', ['--no-ocr', '--reference-images', 'never',
                                         '--full-page-image-encoding', 'smallest:0.9'], 1),
         ('text-only', 'prose', ['--reference-images', 'never', '--maximum-epub-bytes', 'unlimited'], 0),
+        ('ocr-selective-native', 'prose', ['--ocr', 'image-backed'], 0),
+        ('ocr-never', 'scanned', ['--ocr', 'never'], 1),
+        ('ocr-always', 'columns', ['--ocr', 'always'], 1),
+        ('ocr-automatic', 'scanned', ['--ocr', 'automatic'], 1),
     ]
     results = []
     for name, fixture, flags, image_count in cases:
@@ -41,6 +45,10 @@ def main():
         (args.output / (name + '-report.json')).write_text(run.stdout)
         (args.output / (name + '-progress.log')).write_text(run.stderr)
         assert report['imageCount'] == image_count
+        if name == 'ocr-selective-native' or name == 'ocr-never':
+            assert report['recognizedPageCount'] == 0
+        if name == 'ocr-always' or name == 'ocr-automatic':
+            assert report['recognizedPageCount'] == 1
         assert run.stderr.splitlines()[-1] == '100% completed'
         text = checks.check(output)
         if fixture == 'graphics': assert 'Text after the table' in text
@@ -62,6 +70,7 @@ def main():
         ['--full-page-image-encoding', 'smallest:1.1'], ['--full-page-image-encoding', 'jpeg:-0.1'],
         ['--maximum-output-bytes', '0'], ['--maximum-epub-bytes', '-1'], ['--maximum-epub-bytes'],
         ['--unknown', 'x'], ['--maximum-epub-bytes', '1'], ['--maximum-output-bytes', '1'],
+        ['--ocr', 'invalid'], ['--ocr'],
     ]
     for flags in failures:
         output = args.output / 'must-not-exist.epub'
@@ -72,7 +81,7 @@ def main():
         assert not list(args.output.glob('.pdfreflow-*')), flags
         results.append({'flags': flags, 'exitCode': run.returncode, 'diagnostic': run.stderr, 'passed': True})
     (args.output / 'results.json').write_text(json.dumps(results, indent=2) + '\n')
-    print('PASS 4 policy conversions and 10 rejection/cleanup cases', flush=True)
+    print(f'PASS {len(cases)} policy conversions and {len(failures)} rejection/cleanup cases', flush=True)
 
 
 if __name__ == '__main__':

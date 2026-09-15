@@ -27,7 +27,10 @@ physical-device memory/performance remain unqualified.
   ceiling](https://github.com/vocaro/PDFReflowLib/issues/5), and general notes/index ownership
   remains unqualified. Exclusively invisible image-backed text no longer supplies font-based
   code or heading evidence. [Detect suspect inherited OCR](https://github.com/vocaro/PDFReflowLib/issues/7)
-  beyond the conservative unverified-layer warning. Evidence: [Warren baseline](../measurements/gpo-warren-1964/record.md).
+  beyond the conservative unverified-layer warning. An [opt-in selective retry policy](../measurements/selective-ocr/record.md)
+  re-recognizes image-backed existing text and preserves native controls; it repairs the checked
+  Warren phrase but introduces other errors, so broader accuracy/detection remains unqualified.
+  Evidence: [Warren baseline](../measurements/gpo-warren-1964/record.md).
   The [full-book JPEG experiment](../measurements/warren-image-encoding/record.md) substantially
   reduces file size but both tested variants still exceed the default entry-byte budget.
   Clients now control reference inclusion, page/region encoding and independent entry/final-file

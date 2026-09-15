@@ -7,7 +7,8 @@ struct PDFReflowLibCommand {
         let args = Array(CommandLine.arguments.dropFirst())
         let usage = """
         Usage: pdf-reflow input.pdf output.epub [options]
-          --no-ocr
+          --ocr automatic|image-backed|always|never
+          --no-ocr  (alias for --ocr never)
           --reference-images automatic|always|never
           --full-page-image-encoding png|jpeg:QUALITY|smallest:QUALITY
           --region-image-encoding png|jpeg:QUALITY|smallest:QUALITY
@@ -48,6 +49,14 @@ struct PDFReflowLibCommand {
                 guard index < args.count else { throw ConversionError.invalidOptions("missing value for \(flag)") }
                 let value = args[index]; index += 1
                 switch flag {
+                case "--ocr":
+                    switch value {
+                    case "automatic": options.ocr = .automatic
+                    case "image-backed": options.ocr = .automaticIncludingImageBackedText
+                    case "always": options.ocr = .always
+                    case "never": options.ocr = .never
+                    default: throw ConversionError.invalidOptions("unknown OCR policy: \(value)")
+                    }
                 case "--reference-images":
                     switch value {
                     case "automatic": options.referenceImages = .automatic

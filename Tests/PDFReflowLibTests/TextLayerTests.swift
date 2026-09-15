@@ -42,7 +42,7 @@ func textLayerPDF(_ text: String, imageSize: Int = 300, invisible: Bool = true) 
 }
 
 @Test func textlessAttachmentScansUseOCRPolicyWithoutClaimingReflow() async throws {
-    for policy in [ConversionOptions.OCRPolicy.automatic, .never] {
+    for policy in [ConversionOptions.OCRPolicy.automatic, .automaticIncludingImageBackedText, .never] {
         let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
         let pdf = dir.appendingPathComponent("source.pdf")
         try textLayerPDF("~~").write(to: pdf)
@@ -54,7 +54,7 @@ func textLayerPDF(_ text: String, imageSize: Int = 300, invisible: Bool = true) 
         #expect(result.document.assets.count == 1)
         #expect(result.warnings.contains { $0.code == .pageImageFallback && $0.page == 1 })
         #expect(!result.warnings.contains { $0.code == .unverifiedTextLayer })
-        if policy == .automatic {
+        if policy != .never {
             #expect(result.recognizedPageCount == 1)
             #expect(result.warnings.contains { $0.code == .ocrUsed })
         } else {

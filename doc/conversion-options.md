@@ -6,6 +6,7 @@ No policy changes dynamically to squeeze a book under a limit, and no network se
 
 | Control | Default | Choices / meaning |
 | --- | --- | --- |
+| `ocr` | `.automatic` | `.automatic`, `.automaticIncludingImageBackedText`, `.always`, `.never` |
 | `referenceImages` | `.automatic` | `.automatic`, `.always`, `.never` |
 | `fullPageImageEncoding` | `.png` | `.png`, `.jpeg(quality:)`, `.smallest(jpegQuality:)` |
 | `regionImageEncoding` | `.png` | Same encodings, independently applied to cropped figures/tables/equations |
@@ -16,6 +17,30 @@ No policy changes dynamically to squeeze a book under a limit, and no network se
 
 MiB means 1,048,576 bytes. Input-byte, page-count and character budgets remain separate.
 Neither output-size control is a RAM limit, device qualification or estimate of elapsed time.
+
+## Existing text and selective OCR
+
+`.automatic` recognizes absent or visibly damaged text. Plausible inherited OCR errors can
+pass that test. `.automaticIncludingImageBackedText` additionally retries existing text when
+a detected graphic covers more than 75% of page area, using the same conservative signal as
+`unverifiedTextLayer`. This opt-in policy replaces the entire selected page's native text with
+fresh Vision transcription; it does not compare spellings or choose the more accurate version.
+Pages with ordinary native text and smaller illustrations keep their native text and styles.
+`.always` retries every eligible page; `.never` disables recognition. Rotated or unsupported
+pages still use required image fallback under every policy.
+
+The image-area signal can also select valid text over full-page artwork. It can miss cropped
+scans and pages assembled from smaller images. Fresh OCR may improve some errors and introduce
+others, lose native formatting, or change reading order. Successful attempts report `ocrUsed`
+and include source references by default; empty or failed recognition retains a required page
+image. Compare with the source before relying on transcription. Reference and resource options
+apply independently, and cancellation remains cooperative during platform recognition.
+
+The developer client exposes these policies as `--ocr automatic|image-backed|always|never`.
+`--no-ocr` remains an alias for `--ocr never`; when repeated, the last OCR option takes effect.
+See [selective OCR measurements](../measurements/selective-ocr/record.md) for the pinned Warren
+excerpt, native controls, timings and limitations. These measurements do not qualify whole-book
+accuracy or physical-device budgets.
 
 ## Recommended starting settings
 

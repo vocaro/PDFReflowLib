@@ -1,0 +1,582 @@
+{
+  "identity": {
+    "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+    "sourcePages": [
+      1,
+      7,
+      21,
+      30,
+      50,
+      100,
+      890,
+      910,
+      920
+    ],
+    "controlSHA256": "845a3ff4758b1ddd9510c1ffabca0c754920b0788d409f255a72bc565a93db4e",
+    "controlPages": [
+      1,
+      2,
+      3
+    ],
+    "mixedSHA256": "5afaa601c0bffda0527c28f70089f424dcfe32fe996fb009623ab03456ee3b6f",
+    "mixedBytes": 81672711,
+    "converterSHA256": "fe37820016f2c33ed6d7854219ac958308346e4a53e472f01629a35d8e85aa8f"
+  },
+  "results": [
+    {
+      "policy": "image-backed",
+      "command": [
+        "/usr/bin/time",
+        "-l",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/out/Products/Release/pdf-reflow",
+        "/tmp/selective-ocr-sequential/mixed-source.pdf",
+        "/tmp/selective-ocr-sequential/image-backed.epub",
+        "--ocr",
+        "image-backed"
+      ],
+      "seconds": 8.258888625001418,
+      "peakRSSBytes": 1131397120,
+      "epubBytes": 15629859,
+      "recognizedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "imageSHA256": {
+        "EPUB/images/image-1.png": "fc1b8447262c5e75768b25c3b3868a2e2ee1fa97e65157dd485a73d24058c6d0",
+        "EPUB/images/image-2.png": "34ca2eddffbc5c309982d4f58940b8bbf8c61c2d2afcf97e1b48ba7690ae38d0",
+        "EPUB/images/image-3.png": "4ffdf421c0ce01f948187134c6b93544071b7485fd0c204f17b5e0fb4c496f5e",
+        "EPUB/images/image-4.png": "e6dc68e197ee4a5f6719614e64ac24e03ff01693928b5d89b7776e6f4fea0357",
+        "EPUB/images/image-5.png": "19e8d805f4d498810bf8e8155651e7e8131d7351740d4cdea37c4b2254bf5058",
+        "EPUB/images/image-6.png": "62ad45fb8b43f1b806184277b09cc4a1e7114abe536feff364c7b8174bad4715",
+        "EPUB/images/image-7.png": "7715867552a63e0d5548cbe16a11691282cf70fb8f32d2576e38b9b232e941de",
+        "EPUB/images/image-8.png": "a6acdb1ee18e69b12d74f88076d70724da8c94b5437deea92121a854a3091df2",
+        "EPUB/images/image-9.png": "3955b4c02f8cd69ffd16437c1400e32ca7677f5e2684171d69066896362ae4b9",
+        "EPUB/images/image-10.png": "6bdbcd55a2d1cbfe800fe8185b67c559cd8d9f2a8556083c4a387151557b81c9"
+      },
+      "report": {
+        "imageCount": 10,
+        "outputURL": "file:///tmp/selective-ocr-sequential/image-backed.epub",
+        "pageCount": 12,
+        "recognizedPageCount": 9,
+        "reflowedPageCount": 10,
+        "warnings": [
+          {
+            "code": "annotationsNotConverted",
+            "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+            "page": 1
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 1
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 2
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 3
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 4
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 5
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 6
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 7
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 8
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 9
+          },
+          {
+            "code": "furnitureRemoved",
+            "message": "Repeated header or footer omitted from the reflowed text.",
+            "page": 10
+          },
+          {
+            "code": "furnitureRemoved",
+            "message": "Repeated header or footer omitted from the reflowed text.",
+            "page": 11
+          },
+          {
+            "code": "furnitureRemoved",
+            "message": "Repeated header or footer omitted from the reflowed text.",
+            "page": 12
+          },
+          {
+            "code": "pageImageFallback",
+            "message": "This page is preserved as an image and does not reflow.",
+            "page": 1
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 2
+          },
+          {
+            "code": "imageRegion",
+            "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+            "page": 3
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 3
+          },
+          {
+            "code": "uncertainHyphen",
+            "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+            "page": 4
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 4
+          },
+          {
+            "code": "uncertainHyphen",
+            "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+            "page": 5
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 5
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 6
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 7
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 8
+          },
+          {
+            "code": "pageImageFallback",
+            "message": "This page is preserved as an image and does not reflow.",
+            "page": 9
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "policy": "always",
+      "command": [
+        "/usr/bin/time",
+        "-l",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/out/Products/Release/pdf-reflow",
+        "/tmp/selective-ocr-sequential/mixed-source.pdf",
+        "/tmp/selective-ocr-sequential/always.epub",
+        "--ocr",
+        "always"
+      ],
+      "seconds": 8.777214333007578,
+      "peakRSSBytes": 1135919104,
+      "epubBytes": 15790632,
+      "recognizedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "imageSHA256": {
+        "EPUB/images/image-1.png": "fc1b8447262c5e75768b25c3b3868a2e2ee1fa97e65157dd485a73d24058c6d0",
+        "EPUB/images/image-2.png": "34ca2eddffbc5c309982d4f58940b8bbf8c61c2d2afcf97e1b48ba7690ae38d0",
+        "EPUB/images/image-3.png": "4ffdf421c0ce01f948187134c6b93544071b7485fd0c204f17b5e0fb4c496f5e",
+        "EPUB/images/image-4.png": "e6dc68e197ee4a5f6719614e64ac24e03ff01693928b5d89b7776e6f4fea0357",
+        "EPUB/images/image-5.png": "19e8d805f4d498810bf8e8155651e7e8131d7351740d4cdea37c4b2254bf5058",
+        "EPUB/images/image-6.png": "62ad45fb8b43f1b806184277b09cc4a1e7114abe536feff364c7b8174bad4715",
+        "EPUB/images/image-7.png": "7715867552a63e0d5548cbe16a11691282cf70fb8f32d2576e38b9b232e941de",
+        "EPUB/images/image-8.png": "a6acdb1ee18e69b12d74f88076d70724da8c94b5437deea92121a854a3091df2",
+        "EPUB/images/image-9.png": "3955b4c02f8cd69ffd16437c1400e32ca7677f5e2684171d69066896362ae4b9",
+        "EPUB/images/image-10.png": "6bdbcd55a2d1cbfe800fe8185b67c559cd8d9f2a8556083c4a387151557b81c9",
+        "EPUB/images/image-11.png": "9adb056b563962e46e20192e9bf4e2e415ea7d884ff90ef55ab6f031f81a5e1d",
+        "EPUB/images/image-12.png": "00837428b32a2832cb3e2105b9e831ad9846504e1d3372118f9f64cf117d16a6",
+        "EPUB/images/image-13.png": "ae9e805b09dec976e7fe995114b22afe7b94461e666fecaca76078aa0f82c718"
+      },
+      "report": {
+        "imageCount": 13,
+        "outputURL": "file:///tmp/selective-ocr-sequential/always.epub",
+        "pageCount": 12,
+        "recognizedPageCount": 12,
+        "reflowedPageCount": 10,
+        "warnings": [
+          {
+            "code": "annotationsNotConverted",
+            "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+            "page": 1
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 1
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 2
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 3
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 4
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 5
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 6
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 7
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 8
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 9
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 10
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 11
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 12
+          },
+          {
+            "code": "furnitureRemoved",
+            "message": "Repeated header or footer omitted from the reflowed text.",
+            "page": 10
+          },
+          {
+            "code": "furnitureRemoved",
+            "message": "Repeated header or footer omitted from the reflowed text.",
+            "page": 11
+          },
+          {
+            "code": "furnitureRemoved",
+            "message": "Repeated header or footer omitted from the reflowed text.",
+            "page": 12
+          },
+          {
+            "code": "pageImageFallback",
+            "message": "This page is preserved as an image and does not reflow.",
+            "page": 1
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 2
+          },
+          {
+            "code": "imageRegion",
+            "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+            "page": 3
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 3
+          },
+          {
+            "code": "uncertainHyphen",
+            "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+            "page": 4
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 4
+          },
+          {
+            "code": "uncertainHyphen",
+            "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+            "page": 5
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 5
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 6
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 7
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 8
+          },
+          {
+            "code": "pageImageFallback",
+            "message": "This page is preserved as an image and does not reflow.",
+            "page": 9
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 10
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 11
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 12
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "policy": "automatic",
+      "command": [
+        "/usr/bin/time",
+        "-l",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/out/Products/Release/pdf-reflow",
+        "/tmp/selective-ocr-sequential/mixed-source.pdf",
+        "/tmp/selective-ocr-sequential/automatic.epub",
+        "--ocr",
+        "automatic"
+      ],
+      "seconds": 4.2915533339983085,
+      "peakRSSBytes": 763658240,
+      "epubBytes": 14824825,
+      "recognizedPages": [
+        1,
+        9
+      ],
+      "imageSHA256": {
+        "EPUB/images/image-1.png": "fc1b8447262c5e75768b25c3b3868a2e2ee1fa97e65157dd485a73d24058c6d0",
+        "EPUB/images/image-2.png": "34ca2eddffbc5c309982d4f58940b8bbf8c61c2d2afcf97e1b48ba7690ae38d0",
+        "EPUB/images/image-3.png": "e6dc68e197ee4a5f6719614e64ac24e03ff01693928b5d89b7776e6f4fea0357",
+        "EPUB/images/image-4.png": "19e8d805f4d498810bf8e8155651e7e8131d7351740d4cdea37c4b2254bf5058",
+        "EPUB/images/image-5.png": "62ad45fb8b43f1b806184277b09cc4a1e7114abe536feff364c7b8174bad4715",
+        "EPUB/images/image-6.png": "7715867552a63e0d5548cbe16a11691282cf70fb8f32d2576e38b9b232e941de",
+        "EPUB/images/image-7.png": "a6acdb1ee18e69b12d74f88076d70724da8c94b5437deea92121a854a3091df2",
+        "EPUB/images/image-8.png": "3955b4c02f8cd69ffd16437c1400e32ca7677f5e2684171d69066896362ae4b9",
+        "EPUB/images/image-9.png": "6bdbcd55a2d1cbfe800fe8185b67c559cd8d9f2a8556083c4a387151557b81c9"
+      },
+      "report": {
+        "imageCount": 9,
+        "outputURL": "file:///tmp/selective-ocr-sequential/automatic.epub",
+        "pageCount": 12,
+        "recognizedPageCount": 2,
+        "reflowedPageCount": 10,
+        "warnings": [
+          {
+            "code": "annotationsNotConverted",
+            "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+            "page": 1
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 1
+          },
+          {
+            "code": "unverifiedTextLayer",
+            "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+            "page": 2
+          },
+          {
+            "code": "unverifiedTextLayer",
+            "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+            "page": 3
+          },
+          {
+            "code": "unverifiedTextLayer",
+            "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+            "page": 4
+          },
+          {
+            "code": "unverifiedTextLayer",
+            "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+            "page": 5
+          },
+          {
+            "code": "unverifiedTextLayer",
+            "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+            "page": 6
+          },
+          {
+            "code": "unverifiedTextLayer",
+            "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+            "page": 7
+          },
+          {
+            "code": "unverifiedTextLayer",
+            "message": "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+            "page": 8
+          },
+          {
+            "code": "ocrUsed",
+            "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+            "page": 9
+          },
+          {
+            "code": "furnitureRemoved",
+            "message": "Repeated header or footer omitted from the reflowed text.",
+            "page": 10
+          },
+          {
+            "code": "furnitureRemoved",
+            "message": "Repeated header or footer omitted from the reflowed text.",
+            "page": 11
+          },
+          {
+            "code": "furnitureRemoved",
+            "message": "Repeated header or footer omitted from the reflowed text.",
+            "page": 12
+          },
+          {
+            "code": "pageImageFallback",
+            "message": "This page is preserved as an image and does not reflow.",
+            "page": 1
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 2
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 3
+          },
+          {
+            "code": "uncertainHyphen",
+            "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+            "page": 4
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 4
+          },
+          {
+            "code": "uncertainHyphen",
+            "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+            "page": 5
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 5
+          },
+          {
+            "code": "uncertainHyphen",
+            "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+            "page": 6
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 6
+          },
+          {
+            "code": "uncertainHyphen",
+            "message": "An ambiguous line-ending hyphen is retained. Review source word joins.",
+            "page": 7
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 7
+          },
+          {
+            "code": "imageRegion",
+            "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+            "page": 8
+          },
+          {
+            "code": "pageImageFallback",
+            "message": "This page is preserved as an image and does not reflow.",
+            "page": 9
+          }
+        ]
+      },
+      "passed": true
+    }
+  ],
+  "nativeControlPagesIdentical": true,
+  "warrenSourceReferencesIdentical": true,
+  "passed": true
+}

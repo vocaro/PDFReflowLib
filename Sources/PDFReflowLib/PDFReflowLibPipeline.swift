@@ -78,8 +78,15 @@ enum PDFReflowLibPipeline {
             let bounds = content.bounds
             let raw = content.lines.map(\.text).joined()
             let damaged = raw.unicodeScalars.filter { $0.value == 0xFFFD || $0.value == 0xFFFC }.count
-            let needsOCR = options.ocr == .always || (options.ocr == .automatic &&
+            // Share the same conservative page-sized-graphic signal with the review warning.
+            // It identifies a candidate for re-recognition, not an erroneous transcription.
+            let imageBackedText = !content.lines.isEmpty && content.graphics.contains {
+                $0.width * $0.height > bounds.width * bounds.height * 0.75
+            }
+            let automaticOCR = options.ocr == .automatic || options.ocr == .automaticIncludingImageBackedText
+            let needsOCR = options.ocr == .always || (automaticOCR &&
                 (raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || damaged > max(2, raw.count / 50)))
+                || (options.ocr == .automaticIncludingImageBackedText && imageBackedText)
             if needsOCR && !content.requiresPageImage {
                 await progress(.init(stage: .recognizing, fractionCompleted: 0.6875 * Double(i) / Double(total),
                     page: i + 1, totalPages: total))
@@ -102,8 +109,7 @@ enum PDFReflowLibPipeline {
                     warnings.append(.init(code: .ocrFailed, page: i + 1,
                         message: "OCR failed; the source page is preserved as an image."))
                 }
-            } else if !content.requiresPageImage, !content.lines.isEmpty,
-                      content.graphics.contains(where: { $0.width * $0.height > bounds.width * bounds.height * 0.75 }) {
+            } else if !content.requiresPageImage, imageBackedText {
                 // A scan with an existing OCR layer must still reflow. Keep its visual page as a
                 // reference rather than treating the full-page scan as one figure covering all text.
                 content.preservePageReference = true

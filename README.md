@@ -70,7 +70,8 @@ options.maximumEPUBBytes = 512 * 1_024 * 1_024 // Cap the final ZIP file
 `.smallest(jpegQuality: 0.90)` encodes PNG and JPEG and keeps the smaller file; it does not
 assess visual fidelity. `.always` adds references on every reconstructed page; `.never` retains
 required image-only fallbacks and figure crops, with warnings when recommended references are
-omitted. [Conversion options](doc/conversion-options.md) explains each control and its tradeoffs.
+omitted. [Conversion options](doc/conversion-options.md#recommended-starting-settings) gives measured starting
+settings, provisional recommended ranges, and each control's tradeoffs.
 
 Other options select automatic/disabled/always OCR, language, title, author, recurring header/footer
 removal, raster resolution, and ceilings for input bytes, pages, characters, raster pixels and

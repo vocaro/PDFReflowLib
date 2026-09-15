@@ -12,6 +12,11 @@ physical-device memory/performance remain unqualified.
   table cells, equation structure, image appearance and chapter continuity as those issues are
   addressed. Keep known failures separate from passing baselines; never regenerate expected
   content from converter output alone. See [the regression workflow](regression-testing.md).
+- Refine [recommended conversion settings](conversion-options.md#recommended-starting-settings)
+  from cross-document measurements. JPEG 0.90 is the initial scan recommendation; 0.90–0.95
+  is provisional from measured endpoints, with PNG for clean cropped regions. Compare fine
+  colored labels, scans, tables and image-heavy pages before changing runtime defaults;
+  establish DPI tradeoffs and physical-device raster budgets before recommending ranges.
 - Investigate [PDFKit attributed-text leaks](https://github.com/vocaro/PDFReflowLib/issues/4)
   without losing formatting; Apple report **FB24783799** has a
   [standalone reproducer and fresh diagnostics](../measurements/apple-feedback-pdfkit/record.md). Keep the

@@ -17,6 +17,49 @@ No policy changes dynamically to squeeze a book under a limit, and no network se
 MiB means 1,048,576 bytes. Input-byte, page-count and character budgets remain separate.
 Neither output-size control is a RAM limit, device qualification or estimate of elapsed time.
 
+## Recommended starting settings
+
+Client control and useful defaults work together. Recommendations follow measured document
+classes; the API's permitted range is not a claim that every setting produces good output.
+The current recommendations are provisional where evidence covers only selected sources.
+
+| Dial | Recommended starting point | Evidence and qualification |
+| --- | --- | --- |
+| Full-page scans | `.jpeg(quality: 0.90)` when lossy encoding is acceptable | Both 0.90 and 0.95 have whole-Warren size measurements and sampled visual comparisons. Use 0.90–0.95 as an initial tuning range; only the endpoints are measured, and this is not a guarantee for every scan. |
+| Equations, tables, cropped diagrams | `.png` | The clean table and colored fraction controls are smaller as PNG, with no encoding loss. Start lossless for these regions; other figure types may benefit from separate measurements. |
+| Mixed full-page artwork | `.png` until reviewed, or explicitly trial `.smallest(jpegQuality: 0.90)` | Smallest avoids choosing a larger encoded file, but chooses by bytes, not legibility. Its clean/noisy controls pass; broad real-book visual qualification remains outstanding. |
+| Supplementary references | `.automatic` for a publication intended to carry its own source-page references | `.never` is a compact-reading choice when the client retains the PDF for review and accepts omitted visual context. Whole-book Warren runs quantify both choices; neither validates inherited OCR. Reserve `.always` for deliberate page-by-page reference use. |
+| Resolution | Keep 180 DPI as the starting baseline | Existing corpus runs exercise it, subject to the pixel ceiling. There is no comparative sweep establishing an optimal DPI range. The supported 72–600 range is a validation bound, not a recommendation. |
+| Raster pixel ceiling | Keep the 12-million-pixel starting bound while profiling the target device | There is no qualified physical iPhone/iPad memory range. The supported 1–48 million range is not a safe-device recommendation. |
+| Output budgets | Choose separate entry and final-file caps from the client's storage allowance and measured workload, with headroom | The 512 MiB entry default is a configurable guard, not a measured universal recommendation. A file can pass its final ZIP cap while exceeding the entry cap. Disabling the entry budget in an experiment is not a general shipping recommendation. |
+
+The [encoding experiment](../measurements/warren-image-encoding/record.md) records the JPEG
+endpoint comparisons and clean-region controls. The
+[production policy measurements](../measurements/client-options/record.md) record full-book
+reference inclusion/omission, runtime, memory, image retention and warning checks. Their
+source checksums, implementation identities and OS/hardware details bound these conclusions.
+The 64 MiB and 512 MiB final-file caps in those runs demonstrate successful configurations
+for that book; they do not establish recommended caps for all books.
+
+Two useful client configurations follow from that evidence. These are documented starting
+configurations, not additional preset APIs or automatic document classifiers:
+
+| Use | References | Full-page encoding | Region encoding |
+| --- | --- | --- | --- |
+| Scanned reading copy with embedded references | `.automatic` | `.jpeg(quality: 0.90)` | `.png` |
+| Compact reading copy with the source PDF retained separately | `.never` | `.jpeg(quality: 0.90)` | `.png` |
+
+For either configuration, start at 180 DPI and select storage caps separately. Keep PNG for
+full pages when avoiding encoding loss matters more than their measured size. Omitting
+references still retains required fallback pages, region images and quality warnings.
+
+The library's runtime defaults remain unchanged while the recommendations are evaluated more
+broadly. Revising defaults or widening recommended ranges requires cross-document size and
+readability comparisons, the corpus regression gate, and target-device measurements for
+resource claims. Include scan text, fine colored labels, equations, tables and image-heavy
+pages; archive the measured settings and results alongside each recommendation. JPEG quality
+below 0.90, comparative DPI choices and physical-device raster budgets remain unqualified.
+
 ## Supplementary references versus required images
 
 Automatic references accompany fresh OCR, inherited text over a page-sized graphic, or visible

@@ -10,6 +10,8 @@ struct TextLine {
     var fontSize: CGFloat
     var monospaced = false
     var wraps: Bool?
+    // Reading order may use the body line beside a drop cap. Ink bounds remain in rect.
+    var readingRect: CGRect?
 
     init(text: String, rect: CGRect, fontSize: CGFloat, monospaced: Bool = false, wraps: Bool? = nil) {
         self.init(content: InlineText(text), rect: rect, fontSize: fontSize, monospaced: monospaced, wraps: wraps)

@@ -1,0 +1,352 @@
+[
+  {
+    "case": "faa-phak-8083-25c",
+    "beforeEPUBSHA256": "5292d41e6ed3e0e770fbaa0b2ed5a17b41ecb9e6decf63c2372f241b9b08acc5",
+    "afterEPUBSHA256": "2e8a6f7e063983bcb3aae387e34aa44c4c52adf8b563c6d71cdee776159160f5",
+    "imageCount": 588,
+    "identicalImageBytesAndPageOrder": true,
+    "parsedPageCount": 522,
+    "changes": []
+  },
+  {
+    "case": "wallace-algebra-2010",
+    "beforeEPUBSHA256": "f35a53b9e0e3156bb3ca6c093c8c27e81d91d0538a22c9101082e692817e0cfe",
+    "afterEPUBSHA256": "dce7b9bb0f53ba95108a9845100725c636785e974c7785c6db164b5c62a0648c",
+    "imageCount": 2050,
+    "identicalImageBytesAndPageOrder": true,
+    "parsedPageCount": 489,
+    "changes": []
+  },
+  {
+    "case": "gpo-911-2004",
+    "beforeEPUBSHA256": "c652ce2adc83e4a2caa046a913b165473a5c0a870509496066ff7d8523084d54",
+    "afterEPUBSHA256": "756211d2b4cc8f50243c11e73c860ae21a8363a39536a2b4c8c932b14a5ee9d1",
+    "imageCount": 331,
+    "identicalImageBytesAndPageOrder": true,
+    "parsedPageCount": 585,
+    "changes": []
+  },
+  {
+    "case": "fed-explained-2021",
+    "beforeEPUBSHA256": "30a6ccc69523713d6f9f461c7d323d7174603944dac4ddbe0369a0750d7fc28e",
+    "afterEPUBSHA256": "20f1631048bce556b7a455eb82d43c802c45390f4f1778647de783505cbb7640",
+    "imageCount": 315,
+    "identicalImageBytesAndPageOrder": true,
+    "parsedPageCount": 135,
+    "changes": []
+  },
+  {
+    "case": "dga-2025-2030",
+    "beforeEPUBSHA256": "ae45d5de41d935614643189655077a9f553e9779bad732dfe8006993d6736437",
+    "afterEPUBSHA256": "2bddd135b338d2a1bf9482f5c267a9b9f37d8708f1b1cb13389593383093efa7",
+    "imageCount": 27,
+    "identicalImageBytesAndPageOrder": true,
+    "parsedPageCount": 10,
+    "changes": []
+  },
+  {
+    "case": "gpo-our-flag-2003",
+    "beforeEPUBSHA256": "49be1d039c40bb433cf8bd25c8897524e99521c547235f163b472b474c1c02df",
+    "afterEPUBSHA256": "50573967ae65f16a070d35721585545090d7bfeb38473f059917a0539805faae",
+    "imageCount": 147,
+    "identicalImageBytesAndPageOrder": true,
+    "parsedPageCount": 56,
+    "changes": [
+      {
+        "page": 5,
+        "openingHeadingsConvertedToParagraphs": [
+          "D uring the night of September 13, 1814, the British fleet bom"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "uring the night of September 13, 1814, the British fleet bom Francis Scott Key, a 34-year old lawyer-poet, watched the attack",
+            "before": "Introduction barded Fort McHenry in the harbor at Baltimore, Maryland.",
+            "tag": "sub",
+            "text": "D"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 7,
+        "openingHeadingsConvertedToParagraphs": [
+          "T he Stars and Stripes originated as a result of a resolution"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "he Stars and Stripes originated as a result of a resolution Continental Congress at Philadelphia on June 14, 1777. The resolut",
+            "before": "The History of the Stars and Stripes adopted by the Marine Committee of the Second",
+            "tag": "sub",
+            "text": "T"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 8,
+        "openingHeadingsConvertedToParagraphs": [
+          "D uring the Revolutionary War, several patriots made flags for"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "uring the Revolutionary War, several patriots made flags for Elizabeth (Betsy) Ross, and Rebecca Young, all of Pennsylvania, a",
+            "before": "An Early Stars and Stripes our new Nation. Among them were Cornelia Bridges,",
+            "tag": "sub",
+            "text": "D"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 9,
+        "openingHeadingsConvertedToParagraphs": [
+          "T he first flag of the colonists to have any resemblance to the"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "he first flag of the colonists to have any resemblance to the times referred to as the Congress Colors, the First Navy Ensign,",
+            "before": "The Grand Union Flag present Stars and Stripes was the Grand Union Flag, some-",
+            "tag": "sub",
+            "text": "T"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 10,
+        "openingHeadingsConvertedToParagraphs": [
+          "W hen two new States were admitted to the Union (Kentucky"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "hen two new States were admitted to the Union (Kentucky 1794, expanding the flag to 15 stars and 15 stripes. This flag was the",
+            "before": "Fifteen Stars and Stripes and Vermont), a resolution was adopted in January of",
+            "tag": "sub",
+            "text": "W"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 13,
+        "openingHeadingsConvertedToParagraphs": [
+          "A rcheological digs in northern India, dating around 3,500 B.C.,"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "rcheological digs in northern India, dating around 3,500 B.C., shows a procession of seven men carrying square standards, held",
+            "before": "Early American Flags have uncovered a seal, used to sign documents. The seal",
+            "tag": "sub",
+            "text": "A"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 16,
+        "openingHeadingsConvertedToParagraphs": [
+          "T he flag of the United States of America has 13 horizontal"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "he flag of the United States of America has 13 horizontal nating, and a union which consists of white stars of 5 points on a b",
+            "before": "The Flag Today stripes—7 red and 6 white—the red and white stripes alter",
+            "tag": "sub",
+            "text": "T"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 26,
+        "openingHeadingsConvertedToParagraphs": [
+          "P resentation of the flag during a ceremony should be preceded"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "resentation of the flag during a ceremony should be preceded Following the presentation all present should salute the flag, re",
+            "before": "Flag Presentation by a brief talk emphasizing the importance of the occasion.",
+            "tag": "sub",
+            "text": "P"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 27,
+        "openingHeadingsConvertedToParagraphs": [
+          "T he life of your flag depends on your care. Dirt can cut fab",
+          "T he size of the flag is determined by the exposed height of the"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "he life of your flag depends on your care. Dirt can cut fab washed in mild detergent and thoroughly rinsed. Indoor and parade",
+            "before": "Care of Your Flag rics, dull colors, and cause wear. Most outdoor flags can be",
+            "tag": "sub",
+            "text": "T"
+          },
+          {
+            "after": "he size of the flag is determined by the exposed height of the for the flag to be in proper proportion to its pole. Flags whic",
+            "before": "e metallic oxides actually eat holes in fabric. Sizes of Flags flagpole from which it is flying. The only consideration is",
+            "tag": "sub",
+            "text": "T"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 28,
+        "openingHeadingsConvertedToParagraphs": [
+          "N o record has been found for the earliest date the flag was"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "o record has been found for the earliest date the flag was engravings and lithographs in the office of the Architect of the Ca",
+            "before": "Flags at the United States Capitol flown over the east and west fronts of the Capitol. Early",
+            "tag": "sub",
+            "text": "N"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 29,
+        "openingHeadingsConvertedToParagraphs": [
+          "C onstituents may arrange to purchase flags that have been flown"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "onstituents may arrange to purchase flags that have been flown Representative. A certificate signed by the Architect of the Ca",
+            "before": "How to Obtain a Flag Flown Over the Capitol over the Capitol by getting in touch with their Senators or",
+            "tag": "sub",
+            "text": "C"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 30,
+        "openingHeadingsConvertedToParagraphs": [
+          "T he American War Mothers is a national organization chartered"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "he American War Mothers is a national organization chartered members are mothers whose sons and daughters have served or who a",
+            "before": "American War Mothers Flag by Congress with its headquarters in Washington, DC. Its",
+            "tag": "sub",
+            "text": "T"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 31,
+        "openingHeadingsConvertedToParagraphs": [
+          "A ny honorably discharged veteran is entitled to a burial flag."
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "ny honorably discharged veteran is entitled to a burial flag. necessary arrangements for the family on behalf of the veteran.",
+            "before": "How to Obtain a Burial Flag for a Veteran The funeral director, as part of the services, will make the",
+            "tag": "sub",
+            "text": "A"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 46,
+        "openingHeadingsConvertedToParagraphs": [
+          "E ach year on June 14, we celebrate the birthday of the Stars and"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "ach year on June 14, we celebrate the birthday of the Stars and the Second Continental Congress authorized a new flag to sym b",
+            "before": "Flag Day Stripes, which came into being on June 14, 1777. At that time,",
+            "tag": "sub",
+            "text": "E"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 47,
+        "openingHeadingsConvertedToParagraphs": [
+          "On July 4, 1776, the Continental Congress passed a resolution"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "n July 4, 1776, the Continental Congress passed a resolution America. This mission, designed to reflect the Founding Fathers'",
+            "before": "The Great Seal of the United States authorizing a committee to devise a seal for the United States of",
+            "tag": "sub",
+            "text": "O"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 49,
+        "openingHeadingsConvertedToParagraphs": [
+          "F ort McHenry is located in Baltimore, Maryland. This low"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "ort McHenry is located in Baltimore, Maryland. This low where the Americans defended the city against British land and naval a",
+            "before": "Fort McHenry citadel overlooks the entrance to Baltimore harbor and it is",
+            "tag": "sub",
+            "text": "F"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 50,
+        "openingHeadingsConvertedToParagraphs": [
+          "T he Flag House is located on the northwest corner of"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "he Flag House is located on the northwest corner of the home of Mary Pickersgill from 1807 to 1857, and it was where she made",
+            "before": "The Flag House Albermarle and Pratt Streets in Baltimore, Maryland. It was",
+            "tag": "sub",
+            "text": "T"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      },
+      {
+        "page": 53,
+        "openingHeadingsConvertedToParagraphs": [
+          "T he study of the history and symbolism of flags is known as"
+        ],
+        "removedInitialScripts": [
+          {
+            "after": "he study of the history and symbolism of flags is known as square flag or banner. Numerous books have been written about the f",
+            "before": "School Projects VEXILLOLOGY from the Latin word, VEXILLUM which means a",
+            "tag": "sub",
+            "text": "T"
+          }
+        ],
+        "remainingProseOrderUnchanged": true
+      }
+    ]
+  },
+  {
+    "case": "cdc-zombie-pandemic-2011",
+    "beforeEPUBSHA256": "00d9bc38122eea241c2c6f8aa19d5c408b6a90f0357e8ae87fab035cd3619b78",
+    "afterEPUBSHA256": "0b47804e8c6142ab65f8194dc940c5fbac335fd749ad596cafd382449760c192",
+    "imageCount": 42,
+    "identicalImageBytesAndPageOrder": true,
+    "parsedPageCount": 42,
+    "changes": []
+  },
+  {
+    "case": "cia-blue-book-14-1955",
+    "beforeEPUBSHA256": "f75704369444210e00e9f69872b2380e5316c1b9dfa56d201b530e7a71a8a6b1",
+    "afterEPUBSHA256": "d42cc5635124aa041e5902e64e61b46e3335c9a9b45059267d6adc5a27f183f7",
+    "imageCount": 422,
+    "identicalImageBytesAndPageOrder": true,
+    "parsedPageCount": 312,
+    "changes": []
+  }
+]

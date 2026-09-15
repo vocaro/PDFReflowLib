@@ -28,7 +28,7 @@ see [corpus instructions](corpus.md). Large originals and output EPUBs remain gi
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 160 targeted checks on 45 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 186 targeted checks on 48 reviewed pages
 across eight books: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic and Blue Book. All source-page anchors must also remain complete and ordered, and semantic
 text must contain no image attachment placeholders.
@@ -235,3 +235,19 @@ emphasis. Full-book contracts check both algebra exponents and four FAA V-speed 
 source context. This preserves detected styles; it does not validate every script inference,
 repair exercise grouping, reconstruct semantic lists or establish chapter-scoped endnote links.
 See [the source review and complete corpus comparison](../measurements/preformatted-styles/record.md).
+
+
+## Decorative drop caps
+
+`DropCapTests.swift` uses Our Flag pages 7/9/27/30/31 to protect opening-line order, paragraph
+classification, genuine headings, full ink bounds, a preserved numeric table, a mid-page
+hyphen continuation and real superscripts beside a drop cap. Synthetic controls reject
+ordinary initials/scripts, multi-letter labels, uppercase/short continuations, inconsistent
+font/baseline evidence, missing attributes and monospaced text. Offset bounds and inadequate
+geometry cannot silently corrupt the source ink rectangle.
+
+The full corpus checks body semantics/order on these pages and fraction scripts on page 30.
+The [drop-cap evidence](../measurements/drop-cap-order/record.md) records before failures and a
+strict comparison: only the supported Our Flag openings move/change classification, with one
+source-reviewed existing hyphen repair; other page content and all image bytes remain unchanged.
+This does not qualify tag consumption, initial-word repair or complete paragraph grouping.

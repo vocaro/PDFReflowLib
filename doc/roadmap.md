@@ -65,8 +65,8 @@ physical-device memory/performance remain unqualified.
 - The 56-page Our Flag booklet supplies a quick illustrated baseline with ten checked table rows.
   Its populated structure tree has Marked=false and lacks table roles and figure alternate text.
   Implement [validated tag consumption with spatial fallback](https://github.com/vocaro/PDFReflowLib/issues/17)
-  and general table semantics; correct drop-cap
-  ordering and flag image/name/description groups. The [baseline](../measurements/gpo-our-flag-2003/record.md)
+  and general table semantics; qualify remaining drop-cap layouts
+  and flag image/name/description groups. The [baseline](../measurements/gpo-our-flag-2003/record.md)
   passes validity, progress and the 192 MiB Mac RSS gate. Its page-27 numeric table is preserved
   as a warned image; tag consumption and drop-cap/figure ownership remain unqualified.
 
@@ -135,3 +135,10 @@ and EPUB packing/navigation checks cover this additional script-loss path. See
 [preformatted-style evidence](../measurements/preformatted-styles/record.md). Numbered exercise
 layout, semantic lists and endnote ownership/links (#11) remain open; preserving styles does not
 resolve those relationships.
+
+
+Bounded native drop-cap layout under #17 keeps the first body line before its continuation,
+uses body typography for heading classification and avoids styling the decorative initial as a
+subscript. Full ink bounds remain available for preservation. Our Flag source regressions and
+[complete corpus evidence](../measurements/drop-cap-order/record.md) cover the supported pattern;
+initial-word spacing, broader paragraph grouping and actual structure-tree consumption remain open.

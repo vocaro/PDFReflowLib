@@ -380,7 +380,7 @@
     {
       "id": "gpo-our-flag-2003",
       "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
-      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified.",
+      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap.",
       "pages": [
         {
           "page": 27,
@@ -393,6 +393,14 @@
           "minimumImages": 3,
           "warningCodesAnyOf": [
             "imageRegion"
+          ],
+          "paragraphs": [
+            "life of your flag depends on your care.",
+            "size of the flag is determined by the exposed height"
+          ],
+          "headings": [
+            "Care of Your Flag",
+            "Sizes of Flags"
           ]
         },
         {
@@ -403,7 +411,15 @@
           "absentText": [
             "Burial Flagfor a Veteran"
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "orderedText": [
+            "honorably discharged veteran is entitled to a burial flag.",
+            "The funeral director",
+            "necessary arrangements for the family on behalf of the veteran."
+          ],
+          "paragraphs": [
+            "honorably discharged veteran is entitled to a burial flag."
+          ]
         },
         {
           "page": 33,
@@ -444,6 +460,63 @@
             "WEST VIRGINIA"
           ],
           "minimumImages": 4
+        },
+        {
+          "page": 7,
+          "orderedText": [
+            "Stars and Stripes originated as a result of a resolution",
+            "adopted by the Marine Committee of the Second",
+            "Continental Congress at Philadelphia on June 14, 1777."
+          ],
+          "paragraphs": [
+            "Stars and Stripes originated as a result of a resolution"
+          ],
+          "headings": [
+            "The History of the Stars and Stripes"
+          ]
+        },
+        {
+          "page": 9,
+          "orderedText": [
+            "first flag of the colonists to have any resemblance to the",
+            "present Stars and Stripes was the Grand Union Flag,",
+            "sometimes referred to as the Congress Colors"
+          ],
+          "paragraphs": [
+            "first flag of the colonists to have any resemblance to the"
+          ],
+          "headings": [
+            "The Grand Union Flag"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 30,
+          "orderedText": [
+            "American War Mothers is a national organization chartered",
+            "by Congress with its headquarters in Washington, DC.",
+            "members are mothers whose sons and daughters have served"
+          ],
+          "paragraphs": [
+            "American War Mothers is a national organization chartered"
+          ],
+          "headings": [
+            "American War Mothers Flag"
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "1",
+              "before": "These figures are 2",
+              "after": "⁄2 inches in blue."
+            },
+            {
+              "tag": "sup",
+              "text": "1",
+              "before": "These figures are 2",
+              "after": "⁄2 inches high in gold."
+            }
+          ]
         }
       ]
     },

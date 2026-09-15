@@ -119,7 +119,7 @@ enum LayoutReconstructor {
         // Preserve existing modest-size headings, but reject candidates within 10% of the
         // supported reflowable body size. This only narrows the original page-size heuristic.
         let headingThreshold = max(body * 1.25, headingBodySize(lines, pageBody: body) * 1.1)
-        let elements = ordered(lines.map { Element(rect: $0.rect, line: $0) }
+        let elements = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
             + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: body)
         var result: [ReflowBlock] = []
         var paragraph = InlineText()

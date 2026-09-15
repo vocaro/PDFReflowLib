@@ -61,7 +61,13 @@ can run without calling `EPUBWriter`, as the direct PDF-to-model test demonstrat
 `NativeTextReader` obtains PDFKit line selections, geometry and attributed runs; it immediately
 copies text and style flags into values. Explicit Core Text/Foundation baseline offsets preserve
 inline scripts; tiny positioning noise and full-line OCR offsets do not become script styles.
-Font size alone does not establish a superscript. When adjacent similarly sized attributed runs
+Font size alone does not establish a superscript. A bounded native drop-cap pattern uses the
+following body runs' font size and a top-aligned body-height `readingRect` for ordering. The
+original `rect` remains the full ink bounds for graphic intersections and crop preservation;
+paragraph-join geometry is unchanged. A lowered oversized single initial followed by substantial,
+consistently sized, normal-baseline prose supplies the evidence. It is not an inline subscript.
+Ambiguous styles, monospaced initials and missing native attributes do not supply this evidence.
+Initial-word spacing and PDF structure-tag consumption are separate concerns. When adjacent similarly sized attributed runs
 jump by more than the inline-script range and one carries a full-line offset, native extraction
 inserts a missing word boundary. Existing whitespace and line-ending hyphens remain unchanged;
 drop caps with different sizes and opposite inline scripts do not supply this evidence. This

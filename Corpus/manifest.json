@@ -555,6 +555,70 @@
         }
       ],
       "structureCaveat": "Populated StructTreeRoot with MarkInfo.Marked=false; no Table/TR/TH/TD roles or Figure Alt text. Tag associations require validation; current converter does not consume the tree."
+    },
+    {
+      "id": "cdc-zombie-pandemic-2011",
+      "title": "Preparedness 101: Zombie Pandemic",
+      "author": "Maggie Silver, James Archer, Bob Hobbs, Alissa Eckert and Mark Conner; CDC",
+      "publicationYear": 2011,
+      "url": "https://stacks.cdc.gov/view/cdc/6023",
+      "downloadURL": "https://stacks.cdc.gov/view/cdc/6023/cdc_6023_DS1.pdf",
+      "filename": "cdc_6023_DS1.pdf",
+      "bytes": 8448697,
+      "sha256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
+      "publisherSHA512": "5c75d416bb4da2aa6d61a5153f47b13d78208d50a55b63b8f6df1120ca1bd7e3e8a26140cf584f3640ede07d07dc8543b21a8c6c23e52855e9d8d5815624ae84",
+      "pages": 42,
+      "role": "development",
+      "identity": {
+        "suppliedBy": "owner"
+      },
+      "provenance": "Owner-supplied PDF. CDC Stacks record links this PDF and supplies the matching SHA-512.",
+      "rightsBasis": "CDC Stacks declares Public Domain. Attribution retained; document is not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "publisher-declared",
+        "scope": "CDC Stacks Public Domain declaration; no new owner confirmation or shipped-catalog admission."
+      },
+      "coverage": [
+        "comic panels and speech balloons",
+        "dialogue embedded in artwork",
+        "sparse and noisy inherited OCR",
+        "image-only pages",
+        "speaker and panel reading order",
+        "illustrated checklist"
+      ],
+      "reviewPages": [
+        3,
+        5,
+        13,
+        16,
+        21,
+        37,
+        39
+      ],
+      "reviewStatus": "EPUBCheck, progress and 512 MiB Mac RSS gate pass. Source and comparison spot checks expose damaged inherited dialogue on page 5 and fresh-OCR panel ordering on page 13. Whole-comic fidelity is unqualified.",
+      "ownerReportedFindings": [
+        {
+          "finding": "Approximately 2000 extracted words across 42 pages; dialogue is part of the artwork.",
+          "status": "Owner-reported estimate; independent pypdf 6.10.0 extraction yields 3341 whitespace-delimited tokens, including damaged OCR, not a reliable dialogue word count."
+        }
+      ],
+      "memoryBudget": {
+        "maxPeakRSSMiB": 512,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+      },
+      "downloadVerification": "Publisher SHA-512 matches owner-supplied original; automatic fresh fetch returns HTTP 403. Seed the ignored cache manually; Tools/fetch_corpus.py verifies exact bytes offline. See measurements/cdc-zombie-pandemic-2011/download-status.json.",
+      "knownFidelityIssues": [
+        {
+          "page": 5,
+          "issue": "Damaged existing text and omitted small balloon survive without a suspect-text warning; complete artwork is present as an image.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/7"
+        },
+        {
+          "page": 13,
+          "issue": "Fresh OCR places lower-left panel dialogue before upper-right dialogue and promotes speech to headings.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/18"
+        }
+      ]
     }
   ]
 }

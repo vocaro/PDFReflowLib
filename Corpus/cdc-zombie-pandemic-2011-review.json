@@ -1,0 +1,43 @@
+{
+  "case": "cdc-zombie-pandemic-2011",
+  "qualifiedForFidelity": false,
+  "pageNumbering": "Physical PDF pages, one-based",
+  "reviewPoints": [
+    {
+      "page": 3,
+      "target": "Credits and opening conversation",
+      "acceptance": "Keep credits separate from dialogue and retain each balloon with its speaker/panel."
+    },
+    {
+      "page": 5,
+      "target": "Television narrative and small reaction balloon",
+      "acceptance": "Preserve the small upper-right HUH?! balloon, readable narrative text, and panel order; warn on damaged inherited text."
+    },
+    {
+      "page": 13,
+      "target": "Image-only awakening scene",
+      "acceptance": "Read the upper-right awakening exchange before the lower-left response and final lower-right reaction; speech is not a section heading."
+    },
+    {
+      "page": 16,
+      "target": "Image-only artwork",
+      "acceptance": "Do not count noisy incidental sign recognition as complete dialogue or visual-content recovery."
+    },
+    {
+      "page": 21,
+      "target": "Dense dialogue",
+      "acceptance": "Preserve all balloons with panel and speaker associations."
+    },
+    {
+      "page": 37,
+      "target": "Late narrative",
+      "acceptance": "Keep narrative ending and illustrations in order."
+    },
+    {
+      "page": 39,
+      "target": "Emergency checklist",
+      "acceptance": "Preserve checklist items and grouping separately from comic dialogue."
+    }
+  ],
+  "scope": "Manual targets for future regressions; current converter fails page 5 text quality and page 13 narrative order. No whole-book transcript reference."
+}

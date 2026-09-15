@@ -53,3 +53,8 @@ physical-device memory/performance remain unqualified.
   and [table preservation](https://github.com/vocaro/PDFReflowLib/issues/16); correct drop-cap
   ordering and flag image/name/description groups. The [baseline](../measurements/gpo-our-flag-2003/record.md)
   passes validity, progress and the 192 MiB Mac RSS gate, but fails those fidelity targets.
+
+- The 42-page CDC Zombie Pandemic comic adds sparse/noisy text and image-only speech balloons.
+  Detect suspect inherited dialogue and preserve [panel/balloon order](https://github.com/vocaro/PDFReflowLib/issues/18)
+  or clearly signal readable image fallback. The [baseline](../measurements/cdc-zombie-pandemic-2011/record.md)
+  passes validity, progress and the 512 MiB Mac RSS gate; dialogue quality remains unqualified.

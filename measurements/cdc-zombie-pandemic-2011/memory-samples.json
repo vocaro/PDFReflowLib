@@ -1,0 +1,398 @@
+[
+  {
+    "seconds": 0.002002542001719121,
+    "progress": "starting",
+    "residentBytes": 131072,
+    "physicalFootprintBytes": 180344
+  },
+  {
+    "seconds": 0.10717250000016065,
+    "progress": "3% recognizing page 2/42",
+    "residentBytes": 51167232,
+    "physicalFootprintBytes": 26051352
+  },
+  {
+    "seconds": 0.20792808400074136,
+    "progress": "17% recognizing page 13/42",
+    "residentBytes": 79544320,
+    "physicalFootprintBytes": 162104136
+  },
+  {
+    "seconds": 0.3113740000007965,
+    "progress": "17% recognizing page 13/42",
+    "residentBytes": 86523904,
+    "physicalFootprintBytes": 170509152
+  },
+  {
+    "seconds": 0.41646691700225347,
+    "progress": "20% recognizing page 15/42",
+    "residentBytes": 115687424,
+    "physicalFootprintBytes": 188826536
+  },
+  {
+    "seconds": 0.5215656250002212,
+    "progress": "20% recognizing page 15/42",
+    "residentBytes": 104169472,
+    "physicalFootprintBytes": 173982608
+  },
+  {
+    "seconds": 0.6266805000013846,
+    "progress": "21% recognizing page 16/42",
+    "residentBytes": 110166016,
+    "physicalFootprintBytes": 177849256
+  },
+  {
+    "seconds": 0.731728667000425,
+    "progress": "22% recognizing page 17/42",
+    "residentBytes": 108576768,
+    "physicalFootprintBytes": 172082088
+  },
+  {
+    "seconds": 0.8368057920015417,
+    "progress": "22% recognizing page 17/42",
+    "residentBytes": 106856448,
+    "physicalFootprintBytes": 167478184
+  },
+  {
+    "seconds": 0.9419000420020893,
+    "progress": "22% recognizing page 17/42",
+    "residentBytes": 120225792,
+    "physicalFootprintBytes": 177603496
+  },
+  {
+    "seconds": 1.0471547920024022,
+    "progress": "47% recognizing page 36/42",
+    "residentBytes": 132104192,
+    "physicalFootprintBytes": 191366056
+  },
+  {
+    "seconds": 1.1522417500018491,
+    "progress": "47% recognizing page 36/42",
+    "residentBytes": 131416064,
+    "physicalFootprintBytes": 185041880
+  },
+  {
+    "seconds": 1.254092250001122,
+    "progress": "53% recognizing page 40/42",
+    "residentBytes": 160301056,
+    "physicalFootprintBytes": 215499760
+  },
+  {
+    "seconds": 1.3591692920017522,
+    "progress": "54% recognizing page 41/42",
+    "residentBytes": 160645120,
+    "physicalFootprintBytes": 216237040
+  },
+  {
+    "seconds": 1.4642411670029105,
+    "progress": "57% extracting page 42/42",
+    "residentBytes": 145031168,
+    "physicalFootprintBytes": 199214040
+  },
+  {
+    "seconds": 1.569315209002525,
+    "progress": "58% reconstructing page 2/42",
+    "residentBytes": 139132928,
+    "physicalFootprintBytes": 193086424
+  },
+  {
+    "seconds": 1.6743800420008483,
+    "progress": "58% reconstructing page 3/42",
+    "residentBytes": 150945792,
+    "physicalFootprintBytes": 196281304
+  },
+  {
+    "seconds": 1.7794502500000817,
+    "progress": "59% reconstructing page 4/42",
+    "residentBytes": 160808960,
+    "physicalFootprintBytes": 197493744
+  },
+  {
+    "seconds": 1.8845228339996538,
+    "progress": "59% reconstructing page 5/42",
+    "residentBytes": 171851776,
+    "physicalFootprintBytes": 199853040
+  },
+  {
+    "seconds": 1.9895830420027778,
+    "progress": "60% reconstructing page 6/42",
+    "residentBytes": 180846592,
+    "physicalFootprintBytes": 199705608
+  },
+  {
+    "seconds": 2.0946450420015026,
+    "progress": "61% reconstructing page 7/42",
+    "residentBytes": 190038016,
+    "physicalFootprintBytes": 200246280
+  },
+  {
+    "seconds": 2.1997023340009036,
+    "progress": "61% reconstructing page 8/42",
+    "residentBytes": 198180864,
+    "physicalFootprintBytes": 201180168
+  },
+  {
+    "seconds": 2.3047509170028206,
+    "progress": "62% reconstructing page 9/42",
+    "residentBytes": 207945728,
+    "physicalFootprintBytes": 200754208
+  },
+  {
+    "seconds": 2.40980487500201,
+    "progress": "62% reconstructing page 10/42",
+    "residentBytes": 216645632,
+    "physicalFootprintBytes": 91718688
+  },
+  {
+    "seconds": 2.5148560000016005,
+    "progress": "64% reconstructing page 12/42",
+    "residentBytes": 221609984,
+    "physicalFootprintBytes": 87999544
+  },
+  {
+    "seconds": 2.619925917002547,
+    "progress": "64% reconstructing page 13/42",
+    "residentBytes": 254590976,
+    "physicalFootprintBytes": 106136632
+  },
+  {
+    "seconds": 2.724990667000384,
+    "progress": "65% reconstructing page 14/42",
+    "residentBytes": 240959488,
+    "physicalFootprintBytes": 81462352
+  },
+  {
+    "seconds": 2.830059625001013,
+    "progress": "65% reconstructing page 15/42",
+    "residentBytes": 250691584,
+    "physicalFootprintBytes": 86770768
+  },
+  {
+    "seconds": 2.935068124999816,
+    "progress": "67% reconstructing page 17/42",
+    "residentBytes": 260063232,
+    "physicalFootprintBytes": 84739176
+  },
+  {
+    "seconds": 3.0358559590022196,
+    "progress": "67% reconstructing page 18/42",
+    "residentBytes": 269811712,
+    "physicalFootprintBytes": 85804136
+  },
+  {
+    "seconds": 3.1409052920025715,
+    "progress": "68% reconstructing page 19/42",
+    "residentBytes": 279560192,
+    "physicalFootprintBytes": 86885480
+  },
+  {
+    "seconds": 3.245949500000279,
+    "progress": "68% reconstructing page 20/42",
+    "residentBytes": 287244288,
+    "physicalFootprintBytes": 85640320
+  },
+  {
+    "seconds": 3.3509932920023857,
+    "progress": "69% reconstructing page 21/42",
+    "residentBytes": 298008576,
+    "physicalFootprintBytes": 87737472
+  },
+  {
+    "seconds": 3.4560372090018063,
+    "progress": "70% reconstructing page 22/42",
+    "residentBytes": 307806208,
+    "physicalFootprintBytes": 88818816
+  },
+  {
+    "seconds": 3.5611020420001296,
+    "progress": "70% reconstructing page 23/42",
+    "residentBytes": 317620224,
+    "physicalFootprintBytes": 89900184
+  },
+  {
+    "seconds": 3.6661579169995093,
+    "progress": "71% reconstructing page 24/42",
+    "residentBytes": 325337088,
+    "physicalFootprintBytes": 90981528
+  },
+  {
+    "seconds": 3.771214084001258,
+    "progress": "71% reconstructing page 25/42",
+    "residentBytes": 334086144,
+    "physicalFootprintBytes": 91014320
+  },
+  {
+    "seconds": 3.8762762090009346,
+    "progress": "72% reconstructing page 26/42",
+    "residentBytes": 343932928,
+    "physicalFootprintBytes": 92112048
+  },
+  {
+    "seconds": 3.98134950000167,
+    "progress": "73% reconstructing page 27/42",
+    "residentBytes": 353779712,
+    "physicalFootprintBytes": 93209776
+  },
+  {
+    "seconds": 4.086415208999824,
+    "progress": "73% reconstructing page 28/42",
+    "residentBytes": 351043584,
+    "physicalFootprintBytes": 81773744
+  },
+  {
+    "seconds": 4.191498334002972,
+    "progress": "74% reconstructing page 30/42",
+    "residentBytes": 351944704,
+    "physicalFootprintBytes": 87016624
+  },
+  {
+    "seconds": 4.2965596670001105,
+    "progress": "75% reconstructing page 31/42",
+    "residentBytes": 352157696,
+    "physicalFootprintBytes": 82052296
+  },
+  {
+    "seconds": 4.401641250002285,
+    "progress": "76% reconstructing page 32/42",
+    "residentBytes": 367951872,
+    "physicalFootprintBytes": 95978696
+  },
+  {
+    "seconds": 4.5067022500006715,
+    "progress": "76% reconstructing page 33/42",
+    "residentBytes": 361463808,
+    "physicalFootprintBytes": 80741576
+  },
+  {
+    "seconds": 4.611774084001809,
+    "progress": "77% reconstructing page 34/42",
+    "residentBytes": 343572480,
+    "physicalFootprintBytes": 51692744
+  },
+  {
+    "seconds": 4.71683695899992,
+    "progress": "78% reconstructing page 36/42",
+    "residentBytes": 362659840,
+    "physicalFootprintBytes": 74499272
+  },
+  {
+    "seconds": 4.821894125001563,
+    "progress": "79% reconstructing page 38/42",
+    "residentBytes": 354533376,
+    "physicalFootprintBytes": 74564808
+  },
+  {
+    "seconds": 4.924529334002727,
+    "progress": "80% reconstructing page 39/42",
+    "residentBytes": 349765632,
+    "physicalFootprintBytes": 69747912
+  },
+  {
+    "seconds": 5.029580166999949,
+    "progress": "91% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 70960304
+  },
+  {
+    "seconds": 5.1300685000023805,
+    "progress": "92% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 70960304
+  },
+  {
+    "seconds": 5.2351364999994985,
+    "progress": "92% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 70960304
+  },
+  {
+    "seconds": 5.34019766700294,
+    "progress": "92% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 70960304
+  },
+  {
+    "seconds": 5.44105920900256,
+    "progress": "93% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 70960304
+  },
+  {
+    "seconds": 5.546108500002447,
+    "progress": "93% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 70960304
+  },
+  {
+    "seconds": 5.65117037500022,
+    "progress": "93% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 69338288
+  },
+  {
+    "seconds": 5.756224542001291,
+    "progress": "94% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 69338288
+  },
+  {
+    "seconds": 5.861289459000545,
+    "progress": "94% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 69338288
+  },
+  {
+    "seconds": 5.966345584001829,
+    "progress": "94% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 69338288
+  },
+  {
+    "seconds": 6.071383209000487,
+    "progress": "95% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 69338288
+  },
+  {
+    "seconds": 6.176420167001197,
+    "progress": "95% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 69338288
+  },
+  {
+    "seconds": 6.2814591669994115,
+    "progress": "95% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 69338288
+  },
+  {
+    "seconds": 6.386488000000099,
+    "progress": "96% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 69338288
+  },
+  {
+    "seconds": 6.491531084000599,
+    "progress": "96% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 69338288
+  },
+  {
+    "seconds": 6.59656833400004,
+    "progress": "96% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 69338288
+  },
+  {
+    "seconds": 6.701602667002589,
+    "progress": "97% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 69338288
+  },
+  {
+    "seconds": 6.806633916999999,
+    "progress": "97% writing",
+    "residentBytes": 350732288,
+    "physicalFootprintBytes": 69338288
+  }
+]

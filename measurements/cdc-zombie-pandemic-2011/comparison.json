@@ -1,0 +1,731 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "sourceName": "cdc_6023_DS1.pdf",
+  "commands": [
+    {
+      "command": [
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/corpus-cli/out/Products/Release/pdf-reflow",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pdfreflow.epub"
+      ],
+      "seconds": 7.003604875000747,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "3",
+        "-l",
+        "3",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/3/simple.html"
+      ],
+      "seconds": 0.1070442499985802,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "3",
+        "-l",
+        "3",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/3/positioned.html"
+      ],
+      "seconds": 0.6288407920001191,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "3",
+        "-l",
+        "3",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/3/source"
+      ],
+      "seconds": 0.842674250001437,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "5",
+        "-l",
+        "5",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/5/simple.html"
+      ],
+      "seconds": 0.10779654199723154,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "5",
+        "-l",
+        "5",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/5/positioned.html"
+      ],
+      "seconds": 0.7341514580002695,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "5",
+        "-l",
+        "5",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/5/source"
+      ],
+      "seconds": 1.0429192500014324,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "13",
+        "-l",
+        "13",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/13/simple.html"
+      ],
+      "seconds": 0.10773204200086184,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "13",
+        "-l",
+        "13",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/13/positioned.html"
+      ],
+      "seconds": 0.736867457999324,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "13",
+        "-l",
+        "13",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/13/source"
+      ],
+      "seconds": 0.947879457999079,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "16",
+        "-l",
+        "16",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/16/simple.html"
+      ],
+      "seconds": 0.1068902499973774,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "16",
+        "-l",
+        "16",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/16/positioned.html"
+      ],
+      "seconds": 0.4178025830005936,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "16",
+        "-l",
+        "16",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/16/source"
+      ],
+      "seconds": 1.0528052919980837,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "21",
+        "-l",
+        "21",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/21/simple.html"
+      ],
+      "seconds": 0.10696808400098234,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "21",
+        "-l",
+        "21",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/21/positioned.html"
+      ],
+      "seconds": 0.6324327500005893,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "21",
+        "-l",
+        "21",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/21/source"
+      ],
+      "seconds": 0.9473442910020822,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "37",
+        "-l",
+        "37",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/37/simple.html"
+      ],
+      "seconds": 0.20859316600035527,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "37",
+        "-l",
+        "37",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/37/positioned.html"
+      ],
+      "seconds": 0.1070590830022411,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "37",
+        "-l",
+        "37",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/37/source"
+      ],
+      "seconds": 0.10713629200108699,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "39",
+        "-l",
+        "39",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/39/simple.html"
+      ],
+      "seconds": 0.1050208329979796,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftohtml",
+        "-f",
+        "39",
+        "-l",
+        "39",
+        "-noframes",
+        "-enc",
+        "UTF-8",
+        "-c",
+        "-s",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/39/positioned.html"
+      ],
+      "seconds": 0.3131622500004596,
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/Cellar/poppler/26.04.0/bin/pdftoppm",
+        "-f",
+        "39",
+        "-l",
+        "39",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "-png",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/input.pdf",
+        "/Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pages/39/source"
+      ],
+      "seconds": 0.42215637499975855,
+      "exitCode": 0
+    }
+  ],
+  "pages": [
+    {
+      "number": 3,
+      "epub": "epub/EPUB/chapter-1.html#page-3",
+      "simple": "pages/3/simple.html",
+      "positioned": "pages/3/positioned.html",
+      "source": "pages/3/source.png"
+    },
+    {
+      "number": 5,
+      "epub": "epub/EPUB/chapter-1.html#page-5",
+      "simple": "pages/5/simple.html",
+      "positioned": "pages/5/positioned.html",
+      "source": "pages/5/source.png"
+    },
+    {
+      "number": 13,
+      "epub": "epub/EPUB/chapter-1.html#page-13",
+      "simple": "pages/13/simple.html",
+      "positioned": "pages/13/positioned.html",
+      "source": "pages/13/source.png"
+    },
+    {
+      "number": 16,
+      "epub": "epub/EPUB/chapter-1.html#page-16",
+      "simple": "pages/16/simple.html",
+      "positioned": "pages/16/positioned.html",
+      "source": "pages/16/source.png"
+    },
+    {
+      "number": 21,
+      "epub": "epub/EPUB/chapter-1.html#page-21",
+      "simple": "pages/21/simple.html",
+      "positioned": "pages/21/positioned.html",
+      "source": "pages/21/source.png"
+    },
+    {
+      "number": 37,
+      "epub": "epub/EPUB/chapter-1.html#page-37",
+      "simple": "pages/37/simple.html",
+      "positioned": "pages/37/positioned.html",
+      "source": "pages/37/source.png"
+    },
+    {
+      "number": 39,
+      "epub": "epub/EPUB/chapter-1.html#page-39",
+      "simple": "pages/39/simple.html",
+      "positioned": "pages/39/positioned.html",
+      "source": "pages/39/source.png"
+    }
+  ],
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "source": {
+    "bytes": 8448697,
+    "sha256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3"
+  },
+  "converter": {
+    "path": "/Users/trevorharmon/Development/PDFReflowLib/.build/corpus-cli/out/Products/Release/pdf-reflow",
+    "bytes": 864344,
+    "sha256": "9fed7af9cb6872ef13a596f1df9512fb9236e66a67e43db96e3637a9eeb4a0e8"
+  },
+  "harness": {
+    "compare_pdf.py": {
+      "bytes": 12039,
+      "sha256": "c4841ba4a964707265758815dbac6036dd42e20337ef3e7caa1c9fae900a4013"
+    },
+    "serve_comparison.py": {
+      "bytes": 2884,
+      "sha256": "0e88e2a5bdbf3d7ec5353019725a036e6c5f1f759bd039c490eca807a588d389"
+    },
+    "comparison/index.html": {
+      "bytes": 3787,
+      "sha256": "2a36074ea68fb337a3ec5e57d5c3c637d73c819bdbeabdcf73492ae48a4d72b9"
+    },
+    "comparison/viewer.css": {
+      "bytes": 2834,
+      "sha256": "d5aea5b08898f2798f3884ef88510f32a54126a9affeb993310a9063693e10a3"
+    },
+    "comparison/viewer.js": {
+      "bytes": 6856,
+      "sha256": "bd20b93c03783be3fee134221a48fd9ff3c54c710b74a8af21949dbe263bb260"
+    }
+  },
+  "popplerVersion": "pdftohtml version 26.04.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1999-2003 Gueorgui Ovtcharov and Rainer Dorsch\nCopyright 1996-2011, 2022 Glyph & Cog, LLC",
+  "pageCount": 42,
+  "report": {
+    "imageCount": 42,
+    "outputURL": "file:///Users/trevorharmon/Development/PDFReflowLib/.build/cdc-comic-comparison/pdfreflow.epub",
+    "pageCount": 42,
+    "recognizedPageCount": 9,
+    "reflowedPageCount": 38,
+    "warnings": [
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 2
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 13
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 15
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 16
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 17
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 36
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 38
+      },
+      {
+        "code": "annotationsNotConverted",
+        "message": "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+        "page": 39
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 40
+      },
+      {
+        "code": "ocrUsed",
+        "message": "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+        "page": 41
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 1
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 2
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 3
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 4
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 5
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 6
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 7
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 8
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 9
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 10
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 11
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 12
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 13
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 14
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 15
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 16
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 17
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 18
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 19
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 20
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 21
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 22
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 23
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 24
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 25
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 26
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 27
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 28
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 29
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 30
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 31
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 32
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 33
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 34
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 35
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 36
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 37
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 38
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 39
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 40
+      },
+      {
+        "code": "pageImageFallback",
+        "message": "This page is preserved as an image and does not reflow.",
+        "page": 41
+      },
+      {
+        "code": "imageRegion",
+        "message": "A source-page reference image accompanies reflowed text to preserve all visual content.",
+        "page": 42
+      }
+    ]
+  },
+  "epub": {
+    "bytes": 149719122,
+    "sha256": "4fc30cc5648f855a595aff5f535b1ce76d5f02784c4b9a3a2ee733cd6094ab7a"
+  }
+}

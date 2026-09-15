@@ -30,6 +30,7 @@ work offline. Tests and conversion never fetch sources automatically.
 | `dga-2025-2030` | 10 | Illustrated section bands, gradients, bullet columns and callouts | 192 MiB |
 | `noaa-nca5-2023` | 1,834 | Large tagged report, mixed orientations, 32 chapter starts, uneven graphics | Unset: default conversion fails |
 | `gpo-our-flag-2003` | 56 | Structure-tree inconsistencies, flag illustrations, drop capitals, one visible table | 192 MiB |
+| `cdc-zombie-pandemic-2011` | 42 | Comic artwork, noisy inherited text, image-only dialogue, panel order | 512 MiB |
 
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
@@ -255,3 +256,28 @@ include all ten table rows and meaning-bearing flag groups. Table flattening, dr
 and interleaved state descriptions remain failures. [Table preservation #16](https://github.com/vocaro/PDFReflowLib/issues/16)
 and [validated tag consumption #17](https://github.com/vocaro/PDFReflowLib/issues/17) track distinct
 requirements; existing issues #2 and #12 contain the column/heading reproductions.
+
+
+## Preparedness 101: Zombie Pandemic
+
+The CDC graphic novel tests dialogue embedded in artwork, damaged existing extraction and
+panel reading order. The publisher declares Public Domain and supplies a SHA-512 matching the
+owner's PDF. The automated endpoint returns HTTP 403; manually place the original in
+`Corpus/cache/cdc_6023_DS1.pdf`. The fetch command verifies that cached identity offline.
+
+```sh
+python3 Tools/fetch_corpus.py --case cdc-zombie-pandemic-2011
+swift build -c release --scratch-path .build/corpus-cli
+python3 Tools/evaluate-real-document.py --case cdc-zombie-pandemic-2011 \
+  --pdf Corpus/cache/cdc_6023_DS1.pdf --converter .build/corpus-cli/release/pdf-reflow \
+  --output /tmp/cdc-comic-baseline --epubcheck /opt/homebrew/bin/epubcheck
+scripts/compare-pdf-reflow.sh --pdf Corpus/cache/cdc_6023_DS1.pdf \
+  --pages 3,5,13,16,21,37,39 --output /tmp/cdc-comic-review --serve
+```
+
+The [baseline](../measurements/cdc-zombie-pandemic-2011/record.md) passes EPUB validity,
+progress and the 512 MiB Mac RSS gate, retaining 42 page images. The
+[review targets](../Corpus/cdc-zombie-pandemic-2011-review.json) expose damaged existing dialogue
+on page 5 and fresh-OCR panel-order failure on page 13. [Suspect text #7](https://github.com/vocaro/PDFReflowLib/issues/7)
+and [comic grouping #18](https://github.com/vocaro/PDFReflowLib/issues/18) track those gaps.
+The measured 3,341 extracted whitespace tokens include OCR noise; they are not dialogue coverage.

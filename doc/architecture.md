@@ -65,13 +65,17 @@ can run without calling `EPUBWriter`, as the direct PDF-to-model test demonstrat
 `NativeTextReader` obtains PDFKit line selections, geometry and attributed runs; it immediately
 copies text and style flags into values. A process-wide library lock serializes this synchronous
 page-extraction step across converter instances to mitigate the observed PDFKit `NSFont` exception
-under concurrent attributed extraction (#21). Cancellation is checked before waiting and after
-acquisition; the lock wait itself is not cancellable. Concurrent imports trade extraction
+under concurrent attributed extraction (#21). Cancellation is checked before acquisition,
+between 50 ms timed waits while the lock is contended, and after acquisition. A cancelled
+waiter can return while another extraction still holds the lock; a PDFKit call already
+executing cannot be interrupted. The wait interval is not a hard cancellation-latency guarantee,
+and each timed wait still blocks its worker thread. Concurrent imports trade extraction
 throughput for serialization. The lock is released before
 progress callbacks, OCR, graphics work and writing. It preserves attributed styles and does not
 marshal work to the main actor. Host PDFKit calls outside `NativeTextReader` do not participate
 in the lock, so this is a bounded mitigation rather than a framework-wide thread-safety guarantee.
-See [the concurrency evidence](../measurements/pdfkit-concurrency/record.md).
+See [the concurrency evidence](../measurements/pdfkit-concurrency/record.md) and
+[contention cancellation evidence](../measurements/extraction-cancellation/record.md).
 
 Explicit Core Text/Foundation baseline offsets preserve
 inline scripts; tiny positioning noise and full-line OCR offsets do not become script styles.

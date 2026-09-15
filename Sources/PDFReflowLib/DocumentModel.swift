@@ -1,6 +1,14 @@
 import CoreGraphics
 import Foundation
 
+struct TextStructure: Equatable {
+    var group: Int
+    var order: Int
+    /// Zero denotes a paragraph; 1...6 denote the corresponding heading level.
+    var headingLevel: Int
+    var lineCount: Int = 0
+}
+
 // All geometry is in unrotated PDF page space (bottom-left origin). OCR is mapped back here.
 struct TextLine {
     let content: InlineText
@@ -12,6 +20,7 @@ struct TextLine {
     var wraps: Bool?
     // Reading order may use the body line beside a drop cap. Ink bounds remain in rect.
     var readingRect: CGRect?
+    var structure: TextStructure?
 
     init(text: String, rect: CGRect, fontSize: CGFloat, monospaced: Bool = false, wraps: Bool? = nil) {
         self.init(content: InlineText(text), rect: rect, fontSize: fontSize, monospaced: monospaced, wraps: wraps)

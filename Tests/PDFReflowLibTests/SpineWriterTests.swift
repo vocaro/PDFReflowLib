@@ -103,3 +103,16 @@ private actor SpineProgress {
     await #expect(throws: CancellationError.self) { try await task.value }
     #expect(!FileManager.default.fileExists(atPath: cancelled.appendingPathComponent("publication.epub").path))
 }
+
+@Test func headingLevelsSurviveSerializationAndInvalidLevelsAreRejected() async throws {
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    let book = spineBook((1...6).map { .init(content: .heading(id: "h\($0)", text: InlineText("Title & \($0)", style: .italic), level: $0), page: 1) })
+    let chapters = try await writtenChapters(book, directory: dir)
+    for level in 1...6 {
+        #expect(chapters.joined().contains("<h\(level) id=\"h\(level)\"><em>Title &amp; \(level)</em></h\(level)>"))
+    }
+    for level in [0, 7, Int.max] {
+        let invalid = spineBook([.init(content: .heading(id: "bad", text: InlineText("bad"), level: level), page: 1)])
+        #expect(throws: ReflowDocument.ValidationError.invalidHeadingLevel(level)) { try invalid.validate() }
+    }
+}

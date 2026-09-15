@@ -251,3 +251,9 @@ The [drop-cap evidence](../measurements/drop-cap-order/record.md) records before
 strict comparison: only the supported Our Flag openings move/change classification, with one
 source-reviewed existing hyphen repair; other page content and all image bytes remain unchanged.
 This does not qualify tag consumption, initial-word repair or complete paragraph grouping.
+
+The corpus lane also runs `tools/check_structure_memory.py` in a fresh process against the
+checksum-verified FAA source. Its 192 MiB Mac RSS ceiling protects the initial structure index
+from eager loading of sparse ParentTree arrays; `--maximum-rss-mib` overrides the development
+limit. Full conversion retains its separate per-book memory gates. Neither budget qualifies
+physical iPhone/iPad performance.

@@ -64,11 +64,11 @@ physical-device memory/performance remain unqualified.
 
 - The 56-page Our Flag booklet supplies a quick illustrated baseline with ten checked table rows.
   Its populated structure tree has Marked=false and lacks table roles and figure alternate text.
-  Implement [validated tag consumption with spatial fallback](https://github.com/vocaro/PDFReflowLib/issues/17)
-  and general table semantics; qualify remaining drop-cap layouts
+  Extend [validated tag consumption with spatial fallback](https://github.com/vocaro/PDFReflowLib/issues/17)
+  beyond the bounded paragraph/heading phase to table/figure semantics; qualify remaining drop-cap layouts
   and flag image/name/description groups. The [baseline](../measurements/gpo-our-flag-2003/record.md)
   passes validity, progress and the 192 MiB Mac RSS gate. Its page-27 numeric table is preserved
-  as a warned image; tag consumption and drop-cap/figure ownership remain unqualified.
+  as a warned image; full tag semantics and drop-cap/figure ownership remain unqualified.
 
 - The 42-page CDC Zombie Pandemic comic adds sparse/noisy text and image-only speech balloons.
   Detect suspect inherited dialogue and preserve [panel/balloon order](https://github.com/vocaro/PDFReflowLib/issues/18)
@@ -112,7 +112,7 @@ headings (#12). Ten source-layout pages, seven Swift tests and paragraph/heading
 protect body text and modest-size section titles. The [heading evidence](../measurements/heading-body-regressions/record.md)
 includes the failing original case and a rejected threshold change that lost six genuine headings.
 The complete corpus has 145 reviewed content checks across 40 pages. General heading precision,
-PDF tag consumption and table transcription remain unqualified.
+broader tag semantics and table transcription remain unqualified.
 
 EPUB spine packing under #15 counts complete UTF-8 markup before crossing its 60,000-byte body
 target, keeps source-page markers with following content, and isolates oversized atomic blocks.
@@ -141,4 +141,21 @@ Bounded native drop-cap layout under #17 keeps the first body line before its co
 uses body typography for heading classification and avoids styling the decorative initial as a
 subscript. Full ink bounds remain available for preservation. Our Flag source regressions and
 [complete corpus evidence](../measurements/drop-cap-order/record.md) cover the supported pattern;
-initial-word spacing, broader paragraph grouping and actual structure-tree consumption remain open.
+initial-word spacing, broader paragraph grouping and figure ownership remain open.
+
+
+Validated P/H1–H6 tag consumption under #17 has source-derived Our Flag/Fed/FAA checks,
+neutral heading levels, exact page/MCID/ParentTree ownership checks and spatial fallback.
+[The evidence](../measurements/structure-tags/record.md) includes 137 Swift tests on macOS/iOS
+Simulator, 221 content checks on 54 pages, an eight-book comparison with identical images,
+and the rejected caption-order/oversized-heading approach. Deferred ParentTree validation avoids
+eager sparse-array retention; a separate 192 MiB fresh-process FAA index gate protects that stage.
+The complete FAA conversion still has higher RSS than its retained baseline; existing memory
+gates remain unchanged. Full table/figure/alternate-text semantics, Form text, link ownership,
+malformed-authoring coverage and physical-device budgets remain open; #17 is not closed.
+
+
+Investigate the [intermittent PDFKit NSFont exception under concurrent extraction](https://github.com/vocaro/PDFReflowLib/issues/21).
+One synthetic run aborts inside attributed-string creation; its trigger is unconfirmed and
+separate from the memory leak. The [stack and qualification limits](../measurements/structure-tags/record.md)
+are retained; isolating parser unit tests from PDFKit is not a runtime crash mitigation.

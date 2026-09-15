@@ -74,6 +74,8 @@ public struct ConversionProgress: Sendable, Equatable {
 
 public struct ConversionWarning: Sendable, Codable, Equatable {
     public enum Code: String, Sendable, Codable {
+        /// Structure tags cannot safely describe some content; spatial reconstruction remains in use.
+        case structureFallback
         case ocrUsed, ocrFailed, uncertainHyphen, furnitureRemoved
         case imageRegion, pageImageFallback, unsupportedGraphics, emptyPage
         case complexLayout, annotationsNotConverted

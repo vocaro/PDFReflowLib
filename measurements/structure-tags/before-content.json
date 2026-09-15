@@ -1,0 +1,147 @@
+[
+  {
+    "case": "faa-phak-8083-25c",
+    "passed": false,
+    "reviewPages": [
+      16,
+      121,
+      91,
+      511,
+      211,
+      212,
+      50,
+      325,
+      81,
+      191
+    ],
+    "contentChecks": 52,
+    "errors": [
+      "Page 50: missing paragraph 'have been documented as a primary contributor to more than 70 percent of aircraft accidents.'",
+      "Page 50: missing paragraph 'much broader in both its knowledge base and scope.'",
+      "Page 50: missing or reordered text 'both its knowledge base and scope.'",
+      "Page 50: missing or reordered text 'Human Behavior'",
+      "Page 325: missing or reordered text 'ceiling height, weather, and obstructions to visibility'",
+      "Page 325: missing or reordered text 'Significant Weather Prognostic Charts'",
+      "Page 325: missing or reordered text 'low-level significant weather from the surface'",
+      "Page 191: missing paragraph '• Electric fuel pump'",
+      "Page 191: missing paragraph '• Stall warning system'",
+      "Page 191: missing paragraph '• Pitot heat'",
+      "Page 191: missing paragraph '• Starting motor'",
+      "Page 191: missing paragraph 'The ammeter shows if the alternator/ generator is producing an adequate supply of electrical power.'",
+      "Page 191: missing or reordered text 'An ammeter is used to monitor'"
+    ],
+    "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+  },
+  {
+    "case": "wallace-algebra-2010",
+    "passed": true,
+    "reviewPages": [
+      2,
+      12,
+      347,
+      343,
+      26
+    ],
+    "contentChecks": 17,
+    "errors": [],
+    "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+  },
+  {
+    "case": "gpo-911-2004",
+    "passed": true,
+    "reviewPages": [
+      15,
+      19,
+      20,
+      21,
+      65,
+      67,
+      451,
+      472
+    ],
+    "contentChecks": 30,
+    "errors": [],
+    "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+  },
+  {
+    "case": "fed-explained-2021",
+    "passed": false,
+    "reviewPages": [
+      9,
+      13,
+      32,
+      45,
+      46,
+      54,
+      75,
+      77,
+      103,
+      109,
+      123,
+      1
+    ],
+    "contentChecks": 37,
+    "errors": [
+      "Page 1: missing heading 'The Fed Explained What the Central Bank Does'",
+      "Page 1: missing paragraph 'PUBLIC EDUCATION & OUTREACH'"
+    ],
+    "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+  },
+  {
+    "case": "dga-2025-2030",
+    "passed": true,
+    "reviewPages": [
+      1,
+      2,
+      3
+    ],
+    "contentChecks": 9,
+    "errors": [],
+    "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+  },
+  {
+    "case": "gpo-our-flag-2003",
+    "passed": false,
+    "reviewPages": [
+      27,
+      31,
+      33,
+      34,
+      42,
+      43,
+      7,
+      9,
+      30,
+      29
+    ],
+    "contentChecks": 57,
+    "errors": [
+      "Page 29: missing heading 'How to Obtain a Flag Flown Over the Capitol'"
+    ],
+    "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+  },
+  {
+    "case": "cdc-zombie-pandemic-2011",
+    "passed": true,
+    "reviewPages": [
+      5,
+      13,
+      39
+    ],
+    "contentChecks": 10,
+    "errors": [],
+    "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+  },
+  {
+    "case": "cia-blue-book-14-1955",
+    "passed": true,
+    "reviewPages": [
+      12,
+      74,
+      150
+    ],
+    "contentChecks": 9,
+    "errors": [],
+    "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+  }
+]

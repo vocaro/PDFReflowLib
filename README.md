@@ -90,6 +90,10 @@ that fall back to images skip unused attributed-text decoding. Failures use
   visible content remains in images. Placeholder-only pages follow the selected OCR policy.
   Whitespace cuts recover ordinary columns and spanning headings. Paragraph reconstruction
   joins hard wraps and narrowly supported cross-page continuations.
+- Validated PDF paragraph and H1–H6 tags supply grouping and heading levels. Complete tagged
+  text groups can follow logical order inside spatial barriers. Unsupported or ambiguous tags
+  report `structureFallback`; figures, lists, captions and OCR retain spatial reconstruction.
+  This is bounded tag support, not full tagged-PDF or accessibility reconstruction.
 - Soft hyphens are removed at wraps. A hard hyphen is removed only when the unbroken word occurs
   elsewhere in the book and there is no evidence of the corresponding compound. Ambiguous
   joins retain the hyphen and produce a warning.

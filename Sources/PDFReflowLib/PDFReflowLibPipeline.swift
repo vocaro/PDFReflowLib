@@ -21,8 +21,13 @@ enum PDFReflowLibPipeline {
         try FileManager.default.createDirectory(at: workspace.appendingPathComponent("assets"),
                                                  withIntermediateDirectories: true)
 
+        let structure = try StructureTreeReader.read(source)
         var pages: [PageContent] = []
         var warnings: [ConversionWarning] = []
+        if structure.rejected {
+            warnings.append(.init(code: .structureFallback, page: 1,
+                message: "Some PDF structure tags are invalid or outside supported paragraph/heading roles; spatial reconstruction remains in use for that content."))
+        }
         var characters = 0
         for i in 0..<total {
             try Task.checkCancellation()
@@ -49,6 +54,12 @@ enum PDFReflowLibPipeline {
                 var content = PageContent(number: i + 1, bounds: bounds,
                     lines: try NativeTextReader.lines(on: page, limit: options.maximumCharacters - characters,
                         includeStyle: !requiresPageImage && !syntheticStyle), graphics: graphics.regions)
+                if !requiresPageImage && !syntheticStyle && options.ocr != .always, let tags = structure.pages[i + 1], !tags.isEmpty,
+                   !(StructureTreeReader.validates(tags, owners: structure.owners[i + 1] ?? [:], page: reference)
+                     && MarkedTextReader.apply(tags, page: reference, lines: &content.lines)) {
+                    warnings.append(.init(code: .structureFallback, page: i + 1,
+                        message: "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups."))
+                }
                 content.requiresPageImage = requiresPageImage
                 content.hasSyntheticTextStyle = syntheticStyle
                 if graphics.unsupported {
@@ -96,6 +107,7 @@ enum PDFReflowLibPipeline {
                 // A scan with an existing OCR layer must still reflow. Keep its visual page as a
                 // reference rather than treating the full-page scan as one figure covering all text.
                 content.preservePageReference = true
+                for index in content.lines.indices { content.lines[index].structure = nil }
                 content.graphics = []
                 warnings.append(.init(code: .unverifiedTextLayer, page: i + 1,
                     message: "Text overlapping a page-sized graphic has not been verified against the source. "

@@ -25,7 +25,7 @@ struct ReflowDocument: Sendable, Equatable {
     var assets: [Asset]
 
     enum ValidationError: Error, Equatable {
-        case emptyDocument, duplicateAsset(String), missingAsset(String)
+        case emptyDocument, duplicateAsset(String), missingAsset(String), invalidHeadingLevel(Int)
     }
 
     func validate() throws {
@@ -35,6 +35,9 @@ struct ReflowDocument: Sendable, Equatable {
             guard identifiers.insert(asset.id).inserted else { throw ValidationError.duplicateAsset(asset.id) }
         }
         for block in blocks {
+            if case let .heading(_, _, level) = block.content, !(1...6).contains(level) {
+                throw ValidationError.invalidHeadingLevel(level)
+            }
             if case let .image(image) = block.content, !identifiers.contains(image.assetID) {
                 throw ValidationError.missingAsset(image.assetID)
             }
@@ -108,25 +111,27 @@ struct ReflowBlock: Sendable, Equatable {
     }
     enum Content: Sendable, Equatable {
         case paragraph(InlineText)
-        case heading(id: String, text: InlineText)
+        case heading(id: String, text: InlineText, level: Int = 2)
         case preformatted(InlineText)
         case image(Image)
         case sourcePage(Int)
     }
     var content: Content
+    /// Validated source paragraph identity, used to avoid heuristic joins across tag boundaries.
+    var structureGroup: Int?
     /// Physical PDF page where this block begins; inline markers record later page boundaries.
     var page: Int
 
     var text: String {
         switch content {
-        case let .paragraph(text), let .heading(_, text): text.text
+        case let .paragraph(text), let .heading(_, text, _): text.text
         case let .preformatted(text): text.text
         case .image, .sourcePage: ""
         }
     }
     var sourcePages: [Int] {
         switch content {
-        case let .paragraph(text), let .heading(_, text): text.sourcePages
+        case let .paragraph(text), let .heading(_, text, _): text.sourcePages
         case let .sourcePage(page): [page]
         case let .preformatted(text): text.sourcePages
         case .image: []

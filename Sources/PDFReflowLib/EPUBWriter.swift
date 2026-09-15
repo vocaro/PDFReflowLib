@@ -79,8 +79,8 @@ enum EPUBWriter {
                 var heading: (id: String, text: String)?
                 switch block.content {
                 case .paragraph: markup = "<p>\(payload)</p>\n"
-                case let .heading(id, _):
-                    markup = "<h2 id=\"\(xml(id))\">\(payload)</h2>\n"
+                case let .heading(id, _, level):
+                    markup = "<h\(level) id=\"\(xml(id))\">\(payload)</h\(level)>\n"
                     heading = (id, block.text)
                 case .preformatted: markup = "<pre>\(payload)</pre>\n"
                 case .image: markup = payload + "\n"

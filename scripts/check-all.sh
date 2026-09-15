@@ -24,6 +24,7 @@ if command -v epubcheck >/dev/null; then EPUBCHECK=(--epubcheck "$(command -v ep
 python3 tools/check-epubs.py --converter "$BINARY_DIR/pdf-reflow" --output "$WORK/epubs" "${EPUBCHECK[@]}"
 python3 tools/check-conversion-policies.py --converter "$BINARY_DIR/pdf-reflow" --output "$WORK/policies" "${EPUBCHECK[@]}"
 if [[ $CORPUS == 1 ]]; then
+    python3 tools/check_structure_memory.py
     python3 tools/run_corpus_regressions.py --converter "$BINARY_DIR/pdf-reflow" \
         --epubcheck "$(command -v epubcheck)" --output "$WORK/corpus"
 elif [[ $FAST == 0 && -f "${PDFREFLOW_REAL_PDF:-corpus/cache/faa-h-8083-25c.pdf}" ]]; then

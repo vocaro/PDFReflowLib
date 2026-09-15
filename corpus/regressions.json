@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved.",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image.",
       "pages": [
         {
           "page": 16,
@@ -80,6 +80,60 @@
               "before": "Minimum control speed (V",
               "after": ")—the minimum flight"
             }
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 50,
+          "orderedText": [
+            "70 percent of aircraft accidents.",
+            "efficiency in their daily operations.",
+            "much broader in",
+            "both its knowledge base and scope.",
+            "Human Behavior"
+          ],
+          "paragraphs": [
+            "have been documented as a primary contributor to more than 70 percent of aircraft accidents.",
+            "much broader in both its knowledge base and scope."
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 325,
+          "orderedText": [
+            "Weather Depiction Chart",
+            "the United States.",
+            "Weather depiction charts show a modified station model",
+            "ceiling height, weather, and obstructions to visibility",
+            "Significant Weather Prognostic Charts",
+            "low-level significant weather from the surface"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 81,
+          "orderedText": [
+            "Figure 3-15. Composite aircraft.",
+            "The most common reinforcing fibers used in aircraft construction",
+            "Advantages of Composites"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 191,
+          "orderedText": [
+            "Electric fuel pump",
+            "Stall warning system",
+            "Pitot heat",
+            "Starting motor",
+            "An ammeter is used to monitor"
+          ],
+          "paragraphs": [
+            "• Electric fuel pump",
+            "• Stall warning system",
+            "• Pitot heat",
+            "• Starting motor",
+            "The ammeter shows if the alternator/ generator is producing an adequate supply of electrical power."
           ],
           "minimumImages": 1
         }
@@ -245,7 +299,7 @@
     {
       "id": "fed-explained-2021",
       "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
-      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics.",
+      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text.",
       "pages": [
         {
           "page": 9,
@@ -343,6 +397,16 @@
           "headings": [
             "Interagency Initiatives"
           ]
+        },
+        {
+          "page": 1,
+          "headings": [
+            "The Fed Explained What the Central Bank Does"
+          ],
+          "paragraphs": [
+            "PUBLIC EDUCATION & OUTREACH"
+          ],
+          "minimumImages": 1
         }
       ]
     },
@@ -380,7 +444,7 @@
     {
       "id": "gpo-our-flag-2003",
       "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
-      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap.",
+      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word.",
       "pages": [
         {
           "page": 27,
@@ -517,6 +581,13 @@
               "after": "⁄2 inches high in gold."
             }
           ]
+        },
+        {
+          "page": 29,
+          "headings": [
+            "How to Obtain a Flag Flown Over the Capitol"
+          ],
+          "minimumImages": 1
         }
       ]
     },

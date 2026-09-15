@@ -1,0 +1,290 @@
+import CoreGraphics
+import Foundation
+import Testing
+@testable import PDFReflowLib
+
+private func taggedObjects() -> [String] {
+    [
+        "<< /Type /Catalog /Pages 2 0 R /StructTreeRoot 6 0 R /MarkInfo << /Marked false >> >>",
+        "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 600 800] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R /StructParents 0 >>",
+        "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+        testPDFStream("""
+        /P << /MCID 0 >> BDC BT /F1 12 Tf 1 0 0 1 40 700 Tm (Small heading) Tj ET EMC
+        /Span << /MCID 1 >> BDC BT /F1 24 Tf 1 0 0 1 40 580 Tm (First paragraph line) Tj ET EMC
+        /P << /MCID 2 >> BDC BT /F1 24 Tf 1 0 0 1 80 510 Tm (second paragraph line.) Tj ET EMC
+        """),
+        "<< /Type /StructTreeRoot /K [8 0 R 9 0 R] /ParentTree 7 0 R >>",
+        "<< /Nums [0 [8 0 R 10 0 R 9 0 R]] >>",
+        "<< /Type /StructElem /S /H3 /P 6 0 R /Pg 3 0 R /K 0 >>",
+        "<< /Type /StructElem /S /P /P 6 0 R /Pg 3 0 R /K [10 0 R 2] >>",
+        "<< /Type /StructElem /S /Span /P 9 0 R /K 1 >>",
+    ]
+}
+
+private func withTaggedPDF<T>(_ objects: [String], _ body: (URL, CGPDFPage) throws -> T) throws -> T {
+    let directory = try testPDFDirectory()
+    defer { try? FileManager.default.removeItem(at: directory) }
+    let url = directory.appendingPathComponent("tagged.pdf")
+    try testPDF(objects: objects).write(to: url)
+    let document = try #require(CGPDFDocument(url as CFURL))
+    let page = try #require(document.page(at: 1))
+    return try body(url, page)
+}
+
+// Independent expected geometry for the three explicit text origins in taggedObjects().
+// PDFKit extraction itself is exercised by the complete corpus; these parser unit tests
+// avoid additional concurrent attributed-font access in PDFKit.
+private func taggedLines() -> [TextLine] {
+    [TextLine(text: "Small heading", rect: CGRect(x: 40, y: 697, width: 150, height: 15), fontSize: 12),
+     TextLine(text: "First paragraph line", rect: CGRect(x: 40, y: 575, width: 250, height: 28), fontSize: 24),
+     TextLine(text: "second paragraph line.", rect: CGRect(x: 80, y: 505, width: 260, height: 28), fontSize: 24)]
+}
+
+private func taggedBlocks(_ url: URL, _ page: CGPDFPage) throws -> [ReflowBlock] {
+    let tree = try StructureTreeReader.read(url)
+    var lines = taggedLines()
+    #expect(StructureTreeReader.validates(try #require(tree.pages[1]), owners: try #require(tree.owners[1]), page: page))
+    #expect(MarkedTextReader.apply(try #require(tree.pages[1]), page: page, lines: &lines))
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: .init(number: 1, bounds: page.getBoxRect(.cropBox), lines: lines, graphics: []),
+        images: [], vocabulary: [], warnings: &warnings)
+    #expect(warnings.isEmpty)
+    return blocks
+}
+
+@Test func structureRolesOverrideFontsAndDrawingTagsWithMarkedFalse() throws {
+    try withTaggedPDF(taggedObjects()) { url, page in
+        let blocks = try taggedBlocks(url, page)
+        #expect(blocks.map(\.text) == ["Small heading", "First paragraph line second paragraph line."])
+        guard case .heading(_, _, 3) = blocks[0].content, case .paragraph = blocks[1].content else {
+            Issue.record("Expected tree H3 and grouped P, regardless of font size and BDC names"); return
+        }
+    }
+}
+
+@Test func logicalGroupOrderOverridesSpatialOrder() throws {
+    var objects = taggedObjects()
+    objects[5] = objects[5].replacingOccurrences(of: "[8 0 R 9 0 R]", with: "[9 0 R 8 0 R]")
+    try withTaggedPDF(objects) { url, page in
+        let blocks = try taggedBlocks(url, page)
+        #expect(blocks.map(\.text) == ["First paragraph line second paragraph line.", "Small heading"])
+    }
+}
+
+@Test func roleMapAndMCRPageReferencesAreResolved() throws {
+    var objects = taggedObjects()
+    objects[5] = objects[5].replacingOccurrences(of: "/K [", with: "/RoleMap << /Title /H3 >> /K [")
+    objects[7] = "<< /Type /StructElem /S /Title /P 6 0 R /K << /Type /MCR /Pg 3 0 R /MCID 0 >> >>"
+    try withTaggedPDF(objects) { url, page in
+        let blocks = try taggedBlocks(url, page)
+        #expect(blocks.count == 2)
+    }
+}
+
+@Test(arguments: ["parent", "parentTree", "duplicate", "missingPage", "cycle", "roleCycle", "negative", "hugeID"])
+func malformedStructureFallsBack(_ failure: String) throws {
+    var objects = taggedObjects()
+    switch failure {
+    case "parent": objects[7] = objects[7].replacingOccurrences(of: "/P 6 0 R", with: "/P 9 0 R")
+    case "parentTree": objects[6] = "<< /Nums [0 [9 0 R 10 0 R 9 0 R]] >>"
+    case "duplicate": objects[8] = objects[8].replacingOccurrences(of: "10 0 R 2", with: "10 0 R 0")
+    case "missingPage": objects[7] = objects[7].replacingOccurrences(of: "/Pg 3 0 R", with: "/Pg 2 0 R")
+    case "cycle": objects[8] = objects[8].replacingOccurrences(of: "10 0 R 2", with: "9 0 R")
+    case "roleCycle":
+        objects[5] = objects[5].replacingOccurrences(of: "/K [", with: "/RoleMap << /Title /Title >> /K [")
+        objects[7] = objects[7].replacingOccurrences(of: "/H3", with: "/Title")
+    case "negative": objects[7] = objects[7].replacingOccurrences(of: "/K 0", with: "/K -1")
+    default: objects[7] = objects[7].replacingOccurrences(of: "/K 0", with: "/K 1000000000")
+    }
+    try withTaggedPDF(objects) { url, page in
+        let index = try StructureTreeReader.read(url)
+        if failure == "parentTree" {
+            #expect(!StructureTreeReader.validates(try #require(index.pages[1]), owners: try #require(index.owners[1]), page: page))
+        } else { #expect(index.present && index.rejected && index.pages.isEmpty) }
+    }
+}
+
+@Test(arguments: ["unknownCursor", "unbalanced", "unmarkedOverlap", "missingMCID", "form", "initialAdjustment"])
+func ambiguousMarkedContentKeepsNativeText(_ failure: String) throws {
+    var objects = taggedObjects()
+    switch failure {
+    case "unknownCursor": objects[4] = testPDFStream("BT /F1 12 Tf 40 700 Td (First) Tj ( second) Tj ET")
+    case "unbalanced": objects[4] = testPDFStream("/P <</MCID 0>> BDC BT /F1 12 Tf 40 700 Td (First) Tj ET")
+    case "unmarkedOverlap": objects[4] = testPDFStream("/P <</MCID 0>> BDC BT /F1 12 Tf 40 700 Td (First) Tj ET EMC BT /F1 12 Tf 50 700 Td (Other) Tj ET")
+    case "missingMCID": objects[4] = testPDFStream("BT /F1 12 Tf 40 700 Td (Untagged) Tj ET")
+    case "form": objects[4] = testPDFStream("/Unknown Do")
+    default: objects[4] = testPDFStream("/P <</MCID 0>> BDC BT /F1 12 Tf 40 700 Td [120 (First)] TJ ET EMC")
+    }
+    try withTaggedPDF(objects) { url, page in
+        let index = try StructureTreeReader.read(url)
+        var lines = taggedLines()
+        let original = lines.map(\.content)
+        #expect(!MarkedTextReader.apply(try #require(index.pages[1]), page: page, lines: &lines))
+        #expect(lines.map(\.content) == original)
+        #expect(lines.allSatisfy { $0.structure == nil })
+    }
+}
+
+@Test func figureChildrenDoNotBecomeParagraphSemantics() throws {
+    var objects = taggedObjects()
+    objects[9] = objects[9].replacingOccurrences(of: "/Span", with: "/Figure")
+    try withTaggedPDF(objects) { url, _ in
+        let index = try StructureTreeReader.read(url)
+        #expect(index.rejected)
+        #expect(index.pages[1]?.keys.sorted() == [0])
+    }
+}
+
+@Test func tagsCannotReorderAcrossImagesOrUnmappedText() {
+    func element(_ text: String, group: Int, order: Int, count: Int) -> LayoutReconstructor.Element {
+        var line = TextLine(text: text, rect: CGRect(x: 0, y: 0, width: 100, height: 12), fontSize: 12)
+        line.structure = .init(group: group, order: order, headingLevel: 0, lineCount: count)
+        return .init(rect: line.rect, line: line)
+    }
+    let first = element("First", group: 1, order: 2, count: 2)
+    let last = element("Last", group: 1, order: 1, count: 2)
+    let image = LayoutReconstructor.Element(rect: .zero, image: "image")
+    var warnings: [ConversionWarning] = []
+    let result = LayoutReconstructor.structuredOrder([first, image, last], page: 1, warnings: &warnings)
+    #expect(result.map { $0.line?.text ?? $0.image! } == ["First", "image", "Last"])
+    #expect(result.allSatisfy { $0.line?.structure == nil })
+    #expect(warnings.map(\.code) == [.structureFallback])
+    warnings = []
+    #expect(LayoutReconstructor.structuredOrder([first], page: 1, warnings: &warnings)[0].line?.structure == nil)
+}
+
+@Test func ourFlagTwoLineTitleUsesSingleSourceH3() throws {
+    let native = try SourceLayoutFixture.load("our-flag-page-29")
+    struct Evidence: Decodable { var sourceSHA256: String; var contentStream: String; var headingRole: String; var headingMCID: Int }
+    let file = Bundle.module.resourceURL!.appendingPathComponent("fixtures/our-flag-page-29-tags.json")
+    let evidence = try JSONDecoder().decode(Evidence.self, from: Data(contentsOf: file))
+    #expect(evidence.sourceSHA256 == native.sourceSHA256)
+    #expect(evidence.headingRole == "H3" && evidence.headingMCID == 0)
+    var objects = taggedObjects()
+    // A minimal resource/structure wrapper around the unchanged source stream. Geometry and
+    // Unicode come from the independently captured native source, not these placeholder fonts.
+    objects[2] = "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 423 652] /Resources << /XObject << /Im0 11 0 R >> >> /Contents 5 0 R /StructParents 0 >>"
+    objects[4] = testPDFStream(evidence.contentStream)
+    objects[5] = "<< /Type /StructTreeRoot /K [8 0 R] /ParentTree 7 0 R >>"
+    objects[6] = "<< /Nums [0 [8 0 R]] >>"
+    objects.append(testPDFStream("xxx", extra: "/Type /XObject /Subtype /Image /Width 1 /Height 1 /ColorSpace /DeviceRGB /BitsPerComponent 8"))
+    try withTaggedPDF(objects) { url, page in
+        var content = native.content()
+        var warnings: [ConversionWarning] = []
+        let baseline = LayoutReconstructor.blocks(page: content, images: [], vocabulary: [], warnings: &warnings)
+        #expect(baseline.filter { if case .heading = $0.content { true } else { false } }.count == 2)
+        let tree = try StructureTreeReader.read(url)
+        #expect(MarkedTextReader.apply(try #require(tree.pages[1]), page: page, lines: &content.lines))
+        let blocks = LayoutReconstructor.blocks(page: content, images: [], vocabulary: [], warnings: &warnings)
+        let headings = blocks.filter { if case .heading = $0.content { true } else { false } }
+        #expect(headings.count == 1)
+        #expect(headings.first?.text == "How to Obtain a Flag Flown Over the Capitol")
+        guard case .heading(_, _, 3) = headings.first?.content else { Issue.record("Lost source H3"); return }
+        #expect(blocks.flatMap { $0.text.split(whereSeparator: \.isWhitespace) }
+            == baseline.flatMap { $0.text.split(whereSeparator: \.isWhitespace) })
+    }
+}
+
+@Test func explicitParagraphBoundariesPreventHeuristicPageJoin() {
+    let bounds = CGRect(x: 0, y: 0, width: 600, height: 800)
+    let previous = PageContent(number: 1, bounds: bounds,
+        lines: [.init(text: "continues", rect: CGRect(x: 40, y: 40, width: 300, height: 12), fontSize: 12)], graphics: [])
+    let page = PageContent(number: 2, bounds: bounds,
+        lines: [.init(text: "lowercase", rect: CGRect(x: 40, y: 750, width: 300, height: 12), fontSize: 12)], graphics: [])
+    var blocks = [ReflowBlock(content: .paragraph(InlineText("continues")), structureGroup: 1, page: 1)]
+    var warnings: [ConversionWarning] = []
+    LayoutReconstructor.appendPage([.init(content: .paragraph(InlineText("lowercase")), structureGroup: 2, page: 2)],
+        page: page, previousPage: previous, to: &blocks, vocabulary: [], warnings: &warnings)
+    #expect(blocks.map(\.text) == ["continues", "", "lowercase"])
+}
+
+@Test func parentNumberTreeKidsAndNamedPropertiesAreSupported() throws {
+    var objects = taggedObjects()
+    objects[6] = "<< /Kids [11 0 R] >>"
+    objects.append("<< /Limits [0 0] /Nums [0 [8 0 R 10 0 R 9 0 R]] >>")
+    objects[2] = objects[2].replacingOccurrences(of: "/Font <<", with: "/Properties << /Title << /MCID 0 >> >> /Font <<")
+    objects[4] = objects[4].replacingOccurrences(of: "/P << /MCID 0 >> BDC", with: "/P /Title BDC")
+    // Replacing stream bytes requires regenerating the length.
+    let content = objects[4].components(separatedBy: "stream\n")[1].components(separatedBy: "\nendstream")[0]
+    objects[4] = testPDFStream(content)
+    try withTaggedPDF(objects) { url, page in
+        let blocks = try taggedBlocks(url, page)
+        #expect(blocks.count == 2)
+    }
+}
+
+@Test func duplicatePaintIDsAreNotTrusted() throws {
+    var objects = taggedObjects()
+    let content = "/P << /MCID 0 >> BDC BT /F1 12 Tf 40 700 Td (First) Tj ET EMC\n/P << /MCID 0 >> BDC BT /F1 12 Tf 40 650 Td (Second) Tj ET EMC"
+    objects[4] = testPDFStream(content)
+    try withTaggedPDF(objects) { url, page in
+        let index = try StructureTreeReader.read(url)
+        var lines = taggedLines()
+        #expect(!MarkedTextReader.apply(try #require(index.pages[1]), page: page, lines: &lines))
+        #expect(lines.allSatisfy { $0.structure == nil })
+    }
+}
+
+@Test func excessiveStructureDepthFallsBackWithoutRecursionFailure() throws {
+    var objects = taggedObjects()
+    objects[5] = "<< /Type /StructTreeRoot /K 11 0 R /ParentTree 7 0 R >>"
+    for id in 11...80 {
+        let parent = id == 11 ? 6 : id - 1
+        objects.append("<< /Type /StructElem /S /Sect /P \(parent) 0 R /K \(id + 1) 0 R >>")
+    }
+    objects.append("<< /Type /StructElem /S /Sect /P 80 0 R >>")
+    try withTaggedPDF(objects) { url, _ in
+        let index = try StructureTreeReader.read(url)
+        #expect(index.rejected && index.pages.isEmpty)
+    }
+}
+
+@Test(arguments: ["Figure 3-15. Composite aircraft.", "Table 1. Measurements", "1. First exercise", "• First item", String(repeating: "long ", count: 45)])
+func captionsListsAndOversizedHeadingsKeepSpatialBoundaries(_ text: String) {
+    var label = TextLine(text: text, rect: .zero, fontSize: 12)
+    label.structure = .init(group: 2, order: 2, headingLevel: text.hasPrefix("long") ? 4 : 0, lineCount: 1)
+    var prose = TextLine(text: "Body", rect: .zero, fontSize: 12)
+    prose.structure = .init(group: 1, order: 1, headingLevel: 0, lineCount: 1)
+    var warnings: [ConversionWarning] = []
+    let result = LayoutReconstructor.structuredOrder([.init(rect: .zero, line: label), .init(rect: .zero, line: prose)],
+        page: 1, warnings: &warnings)
+    #expect(result.map { $0.line!.text } == [text, "Body"])
+    #expect(result[0].line?.structure == nil)
+    #expect(warnings.contains { $0.code == .structureFallback })
+}
+
+@Test func formMCIDsCannotMasqueradeAsPageMCIDs() throws {
+    var objects = taggedObjects()
+    objects[2] = objects[2].replacingOccurrences(of: "/Font <<", with: "/XObject << /Fm 11 0 R >> /Font <<")
+    objects[4] = testPDFStream("/Fm Do")
+    objects.append(testPDFStream("/P <</MCID 0>> BDC BT /F1 12 Tf 40 700 Td (Small heading) Tj ET EMC",
+        extra: "/Type /XObject /Subtype /Form /BBox [0 0 600 800] /Resources << /Font << /F1 4 0 R >> >>"))
+    try withTaggedPDF(objects) { url, page in
+        let tree = try StructureTreeReader.read(url)
+        var lines = taggedLines()
+        #expect(!MarkedTextReader.apply(try #require(tree.pages[1]), page: page, lines: &lines))
+        #expect(lines.allSatisfy { $0.structure == nil })
+    }
+}
+
+@Test func emptyPageTreeCannotTrapStructureTraversal() throws {
+    let directory = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: directory) }
+    let url = directory.appendingPathComponent("empty.pdf")
+    var objects = taggedObjects()
+    objects[1] = "<< /Type /Pages /Kids [] /Count 0 >>"
+    try testPDF(objects: objects).write(to: url)
+    let index = try StructureTreeReader.read(url)
+    #expect(index.pages.isEmpty)
+}
+
+@Test func structureTraversalHonorsCancellation() async throws {
+    let directory = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: directory) }
+    let url = directory.appendingPathComponent("cancel.pdf")
+    try testPDF(objects: taggedObjects()).write(to: url)
+    let task = Task {
+        withUnsafeCurrentTask { $0?.cancel() }
+        _ = try StructureTreeReader.read(url)
+    }
+    await #expect(throws: CancellationError.self) { try await task.value }
+}

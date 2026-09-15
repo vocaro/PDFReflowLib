@@ -36,7 +36,7 @@ enum EPUBTextEncoder {
 
     static func payload(_ block: ReflowBlock, imagePaths: [String: String]) throws -> String {
         switch block.content {
-        case let .paragraph(text), let .heading(_, text): return inline(text)
+        case let .paragraph(text), let .heading(_, text, _): return inline(text)
         case let .preformatted(text): return inline(text)
         case let .sourcePage(page): return sourcePage(page)
         case let .image(image):

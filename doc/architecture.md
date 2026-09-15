@@ -23,7 +23,7 @@ Both representations are custom Swift values in memory. Neither is HTML, an XML 
 object graph or a serialized interchange file.
 
 `PageContent` is the spatial extraction representation. Each physical page contains bounds,
-positioned `TextLine` values, font sizes, monospaced/wrap hints, graphic rectangles and fallback
+positioned `TextLine` values, font sizes, monospaced/wrap hints, optional validated structure associations, graphic rectangles and fallback
 flags. A text line contains `InlineText`: raw Unicode text runs with bold, italic, superscript and subscript style flags.
 Geometry remains in unrotated PDF page coordinates with a bottom-left origin. This stage retains
 the evidence needed to infer reading order, paragraphs, image crops and word joins.
@@ -33,7 +33,7 @@ the evidence needed to infer reading order, paragraphs, image crops and word joi
 | Value | Content |
 | --- | --- |
 | Metadata | Title, language and optional author |
-| Ordered blocks | Paragraph, heading with logical identifier, preformatted text, image, source-page boundary |
+| Ordered blocks | Paragraph, heading with logical identifier and level, preformatted text, image, source-page boundary |
 | Inline text | Text runs carrying bold/italic/superscript/subscript flags, interspersed with source-page boundaries |
 | Image block | Logical asset identifier, alternative text and caption |
 | Asset registry | Identifier, local file URL and image format |
@@ -78,14 +78,39 @@ operations and nested Form XObjects. It resolves shading resources and bounds gr
 with conservative clipping, Form bounds and optional shading bounds. Core Graphics rasterizes
 the original region; the model stores an image asset, not an editable gradient. Unsafe or
 page-spanning bounds retain the page fallback. `OCRReader` uses Vision when policy requests it.
+`StructureTreeReader` parses a separate Core Graphics document into value-only page/MCID
+associations and exact owner paths. It checks structural parent links, page identity, RoleMap
+resolution, duplicate references and bounded traversal; a false `MarkInfo/Marked` flag alone
+is not grounds to discard a populated tree. No Core Graphics object survives the parsing pool.
+ParentTree ownership is checked against those exact paths only when extracting the relevant
+page, using `PDFPageSource`'s eight-page document window. Sparse ParentTree arrays can contain
+many null slots; loading them all into one Core Graphics document causes avoidable peak memory.
+`MarkedTextReader` matches explicitly positioned text-show origins to unique native line
+rectangles. Unknown glyph-cursor advancement, Form XObjects, missing/duplicate MCIDs, ambiguous
+geometry and incomplete groups retain spatial reconstruction. OCR and unverified image-backed
+text do not inherit native tags. Origin matching is conservative association evidence, not full
+font decoding or proof of the author's semantic correctness.
+
+Supported roles are P and H1–H6 through grouping containers and transparent inline spans.
+Complete groups can reorder only within uninterrupted tagged-text runs; unmatched lines and
+preserved images are barriers. Captions, list-like text and headings of 200 or more characters
+fall back as well. Removed furniture or image-contained lines invalidate incomplete groups.
+Validated paragraph identities prevent heuristic cross-page joins into different paragraphs.
+Heading levels belong to the neutral model and serialize as h1–h6; navigation remains flat.
+`structureFallback` warns about partial/unsupported mapping. A document-wide tree warning is
+attached to page 1 and describes document scope. Table/figure/alternate-text semantics, Form
+content, generic H roles, general link ownership and arbitrary reading order remain unsupported.
+Traversal is bounded to 200,000 visits and depth 64; association caps text anchors/lines at
+10,000 each and rectangle comparisons at two million per page. Limit exhaustion uses fallback,
+not partial ordering. Cancellation is checked during traversal and text scanning.
+
 `LayoutReconstructor` handles whitespace cuts, paragraphs, styled word joins and
 cross-page continuation. Heading-size evidence excludes text already preserved inside images
 when at least three remaining lines and 200 characters support the dominant reflowable font size.
 Candidates within 10% of that supported body size are suppressed, while the original 25%
 page-size threshold still applies. This retains existing modestly larger section headings. Short titles
 beside images retain the existing page evidence. The separate page-size estimate still governs
-whitespace cuts and paragraph geometry. This does not infer headings from tags or guarantee
-heading precision in arbitrary mixed layouts. `FurnitureDetector` removes short outermost margin rows supported by
+whitespace cuts and paragraph geometry. This spatial fallback does not guarantee heading precision in arbitrary mixed layouts. `FurnitureDetector` removes short outermost margin rows supported by
 at least three neighboring or alternating physical pages, stable vertical position and typography.
 The top candidate band is 10% of page height; the footer band remains 7% to retain existing
 whitespace-cut behavior around illustrated rows. Textual headers require separation from inward

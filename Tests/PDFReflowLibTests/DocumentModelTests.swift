@@ -18,7 +18,7 @@ private func line(_ text: String, x: Double, y: Double, width: Double = 200,
     var warnings: [ConversionWarning] = []
     let blocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
     #expect(blocks.count == 3)
-    guard case let .heading(_, title) = try #require(blocks.first).content else {
+    guard case let .heading(_, title, _) = try #require(blocks.first).content else {
         Issue.record("Expected a semantic heading"); return
     }
     #expect(title.text == "A <heading> & title")

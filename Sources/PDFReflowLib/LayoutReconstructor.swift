@@ -119,9 +119,18 @@ enum LayoutReconstructor {
         // Preserve existing modest-size headings, but reject candidates within 10% of the
         // supported reflowable body size. This only narrows the original page-size heuristic.
         let headingThreshold = max(body * 1.25, headingBodySize(lines, pageBody: body) * 1.1)
-        let elements = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
+        let spatial = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
             + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: body)
+        let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
         var result: [ReflowBlock] = []
+        var tagged: (TextStructure, InlineText)?
+        func flushTagged() {
+            guard let (tag, text) = tagged else { return }
+            let content: ReflowBlock.Content = tag.headingLevel == 0 ? .paragraph(text)
+                : .heading(id: "heading-\(page.number)-\(result.count)", text: text, level: tag.headingLevel)
+            result.append(ReflowBlock(content: content, structureGroup: tag.group, page: page.number))
+            tagged = nil
+        }
         var paragraph = InlineText()
         var previous: TextLine?
         var codeOrigin: CGFloat?
@@ -134,12 +143,24 @@ enum LayoutReconstructor {
         }
         for element in elements {
             if let path = element.image {
+                flushTagged()
                 flush()
                 codeOrigin = nil
                 result.append(imageBlock(assetID: path, page: page.number))
                 continue
             }
             guard let line = element.line else { continue }
+            if let tag = line.structure {
+                flush()
+                codeOrigin = nil
+                if tagged?.0.group != tag.group { flushTagged() }
+                if let current = tagged {
+                    tagged = (current.0, join(current.1, line.content, vocabulary: vocabulary,
+                        page: page.number, warnings: &warnings))
+                } else { tagged = (tag, line.content) }
+                continue
+            }
+            flushTagged()
             if !line.monospaced { codeOrigin = nil }
             if !page.hasSyntheticTextStyle && line.fontSize >= headingThreshold && line.text.count < 200 {
                 flush()
@@ -178,8 +199,79 @@ enum LayoutReconstructor {
                 previous = line
             }
         }
+        flushTagged()
         flush()
         return result
+    }
+
+    /// Tags may reorder only complete groups inside an uninterrupted run of tagged text.
+    /// Images and unassociated text are barriers, including content removed into image crops.
+    static func structuredOrder(_ spatial: [Element], page: Int,
+                                warnings: inout [ConversionWarning], depth: Int = 0) -> [Element] {
+        var elements = spatial
+        guard depth < 32 else {
+            for index in elements.indices { elements[index].line?.structure = nil }
+            return elements
+        }
+        if depth == 0 {
+            let groups = Dictionary(grouping: elements.compactMap(\.line).filter { $0.structure != nil },
+                by: { $0.structure!.group })
+            let unsafe = Set(groups.compactMap { group, lines -> Int? in
+                // Caption ownership and lists are outside this phase. A paragraph tag alone
+                // must not detach a figure label or collapse significant item breaks.
+                let captionOrList = lines.contains { isList($0.text) || $0.text.range(
+                    of: "^(?:Figure|Table)\\s+[0-9]", options: .regularExpression) != nil }
+                let oversizedHeading = lines.first!.structure!.headingLevel > 0
+                    && lines.reduce(0, { $0 + $1.text.count + 1 }) >= 200
+                return captionOrList || oversizedHeading ? group : nil
+            })
+            if !unsafe.isEmpty {
+                for index in elements.indices {
+                    if let group = elements[index].line?.structure?.group, unsafe.contains(group) {
+                        elements[index].line?.structure = nil
+                    }
+                }
+                warnings.append(.init(code: .structureFallback, page: page,
+                    message: "Caption, list or oversized heading tags require broader semantic validation; spatial reconstruction is retained."))
+            }
+        }
+        var runs: [Int: Set<Int>] = [:]
+        var counts: [Int: Int] = [:]
+        var run = 0
+        for element in elements {
+            if let tag = element.line?.structure {
+                runs[tag.group, default: []].insert(run)
+                counts[tag.group, default: 0] += 1
+            } else { run += 1 }
+        }
+        var rejected = false
+        for index in elements.indices {
+            if let tag = elements[index].line?.structure,
+               runs[tag.group]?.count != 1 || counts[tag.group] != tag.lineCount {
+                elements[index].line?.structure = nil
+                rejected = true
+            }
+        }
+        // Rejecting a group introduces another barrier. Repeat until groups cannot cross it.
+        if rejected {
+            if !warnings.contains(where: { $0.code == .structureFallback && $0.page == page }) {
+                warnings.append(.init(code: .structureFallback, page: page,
+                    message: "Tagged groups intersect preserved regions or unassociated text; their spatial layout is retained."))
+            }
+            return structuredOrder(elements, page: page, warnings: &warnings, depth: depth + 1)
+        }
+        var start = 0
+        while start < elements.count {
+            guard elements[start].line?.structure != nil else { start += 1; continue }
+            var end = start + 1
+            while end < elements.count && elements[end].line?.structure != nil { end += 1 }
+            elements.replaceSubrange(start..<end, with: elements[start..<end].enumerated().sorted {
+                let left = $0.element.line!.structure!, right = $1.element.line!.structure!
+                return left.order == right.order ? $0.offset < $1.offset : left.order < right.order
+            }.map(\.element))
+            start = end
+        }
+        return elements
     }
 
     static func imageBlock(assetID: String, page: Int, reference: Bool = false) -> ReflowBlock {
@@ -194,6 +286,7 @@ enum LayoutReconstructor {
         var remaining = pageBlocks
         if let last = blocks.last, let first = remaining.first, let previousPage,
            case let .paragraph(left) = last.content, case let .paragraph(right) = first.content,
+           last.structureGroup == first.structureGroup,
            first.text.first?.isLowercase == true, last.text.last.map({ !".!?:".contains($0) }) == true,
            previousPage.lines.last.map({ $0.rect.minY < previousPage.bounds.minY + previousPage.bounds.height * 0.2 }) == true,
            page.lines.first.map({ $0.rect.maxY > page.bounds.minY + page.bounds.height * 0.8 }) == true {

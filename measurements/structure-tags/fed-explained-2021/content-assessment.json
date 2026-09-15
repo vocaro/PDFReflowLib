@@ -1,0 +1,21 @@
+{
+  "case": "fed-explained-2021",
+  "passed": true,
+  "reviewPages": [
+    9,
+    13,
+    32,
+    45,
+    46,
+    54,
+    75,
+    77,
+    103,
+    109,
+    123,
+    1
+  ],
+  "contentChecks": 37,
+  "errors": [],
+  "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+}

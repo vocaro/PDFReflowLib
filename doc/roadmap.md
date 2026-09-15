@@ -86,6 +86,13 @@ physical-device memory/performance remain unqualified.
   The [OCR-heading investigation](../measurements/ocr-headings/record.md) rejects blanket
   suppression because it loses the genuine Part 2 title; quadrilateral height and Vision's
   title flag alone also fail source controls. No runtime repair is retained from that experiment.
+  The separate [Vision container-title validation](../measurements/vision-titles/record.md)
+  under [#24](https://github.com/vocaro/PDFReflowLib/issues/24) checks 14 source pages across
+  five PDFs. Unique text/region ownership and agreement with the line title flag still admit
+  prose, dialogue, sign and running-header false positives; recognized titles also omit genuine
+  title continuations. Issue #24's validation is complete and closure is recommended with
+  metadata-only mapping rejected. A source-supported semantic rule remains unqualified;
+  no production title mapping or broader comic repair is claimed.
 
 - The 312-page Blue Book statistical scan supplies a warning/refusal contract. The converter
   reports unverified text layers and preserves source images; reliable scanned-table detection

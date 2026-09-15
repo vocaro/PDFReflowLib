@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "basis": "Semantic roles and heading groups reviewed from original PDF page rasters, independently of converter output. Physical pages are one-based. reviewedTitleTranscript binds each role to its observed title selection and is not a corrected source transcription.",
+  "pages": [
+    {
+      "capture": "cdc-13.json",
+      "caseID": "cdc-zombie-pandemic-2011",
+      "page": 13,
+      "sourceImage": "../cdc-zombie-pandemic-2011/source-page-13.png",
+      "selectedRole": "dialogue",
+      "headingGroups": [],
+      "review": "OKAY, OKAY... I'M COMING. is speech in the lower-left balloon. Other balloons and fragments are also dialogue, not document headings.",
+      "reviewedTitleTranscript": "OKAY, OKAY... I'M COMING."
+    },
+    {
+      "capture": "cdc-15.json",
+      "caseID": "cdc-zombie-pandemic-2011",
+      "page": 15,
+      "sourceImage": "../ocr-headings/source-page-15.png",
+      "selectedRole": "partial_heading",
+      "headingGroups": [
+        "PREPAREDNESS 101: ZOMBIE PANDEMIC PART 2"
+      ],
+      "review": "The three display lines form the genuine Part 2 cover title; the largest is ZOMBIE PANDEMIC.",
+      "reviewedTitleTranscript": "PREPAREDNESS 101:"
+    },
+    {
+      "capture": "cdc-16.json",
+      "caseID": "cdc-zombie-pandemic-2011",
+      "page": 16,
+      "sourceImage": "../ocr-headings/source-page-16.png",
+      "selectedRole": "sign",
+      "headingGroups": [],
+      "review": "Perspective building signs and logos are scene content; the vertical CENTERS lettering is not a section title.",
+      "reviewedTitleTranscript": "CERTERG"
+    },
+    {
+      "capture": "warren-7.json",
+      "caseID": "gpo-warren-1964",
+      "page": 7,
+      "sourceImage": "source/warren-7.png",
+      "selectedRole": "partial_heading",
+      "headingGroups": [
+        "REPORT OF THE PRESIDENT'S COMMISSION ON THE ASSASSINATION OF President John F. Kennedy"
+      ],
+      "review": "The title spans four centered lines above the seal. REPORT OF alone omits the actual subject. Publisher lines and handwritten library marks are not the title.",
+      "reviewedTitleTranscript": "REPORT OF"
+    },
+    {
+      "capture": "warren-21.json",
+      "caseID": "gpo-warren-1964",
+      "page": 21,
+      "sourceImage": "source/warren-21.png",
+      "selectedRole": "heading",
+      "headingGroups": [
+        "Contents"
+      ],
+      "review": "Contents is the page title. Indented chapter entries and page-number leaders belong to the contents list.",
+      "reviewedTitleTranscript": "Contents"
+    },
+    {
+      "capture": "warren-30.json",
+      "caseID": "gpo-warren-1964",
+      "page": 30,
+      "sourceImage": "source/warren-30.png",
+      "selectedRole": "body",
+      "headingGroups": [],
+      "review": "The first line continues a paragraph from the preceding page. All main text uses ordinary body typography.",
+      "reviewedTitleTranscript": "varied roles which an American President performs-Head of State,"
+    },
+    {
+      "capture": "warren-50.json",
+      "caseID": "gpo-warren-1964",
+      "page": 50,
+      "sourceImage": "../selective-ocr/source-page-50.png",
+      "selectedRole": "body",
+      "headingGroups": [],
+      "review": "September 26 to October 3, 1963, and his known contacts with is ordinary continuation prose, not a heading.",
+      "reviewedTitleTranscript": "September 26 to October 3, 1963, and his known contacts with"
+    },
+    {
+      "capture": "warren-100.json",
+      "caseID": "gpo-warren-1964",
+      "page": 100,
+      "sourceImage": "source/warren-100.png",
+      "selectedRole": "body",
+      "headingGroups": [],
+      "review": "was stationed. is within the opening paragraph, followed by raised reference 63. It is not a heading; OCR substitutions are unqualified.",
+      "reviewedTitleTranscript": "was stationed.es"
+    },
+    {
+      "capture": "warren-920.json",
+      "caseID": "gpo-warren-1964",
+      "page": 920,
+      "sourceImage": "source/warren-920.png",
+      "selectedRole": "absent",
+      "headingGroups": [],
+      "review": "Textless back-cover scan: no title or readable body text.",
+      "reviewedTitleTranscript": null
+    },
+    {
+      "capture": "blue-book-4.json",
+      "caseID": "cia-blue-book-14-1955",
+      "page": 4,
+      "sourceImage": "source/blue-book-4.png",
+      "selectedRole": "partial_heading",
+      "headingGroups": [
+        "PROJECT BLUE BOOK SPECIAL REPORT NO. 14"
+      ],
+      "review": "The publication title uses two centered lines. The parenthesized analysis subtitle, project number, date, archival stamp and publisher remain separate source context.",
+      "reviewedTitleTranscript": "PROJECT BLUE BOOK"
+    },
+    {
+      "capture": "blue-book-9.json",
+      "caseID": "cia-blue-book-14-1955",
+      "page": 9,
+      "sourceImage": "source/blue-book-9.png",
+      "selectedRole": "body",
+      "headingGroups": [],
+      "review": "with the year 1952. In these charts, 3201 cases have been used. continues body prose. The short percentage rows are data, not document headings.",
+      "reviewedTitleTranscript": "with the year 1952. In these charts, 3201 cases have been used."
+    },
+    {
+      "capture": "blue-book-74.json",
+      "caseID": "cia-blue-book-14-1955",
+      "page": 74,
+      "sourceImage": "source/blue-book-74.png",
+      "selectedRole": "table_caption",
+      "headingGroups": [],
+      "review": "TABLE IV introduces the two-line chi-square table caption. A table label alone should not create an EPUB section or lose its table association.",
+      "reviewedTitleTranscript": "TABLE IV"
+    },
+    {
+      "capture": "fed-32.json",
+      "caseID": "fed-explained-2021",
+      "page": 32,
+      "sourceImage": "source/fed-32.png",
+      "selectedRole": "running_header",
+      "headingGroups": [
+        "Box 3.1. What Happens at an FOMC Meeting",
+        "How the FOMC Determines the Appropriate Stance of Monetary Policy"
+      ],
+      "review": "The selected small top-margin book name is running furniture. The blue box title and blue italic section title are genuine headings. Forced raster recognition is a control; normal conversion retains native extraction.",
+      "reviewedTitleTranscript": "The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "capture": "911-19.json",
+      "caseID": "gpo-911-2004",
+      "page": 19,
+      "sourceImage": "source/911-19.png",
+      "selectedRole": "partial_heading",
+      "headingGroups": [
+        "WE HAVE SOME PLANES",
+        "1.1 INSIDE THE FOUR FLIGHTS",
+        "Boarding the Flights"
+      ],
+      "review": "WE HAVE and SOME PLANES are one two-line chapter title beneath chapter number 1; lower section/subsection titles provide missed-heading controls. Forced raster recognition is a control, not normal native extraction.",
+      "reviewedTitleTranscript": "\"WE HAVE"
+    }
+  ]
+}

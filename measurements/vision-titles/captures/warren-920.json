@@ -1,0 +1,36 @@
+{
+  "bounds" : [
+    0,
+    0,
+    384,
+    633
+  ],
+  "caseID" : "gpo-warren-1964",
+  "containers" : [
+    {
+      "lineCount" : 0,
+      "path" : "document",
+      "rect" : [
+        0,
+        0,
+        1,
+        1
+      ],
+      "title" : null
+    }
+  ],
+  "extraction" : "One RecognizeDocumentsRequest; default ConversionOptions raster; English; language correction off",
+  "lines" : [
+
+  ],
+  "observationCount" : 1,
+  "os" : "Version 27.0 (Build 26A428)",
+  "page" : 920,
+  "rasterPixels" : [
+    960,
+    1582
+  ],
+  "schemaVersion" : 1,
+  "sourceSHA256" : "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+  "sourceTitle" : "Report of the President’s Commission on the Assassination of President John F. Kennedy"
+}

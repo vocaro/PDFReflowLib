@@ -1,0 +1,358 @@
+{
+  "pages": [
+    {
+      "captionCandidateRequiringTableOwnership": false,
+      "capture": "cdc-13.json",
+      "caseID": "cdc-zombie-pandemic-2011",
+      "flaggedRootIndices": [
+        0
+      ],
+      "knownFalsePromotion": true,
+      "lineCount": 8,
+      "nestedContainerCount": 0,
+      "nestedTitleCount": 0,
+      "ownedRootIndices": [
+        0
+      ],
+      "page": 13,
+      "reviewedRole": "dialogue",
+      "sourceHeadingGroupsMissingFromTitle": [],
+      "sourceSHA256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
+      "titleAndFlagAgree": true,
+      "titleLineCount": 0,
+      "titleText": "OKAY, OKAY... I'M COMING.",
+      "uniqueTextRegionOwnership": true
+    },
+    {
+      "captionCandidateRequiringTableOwnership": false,
+      "capture": "cdc-15.json",
+      "caseID": "cdc-zombie-pandemic-2011",
+      "flaggedRootIndices": [
+        0
+      ],
+      "knownFalsePromotion": false,
+      "lineCount": 3,
+      "nestedContainerCount": 0,
+      "nestedTitleCount": 0,
+      "ownedRootIndices": [
+        0
+      ],
+      "page": 15,
+      "reviewedRole": "partial_heading",
+      "sourceHeadingGroupsMissingFromTitle": [
+        "PREPAREDNESS 101: ZOMBIE PANDEMIC PART 2"
+      ],
+      "sourceSHA256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
+      "titleAndFlagAgree": true,
+      "titleLineCount": 0,
+      "titleText": "PREPAREDNESS 101:",
+      "uniqueTextRegionOwnership": true
+    },
+    {
+      "captionCandidateRequiringTableOwnership": false,
+      "capture": "cdc-16.json",
+      "caseID": "cdc-zombie-pandemic-2011",
+      "flaggedRootIndices": [
+        1
+      ],
+      "knownFalsePromotion": true,
+      "lineCount": 5,
+      "nestedContainerCount": 0,
+      "nestedTitleCount": 0,
+      "ownedRootIndices": [
+        1
+      ],
+      "page": 16,
+      "reviewedRole": "sign",
+      "sourceHeadingGroupsMissingFromTitle": [],
+      "sourceSHA256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
+      "titleAndFlagAgree": true,
+      "titleLineCount": 0,
+      "titleText": "CERTERG",
+      "uniqueTextRegionOwnership": true
+    },
+    {
+      "captionCandidateRequiringTableOwnership": false,
+      "capture": "warren-7.json",
+      "caseID": "gpo-warren-1964",
+      "flaggedRootIndices": [
+        0
+      ],
+      "knownFalsePromotion": false,
+      "lineCount": 8,
+      "nestedContainerCount": 0,
+      "nestedTitleCount": 0,
+      "ownedRootIndices": [
+        0
+      ],
+      "page": 7,
+      "reviewedRole": "partial_heading",
+      "sourceHeadingGroupsMissingFromTitle": [
+        "REPORT OF THE PRESIDENT'S COMMISSION ON THE ASSASSINATION OF President John F. Kennedy"
+      ],
+      "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+      "titleAndFlagAgree": true,
+      "titleLineCount": 0,
+      "titleText": "REPORT OF",
+      "uniqueTextRegionOwnership": true
+    },
+    {
+      "captionCandidateRequiringTableOwnership": false,
+      "capture": "warren-21.json",
+      "caseID": "gpo-warren-1964",
+      "flaggedRootIndices": [
+        0
+      ],
+      "knownFalsePromotion": false,
+      "lineCount": 81,
+      "nestedContainerCount": 82,
+      "nestedTitleCount": 0,
+      "ownedRootIndices": [
+        0
+      ],
+      "page": 21,
+      "reviewedRole": "heading",
+      "sourceHeadingGroupsMissingFromTitle": [],
+      "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+      "titleAndFlagAgree": true,
+      "titleLineCount": 0,
+      "titleText": "Contents",
+      "uniqueTextRegionOwnership": true
+    },
+    {
+      "captionCandidateRequiringTableOwnership": false,
+      "capture": "warren-30.json",
+      "caseID": "gpo-warren-1964",
+      "flaggedRootIndices": [
+        0
+      ],
+      "knownFalsePromotion": true,
+      "lineCount": 56,
+      "nestedContainerCount": 0,
+      "nestedTitleCount": 0,
+      "ownedRootIndices": [
+        0
+      ],
+      "page": 30,
+      "reviewedRole": "body",
+      "sourceHeadingGroupsMissingFromTitle": [],
+      "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+      "titleAndFlagAgree": true,
+      "titleLineCount": 0,
+      "titleText": "varied roles which an American President performs-Head of State,",
+      "uniqueTextRegionOwnership": true
+    },
+    {
+      "captionCandidateRequiringTableOwnership": false,
+      "capture": "warren-50.json",
+      "caseID": "gpo-warren-1964",
+      "flaggedRootIndices": [
+        0
+      ],
+      "knownFalsePromotion": true,
+      "lineCount": 53,
+      "nestedContainerCount": 7,
+      "nestedTitleCount": 0,
+      "ownedRootIndices": [
+        0
+      ],
+      "page": 50,
+      "reviewedRole": "body",
+      "sourceHeadingGroupsMissingFromTitle": [],
+      "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+      "titleAndFlagAgree": true,
+      "titleLineCount": 0,
+      "titleText": "September 26 to October 3, 1963, and his known contacts with",
+      "uniqueTextRegionOwnership": true
+    },
+    {
+      "captionCandidateRequiringTableOwnership": false,
+      "capture": "warren-100.json",
+      "caseID": "gpo-warren-1964",
+      "flaggedRootIndices": [
+        0
+      ],
+      "knownFalsePromotion": true,
+      "lineCount": 11,
+      "nestedContainerCount": 0,
+      "nestedTitleCount": 0,
+      "ownedRootIndices": [
+        0
+      ],
+      "page": 100,
+      "reviewedRole": "body",
+      "sourceHeadingGroupsMissingFromTitle": [],
+      "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+      "titleAndFlagAgree": true,
+      "titleLineCount": 0,
+      "titleText": "was stationed.es",
+      "uniqueTextRegionOwnership": true
+    },
+    {
+      "captionCandidateRequiringTableOwnership": false,
+      "capture": "warren-920.json",
+      "caseID": "gpo-warren-1964",
+      "flaggedRootIndices": [],
+      "knownFalsePromotion": false,
+      "lineCount": 0,
+      "nestedContainerCount": 0,
+      "nestedTitleCount": 0,
+      "ownedRootIndices": [],
+      "page": 920,
+      "reviewedRole": "absent",
+      "sourceHeadingGroupsMissingFromTitle": [],
+      "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+      "titleAndFlagAgree": false,
+      "titleLineCount": 0,
+      "titleText": null,
+      "uniqueTextRegionOwnership": false
+    },
+    {
+      "captionCandidateRequiringTableOwnership": false,
+      "capture": "blue-book-4.json",
+      "caseID": "cia-blue-book-14-1955",
+      "flaggedRootIndices": [
+        0
+      ],
+      "knownFalsePromotion": false,
+      "lineCount": 11,
+      "nestedContainerCount": 0,
+      "nestedTitleCount": 0,
+      "ownedRootIndices": [
+        0
+      ],
+      "page": 4,
+      "reviewedRole": "partial_heading",
+      "sourceHeadingGroupsMissingFromTitle": [
+        "PROJECT BLUE BOOK SPECIAL REPORT NO. 14"
+      ],
+      "sourceSHA256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
+      "titleAndFlagAgree": true,
+      "titleLineCount": 0,
+      "titleText": "PROJECT BLUE BOOK",
+      "uniqueTextRegionOwnership": true
+    },
+    {
+      "captionCandidateRequiringTableOwnership": false,
+      "capture": "blue-book-9.json",
+      "caseID": "cia-blue-book-14-1955",
+      "flaggedRootIndices": [
+        0
+      ],
+      "knownFalsePromotion": true,
+      "lineCount": 54,
+      "nestedContainerCount": 0,
+      "nestedTitleCount": 0,
+      "ownedRootIndices": [
+        0
+      ],
+      "page": 9,
+      "reviewedRole": "body",
+      "sourceHeadingGroupsMissingFromTitle": [],
+      "sourceSHA256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
+      "titleAndFlagAgree": true,
+      "titleLineCount": 0,
+      "titleText": "with the year 1952. In these charts, 3201 cases have been used.",
+      "uniqueTextRegionOwnership": true
+    },
+    {
+      "captionCandidateRequiringTableOwnership": true,
+      "capture": "blue-book-74.json",
+      "caseID": "cia-blue-book-14-1955",
+      "flaggedRootIndices": [
+        0
+      ],
+      "knownFalsePromotion": false,
+      "lineCount": 61,
+      "nestedContainerCount": 60,
+      "nestedTitleCount": 0,
+      "ownedRootIndices": [
+        0
+      ],
+      "page": 74,
+      "reviewedRole": "table_caption",
+      "sourceHeadingGroupsMissingFromTitle": [],
+      "sourceSHA256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
+      "titleAndFlagAgree": true,
+      "titleLineCount": 0,
+      "titleText": "TABLE IV",
+      "uniqueTextRegionOwnership": true
+    },
+    {
+      "captionCandidateRequiringTableOwnership": false,
+      "capture": "fed-32.json",
+      "caseID": "fed-explained-2021",
+      "flaggedRootIndices": [
+        0
+      ],
+      "knownFalsePromotion": true,
+      "lineCount": 45,
+      "nestedContainerCount": 0,
+      "nestedTitleCount": 0,
+      "ownedRootIndices": [
+        0
+      ],
+      "page": 32,
+      "reviewedRole": "running_header",
+      "sourceHeadingGroupsMissingFromTitle": [
+        "Box 3.1. What Happens at an FOMC Meeting",
+        "How the FOMC Determines the Appropriate Stance of Monetary Policy"
+      ],
+      "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+      "titleAndFlagAgree": true,
+      "titleLineCount": 0,
+      "titleText": "The Fed Explained: What the Central Bank Does",
+      "uniqueTextRegionOwnership": true
+    },
+    {
+      "captionCandidateRequiringTableOwnership": false,
+      "capture": "911-19.json",
+      "caseID": "gpo-911-2004",
+      "flaggedRootIndices": [
+        1
+      ],
+      "knownFalsePromotion": false,
+      "lineCount": 29,
+      "nestedContainerCount": 0,
+      "nestedTitleCount": 0,
+      "ownedRootIndices": [
+        1
+      ],
+      "page": 19,
+      "reviewedRole": "partial_heading",
+      "sourceHeadingGroupsMissingFromTitle": [
+        "WE HAVE SOME PLANES",
+        "1.1 INSIDE THE FOUR FLIGHTS",
+        "Boarding the Flights"
+      ],
+      "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+      "titleAndFlagAgree": true,
+      "titleLineCount": 0,
+      "titleText": "\"WE HAVE",
+      "uniqueTextRegionOwnership": true
+    }
+  ],
+  "purpose": "Rejected metadata-only heading candidates; not passing fidelity claims",
+  "schemaVersion": 1,
+  "summary": {
+    "captionCandidatesRequiringTableOwnership": 1,
+    "knownFalsePromotions": 7,
+    "missingSourceHeadingGroups": 8,
+    "nestedContainers": 149,
+    "nestedTitles": 0,
+    "pageCount": 14,
+    "reviewedRoles": {
+      "absent": 1,
+      "body": 4,
+      "dialogue": 1,
+      "heading": 1,
+      "partial_heading": 4,
+      "running_header": 1,
+      "sign": 1,
+      "table_caption": 1
+    },
+    "titleAndFlagAgree": 13,
+    "titles": 13,
+    "uniqueTextRegionOwnership": 13
+  }
+}

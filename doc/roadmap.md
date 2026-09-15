@@ -47,8 +47,6 @@ physical-device memory/performance remain unqualified.
   points and baselines. Originals are fetched explicitly into a checksum-verified ignored cache.
   Qualify tagged table/figure semantics and mixed diagram/prose pages; expand with borderless tables,
   footnotes, damaged encodings and non-Latin layouts. Measure coverage and reading order.
-- Evaluate OS 27's native progress composition APIs while retaining ordered client reporting.
-  The minimum deployment version remains 27.
 
 - Improve [region preservation around shading/complex graphics](https://github.com/vocaro/PDFReflowLib/issues/13)
   and [native word boundaries/graphic labels](https://github.com/vocaro/PDFReflowLib/issues/14).

@@ -5,6 +5,10 @@ workspace, overall progress, cleanup and atomic publication. Its public API rema
 the internal reconstruction pipeline and document model are independent of the output format.
 There is no application, UI, index, library-store or inference dependency.
 
+The [OS 27 progress-composition evaluation](progress-composition.md) retains ordered,
+awaited client callbacks and explicit publication completion; native progress trees remain
+a possible client-side presentation choice.
+
 ```mermaid
 flowchart LR
     PDF[PDF] --> Extraction[Native text / graphics / OCR]

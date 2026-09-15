@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "source": {
+    "bytes": 2475163,
+    "sha256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b"
+  },
+  "harness": {
+    "compare_pdf.py": {
+      "bytes": 12039,
+      "sha256": "c4841ba4a964707265758815dbac6036dd42e20337ef3e7caa1c9fae900a4013"
+    },
+    "serve_comparison.py": {
+      "bytes": 2884,
+      "sha256": "0e88e2a5bdbf3d7ec5353019725a036e6c5f1f759bd039c490eca807a588d389"
+    },
+    "comparison/index.html": {
+      "bytes": 3787,
+      "sha256": "2a36074ea68fb337a3ec5e57d5c3c637d73c819bdbeabdcf73492ae48a4d72b9"
+    },
+    "comparison/viewer.css": {
+      "bytes": 2834,
+      "sha256": "d5aea5b08898f2798f3884ef88510f32a54126a9affeb993310a9063693e10a3"
+    },
+    "comparison/viewer.js": {
+      "bytes": 6856,
+      "sha256": "bd20b93c03783be3fee134221a48fd9ff3c54c710b74a8af21949dbe263bb260"
+    }
+  },
+  "popplerVersion": "pdftohtml version 26.04.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1999-2003 Gueorgui Ovtcharov and Rainer Dorsch\nCopyright 1996-2011, 2022 Glyph & Cog, LLC",
+  "epub": {
+    "bytes": 67662421,
+    "sha256": "3949fef1584637b42f05768fe1823b9340b04de71b9807c460b5cafea4afc027"
+  },
+  "pageCount": 585,
+  "converter": {
+    "bytes": 862152,
+    "sha256": "6ae1a17ef314531255ad1e768c4c75c6739483fe793de6627d8f9b5b2021602f"
+  },
+  "reviewPages": [
+    15,
+    19,
+    20,
+    21,
+    22,
+    65,
+    66,
+    471,
+    472,
+    584
+  ],
+  "scope": "Separate complete-book conversion, same source and converter as the final baseline; only listed pages prepared for visual comparison."
+}

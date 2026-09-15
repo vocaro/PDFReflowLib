@@ -21,8 +21,12 @@ physical-device memory/performance remain unqualified.
   and [exclude object placeholders](https://github.com/vocaro/PDFReflowLib/issues/8) from text/counts. Evidence: [Warren baseline](../measurements/gpo-warren-1964/record.md).
 - Correct [absolute image URLs in the Poppler simple preview](https://github.com/vocaro/PDFReflowLib/issues/9) without weakening
   local server containment; retain raw Poppler output and a reproducible rendered comparison.
-- The development corpus includes the FAA handbook, Wallace algebra textbook and Warren
-  Commission scanned report, with source identities, review points and baseline measurements. Expand it with borderless tables,
+- Investigate [9/11 report header/heading confusion](https://github.com/vocaro/PDFReflowLib/issues/10),
+  keeping the external ALL-CAPS prototype counts distinct from library measurements. Qualify
+  [endnote markers/links](https://github.com/vocaro/PDFReflowLib/issues/11) and timeline-label ownership; retain the successful native word-spacing
+  examples as positive review targets. See the [baseline](../measurements/gpo-911-2004/record.md).
+- The development corpus includes the FAA handbook, Wallace algebra textbook, Warren
+  Commission scanned report and 9/11 digital report, with identities, review points and baselines. Expand it with borderless tables,
   footnotes, damaged encodings and non-Latin layouts. Measure coverage and reading order.
 - Evaluate OS 27's native progress composition APIs while retaining ordered client reporting.
   The minimum deployment version remains 27.

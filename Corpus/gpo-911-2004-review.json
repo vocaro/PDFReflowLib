@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "caseID": "gpo-911-2004",
+  "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+  "pageNumbering": "one-based physical PDF pages; printed labels differ",
+  "points": [
+    {
+      "page": 15,
+      "focus": "Preface opening: preserve We present rather than extraction-spaced We pre se nt."
+    },
+    {
+      "page": 19,
+      "focus": "Genuine chapter title, section 1.1, small capitals and date spacing; preserve Tuesday, September 11, 2001."
+    },
+    {
+      "page": 20,
+      "focus": "Even-page report-title header and superscript note references."
+    },
+    {
+      "page": 21,
+      "focus": "Odd-page chapter-title header; keep body continuation separate from furniture."
+    },
+    {
+      "page": 22,
+      "focus": "Second even-page header for alternating-page recurrence."
+    },
+    {
+      "page": 50,
+      "focus": "Timeline graphic labels: keep text associated with the figure, avoid stray heading candidates. Candidate for later visual adjudication; not in this comparison bundle."
+    },
+    {
+      "page": 65,
+      "focus": "Chapter 2 opening: distinguish the genuine multiline title and section 2.1 from running headers."
+    },
+    {
+      "page": 66,
+      "focus": "Report-title header after a chapter transition."
+    },
+    {
+      "page": 471,
+      "focus": "Chapter-specific endnote header with printed page number; exclude from navigation."
+    },
+    {
+      "page": 472,
+      "focus": "Endnotes 38 onward; preserve note-number associations, text flow and source-reference relationships."
+    },
+    {
+      "page": 584,
+      "focus": "Late-book endnotes: chapter-local header recurrence and continued note text."
+    }
+  ],
+  "positiveTextChecks": [
+    {
+      "page": 15,
+      "expected": "We present",
+      "observed": "Exact phrase present in PDFReflowLib XHTML; Poppler layout extraction has We pre se nt."
+    },
+    {
+      "page": 19,
+      "expected": "Tuesday, September 11, 2001",
+      "observed": "Exact phrase present in PDFReflowLib XHTML; Poppler layout extraction splits letters and digits."
+    }
+  ],
+  "reviewScope": "Ten pages prepared from a complete-book conversion. Browser/source-image spot checks cover pages 19, 20 and 472; selected XHTML inspected on 15, 19, 20, 21, 65, 66, 471 and 472. No heading precision audit or complete endnote-link qualification."
+}

@@ -166,7 +166,8 @@ interchange format; the supported public output remains EPUB 3. See
 
 `Corpus/manifest.json` registers the 522-page FAA Pilot's Handbook of Aeronautical Knowledge
 (FAA-H-8083-25C), Tyler Wallace's 489-page Beginning and Intermediate Algebra, and the
-920-page scanned Warren Commission report by exact byte identity. Supply these PDFs separately; they are not bundled or fetched by the tests.
+920-page scanned Warren Commission report, and the 585-page digital 9/11 Commission report
+by exact byte identity. Supply these PDFs separately; they are not bundled or fetched by the tests.
 [Corpus guide](doc/corpus.md) lists their coverage, attribution and review commands. The manifest lists review points and known reading-order/raster defects, so a
 successful conversion is not mistaken for a fidelity qualification.
 

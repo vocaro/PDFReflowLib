@@ -9,6 +9,7 @@ in `Tests/PDFReflowLibTests/Fixtures` and run without any external documents.
 | `faa-phak-8083-25c` | 522 | Columns, illustrations, diagrams, tables, glossary | 1,280 MiB |
 | `wallace-algebra-2010` | 489 | Fractions, radicals, powers, examples, exercises, answer keys | 256 MiB |
 | `gpo-warren-1964` | 920 | Scans, noisy existing OCR, notes, index, large image output | Unset: default conversion fails |
+| `gpo-911-2004` | 585 | Untagged digital text, alternating headers, tracked lettering, endnotes | 256 MiB |
 
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
@@ -98,3 +99,39 @@ Tracked defects: [full-book resource limit](https://github.com/vocaro/PDFReflowL
 [placeholder text/counts](https://github.com/vocaro/PDFReflowLib/issues/8), and
 [Poppler image URLs](https://github.com/vocaro/PDFReflowLib/issues/9). Additional source-derived
 examples are linked from the existing reading-order and memory investigations.
+
+
+## 9/11 Commission report
+
+The owner-supplied 2004 full report is a 585-page digital original with no structure tags.
+[GovInfo](https://www.govinfo.gov/features/911-commission-report) identifies the official
+edition and links the PDF. Local bytes are pinned at 2,475,163 bytes, SHA-256
+`657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b`;
+no independent publisher re-fetch is claimed. This is external development material, not a
+catalog admission, bundled PDF or MIT relicensing of third-party illustrations.
+
+```sh
+swift build -c release --scratch-path .build/corpus-cli
+python3 Tools/evaluate-real-document.py --case gpo-911-2004 \
+  --pdf Corpus/GPO-911REPORT.pdf --converter .build/corpus-cli/release/pdf-reflow \
+  --output /tmp/911-baseline --epubcheck /opt/homebrew/bin/epubcheck
+scripts/compare-pdf-reflow.sh --pdf Corpus/GPO-911REPORT.pdf \
+  --pages 15,19,20,21,22,65,66,471,472,584 --output /tmp/911-review --serve
+```
+
+Output directories must be new. The full run passes the 256 MiB Mac RSS ceiling and EPUBCheck,
+but header and note fidelity remain unqualified. The PDF permits copying/printing despite
+permissions encryption and opens without a password prompt; the source is not rewritten.
+Its metadata title is a print-job filename; set `ConversionOptions.title` for a reader-facing
+title. [Review points](../Corpus/gpo-911-2004-review.json) and
+[baseline evidence](../measurements/gpo-911-2004/record.md) distinguish successful word-spacing
+examples from retained headers, false notes headings and flattened note markers.
+
+[Issue #10](https://github.com/vocaro/PDFReflowLib/issues/10) parks the heading investigation.
+The owner's 46/54 figure comes from a separate Claude ALL-CAPS prototype, not PDFReflowLib:
+46 candidates were headers, 50 were non-headings overall, and four were genuine. Its sample
+uses a Chapter 1 granule with a different identity. Those reported counts are preserved with
+provenance, not promoted to independently reproduced library measurements.
+
+[Issue #11](https://github.com/vocaro/PDFReflowLib/issues/11) tracks note-marker semantics,
+number/text associations and future endnote linking; full note coverage remains unqualified.

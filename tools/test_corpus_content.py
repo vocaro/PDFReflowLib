@@ -60,6 +60,34 @@ class CorpusContentTests(unittest.TestCase):
         self.pages[2]['text'] += '\ufffc'
         self.assertFalse(self.check()['passed'])
 
+    def test_furniture_absence_and_real_heading_semantics(self):
+        self.contract['pages'][0].update(absentText=['RUNNING HEADER'], headings=['alpha beta'])
+        self.pages[1]['headings'] = ['alpha beta']
+        self.assertTrue(self.check()['passed'])
+        self.pages[1]['text'] += ' RUNNING HEADER'
+        self.assertFalse(self.check()['passed'])
+        self.pages[1]['text'] = 'alpha beta'
+        self.pages[1]['headings'] = []  # Same text in ordinary prose cannot pass.
+        self.assertFalse(self.check()['passed'])
+        self.pages[2]['headings'] = ['alpha beta']  # Wrong page cannot pass either.
+        self.assertFalse(self.check()['passed'])
+        for key in ['absentText', 'headings']:
+            for phrase in ['', '  ', 123]:
+                self.contract['pages'][0][key] = [phrase]
+                with self.assertRaises(ValueError):
+                    self.check()
+                self.contract['pages'][0].pop(key)
+
+    def test_heading_parser_preserves_styling_and_page_ownership(self):
+        path = self.epub('<span epub:type="pagebreak" id="page-1"/><h2>al<strong>pha</strong> beta</h2>'
+                         '<p>ordinary prose</p><h3>first<span epub:type="pagebreak" id="page-2"/>second</h3>',
+                         '<h6>another heading</h6><p>prose</p><figure><figcaption>caption</figcaption></figure>')
+        pages, _ = read_pages(path)
+        self.assertEqual(pages[1]['headings'], ['alpha beta', 'first'])
+        self.assertEqual(pages[2]['headings'], ['second', 'another heading'])
+        self.assertNotIn('caption', pages[2]['text'])
+        self.assertIn('another heading prose', pages[2]['text'])
+
     def test_invalid_or_empty_contracts_fail(self):
         for pages in [[], [{'page': 1}], [{'page': 3, 'text': ['x']}],
                       [{'page': 1, 'text': ['']}], [{'page': 1, 'text': []}],

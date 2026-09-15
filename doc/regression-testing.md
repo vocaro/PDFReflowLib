@@ -28,7 +28,7 @@ see [corpus instructions](corpus.md). Large originals and output EPUBs remain gi
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 77 targeted checks on 22 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 119 targeted checks on 31 reviewed pages
 across eight books: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic and Blue Book. All source-page anchors must also remain complete and ordered, and semantic
 text must contain no image attachment placeholders.
@@ -125,7 +125,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-72 Swift tests with no known-issue wrappers, and 53 Python tests.
+82 Swift tests with no known-issue wrappers, and 55 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -148,3 +148,34 @@ EPUB structure checks, optional EPUBCheck and the internal reader. Ten invalid/o
 requests must fail without output or completion. It runs in `check-all.sh` alongside the six
 default fixture conversions. Reader tests check JPEG MIME admission and both ZIP/expanded
 byte limits while preserving existing active-content and traversal rejection controls.
+
+## Running headers and page numbers
+
+`FurnitureTests.swift` uses 21 checksum-pinned 9/11 source-layout pages to distinguish running
+headers from chapter openings and require every other source line to survive. Controls cover
+alternating and chapter-local repetition, sparse occurrences, duplicate page identities, typography
+and position drift, adjacent prose, body titles, isolated content, offset page bounds, numeric
+chapter-page folios, nearby captions and the public header-retention option. Fallback font estimates
+must not make FAA folios reappear. Six additional FAA source-layout pages protect shifted
+folios and changed page sizes while retaining every surrounding line.
+
+Corpus contracts support `absentText` for reviewed unwanted text and `headings` for phrases that
+must remain semantic headings on the correct source page. Reader tests reject headers reintroduced
+into prose, headings flattened to paragraphs, headings moved to another page and empty expectations;
+heading parsing retains inline styles and page boundaries, including across spine files.
+The 9/11 contract protects chapter titles, source body text and removal of four running-header
+examples; FAA page-16/91 folios supply cross-document controls.
+
+[Local-header evidence](../measurements/local-header-regressions/record.md) includes the failing
+baseline, complete corpus receipts and before/after text and image comparisons. Corpus assertions
+remain selected contracts, not comprehensive quality scores; inspecting differences also catches
+regressions outside those selected pages.
+
+Our Flag pages 34/42/43 additionally protect the alphabetical row order of four illustrated entries
+and four retained images per page. The footer candidate band stays at the existing outer 7%;
+the header band extends to 10% for the 9/11 source. Wider footer removal needs independent
+layout work before it can preserve this reading-order contract.
+
+Blue Book pages 5/12 provide source-derived synthetic-layer margin controls. Existing repeated
+edge-artifact cleanup remains separate from native-header inference; the page-12 corpus check
+rejects reintroduced margin noise while retaining body text, its source image and uncertainty warning.

@@ -9,37 +9,7 @@ enum LayoutReconstructor {
     }
 
     static func stripFurniture(_ pages: inout [PageContent]) -> [ConversionWarning] {
-        guard pages.count >= 3 else { return [] }
-        func key(_ line: TextLine, bounds: CGRect) -> String? {
-            let edge: String
-            if line.rect.midY > bounds.minY + bounds.height * 0.93 { edge = "top" }
-            else if line.rect.midY < bounds.minY + bounds.height * 0.07 { edge = "bottom" }
-            else { return nil }
-            // Short edge text only; a repeated paragraph is not furniture.
-            guard line.text.count < 100 else { return nil }
-            return edge + ":" + line.text.lowercased().replacingOccurrences(
-                of: "[0-9]+", with: "#", options: .regularExpression)
-        }
-        var occurrences: [String: Int] = [:]
-        for page in pages {
-            for candidate in Set(page.lines.compactMap { key($0, bounds: page.bounds) }) {
-                occurrences[candidate, default: 0] += 1
-            }
-        }
-        var warnings: [ConversionWarning] = []
-        for i in pages.indices {
-            let bounds = pages[i].bounds
-            let kept = pages[i].lines.filter { line in
-                guard let candidate = key(line, bounds: bounds) else { return true }
-                return occurrences[candidate, default: 0] < max(3, (pages.count + 1) / 2)
-            }
-            if !kept.isEmpty && kept.count != pages[i].lines.count {
-                warnings.append(.init(code: .furnitureRemoved, page: pages[i].number,
-                    message: "Repeated header or footer omitted from the reflowed text."))
-                pages[i].lines = kept
-            }
-        }
-        return warnings
+        FurnitureDetector.strip(&pages)
     }
 
     /// Expand crops to whole intersecting text lines so a label cannot be cut in half.

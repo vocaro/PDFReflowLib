@@ -1,0 +1,105 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        532.42380000000003,
+        33.709700000000005,
+        25.57000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "14-29"
+        }
+      ],
+      "text" : "14-29"
+    },
+    {
+      "rect" : [
+        64.396999999999991,
+        121.66290000000001,
+        508.07560000000007,
+        605.11699999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        72.5,
+        90.970000000000013,
+        159.82660000000001,
+        10.811999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 14-47."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " Vortex avoidance procedures."
+        }
+      ],
+      "text" : "Figure 14-47. Vortex avoidance procedures."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      62.896999999999991,
+      107.31600000000003,
+      511.07560000000007,
+      623.43399999999997
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        532.42380000000003,
+        33.709700000000005,
+        25.57000000000005,
+        12.310000000000002
+      ],
+      "text" : "14-29"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        72.5,
+        90.970000000000013,
+        159.82660000000001,
+        10.811999999999998
+      ],
+      "text" : "Figure 14-47. Vortex avoidance procedures."
+    }
+  ],
+  "page" : 363,
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

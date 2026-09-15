@@ -1,0 +1,2665 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        35.603999999999999,
+        719.21699999999998,
+        103.91000000000001,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Pilot Deviations (PDs)"
+        }
+      ],
+      "text" : "Pilot Deviations (PDs)"
+    },
+    {
+      "rect" : [
+        35.603999999999999,
+        705.875,
+        237.13799999999992,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "A pilot deviation (PD) is an action of a pilot that violates any"
+        }
+      ],
+      "text" : "A pilot deviation (PD) is an action of a pilot that violates any"
+    },
+    {
+      "rect" : [
+        35.603999999999999,
+        693.375,
+        237.14100000000002,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Federal Aviation Regulation. While PDs should be avoided,"
+        }
+      ],
+      "text" : "Federal Aviation Regulation. While PDs should be avoided,"
+    },
+    {
+      "rect" : [
+        35.603999999999999,
+        680.875,
+        237.13799999999992,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "the regulations do authorize deviations from a clearance in"
+        }
+      ],
+      "text" : "the regulations do authorize deviations from a clearance in"
+    },
+    {
+      "rect" : [
+        35.603999999999999,
+        668.375,
+        237.16730000000013,
+        13.471000000000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.00099999999997635314,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "r"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "esponse to a traffic alert and collision avoidance"
+        }
+      ],
+      "text" : "response to a traffic alert and collision avoidance"
+    },
+    {
+      "rect" : [
+        35.603999999999999,
+        655.87599999999998,
+        237.14399999999995,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "system resolution advisory. You must notify ATC as soon as"
+        }
+      ],
+      "text" : "system resolution advisory. You must notify ATC as soon as"
+    },
+    {
+      "rect" : [
+        35.603999999999992,
+        643.37599999999998,
+        121.80799999999999,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "possible following a deviation."
+        }
+      ],
+      "text" : "possible following a deviation."
+    },
+    {
+      "rect" : [
+        35.603999999999992,
+        618.375,
+        237.16480000000001,
+        13.471000000000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.00079999999991287041,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Pilot "
+        },
+        {
+          "baselineOffset" : -0.00020000000006348273,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "deviations can occur in "
+        },
+        {
+          "baselineOffset" : 0.00019999999994979589,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "several different"
+        }
+      ],
+      "text" : "Pilot deviations can occur in several different"
+    },
+    {
+      "rect" : [
+        35.603800000000007,
+        605.87540000000001,
+        237.15229999999994,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "ways. Airborne deviations result when a pilot"
+        }
+      ],
+      "text" : "ways. Airborne deviations result when a pilot"
+    },
+    {
+      "rect" : [
+        35.6038,
+        593.37540000000001,
+        237.148,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "strays from an assigned heading or altitude or from"
+        }
+      ],
+      "text" : "strays from an assigned heading or altitude or from"
+    },
+    {
+      "rect" : [
+        35.603800000000007,
+        580.87540000000001,
+        237.13890000000001,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "an instrument procedure, or if the pilot penetrates"
+        }
+      ],
+      "text" : "an instrument procedure, or if the pilot penetrates"
+    },
+    {
+      "rect" : [
+        35.603800000000007,
+        568.37540000000001,
+        228.93590000000003,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "controlled or restricted airspace without ATC clearance."
+        }
+      ],
+      "text" : "controlled or restricted airspace without ATC clearance."
+    },
+    {
+      "rect" : [
+        35.603800000000007,
+        543.37540000000001,
+        202.46999999999997,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "To prevent airborne deviations, follow these steps:"
+        }
+      ],
+      "text" : "To prevent airborne deviations, follow these steps:"
+    },
+    {
+      "rect" : [
+        43.811,
+        523.46600000000001,
+        227.83430000000001,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Plan each flight—you may have flown the flight many"
+        }
+      ],
+      "text" : "• Plan each flight—you may have flown the flight many"
+    },
+    {
+      "rect" : [
+        61.811,
+        510.96600000000007,
+        209.98619999999997,
+        13.470099999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "times before but conditions and "
+        },
+        {
+          "baselineOffset" : 9.9999999974897946e-05,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "situations can change"
+        }
+      ],
+      "text" : "times before but conditions and situations can change"
+    },
+    {
+      "rect" : [
+        61.811199999999999,
+        498.46610000000004,
+        210.00100000000003,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "rapidly, such as in the case of a pop-up temporary"
+        }
+      ],
+      "text" : "rapidly, such as in the case of a pop-up temporary"
+    },
+    {
+      "rect" : [
+        61.811199999999999,
+        485.96610000000004,
+        209.98100000000005,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "flight restriction (TFR). Take a few minutes prior to"
+        }
+      ],
+      "text" : "flight restriction (TFR). Take a few minutes prior to"
+    },
+    {
+      "rect" : [
+        61.811199999999999,
+        473.46610000000004,
+        124.70000000000003,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "each flight to plan accordingly."
+        }
+      ],
+      "text" : "each flight to plan accordingly."
+    },
+    {
+      "rect" : [
+        43.811199999999999,
+        456.80810000000002,
+        227.98900000000009,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Talk and squawk—Proper communication with ATC"
+        }
+      ],
+      "text" : "• Talk and squawk—Proper communication with ATC"
+    },
+    {
+      "rect" : [
+        61.811199999999999,
+        444.30810000000002,
+        210.18000000000006,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "has its benefits. Flight following often makes the"
+        }
+      ],
+      "text" : "has its benefits. Flight following often makes the"
+    },
+    {
+      "rect" : [
+        61.811200000000007,
+        431.80810000000002,
+        210.18710000000002,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "controller’s job easier because they can better integrate"
+        }
+      ],
+      "text" : "controller’s job easier because they can better integrate"
+    },
+    {
+      "rect" : [
+        61.811200000000007,
+        419.30810000000002,
+        83.880000000000024,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "VFR and IFR traffic."
+        }
+      ],
+      "text" : "VFR and IFR traffic."
+    },
+    {
+      "rect" : [
+        43.811200000000007,
+        402.65010000000001,
+        228.16799999999998,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Give yourself some room—GPS is usually more"
+        }
+      ],
+      "text" : "• Give yourself some room—GPS is usually more"
+    },
+    {
+      "rect" : [
+        61.811199999999985,
+        390.15000000000003,
+        209.98000000000002,
+        13.470100000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "precise than ATC radar. Using "
+        },
+        {
+          "baselineOffset" : -9.9999999974897946e-05,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "your GPS to fly up"
+        }
+      ],
+      "text" : "precise than ATC radar. Using your GPS to fly up"
+    },
+    {
+      "rect" : [
+        61.811199999999985,
+        377.65000000000003,
+        209.98899999999998,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "to and along the line of the airspace you are trying to"
+        }
+      ],
+      "text" : "to and along the line of the airspace you are trying to"
+    },
+    {
+      "rect" : [
+        61.811199999999985,
+        365.15000000000003,
+        209.97400000000005,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "avoid could result in a pilot deviation because ATC"
+        }
+      ],
+      "text" : "avoid could result in a pilot deviation because ATC"
+    },
+    {
+      "rect" : [
+        61.811199999999985,
+        352.65000000000003,
+        201.62,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "radar may show you within the restricted airspace."
+        }
+      ],
+      "text" : "radar may show you within the restricted airspace."
+    },
+    {
+      "rect" : [
+        42.737000000000002,
+        334.04000000000002,
+        237.11989999999989,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Ground deviations (also called surface deviations) include"
+        }
+      ],
+      "text" : "Ground deviations (also called surface deviations) include"
+    },
+    {
+      "rect" : [
+        42.736000000000004,
+        321.54000000000002,
+        237.13260000000002,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "taxiing, taking off, or landing without clearance, deviating"
+        }
+      ],
+      "text" : "taxiing, taking off, or landing without clearance, deviating"
+    },
+    {
+      "rect" : [
+        42.736500000000007,
+        309.04000000000002,
+        237.12089999999998,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "from an assigned taxi route, or failing to hold short of an"
+        }
+      ],
+      "text" : "from an assigned taxi route, or failing to hold short of an"
+    },
+    {
+      "rect" : [
+        42.736500000000007,
+        296.54000000000002,
+        237.12900000000005,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "assigned clearance limit. To prevent ground deviations, stay"
+        }
+      ],
+      "text" : "assigned clearance limit. To prevent ground deviations, stay"
+    },
+    {
+      "rect" : [
+        42.736500000000021,
+        284.04000000000002,
+        237.13499999999993,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "alert during ground operations. Pilot deviations can and"
+        }
+      ],
+      "text" : "alert during ground operations. Pilot deviations can and"
+    },
+    {
+      "rect" : [
+        42.736499999999978,
+        271.54000000000002,
+        237.13379999999978,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "frequently do occur on the ground. Many strategies and tactics"
+        }
+      ],
+      "text" : "frequently do occur on the ground. Many strategies and tactics"
+    },
+    {
+      "rect" : [
+        42.736499999999978,
+        259.04000000000002,
+        237.05999999999995,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "pilots use to avoid airborne deviations also work on the ground."
+        }
+      ],
+      "text" : "pilots use to avoid airborne deviations also work on the ground."
+    },
+    {
+      "rect" : [
+        42.736500000000007,
+        234.04000000000002,
+        237.13300000000001,
+        13.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Pilots should also remain vigilant about vehicle/pedestrian"
+        }
+      ],
+      "text" : "Pilots should also remain vigilant about vehicle/pedestrian"
+    },
+    {
+      "rect" : [
+        42.736499999999978,
+        221.54000000000002,
+        237.13009999999997,
+        13.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "deviations (V/PDs). A vehicle or pedestrian"
+        }
+      ],
+      "text" : "deviations (V/PDs). A vehicle or pedestrian"
+    },
+    {
+      "rect" : [
+        42.736499999999978,
+        209.04000000000002,
+        237.14099999999996,
+        13.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "deviation includes pedestrians, vehicles or other objects"
+        }
+      ],
+      "text" : "deviation includes pedestrians, vehicles or other objects"
+    },
+    {
+      "rect" : [
+        42.736500000000007,
+        196.54000000000002,
+        237.14399999999998,
+        13.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "interfering with aircraft operations by entering or"
+        }
+      ],
+      "text" : "interfering with aircraft operations by entering or"
+    },
+    {
+      "rect" : [
+        42.736500000000007,
+        184.04000000000002,
+        237.14009999999999,
+        13.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "moving on the runway movement area without"
+        }
+      ],
+      "text" : "moving on the runway movement area without"
+    },
+    {
+      "rect" : [
+        42.736500000000007,
+        171.54000000000002,
+        237.14290000000003,
+        13.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "authorization from air traffic control. In serious"
+        }
+      ],
+      "text" : "authorization from air traffic control. In serious"
+    },
+    {
+      "rect" : [
+        42.736500000000007,
+        159.04000000000002,
+        237.12999999999997,
+        13.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "instances, any ground deviation (PD or VPD) can result"
+        }
+      ],
+      "text" : "instances, any ground deviation (PD or VPD) can result"
+    },
+    {
+      "rect" : [
+        42.736500000000007,
+        146.54000000000002,
+        237.13979999999989,
+        13.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "in a runway incursion. Best practices in preventing"
+        }
+      ],
+      "text" : "in a runway incursion. Best practices in preventing"
+    },
+    {
+      "rect" : [
+        42.736500000000007,
+        134.04000000000002,
+        237.14219999999997,
+        13.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "ground deviations can be found in the following section"
+        }
+      ],
+      "text" : "ground deviations can be found in the following section"
+    },
+    {
+      "rect" : [
+        42.736499999999992,
+        121.88200000000001,
+        145.23000000000002,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "under runway incursion avoidance."
+        }
+      ],
+      "text" : "under runway incursion avoidance."
+    },
+    {
+      "rect" : [
+        285,
+        719.20299999999997,
+        139.48000000000002,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Runway Incursion Avoidance"
+        }
+      ],
+      "text" : "Runway Incursion Avoidance"
+    },
+    {
+      "rect" : [
+        285,
+        705.86099999999999,
+        237.12070000000017,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "A runway incursion is “any occurrence in the airport runway"
+        }
+      ],
+      "text" : "A runway incursion is “any occurrence in the airport runway"
+    },
+    {
+      "rect" : [
+        285,
+        693.36099999999999,
+        237.12599999999998,
+        13.470400000000041
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "environment involving an aircraft, vehicle, "
+        },
+        {
+          "baselineOffset" : 0.00040000000001327862,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "person, or object"
+        }
+      ],
+      "text" : "environment involving an aircraft, vehicle, person, or object"
+    },
+    {
+      "rect" : [
+        285,
+        680.8614,
+        237.13019999999983,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "on the ground that creates a collision hazard or results in a loss"
+        }
+      ],
+      "text" : "on the ground that creates a collision hazard or results in a loss"
+    },
+    {
+      "rect" : [
+        285,
+        668.3614,
+        237.12700000000007,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "of required separation with an aircraft taking off, intending"
+        }
+      ],
+      "text" : "of required separation with an aircraft taking off, intending"
+    },
+    {
+      "rect" : [
+        285,
+        655.8614,
+        237.12799999999993,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "to take off, landing, or intending to land.” It is important"
+        }
+      ],
+      "text" : "to take off, landing, or intending to land.” It is important"
+    },
+    {
+      "rect" : [
+        285,
+        643.3614,
+        237.12199999999996,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "to give the same attention to operating on the surface as in"
+        }
+      ],
+      "text" : "to give the same attention to operating on the surface as in"
+    },
+    {
+      "rect" : [
+        285,
+        630.8614,
+        237.11999999999989,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "other phases of flights. Proper planning can prevent runway"
+        }
+      ],
+      "text" : "other phases of flights. Proper planning can prevent runway"
+    },
+    {
+      "rect" : [
+        285,
+        618.3614,
+        237.125,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "incursions and the possibility of a ground collision. A pilot"
+        }
+      ],
+      "text" : "incursions and the possibility of a ground collision. A pilot"
+    },
+    {
+      "rect" : [
+        285,
+        605.8614,
+        237.12089999999989,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "should always be aware of the aircraft’s position on the"
+        }
+      ],
+      "text" : "should always be aware of the aircraft’s position on the"
+    },
+    {
+      "rect" : [
+        285,
+        593.3614,
+        237.12800000000004,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "surface at all times and be aware of other aircraft and vehicle"
+        }
+      ],
+      "text" : "surface at all times and be aware of other aircraft and vehicle"
+    },
+    {
+      "rect" : [
+        285,
+        580.8614,
+        237.12199999999996,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "operations on the airport. At times, towered airports can be"
+        }
+      ],
+      "text" : "operations on the airport. At times, towered airports can be"
+    },
+    {
+      "rect" : [
+        285,
+        568.3614,
+        237.12299999999982,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "busy and taxi instructions complex. In this situation, it may"
+        }
+      ],
+      "text" : "busy and taxi instructions complex. In this situation, it may"
+    },
+    {
+      "rect" : [
+        285,
+        555.8614,
+        237.12300000000005,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "be advisable to write down taxi instructions. The following"
+        }
+      ],
+      "text" : "be advisable to write down taxi instructions. The following"
+    },
+    {
+      "rect" : [
+        285,
+        543.3614,
+        218.27999999999997,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "are some practices to help prevent a runway incursion:"
+        }
+      ],
+      "text" : "are some practices to help prevent a runway incursion:"
+    },
+    {
+      "rect" : [
+        297.96300000000002,
+        507.60500000000002,
+        179.14400000000001,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Read back all runway crossing and/or hold"
+        }
+      ],
+      "text" : "• Read back all runway crossing and/or hold"
+    },
+    {
+      "rect" : [
+        315.96300000000002,
+        495.60470000000004,
+        47.484700000000032,
+        13.470300000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "instructio"
+        },
+        {
+          "baselineOffset" : -0.00029999999998153726,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "ns."
+        }
+      ],
+      "text" : "instructions."
+    },
+    {
+      "rect" : [
+        297.96269999999998,
+        478.94670000000002,
+        187.673,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Review airport layouts as part of preflight"
+        }
+      ],
+      "text" : "• Review airport layouts as part of preflight"
+    },
+    {
+      "rect" : [
+        315.96269999999998,
+        466.44670000000002,
+        200.78500000000003,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "planning, before descending to land and while"
+        }
+      ],
+      "text" : "planning, before descending to land and while"
+    },
+    {
+      "rect" : [
+        315.96269999999998,
+        453.94670000000002,
+        80.283999999999992,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "taxiing, as needed."
+        }
+      ],
+      "text" : "taxiing, as needed."
+    },
+    {
+      "rect" : [
+        297.96269999999998,
+        436.94670000000002,
+        107.15000000000003,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Know airport signage."
+        }
+      ],
+      "text" : "• Know airport signage."
+    },
+    {
+      "rect" : [
+        297.96269999999998,
+        419.94670000000002,
+        196.34399999999999,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Review NOTAM for information on runway/"
+        }
+      ],
+      "text" : "• Review NOTAM for information on runway/"
+    },
+    {
+      "rect" : [
+        315.96269999999998,
+        407.44670000000002,
+        160.74500000000006,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "taxiway closures and construction areas."
+        }
+      ],
+      "text" : "taxiway closures and construction areas."
+    },
+    {
+      "rect" : [
+        297.96269999999998,
+        390.78870000000001,
+        204.56909999999993,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Request progressive taxi instructions from ATC"
+        }
+      ],
+      "text" : "• Request progressive taxi instructions from ATC"
+    },
+    {
+      "rect" : [
+        315.96269999999998,
+        378.28870000000001,
+        118.55000000000001,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "when unsure of the taxi route."
+        }
+      ],
+      "text" : "when unsure of the taxi route."
+    },
+    {
+      "rect" : [
+        297.96269999999998,
+        361.63060000000002,
+        211.39790000000011,
+        13.470100000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Check for traffic before crossing"
+        },
+        {
+          "baselineOffset" : -9.9999999974897946e-05,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : " any runway hold"
+        }
+      ],
+      "text" : "• Check for traffic before crossing any runway hold"
+    },
+    {
+      "rect" : [
+        315.96270000000004,
+        349.13060000000002,
+        137.96500000000003,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "line and before entering a taxiway."
+        }
+      ],
+      "text" : "line and before entering a taxiway."
+    },
+    {
+      "rect" : [
+        297.96270000000004,
+        332.4726,
+        202.52200000000005,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Turn on aircraft lights and the rotating beacon or"
+        }
+      ],
+      "text" : "• Turn on aircraft lights and the rotating beacon or"
+    },
+    {
+      "rect" : [
+        315.96270000000004,
+        319.9726,
+        102.488,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "strobe lights while taxing."
+        }
+      ],
+      "text" : "strobe lights while taxing."
+    },
+    {
+      "rect" : [
+        297.96270000000004,
+        303.31459999999998,
+        215.91499999999996,
+        13.470100000000059
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "When landing, clear"
+        },
+        {
+          "baselineOffset" : 9.9999999974897946e-05,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : " the active runway a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "s soon"
+        }
+      ],
+      "text" : "• When landing, clear the active runway as soon"
+    },
+    {
+      "rect" : [
+        315.96270000000004,
+        290.81460000000004,
+        193.01199999999994,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "as possible, then wait for taxi instructions before"
+        }
+      ],
+      "text" : "as possible, then wait for taxi instructions before"
+    },
+    {
+      "rect" : [
+        315.96270000000004,
+        278.31460000000004,
+        73.956999999999994,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "further movement."
+        }
+      ],
+      "text" : "further movement."
+    },
+    {
+      "rect" : [
+        297.96270000000004,
+        261.65660000000003,
+        215.06999999999994,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Study and use proper phraseology in order"
+        }
+      ],
+      "text" : "• Study and use proper phraseology in order"
+    },
+    {
+      "rect" : [
+        315.96270000000004,
+        249.15660000000003,
+        173.25189999999986,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "to understand and respond to ground control"
+        }
+      ],
+      "text" : "to understand and respond to ground control"
+    },
+    {
+      "rect" : [
+        315.96270000000004,
+        236.65660000000003,
+        48.090000000000032,
+        13.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "instructions."
+        }
+      ],
+      "text" : "instructions."
+    },
+    {
+      "rect" : [
+        297.96270000000004,
+        219.99860000000001,
+        182.99900000000002,
+        13.470100000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Write down complex taxi instructions "
+        },
+        {
+          "baselineOffset" : 0.00010000000003174137,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "at"
+        }
+      ],
+      "text" : "• Write down complex taxi instructions at"
+    },
+    {
+      "rect" : [
+        315.96270000000004,
+        207.49870000000004,
+        78.04000000000002,
+        13.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "unfamiliar airports."
+        }
+      ],
+      "text" : "unfamiliar airports."
+    },
+    {
+      "rect" : [
+        291.34000000000003,
+        176.07400000000001,
+        237.12799999999982,
+        13.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Approximately three runway incursions occur each day at"
+        }
+      ],
+      "text" : "Approximately three runway incursions occur each day at"
+    },
+    {
+      "rect" : [
+        291.34000000000003,
+        163.57300000000001,
+        237.15499999999986,
+        13.471000000000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0010000000000047748,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "to"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "wered airports within the United States. The potential"
+        }
+      ],
+      "text" : "towered airports within the United States. The potential"
+    },
+    {
+      "rect" : [
+        291.34000000000003,
+        151.07300000000001,
+        237.13909999999998,
+        13.471000000000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.00050000000001659828,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "that "
+        },
+        {
+          "baselineOffset" : 0.00049999999998817657,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "these "
+        },
+        {
+          "baselineOffset" : -0.00050000000001659828,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "numb"
+        },
+        {
+          "baselineOffset" : 0.00049999999998817657,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "ers "
+        },
+        {
+          "baselineOffset" : -0.00050000000001659828,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "present "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "for a catastrophic accident"
+        }
+      ],
+      "text" : "that these numbers present for a catastrophic accident"
+    },
+    {
+      "rect" : [
+        291.34019999999998,
+        138.57350000000002,
+        237.15789999999981,
+        13.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "is unacceptable. The following are examples of pilot"
+        }
+      ],
+      "text" : "is unacceptable. The following are examples of pilot"
+    },
+    {
+      "rect" : [
+        291.34019999999998,
+        126.07350000000002,
+        237.12800000000004,
+        13.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "deviations, operational incidents (OI), and vehicle (driver)"
+        }
+      ],
+      "text" : "deviations, operational incidents (OI), and vehicle (driver)"
+    },
+    {
+      "rect" : [
+        291.34019999999998,
+        113.57350000000002,
+        187.404,
+        13.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "deviations that may lead to runway incursions."
+        }
+      ],
+      "text" : "deviations that may lead to runway incursions."
+    },
+    {
+      "rect" : [
+        502.80099999999999,
+        32.334499999999998,
+        25.176119999999912,
+        13.677299999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialMT",
+          "fontSize" : 10.02,
+          "text" : "14-31"
+        }
+      ],
+      "text" : "14-31"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.603999999999999,
+        719.21699999999998,
+        103.91000000000001,
+        13.190000000000055
+      ],
+      "text" : "Pilot Deviations (PDs)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.603999999999999,
+        705.875,
+        237.13799999999992,
+        13.470000000000027
+      ],
+      "text" : "A pilot deviation (PD) is an action of a pilot that violates any"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.603999999999999,
+        693.375,
+        237.14100000000002,
+        13.470000000000027
+      ],
+      "text" : "Federal Aviation Regulation. While PDs should be avoided,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.603999999999999,
+        680.875,
+        237.13799999999992,
+        13.470000000000027
+      ],
+      "text" : "the regulations do authorize deviations from a clearance in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.603999999999999,
+        668.375,
+        237.16730000000013,
+        13.471000000000004
+      ],
+      "text" : "response to a traffic alert and collision avoidance"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.603999999999999,
+        655.87599999999998,
+        237.14399999999995,
+        13.470000000000027
+      ],
+      "text" : "system resolution advisory. You must notify ATC as soon as"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.603999999999992,
+        643.37599999999998,
+        121.80799999999999,
+        13.470000000000027
+      ],
+      "text" : "possible following a deviation."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.603999999999992,
+        618.375,
+        237.16480000000001,
+        13.471000000000004
+      ],
+      "text" : "Pilot deviations can occur in several different"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.603800000000007,
+        605.87540000000001,
+        237.15229999999994,
+        13.470000000000027
+      ],
+      "text" : "ways. Airborne deviations result when a pilot"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.6038,
+        593.37540000000001,
+        237.148,
+        13.470000000000027
+      ],
+      "text" : "strays from an assigned heading or altitude or from"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.603800000000007,
+        580.87540000000001,
+        237.13890000000001,
+        13.470000000000027
+      ],
+      "text" : "an instrument procedure, or if the pilot penetrates"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.603800000000007,
+        568.37540000000001,
+        228.93590000000003,
+        13.470000000000027
+      ],
+      "text" : "controlled or restricted airspace without ATC clearance."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.603800000000007,
+        543.37540000000001,
+        202.46999999999997,
+        13.470000000000027
+      ],
+      "text" : "To prevent airborne deviations, follow these steps:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        43.811,
+        523.46600000000001,
+        227.83430000000001,
+        13.470000000000027
+      ],
+      "text" : "• Plan each flight—you may have flown the flight many"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        61.811,
+        510.96600000000007,
+        209.98619999999997,
+        13.470099999999945
+      ],
+      "text" : "times before but conditions and situations can change"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        61.811199999999999,
+        498.46610000000004,
+        210.00100000000003,
+        13.470000000000027
+      ],
+      "text" : "rapidly, such as in the case of a pop-up temporary"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        61.811199999999999,
+        485.96610000000004,
+        209.98100000000005,
+        13.470000000000027
+      ],
+      "text" : "flight restriction (TFR). Take a few minutes prior to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        61.811199999999999,
+        473.46610000000004,
+        124.70000000000003,
+        13.470000000000027
+      ],
+      "text" : "each flight to plan accordingly."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        43.811199999999999,
+        456.80810000000002,
+        227.98900000000009,
+        13.470000000000027
+      ],
+      "text" : "• Talk and squawk—Proper communication with ATC"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        61.811199999999999,
+        444.30810000000002,
+        210.18000000000006,
+        13.470000000000027
+      ],
+      "text" : "has its benefits. Flight following often makes the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        61.811200000000007,
+        431.80810000000002,
+        210.18710000000002,
+        13.470000000000027
+      ],
+      "text" : "controller’s job easier because they can better integrate"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        61.811200000000007,
+        419.30810000000002,
+        83.880000000000024,
+        13.470000000000027
+      ],
+      "text" : "VFR and IFR traffic."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        43.811200000000007,
+        402.65010000000001,
+        228.16799999999998,
+        13.470000000000027
+      ],
+      "text" : "• Give yourself some room—GPS is usually more"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        61.811199999999985,
+        390.15000000000003,
+        209.98000000000002,
+        13.470100000000002
+      ],
+      "text" : "precise than ATC radar. Using your GPS to fly up"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        61.811199999999985,
+        377.65000000000003,
+        209.98899999999998,
+        13.470000000000027
+      ],
+      "text" : "to and along the line of the airspace you are trying to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        61.811199999999985,
+        365.15000000000003,
+        209.97400000000005,
+        13.470000000000027
+      ],
+      "text" : "avoid could result in a pilot deviation because ATC"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        61.811199999999985,
+        352.65000000000003,
+        201.62,
+        13.470000000000027
+      ],
+      "text" : "radar may show you within the restricted airspace."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.737000000000002,
+        334.04000000000002,
+        237.11989999999989,
+        13.470000000000027
+      ],
+      "text" : "Ground deviations (also called surface deviations) include"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736000000000004,
+        321.54000000000002,
+        237.13260000000002,
+        13.470000000000027
+      ],
+      "text" : "taxiing, taking off, or landing without clearance, deviating"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736500000000007,
+        309.04000000000002,
+        237.12089999999998,
+        13.470000000000027
+      ],
+      "text" : "from an assigned taxi route, or failing to hold short of an"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736500000000007,
+        296.54000000000002,
+        237.12900000000005,
+        13.470000000000027
+      ],
+      "text" : "assigned clearance limit. To prevent ground deviations, stay"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736500000000021,
+        284.04000000000002,
+        237.13499999999993,
+        13.470000000000027
+      ],
+      "text" : "alert during ground operations. Pilot deviations can and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736499999999978,
+        271.54000000000002,
+        237.13379999999978,
+        13.470000000000027
+      ],
+      "text" : "frequently do occur on the ground. Many strategies and tactics"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736499999999978,
+        259.04000000000002,
+        237.05999999999995,
+        13.470000000000027
+      ],
+      "text" : "pilots use to avoid airborne deviations also work on the ground."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736500000000007,
+        234.04000000000002,
+        237.13300000000001,
+        13.469999999999999
+      ],
+      "text" : "Pilots should also remain vigilant about vehicle/pedestrian"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736499999999978,
+        221.54000000000002,
+        237.13009999999997,
+        13.469999999999999
+      ],
+      "text" : "deviations (V/PDs). A vehicle or pedestrian"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736499999999978,
+        209.04000000000002,
+        237.14099999999996,
+        13.469999999999999
+      ],
+      "text" : "deviation includes pedestrians, vehicles or other objects"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736500000000007,
+        196.54000000000002,
+        237.14399999999998,
+        13.469999999999999
+      ],
+      "text" : "interfering with aircraft operations by entering or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736500000000007,
+        184.04000000000002,
+        237.14009999999999,
+        13.469999999999999
+      ],
+      "text" : "moving on the runway movement area without"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736500000000007,
+        171.54000000000002,
+        237.14290000000003,
+        13.469999999999999
+      ],
+      "text" : "authorization from air traffic control. In serious"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736500000000007,
+        159.04000000000002,
+        237.12999999999997,
+        13.469999999999999
+      ],
+      "text" : "instances, any ground deviation (PD or VPD) can result"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736500000000007,
+        146.54000000000002,
+        237.13979999999989,
+        13.469999999999999
+      ],
+      "text" : "in a runway incursion. Best practices in preventing"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736500000000007,
+        134.04000000000002,
+        237.14219999999997,
+        13.469999999999999
+      ],
+      "text" : "ground deviations can be found in the following section"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        42.736499999999992,
+        121.88200000000001,
+        145.23000000000002,
+        13.470000000000027
+      ],
+      "text" : "under runway incursion avoidance."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        719.20299999999997,
+        139.48000000000002,
+        13.190000000000055
+      ],
+      "text" : "Runway Incursion Avoidance"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        705.86099999999999,
+        237.12070000000017,
+        13.470000000000027
+      ],
+      "text" : "A runway incursion is “any occurrence in the airport runway"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        693.36099999999999,
+        237.12599999999998,
+        13.470400000000041
+      ],
+      "text" : "environment involving an aircraft, vehicle, person, or object"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        680.8614,
+        237.13019999999983,
+        13.470000000000027
+      ],
+      "text" : "on the ground that creates a collision hazard or results in a loss"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        668.3614,
+        237.12700000000007,
+        13.470000000000027
+      ],
+      "text" : "of required separation with an aircraft taking off, intending"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        655.8614,
+        237.12799999999993,
+        13.470000000000027
+      ],
+      "text" : "to take off, landing, or intending to land.” It is important"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        643.3614,
+        237.12199999999996,
+        13.470000000000027
+      ],
+      "text" : "to give the same attention to operating on the surface as in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        630.8614,
+        237.11999999999989,
+        13.470000000000027
+      ],
+      "text" : "other phases of flights. Proper planning can prevent runway"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        618.3614,
+        237.125,
+        13.470000000000027
+      ],
+      "text" : "incursions and the possibility of a ground collision. A pilot"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        605.8614,
+        237.12089999999989,
+        13.470000000000027
+      ],
+      "text" : "should always be aware of the aircraft’s position on the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        593.3614,
+        237.12800000000004,
+        13.470000000000027
+      ],
+      "text" : "surface at all times and be aware of other aircraft and vehicle"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        580.8614,
+        237.12199999999996,
+        13.470000000000027
+      ],
+      "text" : "operations on the airport. At times, towered airports can be"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        568.3614,
+        237.12299999999982,
+        13.470000000000027
+      ],
+      "text" : "busy and taxi instructions complex. In this situation, it may"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        555.8614,
+        237.12300000000005,
+        13.470000000000027
+      ],
+      "text" : "be advisable to write down taxi instructions. The following"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        543.3614,
+        218.27999999999997,
+        13.470000000000027
+      ],
+      "text" : "are some practices to help prevent a runway incursion:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        297.96300000000002,
+        507.60500000000002,
+        179.14400000000001,
+        13.470000000000027
+      ],
+      "text" : "• Read back all runway crossing and/or hold"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        315.96300000000002,
+        495.60470000000004,
+        47.484700000000032,
+        13.470300000000009
+      ],
+      "text" : "instructions."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        297.96269999999998,
+        478.94670000000002,
+        187.673,
+        13.470000000000027
+      ],
+      "text" : "• Review airport layouts as part of preflight"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        315.96269999999998,
+        466.44670000000002,
+        200.78500000000003,
+        13.470000000000027
+      ],
+      "text" : "planning, before descending to land and while"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        315.96269999999998,
+        453.94670000000002,
+        80.283999999999992,
+        13.470000000000027
+      ],
+      "text" : "taxiing, as needed."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        297.96269999999998,
+        436.94670000000002,
+        107.15000000000003,
+        13.470000000000027
+      ],
+      "text" : "• Know airport signage."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        297.96269999999998,
+        419.94670000000002,
+        196.34399999999999,
+        13.470000000000027
+      ],
+      "text" : "• Review NOTAM for information on runway/"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        315.96269999999998,
+        407.44670000000002,
+        160.74500000000006,
+        13.470000000000027
+      ],
+      "text" : "taxiway closures and construction areas."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        297.96269999999998,
+        390.78870000000001,
+        204.56909999999993,
+        13.470000000000027
+      ],
+      "text" : "• Request progressive taxi instructions from ATC"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        315.96269999999998,
+        378.28870000000001,
+        118.55000000000001,
+        13.470000000000027
+      ],
+      "text" : "when unsure of the taxi route."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        297.96269999999998,
+        361.63060000000002,
+        211.39790000000011,
+        13.470100000000002
+      ],
+      "text" : "• Check for traffic before crossing any runway hold"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        315.96270000000004,
+        349.13060000000002,
+        137.96500000000003,
+        13.470000000000027
+      ],
+      "text" : "line and before entering a taxiway."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        297.96270000000004,
+        332.4726,
+        202.52200000000005,
+        13.470000000000027
+      ],
+      "text" : "• Turn on aircraft lights and the rotating beacon or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        315.96270000000004,
+        319.9726,
+        102.488,
+        13.470000000000027
+      ],
+      "text" : "strobe lights while taxing."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        297.96270000000004,
+        303.31459999999998,
+        215.91499999999996,
+        13.470100000000059
+      ],
+      "text" : "• When landing, clear the active runway as soon"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        315.96270000000004,
+        290.81460000000004,
+        193.01199999999994,
+        13.470000000000027
+      ],
+      "text" : "as possible, then wait for taxi instructions before"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        315.96270000000004,
+        278.31460000000004,
+        73.956999999999994,
+        13.470000000000027
+      ],
+      "text" : "further movement."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        297.96270000000004,
+        261.65660000000003,
+        215.06999999999994,
+        13.470000000000027
+      ],
+      "text" : "• Study and use proper phraseology in order"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        315.96270000000004,
+        249.15660000000003,
+        173.25189999999986,
+        13.470000000000027
+      ],
+      "text" : "to understand and respond to ground control"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        315.96270000000004,
+        236.65660000000003,
+        48.090000000000032,
+        13.469999999999999
+      ],
+      "text" : "instructions."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        297.96270000000004,
+        219.99860000000001,
+        182.99900000000002,
+        13.470100000000031
+      ],
+      "text" : "• Write down complex taxi instructions at"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        315.96270000000004,
+        207.49870000000004,
+        78.04000000000002,
+        13.469999999999999
+      ],
+      "text" : "unfamiliar airports."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        291.34000000000003,
+        176.07400000000001,
+        237.12799999999982,
+        13.469999999999999
+      ],
+      "text" : "Approximately three runway incursions occur each day at"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        291.34000000000003,
+        163.57300000000001,
+        237.15499999999986,
+        13.471000000000004
+      ],
+      "text" : "towered airports within the United States. The potential"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        291.34000000000003,
+        151.07300000000001,
+        237.13909999999998,
+        13.471000000000004
+      ],
+      "text" : "that these numbers present for a catastrophic accident"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        291.34019999999998,
+        138.57350000000002,
+        237.15789999999981,
+        13.469999999999999
+      ],
+      "text" : "is unacceptable. The following are examples of pilot"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        291.34019999999998,
+        126.07350000000002,
+        237.12800000000004,
+        13.469999999999999
+      ],
+      "text" : "deviations, operational incidents (OI), and vehicle (driver)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        291.34019999999998,
+        113.57350000000002,
+        187.404,
+        13.469999999999999
+      ],
+      "text" : "deviations that may lead to runway incursions."
+    },
+    {
+      "fontSize" : 10.02,
+      "monospaced" : false,
+      "rect" : [
+        502.80099999999999,
+        32.334499999999998,
+        25.176119999999912,
+        13.677299999999995
+      ],
+      "text" : "14-31"
+    }
+  ],
+  "page" : 365,
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

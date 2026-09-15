@@ -34,8 +34,11 @@ physical-device memory/performance remain unqualified.
   budgets. [Production policy measurements](../measurements/client-options/record.md) complete all
   920 Warren pages with explicit policies; defaults remain unchanged. Qualify physical-device
   memory and broader long-book configurations before treating that evidence as general support.
-- Investigate [9/11 report header/heading confusion](https://github.com/vocaro/PDFReflowLib/issues/10),
-  keeping the external ALL-CAPS prototype counts distinct from library measurements. Qualify
+- Qualify remaining margin layouts and timeline labels under
+  [9/11 report header/heading confusion](https://github.com/vocaro/PDFReflowLib/issues/10).
+  Chapter-local and alternating running headers have source-derived regressions and
+  [complete corpus evidence](../measurements/local-header-regressions/record.md).
+  Keep the external ALL-CAPS prototype counts distinct from library measurements. Qualify
   [endnote markers/links](https://github.com/vocaro/PDFReflowLib/issues/11) and timeline-label ownership; retain the successful native word-spacing
   examples as positive review targets. See the [baseline](../measurements/gpo-911-2004/record.md).
 - The development corpus includes the FAA handbook, Wallace algebra textbook, Warren
@@ -98,3 +101,9 @@ completion remain unqualified.
 
 Poppler preview image URLs (#9) are relative to each page bundle and have real-tool HTTP
 regressions with server containment intact; see [the evidence](../measurements/poppler-relative-images/record.md).
+
+Chapter-local and alternating margin removal is covered by 29 source-layout pages, body/caption/
+folio controls, public-option tests, and 119 corpus content checks on 31 pages across eight PDFs.
+The [header measurement](../measurements/local-header-regressions/record.md) records baseline
+failures and image/text comparisons. Multi-line headers, very short runs, general heading precision
+and timeline graphic ownership remain unqualified; #10 stays open for that broader qualification.

@@ -65,8 +65,18 @@ operations and nested Form XObjects. It resolves shading resources and bounds gr
 with conservative clipping, Form bounds and optional shading bounds. Core Graphics rasterizes
 the original region; the model stores an image asset, not an editable gradient. Unsafe or
 page-spanning bounds retain the page fallback. `OCRReader` uses Vision when policy requests it.
-`LayoutReconstructor` handles furniture, whitespace cuts, paragraphs, styled word joins and
-cross-page continuation. Narrow whitespace cuts require substantial text on both sides, so
+`LayoutReconstructor` handles whitespace cuts, paragraphs, styled word joins and
+cross-page continuation. `FurnitureDetector` removes short outermost margin rows supported by
+at least three neighboring or alternating physical pages, stable vertical position and typography.
+The top candidate band is 10% of page height; the footer band remains 7% to retain existing
+whitespace-cut behavior around illustrated rows. Textual headers require separation from inward
+content. Boundary page numbers use a consistent physical-page offset; numeric chapter-page folios retain their chapter prefix and use glyph height
+so fallback font estimates do not break matching. Internal digits remain meaningful. Matching
+body titles, nearby captions and a page's only text are retained. Each affected page reports
+`furnitureRemoved`; clients can disable removal with `removeRepeatedHeadersAndFooters`.
+This is conservative spatial evidence, not validated PDF tag consumption or a universal header
+classifier. Synthetic invisible-text layers retain the established whole-document repeated-margin
+rule in the outer 7%, because their typography does not supply native font evidence. Narrow whitespace cuts require substantial text on both sides, so
 short name/description cells do not become independent prose columns. `TableRegionDetector`
 recognizes aligned numeric dot-leader rows with a nearby textual header and preserves their
 complete region with `imageRegion` warnings. It does not infer general table semantics.

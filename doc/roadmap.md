@@ -127,3 +127,11 @@ both baseline keys, scripts, drop caps, existing whitespace and hyphens; the cor
 runs with the full document. See [native-line-boundary evidence](../measurements/native-line-boundaries/record.md).
 Single-run label spacing (“Dair y”, “Ve getables”) and diagram-label ownership remain open;
 this bounded repair does not close #14.
+
+
+Preformatted list/code blocks retain native inline styles instead of flattening them to strings.
+Source-derived algebra exercise exponents and FAA V-speed subscripts, synthetic list/code controls,
+and EPUB packing/navigation checks cover this additional script-loss path. See
+[preformatted-style evidence](../measurements/preformatted-styles/record.md). Numbered exercise
+layout, semantic lists and endnote ownership/links (#11) remain open; preserving styles does not
+resolve those relationships.

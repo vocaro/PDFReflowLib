@@ -33,7 +33,12 @@ private func line(_ text: String, x: Double, y: Double, width: Double = 200,
     ], graphics: [])
     var warnings: [ConversionWarning] = []
     let blocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
-    #expect(blocks == [ReflowBlock(content: .preformatted("if value < 3:\n    print(value)"), page: 1)])
+    try #require(blocks.count == 1)
+    guard case let .preformatted(text) = blocks[0].content else {
+        Issue.record("Expected preformatted code"); return
+    }
+    #expect(text.text == "if value < 3:\n    print(value)")
+    #expect(try EPUBTextEncoder.payload(blocks[0], imagePaths: [:]) == "if value &lt; 3:\n    print(value)")
 }
 
 @Test func wordRepairPreservesStyleAndAnInteriorSourceBoundary() {

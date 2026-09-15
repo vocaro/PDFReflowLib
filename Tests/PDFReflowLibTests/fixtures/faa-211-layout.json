@@ -1,0 +1,2395 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        543.54690000000005,
+        33.709700000000005,
+        14.450000000000045,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "8-9"
+        }
+      ],
+      "text" : "8-9"
+    },
+    {
+      "rect" : [
+        321,
+        508.17470000000003,
+        183.68610000000001,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 8-8."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Single engine airspeed indicator (ASI)."
+        }
+      ],
+      "text" : "Figure 8-8. Single engine airspeed indicator (ASI)."
+    },
+    {
+      "rect" : [
+        321.59120000000007,
+        528.46400000000006,
+        235.952,
+        201.10199999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        81,
+        719.56640000000004,
+        227.96000000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Calibrated airspeed (CAS)—IAS corrected for"
+        }
+      ],
+      "text" : "• Calibrated airspeed (CAS)—IAS corrected for"
+    },
+    {
+      "rect" : [
+        99,
+        707.06640000000004,
+        210.12,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "installation error and instrument error. Although"
+        }
+      ],
+      "text" : "installation error and instrument error. Although"
+    },
+    {
+      "rect" : [
+        99,
+        694.56640000000004,
+        209.94999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "manufacturers attempt to keep airspeed errors to a"
+        }
+      ],
+      "text" : "manufacturers attempt to keep airspeed errors to a"
+    },
+    {
+      "rect" : [
+        99,
+        682.06640000000004,
+        210.0100000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "minimum, it is not possible to eliminate all errors"
+        }
+      ],
+      "text" : "minimum, it is not possible to eliminate all errors"
+    },
+    {
+      "rect" : [
+        99,
+        669.56640000000004,
+        210.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "throughout the airspeed operating range. At certain"
+        }
+      ],
+      "text" : "throughout the airspeed operating range. At certain"
+    },
+    {
+      "rect" : [
+        99,
+        657.06640000000004,
+        209.94999999999982,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "airspeeds and with certain flap settings, the installation"
+        }
+      ],
+      "text" : "airspeeds and with certain flap settings, the installation"
+    },
+    {
+      "rect" : [
+        99,
+        644.56640000000004,
+        210.012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and instrument errors may total several knots. This"
+        }
+      ],
+      "text" : "and instrument errors may total several knots. This"
+    },
+    {
+      "rect" : [
+        99,
+        632.06640000000004,
+        209.94999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "error is generally greatest at low airspeeds. In the"
+        }
+      ],
+      "text" : "error is generally greatest at low airspeeds. In the"
+    },
+    {
+      "rect" : [
+        99,
+        619.56640000000004,
+        209.99600000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "cruising and higher airspeed ranges, IAS and CAS"
+        }
+      ],
+      "text" : "cruising and higher airspeed ranges, IAS and CAS"
+    },
+    {
+      "rect" : [
+        99,
+        607.06640000000004,
+        209.90999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are approximately the same. Refer to the airspeed"
+        }
+      ],
+      "text" : "are approximately the same. Refer to the airspeed"
+    },
+    {
+      "rect" : [
+        99,
+        594.56640000000004,
+        209.90999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "calibration chart to correct for possible airspeed errors."
+        }
+      ],
+      "text" : "calibration chart to correct for possible airspeed errors."
+    },
+    {
+      "rect" : [
+        81,
+        577.56640000000004,
+        228.09300000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• True airspeed (TAS)—CAS corrected for altitude"
+        }
+      ],
+      "text" : "• True airspeed (TAS)—CAS corrected for altitude"
+    },
+    {
+      "rect" : [
+        99,
+        565.06640000000004,
+        210.01700000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and nonstandard temperature. Because air density"
+        }
+      ],
+      "text" : "and nonstandard temperature. Because air density"
+    },
+    {
+      "rect" : [
+        99,
+        552.56640000000004,
+        210.01499999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "decreases with an increase in altitude, an aircraft has"
+        }
+      ],
+      "text" : "decreases with an increase in altitude, an aircraft has"
+    },
+    {
+      "rect" : [
+        99,
+        540.06640000000004,
+        209.89199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to be flown faster at higher altitudes to cause the same"
+        }
+      ],
+      "text" : "to be flown faster at higher altitudes to cause the same"
+    },
+    {
+      "rect" : [
+        99,
+        527.56640000000004,
+        210.07999999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pressure difference between pitot impact pressure"
+        }
+      ],
+      "text" : "pressure difference between pitot impact pressure"
+    },
+    {
+      "rect" : [
+        99,
+        515.06640000000004,
+        210.00800000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and static pressure. Therefore, for a given CAS, TAS"
+        }
+      ],
+      "text" : "and static pressure. Therefore, for a given CAS, TAS"
+    },
+    {
+      "rect" : [
+        99,
+        502.56640000000004,
+        210.00700000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "increases as altitude increases; or for a given TAS,"
+        }
+      ],
+      "text" : "increases as altitude increases; or for a given TAS,"
+    },
+    {
+      "rect" : [
+        99,
+        490.06640000000004,
+        209.99799999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "CAS decreases as altitude increases. A pilot can find"
+        }
+      ],
+      "text" : "CAS decreases as altitude increases. A pilot can find"
+    },
+    {
+      "rect" : [
+        99,
+        477.56640000000004,
+        210.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "TAS by two methods. The most accurate method is"
+        }
+      ],
+      "text" : "TAS by two methods. The most accurate method is"
+    },
+    {
+      "rect" : [
+        99,
+        465.06640000000004,
+        210.01100000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to use a flight computer. With this method, the CAS"
+        }
+      ],
+      "text" : "to use a flight computer. With this method, the CAS"
+    },
+    {
+      "rect" : [
+        99,
+        452.56640000000004,
+        210.01099999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is corrected for temperature and pressure variation by"
+        }
+      ],
+      "text" : "is corrected for temperature and pressure variation by"
+    },
+    {
+      "rect" : [
+        99,
+        440.06640000000004,
+        210.01499999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "using the airspeed correction scale on the computer."
+        }
+      ],
+      "text" : "using the airspeed correction scale on the computer."
+    },
+    {
+      "rect" : [
+        99,
+        427.56640000000004,
+        210.15499999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Extremely accurate electronic flight computers are"
+        }
+      ],
+      "text" : "Extremely accurate electronic flight computers are"
+    },
+    {
+      "rect" : [
+        99,
+        415.06640000000004,
+        210.01299999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "also available. Just enter the CAS, pressure altitude,"
+        }
+      ],
+      "text" : "also available. Just enter the CAS, pressure altitude,"
+    },
+    {
+      "rect" : [
+        99,
+        402.56640000000004,
+        210.06000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and temperature, and the computer calculates the TAS."
+        }
+      ],
+      "text" : "and temperature, and the computer calculates the TAS."
+    },
+    {
+      "rect" : [
+        99,
+        390.06640000000004,
+        210.01499999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A second method, which is a rule of thumb, provides"
+        }
+      ],
+      "text" : "A second method, which is a rule of thumb, provides"
+    },
+    {
+      "rect" : [
+        99,
+        377.56640000000004,
+        210.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the approximate TAS. Simply add 2 percent to the"
+        }
+      ],
+      "text" : "the approximate TAS. Simply add 2 percent to the"
+    },
+    {
+      "rect" : [
+        99,
+        365.06640000000004,
+        209.98200000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "CAS for each 1,000 feet of altitude. The TAS is the"
+        }
+      ],
+      "text" : "CAS for each 1,000 feet of altitude. The TAS is the"
+    },
+    {
+      "rect" : [
+        99,
+        352.56640000000004,
+        209.92000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "speed that is used for flight planning and is used when"
+        }
+      ],
+      "text" : "speed that is used for flight planning and is used when"
+    },
+    {
+      "rect" : [
+        99,
+        340.06640000000004,
+        75,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "filing a flight plan."
+        }
+      ],
+      "text" : "filing a flight plan."
+    },
+    {
+      "rect" : [
+        81,
+        323.06639999999999,
+        228.00799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Groundspeed (GS)—the actual speed of the airplane"
+        }
+      ],
+      "text" : "• Groundspeed (GS)—the actual speed of the airplane"
+    },
+    {
+      "rect" : [
+        99,
+        310.56639999999999,
+        209.83100000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "over the ground. It is TAS adjusted for wind. GS"
+        }
+      ],
+      "text" : "over the ground. It is TAS adjusted for wind. GS"
+    },
+    {
+      "rect" : [
+        99,
+        298.06639999999999,
+        210.07200000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "decreases with a headwind and increases with a"
+        }
+      ],
+      "text" : "decreases with a headwind and increases with a"
+    },
+    {
+      "rect" : [
+        99,
+        285.56639999999999,
+        35.280000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "tailwind."
+        }
+      ],
+      "text" : "tailwind."
+    },
+    {
+      "rect" : [
+        72,
+        259.34339999999997,
+        131.40599999999998,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Airspeed Indicator Markings"
+        }
+      ],
+      "text" : "Airspeed Indicator Markings"
+    },
+    {
+      "rect" : [
+        72,
+        245.56640000000002,
+        237.00999999999988,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Aircraft weighing 12,500 pounds or less, manufactured after"
+        }
+      ],
+      "text" : "Aircraft weighing 12,500 pounds or less, manufactured after"
+    },
+    {
+      "rect" : [
+        72,
+        233.06640000000002,
+        237.05000000000007,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "1945, and certificated by the FAA are required to have ASIs"
+        }
+      ],
+      "text" : "1945, and certificated by the FAA are required to have ASIs"
+    },
+    {
+      "rect" : [
+        72,
+        220.56640000000002,
+        237.03199999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "marked in accordance with a standard color-coded marking"
+        }
+      ],
+      "text" : "marked in accordance with a standard color-coded marking"
+    },
+    {
+      "rect" : [
+        72,
+        208.06640000000002,
+        236.99999999999983,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "system. This system of color-coded markings enables a pilot"
+        }
+      ],
+      "text" : "system. This system of color-coded markings enables a pilot"
+    },
+    {
+      "rect" : [
+        72,
+        195.56640000000002,
+        237.05999999999983,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to determine at a glance certain airspeed limitations that are"
+        }
+      ],
+      "text" : "to determine at a glance certain airspeed limitations that are"
+    },
+    {
+      "rect" : [
+        72,
+        183.06640000000002,
+        237.07499999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "important to the safe operation of the aircraft. For example, if"
+        }
+      ],
+      "text" : "important to the safe operation of the aircraft. For example, if"
+    },
+    {
+      "rect" : [
+        72,
+        170.56640000000002,
+        237.08300000000031,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "during the execution of a maneuver, it is noted that the airspeed"
+        }
+      ],
+      "text" : "during the execution of a maneuver, it is noted that the airspeed"
+    },
+    {
+      "rect" : [
+        72,
+        158.06640000000002,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "needle is in the yellow arc and rapidly approaching the red"
+        }
+      ],
+      "text" : "needle is in the yellow arc and rapidly approaching the red"
+    },
+    {
+      "rect" : [
+        72,
+        145.56640000000002,
+        227.09000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "line, the immediate reaction should be to reduce airspeed."
+        }
+      ],
+      "text" : "line, the immediate reaction should be to reduce airspeed."
+    },
+    {
+      "rect" : [
+        72,
+        120.56640000000002,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "As shown in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Figure 8-8,"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " ASIs on single-engine small aircraft"
+        }
+      ],
+      "text" : "As shown in Figure 8-8, ASIs on single-engine small aircraft"
+    },
+    {
+      "rect" : [
+        72,
+        108.06640000000002,
+        214.68999999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "include the following standard color-coded markings:"
+        }
+      ],
+      "text" : "include the following standard color-coded markings:"
+    },
+    {
+      "rect" : [
+        81,
+        91.066400000000002,
+        228.07000000000016,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• White arc—commonly referred to as the flap operating"
+        }
+      ],
+      "text" : "• White arc—commonly referred to as the flap operating"
+    },
+    {
+      "rect" : [
+        99,
+        78.566400000000002,
+        210.02199999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "range since its lower limit represents the full flap stall"
+        }
+      ],
+      "text" : "range since its lower limit represents the full flap stall"
+    },
+    {
+      "rect" : [
+        99,
+        66.066400000000002,
+        210.00299999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "speed and its upper limit provides the maximum flap"
+        }
+      ],
+      "text" : "speed and its upper limit provides the maximum flap"
+    },
+    {
+      "rect" : [
+        348,
+        480.02640000000002,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "speed. Approaches and landings are usually flown at"
+        }
+      ],
+      "text" : "speed. Approaches and landings are usually flown at"
+    },
+    {
+      "rect" : [
+        348,
+        467.52640000000002,
+        111.37000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "speeds within the white arc."
+        }
+      ],
+      "text" : "speeds within the white arc."
+    },
+    {
+      "rect" : [
+        330,
+        449.28070000000002,
+        228.03110000000015,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Lower limit of white arc (V"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "S0"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ")—the stalling speed"
+        }
+      ],
+      "text" : "• Lower limit of white arc (VS0)—the stalling speed"
+    },
+    {
+      "rect" : [
+        348.00010000000003,
+        438.03070000000002,
+        209.92000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or the minimum steady flight speed in the landing"
+        }
+      ],
+      "text" : "or the minimum steady flight speed in the landing"
+    },
+    {
+      "rect" : [
+        348.00010000000003,
+        425.53070000000002,
+        210.00799999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "configuration. In small aircraft, this is the power-off"
+        }
+      ],
+      "text" : "configuration. In small aircraft, this is the power-off"
+    },
+    {
+      "rect" : [
+        348.00010000000003,
+        413.03070000000002,
+        209.9500000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "stall speed at the maximum landing weight in the"
+        }
+      ],
+      "text" : "stall speed at the maximum landing weight in the"
+    },
+    {
+      "rect" : [
+        348.00010000000003,
+        400.53070000000002,
+        178.85000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "landing configuration (gear and flaps down)."
+        }
+      ],
+      "text" : "landing configuration (gear and flaps down)."
+    },
+    {
+      "rect" : [
+        330,
+        382.28070000000002,
+        227.99019999999996,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Upper limit of the white arc (V"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "FE"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ")—the maximum"
+        }
+      ],
+      "text" : "• Upper limit of the white arc (VFE)—the maximum"
+    },
+    {
+      "rect" : [
+        348.00020000000001,
+        371.03070000000002,
+        120.81,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "speed with the flaps extended."
+        }
+      ],
+      "text" : "speed with the flaps extended."
+    },
+    {
+      "rect" : [
+        330,
+        354.03070000000002,
+        228.10000000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Green arc—the normal operating range of the aircraft."
+        }
+      ],
+      "text" : "• Green arc—the normal operating range of the aircraft."
+    },
+    {
+      "rect" : [
+        348,
+        341.53070000000002,
+        147.77000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Most flying occurs within this range."
+        }
+      ],
+      "text" : "Most flying occurs within this range."
+    },
+    {
+      "rect" : [
+        330,
+        323.28070000000002,
+        228.03510000000006,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Lower limit of green arc (V"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "S1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ")—the stalling speed"
+        }
+      ],
+      "text" : "• Lower limit of green arc (VS1)—the stalling speed"
+    },
+    {
+      "rect" : [
+        347.99610000000001,
+        312.03070000000002,
+        209.85999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or the minimum steady flight speed obtained in a"
+        }
+      ],
+      "text" : "or the minimum steady flight speed obtained in a"
+    },
+    {
+      "rect" : [
+        347.99610000000001,
+        299.53070000000002,
+        210.00899999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "specified configuration. For most aircraft, this is the"
+        }
+      ],
+      "text" : "specified configuration. For most aircraft, this is the"
+    },
+    {
+      "rect" : [
+        347.99610000000001,
+        287.03070000000002,
+        210.00499999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "power-off stall speed at the maximum takeoff weight"
+        }
+      ],
+      "text" : "power-off stall speed at the maximum takeoff weight"
+    },
+    {
+      "rect" : [
+        347.99610000000001,
+        274.53070000000002,
+        210.00500000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in the clean configuration (gear up, if retractable, and"
+        }
+      ],
+      "text" : "in the clean configuration (gear up, if retractable, and"
+    },
+    {
+      "rect" : [
+        347.99610000000001,
+        262.03070000000002,
+        37.769999999999982,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "flaps up)."
+        }
+      ],
+      "text" : "flaps up)."
+    },
+    {
+      "rect" : [
+        330,
+        243.78070000000002,
+        228.03739999999993,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Upper limit of green arc (V"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "N0"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ")—the maximum"
+        }
+      ],
+      "text" : "• Upper limit of green arc (VN0)—the maximum"
+    },
+    {
+      "rect" : [
+        347.99740000000003,
+        232.53070000000002,
+        210.00799999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "structural cruising speed. Do not exceed this speed"
+        }
+      ],
+      "text" : "structural cruising speed. Do not exceed this speed"
+    },
+    {
+      "rect" : [
+        347.99740000000003,
+        220.03070000000002,
+        83.879999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "except in smooth air."
+        }
+      ],
+      "text" : "except in smooth air."
+    },
+    {
+      "rect" : [
+        330,
+        203.0307,
+        228.07300000000009,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Yellow arc—caution range. Fly within this range only"
+        }
+      ],
+      "text" : "• Yellow arc—caution range. Fly within this range only"
+    },
+    {
+      "rect" : [
+        348,
+        190.5307,
+        164.44000000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in smooth air and then only with caution."
+        }
+      ],
+      "text" : "in smooth air and then only with caution."
+    },
+    {
+      "rect" : [
+        330,
+        172.2807,
+        227.90890000000013,
+        12.719999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Red line (V"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "NE"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ")—never exceed speed. Operating above"
+        }
+      ],
+      "text" : "• Red line (VNE)—never exceed speed. Operating above"
+    },
+    {
+      "rect" : [
+        348.00290000000001,
+        161.0307,
+        210.02799999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "this speed is prohibited since it may result in damage"
+        }
+      ],
+      "text" : "this speed is prohibited since it may result in damage"
+    },
+    {
+      "rect" : [
+        348.00290000000001,
+        148.5307,
+        79.699999999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or structural failure."
+        }
+      ],
+      "text" : "or structural failure."
+    },
+    {
+      "rect" : [
+        321,
+        122.30770000000001,
+        123.464,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Other Airspeed Limitations"
+        }
+      ],
+      "text" : "Other Airspeed Limitations"
+    },
+    {
+      "rect" : [
+        321,
+        108.53070000000001,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Some important airspeed limitations are not marked on the"
+        }
+      ],
+      "text" : "Some important airspeed limitations are not marked on the"
+    },
+    {
+      "rect" : [
+        321,
+        96.03070000000001,
+        236.34000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "face of the ASI, but are found on placards and in the AFM/"
+        }
+      ],
+      "text" : "face of the ASI, but are found on placards and in the AFM/"
+    },
+    {
+      "rect" : [
+        321,
+        83.53070000000001,
+        123.31,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "POH. These airspeeds include:"
+        }
+      ],
+      "text" : "POH. These airspeeds include:"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      320.09120000000007,
+      526.96400000000006,
+      238.952,
+      204.10199999999998
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        543.54690000000005,
+        33.709700000000005,
+        14.450000000000045,
+        12.310000000000002
+      ],
+      "text" : "8-9"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        508.17470000000003,
+        183.68610000000001,
+        10.812000000000012
+      ],
+      "text" : "Figure 8-8. Single engine airspeed indicator (ASI)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        719.56640000000004,
+        227.96000000000009,
+        11.470000000000027
+      ],
+      "text" : "• Calibrated airspeed (CAS)—IAS corrected for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        707.06640000000004,
+        210.12,
+        11.470000000000027
+      ],
+      "text" : "installation error and instrument error. Although"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        694.56640000000004,
+        209.94999999999999,
+        11.470000000000027
+      ],
+      "text" : "manufacturers attempt to keep airspeed errors to a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        682.06640000000004,
+        210.0100000000001,
+        11.470000000000027
+      ],
+      "text" : "minimum, it is not possible to eliminate all errors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        669.56640000000004,
+        210.00999999999999,
+        11.470000000000027
+      ],
+      "text" : "throughout the airspeed operating range. At certain"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        657.06640000000004,
+        209.94999999999982,
+        11.470000000000027
+      ],
+      "text" : "airspeeds and with certain flap settings, the installation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        644.56640000000004,
+        210.012,
+        11.470000000000027
+      ],
+      "text" : "and instrument errors may total several knots. This"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        632.06640000000004,
+        209.94999999999999,
+        11.470000000000027
+      ],
+      "text" : "error is generally greatest at low airspeeds. In the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        619.56640000000004,
+        209.99600000000009,
+        11.470000000000027
+      ],
+      "text" : "cruising and higher airspeed ranges, IAS and CAS"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        607.06640000000004,
+        209.90999999999997,
+        11.470000000000027
+      ],
+      "text" : "are approximately the same. Refer to the airspeed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        594.56640000000004,
+        209.90999999999997,
+        11.470000000000027
+      ],
+      "text" : "calibration chart to correct for possible airspeed errors."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        577.56640000000004,
+        228.09300000000002,
+        11.470000000000027
+      ],
+      "text" : "• True airspeed (TAS)—CAS corrected for altitude"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        565.06640000000004,
+        210.01700000000005,
+        11.470000000000027
+      ],
+      "text" : "and nonstandard temperature. Because air density"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        552.56640000000004,
+        210.01499999999999,
+        11.470000000000027
+      ],
+      "text" : "decreases with an increase in altitude, an aircraft has"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        540.06640000000004,
+        209.89199999999994,
+        11.470000000000027
+      ],
+      "text" : "to be flown faster at higher altitudes to cause the same"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        527.56640000000004,
+        210.07999999999987,
+        11.470000000000027
+      ],
+      "text" : "pressure difference between pitot impact pressure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        515.06640000000004,
+        210.00800000000015,
+        11.470000000000027
+      ],
+      "text" : "and static pressure. Therefore, for a given CAS, TAS"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        502.56640000000004,
+        210.00700000000012,
+        11.470000000000027
+      ],
+      "text" : "increases as altitude increases; or for a given TAS,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        490.06640000000004,
+        209.99799999999993,
+        11.470000000000027
+      ],
+      "text" : "CAS decreases as altitude increases. A pilot can find"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        477.56640000000004,
+        210.00299999999993,
+        11.470000000000027
+      ],
+      "text" : "TAS by two methods. The most accurate method is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        465.06640000000004,
+        210.01100000000008,
+        11.470000000000027
+      ],
+      "text" : "to use a flight computer. With this method, the CAS"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        452.56640000000004,
+        210.01099999999997,
+        11.470000000000027
+      ],
+      "text" : "is corrected for temperature and pressure variation by"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        440.06640000000004,
+        210.01499999999999,
+        11.470000000000027
+      ],
+      "text" : "using the airspeed correction scale on the computer."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        427.56640000000004,
+        210.15499999999992,
+        11.470000000000027
+      ],
+      "text" : "Extremely accurate electronic flight computers are"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        415.06640000000004,
+        210.01299999999998,
+        11.470000000000027
+      ],
+      "text" : "also available. Just enter the CAS, pressure altitude,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        402.56640000000004,
+        210.06000000000006,
+        11.470000000000027
+      ],
+      "text" : "and temperature, and the computer calculates the TAS."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        390.06640000000004,
+        210.01499999999993,
+        11.470000000000027
+      ],
+      "text" : "A second method, which is a rule of thumb, provides"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        377.56640000000004,
+        210.00299999999993,
+        11.470000000000027
+      ],
+      "text" : "the approximate TAS. Simply add 2 percent to the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        365.06640000000004,
+        209.98200000000008,
+        11.470000000000027
+      ],
+      "text" : "CAS for each 1,000 feet of altitude. The TAS is the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        352.56640000000004,
+        209.92000000000002,
+        11.470000000000027
+      ],
+      "text" : "speed that is used for flight planning and is used when"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        340.06640000000004,
+        75,
+        11.470000000000027
+      ],
+      "text" : "filing a flight plan."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        323.06639999999999,
+        228.00799999999992,
+        11.470000000000027
+      ],
+      "text" : "• Groundspeed (GS)—the actual speed of the airplane"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        310.56639999999999,
+        209.83100000000002,
+        11.470000000000027
+      ],
+      "text" : "over the ground. It is TAS adjusted for wind. GS"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        298.06639999999999,
+        210.07200000000012,
+        11.470000000000027
+      ],
+      "text" : "decreases with a headwind and increases with a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        285.56639999999999,
+        35.280000000000001,
+        11.470000000000027
+      ],
+      "text" : "tailwind."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        259.34339999999997,
+        131.40599999999998,
+        13.310000000000002
+      ],
+      "text" : "Airspeed Indicator Markings"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        245.56640000000002,
+        237.00999999999988,
+        11.469999999999999
+      ],
+      "text" : "Aircraft weighing 12,500 pounds or less, manufactured after"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        233.06640000000002,
+        237.05000000000007,
+        11.469999999999999
+      ],
+      "text" : "1945, and certificated by the FAA are required to have ASIs"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        220.56640000000002,
+        237.03199999999993,
+        11.469999999999999
+      ],
+      "text" : "marked in accordance with a standard color-coded marking"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        208.06640000000002,
+        236.99999999999983,
+        11.469999999999999
+      ],
+      "text" : "system. This system of color-coded markings enables a pilot"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        195.56640000000002,
+        237.05999999999983,
+        11.469999999999999
+      ],
+      "text" : "to determine at a glance certain airspeed limitations that are"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        183.06640000000002,
+        237.07499999999993,
+        11.469999999999999
+      ],
+      "text" : "important to the safe operation of the aircraft. For example, if"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        170.56640000000002,
+        237.08300000000031,
+        11.469999999999999
+      ],
+      "text" : "during the execution of a maneuver, it is noted that the airspeed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        158.06640000000002,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "text" : "needle is in the yellow arc and rapidly approaching the red"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        145.56640000000002,
+        227.09000000000003,
+        11.469999999999999
+      ],
+      "text" : "line, the immediate reaction should be to reduce airspeed."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        120.56640000000002,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "text" : "As shown in Figure 8-8, ASIs on single-engine small aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        108.06640000000002,
+        214.68999999999994,
+        11.469999999999999
+      ],
+      "text" : "include the following standard color-coded markings:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        91.066400000000002,
+        228.07000000000016,
+        11.469999999999999
+      ],
+      "text" : "• White arc—commonly referred to as the flap operating"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        78.566400000000002,
+        210.02199999999993,
+        11.469999999999999
+      ],
+      "text" : "range since its lower limit represents the full flap stall"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        66.066400000000002,
+        210.00299999999993,
+        11.469999999999999
+      ],
+      "text" : "speed and its upper limit provides the maximum flap"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        480.02640000000002,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "text" : "speed. Approaches and landings are usually flown at"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        467.52640000000002,
+        111.37000000000006,
+        11.470000000000027
+      ],
+      "text" : "speeds within the white arc."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        449.28070000000002,
+        228.03110000000015,
+        12.720000000000027
+      ],
+      "text" : "• Lower limit of white arc (VS0)—the stalling speed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348.00010000000003,
+        438.03070000000002,
+        209.92000000000002,
+        11.470000000000027
+      ],
+      "text" : "or the minimum steady flight speed in the landing"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348.00010000000003,
+        425.53070000000002,
+        210.00799999999998,
+        11.470000000000027
+      ],
+      "text" : "configuration. In small aircraft, this is the power-off"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348.00010000000003,
+        413.03070000000002,
+        209.9500000000001,
+        11.470000000000027
+      ],
+      "text" : "stall speed at the maximum landing weight in the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348.00010000000003,
+        400.53070000000002,
+        178.85000000000008,
+        11.470000000000027
+      ],
+      "text" : "landing configuration (gear and flaps down)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        382.28070000000002,
+        227.99019999999996,
+        12.720000000000027
+      ],
+      "text" : "• Upper limit of the white arc (VFE)—the maximum"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348.00020000000001,
+        371.03070000000002,
+        120.81,
+        11.470000000000027
+      ],
+      "text" : "speed with the flaps extended."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        354.03070000000002,
+        228.10000000000014,
+        11.470000000000027
+      ],
+      "text" : "• Green arc—the normal operating range of the aircraft."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        341.53070000000002,
+        147.77000000000004,
+        11.470000000000027
+      ],
+      "text" : "Most flying occurs within this range."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        323.28070000000002,
+        228.03510000000006,
+        12.720000000000027
+      ],
+      "text" : "• Lower limit of green arc (VS1)—the stalling speed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        347.99610000000001,
+        312.03070000000002,
+        209.85999999999996,
+        11.470000000000027
+      ],
+      "text" : "or the minimum steady flight speed obtained in a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        347.99610000000001,
+        299.53070000000002,
+        210.00899999999996,
+        11.470000000000027
+      ],
+      "text" : "specified configuration. For most aircraft, this is the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        347.99610000000001,
+        287.03070000000002,
+        210.00499999999994,
+        11.470000000000027
+      ],
+      "text" : "power-off stall speed at the maximum takeoff weight"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        347.99610000000001,
+        274.53070000000002,
+        210.00500000000005,
+        11.470000000000027
+      ],
+      "text" : "in the clean configuration (gear up, if retractable, and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        347.99610000000001,
+        262.03070000000002,
+        37.769999999999982,
+        11.470000000000027
+      ],
+      "text" : "flaps up)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        243.78070000000002,
+        228.03739999999993,
+        12.720000000000027
+      ],
+      "text" : "• Upper limit of green arc (VN0)—the maximum"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        347.99740000000003,
+        232.53070000000002,
+        210.00799999999998,
+        11.469999999999999
+      ],
+      "text" : "structural cruising speed. Do not exceed this speed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        347.99740000000003,
+        220.03070000000002,
+        83.879999999999995,
+        11.469999999999999
+      ],
+      "text" : "except in smooth air."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        203.0307,
+        228.07300000000009,
+        11.469999999999999
+      ],
+      "text" : "• Yellow arc—caution range. Fly within this range only"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        190.5307,
+        164.44000000000005,
+        11.469999999999999
+      ],
+      "text" : "in smooth air and then only with caution."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        172.2807,
+        227.90890000000013,
+        12.719999999999999
+      ],
+      "text" : "• Red line (VNE)—never exceed speed. Operating above"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348.00290000000001,
+        161.0307,
+        210.02799999999996,
+        11.469999999999999
+      ],
+      "text" : "this speed is prohibited since it may result in damage"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348.00290000000001,
+        148.5307,
+        79.699999999999989,
+        11.469999999999999
+      ],
+      "text" : "or structural failure."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        122.30770000000001,
+        123.464,
+        13.310000000000002
+      ],
+      "text" : "Other Airspeed Limitations"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        108.53070000000001,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "text" : "Some important airspeed limitations are not marked on the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        96.03070000000001,
+        236.34000000000003,
+        11.469999999999999
+      ],
+      "text" : "face of the ASI, but are found on placards and in the AFM/"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        83.53070000000001,
+        123.31,
+        11.469999999999999
+      ],
+      "text" : "POH. These airspeeds include:"
+    }
+  ],
+  "page" : 211,
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

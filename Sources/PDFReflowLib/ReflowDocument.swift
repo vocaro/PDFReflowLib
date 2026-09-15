@@ -109,7 +109,7 @@ struct ReflowBlock: Sendable, Equatable {
     enum Content: Sendable, Equatable {
         case paragraph(InlineText)
         case heading(id: String, text: InlineText)
-        case preformatted(String)
+        case preformatted(InlineText)
         case image(Image)
         case sourcePage(Int)
     }
@@ -120,7 +120,7 @@ struct ReflowBlock: Sendable, Equatable {
     var text: String {
         switch content {
         case let .paragraph(text), let .heading(_, text): text.text
-        case let .preformatted(text): text
+        case let .preformatted(text): text.text
         case .image, .sourcePage: ""
         }
     }
@@ -128,7 +128,8 @@ struct ReflowBlock: Sendable, Equatable {
         switch content {
         case let .paragraph(text), let .heading(_, text): text.sourcePages
         case let .sourcePage(page): [page]
-        case .preformatted, .image: []
+        case let .preformatted(text): text.sourcePages
+        case .image: []
         }
     }
     var hasReflowedText: Bool {

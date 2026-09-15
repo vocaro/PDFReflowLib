@@ -28,7 +28,7 @@ see [corpus instructions](corpus.md). Large originals and output EPUBs remain gi
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 151 targeted checks on 42 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 160 targeted checks on 45 reviewed pages
 across eight books: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic and Blue Book. All source-page anchors must also remain complete and ordered, and semantic
 text must contain no image attachment placeholders.
@@ -219,3 +219,19 @@ and rejects its former concatenation, with the source image retained.
 Our Flag physical page 31 supplies a second native case with negative baseline offsets: its
 two-line “Burial Flag / for a Veteran” heading must preserve the word boundary and heading
 semantics. The source photograph remains; this does not accept its unrelated drop-cap order.
+
+
+## Styles in lists and code
+
+`PreformattedStyleTests.swift` protects superscripts, subscripts and emphasis in numbered,
+lettered and bulleted lines, including a minus-prefixed mathematical line. Monospaced code
+retains indentation and literal markup; ordinary lists keep their separate blocks and hyphens.
+Source-derived algebra page 26 checks both exponents in exercise 80. FAA pages 211/212 provide
+independent V-speed subscript cases. Packaging tests protect inline page navigation, model
+immutability and counting style wrappers toward the spine body-size target.
+
+The corpus checker rejects flattened or misplaced scripts inside `<pre>`, including nested
+emphasis. Full-book contracts check both algebra exponents and four FAA V-speed subscripts in
+source context. This preserves detected styles; it does not validate every script inference,
+repair exercise grouping, reconstruct semantic lists or establish chapter-scoped endnote links.
+See [the source review and complete corpus comparison](../measurements/preformatted-styles/record.md).

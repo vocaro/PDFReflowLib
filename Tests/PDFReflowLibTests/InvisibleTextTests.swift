@@ -59,7 +59,7 @@ func warrenSyntheticFontsCannotDeclareCodeOrHeadings(name: String) throws {
     let blocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: ["communist", "evidence"], warnings: &warnings)
     #expect(!blocks.contains { if case .heading = $0.content { return true }; return false })
     let preformatted = blocks.compactMap { block -> String? in
-        if case let .preformatted(text) = block.content { return text }; return nil
+        if case let .preformatted(text) = block.content { return text.text }; return nil
     }
     // Source points 10/11 retain the existing list representation, not arbitrary prose lines.
     if name == "warren-50" {

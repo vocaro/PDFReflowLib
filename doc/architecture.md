@@ -47,7 +47,9 @@ reading order, styles and source boundaries without creating a publication.
 The logical document deliberately has no XHTML, CSS, EPUB namespaces, ZIP paths or chapter file
 boundaries. Raw `<`, `&` and other source characters stay raw until a writer escapes them for
 its format. Headings currently form flat navigation; list markers and code use preformatted
-blocks. Tables/equations preserved as images are image references, not reconstructed semantic
+blocks backed by the same `InlineText` runs as paragraphs. Preformatted reconstruction retains
+native emphasis and scripts; inserted newlines/indentation are unstyled, and the EPUB writer
+escapes raw text before adding inline elements inside `<pre>`. Tables/equations preserved as images are image references, not reconstructed semantic
 tables or math trees. Output independence does not imply richer PDF understanding.
 
 ## Reconstruction boundary

@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose.",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved.",
       "pages": [
         {
           "page": 16,
@@ -46,13 +46,49 @@
             "Zone of confusion.",
             "Zulu time."
           ]
+        },
+        {
+          "page": 211,
+          "scripts": [
+            {
+              "tag": "sub",
+              "text": "S0",
+              "before": "Lower limit of white arc (V",
+              "after": ")—the stalling speed"
+            },
+            {
+              "tag": "sub",
+              "text": "FE",
+              "before": "Upper limit of the white arc (V",
+              "after": ")—the maximum"
+            }
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 212,
+          "scripts": [
+            {
+              "tag": "sub",
+              "text": "YSE",
+              "before": "Single-engine best rate-of-climb (V",
+              "after": ")—the best"
+            },
+            {
+              "tag": "sub",
+              "text": "MC",
+              "before": "Minimum control speed (V",
+              "after": ")—the minimum flight"
+            }
+          ],
+          "minimumImages": 1
         }
       ]
     },
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional.",
+      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout.",
       "pages": [
         {
           "page": 2,
@@ -94,6 +130,26 @@
             "Example 465."
           ],
           "minimumImages": 1
+        },
+        {
+          "page": 26,
+          "text": [
+            "80) (7a2 +7a)− (6a2 + 4a)"
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "2",
+              "before": "80) (7a",
+              "after": "+7a)− (6a"
+            },
+            {
+              "tag": "sup",
+              "text": "2",
+              "before": "+7a)− (6a",
+              "after": "+ 4a)"
+            }
+          ]
         }
       ]
     },

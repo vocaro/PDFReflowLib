@@ -1,0 +1,2527 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "8-10"
+        }
+      ],
+      "text" : "8-10"
+    },
+    {
+      "rect" : [
+        285,
+        65.570400000000006,
+        193.69410000000005,
+        10.811999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 8-9."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "A blocked pitot tube, but clear drain hole."
+        }
+      ],
+      "text" : "Figure 8-9. A blocked pitot tube, but clear drain hole."
+    },
+    {
+      "rect" : [
+        285.52970000000005,
+        86.572400000000002,
+        235.95299999999997,
+        157.238
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        45,
+        718.31630000000007,
+        227.99060000000003,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Design maneuvering speed (V"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "A"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ")—the maximum"
+        }
+      ],
+      "text" : "• Design maneuvering speed (VA)—the maximum"
+    },
+    {
+      "rect" : [
+        63.00060000000002,
+        707.06630000000007,
+        210.0019999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "speed at which the structural design’s limit load can"
+        }
+      ],
+      "text" : "speed at which the structural design’s limit load can"
+    },
+    {
+      "rect" : [
+        63.00060000000002,
+        694.56630000000007,
+        210.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "be imposed (either by gusts or full deflection of the"
+        }
+      ],
+      "text" : "be imposed (either by gusts or full deflection of the"
+    },
+    {
+      "rect" : [
+        63.00060000000002,
+        682.06630000000007,
+        210.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "control surfaces) without causing structural damage."
+        }
+      ],
+      "text" : "control surfaces) without causing structural damage."
+    },
+    {
+      "rect" : [
+        63.00060000000002,
+        669.56630000000007,
+        209.99499999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "It is important to consider weight when referencing"
+        }
+      ],
+      "text" : "It is important to consider weight when referencing"
+    },
+    {
+      "rect" : [
+        63.00060000000002,
+        655.81630000000007,
+        210.0111,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "this speed. For example, V"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "A"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " may be 100 knots when"
+        }
+      ],
+      "text" : "this speed. For example, VA may be 100 knots when"
+    },
+    {
+      "rect" : [
+        63.0017,
+        644.56630000000007,
+        210.00300000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "an airplane is heavily loaded, but only 90 knots when"
+        }
+      ],
+      "text" : "an airplane is heavily loaded, but only 90 knots when"
+    },
+    {
+      "rect" : [
+        63.0017,
+        632.06630000000007,
+        64.450000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the load is light."
+        }
+      ],
+      "text" : "the load is light."
+    },
+    {
+      "rect" : [
+        45,
+        613.81630000000007,
+        228.01050000000004,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Landing gear operating speed (V"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "LO"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ")—the maximum"
+        }
+      ],
+      "text" : "• Landing gear operating speed (VLO)—the maximum"
+    },
+    {
+      "rect" : [
+        63.000500000000017,
+        602.56630000000007,
+        210.00900000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "speed for extending or retracting the landing gear if"
+        }
+      ],
+      "text" : "speed for extending or retracting the landing gear if"
+    },
+    {
+      "rect" : [
+        63.000500000000017,
+        590.06630000000007,
+        186.89000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "flying an aircraft with retractable landing gear."
+        }
+      ],
+      "text" : "flying an aircraft with retractable landing gear."
+    },
+    {
+      "rect" : [
+        45,
+        571.81630000000007,
+        228.01070000000004,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Landing gear extended speed (V"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "LE"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ")—the maximum"
+        }
+      ],
+      "text" : "• Landing gear extended speed (VLE)—the maximum"
+    },
+    {
+      "rect" : [
+        63.000700000000023,
+        560.56630000000007,
+        210.02099999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "speed at which an aircraft can be safely flown with"
+        }
+      ],
+      "text" : "speed at which an aircraft can be safely flown with"
+    },
+    {
+      "rect" : [
+        63.000700000000023,
+        548.06630000000007,
+        105.53,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the landing gear extended."
+        }
+      ],
+      "text" : "the landing gear extended."
+    },
+    {
+      "rect" : [
+        45,
+        529.81630000000007,
+        228.00530000000003,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Best angle-of-climb speed (V"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "X"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ")—the airspeed at"
+        }
+      ],
+      "text" : "• Best angle-of-climb speed (VX)—the airspeed at"
+    },
+    {
+      "rect" : [
+        62.995300000000015,
+        518.56630000000007,
+        210.00999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "which an aircraft gains the greatest amount of altitude"
+        }
+      ],
+      "text" : "which an aircraft gains the greatest amount of altitude"
+    },
+    {
+      "rect" : [
+        62.995300000000015,
+        506.06630000000007,
+        209.84599999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in a given distance. It is used during a short-field"
+        }
+      ],
+      "text" : "in a given distance. It is used during a short-field"
+    },
+    {
+      "rect" : [
+        62.995300000000015,
+        493.56630000000007,
+        110.24000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "takeoff to clear an obstacle."
+        }
+      ],
+      "text" : "takeoff to clear an obstacle."
+    },
+    {
+      "rect" : [
+        45,
+        475.31630000000001,
+        228.0367,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Best rate-of-climb speed (V"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "Y"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ")—the airspeed that"
+        }
+      ],
+      "text" : "• Best rate-of-climb speed (VY)—the airspeed that"
+    },
+    {
+      "rect" : [
+        62.998699999999985,
+        464.06630000000001,
+        209.90000000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "provides the most altitude gain in a given period of time."
+        }
+      ],
+      "text" : "provides the most altitude gain in a given period of time."
+    },
+    {
+      "rect" : [
+        45,
+        445.81630000000001,
+        227.9855,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Single-engine best rate-of-climb (V"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "YSE"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ")—the best"
+        }
+      ],
+      "text" : "• Single-engine best rate-of-climb (VYSE)—the best"
+    },
+    {
+      "rect" : [
+        62.995499999999993,
+        434.56630000000001,
+        210.03999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "rate-of-climb or minimum rate-of-sink in a light"
+        }
+      ],
+      "text" : "rate-of-climb or minimum rate-of-sink in a light"
+    },
+    {
+      "rect" : [
+        62.995499999999993,
+        422.06630000000001,
+        210.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "twin-engine aircraft with one engine inoperative. It is"
+        }
+      ],
+      "text" : "twin-engine aircraft with one engine inoperative. It is"
+    },
+    {
+      "rect" : [
+        62.995499999999993,
+        408.31630000000001,
+        209.99379999999996,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "marked on the ASI with a blue line. V"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "YSE"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " is commonly"
+        }
+      ],
+      "text" : "marked on the ASI with a blue line. VYSE is commonly"
+    },
+    {
+      "rect" : [
+        62.999300000000005,
+        397.06630000000001,
+        106.35000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "referred to as “Blue Line.”"
+        }
+      ],
+      "text" : "referred to as “Blue Line.”"
+    },
+    {
+      "rect" : [
+        45,
+        378.81630000000001,
+        228.00830000000002,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Minimum control speed (V"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "MC"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ")—the minimum flight"
+        }
+      ],
+      "text" : "• Minimum control speed (VMC)—the minimum flight"
+    },
+    {
+      "rect" : [
+        62.9953,
+        367.56630000000001,
+        210.12000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "speed at which a light, twin-engine aircraft can be"
+        }
+      ],
+      "text" : "speed at which a light, twin-engine aircraft can be"
+    },
+    {
+      "rect" : [
+        62.9953,
+        355.06630000000001,
+        210.10999999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "satisfactorily controlled when an engine suddenly"
+        }
+      ],
+      "text" : "satisfactorily controlled when an engine suddenly"
+    },
+    {
+      "rect" : [
+        62.9953,
+        342.56630000000001,
+        210.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "becomes inoperative and the remaining engine is at"
+        }
+      ],
+      "text" : "becomes inoperative and the remaining engine is at"
+    },
+    {
+      "rect" : [
+        62.9953,
+        330.06630000000001,
+        58.310000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "takeoff power."
+        }
+      ],
+      "text" : "takeoff power."
+    },
+    {
+      "rect" : [
+        36,
+        303.8433,
+        82.214000000000013,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Instrument Check"
+        }
+      ],
+      "text" : "Instrument Check"
+    },
+    {
+      "rect" : [
+        36,
+        290.06630000000001,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Prior to takeoff, the ASI should read zero. However, if there"
+        }
+      ],
+      "text" : "Prior to takeoff, the ASI should read zero. However, if there"
+    },
+    {
+      "rect" : [
+        36,
+        277.56630000000001,
+        237.01500000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is a strong wind blowing directly into the pitot tube, the ASI"
+        }
+      ],
+      "text" : "is a strong wind blowing directly into the pitot tube, the ASI"
+    },
+    {
+      "rect" : [
+        36,
+        265.06630000000001,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "may read higher than zero. When beginning the takeoff,"
+        }
+      ],
+      "text" : "may read higher than zero. When beginning the takeoff,"
+    },
+    {
+      "rect" : [
+        36,
+        252.56630000000001,
+        233.81999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "make sure the airspeed is increasing at an appropriate rate."
+        }
+      ],
+      "text" : "make sure the airspeed is increasing at an appropriate rate."
+    },
+    {
+      "rect" : [
+        36,
+        226.99630000000002,
+        168.37000000000003,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Blockage of the Pitot-Static System"
+        }
+      ],
+      "text" : "Blockage of the Pitot-Static System"
+    },
+    {
+      "rect" : [
+        36,
+        214.56630000000001,
+        237.00299999999987,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Errors almost always indicate blockage of the pitot tube, the"
+        }
+      ],
+      "text" : "Errors almost always indicate blockage of the pitot tube, the"
+    },
+    {
+      "rect" : [
+        36,
+        202.06630000000001,
+        237.01599999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "static port(s), or both. Blockage may be caused by moisture"
+        }
+      ],
+      "text" : "static port(s), or both. Blockage may be caused by moisture"
+    },
+    {
+      "rect" : [
+        36,
+        189.56630000000001,
+        237.00999999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(including ice), dirt, or even insects. During preflight, make"
+        }
+      ],
+      "text" : "(including ice), dirt, or even insects. During preflight, make"
+    },
+    {
+      "rect" : [
+        36,
+        177.06630000000001,
+        237.08499999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "sure the pitot tube cover is removed. Then, check the pitot and"
+        }
+      ],
+      "text" : "sure the pitot tube cover is removed. Then, check the pitot and"
+    },
+    {
+      "rect" : [
+        36,
+        164.56630000000001,
+        237.13500000000022,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "static port openings. A blocked pitot tube affects the accuracy"
+        }
+      ],
+      "text" : "static port openings. A blocked pitot tube affects the accuracy"
+    },
+    {
+      "rect" : [
+        36,
+        152.06630000000001,
+        236.9799999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of the ASI, but a blockage of the static port not only affects"
+        }
+      ],
+      "text" : "of the ASI, but a blockage of the static port not only affects"
+    },
+    {
+      "rect" : [
+        36,
+        139.56630000000001,
+        222.74000000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the ASI, but also causes errors in the altimeter and VSI."
+        }
+      ],
+      "text" : "the ASI, but also causes errors in the altimeter and VSI."
+    },
+    {
+      "rect" : [
+        36,
+        113.34330000000001,
+        95.336999999999989,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Blocked Pitot System"
+        }
+      ],
+      "text" : "Blocked Pitot System"
+    },
+    {
+      "rect" : [
+        36,
+        99.566299999999998,
+        237.01099999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The pitot system can become blocked completely or only"
+        }
+      ],
+      "text" : "The pitot system can become blocked completely or only"
+    },
+    {
+      "rect" : [
+        36,
+        87.066299999999998,
+        237.02600000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "partially if the pitot tube drain hole remains open. If the pitot"
+        }
+      ],
+      "text" : "partially if the pitot tube drain hole remains open. If the pitot"
+    },
+    {
+      "rect" : [
+        36,
+        74.566299999999998,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "tube becomes blocked and its associated drain hole remains"
+        }
+      ],
+      "text" : "tube becomes blocked and its associated drain hole remains"
+    },
+    {
+      "rect" : [
+        36,
+        62.066299999999998,
+        237.01999999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "clear, ram air is no longer able to enter the pitot system. Air"
+        }
+      ],
+      "text" : "clear, ram air is no longer able to enter the pitot system. Air"
+    },
+    {
+      "rect" : [
+        285,
+        719.56629999999996,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "already in the system vents through the drain hole, and the"
+        }
+      ],
+      "text" : "already in the system vents through the drain hole, and the"
+    },
+    {
+      "rect" : [
+        285,
+        707.06629999999996,
+        237.00199999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "remaining pressure drops to ambient (outside) air pressure."
+        }
+      ],
+      "text" : "remaining pressure drops to ambient (outside) air pressure."
+    },
+    {
+      "rect" : [
+        285,
+        694.56629999999996,
+        236.97000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Under these circumstances, the ASI reading decreases to"
+        }
+      ],
+      "text" : "Under these circumstances, the ASI reading decreases to"
+    },
+    {
+      "rect" : [
+        285,
+        682.06629999999996,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "zero because the ASI senses no difference between ram and"
+        }
+      ],
+      "text" : "zero because the ASI senses no difference between ram and"
+    },
+    {
+      "rect" : [
+        285,
+        669.56629999999996,
+        236.91999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "static air pressure. The ASI no longer operates since dynamic"
+        }
+      ],
+      "text" : "static air pressure. The ASI no longer operates since dynamic"
+    },
+    {
+      "rect" : [
+        285,
+        657.06629999999996,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pressure cannot enter the pitot tube opening. Static pressure"
+        }
+      ],
+      "text" : "pressure cannot enter the pitot tube opening. Static pressure"
+    },
+    {
+      "rect" : [
+        285,
+        644.56629999999996,
+        237.01800000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is able to equalize on both sides since the pitot drain hole"
+        }
+      ],
+      "text" : "is able to equalize on both sides since the pitot drain hole"
+    },
+    {
+      "rect" : [
+        285,
+        632.06629999999996,
+        237.11500000000024,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is still open. The apparent loss of airspeed is not usually"
+        }
+      ],
+      "text" : "is still open. The apparent loss of airspeed is not usually"
+    },
+    {
+      "rect" : [
+        285,
+        619.56629999999996,
+        213.56999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "instantaneous but happens very quickly. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 8-9]"
+        }
+      ],
+      "text" : "instantaneous but happens very quickly. [Figure 8-9]"
+    },
+    {
+      "rect" : [
+        285,
+        594.56629999999996,
+        236.8900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "If both the pitot tube opening and the drain hole should"
+        }
+      ],
+      "text" : "If both the pitot tube opening and the drain hole should"
+    },
+    {
+      "rect" : [
+        285,
+        582.06629999999996,
+        237.08000000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "become clogged simultaneously, then the pressure in the pitot"
+        }
+      ],
+      "text" : "become clogged simultaneously, then the pressure in the pitot"
+    },
+    {
+      "rect" : [
+        285,
+        569.56629999999996,
+        237.04700000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "tube is trapped. No change is noted on the airspeed indication"
+        }
+      ],
+      "text" : "tube is trapped. No change is noted on the airspeed indication"
+    },
+    {
+      "rect" : [
+        285,
+        557.06629999999996,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "should the airspeed increase or decrease. If the static port"
+        }
+      ],
+      "text" : "should the airspeed increase or decrease. If the static port"
+    },
+    {
+      "rect" : [
+        285,
+        544.56629999999996,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is unblocked and the aircraft should change altitude, then a"
+        }
+      ],
+      "text" : "is unblocked and the aircraft should change altitude, then a"
+    },
+    {
+      "rect" : [
+        285,
+        532.06629999999996,
+        237.01199999999983,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "change is noted on the ASI. The change is not related to a"
+        }
+      ],
+      "text" : "change is noted on the ASI. The change is not related to a"
+    },
+    {
+      "rect" : [
+        285,
+        519.56629999999996,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "change in airspeed but a change in static pressure. The total"
+        }
+      ],
+      "text" : "change in airspeed but a change in static pressure. The total"
+    },
+    {
+      "rect" : [
+        285,
+        507.06629999999996,
+        237.07700000000023,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pressure in the pitot tube does not change due to the blockage;"
+        }
+      ],
+      "text" : "pressure in the pitot tube does not change due to the blockage;"
+    },
+    {
+      "rect" : [
+        285,
+        494.56629999999996,
+        162.46000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "however, the static pressure will change."
+        }
+      ],
+      "text" : "however, the static pressure will change."
+    },
+    {
+      "rect" : [
+        285,
+        469.56629999999996,
+        236.84800000000018,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Because airspeed indications rely upon both static and"
+        }
+      ],
+      "text" : "Because airspeed indications rely upon both static and"
+    },
+    {
+      "rect" : [
+        285,
+        457.06629999999996,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "dynamic pressure together, the blockage of either of these"
+        }
+      ],
+      "text" : "dynamic pressure together, the blockage of either of these"
+    },
+    {
+      "rect" : [
+        285,
+        444.56629999999996,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "systems affects the ASI reading. Remember that the ASI has"
+        }
+      ],
+      "text" : "systems affects the ASI reading. Remember that the ASI has"
+    },
+    {
+      "rect" : [
+        285,
+        432.06629999999996,
+        236.85799999999972,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a diaphragm in which dynamic air pressure is entered. Behind"
+        }
+      ],
+      "text" : "a diaphragm in which dynamic air pressure is entered. Behind"
+    },
+    {
+      "rect" : [
+        285,
+        419.56629999999996,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "this diaphragm is a reference pressure called static pressure"
+        }
+      ],
+      "text" : "this diaphragm is a reference pressure called static pressure"
+    },
+    {
+      "rect" : [
+        285,
+        407.06629999999996,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "that comes from the static ports. The diaphragm pressurizes"
+        }
+      ],
+      "text" : "that comes from the static ports. The diaphragm pressurizes"
+    },
+    {
+      "rect" : [
+        285,
+        394.56629999999996,
+        236.84500000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "against this static pressure and as a result changes the airspeed"
+        }
+      ],
+      "text" : "against this static pressure and as a result changes the airspeed"
+    },
+    {
+      "rect" : [
+        285,
+        382.06629999999996,
+        200.79000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "indication via levers and indicators. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 8-10]"
+        }
+      ],
+      "text" : "indication via levers and indicators. [Figure 8-10]"
+    },
+    {
+      "rect" : [
+        285,
+        357.06629999999996,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "For example, take an aircraft and slow it down to zero knots"
+        }
+      ],
+      "text" : "For example, take an aircraft and slow it down to zero knots"
+    },
+    {
+      "rect" : [
+        285,
+        344.56629999999996,
+        237.07999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "at a given altitude. If the static port (providing static pressure)"
+        }
+      ],
+      "text" : "at a given altitude. If the static port (providing static pressure)"
+    },
+    {
+      "rect" : [
+        285,
+        332.06629999999996,
+        237.16499999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and the pitot tube (providing dynamic pressure) are both"
+        }
+      ],
+      "text" : "and the pitot tube (providing dynamic pressure) are both"
+    },
+    {
+      "rect" : [
+        285,
+        319.56629999999996,
+        194.13999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "unobstructed, the following claims can be made:"
+        }
+      ],
+      "text" : "unobstructed, the following claims can be made:"
+    },
+    {
+      "rect" : [
+        294,
+        302.56639999999999,
+        113.81,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "1. The ASI would be zero."
+        }
+      ],
+      "text" : "1. The ASI would be zero."
+    },
+    {
+      "rect" : [
+        294,
+        285.56639999999999,
+        208.22000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "2. Dynamic pressure and static pressure are equal."
+        }
+      ],
+      "text" : "2. Dynamic pressure and static pressure are equal."
+    },
+    {
+      "rect" : [
+        294,
+        268.56639999999999,
+        228.08000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "3. Because both dynamic and static air pressure are equal"
+        }
+      ],
+      "text" : "3. Because both dynamic and static air pressure are equal"
+    },
+    {
+      "rect" : [
+        312,
+        256.06639999999999,
+        210,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "at zero speed with increased speed, dynamic pressure"
+        }
+      ],
+      "text" : "at zero speed with increased speed, dynamic pressure"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      284.02970000000005,
+      85.072400000000002,
+      238.95299999999997,
+      160.238
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "text" : "8-10"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        65.570400000000006,
+        193.69410000000005,
+        10.811999999999998
+      ],
+      "text" : "Figure 8-9. A blocked pitot tube, but clear drain hole."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        718.31630000000007,
+        227.99060000000003,
+        12.720000000000027
+      ],
+      "text" : "• Design maneuvering speed (VA)—the maximum"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63.00060000000002,
+        707.06630000000007,
+        210.0019999999999,
+        11.470000000000027
+      ],
+      "text" : "speed at which the structural design’s limit load can"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63.00060000000002,
+        694.56630000000007,
+        210.00599999999997,
+        11.470000000000027
+      ],
+      "text" : "be imposed (either by gusts or full deflection of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63.00060000000002,
+        682.06630000000007,
+        210.00599999999997,
+        11.470000000000027
+      ],
+      "text" : "control surfaces) without causing structural damage."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63.00060000000002,
+        669.56630000000007,
+        209.99499999999995,
+        11.470000000000027
+      ],
+      "text" : "It is important to consider weight when referencing"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63.00060000000002,
+        655.81630000000007,
+        210.0111,
+        12.720000000000027
+      ],
+      "text" : "this speed. For example, VA may be 100 knots when"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63.0017,
+        644.56630000000007,
+        210.00300000000007,
+        11.470000000000027
+      ],
+      "text" : "an airplane is heavily loaded, but only 90 knots when"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63.0017,
+        632.06630000000007,
+        64.450000000000003,
+        11.470000000000027
+      ],
+      "text" : "the load is light."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        613.81630000000007,
+        228.01050000000004,
+        12.720000000000027
+      ],
+      "text" : "• Landing gear operating speed (VLO)—the maximum"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63.000500000000017,
+        602.56630000000007,
+        210.00900000000004,
+        11.470000000000027
+      ],
+      "text" : "speed for extending or retracting the landing gear if"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63.000500000000017,
+        590.06630000000007,
+        186.89000000000007,
+        11.470000000000027
+      ],
+      "text" : "flying an aircraft with retractable landing gear."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        571.81630000000007,
+        228.01070000000004,
+        12.720000000000027
+      ],
+      "text" : "• Landing gear extended speed (VLE)—the maximum"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63.000700000000023,
+        560.56630000000007,
+        210.02099999999999,
+        11.470000000000027
+      ],
+      "text" : "speed at which an aircraft can be safely flown with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63.000700000000023,
+        548.06630000000007,
+        105.53,
+        11.470000000000027
+      ],
+      "text" : "the landing gear extended."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        529.81630000000007,
+        228.00530000000003,
+        12.720000000000027
+      ],
+      "text" : "• Best angle-of-climb speed (VX)—the airspeed at"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        62.995300000000015,
+        518.56630000000007,
+        210.00999999999991,
+        11.470000000000027
+      ],
+      "text" : "which an aircraft gains the greatest amount of altitude"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        62.995300000000015,
+        506.06630000000007,
+        209.84599999999992,
+        11.470000000000027
+      ],
+      "text" : "in a given distance. It is used during a short-field"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        62.995300000000015,
+        493.56630000000007,
+        110.24000000000004,
+        11.470000000000027
+      ],
+      "text" : "takeoff to clear an obstacle."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        475.31630000000001,
+        228.0367,
+        12.720000000000027
+      ],
+      "text" : "• Best rate-of-climb speed (VY)—the airspeed that"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        62.998699999999985,
+        464.06630000000001,
+        209.90000000000009,
+        11.470000000000027
+      ],
+      "text" : "provides the most altitude gain in a given period of time."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        445.81630000000001,
+        227.9855,
+        12.720000000000027
+      ],
+      "text" : "• Single-engine best rate-of-climb (VYSE)—the best"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        62.995499999999993,
+        434.56630000000001,
+        210.03999999999996,
+        11.470000000000027
+      ],
+      "text" : "rate-of-climb or minimum rate-of-sink in a light"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        62.995499999999993,
+        422.06630000000001,
+        210.00299999999993,
+        11.470000000000027
+      ],
+      "text" : "twin-engine aircraft with one engine inoperative. It is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        62.995499999999993,
+        408.31630000000001,
+        209.99379999999996,
+        12.720000000000027
+      ],
+      "text" : "marked on the ASI with a blue line. VYSE is commonly"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        62.999300000000005,
+        397.06630000000001,
+        106.35000000000002,
+        11.470000000000027
+      ],
+      "text" : "referred to as “Blue Line.”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        378.81630000000001,
+        228.00830000000002,
+        12.720000000000027
+      ],
+      "text" : "• Minimum control speed (VMC)—the minimum flight"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        62.9953,
+        367.56630000000001,
+        210.12000000000006,
+        11.470000000000027
+      ],
+      "text" : "speed at which a light, twin-engine aircraft can be"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        62.9953,
+        355.06630000000001,
+        210.10999999999984,
+        11.470000000000027
+      ],
+      "text" : "satisfactorily controlled when an engine suddenly"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        62.9953,
+        342.56630000000001,
+        210.00599999999997,
+        11.470000000000027
+      ],
+      "text" : "becomes inoperative and the remaining engine is at"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        62.9953,
+        330.06630000000001,
+        58.310000000000002,
+        11.470000000000027
+      ],
+      "text" : "takeoff power."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        303.8433,
+        82.214000000000013,
+        13.310000000000002
+      ],
+      "text" : "Instrument Check"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        290.06630000000001,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "text" : "Prior to takeoff, the ASI should read zero. However, if there"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        277.56630000000001,
+        237.01500000000004,
+        11.470000000000027
+      ],
+      "text" : "is a strong wind blowing directly into the pitot tube, the ASI"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        265.06630000000001,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "text" : "may read higher than zero. When beginning the takeoff,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        252.56630000000001,
+        233.81999999999994,
+        11.470000000000027
+      ],
+      "text" : "make sure the airspeed is increasing at an appropriate rate."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        226.99630000000002,
+        168.37000000000003,
+        13.189999999999998
+      ],
+      "text" : "Blockage of the Pitot-Static System"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        214.56630000000001,
+        237.00299999999987,
+        11.469999999999999
+      ],
+      "text" : "Errors almost always indicate blockage of the pitot tube, the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        202.06630000000001,
+        237.01599999999996,
+        11.469999999999999
+      ],
+      "text" : "static port(s), or both. Blockage may be caused by moisture"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        189.56630000000001,
+        237.00999999999993,
+        11.469999999999999
+      ],
+      "text" : "(including ice), dirt, or even insects. During preflight, make"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        177.06630000000001,
+        237.08499999999992,
+        11.469999999999999
+      ],
+      "text" : "sure the pitot tube cover is removed. Then, check the pitot and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        164.56630000000001,
+        237.13500000000022,
+        11.469999999999999
+      ],
+      "text" : "static port openings. A blocked pitot tube affects the accuracy"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        152.06630000000001,
+        236.9799999999999,
+        11.469999999999999
+      ],
+      "text" : "of the ASI, but a blockage of the static port not only affects"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        139.56630000000001,
+        222.74000000000001,
+        11.469999999999999
+      ],
+      "text" : "the ASI, but also causes errors in the altimeter and VSI."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        113.34330000000001,
+        95.336999999999989,
+        13.310000000000002
+      ],
+      "text" : "Blocked Pitot System"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        99.566299999999998,
+        237.01099999999997,
+        11.469999999999999
+      ],
+      "text" : "The pitot system can become blocked completely or only"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        87.066299999999998,
+        237.02600000000001,
+        11.469999999999999
+      ],
+      "text" : "partially if the pitot tube drain hole remains open. If the pitot"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        74.566299999999998,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "text" : "tube becomes blocked and its associated drain hole remains"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        62.066299999999998,
+        237.01999999999992,
+        11.469999999999999
+      ],
+      "text" : "clear, ram air is no longer able to enter the pitot system. Air"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        719.56629999999996,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "text" : "already in the system vents through the drain hole, and the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        707.06629999999996,
+        237.00199999999984,
+        11.470000000000027
+      ],
+      "text" : "remaining pressure drops to ambient (outside) air pressure."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        694.56629999999996,
+        236.97000000000003,
+        11.470000000000027
+      ],
+      "text" : "Under these circumstances, the ASI reading decreases to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        682.06629999999996,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "text" : "zero because the ASI senses no difference between ram and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        669.56629999999996,
+        236.91999999999996,
+        11.470000000000027
+      ],
+      "text" : "static air pressure. The ASI no longer operates since dynamic"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        657.06629999999996,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "text" : "pressure cannot enter the pitot tube opening. Static pressure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        644.56629999999996,
+        237.01800000000003,
+        11.470000000000027
+      ],
+      "text" : "is able to equalize on both sides since the pitot drain hole"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        632.06629999999996,
+        237.11500000000024,
+        11.470000000000027
+      ],
+      "text" : "is still open. The apparent loss of airspeed is not usually"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        619.56629999999996,
+        213.56999999999999,
+        11.470000000000027
+      ],
+      "text" : "instantaneous but happens very quickly. [Figure 8-9]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        594.56629999999996,
+        236.8900000000001,
+        11.470000000000027
+      ],
+      "text" : "If both the pitot tube opening and the drain hole should"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        582.06629999999996,
+        237.08000000000015,
+        11.470000000000027
+      ],
+      "text" : "become clogged simultaneously, then the pressure in the pitot"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        569.56629999999996,
+        237.04700000000003,
+        11.470000000000027
+      ],
+      "text" : "tube is trapped. No change is noted on the airspeed indication"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        557.06629999999996,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "text" : "should the airspeed increase or decrease. If the static port"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        544.56629999999996,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "text" : "is unblocked and the aircraft should change altitude, then a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        532.06629999999996,
+        237.01199999999983,
+        11.470000000000027
+      ],
+      "text" : "change is noted on the ASI. The change is not related to a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        519.56629999999996,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "text" : "change in airspeed but a change in static pressure. The total"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        507.06629999999996,
+        237.07700000000023,
+        11.470000000000027
+      ],
+      "text" : "pressure in the pitot tube does not change due to the blockage;"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        494.56629999999996,
+        162.46000000000004,
+        11.470000000000027
+      ],
+      "text" : "however, the static pressure will change."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        469.56629999999996,
+        236.84800000000018,
+        11.470000000000027
+      ],
+      "text" : "Because airspeed indications rely upon both static and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        457.06629999999996,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "text" : "dynamic pressure together, the blockage of either of these"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        444.56629999999996,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "text" : "systems affects the ASI reading. Remember that the ASI has"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        432.06629999999996,
+        236.85799999999972,
+        11.470000000000027
+      ],
+      "text" : "a diaphragm in which dynamic air pressure is entered. Behind"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        419.56629999999996,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "text" : "this diaphragm is a reference pressure called static pressure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        407.06629999999996,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "text" : "that comes from the static ports. The diaphragm pressurizes"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        394.56629999999996,
+        236.84500000000003,
+        11.470000000000027
+      ],
+      "text" : "against this static pressure and as a result changes the airspeed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        382.06629999999996,
+        200.79000000000002,
+        11.470000000000027
+      ],
+      "text" : "indication via levers and indicators. [Figure 8-10]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        357.06629999999996,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "text" : "For example, take an aircraft and slow it down to zero knots"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        344.56629999999996,
+        237.07999999999993,
+        11.470000000000027
+      ],
+      "text" : "at a given altitude. If the static port (providing static pressure)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        332.06629999999996,
+        237.16499999999996,
+        11.470000000000027
+      ],
+      "text" : "and the pitot tube (providing dynamic pressure) are both"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        319.56629999999996,
+        194.13999999999999,
+        11.470000000000027
+      ],
+      "text" : "unobstructed, the following claims can be made:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        302.56639999999999,
+        113.81,
+        11.470000000000027
+      ],
+      "text" : "1. The ASI would be zero."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        285.56639999999999,
+        208.22000000000003,
+        11.470000000000027
+      ],
+      "text" : "2. Dynamic pressure and static pressure are equal."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        268.56639999999999,
+        228.08000000000004,
+        11.470000000000027
+      ],
+      "text" : "3. Because both dynamic and static air pressure are equal"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        256.06639999999999,
+        210,
+        11.470000000000027
+      ],
+      "text" : "at zero speed with increased speed, dynamic pressure"
+    }
+  ],
+  "page" : 212,
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

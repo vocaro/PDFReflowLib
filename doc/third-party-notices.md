@@ -62,7 +62,7 @@ SOFTWARE.
 [author's site](http://wallace.ccfaculty.org/book/book.html),
 [Creative Commons Attribution 3.0 Unported](https://creativecommons.org/licenses/by/3.0/).
 
-`Tests/PDFReflowLibTests/fixtures/algebra-{17,343,479}-layout.json` contains extracted text,
+`Tests/PDFReflowLibTests/fixtures/algebra-{17,26,343,479}-layout.json` contains extracted text,
 bounding geometry and attributed runs from those physical pages, transformed into test-only
 JSON representations. Algebra source rasters and EPUB comparisons in
 `measurements/preserved-region-regressions/`, `measurements/three-fidelity-fixes/` and

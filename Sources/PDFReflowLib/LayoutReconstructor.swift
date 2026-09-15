@@ -149,16 +149,18 @@ enum LayoutReconstructor {
                 flush()
                 if let origin = codeOrigin, let last = result.last, case let .preformatted(previousText) = last.content {
                     let indent = min(80, max(0, Int(((line.rect.minX - origin) / (line.fontSize * 0.6)).rounded())))
-                    let text = "\n" + String(repeating: " ", count: indent) + line.text
-                    result[result.count - 1].content = .preformatted(previousText + text)
+                    var combined = previousText
+                    combined.append(InlineText("\n" + String(repeating: " ", count: indent)))
+                    combined.append(line.content)
+                    result[result.count - 1].content = .preformatted(combined)
                 } else {
                     codeOrigin = line.rect.minX
-                    result.append(ReflowBlock(content: .preformatted(line.text), page: page.number))
+                    result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))
                 }
             } else if isList(line.text) {
                 flush()
-                // Preserve significant source breaks; do not rewrite list markers or code.
-                result.append(ReflowBlock(content: .preformatted(line.text), page: page.number))
+                // Preserve significant breaks and native styles; do not rewrite list markers or code.
+                result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))
             } else {
                 if let prev = previous {
                     let verticalGap = prev.rect.minY - line.rect.maxY

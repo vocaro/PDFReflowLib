@@ -192,6 +192,23 @@ class CorpusContentTests(unittest.TestCase):
         self.pages[1]['scripts'] = []
         self.assertFalse(self.check()['passed'])
 
+    def test_preformatted_scripts_are_checked_with_context_and_cannot_be_flattened(self):
+        self.contract['pages'][0]['scripts'] = [
+            {'tag': 'sup', 'text': '2', 'before': '80) (7a', 'after': '+7a)'},
+            {'tag': 'sub', 'text': '2', 'before': 'H', 'after': 'O'},
+        ]
+        body = ('<span epub:type="pagebreak" id="page-1"/><p>alpha beta</p>'
+                '<pre>80) (7a<sup><em>2</em></sup> +7a)\n    H<sub>2</sub>O</pre>'
+                '<img src="picture.png"/>')
+        pages, _ = read_pages(self.epub(body, ''))
+        self.pages[1] = pages[1]
+        self.assertTrue(self.check()['passed'])
+        for old, new in [('<sup><em>2</em></sup>', '2'), ('<sub>2</sub>', '2'),
+                         ('80) (7a', '81) (7a')]:
+            pages, _ = read_pages(self.epub(body.replace(old, new), ''))
+            self.pages[1] = pages[1]
+            self.assertFalse(self.check()['passed'])
+
     def test_caption_or_literal_markup_cannot_supply_a_script(self):
         for content in ['<figcaption>ax<sup>2</sup>+ b</figcaption>',
                         '<p>ax&lt;sup&gt;2&lt;/sup&gt;+ b</p>']:

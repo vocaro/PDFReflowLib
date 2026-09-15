@@ -1,0 +1,138 @@
+[
+  {
+    "page": 3,
+    "rawRectangleCount": 47,
+    "clusteredRectangles": [
+      [
+        0,
+        0,
+        612,
+        744.8955000000001
+      ],
+      [
+        0,
+        753.8924891,
+        612,
+        38.107510899999966
+      ]
+    ],
+    "unpaintedCandidateLines": [
+      "+ Prioritize high-quality, nutrient-dense protein",
+      "foods as part of a healthy dietary pattern.",
+      "+ Consume a variety of protein foods from",
+      "animal sources, including eggs, poultry,",
+      "seafood, and red meat, as well as a variety",
+      "of plant-sourced protein foods, including",
+      "beans, peas, lentils, legumes, nuts, seeds,",
+      "and soy.",
+      "+ Swap deep-fried cooking methods with",
+      "baked, broiled, roasted, stir-fried, or grilled",
+      "cooking methods.",
+      "+ Consume meat with no or limited added",
+      "sugars, refined carbohydrates or starches,",
+      "or chemical additives. If preferred, flavor",
+      "with salt, spices, and herbs.",
+      "+ Protein serving goals: 1.2–1.6 grams of",
+      "protein per kilogram of body weight per",
+      "day, adjusting as needed based on your",
+      "individual caloric requirements.",
+      "+ When consuming dairy, include full-fat dairy",
+      "with no added sugars. Dairy is an excellent",
+      "source of protein, healthy fats, vitamins, and",
+      "minerals.",
+      "+ Dairy serving goals: 3 servings per day",
+      "as part of a 2,000-calorie dietary pattern,",
+      "adjusting as needed based on your",
+      "individual caloric requirements.",
+      "+ The calories you need depend on your",
+      "age, sex, height, weight, and level of",
+      "physical activity.",
+      "+ Pay attention to portion sizes, particularly",
+      "for foods and beverages higher in calories.",
+      "+ Hydration is a key factor in overall health.",
+      "Choose water (still or sparkling) and",
+      "unsweetened beverages."
+    ],
+    "candidateLinesInsideClusterHull": [
+      "+ Prioritize high-quality, nutrient-dense protein",
+      "foods as part of a healthy dietary pattern.",
+      "+ Consume a variety of protein foods from",
+      "animal sources, including eggs, poultry,",
+      "seafood, and red meat, as well as a variety",
+      "of plant-sourced protein foods, including",
+      "beans, peas, lentils, legumes, nuts, seeds,",
+      "and soy.",
+      "+ Swap deep-fried cooking methods with",
+      "baked, broiled, roasted, stir-fried, or grilled",
+      "cooking methods.",
+      "+ Consume meat with no or limited added",
+      "sugars, refined carbohydrates or starches,",
+      "or chemical additives. If preferred, flavor",
+      "with salt, spices, and herbs.",
+      "+ Protein serving goals: 1.2–1.6 grams of",
+      "protein per kilogram of body weight per",
+      "day, adjusting as needed based on your",
+      "individual caloric requirements.",
+      "+ When consuming dairy, include full-fat dairy",
+      "with no added sugars. Dairy is an excellent",
+      "source of protein, healthy fats, vitamins, and",
+      "minerals.",
+      "+ Dairy serving goals: 3 servings per day",
+      "as part of a 2,000-calorie dietary pattern,",
+      "adjusting as needed based on your",
+      "individual caloric requirements.",
+      "+ The calories you need depend on your",
+      "age, sex, height, weight, and level of",
+      "physical activity.",
+      "+ Pay attention to portion sizes, particularly",
+      "for foods and beverages higher in calories.",
+      "+ Hydration is a key factor in overall health.",
+      "Choose water (still or sparkling) and",
+      "unsweetened beverages."
+    ],
+    "scope": "Rectangle-overlap diagnostic, not an ownership or safety classifier."
+  },
+  {
+    "page": 6,
+    "rawRectangleCount": 29,
+    "clusteredRectangles": [
+      [
+        0,
+        0,
+        612,
+        74
+      ],
+      [
+        109.2,
+        339.9997000000001,
+        469.075,
+        222.19999999999993
+      ],
+      [
+        0,
+        676.6,
+        612,
+        115.39999999999998
+      ]
+    ],
+    "unpaintedCandidateLines": [
+      "+ Consume less alcohol for better",
+      "overall health.",
+      "+ People who should completely avoid",
+      "alcohol include pregnant women, people",
+      "who are recovering from alcohol use",
+      "disorder or are unable to control the",
+      "amount they drink, and people taking",
+      "medications or with medical conditions",
+      "that can interact with alcohol. For those",
+      "with a family history of alcoholism, be",
+      "mindful of alcohol consumption and",
+      "associated addictive behaviors."
+    ],
+    "candidateLinesInsideClusterHull": [
+      "+ Consume less alcohol for better",
+      "amount they drink, and people taking"
+    ],
+    "scope": "Rectangle-overlap diagnostic, not an ownership or safety classifier."
+  }
+]

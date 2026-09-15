@@ -1,0 +1,10 @@
+--- GraphicsReader.swift
++++ UnclusteredGraphicsReader.swift
+@@ -223,7 +223,7 @@
+         defer { CGPDFContentStreamRelease(stream) }
+         scan(stream, state: s)
+         let bounds = page.getBoxRect(.cropBox)
+-        return Result(regions: clusters(s.regions.map { $0.intersection(bounds) }, distance: 4),
++        return Result(regions: s.regions.map { $0.intersection(bounds) },
+                       unsupported: s.unsupported, hasOnlyInvisibleText: !s.unsupported && s.invisibleText && !s.visibleText)
+     }

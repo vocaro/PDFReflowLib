@@ -1,0 +1,174 @@
+{
+  "qualifiedForFullLayout": false,
+  "allSampleChecksPass": false,
+  "passedChecks": 6,
+  "totalChecks": 19,
+  "checks": [
+    {
+      "page": 1,
+      "name": "Coherent cover title (#14 positive control)",
+      "kind": "text",
+      "value": "Dietary Guidelines For Americans",
+      "passed": true
+    },
+    {
+      "page": 1,
+      "name": "Repaired food labels (#14 positive control)",
+      "kind": "order",
+      "value": [
+        "Protein, Dairy",
+        "Vegetables",
+        "Whole Grains"
+      ],
+      "passed": true
+    },
+    {
+      "page": 2,
+      "name": "Opening prose remains selectable",
+      "kind": "text",
+      "value": "These Guidelines mark the most significant reset of federal nutrition policy",
+      "passed": true
+    },
+    {
+      "page": 2,
+      "name": "Main letter retains beginning-to-ending order",
+      "kind": "order",
+      "value": [
+        "The message is simple: eat real food.",
+        "The United States is amid a health emergency.",
+        "America’s future depends on what we grow"
+      ],
+      "passed": true
+    },
+    {
+      "page": 3,
+      "name": "Protein first bullet is contiguous",
+      "kind": "text",
+      "value": "+ Prioritize high-quality, nutrient-dense protein foods as part of a healthy dietary pattern.",
+      "passed": false
+    },
+    {
+      "page": 3,
+      "name": "Protein left column finishes before right column",
+      "kind": "order",
+      "value": [
+        "Prioritize Protein Foods at Every Meal",
+        "cooking methods.",
+        "+ Consume meat with no or limited added",
+        "Consume Dairy"
+      ],
+      "passed": false
+    },
+    {
+      "page": 3,
+      "name": "Full-width gut-health callout remains after dairy",
+      "kind": "order",
+      "value": [
+        "Consume Dairy",
+        "Dairy serving goals",
+        "Gut Health",
+        "microbiome, which may be beneficial for health."
+      ],
+      "passed": true
+    },
+    {
+      "page": 4,
+      "name": "Vegetable right column finishes before healthy-fats section",
+      "kind": "order",
+      "value": [
+        "Eat Vegetables & Fruits Throughout the Day",
+        "100% fruit or vegetable juice",
+        "Fruits: 2 servings per day",
+        "Incorporate Healthy Fats",
+        "Focus on Whole Grains"
+      ],
+      "passed": false
+    },
+    {
+      "page": 5,
+      "name": "Both upper columns precede added-sugars callout",
+      "kind": "order",
+      "value": [
+        "Avoid highly processed packaged",
+        "Avoid sugar-sweetened beverages",
+        "While no amount of added sugars",
+        "When selecting snack foods",
+        "To help identify sources of added sugars",
+        "The sugars in these foods are not considered added sugars."
+      ],
+      "passed": true
+    },
+    {
+      "page": 6,
+      "name": "Alcohol prose outside painted primitives is selectable",
+      "kind": "text",
+      "value": "+ Consume less alcohol for better overall health.",
+      "passed": false
+    },
+    {
+      "page": 6,
+      "name": "Alcohol cross-column continuation is contiguous",
+      "kind": "text",
+      "value": "disorder or are unable to control the amount they drink",
+      "passed": false
+    },
+    {
+      "page": 7,
+      "name": "Infancy first bullet is contiguous",
+      "kind": "text",
+      "value": "feed your baby only breast milk. When breast milk is not available",
+      "passed": false
+    },
+    {
+      "page": 7,
+      "name": "Infancy continuation crosses columns in source order",
+      "kind": "text",
+      "value": "peanut introduction as early as 4 to 6 months",
+      "passed": false
+    },
+    {
+      "page": 8,
+      "name": "Childhood body bullet is contiguous",
+      "kind": "text",
+      "value": "such as protein foods, dairy, vegetables, fruits, healthy fats, and whole grains.",
+      "passed": false
+    },
+    {
+      "page": 8,
+      "name": "Adolescent continuation crosses columns in source order",
+      "kind": "text",
+      "value": "while significantly limiting sugary drinks and energy drinks and avoiding highly processed foods.",
+      "passed": false
+    },
+    {
+      "page": 9,
+      "name": "Young adulthood first sentence is contiguous",
+      "kind": "text",
+      "value": "Following the Dietary Guidelines will support optimal health during this period",
+      "passed": false
+    },
+    {
+      "page": 9,
+      "name": "Older adult continuation crosses columns in source order",
+      "kind": "text",
+      "value": "nutrient-dense foods such as dairy, meats, seafood, eggs, legumes, and whole plant foods",
+      "passed": false
+    },
+    {
+      "page": 10,
+      "name": "Chronic disease first bullet is contiguous",
+      "kind": "text",
+      "value": "Following the Dietary Guidelines can help prevent the onset or slow the rate of progression of chronic disease",
+      "passed": false
+    },
+    {
+      "page": 10,
+      "name": "Vegetarian first bullet is contiguous",
+      "kind": "text",
+      "value": "Consume a variety of whole foods, especially protein-rich foods, such as dairy, eggs, beans, peas, lentils, legumes, nuts, seeds, tofu, or tempeh.",
+      "passed": false
+    }
+  ],
+  "scope": "Manually transcribed from all ten physical source pages rendered with Poppler; these are desired properties, not candidate-derived golden output. Callout text may remain in images. This sample cannot establish full layout fidelity.",
+  "negativeControlsPassed": true
+}

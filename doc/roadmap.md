@@ -57,8 +57,13 @@ physical-device memory/performance remain unqualified.
 
 - Improve [region preservation around shading/complex graphics](https://github.com/vocaro/PDFReflowLib/issues/13)
   and [native word boundaries/graphic labels](https://github.com/vocaro/PDFReflowLib/issues/14).
-  Bounded shading is supported; the ten-page DGA case now reflows text on nine pages. Qualify
-  section-local bullet order. See the
+  Bounded shading is supported; the ten-page DGA case still reflows text on nine pages. The
+  [current layout audit](../measurements/dga-layout-qualification/record.md) records 13 failing
+  desired checks: connected decoration creates large crop hulls, page 6 has no selectable
+  prose, and section-local order/column continuity remain incorrect on pages 3–4 and 7–10.
+  Raw painted footprints expose candidate prose but do not establish complete illustration/label
+  ownership; qualify a selective composite representation before changing conservative crops.
+  No runtime change or full-layout pass is claimed. See also the historical
   [shading measurement](../measurements/shading-support/record.md).
 
 - The NOAA Fifth National Climate Assessment adds a 1,834-page, 219.9 MB stress workload.

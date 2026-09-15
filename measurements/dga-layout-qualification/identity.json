@@ -1,0 +1,51 @@
+{
+  "baseRevision": "2233d5f",
+  "sourceSHA256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
+  "converterSHA256": "0b3b56eb12ad00a13c946f69743a25b2906214aa237fab603e834c50eeaec9c4",
+  "outputSHA256": "ec4f35eaac421adb4b6648477abd3bd90787776d38f615cf4c208296c127cc94",
+  "sourceFiles": {
+    "Sources/PDFReflowLib/ChapterBoundaryReader.swift": "96f7d96d3b6c6f923a92fbe617123c589488cfc73ea1b6f0193e6038077e91bb",
+    "Sources/PDFReflowLib/ConversionTypes.swift": "134b339a5a8d6449b37bd9c986e64a575adf3404f737d8fb4d6dcdb27a898fb6",
+    "Sources/PDFReflowLib/DocumentModel.swift": "7a604342b536d599b82f8c32d57f34f324d5539bd5657cd40a4013293b378dbc",
+    "Sources/PDFReflowLib/EPUBTextEncoder.swift": "e06f491b4c1fe8b58e506b9cfb867ead7aa8feb2a2f27469c80a8ed81f308bb8",
+    "Sources/PDFReflowLib/EPUBWriter.swift": "518297ece3638b7cc4e28341d989abaf715240a3d78234949ebde43a41f628ca",
+    "Sources/PDFReflowLib/FractionRegionDetector.swift": "8ffe329eaf97b1933771953028f8d1b5892796dc6a755ea3c40b0f365c7b904a",
+    "Sources/PDFReflowLib/FurnitureDetector.swift": "a55d521a0d723e04c8702ebfc2869fa81ecd8287cff68f81810ddb40b474e9d0",
+    "Sources/PDFReflowLib/GraphicsReader.swift": "c43afa0e44c0cd509409e932442abc1a0cb43a9a356043738750bfef7533fd20",
+    "Sources/PDFReflowLib/LayoutReconstructor.swift": "424e06b5be4feead08f1046078eb9f768847278425b4f2037df71d77184609dd",
+    "Sources/PDFReflowLib/MarkedTextReader.swift": "1bd00dafabd5a43c6ede6b2041b034a7f6c7b40c6dc9307cdc71215c96bcdfaa",
+    "Sources/PDFReflowLib/NativeSpacingReader.swift": "b9e716736adabc72432ba12355e2189d578454ba6224637ef4ad84e3685c8c73",
+    "Sources/PDFReflowLib/NativeTextReader.swift": "4e8f1a1627f2ecc1e281a42de59533984cb042e2e1de9c00e46736f08aefacbb",
+    "Sources/PDFReflowLib/NumberedNoteDetector.swift": "0a8aceabe0f17d06865481a417d4d6ee7348ef0be2374731914610e726b2ff5e",
+    "Sources/PDFReflowLib/OCRReader.swift": "34127110eac8485165972b2b3e104845dc7bec163e9d499201459ddf8e640c26",
+    "Sources/PDFReflowLib/PDFConverter.swift": "2f1da064e8715e20ab9caea31d091191cf6219981f9b873858678e43f22eaaf4",
+    "Sources/PDFReflowLib/PDFPageSource.swift": "9ab9814d52d392d462b35ee1ca2c2b4f8d2063b83b9bce5af135ffd8defa266e",
+    "Sources/PDFReflowLib/PDFReflowLibPipeline.swift": "69fe23c0ad72b225cab30eeccef47f66c618d99c7b503b80aa42f14006a88370",
+    "Sources/PDFReflowLib/PageRasterizer.swift": "6783ac9d4f221fb69c170c01bc3073d2cf3a8d0bc22e04b41834498c838f0852",
+    "Sources/PDFReflowLib/ReflowDocument.swift": "4d264e5c55549fdf9787a8a28229c3e3a18c140845e0f9c7160718160e6c066e",
+    "Sources/PDFReflowLib/StructureTreeReader.swift": "3c617afcb54e893a15e1ec02284cd01a6b04ff4492a6d432bd41b80ad7ff4e22",
+    "Sources/PDFReflowLib/TableRegionDetector.swift": "7ff5eb5095180d5d7fca0835cadb101f2e6ea16f611378be3922f6f1e14ee395",
+    "Sources/PDFReflowLibCLI/Main.swift": "ca6d14eab9d5f379a004e67cb923100f01fd8c3074e93807e8a9e403f49cc5c7",
+    "measurements/dga-layout-qualification/audit.py": "ab0a1e5edc10f21fb63329644a2658422819d0e87c6c125f511da17d7293d3e8",
+    "measurements/dga-layout-qualification/expectations.json": "b3b92a59152f663c82cfce07694274f0d2d746745c035ed16eefda173f8a8323",
+    "measurements/dga-layout-qualification/unclustered.patch": "f76e1fe4c7033370f741375b4849ef3ab0ab80b106b65ac608143c046de68b9d",
+    "tools/capture-layout-fixture.swift": "8f84ff2535565923d4edb0a4f9b28697e4c39f45eb61131a4bfebf724fc17fa0"
+  },
+  "sourceRenderSHA256": {
+    "dga-01.png": "58b7ce8a1faf31b8ac6f68e4dff68b084ea48474220711d0e90ceee39d80e7de",
+    "dga-02.png": "3991a8624d612a560b80d9d203058c88418b98031cfa33534babf3c2623f11fc",
+    "dga-03.png": "d9231dd36e766d18c9b143958ff598e96d3d1798efdd39dc7f50de5aa6d10f08",
+    "dga-04.png": "829a033e4926ffe406edaa2f58832fd655b5782a9eb5b33e07d3c633e926e4d8",
+    "dga-05.png": "4694b0b9e2465955e4e75dfd783006f068dcbeecc737adcc72f2e89bcee2bdde",
+    "dga-06.png": "0c59f2e3249d2bc3a402758468695650e6f744ec7834eebb8ade7aaaa764be2b",
+    "dga-07.png": "be7fd795c50d51556fe90d9a27524e8ed202726ac958ad1cefd817e1e1fb6333",
+    "dga-08.png": "79231458467032b501457edaaa47cd2d8a9c892c724362d26313820ff556132f",
+    "dga-09.png": "cd055ab99fa9567d1a764a3a4c0062d46942847992a1e88dedf702eba4d83169",
+    "dga-10.png": "d05f9526d953f52f8c14b600dce39ac672c3758561b760793863ab7fb8928565"
+  },
+  "captureArtifacts": {
+    "capture": "5509caa114c7d7a27298733559cb0d050c967b1e85aef4b1e7e5b730e05dcddf",
+    "capture-unclustered": "1a1dba00a18102a05bde3252b971085ade26821445498ea2c8655e7571ddf172",
+    "UnclusteredGraphicsReader.swift": "9050bdf4f9bbf16f3db2313439f534fade0096191bc020d3496ac7f88a9dde62"
+  }
+}

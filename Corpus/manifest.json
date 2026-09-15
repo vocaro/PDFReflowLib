@@ -111,6 +111,68 @@
           "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/1"
         }
       ]
+    },
+    {
+      "id": "gpo-warren-1964",
+      "title": "Report of the President’s Commission on the Assassination of President John F. Kennedy",
+      "author": "President’s Commission on the Assassination of President Kennedy",
+      "publicationYear": 1964,
+      "url": "https://www.govinfo.gov/content/pkg/GPO-WARRENCOMMISSIONREPORT/pdf/GPO-WARRENCOMMISSIONREPORT.pdf",
+      "publisherPageURL": "https://www.govinfo.gov/features/warren-commission-report-and-hearings",
+      "filename": "GPO-WARRENCOMMISSIONREPORT.pdf",
+      "sha256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+      "bytes": 81216909,
+      "pages": 920,
+      "role": "development",
+      "identity": {
+        "suppliedBy": "owner"
+      },
+      "provenance": "Owner-supplied PDF, copied without modification and verified against its byte count and SHA-256. GovInfo identifies this report and links its official PDF from the publisher feature page. No independent re-fetch or publisher-byte equivalence is claimed. PDF metadata credits Internet Archive digitization.",
+      "rightsBasis": "U.S. Government commission report published by GPO in 1964, retained as an external development corpus source. No blanket rights claim is made for third-party exhibits. The PDF is not bundled or relicensed under MIT.",
+      "coverage": [
+        "scanned pages with existing OCR text",
+        "JPEG 2000 image layers",
+        "untagged PDF",
+        "noisy OCR and punctuation",
+        "hard-wrapped and hyphenated prose",
+        "contents with page-number leaders",
+        "footnote markers and two-column notes",
+        "multi-column index",
+        "blank and sparsely lettered pages",
+        "photographs and document facsimiles",
+        "920-page resource and progress stress"
+      ],
+      "reviewPages": [
+        1,
+        7,
+        21,
+        30,
+        50,
+        100,
+        890,
+        910,
+        920
+      ],
+      "reviewStatus": "Full default conversion fails the image-output ceiling; nine-page excerpt spot checks expose text-layer, reflow and column-order defects. Full-book fidelity is unqualified.",
+      "knownFidelityIssues": [
+        {
+          "page": 50,
+          "issue": "Existing OCR errors survive without transcription-quality warnings; invisible Courier text becomes preformatted prose with hard wraps and spurious headings."
+        },
+        {
+          "page": 890,
+          "issue": "Excerpt notes interleave columns: 415, 477, 416, continuation of 477."
+        },
+        {
+          "page": 910,
+          "issue": "Excerpt index interleaves Federal Bureau of Investigation into De Mohrenschildt and promotes entries to headings."
+        },
+        {
+          "page": 920,
+          "issue": "Object-replacement placeholders are emitted as paragraphs and counted as reflowed text on a textless scan; cover page 1 behaves similarly."
+        }
+      ],
+      "baselineStatus": "Fails maximumOutputBytes (image output) after the last completed reconstruction page 390/920; no EPUB is published. See measurements/gpo-warren-1964/record.md."
     }
   ]
 }

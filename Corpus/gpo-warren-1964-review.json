@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "caseID": "gpo-warren-1964",
+  "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+  "pageNumbering": "one-based physical PDF pages; printed labels differ",
+  "points": [
+    {
+      "page": 1,
+      "focus": "Cover and signature annotation; retain visible appearance and do not copy interactive signature actions."
+    },
+    {
+      "page": 7,
+      "focus": "Title page, scan noise, and sparse text; avoid promoting recognition garbage into meaningful headings."
+    },
+    {
+      "page": 21,
+      "focus": "Contents entries and page-number leaders; keep labels associated with their destinations."
+    },
+    {
+      "page": 30,
+      "focus": "Hard-wrapped prose, discretionary hyphens, and punctuation placement; preserve reading sequence."
+    },
+    {
+      "page": 50,
+      "focus": "Existing OCR h/b confusions in running prose; distinguish recognition errors from genuine source spellings.",
+      "observed": "Existing OCR errors survive unchanged; prose is emitted as preformatted Courier text, with hard wraps and discretionary hyphens retained."
+    },
+    {
+      "page": 100,
+      "focus": "Inline note markers, punctuation, and paragraph continuation."
+    },
+    {
+      "page": 890,
+      "focus": "Dense two-column notes; complete notes 415-476 before beginning note 477 and keep each number attached to its citation.",
+      "observed": "Excerpt XHTML begins notes 415, 477, 416, then continuation of 477: columns interleave; some note fragments become headings."
+    },
+    {
+      "page": 910,
+      "focus": "Two-column index with hanging entries; finish the left column through Fair Play for Cuba Committee before Federal Bureau of Investigation.",
+      "observed": "Federal Bureau of Investigation interrupts De Mohrenschildt before its continuation; index entries also become headings."
+    },
+    {
+      "page": 920,
+      "focus": "Textless back-cover scan; preserve page mapping without inventing text or counting image placeholders as reflowed prose.",
+      "observed": "Two U+FFFC object placeholders are emitted as paragraphs and counted toward reflowedPageCount despite no readable source text."
+    }
+  ],
+  "textLayerChecks": [
+    {
+      "page": 50,
+      "sourceImageText": "his known contacts with the Soviet Embassy",
+      "existingTextLayer": "bis known contacts witb tbe Soviet Embassy",
+      "acceptance": "Detect suspect existing OCR and report uncertainty or recover the image-backed reading without speculative replacement. The PDF image is the reference; no book-wide OCR accuracy rate is established."
+    }
+  ],
+  "reviewScope": "Source and excerpt EPUB spot checks cover original pages 50, 890 and 910; page 920 source image and XHTML placeholder-only output are also inspected. The full default conversion fails its output-byte ceiling. Excerpt results lack whole-book context and are not passing fidelity tests."
+}

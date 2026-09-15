@@ -1,0 +1,234 @@
+{
+  "sha256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+  "bytes": 81216909,
+  "pages": 920,
+  "counts": {
+    "pagesWithDirectImageXObjects": 920,
+    "directImageXObjects": 1839
+  },
+  "sampledImageObjects": [
+    {
+      "page": 1,
+      "images": [
+        {
+          "width": 2960,
+          "height": 4616,
+          "filter": "/JPXDecode"
+        },
+        {
+          "width": 987,
+          "height": 1539,
+          "filter": "/JPXDecode"
+        }
+      ],
+      "annotations": 1
+    },
+    {
+      "page": 3,
+      "images": [
+        {
+          "width": 2744,
+          "height": 4384,
+          "filter": "/JPXDecode"
+        },
+        {
+          "width": 915,
+          "height": 1462,
+          "filter": "/JPXDecode"
+        }
+      ],
+      "annotations": 0
+    },
+    {
+      "page": 5,
+      "images": [
+        {
+          "width": 2622,
+          "height": 4451,
+          "filter": "/JPXDecode"
+        },
+        {
+          "width": 874,
+          "height": 1484,
+          "filter": "/JPXDecode"
+        }
+      ],
+      "annotations": 0
+    },
+    {
+      "page": 7,
+      "images": [
+        {
+          "width": 2732,
+          "height": 4424,
+          "filter": "/JPXDecode"
+        },
+        {
+          "width": 911,
+          "height": 1475,
+          "filter": "/JPXDecode"
+        }
+      ],
+      "annotations": 0
+    },
+    {
+      "page": 20,
+      "images": [
+        {
+          "width": 2772,
+          "height": 4380,
+          "filter": "/JPXDecode"
+        },
+        {
+          "width": 924,
+          "height": 1460,
+          "filter": "/JPXDecode"
+        }
+      ],
+      "annotations": 0
+    },
+    {
+      "page": 30,
+      "images": [
+        {
+          "width": 2733,
+          "height": 4438,
+          "filter": "/JPXDecode"
+        },
+        {
+          "width": 911,
+          "height": 1480,
+          "filter": "/JPXDecode"
+        }
+      ],
+      "annotations": 0
+    },
+    {
+      "page": 100,
+      "images": [
+        {
+          "width": 2733,
+          "height": 4438,
+          "filter": "/JPXDecode"
+        },
+        {
+          "width": 911,
+          "height": 1480,
+          "filter": "/JPXDecode"
+        }
+      ],
+      "annotations": 0
+    },
+    {
+      "page": 400,
+      "images": [
+        {
+          "width": 2693,
+          "height": 4422,
+          "filter": "/JPXDecode"
+        },
+        {
+          "width": 898,
+          "height": 1474,
+          "filter": "/JPXDecode"
+        }
+      ],
+      "annotations": 0
+    },
+    {
+      "page": 800,
+      "images": [
+        {
+          "width": 2669,
+          "height": 4398,
+          "filter": "/JPXDecode"
+        },
+        {
+          "width": 890,
+          "height": 1466,
+          "filter": "/JPXDecode"
+        }
+      ],
+      "annotations": 0
+    },
+    {
+      "page": 910,
+      "images": [
+        {
+          "width": 2669,
+          "height": 4398,
+          "filter": "/JPXDecode"
+        },
+        {
+          "width": 890,
+          "height": 1466,
+          "filter": "/JPXDecode"
+        }
+      ],
+      "annotations": 0
+    },
+    {
+      "page": 920,
+      "images": [
+        {
+          "width": 2669,
+          "height": 4398,
+          "filter": "/JPXDecode"
+        },
+        {
+          "width": 890,
+          "height": 1466,
+          "filter": "/JPXDecode"
+        }
+      ],
+      "annotations": 0
+    }
+  ],
+  "formFieldCount": 1,
+  "inspectionTools": {
+    "pypdf": "6.10.0",
+    "pdftotext": "26.04.0"
+  },
+  "pagesWithNonemptyPopplerText": 910,
+  "pagesWithoutPopplerText": [
+    1,
+    2,
+    4,
+    10,
+    12,
+    20,
+    498,
+    917,
+    918,
+    920
+  ],
+  "sampledInvisibleTextPages": [
+    21,
+    50,
+    890,
+    910
+  ],
+  "sampledTextRenderingMode": 3,
+  "formFieldType": "signature",
+  "scope": "Image XObject counts cover all 920 page resources. Text rendering mode checked only on the four listed pages. Nonempty extracted text does not establish OCR accuracy.",
+  "sampledFontResources": [
+    {
+      "page": 50,
+      "baseFonts": [
+        "/Courier"
+      ]
+    },
+    {
+      "page": 890,
+      "baseFonts": [
+        "/Courier"
+      ]
+    },
+    {
+      "page": 910,
+      "baseFonts": [
+        "/Courier"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "case": {
+    "id": "gpo-warren-1964",
+    "title": "Report of the President\u2019s Commission on the Assassination of President John F. Kennedy",
+    "author": "President\u2019s Commission on the Assassination of President Kennedy",
+    "publicationYear": 1964,
+    "url": "https://www.govinfo.gov/content/pkg/GPO-WARRENCOMMISSIONREPORT/pdf/GPO-WARRENCOMMISSIONREPORT.pdf",
+    "publisherPageURL": "https://www.govinfo.gov/features/warren-commission-report-and-hearings",
+    "filename": "GPO-WARRENCOMMISSIONREPORT.pdf",
+    "sha256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+    "bytes": 81216909,
+    "pages": 920,
+    "role": "development",
+    "identity": {
+      "suppliedBy": "owner"
+    },
+    "provenance": "Owner-supplied PDF, copied without modification and verified against its byte count and SHA-256. GovInfo identifies this report and links its official PDF from the publisher feature page. No independent re-fetch or publisher-byte equivalence is claimed. PDF metadata credits Internet Archive digitization.",
+    "rightsBasis": "U.S. Government commission report published by GPO in 1964, retained as an external development corpus source. No blanket rights claim is made for third-party exhibits. The PDF is not bundled or relicensed under MIT.",
+    "coverage": [
+      "scanned pages with existing OCR text",
+      "JPEG 2000 image layers",
+      "untagged PDF",
+      "noisy OCR and punctuation",
+      "hard-wrapped and hyphenated prose",
+      "contents with page-number leaders",
+      "footnote markers and two-column notes",
+      "multi-column index",
+      "blank and sparsely lettered pages",
+      "photographs and document facsimiles",
+      "920-page resource and progress stress"
+    ],
+    "reviewPages": [
+      1,
+      7,
+      21,
+      30,
+      50,
+      100,
+      890,
+      910,
+      920
+    ],
+    "reviewStatus": "Review points selected for baseline evaluation; full-book OCR accuracy and reading order remain unqualified.",
+    "knownFidelityIssues": []
+  },
+  "converterSHA256": "6ae1a17ef314531255ad1e768c4c75c6739483fe793de6627d8f9b5b2021602f",
+  "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "options": "library defaults",
+  "qualifiedForFidelity": false,
+  "conversionExitCode": 1,
+  "sampledPeakPhysicalFootprintBytes": 1294846424,
+  "conversionSeconds": 203.4448937499983,
+  "converterPeakRSSBytes": 2112585728,
+  "converterCPUSeconds": 202.747028,
+  "measurementScope": "One process run; RSS excludes separate Apple services. Timing excludes validation. Not a latency distribution or physical mobile-device measurement.",
+  "progressCheck": {
+    "passed": false,
+    "events": 1312,
+    "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+  },
+  "memoryGate": {
+    "status": "not configured"
+  },
+  "runPassed": false
+}

@@ -1,0 +1,25 @@
+{
+  "originalLogSHA256": "acfe84e0b3fe1125a276b6ae6743c5fbbe2e4f0117e356206bac27299c856454",
+  "originalLogBytes": 7916070,
+  "compression": "gzip, original log bytes unchanged after decompression",
+  "events": 1312,
+  "monotonic": true,
+  "firstEvent": [
+    "0",
+    "opening",
+    "",
+    ""
+  ],
+  "lastEvent": [
+    "67",
+    "reconstructing",
+    "390",
+    "920"
+  ],
+  "recognizingPages": [
+    4
+  ],
+  "failure": "Conversion resource limit: image output bytes",
+  "publishedEPUB": false,
+  "stagingDirectoriesRemain": false
+}

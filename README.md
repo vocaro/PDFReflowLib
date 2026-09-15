@@ -165,8 +165,8 @@ interchange format; the supported public output remains EPUB 3. See
 ## Real-document corpus and memory gates
 
 `Corpus/manifest.json` registers the 522-page FAA Pilot's Handbook of Aeronautical Knowledge
-(FAA-H-8083-25C) and Tyler Wallace's 489-page Beginning and Intermediate Algebra by exact byte
-identity. Supply these PDFs separately; they are not bundled or fetched by the tests.
+(FAA-H-8083-25C), Tyler Wallace's 489-page Beginning and Intermediate Algebra, and the
+920-page scanned Warren Commission report by exact byte identity. Supply these PDFs separately; they are not bundled or fetched by the tests.
 [Corpus guide](doc/corpus.md) lists their coverage, attribution and review commands. The manifest lists review points and known reading-order/raster defects, so a
 successful conversion is not mistaken for a fidelity qualification.
 
@@ -209,7 +209,7 @@ python3 Tools/view_epub.py /path/to/output.epub
 
 The library, original test fixtures and development tools are distributed under the
 [MIT license](LICENSE). [Third-party notices](doc/third-party-notices.md) cover dependencies.
-The separately supplied FAA corpus document retains its own rights status.
+Separately supplied corpus documents retain their own rights status; see [corpus guide](doc/corpus.md).
 
 `PDFReflowLib` is the package, library product and Swift module name. The command-line executable
 is `pdf-reflow`. The library has no affiliation with the

@@ -14,8 +14,14 @@ physical-device memory/performance remain unqualified.
   the Wallace algebra corpus exposes a flattened
   squared exponent on page 343 despite preserved displayed formulas. Add a targeted regression
   when implementing the fix; review exercise and answer-key numbering across the book.
-- The development corpus includes the FAA handbook and Wallace algebra textbook, with source
-  identities, review points and baseline measurements. Expand it with borderless tables,
+- Support the Warren Commission scanned report: full conversion exhausts the default
+  image-output ceiling; invisible OCR fonts produce preformatted prose, spurious headings and
+  interleaved notes/index columns. Detect suspect inherited OCR and exclude object placeholders
+  from readable text/counts. Evidence: [Warren baseline](../measurements/gpo-warren-1964/record.md).
+- Correct absolute image URLs in the Poppler simple comparison preview without weakening
+  local server containment; retain raw Poppler output and a reproducible rendered comparison.
+- The development corpus includes the FAA handbook, Wallace algebra textbook and Warren
+  Commission scanned report, with source identities, review points and baseline measurements. Expand it with borderless tables,
   footnotes, damaged encodings and non-Latin layouts. Measure coverage and reading order.
 - Evaluate OS 27's native progress composition APIs while retaining ordered client reporting.
   The minimum deployment version remains 27.

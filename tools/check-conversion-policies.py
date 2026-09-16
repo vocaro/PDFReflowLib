@@ -94,6 +94,8 @@ def main():
         ['--ocr', 'invalid'], ['--ocr'],
         ['--repeated-headers-and-footers', 'drop'], ['--repeated-headers-and-footers', 'KEEP'],
         ['--repeated-headers-and-footers'],
+        ['--raster-dpi', '71'], ['--raster-dpi', '601'], ['--raster-dpi', 'nan'], ['--raster-dpi'],
+        ['--maximum-raster-pixels', '0'], ['--maximum-raster-pixels', '48000001'], ['--maximum-raster-pixels', '1.5'],
     ]
     for flags in failures:
         output = args.output / 'must-not-exist.epub'

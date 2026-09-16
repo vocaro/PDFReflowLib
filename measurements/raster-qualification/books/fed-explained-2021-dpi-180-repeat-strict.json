@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "provenanceErrors": [],
+  "case": "fed-explained-2021",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+  "candidateConverterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+  "changedPages": [],
+  "changedImages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification."
+}

@@ -1,0 +1,308 @@
+[
+  {
+    "target": "warren-50",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "50",
+      "-l",
+      "50",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/warren-50-source-360"
+    ],
+    "sourceCropSHA256": "f9d1279bb5251057588b03be959951a4fd47b8fd6c389c0f94d4a39ccff61df5"
+  },
+  {
+    "target": "warren-890",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "890",
+      "-l",
+      "890",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/warren-890-source-360"
+    ],
+    "sourceCropSHA256": "d3f8b6e4bb311c1c0e3a7a97eb1416776a09dab787d16dfa4fa89861fb64af86"
+  },
+  {
+    "target": "warren-100",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "100",
+      "-l",
+      "100",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/warren-100-source-360"
+    ],
+    "sourceCropSHA256": "7aed94d06724fe836f952005a7e30a9ce761c209c25aa4e0dbd39b183a86203c"
+  },
+  {
+    "target": "blue-150",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "150",
+      "-l",
+      "150",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/blue-150-source-360"
+    ],
+    "sourceCropSHA256": "a1c6d7aaa1aa2df1972a0214ce26f93af8e45ef9194fc182013be13004921feb"
+  },
+  {
+    "target": "blue-74",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "74",
+      "-l",
+      "74",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/blue-74-source-360"
+    ],
+    "sourceCropSHA256": "00570bc6c3391af80df2249b2a65446936c97de2656dfba71bff8954d8a94c93"
+  },
+  {
+    "target": "geltman-1",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "1",
+      "-l",
+      "1",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/jresv82n3p173_A1b.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/geltman-1-source-360"
+    ],
+    "sourceCropSHA256": "e3066790d3b3c9f11696e92b75779045239c5ce8f8d8ec0a2112d72455fd8242"
+  },
+  {
+    "target": "faa-121",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "121",
+      "-l",
+      "121",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/faa-h-8083-25c.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/faa-121-source-360"
+    ],
+    "sourceCropSHA256": "af09cfd9c21ad5f845f31cbacdbf30ac7e3abf423415a5603fa5f889e28601b3"
+  },
+  {
+    "target": "fed-45",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "45",
+      "-l",
+      "45",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/the-fed-explained.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/fed-45-source-360"
+    ],
+    "sourceCropSHA256": "0c6f5ccd81975ddc34aa524108244a5ff35c1a5e2e095d2631aadedac30b2d0b"
+  },
+  {
+    "target": "fed-82",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "82",
+      "-l",
+      "82",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/the-fed-explained.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/fed-82-source-360"
+    ],
+    "sourceCropSHA256": "89326f6ac708dc903c49cab68734ccdb26e9d1f588e3aac13595bd105b717d18"
+  },
+  {
+    "target": "dga-3",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "3",
+      "-l",
+      "3",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/DGA.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/dga-3-source-360"
+    ],
+    "sourceCropSHA256": "607a52de99725fb7aac2fd125908f3cebdde82668fcfb74286b7e7c46a2c837d"
+  },
+  {
+    "target": "flag-27",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "27",
+      "-l",
+      "27",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/CDOC-108hdoc97.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/flag-27-source-360"
+    ],
+    "sourceCropSHA256": "c5a3c2479b0f242dd290f601720d6ef21484cc3384d8b6b7284d0b4c3b90f26e"
+  },
+  {
+    "target": "flag-33",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "33",
+      "-l",
+      "33",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/CDOC-108hdoc97.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/flag-33-source-360"
+    ],
+    "sourceCropSHA256": "cc23b617bd2cbd6d72f07476ea64a127944f3a7478dd8966e66a147db3dcb4c1"
+  },
+  {
+    "target": "cdc-13",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "13",
+      "-l",
+      "13",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/cdc_6023_DS1.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/cdc-13-source-360"
+    ],
+    "sourceCropSHA256": "df274a31c7ff4bf1229d60c04aff64fc5cff679fe76c72558b29f65b391c94e4"
+  },
+  {
+    "target": "algebra-343",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "343",
+      "-l",
+      "343",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/Beginning_and_Intermediate_Algebra.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/algebra-343-source-360"
+    ],
+    "sourceCropSHA256": "900c4cb2f5dc57f84df08b8fe4e10a7f50d818f297e7e68e419d57060b69971d"
+  },
+  {
+    "target": "algebra-347",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "347",
+      "-l",
+      "347",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/Beginning_and_Intermediate_Algebra.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/algebra-347-source-360"
+    ],
+    "sourceCropSHA256": "80323f61763441438c6ae841fbb0d6c2306b0feb7c4ccb6716e95ce708a9665c"
+  },
+  {
+    "target": "usgs-1",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "1",
+      "-l",
+      "1",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/mcs2025-copper.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/usgs-1-source-360"
+    ],
+    "sourceCropSHA256": "665173d33c614da09d187dd89ce6633f708d7eaf5cae32b6e751691351889d49"
+  },
+  {
+    "target": "911-472",
+    "command": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-f",
+      "472",
+      "-l",
+      "472",
+      "-singlefile",
+      "-cropbox",
+      "-r",
+      "360",
+      "-png",
+      "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/GPO-911REPORT.pdf",
+      "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/review/911-472-source-360"
+    ],
+    "sourceCropSHA256": "501b07d4d702322a683ef3695db759c466f2d4010dfe4ffe97e9dda252ff955e"
+  }
+]

@@ -1,0 +1,227 @@
+{
+  "baseline": "defaults",
+  "runs": [
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/cia-blue-book-14-1955/defaults",
+      "options": "library defaults",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 168476672,
+      "sampledPeakPhysicalFootprintBytes": 150537080,
+      "conversionSeconds": 32.88553970800422,
+      "outputBytes": 206278632,
+      "imageCount": 425,
+      "imageBytes": 215516800,
+      "pageCount": 312,
+      "reflowedPageCount": 312,
+      "recognizedPageCount": 0,
+      "reportedImageCount": 425,
+      "warningsByCode": {
+        "furnitureRemoved": 278,
+        "imageRegion": 397,
+        "structureFallback": 1,
+        "unverifiedTextLayer": 312
+      },
+      "ocrPages": [],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "defaults",
+      "drift": null
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/cia-blue-book-14-1955/dpi-120",
+      "options": "--raster-dpi 120",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 159121408,
+      "sampledPeakPhysicalFootprintBytes": 146441080,
+      "conversionSeconds": 28.423009250000177,
+      "outputBytes": 123042239,
+      "imageCount": 425,
+      "imageBytes": 126348502,
+      "pageCount": 312,
+      "reflowedPageCount": 312,
+      "recognizedPageCount": 0,
+      "reportedImageCount": 425,
+      "warningsByCode": {
+        "furnitureRemoved": 278,
+        "imageRegion": 397,
+        "structureFallback": 1,
+        "unverifiedTextLayer": 312
+      },
+      "ocrPages": [],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "dpi-120",
+      "drift": {
+        "changedTextPages": [],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/cia-blue-book-14-1955/dpi-180",
+      "options": "--raster-dpi 180",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 274350080,
+      "sampledPeakPhysicalFootprintBytes": 232408000,
+      "conversionSeconds": 32.58920020900405,
+      "outputBytes": 206278627,
+      "imageCount": 425,
+      "imageBytes": 215516800,
+      "pageCount": 312,
+      "reflowedPageCount": 312,
+      "recognizedPageCount": 0,
+      "reportedImageCount": 425,
+      "warningsByCode": {
+        "furnitureRemoved": 278,
+        "imageRegion": 397,
+        "structureFallback": 1,
+        "unverifiedTextLayer": 312
+      },
+      "ocrPages": [],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "dpi-180",
+      "drift": {
+        "changedTextPages": [],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/cia-blue-book-14-1955/dpi-240",
+      "options": "--raster-dpi 240",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 216989696,
+      "sampledPeakPhysicalFootprintBytes": 201278400,
+      "conversionSeconds": 41.28132516700134,
+      "outputBytes": 286132417,
+      "imageCount": 425,
+      "imageBytes": 304405633,
+      "pageCount": 312,
+      "reflowedPageCount": 312,
+      "recognizedPageCount": 0,
+      "reportedImageCount": 425,
+      "warningsByCode": {
+        "furnitureRemoved": 278,
+        "imageRegion": 397,
+        "structureFallback": 1,
+        "unverifiedTextLayer": 312
+      },
+      "ocrPages": [],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "dpi-240",
+      "drift": {
+        "changedTextPages": [],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cia-blue-book-14-1955/defaults",
+      "options": "library defaults",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 170016768,
+      "sampledPeakPhysicalFootprintBytes": 154715024,
+      "conversionSeconds": 31.971325750004326,
+      "outputBytes": 206278631,
+      "imageCount": 425,
+      "imageBytes": 215516800,
+      "pageCount": 312,
+      "reflowedPageCount": 312,
+      "recognizedPageCount": 0,
+      "reportedImageCount": 425,
+      "warningsByCode": {
+        "furnitureRemoved": 278,
+        "imageRegion": 397,
+        "structureFallback": 1,
+        "unverifiedTextLayer": 312
+      },
+      "ocrPages": [],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "defaults-repeat",
+      "drift": {
+        "changedTextPages": [],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    }
+  ],
+  "scope": "Gate results, resources, counts, warnings and text/image-count drift between raster settings; not a fidelity qualification or a judgement of which output is correct."
+}

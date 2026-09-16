@@ -1,0 +1,23 @@
+{
+  "case": "fed-explained-2021",
+  "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "page": 45,
+  "regionPoints": [
+    60.0,
+    385.0,
+    235.0,
+    482.0
+  ],
+  "target": "Figure 3.3 OPEN MARKET DESK node: white label on a dark band, illustration and four small caption lines",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 180,
+  "kind": "glyph",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    300,
+    250
+  ],
+  "sha256": "7a21698f3a2b2dfb16c29568ad3ea9b61edc3a9d9874bcee85fbe7484829c338"
+}

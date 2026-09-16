@@ -1,0 +1,23 @@
+{
+  "case": "fed-explained-2021",
+  "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "page": 82,
+  "regionPoints": [
+    95.0,
+    130.0,
+    530.0,
+    227.0
+  ],
+  "target": "Figure 5.7 header band, Banks and banking band, and the Regulation F and H rows",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 180,
+  "kind": "glyph",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    1080,
+    250
+  ],
+  "sha256": "1be29b3cdc115463fd9da12f9c969c54cc31a71029d376d998ab26e10d2d22b0"
+}

@@ -53,11 +53,11 @@ The current recommendations are provisional where evidence covers only selected 
 
 | Dial | Recommended starting point | Evidence and qualification |
 | --- | --- | --- |
-| Full-page scans | `.jpeg(quality: 0.90)` for tinted/noisy scans when lossy encoding is acceptable; compare PNG for clean black-and-white scans | Both 0.90 and 0.95 have whole-Warren size measurements and sampled visual comparisons. Use 0.90–0.95 as an initial tuning range; only the endpoints are measured. At 180 DPI, JPEG saves about 57% on two Warren pages but less than 1% on the checked Blue Book table page. |
+| Full-page scans | `.jpeg(quality: 0.90)` for tinted/noisy scans when lossy encoding is acceptable; compare PNG for clean black-and-white scans | 0.90 and 0.95 have whole-Warren size measurements; the [17-page qualification](../measurements/raster-qualification/record.md) measures 0.60–0.95 on six scans and six figure pages. Use 0.75–0.90 as the measured range: at 180 DPI the six scans are −52% (0.75) to −41% (0.90) of PNG with no measured change in Vision phrase recovery, glyph coverage, contrast or color; 0.60 saves more (−62%) but shows faint halos on colored labels, and the typewritten Blue Book table saves only 5–15%. |
 | Equations, tables, cropped diagrams | `.png` | The clean table and colored fraction controls are smaller as PNG, with no encoding loss. Start lossless for these regions; other figure types may benefit from separate measurements. |
 | Mixed full-page artwork | `.png` until reviewed, or explicitly trial `.smallest(jpegQuality: 0.90)` | Smallest avoids choosing a larger encoded file, but chooses by bytes, not legibility. Its clean/noisy controls pass; broad real-book visual qualification remains outstanding. |
 | Supplementary references | `.automatic` for a publication intended to carry its own source-page references | `.never` is a compact-reading choice when the client retains the PDF for review and accepts omitted visual context. Whole-book Warren runs quantify both choices; neither validates inherited OCR. Reserve `.always` for deliberate page-by-page reference use. |
-| Resolution | Start at 180 DPI; compare 240 DPI for dense small print or fine diagram labels | A seven-page, six-document raster sweep shows sharper fine detail at 240, with about 47–49% more full-page image bytes than 180 at fixed encoding. At 120 DPI, small notes and labels have visibly coarser edges. This supports a targeted 240-DPI trial, not a universal range or device budget. Actual resolution can be reduced by the pixel ceiling. |
+| Resolution | Start at 180 DPI; compare 240 DPI for dense small print or fine diagram labels; do not go below 150 DPI for scans with small type | Seventeen pages at 96–300 DPI and four complete books at 120/180/240: full-page bytes are −63/−47/−28% at 96/120/150 and +49/+94% at 240/300 relative to 180. Vision finds none of the tiny Warren notes at 96 or 120, 3 of 9 at 150, 5 at 180, 6 at 240 and 8 at 300; body-size scan text is recovered from 150 up and born-digital labels at every setting. Changing DPI changed only image bytes, elapsed time and the OCR wording of 1–3 already-OCR'd pages per book; no gate, warning or text contract changed. This is not a device budget, and the pixel ceiling can still reduce actual resolution. |
 | Raster pixel ceiling | Keep the 12-million-pixel starting bound while profiling the target device | There is no qualified physical iPhone/iPad memory range. The supported 1–48 million range is not a safe-device recommendation. |
 | Output budgets | Choose separate entry and final-file caps from the client's storage allowance and measured workload, with headroom | The 512 MiB entry default is a configurable guard, not a measured universal recommendation. A file can pass its final ZIP cap while exceeding the entry cap. Disabling the entry budget in an experiment is not a general shipping recommendation. |
 
@@ -109,9 +109,14 @@ The library's runtime defaults remain unchanged while the recommendations are ev
 broadly. Revising defaults or widening recommended ranges requires cross-document size and
 readability comparisons, the corpus regression gate, and target-device measurements for
 resource claims. Include scan text, fine colored labels, equations, tables and image-heavy
-pages; archive the measured settings and results alongside each recommendation. JPEG quality
-below 0.90, DPI choices outside the sampled 120/180/240 settings, full-book/OCR effects of
-changing DPI, and physical-device raster budgets remain unqualified.
+pages; archive the measured settings and results alongside each recommendation. The
+[raster qualification](../measurements/raster-qualification/record.md) covers JPEG 0.60–0.95
+and 96–300 DPI on 17 pages and 120/180/240 DPI on four complete books on one Mac;
+`tools/raster_sweep.py` reruns that page sweep on any reviewed target list. Physical-device
+raster and memory budgets, whole-book behaviour at 96/150/300 DPI, the two books that still
+fail the default output budget, and reader-facing legibility beyond the Vision proxy remain
+unqualified. The corpus reference-image checks assume 180 DPI, so a changed default also needs
+regenerated references.
 
 ## Supplementary references versus required images
 
@@ -193,6 +198,9 @@ Byte limits accept a positive integer or `unlimited`. Image encodings accept `pn
 `jpeg:QUALITY` or `smallest:QUALITY`. `--repeated-headers-and-footers remove|keep` sets
 `removeRepeatedHeadersAndFooters`; without it, repeated headers and footers are removed.
 `--package-identifier ID` and `--modification-date ISO8601`
-(for example `2026-01-01T00:00:00Z`) set the reproducible-package options. The internal reader
+(for example `2026-01-01T00:00:00Z`) set the reproducible-package options. `--raster-dpi DPI`
+(72–600) and `--maximum-raster-pixels PIXELS` (1–48,000,000) set `rasterDPI` and
+`maximumRasterPixels`; the library defaults of 180 DPI and 12 million pixels apply when they are
+omitted. The internal reader
 accepts PNG/JPEG publications; its independent admission budget can be set with
 `tools/view_epub.py --maximum-bytes BYTES`.

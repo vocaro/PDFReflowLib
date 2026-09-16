@@ -1,0 +1,23 @@
+{
+  "case": "dga-2025-2030",
+  "sourceSHA256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
+  "page": 3,
+  "regionPoints": [
+    29.38,
+    180.58,
+    301.72,
+    248.69
+  ],
+  "target": "Food photograph, green gradient title Prioritize Protein Foods and the blue bullet text",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "kind": "color",
+  "mode": "RGB",
+  "inkThreshold": 200,
+  "pixels": [
+    134,
+    34
+  ],
+  "sha256": "bde580497bd3801855cd4e21b01c814706894e31235f887b64f1db4e13f58383"
+}

@@ -1,0 +1,954 @@
+[
+  {
+    "id": "warren-50",
+    "case": "gpo-warren-1964",
+    "class": "scan",
+    "page": 50,
+    "regionNormalized": [
+      0.19,
+      0.058,
+      0.765,
+      0.038
+    ],
+    "review": "Two opening scan lines: September 26 to October 3, 1963, and his known contacts with the Soviet Embassy in the United States. Thin serifs, commas and date digits.",
+    "expectedPhrases": [
+      "September 26 to October 3, 1963",
+      "the Soviet Embassy in the United States"
+    ],
+    "region": [
+      74.67,
+      37.062000000000005,
+      375.31500000000005,
+      61.344
+    ],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf",
+    "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+    "sourceBytes": 81216909,
+    "cropBoxPoints": [
+      393.0,
+      639.0
+    ],
+    "references": [
+      {
+        "reference": "measurements/raster-qualification/references/gpo-warren-1964/page-50-opening-lines-glyphs.png",
+        "kind": "glyph",
+        "regionPoints": [
+          74.67,
+          37.06,
+          375.32,
+          61.34
+        ],
+        "sha256": "d4259ee6cd02a5d0a1b58b7df81c95ee322fa454702f54d741b422241ae14527"
+      },
+      {
+        "reference": "measurements/raster-qualification/references/gpo-warren-1964/page-50-opening-lines.png",
+        "kind": "region",
+        "regionPoints": [
+          74.67,
+          37.06,
+          375.32,
+          61.34
+        ],
+        "sha256": "c96d5b1bb3ffbcf2420d1c1e0391342bcb71e60f6e126d45cf74df44021ccff6"
+      }
+    ]
+  },
+  {
+    "id": "warren-890",
+    "case": "gpo-warren-1964",
+    "class": "scan",
+    "page": 890,
+    "regionNormalized": [
+      0.118,
+      0.074,
+      0.4,
+      0.075
+    ],
+    "review": "Small notes 415-421 with citations; tiny numerals and punctuation. Inherited OCR is not accepted as truth.",
+    "expectedPhrases": [
+      "415.",
+      "8 H 232",
+      "Delgado",
+      "416. Id. at 233, 241, 246-248.",
+      "417. Id. at 233.",
+      "418. See id. at 240-241, 243-244, 255.",
+      "419. Id. at 240.",
+      "420. Id. at 241.",
+      "421. Id. at 241-243."
+    ],
+    "region": [
+      45.312,
+      46.842,
+      198.912,
+      94.317
+    ],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf",
+    "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+    "sourceBytes": 81216909,
+    "cropBoxPoints": [
+      384.0,
+      633.0
+    ],
+    "references": [
+      {
+        "reference": "measurements/raster-qualification/references/gpo-warren-1964/page-890-notes-415-421-glyphs.png",
+        "kind": "glyph",
+        "regionPoints": [
+          45.31,
+          46.84,
+          198.91,
+          94.32
+        ],
+        "sha256": "18fc8c2ed8ae39b0d6ad71290134382495b72091caa63f9500469165e9a6fd76"
+      },
+      {
+        "reference": "measurements/raster-qualification/references/gpo-warren-1964/page-890-notes-415-421.png",
+        "kind": "region",
+        "regionPoints": [
+          45.31,
+          46.84,
+          198.91,
+          94.32
+        ],
+        "sha256": "8773fa80bf2e3035766cf3b0a420d745afce8eee64e8b769ee5695670808ccf8"
+      }
+    ]
+  },
+  {
+    "id": "warren-100",
+    "case": "gpo-warren-1964",
+    "class": "scan",
+    "page": 100,
+    "region": [
+      45,
+      38,
+      366,
+      150
+    ],
+    "review": "Body prose with inline note markers 63-66; serif body type on a tinted scan.",
+    "expectedPhrases": [
+      "motorcade reached the intersection of Elm and Houston Streets",
+      "Stemmons Freeway",
+      "Patrolman Foster estimated that there were",
+      "11 people on the railroad bridge",
+      "witness testified that there were between 14 and 18 people",
+      "Texas-Louisiana Freight Bureau",
+      "employees of the Union Terminal Co."
+    ],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf",
+    "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+    "sourceBytes": 81216909,
+    "cropBoxPoints": [
+      393.0,
+      639.0
+    ],
+    "references": [
+      {
+        "reference": "measurements/raster-qualification/references/gpo-warren-1964/page-100-motorcade-paragraph-glyphs.png",
+        "kind": "glyph",
+        "regionPoints": [
+          45.0,
+          38.0,
+          366.0,
+          150.0
+        ],
+        "sha256": "9013aaa68c274d139426acd6fe073309c599d6c106584f73a247c38667ea6944"
+      },
+      {
+        "reference": "measurements/raster-qualification/references/gpo-warren-1964/page-100-motorcade-paragraph.png",
+        "kind": "region",
+        "regionPoints": [
+          45.0,
+          38.0,
+          366.0,
+          150.0
+        ],
+        "sha256": "26a4d51e9cbbf94b0507a8b1b5f27c6919939252438f8ca3fa7d147f2f449e2a"
+      }
+    ]
+  },
+  {
+    "id": "blue-150",
+    "case": "cia-blue-book-14-1955",
+    "class": "scan",
+    "page": 150,
+    "regionNormalized": [
+      0.204,
+      0.123,
+      0.173,
+      0.113
+    ],
+    "review": "TOTALS header, printed Certain/Doubtful/Total labels and the first handwritten row 270, 180, 450; 8.4, 5.6, 14.0.",
+    "expectedPhrases": [
+      "TOTALS",
+      "Certain",
+      "Doubtful",
+      "Total",
+      "270",
+      "180",
+      "450",
+      "8.4",
+      "5.6",
+      "14.0"
+    ],
+    "region": [
+      124.55423999999998,
+      96.79607999999999,
+      230.18112,
+      185.72255999999996
+    ],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf",
+    "sourceSHA256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
+    "sourceBytes": 24433155,
+    "cropBoxPoints": [
+      610.56,
+      786.9599999999999
+    ],
+    "references": [
+      {
+        "reference": "measurements/raster-qualification/references/cia-blue-book-14-1955/page-150-totals-header-glyphs.png",
+        "kind": "glyph",
+        "regionPoints": [
+          124.55,
+          96.8,
+          230.18,
+          185.72
+        ],
+        "sha256": "31aa5f89ecfa30af341b578027dcaf12dd28a4f3843969ada1d0176f787ab614"
+      },
+      {
+        "reference": "measurements/raster-qualification/references/cia-blue-book-14-1955/page-150-totals-header.png",
+        "kind": "region",
+        "regionPoints": [
+          124.55,
+          96.8,
+          230.18,
+          185.72
+        ],
+        "sha256": "d4ad66416df77d10d12f1a9241d3a6389d82ea1589c490d7d8808bd5e88536e7"
+      }
+    ]
+  },
+  {
+    "id": "blue-74",
+    "case": "cia-blue-book-14-1955",
+    "class": "scan",
+    "page": 74,
+    "region": [
+      60,
+      225,
+      550,
+      485
+    ],
+    "review": "Table IV chi-square test: typewritten headers, seven shape rows, totals and decimal values.",
+    "expectedPhrases": [
+      "CHI SQUARE TEST OF KNOWNS VERSUS",
+      "UNKNOWNS ON THE BASIS OF SHAPE",
+      "Number of",
+      "KNOWNS (K)",
+      "UNKNOWNS (n)",
+      "Elliptical",
+      "Rocket and aircraft",
+      "Meteor or comet",
+      "838",
+      "206",
+      "195",
+      "0.59",
+      "8.45",
+      "7.14",
+      "0.36",
+      "8.17",
+      "1.04",
+      "3.30",
+      "1765",
+      "434",
+      "29.05"
+    ],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf",
+    "sourceSHA256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
+    "sourceBytes": 24433155,
+    "cropBoxPoints": [
+      610.5600000000001,
+      789.12
+    ],
+    "references": [
+      {
+        "reference": "measurements/raster-qualification/references/cia-blue-book-14-1955/page-74-table-iv-glyphs.png",
+        "kind": "glyph",
+        "regionPoints": [
+          60.0,
+          225.0,
+          550.0,
+          485.0
+        ],
+        "sha256": "3fee2bee3e4d751c802e5c3134ec7d4169bb0e7eeb55a0a51a3aa67830343bd9"
+      },
+      {
+        "reference": "measurements/raster-qualification/references/cia-blue-book-14-1955/page-74-table-iv.png",
+        "kind": "region",
+        "regionPoints": [
+          60.0,
+          225.0,
+          550.0,
+          485.0
+        ],
+        "sha256": "104640d1d0fb10c2011d55ecaa3eb3ac8f876e3baeba63c2c8b19db88a420d2e"
+      }
+    ]
+  },
+  {
+    "id": "geltman-1",
+    "case": "nbs-jres-geltman-1977",
+    "class": "scan",
+    "page": 1,
+    "region": [
+      55,
+      200,
+      465,
+      275
+    ],
+    "review": "Abstract paragraph and key words of a scanned two-column paper in small type.",
+    "expectedPhrases": [
+      "A review is presented of the basic classical mechanism whereby an electron can absorb energy from an",
+      "electromagnetic field while undergoing a collision with an atom or ion",
+      "quantum mechanical collision and the absorption or emission of photons",
+      "coefficients.",
+      "Key words: Bremsstrahlung; electron-ion collisions; free-free transitions; multiphoton processes; plasma"
+    ],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/jresv82n3p173_A1b.pdf",
+    "sourceSHA256": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
+    "sourceBytes": 7303514,
+    "cropBoxPoints": [
+      536.04,
+      727.6800000000001
+    ],
+    "references": [
+      {
+        "reference": "measurements/raster-qualification/references/nbs-jres-geltman-1977/page-1-abstract-glyphs.png",
+        "kind": "glyph",
+        "regionPoints": [
+          55.0,
+          200.0,
+          465.0,
+          275.0
+        ],
+        "sha256": "3198a8bade684c1db54678b2049b29e02abc0630964bc66feee33d5b7fa1a1fc"
+      },
+      {
+        "reference": "measurements/raster-qualification/references/nbs-jres-geltman-1977/page-1-abstract.png",
+        "kind": "region",
+        "regionPoints": [
+          55.0,
+          200.0,
+          465.0,
+          275.0
+        ],
+        "sha256": "2ae18d6fc59cb091b2f7f54e5f9fcbcef3ca5b62f2c6f561e48f119b8b8cb515"
+      },
+      {
+        "reference": "corpus/references/nbs-jres-geltman-1977/page-1-page.png",
+        "kind": "region",
+        "regionPoints": [
+          0.0,
+          0.0,
+          541.0,
+          731.0
+        ],
+        "sha256": "d73c1a0d9247acaa4e8896f5a8004340985fc07f377d100a24c256e30c522f0f"
+      }
+    ]
+  },
+  {
+    "id": "faa-121",
+    "case": "faa-phak-8083-25c",
+    "class": "figure",
+    "page": 121,
+    "regionNormalized": [
+      0.68,
+      0.707,
+      0.205,
+      0.052
+    ],
+    "review": "Figure 5-37 orange callout: Level flight / forces balanced / constant speed with the blue lift arrow and thin orange border.",
+    "expectedPhrases": [
+      "Level flight",
+      "forces balanced",
+      "constant speed"
+    ],
+    "region": [
+      403.92,
+      547.218,
+      525.69,
+      587.466
+    ],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/faa-h-8083-25c.pdf",
+    "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+    "sourceBytes": 77598564,
+    "cropBoxPoints": [
+      594.0,
+      774.0
+    ],
+    "references": [
+      {
+        "reference": "corpus/references/faa-phak-8083-25c/page-121-figure-5-35.png",
+        "kind": "region",
+        "regionPoints": [
+          36.0,
+          45.0,
+          523.0,
+          205.0
+        ],
+        "sha256": "c2a34925696c167afad8e3c2885175041bdd9259a7fa4011220fbba2494a15e0"
+      },
+      {
+        "reference": "corpus/references/faa-phak-8083-25c/page-121-figure-5-36.png",
+        "kind": "region",
+        "regionPoints": [
+          35.0,
+          550.0,
+          275.0,
+          697.0
+        ],
+        "sha256": "153e989007fcf2a288eb658b243773ac0eeeedce7c9653d5c09b6f9c119eb6f4"
+      },
+      {
+        "reference": "corpus/references/faa-phak-8083-25c/page-121-figure-5-36-color.png",
+        "kind": "color",
+        "regionPoints": [
+          35.0,
+          550.0,
+          275.0,
+          697.0
+        ],
+        "sha256": "786599fd39b7498a10f2be32c05d50d380b83045f160ae8ed7fa35252e33fce0"
+      },
+      {
+        "reference": "corpus/references/faa-phak-8083-25c/page-121-figure-5-37.png",
+        "kind": "region",
+        "regionPoints": [
+          283.0,
+          548.0,
+          523.0,
+          692.0
+        ],
+        "sha256": "60b612848832d366cdfe024e1412877a2fc49f54f1d2175b47965e7b130e801d"
+      }
+    ]
+  },
+  {
+    "id": "fed-45",
+    "case": "fed-explained-2021",
+    "class": "figure",
+    "page": 45,
+    "region": [
+      60,
+      385,
+      235,
+      482
+    ],
+    "review": "Figure 3.3 OPEN MARKET DESK node: white condensed label on a dark band, illustration and four small caption lines.",
+    "expectedPhrases": [
+      "OPEN MARKET DESK",
+      "The Fed instructs the Desk to",
+      "reduce the overnight reverse",
+      "repurchase agreement (ON RRP)",
+      "offering rate"
+    ],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/the-fed-explained.pdf",
+    "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+    "sourceBytes": 4032813,
+    "cropBoxPoints": [
+      612.0,
+      792.0
+    ],
+    "references": [
+      {
+        "reference": "measurements/raster-qualification/references/fed-explained-2021/page-45-open-market-desk-glyphs.png",
+        "kind": "glyph",
+        "regionPoints": [
+          60.0,
+          385.0,
+          235.0,
+          482.0
+        ],
+        "sha256": "7a21698f3a2b2dfb16c29568ad3ea9b61edc3a9d9874bcee85fbe7484829c338"
+      },
+      {
+        "reference": "measurements/raster-qualification/references/fed-explained-2021/page-45-open-market-desk-color.png",
+        "kind": "color",
+        "regionPoints": [
+          60.0,
+          385.0,
+          235.0,
+          482.0
+        ],
+        "sha256": "6f4c48f032d27e5b8f165e261fb7d6329b9b96691b1b486462675d2ae93b8c35"
+      }
+    ]
+  },
+  {
+    "id": "fed-82",
+    "case": "fed-explained-2021",
+    "class": "figure",
+    "page": 82,
+    "region": [
+      95,
+      130,
+      530,
+      227
+    ],
+    "review": "Figure 5.7 regulations table: white header text on a dark red band, tinted row bands and small condensed text.",
+    "expectedPhrases": [
+      "Regulation (by letter and name)",
+      "Description",
+      "Banks and banking",
+      "Limitations on Interbank Liabilities",
+      "Prescribes standards to limit the risks",
+      "Membership of State Banking Institutions in the",
+      "Federal Reserve System",
+      "Bank Secrecy Act compliance"
+    ],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/the-fed-explained.pdf",
+    "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+    "sourceBytes": 4032813,
+    "cropBoxPoints": [
+      612.0,
+      792.0
+    ],
+    "references": [
+      {
+        "reference": "measurements/raster-qualification/references/fed-explained-2021/page-82-regulations-f-h-glyphs.png",
+        "kind": "glyph",
+        "regionPoints": [
+          95.0,
+          130.0,
+          530.0,
+          227.0
+        ],
+        "sha256": "1be29b3cdc115463fd9da12f9c969c54cc31a71029d376d998ab26e10d2d22b0"
+      },
+      {
+        "reference": "measurements/raster-qualification/references/fed-explained-2021/page-82-regulations-f-h-color.png",
+        "kind": "color",
+        "regionPoints": [
+          95.0,
+          130.0,
+          530.0,
+          227.0
+        ],
+        "sha256": "91f24d8aa6354165c9cbb82770a2a3af83c066036db9dac5d18144523f03e77c"
+      },
+      {
+        "reference": "measurements/raster-qualification/references/fed-explained-2021/page-82-regulations-f-h.png",
+        "kind": "region",
+        "regionPoints": [
+          95.0,
+          130.0,
+          530.0,
+          227.0
+        ],
+        "sha256": "b0cd7cebd86a867674c65f138029008bb57243fe3380b317074b8208386d1bc6"
+      }
+    ]
+  },
+  {
+    "id": "dga-3",
+    "case": "dga-2025-2030",
+    "class": "figure",
+    "page": 3,
+    "regionNormalized": [
+      0.048,
+      0.228,
+      0.445,
+      0.086
+    ],
+    "review": "Food photograph, left portion of the green gradient title Prioritize Protein Foods and the blue bullet beginning Prioritize high-quality, nutrient-dense. The crop intentionally cuts the continuation.",
+    "expectedPhrases": [
+      "Prioritize",
+      "high-quality, nutrient-dense"
+    ],
+    "region": [
+      29.376,
+      180.576,
+      301.716,
+      248.688
+    ],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/DGA.pdf",
+    "sourceSHA256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
+    "sourceBytes": 3422452,
+    "cropBoxPoints": [
+      612.0,
+      792.0
+    ],
+    "references": [
+      {
+        "reference": "measurements/raster-qualification/references/dga-2025-2030/page-3-protein-title-color.png",
+        "kind": "color",
+        "regionPoints": [
+          29.38,
+          180.58,
+          301.72,
+          248.69
+        ],
+        "sha256": "bde580497bd3801855cd4e21b01c814706894e31235f887b64f1db4e13f58383"
+      },
+      {
+        "reference": "measurements/raster-qualification/references/dga-2025-2030/page-3-protein-title.png",
+        "kind": "region",
+        "regionPoints": [
+          29.38,
+          180.58,
+          301.72,
+          248.69
+        ],
+        "sha256": "07c100a5eb15e540c0e524f2ae4d6a52c3dc85aaa9804fda02319ddd8f4c0fdc"
+      }
+    ]
+  },
+  {
+    "id": "flag-27",
+    "case": "gpo-our-flag-2003",
+    "class": "table",
+    "page": 27,
+    "region": [
+      80,
+      438,
+      246,
+      575
+    ],
+    "review": "Clean numeric table: FLAGPOLE HEIGHT (FT.) and FLAG SIZE (FT.) headers, ten pairs and dot leaders.",
+    "expectedPhrases": [
+      "FLAGPOLE HEIGHT (FT.)",
+      "FLAG SIZE (FT.)",
+      "4 x 6",
+      "5 x 8",
+      "6 x 10",
+      "8 x 12",
+      "10 x 15",
+      "12 x 18",
+      "15 x 25",
+      "20 x 30",
+      "30 x 40",
+      "40 x 50",
+      "125",
+      "200",
+      "250"
+    ],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/CDOC-108hdoc97.pdf",
+    "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
+    "sourceBytes": 1103159,
+    "cropBoxPoints": [
+      423.0,
+      652.0
+    ],
+    "references": [
+      {
+        "reference": "corpus/references/gpo-our-flag-2003/page-27-flag-size-table.png",
+        "kind": "region",
+        "regionPoints": [
+          80.0,
+          438.0,
+          246.0,
+          575.0
+        ],
+        "sha256": "432e27bd54f659664e6f4bfad0f2e53232c59305b498303d44f49f10775de2b3"
+      },
+      {
+        "reference": "measurements/raster-qualification/references/gpo-our-flag-2003/page-27-flag-size-table-glyphs.png",
+        "kind": "glyph",
+        "regionPoints": [
+          80.0,
+          438.0,
+          246.0,
+          575.0
+        ],
+        "sha256": "40c2140bbe18caf3625f22f20a3556d4a804cca4de1bad97fa13135d3433f42f"
+      }
+    ]
+  },
+  {
+    "id": "flag-33",
+    "case": "gpo-our-flag-2003",
+    "class": "figure",
+    "page": 33,
+    "region": [
+      224,
+      160,
+      373,
+      255
+    ],
+    "review": "Colorado flag illustration: red C, gold disc, blue and white bands.",
+    "expectedPhrases": [],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/CDOC-108hdoc97.pdf",
+    "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
+    "sourceBytes": 1103159,
+    "cropBoxPoints": [
+      423.0,
+      652.0
+    ],
+    "references": [
+      {
+        "reference": "corpus/references/gpo-our-flag-2003/page-33-colorado-flag-color.png",
+        "kind": "color",
+        "regionPoints": [
+          224.0,
+          160.0,
+          373.0,
+          255.0
+        ],
+        "sha256": "3214aa8f57fa7905c06df9339571a486c93ce10e8df40a6633f00c19d6d96640"
+      }
+    ]
+  },
+  {
+    "id": "cdc-13",
+    "case": "cdc-zombie-pandemic-2011",
+    "class": "figure",
+    "page": 13,
+    "region": [
+      306,
+      0,
+      612,
+      396
+    ],
+    "review": "Image-only comic page; upper-right quarter with the awakening exchange lettering. The committed reference covers the whole page.",
+    "expectedPhrases": [],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/cdc_6023_DS1.pdf",
+    "sourceSHA256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
+    "sourceBytes": 8448697,
+    "cropBoxPoints": [
+      612.0,
+      792.0
+    ],
+    "references": [
+      {
+        "reference": "corpus/references/cdc-zombie-pandemic-2011/page-13-page.png",
+        "kind": "region",
+        "regionPoints": [
+          0.0,
+          0.0,
+          612.0,
+          792.0
+        ],
+        "sha256": "ba927d01178f5de12fd1dd421dd04f0736e4ba2d690443131a28a359dfcadfe9"
+      }
+    ]
+  },
+  {
+    "id": "algebra-343",
+    "case": "wallace-algebra-2010",
+    "class": "equation",
+    "page": 343,
+    "regionNormalized": [
+      0.217,
+      0.665,
+      0.255,
+      0.159
+    ],
+    "review": "Bottom three equation steps: radicals, squared parenthesized left side, plus/minus sign, b-squared minus 4ac and 2a denominators. Tyler Wallace, Beginning and Intermediate Algebra, 2010, CC BY 3.0.",
+    "expectedPhrases": [
+      "4ac",
+      "2a"
+    ],
+    "region": [
+      129.115,
+      559.9300000000001,
+      280.84,
+      693.8080000000001
+    ],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/Beginning_and_Intermediate_Algebra.pdf",
+    "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+    "sourceBytes": 2183036,
+    "cropBoxPoints": [
+      595.0,
+      842.0
+    ],
+    "references": [
+      {
+        "reference": "corpus/references/wallace-algebra-2010/page-343-our-solution-glyphs.png",
+        "kind": "glyph",
+        "regionPoints": [
+          176.0,
+          658.0,
+          283.0,
+          690.0
+        ],
+        "sha256": "9b082167a6ff2d7ada485b4e30921b59ebc1fcf40c23af6b260334e3a64cd2fe"
+      }
+    ]
+  },
+  {
+    "id": "algebra-347",
+    "case": "wallace-algebra-2010",
+    "class": "equation",
+    "page": 347,
+    "region": [
+      70,
+      615,
+      260,
+      655
+    ],
+    "review": "Exercise 35 with its exponent and minus sign. Tyler Wallace, Beginning and Intermediate Algebra, 2010, CC BY 3.0.",
+    "expectedPhrases": [],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/Beginning_and_Intermediate_Algebra.pdf",
+    "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+    "sourceBytes": 2183036,
+    "cropBoxPoints": [
+      595.0,
+      842.0
+    ],
+    "references": [
+      {
+        "reference": "corpus/references/wallace-algebra-2010/page-347-exercise-35.png",
+        "kind": "region",
+        "regionPoints": [
+          80.0,
+          625.0,
+          245.0,
+          645.0
+        ],
+        "sha256": "128695abb2c106e2531dfeafa979230c4fc48b9bed00df2155dd2d270a8e7281"
+      },
+      {
+        "reference": "corpus/references/wallace-algebra-2010/page-347-exercise-35-glyphs.png",
+        "kind": "glyph",
+        "regionPoints": [
+          80.0,
+          625.0,
+          245.0,
+          645.0
+        ],
+        "sha256": "df36d310d48b5995575119a8e4fce6ebacdac1b1c49e46a055c0a18e51cce242"
+      }
+    ]
+  },
+  {
+    "id": "usgs-1",
+    "case": "usgs-mcs2025-copper",
+    "class": "small-text",
+    "page": 1,
+    "region": [
+      40,
+      205,
+      565,
+      481
+    ],
+    "review": "Salient Statistics borderless table: small labels, indentation-only row groups, year columns and estimate markers.",
+    "expectedPhrases": [
+      "Salient Statistics",
+      "Mine, recoverable",
+      "1,200",
+      "1,230",
+      "1,130",
+      "1,100",
+      "Primary (from ore)",
+      "872",
+      "922",
+      "930",
+      "843",
+      "Secondary (from scrap)",
+      "Copper recovered from old (post-consumer) scrap",
+      "161",
+      "169"
+    ],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/mcs2025-copper.pdf",
+    "sourceSHA256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
+    "sourceBytes": 746302,
+    "cropBoxPoints": [
+      612.0,
+      792.0
+    ],
+    "references": [
+      {
+        "reference": "corpus/references/usgs-mcs2025-copper/page-1-salient-statistics.png",
+        "kind": "region",
+        "regionPoints": [
+          40.0,
+          205.0,
+          565.0,
+          481.0
+        ],
+        "sha256": "46b18baaf4cfe0154bf8fa6de2ceb5a409fb0a2293d756a83b98dc82e5a6dce5"
+      },
+      {
+        "reference": "corpus/references/usgs-mcs2025-copper/page-1-salient-statistics-glyphs.png",
+        "kind": "glyph",
+        "regionPoints": [
+          40.0,
+          205.0,
+          565.0,
+          481.0
+        ],
+        "sha256": "15f2c28d77811d8a448c346ba1916e458c345e37f43f7cbcb358d88c48935a70"
+      },
+      {
+        "reference": "corpus/references/usgs-mcs2025-copper/page-1-tariff.png",
+        "kind": "region",
+        "regionPoints": [
+          40.0,
+          603.0,
+          565.0,
+          691.0
+        ],
+        "sha256": "a0f74a6f6763a5c5028ba5fb1b4a021ef897c6d91ff0060bd180cd5d4ef3b2ed"
+      }
+    ]
+  },
+  {
+    "id": "911-472",
+    "case": "gpo-911-2004",
+    "class": "small-text",
+    "page": 472,
+    "region": [
+      35,
+      62,
+      362,
+      150
+    ],
+    "review": "Chapter 1 endnotes 38-41: small serif type with italic titles, numbers and dates.",
+    "expectedPhrases": [
+      "38. Ibid.; Michael Woodward interview (Jan. 25, 2004).",
+      "39. NTSB report",
+      "Flight Path Study",
+      "American Airlines Flight 11",
+      "Feb. 19, 2002.",
+      "load factor of 33.33 percent",
+      "seating capacity of 168",
+      "49.22 percent for Flight 175",
+      "Flight 175 BOS-LAX Load Factors",
+      "Sept. 17, 2001",
+      "175 Flight Data Recap"
+    ],
+    "source": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/GPO-911REPORT.pdf",
+    "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+    "sourceBytes": 2475163,
+    "cropBoxPoints": [
+      396.0,
+      612.0
+    ],
+    "references": [
+      {
+        "reference": "measurements/raster-qualification/references/gpo-911-2004/page-472-notes-38-41-glyphs.png",
+        "kind": "glyph",
+        "regionPoints": [
+          35.0,
+          62.0,
+          362.0,
+          150.0
+        ],
+        "sha256": "856b8604802b3cf2fb3e252f893a575250236d7b6a075f14f9eabe4a843321d6"
+      },
+      {
+        "reference": "measurements/raster-qualification/references/gpo-911-2004/page-472-notes-38-41.png",
+        "kind": "region",
+        "regionPoints": [
+          35.0,
+          62.0,
+          362.0,
+          150.0
+        ],
+        "sha256": "7f8c3f2b4600bf8c578402ccd22852b1ce87885c980e62860ee15710d8e87e76"
+      }
+    ]
+  }
+]

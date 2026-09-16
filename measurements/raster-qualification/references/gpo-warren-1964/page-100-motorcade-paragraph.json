@@ -1,0 +1,23 @@
+{
+  "case": "gpo-warren-1964",
+  "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+  "page": 100,
+  "regionPoints": [
+    45.0,
+    38.0,
+    366.0,
+    150.0
+  ],
+  "target": "First body lines with inline note markers 63-66: motorcade reached the intersection of Elm and Houston Streets",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "kind": "region",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    155,
+    55
+  ],
+  "sha256": "26a4d51e9cbbf94b0507a8b1b5f27c6919939252438f8ca3fa7d147f2f449e2a"
+}

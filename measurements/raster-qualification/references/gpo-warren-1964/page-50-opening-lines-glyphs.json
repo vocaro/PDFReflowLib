@@ -1,0 +1,23 @@
+{
+  "case": "gpo-warren-1964",
+  "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+  "page": 50,
+  "regionPoints": [
+    74.67,
+    37.06,
+    375.32,
+    61.34
+  ],
+  "target": "Two opening scan lines: September 26 to October 3, 1963 / the Soviet Embassy in the United States",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 180,
+  "kind": "glyph",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    748,
+    65
+  ],
+  "sha256": "d4259ee6cd02a5d0a1b58b7df81c95ee322fa454702f54d741b422241ae14527"
+}

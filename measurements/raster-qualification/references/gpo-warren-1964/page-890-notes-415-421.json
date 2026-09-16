@@ -1,0 +1,23 @@
+{
+  "case": "gpo-warren-1964",
+  "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+  "page": 890,
+  "regionPoints": [
+    45.31,
+    46.84,
+    198.91,
+    94.32
+  ],
+  "target": "Small notes 415-421 in the left column",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "kind": "region",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    72,
+    22
+  ],
+  "sha256": "8773fa80bf2e3035766cf3b0a420d745afce8eee64e8b769ee5695670808ccf8"
+}

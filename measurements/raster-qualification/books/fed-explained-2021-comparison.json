@@ -1,0 +1,291 @@
+{
+  "baseline": "defaults",
+  "runs": [
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/fed-explained-2021/defaults",
+      "options": "library defaults",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 805306368,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 296452096,
+      "sampledPeakPhysicalFootprintBytes": 238847008,
+      "conversionSeconds": 7.869516749997274,
+      "outputBytes": 72930195,
+      "imageCount": 315,
+      "imageBytes": 77707727,
+      "pageCount": 135,
+      "reflowedPageCount": 123,
+      "recognizedPageCount": 7,
+      "reportedImageCount": 315,
+      "warningsByCode": {
+        "annotationsNotConverted": 92,
+        "furnitureRemoved": 119,
+        "imageRegion": 210,
+        "ocrUsed": 7,
+        "pageImageFallback": 6,
+        "structureFallback": 118,
+        "uncertainHyphen": 16,
+        "unverifiedTextLayer": 9
+      },
+      "ocrPages": [
+        2,
+        7,
+        23,
+        49,
+        65,
+        87,
+        134
+      ],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "defaults",
+      "drift": null
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/fed-explained-2021/dpi-120",
+      "options": "--raster-dpi 120",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 805306368,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 273530880,
+      "sampledPeakPhysicalFootprintBytes": 218186856,
+      "conversionSeconds": 5.809621291999065,
+      "outputBytes": 43000834,
+      "imageCount": 315,
+      "imageBytes": 44972883,
+      "pageCount": 135,
+      "reflowedPageCount": 123,
+      "recognizedPageCount": 7,
+      "reportedImageCount": 315,
+      "warningsByCode": {
+        "annotationsNotConverted": 92,
+        "furnitureRemoved": 119,
+        "imageRegion": 210,
+        "ocrUsed": 7,
+        "pageImageFallback": 6,
+        "structureFallback": 118,
+        "uncertainHyphen": 16,
+        "unverifiedTextLayer": 9
+      },
+      "ocrPages": [
+        2,
+        7,
+        23,
+        49,
+        65,
+        87,
+        134
+      ],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "dpi-120",
+      "drift": {
+        "changedTextPages": [
+          7
+        ],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/fed-explained-2021/dpi-180",
+      "options": "--raster-dpi 180",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 805306368,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 296583168,
+      "sampledPeakPhysicalFootprintBytes": 204129288,
+      "conversionSeconds": 7.97028529200179,
+      "outputBytes": 72930195,
+      "imageCount": 315,
+      "imageBytes": 77707727,
+      "pageCount": 135,
+      "reflowedPageCount": 123,
+      "recognizedPageCount": 7,
+      "reportedImageCount": 315,
+      "warningsByCode": {
+        "annotationsNotConverted": 92,
+        "furnitureRemoved": 119,
+        "imageRegion": 210,
+        "ocrUsed": 7,
+        "pageImageFallback": 6,
+        "structureFallback": 118,
+        "uncertainHyphen": 16,
+        "unverifiedTextLayer": 9
+      },
+      "ocrPages": [
+        2,
+        7,
+        23,
+        49,
+        65,
+        87,
+        134
+      ],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "dpi-180",
+      "drift": {
+        "changedTextPages": [],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/fed-explained-2021/dpi-240",
+      "options": "--raster-dpi 240",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 805306368,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 324304896,
+      "sampledPeakPhysicalFootprintBytes": 228426856,
+      "conversionSeconds": 10.291519332997268,
+      "outputBytes": 100029195,
+      "imageCount": 315,
+      "imageBytes": 108726071,
+      "pageCount": 135,
+      "reflowedPageCount": 123,
+      "recognizedPageCount": 7,
+      "reportedImageCount": 315,
+      "warningsByCode": {
+        "annotationsNotConverted": 92,
+        "furnitureRemoved": 119,
+        "imageRegion": 210,
+        "ocrUsed": 7,
+        "pageImageFallback": 6,
+        "structureFallback": 118,
+        "uncertainHyphen": 16,
+        "unverifiedTextLayer": 9
+      },
+      "ocrPages": [
+        2,
+        7,
+        23,
+        49,
+        65,
+        87,
+        134
+      ],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "dpi-240",
+      "drift": {
+        "changedTextPages": [
+          7
+        ],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/fed-explained-2021/defaults",
+      "options": "library defaults",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 805306368,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 293715968,
+      "sampledPeakPhysicalFootprintBytes": 243008544,
+      "conversionSeconds": 6.968399834004231,
+      "outputBytes": 72930195,
+      "imageCount": 315,
+      "imageBytes": 77707727,
+      "pageCount": 135,
+      "reflowedPageCount": 123,
+      "recognizedPageCount": 7,
+      "reportedImageCount": 315,
+      "warningsByCode": {
+        "annotationsNotConverted": 92,
+        "furnitureRemoved": 119,
+        "imageRegion": 210,
+        "ocrUsed": 7,
+        "pageImageFallback": 6,
+        "structureFallback": 118,
+        "uncertainHyphen": 16,
+        "unverifiedTextLayer": 9
+      },
+      "ocrPages": [
+        2,
+        7,
+        23,
+        49,
+        65,
+        87,
+        134
+      ],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "defaults-repeat",
+      "drift": {
+        "changedTextPages": [],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    }
+  ],
+  "scope": "Gate results, resources, counts, warnings and text/image-count drift between raster settings; not a fidelity qualification or a judgement of which output is correct."
+}

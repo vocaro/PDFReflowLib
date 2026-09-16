@@ -1,0 +1,23 @@
+{
+  "case": "cia-blue-book-14-1955",
+  "sourceSHA256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
+  "page": 74,
+  "regionPoints": [
+    60.0,
+    225.0,
+    550.0,
+    485.0
+  ],
+  "target": "Table IV chi-square test of knowns versus unknowns: headers, seven shape rows and totals",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "kind": "region",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    232,
+    118
+  ],
+  "sha256": "104640d1d0fb10c2011d55ecaa3eb3ac8f876e3baeba63c2c8b19db88a420d2e"
+}

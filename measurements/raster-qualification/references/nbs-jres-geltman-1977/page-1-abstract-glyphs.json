@@ -1,0 +1,23 @@
+{
+  "case": "nbs-jres-geltman-1977",
+  "sourceSHA256": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
+  "page": 1,
+  "regionPoints": [
+    55.0,
+    200.0,
+    465.0,
+    275.0
+  ],
+  "target": "Abstract paragraph and key words in small scanned type",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 180,
+  "kind": "glyph",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    898,
+    166
+  ],
+  "sha256": "3198a8bade684c1db54678b2049b29e02abc0630964bc66feee33d5b7fa1a1fc"
+}

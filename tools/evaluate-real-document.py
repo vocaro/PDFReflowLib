@@ -59,7 +59,16 @@ def main():
                         help="compiled probe-raster-environment; executes in this launch context before conversion")
     parser.add_argument("--timeout", type=float, default=1800)
     parser.add_argument("--max-peak-rss-mib", type=float, help="override the case memory ceiling; fails after conversion when exceeded")
+    parser.add_argument("--converter-option", action="append", default=[], metavar="FLAG=VALUE",
+                        help="explicit converter option, e.g. --raster-dpi=240, forwarded as two arguments "
+                             "after the input/output paths and recorded in the receipt; repeatable")
     args = parser.parse_args()
+    converter_options = []
+    for option in args.converter_option:
+        flag, separator, value = option.partition("=")
+        if not flag.startswith("--") or not separator or not value:
+            parser.error("converter option must look like --flag=value")
+        converter_options += [flag, value]
     cases = json.loads((ROOT / "corpus/manifest.json").read_text())["documents"]
     case = next((item for item in cases if item["id"] == args.case), None)
     if case is None:
@@ -86,7 +95,7 @@ def main():
         "systemBuild": platform.version(),
         "machine": platform.machine(),
         "executionContext": args.execution_context,
-        "options": "library defaults",
+        "options": " ".join(converter_options) if converter_options else "library defaults",
         "qualifiedForFidelity": False,
     }
     if probe:
@@ -115,7 +124,7 @@ def main():
     with report_path.open("w") as report, (args.output / "progress.log").open("w") as log:
         read_memory = memory_reader()
         samples = []
-        process = subprocess.Popen([str(converter), str(args.pdf.resolve()), str(output.resolve())],
+        process = subprocess.Popen([str(converter), str(args.pdf.resolve()), str(output.resolve()), *converter_options],
                                    stdout=report, stderr=log)
         stage = "starting"
         pending = ""

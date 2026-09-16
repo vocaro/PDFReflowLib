@@ -1,0 +1,23 @@
+{
+  "case": "gpo-our-flag-2003",
+  "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
+  "page": 27,
+  "regionPoints": [
+    80.0,
+    438.0,
+    246.0,
+    575.0
+  ],
+  "target": "Flag size table headers, ten numeric pairs and dot leaders at full resolution",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 180,
+  "kind": "glyph",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    411,
+    331
+  ],
+  "sha256": "40c2140bbe18caf3625f22f20a3556d4a804cca4de1bad97fa13135d3433f42f"
+}

@@ -17,9 +17,11 @@ struct PDFReflowLibCommand {
           --maximum-epub-bytes BYTES|unlimited    (final ZIP file cap)
           --package-identifier ID                 (dc:identifier; default random urn:uuid)
           --modification-date ISO8601             (e.g. 2026-01-01T00:00:00Z; default now)
+          --raster-dpi DPI                        (72...600; default 180)
+          --maximum-raster-pixels PIXELS          (1...48000000 per raster; default 12000000)
         JPEG QUALITY must be in 0...1. Defaults: automatic references, repeated headers and
-        footers removed, PNG, 512 MiB entry budget, no separate final ZIP cap. Required
-        image-only fallback pages are retained.
+        footers removed, PNG, 512 MiB entry budget, no separate final ZIP cap, 180 DPI rasters
+        under a 12-million-pixel ceiling. Required image-only fallback pages are retained.
         Set both --package-identifier and --modification-date for byte-reproducible packaging.
         """
         if args == ["--help"] {
@@ -81,6 +83,16 @@ struct PDFReflowLibCommand {
                 case "--maximum-output-bytes": options.maximumOutputBytes = try byteLimit(value) ?? .max
                 case "--maximum-epub-bytes": options.maximumEPUBBytes = try byteLimit(value)
                 case "--package-identifier": options.packageIdentifier = value
+                case "--raster-dpi":
+                    guard let dpi = Double(value), dpi.isFinite, (72...600).contains(dpi) else {
+                        throw ConversionError.invalidOptions("raster DPI must be a number in 72...600")
+                    }
+                    options.rasterDPI = dpi
+                case "--maximum-raster-pixels":
+                    guard let pixels = Int(value), (1...48_000_000).contains(pixels) else {
+                        throw ConversionError.invalidOptions("maximum raster pixels must be an integer in 1...48000000")
+                    }
+                    options.maximumRasterPixels = pixels
                 case "--modification-date":
                     guard let date = ISO8601DateFormatter().date(from: value) else {
                         throw ConversionError.invalidOptions("modification date must be ISO 8601, e.g. 2026-01-01T00:00:00Z")

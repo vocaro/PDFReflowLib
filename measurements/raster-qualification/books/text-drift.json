@@ -1,0 +1,49 @@
+{
+  "cdc-zombie-pandemic-2011": {
+    "dpi-120": {
+      "13": {
+        "defaults": "OKAY, OKAY... I'M COMING. LET'S TAKE A PEEK OUTSIDE AND SEE WHAT'S HAPPENING... U\u041d? WH\u0414? (WHINE!) WHAT IS IT MAX? IT'S STILL DARK OUT. WHAT THE... ?!!",
+        "dpi-120": "\u041e\u041a\u0414\u0423, \u041e\u041aAY... I'M COMING LET'S TAKE A PEEK OUTSIDE AND SEE WHAT'S HAPPENING... UHP WHAP (WHINE!) WHAT IS IT MAX? IT'S STILL DARK OUT. WHAT THE... P!",
+        "ocrPage": true
+      },
+      "15": {
+        "defaults": "PREPAREDNESS 101: ZOMBIE PANDEMIC PART 2",
+        "dpi-120": "PREPAREDNESS 101: LOMBIE PANDEMIC PART 2",
+        "ocrPage": true
+      },
+      "16": {
+        "defaults": "\u0423\u010f\u043fG CONTROL ARD PREVE CERTERG FOE JCDC",
+        "dpi-120": "OF HD. VOEG CONTROL ARD POUVE CENTERG FOE CDC",
+        "ocrPage": true
+      }
+    },
+    "dpi-240": {
+      "13": {
+        "defaults": "OKAY, OKAY... I'M COMING. LET'S TAKE A PEEK OUTSIDE AND SEE WHAT'S HAPPENING... U\u041d? WH\u0414? (WHINE!) WHAT IS IT MAX? IT'S STILL DARK OUT. WHAT THE... ?!!",
+        "dpi-240": "OK\u0414Y, OKAY... I'M COMING LET'S TAKE A PEEK OUTSIDE AND SEE WHAT'S HAPPENING... UHP WHA? (WHINE!) WHAT IS IT MAX? IT'S STILL DARK OUT. WHAT THE... ?!!",
+        "ocrPage": true
+      },
+      "16": {
+        "defaults": "\u0423\u010f\u043fG CONTROL ARD PREVE CERTERG FOE JCDC",
+        "dpi-240": "DEPA CONTROL ARD PREVE CERTERG nos",
+        "ocrPage": true
+      }
+    }
+  },
+  "fed-explained-2021": {
+    "dpi-120": {
+      "7": {
+        "defaults": "FEDERALRESERVE",
+        "dpi-120": "FEDERAU RESERVE",
+        "ocrPage": true
+      }
+    },
+    "dpi-240": {
+      "7": {
+        "defaults": "FEDERALRESERVE",
+        "dpi-240": "JEDERAL RESERVE",
+        "ocrPage": true
+      }
+    }
+  }
+}

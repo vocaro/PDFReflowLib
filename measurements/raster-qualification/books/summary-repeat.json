@@ -1,0 +1,430 @@
+{
+  "converter": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/out/Products/Release/pdf-reflow",
+  "probe": "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/raster-environment/probe",
+  "runs": [
+    {
+      "case": "cdc-zombie-pandemic-2011",
+      "setting": "defaults",
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cdc-zombie-pandemic-2011/defaults",
+      "evaluation": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/evaluate-real-document.py",
+          "--case",
+          "cdc-zombie-pandemic-2011",
+          "--pdf",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/cdc_6023_DS1.pdf",
+          "--converter",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/release/pdf-reflow",
+          "--output",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cdc-zombie-pandemic-2011/defaults",
+          "--epubcheck",
+          "/opt/homebrew/bin/epubcheck",
+          "--environment-probe",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/raster-environment/probe",
+          "--execution-context",
+          "host-terminal",
+          "--timeout",
+          "3600"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 9.506,
+        "log": "cdc-zombie-pandemic-2011-defaults-evaluate.log"
+      },
+      "content": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/check_corpus_content.py",
+          "--case",
+          "cdc-zombie-pandemic-2011",
+          "--evaluation",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cdc-zombie-pandemic-2011/defaults"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 0.35,
+        "log": "cdc-zombie-pandemic-2011-defaults-content.log"
+      }
+    },
+    {
+      "case": "cdc-zombie-pandemic-2011",
+      "setting": "dpi-180",
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cdc-zombie-pandemic-2011/dpi-180",
+      "evaluation": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/evaluate-real-document.py",
+          "--case",
+          "cdc-zombie-pandemic-2011",
+          "--pdf",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/cdc_6023_DS1.pdf",
+          "--converter",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/release/pdf-reflow",
+          "--output",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cdc-zombie-pandemic-2011/dpi-180",
+          "--epubcheck",
+          "/opt/homebrew/bin/epubcheck",
+          "--environment-probe",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/raster-environment/probe",
+          "--execution-context",
+          "host-terminal",
+          "--timeout",
+          "3600",
+          "--converter-option=--raster-dpi=180"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 9.471,
+        "log": "cdc-zombie-pandemic-2011-dpi-180-evaluate.log"
+      },
+      "content": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/check_corpus_content.py",
+          "--case",
+          "cdc-zombie-pandemic-2011",
+          "--evaluation",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cdc-zombie-pandemic-2011/dpi-180"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 0.345,
+        "log": "cdc-zombie-pandemic-2011-dpi-180-content.log"
+      }
+    },
+    {
+      "case": "cdc-zombie-pandemic-2011",
+      "setting": "strict-comparison defaults vs dpi-180",
+      "comparison": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/compare_conversion_runs.py",
+          "--baseline",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cdc-zombie-pandemic-2011/defaults",
+          "--candidate",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cdc-zombie-pandemic-2011/dpi-180",
+          "--output",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cdc-zombie-pandemic-2011-defaults-vs-dpi-180.json"
+        ],
+        "exitCode": 1,
+        "elapsedSeconds": 0.072,
+        "log": "cdc-zombie-pandemic-2011-strict-comparison.log"
+      }
+    },
+    {
+      "case": "fed-explained-2021",
+      "setting": "defaults",
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/fed-explained-2021/defaults",
+      "evaluation": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/evaluate-real-document.py",
+          "--case",
+          "fed-explained-2021",
+          "--pdf",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/the-fed-explained.pdf",
+          "--converter",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/release/pdf-reflow",
+          "--output",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/fed-explained-2021/defaults",
+          "--epubcheck",
+          "/opt/homebrew/bin/epubcheck",
+          "--environment-probe",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/raster-environment/probe",
+          "--execution-context",
+          "host-terminal",
+          "--timeout",
+          "3600"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 9.792,
+        "log": "fed-explained-2021-defaults-evaluate.log"
+      },
+      "content": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/check_corpus_content.py",
+          "--case",
+          "fed-explained-2021",
+          "--evaluation",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/fed-explained-2021/defaults"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 0.073,
+        "log": "fed-explained-2021-defaults-content.log"
+      }
+    },
+    {
+      "case": "fed-explained-2021",
+      "setting": "dpi-180",
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/fed-explained-2021/dpi-180",
+      "evaluation": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/evaluate-real-document.py",
+          "--case",
+          "fed-explained-2021",
+          "--pdf",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/the-fed-explained.pdf",
+          "--converter",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/release/pdf-reflow",
+          "--output",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/fed-explained-2021/dpi-180",
+          "--epubcheck",
+          "/opt/homebrew/bin/epubcheck",
+          "--environment-probe",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/raster-environment/probe",
+          "--execution-context",
+          "host-terminal",
+          "--timeout",
+          "3600",
+          "--converter-option=--raster-dpi=180"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 9.623,
+        "log": "fed-explained-2021-dpi-180-evaluate.log"
+      },
+      "content": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/check_corpus_content.py",
+          "--case",
+          "fed-explained-2021",
+          "--evaluation",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/fed-explained-2021/dpi-180"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 0.075,
+        "log": "fed-explained-2021-dpi-180-content.log"
+      }
+    },
+    {
+      "case": "fed-explained-2021",
+      "setting": "strict-comparison defaults vs dpi-180",
+      "comparison": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/compare_conversion_runs.py",
+          "--baseline",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/fed-explained-2021/defaults",
+          "--candidate",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/fed-explained-2021/dpi-180",
+          "--output",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/fed-explained-2021-defaults-vs-dpi-180.json"
+        ],
+        "exitCode": 1,
+        "elapsedSeconds": 0.04,
+        "log": "fed-explained-2021-strict-comparison.log"
+      }
+    },
+    {
+      "case": "cia-blue-book-14-1955",
+      "setting": "defaults",
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cia-blue-book-14-1955/defaults",
+      "evaluation": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/evaluate-real-document.py",
+          "--case",
+          "cia-blue-book-14-1955",
+          "--pdf",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf",
+          "--converter",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/release/pdf-reflow",
+          "--output",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cia-blue-book-14-1955/defaults",
+          "--epubcheck",
+          "/opt/homebrew/bin/epubcheck",
+          "--environment-probe",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/raster-environment/probe",
+          "--execution-context",
+          "host-terminal",
+          "--timeout",
+          "3600"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 35.848,
+        "log": "cia-blue-book-14-1955-defaults-evaluate.log"
+      },
+      "content": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/check_corpus_content.py",
+          "--case",
+          "cia-blue-book-14-1955",
+          "--evaluation",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cia-blue-book-14-1955/defaults"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 0.127,
+        "log": "cia-blue-book-14-1955-defaults-content.log"
+      }
+    },
+    {
+      "case": "cia-blue-book-14-1955",
+      "setting": "dpi-180",
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cia-blue-book-14-1955/dpi-180",
+      "evaluation": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/evaluate-real-document.py",
+          "--case",
+          "cia-blue-book-14-1955",
+          "--pdf",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf",
+          "--converter",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/release/pdf-reflow",
+          "--output",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cia-blue-book-14-1955/dpi-180",
+          "--epubcheck",
+          "/opt/homebrew/bin/epubcheck",
+          "--environment-probe",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/raster-environment/probe",
+          "--execution-context",
+          "host-terminal",
+          "--timeout",
+          "3600",
+          "--converter-option=--raster-dpi=180"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 37.072,
+        "log": "cia-blue-book-14-1955-dpi-180-evaluate.log"
+      },
+      "content": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/check_corpus_content.py",
+          "--case",
+          "cia-blue-book-14-1955",
+          "--evaluation",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cia-blue-book-14-1955/dpi-180"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 0.128,
+        "log": "cia-blue-book-14-1955-dpi-180-content.log"
+      }
+    },
+    {
+      "case": "cia-blue-book-14-1955",
+      "setting": "strict-comparison defaults vs dpi-180",
+      "comparison": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/compare_conversion_runs.py",
+          "--baseline",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cia-blue-book-14-1955/defaults",
+          "--candidate",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cia-blue-book-14-1955/dpi-180",
+          "--output",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cia-blue-book-14-1955-defaults-vs-dpi-180.json"
+        ],
+        "exitCode": 1,
+        "elapsedSeconds": 0.073,
+        "log": "cia-blue-book-14-1955-strict-comparison.log"
+      }
+    },
+    {
+      "case": "wallace-algebra-2010",
+      "setting": "defaults",
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/wallace-algebra-2010/defaults",
+      "evaluation": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/evaluate-real-document.py",
+          "--case",
+          "wallace-algebra-2010",
+          "--pdf",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/Beginning_and_Intermediate_Algebra.pdf",
+          "--converter",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/release/pdf-reflow",
+          "--output",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/wallace-algebra-2010/defaults",
+          "--epubcheck",
+          "/opt/homebrew/bin/epubcheck",
+          "--environment-probe",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/raster-environment/probe",
+          "--execution-context",
+          "host-terminal",
+          "--timeout",
+          "3600"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 23.444,
+        "log": "wallace-algebra-2010-defaults-evaluate.log"
+      },
+      "content": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/check_corpus_content.py",
+          "--case",
+          "wallace-algebra-2010",
+          "--evaluation",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/wallace-algebra-2010/defaults"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 0.454,
+        "log": "wallace-algebra-2010-defaults-content.log"
+      }
+    },
+    {
+      "case": "wallace-algebra-2010",
+      "setting": "dpi-180",
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/wallace-algebra-2010/dpi-180",
+      "evaluation": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/evaluate-real-document.py",
+          "--case",
+          "wallace-algebra-2010",
+          "--pdf",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/corpus/cache/Beginning_and_Intermediate_Algebra.pdf",
+          "--converter",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/release/pdf-reflow",
+          "--output",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/wallace-algebra-2010/dpi-180",
+          "--epubcheck",
+          "/opt/homebrew/bin/epubcheck",
+          "--environment-probe",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/.build/raster-environment/probe",
+          "--execution-context",
+          "host-terminal",
+          "--timeout",
+          "3600",
+          "--converter-option=--raster-dpi=180"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 26.409,
+        "log": "wallace-algebra-2010-dpi-180-evaluate.log"
+      },
+      "content": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/check_corpus_content.py",
+          "--case",
+          "wallace-algebra-2010",
+          "--evaluation",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/wallace-algebra-2010/dpi-180"
+        ],
+        "exitCode": 0,
+        "elapsedSeconds": 0.509,
+        "log": "wallace-algebra-2010-dpi-180-content.log"
+      }
+    },
+    {
+      "case": "wallace-algebra-2010",
+      "setting": "strict-comparison defaults vs dpi-180",
+      "comparison": {
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/compare_conversion_runs.py",
+          "--baseline",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/wallace-algebra-2010/defaults",
+          "--candidate",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/wallace-algebra-2010/dpi-180",
+          "--output",
+          "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/wallace-algebra-2010-defaults-vs-dpi-180.json"
+        ],
+        "exitCode": 1,
+        "elapsedSeconds": 0.071,
+        "log": "wallace-algebra-2010-strict-comparison.log"
+      }
+    }
+  ]
+}

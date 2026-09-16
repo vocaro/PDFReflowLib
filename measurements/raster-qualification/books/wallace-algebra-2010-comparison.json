@@ -1,0 +1,232 @@
+{
+  "baseline": "defaults",
+  "runs": [
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/wallace-algebra-2010/defaults",
+      "options": "library defaults",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 268435456,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 81936384,
+      "sampledPeakPhysicalFootprintBytes": 61588320,
+      "conversionSeconds": 18.45521849999932,
+      "outputBytes": 44927984,
+      "imageCount": 2047,
+      "imageBytes": 47429371,
+      "pageCount": 489,
+      "reflowedPageCount": 482,
+      "recognizedPageCount": 0,
+      "reportedImageCount": 2047,
+      "warningsByCode": {
+        "furnitureRemoved": 487,
+        "imageRegion": 416,
+        "uncertainHyphen": 10
+      },
+      "ocrPages": [],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "defaults",
+      "drift": null
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/wallace-algebra-2010/dpi-120",
+      "options": "--raster-dpi 120",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 268435456,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 75956224,
+      "sampledPeakPhysicalFootprintBytes": 57672568,
+      "conversionSeconds": 16.82109587499872,
+      "outputBytes": 26407574,
+      "imageCount": 2047,
+      "imageBytes": 27046414,
+      "pageCount": 489,
+      "reflowedPageCount": 482,
+      "recognizedPageCount": 0,
+      "reportedImageCount": 2047,
+      "warningsByCode": {
+        "furnitureRemoved": 487,
+        "imageRegion": 416,
+        "uncertainHyphen": 10
+      },
+      "ocrPages": [],
+      "content": {
+        "passed": false,
+        "checks": null,
+        "referenceImageErrors": [
+          "Page 289: no image shows corpus/references/wallace-algebra-2010/page-289-example-378.png (best correlation -1.000 < 0.95)",
+          "Page 347: no image shows corpus/references/wallace-algebra-2010/page-347-exercise-35.png (best correlation -1.000 < 0.95)",
+          "Page 347: no image shows every stroke of corpus/references/wallace-algebra-2010/page-347-exercise-35-glyphs.png (coverage 0.000, extra ink 0.473, sharpness 0.000, weakest [245, 8, 256, 16])",
+          "Page 343: no image shows every stroke of corpus/references/wallace-algebra-2010/page-343-our-solution-glyphs.png (coverage 0.000, extra ink 0.501, sharpness 0.000, weakest [148, 4, 160, 16])"
+        ],
+        "otherErrors": []
+      },
+      "label": "dpi-120",
+      "drift": {
+        "changedTextPages": [],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/wallace-algebra-2010/dpi-180",
+      "options": "--raster-dpi 180",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 268435456,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 79020032,
+      "sampledPeakPhysicalFootprintBytes": 59442040,
+      "conversionSeconds": 18.3787172500015,
+      "outputBytes": 44927984,
+      "imageCount": 2047,
+      "imageBytes": 47429371,
+      "pageCount": 489,
+      "reflowedPageCount": 482,
+      "recognizedPageCount": 0,
+      "reportedImageCount": 2047,
+      "warningsByCode": {
+        "furnitureRemoved": 487,
+        "imageRegion": 416,
+        "uncertainHyphen": 10
+      },
+      "ocrPages": [],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "dpi-180",
+      "drift": {
+        "changedTextPages": [],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/wallace-algebra-2010/dpi-240",
+      "options": "--raster-dpi 240",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 268435456,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 85065728,
+      "sampledPeakPhysicalFootprintBytes": 60588920,
+      "conversionSeconds": 19.814567499997793,
+      "outputBytes": 58849195,
+      "imageCount": 2047,
+      "imageBytes": 64037688,
+      "pageCount": 489,
+      "reflowedPageCount": 482,
+      "recognizedPageCount": 0,
+      "reportedImageCount": 2047,
+      "warningsByCode": {
+        "furnitureRemoved": 487,
+        "imageRegion": 416,
+        "uncertainHyphen": 10
+      },
+      "ocrPages": [],
+      "content": {
+        "passed": false,
+        "checks": null,
+        "referenceImageErrors": [
+          "Page 289: no image shows corpus/references/wallace-algebra-2010/page-289-example-378.png (best correlation 0.159 < 0.95)",
+          "Page 347: no image shows corpus/references/wallace-algebra-2010/page-347-exercise-35.png (best correlation 0.398 < 0.95)",
+          "Page 347: no image shows every stroke of corpus/references/wallace-algebra-2010/page-347-exercise-35-glyphs.png (coverage 0.000, extra ink 0.337, sharpness 0.397, weakest [112, 16, 116, 28])",
+          "Page 343: no image shows every stroke of corpus/references/wallace-algebra-2010/page-343-our-solution-glyphs.png (coverage 0.000, extra ink 0.246, sharpness 0.000, weakest [54, 41, 64, 43])"
+        ],
+        "otherErrors": []
+      },
+      "label": "dpi-240",
+      "drift": {
+        "changedTextPages": [],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/wallace-algebra-2010/defaults",
+      "options": "library defaults",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 268435456,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 80445440,
+      "sampledPeakPhysicalFootprintBytes": 60719992,
+      "conversionSeconds": 19.79674162500305,
+      "outputBytes": 44927982,
+      "imageCount": 2047,
+      "imageBytes": 47429371,
+      "pageCount": 489,
+      "reflowedPageCount": 482,
+      "recognizedPageCount": 0,
+      "reportedImageCount": 2047,
+      "warningsByCode": {
+        "furnitureRemoved": 487,
+        "imageRegion": 416,
+        "uncertainHyphen": 10
+      },
+      "ocrPages": [],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "defaults-repeat",
+      "drift": {
+        "changedTextPages": [],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    }
+  ],
+  "scope": "Gate results, resources, counts, warnings and text/image-count drift between raster settings; not a fidelity qualification or a judgement of which output is correct."
+}

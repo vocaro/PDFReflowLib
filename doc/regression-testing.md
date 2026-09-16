@@ -95,7 +95,10 @@ The checker averages every image on that page the same way at all 25 grid phases
 placements for the highest normalized correlation (`tools/image_regions.py`). A page passes when
 some image reaches `minimumCorrelation`, 0.95 by default. The corpus gate needs numpy and Pillow,
 not Poppler. References assume the library's default 180 DPI; a changed raster policy must
-regenerate them.
+regenerate them. A conversion at another `rasterDPI` fails every reference-image check by
+construction (see the [raster qualification](../measurements/raster-qualification/record.md)).
+`--output-root` writes a measurement-only reference outside `corpus/references`, where it never
+enters the corpus contract.
 
 Ten references cover the Our Flag flag-size table, three USGS copper tables, three FAA page-121
 figures, a Wallace quadratic exercise, the Geltman page-image fallback and CDC's image-only page 13.
@@ -246,7 +249,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-218 Swift tests with no known-issue wrappers, and 142 Python tests.
+218 Swift tests with no known-issue wrappers, and 155 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

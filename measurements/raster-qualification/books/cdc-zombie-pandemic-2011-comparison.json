@@ -1,0 +1,293 @@
+{
+  "baseline": "defaults",
+  "runs": [
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/cdc-zombie-pandemic-2011/defaults",
+      "options": "library defaults",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 393363456,
+      "sampledPeakPhysicalFootprintBytes": 221529096,
+      "conversionSeconds": 7.793043458004831,
+      "outputBytes": 149716903,
+      "imageCount": 42,
+      "imageBytes": 150056060,
+      "pageCount": 42,
+      "reflowedPageCount": 38,
+      "recognizedPageCount": 9,
+      "reportedImageCount": 42,
+      "warningsByCode": {
+        "annotationsNotConverted": 1,
+        "imageRegion": 38,
+        "ocrUsed": 9,
+        "pageImageFallback": 4,
+        "unverifiedTextLayer": 33
+      },
+      "ocrPages": [
+        2,
+        13,
+        15,
+        16,
+        17,
+        36,
+        38,
+        40,
+        41
+      ],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "defaults",
+      "drift": null
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/cdc-zombie-pandemic-2011/dpi-120",
+      "options": "--raster-dpi 120",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 372621312,
+      "sampledPeakPhysicalFootprintBytes": 192627672,
+      "conversionSeconds": 4.456005084000935,
+      "outputBytes": 75468009,
+      "imageCount": 42,
+      "imageBytes": 75605648,
+      "pageCount": 42,
+      "reflowedPageCount": 38,
+      "recognizedPageCount": 9,
+      "reportedImageCount": 42,
+      "warningsByCode": {
+        "annotationsNotConverted": 1,
+        "imageRegion": 38,
+        "ocrUsed": 9,
+        "pageImageFallback": 4,
+        "unverifiedTextLayer": 33
+      },
+      "ocrPages": [
+        2,
+        13,
+        15,
+        16,
+        17,
+        36,
+        38,
+        40,
+        41
+      ],
+      "content": {
+        "passed": false,
+        "checks": null,
+        "referenceImageErrors": [
+          "Page 13: no image shows corpus/references/cdc-zombie-pandemic-2011/page-13-page.png (best correlation -1.000 < 0.95)"
+        ],
+        "otherErrors": []
+      },
+      "label": "dpi-120",
+      "drift": {
+        "changedTextPages": [
+          13,
+          15,
+          16
+        ],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/cdc-zombie-pandemic-2011/dpi-180",
+      "options": "--raster-dpi 180",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 389775360,
+      "sampledPeakPhysicalFootprintBytes": 226083824,
+      "conversionSeconds": 7.554998542000249,
+      "outputBytes": 149716902,
+      "imageCount": 42,
+      "imageBytes": 150056060,
+      "pageCount": 42,
+      "reflowedPageCount": 38,
+      "recognizedPageCount": 9,
+      "reportedImageCount": 42,
+      "warningsByCode": {
+        "annotationsNotConverted": 1,
+        "imageRegion": 38,
+        "ocrUsed": 9,
+        "pageImageFallback": 4,
+        "unverifiedTextLayer": 33
+      },
+      "ocrPages": [
+        2,
+        13,
+        15,
+        16,
+        17,
+        36,
+        38,
+        40,
+        41
+      ],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "dpi-180",
+      "drift": {
+        "changedTextPages": [],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2/cdc-zombie-pandemic-2011/dpi-240",
+      "options": "--raster-dpi 240",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 402849792,
+      "sampledPeakPhysicalFootprintBytes": 234898392,
+      "conversionSeconds": 11.089953000002424,
+      "outputBytes": 235575515,
+      "imageCount": 42,
+      "imageBytes": 236216066,
+      "pageCount": 42,
+      "reflowedPageCount": 38,
+      "recognizedPageCount": 9,
+      "reportedImageCount": 42,
+      "warningsByCode": {
+        "annotationsNotConverted": 1,
+        "imageRegion": 38,
+        "ocrUsed": 9,
+        "pageImageFallback": 4,
+        "unverifiedTextLayer": 33
+      },
+      "ocrPages": [
+        2,
+        13,
+        15,
+        16,
+        17,
+        36,
+        38,
+        40,
+        41
+      ],
+      "content": {
+        "passed": false,
+        "checks": null,
+        "referenceImageErrors": [
+          "Page 13: no image shows corpus/references/cdc-zombie-pandemic-2011/page-13-page.png (best correlation 0.302 < 0.95)"
+        ],
+        "otherErrors": []
+      },
+      "label": "dpi-240",
+      "drift": {
+        "changedTextPages": [
+          13,
+          16
+        ],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    },
+    {
+      "directory": "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/books2-repeat/cdc-zombie-pandemic-2011/defaults",
+      "options": "library defaults",
+      "runPassed": true,
+      "converterSHA256": "fc0bc441c2891abf7beb18c577241ae382dd8b7cb4c55618dbd852cf00895190",
+      "conversionExitCode": 0,
+      "memoryGate": {
+        "limitBytes": 536870912,
+        "passed": true,
+        "metric": "converter process peak RSS from wait/rusage"
+      },
+      "epubcheckExitCode": 0,
+      "structuralCheck": "passed",
+      "progressPassed": true,
+      "capabilityPassed": true,
+      "converterPeakRSSBytes": 384073728,
+      "sampledPeakPhysicalFootprintBytes": 211567744,
+      "conversionSeconds": 7.149875540999346,
+      "outputBytes": 149716903,
+      "imageCount": 42,
+      "imageBytes": 150056060,
+      "pageCount": 42,
+      "reflowedPageCount": 38,
+      "recognizedPageCount": 9,
+      "reportedImageCount": 42,
+      "warningsByCode": {
+        "annotationsNotConverted": 1,
+        "imageRegion": 38,
+        "ocrUsed": 9,
+        "pageImageFallback": 4,
+        "unverifiedTextLayer": 33
+      },
+      "ocrPages": [
+        2,
+        13,
+        15,
+        16,
+        17,
+        36,
+        38,
+        40,
+        41
+      ],
+      "content": {
+        "passed": true,
+        "checks": null,
+        "referenceImageErrors": [],
+        "otherErrors": []
+      },
+      "label": "defaults-repeat",
+      "drift": {
+        "changedTextPages": [],
+        "changedImageCountPages": [],
+        "pageMarkersEqual": true
+      }
+    }
+  ],
+  "scope": "Gate results, resources, counts, warnings and text/image-count drift between raster settings; not a fidelity qualification or a judgement of which output is correct."
+}

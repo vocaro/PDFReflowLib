@@ -49,6 +49,9 @@ def main():
                              'glyph: full 180 DPI grayscale for component coverage; '
                              'color: 36 DPI RGB for appearance checks')
     parser.add_argument('--cache-dir', type=Path, default=ROOT / 'corpus/cache')
+    parser.add_argument('--output-root', type=Path, default=ROOT / 'corpus/references',
+                        help='directory receiving <case>/page-N-<name>.png; measurement-only references '
+                             'live outside corpus/references so they never enter the corpus contract')
     args = parser.parse_args()
     if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', args.name):
         parser.error('name must be lowercase hyphenated words')
@@ -83,7 +86,7 @@ def main():
             else:
                 values = image_regions.trimmed_to_ink(image_regions.pooled(rendered))
     reference = Image.fromarray(values.round().clip(0, 255).astype('uint8'), mode='RGB' if args.kind == 'color' else 'L')
-    output = ROOT / 'corpus/references' / args.case / f'page-{args.page}-{args.name}.png'
+    output = args.output_root / args.case / f'page-{args.page}-{args.name}.png'
     output.parent.mkdir(parents=True, exist_ok=True)
     encoded = io.BytesIO()
     reference.save(encoded, format='PNG', optimize=True)
@@ -98,7 +101,7 @@ def main():
         'sha256': hashlib.sha256(encoded.getvalue()).hexdigest(),
     }
     output.with_suffix('.json').write_text(json.dumps(sidecar, indent=2) + '\n')
-    print(json.dumps({'reference': str(output.relative_to(ROOT)), **sidecar}))
+    print(json.dumps({'reference': str(output.relative_to(ROOT) if output.is_relative_to(ROOT) else output), **sidecar}))
 
 
 if __name__ == '__main__':

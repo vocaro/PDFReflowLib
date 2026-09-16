@@ -1,0 +1,23 @@
+{
+  "case": "cia-blue-book-14-1955",
+  "sourceSHA256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
+  "page": 150,
+  "regionPoints": [
+    124.55,
+    96.8,
+    230.18,
+    185.72
+  ],
+  "target": "TOTALS header, Certain/Doubtful/Total labels and the first handwritten row",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 180,
+  "kind": "glyph",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    272,
+    230
+  ],
+  "sha256": "31aa5f89ecfa30af341b578027dcaf12dd28a4f3843969ada1d0176f787ab614"
+}

@@ -1,0 +1,23 @@
+{
+  "case": "gpo-911-2004",
+  "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+  "page": 472,
+  "regionPoints": [
+    35.0,
+    62.0,
+    362.0,
+    150.0
+  ],
+  "target": "Chapter 1 endnotes 38-41 in small type with italic titles and numbers",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "kind": "region",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    158,
+    44
+  ],
+  "sha256": "7f8c3f2b4600bf8c578402ccd22852b1ce87885c980e62860ee15710d8e87e76"
+}

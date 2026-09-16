@@ -25,7 +25,10 @@ python3 tools/evaluate-real-document.py --case faa-phak-8083-25c \
 ```
 
 The output directory must be new. Override the ceiling with `--max-peak-rss-mib 1024`, or change
-the checked-in manifest to set the team's agreed budget. An exceeded ceiling returns nonzero
+the checked-in manifest to set the team's agreed budget. `--converter-option=--raster-dpi=240`
+(repeatable, `--flag=value`) forwards an explicit converter option after the input and output
+paths and records it in the receipt's `options` field, which otherwise reads `library defaults`;
+the strict run comparator refuses receipts whose options differ. An exceeded ceiling returns nonzero
 while retaining the EPUB, result, conversion report and memory trace for diagnosis. Progress
 checks enforce monotonic work percentages, valid page bounds and a final completion event.
 Progress measures completed work, not elapsed time or an ETA. `--timeout` bounds the child run;

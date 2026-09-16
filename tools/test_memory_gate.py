@@ -88,6 +88,29 @@ print(json.dumps({{"pageCount": 1, "reflowedPageCount": 1, "recognizedPageCount"
         self.assertTrue(result["runPassed"])
         self.assertEqual(code, 0)
 
+    def test_converter_options_are_forwarded_after_the_paths_and_recorded(self):
+        recorded = self.root / "argv.json"
+        self.converter.write_text(self.converter.read_text().replace(
+            "import json, shutil, sys, time",
+            f"import json, shutil, sys, time\nopen({str(recorded)!r}, 'w').write(json.dumps(sys.argv[1:]))"))
+        code, result = self.invoke(512, ['--converter-option=--raster-dpi=240', '--converter-option=--ocr=never'])
+        self.assertEqual(code, 0)
+        self.assertEqual(result['options'], '--raster-dpi 240 --ocr never')
+        argv = json.loads(recorded.read_text())
+        self.assertEqual(argv[2:], ['--raster-dpi', '240', '--ocr', 'never'])
+        self.assertEqual(argv[0], str(self.pdf.resolve()))
+        shutil.rmtree(self.root / "result")
+        _, result = self.invoke(512)
+        self.assertEqual(result['options'], 'library defaults')
+
+    def test_malformed_converter_options_are_rejected_before_conversion(self):
+        for option in ['raster-dpi=240', '--raster-dpi', '--raster-dpi=', '=240']:
+            with self.subTest(option=option), self.assertRaises(SystemExit) as caught:
+                with contextlib.redirect_stderr(io.StringIO()):
+                    self.invoke(512, ['--converter-option=' + option])
+            self.assertEqual(caught.exception.code, 2)
+            self.assertFalse((self.root / "result").exists())
+
     def test_previous_child_peak_does_not_contaminate_this_run(self):
         subprocess.run([sys.executable, "-c", "allocation = b'x' * (200 * 1024 * 1024)"], check=True)
         code, result = self.invoke(160)

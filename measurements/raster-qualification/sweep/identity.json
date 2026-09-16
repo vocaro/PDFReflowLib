@@ -1,0 +1,51 @@
+{
+  "baseCommit": "ad7dcf475a713a2004c9909529fd89fc8308d11d",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "hardwareModel": "Mac17,6",
+  "swVersion": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0\nBuildVersion:\t\t26A428\n",
+  "xcodeVersion": "Xcode 27.0\nBuild version 27A266a\n",
+  "popplerVersion": "pdftoppm version 26.04.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC\n",
+  "compileCommand": [
+    "xcrun",
+    "swiftc",
+    "-O",
+    "-parse-as-library",
+    "-module-cache-path",
+    "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/module-cache",
+    "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/Sources/PDFReflowLib/PageRasterizer.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/Sources/PDFReflowLib/ConversionTypes.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/Sources/PDFReflowLib/DocumentModel.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/Sources/PDFReflowLib/ReflowDocument.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/.claude/worktrees/agent-a35006a58a4a153b3/tools/probe-raster-sweep.swift",
+    "-o",
+    "/private/tmp/claude-501/-Users-trevorharmon-Development-PDFReflowLib--claude-worktrees-fable-agents-coordination-d95da7/074c2806-5fb3-4f17-8def-46d26414399e/scratchpad/sweep-full/probe"
+  ],
+  "binarySHA256": "01b52a18892ca0b2581bc5ba85ea1a1840cc071c8590ea459c9c6bdafb87dfa3",
+  "producerSHA256": {
+    "Sources/PDFReflowLib/PageRasterizer.swift": "6783ac9d4f221fb69c170c01bc3073d2cf3a8d0bc22e04b41834498c838f0852",
+    "Sources/PDFReflowLib/ConversionTypes.swift": "65832640b42ad7ef37674955df754c94c3271fea7d18e73560d39b0b810c684a",
+    "Sources/PDFReflowLib/DocumentModel.swift": "99f4f65325c48db6d2c4494f314884c01e5013400d5a14c7fe5a7aefe04c6641",
+    "Sources/PDFReflowLib/ReflowDocument.swift": "f0133824b77a0c9a8f525603c5bebfcec3549a22ee2d4451cb5c9f4fc3af086d",
+    "tools/probe-raster-sweep.swift": "d11f002728e84758d66b713e4c854dea9731b677f6b29d852b48f2337c5bb921",
+    "tools/raster_sweep.py": "5baab63bd4e3713753286f4fb91398f93a3d77fe6d283c065b887a1f72be3ac7"
+  },
+  "targetsSHA256": "6c2b154e6f303a31397463b6d8bcef9a9206b13848d9c034b8d251f1759786cb",
+  "dpis": [
+    96,
+    120,
+    150,
+    180,
+    240,
+    300
+  ],
+  "qualities": [
+    0.6,
+    0.75,
+    0.85,
+    0.9,
+    0.95
+  ],
+  "maximumRasterPixels": 12000000,
+  "ocr": true
+}

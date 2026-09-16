@@ -259,7 +259,9 @@
             "Our Solution"
           ],
           "minimumImages": 3,
-          "warningCodesAnyOf": ["imageRegion"],
+          "warningCodesAnyOf": [
+            "imageRegion"
+          ],
           "imageRegions": [
             {
               "reference": "corpus/references/wallace-algebra-2010/page-289-example-378.png"
@@ -276,7 +278,9 @@
             "42)"
           ],
           "minimumImages": 1,
-          "warningCodesAnyOf": ["imageRegion"]
+          "warningCodesAnyOf": [
+            "imageRegion"
+          ]
         },
         {
           "page": 471,
@@ -520,38 +524,66 @@
         },
         {
           "page": 581,
-          "absentText": ["NOTES TO CHAPTER 12"],
+          "absentText": [
+            "NOTES TO CHAPTER 12"
+          ],
           "minimumImages": 2
         },
         {
           "page": 486,
-          "absentText": ["NOTES TO CHAPTER 2"],
-          "text": ["Intelligence report", "Wali Khan’s relationship with Bin Ladin"]
+          "absentText": [
+            "NOTES TO CHAPTER 2"
+          ],
+          "text": [
+            "Intelligence report",
+            "Wali Khan’s relationship with Bin Ladin"
+          ]
         },
         {
           "page": 488,
-          "absentText": ["NOTES TO CHAPTER 2"],
-          "text": ["KSM, Bin Ladin moved to Kandahar", "Intelligence report"]
+          "absentText": [
+            "NOTES TO CHAPTER 2"
+          ],
+          "text": [
+            "KSM, Bin Ladin moved to Kandahar",
+            "Intelligence report"
+          ]
         },
         {
           "page": 574,
-          "absentText": ["NOTES TO CHAPTER 10"],
-          "text": ["chaired by former senators Gary Hart and Warren Rudman", "Ashcroft told us"]
+          "absentText": [
+            "NOTES TO CHAPTER 10"
+          ],
+          "text": [
+            "chaired by former senators Gary Hart and Warren Rudman",
+            "Ashcroft told us"
+          ]
         },
         {
           "page": 576,
-          "absentText": ["NOTES TO CHAPTER 10"],
-          "text": ["Jack S. interview", "The FBI checked"]
+          "absentText": [
+            "NOTES TO CHAPTER 10"
+          ],
+          "text": [
+            "Jack S. interview",
+            "The FBI checked"
+          ]
         },
         {
           "page": 582,
-          "absentText": ["NOTES TO CHAPTER 12"],
+          "absentText": [
+            "NOTES TO CHAPTER 12"
+          ],
           "minimumImages": 2
         },
         {
           "page": 583,
-          "absentText": ["NOTES TO CHAPTER 12"],
-          "headings": ["How to Do It? A Different Way of Organizing the Government"],
+          "absentText": [
+            "NOTES TO CHAPTER 12"
+          ],
+          "headings": [
+            "How to Do It? A Different Way of Organizing the Government"
+          ],
           "minimumImages": 2
         },
         {
@@ -589,7 +621,9 @@
         },
         {
           "page": 127,
-          "paragraphs": ["set a bomb in an attempt to kill"]
+          "paragraphs": [
+            "set a bomb in an attempt to kill"
+          ]
         },
         {
           "page": 192,
@@ -630,9 +664,17 @@
       "pages": [
         {
           "page": 50,
-          "absentText": ["46 Promoting Financial System Stability"],
-          "headings": ["Promoting Financial System", "Stability"],
-          "text": ["What Is Financial Stability?", "Monitoring Risk across the Financial System"],
+          "absentText": [
+            "46 Promoting Financial System Stability"
+          ],
+          "headings": [
+            "Promoting Financial System",
+            "Stability"
+          ],
+          "text": [
+            "What Is Financial Stability?",
+            "Monitoring Risk across the Financial System"
+          ],
           "minimumImages": 1
         },
         {
@@ -780,7 +822,9 @@
             "Ve getables"
           ],
           "minimumImages": 1,
-          "warningCodesAnyOf": ["unverifiedTextLayer"]
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ]
         },
         {
           "page": 2,
@@ -1127,7 +1171,7 @@
     {
       "id": "scotus-loper-bright-2024",
       "sourceSHA256": "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e",
-      "basis": "Source pages 2, 7, 13, 60, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Pages 2, 7, 13 and 60: wrapped justified lines beginning with \"v.\", a year, \"F.\" or \"U. S.\" must stay inside their source paragraph rather than becoming preformatted fragments (#39); page 2 keeps its four syllabus paragraphs in order. Does not bless footnotes merged into body paragraphs with dash separators or retained running headers (#40).",
+      "basis": "Source pages 2, 7, 13, 60, 61, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Pages 2, 7, 13 and 60: wrapped justified lines beginning with \"v.\", a year, \"F.\" or \"U. S.\" must stay inside their source paragraph rather than becoming preformatted fragments (#39); page 2 keeps its four syllabus paragraphs in order. Pages 13, 60, 61, 97 and 98 (#40): each page-bottom footnote is a separate note block opening with its raised marker, the em-dash separator is not prose, footnote 2 is one note element from page 97 through its page-98 continuation and precedes that page's body, page 13's detached body marker 1 stays a superscript inside its sentence, and the two-row running heads (title row with folio, opinion row) are removed with a furnitureRemoved warning; page 13's body paragraph continues onto page 14 past the note block (#45), so footnote 1 follows that paragraph after its marker and is reached under the page-14 anchor.",
       "pages": [
         {
           "page": 2,
@@ -1151,7 +1195,39 @@
         {
           "page": 13,
           "paragraphs": [
-            "A divided panel of the D. C. Circuit affirmed. See 45 F. 4th 359 (2022). The majority addressed various"
+            "A divided panel of the D. C. Circuit affirmed. See 45 F. 4th 359 (2022). The majority addressed various",
+            "the F/V Relentless and the F/V Persistence.1 These vessels use small-mesh bottom-trawl gear"
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "1",
+              "before": "the F/V Relentless and the F/V Persistence.",
+              "after": "These vessels use small-mesh bottom-trawl gear"
+            }
+          ],
+          "absentText": [
+            "——————",
+            "Cite as: 603 U. S. ____ (2024)",
+            "Opinion of the Court"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "(about 10 to 14 days, as",
+              "next": "opposed to the more typical 2 to 4). As a result"
+            }
+          ]
+        },
+        {
+          "page": 14,
+          "paragraphs": [
+            "opposed to the more typical 2 to 4). As a result, they generally declare into multiple fisheries per trip"
+          ],
+          "notes": [
+            "For any landlubbers, “F/V” is simply the designation for a fishing vessel."
           ]
         },
         {
@@ -1165,7 +1241,8 @@
           ],
           "paragraphs": [
             "Telecommunications Assn. v. Brand X Internet Services, 545 U. S. 967, 982–983 (2005). And those officials may even",
-            "a court’s past interpretation as well. Ibid. None of that is consistent with the APA’s clear mandate."
+            "a court’s past interpretation as well. Ibid. None of that is consistent with the APA’s clear mandate.",
+            "But it is Congress’s view of “good government,” not ours, that controls."
           ],
           "scripts": [
             {
@@ -1174,6 +1251,44 @@
               "before": "make[s] for good government.” Ibid.",
               "after": "But in our democracy unelected judges"
             }
+          ],
+          "notes": [
+            "See also A. Scalia, Judicial Deference to Administrative Interpretations of Law, 1989 Duke L. J. 511, 516–517 (1989)",
+            "as a kind of legal fiction”)."
+          ],
+          "absentText": [
+            "——————",
+            "Cite as: 603 U. S. ____ (2024)",
+            "GORSUCH, J., concurring"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ]
+        },
+        {
+          "page": 61,
+          "paragraphs": [
+            "Viewed by each of these lights, the case for Chevron deference only grows weaker still."
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "3",
+              "before": "adopted by the people’s elected representatives.",
+              "after": "B Lesson 2 cannot rescue Chevron deference"
+            }
+          ],
+          "notes": [
+            "The dissent suggests that we need not take the APA’s directions quite so seriously",
+            "Kagan 212 (likewise acknowledging Chevron deference rests upon a “fictionalized statement of legislative desire”)."
+          ],
+          "absentText": [
+            "——————",
+            "LOPER BRIGHT ENTERPRISES v. RAIMONDO",
+            "GORSUCH, J., concurring"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
           ]
         },
         {
@@ -1188,18 +1303,67 @@
               "tag": "sup",
               "text": "2",
               "before": "we respect it”).",
-              "after": "——————"
+              "after": "2 The majority tries to buttress"
+            },
+            {
+              "tag": "sup",
+              "text": "2",
+              "before": "we respect it”).2",
+              "after": "The majority tries to buttress its argument"
             }
+          ],
+          "paragraphs": [
+            "Chevron deference; we respect it”).2"
+          ],
+          "notes": [
+            "The majority tries to buttress its argument with a stray sentence or two from the APA’s legislative history"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "stated that Section 706 “provid[ed] that questions of law are for courts",
+              "next": "rather than agencies to decide in the last analysis.”"
+            }
+          ],
+          "absentText": [
+            "——————",
+            "LOPER BRIGHT ENTERPRISES v. RAIMONDO",
+            "KAGAN, J., dissenting"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
           ]
         },
         {
           "page": 98,
           "orderedText": [
-            "Section 706’s references to standards of review in other contexts only further undercut the majority’s argument.",
-            "Vermeule 207.",
             "rather than agencies to decide in the last analysis.”",
             "using a deferential standard.",
+            "Section 706’s references to standards of review in other contexts only further undercut the majority’s argument.",
+            "Vermeule 207.",
             "In a footnote responding to the last two paragraphs, the majority raises the white flag"
+          ],
+          "paragraphs": [
+            "Section 706 neither mandates nor forbids Chevron-style deference. Vermeule 207.3"
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "3",
+              "before": "nor forbids Chevron-style deference. Vermeule 207.",
+              "after": "3 In a footnote responding to the last two paragraphs"
+            }
+          ],
+          "notes": [
+            "rather than agencies to decide in the last analysis.” H. R. Rep. No. 1980",
+            "In a footnote responding to the last two paragraphs, the majority raises the white flag on Section 706’s text"
+          ],
+          "absentText": [
+            "——————",
+            "Cite as: 603 U. S. ____ (2024)",
+            "KAGAN, J., dissenting"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
           ]
         }
       ]
@@ -1219,18 +1383,28 @@
             "Report Issued: January 31, 2002",
             "This paper reports the results of research and analysis undertaken by Census Bureau staff."
           ],
-          "absentWarningCodes": ["damagedTextEncoding", "ocrUsed", "unverifiedTextLayer"]
+          "absentWarningCodes": [
+            "damagedTextEncoding",
+            "ocrUsed",
+            "unverifiedTextLayer"
+          ]
         },
         {
           "page": 2,
           "minimumImages": 1,
-          "warningCodesAnyOf": ["damagedTextEncoding"],
-          "absentText": ["Devwudfw1 Wklv sdshu"]
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ],
+          "absentText": [
+            "Devwudfw1 Wklv sdshu"
+          ]
         },
         {
           "page": 3,
           "minimumImages": 1,
-          "warningCodesAnyOf": ["damagedTextEncoding"],
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ],
           "orderedText": [
             "Data Files",
             "Two data files were used.",
@@ -1238,25 +1412,131 @@
             "1. Total income",
             "13. Schedule D flag"
           ],
-          "absentText": ["5GdwdIlohv", "Wzr gdwd", "Vfkhgxoh G"]
+          "absentText": [
+            "5GdwdIlohv",
+            "Wzr gdwd",
+            "Vfkhgxoh G"
+          ]
         },
-        {"page": 4, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 5, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 6, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 7, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 8, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 9, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 10, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 11, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 12, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 13, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 14, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 15, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 16, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 17, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 18, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 19, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
-        {"page": 20, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]}
+        {
+          "page": 4,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 5,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 6,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 7,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 8,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 9,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 10,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 11,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 12,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 13,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 14,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 15,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 16,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 17,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 18,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 19,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        },
+        {
+          "page": 20,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "damagedTextEncoding"
+          ]
+        }
       ]
     },
     {

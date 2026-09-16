@@ -91,11 +91,76 @@ func reportMapLabelsRemainInsidePreservedGraphics(number: Int) throws {
     #expect(blocks.filter { if case .image = $0.content { true } else { false } }.count == regions.count)
 }
 
+/// A slip-opinion page: a title row with a folio at 85% of the page height, a section row
+/// at 82%, then justified body lines 8 pt beneath it.
+private func slipPage(_ number: Int, outer: [String]?, inner: String?, innerY: Double = 643.8,
+                      bodyY: Double = 622.6) -> PageContent {
+    var lines: [TextLine] = []
+    for (i, text) in (outer ?? []).enumerated() {
+        lines.append(TextLine(text: text, rect: CGRect(x: 160 + Double(i) * 90, y: 667.4,
+            width: Double(text.count) * 5, height: 10.8), fontSize: 9))
+    }
+    if let inner {
+        lines.append(TextLine(text: inner, rect: CGRect(x: 256, y: innerY, width: 100, height: 10.8), fontSize: 9))
+    }
+    for i in 0..<3 {
+        lines.append(TextLine(text: "Body line \(i + 1) of page \(number) in the opinion's justified column.",
+            rect: CGRect(x: 156, y: bodyY - Double(i) * 13.2, width: 299, height: 13.2), fontSize: 10.98))
+    }
+    return PageContent(number: number, bounds: CGRect(x: 0, y: 0, width: 612, height: 792), lines: lines, graphics: [])
+}
+
+private func alternatingHead(_ number: Int) -> [String] {
+    number.isMultiple(of: 2) ? ["\(number)", "LOPER BRIGHT ENTERPRISES v. RAIMONDO"] : ["Cite as: 603 U. S. ____ (2024)", "\(number)"]
+}
+
+@Test func sourceSlipOpinionTwoRowRunningHeadsDisappearFromAlternatingPages() throws {
+    var pages = try (96...101).map { try SourceLayoutFixture.load("loper-\($0)").content() }
+    let original = pages
+    let warnings = LayoutReconstructor.stripFurniture(&pages)
+    #expect(warnings.map(\.page) == Array(96...101))
+    for (before, after) in zip(original, pages) {
+        let band = before.bounds.minY + before.bounds.height * 0.8
+        let heads = before.lines.filter { $0.rect.midY > band }.map(\.text)
+        #expect(heads.count == 3 && heads.contains("KAGAN, J., dissenting"))
+        #expect(after.lines.map(\.text) == before.lines.filter { $0.rect.midY <= band }.map(\.text))
+    }
+}
+
+@Test func secondHeaderRowGoesOnlyWithARemovedRowAboveIt() {
+    var pages = (1...6).map { slipPage($0, outer: alternatingHead($0), inner: "GORSUCH, J., concurring") }
+    #expect(LayoutReconstructor.stripFurniture(&pages).map(\.page) == Array(1...6))
+    #expect(pages.allSatisfy { page in page.lines.count == 3 && page.lines.allSatisfy { $0.text.hasPrefix("Body line") } })
+    // Each control keeps its second row; the title row goes only where it alternates.
+    let controls: [(String, Bool, [PageContent])] = [
+        // Alone, the section row is 8 pt above the body: too close for a first-row header.
+        ("lone second row", false, (1...6).map { slipPage($0, outer: nil, inner: "GORSUCH, J., concurring") }),
+        // A repeated second row beneath unrepeated titles is retained with them.
+        ("unique titles", false, (1...6).map { slipPage($0, outer: ["Unique title \($0 * 17)"], inner: "GORSUCH, J., concurring") }),
+        // A row well below the title row is not part of the running head.
+        ("distant row", true, (1...6).map { slipPage($0, outer: alternatingHead($0), inner: "GORSUCH, J., concurring", innerY: 610, bodyY: 580) }),
+        // A repeated opening line that its paragraph follows directly is prose.
+        ("adjacent prose", true, (1...6).map { slipPage($0, outer: alternatingHead($0), inner: "GORSUCH, J., concurring", bodyY: 632.6) }),
+    ]
+    for (name, titlesRemoved, original) in controls {
+        var pages = original
+        #expect(LayoutReconstructor.stripFurniture(&pages).count == (titlesRemoved ? 6 : 0), "\(name)")
+        for (before, after) in zip(original, pages) {
+            let expected = titlesRemoved ? before.lines.filter { $0.rect.midY < 660 } : before.lines
+            #expect(after.lines.map(\.text) == expected.map(\.text), "\(name)")
+            #expect(after.lines.contains { $0.text == "GORSUCH, J., concurring" }, "\(name)")
+        }
+    }
+}
+
 @Test func furnitureRequiresStablePositionStyleAndNearbyDistinctPages() {
     let controls: [[PageContent]] = [
         (1...6).map { furniturePage($0 * 10, header: "Scattered heading") },
-        (1...6).map { furniturePage($0, header: "Repeated body", y: 650, bodyY: 620) },
+        // Below the outer fifth of the page, repetition alone is not furniture.
+        (1...6).map { furniturePage($0, header: "Repeated body", y: 600, bodyY: 570) },
         (1...6).map { furniturePage($0, header: "Adjacent prose", bodyY: 738) },
+        // Inside the band, a repeated first line that its paragraph follows directly stays.
+        (1...6).map { furniturePage($0, header: "Repeated opening line", y: 650, bodyY: 640) },
         (1...6).map { furniturePage($0, header: "Drifting heading", y: 723 + Double($0) * 9) },
         (1...3).map { furniturePage($0, header: "Changing typography", font: Double($0) * 10) },
         (1...2).map { furniturePage($0, header: "Only two pages") },

@@ -57,4 +57,20 @@ struct SourceLayoutFixture: Decodable {
             TextLine(text: $0.text, rect: rect($0.rect), fontSize: $0.fontSize, monospaced: $0.monospaced)
         }, graphics: graphics.map(rect))
     }
+
+    /// The page with each line's native style runs (emphasis, superscripts), as the
+    /// converter extracts them; lines without a matching attributed selection stay plain.
+    func styledContent() -> PageContent {
+        var result = content()
+        let attributed = Dictionary(attributedLines.map {
+            ($0.text.trimmingCharacters(in: .whitespacesAndNewlines), $0)
+        }, uniquingKeysWith: { first, _ in first })
+        result.lines = result.lines.map { line in
+            guard let match = attributed[line.text] else { return line }
+            let styled = NativeTextReader.inlineText(from: match.attributedString())
+            guard styled.text == line.text else { return line }
+            return TextLine(content: styled, rect: line.rect, fontSize: line.fontSize, monospaced: line.monospaced)
+        }
+        return result
+    }
 }

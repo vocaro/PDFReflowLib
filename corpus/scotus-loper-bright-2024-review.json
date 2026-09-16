@@ -29,5 +29,5 @@
       "acceptance": "rather than agencies to decide… joins footnote 2 from page 97; footnote 3 separate and after it; body paragraph unaffected."
     }
   ],
-  "scope": "Manual targets. Current converter merges footnotes into body text (#40) and splits citation-leading lines (#39)."
+  "scope": "Manual targets. Page-bottom footnotes reflow as separate note blocks under the running heads’ removal (#40); citation-leading lines continue their paragraphs (#39); body paragraphs continue across pages past note blocks, which then follow the joined paragraph behind their markers (#45)."
 }

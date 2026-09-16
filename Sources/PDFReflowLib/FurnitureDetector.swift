@@ -15,6 +15,9 @@ enum FurnitureDetector {
         var position: CGFloat
         var fontSize: CGFloat
         var isFolio: Bool
+        /// The outermost-row lines a second-row candidate sits beneath; it is removed only
+        /// when all of them are.
+        var dependsOn: [Int] = []
     }
 
     /// Document-wide evidence without the pages themselves.
@@ -28,6 +31,7 @@ enum FurnitureDetector {
     /// Resolved removals. Applying them to a page consults only that page.
     struct Plan {
         fileprivate var native: [Int: Set<Int>] = [:]
+        fileprivate var dependencies: [Int: [Int: [Int]]] = [:]
         fileprivate var syntheticOccurrences: [String: Int] = [:]
         fileprivate var syntheticThreshold = Int.max
         fileprivate var pageCount = 0
@@ -55,22 +59,31 @@ enum FurnitureDetector {
             return
         }
         guard page.bounds.height > 0, page.bounds.isFinite else { return }
-        for (lineIndex, line) in page.lines.enumerated() {
-            let position = (line.rect.midY - page.bounds.minY) / page.bounds.height
-            let top = position >= 0.90
-            // Retain the narrower footer band: lower-margin numbers can participate
-            // in whitespace cuts around illustrated rows. Widening that band changes
-            // reading order in Our Flag even when the removed number is furniture.
-            guard top || position <= 0.07, line.rect.isFinite,
-                  line.fontSize > 0, line.fontSize.isFinite else { continue }
+        let height = page.bounds.height
+        func position(_ line: TextLine) -> CGFloat { (line.rect.midY - page.bounds.minY) / height }
+        // The top band is the outer fifth of the page: a slip opinion's running head sits at
+        // 82–85% under a deep head margin, whereas report headers sit above 90%. Retain the
+        // narrower footer band: lower-margin numbers can participate in whitespace cuts
+        // around illustrated rows. Widening that band changes reading order in Our Flag
+        // even when the removed number is furniture.
+        func inBand(_ line: TextLine, top: Bool) -> Bool {
+            top ? position(line) >= 0.80 : position(line) <= 0.07
+        }
+        /// The outermost row on the given edge among `lines`.
+        func outermost(_ lineIndex: Int, top: Bool, among lines: [Int]) -> Bool {
+            let line = page.lines[lineIndex]
+            return !lines.contains { other in
+                top ? page.lines[other].rect.midY > line.rect.midY + line.rect.height * 0.4
+                    : page.lines[other].rect.midY < line.rect.midY - line.rect.height * 0.4
+            }
+        }
+        var recorded: Set<Int> = []
+        /// Records a short line separated from inward content by at least `separation`.
+        func record(_ lineIndex: Int, top: Bool, separation: CGFloat, dependsOn: [Int] = []) {
+            let line = page.lines[lineIndex]
+            guard line.rect.isFinite, line.fontSize > 0, line.fontSize.isFinite else { return }
             let words = line.text.lowercased().split(whereSeparator: \.isWhitespace).map(String.init)
-            guard !words.isEmpty, line.text.count < 100 else { continue }
-            // Only the outermost row is eligible; a caption or paragraph above a
-            // footer must not be removed merely because it also repeats.
-            guard !page.lines.contains(where: { other in
-                top ? other.rect.midY > line.rect.midY + line.rect.height * 0.4
-                    : other.rect.midY < line.rect.midY - line.rect.height * 0.4
-            }) else { continue }
+            guard !words.isEmpty, line.text.count < 100 else { return }
             // The line must be separated from inward content, not just happen to be
             // the first/last line of a paragraph near the page edge.
             let inward = page.lines.enumerated().filter { index, other in
@@ -80,11 +93,13 @@ enum FurnitureDetector {
             let isFolio = (1...2).contains(folioParts.count) && folioParts.allSatisfy { Int($0) != nil }
             // A bare folio has its own numeric/position evidence. Nearby figure labels
             // must not stop a chapter-page number from being recognized.
-            guard let gap = inward.min(), isFolio || gap >= max(line.rect.height, page.bounds.height * 0.012) else { continue }
+            guard let gap = inward.min(), isFolio || gap >= separation else { return }
+            recorded.insert(lineIndex)
             // Bare folios use measured glyph height: fallback extraction estimates
             // fontSize from that height, whereas native extraction reads font attributes.
             let candidate = Candidate(pageIndex: pageIndex, lineIndex: lineIndex, number: page.number,
-                                      position: position, fontSize: isFolio ? line.rect.height : line.fontSize, isFolio: isFolio)
+                                      position: position(line), fontSize: isFolio ? line.rect.height : line.fontSize,
+                                      isFolio: isFolio, dependsOn: dependsOn)
             let edge = top ? "top:" : "bottom:"
             ledger.groups[edge + words.joined(separator: " "), default: []].append(candidate)
             if isFolio, folioParts.count == 2, let value = Int(folioParts[1]) {
@@ -113,6 +128,30 @@ enum FurnitureDetector {
                 }
             }
         }
+        let all = Array(page.lines.indices)
+        for lineIndex in all {
+            let line = page.lines[lineIndex]
+            let top = position(line) >= 0.5
+            // Only the outermost row is eligible; a caption or paragraph above a
+            // footer must not be removed merely because it also repeats.
+            guard inBand(line, top: top), outermost(lineIndex, top: top, among: all) else { continue }
+            record(lineIndex, top: top, separation: max(line.rect.height, height * 0.012))
+        }
+        // A two-row running head: beneath an outermost top row made only of candidates, the
+        // next row inward is also eligible when it stays within three of its line heights
+        // of that row and keeps at least half a line height from the body. It is removed
+        // only together with every line of the row above it.
+        let outer = all.filter { inBand(page.lines[$0], top: true) && outermost($0, top: true, among: all) }
+        guard !outer.isEmpty, outer.allSatisfy(recorded.contains),
+              let outerBottom = outer.map({ page.lines[$0].rect.minY }).min() else { return }
+        let rest = all.filter { !outer.contains($0) }
+        for lineIndex in rest {
+            let line = page.lines[lineIndex]
+            guard inBand(line, top: true), line.rect.maxY <= outerBottom,
+                  line.rect.maxY >= outerBottom - line.rect.height * 3,
+                  outermost(lineIndex, top: true, among: rest) else { continue }
+            record(lineIndex, top: true, separation: max(line.rect.height * 0.5, height * 0.006), dependsOn: outer)
+        }
     }
 
     static func resolve(_ ledger: Ledger) -> Plan {
@@ -126,7 +165,12 @@ enum FurnitureDetector {
             var run: [Candidate] = []
             func finish() {
                 guard run.count >= 3 else { return }
-                for candidate in run { plan.native[candidate.pageIndex, default: []].insert(candidate.lineIndex) }
+                for candidate in run {
+                    plan.native[candidate.pageIndex, default: []].insert(candidate.lineIndex)
+                    if !candidate.dependsOn.isEmpty {
+                        plan.dependencies[candidate.pageIndex, default: [:]][candidate.lineIndex] = candidate.dependsOn
+                    }
+                }
             }
             for candidate in ordered {
                 if let first = run.first, let last = run.last {
@@ -159,7 +203,13 @@ enum FurnitureDetector {
             }
             guard !kept.isEmpty, kept.count != page.lines.count else { return nil }
         } else {
-            guard let removed = plan.native[pageIndex], !removed.isEmpty else { return nil }
+            guard var removed = plan.native[pageIndex], !removed.isEmpty else { return nil }
+            // A second header row goes only with the whole row above it.
+            for (lineIndex, outer) in plan.dependencies[pageIndex] ?? [:]
+            where !outer.allSatisfy(removed.contains) {
+                removed.remove(lineIndex)
+            }
+            guard !removed.isEmpty else { return nil }
             kept = page.lines.enumerated().filter { !removed.contains($0.offset) }.map(\.element)
             guard !kept.isEmpty else { return nil }
         }

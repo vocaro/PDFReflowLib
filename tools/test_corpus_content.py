@@ -126,6 +126,37 @@ class CorpusContentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.check()
 
+    def test_note_contract_requires_a_footnote_block_on_the_page(self):
+        self.contract['pages'][0]['notes'] = ['alpha beta']
+        self.pages[1]['notes'] = ['alpha beta']
+        self.assertTrue(self.check()['passed'])
+        self.pages[1]['notes'] = []
+        self.pages[1]['paragraphs'] = ['alpha beta']  # Same text in ordinary prose cannot pass.
+        self.assertFalse(self.check()['passed'])
+        self.pages[2]['notes'] = ['alpha beta']  # Wrong page cannot pass either.
+        self.assertFalse(self.check()['passed'])
+        self.pages[1]['notes'] = ['alpha', 'beta']  # Split across two notes cannot pass.
+        self.assertFalse(self.check()['passed'])
+        for phrase in ['', '  ', 123]:
+            self.contract['pages'][0]['notes'] = [phrase]
+            with self.assertRaises(ValueError):
+                self.check()
+
+    def test_note_parser_keeps_note_text_on_its_pages_and_in_its_paragraph(self):
+        path = self.epub('<span epub:type="pagebreak" id="page-1"/><p>body one</p>'
+                         '<div class="footnote" role="doc-footnote"><p><sup>1</sup> note one'
+                         '<span epub:type="pagebreak" id="page-2"/> continues</p></div><p>body two</p>',
+                         '<div role="doc-footnote"><p>note two</p></div><p>plain</p>')
+        pages, _ = read_pages(path)
+        self.assertEqual(pages[1]['notes'], ['1 note one'])
+        self.assertEqual(pages[2]['notes'], ['continues', 'note two'])
+        self.assertEqual(pages[1]['paragraphs'], ['body one', '1 note one'])
+        self.assertEqual(pages[2]['paragraphs'], ['continues', 'body two', 'note two', 'plain'])
+        self.assertIn('body one 1 note one', pages[1]['text'])
+        # The continued note is one paragraph element across the page marker.
+        self.contract['pages'] = [{'page': 1, 'continuedParagraphs': [{'end': 'note one', 'next': 'continues'}]}]
+        self.assertTrue(self.check(pages=pages, markers=[1, 2])['passed'])
+
     def test_paragraph_separation_rejects_a_folio_that_absorbed_the_continuation(self):
         self.contract['pages'] = [{'page': 1, 'separateParagraphs': [{'end': '108', 'next': 'set a bomb'}]}]
         split = self.epub('<span epub:type="pagebreak" id="page-1"/><p>the terrorists who'

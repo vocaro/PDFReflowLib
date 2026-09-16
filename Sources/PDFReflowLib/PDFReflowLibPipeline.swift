@@ -247,7 +247,8 @@ enum PDFReflowLibPipeline {
                     }
                     pageBlocks = LayoutReconstructor.blocks(page: content, images: images,
                         vocabulary: vocabulary, warnings: &warnings,
-                        numberedNotePage: numberedNotePages.contains(content.number))
+                        numberedNotePage: numberedNotePages.contains(content.number),
+                        continuesNote: previousPage != nil && blocks.last?.isFootnote == true)
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }
@@ -266,6 +267,10 @@ enum PDFReflowLibPipeline {
                 }
                 LayoutReconstructor.appendPage(pageBlocks, page: content, images: regions, previousPage: previousPage,
                     previousImages: previousRegions, to: &blocks, vocabulary: vocabulary, warnings: &warnings)
+                if previousPage != nil {
+                    LayoutReconstructor.joinContinuedFootnote(&blocks, page: content.number,
+                        vocabulary: vocabulary, warnings: &warnings)
+                }
             }
             previous = content
             previousRegions = regions

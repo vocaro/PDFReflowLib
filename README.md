@@ -103,7 +103,12 @@ that fall back to images skip unused attributed-text decoding. Failures use
   elsewhere in the book and there is no evidence of the corresponding compound. Ambiguous
   joins retain the hyphen and produce a warning.
 - Short recurring headers and footers can be removed when at least three pages support the
-  decision. Monospaced code retains line breaks and indentation; list markers (including a
+  decision, including a two-row running head (title row with folio, section row) in the outer
+  fifth of the page. Page-bottom footnotes under a dash separator, set smaller than the body and
+  opening with raised numeric markers, become separate note blocks (`div.footnote` with
+  `role="doc-footnote"`) after the page's body; a note continued on the next page is joined to
+  its start with the page boundary inside it, and the separator is not emitted. Notes are not
+  linked to their references. Monospaced code retains line breaks and indentation; list markers (including a
   numeric marker set tight against a minus sign, as in answer keys) retain their
   source breaks, except that a wrapped line of justified prose that merely begins with an
   initial, a citation abbreviation or a year followed by a period continues its paragraph.

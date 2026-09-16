@@ -262,8 +262,11 @@ enum LayoutReconstructor {
         return max(pageBody, candidate)
     }
 
+    /// `continuesNote` states that the previous page ended in a page-bottom footnote, so a
+    /// marker-less note under this page's separator may continue it.
     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
-                       warnings: inout [ConversionWarning], numberedNotePage: Bool = false) -> [ReflowBlock] {
+                       warnings: inout [ConversionWarning], numberedNotePage: Bool = false,
+                       continuesNote: Bool = false) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         let lines = page.lines.filter { line in !images.contains { $0.0.intersects(line.rect) } }
         // Preserve existing modest-size headings, but reject candidates within 10% of the
@@ -272,6 +275,10 @@ enum LayoutReconstructor {
         let spatial = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
             + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: body)
         let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
+        // Page-bottom footnotes end the page's reading order; the body is everything before
+        // their separator, which is not emitted.
+        let footnotes = FootnoteDetector.layout(in: elements, page: page, continuesNote: continuesNote)
+        let bodyElements = elements[..<(footnotes?.separator ?? elements.count)]
         let noteGroups = NumberedNoteDetector.groups(in: elements, page: page, headingEvidence: numberedNotePage)
         var result: [ReflowBlock] = []
         var note: (Int, InlineText)?
@@ -329,7 +336,20 @@ enum LayoutReconstructor {
             let justified = column.filter { $0.rect.maxX >= right - body * 0.25 }
             return justified.count >= 3 && prev.rect.maxX >= right - body * 0.25
         }
-        for (index, element) in elements.enumerated() {
+        // PDFKit can detach a body note marker that falls past a justified line's right edge
+        // into its own tiny line. A one-to-three digit line below body size, starting where the
+        // previous line ends and sitting raised inside that line's box, is its marker. A small
+        // number on the same baseline (an OCR'd table cell) is not.
+        func isDetachedMarker(_ line: TextLine, after prev: TextLine) -> Bool {
+            guard !paragraph.elements.isEmpty, !page.recognized, !page.hasSyntheticTextStyle,
+                  (1...3).contains(line.text.count),
+                  line.text.utf8.allSatisfy({ (48...57).contains($0) }),
+                  line.fontSize < body * 0.8, line.rect.minX >= prev.rect.maxX - 1,
+                  line.rect.minX <= prev.rect.maxX + body * 0.5 else { return false }
+            return line.rect.minY >= prev.rect.minY + prev.rect.height * 0.2
+                && line.rect.maxY <= prev.rect.maxY + 1
+        }
+        for (index, element) in bodyElements.enumerated() {
             if let group = noteGroups[index], let line = element.line {
                 flushTagged()
                 flush()
@@ -383,6 +403,10 @@ enum LayoutReconstructor {
                 // Preserve significant breaks and native styles; do not rewrite list markers or code.
                 result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))
             } else {
+                if let prev = previous, isDetachedMarker(line, after: prev) {
+                    paragraph.append(InlineText(line.text, style: .superscript))
+                    continue
+                }
                 if let prev = previous {
                     let verticalGap = prev.rect.minY - line.rect.maxY
                     let sameColumn = abs(prev.rect.minX - line.rect.minX) < body * 1.5
@@ -402,7 +426,34 @@ enum LayoutReconstructor {
         flushNote()
         flushTagged()
         flush()
+        for note in footnotes?.notes ?? [] {
+            var text = FootnoteDetector.normalizedMarker(elements[note.range.lowerBound].line!.content)
+            for index in note.range.dropFirst() {
+                text = join(text, elements[index].line!.content, vocabulary: vocabulary,
+                    page: page.number, warnings: &warnings)
+            }
+            result.append(ReflowBlock(content: .footnote(text), page: page.number))
+        }
         return result
+    }
+
+    /// A page's first note that opens without a marker continues the previous page's last
+    /// note. The note keeps its position and the page's standalone boundary moves inside it,
+    /// as it does for a continued paragraph, so the page's body follows the completed note.
+    /// When `appendPage` has already joined the body across the page, the boundary sits in
+    /// that paragraph and the note simply absorbs the continuation.
+    static func joinContinuedFootnote(_ blocks: inout [ReflowBlock], page: Int,
+                                      vocabulary: Set<String>, warnings: inout [ConversionWarning]) {
+        guard let index = blocks.firstIndex(where: { $0.isFootnote && $0.page == page }),
+              case let .footnote(rest) = blocks[index].content, FootnoteDetector.marker(of: rest) == nil,
+              let start = blocks[..<index].lastIndex(where: \.isFootnote),
+              case let .footnote(left) = blocks[start].content,
+              blocks[start].page == page - 1 || blocks[start].sourcePages.contains(page - 1) else { return }
+        let marker = blocks[start..<index].firstIndex { $0.content == .sourcePage(page) }
+        blocks[start].content = .footnote(join(left, rest, vocabulary: vocabulary, page: page,
+            sourceBoundary: marker == nil ? nil : page, warnings: &warnings))
+        blocks.remove(at: index)
+        if let marker { blocks.remove(at: marker) }
     }
 
     /// Tags may reorder only complete groups inside an uninterrupted run of tagged text.
@@ -499,8 +550,13 @@ enum LayoutReconstructor {
             var joined = blocks[anchors.previous]
             joined.content = .paragraph(join(left, right, vocabulary: vocabulary, page: page.number,
                 sourceBoundary: page.number, warnings: &warnings))
+            // Images, captions and folios keep their place ahead of the joined paragraph. A
+            // page-bottom footnote follows it instead: its reference is inside that paragraph,
+            // and note text must not precede its marker (#40). It then sits past the inline
+            // boundary, so page navigation reaches it from the next page.
             let trailing = Array(blocks[(anchors.previous + 1)...])
-            blocks.replaceSubrange(anchors.previous..., with: trailing + [joined])
+            blocks.replaceSubrange(anchors.previous..., with: trailing.filter { !$0.isFootnote } + [joined]
+                + trailing.filter(\.isFootnote))
             remaining.remove(at: anchors.next)
         } else {
             blocks.append(ReflowBlock(content: .sourcePage(page.number), page: page.number))
@@ -520,7 +576,11 @@ enum LayoutReconstructor {
                                      to pageBlocks: [ReflowBlock], page: PageContent,
                                      images: [CGRect]) -> (previous: Int, next: Int)? {
         var previous = blocks.count - 1
-        while previous >= 0, blocks[previous].page == previousPage.number,
+        // A footnote continued onto the previous page starts on an earlier one, and a join
+        // moves an earlier page's footnotes behind the paragraph that continued.
+        while previous >= 0, blocks[previous].page == previousPage.number
+                || blocks[previous].sourcePages.contains(previousPage.number)
+                || (blocks[previous].isFootnote && blocks[previous].page < previousPage.number),
               isSkippable(blocks[previous], page: previousPage) { previous -= 1 }
         guard previous >= 0, case let .paragraph(left) = blocks[previous].content,
               blocks[previous].page == previousPage.number
@@ -542,10 +602,11 @@ enum LayoutReconstructor {
         return (previous, next)
     }
 
-    /// Preserved images, figure captions and bare folios in the margin do not carry body text.
+    /// Preserved images, page-bottom footnotes, figure captions and bare folios in the margin
+    /// do not carry body text.
     private static func isSkippable(_ block: ReflowBlock, page: PageContent) -> Bool {
         switch block.content {
-        case .image: return true
+        case .image, .footnote: return true
         case .paragraph: break
         case .heading, .preformatted, .sourcePage: return false
         }
@@ -671,7 +732,11 @@ enum LayoutReconstructor {
     /// the page; a column of prose to its right (lines as wide as the anchor, so a name column
     /// beside a hanging-indent entry does not count) means the anchor is not the last column.
     private static func endsColumn(_ last: TextLine, in page: PageContent, images: [CGRect]) -> Bool {
-        !page.lines.contains { other in
+        // Page-bottom footnotes (smaller type under a dash separator) are not the body's continuation.
+        let separator = page.lines.filter { FootnoteDetector.isSeparator($0) && $0.rect.midY < last.rect.minY }
+            .map(\.rect.minY).max()
+        return !page.lines.contains { other in
+            if let separator, other.rect.midY < separator, other.fontSize <= last.fontSize * 0.9 { return false }
             let below = other.rect.midY < last.rect.minY && other.rect.maxX > last.rect.minX && other.rect.minX < last.rect.maxX
             let beside = other.rect.minX >= last.rect.maxX
             return below && isProse(other, beside: last, share: 0.5, page: page, images: images)

@@ -37,7 +37,7 @@ the evidence needed to infer reading order, paragraphs, image crops and word joi
 | Value | Content |
 | --- | --- |
 | Metadata | Title, language and optional author |
-| Ordered blocks | Paragraph, heading with logical identifier and level, preformatted text, image, source-page boundary |
+| Ordered blocks | Paragraph, heading with logical identifier and level, preformatted text, page-bottom footnote, image, source-page boundary |
 | Inline text | Text runs carrying bold/italic/superscript/subscript flags, interspersed with source-page boundaries |
 | Image block | Logical asset identifier, alternative text and caption |
 | Asset registry | Identifier, local file URL and image format |
@@ -141,16 +141,39 @@ previous line must read as prose, end without terminal punctuation and reach a r
 that at least three same-size lines of the column share within a quarter body size, and the
 line must sit on the column's majority left edge (or outdent from an indented opening line)
 at ordinary line spacing. Bullets never continue prose; ragged-right columns, hanging-indent
-continuations and OCR lines that Vision marks as unwrapped keep the list representation. Heading-size evidence excludes text already preserved inside images
+continuations and OCR lines that Vision marks as unwrapped keep the list representation.
+`FootnoteDetector` recognizes page-bottom footnotes: a line of three or more dash characters
+after at least three body-size lines, followed to the end of the page only by untagged
+proportional lines at most 90% of that body size, in one column at close spacing, each note
+opening with a superscript run of one to three digits that count up across the page. The
+separator is dropped and each note becomes a footnote block after the body; a marker-less
+first note is admitted only when the previous page ended in a footnote, and the pipeline then
+joins it to that note with the page boundary inline, so the page's body follows the completed
+note (`joinContinuedFootnote`); when `appendPage` has already joined the body across that
+page, the boundary stays in the paragraph and the note simply absorbs the continuation. Body
+continuation steps over footnote blocks, and a footnote block trailing the continued paragraph
+is placed after the joined paragraph rather than ahead of it, because its reference sits inside
+that paragraph and note text must not precede its marker; such a note is then reached from
+the next page's anchor. A footnote beneath the previous page's last line does not count as
+prose below it (`endsColumn`). Drawn rules, symbol markers, recognized or synthetic text
+layers, images below the separator and any body-size line after it keep spatial prose. A body
+marker that PDFKit detached past a justified line's right edge (one to three digits, below
+80% of body size, starting where the line ends and raised inside its box) rejoins that line as
+a superscript. Notes carry no reference links. Heading-size evidence excludes text already preserved inside images
 when at least three remaining lines and 200 characters support the dominant reflowable font size.
 Candidates within 10% of that supported body size are suppressed, while the original 25%
 page-size threshold still applies. This retains existing modestly larger section headings. Short titles
 beside images retain the existing page evidence. The separate page-size estimate still governs
 whitespace cuts and paragraph geometry. This spatial fallback does not guarantee heading precision in arbitrary mixed layouts. `FurnitureDetector` removes short outermost margin rows supported by
 at least three neighboring or alternating physical pages, stable vertical position and typography.
-The top candidate band is 10% of page height; the footer band remains 7% to retain existing
+The top candidate band is the outer 20% of page height, which admits a slip opinion's running
+head under a deep head margin (rows at 85% and 82%); the footer band remains 7% to retain existing
 whitespace-cut behavior around illustrated rows. Textual headers require separation from inward
-content. Boundary page numbers use a consistent physical-page offset; numeric chapter-page folios retain their chapter prefix and use glyph height
+content. Beneath an outermost row made only of candidates, the next row inward (within three of
+its line heights, at least half a line height clear of the body) is a second header row that is
+removed only together with every line of the row above it, so a two-row head (title row with
+folio, opinion row) goes as a unit and a repeated line beneath unrepeated titles stays.
+Boundary page numbers use a consistent physical-page offset; numeric chapter-page folios retain their chapter prefix and use glyph height
 so fallback font estimates do not break matching. Internal digits remain meaningful. Matching
 body titles, nearby captions and a page's only text are retained. Each affected page reports
 `furnitureRemoved`; clients can disable removal with `removeRepeatedHeadersAndFooters`.

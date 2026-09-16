@@ -120,6 +120,9 @@ struct ReflowBlock: Sendable, Equatable {
         case paragraph(InlineText)
         case heading(id: String, text: InlineText, level: Int = 2)
         case preformatted(InlineText)
+        /// A page-bottom note; its own raised marker, when present, opens the text. Body
+        /// prose is never placed in one, and a note is not linked to its reference.
+        case footnote(InlineText)
         case image(Image)
         case sourcePage(Int)
     }
@@ -132,7 +135,7 @@ struct ReflowBlock: Sendable, Equatable {
     var text: String {
         switch content {
         case let .paragraph(text), let .heading(_, text, _): text.text
-        case let .preformatted(text): text.text
+        case let .preformatted(text), let .footnote(text): text.text
         case .image, .sourcePage: ""
         }
     }
@@ -140,14 +143,18 @@ struct ReflowBlock: Sendable, Equatable {
         switch content {
         case let .paragraph(text), let .heading(_, text, _): text.sourcePages
         case let .sourcePage(page): [page]
-        case let .preformatted(text): text.sourcePages
+        case let .preformatted(text), let .footnote(text): text.sourcePages
         case .image: []
         }
     }
     var hasReflowedText: Bool {
         switch content {
-        case .paragraph, .heading, .preformatted: true
+        case .paragraph, .heading, .preformatted, .footnote: true
         case .image, .sourcePage: false
         }
+    }
+    var isFootnote: Bool {
+        if case .footnote = content { return true }
+        return false
     }
 }

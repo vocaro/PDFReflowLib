@@ -50,15 +50,15 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 502 targeted checks on 122 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 549 targeted checks on 123 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 182 ordered-text, 61 text, 43 paragraph,
-26 heading, 31 absent-text, 13 script, 15 paragraph-continuation, 5 paragraph-separation, 77
-image-presence, 31 warning, 1 absent-warning, 11 source-region, 3 glyph-structure and 3
-image-appearance checks. All source-page anchors must also remain complete and ordered, and
-semantic text must contain no image attachment placeholders.
+the NBS and Replay Clocks academic papers). They comprise 182 ordered-text, 61 text, 48 paragraph,
+26 heading, 46 absent-text, 17 script, 8 footnote, 17 paragraph-continuation,
+5 paragraph-separation, 77 image-presence, 42 warning, 3 absent-warning,
+11 source-region, 3 glyph-structure and 3 image-appearance checks. All source-page
+anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
 
 The checks preserve selected correct words, paragraph semantics and cross-page continuity, paragraph/list order, license attribution, image
 presence, source-region content, glyph-level equation and table structure, image scale/contrast/color
@@ -257,7 +257,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-226 Swift tests with no known-issue wrappers, and 156 Python tests.
+253 Swift tests with no known-issue wrappers, and 159 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -309,6 +309,15 @@ two-page runs. Three additional source fixtures require detached map labels on p
 to remain wholly inside preserved graphic regions and out of standalone prose/heading blocks.
 The retained heading audit reports missed sections explicitly; it is not a passing golden for them.
 
+The top candidate band is the outer fifth of the page, and a second header row beneath a wholly
+eligible outermost row is removed only with that row (#40). Six checksum-pinned Loper Bright
+pages (96–101) require all three running-head lines (`Cite as: …`/`LOPER BRIGHT …` with the
+folio, then `KAGAN, J., dissenting`) to go on every page with every other line retained.
+Synthetic controls keep a lone section row 8 pt above the body, a repeated section row beneath
+unrepeated titles, a row three line heights below the title row, a repeated opening line that
+its paragraph follows directly, and a repeated separated line below the band; the 9/11, FAA and
+`prose.pdf` controls are unchanged.
+
 [Local-header evidence](../measurements/local-header-regressions/record.md) includes the failing
 baseline, complete corpus receipts and before/after text and image comparisons. Corpus assertions
 remain selected contracts, not comprehensive quality scores; inspecting differences also catches
@@ -316,7 +325,8 @@ regressions outside those selected pages.
 
 Our Flag pages 34/42/43 additionally protect the alphabetical row order of four illustrated entries
 and four retained images per page. The footer candidate band stays at the existing outer 7%;
-the header band extends to 10% for the 9/11 source. Wider footer removal needs independent
+the header band is the outer 20% since #40 (10% held the 9/11 heads; a slip opinion's sit at
+82–85%). Wider footer removal needs independent
 layout work before it can preserve this reading-order contract.
 
 Blue Book pages 5/12 provide source-derived synthetic-layer margin controls. Existing repeated
@@ -356,6 +366,38 @@ known cross-page splits and folio joins are tracked in [#45](https://github.com/
 This target is an EPUB packing policy, not a limit on individual source paragraphs, whole-document
 memory, or a promise that spine boundaries correspond to actual book chapters. See the
 [packing evidence](../measurements/spine-packing/record.md).
+
+## Page-bottom footnotes
+
+`FootnoteTests.swift` covers [#40](https://github.com/vocaro/PDFReflowLib/issues/40) with
+styled source fixtures (`SourceLayoutFixture.styledContent()` restores the native superscript
+runs): Loper Bright page 60 (one note, body ending `that controls.`, marker `Ibid.2` kept in
+prose, every source character except the separator retained), pages 97/98 through
+`appendPage` and `joinContinuedFootnote` (note 2 is one block from `The majority tries` to
+`deferential standard.` with `sourcePages == [98]`, placed before page 98's body and note 3),
+pages 99/100 (marker-less continuations admitted only after a preceding note), page 13 (the
+detached body marker `1` rejoins `Persistence.` as a superscript and its paragraph runs on),
+pages 13/14 (that paragraph continues across the note block under #45's `appendPage`, and the
+note follows the joined paragraph behind its marker), a synthetic three-page chain in which a
+page that is one continuing paragraph leaves an earlier page's note last, a note continuation
+after a body join (no second boundary), and pages 61/101. Thirteen source pages without note typography (Loper 2/7/96, 9/11 20/472/532,
+algebra 26, FAA 211, Fed 45, Our Flag 27, Warren 910, NBS 7, USGS 1) yield no footnotes.
+Synthetic controls refuse a missing size drop, a missing first marker without a preceding
+note, `* * *` and two-dash separators, fewer than three body lines, non-sequential or
+non-numeric markers, a body-size, monospaced, tagged, displaced, shifted or image element after
+the separator, and recognized or synthetic text layers, retaining every character. The writer
+test pins `<div class="footnote" role="doc-footnote"><p>…</p></div>` with an inline page
+marker and the stylesheet rule; an original two-page PDF with a text-rise marker converts end
+to end through PDFKit into two notes joined across the page. Detached-marker controls keep
+letters, four digits, body-size digits, distant, overlapping and same-baseline numbers as
+separate lines.
+
+Corpus contracts support `notes`: a phrase must sit inside one footnote block on that page,
+and the same text in ordinary prose or on another page cannot pass. The Loper Bright contract
+adds footnote, separator-absence, running-head-absence, marker-context, note-continuation and
+`furnitureRemoved` checks on pages 13, 14, 60, 61, 97 and 98, including the page 13→14 body
+continuation (page 13's note is checked on page 14, where it follows the joined paragraph); the
+converter before #40 fails 36 of them. See the [page-footnote evidence](../measurements/page-footnotes/record.md).
 
 ## Endnote reference typography and bounded paragraphs
 

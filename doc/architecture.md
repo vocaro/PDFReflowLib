@@ -123,7 +123,13 @@ Traversal is bounded to 200,000 visits and depth 64; association caps text ancho
 not partial ordering. Cancellation is checked during traversal and text scanning.
 
 `LayoutReconstructor` handles whitespace cuts, paragraphs, styled word joins and
-cross-page continuation. Heading-size evidence excludes text already preserved inside images
+cross-page continuation. A line that begins with a number or single letter followed by a
+period or parenthesis is a preformatted list item unless it wraps an open paragraph: the
+previous line must read as prose, end without terminal punctuation and reach a right edge
+that at least three same-size lines of the column share within a quarter body size, and the
+line must sit on the column's majority left edge (or outdent from an indented opening line)
+at ordinary line spacing. Bullets never continue prose; ragged-right columns, hanging-indent
+continuations and OCR lines that Vision marks as unwrapped keep the list representation. Heading-size evidence excludes text already preserved inside images
 when at least three remaining lines and 200 characters support the dominant reflowable font size.
 Candidates within 10% of that supported body size are suppressed, while the original 25%
 page-size threshold still applies. This retains existing modestly larger section headings. Short titles

@@ -50,7 +50,7 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 357 targeted checks on 85 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 367 targeted checks on 88 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
@@ -139,7 +139,8 @@ To recapture the algebra geometry with full Xcode selected:
 ```sh
 swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/ConversionTypes.swift \
   Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
-  Sources/PDFReflowLib/GraphicsReader.swift tools/capture-algebra-layout.swift \
+  Sources/PDFReflowLib/GraphicsReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
+  tools/capture-algebra-layout.swift \
   -o /tmp/capture-algebra-layout
 /tmp/capture-algebra-layout corpus/cache/Beginning_and_Intermediate_Algebra.pdf /tmp/algebra-17-layout.json
 ```
@@ -165,7 +166,8 @@ They run offline on macOS and iOS. Capture another page with full Xcode selected
 ```sh
 swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/ConversionTypes.swift \
   Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
-  Sources/PDFReflowLib/GraphicsReader.swift tools/capture-layout-fixture.swift \
+  Sources/PDFReflowLib/GraphicsReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
+  tools/capture-layout-fixture.swift \
   -o /tmp/capture-layout-fixture
 /tmp/capture-layout-fixture faa-phak-8083-25c 91 /tmp/faa-91-layout.json
 ```
@@ -335,6 +337,22 @@ emphasis. Full-book contracts check both algebra exponents and four FAA V-speed 
 source context. This preserves detected styles; it does not validate every script inference,
 repair exercise grouping, reconstruct semantic lists or establish chapter-scoped endnote links.
 See [the source review and complete corpus comparison](../measurements/preformatted-styles/record.md).
+
+## Citation-leading wrapped lines
+
+`CitationContinuationTests.swift` uses four checksum-pinned Loper Bright source pages (2, 7, 13
+and 60) whose wrapped lines begin with `v.`, a year, `F.` or `U. S.` followed by a period. Each
+line must remain inside its paragraph with no preformatted block on the page, page 2 must keep
+its four syllabus paragraphs in source order, and every source character must survive the join.
+Synthetic controls keep genuine lists separate after a short introduction, after terminal
+punctuation (including closing quotes and brackets), across a paragraph gap, with an indented
+marker, after an unwrapped OCR line, when fewer than three lines establish the right edge, and
+for bullet, minus and hyphen markers. Algebra page 26 and Warren page 50 supply source-derived
+list controls: every spaced numbered marker stays its own block. The Loper Bright corpus
+contract requires the joined text inside one paragraph on all four pages; the checker's existing
+fragment negative control rejects the same phrase split across blocks. See the
+[continuation evidence](../measurements/citation-continuations/record.md). Ragged-right columns
+and hanging-indent continuations remain outside this rule.
 
 
 ## Decorative drop caps

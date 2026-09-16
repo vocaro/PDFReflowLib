@@ -157,6 +157,38 @@ enum LayoutReconstructor {
             paragraph = InlineText()
             previous = nil
         }
+        // A wrapped body line can begin with an initial, a citation abbreviation or a year
+        // followed by a period. It continues the open paragraph only when the previous line
+        // fills its column without terminal punctuation, this line sits on the column's
+        // majority left edge (or outdents from an indented opening line) with ordinary line
+        // spacing, and at least three same-size lines establish the column's right edge.
+        // Genuine list items follow short, terminal or separated lines, or open a block of their own.
+        func continuesParagraph(_ line: TextLine) -> Bool {
+            guard let prev = previous, prev.wraps != false, !paragraph.elements.isEmpty,
+                  line.text.range(of: "^(?:[0-9]+|[A-Za-z])[.)]\\s", options: .regularExpression) != nil else { return false }
+            let verticalGap = prev.rect.minY - line.rect.maxY
+            guard verticalGap >= -body * 0.4, verticalGap < body * 0.9 else { return false }
+            let indent = prev.rect.minX - line.rect.minX
+            guard indent > -body * 0.5, indent < body * 1.5 else { return false }
+            let closing: Set<Character> = ["\u{201D}", "\u{2019}", "\"", "'", ")", "]"]
+            guard let ending = prev.text.reversed().first(where: { !$0.isWhitespace && !closing.contains($0) }),
+                  !".!?:;".contains(ending) else { return false }
+            // The previous line reads as prose; exercise or formula lines mostly carry symbols.
+            let words = prev.text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count
+            guard words >= 3 else { return false }
+            let size = Int(line.fontSize.rounded())
+            let column = lines.filter {
+                !$0.monospaced && Int($0.fontSize.rounded()) == size && abs($0.rect.minX - line.rect.minX) < body * 1.5
+            }
+            // The candidate sits on the column's majority left edge, so an indented note or
+            // hanging list marker beside dedented continuations does not qualify.
+            let onEdge = column.filter { abs($0.rect.minX - line.rect.minX) < body * 0.5 }.count
+            guard onEdge * 2 > column.count, let right = column.map(\.rect.maxX).max() else { return false }
+            // A justified column: at least three lines agree on the right edge, and so does the
+            // previous line. Ragged item lengths do not establish a margin.
+            let justified = column.filter { $0.rect.maxX >= right - body * 0.25 }
+            return justified.count >= 3 && prev.rect.maxX >= right - body * 0.25
+        }
         for (index, element) in elements.enumerated() {
             if let group = noteGroups[index], let line = element.line {
                 flushTagged()
@@ -206,7 +238,7 @@ enum LayoutReconstructor {
                     codeOrigin = line.rect.minX
                     result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))
                 }
-            } else if isList(line.text) {
+            } else if isList(line.text), !continuesParagraph(line) {
                 flush()
                 // Preserve significant breaks and native styles; do not rewrite list markers or code.
                 result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))

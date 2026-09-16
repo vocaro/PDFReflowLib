@@ -1,0 +1,16 @@
+{
+  "issue": "#39",
+  "baselineCommit": "56e70e2",
+  "converterBeforeSHA256": "ffec1572058ae8f712b7197aaa1acf5900299253fabd51f0f97dcf37c3171437",
+  "converterAfterSHA256": "dd27b03afb2fad3a3d42b7fe8cfa10989e7c91651ef8c306338bc40728199ac0",
+  "loperBrightSourceSHA256": "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e",
+  "fixtures": {
+    "loper-2-layout.json": "7b15a564c5999301c86b2818cc892f1dcad9be442a5c4853763545797c6b4005",
+    "loper-7-layout.json": "8c6bdc470f0bc0acdd5ef15d484a1165cac4cc499ae5ac3ca5b217d8bb4e5ed0",
+    "loper-13-layout.json": "0d92c9bfee476a1f6a250a3f376c751e84fe7d01758f6528ec96007b1affbc48",
+    "loper-60-layout.json": "f3108f301eaf4f2685e50e8dda26f8217bb75915cf9d96c08e4dd0c45cb5b1f7"
+  },
+  "toolchain": "Xcode 27.0 (27A266a), Apple Swift 6.4 (swiftlang-6.4.0.34.1), macOS 27.0 (26A428), arm64",
+  "epubcheck": "/opt/homebrew/bin/epubcheck",
+  "build": "swift build -c release --product pdf-reflow (default .build)"
+}

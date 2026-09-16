@@ -874,8 +874,33 @@
     {
       "id": "scotus-loper-bright-2024",
       "sourceSHA256": "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e",
-      "basis": "Source pages 60, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Does not bless footnotes merged into body paragraphs with dash separators, retained running headers, or citation-leading lines split into preformatted blocks (#39, #40).",
+      "basis": "Source pages 2, 7, 13, 60, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Pages 2, 7, 13 and 60: wrapped justified lines beginning with \"v.\", a year, \"F.\" or \"U. S.\" must stay inside their source paragraph rather than becoming preformatted fragments (#39); page 2 keeps its four syllabus paragraphs in order. Does not bless footnotes merged into body paragraphs with dash separators or retained running headers (#40).",
       "pages": [
+        {
+          "page": 2,
+          "orderedText": [
+            "The Court recognized from the outset",
+            "During the “rapid expansion of the administrative process”",
+            "Occasionally during this period"
+          ],
+          "paragraphs": [
+            "who may well have drafted the laws at issue. United States v. Moore, 95 U. S. 760, 763. “Respect,” though, was just that. The views of the Executive Branch",
+            "United States v. Morton Salt Co., 338 U. S. 632, 644, the Court often treated agency determinations of fact",
+            "persuade, if lacking power to control.” Skidmore v. Swift & Co., 323 U. S. 134, 140."
+          ]
+        },
+        {
+          "page": 7,
+          "paragraphs": [
+            "has not deferred to an agency interpretation under Chevron since 2016. But because Chevron remains on the books, litigants must"
+          ]
+        },
+        {
+          "page": 13,
+          "paragraphs": [
+            "A divided panel of the D. C. Circuit affirmed. See 45 F. 4th 359 (2022). The majority addressed various"
+          ]
+        },
         {
           "page": 60,
           "orderedText": [
@@ -884,6 +909,10 @@
             "The hard fact is Chevron “did not even bother to cite” the APA",
             "that controls.",
             "See also A. Scalia, Judicial Deference to Administrative Interpretations of Law"
+          ],
+          "paragraphs": [
+            "Telecommunications Assn. v. Brand X Internet Services, 545 U. S. 967, 982–983 (2005). And those officials may even",
+            "a court’s past interpretation as well. Ibid. None of that is consistent with the APA’s clear mandate."
           ],
           "scripts": [
             {

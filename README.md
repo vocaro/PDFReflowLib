@@ -104,7 +104,9 @@ that fall back to images skip unused attributed-text decoding. Failures use
   joins retain the hyphen and produce a warning.
 - Short recurring headers and footers can be removed when at least three pages support the
   decision. Monospaced code retains line breaks and indentation; list markers retain their
-  source breaks. Visible typography supplies flat heading navigation. Exclusively invisible
+  source breaks, except that a wrapped line of justified prose that merely begins with an
+  initial, a citation abbreviation or a year followed by a period continues its paragraph.
+  Visible typography supplies flat heading navigation. Exclusively invisible
   text over scan images does not supply reliable code or heading typography.
 - Core Graphics scans placed images, nested forms and painted paths. The original page renderer
   supplies crops containing figures, ruled tables, labels and recognizable displayed formulas,

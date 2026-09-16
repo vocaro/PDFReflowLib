@@ -123,7 +123,18 @@ Traversal is bounded to 200,000 visits and depth 64; association caps text ancho
 not partial ordering. Cancellation is checked during traversal and text scanning.
 
 `LayoutReconstructor` handles whitespace cuts, paragraphs, styled word joins and
-cross-page continuation. A line that begins with a number or single letter followed by a
+cross-page continuation. A paragraph continues across a source page when the previous page's
+last body paragraph and the next page's first body paragraph, in reading order, meet the join
+evidence: preserved images, figure captions and bare margin folios that furniture removal kept
+are stepped over (and stay on their page, ahead of the joined paragraph); two different
+validated paragraph identities refuse; the next text starts lowercase; the previous text lacks
+terminal punctuation past closing quotes and superscript note markers; the previous paragraph's
+last line reads as prose and fills its column (a justified column's shared right edge, three
+quarters of a ragged column's measure, or a line-ending hyphen); the next paragraph's first line
+is not a retained running header with a folio word; and no other prose lies below or right of
+that last line or above or left of that first line, counting body-sized wide text inside a
+preserved region so that a figure which swallowed the real neighbour blocks the join rather
+than corrupting the text. A line that begins with a number or single letter followed by a
 period or parenthesis and a space, or a number and parenthesis set tight against a minus sign
 (`1)− 2`), is a preformatted list item unless it wraps an open paragraph: the
 previous line must read as prose, end without terminal punctuation and reach a right edge

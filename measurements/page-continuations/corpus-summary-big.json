@@ -1,0 +1,108 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "case": "wallace-algebra-2010",
+      "passed": true,
+      "reviewPages": [
+        10,
+        438,
+        289,
+        291,
+        471,
+        2,
+        12,
+        347,
+        343,
+        26,
+        18,
+        43
+      ],
+      "contentChecks": 63,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+    },
+    {
+      "case": "gpo-911-2004",
+      "passed": true,
+      "reviewPages": [
+        15,
+        19,
+        20,
+        21,
+        65,
+        67,
+        451,
+        472,
+        473,
+        532,
+        581,
+        486,
+        488,
+        574,
+        576,
+        582,
+        583,
+        24,
+        13,
+        126,
+        127,
+        192,
+        357
+      ],
+      "contentChecks": 71,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+    },
+    {
+      "case": "fed-explained-2021",
+      "passed": true,
+      "reviewPages": [
+        50,
+        9,
+        13,
+        32,
+        45,
+        46,
+        54,
+        75,
+        77,
+        103,
+        109,
+        123,
+        1,
+        11,
+        21
+      ],
+      "contentChecks": 45,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+    }
+  ],
+  "notRun": [
+    "faa-phak-8083-25c",
+    "dga-2025-2030",
+    "gpo-our-flag-2003",
+    "cdc-zombie-pandemic-2011",
+    "cia-blue-book-14-1955",
+    "usgs-mcs2025-copper",
+    "scotus-loper-bright-2024",
+    "census-rrs2002-01",
+    "uscis-m618-arabic-2015",
+    "irs-p596-zhs-2025",
+    "nbs-jres-geltman-1977",
+    "arxiv-replay-clocks-2023"
+  ],
+  "knownUnsupportedFullConversions": [
+    {
+      "id": "gpo-warren-1964",
+      "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+      "issue": 5
+    },
+    {
+      "id": "noaa-nca5-2023",
+      "reason": "Known default image-output ceiling failure. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
+      "issue": 5
+    }
+  ]
+}

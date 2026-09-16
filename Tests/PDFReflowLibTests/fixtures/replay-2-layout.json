@@ -1,0 +1,4333 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        53.798000000000002,
+        723.00020940000002,
+        137.32109580000002,
+        6.4368173999999954
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "Conference’17, July 2017, Washington, DC, USA "
+        }
+      ],
+      "text" : "Conference’17, July 2017, Washington, DC, USA "
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        696.26182879999999,
+        240.249128832,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "possible that the white LED event could be replayed before the"
+        }
+      ],
+      "text" : "possible that the white LED event could be replayed before the"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        685.30282880000004,
+        158.32869120000004,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "green LED event. This is also unacceptable."
+        }
+      ],
+      "text" : "green LED event. This is also unacceptable."
+    },
+    {
+      "rect" : [
+        63.761000000000003,
+        674.34382879999998,
+        230.28065587199998,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "Hybrid logical clocks (HLC) ["
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "4"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "]["
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "] combine logical clocks and"
+        }
+      ],
+      "text" : "Hybrid logical clocks (HLC) [4][5] combine logical clocks and"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        663.38482880000004,
+        241.75817395200011,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "physical clocks. Specifically, they rely on a system where physi-"
+        }
+      ],
+      "text" : "physical clocks. Specifically, they rely on a system where physi-"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        652.42682879999995,
+        240.47777203200008,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "cal clocks are synchronized within the acceptable limit of clock"
+        }
+      ],
+      "text" : "cal clocks are synchronized within the acceptable limit of clock"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        641.46782880000001,
+        240.24583980800003,
+        8.4284159999999702
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "skew, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "E"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ", they guarantee that "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "ℎ𝑙𝑐.𝑒 < ℎ𝑙𝑐.𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "if "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "happened before"
+        }
+      ],
+      "text" : "skew, E, they guarantee that ℎ𝑙𝑐.𝑒 < ℎ𝑙𝑐.𝑓 if 𝑒 happened before"
+    },
+    {
+      "rect" : [
+        54.247,
+        630.50882879999995,
+        239.79929440000001,
+        8.4284159999999702
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "or "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑝𝑡.𝑒+E< 𝑝𝑡.𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "(["
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "6"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "]). Here, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "ℎ𝑙𝑐.𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "denotes the Hybrid Logical"
+        }
+      ],
+      "text" : "𝑓 or 𝑝𝑡.𝑒+E< 𝑝𝑡.𝑓 ([6]). Here, ℎ𝑙𝑐.𝑒 denotes the Hybrid Logical"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        619.5498288,
+        240.2477356672,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9036352000000001,
+          "text" : "Clock of process "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9036352000000001,
+          "text" : ", and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑝𝑡.𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9036352000000001,
+          "text" : "denotes the physical time observed on"
+        }
+      ],
+      "text" : "Clock of process 𝑒, and 𝑝𝑡.𝑒 denotes the physical time observed on"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        608.59082880000005,
+        240.24368386560002,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8946687999999998,
+          "text" : "process "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8946687999999998,
+          "text" : ". In other words, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "ℎ𝑙𝑐.𝑒 < ℎ𝑙𝑐.𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8946687999999998,
+          "text" : "if "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8946687999999998,
+          "text" : "causally depends upon"
+        }
+      ],
+      "text" : "process 𝑒. In other words, ℎ𝑙𝑐.𝑒 < ℎ𝑙𝑐.𝑓 if 𝑓 causally depends upon"
+    },
+    {
+      "rect" : [
+        53.484000000000002,
+        597.63182879999999,
+        240.56384166399997,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "or "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "occurred substantially after "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ". They eliminate the problem"
+        }
+      ],
+      "text" : "𝑒 or 𝑓 occurred substantially after 𝑒. They eliminate the problem"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        586.67282880000005,
+        240.47777203200008,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "associated with physical clocks as HLC respects causality. They"
+        }
+      ],
+      "text" : "associated with physical clocks as HLC respects causality. They"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        575.71382879999999,
+        239.61886559999999,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "also eliminate the problem caused by vector clocks as the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝐻𝐿𝐶"
+        }
+      ],
+      "text" : "also eliminate the problem caused by vector clocks as the 𝐻𝐿𝐶"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        564.75482880000004,
+        239.61886559999999,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0515808,
+          "text" : "timestamp of activating the green LED will be less than the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝐻𝐿𝐶"
+        }
+      ],
+      "text" : "timestamp of activating the green LED will be less than the 𝐻𝐿𝐶"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        553.79582879999998,
+        240.42049148160004,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0426144000000015,
+          "text" : "timestamp of activating the white LED. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝐻𝐿𝐶 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0426144000000015,
+          "text" : "does create another"
+        }
+      ],
+      "text" : "timestamp of activating the white LED. 𝐻𝐿𝐶 does create another"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        542.83782880000001,
+        240.24732064,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "problem though. Consider the case where we have events "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "and"
+        }
+      ],
+      "text" : "problem though. Consider the case where we have events 𝑒 and"
+    },
+    {
+      "rect" : [
+        54.247,
+        531.87882879999995,
+        240.02833921920001,
+        8.4284159999999702
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0157152000000007,
+          "text" : "such that "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "|𝑝𝑡.𝑒−𝑝𝑡.𝑓|< E"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0157152000000007,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒||𝑓"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0157152000000007,
+          "text" : ", i.e., the events are causally"
+        }
+      ],
+      "text" : "𝑓 such that |𝑝𝑡.𝑒−𝑝𝑡.𝑓|< Eand 𝑒||𝑓, i.e., the events are causally"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        520.9198288,
+        240.24908399999998,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "concurrent and very close to each other in physical time. Without"
+        }
+      ],
+      "text" : "concurrent and very close to each other in physical time. Without"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        509.96082879999994,
+        240.47716019199999,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "loss of generality, let "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "ℎ𝑙𝑐.𝑒 < ℎ𝑙𝑐.𝑓"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : ". In this situation, when we replay"
+        }
+      ],
+      "text" : "loss of generality, let ℎ𝑙𝑐.𝑒 < ℎ𝑙𝑐.𝑓. In this situation, when we replay"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        499.0018288,
+        240.2478963968,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9932991999999992,
+          "text" : "the log, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9932991999999992,
+          "text" : "will always occur before "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9932991999999992,
+          "text" : ". In other words, the log does"
+        }
+      ],
+      "text" : "the log, 𝑒 will always occur before 𝑓. In other words, the log does"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        488.0428288,
+        238.37244960000004,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "not have the necessary information that could allow it to replay "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓"
+        }
+      ],
+      "text" : "not have the necessary information that could allow it to replay 𝑓"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        477.08382879999999,
+        240.24368889600015,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "before "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "even though they could have occurred in any order. An"
+        }
+      ],
+      "text" : "before 𝑒 even though they could have occurred in any order. An"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        466.12482879999999,
+        240.2448577536,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9260511999999999,
+          "text" : "extension of HLC, hybrid vector clocks ["
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "12"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9260511999999999,
+          "text" : "] reduces some of these"
+        }
+      ],
+      "text" : "extension of HLC, hybrid vector clocks [12] reduces some of these"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        455.16582879999999,
+        240.24678860160009,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9350176000000001,
+          "text" : "issues. However, as we highlight in Section 5, this overhead is still"
+        }
+      ],
+      "text" : "issues. However, as we highlight in Section 5, this overhead is still"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        444.20682879999998,
+        39.317664000000008,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "quite high."
+        }
+      ],
+      "text" : "quite high."
+    },
+    {
+      "rect" : [
+        63.761000000000003,
+        433.24782879999998,
+        230.28160337280011,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9081183999999993,
+          "text" : "Based on these limitations, in this paper, we focus on building a"
+        }
+      ],
+      "text" : "Based on these limitations, in this paper, we focus on building a"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        422.28982880000001,
+        240.41695294080012,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.024681600000001,
+          "text" : "new clock, RepCl, that combines hybrid logical clocks and vector"
+        }
+      ],
+      "text" : "new clock, RepCl, that combines hybrid logical clocks and vector"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        411.33082880000001,
+        240.24733555200015,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "clocks so as to eliminate their limitations. Our goal is to investigate"
+        }
+      ],
+      "text" : "clocks so as to eliminate their limitations. Our goal is to investigate"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        400.3718288,
+        241.63013376000004,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "scenarios under which RepCl permits efficient replay of events."
+        }
+      ],
+      "text" : "scenarios under which RepCl permits efficient replay of events."
+    },
+    {
+      "rect" : [
+        53.529000000000003,
+        389.4128288,
+        242.03254579200001,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "To understand why we may need to limit RepCl to specific sce-"
+        }
+      ],
+      "text" : "To understand why we may need to limit RepCl to specific sce-"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        378.4538288,
+        240.24912883200011,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "narios, observe that if the underlying system was asynchronous"
+        }
+      ],
+      "text" : "narios, observe that if the underlying system was asynchronous"
+    },
+    {
+      "rect" : [
+        53.529000000000003,
+        367.49482879999999,
+        240.68650086399998,
+        8.428416000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "(unbounded clock drift) then it is required to have "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑂(𝑛)"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "vector"
+        }
+      ],
+      "text" : "(unbounded clock drift) then it is required to have 𝑂(𝑛)vector"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        356.53582879999999,
+        241.75817395200005,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "clocks to enable replay of events. Systems that communicate fre-"
+        }
+      ],
+      "text" : "clocks to enable replay of events. Systems that communicate fre-"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        345.57682879999999,
+        241.23202560000004,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "quently will need more information stored to replay events. Thus,"
+        }
+      ],
+      "text" : "quently will need more information stored to replay events. Thus,"
+    },
+    {
+      "rect" : [
+        53.466999999999999,
+        334.60886240000002,
+        240.57974214399997,
+        8.3835839999999848
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "we focus on the following problem: Given the amount of permissible"
+        }
+      ],
+      "text" : "we focus on the following problem: Given the amount of permissible"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        323.64986240000002,
+        240.249128832,
+        8.3387519999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "overhead for logging events, what are the scenarios where perfect"
+        }
+      ],
+      "text" : "overhead for logging events, what are the scenarios where perfect"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        312.69186240000005,
+        96.801254399999976,
+        8.3387519999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "replay of events is possible?"
+        }
+      ],
+      "text" : "replay of events is possible?"
+    },
+    {
+      "rect" : [
+        63.761000000000003,
+        301.74182880000001,
+        230.51700351360003,
+        8.4911807999999951
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9798496000000014,
+          "text" : "Contributions of the paper: We present RepCl, a reply clock"
+        }
+      ],
+      "text" : "Contributions of the paper: We present RepCl, a reply clock"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        290.7828288,
+        241.76244195840002,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9036352000000001,
+          "text" : "that enables the replay of events in a distributed system. It guaran-"
+        }
+      ],
+      "text" : "that enables the replay of events in a distributed system. It guaran-"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        279.8238288,
+        157.3164496,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "tees that if there is a causal relation ["
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "6"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "] or if "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        }
+      ],
+      "text" : "tees that if there is a causal relation [6] or if 𝑓 "
+    },
+    {
+      "rect" : [
+        214.708,
+        279.8238288,
+        79.338473087999972,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "occurred far later than"
+        }
+      ],
+      "text" : "occurred far later than"
+    },
+    {
+      "rect" : [
+        53.484000000000002,
+        268.8648288,
+        240.5566092416,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0381312000000005,
+          "text" : "then "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0381312000000005,
+          "text" : ", i.e., the replay will cause "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0381312000000005,
+          "text" : "to replayed"
+        }
+      ],
+      "text" : "𝑒 then 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓, i.e., the replay will cause 𝑒 to replayed"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        257.90582879999999,
+        240.24750675199999,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "before "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : ". On the other hand, if "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "are causally concurrent and"
+        }
+      ],
+      "text" : "before 𝑓. On the other hand, if 𝑒 and 𝑓 are causally concurrent and"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        246.94682879999999,
+        240.47617601280012,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9170848000000014,
+          "text" : "occurred close in physical time then they could be replayed in any"
+        }
+      ],
+      "text" : "occurred close in physical time then they could be replayed in any"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        235.98782879999999,
+        241.23268574719998,
+        8.4284159999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0157152000000007,
+          "text" : "order. By considering various system parameters, clock skew ("
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "E"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0157152000000007,
+          "text" : "),"
+        }
+      ],
+      "text" : "order. By considering various system parameters, clock skew (E),"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        225.02882879999999,
+        240.47922169600002,
+        8.4284159999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "message rate "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "(𝛼)"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : ", and message delay "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "(𝛿)"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : ", we identify the feasibility"
+        }
+      ],
+      "text" : "message rate (𝛼), and message delay (𝛿), we identify the feasibility"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        214.06982879999998,
+        62.737900800000006,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "region for RepCl."
+        }
+      ],
+      "text" : "region for RepCl."
+    },
+    {
+      "rect" : [
+        63.761000000000003,
+        203.11082880000001,
+        230.28681414399998,
+        8.4911808000000235
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "Organization of the paper: The rest of the paper is organized"
+        }
+      ],
+      "text" : "Organization of the paper: The rest of the paper is organized"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        192.15282879999998,
+        240.249128832,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "as follows: In Section 2, we describe the model of computation"
+        }
+      ],
+      "text" : "as follows: In Section 2, we describe the model of computation"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        181.19382880000001,
+        240.47626567680015,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9305343999999991,
+          "text" : "for distributed systems including the notion of causality and clock"
+        }
+      ],
+      "text" : "for distributed systems including the notion of causality and clock"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        170.2348288,
+        240.47777203199996,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "synchronization. In Section 3, we discuss the problem of replay"
+        }
+      ],
+      "text" : "synchronization. In Section 3, we discuss the problem of replay"
+    },
+    {
+      "rect" : [
+        53.466999999999999,
+        159.2758288,
+        240.57503953919996,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8946687999999998,
+          "text" : "with clocks. Section 4 presents our algorithm for RepCl. Properties"
+        }
+      ],
+      "text" : "with clocks. Section 4 presents our algorithm for RepCl. Properties"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        148.3168288,
+        240.25004340480012,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9753664000000004,
+          "text" : "of RepCl for solving the replay algorithm are discussed in Section"
+        }
+      ],
+      "text" : "of RepCl for solving the replay algorithm are discussed in Section"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        137.35782879999999,
+        241.62620647680001,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8901855999999988,
+          "text" : "5. Section 6 identifies the representation of RepCl and its overhead."
+        }
+      ],
+      "text" : "5. Section 6 identifies the representation of RepCl and its overhead."
+    },
+    {
+      "rect" : [
+        53.368000000000002,
+        126.3988288,
+        240.67728339840005,
+        8.3746176000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9619168000000009,
+          "text" : "We discuss our simulation results in Section 7. Section 8 discusses"
+        }
+      ],
+      "text" : "We discuss our simulation results in Section 7. Section 8 discusses"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        115.4398288,
+        241.63013376000004,
+        8.3746176000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "related work and Section 9 identifies questions raised by RepCl."
+        }
+      ],
+      "text" : "related work and Section 9 identifies questions raised by RepCl."
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        104.48082880000001,
+        217.56969600000002,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Finally, in Section 10, we conclude and discuss future work."
+        }
+      ],
+      "text" : "Finally, in Section 10, we conclude and discuss future work."
+    },
+    {
+      "rect" : [
+        434.97399999999999,
+        723.00020940000002,
+        123.22704600000003,
+        6.4368173999999954
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "Ishaan Lagwankar and Sandeep S Kulkarni"
+        }
+      ],
+      "text" : "Ishaan Lagwankar and Sandeep S Kulkarni"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        695.83099790000006,
+        101.88008489999999,
+        10.309099500000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.9091,
+          "text" : "2 PRELIMINARIES"
+        }
+      ],
+      "text" : "2 PRELIMINARIES"
+    },
+    {
+      "rect" : [
+        317.64100000000002,
+        682.56382880000001,
+        240.56444255999992,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "A distributed system is a set of processes 1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "..𝑛"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : ". Each process has three"
+        }
+      ],
+      "text" : "A distributed system is a set of processes 1..𝑛. Each process has three"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        671.60482879999995,
+        241.23545945600011,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "types of events (1) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑠𝑒𝑛𝑑"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : ", where it sends a message to another process,"
+        }
+      ],
+      "text" : "types of events (1) 𝑠𝑒𝑛𝑑, where it sends a message to another process,"
+    },
+    {
+      "rect" : [
+        317.68599999999998,
+        660.6458288,
+        240.51792248320015,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9484671999999996,
+          "text" : "(2) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑟𝑒𝑐𝑒𝑖𝑣𝑒"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9484671999999996,
+          "text" : ", where it receives a message from another process, and"
+        }
+      ],
+      "text" : "(2) 𝑟𝑒𝑐𝑒𝑖𝑣𝑒, where it receives a message from another process, and"
+    },
+    {
+      "rect" : [
+        317.68599999999998,
+        649.68682880000006,
+        191.19472960000002,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "(3) 𝑙𝑜𝑐𝑎𝑙, where it performs some local computation."
+        }
+      ],
+      "text" : "(3) 𝑙𝑜𝑐𝑎𝑙, where it performs some local computation."
+    },
+    {
+      "rect" : [
+        327.91800000000001,
+        638.69196320000003,
+        230.283879168,
+        8.4104831999999305
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "We define the happened-before (denoted by "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "hb"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ") relation ["
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "6"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "]"
+        }
+      ],
+      "text" : "We define the happened-before (denoted by hb) relation [6]"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        627.76882880000005,
+        173.15911680000005,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "among the events in a distributed computation."
+        }
+      ],
+      "text" : "among the events in a distributed computation."
+    },
+    {
+      "rect" : [
+        333.92199999999997,
+        610.49882879999996,
+        224.28074643200006,
+        8.4284160000000838
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "•"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "If "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "happened on the same process and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "occurred"
+        }
+      ],
+      "text" : "•If 𝑒 and 𝑓 happened on the same process and 𝑒 occurred"
+    },
+    {
+      "rect" : [
+        342.36400000000003,
+        599.50396320000004,
+        76.424607999999921,
+        8.4104831999999305
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "before 𝑓 then 𝑒 hb 𝑓."
+        }
+      ],
+      "text" : "before 𝑓 then 𝑒 hb 𝑓."
+    },
+    {
+      "rect" : [
+        333.92199999999997,
+        588.58182880000004,
+        224.27580432640008,
+        8.4284159999999702
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "•"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0426144000000015,
+          "text" : "If "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0426144000000015,
+          "text" : "was a send event and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0426144000000015,
+          "text" : "was the corresponding receive"
+        }
+      ],
+      "text" : "•If 𝑒 was a send event and 𝑓 was the corresponding receive"
+    },
+    {
+      "rect" : [
+        342.36400000000003,
+        577.58696320000001,
+        65.987608000000023,
+        8.4104831999999305
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "event then 𝑒 hb 𝑓."
+        }
+      ],
+      "text" : "event then 𝑒 hb 𝑓."
+    },
+    {
+      "rect" : [
+        333.92200000000008,
+        566.62796320000007,
+        225.26606015999999,
+        8.4642815999999357
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "•"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "The "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "hb "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "relation is transitive, i.e., if there exist events "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒,𝑓"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ","
+        }
+      ],
+      "text" : "•The hb relation is transitive, i.e., if there exist events 𝑒,𝑓,"
+    },
+    {
+      "rect" : [
+        342.36400000000003,
+        555.66896320000001,
+        163.57344959999989,
+        8.4104831999999305
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "and 𝑔such that 𝑒 hb 𝑔and 𝑔hb 𝑓 then 𝑒 hb 𝑓"
+        }
+      ],
+      "text" : "and 𝑔such that 𝑒 hb 𝑔and 𝑔hb 𝑓 then 𝑒 hb 𝑓"
+    },
+    {
+      "rect" : [
+        327.91800000000001,
+        538.39896320000003,
+        229.65152640000008,
+        8.4642815999999357
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "We say that "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒||𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "iff "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "¬(𝑒 hb𝑓)∧¬(𝑓 hb 𝑒)"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ". In other words, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒"
+        }
+      ],
+      "text" : "We say that 𝑒||𝑓 iff ¬(𝑒 hb𝑓)∧¬(𝑓 hb 𝑒). In other words, 𝑒"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        527.47582880000004,
+        240.24396294399997,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "is concurrent with "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "iff "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "did not happen before "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "did not"
+        }
+      ],
+      "text" : "is concurrent with 𝑓 iff 𝑒 did not happen before 𝑓 and 𝑓 did not"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        516.51682879999998,
+        60.617607999999962,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "happen before 𝑒."
+        }
+      ],
+      "text" : "happen before 𝑒."
+    },
+    {
+      "rect" : [
+        327.91800000000001,
+        505.55882880000001,
+        230.28666042240002,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9619168000000009,
+          "text" : "A timestamping algorithm assigns a timestamp for every event"
+        }
+      ],
+      "text" : "A timestamping algorithm assigns a timestamp for every event"
+    },
+    {
+      "rect" : [
+        317.64100000000002,
+        494.59982880000001,
+        240.56182777600003,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "in the system as soon as the event is created. Additionally, the"
+        }
+      ],
+      "text" : "𝑒 in the system as soon as the event is created. Additionally, the"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        483.64082880000001,
+        240.58173651199996,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "timestamping algorithm defines a "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "< "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "relation that identifies how"
+        }
+      ],
+      "text" : "timestamping algorithm defines a < relation that identifies how"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        472.68182880000001,
+        112.12483200000003,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "two timestamps are compared."
+        }
+      ],
+      "text" : "two timestamps are compared."
+    },
+    {
+      "rect" : [
+        327.91800000000001,
+        461.7228288,
+        230.45405414400011,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "As an illustration, Lamport’s logical clock assigns an integer"
+        }
+      ],
+      "text" : "As an illustration, Lamport’s logical clock assigns an integer"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        450.7638288,
+        240.24549900799997,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "timestamp "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑙.𝑒"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "to every event "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : ". The "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "< "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "relation for Lamport’s logical"
+        }
+      ],
+      "text" : "timestamp 𝑙.𝑒to every event 𝑒. The < relation for Lamport’s logical"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        439.8048288,
+        241.7659008,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "clocks is the standard < for integers. Likewise, the physical times-"
+        }
+      ],
+      "text" : "clocks is the standard < for integers. Likewise, the physical times-"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        428.84582879999999,
+        240.24955196800005,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9350176000000001,
+          "text" : "tamping algorithm assigns "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑝𝑡.𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9350176000000001,
+          "text" : "for every event "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9350176000000001,
+          "text" : "where "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑝𝑡.𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9350176000000001,
+          "text" : "is the"
+        }
+      ],
+      "text" : "tamping algorithm assigns 𝑝𝑡.𝑒 for every event 𝑒 where 𝑝𝑡.𝑒 is the"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        417.88682879999999,
+        241.7650748800001,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "physical time of the process where event "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "occurred when it oc-"
+        }
+      ],
+      "text" : "physical time of the process where event 𝑒 occurred when it oc-"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        406.92782879999999,
+        240.4145654400001,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "curred, and the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "< "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "relation is the same as that over integers. A vector"
+        }
+      ],
+      "text" : "curred, and the < relation is the same as that over integers. A vector"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        395.96882879999998,
+        240.41640089599997,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8812192000000003,
+          "text" : "clock ["
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8812192000000003,
+          "text" : "]["
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "7"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8812192000000003,
+          "text" : "] assigns event "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8812192000000003,
+          "text" : "a timestamp "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑣𝑐.𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8812192000000003,
+          "text" : "where "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑣𝑐.𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8812192000000003,
+          "text" : "is a vector"
+        }
+      ],
+      "text" : "clock [2][7] assigns event 𝑒 a timestamp 𝑣𝑐.𝑒 where 𝑣𝑐.𝑒 is a vector"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        385.01082880000001,
+        240.24564546560003,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9036352000000001,
+          "text" : "that includes an entry "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑣𝑐.𝑒.𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9036352000000001,
+          "text" : "for every process "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑗"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9036352000000001,
+          "text" : ". The "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "< "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9036352000000001,
+          "text" : "relation on"
+        }
+      ],
+      "text" : "that includes an entry 𝑣𝑐.𝑒.𝑗 for every process 𝑗. The < relation on"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        374.05182880000001,
+        239.61433120000009,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0157152000000007,
+          "text" : "two vector clocks "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑣𝑐.𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0157152000000007,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑣𝑐.𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0157152000000007,
+          "text" : "requires that each element in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑣𝑐.𝑒"
+        }
+      ],
+      "text" : "two vector clocks 𝑣𝑐.𝑒 and 𝑣𝑐.𝑓 requires that each element in 𝑣𝑐.𝑒"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        363.09282880000001,
+        240.24910096640002,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0470976000000007,
+          "text" : "is less than or equal to the corresponding element in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0470976000000007,
+          "text" : "and some"
+        }
+      ],
+      "text" : "is less than or equal to the corresponding element in 𝑓 and some"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        352.1338288,
+        240.41423084800005,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0112319999999997,
+          "text" : "element in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0112319999999997,
+          "text" : "is less than the corresponding element in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0112319999999997,
+          "text" : ". In other"
+        }
+      ],
+      "text" : "element in 𝑒 is less than the corresponding element in 𝑓. In other"
+    },
+    {
+      "rect" : [
+        317.62299999999999,
+        341.1748288,
+        241.95915584000005,
+        8.428416000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "words, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑣𝑐.𝑒 < 𝑣𝑐.𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "iff "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "(∀𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : ":: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑣𝑐.𝑒.𝑗 ≤𝑣𝑐.𝑓.𝑗)∧(∃𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : ":: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑣𝑐.𝑒.𝑗 < 𝑣𝑐.𝑓.𝑗)"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "."
+        }
+      ],
+      "text" : "words, 𝑣𝑐.𝑒 < 𝑣𝑐.𝑓 iff (∀𝑗 :: 𝑣𝑐.𝑒.𝑗 ≤𝑣𝑐.𝑓.𝑗)∧(∃𝑗 :: 𝑣𝑐.𝑒.𝑗 < 𝑣𝑐.𝑓.𝑗)."
+    },
+    {
+      "rect" : [
+        327.91800000000001,
+        330.2158288,
+        230.28480876800006,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "Note that while the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "< "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "relation is defined by the timestamping"
+        }
+      ],
+      "text" : "Note that while the < relation is defined by the timestamping"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        319.25682879999999,
+        241.75987118080008,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0067488000000004,
+          "text" : "algorithm, the properties of the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "< "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0067488000000004,
+          "text" : "relation vary. For example, log-"
+        }
+      ],
+      "text" : "algorithm, the properties of the < relation vary. For example, log-"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        308.26196320000003,
+        240.24659360000004,
+        8.4642815999999925
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "ical clocks provide one-way causality information, i.e., "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 hb𝑓 ⇒"
+        }
+      ],
+      "text" : "ical clocks provide one-way causality information, i.e., 𝑒 hb𝑓 ⇒"
+    },
+    {
+      "rect" : [
+        317.54300000000001,
+        297.33882879999999,
+        241.64960345600002,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑙.𝑒 < 𝑙.𝑓"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ". Vector clocks provide two-way causality information,"
+        }
+      ],
+      "text" : "𝑙.𝑒 < 𝑙.𝑓. Vector clocks provide two-way causality information,"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        286.34396320000002,
+        240.24421056,
+        8.4642815999999925
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "i.e., "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 hb𝑓 ⇔𝑣𝑐.𝑒 < 𝑣𝑐.𝑓"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ". By contrast, (unsynchronized) physical"
+        }
+      ],
+      "text" : "i.e., 𝑒 hb𝑓 ⇔𝑣𝑐.𝑒 < 𝑣𝑐.𝑓. By contrast, (unsynchronized) physical"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        275.42182880000001,
+        240.24678860159992,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9350176000000001,
+          "text" : "clocks may not provide any guarantees. For example, it is possible"
+        }
+      ],
+      "text" : "clocks may not provide any guarantees. For example, it is possible"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        264.42696320000005,
+        194.5126032,
+        8.4642815999999925
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "that (𝑒 hb𝑓)and 𝑝𝑡.𝑒 ≮ 𝑝𝑡.𝑓 are simultaneously true."
+        }
+      ],
+      "text" : "that (𝑒 hb𝑓)and 𝑝𝑡.𝑒 ≮ 𝑝𝑡.𝑓 are simultaneously true."
+    },
+    {
+      "rect" : [
+        327.91800000000001,
+        253.50382880000001,
+        230.28773242880004,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9574335999999999,
+          "text" : "We assume that each process "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9574335999999999,
+          "text" : "in the system is associated with"
+        }
+      ],
+      "text" : "We assume that each process 𝑗 in the system is associated with"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        242.5448288,
+        240.24309299200007,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9170848000000014,
+          "text" : "a physical clock, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑝𝑡.𝑗"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9170848000000014,
+          "text" : ". Clocks of processes are synchronized with a"
+        }
+      ],
+      "text" : "a physical clock, 𝑝𝑡.𝑗. Clocks of processes are synchronized with a"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        231.5858288,
+        240.41638355200001,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "protocol such as NTP ["
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "9"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "] such that the clock of two processes differ"
+        }
+      ],
+      "text" : "protocol such as NTP [9] such that the clock of two processes differ"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        220.6268288,
+        241.62715584000006,
+        8.4284159999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "by at most "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "E"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : ", where "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "E"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "is a parameter, i.e., "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "∀𝑗,𝑘 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : ":: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "|𝑝𝑡.𝑗−𝑝𝑡.𝑘|≤E"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "."
+        }
+      ],
+      "text" : "by at most E, where Eis a parameter, i.e., ∀𝑗,𝑘 :: |𝑝𝑡.𝑗−𝑝𝑡.𝑘|≤E."
+    },
+    {
+      "rect" : [
+        317.52500000000003,
+        209.6678288,
+        242.05747238400016,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "We also assume that individual clocks are monotonically increasing."
+        }
+      ],
+      "text" : "We also assume that individual clocks are monotonically increasing."
+    },
+    {
+      "rect" : [
+        317.52500000000003,
+        198.6998624,
+        240.67761018879997,
+        8.3835839999999848
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0201983999999999,
+          "text" : "We assume that messages are delivered with a minimum message"
+        }
+      ],
+      "text" : "We assume that messages are delivered with a minimum message"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        187.7408624,
+        240.24878470400012,
+        8.3835839999999848
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "delay of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝛿"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ". We do not assume maximum message delay; it could"
+        }
+      ],
+      "text" : "delay of 𝛿. We do not assume maximum message delay; it could"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        176.79082879999999,
+        240.24627609600014,
+        8.4284159999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "be "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "∞"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "if messages are permitted to be lost. Since our focus is on"
+        }
+      ],
+      "text" : "be ∞if messages are permitted to be lost. Since our focus is on"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        165.83282879999999,
+        240.24572159999997,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "the replay of events, if a message is lost, it simply implies that the"
+        }
+      ],
+      "text" : "the replay of events, if a message is lost, it simply implies that the"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        154.87382879999998,
+        180.72675839999999,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "corresponding receive message is never replayed."
+        }
+      ],
+      "text" : "corresponding receive message is never replayed."
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        128.70799790000001,
+        138.33829709999998,
+        10.309099500000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.9091,
+          "text" : "3 REPLAY WITH CLOCKS"
+        }
+      ],
+      "text" : "3 REPLAY WITH CLOCKS"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        115.4398288,
+        240.24912883200005,
+        8.3746176000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "In this section, we focus on how clocks can be used to replay a"
+        }
+      ],
+      "text" : "In this section, we focus on how clocks can be used to replay a"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        104.48082880000001,
+        240.24733555200004,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "given computation. We also discuss some of the limitations of using"
+        }
+      ],
+      "text" : "given computation. We also discuss some of the limitations of using"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        93.521828800000009,
+        240.24733555200004,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "logical clocks and vector clocks in the replay process. Note that the"
+        }
+      ],
+      "text" : "logical clocks and vector clocks in the replay process. Note that the"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        82.56382880000001,
+        240.24733555200004,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "goal of this section is only to illustrate the concept and the goals of"
+        }
+      ],
+      "text" : "goal of this section is only to illustrate the concept and the goals of"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "arxiv-replay-clocks-2023",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        723.00020940000002,
+        137.32109580000002,
+        6.4368173999999954
+      ],
+      "text" : "Conference’17, July 2017, Washington, DC, USA"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        696.26182879999999,
+        240.249128832,
+        8.374617599999965
+      ],
+      "text" : "possible that the white LED event could be replayed before the"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        685.30282880000004,
+        158.32869120000004,
+        8.374617599999965
+      ],
+      "text" : "green LED event. This is also unacceptable."
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        63.761000000000003,
+        674.34382879999998,
+        230.28065587199998,
+        8.374617599999965
+      ],
+      "text" : "Hybrid logical clocks (HLC) [4][5] combine logical clocks and"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        663.38482880000004,
+        241.75817395200011,
+        8.374617599999965
+      ],
+      "text" : "physical clocks. Specifically, they rely on a system where physi-"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        652.42682879999995,
+        240.47777203200008,
+        8.374617599999965
+      ],
+      "text" : "cal clocks are synchronized within the acceptable limit of clock"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        641.46782880000001,
+        240.24583980800003,
+        8.4284159999999702
+      ],
+      "text" : "skew, E, they guarantee that ℎ𝑙𝑐.𝑒 < ℎ𝑙𝑐.𝑓 if 𝑒 happened before"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.247,
+        630.50882879999995,
+        239.79929440000001,
+        8.4284159999999702
+      ],
+      "text" : "𝑓 or 𝑝𝑡.𝑒+E< 𝑝𝑡.𝑓 ([6]). Here, ℎ𝑙𝑐.𝑒 denotes the Hybrid Logical"
+    },
+    {
+      "fontSize" : 8.9036352000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        619.5498288,
+        240.2477356672,
+        8.374617599999965
+      ],
+      "text" : "Clock of process 𝑒, and 𝑝𝑡.𝑒 denotes the physical time observed on"
+    },
+    {
+      "fontSize" : 8.8946687999999998,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        608.59082880000005,
+        240.24368386560002,
+        8.374617599999965
+      ],
+      "text" : "process 𝑒. In other words, ℎ𝑙𝑐.𝑒 < ℎ𝑙𝑐.𝑓 if 𝑓 causally depends upon"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.484000000000002,
+        597.63182879999999,
+        240.56384166399997,
+        8.374617599999965
+      ],
+      "text" : "𝑒 or 𝑓 occurred substantially after 𝑒. They eliminate the problem"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        586.67282880000005,
+        240.47777203200008,
+        8.374617599999965
+      ],
+      "text" : "associated with physical clocks as HLC respects causality. They"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        575.71382879999999,
+        239.61886559999999,
+        8.374617599999965
+      ],
+      "text" : "also eliminate the problem caused by vector clocks as the 𝐻𝐿𝐶"
+    },
+    {
+      "fontSize" : 9.0515808,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        564.75482880000004,
+        239.61886559999999,
+        8.374617599999965
+      ],
+      "text" : "timestamp of activating the green LED will be less than the 𝐻𝐿𝐶"
+    },
+    {
+      "fontSize" : 9.0426144000000015,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        553.79582879999998,
+        240.42049148160004,
+        8.374617599999965
+      ],
+      "text" : "timestamp of activating the white LED. 𝐻𝐿𝐶 does create another"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        542.83782880000001,
+        240.24732064,
+        8.374617599999965
+      ],
+      "text" : "problem though. Consider the case where we have events 𝑒 and"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.247,
+        531.87882879999995,
+        240.02833921920001,
+        8.4284159999999702
+      ],
+      "text" : "𝑓 such that |𝑝𝑡.𝑒−𝑝𝑡.𝑓|< Eand 𝑒||𝑓, i.e., the events are causally"
+    },
+    {
+      "fontSize" : 8.9529503999999989,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        520.9198288,
+        240.24908399999998,
+        8.374617599999965
+      ],
+      "text" : "concurrent and very close to each other in physical time. Without"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        509.96082879999994,
+        240.47716019199999,
+        8.374617599999965
+      ],
+      "text" : "loss of generality, let ℎ𝑙𝑐.𝑒 < ℎ𝑙𝑐.𝑓. In this situation, when we replay"
+    },
+    {
+      "fontSize" : 8.9932991999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        499.0018288,
+        240.2478963968,
+        8.3746176000000219
+      ],
+      "text" : "the log, 𝑒 will always occur before 𝑓. In other words, the log does"
+    },
+    {
+      "fontSize" : 8.9529503999999989,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        488.0428288,
+        238.37244960000004,
+        8.3746176000000219
+      ],
+      "text" : "not have the necessary information that could allow it to replay 𝑓"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        477.08382879999999,
+        240.24368889600015,
+        8.3746176000000219
+      ],
+      "text" : "before 𝑒 even though they could have occurred in any order. An"
+    },
+    {
+      "fontSize" : 8.9260511999999999,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        466.12482879999999,
+        240.2448577536,
+        8.3746176000000219
+      ],
+      "text" : "extension of HLC, hybrid vector clocks [12] reduces some of these"
+    },
+    {
+      "fontSize" : 8.9350176000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        455.16582879999999,
+        240.24678860160009,
+        8.3746176000000219
+      ],
+      "text" : "issues. However, as we highlight in Section 5, this overhead is still"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        444.20682879999998,
+        39.317664000000008,
+        8.3746176000000219
+      ],
+      "text" : "quite high."
+    },
+    {
+      "fontSize" : 8.9081183999999993,
+      "monospaced" : false,
+      "rect" : [
+        63.761000000000003,
+        433.24782879999998,
+        230.28160337280011,
+        8.3746176000000219
+      ],
+      "text" : "Based on these limitations, in this paper, we focus on building a"
+    },
+    {
+      "fontSize" : 9.024681600000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        422.28982880000001,
+        240.41695294080012,
+        8.3746176000000219
+      ],
+      "text" : "new clock, RepCl, that combines hybrid logical clocks and vector"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        411.33082880000001,
+        240.24733555200015,
+        8.3746176000000219
+      ],
+      "text" : "clocks so as to eliminate their limitations. Our goal is to investigate"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        400.3718288,
+        241.63013376000004,
+        8.3746176000000219
+      ],
+      "text" : "scenarios under which RepCl permits efficient replay of events."
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.529000000000003,
+        389.4128288,
+        242.03254579200001,
+        8.3746176000000219
+      ],
+      "text" : "To understand why we may need to limit RepCl to specific sce-"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        378.4538288,
+        240.24912883200011,
+        8.3746176000000219
+      ],
+      "text" : "narios, observe that if the underlying system was asynchronous"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.529000000000003,
+        367.49482879999999,
+        240.68650086399998,
+        8.428416000000027
+      ],
+      "text" : "(unbounded clock drift) then it is required to have 𝑂(𝑛)vector"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        356.53582879999999,
+        241.75817395200005,
+        8.3746176000000219
+      ],
+      "text" : "clocks to enable replay of events. Systems that communicate fre-"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        345.57682879999999,
+        241.23202560000004,
+        8.3746176000000219
+      ],
+      "text" : "quently will need more information stored to replay events. Thus,"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        53.466999999999999,
+        334.60886240000002,
+        240.57974214399997,
+        8.3835839999999848
+      ],
+      "text" : "we focus on the following problem: Given the amount of permissible"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        323.64986240000002,
+        240.249128832,
+        8.3387519999999995
+      ],
+      "text" : "overhead for logging events, what are the scenarios where perfect"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        312.69186240000005,
+        96.801254399999976,
+        8.3387519999999995
+      ],
+      "text" : "replay of events is possible?"
+    },
+    {
+      "fontSize" : 8.9798496000000014,
+      "monospaced" : false,
+      "rect" : [
+        63.761000000000003,
+        301.74182880000001,
+        230.51700351360003,
+        8.4911807999999951
+      ],
+      "text" : "Contributions of the paper: We present RepCl, a reply clock"
+    },
+    {
+      "fontSize" : 8.9036352000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        290.7828288,
+        241.76244195840002,
+        8.3746176000000219
+      ],
+      "text" : "that enables the replay of events in a distributed system. It guaran-"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        279.8238288,
+        157.3164496,
+        8.3746176000000219
+      ],
+      "text" : "tees that if there is a causal relation [6] or if 𝑓"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        214.708,
+        279.8238288,
+        79.338473087999972,
+        8.3746176000000219
+      ],
+      "text" : "occurred far later than"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.484000000000002,
+        268.8648288,
+        240.5566092416,
+        8.3746176000000219
+      ],
+      "text" : "𝑒 then 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓, i.e., the replay will cause 𝑒 to replayed"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        257.90582879999999,
+        240.24750675199999,
+        8.3746176000000219
+      ],
+      "text" : "before 𝑓. On the other hand, if 𝑒 and 𝑓 are causally concurrent and"
+    },
+    {
+      "fontSize" : 8.9170848000000014,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        246.94682879999999,
+        240.47617601280012,
+        8.3746175999999934
+      ],
+      "text" : "occurred close in physical time then they could be replayed in any"
+    },
+    {
+      "fontSize" : 9.0157152000000007,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        235.98782879999999,
+        241.23268574719998,
+        8.4284159999999986
+      ],
+      "text" : "order. By considering various system parameters, clock skew (E),"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        225.02882879999999,
+        240.47922169600002,
+        8.4284159999999986
+      ],
+      "text" : "message rate (𝛼), and message delay (𝛿), we identify the feasibility"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        214.06982879999998,
+        62.737900800000006,
+        8.3746175999999934
+      ],
+      "text" : "region for RepCl."
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        63.761000000000003,
+        203.11082880000001,
+        230.28681414399998,
+        8.4911808000000235
+      ],
+      "text" : "Organization of the paper: The rest of the paper is organized"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        192.15282879999998,
+        240.249128832,
+        8.3746175999999934
+      ],
+      "text" : "as follows: In Section 2, we describe the model of computation"
+    },
+    {
+      "fontSize" : 8.9305343999999991,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        181.19382880000001,
+        240.47626567680015,
+        8.3746175999999934
+      ],
+      "text" : "for distributed systems including the notion of causality and clock"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        170.2348288,
+        240.47777203199996,
+        8.3746175999999934
+      ],
+      "text" : "synchronization. In Section 3, we discuss the problem of replay"
+    },
+    {
+      "fontSize" : 8.8946687999999998,
+      "monospaced" : false,
+      "rect" : [
+        53.466999999999999,
+        159.2758288,
+        240.57503953919996,
+        8.3746175999999934
+      ],
+      "text" : "with clocks. Section 4 presents our algorithm for RepCl. Properties"
+    },
+    {
+      "fontSize" : 8.9753664000000004,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        148.3168288,
+        240.25004340480012,
+        8.3746175999999934
+      ],
+      "text" : "of RepCl for solving the replay algorithm are discussed in Section"
+    },
+    {
+      "fontSize" : 8.8901855999999988,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        137.35782879999999,
+        241.62620647680001,
+        8.3746175999999934
+      ],
+      "text" : "5. Section 6 identifies the representation of RepCl and its overhead."
+    },
+    {
+      "fontSize" : 8.9619168000000009,
+      "monospaced" : false,
+      "rect" : [
+        53.368000000000002,
+        126.3988288,
+        240.67728339840005,
+        8.3746176000000077
+      ],
+      "text" : "We discuss our simulation results in Section 7. Section 8 discusses"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        115.4398288,
+        241.63013376000004,
+        8.3746176000000077
+      ],
+      "text" : "related work and Section 9 identifies questions raised by RepCl."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        104.48082880000001,
+        217.56969600000002,
+        8.3746175999999934
+      ],
+      "text" : "Finally, in Section 10, we conclude and discuss future work."
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        434.97399999999999,
+        723.00020940000002,
+        123.22704600000003,
+        6.4368173999999954
+      ],
+      "text" : "Ishaan Lagwankar and Sandeep S Kulkarni"
+    },
+    {
+      "fontSize" : 10.9091,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        695.83099790000006,
+        101.88008489999999,
+        10.309099500000002
+      ],
+      "text" : "2 PRELIMINARIES"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        317.64100000000002,
+        682.56382880000001,
+        240.56444255999992,
+        8.374617599999965
+      ],
+      "text" : "A distributed system is a set of processes 1..𝑛. Each process has three"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        671.60482879999995,
+        241.23545945600011,
+        8.374617599999965
+      ],
+      "text" : "types of events (1) 𝑠𝑒𝑛𝑑, where it sends a message to another process,"
+    },
+    {
+      "fontSize" : 8.9484671999999996,
+      "monospaced" : false,
+      "rect" : [
+        317.68599999999998,
+        660.6458288,
+        240.51792248320015,
+        8.374617599999965
+      ],
+      "text" : "(2) 𝑟𝑒𝑐𝑒𝑖𝑣𝑒, where it receives a message from another process, and"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.68599999999998,
+        649.68682880000006,
+        191.19472960000002,
+        8.374617599999965
+      ],
+      "text" : "(3) 𝑙𝑜𝑐𝑎𝑙, where it performs some local computation."
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        327.91800000000001,
+        638.69196320000003,
+        230.283879168,
+        8.4104831999999305
+      ],
+      "text" : "We define the happened-before (denoted by hb) relation [6]"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        627.76882880000005,
+        173.15911680000005,
+        8.374617599999965
+      ],
+      "text" : "among the events in a distributed computation."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        333.92199999999997,
+        610.49882879999996,
+        224.28074643200006,
+        8.4284160000000838
+      ],
+      "text" : "•If 𝑒 and 𝑓 happened on the same process and 𝑒 occurred"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        342.36400000000003,
+        599.50396320000004,
+        76.424607999999921,
+        8.4104831999999305
+      ],
+      "text" : "before 𝑓 then 𝑒 hb 𝑓."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        333.92199999999997,
+        588.58182880000004,
+        224.27580432640008,
+        8.4284159999999702
+      ],
+      "text" : "•If 𝑒 was a send event and 𝑓 was the corresponding receive"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        342.36400000000003,
+        577.58696320000001,
+        65.987608000000023,
+        8.4104831999999305
+      ],
+      "text" : "event then 𝑒 hb 𝑓."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        333.92200000000008,
+        566.62796320000007,
+        225.26606015999999,
+        8.4642815999999357
+      ],
+      "text" : "•The hb relation is transitive, i.e., if there exist events 𝑒,𝑓,"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        342.36400000000003,
+        555.66896320000001,
+        163.57344959999989,
+        8.4104831999999305
+      ],
+      "text" : "and 𝑔such that 𝑒 hb 𝑔and 𝑔hb 𝑓 then 𝑒 hb 𝑓"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        327.91800000000001,
+        538.39896320000003,
+        229.65152640000008,
+        8.4642815999999357
+      ],
+      "text" : "We say that 𝑒||𝑓 iff ¬(𝑒 hb𝑓)∧¬(𝑓 hb 𝑒). In other words, 𝑒"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        527.47582880000004,
+        240.24396294399997,
+        8.374617599999965
+      ],
+      "text" : "is concurrent with 𝑓 iff 𝑒 did not happen before 𝑓 and 𝑓 did not"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        516.51682879999998,
+        60.617607999999962,
+        8.374617599999965
+      ],
+      "text" : "happen before 𝑒."
+    },
+    {
+      "fontSize" : 8.9619168000000009,
+      "monospaced" : false,
+      "rect" : [
+        327.91800000000001,
+        505.55882880000001,
+        230.28666042240002,
+        8.374617599999965
+      ],
+      "text" : "A timestamping algorithm assigns a timestamp for every event"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.64100000000002,
+        494.59982880000001,
+        240.56182777600003,
+        8.3746176000000219
+      ],
+      "text" : "𝑒 in the system as soon as the event is created. Additionally, the"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        483.64082880000001,
+        240.58173651199996,
+        8.3746176000000219
+      ],
+      "text" : "timestamping algorithm defines a < relation that identifies how"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        472.68182880000001,
+        112.12483200000003,
+        8.3746176000000219
+      ],
+      "text" : "two timestamps are compared."
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        327.91800000000001,
+        461.7228288,
+        230.45405414400011,
+        8.3746176000000219
+      ],
+      "text" : "As an illustration, Lamport’s logical clock assigns an integer"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        450.7638288,
+        240.24549900799997,
+        8.3746176000000219
+      ],
+      "text" : "timestamp 𝑙.𝑒to every event 𝑒. The < relation for Lamport’s logical"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        439.8048288,
+        241.7659008,
+        8.3746176000000219
+      ],
+      "text" : "clocks is the standard < for integers. Likewise, the physical times-"
+    },
+    {
+      "fontSize" : 8.9350176000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        428.84582879999999,
+        240.24955196800005,
+        8.3746176000000219
+      ],
+      "text" : "tamping algorithm assigns 𝑝𝑡.𝑒 for every event 𝑒 where 𝑝𝑡.𝑒 is the"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        417.88682879999999,
+        241.7650748800001,
+        8.3746176000000219
+      ],
+      "text" : "physical time of the process where event 𝑒 occurred when it oc-"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        406.92782879999999,
+        240.4145654400001,
+        8.3746176000000219
+      ],
+      "text" : "curred, and the < relation is the same as that over integers. A vector"
+    },
+    {
+      "fontSize" : 8.8812192000000003,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        395.96882879999998,
+        240.41640089599997,
+        8.3746176000000219
+      ],
+      "text" : "clock [2][7] assigns event 𝑒 a timestamp 𝑣𝑐.𝑒 where 𝑣𝑐.𝑒 is a vector"
+    },
+    {
+      "fontSize" : 8.9036352000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        385.01082880000001,
+        240.24564546560003,
+        8.3746176000000219
+      ],
+      "text" : "that includes an entry 𝑣𝑐.𝑒.𝑗 for every process 𝑗. The < relation on"
+    },
+    {
+      "fontSize" : 9.0157152000000007,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        374.05182880000001,
+        239.61433120000009,
+        8.3746176000000219
+      ],
+      "text" : "two vector clocks 𝑣𝑐.𝑒 and 𝑣𝑐.𝑓 requires that each element in 𝑣𝑐.𝑒"
+    },
+    {
+      "fontSize" : 9.0470976000000007,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        363.09282880000001,
+        240.24910096640002,
+        8.3746176000000219
+      ],
+      "text" : "is less than or equal to the corresponding element in 𝑓 and some"
+    },
+    {
+      "fontSize" : 9.0112319999999997,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        352.1338288,
+        240.41423084800005,
+        8.3746176000000219
+      ],
+      "text" : "element in 𝑒 is less than the corresponding element in 𝑓. In other"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        317.62299999999999,
+        341.1748288,
+        241.95915584000005,
+        8.428416000000027
+      ],
+      "text" : "words, 𝑣𝑐.𝑒 < 𝑣𝑐.𝑓 iff (∀𝑗 :: 𝑣𝑐.𝑒.𝑗 ≤𝑣𝑐.𝑓.𝑗)∧(∃𝑗 :: 𝑣𝑐.𝑒.𝑗 < 𝑣𝑐.𝑓.𝑗)."
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        327.91800000000001,
+        330.2158288,
+        230.28480876800006,
+        8.3746176000000219
+      ],
+      "text" : "Note that while the < relation is defined by the timestamping"
+    },
+    {
+      "fontSize" : 9.0067488000000004,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        319.25682879999999,
+        241.75987118080008,
+        8.3746176000000219
+      ],
+      "text" : "algorithm, the properties of the < relation vary. For example, log-"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        308.26196320000003,
+        240.24659360000004,
+        8.4642815999999925
+      ],
+      "text" : "ical clocks provide one-way causality information, i.e., 𝑒 hb𝑓 ⇒"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.54300000000001,
+        297.33882879999999,
+        241.64960345600002,
+        8.3746176000000219
+      ],
+      "text" : "𝑙.𝑒 < 𝑙.𝑓. Vector clocks provide two-way causality information,"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        286.34396320000002,
+        240.24421056,
+        8.4642815999999925
+      ],
+      "text" : "i.e., 𝑒 hb𝑓 ⇔𝑣𝑐.𝑒 < 𝑣𝑐.𝑓. By contrast, (unsynchronized) physical"
+    },
+    {
+      "fontSize" : 8.9350176000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        275.42182880000001,
+        240.24678860159992,
+        8.3746176000000219
+      ],
+      "text" : "clocks may not provide any guarantees. For example, it is possible"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        264.42696320000005,
+        194.5126032,
+        8.4642815999999925
+      ],
+      "text" : "that (𝑒 hb𝑓)and 𝑝𝑡.𝑒 ≮ 𝑝𝑡.𝑓 are simultaneously true."
+    },
+    {
+      "fontSize" : 8.9574335999999999,
+      "monospaced" : false,
+      "rect" : [
+        327.91800000000001,
+        253.50382880000001,
+        230.28773242880004,
+        8.3746176000000219
+      ],
+      "text" : "We assume that each process 𝑗 in the system is associated with"
+    },
+    {
+      "fontSize" : 8.9170848000000014,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        242.5448288,
+        240.24309299200007,
+        8.3746175999999934
+      ],
+      "text" : "a physical clock, 𝑝𝑡.𝑗. Clocks of processes are synchronized with a"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        231.5858288,
+        240.41638355200001,
+        8.3746175999999934
+      ],
+      "text" : "protocol such as NTP [9] such that the clock of two processes differ"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        220.6268288,
+        241.62715584000006,
+        8.4284159999999986
+      ],
+      "text" : "by at most E, where Eis a parameter, i.e., ∀𝑗,𝑘 :: |𝑝𝑡.𝑗−𝑝𝑡.𝑘|≤E."
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        317.52500000000003,
+        209.6678288,
+        242.05747238400016,
+        8.3746175999999934
+      ],
+      "text" : "We also assume that individual clocks are monotonically increasing."
+    },
+    {
+      "fontSize" : 9.0201983999999999,
+      "monospaced" : false,
+      "rect" : [
+        317.52500000000003,
+        198.6998624,
+        240.67761018879997,
+        8.3835839999999848
+      ],
+      "text" : "We assume that messages are delivered with a minimum message"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        187.7408624,
+        240.24878470400012,
+        8.3835839999999848
+      ],
+      "text" : "delay of 𝛿. We do not assume maximum message delay; it could"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        176.79082879999999,
+        240.24627609600014,
+        8.4284159999999986
+      ],
+      "text" : "be ∞if messages are permitted to be lost. Since our focus is on"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        165.83282879999999,
+        240.24572159999997,
+        8.3746175999999934
+      ],
+      "text" : "the replay of events, if a message is lost, it simply implies that the"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        154.87382879999998,
+        180.72675839999999,
+        8.3746175999999934
+      ],
+      "text" : "corresponding receive message is never replayed."
+    },
+    {
+      "fontSize" : 10.9091,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        128.70799790000001,
+        138.33829709999998,
+        10.309099500000002
+      ],
+      "text" : "3 REPLAY WITH CLOCKS"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        115.4398288,
+        240.24912883200005,
+        8.3746176000000077
+      ],
+      "text" : "In this section, we focus on how clocks can be used to replay a"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        104.48082880000001,
+        240.24733555200004,
+        8.3746175999999934
+      ],
+      "text" : "given computation. We also discuss some of the limitations of using"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        93.521828800000009,
+        240.24733555200004,
+        8.3746175999999934
+      ],
+      "text" : "logical clocks and vector clocks in the replay process. Note that the"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        82.56382880000001,
+        240.24733555200004,
+        8.3746175999999934
+      ],
+      "text" : "goal of this section is only to illustrate the concept and the goals of"
+    }
+  ],
+  "page" : 2,
+  "rightsBasis" : "arXiv abstract page declares CC BY 4.0. Retain attribution; not relicensed under MIT.",
+  "sourceSHA256" : "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
+  "sourceTitle" : "Replay Clocks",
+  "sourceURL" : "https://arxiv.org/pdf/2311.07842v1"
+}

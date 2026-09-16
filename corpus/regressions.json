@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27).",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker.",
       "pages": [
         {
           "page": 16,
@@ -168,6 +168,33 @@
             {
               "end": "cannot attach the wings to the fuselage at the exact desired",
               "next": "If they had to mount the wings too far forward"
+            }
+          ]
+        },
+        {
+          "page": 22,
+          "continuedParagraphs": [
+            {
+              "end": "become familiar with the parts and subparts that relate",
+              "next": "to flight training and pilot certification"
+            }
+          ]
+        },
+        {
+          "page": 24,
+          "continuedParagraphs": [
+            {
+              "end": "such as health and medical facts, flight",
+              "next": "safety, a pilot/controller glossary of terms"
+            }
+          ]
+        },
+        {
+          "page": 52,
+          "continuedParagraphs": [
+            {
+              "end": "Additionally, fatigue",
+              "next": "and low-altitude hypoxia serve to rob the pilot"
             }
           ]
         }
@@ -363,12 +390,18 @@
     {
       "id": "gpo-911-2004",
       "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
-      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27).",
+      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 13-16, 126-127, 192-193 and 357-358 visually reviewed (#45): the bottom folios 108, 174 and 339 on chapter-opening pages and the front-matter folios xiii/xv stay separate paragraphs that never absorb the following page's text, while the body paragraph above each chapter-opening folio continues onto the next page.",
       "pages": [
         {
           "page": 15,
           "text": [
             "We present the narrative of this report"
+          ],
+          "separateParagraphs": [
+            {
+              "end": "xv",
+              "next": "xvi PREFACE"
+            }
           ]
         },
         {
@@ -529,13 +562,71 @@
               "next": "Seconds later she said"
             }
           ]
+        },
+        {
+          "page": 13,
+          "separateParagraphs": [
+            {
+              "end": "xiii",
+              "next": "xiv COMMISSION STAFF"
+            }
+          ]
+        },
+        {
+          "page": 126,
+          "continuedParagraphs": [
+            {
+              "end": "The State Department detected his money in aid to",
+              "next": "set a bomb in an attempt to kill"
+            }
+          ],
+          "separateParagraphs": [
+            {
+              "end": "108",
+              "next": "set a bomb in an attempt to kill"
+            }
+          ]
+        },
+        {
+          "page": 127,
+          "paragraphs": ["set a bomb in an attempt to kill"]
+        },
+        {
+          "page": 192,
+          "continuedParagraphs": [
+            {
+              "end": "Suspecting that this was a signal for Abu Hoshar to commence a terrorist",
+              "next": "police arrested Abu Hoshar and 15 others"
+            }
+          ],
+          "separateParagraphs": [
+            {
+              "end": "174",
+              "next": "police arrested Abu Hoshar and 15 others"
+            }
+          ]
+        },
+        {
+          "page": 357,
+          "continuedParagraphs": [
+            {
+              "end": "It was carried out by a tiny group of people,",
+              "next": "not enough to man a full platoon"
+            }
+          ],
+          "separateParagraphs": [
+            {
+              "end": "339",
+              "next": "not enough to man a full platoon"
+            }
+          ]
         }
       ]
     },
     {
       "id": "fed-explained-2021",
       "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
-      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text.",
+      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Pages 11-12 and 21-22 visually reviewed (#45): the paragraph above Figure 1.3 and the ragged-right advisory-council paragraph each continue onto the next page as one paragraph across the source-page marker.",
       "pages": [
         {
           "page": 50,
@@ -650,6 +741,24 @@
             "PUBLIC EDUCATION & OUTREACH"
           ],
           "minimumImages": 1
+        },
+        {
+          "page": 11,
+          "continuedParagraphs": [
+            {
+              "end": "the effective conduct of monetary",
+              "next": "policy began to require increased collaboration and coordination"
+            }
+          ]
+        },
+        {
+          "page": 21,
+          "continuedParagraphs": [
+            {
+              "end": "The FAC ordinarily meets with the Board four times",
+              "next": "a year, as required by law"
+            }
+          ]
         }
       ]
     },
@@ -1257,7 +1366,7 @@
     {
       "id": "arxiv-replay-clocks-2023",
       "sourceSHA256": "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
-      "basis": "Source pages 1, 3 and 4 visually reviewed. Protects abstract, ACM reference and introduction order in the left column before the right-column drone illustration; section 3.1-3.2 order around Figure 1; and algorithm captions with surrounding prose in two-column order. Does not bless the rotated arXiv stamp or author names as headings, merged section labels, Unicode mathematical-italic variables or pseudocode split between text and crops (#36, #43).",
+      "basis": "Source pages 1, 3 and 4 visually reviewed. Protects abstract, ACM reference and introduction order in the left column before the right-column drone illustration; section 3.1-3.2 order around Figure 1; and algorithm captions with surrounding prose in two-column order. Does not bless the rotated arXiv stamp or author names as headings, merged section labels, Unicode mathematical-italic variables or pseudocode split between text and crops (#36, #43). Pages 1-2 visually reviewed (#45): the right-column paragraph that ends page 1 continues at the head of page 2's left column as one paragraph across the source-page marker.",
       "pages": [
         {
           "page": 1,
@@ -1269,6 +1378,12 @@
           ],
           "text": [
             "Ishaan Lagwankar and Sandeep S Kulkarni. 2023. Replay Clocks."
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "when we replay the log, it is",
+              "next": "possible that the white LED event could be replayed"
+            }
           ]
         },
         {

@@ -481,23 +481,211 @@ enum LayoutReconstructor {
     }
 
     /// Preserve the source boundary inside a continuing paragraph, without a format-specific marker.
-    static func appendPage(_ pageBlocks: [ReflowBlock], page: PageContent, previousPage: PageContent?,
+    ///
+    /// The join anchors are the last and first body paragraphs in reading order, past preserved
+    /// images, figure captions and bare folios that furniture removal kept (#45). Those blocks
+    /// stay on their page, ahead of the joined paragraph. Structure groups, geometry and the
+    /// preserved regions of both pages supply the evidence; see `continuation`.
+    static func appendPage(_ pageBlocks: [ReflowBlock], page: PageContent, images: [CGRect] = [],
+                           previousPage: PageContent?, previousImages: [CGRect] = [],
                            to blocks: inout [ReflowBlock], vocabulary: Set<String>,
                            warnings: inout [ConversionWarning]) {
         var remaining = pageBlocks
-        if let last = blocks.last, let first = remaining.first, let previousPage,
-           case let .paragraph(left) = last.content, case let .paragraph(right) = first.content,
-           last.structureGroup == first.structureGroup,
-           first.text.first?.isLowercase == true, last.text.last.map({ !".!?:".contains($0) }) == true,
-           previousPage.lines.last.map({ $0.rect.minY < previousPage.bounds.minY + previousPage.bounds.height * 0.2 }) == true,
-           page.lines.first.map({ $0.rect.maxY > page.bounds.minY + page.bounds.height * 0.8 }) == true {
-            blocks[blocks.count - 1].content = .paragraph(join(left, right, vocabulary: vocabulary,
-                page: page.number, sourceBoundary: page.number, warnings: &warnings))
-            remaining.removeFirst()
+        if let previousPage,
+           let anchors = continuation(from: blocks, previousPage: previousPage, previousImages: previousImages,
+                                      to: remaining, page: page, images: images),
+           case let .paragraph(left) = blocks[anchors.previous].content,
+           case let .paragraph(right) = remaining[anchors.next].content {
+            var joined = blocks[anchors.previous]
+            joined.content = .paragraph(join(left, right, vocabulary: vocabulary, page: page.number,
+                sourceBoundary: page.number, warnings: &warnings))
+            let trailing = Array(blocks[(anchors.previous + 1)...])
+            blocks.replaceSubrange(anchors.previous..., with: trailing + [joined])
+            remaining.remove(at: anchors.next)
         } else {
             blocks.append(ReflowBlock(content: .sourcePage(page.number), page: page.number))
         }
         blocks += remaining
+    }
+
+    /// The previous page's last body paragraph continues in the next page's first body paragraph
+    /// only when: neither block carries a different validated paragraph identity; the next text
+    /// starts lowercase and the previous text lacks terminal punctuation (past closing quotes and
+    /// superscript note markers); the previous paragraph's last line fills its column and reads
+    /// as prose; the next paragraph's first line is not a retained running header; and no other
+    /// prose lies below or right of that last line, or above or left of that first line. Text
+    /// inside a preserved region counts as prose when it is body-sized and wide, so a figure that
+    /// swallowed the real neighbour blocks the join instead of corrupting the text.
+    private static func continuation(from blocks: [ReflowBlock], previousPage: PageContent, previousImages: [CGRect],
+                                     to pageBlocks: [ReflowBlock], page: PageContent,
+                                     images: [CGRect]) -> (previous: Int, next: Int)? {
+        var previous = blocks.count - 1
+        while previous >= 0, blocks[previous].page == previousPage.number,
+              isSkippable(blocks[previous], page: previousPage) { previous -= 1 }
+        guard previous >= 0, case let .paragraph(left) = blocks[previous].content,
+              blocks[previous].page == previousPage.number
+                || blocks[previous].sourcePages.contains(previousPage.number) else { return nil }
+        var next = 0
+        while next < pageBlocks.count, isSkippable(pageBlocks[next], page: page) { next += 1 }
+        guard next < pageBlocks.count, case let .paragraph(right) = pageBlocks[next].content else { return nil }
+        // Two validated identities are the author's evidence; one untagged side keeps the heuristic.
+        if let leftGroup = blocks[previous].structureGroup, let rightGroup = pageBlocks[next].structureGroup,
+           leftGroup != rightGroup { return nil }
+        guard right.text.first?.isLowercase == true, !endsSentence(left),
+              let last = lastLine(of: left.text, in: previousPage.lines),
+              let first = firstLine(of: right.text, in: page.lines),
+              !isHeaderLike(first, in: page), wordCount(first.text) >= 2,
+              readsAsProse(last.text), readsAsProse(first.text),
+              fillsColumn(last, in: previousPage.lines, body: max(4, bodySize(previousPage.lines))),
+              endsColumn(last, in: previousPage, images: previousImages),
+              opensColumn(first, in: page, images: images) else { return nil }
+        return (previous, next)
+    }
+
+    /// Preserved images, figure captions and bare folios in the margin do not carry body text.
+    private static func isSkippable(_ block: ReflowBlock, page: PageContent) -> Bool {
+        switch block.content {
+        case .image: return true
+        case .paragraph: break
+        case .heading, .preformatted, .sourcePage: return false
+        }
+        let text = block.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        if isCaption(text) { return true }
+        return isFolio(text) && page.lines.contains {
+            $0.text.trimmingCharacters(in: .whitespaces) == text && inMargin($0, of: page)
+        }
+    }
+
+    private static func isCaption(_ text: String) -> Bool {
+        text.range(of: "^(?:Figure|Table)\\s+[0-9]", options: .regularExpression) != nil
+    }
+
+    /// An Arabic page number (optionally chapter-prefixed) or a Roman numeral.
+    private static func isFolio(_ text: String) -> Bool {
+        !text.isEmpty && text.range(of: "^(?:[0-9]+(?:-[0-9]+)?|m{0,3}(?:cm|cd|d?c{0,3})(?:xc|xl|l?x{0,3})(?:ix|iv|v?i{0,3}))$",
+            options: [.regularExpression, .caseInsensitive]) != nil
+    }
+
+    private static func inMargin(_ line: TextLine, of page: PageContent) -> Bool {
+        guard page.bounds.height > 0 else { return false }
+        let position = (line.rect.midY - page.bounds.minY) / page.bounds.height
+        return position <= 0.1 || position >= 0.9
+    }
+
+    /// Terminal punctuation, looking past closing quotes or brackets and superscript note markers.
+    private static func endsSentence(_ text: InlineText) -> Bool {
+        let closing: Set<Character> = ["\u{201D}", "\u{2019}", "\"", "'", ")", "]"]
+        for element in text.elements.reversed() {
+            guard case let .text(value, style) = element, !style.contains(.superscript),
+                  let ending = value.reversed().first(where: { !$0.isWhitespace && !closing.contains($0) }) else { continue }
+            return ".!?:".contains(ending)
+        }
+        return true
+    }
+
+    /// Every join appends the right-hand line verbatim, so a paragraph's last line is a suffix of
+    /// its text; its first line may have lost a line-ending hyphen to the join that followed.
+    private static func lastLine(of text: String, in lines: [TextLine]) -> TextLine? {
+        var best: (line: TextLine, length: Int)?
+        for line in lines {
+            let candidate = line.text.trimmingCharacters(in: .whitespaces)
+            guard !candidate.isEmpty, text.hasSuffix(candidate) else { continue }
+            if let current = best, current.length > candidate.count
+                || (current.length == candidate.count && current.line.rect.minY <= line.rect.minY) { continue }
+            best = (line, candidate.count)
+        }
+        return best?.line
+    }
+
+    private static func firstLine(of text: String, in lines: [TextLine]) -> TextLine? {
+        var best: (line: TextLine, length: Int)?
+        for line in lines {
+            var candidate = line.text.trimmingCharacters(in: .whitespaces)
+            if let hyphen = candidate.last, hyphen == "-" || hyphen == "\u{00ad}", !text.hasPrefix(candidate) {
+                candidate.removeLast()
+            }
+            guard !candidate.isEmpty, text.hasPrefix(candidate) else { continue }
+            if let current = best, current.length > candidate.count
+                || (current.length == candidate.count && current.line.rect.maxY >= line.rect.maxY) { continue }
+            best = (line, candidate.count)
+        }
+        return best?.line
+    }
+
+    /// A short line in the top band that opens or closes with a page number and is separated from
+    /// the text below it is a running header that furniture removal kept (`xiv COMMISSION STAFF`).
+    /// A paragraph's short final line at the head of a page carries no folio.
+    private static func isHeaderLike(_ line: TextLine, in page: PageContent) -> Bool {
+        let words = line.text.split(whereSeparator: \.isWhitespace)
+        guard page.bounds.height > 0, (line.rect.midY - page.bounds.minY) / page.bounds.height >= 0.9,
+              line.text.count < 100, let first = words.first, let last = words.last,
+              isFolio(String(first)) || isFolio(String(last)) else { return false }
+        let below = page.lines.filter { $0.rect.midY < line.rect.midY - line.rect.height * 0.4 }
+        guard let gap = below.map({ line.rect.minY - $0.rect.maxY }).min() else { return true }
+        return gap >= max(line.rect.height, page.bounds.height * 0.012)
+    }
+
+    private static func wordCount(_ text: String) -> Int {
+        text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count
+    }
+
+    /// Letters make up at least half of a prose line's ink; inherited OCR of a scanned table
+    /// row (`0 6 lip&,, tJ.() w. a,g`) does not qualify as a join anchor.
+    private static func readsAsProse(_ text: String) -> Bool {
+        let ink = text.filter { !$0.isWhitespace }
+        return !ink.isEmpty && ink.filter(\.isLetter).count * 2 >= ink.count
+    }
+
+    /// A paragraph cut by the page ends on a full prose line. The column is the same-size lines
+    /// sharing the line's left edge (widening to indented neighbours, then the page, until three
+    /// lines are found). A justified column, where most lines share the right edge, demands that
+    /// edge; a ragged column accepts three quarters of its measure. A line-ending hyphen is
+    /// continuation evidence on its own.
+    private static func fillsColumn(_ last: TextLine, in lines: [TextLine], body: CGFloat) -> Bool {
+        let text = last.text.trimmingCharacters(in: .whitespaces)
+        if let ending = text.last, ending == "-" || ending == "\u{00ad}" { return true }
+        guard wordCount(text) >= 3, last.rect.width >= body * 12 else { return false }
+        let size = Int(last.fontSize.rounded())
+        let sized = lines.filter { Int($0.fontSize.rounded()) == size }
+        guard let edges = [0.5, 1.5, CGFloat.infinity].lazy.map({ tolerance in
+            sized.filter { abs($0.rect.minX - last.rect.minX) < body * tolerance }.map(\.rect.maxX).sorted(by: >)
+        }).first(where: { $0.count >= 3 }) else { return false }
+        let reaching = edges.filter { $0 >= edges[0] - body * 0.5 }.count
+        if reaching * 5 >= edges.count * 3 { return last.rect.maxX >= edges[0] - body * 0.5 }
+        return last.rect.width >= (edges[2] - last.rect.minX) * 0.75
+    }
+
+    /// Text that competes with a join anchor: a line at least `share` of the anchor's width,
+    /// except captions and margin folios; inside a preserved region it must also be the
+    /// anchor's size, so figure labels do not count but swallowed body text does.
+    private static func isProse(_ other: TextLine, beside line: TextLine, share: CGFloat,
+                                page: PageContent, images: [CGRect]) -> Bool {
+        let text = other.text.trimmingCharacters(in: .whitespaces)
+        guard other != line, !text.isEmpty, other.rect.width >= line.rect.width * share,
+              !isCaption(text), !(isFolio(text) && inMargin(other, of: page)) else { return false }
+        guard images.contains(where: { $0.intersects(other.rect) }) else { return true }
+        return Int(other.fontSize.rounded()) == Int(line.fontSize.rounded())
+    }
+
+    /// Prose below the last line, even a short swallowed line, means the paragraph did not end
+    /// the page; a column of prose to its right (lines as wide as the anchor, so a name column
+    /// beside a hanging-indent entry does not count) means the anchor is not the last column.
+    private static func endsColumn(_ last: TextLine, in page: PageContent, images: [CGRect]) -> Bool {
+        !page.lines.contains { other in
+            let below = other.rect.midY < last.rect.minY && other.rect.maxX > last.rect.minX && other.rect.minX < last.rect.maxX
+            let beside = other.rect.minX >= last.rect.maxX
+            return below && isProse(other, beside: last, share: 0.5, page: page, images: images)
+                || beside && isProse(other, beside: last, share: 0.9, page: page, images: images)
+        }
+    }
+
+    private static func opensColumn(_ first: TextLine, in page: PageContent, images: [CGRect]) -> Bool {
+        !page.lines.contains { other in
+            let above = other.rect.midY > first.rect.maxY && other.rect.maxX > first.rect.minX && other.rect.minX < first.rect.maxX
+            let beside = other.rect.maxX <= first.rect.minX
+            return above && isProse(other, beside: first, share: 0.5, page: page, images: images)
+                || beside && isProse(other, beside: first, share: 0.9, page: page, images: images)
+        }
     }
 
     /// A numeric parenthesis marker set tight against a minus sign (`1)− 2`, as the algebra

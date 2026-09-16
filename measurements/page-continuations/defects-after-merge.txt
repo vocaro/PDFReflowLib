@@ -1,0 +1,48 @@
+== 9/11 prose swallowed into image regions (expected present after #36)
+--- 911 page 270: 1922 chars, 3 images, 6 paragraphs
+    'In the days just before 9/11': present
+    'about $26,000 altogether': present
+--- 911 page 306: 724 chars, 2 images, 2 paragraphs
+    'the South Tower stated that the incident': present
+    'beyond the contemplation': ABSENT
+--- 911 page 314: 2648 chars, 1 images, 3 paragraphs
+    'North Tower. In the North Tower': present
+    'only a few civilians were descending': present
+--- 911 page 315: 1693 chars, 3 images, 6 paragraphs
+    'Increased Mobilization': present
+    'The Repeater System': present
+--- 911 page 340: 2411 chars, 3 images, 7 paragraphs
+    'Evacuation Instructions': present
+    'A separate matter is the varied success': present
+9/11 pages 31-449 with images and <1200 chars: baseline 26, merged 26; merged list: [(33, 107, 2), (50, 1156, 1), (67, 1067, 1), (82, 1075, 1), (147, 0, 1), (162, 0, 1), (164, 1061, 2), (166, 1183, 2), (191, 415, 1), (192, 1110, 3), (196, 873, 2), (246, 0, 1), (256, 290, 11), (257, 300, 10), (279, 0, 1), (280, 870, 3), (297, 987, 2), (302, 814, 1), (306, 724, 2), (330, 131, 1), (331, 157, 2), (342, 0, 1), (347, 0, 1), (374, 1142, 1), (426, 1065, 1), (431, 40, 1)]
+== FAA column order / swallowed text
+--- faa page 199: 2152 chars, 3 images, 22 paragraphs
+    'systems are to be serviced': present
+    'free of oil, grease,': present
+    page 199 first paragraphs: ['breathing cycle because oxygen is only delivered d', 'Figure 7-45. Continuous flow mask and rebreather b', 'Figure 7-46. EDS-011 portable pulse-demand oxygen ', 'demand method of oxygen delivery can reduce the am', 'systems are to be serviced. Oxygen system servicin', 'that automatically compensates for changes in alti', 'be accomplished only when the aircraft is located ', 'increasing the amount of oxygen delivered for each']
+--- faa page 165: 2798 chars, 3 images, 40 paragraphs
+    'When operating altitude increases, the tachometer': present
+    'throughout its entire length': present
+    page 165 first paragraphs: ['installed depends upon its intended use. The climb', 'performance during takeoffs and climbs but decreas', 'The cruise propeller has a higher pitch, therefore', 'Figure 7-6. Changes in propeller blade angle from ']
+--- faa page 262: 3093 chars, 3 images, 38 paragraphs
+    'aircraft is operated in steady, level flight': present
+    'energy comes in two forms': present
+    page 262 first paragraphs: ['energy comes in two forms: (1) Kinetic Energy (KE)', 'Aircraft motion (KE) is described by its velocity ', 'Both KE and PE are directly proportional to the ob', 'Figure 11-5. Drag versus speed.']
+== Wallace prose swallowed by example regions
+--- wallace page 57: 2199 chars, 2 images, 13 paragraphs
+    'In kickboxing, one will find': present
+    'If we see this phrase in the': present
+--- wallace page 129: 1034 chars, 2 images, 11 paragraphs
+    'Solve, graph, and give interval notation': present
+    'Absolute value is greater, use OR': present
+--- wallace page 279: 1238 chars, 1 images, 7 paragraphs
+    'The trick for conversions will': present
+    'For example, 1 mile': present
+--- wallace page 288: 973 chars, 5 images, 7 paragraphs
+    'We can use the product rule to simplify': ABSENT
+    'The trick in this': ABSENT
+== Replay stray label
+--- replay page 8: 2023 chars, 8 images, 11 paragraphs
+    'sages/second.': present
+    'Messages/second': ABSENT
+    page 8 first paragraphs: ['sages/second.', 'Varying 𝛼: Here, we fix the 𝐼 and 𝛿, and', '7.2', 'Effect of Interval Size (𝐼)']

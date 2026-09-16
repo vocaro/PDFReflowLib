@@ -126,6 +126,29 @@ class CorpusContentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.check()
 
+    def test_paragraph_separation_rejects_a_folio_that_absorbed_the_continuation(self):
+        self.contract['pages'] = [{'page': 1, 'separateParagraphs': [{'end': '108', 'next': 'set a bomb'}]}]
+        split = self.epub('<span epub:type="pagebreak" id="page-1"/><p>the terrorists who'
+                          '<span epub:type="pagebreak" id="page-2"/> set a bomb</p>', '<p>108</p>')
+        absorbed = self.epub('<span epub:type="pagebreak" id="page-1"/><p>the terrorists who</p><p>108'
+                             '<span epub:type="pagebreak" id="page-2"/> set a bomb</p>', '<p>x</p>')
+        for path, passes in [(split, False), (absorbed, False)]:
+            pages, markers = read_pages(path)
+            self.assertEqual(self.check(pages=pages, markers=markers)['passed'], passes)
+        # The split output above fails only because the folio moved after the marker; on its own page it passes.
+        kept = self.epub('<span epub:type="pagebreak" id="page-1"/><p>108</p><p>the terrorists who'
+                         '<span epub:type="pagebreak" id="page-2"/> set a bomb</p>', '<p>x</p>')
+        pages, markers = read_pages(kept)
+        self.assertTrue(self.check(pages=pages, markers=markers)['passed'])
+        # Both phrases must exist, so a misspelled expectation cannot pass vacuously.
+        for missing in [{'end': 'nowhere', 'next': 'set a bomb'}, {'end': '108', 'next': 'nowhere'}]:
+            self.contract['pages'][0]['separateParagraphs'] = [missing]
+            self.assertFalse(self.check(pages=pages, markers=markers)['passed'])
+        for invalid in [{'end': 'x'}, {'end': '', 'next': 'y'}, {'end': 'x', 'next': 1}, ['x', 'y']]:
+            self.contract['pages'][0]['separateParagraphs'] = [invalid]
+            with self.assertRaises(ValueError):
+                self.check(pages=pages, markers=markers)
+
     def test_paragraph_parser_keeps_inline_styles_and_cross_page_ownership(self):
         path = self.epub('<span epub:type="pagebreak" id="page-1"/><h2>title</h2>'
                          '<p>al<strong>pha</strong> beta<span epub:type="pagebreak" id="page-2"/> gamma</p>',

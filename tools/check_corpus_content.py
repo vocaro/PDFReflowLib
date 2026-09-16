@@ -224,7 +224,7 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'paragraphs', 'continuedParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'paragraphs', 'continuedParagraphs', 'separateParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -262,6 +262,22 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
                        and after in following['paragraphIDs'][paragraph]
                        for paragraph, text in page.get('paragraphIDs', {}).items()):
                 errors.append(f'Page {number}: paragraph does not continue onto page {number + 1} {continuation!r}')
+        for separation in item.get('separateParagraphs', []):
+            if (not isinstance(separation, dict) or set(separation) != {'end', 'next'}
+                    or any(not isinstance(separation[k], str) or not normalized(separation[k]) for k in ('end', 'next'))):
+                raise ValueError('Paragraph separation requires nonempty end and next phrases')
+            checks += 1
+            end, after = normalized(separation['end']), normalized(separation['next'])
+            # Both phrases must exist as paragraph text, and no paragraph element may carry the first
+            # phrase on this page and the second on the next (a folio must not absorb continuation text).
+            if not any(end in text for text in page.get('paragraphIDs', {}).values()):
+                errors.append(f'Page {number}: missing paragraph {end!r} for separation check')
+            elif not any(after in text for text in following.get('paragraphIDs', {}).values()):
+                errors.append(f'Page {number + 1}: missing paragraph {after!r} for separation check')
+            elif any(end in text and paragraph in following.get('paragraphIDs', {})
+                     and after in following['paragraphIDs'][paragraph]
+                     for paragraph, text in page.get('paragraphIDs', {}).items()):
+                errors.append(f'Page {number}: paragraph wrongly continues onto page {number + 1} {separation!r}')
         cursor = 0
         for phrase in item.get('orderedText', []):
             if not normalized(phrase):

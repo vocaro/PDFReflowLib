@@ -50,14 +50,15 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 487 targeted checks on 112 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 502 targeted checks on 122 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 182 ordered-text, 61 text, 42 paragraph,
-26 heading, 31 absent-text, 13 script, 6 paragraph-continuation, 77 image-presence, 31 warning,
-1 absent-warning, 11 source-region, 3 glyph-structure and 3 image-appearance checks. All source-page
-anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
+the NBS and Replay Clocks academic papers). They comprise 182 ordered-text, 61 text, 43 paragraph,
+26 heading, 31 absent-text, 13 script, 15 paragraph-continuation, 5 paragraph-separation, 77
+image-presence, 31 warning, 1 absent-warning, 11 source-region, 3 glyph-structure and 3
+image-appearance checks. All source-page anchors must also remain complete and ordered, and
+semantic text must contain no image attachment placeholders.
 
 The checks preserve selected correct words, paragraph semantics and cross-page continuity, paragraph/list order, license attribution, image
 presence, source-region content, glyph-level equation and table structure, image scale/contrast/color
@@ -66,10 +67,17 @@ page boundaries inside styled text, preserve ownership across chapter-file conti
 exclude navigation/captions from source-text matching. They do not freeze serialization details
 or broken output such as interleaved columns and flattened exponents.
 
+`continuedParagraphs` (`{"end", "next"}` phrases that must share one paragraph element across the
+page marker) and `separateParagraphs` (the same shape, which must not: both phrases have to exist
+as paragraph text, and no element may carry the first on page N and the second on page N+1) cover
+cross-page continuity in both directions, so a page folio that absorbs the next page's text fails
+the separation check while the body paragraph's own continuation check protects the real join.
+
 The checker has negative controls for deleted text, text moved to the wrong page, reversed order,
 missing images, flattened or misplaced superscripts/subscripts, missing/wrong-page warnings, changed source identity, failed conversion, missing
-or duplicate page markers, and captions masquerading as source text. A list of assertions without
-such controls could silently pass despite a broken checker.
+or duplicate page markers, split or wrongly joined paragraphs across a page marker, and captions
+masquerading as source text. A list of assertions without such controls could silently pass
+despite a broken checker.
 
 Image-presence checks are weaker than visual fidelity checks. They cannot prove a flag's colors,
 a diagram's arrows or mathematical notation is correct. Unit pixel checks, source-image review and

@@ -1,0 +1,1396 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "1-10"
+        }
+      ],
+      "text" : "1-10"
+    },
+    {
+      "rect" : [
+        286.31590000000006,
+        308.38009999999997,
+        235.452,
+        420.04560000000015
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        285,
+        288.09070000000003,
+        237.00469999999996,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 1-15."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "A sample of handbooks available to the public. Most"
+        }
+      ],
+      "text" : "Figure 1-15. A sample of handbooks available to the public. Most"
+    },
+    {
+      "rect" : [
+        284.99600000000004,
+        276.19570000000004,
+        205.47899999999998,
+        10.206000000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "can be downloaded free of charge from the FAA website."
+        }
+      ],
+      "text" : "can be downloaded free of charge from the FAA website."
+    },
+    {
+      "rect" : [
+        58.868194600000002,
+        490.91873700000002,
+        184.72973200000001,
+        239.00697840000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36,
+        470.16860000000003,
+        172.15130000000005,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 1-14."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Aeronautical Information Manual."
+        }
+      ],
+      "text" : "Figure 1-14. Aeronautical Information Manual."
+    },
+    {
+      "rect" : [
+        285,
+        251.01310000000001,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of a text book used in a classroom or a one page document."
+        }
+      ],
+      "text" : "of a text book used in a classroom or a one page document."
+    },
+    {
+      "rect" : [
+        285,
+        238.51310000000001,
+        237.01499999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Some ACs are free while others cost money. They are to"
+        }
+      ],
+      "text" : "Some ACs are free while others cost money. They are to"
+    },
+    {
+      "rect" : [
+        285,
+        226.01310000000001,
+        237.02299999999991,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "be used for information only and are not regulations. The"
+        }
+      ],
+      "text" : "be used for information only and are not regulations. The"
+    },
+    {
+      "rect" : [
+        285,
+        213.51310000000001,
+        237.01699999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "FAA website www.faa.gov/regulations_policies/advisory_"
+        }
+      ],
+      "text" : "FAA website www.faa.gov/regulations_policies/advisory_"
+    },
+    {
+      "rect" : [
+        285,
+        201.01310000000001,
+        237.01099999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "circulars/ provides a database that is a searchable repository"
+        }
+      ],
+      "text" : "circulars/ provides a database that is a searchable repository"
+    },
+    {
+      "rect" : [
+        285,
+        188.51310000000001,
+        237.01599999999985,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of all aviation safety ACs. All ACs, current and historical,"
+        }
+      ],
+      "text" : "of all aviation safety ACs. All ACs, current and historical,"
+    },
+    {
+      "rect" : [
+        285,
+        176.01310000000001,
+        237.0300000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are provided and can be viewed as a portable document"
+        }
+      ],
+      "text" : "are provided and can be viewed as a portable document"
+    },
+    {
+      "rect" : [
+        285,
+        163.51310000000001,
+        78.600000000000023,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "format (PDF) copy."
+        }
+      ],
+      "text" : "format (PDF) copy."
+    },
+    {
+      "rect" : [
+        285,
+        138.51310000000001,
+        237.00499999999988,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ACs provide a single, uniform, agency-wide system that the"
+        }
+      ],
+      "text" : "ACs provide a single, uniform, agency-wide system that the"
+    },
+    {
+      "rect" : [
+        285,
+        126.01310000000001,
+        237.00400000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "FAA uses to deliver advisory material to FAA customers,"
+        }
+      ],
+      "text" : "FAA uses to deliver advisory material to FAA customers,"
+    },
+    {
+      "rect" : [
+        285,
+        113.51310000000001,
+        236.99799999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "industry, the aviation community, and the public. An AC"
+        }
+      ],
+      "text" : "industry, the aviation community, and the public. An AC"
+    },
+    {
+      "rect" : [
+        285,
+        101.01310000000001,
+        73.04000000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "may be needed to:"
+        }
+      ],
+      "text" : "may be needed to:"
+    },
+    {
+      "rect" : [
+        294,
+        84.013100000000009,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        312,
+        84.013100000000009,
+        210.00400000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Provide an acceptable, clearly understood method for"
+        }
+      ],
+      "text" : "Provide an acceptable, clearly understood method for"
+    },
+    {
+      "rect" : [
+        312,
+        71.513100000000009,
+        113.05000000000007,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "complying with a regulation"
+        }
+      ],
+      "text" : "complying with a regulation"
+    },
+    {
+      "rect" : [
+        36,
+        441.5231,
+        236.81000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "safety, a pilot/controller glossary of terms used in the"
+        }
+      ],
+      "text" : "safety, a pilot/controller glossary of terms used in the"
+    },
+    {
+      "rect" : [
+        36,
+        429.0231,
+        237.012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "system, and information on safety, accidents, and reporting"
+        }
+      ],
+      "text" : "system, and information on safety, accidents, and reporting"
+    },
+    {
+      "rect" : [
+        36,
+        416.5231,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of hazards. This manual is offered for sale on a subscription"
+        }
+      ],
+      "text" : "of hazards. This manual is offered for sale on a subscription"
+    },
+    {
+      "rect" : [
+        36,
+        404.0231,
+        221.94000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "basis or is available online at: http://bookstore.gpo.gov."
+        }
+      ],
+      "text" : "basis or is available online at: http://bookstore.gpo.gov."
+    },
+    {
+      "rect" : [
+        36,
+        379.0231,
+        237.01299999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Order forms are provided at the beginning of the manual or"
+        }
+      ],
+      "text" : "Order forms are provided at the beginning of the manual or"
+    },
+    {
+      "rect" : [
+        36,
+        366.5231,
+        237.14299999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "online and should be sent to the Superintendent of Documents,"
+        }
+      ],
+      "text" : "online and should be sent to the Superintendent of Documents,"
+    },
+    {
+      "rect" : [
+        36,
+        354.0231,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "United States Government Printing Office (GPO). The AIM"
+        }
+      ],
+      "text" : "United States Government Printing Office (GPO). The AIM"
+    },
+    {
+      "rect" : [
+        36,
+        341.5231,
+        237.01099999999985,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is complemented by other operational publications that are"
+        }
+      ],
+      "text" : "is complemented by other operational publications that are"
+    },
+    {
+      "rect" : [
+        36,
+        329.0231,
+        182.18999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "available via separate subscriptions or online."
+        }
+      ],
+      "text" : "available via separate subscriptions or online."
+    },
+    {
+      "rect" : [
+        36,
+        302.80160000000001,
+        51.953000000000003,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Handbooks"
+        }
+      ],
+      "text" : "Handbooks"
+    },
+    {
+      "rect" : [
+        36,
+        289.02460000000002,
+        236.92999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Handbooks are developed to provide specific information"
+        }
+      ],
+      "text" : "Handbooks are developed to provide specific information"
+    },
+    {
+      "rect" : [
+        36,
+        276.52460000000002,
+        236.82999999999981,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "about a particular topic that enhances training or understanding."
+        }
+      ],
+      "text" : "about a particular topic that enhances training or understanding."
+    },
+    {
+      "rect" : [
+        36,
+        264.02460000000002,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The FAA publishes a variety of handbooks that generally fall"
+        }
+      ],
+      "text" : "The FAA publishes a variety of handbooks that generally fall"
+    },
+    {
+      "rect" : [
+        36,
+        251.52460000000002,
+        237.06000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "into three categories: aircraft, aviation, and examiners and"
+        }
+      ],
+      "text" : "into three categories: aircraft, aviation, and examiners and"
+    },
+    {
+      "rect" : [
+        36,
+        239.02460000000002,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "inspectors."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : " [Figure 1-15]"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " These handbooks can be purchased"
+        }
+      ],
+      "text" : "inspectors. [Figure 1-15] These handbooks can be purchased"
+    },
+    {
+      "rect" : [
+        36,
+        226.52460000000002,
+        237.10000000000008,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "from the Superintendent of Documents or downloaded at www."
+        }
+      ],
+      "text" : "from the Superintendent of Documents or downloaded at www."
+    },
+    {
+      "rect" : [
+        36,
+        214.02460000000002,
+        237.13499999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "faa.gov/regulations_policies. Aviation handbooks are also"
+        }
+      ],
+      "text" : "faa.gov/regulations_policies. Aviation handbooks are also"
+    },
+    {
+      "rect" : [
+        36,
+        201.52460000000002,
+        237.04999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "published by various commercial aviation companies. Aircraft"
+        }
+      ],
+      "text" : "published by various commercial aviation companies. Aircraft"
+    },
+    {
+      "rect" : [
+        36,
+        189.02460000000002,
+        237.03999999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "flight manuals commonly called Pilot Operating Handbooks"
+        }
+      ],
+      "text" : "flight manuals commonly called Pilot Operating Handbooks"
+    },
+    {
+      "rect" : [
+        36,
+        176.52460000000002,
+        236.84599999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(POH) are documents developed by the airplane manufacturer,"
+        }
+      ],
+      "text" : "(POH) are documents developed by the airplane manufacturer,"
+    },
+    {
+      "rect" : [
+        36,
+        164.02460000000002,
+        237.029,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "approved by the FAA, and are specific to a particular make"
+        }
+      ],
+      "text" : "approved by the FAA, and are specific to a particular make"
+    },
+    {
+      "rect" : [
+        36,
+        151.52460000000002,
+        237.0200000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and model aircraft by serial number. This subject is covered"
+        }
+      ],
+      "text" : "and model aircraft by serial number. This subject is covered"
+    },
+    {
+      "rect" : [
+        36,
+        139.02460000000002,
+        237.01200000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in greater detail in Chapter 8, “Flight Manuals and Other"
+        }
+      ],
+      "text" : "in greater detail in Chapter 8, “Flight Manuals and Other"
+    },
+    {
+      "rect" : [
+        36,
+        126.52460000000002,
+        178.82999999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Documents,” of this handbook. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 1-16]"
+        }
+      ],
+      "text" : "Documents,” of this handbook. [Figure 1-16]"
+    },
+    {
+      "rect" : [
+        36,
+        97.801700000000011,
+        114.28999999999999,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Advisory Circulars (ACs)"
+        }
+      ],
+      "text" : "Advisory Circulars (ACs)"
+    },
+    {
+      "rect" : [
+        36,
+        84.02470000000001,
+        237.00600000000009,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "An AC is an informational document that the FAA wants to"
+        }
+      ],
+      "text" : "An AC is an informational document that the FAA wants to"
+    },
+    {
+      "rect" : [
+        36,
+        71.52470000000001,
+        237.0100000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "distribute to the aviation community. This can be in the form"
+        }
+      ],
+      "text" : "distribute to the aviation community. This can be in the form"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      284.81590000000006,
+      306.88009999999997,
+      238.45209999999997,
+      423.04610000000002
+    ],
+    [
+      55.008000000000003,
+      478.60599999999999,
+      193.36000000000001,
+      254.20000000000005
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "text" : "1-10"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        288.09070000000003,
+        237.00469999999996,
+        10.812000000000012
+      ],
+      "text" : "Figure 1-15. A sample of handbooks available to the public. Most"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        284.99600000000004,
+        276.19570000000004,
+        205.47899999999998,
+        10.206000000000017
+      ],
+      "text" : "can be downloaded free of charge from the FAA website."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        470.16860000000003,
+        172.15130000000005,
+        10.812000000000012
+      ],
+      "text" : "Figure 1-14. Aeronautical Information Manual."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        251.01310000000001,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "text" : "of a text book used in a classroom or a one page document."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        238.51310000000001,
+        237.01499999999999,
+        11.469999999999999
+      ],
+      "text" : "Some ACs are free while others cost money. They are to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        226.01310000000001,
+        237.02299999999991,
+        11.469999999999999
+      ],
+      "text" : "be used for information only and are not regulations. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        213.51310000000001,
+        237.01699999999994,
+        11.469999999999999
+      ],
+      "text" : "FAA website www.faa.gov/regulations_policies/advisory_"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        201.01310000000001,
+        237.01099999999997,
+        11.469999999999999
+      ],
+      "text" : "circulars/ provides a database that is a searchable repository"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        188.51310000000001,
+        237.01599999999985,
+        11.469999999999999
+      ],
+      "text" : "of all aviation safety ACs. All ACs, current and historical,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        176.01310000000001,
+        237.0300000000002,
+        11.469999999999999
+      ],
+      "text" : "are provided and can be viewed as a portable document"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        163.51310000000001,
+        78.600000000000023,
+        11.469999999999999
+      ],
+      "text" : "format (PDF) copy."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        138.51310000000001,
+        237.00499999999988,
+        11.469999999999999
+      ],
+      "text" : "ACs provide a single, uniform, agency-wide system that the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        126.01310000000001,
+        237.00400000000002,
+        11.469999999999999
+      ],
+      "text" : "FAA uses to deliver advisory material to FAA customers,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        113.51310000000001,
+        236.99799999999993,
+        11.469999999999999
+      ],
+      "text" : "industry, the aviation community, and the public. An AC"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        101.01310000000001,
+        73.04000000000002,
+        11.469999999999999
+      ],
+      "text" : "may be needed to:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        84.013100000000009,
+        3.5,
+        11.469999999999999
+      ],
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        84.013100000000009,
+        210.00400000000002,
+        11.469999999999999
+      ],
+      "text" : "Provide an acceptable, clearly understood method for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        71.513100000000009,
+        113.05000000000007,
+        11.469999999999999
+      ],
+      "text" : "complying with a regulation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        441.5231,
+        236.81000000000006,
+        11.470000000000027
+      ],
+      "text" : "safety, a pilot/controller glossary of terms used in the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        429.0231,
+        237.012,
+        11.470000000000027
+      ],
+      "text" : "system, and information on safety, accidents, and reporting"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        416.5231,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "text" : "of hazards. This manual is offered for sale on a subscription"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        404.0231,
+        221.94000000000005,
+        11.470000000000027
+      ],
+      "text" : "basis or is available online at: http://bookstore.gpo.gov."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        379.0231,
+        237.01299999999986,
+        11.470000000000027
+      ],
+      "text" : "Order forms are provided at the beginning of the manual or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        366.5231,
+        237.14299999999992,
+        11.470000000000027
+      ],
+      "text" : "online and should be sent to the Superintendent of Documents,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        354.0231,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "text" : "United States Government Printing Office (GPO). The AIM"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        341.5231,
+        237.01099999999985,
+        11.470000000000027
+      ],
+      "text" : "is complemented by other operational publications that are"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        329.0231,
+        182.18999999999997,
+        11.470000000000027
+      ],
+      "text" : "available via separate subscriptions or online."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        302.80160000000001,
+        51.953000000000003,
+        13.310000000000002
+      ],
+      "text" : "Handbooks"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        289.02460000000002,
+        236.92999999999995,
+        11.470000000000027
+      ],
+      "text" : "Handbooks are developed to provide specific information"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        276.52460000000002,
+        236.82999999999981,
+        11.470000000000027
+      ],
+      "text" : "about a particular topic that enhances training or understanding."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        264.02460000000002,
+        237,
+        11.470000000000027
+      ],
+      "text" : "The FAA publishes a variety of handbooks that generally fall"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        251.52460000000002,
+        237.06000000000006,
+        11.470000000000027
+      ],
+      "text" : "into three categories: aircraft, aviation, and examiners and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        239.02460000000002,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "text" : "inspectors. [Figure 1-15] These handbooks can be purchased"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        226.52460000000002,
+        237.10000000000008,
+        11.469999999999999
+      ],
+      "text" : "from the Superintendent of Documents or downloaded at www."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        214.02460000000002,
+        237.13499999999999,
+        11.469999999999999
+      ],
+      "text" : "faa.gov/regulations_policies. Aviation handbooks are also"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        201.52460000000002,
+        237.04999999999995,
+        11.469999999999999
+      ],
+      "text" : "published by various commercial aviation companies. Aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        189.02460000000002,
+        237.03999999999996,
+        11.469999999999999
+      ],
+      "text" : "flight manuals commonly called Pilot Operating Handbooks"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        176.52460000000002,
+        236.84599999999989,
+        11.469999999999999
+      ],
+      "text" : "(POH) are documents developed by the airplane manufacturer,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        164.02460000000002,
+        237.029,
+        11.469999999999999
+      ],
+      "text" : "approved by the FAA, and are specific to a particular make"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        151.52460000000002,
+        237.0200000000001,
+        11.469999999999999
+      ],
+      "text" : "and model aircraft by serial number. This subject is covered"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        139.02460000000002,
+        237.01200000000006,
+        11.469999999999999
+      ],
+      "text" : "in greater detail in Chapter 8, “Flight Manuals and Other"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        126.52460000000002,
+        178.82999999999998,
+        11.469999999999999
+      ],
+      "text" : "Documents,” of this handbook. [Figure 1-16]"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        97.801700000000011,
+        114.28999999999999,
+        13.310000000000002
+      ],
+      "text" : "Advisory Circulars (ACs)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        84.02470000000001,
+        237.00600000000009,
+        11.469999999999999
+      ],
+      "text" : "An AC is an informational document that the FAA wants to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        71.52470000000001,
+        237.0100000000001,
+        11.469999999999999
+      ],
+      "text" : "distribute to the aviation community. This can be in the form"
+    }
+  ],
+  "page" : 25,
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

@@ -1,0 +1,64 @@
+{
+  "issue": "https://github.com/vocaro/PDFReflowLib/issues/45",
+  "baselineCommit": "c16ee67431a498fbae32fa5b273218094a455b77",
+  "postMerge": {
+    "head": "95ff5b7 (branch tip: dc81a78 #28 raster tooling, 3507d7d #36 region rewrite, 95ff5b7 #38 encoding check)",
+    "baselineConverter": {
+      "build": "git archive dc81a78, swift build -c release, library defaults",
+      "sha256": "828a182c98fd2d7d8f95282c677bb9ae3715fb0ff1e5d392128319f1df673b51"
+    },
+    "finalConverter": {
+      "build": "swift build -c release with the #45 working tree on 95ff5b7 (adds the readsAsProse anchor guard)",
+      "sha256": "568e98f3ac338e1688595a9d3f264c700d4102c933dc3389a32388c0acea42a6"
+    },
+    "tests": {"swift": 238, "python": 157, "contractChecks": 502, "contractPages": 122},
+    "artifacts": ["joins-after-merge.txt", "text-changes-after-merge.txt", "defects-after-merge.txt",
+                  "corpus-summary-faa.json", "corpus-summary-big.json", "corpus-summary-small.json"]
+  },
+  "environment": {
+    "macOS": "27.0 (26A428)",
+    "xcode": "Xcode 27.0 Build version 27A266a",
+    "swift": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1), swift-driver 1.168.6",
+    "arch": "arm64",
+    "epubcheck": "/opt/homebrew/bin/epubcheck",
+    "poppler": "pdftoppm 26.04.0 (review renders only)"
+  },
+  "converters": {
+    "before": {
+      "build": "swift build -c release at c16ee67, library defaults",
+      "sha256": "fdf65b5ff780b771914b171a7a2481fb65c2ea9699e6f0491fcfc91fbc4bafef"
+    },
+    "after": {
+      "build": "swift build -c release with the #45 working tree, library defaults",
+      "sha256": "df18c255b44176efd6993c0417c32679f1c5351fdb451c6a5cc8344e0c2e8535"
+    }
+  },
+  "sources": {
+    "faa-phak-8083-25c": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+    "fed-explained-2021": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+    "arxiv-replay-clocks-2023": "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
+    "gpo-911-2004": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+    "wallace-algebra-2010": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+    "scotus-loper-bright-2024": "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e"
+  },
+  "fixtures": {
+    "faa-24-layout.json": "1edb69a976cc1f42b3ca519d9f636e15177b6bd9f8ac082ca882d3233df2e89e",
+    "faa-25-layout.json": "12a462b65076f9a6fc51002036aa730e670c6f893f730c763ce1d42189372faa",
+    "fed-11-layout.json": "45ff6f4ec706fda740f649b0f14d21cef91156d470a24141a3d45bfe8807f429",
+    "fed-12-layout.json": "2b627b34c6a656ac2dd1e812b2853714a5c220cc3350dabd868406b6f40d90c2",
+    "replay-1-layout.json": "88b6960a0a9873565be6aace68bf8d2f50c19941f19506acc283eb6f184e0d6c",
+    "replay-2-layout.json": "8d794c44c01236e7cb3b8fce118e92ddc8cb5077aa2b41c6d57dbfc6d3075c70",
+    "911-126-layout.json": "800734413c44726276c4f540adb55ea8d87b4e9dd6e7d89d1354a4cc157a4c89",
+    "911-127-layout.json": "133d70a54839ef6c0d49afb1e6926eb62844812a1547d6a859bd0406a18cf58b"
+  },
+  "commands": [
+    "swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/ConversionTypes.swift Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift Sources/PDFReflowLib/GraphicsReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift tools/capture-layout-fixture.swift -o /tmp/capture-layout-fixture",
+    "/tmp/capture-layout-fixture <case> <page> Tests/PDFReflowLibTests/fixtures/<name>-layout.json  (faa 24 25; fed 11 12; replay 1 2; 911 126 127)",
+    "python3 tools/run_corpus_regressions.py --converter <before or after binary> --epubcheck /opt/homebrew/bin/epubcheck --output <dir> --case arxiv-replay-clocks-2023 --case scotus-loper-bright-2024 --case fed-explained-2021 --case wallace-algebra-2010 --case gpo-911-2004",
+    "python3 tools/run_corpus_regressions.py --converter <before or after binary> --epubcheck /opt/homebrew/bin/epubcheck --output <dir> --case faa-phak-8083-25c",
+    "python3 measurements/page-continuations/compare_joins.py <before.epub> <after.epub> <case>  > joins-before-after.txt",
+    "python3 tools/check_corpus_content.py --case <case> --evaluation <before dir>  > before-contracts.json (per case)",
+    "swift test",
+    "scripts/check-all.sh --fast"
+  ]
+}

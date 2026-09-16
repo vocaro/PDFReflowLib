@@ -205,6 +205,7 @@ enum PDFReflowLibPipeline {
         var reflowed = 0
         var imageBytes: Int64 = 0
         var previous: PageContent?
+        var previousRegions: [CGRect] = []
         for i in 0..<total {
             try Task.checkCancellation()
             var content = try store.load(at: i)
@@ -212,6 +213,7 @@ enum PDFReflowLibPipeline {
                 furnitureWarnings.append(warning)
             }
             let previousPage = i > 0 && !chapterStartPages.contains(content.number) ? previous : nil
+            var regions: [CGRect] = []
             try autoreleasepool {
                 let page = try document.page(at: i)
                 func saveImage(_ rect: CGRect, fullPage: Bool = false, rotate: Bool = false) throws -> String {
@@ -238,6 +240,7 @@ enum PDFReflowLibPipeline {
                     for rect in LayoutReconstructor.graphicsWithLabels(content) {
                         images.append((rect, try saveImage(rect)))
                     }
+                    regions = images.map(\.0)
                     if !images.isEmpty {
                         warnings.append(.init(code: .imageRegion, page: i + 1,
                             message: "Graphical regions retain source appearance as images; their internal text does not reflow."))
@@ -261,10 +264,11 @@ enum PDFReflowLibPipeline {
                                 + "Compare the source PDF for visual content and transcription accuracy."))
                     }
                 }
-                LayoutReconstructor.appendPage(pageBlocks, page: content, previousPage: previousPage,
-                    to: &blocks, vocabulary: vocabulary, warnings: &warnings)
+                LayoutReconstructor.appendPage(pageBlocks, page: content, images: regions, previousPage: previousPage,
+                    previousImages: previousRegions, to: &blocks, vocabulary: vocabulary, warnings: &warnings)
             }
             previous = content
+            previousRegions = regions
             await progress(.init(stage: .reconstructing, fractionCompleted: 0.6875 + 0.3125 * Double(i + 1) / Double(total),
                 page: i + 1, totalPages: total))
         }

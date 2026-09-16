@@ -1,0 +1,21 @@
+cross-page joined blocks: 3 -> 3
+headings: 24 -> 24
+heading TEXT sequence differences:
+level changes (base -> new): total 24 headings shared
+unchanged level: 24
+
+chapter titles (numeral-led):
+   new  p1    h4  1 INTRODUCTION
+   new  p2    h4  2 PRELIMINARIES
+   new  p2    h4  3 REPLAY WITH CLOCKS
+   new  p3    h4  4 ALGORITHM FOR REPLAY CLOCK (REPCL)
+   new  p4    h4  5 PROPERTIES OF REPCL
+   new  p6    h4  6 REPRESENTATION OF REPCL AND ITS
+   new  p6    h4  7 SIMULATION RESULTS
+   base p1    h4  1 INTRODUCTION
+   base p2    h4  2 PRELIMINARIES
+   base p2    h4  3 REPLAY WITH CLOCKS
+   base p3    h4  4 ALGORITHM FOR REPLAY CLOCK (REPCL)
+   base p4    h4  5 PROPERTIES OF REPCL
+   base p6    h4  6 REPRESENTATION OF REPCL AND ITS
+   base p6    h4  7 SIMULATION RESULTS

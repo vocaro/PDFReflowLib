@@ -1,0 +1,14 @@
+cross-page joined blocks: 3 -> 3
+headings: 36 -> 38
+heading TEXT sequence differences:
+  delete
+    - p4    h4  JOINT COMMITTEE ON PRINTING
+  insert
+    + p18   h5  §174. Time and occasions for display
+    + p18   h5  §175. Position and manner of display
+  insert
+    + p24   h3  §176. Respect for the Flag
+level changes (base -> new): total 35 headings shared
+unchanged level: 35
+
+chapter titles (numeral-led):

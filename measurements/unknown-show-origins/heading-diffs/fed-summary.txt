@@ -1,0 +1,16 @@
+pages: 114 -> 114
+navigation headings: 161 -> 164
+   base {'h1': 1, 'h2': 1, 'h3': 9, 'h4': 28, 'h5': 63, 'h6': 59}
+   new  {'h1': 1, 'h2': 1, 'h3': 9, 'h4': 28, 'h5': 63, 'h6': 62}
+
+pages with differing joined text : 2 [60, 84]
+pages with differing block seq   : 15
+pages with differing images      : 0 []
+pages with differing heading set : 3
+pages with differing table count : 0 []
+total tables: 7 -> 7
+total images: 262 -> 262
+total blocks: 1233 -> 1240
+word multiset: lost 4, gained 2
+  lost   : [('prudential', 1), ('macro-', 1), ('li-', 1), ('quidity', 1)]
+  gained : [('macroprudential', 1), ('liquidity', 1)]

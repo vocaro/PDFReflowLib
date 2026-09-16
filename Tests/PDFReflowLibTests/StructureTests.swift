@@ -289,3 +289,174 @@ func captionsListsAndOversizedHeadingsKeepSpatialBoundaries(_ text: String) {
     }
     await #expect(throws: CancellationError.self) { try await task.value }
 }
+
+// MARK: - Unknown text-show origins (#67)
+
+/// The Fed Explained's running head: a positioned show, then further `/Artifact` sections whose
+/// shows carry no positioning operator of their own. An artifact holds no structure, so an origin
+/// this reader cannot derive inside one must cost the page's tags nothing.
+private let artifactRunningHead = """
+/Artifact << /O /Layout >> BDC BT /F1 8 Tf 1 0 0 1 40 760 Tm (vi) Tj EMC
+/Artifact << >> BDC ( ) Tj EMC
+/Artifact << >> BDC 2 0 Td (The Fed Explained) Tj EMC ET
+"""
+
+@Test func artifactShowWithoutAPositioningOperatorKeepsEveryGroupOnThePage() throws {
+    var objects = taggedObjects()
+    objects[4] = testPDFStream(artifactRunningHead + "\n" + """
+    /P << /MCID 0 >> BDC BT /F1 12 Tf 1 0 0 1 40 700 Tm (Small heading) Tj ET EMC
+    /Span << /MCID 1 >> BDC BT /F1 24 Tf 1 0 0 1 40 580 Tm (First paragraph line) Tj ET EMC
+    /P << /MCID 2 >> BDC BT /F1 24 Tf 1 0 0 1 80 510 Tm (second paragraph line.) Tj ET EMC
+    """)
+    try withTaggedPDF(objects) { url, page in
+        let blocks = try taggedBlocks(url, page)
+        #expect(blocks.map(\.text) == ["Small heading", "First paragraph line second paragraph line."])
+    }
+}
+
+@Test func unknownOriginInsideATaggedGroupRejectsOnlyThatGroup() throws {
+    var objects = taggedObjects()
+    // The paragraph's second show continues the first show's cursor, as a run-in style change
+    // does; its origin needs the font's glyph widths, which this reader deliberately lacks.
+    objects[4] = testPDFStream("""
+    /P << /MCID 0 >> BDC BT /F1 12 Tf 1 0 0 1 40 700 Tm (Small heading) Tj ET EMC
+    /Span << /MCID 1 >> BDC BT /F1 24 Tf 1 0 0 1 40 580 Tm (First paragraph line) Tj ET EMC
+    /P << /MCID 2 >> BDC BT /F1 24 Tf 1 0 0 1 80 510 Tm (second paragraph) Tj ( line.) Tj ET EMC
+    """)
+    try withTaggedPDF(objects) { url, page in
+        let tree = try StructureTreeReader.read(url)
+        let tags = try #require(tree.pages[1])
+        #expect(StructureTreeReader.validates(tags, owners: try #require(tree.owners[1]), page: page))
+        var lines = taggedLines()
+        // Only the paragraph group that showed the unplaceable text falls back. The heading
+        // beside it keeps its validated role, which the whole-page rule used to discard.
+        #expect(!MarkedTextReader.apply(tags, page: page, lines: &lines))
+        #expect(lines[0].structure?.headingLevel == 3)
+        #expect(lines[1].structure == nil && lines[2].structure == nil)
+    }
+}
+
+/// A chapter numeral set in display type shares one extracted line with the title beside it, and
+/// that line's box is tall enough to cover the origin of the title's second line.
+private func displayInitialObjects() -> [String] {
+    [
+        "<< /Type /Catalog /Pages 2 0 R /StructTreeRoot 6 0 R >>",
+        "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 600 800] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R /StructParents 0 >>",
+        "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+        testPDFStream(artifactRunningHead + "\n" + """
+        /Span << /MCID 1 >> BDC BT /F1 70 Tf 1 0 0 1 40 600 Tm (1) Tj ET EMC
+        /H2 << /MCID 0 >> BDC BT /F1 24 Tf 1 0 0 1 120 690 Tm (Overview of the) Tj 0 -30 Td (Federal Reserve) Tj ET EMC
+        """),
+        "<< /Type /StructTreeRoot /K [8 0 R] /ParentTree 7 0 R >>",
+        "<< /Nums [0 [8 0 R 9 0 R]] >>",
+        "<< /Type /StructElem /S /H2 /P 6 0 R /Pg 3 0 R /K [9 0 R 0] >>",
+        "<< /Type /StructElem /S /Span /P 8 0 R /K 1 >>",
+    ]
+}
+
+@Test(arguments: [true, false])
+func displayInitialLineDoesNotCaptureTheNextLineOrigin(_ startsAtTheOrigin: Bool) throws {
+    try withTaggedPDF(displayInitialObjects()) { url, page in
+        let tree = try StructureTreeReader.read(url)
+        let tags = try #require(tree.pages[1])
+        #expect(StructureTreeReader.validates(tags, owners: try #require(tree.owners[1]), page: page))
+        // The numeral's 70-point box spans both title lines. Only the ambiguity that exactly one
+        // left edge at the show's own origin resolves is used; anything else still falls back.
+        var lines = [TextLine(text: "1 Overview of the",
+                              rect: CGRect(x: 40, y: 590, width: 260, height: 120), fontSize: 24),
+                     TextLine(text: "Federal Reserve",
+                              rect: CGRect(x: startsAtTheOrigin ? 120 : 60, y: 655, width: 180, height: 26),
+                              fontSize: 24)]
+        #expect(MarkedTextReader.apply(tags, page: page, lines: &lines) == startsAtTheOrigin)
+        #expect(lines.allSatisfy { ($0.structure != nil) == startsAtTheOrigin })
+        #expect(!startsAtTheOrigin || lines[0].structure?.headingLevel == 2)
+    }
+}
+
+// MARK: - Consuming levels a partly reconstructable hierarchy supplies (#67)
+
+private func ranked(_ blocks: [(size: CGFloat, tagged: Int?)]) -> [Int] {
+    var document = blocks.enumerated().map { index, block -> ReflowBlock in
+        var result = ReflowBlock(content: .heading(id: "h\(index)", text: InlineText("Heading \(index)"), level: 2),
+                                 page: index + 1)
+        result.headingSize = block.size
+        result.taggedLevel = block.tagged
+        return result
+    }
+    LayoutReconstructor.rankHeadingLevels(&document)
+    return document.map { if case let .heading(_, _, level) = $0.content { level } else { 0 } }
+}
+
+@Test func aValidatedLevelYieldsWhenALargerHeadingWouldShareIt() {
+    // A cover title at 30 and chapter titles at 24 that the tags never reached, tagged `H3`
+    // sections at 16 over untagged 14 and 12. The typographic scale is 30/24/14/12, so the
+    // chapters already rank 3 and the sections' validated 3 would make them siblings of the
+    // larger titles above them: they rank by size instead, joining the scale they are ranked on.
+    #expect(ranked([(30, nil), (24, nil), (16, 3), (14, nil), (12, nil)]) == [2, 3, 4, 5, 6])
+    // With no such heading between them, the validated level holds and never joins the scale,
+    // so the untagged headings rank exactly as they did before any tag applied.
+    #expect(ranked([(30, nil), (16, 3), (12, nil)]) == [2, 3, 3])
+    #expect(ranked([(30, nil), (12, nil)]) == [2, 3])
+    // Nothing outranks a cover's `H1`, so it keeps level 1 and adds no tier of its own.
+    #expect(ranked([(30, 1), (24, nil), (12, nil)]) == [1, 2, 3])
+    #expect(ranked([(30, nil), (24, nil), (16, nil), (12, nil)]) == [2, 3, 4, 5])
+    // Our Flag's shape: `H3` tagged from 18 to 21 points with an untagged 20-point sibling inside
+    // that range. The sibling is not larger than every `H3`, so the validated levels hold.
+    #expect(ranked([(30, 1), (22, 2), (22, nil), (21, 3), (20, nil), (18, 3)]) == [1, 2, 2, 3, 3, 3])
+    // The Fed's shape: once `H3` yields to the larger untagged chapter titles, the `H4` and `H5`
+    // beneath it yield too, so the tagged 12-point `H5` cannot land beside the 14-point `H4`.
+    #expect(ranked([(40, 1), (24, nil), (16, 3), (14, 4), (12, 5)]) == [1, 2, 3, 4, 5])
+    #expect(ranked([(40, 1), (30, nil), (24, nil), (16, 3), (14, 4), (12, 5)]) == [1, 2, 3, 4, 5, 6])
+}
+
+/// A 20-point line tagged as a paragraph, in one of four page shapes.
+private enum LabelShape: String, CaseIterable {
+    /// Over the body it introduces, sharing its left edge (the Fed's `Advisory Councils`).
+    case overItsBody
+    /// Above a larger title (the Fed cover's `PUBLIC EDUCATION & OUTREACH`).
+    case aboveATitle
+    /// Centred well right of the text under it (Our Flag's title-page imprint).
+    case centredImprint
+    /// Heading the right column while the left column's text interleaves in reading order
+    /// (FAA page 194's `Pressurized Aircraft`).
+    case rightColumn
+}
+
+private func labelledPage(_ shape: LabelShape) -> PageContent {
+    let prose = "Five advisory committees assist and advise the Board on public policy."
+    var lines: [TextLine] = []
+    let labelX: CGFloat = switch shape { case .centredImprint: 200; case .rightColumn: 320; default: 60 }
+    var label = TextLine(text: "Advisory Councils", rect: CGRect(x: labelX, y: 700, width: 180, height: 20), fontSize: 20)
+    label.structure = TextStructure(group: 2, order: 2, headingLevel: 0, lineCount: 1)
+    lines.append(label)
+    if shape == .aboveATitle {
+        lines.append(TextLine(text: "Our Flag Explained", rect: CGRect(x: 60, y: 650, width: 300, height: 28), fontSize: 28))
+    }
+    let bodyX: CGFloat = shape == .rightColumn ? 320 : 60
+    let width: CGFloat = shape == .rightColumn ? 230 : 420
+    for i in 0..<6 {
+        lines.append(TextLine(text: prose, rect: CGRect(x: bodyX, y: 600 - CGFloat(i) * 13, width: width, height: 10),
+                              fontSize: 10))
+        if shape == .rightColumn {
+            lines.append(TextLine(text: "the ground is a second disadvantage of the tailwheel landing gear.",
+                                  rect: CGRect(x: 60, y: 606 - CGFloat(i) * 13, width: 230, height: 10), fontSize: 10))
+        }
+    }
+    return PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 612, height: 792), lines: lines, graphics: [])
+}
+
+@Test(arguments: LabelShape.allCases)
+private func aParagraphTagInHeadingTypeKeepsItsSpatialReadingOnlyWhereItHeadsTheTextBelow(_ shape: LabelShape) {
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: labelledPage(shape), images: [], vocabulary: [], warnings: &warnings)
+    let headings = blocks.compactMap { block -> String? in
+        if case let .heading(_, text, _) = block.content { text.text } else { nil }
+    }
+    // A display-type paragraph over the body it introduces, in its own column, keeps the heading
+    // the page's own typography gives it. Above a larger title, or centred well right of the text
+    // under it, it heads nothing and stays the paragraph the source tagged.
+    let heads = shape == .overItsBody || shape == .rightColumn
+    #expect(headings.contains("Advisory Councils") == heads, "\(shape.rawValue)")
+    #expect(blocks.contains { $0.text.hasPrefix("Five advisory committees") })
+}

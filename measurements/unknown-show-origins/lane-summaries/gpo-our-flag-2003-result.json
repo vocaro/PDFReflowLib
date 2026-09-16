@@ -1,0 +1,86 @@
+{
+  "case": {
+    "author": "Joint Committee on Printing, United States Congress",
+    "bytes": 1103159,
+    "coverage": [
+      "short illustrated native-text baseline",
+      "structure tree with MarkInfo.Marked false",
+      "heading and figure tags",
+      "untagged visible table",
+      "meaning-bearing flag illustrations",
+      "drop capitals",
+      "two-column state descriptions"
+    ],
+    "downloadURL": "https://www.govinfo.gov/content/pkg/CDOC-108hdoc97/pdf/CDOC-108hdoc97.pdf",
+    "downloadVerification": "measurements/gpo-our-flag-2003/download-verification.json",
+    "filename": "CDOC-108hdoc97.pdf",
+    "id": "gpo-our-flag-2003",
+    "identity": {
+      "suppliedBy": "owner"
+    },
+    "knownFidelityIssues": [
+      {
+        "issue": "Table rows collapse into one paragraph without a table or table image.",
+        "page": 27,
+        "resolution": "Source-derived regression, positive controls and complete corpus evaluation: measurements/three-fidelity-fixes/record.md.",
+        "status": "resolved",
+        "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/16"
+      },
+      {
+        "issue": "Drop-cap body openings become headings and follow their own continuation lines.",
+        "page": 27,
+        "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/12"
+      },
+      {
+        "issue": "State-flag descriptions interleave across columns; figure/name/description ownership is lost.",
+        "page": 33,
+        "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/17"
+      }
+    ],
+    "memoryBudget": {
+      "maxPeakRSSMiB": 192,
+      "scope": "macOS 27 arm64 isolated release CLI, library defaults; regression ceiling, not a physical iOS device budget"
+    },
+    "pages": 56,
+    "provenance": "Owner-supplied PDF, unchanged. Official GovInfo record identifies House Document 108-97, Our Flag, with the matching package PDF.",
+    "publicationYear": 2003,
+    "reviewPages": [
+      7,
+      15,
+      22,
+      27,
+      32,
+      33,
+      41,
+      48
+    ],
+    "reviewStatus": "Full conversion and resource gates pass. Page-27 table headers and ten rows are preserved in a warned image. Drop-cap and general flag-group ownership remain unqualified; see measurements/three-fidelity-fixes/record.md.",
+    "rightsBasis": "U.S. Government publication credited to the Joint Committee on Printing and GPO on physical page 3. External development material, not relicensed under MIT.",
+    "rightsClearance": {
+      "scope": "Government-publication provenance recorded for development; no new owner-confirmed rights determination or shipped-catalog admission.",
+      "status": "tentative"
+    },
+    "role": "development",
+    "sha256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
+    "structureCaveat": "Populated StructTreeRoot with MarkInfo.Marked=false; no Table/TR/TH/TD roles or Figure Alt text. Tag associations require validation; current converter does not consume the tree.",
+    "title": "Our Flag",
+    "url": "https://www.govinfo.gov/app/details/CDOC-108hdoc97"
+  },
+  "converterSHA256": "5d13108987f5a3c9a5f6582e3a74dc36018e018aaced103999fa6600b63e6c87",
+  "epubcheckExitCode": 0,
+  "memoryGate": {
+    "limitBytes": 201326592,
+    "metric": "converter process peak RSS from wait/rusage",
+    "passed": true
+  },
+  "options": "library defaults",
+  "outputBytes": 13321497,
+  "progressCheck": {
+    "events": 279,
+    "passed": true,
+    "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+  },
+  "runPassed": true,
+  "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "systemBuild": "Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:40 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6050"
+}

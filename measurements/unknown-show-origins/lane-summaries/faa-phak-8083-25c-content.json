@@ -1,0 +1,24 @@
+{
+  "case": "faa-phak-8083-25c",
+  "passed": true,
+  "reviewPages": [
+    16,
+    121,
+    91,
+    511,
+    211,
+    212,
+    50,
+    325,
+    81,
+    191,
+    35,
+    116,
+    22,
+    24,
+    52
+  ],
+  "contentChecks": 61,
+  "errors": [],
+  "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+}

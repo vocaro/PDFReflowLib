@@ -1,0 +1,12 @@
+{
+  "case": "arxiv-replay-clocks-2023",
+  "passed": true,
+  "reviewPages": [
+    1,
+    3,
+    4
+  ],
+  "contentChecks": 55,
+  "errors": [],
+  "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+}

@@ -1,0 +1,20 @@
+# b339e39 baseline, Fed, three sequential
+run 1  sha=1748ac378e281f78  structureFallbackPages/totalWarnings=118 586
+run 2  sha=1748ac378e281f78  structureFallbackPages/totalWarnings=118 586
+run 3  sha=1748ac378e281f78  structureFallbackPages/totalWarnings=118 586
+# candidate, Fed, three sequential
+run 1  sha=8244e44a9aece117  structureFallbackPages/totalWarnings=57 528
+run 2  sha=8244e44a9aece117  structureFallbackPages/totalWarnings=57 528
+run 3  sha=8244e44a9aece117  structureFallbackPages/totalWarnings=57 528
+# b339e39 baseline, Our Flag, three sequential
+run 1  sha=7cc7dc2ebede0a05  structureFallbackPages/totalWarnings=37 103
+run 2  sha=7cc7dc2ebede0a05  structureFallbackPages/totalWarnings=37 103
+run 3  sha=7cc7dc2ebede0a05  structureFallbackPages/totalWarnings=37 103
+# candidate, Our Flag, three sequential
+run 1  sha=4f8bb64bbefe59fa  structureFallbackPages/totalWarnings=33 103
+run 2  sha=4f8bb64bbefe59fa  structureFallbackPages/totalWarnings=33 103
+run 3  sha=4f8bb64bbefe59fa  structureFallbackPages/totalWarnings=33 103
+# candidate, Fed, three concurrent
+concurrent 1  sha=8244e44a9aece117  structureFallbackPages/totalWarnings=57 528
+concurrent 2  sha=8244e44a9aece117  structureFallbackPages/totalWarnings=57 528
+concurrent 3  sha=8244e44a9aece117  structureFallbackPages/totalWarnings=57 528

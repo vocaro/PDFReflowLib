@@ -5,6 +5,9 @@ import Foundation
 /// deliberately not a second font decoder: unknown cursor advancement or Form text falls back.
 enum MarkedTextReader {
     private struct Anchor { var point: CGPoint; var id: Int? }
+    /// The open marked-content section. `artifact` is inherited, so a span nested inside an
+    /// artifact is still page furniture; an explicit MCID always names its own content.
+    private struct Mark { var id: Int?; var artifact: Bool }
     private final class State {
         var matrix = CGAffineTransform.identity
         var lineMatrix = CGAffineTransform.identity
@@ -13,9 +16,11 @@ enum MarkedTextReader {
         var rise: CGFloat = 0
         var positioned = false
         var inText = false
-        var marks: [Int?] = []
+        var marks: [Mark] = []
         var anchors: [Anchor] = []
         var identifiers: Set<Int> = []
+        /// Identifiers whose text was shown from an origin this reader cannot derive.
+        var unknownOrigins: Set<Int> = []
         var invalid = false
         var operations = 0
         var resources: CGPDFDictionaryRef?
@@ -32,23 +37,36 @@ enum MarkedTextReader {
             positioned = true
         }
         func show(_ scanner: CGPDFScannerRef, array: Bool = false) {
-            guard accept(scanner), inText, positioned else { invalid = true; return }
+            guard accept(scanner), inText else { invalid = true; return }
+            // The origin is known only when a positioning operator precedes the show. Pop the
+            // operand either way, so an unknown origin can be scoped instead of stopping the scan.
+            var known = positioned
+            positioned = false
             if array {
                 var values: CGPDFArrayRef?
                 guard CGPDFScannerPopArray(scanner, &values), let values else { invalid = true; return }
                 // An initial TJ adjustment moves the first glyph away from the known origin.
                 if CGPDFArrayGetCount(values) > 0 {
                     var number: CGPDFReal = 0
-                    if CGPDFArrayGetNumber(values, 0, &number), number != 0 { invalid = true; return }
+                    if CGPDFArrayGetNumber(values, 0, &number), number != 0 { known = false }
                 }
             } else {
                 var value: CGPDFStringRef?
                 guard CGPDFScannerPopString(scanner, &value) else { invalid = true; return }
             }
+            guard known else { unknownOrigin(); return }
             let point = CGPoint(x: 0, y: rise).applying(lineMatrix).applying(matrix)
             guard point.x.isFinite, point.y.isFinite, anchors.count < 100_000 else { invalid = true; return }
-            anchors.append(Anchor(point: point, id: marks.last ?? nil))
-            positioned = false
+            anchors.append(Anchor(point: point, id: marks.last?.id))
+        }
+        /// An unplaceable show costs exactly what it can affect. Inside an artifact it costs
+        /// nothing, because artifacts carry no structure. Inside a marked section it costs that
+        /// section's identifier, and only that identifier's group falls back. Unmarked text could
+        /// sit on any line, so it still invalidates the page, as the unknown-cursor rule did.
+        func unknownOrigin() {
+            guard let mark = marks.last else { invalid = true; return }
+            if let id = mark.id { unknownOrigins.insert(id) }
+            else if !mark.artifact { invalid = true }
         }
     }
     private static func state(_ info: UnsafeMutableRawPointer?) -> State {
@@ -165,7 +183,9 @@ enum MarkedTextReader {
             let id = StructureTreeReader.integer(dict, "MCID")
             if StructureTreeReader.object(dict, "MCID") != nil && id == nil { s.invalid = true; return }
             if let id, id < 0 || !s.identifiers.insert(id).inserted { s.invalid = true; return }
-            s.marks.append(artifact ? nil : (id ?? (s.marks.last ?? nil)))
+            let inherited = s.marks.last ?? Mark(id: nil, artifact: false)
+            s.marks.append(artifact ? Mark(id: nil, artifact: true)
+                : (id.map { Mark(id: $0, artifact: false) } ?? inherited))
         }
         CGPDFOperatorTableSetCallback(table, "BMC") { scanner, info in
             let s = Self.state(info)
@@ -173,7 +193,8 @@ enum MarkedTextReader {
             guard s.accept(scanner), s.marks.count < 128, CGPDFScannerPopName(scanner, &label), let label else {
                 s.invalid = true; return
             }
-            s.marks.append(String(cString: label) == "Artifact" ? nil : (s.marks.last ?? nil))
+            let inherited = s.marks.last ?? Mark(id: nil, artifact: false)
+            s.marks.append(String(cString: label) == "Artifact" ? Mark(id: nil, artifact: true) : inherited)
         }
         CGPDFOperatorTableSetCallback(table, "EMC") { scanner, info in
             let s = Self.state(info)
@@ -212,11 +233,20 @@ enum MarkedTextReader {
               lines.count * s.anchors.count <= 2_000_000 else { return false }
         var assignments: [Int: [TextStructure?]] = [:]
         var found: Set<Int> = []
-        var rejected: Set<Int> = []
+        // A group that shows text from an unplaceable origin cannot be associated, so only that
+        // group falls back. Identifiers outside the supported roles name no group and cost nothing.
+        var rejected = Set(s.unknownOrigins.compactMap { tags[$0]?.group })
         for anchor in s.anchors {
             let tag = anchor.id.flatMap { tags[$0] }
             if let id = anchor.id { found.insert(id) }
-            let candidates = lines.indices.filter { lines[$0].rect.insetBy(dx: -0.75, dy: -0.75).contains(anchor.point) }
+            var candidates = lines.indices.filter { lines[$0].rect.insetBy(dx: -0.75, dy: -0.75).contains(anchor.point) }
+            // A display initial makes its line's box tall enough to cover the next line's origin
+            // as well. A show starts where its own line starts, so when exactly one candidate
+            // begins at the origin it owns the show; anything else stays ambiguous.
+            if candidates.count > 1 {
+                let starting = candidates.filter { abs(lines[$0].rect.minX - anchor.point.x) <= 0.75 }
+                if starting.count == 1 { candidates = starting }
+            }
             guard candidates.count == 1, let index = candidates.first else {
                 if let tag { rejected.insert(tag.group) }
                 for index in candidates { assignments[index, default: []].append(nil) }

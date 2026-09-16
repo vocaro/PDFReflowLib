@@ -1,0 +1,47 @@
+cross-page joined blocks: 129 -> 129
+headings: 176 -> 191
+heading TEXT sequence differences:
+  delete
+    - p43   h5  Single-Pilot Resource Management
+  insert
+    + p50   h5  Human Behavior
+  insert
+    + p71   h5  Chapter Summary
+  insert
+    + p92   h5  Theories in the Production of Lift
+  insert
+    + p178  h5  Exhaust Systems
+    + p178  h5  Starting System
+    + p178  h5  Combustion
+  insert
+    + p190  h5  Electrical System
+  replace
+    - p239  h5  Minimum Equipment Lists (MEL) and
+    + p238  h5  Aircraft Inspections
+  insert
+    + p242  h5  Airworthiness Directives (ADs)
+  insert
+    + p301  h5  Air Masses
+    + p309  h5  Chapter Summary
+  insert
+    + p319  h5  Aviation Forecasts
+  delete
+    - p328  h5  Function Display (MFD) Weather
+  insert
+    + p386  h5  Chapter Summary
+  delete
+    - p390  h5  Parallels)
+  insert
+    + p399  h5  Pilotage
+  insert
+    + p421  h5  Lost Procedures
+    + p421  h5  Flight Diversion
+    + p422  h5  Chapter Summary
+  insert
+    + p425  h5  Health and Physiological Factors Affecting Pilot Performance
+  insert
+    + p451  h5  Chapter Summary
+level changes (base -> new): total 172 headings shared
+unchanged level: 172
+
+chapter titles (numeral-led):

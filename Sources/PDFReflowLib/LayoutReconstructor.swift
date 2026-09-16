@@ -311,17 +311,59 @@ enum LayoutReconstructor {
         return tiers
     }
 
-    /// Levels for typographic headings, ranked document-wide once every page is reconstructed:
-    /// the largest tier keeps the existing level 2 of the flat navigation model and each smaller
-    /// tier is one level deeper (to 6), so a title outranks the author names beneath it and a
-    /// chapter title outranks its section labels on every page alike (#43). Tagged headings carry
-    /// no size and keep their validated level. One pass over the blocks' sizes; no page geometry.
+    /// Levels for headings, ranked document-wide once every page is reconstructed: the largest
+    /// tier keeps the existing level 2 of the flat navigation model and each smaller tier is one
+    /// level deeper (to 6), so a title outranks the author names beneath it and a chapter title
+    /// outranks its section labels on every page alike (#43).
+    ///
+    /// A tagged heading keeps its validated level (#43), but only where that level is comparable
+    /// with the ranking the rest of the document uses. A source whose heading hierarchy is only
+    /// partly reconstructable otherwise contradicts itself: the Fed's chapter titles sit on
+    /// image-backed pages, so their `H2` never reaches this stage, and their 16-point `H3`
+    /// sections would become siblings of the 24-point chapter titles above them (#67).
+    ///
+    /// A validated level therefore yields only to a typographic heading that is larger than every
+    /// heading the document tags at that level and already ranks at that level or deeper. A
+    /// larger heading inside the tagged size range is a sibling the tags did not reach, not a
+    /// contradiction: Our Flag tags `H3` from 9 to 21 points, so its untagged 20-point
+    /// `"The Star-Spangled Banner"` does not demote `Flag Anatomy` at 18. A level that yields
+    /// ranks all its headings by size, like every other heading.
+    ///
+    /// A heading contributes its size to the tiers exactly when it is ranked on them, so a
+    /// validated level neither adds a tier the document does not otherwise use nor removes the
+    /// one its own typography provides: the Fed's tagged section titles restore the tier their
+    /// untagged siblings used to supply, while a book whose validated levels all hold ranks
+    /// exactly as it did before any tag applied. One pass over the blocks' sizes; no page geometry.
     static func rankHeadingLevels(_ blocks: inout [ReflowBlock]) {
-        let tiers = headingTiers(blocks.compactMap(\.headingSize))
+        func ranker(_ sizes: [CGFloat]) -> (CGFloat) -> Int {
+            let tiers = headingTiers(sizes)
+            return { value in min(6, 2 + (tiers.firstIndex { value >= $0 * 0.93 } ?? tiers.count)) }
+        }
+        let headings = blocks.compactMap { block -> (size: CGFloat, validated: Int?)? in
+            guard let size = block.headingSize, case .heading = block.content else { return nil }
+            return (size, block.taggedLevel)
+        }
+        var largestTagged: [Int: CGFloat] = [:]
+        for heading in headings {
+            if let validated = heading.validated { largestTagged[validated] = max(largestTagged[validated] ?? 0, heading.size) }
+        }
+        // Rank the typographic headings first, then see which validated levels that scale
+        // contradicts; only those join it, and the final scale settles every ranked heading.
+        let spatial = ranker(headings.filter { $0.validated == nil }.map(\.size))
+        // Once a level yields, every deeper level yields with it: a validated level beneath one that
+        // typography now ranks could otherwise land beside it (the Fed's 12-point `H5` beside its
+        // re-ranked 14-point `H4`), so below the break the whole hierarchy is ranked by size.
+        let firstYielding = largestTagged.compactMap { validated, largest -> Int? in
+            headings.contains { $0.validated == nil && $0.size > largest * 1.07 && spatial($0.size) >= validated }
+                ? validated : nil
+        }.min()
+        func yields(_ validated: Int) -> Bool { firstYielding.map { validated >= $0 } ?? false }
+        let ranked = ranker(headings.filter { $0.validated.map(yields) ?? true }.map(\.size))
         for index in blocks.indices {
             guard let size = blocks[index].headingSize,
                   case let .heading(id, text, _) = blocks[index].content else { continue }
-            let level = min(6, 2 + (tiers.firstIndex { size >= $0 * 0.93 } ?? tiers.count))
+            var level = ranked(size)
+            if let validated = blocks[index].taggedLevel, !yields(validated) { level = validated }
             blocks[index].content = .heading(id: id, text: text, level: level)
         }
     }
@@ -550,12 +592,56 @@ enum LayoutReconstructor {
         }
         // Labels are measured against the supported reflowable body, as the threshold is, so
         // small table text cannot make a page's ordinary prose read as labels.
-        let labels = sectionLabels(in: free, body: reflowBody, headingThreshold: headingThreshold, page: page)
+        // A line's tag is not part of its typography, and reconstruction drops tags as it goes
+        // (`structuredOrder`, the paragraph-type rule below), so compare labels without one.
+        func untagged(_ line: TextLine) -> TextLine {
+            var copy = line; copy.structure = nil; return copy
+        }
+        let labels = sectionLabels(in: free.map(untagged), body: reflowBody,
+                                   headingThreshold: headingThreshold, page: page)
+        // The page's own typography for a heading, before any tag is consulted. A contents entry
+        // is never a heading; a multi-line display sentence is a pull quote (handled below).
+        // Neither is a separated margin line that opens or closes with this page's number:
+        // that is a running head, whatever furniture removal made of it (#62).
+        func headingTypography(_ line: TextLine) -> Bool {
+            (isHeadingSize(line) || labels.contains(untagged(line)))
+                && !isContentsEntry(line.text) && !isHeaderLike(line, in: page, bothBands: true)
+        }
         let spatial = boxed(free.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
             + images.map { Element(rect: $0.0, image: $0.1) }
             + tables.enumerated().map { Element(rect: $0.element.bounds, table: $0.offset) },
             tints: page.tints, bodySize: body)
-        let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
+        var elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
+        // A validated `P` settles grouping and reading order, not typography. Sources tag their
+        // own section titles as ordinary paragraphs (the Fed's `Contents`, the FAA handbook's
+        // `History of Flight`), and reading the tag literally would silently drop a navigation
+        // entry that every untagged page of the same book keeps. A paragraph group set entirely
+        // in heading type therefore keeps its spatial reading, but only where it introduces
+        // something: the next text in its own column is ordinary text that starts no further left
+        // than the group does, as a section title and the body beneath it share a column edge.
+        // (The next line in reading order can belong to the other column where untagged text
+        // below falls back to spatial order, as on FAA page 194.) A cover title's publication
+        // label (the Fed's `PUBLIC EDUCATION & OUTREACH`) is followed by the title itself, and a
+        // title page's centred imprint (Our Flag's `JOINT COMMITTEE ON PRINTING`, 61 points right
+        // of the line under it) heads nothing: both stay the paragraphs they are tagged as (#67).
+        let introduces = Set(Dictionary(grouping: elements.indices.filter {
+            elements[$0].line?.structure?.headingLevel == 0
+        }, by: { elements[$0].line!.structure!.group }).compactMap { group, indices -> Int? in
+            let lines = indices.map { elements[$0].line! }
+            guard lines.allSatisfy(headingTypography), let last = indices.max(),
+                  let left = lines.map({ $0.rect.minX }).min(), let right = lines.map({ $0.rect.maxX }).max(),
+                  let next = elements[(last + 1)...].lazy.compactMap(\.line)
+                    .first(where: { $0.rect.minX < right && $0.rect.maxX > left }),
+                  !headingTypography(next), left <= next.rect.minX + body else { return nil }
+            return group
+        })
+        if !introduces.isEmpty {
+            for index in elements.indices {
+                if let group = elements[index].line?.structure?.group, introduces.contains(group) {
+                    elements[index].line?.structure = nil
+                }
+            }
+        }
         // Page-bottom footnotes end the page's reading order; the body is every element
         // outside the note area, whose drawn separator, when it has one, is not emitted.
         // A running foot the document is too short to repeat can follow an unruled note
@@ -567,12 +653,8 @@ enum LayoutReconstructor {
         }
         let noteLayout = NumberedNoteDetector.layout(in: elements, page: page, chapter: noteChapter)
         let noteGroups = noteLayout?.paragraphs ?? [:]
-        // A contents entry is never a heading; a multi-line display sentence is a pull quote.
-        // Neither is a separated margin line that opens or closes with this page's number:
-        // that is a running head, whatever furniture removal made of it (#62).
         func isHeadingCandidate(_ line: TextLine) -> Bool {
-            line.structure == nil && (isHeadingSize(line) || labels.contains(line))
-                && !isContentsEntry(line.text) && !isHeaderLike(line, in: page, bothBands: true)
+            line.structure == nil && headingTypography(line)
         }
         let quotes = pullQuoteLines(in: bodyElements.compactMap { elements[$0].line }, candidates: isHeadingCandidate)
         var result: [ReflowBlock] = []
@@ -584,12 +666,17 @@ enum LayoutReconstructor {
             }
             note = nil
         }
-        var tagged: (TextStructure, InlineText)?
+        var tagged: (TextStructure, InlineText, CGFloat)?
         func flushTagged() {
-            guard let (tag, text) = tagged else { return }
+            guard let (tag, text, size) = tagged else { return }
             let content: ReflowBlock.Content = tag.headingLevel == 0 ? .paragraph(text)
                 : .heading(id: "heading-\(page.number)-\(result.count)", text: text, level: tag.headingLevel)
-            result.append(ReflowBlock(content: content, structureGroup: tag.group, page: page.number))
+            var block = ReflowBlock(content: content, structureGroup: tag.group, page: page.number)
+            block.taggedLevel = tag.headingLevel
+            // A tagged heading keeps its validated level, but its typography still belongs in the
+            // document-wide scale: see `rankHeadingLevels`.
+            if tag.headingLevel > 0 { block.headingSize = size }
+            result.append(block)
             tagged = nil
         }
         var paragraph = InlineText()
@@ -771,8 +858,8 @@ enum LayoutReconstructor {
                 if tagged?.0.group != tag.group { flushTagged() }
                 if let current = tagged {
                     tagged = (current.0, join(current.1, line.content, vocabulary: vocabulary,
-                        page: page.number, warnings: &warnings))
-                } else { tagged = (tag, line.content) }
+                        page: page.number, warnings: &warnings), max(current.2, line.fontSize))
+                } else { tagged = (tag, line.content, line.fontSize) }
                 continue
             }
             flushTagged()
@@ -1035,9 +1122,16 @@ enum LayoutReconstructor {
         var next = 0
         while next < pageBlocks.count, isSkippable(pageBlocks[next], page: page) { next += 1 }
         guard next < pageBlocks.count, case let .paragraph(right) = pageBlocks[next].content else { return nil }
-        // Two validated identities are the author's evidence; one untagged side keeps the heuristic.
+        // Two validated identities are the author's evidence of separation, but only when one of
+        // them is something other than a plain paragraph: a heading, a list item, a caption. Where
+        // both are paragraphs the identities say nothing, because a source may tag each page's
+        // fragment of one continuing paragraph as its own `P` — the Fed does that for six of its
+        // paragraphs while 22 of its groups do span a page (#67). Those fall through to the
+        // geometric rule below, which already refuses every other role. One untagged side, or a
+        // side whose role no group vouches for, keeps the heuristic as before.
         if let leftGroup = blocks[previous].structureGroup, let rightGroup = pageBlocks[next].structureGroup,
-           leftGroup != rightGroup { return nil }
+           leftGroup != rightGroup,
+           blocks[previous].taggedLevel != 0 || pageBlocks[next].taggedLevel != 0 { return nil }
         guard right.text.first?.isLowercase == true, !endsSentence(left),
               let last = lastLine(of: left.text, in: previousPage.lines),
               let first = firstLine(of: right.text, in: page.lines),

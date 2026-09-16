@@ -246,6 +246,57 @@ private func continuationPages(firstExtra: [TextLine] = [], firstGraphics: [CGRe
     }
 }
 
+/// One paragraph flowing across a page whose source tags each page's fragment as its own `P`
+/// (#67). The wrap breaks a word, so the join is visible in the text as well as the block count.
+private func taggedFragmentPages(secondRole: Int, secondMarker: String = "") -> [PageContent] {
+    let tail = ["The committee reviewed the position paper prepared during the previous session",
+                "and recorded every objection raised before the vote, noting the sampling condi-"]
+    let start = [secondMarker + "tions, and the actions of the delegates, that the appendix described",
+                 "in detail before the chair adjourned the session."]
+    var first = column(tail, top: 160)
+    for index in first.indices {
+        first[index].structure = TextStructure(group: 11, order: index + 1, headingLevel: 0, lineCount: tail.count)
+    }
+    var second = column(start, top: 740, widths: [460, 300])
+    for index in second.indices {
+        second[index].structure = TextStructure(group: 12, order: index + 3, headingLevel: secondRole,
+                                                lineCount: start.count)
+    }
+    return [PageContent(number: 1, bounds: letter, lines: first, graphics: []),
+            PageContent(number: 2, bounds: letter, lines: second, graphics: [])]
+}
+
+@Test func twoParagraphIdentitiesFallThroughToGeometryWhileOtherRolesStaySeparate() {
+    // Two different `P` groups are not the author's evidence of separation; the geometric rule
+    // decides, and repairs the wrapped word.
+    var warnings: [ConversionWarning] = []
+    var blocks: [ReflowBlock] = []
+    var previous: PageContent?
+    for page in taggedFragmentPages(secondRole: 0) {
+        let pageBlocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: ["conditions"],
+                                                    warnings: &warnings)
+        LayoutReconstructor.appendPage(pageBlocks, page: page, previousPage: previous, to: &blocks,
+                                       vocabulary: ["conditions"], warnings: &warnings)
+        previous = page
+    }
+    #expect(paragraphs(blocks).count == 1)
+    #expect(joined(blocks, "noting the sampling conditions, and the actions of the delegates") != nil)
+
+    // A validated heading on the far side keeps its own block, whatever the geometry says.
+    for (role, marker) in [(3, ""), (0, "(2) ")] {
+        var other: [ReflowBlock] = []
+        var last: PageContent?
+        for page in taggedFragmentPages(secondRole: role, secondMarker: marker) {
+            let pageBlocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: ["conditions"],
+                                                        warnings: &warnings)
+            LayoutReconstructor.appendPage(pageBlocks, page: page, previousPage: last, to: &other,
+                                           vocabulary: ["conditions"], warnings: &warnings)
+            last = page
+        }
+        #expect(joined(other, "noting the sampling conditions, and the actions") == nil, "role \(role)\(marker)")
+    }
+}
+
 @Test func proseInAnotherColumnRefusesAColumnAnchorThatIsNotLast() {
     // The left column ends mid-sentence but the right column still carries prose below and
     // beside it, so the page has not ended there; the right column's own end joins instead.

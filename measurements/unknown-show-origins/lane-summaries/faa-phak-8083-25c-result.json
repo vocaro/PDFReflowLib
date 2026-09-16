@@ -1,0 +1,84 @@
+{
+  "case": {
+    "bytes": 77598564,
+    "coverage": [
+      "long native-text handbook",
+      "two columns",
+      "illustrations and detached labels",
+      "tables",
+      "equations",
+      "contents and index",
+      "glossary",
+      "tagged PDF"
+    ],
+    "downloadURL": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf",
+    "downloadVerification": "A fresh download through tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json.",
+    "filename": "faa-h-8083-25c.pdf",
+    "id": "faa-phak-8083-25c",
+    "knownFidelityIssues": [
+      {
+        "issue": "Two-column prose interleaves left and right lines; left paragraph ending must be defined. should precede The computation of density altitude.",
+        "page": 91,
+        "resolution": "Source-derived regression, positive controls and complete corpus evaluation: measurements/three-fidelity-fixes/record.md.",
+        "status": "resolved",
+        "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/2"
+      },
+      {
+        "issue": "Whole-page fallback has excessive white margins and undersized content.",
+        "page": 121,
+        "resolution": "Explicit page-121 raster matches source proportions after the scaling fix; current EPUB reflows this page with region images. See measurements/quality-and-raster-fixes/record.md.",
+        "status": "resolved",
+        "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/3"
+      },
+      {
+        "issue": "Two-column glossary interleaves Wind direction indicators. and Zone of confusion. before Wind shear.",
+        "page": 511,
+        "resolution": "Source-derived regression, positive controls and complete corpus evaluation: measurements/three-fidelity-fixes/record.md.",
+        "status": "resolved",
+        "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/2"
+      }
+    ],
+    "memoryBudget": {
+      "maxPeakRSSMiB": 1280,
+      "scope": "macOS arm64 release CLI, library defaults; initial regression ceiling, not an iOS memory guarantee"
+    },
+    "pages": 522,
+    "provenance": "Owner-supplied PDF, pinned by byte count and SHA-256. The official FAA publisher URL is retained for reproducibility.",
+    "reviewPages": [
+      1,
+      16,
+      91,
+      121,
+      176,
+      401,
+      511
+    ],
+    "reviewStatus": "Initial inspection points only; no independently annotated full-book fidelity reference yet.",
+    "rightsBasis": "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+    "rightsClearance": {
+      "scope": "Commercial use and redistribution of the development corpus; retain applicable license attribution.",
+      "status": "owner-confirmed"
+    },
+    "role": "development",
+    "sha256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+    "title": "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+    "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+  },
+  "converterSHA256": "5d13108987f5a3c9a5f6582e3a74dc36018e018aaced103999fa6600b63e6c87",
+  "epubcheckExitCode": 0,
+  "memoryGate": {
+    "limitBytes": 1342177280,
+    "metric": "converter process peak RSS from wait/rusage",
+    "passed": true
+  },
+  "options": "library defaults",
+  "outputBytes": 264800290,
+  "progressCheck": {
+    "events": 1800,
+    "passed": true,
+    "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+  },
+  "runPassed": true,
+  "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "systemBuild": "Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:40 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6050"
+}

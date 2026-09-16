@@ -1,0 +1,83 @@
+{
+  "case": {
+    "author": "Board of Governors of the Federal Reserve System",
+    "bytes": 4032813,
+    "coverage": [
+      "tagged digital original",
+      "recurring tables",
+      "multi-page tables",
+      "organization charts",
+      "vector flow diagrams and arrows",
+      "text labels inside figures",
+      "tagged figures and alternate text",
+      "mixed body text and diagrams"
+    ],
+    "downloadURL": "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf",
+    "downloadVerification": "A fresh download through tools/fetch_corpus.py matches the owner-supplied identity; see measurements/corpus-downloads/verification.json.",
+    "edition": "Eleventh Edition, August 2021",
+    "filename": "the-fed-explained.pdf",
+    "id": "fed-explained-2021",
+    "identity": {
+      "suppliedBy": "owner"
+    },
+    "knownFidelityIssues": [
+      {
+        "issue": "Whole-page raster fallback is displayed too small for normal reading.",
+        "page": 45,
+        "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/3"
+      },
+      {
+        "issue": "Ordinary prose lines become separate h2 headings.",
+        "page": 46,
+        "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/12"
+      }
+    ],
+    "memoryBudget": {
+      "maxPeakRSSMiB": 768,
+      "scope": "macOS 27 arm64 isolated release CLI, defaults; initial regression ceiling, not a mobile-device budget"
+    },
+    "pages": 135,
+    "provenance": "Owner-supplied PDF, copied unchanged and checksum-verified. Page 4 identifies the eleventh edition, August 2021. The Federal Reserve Board annual performance report links this official download.",
+    "publicationYear": 2021,
+    "publisherPageURL": "https://www.federalreserve.gov/publications/2022-annual-performance-report.htm",
+    "reviewPages": [
+      9,
+      17,
+      20,
+      45,
+      46,
+      51,
+      82,
+      83,
+      120,
+      121
+    ],
+    "reviewStatus": "Full default conversion passes EPUBCheck and the 768 MiB Mac memory gate. Browser/source spot checks on pages 45 and 46 expose fallback scaling and false headings; ten review pages prepared, full-book fidelity unqualified.",
+    "rightsBasis": "Federal Reserve Board educational publication, retained as external development material. PDF is not bundled or relicensed under MIT.",
+    "rightsClearance": {
+      "scope": "Commercial use and redistribution of the development corpus; retain applicable license attribution.",
+      "status": "owner-confirmed"
+    },
+    "role": "development",
+    "sha256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+    "title": "The Fed Explained: What the Central Bank Does",
+    "url": "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf"
+  },
+  "converterSHA256": "5d13108987f5a3c9a5f6582e3a74dc36018e018aaced103999fa6600b63e6c87",
+  "epubcheckExitCode": 0,
+  "memoryGate": {
+    "limitBytes": 805306368,
+    "metric": "converter process peak RSS from wait/rusage",
+    "passed": true
+  },
+  "options": "library defaults",
+  "outputBytes": 64595807,
+  "progressCheck": {
+    "events": 570,
+    "passed": true,
+    "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+  },
+  "runPassed": true,
+  "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "systemBuild": "Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:40 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6050"
+}

@@ -1,0 +1,16 @@
+pages: 461 -> 461
+navigation headings: 217 -> 217
+   base {'h2': 5, 'h3': 168, 'h4': 4, 'h5': 39, 'h6': 1}
+   new  {'h2': 5, 'h3': 168, 'h4': 4, 'h5': 39, 'h6': 1}
+
+pages with differing joined text : 0 []
+pages with differing block seq   : 0
+pages with differing images      : 0 []
+pages with differing heading set : 0
+pages with differing table count : 0 []
+total tables: 0 -> 0
+total images: 2047 -> 2047
+total blocks: 9222 -> 9222
+word multiset: lost 0, gained 0
+  lost   : []
+  gained : []

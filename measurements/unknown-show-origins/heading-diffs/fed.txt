@@ -1,0 +1,26 @@
+cross-page joined blocks: 21 -> 21
+headings: 161 -> 164
+heading TEXT sequence differences:
+  insert
+    + p76   h6  Supervisory Ratings
+  insert
+    + p97   h6  How ACH Works
+    + p98   h6  The Federal Reserve’s Role in ACH Development
+level changes (base -> new): total 161 headings shared
+unchanged level: 161
+
+chapter titles (numeral-led):
+   new  p8    h3  1 Overview of the Federal Reserve System
+   new  p14   h3  2 The Three Key System Entities
+   new  p24   h3  3 Conducting Monetary Policy
+   new  p50   h3  4 Promoting Financial System Stability
+   new  p66   h3  5 Supervising and Regulating Financial Institutions and Activities
+   new  p88   h3  6 Fostering Payment and Settlement System Safety and Efficiency
+   new  p116  h3  7 Promoting Consumer Protection and Community Development
+   base p8    h3  1 Overview of the Federal Reserve System
+   base p14   h3  2 The Three Key System Entities
+   base p24   h3  3 Conducting Monetary Policy
+   base p50   h3  4 Promoting Financial System Stability
+   base p66   h3  5 Supervising and Regulating Financial Institutions and Activities
+   base p88   h3  6 Fostering Payment and Settlement System Safety and Efficiency
+   base p116  h3  7 Promoting Consumer Protection and Community Development

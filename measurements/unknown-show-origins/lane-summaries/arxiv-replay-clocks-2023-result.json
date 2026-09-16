@@ -1,0 +1,73 @@
+{
+  "case": {
+    "attribution": "Replay Clocks by Ishaan Lagwankar and Sandeep S Kulkarni, arXiv:2311.07842v1 (2023), CC BY 4.0. Source: https://arxiv.org/abs/2311.07842v1. The PDF is unmodified.",
+    "author": "Ishaan Lagwankar and Sandeep S Kulkarni",
+    "baselineStatus": "Baseline and reviewed contract recorded in measurements/arxiv-replay-clocks-2023/record.md; included in the corpus gate.",
+    "bytes": 2617877,
+    "coverage": [
+      "born-digital academic paper in ACM two-column format",
+      "LaTeX Type 1 fonts and ligatures",
+      "inline and display mathematics",
+      "numbered algorithm pseudocode blocks",
+      "vector figures with labels",
+      "rotated arXiv margin stamp",
+      "running headers"
+    ],
+    "downloadURL": "https://arxiv.org/pdf/2311.07842v1",
+    "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
+    "filename": "2311.07842v1.pdf",
+    "id": "arxiv-replay-clocks-2023",
+    "identity": {
+      "suppliedBy": "publisher-download"
+    },
+    "knownFidelityIssues": [
+      {
+        "issue": "The text-to-math boundary \"before\ud835\udc36\" (0.11 em) stays joined; the requirement paragraphs still split around inline-equation crops (#36).",
+        "page": 3,
+        "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/43"
+      }
+    ],
+    "license": "CC-BY-4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by/4.0/",
+    "memoryBudget": {
+      "maxPeakRSSMiB": 256,
+      "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+    },
+    "pages": 12,
+    "provenance": "arXiv:2311.07842v1 [cs.DC], submitted 2023-11-14. Version-pinned URL; LaTeX acmart two-column typesetting.",
+    "publicationYear": 2023,
+    "publisherPageURL": "https://arxiv.org/abs/2311.07842v1",
+    "reviewPages": [
+      1,
+      3,
+      4
+    ],
+    "reviewStatus": "Converted with EPUBCheck, progress and 256 MiB Mac RSS gate. Contract protects two-column prose, section and algorithm-caption order on pages 1, 3 and 4, the omitted rotated stamp, title/label headings, restored word spaces after mathematical variables and one preserved region per algorithm listing (#43). Heading levels rank by size within a page only; a 0.11 em gap after \"before\" on page 3 stays joined (before\ud835\udc36).",
+    "rightsBasis": "arXiv abstract page declares CC BY 4.0. Retain attribution; not relicensed under MIT.",
+    "rightsClearance": {
+      "scope": "arXiv CC BY 4.0 license declaration; attribution required. No new owner confirmation or shipped-catalog admission.",
+      "status": "publisher-declared"
+    },
+    "role": "development",
+    "sha256": "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
+    "title": "Replay Clocks",
+    "url": "https://arxiv.org/abs/2311.07842v1"
+  },
+  "converterSHA256": "5d13108987f5a3c9a5f6582e3a74dc36018e018aaced103999fa6600b63e6c87",
+  "epubcheckExitCode": 0,
+  "memoryGate": {
+    "limitBytes": 268435456,
+    "metric": "converter process peak RSS from wait/rusage",
+    "passed": true
+  },
+  "options": "library defaults",
+  "outputBytes": 8256908,
+  "progressCheck": {
+    "events": 100,
+    "passed": true,
+    "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+  },
+  "runPassed": true,
+  "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "systemBuild": "Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:40 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6050"
+}

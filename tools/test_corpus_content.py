@@ -245,6 +245,29 @@ class CorpusContentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.check(pages=pages, markers=markers)
 
+    def test_paragraph_distinction_rejects_a_lead_in_merged_into_the_paragraph_above(self):
+        self.contract['pages'] = [{'page': 1, 'distinctParagraphs': [
+            {'first': 'tons of copper.', 'second': 'Substitutes: Aluminum'}]}]
+        split = self.epub('<span epub:type="pagebreak" id="page-1"/><p>resources contained tons of copper.</p>'
+                          '<p><strong>Substitutes:</strong> Aluminum substitutes for copper.</p>'
+                          '<span epub:type="pagebreak" id="page-2"/>', '<p>x</p>')
+        merged = self.epub('<span epub:type="pagebreak" id="page-1"/><p>resources contained tons of copper. '
+                           '<strong>Substitutes:</strong> Aluminum substitutes for copper.</p>'
+                           '<span epub:type="pagebreak" id="page-2"/>', '<p>x</p>')
+        for path, passes in [(split, True), (merged, False)]:
+            pages, markers = read_pages(path)
+            self.assertEqual(self.check(pages=pages, markers=markers)['passed'], passes)
+        # Both passages must exist, so a misspelled expectation cannot pass vacuously.
+        pages, markers = read_pages(split)
+        for missing in [{'first': 'nowhere', 'second': 'Substitutes: Aluminum'},
+                        {'first': 'tons of copper.', 'second': 'nowhere'}]:
+            self.contract['pages'][0]['distinctParagraphs'] = [missing]
+            self.assertFalse(self.check(pages=pages, markers=markers)['passed'])
+        for invalid in [{'first': 'x'}, {'first': '', 'second': 'y'}, {'first': 'x', 'second': 1}, ['x', 'y']]:
+            self.contract['pages'][0]['distinctParagraphs'] = [invalid]
+            with self.assertRaises(ValueError):
+                self.check(pages=pages, markers=markers)
+
     def test_paragraph_parser_keeps_inline_styles_and_cross_page_ownership(self):
         path = self.epub('<span epub:type="pagebreak" id="page-1"/><h2>title</h2>'
                          '<p>al<strong>pha</strong> beta<span epub:type="pagebreak" id="page-2"/> gamma</p>',

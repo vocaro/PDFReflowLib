@@ -168,11 +168,14 @@ pass.
 - Notes are not linked to their references (`epub:type="noteref"`); links would need the
   writer to know a note's spine file before its reference is serialized. The reference stays a
   plain superscript and the note an unlinked block.
-- A footnote rule drawn as a graphic (USGS copper pages, whose notes also carry plain-text
-  markers) is not a separator; a page whose note area is only a continuation with no body above
-  it, symbol markers (`*`, `†`) and multi-column footnotes keep spatial prose.
+- A page whose note area is only a continuation with no body above it, symbol markers
+  (`*`, `†`) and multi-column footnotes keep spatial prose. The USGS copper notes, which are
+  set off by white space and a type-size drop with no rule drawn at all, are admitted by the
+  unruled form added in #61; see the
+  [section lead-in evidence](../section-lead-ins/record.md).
 - A note behind a continued paragraph is attributed to the next page by the page list, because
   the boundary sits inside the paragraph it follows.
 - A four-page opinion whose alternating heads occur twice each keeps them (pages 45–47).
-- USGS section lead-ins set with under 1 pt of paragraph spacing merge into the preceding
-  paragraph; a bold lead-in is not yet paragraph evidence.
+- USGS section lead-ins set with under 1 pt of paragraph spacing merged into the preceding
+  paragraph; a bold run-in label is paragraph evidence from #60, recorded in the
+  [section lead-in evidence](../section-lead-ins/record.md).

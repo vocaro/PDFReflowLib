@@ -1573,7 +1573,7 @@
     {
       "id": "usgs-mcs2025-copper",
       "sourceSHA256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
-      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, preserved statistics, tariff and world-production tables with source-region image checks, the COMEX paragraph and the ordered superscript table-note markers. After #36, the Domestic Production, Recycling, Import Sources, Depletion Allowance, Government Stockpile, Events, World Resources and Substitutes prose must reflow as text in source order while the three borderless tables stay preserved images; table labels and cells must not be flattened into prose. Paragraph grouping between adjacent sections and the sup markers inside prose are not qualified here. The Salient Statistics table image is also checked stroke by stroke at full resolution (every digit, label and rule) and for scale and ink contrast; cell association will use tableCells once the table is emitted as text (#27).",
+      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, preserved statistics, tariff and world-production tables with source-region image checks, the COMEX paragraph and the ordered superscript table-note markers. After #36, the Domestic Production, Recycling, Import Sources, Depletion Allowance, Government Stockpile, Events, World Resources and Substitutes prose must reflow as text in source order while the three borderless tables stay preserved images; table labels and cells must not be flattened into prose. After #60, each bold run-in section label opens its own paragraph although the source sets about 0.3 pt of space between sections, so Import Sources, Government Stockpile, World Mine and Refinery Production and Reserves and Substitutes are not swallowed by the section above them. After #61, page 2's table notes, which carry no drawn rule and are marked with a raised letter or digit set tight against the note, form page-bottom note blocks in source order, the body prose above them stays body text, and the raised 6 and 8 in that prose link to their notes. The sup markers inside prose are not otherwise qualified here, and the Events and COMEX paragraphs still group together. The Salient Statistics table image is also checked stroke by stroke at full resolution (every digit, label and rule) and for scale and ink contrast; cell association will use tableCells once the table is emitted as text (#27).",
       "pages": [
         {
           "page": 1,
@@ -1608,7 +1608,19 @@
           "paragraphs": [
             "Domestic Production and Use: In 2024, the recoverable copper content of U.S. mine production was an estimated",
             "Recycling: Old (post-consumer) scrap, converted to refined metal, alloys, and other forms, provided an estimated",
-            "Depletion Allowance: 15% (domestic), 14% (foreign)."
+            "Import Sources (2020–23): Copper content of blister and anodes: Finland, 92%; Malaysia, 3%; and other, 5%.",
+            "Depletion Allowance: 15% (domestic), 14% (foreign).",
+            "Government Stockpile: None."
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Copper recovered from scrap contributed about 35% of the U.S. copper supply.",
+              "second": "Import Sources (2020–23): Copper content of blister and anodes"
+            },
+            {
+              "first": "Depletion Allowance: 15% (domestic), 14% (foreign).",
+              "second": "Government Stockpile: None."
+            }
           ],
           "absentText": [
             "Mine, recoverable",
@@ -1649,7 +1661,41 @@
           "minimumImages": 1,
           "paragraphs": [
             "Events, Trends, and Issues: In 2024, production decreased at a majority of copper mines in the United States",
+            "World Mine and Refinery Production and Reserves: Reserves for Canada, Indonesia, Peru, and the United States",
             "Substitutes: Aluminum substitutes for copper in automobile radiators, cooling and refrigeration tube"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "decreasing inflation in the United States.",
+              "second": "World Mine and Refinery Production and Reserves: Reserves for Canada"
+            },
+            {
+              "first": "undiscovered resources contained an estimated 3.5 billion tons of copper.",
+              "second": "Substitutes: Aluminum substitutes for copper in automobile radiators"
+            },
+            {
+              "first": "Titanium and steel are used in heat exchangers.",
+              "second": "Estimated. — Zero."
+            }
+          ],
+          "notes": [
+            "Estimated. — Zero.",
+            "Copper converted to refined metal, alloys, and other forms",
+            "Less than ½ unit."
+          ],
+          "noteLinks": [
+            {
+              "marker": "6",
+              "before": "World Resources:",
+              "note": "See Appendix C for resource and reserve definitions",
+              "notePage": 2
+            },
+            {
+              "marker": "8",
+              "before": "3.5 billion tons of copper.",
+              "note": "Source: Hammarstrom, J.M., Zientek, M.L.",
+              "notePage": 2
+            }
           ],
           "absentText": [
             "World total (rounded)",

@@ -556,10 +556,15 @@ enum LayoutReconstructor {
             + tables.enumerated().map { Element(rect: $0.element.bounds, table: $0.offset) },
             tints: page.tints, bodySize: body)
         let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
-        // Page-bottom footnotes end the page's reading order; the body is everything before
-        // their separator, which is not emitted.
+        // Page-bottom footnotes end the page's reading order; the body is every element
+        // outside the note area, whose drawn separator, when it has one, is not emitted.
+        // A running foot the document is too short to repeat can follow an unruled note
+        // block (#61); it stays body text, ahead of the notes as captions and folios are.
         let footnotes = FootnoteDetector.layout(in: elements, page: page, continuesNote: continuesNote)
-        let bodyElements = elements[..<(footnotes?.separator ?? elements.count)]
+        let bodyElements = elements.indices.filter { index in
+            guard let footnotes else { return true }
+            return !footnotes.range.contains(index) && index != footnotes.separator
+        }
         let noteLayout = NumberedNoteDetector.layout(in: elements, page: page, chapter: noteChapter)
         let noteGroups = noteLayout?.paragraphs ?? [:]
         // A contents entry is never a heading; a multi-line display sentence is a pull quote.
@@ -569,7 +574,7 @@ enum LayoutReconstructor {
             line.structure == nil && (isHeadingSize(line) || labels.contains(line))
                 && !isContentsEntry(line.text) && !isHeaderLike(line, in: page, bothBands: true)
         }
-        let quotes = pullQuoteLines(in: bodyElements.compactMap(\.line), candidates: isHeadingCandidate)
+        let quotes = pullQuoteLines(in: bodyElements.compactMap { elements[$0].line }, candidates: isHeadingCandidate)
         var result: [ReflowBlock] = []
         var note: (Int, InlineText)?
         func flushNote() {
@@ -590,12 +595,16 @@ enum LayoutReconstructor {
         var paragraph = InlineText()
         var previous: TextLine?
         var codeOrigin: CGFloat?
+        // The vertical gap the open paragraph's last line was attached at: the leading a
+        // section lead-in must exceed to read as added space (#60).
+        var previousGap: CGFloat?
         func flush() {
             if !paragraph.elements.isEmpty {
                 result.append(ReflowBlock(content: .paragraph(paragraph), page: page.number))
             }
             paragraph = InlineText()
             previous = nil
+            previousGap = nil
         }
         // A wrapped body line can begin with an initial, a citation abbreviation or a year
         // followed by a period. It continues the open paragraph only when the previous line
@@ -669,6 +678,46 @@ enum LayoutReconstructor {
             return line.rect.minY >= prev.rect.minY + prev.rect.height * 0.2
                 && line.rect.maxY <= prev.rect.maxY + 1
         }
+        // A bold run-in section label opens a paragraph even where the source sets less than
+        // the ordinary paragraph spacing between its sections (the USGS Mineral Commodity
+        // Summaries add 0.3 pt, #60). The evidence is typographic and positional together: the
+        // line opens with a bold run that closes with a colon or is set in capitals, ordinary
+        // text follows that label on the same line (a run-in, not a heading), the previous line
+        // ends a sentence, the label starts at the column's majority left edge at body size,
+        // and the source still added space — the gap is not negative and exceeds the leading
+        // the paragraph has been wrapping at. Bold emphasis inside a paragraph fails all of
+        // these: it follows an unfinished line, sits mid-measure and adds no space.
+        func opensSection(_ line: TextLine, after prev: TextLine, gap: CGFloat, leading: CGFloat?) -> Bool {
+            guard !page.hasSyntheticTextStyle, line.structure == nil, !line.monospaced,
+                  abs(line.fontSize - body) <= body * 0.1,
+                  gap >= 0, gap >= leading.map({ $0 + body * 0.2 }) ?? 0,
+                  case let .text(value, style)? = line.content.elements.first,
+                  style.contains(.bold) else { return false }
+            let label = value.trimmingCharacters(in: .whitespaces)
+            let letters = label.filter(\.isLetter)
+            guard letters.count >= 3, label.hasSuffix(":") || letters.allSatisfy(\.isUppercase),
+                  line.content.elements.dropFirst().contains(where: { element in
+                      guard case let .text(rest, restStyle) = element else { return false }
+                      return !restStyle.contains(.bold) && rest.contains { !$0.isWhitespace }
+                  }) else { return false }
+            // The sentence's own last character, past closing quotes and brackets and past a
+            // raised reference marker: USGS sections end `… copper supply.5` before the next
+            // lead-in, and the marker is not the sentence's punctuation.
+            let closing: Set<Character> = ["\u{201D}", "\u{2019}", "\"", "'", ")", "]"]
+            var ending: Character?
+            for element in prev.content.elements.reversed() {
+                guard case let .text(value, style) = element else { continue }
+                if style.contains(.superscript), value.allSatisfy({ $0.isNumber || $0.isWhitespace }) { continue }
+                if let character = value.reversed().first(where: { !$0.isWhitespace && !closing.contains($0) }) {
+                    ending = character
+                    break
+                }
+            }
+            guard let ending, ".!?".contains(ending) else { return false }
+            // A section opens flush with the column the paragraph above it fills, so a run-in
+            // label indented inside an item or a note is not one.
+            return abs(prev.rect.minX - line.rect.minX) <= body * 0.5
+        }
         // The open heading's first line (the row PDFKit split) and its latest line (for the
         // line stacked beneath it).
         var headingRow: (first: TextLine, last: TextLine)?
@@ -676,7 +725,8 @@ enum LayoutReconstructor {
         // and the block holding it. Every other branch closes it, as `codeOrigin` closes a
         // code block.
         var listItem: (marker: TextLine, last: TextLine, indent: CGFloat?, index: Int)?
-        for (index, element) in bodyElements.enumerated() {
+        for index in bodyElements {
+            let element = elements[index]
             let previousHeading = headingRow
             headingRow = nil
             let openItem = listItem
@@ -774,13 +824,18 @@ enum LayoutReconstructor {
                     paragraph.append(InlineText(line.text, style: .superscript))
                     continue
                 }
+                // The leading this line was attached at, for the next line's section test.
+                var attachedGap: CGFloat?
                 if let prev = previous {
                     let verticalGap = prev.rect.minY - line.rect.maxY
                     let sameColumn = abs(prev.rect.minX - line.rect.minX) < body * 1.5
                         && verticalGap >= -body * 0.4 && verticalGap < body * 0.9
                     let shortEnding = prev.rect.width < line.rect.width * 0.65
                         && prev.text.last.map { ".!?".contains($0) } == true
-                    if prev.wraps == false || !sameColumn || shortEnding { flush() }
+                    if prev.wraps == false || !sameColumn || shortEnding
+                        || opensSection(line, after: prev, gap: verticalGap, leading: previousGap) {
+                        flush()
+                    } else { attachedGap = verticalGap }
                 }
                 if paragraph.elements.isEmpty { paragraph = line.content }
                 else {
@@ -788,6 +843,7 @@ enum LayoutReconstructor {
                         page: page.number, warnings: &warnings)
                 }
                 previous = line
+                previousGap = attachedGap
             }
         }
         flushNote()
@@ -799,8 +855,11 @@ enum LayoutReconstructor {
                 text = join(text, elements[index].line!.content, vocabulary: vocabulary,
                     page: page.number, warnings: &warnings)
             }
-            result.append(ReflowBlock(content: .footnote(text),
-                note: note.marker.map { NoteKey(number: $0, scope: .page(page.number)) }, page: page.number))
+            // Only a numbered note has an identity a reference can cite; a lettered table
+            // note (`eEstimated.`) is cited from the table, which is preserved as an image.
+            var key: NoteKey?
+            if case let .number(number)? = note.marker { key = NoteKey(number: number, scope: .page(page.number)) }
+            result.append(ReflowBlock(content: .footnote(text), note: key, page: page.number))
         }
         return result
     }
@@ -813,7 +872,7 @@ enum LayoutReconstructor {
     static func joinContinuedFootnote(_ blocks: inout [ReflowBlock], page: Int,
                                       vocabulary: Set<String>, warnings: inout [ConversionWarning]) {
         guard let index = blocks.firstIndex(where: { $0.isFootnote && $0.page == page }),
-              case let .footnote(rest) = blocks[index].content, FootnoteDetector.marker(of: rest) == nil,
+              case let .footnote(rest) = blocks[index].content, FootnoteDetector.noteMarker(of: rest) == nil,
               let start = blocks[..<index].lastIndex(where: \.isFootnote),
               case let .footnote(left) = blocks[start].content,
               blocks[start].page == page - 1 || blocks[start].sourcePages.contains(page - 1) else { return }

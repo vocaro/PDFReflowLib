@@ -471,12 +471,44 @@ to end through PDFKit into two notes joined across the page. Detached-marker con
 letters, four digits, body-size digits, distant, overlapping and same-baseline numbers as
 separate lines.
 
+`FootnoteTests.swift` also covers [#61](https://github.com/vocaro/PDFReflowLib/issues/61), the
+table notes a document sets with no rule above them. USGS copper page 2 yields nine note blocks
+in source order (`eEstimated. — Zero.` through note 8, which absorbs its two unmarked
+continuation lines); only the numbered notes carry a page-scoped `NoteKey`, the body prose
+ending `heat exchangers.` stays body text, the running foot below the block stays prose, and
+every source character survives. Synthetic controls refuse a single note, markers that do not
+count up, markers that are only letters, a block that is not set off by white space, a block at
+or near the body size, a block indented from the body's column, more than a page foot below the
+block, a raised marker on a line above the block, and recognized or synthetic text layers.
+
 Corpus contracts support `notes`: a phrase must sit inside one footnote block on that page,
-and the same text in ordinary prose or on another page cannot pass. The Loper Bright contract
+and the same text in ordinary prose or on another page cannot pass. `distinctParagraphs` names
+two passages that must open separate paragraphs on one page; `paragraphs` matches a phrase
+inside any paragraph, so it cannot see a run-in label swallowed by the paragraph above it.
+The Loper Bright contract
 adds footnote, separator-absence, running-head-absence, marker-context, note-continuation and
 `furnitureRemoved` checks on pages 13, 14, 60, 61, 97 and 98, including the page 13→14 body
 continuation (page 13's note is checked on page 14, where it follows the joined paragraph); the
-converter before #40 fails 36 of them. See the [page-footnote evidence](../measurements/page-footnotes/record.md).
+converter before #40 fails 36 of them. The USGS copper contract adds the three note phrases,
+the two note links on page 2 and five `distinctParagraphs` pairs across both pages; the
+converter before #60/#61 fails nine of them. See the
+[page-footnote evidence](../measurements/page-footnotes/record.md) and the
+[section lead-in evidence](../measurements/section-lead-ins/record.md).
+
+## Bold run-in section labels
+
+`SectionLeadInTests.swift` covers [#60](https://github.com/vocaro/PDFReflowLib/issues/60). USGS
+copper page 2 opens `World Mine and Refinery Production and Reserves:` and `Substitutes:` as
+their own paragraphs although the source sets about 0.3 pt between sections, while the Events
+section still carries the COMEX paragraph, whose opening line has no bold label: the rule is not
+a change to the paragraph-spacing threshold. Page 1 splits `Import Sources (2020–23):` past the
+raised `5` that ends the sentence above it, and `Government Stockpile:` from `Depletion
+Allowance:`. Synthetic controls keep one paragraph for ordinary bold emphasis, a colon label
+that is not bold, a label after a line that does not end a sentence, a label indented inside the
+column, and a label set at the leading the paragraph already wraps at. Six source pages that
+carry bold emphasis, bulleted definitions, box run-in heads, heading rules, exercises and a dash
+separator (FAA 211/212, Fed 32, Our Flag 27, algebra 289, Loper 60) keep every block boundary
+they had at `62877e6`.
 
 ## Endnote reference typography and bounded paragraphs
 

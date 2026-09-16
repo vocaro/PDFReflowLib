@@ -372,3 +372,101 @@ func pagesWithoutASeparatorAndNoteTypographyHaveNoFootnotes(name: String) throws
     #expect(html.components(separatedBy: "<p>Body prose line 1 fills the measure of the column here. Body prose line 2").count == 3)
     #expect(html.range(of: "continues on the next page.</p></div>\n<p>Body prose line 1") != nil)
 }
+
+// MARK: - Table notes set off by white space alone (#61)
+
+/// A page whose notes carry no drawn separator: smaller type at the body's left edge, set off
+/// by white space, each note opening with a raised marker tight against its text, and a running
+/// foot below them that the document is too short to repeat (USGS Mineral Commodity Summaries).
+private func unruledNotePage(markers: [String] = ["e", "1", "2"], spacing: CGFloat = 10.4,
+                             noteSize: CGFloat = 5, indent: CGFloat = 0, footers: Int = 1) -> PageContent {
+    let body: CGFloat = 10, bodyHeight: CGFloat = 13.8, bodyPitch: CGFloat = 11.1
+    let noteHeight: CGFloat = 10.9, notePitch: CGFloat = 10.8
+    var lines: [TextLine] = []
+    var top: CGFloat = 700, lastBody: CGFloat = 0
+    for index in 0..<4 {
+        let rect = CGRect(x: 100, y: top - bodyHeight, width: 400, height: bodyHeight)
+        lines.append(TextLine(text: "Body prose line \(index + 1) fills the measure of the column here.",
+            rect: rect, fontSize: body))
+        lastBody = rect.minY
+        top -= bodyPitch
+    }
+    top = lastBody - spacing
+    for (index, marker) in markers.enumerated() {
+        let content = InlineText(elements: [.text(marker, .superscript),
+                                            .text("Note \(index + 1) sits under the body block.", [])])
+        lines.append(TextLine(content: content, rect: CGRect(x: 100 + indent, y: top - noteHeight,
+            width: 300, height: noteHeight), fontSize: noteSize))
+        top -= notePitch
+    }
+    for index in 0..<footers {
+        top -= 6
+        lines.append(TextLine(text: "Running foot line \(index + 1) of this short document.",
+            rect: CGRect(x: 200, y: top - bodyHeight, width: 300, height: bodyHeight), fontSize: body))
+        top -= bodyHeight
+    }
+    return PageContent(number: 2, bounds: CGRect(x: 0, y: 0, width: 612, height: 792), lines: lines, graphics: [])
+}
+
+@Test func sourceUSGSTableNotesUnderNoRuleBecomeNoteBlocksInSourceOrder() throws {
+    let page = try SourceLayoutFixture.load("usgs-2").styledContent()
+    let blocks = footnoteBlocks(page)
+    let notes = blocks.filter(\.isFootnote)
+    #expect(notes.count == 9)
+    #expect(notes.first?.text == "eEstimated. — Zero.")
+    #expect(notes.map { String($0.text.prefix(1)) } == ["e", "1", "2", "3", "4", "5", "6", "7", "8"])
+    // The last note absorbs its two unmarked continuation lines.
+    let last = try #require(notes.last)
+    #expect(last.text.hasPrefix("8Source: Hammarstrom, J.M., Zientek, M.L."))
+    #expect(last.text.hasSuffix("https://doi.org/10.3133/sir20185160.)"))
+    // The marker is raised in every note; only the numbered ones carry a page-scoped key.
+    for note in notes {
+        guard case let .footnote(text) = note.content else { continue }
+        #expect(FootnoteDetector.noteMarker(of: text) != nil)
+    }
+    #expect(notes.first?.note == nil)
+    #expect(notes.dropFirst().map(\.note) == (1...8).map { NoteKey(number: $0, scope: .page(2)) })
+    // The body above the notes stays body text, and so does the running foot below them.
+    let body = try #require(blocks.first { $0.text.contains("Titanium and steel are used in heat exchangers.") })
+    #expect(!body.isFootnote)
+    let foot = try #require(blocks.first { $0.text.hasPrefix("U.S. Geological Survey, Mineral Commodity") })
+    #expect(!foot.isFootnote)
+    // Every source character survives, in one block or another.
+    #expect(normalized(blocks.map(\.text).joined()).sorted() == normalized(page.lines.map(\.text).joined()).sorted())
+}
+
+@Test func syntheticUnruledNotesRequireWhiteSpaceSmallerTypeAndACountedSeries() {
+    let notes = footnoteBlocks(unruledNotePage()).filter(\.isFootnote)
+    #expect(notes.map(\.text) == ["eNote 1 sits under the body block.", "1Note 2 sits under the body block.",
+                                  "2Note 3 sits under the body block."])
+    #expect(notes.map(\.note) == [nil, NoteKey(number: 1, scope: .page(2)), NoteKey(number: 2, scope: .page(2))])
+    var controls: [PageContent] = [
+        // One note is not a note list; without a rule, a single small line is ordinary prose.
+        unruledNotePage(markers: ["1"]),
+        // Markers that do not count up, and markers that are only letters.
+        unruledNotePage(markers: ["1", "3"]),
+        unruledNotePage(markers: ["a", "b"]),
+        // No white space: the block sits at the leading the notes themselves use.
+        unruledNotePage(spacing: 0.5),
+        // Not smaller than the body.
+        unruledNotePage(noteSize: 9.5),
+        unruledNotePage(noteSize: 10),
+        // Indented from the body's own column.
+        unruledNotePage(indent: 40),
+        // More than a page foot follows: the block does not close the page.
+        unruledNotePage(footers: 3),
+    ]
+    var page = unruledNotePage(); page.recognized = true; controls.append(page)
+    page = unruledNotePage(); page.hasSyntheticTextStyle = true; controls.append(page)
+    // A marked line above the block: the page's raised markers are not a note area's opening.
+    page = unruledNotePage()
+    page.lines.insert(TextLine(content: InlineText(elements: [.text("1", .superscript), .text("A raised body opening.", [])]),
+        rect: CGRect(x: 100, y: 730, width: 300, height: 13.8), fontSize: 10), at: 0)
+    controls.append(page)
+    for (index, control) in controls.enumerated() {
+        let blocks = footnoteBlocks(control)
+        #expect(!blocks.contains { $0.isFootnote }, "control \(index)")
+        #expect(normalized(blocks.map(\.text).joined()).sorted() == normalized(control.lines.map(\.text).joined()).sorted(),
+            "control \(index): \(blocks.map(\.text))")
+    }
+}

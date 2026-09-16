@@ -281,7 +281,7 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'absentHeadings', 'paragraphs', 'listItems', 'notes', 'noteLinks', 'continuedParagraphs', 'continuedListItems', 'separateParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'absentHeadings', 'paragraphs', 'listItems', 'notes', 'noteLinks', 'continuedParagraphs', 'continuedListItems', 'separateParagraphs', 'distinctParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -330,6 +330,23 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
             # The phrase must sit inside one page-bottom footnote block, not in body prose.
             if not any(normalized(phrase) in note for note in page.get('notes', [])):
                 errors.append(f'Page {number}: missing footnote {phrase!r}')
+        # Two passages that open separate paragraphs on this page. `paragraphs` matches a phrase
+        # inside any paragraph, so it cannot see a section lead-in swallowed by the paragraph
+        # above it (#60); this names both passages and requires no paragraph to carry both.
+        for separation in item.get('distinctParagraphs', []):
+            if (not isinstance(separation, dict) or set(separation) != {'first', 'second'}
+                    or any(not isinstance(separation[k], str) or not normalized(separation[k])
+                           for k in ('first', 'second'))):
+                raise ValueError('Paragraph distinction requires nonempty first and second phrases')
+            checks += 1
+            first, second = (normalized(separation[k]) for k in ('first', 'second'))
+            texts = page.get('paragraphIDs', {}).values()
+            if not any(first in text for text in texts):
+                errors.append(f'Page {number}: missing paragraph {first!r} for distinction check')
+            elif not any(second in text for text in texts):
+                errors.append(f'Page {number}: missing paragraph {second!r} for distinction check')
+            elif any(first in text and second in text for text in texts):
+                errors.append(f'Page {number}: one paragraph carries both {separation!r}')
         for link in item.get('noteLinks', []):
             if (not isinstance(link, dict) or not {'marker', 'before', 'note'} <= set(link)
                     or not set(link) <= {'marker', 'before', 'note', 'notePage'}

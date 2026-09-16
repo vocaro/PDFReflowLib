@@ -86,6 +86,18 @@ was lowered to absorb these cases. Multi-line headers, fewer than three occurren
 margins, OCR corruption, broader heading reconstruction/recall and timeline ownership remain
 unqualified. Endnote links and general semantic figure reconstruction are outside this change.
 
+**Update (#62).** All twelve pages were re-audited on branch tip `26d5209` with the same tool and
+all twelve still reproduced there. Eleven are now removed on the folio-offset evidence recorded
+in [margin-folios](../margin-folios/record.md): the four Roman front-matter heads keep offset 0
+from the physical page and the seven Arabic notes heads keep offset −18, each with three or more
+nearby pages agreeing in offset, height in the band and type size. The head text itself still
+needs three occurrences; only the folio evidence was added. **Page 257 is the one remaining
+case**: its band row extracts as a title with no page number plus a separate `239`, so neither
+the text rule nor the folio rule reaches it. It stays two paragraphs and is not a heading. The
+same change closes #40's retained Loper Thomas-concurrence heads (pages 44–47), so *short runs*
+is qualified for heads that carry a folio and remains open for those that do not. Broader
+heading precision and timeline row/column ownership are unchanged by that work.
+
 ## Validation and compatible comparison
 
 - 173 Swift tests pass on macOS and iOS 27 Simulator; 102 Python tests pass in the fast gate.

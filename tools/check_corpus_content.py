@@ -271,7 +271,7 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'paragraphs', 'notes', 'noteLinks', 'continuedParagraphs', 'separateParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'absentHeadings', 'paragraphs', 'notes', 'noteLinks', 'continuedParagraphs', 'separateParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -291,6 +291,14 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
             checks += 1
             if not any(normalized(phrase) in heading for heading in page.get('headings', [])):
                 errors.append(f'Page {number}: missing heading {phrase!r}')
+        # A line the page still carries, but which must not be in the navigation: a margin
+        # folio is text, not a heading (#62).
+        for phrase in item.get('absentHeadings', []):
+            if not isinstance(phrase, str) or not normalized(phrase):
+                raise ValueError('Empty or invalid forbidden heading phrase')
+            checks += 1
+            if any(normalized(phrase) == heading for heading in page.get('headings', [])):
+                errors.append(f'Page {number}: unwanted heading {phrase!r}')
         for phrase in item.get('paragraphs', []):
             if not isinstance(phrase, str) or not normalized(phrase):
                 raise ValueError('Empty or invalid paragraph phrase')

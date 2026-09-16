@@ -43,13 +43,65 @@ private func furniturePage(_ number: Int, header: String, y: Double = 752,
     var pages = try (579...585).map { try SourceLayoutFixture.load("911-\($0)").content() }
     let original = pages
     let warnings = LayoutReconstructor.stripFurniture(&pages)
-    #expect(warnings.map(\.page) == [581, 582, 583])
+    // Chapter 12 alone supplied three occurrences of one head text (#10). The seven heads
+    // also share one folio offset from the physical page, which #62 accepts as its own
+    // evidence, so the neighboring two-page chapter 11 and 13 runs go with them.
+    #expect(warnings.map(\.page) == Array(579...585))
     for (before, after) in zip(original, pages) {
-        // Only chapter 12 supplies three occurrences. Neighboring two-page runs
-        // retain their text; shortening the minimum would overstate the evidence.
-        let expected = (581...583).contains(before.number)
-            ? before.lines.filter { $0.rect.midY < 550 } : before.lines
+        #expect(after.lines.map(\.text) == before.lines.filter { $0.rect.midY < 550 }.map(\.text))
+    }
+}
+
+/// #62: an isolated note page's running head carries text no other page repeats
+/// (`554 NOTES TO CHAPTERS 9-10` spans two chapters), so no three-page text run reaches it.
+/// Its leading folio is 18 less than the physical page, as its neighbors' folios are.
+@Test func isolatedNotePageHeadGoesWithItsNeighborsFolioOffset() throws {
+    var pages = try ([126, 127] + Array(571...573)).map { try SourceLayoutFixture.load("911-\($0)").content() }
+    let original = pages
+    let heads = original[2...].map { $0.lines.max { $0.rect.midY < $1.rect.midY }!.text }
+    // No two of the three share a head text, so the three-occurrence text rule removes none.
+    #expect(heads == ["NOTES TO CHAPTER 9 553", "554 NOTES TO CHAPTERS 9-10", "NOTES TO CHAPTER 10 555"])
+    let warnings = LayoutReconstructor.stripFurniture(&pages)
+    #expect(warnings.map(\.page) == [571, 572, 573])
+    for (before, after) in zip(original, pages) {
+        // Chapter opening 126 carries the same offset in its foot (folio 108) and 127 carries
+        // nothing; both keep every source line, head band and foot alike.
+        let expected = before.number >= 571 ? before.lines.filter { $0.rect.midY < 550 } : before.lines
         #expect(after.lines.map(\.text) == expected.map(\.text))
+        #expect(!after.lines.contains { $0.text.contains("NOTES TO CHAPTER") })
+    }
+    #expect(pages[0].lines.contains { $0.text == "108" })
+}
+
+/// #10: the Thomas concurrence runs four pages, so each alternating head occurs twice and the
+/// three-occurrence rule left every one of them. All four pages' folios are 43 less than the
+/// physical page, and page 48 opens the next opinion at a different offset without joining them.
+@Test func fourPageConcurrenceHeadsGoWithTheirOpinionsFolioOffset() throws {
+    var pages = try (44...48).map { try SourceLayoutFixture.load("loper-\($0)").content() }
+    let original = pages
+    let warnings = LayoutReconstructor.stripFurniture(&pages)
+    #expect(warnings.map(\.page) == Array(44...48))
+    let removed = zip(original, pages).map { before, after in
+        before.lines.filter { line in !after.lines.contains { $0.text == line.text && $0.rect == line.rect } }
+            .map(\.text)
+    }
+    #expect(removed == [
+        ["1", "Cite as: 603 U. S. ____ (2024)", "THOMAS, J., concurring"],
+        ["2 LOPER BRIGHT ENTERPRISES v. RAIMONDO", "THOMAS, J., concurring"],
+        ["3", "Cite as: 603 U. S. ____ (2024)", "THOMAS, J., concurring"],
+        ["4 LOPER BRIGHT ENTERPRISES v. RAIMONDO", "THOMAS, J., concurring"],
+        // Page 48 restarts the numbering for the next concurrence. Its offset has one page of
+        // evidence, so its folio stays and its opinion row, occurring once, stays with it.
+        // Only the `Cite as:` head, which three of these pages repeat, is removed.
+        ["Cite as: 603 U. S. ____ (2024)"],
+    ])
+    // The case name and the opinion's own body are untouched on the pages that open an opinion.
+    for kept in ["1", "GORSUCH, J., concurring", "SUPREME COURT OF THE UNITED STATES"] {
+        #expect(pages[4].lines.contains { $0.text == kept })
+    }
+    for (before, after) in zip(original, pages) {
+        #expect(after.lines.filter { $0.rect.midY < 640 }.map(\.text)
+            == before.lines.filter { $0.rect.midY < 640 }.map(\.text))
     }
 }
 
@@ -59,15 +111,86 @@ private func furniturePage(_ number: Int, header: String, y: Double = 752,
     }
     #expect(LayoutReconstructor.stripFurniture(&pages).count == 3)
     let controls = [
+        // A folio that does not keep one offset from the physical page is not a folio.
         ["NOTES TO CHAPTER 12 19", "21 NOTES TO CHAPTER 12", "NOTES TO CHAPTER 12 21"],
-        ["NOTES TO CHAPTER 11 19", "20 NOTES TO CHAPTER 12", "NOTES TO CHAPTER 13 21"],
+        // Internal sequential digits are not boundary folios.
         ["SECTION 1 SUMMARY", "SECTION 2 SUMMARY", "SECTION 3 SUMMARY"],
+        // A numbered figure label counts up with its pages; its number names the figure.
+        ["Figure 19 Air routes", "Figure 20 Air routes", "Figure 21 Air routes"],
+        // Two agreeing pages are not a run, however exactly they agree.
+        ["NOTES TO CHAPTER 12 19", "20 NOTES TO CHAPTER 12", "OTHER MATERIAL"],
     ]
     for headers in controls {
         var pages = headers.enumerated().map { furniturePage($0.offset + 1, header: $0.element) }
         #expect(LayoutReconstructor.stripFurniture(&pages).isEmpty)
         #expect(pages.map { $0.lines[0].text } == headers)
     }
+    // #62: the chapter a notes head names changes from page to page while the head stays
+    // furniture. One folio offset across three pages is the evidence the text cannot give.
+    var chapters = ["NOTES TO CHAPTER 11 19", "20 NOTES TO CHAPTER 12", "NOTES TO CHAPTER 13 21"]
+        .enumerated().map { furniturePage($0.offset + 1, header: $0.element) }
+    #expect(LayoutReconstructor.stripFurniture(&chapters).map(\.page) == [1, 2, 3])
+    #expect(chapters.allSatisfy { $0.lines.count == 1 })
+    // Roman front matter keeps its own numbering; `xiv COMMISSION STAFF` is a running head.
+    var roman = ["PREFACE xiv", "xv PREFACE", "PREFACE xvi"]
+        .enumerated().map { furniturePage($0.offset + 14, header: $0.element) }
+    #expect(LayoutReconstructor.stripFurniture(&roman).map(\.page) == [14, 15, 16])
+}
+
+/// The folio reading behind the offset evidence, in isolation: only a canonical numeral is a
+/// page number, so an ordinary word at a head's edge supplies none.
+@Test func folioReadingAcceptsOnlyCanonicalPageNumbers() {
+    #expect(FurnitureDetector.folioValue("554").map(\.value) == 554)
+    #expect(FurnitureDetector.folioValue("5-3").map(\.kind) == "chapter-5")
+    #expect(FurnitureDetector.folioValue("5-3").map(\.value) == 3)
+    #expect(FurnitureDetector.folioValue("xiv") .map(\.value) == 14)
+    #expect(FurnitureDetector.folioValue("xiv")?.kind == "roman")
+    // Arabic and Roman numbers of equal value stay apart, so one cannot extend the other's run.
+    #expect(FurnitureDetector.folioValue("14")?.kind == "arabic")
+    // Words that read as numerals only under a non-canonical spelling, and initials.
+    for word in ["did", "mill", "civil", "dill", "lid", "c", "i", "x", "", "iiii", "vv", "note"] {
+        #expect(FurnitureDetector.folioValue(word) == nil, "\(word) is not a folio")
+    }
+    // `mix` spells 1009 canonically; the front-matter bound keeps it out.
+    #expect(FurnitureDetector.folioValue("mix") == nil)
+    #expect(FurnitureDetector.folioValue("cd").map(\.value) == 400)
+}
+
+/// A lone page number is not a running head, however well its offset matches the document's:
+/// a chapter opening carries nothing else in its margin. One sharing its row with head text
+/// that is removed goes with that row, so a `folio + title` row does not lose half of itself.
+@Test func loneFoliosStayWhileFoliosBesideRemovedHeadTextGo() {
+    func page(_ number: Int, margin: [(String, Double)], folio: String?) -> PageContent {
+        var lines = margin.map {
+            TextLine(text: $0.0, rect: CGRect(x: $0.1, y: 752, width: 60, height: 10), fontSize: 10)
+        }
+        lines.append(TextLine(text: "Body paragraph \(number) stays available.",
+                              rect: CGRect(x: 40, y: 700, width: 400, height: 12), fontSize: 12))
+        if let folio {
+            lines.append(TextLine(text: folio, rect: CGRect(x: 300, y: 20, width: 20, height: 10), fontSize: 10))
+        }
+        return PageContent(number: number, bounds: CGRect(x: 0, y: 0, width: 600, height: 800),
+                           lines: lines, graphics: [])
+    }
+    // Head text on every page establishes the offset; the chapter openings carry only a folio
+    // in the foot, too far apart to repeat. Neither the head's evidence nor their own reaches
+    // them, and the head rows are never beside them.
+    var pages = (10...60).map { number in
+        page(number, margin: [("\(number + 18) QUARTERLY REVIEW", 100)],
+             folio: [20, 40, 60].contains(number) ? "\(number + 18)" : nil)
+    }
+    let warnings = LayoutReconstructor.stripFurniture(&pages)
+    #expect(warnings.map(\.page) == Array(10...60))
+    for number in [20, 40, 60] {
+        #expect(pages[number - 10].lines.map(\.text)
+            == ["Body paragraph \(number) stays available.", "\(number + 18)"])
+    }
+    // The same folio beside removed head text on one row leaves with the row.
+    var beside = (10...14).map {
+        page($0, margin: [("\($0 + 18)", 300), ("QUARTERLY REVIEW", 100)], folio: nil)
+    }
+    #expect(LayoutReconstructor.stripFurniture(&beside).map(\.page) == Array(10...14))
+    #expect(beside.allSatisfy { $0.lines.map(\.text) == ["Body paragraph \($0.number) stays available."] })
 }
 
 @Test(arguments: [33, 50, 51])

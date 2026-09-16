@@ -519,8 +519,11 @@ enum LayoutReconstructor {
         let noteLayout = NumberedNoteDetector.layout(in: elements, page: page, chapter: noteChapter)
         let noteGroups = noteLayout?.paragraphs ?? [:]
         // A contents entry is never a heading; a multi-line display sentence is a pull quote.
+        // Neither is a separated margin line that opens or closes with this page's number:
+        // that is a running head, whatever furniture removal made of it (#62).
         func isHeadingCandidate(_ line: TextLine) -> Bool {
-            line.structure == nil && (isHeadingSize(line) || labels.contains(line)) && !isContentsEntry(line.text)
+            line.structure == nil && (isHeadingSize(line) || labels.contains(line))
+                && !isContentsEntry(line.text) && !isHeaderLike(line, in: page, bothBands: true)
         }
         let quotes = pullQuoteLines(in: bodyElements.compactMap(\.line), candidates: isHeadingCandidate)
         var result: [ReflowBlock] = []
@@ -973,16 +976,26 @@ enum LayoutReconstructor {
         return best?.line
     }
 
-    /// A short line in the top band that opens or closes with a page number and is separated from
-    /// the text below it is a running header that furniture removal kept (`xiv COMMISSION STAFF`).
-    /// A paragraph's short final line at the head of a page carries no folio.
-    private static func isHeaderLike(_ line: TextLine, in page: PageContent) -> Bool {
+    /// A short line in a margin band that opens or closes with a page number and is separated
+    /// from the text beside it is a running head that furniture removal kept
+    /// (`xiv COMMISSION STAFF`, `554 NOTES TO CHAPTERS 9-10`). A paragraph's short final line at
+    /// the head of a page carries no folio. `bothBands` also reads the foot of the page, which
+    /// the cross-page join rule has no reason to consult: it only ever asks about a page's first
+    /// line. Whatever this accepts is margin furniture and never a heading (#62).
+    static func isHeaderLike(_ line: TextLine, in page: PageContent, bothBands: Bool = false) -> Bool {
         let words = line.text.split(whereSeparator: \.isWhitespace)
-        guard page.bounds.height > 0, (line.rect.midY - page.bounds.minY) / page.bounds.height >= 0.9,
-              line.text.count < 100, let first = words.first, let last = words.last,
+        guard page.bounds.height > 0 else { return false }
+        let position = (line.rect.midY - page.bounds.minY) / page.bounds.height
+        let top = position >= 0.9
+        guard top || (bothBands && position <= 0.1), line.text.count < 100,
+              let first = words.first, let last = words.last,
               isFolio(String(first)) || isFolio(String(last)) else { return false }
-        let below = page.lines.filter { $0.rect.midY < line.rect.midY - line.rect.height * 0.4 }
-        guard let gap = below.map({ line.rect.minY - $0.rect.maxY }).min() else { return true }
+        let inward = page.lines.filter {
+            top ? $0.rect.midY < line.rect.midY - line.rect.height * 0.4
+                : $0.rect.midY > line.rect.midY + line.rect.height * 0.4
+        }
+        let gaps = inward.map { top ? line.rect.minY - $0.rect.maxY : $0.rect.minY - line.rect.maxY }
+        guard let gap = gaps.min() else { return true }
         return gap >= max(line.rect.height, page.bounds.height * 0.012)
     }
 

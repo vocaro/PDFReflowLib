@@ -343,6 +343,26 @@ The top candidate band is the outer fifth of the page, and a second header row b
 eligible outermost row is removed only with that row (#40). Six checksum-pinned Loper Bright
 pages (96–101) require all three running-head lines (`Cite as: …`/`LOPER BRIGHT …` with the
 folio, then `KAGAN, J., dissenting`) to go on every page with every other line retained.
+
+A margin line's boundary page number is evidence in its own right (#62): a run of three or more
+nearby pages whose margin folios on one edge share a numeral system, the same offset from the
+physical page, the same height in the band and the same type size are running heads even where
+no three of them repeat any text. `folioValue` reads Arabic, chapter-prefixed and canonical Roman
+numerals of two or more letters in 1–400, so ordinary words (`did`, `mill`, `civil`, `mix`) and
+initials are not page numbers, and a numbered `Figure`/`Table`/`Plate` label supplies no folio.
+A line that is only a folio is never removed on this evidence alone — a chapter opening's lone
+page number is not a running head — unless every other line on its row is removed too.
+`911-571`/`572`/`573` are the 9/11 reproducer (three heads that share no text but share offset
+−18) with chapter opening `911-126` as the control that keeps its foot folio; `loper-44` … `48`
+cover the four-page Thomas concurrence, whose alternating heads occur twice each, with page 48
+restarting the numbering for the next opinion as the control.
+`folioReadingAcceptsOnlyCanonicalPageNumbers` tests the reading in isolation.
+
+`HeadingTests.swift` requires that a separated margin line opening or closing with a page number
+is never a heading, whatever furniture removal made of it, with controls for a head carrying no
+folio, a folio-bearing line inside the text block and one the body runs straight into. Corpus
+contracts support `absentHeadings` for a line the page still carries that must not be in the
+navigation. See the [margin-folio record](../measurements/margin-folios/record.md).
 Synthetic controls keep a lone section row 8 pt above the body, a repeated section row beneath
 unrepeated titles, a row three line heights below the title row, a repeated opening line that
 its paragraph follows directly, and a repeated separated line below the band; the 9/11, FAA and

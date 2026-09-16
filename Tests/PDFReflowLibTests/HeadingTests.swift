@@ -89,3 +89,52 @@ private func mixedTypographyPage(bodyLines: Int = 6) -> PageContent {
         #expect(!headings(blocks).contains { $0.contains(phrase) })
     }
 }
+
+/// #62's floor: whatever furniture removal makes of a running head — the client can switch it
+/// off entirely — a separated margin line that opens or closes with the page's own number is
+/// never a heading. `blocks` sees the page as extraction hands it over, before any removal.
+@Test func foliobearingMarginLinesAreNeverHeadings() throws {
+    let page = try SourceLayoutFixture.load("911-572").content()
+    let head = try #require(page.lines.max { $0.rect.midY < $1.rect.midY })
+    #expect(head.text == "554 NOTES TO CHAPTERS 9-10")
+    // It clears the page's heading threshold: 9.5 pt over the notes' 7 pt body.
+    #expect(head.fontSize >= LayoutReconstructor.bodySize(page.lines) * 1.25)
+    let blocks = headingBlocks(page)
+    #expect(!headings(blocks).contains { $0.contains("NOTES TO CHAPTERS") })
+    // It keeps its text as a paragraph; the rule decides navigation, not retention.
+    #expect(blocks.contains { $0.text.contains("554 NOTES TO CHAPTERS 9-10") })
+}
+
+@Test func marginFolioHeadingRuleNeedsTheBandTheFolioAndTheSeparation() {
+    func page(_ text: String, y: Double, gap: Double = 60) -> PageContent {
+        PageContent(number: 572, bounds: CGRect(x: 0, y: 0, width: 600, height: 800), lines: [
+            TextLine(text: text, rect: CGRect(x: 40, y: y, width: 250, height: 14), fontSize: 14),
+        ] + (0..<8).map { i in
+            TextLine(text: "Ordinary body prose fills the measure of this page and sets its body size.",
+                     rect: CGRect(x: 40, y: y > 400 ? y - gap - Double(i) * 12 : y + gap + Double(i) * 12,
+                                  width: 500, height: 10), fontSize: 10)
+        }, graphics: [])
+    }
+    func isHeading(_ content: PageContent) -> Bool {
+        var warnings: [ConversionWarning] = []
+        return LayoutReconstructor.blocks(page: content, images: [],
+            vocabulary: LayoutReconstructor.vocabulary(in: [content]), warnings: &warnings)
+            .contains { if case .heading = $0.content { true } else { false } }
+    }
+    // Both margins, leading and trailing folio, Arabic and Roman.
+    #expect(!isHeading(page("572 NOTES TO CHAPTERS 9-10", y: 740)))
+    #expect(!isHeading(page("NOTES TO CHAPTERS 9-10 572", y: 740)))
+    #expect(!isHeading(page("dlxxii NOTES TO CHAPTERS", y: 740)))
+    #expect(!isHeading(page("572 NOTES TO CHAPTERS 9-10", y: 40)))
+    // Positive controls: a heading with no folio at its edge; a page number that is not this
+    // page's; a folio-bearing line inside the text block; and one the body runs straight into.
+    #expect(isHeading(page("NOTES TO CHAPTERS NINE AND TEN", y: 740)))
+    #expect(isHeading(page("572 NOTES TO CHAPTERS 9-10", y: 600)))
+    #expect(isHeading(page("572 NOTES TO CHAPTERS 9-10", y: 740, gap: 12)))
+    // Scope: `blocks` reconstructs one page and does not know the document's folio offset, so
+    // any number at the edge of a separated line in the outer tenth reads as this page's
+    // number. A title set that far into the head margin and clear of the body is a running
+    // head in all six corpus books; no corpus heading is lost to this (see the record).
+    #expect(!isHeading(page("CHAPTER 9 AND CHAPTER 10", y: 740)))
+    #expect(isHeading(page("CHAPTER 9 AND CHAPTER TEN", y: 740)))
+}

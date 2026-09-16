@@ -394,7 +394,7 @@
     {
       "id": "gpo-911-2004",
       "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
-      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 13-16, 126-127, 192-193 and 357-358 visually reviewed (#45): the bottom folios 108, 174 and 339 on chapter-opening pages and the front-matter folios xiii/xv stay separate paragraphs that never absorb the following page's text, while the body paragraph above each chapter-opening folio continues onto the next page. Pages 19, 20, 64, 65, 469 and 484 visually reviewed (#11): each chapter’s endnotes are numbered from 1, so a marker links only to the note of its own chapter (outline chapter openings validated on the page): page 19’s 1 and page 20’s 4 reach chapter 1’s notes 1 and 4 on page 469, where note 1’s second indented paragraph stays a paragraph of its own; page 64’s 241 reaches chapter 1’s last note on page 484, while page 65’s 1 reaches chapter 2’s note 1 under the chapter-opening heading on that same page. Every linked note returns to its first reference.",
+      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 13-16, 126-127, 192-193 and 357-358 visually reviewed (#45): the bottom folios 108, 174 and 339 on chapter-opening pages and the front-matter folios xiii/xv stay separate paragraphs that never absorb the following page's text, while the body paragraph above each chapter-opening folio continues onto the next page. Pages 19, 20, 64, 65, 469 and 484 visually reviewed (#11): each chapter’s endnotes are numbered from 1, so a marker links only to the note of its own chapter (outline chapter openings validated on the page): page 19’s 1 and page 20’s 4 reach chapter 1’s notes 1 and 4 on page 469, where note 1’s second indented paragraph stays a paragraph of its own; page 64’s 241 reaches chapter 1’s last note on page 484, while page 65’s 1 reaches chapter 2’s note 1 under the chapter-opening heading on that same page. Every linked note returns to its first reference. Pages 13–18, 467–468 and 571–585 visually reviewed (#62): a note-page or front-matter running head whose folio is 18 (Arabic) or 0 (Roman) from the physical page is margin furniture even where no three pages repeat its text, and is never a heading; the genuine per-chapter notes titles (10 Wartime, 11 Foresight—and Hindsight, 12 What to Do?) stay in the navigation, and the prose each removed head had separated joins across the page boundary. #45's front-matter separation checks now name the first paragraph that follows each folio, since the head between them is gone; the folio still must not absorb it.",
       "pages": [
         {
           "page": 15,
@@ -404,7 +404,7 @@
           "separateParagraphs": [
             {
               "end": "xv",
-              "next": "xvi PREFACE"
+              "next": "Our aim has not been to assign individual blame"
             }
           ]
         },
@@ -624,7 +624,7 @@
           "separateParagraphs": [
             {
               "end": "xiii",
-              "next": "xiv COMMISSION STAFF"
+              "next": "Lorry M. Fenner Professional Staff Member"
             }
           ]
         },
@@ -723,6 +723,188 @@
             "241. NEADS audio file",
             "2 The Foundation of the New Terrorism",
             "1.“Text of World Islamic Front"
+          ]
+        },
+        {
+          "page": 14,
+          "absentText": [
+            "xiv COMMISSION STAFF"
+          ],
+          "text": [
+            "Lorry M. Fenner",
+            "Karen Heitkotter"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ]
+        },
+        {
+          "page": 16,
+          "absentText": [
+            "xvi PREFACE"
+          ],
+          "text": [
+            "Our aim has not been to assign individual blame"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "setting aside other important endeavors to take on this",
+              "next": "all-consuming assignment"
+            }
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ]
+        },
+        {
+          "page": 17,
+          "absentText": [
+            "PREFACE xvii"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "We also approach the task of recommendations with humility.We have",
+              "next": "made a limited number of them"
+            }
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ]
+        },
+        {
+          "page": 18,
+          "absentText": [
+            "xviii PREFACE"
+          ],
+          "text": [
+            "Lee H. Hamilton vice chair"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ]
+        },
+        {
+          "page": 467,
+          "headings": [
+            "NOTES"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "Testimony by witnesses at one of the Com",
+              "next": "mission’s 12 public hearings is cited as"
+            }
+          ]
+        },
+        {
+          "page": 468,
+          "absentText": [
+            "450 NOTES"
+          ],
+          "text": [
+            "Thomas Ridge prepared statement"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ]
+        },
+        {
+          "page": 571,
+          "absentText": [
+            "554 NOTES TO CHAPTERS"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "according to one of the ESU offi",
+              "next": "cers and one of the firefighters in the North Tower"
+            }
+          ]
+        },
+        {
+          "page": 572,
+          "absentText": [
+            "554 NOTES TO CHAPTERS 9-10",
+            "NOTES TO CHAPTERS"
+          ],
+          "headings": [
+            "10 Wartime"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ]
+        },
+        {
+          "page": 577,
+          "absentText": [
+            "560 NOTES TO CHAPTERS"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "in the initial offensive,perhaps delib",
+              "next": "erately selecting a non–al Qaeda target like Iraq"
+            }
+          ]
+        },
+        {
+          "page": 578,
+          "absentText": [
+            "560 NOTES TO CHAPTERS 10-11"
+          ],
+          "headings": [
+            "11 Foresight"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ]
+        },
+        {
+          "page": 579,
+          "absentText": [
+            "NOTES TO CHAPTER 11 561"
+          ],
+          "text": [
+            "Richard Clarke testimony, Mar. 24, 2004"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ]
+        },
+        {
+          "page": 580,
+          "absentText": [
+            "562 NOTES TO CHAPTER 11"
+          ],
+          "headings": [
+            "12 What to Do"
+          ],
+          "text": [
+            "National Strategy for Combating Terrorism"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ]
+        },
+        {
+          "page": 584,
+          "absentText": [
+            "566 NOTES TO CHAPTER 13"
+          ],
+          "text": [
+            "The proposed National Counterterrorism Center should offer one-stop shopping"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ]
+        },
+        {
+          "page": 585,
+          "absentText": [
+            "NOTES TO CHAPTER 13 567"
+          ],
+          "text": [
+            "Markle Foundation Task Force report"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
           ]
         }
       ]
@@ -1096,7 +1278,7 @@
     {
       "id": "gpo-our-flag-2003",
       "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
-      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Page 33 source raster reviewed in color: the Colorado flag (blue and white stripes, red C, gold disc) must keep its scale, ink contrast and hues (#27).",
+      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Page 33 source raster reviewed in color: the Colorado flag (blue and white stripes, red C, gold disc) must keep its scale, ink contrast and hues (#27). Pages 33, 34, 42 and 43 reviewed (#62): the printed page number in the margin is retained text and is not a heading.",
       "pages": [
         {
           "page": 27,
@@ -1148,14 +1330,18 @@
             "CALIFORNIA",
             "COLORADO",
             "CONNECTICUT",
-            "DELAWARE"
+            "DELAWARE",
+            "27"
           ],
           "imageAppearance": [
             {
               "reference": "corpus/references/gpo-our-flag-2003/page-33-colorado-flag-color.png"
             }
           ],
-          "minimumImages": 4
+          "minimumImages": 4,
+          "absentHeadings": [
+            "27"
+          ]
         },
         {
           "page": 34,
@@ -1165,7 +1351,13 @@
             "HAWAII",
             "IDAHO"
           ],
-          "minimumImages": 4
+          "minimumImages": 4,
+          "absentHeadings": [
+            "28"
+          ],
+          "text": [
+            "28"
+          ]
         },
         {
           "page": 42,
@@ -1175,7 +1367,13 @@
             "TEXAS",
             "UTAH"
           ],
-          "minimumImages": 4
+          "minimumImages": 4,
+          "absentHeadings": [
+            "36"
+          ],
+          "text": [
+            "36"
+          ]
         },
         {
           "page": 43,
@@ -1185,7 +1383,13 @@
             "WASHINGTON",
             "WEST VIRGINIA"
           ],
-          "minimumImages": 4
+          "minimumImages": 4,
+          "absentHeadings": [
+            "37"
+          ],
+          "text": [
+            "37"
+          ]
         },
         {
           "page": 7,
@@ -1422,7 +1626,7 @@
     {
       "id": "scotus-loper-bright-2024",
       "sourceSHA256": "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e",
-      "basis": "Source pages 2, 7, 13, 60, 61, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Pages 2, 7, 13 and 60: wrapped justified lines beginning with \"v.\", a year, \"F.\" or \"U. S.\" must stay inside their source paragraph rather than becoming preformatted fragments (#39); page 2 keeps its four syllabus paragraphs in order. Pages 13, 60, 61, 97 and 98 (#40): each page-bottom footnote is a separate note block opening with its raised marker, the em-dash separator is not prose, footnote 2 is one note element from page 97 through its page-98 continuation and precedes that page's body, page 13's detached body marker 1 stays a superscript inside its sentence, and the two-row running heads (title row with folio, opinion row) are removed with a furnitureRemoved warning; page 13's body paragraph continues onto page 14 past the note block (#45), so footnote 1 follows that paragraph after its marker and is reached under the page-14 anchor. Pages 13, 60, 97 and 98 (#11): each raised marker links to the footnote of its own page and the note returns to the marker; page 13’s note is reached under the page-14 anchor.",
+      "basis": "Source pages 2, 7, 13, 60, 61, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Pages 2, 7, 13 and 60: wrapped justified lines beginning with \"v.\", a year, \"F.\" or \"U. S.\" must stay inside their source paragraph rather than becoming preformatted fragments (#39); page 2 keeps its four syllabus paragraphs in order. Pages 13, 60, 61, 97 and 98 (#40): each page-bottom footnote is a separate note block opening with its raised marker, the em-dash separator is not prose, footnote 2 is one note element from page 97 through its page-98 continuation and precedes that page's body, page 13's detached body marker 1 stays a superscript inside its sentence, and the two-row running heads (title row with folio, opinion row) are removed with a furnitureRemoved warning; page 13's body paragraph continues onto page 14 past the note block (#45), so footnote 1 follows that paragraph after its marker and is reached under the page-14 anchor. Pages 13, 60, 97 and 98 (#11): each raised marker links to the footnote of its own page and the note returns to the marker; page 13’s note is reached under the page-14 anchor. Pages 44–48 visually reviewed (#62/#10): the Thomas concurrence runs four pages, so each alternating head occurs only twice and the three-occurrence rule left them all. All four pages' folios are 43 less than the physical page, which removes both head rows without touching the body's own `(THOMAS, J., concurring)` citations. Page 48 opens the next concurrence and restarts the numbering.",
       "pages": [
         {
           "page": 2,
@@ -1647,6 +1851,79 @@
               "note": "In a footnote responding to the last two paragraphs",
               "notePage": 98
             }
+          ]
+        },
+        {
+          "page": 44,
+          "absentText": [
+            "Cite as: 603 U. S. ____ (2024) THOMAS, J., concurring",
+            "1 THOMAS, J., concurring"
+          ],
+          "text": [
+            "GINA RAIMONDO, SECRETARY OF"
+          ],
+          "headings": [
+            "SUPREME COURT OF THE UNITED STATES"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ]
+        },
+        {
+          "page": 45,
+          "absentText": [
+            "2 LOPER BRIGHT ENTERPRISES v. RAIMONDO",
+            "v. RAIMONDO THOMAS, J., concurring"
+          ],
+          "paragraphs": [
+            "I write separately to underscore a more fundamental problem"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ]
+        },
+        {
+          "page": 46,
+          "absentText": [
+            "Cite as: 603 U. S. ____ (2024) THOMAS, J., concurring",
+            "3 THOMAS, J., concurring"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "If that were true, Chevron",
+              "next": "would mean that “agencies are unconstitutionally exercis"
+            }
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ],
+          "paragraphs": [
+            "exercising their independent judgment to resolve ambiguities"
+          ]
+        },
+        {
+          "page": 47,
+          "absentText": [
+            "4 LOPER BRIGHT ENTERPRISES v. RAIMONDO",
+            "v. RAIMONDO THOMAS, J., concurring"
+          ],
+          "paragraphs": [
+            "Chevron deference was “not a harmless transfer of power."
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ]
+        },
+        {
+          "page": 48,
+          "absentText": [
+            "Cite as: 603 U. S. ____ (2024) GORSUCH, J., concurring"
+          ],
+          "headings": [
+            "SUPREME COURT OF THE UNITED STATES"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
           ]
         }
       ]

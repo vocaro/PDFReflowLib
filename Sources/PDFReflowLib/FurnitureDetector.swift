@@ -20,9 +20,27 @@ enum FurnitureDetector {
         var dependsOn: [Int] = []
     }
 
+    /// A margin candidate whose first or last word is a page number. `offset` is that number
+    /// less the physical page, the quantity a folio keeps constant while its text changes.
+    fileprivate struct FolioCandidate {
+        var candidate: Candidate
+        var edge: String
+        /// The numeral system: two folios agree only when written the same way.
+        var kind: String
+        var offset: Int
+        /// The line's own type size. `Candidate.fontSize` substitutes measured glyph height for
+        /// a bare folio, which cannot be compared with a head line's font attribute.
+        var typeSize: CGFloat
+        /// The line is nothing but the folio.
+        var bare: Bool
+        /// Every other line of the page sharing this line's row.
+        var rowMates: [Int]
+    }
+
     /// Document-wide evidence without the pages themselves.
     struct Ledger {
         fileprivate var groups: [String: [Candidate]] = [:]
+        fileprivate var folios: [FolioCandidate] = []
         fileprivate var syntheticOccurrences: [String: Int] = [:]
         fileprivate var pageCount = 0
         init() {}
@@ -102,6 +120,24 @@ enum FurnitureDetector {
                                       isFolio: isFolio, dependsOn: dependsOn)
             let edge = top ? "top:" : "bottom:"
             ledger.groups[edge + words.joined(separator: " "), default: []].append(candidate)
+            // A boundary page number is evidence of its own: it tracks the physical page while
+            // the rest of the line changes. Record every such reading; `resolve` decides.
+            let mates = page.lines.indices.filter { other in
+                other != lineIndex && abs(page.lines[other].rect.midY - line.rect.midY)
+                    <= max(line.rect.height, page.lines[other].rect.height) * 0.4
+            }
+            // A numbered figure or table label also counts up with the pages it sits on. Its
+            // number names the object, not the page, so it supplies no folio evidence.
+            let caption = ["figure", "fig.", "table", "plate", "chart", "exhibit", "map", "box"]
+                .contains(words[0])
+            for index in Set([0, words.count - 1]) where !caption {
+                guard let folio = folioValue(words[index]) else { continue }
+                let (offset, overflow) = folio.value.subtractingReportingOverflow(page.number)
+                guard !overflow else { continue }
+                ledger.folios.append(FolioCandidate(candidate: candidate, edge: edge, kind: folio.kind,
+                                                    offset: offset, typeSize: line.fontSize,
+                                                    bare: words.count == 1, rowMates: mates))
+            }
             if isFolio, folioParts.count == 2, let value = Int(folioParts[1]) {
                 let (offset, overflow) = value.subtractingReportingOverflow(page.number)
                 if !overflow {
@@ -189,7 +225,62 @@ enum FurnitureDetector {
             }
             finish()
         }
+        resolveFolios(ledger, into: &plan)
         return plan
+    }
+
+    /// A margin line whose boundary page number tracks the physical page is a running head even
+    /// where its text changes from page to page (`554 NOTES TO CHAPTERS 9-10` on an isolated
+    /// note page) and even where the head alternates over too few pages for a text run (a slip
+    /// opinion's four-page concurrence). The evidence is an offset run: three or more nearby
+    /// pages whose margin folios on one edge share a numeral system, the same offset from the
+    /// physical page, the same height in the band and the same type size. Nothing but an
+    /// already-recorded margin candidate can enter such a run, so this only decides candidates
+    /// the separation, band and outermost-row rules have already admitted.
+    ///
+    /// A line that is nothing but a folio is never removed on this evidence alone: a chapter
+    /// opening's lone page number is not a running head. One sharing its row with head text
+    /// that is removed goes with that row, so a `folio + title` row does not lose half of itself.
+    private static func resolveFolios(_ ledger: Ledger, into plan: inout Plan) {
+        var groups: [String: [FolioCandidate]] = [:]
+        for folio in ledger.folios {
+            groups[folio.edge + folio.kind + ":\(folio.offset)", default: []].append(folio)
+        }
+        var established: [FolioCandidate] = []
+        for group in groups.values {
+            let ordered = group.sorted { $0.candidate.number < $1.candidate.number }
+            var run: [FolioCandidate] = []
+            func finish() {
+                // Alternating heads put one page between two occurrences, so a run of three
+                // means three pages, not three lines on one page.
+                if Set(run.map(\.candidate.number)).count >= 3 { established += run }
+            }
+            for folio in ordered {
+                if let first = run.first, let last = run.last {
+                    let distance = folio.candidate.number - last.candidate.number
+                    if !(0...2).contains(distance)
+                        || abs(folio.candidate.position - first.candidate.position) > 0.04
+                        || abs(folio.typeSize - first.typeSize) > max(0.5, first.typeSize * 0.1) {
+                        finish()
+                        run.removeAll(keepingCapacity: true)
+                    }
+                }
+                run.append(folio)
+            }
+            finish()
+        }
+        for folio in established where !folio.bare {
+            plan.native[folio.candidate.pageIndex, default: []].insert(folio.candidate.lineIndex)
+            if !folio.candidate.dependsOn.isEmpty {
+                plan.dependencies[folio.candidate.pageIndex, default: [:]][folio.candidate.lineIndex]
+                    = folio.candidate.dependsOn
+            }
+        }
+        for folio in established where folio.bare && !folio.rowMates.isEmpty {
+            let removed = plan.native[folio.candidate.pageIndex] ?? []
+            guard folio.rowMates.allSatisfy(removed.contains) else { continue }
+            plan.native[folio.candidate.pageIndex, default: []].insert(folio.candidate.lineIndex)
+        }
     }
 
     static func apply(_ plan: Plan, to page: inout PageContent, pageIndex: Int) -> ConversionWarning? {
@@ -216,6 +307,49 @@ enum FurnitureDetector {
         page.lines = kept
         return ConversionWarning(code: .furnitureRemoved, page: page.number,
                                  message: "Repeated header or footer omitted from the reflowed text.")
+    }
+
+    /// A page number at a margin line's boundary: Arabic (`554`), chapter-prefixed (`5-3`, whose
+    /// second part numbers the page inside its chapter) or a Roman numeral (`xiv`). The word is
+    /// already lowercased. A single letter is not accepted: an initial is not a folio.
+    static func folioValue(_ word: String) -> (kind: String, value: Int)? {
+        if let value = Int(word), value >= 0, value <= 100_000 { return ("arabic", value) }
+        let parts = word.split(separator: "-", omittingEmptySubsequences: false)
+        if parts.count == 2, let chapter = Int(parts[0]), let value = Int(parts[1]),
+           chapter >= 0, value >= 0, value <= 100_000 {
+            return ("chapter-\(chapter)", value)
+        }
+        guard word.count >= 2, let value = romanValue(word) else { return nil }
+        return ("roman", value)
+    }
+
+    /// A Roman numeral in its one canonical spelling, bounded by the range front matter uses.
+    /// Round-tripping the value rejects words that merely read as numerals (`did`, `civil`).
+    private static func romanValue(_ word: String) -> Int? {
+        let digits: [Character: Int] = ["i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000]
+        var total = 0
+        var highest = 0
+        for character in word.reversed() {
+            guard let value = digits[character] else { return nil }
+            total += value < highest ? -value : value
+            highest = max(highest, value)
+        }
+        guard (1...400).contains(total), romanText(total) == word else { return nil }
+        return total
+    }
+
+    private static func romanText(_ value: Int) -> String {
+        let table: [(Int, String)] = [(400, "cd"), (100, "c"), (90, "xc"), (50, "l"), (40, "xl"), (10, "x"),
+                                      (9, "ix"), (5, "v"), (4, "iv"), (1, "i")]
+        var remaining = value
+        var text = ""
+        for (weight, symbol) in table {
+            while remaining >= weight {
+                text += symbol
+                remaining -= weight
+            }
+        }
+        return text
     }
 
     private static func syntheticKey(_ line: TextLine, bounds: CGRect) -> String? {

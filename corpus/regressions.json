@@ -1098,7 +1098,7 @@
     {
       "id": "census-rrs2002-01",
       "sourceSHA256": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
-      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body text layer has no usable Unicode mapping. Does not bless pages 2-20: their shifted-letter text currently ships as prose without a quality warning (#38).",
+      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body text layer has no usable Unicode mapping (#38). Pages 2-20 must report damagedTextEncoding and keep a source-page image; page 3's reviewed phrases (section heading, first sentence, subsection title and numbered fields 1 and 13 of the 16 IRS fields) come from the source page and must arrive through OCR under the default policy, with the shifted-letter forms absent. Does not bless OCR accuracy elsewhere on those pages.",
       "pages": [
         {
           "page": 1,
@@ -1109,8 +1109,45 @@
             "William E. Yancey, William E. Winkler, Robert H. Creecy",
             "Report Issued: January 31, 2002",
             "This paper reports the results of research and analysis undertaken by Census Bureau staff."
-          ]
-        }
+          ],
+          "absentWarningCodes": ["damagedTextEncoding", "ocrUsed", "unverifiedTextLayer"]
+        },
+        {
+          "page": 2,
+          "minimumImages": 1,
+          "warningCodesAnyOf": ["damagedTextEncoding"],
+          "absentText": ["Devwudfw1 Wklv sdshu"]
+        },
+        {
+          "page": 3,
+          "minimumImages": 1,
+          "warningCodesAnyOf": ["damagedTextEncoding"],
+          "orderedText": [
+            "Data Files",
+            "Two data files were used.",
+            "Domingo-Ferrer and Mateo-Sanz",
+            "1. Total income",
+            "13. Schedule D flag"
+          ],
+          "absentText": ["5GdwdIlohv", "Wzr gdwd", "Vfkhgxoh G"]
+        },
+        {"page": 4, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 5, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 6, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 7, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 8, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 9, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 10, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 11, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 12, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 13, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 14, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 15, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 16, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 17, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 18, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 19, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]},
+        {"page": 20, "minimumImages": 1, "warningCodesAnyOf": ["damagedTextEncoding"]}
       ]
     },
     {

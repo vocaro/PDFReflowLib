@@ -39,10 +39,11 @@ enum PDFReflowLibPipeline {
 
         /// Every extraction step except recognition. `limit` only guards the character budget;
         /// it never truncates a page.
-        func extractPage(_ i: Int, limit: Int, warnings: inout [ConversionWarning]) throws -> (content: PageContent, attemptsOCR: Bool) {
+        func extractPage(_ i: Int, limit: Int, warnings: inout [ConversionWarning])
+            throws -> (content: PageContent, attemptsOCR: Bool, damagedEncoding: Bool) {
             // The pool includes every PDFKit accessor, not only string extraction. Page
             // references and annotation arrays also carry autoreleased rendering resources.
-            var content = try autoreleasepool {
+            var (content, unmappedFont) = try autoreleasepool {
                 let page = try document.page(at: i)
                 guard let reference = page.pageRef else {
                     throw ConversionError.unreadablePDF
@@ -83,11 +84,16 @@ enum PDFReflowLibPipeline {
                             ? "Visible annotations and link/form interactions are not reconstructed; supplementary references are disabled."
                             : "A page image preserves visible annotations. Link and form interactions are not reconstructed."))
                 }
-                return content
+                // Structural font evidence is read here; the text judgment follows outside the pool.
+                return (content, !content.lines.isEmpty && !requiresPageImage && TextEncodingCheck.hasUnmappedFont(reference))
             }
             let bounds = content.bounds
             let raw = content.lines.map(\.text).joined()
             let damaged = raw.unicodeScalars.filter { $0.value == 0xFFFD || $0.value == 0xFFFC }.count
+            // Index-style glyph names without ToUnicode make PDFKit report indexes as characters.
+            // Flag only when the extracted words also fail the declared language's statistics.
+            let damagedEncoding = unmappedFont
+                && TextEncodingCheck.isImplausible(content.lines.map(\.text).joined(separator: "\n"), language: options.language)
             // Share the same conservative page-sized-graphic signal with the review warning.
             // It identifies a candidate for re-recognition, not an erroneous transcription.
             let imageBackedText = !content.lines.isEmpty && content.graphics.contains {
@@ -95,9 +101,25 @@ enum PDFReflowLibPipeline {
             }
             let automaticOCR = options.ocr == .automatic || options.ocr == .automaticIncludingImageBackedText
             let needsOCR = options.ocr == .always || (automaticOCR &&
-                (raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || damaged > max(2, raw.count / 50)))
+                (raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || damaged > max(2, raw.count / 50)
+                 || damagedEncoding))
                 || (options.ocr == .automaticIncludingImageBackedText && imageBackedText)
-            if needsOCR && !content.requiresPageImage { return (content, true) }
+            let attemptsOCR = needsOCR && !content.requiresPageImage
+            if damagedEncoding {
+                warnings.append(.init(code: .damagedTextEncoding, page: i + 1,
+                    message: "Native text has no usable Unicode mapping (custom font encoding without ToUnicode) "
+                        + "and does not read as the declared language. "
+                        + (attemptsOCR ? "Recognition of the page image replaces it."
+                            : "The unreadable native text is retained; "
+                            + (options.referenceImages == .never
+                                ? "supplementary references are disabled, so read the source PDF instead."
+                                : "read the accompanying source-page image instead."))))
+            }
+            if attemptsOCR { return (content, true, damagedEncoding) }
+            if damagedEncoding {
+                content.preservePageReference = true
+                for index in content.lines.indices { content.lines[index].structure = nil }
+            }
             if !content.requiresPageImage, imageBackedText {
                 // A scan with an existing OCR layer must still reflow. Keep its visual page as a
                 // reference rather than treating the full-page scan as one figure covering all text.
@@ -114,7 +136,7 @@ enum PDFReflowLibPipeline {
             if content.lines.isEmpty && !content.requiresPageImage {
                 content.requiresPageImage = true
             }
-            return (content, false)
+            return (content, false, damagedEncoding)
         }
 
         let store = PageStore(directory: workspace.appendingPathComponent("pages"))
@@ -161,7 +183,10 @@ enum PDFReflowLibPipeline {
                 chapterStartPages.insert(content.number)
             }
             // Retain heading evidence before removing furniture, after all extraction/OCR work.
-            LayoutReconstructor.addVocabulary(of: content, to: &vocabulary)
+            // Retained unreadable text supplies no hyphen-repair vocabulary.
+            if !extracted.damagedEncoding || content.recognized {
+                LayoutReconstructor.addVocabulary(of: content, to: &vocabulary)
+            }
             if NumberedNoteDetector.hasHeading(on: content) { numberedNotePages.insert(content.number) }
             if options.removeRepeatedHeadersAndFooters { FurnitureDetector.collect(content, pageIndex: i, into: &furniture) }
             if content.recognized { recognizedPages += 1 }

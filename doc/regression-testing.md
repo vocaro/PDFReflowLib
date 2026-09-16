@@ -50,14 +50,14 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 439 targeted checks on 93 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 487 targeted checks on 112 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 177 ordered-text, 61 text, 42 paragraph,
-26 heading, 27 absent-text, 13 script, 6 paragraph-continuation, 58 image-presence, 12 warning,
-11 source-region, 3 glyph-structure and 3 image-appearance checks. All source-page anchors must
-also remain complete and ordered, and semantic text must contain no image attachment placeholders.
+the NBS and Replay Clocks academic papers). They comprise 182 ordered-text, 61 text, 42 paragraph,
+26 heading, 31 absent-text, 13 script, 6 paragraph-continuation, 77 image-presence, 31 warning,
+1 absent-warning, 11 source-region, 3 glyph-structure and 3 image-appearance checks. All source-page
+anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
 
 The checks preserve selected correct words, paragraph semantics and cross-page continuity, paragraph/list order, license attribution, image
 presence, source-region content, glyph-level equation and table structure, image scale/contrast/color
@@ -249,7 +249,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-218 Swift tests with no known-issue wrappers, and 155 Python tests.
+226 Swift tests with no known-issue wrappers, and 156 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -444,6 +444,36 @@ fragment negative control rejects the same phrase split across blocks. See the
 [continuation evidence](../measurements/citation-continuations/record.md). Ragged-right columns
 and hanging-indent continuations remain outside this rule.
 
+
+## Damaged text encodings
+
+`DamagedEncodingTests.swift` covers [#38](https://github.com/vocaro/PDFReflowLib/issues/38): the
+Census report's LaTeX pages render correctly but extract with every letter shifted by three,
+because their Type 1C fonts use `Differences` names such as `G108` with no `ToUnicode` map. An
+original in-memory fixture reproduces the mechanism with a Type3 font whose glyph procedures draw
+the right letters through Helvetica while its encoding names each code `G<code + 3>`; PDFKit
+extracts `Wzr gdwd ilohv zhuh xvhg1` from it, and the same fixture with a correct `ToUnicode`
+CMap extracts `Two data files were used.` The tests require both signals: the font evidence
+accepts index-style names (`G108`, `g3`, `c63`, `glyph12`) forming at least half of a simple font's
+`Differences`, also inside nested Forms, and rejects standard names, `uniXXXX`, named base
+encodings, `ToUnicode` maps and composite fonts; the English statistics flag the checksum-pinned
+Census page 3 fixture and a Caesar-shifted paragraph but not the page 1 cover, ordinary prose,
+short pages, non-English declarations or the Blue Book OCR, algebra answer-key, 9/11 name-table,
+FAA glossary, Our Flag table, CDC comic and USGS table fixtures. End to end, `.never` retains the
+unreadable text with `damagedTextEncoding` and a source-page image (or `referenceImageOmitted`),
+every automatic policy recognizes the page instead and reports `ocrUsed` with the readable text,
+the mapped control is never flagged, and in a two-page book only the damaged page is flagged and
+referenced. The bundled prose, scanned, columns, graphics, lists-code and rotated fixtures carry
+no evidence.
+
+The corpus contract requires `damagedTextEncoding` and an image on Census pages 2–20, the
+reviewed page-3 phrases through OCR with the shifted forms absent, and no damaged-encoding, OCR
+or unverified-layer warning on the cover page through the new `absentWarningCodes` expectation,
+which the checker tests exercise with a same-page negative control. The
+[damaged-encoding evidence](../measurements/damaged-text-encoding/record.md) records the signal
+survey over 5,059 pages of the fourteen English corpus documents: the font evidence appears on
+19 of 20 Census pages and on no other page, and the text statistics alone would touch four
+answer-key and handwriting-OCR pages that the combined rule leaves alone.
 
 ## Decorative drop caps
 

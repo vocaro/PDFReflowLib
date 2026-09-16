@@ -15,5 +15,5 @@
       "acceptance": "Do not emit shifted-letter text as prose. Flag the page, retain a readable image, and recover text by OCR where enabled: 2 Data Files; Two data files were used.; 16 numbered income and flag fields."
     }
   ],
-  "scope": "Manual targets. Current converter ships unreadable text without a warning (#38)."
+  "scope": "Manual targets. The converter reports damagedTextEncoding on pages 2-20, keeps a source-page image and recognizes the page image under automatic OCR (#38); page 3's OCR is reviewed for the section heading, first sentence, subsection title and fields 1 and 13 only."
 }

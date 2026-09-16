@@ -174,6 +174,14 @@ an accompanying source-page image under the default reference policy. This conse
 text is OCR, detect every corrupted layer, or assess individual table cells. Fresh OCR keeps
 its separate `ocrUsed` notice; image-only fallbacks keep `pageImageFallback`.
 
+`TextEncodingCheck` covers the born-digital counterpart: a simple font in the page resources
+(or a nested Form) with a `Differences` encoding of index-style glyph names and no `ToUnicode`
+map is structural evidence read from the Core Graphics page dictionary, and an embedded English
+function-word list plus a 300-pair common-bigram table judge the extracted words. Both must
+agree before extraction reports `damagedTextEncoding`, makes the page an OCR candidate under
+automatic policies, recommends a source-page reference and withholds the page's words from the
+hyphen-repair vocabulary. No glyph programs are decoded and no network or model is involved.
+
 `GraphicsReader` tracks text rendering mode across saved graphics state and nested forms. When
 all observed text uses invisible mode 3 and a graphic covers most of the page, extraction skips
 attributed text and marks the page's typography as synthetic. Layout then uses ordinary prose

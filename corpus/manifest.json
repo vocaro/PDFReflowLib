@@ -961,18 +961,20 @@
         3
       ],
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
-      "reviewStatus": "Converted with EPUBCheck, progress and 128 MiB Mac RSS gate. Contract protects only the clean Word cover; the unmapped LaTeX body text ships unflagged (#38).",
+      "reviewStatus": "Converted with EPUBCheck, progress and 512 MiB Mac RSS gate. Contract protects the clean Word cover and requires damagedTextEncoding, a source image and reviewed page-3 OCR phrases on the unmapped LaTeX body pages (#38).",
       "knownFidelityIssues": [
         {
           "page": 3,
           "issue": "Text layer without ToUnicode extracts as shifted letters (Two data files were used. becomes Wzr gdwd ohv zhuh xvhg1) and ships as prose with no quality warning; pages 2-20 are affected.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/38"
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/38",
+          "status": "resolved",
+          "resolution": "Pages 2-20 report damagedTextEncoding (index-style Differences names without ToUnicode plus implausible English statistics), keep a source-page image and are recognized by default; see measurements/damaged-text-encoding/record.md."
         }
       ],
       "baselineStatus": "Baseline and reviewed contract recorded in measurements/census-rrs2002-01/record.md; included in the corpus gate.",
       "memoryBudget": {
-        "maxPeakRSSMiB": 128,
-        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+        "maxPeakRSSMiB": 512,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; RSS regression ceiling raised from 128 MiB when the 19 damaged-encoding pages became default OCR candidates (measured 245 MiB with Vision, 38 MiB without), not a mobile device budget"
       }
     },
     {

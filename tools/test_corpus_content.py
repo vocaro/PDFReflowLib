@@ -134,9 +134,22 @@ class CorpusContentTests(unittest.TestCase):
         self.assertEqual(pages[1]['paragraphs'], ['alpha beta'])
         self.assertEqual(pages[2]['paragraphs'], ['gamma', 'delta'])
 
+    def test_absent_warning_codes_reject_the_named_warning_only_on_that_page(self):
+        self.contract['pages'][0]['absentWarningCodes'] = ['damagedTextEncoding', 'ocrUsed']
+        self.assertTrue(self.check()['passed'])
+        self.report['warnings'].append({'page': 1, 'code': 'imageRegion'})
+        self.assertTrue(self.check()['passed'])
+        self.report['warnings'].append({'page': 2, 'code': 'damagedTextEncoding'})
+        self.assertTrue(self.check()['passed'])
+        self.report['warnings'].append({'page': 1, 'code': 'damagedTextEncoding'})
+        result = self.check()
+        self.assertFalse(result['passed'])
+        self.assertIn('Page 1: unexpected quality warning damagedTextEncoding', result['errors'])
+
     def test_invalid_or_empty_contracts_fail(self):
         for pages in [[], [{'page': 1}], [{'page': 3, 'text': ['x']}],
                       [{'page': 1, 'text': ['']}], [{'page': 1, 'text': []}],
+                      [{'page': 1, 'absentWarningCodes': []}],
                       [{'page': 1, 'minimumImages': 0}]]:
             with self.assertRaises(ValueError):
                 self.check(contract={'sourceSHA256': 'source', 'pages': pages})

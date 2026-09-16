@@ -224,7 +224,7 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'scripts', 'absentText', 'headings', 'paragraphs', 'continuedParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'paragraphs', 'continuedParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -338,6 +338,15 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
             checks += 1
             if not any(w.get('page') == number and w.get('code') in codes for w in report.get('warnings', [])):
                 errors.append(f'Page {number}: missing quality warning')
+        if 'absentWarningCodes' in item:
+            codes = item['absentWarningCodes']
+            if not codes:
+                raise ValueError('Empty absent-warning expectation')
+            checks += 1
+            unexpected = sorted({w.get('code') for w in report.get('warnings', [])
+                                 if w.get('page') == number and w.get('code') in codes})
+            if unexpected:
+                errors.append(f'Page {number}: unexpected quality warning ' + ', '.join(unexpected))
     if checks == 0:
         raise ValueError('Contract has no content checks')
     return {'case': case['id'], 'passed': not errors, 'reviewPages': numbers,

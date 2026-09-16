@@ -37,3 +37,8 @@ Review pages were compared against rendered source pages; `selected-page-xhtml.j
 - The word-coverage figure is not meaningful for this case: both the source extraction and the EPUB carry the same wrong letters.
 
 The corpus review JSON holds manual acceptance targets for the known failures. The regression contract checks only source-verified output and does not bless the defects above.
+
+Update (2026-09-16): the findings above are the retained failing baseline. Pages 2–20 now report
+`damagedTextEncoding`, keep a source-page image and are recognized by default; the contract covers
+all 20 pages and the RSS ceiling is 512 MiB. See
+[damaged-text-encoding](../damaged-text-encoding/record.md).

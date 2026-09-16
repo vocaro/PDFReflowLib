@@ -39,6 +39,18 @@ and include source references by default; empty or failed recognition retains a 
 image. Compare with the source before relying on transcription. Reference and resource options
 apply independently, and cancellation remains cooperative during platform recognition.
 
+A born-digital page can also lose its text without any scan: fonts with a custom `Differences`
+encoding of index-style glyph names (`G108`, `c63`) and no `ToUnicode` map render correctly
+but extract as the wrong characters (the Census report's LaTeX pages come out shifted by three
+letters). When the page has such a font and its extracted words fail the embedded English
+statistics (at least 20 words, under 5% function words, at least 30% uncommon letter pairs),
+the page reports `damagedTextEncoding`. `.automatic`, `.automaticIncludingImageBackedText`
+and `.always` recognize the page image instead and report `ocrUsed` as usual; `.never` keeps
+the unreadable native text and recommends a source-page reference, which `referenceImages`
+controls like any other supplementary image. Only English (`en`, `en-*`) is judged; other
+declared languages, short pages, composite fonts and incorrect-but-present `ToUnicode` maps
+are outside this signal. See the [damaged-encoding measurements](../measurements/damaged-text-encoding/record.md).
+
 The developer client exposes these policies as `--ocr automatic|image-backed|always|never`.
 `--no-ocr` remains an alias for `--ocr never`; when repeated, the last OCR option takes effect.
 See [selective OCR measurements](../measurements/selective-ocr/record.md) for the pinned Warren

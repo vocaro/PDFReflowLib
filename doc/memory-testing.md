@@ -111,6 +111,16 @@ in its environment, and samples the process footprint on the phone. It needs an 
 for the signing team, an unlocked device in Developer Mode, and an iOS 27 scene-lifecycle host,
 which the app provides. Results and the retained device logs are in the same record.
 
+## Structure-tree text-layout cost
+
+PDFKit loads a tagged document's entire structure tree the first time it lays out text on
+a page that carries `/StructParents`. On the FAA handbook that costs about 489 MiB of
+transient small allocations once per process, on the Mac and on an iPhone, and leaves
+about 204 MiB of fragmented allocator pages resident. Hiding the tree from PDFKit changes
+extracted text and is rejected. Apple report **FB24798533** tracks it. See the
+[structure-tree investigation](../measurements/pdfkit-structure-tree/record.md), which
+retains the standalone reproducer and the submitted report text.
+
 ## Output storage budget
 
 `ConversionOptions.maximumOutputBytes` defaults to 512 MiB. It bounds image bytes during

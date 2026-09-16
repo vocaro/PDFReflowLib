@@ -170,8 +170,10 @@ window, and drops by 200 MiB when the document is reopened for the next window; 
 pages on that book are under 20 MiB. The CDC comic peaks during Vision recognition. NOAA and
 Warren peak early in reconstruction, where rasterization joins the retained model. The block
 list still accumulates until writing finishes, which is the 113 to 170 MiB writing-phase
-footprint on NOAA. The next levers for peak memory are therefore PDFKit document-window state
-and streaming blocks to the writer, not the page model.
+footprint on NOAA. The FAA spike was traced afterwards to PDFKit loading the whole structure
+tree on the first tagged page, which no windowing changes; see the
+[structure-tree investigation](../pdfkit-structure-tree/record.md). The remaining
+library-side lever is streaming blocks to the writer.
 
 **Disk.** Spilled pages are binary property lists in the workspace, each removed on reload and
 the directory removed after reconstruction. The peak run-directory column is dominated by staged
@@ -274,8 +276,9 @@ including the 1.4 GB EPUB; spill peaks 20 MiB below the resident control and 5 M
 re-extraction, which is 25 percent slower and has the highest RSS after resident. Device
 footprints are lower than the Mac's throughout, so the Mac corpus numbers overstate what
 the phone needs, while the ordering between strategies is the same. FAA is the exception:
-its 517.8 MiB device peak matches the Mac's extraction spike, which no retention strategy
-changes. Device numbers are
+its 517.8 MiB device peak matches the Mac's, because it is PDFKit loading the document's
+structure tree, not retained pages; see the
+[structure-tree investigation](../pdfkit-structure-tree/record.md). Device numbers are
 single runs and the app was in the foreground with the idle timer disabled; they are not a
 latency distribution or a shipping budget.
 

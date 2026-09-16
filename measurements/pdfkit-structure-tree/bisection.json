@@ -1,0 +1,110 @@
+[
+ {
+  "variant": "faa-page2 (single page, unmodified)",
+  "pageStringFootprintDeltaMiB": 488.7
+ },
+ {
+  "variant": "faa-page4 (single page, no /StructParents)",
+  "pageStringFootprintDeltaMiB": 1.6
+ },
+ {
+  "variant": "faa-page5 (single page)",
+  "pageStringFootprintDeltaMiB": 489.6
+ },
+ {
+  "variant": "Helvetica/Helvetica-Bold /Subtype TrueType -> Type1",
+  "pageStringFootprintDeltaMiB": 488.6
+ },
+ {
+  "variant": "font descriptors removed",
+  "pageStringFootprintDeltaMiB": 488.5
+ },
+ {
+  "variant": "ToUnicode removed",
+  "pageStringFootprintDeltaMiB": 488.6
+ },
+ {
+  "variant": "base fonts renamed to Arial",
+  "pageStringFootprintDeltaMiB": 488.6
+ },
+ {
+  "variant": "base fonts renamed to Courier",
+  "pageStringFootprintDeltaMiB": 488.6
+ },
+ {
+  "variant": "Widths removed",
+  "pageStringFootprintDeltaMiB": 488.5
+ },
+ {
+  "variant": "embedded AgencyFB TrueType program removed",
+  "pageStringFootprintDeltaMiB": 488.6
+ },
+ {
+  "variant": "embedded AgencyFB CID program removed",
+  "pageStringFootprintDeltaMiB": 488.5
+ },
+ {
+  "variant": "all Do operators commented out",
+  "pageStringFootprintDeltaMiB": 488.5
+ },
+ {
+  "variant": "all gs operators commented out",
+  "pageStringFootprintDeltaMiB": 488.6
+ },
+ {
+  "variant": "SMask removed from all ExtGStates",
+  "pageStringFootprintDeltaMiB": 488.5
+ },
+ {
+  "variant": "ICC color space replaced by DeviceRGB",
+  "pageStringFootprintDeltaMiB": 488.6
+ },
+ {
+  "variant": "all text removed (page.string nil)",
+  "pageStringFootprintDeltaMiB": 487.9
+ },
+ {
+  "variant": "empty content stream",
+  "pageStringFootprintDeltaMiB": 487.9
+ },
+ {
+  "variant": "empty content, no XObject resources",
+  "pageStringFootprintDeltaMiB": 487.9
+ },
+ {
+  "variant": "empty content, no ExtGState",
+  "pageStringFootprintDeltaMiB": 487.9
+ },
+ {
+  "variant": "empty content, no Font",
+  "pageStringFootprintDeltaMiB": 487.9
+ },
+ {
+  "variant": "empty content, no ColorSpace",
+  "pageStringFootprintDeltaMiB": 487.8
+ },
+ {
+  "variant": "empty content, no Group",
+  "pageStringFootprintDeltaMiB": 487.9
+ },
+ {
+  "variant": "empty content, empty Resources",
+  "pageStringFootprintDeltaMiB": 487.9
+ },
+ {
+  "variant": "/StructParents removed from the page",
+  "pageStringFootprintDeltaMiB": 0.9
+ },
+ {
+  "variant": "/StructTreeRoot removed from the catalog",
+  "pageStringFootprintDeltaMiB": 1.0
+ },
+ {
+  "variant": "/MarkInfo /Marked false",
+  "pageStringFootprintDeltaMiB": 1.0
+ },
+ {
+  "variant": "full 522-page document, catalog patched /Marked false, page 2",
+  "pageStringFootprintDeltaMiB": 1.1
+ }
+]

@@ -1,0 +1,26 @@
+Build complete! (4.70 sec)
+environment: 27.0 (26A428) arm64, Xcode 27.0 Build version 27A266a 
+== pdfs/page2-tagged.pdf ==
+count page 1  before   10.0 MiB  after   498.6 MiB  delta  +488.6 MiB  (138 characters)  released   217.7 MiB
+string page 1  before   10.0 MiB  after   498.5 MiB  delta  +488.6 MiB  (138 characters)  released   217.6 MiB
+attributed page 1  before   10.0 MiB  after   498.9 MiB  delta  +488.9 MiB  (138 attributed characters)  released   218.0 MiB
+selection page 1  before   10.0 MiB  after   498.6 MiB  delta  +488.7 MiB  (6 lines)  released   217.7 MiB
+smallselection page 1  before   10.0 MiB  after   498.6 MiB  delta  +488.6 MiB  (selection)  released   217.7 MiB
+charbounds page 1  before   10.1 MiB  after   498.6 MiB  delta  +488.6 MiB  ((142.551809375, 662.1504, 21.055546875000005, 45.849609375))  released   217.7 MiB
+thumbnail page 1  before   10.0 MiB  after    13.6 MiB  delta    +3.6 MiB  ((199.0, 260.0))  released    13.6 MiB
+== pdfs/page2-untagged.pdf ==
+count page 1  before   10.0 MiB  after    11.0 MiB  delta    +1.0 MiB  (138 characters)  released    11.0 MiB
+string page 1  before   10.1 MiB  after    11.0 MiB  delta    +0.9 MiB  (138 characters)  released    11.0 MiB
+attributed page 1  before   10.0 MiB  after    11.3 MiB  delta    +1.2 MiB  (138 attributed characters)  released    11.3 MiB
+selection page 1  before   10.0 MiB  after    11.0 MiB  delta    +1.0 MiB  (6 lines)  released    11.0 MiB
+smallselection page 1  before   10.0 MiB  after    10.9 MiB  delta    +1.0 MiB  (selection)  released    11.0 MiB
+charbounds page 1  before   10.0 MiB  after    10.9 MiB  delta    +1.0 MiB  ((142.551809375, 662.1504, 21.055546875000005, 45.849609375))  released    10.9 MiB
+thumbnail page 1  before   10.0 MiB  after    13.8 MiB  delta    +3.8 MiB  ((199.0, 260.0))  released    13.8 MiB
+== pdfs/page4-control.pdf ==
+count page 1  before   10.0 MiB  after    11.5 MiB  delta    +1.6 MiB  (549 characters)  released    11.5 MiB
+string page 1  before   10.0 MiB  after    11.5 MiB  delta    +1.5 MiB  (549 characters)  released    11.6 MiB
+attributed page 1  before    9.9 MiB  after    11.8 MiB  delta    +1.9 MiB  (549 attributed characters)  released    11.8 MiB
+selection page 1  before   10.0 MiB  after    11.6 MiB  delta    +1.6 MiB  (9 lines)  released    11.6 MiB
+smallselection page 1  before   10.0 MiB  after    11.5 MiB  delta    +1.6 MiB  (selection)  released    11.6 MiB
+charbounds page 1  before   10.0 MiB  after    11.6 MiB  delta    +1.6 MiB  ((36.64453125, 36.7197, 1.2613671874999994, 7.1728515625))  released    11.6 MiB
+thumbnail page 1  before   10.0 MiB  after    12.5 MiB  delta    +2.5 MiB  ((199.0, 260.0))  released    12.5 MiB

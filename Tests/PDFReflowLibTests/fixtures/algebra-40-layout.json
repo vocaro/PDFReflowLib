@@ -1,0 +1,1120 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        214.08000000000001,
+        744.81924480000009,
+        158.258048,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4 4 Divide both sides by 4"
+        }
+      ],
+      "text" : "4 4 Divide both sides by 4"
+    },
+    {
+      "rect" : [
+        223.44000000000003,
+        727.17944480000006,
+        105.86425383459837,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x =6 Our Solution"
+        }
+      ],
+      "text" : "x =6 Our Solution"
+    },
+    {
+      "rect" : [
+        84.960030000000017,
+        683.3794448000001,
+        425.21686658173445,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "This leads to a 5-step process to solve any linear equation. While all five steps"
+        }
+      ],
+      "text" : "This leads to a 5-step process to solve any linear equation. While all five steps"
+    },
+    {
+      "rect" : [
+        84.960030000000017,
+        668.85954480000009,
+        349.2131901429504,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "aren’t always needed, this can serve as a guide to solving equations."
+        }
+      ],
+      "text" : "aren’t always needed, this can serve as a guide to solving equations."
+    },
+    {
+      "rect" : [
+        105.84003000000001,
+        635.85954480000009,
+        200.17426394854402,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "1. Distribute through any parentheses."
+        }
+      ],
+      "text" : "1. Distribute through any parentheses."
+    },
+    {
+      "rect" : [
+        105.84003000000001,
+        602.97944480000012,
+        265.81317058964481,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2. Combine like terms on each side of the equation."
+        }
+      ],
+      "text" : "2. Combine like terms on each side of the equation."
+    },
+    {
+      "rect" : [
+        105.84003000000001,
+        569.97944480000012,
+        295.64814769955854,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3. Get the variables on one side by adding or subtracting"
+        }
+      ],
+      "text" : "3. Get the variables on one side by adding or subtracting"
+    },
+    {
+      "rect" : [
+        105.84003000000001,
+        537.09934480000015,
+        404.27843889789443,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4. Solve the remaining 2-step equation (add or subtract then multiply or"
+        }
+      ],
+      "text" : "4. Solve the remaining 2-step equation (add or subtract then multiply or"
+    },
+    {
+      "rect" : [
+        120.96003000000002,
+        522.45954480000012,
+        35.515168938496004,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "divide)"
+        }
+      ],
+      "text" : "divide)"
+    },
+    {
+      "rect" : [
+        105.83973000000002,
+        489.57944480000009,
+        387.85286596456967,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5. Check your answer by plugging it back in for x to find a true statement."
+        }
+      ],
+      "text" : "5. Check your answer by plugging it back in for x to find a true statement."
+    },
+    {
+      "rect" : [
+        84.959730000000036,
+        456.57944480000009,
+        220.21255094796805,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The order of these steps is very important."
+        }
+      ],
+      "text" : "The order of these steps is very important."
+    },
+    {
+      "rect" : [
+        84.959730000000036,
+        431.49934480000007,
+        425.1563987002113,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "World View Note: The Chinese developed a method for solving equations that"
+        }
+      ],
+      "text" : "World View Note: The Chinese developed a method for solving equations that"
+    },
+    {
+      "rect" : [
+        84.959730000000022,
+        416.97944480000007,
+        323.41256099358736,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "involved finding each digit one at a time about 2000 years ago!"
+        }
+      ],
+      "text" : "involved finding each digit one at a time about 2000 years ago!"
+    },
+    {
+      "rect" : [
+        84.959730000000022,
+        391.89934480000005,
+        382.33268545254401,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "We can see each of the above five steps worked through our next example."
+        }
+      ],
+      "text" : "We can see each of the above five steps worked through our next example."
+    },
+    {
+      "rect" : [
+        84.959730000000036,
+        351.11130000000003,
+        72.970066733772825,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 66."
+        }
+      ],
+      "text" : "Example 66."
+    },
+    {
+      "rect" : [
+        116.63943000000003,
+        306.62310800000006,
+        145.60726120000001,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4(2x− 6) +9= 3(x− 7)+ 8x "
+        }
+      ],
+      "text" : "4(2x− 6) +9= 3(x− 7)+ 8x "
+    },
+    {
+      "rect" : [
+        129.11952000000011,
+        289.10320800000005,
+        133.12723120000001,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "8x− 24 +9 =3x− 21 + 8x "
+        }
+      ],
+      "text" : "8x− 24 +9 =3x− 21 + 8x "
+    },
+    {
+      "rect" : [
+        149.15946000000014,
+        271.46340800000007,
+        94.406322304896037,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "8x− 15= 11x− 21 "
+        }
+      ],
+      "text" : "8x− 15= 11x− 21 "
+    },
+    {
+      "rect" : [
+        134.39931000000013,
+        254.18221200000005,
+        83.718436800000006,
+        20.216143199999976
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.00010000000003174137,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 8x− 8x "
+        }
+      ],
+      "text" : "− 8x− 8x "
+    },
+    {
+      "rect" : [
+        277.91950000000008,
+        306.62310800000006,
+        190.25600893066246,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Distribute 4 and 3through parenthesis"
+        }
+      ],
+      "text" : "Distribute 4 and 3through parenthesis"
+    },
+    {
+      "rect" : [
+        277.91956000000016,
+        289.10320800000005,
+        200.56699119999996,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Combine like terms− 24 +9and 3x + 8x"
+        }
+      ],
+      "text" : "Combine like terms− 24 +9and 3x + 8x"
+    },
+    {
+      "rect" : [
+        277.91976681689613,
+        271.46340800000007,
+        169.495335293952,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Notice the variable is on both sides"
+        }
+      ],
+      "text" : "Notice the variable is on both sides"
+    },
+    {
+      "rect" : [
+        277.92000000000002,
+        254.18221200000005,
+        136.61492740485124,
+        20.216143199999976
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Subtract 8x from both sides"
+        }
+      ],
+      "text" : "Subtract 8x from both sides"
+    },
+    {
+      "rect" : [
+        163.92021000000003,
+        236.30320800000001,
+        73.886374437888037,
+        20.455347200000034
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 15 = 3x− 21 "
+        }
+      ],
+      "text" : "− 15 = 3x− 21 "
+    },
+    {
+      "rect" : [
+        277.92082341388806,
+        236.30320800000001,
+        128.84729670968323,
+        20.455347200000034
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Focus on subtraction of 21"
+        }
+      ],
+      "text" : "Focus on subtraction of 21"
+    },
+    {
+      "rect" : [
+        160.68039000000005,
+        227.25924479999998,
+        216.89447128033277,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.00030000000000995897,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ 21 + 21 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Add 21 to both sides"
+        }
+      ],
+      "text" : "+ 21 + 21 Add 21 to both sides"
+    },
+    {
+      "rect" : [
+        277.92000000000002,
+        209.61904479999998,
+        139.17804799999999,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Focus on multiplication by 3"
+        }
+      ],
+      "text" : "Focus on multiplication by 3"
+    },
+    {
+      "rect" : [
+        180.48000000000002,
+        192.09914479999998,
+        205.05804799999999,
+        11.979210400000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.00010000000003174137,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3 Divide both sides by 3"
+        }
+      ],
+      "text" : "3 3 Divide both sides by 3"
+    },
+    {
+      "rect" : [
+        182.75999999999999,
+        174.45944480000003,
+        159.74362955210245,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2 =x Our Solution"
+        }
+      ],
+      "text" : "2 =x Our Solution"
+    },
+    {
+      "rect" : [
+        181.80010000000001,
+        209.61904479999998,
+        31.486891200000002,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "6 =3x "
+        }
+      ],
+      "text" : "6 =3x "
+    },
+    {
+      "rect" : [
+        84.959800000000001,
+        139.09341840000002,
+        33.586655422207997,
+        11.082470400000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Check:"
+        }
+      ],
+      "text" : "Check:"
+    },
+    {
+      "rect" : [
+        91.079720000000009,
+        94.10310800000002,
+        164.89907081797122,
+        20.455347199999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4[2(2)− 6] +9 =3[(2)− 7]+ 8(2) "
+        }
+      ],
+      "text" : "4[2(2)− 6] +9 =3[(2)− 7]+ 8(2) "
+    },
+    {
+      "rect" : [
+        106.43962000000005,
+        76.463308000000012,
+        134.7787884906752,
+        20.455347199999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4[4− 6] +9= 3[− 5] +8(2) "
+        }
+      ],
+      "text" : "4[4− 6] +9= 3[− 5] +8(2) "
+    },
+    {
+      "rect" : [
+        271.55982,
+        94.10310800000002,
+        232.49559243952649,
+        20.455347199999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Plug 2in for each x. Multiply inside parenthesis"
+        }
+      ],
+      "text" : "Plug 2in for each x. Multiply inside parenthesis"
+    },
+    {
+      "rect" : [
+        271.55992000000003,
+        76.463308000000012,
+        206.63549785697285,
+        20.455347199999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Finish parentesis on left, multiply on right"
+        }
+      ],
+      "text" : "Finish parentesis on left, multiply on right"
+    },
+    {
+      "rect" : [
+        299.63990000000001,
+        52.379153200000005,
+        10.021160547360012,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "40"
+        }
+      ],
+      "text" : "40"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      207.64000000000001,
+      754.70000000000005,
+      43.359999999999985,
+      4
+    ],
+    [
+      131.68000000000004,
+      260.54000000000002,
+      87.879999999999967,
+      4
+    ],
+    [
+      158.68000000000004,
+      225.5,
+      80.079999999999956,
+      4
+    ],
+    [
+      174.04000000000002,
+      201.98000000000002,
+      43.359999999999985,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        214.08000000000001,
+        744.81924480000009,
+        158.258048,
+        11.979110399999968
+      ],
+      "text" : "4 4 Divide both sides by 4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        223.44000000000003,
+        727.17944480000006,
+        105.86425383459837,
+        11.979110399999968
+      ],
+      "text" : "x =6 Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960030000000017,
+        683.3794448000001,
+        425.21686658173445,
+        11.979110399999968
+      ],
+      "text" : "This leads to a 5-step process to solve any linear equation. While all five steps"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960030000000017,
+        668.85954480000009,
+        349.2131901429504,
+        11.979110399999968
+      ],
+      "text" : "aren’t always needed, this can serve as a guide to solving equations."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        105.84003000000001,
+        635.85954480000009,
+        200.17426394854402,
+        11.979110399999968
+      ],
+      "text" : "1. Distribute through any parentheses."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        105.84003000000001,
+        602.97944480000012,
+        265.81317058964481,
+        11.979110399999968
+      ],
+      "text" : "2. Combine like terms on each side of the equation."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        105.84003000000001,
+        569.97944480000012,
+        295.64814769955854,
+        11.979110399999968
+      ],
+      "text" : "3. Get the variables on one side by adding or subtracting"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        105.84003000000001,
+        537.09934480000015,
+        404.27843889789443,
+        11.979110399999968
+      ],
+      "text" : "4. Solve the remaining 2-step equation (add or subtract then multiply or"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        120.96003000000002,
+        522.45954480000012,
+        35.515168938496004,
+        11.979110399999968
+      ],
+      "text" : "divide)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        105.83973000000002,
+        489.57944480000009,
+        387.85286596456967,
+        11.979110400000025
+      ],
+      "text" : "5. Check your answer by plugging it back in for x to find a true statement."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959730000000036,
+        456.57944480000009,
+        220.21255094796805,
+        11.979110400000025
+      ],
+      "text" : "The order of these steps is very important."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959730000000036,
+        431.49934480000007,
+        425.1563987002113,
+        11.979110400000025
+      ],
+      "text" : "World View Note: The Chinese developed a method for solving equations that"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959730000000022,
+        416.97944480000007,
+        323.41256099358736,
+        11.979110400000025
+      ],
+      "text" : "involved finding each digit one at a time about 2000 years ago!"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959730000000022,
+        391.89934480000005,
+        382.33268545254401,
+        11.979110400000025
+      ],
+      "text" : "We can see each of the above five steps worked through our next example."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959730000000036,
+        351.11130000000003,
+        72.970066733772825,
+        11.955199999999991
+      ],
+      "text" : "Example 66."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        116.63943000000003,
+        306.62310800000006,
+        145.60726120000001,
+        20.455347200000006
+      ],
+      "text" : "4(2x− 6) +9= 3(x− 7)+ 8x"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        129.11952000000011,
+        289.10320800000005,
+        133.12723120000001,
+        20.455347200000006
+      ],
+      "text" : "8x− 24 +9 =3x− 21 + 8x"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        149.15946000000014,
+        271.46340800000007,
+        94.406322304896037,
+        20.455347200000006
+      ],
+      "text" : "8x− 15= 11x− 21"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        134.39931000000013,
+        254.18221200000005,
+        83.718436800000006,
+        20.216143199999976
+      ],
+      "text" : "− 8x− 8x"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        277.91950000000008,
+        306.62310800000006,
+        190.25600893066246,
+        20.455347200000006
+      ],
+      "text" : "Distribute 4 and 3through parenthesis"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        277.91956000000016,
+        289.10320800000005,
+        200.56699119999996,
+        20.455347200000006
+      ],
+      "text" : "Combine like terms− 24 +9and 3x + 8x"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        277.91976681689613,
+        271.46340800000007,
+        169.495335293952,
+        20.455347200000006
+      ],
+      "text" : "Notice the variable is on both sides"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        277.92000000000002,
+        254.18221200000005,
+        136.61492740485124,
+        20.216143199999976
+      ],
+      "text" : "Subtract 8x from both sides"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        163.92021000000003,
+        236.30320800000001,
+        73.886374437888037,
+        20.455347200000034
+      ],
+      "text" : "− 15 = 3x− 21"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        277.92082341388806,
+        236.30320800000001,
+        128.84729670968323,
+        20.455347200000034
+      ],
+      "text" : "Focus on subtraction of 21"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        160.68039000000005,
+        227.25924479999998,
+        216.89447128033277,
+        11.979110399999996
+      ],
+      "text" : "+ 21 + 21 Add 21 to both sides"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        277.92000000000002,
+        209.61904479999998,
+        139.17804799999999,
+        11.979110399999996
+      ],
+      "text" : "Focus on multiplication by 3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        180.48000000000002,
+        192.09914479999998,
+        205.05804799999999,
+        11.979210400000028
+      ],
+      "text" : "3 3 Divide both sides by 3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        182.75999999999999,
+        174.45944480000003,
+        159.74362955210245,
+        11.979110399999996
+      ],
+      "text" : "2 =x Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        181.80010000000001,
+        209.61904479999998,
+        31.486891200000002,
+        11.979110399999996
+      ],
+      "text" : "6 =3x"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959800000000001,
+        139.09341840000002,
+        33.586655422207997,
+        11.082470400000005
+      ],
+      "text" : "Check:"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        91.079720000000009,
+        94.10310800000002,
+        164.89907081797122,
+        20.455347199999991
+      ],
+      "text" : "4[2(2)− 6] +9 =3[(2)− 7]+ 8(2)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        106.43962000000005,
+        76.463308000000012,
+        134.7787884906752,
+        20.455347199999991
+      ],
+      "text" : "4[4− 6] +9= 3[− 5] +8(2)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        271.55982,
+        94.10310800000002,
+        232.49559243952649,
+        20.455347199999991
+      ],
+      "text" : "Plug 2in for each x. Multiply inside parenthesis"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        271.55992000000003,
+        76.463308000000012,
+        206.63549785697285,
+        20.455347199999991
+      ],
+      "text" : "Finish parentesis on left, multiply on right"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        299.63990000000001,
+        52.379153200000005,
+        10.021160547360012,
+        9.8729762399999998
+      ],
+      "text" : "40"
+    }
+  ],
+  "page" : 40,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        207.64000000000001,
+        754.70000000000005,
+        19.719999999999999,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        231.28000000000003,
+        754.70000000000005,
+        19.71999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        131.68000000000004,
+        260.54000000000002,
+        87.879999999999967,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        158.68000000000004,
+        225.5,
+        80.079999999999956,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        174.04000000000002,
+        201.98000000000002,
+        19.719999999999999,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.68000000000004,
+        201.98000000000002,
+        19.71999999999997,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

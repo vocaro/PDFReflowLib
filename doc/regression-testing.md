@@ -73,6 +73,12 @@ as paragraph text, and no element may carry the first on page N and the second o
 cross-page continuity in both directions, so a page folio that absorbs the next page's text fails
 the separation check while the body paragraph's own continuation check protects the real join.
 
+`listItems` and `continuedListItems` are the same two assertions for `<pre>` list items: one item
+element must hold a whole phrase, and one must end page N with the first phrase and carry the
+second on page N+1. Both read `<pre>` identities, which `continuedParagraphs` does not see, so a
+list item that regressed into a paragraph fails the list check rather than quietly satisfying the
+paragraph one. See the [list-continuation evidence](../measurements/list-continuations/record.md).
+
 The checker has negative controls for deleted text, text moved to the wrong page, reversed order,
 missing images, flattened or misplaced superscripts/subscripts, missing/wrong-page warnings, changed source identity, failed conversion, missing
 or duplicate page markers, split or wrongly joined paragraphs across a page marker, and captions
@@ -268,7 +274,12 @@ Box 3.3 charts and the reflowed page-46 sidebar; see the
 pairs and both headers, and algebra page-343's inline exponent. Positive controls cover spanning
 headings/figures, ordinary prose, dot-leader contents entries, code, ellipses and sparse numeric
 rows. The 9/11 page-451 name/description fixture protects row associations from narrow-column
-cuts. `BaselineStyleTests.swift` checks both native baseline-attribute keys, unchanged small
+cuts. `ListContinuationTests.swift` covers [#50](https://github.com/vocaro/PDFReflowLib/issues/50)
+and [#64](https://github.com/vocaro/PDFReflowLib/issues/64) with Wallace page 40, Fed pages 9, 21,
+22 and 58 and synthetic wraps; its controls are Loper Bright page 64 (an indented paragraph under a
+wrapped citation must not join it), the Warren synthetic-text list, the algebra page-10 and -26
+exercises, the 9/11 page-451 rows and the FAA columns, all of which must not change.
+`BaselineStyleTests.swift` checks both native baseline-attribute keys, unchanged small
 fonts and noisy positioning, a real PDF-to-EPUB superscript/subscript path, and CDC page-5 OCR
 line spacing that must not become inline scripts.
 
@@ -287,7 +298,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-288 Swift tests with no known-issue wrappers, and 160 Python tests.
+314 Swift tests with no known-issue wrappers, and 165 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

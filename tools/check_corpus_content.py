@@ -52,6 +52,7 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
     current = None
     heading_id = 0
     paragraph_id = 0
+    item_id = 0
     note_id = 0
     # Elements with ids, keyed 'EPUB/file#id', accumulate their text across page markers so a
     # note continued onto the next page is still one link target.
@@ -69,7 +70,7 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
             chapter = PurePosixPath('EPUB') / manifest[reference.get('idref')]
             tree = ET.fromstring(archive.read(str(chapter)))
 
-            def append(text, script=None, heading=None, paragraph=None, note=None):
+            def append(text, script=None, heading=None, paragraph=None, note=None, item=None):
                 if current is not None and text:
                     page = pages[current]
                     start = len(page['text'])
@@ -82,6 +83,8 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                         page['paragraphs'][paragraph] = page['paragraphs'].get(paragraph, '') + text
                     if note is not None:
                         page['notes'][note] = page['notes'].get(note, '') + text
+                    if item is not None:
+                        page['listItems'][item] = page['listItems'].get(item, '') + text
                     if script:
                         spans = page['scripts']
                         if spans and spans[-1]['tag'] == script and spans[-1]['end'] == start:
@@ -89,8 +92,8 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                         else:
                             spans.append({'tag': script, 'start': start, 'end': start + len(text)})
 
-            def walk(element, script=None, heading=None, paragraph=None, note=None):
-                nonlocal current, heading_id, paragraph_id, note_id
+            def walk(element, script=None, heading=None, paragraph=None, note=None, item=None):
+                nonlocal current, heading_id, paragraph_id, note_id, item_id
                 pagebreak = 'pagebreak' in element.get(EPUB + 'type', '').split()
                 if pagebreak:
                     marker_id = element.get('id', '')
@@ -100,7 +103,7 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                     if current in pages:
                         raise ValueError('Duplicate page boundary')
                     markers.append(current)
-                    pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {}, 'paragraphs': {}, 'notes': {}, 'tables': [],
+                    pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {}, 'paragraphs': {}, 'listItems': {}, 'notes': {}, 'tables': [],
                                       'noterefs': [], 'anchors': {}}
                 if element.tag == HTML + 'img' and current is not None:
                     asset = str(chapter.parent / element.attrib['src'])
@@ -132,14 +135,17 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                 if element.tag == HTML + 'p':
                     paragraph_id += 1
                     paragraph = paragraph_id
+                if element.tag == HTML + 'pre':
+                    item_id += 1
+                    item = item_id
                 # A page-bottom footnote block; its inner paragraph is also an ordinary paragraph.
                 if element.get('role') == 'doc-footnote':
                     note_id += 1
                     note = note_id
-                append(element.text, script, heading, paragraph, note)
+                append(element.text, script, heading, paragraph, note, item)
                 for child in element:
-                    walk(child, script, heading, paragraph, note)
-                    append(child.tail, script, heading, paragraph, note)
+                    walk(child, script, heading, paragraph, note, item)
+                    append(child.tail, script, heading, paragraph, note, item)
                 if reference is not None:
                     reference['end'] = len(pages[current]['text'])
                 if anchor is not None:
@@ -164,6 +170,10 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
         page['headings'] = [normalized(text) for text in page['headings'].values()]
         # Paragraph IDs are document-wide, so one <p> crossing a page marker has the same ID on both pages.
         page['paragraphIDs'] = {paragraph: normalized(text) for paragraph, text in page['paragraphs'].items()}
+        # A <pre> list item carries its own identity, so a wrapped item continued across a page
+        # marker is one block there too (#50).
+        page['listItemIDs'] = {item: normalized(text) for item, text in page['listItems'].items()}
+        page['listItems'] = [normalized(text) for text in page['listItems'].values()]
         page['paragraphs'] = [normalized(text) for text in page['paragraphs'].values()]
         page['notes'] = [normalized(text) for text in page['notes'].values()]
     return pages, markers
@@ -271,7 +281,7 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'absentHeadings', 'paragraphs', 'notes', 'noteLinks', 'continuedParagraphs', 'separateParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'absentHeadings', 'paragraphs', 'listItems', 'notes', 'noteLinks', 'continuedParagraphs', 'continuedListItems', 'separateParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -305,6 +315,14 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
             checks += 1
             if not any(normalized(phrase) in paragraph for paragraph in page.get('paragraphs', [])):
                 errors.append(f'Page {number}: missing paragraph {phrase!r}')
+        for phrase in item.get('listItems', []):
+            if not isinstance(phrase, str) or not normalized(phrase):
+                raise ValueError('Empty or invalid list item phrase')
+            checks += 1
+            # One <pre> block must hold the whole phrase, so a marker line and the lines wrapped
+            # under its hanging indent are one item (#50, #64).
+            if not any(normalized(phrase) in block for block in page.get('listItems', [])):
+                errors.append(f'Page {number}: missing list item {phrase!r}')
         for phrase in item.get('notes', []):
             if not isinstance(phrase, str) or not normalized(phrase):
                 raise ValueError('Empty or invalid footnote phrase')
@@ -350,6 +368,18 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
                        and after in following['paragraphIDs'][paragraph]
                        for paragraph, text in page.get('paragraphIDs', {}).items()):
                 errors.append(f'Page {number}: paragraph does not continue onto page {number + 1} {continuation!r}')
+        for continuation in item.get('continuedListItems', []):
+            if (not isinstance(continuation, dict) or set(continuation) != {'end', 'next'}
+                    or any(not isinstance(continuation[k], str) or not normalized(continuation[k]) for k in ('end', 'next'))):
+                raise ValueError('List item continuation requires nonempty end and next phrases')
+            checks += 1
+            end, after = normalized(continuation['end']), normalized(continuation['next'])
+            # One <pre> list item must end this page with the first phrase and carry the second
+            # on the next, so a marker's wrapped text is not split at the page boundary (#50).
+            if not any(end in text and block in following.get('listItemIDs', {})
+                       and after in following['listItemIDs'][block]
+                       for block, text in page.get('listItemIDs', {}).items()):
+                errors.append(f'Page {number}: list item does not continue onto page {number + 1} {continuation!r}')
         for separation in item.get('separateParagraphs', []):
             if (not isinstance(separation, dict) or set(separation) != {'end', 'next'}
                     or any(not isinstance(separation[k], str) or not normalized(separation[k]) for k in ('end', 'next'))):

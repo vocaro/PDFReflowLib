@@ -427,11 +427,55 @@ enum LayoutReconstructor {
             return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1)
                 + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1)
         }
+        if let x = bulletColumns(elements, bodySize: bodySize) {
+            return ordered(elements.filter { $0.rect.minX < x && $0.rect.maxX > x }, bodySize: bodySize, depth: depth + 1)
+                + ordered(elements.filter { $0.rect.maxX <= x }, bodySize: bodySize, depth: depth + 1)
+                + ordered(elements.filter { $0.rect.minX >= x }, bodySize: bodySize, depth: depth + 1)
+        }
         // A floated box reads after the lines beside it and before the lines below it.
         func key(_ element: Element) -> CGFloat { element.box == nil ? element.rect.midY : element.rect.minY }
         return elements.sorted {
             abs(key($0) - key($1)) > bodySize * 0.4 ? key($0) > key($1) : $0.rect.minX < $1.rect.minX
         }
+    }
+
+    /// Bulleted columns the whitespace cuts cannot separate: their items are far shorter than
+    /// the prose-column measure, and a label set over both columns spans the gutter, so no
+    /// vertical band of whitespace runs the height of the group (Fed page 58's "Emergency
+    /// lending facilities" panel, #64). The evidence is the markers themselves: two runs of at
+    /// least two list markers, each run on its own left edge, with every line at or below the
+    /// first marker wholly on one side of a gutter at least as wide as the whitespace test
+    /// demands. Lines above the first marker are the columns' heading and read before them.
+    /// Returns the gutter's x, or nil when the markers give no such reading.
+    static func bulletColumns(_ elements: [Element], bodySize: CGFloat) -> CGFloat? {
+        let markers = elements.filter { element in
+            guard let line = element.line, !line.monospaced else { return false }
+            return isList(line.text)
+        }
+        guard markers.count >= 4, let top = markers.map(\.rect.maxY).max() else { return nil }
+        let edges = markers.map(\.rect.minX).sorted()
+        // A marker column's own lines share a left edge; the next column starts a marker's
+        // width away. Indices walk the sorted edges so three columns split one gutter at a time.
+        for index in 1..<edges.count where edges[index] - edges[index - 1] > bodySize * 2 {
+            let split = (edges[index - 1] + edges[index]) / 2
+            let leading = markers.filter { $0.rect.minX < split }
+            let trailing = markers.filter { $0.rect.minX > split }
+            guard leading.count >= 2, trailing.count >= 2,
+                  leading.allSatisfy({ $0.rect.minX <= edges[index - 1] + bodySize * 0.5 }),
+                  trailing.allSatisfy({ $0.rect.minX >= edges[index] - bodySize * 0.5 }) else { continue }
+            let items = elements.filter { $0.rect.minY < top }
+            let left = items.filter { $0.rect.minX < split }, right = items.filter { $0.rect.minX > split }
+            guard left.count + right.count == items.count,
+                  let leadingEnd = left.map(\.rect.maxX).max(), let trailingStart = right.map(\.rect.minX).min(),
+                  trailingStart - leadingEnd > bodySize * 0.75 else { continue }
+            let gutter = (leadingEnd + trailingStart) / 2
+            // Only a heading above the columns may span the gutter; a note or a rule beneath
+            // them binds the columns together and leaves the group to the reading-order sort.
+            guard elements.allSatisfy({ $0.rect.minY >= top || $0.rect.maxX <= gutter || $0.rect.minX >= gutter })
+            else { continue }
+            return gutter
+        }
+        return nil
     }
 
     /// Tinted boxes (sidebars, shaded tables with their titles) are read as units: the elements
@@ -585,6 +629,33 @@ enum LayoutReconstructor {
             let justified = column.filter { $0.rect.maxX >= right - body * 0.25 }
             return justified.count >= 3 && prev.rect.maxX >= right - body * 0.25
         }
+        // A list item's marker line opens the item; its wrapped lines are set in the hanging
+        // indent under the item's text, at ordinary line spacing and no larger than the item.
+        // The item closes at the next marker, a paragraph gap, a dedent to the marker's edge,
+        // a heading, an image, a table or a box edge, each of which another branch takes
+        // first, so this line joins the open item instead of opening a paragraph (#50, #64).
+        func continuesListItem(_ line: TextLine, item: (marker: TextLine, last: TextLine, indent: CGFloat?, index: Int)) -> Bool {
+            guard !isList(line.text), line.fontSize <= item.marker.fontSize + 0.5 else { return false }
+            let verticalGap = item.last.rect.minY - line.rect.maxY
+            guard verticalGap >= -body * 0.4, verticalGap < body * 0.9 else { return false }
+            // The wrapped line starts past the marker, within the width a marker occupies;
+            // a deeper indent is nested content and a dedent ends the item.
+            let indent = line.rect.minX - item.marker.rect.minX
+            guard indent > body * 0.25, indent <= body * 2.5 else { return false }
+            // Once a wrapped line has established the item's hanging indent, the rest of the
+            // item sits on that same edge however its sentences fall (Fed page 22's council
+            // entries run to several sentences under one marker). The edge is measured from the
+            // first wrapped line, so PDFKit's few points of jitter cannot accumulate.
+            if let edge = item.indent { return abs(line.rect.minX - edge) <= body * 0.5 }
+            // The first wrapped line continues a marker line that ran out of room mid-sentence.
+            // A marker line that ends one is as likely to be the whole item, leaving the
+            // indented line under it to open a paragraph (Loper Bright page 64's wrapped
+            // citation, whose next paragraph opens on a first-line indent).
+            let closing: Set<Character> = ["\u{201D}", "\u{2019}", "\"", "'", ")", "]"]
+            guard let ending = item.last.text.reversed().first(where: { !$0.isWhitespace && !closing.contains($0) }),
+                  !".!?".contains(ending) else { return false }
+            return true
+        }
         // PDFKit can detach a body note marker that falls past a justified line's right edge
         // into its own tiny line. A one-to-three digit line below body size, starting where the
         // previous line ends and sitting raised inside that line's box, is its marker. A small
@@ -601,9 +672,15 @@ enum LayoutReconstructor {
         // The open heading's first line (the row PDFKit split) and its latest line (for the
         // line stacked beneath it).
         var headingRow: (first: TextLine, last: TextLine)?
+        // The list item this page's reading order has open: its marker line, its latest line
+        // and the block holding it. Every other branch closes it, as `codeOrigin` closes a
+        // code block.
+        var listItem: (marker: TextLine, last: TextLine, indent: CGFloat?, index: Int)?
         for (index, element) in bodyElements.enumerated() {
             let previousHeading = headingRow
             headingRow = nil
+            let openItem = listItem
+            listItem = nil
             if let group = noteGroups[index], let line = element.line {
                 flushTagged()
                 flush()
@@ -686,6 +763,12 @@ enum LayoutReconstructor {
                 flush()
                 // Preserve significant breaks and native styles; do not rewrite list markers or code.
                 result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))
+                listItem = (marker: line, last: line, indent: nil, index: result.count - 1)
+            } else if let item = openItem, continuesListItem(line, item: item),
+                      case let .preformatted(text) = result[item.index].content {
+                result[item.index].content = .preformatted(join(text, line.content, vocabulary: vocabulary,
+                    page: page.number, warnings: &warnings))
+                listItem = (marker: item.marker, last: line, indent: item.indent ?? line.rect.minX, index: item.index)
             } else {
                 if let prev = previous, isDetachedMarker(line, after: prev) {
                     paragraph.append(InlineText(line.text, style: .superscript))
@@ -847,11 +930,14 @@ enum LayoutReconstructor {
         if let previousPage,
            let anchors = continuation(from: blocks, previousPage: previousPage, previousImages: previousImages,
                                       to: remaining, page: page, images: images),
-           case let .paragraph(left) = blocks[anchors.previous].content,
+           let left = joinableText(blocks[anchors.previous].content),
            case let .paragraph(right) = remaining[anchors.next].content {
             var joined = blocks[anchors.previous]
-            joined.content = .paragraph(join(left, right, vocabulary: vocabulary, page: page.number,
-                sourceBoundary: page.number, warnings: &warnings))
+            let text = join(left, right, vocabulary: vocabulary, page: page.number,
+                sourceBoundary: page.number, warnings: &warnings)
+            // A continued list item keeps its representation; only its text grows.
+            if case .preformatted = joined.content { joined.content = .preformatted(text) }
+            else { joined.content = .paragraph(text) }
             // Images, captions and folios keep their place ahead of the joined paragraph. A
             // page-bottom footnote follows it instead: its reference is inside that paragraph,
             // and note text must not precede its marker (#40). It then sits past the inline
@@ -884,7 +970,7 @@ enum LayoutReconstructor {
                 || blocks[previous].sourcePages.contains(previousPage.number)
                 || (blocks[previous].isFootnote && blocks[previous].page < previousPage.number),
               isSkippable(blocks[previous], page: previousPage) { previous -= 1 }
-        guard previous >= 0, case let .paragraph(left) = blocks[previous].content,
+        guard previous >= 0, let left = joinableText(blocks[previous].content),
               blocks[previous].page == previousPage.number
                 || blocks[previous].sourcePages.contains(previousPage.number) else { return nil }
         var next = 0
@@ -901,7 +987,21 @@ enum LayoutReconstructor {
               fillsColumn(last, in: previousPage.lines, body: max(4, bodySize(previousPage.lines))),
               endsColumn(last, in: previousPage, images: previousImages),
               opensColumn(first, in: page, images: images) else { return nil }
+        // A code block is preformatted because its breaks are significant; a list item is
+        // preformatted because its marker is. Only the item continues as running text.
+        if case .preformatted = blocks[previous].content, last.monospaced { return nil }
         return (previous, next)
+    }
+
+    /// The text a page-crossing join may continue: a body paragraph, or the wrapped line of a
+    /// list item whose marker opened it on the previous page and whose text runs on (Fed's
+    /// advisory-council list, pages 21 to 22). A block holding a preserved line break keeps it.
+    private static func joinableText(_ content: ReflowBlock.Content) -> InlineText? {
+        switch content {
+        case let .paragraph(text): return text
+        case let .preformatted(text): return isList(text.text) && !text.text.contains("\n") ? text : nil
+        default: return nil
+        }
     }
 
     /// Preserved images, page-bottom footnotes, figure captions and bare folios in the margin

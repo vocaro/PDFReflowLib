@@ -26,4 +26,4 @@ and USCIS states some site images are licensed rather than public domain.
 This record covers selection and download identity only. Each case now has its own baseline
 record under `measurements/<case>/`, review targets in `corpus/<case>-review.json` and a reviewed
 content contract in the corpus gate; defects found are tracked in #36–#43. Still missing from
-#30: vertical CJK, Hebrew and Devanagari sources with clear rights.
+#30: vertical CJK, Hebrew and Devanagari sources with clear rights (#44).

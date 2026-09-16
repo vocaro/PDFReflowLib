@@ -429,4 +429,5 @@ python3 tools/run_corpus_regressions.py --converter .build/corpus-cli/out/Produc
 The NBS paper stands in for an owner-supplied, ACM-copyrighted Lamport CACM article in the same
 two-column scanned format. Replay Clocks is CC BY 4.0: retain the attribution recorded in the
 manifest. USCIS states some guide images are licensed, so that case commits no page rasters.
-Vertical CJK, Hebrew and Devanagari layouts remain uncovered for lack of clearly licensed sources.
+Vertical CJK, Hebrew and Devanagari layouts remain uncovered for lack of clearly licensed sources
+([#44](https://github.com/vocaro/PDFReflowLib/issues/44)).

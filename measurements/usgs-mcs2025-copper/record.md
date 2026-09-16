@@ -11,7 +11,7 @@ Build: repository `c7db471`, Xcode 27.0 (27A266a), macOS 27.0 (26A428),
 
 Issue [#30](https://github.com/vocaro/PDFReflowLib/issues/30) candidate. Rights and provenance are recorded in `corpus/manifest.json`; the fresh-download identity check is in `../corpus-candidates-30/verification.json`. No source PDF or full EPUB is committed.
 
-Born-digital, tagged Acrobat Pro extract (printed pages 64-65 of Mineral Commodity Summaries 2025). Four fonts. Both pages combine prose sections with underlined labels and borderless tables whose rows are grouped only by indentation; page 2 adds spanning Mine/Refinery production headers and eight table notes.
+Born-digital Acrobat Pro extract (printed pages 64-65 of Mineral Commodity Summaries 2025). Four fonts. `MarkInfo /Marked true` is set, but the extract's `StructTreeRoot` has no children; the full 216-page report (not registered) tags its tables with Table/TR/TH/TD. Both pages combine prose sections with underlined labels and borderless tables whose rows are grouped only by indentation; page 2 adds spanning Mine/Refinery production headers and eight table notes.
 
 `source-inspection.json` records Poppler 26.04.0 metadata, per-review-page fonts and `pdftotext -layout` text. That extraction is evidence of the source text layer, not a reference transcription.
 

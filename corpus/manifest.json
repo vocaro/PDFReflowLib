@@ -866,7 +866,8 @@
       "memoryBudget": {
         "maxPeakRSSMiB": 128,
         "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
-      }
+      },
+      "structureCaveat": "MarkInfo Marked=true, but this extract's StructTreeRoot has no children, so it exercises untagged borderless tables. The full mcs2025.pdf (10,431,998 bytes, SHA-256 4b3e4e00e65365efb7b1f14c7c2f94b7005d4924e52cfb370cd2a8cd256d7e4) carries 288 Table, 3,417 TR, 4,382 TH and 11,274 TD elements and is the tagged counterpart for #17."
     },
     {
       "role": "development",

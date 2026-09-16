@@ -8,6 +8,7 @@ No policy changes dynamically to squeeze a book under a limit, and no network se
 | --- | --- | --- |
 | `ocr` | `.automatic` | `.automatic`, `.automaticIncludingImageBackedText`, `.always`, `.never` |
 | `referenceImages` | `.automatic` | `.automatic`, `.always`, `.never` |
+| `removeRepeatedHeadersAndFooters` | `true` | `true` omits detected running headers, footers and folios (`furnitureRemoved`); `false` keeps them in the text |
 | `fullPageImageEncoding` | `.png` | `.png`, `.jpeg(quality:)`, `.smallest(jpegQuality:)` |
 | `regionImageEncoding` | `.png` | Same encodings, independently applied to cropped figures/tables/equations |
 | `maximumOutputBytes` | 512 MiB | Positive entry-byte budget; `.max` effectively disables it |
@@ -189,7 +190,9 @@ swift run pdf-reflow input.pdf output.epub \
 ```
 
 Byte limits accept a positive integer or `unlimited`. Image encodings accept `png`,
-`jpeg:QUALITY` or `smallest:QUALITY`. `--package-identifier ID` and `--modification-date ISO8601`
+`jpeg:QUALITY` or `smallest:QUALITY`. `--repeated-headers-and-footers remove|keep` sets
+`removeRepeatedHeadersAndFooters`; without it, repeated headers and footers are removed.
+`--package-identifier ID` and `--modification-date ISO8601`
 (for example `2026-01-01T00:00:00Z`) set the reproducible-package options. The internal reader
 accepts PNG/JPEG publications; its independent admission budget can be set with
 `tools/view_epub.py --maximum-bytes BYTES`.

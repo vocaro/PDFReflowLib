@@ -10,14 +10,16 @@ struct PDFReflowLibCommand {
           --ocr automatic|image-backed|always|never
           --no-ocr  (alias for --ocr never)
           --reference-images automatic|always|never
+          --repeated-headers-and-footers remove|keep
           --full-page-image-encoding png|jpeg:QUALITY|smallest:QUALITY
           --region-image-encoding png|jpeg:QUALITY|smallest:QUALITY
           --maximum-output-bytes BYTES|unlimited  (uncompressed entry budget)
           --maximum-epub-bytes BYTES|unlimited    (final ZIP file cap)
           --package-identifier ID                 (dc:identifier; default random urn:uuid)
           --modification-date ISO8601             (e.g. 2026-01-01T00:00:00Z; default now)
-        JPEG QUALITY must be in 0...1. Defaults: automatic references, PNG, 512 MiB entry
-        budget, no separate final ZIP cap. Required image-only fallback pages are retained.
+        JPEG QUALITY must be in 0...1. Defaults: automatic references, repeated headers and
+        footers removed, PNG, 512 MiB entry budget, no separate final ZIP cap. Required
+        image-only fallback pages are retained.
         Set both --package-identifier and --modification-date for byte-reproducible packaging.
         """
         if args == ["--help"] {
@@ -66,6 +68,13 @@ struct PDFReflowLibCommand {
                     case "always": options.referenceImages = .always
                     case "never": options.referenceImages = .never
                     default: throw ConversionError.invalidOptions("unknown reference-image policy: \(value)")
+                    }
+                case "--repeated-headers-and-footers":
+                    switch value {
+                    case "remove": options.removeRepeatedHeadersAndFooters = true
+                    case "keep": options.removeRepeatedHeadersAndFooters = false
+                    default: throw ConversionError.invalidOptions(
+                        "unknown repeated header/footer policy: \(value) (expected remove or keep)")
                     }
                 case "--full-page-image-encoding": options.fullPageImageEncoding = try encoding(value)
                 case "--region-image-encoding": options.regionImageEncoding = try encoding(value)

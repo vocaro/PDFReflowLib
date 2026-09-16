@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Exercise the public CLI's policy controls with real small PDFs and optional EPUBCheck."""
 import argparse
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -13,6 +14,14 @@ ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('epub_checks', ROOT / 'tools/check-epubs.py')
 checks = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(checks)
+
+HEADER = 'PDF REFLOW TEST BOOK'  # Repeated at the top of all three prose.pdf pages.
+PINNED = ['--package-identifier', 'urn:pdfreflow:headers-keep', '--modification-date', '2026-01-01T00:00:00Z']
+
+
+def spine_markup(path):
+    with zipfile.ZipFile(path) as book:
+        return ''.join(book.read(n).decode('utf-8') for n in book.namelist() if n.endswith('.xhtml'))
 
 
 def main():
@@ -35,6 +44,11 @@ def main():
         ('ocr-never', 'scanned', ['--ocr', 'never'], 1),
         ('ocr-always', 'columns', ['--ocr', 'always'], 1),
         ('ocr-automatic', 'scanned', ['--ocr', 'automatic'], 1),
+        ('headers-default', 'prose', [], 0),
+        ('headers-remove', 'prose', ['--repeated-headers-and-footers', 'remove'], 0),
+        ('headers-keep', 'prose', ['--repeated-headers-and-footers', 'keep'], 0),
+        ('headers-keep-pinned-a', 'prose', ['--repeated-headers-and-footers', 'keep', *PINNED], 0),
+        ('headers-keep-pinned-b', 'prose', ['--repeated-headers-and-footers', 'keep', *PINNED], 0),
     ]
     results = []
     for name, fixture, flags, image_count in cases:
@@ -52,6 +66,13 @@ def main():
         assert run.stderr.splitlines()[-1] == '100% completed'
         text = checks.check(output)
         if fixture == 'graphics': assert 'Text after the table' in text
+        if name.startswith('headers-'):
+            removed = [w['page'] for w in report['warnings'] if w['code'] == 'furnitureRemoved']
+            count = spine_markup(output).count(HEADER)
+            if name.startswith('headers-keep'):
+                assert count == 3 and removed == [], (name, count, removed)
+            else:
+                assert count == 0 and removed == [1, 2, 3], (name, count, removed)
         with zipfile.ZipFile(output) as book:
             images = [n for n in book.namelist() if n.startswith('EPUB/images/')]
             if name == 'page-jpeg':
@@ -71,6 +92,8 @@ def main():
         ['--maximum-output-bytes', '0'], ['--maximum-epub-bytes', '-1'], ['--maximum-epub-bytes'],
         ['--unknown', 'x'], ['--maximum-epub-bytes', '1'], ['--maximum-output-bytes', '1'],
         ['--ocr', 'invalid'], ['--ocr'],
+        ['--repeated-headers-and-footers', 'drop'], ['--repeated-headers-and-footers', 'KEEP'],
+        ['--repeated-headers-and-footers'],
     ]
     for flags in failures:
         output = args.output / 'must-not-exist.epub'
@@ -78,8 +101,16 @@ def main():
                              capture_output=True, text=True, timeout=60)
         assert run.returncode != 0 and not output.exists(), flags
         assert '100% completed' not in run.stderr, flags
+        if flags[0] == '--repeated-headers-and-footers' and len(flags) == 2:
+            assert run.returncode == 1, flags
+            assert run.stderr.strip() == ('Invalid conversion options: unknown repeated header/footer policy: '
+                                          f'{flags[1]} (expected remove or keep)'), run.stderr
         assert not list(args.output.glob('.pdfreflow-*')), flags
         results.append({'flags': flags, 'exitCode': run.returncode, 'diagnostic': run.stderr, 'passed': True})
+    digests = [hashlib.sha256((args.output / f'headers-keep-pinned-{run}.epub').read_bytes()).hexdigest()
+               for run in 'ab']
+    assert digests[0] == digests[1], digests
+    results.append({'name': 'headers-keep-reproducible', 'sha256': digests[0], 'passed': True})
     (args.output / 'results.json').write_text(json.dumps(results, indent=2) + '\n')
     print(f'PASS {len(cases)} policy conversions and {len(failures)} rejection/cleanup cases', flush=True)
 

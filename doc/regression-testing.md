@@ -165,9 +165,12 @@ prose, graphical crops and required page fallbacks. It verifies independent page
 and PNG bytes with matching EPUB media types, clean/noisy smallest-encoding choices, unchanged
 raster dimensions, invalid qualities, and size-failure cleanup without false completion.
 
-`check-conversion-policies.py` runs four actual CLI policy combinations through independent
-EPUB structure checks, optional EPUBCheck and the internal reader. Ten invalid/over-budget
-requests must fail without output or completion. It runs in `check-all.sh` alongside the six
+`check-conversion-policies.py` runs actual CLI policy combinations through independent
+EPUB structure checks, optional EPUBCheck and the internal reader. Invalid and over-budget
+requests must fail without output or completion. Header/footer cases require `prose.pdf`'s
+running header to be absent by default and with `remove`, present on all three pages with `keep`,
+and byte-identical across two `keep` runs with a pinned identifier and date. Invalid values
+must name the accepted `remove` and `keep` values. It runs in `check-all.sh` alongside the six
 default fixture conversions. Reader tests check JPEG MIME admission and both ZIP/expanded
 byte limits while preserving existing active-content and traversal rejection controls.
 

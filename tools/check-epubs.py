@@ -8,6 +8,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import re
 import subprocess
 import sys
 import time
@@ -28,22 +29,60 @@ EXPECTED = {
 }
 
 
+XHTML = '{http://www.w3.org/1999/xhtml}'
+HEADINGS = {XHTML + 'h' + str(level) for level in range(1, 7)}
+# The writer keeps a heading run of at most a tenth of the body target with its following content.
+KEPT_HEADING_BYTES = 6_000
+
+
+def is_page_boundary(node):
+    return (node.tag == XHTML + 'span'
+            and 'pagebreak' in node.get('{http://www.idpf.org/2007/ops}type', '').split())
+
+
+_MARKER = rb'<span epub:type="pagebreak"[^>]*/>'
+# A heading's content cannot cross its own closing tag, so a match never spans other blocks.
+_HEADING = rb'<h[1-6]\b[^>]*>(?:(?!</h[1-6]>).)*</h[1-6]>'
+_LEADING_HEADINGS = re.compile(rb'(?:\s*' + _MARKER + rb')*((?:\s*(?:' + _HEADING + rb'|' + _MARKER + rb'))*)', re.S)
+_TRAILING_RUN = re.compile(rb'(?:(?:' + _HEADING + rb'|' + _MARKER + rb')\s*)+\Z', re.S)
+
+
+def body_bytes(data):
+    """The exact emitted UTF-8 markup between the body tags."""
+    assert data.count(b'<body>') == 1 and data.count(b'</body>') == 1
+    return data.split(b'<body>', 1)[1].split(b'</body>', 1)[0]
+
+
+def trailing_heading_bytes(encoded):
+    """Serialized bytes of the headings (and markers among them) ending a body, or 0 without a heading."""
+    match = _TRAILING_RUN.search(encoded)
+    if not match or not re.search(_HEADING, match.group(0), re.S):
+        return 0
+    return len(match.group(0).rstrip())
+
+
 def check_spine_document(data):
-    """Check the converter's 60,000-byte body target, allowing one indivisible large block."""
+    """Check the converter's 60,000-byte body target, allowing one indivisible large block.
+
+    Short headings the writer keeps with that block may precede it.
+    """
     tree = ET.fromstring(data)
     body = tree.find('html:body', NS)
     assert body is not None, "missing spine body"
     # Count the exact emitted UTF-8/escaped markup, not ElementTree's reserialization.
-    assert data.count(b'<body>') == 1 and data.count(b'</body>') == 1
-    encoded = data.split(b'<body>', 1)[1].split(b'</body>', 1)[0]
+    encoded = body_bytes(data)
     size = len(encoded)
     if size > 60_000:
-        def boundary(node):
-            return (node.tag == '{http://www.w3.org/1999/xhtml}span'
-                    and 'pagebreak' in node.get('{http://www.idpf.org/2007/ops}type', '').split())
-        content = [node for node in body if not boundary(node)]
+        markers = [node for node in body if is_page_boundary(node)]
+        content = [node for node in body if not is_page_boundary(node)]
+        headings = 0
+        while headings < len(content) - 1 and content[headings].tag in HEADINGS:
+            headings += 1
+        kept = _LEADING_HEADINGS.match(encoded).group(1).strip()
+        assert headings == 0 or len(kept) <= KEPT_HEADING_BYTES, "spine body exceeds target with multiple blocks"
+        content = content[headings:]
         assert len(content) == 1, "spine body exceeds target with multiple blocks"
-        assert len(body) - len(content) <= 1, "oversized block includes unrelated page markers"
+        assert len(markers) <= 1, "oversized block includes unrelated page markers"
         assert content[0].tag in {'{http://www.w3.org/1999/xhtml}' + tag
                                   for tag in ('p', 'h2', 'pre', 'figure')}, "unexpected oversized block"
         assert not (body.text or '').strip() and all(not (n.tail or '').strip() for n in body), "unwrapped body text"
@@ -66,10 +105,16 @@ def check(path):
             assert "EPUB/" + item["href"] in names
         assert any(item.get("properties") == "nav" for item in manifest.values())
         chapters = []
+        names_by_tree = {}
         for ref in opf.findall("opf:spine/opf:itemref", NS):
             name = "EPUB/" + manifest[ref.attrib["idref"]]["href"]
             check_spine_document(archive.read(name))
             chapters.append(documents[name])
+            names_by_tree[id(documents[name])] = name
+        for tree in chapters[:-1]:
+            # A short heading must open the document holding its content, not end the previous one.
+            kept = trailing_heading_bytes(body_bytes(archive.read(names_by_tree[id(tree)])))
+            assert not 0 < kept <= KEPT_HEADING_BYTES, "spine document ends with a heading separated from its content"
         ids = {}
         for name, tree in documents.items():
             found = [node.attrib["id"] for node in tree.iter() if "id" in node.attrib]

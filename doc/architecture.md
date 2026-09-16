@@ -221,8 +221,10 @@ The writer serializes each block once and writes completed spine documents as it
 one current body string plus navigation/filename lists; it does not first build a second collection
 of all chapter blocks. Packing checks the complete UTF-8 body markup against a 60,000-byte target
 before admitting a block. A standalone source-page marker travels with the following content;
-inline markers retain their exact location. Oversized individual paragraphs, headings, code blocks
-or figures occupy their own document without being split or losing styles. This is a soft body-size
+inline markers retain their exact location. A short trailing run of headings (at most 6,000 bytes)
+moves with its navigation entries into the next document instead of ending the previous one, and
+stays with an oversized block that follows it. Other oversized individual paragraphs, headings, code
+blocks or figures occupy their own document without being split or losing styles. This is a soft body-size
 target, excluding document metadata, and is not a memory ceiling.
 
 `ChapterBoundaryReader` separately admits a conservative bookmark scheme: at least two

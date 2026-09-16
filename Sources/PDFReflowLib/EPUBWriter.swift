@@ -38,21 +38,54 @@ enum EPUBWriter {
         var body = ""
         var bodyBytes = 0
         var pendingPage: (number: Int, markup: String)?
+        // Headings at the end of the body, with any standalone page markers between them, and the
+        // navigation entries they added. A size split carries them into the next document so a
+        // heading never ends one spine document while its content begins the next.
+        var trailingHeadings: (bodyBytes: Int, toc: Int, pages: Int)?
+        // Only a short heading run is kept with its content; a long run of headings packs normally.
+        func keepsTrailingHeadings() -> Bool {
+            guard let trailing = trailingHeadings else { return false }
+            return bodyBytes - trailing.bodyBytes <= bodyTargetBytes / 10
+        }
         func nextChapterName() -> String { "chapter-\(chapters.count + 1).xhtml" }
-        func finishChapter() throws {
+        func finishChapter(carryingTrailingHeadings: Bool = false) throws {
             guard !body.isEmpty else { return }
             let name = nextChapterName()
+            var carried = ""
+            var carriedEntries: (toc: [String], pages: [String]) = ([], [])
+            if carryingTrailingHeadings, keepsTrailingHeadings(), let trailing = trailingHeadings, trailing.bodyBytes > 0 {
+                let utf8 = Array(body.utf8)
+                carried = String(decoding: utf8[trailing.bodyBytes...], as: UTF8.self)
+                body = String(decoding: utf8[..<trailing.bodyBytes], as: UTF8.self)
+                carriedEntries = (Array(toc[trailing.toc...]), Array(pages[trailing.pages...]))
+                toc.removeSubrange(trailing.toc...)
+                pages.removeSubrange(trailing.pages...)
+            }
             try writeText(document(body, name: title), publication.appendingPathComponent(name))
             chapters.append(name)
-            body = ""; bodyBytes = 0
+            body = carried; bodyBytes = carried.utf8.count
+            trailingHeadings = carried.isEmpty ? nil : (0, toc.count, pages.count)
+            let next = nextChapterName()
+            toc += carriedEntries.toc.map { $0.replacingOccurrences(of: "href=\"\(name)#", with: "href=\"\(next)#") }
+            pages += carriedEntries.pages.map { $0.replacingOccurrences(of: "href=\"\(name)#", with: "href=\"\(next)#") }
         }
-        func append(_ markup: String, sourcePages: [Int], heading: (id: String, text: String)? = nil) throws {
+        func append(_ markup: String, sourcePages: [Int], heading: (id: String, text: String)? = nil,
+                    standaloneMarker: Bool = false) throws {
             try Task.checkCancellation()
             let size = markup.utf8.count
             guard Int64(size) <= maximumOutputBytes - consumed else {
                 throw ConversionError.resourceLimit("EPUB text size")
             }
-            if bodyBytes > 0, bodyBytes + size > bodyTargetBytes { try finishChapter() }
+            // A body holding only headings stays open for the content they introduce.
+            if bodyBytes > 0, bodyBytes + size > bodyTargetBytes,
+               !(keepsTrailingHeadings() && trailingHeadings?.bodyBytes == 0) {
+                try finishChapter(carryingTrailingHeadings: true)
+            }
+            if heading != nil, trailingHeadings == nil {
+                trailingHeadings = (bodyBytes, toc.count, pages.count)
+            } else if heading == nil, !standaloneMarker {
+                trailingHeadings = nil
+            }
             let name = nextChapterName()
             for number in sourcePages {
                 pages.append("<li><a href=\"\(name)#page-\(number)\">\(number)</a></li>")
@@ -63,7 +96,8 @@ enum EPUBWriter {
             body += markup; bodyBytes += size
             // Never split an atomic block merely to satisfy the target. Oversized blocks
             // are isolated, retain their styles and anchors, and still obey the total budget.
-            if bodyBytes >= bodyTargetBytes { try finishChapter() }
+            // A heading waits for its following content before the document is closed.
+            if bodyBytes >= bodyTargetBytes, !keepsTrailingHeadings() { try finishChapter() }
         }
         await progress(0)
         for (i, block) in book.blocks.enumerated() {
@@ -72,8 +106,10 @@ enum EPUBWriter {
             if case let .sourcePage(number) = block.content {
                 // Consecutive boundaries describe empty source pages. Only the last boundary
                 // needs to travel with the following content; earlier ones can be packed normally.
-                if let pendingPage { try append(pendingPage.markup, sourcePages: [pendingPage.number]) }
-                if book.chapterStartPages.contains(number) { try finishChapter() }
+                if let pendingPage {
+                    try append(pendingPage.markup, sourcePages: [pendingPage.number], standaloneMarker: true)
+                }
+                if book.chapterStartPages.contains(number) { trailingHeadings = nil; try finishChapter() }
                 pendingPage = (number, EPUBTextEncoder.sourcePage(number))
             } else {
                 let payload = try EPUBTextEncoder.payload(block, imagePaths: imagePathByID)
@@ -99,7 +135,7 @@ enum EPUBWriter {
                 await progress(0.45 * Double(i + 1) / Double(book.blocks.count))
             }
         }
-        if let pendingPage { try append(pendingPage.markup, sourcePages: [pendingPage.number]) }
+        if let pendingPage { try append(pendingPage.markup, sourcePages: [pendingPage.number], standaloneMarker: true) }
         try finishChapter()
         if toc.isEmpty { toc = ["<li><a href=\"\(chapters[0])\">\(xml(title))</a></li>"] }
         let nav = """

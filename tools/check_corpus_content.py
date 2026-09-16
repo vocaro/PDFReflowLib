@@ -124,6 +124,8 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                            for span in page['scripts']]
         page['text'] = normalized(raw)
         page['headings'] = [normalized(text) for text in page['headings'].values()]
+        # Paragraph IDs are document-wide, so one <p> crossing a page marker has the same ID on both pages.
+        page['paragraphIDs'] = {paragraph: normalized(text) for paragraph, text in page['paragraphs'].items()}
         page['paragraphs'] = [normalized(text) for text in page['paragraphs'].values()]
     return pages, markers
 
@@ -148,7 +150,7 @@ def assess(case, contract, result, report, pages, markers):
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'scripts', 'absentText', 'headings', 'paragraphs')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'scripts', 'absentText', 'headings', 'paragraphs', 'continuedParagraphs')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -174,6 +176,18 @@ def assess(case, contract, result, report, pages, markers):
             checks += 1
             if not any(normalized(phrase) in paragraph for paragraph in page.get('paragraphs', [])):
                 errors.append(f'Page {number}: missing paragraph {phrase!r}')
+        following = pages.get(number + 1, {})
+        for continuation in item.get('continuedParagraphs', []):
+            if (not isinstance(continuation, dict) or set(continuation) != {'end', 'next'}
+                    or any(not isinstance(continuation[k], str) or not normalized(continuation[k]) for k in ('end', 'next'))):
+                raise ValueError('Paragraph continuation requires nonempty end and next phrases')
+            checks += 1
+            end, after = normalized(continuation['end']), normalized(continuation['next'])
+            # The same paragraph element must end this page with one phrase and continue the next page with the other.
+            if not any(end in text and paragraph in following.get('paragraphIDs', {})
+                       and after in following['paragraphIDs'][paragraph]
+                       for paragraph, text in page.get('paragraphIDs', {}).items()):
+                errors.append(f'Page {number}: paragraph does not continue onto page {number + 1} {continuation!r}')
         cursor = 0
         for phrase in item.get('orderedText', []):
             if not normalized(phrase):

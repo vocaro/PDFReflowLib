@@ -102,6 +102,30 @@ class CorpusContentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.check()
 
+    def test_paragraph_continuation_requires_one_element_across_the_page_marker(self):
+        self.contract['pages'] = [{'page': 1, 'continuedParagraphs': [{'end': 'the sentence', 'next': 'continues here'}]}]
+        # Separate chapter files cannot hold one paragraph, so these are also cross-file controls.
+        joined = self.epub('<span epub:type="pagebreak" id="page-1"/><p>before</p><p>starts the sentence'
+                           '<span epub:type="pagebreak" id="page-2"/> continues here</p>', '<p>later</p>')
+        split = self.epub('<span epub:type="pagebreak" id="page-1"/><p>starts the sentence</p>',
+                          '<span epub:type="pagebreak" id="page-2"/><p>continues here</p>')
+        other = self.epub('<span epub:type="pagebreak" id="page-1"/><p>starts the sentence'
+                          '<span epub:type="pagebreak" id="page-2"/></p><p>continues here</p>', '<p>x</p>')
+        for path, passes in [(joined, True), (split, False), (other, False)]:
+            pages, markers = read_pages(path)
+            result = self.check(pages=pages, markers=markers)
+            self.assertEqual(result['passed'], passes, result['errors'])
+        # Phrases must sit on the correct side of the marker.
+        swapped = self.epub('<span epub:type="pagebreak" id="page-1"/><p>continues here'
+                            '<span epub:type="pagebreak" id="page-2"/> starts the sentence</p>', '<p>omega</p>')
+        pages, markers = read_pages(swapped)
+        self.assertFalse(self.check(pages=pages, markers=markers)['passed'])
+        for invalid in [{'end': 'x'}, {'end': '', 'next': 'y'}, {'end': 'x', 'next': 1}, ['x', 'y'],
+                        {'end': 'x', 'next': 'y', 'extra': 'z'}]:
+            self.contract['pages'][0]['continuedParagraphs'] = [invalid]
+            with self.assertRaises(ValueError):
+                self.check()
+
     def test_paragraph_parser_keeps_inline_styles_and_cross_page_ownership(self):
         path = self.epub('<span epub:type="pagebreak" id="page-1"/><h2>title</h2>'
                          '<p>al<strong>pha</strong> beta<span epub:type="pagebreak" id="page-2"/> gamma</p>',

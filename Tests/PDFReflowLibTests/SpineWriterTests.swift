@@ -151,3 +151,58 @@ private actor SpineProgress {
     #expect(chapters.map(body) == ["<p>\(String(repeating: "x", count: 59_992))</p>\n",
                                   EPUBTextEncoder.sourcePage(1), EPUBTextEncoder.sourcePage(2) + "<p>chapter</p>\n"])
 }
+
+private func heading(_ id: String, _ text: String, page: Int = 2) -> ReflowBlock {
+    .init(content: .heading(id: id, text: InlineText(text)), page: page)
+}
+
+@Test func sizeSplitCarriesTrailingHeadingAndItsNavigationIntoTheNextDocument() async throws {
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    // The marker and heading fit under the target, but the section body does not.
+    let book = spineBook([.init(content: .sourcePage(1), page: 1), paragraph(String(repeating: "x", count: 59_800)),
+                          .init(content: .sourcePage(2), page: 2), heading("section", "Section"),
+                          heading("subsection", "Subsection"), paragraph(String(repeating: "y", count: 400))])
+    let chapters = try await writtenChapters(book, directory: dir)
+    try #require(chapters.count == 2)
+    #expect(body(chapters[0]) == EPUBTextEncoder.sourcePage(1) + "<p>\(String(repeating: "x", count: 59_800))</p>\n")
+    #expect(body(chapters[1]).hasPrefix(EPUBTextEncoder.sourcePage(2) + "<h2 id=\"section\">Section</h2>\n<h2 id=\"subsection\">"))
+    #expect(body(chapters[1]).hasSuffix("<p>\(String(repeating: "y", count: 400))</p>\n"))
+    let nav = try String(contentsOf: dir.appendingPathComponent("EPUB/nav.xhtml"), encoding: .utf8)
+    for id in ["page-2", "section", "subsection"] {
+        #expect(nav.contains("chapter-2.xhtml#\(id)"))
+        #expect(!nav.contains("chapter-1.xhtml#\(id)"))
+    }
+    #expect(nav.contains("chapter-1.xhtml#page-1"))
+    // Navigation order is unchanged by moving entries between documents.
+    let toc = try #require(nav.range(of: "Section")?.lowerBound)
+    #expect(nav.range(of: "Subsection")!.lowerBound > toc)
+}
+
+@Test func headingThatFillsADocumentWaitsForItsContent() async throws {
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    // The heading brings the serialized body to exactly the 60,000-byte target.
+    let title = String(repeating: "h", count: 172)
+    let book = spineBook([paragraph(String(repeating: "x", count: 59_800)), heading("full", title), paragraph("body")])
+    #expect("<p>\(String(repeating: "x", count: 59_800))</p>\n<h2 id=\"full\">\(title)</h2>\n".utf8.count == 60_000)
+    let chapters = try await writtenChapters(book, directory: dir)
+    try #require(chapters.count == 2)
+    #expect(body(chapters[0]) == "<p>\(String(repeating: "x", count: 59_800))</p>\n")
+    #expect(body(chapters[1]) == "<h2 id=\"full\">\(title)</h2>\n<p>body</p>\n")
+}
+
+@Test func headingStaysWithAnOversizedBlockWithoutAnEmptyHeadingDocument() async throws {
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    let large = String(repeating: "z", count: 70_000)
+    let book = spineBook([paragraph("intro"), heading("large", "Large section"), paragraph(large), paragraph("after")])
+    let chapters = try await writtenChapters(book, directory: dir)
+    #expect(chapters.map(body) == ["<p>intro</p>\n", "<h2 id=\"large\">Large section</h2>\n<p>\(large)</p>\n", "<p>after</p>\n"])
+}
+
+@Test func longHeadingRunsStillRespectTheSizeTarget() async throws {
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    let headings = (1...2_000).map { heading("h\($0)", "Heading number \($0)") }
+    let chapters = try await writtenChapters(spineBook(headings + [paragraph("end")]), directory: dir)
+    #expect(chapters.count >= 2)
+    #expect(chapters.allSatisfy { body($0).utf8.count <= 60_000 })
+    #expect(chapters.map(body).joined().components(separatedBy: "<h2 ").count - 1 == 2_000)
+}

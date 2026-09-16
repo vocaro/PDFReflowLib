@@ -1,0 +1,305 @@
+{
+  "scope": "Same c7db471-era sources and converter inputs; before = full corpus gate at 29ca743, after = full corpus gate with the heading keep-with-next writer change. Compares spine bodies, navigation (with chapter file names normalized) and image entries per corpus document, and the new separated-heading invariant on both outputs.",
+  "documents": [
+    {
+      "case": "faa-phak-8083-25c",
+      "spineDocuments": [
+        31,
+        31
+      ],
+      "concatenatedBodiesIdentical": true,
+      "navigationIdenticalIgnoringFileNames": true,
+      "imagesIdentical": true,
+      "changedDocuments": [],
+      "epubSHA256": [
+        "112ca8fbc4d89f2d2410536e3b9cbc4e08d2152699078b95fea262982c7902ad",
+        "d1afcd383495d64110ce10ccf28d45bf908bf66081d02c932227f667f2db6162"
+      ],
+      "separatedHeadingCheck": [
+        "passed",
+        "passed"
+      ]
+    },
+    {
+      "case": "wallace-algebra-2010",
+      "spineDocuments": [
+        14,
+        14
+      ],
+      "concatenatedBodiesIdentical": true,
+      "navigationIdenticalIgnoringFileNames": true,
+      "imagesIdentical": true,
+      "changedDocuments": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "epubSHA256": [
+        "cdb14da0b3e31ef9444938efef0d24c133c95fca6c0a156d7a8b0526c22a9f56",
+        "6b26f1319c50e3c57568e394fac9a48e7b0a920f268bed7343e521711475f4c3"
+      ],
+      "separatedHeadingCheck": [
+        "spine document ends with a heading separated from its content",
+        "passed"
+      ]
+    },
+    {
+      "case": "gpo-911-2004",
+      "spineDocuments": [
+        27,
+        27
+      ],
+      "concatenatedBodiesIdentical": true,
+      "navigationIdenticalIgnoringFileNames": true,
+      "imagesIdentical": true,
+      "changedDocuments": [],
+      "epubSHA256": [
+        "aa4de1b59640ef853f200dca24654ce7a3d844a14b0c48024f42f4e8810471eb",
+        "8f222c7babc8f634c1f2b1af4cb890b30df051b30b1d5441ef72b2056508a12f"
+      ],
+      "separatedHeadingCheck": [
+        "passed",
+        "passed"
+      ]
+    },
+    {
+      "case": "fed-explained-2021",
+      "spineDocuments": [
+        5,
+        5
+      ],
+      "concatenatedBodiesIdentical": true,
+      "navigationIdenticalIgnoringFileNames": true,
+      "imagesIdentical": true,
+      "changedDocuments": [
+        1,
+        2
+      ],
+      "epubSHA256": [
+        "699e60311a817d399cdf03adf620fd591ed7b73cb689c14b2335f353ca01b33d",
+        "d9d735e984676ba64db5edc0fe5a6cf71de3fae660a8efc0baa4afbca8223baa"
+      ],
+      "separatedHeadingCheck": [
+        "spine document ends with a heading separated from its content",
+        "passed"
+      ]
+    },
+    {
+      "case": "dga-2025-2030",
+      "spineDocuments": [
+        1,
+        1
+      ],
+      "concatenatedBodiesIdentical": true,
+      "navigationIdenticalIgnoringFileNames": true,
+      "imagesIdentical": true,
+      "changedDocuments": [],
+      "epubSHA256": [
+        "c6fe31a63b3cbae22479697da92bfb6e9485f93912897b83e8464ed496b414ba",
+        "48ddf474cb1ee7bf44ee41ddedc089536a4d7ce07cf6fcfb98bd4f1b8f1804ad"
+      ],
+      "separatedHeadingCheck": [
+        "passed",
+        "passed"
+      ]
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "spineDocuments": [
+        2,
+        2
+      ],
+      "concatenatedBodiesIdentical": true,
+      "navigationIdenticalIgnoringFileNames": true,
+      "imagesIdentical": true,
+      "changedDocuments": [],
+      "epubSHA256": [
+        "e9f1275379e2b615824af9c1ff7becfcb6bf186c4abb01eb975146b117e443d1",
+        "a2330f5592bf40e5137ba81a51d7571f1c45ac66c2a195f66828dc7b9587cc56"
+      ],
+      "separatedHeadingCheck": [
+        "passed",
+        "passed"
+      ]
+    },
+    {
+      "case": "cdc-zombie-pandemic-2011",
+      "spineDocuments": [
+        1,
+        1
+      ],
+      "concatenatedBodiesIdentical": true,
+      "navigationIdenticalIgnoringFileNames": true,
+      "imagesIdentical": true,
+      "changedDocuments": [],
+      "epubSHA256": [
+        "02944a13d6b679cff267e82e2c38d495cbb92570a0db8bf120aa251dfb21e0cf",
+        "9ad8a47a685651120c83a22d506f2e5a95e27a9149a2b73146a7a2b80722e026"
+      ],
+      "separatedHeadingCheck": [
+        "passed",
+        "passed"
+      ]
+    },
+    {
+      "case": "cia-blue-book-14-1955",
+      "spineDocuments": [
+        18,
+        18
+      ],
+      "concatenatedBodiesIdentical": true,
+      "navigationIdenticalIgnoringFileNames": true,
+      "imagesIdentical": true,
+      "changedDocuments": [],
+      "epubSHA256": [
+        "19ae8a4fc94c6a32135bb503efbeee4a596ffa7eb41c72177c4a54ad715ec2f5",
+        "01355f68316616ae2ee9016e16674cbfd85fc796fb4516496612fd6eef69152e"
+      ],
+      "separatedHeadingCheck": [
+        "passed",
+        "passed"
+      ]
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "spineDocuments": [
+        1,
+        1
+      ],
+      "concatenatedBodiesIdentical": true,
+      "navigationIdenticalIgnoringFileNames": true,
+      "imagesIdentical": true,
+      "changedDocuments": [],
+      "epubSHA256": [
+        "fb67a80021aed93611dd975b11769effffbd39f425b7eecdebc734531a837aaa",
+        "96f3c7534ba3c1d0df426aa4a9cbeb4947d49704d0cfe7e37e733fd83cf3217e"
+      ],
+      "separatedHeadingCheck": [
+        "passed",
+        "passed"
+      ]
+    },
+    {
+      "case": "scotus-loper-bright-2024",
+      "spineDocuments": [
+        5,
+        5
+      ],
+      "concatenatedBodiesIdentical": true,
+      "navigationIdenticalIgnoringFileNames": true,
+      "imagesIdentical": true,
+      "changedDocuments": [],
+      "epubSHA256": [
+        "8697d619eb14bf3b856a722c0adf65252024eac298a17c533a00cc91eeb2017f",
+        "57746d03ee8c1987013740dc81f38d200a2bc9508cc2ff987ab195feb896b653"
+      ],
+      "separatedHeadingCheck": [
+        "passed",
+        "passed"
+      ]
+    },
+    {
+      "case": "census-rrs2002-01",
+      "spineDocuments": [
+        1,
+        1
+      ],
+      "concatenatedBodiesIdentical": true,
+      "navigationIdenticalIgnoringFileNames": true,
+      "imagesIdentical": true,
+      "changedDocuments": [],
+      "epubSHA256": [
+        "c804479cdff0d137837d49b4c385468801b069537f04d06803185b173e50dee7",
+        "dbc14898dc15618305ed359b7794a5e90c3f64d9000456de85b609ee47050097"
+      ],
+      "separatedHeadingCheck": [
+        "passed",
+        "passed"
+      ]
+    },
+    {
+      "case": "uscis-m618-arabic-2015",
+      "spineDocuments": [
+        5,
+        5
+      ],
+      "concatenatedBodiesIdentical": true,
+      "navigationIdenticalIgnoringFileNames": true,
+      "imagesIdentical": true,
+      "changedDocuments": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "epubSHA256": [
+        "0d9f758e8cc18497c9e77351abccd73a2c489e82bed00eddd63dc9d4cdc9cb72",
+        "9c3e8969e6e6334d82a480ead6b3246289b687910cc70e1dc1766a651cb06885"
+      ],
+      "separatedHeadingCheck": [
+        "spine document ends with a heading separated from its content",
+        "passed"
+      ]
+    },
+    {
+      "case": "irs-p596-zhs-2025",
+      "spineDocuments": [
+        2,
+        2
+      ],
+      "concatenatedBodiesIdentical": true,
+      "navigationIdenticalIgnoringFileNames": true,
+      "imagesIdentical": true,
+      "changedDocuments": [],
+      "epubSHA256": [
+        "275a319b9550f68374e412bc2018e881ed957bd91721bc81658e83b2a23f6533",
+        "6e05f9278049f708df2dd50bd95964cc9f73d41e756a3fbf589f5f5b22bfcca7"
+      ],
+      "separatedHeadingCheck": [
+        "passed",
+        "passed"
+      ]
+    },
+    {
+      "case": "nbs-jres-geltman-1977",
+      "spineDocuments": [
+        1,
+        1
+      ],
+      "concatenatedBodiesIdentical": true,
+      "navigationIdenticalIgnoringFileNames": true,
+      "imagesIdentical": true,
+      "changedDocuments": [],
+      "epubSHA256": [
+        "64da3428de62f9aac2597f33cc0bdea076d65e1b4c27372213d8bb4beedbe79e",
+        "02d8bcd83c91294d2338103d61687462e2bb768c0384b7f615cf2cd4bf19b3af"
+      ],
+      "separatedHeadingCheck": [
+        "passed",
+        "passed"
+      ]
+    },
+    {
+      "case": "arxiv-replay-clocks-2023",
+      "spineDocuments": [
+        2,
+        2
+      ],
+      "concatenatedBodiesIdentical": true,
+      "navigationIdenticalIgnoringFileNames": true,
+      "imagesIdentical": true,
+      "changedDocuments": [],
+      "epubSHA256": [
+        "7935e1837e25edee759a0d7036a4578ff34c16f11ba032f84c621c16f091af48",
+        "967d89c796cf0c1aa5c810b6326aebc5064d2ad0044eb7558d2b88c5c46a81b0"
+      ],
+      "separatedHeadingCheck": [
+        "passed",
+        "passed"
+      ]
+    }
+  ]
+}

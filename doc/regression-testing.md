@@ -50,14 +50,14 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 341 targeted checks on 80 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 347 targeted checks on 85 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
 the NBS and Replay Clocks academic papers). All source-page anchors must also remain complete and
 ordered, and semantic text must contain no image attachment placeholders.
 
-The checks preserve selected correct words, paragraph semantics and continuity, paragraph/list order, license attribution, image
+The checks preserve selected correct words, paragraph semantics and cross-page continuity, paragraph/list order, license attribution, image
 presence and explicit transcription/fallback warnings. They read the actual EPUB spine, track
 page boundaries inside styled text, preserve ownership across chapter-file continuations, and
 exclude navigation/captions from source-text matching. They do not freeze serialization details
@@ -233,10 +233,17 @@ that these checks reject semantic regressions.
 
 `SpineWriterTests.swift` covers exact serialized body-size boundaries, many tiny paragraphs,
 UTF-8 and escaped text, oversized atomic blocks, source-page/heading navigation, trailing empty
-pages, semantic-model preservation, ordered progress and cancellation. The independent EPUB
-checker enforces the 60,000-byte body target on every converted fixture and corpus document;
-an oversized document may contain only one indivisible content block and its optional preceding
-source-page marker. Python negative controls reject multi-block overflow and unwrapped text.
+pages, headings kept with their content across size splits, semantic-model preservation, ordered
+progress and cancellation. The independent EPUB checker enforces the 60,000-byte body target on
+every converted fixture and corpus document; an oversized document may contain only one
+indivisible content block, its optional preceding source-page marker and up to 6,000 bytes of
+headings kept with it. No spine document except the last may end with such a heading run.
+Python negative controls reject multi-block overflow, unwrapped text and separated headings.
+
+Corpus contracts can also require `continuedParagraphs`: one paragraph element must end page N
+with one phrase and continue page N+1 with the other. The
+[continuity evidence](../measurements/spine-continuity/record.md) lists the reviewed page pairs;
+known cross-page splits and folio joins are tracked in [#45](https://github.com/vocaro/PDFReflowLib/issues/45).
 
 This target is an EPUB packing policy, not a limit on individual source paragraphs, whole-document
 memory, or a promise that spine boundaries correspond to actual book chapters. See the

@@ -1,0 +1,19 @@
+{
+  "issue": "#29",
+  "baselineCommit": "3f7c23d",
+  "converterBeforeSHA256": "dd27b03afb2fad3a3d42b7fe8cfa10989e7c91651ef8c306338bc40728199ac0",
+  "converterAfterSHA256": "124a86f147596f5103b2a6671c55b981799d8083b1fc9dbba8f03922082e1de3",
+  "algebraSourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "fixtures": {
+    "algebra-10-layout.json": "dec2f84f2a8b56840568d27b9f3937ff8f2221e52de73f10a62790c3c83c7f1a",
+    "algebra-438-layout.json": "b3da36dcda766fb7427f7dcc461e22b68d9e4711b8092003cc70dbea2a878c39",
+    "algebra-291-layout.json": "102f4bfbd30929bc7079f39a13bed83ad506a2f3f46957fecf937898f29d71b8",
+    "algebra-289-layout.json": "a7058590b5dc54cfb7f17dfb989481e98eeec4e4e2a61bb0b50d0406510a12f1",
+    "algebra-471-layout.json": "6b98c972466b6e5c421c1a35b25536adffebfc5c1ec913e1cebe972d9744e9f1"
+  },
+  "reference": {
+    "corpus/references/wallace-algebra-2010/page-289-example-378.png": "00babc6148f0a9c8447212d6bb1b92904a5d4c908a39c75bc3b049a832e0f1bd"
+  },
+  "toolchain": "Xcode 27.0 (27A266a), Apple Swift 6.4 (swiftlang-6.4.0.34.1), macOS 27.0 (26A428), arm64; Poppler pdftoppm 26.04.0",
+  "epubcheck": "/opt/homebrew/bin/epubcheck"
+}

@@ -1,0 +1,21 @@
+{
+  "case": "wallace-algebra-2010",
+  "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "page": 289,
+  "regionPoints": [
+    165.0,
+    200.0,
+    415.0,
+    285.0
+  ],
+  "target": "Example 378: the four-line square-root derivation of sqrt(75) = 5 sqrt(3) with its step explanations",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "inkThreshold": 200,
+  "pixels": [
+    122,
+    35
+  ],
+  "sha256": "00babc6148f0a9c8447212d6bb1b92904a5d4c908a39c75bc3b049a832e0f1bd"
+}

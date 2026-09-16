@@ -50,13 +50,13 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 373 targeted checks on 88 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 414 targeted checks on 93 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 146 ordered-text, 51 text, 36 paragraph,
-22 heading, 19 absent-text, 13 script, 6 paragraph-continuation, 54 image-presence, 16 warning,
-10 source-region, 3 glyph-structure and 3 image-appearance checks. All source-page anchors must
+the NBS and Replay Clocks academic papers). They comprise 163 ordered-text, 61 text, 36 paragraph,
+26 heading, 22 absent-text, 13 script, 6 paragraph-continuation, 58 image-presence, 12 warning,
+11 source-region, 3 glyph-structure and 3 image-appearance checks. All source-page anchors must
 also remain complete and ordered, and semantic text must contain no image attachment placeholders.
 
 The checks preserve selected correct words, paragraph semantics and cross-page continuity, paragraph/list order, license attribution, image
@@ -222,7 +222,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-201 Swift tests with no known-issue wrappers, and 142 Python tests.
+208 Swift tests with no known-issue wrappers, and 142 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -384,6 +384,22 @@ emphasis. Full-book contracts check both algebra exponents and four FAA V-speed 
 source context. This preserves detected styles; it does not validate every script inference,
 repair exercise grouping, reconstruct semantic lists or establish chapter-scoped endnote links.
 See [the source review and complete corpus comparison](../measurements/preformatted-styles/record.md).
+
+## Exercise and answer-key numbering
+
+`ExerciseNumberingTests.swift` uses five checksum-pinned Wallace algebra pages. Page 10 (section
+0.1 exercises) must keep all 44 numbers as separate blocks, each column in order, with the
+instruction lines in place; page 438 (its answers) must keep 60 separate entries, including the
+negative ones that extract as `1)− 2` with no space after the marker, and every exercise number
+must have exactly one answer entry with reviewed pairs agreeing. Page 291 (8.1 square roots)
+must keep every radical exercise inside a preserved region with no stray number; page 289 must
+keep the three worked derivations as images between their `Example` labels while the prose
+reflows; page 471 must keep the thirty dimensional-analysis answers in column order. A synthetic
+control keeps `5.This` note continuations and `2)(3)` prose out of the list branch. The corpus
+contract pins those pages, the page-289 derivation against a source-rendered reference, and
+`imageRegion` warnings. Column-major page order, the displaced chapter heading on page 438 and
+fraction entries split between a marker stub and an image are recorded as open defects in the
+[numbering evidence](../measurements/exercise-numbering/record.md), not blessed.
 
 ## Citation-leading wrapped lines
 

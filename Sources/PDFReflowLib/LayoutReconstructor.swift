@@ -360,8 +360,11 @@ enum LayoutReconstructor {
         blocks += remaining
     }
 
+    /// A numeric parenthesis marker set tight against a minus sign (`1)− 2`, as the algebra
+    /// answer keys extract) is also a list item; the period form stays space-delimited so
+    /// dedented note continuations such as `5.This` keep their existing handling.
     private static func isList(_ text: String) -> Bool {
-        text.range(of: "^(?:[•*−-]|[0-9]+[.)]|[A-Za-z][.)])\\s", options: .regularExpression) != nil
+        text.range(of: "^(?:(?:[•*−-]|[0-9]+[.)]|[A-Za-z][.)])\\s|[0-9]+\\)−)", options: .regularExpression) != nil
     }
 
     private enum JoinOperation { case space, concatenate, removeHyphen }

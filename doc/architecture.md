@@ -124,7 +124,8 @@ not partial ordering. Cancellation is checked during traversal and text scanning
 
 `LayoutReconstructor` handles whitespace cuts, paragraphs, styled word joins and
 cross-page continuation. A line that begins with a number or single letter followed by a
-period or parenthesis is a preformatted list item unless it wraps an open paragraph: the
+period or parenthesis and a space, or a number and parenthesis set tight against a minus sign
+(`1)− 2`), is a preformatted list item unless it wraps an open paragraph: the
 previous line must read as prose, end without terminal punctuation and reach a right edge
 that at least three same-size lines of the column share within a quarter body size, and the
 line must sit on the column's majority left edge (or outdent from an indented opening line)

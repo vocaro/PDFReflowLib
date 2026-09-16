@@ -103,7 +103,8 @@ that fall back to images skip unused attributed-text decoding. Failures use
   elsewhere in the book and there is no evidence of the corresponding compound. Ambiguous
   joins retain the hyphen and produce a warning.
 - Short recurring headers and footers can be removed when at least three pages support the
-  decision. Monospaced code retains line breaks and indentation; list markers retain their
+  decision. Monospaced code retains line breaks and indentation; list markers (including a
+  numeric marker set tight against a minus sign, as in answer keys) retain their
   source breaks, except that a wrapped line of justified prose that merely begins with an
   initial, a citation abbreviation or a year followed by a period continues its paragraph.
   Visible typography supplies flat heading navigation. Exclusively invisible
@@ -145,8 +146,8 @@ pushing. This opt-in lane converts 15 complete cached documents and checks revie
 EPUB conformance, progress and resource budgets. Missing sources fail with acquisition instructions;
 there are no automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic lane.
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
-and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold 373
-checks on 88 pages, including full-resolution stroke checks for equations and a table, and
+and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold 414
+checks on 93 pages, including full-resolution stroke checks for equations and a table, and
 scale/contrast/color checks for a flag and an FAA figure; a `tableCells` checker is ready for tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and
 adding a case.

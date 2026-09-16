@@ -176,8 +176,94 @@
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). The detached, flattened \"x2 +\" paragraph from page 343's \"Factor\" line is a known defect, not blessed.",
+      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). The detached, flattened \"x2 +\" paragraph from page 343's \"Factor\" line is a known defect, not blessed. Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438, fraction answers split between a marker stub and an image (page 471 entries 22 and 29), or instruction text absorbed into the page-291 crops.",
       "pages": [
+        {
+          "page": 10,
+          "orderedText": [
+            "Evaluate each expression.",
+            "1) 1− 3",
+            "29) (− 7) +7",
+            "Find each product.",
+            "31) (4)(− 1)",
+            "43) (− 5)(4)"
+          ],
+          "text": [
+            "2) 4− (− 1)",
+            "44) (− 3)(− 9)"
+          ],
+          "headings": [
+            "0.1 Practice - Integers"
+          ]
+        },
+        {
+          "page": 438,
+          "orderedText": [
+            "1)− 2",
+            "2) 5",
+            "13) 3",
+            "21)− 7"
+          ],
+          "text": [
+            "22) 0",
+            "31)− 4",
+            "42) 4",
+            "43)− 20",
+            "44) 27",
+            "60)− 9",
+            "Answers - Integers"
+          ],
+          "headings": [
+            "Answers - Chapter 0"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 289,
+          "orderedText": [
+            "Example 378.",
+            "Example 379.",
+            "Example 380."
+          ],
+          "text": [
+            "fastest method, is to find perfect squares that divide evenly into the radicand"
+          ],
+          "absentText": [
+            "Our Solution"
+          ],
+          "minimumImages": 3,
+          "warningCodesAnyOf": ["imageRegion"],
+          "imageRegions": [
+            {
+              "reference": "corpus/references/wallace-algebra-2010/page-289-example-378.png"
+            }
+          ]
+        },
+        {
+          "page": 291,
+          "headings": [
+            "8.1 Practice - Square Roots"
+          ],
+          "absentText": [
+            "1) 245",
+            "42)"
+          ],
+          "minimumImages": 1,
+          "warningCodesAnyOf": ["imageRegion"]
+        },
+        {
+          "page": 471,
+          "orderedText": [
+            "1) 12320 yd",
+            "15) 111 m/s",
+            "16) 2,623,269,600 km/yr",
+            "30) 621,200 mg; 1.42 lb"
+          ],
+          "headings": [
+            "Answers - Chapter 8"
+          ],
+          "minimumImages": 1
+        },
         {
           "page": 2,
           "text": [

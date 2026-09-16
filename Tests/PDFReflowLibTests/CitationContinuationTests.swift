@@ -186,7 +186,7 @@ private func column(_ texts: [String], x: Double = 60, top: Double = 700, pitch:
     let algebra = try SourceLayoutFixture.load("algebra-26")
     let exercises = preformatted(reconstruct(algebra.content()))
     let markers = algebra.lines.map(\.text).filter {
-        $0.range(of: "^[0-9]+[.)]\\s", options: .regularExpression) != nil
+        $0.range(of: "^[0-9]+(?:[.)]\\s|\\)−)", options: .regularExpression) != nil
     }
     #expect(markers.count >= 20)
     // Minus-prefixed continuation lines of split exercises keep their existing separate blocks.

@@ -42,6 +42,19 @@ enum EPUBWriter {
         // navigation entries they added. A size split carries them into the next document so a
         // heading never ends one spine document while its content begins the next.
         var trailingHeadings: (bodyBytes: Int, toc: Int, pages: Int)?
+        // Note links are written as same-document fragments and qualified with their target's
+        // file once every document is packed. Packing reserves the longest possible file name
+        // for each link, so a patched body still meets the target.
+        let linkReservation = "chapter-\(book.blocks.count).xhtml".utf8.count
+        var reservedBytes = 0
+        var anchors: [String: String] = [:]
+        var linkedDocuments: Set<String> = []
+        var referenced: Set<NoteKey> = []
+        for block in book.blocks {
+            guard case let .paragraph(text) = block.content else { continue }
+            for case let .noteReference(_, _, key) in text.elements { referenced.insert(key) }
+        }
+        var referencesEmitted: Set<NoteKey> = []
         // Only a short heading run is kept with its content; a long run of headings packs normally.
         func keepsTrailingHeadings() -> Bool {
             guard let trailing = trailingHeadings else { return false }
@@ -63,21 +76,23 @@ enum EPUBWriter {
             }
             try writeText(document(body, name: title), publication.appendingPathComponent(name))
             chapters.append(name)
-            body = carried; bodyBytes = carried.utf8.count
+            body = carried; bodyBytes = carried.utf8.count; reservedBytes = 0
             trailingHeadings = carried.isEmpty ? nil : (0, toc.count, pages.count)
             let next = nextChapterName()
             toc += carriedEntries.toc.map { $0.replacingOccurrences(of: "href=\"\(name)#", with: "href=\"\(next)#") }
             pages += carriedEntries.pages.map { $0.replacingOccurrences(of: "href=\"\(name)#", with: "href=\"\(next)#") }
         }
+        /// `links` counts note hrefs in the markup that may gain a file name; `ids` are the
+        /// note and reference anchors it defines.
         func append(_ markup: String, sourcePages: [Int], heading: (id: String, text: String)? = nil,
-                    standaloneMarker: Bool = false) throws {
+                    standaloneMarker: Bool = false, links: Int = 0, ids: [String] = []) throws {
             try Task.checkCancellation()
             let size = markup.utf8.count
             guard Int64(size) <= maximumOutputBytes - consumed else {
                 throw ConversionError.resourceLimit("EPUB text size")
             }
             // A body holding only headings stays open for the content they introduce.
-            if bodyBytes > 0, bodyBytes + size > bodyTargetBytes,
+            if bodyBytes > 0, bodyBytes + reservedBytes + size + links * linkReservation > bodyTargetBytes,
                !(keepsTrailingHeadings() && trailingHeadings?.bodyBytes == 0) {
                 try finishChapter(carryingTrailingHeadings: true)
             }
@@ -87,6 +102,9 @@ enum EPUBWriter {
                 trailingHeadings = nil
             }
             let name = nextChapterName()
+            if links > 0 || !ids.isEmpty { linkedDocuments.insert(name) }
+            for id in ids { anchors[id] = name }
+            reservedBytes += links * linkReservation
             for number in sourcePages {
                 pages.append("<li><a href=\"\(name)#page-\(number)\">\(number)</a></li>")
             }
@@ -97,7 +115,7 @@ enum EPUBWriter {
             // Never split an atomic block merely to satisfy the target. Oversized blocks
             // are isolated, retain their styles and anchors, and still obey the total budget.
             // A heading waits for its following content before the document is closed.
-            if bodyBytes >= bodyTargetBytes, !keepsTrailingHeadings() { try finishChapter() }
+            if bodyBytes + reservedBytes >= bodyTargetBytes, !keepsTrailingHeadings() { try finishChapter() }
         }
         await progress(0)
         for (i, block) in book.blocks.enumerated() {
@@ -112,25 +130,52 @@ enum EPUBWriter {
                 if book.chapterStartPages.contains(number) { trailingHeadings = nil; try finishChapter() }
                 pendingPage = (number, EPUBTextEncoder.sourcePage(number))
             } else {
-                let payload = try EPUBTextEncoder.payload(block, imagePaths: imagePathByID)
+                var ids: [String] = []
+                var links = 0
+                // The first reference to a note carries the id its backlink targets.
+                let payload = try EPUBTextEncoder.payload(block, imagePaths: imagePathByID) { key in
+                    links += 1
+                    guard referencesEmitted.insert(key).inserted else { return nil }
+                    ids.append(EPUBTextEncoder.referenceID(key))
+                    return ids.last
+                }
+                // A note some marker links to: its own id and a return link around its number.
+                let linked = block.note.flatMap { key -> (id: String, payload: String)? in
+                    guard referenced.contains(key) else { return nil }
+                    let text: InlineText
+                    switch block.content {
+                    case let .paragraph(value), let .footnote(value): text = value
+                    default: return nil
+                    }
+                    links += 1
+                    ids.append(EPUBTextEncoder.noteID(key))
+                    return (EPUBTextEncoder.noteID(key),
+                            EPUBTextEncoder.note(text, number: key.number, backlink: EPUBTextEncoder.referenceID(key)))
+                }
                 let markup: String
                 var heading: (id: String, text: String)?
                 switch block.content {
-                case .paragraph: markup = "<p>\(payload)</p>\n"
+                case .paragraph:
+                    if let linked {
+                        markup = "<p id=\"\(xml(linked.id))\" epub:type=\"endnote\">\(linked.payload)</p>\n"
+                    } else { markup = "<p>\(payload)</p>\n" }
                 case let .heading(id, _, level):
                     markup = "<h\(level) id=\"\(xml(id))\">\(payload)</h\(level)>\n"
                     heading = (id, block.text)
                 case .preformatted: markup = "<pre>\(payload)</pre>\n"
                 // A visible block with DPUB-ARIA note semantics. An `aside` with
                 // epub:type="footnote" is hidden from the flow by some reading systems
-                // unless a noteref links to it, and notes are not linked to their markers.
-                case .footnote: markup = "<div class=\"footnote\" role=\"doc-footnote\"><p>\(payload)</p></div>\n"
+                // unless a noteref links to it; an unlinked note keeps this visible form.
+                case .footnote:
+                    if let linked {
+                        markup = "<div class=\"footnote\" role=\"doc-footnote\" id=\"\(xml(linked.id))\"><p>\(linked.payload)</p></div>\n"
+                    } else { markup = "<div class=\"footnote\" role=\"doc-footnote\"><p>\(payload)</p></div>\n" }
                 case .image, .table: markup = payload + "\n"
                 case .sourcePage: preconditionFailure("Source boundaries are handled above")
                 }
                 try append((pendingPage?.markup ?? "") + markup,
                            sourcePages: pendingPage.map { [$0.number] + block.sourcePages } ?? block.sourcePages,
-                           heading: heading)
+                           heading: heading, links: links, ids: ids)
                 pendingPage = nil
             }
             // Report input-block work without requiring a second serialization pass to count
@@ -141,6 +186,27 @@ enum EPUBWriter {
         }
         if let pendingPage { try append(pendingPage.markup, sourcePages: [pendingPage.number], standaloneMarker: true) }
         try finishChapter()
+        // Qualify note and return links whose target lies in another spine document. Only
+        // the writer emits `href="#note…"`; escaped text cannot.
+        for name in chapters where linkedDocuments.contains(name) {
+            try Task.checkCancellation()
+            let url = publication.appendingPathComponent(name)
+            let text = try String(contentsOf: url, encoding: .utf8)
+            var patched = ""
+            var cursor = text.startIndex
+            while let range = text.range(of: "href=\"#(?:note|noteref)-[^\"]+\"", options: .regularExpression,
+                                         range: cursor..<text.endIndex) {
+                patched += text[cursor..<range.lowerBound]
+                let id = String(text[range].dropFirst("href=\"#".count).dropLast())
+                if let file = anchors[id], file != name { patched += "href=\"\(file)#\(id)\"" }
+                else { patched += text[range] }
+                cursor = range.upperBound
+            }
+            patched += text[cursor...]
+            guard patched != text else { continue }
+            consumed -= Int64(text.utf8.count)
+            try writeText(patched, url)
+        }
         if toc.isEmpty { toc = ["<li><a href=\"\(chapters[0])\">\(xml(title))</a></li>"] }
         let nav = """
         <nav epub:type="toc" id="toc"><h1>Contents</h1><ol>\(toc.joined())</ol></nav>

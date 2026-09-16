@@ -465,8 +465,45 @@ cover styles, repeated chapter numbering, header retention, rejected images/tags
 page 473's second paragraph within note 66, and cross-page text/page-marker conservation.
 The existing lowercase continuation heuristic is exercised without claiming general note identity.
 The full-corpus contract protects selected note paragraphs and the existing raised marker.
-Multi-paragraph/cross-page ownership, chapter-scoped reference links, multiple-reference
-relationships and return navigation remain open under #11.
+
+`NoteLinkTests.swift` covers the note links of #11. Synthetic `NoteLinker` cases: markers link
+to their own chapter's note and never across chapters (two chapters both holding note 4), a
+marker outside any chapter or without a note in scope stays plain, two references share one
+note, a number two notes claim is ambiguous and stays plain, a marker's page follows inline
+boundaries with a page footnote outranking a chapter note, styles and surrounding whitespace
+survive, and markers inside notes are never linked. Writer cases pin the markup: the first
+reference carries `id="noteref-…"`, a repeated reference links without one, notes get
+`id="note-…"` with the return link around their number (appended when the note opens
+otherwise), same-file links keep bare fragments, cross-file links carry the file name after a
+spine split, unreferenced notes and unlinked markers are unchanged, and 700 cross-file links
+still keep every body under the 60,000-byte target. Source cases: 9/11 page 469 (chapter 1's
+notes 1–9 with note 1's second paragraph kept separate) receives page 20's raised 4; page 484
+switches from chapter 1's note 241 to chapter 2's notes 1–22 under its heading, with a wrong
+chapter number or a note-sized heading refusing the page; Loper Bright pages 60 and 13 link
+`Ibid.2` and `Persistence.1` to their page footnotes; and an original four-page PDF with a
+numbered outline (`1 ALPHA`, `2 BE TA`) converts end to end with note 1 of each chapter linked
+to its own `NOTES TO CHAPTER N` page, no spine boundary added, and the labelled reader still
+returning nothing. Detector controls: a dedented year ahead of the run does not set the
+indent, `p. 11` continuations are admitted, `40. Ibid.` counts, and a lettered list item or a
+bare number at the indent refuses the page. `NumberedNoteTests` now expects page 473 accepted
+with note 66's second paragraph unkeyed.
+
+Corpus contracts support `noteLinks`: `{marker, before, note, notePage?}` requires a
+`doc-noteref` marker with that text and preceding context on the page, follows its href to
+the note element (across spine files), requires the note phrase in that element's text (which
+accumulates across an inline page marker), the optional page, and a `doc-backlink` in the note
+that resolves to a reference to the same note on the marker's page. Python controls reject a
+missing target, the wrong chapter's note, a wrong note page, an absent or misdirected return
+link and malformed expectations. `tools/check-epubs.py` additionally pairs every
+`doc-noteref` with a note holding exactly one `doc-backlink` that resolves to a reference to
+that note, and every `doc-backlink` with a `doc-noteref`, on every converted fixture and
+corpus document; `test_spine_documents.py` holds its negative controls. The 9/11 contract
+links pages 19, 20, 64 and 65 to notes on pages 469 and 484 (the last note of chapter 1 and
+the first of chapter 2 share page 484) and checks page 469's note paragraphs; the Loper Bright
+contract links pages 13, 60, 97 and 98 to their footnotes. The converter before #11 fails all
+eight link checks. See the [note-link evidence](../measurements/note-links/record.md).
+Cross-page numbered-note joins beyond the existing lowercase continuation, notes pages with
+images or nested lists, and heads naming two chapters remain open under #11.
 
 ## Native combined-line word boundaries
 

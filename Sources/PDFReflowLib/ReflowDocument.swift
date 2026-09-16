@@ -60,11 +60,37 @@ struct TextStyle: OptionSet, Sendable, Equatable, Codable {
     static let `subscript` = TextStyle(rawValue: 1 << 3)
 }
 
+/// A note's identity for reference links: its printed number within the scope that makes
+/// the number unique. Chapter endnotes (`NOTES TO CHAPTER 3`, note 4) are scoped by chapter;
+/// page-bottom footnotes by their physical page. Equal numbers in different scopes are
+/// different notes, so a key never joins notes across chapters.
+struct NoteKey: Hashable, Sendable, Codable {
+    enum Scope: Hashable, Sendable, Codable {
+        case chapter(Int)
+        case page(Int)
+    }
+    var number: Int
+    var scope: Scope
+
+    /// A content-derived fragment (`c3-4`, `p60-2`) that stays stable however a writer splits
+    /// the document into files.
+    var identifier: String {
+        switch scope {
+        case let .chapter(chapter): "c\(chapter)-\(number)"
+        case let .page(page): "p\(page)-\(number)"
+        }
+    }
+}
+
 struct InlineText: Sendable, Equatable, Codable {
     enum Element: Sendable, Equatable, Codable {
         case text(String, TextStyle)
         /// A source boundary can occur inside a paragraph or even inside a repaired word.
         case sourcePage(Int)
+        /// A raised reference marker (its visible digits, with the run's other styles)
+        /// resolved to the note it cites. Reconstruction links markers last, after every
+        /// join; unresolved markers stay superscript text.
+        case noteReference(String, TextStyle, NoteKey)
     }
     var elements: [Element] = []
 
@@ -74,7 +100,12 @@ struct InlineText: Sendable, Equatable, Codable {
     init(elements: [Element]) { self.elements = elements }
 
     var text: String {
-        elements.map { if case let .text(value, _) = $0 { value } else { "" } }.joined()
+        elements.map {
+            switch $0 {
+            case let .text(value, _), let .noteReference(value, _, _): value
+            case .sourcePage: ""
+            }
+        }.joined()
     }
     var sourcePages: [Int] {
         elements.compactMap { if case let .sourcePage(page) = $0 { page } else { nil } }
@@ -145,6 +176,9 @@ struct ReflowBlock: Sendable, Equatable {
     var content: Content
     /// Validated source paragraph identity, used to avoid heuristic joins across tag boundaries.
     var structureGroup: Int?
+    /// The note this block opens: a chapter endnote paragraph or a page-bottom footnote with
+    /// its printed number. A note's further paragraphs and marker-less continuations carry none.
+    var note: NoteKey?
     /// Physical PDF page where this block begins; inline markers record later page boundaries.
     var page: Int
     /// Font size of a heading inferred from typography, ranked into levels document-wide once

@@ -12,6 +12,41 @@ def document(body):
             '<head><title>test</title></head><body>' + body + '</body></html>').encode()
 
 
+class NoteLinkPairingTests(unittest.TestCase):
+    """Note references and return links must resolve to each other through their actual hrefs."""
+
+    @staticmethod
+    def documents(first, second):
+        import xml.etree.ElementTree as ET
+        return {'EPUB/chapter-1.xhtml': ET.fromstring(document(first)), 'EPUB/chapter-2.xhtml': ET.fromstring(document(second))}
+
+    reference = ('<p>Body<sup><a epub:type="noteref" role="doc-noteref" id="noteref-c1-4" href="chapter-2.xhtml#note-c1-4">4</a></sup>'
+                 ' again<sup><a epub:type="noteref" role="doc-noteref" href="chapter-2.xhtml#note-c1-4">4</a></sup></p>')
+    note = ('<p id="note-c1-4" epub:type="endnote"><a href="chapter-1.xhtml#noteref-c1-4" role="doc-backlink" epub:type="backlink">4.</a>'
+            ' Note.</p>')
+
+    def test_paired_links_across_files_pass(self):
+        contracts.check_note_links(self.documents(self.reference, self.note))
+        same = self.reference.replace('chapter-2.xhtml#', '#') + self.note.replace('chapter-1.xhtml#', '#')
+        contracts.check_note_links(self.documents(same, '<p>x</p>'))
+
+    def test_missing_note_wrong_return_link_and_stray_backlink_fail(self):
+        cases = [
+            ('note reference without a note', self.reference, '<p id="note-c1-5">5. Other.</p>'),
+            ('exactly one return link', self.reference, '<p id="note-c1-4">4. No return.</p>'),
+            ('return link misses its reference', self.reference, self.note.replace('#noteref-c1-4', '#page-1') + '<p id="page-1">x</p>'),
+            ('another note', self.reference + '<p id="note-c1-9"><a href="#noteref-c1-4" role="doc-backlink" epub:type="backlink">9.</a></p>'
+             '<sup><a epub:type="noteref" role="doc-noteref" id="noteref-c1-9" href="#note-c1-9">9</a></sup>',
+             self.note.replace('chapter-1.xhtml#noteref-c1-4', 'chapter-1.xhtml#noteref-c1-9')),
+            ('return link without a reference', '<p>x</p>', '<p><a href="#nowhere" role="doc-backlink" epub:type="backlink">↩</a></p>'),
+            ('noteref without epub:type', self.reference.replace('epub:type="noteref" ', ''), self.note),
+            ('backlink without epub:type', self.reference, self.note.replace(' epub:type="backlink"', '')),
+        ]
+        for message, first, second in cases:
+            with self.assertRaisesRegex(AssertionError, message):
+                contracts.check_note_links(self.documents(first, second))
+
+
 class SpineDocumentTests(unittest.TestCase):
     def test_exact_target_and_markup_accounting(self):
         body = '<p>' + 'a' * 59_993 + '</p>'

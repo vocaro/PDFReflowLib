@@ -53,6 +53,9 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
     heading_id = 0
     paragraph_id = 0
     note_id = 0
+    # Elements with ids, keyed 'EPUB/file#id', accumulate their text across page markers so a
+    # note continued onto the next page is still one link target.
+    open_anchors = []
     with zipfile.ZipFile(path) as archive:
         if (len(archive.infolist()) > max_entries
                 or sum(e.file_size for e in archive.infolist()) > max_uncompressed_bytes):
@@ -71,6 +74,8 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                     page = pages[current]
                     start = len(page['text'])
                     page['text'] += text
+                    for anchor in open_anchors:
+                        anchor['text'] += text
                     if heading is not None:
                         page['headings'][heading] = page['headings'].get(heading, '') + text
                     if paragraph is not None:
@@ -86,15 +91,17 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
 
             def walk(element, script=None, heading=None, paragraph=None, note=None):
                 nonlocal current, heading_id, paragraph_id, note_id
-                if 'pagebreak' in element.get(EPUB + 'type', '').split():
-                    anchor = element.get('id', '')
-                    if not re.fullmatch(r'page-[1-9]\d*', anchor):
+                pagebreak = 'pagebreak' in element.get(EPUB + 'type', '').split()
+                if pagebreak:
+                    marker_id = element.get('id', '')
+                    if not re.fullmatch(r'page-[1-9]\d*', marker_id):
                         raise ValueError('Invalid page boundary')
-                    current = int(anchor[5:])
+                    current = int(marker_id[5:])
                     if current in pages:
                         raise ValueError('Duplicate page boundary')
                     markers.append(current)
-                    pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {}, 'paragraphs': {}, 'notes': {}, 'tables': []}
+                    pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {}, 'paragraphs': {}, 'notes': {}, 'tables': [],
+                                      'noterefs': [], 'anchors': {}}
                 if element.tag == HTML + 'img' and current is not None:
                     asset = str(chapter.parent / element.attrib['src'])
                     if asset not in names:
@@ -106,6 +113,17 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                 # Generic converter captions must not satisfy source-text expectations.
                 if element.tag == HTML + 'figcaption':
                     return
+                anchor = reference = None
+                if element.get('id') and current is not None and not pagebreak:
+                    anchor = {'page': current, 'file': str(chapter), 'text': '', 'backlink': None}
+                    pages[current]['anchors'][f'{chapter}#{element.get("id")}'] = anchor
+                    open_anchors.append(anchor)
+                if element.tag == HTML + 'a' and element.get('role') == 'doc-noteref' and current is not None:
+                    reference = {'start': len(pages[current]['text']), 'href': element.get('href', ''),
+                                 'id': element.get('id'), 'file': str(chapter)}
+                    pages[current]['noterefs'].append(reference)
+                if element.tag == HTML + 'a' and element.get('role') == 'doc-backlink' and open_anchors:
+                    open_anchors[-1]['backlink'] = element.get('href', '')
                 if element.tag in (HTML + 'sup', HTML + 'sub'):
                     script = element.tag[len(HTML):]
                 if element.tag in HEADINGS:
@@ -122,6 +140,10 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                 for child in element:
                     walk(child, script, heading, paragraph, note)
                     append(child.tail, script, heading, paragraph, note)
+                if reference is not None:
+                    reference['end'] = len(pages[current]['text'])
+                if anchor is not None:
+                    open_anchors.pop()
                 if element.tag in BLOCKS:
                     append(' ')
 
@@ -132,6 +154,12 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                             'before': normalized(raw[max(0, span['start'] - 128):span['start']]),
                             'after': normalized(raw[span['end']:span['end'] + 128])}
                            for span in page['scripts']]
+        page['noterefs'] = [{'text': normalized(raw[ref['start']:ref['end']]),
+                             'before': normalized(raw[max(0, ref['start'] - 128):ref['start']]),
+                             'href': ref['href'], 'id': ref['id'], 'file': ref['file']}
+                            for ref in page['noterefs'] if 'end' in ref]
+        for anchor in page['anchors'].values():
+            anchor['text'] = normalized(anchor['text'])
         page['text'] = normalized(raw)
         page['headings'] = [normalized(text) for text in page['headings'].values()]
         # Paragraph IDs are document-wide, so one <p> crossing a page marker has the same ID on both pages.
@@ -139,6 +167,14 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
         page['paragraphs'] = [normalized(text) for text in page['paragraphs'].values()]
         page['notes'] = [normalized(text) for text in page['notes'].values()]
     return pages, markers
+
+
+def resolve_link(file, href):
+    """The 'EPUB/file#fragment' key an href reaches from the spine file it appears in."""
+    from urllib.parse import urlsplit
+    link = urlsplit(href)
+    target = str(PurePosixPath(file).parent / link.path) if link.path else file
+    return f'{target}#{link.fragment}'
 
 
 def bounded(expectation, key, default, low, high):
@@ -229,10 +265,13 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
             or any(type(p) is not int or not 1 <= p <= case['pages'] for p in numbers)):
         raise ValueError('Contract needs distinct in-range review pages')
     checks = 0
+    anchors = {}
+    for other in pages.values():
+        anchors.update(other.get('anchors', {}))
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'paragraphs', 'notes', 'continuedParagraphs', 'separateParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'paragraphs', 'notes', 'noteLinks', 'continuedParagraphs', 'separateParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -265,6 +304,32 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
             # The phrase must sit inside one page-bottom footnote block, not in body prose.
             if not any(normalized(phrase) in note for note in page.get('notes', [])):
                 errors.append(f'Page {number}: missing footnote {phrase!r}')
+        for link in item.get('noteLinks', []):
+            if (not isinstance(link, dict) or not {'marker', 'before', 'note'} <= set(link)
+                    or not set(link) <= {'marker', 'before', 'note', 'notePage'}
+                    or any(not isinstance(link[k], str) or not 1 <= len(normalized(link[k])) <= 96 for k in ('marker', 'before', 'note'))
+                    or ('notePage' in link and (type(link['notePage']) is not int or link['notePage'] < 1))):
+                raise ValueError('Note link requires marker, before and note phrases, optionally notePage')
+            checks += 1
+            marker, before, phrase = (normalized(link[k]) for k in ('marker', 'before', 'note'))
+            # The marker on this page must be a note reference; its href, and the note's return
+            # link, are followed through the actual files so a wrong target cannot pass.
+            references = [ref for ref in page.get('noterefs', []) if ref['text'] == marker and ref['before'].endswith(before)]
+            if not references:
+                errors.append(f'Page {number}: missing linked marker {link!r}')
+                continue
+            target = resolve_link(references[0]['file'], references[0]['href'])
+            note = anchors.get(target)
+            if note is None:
+                errors.append(f'Page {number}: marker links to a missing note {link!r}')
+            elif phrase not in note['text']:
+                errors.append(f'Page {number}: marker links to the wrong note {link!r}')
+            elif 'notePage' in link and note['page'] != link['notePage']:
+                errors.append(f'Page {number}: note is on page {note["page"]}, not {link["notePage"]} {link!r}')
+            elif not note.get('backlink') or not any(
+                    ref['id'] and f'{ref["file"]}#{ref["id"]}' == resolve_link(note['file'], note['backlink'])
+                    and resolve_link(ref['file'], ref['href']) == target for ref in page.get('noterefs', [])):
+                errors.append(f'Page {number}: note lacks a return link to its reference on this page {link!r}')
         following = pages.get(number + 1, {})
         for continuation in item.get('continuedParagraphs', []):
             if (not isinstance(continuation, dict) or set(continuation) != {'end', 'next'}

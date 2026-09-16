@@ -72,13 +72,19 @@ private func notePage() -> PageContent {
     interrupted = elements
     interrupted.insert(.init(rect: CGRect(x: 40, y: 720, width: 400, height: 2), image: "barrier"), at: 1)
     #expect(NumberedNoteDetector.groups(in: interrupted, page: page).isEmpty)
-    // Source page 473 has a second indented paragraph inside note 66. Refuse the
-    // unsupported page instead of merging that paragraph or inventing a new note.
+    // Source page 473 has a second indented paragraph inside note 66. It stays a paragraph
+    // of its own, opening no note (#11), rather than merging into note 66 or becoming one.
     let multiParagraph = try SourceLayoutFixture.load("911-473").content()
     #expect(NumberedNoteDetector.hasHeading(on: multiParagraph))
-    #expect(NumberedNoteDetector.groups(in: multiParagraph.lines.map {
+    let layout = try #require(NumberedNoteDetector.layout(in: multiParagraph.lines.map {
         .init(rect: $0.rect, line: $0)
-    }, page: multiParagraph).isEmpty)
+    }, page: multiParagraph))
+    let extra = try #require(multiParagraph.lines.firstIndex { $0.text.hasPrefix("The FAA knew or strongly suspected") })
+    #expect(layout.paragraphs[extra] == extra && layout.notes[extra] == nil)
+    let sixtySix = try #require(multiParagraph.lines.firstIndex { $0.text.hasPrefix("66.") })
+    #expect(layout.notes[sixtySix] == .init(number: 66, chapter: 1))
+    #expect(layout.paragraphs[extra - 1] == sixtySix && layout.paragraphs[extra + 1] == extra)
+    #expect(layout.notes.values.map(\.number).sorted() == Array(55...69))
     for name in ["algebra-26", "faa-211", "911-451", "warren-910", "flag-27", "fed-45"] {
         let control = try SourceLayoutFixture.load(name).content()
         #expect(!NumberedNoteDetector.hasHeading(on: control))
@@ -146,7 +152,7 @@ private func notePage() -> PageContent {
     var warnings: [ConversionWarning] = [], blocks: [ReflowBlock] = []
     for (page, previous) in [(first, Optional<PageContent>.none), (second, first)] {
         let pageBlocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [],
-            warnings: &warnings, numberedNotePage: true)
+            warnings: &warnings, noteChapter: 1)
         LayoutReconstructor.appendPage(pageBlocks, page: page, previousPage: previous,
             to: &blocks, vocabulary: [], warnings: &warnings)
     }
@@ -179,7 +185,7 @@ private func notePage() -> PageContent {
     first.lines.removeFirst(); second.lines.removeFirst()
     for (page, previous) in [(first, Optional<PageContent>.none), (second, first)] {
         LayoutReconstructor.appendPage(LayoutReconstructor.blocks(page: page, images: [],
-            vocabulary: [], warnings: &warnings, numberedNotePage: true), page: page,
+            vocabulary: [], warnings: &warnings, noteChapter: 1), page: page,
             previousPage: previous, to: &blocks, vocabulary: [], warnings: &warnings)
     }
     let continued = try #require(blocks.first { $0.text.hasPrefix("40.") })

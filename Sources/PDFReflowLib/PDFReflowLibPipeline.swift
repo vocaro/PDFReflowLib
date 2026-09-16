@@ -10,6 +10,7 @@ enum PDFReflowLibPipeline {
         var reflowedPageCount: Int
         var recognizedPageCount: Int
         var warnings: [ConversionWarning]
+        var noteLinks = NoteLinker.Summary()
     }
 
     /// Progress covers extraction/reconstruction only, from zero to one.
@@ -31,6 +32,11 @@ enum PDFReflowLibPipeline {
         var structure: StructureTreeReader.Index? = structureIndex
         let chapterCandidates = try ChapterBoundaryReader.read(source)
         var chapterStartPages: Set<Int> = []
+        // Chapter evidence for note references: the spine's labelled chapters, or an outline
+        // that numbers its chapters without the word. Each candidate must still match its page.
+        let noteChapterCandidates = chapterCandidates.isEmpty
+            ? try ChapterBoundaryReader.read(source, scheme: .numbered) : chapterCandidates
+        var matchedNoteChapters: Set<Int> = []
         var warnings: [ConversionWarning] = []
         if structureIndex.rejected {
             warnings.append(.init(code: .structureFallback, page: 1,
@@ -155,7 +161,8 @@ enum PDFReflowLibPipeline {
 
         var vocabulary: Set<String> = []
         var furniture = FurnitureDetector.Ledger()
-        var numberedNotePages: Set<Int> = []
+        /// Pages headed `NOTES TO CHAPTER N`, by chapter number.
+        var numberedNotePages: [Int: Int] = [:]
         var recognizedPages = 0
         var characters = 0
         for i in 0..<total {
@@ -196,12 +203,16 @@ enum PDFReflowLibPipeline {
                ChapterBoundaryReader.matches(chapter, page: content) {
                 chapterStartPages.insert(content.number)
             }
+            if let chapter = noteChapterCandidates.first(where: { $0.page == content.number }),
+               ChapterBoundaryReader.matches(chapter, page: content) {
+                matchedNoteChapters.insert(chapter.number)
+            }
             // Retain heading evidence before removing furniture, after all extraction/OCR work.
             // Retained unreadable text supplies no hyphen-repair vocabulary.
             if !extracted.damagedEncoding || content.recognized {
                 LayoutReconstructor.addVocabulary(of: content, to: &vocabulary)
             }
-            if NumberedNoteDetector.hasHeading(on: content) { numberedNotePages.insert(content.number) }
+            if let chapter = NumberedNoteDetector.chapter(on: content) { numberedNotePages[content.number] = chapter }
             if options.removeRepeatedHeadersAndFooters { FurnitureDetector.collect(content, pageIndex: i, into: &furniture) }
             if content.recognized { recognizedPages += 1 }
             try store.store(content, at: i)
@@ -261,7 +272,7 @@ enum PDFReflowLibPipeline {
                     }
                     pageBlocks = LayoutReconstructor.blocks(page: content, images: images,
                         vocabulary: vocabulary, warnings: &warnings,
-                        numberedNotePage: numberedNotePages.contains(content.number),
+                        noteChapter: numberedNotePages[content.number],
                         continuesNote: previousPage != nil && blocks.last?.isFootnote == true)
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
@@ -296,12 +307,21 @@ enum PDFReflowLibPipeline {
         // Typographic heading levels need every page's sizes; tagged levels are already final.
         LayoutReconstructor.rankHeadingLevels(&blocks)
         warnings.insert(contentsOf: furnitureWarnings.sorted { $0.page < $1.page }, at: furnitureWarningIndex)
+        // A body page's chapter is the last matched chapter opening at or before it; an
+        // outline entry that failed to match leaves its pages unknown, and a page headed
+        // `NOTES TO CHAPTER N` is not body.
+        let noteLinks = NoteLinker.link(&blocks) { page in
+            guard numberedNotePages[page] == nil,
+                  let candidate = noteChapterCandidates.last(where: { $0.page <= page }),
+                  matchedNoteChapters.contains(candidate.number) else { return nil }
+            return candidate.number
+        }
         let title = options.title ?? document.title
             ?? source.deletingPathExtension().lastPathComponent
         let reflowedDocument = ReflowDocument(metadata: .init(title: title.isEmpty ? "Untitled" : title,
             language: options.language, author: options.author), blocks: blocks, assets: assets,
             chapterStartPages: chapterStartPages)
         return Result(document: reflowedDocument, pageCount: total, reflowedPageCount: reflowed,
-            recognizedPageCount: recognizedPages, warnings: warnings)
+            recognizedPageCount: recognizedPages, warnings: warnings, noteLinks: noteLinks)
     }
 }

@@ -132,8 +132,45 @@ def check(path):
                     assert target in names, f"missing reference {target}"
                     if link.fragment:
                         assert link.fragment in ids[target], f"missing fragment {link.fragment}"
+        check_note_links(documents)
         text = " ".join(" ".join(tree.itertext()) for tree in chapters)
         return " ".join(text.split())
+
+
+def check_note_links(documents):
+    """Every note reference reaches a note whose single return link reaches a reference to it.
+
+    Links may cross spine documents; both directions are resolved through the actual hrefs.
+    """
+    elements = {}
+    files = {}
+    for name, tree in documents.items():
+        for node in tree.iter():
+            if "id" in node.attrib:
+                elements[(name, node.attrib["id"])] = node
+                files[id(node)] = name
+
+    def resolve(name, href):
+        link = urllib.parse.urlsplit(href)
+        target = str(Path(name).parent / link.path) if link.path else name
+        return elements.get((target, link.fragment))
+
+    for name, tree in documents.items():
+        for node in tree.iter():
+            role = node.get("role")
+            if role == "doc-noteref":
+                assert "noteref" in node.get('{http://www.idpf.org/2007/ops}type', '').split(), "noteref without epub:type"
+                note = resolve(name, node.get("href", ""))
+                assert note is not None, "note reference without a note"
+                backlinks = [n for n in note.iter() if n.get("role") == "doc-backlink"]
+                assert len(backlinks) == 1, "note without exactly one return link"
+                reference = resolve(files[id(note)], backlinks[0].get("href", ""))
+                assert reference is not None and reference.get("role") == "doc-noteref", "return link misses its reference"
+                assert resolve(files[id(reference)], reference.get("href", "")) is note, "return link reaches another note's reference"
+            elif role == "doc-backlink":
+                assert "backlink" in node.get('{http://www.idpf.org/2007/ops}type', '').split(), "backlink without epub:type"
+                reference = resolve(name, node.get("href", ""))
+                assert reference is not None and reference.get("role") == "doc-noteref", "return link without a reference"
 
 
 def main():

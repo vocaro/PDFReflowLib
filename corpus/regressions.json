@@ -394,7 +394,7 @@
     {
       "id": "gpo-911-2004",
       "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
-      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 13-16, 126-127, 192-193 and 357-358 visually reviewed (#45): the bottom folios 108, 174 and 339 on chapter-opening pages and the front-matter folios xiii/xv stay separate paragraphs that never absorb the following page's text, while the body paragraph above each chapter-opening folio continues onto the next page.",
+      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 13-16, 126-127, 192-193 and 357-358 visually reviewed (#45): the bottom folios 108, 174 and 339 on chapter-opening pages and the front-matter folios xiii/xv stay separate paragraphs that never absorb the following page's text, while the body paragraph above each chapter-opening folio continues onto the next page. Pages 19, 20, 64, 65, 469 and 484 visually reviewed (#11): each chapter’s endnotes are numbered from 1, so a marker links only to the note of its own chapter (outline chapter openings validated on the page): page 19’s 1 and page 20’s 4 reach chapter 1’s notes 1 and 4 on page 469, where note 1’s second indented paragraph stays a paragraph of its own; page 64’s 241 reaches chapter 1’s last note on page 484, while page 65’s 1 reaches chapter 2’s note 1 under the chapter-opening heading on that same page. Every linked note returns to its first reference.",
       "pages": [
         {
           "page": 15,
@@ -416,6 +416,14 @@
           "headings": [
             "WE HAVE",
             "SOME PLANES"
+          ],
+          "noteLinks": [
+            {
+              "marker": "1",
+              "before": "Boston’s Logan International Airport.",
+              "note": "No physical, documentary, or analytical evidence provides a convincing explanation",
+              "notePage": 469
+            }
           ]
         },
         {
@@ -440,6 +448,14 @@
               "before": "The flight was scheduled to depart at 7:45.",
               "after": "In another Logan terminal"
             }
+          ],
+          "noteLinks": [
+            {
+              "marker": "4",
+              "before": "The flight was scheduled to depart at 7:45.",
+              "note": "Flight 11 pushed back from Gate 32 in Terminal B at 7:40",
+              "notePage": 469
+            }
           ]
         },
         {
@@ -461,6 +477,14 @@
           "text": [
             "2.1 A DECLARATION OF WAR",
             "In February 1998"
+          ],
+          "noteLinks": [
+            {
+              "marker": "1",
+              "before": "in which it is possible to do it.”",
+              "note": "Text of World Islamic Front’s Statement Urging Jihad Against Jews and Crusaders",
+              "notePage": 484
+            }
           ]
         },
         {
@@ -653,6 +677,52 @@
               "end": "339",
               "next": "not enough to man a full platoon"
             }
+          ]
+        },
+        {
+          "page": 64,
+          "noteLinks": [
+            {
+              "marker": "241",
+              "before": "This is a new type of war.”",
+              "note": "NEADS audio file, Identification Technician position",
+              "notePage": 484
+            }
+          ]
+        },
+        {
+          "page": 469,
+          "absentText": [
+            "NOTES TO CHAPTER 1"
+          ],
+          "paragraphs": [
+            "4. Flight 11 pushed back from Gate 32 in Terminal B at 7:40.",
+            "Like the other two airports used by the 9/11 hijackers (Newark Liberty International Airport and Washington Dulles International Airport)"
+          ],
+          "orderedText": [
+            "1. No physical, documentary, or analytical evidence",
+            "Portland International Jetport site visit (Aug. 18, 2003).",
+            "Like the other two airports",
+            "2. CAPPS was an FAA-approved automated system"
+          ]
+        },
+        {
+          "page": 484,
+          "absentText": [
+            "NOTES TO CHAPTER 1"
+          ],
+          "headings": [
+            "2 The Foundation of the New Terrorism"
+          ],
+          "paragraphs": [
+            "241. NEADS audio file, Identification Technician position",
+            "1.“Text of World Islamic Front’s Statement Urging Jihad Against Jews and Crusaders,”",
+            "4.“Hunting Bin Ladin,” PBS Frontline broadcast, May 1998."
+          ],
+          "orderedText": [
+            "241. NEADS audio file",
+            "2 The Foundation of the New Terrorism",
+            "1.“Text of World Islamic Front"
           ]
         }
       ]
@@ -1352,7 +1422,7 @@
     {
       "id": "scotus-loper-bright-2024",
       "sourceSHA256": "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e",
-      "basis": "Source pages 2, 7, 13, 60, 61, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Pages 2, 7, 13 and 60: wrapped justified lines beginning with \"v.\", a year, \"F.\" or \"U. S.\" must stay inside their source paragraph rather than becoming preformatted fragments (#39); page 2 keeps its four syllabus paragraphs in order. Pages 13, 60, 61, 97 and 98 (#40): each page-bottom footnote is a separate note block opening with its raised marker, the em-dash separator is not prose, footnote 2 is one note element from page 97 through its page-98 continuation and precedes that page's body, page 13's detached body marker 1 stays a superscript inside its sentence, and the two-row running heads (title row with folio, opinion row) are removed with a furnitureRemoved warning; page 13's body paragraph continues onto page 14 past the note block (#45), so footnote 1 follows that paragraph after its marker and is reached under the page-14 anchor.",
+      "basis": "Source pages 2, 7, 13, 60, 61, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Pages 2, 7, 13 and 60: wrapped justified lines beginning with \"v.\", a year, \"F.\" or \"U. S.\" must stay inside their source paragraph rather than becoming preformatted fragments (#39); page 2 keeps its four syllabus paragraphs in order. Pages 13, 60, 61, 97 and 98 (#40): each page-bottom footnote is a separate note block opening with its raised marker, the em-dash separator is not prose, footnote 2 is one note element from page 97 through its page-98 continuation and precedes that page's body, page 13's detached body marker 1 stays a superscript inside its sentence, and the two-row running heads (title row with folio, opinion row) are removed with a furnitureRemoved warning; page 13's body paragraph continues onto page 14 past the note block (#45), so footnote 1 follows that paragraph after its marker and is reached under the page-14 anchor. Pages 13, 60, 97 and 98 (#11): each raised marker links to the footnote of its own page and the note returns to the marker; page 13’s note is reached under the page-14 anchor.",
       "pages": [
         {
           "page": 2,
@@ -1400,6 +1470,14 @@
               "end": "(about 10 to 14 days, as",
               "next": "opposed to the more typical 2 to 4). As a result"
             }
+          ],
+          "noteLinks": [
+            {
+              "marker": "1",
+              "before": "the F/V Relentless and the F/V Persistence.",
+              "note": "For any landlubbers, “F/V” is simply the designation for a fishing vessel.",
+              "notePage": 14
+            }
           ]
         },
         {
@@ -1444,6 +1522,14 @@
           ],
           "warningCodesAnyOf": [
             "furnitureRemoved"
+          ],
+          "noteLinks": [
+            {
+              "marker": "2",
+              "before": "make[s] for good government.” Ibid.",
+              "note": "See also A. Scalia, Judicial Deference to Administrative Interpretations of Law",
+              "notePage": 60
+            }
           ]
         },
         {
@@ -1512,6 +1598,14 @@
           ],
           "warningCodesAnyOf": [
             "furnitureRemoved"
+          ],
+          "noteLinks": [
+            {
+              "marker": "2",
+              "before": "we respect it”).",
+              "note": "The majority tries to buttress its argument with a stray sentence or two",
+              "notePage": 97
+            }
           ]
         },
         {
@@ -1545,6 +1639,14 @@
           ],
           "warningCodesAnyOf": [
             "furnitureRemoved"
+          ],
+          "noteLinks": [
+            {
+              "marker": "3",
+              "before": "nor forbids Chevron-style deference. Vermeule 207.",
+              "note": "In a footnote responding to the last two paragraphs",
+              "notePage": 98
+            }
           ]
         }
       ]

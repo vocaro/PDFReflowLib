@@ -182,7 +182,16 @@ prose below it (`endsColumn`). Drawn rules, symbol markers, recognized or synthe
 layers, images below the separator and any body-size line after it keep spatial prose. A body
 marker that PDFKit detached past a justified line's right edge (one to three digits, below
 80% of body size, starting where the line ends and raised inside its box) rejoins that line as
-a superscript. Notes carry no reference links. Heading-size evidence excludes text already preserved inside images
+a superscript. `NumberedNoteDetector` recognizes a chapter's endnotes on a page whose running
+head reads `NOTES TO CHAPTER N`: consecutive numbered starts at one indent, wrapped lines at
+one dedented edge (which may open with `p. 11` or an initial), an unnumbered line at the
+indent as a further paragraph of the current note, and a larger `N+1 Title` line followed by
+note 1 as the next chapter's opening, which switches the scope mid-page. The first start is the
+first numbered line on the edge most numbered lines share, so a dedented `5.This` or a year
+does not set the indent. Each note paragraph carries a `NoteKey` (number, chapter scope); a
+page-bottom footnote carries one with page scope; a note's later paragraphs and marker-less
+continuations carry none. Images, tags, OCR or synthetic text, lists inside notes and heads
+naming two chapters (`NOTES TO CHAPTERS 9-10`) still refuse the page. Heading-size evidence excludes text already preserved inside images
 when at least three remaining lines and 200 characters support the dominant reflowable font size.
 Candidates within 10% of that supported body size are suppressed, while the original 25%
 page-size threshold still applies. This retains existing modestly larger section headings. Short titles
@@ -359,6 +368,31 @@ and case, permits a publication-name prefix, and rejects freshly recognized page
 invisible image-backed text. It does not detect every inherited OCR layer.
 Only matching candidates become chapter boundaries. This is a bounded supported scheme, not
 general bookmark interpretation or heading classification.
+
+A root outline that numbers its chapters without the word (`1 “WE HAVE SOME PLANES”`) is read
+under a separate `numbered` scheme, matched on its page by a bare numeral line plus the title
+with spaces ignored (outline labels lose them: `AIMS ATTHE`). It supplies chapter evidence for
+note references only and never a spine boundary.
+
+`NoteLinker` runs last in reconstruction, after every join. A body paragraph's superscript run
+of one to three digits is a reference marker; its page (the block's page, advanced by inline
+boundaries) selects the scope: a page-bottom footnote of that number on the same page, else
+the chapter endnote of that number in the page's chapter, where the chapter is the last matched
+chapter opening at or before the page and a `NOTES TO CHAPTER N` page is not body. A marker
+whose chapter is unknown, whose number has no note in scope, or whose number two notes claim
+in one scope stays a plain superscript; equal numbers are never joined across chapters. Linked
+markers become `InlineText.Element.noteReference` (digits, remaining styles, `NoteKey`), and
+the pipeline result carries a `NoteLinker.Summary` of markers found, linked, unscoped, missing
+and ambiguous. `EPUBWriter` serializes a reference as `<sup><a epub:type="noteref"
+role="doc-noteref" href="…#note-c1-4">4</a></sup>`, the first reference to a note carrying
+`id="noteref-c1-4"`, and gives a referenced note its id (`<p id="note-c1-4"
+epub:type="endnote">`, or the id on `div.footnote`) with its printed number wrapped in
+`<a role="doc-backlink" epub:type="backlink">` back to that first reference. Ids are
+content-derived (`c<chapter>-<number>`, `p<page>-<number>`), so they survive any spine split;
+links are written as fragments, packing reserves the longest file name for each, and the
+writer qualifies links that cross spine files once every document is packed. Unreferenced
+notes and unlinked markers are written exactly as before, so a book without recognized notes
+is byte-identical.
 
 The logical document carries these physical chapter-start pages; reconstruction keeps their
 source markers standalone and prevents cross-boundary paragraph joins. The writer flushes the

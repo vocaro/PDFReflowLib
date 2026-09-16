@@ -470,10 +470,12 @@ enum LayoutReconstructor {
         return max(pageBody, candidate)
     }
 
-    /// `continuesNote` states that the previous page ended in a page-bottom footnote, so a
-    /// marker-less note under this page's separator may continue it.
+    /// `noteChapter` is the chapter named by this page's `NOTES TO CHAPTER N` running head,
+    /// retained before furniture removal; nil for pages without one. `continuesNote` states
+    /// that the previous page ended in a page-bottom footnote, so a marker-less note under
+    /// this page's separator may continue it.
     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
-                       warnings: inout [ConversionWarning], numberedNotePage: Bool = false,
+                       warnings: inout [ConversionWarning], noteChapter: Int? = nil,
                        continuesNote: Bool = false) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         // A rotated stamp in the outer margin is furniture, never content or a heading.
@@ -514,7 +516,8 @@ enum LayoutReconstructor {
         // their separator, which is not emitted.
         let footnotes = FootnoteDetector.layout(in: elements, page: page, continuesNote: continuesNote)
         let bodyElements = elements[..<(footnotes?.separator ?? elements.count)]
-        let noteGroups = NumberedNoteDetector.groups(in: elements, page: page, headingEvidence: numberedNotePage)
+        let noteLayout = NumberedNoteDetector.layout(in: elements, page: page, chapter: noteChapter)
+        let noteGroups = noteLayout?.paragraphs ?? [:]
         // A contents entry is never a heading; a multi-line display sentence is a pull quote.
         func isHeadingCandidate(_ line: TextLine) -> Bool {
             line.structure == nil && (isHeadingSize(line) || labels.contains(line)) && !isContentsEntry(line.text)
@@ -523,7 +526,10 @@ enum LayoutReconstructor {
         var result: [ReflowBlock] = []
         var note: (Int, InlineText)?
         func flushNote() {
-            if let (_, text) = note { result.append(ReflowBlock(content: .paragraph(text), page: page.number)) }
+            if let (start, text) = note {
+                let key = noteLayout?.notes[start].map { NoteKey(number: $0.number, scope: .chapter($0.chapter)) }
+                result.append(ReflowBlock(content: .paragraph(text), note: key, page: page.number))
+            }
             note = nil
         }
         var tagged: (TextStructure, InlineText)?
@@ -707,7 +713,8 @@ enum LayoutReconstructor {
                 text = join(text, elements[index].line!.content, vocabulary: vocabulary,
                     page: page.number, warnings: &warnings)
             }
-            result.append(ReflowBlock(content: .footnote(text), page: page.number))
+            result.append(ReflowBlock(content: .footnote(text),
+                note: note.marker.map { NoteKey(number: $0, scope: .page(page.number)) }, page: page.number))
         }
         return result
     }
@@ -929,6 +936,7 @@ enum LayoutReconstructor {
     private static func endsSentence(_ text: InlineText) -> Bool {
         let closing: Set<Character> = ["\u{201D}", "\u{2019}", "\"", "'", ")", "]"]
         for element in text.elements.reversed() {
+            // A linked marker is a superscript too, though linking follows every join.
             guard case let .text(value, style) = element, !style.contains(.superscript),
                   let ending = value.reversed().first(where: { !$0.isWhitespace && !closing.contains($0) }) else { continue }
             return ".!?:".contains(ending)

@@ -157,6 +157,71 @@ class CorpusContentTests(unittest.TestCase):
         self.contract['pages'] = [{'page': 1, 'continuedParagraphs': [{'end': 'note one', 'next': 'continues'}]}]
         self.assertTrue(self.check(pages=pages, markers=[1, 2])['passed'])
 
+    def note_link_pages(self, first=None, second=None):
+        first = first if first is not None else (
+            '<span epub:type="pagebreak" id="page-1"/><p>Scheduled at 7:45.'
+            '<sup><a epub:type="noteref" role="doc-noteref" id="noteref-c1-4" href="a.xhtml#note-c1-4">4</a></sup> In another'
+            ' terminal<sup><a epub:type="noteref" role="doc-noteref" href="a.xhtml#note-c1-4">4</a></sup> plain<sup>9</sup></p>')
+        second = second if second is not None else (
+            '<span epub:type="pagebreak" id="page-2"/><p id="note-c1-4" epub:type="endnote">'
+            '<a href="z.xhtml#noteref-c1-4" role="doc-backlink" epub:type="backlink">4.</a> Flight 11 pushed'
+            '<span epub:type="pagebreak" id="page-3"/> back.</p><p id="note-c2-4">4. Other chapter.</p>')
+        return read_pages(self.epub(first, second))
+
+    def note_link_check(self, link, pages, markers):
+        self.case['pages'] = 3
+        self.report['pageCount'] = 3
+        self.contract['pages'] = [{'page': 1, 'noteLinks': [link]}]
+        return self.check(pages=pages, markers=markers)
+
+    def test_note_link_parser_follows_hrefs_and_accumulates_note_text_across_pages(self):
+        pages, markers = self.note_link_pages()
+        self.assertEqual(markers, [1, 2, 3])
+        self.assertEqual([(r['text'], r['id']) for r in pages[1]['noterefs']], [('4', 'noteref-c1-4'), ('4', None)])
+        self.assertTrue(pages[1]['noterefs'][0]['before'].endswith('Scheduled at 7:45.'))
+        self.assertTrue(pages[1]['noterefs'][1]['before'].endswith('In another terminal'))
+        note = pages[2]['anchors']['EPUB/a.xhtml#note-c1-4']
+        self.assertEqual((note['page'], note['text'], note['backlink']), (2, '4. Flight 11 pushed back.', 'z.xhtml#noteref-c1-4'))
+        self.assertEqual(pages[1]['text'], 'Scheduled at 7:45.4 In another terminal4 plain9')
+
+    def test_note_links_resolve_marker_note_page_and_return_link(self):
+        pages, markers = self.note_link_pages()
+        link = {'marker': '4', 'before': 'at 7:45.', 'note': 'Flight 11 pushed back', 'notePage': 2}
+        self.assertTrue(self.note_link_check(link, pages, markers)['passed'])
+        # A repeated reference links to the same note; the return link goes to the first reference.
+        self.assertTrue(self.note_link_check(dict(link, before='In another terminal'), pages, markers)['passed'])
+        self.assertTrue(self.note_link_check({'marker': '4', 'before': 'at 7:45.', 'note': 'Flight 11'}, pages, markers)['passed'])
+        for change, message in [(dict(before='at 7:46.'), 'missing linked marker'),
+                                (dict(marker='9', before='plain'), 'missing linked marker'),
+                                (dict(note='Other chapter'), 'wrong note'),
+                                (dict(notePage=3), 'not 3')]:
+            result = self.note_link_check(dict(link, **change), pages, markers)
+            self.assertFalse(result['passed'])
+            self.assertIn(message, result['errors'][0])
+
+    def test_note_links_reject_missing_targets_and_absent_or_misdirected_return_links(self):
+        link = {'marker': '4', 'before': 'at 7:45.', 'note': 'Flight 11 pushed back', 'notePage': 2}
+        broken = ('<span epub:type="pagebreak" id="page-1"/><p>Scheduled at 7:45.'
+                  '<sup><a epub:type="noteref" role="doc-noteref" id="noteref-c1-4" href="a.xhtml#note-c1-7">4</a></sup></p>')
+        pages, markers = self.note_link_pages(first=broken)
+        result = self.note_link_check(link, pages, markers)
+        self.assertFalse(result['passed'])
+        self.assertIn('missing note', result['errors'][0])
+        second = ('<span epub:type="pagebreak" id="page-2"/><p id="note-c1-4" epub:type="endnote">4. Flight 11 pushed back.</p>'
+                  '<span epub:type="pagebreak" id="page-3"/>')
+        result = self.note_link_check(link, *self.note_link_pages(second=second))
+        self.assertFalse(result['passed'])
+        self.assertIn('return link', result['errors'][0])
+        misdirected = second.replace('endnote">4.', 'endnote"><a href="z.xhtml#noteref-c1-9" role="doc-backlink" epub:type="backlink">4.</a>')
+        result = self.note_link_check(link, *self.note_link_pages(second=misdirected))
+        self.assertFalse(result['passed'])
+        self.assertIn('return link', result['errors'][0])
+        for invalid in [{'marker': '4', 'before': 'x'}, {'marker': '', 'before': 'x', 'note': 'y'},
+                        {'marker': '4', 'before': 'x', 'note': 'y', 'notePage': 0},
+                        {'marker': '4', 'before': 'x', 'note': 'y', 'extra': 1}, 'text']:
+            with self.assertRaises(ValueError):
+                self.note_link_check(invalid, *self.note_link_pages())
+
     def test_paragraph_separation_rejects_a_folio_that_absorbed_the_continuation(self):
         self.contract['pages'] = [{'page': 1, 'separateParagraphs': [{'end': '108', 'next': 'set a bomb'}]}]
         split = self.epub('<span epub:type="pagebreak" id="page-1"/><p>the terrorists who'

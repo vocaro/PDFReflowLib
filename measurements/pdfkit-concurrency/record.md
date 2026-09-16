@@ -155,9 +155,9 @@ full Xcode; it does not require downloading any corpus PDF or library dependency
 
 A fresh rebuild from this bundle on 2026-09-15, same host/OS/Xcode identity as above, reproduced
 the identical exception and stack on the 3rd of 5 concurrent-attributed trials; the full run is
-retained at `fresh-crash-2026-09-15.stderr.log.gz`. [`report.md`](report.md) is a drafted Apple
-Feedback Assistant submission built from the bundle and this fresh reproduction. No Apple
-Feedback ID exists yet for this separate exception; the report has not been submitted.
+retained at `fresh-crash-2026-09-15.stderr.log.gz`. [`report.md`](report.md), built from the
+bundle and this fresh reproduction, was filed with Apple as **FB24796210** on 2026-09-15; see
+`submission.json`. No Apple diagnosis or resolution is available yet.
 
 From the repository, with full Xcode selected:
 

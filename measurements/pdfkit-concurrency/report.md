@@ -1,5 +1,7 @@
 # PDFKit concurrent attributed-text extraction can abort with a nil NSFont
 
+Filed as Apple Feedback **FB24796210**.
+
 Suggested area: macOS / PDFKit (or the PDF framework component available in Feedback Assistant).
 Type: Incorrect/Unexpected Behavior; uncaught exception terminates the process.
 
@@ -111,3 +113,8 @@ independent PDFKit calls, nor is it a fix for the underlying framework behavior.
 Related public tracking: https://github.com/vocaro/PDFReflowLib/issues/21
 The attached fixtures are original, synthetic, single-page PDFs created for this report; no
 private or third-party content is included.
+
+## Submission
+
+Filed as **FB24796210** on 2026-09-15. See `submission.json` for the exact attachment identity.
+No Apple diagnosis or resolution is available yet.

@@ -1,0 +1,154 @@
+{
+  "minimumScale": 0.95,
+  "minimumContrast": 0.4,
+  "minimumColorAgreement": 0.8,
+  "controls": [
+    {
+      "control": "positive: Our Flag page 33 Colorado flag, all page images",
+      "passed": true,
+      "correlation": 0.9978,
+      "scale": 0.9895,
+      "contrast": 0.6957,
+      "colorAgreement": 0.994,
+      "coloredSamples": 2653
+    },
+    {
+      "control": "positive: FAA page 121 figure 5-36, all page images",
+      "passed": true,
+      "correlation": 0.9928,
+      "scale": 1.0033,
+      "contrast": 0.5456,
+      "colorAgreement": 0.9998,
+      "coloredSamples": 6171
+    },
+    {
+      "control": "positive: USGS page 1 Salient Statistics table (grayscale reference), all page images",
+      "passed": true,
+      "correlation": 0.9889,
+      "scale": 0.9826,
+      "contrast": 0.5937
+    },
+    {
+      "control": "tolerance: Colorado crop with 1.5-pixel Gaussian blur",
+      "passed": true,
+      "correlation": 0.9962,
+      "scale": 0.9895,
+      "contrast": 0.6941,
+      "colorAgreement": 0.9943,
+      "coloredSamples": 2653
+    },
+    {
+      "control": "tolerance: Colorado crop saved as JPEG quality 75",
+      "passed": true,
+      "correlation": 0.9979,
+      "scale": 0.9895,
+      "contrast": 0.6949,
+      "colorAgreement": 0.994,
+      "coloredSamples": 2653
+    },
+    {
+      "control": "tolerance: figure 5-36 crop with 1.5-pixel Gaussian blur",
+      "passed": true,
+      "correlation": 0.9888,
+      "scale": 1.0033,
+      "contrast": 0.5292,
+      "colorAgreement": 0.9971,
+      "coloredSamples": 6171
+    },
+    {
+      "control": "negative: Colorado crop converted to grayscale",
+      "passed": false,
+      "correlation": 0.9978,
+      "scale": 0.9895,
+      "contrast": 0.6957,
+      "colorAgreement": 0.0,
+      "coloredSamples": 2653
+    },
+    {
+      "control": "negative: Colorado crop with red and blue channels swapped",
+      "passed": false,
+      "correlation": 0.9389,
+      "scale": 0.9895,
+      "contrast": 0.6954,
+      "colorAgreement": 0.0041,
+      "coloredSamples": 2653
+    },
+    {
+      "control": "negative: Colorado crop compressed to gray levels 96-160",
+      "passed": false,
+      "correlation": 0.9915,
+      "scale": 0.9895,
+      "contrast": 0.1827,
+      "colorAgreement": 0.0,
+      "coloredSamples": 2653
+    },
+    {
+      "control": "negative: Colorado crop downscaled to half size",
+      "passed": false,
+      "correlation": -1.0,
+      "scale": 0.4968,
+      "contrast": 0.6941,
+      "colorAgreement": 0.0912,
+      "coloredSamples": 2653
+    },
+    {
+      "control": "negative: Colorado crop downscaled to 80 percent",
+      "passed": false,
+      "correlation": -1.0,
+      "scale": 0.7916,
+      "contrast": 0.6941,
+      "colorAgreement": 0.3562,
+      "coloredSamples": 2653
+    },
+    {
+      "control": "negative: figure 5-36 crop converted to grayscale",
+      "passed": false,
+      "correlation": 0.9928,
+      "scale": 1.0033,
+      "contrast": 0.5456,
+      "colorAgreement": 0.0,
+      "coloredSamples": 6171
+    },
+    {
+      "control": "negative: figure 5-36 crop with red and blue channels swapped",
+      "passed": false,
+      "correlation": 0.904,
+      "scale": 1.0033,
+      "contrast": 0.5824,
+      "colorAgreement": 0.1032,
+      "coloredSamples": 6171
+    },
+    {
+      "control": "negative: figure 5-36 crop compressed to gray levels 96-160",
+      "passed": false,
+      "correlation": 0.9882,
+      "scale": 1.0033,
+      "contrast": 0.1344,
+      "colorAgreement": 0.0,
+      "coloredSamples": 6171
+    },
+    {
+      "control": "negative: table crop compressed to gray levels 96-160",
+      "passed": false,
+      "correlation": 0.8486,
+      "scale": 0.9826,
+      "contrast": 0.1501
+    },
+    {
+      "control": "negative: table crop downscaled to half size",
+      "passed": false,
+      "correlation": -1.0,
+      "scale": 0.4913,
+      "contrast": 0.3707
+    },
+    {
+      "control": "negative: Colorado reference against figure 5-36 crop",
+      "passed": false,
+      "correlation": 0.2041,
+      "scale": 1.5579,
+      "contrast": 0.5368,
+      "colorAgreement": 0.1632,
+      "coloredSamples": 2653
+    }
+  ]
+}

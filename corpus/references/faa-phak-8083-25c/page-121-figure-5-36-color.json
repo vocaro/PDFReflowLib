@@ -1,0 +1,23 @@
+{
+  "case": "faa-phak-8083-25c",
+  "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "page": 121,
+  "regionPoints": [
+    35.0,
+    550.0,
+    275.0,
+    697.0
+  ],
+  "target": "Figure 5-36 climb-entry illustration in color: blue sky, yellow labels, aircraft",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "kind": "color",
+  "mode": "RGB",
+  "inkThreshold": 200,
+  "pixels": [
+    120,
+    73
+  ],
+  "sha256": "786599fd39b7498a10f2be32c05d50d380b83045f160ae8ed7fa35252e33fce0"
+}

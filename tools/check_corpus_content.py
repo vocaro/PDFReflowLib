@@ -91,12 +91,15 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                     if current in pages:
                         raise ValueError('Duplicate page boundary')
                     markers.append(current)
-                    pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {}, 'paragraphs': {}}
+                    pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {}, 'paragraphs': {}, 'tables': []}
                 if element.tag == HTML + 'img' and current is not None:
                     asset = str(chapter.parent / element.attrib['src'])
                     if asset not in names:
                         raise ValueError('Missing image asset: ' + asset)
                     pages[current]['images'].append(asset)
+                if element.tag == HTML + 'table' and current is not None:
+                    import table_cells
+                    pages[current]['tables'].append(table_cells.grid_from_table(element))
                 # Generic converter captions must not satisfy source-text expectations.
                 if element.tag == HTML + 'figcaption':
                     return
@@ -130,26 +133,74 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
     return pages, markers
 
 
-def reference_image(case, contract, number, expectation, reference_root=ROOT):
-    """Validate a region expectation and return its reference PNG bytes."""
-    import image_regions  # Imported on use: numpy and Pillow are only needed for image-region checks.
-    if (not isinstance(expectation, dict) or not set(expectation) <= {'reference', 'minimumCorrelation'}
+def bounded(expectation, key, default, low, high):
+    value = expectation.get(key, default)
+    if value is not None and (type(value) not in (int, float) or not low <= value <= high):
+        raise ValueError(f'{key} must be between {low} and {high}')
+    return value
+
+
+def load_reference(case, contract, number, expectation, reference_root, kinds, keys):
+    """Validate a reference expectation's path, identity and kind; return (PNG bytes, sidecar)."""
+    import image_regions  # Imported on use: numpy and Pillow are only needed for image checks.
+    if (not isinstance(expectation, dict) or not set(expectation) <= keys | {'reference'}
             or not isinstance(expectation.get('reference'), str)):
-        raise ValueError('Image region requires a reference path and optional minimumCorrelation')
-    minimum = expectation.get('minimumCorrelation', image_regions.DEFAULT_MINIMUM_CORRELATION)
-    if type(minimum) not in (int, float) or not 0.5 <= minimum <= 1:
-        raise ValueError('Image region minimumCorrelation must be between 0.5 and 1')
+        raise ValueError(f'Reference expectation allows only reference and {sorted(keys)}')
     relative = PurePosixPath(expectation['reference'])
     if (relative.suffix != '.png' or relative.parts[:3] != ('corpus', 'references', case['id'])
             or len(relative.parts) != 4 or '..' in relative.parts):
-        raise ValueError('Image region reference must be corpus/references/<case>/<name>.png')
+        raise ValueError('Reference must be corpus/references/<case>/<name>.png')
     path = Path(reference_root) / relative
     sidecar = json.loads(path.with_suffix('.json').read_text())
     if sidecar.get('sourceSHA256') != contract['sourceSHA256'] or sidecar.get('page') != number:
-        raise ValueError(f'Image region reference {relative} was rendered from another source or page')
-    if (sidecar.get('renderDPI'), sidecar.get('referenceDPI')) != (image_regions.RENDER_DPI, image_regions.REFERENCE_DPI):
-        raise ValueError(f'Image region reference {relative} uses another resolution')
-    return path.read_bytes(), minimum
+        raise ValueError(f'Reference {relative} was rendered from another source or page')
+    kind = sidecar.get('kind', 'region')
+    if kind not in kinds:
+        raise ValueError(f'Reference {relative} is a {kind} reference; this check needs {sorted(kinds)}')
+    expected_dpi = image_regions.RENDER_DPI if kind == 'glyph' else image_regions.REFERENCE_DPI
+    if (sidecar.get('renderDPI'), sidecar.get('referenceDPI')) != (image_regions.RENDER_DPI, expected_dpi):
+        raise ValueError(f'Reference {relative} uses another resolution')
+    return path.read_bytes(), sidecar
+
+
+def reference_image(case, contract, number, expectation, reference_root=ROOT):
+    """Validate a region expectation and return its reference PNG bytes and threshold."""
+    import image_regions
+    data, _ = load_reference(case, contract, number, expectation, reference_root, {'region'}, {'minimumCorrelation'})
+    return data, bounded(expectation, 'minimumCorrelation', image_regions.DEFAULT_MINIMUM_CORRELATION, 0.5, 1)
+
+
+def glyph_reference(case, contract, number, expectation, reference_root=ROOT):
+    """Validate a glyph expectation; return (PNG bytes, thresholds) for glyph_structure."""
+    import glyph_structure
+    data, _ = load_reference(case, contract, number, expectation, reference_root, {'glyph'},
+                             {'minimumCoverage', 'maximumExtraInk', 'minimumSharpness'})
+    thresholds = {
+        'minimum_coverage': bounded(expectation, 'minimumCoverage', glyph_structure.DEFAULT_MINIMUM_COVERAGE, 0.2, 1),
+        'maximum_extra_ink': bounded(expectation, 'maximumExtraInk', glyph_structure.DEFAULT_MAXIMUM_EXTRA_INK, 0, 0.5),
+        'minimum_sharpness': bounded(expectation, 'minimumSharpness', None, 0.2, 1),
+    }
+    return data, thresholds
+
+
+def appearance_reference(case, contract, number, expectation, reference_root=ROOT):
+    """Validate an appearance expectation; return (PNG bytes, region points, thresholds)."""
+    import image_appearance
+    data, sidecar = load_reference(case, contract, number, expectation, reference_root, {'region', 'color'},
+                                   {'minimumScale', 'minimumContrast', 'minimumColorAgreement'})
+    if sidecar.get('kind', 'region') != 'color' and 'minimumColorAgreement' in expectation:
+        raise ValueError('minimumColorAgreement needs a color reference')
+    region = sidecar.get('regionPoints')
+    if (not isinstance(region, list) or len(region) != 4 or any(type(v) not in (int, float) for v in region)
+            or not (region[0] < region[2] and region[1] < region[3])):
+        raise ValueError('Reference sidecar lacks valid regionPoints')
+    thresholds = {
+        'minimum_scale': bounded(expectation, 'minimumScale', image_appearance.DEFAULT_MINIMUM_SCALE, 0.5, 2),
+        'minimum_contrast': bounded(expectation, 'minimumContrast', image_appearance.DEFAULT_MINIMUM_CONTRAST, 0.1, 1),
+        'minimum_color_agreement': bounded(expectation, 'minimumColorAgreement',
+                                           image_appearance.DEFAULT_MINIMUM_COLOR_AGREEMENT, 0.5, 1),
+    }
+    return data, region, thresholds
 
 
 def assess(case, contract, result, report, pages, markers, image_data=None, reference_root=ROOT):
@@ -173,7 +224,7 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'scripts', 'absentText', 'headings', 'paragraphs', 'continuedParagraphs', 'imageRegions')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'scripts', 'absentText', 'headings', 'paragraphs', 'continuedParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -243,6 +294,36 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
             if score < minimum:
                 errors.append(f'Page {number}: no image shows {expectation["reference"]} '
                               f'(best correlation {score:.3f} < {minimum})')
+        for expectation in item.get('glyphRegions', []):
+            reference, thresholds = glyph_reference(case, contract, number, expectation, reference_root)
+            checks += 1
+            if image_data is None:
+                errors.append(f'Page {number}: converted images unavailable for {expectation["reference"]}')
+                continue
+            import glyph_structure
+            passed, metrics = glyph_structure.structure_score(reference, [image_data(asset) for asset in page['images']], **thresholds)
+            if not passed:
+                errors.append(f'Page {number}: no image shows every stroke of {expectation["reference"]} '
+                              f'(coverage {metrics["coverage"]:.3f}, extra ink {metrics["extraInk"]:.3f}, '
+                              f'sharpness {metrics["sharpness"]:.3f}, weakest {metrics.get("weakestComponent")})')
+        for expectation in item.get('imageAppearance', []):
+            reference, region, thresholds = appearance_reference(case, contract, number, expectation, reference_root)
+            checks += 1
+            if image_data is None:
+                errors.append(f'Page {number}: converted images unavailable for {expectation["reference"]}')
+                continue
+            import image_appearance
+            passed, metrics = image_appearance.appearance_score(reference, region, [image_data(asset) for asset in page['images']], **thresholds)
+            if not passed:
+                errors.append(f'Page {number}: no image keeps the appearance of {expectation["reference"]} '
+                              f'(scale {metrics["scale"]:.3f}, contrast {metrics["contrast"]:.3f}, '
+                              f'color agreement {metrics.get("colorAgreement", "n/a")})')
+        for expectation in item.get('tableCells', []):
+            import table_cells
+            table_cells.validate(expectation)
+            checks += 1
+            for error in table_cells.check_page(expectation, page.get('tables', [])):
+                errors.append(f'Page {number}: table cells: {error}')
         if 'minimumImages' in item:
             minimum = item['minimumImages']
             if type(minimum) is not int or minimum < 1:
@@ -261,7 +342,7 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
         raise ValueError('Contract has no content checks')
     return {'case': case['id'], 'passed': not errors, 'reviewPages': numbers,
             'contentChecks': checks, 'errors': errors,
-            'scope': 'Reviewed text/order/script-context/image-presence and source-region image checks; not full-book fidelity or image legibility qualification.'}
+            'scope': 'Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification.'}
 
 
 def check_evaluation(case, contract, directory, *, max_entries=DEFAULT_MAX_ENTRIES,

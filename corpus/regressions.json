@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27).",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27).",
       "pages": [
         {
           "page": 16,
@@ -30,6 +30,11 @@
             },
             {
               "reference": "corpus/references/faa-phak-8083-25c/page-121-figure-5-37.png"
+            }
+          ],
+          "imageAppearance": [
+            {
+              "reference": "corpus/references/faa-phak-8083-25c/page-121-figure-5-36-color.png"
             }
           ],
           "text": [
@@ -171,7 +176,7 @@
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27).",
+      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). The detached, flattened \"x2 +\" paragraph from page 343's \"Factor\" line is a known defect, not blessed.",
       "pages": [
         {
           "page": 2,
@@ -198,6 +203,11 @@
               "reference": "corpus/references/wallace-algebra-2010/page-347-exercise-35.png"
             }
           ],
+          "glyphRegions": [
+            {
+              "reference": "corpus/references/wallace-algebra-2010/page-347-exercise-35-glyphs.png"
+            }
+          ],
           "text": [
             "Solve each equation with the quadratic formula."
           ],
@@ -211,6 +221,11 @@
               "text": "2",
               "before": "The general from of a quadratic is ax",
               "after": "+ bx + c = 0."
+            }
+          ],
+          "glyphRegions": [
+            {
+              "reference": "corpus/references/wallace-algebra-2010/page-343-our-solution-glyphs.png"
             }
           ],
           "text": [
@@ -591,7 +606,7 @@
     {
       "id": "gpo-our-flag-2003",
       "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
-      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word.",
+      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Page 33 source raster reviewed in color: the Colorado flag (blue and white stripes, red C, gold disc) must keep its scale, ink contrast and hues (#27).",
       "pages": [
         {
           "page": 27,
@@ -644,6 +659,11 @@
             "COLORADO",
             "CONNECTICUT",
             "DELAWARE"
+          ],
+          "imageAppearance": [
+            {
+              "reference": "corpus/references/gpo-our-flag-2003/page-33-colorado-flag-color.png"
+            }
           ],
           "minimumImages": 4
         },
@@ -824,7 +844,7 @@
     {
       "id": "usgs-mcs2025-copper",
       "sourceSHA256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
-      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, preserved statistics and world-production tables, the COMEX paragraph and the ordered superscript table-note markers. Does not bless rasterized prose: the Domestic Production, Recycling, Import Sources, Events and Substitutes paragraphs are currently inside preserved-region images (#36).",
+      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, preserved statistics and world-production tables, the COMEX paragraph and the ordered superscript table-note markers. Does not bless rasterized prose: the Domestic Production, Recycling, Import Sources, Events and Substitutes paragraphs are currently inside preserved-region images (#36). The Salient Statistics table image is also checked stroke by stroke at full resolution (every digit, label and rule) and for scale and ink contrast; cell association will use tableCells once the table is emitted as text (#27).",
       "pages": [
         {
           "page": 1,
@@ -834,6 +854,16 @@
             },
             {
               "reference": "corpus/references/usgs-mcs2025-copper/page-1-tariff.png"
+            }
+          ],
+          "glyphRegions": [
+            {
+              "reference": "corpus/references/usgs-mcs2025-copper/page-1-salient-statistics-glyphs.png"
+            }
+          ],
+          "imageAppearance": [
+            {
+              "reference": "corpus/references/usgs-mcs2025-copper/page-1-salient-statistics.png"
             }
           ],
           "orderedText": [

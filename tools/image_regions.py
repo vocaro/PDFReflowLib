@@ -25,16 +25,22 @@ DEFAULT_MINIMUM_CORRELATION = 0.95
 MAX_IMAGE_PIXELS = 48_000_000
 
 
+def pooled_array(values, offset=(0, 0)):
+    """Average an H×W or H×W×C float array over POOL×POOL blocks from (row, column) offset."""
+    values = values[offset[0]:, offset[1]:]
+    height, width = values.shape[0] // POOL * POOL, values.shape[1] // POOL * POOL
+    if height == 0 or width == 0:
+        return np.full((0, 0) + values.shape[2:], 255.0)
+    blocks = values[:height, :width].reshape((height // POOL, POOL, width // POOL, POOL) + values.shape[2:])
+    return blocks.mean(axis=(1, 3))
+
+
 def pooled(image, offset=(0, 0)):
     """Average a grayscale image over POOL×POOL blocks starting at (row, column) offset."""
     gray = image.convert('L') if image.mode != 'L' else image
     if gray.width * gray.height > MAX_IMAGE_PIXELS:
         raise ValueError('Image exceeds the inspection pixel ceiling')
-    values = np.asarray(gray, dtype=np.float64)[offset[0]:, offset[1]:]
-    height, width = values.shape[0] // POOL * POOL, values.shape[1] // POOL * POOL
-    if height == 0 or width == 0:
-        return np.full((0, 0), 255.0)
-    return values[:height, :width].reshape(height // POOL, POOL, width // POOL, POOL).mean(axis=(1, 3))
+    return pooled_array(np.asarray(gray, dtype=np.float64), offset)
 
 
 def trimmed_to_ink(values):
@@ -52,17 +58,21 @@ def _window_sums(values, height, width):
             - integral[height:, :-width] + integral[:-height, :-width])
 
 
-def best_correlation(reference, image):
-    """Highest normalized cross-correlation of reference over every placement in image."""
+def best_placement(reference, image):
+    """(score, row, column) of the best normalized cross-correlation placement of reference in image.
+
+    The row/column locate the reference's top-left in image coordinates; they can be negative by
+    up to EDGE_TOLERANCE because the image is padded with white on every side.
+    """
     template = np.asarray(reference, dtype=np.float64)
     target = np.pad(np.asarray(image, dtype=np.float64), EDGE_TOLERANCE, constant_values=255.0)
     height, width = template.shape
     if height == 0 or width == 0 or height > target.shape[0] or width > target.shape[1]:
-        return -1.0
+        return -1.0, 0, 0
     centered = template - template.mean()
     template_norm = np.sqrt((centered * centered).sum())
     if template_norm == 0:
-        return -1.0
+        return -1.0, 0, 0
     count = height * width
     sums = _window_sums(target, height, width)
     squares = _window_sums(target * target, height, width)
@@ -71,7 +81,25 @@ def best_correlation(reference, image):
     products = np.fft.irfft2(spectrum, s=target.shape)[:sums.shape[0], :sums.shape[1]]
     with np.errstate(divide='ignore', invalid='ignore'):
         scores = np.where(variance > 1e-9, products / (template_norm * np.sqrt(variance)), -1.0)
-    return float(np.clip(scores.max(), -1.0, 1.0))
+    row, column = np.unravel_index(int(scores.argmax()), scores.shape)
+    return float(np.clip(scores.max(), -1.0, 1.0)), int(row) - EDGE_TOLERANCE, int(column) - EDGE_TOLERANCE
+
+
+def best_correlation(reference, image):
+    """Highest normalized cross-correlation of reference over every placement in image."""
+    return best_placement(reference, image)[0]
+
+
+def locate(reference, gray):
+    """Best (score, phase_row, phase_column, row, column) of a pooled reference in a full-resolution
+    grayscale array; row/column are the reference's top-left in pooled coordinates of that phase."""
+    best = (-1.0, 0, 0, 0, 0)
+    for row in range(POOL):
+        for column in range(POOL):
+            score, y, x = best_placement(reference, pooled_array(gray, (row, column)))
+            if score > best[0]:
+                best = (score, row, column, y, x)
+    return best
 
 
 def load_reference(data):
@@ -88,9 +116,9 @@ def region_score(reference_data, image_datas):
     for data in image_datas:
         with Image.open(io.BytesIO(data)) as image:
             gray = image.convert('L')
+            if gray.width * gray.height > MAX_IMAGE_PIXELS:
+                raise ValueError('Image exceeds the inspection pixel ceiling')
             # A crop's origin is arbitrary relative to the reference's averaging grid. Averaging
             # at every grid phase removes up to four pixels of sampling misalignment.
-            for row in range(POOL):
-                for column in range(POOL):
-                    best = max(best, best_correlation(reference, pooled(gray, (row, column))))
+            best = max(best, locate(reference, np.asarray(gray, dtype=np.float64))[0])
     return best

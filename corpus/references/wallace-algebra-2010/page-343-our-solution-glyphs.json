@@ -1,0 +1,23 @@
+{
+  "case": "wallace-algebra-2010",
+  "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "page": 343,
+  "regionPoints": [
+    176.0,
+    658.0,
+    283.0,
+    690.0
+  ],
+  "target": "Quadratic formula solution line: x equals minus b plus or minus root of b squared minus 4ac, all over 2a; exponent, radical sign and fraction bar",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 180,
+  "kind": "glyph",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    263,
+    73
+  ],
+  "sha256": "9b082167a6ff2d7ada485b4e30921b59ebc1fcf40c23af6b260334e3a64cd2fe"
+}

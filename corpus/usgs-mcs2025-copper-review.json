@@ -484,5 +484,7 @@
     }
   ],
   "tableReferenceScope": "Complete cell transcriptions of the three page tables, read from the rendered source and cross-checked row by row against Poppler 26.04.0 pdftotext -layout (raised e, note markers and wrapped labels split across Poppler lines were reconciled visually). group lists the indentation-only parent rows; e marks an estimate, (n) a note marker, — zero. For future cell-association contracts; current output preserves these tables as images (#36).",
-  "scope": "Manual targets. Current converter rasterizes prose beside both tables (#36)."
+  "scope": "Manual targets. Current converter rasterizes prose beside both tables (#36).",
+  "glyphReference": "corpus/references/usgs-mcs2025-copper/page-1-salient-statistics-glyphs.png: the Salient Statistics table (source points 40,205-565,481) at full 180 DPI; every digit, label and rule is a checked ink component.",
+  "tableCellsScope": "tableReferences are in the shape of the tableCells contract (columns, rows with label/values/group/note). No corpus EPUB emits a <table> element today, so the checker is exercised by tools/test_table_cells.py only."
 }

@@ -1,0 +1,23 @@
+{
+  "case": "gpo-our-flag-2003",
+  "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
+  "page": 33,
+  "regionPoints": [
+    224.0,
+    160.0,
+    373.0,
+    255.0
+  ],
+  "target": "Colorado state flag illustration: blue and white stripes, red C, gold disc",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "kind": "color",
+  "mode": "RGB",
+  "inkThreshold": 200,
+  "pixels": [
+    74,
+    47
+  ],
+  "sha256": "3214aa8f57fa7905c06df9339571a486c93ce10e8df40a6633f00c19d6d96640"
+}

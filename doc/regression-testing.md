@@ -50,15 +50,18 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 367 targeted checks on 88 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 373 targeted checks on 88 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). All source-page anchors must also remain complete and
-ordered, and semantic text must contain no image attachment placeholders.
+the NBS and Replay Clocks academic papers). They comprise 146 ordered-text, 51 text, 36 paragraph,
+22 heading, 19 absent-text, 13 script, 6 paragraph-continuation, 54 image-presence, 16 warning,
+10 source-region, 3 glyph-structure and 3 image-appearance checks. All source-page anchors must
+also remain complete and ordered, and semantic text must contain no image attachment placeholders.
 
 The checks preserve selected correct words, paragraph semantics and cross-page continuity, paragraph/list order, license attribution, image
-presence and explicit transcription/fallback warnings. They read the actual EPUB spine, track
+presence, source-region content, glyph-level equation and table structure, image scale/contrast/color
+and explicit transcription/fallback warnings. They read the actual EPUB spine, track
 page boundaries inside styled text, preserve ownership across chapter-file continuations, and
 exclude navigation/captions from source-text matching. They do not freeze serialization details
 or broken output such as interleaved columns and flattened exponents.
@@ -70,8 +73,8 @@ such controls could silently pass despite a broken checker.
 
 Image-presence checks are weaker than visual fidelity checks. They cannot prove a flag's colors,
 a diagram's arrows or mathematical notation is correct. Unit pixel checks, source-image review and
-the source-region checks below cover selected rendering behavior; robust visual/semantic contracts
-need expansion. The corpus
+the source-region, glyph-structure and appearance checks below cover selected rendering behavior
+on selected regions; robust visual/semantic contracts still need expansion. The corpus
 lane does not supply a whole-book quality score or physical-device performance qualification.
 
 Full Warren and NOAA conversions remain explicitly excluded from this successful-conversion lane
@@ -100,7 +103,51 @@ Correct crops score 0.982–0.997. Wrong images on the same pages score at most 
 with its lower half blanked 0.64, erasing the Wallace exercise from its crop 0.44, and a 1.5-pixel
 blur still scores 0.96. The check proves
 a region is present, complete and aligned; it does not prove every glyph. Erasing one exponent from
-the Wallace exercise still scores 0.97. See the [image-region evidence](../measurements/image-regions/record.md).
+the Wallace exercise still scores 0.97, which is why the glyph-structure check below exists. See the
+[image-region evidence](../measurements/image-regions/record.md).
+
+## Glyph-structure checks
+
+A `glyphRegions` expectation names a reference rendered with `--kind glyph`: the same Poppler render
+kept at the full 180 DPI with a four-pixel white margin. `tools/glyph_structure.py` aligns it in each
+page image (36 DPI search, then full-resolution refinement), labels the reference's connected ink
+components, splits them into 16-pixel tiles, and requires every tile's footprint to hold at least
+`minimumCoverage` (default 0.4) of the reference ink mass while the window carries at most
+`maximumExtraInk` (default 0.12) outside the reference's ink. Ink mass is conserved by blur and
+resampling but not by erasure, so a 1.5-pixel blur or a 180→120→180 DPI resample still passes.
+
+Three references cover the Wallace page-343 quadratic-formula solution line (exponent, radical sign
+and fraction bar), exercise 35 on page 347 and the USGS Salient Statistics table (932 components).
+Correct crops score 0.59–1.05 coverage with under 0.01 extra ink. Erasing the b² exponent scores
+0.001, the fraction bar 0.000, the radical's check stroke 0.000, exercise 35's final exponent 0.003
+and its minus sign 0.064; substituting the similar preceding line or another exercise fails on both
+measures. The check proves each reviewed stroke is present with comparable ink in the right place;
+it does not prove legibility (an upsampled 60 DPI crop conserves ink and passes; the reported
+`sharpness` cannot separate that from a mild blur, so it is gated only when a contract sets
+`minimumSharpness`). See the [equation-structure evidence](../measurements/equation-structure/record.md).
+
+## Image appearance checks
+
+An `imageAppearance` expectation names a color reference (`--kind color`, 36 DPI RGB) or an existing
+grayscale region reference. `tools/image_appearance.py` locates it and measures scale (the page
+image's pixel size against the reviewed region at 180 DPI, minimum 0.95), ink contrast (2nd–98th
+percentile spread, minimum 0.4) and, for color references, color agreement (the fraction of colored
+reference samples whose converted hue is within 30° with at least half the chroma, minimum 0.8).
+The Colorado flag on Our Flag page 33, FAA figure 5-36 and the USGS statistics table are checked.
+Correct crops score 0.98–1.00 scale, 0.55–0.70 contrast and 0.99+ color agreement; grayscale,
+channel-swapped, level-compressed and downscaled crops fail (agreement ≤ 0.36, contrast ≤ 0.18,
+scale ≤ 0.79). Scale is a pixel-dimension check, not a sharpness measure. See the
+[image-appearance evidence](../measurements/image-appearance/record.md).
+
+## Table cell checks
+
+A `tableCells` expectation carries a reviewed transcription (`columns`, `rows` with `label`,
+`values` and optional `group`, in the shape of `corpus/usgs-mcs2025-copper-review.json`) and passes
+only when a `<table>` on that page maps every column through its header path and every row's cells
+equal the expected values under those columns, with group rows preceding their members. Swapped,
+shifted or merged cells, missing rows or groups, and tables rendered as prose fail. No corpus EPUB
+emits a `<table>` element yet (tables remain images under #36/#31), so the checker is exercised by
+`tools/test_table_cells.py` only; see the [table-cells record](../measurements/table-cells/record.md).
 
 ## Adding or changing a regression
 
@@ -175,7 +222,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-82 Swift tests with no known-issue wrappers, and 55 Python tests.
+201 Swift tests with no known-issue wrappers, and 142 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

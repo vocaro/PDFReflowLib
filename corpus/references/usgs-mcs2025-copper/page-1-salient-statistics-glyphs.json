@@ -1,0 +1,23 @@
+{
+  "case": "usgs-mcs2025-copper",
+  "sourceSHA256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
+  "page": 1,
+  "regionPoints": [
+    40.0,
+    205.0,
+    565.0,
+    481.0
+  ],
+  "target": "Salient Statistics table at full resolution: every digit, label and estimate marker",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 180,
+  "kind": "glyph",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    1289,
+    666
+  ],
+  "sha256": "15f2c28d77811d8a448c346ba1916e458c345e37f43f7cbcb358d88c48935a70"
+}

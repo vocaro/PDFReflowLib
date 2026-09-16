@@ -32,13 +32,15 @@
     {
       "page": 343,
       "focus": "Quadratic-formula derivation with aligned explanations, radicals and inline powers.",
-      "observed": "Displayed derivation is rasterized. Introductory ax-squared is flattened to ax2 in selectable XHTML; confirmed defect.",
-      "acceptance": "Keep the introductory squared exponent as superscript (or preserve the entire inline expression as an image), while retaining the surrounding prose and the displayed derivation."
+      "observed": "Displayed derivation is rasterized. Introductory ax-squared is flattened to ax2 in selectable XHTML; confirmed defect. The \"Factor\" line is split: its leading x^2 + is emitted as a standalone flattened \"x2 +\" paragraph while the preserved equation image starts at b/a x (observed 2026-09-16, converter 56e70e2).",
+      "acceptance": "Keep the introductory squared exponent as superscript (or preserve the entire inline expression as an image), while retaining the surrounding prose and the displayed derivation.",
+      "glyphReference": "corpus/references/wallace-algebra-2010/page-343-our-solution-glyphs.png: the \"Our Solution\" line rendered at 180 DPI from source points 176,658-283,690; reviewed to contain x =, the numerator -b +/- sqrt(b^2 - 4ac) with its exponent and radical sign, the fraction bar and 2a."
     },
     {
       "page": 347,
       "focus": "Quadratic exercise set; powers and problem numbering.",
-      "observed": "Visible left-column equations retain powers in an image region. Verify the remaining column and all problem numbers before qualification."
+      "observed": "Visible left-column equations retain powers in an image region. Verify the remaining column and all problem numbers before qualification.",
+      "glyphReference": "corpus/references/wallace-algebra-2010/page-347-exercise-35-glyphs.png: exercise 35 at 180 DPI from source points 80,625-245,645; reviewed to contain 35) -5n^2 - 3n - 52 = 2 - 7n^2 with both exponents."
     },
     {
       "page": 438,

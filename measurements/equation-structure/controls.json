@@ -1,0 +1,400 @@
+{
+  "minimumCoverage": 0.4,
+  "maximumExtraInk": 0.12,
+  "controls": [
+    {
+      "control": "positive: Wallace page 343 solution line, all page images",
+      "passed": true,
+      "coverage": 0.59,
+      "extraInk": 0.0054,
+      "sharpness": 0.9938,
+      "weakestStroke": 0.4157,
+      "fullResolutionCorrelation": 0.6874,
+      "components": 18,
+      "weakestComponent": [
+        54,
+        41,
+        64,
+        43
+      ]
+    },
+    {
+      "control": "positive: Wallace page 347 exercise 35, all page images",
+      "passed": true,
+      "coverage": 1.0488,
+      "extraInk": 0.0,
+      "sharpness": 1.0383,
+      "weakestStroke": 0.9928,
+      "fullResolutionCorrelation": 0.9355,
+      "components": 23,
+      "weakestComponent": [
+        121,
+        16,
+        128,
+        17
+      ],
+      "regionCorrelation36dpi": 0.984
+    },
+    {
+      "control": "positive: USGS page 1 Salient Statistics table, all page images",
+      "passed": true,
+      "coverage": 0.6928,
+      "extraInk": 0.0,
+      "sharpness": 1.0,
+      "weakestStroke": 0.9386,
+      "fullResolutionCorrelation": 0.9528,
+      "components": 932,
+      "weakestComponent": [
+        1021,
+        25,
+        1024,
+        28
+      ],
+      "regionCorrelation36dpi": 0.989
+    },
+    {
+      "control": "tolerance: solution crop with 0.75-pixel Gaussian blur",
+      "passed": true,
+      "coverage": 0.618,
+      "extraInk": 0.0257,
+      "sharpness": 0.7606,
+      "weakestStroke": 0.4301,
+      "fullResolutionCorrelation": 0.7052,
+      "components": 18,
+      "weakestComponent": [
+        54,
+        41,
+        64,
+        43
+      ]
+    },
+    {
+      "control": "tolerance: solution crop with 1.5-pixel Gaussian blur",
+      "passed": true,
+      "coverage": 0.5875,
+      "extraInk": 0.0716,
+      "sharpness": 0.4879,
+      "weakestStroke": 0.2779,
+      "fullResolutionCorrelation": 0.6344,
+      "components": 18,
+      "weakestComponent": [
+        54,
+        41,
+        64,
+        43
+      ]
+    },
+    {
+      "control": "tolerance: solution crop resampled 180 to 150 to 180 DPI",
+      "passed": true,
+      "coverage": 0.6939,
+      "extraInk": 0.0005,
+      "sharpness": 0.9657,
+      "weakestStroke": 0.5374,
+      "fullResolutionCorrelation": 0.6978,
+      "components": 18,
+      "weakestComponent": [
+        54,
+        41,
+        64,
+        43
+      ]
+    },
+    {
+      "control": "tolerance: solution crop resampled 180 to 120 to 180 DPI",
+      "passed": true,
+      "coverage": 0.7251,
+      "extraInk": 0.0051,
+      "sharpness": 0.911,
+      "weakestStroke": 0.5025,
+      "fullResolutionCorrelation": 0.7358,
+      "components": 18,
+      "weakestComponent": [
+        54,
+        41,
+        64,
+        43
+      ]
+    },
+    {
+      "control": "tolerance: exercise 35 crop with 0.75-pixel Gaussian blur",
+      "passed": true,
+      "coverage": 1.2791,
+      "extraInk": 0.0024,
+      "sharpness": 0.8287,
+      "weakestStroke": 0.6778,
+      "fullResolutionCorrelation": 0.8917,
+      "components": 23,
+      "weakestComponent": [
+        372,
+        16,
+        380,
+        17
+      ],
+      "regionCorrelation36dpi": 0.979
+    },
+    {
+      "control": "tolerance: exercise 35 crop with 1.5-pixel Gaussian blur",
+      "passed": true,
+      "coverage": 1.2088,
+      "extraInk": 0.0461,
+      "sharpness": 0.5281,
+      "weakestStroke": 0.3549,
+      "fullResolutionCorrelation": 0.728,
+      "components": 23,
+      "weakestComponent": [
+        137,
+        20,
+        144,
+        21
+      ],
+      "regionCorrelation36dpi": 0.95
+    },
+    {
+      "control": "tolerance: exercise 35 crop resampled 180 to 150 to 180 DPI",
+      "passed": true,
+      "coverage": 1.2726,
+      "extraInk": 0.0,
+      "sharpness": 0.9613,
+      "weakestStroke": 0.7871,
+      "fullResolutionCorrelation": 0.9062,
+      "components": 23,
+      "weakestComponent": [
+        372,
+        16,
+        380,
+        17
+      ],
+      "regionCorrelation36dpi": 0.98
+    },
+    {
+      "control": "tolerance: exercise 35 crop resampled 180 to 120 to 180 DPI",
+      "passed": true,
+      "coverage": 1.3262,
+      "extraInk": 0.0002,
+      "sharpness": 0.9052,
+      "weakestStroke": 0.7327,
+      "fullResolutionCorrelation": 0.8883,
+      "components": 23,
+      "weakestComponent": [
+        372,
+        16,
+        380,
+        17
+      ],
+      "regionCorrelation36dpi": 0.978
+    },
+    {
+      "control": "tolerance: solution crop shifted by (3, 2) pixels",
+      "passed": true,
+      "coverage": 0.59,
+      "extraInk": 0.0054,
+      "sharpness": 0.9938,
+      "weakestStroke": 0.4157,
+      "fullResolutionCorrelation": 0.6874,
+      "components": 18,
+      "weakestComponent": [
+        54,
+        41,
+        64,
+        43
+      ]
+    },
+    {
+      "control": "negative: solution crop with the b-squared exponent erased",
+      "passed": false,
+      "coverage": 0.0011,
+      "extraInk": 0.0056,
+      "sharpness": 0.975,
+      "weakestStroke": 0.188,
+      "fullResolutionCorrelation": 0.6745,
+      "components": 18,
+      "weakestComponent": [
+        168,
+        7,
+        176,
+        16
+      ]
+    },
+    {
+      "control": "negative: solution crop with the fraction bar erased",
+      "passed": false,
+      "coverage": 0.0,
+      "extraInk": 0.0,
+      "sharpness": 1.0407,
+      "weakestStroke": 0.0008,
+      "fullResolutionCorrelation": 0.5442,
+      "components": 18,
+      "weakestComponent": [
+        54,
+        41,
+        64,
+        43
+      ]
+    },
+    {
+      "control": "negative: solution crop with the radical sign erased",
+      "passed": false,
+      "coverage": 0.0,
+      "extraInk": 0.0058,
+      "sharpness": 0.975,
+      "weakestStroke": 0.4157,
+      "fullResolutionCorrelation": 0.6789,
+      "components": 18,
+      "weakestComponent": [
+        144,
+        16,
+        149,
+        25
+      ]
+    },
+    {
+      "control": "negative: solution line erased; the similar preceding line remains",
+      "passed": false,
+      "coverage": 0.0,
+      "extraInk": 0.3042,
+      "sharpness": 0.8035,
+      "weakestStroke": 0.0,
+      "fullResolutionCorrelation": 0.5031,
+      "components": 18,
+      "weakestComponent": [
+        86,
+        9,
+        90,
+        16
+      ]
+    },
+    {
+      "control": "negative: exercise 35 crop with the final exponent erased",
+      "passed": false,
+      "coverage": 0.0026,
+      "extraInk": 0.0,
+      "sharpness": 1.0383,
+      "weakestStroke": 0.0493,
+      "fullResolutionCorrelation": 0.9133,
+      "components": 23,
+      "weakestComponent": [
+        372,
+        16,
+        380,
+        17
+      ],
+      "regionCorrelation36dpi": 0.959
+    },
+    {
+      "control": "negative: exercise 35 erased; other exercises remain",
+      "passed": false,
+      "coverage": 0.0,
+      "extraInk": 0.272,
+      "sharpness": 0.3123,
+      "weakestStroke": 0.0,
+      "fullResolutionCorrelation": 0.2939,
+      "components": 23,
+      "weakestComponent": [
+        245,
+        8,
+        256,
+        16
+      ],
+      "regionCorrelation36dpi": 0.439
+    },
+    {
+      "control": "negative: solution reference against the page 347 exercise column",
+      "passed": false,
+      "coverage": 0.0,
+      "extraInk": 0.4421,
+      "sharpness": 0.0,
+      "weakestStroke": 0.0,
+      "fullResolutionCorrelation": 0.1485,
+      "components": 18,
+      "weakestComponent": [
+        240,
+        41,
+        256,
+        43
+      ]
+    },
+    {
+      "control": "limitation: solution crop resampled 180 to 60 to 180 DPI (illegible, ink conserved)",
+      "passed": true,
+      "coverage": 0.6575,
+      "extraInk": 0.073,
+      "sharpness": 0.5742,
+      "weakestStroke": 0.255,
+      "fullResolutionCorrelation": 0.613,
+      "components": 18,
+      "weakestComponent": [
+        54,
+        41,
+        64,
+        43
+      ]
+    },
+    {
+      "control": "limitation: exercise 35 crop resampled 180 to 60 to 180 DPI (illegible, ink conserved)",
+      "passed": true,
+      "coverage": 1.2674,
+      "extraInk": 0.0424,
+      "sharpness": 0.6125,
+      "weakestStroke": 0.3181,
+      "fullResolutionCorrelation": 0.7208,
+      "components": 23,
+      "weakestComponent": [
+        265,
+        23,
+        272,
+        24
+      ],
+      "regionCorrelation36dpi": 0.953
+    },
+    {
+      "control": "negative: solution crop with 4-pixel Gaussian blur",
+      "passed": false,
+      "coverage": 0.328,
+      "extraInk": 0.3398,
+      "sharpness": 0.2499,
+      "weakestStroke": 0.115,
+      "fullResolutionCorrelation": 0.3938,
+      "components": 18,
+      "weakestComponent": [
+        54,
+        41,
+        64,
+        43
+      ]
+    },
+    {
+      "control": "negative: exercise 35 crop with the minus sign before 3n erased",
+      "passed": false,
+      "coverage": 0.0635,
+      "extraInk": 0.0,
+      "sharpness": 1.0383,
+      "weakestStroke": 0.0453,
+      "fullResolutionCorrelation": 0.9231,
+      "components": 23,
+      "weakestComponent": [
+        64,
+        20,
+        79,
+        21
+      ],
+      "regionCorrelation36dpi": 0.974
+    },
+    {
+      "control": "negative: all-black image",
+      "passed": false,
+      "coverage": 0.0,
+      "extraInk": 0.6662,
+      "sharpness": 1.0295,
+      "weakestStroke": 0.0,
+      "fullResolutionCorrelation": 0.117,
+      "components": 18,
+      "weakestComponent": [
+        144,
+        64,
+        155,
+        68
+      ]
+    }
+  ]
+}

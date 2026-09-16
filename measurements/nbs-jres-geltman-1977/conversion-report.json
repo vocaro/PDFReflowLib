@@ -1,0 +1,119 @@
+{
+  "imageCount" : 8,
+  "outputURL" : "file:\/\/\/Users\/trevorharmon\/Development\/PDFReflowLib\/.build\/corpus-30-final\/nbs-jres-geltman-1977\/nbs-jres-geltman-1977.epub",
+  "pageCount" : 7,
+  "recognizedPageCount" : 0,
+  "reflowedPageCount" : 1,
+  "warnings" : [
+    {
+      "code" : "unsupportedGraphics",
+      "message" : "Unsupported or excessive drawing operations require the original page image.",
+      "page" : 1
+    },
+    {
+      "code" : "unsupportedGraphics",
+      "message" : "Unsupported or excessive drawing operations require the original page image.",
+      "page" : 2
+    },
+    {
+      "code" : "unsupportedGraphics",
+      "message" : "Unsupported or excessive drawing operations require the original page image.",
+      "page" : 3
+    },
+    {
+      "code" : "unsupportedGraphics",
+      "message" : "Unsupported or excessive drawing operations require the original page image.",
+      "page" : 4
+    },
+    {
+      "code" : "unsupportedGraphics",
+      "message" : "Unsupported or excessive drawing operations require the original page image.",
+      "page" : 5
+    },
+    {
+      "code" : "unsupportedGraphics",
+      "message" : "Unsupported or excessive drawing operations require the original page image.",
+      "page" : 6
+    },
+    {
+      "code" : "unverifiedTextLayer",
+      "message" : "Text overlapping a page-sized graphic has not been verified against the source. Transcription, tables, numbers and reading order may be inaccurate. Check the accompanying source-page image before relying on the reflowed text.",
+      "page" : 7
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 1
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 2
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 3
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 4
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 5
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 6
+    },
+    {
+      "code" : "pageImageFallback",
+      "message" : "This page is preserved as an image and does not reflow.",
+      "page" : 1
+    },
+    {
+      "code" : "pageImageFallback",
+      "message" : "This page is preserved as an image and does not reflow.",
+      "page" : 2
+    },
+    {
+      "code" : "pageImageFallback",
+      "message" : "This page is preserved as an image and does not reflow.",
+      "page" : 3
+    },
+    {
+      "code" : "pageImageFallback",
+      "message" : "This page is preserved as an image and does not reflow.",
+      "page" : 4
+    },
+    {
+      "code" : "pageImageFallback",
+      "message" : "This page is preserved as an image and does not reflow.",
+      "page" : 5
+    },
+    {
+      "code" : "pageImageFallback",
+      "message" : "This page is preserved as an image and does not reflow.",
+      "page" : 6
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 7
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 7
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 7
+    }
+  ]
+}

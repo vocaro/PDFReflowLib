@@ -1,0 +1,2159 @@
+{
+  "imageCount" : 213,
+  "outputURL" : "file:\/\/\/Users\/trevorharmon\/Development\/PDFReflowLib\/.build\/corpus-30-final\/uscis-m618-arabic-2015\/uscis-m618-arabic-2015.epub",
+  "pageCount" : 116,
+  "recognizedPageCount" : 3,
+  "reflowedPageCount" : 107,
+  "warnings" : [
+    {
+      "code" : "structureFallback",
+      "message" : "Some PDF structure tags are invalid or outside supported paragraph\/heading roles; spatial reconstruction remains in use for that content.",
+      "page" : 1
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 1
+    },
+    {
+      "code" : "ocrUsed",
+      "message" : "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+      "page" : 2
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 3
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 4
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 5
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 5
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 6
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 6
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 7
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 8
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 8
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 9
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 10
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 11
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 11
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 13
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 14
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 14
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 15
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 15
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 16
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 16
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 17
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 19
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 20
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 20
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 21
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 21
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 23
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 23
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 24
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 24
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 25
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 25
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 26
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 26
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 27
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 27
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 28
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 28
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 29
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 29
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 30
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 31
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 33
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 34
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 34
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 35
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 36
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 37
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 37
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 38
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 39
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 39
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 40
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 40
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 41
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 41
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 42
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 42
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 43
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 43
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 44
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 44
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 45
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 45
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 46
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 46
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 47
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 47
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 48
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 48
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 49
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 49
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 50
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 50
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 51
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 53
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 54
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 54
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 55
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 56
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 56
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 57
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 57
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 58
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 59
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 59
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 60
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 60
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 61
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 63
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 64
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 65
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 66
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 67
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 67
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 68
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 68
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 69
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 70
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 70
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 71
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 72
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 72
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 73
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 74
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 74
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 75
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 75
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 76
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 76
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 77
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 77
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 78
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 78
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 79
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 79
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 81
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 82
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 82
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 83
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 83
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 84
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 84
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 85
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 85
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 86
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 87
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 87
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 89
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 90
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 91
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 92
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 93
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 94
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 95
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 96
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 97
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 98
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 98
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 99
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 99
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 100
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 101
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 101
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 103
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 104
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 105
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 106
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 106
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 107
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 107
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 108
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 108
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 109
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 110
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 111
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 111
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 112
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 112
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 113
+    },
+    {
+      "code" : "annotationsNotConverted",
+      "message" : "A page image preserves visible annotations. Link and form interactions are not reconstructed.",
+      "page" : 113
+    },
+    {
+      "code" : "ocrUsed",
+      "message" : "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+      "page" : 114
+    },
+    {
+      "code" : "ocrUsed",
+      "message" : "Text is OCR transcription. The original page image preserves unrecognized visual content.",
+      "page" : 115
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 7
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 8
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 9
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 10
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 11
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 13
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 14
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 15
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 16
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 17
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 19
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 20
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 21
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 22
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 23
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 24
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 25
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 26
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 27
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 28
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 29
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 30
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 31
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 33
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 34
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 35
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 36
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 37
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 38
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 39
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 40
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 41
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 42
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 43
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 44
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 45
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 46
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 47
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 48
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 49
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 50
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 51
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 53
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 54
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 55
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 56
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 57
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 58
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 59
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 60
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 61
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 63
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 64
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 65
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 66
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 67
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 68
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 69
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 70
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 71
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 72
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 73
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 74
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 75
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 76
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 77
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 78
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 79
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 81
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 82
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 83
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 84
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 85
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 86
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 87
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 89
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 90
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 91
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 92
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 93
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 94
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 95
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 96
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 97
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 98
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 99
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 100
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 101
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 103
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 104
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 105
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 106
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 107
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 108
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 109
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 110
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 111
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 112
+    },
+    {
+      "code" : "furnitureRemoved",
+      "message" : "Repeated header or footer omitted from the reflowed text.",
+      "page" : 113
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 1
+    },
+    {
+      "code" : "pageImageFallback",
+      "message" : "This page is preserved as an image and does not reflow.",
+      "page" : 2
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 3
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 4
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 5
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 6
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 8
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 9
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 10
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 11
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 12
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 13
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 14
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 14
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 15
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 15
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 16
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 16
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 17
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 17
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 18
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 19
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 20
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 20
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 21
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 21
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 22
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 23
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 24
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 24
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 25
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 25
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 26
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 26
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 27
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 27
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 28
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 29
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 29
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 30
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 31
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 32
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 33
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 34
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 34
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 36
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 37
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 37
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 38
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 39
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 39
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 40
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 40
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 41
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 41
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 42
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 42
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 43
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 43
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 44
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 44
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 45
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 46
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 46
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 47
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 47
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 48
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 48
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 49
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 49
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 50
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 50
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 51
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 52
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 53
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 54
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 54
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 56
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 56
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 57
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 57
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 58
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 59
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 59
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 60
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 60
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 61
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 62
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 63
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 64
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 65
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 66
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 67
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 67
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 68
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 68
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 69
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 70
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 70
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 71
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 72
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 72
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 73
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 74
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 75
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 75
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 76
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 76
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 77
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 77
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 78
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 78
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 79
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 79
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 80
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 81
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 82
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 82
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 83
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 83
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 84
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 84
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 85
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 85
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 86
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 87
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 87
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 88
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 89
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 90
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 91
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 92
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 93
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 94
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 95
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 96
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 97
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 98
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 98
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 99
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 99
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 100
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 101
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 101
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 102
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 103
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 104
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 105
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 105
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 106
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 107
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 107
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 108
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 108
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 109
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 110
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 111
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 111
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 112
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 112
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 113
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "A source-page reference image accompanies reflowed text to preserve all visual content.",
+      "page" : 113
+    },
+    {
+      "code" : "pageImageFallback",
+      "message" : "This page is preserved as an image and does not reflow.",
+      "page" : 114
+    },
+    {
+      "code" : "pageImageFallback",
+      "message" : "This page is preserved as an image and does not reflow.",
+      "page" : 115
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 116
+    }
+  ]
+}

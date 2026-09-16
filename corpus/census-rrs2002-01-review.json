@@ -1,0 +1,19 @@
+{
+  "case": "census-rrs2002-01",
+  "pageNumbering": "Physical PDF pages, one-based; page 3 is the first body page (section 2)",
+  "qualifiedForFidelity": false,
+  "encodingCaveat": "Body fonts are Type 1C with custom encodings and no ToUnicode map (all 17 fonts per Poppler 26.04.0); the Word cover on page 1 extracts cleanly.",
+  "reviewPoints": [
+    {
+      "page": 1,
+      "target": "Report cover",
+      "acceptance": "Title, authors, issue date and staff disclaimer extract as written; this page must not be flagged."
+    },
+    {
+      "page": 3,
+      "target": "Data Files section and numbered field list",
+      "acceptance": "Do not emit shifted-letter text as prose. Flag the page, retain a readable image, and recover text by OCR where enabled: 2 Data Files; Two data files were used.; 16 numbered income and flag fields."
+    }
+  ],
+  "scope": "Manual targets. Current converter ships unreadable text without a warning (#38)."
+}

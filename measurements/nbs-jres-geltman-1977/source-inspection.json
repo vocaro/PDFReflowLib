@@ -1,0 +1,121 @@
+{
+  "filename": "jresv82n3p173_A1b.pdf",
+  "bytes": 7303514,
+  "sha256": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
+  "pages": 7,
+  "inspectionTool": "Poppler 26.04.0",
+  "pdfinfo": {
+    "Creator": "Adobe Acrobat 9.0",
+    "Producer": "Adobe Acrobat 9.13 Paper Capture Plug-in",
+    "CreationDate": "Tue Nov 23 06:30:42 2010 PST",
+    "ModDate": "Wed Apr 27 12:21:24 2011 PDT",
+    "Tagged": "no",
+    "Form": "none",
+    "Page size": "536.04 x 727.68 pts",
+    "Encrypted": "no",
+    "PDF version": "1.4"
+  },
+  "fontCount": 42,
+  "fontsWithoutToUnicode": 36,
+  "totalExtractedNonWhitespaceCharacters": 21855,
+  "pagesWithExtractedText": 7,
+  "reviewPageFonts": {
+    "1": [
+      {
+        "name": "HiddenHorzOCR",
+        "type": "CID Type 0C",
+        "encoding": "Identity-H",
+        "embedded": true,
+        "subset": false,
+        "toUnicode": true
+      },
+      {
+        "name": "Times-Roman",
+        "type": "Type 1",
+        "encoding": "WinAnsi",
+        "embedded": false,
+        "subset": false,
+        "toUnicode": false
+      },
+      {
+        "name": "Helvetica",
+        "type": "Type 1",
+        "encoding": "WinAnsi",
+        "embedded": false,
+        "subset": false,
+        "toUnicode": false
+      },
+      {
+        "name": "Helvetica-Bold",
+        "type": "Type 1",
+        "encoding": "WinAnsi",
+        "embedded": false,
+        "subset": false,
+        "toUnicode": false
+      },
+      {
+        "name": "Helvetica-Oblique",
+        "type": "Type 1",
+        "encoding": "WinAnsi",
+        "embedded": false,
+        "subset": false,
+        "toUnicode": false
+      },
+      {
+        "name": "Times-Italic",
+        "type": "Type 1",
+        "encoding": "WinAnsi",
+        "embedded": false,
+        "subset": false,
+        "toUnicode": false
+      }
+    ],
+    "2": [
+      {
+        "name": "HiddenHorzOCR",
+        "type": "CID Type 0C",
+        "encoding": "Identity-H",
+        "embedded": true,
+        "subset": false,
+        "toUnicode": true
+      },
+      {
+        "name": "Helvetica",
+        "type": "Type 1",
+        "encoding": "WinAnsi",
+        "embedded": false,
+        "subset": false,
+        "toUnicode": false
+      },
+      {
+        "name": "Times-Roman",
+        "type": "Type 1",
+        "encoding": "WinAnsi",
+        "embedded": false,
+        "subset": false,
+        "toUnicode": false
+      },
+      {
+        "name": "Times-Italic",
+        "type": "Type 1",
+        "encoding": "WinAnsi",
+        "embedded": false,
+        "subset": false,
+        "toUnicode": false
+      },
+      {
+        "name": "Helvetica-Oblique",
+        "type": "Type 1",
+        "encoding": "WinAnsi",
+        "embedded": false,
+        "subset": false,
+        "toUnicode": false
+      }
+    ]
+  },
+  "reviewPageText": {
+    "1": "                                                                                                                                                ----------- --                   -\n\n                                                               JOURNAL OF RESEARCH of the Notional Bureau of Standards\n                                                                    Vo lume 82, No.3, November- December 1977\n\n\n\n\n               Stimulated Multiphoton Bremsstrahlung in Electron-Ion\n                                    Collisions*\n\n                                                                                       Sydney Geltman**\n                           Institute for Basic Standards, National Bureau of Standards, Boulder, Colorado 80302\n                                                                                              (August 22, 1977)\n\n\n                                    A re vie w is prese nte d of the bas ic class ica l mec hanis m whe re by a n e lec tron ca n a bsorb e ne rgy frolll a n\n                             elec trom ag ne tic fi e ld while und e rgoing a colli s ion with a n a tom o r ion. The process is a lso desc ribed for a\n                             quan tum mec hanica l co lli s ion a nd the a bso rption or e mi ss ion of photons . The app ropriate formulation s arc\n                             d esc ribe d for wea k a nd strong a pplied fi e lds. A brie f re view is g ive n for the resulting pl as ma ab so rption\n                             coe ffi cie nts.\n\n                               Key word s: Bremsstra hlung; e lec tron-ion colli s ions; free- free tra ns itions; l11ultiphoton processes; plas ma\n                             abso rption .\n\n\n\n\n                                  1.        Introduction                                                    whe re u (t) = Uo s inwt (w ith 00 = eEo/mw) is the driven or\n                                                                                                            quive r velocity which is imparted to the classical motion of\n    A free electron colliding with a n ion is accele rated in its                                           an e lectron by the fi eld [4]. If the e lectron did not ma ke any\npote ntial fi eld and on the basis of class ical electrodynamics                                            collision s, its instantaneous kinetic ene rgy would simpl y\nwill e mit e lectromagnetic radiation [1, 2].1 Such bremsstrah-                                             oscillate a bout its thermal va lue 1/2 mv 2 a nd a n ass mbl yof\nlung radiation has long been observed in collisio ns between                                                such free elec tron s would ha ve a tempe rature whic h re ma ined\nhigh e ne rgy charged particles a nd nuclei. If an external                                                 co nstant in time.\nradiation fi eld is applied to an electron-ion system one has                                                  A heating of suc h a plas ma co uld occ ur onl y if there were\nstimulated free-free transitions of the electron , correspo nding                                           a mechanis m to conve rt some of the drive n ene rgy of the\nto both the e mi ssion (bremsstrahlung) and abso rption (inverse                                            elec tro ns into the rmal e nergy, and this will occur if the\nbremsstrahlung) of photons.                                                                                 oscill ating electrons can mak e coli is ions with ion s. In such\n    In a full y ionized plasma irradiated by a laser with                                                   a co llision, characterized as occurring a t time t c, one can\nfrequency not near the plasma freq uency, we can expec t the                                                evaluate the thermal ene rgy ga in (or loss) by solving the\nabove stimul ated processes in electron-ion collision s to be                                               classical equations of motion of the electron und er the\nthe main mecha nis ms for the elec tron heating of the plasma.                                              influence of both the applied radiation field and the ionic\nEl ectron-electron collisions do not lead to absorption of this                                             pote ntial field, and determining\ntype since that syste m does not have a dipol e moment. Thus\ncontributions of this type as well as of stimulated Compton                                                                 w(t c + T) = VIc + o(t e + T) ,               (2)\nscattering [3] will be of highe r order in lY.\n    In this revie w we will confine ourselves to the nonrelativ-                                            subject to the initial condition\nis tic treatment of the electron motion, both classically and\nquantum mechanically. We treat the electromagnetic field                                                                    w(t c - T) = Vi + o (t c - T) ,               (3)\nentirely as a classical, monochromatic, coherent fi eld, as we\nare not concerned with spontaneous e mission or higher order                                                with T ~ 00 being a valid id ealiza tion for large mean free\nquantum electrodynamic effects.                                                                             time between collisions. The ion takes up a recoil momentum\n                                                                                                            which corresponds to a very small part of the e ne rgy tra nsfer\n                             2.        Classical Picture                                                    (since m/M « 1) and the net thermal ene rgy change of the\n                                                                                                            electron, LlEc = 112 m(vjc - vD, is considered to be ta ken\n   In a harmonic, linearl y polarized electric field, a free                                                from (or delivered to) the electromagneti c fi eld.\nelectron having drift or thermal velocity, v, has the instanta-                                                The detailed solution of the classical equations of motion\nneous resultant veloc ity                                                                                   during a collision is quite complicated in general, so one\n                                                                                                            makes the simplifying assumption that if the collision dura-\n                                     wet) = v + o (t),                                              (1)     tion is much smaller than the applied period (Tc « l/w)\n                                                                                                            the scattering by the ion can be idealized as an instantaneo us\n                                                                                                            elastic deflection from w(t;:-) = We to w(tt) = W' e (see fig .\n    • Bused 0 11 a tu lk presented at the 2nd Conference on the Int eraction of Elec trons with Sirong      1). In such an impact model the the rmal e nergy change is\nElectromagn eti c Fi e lds, Budllpcsl, Hunglll)\" October 6- 10, 1975 .\n    .. Staff Membe r, Quantulll Phys ics Divi sion III the Joint Institute for Laboratory Astroph ys ics,\nBoulder, Colorado.\n    I Figures ill bra ckets indicllLe the literature references al the end of thi s paper,\n\n\n\n\n                                                                                                        173\n\f",
+    "2": "                                                                                                                                  Vf\n\n                                                                                                                        ./\n\n                                                                                                       ./\n\n\n                                                                  \\            /'\n                                                                                    /'\n                                                                                              A        \\\n\n\n\n\n                                                                                                   --.t -\n                                                                                                           \\\n\n                                                                                                           e   I\n                                                                                                               I\n                                                                                                                         -   -\n\n\n\n                                                               t--\n                                     FIGURE 1.    Trajectory of an electron ill a strong oscillatory field in the\n                                  region of an impact collison with an ion.\n\n\n\n\nfrom which we see it depends upon the wave phase at the                    where Eo = 1/2 mu~. The above correspondence will give n-\ncollision through lie = llO sinwt e , the angle between We and             photon cross sections which are proportional to the nth\nfield direction, and the angle of scattering Oe. One can thus              power of the field intensity, which we know must be the\ndefine a classical differential cross section for a free-free              case from the full quantum treatment, but in general so\ntransition                                                                 many approximations have gone into the above result that it\n                                                                           has very limited use in quantitative applications. Further-\n                   do\" \"'<c) = deT el IdOe I                       (5)\n                                                                           more, for the Coulomb case the angular integral of (8) will\n                    dfi        dOc dO '                                    diverge unless there is a low-angle cut-off (or maximum\n                                                                           impact parameter).\nwhere dOc/dO is a complicated kinematical factor relating                     It is interesting to us e this classical picture to estimate\nthe instantaneous impact vectors to laboratory fix ed direc-               the rate of conversion of driven energy into thermal energy\ntions and the average is taken over all possible collisions                [6]. On the basis of the impact model the cycle-averaged\ncompatible with th e transition Vi ~ V'c' For applied fields               time rate of energy transfer into transverse motion per\n                                                                           electron is\nwhich are so intense that Uo ~ YiJe, dOc/dO will become an\nextremely nonlinear function of Eo and the impact energy 1/2\nmw~ will vary strongly over a cycle of the field. If we go to\nthe extreme weak-field case, where Uo « Vi> and low\nenergy transfer, /lEe « Ei , then impact energy == Ei in (5),\nand it reduces to\n                                                                           The momentum transfer cross section eT d for a Coulomb\n                                                                           potential has the velocity dependence eT d - W;:-4, and if one\n                                                                   (6)     averages over all directions of we one has\n\n                                                                                             d                   u2\n   If we were now to assert that energy can be taken from the                               -d (/lEd ) = A <( 2 + c 2)3/2)'                    (10)\nfield in units of hw only, we could define a semi-classical n-                                t                              Uc        1O .L\n\nphoton free-free absorption cross section in terms of the\nvarious moments of (/lEc)2 by the correspondence:                          where We has been resolved into components along (ucl and\n                                                                           transverse to the field (10 l. Thus the average over phase of\n                                                                           the field cycle is         .L\n                                                                   (7)\n\nIf we carry this out for the single photon case, and average                                = ~ (2W)\nover all initial directions, we obtain the result of Zeldovich                                    Uo               1T\nand Raizer [5]\n\n         dcr(l)\n         -\n          dO\n            - -_ 4-\n                 3\n                      (Ii- w ) -~ow (l\n                                 )                 deTel\n                                           cosO) dO '              (8)     and the rate of conversion of the ordered, driven motion into\n                                                                           the transverse, thermal motion goes as uo/ 1O.L 3 for Uo < <\n\n                                                                      174\n\f"
+  },
+  "scope": "Poppler pdftotext -layout extraction of review pages is an independent evidence of the source text layer, not a reference transcription."
+}

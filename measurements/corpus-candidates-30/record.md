@@ -23,6 +23,7 @@ Rights evidence is recorded per case in the manifest. Loper Bright, the Census r
 guide are marked tentative: the first two rest on federal authorship without a publisher statement,
 and USCIS states some site images are licensed rather than public domain.
 
-None of the seven has been converted. Each is excluded from the corpus gate in
-`corpus/regressions.json` until a review-point file, content contract and baseline exist. Still
-missing from #30: vertical CJK, Hebrew and Devanagari sources with clear rights.
+This record covers selection and download identity only. Each case now has its own baseline
+record under `measurements/<case>/`, review targets in `corpus/<case>-review.json` and a reviewed
+content contract in the corpus gate; defects found are tracked in #36–#43. Still missing from
+#30: vertical CJK, Hebrew and Devanagari sources with clear rights.

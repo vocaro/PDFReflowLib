@@ -1,0 +1,68 @@
+[
+  {
+    "seconds": 0.0024645000012242235,
+    "progress": "starting",
+    "residentBytes": 131072,
+    "physicalFootprintBytes": 180344
+  },
+  {
+    "seconds": 0.10315354200065485,
+    "progress": "6% extracting page 1/12",
+    "residentBytes": 32899072,
+    "physicalFootprintBytes": 17187584
+  },
+  {
+    "seconds": 0.20841412499976286,
+    "progress": "20% extracting page 4/12",
+    "residentBytes": 35848192,
+    "physicalFootprintBytes": 20054808
+  },
+  {
+    "seconds": 0.3136393750010029,
+    "progress": "43% extracting page 9/12",
+    "residentBytes": 38420480,
+    "physicalFootprintBytes": 22594328
+  },
+  {
+    "seconds": 0.41471937500136846,
+    "progress": "57% extracting page 12/12",
+    "residentBytes": 63389696,
+    "physicalFootprintBytes": 47334216
+  },
+  {
+    "seconds": 0.5198178749997169,
+    "progress": "61% reconstructing page 2/12",
+    "residentBytes": 66650112,
+    "physicalFootprintBytes": 48989000
+  },
+  {
+    "seconds": 0.6248854580007901,
+    "progress": "65% reconstructing page 4/12",
+    "residentBytes": 59736064,
+    "physicalFootprintBytes": 39174984
+  },
+  {
+    "seconds": 0.7299512080007844,
+    "progress": "69% reconstructing page 6/12",
+    "residentBytes": 86835200,
+    "physicalFootprintBytes": 44335968
+  },
+  {
+    "seconds": 0.8350351669996599,
+    "progress": "73% reconstructing page 8/12",
+    "residentBytes": 117800960,
+    "physicalFootprintBytes": 33948560
+  },
+  {
+    "seconds": 0.9401141250000364,
+    "progress": "75% reconstructing page 9/12",
+    "residentBytes": 144900096,
+    "physicalFootprintBytes": 30196648
+  },
+  {
+    "seconds": 1.045186332999947,
+    "progress": "94% writing",
+    "residentBytes": 164462592,
+    "physicalFootprintBytes": 31392704
+  }
+]

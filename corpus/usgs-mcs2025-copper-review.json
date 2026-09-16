@@ -1,0 +1,72 @@
+{
+  "case": "usgs-mcs2025-copper",
+  "pageNumbering": "Physical PDF pages, one-based; page 1 is printed 64 (physical page 68 of mcs2025.pdf)",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 1,
+      "target": "Salient Statistics table and surrounding sections",
+      "acceptance": "Reflow the Domestic Production, Recycling, Import Sources and Tariff prose. Preserve the borderless table with its indentation-only row groups, year columns and estimate markers, as cells or a readable image with a warning."
+    },
+    {
+      "page": 2,
+      "target": "World Mine and Refinery Production and table notes",
+      "acceptance": "Reflow the Events, World Resources and Substitutes prose. Keep spanning Mine/Refinery production headers over their year pairs and in-cell superscripts; keep table notes 1-8 in order and associated with their markers."
+    }
+  ],
+  "tableReference": {
+    "page": 1,
+    "title": "Salient Statistics—United States",
+    "columns": [
+      "2020",
+      "2021",
+      "2022",
+      "2023",
+      "2024e"
+    ],
+    "rows": [
+      [
+        "Production: Mine, recoverable",
+        "1,200",
+        "1,230",
+        "1,230",
+        "1,130",
+        "1,100"
+      ],
+      [
+        "Refinery: Primary (from ore)",
+        "872",
+        "922",
+        "930",
+        "843",
+        "850"
+      ],
+      [
+        "Copper recovered from old (post-consumer) scrap",
+        "161",
+        "169",
+        "152",
+        "e150",
+        "150"
+      ],
+      [
+        "Employment, mine and plant, number",
+        "11,000",
+        "11,400",
+        "12,000",
+        "12,600",
+        "13,000"
+      ],
+      [
+        "Net import reliance as a percentage of apparent consumption",
+        "38",
+        "44",
+        "41",
+        "41",
+        "45"
+      ]
+    ],
+    "scope": "Selected rows transcribed from the rendered source for future cell-association checks; not a complete table reference."
+  },
+  "scope": "Manual targets. Current converter rasterizes prose beside both tables (#36)."
+}

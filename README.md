@@ -139,7 +139,7 @@ the internal seams and extension points.
 ## Development and regression tests
 
 For changes to extraction, layout or rendering, run `scripts/check-all.sh --corpus` before
-pushing. This opt-in lane converts eight complete cached documents and checks reviewed content,
+pushing. This opt-in lane converts 15 complete cached documents and checks reviewed content,
 EPUB conformance, progress and resource budgets. Missing sources fail with acquisition instructions;
 there are no automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic lane.
 See [regression testing](doc/regression-testing.md) for coverage, limitations and adding a case.
@@ -211,8 +211,10 @@ interchange format; the supported public output remains EPUB 3. See
 (FAA-H-8083-25C), Tyler Wallace's 489-page Beginning and Intermediate Algebra, and the
 920-page scanned Warren Commission report, the 585-page digital 9/11 Commission report, and
 135-page The Fed Explained, plus the 10-page illustrated Dietary Guidelines for Americans
-(2025–2030), the 1,834-page Fifth National Climate Assessment, the 56-page Our Flag booklet, the 42-page CDC Zombie Pandemic comic, and the 312-page
-Blue Book scanned-table report,
+(2025–2030), the 1,834-page Fifth National Climate Assessment, the 56-page Our Flag booklet, the 42-page CDC Zombie Pandemic comic, the 312-page
+Blue Book scanned-table report, and seven smaller sources for borderless tables, page-bottom
+footnotes, damaged text encodings, Arabic and Simplified Chinese layouts, and scanned and
+born-digital two-column academic papers,
 by exact byte identity.
 Fetch originals with
 `python3 tools/fetch_corpus.py --all`; verified copies live in gitignored `corpus/cache/`.

@@ -1,0 +1,23 @@
+{
+  "case": "nbs-jres-geltman-1977",
+  "pageNumbering": "Physical PDF pages, one-based; page 1 is printed 173",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 1,
+      "target": "Title block, abstract and two-column introduction",
+      "acceptance": "Reflow title, author, abstract and both columns in order; keep footnotes *, ** and 1 separate from body text; preserve display equations 1-4 as readable crops. Warn on the Paper Capture OCR layer."
+    },
+    {
+      "page": 2,
+      "target": "Spanning figure and equations 5-11",
+      "acceptance": "Preserve Figure 1 with its caption; keep numbered equations with their numbers; left column before right column."
+    },
+    {
+      "page": 7,
+      "target": "Closing prose and two-column references",
+      "acceptance": "Reflow the closing paragraph as text; References is a heading; entries [1]-[33] each separate and in order across both columns; OCR noise flagged."
+    }
+  ],
+  "scope": "Manual targets. Current converter falls back to page images on pages 1-6 (#37) and rasterizes page-7 prose (#36)."
+}

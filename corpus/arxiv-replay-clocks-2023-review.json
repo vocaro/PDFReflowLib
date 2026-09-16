@@ -1,0 +1,23 @@
+{
+  "case": "arxiv-replay-clocks-2023",
+  "pageNumbering": "Physical PDF pages, one-based",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 1,
+      "target": "Title, authors, abstract and introduction",
+      "acceptance": "Title is the only top heading; authors and affiliations stay paired; the rotated arXiv stamp is not a heading; ABSTRACT and 1 INTRODUCTION are headings; left column before right; spaces after math variables retained."
+    },
+    {
+      "page": 3,
+      "target": "Algorithm 1, Figure 1 and sections 3.1-4",
+      "acceptance": "Algorithm 1 kept whole with its caption; Figure 1 and caption preserved; 3.1, 3.2 and 4 headings separate from body; requirements 1-3 complete."
+    },
+    {
+      "page": 4,
+      "target": "Algorithms 2-4 and receive-event prose",
+      "acceptance": "Each algorithm listing either reflows line-by-line with numbering or is one preserved region; no lines lost between text and crops; two-column order retained."
+    }
+  ],
+  "scope": "Manual targets. Current converter mis-ranks front matter and splits listings (#43, #36)."
+}

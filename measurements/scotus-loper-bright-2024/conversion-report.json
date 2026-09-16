@@ -1,0 +1,914 @@
+{
+  "imageCount" : 0,
+  "outputURL" : "file:\/\/\/Users\/trevorharmon\/Development\/PDFReflowLib\/.build\/corpus-30-final\/scotus-loper-bright-2024\/scotus-loper-bright-2024.epub",
+  "pageCount" : 114,
+  "recognizedPageCount" : 0,
+  "reflowedPageCount" : 114,
+  "warnings" : [
+    {
+      "code" : "structureFallback",
+      "message" : "Some PDF structure tags are invalid or outside supported paragraph\/heading roles; spatial reconstruction remains in use for that content.",
+      "page" : 1
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 1
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 2
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 3
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 4
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 5
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 6
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 7
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 8
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 9
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 10
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 11
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 12
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 13
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 14
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 15
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 16
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 17
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 18
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 19
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 20
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 21
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 22
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 23
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 24
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 25
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 26
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 27
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 28
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 29
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 30
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 31
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 32
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 33
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 34
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 35
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 36
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 37
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 38
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 39
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 40
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 41
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 42
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 43
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 44
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 45
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 46
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 47
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 48
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 49
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 50
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 51
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 52
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 53
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 54
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 55
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 56
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 57
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 58
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 59
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 60
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 61
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 62
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 63
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 64
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 65
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 66
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 67
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 68
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 69
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 70
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 71
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 72
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 73
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 74
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 75
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 76
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 77
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 78
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 79
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 80
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 81
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 82
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 83
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 84
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 85
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 86
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 87
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 88
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 89
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 90
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 91
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 92
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 93
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 94
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 95
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 96
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 97
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 98
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 99
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 100
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 101
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 102
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 103
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 104
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 105
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 106
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 107
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 108
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 109
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 110
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 111
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 112
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 113
+    },
+    {
+      "code" : "structureFallback",
+      "message" : "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.",
+      "page" : 114
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 3
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 10
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 11
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 12
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 14
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 17
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 21
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 22
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 23
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 25
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 27
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 29
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 35
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 36
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 40
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 41
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 42
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 43
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 45
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 46
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 47
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 49
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 50
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 51
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 52
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 53
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 54
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 56
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 58
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 60
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 62
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 64
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 65
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 66
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 67
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 68
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 70
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 71
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 72
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 73
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 76
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 77
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 78
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 79
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 83
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 86
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 89
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 90
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 91
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 92
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 93
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 94
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 95
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 96
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 98
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 100
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 102
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 103
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 105
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 106
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 107
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 108
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 109
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 111
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 112
+    },
+    {
+      "code" : "uncertainHyphen",
+      "message" : "An ambiguous line-ending hyphen is retained. Review source word joins.",
+      "page" : 113
+    }
+  ]
+}

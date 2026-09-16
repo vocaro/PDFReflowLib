@@ -70,6 +70,17 @@ JSON representations. Algebra source rasters and EPUB comparisons in
 and/or arranged review derivatives. These derivatives retain CC BY 3.0 attribution and are not
 relicensed under MIT. They are not resources of the shipped library target.
 
+## Replay Clocks review derivatives
+
+*Replay Clocks* by Ishaan Lagwankar and Sandeep S Kulkarni, arXiv:2311.07842v1 (2023).
+[Source](https://arxiv.org/abs/2311.07842v1),
+[Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
+
+`measurements/arxiv-replay-clocks-2023/source-page-1.png` is a rendered source page, and
+`source-inspection.json` and `selected-page-xhtml.json` there contain extracted and converted
+text from pages 1, 3 and 4. These derivatives retain CC BY 4.0 attribution, are not relicensed
+under MIT and are not resources of the shipped library target.
+
 ## Government-document development fixtures
 
 The `faa-{91,363…365,437…439,511}`, `fed-{13,32,45,46,54,75,77,103,109,123}`, `flag-{27,31}`, `911-{19…26,33,50,51,65…71,451,471…476,579…585}`, `cdc-5`, `dga-1`, `warren-50`, `warren-910`, `blue-5`, `blue-12` and `noaa-{33,80,139,1619}` layout JSONs under the test fixtures
@@ -80,6 +91,13 @@ in `measurements/three-fidelity-fixes/`, `measurements/fractions-and-invisible-t
 `measurements/raster-dpi/` retain
 the same provenance. These are development and
 review resources, separate from the shipped library target; see `corpus/manifest.json`.
+
+Review rasters, Poppler text inspections and selected converted XHTML under
+`measurements/{usgs-mcs2025-copper,scotus-loper-bright-2024,census-rrs2002-01,irs-p596-zhs-2025,nbs-jres-geltman-1977,uscis-m618-arabic-2015}/`
+derive from U.S. government works (USGS, the Supreme Court, the Census Bureau, the IRS, NBS/NIST
+and USCIS). Their rights evidence is recorded per case in `corpus/manifest.json`; USCIS states
+some guide images are licensed, so no USCIS rasters are committed. These review resources are
+not relicensed under MIT.
 
 The four `map-region-*.png` review crops in `measurements/report-header-qualification/` come
 from the 9/11 report's physical pages 33/50/51. Page 33 credits its graphics to ESRI. These

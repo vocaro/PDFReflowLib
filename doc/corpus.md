@@ -34,19 +34,19 @@ work offline. Tests and conversion never fetch sources automatically.
 | `gpo-our-flag-2003` | 56 | Structure-tree inconsistencies, flag illustrations, drop capitals, one visible table | 192 MiB |
 | `cdc-zombie-pandemic-2011` | 42 | Comic artwork, noisy inherited text, image-only dialogue, panel order | 512 MiB |
 | `cia-blue-book-14-1955` | 312 | Scanned statistical tables, inherited OCR, negative warning/refusal contract | 512 MiB |
-| `nbs-jres-geltman-1977` | 7 | Scanned two-column academic paper, footnotes, OCR-damaged equations | Unset: candidate (#30) |
-| `arxiv-replay-clocks-2023` | 12 | Born-digital ACM two-column paper, pseudocode, figures, math | Unset: candidate (#30) |
-| `usgs-mcs2025-copper` | 2 | Borderless tables, indentation-only row groups, spanning headers | Unset: candidate (#30) |
-| `scotus-loper-bright-2024` | 114 | Page-bottom footnotes continuing across pages, dash separators | Unset: candidate (#30) |
-| `census-rrs2002-01` | 20 | Born-digital text layer with no Unicode mapping (shifted letters) | Unset: candidate (#30) |
-| `uscis-m618-arabic-2015` | 116 | Right-to-left Arabic with embedded Latin and numbers | Unset: candidate (#30) |
-| `irs-p596-zhs-2025` | 36 | Simplified Chinese mixed with Latin identifiers and amounts | Unset: candidate (#30) |
+| `nbs-jres-geltman-1977` | 7 | Scanned two-column academic paper, footnotes, OCR-damaged equations | 512 MiB |
+| `arxiv-replay-clocks-2023` | 12 | Born-digital ACM two-column paper, pseudocode, figures, math | 256 MiB |
+| `usgs-mcs2025-copper` | 2 | Borderless tables, indentation-only row groups, spanning headers | 128 MiB |
+| `scotus-loper-bright-2024` | 114 | Page-bottom footnotes continuing across pages, dash separators | 128 MiB |
+| `census-rrs2002-01` | 20 | Born-digital text layer with no Unicode mapping (shifted letters) | 128 MiB |
+| `uscis-m618-arabic-2015` | 116 | Right-to-left Arabic with embedded Latin and numbers | 256 MiB |
+| `irs-p596-zhs-2025` | 36 | Simplified Chinese mixed with Latin identifiers and amounts | 256 MiB |
 
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
 before conversion and records progress, timing, memory, output structure and optional EPUBCheck.
-Candidate (#30) cases are pinned and fetchable but not yet converted or gated; see
-[their record](../measurements/corpus-candidates-30/record.md).
+The seven [#30 cases](#issue-30-coverage-expansion) are gated with reviewed contracts; their
+selection and download identities are in [their record](../measurements/corpus-candidates-30/record.md).
 
 ## Comparing conversion runs
 
@@ -397,3 +397,36 @@ it does not assert that an individual cell is wrong.
 [Review references](../corpus/cia-blue-book-14-1955-review.json) include the typewritten table's
 printed rows and handwritten-sheet review targets. [Issue #19](https://github.com/vocaro/PDFReflowLib/issues/19)
 tracks the warning/refusal behavior; passing the signal contract will not establish correct cells.
+
+
+## Issue #30 coverage expansion
+
+Seven small public-domain or CC BY sources add layouts the earlier corpus lacked. All fetch
+directly and verify by byte count and SHA-256. Each has a baseline record, review targets and a
+reviewed content contract that checks only source-verified output; every one also exposes
+defects tracked as separate issues rather than blessed as golden output.
+
+```sh
+python3 tools/fetch_corpus.py --case usgs-mcs2025-copper   # or any case below
+swift build -c release --scratch-path .build/corpus-cli
+python3 tools/run_corpus_regressions.py --converter .build/corpus-cli/out/Products/Release/pdf-reflow \
+  --epubcheck /opt/homebrew/bin/epubcheck --output /tmp/corpus-30 \
+  --case usgs-mcs2025-copper --case scotus-loper-bright-2024 --case census-rrs2002-01 \
+  --case uscis-m618-arabic-2015 --case irs-p596-zhs-2025 --case nbs-jres-geltman-1977 \
+  --case arxiv-replay-clocks-2023
+```
+
+| Case | Gap | Baseline finding | Tracking |
+| --- | --- | --- | --- |
+| [`usgs-mcs2025-copper`](../measurements/usgs-mcs2025-copper/record.md) | Borderless tables | Tables preserved as readable crops, but adjacent prose is absorbed into them | [#36](https://github.com/vocaro/PDFReflowLib/issues/36) |
+| [`scotus-loper-bright-2024`](../measurements/scotus-loper-bright-2024/record.md) | Page-bottom footnotes | Text complete; footnotes merge into body paragraphs; 75 citation-leading lines become preformatted | [#40](https://github.com/vocaro/PDFReflowLib/issues/40), [#39](https://github.com/vocaro/PDFReflowLib/issues/39) |
+| [`census-rrs2002-01`](../measurements/census-rrs2002-01/record.md) | Damaged encoding | Shifted-letter body text ships as prose with no quality warning | [#38](https://github.com/vocaro/PDFReflowLib/issues/38) |
+| [`uscis-m618-arabic-2015`](../measurements/uscis-m618-arabic-2015/record.md) | Right-to-left script | Arabic words correct; mixed-direction runs fragment and reverse | [#41](https://github.com/vocaro/PDFReflowLib/issues/41) |
+| [`irs-p596-zhs-2025`](../measurements/irs-p596-zhs-2025/record.md) | CJK script | Order and amounts correct; spaces inserted inside CJK; some columns rasterized | [#42](https://github.com/vocaro/PDFReflowLib/issues/42), [#36](https://github.com/vocaro/PDFReflowLib/issues/36) |
+| [`nbs-jres-geltman-1977`](../measurements/nbs-jres-geltman-1977/record.md) | Scanned two-column paper | Inline images force page fallback on pages 1–6 | [#37](https://github.com/vocaro/PDFReflowLib/issues/37) |
+| [`arxiv-replay-clocks-2023`](../measurements/arxiv-replay-clocks-2023/record.md) | Born-digital ACM paper | Prose order correct; front-matter headings, section labels and math spacing wrong | [#43](https://github.com/vocaro/PDFReflowLib/issues/43) |
+
+The NBS paper stands in for an owner-supplied, ACM-copyrighted Lamport CACM article in the same
+two-column scanned format. Replay Clocks is CC BY 4.0: retain the attribution recorded in the
+manifest. USCIS states some guide images are licensed, so that case commits no page rasters.
+Vertical CJK, Hebrew and Devanagari layouts remain uncovered for lack of clearly licensed sources.

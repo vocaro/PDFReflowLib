@@ -1,0 +1,23 @@
+{
+  "case": "irs-p596-zhs-2025",
+  "pageNumbering": "Physical PDF pages, one-based; printed folios match",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 1,
+      "target": "Cover title and contents",
+      "acceptance": "低收入家庭福利优惠 (EIC) is one heading; the contents list and 未来进展 paragraph reflow as text."
+    },
+    {
+      "page": 3,
+      "target": "Online help and 提醒事项 notes",
+      "acceptance": "Both text columns reflow as prose with links and bullets; no column-sized image crops."
+    },
+    {
+      "page": 16,
+      "target": "Rules 14-15 and earned-income limits",
+      "acceptance": "No spaces inserted between CJK characters; multi-line rule headings stay whole; left column before right; the four limits keep their amounts."
+    }
+  ],
+  "scope": "Manual targets. Current converter rasterizes pages 1/3 prose (#36) and inserts CJK spaces and heading splits (#42)."
+}

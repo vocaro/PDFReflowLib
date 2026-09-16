@@ -11,7 +11,7 @@ A valid EPUB can still contain incorrect text, wrong reading order or unreadable
   pixels, including crop origins, rotations, annotations and resource ceilings. Preserved-region
   tests also inspect fraction bars, raised exponents and all six cells of a ruled table in actual
   EPUB images at 72/144 DPI, with surrounding-prose and code controls.
-- `scripts/check-all.sh --corpus`: the same checks plus eight complete PDF conversions,
+- `scripts/check-all.sh --corpus`: the same checks plus 15 complete PDF conversions,
   sequentially, with EPUBCheck, monotonic progress, pinned source identities, memory budgets
   and reviewed page-specific content contracts. All selected cached sources and EPUBCheck
   are required; missing data fails explicitly. The evaluator does not download anything.
@@ -50,10 +50,12 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 186 targeted checks on 48 reviewed pages
-across eight books: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
-comic and Blue Book. All source-page anchors must also remain complete and ordered, and semantic
-text must contain no image attachment placeholders.
+[corpus/regressions.json](../corpus/regressions.json) has 341 targeted checks on 80 reviewed pages
+across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
+comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
+unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
+the NBS and Replay Clocks academic papers). All source-page anchors must also remain complete and
+ordered, and semantic text must contain no image attachment placeholders.
 
 The checks preserve selected correct words, paragraph semantics and continuity, paragraph/list order, license attribution, image
 presence and explicit transcription/fallback warnings. They read the actual EPUB spine, track

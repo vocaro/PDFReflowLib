@@ -1,0 +1,11 @@
+{
+  "case": "uscis-m618-arabic-2015",
+  "passed": true,
+  "reviewPages": [
+    5,
+    21
+  ],
+  "contentChecks": 9,
+  "errors": [],
+  "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+}

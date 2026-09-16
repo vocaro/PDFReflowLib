@@ -1,0 +1,105 @@
+{
+  "provenanceSchemaVersion": 1,
+  "runID": "b4ac1679-daca-4ca8-b383-64fa59c85a3d",
+  "case": {
+    "role": "development",
+    "identity": {
+      "suppliedBy": "publisher-download"
+    },
+    "id": "usgs-mcs2025-copper",
+    "title": "Mineral Commodity Summaries 2025: Copper",
+    "author": "Daniel M. Flanagan, U.S. Geological Survey",
+    "publicationYear": 2025,
+    "url": "https://pubs.usgs.gov/publication/mcs2025",
+    "publisherPageURL": "https://pubs.usgs.gov/publication/mcs2025",
+    "downloadURL": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-copper.pdf",
+    "filename": "mcs2025-copper.pdf",
+    "bytes": 746302,
+    "sha256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
+    "pages": 2,
+    "provenance": "USGS per-commodity extract of Mineral Commodity Summaries 2025 (printed pages 64-65; physical pages 68-69 of the 216-page mcs2025.pdf). USGS revises the report in place, so bytes are pinned.",
+    "rightsBasis": "USGS copyright policy: USGS-authored or produced data and information are considered to be in the U.S. Public Domain; non-USGS materials may be copyrighted. Not relicensed under MIT.",
+    "rightsClearance": {
+      "status": "publisher-declared",
+      "scope": "USGS public-domain policy; no new owner confirmation or shipped-catalog admission."
+    },
+    "coverage": [
+      "borderless tables with no cell or column rules",
+      "row groups expressed only by indentation",
+      "right-aligned numeric columns",
+      "spanning column headers over year pairs",
+      "superscript estimate and note markers inside cells",
+      "page-bottom table notes"
+    ],
+    "reviewPages": [
+      1,
+      2
+    ],
+    "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
+    "reviewStatus": "Converted with EPUBCheck, progress and 128 MiB Mac RSS gate. Contract protects unit note, author line, COMEX prose, preserved tables and ordered table-note superscripts. Prose absorbed into table crops (#36) is not qualified.",
+    "knownFidelityIssues": [
+      {
+        "page": 1,
+        "issue": "Domestic Production and Use, Recycling, Import Sources and Tariff prose becomes preserved-region crops beside the statistics table; 81% of source words are absent from EPUB text.",
+        "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/36"
+      },
+      {
+        "page": 2,
+        "issue": "Events, Trends and Issues, World Resources and Substitutes prose becomes preserved-region crops.",
+        "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/36"
+      }
+    ],
+    "baselineStatus": "Baseline and reviewed contract recorded in measurements/usgs-mcs2025-copper/record.md; included in the corpus gate.",
+    "memoryBudget": {
+      "maxPeakRSSMiB": 128,
+      "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+    }
+  },
+  "converterSHA256": "2b2bd4ffb98192b64f47b34cd6524e13877d8625f4b37924e167597566a5bb3f",
+  "system": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "systemBuild": "Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:40 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6050",
+  "machine": "arm64",
+  "executionContext": "host-terminal",
+  "options": "library defaults",
+  "qualifiedForFidelity": false,
+  "conversionExitCode": 0,
+  "sampledPeakPhysicalFootprintBytes": 12485328,
+  "conversionSeconds": 0.21195020800041675,
+  "converterPeakRSSBytes": 32440320,
+  "converterCPUSeconds": 0.161751,
+  "measurementScope": "One process run; RSS excludes separate Apple services. Timing excludes validation. Not a latency distribution or physical mobile-device measurement.",
+  "progressCheck": {
+    "passed": true,
+    "events": 27,
+    "scope": "CLI work fraction, page bounds and completion; not elapsed-time prediction"
+  },
+  "conversionReport": {
+    "imageCount": 12,
+    "pageCount": 2,
+    "recognizedPageCount": 0,
+    "reflowedPageCount": 2,
+    "warnings": [
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 1
+      },
+      {
+        "code": "imageRegion",
+        "message": "Graphical regions retain source appearance as images; their internal text does not reflow.",
+        "page": 2
+      }
+    ]
+  },
+  "outputBytes": 896074,
+  "outputSHA256": "0e736b1c6526a026be93ebe0880d89fc131a0358ab27ee337569a0b18abf4412",
+  "structuralCheck": "passed",
+  "outputTextCharacters": 2226,
+  "epubcheckExitCode": 0,
+  "memoryGate": {
+    "limitBytes": 134217728,
+    "passed": true,
+    "metric": "converter process peak RSS from wait/rusage"
+  },
+  "runPassed": true
+}

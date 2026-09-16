@@ -1,0 +1,11 @@
+{
+  "case": "usgs-mcs2025-copper",
+  "passed": true,
+  "reviewPages": [
+    1,
+    2
+  ],
+  "contentChecks": 11,
+  "errors": [],
+  "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+}

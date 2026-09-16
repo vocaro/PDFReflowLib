@@ -1,0 +1,32 @@
+[
+  {
+    "seconds": 0.002307332999407663,
+    "progress": "starting",
+    "residentBytes": 147456,
+    "physicalFootprintBytes": 196728
+  },
+  {
+    "seconds": 0.1076004999995348,
+    "progress": "18% extracting page 6/20",
+    "residentBytes": 28426240,
+    "physicalFootprintBytes": 13157048
+  },
+  {
+    "seconds": 0.2086658329990314,
+    "progress": "46% extracting page 16/20",
+    "residentBytes": 30162944,
+    "physicalFootprintBytes": 14893752
+  },
+  {
+    "seconds": 0.31389300000046205,
+    "progress": "67% reconstructing page 8/20",
+    "residentBytes": 37765120,
+    "physicalFootprintBytes": 22070040
+  },
+  {
+    "seconds": 0.41897333300039463,
+    "progress": "92% writing",
+    "residentBytes": 37371904,
+    "physicalFootprintBytes": 20775728
+  }
+]

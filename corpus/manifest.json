@@ -736,10 +736,24 @@
         2
       ],
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
-      "reviewStatus": "Candidate added for #30 from inspected source pages only. Not yet converted: no review-point file, regression contract, memory ceiling or baseline measurement.",
-      "knownFidelityIssues": [],
-      "baselineStatus": "No baseline; excluded from the corpus gate until a reviewed contract exists.",
-      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/30"
+      "reviewStatus": "Converted with EPUBCheck, progress and 512 MiB Mac RSS gate. Contract protects explicit page-image fallback on pages 1-2 and the unverified-text warning on page 7. Scanned two-column reflow is unqualified (#37, #36).",
+      "knownFidelityIssues": [
+        {
+          "page": 1,
+          "issue": "Inline images force unsupportedGraphics and whole-page fallback on pages 1-6; no text reflows.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/37"
+        },
+        {
+          "page": 7,
+          "issue": "Closing left-column prose becomes a preserved-region crop while its last line reflows separately.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/36"
+        }
+      ],
+      "baselineStatus": "Baseline and reviewed contract recorded in measurements/nbs-jres-geltman-1977/record.md; included in the corpus gate.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 512,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+      }
     },
     {
       "role": "development",
@@ -781,10 +795,24 @@
         4
       ],
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
-      "reviewStatus": "Candidate added for #30 from inspected source pages only. Not yet converted: no review-point file, regression contract, memory ceiling or baseline measurement.",
-      "knownFidelityIssues": [],
-      "baselineStatus": "No baseline; excluded from the corpus gate until a reviewed contract exists.",
-      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/30"
+      "reviewStatus": "Converted with EPUBCheck, progress and 256 MiB Mac RSS gate. Contract protects two-column prose, section and algorithm-caption order on pages 1, 3 and 4. Front-matter semantics and algorithm listings are unqualified (#43, #36).",
+      "knownFidelityIssues": [
+        {
+          "page": 1,
+          "issue": "Rotated arXiv stamp and author names become headings; ABSTRACT and INTRODUCTION labels merge into paragraphs; spaces after math glyphs are dropped.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/43"
+        },
+        {
+          "page": 4,
+          "issue": "Algorithm listings split between reflowed lines, flattened paragraphs and crops.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/43"
+        }
+      ],
+      "baselineStatus": "Baseline and reviewed contract recorded in measurements/arxiv-replay-clocks-2023/record.md; included in the corpus gate.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 256,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+      }
     },
     {
       "role": "development",
@@ -821,10 +849,24 @@
         2
       ],
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
-      "reviewStatus": "Candidate added for #30 from inspected source pages only. Not yet converted: no review-point file, regression contract, memory ceiling or baseline measurement.",
-      "knownFidelityIssues": [],
-      "baselineStatus": "No baseline; excluded from the corpus gate until a reviewed contract exists.",
-      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/30"
+      "reviewStatus": "Converted with EPUBCheck, progress and 128 MiB Mac RSS gate. Contract protects unit note, author line, COMEX prose, preserved tables and ordered table-note superscripts. Prose absorbed into table crops (#36) is not qualified.",
+      "knownFidelityIssues": [
+        {
+          "page": 1,
+          "issue": "Domestic Production and Use, Recycling, Import Sources and Tariff prose becomes preserved-region crops beside the statistics table; 81% of source words are absent from EPUB text.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/36"
+        },
+        {
+          "page": 2,
+          "issue": "Events, Trends and Issues, World Resources and Substitutes prose becomes preserved-region crops.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/36"
+        }
+      ],
+      "baselineStatus": "Baseline and reviewed contract recorded in measurements/usgs-mcs2025-copper/record.md; included in the corpus gate.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 128,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+      }
     },
     {
       "role": "development",
@@ -865,10 +907,24 @@
         98
       ],
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
-      "reviewStatus": "Candidate added for #30 from inspected source pages only. Not yet converted: no review-point file, regression contract, memory ceiling or baseline measurement.",
-      "knownFidelityIssues": [],
-      "baselineStatus": "No baseline; excluded from the corpus gate until a reviewed contract exists.",
-      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/30"
+      "reviewStatus": "Converted with EPUBCheck, progress and 128 MiB Mac RSS gate. Contract protects footnote text and markers, including the page 97-98 continuation, in source order. Footnote structure (#40) and citation-line paragraphing (#39) are unqualified.",
+      "knownFidelityIssues": [
+        {
+          "page": 60,
+          "issue": "Citation-leading continuation lines (U. S., v., F., years) become preformatted list fragments; 75 occur in the opinion.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/39"
+        },
+        {
+          "page": 97,
+          "issue": "Page-bottom footnotes merge into body paragraphs with the dash separator; the footnote continued onto page 98 is detached from its start.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/40"
+        }
+      ],
+      "baselineStatus": "Baseline and reviewed contract recorded in measurements/scotus-loper-bright-2024/record.md; included in the corpus gate.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 128,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+      }
     },
     {
       "role": "development",
@@ -904,10 +960,19 @@
         3
       ],
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
-      "reviewStatus": "Candidate added for #30 from inspected source pages only. Not yet converted: no review-point file, regression contract, memory ceiling or baseline measurement.",
-      "knownFidelityIssues": [],
-      "baselineStatus": "No baseline; excluded from the corpus gate until a reviewed contract exists.",
-      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/30"
+      "reviewStatus": "Converted with EPUBCheck, progress and 128 MiB Mac RSS gate. Contract protects only the clean Word cover; the unmapped LaTeX body text ships unflagged (#38).",
+      "knownFidelityIssues": [
+        {
+          "page": 3,
+          "issue": "Text layer without ToUnicode extracts as shifted letters (Two data files were used. becomes Wzr gdwd ohv zhuh xvhg1) and ships as prose with no quality warning; pages 2-20 are affected.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/38"
+        }
+      ],
+      "baselineStatus": "Baseline and reviewed contract recorded in measurements/census-rrs2002-01/record.md; included in the corpus gate.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 128,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+      }
     },
     {
       "role": "development",
@@ -944,10 +1009,19 @@
         21
       ],
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
-      "reviewStatus": "Candidate added for #30 from inspected source pages only. Not yet converted: no review-point file, regression contract, memory ceiling or baseline measurement.",
-      "knownFidelityIssues": [],
-      "baselineStatus": "No baseline; excluded from the corpus gate until a reviewed contract exists.",
-      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/30"
+      "reviewStatus": "Converted with EPUBCheck, progress and 256 MiB Mac RSS gate. Contract protects the Arabic contents heading and entry order and page-21 Arabic text with embedded English terms. Bidirectional ordering is unqualified (#41).",
+      "knownFidelityIssues": [
+        {
+          "page": 21,
+          "issue": "Right-to-left paragraphs with embedded numbers split into visual-line fragments; I-551 becomes 551-I, parentheses mirror and the phone number reverses.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/41"
+        }
+      ],
+      "baselineStatus": "Baseline and reviewed contract recorded in measurements/uscis-m618-arabic-2015/record.md; included in the corpus gate.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 256,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+      }
     },
     {
       "role": "development",
@@ -984,10 +1058,24 @@
         16
       ],
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
-      "reviewStatus": "Candidate added for #30 from inspected source pages only. Not yet converted: no review-point file, regression contract, memory ceiling or baseline measurement.",
-      "knownFidelityIssues": [],
-      "baselineStatus": "No baseline; excluded from the corpus gate until a reviewed contract exists.",
-      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/30"
+      "reviewStatus": "Converted with EPUBCheck, progress and 256 MiB Mac RSS gate. Contract protects page-16 CJK prose order and embedded Latin amounts. Rasterized prose (#36) and CJK spacing and heading splits (#42) are unqualified.",
+      "knownFidelityIssues": [
+        {
+          "page": 3,
+          "issue": "Both text columns become preserved-region crops; only the folio reflows. Page 1 contents and prose are affected the same way.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/36"
+        },
+        {
+          "page": 16,
+          "issue": "Spaces inserted inside justified CJK lines and multi-line headings split into separate headings.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/42"
+        }
+      ],
+      "baselineStatus": "Baseline and reviewed contract recorded in measurements/irs-p596-zhs-2025/record.md; included in the corpus gate.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 256,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+      }
     }
   ]
 }

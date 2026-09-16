@@ -1,0 +1,33 @@
+{
+  "case": "scotus-loper-bright-2024",
+  "pageNumbering": "Physical PDF pages, one-based; each opinion restarts printed folios (page 60 is Gorsuch concurrence 13; pages 97-98 are Kagan dissent 16-17)",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 13,
+      "target": "Majority opinion footnote 1 (F/V)",
+      "acceptance": "Footnote 1 separated from body and associated with the marker after Persistence.; the paragraph ending (about 10 to 14 days, as continues on page 14 across the note block."
+    },
+    {
+      "page": 60,
+      "target": "Citation-leading continuation lines and footnote 2",
+      "acceptance": "U. S. 967 line continues its paragraph; footnote 2 separate from that controls.; separator not emitted as prose."
+    },
+    {
+      "page": 61,
+      "target": "Gorsuch footnote 3",
+      "acceptance": "Footnote 3 associated with its marker after elected representatives.; italic case names (Buffington v. McDonough, stare decisis) retained; section letter B is not merged into prose."
+    },
+    {
+      "page": 97,
+      "target": "Kagan footnote 2 start",
+      "acceptance": "Footnote 2 begins a separate note after its marker; running headers not emitted as body text."
+    },
+    {
+      "page": 98,
+      "target": "Continued footnote 2 and footnote 3",
+      "acceptance": "rather than agencies to decide… joins footnote 2 from page 97; footnote 3 separate and after it; body paragraph unaffected."
+    }
+  ],
+  "scope": "Manual targets. Current converter merges footnotes into body text (#40) and splits citation-leading lines (#39)."
+}

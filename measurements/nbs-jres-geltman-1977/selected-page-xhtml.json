@@ -1,0 +1,14 @@
+{
+  "source": "measured baseline EPUB",
+  "outputSHA256": "69ac2efad3dcb9286881874038bcf3f67adf4beedac08fef6f6d72e14cc74b7b",
+  "pages": {
+    "1": {
+      "entry": "EPUB/chapter-1.xhtml",
+      "xhtml": "<span epub:type=\"pagebreak\" role=\"doc-pagebreak\" id=\"page-1\" aria-label=\"1\"/><figure><img src=\"images/image-1.png\" alt=\"Preserved region from page 1\"/><figcaption>Preserved region from page 1</figcaption></figure>\n"
+    },
+    "2": {
+      "entry": "EPUB/chapter-1.xhtml",
+      "xhtml": "<span epub:type=\"pagebreak\" role=\"doc-pagebreak\" id=\"page-2\" aria-label=\"2\"/><figure><img src=\"images/image-2.png\" alt=\"Preserved region from page 2\"/><figcaption>Preserved region from page 2</figcaption></figure>\n"
+    }
+  }
+}

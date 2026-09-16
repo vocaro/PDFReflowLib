@@ -1,0 +1,19 @@
+{
+  "imageCount" : 12,
+  "outputURL" : "file:\/\/\/Users\/trevorharmon\/Development\/PDFReflowLib\/.build\/corpus-30-final\/usgs-mcs2025-copper\/usgs-mcs2025-copper.epub",
+  "pageCount" : 2,
+  "recognizedPageCount" : 0,
+  "reflowedPageCount" : 2,
+  "warnings" : [
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 1
+    },
+    {
+      "code" : "imageRegion",
+      "message" : "Graphical regions retain source appearance as images; their internal text does not reflow.",
+      "page" : 2
+    }
+  ]
+}

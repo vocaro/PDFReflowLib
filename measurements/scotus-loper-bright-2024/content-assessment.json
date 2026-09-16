@@ -1,0 +1,12 @@
+{
+  "case": "scotus-loper-bright-2024",
+  "passed": true,
+  "reviewPages": [
+    60,
+    97,
+    98
+  ],
+  "contentChecks": 15,
+  "errors": [],
+  "scope": "Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification."
+}

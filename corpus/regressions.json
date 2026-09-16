@@ -743,6 +743,245 @@
           ]
         }
       ]
+    },
+    {
+      "id": "usgs-mcs2025-copper",
+      "sourceSHA256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
+      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, preserved statistics and world-production tables, the COMEX paragraph and the ordered superscript table-note markers. Does not bless rasterized prose: the Domestic Production, Recycling, Import Sources, Events and Substitutes paragraphs are currently inside preserved-region images (#36).",
+      "pages": [
+        {
+          "page": 1,
+          "orderedText": [
+            "(Data in thousand metric tons, copper content, unless otherwise specified)",
+            "Prepared by Daniel M. Flanagan"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 2,
+          "text": [
+            "The COMEX copper price reached a record high in May 2024 and was projected to average $4.20 per pound in full year 2024"
+          ],
+          "orderedText": [
+            "Estimated. — Zero.",
+            "Copper converted to refined metal, alloys, and other forms",
+            "Less than ½ unit.",
+            "See Appendix C for resource and reserve definitions",
+            "For Australia, Joint Ore Reserves Committee-compliant"
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "7",
+              "before": "information concerning data sources.",
+              "after": "For Australia, Joint Ore Reserves"
+            }
+          ],
+          "minimumImages": 1
+        }
+      ]
+    },
+    {
+      "id": "scotus-loper-bright-2024",
+      "sourceSHA256": "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e",
+      "basis": "Source pages 60, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Does not bless footnotes merged into body paragraphs with dash separators, retained running headers, or citation-leading lines split into preformatted blocks (#39, #40).",
+      "pages": [
+        {
+          "page": 60,
+          "orderedText": [
+            "Brand X Internet Services, 545",
+            "U. S. 967, 982–983 (2005). And those officials may even dis",
+            "The hard fact is Chevron “did not even bother to cite” the APA",
+            "that controls.",
+            "See also A. Scalia, Judicial Deference to Administrative Interpretations of Law"
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "2",
+              "before": "make[s] for good government.” Ibid.",
+              "after": "But in our democracy unelected judges"
+            }
+          ]
+        },
+        {
+          "page": 97,
+          "orderedText": [
+            "That text, contra the majority, “does not resolve the Chevron question.”",
+            "we respect it”).",
+            "The majority tries to buttress its argument with a stray sentence or two from the APA’s legislative history"
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "2",
+              "before": "we respect it”).",
+              "after": "——————"
+            }
+          ]
+        },
+        {
+          "page": 98,
+          "orderedText": [
+            "Section 706’s references to standards of review in other contexts only further undercut the majority’s argument.",
+            "Vermeule 207.",
+            "rather than agencies to decide in the last analysis.”",
+            "using a deferential standard.",
+            "In a footnote responding to the last two paragraphs, the majority raises the white flag"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "census-rrs2002-01",
+      "sourceSHA256": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
+      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body text layer has no usable Unicode mapping. Does not bless pages 2-20: their shifted-letter text currently ships as prose without a quality warning (#38).",
+      "pages": [
+        {
+          "page": 1,
+          "orderedText": [
+            "RESEARCH REPORT SERIES",
+            "Disclosure Risk Assessment in Perturbative",
+            "Microdata Protection",
+            "William E. Yancey, William E. Winkler, Robert H. Creecy",
+            "Report Issued: January 31, 2002",
+            "This paper reports the results of research and analysis undertaken by Census Bureau staff."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uscis-m618-arabic-2015",
+      "sourceSHA256": "354effbbe38450664959b8832d136cfd158d3c17d1ba777b8b1e4a5b6aa36d54",
+      "basis": "Source pages 5 and 21 visually reviewed. Protects the Arabic contents heading and first entry, and page-21 Arabic prose with embedded English terms and URLs plus the preserved card image. Does not bless reversed form/phone numbers, mirrored parentheses or bidirectional fragments split into separate paragraphs (#41).",
+      "pages": [
+        {
+          "page": 5,
+          "headings": [
+            "جدول المحتويات"
+          ],
+          "orderedText": [
+            "مرحبا بكم في الولايات المتحدة دليل المهاجرين الجدد",
+            "الأقسام والوكالات الفدرالية",
+            "حقوقك ومسؤولياتك كمقيم دائم"
+          ]
+        },
+        {
+          "page": 21,
+          "text": [
+            "[Permanent Resident Card]",
+            "www.uscis.gov/uscis-elis",
+            "[USCIS Forms Line]",
+            "بطاقة الإقامة الدائمة"
+          ],
+          "minimumImages": 1
+        }
+      ]
+    },
+    {
+      "id": "irs-p596-zhs-2025",
+      "sourceSHA256": "7d1cff45bc567f1257ea1aa1e2ce67945aafb12708b2e22901ce6392436590c2",
+      "basis": "Source pages 1 and 16 visually reviewed. Protects the English catalog footer and cover image on page 1, and page-16 left-column examples before the right-column military and chapter-4 prose, the four earned-income limits in source order, and CJK text with embedded Latin identifiers and amounts. Does not bless page 1/3 prose and contents captured inside preserved-region images, the split cover title, or spaces inserted inside justified CJK lines (#36, #42).",
+      "pages": [
+        {
+          "page": 1,
+          "text": [
+            "Publication 596 (zh-s) (2025) Catalog Number 47309A"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 16,
+          "orderedText": [
+            "即使您父母不能申请或不申报 EIC",
+            "示例 1——不需要提交报税表。",
+            "示例 3——提交报税表是为了享受 EIC。",
+            "驻扎在美国境外的军人。",
+            "您必须再满足一条规则才能申报 EIC。",
+            "61,555 美元（已婚联合报税为 68,675 美元）",
+            "57,310 美元（已婚联合报税为 64,430 美元）",
+            "50,434 美元（已婚联合报税为 57,554 美元）",
+            "19,104 美元（已婚联合报税为 26,214 美元）"
+          ],
+          "text": [
+            "请在 （表格 1040 或 1040-SR）第 27b 行勾选“Clergy filing Schedule SE”"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nbs-jres-geltman-1977",
+      "sourceSHA256": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
+      "basis": "Source pages 1, 2 and 7 visually reviewed. Pages 1-6 currently fall back to explicit original-page images; that conservative signal is protected, not reflow quality (#37). Page 7 protects the unverified-text warning over its inherited Paper Capture OCR, the preserved closing prose and the reference heading. Reference transcriptions are noisy and are not asserted.",
+      "pages": [
+        {
+          "page": 1,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "pageImageFallback"
+          ]
+        },
+        {
+          "page": 2,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "pageImageFallback"
+          ]
+        },
+        {
+          "page": 7,
+          "text": [
+            "References"
+          ],
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arxiv-replay-clocks-2023",
+      "sourceSHA256": "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
+      "basis": "Source pages 1, 3 and 4 visually reviewed. Protects abstract, ACM reference and introduction order in the left column before the right-column drone illustration; section 3.1-3.2 order around Figure 1; and algorithm captions with surrounding prose in two-column order. Does not bless the rotated arXiv stamp or author names as headings, merged section labels, Unicode mathematical-italic variables or pseudocode split between text and crops (#36, #43).",
+      "pages": [
+        {
+          "page": 1,
+          "orderedText": [
+            "In this work, we focus on the problem of replay clocks",
+            "ACM Reference Format:",
+            "According to the observer effect, when we try to measure something",
+            "As an illustration, consider two drones"
+          ],
+          "text": [
+            "Ishaan Lagwankar and Sandeep S Kulkarni. 2023. Replay Clocks."
+          ]
+        },
+        {
+          "page": 3,
+          "orderedText": [
+            "As discussed in the introduction, the goal of replay is to order the events",
+            "Algorithm 1 ReplayEvents Operation",
+            "Limitations of Existing Clocks for Replay",
+            "Figure 1: Sample Execution Sequence and Application of Replay Algorithm.",
+            "Requirements of Replay Clock RepCl",
+            "4 ALGORITHM FOR REPLAY CLOCK (REPCL)"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 4,
+          "orderedText": [
+            "The MergeSameEpoch function takes two timestamps",
+            "Algorithm 2 Shift Operation",
+            "Algorithm 3 Send Message",
+            "Receive event.",
+            "Algorithm 4 Receive Message",
+            "5 PROPERTIES OF REPCL"
+          ],
+          "minimumImages": 1
+        }
+      ]
     }
   ],
   "excludedFullConversions": [
@@ -755,41 +994,6 @@
       "id": "noaa-nca5-2023",
       "reason": "Known default image-output ceiling failure. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
       "issue": 5
-    },
-    {
-      "id": "nbs-jres-geltman-1977",
-      "reason": "Issue #30 candidate without a reviewed content contract or baseline yet.",
-      "issue": 30
-    },
-    {
-      "id": "arxiv-replay-clocks-2023",
-      "reason": "Issue #30 candidate without a reviewed content contract or baseline yet.",
-      "issue": 30
-    },
-    {
-      "id": "usgs-mcs2025-copper",
-      "reason": "Issue #30 candidate without a reviewed content contract or baseline yet.",
-      "issue": 30
-    },
-    {
-      "id": "scotus-loper-bright-2024",
-      "reason": "Issue #30 candidate without a reviewed content contract or baseline yet.",
-      "issue": 30
-    },
-    {
-      "id": "census-rrs2002-01",
-      "reason": "Issue #30 candidate without a reviewed content contract or baseline yet.",
-      "issue": 30
-    },
-    {
-      "id": "uscis-m618-arabic-2015",
-      "reason": "Issue #30 candidate without a reviewed content contract or baseline yet.",
-      "issue": 30
-    },
-    {
-      "id": "irs-p596-zhs-2025",
-      "reason": "Issue #30 candidate without a reviewed content contract or baseline yet.",
-      "issue": 30
     }
   ]
 }

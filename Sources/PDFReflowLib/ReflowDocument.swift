@@ -52,7 +52,7 @@ struct ReflowDocument: Sendable, Equatable {
     }
 }
 
-struct TextStyle: OptionSet, Sendable, Equatable {
+struct TextStyle: OptionSet, Sendable, Equatable, Codable {
     let rawValue: UInt8
     static let bold = TextStyle(rawValue: 1 << 0)
     static let italic = TextStyle(rawValue: 1 << 1)
@@ -60,8 +60,8 @@ struct TextStyle: OptionSet, Sendable, Equatable {
     static let `subscript` = TextStyle(rawValue: 1 << 3)
 }
 
-struct InlineText: Sendable, Equatable {
-    enum Element: Sendable, Equatable {
+struct InlineText: Sendable, Equatable, Codable {
+    enum Element: Sendable, Equatable, Codable {
         case text(String, TextStyle)
         /// A source boundary can occur inside a paragraph or even inside a repaired word.
         case sourcePage(Int)

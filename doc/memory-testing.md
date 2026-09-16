@@ -75,6 +75,42 @@ Apple report **FB24783799** tracks the framework-path leak. The
 reproducer, fresh plain/attributed measurements and full allocation diagnostics. The issue remains
 unresolved; a submitted report is not an Apple-confirmed diagnosis.
 
+## Page retention strategies
+
+`measurements/page-retention/run.py` compares the pre-change converter with the current one
+on complete corpus books; during the measurement the candidate also ran under each retention
+strategy through `PDFREFLOW_PAGE_RETENTION`, which no longer exists, so a current build always
+measures the spill store and `--strategy` labels only the run. Every candidate output must be
+byte-identical to the baseline output apart from the package identifier and timestamp, and
+its conversion report must match apart from the output path; `identity.py` performs that
+check and has negative controls. Each run records the evaluator's peak RSS, sampled physical
+footprint, CPU and wall time, plus the peak size of the run's own directory, which includes
+staged images and spilled pages. Explicit image policies keep both binaries on the same
+options regardless of library defaults.
+
+```sh
+git worktree add /tmp/pdfreflow-baseline <pre-change commit>
+(cd /tmp/pdfreflow-baseline && swift build -c release)
+swift build -c release
+python3 measurements/page-retention/run.py \
+    --baseline /tmp/pdfreflow-baseline/.build/release/pdf-reflow \
+    --candidate .build/release/pdf-reflow --output /tmp/retention \
+    --epubcheck /opt/homebrew/bin/epubcheck
+```
+
+The output directory must be new. Output EPUBs are deleted after comparison unless
+`--keep-epubs` is given, because four NOAA-sized archives do not fit comfortably beside the
+build directories. Repeat `--case` or `--strategy` to narrow a run. To re-measure the retired
+strategies, apply `measurements/page-retention/measured-strategies.patch` to the sources it
+names and rebuild.
+
+Package tests cannot run on a physical device because they have no host application, so
+`measurements/page-retention/device/host/measure.sh` builds a minimal host app that links the
+library, stages a corpus source into its bundle, runs the public converter with the strategy
+in its environment, and samples the process footprint on the phone. It needs an Xcode account
+for the signing team, an unlocked device in Developer Mode, and an iOS 27 scene-lifecycle host,
+which the app provides. Results and the retained device logs are in the same record.
+
 ## Output storage budget
 
 `ConversionOptions.maximumOutputBytes` defaults to 512 MiB. It bounds image bytes during

@@ -79,8 +79,9 @@ text (`.automaticIncludingImageBackedText`), language, title, author, recurring 
 removal, raster resolution, and ceilings for input bytes, pages, characters, raster pixels and
 uncompressed output bytes. Default ceilings are 256 MiB input, 2,000 pages, 20 million characters,
 12 million pixels per raster, 180 DPI and 512 MiB output content. These are input/work bounds,
-not a process-memory or wall-clock guarantee: the logical text of the book is retained for
-layout and word-join analysis, while images are written individually to disk. PDF documents are
+not a process-memory or wall-clock guarantee: positioned pages are written to the workspace
+between extraction and reconstruction, the logical text of the book is retained until writing
+finishes, and images are written individually to disk. PDF documents are
 reopened in eight-page windows, synchronous page work drains autoreleased objects, and pages
 that fall back to images skip unused attributed-text decoding. Failures use
 `ConversionError`, `CancellationError`, or the underlying filesystem error.

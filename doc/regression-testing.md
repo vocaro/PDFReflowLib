@@ -360,3 +360,18 @@ is bounded evidence, not proof that all concurrent PDFKit use is safe. The smoke
 only the mitigated native path; raw attributed controls belong to explicit diagnostic runs.
 
 See [measured failures, mitigation and limits](../measurements/pdfkit-concurrency/record.md).
+
+## Page retention between passes
+
+`PageStoreTests.swift` reconstructs every bundled fixture and a mixed recognition book twice
+through the spill store and requires identical blocks, metadata, chapter starts, asset
+identities and bytes, warnings and counts, with only the assets directory left in the
+workspace. It also checks exact reload of a page carrying styles, inline page markers,
+structure, drop-cap geometry, null rectangles and every flag, with the page files and
+directory removed afterwards; that the furniture ledger applied page by page equals
+whole-document stripping on 28 source-derived 9/11 pages plus a synthetic-layer run; and
+cancellation during reconstruction. `measurements/page-retention/` adds byte-identity, summary
+and profile tools with negative controls, and the
+[retention measurement](../measurements/page-retention/record.md) records byte-identical
+output against the pre-change converter on all ten complete books for the spill store and
+the two retired alternatives, whose sources and tests are retained beside the record.

@@ -176,9 +176,33 @@ for PDFKit's own crop/rotation transform so annotations and source content share
 
 `PDFPageSource` reopens the PDF in eight-page windows and between extraction and reconstruction.
 Synchronous page work drains autoreleased objects. Image-only fallbacks skip unused formatting
-extraction. Spatial pages and vocabulary are released when the pipeline returns; the logical
-blocks remain until writing finishes. These limits reduce retained work without imposing a
-hard cap on Apple framework allocations or fixing the attributed-text framework leak.
+extraction. These limits reduce retained work without imposing a hard cap on Apple framework
+allocations or fixing the attributed-text framework leak.
+
+## Two passes over the pages
+
+`PDFReflowLibPipeline.reconstruct` runs extraction as one pass that keeps only document-wide
+evidence: the hyphen-repair vocabulary, margin-furniture candidates, note-heading pages, chapter
+matches and the running character budget. Each extracted page is handed to a `PageStore`.
+Reconstruction is a second pass that loads one page at a time and needs only that page and
+its stripped predecessor for cross-page continuation. `FurnitureDetector` is phased to match:
+`collect` records one page's candidates, `resolve` decides removals from the whole ledger, and
+`apply` edits one page. Its `strip` entry point runs the same phases over an array, so the
+array and streamed paths cannot diverge. Furniture warnings keep their position between
+extraction and reconstruction warnings.
+
+`PageStore` encodes each extracted page as a binary property list in the workspace and
+reloads it once during reconstruction, removing the file on reload and the directory when
+reconstruction finishes, so the workspace holds only assets afterwards. Equal values share one
+slot in that encoding, so a negative zero can reload as positive zero; no reconstruction step
+reads the sign of zero. The structure index is released after extraction. The
+[page-retention measurement](../measurements/page-retention/record.md) compared this spill
+store with keeping pages resident and with repeating extraction: all three produced
+byte-identical output against the pre-change converter on the complete corpus, and spilling
+had the lowest peak footprint on every book where retained pages matter, on the Mac and on a
+physical iPhone. The alternatives were retired afterwards; the measured sources are retained
+as a patch beside the record. The logical blocks still accumulate until writing finishes;
+streaming them to the writer is separate work.
 
 ## Serialization and resource lifetime
 
@@ -217,8 +241,8 @@ The logical document carries these physical chapter-start pages; reconstruction 
 source markers standalone and prevents cross-boundary paragraph joins. The writer flushes the
 preceding document before each such marker, then applies the same byte-size subdivisions within
 the chapter. Existing heading/page navigation resolves to the resulting files. Bookmarks do
-not manufacture headings or new link semantics. Whole-document positioned text, vocabulary
-and furniture evidence are still retained; this does not bound reconstruction memory.
+not manufacture headings or new link semantics. Vocabulary and furniture evidence remain
+document-wide; whether positioned pages stay resident is the retention strategy described above.
 Progress reports serialization work by input blocks, then metadata completion and archive entries.
 The reconstruction endpoint is clamped to its allocated fraction so floating-point rounding cannot
 make the first writing update step backward.

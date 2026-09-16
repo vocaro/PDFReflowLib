@@ -1,7 +1,7 @@
 import CoreGraphics
 import Foundation
 
-struct TextStructure: Equatable {
+struct TextStructure: Equatable, Codable {
     var group: Int
     var order: Int
     /// Zero denotes a paragraph; 1...6 denote the corresponding heading level.
@@ -10,7 +10,7 @@ struct TextStructure: Equatable {
 }
 
 // All geometry is in unrotated PDF page space (bottom-left origin). OCR is mapped back here.
-struct TextLine {
+struct TextLine: Equatable {
     let content: InlineText
     // Layout repeatedly inspects plain text. Cache it once; immutable content prevents drift.
     let text: String
@@ -36,7 +36,38 @@ struct TextLine {
     }
 }
 
-struct PageContent {
+// Extracted pages can be held outside memory between the extraction and reconstruction
+// passes. This encoding serves one conversion's workspace; it is not a persistent or public
+// schema, and the cached plain text is rebuilt from the styled content rather than stored.
+extension TextLine: Codable {
+    private enum CodingKeys: String, CodingKey {
+        case content, rect, fontSize, monospaced, wraps, readingRect, structure
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.init(content: try values.decode(InlineText.self, forKey: .content),
+                  rect: try values.decode(CGRect.self, forKey: .rect),
+                  fontSize: try values.decode(CGFloat.self, forKey: .fontSize),
+                  monospaced: try values.decode(Bool.self, forKey: .monospaced),
+                  wraps: try values.decodeIfPresent(Bool.self, forKey: .wraps))
+        readingRect = try values.decodeIfPresent(CGRect.self, forKey: .readingRect)
+        structure = try values.decodeIfPresent(TextStructure.self, forKey: .structure)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var values = encoder.container(keyedBy: CodingKeys.self)
+        try values.encode(content, forKey: .content)
+        try values.encode(rect, forKey: .rect)
+        try values.encode(fontSize, forKey: .fontSize)
+        try values.encode(monospaced, forKey: .monospaced)
+        try values.encodeIfPresent(wraps, forKey: .wraps)
+        try values.encodeIfPresent(readingRect, forKey: .readingRect)
+        try values.encodeIfPresent(structure, forKey: .structure)
+    }
+}
+
+struct PageContent: Equatable, Codable {
     var number: Int
     var bounds: CGRect
     var lines: [TextLine]

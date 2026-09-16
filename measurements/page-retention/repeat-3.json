@@ -1,0 +1,135 @@
+{
+ "allIdenticalAndSuccessful": true,
+ "baselineSHA256": "607dc2d95bec9fca93bb12ac04cddf63ec80f92bb2f58043830f97c5e6336e44",
+ "candidateSHA256": "f5b4cb9f1fe8b374f332d352e0353b8262b89b7c0a0bccaf1f124921e1b0c05f",
+ "caseFlags": {
+  "gpo-warren-1964": [
+   "--reference-images",
+   "never"
+  ],
+  "noaa-nca5-2023": [
+   "--maximum-output-bytes",
+   "4294967296",
+   "--maximum-epub-bytes",
+   "4294967296"
+  ]
+ },
+ "cases": {
+  "fed-explained-2021": {
+   "flags": [
+    "--reference-images",
+    "automatic"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 6.969677667002543,
+     "converterCPUSeconds": 7.184439,
+     "converterPeakRSSBytes": 298156032,
+     "epubBytes": 72930196,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 7.068977584000095,
+     "peakEvaluationDirectoryBytes": 92839936,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 243696720,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 7.263820916006807,
+     "converterCPUSeconds": 7.440934,
+     "converterPeakRSSBytes": 302891008,
+     "epubBytes": 72930197,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 7.372377874999074,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 140402688,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 248480800,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 7.463948250006069,
+     "converterCPUSeconds": 7.6253720000000005,
+     "converterPeakRSSBytes": 301072384,
+     "epubBytes": 72930193,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 7.57001495899749,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 131022848,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 239699024,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60"
+  },
+  "gpo-our-flag-2003": {
+   "flags": [
+    "--reference-images",
+    "automatic"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 1.2483052909956314,
+     "converterCPUSeconds": 1.093044,
+     "converterPeakRSSBytes": 98189312,
+     "epubBytes": 13321730,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 1.3233568750001723,
+     "peakEvaluationDirectoryBytes": 13688832,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 171393840,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 1.2595786250021774,
+     "converterCPUSeconds": 1.112945,
+     "converterPeakRSSBytes": 96305152,
+     "epubBytes": 13321734,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 1.3273627090093214,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 13717504,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 173278048,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 1.3510541669966187,
+     "converterCPUSeconds": 1.136987,
+     "converterPeakRSSBytes": 97730560,
+     "epubBytes": 13321732,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 1.41939033298695,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 13717504,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 171934536,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8"
+  }
+ },
+ "commonFlags": [
+  "--reference-images",
+  "automatic"
+ ],
+ "machine": "arm64",
+ "system": "macOS-27.0-arm64-arm-64bit-Mach-O"
+}

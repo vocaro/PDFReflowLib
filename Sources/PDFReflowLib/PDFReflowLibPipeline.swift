@@ -13,6 +13,11 @@ enum PDFReflowLibPipeline {
     }
 
     /// Progress covers extraction/reconstruction only, from zero to one.
+    ///
+    /// Extraction is one pass over every page that keeps only document-wide evidence:
+    /// vocabulary, margin-furniture candidates, note-heading pages and chapter matches.
+    /// Reconstruction is a second pass that needs one page and its predecessor. Pages are
+    /// spilled to the workspace between the passes, so retained page memory is bounded.
     static func reconstruct(from source: URL, options: ConversionOptions, workspace: URL,
                             progress: @Sendable (ConversionProgress) async -> Void) async throws -> Result {
         let document = try PDFPageSource(url: source)
@@ -21,18 +26,20 @@ enum PDFReflowLibPipeline {
         try FileManager.default.createDirectory(at: workspace.appendingPathComponent("assets"),
                                                  withIntermediateDirectories: true)
 
-        let structure = try StructureTreeReader.read(source)
+        let structureIndex = try StructureTreeReader.read(source)
+        // Tagged-text association happens once per page; the index is released after extraction.
+        var structure: StructureTreeReader.Index? = structureIndex
         let chapterCandidates = try ChapterBoundaryReader.read(source)
         var chapterStartPages: Set<Int> = []
-        var pages: [PageContent] = []
         var warnings: [ConversionWarning] = []
-        if structure.rejected {
+        if structureIndex.rejected {
             warnings.append(.init(code: .structureFallback, page: 1,
                 message: "Some PDF structure tags are invalid or outside supported paragraph/heading roles; spatial reconstruction remains in use for that content."))
         }
-        var characters = 0
-        for i in 0..<total {
-            try Task.checkCancellation()
+
+        /// Every extraction step except recognition. `limit` only guards the character budget;
+        /// it never truncates a page.
+        func extractPage(_ i: Int, limit: Int, warnings: inout [ConversionWarning]) throws -> (content: PageContent, attemptsOCR: Bool) {
             // The pool includes every PDFKit accessor, not only string extraction. Page
             // references and annotation arrays also carry autoreleased rendering resources.
             var content = try autoreleasepool {
@@ -54,9 +61,10 @@ enum PDFReflowLibPipeline {
                 // Fallback pages contribute vocabulary and furniture evidence, but their
                 // formatting is never emitted. Avoid decoding attributed image attachments.
                 var content = PageContent(number: i + 1, bounds: bounds,
-                    lines: try NativeTextReader.lines(on: page, limit: options.maximumCharacters - characters,
+                    lines: try NativeTextReader.lines(on: page, limit: limit,
                         includeStyle: !requiresPageImage && !syntheticStyle), graphics: graphics.regions)
-                if !requiresPageImage && !syntheticStyle && options.ocr != .always, let tags = structure.pages[i + 1], !tags.isEmpty,
+                if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure,
+                   let tags = structure.pages[i + 1], !tags.isEmpty,
                    !(StructureTreeReader.validates(tags, owners: structure.owners[i + 1] ?? [:], page: reference)
                      && MarkedTextReader.apply(tags, page: reference, lines: &content.lines)) {
                     warnings.append(.init(code: .structureFallback, page: i + 1,
@@ -89,7 +97,38 @@ enum PDFReflowLibPipeline {
             let needsOCR = options.ocr == .always || (automaticOCR &&
                 (raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || damaged > max(2, raw.count / 50)))
                 || (options.ocr == .automaticIncludingImageBackedText && imageBackedText)
-            if needsOCR && !content.requiresPageImage {
+            if needsOCR && !content.requiresPageImage { return (content, true) }
+            if !content.requiresPageImage, imageBackedText {
+                // A scan with an existing OCR layer must still reflow. Keep its visual page as a
+                // reference rather than treating the full-page scan as one figure covering all text.
+                content.preservePageReference = true
+                for index in content.lines.indices { content.lines[index].structure = nil }
+                content.graphics = []
+                warnings.append(.init(code: .unverifiedTextLayer, page: i + 1,
+                    message: "Text overlapping a page-sized graphic has not been verified against the source. "
+                        + "Transcription, tables, numbers and reading order may be inaccurate. "
+                        + (options.referenceImages == .never
+                            ? "Check the source PDF before relying on the reflowed text; supplementary references are disabled."
+                            : "Check the accompanying source-page image before relying on the reflowed text.")))
+            }
+            if content.lines.isEmpty && !content.requiresPageImage {
+                content.requiresPageImage = true
+            }
+            return (content, false)
+        }
+
+        let store = PageStore(directory: workspace.appendingPathComponent("pages"))
+
+        var vocabulary: Set<String> = []
+        var furniture = FurnitureDetector.Ledger()
+        var numberedNotePages: Set<Int> = []
+        var recognizedPages = 0
+        var characters = 0
+        for i in 0..<total {
+            try Task.checkCancellation()
+            let extracted = try extractPage(i, limit: options.maximumCharacters - characters, warnings: &warnings)
+            var content = extracted.content
+            if extracted.attemptsOCR {
                 await progress(.init(stage: .recognizing, fractionCompleted: 0.6875 * Double(i) / Double(total),
                     page: i + 1, totalPages: total))
                 do {
@@ -111,42 +150,43 @@ enum PDFReflowLibPipeline {
                     warnings.append(.init(code: .ocrFailed, page: i + 1,
                         message: "OCR failed; the source page is preserved as an image."))
                 }
-            } else if !content.requiresPageImage, imageBackedText {
-                // A scan with an existing OCR layer must still reflow. Keep its visual page as a
-                // reference rather than treating the full-page scan as one figure covering all text.
-                content.preservePageReference = true
-                for index in content.lines.indices { content.lines[index].structure = nil }
-                content.graphics = []
-                warnings.append(.init(code: .unverifiedTextLayer, page: i + 1,
-                    message: "Text overlapping a page-sized graphic has not been verified against the source. "
-                        + "Transcription, tables, numbers and reading order may be inaccurate. "
-                        + (options.referenceImages == .never
-                            ? "Check the source PDF before relying on the reflowed text; supplementary references are disabled."
-                            : "Check the accompanying source-page image before relying on the reflowed text.")))
-            }
-            if content.lines.isEmpty && !content.requiresPageImage {
-                content.requiresPageImage = true
+                if content.lines.isEmpty && !content.requiresPageImage {
+                    content.requiresPageImage = true
+                }
             }
             characters += content.lines.reduce(0) { $0 + $1.text.count }
             guard characters <= options.maximumCharacters else { throw ConversionError.resourceLimit("document text") }
-            pages.append(content)
             if let chapter = chapterCandidates.first(where: { $0.page == content.number }),
                ChapterBoundaryReader.matches(chapter, page: content) {
                 chapterStartPages.insert(content.number)
             }
+            // Retain heading evidence before removing furniture, after all extraction/OCR work.
+            LayoutReconstructor.addVocabulary(of: content, to: &vocabulary)
+            if NumberedNoteDetector.hasHeading(on: content) { numberedNotePages.insert(content.number) }
+            if options.removeRepeatedHeadersAndFooters { FurnitureDetector.collect(content, pageIndex: i, into: &furniture) }
+            if content.recognized { recognizedPages += 1 }
+            try store.store(content, at: i)
             await progress(.init(stage: .extracting, fractionCompleted: 0.6875 * Double(i + 1) / Double(total),
                 page: i + 1, totalPages: total))
         }
         document.releaseCachedPages()
-        let vocabulary = LayoutReconstructor.vocabulary(in: pages)
-        // Retain heading evidence before removing furniture, after all extraction/OCR work.
-        let numberedNotePages = Set(pages.filter { NumberedNoteDetector.hasHeading(on: $0) }.map(\.number))
-        if options.removeRepeatedHeadersAndFooters { warnings += LayoutReconstructor.stripFurniture(&pages) }
+        structure = nil
+        let furniturePlan = options.removeRepeatedHeadersAndFooters ? FurnitureDetector.resolve(furniture) : nil
+        furniture = FurnitureDetector.Ledger()
+        // Furniture warnings keep their place between extraction and reconstruction warnings.
+        let furnitureWarningIndex = warnings.count
+        var furnitureWarnings: [ConversionWarning] = []
         var blocks: [ReflowBlock] = [], assets: [ReflowDocument.Asset] = []
         var reflowed = 0
         var imageBytes: Int64 = 0
-        for (i, content) in pages.enumerated() {
+        var previous: PageContent?
+        for i in 0..<total {
             try Task.checkCancellation()
+            var content = try store.load(at: i)
+            if let furniturePlan, let warning = FurnitureDetector.apply(furniturePlan, to: &content, pageIndex: i) {
+                furnitureWarnings.append(warning)
+            }
+            let previousPage = i > 0 && !chapterStartPages.contains(content.number) ? previous : nil
             try autoreleasepool {
                 let page = try document.page(at: i)
                 func saveImage(_ rect: CGRect, fullPage: Bool = false, rotate: Bool = false) throws -> String {
@@ -196,20 +236,22 @@ enum PDFReflowLibPipeline {
                                 + "Compare the source PDF for visual content and transcription accuracy."))
                     }
                 }
-                LayoutReconstructor.appendPage(pageBlocks, page: content,
-                    previousPage: i > 0 && !chapterStartPages.contains(content.number) ? pages[i - 1] : nil,
+                LayoutReconstructor.appendPage(pageBlocks, page: content, previousPage: previousPage,
                     to: &blocks, vocabulary: vocabulary, warnings: &warnings)
             }
+            previous = content
             await progress(.init(stage: .reconstructing, fractionCompleted: 0.6875 + 0.3125 * Double(i + 1) / Double(total),
                 page: i + 1, totalPages: total))
         }
         document.releaseCachedPages()
+        store.finish()
+        warnings.insert(contentsOf: furnitureWarnings.sorted { $0.page < $1.page }, at: furnitureWarningIndex)
         let title = options.title ?? document.title
             ?? source.deletingPathExtension().lastPathComponent
         let reflowedDocument = ReflowDocument(metadata: .init(title: title.isEmpty ? "Untitled" : title,
             language: options.language, author: options.author), blocks: blocks, assets: assets,
             chapterStartPages: chapterStartPages)
         return Result(document: reflowedDocument, pageCount: total, reflowedPageCount: reflowed,
-            recognizedPageCount: pages.filter(\.recognized).count, warnings: warnings)
+            recognizedPageCount: recognizedPages, warnings: warnings)
     }
 }

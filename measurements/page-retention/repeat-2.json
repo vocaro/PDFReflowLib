@@ -1,0 +1,135 @@
+{
+ "allIdenticalAndSuccessful": true,
+ "baselineSHA256": "607dc2d95bec9fca93bb12ac04cddf63ec80f92bb2f58043830f97c5e6336e44",
+ "candidateSHA256": "f5b4cb9f1fe8b374f332d352e0353b8262b89b7c0a0bccaf1f124921e1b0c05f",
+ "caseFlags": {
+  "gpo-warren-1964": [
+   "--reference-images",
+   "never"
+  ],
+  "noaa-nca5-2023": [
+   "--maximum-output-bytes",
+   "4294967296",
+   "--maximum-epub-bytes",
+   "4294967296"
+  ]
+ },
+ "cases": {
+  "fed-explained-2021": {
+   "flags": [
+    "--reference-images",
+    "automatic"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 6.860498666996136,
+     "converterCPUSeconds": 7.0518279999999995,
+     "converterPeakRSSBytes": 298041344,
+     "epubBytes": 72930194,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 6.957011375008733,
+     "peakEvaluationDirectoryBytes": 97996800,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 216794048,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 6.743146875000093,
+     "converterCPUSeconds": 6.982564999999999,
+     "converterPeakRSSBytes": 294862848,
+     "epubBytes": 72930194,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 6.8384453329927055,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 108257280,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 249693144,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 6.952205291003338,
+     "converterCPUSeconds": 7.137727,
+     "converterPeakRSSBytes": 294518784,
+     "epubBytes": 72930195,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 7.050556292000692,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 94720000,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 231359472,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60"
+  },
+  "gpo-our-flag-2003": {
+   "flags": [
+    "--reference-images",
+    "automatic"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 1.355374999999185,
+     "converterCPUSeconds": 1.10676,
+     "converterPeakRSSBytes": 98402304,
+     "epubBytes": 13321730,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 1.4254831669968553,
+     "peakEvaluationDirectoryBytes": 13688832,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 170689376,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 1.2581268750072923,
+     "converterCPUSeconds": 1.1334899999999999,
+     "converterPeakRSSBytes": 99532800,
+     "epubBytes": 13321731,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 1.327571583999088,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 13717504,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 169247584,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 1.353757292003138,
+     "converterCPUSeconds": 1.162962,
+     "converterPeakRSSBytes": 97517568,
+     "epubBytes": 13321730,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 1.428407707993756,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 13717504,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 167101232,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8"
+  }
+ },
+ "commonFlags": [
+  "--reference-images",
+  "automatic"
+ ],
+ "machine": "arm64",
+ "system": "macOS-27.0-arm64-arm-64bit-Mach-O"
+}

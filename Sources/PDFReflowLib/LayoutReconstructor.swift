@@ -3,9 +3,19 @@ import CoreGraphics
 
 enum LayoutReconstructor {
     static func vocabulary(in pages: [PageContent]) -> Set<String> {
-        Set(pages.flatMap(\.lines).flatMap { line in
-            line.text.lowercased().split { !$0.isLetter && $0 != "-" }.map(String.init)
-        })
+        var result: Set<String> = []
+        for page in pages { addVocabulary(of: page, to: &result) }
+        return result
+    }
+
+    /// Hyphen repair consults every page's words; accumulating them per page lets extraction
+    /// release the page itself.
+    static func addVocabulary(of page: PageContent, to vocabulary: inout Set<String>) {
+        for line in page.lines {
+            for word in line.text.lowercased().split(whereSeparator: { !$0.isLetter && $0 != "-" }) {
+                vocabulary.insert(String(word))
+            }
+        }
     }
 
     static func stripFurniture(_ pages: inout [PageContent]) -> [ConversionWarning] {

@@ -1,0 +1,741 @@
+{
+ "allIdenticalAndSuccessful": true,
+ "baselineSHA256": "607dc2d95bec9fca93bb12ac04cddf63ec80f92bb2f58043830f97c5e6336e44",
+ "candidateSHA256": "f5b4cb9f1fe8b374f332d352e0353b8262b89b7c0a0bccaf1f124921e1b0c05f",
+ "caseFlags": {
+  "gpo-warren-1964": [
+   "--reference-images",
+   "never"
+  ],
+  "noaa-nca5-2023": [
+   "--maximum-output-bytes",
+   "4294967296",
+   "--maximum-epub-bytes",
+   "4294967296"
+  ]
+ },
+ "cases": {
+  "cdc-zombie-pandemic-2011": {
+   "flags": [
+    "--reference-images",
+    "automatic"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 6.972402749990579,
+     "converterCPUSeconds": 6.716162,
+     "converterPeakRSSBytes": 382484480,
+     "epubBytes": 149716904,
+     "epubcheckExitCode": 0,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 8.704318999996758,
+     "peakEvaluationDirectoryBytes": 245686272,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 221643736,
+     "stderrTail": ""
+    },
+    "reextract": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 6.829906583006959,
+     "converterCPUSeconds": 6.770027000000001,
+     "converterPeakRSSBytes": 384253952,
+     "epubBytes": 149716902,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 6.944353625003714,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 245202944,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 218383296,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 6.83696141600376,
+     "converterCPUSeconds": 6.689477,
+     "converterPeakRSSBytes": 384270336,
+     "epubBytes": 149716903,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 6.9670158329972764,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 246390784,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 223888320,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 7.059429666987853,
+     "converterCPUSeconds": 6.747348000000001,
+     "converterPeakRSSBytes": 383860736,
+     "epubBytes": 149716903,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 7.17781674998696,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 223207424,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 216318912,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3"
+  },
+  "cia-blue-book-14-1955": {
+   "flags": [
+    "--reference-images",
+    "automatic"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 29.096874499999103,
+     "converterCPUSeconds": 28.949536000000002,
+     "converterPeakRSSBytes": 165675008,
+     "epubBytes": 213477354,
+     "epubcheckExitCode": 0,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 32.08889395800361,
+     "peakEvaluationDirectoryBytes": 376274944,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 149766936,
+     "stderrTail": ""
+    },
+    "reextract": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 30.06086337500892,
+     "converterCPUSeconds": 29.869048,
+     "converterPeakRSSBytes": 155287552,
+     "epubBytes": 213477355,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 30.238818082987564,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 392663040,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 136839960,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 28.669286000003922,
+     "converterCPUSeconds": 28.506546,
+     "converterPeakRSSBytes": 165347328,
+     "epubBytes": 213477353,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 28.843021667009452,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 410951680,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 149308160,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 29.593778957991162,
+     "converterCPUSeconds": 29.376041999999998,
+     "converterPeakRSSBytes": 152420352,
+     "epubBytes": 213477353,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 29.763253375000204,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 427925504,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 136594176,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3"
+  },
+  "dga-2025-2030": {
+   "flags": [
+    "--reference-images",
+    "automatic"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 0.7364589589997195,
+     "converterCPUSeconds": 0.610995,
+     "converterPeakRSSBytes": 105840640,
+     "epubBytes": 7848682,
+     "epubcheckExitCode": 0,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 2.146195584005909,
+     "peakEvaluationDirectoryBytes": 7946240,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 70714136,
+     "stderrTail": ""
+    },
+    "reextract": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 0.7271356249984819,
+     "converterCPUSeconds": 0.67112,
+     "converterPeakRSSBytes": 107118592,
+     "epubBytes": 7848683,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 0.7874777910037665,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 8003584,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 71615256,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 0.7297254160075681,
+     "converterCPUSeconds": 0.618184,
+     "converterPeakRSSBytes": 105660416,
+     "epubBytes": 7848683,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 0.7939194999926258,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 7942144,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 71140120,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 0.7336606660101097,
+     "converterCPUSeconds": 0.6216419999999999,
+     "converterPeakRSSBytes": 105512960,
+     "epubBytes": 7848683,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 0.8011671669955831,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 7942144,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 68354816,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472"
+  },
+  "faa-phak-8083-25c": {
+   "flags": [
+    "--reference-images",
+    "automatic"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 36.598356625007,
+     "converterCPUSeconds": 37.206258,
+     "converterPeakRSSBytes": 849575936,
+     "epubBytes": 271254166,
+     "epubcheckExitCode": 0,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 39.438395291988854,
+     "peakEvaluationDirectoryBytes": 542605312,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 539427920,
+     "stderrTail": ""
+    },
+    "reextract": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 51.501247708001756,
+     "converterCPUSeconds": 52.13753,
+     "converterPeakRSSBytes": 851771392,
+     "epubBytes": 271254164,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 51.75318645899824,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 561922048,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 541869136,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 36.58052920798946,
+     "converterCPUSeconds": 37.317014,
+     "converterPeakRSSBytes": 848789504,
+     "epubBytes": 271254165,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 36.80752279200533,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 542195712,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 542229608,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 38.18893124999886,
+     "converterCPUSeconds": 38.783289,
+     "converterPeakRSSBytes": 831651840,
+     "epubBytes": 271254163,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 38.425885542004835,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 504606720,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 540853352,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7"
+  },
+  "fed-explained-2021": {
+   "flags": [
+    "--reference-images",
+    "automatic"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 6.571464792010374,
+     "converterCPUSeconds": 6.688395,
+     "converterPeakRSSBytes": 296796160,
+     "epubBytes": 72930192,
+     "epubcheckExitCode": 0,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 8.56387275000452,
+     "peakEvaluationDirectoryBytes": 114393088,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 239371248,
+     "stderrTail": ""
+    },
+    "reextract": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 7.388585624998086,
+     "converterCPUSeconds": 7.606395,
+     "converterPeakRSSBytes": 295813120,
+     "epubBytes": 72930194,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 7.487099791993387,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 132575232,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 241583088,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 6.572887959002401,
+     "converterCPUSeconds": 6.719963,
+     "converterPeakRSSBytes": 294682624,
+     "epubBytes": 72930196,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 6.673357292005676,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 119111680,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 243794880,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 6.566168249992188,
+     "converterCPUSeconds": 6.773611,
+     "converterPeakRSSBytes": 293289984,
+     "epubBytes": 72930198,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 6.666218166006729,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 118898688,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 264684504,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60"
+  },
+  "gpo-911-2004": {
+   "flags": [
+    "--reference-images",
+    "automatic"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 9.983199708993197,
+     "converterCPUSeconds": 10.260803000000001,
+     "converterPeakRSSBytes": 131907584,
+     "epubBytes": 67658200,
+     "epubcheckExitCode": 0,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 12.167660791994422,
+     "peakEvaluationDirectoryBytes": 76566528,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 170066760,
+     "stderrTail": ""
+    },
+    "reextract": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 15.899526458990294,
+     "converterCPUSeconds": 16.153756,
+     "converterPeakRSSBytes": 107446272,
+     "epubBytes": 67658200,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 16.03655195799365,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 90738688,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 163087200,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 10.087094040994998,
+     "converterCPUSeconds": 10.234757,
+     "converterPeakRSSBytes": 107577344,
+     "epubBytes": 67658200,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 10.21245595801156,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 83296256,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 169231176,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 10.496288291993551,
+     "converterCPUSeconds": 10.711319000000001,
+     "converterPeakRSSBytes": 97927168,
+     "epubBytes": 67658202,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 10.61949487500533,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 115187712,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 164725552,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b"
+  },
+  "gpo-our-flag-2003": {
+   "flags": [
+    "--reference-images",
+    "automatic"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 1.244668790997821,
+     "converterCPUSeconds": 1.0582049999999998,
+     "converterPeakRSSBytes": 91406336,
+     "epubBytes": 13321730,
+     "epubcheckExitCode": 0,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 2.7755200840038015,
+     "peakEvaluationDirectoryBytes": 13697024,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 161940296,
+     "stderrTail": ""
+    },
+    "reextract": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 1.659718167007668,
+     "converterCPUSeconds": 1.349224,
+     "converterPeakRSSBytes": 90095616,
+     "epubBytes": 13321730,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 1.728471249996801,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 13910016,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 163529568,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 1.2513693749933736,
+     "converterCPUSeconds": 1.072108,
+     "converterPeakRSSBytes": 92405760,
+     "epubBytes": 13321730,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 1.3193469170073513,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 13688832,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 166282056,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 1.252152916000341,
+     "converterCPUSeconds": 1.084494,
+     "converterPeakRSSBytes": 97566720,
+     "epubBytes": 13321730,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 1.3171942499902798,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 13688832,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 170787632,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8"
+  },
+  "gpo-warren-1964": {
+   "flags": [
+    "--reference-images",
+    "automatic",
+    "--reference-images",
+    "never"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 11.94120012500207,
+     "converterCPUSeconds": 11.593593,
+     "converterPeakRSSBytes": 983105536,
+     "epubBytes": 12865784,
+     "epubcheckExitCode": 0,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 13.849954165998497,
+     "peakEvaluationDirectoryBytes": 14364672,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 352781728,
+     "stderrTail": ""
+    },
+    "reextract": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 13.409637167002074,
+     "converterCPUSeconds": 13.189592,
+     "converterPeakRSSBytes": 945455104,
+     "epubBytes": 12865780,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 13.550859582988778,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 14364672,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 319489392,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 12.047933665991877,
+     "converterCPUSeconds": 11.808712,
+     "converterPeakRSSBytes": 964493312,
+     "epubBytes": 12865781,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 12.196567999999388,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 27553792,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 338593136,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 12.613862166996114,
+     "converterCPUSeconds": 12.382776999999999,
+     "converterPeakRSSBytes": 945766400,
+     "epubBytes": 12865782,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 12.764349874996697,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 16539648,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 319882608,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19"
+  },
+  "noaa-nca5-2023": {
+   "flags": [
+    "--reference-images",
+    "automatic",
+    "--maximum-output-bytes",
+    "4294967296",
+    "--maximum-epub-bytes",
+    "4294967296"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 126.39587574999314,
+     "converterCPUSeconds": 143.713957,
+     "converterPeakRSSBytes": 1029570560,
+     "epubBytes": 1466261504,
+     "epubcheckExitCode": 0,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 145.14158266600862,
+     "peakEvaluationDirectoryBytes": 3018547200,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 403457584,
+     "stderrTail": ""
+    },
+    "reextract": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 166.32992270799878,
+     "converterCPUSeconds": 181.31518100000002,
+     "converterPeakRSSBytes": 955580416,
+     "epubBytes": 1466261504,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 168.32235637499252,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 3024965632,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 314443264,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 125.38295241699961,
+     "converterCPUSeconds": 143.280251,
+     "converterPeakRSSBytes": 981385216,
+     "epubBytes": 1466261506,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 127.23058704199502,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 3019563008,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 343950872,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 132.19228904199554,
+     "converterCPUSeconds": 148.847386,
+     "converterPeakRSSBytes": 954318848,
+     "epubBytes": 1466261501,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 134.08167358300125,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 3013627904,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 307594752,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf"
+  },
+  "wallace-algebra-2010": {
+   "flags": [
+    "--reference-images",
+    "automatic"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 9.480608917001518,
+     "converterCPUSeconds": 10.16038,
+     "converterPeakRSSBytes": 88834048,
+     "epubBytes": 46062208,
+     "epubcheckExitCode": 0,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 12.145429790994967,
+     "peakEvaluationDirectoryBytes": 86880256,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 69616408,
+     "stderrTail": ""
+    },
+    "reextract": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 12.999937208005576,
+     "converterCPUSeconds": 13.831812000000001,
+     "converterPeakRSSBytes": 84459520,
+     "epubBytes": 46062207,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 13.176070000001346,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 61775872,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 64996096,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 9.267085500003304,
+     "converterCPUSeconds": 10.093004,
+     "converterPeakRSSBytes": 86966272,
+     "epubBytes": 46062204,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 9.426220915993326,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 96428032,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 65798888,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 9.980669416996534,
+     "converterCPUSeconds": 10.749288,
+     "converterPeakRSSBytes": 76496896,
+     "epubBytes": 46062207,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 10.14527716700104,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 57696256,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 56361728,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678"
+  }
+ },
+ "commonFlags": [
+  "--reference-images",
+  "automatic"
+ ],
+ "machine": "arm64",
+ "system": "macOS-27.0-arm64-arm-64bit-Mach-O"
+}

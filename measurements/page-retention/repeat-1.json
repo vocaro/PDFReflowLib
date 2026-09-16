@@ -1,0 +1,135 @@
+{
+ "allIdenticalAndSuccessful": true,
+ "baselineSHA256": "607dc2d95bec9fca93bb12ac04cddf63ec80f92bb2f58043830f97c5e6336e44",
+ "candidateSHA256": "f5b4cb9f1fe8b374f332d352e0353b8262b89b7c0a0bccaf1f124921e1b0c05f",
+ "caseFlags": {
+  "gpo-warren-1964": [
+   "--reference-images",
+   "never"
+  ],
+  "noaa-nca5-2023": [
+   "--maximum-output-bytes",
+   "4294967296",
+   "--maximum-epub-bytes",
+   "4294967296"
+  ]
+ },
+ "cases": {
+  "fed-explained-2021": {
+   "flags": [
+    "--reference-images",
+    "automatic"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 7.049454167005024,
+     "converterCPUSeconds": 6.999567,
+     "converterPeakRSSBytes": 256393216,
+     "epubBytes": 72930196,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 7.155561459003366,
+     "peakEvaluationDirectoryBytes": 102113280,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 237847512,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 32.51887354199425,
+     "converterCPUSeconds": 10.729061,
+     "converterPeakRSSBytes": 297975808,
+     "epubBytes": 72930196,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 32.625755625005695,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 134385664,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 249906160,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 6.965153500001179,
+     "converterCPUSeconds": 7.072094,
+     "converterPeakRSSBytes": 295780352,
+     "epubBytes": 72930195,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 7.076273541999399,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 89808896,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 251266008,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60"
+  },
+  "gpo-our-flag-2003": {
+   "flags": [
+    "--reference-images",
+    "automatic"
+   ],
+   "runs": {
+    "baseline": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 1.2454387920006411,
+     "converterCPUSeconds": 1.086963,
+     "converterPeakRSSBytes": 91406336,
+     "epubBytes": 13321730,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 1.3133307910029544,
+     "peakEvaluationDirectoryBytes": 13688832,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 163005256,
+     "stderrTail": ""
+    },
+    "resident": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 1.250000625004759,
+     "converterCPUSeconds": 1.085995,
+     "converterPeakRSSBytes": 98140160,
+     "epubBytes": 13321734,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 1.317950665994431,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 13656064,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 162562864,
+     "stderrTail": ""
+    },
+    "spill": {
+     "conversionExitCode": 0,
+     "conversionSeconds": 1.364132333008456,
+     "converterCPUSeconds": 1.138378,
+     "converterPeakRSSBytes": 97632256,
+     "epubBytes": 13321729,
+     "epubcheckExitCode": null,
+     "evaluatorExitCode": 0,
+     "evaluatorSeconds": 1.4334204999904614,
+     "identical": true,
+     "identityDifferences": [],
+     "peakEvaluationDirectoryBytes": 13717504,
+     "progressCheck": true,
+     "sampledPeakPhysicalFootprintBytes": 170820424,
+     "stderrTail": ""
+    }
+   },
+   "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8"
+  }
+ },
+ "commonFlags": [
+  "--reference-images",
+  "automatic"
+ ],
+ "machine": "arm64",
+ "system": "macOS-27.0-arm64-arm-64bit-Mach-O"
+}

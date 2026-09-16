@@ -1,0 +1,21 @@
+[
+ {
+  "availableMemoryBeforeBytes": 3534813560,
+  "case": "faa",
+  "device": "iPhone iOS 27.0",
+  "epubBytes": 270391152,
+  "footprintBeforeBytes": 5179016,
+  "footprintSamples": 475,
+  "images": 588,
+  "pages": 522,
+  "peakFootprintBytes": 542935120,
+  "peakRSSBytes": 832045056,
+  "physicalMemoryBytes": 12263424000,
+  "recognizedPages": 0,
+  "reflowedPages": 508,
+  "reportFingerprint": "35d9c5e1b843fddd72d12028b04a0db1f8f927cf804f6dc7dc007228edf95db2",
+  "retention": "spill",
+  "seconds": 47.439366936683655,
+  "warnings": 1385
+ }
+]

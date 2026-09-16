@@ -94,7 +94,9 @@ that fall back to images skip unused attributed-text decoding. Failures use
   Whitespace cuts recover ordinary columns and spanning headings. Paragraph reconstruction
   joins hard wraps and narrowly supported cross-page continuations.
   A bounded Type3 source-text check removes an extra native space only at a tiny kerning
-  adjustment with matching character-map, text and placement evidence; ambiguous spacing remains.
+  adjustment with matching character-map, text and placement evidence, and a source-measured
+  gap of at least 0.15 em at a font change between letters (a mathematical variable set in its
+  own font) restores the word space PDFKit drops there; ambiguous spacing remains.
 - Validated PDF paragraph and H1–H6 tags supply grouping and heading levels. Complete tagged
   text groups can follow logical order inside spatial barriers. Unsupported or ambiguous tags
   report `structureFallback`; figures, lists, captions and OCR retain spatial reconstruction.
@@ -112,7 +114,12 @@ that fall back to images skip unused attributed-text decoding. Failures use
   numeric marker set tight against a minus sign, as in answer keys) retain their
   source breaks, except that a wrapped line of justified prose that merely begins with an
   initial, a citation abbreviation or a year followed by a period continues its paragraph.
-  Visible typography supplies flat heading navigation. Exclusively invisible
+  Visible typography supplies flat heading navigation: heading sizes rank into levels across
+  the whole document so equal sizes share a level and a title outranks the author names beneath
+  it, modestly larger section labels (`ABSTRACT`,
+  `1.1 INSIDE THE FOUR FLIGHTS`) become headings separate from their paragraphs, a rotated
+  margin stamp is omitted, and an `Algorithm N` listing set between rules is preserved whole
+  beneath its reflowed caption. Exclusively invisible
   text over scan images does not supply reliable code or heading typography.
 - Core Graphics scans placed images, nested forms and painted paths. The original page renderer
   supplies crops containing figures, ruled tables, labels and recognizable displayed formulas,

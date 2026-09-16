@@ -19,5 +19,5 @@
       "acceptance": "Each algorithm listing either reflows line-by-line with numbering or is one preserved region; no lines lost between text and crops; two-column order retained."
     }
   ],
-  "scope": "Manual targets. Current converter mis-ranks front matter and splits listings (#43, #36)."
+  "scope": "Manual targets. After #43 the front matter, section labels, math-variable spacing and algorithm listings meet the page 1, 3 and 4 targets; author names remain headings one level below the title (flat navigation ranks sizes per page)."
 }

@@ -131,6 +131,9 @@ struct ReflowBlock: Sendable, Equatable {
     var structureGroup: Int?
     /// Physical PDF page where this block begins; inline markers record later page boundaries.
     var page: Int
+    /// Font size of a heading inferred from typography, ranked into levels document-wide once
+    /// every page is reconstructed; nil for tagged headings, which keep their validated level.
+    var headingSize: CGFloat?
 
     var text: String {
         switch content {

@@ -1646,7 +1646,7 @@
     {
       "id": "arxiv-replay-clocks-2023",
       "sourceSHA256": "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
-      "basis": "Source pages 1, 3 and 4 visually reviewed. Protects abstract, ACM reference and introduction order in the left column before the right-column drone illustration; section 3.1-3.2 order around Figure 1; and algorithm captions with surrounding prose in two-column order. Does not bless the rotated arXiv stamp or author names as headings, merged section labels, Unicode mathematical-italic variables or pseudocode split between text and crops (#36, #43). Pages 1-2 visually reviewed (#45): the right-column paragraph that ends page 1 continues at the head of page 2's left column as one paragraph across the source-page marker.",
+      "basis": "Source pages 1, 3 and 4 visually reviewed. Protects abstract, ACM reference and introduction order in the left column before the right-column drone illustration; section 3.1-3.2 order around Figure 1; and algorithm captions with surrounding prose in two-column order. After #43: the rotated arXiv stamp is omitted (furnitureRemoved), the title, ABSTRACT, INTRODUCTION and numbered section labels are headings separate from their paragraphs, the word spaces after mathematical-italic variables are restored from the source text operators, and each algorithm listing is one preserved region beneath its reflowed caption. Author names remain headings ranked below the title. Pages 1-2 visually reviewed (#45): the right-column paragraph that ends page 1 continues at the head of page 2's left column as one paragraph across the source-page marker.",
       "pages": [
         {
           "page": 1,
@@ -1657,7 +1657,29 @@
             "As an illustration, consider two drones"
           ],
           "text": [
-            "Ishaan Lagwankar and Sandeep S Kulkarni. 2023. Replay Clocks."
+            "Ishaan Lagwankar and Sandeep S Kulkarni. 2023. Replay Clocks.",
+            "if event 𝑒 must occur before",
+            "consider two drones 𝐴 and 𝐵 that are",
+            "the action of 𝐴 occurred before 𝐵"
+          ],
+          "headings": [
+            "Replay Clocks",
+            "ABSTRACT",
+            "1 INTRODUCTION"
+          ],
+          "paragraphs": [
+            "In this work, we focus on the problem of replay clocks",
+            "According to the observer effect, when we try to measure something",
+            "Michigan State University"
+          ],
+          "absentText": [
+            "arXiv:2311.07842v1",
+            "𝑒must",
+            "𝐴and",
+            "𝐵that"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
           ],
           "continuedParagraphs": [
             {
@@ -1676,7 +1698,26 @@
             "Requirements of Replay Clock RepCl",
             "4 ALGORITHM FOR REPLAY CLOCK (REPCL)"
           ],
-          "minimumImages": 1
+          "minimumImages": 2,
+          "headings": [
+            "3.1 Limitations of Existing Clocks for Replay",
+            "3.2 Requirements of Replay Clock RepCl",
+            "4 ALGORITHM FOR REPLAY CLOCK (REPCL)"
+          ],
+          "paragraphs": [
+            "Algorithm 1 ReplayEvents Operation",
+            "As an example, consider the execution in Figure 1"
+          ],
+          "text": [
+            "where 𝑒 is the event (send/receive/local)",
+            "as 𝐴 should occur before 𝐵 based on the causality"
+          ],
+          "absentText": [
+            "Input: 𝑆: Set of Events",
+            "while 𝑆 ≠ 𝜙 do",
+            "Choose a random event",
+            "𝑒is the event"
+          ]
         },
         {
           "page": 4,
@@ -1688,7 +1729,23 @@
             "Algorithm 4 Receive Message",
             "5 PROPERTIES OF REPCL"
           ],
-          "minimumImages": 1
+          "minimumImages": 3,
+          "headings": [
+            "5 PROPERTIES OF REPCL"
+          ],
+          "paragraphs": [
+            "Algorithm 2 Shift Operation",
+            "Algorithm 3 Send Message",
+            "Algorithm 4 Receive Message",
+            "The MergeSameEpoch function takes two timestamps"
+          ],
+          "absentText": [
+            "1: Define Shift operation",
+            "2: Shift(𝑡𝑠,𝑛𝑒𝑤𝑚𝑥)",
+            "1: Input: Message 𝑚",
+            "Let 𝑚be the message",
+            "Let 𝑚 be the message"
+          ]
         }
       ]
     }

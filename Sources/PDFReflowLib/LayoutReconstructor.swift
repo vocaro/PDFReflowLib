@@ -146,6 +146,119 @@ enum LayoutReconstructor {
         }
     }
 
+    /// An algorithm float set between rules (LaTeX `algorithm`/`algorithmic`): a caption line
+    /// `Algorithm N …` directly beneath a thin rule, a second rule of the same extent directly
+    /// beneath the caption, and a closing rule of that extent further down. The listing between
+    /// the second and closing rules is one region, because its numbered lines, keywords and
+    /// inline mathematics cannot reflow as prose or code without losing lines to separate crops
+    /// (#43). The caption stays text; the top rule is the caption's decoration.
+    static func algorithmFloats(in page: PageContent) -> (regions: [CGRect], decorations: [CGRect]) {
+        let rules = page.graphics.filter { isThinRule($0) && $0.width >= 100 }
+        guard !rules.isEmpty else { return ([], []) }
+        let body = max(4, bodySize(page.lines))
+        func sameExtent(_ a: CGRect, _ b: CGRect) -> Bool { abs(a.minX - b.minX) <= 3 && abs(a.maxX - b.maxX) <= 3 }
+        var regions: [CGRect] = [], decorations: [CGRect] = []
+        for caption in page.lines where !caption.monospaced
+            && caption.text.range(of: #"^Algorithm\s+\d+\b"#, options: .regularExpression) != nil {
+            let box = caption.rect
+            guard let top = rules.first(where: { rule in
+                      rule.minX <= box.minX + 3 && rule.maxX >= box.maxX - 3
+                          && rule.minY >= box.maxY - 1 && rule.minY <= box.maxY + body
+                  }),
+                  let upper = rules.first(where: { rule in
+                      sameExtent(rule, top) && rule.maxY <= box.minY + 1 && rule.maxY >= box.minY - body
+                  }),
+                  let closing = rules.filter({ sameExtent($0, top) && $0.maxY < upper.minY })
+                      .max(by: { $0.maxY < $1.maxY }) else { continue }
+            // The rules' ink is at their midlines (GraphicsReader pads them by two points).
+            regions.append(CGRect(x: top.minX, y: closing.midY - 1, width: top.width,
+                                  height: upper.midY + 1 - (closing.midY - 1)))
+            decorations.append(top)
+        }
+        return (regions, decorations)
+    }
+
+    /// Text rotated a quarter turn extracts as a line far taller than wide. One running along
+    /// at least a quarter of the outer margin of a page whose other text runs horizontally is a
+    /// stamp (arXiv's identifier), not content or a heading (#43). A short rotated line beside a
+    /// photograph is its credit and keeps its paragraph; on a rotated page every line is tall,
+    /// so nothing is a stamp.
+    static func rotatedMarginLines(_ page: PageContent) -> [TextLine] {
+        let horizontal = page.lines.filter { $0.rect.width >= $0.rect.height * 2 }.reduce(0) { $0 + $1.text.count }
+        let vertical = page.lines.filter { $0.rect.height >= $0.rect.width * 2 }.reduce(0) { $0 + $1.text.count }
+        guard vertical > 0, horizontal > vertical * 3 else { return [] }
+        let margin = page.bounds.width * 0.12
+        return page.lines.filter { line in
+            line.text.filter { !$0.isWhitespace }.count >= 3 && line.rect.height >= line.rect.width * 3
+                && line.rect.height >= page.bounds.height * 0.25
+                && (line.rect.maxX <= page.bounds.minX + margin || line.rect.minX >= page.bounds.maxX - margin)
+        }
+    }
+
+    /// A section label set only modestly larger than the body (acmart's 10.9-point bold
+    /// small-caps `ABSTRACT` or `1 INTRODUCTION` over 9-point prose, the 9/11 report's 12-point
+    /// `1.1 INSIDE THE FOUR FLIGHTS` over 10-point prose) sits below the 25% heading threshold
+    /// and would otherwise open its paragraph (#43). Size alone is not evidence (an inherited
+    /// OCR layer's prose can run 20% over a small reference body), so the line must also read
+    /// as a label: it starts with a capital or a digit, does not end in sentence punctuation,
+    /// has clear space above it or continues a label of the same size, and is either set in
+    /// capitals or shorter than the column's prose lines. Recognized and synthetic pages have
+    /// no typographic sizes to trust.
+    static func sectionLabels(in lines: [TextLine], body: CGFloat, headingThreshold: CGFloat,
+                              page: PageContent) -> [TextLine] {
+        guard !page.hasSyntheticTextStyle, !page.recognized else { return [] }
+        var labels: [TextLine] = []
+        for line in lines.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
+            // A list item (an answer-key entry, a contents line) keeps its list representation.
+            guard !line.monospaced, line.fontSize >= body * 1.15, line.fontSize < headingThreshold,
+                  line.text.count >= 2, line.text.count < 200, !isList(line.text),
+                  let first = line.text.first, first.isUppercase || first.isNumber,
+                  let last = line.text.last, !".,;:".contains(last),
+                  // Words, or a dotted section number whose title PDFKit split off at the gap.
+                  line.text.contains(where: \.isLetter)
+                    || line.text.range(of: #"^\d+(?:\.\d+)+$"#, options: .regularExpression) != nil else { continue }
+            let column = lines.filter { other in
+                other != line && other.rect.minX < line.rect.maxX && other.rect.maxX > line.rect.minX
+            }
+            let above = column.filter { $0.rect.minY >= line.rect.maxY - body * 0.25 }
+                .min { $0.rect.minY < $1.rect.minY }
+            if let above, above.rect.minY - line.rect.maxY < body * 0.8,
+               !(labels.contains(above) && abs(above.fontSize - line.fontSize) <= line.fontSize * 0.05) { continue }
+            let letters = line.text.filter(\.isLetter)
+            let capitals = letters.allSatisfy(\.isUppercase)
+            let prose = column.filter { $0.fontSize < body * 1.1 }.map(\.rect.width).max() ?? 0
+            if capitals || line.rect.width <= prose * 0.9 || prose == 0 { labels.append(line) }
+        }
+        // Three or more labels ending in folios are a table of contents, not section labels.
+        let folio = #"\s(?:\d{1,4}|[ivxlc]+(?:[–-][ivxlc]+)?)$"#
+        let entries = labels.filter { $0.text.range(of: folio, options: .regularExpression) != nil }
+        return entries.count >= 3 ? labels.filter { !entries.contains($0) } : labels
+    }
+
+    /// Heading sizes ranked into tiers (7% apart), largest first.
+    static func headingTiers(_ sizes: [CGFloat]) -> [CGFloat] {
+        var tiers: [CGFloat] = []
+        for size in sizes.sorted(by: >) where !(tiers.last.map { size >= $0 * 0.93 } ?? false) {
+            tiers.append(size)
+        }
+        return tiers
+    }
+
+    /// Levels for typographic headings, ranked document-wide once every page is reconstructed:
+    /// the largest tier keeps the existing level 2 of the flat navigation model and each smaller
+    /// tier is one level deeper (to 6), so a title outranks the author names beneath it and a
+    /// chapter title outranks its section labels on every page alike (#43). Tagged headings carry
+    /// no size and keep their validated level. One pass over the blocks' sizes; no page geometry.
+    static func rankHeadingLevels(_ blocks: inout [ReflowBlock]) {
+        let tiers = headingTiers(blocks.compactMap(\.headingSize))
+        for index in blocks.indices {
+            guard let size = blocks[index].headingSize,
+                  case let .heading(id, text, _) = blocks[index].content else { continue }
+            let level = min(6, 2 + (tiers.firstIndex { size >= $0 * 0.93 } ?? tiers.count))
+            blocks[index].content = .heading(id: id, text: text, level: level)
+        }
+    }
+
     /// Expand crops to whole intersecting text lines so a label cannot be cut in half.
     static func graphicsWithLabels(_ page: PageContent) -> [CGRect] {
         // Displayed formulas have spatial meaning (superscripts, fractions, aligned terms)
@@ -159,10 +272,11 @@ enum LayoutReconstructor {
         // A rule underlining one text line is that text's decoration, not a figure. Rows of
         // column-header underlines are table evidence instead (#36).
         let tables = TableRegionDetector.underlinedColumnRegions(in: page)
+        let floats = algorithmFloats(in: page)
         let body = max(4, bodySize(page.lines))
         let graphics = page.graphics.compactMap { rect -> CGRect? in
             guard isThinRule(rect) else { return rect }
-            if tables.contains(where: { $0.contains(rect) }) { return nil }
+            if tables.contains(where: { $0.contains(rect) }) || floats.decorations.contains(rect) { return nil }
             // A fraction bar keeps the terms it touches, as any intersecting graphic does.
             if isFractionBar(rect, in: page.lines, body: body) {
                 return page.lines.filter { rect.intersects($0.rect) }.reduce(rect) { $0.union($1.rect) }
@@ -179,7 +293,7 @@ enum LayoutReconstructor {
             return mathematical ? rect.union(owner.rect) : nil
         }
         let seeds = graphics + formulas + TableRegionDetector.regions(in: page)
-            + FractionRegionDetector.regions(in: page) + tables
+            + FractionRegionDetector.regions(in: page) + tables + floats.regions
         var regions = clusters(seeds, distance: 3).map { Region(seed: $0, bounds: $0) }
         var previous: [CGRect] = []
         while regions.map(\.bounds) != previous {
@@ -268,10 +382,28 @@ enum LayoutReconstructor {
                        warnings: inout [ConversionWarning], numberedNotePage: Bool = false,
                        continuesNote: Bool = false) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
-        let lines = page.lines.filter { line in !images.contains { $0.0.intersects(line.rect) } }
+        // A rotated stamp in the outer margin is furniture, never content or a heading.
+        let stamps = rotatedMarginLines(page)
+        if !stamps.isEmpty {
+            warnings.append(.init(code: .furnitureRemoved, page: page.number,
+                message: "Rotated margin text is omitted from the reflowed text."))
+        }
+        let lines = page.lines.filter { line in
+            !stamps.contains(line) && !images.contains { $0.0.intersects(line.rect) }
+        }
         // Preserve existing modest-size headings, but reject candidates within 10% of the
         // supported reflowable body size. This only narrows the original page-size heuristic.
         let headingThreshold = max(body * 1.25, headingBodySize(lines, pageBody: body) * 1.1)
+        // A heading line is wider than tall unless it is one or two characters; rotated text
+        // outside the margin keeps its paragraph representation.
+        func isHeadingSize(_ line: TextLine) -> Bool {
+            !page.hasSyntheticTextStyle && line.fontSize >= headingThreshold && line.text.count < 200
+                && (line.rect.width >= line.rect.height || line.text.count <= 2)
+        }
+        // Labels are measured against the supported reflowable body, as the threshold is, so
+        // small table text cannot make a page's ordinary prose read as labels.
+        let labels = sectionLabels(in: lines, body: headingBodySize(lines, pageBody: body),
+                                   headingThreshold: headingThreshold, page: page)
         let spatial = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
             + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: body)
         let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
@@ -349,7 +481,10 @@ enum LayoutReconstructor {
             return line.rect.minY >= prev.rect.minY + prev.rect.height * 0.2
                 && line.rect.maxY <= prev.rect.maxY + 1
         }
+        var headingRow: TextLine?
         for (index, element) in bodyElements.enumerated() {
+            let previousHeading = headingRow
+            headingRow = nil
             if let group = noteGroups[index], let line = element.line {
                 flushTagged()
                 flush()
@@ -382,10 +517,24 @@ enum LayoutReconstructor {
             }
             flushTagged()
             if !line.monospaced { codeOrigin = nil }
-            if !page.hasSyntheticTextStyle && line.fontSize >= headingThreshold && line.text.count < 200 {
+            if isHeadingSize(line) || labels.contains(line) {
+                // PDFKit splits a heading row at a wide gap (a section number and its title);
+                // the pieces form one heading.
+                if let row = previousHeading, sameRow(row.rect, line.rect),
+                   abs(row.fontSize - line.fontSize) <= line.fontSize * 0.1,
+                   let last = result.indices.last, case let .heading(id, text, level) = result[last].content {
+                    result[last].content = .heading(id: id, text: join(text, line.content, vocabulary: vocabulary,
+                        page: page.number, warnings: &warnings), level: level)
+                    headingRow = row
+                    continue
+                }
                 flush()
-                result.append(ReflowBlock(content: .heading(id: "heading-\(page.number)-\(result.count)", text: line.content),
-                    page: page.number))
+                // Level 2 until the document-wide ranking runs (`rankHeadingLevels`).
+                var heading = ReflowBlock(content: .heading(id: "heading-\(page.number)-\(result.count)", text: line.content),
+                    page: page.number)
+                heading.headingSize = line.fontSize
+                result.append(heading)
+                headingRow = line
             } else if !page.hasSyntheticTextStyle && line.monospaced {
                 flush()
                 if let origin = codeOrigin, let last = result.last, case let .preformatted(previousText) = last.content {

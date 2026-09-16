@@ -1,0 +1,352 @@
+=== page 16: images 1->1, headings 3->4, paragraphs 2->2
+  headings before: ['Chapter 1', 'Introduction', 'To Flying']
+  headings after:  ['Chapter 1', 'Introduction', 'To Flying', 'Introduction']
+=== page 17: images 2->2, headings 0->1, paragraphs 8->8
+  headings before: []
+  headings after:  ['History of Flight']
+=== page 18: images 2->2, headings 0->2, paragraphs 11->11
+  headings before: []
+  headings after:  ['History of the Federal Aviation', 'Administration (FAA)']
+=== page 22: images 1->1, headings 0->1, paragraphs 9->9
+  headings before: []
+  headings after:  ['The Role of the FAA']
+=== page 29: images 0->0, headings 0->2, paragraphs 37->37
+  headings before: []
+  headings after:  ['Aircraft Classifications and Ultralight', 'Vehicles']
+=== page 31: images 2->2, headings 0->1, paragraphs 37->37
+  headings before: []
+  headings after:  ['Pilot Certifications']
+=== page 33: images 3->3, headings 0->1, paragraphs 9->9
+  headings before: []
+  headings after:  ['Selecting a Flight School']
+  insert: ...21 years. [Figure 1-24] [] -> [Selecting a Flight School]
+  delete: ...an airline transport pilot. [Selecting a Flight School] -> []
+=== page 35: images 0->0, headings 0->1, paragraphs 23->23
+  headings before: []
+  headings after:  ['The Student Pilot']
+=== page 36: images 0->0, headings 0->2, paragraphs 22->22
+  headings before: []
+  headings after:  ['Becoming a Pilot', 'Knowledge and Skill Tests']
+=== page 39: images 0->0, headings 0->1, paragraphs 20->20
+  headings before: []
+  headings after:  ['Chapter Summary']
+=== page 40: images 1->1, headings 3->4, paragraphs 1->1
+  headings before: ['Chapter 2', 'Aeronautical', 'Decision-Making']
+  headings after:  ['Chapter 2', 'Aeronautical', 'Decision-Making', 'Introduction']
+=== page 41: images 1->1, headings 0->1, paragraphs 49->48
+  headings before: []
+  headings after:  ['History of ADM']
+=== page 42: images 1->1, headings 0->1, paragraphs 7->7
+  headings before: []
+  headings after:  ['Risk Management']
+=== page 43: images 1->1, headings 0->2, paragraphs 11->12
+  headings before: []
+  headings after:  ['Single-Pilot Resource Management', 'Hazard and Risk']
+=== page 49: images 1->1, headings 0->1, paragraphs 16->16
+  headings before: []
+  headings after:  ['Human Factors']
+  insert: ...create hazards. [Figure 2-7] [] -> [Human Factors]
+  delete: ...2-7. The PAVE checklist. [Human Factors] -> []
+=== page 51: images 0->0, headings 0->1, paragraphs 21->21
+  headings before: []
+  headings after:  ['The Decision-Making Process']
+=== page 63: images 1->1, headings 0->1, paragraphs 10->10
+  headings before: []
+  headings after:  ['Situational Awareness']
+=== page 64: images 1->1, headings 0->1, paragraphs 25->25
+  headings before: []
+  headings after:  ['Automation']
+=== page 73: images 0->0, headings 0->3, paragraphs 15->15
+  headings before: []
+  headings after:  ['Aircraft Design, Certification, and', 'Airworthiness', 'Lift and Basic Aerodynamics']
+=== page 74: images 2->2, headings 0->1, paragraphs 9->9
+  headings before: []
+  headings after:  ['Major Components']
+=== page 79: images 1->1, headings 0->2, paragraphs 13->13
+  headings before: []
+  headings after:  ['Subcomponents', 'Types of Aircraft Construction']
+=== page 84: images 1->1, headings 0->2, paragraphs 7->7
+  headings before: []
+  headings after:  ['Global Positioning System (GPS)', 'Chapter Summary']
+=== page 88: images 1->1, headings 2->4, paragraphs 3->3
+  headings before: ['Chapter 4', 'Principles of Flight']
+  headings after:  ['Chapter 4', 'Principles of Flight', 'Introduction', 'Structure of the Atmosphere']
+=== page 93: images 1->1, headings 0->1, paragraphs 11->11
+  headings before: []
+  headings after:  ['Airfoil Design']
+=== page 96: images 1->1, headings 0->2, paragraphs 19->17
+  headings before: []
+  headings after:  ['Chapter Summary', 'A Third Dimension']
+=== page 98: images 1->1, headings 2->3, paragraphs 7->7
+  headings before: ['Chapter 5', 'Aerodynamics of Flight']
+  headings after:  ['Chapter 5', 'Aerodynamics of Flight', 'Forces Acting on the Aircraft']
+=== page 105: images 1->1, headings 0->1, paragraphs 8->8
+  headings before: []
+  headings after:  ['Wingtip Vortices']
+=== page 108: images 2->2, headings 0->1, paragraphs 34->34
+  headings before: []
+  headings after:  ['Ground Effect']
+=== page 109: images 1->1, headings 0->1, paragraphs 25->25
+  headings before: []
+  headings after:  ['Axes of an Aircraft']
+=== page 110: images 2->2, headings 0->1, paragraphs 9->9
+  headings before: []
+  headings after:  ['Moment and Moment Arm']
+=== page 111: images 1->1, headings 0->1, paragraphs 13->13
+  headings before: []
+  headings after:  ['Aircraft Design Characteristics']
+=== page 117: images 0->0, headings 0->1, paragraphs 13->13
+  headings before: []
+  headings after:  ['Effect of Wing Planform']
+=== page 119: images 1->1, headings 0->1, paragraphs 67->66
+  headings before: []
+  headings after:  ['Aerodynamic Forces in Flight Maneuvers']
+=== page 122: images 0->0, headings 0->1, paragraphs 13->13
+  headings before: []
+  headings after:  ['Stalls']
+=== page 123: images 3->3, headings 0->1, paragraphs 42->41
+  headings before: []
+  headings after:  ['Angle of Attack Indicators']
+=== page 125: images 1->1, headings 0->1, paragraphs 6->6
+  headings before: []
+  headings after:  ['Basic Propeller Principles']
+=== page 130: images 1->1, headings 0->1, paragraphs 58->57
+  headings before: []
+  headings after:  ['Load Factors']
+=== page 137: images 2->2, headings 0->1, paragraphs 14->14
+  headings before: []
+  headings after:  ['Weight and Balance']
+=== page 141: images 0->0, headings 0->1, paragraphs 19->19
+  headings before: []
+  headings after:  ['High Speed Flight']
+=== page 148: images 0->0, headings 0->1, paragraphs 11->11
+  headings before: []
+  headings after:  ['Chapter Summary']
+=== page 149: images 1->1, headings 1->2, paragraphs 1->1
+  headings before: ['Flight ControlsChapter 6']
+  headings after:  ['Flight ControlsChapter 6', 'Introduction']
+=== page 150: images 2->2, headings 0->1, paragraphs 37->36
+  headings before: []
+  headings after:  ['Flight Control Systems']
+=== page 160: images 3->3, headings 0->2, paragraphs 10->10
+  headings before: []
+  headings after:  ['Autopilot', 'Chapter Summary']
+=== page 161: images 1->1, headings 1->3, paragraphs 2->2
+  headings before: ['Aircraft SystemsChapter 7']
+  headings after:  ['Aircraft SystemsChapter 7', 'Introduction', 'Powerplant']
+=== page 175: images 1->1, headings 0->1, paragraphs 29->28
+  headings before: []
+  headings after:  ['Ignition System']
+=== page 176: images 1->1, headings 0->1, paragraphs 24->24
+  headings before: []
+  headings after:  ['Oil Systems']
+=== page 177: images 2->2, headings 0->1, paragraphs 12->12
+  headings before: []
+  headings after:  ['Engine Cooling Systems']
+=== page 180: images 1->1, headings 0->2, paragraphs 11->11
+  headings before: []
+  headings after:  ['Full Authority Digital Engine Control', 'Turbine Engines']
+=== page 185: images 2->2, headings 0->2, paragraphs 18->18
+  headings before: []
+  headings after:  ['Airframe Systems', 'Fuel Systems']
+=== page 189: images 0->0, headings 0->2, paragraphs 13->13
+  headings before: []
+  headings after:  ['Refueling Procedures', 'Heating System']
+=== page 194: images 2->2, headings 0->1, paragraphs 40->39
+  headings before: []
+  headings after:  ['Pressurized Aircraft']
+=== page 197: images 1->1, headings 0->1, paragraphs 9->9
+  headings before: []
+  headings after:  ['Oxygen Systems']
+=== page 200: images 1->1, headings 0->1, paragraphs 11->11
+  headings before: []
+  headings after:  ['Anti-Ice and Deice Systems']
+=== page 201: images 2->2, headings 0->1, paragraphs 10->10
+  headings before: []
+  headings after:  ['Chapter Summary']
+  insert: ...flight in icing conditions. [] -> [Chapter Summary]
+  delete: ...ammeter and anti-ice boots. [Chapter Summary] -> []
+=== page 203: images 1->1, headings 2->4, paragraphs 2->2
+  headings before: ['FlightChapter 8', 'Instruments']
+  headings after:  ['FlightChapter 8', 'Instruments', 'Introduction', 'Pitot-Static Flight Instruments']
+=== page 214: images 2->2, headings 0->1, paragraphs 4->4
+  headings before: []
+  headings after:  ['Electronic Flight Display (EFD)']
+=== page 217: images 2->2, headings 0->1, paragraphs 10->10
+  headings before: []
+  headings after:  ['Gyroscopic Flight Instruments']
+=== page 224: images 1->1, headings 0->1, paragraphs 12->12
+  headings before: []
+  headings after:  ['Angle of Attack Indicators']
+=== page 225: images 2->2, headings 0->1, paragraphs 12->12
+  headings before: []
+  headings after:  ['Compass Systems']
+=== page 230: images 1->1, headings 0->1, paragraphs 4->4
+  headings before: []
+  headings after:  ['Chapter Summary']
+=== page 231: images 1->1, headings 2->4, paragraphs 2->2
+  headings before: ['Chapter 9', 'Flight Manuals and Other Documents']
+  headings after:  ['Chapter 9', 'Flight Manuals and Other Documents', 'Introduction', 'Airplane Flight Manuals (AFM)']
+=== page 236: images 1->1, headings 0->1, paragraphs 16->16
+  headings before: []
+  headings after:  ['Aircraft Documents']
+=== page 239: images 0->0, headings 0->1, paragraphs 23->23
+  headings before: []
+  headings after:  ['Minimum Equipment Lists (MEL) and']
+=== page 240: images 0->0, headings 0->1, paragraphs 15->15
+  headings before: []
+  headings after:  ['Preventive Maintenance']
+=== page 243: images 1->1, headings 0->1, paragraphs 14->14
+  headings before: []
+  headings after:  ['Chapter Summary']
+=== page 245: images 1->1, headings 1->3, paragraphs 3->3
+  headings before: ['Weight and BalanceChapter 10']
+  headings after:  ['Weight and BalanceChapter 10', 'Introduction', 'Weight Control']
+=== page 251: images 3->3, headings 0->1, paragraphs 16->16
+  headings before: []
+  headings after:  ['Determining Loaded Weight and CG']
+=== page 255: images 4->4, headings 0->1, paragraphs 5->5
+  headings before: []
+  headings after:  ['Chapter Summary']
+=== page 257: images 1->1, headings 3->5, paragraphs 2->2
+  headings before: ['Chapter 11', 'Aircraft', 'Performance']
+  headings after:  ['Chapter 11', 'Aircraft', 'Performance', 'Introduction', 'Importance of Performance Data']
+=== page 258: images 1->1, headings 0->2, paragraphs 17->17
+  headings before: []
+  headings after:  ['Structure of the Atmosphere', 'Atmospheric Pressure']
+=== page 259: images 2->2, headings 0->2, paragraphs 10->10
+  headings before: []
+  headings after:  ['Pressure Altitude', 'Density Altitude']
+=== page 261: images 0->0, headings 0->1, paragraphs 12->12
+  headings before: []
+  headings after:  ['Performance']
+=== page 268: images 1->1, headings 0->1, paragraphs 15->15
+  headings before: []
+  headings after:  ['Takeoff and Landing Performance']
+=== page 274: images 1->1, headings 0->1, paragraphs 18->18
+  headings before: []
+  headings after:  ['Performance Speeds']
+=== page 275: images 1->1, headings 0->1, paragraphs 52->52
+  headings before: []
+  headings after:  ['Performance Charts']
+=== page 284: images 1->1, headings 0->3, paragraphs 7->7
+  headings before: []
+  headings after:  ['Air Carrier Obstacle Clearance', 'Requirements', 'Chapter Summary']
+=== page 287: images 1->1, headings 0->1, paragraphs 14->14
+  headings before: []
+  headings after:  ['Coriolis Force']
+=== page 289: images 2->2, headings 0->1, paragraphs 9->9
+  headings before: []
+  headings after:  ['Altitude and Atmospheric Pressure']
+=== page 290: images 2->2, headings 0->2, paragraphs 16->14
+  headings before: []
+  headings after:  ['Altitude and Flight', 'Altitude and the Human Body']
+=== page 291: images 1->1, headings 0->1, paragraphs 12->12
+  headings before: []
+  headings after:  ['Wind and Currents']
+=== page 296: images 2->2, headings 0->1, paragraphs 10->10
+  headings before: []
+  headings after:  ['Atmospheric Stability']
+=== page 312: images 0->0, headings 0->1, paragraphs 10->10
+  headings before: []
+  headings after:  ['Observations']
+=== page 314: images 1->1, headings 0->1, paragraphs 13->13
+  headings before: []
+  headings after:  ['Service Outlets']
+=== page 315: images 0->0, headings 0->2, paragraphs 25->25
+  headings before: []
+  headings after:  ['Weather Briefings', 'Aviation Weather Reports']
+=== page 323: images 1->1, headings 0->1, paragraphs 24->24
+  headings before: []
+  headings after:  ['Weather Charts']
+=== page 326: images 1->1, headings 0->1, paragraphs 13->13
+  headings before: []
+  headings after:  ['ATC Radar Weather Displays']
+=== page 328: images 0->0, headings 0->1, paragraphs 44->45
+  headings before: []
+  headings after:  ['Function Display (MFD) Weather']
+=== page 334: images 0->0, headings 0->2, paragraphs 11->11
+  headings before: []
+  headings after:  ['Pilot Responsibility', 'Chapter Summary']
+=== page 335: images 1->1, headings 2->4, paragraphs 2->2
+  headings before: ['Chapter 14', 'Airport Operations']
+  headings after:  ['Chapter 14', 'Airport Operations', 'Introduction', 'Airport Categories']
+=== page 337: images 1->1, headings 0->1, paragraphs 9->9
+  headings before: []
+  headings after:  ['Sources for Airport Data']
+=== page 339: images 0->0, headings 0->1, paragraphs 12->12
+  headings before: []
+  headings after:  ['Airport Markings and Signs']
+=== page 350: images 1->1, headings 0->1, paragraphs 16->16
+  headings before: []
+  headings after:  ['Airport Lighting']
+=== page 354: images 2->2, headings 0->2, paragraphs 11->11
+  headings before: []
+  headings after:  ['Wind Direction Indicators', 'Traffic Patterns']
+=== page 356: images 1->1, headings 0->1, paragraphs 9->9
+  headings before: []
+  headings after:  ['Radio Communications']
+=== page 358: images 1->1, headings 0->1, paragraphs 9->9
+  headings before: []
+  headings after:  ['Air Traffic Control (ATC) Services']
+=== page 360: images 1->1, headings 0->1, paragraphs 9->9
+  headings before: []
+  headings after:  ['Wake Turbulence']
+=== page 362: images 1->1, headings 0->1, paragraphs 23->23
+  headings before: []
+  headings after:  ['Collision Avoidance']
+=== page 372: images 2->2, headings 0->1, paragraphs 19->19
+  headings before: []
+  headings after:  ['Chapter Summary']
+=== page 376: images 1->1, headings 1->2, paragraphs 1->1
+  headings before: ['AirspaceChapter 15']
+  headings after:  ['AirspaceChapter 15', 'Introduction']
+=== page 377: images 1->1, headings 0->1, paragraphs 7->7
+  headings before: []
+  headings after:  ['Controlled Airspace']
+=== page 378: images 1->1, headings 0->2, paragraphs 11->11
+  headings before: []
+  headings after:  ['Uncontrolled Airspace', 'Special Use Airspace']
+=== page 379: images 2->2, headings 0->1, paragraphs 11->11
+  headings before: []
+  headings after:  ['Other Airspace Areas']
+=== page 382: images 0->0, headings 0->2, paragraphs 16->16
+  headings before: []
+  headings after:  ['Air Traffic Control and the National', 'Airspace System']
+=== page 389: images 3->3, headings 0->1, paragraphs 32->31
+  headings before: []
+  headings after:  ['Aeronautical Charts']
+=== page 390: images 2->2, headings 0->1, paragraphs 6->7
+  headings before: []
+  headings after:  ['Parallels)']
+=== page 395: images 2->2, headings 0->1, paragraphs 10->10
+  headings before: []
+  headings after:  ['Effect of Wind']
+=== page 398: images 4->4, headings 0->1, paragraphs 11->11
+  headings before: []
+  headings after:  ['Basic Calculations']
+=== page 400: images 1->1, headings 0->1, paragraphs 4->4
+  headings before: []
+  headings after:  ['Dead Reckoning']
+=== page 404: images 1->1, headings 0->1, paragraphs 18->18
+  headings before: []
+  headings after:  ['Flight Planning']
+=== page 405: images 0->0, headings 0->1, paragraphs 12->12
+  headings before: []
+  headings after:  ['Charting the Course']
+=== page 408: images 1->1, headings 0->1, paragraphs 41->40
+  headings before: []
+  headings after:  ['Filing a VFR Flight Plan']
+=== page 409: images 1->1, headings 0->1, paragraphs 18->18
+  headings before: []
+  headings after:  ['Ground-Based Navigation']
+=== page 423: images 1->1, headings 3->4, paragraphs 1->1
+  headings before: ['Chapter 17', 'Aeromedical', 'Factors']
+  headings after:  ['Chapter 17', 'Aeromedical', 'Factors', 'Introduction']
+=== page 424: images 0->0, headings 0->1, paragraphs 13->13
+  headings before: []
+  headings after:  ['Obtaining a Medical Certificate']
+=== page 441: images 2->2, headings 0->1, paragraphs 6->6
+  headings before: []
+  headings after:  ['Vision in Flight']
+changed pages: [16, 17, 18, 22, 29, 31, 33, 35, 36, 39, 40, 41, 42, 43, 49, 51, 63, 64, 73, 74, 79, 84, 88, 93, 96, 98, 105, 108, 109, 110, 111, 117, 119, 122, 123, 125, 130, 137, 141, 148, 149, 150, 160, 161, 175, 176, 177, 180, 185, 189, 194, 197, 200, 201, 203, 214, 217, 224, 225, 230, 231, 236, 239, 240, 243, 245, 251, 255, 257, 258, 259, 261, 268, 274, 275, 284, 287, 289, 290, 291, 296, 312, 314, 315, 323, 326, 328, 334, 335, 337, 339, 350, 354, 356, 358, 360, 362, 372, 376, 377, 378, 379, 382, 389, 390, 395, 398, 400, 404, 405, 408, 409, 423, 424, 441] of 522

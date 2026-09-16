@@ -96,9 +96,13 @@ private func spacingEvidence(_ show: String, prefix: String = "", suffix: String
 
 @Test func unsupportedSourceSpacingStateFallsBack() throws {
     let show = "[(Dair)-5(y)] TJ"
-    for prefix in ["1 Tc", "1 Tw", "1 Ts", "3 Tr", "90 Tz", "/G gs", "Q", "q", "/Missing Do", "/Nested Do"] {
+    for prefix in ["1 Tc", "1 Tw", "1 Ts", "3 Tr", "90 Tz", "/G gs", "Q", "q", "/Missing Do"] {
         #expect(try spacingEvidence(show, prefix: prefix).isEmpty)
     }
+    // A Form XObject is opaque: its text is neither evidence nor a contradiction, so the
+    // page's own shows keep their evidence (#43); a Form drawn inside a text object is not.
+    #expect(try spacingEvidence(show, prefix: "/Nested Do").first?.extraSpaces(in: "Dair y") == [4])
+    #expect(try spacingEvidence(show, prefix: "BT /Nested Do ET").isEmpty)
     #expect(try spacingEvidence(show + " (again) Tj").isEmpty)
     #expect(try spacingEvidence(show, subtype: "Type1").isEmpty)
     #expect(try spacingEvidence(show, matrix: "0.001 0 0 0.001 0 0").first?.text == nil)
@@ -109,7 +113,9 @@ private func spacingEvidence(_ show: String, prefix: String = "", suffix: String
 
 @Test func sourceSpacingBoundsWorkAndRestoresSavedFontPlacement() throws {
     let show = "[(Dair)-5(y)] TJ"
-    #expect(try spacingEvidence(show, prefix: String(repeating: "/T3_0 1 Tf ", count: 256)).isEmpty)
+    // TeX reselects fonts at every symbol, so the selection bound is generous; it still exists.
+    #expect(try spacingEvidence(show, prefix: String(repeating: "/T3_0 1 Tf ", count: 9_999)).first?.extraSpaces(in: "Dair y") == [4])
+    #expect(try spacingEvidence(show, prefix: String(repeating: "/T3_0 1 Tf ", count: 10_000)).isEmpty)
     #expect(try spacingEvidence("[(" + String(repeating: "a", count: 4097) + ")] TJ").first?.text == nil)
     #expect(try spacingEvidence("[" + String(repeating: "(a) ", count: 4097) + "] TJ").isEmpty)
     let evidence = try spacingEvidence(show, prefix: "q 2 0 0 2 100 100 cm /T3_0 9 Tf Q 1 0 0 1 10 20 cm")
@@ -129,5 +135,219 @@ private func spacingEvidence(_ show: String, prefix: String = "", suffix: String
                 good.replacingOccurrences(of: "<41> <0041>", with: "<41> <D800>"),
                 good + String(repeating: " ", count: 65_536)] {
         #expect(NativeSpacingReader.characterMap(Data(bad.utf8)) == nil)
+    }
+}
+
+// MARK: - Word boundaries hidden at font changes (#43)
+
+private struct BoundarySource: Decodable {
+    struct Font: Decodable {
+        var resourceName: String
+        var subtype: String
+        var firstChar: Int?
+        var widths: [Double]?
+        var toUnicode: String?
+    }
+    struct TextObject: Decodable { var operators: String }
+    var sourceSHA256: String
+    var fonts: [String: Font]
+    var textObjects: [TextObject]
+    static func load() throws -> Self {
+        try JSONDecoder().decode(Self.self, from: Data(contentsOf: Bundle.module.resourceURL!
+            .appendingPathComponent("fixtures/replay-1-text-operators.json")))
+    }
+}
+
+private func simpleUnicodeMap() -> String { "begincmap\n" + simpleSpacingMap() + "\nendcmap" }
+
+private struct BoundaryFont {
+    var name: String
+    var firstChar: Int? = 32
+    var widths: [Double]? = Array(repeating: 500, count: 95)
+    var map: String? = simpleUnicodeMap()
+}
+
+/// A page whose fonts are simple Type1 dictionaries with Widths and ToUnicode streams.
+private func boundaryPDF(fonts: [BoundaryFont], operators: String) throws -> CGPDFDocument {
+    var objects = ["<< /Type /Catalog /Pages 2 0 R >>", "<< /Type /Pages /Kids [3 0 R] /Count 1 >>", "",
+                   testPDFStream(operators)]
+    var resources: [String] = []
+    for font in fonts {
+        let index = objects.count + 1
+        var dictionary = "<< /Type /Font /Subtype /Type1 /BaseFont /\(font.name)"
+        if let firstChar = font.firstChar, let widths = font.widths {
+            dictionary += " /FirstChar \(firstChar) /LastChar \(firstChar + widths.count - 1) /Widths ["
+                + widths.map { String(format: "%g", $0) }.joined(separator: " ") + "]"
+        }
+        if font.map != nil { dictionary += " /ToUnicode \(index + 1) 0 R" }
+        objects.append(dictionary + " >>")
+        if let map = font.map { objects.append(testPDFStream(map)) }
+        resources.append("/\(font.name) \(index) 0 R")
+    }
+    objects[2] = "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << "
+        + resources.joined(separator: " ") + " >> >> /Contents 4 0 R >>"
+    let provider = try #require(CGDataProvider(data: testPDF(objects: objects) as CFData))
+    return try #require(CGPDFDocument(provider))
+}
+
+private func boundaryEvidence(_ operators: String, fonts: [BoundaryFont] = [BoundaryFont(name: "Fa"), BoundaryFont(name: "Fb")]) throws -> [NativeSpacingReader.Evidence] {
+    let document = try boundaryPDF(fonts: fonts, operators: operators)
+    return NativeSpacingReader.read(try #require(document.page(at: 1)))
+}
+
+private let boundaryRect = CGRect(x: 40, y: 690, width: 120, height: 14)
+
+private func repairedBoundary(_ evidence: [NativeSpacingReader.Evidence], _ native: String) -> String {
+    NativeSpacingReader.apply(evidence, to: NSAttributedString(string: native), bounds: boundaryRect, allBounds: [boundaryRect]).string
+}
+
+@Test func sourceFontBoundariesRestoreReplayClocksWordSpaces() throws {
+    let source = try BoundarySource.load(), layout = try SourceLayoutFixture.load("replay-1")
+    #expect(source.sourceSHA256 == layout.sourceSHA256)
+    let fonts = source.fonts.values.sorted { $0.resourceName < $1.resourceName }.map {
+        BoundaryFont(name: $0.resourceName, firstChar: $0.firstChar, widths: $0.widths, map: $0.toUnicode)
+    }
+    let document = try boundaryPDF(fonts: fonts, operators: source.textObjects.map(\.operators).joined(separator: "\n"))
+    let evidence = NativeSpacingReader.read(try #require(document.page(at: 1)))
+    // Every upright show on the page is decoded and measured; the rotated arXiv stamp yields
+    // no evidence and does not disqualify the page.
+    #expect(evidence.count == 187)
+    #expect(evidence.allSatisfy { $0.unicode != nil && $0.end != nil })
+    #expect(evidence.allSatisfy { $0.text == nil })
+    // Reviewed against the rendered page and Poppler's text layer: the only changes are the
+    // word spaces after mathematical variables set in the LibertineMathMI font.
+    let expected = [
+        "a distributed computation. Specifically, if event 𝑒must occur before":
+            "a distributed computation. Specifically, if event 𝑒 must occur before",
+        "As an illustration, consider two drones 𝐴and 𝐵that are cooper-":
+            "As an illustration, consider two drones 𝐴 and 𝐵 that are cooper-",
+        "all these checks during the execution would require that 𝐴and 𝐵":
+            "all these checks during the execution would require that 𝐴 and 𝐵",
+        "processes often differ. Hence, it is possible that drone 𝐴may send a":
+            "processes often differ. Hence, it is possible that drone 𝐴 may send a",
+        "message at time 50 (local time of 𝐴) but it is received by 𝐵at time":
+            "message at time 50 (local time of 𝐴) but it is received by 𝐵 at time",
+        "introduce two concerns: Their size of 𝑂(𝑛), where 𝑛is the number":
+            "introduce two concerns: Their size of 𝑂(𝑛), where 𝑛 is the number",
+        "external observer will know that the action of 𝐴occurred before 𝐵.":
+            "external observer will know that the action of 𝐴 occurred before 𝐵.",
+        "However, if 𝐴and 𝐵did not communicate then the corresponding":
+            "However, if 𝐴 and 𝐵 did not communicate then the corresponding",
+    ]
+    let bounds = try layout.attributedLines.map { line -> CGRect in
+        let values = try #require(line.rect)
+        return CGRect(x: values[0], y: values[1], width: values[2], height: values[3])
+    }
+    var repaired: [String: String] = [:]
+    for (index, line) in layout.attributedLines.enumerated() {
+        let result = NativeSpacingReader.apply(evidence, to: line.attributedString(), bounds: bounds[index], allBounds: bounds)
+        if result.string != line.text { repaired[line.text] = result.string }
+    }
+    #expect(repaired == expected)
+    // The stamp line itself is untouched, as is a line whose spaces PDFKit already synthesized.
+    #expect(repaired["arXiv:2311.07842v1 [cs.DC] 14 Nov 2023"] == nil)
+    #expect(repaired["𝑓 then the replay clock must ensure that 𝑒 is replayed before 𝑓."] == nil)
+}
+
+@Test func fontChangeGapRestoresWordSpaceOnlyBetweenWords() throws {
+    // 10-point fonts with 500-unit advances: "event" ends at 65, the variable at 68 (0.3 em
+    // later) ends at 73, and "must" starts at 76.
+    let ops = "BT /Fa 10 Tf 1 0 0 1 40 700 Tm (event) Tj /Fb 10 Tf 1 0 0 1 68 700 Tm (e) Tj /Fa 10 Tf 1 0 0 1 76 700 Tm (must) Tj ET"
+    let evidence = try boundaryEvidence(ops)
+    #expect(evidence.map(\.end) == [65, 73, 96])
+    #expect(evidence.map(\.unicode) == ["event", "e", "must"])
+    #expect(evidence.map(\.size) == [10, 10, 10])
+    #expect(evidence[0].font == evidence[2].font, "one font dictionary keeps one identity")
+    #expect(evidence[0].font != evidence[1].font)
+    #expect(repairedBoundary(evidence, "event emust") == "event e must")
+    #expect(repairedBoundary(evidence, "eventemust") == "event e must")
+    #expect(repairedBoundary(evidence, "event e must") == "event e must")
+    #expect(repairedBoundary(evidence, "event e must\n") == "event e must\n")
+    // Any mismatch beyond PDFKit's own spaces leaves the line alone.
+    for native in ["event xmust", "event emus", "event emust extra", "Event emust"] {
+        #expect(repairedBoundary(evidence, native) == native)
+    }
+    // Tm scaling (pdfTeX font expansion) scales advances and the em used for the threshold.
+    let scaled = try boundaryEvidence(ops.replacingOccurrences(of: "1 0 0 1 40 700 Tm", with: "0.9 0 0 1 40 700 Tm"))
+    #expect(scaled.map(\.end) == [62.5, 73, 96])
+    #expect(scaled.map(\.size) == [9, 10, 10])
+    #expect(repairedBoundary(scaled, "event emust") == "event e must")
+}
+
+@Test func fontChangeGapsBelowWordSizeOrOutsideWordsStayJoined() throws {
+    func ops(second: String = "/Fb 10 Tf 1 0 0 1 68 700 Tm (e) Tj", third: String = "/Fa 10 Tf 1 0 0 1 76 700 Tm (must) Tj") -> String {
+        "BT /Fa 10 Tf 1 0 0 1 40 700 Tm (event) Tj \(second) \(third) ET"
+    }
+    // 0.14 em is a kern or italic correction; 0.15 em is the shrunk glue of a justified line.
+    #expect(repairedBoundary(try boundaryEvidence(ops(third: "/Fa 10 Tf 1 0 0 1 74.4 700 Tm (must) Tj")), "event emust") == "event emust")
+    #expect(repairedBoundary(try boundaryEvidence(ops(third: "/Fa 10 Tf 1 0 0 1 74.5 700 Tm (must) Tj")), "event emust") == "event e must")
+    // The same font on both sides is PDFKit's ordinary spacing, outside this rule.
+    #expect(repairedBoundary(try boundaryEvidence(ops(second: "/Fa 10 Tf 1 0 0 1 68 700 Tm (e) Tj")), "event emust") == "event emust")
+    // Punctuation beside the gap is not a word boundary; a raised show is not on the baseline.
+    #expect(repairedBoundary(try boundaryEvidence(ops(third: "/Fa 10 Tf 1 0 0 1 76 700 Tm (.) Tj")), "event e.") == "event e.")
+    #expect(repairedBoundary(try boundaryEvidence(ops(second: "/Fb 10 Tf 1 0 0 1 68 700 Tm (,) Tj")), "event ,must") == "event ,must")
+    #expect(repairedBoundary(try boundaryEvidence(ops(second: "/Fb 10 Tf 1 0 0 1 68 704 Tm (e) Tj")), "event emust") == "event emust")
+    // A TJ adjustment inside a show moves its end; a word-size adjustment is still measured.
+    let adjusted = try boundaryEvidence(ops(second: "/Fb 10 Tf 1 0 0 1 68 700 Tm [(e)-300(f)] TJ"))
+    #expect(adjusted[1].end == 81)
+    #expect(repairedBoundary(adjusted, "event e fmust") == "event e fmust")
+    // Without Widths the advance is unknown, so only the boundary before the show is measured.
+    let partial = try boundaryEvidence(ops(), fonts: [BoundaryFont(name: "Fa"), BoundaryFont(name: "Fb", widths: nil)])
+    #expect(partial.map(\.end) == [65, nil, 96])
+    #expect(repairedBoundary(partial, "eventemust") == "event emust")
+    // Without a ToUnicode map the show is not decoded and the line cannot be matched.
+    let unmapped = try boundaryEvidence(ops(), fonts: [BoundaryFont(name: "Fa"), BoundaryFont(name: "Fb", map: nil)])
+    #expect(unmapped.map(\.unicode) == ["event", nil, "must"])
+    #expect(repairedBoundary(unmapped, "event emust") == "event emust")
+}
+
+@Test func rotatedShowsAndFormsLeaveUprightEvidenceIntact() throws {
+    let upright = "BT /Fa 10 Tf 1 0 0 1 40 700 Tm (event) Tj /Fb 10 Tf 1 0 0 1 68 700 Tm (e) Tj /Fa 10 Tf 1 0 0 1 76 700 Tm (must) Tj ET"
+    let stamp = "q 0 1 -1 0 30 200 cm BT /Fa 20 Tf 1 0 0 1 0 0 Tm (arXiv stamp) Tj ET Q "
+    let evidence = try boundaryEvidence(stamp + upright)
+    #expect(evidence.count == 3)
+    #expect(repairedBoundary(evidence, "event emust") == "event e must")
+    // Two shows in one line rectangle that also lie inside another rectangle are ambiguous.
+    let overlapping = CGRect(x: 40, y: 695, width: 120, height: 14)
+    #expect(NativeSpacingReader.apply(evidence, to: NSAttributedString(string: "event emust"), bounds: boundaryRect,
+                                      allBounds: [boundaryRect, overlapping]).string == "event emust")
+    // Unsupported text state still disqualifies the page for insertion as it does for removal.
+    for prefix in ["1 Tc ", "1 Tw ", "90 Tz ", "/G gs "] {
+        #expect(try boundaryEvidence(prefix + upright).isEmpty)
+    }
+}
+
+@Test func generalUnicodeMapsDecodeRangesLigaturesAndSurrogatesOrFallBack() {
+    let map = """
+    /CIDInit /ProcSet findresource begin begincmap
+    1 begincodespacerange <00> <FF> endcodespacerange
+    2 beginbfrange
+    <16> <17> <D835DC34>
+    <20> <21> [<0041> <00420043>]
+    endbfrange
+    2 beginbfchar
+    <1B> <00660069>
+    <41> <0041>
+    endbfchar
+    endcmap
+    """
+    let decoded = NativeSpacingReader.unicodeMap(Data(map.utf8))
+    #expect(decoded?[0x16] == "𝐴")
+    #expect(decoded?[0x17] == "𝐵")
+    #expect(decoded?[0x20] == "A")
+    #expect(decoded?[0x21] == "BC")
+    #expect(decoded?[0x1B] == "fi")
+    #expect(decoded?[0x41] == "A")
+    #expect(decoded?.count == 6)
+    #expect(NativeSpacingReader.unicodeMap(Data(simpleSpacingMap().utf8)) == nil, "a bare map without begincmap is not a CMap")
+    for bad in [map + " /Other usecmap", map.replacingOccurrences(of: "<00> <FF>", with: "<0000> <FFFF>"),
+                map.replacingOccurrences(of: "<41> <0041>", with: "<16> <0041>"),
+                map.replacingOccurrences(of: "<41> <0041>", with: "<41> <004>"),
+                map.replacingOccurrences(of: "<41> <0041>", with: "<41> <D800>"),
+                map.replacingOccurrences(of: "<16> <17>", with: "<17> <16>"),
+                map.replacingOccurrences(of: "2 beginbfchar", with: "1 beginbfchar"),
+                map.replacingOccurrences(of: "[<0041> <00420043>]", with: "[<0041>]"),
+                map + String(repeating: " ", count: 65_536)] {
+        #expect(NativeSpacingReader.unicodeMap(Data(bad.utf8)) == nil)
     }
 }

@@ -1,0 +1,4180 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        53.798000000000002,
+        723.00020940000002,
+        137.32109580000002,
+        6.4368173999999954
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "Conference’17, July 2017, Washington, DC, USA "
+        }
+      ],
+      "text" : "Conference’17, July 2017, Washington, DC, USA "
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        664.42576159999999,
+        240.25034848000001,
+        8.4732480000000123
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "Figure 2: Working of Shift() on Process 0. Here, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝜖"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "=15, and the"
+        }
+      ],
+      "text" : "Figure 2: Working of Shift() on Process 0. Here, 𝜖=15, and the"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        653.46676160000004,
+        149.73826080000001,
+        8.4732480000000123
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "shift is issued to advance to epoch 20."
+        }
+      ],
+      "text" : "shift is issued to advance to epoch 20."
+    },
+    {
+      "rect" : [
+        63.761000000000003,
+        633.94682880000005,
+        230.28368224000005,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9215680000000006,
+          "text" : "The MergeSameEpoch function takes two timestamps "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑡"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9215680000000006,
+          "text" : "1 and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑡"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9215680000000006,
+          "text" : "2"
+        }
+      ],
+      "text" : "The MergeSameEpoch function takes two timestamps 𝑡1 and 𝑡2"
+    },
+    {
+      "rect" : [
+        53.466999999999999,
+        622.98782879999999,
+        240.57876972800011,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8857023999999996,
+          "text" : "with the same "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑚𝑥 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8857023999999996,
+          "text" : "value and combines their offsets by setting to be"
+        }
+      ],
+      "text" : "with the same 𝑚𝑥 value and combines their offsets by setting to be"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        612.02882880000004,
+        241.76354079999999,
+        8.4284159999999702
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "offset.𝑗.𝑘 to be the 𝑚𝑖𝑛(𝑡1.offset.𝑗.𝑘,𝑡2.offset.𝑗.𝑘). For exam-"
+        }
+      ],
+      "text" : "offset.𝑗.𝑘 to be the 𝑚𝑖𝑛(𝑡1.offset.𝑗.𝑘,𝑡2.offset.𝑗.𝑘). For exam-"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        601.06982879999998,
+        241.56969017599999,
+        8.4284159999999702
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "ple, merging "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "⟨"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "50"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ",["
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "0"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ","
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ","
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "]⟩"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "⟨"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "50"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ",["
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ","
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "0"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ","
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "]⟩"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "results in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "⟨"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "50"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ",["
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "0"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ","
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "0"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ","
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "]⟩"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "."
+        }
+      ],
+      "text" : "ple, merging ⟨50,[0,1,2]⟩and ⟨50,[2,0,1]⟩results in ⟨50,[0,0,1]⟩."
+    },
+    {
+      "rect" : [
+        63.761000000000003,
+        590.11082880000004,
+        231.797530368,
+        8.4911808000000519
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "Description of the Algorithm. The algorithm works as fol-"
+        }
+      ],
+      "text" : "Description of the Algorithm. The algorithm works as fol-"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        579.15182879999998,
+        19.134297599999996,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "lows:"
+        }
+      ],
+      "text" : "lows:"
+    },
+    {
+      "rect" : [
+        63.761000000000003,
+        568.18386240000007,
+        230.28631884800004,
+        8.383583999999928
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "Local/Send event. Here, we describe how "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑅𝑒𝑝𝐶𝑙.𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "is updated"
+        }
+      ],
+      "text" : "Local/Send event. Here, we describe how 𝑅𝑒𝑝𝐶𝑙.𝑗 is updated"
+    },
+    {
+      "rect" : [
+        53.466999999999999,
+        557.23382879999997,
+        214.32208000000003,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "when 𝑗 sends a message. Let the current timestamp of 𝑗 be"
+        }
+      ],
+      "text" : "when 𝑗 sends a message. Let the current timestamp of 𝑗 be"
+    },
+    {
+      "rect" : [
+        115.92800000000003,
+        542.96884639999996,
+        115.9874016,
+        7.8993983999999955
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "⟨𝑚𝑥.𝑗,offset.𝑗[],counter.𝑗[]⟩"
+        }
+      ],
+      "text" : "⟨𝑚𝑥.𝑗,offset.𝑗[],counter.𝑗[]⟩"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        527.64482880000003,
+        240.24364467200002,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "First, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑚𝑥.𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "needs to be increased if the clock of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "has advanced"
+        }
+      ],
+      "text" : "First, 𝑚𝑥.𝑗 needs to be increased if the clock of 𝑗 has advanced"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        516.68582879999997,
+        240.24900780800004,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "beyond epoch "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑚𝑥.𝑗"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ". Hence, we first compute "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑛𝑒𝑤𝑚𝑥.𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "which is"
+        }
+      ],
+      "text" : "beyond epoch 𝑚𝑥.𝑗. Hence, we first compute 𝑛𝑒𝑤𝑚𝑥.𝑗 which is"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        505.72682880000002,
+        240.25069272959996,
+        8.4284159999999702
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9260511999999999,
+          "text" : "equal to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑚𝑎𝑥(𝑚𝑥.𝑗,epoch.𝑗)"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9260511999999999,
+          "text" : ". When "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9260511999999999,
+          "text" : "sends a message, it does not"
+        }
+      ],
+      "text" : "equal to 𝑚𝑎𝑥(𝑚𝑥.𝑗,epoch.𝑗). When 𝑗 sends a message, it does not"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        494.76882879999999,
+        204.55460799999997,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "learn any new information about the clock of process 𝑘."
+        }
+      ],
+      "text" : "learn any new information about the clock of process 𝑘."
+    },
+    {
+      "rect" : [
+        63.761000000000003,
+        483.80982879999999,
+        230.28482231040013,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0067488000000004,
+          "text" : "We consider two cases: The first case is for the scenario where"
+        }
+      ],
+      "text" : "We consider two cases: The first case is for the scenario where"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        472.85082879999999,
+        241.23674655360003,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9350176000000001,
+          "text" : "the newly created event "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9350176000000001,
+          "text" : "is in a new epoch as the previous event,"
+        }
+      ],
+      "text" : "the newly created event 𝑓 is in a new epoch as the previous event,"
+    },
+    {
+      "rect" : [
+        53.484000000000002,
+        461.89182879999998,
+        240.561326208,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ". This will happen if "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑚𝑥 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "remains unchanged and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "offset.𝑗.𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "is"
+        }
+      ],
+      "text" : "𝑒. This will happen if 𝑚𝑥 remains unchanged and offset.𝑗.𝑗 is"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        450.93282879999998,
+        240.24297408640001,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9170848000000014,
+          "text" : "unchanged. In this case, we increase "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑗.𝑗"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9170848000000014,
+          "text" : ". The second case"
+        }
+      ],
+      "text" : "unchanged. In this case, we increase counter.𝑗.𝑗. The second case"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        439.97382879999998,
+        240.24582105600001,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "deals with the scenario where "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "is in a new interval. Thus, the"
+        }
+      ],
+      "text" : "deals with the scenario where 𝑓 is in a new interval. Thus, the"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        429.01482879999998,
+        240.2431993216,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9305343999999991,
+          "text" : "offset associated with "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑘 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9305343999999991,
+          "text" : "is changed using the Shift operation. Note"
+        }
+      ],
+      "text" : "offset associated with 𝑘 is changed using the Shift operation. Note"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        418.05582879999997,
+        241.62715584,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "that the Shift operation computes the shift of all processes except "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑗"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "."
+        }
+      ],
+      "text" : "that the Shift operation computes the shift of all processes except 𝑗."
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        407.09682880000003,
+        240.2504005632,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "offset.𝑗.𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9081183999999993,
+          "text" : "should be based on the value of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "epoch.𝑗"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9081183999999993,
+          "text" : ". Hence, we set"
+        }
+      ],
+      "text" : "offset.𝑗.𝑗 should be based on the value of epoch.𝑗. Hence, we set"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        396.13782880000002,
+        240.24373420800003,
+        8.428416000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "it equal to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑛𝑒𝑤𝑚𝑥−epoch.𝑗"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ". The Shift operation is illustrated in"
+        }
+      ],
+      "text" : "it equal to 𝑛𝑒𝑤𝑚𝑥−epoch.𝑗. The Shift operation is illustrated in"
+    },
+    {
+      "rect" : [
+        53.484000000000002,
+        385.1798288,
+        46.490783999999998,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Algorithm 2."
+        }
+      ],
+      "text" : "Algorithm 2."
+    },
+    {
+      "rect" : [
+        53.466999999999999,
+        362.49582879999997,
+        108.4030848,
+        8.4911807999999951
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Algorithm 2 Shift Operation"
+        }
+      ],
+      "text" : "Algorithm 2 Shift Operation"
+    },
+    {
+      "rect" : [
+        59.669000000000004,
+        348.0258288,
+        92.54432639999996,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "1: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Define Shift operation."
+        }
+      ],
+      "text" : "1: Define Shift operation."
+    },
+    {
+      "rect" : [
+        59.668999999999997,
+        337.0668288,
+        68.631987199999983,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "2: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Shift(𝑡𝑠,𝑛𝑒𝑤𝑚𝑥)"
+        }
+      ],
+      "text" : "2: Shift(𝑡𝑠,𝑛𝑒𝑤𝑚𝑥)"
+    },
+    {
+      "rect" : [
+        59.668999999999983,
+        326.10782879999999,
+        59.794636800000006,
+        8.4911807999999951
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "3: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "for each 𝑘 do"
+        }
+      ],
+      "text" : "3: for each 𝑘 do"
+    },
+    {
+      "rect" : [
+        59.668999999999983,
+        315.61310459999999,
+        186.42181120000004,
+        7.9641402000000312
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "4: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑡𝑠.offset.𝑘 ←offset.𝑘+(𝑛𝑒𝑤𝑚𝑥−𝑡𝑠.𝑚𝑥)"
+        }
+      ],
+      "text" : "4: 𝑡𝑠.offset.𝑘 ←offset.𝑘+(𝑛𝑒𝑤𝑚𝑥−𝑡𝑠.𝑚𝑥)"
+    },
+    {
+      "rect" : [
+        59.668999999999983,
+        304.20776159999997,
+        4.888633800000008,
+        8.4732480000000123
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "5: "
+        }
+      ],
+      "text" : "5: "
+    },
+    {
+      "rect" : [
+        82.490999999999985,
+        304.20776159999997,
+        88.077044799999953,
+        8.4732480000000123
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "if 𝑡𝑠.offset.𝑘 > 𝜖 then"
+        }
+      ],
+      "text" : "if 𝑡𝑠.offset.𝑘 > 𝜖 then"
+    },
+    {
+      "rect" : [
+        59.66899999999994,
+        293.69510459999998,
+        96.736854400000013,
+        7.9641402000000312
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "6: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑡𝑠.offset.𝑘 ←𝜖"
+        }
+      ],
+      "text" : "6: 𝑡𝑠.offset.𝑘 ←𝜖"
+    },
+    {
+      "rect" : [
+        59.66899999999994,
+        282.16876159999998,
+        48.904976000000005,
+        8.4732480000000123
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "7: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Output: 𝑡𝑠"
+        }
+      ],
+      "text" : "7: Output: 𝑡𝑠"
+    },
+    {
+      "rect" : [
+        53.466999999999999,
+        243.93282879999998,
+        102.96048,
+        8.4911808000000235
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Algorithm 3 Send Message"
+        }
+      ],
+      "text" : "Algorithm 3 Send Message"
+    },
+    {
+      "rect" : [
+        59.669000000000004,
+        229.27782880000001,
+        122.1218112,
+        8.4284159999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "1: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑛𝑒𝑤𝑚𝑥 ←max(𝑚𝑥.𝑗,epoch.𝑗)"
+        }
+      ],
+      "text" : "1: 𝑛𝑒𝑤𝑚𝑥 ←max(𝑚𝑥.𝑗,epoch.𝑗)"
+    },
+    {
+      "rect" : [
+        59.669000000000011,
+        218.7831046,
+        132.46264640000001,
+        7.9641402000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "2: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "new_offset ←𝑛𝑒𝑤𝑚𝑥−epoch.𝑗"
+        }
+      ],
+      "text" : "2: new_offset ←𝑛𝑒𝑤𝑚𝑥−epoch.𝑗"
+    },
+    {
+      "rect" : [
+        59.669000000000011,
+        207.37876160000002,
+        205.49404480000001,
+        8.4732480000000123
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "3: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "if (𝑚𝑥.𝑗= 𝑛𝑒𝑤𝑚𝑥∧offset.𝑗.𝑗= new_offset)then"
+        }
+      ],
+      "text" : "3: if (𝑚𝑥.𝑗= 𝑛𝑒𝑤𝑚𝑥∧offset.𝑗.𝑗= new_offset)then"
+    },
+    {
+      "rect" : [
+        59.669000000000011,
+        196.4018288,
+        137.52837600000007,
+        8.4284159999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "4: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑗.𝑗 ←counter.𝑗.𝑗+1"
+        }
+      ],
+      "text" : "4: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1"
+    },
+    {
+      "rect" : [
+        59.66900000000004,
+        185.46076160000001,
+        24.883871999999997,
+        8.4732480000000123
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "5: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "else"
+        }
+      ],
+      "text" : "5: else"
+    },
+    {
+      "rect" : [
+        59.66900000000004,
+        174.94810459999999,
+        119.7228112,
+        7.9641402000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "6: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑡𝑠.𝑗 ←𝑆ℎ𝑖𝑓𝑡(𝑡𝑠.𝑗,𝑛𝑒𝑤𝑚𝑥)"
+        }
+      ],
+      "text" : "6: 𝑡𝑠.𝑗 ←𝑆ℎ𝑖𝑓𝑡(𝑡𝑠.𝑗,𝑛𝑒𝑤𝑚𝑥)"
+    },
+    {
+      "rect" : [
+        59.669000000000025,
+        163.52482879999999,
+        169.63781119999999,
+        8.4284159999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "7: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "offset.𝑗.𝑗 ←min(𝑛𝑒𝑤𝑚𝑥−epoch.𝑗,𝜖)"
+        }
+      ],
+      "text" : "7: offset.𝑗.𝑗 ←min(𝑛𝑒𝑤𝑚𝑥−epoch.𝑗,𝜖)"
+    },
+    {
+      "rect" : [
+        59.669000000000011,
+        152.56582879999999,
+        114.9468112000001,
+        8.4284159999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "8: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑗 ←[0,0,...,0]"
+        }
+      ],
+      "text" : "8: counter.𝑗 ←[0,0,...,0]"
+    },
+    {
+      "rect" : [
+        63.761000000000003,
+        126.3898624,
+        50.082006528000001,
+        8.3835840000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "Receive event. "
+        }
+      ],
+      "text" : "Receive event. "
+    },
+    {
+      "rect" : [
+        118.955,
+        126.3898624,
+        175.08581683200003,
+        8.3835840000000132
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "Next, we describe how RepCl is updated when"
+        }
+      ],
+      "text" : "Next, we describe how RepCl is updated when"
+    },
+    {
+      "rect" : [
+        54.515999999999998,
+        115.4398288,
+        241.04303829760002,
+        8.4284159999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9126016000000003,
+          "text" : "(with timestamp "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "⟨𝑚𝑥.𝑗,offset.𝑗[],counter.𝑗[]⟩"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9126016000000003,
+          "text" : "receives a mes-"
+        }
+      ],
+      "text" : "𝑗 (with timestamp ⟨𝑚𝑥.𝑗,offset.𝑗[],counter.𝑗[]⟩receives a mes-"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        104.48082880000001,
+        214.49260800000002,
+        8.4284159999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "sage 𝑚with timestamp ⟨𝑚𝑥.𝑚,offset.𝑚[],counter.𝑚[]⟩."
+        }
+      ],
+      "text" : "sage 𝑚with timestamp ⟨𝑚𝑥.𝑚,offset.𝑚[],counter.𝑚[]⟩."
+    },
+    {
+      "rect" : [
+        63.761000000000003,
+        93.521828800000009,
+        229.96587999999994,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "First, we compute "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑛𝑒𝑤𝑚𝑥 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "which is the maximum of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑚𝑥.𝑗"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : ", "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑚𝑥.𝑚"
+        }
+      ],
+      "text" : "First, we compute 𝑛𝑒𝑤𝑚𝑥 which is the maximum of 𝑚𝑥.𝑗, 𝑚𝑥.𝑚"
+    },
+    {
+      "rect" : [
+        53.798000000000002,
+        82.56382880000001,
+        239.44865279999999,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "epoch.𝑗"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ". Timestamps of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑚 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "are then shifted to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑛𝑒𝑤𝑚𝑥"
+        }
+      ],
+      "text" : "and epoch.𝑗. Timestamps of 𝑗 and 𝑚 are then shifted to 𝑛𝑒𝑤𝑚𝑥"
+    },
+    {
+      "rect" : [
+        434.97399999999999,
+        723.00020940000002,
+        123.22704600000003,
+        6.4368173999999954
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "Ishaan Lagwankar and Sandeep S Kulkarni"
+        }
+      ],
+      "text" : "Ishaan Lagwankar and Sandeep S Kulkarni"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        696.26182879999999,
+        240.24912883199994,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "using the Shift operation. These timestamps are then merged to"
+        }
+      ],
+      "text" : "using the Shift operation. These timestamps are then merged to"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        685.30282880000004,
+        210.41860800000012,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "obtain the 𝑚𝑥 and offset values of the new event, say 𝑓."
+        }
+      ],
+      "text" : "obtain the 𝑚𝑥 and offset values of the new event, say 𝑓."
+    },
+    {
+      "rect" : [
+        327.91800000000001,
+        674.34382879999998,
+        230.2825766336,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9619168000000009,
+          "text" : "Now, we check if the knowledge that "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9619168000000009,
+          "text" : "has about epochs is the"
+        }
+      ],
+      "text" : "Now, we check if the knowledge that 𝑓 has about epochs is the"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        663.38482880000004,
+        240.24597075199989,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "same as that of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "(the previous event on "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑗"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ") or "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑚"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ". If all three are"
+        }
+      ],
+      "text" : "same as that of 𝑒 (the previous event on 𝑗) or 𝑚. If all three are"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        652.42682879999995,
+        240.24842496000002,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "in the same epoch then "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑗.𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "is set to one more than the"
+        }
+      ],
+      "text" : "in the same epoch then counter.𝑗.𝑗 is set to one more than the"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        641.46782880000001,
+        240.24669031039997,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0067488000000004,
+          "text" : "maximum of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑗.𝑘 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0067488000000004,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑚.𝑘"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0067488000000004,
+          "text" : ". If only "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0067488000000004,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0067488000000004,
+          "text" : "are in"
+        }
+      ],
+      "text" : "maximum of counter.𝑗.𝑘 and counter.𝑚.𝑘. If only 𝑒 and 𝑓 are in"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        630.50882879999995,
+        238.37244960000004,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0022656000000012,
+          "text" : "the same epoch, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑗.𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0022656000000012,
+          "text" : "is incremented by 1. If only "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑚"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0022656000000012,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑓"
+        }
+      ],
+      "text" : "the same epoch, counter.𝑗.𝑗 is incremented by 1. If only 𝑚and 𝑓"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        619.5498288,
+        240.24911654400006,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "are in the same epoch, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑗"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "is set to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑚"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "and the value"
+        }
+      ],
+      "text" : "are in the same epoch, counter.𝑗is set to counter.𝑚and the value"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        608.59082880000005,
+        240.24834419200005,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑗.𝑗 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "is incremented by 1. If none of these conditions"
+        }
+      ],
+      "text" : "of counter.𝑗.𝑗 is incremented by 1. If none of these conditions"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        597.63182879999999,
+        124.48960800000003,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "apply then counters are reset to 0."
+        }
+      ],
+      "text" : "apply then counters are reset to 0."
+    },
+    {
+      "rect" : [
+        317.62299999999999,
+        574.07982879999997,
+        113.21007520000001,
+        8.4911808000000519
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Algorithm 4 Receive Message"
+        }
+      ],
+      "text" : "Algorithm 4 Receive Message"
+    },
+    {
+      "rect" : [
+        323.82600000000002,
+        559.88682879999999,
+        76.314691200000027,
+        8.4911808000000519
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "1: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Input: Message 𝑚"
+        }
+      ],
+      "text" : "1: Input: Message 𝑚"
+    },
+    {
+      "rect" : [
+        323.82600000000008,
+        548.92782880000004,
+        4.8886337999999796,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "2: "
+        }
+      ],
+      "text" : "2: "
+    },
+    {
+      "rect" : [
+        333.19800000000009,
+        548.92782880000004,
+        144.37651840000001,
+        8.374617599999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Let 𝑚be the message that was received"
+        }
+      ],
+      "text" : "Let 𝑚be the message that was received"
+    },
+    {
+      "rect" : [
+        323.82600000000014,
+        537.9688288000001,
+        146.00881120000003,
+        8.4284159999999702
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "3: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑛𝑒𝑤𝑚𝑥 ←max(𝑚𝑥.𝑗,𝑚𝑥.𝑚,epoch.𝑗)"
+        }
+      ],
+      "text" : "3: 𝑛𝑒𝑤𝑚𝑥 ←max(𝑚𝑥.𝑗,𝑚𝑥.𝑚,epoch.𝑗)"
+    },
+    {
+      "rect" : [
+        323.82600000000014,
+        527.47410460000015,
+        108.94581119999998,
+        7.9641401999999744
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "4: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑡𝑠.𝑎←Shift(𝑡𝑠.𝑗,𝑛𝑒𝑤𝑚𝑥)"
+        }
+      ],
+      "text" : "4: 𝑡𝑠.𝑎←Shift(𝑡𝑠.𝑗,𝑛𝑒𝑤𝑚𝑥)"
+    },
+    {
+      "rect" : [
+        323.82600000000014,
+        516.5151046000002,
+        111.82781119999999,
+        7.9641401999999744
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "5: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑡𝑠.𝑏 ←Shift(𝑡𝑠.𝑚,𝑛𝑒𝑤𝑚𝑥)"
+        }
+      ],
+      "text" : "5: 𝑡𝑠.𝑏 ←Shift(𝑡𝑠.𝑚,𝑛𝑒𝑤𝑚𝑥)"
+    },
+    {
+      "rect" : [
+        323.82600000000014,
+        505.55710460000017,
+        135.81281120000006,
+        7.9641402000000312
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "6: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑡𝑠.𝑐 ←MergeSameEpoch(𝑡𝑠.𝑎,𝑡𝑠.𝑏)"
+        }
+      ],
+      "text" : "6: 𝑡𝑠.𝑐 ←MergeSameEpoch(𝑡𝑠.𝑎,𝑡𝑠.𝑏)"
+    },
+    {
+      "rect" : [
+        323.82600000000019,
+        494.13382880000017,
+        207.80004479999997,
+        8.4911807999999951
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "7: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "if EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐)then"
+        }
+      ],
+      "text" : "7: if EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐)then"
+    },
+    {
+      "rect" : [
+        323.82600000000019,
+        483.17482880000017,
+        73.243636800000047,
+        8.4911807999999951
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "8: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "for each 𝑘 do"
+        }
+      ],
+      "text" : "8: for each 𝑘 do"
+    },
+    {
+      "rect" : [
+        323.82600000000019,
+        472.21582880000017,
+        212.37681120000008,
+        8.428416000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "9: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑗.𝑘 ←max(counter.𝑗.𝑘,counter.𝑚.𝑘)"
+        }
+      ],
+      "text" : "9: counter.𝑗.𝑘 ←max(counter.𝑗.𝑘,counter.𝑚.𝑘)"
+    },
+    {
+      "rect" : [
+        320.58300000000031,
+        459.49482880000016,
+        140.77137599999998,
+        8.428416000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "10: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑗.𝑗 ←counter.𝑗.𝑗+1"
+        }
+      ],
+      "text" : "10: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1"
+    },
+    {
+      "rect" : [
+        320.58300000000031,
+        446.80576160000015,
+        234.23404479999988,
+        8.4732480000000123
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "11: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "if EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧¬EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐)then"
+        }
+      ],
+      "text" : "11: if EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧¬EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐)then"
+    },
+    {
+      "rect" : [
+        320.5830000000002,
+        435.82882880000017,
+        140.77137599999998,
+        8.428416000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "12: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑗.𝑗 ←counter.𝑗.𝑗+1"
+        }
+      ],
+      "text" : "12: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1"
+    },
+    {
+      "rect" : [
+        320.5830000000002,
+        423.13976160000016,
+        232.49104479999994,
+        8.4732480000000123
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "13: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "if¬EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐)then"
+        }
+      ],
+      "text" : "13: if¬EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐)then"
+    },
+    {
+      "rect" : [
+        320.5830000000002,
+        412.62710460000017,
+        117.85784480000001,
+        7.9641402000000312
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "14: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑗 ←counter.𝑚"
+        }
+      ],
+      "text" : "14: counter.𝑗 ←counter.𝑚"
+    },
+    {
+      "rect" : [
+        320.5830000000002,
+        401.20382880000017,
+        140.77137599999998,
+        8.428416000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "15: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑗.𝑗 ←counter.𝑗.𝑗+1"
+        }
+      ],
+      "text" : "15: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1"
+    },
+    {
+      "rect" : [
+        320.5830000000002,
+        388.51376160000001,
+        237.61868390399979,
+        8.4732480000000123
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "16: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "if"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "¬EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧¬EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐)"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "then"
+        }
+      ],
+      "text" : "16: if¬EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧¬EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐)then"
+    },
+    {
+      "rect" : [
+        320.58300000000003,
+        377.53682880000002,
+        118.18981119999984,
+        8.428416000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "17: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "counter.𝑗 ←[0,0,...,0]"
+        }
+      ],
+      "text" : "17: counter.𝑗 ←[0,0,...,0]"
+    },
+    {
+      "rect" : [
+        327.91800000000001,
+        350.5018288,
+        231.80131850880002,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9260511999999999,
+          "text" : "As an illustration, consider the execution of the program in Fig-"
+        }
+      ],
+      "text" : "As an illustration, consider the execution of the program in Fig-"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        339.5428288,
+        240.24800430080001,
+        8.428416000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8901855999999988,
+          "text" : "ure 1. Assuming that "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝜖 = "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8901855999999988,
+          "text" : "5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ",𝐼= "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8901855999999988,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ","
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8901855999999988,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "E= "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8901855999999988,
+          "text" : "5, the RepCl timestamps"
+        }
+      ],
+      "text" : "ure 1. Assuming that 𝜖 = 5,𝐼= 1,and E= 5, the RepCl timestamps"
+    },
+    {
+      "rect" : [
+        317.62299999999999,
+        328.58382879999999,
+        241.95996409599996,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9081183999999993,
+          "text" : "will be as shown in Figure 3. Here, event "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝐴"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9081183999999993,
+          "text" : "has physical time of 50."
+        }
+      ],
+      "text" : "will be as shown in Figure 3. Here, event 𝐴has physical time of 50."
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        317.62482879999999,
+        240.24808872960006,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9395008000000011,
+          "text" : "Since process P1 has not heard from anyone else so far, the offsets"
+        }
+      ],
+      "text" : "Since process P1 has not heard from anyone else so far, the offsets"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        306.66582879999999,
+        240.25016998400002,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "for P2 and P3 will be "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝜖"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : ". The offset for process P1 will be 0. Regarding"
+        }
+      ],
+      "text" : "for P2 and P3 will be 𝜖. The offset for process P1 will be 0. Regarding"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        295.70682879999998,
+        240.25111577600006,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : "event "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝐶"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8767360000000011,
+          "text" : ", the situation is similar except that the offset for process P3"
+        }
+      ],
+      "text" : "event 𝐶, the situation is similar except that the offset for process P3"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        283.79746089999998,
+        240.25072799999992,
+        9.3249855000000252
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "is 0. When event 𝐵is created upon receiving message 𝑚"
+        },
+        {
+          "baselineOffset" : -1.3450000000000273,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.2727000000000004,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ", process"
+        }
+      ],
+      "text" : "is 0. When event 𝐵is created upon receiving message 𝑚1, process"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        273.78882879999998,
+        240.24279285760002,
+        8.3746176000000219
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.024681600000001,
+          "text" : "P2 is aware of times 50 from "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑃"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.024681600000001,
+          "text" : "1. And, it is the maximum epoch it"
+        }
+      ],
+      "text" : "P2 is aware of times 50 from 𝑃1. And, it is the maximum epoch it"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        262.82982879999997,
+        239.56958879999996,
+        8.428416000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9619168000000009,
+          "text" : "is aware of. Hence, offsets are "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "["
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9619168000000009,
+          "text" : "0"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ","
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9619168000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ",𝜖]"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9619168000000009,
+          "text" : "respectively. When event "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝐷"
+        }
+      ],
+      "text" : "is aware of. Hence, offsets are [0,2,𝜖]respectively. When event 𝐷"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        251.8708288,
+        240.24912883200005,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "is created, process P2 is aware of epoch 52 (from P2) and epoch"
+        }
+      ],
+      "text" : "is created, process P2 is aware of epoch 52 (from P2) and epoch"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        240.9128288,
+        240.24592864000005,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "50 (from P1). It is aware of timestamp 40 from P3. However, this"
+        }
+      ],
+      "text" : "50 (from P1). It is aware of timestamp 40 from P3. However, this"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        229.9538288,
+        240.2490840000001,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9529503999999989,
+          "text" : "information is overridden by the clock synchronization guarantee"
+        }
+      ],
+      "text" : "information is overridden by the clock synchronization guarantee"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        218.99482879999999,
+        240.24769988480006,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9081183999999993,
+          "text" : "that says that the clock of P3 is at least 47. Thus, the offsets are set"
+        }
+      ],
+      "text" : "that says that the clock of P3 is at least 47. Thus, the offsets are set"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        208.03582879999999,
+        184.9616079999999,
+        8.4284159999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "to [3,𝑒,𝜖]Here, the permissible ordering is 𝐶𝐴𝐵𝐷."
+        }
+      ],
+      "text" : "to [3,𝑒,𝜖]Here, the permissible ordering is 𝐶𝐴𝐵𝐷."
+    },
+    {
+      "rect" : [
+        327.91800000000001,
+        197.07682879999999,
+        230.27958048000016,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "In this figure, if "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝜖 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "were 20 then the timestamp of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝐷 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "would be"
+        }
+      ],
+      "text" : "In this figure, if 𝜖 were 20 then the timestamp of 𝐷 would be"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        186.11782879999998,
+        240.24286899200007,
+        8.4284159999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "changed to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "["
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ","
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : ","
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "12"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "]"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ". Furthermore, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝐵 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝐶 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "could be replayed in"
+        }
+      ],
+      "text" : "changed to [3,2,12]. Furthermore, 𝐵 and 𝐶 could be replayed in"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        175.15882879999998,
+        239.57405119999993,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8857023999999996,
+          "text" : "any order. Thus, the permissible replays would be "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝐶𝐴𝐵𝐷 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.8857023999999996,
+          "text" : "or "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝐴𝐵𝐶𝐷"
+        }
+      ],
+      "text" : "any order. Thus, the permissible replays would be 𝐶𝐴𝐵𝐷 or 𝐴𝐵𝐶𝐷"
+    },
+    {
+      "rect" : [
+        317.95499999999993,
+        164.19982879999998,
+        35.408607999999958,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "or 𝐴𝐶𝐵𝐷."
+        }
+      ],
+      "text" : "or 𝐴𝐶𝐵𝐷."
+    },
+    {
+      "rect" : [
+        317.95499999999993,
+        142.50099789999999,
+        137.9128422,
+        10.309099500000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.9091,
+          "text" : "5 PROPERTIES OF REPCL"
+        }
+      ],
+      "text" : "5 PROPERTIES OF REPCL"
+    },
+    {
+      "rect" : [
+        317.95499999999998,
+        129.2338288,
+        240.25094252800005,
+        8.3746175999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "In this section, first, we define the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "< "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "relation on two timestamps"
+        }
+      ],
+      "text" : "In this section, first, we define the < relation on two timestamps"
+    },
+    {
+      "rect" : [
+        317.77600000000001,
+        118.27482880000001,
+        240.22863039999999,
+        8.3746176000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑅𝑒𝑝𝐶𝑙.𝑒 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "𝑅𝑒𝑝𝐶𝑙.𝑓"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.0560639999999992,
+          "text" : ". Then, we identify the properties of this "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "<"
+        }
+      ],
+      "text" : "𝑅𝑒𝑝𝐶𝑙.𝑒 and 𝑅𝑒𝑝𝐶𝑙.𝑓. Then, we identify the properties of this <"
+    },
+    {
+      "rect" : [
+        317.95500000000004,
+        107.31582880000001,
+        154.74213120000002,
+        8.3746176000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "relation and the happened-before relation."
+        }
+      ],
+      "text" : "relation and the happened-before relation."
+    },
+    {
+      "rect" : [
+        317.95500000000004,
+        93.521828800000009,
+        158.09310880000004,
+        8.4911807999999951
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Definition 1: Given timestamp 𝑅𝑒𝑝𝐶𝑙.𝑒="
+        }
+      ],
+      "text" : "Definition 1: Given timestamp 𝑅𝑒𝑝𝐶𝑙.𝑒="
+    },
+    {
+      "rect" : [
+        318.31400000000008,
+        82.56382880000001,
+        132.20243199999993,
+        8.4284159999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "⟨𝑚𝑥.𝑒,offset.𝑒[],counter.𝑒[]⟩and"
+        }
+      ],
+      "text" : "⟨𝑚𝑥.𝑒,offset.𝑒[],counter.𝑒[]⟩and"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "arxiv-replay-clocks-2023",
+  "graphics" : [
+    [
+      113.86,
+      684.13099999999997,
+      120.11586000000001,
+      24.183059999999955
+    ],
+    [
+      51.798000000000002,
+      371.37600000000003,
+      244.24700000000001,
+      4
+    ],
+    [
+      51.798000000000002,
+      358.25999999999999,
+      244.24700000000001,
+      4
+    ],
+    [
+      51.798000000000002,
+      276.166,
+      244.24700000000001,
+      4
+    ],
+    [
+      51.798000000000002,
+      252.81300000000002,
+      244.24700000000001,
+      3.9999999999999716
+    ],
+    [
+      51.798000000000002,
+      239.696,
+      244.24700000000001,
+      4
+    ],
+    [
+      51.798000000000002,
+      146.90800000000002,
+      244.24700000000001,
+      4
+    ],
+    [
+      315.95499999999998,
+      582.96000000000004,
+      244.24700000000001,
+      4
+    ],
+    [
+      315.95499999999998,
+      569.84299999999996,
+      244.24700000000001,
+      4
+    ],
+    [
+      315.95499999999998,
+      371.88,
+      244.24700000000001,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        723.00020940000002,
+        137.32109580000002,
+        6.4368173999999954
+      ],
+      "text" : "Conference’17, July 2017, Washington, DC, USA"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        664.42576159999999,
+        240.25034848000001,
+        8.4732480000000123
+      ],
+      "text" : "Figure 2: Working of Shift() on Process 0. Here, 𝜖=15, and the"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        653.46676160000004,
+        149.73826080000001,
+        8.4732480000000123
+      ],
+      "text" : "shift is issued to advance to epoch 20."
+    },
+    {
+      "fontSize" : 8.9215680000000006,
+      "monospaced" : false,
+      "rect" : [
+        63.761000000000003,
+        633.94682880000005,
+        230.28368224000005,
+        8.374617599999965
+      ],
+      "text" : "The MergeSameEpoch function takes two timestamps 𝑡1 and 𝑡2"
+    },
+    {
+      "fontSize" : 8.8857023999999996,
+      "monospaced" : false,
+      "rect" : [
+        53.466999999999999,
+        622.98782879999999,
+        240.57876972800011,
+        8.374617599999965
+      ],
+      "text" : "with the same 𝑚𝑥 value and combines their offsets by setting to be"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        612.02882880000004,
+        241.76354079999999,
+        8.4284159999999702
+      ],
+      "text" : "offset.𝑗.𝑘 to be the 𝑚𝑖𝑛(𝑡1.offset.𝑗.𝑘,𝑡2.offset.𝑗.𝑘). For exam-"
+    },
+    {
+      "fontSize" : 8.9529503999999989,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        601.06982879999998,
+        241.56969017599999,
+        8.4284159999999702
+      ],
+      "text" : "ple, merging ⟨50,[0,1,2]⟩and ⟨50,[2,0,1]⟩results in ⟨50,[0,0,1]⟩."
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        63.761000000000003,
+        590.11082880000004,
+        231.797530368,
+        8.4911808000000519
+      ],
+      "text" : "Description of the Algorithm. The algorithm works as fol-"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        579.15182879999998,
+        19.134297599999996,
+        8.374617599999965
+      ],
+      "text" : "lows:"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        63.761000000000003,
+        568.18386240000007,
+        230.28631884800004,
+        8.383583999999928
+      ],
+      "text" : "Local/Send event. Here, we describe how 𝑅𝑒𝑝𝐶𝑙.𝑗 is updated"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.466999999999999,
+        557.23382879999997,
+        214.32208000000003,
+        8.374617599999965
+      ],
+      "text" : "when 𝑗 sends a message. Let the current timestamp of 𝑗 be"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        115.92800000000003,
+        542.96884639999996,
+        115.9874016,
+        7.8993983999999955
+      ],
+      "text" : "⟨𝑚𝑥.𝑗,offset.𝑗[],counter.𝑗[]⟩"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        527.64482880000003,
+        240.24364467200002,
+        8.374617599999965
+      ],
+      "text" : "First, 𝑚𝑥.𝑗 needs to be increased if the clock of 𝑗 has advanced"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        516.68582879999997,
+        240.24900780800004,
+        8.374617599999965
+      ],
+      "text" : "beyond epoch 𝑚𝑥.𝑗. Hence, we first compute 𝑛𝑒𝑤𝑚𝑥.𝑗 which is"
+    },
+    {
+      "fontSize" : 8.9260511999999999,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        505.72682880000002,
+        240.25069272959996,
+        8.4284159999999702
+      ],
+      "text" : "equal to 𝑚𝑎𝑥(𝑚𝑥.𝑗,epoch.𝑗). When 𝑗 sends a message, it does not"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        494.76882879999999,
+        204.55460799999997,
+        8.3746176000000219
+      ],
+      "text" : "learn any new information about the clock of process 𝑘."
+    },
+    {
+      "fontSize" : 9.0067488000000004,
+      "monospaced" : false,
+      "rect" : [
+        63.761000000000003,
+        483.80982879999999,
+        230.28482231040013,
+        8.3746176000000219
+      ],
+      "text" : "We consider two cases: The first case is for the scenario where"
+    },
+    {
+      "fontSize" : 8.9350176000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        472.85082879999999,
+        241.23674655360003,
+        8.3746176000000219
+      ],
+      "text" : "the newly created event 𝑓 is in a new epoch as the previous event,"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.484000000000002,
+        461.89182879999998,
+        240.561326208,
+        8.3746176000000219
+      ],
+      "text" : "𝑒. This will happen if 𝑚𝑥 remains unchanged and offset.𝑗.𝑗 is"
+    },
+    {
+      "fontSize" : 8.9170848000000014,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        450.93282879999998,
+        240.24297408640001,
+        8.3746176000000219
+      ],
+      "text" : "unchanged. In this case, we increase counter.𝑗.𝑗. The second case"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        439.97382879999998,
+        240.24582105600001,
+        8.3746176000000219
+      ],
+      "text" : "deals with the scenario where 𝑓 is in a new interval. Thus, the"
+    },
+    {
+      "fontSize" : 8.9305343999999991,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        429.01482879999998,
+        240.2431993216,
+        8.3746176000000219
+      ],
+      "text" : "offset associated with 𝑘 is changed using the Shift operation. Note"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        418.05582879999997,
+        241.62715584,
+        8.3746176000000219
+      ],
+      "text" : "that the Shift operation computes the shift of all processes except 𝑗."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        407.09682880000003,
+        240.2504005632,
+        8.3746176000000219
+      ],
+      "text" : "offset.𝑗.𝑗 should be based on the value of epoch.𝑗. Hence, we set"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        396.13782880000002,
+        240.24373420800003,
+        8.428416000000027
+      ],
+      "text" : "it equal to 𝑛𝑒𝑤𝑚𝑥−epoch.𝑗. The Shift operation is illustrated in"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.484000000000002,
+        385.1798288,
+        46.490783999999998,
+        8.3746176000000219
+      ],
+      "text" : "Algorithm 2."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.466999999999999,
+        362.49582879999997,
+        108.4030848,
+        8.4911807999999951
+      ],
+      "text" : "Algorithm 2 Shift Operation"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        59.669000000000004,
+        348.0258288,
+        92.54432639999996,
+        8.3746176000000219
+      ],
+      "text" : "1: Define Shift operation."
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        59.668999999999997,
+        337.0668288,
+        68.631987199999983,
+        8.3746176000000219
+      ],
+      "text" : "2: Shift(𝑡𝑠,𝑛𝑒𝑤𝑚𝑥)"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        59.668999999999983,
+        326.10782879999999,
+        59.794636800000006,
+        8.4911807999999951
+      ],
+      "text" : "3: for each 𝑘 do"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        59.668999999999983,
+        315.61310459999999,
+        186.42181120000004,
+        7.9641402000000312
+      ],
+      "text" : "4: 𝑡𝑠.offset.𝑘 ←offset.𝑘+(𝑛𝑒𝑤𝑚𝑥−𝑡𝑠.𝑚𝑥)"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        59.668999999999983,
+        304.20776159999997,
+        4.888633800000008,
+        8.4732480000000123
+      ],
+      "text" : "5:"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        82.490999999999985,
+        304.20776159999997,
+        88.077044799999953,
+        8.4732480000000123
+      ],
+      "text" : "if 𝑡𝑠.offset.𝑘 > 𝜖 then"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        59.66899999999994,
+        293.69510459999998,
+        96.736854400000013,
+        7.9641402000000312
+      ],
+      "text" : "6: 𝑡𝑠.offset.𝑘 ←𝜖"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        59.66899999999994,
+        282.16876159999998,
+        48.904976000000005,
+        8.4732480000000123
+      ],
+      "text" : "7: Output: 𝑡𝑠"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.466999999999999,
+        243.93282879999998,
+        102.96048,
+        8.4911808000000235
+      ],
+      "text" : "Algorithm 3 Send Message"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        59.669000000000004,
+        229.27782880000001,
+        122.1218112,
+        8.4284159999999986
+      ],
+      "text" : "1: 𝑛𝑒𝑤𝑚𝑥 ←max(𝑚𝑥.𝑗,epoch.𝑗)"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        59.669000000000011,
+        218.7831046,
+        132.46264640000001,
+        7.9641402000000028
+      ],
+      "text" : "2: new_offset ←𝑛𝑒𝑤𝑚𝑥−epoch.𝑗"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        59.669000000000011,
+        207.37876160000002,
+        205.49404480000001,
+        8.4732480000000123
+      ],
+      "text" : "3: if (𝑚𝑥.𝑗= 𝑛𝑒𝑤𝑚𝑥∧offset.𝑗.𝑗= new_offset)then"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        59.669000000000011,
+        196.4018288,
+        137.52837600000007,
+        8.4284159999999986
+      ],
+      "text" : "4: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        59.66900000000004,
+        185.46076160000001,
+        24.883871999999997,
+        8.4732480000000123
+      ],
+      "text" : "5: else"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        59.66900000000004,
+        174.94810459999999,
+        119.7228112,
+        7.9641402000000028
+      ],
+      "text" : "6: 𝑡𝑠.𝑗 ←𝑆ℎ𝑖𝑓𝑡(𝑡𝑠.𝑗,𝑛𝑒𝑤𝑚𝑥)"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        59.669000000000025,
+        163.52482879999999,
+        169.63781119999999,
+        8.4284159999999986
+      ],
+      "text" : "7: offset.𝑗.𝑗 ←min(𝑛𝑒𝑤𝑚𝑥−epoch.𝑗,𝜖)"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        59.669000000000011,
+        152.56582879999999,
+        114.9468112000001,
+        8.4284159999999986
+      ],
+      "text" : "8: counter.𝑗 ←[0,0,...,0]"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        63.761000000000003,
+        126.3898624,
+        50.082006528000001,
+        8.3835840000000132
+      ],
+      "text" : "Receive event."
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        118.955,
+        126.3898624,
+        175.08581683200003,
+        8.3835840000000132
+      ],
+      "text" : "Next, we describe how RepCl is updated when"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        54.515999999999998,
+        115.4398288,
+        241.04303829760002,
+        8.4284159999999986
+      ],
+      "text" : "𝑗 (with timestamp ⟨𝑚𝑥.𝑗,offset.𝑗[],counter.𝑗[]⟩receives a mes-"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        104.48082880000001,
+        214.49260800000002,
+        8.4284159999999986
+      ],
+      "text" : "sage 𝑚with timestamp ⟨𝑚𝑥.𝑚,offset.𝑚[],counter.𝑚[]⟩."
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        63.761000000000003,
+        93.521828800000009,
+        229.96587999999994,
+        8.3746175999999934
+      ],
+      "text" : "First, we compute 𝑛𝑒𝑤𝑚𝑥 which is the maximum of 𝑚𝑥.𝑗, 𝑚𝑥.𝑚"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        53.798000000000002,
+        82.56382880000001,
+        239.44865279999999,
+        8.3746175999999934
+      ],
+      "text" : "and epoch.𝑗. Timestamps of 𝑗 and 𝑚 are then shifted to 𝑛𝑒𝑤𝑚𝑥"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        434.97399999999999,
+        723.00020940000002,
+        123.22704600000003,
+        6.4368173999999954
+      ],
+      "text" : "Ishaan Lagwankar and Sandeep S Kulkarni"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        696.26182879999999,
+        240.24912883199994,
+        8.374617599999965
+      ],
+      "text" : "using the Shift operation. These timestamps are then merged to"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        685.30282880000004,
+        210.41860800000012,
+        8.374617599999965
+      ],
+      "text" : "obtain the 𝑚𝑥 and offset values of the new event, say 𝑓."
+    },
+    {
+      "fontSize" : 8.9619168000000009,
+      "monospaced" : false,
+      "rect" : [
+        327.91800000000001,
+        674.34382879999998,
+        230.2825766336,
+        8.374617599999965
+      ],
+      "text" : "Now, we check if the knowledge that 𝑓 has about epochs is the"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        663.38482880000004,
+        240.24597075199989,
+        8.374617599999965
+      ],
+      "text" : "same as that of 𝑒 (the previous event on 𝑗) or 𝑚. If all three are"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        652.42682879999995,
+        240.24842496000002,
+        8.374617599999965
+      ],
+      "text" : "in the same epoch then counter.𝑗.𝑗 is set to one more than the"
+    },
+    {
+      "fontSize" : 9.0067488000000004,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        641.46782880000001,
+        240.24669031039997,
+        8.374617599999965
+      ],
+      "text" : "maximum of counter.𝑗.𝑘 and counter.𝑚.𝑘. If only 𝑒 and 𝑓 are in"
+    },
+    {
+      "fontSize" : 9.0022656000000012,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        630.50882879999995,
+        238.37244960000004,
+        8.374617599999965
+      ],
+      "text" : "the same epoch, counter.𝑗.𝑗 is incremented by 1. If only 𝑚and 𝑓"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        619.5498288,
+        240.24911654400006,
+        8.374617599999965
+      ],
+      "text" : "are in the same epoch, counter.𝑗is set to counter.𝑚and the value"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        608.59082880000005,
+        240.24834419200005,
+        8.374617599999965
+      ],
+      "text" : "of counter.𝑗.𝑗 is incremented by 1. If none of these conditions"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        597.63182879999999,
+        124.48960800000003,
+        8.374617599999965
+      ],
+      "text" : "apply then counters are reset to 0."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.62299999999999,
+        574.07982879999997,
+        113.21007520000001,
+        8.4911808000000519
+      ],
+      "text" : "Algorithm 4 Receive Message"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        323.82600000000002,
+        559.88682879999999,
+        76.314691200000027,
+        8.4911808000000519
+      ],
+      "text" : "1: Input: Message 𝑚"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        323.82600000000008,
+        548.92782880000004,
+        4.8886337999999796,
+        8.374617599999965
+      ],
+      "text" : "2:"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        333.19800000000009,
+        548.92782880000004,
+        144.37651840000001,
+        8.374617599999965
+      ],
+      "text" : "Let 𝑚be the message that was received"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        323.82600000000014,
+        537.9688288000001,
+        146.00881120000003,
+        8.4284159999999702
+      ],
+      "text" : "3: 𝑛𝑒𝑤𝑚𝑥 ←max(𝑚𝑥.𝑗,𝑚𝑥.𝑚,epoch.𝑗)"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        323.82600000000014,
+        527.47410460000015,
+        108.94581119999998,
+        7.9641401999999744
+      ],
+      "text" : "4: 𝑡𝑠.𝑎←Shift(𝑡𝑠.𝑗,𝑛𝑒𝑤𝑚𝑥)"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        323.82600000000014,
+        516.5151046000002,
+        111.82781119999999,
+        7.9641401999999744
+      ],
+      "text" : "5: 𝑡𝑠.𝑏 ←Shift(𝑡𝑠.𝑚,𝑛𝑒𝑤𝑚𝑥)"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        323.82600000000014,
+        505.55710460000017,
+        135.81281120000006,
+        7.9641402000000312
+      ],
+      "text" : "6: 𝑡𝑠.𝑐 ←MergeSameEpoch(𝑡𝑠.𝑎,𝑡𝑠.𝑏)"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        323.82600000000019,
+        494.13382880000017,
+        207.80004479999997,
+        8.4911807999999951
+      ],
+      "text" : "7: if EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐)then"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        323.82600000000019,
+        483.17482880000017,
+        73.243636800000047,
+        8.4911807999999951
+      ],
+      "text" : "8: for each 𝑘 do"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        323.82600000000019,
+        472.21582880000017,
+        212.37681120000008,
+        8.428416000000027
+      ],
+      "text" : "9: counter.𝑗.𝑘 ←max(counter.𝑗.𝑘,counter.𝑚.𝑘)"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        320.58300000000031,
+        459.49482880000016,
+        140.77137599999998,
+        8.428416000000027
+      ],
+      "text" : "10: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        320.58300000000031,
+        446.80576160000015,
+        234.23404479999988,
+        8.4732480000000123
+      ],
+      "text" : "11: if EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧¬EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐)then"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        320.5830000000002,
+        435.82882880000017,
+        140.77137599999998,
+        8.428416000000027
+      ],
+      "text" : "12: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        320.5830000000002,
+        423.13976160000016,
+        232.49104479999994,
+        8.4732480000000123
+      ],
+      "text" : "13: if¬EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐)then"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        320.5830000000002,
+        412.62710460000017,
+        117.85784480000001,
+        7.9641402000000312
+      ],
+      "text" : "14: counter.𝑗 ←counter.𝑚"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        320.5830000000002,
+        401.20382880000017,
+        140.77137599999998,
+        8.428416000000027
+      ],
+      "text" : "15: counter.𝑗.𝑗 ←counter.𝑗.𝑗+1"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        320.5830000000002,
+        388.51376160000001,
+        237.61868390399979,
+        8.4732480000000123
+      ],
+      "text" : "16: if¬EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧¬EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐)then"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        320.58300000000003,
+        377.53682880000002,
+        118.18981119999984,
+        8.428416000000027
+      ],
+      "text" : "17: counter.𝑗 ←[0,0,...,0]"
+    },
+    {
+      "fontSize" : 8.9260511999999999,
+      "monospaced" : false,
+      "rect" : [
+        327.91800000000001,
+        350.5018288,
+        231.80131850880002,
+        8.3746176000000219
+      ],
+      "text" : "As an illustration, consider the execution of the program in Fig-"
+    },
+    {
+      "fontSize" : 8.8901855999999988,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        339.5428288,
+        240.24800430080001,
+        8.428416000000027
+      ],
+      "text" : "ure 1. Assuming that 𝜖 = 5,𝐼= 1,and E= 5, the RepCl timestamps"
+    },
+    {
+      "fontSize" : 8.9081183999999993,
+      "monospaced" : false,
+      "rect" : [
+        317.62299999999999,
+        328.58382879999999,
+        241.95996409599996,
+        8.3746176000000219
+      ],
+      "text" : "will be as shown in Figure 3. Here, event 𝐴has physical time of 50."
+    },
+    {
+      "fontSize" : 8.9395008000000011,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        317.62482879999999,
+        240.24808872960006,
+        8.3746176000000219
+      ],
+      "text" : "Since process P1 has not heard from anyone else so far, the offsets"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        306.66582879999999,
+        240.25016998400002,
+        8.3746176000000219
+      ],
+      "text" : "for P2 and P3 will be 𝜖. The offset for process P1 will be 0. Regarding"
+    },
+    {
+      "fontSize" : 8.8767360000000011,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        295.70682879999998,
+        240.25111577600006,
+        8.3746176000000219
+      ],
+      "text" : "event 𝐶, the situation is similar except that the offset for process P3"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        283.79746089999998,
+        240.25072799999992,
+        9.3249855000000252
+      ],
+      "text" : "is 0. When event 𝐵is created upon receiving message 𝑚1, process"
+    },
+    {
+      "fontSize" : 9.024681600000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        273.78882879999998,
+        240.24279285760002,
+        8.3746176000000219
+      ],
+      "text" : "P2 is aware of times 50 from 𝑃1. And, it is the maximum epoch it"
+    },
+    {
+      "fontSize" : 8.9619168000000009,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        262.82982879999997,
+        239.56958879999996,
+        8.428416000000027
+      ],
+      "text" : "is aware of. Hence, offsets are [0,2,𝜖]respectively. When event 𝐷"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        251.8708288,
+        240.24912883200005,
+        8.3746175999999934
+      ],
+      "text" : "is created, process P2 is aware of epoch 52 (from P2) and epoch"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        240.9128288,
+        240.24592864000005,
+        8.3746175999999934
+      ],
+      "text" : "50 (from P1). It is aware of timestamp 40 from P3. However, this"
+    },
+    {
+      "fontSize" : 8.9529503999999989,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        229.9538288,
+        240.2490840000001,
+        8.3746175999999934
+      ],
+      "text" : "information is overridden by the clock synchronization guarantee"
+    },
+    {
+      "fontSize" : 8.9081183999999993,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        218.99482879999999,
+        240.24769988480006,
+        8.3746175999999934
+      ],
+      "text" : "that says that the clock of P3 is at least 47. Thus, the offsets are set"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        208.03582879999999,
+        184.9616079999999,
+        8.4284159999999986
+      ],
+      "text" : "to [3,𝑒,𝜖]Here, the permissible ordering is 𝐶𝐴𝐵𝐷."
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        327.91800000000001,
+        197.07682879999999,
+        230.27958048000016,
+        8.3746175999999934
+      ],
+      "text" : "In this figure, if 𝜖 were 20 then the timestamp of 𝐷 would be"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        186.11782879999998,
+        240.24286899200007,
+        8.4284159999999986
+      ],
+      "text" : "changed to [3,2,12]. Furthermore, 𝐵 and 𝐶 could be replayed in"
+    },
+    {
+      "fontSize" : 8.8857023999999996,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        175.15882879999998,
+        239.57405119999993,
+        8.3746175999999934
+      ],
+      "text" : "any order. Thus, the permissible replays would be 𝐶𝐴𝐵𝐷 or 𝐴𝐵𝐶𝐷"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999993,
+        164.19982879999998,
+        35.408607999999958,
+        8.3746175999999934
+      ],
+      "text" : "or 𝐴𝐶𝐵𝐷."
+    },
+    {
+      "fontSize" : 10.9091,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999993,
+        142.50099789999999,
+        137.9128422,
+        10.309099500000002
+      ],
+      "text" : "5 PROPERTIES OF REPCL"
+    },
+    {
+      "fontSize" : 9.0560639999999992,
+      "monospaced" : false,
+      "rect" : [
+        317.95499999999998,
+        129.2338288,
+        240.25094252800005,
+        8.3746175999999934
+      ],
+      "text" : "In this section, first, we define the < relation on two timestamps"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.77600000000001,
+        118.27482880000001,
+        240.22863039999999,
+        8.3746176000000077
+      ],
+      "text" : "𝑅𝑒𝑝𝐶𝑙.𝑒 and 𝑅𝑒𝑝𝐶𝑙.𝑓. Then, we identify the properties of this <"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95500000000004,
+        107.31582880000001,
+        154.74213120000002,
+        8.3746176000000077
+      ],
+      "text" : "relation and the happened-before relation."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        317.95500000000004,
+        93.521828800000009,
+        158.09310880000004,
+        8.4911807999999951
+      ],
+      "text" : "Definition 1: Given timestamp 𝑅𝑒𝑝𝐶𝑙.𝑒="
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        318.31400000000008,
+        82.56382880000001,
+        132.20243199999993,
+        8.4284159999999986
+      ],
+      "text" : "⟨𝑚𝑥.𝑒,offset.𝑒[],counter.𝑒[]⟩and"
+    }
+  ],
+  "page" : 4,
+  "rightsBasis" : "arXiv abstract page declares CC BY 4.0. Retain attribution; not relicensed under MIT.",
+  "sourceSHA256" : "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
+  "sourceTitle" : "Replay Clocks",
+  "sourceURL" : "https://arxiv.org/pdf/2311.07842v1"
+}

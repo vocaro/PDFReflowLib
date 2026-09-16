@@ -24,6 +24,8 @@ struct SourceLayoutFixture: Decodable {
             var baselineOffset: Double
         }
         var text: String
+        /// The selection's own bounds, captured beside the runs (absent in older fixtures).
+        var rect: [Double]?
         var runs: [Run]
         func attributedString() -> NSAttributedString {
             let value = NSMutableAttributedString(string: "")

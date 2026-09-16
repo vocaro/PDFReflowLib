@@ -50,13 +50,13 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 549 targeted checks on 123 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 585 targeted checks on 124 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 182 ordered-text, 61 text, 48 paragraph,
-26 heading, 46 absent-text, 17 script, 8 footnote, 17 paragraph-continuation,
-5 paragraph-separation, 77 image-presence, 42 warning, 3 absent-warning,
+the NBS and Replay Clocks academic papers). They comprise 182 ordered-text, 66 text, 58 paragraph,
+33 heading, 59 absent-text, 17 script, 8 footnote, 17 paragraph-continuation,
+5 paragraph-separation, 77 image-presence, 43 warning, 3 absent-warning,
 11 source-region, 3 glyph-structure and 3 image-appearance checks. All source-page
 anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
 
@@ -438,13 +438,52 @@ semantics. The source photograph remains; this does not accept its unrelated dro
 text-show objects, with source object numbers and checksum provenance. Seven tests require an
 exact full-line match and a tiny negative TJ adjustment at each removed space; protect explicit
 spaces, genuine word-size gaps, style attributes and ambiguous geometry; and reject unsupported
-fonts, transforms, Forms, character maps, text state and excessive work. The original single-run
+fonts, transforms, character maps, text state and excessive work (a Form XObject drawn outside a
+text object is opaque rather than disqualifying since #43). The original single-run
 test still requires unchanged text when source-operator evidence is unavailable.
 
 The complete DGA contract requires the corrected words, the existing title, source image and
 `unverifiedTextLayer` warning. The [comparison evidence](../measurements/native-label-spacing/record.md)
 uses compatible per-run capability receipts and permits only these two exact literal replacements
 in parsed pages and XHTML. It does not claim correct diagram-label ownership or general spacing repair.
+
+## Academic front matter, math-variable spacing and algorithm floats
+
+Four further tests in `NativeSpacingTests.swift` cover the word boundary PDFKit drops after a
+mathematical variable set in its own font ([#43](https://github.com/vocaro/PDFReflowLib/issues/43)).
+`replay-1-text-operators.json` holds the nine page-1 font dictionaries of Replay Clocks (Subtype,
+FirstChar, Widths and decoded ToUnicode streams) and both complete text objects, including the
+rotated arXiv stamp; against the pinned `replay-1` layout the reader must decode and measure all 187
+upright shows, leave the stamp without evidence, and change exactly the eight reviewed lines
+(`𝑒must` → `𝑒 must`, `𝐴and 𝐵that` → `𝐴 and 𝐵 that`, …) while a line PDFKit already spaced stays as
+it is. Synthetic two-font pages fix the rule: a font change, the same baseline, at least 0.15 em
+between the previous show's measured end and the next origin, and a letter or digit on both sides;
+0.14 em, the same font, punctuation, a raised show, unknown widths, an unmapped font, mismatched
+text, overlapping line rectangles, a rotated show and unsupported text state are all controls. The
+general one-byte CMap parser is tested on bfrange, surrogate-pair, ligature and array-form entries
+and rejects inherited maps, two-byte codespaces, duplicates, malformed hex, lone surrogates,
+reversed ranges, wrong counts and oversized streams.
+
+`AcademicFrontMatterTests.swift` uses the pinned Replay Clocks pages 1, 3 and 4. Page 1 must drop
+the rotated stamp with a `furnitureRemoved` warning, rank `Replay Clocks` (level 2) above the
+author names (3) and the `ABSTRACT` / `1 INTRODUCTION` labels (4), and keep the abstract,
+introduction, affiliations and ACM reference as paragraphs. Page 3 must join the split `3.1` /
+`Limitations of Existing Clocks for Replay` row into one heading, keep the `Algorithm 1` caption as
+text and its nine listing lines inside one crop under 90 points tall; page 4 must yield three
+algorithm regions holding all 32 numbered lines with the captions and the prose reference
+`… in Algorithm 2.` outside them. Synthetic controls cover the float rule (no closing rule, a
+caption not directly beneath its rule, a `Table` caption, a mismatched extent), the stamp rule
+(inner rotated labels stay paragraphs, short margin credits such as the 9/11 report's photo credits
+stay, rotated pages and two-character marks are ignored), document-wide heading tiers (a later
+page's label gets the opening page's label level, a tagged heading keeps its level, one size gives
+level 2 everywhere), and the label rule (size
+band, capital or digit start, no sentence punctuation, clear space above, capitals or a short line,
+dotted section numbers only, list markers, folio-ending contents entries, recognized pages).
+Source controls: 9/11 chapter titles outrank their `1.1` / `2.1` section labels, Fed and Our Flag
+headings survive, NBS page 7's inherited OCR prose and Fed page 13's 8-point lines gain no
+headings, and the algebra, Our Flag, USGS and NBS fixtures have no algorithm floats. The corpus
+contract adds the reviewed headings, paragraphs, spacing phrases, absent stamp/listing text and
+the page-1 warning; see the [front-matter evidence](../measurements/academic-front-matter/record.md).
 
 
 ## Styles in lists and code

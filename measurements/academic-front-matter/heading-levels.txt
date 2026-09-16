@@ -1,0 +1,67 @@
+== arxiv-replay-clocks-2023 (20c78f3 CLI):
+levels: {'h2': 4} total 4
+== arxiv-replay-clocks-2023 (this tree):
+levels: {'h2': 1, 'h3': 2, 'h4': 21} total 24
+== fed-explained-2021 (20c78f3 CLI):
+levels: {'h1': 1, 'h2': 152} total 153
+== fed-explained-2021 (this tree):
+levels: {'h1': 1, 'h2': 7, 'h3': 1, 'h4': 11, 'h5': 36, 'h6': 144} total 200
+== gpo-our-flag-2003 (20c78f3 CLI):
+levels: {'h1': 1, 'h2': 48, 'h3': 5} total 54
+== gpo-our-flag-2003 (this tree):
+levels: {'h1': 1, 'h2': 24, 'h3': 7, 'h4': 4, 'h5': 18} total 54
+== gpo-911-2004 (20c78f3 CLI):
+levels: {'h2': 80} total 80
+== gpo-911-2004 (this tree):
+levels: {'h2': 3, 'h3': 54, 'h4': 1, 'h5': 67, 'h6': 36} total 161
+== faa-phak-8083-25c (20c78f3 CLI):
+levels: {'h2': 42} total 42
+== faa-phak-8083-25c (this tree):
+levels: {'h2': 1, 'h3': 24, 'h4': 10, 'h5': 145, 'h6': 7} total 187
+== wallace-algebra-2010 (20c78f3 CLI):
+levels: {'h2': 222} total 222
+== wallace-algebra-2010 (this tree):
+levels: {'h2': 5, 'h3': 168, 'h4': 4, 'h5': 48, 'h6': 1} total 226
+== prose.pdf (this tree):
+levels: {'h2': 1, 'h3': 2} total 3
+  h2: A Small Book of Conversion
+  h3: Second Section
+  h3: Third Section
+== lists-code.pdf (this tree):
+levels: {'h2': 1} total 1
+  h2: Lists and Code
+== gpo-911-2004 selected headings (this tree):
+levels: {'h2': 3, 'h3': 54, 'h4': 1, 'h5': 67, 'h6': 36} total 161
+  h2: THE 9/11
+  h2: COMMISSION
+  h2: REPORT
+  h4: official government edition
+  h3: COMMISSION
+  h3: COMMISSION
+  h3: “WE HAVE
+  h3: SOME PLANES”
+  h5: 1.1 INSIDE THE FOUR FLIGHTS
+  h3: THE FOUNDATION OF
+  h5: 2.1 A DECLARATION OF WAR
+  h5: 7.2 THE 9/11 PILOTS IN THE UNITED STATES
+  h5: 13.5 ORGANIZING AMERICA’S DEFENSES IN THE
+  h6: NOTES TO CHAPTER 11 561
+== faa-phak-8083-25c selected headings (this tree):
+levels: {'h2': 1, 'h3': 24, 'h4': 10, 'h5': 145, 'h6': 7} total 187
+  h2: 2023
+  h4: Chapter 1
+  h3: Introduction
+  h3: To Flying
+  h5: Introduction
+  h5: Chapter Summary
+  h5: Introduction
+  h5: Chapter Summary
+== fed-explained-2021 selected headings (this tree):
+levels: {'h1': 1, 'h2': 7, 'h3': 1, 'h4': 11, 'h5': 36, 'h6': 144} total 200
+  h1: The Fed Explained What the Central Bank Does
+  h2: 1Overview of the Federal
+  h4: Reserve System
+  h6: Anticipated Factors
+  h6: How the FOMC Determines the Appropriate Stance of Monetary Policy
+  h2: 4 Promoting Financial System
+  h4: Stability

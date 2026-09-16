@@ -795,16 +795,11 @@
         4
       ],
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
-      "reviewStatus": "Converted with EPUBCheck, progress and 256 MiB Mac RSS gate. Contract protects two-column prose, section and algorithm-caption order on pages 1, 3 and 4. Front-matter semantics and algorithm listings are unqualified (#43, #36).",
+      "reviewStatus": "Converted with EPUBCheck, progress and 256 MiB Mac RSS gate. Contract protects two-column prose, section and algorithm-caption order on pages 1, 3 and 4, the omitted rotated stamp, title/label headings, restored word spaces after mathematical variables and one preserved region per algorithm listing (#43). Heading levels rank by size within a page only; a 0.11 em gap after \"before\" on page 3 stays joined (before𝐶).",
       "knownFidelityIssues": [
         {
-          "page": 1,
-          "issue": "Rotated arXiv stamp and author names become headings; ABSTRACT and INTRODUCTION labels merge into paragraphs; spaces after math glyphs are dropped.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/43"
-        },
-        {
-          "page": 4,
-          "issue": "Algorithm listings split between reflowed lines, flattened paragraphs and crops.",
+          "page": 3,
+          "issue": "The text-to-math boundary \"before𝐶\" (0.11 em) stays joined; the requirement paragraphs still split around inline-equation crops (#36).",
           "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/43"
         }
       ],

@@ -279,6 +279,8 @@ enum PDFReflowLibPipeline {
         }
         document.releaseCachedPages()
         store.finish()
+        // Typographic heading levels need every page's sizes; tagged levels are already final.
+        LayoutReconstructor.rankHeadingLevels(&blocks)
         warnings.insert(contentsOf: furnitureWarnings.sorted { $0.page < $1.page }, at: furnitureWarningIndex)
         let title = options.title ?? document.title
             ?? source.deletingPathExtension().lastPathComponent

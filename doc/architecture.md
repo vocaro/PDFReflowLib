@@ -90,7 +90,15 @@ jump by more than the inline-script range and one carries a full-line offset, na
 inserts a missing word boundary. Existing whitespace and line-ending hyphens remain unchanged;
 drop caps with different sizes and opposite inline scripts do not supply this evidence. This
 handles PDFKit selections that concatenate multiple visual lines, not arbitrary within-line
-spacing or OCR spelling repair. Object-only selections are discarded before attributed-string access
+spacing or OCR spelling repair. `NativeSpacingReader` scans a page's text-show operators for two
+bounded word-boundary repairs: a Type3 TJ array whose tiny adjustment contradicts a PDFKit space
+removes that space, and a font change on one baseline whose measured gap (simple-font Widths, Tm
+scale, TJ adjustments) is at least 0.15 em between a letter or digit on either side inserts the
+space PDFKit drops after a mathematical variable set in its own font (#43). Shows are decoded
+through one-byte ToUnicode maps (bfchar and bfrange, ligatures and surrogate pairs) and must spell
+the line exactly apart from PDFKit's own spaces; rotated shows, Form XObjects and fonts without
+Widths or maps supply no evidence, and unsupported text state still disqualifies the page.
+Object-only selections are discarded before attributed-string access
 to avoid unnecessary PDFKit image-attachment decoding. `GraphicsReader` scans bounded Core Graphics paint
 operations and nested Form XObjects. It resolves shading resources and bounds gradient regions
 with conservative clipping, Form bounds and optional shading bounds. Core Graphics rasterizes
@@ -164,7 +172,22 @@ when at least three remaining lines and 200 characters support the dominant refl
 Candidates within 10% of that supported body size are suppressed, while the original 25%
 page-size threshold still applies. This retains existing modestly larger section headings. Short titles
 beside images retain the existing page evidence. The separate page-size estimate still governs
-whitespace cuts and paragraph geometry. This spatial fallback does not guarantee heading precision in arbitrary mixed layouts. `FurnitureDetector` removes short outermost margin rows supported by
+whitespace cuts and paragraph geometry. Below that threshold, a section label set at least 15%
+over the supported body (acmart's `ABSTRACT`, the 9/11 report's `1.1 INSIDE THE FOUR FLIGHTS`)
+is a heading when it starts with a capital or digit, ends without sentence punctuation, has clear
+space above it or continues a label of the same size, and is either set in capitals or shorter
+than the column's prose; list markers, lone folios and pages with three or more folio-ending
+labels (a contents page) are excluded, and the pieces of one heading row that PDFKit split at a
+gap (`3.1` / `Limitations …`) join. Each typographic heading block carries its font size; once
+every page is reconstructed, the sizes of the whole document rank into tiers 7% apart, the
+largest tier keeps level 2 and each smaller tier is one level deeper (to 6), so equal sizes get
+equal levels on every page and a title outranks the author names beneath it, while tagged
+headings keep their validated levels (#43). Text rotated a quarter turn extracts as a line far taller than wide; one along
+at least a quarter of the outer margin of an otherwise horizontal page is a stamp and is omitted
+with `furnitureRemoved`, while shorter rotated credits stay paragraphs and rotated text is never
+a heading. An `Algorithm N` caption directly beneath a thin rule, over a second rule of the same
+extent and a closing rule further down, makes the listing between those rules one preserved
+region with the caption reflowed. This spatial fallback does not guarantee heading precision in arbitrary mixed layouts. `FurnitureDetector` removes short outermost margin rows supported by
 at least three neighboring or alternating physical pages, stable vertical position and typography.
 The top candidate band is the outer 20% of page height, which admits a slip opinion's running
 head under a deep head margin (rows at 85% and 82%); the footer band remains 7% to retain existing

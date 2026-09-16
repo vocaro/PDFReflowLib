@@ -1,0 +1,48 @@
+{
+  "baselineCommit": "20c78f3",
+  "baselineConverter": {
+    "path": "baseline2/.build/release/pdf-reflow (git archive 20c78f3, swift build -c release)",
+    "sha256": "3e9c49befb77603a88f9760a0a64798e870ecbc25756598fd35755f03fe999a2"
+  },
+  "changedConverter": {
+    "path": ".build/release/pdf-reflow (this working tree)",
+    "sha256": "7b824774e8527261804634f8d0f50989f193e92f49cb443e5eaf28ac2a7267d7"
+  },
+  "firstBaselineCommit": "95ff5b7",
+  "firstBaselineConverterSHA256": "7829a42b7daa209de7154a2f367e7fabe0dd7804b42bdf4af07dcff52eaabb37",
+  "source": {
+    "file": "corpus/cache/2311.07842v1.pdf",
+    "sha256": "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a"
+  },
+  "fixtures": {
+    "replay-1-layout.json": {
+      "sha256": "88b6960a0a9873565be6aace68bf8d2f50c19941f19506acc283eb6f184e0d6c",
+      "bytes": 91120
+    },
+    "replay-3-layout.json": {
+      "sha256": "e8ac06dad67015045fe551debdda6dda00def7e16472f1be0f96c207a443c6f0",
+      "bytes": 108294
+    },
+    "replay-4-layout.json": {
+      "sha256": "2c1c0f5abcf9dc8082ccb044234d3bbee6ef998cd15fa515e5ab711e0cf28f20",
+      "bytes": 110018
+    },
+    "replay-1-text-operators.json": {
+      "sha256": "24cc4f6be0dd49463f9dd891cff1cae541e755bffde65c90be98fad4d992574f",
+      "bytes": 48697
+    }
+  },
+  "environment": {
+    "macOS": "27.0",
+    "machine": "arm64",
+    "xcodebuild": "Xcode 27.0",
+    "swift": "swift-driver version: 1.168.6 "
+  },
+  "controlBooks": [
+    "fed-explained-2021",
+    "gpo-our-flag-2003",
+    "gpo-911-2004",
+    "faa-phak-8083-25c",
+    "wallace-algebra-2010"
+  ]
+}

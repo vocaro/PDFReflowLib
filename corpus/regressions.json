@@ -755,6 +755,41 @@
       "id": "noaa-nca5-2023",
       "reason": "Known default image-output ceiling failure. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
       "issue": 5
+    },
+    {
+      "id": "nbs-jres-geltman-1977",
+      "reason": "Issue #30 candidate without a reviewed content contract or baseline yet.",
+      "issue": 30
+    },
+    {
+      "id": "arxiv-replay-clocks-2023",
+      "reason": "Issue #30 candidate without a reviewed content contract or baseline yet.",
+      "issue": 30
+    },
+    {
+      "id": "usgs-mcs2025-copper",
+      "reason": "Issue #30 candidate without a reviewed content contract or baseline yet.",
+      "issue": 30
+    },
+    {
+      "id": "scotus-loper-bright-2024",
+      "reason": "Issue #30 candidate without a reviewed content contract or baseline yet.",
+      "issue": 30
+    },
+    {
+      "id": "census-rrs2002-01",
+      "reason": "Issue #30 candidate without a reviewed content contract or baseline yet.",
+      "issue": 30
+    },
+    {
+      "id": "uscis-m618-arabic-2015",
+      "reason": "Issue #30 candidate without a reviewed content contract or baseline yet.",
+      "issue": 30
+    },
+    {
+      "id": "irs-p596-zhs-2025",
+      "reason": "Issue #30 candidate without a reviewed content contract or baseline yet.",
+      "issue": 30
     }
   ]
 }

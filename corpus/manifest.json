@@ -700,6 +700,294 @@
           "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/18"
         }
       ]
+    },
+    {
+      "role": "development",
+      "identity": {
+        "suppliedBy": "publisher-download"
+      },
+      "id": "nbs-jres-geltman-1977",
+      "title": "Stimulated Multiphoton Bremsstrahlung in Electron-Ion Collisions",
+      "author": "Sydney Geltman, National Bureau of Standards",
+      "publicationYear": 1977,
+      "url": "https://doi.org/10.6028/jres.082.016",
+      "publisherPageURL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6752085/",
+      "downloadURL": "https://nvlpubs.nist.gov/nistpubs/jres/82/jresv82n3p173_A1b.pdf",
+      "filename": "jresv82n3p173_A1b.pdf",
+      "bytes": 7303514,
+      "sha256": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
+      "pages": 7,
+      "provenance": "Journal of Research of the National Bureau of Standards 82(3):173-179, November-December 1977. The DOI resolves to this exact NIST-hosted scan (Adobe Acrobat Paper Capture OCR layer, 2010-2011).",
+      "rightsBasis": "NIST Library FAQ: publications of NIST, as publications of the Federal government, are in the public domain and not subject to copyright in the United States; credit the source. Author was NBS staff (JILA, Boulder). Not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "publisher-declared",
+        "scope": "NIST public-domain statement for its publications; no new owner confirmation or shipped-catalog admission."
+      },
+      "coverage": [
+        "academic paper in the two-column 1970s journal format of the owner-supplied Lamport CACM example",
+        "scanned pages with inherited OCR text layer",
+        "page-bottom footnotes under a rule (*, **, 1)",
+        "numbered display equations",
+        "figure spanning both columns",
+        "OCR-damaged mathematical notation"
+      ],
+      "reviewPages": [
+        1,
+        2
+      ],
+      "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
+      "reviewStatus": "Candidate added for #30 from inspected source pages only. Not yet converted: no review-point file, regression contract, memory ceiling or baseline measurement.",
+      "knownFidelityIssues": [],
+      "baselineStatus": "No baseline; excluded from the corpus gate until a reviewed contract exists.",
+      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/30"
+    },
+    {
+      "role": "development",
+      "identity": {
+        "suppliedBy": "publisher-download"
+      },
+      "id": "arxiv-replay-clocks-2023",
+      "title": "Replay Clocks",
+      "author": "Ishaan Lagwankar and Sandeep S Kulkarni",
+      "publicationYear": 2023,
+      "url": "https://arxiv.org/abs/2311.07842v1",
+      "publisherPageURL": "https://arxiv.org/abs/2311.07842v1",
+      "downloadURL": "https://arxiv.org/pdf/2311.07842v1",
+      "filename": "2311.07842v1.pdf",
+      "bytes": 2617877,
+      "sha256": "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
+      "pages": 12,
+      "provenance": "arXiv:2311.07842v1 [cs.DC], submitted 2023-11-14. Version-pinned URL; LaTeX acmart two-column typesetting.",
+      "license": "CC-BY-4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Replay Clocks by Ishaan Lagwankar and Sandeep S Kulkarni, arXiv:2311.07842v1 (2023), CC BY 4.0. Source: https://arxiv.org/abs/2311.07842v1. The PDF is unmodified.",
+      "rightsBasis": "arXiv abstract page declares CC BY 4.0. Retain attribution; not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "publisher-declared",
+        "scope": "arXiv CC BY 4.0 license declaration; attribution required. No new owner confirmation or shipped-catalog admission."
+      },
+      "coverage": [
+        "born-digital academic paper in ACM two-column format",
+        "LaTeX Type 1 fonts and ligatures",
+        "inline and display mathematics",
+        "numbered algorithm pseudocode blocks",
+        "vector figures with labels",
+        "rotated arXiv margin stamp",
+        "running headers"
+      ],
+      "reviewPages": [
+        1,
+        3,
+        4
+      ],
+      "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
+      "reviewStatus": "Candidate added for #30 from inspected source pages only. Not yet converted: no review-point file, regression contract, memory ceiling or baseline measurement.",
+      "knownFidelityIssues": [],
+      "baselineStatus": "No baseline; excluded from the corpus gate until a reviewed contract exists.",
+      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/30"
+    },
+    {
+      "role": "development",
+      "identity": {
+        "suppliedBy": "publisher-download"
+      },
+      "id": "usgs-mcs2025-copper",
+      "title": "Mineral Commodity Summaries 2025: Copper",
+      "author": "Daniel M. Flanagan, U.S. Geological Survey",
+      "publicationYear": 2025,
+      "url": "https://pubs.usgs.gov/publication/mcs2025",
+      "publisherPageURL": "https://pubs.usgs.gov/publication/mcs2025",
+      "downloadURL": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-copper.pdf",
+      "filename": "mcs2025-copper.pdf",
+      "bytes": 746302,
+      "sha256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
+      "pages": 2,
+      "provenance": "USGS per-commodity extract of Mineral Commodity Summaries 2025 (printed pages 64-65; physical pages 68-69 of the 216-page mcs2025.pdf). USGS revises the report in place, so bytes are pinned.",
+      "rightsBasis": "USGS copyright policy: USGS-authored or produced data and information are considered to be in the U.S. Public Domain; non-USGS materials may be copyrighted. Not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "publisher-declared",
+        "scope": "USGS public-domain policy; no new owner confirmation or shipped-catalog admission."
+      },
+      "coverage": [
+        "borderless tables with no cell or column rules",
+        "row groups expressed only by indentation",
+        "right-aligned numeric columns",
+        "spanning column headers over year pairs",
+        "superscript estimate and note markers inside cells",
+        "page-bottom table notes"
+      ],
+      "reviewPages": [
+        1,
+        2
+      ],
+      "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
+      "reviewStatus": "Candidate added for #30 from inspected source pages only. Not yet converted: no review-point file, regression contract, memory ceiling or baseline measurement.",
+      "knownFidelityIssues": [],
+      "baselineStatus": "No baseline; excluded from the corpus gate until a reviewed contract exists.",
+      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/30"
+    },
+    {
+      "role": "development",
+      "identity": {
+        "suppliedBy": "publisher-download"
+      },
+      "id": "scotus-loper-bright-2024",
+      "title": "Loper Bright Enterprises v. Raimondo, No. 22-451 (slip opinion)",
+      "author": "Supreme Court of the United States",
+      "publicationYear": 2024,
+      "url": "https://www.supremecourt.gov/opinions/slipopinion/23",
+      "publisherPageURL": "https://www.supremecourt.gov/opinions/slipopinion/23",
+      "downloadURL": "https://www.supremecourt.gov/opinions/23pdf/22-451_7m58.pdf",
+      "filename": "22-451_7m58.pdf",
+      "bytes": 637387,
+      "sha256": "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e",
+      "pages": 114,
+      "provenance": "Slip opinion decided June 28, 2024 (603 U.S. 369), linked from the Court's October Term 2023 opinions page. Slip PDFs can be reissued under a new filename suffix, so bytes are pinned.",
+      "rightsBasis": "Judicial opinion by federal officers (17 U.S.C. 105) and uncopyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, 2020). The Court's site carries no explicit rights statement. Not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "tentative",
+        "scope": "Statutory and doctrinal basis only; no publisher rights statement, owner confirmation or shipped-catalog admission."
+      },
+      "coverage": [
+        "page-bottom footnotes, not endnotes",
+        "footnote continuing across a page break",
+        "multiple footnotes per page",
+        "separator drawn as dash characters, not a rule",
+        "italic case names and Ibid./Id. citations",
+        "footnote numbering restarting per separate opinion",
+        "single-column running headers"
+      ],
+      "reviewPages": [
+        13,
+        60,
+        61,
+        97,
+        98
+      ],
+      "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
+      "reviewStatus": "Candidate added for #30 from inspected source pages only. Not yet converted: no review-point file, regression contract, memory ceiling or baseline measurement.",
+      "knownFidelityIssues": [],
+      "baselineStatus": "No baseline; excluded from the corpus gate until a reviewed contract exists.",
+      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/30"
+    },
+    {
+      "role": "development",
+      "identity": {
+        "suppliedBy": "publisher-download"
+      },
+      "id": "census-rrs2002-01",
+      "title": "Disclosure Risk Assessment in Perturbative Microdata Protection (Research Report Series, Statistics #2002-01)",
+      "author": "William E. Yancey, William E. Winkler and Robert H. Creecy, U.S. Census Bureau",
+      "publicationYear": 2002,
+      "url": "https://www.census.gov/library/working-papers/2002/adrm/rrs2002-01.html",
+      "publisherPageURL": "https://www.census.gov/library/working-papers/2002/adrm/rrs2002-01.html",
+      "downloadURL": "https://www.census.gov/content/dam/Census/library/working-papers/2002/adrm/rrs2002-01.pdf",
+      "filename": "rrs2002-01.pdf",
+      "bytes": 187466,
+      "sha256": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
+      "pages": 20,
+      "provenance": "Census Bureau research report issued January 31, 2002. Word cover followed by LaTeX body distilled with Acrobat Distiller 4.05.",
+      "rightsBasis": "Cover page states the paper reports research undertaken by Census Bureau staff; all three authors are Census Bureau staff, so 17 U.S.C. 105 applies. Not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "tentative",
+        "scope": "Federal-employee authorship stated on the cover; no explicit publisher rights statement, owner confirmation or shipped-catalog admission."
+      },
+      "coverage": [
+        "born-digital text layer that renders correctly but extracts wrongly",
+        "Type 1C fonts with custom encoding and no ToUnicode map (letters shifted by three)",
+        "dropped fi/fl ligatures",
+        "clean Word cover page as in-document control",
+        "academic research report with equations and references"
+      ],
+      "reviewPages": [
+        1,
+        3
+      ],
+      "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
+      "reviewStatus": "Candidate added for #30 from inspected source pages only. Not yet converted: no review-point file, regression contract, memory ceiling or baseline measurement.",
+      "knownFidelityIssues": [],
+      "baselineStatus": "No baseline; excluded from the corpus gate until a reviewed contract exists.",
+      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/30"
+    },
+    {
+      "role": "development",
+      "identity": {
+        "suppliedBy": "publisher-download"
+      },
+      "id": "uscis-m618-arabic-2015",
+      "title": "Welcome to the United States: A Guide for New Immigrants (M-618-A, Arabic, rev. 09/15)",
+      "author": "U.S. Citizenship and Immigration Services",
+      "publicationYear": 2015,
+      "url": "https://www.uscis.gov/citizenship-resource-center/civic-assimilation/settling-in-the-us",
+      "publisherPageURL": "https://www.uscis.gov/citizenship-resource-center/civic-assimilation/settling-in-the-us",
+      "downloadURL": "https://www.uscis.gov/sites/default/files/document/guides/M-618_a.pdf",
+      "filename": "M-618_a.pdf",
+      "bytes": 4156497,
+      "sha256": "354effbbe38450664959b8832d136cfd158d3c17d1ba777b8b1e4a5b6aa36d54",
+      "pages": 116,
+      "provenance": "Arabic edition linked from the USCIS Settling in the U.S. page. InDesign CS6 export with embedded Arial CID fonts and ToUnicode maps.",
+      "rightsBasis": "U.S. Government work (17 U.S.C. 105). USCIS website policies call site information public, but state some images are licensed to USCIS and are not in the public domain; the guide contains photographs and a card specimen. Not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "tentative",
+        "scope": "USCIS public-information statement with a licensed-image exception; text is development material, images need separate review before any redistribution."
+      },
+      "coverage": [
+        "right-to-left Arabic body text",
+        "bidirectional runs mixing Arabic, Latin, form numbers and phone numbers",
+        "right-to-left table of contents with dot leaders",
+        "extraction reverses I-551 to 551-I and mirrors parentheses",
+        "photographs and callout boxes beside text",
+        "section-divider pages without text"
+      ],
+      "reviewPages": [
+        5,
+        21
+      ],
+      "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
+      "reviewStatus": "Candidate added for #30 from inspected source pages only. Not yet converted: no review-point file, regression contract, memory ceiling or baseline measurement.",
+      "knownFidelityIssues": [],
+      "baselineStatus": "No baseline; excluded from the corpus gate until a reviewed contract exists.",
+      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/30"
+    },
+    {
+      "role": "development",
+      "identity": {
+        "suppliedBy": "publisher-download"
+      },
+      "id": "irs-p596-zhs-2025",
+      "title": "Publication 596 (ZH-S), Earned Income Credit (EIC), 2025 (Simplified Chinese)",
+      "author": "Internal Revenue Service",
+      "publicationYear": 2025,
+      "url": "https://www.irs.gov/forms-pubs/about-publication-596",
+      "publisherPageURL": "https://www.irs.gov/forms-pubs/about-publication-596",
+      "downloadURL": "https://www.irs.gov/pub/irs-prior/p596zhs--2025.pdf",
+      "filename": "p596zhs--2025.pdf",
+      "bytes": 2674617,
+      "sha256": "7d1cff45bc567f1257ea1aa1e2ce67945aafb12708b2e22901ce6392436590c2",
+      "pages": 36,
+      "provenance": "IRS prior-year archive copy, byte-identical to irs-pdf/p596zhs.pdf when captured. Antenna House output with Noto Sans CJK Identity-H fonts and ToUnicode maps.",
+      "rightsBasis": "IRS.gov use-of-content page: content created or maintained by federal employees in the course of their duties is not subject to copyright; copyrighted material must be cleared with its holder. Not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "publisher-declared",
+        "scope": "IRS content statement; translation authorship not separately confirmed; no owner confirmation or shipped-catalog admission."
+      },
+      "coverage": [
+        "Simplified Chinese horizontal text",
+        "CJK mixed with Latin identifiers, URLs, form numbers and amounts",
+        "line breaks without spaces between CJK words",
+        "stray spaces from justified CJK lines",
+        "two-column tax publication layout with worksheets"
+      ],
+      "reviewPages": [
+        1,
+        3,
+        16
+      ],
+      "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-16; see measurements/corpus-candidates-30/verification.json.",
+      "reviewStatus": "Candidate added for #30 from inspected source pages only. Not yet converted: no review-point file, regression contract, memory ceiling or baseline measurement.",
+      "knownFidelityIssues": [],
+      "baselineStatus": "No baseline; excluded from the corpus gate until a reviewed contract exists.",
+      "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/30"
     }
   ]
 }

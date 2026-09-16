@@ -34,10 +34,19 @@ work offline. Tests and conversion never fetch sources automatically.
 | `gpo-our-flag-2003` | 56 | Structure-tree inconsistencies, flag illustrations, drop capitals, one visible table | 192 MiB |
 | `cdc-zombie-pandemic-2011` | 42 | Comic artwork, noisy inherited text, image-only dialogue, panel order | 512 MiB |
 | `cia-blue-book-14-1955` | 312 | Scanned statistical tables, inherited OCR, negative warning/refusal contract | 512 MiB |
+| `nbs-jres-geltman-1977` | 7 | Scanned two-column academic paper, footnotes, OCR-damaged equations | Unset: candidate (#30) |
+| `arxiv-replay-clocks-2023` | 12 | Born-digital ACM two-column paper, pseudocode, figures, math | Unset: candidate (#30) |
+| `usgs-mcs2025-copper` | 2 | Borderless tables, indentation-only row groups, spanning headers | Unset: candidate (#30) |
+| `scotus-loper-bright-2024` | 114 | Page-bottom footnotes continuing across pages, dash separators | Unset: candidate (#30) |
+| `census-rrs2002-01` | 20 | Born-digital text layer with no Unicode mapping (shifted letters) | Unset: candidate (#30) |
+| `uscis-m618-arabic-2015` | 116 | Right-to-left Arabic with embedded Latin and numbers | Unset: candidate (#30) |
+| `irs-p596-zhs-2025` | 36 | Simplified Chinese mixed with Latin identifiers and amounts | Unset: candidate (#30) |
 
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
 before conversion and records progress, timing, memory, output structure and optional EPUBCheck.
+Candidate (#30) cases are pinned and fetchable but not yet converted or gated; see
+[their record](../measurements/corpus-candidates-30/record.md).
 
 ## Comparing conversion runs
 

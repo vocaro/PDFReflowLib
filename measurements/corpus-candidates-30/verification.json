@@ -1,0 +1,62 @@
+{
+  "scope": "Explicit fresh downloads of issue #30 candidates into an initially empty temporary cache through tools/fetch_corpus.py on 2026-09-16 (Python 3.14.6). Identity and availability only; no conversion, fidelity, rights or URL-stability claim.",
+  "fetcherSHA256": "69d483b1db73a55044795dc97d15b88698ceb07d17078f7c84aca098c7610f9f",
+  "documents": [
+    {
+      "case": "nbs-jres-geltman-1977",
+      "downloadURL": "https://nvlpubs.nist.gov/nistpubs/jres/82/jresv82n3p173_A1b.pdf",
+      "bytes": 7303514,
+      "sha256": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
+      "pages": 7,
+      "fetcherStatus": "downloaded"
+    },
+    {
+      "case": "arxiv-replay-clocks-2023",
+      "downloadURL": "https://arxiv.org/pdf/2311.07842v1",
+      "bytes": 2617877,
+      "sha256": "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
+      "pages": 12,
+      "fetcherStatus": "downloaded"
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "downloadURL": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-copper.pdf",
+      "bytes": 746302,
+      "sha256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
+      "pages": 2,
+      "fetcherStatus": "downloaded"
+    },
+    {
+      "case": "scotus-loper-bright-2024",
+      "downloadURL": "https://www.supremecourt.gov/opinions/23pdf/22-451_7m58.pdf",
+      "bytes": 637387,
+      "sha256": "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e",
+      "pages": 114,
+      "fetcherStatus": "downloaded"
+    },
+    {
+      "case": "census-rrs2002-01",
+      "downloadURL": "https://www.census.gov/content/dam/Census/library/working-papers/2002/adrm/rrs2002-01.pdf",
+      "bytes": 187466,
+      "sha256": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
+      "pages": 20,
+      "fetcherStatus": "downloaded"
+    },
+    {
+      "case": "uscis-m618-arabic-2015",
+      "downloadURL": "https://www.uscis.gov/sites/default/files/document/guides/M-618_a.pdf",
+      "bytes": 4156497,
+      "sha256": "354effbbe38450664959b8832d136cfd158d3c17d1ba777b8b1e4a5b6aa36d54",
+      "pages": 116,
+      "fetcherStatus": "downloaded"
+    },
+    {
+      "case": "irs-p596-zhs-2025",
+      "downloadURL": "https://www.irs.gov/pub/irs-prior/p596zhs--2025.pdf",
+      "bytes": 2674617,
+      "sha256": "7d1cff45bc567f1257ea1aa1e2ce67945aafb12708b2e22901ce6392436590c2",
+      "pages": 36,
+      "fetcherStatus": "downloaded"
+    }
+  ]
+}

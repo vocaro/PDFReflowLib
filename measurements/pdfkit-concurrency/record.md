@@ -151,8 +151,13 @@ python3 measurements/pdfkit-concurrency/paired-timing.py \
 
 The [standalone Apple reproduction bundle](apple-reproducer.zip) contains the probe, both tiny
 original fixtures, MIT license, exact failing SDK stderr and build/run instructions. It requires
-full Xcode; it does not require downloading any corpus PDF or library dependency. No Apple
-Feedback ID exists for this separate exception in this record.
+full Xcode; it does not require downloading any corpus PDF or library dependency.
+
+A fresh rebuild from this bundle on 2026-09-15, same host/OS/Xcode identity as above, reproduced
+the identical exception and stack on the 3rd of 5 concurrent-attributed trials; the full run is
+retained at `fresh-crash-2026-09-15.stderr.log.gz`. [`report.md`](report.md) is a drafted Apple
+Feedback Assistant submission built from the bundle and this fresh reproduction. No Apple
+Feedback ID exists yet for this separate exception; the report has not been submitted.
 
 From the repository, with full Xcode selected:
 

@@ -82,8 +82,8 @@ The manifest consistency test requires every corpus document to be covered or ex
    fixture when that isolates the mechanism, and retain a source-derived real-document target.
 2. Read the source visually before writing expected text, order, cell values or image properties.
    Do not derive expected correctness from the converter being tested.
-3. Prove the test fails on the old behavior. Keep known unresolved defects in the roadmap/issues,
-   rather than blessing them as golden output or disguising them as passing tests.
+3. Prove the test fails on the old behavior. Keep known unresolved defects tracked as GitHub
+   issues, rather than blessing them as golden output or disguising them as passing tests.
 4. Add positive controls for neighboring behaviors and another document type. For example,
    attachment filtering must retain mixed styled text, blank scans, recoverable OCR and images.
 5. Run the synthetic and corpus lanes. Review changed content/image counts; increases and decreases

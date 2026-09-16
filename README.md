@@ -112,7 +112,9 @@ that fall back to images skip unused attributed-text decoding. Failures use
 - Core Graphics scans placed images, nested forms and painted paths. The original page renderer
   supplies crops containing figures, ruled tables, labels and recognizable displayed formulas,
   including bounded detached fractions.
-  Numeric dot-leader tables with supported geometry and OCR table regions also become images. Images preserve compositing and appearance rather than
+  Numeric dot-leader tables with supported geometry, borderless tables with underlined column
+  headers, and OCR table regions also become images. A rule that merely underlines a label or
+  sits beside a paragraph does not rasterize that prose. Images preserve compositing and appearance rather than
   exposing raw image resources with missing masks or detached labels.
 - Vision recognizes pages with missing/damaged text by default. OCR text is explicitly reported
   as transcription, with an accompanying original-page image by default.
@@ -146,7 +148,7 @@ pushing. This opt-in lane converts 15 complete cached documents and checks revie
 EPUB conformance, progress and resource budgets. Missing sources fail with acquisition instructions;
 there are no automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic lane.
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
-and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold 414
+and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold 439
 checks on 93 pages, including full-resolution stroke checks for equations and a table, and
 scale/contrast/color checks for a flag and an FAA figure; a `tableCells` checker is ready for tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and

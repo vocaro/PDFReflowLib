@@ -148,10 +148,21 @@ classifier. Synthetic invisible-text layers retain the established whole-documen
 rule in the outer 7%, because their typography does not supply native font evidence. Narrow whitespace cuts require substantial text on both sides, so
 short name/description cells do not become independent prose columns. `TableRegionDetector`
 recognizes aligned numeric dot-leader rows with a nearby textual header and preserves their
-complete region with `imageRegion` warnings. It does not infer general table semantics.
-Graphic-region merging and whole-line expansion repeat until the bounds
-stabilize, so a merged crop cannot cut through a newly intersecting text line. Only text outside
-those regions reflows. `FractionRegionDetector` groups short horizontal bars with nearby compact
+complete region with `imageRegion` warnings. It also recognizes borderless statistical tables
+whose column headers are underlined: a row of at least three thin underlines, or one short
+piece underlined whole away from the left margin, followed by at least three tightly leaded
+rows carrying numbers, becomes one region. It does not infer general table semantics.
+A thin painted rule beneath prose is that text's decoration and seeds no crop; a rule inside a
+short mathematical line (a radical's vinculum, an exercise bar) or between a word-free term and
+a term starting beneath it (a fraction bar) keeps those lines in one crop, and an isolated rule
+remains a crop, as before. Rows of divisor bars beneath equations are not table headers. Whole-line expansion admits the lines a graphic
+captures and the other pieces of their rows, then trims the crop away from lines it merely
+touches. It does not chain from text line to text line through overlapping leading, so a
+label underline, a column rule or an inline equation beside tightly leaded prose does not
+absorb the paragraph or column (#36); a line whose rectangle genuinely overlaps admitted text
+is still admitted whole rather than clipped. Graphic-region merging and expansion repeat until
+the bounds stabilize, so a merged crop cannot cut through a newly intersecting text line.
+Only text outside those regions reflows. `FractionRegionDetector` groups short horizontal bars with nearby compact
 mathematical terms above and below, optionally including a nearby equation prefix. It leaves
 long rules, prose, code and connected table grids to existing handling. Whole-line expansion
 supplies the crop margin once; fraction detection does not repeatedly enlarge already complete

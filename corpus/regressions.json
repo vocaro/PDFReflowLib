@@ -930,7 +930,7 @@
     {
       "id": "usgs-mcs2025-copper",
       "sourceSHA256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
-      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, preserved statistics and world-production tables, the COMEX paragraph and the ordered superscript table-note markers. Does not bless rasterized prose: the Domestic Production, Recycling, Import Sources, Events and Substitutes paragraphs are currently inside preserved-region images (#36). The Salient Statistics table image is also checked stroke by stroke at full resolution (every digit, label and rule) and for scale and ink contrast; cell association will use tableCells once the table is emitted as text (#27).",
+      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, preserved statistics, tariff and world-production tables with source-region image checks, the COMEX paragraph and the ordered superscript table-note markers. After #36, the Domestic Production, Recycling, Import Sources, Depletion Allowance, Government Stockpile, Events, World Resources and Substitutes prose must reflow as text in source order while the three borderless tables stay preserved images; table labels and cells must not be flattened into prose. Paragraph grouping between adjacent sections and the sup markers inside prose are not qualified here. The Salient Statistics table image is also checked stroke by stroke at full resolution (every digit, label and rule) and for scale and ink contrast; cell association will use tableCells once the table is emitted as text (#27).",
       "pages": [
         {
           "page": 1,
@@ -954,9 +954,24 @@
           ],
           "orderedText": [
             "(Data in thousand metric tons, copper content, unless otherwise specified)",
+            "Domestic Production and Use: In 2024, the recoverable copper content of U.S. mine production was an estimated",
+            "Recycling: Old (post-consumer) scrap, converted to refined metal, alloys, and other forms, provided an estimated",
+            "Import Sources (2020–23): Copper content of blister and anodes: Finland, 92%; Malaysia, 3%; and other, 5%.",
+            "Depletion Allowance: 15% (domestic), 14% (foreign).",
+            "Government Stockpile: None.",
             "Prepared by Daniel M. Flanagan"
           ],
-          "minimumImages": 1
+          "minimumImages": 2,
+          "paragraphs": [
+            "Domestic Production and Use: In 2024, the recoverable copper content of U.S. mine production was an estimated",
+            "Recycling: Old (post-consumer) scrap, converted to refined metal, alloys, and other forms, provided an estimated",
+            "Depletion Allowance: 15% (domestic), 14% (foreign)."
+          ],
+          "absentText": [
+            "Mine, recoverable",
+            "Net import reliance",
+            "2603.00.0010"
+          ]
         },
         {
           "page": 2,
@@ -969,6 +984,11 @@
             "The COMEX copper price reached a record high in May 2024 and was projected to average $4.20 per pound in full year 2024"
           ],
           "orderedText": [
+            "Events, Trends, and Issues: In 2024, production decreased at a majority of copper mines in the United States",
+            "The COMEX copper price reached a record high in May 2024",
+            "World Mine and Refinery Production and Reserves: Reserves for Canada, Indonesia, Peru, and the United States",
+            "World Resources:",
+            "Substitutes: Aluminum substitutes for copper in automobile radiators, cooling and refrigeration tube",
             "Estimated. — Zero.",
             "Copper converted to refined metal, alloys, and other forms",
             "Less than ½ unit.",
@@ -983,7 +1003,15 @@
               "after": "For Australia, Joint Ore Reserves"
             }
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "paragraphs": [
+            "Events, Trends, and Issues: In 2024, production decreased at a majority of copper mines in the United States",
+            "Substitutes: Aluminum substitutes for copper in automobile radiators, cooling and refrigeration tube"
+          ],
+          "absentText": [
+            "World total (rounded)",
+            "Congo (Kinshasa)"
+          ]
         }
       ]
     },
@@ -1147,7 +1175,7 @@
     {
       "id": "nbs-jres-geltman-1977",
       "sourceSHA256": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
-      "basis": "Source pages 1, 2 and 7 visually reviewed. Pages 1-6 currently fall back to explicit original-page images; that conservative signal is protected, not reflow quality (#37). Page 7 protects the unverified-text warning over its inherited Paper Capture OCR, the preserved closing prose and the reference heading. Reference transcriptions are noisy and are not asserted.",
+      "basis": "Source pages 1, 2 and 7 visually reviewed. Pages 1-6 currently fall back to explicit original-page images; that conservative signal is protected, not reflow quality (#37). Page 7 protects the unverified-text warning over its inherited Paper Capture OCR and the reference heading. After #36 the closing left-column prose must reflow as text in source order, ending with its final line inside one paragraph; the inline-equation line earlier in the column still becomes a bounded formula crop. Reference transcriptions are noisy and are not asserted.",
       "pages": [
         {
           "page": 1,
@@ -1176,6 +1204,15 @@
           "minimumImages": 1,
           "warningCodesAnyOf": [
             "unverifiedTextLayer"
+          ],
+          "orderedText": [
+            "Our remarks above have been confined to the case of",
+            "In concluding, we would like to bring",
+            "on neutral atoms.",
+            "References"
+          ],
+          "paragraphs": [
+            "In concluding, we would like to bring"
           ]
         }
       ]

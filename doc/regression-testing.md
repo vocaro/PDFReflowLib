@@ -50,12 +50,12 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 414 targeted checks on 93 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 439 targeted checks on 93 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 163 ordered-text, 61 text, 36 paragraph,
-26 heading, 22 absent-text, 13 script, 6 paragraph-continuation, 58 image-presence, 12 warning,
+the NBS and Replay Clocks academic papers). They comprise 177 ordered-text, 61 text, 42 paragraph,
+26 heading, 27 absent-text, 13 script, 6 paragraph-continuation, 58 image-presence, 12 warning,
 11 source-region, 3 glyph-structure and 3 image-appearance checks. All source-page anchors must
 also remain complete and ordered, and semantic text must contain no image attachment placeholders.
 
@@ -197,6 +197,30 @@ geometry changes before replacing the bundled fixture; never regenerate it merel
 pass. The extracted text remains Tyler Wallace's CC BY 3.0 material, with attribution in the
 fixture and [third-party notices](third-party-notices.md).
 
+## Thin rules beside prose
+
+`RuleAdjacentProseTests.swift` covers [#36](https://github.com/vocaro/PDFReflowLib/issues/36):
+PDFKit line rectangles on tight leading overlap, so one section-label underline, column rule
+or inline equation used to absorb a whole paragraph or column through transitive whole-line
+expansion. Synthetic USGS-like geometry checks that label underlines and column rules leave
+tightly leaded prose selectable, that a row of underlined column headers keeps a borderless
+statistics table as one image between reflowed paragraphs, and that a single label underline,
+a row of underlined links, a left-margin underlined heading or a subheader with fewer than
+three numeric rows is not a table. An original in-memory PDF converts end to end: the
+underlined labels reflow as prose in order around one table image of bounded size. Our Flag
+page 27 supplies the isolated-rule and dot-leader-table control (three regions, headings
+outside them).
+
+Source-derived `usgs-{1,2}` and `nbs-7` fixtures require every USGS prose section outside the
+crops, the three tables whole inside crops that fit the reviewed reference regions, and the
+Geltman closing paragraph reflowed through "on neutral atoms." with the references untouched;
+the inline-equation crop there stays bounded to its own line and immediate neighbours. Fraction
+bars sit like underlines beneath their numerators, so a synthetic bar and algebra practice
+page 16 (`algebra-16`, 25 fraction bars, 36 crops) require every bar to keep its terms in one
+crop. The first eight tests fail against the previous sources. The corpus contract adds ordered prose,
+paragraph, absent-cell and image-region checks on USGS pages 1/2 and NBS page 7. See the
+[rule-adjacent prose evidence](../measurements/rule-adjacent-prose/record.md).
+
 ## Source-derived fidelity controls
 
 `FidelityIssueTests.swift` checks the FAA page-91/511 columns, all ten Our Flag page-27 table
@@ -222,7 +246,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-208 Swift tests with no known-issue wrappers, and 142 Python tests.
+218 Swift tests with no known-issue wrappers, and 142 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

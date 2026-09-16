@@ -22,6 +22,130 @@ enum LayoutReconstructor {
         FurnitureDetector.strip(&pages)
     }
 
+    /// A painted 1-pt rule after GraphicsReader's two-point padding: an underline, a
+    /// column-header rule or a separator, never a figure on its own.
+    static func isThinRule(_ rect: CGRect) -> Bool {
+        rect.height <= 6 && rect.width >= max(12, rect.height * 3)
+    }
+
+    /// A short rule between a compact mathematical term above it and a term starting directly
+    /// beneath it is a fraction bar, whose numerator and denominator belong in one crop, not an
+    /// underline. Label underlines have worded prose above them. PDFKit can merge a denominator
+    /// with the annotation or the next numerator beside it, so terms are matched by extent.
+    static func isFractionBar(_ rule: CGRect, in lines: [TextLine], body: CGFloat) -> Bool {
+        guard isThinRule(rule) else { return false }
+        let numerator = lines.contains { line in
+            !line.monospaced && line.text.count <= 40
+                && line.text.range(of: #"[A-Za-z]{3,}"#, options: .regularExpression) == nil
+                && line.rect.maxY > rule.maxY && line.rect.minY <= rule.maxY + body * 1.2
+                && line.rect.maxX > rule.minX && line.rect.minX < rule.maxX
+        }
+        return numerator && lines.contains { line in
+            !line.monospaced && line.text.count <= 40
+                && line.rect.minY < rule.minY && line.rect.maxY >= rule.minY - body * 1.2
+                && line.rect.minX >= rule.minX - body * 0.5 && line.rect.minX <= rule.maxX
+                && line.rect.width >= rule.width * 0.15
+        }
+    }
+
+    /// The text line a thin rule underlines: the rule lies within the line's horizontal extent
+    /// and at or just below its baseline region, not up in the ascenders of the line beneath.
+    static func underlinedLine(_ rule: CGRect, in lines: [TextLine]) -> TextLine? {
+        guard isThinRule(rule), !isFractionBar(rule, in: lines, body: max(4, bodySize(lines))) else { return nil }
+        return lines.filter { line in
+            rule.minX >= line.rect.minX - 3 && rule.maxX <= line.rect.maxX + 3
+                && rule.midY >= line.rect.minY - 3 && rule.midY <= line.rect.minY + line.rect.height * 0.5
+        }.min { $0.rect.width < $1.rect.width }
+    }
+
+    /// Whether a seed region captures a text line. Tall PDFKit line rectangles include leading,
+    /// so a thin rule touches the rectangles of the lines above and below without crossing
+    /// their glyphs; it captures only text it actually strikes through.
+    private static func captures(_ seed: CGRect, _ line: TextLine) -> Bool {
+        guard seed.intersects(line.rect) else { return false }
+        guard isThinRule(seed) else { return true }
+        let core = line.rect.insetBy(dx: 0, dy: line.rect.height * 0.25)
+        return seed.midY >= core.minY && seed.midY <= core.maxY
+    }
+
+    /// Pieces of one visual row (PDFKit splits rows at wide gaps; superscripts are separate lines).
+    private static func sameRow(_ a: CGRect, _ b: CGRect) -> Bool {
+        min(a.maxY, b.maxY) - max(a.minY, b.minY) >= min(a.height, b.height) * 0.5
+    }
+
+    private struct Region {
+        var seed: CGRect
+        var bounds: CGRect
+        /// The ink a crop must keep: a thin rule's one-point stroke, otherwise the whole seed.
+        var core: CGRect {
+            isThinRule(seed) ? CGRect(x: seed.minX, y: seed.midY - 0.5, width: seed.width, height: 1) : seed
+        }
+    }
+
+    /// `clusters` for regions: merged bounds carry the union of their seeds.
+    private static func merged(_ regions: [Region]) -> [Region] {
+        var result: [Region] = []
+        for region in regions {
+            var merged = region
+            var previousCount = -1
+            while previousCount != result.count {
+                previousCount = result.count
+                result.removeAll { existing in
+                    if existing.bounds.insetBy(dx: -3, dy: -3).intersects(merged.bounds) {
+                        merged.seed = merged.seed.union(existing.seed)
+                        merged.bounds = merged.bounds.union(existing.bounds)
+                        return true
+                    }
+                    return false
+                }
+            }
+            result.append(merged)
+        }
+        return result
+    }
+
+    /// Whole-line expansion admits the lines a seed captures and the other pieces of their
+    /// rows. Tightly leaded line rectangles overlap, so admitting every line that touches an
+    /// admitted line would absorb a whole paragraph or column (#36). The crop is then trimmed
+    /// away from lines it merely touches, because layout removes every intersecting line from
+    /// prose; a line whose rectangle genuinely overlaps admitted text is admitted instead.
+    /// Returns nil for a thin rule that lies inside text it does not strike through.
+    private static func expanded(_ region: Region, page: PageContent) -> CGRect? {
+        var admitted: [CGRect] = []
+        while true {
+            var bounds = admitted.reduce(region.seed) { $0.union($1.insetBy(dx: -2, dy: -2)) }
+                .intersection(page.bounds)
+            var changed = false
+            for line in page.lines where !admitted.contains(line.rect) && bounds.intersects(line.rect) {
+                guard captures(region.seed, line) || admitted.contains(where: { sameRow($0, line.rect) }) else { continue }
+                admitted.append(line.rect)
+                changed = true
+            }
+            if changed { continue }
+            let kept = admitted.reduce(region.core) { $0.union($1) }
+            for line in page.lines where !admitted.contains(line.rect) && bounds.intersects(line.rect) {
+                let rect = line.rect
+                let cuts = [
+                    CGRect(x: bounds.minX, y: rect.maxY, width: bounds.width, height: bounds.maxY - rect.maxY),
+                    CGRect(x: bounds.minX, y: bounds.minY, width: bounds.width, height: rect.minY - bounds.minY),
+                    CGRect(x: rect.maxX, y: bounds.minY, width: bounds.maxX - rect.maxX, height: bounds.height),
+                    CGRect(x: bounds.minX, y: bounds.minY, width: rect.minX - bounds.minX, height: bounds.height),
+                ].filter { $0.width > 0 && $0.height > 0 && $0.contains(kept) }
+                if let cut = cuts.max(by: { $0.width * $0.height < $1.width * $1.height }) {
+                    bounds = cut
+                } else if admitted.isEmpty && isThinRule(region.seed) {
+                    return nil
+                } else {
+                    admitted.append(rect)
+                    changed = true
+                    break
+                }
+            }
+            if changed { continue }
+            return bounds
+        }
+    }
+
     /// Expand crops to whole intersecting text lines so a label cannot be cut in half.
     static func graphicsWithLabels(_ page: PageContent) -> [CGRect] {
         // Displayed formulas have spatial meaning (superscripts, fractions, aligned terms)
@@ -32,27 +156,43 @@ enum LayoutReconstructor {
             let equation = line.text.contains("=") && line.text.split(whereSeparator: \.isWhitespace).count <= 12
             return mathSymbols || equation
         }.map { $0.rect.insetBy(dx: -4, dy: -8) }
-        var regions = clusters(page.graphics + formulas + TableRegionDetector.regions(in: page)
-            + FractionRegionDetector.regions(in: page), distance: 3)
+        // A rule underlining one text line is that text's decoration, not a figure. Rows of
+        // column-header underlines are table evidence instead (#36).
+        let tables = TableRegionDetector.underlinedColumnRegions(in: page)
+        let body = max(4, bodySize(page.lines))
+        let graphics = page.graphics.compactMap { rect -> CGRect? in
+            guard isThinRule(rect) else { return rect }
+            if tables.contains(where: { $0.contains(rect) }) { return nil }
+            // A fraction bar keeps the terms it touches, as any intersecting graphic does.
+            if isFractionBar(rect, in: page.lines, body: body) {
+                return page.lines.filter { rect.intersects($0.rect) }.reduce(rect) { $0.union($1.rect) }
+            }
+            // A rule inside one line's box belongs to that line: a radical's vinculum or an
+            // exercise bar keeps its short mathematical line; an underline beneath prose is
+            // decoration. A rule outside every line stays an isolated graphic.
+            guard let owner = page.lines.first(where: { line in
+                rect.minX >= line.rect.minX - body && rect.maxX <= line.rect.maxX + body
+                    && rect.midY >= line.rect.minY - 3 && rect.midY <= line.rect.maxY
+            }) else { return rect }
+            let mathematical = owner.text.count <= 40 && !owner.monospaced
+                && owner.text.range(of: #"[A-Za-z]{3,}"#, options: .regularExpression) == nil
+            return mathematical ? rect.union(owner.rect) : nil
+        }
+        let seeds = graphics + formulas + TableRegionDetector.regions(in: page)
+            + FractionRegionDetector.regions(in: page) + tables
+        var regions = clusters(seeds, distance: 3).map { Region(seed: $0, bounds: $0) }
         var previous: [CGRect] = []
-        while regions != previous {
-            previous = regions
-            for i in regions.indices {
-                var prior = CGRect.null
-                while prior != regions[i] {
-                    prior = regions[i]
-                    for line in page.lines where regions[i].intersects(line.rect) {
-                        regions[i] = regions[i].union(line.rect.insetBy(dx: -2, dy: -2))
-                    }
-                }
-                regions[i] = regions[i].intersection(page.bounds)
+        while regions.map(\.bounds) != previous {
+            previous = regions.map(\.bounds)
+            regions = regions.compactMap { region in
+                expanded(region, page: page).map { Region(seed: region.seed, bounds: $0) }
             }
             // A merged bounding rectangle can newly intersect a label that neither component
             // touched. Expand again before rasterizing, or its text is removed from prose while
             // the image clips part of it (for example, a raised exponent beside a fraction).
-            regions = clusters(regions, distance: 3)
+            regions = merged(regions)
         }
-        return regions
+        return regions.map(\.bounds)
     }
 
     struct Element {

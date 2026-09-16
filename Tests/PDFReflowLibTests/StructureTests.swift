@@ -173,7 +173,8 @@ func ambiguousMarkedContentKeepsNativeText(_ failure: String) throws {
         var content = native.content()
         var warnings: [ConversionWarning] = []
         let baseline = LayoutReconstructor.blocks(page: content, images: [], vocabulary: [], warnings: &warnings)
-        #expect(baseline.filter { if case .heading = $0.content { true } else { false } }.count == 2)
+        // Spatially the two stacked title lines merge into one heading (#55); the tag supplies the level.
+        #expect(baseline.filter { if case .heading = $0.content { true } else { false } }.count == 1)
         let tree = try StructureTreeReader.read(url)
         #expect(MarkedTextReader.apply(try #require(tree.pages[1]), page: page, lines: &content.lines))
         let blocks = LayoutReconstructor.blocks(page: content, images: [], vocabulary: [], warnings: &warnings)

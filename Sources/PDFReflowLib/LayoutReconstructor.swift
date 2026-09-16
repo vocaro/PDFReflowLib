@@ -235,6 +235,73 @@ enum LayoutReconstructor {
         return entries.count >= 3 ? labels.filter { !entries.contains($0) } : labels
     }
 
+    /// A contents entry: a dot leader of four or more dots running to the line's end, with or
+    /// without its folio (PDFKit can split the folio into a same-row line). Contents pages set
+    /// their chapter entries at heading size, but a leader never ends a heading (#55).
+    static func isContentsEntry(_ text: String) -> Bool {
+        text.range(of: #"(?:\.\s*){4,}(?:\d{1,4}|[ivxlcdm]{1,8})?\s*$"#,
+                   options: [.regularExpression, .caseInsensitive]) != nil
+    }
+
+    /// Whether `line` is the next line of the heading `previous` opens: the same size, set
+    /// directly beneath it at ordinary heading leading (the rectangles include PDFKit's
+    /// leading, so they touch or overlap), sharing the left edge, the centre or the right edge.
+    static func stacksUnderHeading(_ line: TextLine, after previous: TextLine) -> Bool {
+        let size = max(previous.fontSize, line.fontSize)
+        guard abs(previous.fontSize - line.fontSize) <= size * 0.1, !sameRow(previous.rect, line.rect),
+              line.rect.minY < previous.rect.minY, line.rect.maxY >= previous.rect.minY - size,
+              previous.rect.minY - line.rect.minY <= size * 2.2 else { return false }
+        return abs(previous.rect.minX - line.rect.minX) <= size * 0.6
+            || abs(previous.rect.midX - line.rect.midX) <= size * 0.6
+            || abs(previous.rect.maxX - line.rect.maxX) <= size * 0.6
+    }
+
+    /// Terminal punctuation past closing quotes and brackets; a colon ends a heading's first
+    /// line (`The Federal Open Market Committee:` / `Selection and Function`), not a sentence.
+    private static func endsSentence(_ text: String) -> Bool {
+        let closing: Set<Character> = ["\u{201D}", "\u{2019}", "\"", "'", ")", "]"]
+        guard let ending = text.reversed().first(where: { !$0.isWhitespace && !closing.contains($0) }) else { return false }
+        return ".!?".contains(ending)
+    }
+
+    /// A line that opens a heading of its own rather than continuing the one above it: a
+    /// section number or a chapter label. Two same-size headings stacked without such a mark
+    /// are the lines of one title.
+    private static func opensHeading(_ text: String) -> Bool {
+        text.range(of: #"^(?:\d+(?:\.\d+)+\.?\s|(?:Chapter|Part|Section|Appendix|Unit|Lesson)\s+(?:\d+|[IVXLC]+)\b)"#,
+                   options: .regularExpression) != nil
+    }
+
+    /// The lines of one heading set over several lines merge into one heading: the next line
+    /// stacks under the previous at the same size and alignment, the heading so far does not
+    /// end a sentence, and the line does not open a numbered heading of its own (#55).
+    static func continuesHeading(_ heading: String, with line: TextLine, after previous: TextLine) -> Bool {
+        stacksUnderHeading(line, after: previous) && !endsSentence(heading) && !opensHeading(line.text)
+    }
+
+    /// A chapter opener's pull quote is set in display type between the body and the title,
+    /// over several lines, and reads as a sentence: the run ends in terminal punctuation and
+    /// carries at least eight words. It is prose, not one heading per printed line (#55). A
+    /// multi-line title has no terminal punctuation; a one-line heading ending in a period
+    /// stays a heading. `lines` are the page's lines in reading order and `candidates` names
+    /// the heading-size and label lines among them.
+    static func pullQuoteLines(in lines: [TextLine], candidates: (TextLine) -> Bool) -> [TextLine] {
+        var quotes: [TextLine] = []
+        var run: [TextLine] = []
+        func close() {
+            if run.count >= 2, let last = run.last, endsSentence(last.text),
+               run.reduce(0, { $0 + wordCount($1.text) }) >= 8 { quotes += run }
+            run = []
+        }
+        for line in lines {
+            guard candidates(line) else { close(); continue }
+            if let previous = run.last, !stacksUnderHeading(line, after: previous) { close() }
+            run.append(line)
+        }
+        close()
+        return quotes
+    }
+
     /// Heading sizes ranked into tiers (7% apart), largest first.
     static func headingTiers(_ sizes: [CGFloat]) -> [CGFloat] {
         var tiers: [CGFloat] = []
@@ -448,6 +515,11 @@ enum LayoutReconstructor {
         let footnotes = FootnoteDetector.layout(in: elements, page: page, continuesNote: continuesNote)
         let bodyElements = elements[..<(footnotes?.separator ?? elements.count)]
         let noteGroups = NumberedNoteDetector.groups(in: elements, page: page, headingEvidence: numberedNotePage)
+        // A contents entry is never a heading; a multi-line display sentence is a pull quote.
+        func isHeadingCandidate(_ line: TextLine) -> Bool {
+            line.structure == nil && (isHeadingSize(line) || labels.contains(line)) && !isContentsEntry(line.text)
+        }
+        let quotes = pullQuoteLines(in: bodyElements.compactMap(\.line), candidates: isHeadingCandidate)
         var result: [ReflowBlock] = []
         var note: (Int, InlineText)?
         func flushNote() {
@@ -517,7 +589,9 @@ enum LayoutReconstructor {
             return line.rect.minY >= prev.rect.minY + prev.rect.height * 0.2
                 && line.rect.maxY <= prev.rect.maxY + 1
         }
-        var headingRow: TextLine?
+        // The open heading's first line (the row PDFKit split) and its latest line (for the
+        // line stacked beneath it).
+        var headingRow: (first: TextLine, last: TextLine)?
         for (index, element) in bodyElements.enumerated() {
             let previousHeading = headingRow
             headingRow = nil
@@ -567,15 +641,17 @@ enum LayoutReconstructor {
             }
             flushTagged()
             if !line.monospaced { codeOrigin = nil }
-            if isHeadingSize(line) || labels.contains(line) {
+            if isHeadingCandidate(line), !quotes.contains(line) {
                 // PDFKit splits a heading row at a wide gap (a section number and its title);
-                // the pieces form one heading.
-                if let row = previousHeading, sameRow(row.rect, line.rect),
-                   abs(row.fontSize - line.fontSize) <= line.fontSize * 0.1,
-                   let last = result.indices.last, case let .heading(id, text, level) = result[last].content {
+                // the pieces form one heading, as do the lines of a title set over several
+                // lines (#55).
+                if let row = previousHeading, let last = result.indices.last,
+                   case let .heading(id, text, level) = result[last].content,
+                   sameRow(row.first.rect, line.rect) && abs(row.first.fontSize - line.fontSize) <= line.fontSize * 0.1
+                    || continuesHeading(text.text, with: line, after: row.last) {
                     result[last].content = .heading(id: id, text: join(text, line.content, vocabulary: vocabulary,
                         page: page.number, warnings: &warnings), level: level)
-                    headingRow = row
+                    headingRow = (row.first, line)
                     continue
                 }
                 flush()
@@ -584,7 +660,7 @@ enum LayoutReconstructor {
                     page: page.number)
                 heading.headingSize = line.fontSize
                 result.append(heading)
-                headingRow = line
+                headingRow = (line, line)
             } else if !page.hasSyntheticTextStyle && line.monospaced {
                 flush()
                 if let origin = codeOrigin, let last = result.last, case let .preformatted(previousText) = last.content {

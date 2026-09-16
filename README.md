@@ -117,7 +117,10 @@ that fall back to images skip unused attributed-text decoding. Failures use
   Visible typography supplies flat heading navigation: heading sizes rank into levels across
   the whole document so equal sizes share a level and a title outranks the author names beneath
   it, modestly larger section labels (`ABSTRACT`,
-  `1.1 INSIDE THE FOUR FLIGHTS`) become headings separate from their paragraphs, a rotated
+  `1.1 INSIDE THE FOUR FLIGHTS`) become headings separate from their paragraphs, a title set
+  over several lines is one heading and a chapter opener's display numeral is part of it rather
+  than a subscript, a multi-line display sentence (a pull quote) reflows as prose, a contents
+  page's dot-leader entries are never headings, a rotated
   margin stamp is omitted, and an `Algorithm N` listing set between rules is preserved whole
   beneath its reflowed caption. Exclusively invisible
   text over scan images does not supply reliable code or heading typography.

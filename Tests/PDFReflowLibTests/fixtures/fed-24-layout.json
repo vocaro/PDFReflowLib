@@ -1,0 +1,346 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        9.6000000000000014,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "16"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : " "
+        }
+      ],
+      "text" : "16 "
+    },
+    {
+      "rect" : [
+        88.800000000000011,
+        748.51210000000003,
+        167.19999999999999,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "The Fed Explained: What the Central Bank Does"
+        }
+      ],
+      "text" : "The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "rect" : [
+        89,
+        636.48070000000007,
+        381.95519999999999,
+        81.480000000000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -31.555599999999913,
+          "fontName" : "Helvetica",
+          "fontSize" : 70,
+          "text" : "3 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "Conducting Monetary Policy"
+        }
+      ],
+      "text" : "3 Conducting Monetary Policy"
+    },
+    {
+      "rect" : [
+        167,
+        638.03629999999998,
+        293.0018,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "The Federal Reserve sets U.S. monetary policy to"
+        }
+      ],
+      "text" : "The Federal Reserve sets U.S. monetary policy to"
+    },
+    {
+      "rect" : [
+        167,
+        620.03229999999996,
+        296.6851999999999,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "promote maximum employment and stable prices"
+        }
+      ],
+      "text" : "promote maximum employment and stable prices"
+    },
+    {
+      "rect" : [
+        167,
+        602.02829999999994,
+        121.35059999999999,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "in the U.S. economy."
+        }
+      ],
+      "text" : "in the U.S. economy."
+    },
+    {
+      "rect" : [
+        166.80000000000001,
+        333.82010000000002,
+        286.54599999999999,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The Federal Reserve’s Monetary Policy Mandate and Strategy and"
+        }
+      ],
+      "text" : "The Federal Reserve’s Monetary Policy Mandate and Strategy and"
+    },
+    {
+      "rect" : [
+        175.80000000000001,
+        319.82010000000002,
+        295.00000000000006,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Why It Matters ....................................21"
+        }
+      ],
+      "text" : "Why It Matters ....................................21"
+    },
+    {
+      "rect" : [
+        166.80000000000007,
+        295.02010000000001,
+        304,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The Conduct of Monetary Policy ..........................24"
+        }
+      ],
+      "text" : "The Conduct of Monetary Policy ..........................24"
+    },
+    {
+      "rect" : [
+        166.80000000000007,
+        270.2201,
+        304,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Monetary Policy Tools .................................34"
+        }
+      ],
+      "text" : "Monetary Policy Tools .................................34"
+    },
+    {
+      "rect" : [
+        166.80000000000007,
+        245.42009999999999,
+        304,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "How Monetary Policy Is Implemented ......................39"
+        }
+      ],
+      "text" : "How Monetary Policy Is Implemented ......................39"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "fed-explained-2021",
+  "graphics" : [
+    [
+      0,
+      0,
+      611.99997029999997,
+      792
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        9.6000000000000014,
+        9.3120000000000118
+      ],
+      "text" : "16"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        88.800000000000011,
+        748.51210000000003,
+        167.19999999999999,
+        9.3120000000000118
+      ],
+      "text" : "The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "fontSize" : 70,
+      "monospaced" : false,
+      "rect" : [
+        89,
+        636.48070000000007,
+        381.95519999999999,
+        81.480000000000018
+      ],
+      "text" : "3 Conducting Monetary Policy"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        167,
+        638.03629999999998,
+        293.0018,
+        15.903999999999996
+      ],
+      "text" : "The Federal Reserve sets U.S. monetary policy to"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        167,
+        620.03229999999996,
+        296.6851999999999,
+        15.903999999999996
+      ],
+      "text" : "promote maximum employment and stable prices"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        167,
+        602.02829999999994,
+        121.35059999999999,
+        15.903999999999996
+      ],
+      "text" : "in the U.S. economy."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.80000000000001,
+        333.82010000000002,
+        286.54599999999999,
+        11.639999999999986
+      ],
+      "text" : "The Federal Reserve’s Monetary Policy Mandate and Strategy and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        175.80000000000001,
+        319.82010000000002,
+        295.00000000000006,
+        11.639999999999986
+      ],
+      "text" : "Why It Matters ....................................21"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.80000000000007,
+        295.02010000000001,
+        304,
+        11.639999999999986
+      ],
+      "text" : "The Conduct of Monetary Policy ..........................24"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.80000000000007,
+        270.2201,
+        304,
+        11.639999999999986
+      ],
+      "text" : "Monetary Policy Tools .................................34"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.80000000000007,
+        245.42009999999999,
+        304,
+        11.639999999999986
+      ],
+      "text" : "How Monetary Policy Is Implemented ......................39"
+    }
+  ],
+  "page" : 24,
+  "rightsBasis" : "Federal Reserve Board educational publication, retained as external development material. PDF is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "sourceTitle" : "The Fed Explained: What the Central Bank Does",
+  "sourceURL" : "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf"
+}

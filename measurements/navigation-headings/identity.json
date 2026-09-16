@@ -1,0 +1,39 @@
+{
+  "baselineCommit": "dd4c326",
+  "baselineConverter": {
+    "path": "scratchpad/h55/baseline-dd4c326/.build/release/pdf-reflow (git archive dd4c326, swift build -c release)",
+    "sha256": "f3044afcf1e5bcc4509d7cc55480de0a0c537fd287189e845f578d54871eb9c7"
+  },
+  "changedConverter": {
+    "path": ".build/release/pdf-reflow (this working tree: dd4c326 plus #55)",
+    "sha256": "ef5af1c270e547da166c84347de541c8869721ef27d3248f9f71c49e1fed11f6"
+  },
+  "firstBaselineCommit": "417edc7",
+  "firstBaselineConverterSHA256": "cacc0d71ee5dc3fed480ae4edcb6bda69f90fac75b31e526e8bde2b310a19495",
+  "source": {
+    "file": "corpus/cache/the-fed-explained.pdf",
+    "sha256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60"
+  },
+  "fixtures": {
+    "fed-5-layout.json": {
+      "sha256": "da67ac8711780e4c0796f3b66527d1dbf46e1616cc2d0d9fd6bdc36b5d88a6a5",
+      "bytes": 28751
+    },
+    "fed-8-layout.json": {
+      "sha256": "1beb12025b2415be963643cec4b498368f8bb2ba9231eccb4e22df53a4c78adc",
+      "bytes": 8572
+    },
+    "fed-14-layout.json": {
+      "sha256": "54e072a488f5bb52b59590eb47ba9fd46da574223f5b18b394a8dbc62639f34f",
+      "bytes": 9540
+    },
+    "fed-24-layout.json": {
+      "sha256": "150c727b3288fdef0d5f0e46f8899292158590d8ec69b1b2df357990f24e9ef8",
+      "bytes": 8160
+    },
+    "fed-25-layout.json": {
+      "sha256": "3a9d18dd66ecbf19ac3bd72ffefacdbc191f4158bd4b2f2354acadd0b812539d",
+      "bytes": 35536
+    }
+  }
+}

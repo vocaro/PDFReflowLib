@@ -123,7 +123,10 @@ private func opening(_ initial: String = "T ", capSize: Double = 44, offset: Dou
     #expect(line.monospaced)
     #expect(line.readingRect == nil)
     #expect(line.fontSize == 44)
-    #expect(EPUBTextEncoder.inline(line.content).contains("<sub>T </sub>"))
+    // The oversized initial keeps its size and gets no reading rectangle; at twice the size of
+    // the text beside it, it is display type rather than a subscript of that text (#55).
+    #expect(!EPUBTextEncoder.inline(line.content).contains("<sub>"))
+    #expect(line.text.hasPrefix("T he opening"))
     let text = opening()
     for rect in [CGRect(x: 40, y: 400, width: 300, height: 9),
                  CGRect(x: 40, y: 400, width: 20, height: 45)] {

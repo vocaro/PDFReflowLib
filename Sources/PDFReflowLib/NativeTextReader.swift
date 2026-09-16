@@ -90,8 +90,39 @@ enum NativeTextReader {
             result.fontSize = bodySize
             result.readingRect = CGRect(x: bounds.minX, y: bounds.maxY - bodySize,
                 width: bounds.width, height: bodySize)
+        } else if !mono, styled != nil, let attributed, let titleSize = displayNumeralTitleSize(in: attributed) {
+            // The line's typography is the title's; the numeral is its ornament (#55).
+            result.fontSize = titleSize
         }
         return result
+    }
+
+    /// A chapter opener's display numeral fused by PDFKit with the title beside it (The Fed
+    /// Explained's 70-point `1` before the 24-point `Overview of the Federal`): a run of one to
+    /// three digits at least twice the size of the title run that follows on the line. The
+    /// title's size is the line's size for heading evidence; the numeral's own size would rank
+    /// the line above its second line and above every other title (#55).
+    static func displayNumeralTitleSize(in attributed: NSAttributedString) -> CGFloat? {
+        guard attributed.length > 0 else { return nil }
+        var initialRange = NSRange()
+        let initial = attributed.attributes(at: 0, effectiveRange: &initialRange)
+        let numeral = (attributed.string as NSString).substring(with: initialRange)
+            .trimmingCharacters(in: .whitespaces)
+        guard (1...3).contains(numeral.count), numeral.allSatisfy(\.isNumber),
+              initialRange.length < attributed.length, let cap = initial[.font] as? PlatformFont else { return nil }
+        let rest = NSRange(location: initialRange.length, length: attributed.length - initialRange.length)
+        let title = (attributed.string as NSString).substring(with: rest)
+        guard title.filter(\.isLetter).count >= 2, !title.contains("\n"), !title.contains("\r"),
+              let font = attributed.attributes(at: rest.location, effectiveRange: nil)[.font] as? PlatformFont else { return nil }
+        let size = font.pointSize
+        guard size.isFinite, size > 0, cap.pointSize.isFinite, cap.pointSize <= 100_000,
+              cap.pointSize >= size * 2 else { return nil }
+        var consistent = true
+        attributed.enumerateAttributes(in: rest) { attributes, _, _ in
+            guard let font = attributes[.font] as? PlatformFont, font.pointSize.isFinite,
+                  abs(font.pointSize - size) <= size * 0.1 else { consistent = false; return }
+        }
+        return consistent ? size : nil
     }
 
     /// A lowered, oversized single initial followed by a substantial normal-baseline body run.
@@ -135,10 +166,18 @@ enum NativeTextReader {
             ?? attributes[.baselineOffset] as? NSNumber)?.doubleValue ?? 0
     }
 
+    private struct StyledRun {
+        var text: String
+        var style: TextStyle
+        var offset: Double
+        var size: Double
+        var hasFont: Bool
+        var first: Bool
+    }
+
     static func inlineText(from attributed: NSAttributedString) -> InlineText {
         let hasDropCap = dropCapBodySize(in: attributed) != nil
-        var runs: [InlineText.Element] = []
-        var previous: (offset: Double, size: Double, text: String)?
+        var styled: [StyledRun] = []
         attributed.enumerateAttributes(in: NSRange(location: 0, length: attributed.length)) { attributes, range, _ in
             let font = attributes[.font] as? PlatformFont
             let name = font?.fontName.lowercased() ?? ""
@@ -151,29 +190,42 @@ enum NativeTextReader {
             // change. Preserve that evidence instead of guessing from character offsets.
             let offset = (attributes[NSAttributedString.Key(kCTBaselineOffsetAttributeName as String)] as? NSNumber
                 ?? attributes[.baselineOffset] as? NSNumber)?.doubleValue ?? 0
-            let size = Double(font?.pointSize ?? 12)
-            // PDFKit can concatenate separate visual lines without a space while retaining
-            // their full-line baseline offsets. Require matching font sizes and a jump beyond
-            // the inline-script range; opposite superscripts/subscripts alone are not evidence.
-            if let previous, font != nil, size.isFinite, size > 0, offset.isFinite,
-               abs(size - previous.size) <= max(0.5, max(size, previous.size) * 0.1),
-               abs(offset - previous.offset) > max(size, previous.size) * 0.75,
-               (abs(offset) > size * 0.75 || abs(previous.offset) > previous.size * 0.75),
-               let last = previous.text.last, let first = run.first,
+            styled.append(StyledRun(text: run, style: style, offset: offset, size: Double(font?.pointSize ?? 12),
+                                    hasFont: font != nil, first: range.location == 0))
+        }
+        var runs: [InlineText.Element] = []
+        for (index, run) in styled.enumerated() {
+            var style = run.style
+            let measured = run.hasFont && run.size.isFinite && run.size > 0 && run.offset.isFinite
+            let previous = index > 0 ? styled[index - 1] : nil
+            let next = index + 1 < styled.count ? styled[index + 1] : nil
+            // A run at least twice the size of every run beside it is display type (a chapter
+            // opener's numeral, a drop cap), never a script of the smaller text (#55).
+            let neighbours = [previous, next].compactMap { $0 }.filter(\.hasFont).map(\.size)
+            let display = measured && !neighbours.isEmpty && neighbours.allSatisfy { run.size >= $0 * 2 }
+            if let previous, measured, previous.hasFont, previous.size.isFinite, previous.size > 0, previous.offset.isFinite,
+               let last = previous.text.last, let first = run.text.first,
                !last.isWhitespace, !first.isWhitespace, last != "-", last != "\u{00ad}" {
-                runs.append(.text(" ", []))
+                // PDFKit can concatenate separate visual lines without a space while retaining
+                // their full-line baseline offsets. Require matching font sizes and a jump beyond
+                // the inline-script range; opposite superscripts/subscripts alone are not evidence.
+                let lines = abs(run.size - previous.size) <= max(0.5, max(run.size, previous.size) * 0.1)
+                    && abs(run.offset - previous.offset) > max(run.size, previous.size) * 0.75
+                    && (abs(run.offset) > run.size * 0.75 || abs(previous.offset) > previous.size * 0.75)
+                // A display numeral set on its own baseline before a title (`1` then `Overview`)
+                // is a separate word; a raised or lowered script marker beside its base is not.
+                let numeral = previous.text.allSatisfy(\.isNumber) && previous.size >= run.size * 2
+                    && abs(previous.offset - run.offset) > run.size * 0.75 && first.isLetter
+                if lines || numeral { runs.append(.text(" ", [])) }
             }
-            previous = font != nil && size.isFinite && size > 0 && offset.isFinite
-                ? (offset, size, run) : nil
-            let tolerance = max(0.5, (font?.pointSize ?? 12) * 0.12)
+            let tolerance = max(0.5, run.size * 0.12)
             // Some PDFKit selections combine several OCR lines, represented as baseline
             // shifts of a full line height. Those are layout offsets, not inline scripts.
-            if !(hasDropCap && range.location == 0),
-               offset.isFinite, abs(offset) <= (font?.pointSize ?? 12) * 0.75 {
-                if offset > tolerance { style.insert(.superscript) }
-                else if offset < -tolerance { style.insert(.subscript) }
+            if !(hasDropCap && run.first), !display, run.offset.isFinite, abs(run.offset) <= run.size * 0.75 {
+                if run.offset > tolerance { style.insert(.superscript) }
+                else if run.offset < -tolerance { style.insert(.subscript) }
             }
-            runs.append(.text(run, style))
+            runs.append(.text(run.text, style))
         }
         return InlineText(elements: runs).trimmingCharacters(in: .whitespacesAndNewlines)
     }

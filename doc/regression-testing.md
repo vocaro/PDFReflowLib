@@ -287,7 +287,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-281 Swift tests with no known-issue wrappers, and 160 Python tests.
+288 Swift tests with no known-issue wrappers, and 160 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -370,6 +370,24 @@ sidebars. Small-font text inside an image must not promote the surrounding ordin
 headings. Synthetic controls preserve real headings and short titles beside images; 9/11 chapter
 openings provide independent source-derived heading controls. Six modest-size Fed section titles
 have explicit guards against over-suppression.
+
+`NavigationHeadingTests.swift` (#55) uses the pinned Fed pages 5, 8, 14, 24 and 25, rebuilt from
+their attributed runs as the pipeline builds them. The chapter openers 8, 14 and 24 must each
+yield one heading (`1 Overview of the Federal Reserve System`, with the fused 70-point numeral at
+the title's 24-point size and no subscript) and their pull quote as one paragraph above the
+chapter's own dot-leader contents; page 25's two-line section title is one heading; page 5 has
+`Contents` as its only heading with the chapter entries as paragraphs. Synthetic controls cover
+the merge rule (left-aligned, centred and right-aligned pairs, a colon-ended first line; a chapter
+label at another size, a numbered section beneath a title, `Part II` / `Chapter 3`, a
+sentence-ending first line, prose between, a wide gap and a different alignment stay separate),
+the pull-quote rule (a one-line and a two-short-line sentence stay headings, a two-line title
+without terminal punctuation merges), the contents rule (`isContentsEntry` positives and
+negatives, a lone heading-size entry) and the display-numeral rule (Fed page 8's runs give
+`1 Overview of the Federal` at 24 points; `H<sub>2</sub>O`, `x<sup>2</sup>` and a raised note
+marker keep their scripts; a numeral on the title's baseline gains no space; an under-twice
+numeral and a lettered initial do not change the line's size). The 9/11 page 19 fixture must
+merge `“WE HAVE SOME PLANES”` above its `1.1` label. The corpus contract adds Fed pages 5, 8 and
+25; see the [navigation-heading evidence](../measurements/navigation-headings/record.md).
 
 The corpus `paragraphs` expectation requires a phrase inside one actual spine paragraph on the
 specified source page. A phrase spread over separate paragraphs, headings or preformatted text

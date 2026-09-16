@@ -660,7 +660,7 @@
     {
       "id": "fed-explained-2021",
       "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
-      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Pages 11-12 and 21-22 visually reviewed (#45): the paragraph above Figure 1.3 and the ragged-right advisory-council paragraph each continue onto the next page as one paragraph across the source-page marker. Pages 32, 40, 46, 58, 64, 83 and 120 source rasters reviewed (#54): the shaded sidebar boxes reflow as a heading and paragraphs, the Box 3.3 charts stay one image whose region is rendered from the source (corpus/references/fed-explained-2021/box-3-3-charts), the page-46 sidebar reflows beside a preserved Table 3.1, and the entity/overview and regulation tables are transcribed cell by cell from the source; the regulation table reads its letter and name columns as the one \"Regulation (by letter and name)\" column its own header names, and page 120 continues without a header, so its rows are checked in order rather than as cells.",
+      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Pages 11-12 and 21-22 visually reviewed (#45): the paragraph above Figure 1.3 and the ragged-right advisory-council paragraph each continue onto the next page as one paragraph across the source-page marker. Pages 32, 40, 46, 58, 64, 83 and 120 source rasters reviewed (#54): the shaded sidebar boxes reflow as a heading and paragraphs, the Box 3.3 charts stay one image whose region is rendered from the source (corpus/references/fed-explained-2021/box-3-3-charts), the page-46 sidebar reflows beside a preserved Table 3.1, and the entity/overview and regulation tables are transcribed cell by cell from the source; the regulation table reads its letter and name columns as the one \"Regulation (by letter and name)\" column its own header names, and page 120 continues without a header, so its rows are checked in order rather than as cells. Contents page 5 and chapter opener 8 source rasters and page 25 reviewed (#55): the contents page's dot-leader entries are prose under one Contents heading, the chapter numeral and its two-line title are one heading without a subscript, the four-line pull quote is one paragraph, and the two-line section title is one heading.",
       "pages": [
         {
           "page": 1,
@@ -948,6 +948,40 @@
           "headings": [
             "Interagency Initiatives"
           ]
+        },
+        {
+          "page": 5,
+          "headings": [
+            "Contents"
+          ],
+          "paragraphs": [
+            "1 Overview of the Federal Reserve System",
+            "6 Fostering Payment and Settlement System Safety and Efficiency",
+            "The U .S . Approach to Central Banking"
+          ]
+        },
+        {
+          "page": 8,
+          "absentText": [
+            "1Overview"
+          ],
+          "headings": [
+            "1 Overview of the Federal Reserve System"
+          ],
+          "paragraphs": [
+            "The Federal Reserve performs five key functions in the public interest to promote the health of the U.S. economy and the stability of the U.S. financial system.",
+            "The U.S. Approach to Central Banking"
+          ]
+        },
+        {
+          "page": 25,
+          "headings": [
+            "The Federal Reserve’s Monetary Policy Mandate and Strategy and Why It Matters"
+          ],
+          "paragraphs": [
+            "What is monetary policy?"
+          ],
+          "minimumImages": 1
         }
       ]
     },

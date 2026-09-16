@@ -1,0 +1,368 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        5.4400000000000048,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "vi "
+        }
+      ],
+      "text" : "vi "
+    },
+    {
+      "rect" : [
+        88.800000000000011,
+        748.51210000000003,
+        167.19999999999999,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "The Fed Explained: What the Central Bank Does"
+        }
+      ],
+      "text" : "The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "rect" : [
+        88.875,
+        636.73070000000007,
+        331.43759999999992,
+        81.480000000000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -31.555599999999913,
+          "fontName" : "Helvetica",
+          "fontSize" : 70,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "Overview of the Federal"
+        }
+      ],
+      "text" : "1Overview of the Federal"
+    },
+    {
+      "rect" : [
+        166.875,
+        653.79430000000002,
+        174.48000000000002,
+        28.416000000000054
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24,
+          "text" : "Reserve System"
+        }
+      ],
+      "text" : "Reserve System"
+    },
+    {
+      "rect" : [
+        166.875,
+        623.88620000000003,
+        288.77379999999999,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "The Federal Reserve performs five key functions"
+        }
+      ],
+      "text" : "The Federal Reserve performs five key functions"
+    },
+    {
+      "rect" : [
+        166.875,
+        605.88220000000001,
+        296.33660000000003,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "in the public interest to promote the health of the"
+        }
+      ],
+      "text" : "in the public interest to promote the health of the"
+    },
+    {
+      "rect" : [
+        166.875,
+        587.87819999999999,
+        300.67379999999997,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "U.S. economy and the stability of the U.S. financial"
+        }
+      ],
+      "text" : "U.S. economy and the stability of the U.S. financial"
+    },
+    {
+      "rect" : [
+        166.875,
+        569.87419999999997,
+        45.373999999999995,
+        15.903999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "system."
+        }
+      ],
+      "text" : "system."
+    },
+    {
+      "rect" : [
+        166.67500000000001,
+        334.07010000000002,
+        303.99999999999994,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The U.S. Approach to Central Banking ......................2"
+        }
+      ],
+      "text" : "The U.S. Approach to Central Banking ......................2"
+    },
+    {
+      "rect" : [
+        166.67499999999995,
+        309.27010000000001,
+        304,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The Decentralized System Structure and Its Philosophy ..........3"
+        }
+      ],
+      "text" : "The Decentralized System Structure and Its Philosophy ..........3"
+    },
+    {
+      "rect" : [
+        166.67499999999995,
+        284.4701,
+        187.29899999999998,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "The Reserve Banks: A Blend of Private and"
+        }
+      ],
+      "text" : "The Reserve Banks: A Blend of Private and"
+    },
+    {
+      "rect" : [
+        175.67499999999995,
+        270.4701,
+        295,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Governmental Characteristics ...........................4"
+        }
+      ],
+      "text" : "Governmental Characteristics ...........................4"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "fed-explained-2021",
+  "graphics" : [
+    [
+      0,
+      1.77e-05,
+      611.99998630000005,
+      791.99998230000006
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        5.4400000000000048,
+        9.3120000000000118
+      ],
+      "text" : "vi"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        88.800000000000011,
+        748.51210000000003,
+        167.19999999999999,
+        9.3120000000000118
+      ],
+      "text" : "The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "fontSize" : 70,
+      "monospaced" : false,
+      "rect" : [
+        88.875,
+        636.73070000000007,
+        331.43759999999992,
+        81.480000000000018
+      ],
+      "text" : "1Overview of the Federal"
+    },
+    {
+      "fontSize" : 24,
+      "monospaced" : false,
+      "rect" : [
+        166.875,
+        653.79430000000002,
+        174.48000000000002,
+        28.416000000000054
+      ],
+      "text" : "Reserve System"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        166.875,
+        623.88620000000003,
+        288.77379999999999,
+        15.903999999999996
+      ],
+      "text" : "The Federal Reserve performs five key functions"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        166.875,
+        605.88220000000001,
+        296.33660000000003,
+        15.903999999999996
+      ],
+      "text" : "in the public interest to promote the health of the"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        166.875,
+        587.87819999999999,
+        300.67379999999997,
+        15.903999999999996
+      ],
+      "text" : "U.S. economy and the stability of the U.S. financial"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        166.875,
+        569.87419999999997,
+        45.373999999999995,
+        15.903999999999996
+      ],
+      "text" : "system."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.67500000000001,
+        334.07010000000002,
+        303.99999999999994,
+        11.639999999999986
+      ],
+      "text" : "The U.S. Approach to Central Banking ......................2"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.67499999999995,
+        309.27010000000001,
+        304,
+        11.639999999999986
+      ],
+      "text" : "The Decentralized System Structure and Its Philosophy ..........3"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        166.67499999999995,
+        284.4701,
+        187.29899999999998,
+        11.639999999999986
+      ],
+      "text" : "The Reserve Banks: A Blend of Private and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        175.67499999999995,
+        270.4701,
+        295,
+        11.639999999999986
+      ],
+      "text" : "Governmental Characteristics ...........................4"
+    }
+  ],
+  "page" : 8,
+  "rightsBasis" : "Federal Reserve Board educational publication, retained as external development material. PDF is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "sourceTitle" : "The Fed Explained: What the Central Bank Does",
+  "sourceURL" : "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf"
+}

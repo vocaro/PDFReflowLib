@@ -193,7 +193,16 @@ is a heading when it starts with a capital or digit, ends without sentence punct
 space above it or continues a label of the same size, and is either set in capitals or shorter
 than the column's prose; list markers, lone folios and pages with three or more folio-ending
 labels (a contents page) are excluded, and the pieces of one heading row that PDFKit split at a
-gap (`3.1` / `Limitations …`) join. Each typographic heading block carries its font size; once
+gap (`3.1` / `Limitations …`) join. The lines of a title set over several lines are one heading
+when each stacks under the previous at the same size and ordinary heading leading, sharing the
+left edge, the centre or the right edge, the heading so far does not end a sentence and the line
+does not open a numbered or `Chapter N` heading of its own; a run of two or more such lines that
+ends in terminal punctuation with at least eight words is a chapter opener's pull quote and
+reflows as one paragraph; a line ending in a dot leader of four or more dots (with or without its
+folio) is a contents entry and never a heading (#55). A chapter opener's display numeral that
+PDFKit fuses with its title (a 70-point `1` before a 24-point `Overview …`) gives the line the
+title's size, and a run at least twice the size of every run beside it is never a script, so the
+numeral is neither a subscript nor the line's heading size. Each typographic heading block carries its font size; once
 every page is reconstructed, the sizes of the whole document rank into tiers 7% apart, the
 largest tier keeps level 2 and each smaller tier is one level deeper (to 6), so equal sizes get
 equal levels on every page and a title outranks the author names beneath it, while tagged

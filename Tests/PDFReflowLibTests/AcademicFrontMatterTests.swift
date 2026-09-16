@@ -186,8 +186,9 @@ private func floatPage(caption: String = "Algorithm 1 Replay", closing: Bool = t
     lines.append(TextLine(text: "1.1 Label", rect: CGRect(x: 60, y: 560, width: 60, height: 12), fontSize: 12))
     let opening = PageContent(number: 1, bounds: letter, lines: lines, graphics: [])
     let found = headings(reconstruct(opening).blocks)
-    #expect(found.map(\.text) == ["Chapter Title", "Continued Title", "A Section Heading", "1.1 Label"])
-    #expect(found.map(\.level) == [2, 2, 3, 4])
+    // The two stacked 24-point lines are one title (#55).
+    #expect(found.map(\.text) == ["Chapter Title Continued Title", "A Section Heading", "1.1 Label"])
+    #expect(found.map(\.level) == [2, 3, 4])
     // Ranking is document-wide: a later page carrying only the 12-point label style gets the
     // same level as the opening page's label, not level 2 as it would alone.
     var later = lines.filter { $0.fontSize == 10 }
@@ -201,7 +202,7 @@ private func floatPage(caption: String = "Algorithm 1 Replay", closing: Bool = t
     document.append(ReflowBlock(content: .heading(id: "tagged", text: InlineText("Tagged section"), level: 1), page: 2))
     LayoutReconstructor.rankHeadingLevels(&document)
     #expect(headings(document).map { ($0.text, $0.level) }.map { "\($0.0)=\($0.1)" }
-            == ["Chapter Title=2", "Continued Title=2", "A Section Heading=3", "1.1 Label=4", "1.2 Another Label=4", "Tagged section=1"])
+            == ["Chapter Title Continued Title=2", "A Section Heading=3", "1.1 Label=4", "1.2 Another Label=4", "Tagged section=1"])
     // A document whose typographic headings share one size gets level 2 for all of them.
     var single = LayoutReconstructor.blocks(page: secondPage, images: [], vocabulary: [], warnings: &warnings)
     single += LayoutReconstructor.blocks(page: secondPage, images: [], vocabulary: [], warnings: &warnings)
@@ -254,11 +255,12 @@ private func labelPage(_ label: String, size: CGFloat = 11, width: CGFloat = 80,
                                        fontSize: 11), at: 5 + offset)
     }
     #expect(headings(reconstruct(contents).blocks).isEmpty)
-    // A second label line directly beneath the first continues the heading at the same size.
+    // A second label line directly beneath the first continues the heading at the same size,
+    // and the two lines are one heading (#55).
     var page = labelPage("6 REPRESENTATION OF REPCL AND ITS", width: 240)
     let first = page.lines[4].rect
     page.lines.insert(TextLine(text: "OVERHEAD", rect: CGRect(x: 60, y: first.minY - 13, width: 60, height: 11), fontSize: 11), at: 5)
-    #expect(headings(reconstruct(page).blocks).map(\.text) == ["6 REPRESENTATION OF REPCL AND ITS", "OVERHEAD"])
+    #expect(headings(reconstruct(page).blocks).map(\.text) == ["6 REPRESENTATION OF REPCL AND ITS OVERHEAD"])
     // A bare section number joins its title across PDFKit's gap split.
     var split = labelPage("3.1", width: 14)
     let number = split.lines[4].rect

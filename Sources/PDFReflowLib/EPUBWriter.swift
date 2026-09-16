@@ -125,7 +125,7 @@ enum EPUBWriter {
                 // epub:type="footnote" is hidden from the flow by some reading systems
                 // unless a noteref links to it, and notes are not linked to their markers.
                 case .footnote: markup = "<div class=\"footnote\" role=\"doc-footnote\"><p>\(payload)</p></div>\n"
-                case .image: markup = payload + "\n"
+                case .image, .table: markup = payload + "\n"
                 case .sourcePage: preconditionFailure("Source boundaries are handled above")
                 }
                 try append((pendingPage?.markup ?? "") + markup,
@@ -153,6 +153,8 @@ enum EPUBWriter {
         img { max-width: 100%; height: auto; } figure { margin: 1em 0; }
         figcaption { font-size: 0.85em; } pre { white-space: pre-wrap; overflow-wrap: anywhere; }
         div.footnote { font-size: 0.85em; }
+        table { border-collapse: collapse; margin: 0 0 1em; }
+        th, td { border: 1px solid #999; padding: 0.3em; text-align: left; vertical-align: top; }
         """, publication.appendingPathComponent("style.css"))
         // Caller-supplied values make the archive byte-reproducible; defaults vary per run.
         let identifier = xml(packageIdentifier ?? "urn:uuid:" + UUID().uuidString)

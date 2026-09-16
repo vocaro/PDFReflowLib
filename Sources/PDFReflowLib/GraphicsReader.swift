@@ -4,7 +4,17 @@ import Foundation
 /// Finds painted regions, not just raw image resources. Cropping the original rendering preserves
 /// masks, clipping, vector paths and labels without reimplementing their PDF compositing semantics.
 enum GraphicsReader {
-    struct Result { var regions: [CGRect]; var unsupported: Bool; var hasOnlyInvisibleText = false }
+    /// One painted footprint. `frame` marks a path made only of `re` rectangles (filled or
+    /// stroked) painted outside any `/Figure` marked content: a sidebar box, a tint band or a
+    /// table cell background rather than figure ink. Whether it is decoration is decided later
+    /// against the page's text (`TintDetector`); this reader records only what was painted.
+    struct Paint: Equatable, Sendable { var rect: CGRect; var frame: Bool }
+    struct Result {
+        var regions: [CGRect]
+        var paints: [Paint] = []
+        var unsupported: Bool
+        var hasOnlyInvisibleText = false
+    }
     private final class State {
         var matrix = CGAffineTransform.identity
         var saved: [(CGAffineTransform, Bool, CGRect, Int)] = []
@@ -16,7 +26,12 @@ enum GraphicsReader {
         var pendingClip = false
         var white = false
         var path = CGRect.null
-        var regions: [CGRect] = []
+        var pathIsRectangles = true
+        // Marked-content nesting: true for a `/Figure` sequence, false for artifacts and
+        // structural marks. Unbalanced marks are tolerated; they carry no paint of their own.
+        var marks: [Bool] = []
+        var figureDepth = 0
+        var paints: [Paint] = []
         var unsupported = false
         var depth = 0
         var operations = 0
@@ -36,11 +51,15 @@ enum GraphicsReader {
             }
             pendingClip = false
             path = .null
+            pathIsRectangles = true
         }
         func paint() {
             defer { finishPath() }
             guard accept(), !path.isNull else { return }
-            if regions.count < 10_000 { regions.append(path.insetBy(dx: -2, dy: -2)) }
+            add(path.insetBy(dx: -2, dy: -2), frame: pathIsRectangles && figureDepth == 0)
+        }
+        func add(_ rect: CGRect, frame: Bool = false) {
+            if paints.count < 10_000 { paints.append(Paint(rect: rect, frame: frame)) }
             else { unsupported = true }
         }
     }
@@ -111,12 +130,14 @@ enum GraphicsReader {
                 let s = Self.state(info)
                 guard s.accept(), let n = Self.numbers(scanner, 2) else { s.unsupported = true; return }
                 let point = CGPoint(x: n[0], y: n[1]).applying(s.matrix)
+                s.pathIsRectangles = false
                 s.path = s.path.union(CGRect(origin: point, size: .zero))
             }
         }
         CGPDFOperatorTableSetCallback(table, "c") { scanner, info in
             let s = Self.state(info)
             guard s.accept(), let n = Self.numbers(scanner, 6) else { s.unsupported = true; return }
+            s.pathIsRectangles = false
             for i in stride(from: 0, to: 6, by: 2) {
                 s.path = s.path.union(CGRect(origin: CGPoint(x: n[i], y: n[i + 1])
                     .applying(s.matrix), size: .zero))
@@ -126,6 +147,7 @@ enum GraphicsReader {
             CGPDFOperatorTableSetCallback(table, op) { scanner, info in
                 let s = Self.state(info)
                 guard s.accept(), let n = Self.numbers(scanner, 4) else { s.unsupported = true; return }
+                s.pathIsRectangles = false
                 for i in stride(from: 0, to: 4, by: 2) {
                     s.path = s.path.union(CGRect(origin: CGPoint(x: n[i], y: n[i + 1])
                         .applying(s.matrix), size: .zero))
@@ -150,6 +172,30 @@ enum GraphicsReader {
         CGPDFOperatorTableSetCallback(table, "n") { _, info in Self.state(info).finishPath() }
         for op in ["W", "W*"] {
             CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).pendingClip = true }
+        }
+        // Marked content only classifies paint; it never changes what is preserved on its own.
+        CGPDFOperatorTableSetCallback(table, "BDC") { scanner, info in
+            let s = Self.state(info)
+            guard s.accept() else { return }
+            var property: CGPDFObjectRef?
+            var label: UnsafePointer<CChar>?
+            _ = CGPDFScannerPopObject(scanner, &property)
+            let figure = CGPDFScannerPopName(scanner, &label) && label.map { String(cString: $0) == "Figure" } == true
+            if s.marks.count < 128 { s.marks.append(figure) }
+            if figure { s.figureDepth += 1 }
+        }
+        CGPDFOperatorTableSetCallback(table, "BMC") { scanner, info in
+            let s = Self.state(info)
+            guard s.accept() else { return }
+            var label: UnsafePointer<CChar>?
+            let figure = CGPDFScannerPopName(scanner, &label) && label.map { String(cString: $0) == "Figure" } == true
+            if s.marks.count < 128 { s.marks.append(figure) }
+            if figure { s.figureDepth += 1 }
+        }
+        CGPDFOperatorTableSetCallback(table, "EMC") { _, info in
+            let s = Self.state(info)
+            guard s.accept() else { return }
+            if let figure = s.marks.popLast(), figure { s.figureDepth = max(0, s.figureDepth - 1) }
         }
         CGPDFOperatorTableSetCallback(table, "sh") { scanner, info in
             Self.shading(scanner, state: Self.state(info))
@@ -178,16 +224,14 @@ enum GraphicsReader {
             }
             switch String(cString: subtype) {
             case "Image":
-                if s.regions.count < 10_000 {
-                    s.regions.append(CGRect(x: 0, y: 0, width: 1, height: 1).applying(s.matrix))
-                } else { s.unsupported = true }
+                s.add(CGRect(x: 0, y: 0, width: 1, height: 1).applying(s.matrix))
             case "Form":
-                let startCount = s.regions.count
+                let startCount = s.paints.count
                 Self.descend(stream, dictionary: dictionary, parent: parent, state: s)
                 // A bounded form can be one composite illustration with detached labels. Keep
                 // those labels with it. Whole-page form wrappers are not treated as figures.
                 var box: CGPDFArrayRef?
-                if s.regions.count > startCount,
+                if s.paints.count > startCount,
                    CGPDFDictionaryGetArray(dictionary, "BBox", &box), let box,
                    CGPDFArrayGetCount(box) == 4 {
                     var n = [CGPDFReal](repeating: 0, count: 4)
@@ -205,7 +249,7 @@ enum GraphicsReader {
                         let rect = CGRect(x: n[0], y: n[1], width: n[2] - n[0], height: n[3] - n[1])
                             .applying(transform.concatenating(s.matrix))
                         if rect.isFinite, rect.width * rect.height < s.pageBounds.width * s.pageBounds.height * 0.7 {
-                            s.regions.append(rect)
+                            s.add(rect)
                         }
                     }
                 }
@@ -223,7 +267,8 @@ enum GraphicsReader {
         defer { CGPDFContentStreamRelease(stream) }
         scan(stream, state: s)
         let bounds = page.getBoxRect(.cropBox)
-        return Result(regions: clusters(s.regions.map { $0.intersection(bounds) }, distance: 4),
+        let paints = s.paints.map { Paint(rect: $0.rect.intersection(bounds), frame: $0.frame) }
+        return Result(regions: clusters(paints.map(\.rect), distance: 4), paints: paints,
                       unsupported: s.unsupported, hasOnlyInvisibleText: !s.unsupported && s.invisibleText && !s.visibleText)
     }
 
@@ -267,12 +312,12 @@ enum GraphicsReader {
             region = region.intersection(transformed)
         }
         if region.isNull || region.isEmpty { return }
-        guard region.isFinite, s.regions.count < 10_000 else { s.unsupported = true; return }
+        guard region.isFinite, s.paints.count < 10_000 else { s.unsupported = true; return }
         // Without a tighter bound, preserve the page rather than inventing a small crop.
         guard region.width * region.height < s.pageBounds.width * s.pageBounds.height * 0.75 else {
             s.unsupported = true; return
         }
-        s.regions.append(region.insetBy(dx: -2, dy: -2).intersection(s.pageBounds))
+        s.add(region.insetBy(dx: -2, dy: -2).intersection(s.pageBounds))
     }
 
     private static func scan(_ stream: CGPDFContentStreamRef, state s: State) {
@@ -288,14 +333,19 @@ enum GraphicsReader {
         let oldResources = s.resources
         let oldTextRenderingMode = s.textRenderingMode
         let oldClip = s.clip, oldPendingClip = s.pendingClip
+        let oldMarks = s.marks, oldFigureDepth = s.figureDepth, oldRectangles = s.pathIsRectangles
         defer {
             s.matrix = oldMatrix; s.path = oldPath; s.saved = oldSaved; s.white = oldWhite
             s.textRenderingMode = oldTextRenderingMode
             s.resources = oldResources; s.clip = oldClip; s.pendingClip = oldPendingClip; s.depth -= 1
+            // A form's marks are its own; the caller's figure nesting still applies inside it.
+            s.marks = oldMarks; s.figureDepth = oldFigureDepth; s.pathIsRectangles = oldRectangles
         }
         s.depth += 1
         s.saved = []
         s.path = .null
+        s.pathIsRectangles = true
+        s.marks = []
         s.pendingClip = false
         var array: CGPDFArrayRef?
         if CGPDFDictionaryGetArray(dictionary, "Matrix", &array), let array {

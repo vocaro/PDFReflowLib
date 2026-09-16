@@ -116,6 +116,21 @@ struct ReflowBlock: Sendable, Equatable {
         var alternativeText: String
         var caption: String
     }
+    /// A text table: rows of cells in column order, each cell spanning one or more columns
+    /// (a section row is one cell spanning them all). Header rows precede the body. Cell text
+    /// keeps inline styles and source-page boundaries.
+    struct Table: Sendable, Equatable {
+        struct Cell: Sendable, Equatable {
+            var text: InlineText
+            var span = 1
+        }
+        struct Row: Sendable, Equatable {
+            var cells: [Cell]
+            var header: Bool
+        }
+        var columns: Int
+        var rows: [Row]
+    }
     enum Content: Sendable, Equatable {
         case paragraph(InlineText)
         case heading(id: String, text: InlineText, level: Int = 2)
@@ -124,6 +139,7 @@ struct ReflowBlock: Sendable, Equatable {
         /// prose is never placed in one, and a note is not linked to its reference.
         case footnote(InlineText)
         case image(Image)
+        case table(Table)
         case sourcePage(Int)
     }
     var content: Content
@@ -139,6 +155,7 @@ struct ReflowBlock: Sendable, Equatable {
         switch content {
         case let .paragraph(text), let .heading(_, text, _): text.text
         case let .preformatted(text), let .footnote(text): text.text
+        case let .table(table): table.rows.flatMap(\.cells).map(\.text.text).joined(separator: " ")
         case .image, .sourcePage: ""
         }
     }
@@ -147,12 +164,13 @@ struct ReflowBlock: Sendable, Equatable {
         case let .paragraph(text), let .heading(_, text, _): text.sourcePages
         case let .sourcePage(page): [page]
         case let .preformatted(text), let .footnote(text): text.sourcePages
+        case let .table(table): table.rows.flatMap(\.cells).flatMap(\.text.sourcePages)
         case .image: []
         }
     }
     var hasReflowedText: Bool {
         switch content {
-        case .paragraph, .heading, .preformatted, .footnote: true
+        case .paragraph, .heading, .preformatted, .footnote, .table: true
         case .image, .sourcePage: false
         }
     }

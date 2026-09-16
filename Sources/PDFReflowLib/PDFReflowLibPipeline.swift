@@ -43,7 +43,7 @@ enum PDFReflowLibPipeline {
             throws -> (content: PageContent, attemptsOCR: Bool, damagedEncoding: Bool) {
             // The pool includes every PDFKit accessor, not only string extraction. Page
             // references and annotation arrays also carry autoreleased rendering resources.
-            var (content, unmappedFont) = try autoreleasepool {
+            var (content, unmappedFont, pageSizedGraphic) = try autoreleasepool {
                 let page = try document.page(at: i)
                 guard let reference = page.pageRef else {
                     throw ConversionError.unreadablePDF
@@ -71,6 +71,15 @@ enum PDFReflowLibPipeline {
                     warnings.append(.init(code: .structureFallback, page: i + 1,
                         message: "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups."))
                 }
+                // Rectangles behind prose (sidebar frames, tint bands, cell shading) stop
+                // seeding crops once the text shows they are decoration; everything else
+                // clusters exactly as the reader's regions did.
+                if !requiresPageImage {
+                    let composed = TintDetector.compose(graphics.paints, lines: content.lines, bounds: bounds)
+                    content.graphics = composed.graphics
+                    content.tints = composed.tints
+                    content.separators = composed.separators
+                }
                 content.requiresPageImage = requiresPageImage
                 content.hasSyntheticTextStyle = syntheticStyle
                 if graphics.unsupported {
@@ -85,7 +94,10 @@ enum PDFReflowLibPipeline {
                             : "A page image preserves visible annotations. Link and form interactions are not reconstructed."))
                 }
                 // Structural font evidence is read here; the text judgment follows outside the pool.
-                return (content, !content.lines.isEmpty && !requiresPageImage && TextEncodingCheck.hasUnmappedFont(reference))
+                // The page-sized-graphic signal keeps reading the painted regions before tint
+                // removal, so a full-page background still earns the review warning and reference.
+                return (content, !content.lines.isEmpty && !requiresPageImage && TextEncodingCheck.hasUnmappedFont(reference),
+                        graphics.regions.contains { $0.width * $0.height > bounds.width * bounds.height * 0.75 })
             }
             let bounds = content.bounds
             let raw = content.lines.map(\.text).joined()
@@ -96,9 +108,7 @@ enum PDFReflowLibPipeline {
                 && TextEncodingCheck.isImplausible(content.lines.map(\.text).joined(separator: "\n"), language: options.language)
             // Share the same conservative page-sized-graphic signal with the review warning.
             // It identifies a candidate for re-recognition, not an erroneous transcription.
-            let imageBackedText = !content.lines.isEmpty && content.graphics.contains {
-                $0.width * $0.height > bounds.width * bounds.height * 0.75
-            }
+            let imageBackedText = !content.lines.isEmpty && pageSizedGraphic
             let automaticOCR = options.ocr == .automatic || options.ocr == .automaticIncludingImageBackedText
             let needsOCR = options.ocr == .always || (automaticOCR &&
                 (raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || damaged > max(2, raw.count / 50)
@@ -126,6 +136,8 @@ enum PDFReflowLibPipeline {
                 content.preservePageReference = true
                 for index in content.lines.indices { content.lines[index].structure = nil }
                 content.graphics = []
+                content.tints = []
+                content.separators = []
                 warnings.append(.init(code: .unverifiedTextLayer, page: i + 1,
                     message: "Text overlapping a page-sized graphic has not been verified against the source. "
                         + "Transcription, tables, numbers and reading order may be inaccurate. "
@@ -160,6 +172,8 @@ enum PDFReflowLibPipeline {
                     content.hasSyntheticTextStyle = false
                     content.preservePageReference = content.preservePageReference || !recognized.lines.isEmpty
                     content.graphics = recognized.tables
+                    content.tints = []
+                    content.separators = []
                     content.requiresPageImage = recognized.lines.isEmpty
                     warnings.append(.init(code: .ocrUsed, page: i + 1,
                         message: "Text is OCR transcription. " + (options.referenceImages == .never && !recognized.lines.isEmpty

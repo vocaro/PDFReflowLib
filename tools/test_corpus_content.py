@@ -247,6 +247,15 @@ class CorpusContentTests(unittest.TestCase):
         self.assertEqual(pages[1]['text'], 'alpha beta continued')
         self.assertEqual(pages[2]['text'], 'omega')
 
+    def test_table_cells_are_separate_words_and_the_grid_is_parsed(self):
+        path = self.epub('<span epub:type="pagebreak" id="page-1"/><table><thead><tr><th>Entity</th><th>Overview</th></tr></thead>'
+                         '<tbody><tr><td colspan="2">Group</td></tr><tr><td>Board</td><td>Promotes stability</td></tr></tbody></table>',
+                         '<p>later</p>')
+        pages, _ = read_pages(path)
+        self.assertEqual(pages[1]['text'], 'Entity Overview Group Board Promotes stability later')
+        self.assertEqual(pages[1]['tables'][0]['cells'], [['Entity', 'Overview'], ['Group', 'Group'], ['Board', 'Promotes stability']])
+        self.assertEqual(pages[1]['tables'][0]['headerRows'], 1)
+
     def test_inline_page_boundary_splits_text_at_its_true_position(self):
         path = self.epub('<span epub:type="pagebreak" id="page-1"/><p>conver<span epub:type="pagebreak" id="page-2"/>sion</p>', '<p>later</p>')
         pages, markers = read_pages(path)

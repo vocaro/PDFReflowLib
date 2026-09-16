@@ -1,0 +1,1894 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        9.6000000000000014,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "36"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : " "
+        }
+      ],
+      "text" : "36 "
+    },
+    {
+      "rect" : [
+        88.800000000000011,
+        748.51210000000003,
+        167.19999999999999,
+        9.3120000000000118
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "The Fed Explained: What the Central Bank Does"
+        }
+      ],
+      "text" : "The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "rect" : [
+        90,
+        692.64010000000007,
+        409.69199999999978,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "counterparties. The IORB rate thus affects the federal funds rate and other short-term market"
+        }
+      ],
+      "text" : "counterparties. The IORB rate thus affects the federal funds rate and other short-term market"
+    },
+    {
+      "rect" : [
+        90,
+        676.64010000000007,
+        430.34299999999985,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "interest rates. (See "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "box 3.3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : " for a discussion of how interest on reserve balances has proven to be"
+        }
+      ],
+      "text" : "interest rates. (See box 3.3 for a discussion of how interest on reserve balances has proven to be"
+    },
+    {
+      "rect" : [
+        90,
+        660.64010000000007,
+        422.99599999999987,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "an effective tool for transmitting the FOMC’s target range for the federal funds rate to other inter-"
+        }
+      ],
+      "text" : "an effective tool for transmitting the FOMC’s target range for the federal funds rate to other inter-"
+    },
+    {
+      "rect" : [
+        90,
+        644.64010000000007,
+        113.69799999999998,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "est rates in the economy.)"
+        }
+      ],
+      "text" : "est rates in the economy.)"
+    },
+    {
+      "rect" : [
+        90,
+        612.64010000000007,
+        428.7439999999998,
+        11.840000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Open market operations. Over the years, the Federal Reserve has relied upon open market opera-"
+        }
+      ],
+      "text" : "Open market operations. Over the years, the Federal Reserve has relied upon open market opera-"
+    },
+    {
+      "rect" : [
+        90,
+        596.64010000000007,
+        431.69199999999967,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "tions as a tool of policy implementation. In conducting an open market operation, the Open Market"
+        }
+      ],
+      "text" : "tions as a tool of policy implementation. In conducting an open market operation, the Open Market"
+    },
+    {
+      "rect" : [
+        90,
+        580.64010000000007,
+        419.44499999999982,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Desk at the Federal Reserve Bank of New York (or, the Desk) permanently or temporarily buys or"
+        }
+      ],
+      "text" : "Desk at the Federal Reserve Bank of New York (or, the Desk) permanently or temporarily buys or"
+    },
+    {
+      "rect" : [
+        90,
+        564.64010000000007,
+        429.09399999999982,
+        11.639999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "sells securities issued or guaranteed by the U.S. Treasury or U.S. government agencies. When the"
+        }
+      ],
+      "text" : "sells securities issued or guaranteed by the U.S. Treasury or U.S. government agencies. When the"
+    },
+    {
+      "rect" : [
+        102.5,
+        517.49610000000007,
+        346.77440000000001,
+        16.576000000000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "Box 3.3. Interest on Reserve Balances as a Key Tool of"
+        }
+      ],
+      "text" : "Box 3.3. Interest on Reserve Balances as a Key Tool of"
+    },
+    {
+      "rect" : [
+        103.494,
+        501.49410000000006,
+        203.90860000000001,
+        16.575999999999965
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 14,
+          "text" : "Monetary Policy Implementation"
+        }
+      ],
+      "text" : "Monetary Policy Implementation"
+    },
+    {
+      "rect" : [
+        102.5,
+        478.54610000000002,
+        406.43639999999976,
+        10.656000000000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "The Federal Reserve uses interest on reserve balances as a key tool to anchor the federal funds rate"
+        }
+      ],
+      "text" : "The Federal Reserve uses interest on reserve balances as a key tool to anchor the federal funds rate"
+    },
+    {
+      "rect" : [
+        103.499,
+        467.54810000000003,
+        390.14729999999986,
+        10.656000000000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "in the target range. The interest on reserve balances (IORB) rate acts as a benchmark for banks"
+        }
+      ],
+      "text" : "in the target range. The interest on reserve balances (IORB) rate acts as a benchmark for banks"
+    },
+    {
+      "rect" : [
+        103.499,
+        456.55010000000004,
+        287.59410000000003,
+        10.656000000000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "when determining the interest rate to charge in their lending activities."
+        }
+      ],
+      "text" : "when determining the interest rate to charge in their lending activities."
+    },
+    {
+      "rect" : [
+        102.5,
+        433.54610000000002,
+        401.89319999999981,
+        10.475999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "In particular, banks should require a rate in lending to households and businesses and others at least"
+        }
+      ],
+      "text" : "In particular, banks should require a rate in lending to households and businesses and others at least"
+    },
+    {
+      "rect" : [
+        103.499,
+        422.54810000000003,
+        401.34959999999967,
+        10.475999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "as high as they can earn on balances maintained in their reserve accounts at the Federal Reserve. As"
+        }
+      ],
+      "text" : "as high as they can earn on balances maintained in their reserve accounts at the Federal Reserve. As"
+    },
+    {
+      "rect" : [
+        103.499,
+        411.55010000000004,
+        402.52139999999974,
+        10.475999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "a result, the setting of the IORB rate affects borrowing and lending in overnight money markets as well"
+        }
+      ],
+      "text" : "a result, the setting of the IORB rate affects borrowing and lending in overnight money markets as well"
+    },
+    {
+      "rect" : [
+        103.499,
+        400.55210000000005,
+        158.39730000000006,
+        10.475999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "as influences broader financial markets."
+        }
+      ],
+      "text" : "as influences broader financial markets."
+    },
+    {
+      "rect" : [
+        102.5,
+        383.55110000000008,
+        398.15549999999973,
+        10.475999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "When the FOMC increased the target range for the federal funds rate between late 2015 and the end"
+        }
+      ],
+      "text" : "When the FOMC increased the target range for the federal funds rate between late 2015 and the end"
+    },
+    {
+      "rect" : [
+        103.499,
+        372.55310000000009,
+        395.23319999999978,
+        10.475999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "of 2018, there was a corresponding change to the interest on required and excess reserves rates to"
+        }
+      ],
+      "text" : "of 2018, there was a corresponding change to the interest on required and excess reserves rates to"
+    },
+    {
+      "rect" : [
+        103.499,
+        361.5551000000001,
+        386.18459999999993,
+        10.475999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "move the federal funds rate into the target range. Other overnight money market rates also moved"
+        }
+      ],
+      "text" : "move the federal funds rate into the target range. Other overnight money market rates also moved"
+    },
+    {
+      "rect" : [
+        103.499,
+        350.5571000000001,
+        397.75049999999987,
+        10.475999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "up (figure A). Rates in short-term funding markets—such as commercial paper rates and Treasury bill"
+        }
+      ],
+      "text" : "up (figure A). Rates in short-term funding markets—such as commercial paper rates and Treasury bill"
+    },
+    {
+      "rect" : [
+        103.499,
+        339.55910000000011,
+        393.61049999999989,
+        10.475999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "rates—moved higher as well (figure B). In 2019 and 2020, when the FOMC lowered the target range"
+        }
+      ],
+      "text" : "rates—moved higher as well (figure B). In 2019 and 2020, when the FOMC lowered the target range"
+    },
+    {
+      "rect" : [
+        103.499,
+        328.56110000000012,
+        380.69639999999981,
+        10.475999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "for the federal funds rate, the Federal Reserve lowered the interest rates on required and excess"
+        }
+      ],
+      "text" : "for the federal funds rate, the Federal Reserve lowered the interest rates on required and excess"
+    },
+    {
+      "rect" : [
+        103.499,
+        317.56310000000013,
+        397.03229999999974,
+        10.475999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "reserves and short-term rates declined. These increases and decreases in the general level of short-"
+        }
+      ],
+      "text" : "reserves and short-term rates declined. These increases and decreases in the general level of short-"
+    },
+    {
+      "rect" : [
+        103.499,
+        306.56510000000014,
+        384.74549999999977,
+        10.475999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "term rates, together with the expected future path of short-term rates, then influenced the level of"
+        }
+      ],
+      "text" : "term rates, together with the expected future path of short-term rates, then influenced the level of"
+    },
+    {
+      "rect" : [
+        103.499,
+        295.56710000000015,
+        295.87229999999977,
+        10.475999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "other financial asset prices and overall financial conditions in the economy."
+        }
+      ],
+      "text" : "other financial asset prices and overall financial conditions in the economy."
+    },
+    {
+      "rect" : [
+        111.7586,
+        164.32929999999999,
+        148.21799999999996,
+        66.00800000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        123.54000000000001,
+        248.59800000000001,
+        4.9609999999999985,
+        4.9819999999999993
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        123.04000000000001,
+        248.09840000000003,
+        5.9609999999999985,
+        5.9809999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        111.45820000000001,
+        163.3493,
+        149.018,
+        64.007000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        111.45820000000001,
+        163.54900000000001,
+        149.018,
+        75.808999999999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        111.45820000000001,
+        161.94930000000002,
+        149.018,
+        65.606999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        111.45820000000001,
+        173.1506,
+        149.018,
+        55.605999999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        260.27600000000001,
+        154.34810000000002,
+        8.5009999999999764,
+        85.810000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        111.25840000000001,
+        145.02700000000002,
+        118.414,
+        5.561000000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        103.1576,
+        154.34810000000002,
+        8.5010000000000048,
+        85.810000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        103.15699999999998,
+        145.02700000000002,
+        165.62,
+        104.53200000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        201.86790000000002,
+        200.05330000000001,
+        2.9919999999999902,
+        2.5939999999999941
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        174.46980000000002,
+        184.1318,
+        2.9919999999999902,
+        2.5910000000000082
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        236.67590000000001,
+        202.99160000000001,
+        2.9919999999999902,
+        2.5910000000000082
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        102.58000000000001,
+        271.45680000000004,
+        85.463999999999999,
+        9.0480000000000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "A. Overnight money market rates"
+        }
+      ],
+      "text" : "A. Overnight money market rates"
+    },
+    {
+      "rect" : [
+        103.6576,
+        124.9385,
+        160.64999999999998,
+        6.7620000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "Note: The upper bound of the target range is also the interest on excess reserves rate"
+        }
+      ],
+      "text" : "Note: The upper bound of the target range is also the interest on excess reserves rate"
+    },
+    {
+      "rect" : [
+        103.6576,
+        116.9405,
+        151.41600000000005,
+        6.7620000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "until June 13, 2018, after which the upper bound is 5 basis points higher. GCF is"
+        }
+      ],
+      "text" : "until June 13, 2018, after which the upper bound is 5 basis points higher. GCF is"
+    },
+    {
+      "rect" : [
+        103.6576,
+        108.9425,
+        51.04740000000001,
+        6.7620000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "General Collateral Finance."
+        }
+      ],
+      "text" : "General Collateral Finance."
+    },
+    {
+      "rect" : [
+        103.6576,
+        98.9405,
+        162.60660000000001,
+        6.7620000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "Source: For Treasury GCF repo, DTCC Solutions LLC, and affiliate of The Depository Trust"
+        }
+      ],
+      "text" : "Source: For Treasury GCF repo, DTCC Solutions LLC, and affiliate of The Depository Trust"
+    },
+    {
+      "rect" : [
+        103.6576,
+        90.942499999999995,
+        149.19059999999999,
+        6.7620000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "& Clearing Corporation; for federal funds, Federal Reserve Bank of New York; for"
+        }
+      ],
+      "text" : "& Clearing Corporation; for federal funds, Federal Reserve Bank of New York; for"
+    },
+    {
+      "rect" : [
+        103.6576,
+        82.944499999999991,
+        165.09659999999991,
+        6.7620000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "Eurodollar, Bloomberg; for interest on reserves and target range, Federal Reserve Board."
+        }
+      ],
+      "text" : "Eurodollar, Bloomberg; for interest on reserves and target range, Federal Reserve Board."
+    },
+    {
+      "rect" : [
+        319.32960000000003,
+        163.625,
+        151.16399999999999,
+        67.319999999999993
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        331.34500000000003,
+        249.56999999999999,
+        5.0590000000000259,
+        5.0800000000000125
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        330.84550000000002,
+        249.0694,
+        6.0590000000000259,
+        6.0800000000000125
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        319.0333,
+        160.3914,
+        151.96000000000004,
+        68.931999999999988
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        319.0333,
+        170.7953,
+        151.96000000000004,
+        72.400000000000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        319.0333,
+        172.63130000000001,
+        151.96000000000004,
+        56.692000000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        470.80920000000003,
+        153.45519999999999,
+        8.6499999999999773,
+        87.496000000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        318.82930000000005,
+        143.94910000000002,
+        120.74799999999999,
+        5.6510000000000105
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        310.56760000000003,
+        153.45519999999999,
+        8.6499999999999773,
+        87.496000000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        310.56720000000001,
+        143.94910000000002,
+        168.892,
+        106.59
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        311.24209999999994,
+        271.45680000000004,
+        72.744000000000028,
+        9.0480000000000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "B. Term money market rates"
+        }
+      ],
+      "text" : "B. Term money market rates"
+    },
+    {
+      "rect" : [
+        446.40780000000001,
+        207.8561,
+        2.9920000000000186,
+        2.5910000000000082
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        310.6669,
+        124.9385,
+        160.64999999999998,
+        6.7620000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "Note: The upper bound of the target range is also the interest on excess reserves rate"
+        }
+      ],
+      "text" : "Note: The upper bound of the target range is also the interest on excess reserves rate"
+    },
+    {
+      "rect" : [
+        310.6669,
+        116.9405,
+        138.83340000000004,
+        6.7620000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "until June 13, 2018, after which the upper bound is 5 basis points higher."
+        }
+      ],
+      "text" : "until June 13, 2018, after which the upper bound is 5 basis points higher."
+    },
+    {
+      "rect" : [
+        310.6669,
+        106.9385,
+        159.98939999999999,
+        6.7620000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "Source: For U.S. Treasury bill, Department of the Treasury; for AA financial commercial"
+        }
+      ],
+      "text" : "Source: For U.S. Treasury bill, Department of the Treasury; for AA financial commercial"
+    },
+    {
+      "rect" : [
+        310.6669,
+        98.9405,
+        128.72400000000005,
+        6.7620000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "paper, interest on reserves, and target range, Federal Reserve Board."
+        }
+      ],
+      "text" : "paper, interest on reserves, and target range, Federal Reserve Board."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "fed-explained-2021",
+  "graphics" : [
+    [
+      56.800000000000004,
+      742.01210000000003,
+      498.40000000000003,
+      4
+    ],
+    [
+      88,
+      70.5,
+      436,
+      474.60000000000002
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        58.800000000000004,
+        748.51210000000003,
+        9.6000000000000014,
+        9.3120000000000118
+      ],
+      "text" : "36"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        88.800000000000011,
+        748.51210000000003,
+        167.19999999999999,
+        9.3120000000000118
+      ],
+      "text" : "The Fed Explained: What the Central Bank Does"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        692.64010000000007,
+        409.69199999999978,
+        11.639999999999986
+      ],
+      "text" : "counterparties. The IORB rate thus affects the federal funds rate and other short-term market"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        676.64010000000007,
+        430.34299999999985,
+        11.639999999999986
+      ],
+      "text" : "interest rates. (See box 3.3 for a discussion of how interest on reserve balances has proven to be"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        660.64010000000007,
+        422.99599999999987,
+        11.639999999999986
+      ],
+      "text" : "an effective tool for transmitting the FOMC’s target range for the federal funds rate to other inter-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        644.64010000000007,
+        113.69799999999998,
+        11.639999999999986
+      ],
+      "text" : "est rates in the economy.)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        612.64010000000007,
+        428.7439999999998,
+        11.840000000000032
+      ],
+      "text" : "Open market operations. Over the years, the Federal Reserve has relied upon open market opera-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        596.64010000000007,
+        431.69199999999967,
+        11.639999999999986
+      ],
+      "text" : "tions as a tool of policy implementation. In conducting an open market operation, the Open Market"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        580.64010000000007,
+        419.44499999999982,
+        11.639999999999986
+      ],
+      "text" : "Desk at the Federal Reserve Bank of New York (or, the Desk) permanently or temporarily buys or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        564.64010000000007,
+        429.09399999999982,
+        11.639999999999986
+      ],
+      "text" : "sells securities issued or guaranteed by the U.S. Treasury or U.S. government agencies. When the"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        102.5,
+        517.49610000000007,
+        346.77440000000001,
+        16.576000000000022
+      ],
+      "text" : "Box 3.3. Interest on Reserve Balances as a Key Tool of"
+    },
+    {
+      "fontSize" : 14,
+      "monospaced" : false,
+      "rect" : [
+        103.494,
+        501.49410000000006,
+        203.90860000000001,
+        16.575999999999965
+      ],
+      "text" : "Monetary Policy Implementation"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        102.5,
+        478.54610000000002,
+        406.43639999999976,
+        10.656000000000006
+      ],
+      "text" : "The Federal Reserve uses interest on reserve balances as a key tool to anchor the federal funds rate"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        103.499,
+        467.54810000000003,
+        390.14729999999986,
+        10.656000000000006
+      ],
+      "text" : "in the target range. The interest on reserve balances (IORB) rate acts as a benchmark for banks"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        103.499,
+        456.55010000000004,
+        287.59410000000003,
+        10.656000000000006
+      ],
+      "text" : "when determining the interest rate to charge in their lending activities."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        102.5,
+        433.54610000000002,
+        401.89319999999981,
+        10.475999999999999
+      ],
+      "text" : "In particular, banks should require a rate in lending to households and businesses and others at least"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        103.499,
+        422.54810000000003,
+        401.34959999999967,
+        10.475999999999999
+      ],
+      "text" : "as high as they can earn on balances maintained in their reserve accounts at the Federal Reserve. As"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        103.499,
+        411.55010000000004,
+        402.52139999999974,
+        10.475999999999999
+      ],
+      "text" : "a result, the setting of the IORB rate affects borrowing and lending in overnight money markets as well"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        103.499,
+        400.55210000000005,
+        158.39730000000006,
+        10.475999999999999
+      ],
+      "text" : "as influences broader financial markets."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        102.5,
+        383.55110000000008,
+        398.15549999999973,
+        10.475999999999999
+      ],
+      "text" : "When the FOMC increased the target range for the federal funds rate between late 2015 and the end"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        103.499,
+        372.55310000000009,
+        395.23319999999978,
+        10.475999999999999
+      ],
+      "text" : "of 2018, there was a corresponding change to the interest on required and excess reserves rates to"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        103.499,
+        361.5551000000001,
+        386.18459999999993,
+        10.475999999999999
+      ],
+      "text" : "move the federal funds rate into the target range. Other overnight money market rates also moved"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        103.499,
+        350.5571000000001,
+        397.75049999999987,
+        10.475999999999999
+      ],
+      "text" : "up (figure A). Rates in short-term funding markets—such as commercial paper rates and Treasury bill"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        103.499,
+        339.55910000000011,
+        393.61049999999989,
+        10.475999999999999
+      ],
+      "text" : "rates—moved higher as well (figure B). In 2019 and 2020, when the FOMC lowered the target range"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        103.499,
+        328.56110000000012,
+        380.69639999999981,
+        10.475999999999999
+      ],
+      "text" : "for the federal funds rate, the Federal Reserve lowered the interest rates on required and excess"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        103.499,
+        317.56310000000013,
+        397.03229999999974,
+        10.475999999999999
+      ],
+      "text" : "reserves and short-term rates declined. These increases and decreases in the general level of short-"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        103.499,
+        306.56510000000014,
+        384.74549999999977,
+        10.475999999999999
+      ],
+      "text" : "term rates, together with the expected future path of short-term rates, then influenced the level of"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        103.499,
+        295.56710000000015,
+        295.87229999999977,
+        10.475999999999999
+      ],
+      "text" : "other financial asset prices and overall financial conditions in the economy."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        102.58000000000001,
+        271.45680000000004,
+        85.463999999999999,
+        9.0480000000000018
+      ],
+      "text" : "A. Overnight money market rates"
+    },
+    {
+      "fontSize" : 6,
+      "monospaced" : false,
+      "rect" : [
+        103.6576,
+        124.9385,
+        160.64999999999998,
+        6.7620000000000005
+      ],
+      "text" : "Note: The upper bound of the target range is also the interest on excess reserves rate"
+    },
+    {
+      "fontSize" : 6,
+      "monospaced" : false,
+      "rect" : [
+        103.6576,
+        116.9405,
+        151.41600000000005,
+        6.7620000000000005
+      ],
+      "text" : "until June 13, 2018, after which the upper bound is 5 basis points higher. GCF is"
+    },
+    {
+      "fontSize" : 6,
+      "monospaced" : false,
+      "rect" : [
+        103.6576,
+        108.9425,
+        51.04740000000001,
+        6.7620000000000005
+      ],
+      "text" : "General Collateral Finance."
+    },
+    {
+      "fontSize" : 6,
+      "monospaced" : false,
+      "rect" : [
+        103.6576,
+        98.9405,
+        162.60660000000001,
+        6.7620000000000005
+      ],
+      "text" : "Source: For Treasury GCF repo, DTCC Solutions LLC, and affiliate of The Depository Trust"
+    },
+    {
+      "fontSize" : 6,
+      "monospaced" : false,
+      "rect" : [
+        103.6576,
+        90.942499999999995,
+        149.19059999999999,
+        6.7620000000000005
+      ],
+      "text" : "& Clearing Corporation; for federal funds, Federal Reserve Bank of New York; for"
+    },
+    {
+      "fontSize" : 6,
+      "monospaced" : false,
+      "rect" : [
+        103.6576,
+        82.944499999999991,
+        165.09659999999991,
+        6.7620000000000005
+      ],
+      "text" : "Eurodollar, Bloomberg; for interest on reserves and target range, Federal Reserve Board."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        311.24209999999994,
+        271.45680000000004,
+        72.744000000000028,
+        9.0480000000000018
+      ],
+      "text" : "B. Term money market rates"
+    },
+    {
+      "fontSize" : 6,
+      "monospaced" : false,
+      "rect" : [
+        310.6669,
+        124.9385,
+        160.64999999999998,
+        6.7620000000000005
+      ],
+      "text" : "Note: The upper bound of the target range is also the interest on excess reserves rate"
+    },
+    {
+      "fontSize" : 6,
+      "monospaced" : false,
+      "rect" : [
+        310.6669,
+        116.9405,
+        138.83340000000004,
+        6.7620000000000005
+      ],
+      "text" : "until June 13, 2018, after which the upper bound is 5 basis points higher."
+    },
+    {
+      "fontSize" : 6,
+      "monospaced" : false,
+      "rect" : [
+        310.6669,
+        106.9385,
+        159.98939999999999,
+        6.7620000000000005
+      ],
+      "text" : "Source: For U.S. Treasury bill, Department of the Treasury; for AA financial commercial"
+    },
+    {
+      "fontSize" : 6,
+      "monospaced" : false,
+      "rect" : [
+        310.6669,
+        98.9405,
+        128.72400000000005,
+        6.7620000000000005
+      ],
+      "text" : "paper, interest on reserves, and target range, Federal Reserve Board."
+    }
+  ],
+  "page" : 40,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        56.800000000000004,
+        742.01210000000003,
+        498.40000000000003,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.7586,
+        162.32929999999999,
+        152.21799999999996,
+        70.00800000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.54000000000001,
+        246.59900000000002,
+        8.9609999999999985,
+        8.9809999999999945
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.54000000000001,
+        246.59800000000001,
+        8.9609999999999985,
+        8.9809999999999945
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.54000000000001,
+        246.59840000000003,
+        8.9609999999999985,
+        8.9809999999999945
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.95820000000001,
+        161.8493,
+        152.018,
+        67.007000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.95820000000001,
+        162.04900000000001,
+        152.018,
+        78.808999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.95820000000001,
+        160.44930000000002,
+        152.018,
+        68.606999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.95820000000001,
+        171.6506,
+        152.018,
+        58.605999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        258.77600000000001,
+        152.84810000000002,
+        11.500999999999976,
+        88.810000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.75840000000001,
+        143.52700000000002,
+        121.414,
+        8.561000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        101.6576,
+        152.84810000000002,
+        11.501000000000005,
+        88.810000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        101.65699999999998,
+        143.52700000000002,
+        168.62,
+        107.53200000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        201.31910000000002,
+        200.20590000000001,
+        4.0459999999999923,
+        23.449999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        199.86790000000002,
+        198.05330000000001,
+        6.9919999999999902,
+        6.5939999999999941
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        173.9556,
+        184.28470000000002,
+        4.0099999999999909,
+        54.573000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        172.46980000000002,
+        182.1318,
+        6.9919999999999902,
+        6.5910000000000082
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        236.172,
+        180.4513,
+        4,
+        24.978000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        234.67590000000001,
+        200.99160000000001,
+        6.9919999999999902,
+        6.5910000000000082
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        317.32960000000003,
+        161.625,
+        155.16399999999999,
+        71.319999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        329.34500000000003,
+        247.56999999999999,
+        9.0590000000000259,
+        9.0799999999999841
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        329.34500000000003,
+        247.56899999999999,
+        9.0590000000000259,
+        9.0800000000000125
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        329.34550000000002,
+        247.5694,
+        9.0590000000000259,
+        9.0800000000000125
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        317.5333,
+        158.8914,
+        154.96000000000004,
+        71.931999999999988
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        317.5333,
+        169.2953,
+        154.96000000000004,
+        75.400000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        317.5333,
+        171.13130000000001,
+        154.96000000000004,
+        59.692000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        469.30920000000003,
+        151.95519999999999,
+        11.649999999999977,
+        90.496000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        317.32930000000005,
+        142.44910000000002,
+        123.74799999999999,
+        8.6510000000000105
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        309.06760000000003,
+        151.95519999999999,
+        11.649999999999977,
+        90.496000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        309.06720000000001,
+        142.44910000000002,
+        171.892,
+        109.59
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        445.90390000000002,
+        186.38590000000002,
+        4,
+        23.907999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        444.40780000000001,
+        205.8561,
+        6.9920000000000186,
+        6.5910000000000082
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        88,
+        70.5,
+        436,
+        474.60000000000002
+      ]
+    }
+  ],
+  "rightsBasis" : "Federal Reserve Board educational publication, retained as external development material. PDF is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "sourceTitle" : "The Fed Explained: What the Central Bank Does",
+  "sourceURL" : "https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf"
+}

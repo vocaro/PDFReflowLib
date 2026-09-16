@@ -44,11 +44,15 @@ private typealias CaptureFont = UIFont
             }
             attributedLines.append(["text": attributed.string, "rect": rect(selection.bounds(for: page)), "runs": runs])
         }
+        // `graphics` are the clustered regions every fixture carries; `paints` are the
+        // unclustered footprints with their frame flag, from which tests compose graphics.
+        let graphics = GraphicsReader.read(reference)
         let payload: [String: Any] = [
             "caseID": item["id"]!, "sourceSHA256": digest, "page": pageNumber,
             "sourceURL": item["downloadURL"] ?? item["url"] ?? "", "sourceTitle": item["title"]!,
             "rightsBasis": item["rightsBasis"] ?? "See corpus manifest and third-party notices.",
-            "bounds": rect(page.bounds(for: .cropBox)), "graphics": GraphicsReader.read(reference).regions.map(rect),
+            "bounds": rect(page.bounds(for: .cropBox)), "graphics": graphics.regions.map(rect),
+            "paints": graphics.paints.map { ["rect": rect($0.rect), "frame": $0.frame] as [String: Any] },
             "lines": lines.map { ["text": $0.text, "rect": rect($0.rect), "fontSize": $0.fontSize,
                 "monospaced": $0.monospaced] as [String: Any] }, "attributedLines": attributedLines,
         ]

@@ -313,6 +313,13 @@ enum LayoutReconstructor {
         var rect: CGRect
         var line: TextLine?
         var image: String?
+        /// Index into the page's shaded text tables.
+        var table: Int?
+        /// Marks the edge of a tinted box: paragraphs never join across it.
+        var boundary = false
+        /// A tinted box read as one float: its content is ordered on its own, and the box
+        /// follows the lines beside it instead of interleaving with them.
+        var box: [Element]?
     }
 
     // Recursive whitespace cuts: columns first; a spanning heading is separated by a horizontal
@@ -353,9 +360,29 @@ enum LayoutReconstructor {
             return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1)
                 + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1)
         }
+        // A floated box reads after the lines beside it and before the lines below it.
+        func key(_ element: Element) -> CGFloat { element.box == nil ? element.rect.midY : element.rect.minY }
         return elements.sorted {
-            abs($0.rect.midY - $1.rect.midY) > bodySize * 0.4
-                ? $0.rect.midY > $1.rect.midY : $0.rect.minX < $1.rect.minX
+            abs(key($0) - key($1)) > bodySize * 0.4 ? key($0) > key($1) : $0.rect.minX < $1.rect.minX
+        }
+    }
+
+    /// Tinted boxes (sidebars, shaded tables with their titles) are read as units: the elements
+    /// inside each box are ordered among themselves and the box takes one place in the page
+    /// order, as its image did before the box reflowed (#54).
+    static func boxed(_ elements: [Element], tints: [CGRect], bodySize: CGFloat) -> [Element] {
+        var remaining = elements
+        var boxes: [Element] = []
+        for hull in clusters(tints, distance: 4) {
+            let inside = remaining.filter { hull.contains(CGPoint(x: $0.rect.midX, y: $0.rect.midY)) }
+            guard inside.contains(where: { $0.line != nil }) else { continue }
+            remaining.removeAll { element in inside.contains { $0.rect == element.rect && $0.line == element.line && $0.image == element.image } }
+            boxes.append(Element(rect: hull.union(union(inside.map(\.rect))), box: ordered(inside, bodySize: bodySize)))
+        }
+        return ordered(remaining + boxes, bodySize: bodySize).flatMap { element -> [Element] in
+            guard let content = element.box else { return [element] }
+            let edge = Element(rect: element.rect, boundary: true)
+            return [edge] + content + [edge]
         }
     }
 
@@ -391,9 +418,17 @@ enum LayoutReconstructor {
         let lines = page.lines.filter { line in
             !stamps.contains(line) && !images.contains { $0.0.intersects(line.rect) }
         }
+        let tables = ShadedTableDetector.tables(in: page, lines: lines)
+        let tableLines = tables.flatMap(\.lines)
+        let free = lines.filter { line in !tableLines.contains(line) }
         // Preserve existing modest-size headings, but reject candidates within 10% of the
         // supported reflowable body size. This only narrows the original page-size heuristic.
-        let headingThreshold = max(body * 1.25, headingBodySize(lines, pageBody: body) * 1.1)
+        // Small text inside reflowed boxes and tables does not lower the body estimate, so a
+        // page whose sidebar outweighs its prose keeps that prose as paragraphs (#54).
+        let boxes = clusters(page.tints, distance: 4)
+        let outside = free.filter { line in !boxes.contains { $0.contains(CGPoint(x: line.rect.midX, y: line.rect.midY)) } }
+        let reflowBody = headingBodySize(outside, pageBody: body)
+        let headingThreshold = max(body * 1.25, reflowBody * 1.1)
         // A heading line is wider than tall unless it is one or two characters; rotated text
         // outside the margin keeps its paragraph representation.
         func isHeadingSize(_ line: TextLine) -> Bool {
@@ -402,10 +437,11 @@ enum LayoutReconstructor {
         }
         // Labels are measured against the supported reflowable body, as the threshold is, so
         // small table text cannot make a page's ordinary prose read as labels.
-        let labels = sectionLabels(in: lines, body: headingBodySize(lines, pageBody: body),
-                                   headingThreshold: headingThreshold, page: page)
-        let spatial = ordered(lines.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
-            + images.map { Element(rect: $0.0, image: $0.1) }, bodySize: body)
+        let labels = sectionLabels(in: free, body: reflowBody, headingThreshold: headingThreshold, page: page)
+        let spatial = boxed(free.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
+            + images.map { Element(rect: $0.0, image: $0.1) }
+            + tables.enumerated().map { Element(rect: $0.element.bounds, table: $0.offset) },
+            tints: page.tints, bodySize: body)
         let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
         // Page-bottom footnotes end the page's reading order; the body is everything before
         // their separator, which is not emitted.
@@ -502,6 +538,20 @@ enum LayoutReconstructor {
                 flush()
                 codeOrigin = nil
                 result.append(imageBlock(assetID: path, page: page.number))
+                continue
+            }
+            if let index = element.table {
+                flushTagged()
+                flush()
+                codeOrigin = nil
+                result.append(ReflowBlock(content: .table(tableBlock(tables[index], vocabulary: vocabulary,
+                    page: page.number, warnings: &warnings)), page: page.number))
+                continue
+            }
+            if element.boundary {
+                flushTagged()
+                flush()
+                codeOrigin = nil
                 continue
             }
             guard let line = element.line else { continue }
@@ -675,6 +725,19 @@ enum LayoutReconstructor {
         return elements
     }
 
+    /// Cell lines join like paragraph lines (spaces, hyphen repair); a section row is one cell.
+    static func tableBlock(_ table: ShadedTableDetector.Table, vocabulary: Set<String>, page: Int,
+                           warnings: inout [ConversionWarning]) -> ReflowBlock.Table {
+        let rows = table.rows.map { row in
+            ReflowBlock.Table.Row(cells: row.cells.map { cell in
+                ReflowBlock.Table.Cell(text: cell.lines.dropFirst().reduce(cell.lines.first?.content ?? InlineText()) {
+                    join($0, $1.content, vocabulary: vocabulary, page: page, warnings: &warnings)
+                }, span: cell.span)
+            }, header: row.header)
+        }
+        return ReflowBlock.Table(columns: table.columns, rows: rows)
+    }
+
     static func imageBlock(assetID: String, page: Int, reference: Bool = false) -> ReflowBlock {
         let caption = reference ? "Original page \(page)" : "Preserved region from page \(page)"
         return ReflowBlock(content: .image(.init(assetID: assetID, alternativeText: caption, caption: caption)), page: page)
@@ -691,6 +754,10 @@ enum LayoutReconstructor {
                            to blocks: inout [ReflowBlock], vocabulary: Set<String>,
                            warnings: inout [ConversionWarning]) {
         var remaining = pageBlocks
+        // Text inside a tinted box (a sidebar, a figure's title band) competes with a join anchor
+        // only when it is body-sized, exactly as text inside a preserved image does (#54).
+        let images = images + clusters(page.tints, distance: 4)
+        let previousImages = previousImages + clusters(previousPage?.tints ?? [], distance: 4)
         if let previousPage,
            let anchors = continuation(from: blocks, previousPage: previousPage, previousImages: previousImages,
                                       to: remaining, page: page, images: images),
@@ -757,7 +824,7 @@ enum LayoutReconstructor {
         switch block.content {
         case .image, .footnote: return true
         case .paragraph: break
-        case .heading, .preformatted, .sourcePage: return false
+        case .heading, .preformatted, .table, .sourcePage: return false
         }
         let text = block.text.trimmingCharacters(in: .whitespacesAndNewlines)
         if isCaption(text) { return true }

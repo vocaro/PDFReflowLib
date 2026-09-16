@@ -70,6 +70,8 @@ private func trickyPage() -> PageContent {
     second.readingRect = CGRect.null
     var page = PageContent(number: 42, bounds: CGRect(x: 0, y: 0, width: 612, height: 792), lines: [first, second],
                            graphics: [CGRect(x: 100, y: 100, width: 50.5, height: 60.25), CGRect.null])
+    page.tints = [CGRect(x: 88.5, y: 202.5, width: 435, height: 501)]
+    page.separators = [CGRect(x: 95.7, y: 536.3, width: 149, height: 4), CGRect(x: 96, y: 536.5, width: 4, height: 62.6)]
     page.requiresPageImage = false
     page.recognized = true
     page.hasSyntheticTextStyle = true

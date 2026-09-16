@@ -1,0 +1,96 @@
+{
+  "passed": false,
+  "results": [
+    {
+      "case": "fed-explained-2021",
+      "passed": false,
+      "reviewPages": [
+        1,
+        9,
+        11,
+        13,
+        21,
+        32,
+        40,
+        45,
+        46,
+        50,
+        54,
+        58,
+        64,
+        75,
+        77,
+        83,
+        103,
+        109,
+        120,
+        123
+      ],
+      "contentChecks": 81,
+      "errors": [
+        "Page 32: missing heading 'Box 3.1. What Happens at an FOMC Meeting'",
+        "Page 32: missing paragraph 'In preparation for each Federal Open Market Committee (FOMC) meeting, policymakers analyze'",
+        "Page 32: missing paragraph 'Reserve Bank input gathered. The staff of the Federal Reserve Banks collect and summarize'",
+        "Page 32: missing or reordered text 'Box 3.1. What Happens at an FOMC Meeting'",
+        "Page 32: missing or reordered text 'Reserve Bank input gathered.'",
+        "Page 32: missing or reordered text 'Economic situation: FOMC participants receive briefings'",
+        "Page 32: missing or reordered text 'Monetary policy: FOMC participants briefed and discuss appropriate stance of policy'",
+        "Page 40: missing heading 'Box 3.3. Interest on Reserve Balances as a Key Tool of'",
+        "Page 40: missing paragraph 'The Federal Reserve uses interest on reserve balances as a key tool to anchor the federal funds rate'",
+        "Page 40: missing paragraph 'When the FOMC increased the target range for the federal funds rate between late 2015 and the end of 2018'",
+        "Page 46: missing paragraph 'A primer on what an ample-reserves regime is and how it works is available at'",
+        "Page 58: missing heading 'Box 4.2. Responding to Financial System Emergencies'",
+        "Page 58: missing paragraph 'The idea that a central bank should provide liquidity to support the financial system was refined'",
+        "Page 58: missing paragraph 'In an emergency, the Federal Reserve has the power to provide liquidity to depository institutions'",
+        "Page 58: missing or reordered text 'Emergency lending facilities'",
+        "Page 58: missing or reordered text 'Primary Dealer Credit Facility'",
+        "Page 58: missing or reordered text 'Expanded open market operations'",
+        "Page 58: missing or reordered text 'Source: Federal Reserve Credit and Liquidity Programs and the Balance Sheet'",
+        "Page 64: missing heading 'Figure 4.6. Monitoring financial system stability requires global cooperation'",
+        "Page 64: missing paragraph 'What happens in the global economy can influence'",
+        "Page 64: table cells: no table element on the page",
+        "Page 83: missing heading 'Figure 5.7. Federal Reserve regulations by topic (continued)'",
+        "Page 83: table cells: no table element on the page",
+        "Page 120: missing heading 'Figure 7.2. Federal consumer financial protection laws and regulations applicable to banks'",
+        "Page 120: missing paragraph 'Financial institutions must comply with a variety of laws and regulations that protect consumers'",
+        "Page 120: missing or reordered text 'General banking'",
+        "Page 120: missing or reordered text 'Federal Trade Commission Act'",
+        "Page 120: missing or reordered text 'Prohibits unfair or deceptive acts or practices in any aspect of banking transactions.'",
+        "Page 120: missing or reordered text 'Depository accounts'",
+        "Page 120: missing or reordered text 'Electronic Fund Transfer Act/ Regulation E*'",
+        "Page 120: missing or reordered text 'Credit/general lending'",
+        "Page 120: missing or reordered text 'Community Reinvestment Act/ Regulation BB'",
+        "Page 120: missing or reordered text 'Encourages financial institutions to help meet the credit needs of their entire communities'"
+      ],
+      "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+    }
+  ],
+  "notRun": [
+    "faa-phak-8083-25c",
+    "wallace-algebra-2010",
+    "gpo-911-2004",
+    "dga-2025-2030",
+    "gpo-our-flag-2003",
+    "cdc-zombie-pandemic-2011",
+    "cia-blue-book-14-1955",
+    "usgs-mcs2025-copper",
+    "scotus-loper-bright-2024",
+    "census-rrs2002-01",
+    "uscis-m618-arabic-2015",
+    "irs-p596-zhs-2025",
+    "nbs-jres-geltman-1977",
+    "arxiv-replay-clocks-2023"
+  ],
+  "knownUnsupportedFullConversions": [
+    {
+      "id": "gpo-warren-1964",
+      "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+      "issue": 5
+    },
+    {
+      "id": "noaa-nca5-2023",
+      "reason": "Known default image-output ceiling failure. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
+      "issue": 5
+    }
+  ]
+}

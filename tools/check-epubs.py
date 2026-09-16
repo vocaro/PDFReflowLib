@@ -84,7 +84,7 @@ def check_spine_document(data):
         assert len(content) == 1, "spine body exceeds target with multiple blocks"
         assert len(markers) <= 1, "oversized block includes unrelated page markers"
         assert content[0].tag in {'{http://www.w3.org/1999/xhtml}' + tag
-                                  for tag in ('p', 'h2', 'pre', 'figure')}, "unexpected oversized block"
+                                  for tag in ('p', 'h2', 'pre', 'figure', 'table')}, "unexpected oversized block"
         assert not (body.text or '').strip() and all(not (n.tail or '').strip() for n in body), "unwrapped body text"
     return {'bodyBytes': size, 'oversizedAtomicBlock': size > 60_000}
 

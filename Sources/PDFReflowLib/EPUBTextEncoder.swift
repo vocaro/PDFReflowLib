@@ -36,10 +36,29 @@ enum EPUBTextEncoder {
         }.joined()
     }
 
+    /// Header rows form `thead`; a cell spanning several columns carries `colspan`.
+    static func table(_ table: ReflowBlock.Table) -> String {
+        func row(_ row: ReflowBlock.Table.Row) -> String {
+            let tag = row.header ? "th" : "td"
+            let cells = row.cells.map { cell -> String in
+                let attribute = cell.span > 1 ? " colspan=\"\(cell.span)\"" : ""
+                return "<\(tag)\(attribute)>\(inline(cell.text))</\(tag)>"
+            }.joined()
+            return "<tr>\(cells)</tr>"
+        }
+        let headers = table.rows.prefix(while: \.header)
+        let body = table.rows.dropFirst(headers.count)
+        var markup = "<table>"
+        if !headers.isEmpty { markup += "<thead>\(headers.map(row).joined())</thead>" }
+        if !body.isEmpty { markup += "<tbody>\(body.map(row).joined())</tbody>" }
+        return markup + "</table>"
+    }
+
     static func payload(_ block: ReflowBlock, imagePaths: [String: String]) throws -> String {
         switch block.content {
         case let .paragraph(text), let .heading(_, text, _): return inline(text)
         case let .preformatted(text), let .footnote(text): return inline(text)
+        case let .table(table): return Self.table(table)
         case let .sourcePage(page): return sourcePage(page)
         case let .image(image):
             guard let path = imagePaths[image.assetID] else {

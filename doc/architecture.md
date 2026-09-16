@@ -53,8 +53,11 @@ boundaries. Raw `<`, `&` and other source characters stay raw until a writer esc
 its format. Headings currently form flat navigation; list markers and code use preformatted
 blocks backed by the same `InlineText` runs as paragraphs. Preformatted reconstruction retains
 native emphasis and scripts; inserted newlines/indentation are unstyled, and the EPUB writer
-escapes raw text before adding inline elements inside `<pre>`. Tables/equations preserved as images are image references, not reconstructed semantic
-tables or math trees. Output independence does not imply richer PDF understanding.
+escapes raw text before adding inline elements inside `<pre>`. Equations and most tables preserved as images are image references, not reconstructed
+math trees or semantic tables. A text table whose shaded rows and rules the layout can read is a
+table block of rows and cells (header rows, column spans, styled cell text with source-page
+boundaries) that the EPUB writer serializes as `<table>` (#54). Output independence does not
+imply richer PDF understanding.
 
 ## Reconstruction boundary
 
@@ -103,7 +106,19 @@ to avoid unnecessary PDFKit image-attachment decoding. `GraphicsReader` scans bo
 operations and nested Form XObjects. It resolves shading resources and bounds gradient regions
 with conservative clipping, Form bounds and optional shading bounds. Core Graphics rasterizes
 the original region; the model stores an image asset, not an editable gradient. Unsafe or
-page-spanning bounds retain the page fallback. `OCRReader` uses Vision when policy requests it.
+page-spanning bounds retain the page fallback. The reader also records every painted footprint
+with whether it was a rectangle-only path (`re`, filled or stroked) painted outside `/Figure`
+marked content. `TintDetector` then lets the page's text decide what those rectangles are (#54):
+a cluster of them holding at least three wide prose lines that no solid ink touches, making up
+at least a third of the block's lines, is a tinted text block (a sidebar frame, a tint band,
+cell shading, or four thin strokes closing such a box). Its rectangles seed no crops; the thin
+rules inside it that touch only each other are row and column separators; and solid ink inside
+it keeps the block's full-width band between the prose above and below it as one image, so a
+chart's axis labels that PDFKit cannot extract stay with the chart. A rectangle holding no
+text, a bar chart, a flowchart node, a figure whose labels PDFKit merges into short fragments,
+a box with fewer than three prose lines and a ruled grid whose cells are not shaded keep their
+images exactly as before. The page-sized-graphic review signal still reads the painted regions
+before tint removal. `OCRReader` uses Vision when policy requests it.
 `StructureTreeReader` parses a separate Core Graphics document into value-only page/MCID
 associations and exact owner paths. It checks structural parent links, page identity, RoleMap
 resolution, duplicate references and bounded traversal; a false `MarkInfo/Marked` flag alone
@@ -209,6 +224,20 @@ complete region with `imageRegion` warnings. It also recognizes borderless stati
 whose column headers are underlined: a row of at least three thin underlines, or one short
 piece underlined whole away from the left margin, followed by at least three tightly leaded
 rows carrying numbers, becomes one region. It does not infer general table semantics.
+`ShadedTableDetector` reads a tinted block of shaded bands and the rules between them as a
+table (#54): band edges and rules crossing half the block give the rows (rows reach beyond the
+bands only where rules subdivide the rest of the box, so a title and introduction above the
+first band stay outside), the lines' shared left edges give the columns, a single first-column
+line that crosses the columns or sits on a full-width band of its own is a section row spanning
+them, and a first row on its own band with text in two columns is the header, whose cells span
+empty columns beside them. One pair of columns reads as one when PDFKit merged a narrow cell
+into its neighbour, as the Fed's "Regulation (by letter and name)" header names it. Cell lines
+join like paragraph lines. Text outside the rows, a body line crossing a column, a section row
+in another size, fewer than two columns or two body rows leave the block to ordinary reflow.
+Tinted boxes are read as units: their elements are ordered among themselves, the box follows
+the lines beside it and precedes the lines below it, as its image did, and paragraphs never
+join across its edge. Small text inside reflowed boxes and tables does not lower the heading
+body-size estimate.
 A thin painted rule beneath prose is that text's decoration and seeds no crop; a rule inside a
 short mathematical line (a radical's vinculum, an exercise bar) or between a word-free term and
 a term starting beneath it (a fraction bar) keeps those lines in one crop, and an isolated rule

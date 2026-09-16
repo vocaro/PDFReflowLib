@@ -72,6 +72,12 @@ struct PageContent: Equatable, Codable {
     var bounds: CGRect
     var lines: [TextLine]
     var graphics: [CGRect]
+    /// Rectangles painted behind reflowed text (sidebar frames, tint bands, cell shading).
+    /// They seed no crops; the table detector reads their grid.
+    var tints: [CGRect] = []
+    /// Thin rules inside those tinted blocks that separate rows and columns rather than
+    /// drawing a figure. They seed no crops either; the table detector reads row edges from them.
+    var separators: [CGRect] = []
     var requiresPageImage = false
     var recognized = false
     var hasSyntheticTextStyle = false

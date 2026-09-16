@@ -1389,6 +1389,26 @@
     }
   ],
   "page" : 32,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        56.800000000000004,
+        742.01210000000003,
+        498.40000000000003,
+        4
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        88.5,
+        202.5,
+        435,
+        501
+      ]
+    }
+  ],
   "rightsBasis" : "Federal Reserve Board educational publication, retained as external development material. PDF is not bundled or relicensed under MIT.",
   "sourceSHA256" : "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
   "sourceTitle" : "The Fed Explained: What the Central Bank Does",

@@ -1,0 +1,23 @@
+{
+  "case": "fed-explained-2021",
+  "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+  "page": 40,
+  "regionPoints": [
+    88.0,
+    496.4,
+    524.0,
+    721.5
+  ],
+  "target": "Box 3.3 charts A (overnight money market rates) and B (term money market rates) with their axis labels, legends, captions and notes, below the box prose",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "kind": "region",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    218,
+    105
+  ],
+  "sha256": "88951b9f1995867b35bcef6d00bada616f93db41d1dc6532cf41aded249cd4e8"
+}

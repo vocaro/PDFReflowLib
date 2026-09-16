@@ -50,14 +50,14 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 585 targeted checks on 124 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 621 targeted checks on 129 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 182 ordered-text, 66 text, 58 paragraph,
-33 heading, 59 absent-text, 17 script, 8 footnote, 17 paragraph-continuation,
-5 paragraph-separation, 77 image-presence, 43 warning, 3 absent-warning,
-11 source-region, 3 glyph-structure and 3 image-appearance checks. All source-page
+the NBS and Replay Clocks academic papers). They comprise 200 ordered-text, 66 text, 67 paragraph,
+39 heading, 60 absent-text, 17 script, 8 footnote, 17 paragraph-continuation,
+5 paragraph-separation, 76 image-presence, 43 warning, 3 absent-warning,
+12 source-region, 3 glyph-structure, 3 image-appearance and 2 table-cell checks. All source-page
 anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
 
 The checks preserve selected correct words, paragraph semantics and cross-page continuity, paragraph/list order, license attribution, image
@@ -156,9 +156,12 @@ A `tableCells` expectation carries a reviewed transcription (`columns`, `rows` w
 `values` and optional `group`, in the shape of `corpus/usgs-mcs2025-copper-review.json`) and passes
 only when a `<table>` on that page maps every column through its header path and every row's cells
 equal the expected values under those columns, with group rows preceding their members. Swapped,
-shifted or merged cells, missing rows or groups, and tables rendered as prose fail. No corpus EPUB
-emits a `<table>` element yet (tables remain images under #36/#31), so the checker is exercised by
-`tools/test_table_cells.py` only; see the [table-cells record](../measurements/table-cells/record.md).
+shifted or merged cells, missing rows or groups, and tables rendered as prose fail. The Fed's
+entity/overview table (page 64) and regulation table (page 83) are the first corpus tables emitted
+as `<table>` (#54, shaded rows and rules; other tables remain images under #36/#31) and carry
+reviewed transcriptions; `tools/test_table_cells.py` keeps the checker's negative controls, and the
+spine reader separates cell text with spaces and parses each table into a grid. See the
+[table-cells record](../measurements/table-cells/record.md).
 
 ## Adding or changing a regression
 
@@ -232,6 +235,33 @@ crop. The first eight tests fail against the previous sources. The corpus contra
 paragraph, absent-cell and image-region checks on USGS pages 1/2 and NBS page 7. See the
 [rule-adjacent prose evidence](../measurements/rule-adjacent-prose/record.md).
 
+## Shaded boxes and text tables
+
+`TintedBoxTests.swift` covers [#54](https://github.com/vocaro/PDFReflowLib/issues/54): a stroked or
+filled rectangle behind prose used to seed a crop that swallowed every line inside it. An original
+in-memory PDF checks that `GraphicsReader` records rectangle-only paths outside `/Figure` marks as
+frames and everything else as ink. Synthetic Fed-like geometry checks that a sidebar frame holding
+prose is a tint whose text reflows (and, without tint removal, still the defect), that a chart
+inside a box keeps one full-width band image below the prose with its captions and notes, that
+bar charts, flowchart nodes, a frame with too little prose and a ratings grid of short fragments
+keep their images unchanged, that shaded rows with rules read as a table with the title outside
+it, that section rows and PDFKit-merged letter cells read as spanning and joined cells, that a
+ruled table with only a shaded header stays one image, that a box beside wrapped prose reads after
+the lines beside it without joining them, and that table blocks serialize as `<table>` with
+`thead`, `colspan` and inline styles. `PageStoreTests` reloads tints and separators exactly.
+
+Source-derived `fed-{32,40,58,64,83,120}` fixtures carry the painted footprints (`paints`) as well
+as the clustered regions, so `content(tinted: false)` reproduces the crop and `content()` the fix:
+pages 32 and 58 reflow as a heading and paragraphs with no crop touching a box line, page 40 keeps
+one band image under 260 pt tall holding the chart captions and notes while the box prose reflows,
+page 64 reads as a two-column table with its header and seven entities, page 83 reads its header,
+four section rows and the merged letter cells, and page 120 continues with a section row and no
+header. `tools/capture-layout-fixture.swift` now records `paints`; older fixtures keep their
+clustered `graphics` and unchanged behaviour. The Fed corpus contract adds headings, paragraphs,
+ordered text, `tableCells` transcriptions for pages 64 and 83, a source-rendered region for the
+Box 3.3 charts and the reflowed page-46 sidebar; see the
+[tinted-box evidence](../measurements/tinted-boxes/record.md).
+
 ## Source-derived fidelity controls
 
 `FidelityIssueTests.swift` checks the FAA page-91/511 columns, all ten Our Flag page-27 table
@@ -257,7 +287,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-253 Swift tests with no known-issue wrappers, and 159 Python tests.
+281 Swift tests with no known-issue wrappers, and 160 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

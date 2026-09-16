@@ -660,20 +660,15 @@
     {
       "id": "fed-explained-2021",
       "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
-      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Pages 11-12 and 21-22 visually reviewed (#45): the paragraph above Figure 1.3 and the ragged-right advisory-council paragraph each continue onto the next page as one paragraph across the source-page marker.",
+      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Pages 11-12 and 21-22 visually reviewed (#45): the paragraph above Figure 1.3 and the ragged-right advisory-council paragraph each continue onto the next page as one paragraph across the source-page marker. Pages 32, 40, 46, 58, 64, 83 and 120 source rasters reviewed (#54): the shaded sidebar boxes reflow as a heading and paragraphs, the Box 3.3 charts stay one image whose region is rendered from the source (corpus/references/fed-explained-2021/box-3-3-charts), the page-46 sidebar reflows beside a preserved Table 3.1, and the entity/overview and regulation tables are transcribed cell by cell from the source; the regulation table reads its letter and name columns as the one \"Regulation (by letter and name)\" column its own header names, and page 120 continues without a header, so its rows are checked in order rather than as cells.",
       "pages": [
         {
-          "page": 50,
-          "absentText": [
-            "46 Promoting Financial System Stability"
-          ],
+          "page": 1,
           "headings": [
-            "Promoting Financial System",
-            "Stability"
+            "The Fed Explained What the Central Bank Does"
           ],
-          "text": [
-            "What Is Financial Stability?",
-            "Monitoring Risk across the Financial System"
+          "paragraphs": [
+            "PUBLIC EDUCATION & OUTREACH"
           ],
           "minimumImages": 1
         },
@@ -690,6 +685,15 @@
           "minimumImages": 1
         },
         {
+          "page": 11,
+          "continuedParagraphs": [
+            {
+              "end": "the effective conduct of monetary",
+              "next": "policy began to require increased collaboration and coordination"
+            }
+          ]
+        },
+        {
           "page": 13,
           "minimumImages": 1,
           "paragraphs": [
@@ -697,10 +701,49 @@
           ]
         },
         {
+          "page": 21,
+          "continuedParagraphs": [
+            {
+              "end": "The FAC ordinarily meets with the Board four times",
+              "next": "a year, as required by law"
+            }
+          ]
+        },
+        {
           "page": 32,
-          "minimumImages": 1,
           "headings": [
+            "Box 3.1. What Happens at an FOMC Meeting",
             "How the FOMC Determines the Appropriate Stance of Monetary Policy"
+          ],
+          "paragraphs": [
+            "In preparation for each Federal Open Market Committee (FOMC) meeting, policymakers analyze",
+            "Reserve Bank input gathered. The staff of the Federal Reserve Banks collect and summarize"
+          ],
+          "orderedText": [
+            "Box 3.1. What Happens at an FOMC Meeting",
+            "Reserve Bank input gathered.",
+            "Economic situation: FOMC participants receive briefings",
+            "Monetary policy: FOMC participants briefed and discuss appropriate stance of policy",
+            "How the FOMC Determines the Appropriate Stance of Monetary Policy",
+            "During the FOMC meeting, policymakers discuss a broad range of information"
+          ]
+        },
+        {
+          "page": 40,
+          "headings": [
+            "Box 3.3. Interest on Reserve Balances as a Key Tool of"
+          ],
+          "paragraphs": [
+            "The Federal Reserve uses interest on reserve balances as a key tool to anchor the federal funds rate",
+            "When the FOMC increased the target range for the federal funds rate between late 2015 and the end of 2018"
+          ],
+          "absentText": [
+            "A. Overnight money market rates"
+          ],
+          "imageRegions": [
+            {
+              "reference": "corpus/references/fed-explained-2021/page-40-box-3-3-charts.png"
+            }
           ]
         },
         {
@@ -711,7 +754,8 @@
           "page": 46,
           "paragraphs": [
             "funds rate and other short-term interest rates is exercised primarily through the setting of",
-            "risks to the economic outlook were implemented and significantly boosted the level of reserves"
+            "risks to the economic outlook were implemented and significantly boosted the level of reserves",
+            "A primer on what an ample-reserves regime is and how it works is available at"
           ],
           "minimumImages": 2,
           "orderedText": [
@@ -721,6 +765,21 @@
           ]
         },
         {
+          "page": 50,
+          "absentText": [
+            "46 Promoting Financial System Stability"
+          ],
+          "headings": [
+            "Promoting Financial System",
+            "Stability"
+          ],
+          "text": [
+            "What Is Financial Stability?",
+            "Monitoring Risk across the Financial System"
+          ],
+          "minimumImages": 1
+        },
+        {
           "page": 54,
           "minimumImages": 1,
           "headings": [
@@ -728,6 +787,56 @@
           ],
           "paragraphs": [
             "These vulnerability assessments inform internal"
+          ]
+        },
+        {
+          "page": 58,
+          "headings": [
+            "Box 4.2. Responding to Financial System Emergencies"
+          ],
+          "paragraphs": [
+            "The idea that a central bank should provide liquidity to support the financial system was refined",
+            "In an emergency, the Federal Reserve has the power to provide liquidity to depository institutions"
+          ],
+          "orderedText": [
+            "Emergency lending facilities",
+            "Primary Dealer Credit Facility",
+            "Expanded open market operations",
+            "Source: Federal Reserve Credit and Liquidity Programs and the Balance Sheet"
+          ]
+        },
+        {
+          "page": 64,
+          "headings": [
+            "Figure 4.6. Monitoring financial system stability requires global cooperation"
+          ],
+          "paragraphs": [
+            "What happens in the global economy can influence"
+          ],
+          "tableCells": [
+            {
+              "title": "Figure 4.6 international authorities",
+              "columns": [
+                "International authority/ deliberative body",
+                "Overview/Federal Reserve engagement"
+              ],
+              "rows": [
+                {
+                  "label": "Financial Stability Board",
+                  "values": [
+                    "Financial Stability Board Established: 2009 Location: Basel, Switzerland Website: https://www.fsb.org",
+                    "The Financial Stability Board (FSB), successor to the Financial Stability Forum, promotes stability in the international financial system through enhanced cooperation among various national and international supervisory bodies and international financial institutions. The Federal Reserve Board and other U.S. agencies participate in FSB efforts, which specifically seek to coordinate the development of regulatory, supervisory, and other financial sector policies."
+                  ]
+                },
+                {
+                  "label": "World Bank",
+                  "values": [
+                    "World Bank Established: 1944 Location: Washington, D.C. Website: https://www.worldbank.org",
+                    "The World Bank functions as a cooperative of 189 member countries. These member countries, or shareholders, are represented by a board of governors, who are the ultimate policymakers at the World Bank. Generally, the governors are member countries’ ministers of finance or ministers of development. The Federal Reserve interacts informally with the World Bank, largely through the International Monetary Fund."
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -745,6 +854,53 @@
           ],
           "paragraphs": [
             "BHCs and SLHCs with less than $100 billion"
+          ]
+        },
+        {
+          "page": 83,
+          "headings": [
+            "Figure 5.7. Federal Reserve regulations by topic (continued)"
+          ],
+          "tableCells": [
+            {
+              "title": "Figure 5.7 regulations (continued)",
+              "columns": [
+                "Regulation (by letter and name)",
+                "Description"
+              ],
+              "rows": [
+                {
+                  "label": "LL",
+                  "group": [
+                    "Holding companies and nonbank financial companies"
+                  ],
+                  "values": [
+                    "LL Savings and Loan Holding Companies",
+                    "Regulates the acquisition of control of savings associations, defines and regulates the activities of savings and loan holding companies, sets forth procedures under which directors and executive officers may be appointed or employed, and establishes capital planning requirements for large savings and loan holding companies"
+                  ]
+                },
+                {
+                  "label": "D",
+                  "group": [
+                    "Monetary policy and reserve requirements"
+                  ],
+                  "values": [
+                    "D Reserve Requirements of Depository Institutions",
+                    "Sets uniform requirements for all depository institutions to maintain reserves either with their Federal Reserve Bank or as cash in their vaults"
+                  ]
+                },
+                {
+                  "label": "X",
+                  "group": [
+                    "Securities credit transactions"
+                  ],
+                  "values": [
+                    "X Borrowers of Securities Credit",
+                    "Applies the provisions of Regulations T and U to borrowers who are subject to U.S. laws and who obtain credit within or outside the United States for the purpose of purchasing securities"
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
@@ -768,38 +924,29 @@
           ]
         },
         {
+          "page": 120,
+          "headings": [
+            "Figure 7.2. Federal consumer financial protection laws and regulations applicable to banks"
+          ],
+          "paragraphs": [
+            "Financial institutions must comply with a variety of laws and regulations that protect consumers"
+          ],
+          "orderedText": [
+            "General banking",
+            "Federal Trade Commission Act",
+            "Prohibits unfair or deceptive acts or practices in any aspect of banking transactions.",
+            "Depository accounts",
+            "Electronic Fund Transfer Act/ Regulation E*",
+            "Credit/general lending",
+            "Community Reinvestment Act/ Regulation BB",
+            "Encourages financial institutions to help meet the credit needs of their entire communities"
+          ]
+        },
+        {
           "page": 123,
           "minimumImages": 1,
           "headings": [
             "Interagency Initiatives"
-          ]
-        },
-        {
-          "page": 1,
-          "headings": [
-            "The Fed Explained What the Central Bank Does"
-          ],
-          "paragraphs": [
-            "PUBLIC EDUCATION & OUTREACH"
-          ],
-          "minimumImages": 1
-        },
-        {
-          "page": 11,
-          "continuedParagraphs": [
-            {
-              "end": "the effective conduct of monetary",
-              "next": "policy began to require increased collaboration and coordination"
-            }
-          ]
-        },
-        {
-          "page": 21,
-          "continuedParagraphs": [
-            {
-              "end": "The FAC ordinarily meets with the Board four times",
-              "next": "a year, as required by law"
-            }
           ]
         }
       ]

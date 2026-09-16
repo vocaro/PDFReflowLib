@@ -14,8 +14,11 @@ struct PDFReflowLibCommand {
           --region-image-encoding png|jpeg:QUALITY|smallest:QUALITY
           --maximum-output-bytes BYTES|unlimited  (uncompressed entry budget)
           --maximum-epub-bytes BYTES|unlimited    (final ZIP file cap)
+          --package-identifier ID                 (dc:identifier; default random urn:uuid)
+          --modification-date ISO8601             (e.g. 2026-01-01T00:00:00Z; default now)
         JPEG QUALITY must be in 0...1. Defaults: automatic references, PNG, 512 MiB entry
         budget, no separate final ZIP cap. Required image-only fallback pages are retained.
+        Set both --package-identifier and --modification-date for byte-reproducible packaging.
         """
         if args == ["--help"] {
             print(usage); return
@@ -68,6 +71,12 @@ struct PDFReflowLibCommand {
                 case "--region-image-encoding": options.regionImageEncoding = try encoding(value)
                 case "--maximum-output-bytes": options.maximumOutputBytes = try byteLimit(value) ?? .max
                 case "--maximum-epub-bytes": options.maximumEPUBBytes = try byteLimit(value)
+                case "--package-identifier": options.packageIdentifier = value
+                case "--modification-date":
+                    guard let date = ISO8601DateFormatter().date(from: value) else {
+                        throw ConversionError.invalidOptions("modification date must be ISO 8601, e.g. 2026-01-01T00:00:00Z")
+                    }
+                    options.modificationDate = date
                 default: throw ConversionError.invalidOptions("unknown option: \(flag)")
                 }
             }

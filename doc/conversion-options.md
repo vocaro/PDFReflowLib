@@ -14,6 +14,8 @@ No policy changes dynamically to squeeze a book under a limit, and no network se
 | `maximumEPUBBytes` | `nil` | Optional positive cap on the actual final EPUB file, including ZIP overhead |
 | `rasterDPI` | 180 | 72–600, subject to the pixel ceiling |
 | `maximumRasterPixels` | 12 million | 1–48 million pixels per raster |
+| `packageIdentifier` | `nil` | Non-blank `dc:identifier`, written verbatim (XML-escaped); nil writes a random `urn:uuid:` |
+| `modificationDate` | `nil` | `dcterms:modified` and every ZIP entry date, 1980–2099; nil uses the conversion time |
 
 MiB means 1,048,576 bytes. Input-byte, page-count and character budgets remain separate.
 Neither output-size control is a RAM limit, device qualification or estimate of elapsed time.
@@ -160,6 +162,19 @@ Both limits apply when set. A ZIP smaller than the final-file cap can still exce
 budget. The library never silently drops images, reduces quality, or changes the client's policy
 after a size failure.
 
+## Reproducible packages
+
+By default each conversion writes a random package identifier, the current time as
+`dcterms:modified`, and the current time in every ZIP header, so identical content still yields
+different EPUB bytes. Setting both `packageIdentifier` and `modificationDate` removes that
+writer-introduced variation: converting the same PDF twice with the same binary and environment
+produces the same SHA-256. Entry order and names come from the writer, not directory enumeration.
+ZIP headers store the date in UTC at two-second resolution, independent of the local time zone.
+
+This covers packaging only. Rendering, OCR and image encoding can still differ across OS builds
+or device capabilities (#26). A client pinning output bytes should record the converter revision
+and OS build alongside the digest and treat a mismatch as a reason to re-convert.
+
 ## Developer client
 
 The same options are available through `pdf-reflow --help`. For example:
@@ -174,5 +189,7 @@ swift run pdf-reflow input.pdf output.epub \
 ```
 
 Byte limits accept a positive integer or `unlimited`. Image encodings accept `png`,
-`jpeg:QUALITY` or `smallest:QUALITY`. The internal reader accepts PNG/JPEG publications; its
-independent admission budget can be set with `tools/view_epub.py --maximum-bytes BYTES`.
+`jpeg:QUALITY` or `smallest:QUALITY`. `--package-identifier ID` and `--modification-date ISO8601`
+(for example `2026-01-01T00:00:00Z`) set the reproducible-package options. The internal reader
+accepts PNG/JPEG publications; its independent admission budget can be set with
+`tools/view_epub.py --maximum-bytes BYTES`.

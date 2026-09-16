@@ -46,6 +46,14 @@ public struct ConversionOptions: Sendable {
     public var author: String?
     /// BCP 47 language tag for EPUB metadata and OCR (when the recognizer supports it).
     public var language = "en"
+    /// Written verbatim as the package `dc:identifier`. Nil writes a random `urn:uuid:` per run.
+    /// Must be non-blank XML text; a client pinning output bytes supplies a stable value.
+    public var packageIdentifier: String?
+    /// Written as `dcterms:modified` and as every ZIP entry date. Nil uses the conversion time.
+    /// Must fall in 1980–2099, the ZIP date range; ZIP stores it in two-second UTC resolution.
+    /// With both values set, the writer adds no per-run variation. Rendering, OCR and image
+    /// encoding can still differ across OS builds and device capabilities.
+    public var modificationDate: Date?
     public var ocr: OCRPolicy = .automatic
     /// Remove short recurring text at page edges when at least three pages provide evidence.
     public var removeRepeatedHeadersAndFooters = true

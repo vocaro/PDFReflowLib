@@ -29,7 +29,8 @@ public actor PDFConverter {
         }
         let total = result.pageCount
         let archive = try await EPUBWriter.write(result.document, maximumOutputBytes: options.maximumOutputBytes,
-            directory: staging) { fraction in
+            directory: staging, packageIdentifier: options.packageIdentifier,
+            modificationDate: options.modificationDate) { fraction in
                 await progress(.init(stage: .writing, fractionCompleted: 0.82 + 0.17 * fraction, page: nil, totalPages: total))
             }
         try Task.checkCancellation()
@@ -58,6 +59,19 @@ public actor PDFConverter {
               options.maximumEPUBBytes.map({ $0 > 0 }) ?? true,
               options.fullPageImageEncoding.isValid, options.regionImageEncoding.isValid else {
             throw ConversionError.invalidOptions("language, resource bounds or image encoding are invalid")
+        }
+        if let identifier = options.packageIdentifier {
+            guard !identifier.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+                  identifier.unicodeScalars.allSatisfy(isXMLCharacter) else {
+                throw ConversionError.invalidOptions("package identifier must be non-blank XML text")
+            }
+        }
+        if let date = options.modificationDate {
+            // Outside this range ZIP headers would clamp and disagree with dcterms:modified.
+            var utc = Calendar(identifier: .gregorian); utc.timeZone = .gmt
+            guard (1980...2099).contains(utc.component(.year, from: date)) else {
+                throw ConversionError.invalidOptions("modification date must fall in 1980–2099")
+            }
         }
         guard !FileManager.default.fileExists(atPath: destination.path) else { throw ConversionError.outputExists }
         guard source.resolvingSymlinksInPath() != destination.resolvingSymlinksInPath() else {

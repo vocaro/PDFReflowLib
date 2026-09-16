@@ -125,6 +125,82 @@ private actor ProgressLog {
     #expect(zip(events, events.dropFirst()).allSatisfy { $0.fractionCompleted <= $1.fractionCompleted })
 }
 
+/// MS-DOS (time, date) fields of every central-directory record and its local header, read
+/// from raw bytes so the check does not depend on ZIPFoundation's decoding or the local time zone.
+private func zipEntryDateFields(_ data: Data) throws -> [(time: UInt16, date: UInt16)] {
+    let bytes = [UInt8](data)
+    func u16(_ at: Int) -> UInt16 { UInt16(bytes[at]) | UInt16(bytes[at + 1]) << 8 }
+    func u32(_ at: Int) -> Int {
+        let low = Int(u16(at)), high = Int(u16(at + 2))
+        return low | high << 16
+    }
+    let end = bytes.count - 22 // End-of-central-directory record; the writer adds no comment.
+    try #require(u32(end) == 0x06054b50)
+    var record = u32(end + 16), fields: [(time: UInt16, date: UInt16)] = []
+    for _ in 0..<Int(u16(end + 10)) {
+        try #require(u32(record) == 0x02014b50)
+        let local = u32(record + 42)
+        try #require(u32(local) == 0x04034b50)
+        fields.append((u16(record + 12), u16(record + 14)))
+        fields.append((u16(local + 10), u16(local + 12)))
+        record += 46 + Int(u16(record + 28)) + Int(u16(record + 30)) + Int(u16(record + 32))
+    }
+    return fields
+}
+
+@Test func suppliedIdentifierAndDateMakeTheEPUBByteReproducible() async throws {
+    let dir = try scratch(); defer { try? FileManager.default.removeItem(at: dir) }
+    var options = ConversionOptions(); options.referenceImages = .always
+    options.packageIdentifier = "urn:isbn:9780000000002 & <pinned>"
+    // A non-UTC offset: output must be the same instant in UTC whatever the host's time zone.
+    options.modificationDate = ISO8601DateFormatter().date(from: "2026-01-02T12:04:05+09:00")
+    var archives: [Data] = []
+    for run in 1...2 {
+        let output = dir.appendingPathComponent("book-\(run).epub")
+        _ = try await PDFConverter().convert(from: fixture("graphics"), to: output, options: options)
+        archives.append(try Data(contentsOf: output))
+    }
+    #expect(SHA256.hash(data: archives[0]) == SHA256.hash(data: archives[1]))
+    let opf = String(decoding: try entry("EPUB/package.opf", in: dir.appendingPathComponent("book-1.epub")), as: UTF8.self)
+    #expect(opf.contains("<dc:identifier id=\"book-id\">urn:isbn:9780000000002 &amp; &lt;pinned&gt;</dc:identifier>"))
+    #expect(opf.contains("<meta property=\"dcterms:modified\">2026-01-02T03:04:05Z</meta>"))
+    // Pinned header values, not "now": 03:04:04 UTC (two-second resolution) on 2026-01-02.
+    // Two runs need not straddle a clock tick, because a wall-clock date could never match these.
+    let dosTime: UInt16 = 0x1882 // hour << 11 | minute << 5 | second / 2
+    let dosDate: UInt16 = 0x5C22 // (year - 1980) << 9 | month << 5 | day
+    let fields = try zipEntryDateFields(archives[0])
+    let entryCount = Array(try Archive(data: archives[0], accessMode: .read)).count
+    #expect(entryCount > 5 && fields.count == 2 * entryCount)
+    #expect(fields.allSatisfy { $0.time == dosTime && $0.date == dosDate })
+}
+
+@Test func defaultPackagesReceiveDistinctIdentifiers() async throws {
+    let dir = try scratch(); defer { try? FileManager.default.removeItem(at: dir) }
+    var identifiers: Set<String> = []
+    for run in 1...2 {
+        let output = dir.appendingPathComponent("book-\(run).epub")
+        _ = try await PDFConverter().convert(from: fixture("prose"), to: output)
+        let opf = String(decoding: try entry("EPUB/package.opf", in: output), as: UTF8.self)
+        let identifier = try #require(opf.firstMatch(of: /<dc:identifier id="book-id">(urn:uuid:[0-9A-F-]{36})</)?.1)
+        identifiers.insert(String(identifier))
+    }
+    #expect(identifiers.count == 2)
+}
+
+@Test func invalidReproducibilityOptionsAreRejected() async throws {
+    let dir = try scratch(); defer { try? FileManager.default.removeItem(at: dir) }
+    var blank = ConversionOptions(); blank.packageIdentifier = " \n"
+    var control = ConversionOptions(); control.packageIdentifier = "id\u{0}"
+    var early = ConversionOptions(); early.modificationDate = Date(timeIntervalSince1970: 0)
+    for options in [blank, control, early] {
+        await #expect(throws: ConversionError.self) {
+            try await PDFConverter().convert(from: fixture("prose"), to: dir.appendingPathComponent("book.epub"),
+                                             options: options)
+        }
+    }
+    #expect(try FileManager.default.contentsOfDirectory(atPath: dir.path).isEmpty)
+}
+
 @Test func existingDestinationAndResourceLimitsAreSafe() async throws {
     let dir = try scratch(); defer { try? FileManager.default.removeItem(at: dir) }
     let output = dir.appendingPathComponent("book.epub")

@@ -6,6 +6,7 @@ enum EPUBWriter {
     private static let bodyTargetBytes = 60_000
 
     static func write(_ book: ReflowDocument, maximumOutputBytes: Int64, directory: URL,
+                      packageIdentifier: String? = nil, modificationDate: Date? = nil,
                       progress: @Sendable (Double) async -> Void) async throws -> URL {
         try book.validate()
         let title = book.metadata.title
@@ -112,8 +113,10 @@ enum EPUBWriter {
         img { max-width: 100%; height: auto; } figure { margin: 1em 0; }
         figcaption { font-size: 0.85em; } pre { white-space: pre-wrap; overflow-wrap: anywhere; }
         """, publication.appendingPathComponent("style.css"))
-        let identifier = "urn:uuid:" + UUID().uuidString
-        let modified = ISO8601DateFormatter().string(from: Date())
+        // Caller-supplied values make the archive byte-reproducible; defaults vary per run.
+        let identifier = xml(packageIdentifier ?? "urn:uuid:" + UUID().uuidString)
+        let modificationDate = modificationDate ?? Date()
+        let modified = ISO8601DateFormatter().string(from: modificationDate)
         let author = book.metadata.author.map { "<dc:creator>\(xml($0))</dc:creator>" } ?? ""
         let manifest = chapters.enumerated().map {
             "<item id=\"c\($0.offset)\" href=\"\($0.element)\" media-type=\"application/xhtml+xml\"/>"
@@ -152,6 +155,7 @@ enum EPUBWriter {
             let handle = try FileHandle(forReadingFrom: url)
             defer { try? handle.close() }
             try archive.addEntry(with: path, type: .file, uncompressedSize: Int64(size),
+                modificationDate: modificationDate,
                 compressionMethod: path == "mimetype" ? .none : .deflate) { position, count in
                 try autoreleasepool {
                     try Task.checkCancellation()

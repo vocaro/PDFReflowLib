@@ -83,10 +83,11 @@ The comparator refuses missing, failed, stale, or incompatible capability receip
 reporting output drift. It verifies the retained EPUB, probe JSON, and conversion report against
 their evaluation receipt. Under compatible measured conditions it compares normalized page
 records, source-page markers, encoded image assets, and conversion report fields; generated
-output paths and ZIP timestamps/identifiers are not drift. A changed EPUB hash is permitted
-between runs, but each EPUB must match its own receipt. Exit status is 0 only for compatible
-runs with no differences in this scope. Historical receipts without this evidence must be
-recaptured; manually adding context labels cannot qualify them.
+output paths and ZIP timestamps/identifiers are not drift; clients needing identical bytes can
+pin both ([reproducible packages](conversion-options.md#reproducible-packages)). A changed EPUB
+hash is permitted between runs, but each EPUB must match its own receipt. Exit status is 0 only
+for compatible runs with no differences in this scope. Historical receipts without this evidence
+must be recaptured; manually adding context labels cannot qualify them.
 
 These local receipts provide consistency checks, not signed attestation. A page-1 probe samples
 capability at one instant and cannot prove all pages or later service states equivalent. The

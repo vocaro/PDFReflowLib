@@ -142,7 +142,9 @@ For changes to extraction, layout or rendering, run `scripts/check-all.sh --corp
 pushing. This opt-in lane converts 15 complete cached documents and checks reviewed content,
 EPUB conformance, progress and resource budgets. Missing sources fail with acquisition instructions;
 there are no automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic lane.
-See [regression testing](doc/regression-testing.md) for coverage, limitations and adding a case.
+Python tool tests and source-region image checks require numpy and Pillow. Poppler is needed only
+to render new region references. See [regression testing](doc/regression-testing.md) for coverage,
+limitations and adding a case.
 
 ```sh
 swift test

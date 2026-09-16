@@ -1,0 +1,21 @@
+{
+  "case": "faa-phak-8083-25c",
+  "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "page": 121,
+  "regionPoints": [
+    36.0,
+    45.0,
+    523.0,
+    205.0
+  ],
+  "target": "Figure 5-35 normal, slipping and skidding turn diagrams with force labels",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "inkThreshold": 200,
+  "pixels": [
+    243,
+    80
+  ],
+  "sha256": "c2a34925696c167afad8e3c2885175041bdd9259a7fa4011220fbba2494a15e0"
+}

@@ -1,0 +1,21 @@
+{
+  "case": "cdc-zombie-pandemic-2011",
+  "sourceSHA256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
+  "page": 13,
+  "regionPoints": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "target": "Complete image-only comic page 13 with panels and balloons",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "inkThreshold": 200,
+  "pixels": [
+    306,
+    396
+  ],
+  "sha256": "ba927d01178f5de12fd1dd421dd04f0736e4ba2d690443131a28a359dfcadfe9"
+}

@@ -50,7 +50,7 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 347 targeted checks on 85 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 357 targeted checks on 85 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
@@ -69,14 +69,38 @@ or duplicate page markers, and captions masquerading as source text. A list of a
 such controls could silently pass despite a broken checker.
 
 Image-presence checks are weaker than visual fidelity checks. They cannot prove a flag's colors,
-a diagram's arrows or mathematical notation is correct. Unit pixel checks and source-image review
-cover selected rendering behavior; robust visual/semantic contracts need expansion. The corpus
+a diagram's arrows or mathematical notation is correct. Unit pixel checks, source-image review and
+the source-region checks below cover selected rendering behavior; robust visual/semantic contracts
+need expansion. The corpus
 lane does not supply a whole-book quality score or physical-device performance qualification.
 
 Full Warren and NOAA conversions remain explicitly excluded from this successful-conversion lane
 because of the known image-output ceiling failure (#5). The pinned Warren excerpt separately
 checks its two textless pages. These exclusions are listed in output, never counted as passes.
 The manifest consistency test requires every corpus document to be covered or explicitly excluded.
+
+## Source-region image checks
+
+Preserved tables, equations, figures and page fallbacks are images, so text checks cannot see their
+content. An `imageRegions` expectation names a committed reference under
+`corpus/references/<case>/`. `tools/render_region_reference.py` renders a reviewed source region
+(PDF points from the page's top-left) with Poppler at 180 DPI after verifying the source identity,
+averages it to 36 DPI grayscale, trims it to ink and writes a sidecar with the region, renderer and
+source checksum. Choose regions from the source page, never from converter output.
+
+The checker averages every image on that page the same way at all 25 grid phases and searches all
+placements for the highest normalized correlation (`tools/image_regions.py`). A page passes when
+some image reaches `minimumCorrelation`, 0.95 by default. The corpus gate needs numpy and Pillow,
+not Poppler. References assume the library's default 180 DPI; a changed raster policy must
+regenerate them.
+
+Ten references cover the Our Flag flag-size table, three USGS copper tables, three FAA page-121
+figures, a Wallace quadratic exercise, the Geltman page-image fallback and CDC's image-only page 13.
+Correct crops score 0.982–0.997. Wrong images on the same pages score at most 0.62, a table crop
+with its lower half blanked 0.64, erasing the Wallace exercise from its crop 0.44, and a 1.5-pixel
+blur still scores 0.96. The check proves
+a region is present, complete and aligned; it does not prove every glyph. Erasing one exponent from
+the Wallace exercise still scores 0.97. See the [image-region evidence](../measurements/image-regions/record.md).
 
 ## Adding or changing a regression
 

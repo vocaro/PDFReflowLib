@@ -1,0 +1,41 @@
+{
+  "threshold": 0.95,
+  "controls": [
+    {
+      "control": "wrong image: FAA figure 5-36 reference vs figure 5-35 crop",
+      "score": 0.121
+    },
+    {
+      "control": "wrong image: FAA figure 5-36 reference vs figure 5-37 crop",
+      "score": 0.611
+    },
+    {
+      "control": "wrong image: FAA figure 5-37 reference vs figure 5-36 crop",
+      "score": 0.618
+    },
+    {
+      "control": "wrong image: USGS tariff reference vs prose crop",
+      "score": 0.277
+    },
+    {
+      "control": "wrong image: USGS tariff reference vs statistics crop",
+      "score": 0.318
+    },
+    {
+      "control": "clipped: Our Flag table crop with lower half blanked",
+      "score": 0.635
+    },
+    {
+      "control": "missing equation: Wallace exercise 35 row erased",
+      "score": 0.439
+    },
+    {
+      "control": "limitation: Wallace exercise 35 final exponent erased",
+      "score": 0.969
+    },
+    {
+      "control": "tolerance: Our Flag table crop with 1.5-pixel Gaussian blur",
+      "score": 0.959
+    }
+  ]
+}

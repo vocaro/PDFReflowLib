@@ -21,6 +21,17 @@
         },
         {
           "page": 121,
+          "imageRegions": [
+            {
+              "reference": "corpus/references/faa-phak-8083-25c/page-121-figure-5-35.png"
+            },
+            {
+              "reference": "corpus/references/faa-phak-8083-25c/page-121-figure-5-36.png"
+            },
+            {
+              "reference": "corpus/references/faa-phak-8083-25c/page-121-figure-5-37.png"
+            }
+          ],
           "text": [
             "Normal, slipping, and skidding turns at a constant altitude."
           ],
@@ -182,6 +193,11 @@
         },
         {
           "page": 347,
+          "imageRegions": [
+            {
+              "reference": "corpus/references/wallace-algebra-2010/page-347-exercise-35.png"
+            }
+          ],
           "text": [
             "Solve each equation with the quadratic formula."
           ],
@@ -579,6 +595,11 @@
       "pages": [
         {
           "page": 27,
+          "imageRegions": [
+            {
+              "reference": "corpus/references/gpo-our-flag-2003/page-27-flag-size-table.png"
+            }
+          ],
           "orderedText": [
             "Care of Your Flag",
             "If your flag gets wet, never store it until it is completely dry.",
@@ -737,6 +758,11 @@
         },
         {
           "page": 13,
+          "imageRegions": [
+            {
+              "reference": "corpus/references/cdc-zombie-pandemic-2011/page-13-page.png"
+            }
+          ],
           "minimumImages": 1,
           "warningCodesAnyOf": [
             "ocrUsed",
@@ -802,6 +828,14 @@
       "pages": [
         {
           "page": 1,
+          "imageRegions": [
+            {
+              "reference": "corpus/references/usgs-mcs2025-copper/page-1-salient-statistics.png"
+            },
+            {
+              "reference": "corpus/references/usgs-mcs2025-copper/page-1-tariff.png"
+            }
+          ],
           "orderedText": [
             "(Data in thousand metric tons, copper content, unless otherwise specified)",
             "Prepared by Daniel M. Flanagan"
@@ -810,6 +844,11 @@
         },
         {
           "page": 2,
+          "imageRegions": [
+            {
+              "reference": "corpus/references/usgs-mcs2025-copper/page-2-world-production.png"
+            }
+          ],
           "text": [
             "The COMEX copper price reached a record high in May 2024 and was projected to average $4.20 per pound in full year 2024"
           ],
@@ -967,6 +1006,11 @@
       "pages": [
         {
           "page": 1,
+          "imageRegions": [
+            {
+              "reference": "corpus/references/nbs-jres-geltman-1977/page-1-page.png"
+            }
+          ],
           "minimumImages": 1,
           "warningCodesAnyOf": [
             "pageImageFallback"

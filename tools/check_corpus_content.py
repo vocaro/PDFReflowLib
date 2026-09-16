@@ -130,7 +130,30 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
     return pages, markers
 
 
-def assess(case, contract, result, report, pages, markers):
+def reference_image(case, contract, number, expectation, reference_root=ROOT):
+    """Validate a region expectation and return its reference PNG bytes."""
+    import image_regions  # Imported on use: numpy and Pillow are only needed for image-region checks.
+    if (not isinstance(expectation, dict) or not set(expectation) <= {'reference', 'minimumCorrelation'}
+            or not isinstance(expectation.get('reference'), str)):
+        raise ValueError('Image region requires a reference path and optional minimumCorrelation')
+    minimum = expectation.get('minimumCorrelation', image_regions.DEFAULT_MINIMUM_CORRELATION)
+    if type(minimum) not in (int, float) or not 0.5 <= minimum <= 1:
+        raise ValueError('Image region minimumCorrelation must be between 0.5 and 1')
+    relative = PurePosixPath(expectation['reference'])
+    if (relative.suffix != '.png' or relative.parts[:3] != ('corpus', 'references', case['id'])
+            or len(relative.parts) != 4 or '..' in relative.parts):
+        raise ValueError('Image region reference must be corpus/references/<case>/<name>.png')
+    path = Path(reference_root) / relative
+    sidecar = json.loads(path.with_suffix('.json').read_text())
+    if sidecar.get('sourceSHA256') != contract['sourceSHA256'] or sidecar.get('page') != number:
+        raise ValueError(f'Image region reference {relative} was rendered from another source or page')
+    if (sidecar.get('renderDPI'), sidecar.get('referenceDPI')) != (image_regions.RENDER_DPI, image_regions.REFERENCE_DPI):
+        raise ValueError(f'Image region reference {relative} uses another resolution')
+    return path.read_bytes(), minimum
+
+
+def assess(case, contract, result, report, pages, markers, image_data=None, reference_root=ROOT):
+    """Assess a contract. image_data(asset) returns converted image bytes for imageRegions checks."""
     errors = []
     if (contract['sourceSHA256'] != case['sha256'] or any(
             result.get('case', {}).get(k) != case[k] for k in ('id', 'sha256', 'bytes', 'pages'))):
@@ -150,7 +173,7 @@ def assess(case, contract, result, report, pages, markers):
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'scripts', 'absentText', 'headings', 'paragraphs', 'continuedParagraphs')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'scripts', 'absentText', 'headings', 'paragraphs', 'continuedParagraphs', 'imageRegions')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -209,6 +232,17 @@ def assess(case, contract, result, report, pages, markers):
                        and span['after'].startswith(normalized(script['after']))
                        for span in page.get('scripts', [])):
                 errors.append(f'Page {number}: missing script or incorrect context {script!r}')
+        for expectation in item.get('imageRegions', []):
+            reference, minimum = reference_image(case, contract, number, expectation, reference_root)
+            checks += 1
+            if image_data is None:
+                errors.append(f'Page {number}: converted images unavailable for {expectation["reference"]}')
+                continue
+            import image_regions
+            score = image_regions.region_score(reference, [image_data(asset) for asset in page['images']])
+            if score < minimum:
+                errors.append(f'Page {number}: no image shows {expectation["reference"]} '
+                              f'(best correlation {score:.3f} < {minimum})')
         if 'minimumImages' in item:
             minimum = item['minimumImages']
             if type(minimum) is not int or minimum < 1:
@@ -227,16 +261,17 @@ def assess(case, contract, result, report, pages, markers):
         raise ValueError('Contract has no content checks')
     return {'case': case['id'], 'passed': not errors, 'reviewPages': numbers,
             'contentChecks': checks, 'errors': errors,
-            'scope': 'Reviewed text/order/script-context/image-presence checks; not full-book fidelity or image legibility qualification.'}
+            'scope': 'Reviewed text/order/script-context/image-presence and source-region image checks; not full-book fidelity or image legibility qualification.'}
 
 
 def check_evaluation(case, contract, directory, *, max_entries=DEFAULT_MAX_ENTRIES,
                      max_uncompressed_bytes=DEFAULT_MAX_UNCOMPRESSED_BYTES):
     result = json.loads((directory / 'result.json').read_text())
     report = json.loads((directory / 'conversion-report.json').read_text())
-    pages, markers = read_pages(directory / (case['id'] + '.epub'),
-                                max_entries=max_entries, max_uncompressed_bytes=max_uncompressed_bytes)
-    return assess(case, contract, result, report, pages, markers)
+    path = directory / (case['id'] + '.epub')
+    pages, markers = read_pages(path, max_entries=max_entries, max_uncompressed_bytes=max_uncompressed_bytes)
+    with zipfile.ZipFile(path) as archive:
+        return assess(case, contract, result, report, pages, markers, image_data=archive.read)
 
 
 def main():

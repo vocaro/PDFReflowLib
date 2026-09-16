@@ -1,0 +1,21 @@
+{
+  "case": "gpo-our-flag-2003",
+  "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
+  "page": 27,
+  "regionPoints": [
+    80.0,
+    438.0,
+    246.0,
+    575.0
+  ],
+  "target": "Flag-size table: two headers and ten rows",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "inkThreshold": 200,
+  "pixels": [
+    83,
+    67
+  ],
+  "sha256": "432e27bd54f659664e6f4bfad0f2e53232c59305b498303d44f49f10775de2b3"
+}

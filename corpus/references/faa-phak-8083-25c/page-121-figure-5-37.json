@@ -1,0 +1,21 @@
+{
+  "case": "faa-phak-8083-25c",
+  "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "page": 121,
+  "regionPoints": [
+    283.0,
+    548.0,
+    523.0,
+    692.0
+  ],
+  "target": "Figure 5-37 climb-entry speed illustration with force arrows and labels",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "inkThreshold": 200,
+  "pixels": [
+    120,
+    72
+  ],
+  "sha256": "60b612848832d366cdfe024e1412877a2fc49f54f1d2175b47965e7b130e801d"
+}

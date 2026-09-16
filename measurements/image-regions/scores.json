@@ -1,0 +1,230 @@
+{
+  "scope": "Scores of each committed reference against every image on its page in the complete corpus gate outputs with the heading keep-with-next writer (92bea9e sources), using grid-phase search; default threshold 0.95.",
+  "references": [
+    {
+      "reference": "corpus/references/cdc-zombie-pandemic-2011/page-13-page.png",
+      "case": "cdc-zombie-pandemic-2011",
+      "page": 13,
+      "target": "Complete image-only comic page 13 with panels and balloons",
+      "regionPoints": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "referencePixels": [
+        306,
+        396
+      ],
+      "bestScore": 0.997,
+      "scoresByPageImage": {
+        "EPUB/images/image-13.png": 0.997
+      }
+    },
+    {
+      "reference": "corpus/references/faa-phak-8083-25c/page-121-figure-5-35.png",
+      "case": "faa-phak-8083-25c",
+      "page": 121,
+      "target": "Figure 5-35 normal, slipping and skidding turn diagrams with force labels",
+      "regionPoints": [
+        36.0,
+        45.0,
+        523.0,
+        205.0
+      ],
+      "referencePixels": [
+        243,
+        80
+      ],
+      "bestScore": 0.982,
+      "scoresByPageImage": {
+        "EPUB/images/image-139.png": 0.982,
+        "EPUB/images/image-140.png": -1.0,
+        "EPUB/images/image-141.png": -1.0
+      }
+    },
+    {
+      "reference": "corpus/references/faa-phak-8083-25c/page-121-figure-5-36.png",
+      "case": "faa-phak-8083-25c",
+      "page": 121,
+      "target": "Figure 5-36 climb-entry illustration with three labels",
+      "regionPoints": [
+        35.0,
+        550.0,
+        275.0,
+        697.0
+      ],
+      "referencePixels": [
+        120,
+        73
+      ],
+      "bestScore": 0.993,
+      "scoresByPageImage": {
+        "EPUB/images/image-139.png": 0.121,
+        "EPUB/images/image-140.png": 0.993,
+        "EPUB/images/image-141.png": 0.611
+      }
+    },
+    {
+      "reference": "corpus/references/faa-phak-8083-25c/page-121-figure-5-37.png",
+      "case": "faa-phak-8083-25c",
+      "page": 121,
+      "target": "Figure 5-37 climb-entry speed illustration with force arrows and labels",
+      "regionPoints": [
+        283.0,
+        548.0,
+        523.0,
+        692.0
+      ],
+      "referencePixels": [
+        120,
+        72
+      ],
+      "bestScore": 0.989,
+      "scoresByPageImage": {
+        "EPUB/images/image-139.png": 0.118,
+        "EPUB/images/image-140.png": 0.618,
+        "EPUB/images/image-141.png": 0.989
+      }
+    },
+    {
+      "reference": "corpus/references/gpo-our-flag-2003/page-27-flag-size-table.png",
+      "case": "gpo-our-flag-2003",
+      "page": 27,
+      "target": "Flag-size table: two headers and ten rows",
+      "regionPoints": [
+        80.0,
+        438.0,
+        246.0,
+        575.0
+      ],
+      "referencePixels": [
+        83,
+        67
+      ],
+      "bestScore": 0.983,
+      "scoresByPageImage": {
+        "EPUB/images/image-55.png": -1.0,
+        "EPUB/images/image-56.png": -1.0,
+        "EPUB/images/image-57.png": 0.983
+      }
+    },
+    {
+      "reference": "corpus/references/nbs-jres-geltman-1977/page-1-page.png",
+      "case": "nbs-jres-geltman-1977",
+      "page": 1,
+      "target": "Complete scanned page 1: title block, abstract, two columns, footnotes and equations",
+      "regionPoints": [
+        0.0,
+        0.0,
+        541.0,
+        731.0
+      ],
+      "referencePixels": [
+        246,
+        331
+      ],
+      "bestScore": 0.984,
+      "scoresByPageImage": {
+        "EPUB/images/image-1.png": 0.984
+      }
+    },
+    {
+      "reference": "corpus/references/usgs-mcs2025-copper/page-1-salient-statistics.png",
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "target": "Salient Statistics table: five year columns, sixteen value rows with indentation-only groups",
+      "regionPoints": [
+        40.0,
+        205.0,
+        565.0,
+        481.0
+      ],
+      "referencePixels": [
+        259,
+        134
+      ],
+      "bestScore": 0.989,
+      "scoresByPageImage": {
+        "EPUB/images/image-1.png": -1.0,
+        "EPUB/images/image-2.png": 0.989,
+        "EPUB/images/image-3.png": -1.0,
+        "EPUB/images/image-4.png": -1.0,
+        "EPUB/images/image-5.png": -1.0,
+        "EPUB/images/image-6.png": -1.0,
+        "EPUB/images/image-7.png": -1.0
+      }
+    },
+    {
+      "reference": "corpus/references/usgs-mcs2025-copper/page-1-tariff.png",
+      "case": "usgs-mcs2025-copper",
+      "page": 1,
+      "target": "Tariff table: five items with HTS numbers and trade-relations rates",
+      "regionPoints": [
+        40.0,
+        603.0,
+        565.0,
+        691.0
+      ],
+      "referencePixels": [
+        252,
+        40
+      ],
+      "bestScore": 0.988,
+      "scoresByPageImage": {
+        "EPUB/images/image-1.png": 0.277,
+        "EPUB/images/image-2.png": 0.318,
+        "EPUB/images/image-3.png": -1.0,
+        "EPUB/images/image-4.png": -1.0,
+        "EPUB/images/image-5.png": 0.988,
+        "EPUB/images/image-6.png": -1.0,
+        "EPUB/images/image-7.png": -1.0
+      }
+    },
+    {
+      "reference": "corpus/references/usgs-mcs2025-copper/page-2-world-production.png",
+      "case": "usgs-mcs2025-copper",
+      "page": 2,
+      "target": "World mine and refinery production and reserves: spanning headers, nineteen country rows",
+      "regionPoints": [
+        40.0,
+        272.0,
+        565.0,
+        512.0
+      ],
+      "referencePixels": [
+        250,
+        117
+      ],
+      "bestScore": 0.985,
+      "scoresByPageImage": {
+        "EPUB/images/image-8.png": -1.0,
+        "EPUB/images/image-9.png": -1.0,
+        "EPUB/images/image-10.png": 0.985,
+        "EPUB/images/image-11.png": -1.0,
+        "EPUB/images/image-12.png": -1.0
+      }
+    },
+    {
+      "reference": "corpus/references/wallace-algebra-2010/page-347-exercise-35.png",
+      "case": "wallace-algebra-2010",
+      "page": 347,
+      "target": "Exercise 35 equation with squared terms on both sides",
+      "regionPoints": [
+        80.0,
+        625.0,
+        245.0,
+        645.0
+      ],
+      "referencePixels": [
+        77,
+        8
+      ],
+      "bestScore": 0.984,
+      "scoresByPageImage": {
+        "EPUB/images/image-1263.png": 0.984,
+        "EPUB/images/image-1264.png": -1.0
+      }
+    }
+  ]
+}

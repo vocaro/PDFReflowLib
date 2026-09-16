@@ -1,0 +1,21 @@
+{
+  "case": "nbs-jres-geltman-1977",
+  "sourceSHA256": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
+  "page": 1,
+  "regionPoints": [
+    0.0,
+    0.0,
+    541.0,
+    731.0
+  ],
+  "target": "Complete scanned page 1: title block, abstract, two columns, footnotes and equations",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "inkThreshold": 200,
+  "pixels": [
+    246,
+    331
+  ],
+  "sha256": "d73c1a0d9247acaa4e8896f5a8004340985fc07f377d100a24c256e30c522f0f"
+}

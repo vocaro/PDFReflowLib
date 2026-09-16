@@ -1,0 +1,21 @@
+{
+  "case": "wallace-algebra-2010",
+  "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "page": 347,
+  "regionPoints": [
+    80.0,
+    625.0,
+    245.0,
+    645.0
+  ],
+  "target": "Exercise 35 equation with squared terms on both sides",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "inkThreshold": 200,
+  "pixels": [
+    77,
+    8
+  ],
+  "sha256": "128695abb2c106e2531dfeafa979230c4fc48b9bed00df2155dd2d270a8e7281"
+}

@@ -1,0 +1,21 @@
+{
+  "case": "faa-phak-8083-25c",
+  "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "page": 121,
+  "regionPoints": [
+    35.0,
+    550.0,
+    275.0,
+    697.0
+  ],
+  "target": "Figure 5-36 climb-entry illustration with three labels",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "inkThreshold": 200,
+  "pixels": [
+    120,
+    73
+  ],
+  "sha256": "153e989007fcf2a288eb658b243773ac0eeeedce7c9653d5c09b6f9c119eb6f4"
+}

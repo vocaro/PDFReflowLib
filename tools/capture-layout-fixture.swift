@@ -76,6 +76,19 @@ private typealias CaptureFont = UIFont
                 return entry
             }, "attributedLines": attributedLines,
         ]
+        // JSON holds no infinity or NaN; name the element rather than abort inside the writer (#99).
+        func nonFinite(_ value: Any, _ path: String) -> String? {
+            switch value {
+            case let number as Double: number.isFinite ? nil : "\(path) = \(number)"
+            case let number as CGFloat: number.isFinite ? nil : "\(path) = \(number)"
+            case let array as [Any]: array.indices.lazy.compactMap { nonFinite(array[$0], "\(path)[\($0)]") }.first
+            case let object as [String: Any]: object.keys.sorted().lazy.compactMap { nonFinite(object[$0]!, "\(path).\($0)") }.first
+            default: nil
+            }
+        }
+        if let problem = nonFinite(payload, "fixture") {
+            fatalError("Non-finite geometry cannot be captured: \(problem)")
+        }
         try JSONSerialization.data(withJSONObject: payload, options: [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes])
             .write(to: URL(fileURLWithPath: CommandLine.arguments[3]))
     }

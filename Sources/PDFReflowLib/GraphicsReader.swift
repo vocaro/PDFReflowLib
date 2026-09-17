@@ -504,7 +504,12 @@ enum GraphicsReader {
         defer { CGPDFContentStreamRelease(stream) }
         scan(stream, state: s)
         let bounds = page.getBoxRect(.cropBox)
-        let paints = s.paints.map { Paint(rect: $0.rect.intersection(bounds), frame: $0.frame) }
+        // A mark wholly off the page (FAA pages 474–475 place a two-page illustration across
+        // both, #99) shows nothing; its intersection is the infinite null rectangle, not a paint.
+        let paints = s.paints.compactMap { paint -> Paint? in
+            let visible = paint.rect.intersection(bounds)
+            return visible.isNull ? nil : Paint(rect: visible, frame: paint.frame)
+        }
         return Result(regions: clusters(paints.map(\.rect), distance: 4), paints: paints,
                       unsupported: s.unsupported, hasOnlyInvisibleText: !s.unsupported && s.invisibleText && !s.visibleText,
                       hasInvisibleText: s.invisibleText, textShows: s.shows, covers: s.covers, slantedShows: s.slantedShows,

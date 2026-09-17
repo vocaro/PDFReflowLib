@@ -203,7 +203,9 @@ at ordinary line spacing. Bullets never continue prose; ragged-right columns, ha
 continuations and OCR lines that Vision marks as unwrapped keep the list representation.
 Joined lines meet at a space except in three cases. A line-ending hyphen before a lowercase
 letter is removed when the book's vocabulary knows the joined word and not the compound, and
-kept otherwise. A slash after a letter, digit or slash before a letter or digit joins
+kept otherwise. The vocabulary skips the word that opens a lowercase line after a line-end hyphen
+or soft hyphen, because it is the rest of a broken word (`es-` + `timates.html`), unless it holds
+a hyphen of its own (`straight-` + `and-level`); the same letters seen anywhere else count (#101). A slash after a letter, digit or slash before a letter or digit joins
 (`runway/` + `taxiway`, #70). A break inside a web address joins (#79). The address is the run
 of URL characters ending the line: it has a scheme, starts with `www.` or opens with a domain
 and a slash, and holds a dot. It continues without a space after `_ = & ? # % ~` that follows a
@@ -220,7 +222,8 @@ last segment, and a line's first word without a scheme or `www.` gives up its fi
 hyphen goes when the address through the broken segment is seen joined and not hyphenated, and
 stays when it is seen hyphenated and not joined; failing that, the broken segment decides the
 same way. Failing both, it goes only when the letters beside it, with no digit next to them, join
-into a book word and are not both words (`communi-` + `cations.htm`). Otherwise it stays and the
+into a book word and are not both words (`communi-` + `cations.htm`; NOAA's `es-` + `timates.html`,
+where `es` is a book word from DOI segments). Otherwise it stays and the
 page warns (`uncertainHyphen`). A period after a closing parenthesis, or before a capital, ends
 the sentence. The same test keeps a list item's first wrapped line after a marker line ending
 inside an address (`(AIM)—www.faa.` + `gov/…`).

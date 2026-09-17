@@ -411,14 +411,23 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 /tmp/capture-layout-fixture faa-phak-8083-25c 91 /tmp/faa-91-layout.json
 ```
 
-Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256. Where
+Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
+Paints wholly outside the crop box are not recorded (`GraphicsReader` drops them; FAA pages 474
+and 475 share a two-page illustration, #99), and any other non-finite number stops the capture
+with the JSON path of the element instead of aborting inside the writer. Where
 the page's structure validates, each line also records the tag the pipeline applies (`structure`,
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-455 Swift tests with no known-issue wrappers, and 196 Python tests.
+463 Swift tests with no known-issue wrappers, and 204 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
+
+`HyphenFragmentTests.swift` covers [#101](https://github.com/vocaro/PDFReflowLib/issues/101): the
+NOAA page-553 and page-284 fixtures join `community-resilience-es-` + `timates.html` once the
+continuation `timates` is no longer a book word, with controls for compounds opening a
+continuation line, words seen elsewhere, Fed page 27 and prose joins. See the
+[hyphen-fragment evidence](../measurements/hyphen-fragments/record.md).
 
 `InvisibleTextTests.swift` covers exclusively hidden OCR text, visible Courier and genuine
 font-size headings, mixed text modes, saved graphics state, nested forms and malformed modes.

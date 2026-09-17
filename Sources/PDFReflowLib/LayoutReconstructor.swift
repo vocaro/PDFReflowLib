@@ -10,12 +10,21 @@ enum LayoutReconstructor {
 
     /// Hyphen repair consults every page's words; accumulating them per page lets extraction
     /// release the page itself.
+    /// A line that opens lowercase after a line-end hyphen opens with the rest of a broken word
+    /// (`es-` + `timates.html`, `communi-` + `cations`), which vouches for no join: that one
+    /// word is not evidence, though the same letters seen anywhere else are (#101). A compound
+    /// there keeps its own unbroken hyphen (`straight-` + `and-level`), so it still counts.
     static func addVocabulary(of page: PageContent, to vocabulary: inout Set<String>) {
+        var previous: String?
         for line in page.lines {
-            for word in line.text.lowercased().split(whereSeparator: { !$0.isLetter && $0 != "-" }) {
-                vocabulary.insert(String(word))
+            var words = line.text.lowercased().split(whereSeparator: { !$0.isLetter && $0 != "-" })
+            if let previous, previous.hasSuffix("-") || previous.hasSuffix("\u{00ad}"),
+               line.text.first?.isLowercase == true, let first = words.first, !first.contains("-") {
+                words.removeFirst()
             }
+            for word in words { vocabulary.insert(String(word)) }
             addAddressVocabulary(of: line.text, to: &vocabulary)
+            previous = line.text
         }
     }
 

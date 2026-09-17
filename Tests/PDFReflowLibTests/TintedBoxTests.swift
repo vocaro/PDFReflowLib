@@ -79,6 +79,30 @@ private let bodyProse = (0..<3).map {
     #expect(result.regions.count == 2)
 }
 
+/// #99: FAA pages 474–475 place a two-page illustration across both pages, so hundreds of its
+/// marks lie wholly off each page. Their crop-box intersection was the infinite null rectangle,
+/// which `tools/capture-layout-fixture.swift` could not write as JSON.
+@Test func graphicsReaderDropsPaintsWhollyOffThePage() throws {
+    let data = testPDF(objects: [
+        "<< /Type /Catalog /Pages 2 0 R >>",
+        "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 594 774] /Contents 4 0 R >>",
+        testPDFStream("""
+        0.5 g 750 400 60 40 re f
+        0.5 g -380 460 100 90 re f
+        0.5 g 570 300 60 40 re f
+        0.5 g 100 100 50 50 re f
+        """),
+    ])
+    let document = try #require(CGPDFDocument(CGDataProvider(data: data as CFData)!))
+    let result = GraphicsReader.read(try #require(document.page(at: 1)))
+    #expect(result.paints.allSatisfy { !$0.rect.isNull && $0.rect.isFinite })
+    // Controls: a fill overhanging the edge keeps its visible part; one on the page is whole.
+    #expect(result.paints.map(\.rect) == [CGRect(x: 568, y: 298, width: 26, height: 44),
+                                          CGRect(x: 98, y: 98, width: 54, height: 54)])
+    #expect(result.regions.count == 2)
+}
+
 @Test func sidebarFrameHoldingProseIsATintAndItsTextReflows() throws {
     let lines = boxProse(baseline: 655, count: 6) + bodyProse
     let tinted = page([paint(88.5, 202.5, 435, 501, frame: true)], lines: lines)

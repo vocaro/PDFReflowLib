@@ -130,10 +130,12 @@ private func joined(_ left: String, _ right: String, _ vocabulary: Set<String>) 
     #expect(content36.lines.contains { $0.text == "federalreserve.gov/monetarypolicy/timeline-forward-" })
     #expect(content46.lines.contains { $0.text == "https://research.stlouisfed.org/publications/page1-" })
     // As in the whole book, page 46's `monetary-policy.htm.` puts the compound in the vocabulary,
-    // which kept page 36's typesetter hyphen, and its `econ` removed page 46's real one.
+    // which kept page 36's typesetter hyphen, and its `econ` removed page 46's real one. Since
+    // #101 `econ`, which only opens the line after `page1-`, is no longer a book word; the
+    // address tiers decide both pages as before.
     #expect(content46.lines.contains { $0.text == "monetary-policy.htm." })
     let vocabulary = LayoutReconstructor.vocabulary(in: [content36, content46])
-    #expect(vocabulary.contains("monetary-policy") && vocabulary.contains("econ"))
+    #expect(vocabulary.contains("monetary-policy") && !vocabulary.contains("econ"))
 
     var warnings: [ConversionWarning] = []
     let text36 = LayoutReconstructor.blocks(page: content36, images: [], vocabulary: vocabulary, warnings: &warnings)

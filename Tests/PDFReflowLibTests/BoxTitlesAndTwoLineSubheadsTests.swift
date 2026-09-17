@@ -95,7 +95,16 @@ private func words(_ blocks: [ReflowBlock]) -> String {
     #expect(LayoutReconstructor.boxTitles(in: page348.lines, page: page348).isEmpty)
     let blocks348 = reflow(page348)
     #expect(!headings(blocks348).contains { $0.hasPrefix("FBI was aware") })
-    #expect(blocks348.contains { $0.text.hasPrefix("FBI was aware of the flights") && $0.text.contains("The FBI interviewed all persons") })
+    // Neither line is a title, and the indent that proves it also opens the second paragraph: the
+    // source ends `…allowed to depart.30` short of the measure and sets `The FBI interviewed…` one
+    // em in, over lines that return to the box's edge (#159). Both paragraphs stay paragraphs, and
+    // the first keeps its own two lines rather than swallowing the second.
+    let sidebar = blocks348.filter { $0.text.hasPrefix("FBI was aware of the flights")
+        || $0.text.hasPrefix("The FBI interviewed all persons") }
+    #expect(sidebar.count == 2)
+    #expect(sidebar.allSatisfy { if case .paragraph = $0.content { true } else { false } })
+    #expect(sidebar.first?.text.hasSuffix("allowed to depart.30") == true)
+    #expect(sidebar.last?.text.hasSuffix("on these flights.31") == true)
     // A box title at heading size is a heading already (Box 3.1) and is no box title here.
     let page32 = try page("fed-32")
     #expect(LayoutReconstructor.boxTitles(in: page32.lines, page: page32).isEmpty)

@@ -1064,11 +1064,19 @@ enum LayoutReconstructor {
         guard !page.hasSyntheticTextStyle, !page.recognized else { return [] }
         var labels: [TextLine] = []
         let entryEdges = hangingEntryEdges(lines, body: body)
+        // The leading the body wraps at, for a title set under the body's own size.
+        let bodyGap = ordinaryLineGap(body, in: lines, body: body)
         for line in lines.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
             let subheading = line.fontSize < body * 1.15
+            // A book can set its sub-headings *below* the body's size: *Agricultural Research*
+            // heads sections of its ten-and-a-half point columns with nine-point bold lines
+            // (#159). Only bold qualifies there — the smaller type a magazine sets beside its
+            // body is otherwise a caption or a photo credit — and the rest of the sub-heading
+            // evidence, including the recurring style, still decides it.
+            let smaller = line.fontSize < body * 0.95
             // A list item (an answer-key entry, a contents line) keeps its list representation; a
             // numbered title set above the body in capitals or bold is a label (#154).
-            guard !line.monospaced, line.fontSize >= body * (subheading ? 0.95 : 1.15), line.fontSize < headingThreshold,
+            guard !line.monospaced, line.fontSize >= body * (subheading ? 0.8 : 1.15), line.fontSize < headingThreshold,
                   line.text.count >= 2, line.text.count < 200,
                   !isList(line.text) || !subheading && isNumberedTitle(line, body: body)
                     && !lines.contains(where: { other in
@@ -1086,7 +1094,14 @@ enum LayoutReconstructor {
             }
             let above = column.filter { $0.rect.minY >= line.rect.maxY - body * 0.25 }
                 .min { $0.rect.minY < $1.rect.minY }
-            if let above, above.rect.minY - line.rect.maxY < body * 0.8,
+            // A title set smaller than the body cannot be measured against the body's own size:
+            // the magazine leaves 5.7 points over its nine-point subheads in columns whose lines
+            // stand 1.3 points apart, which is clear space in that column although it is under
+            // four fifths of a ten-and-a-half point body. Such a title is set apart when the space
+            // above exceeds the column's own leading by half a body; every other candidate keeps
+            // the absolute distance (#159).
+            let clearance = smaller ? min(body * 0.8, (bodyGap ?? 0) + body * 0.5) : body * 0.8
+            if let above, above.rect.minY - line.rect.maxY < clearance,
                subheading || !(labels.contains(above) && abs(above.fontSize - line.fontSize) <= line.fontSize * 0.05) { continue }
             let letters = line.text.filter(\.isLetter)
             let capitals = letters.allSatisfy(\.isUppercase)
@@ -1103,18 +1118,31 @@ enum LayoutReconstructor {
                 func opens(beneath title: TextLine) -> Bool {
                     guard let below = nearestBelow(title), title.rect.minY - below.rect.maxY < body * 0.8,
                           abs(below.fontSize - body) <= body * 0.1, !LabelStyle(below, body: body).bold else { return false }
-                    let paragraph = abs(below.rect.minX - line.rect.minX) <= body * 0.5 && below.rect.width > title.rect.width
+                    // The paragraph can open on the column's own first-line indent instead of on
+                    // the title's edge (the magazine indents ten points at a ten-and-a-half point
+                    // body, #159). The page's indent pattern is the evidence, as it is for the
+                    // paragraph break itself; a wider step is another block, not this title's text.
+                    let indent = below.rect.minX - line.rect.minX
+                    let onIndent = indent >= body * 0.5 && indent < body * 1.5
+                        && firstLineIndentRun(in: lines, step: indent, size: below.fontSize)
+                    // A title set under the body's size has no size evidence at all, so the
+                    // opening beneath it must be a paragraph's own: the page's first-line indent.
+                    // Small bold type standing flush over prose is a caption's label or a note's,
+                    // and stays where it is (FAA page 165's control; #159).
+                    let paragraph = (smaller ? onIndent : abs(indent) <= body * 0.5 || onIndent)
+                        && below.rect.width > title.rect.width
                     // A bold title can head entries narrower than itself where the page's entries wrap
                     // into a hanging indent on the title's own edge (9/11 page 458's `Intelligence
                     // Oversight and the Joint Inquiry` over `Senator Bob Graham (D-Fla.)`; #134).
-                    let entries = abs(below.rect.minX - line.rect.minX) <= body * 0.5 && !isList(below.text)
-                        && hangingEntryEdge(of: below, in: entryEdges) != nil
+                    let entries = !smaller && abs(below.rect.minX - line.rect.minX) <= body * 0.5
+                        && !isList(below.text) && hangingEntryEdge(of: below, in: entryEdges) != nil
                     // An italic title opens ordinary body text or a list, never more italic type.
                     return style.bold ? paragraph || entries
                         : !LabelStyle(below, body: body).italic
                             && (paragraph && !isList(below.text) || opensListBeneath(below, title: line, body: body))
                 }
-                guard style.bold || style.italic && !isCaption(line.text), recordingSubheadings || styles.contains(style),
+                guard style.bold || !smaller && style.italic && !isCaption(line.text),
+                      recordingSubheadings || styles.contains(style),
                       prose > 0, line.rect.width <= prose else { continue }
                 if line.rect.width <= prose * 0.9, !style.italic || isTitleCase(line.text), opens(beneath: line) {
                     labels.append(line)
@@ -3038,6 +3066,52 @@ enum LayoutReconstructor {
         return lines.contains { hangs($0) && $0.rect.maxX >= right - size * 0.5 }
     }
 
+    /// Whether the page opens its paragraphs on a first-line indent of `step`, in `size` (#159).
+    ///
+    /// *Agricultural Research* indents each paragraph's first line ten points in a ten-and-a-half
+    /// point column and adds two points of space, so neither the leading nor the width of the line
+    /// above says where a paragraph ends: only the indent does. That indent is narrower than the
+    /// one and a half bodies a column's lines are allowed to drift by, so it needs the page's own
+    /// evidence before it may break a paragraph.
+    ///
+    /// The evidence is the mirror of `hangingRun`'s, read as steps between neighbouring lines so
+    /// that every column of a page supplies it: an opening line stands `step` inside the line above
+    /// it and the line beneath it returns `step` outward, and at least two such lines stand on the
+    /// page. A hanging indent is ruled out by the same reading — its wrapped lines stay at the
+    /// indent, so a line beneath an indented one shares its edge, which a first-line indent never
+    /// does because the paragraph returns to the measure beneath its opening line.
+    ///
+    /// Only lines of `size` are read, so a heading or a caption between two paragraphs is neither a
+    /// neighbour nor evidence, and the nearest neighbour must stand at ordinary leading: a line
+    /// across a paragraph's space or a column's foot supplies nothing.
+    static func firstLineIndentRun(in lines: [TextLine], step: CGFloat, size: CGFloat) -> Bool {
+        func sized(_ line: TextLine) -> Bool {
+            !line.monospaced && abs(line.fontSize - size) <= size * 0.1
+        }
+        let column = lines.filter(sized)
+        func neighbour(of line: TextLine, above: Bool) -> TextLine? {
+            let sharing = column.filter { other in
+                other != line && !sameRow(other.rect, line.rect)
+                    && other.rect.minX < line.rect.maxX && other.rect.maxX > line.rect.minX
+                    && (above ? other.rect.minY >= line.rect.maxY - size * 0.4
+                              : other.rect.maxY <= line.rect.minY + size * 0.4)
+            }
+            return above ? sharing.min { $0.rect.minY < $1.rect.minY }
+                         : sharing.max { $0.rect.maxY < $1.rect.maxY }
+        }
+        var openings = 0
+        for line in column {
+            guard let above = neighbour(of: line, above: true),
+                  above.rect.minY - line.rect.maxY < size * 0.9,
+                  abs(line.rect.minX - above.rect.minX - step) <= size * 0.5,
+                  let below = neighbour(of: line, above: false),
+                  line.rect.minY - below.rect.maxY < size * 0.9 else { continue }
+            if abs(below.rect.minX - line.rect.minX) <= size * 0.5 { return false }
+            if abs(line.rect.minX - below.rect.minX - step) <= size * 0.5 { openings += 1 }
+        }
+        return openings >= 2
+    }
+
     /// Small labels inside preserved images must not turn the surrounding prose into headings.
     /// Keep the page estimate when too little reflowable text remains to establish a body size.
     static func headingBodySize(_ lines: [TextLine], pageBody: CGFloat) -> CGFloat {
@@ -3853,6 +3927,31 @@ enum LayoutReconstructor {
             }
             return false
         }
+        // A paragraph opens on a first-line indent narrower than the drift the same-column test
+        // allows (#159). *Agricultural Research* sets its columns at a ten-and-a-half point body
+        // and indents each opening line ten points — under one and a half bodies — over two points
+        // of added space, so the column reads as one paragraph from its first line to its last: on
+        // page 9 three source paragraphs became one, and a nine-point subhead ran into the
+        // paragraph beneath it.
+        //
+        // The indent alone is not the evidence, since a column's lines drift and a hanging indent
+        // runs the other way. The page's own pattern is (`firstLineIndentRun`): the line stands at
+        // least half a body inside the previous line's edge, that edge carries the column, and the
+        // page sets other lines at the same indent under it, none of them twice in a row. The line
+        // must also read as an opening — the same type at ordinary leading, opening with a capital
+        // and holding words, not a list marker — and the line above must end a sentence, so an
+        // indented continuation inside a quotation does not break its paragraph.
+        func opensIndentedParagraph(_ line: TextLine, after prev: TextLine) -> Bool {
+            guard !page.hasSyntheticTextStyle, !page.recognized, !line.monospaced, !prev.monospaced,
+                  !isList(line.text), line.structure == nil, prev.structure == nil,
+                  line.readingRect == nil, prev.readingRect == nil,
+                  abs(line.fontSize - prev.fontSize) <= max(line.fontSize, prev.fontSize) * 0.1,
+                  !headingTypography(line), !headingTypography(prev) else { return false }
+            let indent = line.rect.minX - prev.rect.minX
+            guard indent >= body * 0.5, indent < body * 1.5, endsSentence(prev),
+                  isWordy(line.text), opensWithCapital(line) else { return false }
+            return firstLineIndentRun(in: free, step: indent, size: line.fontSize)
+        }
         // A paragraph set off by added space alone opens a paragraph even where that space falls
         // under the ordinary threshold. The USGS Mineral Commodity Summaries leave a blank line
         // between paragraphs at 11.04-point leading, but their line rectangles are 13.76 points
@@ -4101,6 +4200,7 @@ enum LayoutReconstructor {
                     // #141) still open one paragraph each at their raised numbers.
                     let nextNote = raisedNoteNumber(line) != nil && raisedNoteNumber(paragraph) != nil
                     if prev.wraps == false || !sameColumn || shortEnding || endsCaption || nextNote
+                        || opensIndentedParagraph(line, after: prev)
                         || opensSection(line, after: prev, gap: verticalGap, leading: previousGap)
                         || opensSpacedParagraph(line, after: prev, gap: verticalGap, leading: previousGap)
                         || opensHangingEntry(line, after: prev, first: paragraphFirst) {
@@ -4134,6 +4234,7 @@ enum LayoutReconstructor {
         joinColumnContinuations(&result, page: page, images: images.map(\.0) + clusters(page.tints, distance: 4),
                                 vocabulary: vocabulary, warnings: &warnings)
         joinWordBreaks(&result, page: page, body: body, vocabulary: vocabulary, warnings: &warnings)
+        attachEdgeCredits(&result, page: page, images: images, body: body)
         for note in footnotes?.notes ?? [] {
             var text = FootnoteDetector.normalizedMarker(elements[note.range.lowerBound].line!.content)
             for index in note.range.dropFirst() {
@@ -4833,6 +4934,92 @@ enum LayoutReconstructor {
         }
         return true
     }
+
+    /// A photo credit set against a preserved image's edge reads beside that image (#159).
+    ///
+    /// *Agricultural Research* prints each photograph's credit in six-point capitals a point or
+    /// two outside the picture, at one corner, above it as often as below. Read where it stands,
+    /// such a line takes the place the page's reading order gives it, which on pages 13 and 17 is
+    /// the top of the page while the picture it names is the last block: the credit and its
+    /// picture come apart, and nothing afterwards says they belong together.
+    ///
+    /// The line is recognized by its setting, never by its words: it is a paragraph of its own
+    /// holding one source line, set in the smallest type the page uses and smaller than the body,
+    /// standing within half a body of a preserved region's top or bottom edge, wholly inside that
+    /// region's width, outside every region, with no other line between it and that edge. A
+    /// caption is set larger and, where it wraps, holds more than one line; a label inside the
+    /// picture is inside the region; a running foot spans the page rather than one picture.
+    ///
+    /// The block moves to the near side of its region's image — after it for a credit set below
+    /// the picture, before it for one set above — so a credit already beside its picture stays
+    /// where it is. Only a region this page emitted as an image can take one, and a region with
+    /// two such lines (the magazine sets one under each of page 6's photographs) keeps both in
+    /// their own order.
+    static func attachEdgeCredits(_ blocks: inout [ReflowBlock], page: PageContent,
+                                  images: [(CGRect, String)], body: CGFloat) {
+        guard !page.hasSyntheticTextStyle, !page.recognized, !images.isEmpty, body > 0 else { return }
+        let sizes = page.lines.map(\.fontSize).filter { $0 > 0 && $0.isFinite }
+        guard let smallest = sizes.min(), smallest < body * 0.9 else { return }
+        let regions = images.map(\.0)
+        /// The region `line` is credited to, and whether the line stands below it.
+        func credited(_ line: TextLine) -> (asset: String, below: Bool)? {
+            guard abs(line.fontSize - smallest) <= 0.01, line.rect.isFinite, line.rect.width > 0,
+                  raisedNoteNumber(line) == nil,
+                  !regions.contains(where: { $0.intersects(line.rect) }) else { return nil }
+            for (region, asset) in images {
+                // A credit tags one corner of its picture; a note or a caption set under a figure
+                // runs the measure. Half the picture's width separates them (#141's DGA notes).
+                // A thin rule is a page's decoration, not a picture anything is credited to: the
+                // magazine's foot rule runs under every page, a point above the credit beneath the
+                // photograph, and is preserved as an image of its own.
+                guard !isThinRule(region),
+                      line.rect.minX >= region.minX - body * 0.25, line.rect.maxX <= region.maxX + body * 0.25,
+                      line.rect.width <= region.width * 0.5 else { continue }
+                let below = line.rect.maxY <= region.minY
+                let gap = below ? region.minY - line.rect.maxY : line.rect.minY - region.maxY
+                guard gap >= 0, gap <= body * 0.5 else { continue }
+                // The credit stands against that edge alone: no other line of the page reaches
+                // the band between the picture and the credit's far side, anywhere across the
+                // picture. Our Flag's page 11 sets `Courtesy U.S. Naval Academy Museum` on the
+                // same row as the caption `“Old Ironsides” in the War of 1812.` beneath one
+                // engraving, and the row reads left to right where it stands; a credit that
+                // shares its edge with other text is part of such a row, not a tag on the corner.
+                let band = below ? (line.rect.minY, region.minY) : (region.maxY, line.rect.maxY)
+                let crowded = page.lines.contains { other in
+                    other != line && other.rect.maxY > band.0 && other.rect.minY < band.1
+                        && other.rect.maxX > region.minX - body * 0.25
+                        && other.rect.minX < region.maxX + body * 0.25
+                }
+                if !crowded { return (asset, below) }
+            }
+            return nil
+        }
+        var moved = 0
+        var index = 0
+        while index < blocks.count {
+            guard blocks[index].page == page.number, case let .paragraph(text) = blocks[index].content,
+                  let line = firstLine(of: text.text, in: page.lines),
+                  line.text.trimmingCharacters(in: .whitespaces) == text.text.trimmingCharacters(in: .whitespaces),
+                  let credit = credited(line),
+                  let image = blocks.firstIndex(where: { block in
+                      guard block.page == page.number, case let .image(image) = block.content else { return false }
+                      return image.assetID == credit.asset
+                  }) else {
+                index += 1
+                continue
+            }
+            let target = credit.below ? image + 1 : image
+            guard target != index, target != index + 1, moved < page.lines.count else {
+                index += 1
+                continue
+            }
+            let block = blocks.remove(at: index)
+            blocks.insert(block, at: target > index ? target - 1 : target)
+            moved += 1
+            if target <= index { index += 1 }
+        }
+    }
+
 
     /// Every join appends the right-hand line verbatim, so a paragraph's last line is a suffix of
     /// its text; its first line may have lost a line-ending hyphen to the join that followed.

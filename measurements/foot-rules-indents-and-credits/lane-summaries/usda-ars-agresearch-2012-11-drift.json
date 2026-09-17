@@ -1,0 +1,200 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "usda-ars-agresearch-2012-11",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "5bf02b125d413b9b36ce571e9e7b36480e3421ed26d11f81e213b0fd67aff8f5",
+  "candidateConverterSHA256": "7ccec258b72f15ee1afcc933b3aae3377636f6d9f7b34cbd6c2be5aa2b6c960b",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-baseline",
+      "programsSHA256": "1d83732cbc871b3f57e939929abdbb294e339af54e548e68954ebeea62579ac7"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    15,
+    17,
+    18,
+    19,
+    22,
+    24
+  ],
+  "changedPageFields": {
+    "6": [
+      "anchors",
+      "headingLevels",
+      "headingRanks",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "7": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "8": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "9": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "10": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "11": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "12": [
+      "anchors",
+      "headingLevels",
+      "headingRanks",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "13": [
+      "anchors",
+      "headingLevels",
+      "headingRanks",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "15": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "17": [
+      "anchors",
+      "headingLevels",
+      "headingRanks",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text",
+      "warnings"
+    ],
+    "18": [
+      "anchors",
+      "headingLevels",
+      "headingRanks",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "19": [
+      "anchors",
+      "headingLevels",
+      "headingRanks",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "22": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "24": [
+      "headingRanks"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": true,
+  "changedNavigationPages": [
+    12,
+    13,
+    17,
+    18,
+    19,
+    6
+  ],
+  "pageMarkersEqual": true,
+  "changedReportFields": [
+    "reflowedPageCount",
+    "warnings"
+  ],
+  "idOnlyShifts": {
+    "pageCount": 1,
+    "fields": {
+      "paragraphIDs": 1
+    },
+    "navigationEntries": null,
+    "pages": {
+      "16": [
+        "paragraphIDs"
+      ]
+    }
+  },
+  "imageRenames": {
+    "count": 0,
+    "pairs": []
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

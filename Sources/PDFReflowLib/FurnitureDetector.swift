@@ -14,6 +14,11 @@ enum FurnitureDetector {
         var number: Int
         var position: CGFloat
         var fontSize: CGFloat
+        /// The line's measured glyph height, which every page reports however its text was read.
+        var height: CGFloat
+        /// The page reported no font attributes, so `fontSize` is `height` over again rather than
+        /// a type size. Two such candidates, and a pair with one of each, compare heights.
+        var estimatedSize: Bool
         var isFolio: Bool
         /// The outermost-row lines a second-row candidate sits beneath; it is removed only
         /// when all of them are.
@@ -124,12 +129,15 @@ enum FurnitureDetector {
             // must not stop a chapter-page number from being recognized, and neither must
             // their absence: a blank page whose only text is its folio (FAA `A-8`, `G-36`, the
             // last page of a lettered part) still numbers its page (#97).
-            guard isFolio || inward.min().map({ $0 >= separation }) == true else { return }
+            // A page-wide rule drawn in the gap separates the row as white space would (#159).
+            guard isFolio || inward.min().map({ $0 >= separation }) == true
+                || ruledOff(lineIndex, top: top, on: page) else { return }
             recorded.insert(lineIndex)
             // Bare folios use measured glyph height: fallback extraction estimates
             // fontSize from that height, whereas native extraction reads font attributes.
             let candidate = Candidate(pageIndex: pageIndex, lineIndex: lineIndex, number: page.number,
                                       position: position(line), fontSize: isFolio ? line.rect.height : line.fontSize,
+                                      height: line.rect.height, estimatedSize: page.requiresPageImage,
                                       isFolio: isFolio, dependsOn: dependsOn)
             let edge = top ? "top:" : "bottom:"
             ledger.groups[edge + words.joined(separator: " "), default: []].append(candidate)
@@ -209,6 +217,40 @@ enum FurnitureDetector {
         }
     }
 
+    /// Whether a page-wide rule stands between a margin row and the content inward of it (#159).
+    ///
+    /// The separation test asks that a candidate be set apart from the body, so that the last line
+    /// of a paragraph near the page edge is not mistaken for a footer. A page can print that
+    /// boundary instead of leaving it blank: *Agricultural Research* rules off its running foot on
+    /// every page and then sets a six-point photo credit eight points above the rule, and on a full
+    /// page the body's own last line sits as close, so the foot's nearest neighbour is nearer than
+    /// a line height although the page draws a boundary between them.
+    ///
+    /// Only a rule that could be that boundary counts: it is thin, spans most of the page's width,
+    /// and lies wholly in the gap between the candidate and the nearest line inward of it. A box
+    /// edge, a column rule, a figure's frame and a rule beside the text all fail one of these, and
+    /// this admits a candidate to the ledger without deciding it — the run, position, size and
+    /// repetition rules still do that.
+    private static func ruledOff(_ lineIndex: Int, top: Bool, on page: PageContent) -> Bool {
+        let line = page.lines[lineIndex]
+        var inward: [CGRect] = []
+        for (index, other) in page.lines.enumerated() where index != lineIndex {
+            let above = other.rect.midY < line.rect.midY
+            if top == above { inward.append(other.rect) }
+        }
+        guard let edge: CGFloat = top ? inward.map(\.maxY).max() : inward.map(\.minY).min(),
+              page.bounds.width > 0, page.bounds.height > 0 else { return false }
+        let low: CGFloat = top ? edge : line.rect.maxY
+        let high: CGFloat = top ? line.rect.minY : edge
+        guard low < high else { return false }
+        let thickest: CGFloat = min(line.rect.height, page.bounds.height * 0.02)
+        let narrowest: CGFloat = page.bounds.width * 0.6
+        return page.graphics.contains { rule in
+            guard rule.isFinite, rule.height <= thickest, rule.width >= narrowest else { return false }
+            return rule.minY >= low && rule.maxY <= high
+        }
+    }
+
     /// Whether a margin line is a note explaining a marker printed on its own page: it opens with
     /// a raised number (`LayoutReconstructor.raisedNoteNumber`) that another line of the page
     /// carries raised inside its text. Such a line belongs to its page however many pages repeat
@@ -258,9 +300,17 @@ enum FurnitureDetector {
                     // Bare numeric folios can shift within the margin on revised pages;
                     // their page-number offset supplies evidence that prose headers lack.
                     let folios = first.isFolio && candidate.isFolio
+                    // A page read as a whole image reports no font attributes, so its lines'
+                    // sizes are the measured glyph heights. Comparing such an estimate with a
+                    // neighbour's type size splits a run the page repeats unchanged (the
+                    // magazine's foot over its two unsupported-graphics pages, #159), so a
+                    // pair with one estimate in it compares the heights both pages do report.
+                    let estimated = first.estimatedSize || candidate.estimatedSize
+                    let reference = estimated ? first.height : first.fontSize
+                    let size = estimated ? candidate.height : candidate.fontSize
                     if !(1...2).contains(distance)
                         || abs(candidate.position - first.position) > (folios ? 0.04 : 0.004)
-                        || abs(candidate.fontSize - first.fontSize) > max(0.5, first.fontSize * (folios ? 0.25 : 0.1)) {
+                        || abs(size - reference) > max(0.5, reference * (folios ? 0.25 : 0.1)) {
                         finish()
                         run.removeAll(keepingCapacity: true)
                     }

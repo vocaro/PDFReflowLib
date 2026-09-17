@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3220 targeted checks on 555 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3269 targeted checks on 555 reviewed pages
 across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,11 +125,11 @@ Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v.
 Clocks*, *Complaint for a Civil Case*, *Investigation of Atmospheric Boundary-Layer Effects on
 Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm Compatible with a Distributed Management
 of Arrivals in the National Airspace System*, *Agricultural Research*, *Earthdata Cloud Analytics
-Project* and *Tank Health Monitoring*. They comprise 1131 ordered-text, 209 text, 395 paragraph,
-257 absent-text, 256 heading, 20 heading-level, 50 absent-heading, 89 list-item,
+Project* and *Tank Health Monitoring*. They comprise 1131 ordered-text, 209 text, 397 paragraph,
+268 absent-text, 262 heading, 20 heading-level, 50 absent-heading, 89 list-item,
 1 preformatted-lines, 28 script, 6 absent-script, 11 footnote, 34 note-link,
-61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 81 distinct-paragraph,
-196 image-presence, 35 captioned-image, 102 page-reference, 103 warning, 111 absent-warning,
+61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 92 distinct-paragraph,
+196 image-presence, 44 captioned-image, 102 page-reference, 113 warning, 111 absent-warning,
 17 source-region, 5 glyph-structure, 4 image-appearance and 9 table-cell checks, counted as
 `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
@@ -316,9 +316,11 @@ that sequence, so a preserved region's own caption cannot separate a figure from
 source printed; a block a page marker interrupts keeps only the text it holds on the page it opened,
 so a caption is judged on its own page.
 
-Thirty-five pairs are checked: 23 FAA `Figure N-M.` captions on sixteen pages, the Word paper's
+Forty-four pairs are checked: 23 FAA `Figure N-M.` captions on sixteen pages, the Word paper's
 Figure 3 and its five appendix captions, the IEEEtran paper's Fig. 1 (below its figure) and the
-TABLE I and TABLE III captions (above their tables), the TechPort Figure 1 and NBS Figures 1 and 2.
+TABLE I and TABLE III captions (above their tables), the TechPort Figure 1, NBS Figures 1 and 2, and
+the magazine's nine photo credits on pages 4, 6, 9, 12, 15, 17 and 19, three of them above their
+photograph (#159).
 Python controls reject a stray block pushed between figure and caption, a removed figure whose
 caption survives, a removed caption, a caption on the wrong side and a caption on another page; the
 same mutations on real output fail on FAA page 262, the Word paper's page 14, the IEEEtran page 7
@@ -601,7 +603,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->858 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->870 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -881,6 +883,48 @@ column, and a label set at the leading the paragraph already wraps at. Six sourc
 carry bold emphasis, bulleted definitions, box run-in heads, heading rules, exercises and a dash
 separator (FAA 211/212, Fed 32, Our Flag 27, algebra 289, Loper 60) keep every block boundary
 they had at `62877e6`.
+
+## Ruled running feet, first-line indents, small subheads and edge credits
+
+`FootRulesIndentsAndCreditsTests.swift` covers
+[#159](https://github.com/vocaro/PDFReflowLib/issues/159), read on USDA ARS *Agricultural Research*.
+
+A margin candidate the separation rule refuses is still admitted when a **page-wide rule** lies wholly
+in the gap between it and the nearest line inward, is no taller than that line or 2% of the page, and
+spans at least 60% of the page's width: the magazine rules its running foot off under every column
+and then sets a six-point photo credit eight points above the rule, so eleven pages kept a foot the
+page itself had separated. Controls refuse a rule that is too tall, half the measure, above the credit
+or overlapping the foot. A candidate also records its measured glyph height and whether its page
+reported no font attributes, so a run is not split by comparing an
+unsupported-graphics page's estimate with a neighbour's type size; a page reporting a real size a
+third larger still splits it.
+
+`LayoutReconstructor.firstLineIndentRun(in:step:size:)` reads a **first-line indent** narrower than
+the body and a half the same-column test allows: an opening line stands `step` inside the line above
+it and the line beneath returns `step` outward, at least twice on the page, and no line beneath an
+indented one shares its edge — which is what a hanging indent does, so `hangingRun`'s distinction is
+read the other way round. On that evidence `opensIndentedParagraph` breaks the paragraph when the line
+is in the same type at ordinary leading, opens with a capital, holds words, is no list line and
+follows a sentence. The magazine, the 9/11 report, Loper Bright, the Replay Clocks paper and the
+IEEEtran paper all indent 0.95–1.17 bodies and had merged every paragraph of a column into one.
+
+A **sub-heading set under the body's own size** (the magazine's nine-point bold subheads over
+ten-and-a-half point columns) is a label when it is wholly bold in a style the book repeats, its space
+above exceeds the column's own leading by half a body, and its paragraph opens beneath it on the
+page's first-line indent. Size is no evidence for such a line, so the paragraph's own opening is
+required in place of the flush opening a body-size label may have; FAA page 165's control, a
+nine-point bold line over a flush paragraph, stays prose.
+
+`LayoutReconstructor.attachEdgeCredits` moves a **photo credit** to the near side of its picture:
+a paragraph of one source line, in the page's smallest type and smaller than the body, within half a
+body of a preserved region's top or bottom edge, inside its width and no wider than half of it,
+outside every region, with no raised note marker and nothing else reaching the band between the
+picture and the credit. Our Flag page 11 is the source control — a caption and a credit on one row
+under an engraving keep their left-to-right order — and synthetic controls refuse body-size type, a
+line over half the picture's width, a body of space, a line outside the measure, a note and a thin
+rule in place of a picture. The magazine contract adds eleven absent-foot, six heading, thirteen
+paragraph and nine captioned-image checks; see the
+[foot-rule, indent and credit evidence](../measurements/foot-rules-indents-and-credits/record.md).
 
 ## Hanging-indent entries
 

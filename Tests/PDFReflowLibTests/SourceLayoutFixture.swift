@@ -53,6 +53,9 @@ struct SourceLayoutFixture: Decodable {
     struct Paint: Decodable {
         var rect: [Double]
         var frame: Bool
+        /// Image XObject and fill-operator evidence (#117); absent in older fixtures, read as false.
+        var image: Bool?
+        var filled: Bool?
     }
     var sourceSHA256: String
     var page: Int
@@ -84,7 +87,8 @@ struct SourceLayoutFixture: Decodable {
         }
         var page = PageContent(number: page, bounds: rect(bounds), lines: textLines, graphics: graphics.map(rect))
         if tinted, let paints {
-            let composed = TintDetector.compose(paints.map { GraphicsReader.Paint(rect: rect($0.rect), frame: $0.frame) },
+            let composed = TintDetector.compose(paints.map { GraphicsReader.Paint(rect: rect($0.rect), frame: $0.frame,
+                                                                                  image: $0.image ?? false, filled: $0.filled ?? false) },
                                                 lines: textLines, bounds: page.bounds)
             page.graphics = composed.graphics
             page.tints = composed.tints

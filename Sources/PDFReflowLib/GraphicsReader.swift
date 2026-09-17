@@ -46,7 +46,11 @@ enum GraphicsReader {
             .sorted { $0.x < $1.x }
     }
 
-    struct Paint: Equatable, Sendable { var rect: CGRect; var frame: Bool }
+    /// `image` marks an image XObject's footprint, as a scan is; paths, form boxes and shadings
+    /// are not. `filled` marks a path painted by a fill operator (alone or with a stroke), as a
+    /// callout box is and a stroked streamline is not (#117). `frame` is described above
+    /// `columnJoints`.
+    struct Paint: Equatable, Sendable { var rect: CGRect; var frame: Bool; var image = false; var filled = false }
     /// Where one text-showing operator placed its text, for deciding whether it can be seen
     /// (#74, #85). In horizontal writing every glyph of a show sits on `baseline`; `left` is a
     /// lower bound on its first glyph's x (glyph advances are never negative, but kerning and
@@ -273,11 +277,11 @@ enum GraphicsReader {
             textOffset = 0
             positioned = true; chainStart = nil
         }
-        func paint() {
+        func paint(filled: Bool = false) {
             defer { finishPath() }
             guard accept(), !path.isNull else { return }
             guard let shown = visible(path.insetBy(dx: -2, dy: -2)) else { return }
-            add(shown, frame: pathIsRectangles && figureDepth == 0)
+            add(shown, frame: pathIsRectangles && figureDepth == 0, filled: filled)
         }
         /// The part of a footprint the clip in force lets show, or nil when none of it can. A
         /// path's or image's extent is not its ink: FAA illustrations draw streamlines, arrows and
@@ -288,8 +292,8 @@ enum GraphicsReader {
             let shown = rect.intersection(clip)
             return shown.isNull || shown.isEmpty ? nil : shown
         }
-        func add(_ rect: CGRect, frame: Bool = false) {
-            if paints.count < 10_000 { paints.append(Paint(rect: rect, frame: frame)) }
+        func add(_ rect: CGRect, frame: Bool = false, image: Bool = false, filled: Bool = false) {
+            if paints.count < 10_000 { paints.append(Paint(rect: rect, frame: frame, image: image, filled: filled)) }
             else { unsupported = true }
         }
     }
@@ -401,21 +405,24 @@ enum GraphicsReader {
             s.pathRectangles += 1
             if !Self.axisAligned(s.matrix) { s.pathAxisAligned = false }
         }
-        for op in ["S", "s", "b", "b*"] {
+        for op in ["S", "s"] {
             CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).paint() }
+        }
+        for op in ["b", "b*"] {
+            CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).paint(filled: true) }
         }
         for op in ["B", "B*"] {
             CGPDFOperatorTableSetCallback(table, op) { _, info in
                 let s = Self.state(info)
                 s.coverFill()
-                s.paint()
+                s.paint(filled: true)
             }
         }
         for op in ["f", "F", "f*"] {
             CGPDFOperatorTableSetCallback(table, op) { _, info in
                 let s = Self.state(info)
                 s.coverFill()
-                if s.white { s.finishPath() } else { s.paint() }
+                if s.white { s.finishPath() } else { s.paint(filled: true) }
             }
         }
         CGPDFOperatorTableSetCallback(table, "gs") { scanner, info in
@@ -486,7 +493,7 @@ enum GraphicsReader {
             }
             switch String(cString: subtype) {
             case "Image":
-                if let shown = s.visible(CGRect(x: 0, y: 0, width: 1, height: 1).applying(s.matrix)) { s.add(shown) }
+                if let shown = s.visible(CGRect(x: 0, y: 0, width: 1, height: 1).applying(s.matrix)) { s.add(shown, image: true) }
                 // Masked, soft-masked, stencil and optional images can leave what is beneath visible.
                 var flag: CGPDFBoolean = 0
                 var object: CGPDFObjectRef?
@@ -561,7 +568,7 @@ enum GraphicsReader {
         // both, #99) shows nothing; its intersection is the infinite null rectangle, not a paint.
         let paints = s.paints.compactMap { paint -> Paint? in
             let visible = paint.rect.intersection(bounds)
-            return visible.isNull ? nil : Paint(rect: visible, frame: paint.frame)
+            return visible.isNull ? nil : Paint(rect: visible, frame: paint.frame, image: paint.image, filled: paint.filled)
         }
         return Result(regions: clusters(paints.map(\.rect), distance: 4), paints: paints,
                       unsupported: s.unsupported, hasOnlyInvisibleText: !s.unsupported && s.invisibleText && !s.visibleText,
@@ -858,7 +865,7 @@ enum GraphicsReader {
         guard rect.isFinite else { s.unsupported = true; return }
         // Like an image XObject, only the part inside the clip in force can show.
         if let shown = s.visible(rect) {
-            s.add(shown)
+            s.add(shown, image: true)
             if s.inlineImages.count < 10_000 { s.inlineImages.append(shown) }
         }
         // A stencil mask paints only where its samples mark; a sampled image paints its square.

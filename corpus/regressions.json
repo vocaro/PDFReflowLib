@@ -3817,7 +3817,7 @@
     {
       "id": "dga-2025-2030",
       "sourceSHA256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
-      "basis": "Page 2 source raster reviewed; protects letter paragraph order and imagery, not the known page-3 protein-column defect. Page 1 source title and labels visually reviewed: the distinct Guidelines / For Americans lines retain their word boundary, and source Type3 character maps/TJ adjustments support intact Dairy and Vegetables. Graphic-label ownership remains unqualified; retain the source image and review warning. Pages 3-5 (#75) reviewed against the source: with the page tags applied, each bullet of the two-column lists reads whole instead of interleaving line by line. Pages 2, 4, 8 and 9 (#91) reviewed against the source: with space-only shows no longer rejecting their tag groups, letter paragraphs separate, the right-column bullets precede the next section title, and two-column bullets read whole. Pages 4 and 9 (#103) reviewed against the source: Incorporate Healthy Fats follows the right column's last bullet and its two sub-items, and the Older Adults bullet reads its left column whole before its right column. Pages 3, 6, 7 and 10 (#13) reviewed against the source: shaded and illustrated pages keep reflowed text with preserved regions and no whole-page image fallback; the interleaved two-column bullets on pages 7 and 10 remain a known defect and are not asserted.",
+      "basis": "Page 2 source raster reviewed; protects letter paragraph order and imagery, not the known page-3 protein-column defect. Page 1 source title and labels visually reviewed: the distinct Guidelines / For Americans lines retain their word boundary, and source Type3 character maps/TJ adjustments support intact Dairy and Vegetables. Graphic-label ownership remains unqualified; retain the source image and review warning. Pages 3-5 (#75) reviewed against the source: with the page tags applied, each bullet of the two-column lists reads whole instead of interleaving line by line. Pages 2, 4, 8 and 9 (#91) reviewed against the source: with space-only shows no longer rejecting their tag groups, letter paragraphs separate, the right-column bullets precede the next section title, and two-column bullets read whole. Pages 4 and 9 (#103) reviewed against the source: Incorporate Healthy Fats follows the right column's last bullet and its two sub-items, and the Older Adults bullet reads its left column whole before its right column. Pages 3, 6, 7 and 10 (#13) reviewed against the source: shaded and illustrated pages keep reflowed text with preserved regions and no whole-page image fallback; the interleaved two-column bullets on pages 7 and 10 remain a known defect and are not asserted. Pages 2-8 (#117) reviewed against the source: pages 3-5 cluster section bands, icons, callout boxes and a margin timeline into a page-sized region whose crops leave only the running foot, so they reflow beside the banner, icon and footer crops without the unverified-text-layer warning or a source-page reference; the Gut Health, Added Sugars, Sodium and infant-feeding callouts reflow with their tab titles; page 6's first bullet row and page 2's footnotes 2 and 4 leave their crops. Page 1 keeps the reference and warning deliberately: its visible lettering is filled outlines over a full-page fill, and its text layer is a Type3 font whose glyph procedures paint nothing.",
       "pages": [
         {
           "page": 1,
@@ -3850,18 +3850,30 @@
               "first": "for so many Americans.",
               "second": "The United States is amid a health emergency."
             }
+          ],
+          "paragraphs": [
+            "nchs/fastats/obesity-overweight.htm",
+            "military-readiness/unfit-to-serve.html"
           ]
         },
         {
           "page": 3,
-          "minimumImages": 1,
+          "minimumImages": 4,
           "paragraphs": [
             "+ Prioritize high-quality, nutrient-dense protein foods as part of a healthy dietary pattern.",
-            "+ Consume meat with no or limited added sugars, refined carbohydrates or starches, or chemical additives."
+            "+ Consume meat with no or limited added sugars, refined carbohydrates or starches, or chemical additives.",
+            "+ Your gut contains trillions of bacteria and other microorganisms called the microbiome."
           ],
           "absentWarningCodes": [
             "pageImageFallback",
-            "unsupportedGraphics"
+            "unsupportedGraphics",
+            "unverifiedTextLayer"
+          ],
+          "headings": [
+            "Eat the Right Amount for You",
+            "Prioritize Protein Foods at Every Meal",
+            "Consume Dairy",
+            "Gut Health"
           ]
         },
         {
@@ -3879,6 +3891,13 @@
             "- Fruits: 2 servings per day",
             "Incorporate Healthy Fats",
             "+ Healthy fats are plentiful"
+          ],
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ],
+          "minimumImages": 4,
+          "paragraphs": [
+            "+ If preferred, flavor with salt, spices, and herbs."
           ]
         },
         {
@@ -3891,17 +3910,30 @@
           ],
           "paragraphs": [
             "+ Limit foods and beverages that include artificial flavors"
+          ],
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ],
+          "minimumImages": 2,
+          "headings": [
+            "Limit Highly Processed Foods, Added Sugars, & Refined Carbohydrates",
+            "Added Sugars"
           ]
         },
         {
           "page": 8,
           "paragraphs": [
             "+ Focus on whole, nutrient-dense foods such as protein foods, dairy, vegetables, fruits, healthy fats, and whole grains.",
-            "+ Adolescents should eat nutrient-dense foods such as dairy, leafy greens, and iron-rich animal foods, while significantly limiting sugary drinks and energy drinks and avoiding highly processed foods."
+            "+ Adolescents should eat nutrient-dense foods such as dairy, leafy greens, and iron-rich animal foods, while significantly limiting sugary drinks and energy drinks and avoiding highly processed foods.",
+            "+ Parents and caregivers can encourage healthy eating by offering new foods multiple times"
           ],
           "headings": [
             "Middle Childhood (5–10 Years)",
-            "Adolescence (11–18 Years)"
+            "Adolescence (11–18 Years)",
+            "Introducing Food to Infants & Toddlers"
+          ],
+          "listItems": [
+            "- Swallows food instead of pushing it back out onto their chin"
           ]
         },
         {
@@ -3932,6 +3964,18 @@
           "absentWarningCodes": [
             "pageImageFallback",
             "unsupportedGraphics"
+          ],
+          "headings": [
+            "Limit Alcoholic Beverages",
+            "Sodium"
+          ],
+          "paragraphs": [
+            "+ Consume less alcohol for better overall health.",
+            "+ Sodium and electrolytes are essential for hydration."
+          ],
+          "listItems": [
+            "- Ages 1–3: less than 1,200 mg per day",
+            "- Ages 9–13: less than 1,800 mg per day"
           ]
         },
         {

@@ -77,7 +77,7 @@ private typealias CaptureFont = UIFont
             "sourceURL": item["downloadURL"] ?? item["url"] ?? "", "sourceTitle": item["title"]!,
             "rightsBasis": item["rightsBasis"] ?? "See corpus manifest and third-party notices.",
             "bounds": rect(page.bounds(for: .cropBox)), "graphics": graphics.regions.map(rect),
-            "paints": graphics.paints.map { ["rect": rect($0.rect), "frame": $0.frame] as [String: Any] },
+            "paints": graphics.paints.map { ["rect": rect($0.rect), "frame": $0.frame, "image": $0.image, "filled": $0.filled] as [String: Any] },
             "lines": lines.map { line -> [String: Any] in
                 var entry: [String: Any] = ["text": line.text, "rect": rect(line.rect), "fontSize": line.fontSize,
                                             "monospaced": line.monospaced]

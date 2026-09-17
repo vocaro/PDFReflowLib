@@ -1255,16 +1255,20 @@ enum LayoutReconstructor {
     ///   with `Appendix C` into one line whose rectangle starts at x −18.7, 27 pt short of the
     ///   shadow's right end). It is decoration; the title reflows as a heading,
     ///   and a body line its blur touches (page 461) reflows too.
-    /// - A band is a strip no taller than twice its one title's line, set level with the title and
+    /// - A band is a strip no taller than twice its one title, set level with the title and
     ///   touching no other text (DGA page 9's section bands under `Young Adulthood`, `Pregnant
     ///   Women` and `Lactating Women`). A band the title overhangs keeps its part beyond the title,
     ///   as the band beside `Older Adults` (0.9 pt clear of its title) always did; a band that holds
-    ///   the whole title is the title's background and is dropped.
+    ///   the whole title is the title's background and is dropped. With `stacked`, the per-paint
+    ///   judgement in `TintDetector.withoutTitleBackdrops` (#117), the title may also be one title
+    ///   wrapped onto stacked lines of one size from one left edge, measured together (DGA page 5's
+    ///   `Limit Highly Processed Foods, Added Sugars,` / `& Refined Carbohydrates`); a cluster's two
+    ///   title lines (the Fed's boxed figure title bars) are still not a band.
     ///
     /// Title type is at least 1.25 body (the heading threshold of `blocks`) and carries a word.
     /// Paint order is not recorded in the page model, so the evidence is the art's shape: a figure
     /// behind a title extends well beyond it or holds other text.
-    private static func titleArt(_ rect: CGRect, in lines: [TextLine], body: CGFloat) -> CGRect?? {
+    static func titleArt(_ rect: CGRect, in lines: [TextLine], body: CGFloat, stacked allowStacked: Bool = false) -> CGRect?? {
         guard !isThinRule(rect), rect.width > 0, rect.height > 0 else { return nil }
         let touching = lines.filter { $0.rect.intersects(rect) }
         let titles = touching.filter { line in
@@ -1288,15 +1292,20 @@ enum LayoutReconstructor {
         if grazed, hull.insetBy(dx: -size, dy: -size).contains(rect), covered >= area(rect) * 0.6 {
             return .some(nil)
         }
-        guard titles.count == 1, others.isEmpty, let title = titles.first,
-              rect.height <= title.rect.height * 2, rect.width >= rect.height * 3,
-              rect.minY <= title.rect.minY + 2, rect.maxY >= title.rect.maxY - 2 else { return nil }
+        let stacked = titles.sorted { $0.rect.minY > $1.rect.minY }
+        let oneTitle = zip(stacked, stacked.dropFirst()).allSatisfy { upper, lower in
+            abs(upper.fontSize - lower.fontSize) <= upper.fontSize * 0.1 && abs(upper.rect.minX - lower.rect.minX) <= body
+                && lower.rect.maxY >= upper.rect.minY - upper.fontSize * 0.5
+        }
+        guard oneTitle, allowStacked || titles.count == 1, others.isEmpty,
+              rect.height <= hull.height * 2, rect.width >= rect.height * 3,
+              rect.minY <= hull.minY + 2, rect.maxY >= hull.maxY - 2 else { return nil }
         let gap: CGFloat = 0.5
         var kept: CGRect?
-        if title.rect.minX < rect.minX, title.rect.maxX < rect.maxX {
-            kept = CGRect(x: title.rect.maxX + gap, y: rect.minY, width: rect.maxX - title.rect.maxX - gap, height: rect.height)
-        } else if title.rect.maxX > rect.maxX, title.rect.minX > rect.minX {
-            kept = CGRect(x: rect.minX, y: rect.minY, width: title.rect.minX - gap - rect.minX, height: rect.height)
+        if hull.minX < rect.minX, hull.maxX < rect.maxX {
+            kept = CGRect(x: hull.maxX + gap, y: rect.minY, width: rect.maxX - hull.maxX - gap, height: rect.height)
+        } else if hull.maxX > rect.maxX, hull.minX > rect.minX {
+            kept = CGRect(x: rect.minX, y: rect.minY, width: hull.minX - gap - rect.minX, height: rect.height)
         }
         guard let band = kept, band.width >= rect.height else { return .some(nil) }
         return .some(band)
@@ -1709,7 +1718,12 @@ enum LayoutReconstructor {
         // Every element of the part falls on one side of each band `horizontalBands` reports.
         guard let band = horizontalBands(upper).last(where: { $0.width > bodySize * 1.1 }) else { return nil }
         let tail = upper.filter { $0.rect.maxY < band.y }
-        guard (1...2).contains(tail.count), tail.allSatisfy({ isHeadingType($0, bodySize: bodySize) }) else { return nil }
+        // A section icon ordered in its heading's row (#117) stays with the heading.
+        let headings = tail.filter { isHeadingType($0, bodySize: bodySize) }
+        let row = union(headings.map(\.rect))
+        let icons = tail.filter { $0.line == nil && $0.box == nil && $0.table == nil
+            && $0.rect.minY >= row.minY - 0.5 && $0.rect.maxY <= row.maxY + 0.5 }
+        guard (1...2).contains(headings.count), headings.count + icons.count == tail.count else { return nil }
         return band.y
     }
 
@@ -2056,8 +2070,23 @@ enum LayoutReconstructor {
             (isHeadingSize(line) || labels.contains(untagged(line)))
                 && !isContentsEntry(line.text) && !isHeaderLike(line, in: page, bothBands: true)
         }
+        // A section icon reads in its heading's row (#117). DGA pages 3–6 set a circular photo in
+        // the margin beside each section title, taller than the title: it reaches into the last
+        // line of the section above and the first bullets below, closes the whitespace between
+        // sections, and the columns interleave. A region holding no text, set within two bodies
+        // left of a heading-size line whose middle it spans and no taller than three such lines,
+        // is ordered at the uppermost such line's height. The image itself is unchanged.
+        func readingRect(ofRegion rect: CGRect) -> CGRect {
+            guard !free.contains(where: { $0.rect.intersects(rect) }) else { return rect }
+            let titles = free.filter { line in
+                isHeadingSize(line) && line.rect.minX >= rect.maxX && line.rect.minX - rect.maxX <= body * 2
+                    && line.rect.midY > rect.minY && line.rect.midY < rect.maxY && rect.height <= line.rect.height * 3
+            }
+            guard let title = titles.max(by: { $0.rect.maxY < $1.rect.maxY }) else { return rect }
+            return CGRect(x: rect.minX, y: title.rect.minY, width: rect.width, height: title.rect.height)
+        }
         let spatial = boxed(free.map { Element(rect: $0.readingRect ?? $0.rect, line: $0) }
-            + images.map { Element(rect: $0.0, image: $0.1) }
+            + images.map { Element(rect: readingRect(ofRegion: $0.0), image: $0.1) }
             + tables.enumerated().map { Element(rect: $0.element.ownedLines.map(\.rect).reduce($0.element.bounds) { $0.union($1) }, table: $0.offset) },
             tints: page.tints, bodySize: body)
         // A line runs on into the line beneath it: set directly below at ordinary leading on the

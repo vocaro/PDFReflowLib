@@ -136,15 +136,157 @@ enum TintDetector {
         }
     }
 
+    /// Title backdrops painted into other art (#117). `LayoutReconstructor.titleArt` judges a
+    /// painted cluster, so a section band or tab that touches an icon, a photograph or a connector
+    /// is never judged on its own: DGA pages 3–6 set each 18-pt section title on a gradient band
+    /// abutting a circular photo, and page 7's callout title on a tab joined to its box. Here each
+    /// vector paint is judged with the non-image paints it touches inside its own height (a band's
+    /// inner stroke and end tick), largest first, before anything clusters. Title art is removed
+    /// or trimmed exactly as the cluster rule would; images, rectangle frames (`TintDetector`'s own
+    /// evidence) and rows lying inside another paint (a boxed figure's title bar, Fed page 130) are
+    /// never judged here.
+    ///
+    /// Cost is bounded for vector-dense drawings: a page with more than `titleBackdropCandidateLimit`
+    /// candidate paints is left to clustering (the English corpus's densest candidate-bearing pages
+    /// hold 1,000–2,100, FAA figures whose output this rule never changed; DGA's hold at most 25). A
+    /// paint is judged only when a title-size line reaches into its height, and its row is read from
+    /// the paints sorted by their lower edge.
+    static let titleBackdropCandidateLimit = 500
+    static func withoutTitleBackdrops(_ paints: [GraphicsReader.Paint], lines: [TextLine]) -> [GraphicsReader.Paint] {
+        guard !lines.isEmpty else { return paints }
+        let body = max(4, LayoutReconstructor.bodySize(lines))
+        func usable(_ paint: GraphicsReader.Paint) -> Bool {
+            !paint.image && !paint.rect.isNull && paint.rect.isFinite && paint.rect.width > 0 && paint.rect.height > 0
+        }
+        let candidates = paints.indices.filter { usable(paints[$0]) && !paints[$0].frame && !isThin(paints[$0].rect) }
+        guard candidates.count <= titleBackdropCandidateLimit else { return paints }
+        // `titleArt` needs a line of title type touching the row, which lies within the paint's height.
+        let titles = lines.filter { line in
+            !line.monospaced && line.fontSize >= body * 1.25 && line.text.range(of: #"\p{L}{3,}"#, options: .regularExpression) != nil
+        }.map(\.rect)
+        guard !titles.isEmpty else { return paints }
+        let order = candidates
+            .sorted { paints[$0].rect.width * paints[$0].rect.height > paints[$1].rect.width * paints[$1].rect.height }
+        let byLowerEdge = paints.indices.filter { usable(paints[$0]) }.sorted { paints[$0].rect.minY < paints[$1].rect.minY }
+        var removed = Set<Int>()
+        var trimmed: [GraphicsReader.Paint] = []
+        for index in order where !removed.contains(index) {
+            let rect = paints[index].rect
+            guard titles.contains(where: { $0.maxY >= rect.minY - 2 && $0.minY <= rect.maxY + 2 }) else { continue }
+            // A row member's lower edge lies within rect.minY - 2 ... rect.maxY + 2.
+            var low = 0, high = byLowerEdge.count
+            while low < high {
+                let middle = (low + high) / 2
+                if paints[byLowerEdge[middle]].rect.minY < rect.minY - 2 { low = middle + 1 } else { high = middle }
+            }
+            var row: [Int] = []
+            for other in byLowerEdge[low...] {
+                let candidate = paints[other].rect
+                if candidate.minY > rect.maxY + 2 { break }
+                if !removed.contains(other) && candidate.insetBy(dx: -4, dy: -4).intersects(rect) && candidate.maxY <= rect.maxY + 2 {
+                    row.append(other)
+                }
+            }
+            let members = Set(row)
+            let hull = union(row.map { paints[$0].rect })
+            // A title bar inside a painted box is that figure's own (the Fed's boxed figures).
+            guard !paints.indices.contains(where: { !members.contains($0) && paints[$0].rect.insetBy(dx: -2, dy: -2).contains(hull) }),
+                  let art = LayoutReconstructor.titleArt(hull, in: lines, body: body, stacked: true) else { continue }
+            removed.formUnion(row)
+            if let kept = art { trimmed.append(GraphicsReader.Paint(rect: kept, frame: false)) }
+        }
+        guard !removed.isEmpty else { return paints }
+        return paints.indices.filter { !removed.contains($0) }.map { paints[$0] } + trimmed
+    }
+
+    /// Crop seeds clustered as the reader's regions are, except that a thin rule touching no text
+    /// does not bridge art into a hull over prose (#117). DGA pages 3–5 draw a timeline down the
+    /// left margin from the footer band through each section's icon, and page 6 a short connector
+    /// from its icon to the banner: joined, one hull covered every column. When a cluster's hull
+    /// meets at least two prose lines that none of its parts meets once such rules are set aside,
+    /// the rules are dropped. Rules touching a label, and clusters that take no prose, stay.
+    ///
+    /// Cost is bounded: rules and prose are found once for the page, only the hulls holding a rule
+    /// are examined, and a page whose rules times hulls, or rule-bearing hulls times seeds, exceed
+    /// `seedClusterWorkLimit` (thousands of isolated strokes) clusters as before.
+    static let seedClusterWorkLimit = 2_000_000
+    static func seedClusters(_ rects: [CGRect], lines: [TextLine]) -> [CGRect] {
+        let seeds = rects.filter { !$0.isNull && $0.isFinite }
+        let prose = lines.filter { line in
+            !line.monospaced && line.text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count >= 4
+        }
+        guard prose.count >= 2 else { return clusters(seeds, distance: 4) }
+        let body = max(4, LayoutReconstructor.bodySize(lines))
+        // A rule standing more than two bodies clear of every line (a grid's rules sit against
+        // their cells), or a horizontal rule touching only the one line it underlines.
+        let rules = Set(seeds.indices.filter { index in
+            let rule = seeds[index]
+            guard isThin(rule) else { return false }
+            if !lines.contains(where: { rule.insetBy(dx: -body * 2, dy: -body * 2).intersects($0.rect) }) { return true }
+            let touched = lines.filter { rule.intersects($0.rect) }
+            return rule.width > rule.height && touched.count == 1 && rule.midY <= touched[0].rect.minY + 3
+                && rule.minX >= touched[0].rect.minX - 4 && rule.maxX <= touched[0].rect.maxX + 4
+                && !lines.contains { $0 != touched[0] && rule.insetBy(dx: 0, dy: -3).intersects($0.rect) }
+        })
+        let hulls = clusters(seeds, distance: 4)
+        guard !rules.isEmpty, rules.count * hulls.count <= seedClusterWorkLimit else { return hulls }
+        var ruled: [Int: [Int]] = [:]
+        for rule in rules {
+            if let hull = hulls.firstIndex(where: { $0.contains(seeds[rule]) }) { ruled[hull, default: []].append(rule) }
+        }
+        guard ruled.count * seeds.count <= seedClusterWorkLimit else { return hulls }
+        var dropped = Set<Int>()
+        for (hullIndex, hullRules) in ruled {
+            let hull = hulls[hullIndex]
+            let members = seeds.indices.filter { hull.contains(seeds[$0]) }
+            guard hullRules.count < members.count else { continue }
+            let own = Set(hullRules)
+            let parts = clusters(members.filter { !own.contains($0) }.map { seeds[$0] }, distance: 4)
+            let escaped = prose.filter { line in line.rect.intersects(hull) && !parts.contains { $0.intersects(line.rect) } }
+            if escaped.count >= 2 { dropped.formUnion(own) }
+        }
+        return dropped.isEmpty ? hulls : clusters(seeds.indices.filter { !dropped.contains($0) }.map { seeds[$0] }, distance: 4)
+    }
+
+    /// Vector shapes behind prose that are not rectangles (#117): a rounded callout box (DGA
+    /// pages 3, 5, 6 and 7 draw `Gut Health`, `Added Sugars`, `Sodium` and the infant-feeding list
+    /// in one) holds the same prose evidence a rectangle frame must. A shape counts when it is
+    /// filled, holds no other paint (only text: a boxed figure holds its art, Fed page 130), and
+    /// the lines mostly inside it include at least three prose lines making up a third of them. A
+    /// filled shape touching such a box and holding only lines that fit inside it, with no other
+    /// paint within it, is the box's tab. Images are never backdrops.
+    private static func shapeBackdrops(_ finite: [GraphicsReader.Paint], lines: [TextLine]) -> [CGRect] {
+        let shapes = finite.filter { !$0.frame && !$0.image && $0.filled && !isThin($0.rect) }.map(\.rect)
+        var boxes: [CGRect] = []
+        for shape in shapes where !boxes.contains(shape) {
+            let inside = lines.filter { mostlyInside($0.rect, shape) }
+            let prose = inside.filter { isProse($0, in: shape) }
+            // The prose evidence first: only a shape holding it pays for the scan of every paint.
+            guard prose.count >= 3, prose.count * 3 >= inside.count,
+                  !finite.contains(where: { $0.rect != shape && shape.contains($0.rect) }) else { continue }
+            boxes.append(shape)
+        }
+        guard !boxes.isEmpty else { return [] }
+        let tabs = shapes.filter { tab in
+            guard !boxes.contains(tab), boxes.contains(where: { $0.insetBy(dx: -4, dy: -4).intersects(tab) }) else { return false }
+            let held = lines.filter { tab.contains(CGPoint(x: $0.rect.midX, y: $0.rect.midY)) }
+            return !held.isEmpty && held.allSatisfy { tab.insetBy(dx: -2, dy: -2).contains($0.rect) }
+                && !finite.contains { $0.rect != tab && tab.contains($0.rect) }
+        }
+        return boxes + tabs
+    }
+
     static func compose(_ paints: [GraphicsReader.Paint], lines: [TextLine], bounds: CGRect) -> Result {
+        let paints = withoutTitleBackdrops(paints, lines: lines)
         let finite = paints.filter { !$0.rect.isNull && $0.rect.isFinite }
         let stroked = strokedRectangles(finite.filter { isThin($0.rect) }.map(\.rect))
-        let candidates = finite.filter { $0.frame && !isThin($0.rect) }.map(\.rect) + stroked.map(\.rect)
+        let shapes = lines.isEmpty ? [] : shapeBackdrops(finite, lines: lines)
+        let candidates = finite.filter { $0.frame && !isThin($0.rect) }.map(\.rect) + stroked.map(\.rect) + shapes
         guard !candidates.isEmpty, !lines.isEmpty else {
-            return Result(graphics: clusters(paints.map(\.rect), distance: 4), tints: [])
+            return Result(graphics: seedClusters(paints.map(\.rect), lines: lines), tints: [])
         }
         let strokes = stroked.flatMap(\.strokes)
-        let ink = finite.filter { (!$0.frame || isThin($0.rect)) && !strokes.contains($0.rect) }.map(\.rect)
+        let ink = finite.filter { (!$0.frame || isThin($0.rect)) && !strokes.contains($0.rect) && !shapes.contains($0.rect) }.map(\.rect)
         let solidInk = ink.filter { !isThin($0) }
         var tints: [CGRect] = []
         var blocks: [(hull: CGRect, prose: [TextLine], ruled: Bool)] = []
@@ -171,7 +313,7 @@ enum TintDetector {
             }
         }
         guard !tints.isEmpty else {
-            return Result(graphics: clusters(paints.map(\.rect), distance: 4), tints: [])
+            return Result(graphics: seedClusters(paints.map(\.rect), lines: lines), tints: [])
         }
         // Rules that only touch each other inside a tinted block separate its rows and columns.
         // A rule connected to solid ink (a chart axis) stays with that graphic. A lone fraction
@@ -229,6 +371,6 @@ enum TintDetector {
             !tints.contains(rect) && !separators.contains(rect) && !consumed.contains(rect) && !consumedStrokes.contains(rect)
         }
         let tinted = tints.filter { tint in !stroked.contains { $0.rect == tint && restored.contains($0.strokes[0]) } }
-        return Result(graphics: clusters(kept + carved, distance: 4), tints: tinted, separators: separators)
+        return Result(graphics: seedClusters(kept + carved, lines: lines), tints: tinted, separators: separators)
     }
 }

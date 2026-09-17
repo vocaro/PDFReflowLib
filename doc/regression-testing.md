@@ -112,7 +112,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 1564 targeted checks on 358 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 1599 targeted checks on 363 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
@@ -503,7 +503,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-617 Swift tests with no known-issue wrappers, and 217 Python tests.
+641 Swift tests with no known-issue wrappers, and 217 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -894,6 +894,38 @@ pages 3, 453, 461, 473 and 477, the steps and sentence on pages 251 and 298, joi
 211 and 350 and the reordered captions on 165, 199 and 262; the DGA contract checks the headings on
 pages 7–10 and the joins on 7, 9 and 10. See the
 [titles and prose in crops evidence](../measurements/titles-and-prose-in-crops/record.md).
+
+## Born-digital illustrated pages
+
+`IllustratedPageTests.swift` covers [#117](https://github.com/vocaro/PDFReflowLib/issues/117). A synthetic
+page whose icons, footer band and margin timeline cluster into a page-sized region must reflow its two
+sections without `unverifiedTextLayer` or a source-page reference; the same page over a page-sized image,
+over a full-page fill, in invisible text, or with the timeline set against the prose (so its crops keep
+the text) must keep both. `layoutComesApart` is checked directly: a crop over 75% of the page refuses
+even without text in it, crops taking 15% of the words refuse and 5% do not, and invisible text or one
+page-sized paint refuse whatever the crops. `GraphicsReader` must mark image XObjects `image` and paths
+painted by `f`, `f*`, `B` and `b` (not `S` or `s`) `filled`. Source-derived `dga-{2,3,4,5,6,8}-illustrated`
+fixtures now record those flags (`tools/capture-layout-fixture.swift`; older fixtures read both as false):
+pages 3–5 must come apart with only the running foot in a crop (and not without composition); the `Gut
+Health`, `Sodium` and infant-feeding callouts must read their tab titles as headings followed by their
+first bullets, with Sodium's three age items; page 6's first bullet row and title must leave the icon's
+crop; page 4 must read `+ If preferred, flavor with salt, spices, and herbs.` whole, its sections in
+column order and each icon just before its title (not when the icons are moved beyond two bodies or
+stretched beyond three title lines), and page 5 its two-line title as one heading after its icon; page
+2's footnotes 2 and 4 must stay out of the footer crop (and not without composition). Synthetic controls
+refuse a callout shape that is stroked, holds other paint, is an image or holds two prose lines, a tab
+whose title sticks out, a connector rule within two bodies of a line, a cluster with no prose or one
+escaped line, a thick bar, an underline spanning two lines, a title backdrop that is a rectangle frame,
+lies inside a box or is an image, and a stacked title at cluster level or from two left edges.
+`sectionBandsKeepOnlyTheirPartBesideTheTitle` now reads the untrimmed bands from the reader's regions.
+`vectorDensePagesStayBoundedAndKeepTheirClustering` composes 4,021 overlapping filled marks with a title
+band (past the 500-candidate limit the band stays, the clustering equals the reader's, and a 21-mark
+control still drops it) and clusters 2,400 isolated strokes clear of the text, each within 3 s.
+Each of 24 single-guard mutations fails at least one test except the icon distance guard, which the
+column cut makes redundant on these pages. The DGA contract checks the absent warning, preserved images
+and headings on pages 3–5, the callouts and first bullet row on pages 6 and 8, and page 2's footnotes;
+the baseline fails exactly those 17 checks. See the
+[DGA preservation evidence](../measurements/dga-preservation/record.md).
 
 ## Text the rendering never shows
 

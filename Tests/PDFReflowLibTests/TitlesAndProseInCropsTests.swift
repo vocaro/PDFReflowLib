@@ -73,10 +73,13 @@ func titleShadowIsDecoration(name: String, title: String, body: String?, crops c
 @Test func sectionBandsKeepOnlyTheirPartBesideTheTitle() throws {
     let page = try source("dga-9", sha256: dgaSHA256)
     let crops = LayoutReconstructor.graphicsWithLabels(page)
+    // Composition now trims each band beside its title before clustering (#117); the reader's
+    // untrimmed regions still hold the bands whose remainder is checked.
+    let painted = try SourceLayoutFixture.load("dga-9").content(tinted: false)
     for title in ["Young Adulthood", "Pregnant Women", "Lactating Women"] {
         let titleLine = try line(page, title)
         #expect(!crops.contains { $0.intersects(titleLine.rect) }, "\(title) inside a crop")
-        let band = try #require(page.graphics.first { $0.intersects(titleLine.rect) })
+        let band = try #require(painted.graphics.first { $0.intersects(titleLine.rect) })
         let kept = try #require(crops.first { $0.intersects(band) }, "\(title) lost its band")
         #expect(kept.minX > titleLine.rect.maxX && kept.minX < titleLine.rect.maxX + 1)
         #expect(abs(kept.maxX - band.maxX) < 0.01 && abs(kept.minY - band.minY) < 0.01 && abs(kept.height - band.height) < 0.01)

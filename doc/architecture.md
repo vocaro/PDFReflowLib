@@ -194,7 +194,23 @@ the same way without rules (#121, FAA page 131): where PDFKit keeps one row's tw
 ems' leading, in the same size, are read against that gap, and their crossing lines are cut where
 the selections show two ems of whitespace, only when the run opens with a heading in capitals on
 both sides, at least three rows hold text on both sides, an em of whitespace is common to every
-row and nothing painted lies within it. The page-sized-graphic review signal still reads the painted regions
+row and nothing painted lies within it. The reader also marks image XObject footprints and paths
+painted by a fill operator (#117), and composition applies three more rules before clustering.
+A filled vector shape that is not a rectangle and holds no other paint (a rounded callout box)
+is a tint candidate on the same prose evidence, with any filled shape touching it that holds only
+lines fitting inside it (the box's title tab). Each non-rectangle vector paint, with the non-image
+paints it touches inside its own height, is judged by the title-art rule below before clustering,
+so a section band abutting an icon or photograph is judged on its own; a stacked title of one size
+and left edge counts as one title there, and a row lying inside another paint (a boxed figure's
+title bar) is not judged. Finally, a thin rule standing more than two bodies clear of every line,
+or underlining exactly one line, does not bridge a cluster whose hull would meet at least two
+prose lines that none of its other parts meets (DGA's margin timeline, an icon's connector to the
+banner, footnote link underlines above a footer band). Their cost is bounded on vector-dense
+drawings: title backdrops are not judged on a page with more than 500 candidate paints, a paint is
+judged only when a title-size line reaches into its height and its row is read from paints sorted
+by lower edge, a callout shape pays for its no-other-paint scan only after its prose evidence, and
+connector rules are sought only in hulls holding one, up to a fixed amount of rule-by-hull and
+hull-by-seed work; past those limits the page clusters as before. The page-sized-graphic review signal still reads the painted regions
 before tint removal. `OCRReader` uses Vision when policy requests it.
 `StructureTreeReader` parses a separate Core Graphics document into value-only page/MCID
 associations and exact owner paths. It checks structural parent links, page identity, RoleMap
@@ -572,7 +588,10 @@ that a painted cluster touches (#111, #112): a drop shadow, which the titles' re
 least 60% and which reaches no further than one type size beyond them while other lines at most graze
 it, is decoration (FAA's appendix and chapter-opener titles); a band no taller than twice its one
 title's row, level with it and touching no other text, keeps only its part beyond a title that
-overhangs its end, and is dropped when it holds the whole title (DGA's section bands). Paint order
+overhangs its end, and is dropped when it holds the whole title (DGA's section bands). A region
+holding no text, set within two bodies left of a heading-size line whose middle it spans and no
+taller than three such lines, is ordered at that line's height (DGA's section icons, #117), and
+#103's trailing heading keeps such an icon with its heading. Paint order
 is not in the page model, so a figure behind a title is told apart by extending well beyond it or
 holding other text. A line with an equals sign seeds a formula crop only when that sign
 is outside a web address's query string (`print.php3?ReportID=145`, `item_id=1645&content_type_id=7`),
@@ -598,7 +617,14 @@ regions. Arbitrary mathematical structures remain outside this bounded detector.
 with empty selections discarded before layout, vocabulary, OCR selection and coverage counting.
 
 Existing text over a graphic covering more than 75% of the page gets `unverifiedTextLayer` and
-an accompanying source-page image under the default reference policy. This conservative review signal does not establish that
+an accompanying source-page image under the default reference policy. The painted region counts
+when one paint covers more than 75% of the page (a scan, a full-page background fill such as the
+Fed's colophon tint or the DGA cover's), when any text is invisible, or unless the page's crops
+come apart (`PDFReflowLibPipeline.layoutComesApart`, #117): after tint composition and label
+expansion no crop covers 75% of the page and the crops take at most a tenth of its words. DGA
+pages 3–5 cluster section bands, circular photo icons, callout boxes and a margin timeline into
+one page-sized region whose crops leave only the running foot; they reflow beside those crops.
+NOAA's photo-and-chart pages, whose crops would still hold their text, keep the signal. This conservative review signal does not establish that
 text is OCR, detect every corrupted layer, or assess individual table cells. Fresh OCR keeps
 its separate `ocrUsed` notice; image-only fallbacks keep `pageImageFallback`.
 

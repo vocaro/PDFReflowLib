@@ -13,6 +13,25 @@ enum PDFReflowLibPipeline {
         var noteLinks = NoteLinker.Summary()
     }
 
+    /// Whether a page whose painted regions cluster into a page-sized one is a born-digital layout
+    /// rather than text over a picture of the page (#117). The review signal stays for a page with
+    /// any invisible text (an inherited OCR layer), with one paint covering more than 75% of it (a
+    /// scan, a full-page background: the Fed's colophon tint, the DGA cover's fill under outlined
+    /// lettering), or whose own crops do not come apart: `content` is the page after tint
+    /// composition, and its crops (`graphicsWithLabels`) must neither cover 75% of the page nor
+    /// take more than a tenth of its words. DGA pages 3–5 cluster section bands, icons, callout
+    /// boxes and a margin timeline into one region whose crops leave only the running foot; NOAA's
+    /// photo-and-chart pages, whose crops would still hold their text, keep the reference.
+    static func layoutComesApart(_ content: PageContent, graphics: GraphicsReader.Result) -> Bool {
+        let pageArea = content.bounds.width * content.bounds.height
+        guard !graphics.hasInvisibleText,
+              !graphics.paints.contains(where: { $0.rect.width * $0.rect.height > pageArea * 0.75 }) else { return false }
+        func words(_ lines: [TextLine]) -> Int { lines.reduce(0) { $0 + $1.text.split(whereSeparator: \.isWhitespace).count } }
+        let crops = LayoutReconstructor.graphicsWithLabels(content)
+        guard !crops.contains(where: { $0.width * $0.height > pageArea * 0.75 }) else { return false }
+        return words(content.lines.filter { line in crops.contains { $0.intersects(line.rect) } }) * 10 <= words(content.lines)
+    }
+
     /// Progress covers extraction/reconstruction only, from zero to one.
     ///
     /// Extraction is one pass over every page that keeps only document-wide evidence:
@@ -111,11 +130,14 @@ enum PDFReflowLibPipeline {
                             : "A page image preserves visible annotations. Link and form interactions are not reconstructed."))
                 }
                 // Structural font evidence is read here; the text judgment follows outside the pool.
-                // The page-sized-graphic signal keeps reading the painted regions before tint
-                // removal, so a full-page background still earns the review warning and reference.
+                // The page-sized-graphic signal reads the painted regions before tint removal, so a
+                // full-page background still earns the review warning and reference. A born-digital
+                // layout whose art only clusters into such a region is exempt (`layoutComesApart`).
+                let pageArea = bounds.width * bounds.height
+                let pageSized = graphics.regions.contains { $0.width * $0.height > pageArea * 0.75 }
+                    && (requiresPageImage || !layoutComesApart(content, graphics: graphics))
                 return (content, !content.lines.isEmpty && !requiresPageImage && TextEncodingCheck.hasUnmappedFont(reference),
-                        graphics.regions.contains { $0.width * $0.height > bounds.width * bounds.height * 0.75 },
-                        graphics)
+                        pageSized, graphics)
             }
             let invisibleText = graphics.hasInvisibleText
             let bounds = content.bounds

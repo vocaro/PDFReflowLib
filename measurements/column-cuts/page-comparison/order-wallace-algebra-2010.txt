@@ -1,0 +1,942 @@
+====================================================================================================
+PAGE 438  blocks 77->77  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -1,3 +1,5 @@
+  +h    Answers - Chapter 0
+   p    0.1
+  +p    Answers - Integers
+   pre  1)− 2
+   pre  2) 5
+  @@ -21,13 +23,4 @@
+   pre  20) 2
+   pre  21)− 7
+  -p    0.2
+  -img  image-1579.png
+  -cap  Preserved region from page 438
+  -img  image-1580.png
+  -cap  Preserved region from page 438
+  -img  image-1581.png
+  -cap  Preserved region from page 438
+  -h    Answers - Chapter 0
+  -p    Answers - Integers
+   pre  22) 0
+   pre  23) 11
+  @@ -51,11 +44,4 @@
+   pre  41)− 10
+   pre  42) 4
+  -p    Answers - Fractions
+  -img  image-1582.png
+  -cap  Preserved region from page 438
+  -img  image-1583.png
+  -cap  Preserved region from page 438
+  -img  image-1584.png
+  -cap  Preserved region from page 438
+   pre  43)− 20
+   pre  44) 27
+  @@ -76,2 +62,16 @@
+   pre  59)− 6
+   pre  60)− 9
+  +p    0.2
+  +img  image-1579.png
+  +cap  Preserved region from page 438
+  +img  image-1580.png
+  +cap  Preserved region from page 438
+  +img  image-1581.png
+  +cap  Preserved region from page 438
+  +p    Answers - Fractions
+  +img  image-1582.png
+  +cap  Preserved region from page 438
+  +img  image-1583.png
+  +cap  Preserved region from page 438
+  +img  image-1584.png
+  +cap  Preserved region from page 438
+====================================================================================================
+PAGE 440  blocks 83->83  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -1,3 +1,4 @@
+   p    0.3
+  +p    Answers - Order of Operation
+   pre  1) 24
+   pre  2)− 1
+  @@ -9,5 +10,22 @@
+   pre  8) 8
+   pre  9) 6
+  +pre  10)− 6
+  +pre  11)− 10
+  +pre  12)− 9
+  +pre  13) 20
+  +pre  14)− 22
+  +pre  15) 2
+  +pre  16) 28
+  +pre  17)− 40
+  +pre  18)− 15
+  +pre  19) 3
+  +pre  20) 0
+  +pre  21)− 18
+  +pre  22)− 3
+  +pre  23)− 4
+  +pre  24) 3
+  +pre  25) 2
+   p    0.4
+  +p    Answers - Properties of Algebra
+   pre  1) 7
+   pre  2) 29
+  @@ -28,22 +46,4 @@
+   pre  17) 36
+   pre  18) 54
+  -p    Answers - Order of Operation
+  -pre  10)− 6
+  -pre  11)− 10
+  -pre  12)− 9
+  -pre  13) 20
+  -pre  14)− 22
+  -pre  15) 2
+  -pre  16) 28
+  -pre  17)− 40
+  -pre  18)− 15
+  -pre  19) 3
+  -pre  20) 0
+  -pre  21)− 18
+  -pre  22)− 3
+  -pre  23)− 4
+  -pre  24) 3
+  -pre  25) 2
+  -p    Answers - Properties of Algebra
+   pre  19) 7
+   pre  20) 38
+====================================================================================================
+PAGE 443  blocks 66->66  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -2,4 +2,7 @@
+   pre  46) All real numbers
+   pre  47) No Solution
+  +pre  48) 1
+  +pre  49)− 9
+  +pre  50) 0
+   p    1.4
+   img  image-1640.png
+  @@ -8,10 +11,4 @@
+   img  image-1631.png
+   cap  Preserved region from page 443
+  -p    1.5
+  -img  image-1648.png
+  -cap  Preserved region from page 443
+  -pre  48) 1
+  -pre  49)− 9
+  -pre  50) 0
+   p    Answers to Solving with Fractions
+   pre  11) 0
+  @@ -54,4 +51,7 @@
+   img  image-1636.png
+   cap  Preserved region from page 443
+  +p    1.5
+  +img  image-1648.png
+  +cap  Preserved region from page 443
+   p    Answers - Formulas
+   img  image-1649.png
+====================================================================================================
+PAGE 445  blocks 81->81  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -73,8 +73,8 @@
+   pre  45) 325, 950
+   p    1.9
+  +p    Answers - Age Problems
+   pre  1) 6, 16
+   pre  2) 10, 40
+   pre  3) 18, 38
+  -p    Answers - Age Problems
+   pre  4) 17, 40
+   pre  5) 27, 31
+====================================================================================================
+PAGE 446  blocks 80->80  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -11,20 +11,4 @@
+   pre  17) 10, 20
+   pre  18) 14
+  -p    1.10
+  -img  image-1674.png
+  -cap  Preserved region from page 446
+  -pre  3) 3
+  -pre  4) 10
+  -pre  5) 30, 45
+  -pre  6) 3
+  -img  image-1675.png
+  -cap  Preserved region from page 446
+  -pre  8) 10
+  -pre  9) 7
+  -pre  10) 30
+  -pre  11) 150
+  -pre  12) 360
+  -pre  13) 8
+  -p    2.1
+   pre  19) 9, 18
+   pre  20) 15, 20
+  @@ -49,4 +33,20 @@
+   pre  39) 38, 42
+   pre  40) 5
+  +p    1.10
+  +img  image-1674.png
+  +cap  Preserved region from page 446
+  +pre  3) 3
+  +pre  4) 10
+  +pre  5) 30, 45
+  +pre  6) 3
+  +img  image-1675.png
+  +cap  Preserved region from page 446
+  +pre  8) 10
+  +pre  9) 7
+  +pre  10) 30
+  +pre  11) 150
+  +pre  12) 360
+  +pre  13) 8
+  +p    2.1
+   p    Answers - Distance, Rate, and Time Problems
+   pre  14) 10
+====================================================================================================
+PAGE 448  blocks 66->66  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -7,4 +7,19 @@
+   p    21)
+   img  image-1694.png
+  +cap  Preserved region from page 448
+  +p    16)
+  +img  image-1695.png
+  +cap  Preserved region from page 448
+  +p    19)
+  +img  image-1696.png
+  +cap  Preserved region from page 448
+  +p    22)
+  +img  image-1697.png
+  +cap  Preserved region from page 448
+  +p    17)
+  +img  image-1698.png
+  +cap  Preserved region from page 448
+  +p    20)
+  +img  image-1699.png
+   cap  Preserved region from page 448
+   p    2.2
+  @@ -21,13 +36,4 @@
+   cap  Preserved region from page 448
+   p    2.3
+  -p    16)
+  -img  image-1695.png
+  -cap  Preserved region from page 448
+  -p    19)
+  -img  image-1696.png
+  -cap  Preserved region from page 448
+  -p    22)
+  -img  image-1697.png
+  -cap  Preserved region from page 448
+   p    Answers - Slope
+   img  image-1701.png
+  @@ -41,10 +47,4 @@
+   pre  23) Undefined
+   img  image-1708.png
+  -cap  Preserved region from page 448
+  -p    17)
+  -img  image-1698.png
+  -cap  Preserved region from page 448
+  -p    20)
+  -img  image-1699.png
+   cap  Preserved region from page 448
+   img  image-1702.png
+====================================================================================================
+PAGE 449  blocks 42->42  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -3,40 +3,40 @@
+   p    2.4
+   p    Answers - Slope-Intercept
+  -p    37)
+   img  image-1722.png
+   cap  Preserved region from page 449
+   p    31)
+  -img  image-1716.png
+  -cap  Preserved region from page 449
+   img  image-1710.png
+   cap  Preserved region from page 449
+  -p    38)
+   p    32)
+  -img  image-1717.png
+  -cap  Preserved region from page 449
+   img  image-1711.png
+   cap  Preserved region from page 449
+  -p    39)
+   p    33)
+  -img  image-1718.png
+  -cap  Preserved region from page 449
+   img  image-1712.png
+   cap  Preserved region from page 449
+  -p    40)
+   p    34)
+  -img  image-1719.png
+  -cap  Preserved region from page 449
+   img  image-1713.png
+   cap  Preserved region from page 449
+  -p    41)
+   p    35)
+  -img  image-1720.png
+  -cap  Preserved region from page 449
+   img  image-1714.png
+   cap  Preserved region from page 449
+   p    36)
+  -p    42)
+   img  image-1715.png
+   cap  Preserved region from page 449
+  +p    37)
+  +img  image-1716.png
+  +cap  Preserved region from page 449
+  +p    38)
+  +img  image-1717.png
+  +cap  Preserved region from page 449
+  +p    39)
+  +img  image-1718.png
+  +cap  Preserved region from page 449
+  +p    40)
+  +img  image-1719.png
+  +cap  Preserved region from page 449
+  +p    41)
+  +img  image-1720.png
+  +cap  Preserved region from page 449
+  +p    42)
+   img  image-1721.png
+   cap  Preserved region from page 449
+====================================================================================================
+PAGE 454  blocks 76->76  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -1,3 +1,5 @@
+  +h    Answers - Chapter 4
+   p    4.1
+  +p    Answers - Graphing
+   pre  1) (− 1, 2)
+   pre  2) (− 4, 3)
+  @@ -12,4 +14,24 @@
+   pre  11) (3,− 4)
+   p    4.2
+  +pre  12) (4,− 4)
+  +pre  13) (1,− 3)
+  +pre  14) (− 1, 3)
+  +pre  15) (3,− 4)
+  +pre  16) No Solution
+  +pre  17) (2,− 2)
+  +pre  18) (4, 1)
+  +pre  19) (− 3, 4)
+  +pre  20) (2,− 1)
+  +pre  21) (3, 2)
+  +pre  22) (− 4,− 4)
+  +pre  23) (− 1,− 1)
+  +pre  24) (2, 3)
+  +pre  25) (− 1,− 2)
+  +pre  26) (− 4,− 3)
+  +pre  27) No Solution
+  +pre  28) (− 3, 1)
+  +pre  29) (4,− 2)
+  +pre  30) (1, 4)
+  +p    Answers - Substitution
+   pre  1) (1,− 3)
+   pre  2) (− 3, 2)
+  @@ -27,18 +49,4 @@
+   pre  14) (0, 2)
+   p    4.3
+  -h    Answers - Chapter 4
+  -p    Answers - Graphing
+  -pre  12) (4,− 4)
+  -pre  13) (1,− 3)
+  -pre  14) (− 1, 3)
+  -pre  15) (3,− 4)
+  -pre  16) No Solution
+  -pre  17) (2,− 2)
+  -pre  18) (4, 1)
+  -pre  19) (− 3, 4)
+  -pre  20) (2,− 1)
+  -pre  21) (3, 2)
+  -pre  22) (− 4,− 4)
+  -p    Answers - Substitution
+   pre  15) (1,− 5)
+   pre  16) (− 1, 0)
+  @@ -55,12 +63,4 @@
+   pre  27) (− 2, 8)
+   pre  28) (− 4, 3)
+  -pre  23) (− 1,− 1)
+  -pre  24) (2, 3)
+  -pre  25) (− 1,− 2)
+  -pre  26) (− 4,− 3)
+  -pre  27) No Solution
+  -pre  28) (− 3, 1)
+  -pre  29) (4,− 2)
+  -pre  30) (1, 4)
+   pre  29) (4,− 3)
+   pre  30) (− 1, 5)
+====================================================================================================
+PAGE 455  blocks 72->72  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -1,2 +1,3 @@
+  +p    Answers - Addition/Elimination
+   pre  1) (− 2, 4)
+   pre  2) (2, 4)
+  @@ -11,18 +12,4 @@
+   pre  11) (− 2,− 9)
+   p    4.4
+  -pre  1) (1,− 1, 2)
+  -pre  2) (5,− 3, 2)
+  -pre  3) (2, 3,− 2)
+  -pre  4) (3,− 2, 1)
+  -pre  5) (− 2,− 1, 4)
+  -pre  6) (− 3, 2, 1)
+  -pre  7) (1, 2, 3)
+  -pre  8) ∝ solutions
+  -pre  9) (0, 0, 0)
+  -pre  10) ∝ solutions
+  -pre  11) (19, 0,− 13)
+  -p    4.5
+  -pre  1) 33Q, 70D
+  -p    Answers - Addition/Elimination
+   pre  12) (1,− 2)
+   pre  13) (0, 4)
+  @@ -49,4 +36,17 @@
+   pre  34) Infinite number of solutions
+   p    Answers - Three Variables
+  +pre  1) (1,− 1, 2)
+  +pre  2) (5,− 3, 2)
+  +pre  3) (2, 3,− 2)
+  +pre  4) (3,− 2, 1)
+  +pre  5) (− 2,− 1, 4)
+  +pre  6) (− 3, 2, 1)
+  +pre  7) (1, 2, 3)
+  +pre  8) ∝ solutions
+  +pre  9) (0, 0, 0)
+  +pre  10) ∝ solutions
+  +pre  11) (19, 0,− 13)
+  +p    4.5
+  +pre  1) 33Q, 70D
+   pre  12) ∝ solutions
+   pre  13) (0, 0, 0)
+====================================================================================================
+PAGE 457  blocks 79->79  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -5,5 +5,18 @@
+   pre  31) 75, 25
+   pre  32) 55, 20
+  +pre  33) 440, 160
+  +pre  34) 20
+  +pre  35) 35, 63
+  +pre  36) 3, 2
+  +pre  37) 1.2
+  +pre  38) 150
+  +pre  39) 10
+  +pre  40) 30, 20
+  +pre  41) 75
+  +pre  42) 20, 60
+  +pre  43) 25
+  +h    Answers - Chapter 5
+   p    5.1
+  +p    Answers to Exponent Properties
+   pre  1) 49
+   pre  2) 47
+  @@ -22,21 +35,4 @@
+   pre  15) 16a16
+   pre  16) 16x4y4
+  -p    5.2
+  -pre  1) 32x8y10
+  -img  image-1758.png
+  -cap  Preserved region from page 457
+  -pre  33) 440, 160
+  -pre  39) 10
+  -pre  34) 20
+  -pre  40) 30, 20
+  -pre  35) 35, 63
+  -pre  41) 75
+  -pre  36) 3, 2
+  -pre  42) 20, 60
+  -pre  37) 1.2
+  -pre  38) 150
+  -pre  43) 25
+  -h    Answers - Chapter 5
+  -p    Answers to Exponent Properties
+   pre  17) 42
+   pre  18) 34
+  @@ -74,5 +70,9 @@
+   pre  42) 256q4r8
+   pre  43) 4y4z
+  +p    5.2
+   p    Answers to Negative Exponents
+  +pre  1) 32x8y10
+  +img  image-1758.png
+  +cap  Preserved region from page 457
+   img  image-1759.png
+   cap  Preserved region from page 457
+====================================================================================================
+PAGE 458  blocks 89->89  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -9,18 +9,4 @@
+   cap  Preserved region from page 458
+   p    5.3
+  -pre  1) 8.85 × 102
+  -pre  2) 7.44 × 10−4
+  -pre  3) 8.1 × 10−2
+  -pre  4) 1.09 × 100
+  -pre  5) 3.9 × 10−2
+  -pre  6) 1.5 × 104
+  -pre  7) 870000
+  -pre  8) 256
+  -pre  9) 0.0009
+  -pre  10) 50000
+  -pre  11) 2
+  -pre  12) 0.00006
+  -pre  13) 1.4 × 10−3
+  -pre  14) 1.76 × 10−10
+   img  image-1761.png
+   cap  Preserved region from page 458
+  @@ -61,4 +47,18 @@
+   cap  Preserved region from page 458
+   p    Answers to Scientific Notation
+  +pre  1) 8.85 × 102
+  +pre  2) 7.44 × 10−4
+  +pre  3) 8.1 × 10−2
+  +pre  4) 1.09 × 100
+  +pre  5) 3.9 × 10−2
+  +pre  6) 1.5 × 104
+  +pre  7) 870000
+  +pre  8) 256
+  +pre  9) 0.0009
+  +pre  10) 50000
+  +pre  11) 2
+  +pre  12) 0.00006
+  +pre  13) 1.4 × 10−3
+  +pre  14) 1.76 × 10−10
+   pre  15) 1.662 × 10−6
+   pre  16) 5.018 × 106
+====================================================================================================
+PAGE 459  blocks 99->99  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -1,4 +1,5 @@
+   pre  42) 1.2 × 106
+   p    5.4
+  +p    Answers to Introduction to Polynomials
+   pre  1) 3
+   pre  2) 7
+  @@ -18,19 +19,4 @@
+   pre  15) 5n4 + 5n
+   p    5.5
+  -pre  1) 6p− 42
+  -pre  2) 32k2 +16k
+  -pre  3) 12x +6
+  -pre  4) 18n3 +21n2
+  -pre  5) 20m5 + 20m4
+  -pre  6) 12r− 21
+  -pre  7) 32n2 +80n +48
+  -pre  8) 2x2
+  -pre  − 7x− 4
+  -pre  9) 56b2
+  -pre  − 19b− 15
+  -pre  10) 4r2 + 40r+64
+  -pre  11) 8x2 + 22x + 15
+  -pre  12) 7n2 +43n− 42
+  -p    Answers to Introduction to Polynomials
+   pre  16) 2v4 + 6
+   pre  17) 13p3
+  @@ -79,4 +65,18 @@
+   pre  42) 3x4 + 9x2 + 4x
+   p    Answers to Multiply Polynomials
+  +pre  1) 6p− 42
+  +pre  2) 32k2 +16k
+  +pre  3) 12x +6
+  +pre  4) 18n3 +21n2
+  +pre  5) 20m5 + 20m4
+  +pre  6) 12r− 21
+  +pre  7) 32n2 +80n +48
+  +pre  8) 2x2
+  +pre  − 7x− 4
+  +pre  9) 56b2
+  +pre  − 19b− 15
+  +pre  10) 4r2 + 40r+64
+  +pre  11) 8x2 + 22x + 15
+  +pre  12) 7n2 +43n− 42
+   pre  13) 15v2
+   pre  − 26v + 8
+====================================================================================================
+PAGE 460  blocks 110->110  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -33,4 +33,5 @@
+   pre  40) 36x2 +108x + 81
+   p    5.6
+  +p    Answers to Multiply Special Products
+   pre  1) x2
+   pre  − 64
+  @@ -59,10 +60,4 @@
+   pre  14) 9y2
+   pre  − 9x2
+  -p    5.7
+  -img  image-1778.png
+  -cap  Preserved region from page 460
+  -img  image-1779.png
+  -cap  Preserved region from page 460
+  -p    Answers to Multiply Special Products
+   pre  15) 36x2
+   pre  − 4y2
+  @@ -104,5 +99,10 @@
+   pre  40) 9a2
+   pre  − 64
+  +p    5.7
+   p    Answers to Divide Polynomials
+  +img  image-1778.png
+  +cap  Preserved region from page 460
+  +img  image-1779.png
+  +cap  Preserved region from page 460
+   img  image-1780.png
+   cap  Preserved region from page 460
+====================================================================================================
+PAGE 461  blocks 56->56  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -4,15 +4,4 @@
+   img  image-1789.png
+   cap  Preserved region from page 461
+  -p    6.1
+  -pre  1) 9+ 8b2
+  -pre  2) x− 5
+  -pre  3) 5(9x2
+  -pre  − 5)
+  -pre  4) 1+ 2n2
+  -pre  5) 7(8− 5p)
+  -pre  6) 10(5x− 8y)
+  -pre  7) 7ab(1− 5a)
+  -pre  8) 9x2y2(3y3
+  -pre  − 8x)
+   img  image-1782.png
+   cap  Preserved region from page 461
+  @@ -46,5 +35,16 @@
+   cap  Preserved region from page 461
+   h    Answers - Chapter 6
+  +p    6.1
+   p    Answers - Greatest Common Factor
+  +pre  1) 9+ 8b2
+  +pre  2) x− 5
+  +pre  3) 5(9x2
+  +pre  − 5)
+  +pre  4) 1+ 2n2
+  +pre  5) 7(8− 5p)
+  +pre  6) 10(5x− 8y)
+  +pre  7) 7ab(1− 5a)
+  +pre  8) 9x2y2(3y3
+  +pre  − 8x)
+   pre  9) 3a2b(− 1+2ab)
+   pre  10) 4x3(2y2 +1)
+====================================================================================================
+PAGE 462  blocks 69->69  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -24,4 +24,5 @@
+   pre  − 4xy)
+   p    6.2
+  +p    Answers - Grouping
+   pre  1) (8r2
+   pre  − 5)(5r− 1)
+  @@ -45,5 +46,4 @@
+   pre  2) (x− 8)(x + 9)
+   pre  3) (n− 8)(n− 1)
+  -p    Answers - Grouping
+   pre  11) (7x + 5)(y− 7)
+   pre  12) (7r2 +3)(6r− 7)
+====================================================================================================
+PAGE 466  blocks 71->71  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -23,8 +23,4 @@
+   cap  Preserved region from page 466
+   img  image-1804.png
+  -cap  Preserved region from page 466
+  -p    7.2
+  -pre  1) 4x2
+  -img  image-1817.png
+   cap  Preserved region from page 466
+   p    Answers - Reduce Rational Expressions
+  @@ -67,4 +63,8 @@
+   img  image-1816.png
+   cap  Preserved region from page 466
+  +p    7.2
+  +pre  1) 4x2
+  +img  image-1817.png
+  +cap  Preserved region from page 466
+   p    Answers - Multipy and Divide
+   img  image-1828.png
+====================================================================================================
+PAGE 468  blocks 14->14  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -7,8 +7,8 @@
+   cap  Preserved region from page 468
+   h    7.4
+  +h    Answers - Add and Subtract
+   img  image-1854.png
+   cap  Preserved region from page 468
+   h    2) x− 4 3) t + 7
+  -h    Answers - Add and Subtract
+   img  image-1856.png
+   cap  Preserved region from page 468
+====================================================================================================
+PAGE 470  blocks 53->53  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -3,19 +3,8 @@
+   img  image-1884.png
+   cap  Preserved region from page 470
+  +img  image-1885.png
+  +cap  Preserved region from page 470
+   p    7.6
+   img  image-1892.png
+  -cap  Preserved region from page 470
+  -p    7.7
+  -pre  1)−
+  -img  image-1894.png
+  -cap  Preserved region from page 470
+  -pre  2)− 3, 1
+  -pre  3) 3
+  -pre  4)− 1, 4
+  -pre  5) 2
+  -img  image-1886.png
+  -cap  Preserved region from page 470
+  -pre  7)− 1
+  -img  image-1885.png
+   cap  Preserved region from page 470
+   p    Answers - Proportions
+  @@ -33,4 +22,15 @@
+   pre  39) S8
+   pre  40) C: 36 min, K: 51 min
+  +p    7.7
+  +pre  1)−
+  +img  image-1894.png
+  +cap  Preserved region from page 470
+  +pre  2)− 3, 1
+  +pre  3) 3
+  +pre  4)− 1, 4
+  +pre  5) 2
+  +img  image-1886.png
+  +cap  Preserved region from page 470
+  +pre  7)− 1
+   p    Answers - Solving Rational Equations
+   img  image-1895.png
+====================================================================================================
+PAGE 471  blocks 59->59  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -6,5 +6,19 @@
+   img  image-1896.png
+   cap  Preserved region from page 471
+  +img  image-1901.png
+  +cap  Preserved region from page 471
+  +pre  28) 1
+  +pre  29)−
+  +img  image-1902.png
+  +cap  Preserved region from page 471
+  +pre  30)− 1
+  +img  image-1897.png
+  +cap  Preserved region from page 471
+  +pre  32) 1
+  +pre  33)− 10
+  +img  image-1898.png
+  +cap  Preserved region from page 471
+   p    7.8
+  +p    Answers - Dimensional Analysis
+   pre  1) 12320 yd
+   pre  2) 0.0073125 T
+  @@ -22,21 +36,4 @@
+   pre  14) 104.32 mi/hr
+   pre  15) 111 m/s
+  -p    8.1
+  -img  image-1899.png
+  -cap  Preserved region from page 471
+  -img  image-1901.png
+  -cap  Preserved region from page 471
+  -pre  28) 1
+  -pre  29)−
+  -img  image-1902.png
+  -cap  Preserved region from page 471
+  -pre  30)− 1
+  -img  image-1897.png
+  -cap  Preserved region from page 471
+  -pre  32) 1
+  -pre  33)− 10
+  -img  image-1898.png
+  -cap  Preserved region from page 471
+  -p    Answers - Dimensional Analysis
+   pre  16) 2,623,269,600 km/yr
+   pre  17) 11.6 lb/in2
+  @@ -55,4 +52,7 @@
+   pre  30) 621,200 mg; 1.42 lb
+   h    Answers - Chapter 8
+  +p    8.1
+  +img  image-1899.png
+  +cap  Preserved region from page 471
+   p    Answers - Square Roots
+   pre  3) 6
+====================================================================================================
+PAGE 477  blocks 68->68  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -21,10 +21,4 @@
+   pre  20) 36− 36i
+   pre  21) 27 +38i
+  -p    9.1
+  -pre  1) 3
+  -pre  2) 3
+  -pre  3) 1, 5
+  -pre  4) no solution
+  -pre  5) ± 2
+   p    Answers - Complex Numbers
+   pre  22)− 28 +76i
+  @@ -56,4 +50,10 @@
+   pre  58)− i
+   h    Answers - Chapter 9
+  +p    9.1
+  +pre  1) 3
+  +pre  2) 3
+  +pre  3) 1, 5
+  +pre  4) no solution
+  +pre  5) ± 2
+   p    Answers - Solving with Radicals
+   pre  6) 3
+====================================================================================================
+PAGE 483  blocks 55->55  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -1,2 +1,3 @@
+  +p    Answers - Graphs of Quadratics
+   p    1)
+   img  image-1984.png
+  @@ -17,5 +18,4 @@
+   img  image-1989.png
+   cap  Preserved region from page 483
+  -p    Answers - Graphs of Quadratics
+   p    7)
+   img  image-1990.png
+====================================================================================================
+PAGE 484  blocks 68->68  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -7,4 +7,5 @@
+   h    Answers - Chapter 10
+   p    10.1
+  +p    Answers - Function Notation
+   pre  1) a. yes b. yes c. no
+   pre  d. no e. yes f. no
+  @@ -24,5 +25,4 @@
+   cap  Preserved region from page 484
+   pre  13) 2
+  -p    Answers - Function Notation
+   pre  14) 85
+   pre  15)− 7
+  @@ -56,4 +56,5 @@
+   cap  Preserved region from page 484
+   p    10.2
+  +p    Answers - Operations on Functions
+   pre  1) 82
+   pre  2) 20
+  @@ -61,5 +62,4 @@
+   pre  4) 2
+   pre  5) 5
+  -p    Answers - Operations on Functions
+   pre  6)− 30
+   pre  7)− 3
+====================================================================================================
+PAGE 487  blocks 78->78  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -3,15 +3,4 @@
+   cap  Preserved region from page 487
+   pre  14) 3
+  -p    10.6
+  -p    1)
+  -pre  a. 740.12; 745.91
+  -pre  b. 851.11; 859.99
+  -pre  c. 950.08; 953.44
+  -pre  d. 1979.22; 1984.69
+  -pre  2) 1640.70
+  -pre  3) 2868.41
+  -pre  4) 2227.41
+  -pre  5) 1726.16
+  -pre  6) 1507.08
+   p    Answers - Logarithmic Functions
+   pre  15)−
+  @@ -62,10 +51,20 @@
+   cap  Preserved region from page 487
+   pre  40) 3
+  +p    10.6
+   p    Answers - Interest Rate Problems
+  +p    1)
+  +pre  a. 740.12; 745.91
+  +pre  b. 851.11; 859.99
+  +pre  c. 950.08; 953.44
+  +pre  d. 1979.22; 1984.69
+  +pre  2) 1640.70
+  +pre  3) 2868.41
+  +pre  4) 2227.41
+  +pre  5) 1726.16
+  +pre  6) 1507.08
+   pre  e. 1209.52; 1214.87
+   pre  f. 1528.02; 1535.27
+   pre  g. 2694.70; 2699.72
+   pre  h. 3219.23; 3224.99
+  -pre  i. 7152.17; 7190.52
+   pre  7) 2001.60
+   pre  8) 2009.66
+  @@ -73,4 +72,5 @@
+   pre  10) 6386.12
+   pre  11) 13742.19
+  +pre  i. 7152.17; 7190.52
+   pre  12) 28240.43
+   pre  13) 12.02; 3.96
+====================================================================================================
+PAGE 488  blocks 60->60  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -1,3 +1,4 @@
+   p    10.7
+  +p    Answers - Trigonometric Functions
+   pre  1) 0.3256
+   pre  2) 0.9205
+  @@ -9,16 +10,4 @@
+   pre  12) 2.8
+   pre  13) 32
+  -p    10.8
+  -pre  1) 29◦
+  -pre  2) 39◦
+  -pre  3) 41◦
+  -pre  4) 52◦
+  -pre  5) 24◦
+  -pre  6) 32◦
+  -pre  7) 15◦
+  -pre  8) 18◦
+  -pre  9) 27◦
+  -pre  10) 35◦
+  -p    Answers - Trigonometric Functions
+   pre  14) 8.2
+   pre  15) 26.1
+  @@ -48,4 +37,15 @@
+   pre  39) 17.1
+   pre  40) 22.2
+  +p    10.8
+  +pre  1) 29◦
+  +pre  2) 39◦
+  +pre  3) 41◦
+  +pre  4) 52◦
+  +pre  5) 24◦
+  +pre  6) 32◦
+  +pre  7) 15◦
+  +pre  8) 18◦
+  +pre  9) 27◦
+  +pre  10) 35◦
+   p    Answers - Inverse Trigonometric Functions
+   pre  11) 36◦

@@ -1,0 +1,36 @@
+{
+ "faa-phak-8083-25c": {
+  "baseline": "6a5d67f release CLI, library defaults",
+  "contentChecks": 91,
+  "errors": [
+   "Page 165: missing or reordered text 'installed depends upon its intended use.'",
+   "Page 165: missing or reordered text 'In a fixed-pitch propeller, the tachometer is the indicator of'",
+   "Page 165: missing or reordered text 'When operating altitude increases, the tachometer may not'",
+   "Page 199: paragraph does not continue onto page 200 {'end': 'tools are free of oil, grease,', 'next': 'and dirt. Aircraft with permanently installed oxygen tanks'}",
+   "Page 199: missing or reordered text 'Figure 7-46. EDS-011 portable pulse-demand oxygen system.'",
+   "Page 199: missing or reordered text 'systems are to be serviced.'",
+   "Page 199: missing or reordered text 'Personal cleanliness and good housekeeping'",
+   "Page 262: missing or reordered text 'energy comes in two forms: (1) Kinetic Energy (KE), the'",
+   "Page 262: missing or reordered text 'We sometimes use the terms'",
+   "Page 164: paragraph does not continue onto page 165 {'end': 'designed with the same angle of incidence', 'next': 'throughout its entire length would be inefficient'}",
+   "Page 261: paragraph does not continue onto page 262 {'end': 'eight times the original value. Conversely, when the', 'next': 'aircraft is operated in steady, level flight at twice as great a'}"
+  ]
+ },
+ "wallace-algebra-2010": {
+  "baseline": "6a5d67f release CLI, library defaults",
+  "contentChecks": 89,
+  "errors": [
+   "Page 438: missing or reordered text '0.1'",
+   "Page 438: missing or reordered text '1)− 2'",
+   "Page 438: missing or reordered text '2) 5'",
+   "Page 438: missing or reordered text '13) 3'",
+   "Page 438: missing or reordered text '21)− 7'",
+   "Page 438: missing or reordered text '0.2'",
+   "Page 438: missing or reordered text 'Answers - Fractions'",
+   "Page 471: missing or reordered text '7.8'",
+   "Page 471: missing or reordered text '1) 12320 yd'",
+   "Page 471: missing or reordered text '15) 111 m/s'",
+   "Page 471: missing or reordered text '8.1'"
+  ]
+ }
+}

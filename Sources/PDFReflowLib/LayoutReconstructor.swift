@@ -431,12 +431,19 @@ enum LayoutReconstructor {
         var box: [Element]?
     }
 
-    // Recursive whitespace cuts: columns first; a spanning heading is separated by a horizontal
-    // cut before retrying columns. No page-wide y/x sort of interleaved column text.
+    // Recursive whitespace cuts: columns first, except that a single-line heading band above
+    // them is cut off first (`headingBand`); a spanning heading is separated by a horizontal cut
+    // before retrying columns; a gutter hidden by overhanging figures is measured over text last.
+    // No page-wide y/x sort of interleaved column text.
     static func ordered(_ elements: [Element], bodySize: CGFloat, depth: Int = 0) -> [Element] {
         guard elements.count > 1, depth < 32 else { return elements }
-        func gap(horizontal: Bool) -> CGFloat? {
-            let intervals = elements.map { horizontal ? ($0.rect.minX, $0.rect.maxX) : ($0.rect.minY, $0.rect.maxY) }
+        /// The widest whitespace band in one direction, measured over `measured`. The cut is
+        /// kept only when every element of the region falls wholly on one side of it: ordering
+        /// drops an element that straddles its cut, so a subset may not choose a line that the
+        /// elements it leaves out would cross.
+        func gap(horizontal: Bool, measuring measured: [Element]) -> CGFloat? {
+            guard measured.count > 1 else { return nil }
+            let intervals = measured.map { horizontal ? ($0.rect.minX, $0.rect.maxX) : ($0.rect.minY, $0.rect.maxY) }
                 .sorted { $0.0 < $1.0 }
             var end = intervals[0].1
             var best: (CGFloat, CGFloat)?
@@ -459,15 +466,39 @@ enum LayoutReconstructor {
                 }
                 end = max(end, interval.1)
             }
-            return best?.1
+            guard let middle = best?.1, elements.allSatisfy({
+                horizontal ? ($0.rect.maxX < middle || $0.rect.minX > middle)
+                    : ($0.rect.maxY < middle || $0.rect.minY > middle)
+            }) else { return nil }
+            return middle
         }
-        if let x = gap(horizontal: true) {
+        if let x = gap(horizontal: true, measuring: elements) {
+            if let y = headingBand(elements, gutter: x, bodySize: bodySize) {
+                return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1)
+                    + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1)
+            }
             return ordered(elements.filter { $0.rect.maxX < x }, bodySize: bodySize, depth: depth + 1)
                 + ordered(elements.filter { $0.rect.minX > x }, bodySize: bodySize, depth: depth + 1)
         }
-        if let y = gap(horizontal: false) {
+        if let y = gap(horizontal: false, measuring: elements) {
             return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1)
                 + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1)
+        }
+        // A preserved figure or table is set to its column's measure, but its rectangle can
+        // overhang the prose by a few points and swallow the gutter: the FAA's pages 165, 199
+        // and 262 keep 11.6–11.9 pt of whitespace between their text columns — the same measure
+        // the page-91 and -511 columns are cut on — while figures at the columns' heads narrow
+        // it to 6.5–7.4 pt, under the 0.75-body test, so those pages find no cut at all and
+        // fall through to the reading-order sort, which interleaves them line by line (#56).
+        // Measured over the text lines alone the gutter is there; it is taken only once neither
+        // whitespace cut has found anything, so a page whose rows are banded horizontally — Our
+        // Flag's four-to-a-page state grids, whose folio sits in the gutter 3.6 pt from the
+        // flags while 62 pt of whitespace separates the rows — is still cut into its rows first.
+        // The cut is kept only when every figure falls wholly on one side of it, so a figure
+        // heading a column joins that column instead of bridging both.
+        if let x = gap(horizontal: true, measuring: elements.filter { $0.line != nil }) {
+            return ordered(elements.filter { $0.rect.maxX < x }, bodySize: bodySize, depth: depth + 1)
+                + ordered(elements.filter { $0.rect.minX > x }, bodySize: bodySize, depth: depth + 1)
         }
         if let x = bulletColumns(elements, bodySize: bodySize) {
             return ordered(elements.filter { $0.rect.minX < x && $0.rect.maxX > x }, bodySize: bodySize, depth: depth + 1)
@@ -479,6 +510,56 @@ enum LayoutReconstructor {
         return elements.sorted {
             abs(key($0) - key($1)) > bodySize * 0.4 ? key($0) > key($1) : $0.rect.minX < $1.rect.minX
         }
+    }
+
+    /// A line set above columns heads all of them, but it need not span the gutter that
+    /// separates them. Wallace's answer keys centre `Answers - Chapter 0` and each
+    /// `Answers - <topic>` label on the page while column 1 begins far to their left, so the
+    /// page's widest whitespace is column 1's gutter and the title is cut away with columns 2
+    /// and 3, reading after column 1's whole answer list; the section numbers `0.1` and `8.1`,
+    /// set over column 1 alone, were read with that column instead of ahead of every column
+    /// they number (#47).
+    ///
+    /// Given the gutter the whitespace test would otherwise cut, the region's horizontal
+    /// whitespace divides it into bands, read here from the top. A band that is a single text
+    /// line — a title, a section number, a table's label — heads the columns and is separated
+    /// by a horizontal cut first. Returns that cut: the whitespace above the line when anything
+    /// precedes it, otherwise the whitespace below it. Any other band is column content and is
+    /// passed over. Two or more lines at ordinary leading are a paragraph, which belongs to the
+    /// column it sits in even when it stands clear of the other column: the CDC comic's speech
+    /// balloons are spaced exactly as labels are, and reading one ahead of the panel beside it
+    /// breaks the panel order.
+    ///
+    /// The columns must still run beside each other beneath the band, or the search ends. A
+    /// column that has ended keeps its own continuation: the FAA's glossary page 511 fills its
+    /// left column below the last entry of the right one, with only the printed folio beyond
+    /// the gutter, and a cut there would read the tail of the left column after the right
+    /// column instead of before it. Bands are found at 0.8 body rather than the 1.1 the
+    /// whitespace cut demands, because a label sits closer to the column it heads than to the
+    /// label above it (Wallace page 438 sets `Answers - Integers` 10.7 pt over 12-point
+    /// answers); a row of the columns themselves is never a single line, so the looser measure
+    /// cannot cut one.
+    static func headingBand(_ elements: [Element], gutter: CGFloat, bodySize: CGFloat) -> CGFloat? {
+        let intervals = elements.map { ($0.rect.minY, $0.rect.maxY) }.sorted { $0.0 < $1.0 }
+        guard let first = intervals.first else { return nil }
+        var end = first.1
+        var cuts: [CGFloat] = []
+        for interval in intervals.dropFirst() {
+            if interval.0 - end > bodySize * 0.8 { cuts.append((end + interval.0) / 2) }
+            end = max(end, interval.1)
+        }
+        let boundaries = Array(cuts.reversed())
+        for (index, lower) in boundaries.enumerated() {
+            let below = elements.filter { $0.rect.maxY < lower }
+            let left = below.filter { $0.rect.maxX < gutter }, right = below.filter { $0.rect.minX > gutter }
+            guard !left.isEmpty, !right.isEmpty else { return nil }
+            let leftRange = union(left.map(\.rect)), rightRange = union(right.map(\.rect))
+            guard min(leftRange.maxY, rightRange.maxY) > max(leftRange.minY, rightRange.minY) else { return nil }
+            let upper = index == 0 ? CGFloat.greatestFiniteMagnitude : boundaries[index - 1]
+            let band = elements.filter { $0.rect.minY > lower && $0.rect.maxY < upper }
+            if band.count == 1, band[0].line != nil { return index == 0 ? lower : upper }
+        }
+        return nil
     }
 
     /// Bulleted columns the whitespace cuts cannot separate: their items are far shorter than

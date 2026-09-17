@@ -1,0 +1,40 @@
+{
+ "case": "faa-phak-8083-25c",
+ "pagesBefore": 522,
+ "pagesAfter": 522,
+ "imagesBefore": 599,
+ "imagesAfter": 599,
+ "imagesIdentical": true,
+ "preBefore": 510,
+ "preAfter": 510,
+ "textChangedPages": [
+  123,
+  136,
+  156,
+  165,
+  199,
+  207,
+  227,
+  262,
+  276,
+  277,
+  344,
+  372,
+  396
+ ],
+ "blocksChangedPages": [
+  123,
+  136,
+  156,
+  165,
+  199,
+  207,
+  227,
+  262,
+  276,
+  277,
+  344,
+  372,
+  396
+ ]
+}

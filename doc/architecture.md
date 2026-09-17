@@ -240,7 +240,15 @@ body titles, nearby captions and a page's only text are retained. Each affected 
 This is conservative spatial evidence, not validated PDF tag consumption or a universal header
 classifier. Synthetic invisible-text layers retain the established whole-document repeated-margin
 rule in the outer 7%, because their typography does not supply native font evidence. Narrow whitespace cuts require substantial text on both sides, so
-short name/description cells do not become independent prose columns. `TableRegionDetector`
+short name/description cells do not become independent prose columns. Before a column gutter is
+cut, a single text line that stands alone between horizontal whitespace bands (at 0.8 body) is
+cut off first when both columns still run beside each other beneath it, so a centred title or a
+section label heads every column rather than the one the widest gutter leaves it in (#47); a
+band of two or more lines is column content, and a column whose neighbour has ended keeps its
+own tail. When no gutter separates every element and no horizontal band exists, a gutter
+measured over text lines alone is cut provided every element still lies wholly on one side, so a
+figure whose rectangle overhangs the prose joins the column it heads (#56); a row-banded grid is
+cut into its rows first. `TableRegionDetector`
 recognizes aligned numeric dot-leader rows with a nearby textual header and preserves their
 complete region with `imageRegion` warnings. It also recognizes borderless statistical tables
 whose column headers are underlined: a row of at least three thin underlines, or one short

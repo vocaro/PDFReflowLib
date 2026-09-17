@@ -1,0 +1,20 @@
+{
+ "case": "cdc-zombie-pandemic-2011",
+ "pagesBefore": 42,
+ "pagesAfter": 42,
+ "imagesBefore": 42,
+ "imagesAfter": 42,
+ "imagesIdentical": true,
+ "preBefore": 1,
+ "preAfter": 1,
+ "textChangedPages": [
+  6,
+  13,
+  26
+ ],
+ "blocksChangedPages": [
+  6,
+  13,
+  26
+ ]
+}

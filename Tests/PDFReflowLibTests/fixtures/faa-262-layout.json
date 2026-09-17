@@ -1,0 +1,4032 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "11-6"
+        }
+      ],
+      "text" : "11-6"
+    },
+    {
+      "rect" : [
+        36.104099999999988,
+        86.180000000000007,
+        235.953,
+        177.84800000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36,
+        66.947500000000005,
+        120.88930000000002,
+        10.811999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 11-6."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " Power versus speed."
+        }
+      ],
+      "text" : "Figure 11-6. Power versus speed."
+    },
+    {
+      "rect" : [
+        35.617800000000017,
+        585.51190000000008,
+        235.953,
+        142.779
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36,
+        566.67880000000002,
+        116.38930000000002,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 11-5."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " Drag versus speed."
+        }
+      ],
+      "text" : "Figure 11-5. Drag versus speed."
+    },
+    {
+      "rect" : [
+        36,
+        538.46640000000002,
+        237.01799999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft is operated in steady, level flight at twice as great a"
+        }
+      ],
+      "text" : "aircraft is operated in steady, level flight at twice as great a"
+    },
+    {
+      "rect" : [
+        36,
+        525.96640000000002,
+        236.9849999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "speed, the induced drag is one-fourth the original value, and"
+        }
+      ],
+      "text" : "speed, the induced drag is one-fourth the original value, and"
+    },
+    {
+      "rect" : [
+        36,
+        513.46640000000002,
+        236.98299999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the power required to overcome that drag is only one-half"
+        }
+      ],
+      "text" : "the power required to overcome that drag is only one-half"
+    },
+    {
+      "rect" : [
+        36,
+        500.96640000000002,
+        72.489999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the original value."
+        }
+      ],
+      "text" : "the original value."
+    },
+    {
+      "rect" : [
+        36,
+        475.96640000000002,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When an aircraft is in steady, level flight, the condition of"
+        }
+      ],
+      "text" : "When an aircraft is in steady, level flight, the condition of"
+    },
+    {
+      "rect" : [
+        36,
+        463.46640000000002,
+        237.16499999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "equilibrium must prevail. The unaccelerated condition of"
+        }
+      ],
+      "text" : "equilibrium must prevail. The unaccelerated condition of"
+    },
+    {
+      "rect" : [
+        36,
+        450.96640000000002,
+        237.11999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "flight is achieved with the aircraft trimmed for lift equal"
+        }
+      ],
+      "text" : "flight is achieved with the aircraft trimmed for lift equal"
+    },
+    {
+      "rect" : [
+        36,
+        438.46640000000002,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to weight and the powerplant set for a thrust to equal the"
+        }
+      ],
+      "text" : "to weight and the powerplant set for a thrust to equal the"
+    },
+    {
+      "rect" : [
+        36,
+        425.96640000000002,
+        51.640000000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft drag."
+        }
+      ],
+      "text" : "aircraft drag."
+    },
+    {
+      "rect" : [
+        36,
+        400.96640000000002,
+        237.0229999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The maximum level flight speed for the aircraft is obtained"
+        }
+      ],
+      "text" : "The maximum level flight speed for the aircraft is obtained"
+    },
+    {
+      "rect" : [
+        36,
+        388.46640000000002,
+        237.07500000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "when the power or thrust required equals the maximum power"
+        }
+      ],
+      "text" : "when the power or thrust required equals the maximum power"
+    },
+    {
+      "rect" : [
+        36,
+        375.96640000000002,
+        236.99200000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or thrust available from the powerplant. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 11-6]"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " The"
+        }
+      ],
+      "text" : "or thrust available from the powerplant. [Figure 11-6] The"
+    },
+    {
+      "rect" : [
+        36,
+        363.46640000000002,
+        237.04399999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "minimum level flight airspeed is not usually defined by thrust"
+        }
+      ],
+      "text" : "minimum level flight airspeed is not usually defined by thrust"
+    },
+    {
+      "rect" : [
+        36,
+        350.96640000000002,
+        237.03499999999985,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or power requirement since conditions of stall or stability and"
+        }
+      ],
+      "text" : "or power requirement since conditions of stall or stability and"
+    },
+    {
+      "rect" : [
+        36,
+        338.46640000000002,
+        162.75000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "control problems generally predominate."
+        }
+      ],
+      "text" : "control problems generally predominate."
+    },
+    {
+      "rect" : [
+        36,
+        312.89640000000003,
+        91.689999999999998,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Climb Performance"
+        }
+      ],
+      "text" : "Climb Performance"
+    },
+    {
+      "rect" : [
+        36,
+        300.46640000000002,
+        237.024,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "If an aircraft is to move, fly, and perform, work must act"
+        }
+      ],
+      "text" : "If an aircraft is to move, fly, and perform, work must act"
+    },
+    {
+      "rect" : [
+        36,
+        287.96640000000002,
+        237.04399999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "upon it. Work involves force moving the aircraft. The aircraft"
+        }
+      ],
+      "text" : "upon it. Work involves force moving the aircraft. The aircraft"
+    },
+    {
+      "rect" : [
+        36,
+        275.46640000000002,
+        237.15000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "acquires mechanical energy when it moves. Mechanical"
+        }
+      ],
+      "text" : "acquires mechanical energy when it moves. Mechanical"
+    },
+    {
+      "rect" : [
+        285,
+        719.56640000000004,
+        237.02300000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "energy comes in two forms: (1) Kinetic Energy (KE), the"
+        }
+      ],
+      "text" : "energy comes in two forms: (1) Kinetic Energy (KE), the"
+    },
+    {
+      "rect" : [
+        285,
+        707.06640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "energy of speed; (2) Potential Energy (PE), the stored energy"
+        }
+      ],
+      "text" : "energy of speed; (2) Potential Energy (PE), the stored energy"
+    },
+    {
+      "rect" : [
+        285,
+        694.56640000000004,
+        45.560000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of position."
+        }
+      ],
+      "text" : "of position."
+    },
+    {
+      "rect" : [
+        285,
+        669.56640000000004,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Aircraft motion (KE) is described by its velocity (airspeed)."
+        }
+      ],
+      "text" : "Aircraft motion (KE) is described by its velocity (airspeed)."
+    },
+    {
+      "rect" : [
+        285,
+        657.06640000000004,
+        237.02199999999982,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Aircraft position (PE) is described by its height (altitude)."
+        }
+      ],
+      "text" : "Aircraft position (PE) is described by its height (altitude)."
+    },
+    {
+      "rect" : [
+        285,
+        644.56640000000004,
+        237.05000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Both KE and PE are directly proportional to the object’s"
+        }
+      ],
+      "text" : "Both KE and PE are directly proportional to the object’s"
+    },
+    {
+      "rect" : [
+        285,
+        632.06640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "mass. KE is directly proportional to the square of the object’s"
+        }
+      ],
+      "text" : "mass. KE is directly proportional to the square of the object’s"
+    },
+    {
+      "rect" : [
+        285,
+        619.56640000000004,
+        237.13000000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "velocity (airspeed). PE is directly proportional to the object’s"
+        }
+      ],
+      "text" : "velocity (airspeed). PE is directly proportional to the object’s"
+    },
+    {
+      "rect" : [
+        285,
+        607.06640000000004,
+        237.02999999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "height (altitude). The formulas below summarize these"
+        }
+      ],
+      "text" : "height (altitude). The formulas below summarize these"
+    },
+    {
+      "rect" : [
+        285,
+        594.56640000000004,
+        83.600000000000023,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "energy relationships:"
+        }
+      ],
+      "text" : "energy relationships:"
+    },
+    {
+      "rect" : [
+        285,
+        564.56640000000004,
+        69.027300000000025,
+        16.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -5,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "KE = ½ × m × v"
+        },
+        {
+          "baselineOffset" : -1.6700000000000728,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        }
+      ],
+      "text" : "KE = ½ × m × v2 "
+    },
+    {
+      "rect" : [
+        392.9973,
+        564.56640000000004,
+        65.360000000000014,
+        16.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "m = object mass"
+        }
+      ],
+      "text" : "m = object mass"
+    },
+    {
+      "rect" : [
+        395.5,
+        557.06640000000004,
+        74.800000000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "v = object velocity"
+        }
+      ],
+      "text" : "v = object velocity"
+    },
+    {
+      "rect" : [
+        393,
+        532.06640000000004,
+        65.360000000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "m = object mass"
+        }
+      ],
+      "text" : "m = object mass"
+    },
+    {
+      "rect" : [
+        285,
+        519.56640000000004,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "PE = m × g × h g = gravity field strength"
+        }
+      ],
+      "text" : "PE = m × g × h g = gravity field strength"
+    },
+    {
+      "rect" : [
+        395.5,
+        507.06640000000004,
+        67.580000000000041,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "h = object height"
+        }
+      ],
+      "text" : "h = object height"
+    },
+    {
+      "rect" : [
+        285,
+        482.06640000000004,
+        236.87599999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "We sometimes use the terms “power” and “thrust”"
+        }
+      ],
+      "text" : "We sometimes use the terms “power” and “thrust”"
+    },
+    {
+      "rect" : [
+        285,
+        469.56640000000004,
+        237.00599999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "interchangeably when discussing climb performance. This"
+        }
+      ],
+      "text" : "interchangeably when discussing climb performance. This"
+    },
+    {
+      "rect" : [
+        285,
+        457.06640000000004,
+        237.03999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "erroneously implies the terms are synonymous. It is important"
+        }
+      ],
+      "text" : "erroneously implies the terms are synonymous. It is important"
+    },
+    {
+      "rect" : [
+        285,
+        444.56640000000004,
+        237.09400000000028,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to distinguish between these terms. Thrust is a force or"
+        }
+      ],
+      "text" : "to distinguish between these terms. Thrust is a force or"
+    },
+    {
+      "rect" : [
+        285,
+        432.06640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pressure exerted on an object. Thrust is measured in pounds"
+        }
+      ],
+      "text" : "pressure exerted on an object. Thrust is measured in pounds"
+    },
+    {
+      "rect" : [
+        285,
+        419.56640000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(lb) or newtons (N). Power, however, is a measurement of"
+        }
+      ],
+      "text" : "(lb) or newtons (N). Power, however, is a measurement of"
+    },
+    {
+      "rect" : [
+        285,
+        407.06640000000004,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the rate of performing work or transferring energy (KE and"
+        }
+      ],
+      "text" : "the rate of performing work or transferring energy (KE and"
+    },
+    {
+      "rect" : [
+        285,
+        394.56640000000004,
+        237.13300000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "PE). Power is typically measured in horsepower (hp) or"
+        }
+      ],
+      "text" : "PE). Power is typically measured in horsepower (hp) or"
+    },
+    {
+      "rect" : [
+        285,
+        382.06640000000004,
+        237.00600000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "kilowatts (kw). We can think of power as the motion (KE"
+        }
+      ],
+      "text" : "kilowatts (kw). We can think of power as the motion (KE"
+    },
+    {
+      "rect" : [
+        285,
+        369.56640000000004,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and PE) a force (thrust) creates when exerted on an object"
+        }
+      ],
+      "text" : "and PE) a force (thrust) creates when exerted on an object"
+    },
+    {
+      "rect" : [
+        285,
+        357.06640000000004,
+        86.370000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "over a period of time."
+        }
+      ],
+      "text" : "over a period of time."
+    },
+    {
+      "rect" : [
+        285,
+        332.06640000000004,
+        237.03000000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Positive climb performance occurs when an aircraft gains PE"
+        }
+      ],
+      "text" : "Positive climb performance occurs when an aircraft gains PE"
+    },
+    {
+      "rect" : [
+        285,
+        319.56640000000004,
+        237.02199999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "by increasing altitude. Two basic factors, or a combination"
+        }
+      ],
+      "text" : "by increasing altitude. Two basic factors, or a combination"
+    },
+    {
+      "rect" : [
+        285,
+        307.06640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of the two factors, contribute to positive climb performance"
+        }
+      ],
+      "text" : "of the two factors, contribute to positive climb performance"
+    },
+    {
+      "rect" : [
+        285,
+        294.56640000000004,
+        63.879999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in most aircraft:"
+        }
+      ],
+      "text" : "in most aircraft:"
+    },
+    {
+      "rect" : [
+        294,
+        277.56639999999999,
+        228.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "1. The aircraft climbs (gains PE) using excess power"
+        }
+      ],
+      "text" : "1. The aircraft climbs (gains PE) using excess power"
+    },
+    {
+      "rect" : [
+        312,
+        265.06639999999999,
+        184.42000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "above that required to maintain level flight, or"
+        }
+      ],
+      "text" : "above that required to maintain level flight, or"
+    },
+    {
+      "rect" : [
+        294,
+        248.06640000000002,
+        228.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "2. The aircraft climbs by converting airspeed (KE) to"
+        }
+      ],
+      "text" : "2. The aircraft climbs by converting airspeed (KE) to"
+    },
+    {
+      "rect" : [
+        312,
+        235.56640000000002,
+        53.329999999999984,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "altitude (PE)."
+        }
+      ],
+      "text" : "altitude (PE)."
+    },
+    {
+      "rect" : [
+        285,
+        210.56640000000002,
+        237.01799999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "As an example of factor 1 above, an aircraft with an engine"
+        }
+      ],
+      "text" : "As an example of factor 1 above, an aircraft with an engine"
+    },
+    {
+      "rect" : [
+        285,
+        198.06640000000002,
+        237.02199999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "capable of producing 200 horsepower (at a given altitude)"
+        }
+      ],
+      "text" : "capable of producing 200 horsepower (at a given altitude)"
+    },
+    {
+      "rect" : [
+        285,
+        185.56640000000002,
+        237.00699999999983,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is using only 130 horsepower to maintain level flight at that"
+        }
+      ],
+      "text" : "is using only 130 horsepower to maintain level flight at that"
+    },
+    {
+      "rect" : [
+        285,
+        173.06640000000002,
+        237.00599999999986,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "altitude. This leaves 70 horsepower available to climb. The"
+        }
+      ],
+      "text" : "altitude. This leaves 70 horsepower available to climb. The"
+    },
+    {
+      "rect" : [
+        285,
+        160.56640000000002,
+        237.10000000000014,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pilot holds airspeed constant and increases power to perform"
+        }
+      ],
+      "text" : "pilot holds airspeed constant and increases power to perform"
+    },
+    {
+      "rect" : [
+        285,
+        148.06640000000002,
+        40,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the climb."
+        }
+      ],
+      "text" : "the climb."
+    },
+    {
+      "rect" : [
+        285,
+        123.06640000000002,
+        236.99699999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "As an example of factor 2, an aircraft is flying level at 120"
+        }
+      ],
+      "text" : "As an example of factor 2, an aircraft is flying level at 120"
+    },
+    {
+      "rect" : [
+        285,
+        110.56640000000002,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "knots. The pilot leaves the engine power setting constant but"
+        }
+      ],
+      "text" : "knots. The pilot leaves the engine power setting constant but"
+    },
+    {
+      "rect" : [
+        285,
+        98.066400000000016,
+        237.02799999999991,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "applies other control inputs to perform a climb. The climb,"
+        }
+      ],
+      "text" : "applies other control inputs to perform a climb. The climb,"
+    },
+    {
+      "rect" : [
+        285,
+        85.566400000000016,
+        237.00199999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "sometimes called a zoom climb, converts the airspeed (KE)"
+        }
+      ],
+      "text" : "sometimes called a zoom climb, converts the airspeed (KE)"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      34.604099999999988,
+      84.680000000000007,
+      238.953,
+      180.84800000000001
+    ],
+    [
+      34.117800000000017,
+      584.01190000000008,
+      238.953,
+      145.779
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "text" : "11-6"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        66.947500000000005,
+        120.88930000000002,
+        10.811999999999998
+      ],
+      "text" : "Figure 11-6. Power versus speed."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        566.67880000000002,
+        116.38930000000002,
+        10.812000000000012
+      ],
+      "text" : "Figure 11-5. Drag versus speed."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        538.46640000000002,
+        237.01799999999997,
+        11.470000000000027
+      ],
+      "text" : "aircraft is operated in steady, level flight at twice as great a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        525.96640000000002,
+        236.9849999999999,
+        11.470000000000027
+      ],
+      "text" : "speed, the induced drag is one-fourth the original value, and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        513.46640000000002,
+        236.98299999999995,
+        11.470000000000027
+      ],
+      "text" : "the power required to overcome that drag is only one-half"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        500.96640000000002,
+        72.489999999999995,
+        11.470000000000027
+      ],
+      "text" : "the original value."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        475.96640000000002,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "text" : "When an aircraft is in steady, level flight, the condition of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        463.46640000000002,
+        237.16499999999996,
+        11.470000000000027
+      ],
+      "text" : "equilibrium must prevail. The unaccelerated condition of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        450.96640000000002,
+        237.11999999999989,
+        11.470000000000027
+      ],
+      "text" : "flight is achieved with the aircraft trimmed for lift equal"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        438.46640000000002,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "text" : "to weight and the powerplant set for a thrust to equal the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        425.96640000000002,
+        51.640000000000015,
+        11.470000000000027
+      ],
+      "text" : "aircraft drag."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        400.96640000000002,
+        237.0229999999998,
+        11.470000000000027
+      ],
+      "text" : "The maximum level flight speed for the aircraft is obtained"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        388.46640000000002,
+        237.07500000000005,
+        11.470000000000027
+      ],
+      "text" : "when the power or thrust required equals the maximum power"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        375.96640000000002,
+        236.99200000000002,
+        11.470000000000027
+      ],
+      "text" : "or thrust available from the powerplant. [Figure 11-6] The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        363.46640000000002,
+        237.04399999999998,
+        11.470000000000027
+      ],
+      "text" : "minimum level flight airspeed is not usually defined by thrust"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        350.96640000000002,
+        237.03499999999985,
+        11.470000000000027
+      ],
+      "text" : "or power requirement since conditions of stall or stability and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        338.46640000000002,
+        162.75000000000006,
+        11.470000000000027
+      ],
+      "text" : "control problems generally predominate."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        312.89640000000003,
+        91.689999999999998,
+        13.189999999999998
+      ],
+      "text" : "Climb Performance"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        300.46640000000002,
+        237.024,
+        11.470000000000027
+      ],
+      "text" : "If an aircraft is to move, fly, and perform, work must act"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        287.96640000000002,
+        237.04399999999998,
+        11.470000000000027
+      ],
+      "text" : "upon it. Work involves force moving the aircraft. The aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        275.46640000000002,
+        237.15000000000003,
+        11.470000000000027
+      ],
+      "text" : "acquires mechanical energy when it moves. Mechanical"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        719.56640000000004,
+        237.02300000000002,
+        11.470000000000027
+      ],
+      "text" : "energy comes in two forms: (1) Kinetic Energy (KE), the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        707.06640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "text" : "energy of speed; (2) Potential Energy (PE), the stored energy"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        694.56640000000004,
+        45.560000000000002,
+        11.470000000000027
+      ],
+      "text" : "of position."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        669.56640000000004,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "text" : "Aircraft motion (KE) is described by its velocity (airspeed)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        657.06640000000004,
+        237.02199999999982,
+        11.470000000000027
+      ],
+      "text" : "Aircraft position (PE) is described by its height (altitude)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        644.56640000000004,
+        237.05000000000007,
+        11.470000000000027
+      ],
+      "text" : "Both KE and PE are directly proportional to the object’s"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        632.06640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "text" : "mass. KE is directly proportional to the square of the object’s"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        619.56640000000004,
+        237.13000000000011,
+        11.470000000000027
+      ],
+      "text" : "velocity (airspeed). PE is directly proportional to the object’s"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        607.06640000000004,
+        237.02999999999986,
+        11.470000000000027
+      ],
+      "text" : "height (altitude). The formulas below summarize these"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        594.56640000000004,
+        83.600000000000023,
+        11.470000000000027
+      ],
+      "text" : "energy relationships:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        564.56640000000004,
+        69.027300000000025,
+        16.470000000000027
+      ],
+      "text" : "KE = ½ × m × v2"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        392.9973,
+        564.56640000000004,
+        65.360000000000014,
+        16.470000000000027
+      ],
+      "text" : "m = object mass"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        395.5,
+        557.06640000000004,
+        74.800000000000011,
+        11.470000000000027
+      ],
+      "text" : "v = object velocity"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        393,
+        532.06640000000004,
+        65.360000000000014,
+        11.470000000000027
+      ],
+      "text" : "m = object mass"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        519.56640000000004,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "text" : "PE = m × g × h g = gravity field strength"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        395.5,
+        507.06640000000004,
+        67.580000000000041,
+        11.470000000000027
+      ],
+      "text" : "h = object height"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        482.06640000000004,
+        236.87599999999998,
+        11.470000000000027
+      ],
+      "text" : "We sometimes use the terms “power” and “thrust”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        469.56640000000004,
+        237.00599999999986,
+        11.470000000000027
+      ],
+      "text" : "interchangeably when discussing climb performance. This"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        457.06640000000004,
+        237.03999999999996,
+        11.470000000000027
+      ],
+      "text" : "erroneously implies the terms are synonymous. It is important"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        444.56640000000004,
+        237.09400000000028,
+        11.470000000000027
+      ],
+      "text" : "to distinguish between these terms. Thrust is a force or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        432.06640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "text" : "pressure exerted on an object. Thrust is measured in pounds"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        419.56640000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "text" : "(lb) or newtons (N). Power, however, is a measurement of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        407.06640000000004,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "text" : "the rate of performing work or transferring energy (KE and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        394.56640000000004,
+        237.13300000000004,
+        11.470000000000027
+      ],
+      "text" : "PE). Power is typically measured in horsepower (hp) or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        382.06640000000004,
+        237.00600000000009,
+        11.470000000000027
+      ],
+      "text" : "kilowatts (kw). We can think of power as the motion (KE"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        369.56640000000004,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "text" : "and PE) a force (thrust) creates when exerted on an object"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        357.06640000000004,
+        86.370000000000005,
+        11.470000000000027
+      ],
+      "text" : "over a period of time."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        332.06640000000004,
+        237.03000000000009,
+        11.470000000000027
+      ],
+      "text" : "Positive climb performance occurs when an aircraft gains PE"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        319.56640000000004,
+        237.02199999999993,
+        11.470000000000027
+      ],
+      "text" : "by increasing altitude. Two basic factors, or a combination"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        307.06640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "text" : "of the two factors, contribute to positive climb performance"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        294.56640000000004,
+        63.879999999999995,
+        11.470000000000027
+      ],
+      "text" : "in most aircraft:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        277.56639999999999,
+        228.01999999999998,
+        11.470000000000027
+      ],
+      "text" : "1. The aircraft climbs (gains PE) using excess power"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        265.06639999999999,
+        184.42000000000007,
+        11.470000000000027
+      ],
+      "text" : "above that required to maintain level flight, or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        248.06640000000002,
+        228.00999999999999,
+        11.469999999999999
+      ],
+      "text" : "2. The aircraft climbs by converting airspeed (KE) to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        235.56640000000002,
+        53.329999999999984,
+        11.469999999999999
+      ],
+      "text" : "altitude (PE)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        210.56640000000002,
+        237.01799999999992,
+        11.469999999999999
+      ],
+      "text" : "As an example of factor 1 above, an aircraft with an engine"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        198.06640000000002,
+        237.02199999999993,
+        11.469999999999999
+      ],
+      "text" : "capable of producing 200 horsepower (at a given altitude)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        185.56640000000002,
+        237.00699999999983,
+        11.469999999999999
+      ],
+      "text" : "is using only 130 horsepower to maintain level flight at that"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        173.06640000000002,
+        237.00599999999986,
+        11.469999999999999
+      ],
+      "text" : "altitude. This leaves 70 horsepower available to climb. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        160.56640000000002,
+        237.10000000000014,
+        11.469999999999999
+      ],
+      "text" : "pilot holds airspeed constant and increases power to perform"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        148.06640000000002,
+        40,
+        11.469999999999999
+      ],
+      "text" : "the climb."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        123.06640000000002,
+        236.99699999999996,
+        11.469999999999999
+      ],
+      "text" : "As an example of factor 2, an aircraft is flying level at 120"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        110.56640000000002,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "text" : "knots. The pilot leaves the engine power setting constant but"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        98.066400000000016,
+        237.02799999999991,
+        11.469999999999999
+      ],
+      "text" : "applies other control inputs to perform a climb. The climb,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        85.566400000000016,
+        237.00199999999995,
+        11.469999999999999
+      ],
+      "text" : "sometimes called a zoom climb, converts the airspeed (KE)"
+    }
+  ],
+  "page" : 262,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        34.604099999999988,
+        84.680000000000007,
+        238.953,
+        180.84800000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        36.603999999999999,
+        86.680299999999988,
+        234.95300000000003,
+        176.84770000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        34.604099999999988,
+        84.680000000000007,
+        238.953,
+        180.84800000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.239900000000034,
+        101.80630000000001,
+        201.495,
+        160.85199999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.239900000000034,
+        101.80630000000001,
+        201.495,
+        160.85199999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        239.84399999999999,
+        201.53500000000003,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        241.84399999999999,
+        197.53480000000002,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        231.97200000000001,
+        201.53500000000003,
+        7.8700000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        233.97200000000001,
+        197.53480000000002,
+        3.8700000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        224.09800000000001,
+        201.53500000000003,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        226.09800000000001,
+        197.53480000000002,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        216.22499999999999,
+        201.53500000000003,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        218.22499999999999,
+        197.53480000000002,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        138.11699999999999,
+        201.53500000000003,
+        7.8700000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        140.11699999999999,
+        197.53480000000002,
+        3.8700000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        130.244,
+        201.53500000000003,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        132.244,
+        197.53480000000002,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        122.37,
+        201.53500000000003,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        124.37,
+        197.53480000000002,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        114.497,
+        201.53500000000003,
+        7.8709999999999951
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        116.497,
+        197.53480000000002,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        106.624,
+        201.53500000000003,
+        7.8709999999999951
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        108.624,
+        197.53480000000002,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        208.352,
+        201.53500000000003,
+        7.8719999999999857
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        210.352,
+        197.53480000000002,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        200.47900000000001,
+        201.53500000000003,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        202.47900000000001,
+        197.53480000000002,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        192.608,
+        201.53500000000003,
+        7.8689999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        194.608,
+        197.53480000000002,
+        3.8689999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        184.73599999999999,
+        201.53500000000003,
+        7.8689999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        186.73599999999999,
+        197.53480000000002,
+        3.8689999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        176.863,
+        201.53500000000003,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        178.863,
+        197.53480000000002,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        168.99000000000001,
+        201.53500000000003,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        170.99000000000001,
+        197.53480000000002,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.706700000000005,
+        161.73490000000001,
+        201.53499999999997,
+        7.2520000000000095
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.706500000000005,
+        163.73500000000001,
+        197.53550000000001,
+        3.2519999999999811
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        153.86199999999999,
+        201.53500000000003,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        155.86199999999999,
+        197.53480000000002,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        145.989,
+        201.53500000000003,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        147.989,
+        197.53480000000002,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241,
+        254.971,
+        201.53500000000003,
+        7.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        256.971,
+        197.53480000000002,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241400000000006,
+        247.71729999999999,
+        201.53500000000003,
+        7.2520000000000095
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        61.241200000000006,
+        249.71700000000001,
+        197.53480000000002,
+        3.2519999999999811
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241200000000006,
+        180.4821,
+        201.79300000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241200000000006,
+        162.0231,
+        201.79300000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241200000000006,
+        199.94210000000001,
+        201.79300000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241200000000006,
+        219.40100000000001,
+        201.59100000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241200000000006,
+        239.8605,
+        201.79300000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241200000000006,
+        122.73410000000001,
+        201.59100000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.241200000000006,
+        142.19400000000002,
+        201.79300000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        44.606999999999999,
+        101.806,
+        16.5,
+        160.85300000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        59.240000000000002,
+        87.528000000000006,
+        201.49399999999997,
+        16.5
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        94.543900000000008,
+        102.1729,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        63.606200000000001,
+        102.1696,
+        4.0120000000000005,
+        160.339
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        68.0261,
+        102.17060000000001,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        90.123999999999995,
+        102.17240000000001,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        85.704599999999999,
+        102.17190000000002,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.44550000000001,
+        102.17060000000001,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        81.285200000000003,
+        102.17190000000002,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        76.864900000000006,
+        102.17060000000001,
+        4.0120000000000005,
+        160.33899999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        98.963100000000011,
+        102.1725,
+        4.0120000000000005,
+        160.33799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        103.383,
+        102.1735,
+        4.0120000000000005,
+        160.33800000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        107.80240000000001,
+        102.1735,
+        4.0120000000000005,
+        160.33800000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        125.48140000000001,
+        102.17439999999999,
+        4.0120000000000005,
+        160.339
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        112.22190000000001,
+        102.1735,
+        4.0120000000000005,
+        160.339
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.06150000000001,
+        102.17490000000001,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        116.64160000000001,
+        102.17440000000002,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        134.3203,
+        102.17580000000001,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        129.90090000000001,
+        102.1754,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        138.73949999999999,
+        102.1755,
+        4.0120000000000005,
+        160.339
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        143.15970000000002,
+        102.17680000000004,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        147.57859999999999,
+        102.17680000000004,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.99850000000001,
+        102.17630000000003,
+        4.0120000000000005,
+        160.339
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.41849999999999,
+        102.17780000000002,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.60660000000001,
+        102.17740000000001,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        165.0266,
+        102.17840000000001,
+        4.0120000000000005,
+        160.33799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        187.12450000000001,
+        102.17920000000004,
+        4.0120000000000005,
+        160.339
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        182.7056,
+        102.1797,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        169.44550000000001,
+        102.17840000000001,
+        4.0120000000000005,
+        160.33799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        178.28560000000002,
+        102.17930000000004,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        173.86539999999999,
+        102.17840000000001,
+        4.0120000000000005,
+        160.33799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.58450000000002,
+        102.18020000000004,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.0044,
+        102.18070000000003,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.42430000000002,
+        102.18020000000001,
+        4.0120000000000005,
+        160.339
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        204.61350000000002,
+        102.18130000000001,
+        4.0120000000000005,
+        160.33799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.0334,
+        102.18130000000001,
+        4.0120000000000005,
+        160.33799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        231.13130000000001,
+        102.18370000000002,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        226.7114,
+        102.18220000000002,
+        4.0120000000000005,
+        160.339
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        213.45140000000001,
+        102.18130000000001,
+        4.0120000000000005,
+        160.339
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        222.29150000000001,
+        102.18270000000004,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        217.87130000000002,
+        102.1823,
+        4.0120000000000005,
+        160.33800000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        253.13430000000002,
+        102.18510000000001,
+        4.011999999999972,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        248.71440000000001,
+        102.1841,
+        4.0120000000000005,
+        160.339
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        235.45430000000002,
+        102.1833,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        244.29440000000002,
+        102.18460000000002,
+        4.0120000000000005,
+        160.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        239.8742,
+        102.18430000000001,
+        4.0120000000000005,
+        160.33799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        76.97120000000001,
+        101.3686,
+        4,
+        32.385000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        138.77100000000002,
+        101.369,
+        4,
+        48.784999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        187.3716,
+        101.36899999999999,
+        4,
+        102.15900000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        205.5718,
+        101.3691,
+        4,
+        132.75900000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        71.378700000000009,
+        85.243900000000025,
+        148.69800000000001,
+        171.393
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.61860000000001,
+        221.72820000000002,
+        80.385999999999996,
+        13.756999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        74.444000000000003,
+        127.58600000000001,
+        9.4500000000000028,
+        9.4479999999999791
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        74.444000000000003,
+        127.58520000000001,
+        9.4500000000000028,
+        9.4489999999999839
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.113,
+        143.03399999999999,
+        9.4490000000000123,
+        9.4490000000000123
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.113,
+        143.0335,
+        9.4490000000000123,
+        9.4499999999999886
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        184.31300000000002,
+        197.03399999999999,
+        9.4479999999999791,
+        9.4490000000000123
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        184.31319999999999,
+        197.0335,
+        9.4480000000000075,
+        9.4499999999999886
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        129.60390000000001,
+        148.36599999999999,
+        11.760999999999996,
+        26.162000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        63.949300000000008,
+        167.81890000000001,
+        74.766000000000005,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        63.949300000000008,
+        167.81890000000001,
+        74.766000000000005,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        78.204100000000011,
+        133.3278,
+        10,
+        21.037000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        63.315100000000001,
+        150.46440000000001,
+        51.765000000000001,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        63.315100000000001,
+        150.46440000000001,
+        51.765000000000001,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        169.80420000000001,
+        200.92790000000002,
+        18.399000000000001,
+        9
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        103.1495,
+        201.81890000000001,
+        76.766000000000005,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        103.1495,
+        201.81890000000001,
+        76.766000000000005,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        206.15160000000003,
+        110.62780000000001,
+        15.083999999999975,
+        109.416
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        208.15200000000002,
+        113.158,
+        10.97199999999998,
+        104.54600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        34.117800000000017,
+        584.01190000000008,
+        238.953,
+        145.779
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        36.117600000000003,
+        586.01199999999994,
+        234.95340000000002,
+        141.77800000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        34.117800000000017,
+        584.01190000000008,
+        238.953,
+        145.779
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.239900000000034,
+        604.29140000000007,
+        201.495,
+        120.51800000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.239900000000034,
+        604.29140000000007,
+        201.495,
+        120.51800000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241,
+        701.64999999999998,
+        201.53500000000003,
+        7.8719999999999573
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        62.241200000000006,
+        703.64999999999998,
+        197.53480000000002,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241,
+        693.91399999999999,
+        201.53500000000003,
+        7.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        62.241200000000006,
+        695.91399999999999,
+        197.53480000000002,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241,
+        686.178,
+        201.53500000000003,
+        7.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        62.241200000000006,
+        688.178,
+        197.53480000000002,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241,
+        678.44200000000001,
+        201.53500000000003,
+        7.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        62.241200000000006,
+        680.44200000000001,
+        197.53480000000002,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241,
+        670.70600000000002,
+        201.53500000000003,
+        7.8700000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        62.241200000000006,
+        672.70600000000002,
+        197.53480000000002,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241,
+        662.96900000000005,
+        201.53500000000003,
+        7.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        62.241200000000006,
+        664.96900000000005,
+        197.53480000000002,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241,
+        655.23500000000001,
+        201.53500000000003,
+        7.8690000000000282
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        62.241200000000006,
+        657.23500000000001,
+        197.53480000000002,
+        3.8690000000000282
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241,
+        647.5,
+        201.53500000000003,
+        7.8690000000000282
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        62.241200000000006,
+        649.5,
+        197.53480000000002,
+        3.8700000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241,
+        639.76400000000001,
+        201.53500000000003,
+        7.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        62.241200000000006,
+        641.76400000000001,
+        197.53480000000002,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241,
+        632.02800000000002,
+        201.53500000000003,
+        7.8700000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        62.241200000000006,
+        634.02800000000002,
+        197.53480000000002,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.706600000000002,
+        624.44470000000013,
+        201.535,
+        7.2519999999999527
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        62.706500000000005,
+        626.44500000000005,
+        197.53550000000001,
+        3.2519999999999527
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241,
+        615.76400000000001,
+        201.53500000000003,
+        7.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        62.241200000000006,
+        617.76400000000001,
+        197.53480000000002,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241,
+        608.02800000000002,
+        201.53500000000003,
+        7.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        62.241200000000006,
+        610.02800000000002,
+        197.53480000000002,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241,
+        717.12200000000007,
+        201.53500000000003,
+        7.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        62.241200000000006,
+        719.12199999999996,
+        197.53480000000002,
+        3.8710000000000946
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241300000000003,
+        710.00500000000011,
+        201.535,
+        7.2519999999999527
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        62.241200000000006,
+        712.005,
+        197.53480000000002,
+        3.2520000000000664
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241200000000006,
+        643.63319999999999,
+        201.79300000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241200000000006,
+        624.17430000000002,
+        201.79300000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241200000000006,
+        663.0933,
+        201.79300000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241200000000006,
+        682.5521,
+        201.59100000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.241200000000006,
+        702.01170000000002,
+        201.79300000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        43.606999999999999,
+        604.29100000000005,
+        16.5,
+        120.51800000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        60.240000000000002,
+        588.29899999999998,
+        201.49399999999997,
+        16.5
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        95.549800000000005,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        64.612300000000005,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        69.032200000000003,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        91.129900000000006,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        86.710400000000007,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.451700000000002,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        82.290999999999997,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        77.871099999999998,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        99.969200000000001,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.3892,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        108.8086,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        126.4873,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        113.22800000000001,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.06740000000001,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        117.64750000000001,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        135.3262,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        130.9067,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        139.7456,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.16550000000001,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.58450000000002,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.0044,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        157.42430000000002,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.61280000000002,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.03270000000001,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        188.13040000000001,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        183.7114,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        170.45170000000002,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        179.29150000000001,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        174.8716,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        192.59030000000001,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.0103,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        201.43020000000001,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        205.61960000000002,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.0395,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        232.13720000000001,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        227.71730000000002,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        214.45750000000001,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        223.29740000000001,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        218.87740000000002,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        254.14010000000002,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        249.72020000000001,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        236.46040000000002,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        245.30030000000002,
+        604.66090000000008,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        240.88040000000001,
+        604.66050000000007,
+        4,
+        120.00599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        135.36180000000002,
+        604.8646,
+        4,
+        48.474000000000046
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        134.7182,
+        605.36570000000006,
+        68.501000000000005,
+        51.940000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        127.2627,
+        609.36380000000008,
+        75.138000000000005,
+        115.07799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        135.00810000000001,
+        625.6848,
+        62.465000000000003,
+        98.61099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        147.14400000000001,
+        646.53800000000001,
+        9.4499999999999886,
+        9.4470000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        147.14420000000001,
+        646.53710000000001,
+        9.4499999999999886,
+        9.4490000000000691
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.96440000000001,
+        688.78370000000007,
+        15.667000000000002,
+        24.833999999999946
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        119.41610000000003,
+        701.23610000000008,
+        60.765999999999991,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        119.41610000000003,
+        701.23610000000008,
+        60.765999999999991,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        185.75050000000002,
+        665.34519999999998,
+        11,
+        16
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        184.9171,
+        654.65309999999999,
+        60.765000000000015,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        184.9171,
+        654.65309999999999,
+        60.765000000000015,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        125.11660000000002,
+        634.30700000000002,
+        13.660000000000011,
+        10.70799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        69.915200000000013,
+        635.74829999999997,
+        60.765000000000001,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        69.915200000000013,
+        635.74829999999997,
+        60.765000000000001,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        174.08450000000002,
+        609.01220000000001,
+        22.332999999999998,
+        13.66599999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        184.91610000000003,
+        614.98570000000007,
+        60.765999999999991,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        184.91610000000003,
+        614.98570000000007,
+        60.765999999999991,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        125.11620000000001,
+        649.06450000000007,
+        26.540000000000006,
+        19.831999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        92.611400000000003,
+        659.07020000000011,
+        39.765999999999991,
+        22
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        92.611400000000003,
+        659.07020000000011,
+        39.765999999999991,
+        22
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

@@ -1,0 +1,40 @@
+{
+  "topic": "Whitespace column cuts: heading bands (#47) and text-measured gutters (#56)",
+  "tier": "deterministic Apple PDF stack, library defaults, macOS 27.0 (26A428) arm64, Xcode 27.0 (27A266a), release CLI",
+  "baseline": {
+    "repository": "6a5d67f",
+    "build": "git archive 6a5d67f into a scratch tree with the same corpus/cache symlink; swift build -c release",
+    "cliSHA256": "927faaf08f992327100bab51773318eb733bc73dd28ee0bf45d14edce3b39d03"
+  },
+  "candidate": {
+    "repository": "6a5d67f plus the working tree (LayoutReconstructor.swift +89/-8)",
+    "cliSHA256": "29b3266e469a418547f6827f071050f9e804cb3b88cc259923b5c3dec55d2a61"
+  },
+  "history": "Developed on 62877e6, carried to b339e39 and then 6a5d67f as a patch reapplied after fast-forwarding (no commits). The full lane comparison was run against both the b339e39 and the 6a5d67f baselines; the reviewed pages' ordered output is identical between them except FAA 199, 261 and 372, where #67 changes baseline and candidate alike.",
+  "sources": {
+    "wallace-algebra-2010": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+    "faa-phak-8083-25c": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+    "gpo-our-flag-2003": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
+    "cdc-zombie-pandemic-2011": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
+    "fed-explained-2021": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
+    "gpo-911-2004": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b"
+  },
+  "fixtures": {
+    "Tests/PDFReflowLibTests/fixtures/faa-165-layout.json": "a4452718f2fc150ea9872461305a1ab8c68dbb2c5453223c1d270b58d93b0edd",
+    "Tests/PDFReflowLibTests/fixtures/faa-199-layout.json": "5a08fce14b1055afdf6a398a41cc0ca35c8aca75c0a02fa6da16211aebc5c67b",
+    "Tests/PDFReflowLibTests/fixtures/faa-262-layout.json": "56270b90a6b86a17b108004c010459ca6218c4907a99fd915a4d716a8d0f7972",
+    "Tests/PDFReflowLibTests/fixtures/flag-34-layout.json": "787959c8dfe4b2878ebeeac60b896a68edb4648495007d392accda5eee982997",
+    "Tests/PDFReflowLibTests/fixtures/cdc-26-layout.json": "31c520b4842bf9aa2170064fb4e14a1d605eccbdba807957ec45cae885ea8ed7",
+    "Tests/PDFReflowLibTests/fixtures/algebra-438-layout.json (existing)": "b3da36dcda766fb7427f7dcc461e22b68d9e4711b8092003cc70dbea2a878c39",
+    "Tests/PDFReflowLibTests/fixtures/algebra-471-layout.json (existing)": "6b98c972466b6e5c421c1a35b25536adffebfc5c1ec913e1cebe972d9744e9f1",
+    "Tests/PDFReflowLibTests/fixtures/faa-511-layout.json (existing)": "425dfda2c94446140d8c2c7fd13544704452f4a828f694e473958ff8b46c70b9"
+  },
+  "tools": {
+    "tools/capture-layout-fixture.swift": "93d8c461964da47ca6eaca42c3d2d5a7688bb1ba015d10dfbf8854302373a00b",
+    "capture": "swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/ConversionTypes.swift Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift Sources/PDFReflowLib/GraphicsReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift tools/capture-layout-fixture.swift -o /private/tmp/capture-layout-fixture; /private/tmp/capture-layout-fixture <case> <page> Tests/PDFReflowLibTests/fixtures/<name>-layout.json (faa-phak-8083-25c 165 199 262; gpo-our-flag-2003 34; cdc-zombie-pandemic-2011 26)",
+    "lane": "python3 tools/run_corpus_regressions.py --converter <cli> --epubcheck /opt/homebrew/bin/epubcheck --execution-context host-terminal --output <dir> --case <case>",
+    "pages": "python3 measurements/list-continuations/compare-pages.py <baseline.epub> <candidate.epub> <case>",
+    "order": "python3 measurements/column-cuts/block-order.py <baseline.epub> <candidate.epub> <pages> <out.txt>",
+    "renders": "pdftoppm -f <page> -l <page> -r 45..60 -png corpus/cache/<source>.pdf <prefix>"
+  }
+}

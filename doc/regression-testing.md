@@ -282,6 +282,16 @@ exercises, the 9/11 page-451 rows and the FAA columns, all of which must not cha
 `BaselineStyleTests.swift` checks both native baseline-attribute keys, unchanged small
 fonts and noisy positioning, a real PDF-to-EPUB superscript/subscript path, and CDC page-5 OCR
 line spacing that must not become inline scripts.
+`ColumnCutTests.swift` covers [#47](https://github.com/vocaro/PDFReflowLib/issues/47) and
+[#56](https://github.com/vocaro/PDFReflowLib/issues/56): the Wallace page-438 title and section
+labels precede all three answer columns, page 471's 7.8 section reads whole before chapter 8, and
+FAA pages 165, 199 and 262 read a figure-headed left column before the right one with every
+character kept. Each guard has a control that fails when the guard is removed: Our Flag page 34's
+row-banded state grid keeps row order (the text-measured gutter waits for the horizontal cut), FAA
+page 511 with its folio keeps the left column's tail ahead of the right column, CDC page 26's
+two-line speech balloons are not heading bands, and a synthetic figure spanning both columns is
+never dropped by a gutter measured over text. See the
+[column-cut evidence](../measurements/column-cuts/record.md).
 
 These small JSONs capture native extraction from checksum-pinned sources, not converter output.
 They run offline on macOS and iOS. Capture another page with full Xcode selected:
@@ -298,7 +308,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-314 Swift tests with no known-issue wrappers, and 165 Python tests.
+340 Swift tests with no known-issue wrappers, and 166 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

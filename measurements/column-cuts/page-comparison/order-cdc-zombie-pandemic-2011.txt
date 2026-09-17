@@ -1,0 +1,40 @@
+====================================================================================================
+PAGE 6  blocks 17->17  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -1,6 +1,6 @@
+   h    - W ' ■
+  +p    __________________________________
+   p    le t 's CHeck the in te rn e t...
+   h    SN
+  -p    __________________________________
+   p    t h is d o e s n o t LOOk good, MAX.
+   p    a z o M B ie v iru s ?
+====================================================================================================
+PAGE 13  blocks 10->10  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -1,7 +1,7 @@
+  +p    (WHINE!)
+  +h    UН? WHД?
+   p    OKAY, OKAY... I'M COMING.
+   p    LET'S TAKE A PEEK OUTSIDE
+   h    AND SEE WHAT'S HAPPENING...
+  -h    UН? WHД?
+  -p    (WHINE!)
+   p    WHAT IS IT MAX?
+   p    IT'S STILL DARK OUT.
+====================================================================================================
+PAGE 26  blocks 11->11  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -1,2 +1,3 @@
+  +p    m m
+   p    fHt
+   p    Uh oh... THE Fu BL LIGHT o u st came on! how Far away
+  @@ -4,5 +5,4 @@
+   p    what? yo u 're o u t o f g a s ? we've g o t 10 m /l b s to g o
+   p    and It 's startin g to g et d A rk !
+  -p    m m
+   p    WELL... We G£TT££ DriVE f a s t AND TAKE CHANCBS!
+   p    DO ME A fAVOr AND

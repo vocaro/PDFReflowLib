@@ -1,0 +1,216 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "usda-ars-agresearch-2012-11",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "d67659efa0ff7da6172c7cf9d268660bced61e6716ab3951919a11f14f4e581f",
+  "candidateConverterSHA256": "58f58ab5d81e02250167f2d4c82567e2234a0a6d3f9c288c693a0794b86161c8",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "b7e8a53e3b55832cf440fa89ea3c27b3546abbdce99932be2c12871a79ad171a"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "b7e8a53e3b55832cf440fa89ea3c27b3546abbdce99932be2c12871a79ad171a"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    24
+  ],
+  "changedPageFields": {
+    "2": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "3": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "4": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "5": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "6": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "7": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "8": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "9": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "10": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "11": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "12": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "13": [
+      "warnings"
+    ],
+    "14": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "15": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "16": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "17": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "18": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "19": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "20": [
+      "warnings"
+    ],
+    "21": [
+      "warnings"
+    ],
+    "24": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ]
+  },
+  "changedImages": [
+    "EPUB/images/image-4.png",
+    "EPUB/images/image-7.png",
+    "EPUB/images/image-11.png",
+    "EPUB/images/image-14.png",
+    "EPUB/images/image-18.png",
+    "EPUB/images/image-21.png",
+    "EPUB/images/image-24.png",
+    "EPUB/images/image-28.png",
+    "EPUB/images/image-30.png",
+    "EPUB/images/image-34.png",
+    "EPUB/images/image-38.png",
+    "EPUB/images/image-41.png",
+    "EPUB/images/image-44.png",
+    "EPUB/images/image-47.png",
+    "EPUB/images/image-51.png",
+    "EPUB/images/image-54.png",
+    "EPUB/images/image-57.png",
+    "EPUB/images/image-70.png"
+  ],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [
+    "imageCount",
+    "warnings"
+  ],
+  "idOnlyShifts": {
+    "pageCount": 2,
+    "fields": {
+      "images": 2,
+      "markup": 2
+    },
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 49
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

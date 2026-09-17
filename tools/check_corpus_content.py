@@ -40,6 +40,7 @@ CHECK_TYPES = (
     ('paragraph-separation', ('separateParagraphs',), False),
     ('distinct-paragraph', ('distinctParagraphs',), False),
     ('image-presence', ('minimumImages', 'maximumImages'), True),
+    ('page-reference', ('pageReference',), True),
     ('warning', ('warningCodesAnyOf',), True),
     ('absent-warning', ('absentWarningCodes',), True),
     ('source-region', ('imageRegions',), False),
@@ -578,6 +579,15 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
             checks += 1
             if len(page['images']) > maximum:
                 errors.append(f'Page {number}: {len(page["images"])} images, at most {maximum} expected')
+        if 'pageReference' in item:
+            # Whether the converter's `Original page N` source-page image accompanies the page:
+            # true where visible content needs it, false where nothing on the page does (#151).
+            wanted = item['pageReference']
+            if type(wanted) is not bool:
+                raise ValueError('Page reference expectation must be true or false')
+            checks += 1
+            if bool(page.get('pageReferences')) != wanted:
+                errors.append(f'Page {number}: ' + ('missing' if wanted else 'unexpected') + ' source-page reference image')
         if 'warningCodesAnyOf' in item:
             codes = item['warningCodesAnyOf']
             if not codes:

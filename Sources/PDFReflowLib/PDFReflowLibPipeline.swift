@@ -92,7 +92,7 @@ enum PDFReflowLibPipeline {
             // The pool includes every PDFKit accessor, not only string extraction. Page
             // references and annotation arrays also carry autoreleased rendering resources.
             let glyphReport = NativeTextReader.IndexGlyphReport()
-            var (content, unmappedFont, pageSizedGraphic, graphics) = try autoreleasepool {
+            var (content, unmappedFont, pageSizedGraphic, graphics, visibleAnnotations) = try autoreleasepool {
                 let page = try document.page(at: i)
                 guard let reference = page.pageRef else {
                     throw ConversionError.unreadablePDF
@@ -147,12 +147,21 @@ enum PDFReflowLibPipeline {
                     warnings.append(.init(code: .unsupportedGraphics, page: i + 1,
                         message: "Unsupported or excessive drawing operations require the original page image."))
                 }
-                if !page.annotations.isEmpty {
+                // Only annotations that change what a reader sees earn a reference (#151); links and
+                // form fields that draw nothing beyond the printed page lose only their interaction.
+                let annotations = try AnnotationEvidence.judge(page, bounds: bounds)
+                if !requiresPageImage && !syntheticStyle {
+                    AnnotationEvidence.markBoxes(annotations.boxes, in: &content.lines)
+                }
+                if annotations.visible > 0 {
                     content.preservePageReference = true
                     warnings.append(.init(code: .annotationsNotConverted, page: i + 1,
                         message: options.referenceImages == .never
                             ? "Visible annotations and link/form interactions are not reconstructed; supplementary references are disabled."
                             : "A page image preserves visible annotations. Link and form interactions are not reconstructed."))
+                } else if !annotations.isEmpty {
+                    warnings.append(.init(code: .annotationsNotConverted, page: i + 1,
+                        message: AnnotationEvidence.interactionMessage(annotations)))
                 }
                 // Structural font evidence is read here; the text judgment follows outside the pool.
                 // The page-sized-graphic signal reads the painted regions before tint removal, so a
@@ -170,14 +179,14 @@ enum PDFReflowLibPipeline {
                 let repaired = glyphReport.repairedLines > 0 && glyphReport.unrepairedLines == 0
                     && !holdsNumericGrid(content.lines)
                 return (content, !content.lines.isEmpty && !requiresPageImage && !repaired && TextEncodingCheck.hasUnmappedFont(reference),
-                        pageSized, graphics)
+                        pageSized, graphics, annotations.visible)
             }
             // A page that paints nothing and renders as white paper keeps only its boundary: no
             // recognition, no page image (#132).
             if content.lines.isEmpty, try autoreleasepool(invoking: {
                 let page = try document.page(at: i)
                 guard BlankPageDetector.drawsNothing(lines: content.lines, graphics: graphics,
-                                                     annotations: page.annotations.count),
+                                                     annotations: visibleAnnotations),
                       let reference = page.pageRef else { return false }
                 return BlankPageDetector.rendersWhite(reference, bounds: content.bounds)
             }) {

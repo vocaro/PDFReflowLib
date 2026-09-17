@@ -536,8 +536,9 @@ The run passes EPUBCheck, progress and the 128 MiB Mac RSS gate (64 MiB peak). T
 [review points](../corpus/uscourts-pro-se-1-2016-review.json) cover all five pages. The
 contract holds 142 checks: headings, caption and field-label order, whole instruction
 paragraphs, the running header's removal, and the page-5 push buttons kept out of the text.
-Because the widgets count as annotations, every page also gets a full source-page image, and the
-checkbox glyphs come out as `’` ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)).
+The empty widgets, unchecked boxes and push buttons show nothing beyond the printed page, so no page
+gets a source-page image; each page warns that its form fields are not interactive, and the box
+glyphs under the checkbox widgets read `☐` ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)).
 Other defects: stacked labels run together into one paragraph, fill-in sentences break apart at
 each blank, section labels are split or set as `<pre>`, one paragraph splits mid-line, and the
 `Page N of 5` folio stays in the text ([#152](https://github.com/vocaro/PDFReflowLib/issues/152)).
@@ -583,8 +584,8 @@ interleaves line by line, pages 7 and 8 read right-column blocks first, and the 
 2–6 are `<pre>`, folios are kept or made headings, and references become headings
 ([#154](https://github.com/vocaro/PDFReflowLib/issues/154)). Symbol-font α and bullets stay as
 private-use characters, and `45-degree` loses its hyphen
-([#155](https://github.com/vocaro/PDFReflowLib/issues/155)). Invisible table-of-contents links
-force a page-1 source image ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)).
+([#155](https://github.com/vocaro/PDFReflowLib/issues/155)). The invisible table-of-contents links on
+page 1 add no source-page image, only a warning ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)).
 
 
 ## Agricultural Research magazine (InDesign)
@@ -635,8 +636,6 @@ no article title reaches the contents:
 - The running foot is kept with its bullet as a superscript `l`, and end-of-story marks are
   tripled. Subheads are not headings, paragraphs merge, and the mailing panel becomes
   headings ([#159](https://github.com/vocaro/PDFReflowLib/issues/159)).
-- Borderless links force a source-page image on 21 pages
-  ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)).
 
 
 ## Arrival scheduling paper (pdfTeX IEEEtran)

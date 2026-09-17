@@ -6,7 +6,7 @@
     {
       "page": 1,
       "target": "Title block, abstract, table of contents and introduction start",
-      "acceptance": "Correct now: the title is one h2; author, affiliation, address and e-mail lines in order; TABLE OF CONTENTS and 1. INTRODUCTION are headings; the U.S. Government work line is present. Wrong now: the abstract, contents and introduction interleave line by line across the columns, and the abstract's right-column end precedes its left-column middle (#153); contents entries 1-6 are <pre>; the folio 1 is an h3 (#154); ten borderless internal links force an Original page 1 image (#151)."
+      "acceptance": "Correct now: the title is one h2; author, affiliation, address and e-mail lines in order; TABLE OF CONTENTS and 1. INTRODUCTION are headings; the U.S. Government work line is present. Wrong now: the abstract, contents and introduction interleave line by line across the columns, and the abstract's right-column end precedes its left-column middle (#153); contents entries 1-6 are <pre>; the folio 1 is an h3 (#154). Correct now: the ten borderless internal links add no source-page image, only an annotationsNotConverted warning (#151)."
     },
     {
       "page": 2,

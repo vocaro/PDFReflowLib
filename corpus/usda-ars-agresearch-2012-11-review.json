@@ -11,12 +11,12 @@
     {
       "page": 2,
       "target": "FORUM column: flag banner, title, three columns and the signature box",
-      "acceptance": "Correct now: the banner is preserved; the running foot is removed. Wrong now: the title, all three columns of prose, the (See story on page 4/15) links and the Daniel Strickman signature box are held inside a preserved-region crop, so no column text reflows (#158); link annotations add an Original page 2 image (#151)."
+      "acceptance": "Correct now: the banner is preserved; the running foot is removed. Wrong now: the title, all three columns of prose, the (See story on page 4/15) links and the Daniel Strickman signature box are held inside a preserved-region crop, so no column text reflows (#158). The borderless links add no source-page image (#151)."
     },
     {
       "page": 3,
       "target": "Masthead box, cover photo, contents and cover caption",
-      "acceptance": "Correct now: the date, volume and ISSN lines in order (as one paragraph); the breadfruit photo is preserved. Wrong now: the masthead staff box with the public-property statement, the photo caption, the contents list and the cover caption are inside preserved-region crops and do not reflow (#158); Original page 3 image (#151)."
+      "acceptance": "Correct now: the date, volume and ISSN lines in order (as one paragraph); the breadfruit photo is preserved. Wrong now: the masthead staff box with the public-property statement, the photo caption, the contents list and the cover caption are inside preserved-region crops and do not reflow (#158). No source-page image (#151)."
     },
     {
       "page": 4,
@@ -66,12 +66,12 @@
     {
       "page": 13,
       "target": "DWFP: Kenya fogger photo with caption, Taking It to the Field subhead, three columns",
-      "acceptance": "Correct now: the caption's sentences reflow; SETH BRITCH (D2644-1) credit; the photo is in the page image; the running foot is removed. Wrong now: the caption is merged with the first column line (what works and what doesn't); the three columns interleave line by line (#153); Taking It to the Field is a bold paragraph; the whole page is also an Original page 13 image (#151); unverifiedTextLayer."
+      "acceptance": "Correct now: the caption's sentences reflow; SETH BRITCH (D2644-1) credit; the photo is in the page image; the running foot is removed. Wrong now: the caption is merged with the first column line (what works and what doesn't); the three columns interleave line by line (#153); Taking It to the Field is a bold paragraph; the whole page is also an Original page 13 image, for the unverified text layer over the page-sized photo, not for its links (#151); unverifiedTextLayer."
     },
     {
       "page": 14,
       "target": "DWFP end: three columns, Getting Products to Troops subhead, Ken Linthicum pull quote over a full-page flag background",
-      "acceptance": "Wrong now: the whole text area, including the Sandra Avant byline, program note and contact paragraph and the pull quote, is one crop over the flag background, and no text reflows (#158); Original page 14 image (#151)."
+      "acceptance": "Wrong now: the whole text area, including the Sandra Avant byline, program note and contact paragraph and the pull quote, is one crop over the flag background, and no text reflows (#158). No source-page image (#151)."
     },
     {
       "page": 15,
@@ -81,7 +81,7 @@
     {
       "page": 16,
       "target": "Finding Ways To Save Water in Peach Orchards: title box, drop cap, portrait photo, three columns",
-      "acceptance": "Correct now: the PEGGY GREB (D2683-1) credit; the photo is preserved. Wrong now: the title box, drop-cap opening and all prose are inside crops with the photo (#158); Original page 16 image (#151)."
+      "acceptance": "Correct now: the PEGGY GREB (D2683-1) credit; the photo is preserved. Wrong now: the title box, drop-cap opening and all prose are inside crops with the photo (#158). No source-page image (#151)."
     },
     {
       "page": 17,
@@ -121,7 +121,7 @@
     {
       "page": 24,
       "target": "Back cover: return address, postal indicia, mailing panel, 150 Years mark and subscribe box",
-      "acceptance": "Correct now: the mailing-label instruction is a paragraph. Wrong now: the return address lines, Official Business and the web/Twitter line are h6 headings and enter the contents; the postal indicia and subscribe box are crops; the bullet is <sup>l</sup> (#159); Original page 24 image (#151)."
+      "acceptance": "Correct now: the mailing-label instruction is a paragraph. Wrong now: the return address lines, Official Business and the web/Twitter line are h6 headings and enter the contents; the postal indicia and subscribe box are crops; the bullet is <sup>l</sup> (#159). No source-page image (#151)."
     }
   ],
   "scope": "Manual targets from 60 DPI Poppler renders of all 24 pages, the EPUB's block structure and the Poppler text layer. InDesign CS5 magazine, untagged; 12 standard Arial and Times fonts not embedded; 55 link annotations. No region, glyph or appearance references are committed: page 24 carries agency logos and the mailing panel, and the index holly ornaments are uncredited; see the manifest rights note."

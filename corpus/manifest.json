@@ -1117,13 +1117,8 @@
       ],
       "attribution": "Complaint for a Civil Case (Pro Se 1, Rev. 12/16), Administrative Office of the United States Courts. Source: https://www.uscourts.gov/forms-rules/forms/complaint-a-civil-case. The PDF is unmodified.",
       "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-17, as did an independent curl download.",
-      "reviewStatus": "Converted with EPUBCheck, progress and 128 MiB Mac RSS gate (64 MiB peak). Contract protects headings, caption and label order, whole instruction paragraphs, header removal and push buttons kept out of the text on all five pages. Field-label flattening, fill-in sentence fragmentation, section labels, checkbox glyphs, folio retention and the widget-forced page images are unqualified.",
+      "reviewStatus": "Converted with EPUBCheck, progress and 128 MiB Mac RSS gate (64 MiB peak). Contract protects headings, caption and label order, whole instruction paragraphs, header removal and push buttons kept out of the text on all five pages. Field-label flattening, fill-in sentence fragmentation, section labels and folio retention are unqualified. Pages carry no source-page image and the checkbox glyphs read ☐ (#151).",
       "knownFidelityIssues": [
-        {
-          "page": 1,
-          "issue": "Empty field widgets add an Original page image and annotationsNotConverted on every page (the page-5 image shows the push buttons); checkbox glyphs extract as U+2019 on pages 1 and 3.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/151"
-        },
         {
           "page": 2,
           "issue": "Stacked field labels run together into one paragraph per block (pages 1, 2, 5); fill-in sentences break at each blank with rule crops out of place (pages 3-4); section labels split from titles or set as <pre>; Statement of Claim split mid-line (page 4); ) bracket column, header-rule crop with clipped header text and Page N of 5 folio kept.",
@@ -1212,11 +1207,6 @@
           "page": 4,
           "issue": "Symbol-font alpha emitted as U+F061 (page 4) and bullets as U+F0B7 with merged and split items (page 13); 45-degree-increment loses its hyphen.",
           "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/155"
-        },
-        {
-          "page": 1,
-          "issue": "Ten borderless internal link annotations force an Original page 1 image.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/151"
         }
       ],
       "baselineStatus": "Reviewed contract and corpus/ntrs-20200002975-gwl-2020-review.json recorded 2026-09-17; included in the corpus gate.",
@@ -1301,11 +1291,6 @@
           "page": 15,
           "issue": "Running foot kept with its dingbat bullet as <sup>l</sup> (pages 6-12, 15, 17, 19, 22, 24); end-of-story mark tripled as ***; subheads bold paragraphs or run into their paragraph; source paragraphs merged; italic-led lines as <pre> (page 19); credits detached from photos and BRAD FRITz; mailing panel and cover lines as h4-h6 headings; com-panies and infec-tions keep hyphens.",
           "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/159"
-        },
-        {
-          "page": 3,
-          "issue": "55 borderless URI link annotations add an Original page image and annotationsNotConverted on pages 2-21 and 24.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/151"
         }
       ],
       "baselineStatus": "Reviewed contract and corpus/usda-ars-agresearch-2012-11-review.json recorded 2026-09-17; included in the corpus gate.",

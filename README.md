@@ -187,8 +187,11 @@ that fall back to images skip unused attributed-text decoding. Failures use
   pages and seven Warren pages and no other page
   ([measurements](measurements/text-layer-plausibility/record.md)).
 - Rotated pages, unsupported drawing operations and pages without recoverable text use an
-  explicitly warned whole-page image fallback. Visible annotations get a source reference
-  image by default; link/form interactions are not reconstructed.
+  explicitly warned whole-page image fallback. An annotation that changes what a reader sees (a
+  bordered link, a stamp, a checked box, a filled or signed field) gets a source reference image
+  by default; one that draws nothing beyond the printed page (a borderless link, an unfilled
+  field, a form button) does not. Either way the page warns that its link and form interactions
+  are not reconstructed.
 - EPUB output includes XHTML chapters, styles, metadata, heading navigation, a source page-list,
   an OPF 3.0 package, and the required first/uncompressed `mimetype` ZIP entry. Chapter files
   split near 60 KB at block boundaries and start at [validated numbered chapter bookmarks](doc/architecture.md).
@@ -215,7 +218,7 @@ automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic
 converts each fixture twice and requires byte-identical EPUBs).
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
 and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold
-<!-- counts:contract-summary -->2521 checks on 490 pages of 21 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
+<!-- counts:contract-summary -->2581 checks on 491 pages of 21 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
 table, scale/contrast/color checks for a flag and an FAA figure, and <!-- counts:table-cell-checks -->9<!-- counts:end --> cell checks on tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and
 adding a case.

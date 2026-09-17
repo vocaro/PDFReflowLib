@@ -1,0 +1,766 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "fed-explained-2021",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "d67659efa0ff7da6172c7cf9d268660bced61e6716ab3951919a11f14f4e581f",
+  "candidateConverterSHA256": "58f58ab5d81e02250167f2d4c82567e2234a0a6d3f9c288c693a0794b86161c8",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "b7e8a53e3b55832cf440fa89ea3c27b3546abbdce99932be2c12871a79ad171a"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "b7e8a53e3b55832cf440fa89ea3c27b3546abbdce99932be2c12871a79ad171a"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 1,
+    "baselineWords": 1,
+    "candidateWords": 1,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    4,
+    5,
+    6,
+    8,
+    10,
+    11,
+    12,
+    13,
+    14,
+    16,
+    19,
+    20,
+    21,
+    22,
+    24,
+    25,
+    26,
+    27,
+    28,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    46,
+    47,
+    50,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    60,
+    61,
+    62,
+    63,
+    64,
+    66,
+    68,
+    70,
+    72,
+    73,
+    75,
+    77,
+    78,
+    79,
+    80,
+    81,
+    83,
+    85,
+    88,
+    92,
+    93,
+    94,
+    96,
+    97,
+    98,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    109,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    122,
+    123,
+    125,
+    126,
+    128,
+    129,
+    131,
+    132
+  ],
+  "changedPageFields": {
+    "4": [
+      "warnings"
+    ],
+    "5": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "6": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "8": [
+      "warnings"
+    ],
+    "10": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "11": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "12": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "13": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "14": [
+      "warnings"
+    ],
+    "16": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "19": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "20": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "21": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "22": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "24": [
+      "warnings"
+    ],
+    "25": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "26": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "27": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "28": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "30": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "31": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "32": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "33": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "34": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "35": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "36": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "37": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "38": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "39": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "40": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "41": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "42": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "43": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "44": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "46": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "47": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "50": [
+      "warnings"
+    ],
+    "53": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "54": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "55": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "56": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "57": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "58": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "60": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "61": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "62": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "63": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "64": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "66": [
+      "warnings"
+    ],
+    "68": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "70": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "72": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "73": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "75": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "77": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "78": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "79": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "80": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "81": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "83": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "85": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "88": [
+      "warnings"
+    ],
+    "92": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "93": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "94": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "96": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "97": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "98": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "100": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "101": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "102": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "103": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "104": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "105": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "109": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "111": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "112": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "113": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "114": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "115": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "116": [
+      "warnings"
+    ],
+    "117": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "118": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "119": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "122": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "123": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "125": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "126": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "128": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "129": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "131": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ],
+    "132": [
+      "images",
+      "markup",
+      "pageReferences",
+      "warnings"
+    ]
+  },
+  "changedImages": [
+    "EPUB/images/image-6.png",
+    "EPUB/images/image-7.png",
+    "EPUB/images/image-12.png",
+    "EPUB/images/image-14.png",
+    "EPUB/images/image-15.png",
+    "EPUB/images/image-17.png",
+    "EPUB/images/image-20.png",
+    "EPUB/images/image-23.png",
+    "EPUB/images/image-25.png",
+    "EPUB/images/image-26.png",
+    "EPUB/images/image-27.png",
+    "EPUB/images/image-30.png",
+    "EPUB/images/image-31.png",
+    "EPUB/images/image-32.png",
+    "EPUB/images/image-33.png",
+    "EPUB/images/image-35.png",
+    "EPUB/images/image-36.png",
+    "EPUB/images/image-37.png",
+    "EPUB/images/image-38.png",
+    "EPUB/images/image-39.png",
+    "EPUB/images/image-40.png",
+    "EPUB/images/image-41.png",
+    "EPUB/images/image-42.png",
+    "EPUB/images/image-43.png",
+    "EPUB/images/image-45.png",
+    "EPUB/images/image-47.png",
+    "EPUB/images/image-48.png",
+    "EPUB/images/image-49.png",
+    "EPUB/images/image-50.png",
+    "EPUB/images/image-52.png",
+    "EPUB/images/image-54.png",
+    "EPUB/images/image-55.png",
+    "EPUB/images/image-58.png",
+    "EPUB/images/image-60.png",
+    "EPUB/images/image-62.png",
+    "EPUB/images/image-63.png",
+    "EPUB/images/image-64.png",
+    "EPUB/images/image-65.png",
+    "EPUB/images/image-67.png",
+    "EPUB/images/image-68.png",
+    "EPUB/images/image-70.png",
+    "EPUB/images/image-71.png",
+    "EPUB/images/image-72.png",
+    "EPUB/images/image-76.png",
+    "EPUB/images/image-79.png",
+    "EPUB/images/image-80.png",
+    "EPUB/images/image-81.png",
+    "EPUB/images/image-83.png",
+    "EPUB/images/image-85.png",
+    "EPUB/images/image-86.png",
+    "EPUB/images/image-87.png",
+    "EPUB/images/image-88.png",
+    "EPUB/images/image-89.png",
+    "EPUB/images/image-90.png",
+    "EPUB/images/image-91.png",
+    "EPUB/images/image-95.png",
+    "EPUB/images/image-97.png",
+    "EPUB/images/image-98.png",
+    "EPUB/images/image-101.png",
+    "EPUB/images/image-102.png",
+    "EPUB/images/image-104.png",
+    "EPUB/images/image-106.png",
+    "EPUB/images/image-107.png",
+    "EPUB/images/image-109.png",
+    "EPUB/images/image-111.png",
+    "EPUB/images/image-112.png",
+    "EPUB/images/image-114.png",
+    "EPUB/images/image-115.png",
+    "EPUB/images/image-117.png",
+    "EPUB/images/image-118.png",
+    "EPUB/images/image-120.png",
+    "EPUB/images/image-121.png",
+    "EPUB/images/image-122.png",
+    "EPUB/images/image-125.png",
+    "EPUB/images/image-126.png",
+    "EPUB/images/image-127.png",
+    "EPUB/images/image-128.png",
+    "EPUB/images/image-129.png",
+    "EPUB/images/image-130.png",
+    "EPUB/images/image-132.png",
+    "EPUB/images/image-134.png",
+    "EPUB/images/image-135.png",
+    "EPUB/images/image-137.png",
+    "EPUB/images/image-139.png"
+  ],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [
+    "imageCount",
+    "warnings"
+  ],
+  "idOnlyShifts": {
+    "pageCount": 18,
+    "fields": {
+      "anchors": 2,
+      "images": 16,
+      "markup": 16,
+      "pageReferences": 1
+    },
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 52
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

@@ -43,6 +43,24 @@ class CorpusContentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.check()
 
+    def test_page_reference_expectation_distinguishes_references_from_other_images(self):
+        self.contract['pages'][0]['pageReference'] = False
+        self.assertTrue(self.check()['passed'])
+        self.pages[1]['pageReferences'] = ['page-1.png']
+        result = self.check()
+        self.assertFalse(result['passed'])
+        self.assertIn('Page 1: unexpected source-page reference image', result['errors'])
+        self.contract['pages'][0]['pageReference'] = True
+        self.assertTrue(self.check()['passed'])
+        del self.pages[1]['pageReferences']
+        result = self.check()
+        self.assertFalse(result['passed'])
+        self.assertIn('Page 1: missing source-page reference image', result['errors'])
+        for invalid in (0, 1, 'false', None):
+            self.contract['pages'][0]['pageReference'] = invalid
+            with self.assertRaises(ValueError):
+                self.check()
+
     def test_text_on_wrong_page_does_not_pass(self):
         self.pages[1]['text'], self.pages[2]['text'] = 'omega', 'alpha beta'
         self.assertFalse(self.check()['passed'])

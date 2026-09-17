@@ -113,7 +113,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 2521 targeted checks on 490 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 2581 targeted checks on 491 reviewed pages
 across 21 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No. 14*, *Mineral Commodity
@@ -123,11 +123,12 @@ Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Ci
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
 Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
 System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 992 ordered-text, 178 text, 332 paragraph, 176 absent-text, 214 heading,
+They comprise 992 ordered-text, 178 text, 335 paragraph, 178 absent-text, 215 heading,
 32 absent-heading, 74 list-item, 1 preformatted-lines, 25 script, 11 footnote, 34 note-link,
 56 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 77 distinct-paragraph,
-182 image-presence, 71 warning, 25 absent-warning, 17 source-region, 3 glyph-structure,
-3 image-appearance and 9 table-cell checks, counted as `tools/check_corpus_content.py` counts them.
+177 image-presence, 42 page-reference, 88 warning, 25 absent-warning, 17 source-region,
+3 glyph-structure, 3 image-appearance and 9 table-cell checks, counted as
+`tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
 All source-page anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
@@ -277,6 +278,9 @@ as `<table>` (#54, shaded rows and rules; other tables remain images under #36/#
 reviewed transcriptions; `tools/test_table_cells.py` keeps the checker's negative controls, and the
 spine reader separates cell text with spaces and parses each table into a grid. See the
 [table-cells record](../measurements/table-cells/record.md).
+
+A `pageReference` expectation (a boolean) requires the page to carry, or not to carry, the
+converter's `Original page N` image, independently of its region crops (#151).
 
 A `maximumImages` expectation (a non-negative integer) fails a page with more images than that,
 including source-page reference images; it pins decoration that must not become an image. The Fed
@@ -524,7 +528,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->736 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->231 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->739 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->232 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1032,6 +1036,24 @@ tested directly. Disabling the pipeline call, the overprinting-caption exclusion
 transcription-layer guard fails the tests that cover it. Contracts: Fed page 8 has no running head and
 reads title before quote; FAA page 159 has no `Figure 5-16` and keeps `Figure 6-20.` apart from the
 body. See the [hidden-text evidence](../measurements/hidden-text/record.md).
+
+## Annotations and source-page references
+
+`AnnotationPageImageTests.swift` covers #151 with synthetic annotated pages. A borderless link, an
+empty text field with a push button, a white stamp, unchecked boxes over printed glyphs and a
+Hidden stamp take no reference image, no `imageRegion` and no `referenceImageOmitted`, and their
+`annotationsNotConverted` messages name the lost interaction (the hidden page warns nothing).
+Controls keep the reference with the original message: a one-point bordered link, a field holding a
+value the page does not print, a checked box and a stamp; under `.never` exactly those pages report
+`referenceImageOmitted` and no asset is written. `AnnotationEvidence.judge` is also checked
+directly, including a field whose value the page does print beneath it, and `markBoxes` rewrites
+`’` as `☐`/`☒` only where every occurrence in the line lies under a checkbox (`the Clerk’s Office`
+is untouched). Negative controls: the old "any annotation" rule fails 11 expectations, and judging
+every annotation by ink alone, with widget values and annotation flags ignored, fails 13.
+Contracts: Pro Se 1 pages 1–5, the NASA ground-wind-loads page 1, USDA pages 2–19 and 24, Fed 5, 11,
+109 and 123, 9/11 581–583, FAA 6, 7, 12, 15 and 362 and Replay Clocks 1, 3, 4, 6 and 10 carry no
+page reference; 9/11 pages 570 and 571, whose links draw a border, still do. See the
+[annotation evidence](../measurements/annotation-page-images/record.md).
 
 ## Blank pages
 

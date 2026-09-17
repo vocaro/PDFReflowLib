@@ -725,9 +725,21 @@ OCR candidate under
 `.automaticKeepingImageBackedText` and `.never` keep the layer with its `unverifiedTextLayer`
 warning and reference. See [conversion options](conversion-options.md#implausible-inherited-text).
 
+`AnnotationEvidence` decides which annotations earn a source-page reference (#151). A form widget is
+read for what it holds: a push button is a viewer control, an unchecked box and a field that is
+empty or whose value the page already prints under it show nothing beyond the printed page, while a
+checked box or an unprinted value shows. Every other annotation is judged by its drawing, as
+`PageRasterizer` would draw it: alone over transparency within its bounds, then — if it inks — over
+the page's own rendering of that area, where fewer than three levels of change on every channel is
+no change (a white highlight). Hidden and NoView annotations, which PDFKit's drawing does not skip,
+are never judged. A page whose annotations all draw nothing keeps its `annotationsNotConverted`
+warning, worded for the lost interaction, and takes no image; checkbox widgets also rewrite the box
+glyph printed under them as `☐`/`☒` when every occurrence in the line lies under a box. See the
+[annotation evidence](../measurements/annotation-page-images/record.md).
+
 A page without text is an image-only fallback unless it is blank (#132). `BlankPageDetector`
 requires both kinds of evidence before recognition: the drawing places nothing (no extracted line,
-annotation, text show, painted footprint, region or inline image, and nothing unsupported; a white
+annotation that shows, text show, painted footprint, region or inline image, and nothing unsupported; a white
 fill is no footprint), and the crop box rendered at one pixel per point in device RGB over white
 has no channel of any pixel below 254. Such a page contributes only its source-page boundary, with
 no image, recognition or warning (eight 9/11 pages including 162 and 342, six Fed pages). A light tint, a hairline, a scan of an empty sheet (an image is a footprint) or an

@@ -227,8 +227,12 @@ regenerated references.
 
 ## Supplementary references versus required images
 
-Automatic references accompany fresh OCR, inherited text over a page-sized graphic, or visible
-annotations. Always includes a reference on every reconstructed page. Never omits these
+Automatic references accompany fresh OCR, inherited text over a page-sized graphic, or annotations
+that show. An annotation shows when it changes the page a reader sees: a form field holding a value
+the page does not print, a checked box, or any other annotation whose drawing changes a pixel of
+the page. Borderless links, unfilled fields, unchecked boxes and form buttons do not; those pages
+still report `annotationsNotConverted`, naming the interaction the EPUB does not reconstruct, but
+take no image ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)). Always includes a reference on every reconstructed page. Never omits these
 supplementary images without suppressing OCR, unverified-layer or annotation warnings. When
 analysis recommends a reference that the client omits, `referenceImageOmitted` identifies the
 source page and directs review to the PDF; warnings do not claim an absent image exists.

@@ -136,7 +136,10 @@ that fall back to images skip unused attributed-text decoding. Failures use
 - Vision recognizes pages with missing/damaged text by default. OCR text is explicitly reported
   as transcription, with an accompanying original-page image by default. The recognition request
   pins revision 1 and writes out its text options at their macOS/iOS 27 defaults (language
-  correction off). Transcription can still differ between processes: separate compiles of
+  correction off). The book `language` selects the recognition language Vision lists for it
+  (`en` → `en-US`, `fr` → `fr-FR`, `zh-TW` → `zh-Hant`); a language Vision does not list keeps
+  its default, US English with automatic detection, and the first `ocrUsed` warning says so
+  ([#106](measurements/ocr-language/record.md)). Transcription can still differ between processes: separate compiles of
   Vision's models can read the same page differently, and processes with the same executable
   name reuse one cached compile ([#94](measurements/ocr-location/record.md)).
   Existing text over a page-sized graphic retains a source reference image by default and reports

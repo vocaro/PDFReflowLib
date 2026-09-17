@@ -15,8 +15,7 @@ import Vision
     #expect(options.minimumTextHeightFraction == 0.03125)
     #expect(options.maximumCandidateCount == 3)
     #expect(options.customWords.isEmpty)
-    // Vision lists region-qualified languages (`en-US`), so the bare book language `en` does not
-    // match and the recognizer keeps its default, which is US English.
+    // The bare book language `en` maps to Vision's `en-US`, which is also the recognizer default.
     #expect(options.recognitionLanguages == [Locale.Language(identifier: "en-US")])
     for stage in request.supportedComputeStageDevices.keys {
         #expect(request.computeDevice(for: stage) == nil)
@@ -32,9 +31,21 @@ import Vision
     #expect(RecognizeDocumentsRequest.supportedRevisions.contains(.revision1))
 }
 
-@Test func ocrRequestAppliesOnlyAnExactlySupportedLanguage() {
+@Test func ocrRequestMapsBookLanguagesToSupportedRecognitionLanguages() {
+    // #106: book languages are usually bare codes; Vision lists region- or script-qualified ones.
+    for (book, vision) in [("en", "en-US"), ("en-US", "en-US"), ("en-GB", "en-US"), ("fr", "fr-FR"),
+                           ("fr-FR", "fr-FR"), ("fr-CA", "fr-FR"), ("de", "de-DE"), ("pt", "pt-BR"),
+                           ("pt-PT", "pt-BR"), ("ja", "ja-JP"), ("zh", "zh-Hans"), ("zh-Hans", "zh-Hans"),
+                           ("zh-TW", "zh-Hant"), ("zh-Hant", "zh-Hant"), ("ru", "ru-RU"), ("ar", "ar-SA")] {
+        #expect(OCRReader.recognitionRequest(language: book).textRecognitionOptions.recognitionLanguages
+                == [Locale.Language(identifier: vision)], "\(book)")
+        #expect(OCRReader.languageFallbackNote(for: book).isEmpty, "\(book)")
+    }
     let defaults = RecognizeDocumentsRequest().textRecognitionOptions.recognitionLanguages
-    #expect(OCRReader.recognitionRequest(language: "tlh").textRecognitionOptions.recognitionLanguages == defaults)
-    #expect(OCRReader.recognitionRequest(language: "fr-FR").textRecognitionOptions.recognitionLanguages
-            == [Locale.Language(identifier: "fr-FR")])
+    for book in ["tlh", "el", "he", "x-private"] {
+        #expect(OCRReader.recognitionLanguage(for: book) == nil, "\(book)")
+        #expect(OCRReader.recognitionRequest(language: book).textRecognitionOptions.recognitionLanguages == defaults)
+        #expect(OCRReader.languageFallbackNote(for: book)
+                == " Vision does not recognize the book language \(book); OCR used its default language (en-US) with automatic language detection.")
+    }
 }

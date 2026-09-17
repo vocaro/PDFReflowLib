@@ -21,11 +21,40 @@ enum OCRReader {
         request.textRecognitionOptions.minimumTextHeightFraction = 0.03125
         request.textRecognitionOptions.maximumCandidateCount = 3
         request.textRecognitionOptions.customWords = []
-        let language = Locale.Language(identifier: identifier)
-        if request.supportedRecognitionLanguages.contains(language) {
+        if let language = recognitionLanguage(for: identifier, supported: request.supportedRecognitionLanguages) {
             request.textRecognitionOptions.recognitionLanguages = [language]
         }
         return request
+    }
+
+    /// Empty when the book language maps to a recognition language; otherwise a sentence for the
+    /// `ocrUsed` message naming the recognizer default that was used instead.
+    static func languageFallbackNote(for identifier: String) -> String {
+        guard recognitionLanguage(for: identifier) == nil else { return "" }
+        let fallback = RecognizeDocumentsRequest(.revision1).textRecognitionOptions.recognitionLanguages
+            .map { [$0.languageCode?.identifier, $0.region?.identifier ?? $0.script?.identifier]
+                .compactMap { $0 }.joined(separator: "-") }
+            .joined(separator: ", ")
+        return " Vision does not recognize the book language \(identifier); OCR used its default "
+            + "language (\(fallback)) with automatic language detection."
+    }
+
+    /// The supported recognition language for a book language tag, or nil when Vision lists none
+    /// for that language (#106). Vision lists region- or script-qualified languages (`en-US`,
+    /// `fr-FR`, `zh-Hant`), while books usually declare a bare code (`en`, `fr`). In order:
+    /// the language whose likely-subtag expansion equals the tag's (`en` → `en-US`, `zh-TW` →
+    /// `zh-Hant`), then the first with the same language code and script (`fr-CA` → `fr-FR`),
+    /// then the first with the same language code.
+    static func recognitionLanguage(for identifier: String,
+                                    supported: [Locale.Language]? = nil) -> Locale.Language? {
+        let supported = supported ?? RecognizeDocumentsRequest(.revision1).supportedRecognitionLanguages
+        let requested = Locale.Language(identifier: identifier)
+        guard let code = requested.languageCode else { return nil }
+        if let exact = supported.first(where: { $0.maximalIdentifier == requested.maximalIdentifier }) {
+            return exact
+        }
+        let sameCode = supported.filter { $0.languageCode == code }
+        return sameCode.first { $0.script == requested.script } ?? sameCode.first
     }
 
     static func read(page: PDFPage, options: ConversionOptions) async throws -> Result {

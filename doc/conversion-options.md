@@ -39,6 +39,21 @@ and include source references by default; empty or failed recognition retains a 
 image. Compare with the source before relying on transcription. Reference and resource options
 apply independently, and cancellation remains cooperative during platform recognition.
 
+The book `language` (a BCP 47 tag, `en` by default) also selects Vision's recognition language
+(#106). Vision lists region- or script-qualified languages (`en-US`, `fr-FR`, `zh-Hant`; 33 on
+the macOS 27 SDK), so the tag is matched in order: the listed language with the same likely
+subtags (`en` → `en-US`, `pt` → `pt-BR`, `zh` → `zh-Hans`, `zh-TW` → `zh-Hant`), then the first
+with the same language and script (`fr-CA` → `fr-FR`, `en-GB` → `en-US`), then the first with
+the same language code. A language Vision does not list (`el`, `he`) keeps the recognizer's
+default, US English, and the conversion's first `ocrUsed` warning appends
+"Vision does not recognize the book language el; OCR used its default language (en-US) with
+automatic language detection." Automatic language detection stays on and language correction
+stays off either way. With these settings on the macOS 27 SDK, synthetic French (clean and
+degraded), Vietnamese, Ukrainian, Japanese, Chinese, Thai, Arabic, Hindi and Korean samples
+read the same under the default as under their own language; the language did change the script
+of capital-letter Cyrillic words made only of Latin look-alike letters. Do not expect better
+accented text from `fr` alone. See the [language measurements](../measurements/ocr-language/record.md).
+
 A born-digital page can also lose its text without any scan: fonts with a custom `Differences`
 encoding of index-style glyph names (`G108`, `c63`) and no `ToUnicode` map render correctly
 but extract as the wrong characters (the Census report's LaTeX pages come out shifted by three
@@ -203,9 +218,7 @@ container on iOS, not measured), separate compiles can read the same page differ
 later processes of that name reuse the cached programs until Vision recompiles them. A renamed
 copy of the executable therefore draws its own compile, and a client should not expect OCR text
 to match another installation's byte for byte. Pinning the request to the CPU did not remove the
-dependence. [The measurement](../measurements/ocr-location/record.md) has the details. The book
-language applies to recognition only when it names a region Vision lists (`fr-FR`); a bare `en`
-leaves the recognizer's default, US English.
+dependence. [The measurement](../measurements/ocr-location/record.md) has the details.
 
 ## Developer client
 

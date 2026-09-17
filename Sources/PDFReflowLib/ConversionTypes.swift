@@ -44,7 +44,8 @@ public struct ConversionOptions: Sendable {
     public var regionImageEncoding: ImageEncoding = .png
     public var title: String?
     public var author: String?
-    /// BCP 47 language tag for EPUB metadata and OCR (when the recognizer supports it).
+    /// BCP 47 language tag for EPUB metadata and OCR. OCR uses the recognition language Vision
+    /// lists for it (`fr` → `fr-FR`); an unlisted language keeps Vision's default, reported once.
     public var language = "en"
     /// Written verbatim as the package `dc:identifier`. Nil writes a random `urn:uuid:` per run.
     /// Must be non-blank XML text; a client pinning output bytes supplies a stable value.

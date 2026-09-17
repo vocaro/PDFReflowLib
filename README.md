@@ -74,8 +74,9 @@ required image-only fallbacks and figure crops, with warnings when recommended r
 omitted. [Conversion options](doc/conversion-options.md#recommended-starting-settings) gives measured starting
 settings, provisional recommended ranges, and each control's tradeoffs.
 
-Other options select automatic/disabled/always OCR or opt-in retries of image-backed existing
-text (`.automaticIncludingImageBackedText`), language, title, author, recurring header/footer
+Other options select automatic/disabled/always OCR, opt-in retries of all image-backed existing
+text (`.automaticIncludingImageBackedText`) or keeping even implausible image-backed text
+(`.automaticKeepingImageBackedText`), language, title, author, recurring header/footer
 removal, raster resolution, and ceilings for input bytes, pages, characters, raster pixels and
 uncompressed output bytes. Default ceilings are 256 MiB input, 2,000 pages, 20 million characters,
 12 million pixels per raster, 180 DPI and 512 MiB output content. These are input/work bounds,
@@ -175,6 +176,16 @@ that fall back to images skip unused attributed-text decoding. Failures use
   with a source-page reference. The English statistics are embedded (no dictionary download or
   model); pages declared in another language, pages with fewer than 20 words, composite (CID)
   fonts and wrong-but-present `ToUnicode` maps are not judged. Either signal alone never flags a page.
+- Existing text over a page-sized graphic is also tested for plausibility (#93): fewer than half
+  of at least 20 judged words in the system English lexicon (irregular capitals such as `sreANee`
+  and stray letters from letter-spaced text count against it; layers where a fifth of the tokens
+  hold digits are not judged), or lines that leave at least 75% of the page's text-shaped ink
+  uncovered in seven or more rows while holding fewer English words than those rows. A failing page
+  reports `implausibleTextLayer` with what failed and what was done. By default the layer is
+  replaced by OCR of the page image (the CDC comic's garbled, half-missing dialogue);
+  `.automaticKeepingImageBackedText` and `.never` keep it. On the English corpus it fails 27 CDC
+  pages and seven Warren pages and no other page
+  ([measurements](measurements/text-layer-plausibility/record.md)).
 - Rotated pages, unsupported drawing operations and pages without recoverable text use an
   explicitly warned whole-page image fallback. Visible annotations get a source reference
   image by default; link/form interactions are not reconstructed.
@@ -204,7 +215,7 @@ automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic
 converts each fixture twice and requires byte-identical EPUBs).
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
 and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold
-<!-- counts:contract-summary -->2300 checks on 460 pages of 19 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
+<!-- counts:contract-summary -->2326 checks on 463 pages of 19 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
 table, scale/contrast/color checks for a flag and an FAA figure, and <!-- counts:table-cell-checks -->9<!-- counts:end --> cell checks on tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and
 adding a case.

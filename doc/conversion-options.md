@@ -6,7 +6,7 @@ No policy changes dynamically to squeeze a book under a limit, and no network se
 
 | Control | Default | Choices / meaning |
 | --- | --- | --- |
-| `ocr` | `.automatic` | `.automatic`, `.automaticIncludingImageBackedText`, `.always`, `.never` |
+| `ocr` | `.automatic` | `.automatic`, `.automaticIncludingImageBackedText`, `.automaticKeepingImageBackedText`, `.always`, `.never` |
 | `referenceImages` | `.automatic` | `.automatic`, `.always`, `.never` |
 | `removeRepeatedHeadersAndFooters` | `true` | `true` omits detected running headers, footers and folios (`furnitureRemoved`); `false` keeps them in the text |
 | `fullPageImageEncoding` | `.png` | `.png`, `.jpeg(quality:)`, `.smallest(jpegQuality:)` |
@@ -23,8 +23,9 @@ Neither output-size control is a RAM limit, device qualification or estimate of 
 
 ## Existing text and selective OCR
 
-`.automatic` recognizes absent or visibly damaged text. Plausible inherited OCR errors can
-pass that test. `.automaticIncludingImageBackedText` additionally retries existing text when
+`.automatic` recognizes absent or visibly damaged text, and existing text over a page-sized
+graphic that fails the plausibility test below. Plausible inherited OCR errors can pass that
+test. `.automaticIncludingImageBackedText` additionally retries existing text when
 a detected graphic covers more than 75% of page area, using the same conservative signal as
 `unverifiedTextLayer`. This opt-in policy replaces the entire selected page's native text with
 fresh Vision transcription; it does not compare spellings or choose the more accurate version.
@@ -38,6 +39,56 @@ others, lose native formatting, or change reading order. Successful attempts rep
 and include source references by default; empty or failed recognition retains a required page
 image. Compare with the source before relying on transcription. Reference and resource options
 apply independently, and cancellation remains cooperative during platform recognition.
+
+### Implausible inherited text
+
+Text inherited over a page-sized graphic (the pages that would report `unverifiedTextLayer`) is
+tested before any recognition (#93). The layer fails when either holds:
+
+- **Too few English words.** Whitespace-separated words are sorted into English words (in the
+  system English lexicon, `NLEmbedding.wordEmbedding(for: .english)`, 57,171 words on macOS 27,
+  or `a`/`I`), damaged words (a lower-case word the lexicon does not know, irregular capitals such
+  as `sreANee`, a stray lower-case letter from letter-spaced text such as `n e x t`) and neutral
+  words (capitalized or upper-case words it does not know, which are names and abbreviations, and
+  words broken by symbols). With at least 20 English and damaged words, fewer than half English
+  fails. A layer where a fifth or more of the tokens hold digits (statistical tables, notes pages)
+  is not judged.
+- **Too little text for the ink.** When the layer holds fewer than 32 English words, the page is
+  rendered at 180 DPI (the client's pixel ceiling applies) and its text-shaped ink found as in the
+  recognition coverage check below. The layer fails when its lines leave at least 75% of that ink,
+  in at least seven rows, uncovered, and it holds fewer English words than those rows.
+
+Every page that fails reports `implausibleTextLayer`, whatever the policy, and the conversion
+report's `warnings` list each such page. The message says what failed and what was done, for
+example "Existing text over a page-sized image does not read as English: only 23 of 77 words are
+English words (misspelled, wrongly capitalized or letter-spaced text). The existing text was
+discarded and replaced by OCR of the page image; review this page against the original page
+image." (CDC page 5) or "Existing text over a page-sized image is missing most of the page's text: about 88% of
+the page's text-shaped ink (7 rows) lies outside its lines, which hold 0 English words. …" (page 20).
+`.automatic`, `.automaticIncludingImageBackedText` and `.always` replace the layer with OCR (the
+page then also reports `ocrUsed`). The warning is written once recognition has run, so when
+recognition fails or finds no text its message ends instead "The existing text was discarded, but
+OCR of the page image failed or found no text, so the page is preserved as an image." (with
+`ocrFailed` or `pageImageFallback`). `.automaticKeepingImageBackedText` and `.never` keep it, and the
+message ends "The existing text is retained because the OCR policy keeps it; read the accompanying
+original page image instead." (the page keeps `unverifiedTextLayer` and its reference). A
+client that wants the pre-#93 automatic behavior, recognition only of absent or damaged text,
+selects `.automaticKeepingImageBackedText`. The test reads the text that would reflow, after any
+glyph-index repair (#143). Pages already failing `damagedTextEncoding`, pages that require a page
+image and books not declared English are not judged; without a system lexicon only the ink test
+runs.
+
+On the English corpus's 1,353 image-backed pages the test fails 27 CDC comic pages (every one
+reviewed as a damaged or incomplete layer; its dialogue units with reflowed text rise from 124 to
+222 of 231) and seven Warren pages (six handwritten hospital notes whose layer is noise, and a map
+page whose layer holds only the caption), and no Blue Book, NBS, DGA, FAA, Fed, Our Flag or NOAA page. The
+digit guard is what keeps 20 Blue Book table pages out, and the English share of Warren's witness
+lists (0.65) is the nearest plausible layer to the threshold. Converting the CDC comic takes about
+1.6 times as long (9 → 36 recognized pages; about 100 MiB more peak footprint), the Blue Book about
+4% longer (25 pages rendered for the ink test, none replaced) and the full Warren report about 6%. Because recognition replaces the whole layer, native
+reading order, styles and headings on those pages come from the recognized text instead; the
+book's heading levels are ranked again. See the
+[plausibility measurements](../measurements/text-layer-plausibility/record.md).
 
 Recognition can succeed while silently leaving text out. One compile of Vision's models dropped
 whole Census paragraphs (#116); both compiles measured on Warren dropped body text on some pages
@@ -95,7 +146,7 @@ English at exactly one constant offset (the Census report's EC text fonts, #143)
 index-glyph lines are all repaired and that hold no numeric table rows reflow natively under every
 policy, and the rest are judged as above. See the [index-glyph measurements](../measurements/glyph-index-decoding/record.md).
 
-The developer client exposes these policies as `--ocr automatic|image-backed|always|never`.
+The developer client exposes these policies as `--ocr automatic|image-backed|keep-image-backed|always|never`.
 `--no-ocr` remains an alias for `--ocr never`; when repeated, the last OCR option takes effect.
 See [selective OCR measurements](../measurements/selective-ocr/record.md) for the pinned Warren
 excerpt, native controls, timings and limitations. These measurements do not qualify whole-book

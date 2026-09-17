@@ -4672,14 +4672,36 @@
     {
       "id": "cdc-zombie-pandemic-2011",
       "sourceSHA256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
-      "basis": "Page 39 checklist source raster reviewed. Page 5/13 only protect artwork and transcription warnings; damaged dialogue and comic narrative order remain unqualified. Pages 14, 23, 34 and 17 source rasters reviewed (#122): a speech balloon beside a caption box reads whole, the left unit first (page 14 `Nothing but snow. Let's try the radio...` before the broadcast, page 23 the left-panel balloon before the right-panel broadcast, page 34 `wow... that old thing still works!` before the storm warning); the rotated OCR caption on page 17 reads its three lines in order. Balloon order across panels (#18) is not blessed.",
+      "basis": "Page 39 checklist source raster reviewed. Page 13 protects artwork and its transcription warning. Pages 5, 7, 14, 20, 23, 31 and 34 source rasters reviewed against the #93 conversion: their inherited layers fail the plausibility test (too few English words; pages 20 and 31 too little text for the ink) and are replaced by OCR, which reads the dialogue the layer garbled or omitted (page 7 `MAN I FORGOT I HAD THIS`, all three page-20 balloons, page 31's caption boxes and balloons). The damaged native words must be absent and the page must report implausibleTextLayer. Page 39's plausible checklist keeps its native text without that warning. The native-layer order checks from #122 on pages 14, 23 and 34 are replaced by the same balloon-before-broadcast order in the recognized text. The rotated OCR caption on page 17 reads its three lines in order. Phrases avoid apostrophes and words Vision misreads in this compile (#94). Balloon order across panels (#18), balloons split into several paragraphs, sound effects read as headings and Cyrillic look-alike letters in short exclamations are not blessed.",
       "pages": [
         {
           "page": 5,
           "minimumImages": 1,
           "warningCodesAnyOf": [
-            "unverifiedTextLayer",
-            "pageImageFallback"
+            "implausibleTextLayer"
+          ],
+          "orderedText": [
+            "A STRANGE VIRUS BEGAN SPREADING RAPIDLY",
+            "SLOW MOVEMENT, SLURRED SPEECH"
+          ],
+          "absentText": [
+            "sreANee",
+            "v/eus"
+          ]
+        },
+        {
+          "page": 7,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "orderedText": [
+            "NEXT, THE PAIR GO DOWN TO THE BASEMENT.",
+            "MAN I FORGOT I HAD THIS.",
+            "WATER, FOOD, RADIO,"
+          ],
+          "absentText": [
+            "WeLL It Lo o k s Like"
           ]
         },
         {
@@ -4696,54 +4718,19 @@
           ]
         },
         {
-          "page": 39,
-          "orderedText": [
-            "Assemble the following items to create a kit",
-            "Flashlight",
-            "Extra batteries",
-            "Cell phone with charger",
-            "Consider the needs of all family members"
-          ],
-          "minimumImages": 1
-        },
-        {
           "page": 14,
-          "paragraphs": [
-            "le t 's tr y the radio..."
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
           ],
           "orderedText": [
-            "Nothing eut snow .",
-            "le t 's tr y the radio...",
+            "NOTHING BUT SNOW.",
+            "THE RADIO...",
+            "STAY IN YOUR HOMES. DO NOT GO OUTSIDE.",
+            "A SECURE AREA OF THE HOUSE."
+          ],
+          "absentText": [
             "sray in your Homes.",
-            "slow bo MovBMenr",
-            "thbm ro a secure area",
-            "sray runed For more"
-          ]
-        },
-        {
-          "page": 23,
-          "paragraphs": [
-            "aLm ost a week, todd, and we haven't le f t the"
-          ],
-          "orderedText": [
-            "w e're aLmosT",
-            "H o u s e !",
-            "...coNr/Nues ro spreAd.",
-            "cdc is ure/Ne",
-            "stay in your Homes.",
-            "ro a des/eNAred"
-          ]
-        },
-        {
-          "page": 34,
-          "paragraphs": [
-            "wow... THAT o ld THINg STILL"
-          ],
-          "orderedText": [
-            "wow... THAT",
-            "w o r k s !",
-            ".severe TttuaeesTom",
-            "in effect fo r THe"
+            "Nothing eut snow"
           ]
         },
         {
@@ -4752,6 +4739,82 @@
             "SEVERAL DAYS LATER",
             "DISEASE CONTROL",
             "ATLANTA"
+          ]
+        },
+        {
+          "page": 20,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "orderedText": [
+            "I AGREE.",
+            "CALLED EVERYONE",
+            "EXCELLENT.",
+            "LET ME SHOW YOU SOMETHING"
+          ]
+        },
+        {
+          "page": 23,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "orderedText": [
+            "ALMOST OUT OF FOOD.",
+            "ALMOST A WEEK, TODD, AND WE",
+            "CONTINUES TO SPREAD.",
+            "STAY IN YOUR HOMES.",
+            "GO DIRECTLY TO A DESIGNATED SAFE ZONE."
+          ],
+          "absentText": [
+            "aLm ost a week",
+            "...coNr/Nues ro spreAd."
+          ]
+        },
+        {
+          "page": 31,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "orderedText": [
+            "AROUND SUNSET, THE FIRST TRUCK ARRIVES AT THE GATE",
+            "GET THE TRUCK INSIDE THE GATE.",
+            "GONNA GET OVER-RUN!",
+            "THESE ARE OUR FELLOW CITIZENS!"
+          ],
+          "absentText": [
+            "SAe&e",
+            "GONNA GeT"
+          ]
+        },
+        {
+          "page": 34,
+          "warningCodesAnyOf": [
+            "implausibleTextLayer"
+          ],
+          "orderedText": [
+            "THAT OLD THING STILL",
+            "IN EFFECT FOR THE FOLLOWING COUNTIES"
+          ],
+          "absentText": [
+            ".severe TttuaeesTom",
+            "L o o k in g"
+          ]
+        },
+        {
+          "page": 39,
+          "orderedText": [
+            "Assemble the following items to create a kit",
+            "Flashlight",
+            "Extra batteries",
+            "Cell phone with charger",
+            "Consider the needs of all family members"
+          ],
+          "minimumImages": 1,
+          "absentWarningCodes": [
+            "implausibleTextLayer",
+            "ocrUsed"
           ]
         }
       ]

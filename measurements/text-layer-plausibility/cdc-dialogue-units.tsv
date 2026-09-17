@@ -1,0 +1,33 @@
+page	units_in_source	units_reflowed_before	units_reflowed_after	test_failed	text_after	units_still_missing
+3	2	2	2	words	OCR
+4	5	5	5	-	native
+5	7	6	7	words	OCR
+6	6	4	6	words	OCR
+7	6	2	6	words	OCR
+8	8	5	8	words	OCR
+9	13	5	12	words	OCR	UUURRRR!
+10	13	3	12	words	OCR	one of URRR!/URRK! (one URRI read)
+11	11	4	10	words	OCR	URP!
+12	11	7	11	words	OCR
+13	5	5	5	-	OCR (before too)
+14	6	3	5	words	OCR	!!
+17	1	1	1	-	OCR (before too)
+18	6	4	6	words	OCR
+19	4	4	4	words	OCR
+20	3	0	3	ink	OCR
+21	13	9	13	words	OCR
+22	6	4	4	-	native	two units absent from the layer (see comic-panel-order/page-audit.tsv)
+23	12	8	12	words	OCR
+24	9	6	9	words	OCR
+25	8	2	7	words	OCR	GARRR!
+26	4	4	4	words	OCR
+27	7	5	7	words	OCR
+28	3	2	3	words	OCR
+29	8	4	8	words	OCR
+30	4	3	4	words	OCR
+31	12	1	11	ink	OCR	GLURP!
+32	8	3	8	words	OCR
+33	13	4	13	words	OCR
+34	13	6	13	words	OCR
+35	3	2	2	-	native	MEEW!
+36	1	1	1	-	OCR (before too)

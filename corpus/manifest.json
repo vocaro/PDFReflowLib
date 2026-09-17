@@ -676,7 +676,7 @@
         37,
         39
       ],
-      "reviewStatus": "EPUBCheck, progress and 512 MiB Mac RSS gate pass. Source and comparison spot checks expose damaged inherited dialogue on page 5 and fresh-OCR panel ordering on page 13. Whole-comic fidelity is unqualified.",
+      "reviewStatus": "EPUBCheck, progress and 512 MiB Mac RSS gate pass. Source and comparison spot checks expose damaged inherited dialogue on page 5 and fresh-OCR panel ordering on page 13. Since #93, 27 damaged or incomplete inherited layers (pages 3, 5-12, 14, 18-21, 23-34, 37) fail the plausibility test, report implausibleTextLayer and are recognized by default; the contract checks recovered dialogue on pages 5, 7, 14, 20, 23, 31 and 34. Whole-comic fidelity is unqualified.",
       "ownerReportedFindings": [
         {
           "finding": "Approximately 2000 extracted words across 42 pages; dialogue is part of the artwork.",
@@ -692,7 +692,9 @@
         {
           "page": 5,
           "issue": "Damaged existing text and omitted small balloon survive without a suspect-text warning; complete artwork is present as an image.",
-          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/7"
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/7",
+          "status": "resolved",
+          "resolution": "Page 5's layer has 23 English words among 77 judged, fails the #93 plausibility test, reports implausibleTextLayer and is replaced by OCR of the page image, which reads all seven caption boxes and balloons (HUH?! with Cyrillic look-alike letters); see measurements/text-layer-plausibility/record.md."
         },
         {
           "page": 13,

@@ -3,12 +3,16 @@ import Foundation
 /// Policy and resource bounds for one independent conversion. No network or model downloads.
 public struct ConversionOptions: Sendable {
     public enum OCRPolicy: Sendable {
-        /// Recognize pages with absent or visibly damaged native text.
+        /// Recognize pages with absent or visibly damaged native text, and image-backed pages whose
+        /// existing text fails the English plausibility test (`implausibleTextLayer`).
         case automatic
         /// Automatic recognition plus retry of existing text over a graphic covering more
         /// than 75% of the page. This conservative signal also matches valid illustrated
         /// pages; fresh OCR replaces their native text and does not guarantee better accuracy.
         case automaticIncludingImageBackedText
+        /// Automatic recognition, except that existing text over a page-sized graphic is always
+        /// kept, even when it fails the plausibility test (still reported as `implausibleTextLayer`).
+        case automaticKeepingImageBackedText
         case never
         case always
     }
@@ -102,6 +106,13 @@ public struct ConversionWarning: Sendable, Codable, Equatable {
         /// OCR policies recognize the page image instead; `.never` keeps the unreadable text.
         /// A source-page reference is recommended either way.
         case damagedTextEncoding
+        /// Existing text over a page-sized graphic that fails the English plausibility test: too
+        /// few English words, or too little text for the page's text-shaped ink. `.automatic`,
+        /// `.automaticIncludingImageBackedText` and `.always` replace it with OCR of the page image;
+        /// `.automaticKeepingImageBackedText` and `.never` keep it. Reported either way, so the
+        /// page can be reviewed; the message states what failed and whether OCR replaced the text,
+        /// left only the page image (recognition failed or found nothing) or the policy kept it.
+        case implausibleTextLayer
     }
     public let code: Code
     public let page: Int

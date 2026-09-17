@@ -1,0 +1,151 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        40.100000000000001,
+        605.30600000000004,
+        530.48100000000022,
+        7
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7,
+          "text" : "W e h o p e y o u e n j o y e d r e a d in g this fictional story. It’s m e a n t to b e b o t h e d u c a t io n a l a n d en tertain in g."
+        }
+      ],
+      "text" : "W e h o p e y o u e n j o y e d r e a d in g this fictional story. It’s m e a n t to b e b o t h e d u c a t io n a l a n d en tertain in g."
+    },
+    {
+      "rect" : [
+        38.200000000000003,
+        585.10599999999999,
+        534.57599999999945,
+        7
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7,
+          "text" : "N o w that y o u ’v e s e e n th e i m p o r t a n c e of b e in g p r e p a r e d , t a k e t h e tim e to p u t t o g e t h e r a n e m e r g e n c y"
+        }
+      ],
+      "text" : "N o w that y o u ’v e s e e n th e i m p o r t a n c e of b e in g p r e p a r e d , t a k e t h e tim e to p u t t o g e t h e r a n e m e r g e n c y"
+    },
+    {
+      "rect" : [
+        134.10000000000002,
+        565.40599999999995,
+        342.73399999999987,
+        7
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7,
+          "text" : "kit w ith t h e ite m s in c lu d e d in t h e ch e c k list o n t h e fo llo w in g p a g e ."
+        }
+      ],
+      "text" : "kit w ith t h e ite m s in c lu d e d in t h e ch e c k list o n t h e fo llo w in g p a g e ."
+    },
+    {
+      "rect" : [
+        162.20000000000002,
+        545.30599999999993,
+        285.57899999999972,
+        7
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7,
+          "text" : "Y o u ’ll b e r e a d y for a n y kind o f disaster, e v e n z o m b i e s ."
+        }
+      ],
+      "text" : "Y o u ’ll b e r e a d y for a n y kind o f disaster, e v e n z o m b i e s ."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "cdc-zombie-pandemic-2011",
+  "graphics" : [
+    [
+      0,
+      0,
+      612,
+      792
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 7,
+      "monospaced" : false,
+      "rect" : [
+        40.100000000000001,
+        605.30600000000004,
+        530.48100000000022,
+        7
+      ],
+      "text" : "W e h o p e y o u e n j o y e d r e a d in g this fictional story. It’s m e a n t to b e b o t h e d u c a t io n a l a n d en tertain in g."
+    },
+    {
+      "fontSize" : 7,
+      "monospaced" : false,
+      "rect" : [
+        38.200000000000003,
+        585.10599999999999,
+        534.57599999999945,
+        7
+      ],
+      "text" : "N o w that y o u ’v e s e e n th e i m p o r t a n c e of b e in g p r e p a r e d , t a k e t h e tim e to p u t t o g e t h e r a n e m e r g e n c y"
+    },
+    {
+      "fontSize" : 7,
+      "monospaced" : false,
+      "rect" : [
+        134.10000000000002,
+        565.40599999999995,
+        342.73399999999987,
+        7
+      ],
+      "text" : "kit w ith t h e ite m s in c lu d e d in t h e ch e c k list o n t h e fo llo w in g p a g e ."
+    },
+    {
+      "fontSize" : 7,
+      "monospaced" : false,
+      "rect" : [
+        162.20000000000002,
+        545.30599999999993,
+        285.57899999999972,
+        7
+      ],
+      "text" : "Y o u ’ll b e r e a d y for a n y kind o f disaster, e v e n z o m b i e s ."
+    }
+  ],
+  "page" : 37,
+  "paints" : [
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        0,
+        0,
+        612,
+        792
+      ]
+    }
+  ],
+  "rightsBasis" : "CDC Stacks declares Public Domain. Attribution retained; document is not relicensed under MIT.",
+  "sourceSHA256" : "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
+  "sourceTitle" : "Preparedness 101: Zombie Pandemic",
+  "sourceURL" : "https://stacks.cdc.gov/view/cdc/6023/cdc_6023_DS1.pdf"
+}

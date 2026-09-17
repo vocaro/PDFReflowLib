@@ -693,6 +693,23 @@ NOAA's photo-and-chart pages, whose crops would still hold their text, keep the 
 text is OCR, detect every corrupted layer, or assess individual table cells. Fresh OCR keeps
 its separate `ocrUsed` notice; image-only fallbacks keep `pageImageFallback`.
 
+`TextLayerPlausibility` then judges such a layer before any recognition (#93), in English books
+only and not on pages already flagged `damagedTextEncoding`. Its word test sorts whitespace
+words against the system English lexicon (`NLEmbedding.wordEmbedding(for: .english)`, a
+vocabulary lookup serialized behind a mutex; no network or download) into English, damaged
+(unknown lower-case words, irregular capitals, stray lower-case letters) and neutral (unknown
+capitalized names and abbreviations, words broken by symbols) words, and fails fewer than half
+English among at least 20 judged words unless a fifth of the tokens hold digits. When the layer
+holds fewer than 32 English words, its ink test renders the page at 180 DPI and measures the
+layer's line boxes with `OCRTextCoverage`; it fails when at least 75% of the text-shaped ink, in at
+least seven rows, lies outside them and the layer holds fewer English words than those rows.
+A failing page reports `implausibleTextLayer` under every policy (written after recognition, so the
+message says whether OCR replaced the layer, left a page image or the policy kept it) and becomes an
+OCR candidate under
+`.automatic` (as under `.automaticIncludingImageBackedText` and `.always`);
+`.automaticKeepingImageBackedText` and `.never` keep the layer with its `unverifiedTextLayer`
+warning and reference. See [conversion options](conversion-options.md#implausible-inherited-text).
+
 A page without text is an image-only fallback unless it is blank (#132). `BlankPageDetector`
 requires both kinds of evidence before recognition: the drawing places nothing (no extracted line,
 annotation, text show, painted footprint, region or inline image, and nothing unsupported; a white

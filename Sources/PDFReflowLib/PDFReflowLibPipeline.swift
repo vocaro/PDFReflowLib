@@ -87,7 +87,8 @@ enum PDFReflowLibPipeline {
         /// Every extraction step except recognition. `limit` only guards the character budget;
         /// it never truncates a page.
         func extractPage(_ i: Int, limit: Int, warnings: inout [ConversionWarning])
-            throws -> (content: PageContent, attemptsOCR: Bool, damagedEncoding: Bool) {
+            throws -> (content: PageContent, attemptsOCR: Bool, damagedEncoding: Bool,
+                       implausibleLayer: TextLayerPlausibility.Finding?) {
             // The pool includes every PDFKit accessor, not only string extraction. Page
             // references and annotation arrays also carry autoreleased rendering resources.
             let glyphReport = NativeTextReader.IndexGlyphReport()
@@ -181,7 +182,7 @@ enum PDFReflowLibPipeline {
                 return BlankPageDetector.rendersWhite(reference, bounds: content.bounds)
             }) {
                 content.requiresPageImage = false
-                return (content, false, false)
+                return (content, false, false, nil)
             }
             let invisibleText = graphics.hasInvisibleText
             let bounds = content.bounds
@@ -197,11 +198,23 @@ enum PDFReflowLibPipeline {
             // Share the same conservative page-sized-graphic signal with the review warning.
             // It identifies a candidate for re-recognition, not an erroneous transcription.
             let imageBackedText = !content.lines.isEmpty && pageSizedGraphic
+            // Inherited text over the image that does not read as English, or leaves most of the
+            // page's text-shaped ink uncovered, is not a plausible transcription of it (#93). Judged
+            // under every policy, so the page is reported whether or not its text is replaced.
+            let implausibleLayer = imageBackedText && !content.requiresPageImage && !damagedEncoding
+                ? try TextLayerPlausibility.judge(lines: content.lines, language: options.language) {
+                    try autoreleasepool {
+                        try TextLayerPlausibility.measureInk(page: try document.page(at: i), bounds: bounds,
+                                                             lines: content.lines, options: options)
+                    }
+                } : nil
             let automaticOCR = options.ocr == .automatic || options.ocr == .automaticIncludingImageBackedText
+                || options.ocr == .automaticKeepingImageBackedText
             let needsOCR = options.ocr == .always || (automaticOCR &&
                 (raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || damaged > max(2, raw.count / 50)
                  || damagedEncoding))
                 || (options.ocr == .automaticIncludingImageBackedText && imageBackedText)
+                || (options.ocr == .automatic && implausibleLayer != nil)
             let attemptsOCR = needsOCR && !content.requiresPageImage
             if damagedEncoding {
                 warnings.append(.init(code: .damagedTextEncoding, page: i + 1,
@@ -213,7 +226,7 @@ enum PDFReflowLibPipeline {
                                 ? "supplementary references are disabled, so read the source PDF instead."
                                 : "read the accompanying source-page image instead."))))
             }
-            if attemptsOCR { return (content, true, damagedEncoding) }
+            if attemptsOCR { return (content, true, damagedEncoding, implausibleLayer) }
             if damagedEncoding {
                 content.preservePageReference = true
                 for index in content.lines.indices { content.lines[index].structure = nil }
@@ -268,7 +281,7 @@ enum PDFReflowLibPipeline {
             if content.lines.isEmpty && !content.requiresPageImage {
                 content.requiresPageImage = true
             }
-            return (content, false, damagedEncoding)
+            return (content, false, damagedEncoding, implausibleLayer)
         }
 
         let store = PageStore(directory: workspace.appendingPathComponent("pages"))
@@ -289,11 +302,20 @@ enum PDFReflowLibPipeline {
             try Task.checkCancellation()
             let extracted = try extractPage(i, limit: options.maximumCharacters - characters, warnings: &warnings)
             var content = extracted.content
+            // The implausible-layer warning states what became of the layer, known only after recognition.
+            func reportImplausibleLayer(_ outcome: TextLayerPlausibility.Outcome) {
+                guard let finding = extracted.implausibleLayer else { return }
+                warnings.append(.init(code: .implausibleTextLayer, page: i + 1,
+                    message: TextLayerPlausibility.message(finding, outcome: outcome,
+                                                           referencesDisabled: options.referenceImages == .never)))
+            }
+            if !extracted.attemptsOCR { reportImplausibleLayer(.retained) }
             if extracted.attemptsOCR {
                 await progress(.init(stage: .recognizing, fractionCompleted: 0.6875 * Double(i) / Double(total),
                     page: i + 1, totalPages: total))
                 do {
                     let recognized = try await OCRReader.read(page: try document.page(at: i), options: options)
+                    reportImplausibleLayer(recognized.lines.isEmpty ? .pageImage : .replaced)
                     content.lines = recognized.lines
                     content.recognized = true
                     content.hasSyntheticTextStyle = false
@@ -315,6 +337,7 @@ enum PDFReflowLibPipeline {
                 catch {
                     try Task.checkCancellation()
                     content.requiresPageImage = true
+                    reportImplausibleLayer(.pageImage)
                     warnings.append(.init(code: .ocrFailed, page: i + 1,
                         message: "OCR failed; the source page is preserved as an image."))
                 }

@@ -428,7 +428,10 @@ The [baseline](../measurements/cdc-zombie-pandemic-2011/record.md) passes EPUB v
 progress and the 512 MiB Mac RSS gate, retaining 42 page images. The
 [review targets](../corpus/cdc-zombie-pandemic-2011-review.json) expose damaged existing dialogue
 on page 5 and fresh-OCR panel-order failure on page 13. [Suspect text #7](https://github.com/vocaro/PDFReflowLib/issues/7)
-and [comic grouping #18](https://github.com/vocaro/PDFReflowLib/issues/18) track those gaps.
+and [comic grouping #18](https://github.com/vocaro/PDFReflowLib/issues/18) track those gaps. Since
+[#93](../measurements/text-layer-plausibility/record.md) the damaged layer on 27 pages fails the
+plausibility test and is replaced by OCR under the default policy, each page reporting
+`implausibleTextLayer`: dialogue units with reflowed text rise from about 124 to 222 of 231.
 The measured 3,341 extracted whitespace tokens include OCR noise; they are not dialogue coverage.
 
 
@@ -451,9 +454,11 @@ python3 tools/check_corpus_quality.py --case cia-blue-book-14-1955 \
 ```
 
 The converter now emits `unverifiedTextLayer` on pages with existing text over a page-sized
-image, and `damagedTextEncoding` on born-digital pages whose fonts lack a usable Unicode mapping
+image, `damagedTextEncoding` on born-digital pages whose fonts lack a usable Unicode mapping
 and whose words fail the embedded English statistics (Census pages 2, 4–16 and 18–20;
-pages 3 and 17 decode natively since #143).
+pages 3 and 17 decode natively since #143), and `implausibleTextLayer` on image-backed pages whose
+inherited text fails the #93 plausibility test (none of the Blue Book's pages: its tables are
+exempt through their digits).
 The [current measurement](../measurements/quality-and-raster-fixes/record.md) checks pages
 74 and 150 separately from the [historical failing baseline](../measurements/cia-blue-book-14-1955/record.md).
 Crashes, timeouts, resource failures and generic image-preservation warnings do not satisfy it. No production quality-refusal

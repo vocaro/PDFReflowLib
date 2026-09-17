@@ -113,7 +113,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 2300 targeted checks on 460 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 2326 targeted checks on 463 reviewed pages
 across 19 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No. 14*, *Mineral Commodity
@@ -122,10 +122,10 @@ Microdata Protection*, *Welcome to the United States*, *Publication 596*, *Stimu
 Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case*,
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
 Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
-System* and *Agricultural Research*. They comprise 859 ordered-text, 168 text, 329 paragraph,
-164 absent-text, 195 heading, 32 absent-heading, 58 list-item, 1 preformatted-lines, 23 script,
+System* and *Agricultural Research*. They comprise 867 ordered-text, 168 text, 326 paragraph,
+175 absent-text, 195 heading, 32 absent-heading, 58 list-item, 1 preformatted-lines, 23 script,
 11 footnote, 34 note-link, 56 paragraph-continuation, 1 list-item-continuation,
-8 paragraph-separation, 69 distinct-paragraph, 171 image-presence, 65 warning, 24 absent-warning,
+8 paragraph-separation, 69 distinct-paragraph, 174 image-presence, 71 warning, 25 absent-warning,
 17 source-region, 3 glyph-structure, 3 image-appearance and 9 table-cell checks, counted as
 `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
@@ -524,7 +524,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->720 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->231 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->728 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->231 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -548,7 +548,8 @@ scaling in a retry band and its page-store encoding. Wallace pages 50 and 218 (`
 spaced example lines out of the list items, with and without crops; synthetic controls keep a
 wrapped line at the ordinary gap, a spaced line opening lowercase and a page with no measurable gap
 in the item. The CDC contract adds pages 14, 17, 23 and 34 and the Wallace contract pages 50, 64 and
-218. See the [fallback-block and ligature evidence](../measurements/fallback-blocks-and-ligatures/record.md).
+218. Since #93 CDC pages 14, 23 and 34 are recognized by default, so their contract checks the same
+balloon-before-broadcast order in the recognized text; the fixtures still hold the native layer. See the [fallback-block and ligature evidence](../measurements/fallback-blocks-and-ligatures/record.md).
 
 `EqualsHyphenTests.swift` covers [#126](https://github.com/vocaro/PDFReflowLib/issues/126) and
 [#127](https://github.com/vocaro/PDFReflowLib/issues/127). 9/11 fixtures 172, 210, 235 and 313
@@ -1310,6 +1311,37 @@ other body pages. The
 [index-glyph evidence](../measurements/glyph-index-decoding/record.md) surveys every English corpus
 book (no other index-glyph font and no shifted text), reviews Census against renders, and records the
 9/11 pages whose letter-spaced lines and citations gain spaces from the compensated-spacing rule.
+
+## Implausible inherited text layers
+
+`TextLayerPlausibilityTests.swift` covers [#93](https://github.com/vocaro/PDFReflowLib/issues/93).
+Unit tests sort words with an injected lexicon (English, irregular capitals, stray letters,
+unknown lower-case words, names, symbols, clitics, digits), hold each word-test boundary (20
+judged words, exactly half English, a fifth of the tokens with digits) and each ink-test boundary
+(seven rows, 75% uncovered, as many English words as rows), and count renders: a caption layer is
+rendered, a 32-word layer, another language and a word failure are not. With the system lexicon,
+the checksum-pinned CDC pages 5, 14, 23, 26, 34 and 37 and Warren's handwritten page 553 fail the
+word test, while Warren pages 50 (prose), 520 (a witness list at 0.65 English, the nearest
+plausible layer in the survey) and 910 (index) and Blue Book pages 5 and 12 pass. Blue Book page
+149 (a handwritten table) and Warren page 885 (notes) are the digit guard's negative control: both
+read under half English and are exempt only through their digits. Both warning messages are
+pinned, with the page-image outcome. End to end, an original PDF whose page-sized image shows ten lines of dialogue under an
+invisible garbled layer reports `implausibleTextLayer` under all five policies; `.automatic`,
+`.automaticIncludingImageBackedText` and `.always` recognize `strange virus` and drop `sreANee`
+with `ocrUsed`, `.automaticKeepingImageBackedText` and `.never` keep the garbled text with
+`unverifiedTextLayer`; over a blank image recognition finds nothing and the message says the page
+is preserved as an image; the same image under a faithful layer is neither reported nor recognized.
+A layer holding only the last line fails the ink test and is recognized by default and kept by
+the opt-out policy; the complete layer is not reported. With `TextLayerPlausibility.judge` forced to
+return nil, both end-to-end tests and the render-count test fail; with the digit guard removed, the Blue Book and Warren notes
+controls fail. `check-conversion-policies.py` adds `--ocr keep-image-backed`, which still
+recognizes the scanned fixture's absent text.
+
+The CDC contract requires `implausibleTextLayer` and the reviewed recognized dialogue on pages 5,
+7, 14, 20, 23, 31 and 34, with the damaged native forms absent, and no `implausibleTextLayer` or
+`ocrUsed` on the plausible page-39 checklist. It fails on the pre-#93 conversion on all seven
+pages. The [plausibility evidence](../measurements/text-layer-plausibility/record.md) records the
+survey of all 1,353 image-backed pages in the English corpus and the review of every failing page.
 
 ## Decorative drop caps
 

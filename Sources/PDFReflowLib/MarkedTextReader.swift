@@ -24,6 +24,10 @@ enum MarkedTextReader {
         var invalid = false
         var operations = 0
         var resources: CGPDFDictionaryRef?
+        /// Form XObjects already inspected on this page, by stream identity: true when textless.
+        var textlessForms: [UInt: Bool] = [:]
+        /// Operators scanned inside forms on this page; see `FormScan`.
+        var formOperations = 0
 
         func accept(_ scanner: CGPDFScannerRef) -> Bool {
             operations += 1
@@ -80,6 +84,82 @@ enum MarkedTextReader {
             result[i] = value
         }
         return result
+    }
+
+    /// Whether a Form XObject, and every form it draws, shows no text.
+    /// Forms draw figures, so their operators have a budget of their own per page (they create no
+    /// anchors); nesting is bounded as `GraphicsReader` bounds it. Anything this scan cannot
+    /// resolve, or a budget it exhausts, counts as text.
+    private final class FormScan {
+        var textless = true
+        var nested: [(CGPDFStreamRef, CGPDFDictionaryRef, CGPDFContentStreamRef)] = []
+        let state: State
+        init(state: State) { self.state = state }
+        func count(_ scanner: CGPDFScannerRef) {
+            state.formOperations += 1
+            if state.formOperations > 2_000_000 || (state.formOperations & 0xFFF == 0 && Task.isCancelled) {
+                textless = false; CGPDFScannerStop(scanner)
+            }
+        }
+    }
+    /// Every content operator a textless form may use; each is counted.
+    private static let graphicsOperators = ["b", "B", "b*", "B*", "BI", "BX", "c", "cm", "CS", "cs", "d", "d0",
+        "d1", "DP", "EI", "EX", "f", "F", "f*", "G", "g", "gs", "h", "i", "ID", "j", "J", "K", "k", "l", "m",
+        "M", "MP", "n", "q", "Q", "re", "RG", "rg", "ri", "s", "S", "SC", "sc", "SCN", "scn", "sh", "v", "w",
+        "W", "W*", "y", "BT", "ET", "Tc", "Td", "TD", "Tf", "TL", "Tm", "Tr", "Ts", "Tw", "Tz", "T*",
+        "BDC", "BMC", "EMC"]
+    private static func isTextless(_ form: CGPDFStreamRef, dictionary: CGPDFDictionaryRef,
+                                   parent: CGPDFContentStreamRef, resources inherited: CGPDFDictionaryRef,
+                                   state s: State, depth: Int) -> Bool {
+        guard depth < 12, !s.invalid, let table = CGPDFOperatorTableCreate() else { return false }
+        defer { CGPDFOperatorTableRelease(table) }
+        for op in graphicsOperators {
+            CGPDFOperatorTableSetCallback(table, op) { scanner, info in
+                Unmanaged<FormScan>.fromOpaque(info!).takeUnretainedValue().count(scanner)
+            }
+        }
+        // A text show is exactly what association would have to follow. Marked content without
+        // one owns no line, so it is counted like any other operator.
+        for op in ["Tj", "TJ", "'", "\""] {
+            CGPDFOperatorTableSetCallback(table, op) { scanner, info in
+                Unmanaged<FormScan>.fromOpaque(info!).takeUnretainedValue().textless = false
+                CGPDFScannerStop(scanner)
+            }
+        }
+        CGPDFOperatorTableSetCallback(table, "Do") { scanner, info in
+            let scan = Unmanaged<FormScan>.fromOpaque(info!).takeUnretainedValue()
+            scan.count(scanner)
+            var name: UnsafePointer<CChar>?
+            let content = CGPDFScannerGetContentStream(scanner)
+            var stream: CGPDFStreamRef?
+            guard CGPDFScannerPopName(scanner, &name), let name,
+                  let resource = CGPDFContentStreamGetResource(content, "XObject", name),
+                  CGPDFObjectGetValue(resource, .stream, &stream), let stream,
+                  let dictionary = CGPDFStreamGetDictionary(stream) else {
+                scan.textless = false; CGPDFScannerStop(scanner); return
+            }
+            switch StructureTreeReader.name(dictionary, "Subtype") {
+            case "Image": break
+            case "Form": scan.nested.append((stream, dictionary, content))
+            default: scan.textless = false; CGPDFScannerStop(scanner)
+            }
+        }
+        let resources = StructureTreeReader.dictionary(dictionary, "Resources") ?? inherited
+        let content = CGPDFContentStreamCreateWithStream(form, resources, parent)
+        defer { CGPDFContentStreamRelease(content) }
+        let scan = FormScan(state: s)
+        let scanner = CGPDFScannerCreate(content, table, Unmanaged.passUnretained(scan).toOpaque())
+        defer { CGPDFScannerRelease(scanner) }
+        guard CGPDFScannerScan(scanner), scan.textless else { return false }
+        for (stream, dictionary, parent) in scan.nested {
+            let identity = UInt(bitPattern: stream.rawValue)
+            if s.textlessForms[identity] == nil {
+                s.textlessForms[identity] = isTextless(stream, dictionary: dictionary, parent: parent,
+                    resources: resources, state: s, depth: depth + 1)
+            }
+            guard s.textlessForms[identity] == true else { return false }
+        }
+        return true
     }
 
     /// Returns false if any supported group could not be used. Unmapped lines remain untouched.
@@ -210,9 +290,22 @@ enum MarkedTextReader {
             }
             var stream: CGPDFStreamRef?
             guard CGPDFDictionaryGetStream(objects, key, &stream), let stream,
-                  let dictionary = CGPDFStreamGetDictionary(stream),
-                  StructureTreeReader.name(dictionary, "Subtype") == "Image" else {
+                  let dictionary = CGPDFStreamGetDictionary(stream) else {
                 s.invalid = true; return
+            }
+            switch StructureTreeReader.name(dictionary, "Subtype") {
+            case "Image": return
+            // A form that shows no text cannot place or own a line:
+            // a vector figure, a rule or a background drawn through a form (#75). Any other form
+            // could show text this reader cannot follow, so the page still falls back.
+            case "Form":
+                let identity = UInt(bitPattern: stream.rawValue)
+                if s.textlessForms[identity] == nil {
+                    s.textlessForms[identity] = Self.isTextless(stream, dictionary: dictionary,
+                        parent: CGPDFScannerGetContentStream(scanner), resources: resources, state: s, depth: 0)
+                }
+                if s.textlessForms[identity] != true { s.invalid = true }
+            default: s.invalid = true
             }
         }
         let s = State()

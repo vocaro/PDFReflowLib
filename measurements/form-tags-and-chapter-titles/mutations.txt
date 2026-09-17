@@ -1,0 +1,20 @@
+tools/mutate.py: each mutation disables one part of the change, runs the new tests
+(swift test --filter over TaggedFormAndTitleTests), and restores the source.
+
+all-forms-invalid            (every Form XObject invalidates, as at 7c46377)    fails aFormInvalidatesThePageTagsOnlyWhenItCouldShowText
+text-shows-ignored           (Tj/TJ/'/" inside a form do not count as text)      fails aFormInvalidatesThePageTagsOnlyWhenItCouldShowText
+nested-forms-not-followed    (a textless form's nested forms are not checked)    fails aFormInvalidatesThePageTagsOnlyWhenItCouldShowText
+no-book-heading-style        (#67's column test only)                            fails aChapterTitleTaggedAsAParagraphIsAHeadingInTheBooksRecurringHeadingStyle,
+                                                                                       aCentredImprintInNoRecurringStyleStaysAParagraph (its control),
+                                                                                       aParagraphTagOverATitleAndItsBodyKeepsTheSpatialReading
+no-titled-group-fallback     (a P over a title and its body stays one P)          fails aParagraphTagOverATitleAndItsBodyKeepsTheSpatialReading
+no-paragraph-wrap-join       (tagged P groups never join)                         fails twoParagraphTagsSplitAtAWrappedLineReadAsOneParagraph
+no-spacing-evidence          (a new sentence joins without paragraph spacing)     fails paragraphTagsStaySeparateWithoutEvidenceOfAWrap
+no-unsafe-continuation       (a caption's continuation group keeps its tag)       fails aCaptionContinuationTaggedApartFallsBackWithItsCaption
+no-leader-exclusion          (leader entries may join)                            fails paragraphTagsStaySeparateWithoutEvidenceOfAWrap
+no-short-line-guard          (a short last line may join)                         fails paragraphTagsStaySeparateWithoutEvidenceOfAWrap
+
+The first pass asserted paragraph counts in paragraphTagsStaySeparateWithoutEvidenceOfAWrap; with
+even leading the preceding group legitimately joins the split group (a lowercase start), so the
+count passed for the wrong reason and no-paragraph-wrap-join also failed that test. The assertions
+now require the lower line to open its own paragraph; the mutation results above are after that fix.

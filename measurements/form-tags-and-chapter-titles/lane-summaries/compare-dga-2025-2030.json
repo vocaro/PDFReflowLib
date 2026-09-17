@@ -1,0 +1,29 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "dga-2025-2030",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "64793f7c978a288601858b51227f5525892f5bd05b0e16cf4b497d3cc9d0f0b4",
+  "candidateConverterSHA256": "e9a84457c4a7b37de4142f5ef53a5c1c6f407fe099b101f3381ec13edda2ce96",
+  "sameConverter": false,
+  "changedPages": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "changedImages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [
+    "warnings"
+  ],
+  "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification."
+}

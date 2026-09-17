@@ -127,13 +127,22 @@ ParentTree ownership is checked against those exact paths only when extracting t
 page, using `PDFPageSource`'s eight-page document window. Sparse ParentTree arrays can contain
 many null slots; loading them all into one Core Graphics document causes avoidable peak memory.
 `MarkedTextReader` matches explicitly positioned text-show origins to unique native line
-rectangles. Unknown glyph-cursor advancement, Form XObjects, missing/duplicate MCIDs, ambiguous
-geometry and incomplete groups retain spatial reconstruction. OCR text and image-backed pages
+rectangles. Unknown glyph-cursor advancement, Form XObjects that could show text, missing/duplicate
+MCIDs, ambiguous geometry and incomplete groups retain spatial reconstruction. A form, and every
+form it draws, is scanned once per page (bounded depth and operator budget): one that runs no
+text-showing operator cannot place or own a line and leaves the page's tags standing (the Dietary
+Guidelines' and FAA handbook's figures, #75); a form that shows text, draws an unresolvable
+resource or exhausts the budget still invalidates the page. OCR text and image-backed pages
 with any invisible (mode 3) text do not inherit native tags; visible native text drawn over a
 page-sized background image or tint (a chapter opener's photograph) keeps its validated tags while
 still reporting `unverifiedTextLayer` (#72). Invisible text never associates in any case: the
 reader rejects rendering mode 3. A validated `P` group set in heading type keeps its tag above the
-text it introduces when its lines read as a pull quote (the rule below). Origin matching is conservative association evidence, not full
+text it introduces when its lines read as a pull quote (the rule below). Such a group is read as a
+title when the next text in its column is ordinary text on its edge (#67), or when every line is
+set in a heading or label style the book repeats on three or more pages, even directly above
+another heading: extraction records the size, body size and all-bold flag of each page's
+heading-size lines outside painted graphics and running heads, as it records label styles (FAA's
+16-point `Chapter 4` over its 48-point title, #84). A one-off title-page imprint stays a paragraph. Origin matching is conservative association evidence, not full
 font decoding or proof of the author's semantic correctness.
 
 Supported roles are P and H1–H6 through grouping containers and transparent inline spans.
@@ -142,7 +151,14 @@ preserved images are barriers. Captions, list-like text and headings of 200 or m
 fall back as well, with one exception: a paragraph group whose only list line opens it and was
 rejoined from a marker piece PDFKit split off (the FAA handbook tags each bullet item as one `P`)
 is exactly one item. It keeps its tag order, loses the absorbed piece from its line count, and is
-emitted as the list item the same text is when untagged (#81). Removed furniture or
+emitted as the list item the same text is when untagged (#81). A paragraph group that holds a
+heading-type line above body text falls back too (FAA page 203 tags `Introduction`, its paragraph
+and the next section as one `P`, #84). A source can also tag one paragraph in pieces: where a
+paragraph group's first line continues the previous group's last line (same edge and type, ordinary
+leading, the upper line filling the page's justified measure, and either a lowercase start, a
+hyphen or slash break, or a column that marks its paragraphs with space), the two read as one
+paragraph, and a group continuing a caption or list group that falls back falls back with it
+(#75). Removed furniture or
 image-contained lines invalidate incomplete groups.
 Validated paragraph identities prevent heuristic cross-page joins into different paragraphs.
 Heading levels belong to the neutral model and serialize as h1–h6; navigation remains flat.

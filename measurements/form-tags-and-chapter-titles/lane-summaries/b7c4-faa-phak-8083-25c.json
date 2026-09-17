@@ -1,0 +1,90 @@
+{
+  "passed": false,
+  "converterSHA256": "64793f7c978a288601858b51227f5525892f5bd05b0e16cf4b497d3cc9d0f0b4",
+  "results": [
+    {
+      "case": "faa-phak-8083-25c",
+      "passed": false,
+      "reviewPages": [
+        16,
+        121,
+        91,
+        511,
+        211,
+        212,
+        50,
+        325,
+        81,
+        191,
+        35,
+        116,
+        22,
+        24,
+        52,
+        165,
+        199,
+        262,
+        164,
+        261,
+        27,
+        365,
+        33,
+        43,
+        49,
+        201,
+        370,
+        136,
+        156,
+        159,
+        340,
+        92,
+        372,
+        25,
+        88,
+        98,
+        231,
+        335,
+        203,
+        89,
+        105,
+        227
+      ],
+      "contentChecks": 201,
+      "errors": [
+        "Page 89: missing paragraph 'they usually think of liquid. However, gasses, like air, are also fluids.'",
+        "Page 89: missing or reordered text 'Another factor at work when a fluid flows'",
+        "Page 89: missing or reordered text 'The surface of a wing, like any other surface'",
+        "Page 105: missing paragraph 'upon stability. The allowable location of the CG'"
+      ],
+      "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+    }
+  ],
+  "notRun": [
+    "wallace-algebra-2010",
+    "gpo-911-2004",
+    "fed-explained-2021",
+    "dga-2025-2030",
+    "gpo-our-flag-2003",
+    "cdc-zombie-pandemic-2011",
+    "cia-blue-book-14-1955",
+    "usgs-mcs2025-copper",
+    "scotus-loper-bright-2024",
+    "census-rrs2002-01",
+    "uscis-m618-arabic-2015",
+    "irs-p596-zhs-2025",
+    "nbs-jres-geltman-1977",
+    "arxiv-replay-clocks-2023"
+  ],
+  "knownUnsupportedFullConversions": [
+    {
+      "id": "gpo-warren-1964",
+      "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+      "issue": 5
+    },
+    {
+      "id": "noaa-nca5-2023",
+      "reason": "Known default image-output ceiling failure. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
+      "issue": 5
+    }
+  ]
+}

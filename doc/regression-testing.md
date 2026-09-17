@@ -100,13 +100,13 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 960 targeted checks on 207 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 1012 targeted checks on 217 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 277 ordered-text, 92 text, 122 paragraph,
-92 absent-text, 74 heading, 12 absent-heading, 30 list-item, 17 script, 11 footnote, 27 note-link,
-28 paragraph-continuation, 1 list-item-continuation, 5 paragraph-separation, 14 distinct-paragraph,
+the NBS and Replay Clocks academic papers). They comprise 303 ordered-text, 92 text, 131 paragraph,
+92 absent-text, 89 heading, 12 absent-heading, 30 list-item, 17 script, 11 footnote, 27 note-link,
+28 paragraph-continuation, 1 list-item-continuation, 5 paragraph-separation, 16 distinct-paragraph,
 82 image-presence, 55 warning, 1 absent-warning, 12 source-region, 3 glyph-structure,
 3 image-appearance and 2 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
 anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
@@ -366,7 +366,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-385 Swift tests with no known-issue wrappers, and 186 Python tests.
+393 Swift tests with no known-issue wrappers, and 186 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -592,6 +592,25 @@ heading either way; a wide line with sentence punctuation, one wider than the co
 one in another style stay prose, and pages 33, 49 and 201 each supply the style, which counts from
 the third page. The FAA contract checks the three orderings and the wide titles on pages 43 and
 370; see the [heading-placement evidence](../measurements/heading-placement/record.md).
+
+## Text-free forms, tagged chapter openers and paragraphs tagged in pieces
+
+`TaggedFormAndTitleTests.swift` covers [#75](https://github.com/vocaro/PDFReflowLib/issues/75) and
+[#84](https://github.com/vocaro/PDFReflowLib/issues/84). A synthetic tagged page drawing a Form
+XObject keeps its tags when the form, or a form nested in it, draws only paths; a form that shows
+text directly or through a nested form, or draws a missing resource, still invalidates the page.
+FAA page 88's opener (`Chapter 4` and `Principles of Flight`, each a `P` over the `Introduction`
+heading) stays two paragraphs without the book's heading styles and becomes two headings with them;
+heading evidence counts from the third page and ignores folios such as `C-1`. Our Flag's centred
+imprint stays a paragraph beside a different recurring style (and would be a title in its own).
+Page 203's `P` over `Introduction`, its paragraph and the next section falls back with its chapter
+title first. Two paragraph groups split at a wrapped line (`…AFM/` / `POH.`, a new sentence in a
+column spaced by paragraph) read as one paragraph, while even leading, a short last line and a
+leader entry keep them apart, and a caption continuation tagged apart falls back with its caption.
+Disabling each rule in turn fails the test that covers it. The FAA contract checks the five chapter
+openers, page 89's column order and the joined paragraphs on pages 105, 211 and 227; the Dietary
+Guidelines contract checks the bullets on pages 3–5. See the
+[form and chapter-title evidence](../measurements/form-tags-and-chapter-titles/record.md).
 
 ## Endnote reference typography and bounded paragraphs
 

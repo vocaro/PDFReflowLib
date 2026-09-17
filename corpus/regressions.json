@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's unpainted `Figure 5-16.` caption text ends at its own last line; page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph.",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's unpainted `Figure 5-16.` caption text ends at its own last line; page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph. Pages 88, 98, 203, 231 and 335 (#84): chapter openers tagged P remain headings once their text-free Form XObjects no longer discard the page tags; page 203 source-reviewed, its tagged group spanning Introduction and the next section falls back. Page 89 (#75) source-reviewed: the applied tags read the viscosity and friction columns in order. Pages 105, 211 and 227 source-reviewed: paragraphs and a caption the source tags in pieces read as one element.",
       "pages": [
         {
           "page": 16,
@@ -87,7 +87,10 @@
               "after": ")—the maximum"
             }
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "paragraphs": [
+            "placards and in the AFM/POH. These airspeeds include:"
+          ]
         },
         {
           "page": 212,
@@ -442,6 +445,106 @@
           "text": [
             "downloaded at www.faa.gov/regulations_policies.",
             "www.faa.gov/regulations_policies/advisory_circulars/ provides a database"
+          ]
+        },
+        {
+          "page": 88,
+          "headings": [
+            "Chapter 4",
+            "Principles of Flight",
+            "Introduction"
+          ],
+          "orderedText": [
+            "Chapter 4",
+            "Principles of Flight",
+            "Introduction",
+            "This chapter examines the fundamental physical laws"
+          ]
+        },
+        {
+          "page": 98,
+          "headings": [
+            "Chapter 5",
+            "Aerodynamics of Flight",
+            "Forces Acting on the Aircraft"
+          ],
+          "orderedText": [
+            "Chapter 5",
+            "Aerodynamics of Flight",
+            "Forces Acting on the Aircraft",
+            "Thrust, drag, lift, and weight are forces"
+          ]
+        },
+        {
+          "page": 231,
+          "headings": [
+            "Chapter 9",
+            "Flight Manuals and Other Documents",
+            "Introduction"
+          ],
+          "orderedText": [
+            "Chapter 9",
+            "Flight Manuals and Other Documents",
+            "Introduction",
+            "Each aircraft comes with documentation"
+          ]
+        },
+        {
+          "page": 335,
+          "headings": [
+            "Chapter 14",
+            "Airport Operations",
+            "Introduction"
+          ],
+          "orderedText": [
+            "Chapter 14",
+            "Airport Operations",
+            "Introduction",
+            "Each time a pilot operates an aircraft"
+          ]
+        },
+        {
+          "page": 203,
+          "headings": [
+            "Chapter 8",
+            "Introduction",
+            "Pitot-Static Flight Instruments"
+          ],
+          "orderedText": [
+            "Chapter 8",
+            "Introduction",
+            "In order to safely fly any aircraft",
+            "Pitot-Static Flight Instruments",
+            "The pitot-static system is a combined system"
+          ],
+          "paragraphs": [
+            "In order to safely fly any aircraft",
+            "The pitot-static system is a combined system"
+          ]
+        },
+        {
+          "page": 89,
+          "orderedText": [
+            "When most people hear the word",
+            "Viscosity",
+            "All fluids are viscous",
+            "Another factor at work when a fluid flows",
+            "The surface of a wing, like any other surface"
+          ],
+          "paragraphs": [
+            "they usually think of liquid. However, gasses, like air, are also fluids."
+          ]
+        },
+        {
+          "page": 105,
+          "paragraphs": [
+            "upon stability. The allowable location of the CG"
+          ]
+        },
+        {
+          "page": 227,
+          "paragraphs": [
+            "compass rose aids compensation for deviation errors."
           ]
         }
       ]
@@ -1958,7 +2061,7 @@
     {
       "id": "dga-2025-2030",
       "sourceSHA256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
-      "basis": "Page 2 source raster reviewed; protects letter paragraph order and imagery, not the known page-3 protein-column defect. Page 1 source title and labels visually reviewed: the distinct Guidelines / For Americans lines retain their word boundary, and source Type3 character maps/TJ adjustments support intact Dairy and Vegetables. Graphic-label ownership remains unqualified; retain the source image and review warning.",
+      "basis": "Page 2 source raster reviewed; protects letter paragraph order and imagery, not the known page-3 protein-column defect. Page 1 source title and labels visually reviewed: the distinct Guidelines / For Americans lines retain their word boundary, and source Type3 character maps/TJ adjustments support intact Dairy and Vegetables. Graphic-label ownership remains unqualified; retain the source image and review warning. Pages 3-5 (#75) reviewed against the source: with the page tags applied, each bullet of the two-column lists reads whole instead of interleaving line by line.",
       "pages": [
         {
           "page": 1,
@@ -1989,7 +2092,32 @@
         },
         {
           "page": 3,
-          "minimumImages": 1
+          "minimumImages": 1,
+          "paragraphs": [
+            "+ Prioritize high-quality, nutrient-dense protein foods as part of a healthy dietary pattern.",
+            "+ Consume meat with no or limited added sugars, refined carbohydrates or starches, or chemical additives."
+          ]
+        },
+        {
+          "page": 4,
+          "distinctParagraphs": [
+            {
+              "first": "+ Prioritize fiber-rich whole grains.",
+              "second": "+ Significantly reduce the consumption of highly processed"
+            }
+          ]
+        },
+        {
+          "page": 5,
+          "distinctParagraphs": [
+            {
+              "first": "or end in “-ose.”",
+              "second": "+ Added sugars may appear on ingredient labels"
+            }
+          ],
+          "paragraphs": [
+            "+ Limit foods and beverages that include artificial flavors"
+          ]
         }
       ]
     },

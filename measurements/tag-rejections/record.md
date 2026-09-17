@@ -219,6 +219,9 @@ The anchors behind "origin inside no line" and "ambiguous"
 
 ### The textless-form fix, measured (why it is not applied)
 
+Superseded: the patch is applied together with the #84 heading fix and the paragraph-piece rules it
+needed; see [the form and chapter-title record](../form-tags-and-chapter-titles/record.md).
+
 Pinned conversions, candidate against candidate plus proposal (`page-diffs/`):
 
 | Book | Tagged lines | Fallback pages | Navigation | Text / block pages changed | Images |

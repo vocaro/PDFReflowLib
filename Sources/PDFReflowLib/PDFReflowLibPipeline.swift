@@ -168,6 +168,8 @@ enum PDFReflowLibPipeline {
         var vocabulary: Set<String> = []
         /// Pages whose narrow section labels are set in each style (#73).
         var labelEvidence: [LayoutReconstructor.LabelStyle: Int] = [:]
+        /// Pages whose heading-size lines are set in each style (#84).
+        var headingEvidence: [LayoutReconstructor.LabelStyle: Int] = [:]
         var furniture = FurnitureDetector.Ledger()
         /// Pages headed `NOTES TO CHAPTER N`, by chapter number.
         var numberedNotePages: [Int: ClosedRange<Int>] = [:]
@@ -220,6 +222,7 @@ enum PDFReflowLibPipeline {
             if !extracted.damagedEncoding || content.recognized {
                 LayoutReconstructor.addVocabulary(of: content, to: &vocabulary)
                 for style in LayoutReconstructor.labelEvidence(on: content) { labelEvidence[style, default: 0] += 1 }
+                for style in LayoutReconstructor.headingEvidence(on: content) { headingEvidence[style, default: 0] += 1 }
             }
             if let chapters = NumberedNoteDetector.chapters(on: content) { numberedNotePages[content.number] = chapters }
             if options.removeRepeatedHeadersAndFooters { FurnitureDetector.collect(content, pageIndex: i, into: &furniture) }
@@ -233,6 +236,7 @@ enum PDFReflowLibPipeline {
         let furniturePlan = options.removeRepeatedHeadersAndFooters ? FurnitureDetector.resolve(furniture) : nil
         furniture = FurnitureDetector.Ledger()
         let labelStyles = LayoutReconstructor.labelStyles(from: labelEvidence)
+        let headingStyles = LayoutReconstructor.labelStyles(from: headingEvidence)
         // Furniture warnings keep their place between extraction and reconstruction warnings.
         let furnitureWarningIndex = warnings.count
         var furnitureWarnings: [ConversionWarning] = []
@@ -291,7 +295,7 @@ enum PDFReflowLibPipeline {
                         continuingNoteList: continuingNoteList,
                         noteLayout: { openNoteList = $0?.openList },
                         continuesNote: previousPage != nil && blocks.last?.isFootnote == true,
-                        labelStyles: labelStyles)
+                        labelStyles: labelStyles, headingStyles: headingStyles)
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }

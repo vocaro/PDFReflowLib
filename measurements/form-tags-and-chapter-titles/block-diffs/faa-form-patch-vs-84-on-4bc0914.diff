@@ -1,0 +1,33 @@
+######## page 88
+@@ -1,2 +1,2 @@
+-p: Chapter 4
+-p: Principles of Flight
++h4: Chapter 4
++h3: Principles of Flight
+######## page 98
+@@ -1,2 +1,2 @@
+-p: Chapter 5
+-p: Aerodynamics of Flight
++h4: Chapter 5
++h3: Aerodynamics of Flight
+######## page 203
+@@ -1,2 +1,5 @@
+-p: Introduction In order to safely fly any aircraft, a pilot must understand how to interpret and operate the flight instruments. The pilot also needs to be able to recognize associated errors and malfunctions of these instruments. This chapter addresses the pitot-static system and associated instruments, the vacuum system and related instruments, gyroscopic instruments, and the magnetic compass. When a pilot understands how each instrument works and recognizes when an instrument is malfunctioning, he or she can safely utilize the instruments to their fullest potential. Pitot-Static Flight Instruments The pitot-static system is a combined system that utilizes the static air pressure and the dynamic pressure due to the motion of the aircraft through the air. These combined pressures are utilized for the operation of the airspeed indicator (ASI), altimeter, and vertical speed indicator (VSI). [Figure 8-1]
+-p: FlightChapter 8 Instruments
++h3: FlightChapter 8 Instruments
++h5: Introduction
++p: In order to safely fly any aircraft, a pilot must understand how to interpret and operate the flight instruments. The pilot also needs to be able to recognize associated errors and malfunctions of these instruments. This chapter addresses the pitot-static system and associated instruments, the vacuum system and related instruments, gyroscopic instruments, and the magnetic compass. When a pilot understands how each instrument works and recognizes when an instrument is malfunctioning, he or she can safely utilize the instruments to their fullest potential.
++h5: Pitot-Static Flight Instruments
++p: The pitot-static system is a combined system that utilizes the static air pressure and the dynamic pressure due to the motion of the aircraft through the air. These combined pressures are utilized for the operation of the airspeed indicator (ASI), altimeter, and vertical speed indicator (VSI). [Figure 8-1]
+######## page 231
+@@ -1,2 +1,2 @@
+-p: Chapter 9
+-p: Flight Manuals and Other Documents
++h4: Chapter 9
++h3: Flight Manuals and Other Documents
+######## page 335
+@@ -1,2 +1,2 @@
+-p: Chapter 14
+-p: Airport Operations
++h4: Chapter 14
++h3: Airport Operations

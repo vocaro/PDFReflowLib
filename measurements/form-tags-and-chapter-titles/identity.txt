@@ -1,0 +1,24 @@
+Binaries (release pdf-reflow, SHA-256)
+  base        4bc0914 (worktree before any change)                          c00c0dedc5931b6afaea9c82f0fa34b746b43de6d928c5353d309dc16e5430ac
+  form        4bc0914 + textless-form-proposal.patch                        (scratch; not retained)
+  c1          4bc0914 + patch + #84 heading styles and titled-group rule   (scratch; not retained)
+  b583        git archive 583713f                                           64a4bd6f74f790d7370d159655222e3de4d2aed8a5b2e3018a57ba7ee80cbfe4
+  c2          583713f + patch + #84 (no wrap rules)                         124480f9c9df8ebf545ce21ebf9c7c88b6e18628733a0c764ccd679393c095df
+  b7c4        git archive 7c46377 (baseline for every figure in record.md)  64793f7c978a288601858b51227f5525892f5bd05b0e16cf4b497d3cc9d0f0b4
+  final7      this tree on 7c46377 (candidate)                              e9a84457c4a7b37de4142f5ef53a5c1c6f407fe099b101f3381ec13edda2ce96
+  form7       7c46377 + patched MarkedTextReader only (negative control)    333c33eb10939c3e1abaa9ba61ab55e7c3c2efafc64341478874545bfed58421
+  nowrap7     candidate with both wrap rules disabled (negative control)    d436e43d4b43c036e01f876dfdc92995d9347cc7f37580cd270c5db91da2211c
+
+Pinned conversions (--package-identifier urn:uuid:00000000-0000-4000-8000-000000000001
+--modification-date 2026-01-01T00:00:00Z), EPUB SHA-256 prefixes
+  case                      4bc0914     form(4bc0914)  583713f     7c46377     candidate (on 583713f and on 7c46377)
+  faa-phak-8083-25c         4d2c7837…   bde55c55…      bbe981b2…   bbe981b2…   4845b9c5…
+  dga-2025-2030             dc29e65f…   90ab3828…      dc29e65f…   dc29e65f…   90ab3828…
+  fed-explained-2021        5e2fcfe6…   5e2fcfe6…      909f4b34…   909f4b34…   909f4b34…
+  gpo-our-flag-2003         4f8bb64b…   4f8bb64b…      4f8bb64b…   4f8bb64b…   b4d046b6…
+  arxiv-replay-clocks-2023  —           —              534c49ba…   534c49ba…   534c49ba…
+Byte-identical, 583713f vs candidate: Loper Bright 9c3fd760…, CDC 7279afa9…, NBS 391dc352…,
+USGS copper b4240210…, Blue Book 26b33680…, 9/11 c454de18…, Wallace algebra 14f3b769….
+NOAA (noaa_61592_DS1.pdf) exited 1 with both binaries under these options (not investigated).
+
+Corpus: faa-h-8083-25c.pdf 247929ca…95cb7 (manifest-verified by the lane runner).

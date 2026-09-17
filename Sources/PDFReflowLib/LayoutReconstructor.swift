@@ -374,8 +374,36 @@ enum LayoutReconstructor {
             .filter { !isContentsEntry($0.text) }.map { LabelStyle($0, body: reflowBody) })
     }
 
+    /// The styles of one page's heading-size lines (at or past the page's heading threshold),
+    /// measured as `labelEvidence(on:)` measures labels: lines inside a painted graphic, running
+    /// heads and contents entries are no evidence, and neither is a line with fewer than two
+    /// letters (a drop cap, a numeral, a folio such as `C-1`). The margin bands stay in: a chapter
+    /// label sits high on its opening page. `labelStyles(from:)` keeps the styles that recur: the
+    /// FAA handbook opens each chapter with a 16-point `Chapter N` over a 48-point title (#84).
+    static func headingEvidence(on page: PageContent) -> Set<LabelStyle> {
+        guard !page.hasSyntheticTextStyle, !page.recognized else { return [] }
+        let figures = page.graphics.filter { !isThinRule($0) }
+        let lines = page.lines.map { line -> TextLine in
+            var copy = line; copy.structure = nil; return copy
+        }.filter { line in
+            !figures.contains { $0.contains(CGPoint(x: line.rect.midX, y: line.rect.midY)) }
+                && !isHeaderLike(line, in: page, bothBands: true)
+        }
+        let body = max(4, bodySize(page.lines))
+        let boxes = clusters(page.tints, distance: 4)
+        let outside = lines.filter { line in !boxes.contains { $0.contains(CGPoint(x: line.rect.midX, y: line.rect.midY)) } }
+        let reflowBody = headingBodySize(outside, pageBody: body)
+        let threshold = max(body * 1.25, reflowBody * 1.1)
+        return Set(lines.filter { line in
+            !line.monospaced && line.fontSize >= threshold && line.text.count < 200
+                && line.text.filter(\.isLetter).count >= 2 && line.rect.width >= line.rect.height
+                && !isContentsEntry(line.text)
+        }.map { LabelStyle($0, body: reflowBody) })
+    }
+
     /// A style is the book's label typography once narrow labels set in it appear on at least
-    /// three pages; `pages` counts the pages whose evidence names each style.
+    /// three pages; `pages` counts the pages whose evidence names each style. The same count
+    /// selects the book's recurring heading styles from `headingEvidence(on:)`.
     static func labelStyles(from pages: [LabelStyle: Int]) -> Set<LabelStyle> {
         Set(pages.filter { $0.value >= 3 }.keys)
     }
@@ -813,7 +841,8 @@ enum LayoutReconstructor {
     /// second chapter a `NOTES TO CHAPTERS N-M` head names. `continuesNote` states
     /// that the previous page ended in a page-bottom footnote, so a marker-less note under
     /// this page's separator may continue it. `labelStyles` is the book's section-label
-    /// typography (`labelStyles(from:)`). `continuingNoteList` is the previous page's open list
+    /// typography (`labelStyles(from:)`), and `headingStyles` its recurring heading-size
+    /// typography (`headingEvidence(on:)`). `continuingNoteList` is the previous page's open list
     /// inside a numbered note, which this page may resume; `noteLayout` receives this page's
     /// numbered-note layout (nil when the page is not a notes page), so the caller can pass its
     /// open list to the next page.
@@ -822,7 +851,7 @@ enum LayoutReconstructor {
                        noteLastChapter: Int? = nil, continuingNoteList: NumberedNoteDetector.OpenList? = nil,
                        noteLayout reportNoteLayout: ((NumberedNoteDetector.Layout?) -> Void)? = nil,
                        continuesNote: Bool = false,
-                       labelStyles: Set<LabelStyle> = []) -> [ReflowBlock] {
+                       labelStyles: Set<LabelStyle> = [], headingStyles: Set<LabelStyle> = []) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         // A rotated stamp in the outer margin is furniture, never content or a heading.
         let stamps = rotatedMarginLines(page)
@@ -872,7 +901,47 @@ enum LayoutReconstructor {
             + images.map { Element(rect: $0.0, image: $0.1) }
             + tables.enumerated().map { Element(rect: $0.element.bounds, table: $0.offset) },
             tints: page.tints, bodySize: body)
-        var elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
+        // A line runs on into the line beneath it: set directly below at ordinary leading on the
+        // same left edge in the same type, neither a heading, a list item nor a leader entry, and
+        // filling the page's justified measure, with evidence that no paragraph ends between them.
+        // Tags that split one paragraph at such a line describe the source's text frames, not the
+        // author's paragraphs (FAA page 211 tags `…in the AFM/` and `POH. These airspeeds
+        // include:` as two paragraphs, page 105 `…upon stability.` and `The allowable location of
+        // the CG…`; #75).
+        func wraps(_ upper: TextLine, onto lower: TextLine) -> Bool {
+            let size = max(upper.fontSize, lower.fontSize)
+            let gap = upper.rect.minY - lower.rect.maxY
+            guard !sameRow(upper.rect, lower.rect), abs(upper.rect.minX - lower.rect.minX) <= size * 0.5,
+                  abs(upper.fontSize - lower.fontSize) <= size * 0.15, gap > -size * 0.4, gap < size * 0.4,
+                  !isList(lower.text),
+                  !upper.text.contains("..."), !lower.text.contains("..."),
+                  LabelStyle(upper, body: body).bold == LabelStyle(lower, body: body).bold,
+                  !headingTypography(upper), !headingTypography(lower), upper.rect.width >= body * 12 else { return false }
+            // The upper line reaches its column's right edge, and that measure is the page's
+            // justified measure (three other lines set to it): a title, a ragged list entry or a
+            // short report line does not run on.
+            let column = free.filter { abs($0.rect.minX - upper.rect.minX) <= body * 0.5 }.map(\.rect.maxX).max() ?? upper.rect.maxX
+            let measure = free.filter { $0 != upper && abs($0.rect.width - upper.rect.width) <= body * 0.75 }
+            guard upper.rect.maxX >= column - body * 0.75, measure.count >= 3 else { return false }
+            // Continuation evidence: the lower line's first letter is lowercase (past an opening
+            // bracket: `(bottom) are examples…`), or the upper line breaks at a hyphen or a slash.
+            if lower.text.first(where: \.isLetter)?.isLowercase == true
+                || upper.text.last.map({ "-/\u{00AD}".contains($0) }) == true { return true }
+            // Otherwise the next line continues the paragraph only where the column marks
+            // paragraphs with space, so ordinary leading is itself evidence (FAA page 342: `…against
+            // you.` / `Runway holding position markings consist…`). A list set at even leading (FAA's
+            // acronyms, page 462) has no such space.
+            let edge = free.filter { abs($0.rect.minX - upper.rect.minX) <= body * 0.5
+                && abs($0.fontSize - upper.fontSize) <= upper.fontSize * 0.1 }
+                .sorted { $0.rect.minY > $1.rect.minY }
+            let spaced = zip(edge, edge.dropFirst()).filter { above, below in
+                let gap = above.rect.minY - below.rect.maxY
+                return gap >= upper.fontSize * 0.6 && gap <= upper.fontSize * 2.5
+            }
+            return spaced.count >= 2
+        }
+        var elements = structuredOrder(spatial, page: page.number, warnings: &warnings,
+                                       headingTypography: headingTypography, wraps: { wraps($0, onto: $1) })
         // A validated `P` settles grouping and reading order, not typography. Sources tag their
         // own section titles as ordinary paragraphs (the Fed's `Contents`, the FAA handbook's
         // `History of Flight`), and reading the tag literally would silently drop a navigation
@@ -888,13 +957,24 @@ enum LayoutReconstructor {
         // A group that reads as a multi-line display sentence is a pull quote, not a title, even
         // above the text it introduces (the Fed's chapter openers, above each chapter's contents;
         // #72): its validated paragraph stands, as the spatial pull-quote rule would read it.
+        // The book's own typography is evidence too. A group set entirely in a heading or label
+        // style the book repeats on three or more pages is a title wherever it stands, even
+        // directly above another heading: FAA tags each chapter opener's `Chapter 4` and
+        // `Principles of Flight` as paragraphs over the `Introduction` heading (#84). A title
+        // page's one-off imprint (Our Flag) and a cover's publication label (the Fed) are set in
+        // no recurring style, so they still need the column test.
+        let bookStyles = labelStyles.union(headingStyles)
+        func inBookHeadingStyle(_ line: TextLine) -> Bool {
+            line.text.filter(\.isLetter).count >= 2 && bookStyles.contains(LabelStyle(line, body: reflowBody))
+        }
         let introduces = Set(Dictionary(grouping: elements.indices.filter {
             elements[$0].line?.structure?.headingLevel == 0
         }, by: { elements[$0].line!.structure!.group }).compactMap { group, indices -> Int? in
             let lines = indices.sorted().map { elements[$0].line! }
             guard lines.allSatisfy(headingTypography),
-                  pullQuoteLines(in: lines, candidates: { _ in true }).count < lines.count,
-                  let last = indices.max(),
+                  pullQuoteLines(in: lines, candidates: { _ in true }).count < lines.count else { return nil }
+            if lines.allSatisfy(inBookHeadingStyle) { return group }
+            guard let last = indices.max(),
                   let left = lines.map({ $0.rect.minX }).min(), let right = lines.map({ $0.rect.maxX }).max(),
                   let next = elements[(last + 1)...].lazy.compactMap(\.line)
                     .first(where: { $0.rect.minX < right && $0.rect.maxX > left }),
@@ -935,6 +1015,9 @@ enum LayoutReconstructor {
             note = nil
         }
         var tagged: (TextStructure, InlineText, CGFloat)?
+        // The groups the open tagged block holds, and its last line (see `wraps`).
+        var taggedGroups: Set<Int> = []
+        var taggedLast: TextLine?
         func flushTagged() {
             guard let (tag, text, size) = tagged else { return }
             // A paragraph group that is one rejoined list item (#81) keeps the representation
@@ -1147,7 +1230,15 @@ enum LayoutReconstructor {
             if let tag = line.structure {
                 flush()
                 codeOrigin = nil
-                if tagged?.0.group != tag.group { flushTagged() }
+                if let current = tagged, !taggedGroups.contains(tag.group) {
+                    // Two paragraph groups split at a wrapped line read as one paragraph.
+                    if current.0.headingLevel == 0, !current.0.opensWithSplitMarker, tag.headingLevel == 0,
+                       !tag.opensWithSplitMarker, let last = taggedLast, wraps(last, onto: line) {
+                        taggedGroups.insert(tag.group)
+                    } else { flushTagged() }
+                }
+                taggedLast = line
+                if tagged == nil { taggedGroups = [tag.group] }
                 if let current = tagged {
                     tagged = (current.0, join(current.1, line.content, vocabulary: vocabulary,
                         page: page.number, warnings: &warnings), max(current.2, line.fontSize))
@@ -1279,8 +1370,12 @@ enum LayoutReconstructor {
 
     /// Tags may reorder only complete groups inside an uninterrupted run of tagged text.
     /// Images and unassociated text are barriers, including content removed into image crops.
+    /// `headingTypography` is the page's own heading typography, before tags, and `wraps` whether
+    /// one line runs on into the line beneath it (see `blocks`).
     static func structuredOrder(_ spatial: [Element], page: Int,
-                                warnings: inout [ConversionWarning], depth: Int = 0) -> [Element] {
+                                warnings: inout [ConversionWarning], depth: Int = 0,
+                                headingTypography: (TextLine) -> Bool = { _ in false },
+                                wraps: (TextLine, TextLine) -> Bool = { _, _ in false }) -> [Element] {
         var elements = spatial
         guard depth < 32 else {
             for index in elements.indices { elements[index].line?.structure = nil }
@@ -1289,7 +1384,7 @@ enum LayoutReconstructor {
         if depth == 0 {
             let groups = Dictionary(grouping: elements.compactMap(\.line).filter { $0.structure != nil },
                 by: { $0.structure!.group })
-            let unsafe = Set(groups.compactMap { group, lines -> Int? in
+            var unsafe = Set(groups.compactMap { group, lines -> Int? in
                 // Caption ownership and lists are outside this phase. A paragraph tag alone
                 // must not detach a figure label or collapse significant item breaks. One
                 // exception: a paragraph group that opens with a marker PDFKit split from its
@@ -1307,6 +1402,41 @@ enum LayoutReconstructor {
                     && lines.reduce(0, { $0 + $1.text.count + 1 }) >= 200
                 return captionOrList || oversizedHeading ? group : nil
             })
+            // A source can tag a wrapped line as a paragraph of its own: FAA page 227 tags
+            // `Figure 8-34. Utilization of a compass rose aids compensation for` and `deviation
+            // errors.` as two groups. A paragraph group whose first line continues the last line of
+            // a group that falls back falls back with it, so the spatial caption and list rules read
+            // the whole item, as they do where the page has no tags (#75).
+            var grown = true
+            while grown {
+                grown = false
+                for (group, lines) in groups where !unsafe.contains(group) && lines.first!.structure!.headingLevel == 0 {
+                    if unsafe.contains(where: { groups[$0].map { wraps($0.last!, lines.first!) } ?? false }) {
+                        unsafe.insert(group); grown = true
+                    }
+                }
+            }
+            // A paragraph tag over a title and the body set beneath it is not one paragraph, and
+            // its order is no evidence either: FAA page 203 tags `Introduction`, its paragraph,
+            // `Pitot-Static Flight Instruments` and its paragraph as one `P`, ahead of the
+            // chapter title (#84). Such a group keeps its spatial reading. A drop cap or numeral
+            // (fewer than two letters) is not a title.
+            let titled = Set(groups.compactMap { group, lines -> Int? in
+                guard lines.first!.structure!.headingLevel == 0, !unsafe.contains(group) else { return nil }
+                return lines.indices.contains { index in
+                    lines[index].text.filter(\.isLetter).count >= 2 && headingTypography(lines[index])
+                        && lines[(index + 1)...].contains { !headingTypography($0) }
+                } ? group : nil
+            })
+            if !titled.isEmpty {
+                for index in elements.indices {
+                    if let group = elements[index].line?.structure?.group, titled.contains(group) {
+                        elements[index].line?.structure = nil
+                    }
+                }
+                warnings.append(.init(code: .structureFallback, page: page,
+                    message: "A paragraph tag spanning a heading and the text beneath it requires broader semantic validation; spatial reconstruction is retained."))
+            }
             if !unsafe.isEmpty {
                 for index in elements.indices {
                     if let group = elements[index].line?.structure?.group, unsafe.contains(group) {

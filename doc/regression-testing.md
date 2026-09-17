@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3131 targeted checks on 547 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3142 targeted checks on 547 reviewed pages
 across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -129,7 +129,7 @@ Project* and *Tank Health Monitoring*. They comprise 1083 ordered-text, 209 text
 244 absent-text, 256 heading, 20 heading-level, 50 absent-heading, 82 list-item,
 1 preformatted-lines, 28 script, 6 absent-script, 11 footnote, 34 note-link,
 61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 81 distinct-paragraph,
-192 image-presence, 35 captioned-image, 93 page-reference, 103 warning, 111 absent-warning,
+194 image-presence, 35 captioned-image, 102 page-reference, 103 warning, 111 absent-warning,
 17 source-region, 5 glyph-structure, 4 image-appearance and 9 table-cell checks, counted as
 `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
@@ -601,7 +601,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->827 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->835 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1040,10 +1040,12 @@ pages 7–10 and the joins on 7, 9 and 10. See the
 `IllustratedPageTests.swift` covers [#117](https://github.com/vocaro/PDFReflowLib/issues/117). A synthetic
 page whose icons, footer band and margin timeline cluster into a page-sized region must reflow its two
 sections without `unverifiedTextLayer` or a source-page reference; the same page over a page-sized image,
-over a full-page fill, in invisible text, or with the timeline set against the prose (so its crops keep
+in invisible text, under a full-page border drawn over a fill (the Fed colophon's shape, #164), or with
+the timeline set against the prose (so its crops keep
 the text) must keep both. `layoutComesApart` is checked directly: a crop over 75% of the page refuses
 even without text in it, crops taking 15% of the words refuse and 5% do not, and invisible text or one
-page-sized paint refuse whatever the crops. `GraphicsReader` must mark image XObjects `image` and paths
+page-sized paint that is an image or an outline refuses whatever the crops, while a page-sized fill does
+not and lets its crops hold up to half the words. `GraphicsReader` must mark image XObjects `image` and paths
 painted by `f`, `f*`, `B` and `b` (not `S` or `s`) `filled`. Source-derived `dga-{2,3,4,5,6,8}-illustrated`
 fixtures now record those flags (`tools/capture-layout-fixture.swift`; older fixtures read both as false):
 pages 3–5 must come apart with only the running foot in a crop (and not without composition); the `Gut
@@ -1066,6 +1068,27 @@ column cut makes redundant on these pages. The DGA contract checks the absent wa
 and headings on pages 3–5, the callouts and first bullet row on pages 6 and 8, and page 2's footnotes;
 the baseline fails exactly those 17 checks. See the
 [DGA preservation evidence](../measurements/dga-preservation/record.md).
+
+## Pages that paint only their own backdrop
+
+`PageBackdropTests.swift` covers [#164](https://github.com/vocaro/PDFReflowLib/issues/164).
+`paintsOnlyItsBackdrop` must accept a page-sized fill beside smaller art and refuse a page-sized image,
+a page-sized outline, a fill drawn with either beside it, and a page painting nothing page-sized;
+`artBesideBackdrops` must return the figure standing on its own and the image while dropping the
+backdrop, the box holding a line and the arrow drawn inside that box. The source-derived `slides-5` and
+`dga-1-illustrated` fixtures join `slides-{1,3,10,12,13,14,19}`: slide 13's placeholders, panels and
+outlined boxes must leave no crop over the slide and none of its words (read as any other page the same
+art is one crop holding every line), slide 5's question — a filled path a fifth of the slide, with no
+text layer — must keep its crop while the slide-number placeholder loses its own, slides 1 and 10 must
+leave every word outside a crop beside the insignia alone, and the DGA cover must keep the review signal
+with 10 of its 16 words in crops. End to end, a synthetic page with a full-bleed fill, as a rectangle or
+as a path under placeholder paths, must reflow exactly as the page without one, and the same page with a
+figure drawn over a heading must keep that heading, its prose and a source-page reference with no
+warning. Each of 12 single-guard mutations fails at least one test
+([negative mutations](../measurements/page-backdrops/negative-mutations.txt)). The deck contract adds
+the absent warning on all 21 slides, the absent source-page image on slides 1 and 5–10, the insignia
+region on 1 and 9, slide 5's two regions and the retained reference on 13 and 19; the baseline fails
+exactly those 29 checks. See the [page backdrop evidence](../measurements/page-backdrops/record.md).
 
 ## Columns a folio, a running foot or a spanning figure leaves uncut
 

@@ -879,15 +879,30 @@ with empty selections discarded before layout, vocabulary, OCR selection and cov
 
 Existing text over a graphic covering more than 75% of the page gets `unverifiedTextLayer` and
 an accompanying source-page image under the default reference policy. The painted region counts
-when one paint covers more than 75% of the page (a scan, a full-page background fill such as the
-Fed's colophon tint or the DGA cover's), when any text is invisible, or unless the page's crops
-come apart (`PDFReflowLibPipeline.layoutComesApart`, #117): after tint composition and label
-expansion no crop covers 75% of the page and the crops take at most a tenth of its words. DGA
+when one paint that is not the page's backdrop covers more than 75% of the page (a scan, a
+chapter opener's photograph, the full-page border the Fed's colophon draws around its tint),
+when any text is invisible, or unless the page's crops come apart
+(`PDFReflowLibPipeline.layoutComesApart`, #117): after tint composition and label expansion no
+crop covers 75% of the page and the crops take at most a tenth of its words. DGA
 pages 3–5 cluster section bands, circular photo icons, callout boxes and a margin timeline into
 one page-sized region whose crops leave only the running foot; they reflow beside those crops.
 NOAA's photo-and-chart pages, whose crops would still hold their text, keep the signal. This conservative review signal does not establish that
 text is OCR, detect every corrupted layer, or assess individual table cells. Fresh OCR keeps
 its separate `ocrUsed` notice; image-only fallbacks keep `pageImageFallback`.
+
+A page whose every page-sized paint is a flat fill paints only its own backdrop
+(`PDFReflowLibPipeline.paintsOnlyItsBackdrop`, #164): a background colour behind visible native
+text is the ground the page writes on, not a picture of it. `artBesideBackdrops` then composes
+that page without its backdrops — the page-sized fill, every other vector paint holding a line
+the page reflows (a presentation tool's placeholders, panels and outlined boxes), and the marks
+drawn inside those boxes (its connectors) — so only its images and the vector art that holds no
+text seed crops. Because those crops are the page's own figures, which may hold their labels,
+such a page is a picture of itself only when its crops hold *more than half* its words: the DGA
+cover's outlined lettering and 45 images hold 10 of its 16, while the busiest slide of the
+Earthdata deck reaches 5 of 20. A backdrop page that comes apart but whose figures would still
+take a word (the deck's pipeline icons are drawn over their labels) gives up its crops for a
+source-page reference and reflows its whole text, with no review warning: its text is native and
+complete, and only the art needs the image.
 
 `TextLayerPlausibility` then judges such a layer before any recognition (#93), in English books
 only and not on pages already flagged `damagedTextEncoding`. Its word test sorts whitespace

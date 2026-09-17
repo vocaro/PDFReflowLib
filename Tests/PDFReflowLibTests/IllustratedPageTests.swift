@@ -16,7 +16,9 @@ private let dgaSHA256 = "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6
 
 // MARK: The image-backed decision (pipeline)
 
-enum IllustratedPageBackground: Sendable { case none, scan, fill, invisibleText, ruleAgainstText }
+enum IllustratedPageBackground: Sendable {
+    case none, scan, fill, pathFill, invisibleText, ruleAgainstText, fillAndFrame, fillWithFigureOnALabel
+}
 
 /// A two-section page: an 18-pt heading and eight prose lines per section, a square icon left of
 /// each heading, a footer band holding a folio and a 1-pt timeline stroked down the margin from the
@@ -29,6 +31,18 @@ private func illustratedPDF(_ background: IllustratedPageBackground) -> Data {
     switch background {
     case .scan: art = "q 600 0 0 800 0 0 cm /Im Do Q\n" + art
     case .fill: art = "0.99 0.98 0.93 rg 0 0 600 800 re f\n" + art
+    // What a presentation tool paints: the background and each text placeholder as a path, not a
+    // rectangle, so the tint rules of #54 never see them (the Earthdata deck's own shape).
+    case .pathFill:
+        art = "0.2 0.3 0.4 rg 0 0 m 600 0 l 600 800 l 0 800 l h f\n"
+            + "0.95 0.95 0.95 rg 60 430 m 560 430 l 560 630 l 60 630 l h f\n"
+            + "0.95 0.95 0.95 rg 60 130 m 560 130 l 560 330 l 60 330 l h f\n" + art
+    // The Fed colophon's shape: a page-sized tint with a page-sized border drawn around it.
+    case .fillAndFrame: art = "0.99 0.98 0.93 rg 0 0 600 800 re f\n0.2 G 1 w 0 0 600 800 re S\n" + art
+    // A figure drawn over a line's box, as the deck's pipeline icons stand on their labels: the
+    // crop that grows from it would take that line out of the reflowed text.
+    case .fillWithFigureOnALabel:
+        art = "0.99 0.98 0.93 rg 0 0 600 800 re f\n" + art + "q 120 0 0 60 90 560 cm /Im Do Q\n"
     default: break
     }
     let mode = background == .invisibleText ? 3 : 0
@@ -77,13 +91,43 @@ private func hasReference(_ result: PDFReflowLibPipeline.Result) -> Bool {
     #expect(result.document.blocks.filter { if case .image = $0.content { true } else { false } }.count >= 2)
 }
 
-@Test(arguments: [IllustratedPageBackground.scan, .fill, .invisibleText, .ruleAgainstText])
+@Test(arguments: [IllustratedPageBackground.scan, .invisibleText, .ruleAgainstText, .fillAndFrame])
 func textOverAPictureOfThePageKeepsTheReviewSignal(_ background: IllustratedPageBackground) async throws {
-    // A page-sized image (a scan), a full-page background fill, invisible text, and art whose crops
-    // would still hold the text (the rule set against the prose joins everything) keep the warning.
+    // A page-sized image (a scan), invisible text, art whose crops would still hold the text (the
+    // rule set against the prose joins everything), and a page-sized outline drawn over a
+    // background fill (the Fed colophon, #72/#164) keep the warning.
     let result = try await reconstruct(illustratedPDF(background))
     #expect(result.warnings.contains { $0.code == .unverifiedTextLayer && $0.page == 1 }, "\(background)")
     #expect(hasReference(result), "\(background)")
+}
+
+@Test(arguments: [IllustratedPageBackground.fill, .pathFill])
+func aBackgroundFillUnderNativeTextIsNoPictureOfThePage(_ background: IllustratedPageBackground) async throws {
+    // #164: the same page with a full-bleed background fill reads exactly as it does without one,
+    // whether the page paints that ground as a rectangle or, as a presentation tool does, as a
+    // path under placeholder paths of its own. A flat colour behind visible native text is the
+    // page's ground, not a picture of it.
+    let result = try await reconstruct(illustratedPDF(background))
+    #expect(!result.warnings.contains { $0.code == .unverifiedTextLayer }, "\(background)")
+    #expect(!hasReference(result), "\(background)")
+    #expect(result.document.blocks.filter { if case .heading = $0.content { true } else { false } }.count == 2, "\(background)")
+    #expect(result.document.blocks.contains { $0.text.contains("of the day 7") }, "\(background)")
+    // The icons stay preserved regions. The footer band holds the folio, so with the fill in
+    // place it is a backdrop too, and the timeline joins the two icons into one margin crop.
+    #expect(result.document.blocks.filter { if case .image = $0.content { true } else { false } }.count >= 1)
+}
+
+@Test func aBackdropPageWhoseFigureStandsOnALabelKeepsItsWholeTextAndAReference() async throws {
+    // #164: the deck's pipeline icons are drawn in boxes over their labels, so a crop grown from
+    // one takes that label out of the slide. Such a page keeps a source-page reference and no
+    // crop, as an unverified page does, but its native text is not in doubt: no review warning.
+    let result = try await reconstruct(illustratedPDF(.fillWithFigureOnALabel))
+    #expect(!result.warnings.contains { $0.code == .unverifiedTextLayer })
+    #expect(hasReference(result))
+    #expect(result.document.blocks.contains { $0.text.contains("Section 1 heading for whole foods") })
+    #expect(result.document.blocks.contains { $0.text.contains("of the day 7") })
+    // Every crop is given up for the reference, so the icons are in the page image alone.
+    #expect(result.document.blocks.filter { if case .image = $0.content { true } else { false } }.count == 1)
 }
 
 @Test func aLayoutComesApartOnlyWhenItsCropsLeaveTheText() {
@@ -105,9 +149,19 @@ func textOverAPictureOfThePageKeepsTheReviewSignal(_ background: IllustratedPage
     // Crops taking 15% of the words hold the text; 5% (a running foot) do not.
     #expect(!comesApart([icon, CGRect(x: 0, y: 10, width: 600, height: 26)]))
     #expect(comesApart([icon, CGRect(x: 0, y: 10, width: 600, height: 6)]))
-    // Invisible text, or one paint over 75% of the page, keeps the signal whatever the crops.
+    // Invisible text, or one page-sized paint that is not a backdrop fill, keeps the signal
+    // whatever the crops: an image (a scan) or an outline (the Fed colophon's border, #164).
     #expect(!comesApart([icon], invisible: true))
-    #expect(!comesApart([icon], paints: [GraphicsReader.Paint(rect: page, frame: true, filled: true)]))
+    #expect(!comesApart([icon], paints: [GraphicsReader.Paint(rect: page, frame: true, image: true)]))
+    #expect(!comesApart([icon], paints: [GraphicsReader.Paint(rect: page, frame: true)]))
+    #expect(!comesApart([icon], paints: [GraphicsReader.Paint(rect: page, frame: true, filled: true),
+                                         GraphicsReader.Paint(rect: page, frame: true)]))
+    // A page-sized fill is the page's backdrop, and its crops may hold up to half its words.
+    #expect(comesApart([icon], paints: [GraphicsReader.Paint(rect: page, frame: true, filled: true)]))
+    #expect(comesApart([icon, CGRect(x: 0, y: 10, width: 600, height: 26)],
+                       paints: [GraphicsReader.Paint(rect: page, frame: true, filled: true)]))
+    #expect(!comesApart([icon, CGRect(x: 0, y: 10, width: 600, height: 100)],
+                        paints: [GraphicsReader.Paint(rect: page, frame: true, filled: true)]))
     #expect(comesApart([icon], paints: [GraphicsReader.Paint(rect: CGRect(x: 0, y: 0, width: 600, height: 590), frame: true, filled: true)]))
 }
 

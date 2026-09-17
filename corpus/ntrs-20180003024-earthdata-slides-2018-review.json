@@ -6,17 +6,17 @@
     {
       "page": 1,
       "target": "Title slide",
-      "acceptance": "Correct now: Earthdata Cloud Analytics Project is one h2; the byline, NASA and *U.S. Civil Servant lines follow in order. Wrong now: unverifiedTextLayer and an Original page 1 image although the only full-page graphic is the flat slide background (#164)."
+      "acceptance": "Correct now: Earthdata Cloud Analytics Project is one h2; the byline, NASA and *U.S. Civil Servant lines follow in order; the only full-page graphic is the flat slide background, so the slide reflows with no unverifiedTextLayer and no Original page 1 image, beside the NASA insignia as a region of its own (#164)."
     },
     {
       "page": 2,
       "target": "EOSDIS diagram with satellite renders and a ground-station photo",
-      "acceptance": "Correct now: the two-line title is one paragraph; the photos survive in the source-page image. Wrong now: the title is not a heading; EOSDIS merges with distribute and the pipeline labels interleave (data, subset, downlink, archive, Users, capture and clean, process) (#165). The Research, Applications and Education boxes have no text layer. Source-page image on every slide (#164)."
+      "acceptance": "Correct now: the two-line title is one paragraph; the photos survive in the source-page image, which the slide keeps because its diagram art would otherwise take the labels beside it; no unverifiedTextLayer (#164). Wrong now: the title is not a heading; EOSDIS merges with distribute and the pipeline labels interleave (data, subset, downlink, archive, Users, capture and clean, process) (#165). The Research, Applications and Education boxes have no text layer."
     },
     {
       "page": 3,
       "target": "Archive-volume chart slide",
-      "acceptance": "Correct now: title lines and the projected label in order; the chart raster survives in the source-page image. Wrong now: the two title lines are separate paragraphs, not a heading (#165)."
+      "acceptance": "Correct now: title lines and the projected label in order; the chart raster survives in the source-page image, which the slide keeps because the chart's crop would take the projected label out of the text; no unverifiedTextLayer (#164). Wrong now: the two title lines are separate paragraphs, not a heading (#165)."
     },
     {
       "page": 4,
@@ -26,7 +26,7 @@
     {
       "page": 5,
       "target": "Question slide without a text layer",
-      "acceptance": "Correct now: the italic question has no text layer (Poppler finds only the slide number), so the slide is carried by its image alone and no text is invented."
+      "acceptance": "Correct now: the italic question has no text layer (Poppler finds only the slide number), so it is carried by its image alone and no text is invented. Since #164 that image is the question's own region, beside the NASA insignia, instead of a full source-page image."
     },
     {
       "page": 6,
@@ -61,7 +61,7 @@
     {
       "page": 12,
       "target": "Reference architecture pipeline with footnoted AODS",
-      "acceptance": "Correct now: heading; Extract, Transform, Load and the five boxes in pipeline order; AODS marker is a <sup>1</sup>. Wrong now: the footnote 1 Analytics Optimized Data Store is removed as a repeated footer (#165). The icons are only in the source-page image."
+      "acceptance": "Correct now: heading; Extract, Transform, Load and the five boxes in pipeline order; AODS marker is a <sup>1</sup>. Wrong now: the footnote 1 Analytics Optimized Data Store is removed as a repeated footer (#165). The icons are only in the source-page image, which the slide keeps because each icon stands on its label; no unverifiedTextLayer (#164)."
     },
     {
       "page": 13,
@@ -84,5 +84,5 @@
       "acceptance": "Correct now: heading; Exploitation Platforms, the five boxes and the footnote in order; AODS <sup>1</sup>. Wrong now: Cumulus doubled; h4 title (#165)."
     }
   ],
-  "scope": "Manual targets from 100 DPI Poppler renders of all 21 slides (slide 2 corner at 250 DPI) and the Poppler text layer with word boxes. Google Slides export, untagged, 720x405 pt. No region, glyph or appearance references are committed: the NASA insignia is on every slide; see the manifest rights note."
+  "scope": "Manual targets from 100 DPI Poppler renders of all 21 slides (slide 2 corner at 250 DPI) and the Poppler text layer with word boxes. Google Slides export, untagged, 720x405 pt; every slide paints a flat full-bleed background fill and a fill behind each text placeholder (#164). No region, glyph or appearance references are committed: the NASA insignia is on every slide; see the manifest rights note."
 }

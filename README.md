@@ -158,11 +158,17 @@ that fall back to images skip unused attributed-text decoding. Failures use
   Existing text over a page-sized graphic retains a source reference image by default and reports
   `unverifiedTextLayer`: transcription, tables, numbers and reading order need human review.
   This conservative signal is not an OCR confidence score; it can also flag illustrated pages
-  with valid text. A page-sized graphic counts when one paint (a scan, a full-page background) covers
+  with valid text. A page-sized graphic counts when one paint that is not the page's own
+  background (a scan, a photograph, a full-page border) covers
   most of the page, when any text is invisible, or when the page's own crops would still cover
   the page or hold more than a tenth of its words; a born-digital layout whose bands, icons,
   callout boxes and rules merely cluster that large reflows beside its crops without the signal
-  ([#117](measurements/dga-preservation/record.md)). Validated structure tags still apply to visible native text over such a
+  ([#117](measurements/dga-preservation/record.md)). A page whose only page-sized paint is a flat
+  fill paints its own backdrop: that fill, the boxes it paints behind its own text and the marks
+  inside them seed no crop, and the page is a picture of itself only when the crops that remain
+  hold most of its words. Where such a page's own figures would still take a word of it (a slide's
+  icons drawn over their labels), it keeps a source-page image instead of crops and reflows its
+  whole text, without the warning ([#164](measurements/page-backdrops/record.md)). Validated structure tags still apply to visible native text over such a
   background (a chapter opener's photograph); pages with invisible text keep spatial reconstruction. When an inherited OCR layer marks what it could not transcribe with inline images (Adobe Paper Capture), those marks are evidence only: each grows over the scan's ink to a whole figure ending above its `FIGURE N.` caption, or to a whole display-equation row with its number, and a figure that cannot grow without reaching prose keeps the page image. Smaller graphics and undetected scans can still contain transcription errors.
 - Born-digital text whose fonts carry a custom `Differences` encoding of index-style glyph
   names (`G108`, `c63`) with no `ToUnicode` map extracts as the wrong characters even though
@@ -218,7 +224,7 @@ automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic
 converts each fixture twice and requires byte-identical EPUBs).
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
 and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold
-<!-- counts:contract-summary -->3131 checks on 547 pages of 22 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
+<!-- counts:contract-summary -->3142 checks on 547 pages of 22 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
 table, scale/contrast/color checks for a flag and an FAA figure, and <!-- counts:table-cell-checks -->9<!-- counts:end --> cell checks on tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and
 adding a case.

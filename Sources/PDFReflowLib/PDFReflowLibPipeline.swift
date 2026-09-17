@@ -13,23 +13,95 @@ enum PDFReflowLibPipeline {
         var noteLinks = NoteLinker.Summary()
     }
 
+    /// Whether a paint covers more than 75% of a page of `bounds`.
+    private static func coversPage(_ rect: CGRect, _ bounds: CGRect) -> Bool {
+        rect.width * rect.height > bounds.width * bounds.height * 0.75
+    }
+
+    /// Whether `rect` lies for the most part inside `container`, as `TintDetector` reads it.
+    private static func mostlyInside(_ rect: CGRect, _ container: CGRect) -> Bool {
+        let overlap = rect.intersection(container)
+        return !overlap.isNull && overlap.width * overlap.height >= rect.width * rect.height * 0.5
+    }
+
+    /// Whether the only page-sized thing the page paints is its own backdrop (#164): a flat fill,
+    /// not an image and not an outline. A scan, a photograph printed to the edges (the Fed's
+    /// chapter openers, #72) and a page-sized rule or frame (the Fed's colophon, which draws a
+    /// border around its tint) are pictures of the page; a background colour is not, whoever
+    /// paints it — a slide deck gives every slide a full-bleed fill, and the Earthdata deck's
+    /// 21 slides are the corpus's only such pages besides the DGA cover.
+    static func paintsOnlyItsBackdrop(_ paints: [GraphicsReader.Paint], bounds: CGRect) -> Bool {
+        let pageSized = paints.filter { coversPage($0.rect, bounds) }
+        return !pageSized.isEmpty && pageSized.allSatisfy { $0.filled && !$0.image }
+    }
+
+    /// What such a page draws beside its backdrop, or `nil` when it is not one (#164).
+    ///
+    /// A presentation tool paints a fill behind every text placeholder as well as behind the
+    /// slide, so the page's own art is buried in fills that are nothing but the ground its text
+    /// stands on: the Earthdata deck's title and body placeholders, its diagram panels and its
+    /// box outlines each hold the lines drawn over them, and clustered they cover the slide, so
+    /// the crop that grows from them takes the slide's whole text. Three kinds are set aside:
+    ///
+    /// - the page-sized backdrop fill;
+    /// - any other vector paint holding a line the page reflows (a placeholder, a panel, a box);
+    /// - a vector paint drawn inside one of those boxes that holds no line (the deck's arrows
+    ///   between its pipeline boxes), which is part of the box's decoration.
+    ///
+    /// Everything else keeps its crop: every image (the NASA insignia, the photographs, the chart
+    /// rasters and the icons), and vector art holding no text that stands on its own — slide 5's
+    /// question, drawn as outlines with no text layer, and the DGA cover's outlined lettering.
+    static func artBesideBackdrops(_ paints: [GraphicsReader.Paint], lines: [TextLine],
+                                   bounds: CGRect) -> [GraphicsReader.Paint]? {
+        guard paintsOnlyItsBackdrop(paints, bounds: bounds) else { return nil }
+        func isBackdrop(_ paint: GraphicsReader.Paint) -> Bool {
+            guard !paint.image else { return false }
+            return coversPage(paint.rect, bounds) || lines.contains { mostlyInside($0.rect, paint.rect) }
+        }
+        let boxes = paints.filter { isBackdrop($0) && !coversPage($0.rect, bounds) }.map(\.rect)
+        return paints.filter { paint in
+            if paint.image { return true }
+            guard !isBackdrop(paint) else { return false }
+            return !boxes.contains { $0 != paint.rect && $0.contains(paint.rect) }
+        }
+    }
+
+    /// What a page's own crops (`graphicsWithLabels` of the composed page) would take out of its
+    /// text: the words they meet, the words the page carries, and whether one covers the page.
+    static func cropOutcome(_ content: PageContent) -> (taken: Int, total: Int, coversPage: Bool) {
+        func words(_ lines: [TextLine]) -> Int {
+            lines.reduce(0) { $0 + $1.text.split(whereSeparator: \.isWhitespace).count }
+        }
+        let crops = LayoutReconstructor.graphicsWithLabels(content)
+        return (words(content.lines.filter { line in crops.contains { $0.intersects(line.rect) } }),
+                words(content.lines),
+                crops.contains { coversPage($0, content.bounds) })
+    }
+
     /// Whether a page whose painted regions cluster into a page-sized one is a born-digital layout
     /// rather than text over a picture of the page (#117). The review signal stays for a page with
-    /// any invisible text (an inherited OCR layer), with one paint covering more than 75% of it (a
-    /// scan, a full-page background: the Fed's colophon tint, the DGA cover's fill under outlined
-    /// lettering), or whose own crops do not come apart: `content` is the page after tint
-    /// composition, and its crops (`graphicsWithLabels`) must neither cover 75% of the page nor
-    /// take more than a tenth of its words. DGA pages 3–5 cluster section bands, icons, callout
-    /// boxes and a margin timeline into one region whose crops leave only the running foot; NOAA's
-    /// photo-and-chart pages, whose crops would still hold their text, keep the reference.
+    /// any invisible text (an inherited OCR layer), with one page-sized paint that is not its
+    /// backdrop fill (a scan, a photograph, the Fed colophon's full-page border, #164), or whose
+    /// own crops do not come apart: `content` is the page after tint composition, and its crops
+    /// must neither cover 75% of the page nor take more than a tenth of its words. DGA pages 3–5
+    /// cluster section bands, icons, callout boxes and a margin timeline into one region whose
+    /// crops leave only the running foot; NOAA's photo-and-chart pages, whose crops would still
+    /// hold their text, keep the reference.
+    ///
+    /// A page that paints only its backdrop (#164) writes its own text over a background colour,
+    /// so its crops are its figures rather than pieces of a picture, and a figure may hold its
+    /// own label: such a page is a picture of itself only when its crops hold *most* of its words.
+    /// The DGA cover's crops hold 10 of its 16 (its title is drawn as art over a full-page fill,
+    /// and the text layer is a Type 3 transcription that paints nothing); the busiest slide of
+    /// the Earthdata deck reaches 5 of 20.
     static func layoutComesApart(_ content: PageContent, graphics: GraphicsReader.Result) -> Bool {
-        let pageArea = content.bounds.width * content.bounds.height
+        let backdrop = paintsOnlyItsBackdrop(graphics.paints, bounds: content.bounds)
         guard !graphics.hasInvisibleText,
-              !graphics.paints.contains(where: { $0.rect.width * $0.rect.height > pageArea * 0.75 }) else { return false }
-        func words(_ lines: [TextLine]) -> Int { lines.reduce(0) { $0 + $1.text.split(whereSeparator: \.isWhitespace).count } }
-        let crops = LayoutReconstructor.graphicsWithLabels(content)
-        guard !crops.contains(where: { $0.width * $0.height > pageArea * 0.75 }) else { return false }
-        return words(content.lines.filter { line in crops.contains { $0.intersects(line.rect) } }) * 10 <= words(content.lines)
+              backdrop || !graphics.paints.contains(where: { coversPage($0.rect, content.bounds) })
+        else { return false }
+        let outcome = cropOutcome(content)
+        guard !outcome.coversPage else { return false }
+        return outcome.taken * (backdrop ? 2 : 10) <= outcome.total
     }
 
     /// Whether lines form a numeric grid (#143): at least three rows, each holding at least two
@@ -92,7 +164,8 @@ enum PDFReflowLibPipeline {
             // The pool includes every PDFKit accessor, not only string extraction. Page
             // references and annotation arrays also carry autoreleased rendering resources.
             let glyphReport = NativeTextReader.IndexGlyphReport()
-            var (content, unmappedFont, pageSizedGraphic, graphics, visibleAnnotations) = try autoreleasepool {
+            var (content, unmappedFont, pageSizedGraphic, graphics, visibleAnnotations,
+                 backdropReference) = try autoreleasepool {
                 let page = try document.page(at: i)
                 guard let reference = page.pageRef else {
                     throw ConversionError.unreadablePDF
@@ -134,9 +207,12 @@ enum PDFReflowLibPipeline {
                 }
                 // Rectangles behind prose (sidebar frames, tint bands, cell shading) stop
                 // seeding crops once the text shows they are decoration; everything else
-                // clusters exactly as the reader's regions did.
+                // clusters exactly as the reader's regions did. A page that paints nothing
+                // page-sized but its own backdrop composes the art beside that backdrop (#164),
+                // so a slide's placeholders and boxes do not take the text drawn on them.
                 if !requiresPageImage {
-                    let composed = TintDetector.compose(graphics.paints, lines: content.lines, bounds: bounds)
+                    let art = artBesideBackdrops(graphics.paints, lines: content.lines, bounds: bounds)
+                    let composed = TintDetector.compose(art ?? graphics.paints, lines: content.lines, bounds: bounds)
                     content.graphics = composed.graphics
                     content.tints = composed.tints
                     content.separators = composed.separators
@@ -165,11 +241,20 @@ enum PDFReflowLibPipeline {
                 }
                 // Structural font evidence is read here; the text judgment follows outside the pool.
                 // The page-sized-graphic signal reads the painted regions before tint removal, so a
-                // full-page background still earns the review warning and reference. A born-digital
-                // layout whose art only clusters into such a region is exempt (`layoutComesApart`).
+                // full-page background still clusters into such a region. A born-digital layout
+                // whose art only clusters into one is exempt (`layoutComesApart`), and so, unless
+                // its crops hold most of its words, is a page that paints only its backdrop (#164).
                 let pageArea = bounds.width * bounds.height
                 let pageSized = graphics.regions.contains { $0.width * $0.height > pageArea * 0.75 }
                     && (requiresPageImage || !layoutComesApart(content, graphics: graphics))
+                // Such a page reflows its whole text even when a figure of its own would take a
+                // word of it: the deck's pipeline icons are drawn in boxes over their labels, so
+                // preserving them as regions would take those labels out of the slide. The page
+                // then keeps a source-page reference and no crop, as an unverified page does,
+                // but its native text is not in doubt and it reports no review warning.
+                let backdropReference = !requiresPageImage && !pageSized && !content.lines.isEmpty
+                    && paintsOnlyItsBackdrop(graphics.paints, bounds: bounds)
+                    && cropOutcome(content).taken > 0
                 // The font evidence stands unless line repair read the page's index-glyph shows and
                 // repaired every line (#143): a show in an undecoded font, or a glyph without an
                 // established character, leaves its line unrepaired or its show unplaced, so such a
@@ -179,7 +264,7 @@ enum PDFReflowLibPipeline {
                 let repaired = glyphReport.repairedLines > 0 && glyphReport.unrepairedLines == 0
                     && !holdsNumericGrid(content.lines)
                 return (content, !content.lines.isEmpty && !requiresPageImage && !repaired && TextEncodingCheck.hasUnmappedFont(reference),
-                        pageSized, graphics, annotations.visible)
+                        pageSized, graphics, annotations.visible, backdropReference)
             }
             // A page that paints nothing and renders as white paper keeps only its boundary: no
             // recognition, no page image (#132).
@@ -286,6 +371,15 @@ enum PDFReflowLibPipeline {
                         + (options.referenceImages == .never
                             ? "Check the source PDF before relying on the reflowed text; supplementary references are disabled."
                             : "Check the accompanying source-page image before relying on the reflowed text.")))
+            }
+            // A page that paints only its backdrop keeps every word: where its own figures would
+            // take one, the source-page reference carries the art instead of a crop (#164). The
+            // text is native and complete, so no review warning follows.
+            if !content.requiresPageImage, !imageBackedText, backdropReference {
+                content.preservePageReference = true
+                content.graphics = []
+                content.tints = []
+                content.separators = []
             }
             if content.lines.isEmpty && !content.requiresPageImage {
                 content.requiresPageImage = true

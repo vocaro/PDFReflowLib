@@ -102,7 +102,8 @@ that fall back to images skip unused attributed-text decoding. Failures use
   report `structureFallback`; figures, lists, captions and OCR retain spatial reconstruction.
   This is bounded tag support, not full tagged-PDF or accessibility reconstruction.
 - Soft hyphens are removed at wraps. A hard hyphen is removed only when the unbroken word occurs
-  elsewhere in the book and there is no evidence of the corresponding compound. Ambiguous
+  elsewhere in the book and there is no evidence of the corresponding compound. Inside a web
+  address, the book's own unbroken addresses decide instead of prose compounds. Ambiguous
   joins retain the hyphen and produce a warning.
 - Short recurring headers and footers can be removed when at least three pages support the
   decision, including a two-row running head (title row with folio, section row) in the outer

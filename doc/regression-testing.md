@@ -106,14 +106,14 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 1107 targeted checks on 248 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 1116 targeted checks on 251 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 340 ordered-text, 92 text, 146 paragraph,
-94 absent-text, 108 heading, 24 absent-heading, 30 list-item, 17 script, 11 footnote, 27 note-link,
+the NBS and Replay Clocks academic papers). They comprise 340 ordered-text, 94 text, 149 paragraph,
+97 absent-text, 108 heading, 24 absent-heading, 30 list-item, 17 script, 11 footnote, 27 note-link,
 28 paragraph-continuation, 1 list-item-continuation, 5 paragraph-separation, 23 distinct-paragraph,
-84 image-presence, 56 warning, 1 absent-warning, 12 source-region, 3 glyph-structure,
+84 image-presence, 57 warning, 1 absent-warning, 12 source-region, 3 glyph-structure,
 3 image-appearance and 2 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
 anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
 

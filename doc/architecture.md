@@ -206,8 +206,17 @@ letter or digit, or after a percent escape. It also continues after a dot that f
 or digit when the next line starts lowercase or with a word that is not a bare number
 (`https://www.` + `federalreserve.gov`, `10.1080/14693062.` + `2022.2061405`), after a hyphen
 before a digit or capital, and before a line opening with `/ . _ ? # = & % ~` and a letter or
-digit. A hyphen before a lowercase letter stays with the hyphen policy, because typesetters
-hyphenate inside addresses too. A period after a closing parenthesis, or before a capital, ends
+digit. A hyphen before a lowercase letter inside an address is decided by the book's own
+addresses (#88), because typesetters hyphenate inside addresses (`federalreserve.gov/monetary-` +
+`policy/…`) as well as breaking at real hyphens (`page1-` + `econ/…`). Vocabulary collection also
+records every address seen on a line, lowercased and without scheme or `www.`: its prefixes that
+end at `/ . ? # & = :`, and its segments between them. An address ending its line gives up its
+last segment, and a line's first word without a scheme or `www.` gives up its first segment. The
+hyphen goes when the address through the broken segment is seen joined and not hyphenated, and
+stays when it is seen hyphenated and not joined; failing that, the broken segment decides the
+same way. Failing both, it goes only when the letters beside it, with no digit next to them, join
+into a book word and are not both words (`communi-` + `cations.htm`). Otherwise it stays and the
+page warns (`uncertainHyphen`). A period after a closing parenthesis, or before a capital, ends
 the sentence. The same test keeps a list item's first wrapped line after a marker line ending
 inside an address (`(AIM)—www.faa.` + `gov/…`).
 `FootnoteDetector` recognizes page-bottom footnotes: a line of three or more dash characters

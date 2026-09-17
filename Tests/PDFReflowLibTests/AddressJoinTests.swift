@@ -62,12 +62,13 @@ func lineBrokenInsideAnAddressJoinsWithoutASpace(left: String, right: String, jo
 
 @Test func hyphenPolicyStillDecidesLowercaseBreaksInsideAddresses() {
     var warnings: [ConversionWarning] = []
-    // The Fed's typesetter hyphenated inside this address: the book's vocabulary removes it.
+    // The Fed's typesetter hyphenated inside this address: `communi` and `cations` are not book
+    // words and `communications` is, so the hyphen goes (#88 decides address hyphens).
     #expect(LayoutReconstructor.join("https://www.federalreserve.gov/monetarypolicy/review-of-monetary-policy-strategy-tools-and-communi-",
         "cations.htm.", vocabulary: ["communications"], page: 1, warnings: &warnings)
         == "https://www.federalreserve.gov/monetarypolicy/review-of-monetary-policy-strategy-tools-and-communications.htm.")
     #expect(warnings.isEmpty)
-    // A real hyphen at the break stays, with the existing uncertainty warning.
+    // A real hyphen at the break, with no address evidence, stays with the uncertainty warning.
     #expect(LayoutReconstructor.join("https://www.federalreserve.gov/aboutthefed/structure-federal-open-",
         "market-committee.htm.", vocabulary: [], page: 1, warnings: &warnings)
         == "https://www.federalreserve.gov/aboutthefed/structure-federal-open-market-committee.htm.")

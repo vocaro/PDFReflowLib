@@ -15,6 +15,41 @@ enum LayoutReconstructor {
             for word in line.text.lowercased().split(whereSeparator: { !$0.isLetter && $0 != "-" }) {
                 vocabulary.insert(String(word))
             }
+            addAddressVocabulary(of: line.text, to: &vocabulary)
+        }
+    }
+
+    /// Web addresses seen unbroken, for resolving a line-end hyphen inside an address (#88). The
+    /// entries share the word set under prefixes no word can hold: every prefix of an address
+    /// that ends at `/ . ? # & = :` or at its end, and every segment between those characters,
+    /// lowercased and without scheme or `www.`. An address ending its line may continue on the
+    /// next, so its last segment is not evidence.
+    static func addAddressVocabulary(of text: String, to vocabulary: inout Set<String>) {
+        guard text.contains("/") || text.contains("www.") || text.contains("WWW.") else { return }
+        let words = text.split(whereSeparator: \.isWhitespace)
+        for (index, word) in words.enumerated() where word.contains("/") || word.lowercased().contains("www.") {
+            let run = String(word.reversed().drop { !addressCharacters.contains($0) }.reversed())
+            guard let address = trailingAddress(run) else { continue }
+            // A line's first word may continue an address broken on the line above (`federalre-` +
+            // `serve.gov/…`): without a scheme or `www.`, its first segment is not evidence.
+            var fragmentSegment = index == 0
+                && address.range(of: "^(?:[A-Za-z][A-Za-z0-9+.-]*://|www\\.)", options: [.regularExpression, .caseInsensitive]) == nil
+            var normalized = Substring(normalizedAddress(address))
+            while let last = normalized.last, ".,;:)]".contains(last) { normalized.removeLast() }
+            if index == words.count - 1 {
+                guard let cut = normalized.lastIndex(where: { addressDelimiters.contains($0) }) else { continue }
+                normalized = normalized[..<cut]
+            }
+            guard !normalized.isEmpty else { continue }
+            vocabulary.insert(addressPrefixKey + normalized)
+            var segmentStart = normalized.startIndex
+            for position in normalized.indices where addressDelimiters.contains(normalized[position]) {
+                vocabulary.insert(addressPrefixKey + normalized[..<position])
+                if segmentStart < position, !fragmentSegment { vocabulary.insert(addressSegmentKey + normalized[segmentStart..<position]) }
+                fragmentSegment = false
+                segmentStart = normalized.index(after: position)
+            }
+            if segmentStart < normalized.endIndex, !fragmentSegment { vocabulary.insert(addressSegmentKey + normalized[segmentStart...]) }
         }
     }
 
@@ -2097,8 +2132,8 @@ enum LayoutReconstructor {
     /// continuation that is not a bare number (`10.1080/14693062.` + `2022.2061405`, never `2004`),
     /// in a hyphen before a digit or capital (`Spec/02-` + `2004/Article…`), or when the next line
     /// opens with such a character (`www.federalreserve.gov` + `/monetarypolicy/…`). A hyphen
-    /// before a lowercase letter stays with the hyphen policy: the Fed's typesetter hyphenates
-    /// inside addresses (`communi-` + `cations.htm`) as well as breaking at real ones. A period
+    /// before a lowercase letter is decided by `addressHyphenOperation`: the Fed's typesetter
+    /// hyphenates inside addresses (`communi-` + `cations.htm`) as well as breaking at real ones. A period
     /// after a closing parenthesis, or before a capital, ends the sentence.
     private static func addressContinues(_ left: String, _ right: String) -> Bool {
         guard let next = right.first, let address = trailingAddress(left), let last = address.last else { return false }
@@ -2123,6 +2158,63 @@ enum LayoutReconstructor {
         }
     }
 
+    private static let addressDelimiters = Set("/.?#&=:")
+    private static let addressPrefixKey = "\u{1}address:"
+    private static let addressSegmentKey = "\u{1}segment:"
+
+    /// An address without its scheme or `www.`, lowercased: the form address evidence compares.
+    static func normalizedAddress(_ address: Substring) -> String {
+        var text = address.lowercased()
+        if let scheme = text.range(of: "^[a-z][a-z0-9+.-]*://", options: .regularExpression) { text.removeSubrange(scheme) }
+        if text.hasPrefix("www.") { text.removeFirst(4) }
+        return text
+    }
+
+    private static func uncertainHyphen(page: Int, warnings: inout [ConversionWarning]) {
+        guard !warnings.contains(where: { $0.code == .uncertainHyphen && $0.page == page }) else { return }
+        warnings.append(.init(code: .uncertainHyphen, page: page,
+            message: "An ambiguous line-ending hyphen is retained. Review source word joins."))
+    }
+
+    /// A line-end hyphen inside a web address before a lowercase letter (#88). The Fed's
+    /// typesetter hyphenates inside addresses (`federalreserve.gov/monetary-` + `policy/…`) and
+    /// also breaks at real hyphens (`publications/page1-` + `econ/…`), and prose compounds say
+    /// nothing about either, so the book's own addresses decide. The address through the broken
+    /// segment, as seen unbroken elsewhere (`federalreserve.gov/monetarypolicy`), decides first;
+    /// then the broken segment seen in any address (`dfa-stress-tests`). One form must be seen
+    /// and the other not. Failing both, a break inside a word removes the hyphen: the letters on
+    /// either side, with no digit beside them (never `page1-` + `econ`), join into a book word
+    /// and are not both book words themselves (`communi-` + `cations.htm`; `cations` is a
+    /// line-start fragment of prose hyphenation, `communi` is not a word). Otherwise the hyphen
+    /// stays and the page warns.
+    private static func addressHyphenOperation(_ address: Substring, _ right: String, vocabulary: Set<String>, page: Int,
+                                               warnings: inout [ConversionWarning]) -> JoinOperation {
+        let rest = right.prefix { addressCharacters.contains($0) && !addressDelimiters.contains($0) }
+        let removed = normalizedAddress(Substring(address.dropLast() + rest))
+        let kept = normalizedAddress(Substring(address + rest))
+        func segment(_ text: String) -> Substring {
+            text.lastIndex(where: { addressDelimiters.contains($0) }).map { text[text.index(after: $0)...] } ?? Substring(text)
+        }
+        for (removedKey, keptKey) in [(addressPrefixKey + removed, addressPrefixKey + kept),
+                                      (addressSegmentKey + segment(removed), addressSegmentKey + segment(kept))] {
+            switch (vocabulary.contains(removedKey), vocabulary.contains(keptKey)) {
+            case (true, false): return .removeHyphen
+            case (false, true): return .concatenate
+            default: continue
+            }
+        }
+        let prefix = address.dropLast().reversed().prefix(while: { $0.isLetter }).reversed()
+        let suffix = right.prefix(while: { $0.isLetter })
+        let whole = !(address.dropLast().dropLast(prefix.count).last?.isNumber ?? false)
+            && !(right.dropFirst(suffix.count).first?.isNumber ?? false)
+        if whole, !prefix.isEmpty, !suffix.isEmpty, vocabulary.contains((String(prefix) + suffix).lowercased()),
+           !vocabulary.contains(String(prefix).lowercased()) || !vocabulary.contains(suffix.lowercased()) {
+            return .removeHyphen
+        }
+        uncertainHyphen(page: page, warnings: &warnings)
+        return .concatenate
+    }
+
     private static func joinOperation(_ left: String, _ right: String, vocabulary: Set<String>, page: Int,
                                       warnings: inout [ConversionWarning]) -> JoinOperation {
         if left.hasSuffix("\u{00ad}") { return .removeHyphen }
@@ -2135,15 +2227,15 @@ enum LayoutReconstructor {
            let next = right.first, next.isLetter || next.isNumber { return .concatenate }
         if addressContinues(left, right) { return .concatenate }
         guard left.hasSuffix("-"), right.first?.isLowercase == true else { return .space }
+        if let address = trailingAddress(left) {
+            return addressHyphenOperation(address, right, vocabulary: vocabulary, page: page, warnings: &warnings)
+        }
         let prefix = left.dropLast().reversed().prefix(while: { $0.isLetter }).reversed()
         let suffix = right.prefix(while: { $0.isLetter })
         let joined = (String(prefix) + suffix).lowercased()
         let compound = (String(prefix) + "-" + suffix).lowercased()
         if vocabulary.contains(joined), !vocabulary.contains(compound) { return .removeHyphen }
-        if !vocabulary.contains(compound), !warnings.contains(where: { $0.code == .uncertainHyphen && $0.page == page }) {
-            warnings.append(.init(code: .uncertainHyphen, page: page,
-                message: "An ambiguous line-ending hyphen is retained. Review source word joins."))
-        }
+        if !vocabulary.contains(compound) { uncertainHyphen(page: page, warnings: &warnings) }
         return .concatenate
     }
 

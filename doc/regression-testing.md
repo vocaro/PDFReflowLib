@@ -100,12 +100,12 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 1012 targeted checks on 217 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 1016 targeted checks on 217 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 303 ordered-text, 92 text, 131 paragraph,
-92 absent-text, 89 heading, 12 absent-heading, 30 list-item, 17 script, 11 footnote, 27 note-link,
+the NBS and Replay Clocks academic papers). They comprise 305 ordered-text, 92 text, 131 paragraph,
+94 absent-text, 89 heading, 12 absent-heading, 30 list-item, 17 script, 11 footnote, 27 note-link,
 28 paragraph-continuation, 1 list-item-continuation, 5 paragraph-separation, 16 distinct-paragraph,
 82 image-presence, 55 warning, 1 absent-warning, 12 source-region, 3 glyph-structure,
 3 image-appearance and 2 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
@@ -611,6 +611,26 @@ Disabling each rule in turn fails the test that covers it. The FAA contract chec
 openers, page 89's column order and the joined paragraphs on pages 105, 211 and 227; the Dietary
 Guidelines contract checks the bullets on pages 3–5. See the
 [form and chapter-title evidence](../measurements/form-tags-and-chapter-titles/record.md).
+
+## Text the rendering never shows
+
+`HiddenTextTests.swift` builds in-memory pages for #74 and #85: a running head painted before an
+opaque page-sized image (dropped; the chapter title drawn over the image opens the page and the
+`unverifiedTextLayer` warning stays) and a two-line caption, set with unpositioned continuation
+shows, wholly outside a rectangular clip (dropped; a label inside the clip stays). FAA page 159's
+geometry, where the clipped caption's first line overlaps the visible caption's second line 1.2
+points lower, is reproduced with the source's native line rectangles, with controls for a visible
+run starting inside the line or on its baseline. Kept controls: text over the image; translucent,
+multiplied, soft-masked, masked, stencil, slanted and smaller images; a triangular clip; a clip
+the text only partly leaves; invisible mode 3 text beneath the image; optional content; a pattern
+fill; a page whose covers would hide most of its text (the CDC comic's transcription layer), where
+a clip still hides; and a rotated label crossing a hidden line. Opaque solid fills hide; the same
+fill at half alpha does not. Placement arithmetic (rise, TJ adjustments, negative character
+spacing, leading TJ numbers, path clip bounds) and tagged-group line counts after removal are
+tested directly. Disabling the pipeline call, the overprinting-caption exclusion or the
+transcription-layer guard fails the tests that cover it. Contracts: Fed page 8 has no running head and
+reads title before quote; FAA page 159 has no `Figure 5-16` and keeps `Figure 6-20.` apart from the
+body. See the [hidden-text evidence](../measurements/hidden-text/record.md).
 
 ## Endnote reference typography and bounded paragraphs
 

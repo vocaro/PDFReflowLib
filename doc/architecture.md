@@ -373,6 +373,26 @@ representation. Mixed visible/invisible text, text clipping and unsupported stre
 this path. Source images and unverified-layer warnings remain. This does not recover headings
 from the scan or correct inherited transcription, and it is not a PDFKit leak fix.
 
+PDFKit extracts text the rendering never shows, and its selections carry no paint order or clip
+(#74, #85). `GraphicsReader` therefore also places every text show without decoding glyphs: in
+horizontal writing each show's baseline is exact and its start is exact after a positioning
+operator, otherwise a lower bound (glyph advances are never negative; kerning and negative
+spacing are counted). Rotated, mirrored and vertical text is a thick ray from its origin. Each
+show records the clip in force as an over-approximating bounding box (an empty clipping path
+changes nothing). An image or single-rectangle fill is an opaque cover only when nothing can let
+what is beneath it show through: full fill alpha, Normal blend, no soft mask, no overprint, no
+pattern, no image mask, soft mask or optional content, outside transparency-group forms, and
+bounded by exact axis-aligned rectangle clips. After tag association, `HiddenTextFilter` drops a
+native line only when a positioned show starts inside it and every show that could put a glyph on
+it is hidden for the line's whole bounds: wholly outside its clip, or beneath a later cover. A run
+that visibly starts in another native line on a baseline apart from every hidden start does not
+count against the line (the clipped FAA caption overprinting the visible one it replaced). Rotated
+text keeps every line its ray could reach. Pages with unsupported drawing, unplaceable text or any
+invisible (mode 3) text are skipped, and when covers would hide at least half a page's lines the
+text is the image's transcription layer (the CDC comic letters its balloons under the artwork), so
+only the clip applies there. Tagged groups that lose a line keep true line counts. No warning is
+added; a removed head that furniture removal used to take no longer reports `furnitureRemoved`.
+
 `PageRasterizer` renders source-composited regions to bounded rasters. Client policy independently
 selects PNG, JPEG quality, or the smaller encoding for full-page images and cropped regions.
 The asset registry records the actual format and file URL; the writer uses matching extensions

@@ -77,6 +77,12 @@ enum PDFReflowLibPipeline {
                     warnings.append(.init(code: .structureFallback, page: i + 1,
                         message: "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups."))
                 }
+                // Text the rendering never shows (beneath a later opaque image or fill, or wholly
+                // outside the clip) is not reflowed (#74, #85). After tag association, so a hidden
+                // line cannot cost its page a structure fallback it would otherwise not report.
+                if !requiresPageImage && !syntheticStyle {
+                    _ = HiddenTextFilter.removeHidden(&content.lines, graphics: graphics)
+                }
                 // Rectangles behind prose (sidebar frames, tint bands, cell shading) stop
                 // seeding crops once the text shows they are decoration; everything else
                 // clusters exactly as the reader's regions did.

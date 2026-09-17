@@ -128,6 +128,31 @@ class ConversionComparisonTests(EvaluationFixture):
         self.assertEqual(result['visionModelCaches']['candidate'],
                          {'mode': 'fresh', 'executableName': 'pdf-reflow', 'programsSHA256': '9' * 64})
 
+    def test_ocr_pages_that_lose_words_are_named_even_when_programs_differ(self):
+        """#116: a compile that drops paragraphs is a text loss, which the #94 caveat must not hide."""
+        paragraph = ' '.join(f'word{i}' for i in range(60))
+        left = self.evaluation('left', body=f'<p>{paragraph}</p>', receipt=self.ocr_receipt())
+        lossy = self.evaluation('lossy', body='<p>word1 word2 word3 word4 word5</p>',
+                                receipt=self.ocr_receipt('8' * 64, mode='fresh'))
+        result = compare(left, lossy)
+        self.assertEqual(result['changedOCRPages'], [1])
+        self.assertIn('ocrCaveat', result)
+        self.assertEqual(result['ocrTextVolume'], {'pages': 1, 'baselineWords': 60, 'candidateWords': 5,
+                                                   'pagesWithFewerWords': {'baseline': [], 'candidate': [1]}})
+        self.assertIn('the candidate has under 80%', result['ocrTextLoss'])
+        self.assertIn('#116', result['ocrTextLoss'])
+        # Rewording by another compile keeps the volume and is not called a loss.
+        reworded = self.evaluation('reworded', body=f'<p>{paragraph.replace("word1 ", "wrod1 ")}</p>',
+                                   receipt=self.ocr_receipt('8' * 64, mode='fresh'))
+        result = compare(left, reworded)
+        self.assertEqual(result['changedOCRPages'], [1])
+        self.assertNotIn('ocrTextLoss', result)
+        self.assertEqual(result['ocrTextVolume']['pagesWithFewerWords'], {'baseline': [], 'candidate': []})
+        # Small pages cannot trip the check: fewer than 25 words apart.
+        short = self.evaluation('short-left', body='<p>' + ' '.join(['w'] * 20) + '</p>', receipt=self.ocr_receipt())
+        result = compare(short, self.evaluation('short-right', body='<p>w</p>', receipt=self.ocr_receipt('8' * 64)))
+        self.assertNotIn('ocrTextLoss', result)
+
     def test_changes_off_ocr_pages_carry_no_vision_caveat(self):
         candidate = self.ocr_receipt('8' * 64)
         candidate['conversionReport']['warnings'] = []

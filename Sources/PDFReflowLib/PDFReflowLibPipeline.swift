@@ -207,6 +207,9 @@ enum PDFReflowLibPipeline {
                         message: "Text is OCR transcription. " + (options.referenceImages == .never && !recognized.lines.isEmpty
                             ? "Supplementary references are disabled; compare unrecognized visual content with the source PDF."
                             : "The original page image preserves unrecognized visual content.")
+                            + OCRReader.coverageNote(retriedInBands: recognized.retriedInBands,
+                                uncoveredTextFraction: recognized.uncoveredTextFraction,
+                                referencesDisabled: options.referenceImages == .never)
                             // Once per conversion, on the first recognized page (#106).
                             + (warnings.contains { $0.code == .ocrUsed } ? "" : OCRReader.languageFallbackNote(for: options.language))))
                 } catch is CancellationError { throw CancellationError() }

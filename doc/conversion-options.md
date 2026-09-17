@@ -39,6 +39,25 @@ and include source references by default; empty or failed recognition retains a 
 image. Compare with the source before relying on transcription. Reference and resource options
 apply independently, and cancellation remains cooperative during platform recognition.
 
+Recognition can succeed while silently leaving text out. One compile of Vision's models dropped
+whole Census paragraphs (#116); both compiles measured on Warren dropped body text on some pages
+with note markers; and the compiles measured on the Blue Book dropped most cells of many
+handwritten tables. After each recognition the
+converter looks, in the same raster, for rows of glyph-sized ink standing on clear background
+(at least five pieces 2.5–40 pt tall side by side) that lie outside every recognized line box,
+ignoring Vision's table regions. When at least 8 such rows hold at least 20% of that ink, the page
+is recognized once more as two overlapping bands (the top and bottom 60% of the page), and the
+banded result replaces the first when it leaves less of that ink uncovered. The `ocrUsed`
+message then adds "The first recognition left text-shaped ink outside every recognized line, so
+the page was recognized again in two overlapping bands." When the kept result still fails the
+check, it adds "About N% of the page's text-shaped ink is still outside every recognized line, so
+some text may be missing; compare the original page image." ("compare the source PDF." when
+`referenceImages` is `.never`). The check costs about 10 ms per recognized page; the retry costs
+two more recognitions on the pages that fail it. It cannot see text drawn as artwork (comic
+lettering, text in photographs), text smaller than 2.5 pt, or loss inside a table region, and a
+page with fewer than 8 uncovered text rows never fails it. See the
+[text-loss measurements](../measurements/ocr-text-loss/record.md).
+
 The book `language` (a BCP 47 tag, `en` by default) also selects Vision's recognition language
 (#106). Vision lists region- or script-qualified languages (`en-US`, `fr-FR`, `zh-Hant`; 33 on
 the macOS 27 SDK), so the tag is matched in order: the listed language with the same likely

@@ -142,6 +142,14 @@ that fall back to images skip unused attributed-text decoding. Failures use
   ([#106](measurements/ocr-language/record.md)). Transcription can still differ between processes: separate compiles of
   Vision's models can read the same page differently, and processes with the same executable
   name reuse one cached compile ([#94](measurements/ocr-location/record.md)).
+  Vision can also report success while leaving whole paragraphs or table cells out, so each
+  recognized page is checked for rows of text-shaped ink outside every recognized line. A page
+  that fails is recognized once more in two overlapping bands, kept when it covers more; the
+  `ocrUsed` message then adds "The first recognition left text-shaped ink outside every
+  recognized line, so the page was recognized again in two overlapping bands." If text-shaped
+  ink is still uncovered it adds "About N% of the page's text-shaped ink is still outside every
+  recognized line, so some text may be missing; compare the original page image." (or "compare
+  the source PDF." without references) ([#116](measurements/ocr-text-loss/record.md)).
   Existing text over a page-sized graphic retains a source reference image by default and reports
   `unverifiedTextLayer`: transcription, tables, numbers and reading order need human review.
   This conservative signal is not an OCR confidence score; it can also flag illustrated pages

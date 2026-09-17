@@ -12,7 +12,9 @@ Vision OCR text is not a function of the binary alone (#94): each compile of Vis
 transcribe differently, and a process inherits the programs cached under its name. Changed pages
 that are OCR pages in both runs are listed as changedOCRPages, with an ocrCaveat unless both
 receipts record identical compiled programs; each run's cache mode, name and fingerprint are
-reported. The caveat does not change `passed`.
+reported. The caveat does not change `passed`. Wording differences do not remove text, so OCR pages
+where one run has under 80% of the other's words (and at least 25 fewer) are listed under
+ocrTextVolume with an ocrTextLoss note naming the run with less text (#116).
 
 Generated identifiers are not content (#92): book-wide paragraph and list-item ordinals,
 element ids, spine file names and image asset names all shift when an earlier page gains or
@@ -63,6 +65,41 @@ def vision_caches(left, right, changed_pages):
                                + ('differ' if same is False else 'were not recorded')
                                + '; Vision model compilation alone can change OCR text (#94), so these pages '
                                  'do not show a converter change by themselves')
+    return result
+
+
+OCR_LOSS_SHARE = 0.8
+OCR_LOSS_WORDS = 25
+
+
+def ocr_text_volume(left, right, left_report, right_report):
+    """Words on pages recognized in both runs, and pages where one run has far fewer (#116).
+
+    A compile of Vision's models can drop whole paragraphs, not only reword them, and the
+    converter's own coverage check cannot catch every loss. Wording differences between compiles
+    change few words, so a page is listed when one run has less than 80% of the other's words and
+    at least 25 fewer. The run with less text on a listed page is the one to distrust.
+    """
+    both = sorted(ocr_pages(left_report) & ocr_pages(right_report))
+    words = {}
+    for label, run in [('baseline', left), ('candidate', right)]:
+        words[label] = {page: len((run.pages.get(page) or {}).get('text', '').split()) for page in both}
+    fewer = {'baseline': [], 'candidate': []}
+    for page in both:
+        a, b = words['baseline'][page], words['candidate'][page]
+        low, high = min(a, b), max(a, b)
+        if high - low >= OCR_LOSS_WORDS and low < high * OCR_LOSS_SHARE:
+            fewer['baseline' if a < b else 'candidate'].append(page)
+    result = {'ocrTextVolume': {'pages': len(both),
+                                'baselineWords': sum(words['baseline'].values()),
+                                'candidateWords': sum(words['candidate'].values()),
+                                'pagesWithFewerWords': fewer}}
+    if fewer['baseline'] or fewer['candidate']:
+        result['ocrTextLoss'] = '; '.join(
+            f'the {label} has under {round(OCR_LOSS_SHARE * 100)}% of the other run\'s words on OCR pages {pages}'
+            for label, pages in fewer.items() if pages) + (
+            '. Recognition that drops lines or paragraphs is a text loss, not a wording difference; '
+            'check that run\'s compiled Vision programs and page images (#116)')
     return result
 
 
@@ -307,6 +344,7 @@ def compare(baseline, candidate, allow_different_converters=False, detail=False)
         'candidateConverterSHA256': right['converterSHA256'],
         'sameConverter': left['converterSHA256'] == right['converterSHA256'],
         **vision_caches(left, right, changed_pages),
+        **ocr_text_volume(*runs, left['conversionReport'], right['conversionReport']),
         'changedPages': changed_pages, 'changedPageFields': changed_fields,
         'changedImages': changed_images,
         'navigationChanged': navigation_changed, 'changedNavigationPages': navigation_pages,

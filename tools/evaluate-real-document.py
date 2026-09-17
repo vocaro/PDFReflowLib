@@ -33,6 +33,17 @@ class MemorySample(ctypes.Structure):
             "resident", "footprint", "started", "exited")]
 
 
+class LifetimeSample(ctypes.Structure):
+    # rusage_info_v4 up to its last field (sys/resource.h); every field after the UUID is uint64.
+    _fields_ = MemorySample._fields_ + [
+        (name, ctypes.c_uint64) for name in (
+            "childUser", "childSystem", "childIdleWakeups", "childInterruptWakeups", "childPageins",
+            "childElapsed", "diskBytesRead", "diskBytesWritten", "qosDefault", "qosMaintenance",
+            "qosBackground", "qosUtility", "qosLegacy", "qosUserInitiated", "qosUserInteractive",
+            "billedSystem", "servicedSystem", "logicalWrites", "lifetimeMaxFootprint", "instructions",
+            "cycles", "billedEnergy", "servicedEnergy", "intervalMaxFootprint", "runnable")]
+
+
 def memory_reader():
     if sys.platform != "darwin":
         return lambda pid: None
@@ -48,6 +59,53 @@ def memory_reader():
     return read
 
 
+def lifetime_peak_footprint(pid):
+    """The kernel's exact peak physical footprint of a process that has exited but is not yet reaped.
+
+    Footprint is the measure iOS memory limits count. Resident size also counts purgeable pages that
+    Apple frameworks keep mapped (Vision's IOSurfaces), and how many stay resident depends on
+    system-wide memory pressure, not on the conversion (#140).
+    """
+    if sys.platform != "darwin":
+        return None
+    library = ctypes.CDLL("/usr/lib/libproc.dylib")
+    library.proc_pid_rusage.argtypes = [ctypes.c_int, ctypes.c_int, ctypes.c_void_p]
+    library.proc_pid_rusage.restype = ctypes.c_int
+    sample = LifetimeSample()
+    if library.proc_pid_rusage(pid, 4, ctypes.byref(sample)) != 0 or sample.lifetimeMaxFootprint == 0:
+        return None
+    return sample.lifetimeMaxFootprint
+
+
+def remeasure(launched, pdf, converter_options, directory, timeout):
+    """Convert again only to measure memory; the output is discarded, not checked (#140)."""
+    directory.mkdir(parents=True, exist_ok=True)
+    output = directory / "memory-attempt.epub"
+    attempt = {"checkedConversion": False}
+    start = time.monotonic()
+    with (directory / "conversion-report.json").open("w") as report, (directory / "progress.log").open("w") as log:
+        process = subprocess.Popen([str(launched), str(pdf), str(output), *converter_options],
+                                   stdout=report, stderr=log)
+        while os.waitid(os.P_PID, process.pid, os.WEXITED | os.WNOHANG | os.WNOWAIT) is None:
+            if time.monotonic() - start > timeout:
+                os.kill(process.pid, signal.SIGKILL)
+                attempt["timedOut"] = True
+                os.waitid(os.P_PID, process.pid, os.WEXITED | os.WNOWAIT)
+                break
+            time.sleep(0.1)
+        attempt["peakPhysicalFootprintBytes"] = lifetime_peak_footprint(process.pid)
+        _, status, usage = os.wait4(process.pid, 0)
+        process.returncode = os.waitstatus_to_exitcode(status)
+    attempt["seconds"] = time.monotonic() - start
+    attempt["exitCode"] = process.returncode
+    attempt["peakRSSBytes"] = usage.ru_maxrss * (1 if sys.platform == "darwin" else 1024)
+    if attempt.get("timedOut") or process.returncode != 0:
+        # A repeat that did not finish the same work says nothing about the peak of one that did.
+        attempt["peakRSSBytes"] = None
+    output.unlink(missing_ok=True)
+    return attempt
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--case", required=True)
@@ -60,6 +118,13 @@ def main():
                         help="compiled probe-raster-environment; executes in this launch context before conversion")
     parser.add_argument("--timeout", type=float, default=1800)
     parser.add_argument("--max-peak-rss-mib", type=float, help="override the case memory ceiling; fails after conversion when exceeded")
+    parser.add_argument("--memory-attempts", type=int, default=2, metavar="N",
+                        help="conversions the memory ceiling may take, lowest peak deciding (default 2). "
+                             "A repeat converts again only when the first peak exceeds the ceiling, and only "
+                             "to measure: its output is deleted and every attempt is recorded. Peak resident "
+                             "size varies by about 100 MiB between identical conversions of a book under load "
+                             "(#140), so one sample near a ceiling flaps; a regression raises every attempt. "
+                             "1 gates on the checked conversion alone")
     parser.add_argument("--converter-option", action="append", default=[], metavar="FLAG=VALUE",
                         help="explicit converter option, e.g. --raster-dpi=240, forwarded as two arguments "
                              "after the input/output paths and recorded in the receipt; repeatable")
@@ -86,6 +151,8 @@ def main():
         memory_limit = case.get("memoryBudget", {}).get("maxPeakRSSMiB")
     if memory_limit is not None and (not math.isfinite(memory_limit) or memory_limit <= 0):
         parser.error("memory ceiling must be finite and positive")
+    if args.memory_attempts < 1:
+        parser.error("memory attempts must be at least 1")
     if args.pdf.stat().st_size != case["bytes"] or digest(args.pdf) != case["sha256"]:
         parser.error("PDF identity differs from the pinned corpus case")
     converter = args.converter.resolve(strict=True)
@@ -148,9 +215,12 @@ def main():
         stage = "starting"
         pending = ""
         with (args.output / "progress.log").open() as progress:
+            peak_footprint = None
             while True:
-                waited_pid, status, usage = os.wait4(process.pid, os.WNOHANG)
-                if waited_pid:
+                # Wait without reaping first, so the exited process's lifetime peak footprint is readable.
+                if os.waitid(os.P_PID, process.pid, os.WEXITED | os.WNOHANG | os.WNOWAIT) is not None:
+                    peak_footprint = lifetime_peak_footprint(process.pid)
+                    _, status, usage = os.wait4(process.pid, 0)
                     process.returncode = os.waitstatus_to_exitcode(status)
                     break
                 pending += progress.read()
@@ -165,6 +235,8 @@ def main():
                 if time.monotonic() - start > args.timeout:
                     os.kill(process.pid, signal.SIGKILL)
                     receipt["timedOut"] = True
+                    os.waitid(os.P_PID, process.pid, os.WEXITED | os.WNOWAIT)
+                    peak_footprint = lifetime_peak_footprint(process.pid)
                     _, status, usage = os.wait4(process.pid, 0)
                     process.returncode = os.waitstatus_to_exitcode(status)
                     break
@@ -184,6 +256,8 @@ def main():
         # Only this run's process name could have created the directory checked absent above.
         shutil.rmtree(vision_cache_directory(launched).parent, ignore_errors=True)
     receipt["converterPeakRSSBytes"] = usage.ru_maxrss * (1 if sys.platform == "darwin" else 1024)
+    if peak_footprint is not None:
+        receipt["converterPeakPhysicalFootprintBytes"] = peak_footprint
     receipt["converterCPUSeconds"] = usage.ru_utime + usage.ru_stime
     receipt["measurementScope"] = "One process run; RSS excludes separate Apple services. Timing excludes validation. Not a latency distribution or physical mobile-device measurement."
     success = receipt["conversionExitCode"] == 0
@@ -230,9 +304,25 @@ def main():
             success = success and result.returncode == 0
     if memory_limit is not None:
         limit_bytes = int(memory_limit * 1024 * 1024)
-        within_limit = receipt["converterPeakRSSBytes"] <= limit_bytes
+        attempts = [{"peakRSSBytes": receipt["converterPeakRSSBytes"],
+                     "peakPhysicalFootprintBytes": receipt.get("converterPeakPhysicalFootprintBytes"),
+                     "seconds": receipt["conversionSeconds"], "checkedConversion": True}]
+        # Peak resident size is noisy: purgeable pages Apple frameworks leave mapped stay resident
+        # while the machine is not under pressure, so identical conversions of one book differ by
+        # about 100 MiB (#140). Only a peak that exceeds the ceiling in every attempt fails; a
+        # repeat re-measures with the same options and its output is discarded.
+        while ((attempts[-1]["peakRSSBytes"] or 0) > limit_bytes and len(attempts) < args.memory_attempts
+               and receipt["conversionExitCode"] == 0 and not receipt.get("timedOut")):
+            attempts.append(remeasure(launched, args.pdf.resolve(), converter_options,
+                                      args.output / f"memory-attempt-{len(attempts) + 1}", args.timeout))
+        peaks = [a["peakRSSBytes"] for a in attempts if a.get("peakRSSBytes")]
+        within_limit = bool(peaks) and min(peaks) <= limit_bytes
         receipt["memoryGate"] = {"limitBytes": limit_bytes, "passed": within_limit,
-                                 "metric": "converter process peak RSS from wait/rusage"}
+                                 "metric": "lowest converter process peak RSS from wait/rusage over the attempts",
+                                 "attempts": attempts, "lowestPeakRSSBytes": min(peaks) if peaks else None,
+                                 "peakPhysicalFootprintBytes": receipt.get("converterPeakPhysicalFootprintBytes"),
+                                 "scope": "Mac process peaks under whatever else the machine runs; "
+                                          "repeats tolerate measured variance, not a regression that raises every attempt"}
         success = success and within_limit
     else:
         receipt["memoryGate"] = {"status": "not configured"}

@@ -2018,12 +2018,15 @@ enum LayoutReconstructor {
         while grown {
             grown = false
             for index in elements.indices where caption[index] == nil {
+                // The line joins the caption of the earliest member above it in reading order. The
+                // members are read in that order, not the dictionary's, whose order changes from
+                // process to process and made the page's columns differ between identical runs (#140).
                 guard let line = elements[index].line,
-                      let owner = caption.first(where: { member, _ in
+                      let member = caption.keys.sorted().first(where: { member in
                           let above = elements[member].rect
                           return abs(above.minX - line.rect.minX) <= bodySize * 0.5
                               && above.minY - line.rect.maxY > -bodySize * 0.4 && above.minY - line.rect.maxY < bodySize * 0.5
-                      })?.value else { continue }
+                      }), let owner = caption[member] else { continue }
                 caption[index] = owner; grown = true
             }
         }
@@ -2207,10 +2210,13 @@ enum LayoutReconstructor {
         }
     }
 
+    /// The rounded size holding the most characters. Sizes that tie read as the smaller one: a
+    /// dictionary's order changes from process to process, so an unbroken tie made the page's body
+    /// size, and everything measured against it, differ between identical runs (#140).
     static func bodySize(_ lines: [TextLine]) -> CGFloat {
         var weights: [Int: Int] = [:]
         for line in lines { weights[Int(line.fontSize.rounded()), default: 0] += line.text.count }
-        return CGFloat(weights.max { $0.value < $1.value }?.key ?? 12)
+        return CGFloat(weights.max { ($0.value, -$0.key) < ($1.value, -$1.key) }?.key ?? 12)
     }
 
     /// Small labels inside preserved images must not turn the surrounding prose into headings.

@@ -141,8 +141,14 @@ enum OCRTextCoverage {
         // text stands on clear paper: when the row's box holds much more dark ink than its glyphs
         // (window grids in a photograph, crowd texture, hatching), it is not counted.
         var scanned = 0
+        // Rows are read in page order. The dictionary's own order changes from process to process,
+        // so rows sharing a top-left corner are ordered by their whole geometry and ink as well:
+        // the work bound below cuts the scan at whatever row reaches it, and two runs must cut at
+        // the same one (#140).
+        func order(_ row: Row) -> [Int] { [row.minY, row.minX, row.maxY, row.maxX, row.ink, row.uncoveredInk, row.count] }
+        let ordered = rows.values.sorted { order($0).lexicographicallyPrecedes(order($1)) }
         raster.pixels.withUnsafeBufferPointer { buffer in
-            for row in rows.values.sorted(by: { ($0.minY, $0.minX) < ($1.minY, $1.minX) }) where row.count >= minimumGlyphs {
+            for row in ordered where row.count >= minimumGlyphs {
                 let area = (row.maxX - row.minX + 1) * (row.maxY - row.minY + 1)
                 scanned += area
                 // A bound on work for pathological pages: rows past twice the page's area are skipped.

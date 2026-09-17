@@ -80,6 +80,55 @@ print(json.dumps({{"pageCount": 1, "reflowedPageCount": 1, "recognizedPageCount"
         self.assertFalse(result["runPassed"])
         self.assertEqual(code, 1)
 
+    def test_a_peak_above_the_ceiling_in_every_attempt_records_each_one(self):
+        code, result = self.invoke(16, ['--memory-attempts', '3'])
+        attempts = result["memoryGate"]["attempts"]
+        self.assertEqual(len(attempts), 3)
+        self.assertEqual([a["checkedConversion"] for a in attempts], [True, False, False])
+        self.assertTrue(all(a["peakRSSBytes"] >= 80 * 1024 * 1024 for a in attempts))
+        self.assertEqual(result["memoryGate"]["lowestPeakRSSBytes"], min(a["peakRSSBytes"] for a in attempts))
+        self.assertFalse(result["memoryGate"]["passed"])
+        self.assertEqual(code, 1)
+        # A repeat measures only: it leaves no EPUB of its own and does not replace the checked output.
+        self.assertEqual(sorted(p.name for p in (self.root / "result").glob("memory-attempt-*/*.epub")), [])
+        self.assertEqual(result["outputSHA256"], hashlib.sha256((self.root / "result/control.epub").read_bytes()).hexdigest())
+
+    def test_one_attempt_gates_on_the_checked_conversion_alone(self):
+        code, result = self.invoke(16, ['--memory-attempts', '1'])
+        self.assertEqual(len(result["memoryGate"]["attempts"]), 1)
+        self.assertFalse(result["memoryGate"]["passed"])
+        self.assertEqual(code, 1)
+
+    def test_a_peak_the_repeat_does_not_reach_passes_and_one_attempt_fails_it(self):
+        """The measured ~100 MiB run-to-run spread must not flap the gate, but every sample counts."""
+        marker = self.root / "first-launch"
+        self.converter.write_text(self.converter.read_text().replace(
+            'allocation = b"x" * (80 * 1024 * 1024)',
+            f'import os\nfirst = not os.path.exists({str(marker)!r})\nopen({str(marker)!r}, "w").close()\n'
+            'allocation = b"x" * ((80 if first else 1) * 1024 * 1024)'))
+        code, result = self.invoke(48)
+        attempts = result["memoryGate"]["attempts"]
+        self.assertEqual(len(attempts), 2)
+        self.assertGreater(attempts[0]["peakRSSBytes"], 48 * 1024 * 1024)
+        self.assertLess(attempts[1]["peakRSSBytes"], attempts[0]["peakRSSBytes"])
+        self.assertTrue(result["memoryGate"]["passed"])
+        self.assertTrue(result["runPassed"])
+        self.assertEqual(code, 0)
+        marker.unlink()
+        shutil.rmtree(self.root / "result")
+        code, result = self.invoke(48, ['--memory-attempts', '1'])
+        self.assertFalse(result["memoryGate"]["passed"])
+        self.assertEqual(code, 1)
+
+    def test_peak_physical_footprint_is_recorded_for_the_checked_conversion(self):
+        code, result = self.invoke(512)
+        self.assertEqual(code, 0)
+        footprint = result["converterPeakPhysicalFootprintBytes"]
+        self.assertGreaterEqual(footprint, 80 * 1024 * 1024)
+        self.assertLessEqual(footprint, result["converterPeakRSSBytes"] + 64 * 1024 * 1024)
+        self.assertEqual(result["memoryGate"]["peakPhysicalFootprintBytes"], footprint)
+        self.assertEqual(result["memoryGate"]["attempts"][0]["peakPhysicalFootprintBytes"], footprint)
+
     def test_peak_below_limit_passes(self):
         code, result = self.invoke(512)
         self.assertEqual(result['executionContext'], 'test-child')

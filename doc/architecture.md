@@ -904,6 +904,13 @@ its stripped predecessor for cross-page continuation. `FurnitureDetector` is pha
 array and streamed paths cannot diverge. Furniture warnings keep their position between
 extraction and reconstruction warnings.
 
+Reconstruction is a function of the page, so no decision may be read out of a `Dictionary` or a
+`Set` in its own order: that order changes from process to process, and a decision made in it
+makes two runs of one binary differ. Where a reduction can tie — the page's body size is the
+rounded type size carrying the most characters — the tie is broken by the value, not by the
+collection (#140). Sets and dictionaries are still used for membership, counting and grouping,
+where the result does not depend on the order they are read in.
+
 `PageStore` encodes each extracted page as a binary property list in the workspace and
 reloads it once during reconstruction, removing the file on reload and the directory when
 reconstruction finishes, so the workspace holds only assets afterwards. Equal values share one

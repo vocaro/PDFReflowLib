@@ -51,6 +51,22 @@ work offline. Tests and conversion never fetch sources automatically.
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
 before conversion and records progress, timing, memory, output structure and optional EPUBCheck.
+
+Peak resident size is a noisy measure: purgeable pages Apple frameworks leave mapped (Vision's
+IOSurfaces) stay resident while the machine is not under pressure, so identical conversions of
+one book differ by about 100 MiB and a ceiling near a book's peak flaps (#140). The gate
+therefore takes the lowest peak of up to `--memory-attempts` conversions (default 2): the
+repeat runs only when the first peak exceeds the ceiling, converts with the same options purely
+to measure, and its output is deleted rather than checked. Every attempt is recorded in
+`memoryGate.attempts`, so a regression that raises each attempt still fails, and
+`--memory-attempts 1` gates on the checked conversion alone. Each receipt also records
+`converterPeakPhysicalFootprintBytes`, the kernel's exact lifetime peak physical footprint (the
+measure iOS memory limits count), read from the exited process before it is reaped; it is more
+stable than resident size on a book without band retries (CDC over eight runs: 325–337 MiB
+footprint against 419–443 MiB resident) and no more stable on one with them (Blue Book
+`--ocr always`: 468–603 against 548–593). `sampledPeakPhysicalFootprintBytes` remains the
+0.1-second sampling, which can miss a peak by 60–90 MiB. Measured spreads are in the
+[run-to-run variance record](../measurements/run-to-run-variance/record.md).
 The seven [#30 cases](#issue-30-coverage-expansion) are gated with reviewed contracts; their
 selection and download identities are in [their record](../measurements/corpus-candidates-30/record.md).
 The [Pro Se 1 form](#complaint-for-a-civil-case-pro-se-1), the
@@ -127,6 +143,12 @@ unless both receipts record identical programs: such changes do not show a conve
 themselves. Identical programs make them genuine; differing fingerprints do not prove a
 different transcription, since output-equivalent compiles also differ in bytes. For a
 before/after decision on an OCR book, review the text of `changedOCRPages` or repeat each side.
+
+Which pages the #116 band retry recovers is part of that draw, not run-to-run noise: over
+eleven fresh compiles of one binary, Blue Book page 6 was read five ways and retried under four
+of the compiles, while compiles sharing a fingerprint always agreed (#140). So `--ocr always` output is
+reproducible within a compile and not across compiles, and a retry-set difference between two
+runs is evidence about the cache, not about the converter.
 
 To test whether one binary repeats itself, use
 [repeat-run identity](regression-testing.md#repeat-run-identity), not this comparator.

@@ -13,7 +13,9 @@ A valid EPUB can still contain incorrect text, wrong reading order or unreadable
   tests also inspect fraction bars, raised exponents and all six cells of a ruled table in actual
   EPUB images at 72/144 DPI, with surrounding-prose and code controls.
 - `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->21<!-- counts:end --> complete PDF conversions,
-  sequentially, with EPUBCheck, monotonic progress, pinned source identities, memory budgets
+  sequentially, with EPUBCheck, monotonic progress, pinned source identities,
+  [memory budgets](corpus.md) (the lowest peak of up to two conversions, since
+  one measurement of a book's peak resident size varies by about 100 MiB under load, #140)
   and reviewed page-specific content contracts. All selected cached sources and EPUBCheck
   are required; missing data fails explicitly. The evaluator does not download anything. The lane
   then runs the [repeat-run identity](#repeat-run-identity) check on Fed Explained, Our Flag,
@@ -558,7 +560,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->771 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->233 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->775 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->237 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

@@ -1,0 +1,43 @@
+page	content	text_source	dialogue_units_in_source	units_with_reflowed_text	panel_order	evidence	prototype_panels	prototype_segmentation
+1	cover	native	0	0	n/a	cover credit line only	1	n/a
+2	blank black page	image-only (OCR found nothing; pageImageFallback)	0	0	n/a		1	n/a
+3	splash page	native	2	2	in order	two balloons, then credits	1	single panel
+4	one large panel over three	native	5	5	out of order	VERY FUNNY (bottom row) reads first; DON'T STAY UP TOO LATE (top panel) reads last, after STAY TUNED	1	tier gutter not found
+5	four panels	native	7	6	in order	HUH?! missing (#7)	3	bottom-left panel lost (box straddles gutter)
+6	3x3 grid	native	6	4	out of order	THIS DOES NOT LOOK GOOD (panel 3) before A ZOMBIE VIRUS? (panel 2); LET'S CHECK THE CDC'S WEB SITE and OKAY, MAX... missing	9	correct
+7	2x3 grid	native	6	2	out of order	WELL IT LOOKS LIKE (panel 3) before HE WAS ALWAYS (panel 2); 4 units missing	5	top two rows correct, bottom row merged
+8	2x3 grid	native	8	5	out of order	WOW, MAX (panel 3) and MAYBE WE SHOULD (panel 5) before WELL THAT (panel 1) and LET'S SEE (panel 2)	5	top two rows correct, bottom row merged
+9	3x3 grid	native	13	5	in order	8 units missing	6	partly merged
+10	five panels	native	13	3	in order	10 units missing	4	mostly correct
+11	eight panels	native	11	4	out of order	LATER, MRS. CLEMENTS! (panel 2) after WHAT ON EARTH (bottom row); WHAT ON EARTH before I'M PRETTY SURE	3	rows 2-3 merged
+12	2x3 grid	native	11	7	out of order	CDC IS WORKING (row 2) before THIS IS A VERY GRAVE (row 1); MAYBE WE SHOULD and WARNINGS (row 3) before I THOUGHT and I DON'T KNOW (row 2); WARNINGS box lines also out of order	3	rows 2-3 merged
+13	four panels	OCR	5	5	out of order	OKAY, OKAY... I'M COMING (bottom-left) before WHAT IS IT MAX? (top-right); two balloons are h5 headings (#18 OCR headings record)	3	tiers and top row correct, bottom row merged
+14	one panel over three	native	6	3	interleaved	STAY IN YOUR HOMES box lines alternate with NOTHING BUT SNOW / LET'S TRY / THE RADIO balloon lines	1	tier gutter not found
+15	part title	OCR	0	0	n/a	title text only	2	title band and image split (not a comic panel page)
+16	sign artwork	OCR	0	0	n/a	noisy sign/logo fragments	1	n/a
+17	rotated splash with caption	OCR	1	1	lines reversed	caption lines read ATLANTA, GEORGIA... / DISEASE CONTROL AND PREVENTION IN / SEVERAL DAYS LATER... (bottom line first)	1	n/a
+18	one panel over three	native	6	4	in order	DR. GREENE and AH, DR. CHANG missing	2	bottom row merged
+19	two panels over one	native	4	4	out of order	ALL THE MORE REASON (bottom panel) before THE ZOMBIE VIRUS IS SPREADING (top-right)	3	correct
+20	splash	native	3	0	n/a	text layer holds noise only; all three balloons missing	1	single panel
+21	2x3 grid	native	13	9	out of order	column-major: left panels of all rows (1, 3, 5) before right panels (2, 6, 4)	2	rows 1-2 merged
+22	one panel over two	native	6	4	out of order	WE'RE GOING TO HAVE A VACCINE (row 2) before STRATEGIC NATIONAL STOCKPILE (row 1)	3	correct
+23	irregular four panels	native	12	8	interleaved	WE'RE ALMOST OUT OF FOOD lines alternate with the radio box; THEY MUST (panel 1) after THAT'S US (panel 3)	2	irregular panels merged
+24	2x2 grid	native	9	6	out of order	I'VE GOT WATER (panel 3) before ALRIGHT, LET'S PACK (panel 2)	4	correct
+25	2x2 grid	native	8	2	in order	6 units missing	4	correct
+26	2x2 grid	native	4	4	in order	control (ColumnCutTests speechBalloonsAreNotHeadingBands)	4	correct
+27	one panel over three	native	7	5	out of order	WE MADE IT! (bottom-left) reads first	4	correct
+28	two panels over one	native	3	2	in order	TODD, JULIE AND MAX FOLLOW caption missing	3	correct
+29	2x2 grid	native	8	4	out of order	HEY FOLKS (panel 3) before CDC SHIPPED (panel 2)	4	correct
+30	two panels over one	native	4	3	out of order	WE'VE GOT A LOT OF WORK (bottom panel) before ALRIGHT FOLKS (top-right)	2	tiers correct, top row merged
+31	five panels	native	12	1	n/a	one damaged balloon (SARGE) only	3	partly merged
+32	one panel over three	native	8	3	in order	5 units missing	4	correct
+33	3x3 grid	native	13	4	out of order	HUH? OH... UHH (row 3) before WHAT IN THE WORLD (row 2)	4	rows 2-3 merged
+34	five panels	native	13	6	interleaved	WOW... THAT OLD THING STILL WORKS! lines alternate with SEVERE THUNDERSTORM WARNING box	4	mostly correct
+35	splash	native	3	2	in order	MEEW! missing	1	single panel
+36	splash	OCR	1	1	n/a	THE END?	1	single panel
+37	afterword prose	native	0	0	n/a	prose	1	n/a
+38	blank black page	image-only (pageImageFallback)	0	0	n/a		1	n/a
+39	emergency kit checklist	native	0	0	n/a	contract page (orderedText)	1	n/a
+40	blank black page	image-only (pageImageFallback)	0	0	n/a		1	n/a
+41	blank black page	image-only (pageImageFallback)	0	0	n/a		1	n/a
+42	back cover	native	0	0	n/a	publication number	1	n/a

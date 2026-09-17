@@ -215,7 +215,15 @@ page switches to the second. A list inside a note continues that note (#80). It 
 most 1.6 body sizes of space, with a bullet at or inside the note indent or with `1.` (or
 `1 and 2.`) one to three body sizes inside it. Bullets wrap to one hanging edge; numbered items
 count up and wrap back to the note indent, and an unnumbered line at their edge is a further
-paragraph. Each item is a further paragraph of the note. The first start is the
+paragraph. Each item is a further paragraph of the note, and the next note may follow a numbered
+list after the same added space. A numbered list whose last line runs to the list's right edge
+is still open at the page's end; the pipeline hands it to the next physical page (#87), which
+resumes it from its first line when the item the list expects comes at or before the page's
+first note start: either above the open note's successor, at the list's inset inside that
+note's indent (9/11 page 545's `10.` above note 108), or as the page's first start, numbered
+as the list expects rather than as the chapter's next note (page 544's items 7–9 under note
+107). A resumed page may hold no note of its own; one whose resumed reading refuses is read
+on its own. The first start is the
 first numbered line on the edge most numbered lines share, so a dedented `5.This` or a year
 does not set the indent. Each note paragraph carries a `NoteKey` (number, chapter scope); a
 page-bottom footnote carries one with page scope; a note's later paragraphs and marker-less
@@ -429,8 +437,18 @@ under a separate `numbered` scheme, matched on its page by a bare numeral line p
 with spaces ignored (outline labels lose them: `AIMS ATTHE`). It supplies chapter evidence for
 note references only and never a spine boundary.
 
-`NoteLinker` runs last in reconstruction, after every join. A body paragraph's superscript run
-of one to three digits is a reference marker; its page (the block's page, advanced by inline
+Before linking, `NumberedNoteDetector.scopeByContinuity` keys a notes page to the chapter its
+numbering continues when the printed head is contradicted from both sides (#87): the head names
+one chapter M and the page's notes, not starting at 1, continue the previous physical page's
+last note in another chapter N; M's note 1 is on another page and M's numbers collide with
+this page's there; and N claims none of them. 9/11 page 496, headed `NOTES TO CHAPTER 4` over
+chapter 3's notes 93–112, is the case. Numbers restarting at 1 never move a page, and each
+decision is recorded in the link summary (`rescopedPages`).
+
+`NoteLinker` runs last in reconstruction, after every join. A superscript run of one to three
+digits in a body paragraph or a preserved list item (a `preformatted` block opening with a
+list marker; code is never scanned) is a reference marker; a linked list item stays
+preformatted, with only its marker changed; its page (the block's page, advanced by inline
 boundaries) selects the scope: a page-bottom footnote of that number on the same page, else
 the chapter endnote of that number in the page's chapter, where the chapter is the last matched
 chapter opening at or before the page and a `NOTES TO CHAPTER N` page is not body. A marker

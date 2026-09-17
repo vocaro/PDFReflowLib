@@ -241,8 +241,12 @@ enum PDFReflowLibPipeline {
         var imageBytes: Int64 = 0
         var previous: PageContent?
         var previousRegions: [CGRect] = []
+        // A numbered list inside a note still open at the previous page's end (#87).
+        var openNoteList: NumberedNoteDetector.OpenList?
         for i in 0..<total {
             try Task.checkCancellation()
+            let continuingNoteList = openNoteList
+            openNoteList = nil
             var content = try store.load(at: i)
             if let furniturePlan, let warning = FurnitureDetector.apply(furniturePlan, to: &content, pageIndex: i) {
                 furnitureWarnings.append(warning)
@@ -284,6 +288,8 @@ enum PDFReflowLibPipeline {
                         vocabulary: vocabulary, warnings: &warnings,
                         noteChapter: numberedNotePages[content.number]?.lowerBound,
                         noteLastChapter: numberedNotePages[content.number]?.upperBound,
+                        continuingNoteList: continuingNoteList,
+                        noteLayout: { openNoteList = $0?.openList },
                         continuesNote: previousPage != nil && blocks.last?.isFootnote == true,
                         labelStyles: labelStyles)
                     if pageBlocks.contains(where: \.hasReflowedText) {
@@ -322,12 +328,16 @@ enum PDFReflowLibPipeline {
         // A body page's chapter is the last matched chapter opening at or before it; an
         // outline entry that failed to match leaves its pages unknown, and a page headed
         // `NOTES TO CHAPTER N` is not body.
-        let noteLinks = NoteLinker.link(&blocks) { page in
+        // A notes page whose printed head contradicts its numbering from both sides is keyed by
+        // the numbering (#87); the decision is recorded in the link summary.
+        let rescoped = NumberedNoteDetector.scopeByContinuity(&blocks, heads: numberedNotePages)
+        var noteLinks = NoteLinker.link(&blocks) { page in
             guard numberedNotePages[page] == nil,
                   let candidate = noteChapterCandidates.last(where: { $0.page <= page }),
                   matchedNoteChapters.contains(candidate.number) else { return nil }
             return candidate.number
         }
+        noteLinks.rescopedPages = rescoped
         let title = options.title ?? document.title
             ?? source.deletingPathExtension().lastPathComponent
         let reflowedDocument = ReflowDocument(metadata: .init(title: title.isEmpty ? "Untitled" : title,

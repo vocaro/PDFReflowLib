@@ -813,10 +813,15 @@ enum LayoutReconstructor {
     /// second chapter a `NOTES TO CHAPTERS N-M` head names. `continuesNote` states
     /// that the previous page ended in a page-bottom footnote, so a marker-less note under
     /// this page's separator may continue it. `labelStyles` is the book's section-label
-    /// typography (`labelStyles(from:)`).
+    /// typography (`labelStyles(from:)`). `continuingNoteList` is the previous page's open list
+    /// inside a numbered note, which this page may resume; `noteLayout` receives this page's
+    /// numbered-note layout (nil when the page is not a notes page), so the caller can pass its
+    /// open list to the next page.
     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
                        warnings: inout [ConversionWarning], noteChapter: Int? = nil,
-                       noteLastChapter: Int? = nil, continuesNote: Bool = false,
+                       noteLastChapter: Int? = nil, continuingNoteList: NumberedNoteDetector.OpenList? = nil,
+                       noteLayout reportNoteLayout: ((NumberedNoteDetector.Layout?) -> Void)? = nil,
+                       continuesNote: Bool = false,
                        labelStyles: Set<LabelStyle> = []) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         // A rotated stamp in the outer margin is furniture, never content or a heading.
@@ -913,7 +918,8 @@ enum LayoutReconstructor {
             return !footnotes.range.contains(index) && index != footnotes.separator
         }
         let noteLayout = NumberedNoteDetector.layout(in: elements, page: page, chapter: noteChapter,
-            lastChapter: noteLastChapter)
+            lastChapter: noteLastChapter, continuing: continuingNoteList)
+        reportNoteLayout?(noteLayout)
         let noteGroups = noteLayout?.paragraphs ?? [:]
         func isHeadingCandidate(_ line: TextLine) -> Bool {
             line.structure == nil && headingTypography(line)
@@ -1638,7 +1644,7 @@ enum LayoutReconstructor {
     /// A numeric parenthesis marker set tight against a minus sign (`1)− 2`, as the algebra
     /// answer keys extract) is also a list item; the period form stays space-delimited so
     /// dedented note continuations such as `5.This` keep their existing handling.
-    private static func isList(_ text: String) -> Bool {
+    static func isList(_ text: String) -> Bool {
         text.range(of: "^(?:(?:[•*−-]|[0-9]+[.)]|[A-Za-z][.)])\\s|[0-9]+\\)−)", options: .regularExpression) != nil
     }
 

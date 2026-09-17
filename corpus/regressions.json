@@ -681,7 +681,7 @@
     {
       "id": "gpo-911-2004",
       "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
-      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 13-16, 126-127, 192-193 and 357-358 visually reviewed (#45): the bottom folios 108, 174 and 339 on chapter-opening pages and the front-matter folios xiii/xv stay separate paragraphs that never absorb the following page's text, while the body paragraph above each chapter-opening folio continues onto the next page. Pages 19, 20, 64, 65, 469 and 484 visually reviewed (#11): each chapter’s endnotes are numbered from 1, so a marker links only to the note of its own chapter (outline chapter openings validated on the page): page 19’s 1 and page 20’s 4 reach chapter 1’s notes 1 and 4 on page 469, where note 1’s second indented paragraph stays a paragraph of its own; page 64’s 241 reaches chapter 1’s last note on page 484, while page 65’s 1 reaches chapter 2’s note 1 under the chapter-opening heading on that same page. Every linked note returns to its first reference. Pages 13–18, 467–468 and 571–585 visually reviewed (#62): a note-page or front-matter running head whose folio is 18 (Arabic) or 0 (Roman) from the physical page is margin furniture even where no three pages repeat its text, and is never a heading; the genuine per-chapter notes titles (10 Wartime, 11 Foresight—and Hindsight, 12 What to Do?) stay in the navigation, and the prose each removed head had separated joins across the page boundary. #45's front-matter separation checks now name the first paragraph that follows each folio, since the head between them is gone; the folio still must not absorb it. Pages 365 and 374 source rasters reviewed (#69): item 4 is one list item although PDFKit splits its `4.` marker, and `10.August 2001` (no space after the period) is the tenth item beside spaced items 6-9, with item 4's indented second paragraph and items 3 and 9 as controls. Page 492 protects a URL rejoined after a line-ending slash (#70). Page 91 checked against extracted geometry (#83): `3.2 ADAPTATION—AND NONADAPTATION—IN THE` and its hanging second line `LAW ENFORCEMENT COMMUNITY` are one heading. Pages 543, 571, 572, 578 and 581-583 source rasters reviewed (#80): every note on those endnote pages is one paragraph with its wrapped lines, keyed to its chapter and reached from its body marker (pages 253, 334, 341, 343, 356, 357, 393, 406 and 422); a web address with `=` no longer seeds a formula crop that swallowed note lines on 571 and 581-583 (only the reference image remains there); pages 572 and 578 are headed NOTES TO CHAPTERS 9-10 / 10-11 and switch chapters at their titles; note 107’s numbered candidate list (543) and note 4’s bullets (583) are further paragraphs of their notes. Addresses broken inside themselves rejoin without a space on 570 and 581 (#79).",
+      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 13-16, 126-127, 192-193 and 357-358 visually reviewed (#45): the bottom folios 108, 174 and 339 on chapter-opening pages and the front-matter folios xiii/xv stay separate paragraphs that never absorb the following page's text, while the body paragraph above each chapter-opening folio continues onto the next page. Pages 19, 20, 64, 65, 469 and 484 visually reviewed (#11): each chapter’s endnotes are numbered from 1, so a marker links only to the note of its own chapter (outline chapter openings validated on the page): page 19’s 1 and page 20’s 4 reach chapter 1’s notes 1 and 4 on page 469, where note 1’s second indented paragraph stays a paragraph of its own; page 64’s 241 reaches chapter 1’s last note on page 484, while page 65’s 1 reaches chapter 2’s note 1 under the chapter-opening heading on that same page. Every linked note returns to its first reference. Pages 13–18, 467–468 and 571–585 visually reviewed (#62): a note-page or front-matter running head whose folio is 18 (Arabic) or 0 (Roman) from the physical page is margin furniture even where no three pages repeat its text, and is never a heading; the genuine per-chapter notes titles (10 Wartime, 11 Foresight—and Hindsight, 12 What to Do?) stay in the navigation, and the prose each removed head had separated joins across the page boundary. #45's front-matter separation checks now name the first paragraph that follows each folio, since the head between them is gone; the folio still must not absorb it. Pages 365 and 374 source rasters reviewed (#69): item 4 is one list item although PDFKit splits its `4.` marker, and `10.August 2001` (no space after the period) is the tenth item beside spaced items 6-9, with item 4's indented second paragraph and items 3 and 9 as controls. Page 492 protects a URL rejoined after a line-ending slash (#70). Page 91 checked against extracted geometry (#83): `3.2 ADAPTATION—AND NONADAPTATION—IN THE` and its hanging second line `LAW ENFORCEMENT COMMUNITY` are one heading. Pages 543, 571, 572, 578 and 581-583 source rasters reviewed (#80): every note on those endnote pages is one paragraph with its wrapped lines, keyed to its chapter and reached from its body marker (pages 253, 334, 341, 343, 356, 357, 393, 406 and 422); a web address with `=` no longer seeds a formula crop that swallowed note lines on 571 and 581-583 (only the reference image remains there); pages 572 and 578 are headed NOTES TO CHAPTERS 9-10 / 10-11 and switch chapters at their titles; note 107’s numbered candidate list (543) and note 4’s bullets (583) are further paragraphs of their notes. Addresses broken inside themselves rejoin without a space on 570 and 581 (#79). Pages 205, 496, 544 and 545 source rasters reviewed (#87): page 496's running head misprints NOTES TO CHAPTER 4 over chapter 3's notes 93–112, which continue page 495's note 92 while chapter 4's own notes 93–112 are on page 502, so pages 115 and 124 reach chapter 3's notes on 496 and page 143 reaches chapter 4's on 502; page 544 continues note 107's numbered candidate list from page 543, so its items 7–9 are further paragraphs of that note and page 234's markers 7 and 9 reach chapter 7's notes on page 532; on 545 item 10 is one paragraph with its wrapped lines and the item's further paragraph (Khalid al Zahrani) is whole; markers raised inside preserved list items link like those in paragraphs (page 205's bullet, page 430's item).",
       "pages": [
         {
           "page": 15,
@@ -1396,6 +1396,108 @@
               "before": "given the possible security dangers.",
               "note": "The logical and timely rollout of such a program",
               "notePage": 582
+            }
+          ]
+        },
+        {
+          "page": 115,
+          "noteLinks": [
+            {
+              "marker": "93",
+              "before": "defense for special operations and low-intensity conflict.",
+              "note": "John Hamre interview (Dec.9,2003);Henry Allen Holmes interview",
+              "notePage": 496
+            }
+          ]
+        },
+        {
+          "page": 124,
+          "noteLinks": [
+            {
+              "marker": "112",
+              "before": "did not restructure itself to address changing threats.",
+              "note": "Although some members of the House sought the creation of a Select Committee on Terrorism",
+              "notePage": 496
+            }
+          ]
+        },
+        {
+          "page": 143,
+          "noteLinks": [
+            {
+              "marker": "93",
+              "before": "embargo on arms shipments to the Taliban, in December 2000.",
+              "note": "UNSCR 1333, Dec. 19, 2000.",
+              "notePage": 502
+            }
+          ]
+        },
+        {
+          "page": 234,
+          "noteLinks": [
+            {
+              "marker": "7",
+              "before": "attempted to enroll in three language schools in Los Angeles.",
+              "note": "Intelligence reports, interrogations of KSM, May 19, 2003;Aug. 14, 2003.",
+              "notePage": 532
+            },
+            {
+              "marker": "9",
+              "before": "his purpose in meeting with Hazmi and Mihdhar remain unknown.",
+              "note": "For the FBI source’s claims, see FBI letterhead memorandum",
+              "notePage": 532
+            }
+          ]
+        },
+        {
+          "page": 205,
+          "listItems": [
+            "• activating a special court to enable the use of classified evidence in immigration-related national security cases;96 and"
+          ],
+          "noteLinks": [
+            {
+              "marker": "96",
+              "before": "classified evidence in immigration-related national security cases;",
+              "note": "PDD-62, May 22, 1998, p. 9. Congress had authorized the Alien Terrorist Removal Court",
+              "notePage": 523
+            }
+          ]
+        },
+        {
+          "page": 430,
+          "noteLinks": [
+            {
+              "marker": "12",
+              "before": "Homeland Security, and other national intelligence capabilities.",
+              "note": "Some smaller parts of the current intelligence community",
+              "notePage": 584
+            }
+          ]
+        },
+        {
+          "page": 544,
+          "paragraphs": [
+            "7. Saeed Abdullah Saeed (“Jihad”) al Ghamdi. He arranged to travel to Afghanistan in March 2000",
+            "In December 1999, while still in high school in Saudi Arabia, Hamlan became involved with a group"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "9. Mushabib al Hamlan.",
+              "second": "In December 1999, while still in high school"
+            }
+          ]
+        },
+        {
+          "page": 545,
+          "paragraphs": [
+            "Thereafter, Hamlan received a visit at the college from a former associate at al Faruq camp, Khalid al Zahrani, who asked why he had not returned to Afghanistan.",
+            "10. Abderraouf Jdey, a.k.a. Faruq al Tunisi. A Canadian passport holder, he may have trained in Afghanistan with Khalid al Mihdhar and Nawaf al Hazmi",
+            "108. On the few operatives fully aware of the plot and Abu Turab’s training"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Hamlan never did.",
+              "second": "10. Abderraouf Jdey, a.k.a. Faruq al Tunisi."
             }
           ]
         }

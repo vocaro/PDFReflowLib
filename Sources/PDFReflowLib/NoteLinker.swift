@@ -2,7 +2,7 @@ import Foundation
 
 /// Links raised reference markers to the notes they cite, after every join and without
 /// changing any text. A marker is a superscript run of one to three digits in a body
-/// paragraph. Its page (the block's page, advanced by inline boundaries before it) selects
+/// paragraph or a preserved list item. Its page (the block's page, advanced by inline boundaries before it) selects
 /// the scope: a page-bottom footnote with that number on the same page first, otherwise the
 /// chapter endnote with that number in the page's chapter. A marker whose chapter is unknown,
 /// a number with no note in scope, and a number that two notes claim in one scope stay plain
@@ -18,6 +18,9 @@ enum NoteLinker {
         /// Markers whose number two notes claim in the same scope.
         var ambiguous = 0
         var ambiguousNotes = 0
+        /// Notes pages keyed by numbering continuity instead of their printed head
+        /// (`NumberedNoteDetector.scopeByContinuity`), recorded by the pipeline.
+        var rescopedPages: [NumberedNoteDetector.Rescope] = []
     }
 
     /// `chapter` maps a physical page to its validated chapter number, or nil.
@@ -30,8 +33,16 @@ enum NoteLinker {
         }
         var summary = Summary(ambiguousNotes: ambiguous.count)
         for index in blocks.indices {
-            // Notes cite no notes; only body paragraphs carry references.
-            guard blocks[index].note == nil, case let .paragraph(text) = blocks[index].content else { continue }
+            // Notes cite no notes; body paragraphs and preserved list items carry references. A
+            // list item keeps its representation, marker and line breaks: only the raised
+            // marker becomes a link (#87). Other preformatted blocks (code) are never scanned.
+            guard blocks[index].note == nil else { continue }
+            let text: InlineText, listItem: Bool
+            switch blocks[index].content {
+            case let .paragraph(value): (text, listItem) = (value, false)
+            case let .preformatted(value) where LayoutReconstructor.isList(value.text): (text, listItem) = (value, true)
+            default: continue
+            }
             var page = blocks[index].page
             var elements: [InlineText.Element] = []
             var changed = false
@@ -64,7 +75,10 @@ enum NoteLinker {
                 elements.append(.noteReference(digits, plain, key))
                 if !trailing.isEmpty { elements.append(.text(trailing, plain)) }
             }
-            if changed { blocks[index].content = .paragraph(InlineText(elements: elements)) }
+            if changed {
+                let linked = InlineText(elements: elements)
+                blocks[index].content = listItem ? .preformatted(linked) : .paragraph(linked)
+            }
         }
         return summary
     }

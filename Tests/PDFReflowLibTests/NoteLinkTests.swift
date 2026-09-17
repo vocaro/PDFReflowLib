@@ -106,6 +106,64 @@ private func bodyBytes(_ chapter: String) -> Int {
     #expect(blocks[1...] == saved[1...])
 }
 
+@Test func markersInsidePreservedListItemsLinkAndKeepTheItemsMarkup() async throws {
+    // 9/11 keeps bullets and numbered items as preformatted lines; 16 markers in them stayed plain
+    // in chapters 7 and 10–13 (#87). Page 205's bullet and page 365's item 3 are the shapes.
+    let bullet = ReflowBlock(content: .preformatted(InlineText(elements: [
+        .text("• activating a special court to enable the use of classified evidence in\nimmigration-related national security cases;", []),
+        sup("96 "), .text("and", [])])), page: 205)
+    let numbered = ReflowBlock(content: .preformatted(InlineText(elements: [
+        .text("3. The CTC did not propose “Islamic Extremist Learns to Fly.”", []), sup("24")])), page: 365)
+    // Controls: a code block (no list marker) and a list item inside a note are never scanned.
+    let code = ReflowBlock(content: .preformatted(InlineText(elements: [.text("let x = y", []), sup("96")])), page: 205)
+    let insideNote = ReflowBlock(content: .preformatted(InlineText(elements: [.text("• A cited item", []), sup("96")])),
+                                 note: key(99, chapter: 6), page: 523)
+    var blocks = [bullet, numbered, code, insideNote,
+                  chapterNote(96, chapter: 6, "PDD-62, May 22, 1998, p. 9.", page: 523),
+                  chapterNote(24, chapter: 11, "Intelligence report.", page: 577)]
+    let saved = blocks
+    let summary = NoteLinker.link(&blocks) { [205: 6, 365: 11][$0] }
+    #expect(summary == .init(markers: 2, linked: 2, unscoped: 0, missing: 0, ambiguous: 0, ambiguousNotes: 0))
+    guard case let .preformatted(linkedBullet) = blocks[0].content, case let .preformatted(linkedItem) = blocks[1].content else {
+        Issue.record("list items must stay preformatted"); return
+    }
+    #expect(linkedBullet.elements == [
+        .text("• activating a special court to enable the use of classified evidence in\nimmigration-related national security cases;", []),
+        .noteReference("96", [], key(96, chapter: 6)), .text(" ", []), .text("and", [])])
+    #expect(linkedItem.elements.last == .noteReference("24", [], key(24, chapter: 11)))
+    #expect(blocks.map(\.text) == saved.map(\.text))
+    #expect(blocks[2...] == saved[2...])
+
+    // The writer gives a note referenced only from a list item its id and return link.
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    let book = ReflowDocument(metadata: .init(title: "Items", language: "en"), blocks: [
+        ReflowBlock(content: .sourcePage(205), page: 205), blocks[0], ReflowBlock(content: .sourcePage(523), page: 523), blocks[4],
+    ], assets: [])
+    let html = try await writtenFiles(book, directory: dir).values.joined()
+    #expect(html.contains("<pre>• activating a special court to enable the use of classified evidence in\nimmigration-related national security cases;<sup><a epub:type=\"noteref\" role=\"doc-noteref\" id=\"noteref-c6-96\" href=\"#note-c6-96\">96</a></sup> and</pre>"))
+    #expect(html.contains("<p id=\"note-c6-96\" epub:type=\"endnote\"><a href=\"#noteref-c6-96\" role=\"doc-backlink\" epub:type=\"backlink\">96.</a> PDD-62, May 22, 1998, p. 9.</p>"))
+}
+
+@Test func sourcePage365ItemThreeMarkerLinksInsideItsListItem() throws {
+    let fixture = try SourceLayoutFixture.load("911-365")
+    #expect(fixture.sourceSHA256 == "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b")
+    var page = fixture.styledContent()
+    page.lines.removeAll { $0.text == "FORESIGHT—AND HINDSIGHT 347" }
+    var warnings: [ConversionWarning] = []
+    var blocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
+    let index = try #require(blocks.firstIndex { $0.text.hasPrefix("3. The CTC did not propose") })
+    guard case let .preformatted(before) = blocks[index].content else { Issue.record("item 3 must be preformatted"); return }
+    #expect(before.elements.contains(.text("24 ", .superscript)))
+    blocks.append(chapterNote(24, chapter: 11, "Intelligence report.", page: 577))
+    let saved = blocks
+    let summary = NoteLinker.link(&blocks) { $0 == 365 ? 11 : nil }
+    #expect(summary.linked == 1)
+    guard case let .preformatted(after) = blocks[index].content else { Issue.record("item 3 must stay preformatted"); return }
+    #expect(after.elements.contains(.noteReference("24", [], key(24, chapter: 11))))
+    #expect(blocks.map(\.text) == saved.map(\.text))
+    #expect(blocks.indices.filter { blocks[$0] != saved[$0] } == [index])
+}
+
 @Test func linkedNotesSerializeWithReferenceIdsAndBacklinksAcrossSpineFiles() async throws {
     let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
     let filler = ReflowBlock(content: .paragraph(InlineText(String(repeating: "x", count: 59_300))), page: 1)

@@ -14,6 +14,18 @@ enum NumberedNoteDetector {
         /// Paragraph start index → the note that paragraph opens. A note's further
         /// paragraphs have no entry.
         var notes: [Int: Note] = [:]
+        /// A numbered list inside the page's last note that is still open where the page ends,
+        /// its last line running to the column's right edge (9/11 page 543's candidate list under
+        /// note 107, whose item 6 continues on page 544). The next page may resume it.
+        var openList: OpenList?
+    }
+
+    /// A numbered list left open at a page's end: the note holding it, the item number the list
+    /// expects next, and how far the items sit inside the note indent.
+    struct OpenList: Equatable {
+        var note: Layout.Note
+        var next: Int
+        var inset: CGFloat
     }
 
     /// The chapters named by a top-margin running head, with an optional folio on either side:
@@ -91,44 +103,98 @@ enum NumberedNoteDetector {
     /// switches the scope mid-page (page 484: chapter 1's note 241, then chapter 2's notes).
     /// `lastChapter` is the second chapter a `NOTES TO CHAPTERS N-M` head names (nil reads it
     /// from the page when `chapter` is nil too): such a page must switch to that chapter.
+    ///
+    /// `continuing` is the previous page's `openList`. A page may resume that list (#87): see
+    /// `resumption`. When the resumed reading refuses the page, the page is read on its own.
     static func layout(in elements: [LayoutReconstructor.Element], page: PageContent,
-                       chapter: Int? = nil, lastChapter: Int? = nil) -> Layout? {
-        analyze(elements, page: page, chapter: chapter, lastChapter: lastChapter).layout
+                       chapter: Int? = nil, lastChapter: Int? = nil, continuing: OpenList? = nil) -> Layout? {
+        analyze(elements, page: page, chapter: chapter, lastChapter: lastChapter, continuing: continuing).layout
     }
 
     static func analyze(_ elements: [LayoutReconstructor.Element], page: PageContent,
-                        chapter: Int? = nil, lastChapter: Int? = nil) -> (layout: Layout?, reason: String) {
+                        chapter: Int? = nil, lastChapter: Int? = nil,
+                        continuing: OpenList? = nil) -> (layout: Layout?, reason: String) {
+        if let continuing {
+            let resumed = analyze(elements, page: page, chapter: chapter, lastChapter: lastChapter, resume: continuing)
+            if resumed.layout != nil { return resumed }
+        }
+        return analyze(elements, page: page, chapter: chapter, lastChapter: lastChapter, resume: nil)
+    }
+
+    /// Where a page resumes the previous page's open list: the first line numbered as the item the
+    /// list expects, at or before the page's first note start. Either the page's notes continue
+    /// the chapter (the first start is the open note's successor) and the item sits the list's
+    /// inset inside their indent (page 545's `10.` above note 108), or the page's first start is
+    /// that item itself, numbered as the list expects and not as the chapter's next note (page
+    /// 544's items 7–9, which would otherwise read as the chapter's notes 7–9). The note indent is
+    /// then the item edge less the inset. A bulleted list is never resumed.
+    static func resumption(_ elements: [LayoutReconstructor.Element], open: OpenList,
+                           first: Int) -> (item: Int, indent: CGFloat)? {
+        guard let initial = elements[first].line, let firstNumber = number(of: initial) else { return nil }
+        let size = initial.fontSize
+        guard let item = elements[...first].firstIndex(where: { element in
+            guard let line = element.line, let marker = subItem(line) else { return false }
+            return !marker.bullet && marker.first == open.next && abs(line.fontSize - size) <= size * 0.1
+        }), let line = elements[item].line else { return nil }
+        let indent = line.rect.minX - open.inset
+        if item < first {
+            guard firstNumber == open.note.number + 1, abs(indent - initial.rect.minX) <= size * 0.25 else { return nil }
+        } else {
+            guard firstNumber == open.next, open.next != open.note.number + 1 else { return nil }
+        }
+        return (item, indent)
+    }
+
+    private static func analyze(_ elements: [LayoutReconstructor.Element], page: PageContent,
+                                chapter: Int?, lastChapter: Int?, resume: OpenList?) -> (layout: Layout?, reason: String) {
         guard !page.recognized, !page.hasSyntheticTextStyle, !page.requiresPageImage else { return (nil, "page fallback") }
         let read = chapter == nil ? chapters(on: page) : nil
         guard let heading = chapter ?? read?.lowerBound else { return (nil, "no heading") }
         let last = chapter == nil ? read?.upperBound : lastChapter
         guard elements.allSatisfy({ $0.image == nil }) else { return (nil, "image") }
-        guard let first = firstStart(in: elements), let initial = elements[first].line else {
+        guard let firstNote = firstStart(in: elements), let initial = elements[firstNote].line else {
             return (nil, "no numbered start")
         }
         let size = initial.fontSize
         guard size.isFinite, size >= 4 else { return (nil, "size") }
         var layout = Layout()
-        var start = first, expected = number(of: initial)!, count = 0, chapter = heading
+        var first = firstNote, indentX = initial.rect.minX
+        var expected = number(of: initial)!, count = 0, chapter = heading
         var continuationX: CGFloat?
         var previous: TextLine?
         // A list inside the current note: its items' edge, whether they are bullets, the next
         // item number, and the bullets' hanging edge once a wrapped line has set it.
         var sublist: (x: CGFloat, bullet: Bool, next: Int, wrapX: CGFloat?)?
+        // The element that opened the current list (the page's first when resumed).
+        var sublistStart = first
+        // A resumed list continues the previous page's last note from the top of this page: every
+        // line before the resumed item is that note's text, and the note is open without a start.
+        var resumed = false
+        if let open = resume {
+            guard open.note.chapter == heading, let resumption = resumption(elements, open: open, first: firstNote),
+                  let item = elements[resumption.item].line else { return (nil, "no resumed list") }
+            first = 0
+            sublistStart = 0
+            indentX = resumption.indent
+            expected = open.note.number + 1
+            sublist = (item.rect.minX, false, open.next, nil)
+            resumed = true
+        }
+        var start = first
         for index in first..<elements.count {
             guard let line = elements[index].line, !line.monospaced, line.structure == nil else {
                 return (nil, "element \(index): monospaced or tagged")
             }
-            let atIndent = abs(line.rect.minX - initial.rect.minX) <= size * 0.25
+            let atIndent = abs(line.rect.minX - indentX) <= size * 0.25
             if abs(line.fontSize - size) > size * 0.1 {
                 // The next chapter's opening heading between its predecessor's last note and
                 // its own note 1: larger type, dedented, number then title.
                 guard let before = previous, count >= 1, line.fontSize > size, !atIndent,
-                      line.rect.minX >= initial.rect.minX - size * 3,
+                      line.rect.minX >= indentX - size * 3,
                       opensChapter(line, number: chapter + 1),
                       before.rect.minY - line.rect.maxY <= size * 4,
                       index + 1 < elements.count, let next = elements[index + 1].line,
-                      number(of: next) == 1, abs(next.rect.minX - initial.rect.minX) <= size * 0.25,
+                      number(of: next) == 1, abs(next.rect.minX - indentX) <= size * 0.25,
                       line.rect.minY - next.rect.maxY <= size * 1.5 else {
                     return (nil, "element \(index): size")
                 }
@@ -141,20 +207,25 @@ enum NumberedNoteDetector {
             }
             // A note's own list opens with its first item (a bullet at or inside the note indent,
             // or `1.` inside it) and may be set off by added space.
-            let marker = count >= 1 ? subItem(line) : nil
+            let noteOpen = count >= 1 || resumed
+            let marker = noteOpen ? subItem(line) : nil
             let opensSublist = sublist == nil && previous != nil && marker.map { marker in
-                let inset = line.rect.minX - initial.rect.minX
+                let inset = line.rect.minX - indentX
                 return marker.bullet ? inset >= -size * 0.25 && inset <= size * 3
                     : marker.first == 1 && inset >= size && inset <= size * 3
             } == true
+            // The note after a numbered list may be set off by the same added space that opened
+            // the list (page 545's note 108 after item 10).
+            let closesSublist = sublist?.bullet == false && atIndent && number(of: line) == expected
             if let previous {
                 let gap = previous.rect.minY - line.rect.maxY
-                guard gap >= -size * 0.2, gap <= (opensSublist ? size * 1.6 : size * 0.8) else {
+                guard gap >= -size * 0.2, gap <= (opensSublist || closesSublist ? size * 1.6 : size * 0.8) else {
                     return (nil, "element \(index): gap")
                 }
             }
             if let marker, opensSublist {
                 sublist = (line.rect.minX, marker.bullet, marker.last + 1, nil)
+                sublistStart = index
                 start = index
                 layout.paragraphs[index] = start
                 previous = line
@@ -204,14 +275,14 @@ enum NumberedNoteDetector {
                 layout.notes[start] = .init(number: value, chapter: chapter)
             } else if atIndent {
                 // A further paragraph of the current note, never a list item or a lone number.
-                guard previous != nil, count >= 1, line.text.filter(\.isLetter).count >= 10,
+                guard previous != nil, noteOpen, line.text.filter(\.isLetter).count >= 10,
                       line.text.range(of: "^(?:[•*−-]|[A-Za-z][.)]|[0-9]+[.)])\\s", options: .regularExpression) == nil
                 else { return (nil, "element \(index): indented non-note") }
                 start = index
             } else {
                 // A wrapped citation line at the shared dedented edge may open with `p. 11`
                 // or an initial (`E. Booker`); bullets and `a)` items do not wrap a note.
-                let indent = initial.rect.minX - line.rect.minX
+                let indent = indentX - line.rect.minX
                 guard let previous, previous.wraps != false,
                       indent >= size * 0.8, indent <= size * 3,
                       previous.rect.width >= size * 12,
@@ -224,11 +295,79 @@ enum NumberedNoteDetector {
             layout.paragraphs[index] = start
             previous = line
         }
-        guard count >= 3 else { return (nil, "fewer than three notes") }
+        // A resumed page continues its note and may hold no note start of its own.
+        guard count >= 3 || resumed else { return (nil, "fewer than three notes") }
         // A two-chapter head is evidence only for a page that really opens the second chapter.
         if let last, last != heading, chapter != last { return (nil, "head names chapter \(last)") }
-        guard continuationX != nil else { return (nil, "no dedented continuation") }
-        return (layout, "accepted")
+        guard continuationX != nil || resumed else { return (nil, "no dedented continuation") }
+        // The list is left open only when its last line runs to the list's right edge (the widest
+        // of at least two of its lines on this page; page 543 sets the list narrower than the
+        // notes), so the item's text continues on the next page.
+        let listEdges = elements[sublistStart...].compactMap { $0.line?.rect.maxX }
+        if let open = sublist, !open.bullet, listEdges.count >= 2, let rightEdge = listEdges.max(), let end = previous,
+           end.rect.maxX >= rightEdge - size * 0.5 {
+            layout.openList = OpenList(note: .init(number: expected - 1, chapter: chapter), next: open.next,
+                                       inset: open.x - indentX)
+        }
+        return (layout, resumed ? "accepted resuming a list" : "accepted")
+    }
+
+    /// A notes page keyed to a chapter other than the one its running head prints.
+    struct Rescope: Equatable {
+        var page: Int
+        var printed: Int
+        var chapter: Int
+        var numbers: ClosedRange<Int>
+    }
+
+    /// Scope notes by numbering continuity where a running head misprints its chapter (#87): 9/11
+    /// page 496 is headed `NOTES TO CHAPTER 4` but holds chapter 3's notes 93–112, between page
+    /// 495's note 92 and page 497's note 113. Every condition must hold, so the printed head
+    /// wins unless it is contradicted from both sides:
+    /// - the page's head names one chapter M and every note on the page is keyed to M;
+    /// - its first note is not note 1 and continues the last note of the previous physical page,
+    ///   which is keyed to another chapter N;
+    /// - chapter M's note 1 is on another page, and another page also claims one of this page's
+    ///   numbers in M (the notes collide there);
+    /// - chapter N claims none of this page's numbers yet.
+    /// The page's notes are then keyed to N. Numbers restarting at 1 never move a page.
+    /// `heads` maps a physical page to the chapters its `NOTES TO CHAPTER` head names.
+    @discardableResult
+    static func scopeByContinuity(_ blocks: inout [ReflowBlock], heads: [Int: ClosedRange<Int>]) -> [Rescope] {
+        var byPage: [Int: [Int]] = [:]
+        for index in blocks.indices {
+            guard let key = blocks[index].note, case .chapter = key.scope else { continue }
+            byPage[blocks[index].page, default: []].append(index)
+        }
+        func chapterOf(_ index: Int) -> Int? {
+            if case let .chapter(chapter)? = blocks[index].note?.scope { return chapter }
+            return nil
+        }
+        var decisions: [Rescope] = []
+        for page in byPage.keys.sorted() {
+            guard let head = heads[page], head.count == 1 else { continue }
+            let printed = head.lowerBound
+            guard let notes = byPage[page], notes.allSatisfy({ chapterOf($0) == printed }),
+                  let firstKey = blocks[notes[0]].note, firstKey.number > 1,
+                  let before = byPage[page - 1]?.last, let previous = blocks[before].note,
+                  let chapter = chapterOf(before), chapter != printed, previous.number == firstKey.number - 1 else { continue }
+            let numbers = Set(notes.compactMap { blocks[$0].note?.number })
+            var printedElsewhere: Set<Int> = [], continuedChapter: Set<Int> = []
+            for (other, indices) in byPage where other != page {
+                for index in indices {
+                    guard let key = blocks[index].note else { continue }
+                    if chapterOf(index) == printed { printedElsewhere.insert(key.number) }
+                    if chapterOf(index) == chapter { continuedChapter.insert(key.number) }
+                }
+            }
+            guard printedElsewhere.contains(1), !printedElsewhere.isDisjoint(with: numbers),
+                  continuedChapter.isDisjoint(with: numbers), let low = numbers.min(), let high = numbers.max() else { continue }
+            for index in notes {
+                blocks[index].note?.scope = .chapter(chapter)
+            }
+            decisions.append(.init(page: page, printed: printed, chapter: chapter, numbers: low...high))
+        }
+        return decisions
     }
 
     /// An item of a list inside a note: a bullet, or a number (`1.`, `4 and 5.`) followed by

@@ -51,8 +51,11 @@ enum EPUBWriter {
         var linkedDocuments: Set<String> = []
         var referenced: Set<NoteKey> = []
         for block in book.blocks {
-            guard case let .paragraph(text) = block.content else { continue }
-            for case let .noteReference(_, _, key) in text.elements { referenced.insert(key) }
+            switch block.content {
+            case let .paragraph(text), let .preformatted(text):
+                for case let .noteReference(_, _, key) in text.elements { referenced.insert(key) }
+            default: continue
+            }
         }
         var referencesEmitted: Set<NoteKey> = []
         // Only a short heading run is kept with its content; a long run of headings packs normally.

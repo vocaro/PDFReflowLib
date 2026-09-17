@@ -1,0 +1,51 @@
+{
+ "case": "cdc-zombie-pandemic-2011",
+ "base": {
+  "converterSHA256": "5bd04f24be1ea42a799c5b888b1b61d58ac0ee246bdb40ae233cf25b7448cb6f",
+  "passed": true,
+  "contentChecks": 33,
+  "errors": [],
+  "epubcheckExitCode": 0,
+  "runPassed": true,
+  "converterPeakRSSMiB": 382,
+  "memoryLimitMiB": 512,
+  "conversionSeconds": 27.6,
+  "warnings": {
+   "unverifiedTextLayer": 33,
+   "ocrUsed": 9,
+   "annotationsNotConverted": 1,
+   "imageRegion": 38,
+   "pageImageFallback": 4
+  }
+ },
+ "cand": {
+  "converterSHA256": "a8948ba07b67e0c300f5b04412e26dd3c5b76c389cc573fc4128836aa0d7f5cd",
+  "passed": true,
+  "contentChecks": 33,
+  "errors": [],
+  "epubcheckExitCode": 0,
+  "runPassed": true,
+  "converterPeakRSSMiB": 382,
+  "memoryLimitMiB": 512,
+  "conversionSeconds": 23.9,
+  "warnings": {
+   "unverifiedTextLayer": 33,
+   "ocrUsed": 9,
+   "annotationsNotConverted": 1,
+   "imageRegion": 38,
+   "pageImageFallback": 4
+  }
+ },
+ "comparison": {
+  "passed": true,
+  "changedPages": [],
+  "changedPageFields": {},
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "changedReportFields": [],
+  "pageMarkersEqual": true,
+  "changedOCRPages": [],
+  "idOnlyShiftPages": 0
+ }
+}

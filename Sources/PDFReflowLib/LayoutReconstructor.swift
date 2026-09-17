@@ -1701,7 +1701,62 @@ enum LayoutReconstructor {
         if let blocks = interleavedBlocks(elements, bodySize: bodySize) {
             return blocks.flatMap { sortedByRows($0, bodySize: bodySize) }
         }
-        return sortedByRows(elements, bodySize: bodySize)
+        return noteColumnsInNumberOrder(sortedByRows(elements, bodySize: bodySize), bodySize: bodySize)
+    }
+
+    /// The printed number of a note line: its first run is raised and holds one to three digits
+    /// (with whitespace or control characters PDFKit reports beside them, DGA's `1 \u{07}`), and
+    /// the note's text follows in the same line.
+    static func raisedNoteNumber(_ line: TextLine) -> Int? { raisedNoteNumber(line.content) }
+    static func raisedNoteNumber(_ text: InlineText) -> Int? {
+        guard case let .text(value, style)? = text.elements.first, style.contains(.superscript),
+              text.elements.count > 1 else { return nil }
+        let printed = value.trimmingCharacters(in: .whitespaces.union(.controlCharacters))
+        guard (1...3).contains(printed.count), printed.utf8.allSatisfy({ (48...57).contains($0) }),
+              let number = Int(printed), number > 0 else { return nil }
+        return number
+    }
+
+    /// Notes set side by side in columns and numbered down each column, in a region no whitespace
+    /// cut divides, read in number order (#141). DGA page 2 sets notes 1 and 2 over each other at
+    /// the left and 3 and 4 at the right, 4 pt below a rule under the signatures: the page has no
+    /// band of whitespace to cut, so the row sort read 1, 3, 2, 4. The numbers decide, as for
+    /// `rowMajorLabels`: a contiguous run of the sorted elements, opening with a raised-number note
+    /// line, holding only lines smaller than 0.9 body, in at least two columns whose extents do not
+    /// overlap, every line at or right of a marker's left edge, with at least three markers
+    /// counting up by one down each column and on from one column to the next, reads column by
+    /// column (a note continued at the head of the next column reads after it). Anything else
+    /// keeps the row order.
+    static func noteColumnsInNumberOrder(_ sorted: [Element], bodySize: CGFloat) -> [Element] {
+        guard let start = sorted.firstIndex(where: { $0.line.flatMap(raisedNoteNumber) != nil }) else { return sorted }
+        var end = start
+        while end < sorted.count, let line = sorted[end].line, line.fontSize <= bodySize * 0.9 {
+            end += 1
+        }
+        let run = Array(sorted[start..<end])
+        let markers = run.filter { $0.line.flatMap(raisedNoteNumber) != nil }
+        guard markers.count >= 3 else { return sorted }
+        // Columns open at the markers' left edges; every line belongs to the nearest edge at or left of it.
+        var edges: [CGFloat] = []
+        for x in markers.map(\.rect.minX).sorted() where edges.last.map({ x - $0 > bodySize * 1.5 }) ?? true { edges.append(x) }
+        // One column already reads down (an early exit).
+        guard edges.count >= 2 else { return sorted }
+        var columns = Array(repeating: [Element](), count: edges.count)
+        for element in run {
+            guard let column = edges.lastIndex(where: { element.rect.minX >= $0 - bodySize * 0.5 }) else { return sorted }
+            columns[column].append(element)
+        }
+        let extents = columns.map { union($0.map(\.rect)) }
+        guard zip(extents, extents.dropFirst()).allSatisfy({ $0.maxX < $1.minX }) else { return sorted }
+        var numbers: [Int] = []
+        var reordered: [Element] = []
+        for column in columns {
+            let down = column.sorted { $0.rect.maxY > $1.rect.maxY }
+            numbers += down.compactMap { $0.line.flatMap(raisedNoteNumber) }
+            reordered += down
+        }
+        guard zip(numbers, numbers.dropFirst()).allSatisfy({ $1 == $0 + 1 }) else { return sorted }
+        return Array(sorted[..<start]) + reordered + Array(sorted[end...])
     }
 
     /// Lines that all read in one rotated direction (`TextLine.readingDirection`, within 20°),
@@ -3070,7 +3125,10 @@ enum LayoutReconstructor {
                         && abs(line.rect.midX - prev.rect.midX) > body * 0.25
                     let endsCaption = (line.fontSize >= prev.fontSize * 1.15 || leavesCaption)
                         && line.fontSize >= reflowBody * 0.95 && isCaption(paragraph.text)
-                    if prev.wraps == false || !sameColumn || shortEnding || endsCaption
+                    // Notes the footnote reader did not take (DGA page 2's two columns of notes,
+                    // #141) still open one paragraph each at their raised numbers.
+                    let nextNote = raisedNoteNumber(line) != nil && raisedNoteNumber(paragraph) != nil
+                    if prev.wraps == false || !sameColumn || shortEnding || endsCaption || nextNote
                         || opensSection(line, after: prev, gap: verticalGap, leading: previousGap)
                         || opensSpacedParagraph(line, after: prev, gap: verticalGap, leading: previousGap)
                         || opensHangingEntry(line, after: prev, first: paragraphFirst) {

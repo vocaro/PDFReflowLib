@@ -1,0 +1,66 @@
+{
+ "case": "fed-explained-2021",
+ "base": {
+  "converterSHA256": "5bd04f24be1ea42a799c5b888b1b61d58ac0ee246bdb40ae233cf25b7448cb6f",
+  "passed": false,
+  "contentChecks": 177,
+  "errors": [
+   "Page 68: one paragraph carries both {'first': 'Foreign banking organizations primarily operate in the U.S.', 'second': 'Edge Act and agreement corporations are subsidiaries of banks'}"
+  ],
+  "epubcheckExitCode": 0,
+  "runPassed": true,
+  "converterPeakRSSMiB": 262,
+  "memoryLimitMiB": 768,
+  "conversionSeconds": 13.5,
+  "warnings": {
+   "structureFallback": 58,
+   "annotationsNotConverted": 92,
+   "unverifiedTextLayer": 8,
+   "ocrUsed": 1,
+   "furnitureRemoved": 117,
+   "imageRegion": 138,
+   "uncertainHyphen": 18
+  }
+ },
+ "cand": {
+  "converterSHA256": "a8948ba07b67e0c300f5b04412e26dd3c5b76c389cc573fc4128836aa0d7f5cd",
+  "passed": true,
+  "contentChecks": 177,
+  "errors": [],
+  "epubcheckExitCode": 0,
+  "runPassed": true,
+  "converterPeakRSSMiB": 294,
+  "memoryLimitMiB": 768,
+  "conversionSeconds": 8.1,
+  "warnings": {
+   "structureFallback": 58,
+   "annotationsNotConverted": 92,
+   "unverifiedTextLayer": 8,
+   "ocrUsed": 1,
+   "furnitureRemoved": 117,
+   "imageRegion": 138,
+   "uncertainHyphen": 18
+  }
+ },
+ "comparison": {
+  "passed": false,
+  "changedPages": [
+   68
+  ],
+  "changedPageFields": {
+   "68": [
+    "markup",
+    "paragraphIDs",
+    "paragraphs",
+    "scripts"
+   ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "changedReportFields": [],
+  "pageMarkersEqual": true,
+  "changedOCRPages": [],
+  "idOnlyShiftPages": 65
+ }
+}

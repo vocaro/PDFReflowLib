@@ -1,0 +1,55 @@
+{
+ "case": "gpo-our-flag-2003",
+ "base": {
+  "converterSHA256": "5bd04f24be1ea42a799c5b888b1b61d58ac0ee246bdb40ae233cf25b7448cb6f",
+  "passed": true,
+  "contentChecks": 104,
+  "errors": [],
+  "epubcheckExitCode": 0,
+  "runPassed": true,
+  "converterPeakRSSMiB": 101,
+  "memoryLimitMiB": 192,
+  "conversionSeconds": 2.7,
+  "warnings": {
+   "structureFallback": 37,
+   "annotationsNotConverted": 1,
+   "ocrUsed": 2,
+   "unverifiedTextLayer": 2,
+   "imageRegion": 46,
+   "uncertainHyphen": 6,
+   "pageImageFallback": 1
+  }
+ },
+ "cand": {
+  "converterSHA256": "a8948ba07b67e0c300f5b04412e26dd3c5b76c389cc573fc4128836aa0d7f5cd",
+  "passed": true,
+  "contentChecks": 104,
+  "errors": [],
+  "epubcheckExitCode": 0,
+  "runPassed": true,
+  "converterPeakRSSMiB": 103,
+  "memoryLimitMiB": 192,
+  "conversionSeconds": 2.5,
+  "warnings": {
+   "structureFallback": 37,
+   "annotationsNotConverted": 1,
+   "ocrUsed": 2,
+   "unverifiedTextLayer": 2,
+   "imageRegion": 46,
+   "uncertainHyphen": 6,
+   "pageImageFallback": 1
+  }
+ },
+ "comparison": {
+  "passed": true,
+  "changedPages": [],
+  "changedPageFields": {},
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "changedReportFields": [],
+  "pageMarkersEqual": true,
+  "changedOCRPages": [],
+  "idOnlyShiftPages": 0
+ }
+}

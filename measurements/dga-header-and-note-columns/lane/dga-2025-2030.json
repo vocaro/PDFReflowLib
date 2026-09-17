@@ -1,0 +1,73 @@
+{
+ "case": "dga-2025-2030",
+ "base": {
+  "converterSHA256": "5bd04f24be1ea42a799c5b888b1b61d58ac0ee246bdb40ae233cf25b7448cb6f",
+  "passed": false,
+  "contentChecks": 89,
+  "errors": [
+   "Page 2: missing heading 'Message from the Secretaries'",
+   "Page 2: missing paragraph 'Welcome to the Dietary Guidelines for Americans, 2025\u20132030.'",
+   "Page 2: missing paragraph 'Welcome to the Dietary Guidelines for Americans' for distinction check",
+   "Page 2: missing or reordered text 'Message from the Secretaries'",
+   "Page 2: missing or reordered text 'Welcome to the Dietary Guidelines for Americans, 2025\u20132030.'",
+   "Page 2: missing or reordered text 'gis.cdc.gov/grasp/diabetes/diabetesatlas-spotlight.html'"
+  ],
+  "epubcheckExitCode": 0,
+  "runPassed": true,
+  "converterPeakRSSMiB": 98,
+  "memoryLimitMiB": 192,
+  "conversionSeconds": 0.7,
+  "warnings": {
+   "structureFallback": 9,
+   "unverifiedTextLayer": 1,
+   "furnitureRemoved": 9,
+   "imageRegion": 10
+  }
+ },
+ "cand": {
+  "converterSHA256": "a8948ba07b67e0c300f5b04412e26dd3c5b76c389cc573fc4128836aa0d7f5cd",
+  "passed": true,
+  "contentChecks": 89,
+  "errors": [],
+  "epubcheckExitCode": 0,
+  "runPassed": true,
+  "converterPeakRSSMiB": 101,
+  "memoryLimitMiB": 192,
+  "conversionSeconds": 0.7,
+  "warnings": {
+   "structureFallback": 9,
+   "unverifiedTextLayer": 1,
+   "furnitureRemoved": 9,
+   "imageRegion": 10
+  }
+ },
+ "comparison": {
+  "passed": false,
+  "changedPages": [
+   2
+  ],
+  "changedPageFields": {
+   "2": [
+    "anchors",
+    "headings",
+    "images",
+    "markup",
+    "paragraphIDs",
+    "paragraphs",
+    "scripts",
+    "text"
+   ]
+  },
+  "changedImages": [
+   "EPUB/images/image-4.png"
+  ],
+  "navigationChanged": true,
+  "changedNavigationPages": [
+   2
+  ],
+  "changedReportFields": [],
+  "pageMarkersEqual": true,
+  "changedOCRPages": [],
+  "idOnlyShiftPages": 8
+ }
+}

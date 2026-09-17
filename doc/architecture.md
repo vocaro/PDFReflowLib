@@ -229,7 +229,16 @@ drawings: title backdrops are not judged on a page with more than 500 candidate 
 judged only when a title-size line reaches into its height and its row is read from paints sorted
 by lower edge, a callout shape pays for its no-other-paint scan only after its prose evidence, and
 connector rules are sought only in hulls holding one, up to a fixed amount of rule-by-hull and
-hull-by-seed work; past those limits the page clusters as before. The page-sized-graphic review signal still reads the painted regions
+hull-by-seed work; past those limits the page clusters as before. After clustering, text set on
+a band across a photograph's edge leaves the photograph's crop (#141, DGA page 2's header title on
+a tab and welcome line on a band): when every line a crop meets is a title (1.25 body, carrying a
+word) or a line of four words, each set on a filled paint, the painted backdrops span 90% of the
+crop's width, and those lines and backdrops form a strip at its top or bottom edge beyond which
+images cover 90% of a remainder at least a third of the crop's height, the crop becomes the
+images' part of that remainder. Labels set on the art itself or on boxes narrower than it (chart
+and map labels, callouts) keep their crops, as does a figure whose tinted box runs beneath its
+title past both edges; a page whose crops times its images, lines and filled paints exceed the
+same work limit keeps its crops. The page-sized-graphic review signal still reads the painted regions
 before tint removal. `OCRReader` uses Vision when policy requests it.
 `StructureTreeReader` parses a separate Core Graphics document into value-only page/MCID
 associations and exact owner paths. It checks structural parent links, page identity, RoleMap
@@ -456,7 +465,13 @@ is placed after the joined paragraph rather than ahead of it, because its refere
 that paragraph and note text must not precede its marker; such a note is then reached from
 the next page's anchor. A footnote beneath the previous page's last line does not count as
 prose below it (`endsColumn`). Drawn rules, symbol markers, recognized or synthetic text
-layers, images below the separator and any body-size line after it keep spatial prose. A body
+layers, images below the separator and any body-size line after it keep spatial prose. Notes
+this detector does not take still read in number order where the reading-order sort would read
+them along rows (#141, DGA page 2's four notes, two to a column, numbered down each column, with
+no whitespace to cut): a contiguous run of lines under 0.9 body opening with a raised number, in
+at least two columns that do not overlap, with at least three markers counting up by one down
+each column and on from one column to the next, reads column by column; and a line opening with
+a raised number after a paragraph that opened with one starts a paragraph of its own. A body
 marker that PDFKit detached past a justified line's right edge (one to three digits, below
 80% of body size, starting where the line ends and raised inside its box) rejoins that line as
 a superscript. `NumberedNoteDetector` recognizes a chapter's endnotes on a page whose running

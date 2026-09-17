@@ -276,7 +276,74 @@ enum TintDetector {
         return boxes + tabs
     }
 
+    /// Text set on a band across a photograph's edge (#141). DGA page 2 paints `Message from the
+    /// Secretaries` on a tab over the lower edge of its header photograph and the welcome line on
+    /// a full-width band beneath it; photograph, tab and band cluster into one crop that took both
+    /// lines. A crop keeps only its art beyond such a band when:
+    ///
+    /// - the lines it meets all lie, with the painted backdrops beneath them, in one strip at its
+    ///   top or bottom edge;
+    /// - every one of those lines sits on a filled backdrop that is not an image (a tab, a band),
+    ///   the backdrops together span the crop's width, and each line is a title (1.25 body,
+    ///   carrying a word) or prose (four words);
+    /// - beyond the strip, images cover at least 90% of the rest of the crop, which is at least a
+    ///   third of its height. The rest holds no text: every line the crop meets is in the strip.
+    ///
+    /// The crop becomes the images' part of that rest. On DGA page 2 it starts above the tab, so the
+    /// photograph loses the 38 pt beside the tab rather than show a piece of it.
+    ///
+    /// Labels on a chart or map, and an illustration's callouts, sit on the art itself or on boxes
+    /// narrower than it, so their crops are unchanged. `paints` are the page's paints before any
+    /// title backdrop was removed, since those are the backdrops the lines sit on.
+    ///
+    /// Cost is bounded as `seedClusters` is: each crop scans the page's images and lines, and a crop
+    /// whose lines all read scans the filled paints under them; a page whose crops times its images,
+    /// lines and filled paints exceed `seedClusterWorkLimit` keeps its crops.
+    static func withoutEdgeBands(_ hulls: [CGRect], paints: [GraphicsReader.Paint], lines: [TextLine]) -> [CGRect] {
+        let images = paints.filter { $0.image && !$0.rect.isNull && $0.rect.isFinite }.map(\.rect)
+        let filled = paints.filter(\.filled).map(\.rect)
+        guard !images.isEmpty, !lines.isEmpty,
+              hulls.count * (images.count + lines.count + filled.count) <= seedClusterWorkLimit else { return hulls }
+        let body = max(4, LayoutReconstructor.bodySize(lines))
+        func reads(_ line: TextLine) -> Bool {
+            guard !line.monospaced else { return false }
+            if line.fontSize >= body * 1.25, line.text.range(of: #"\p{L}{3,}"#, options: .regularExpression) != nil { return true }
+            return line.text.split(whereSeparator: { !$0.isLetter }).filter { $0.count >= 2 }.count >= 4
+        }
+        return hulls.map { hull in
+            // Early exits: a crop with no image or no text has nothing to keep apart.
+            let art = images.filter { hull.insetBy(dx: -1, dy: -1).contains($0) }
+            guard !art.isEmpty else { return hull }
+            let held = lines.filter { $0.rect.intersects(hull) }
+            guard !held.isEmpty, held.allSatisfy(reads) else { return hull }
+            let backdrops = filled.filter { paint in held.contains { paint.contains(CGPoint(x: $0.rect.midX, y: $0.rect.midY)) } }
+            guard held.allSatisfy({ line in backdrops.contains { $0.contains(CGPoint(x: line.rect.midX, y: line.rect.midY)) } }),
+                  union(backdrops).width >= hull.width * 0.9 else { return hull }
+            let strip = union(backdrops + held.map(\.rect))
+            let gap: CGFloat = 0.5
+            // The rest's extent, measured before it becomes a rectangle (whose height is never
+            // negative): a strip reaching past both edges, such as a box around the whole figure,
+            // leaves none.
+            let low: CGFloat, high: CGFloat
+            if strip.minY <= hull.minY + 1 {
+                (low, high) = (strip.maxY + gap, hull.maxY)
+            } else if strip.maxY >= hull.maxY - 1 {
+                (low, high) = (hull.minY, strip.minY - gap)
+            } else { return hull }
+            let rest = CGRect(x: hull.minX, y: low, width: hull.width, height: max(0, high - low))
+            guard high - low >= hull.height / 3, coverage(of: rest, by: art) >= 0.9 else { return hull }
+            return union(art.map { $0.intersection(rest) }.filter { !$0.isNull })
+        }
+    }
+
     static func compose(_ paints: [GraphicsReader.Paint], lines: [TextLine], bounds: CGRect) -> Result {
+        let result = composeTints(paints, lines: lines, bounds: bounds)
+        let graphics = withoutEdgeBands(result.graphics, paints: paints, lines: lines)
+        guard graphics != result.graphics else { return result }
+        return Result(graphics: graphics, tints: result.tints, separators: result.separators)
+    }
+
+    private static func composeTints(_ paints: [GraphicsReader.Paint], lines: [TextLine], bounds: CGRect) -> Result {
         let paints = withoutTitleBackdrops(paints, lines: lines)
         let finite = paints.filter { !$0.rect.isNull && $0.rect.isFinite }
         let stroked = strokedRectangles(finite.filter { isThin($0.rect) }.map(\.rect))

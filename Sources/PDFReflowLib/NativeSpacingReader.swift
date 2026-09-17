@@ -425,7 +425,7 @@ enum NativeSpacingReader {
 
     /// Adobe Glyph List names a `Differences` array may assign: printable ASCII, and the quotes,
     /// dashes and ligatures TeX text fonts encode there. Any other name leaves its code undecoded.
-    private static let differenceGlyphs: [String: String] = {
+    static let differenceGlyphs: [String: String] = {
         var table: [String: String] = [
             "space": " ", "exclam": "!", "quotedbl": "\"", "numbersign": "#", "dollar": "$", "percent": "%",
             "ampersand": "&", "quotesingle": "'", "parenleft": "(", "parenright": ")", "asterisk": "*",
@@ -531,6 +531,7 @@ enum NativeSpacingReader {
         var fontSelections = 0
         var fonts: [Int: Font?] = [:]
         var evidence: [Evidence] = []
+        var decodings: [String: [UInt8: String]] = [:]
 
         func accept(_ scanner: CGPDFScannerRef) -> Bool {
             operations += 1
@@ -594,19 +595,39 @@ enum NativeSpacingReader {
                 // Adjustment units since the last glyph, the number of non-empty strings so far,
                 // and the code count of the last one.
                 var sinceGlyph: CGFloat = 0, strings = 0, lastCount = 0
+                // Where adjustments offset a character spacing of a tenth of an em or more (by at
+                // least half of it), two glyphs of one string stand the character spacing apart: the
+                // Census report's Distiller sets `Journal of Official Statistics` at Tc 0.38 em with
+                // +349 to +378 between letters, and each word gap as two glyphs of one string (#143).
+                let characterSpacing = size > 0 ? spacing.0 / size : 0
+                var compensated = false
+                for i in 0..<CGPDFArrayGetCount(values) where characterSpacing >= 0.1 && !compensated {
+                    var number: CGPDFReal = 0
+                    if CGPDFArrayGetNumber(values, i, &number), number / 1000 >= characterSpacing / 2 { compensated = true }
+                }
                 for i in 0..<CGPDFArrayGetCount(values) {
                     var string: CGPDFStringRef?
                     var number: CGPDFReal = 0
                     if CGPDFArrayGetString(values, i, &string), let string {
                         advance -= pending; pending = 0
                         let offset = unicode.utf16.count, count = CGPDFStringGetLength(string)
-                        if count > 0, strings > 0, sinceGlyph != 0, size > 0 {
+                        if count > 0, strings > 0, sinceGlyph != 0 || compensated, size > 0 {
                             // The glyphs' own gap in em: the adjustment, less any negative character
                             // spacing that cancels it (9/11's `9:34` sets +31 against Tc -0.031 em).
+                            // Where adjustments offset a large character spacing (`compensated`), the gap is
+                            // their sum: the Census report's Distiller sets Tc 0.46 em with +446 between
+                            // letters and -13 at a word (#143).
                             let adjustment = -sinceGlyph / 1000
-                            boundaries.append((offset, min(adjustment, adjustment + spacing.0 / size), strings, lastCount))
+                            let gap = compensated ? adjustment + characterSpacing : min(adjustment, adjustment + characterSpacing)
+                            boundaries.append((offset, gap, strings, lastCount))
                         }
                         append(string); previousWasString = true
+                        if compensated, count > 1 {
+                            for start in glyphStarts.sorted() where start > offset {
+                                // A quad after a section number (`2 Data Files`, 1.1 em) is still one word gap.
+                                boundaries.append((start, min(1, characterSpacing), strings, count))
+                            }
+                        }
                         if count > 0 { strings += 1; lastCount = count; sinceGlyph = 0 }
                     } else if CGPDFArrayGetNumber(values, i, &number), number.isFinite {
                         sinceGlyph += number
@@ -725,7 +746,7 @@ enum NativeSpacingReader {
               let data = CGPDFStreamCopyData(stream, &format), format == .raw else { return nil }
         return data as Data
     }
-    private static func font(_ dict: CGPDFDictionaryRef) -> Font? {
+    private static func font(_ dict: CGPDFDictionaryRef, decodings: [String: [UInt8: String]]) -> Font? {
         var subtype: UnsafePointer<CChar>?
         guard CGPDFDictionaryGetName(dict, "Subtype", &subtype), let subtype else { return nil }
         // The dictionary's identity distinguishes fonts; the value is never dereferenced.
@@ -745,6 +766,9 @@ enum NativeSpacingReader {
         guard ["Type1", "TrueType", "MMType1"].contains(kind) else { return result }
         if let data {
             result.unicode = simpleFontUnicodeMap(data)
+        } else if !decodings.isEmpty, let index = FontWeightReader.indexGlyphFont(dict), let decoded = decodings[index.key] {
+            // Index-named glyphs read through the characters the document established (#143).
+            result.unicode = decoded
         } else if kind != "TrueType" {
             result.unicode = encodingUnicodeMap(dict)
         }
@@ -762,10 +786,13 @@ enum NativeSpacingReader {
         return result
     }
 
-    private final class FontPresence { var found = false }
+    private final class FontPresence {
+        var found = false
+        var decoded: Set<String> = []
+    }
     /// A Type3 font, or a simple font whose ToUnicode map and Widths can supply word-boundary
     /// evidence. Pages without either skip the operator scan entirely.
-    private static func hasSupportedFont(_ page: CGPDFPage) -> Bool {
+    private static func hasSupportedFont(_ page: CGPDFPage, decoded: Set<String>) -> Bool {
         var node: CGPDFDictionaryRef? = page.dictionary
         for _ in 0..<64 {
             guard let current = node else { return false }
@@ -773,7 +800,9 @@ enum NativeSpacingReader {
             if CGPDFDictionaryGetDictionary(current, "Resources", &resources), let resources {
                 guard CGPDFDictionaryGetDictionary(resources, "Font", &fonts), let fonts else { return false }
                 let presence = FontPresence()
+                presence.decoded = decoded
                 CGPDFDictionaryApplyFunction(fonts, { _, object, info in
+                    let presence = Unmanaged<FontPresence>.fromOpaque(info!).takeUnretainedValue()
                     var dict: CGPDFDictionaryRef?, subtype: UnsafePointer<CChar>?, stream: CGPDFStreamRef?, widths: CGPDFArrayRef?
                     guard CGPDFObjectGetValue(object, .dictionary, &dict), let dict,
                           CGPDFDictionaryGetName(dict, "Subtype", &subtype), let subtype else { return }
@@ -781,9 +810,10 @@ enum NativeSpacingReader {
                     let simple = ["Type1", "TrueType", "MMType1"].contains(kind)
                         && CGPDFDictionaryGetArray(dict, "Widths", &widths)
                         && (CGPDFDictionaryGetStream(dict, "ToUnicode", &stream)
-                            || kind != "TrueType" && NativeSpacingReader.encodingUnicodeMap(dict) != nil)
+                            || kind != "TrueType" && NativeSpacingReader.encodingUnicodeMap(dict) != nil
+                            || !presence.decoded.isEmpty && FontWeightReader.indexGlyphFont(dict).map { presence.decoded.contains($0.key) } == true)
                     if kind == "Type3" || simple {
-                        Unmanaged<FontPresence>.fromOpaque(info!).takeUnretainedValue().found = true
+                        presence.found = true
                     }
                 }, Unmanaged.passUnretained(presence).toOpaque())
                 return presence.found
@@ -795,8 +825,10 @@ enum NativeSpacingReader {
         return false
     }
 
-    static func read(_ page: CGPDFPage) -> [Evidence] {
-        guard page.rotationAngle == 0, hasSupportedFont(page), let table = CGPDFOperatorTableCreate() else { return [] }
+    /// `decodings` are the characters the document established for index-glyph fonts (#143).
+    static func read(_ page: CGPDFPage, decodings: [String: [UInt8: String]] = [:]) -> [Evidence] {
+        guard page.rotationAngle == 0, hasSupportedFont(page, decoded: Set(decodings.keys)),
+              let table = CGPDFOperatorTableCreate() else { return [] }
         defer { CGPDFOperatorTableRelease(table) }
         CGPDFOperatorTableSetCallback(table, "q") { scanner, info in
             let s = Self.state(info)
@@ -829,7 +861,7 @@ enum NativeSpacingReader {
             let id = unsafeBitCast(dict, to: Int.self)
             if let cached = s.fonts[id] { s.font = cached } else {
                 guard s.fonts.count < 256 else { s.invalid = true; return }
-                s.font = Self.font(dict); s.fonts[id] = s.font
+                s.font = Self.font(dict, decodings: s.decodings); s.fonts[id] = s.font
             }
         }
         CGPDFOperatorTableSetCallback(table, "BT") { scanner, info in
@@ -922,6 +954,7 @@ enum NativeSpacingReader {
         CGPDFOperatorTableSetCallback(table, "TJ") { scanner, info in Self.state(info).show(scanner, array: true) }
         CGPDFOperatorTableSetCallback(table, "Tj") { scanner, info in Self.state(info).show(scanner, array: false) }
         let s = State(), stream = CGPDFContentStreamCreateWithPage(page)
+        s.decodings = decodings
         defer { CGPDFContentStreamRelease(stream) }
         let scanner = CGPDFScannerCreate(stream, table, Unmanaged.passUnretained(s).toOpaque())
         defer { CGPDFScannerRelease(scanner) }

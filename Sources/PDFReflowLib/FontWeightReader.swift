@@ -209,6 +209,66 @@ enum FontWeightReader {
         var unicode: [UInt8: String]?
         /// A composite `Identity-H` font's two-byte ToUnicode map (#133).
         var wideUnicode: [UInt16: String]?
+        /// A simple font that names its glyphs by index and has no ToUnicode map (#143).
+        var indexGlyphs: IndexGlyphFont?
+    }
+
+    // MARK: - Index-named glyphs (#143)
+
+    /// A simple font without a ToUnicode map whose `Differences` names at least half its codes
+    /// `G<n>`, `g<n>`, `C<n>` or `c<n>`: Acrobat Distiller 4.05's TeX fonts in the Census report
+    /// (`/G87` draws `T`). PDFKit reports such a glyph as the character U+n, so the Census text
+    /// reads shifted by three letters. `key` identifies the font across pages and reopened
+    /// documents (subtype, `BaseFont` and the whole `Differences` array); `indexes` maps each code
+    /// the array names that way to its index, and `names` every other code it names.
+    struct IndexGlyphFont: Equatable {
+        var key: String
+        var baseFont: String?
+        var indexes: [UInt8: Int]
+        var names: [UInt8: String] = [:]
+    }
+
+    /// The glyph index an index-style name states, or nil.
+    static func glyphIndex(_ name: String) -> Int? {
+        guard let first = name.first, "GgCc".contains(first), name.count >= 2, name.count <= 6 else { return nil }
+        let digits = name.dropFirst()
+        guard digits.allSatisfy({ $0.isASCII && $0.isNumber }) else { return nil }
+        return Int(digits)
+    }
+
+    /// What PDFKit reports for a glyph named with index `n` (measured on macOS 27 for
+    /// `G`, `g`, `C` and `c` names in Type1 fonts): the character U+n for 33–126 and 161–255,
+    /// and nothing for any other index.
+    static func pdfKitText(index: Int) -> String {
+        (33...126).contains(index) || (161...255).contains(index) ? String(UnicodeScalar(UInt8(index))) : ""
+    }
+
+    static func indexGlyphFont(_ dict: CGPDFDictionaryRef) -> IndexGlyphFont? {
+        guard let subtype = name(dict, "Subtype"), ["Type1", "MMType1", "TrueType", "Type3"].contains(subtype) else { return nil }
+        var stream: CGPDFStreamRef?, encoding: CGPDFDictionaryRef?, differences: CGPDFArrayRef?
+        guard !CGPDFDictionaryGetStream(dict, "ToUnicode", &stream),
+              CGPDFDictionaryGetDictionary(dict, "Encoding", &encoding), let encoding,
+              CGPDFDictionaryGetArray(encoding, "Differences", &differences), let differences,
+              CGPDFArrayGetCount(differences) <= 512 else { return nil }
+        var indexes: [UInt8: Int] = [:], named: [UInt8: String] = [:], names = 0, key = subtype + "|" + (name(dict, "BaseFont") ?? "") + "|"
+        var next: Int?
+        for position in 0..<CGPDFArrayGetCount(differences) {
+            var code: CGPDFInteger = 0, glyph: UnsafePointer<CChar>?
+            if CGPDFArrayGetInteger(differences, position, &code) {
+                guard (0...255).contains(code) else { return nil }
+                next = code
+                key += "\(code) "
+            } else if CGPDFArrayGetName(differences, position, &glyph), let glyph {
+                guard let code = next, code <= 255 else { return nil }
+                let text = String(cString: glyph)
+                names += 1
+                if let index = glyphIndex(text) { indexes[UInt8(code)] = index } else { named[UInt8(code)] = text }
+                key += "/" + text + " "
+                next = code + 1
+            } else { return nil }
+        }
+        guard !indexes.isEmpty, indexes.count * 2 >= names else { return nil }
+        return IndexGlyphFont(key: key, baseFont: name(dict, "BaseFont"), indexes: indexes, names: named)
     }
 
     private static func name(_ dict: CGPDFDictionaryRef, _ key: String) -> String? {
@@ -222,7 +282,9 @@ enum FontWeightReader {
         return CGPDFDictionaryGetNumber(dict, key, &value) && value.isFinite ? value : nil
     }
 
-    static func fontInfo(_ dict: CGPDFDictionaryRef) -> FontInfo {
+    /// `decodings` maps an index-glyph font's `key` to the characters its codes draw, where the
+    /// document's own text established them (`GlyphIndexDecoder`, #143).
+    static func fontInfo(_ dict: CGPDFDictionaryRef, decodings: [String: [UInt8: String]] = [:]) -> FontInfo {
         let subtype = name(dict, "Subtype") ?? ""
         var descriptorOwner = dict
         if subtype == "Type0" {
@@ -262,6 +324,10 @@ enum FontWeightReader {
             }
         } else if subtype == "Type0", name(dict, "Encoding") == "Identity-H", let data {
             info.wideUnicode = wideUnicodeMap(data)
+        }
+        if !hasMap, let index = indexGlyphFont(dict) {
+            info.indexGlyphs = index
+            if let decoded = decodings[index.key] { info.unicode = decoded }
         }
         return info
     }
@@ -369,9 +435,27 @@ enum FontWeightReader {
         var placed: Bool
         /// Drawn in an italic text font; nil where `weight` is.
         var italic: Bool? = false
+        /// The show's glyphs where its font names them by index (#143); nil in any other font.
+        var glyphs: [IndexGlyph]? = nil
+        /// Identifies the index-glyph font (`IndexGlyphFont.key`); nil in any other font.
+        var indexFont: String? = nil
 
         var styled: Bool { weight == .bold || italic == true }
     }
+
+    /// One code of an index-glyph show: its index where the font's `Differences` names it by one,
+    /// and whether a word-sized gap (`wordGap` em or more, from a TJ adjustment and character
+    /// spacing) or the start of the show precedes it.
+    struct IndexGlyph: Equatable {
+        var code: UInt8
+        var index: Int?
+        var wordStart: Bool
+        /// The character the document established for the code; nil where it established none.
+        var text: String?
+    }
+
+    /// TeX's interword glue shrinks to about 0.17 em; kerns and italic corrections stay far below.
+    static let wordGap: CGFloat = 0.15
 
     private final class State {
         var matrix = CGAffineTransform.identity
@@ -379,7 +463,10 @@ enum FontWeightReader {
         var font: Int?
         var size: CGFloat = 0
         var leading: CGFloat = 0
-        var saved: [(CGAffineTransform, Int?, CGFloat, CGFloat)] = []
+        var saved: [(CGAffineTransform, Int?, CGFloat, CGFloat, CGFloat)] = []
+        /// Character spacing (`Tc`) in unscaled text space units, for word gaps in index-glyph shows.
+        var characterSpacing: CGFloat = 0
+        var decodings: [String: [UInt8: String]] = [:]
         var inText = false
         var positioned = false
         var lastOrigin: CGPoint?
@@ -412,7 +499,8 @@ enum FontWeightReader {
         return values
     }
 
-    private static func show(_ s: State, _ strings: [CGPDFStringRef]) {
+    /// `strings` pairs each string of a show with the sum of the TJ adjustments before it.
+    private static func show(_ s: State, _ strings: [(CGPDFStringRef, CGFloat)]) {
         guard s.inText, s.shows.count < 50_000 else { s.invalid = true; return }
         let transform = s.line.concatenating(s.matrix)
         guard transform.tx.isFinite, transform.ty.isFinite, transform.a.isFinite, transform.d.isFinite else { return }
@@ -431,7 +519,25 @@ enum FontWeightReader {
         s.lastOrigin = origin
         let info = s.font.flatMap { s.fonts[$0] }
         var text: String? = info?.unicode == nil && info?.wideUnicode == nil ? nil : ""
-        for string in strings where text != nil {
+        var glyphs: [IndexGlyph]?
+        if let index = info?.indexGlyphs {
+            glyphs = []
+            // Character spacing moves every glyph; an adjustment moves the glyphs after it.
+            let spacing = s.size > 0 ? s.characterSpacing / s.size : 0
+            for (string, adjustment) in strings {
+                let count = CGPDFStringGetLength(string)
+                guard let bytes = CGPDFStringGetBytePtr(string), count <= 4096, (glyphs?.count ?? 0) + count <= 8192 else {
+                    glyphs = nil; break
+                }
+                for offset in 0..<count {
+                    let gap = spacing - (offset == 0 ? adjustment / 1000 : 0)
+                    let start = (glyphs?.isEmpty ?? true) || gap >= wordGap
+                    glyphs?.append(IndexGlyph(code: bytes[offset], index: index.indexes[bytes[offset]], wordStart: start,
+                                              text: info?.unicode?[bytes[offset]]))
+                }
+            }
+        }
+        for (string, _) in strings where text != nil {
             let count = CGPDFStringGetLength(string)
             guard let bytes = CGPDFStringGetBytePtr(string), count <= 4096 else { text = nil; break }
             if let wide = info?.wideUnicode {
@@ -450,7 +556,8 @@ enum FontWeightReader {
             }
         }
         s.shows.append(Show(origin: origin, size: s.size * transform.d, font: s.font ?? 0,
-                            weight: info?.weight, text: text, placed: placed, italic: info?.italic))
+                            weight: info?.weight, text: text, placed: placed, italic: info?.italic,
+                            glyphs: glyphs, indexFont: info?.indexGlyphs?.key))
     }
 
     private static func scan(_ content: CGPDFContentStreamRef, _ s: State) {
@@ -465,12 +572,12 @@ enum FontWeightReader {
         CGPDFOperatorTableSetCallback(table, "q") { scanner, info in
             let s = Self.state(info)
             guard s.accept(scanner), s.saved.count < 256 else { s.invalid = true; return }
-            s.saved.append((s.matrix, s.font, s.size, s.leading))
+            s.saved.append((s.matrix, s.font, s.size, s.leading, s.characterSpacing))
         }
         CGPDFOperatorTableSetCallback(table, "Q") { scanner, info in
             let s = Self.state(info)
             guard s.accept(scanner), let saved = s.saved.popLast() else { s.invalid = true; return }
-            (s.matrix, s.font, s.size, s.leading) = saved
+            (s.matrix, s.font, s.size, s.leading, s.characterSpacing) = saved
         }
         CGPDFOperatorTableSetCallback(table, "cm") { scanner, info in
             let s = Self.state(info)
@@ -489,7 +596,7 @@ enum FontWeightReader {
             let id = unsafeBitCast(dict, to: Int.self)
             if s.fonts[id] == nil {
                 guard s.fonts.count < 1024 else { s.invalid = true; return }
-                s.fonts[id] = Self.fontInfo(dict)
+                s.fonts[id] = Self.fontInfo(dict, decodings: s.decodings)
             }
             s.font = id
         }
@@ -532,32 +639,43 @@ enum FontWeightReader {
             let s = Self.state(info)
             var string: CGPDFStringRef?
             guard s.accept(scanner), CGPDFScannerPopString(scanner, &string), let string else { s.invalid = true; return }
-            Self.show(s, [string])
+            Self.show(s, [(string, 0)])
         }
         CGPDFOperatorTableSetCallback(table, "'") { scanner, info in
             let s = Self.state(info)
             var string: CGPDFStringRef?
             guard s.accept(scanner), CGPDFScannerPopString(scanner, &string), let string else { s.invalid = true; return }
             s.line = s.line.translatedBy(x: 0, y: -s.leading); s.positioned = true
-            Self.show(s, [string])
+            Self.show(s, [(string, 0)])
         }
         CGPDFOperatorTableSetCallback(table, "\"") { scanner, info in
             let s = Self.state(info)
             var string: CGPDFStringRef?
             guard s.accept(scanner), CGPDFScannerPopString(scanner, &string), let string,
-                  Self.numbers(scanner, 2) != nil else { s.invalid = true; return }
+                  let n = Self.numbers(scanner, 2) else { s.invalid = true; return }
+            s.characterSpacing = n[1]
             s.line = s.line.translatedBy(x: 0, y: -s.leading); s.positioned = true
-            Self.show(s, [string])
+            Self.show(s, [(string, 0)])
+        }
+        CGPDFOperatorTableSetCallback(table, "Tc") { scanner, info in
+            let s = Self.state(info)
+            guard s.accept(scanner), let n = Self.numbers(scanner, 1) else { s.invalid = true; return }
+            s.characterSpacing = n[0]
         }
         CGPDFOperatorTableSetCallback(table, "TJ") { scanner, info in
             let s = Self.state(info)
             var array: CGPDFArrayRef?
             guard s.accept(scanner), CGPDFScannerPopArray(scanner, &array), let array,
                   CGPDFArrayGetCount(array) <= 8192 else { s.invalid = true; return }
-            var strings: [CGPDFStringRef] = []
+            var strings: [(CGPDFStringRef, CGFloat)] = []
+            var adjustment: CGFloat = 0
             for index in 0..<CGPDFArrayGetCount(array) {
-                var string: CGPDFStringRef?
-                if CGPDFArrayGetString(array, index, &string), let string { strings.append(string) }
+                var string: CGPDFStringRef?, number: CGPDFReal = 0
+                if CGPDFArrayGetString(array, index, &string), let string {
+                    strings.append((string, adjustment)); adjustment = 0
+                } else if CGPDFArrayGetNumber(array, index, &number), number.isFinite {
+                    adjustment += number
+                }
             }
             Self.show(s, strings)
         }
@@ -586,31 +704,35 @@ enum FontWeightReader {
             guard CGPDFDictionaryGetDictionary(dict, "Resources", &resources), let resources else { return }
             let content = CGPDFContentStreamCreateWithStream(stream, resources, parent)
             defer { CGPDFContentStreamRelease(content) }
-            let saved = (s.matrix, s.font, s.size, s.leading, s.saved.count)
+            let saved = (s.matrix, s.font, s.size, s.leading, s.saved.count, s.characterSpacing)
             s.matrix = matrix.concatenating(s.matrix)
             s.formDepth += 1
             Self.scan(content, s)
             s.formDepth -= 1
             s.inText = false
             s.saved.removeLast(max(0, s.saved.count - saved.4))
-            (s.matrix, s.font, s.size, s.leading) = (saved.0, saved.1, saved.2, saved.3)
+            (s.matrix, s.font, s.size, s.leading, s.characterSpacing) = (saved.0, saved.1, saved.2, saved.3, saved.5)
         }
         return table
     }
 
     /// The page's text shows, or none when the content stream cannot be scanned or no show is
-    /// drawn in a bold or italic font (then no line can gain a style).
-    static func read(_ page: CGPDFPage) -> [Show] {
-        let shows = read(page, fonts: nil)
-        return shows.contains(where: \.styled) ? shows : []
+    /// drawn in a bold or italic font (then no line can gain a style) or in an index-glyph font
+    /// (then no line needs `repairIndexGlyphs`, #143). `decodings` are the characters the document
+    /// established for index-glyph fonts.
+    static func read(_ page: CGPDFPage, decodings: [String: [UInt8: String]] = [:]) -> [Show] {
+        let shows = read(page, fonts: nil, decodings: decodings)
+        return shows.contains(where: { $0.styled || $0.indexFont != nil }) ? shows : []
     }
 
     /// The page's shows and, when `fonts` is given, every font resource it selected (survey).
-    static func read(_ page: CGPDFPage, fonts: ((Int, FontInfo) -> Void)?) -> [Show] {
+    static func read(_ page: CGPDFPage, fonts: ((Int, FontInfo) -> Void)?,
+                     decodings: [String: [UInt8: String]] = [:]) -> [Show] {
         guard let table = makeTable() else { return [] }
         defer { CGPDFOperatorTableRelease(table) }
         let s = State()
         s.table = table
+        s.decodings = decodings
         let content = CGPDFContentStreamCreateWithPage(page)
         defer { CGPDFContentStreamRelease(content) }
         scan(content, s)
@@ -632,38 +754,16 @@ enum FontWeightReader {
     /// they do not decode or do not spell the line. A line without a styled show is unchanged.
     static func apply(_ shows: [Show], to attributed: NSAttributedString, bounds: CGRect,
                       allBounds: [CGRect]) -> NSAttributedString {
-        guard attributed.length > 0, !shows.isEmpty, shows.count <= 50_000, allBounds.count <= 10_000,
-              shows.count * max(1, allBounds.count) <= 4_000_000 else { return attributed }
-        let area = bounds.insetBy(dx: -0.75, dy: -0.75)
-        // A show whose origin lies in several lines' bounds belongs to the clearly tightest of
-        // them: a chapter opener's first line is as tall as its 70-point numeral and reaches over
-        // the title's second baseline (Fed page 66). Overlaps of lines of like height stay
-        // ambiguous, and a line that needed this choice must be confirmed by decoded text.
-        var matches: [Show] = [], chosen = false
-        for show in shows where area.contains(show.origin) {
-            let owners = allBounds.filter { $0.insetBy(dx: -0.75, dy: -0.75).contains(show.origin) }
-            guard owners.count > 1 else { matches.append(show); continue }
-            let others = owners.filter { $0 != bounds }
-            guard others.count == owners.count - 1 else { return attributed }
-            if others.allSatisfy({ bounds.height < $0.height * 0.75 }) {
-                matches.append(show); chosen = true
-            } else if others.contains(where: { $0.height < bounds.height * 0.75 }) {
-                chosen = true
-            } else { return attributed }
-        }
-        guard !matches.isEmpty,
+        guard attributed.length > 0, let (matches, chosen) = lineShows(shows, bounds: bounds, allBounds: allBounds),
               matches.contains(where: \.styled),
-              !chosen || matches.allSatisfy({ $0.text != nil }),
-              let left = matches.map(\.origin.x).min(),
-              left - bounds.minX <= max(2, (matches.map(\.size).max() ?? 0) * 0.5) else { return attributed }
+              !chosen || matches.allSatisfy({ $0.text != nil }) else { return attributed }
         let decoded = matches.allSatisfy { $0.text != nil }
         // Per style, each letter's flag in reading order, or nil to mark the whole line.
         var styles: [(key: NSAttributedString.Key, flags: [Bool]?)] = []
         if decoded {
-            // Reading order: by origin, a show drawn straight after another keeping stream order.
             var sequence: [(Unicode.Scalar, Show)] = []
-            for show in matches.enumerated().sorted(by: { ($0.element.origin.x, $0.offset) < ($1.element.origin.x, $1.offset) }) {
-                sequence += letters(show.element.text ?? "").map { ($0, show.element) }
+            for show in readingOrder(matches) {
+                sequence += letters(show.text ?? "").map { ($0, show) }
             }
             guard sequence.map(\.0) == letters(attributed.string),
                   sequence.allSatisfy({ $0.1.weight != nil }) else { return attributed }
@@ -689,6 +789,200 @@ enum FontWeightReader {
             for range in ranges { result.addAttribute(key, value: true, range: range) }
         }
         return result
+    }
+
+    /// The shows drawn on a line (with `bounds`), or nil when none is or their ownership is
+    /// ambiguous; `chosen` when a show also lies in a taller line's bounds. The shows must start
+    /// within half an em of the line's left edge, so no show begun on another line draws its first
+    /// glyphs.
+    private static func lineShows(_ shows: [Show], bounds: CGRect, allBounds: [CGRect],
+                                  leftEdge: Bool = true) -> (shows: [Show], chosen: Bool)? {
+        guard !shows.isEmpty, shows.count <= 50_000, allBounds.count <= 10_000,
+              shows.count * max(1, allBounds.count) <= 4_000_000 else { return nil }
+        let area = bounds.insetBy(dx: -0.75, dy: -0.75)
+        // A show whose origin lies in several lines' bounds belongs to the clearly tightest of
+        // them: a chapter opener's first line is as tall as its 70-point numeral and reaches over
+        // the title's second baseline (Fed page 66). Overlaps of lines of like height stay
+        // ambiguous, and a line that needed this choice must be confirmed by decoded text.
+        var matches: [Show] = [], chosen = false
+        for show in shows where area.contains(show.origin) {
+            let owners = allBounds.filter { $0.insetBy(dx: -0.75, dy: -0.75).contains(show.origin) }
+            guard owners.count > 1 else { matches.append(show); continue }
+            let others = owners.filter { $0 != bounds }
+            guard others.count == owners.count - 1 else { return nil }
+            if others.allSatisfy({ bounds.height < $0.height * 0.75 }) {
+                matches.append(show); chosen = true
+            } else if others.contains(where: { $0.height < bounds.height * 0.75 }) {
+                chosen = true
+            } else { return nil }
+        }
+        guard let left = matches.map(\.origin.x).min(),
+              !leftEdge || left - bounds.minX <= max(2, (matches.map(\.size).max() ?? 0) * 0.5) else { return nil }
+        return (matches, chosen)
+    }
+
+    /// By origin; a show drawn straight after another keeps stream order.
+    private static func readingOrder(_ shows: [Show]) -> [Show] {
+        shows.enumerated().sorted(by: { ($0.element.origin.x, $0.offset) < ($1.element.origin.x, $1.offset) }).map(\.element)
+    }
+
+    /// Whether `repairIndexGlyphs` found index-glyph shows on a line, and rewrote it.
+    enum IndexGlyphRepair: Equatable {
+        /// No show on the line is drawn in an index-glyph font.
+        case none
+        /// Every show explains the line and every index glyph has an established character.
+        case repaired
+        /// An index-glyph show lies on the line but the line could not be rewritten.
+        case unrepaired
+    }
+
+    /// One glyph as the letters PDFKit reports for it, the text that replaces them (nil: keep
+    /// PDFKit's, for a glyph of another font) and whether a word gap precedes it.
+    struct IndexGlyphSlot: Equatable {
+        var view: [Unicode.Scalar]
+        var text: String?
+        var wordStart: Bool
+    }
+
+    /// The glyphs of a show that PDFKit continues on a following line of the same row (Census page
+    /// 12's table rows: one show sets `rnkswp05` and its figures, and PDFKit reads the label and
+    /// the figures as two lines).
+    struct IndexGlyphCarry: Equatable {
+        var slots: [IndexGlyphSlot]
+        var row: CGRect
+    }
+
+    /// Replaces the characters PDFKit reports for index-named glyphs (#143: U+n for `/G<n>`, or
+    /// nothing) with the characters the document established for their codes. The line's shows
+    /// (`lineShows`) must all decode and their PDFKit characters, in reading order, must spell
+    /// the line apart from whitespace. A glyph PDFKit reports as nothing (TeX's ligatures, `/G31`
+    /// for `fi`) joins the glyph before it in its word, or the one after it where it starts a word;
+    /// one standing between two word gaps cannot be placed. Characters of other fonts, whitespace
+    /// and attributes are kept.
+    ///
+    /// Glyphs left after the line's last character are returned in `carry`. The next line spells
+    /// them first when it continues the row to the right (Census page 17 reads a reference's
+    /// number `[6]` as a line of its own), followed by the glyphs of its own shows; otherwise
+    /// `abandoned` reports that an earlier line's glyphs went unread.
+    static func repairIndexGlyphs(_ shows: [Show], in attributed: NSAttributedString, bounds: CGRect,
+                                  allBounds: [CGRect], carry: inout IndexGlyphCarry?)
+        -> (text: NSAttributedString, outcome: IndexGlyphRepair, abandoned: Bool) {
+        let area = bounds.insetBy(dx: -0.75, dy: -0.75)
+        var leading: [IndexGlyphSlot] = [], row = bounds, abandoned = false
+        if let pending = carry {
+            carry = nil
+            if attributed.length > 0, bounds.minX >= pending.row.maxX - 1,
+               bounds.midY > pending.row.minY, bounds.midY < pending.row.maxY {
+                leading = pending.slots
+                row = pending.row.union(bounds)
+            } else {
+                abandoned = true
+            }
+        }
+        let owned = shows.contains { area.contains($0.origin) }
+        guard !leading.isEmpty || shows.contains(where: { $0.indexFont != nil && area.contains($0.origin) }) else {
+            return (attributed, .none, abandoned)
+        }
+        var slots = leading
+        if owned {
+            // Carried glyphs already start the line, so the line's own shows may start inside it.
+            guard let (matches, _) = lineShows(shows, bounds: bounds, allBounds: allBounds, leftEdge: leading.isEmpty),
+                  let own = indexGlyphSlots(readingOrder(matches)) else { return (attributed, .unrepaired, abandoned) }
+            slots += own
+        }
+        guard attributed.length > 0, let spelled = spell(attributed, with: slots) else { return (attributed, .unrepaired, abandoned) }
+        if spelled.consumed < slots.count {
+            carry = IndexGlyphCarry(slots: Array(slots[spelled.consumed...]), row: row)
+        }
+        return (spelled.text, .repaired, abandoned)
+    }
+
+    /// Index-glyph shows whose origin lies in no line: PDFKit reads their glyphs on lines that no
+    /// show explains, so those lines cannot be repaired.
+    static func unplacedIndexShows(_ shows: [Show], allBounds: [CGRect]) -> Int {
+        guard shows.count * max(1, allBounds.count) <= 4_000_000 else { return shows.filter { $0.indexFont != nil }.count }
+        return shows.filter { show in
+            show.indexFont != nil && !allBounds.contains { $0.insetBy(dx: -0.75, dy: -0.75).contains(show.origin) }
+        }.count
+    }
+
+    /// The glyphs of shows in reading order, or nil when a glyph has no established character or a
+    /// glyph PDFKit reports as nothing has no neighbour in its word to join.
+    static func indexGlyphSlots(_ shows: [Show]) -> [IndexGlyphSlot]? {
+        var units: [IndexGlyphSlot] = []
+        for show in shows {
+            if show.indexFont != nil {
+                guard let glyphs = show.glyphs, show.text != nil else { return nil }
+                var gap = false
+                for glyph in glyphs {
+                    guard let text = glyph.text else { return nil }
+                    // A glyph with a standard name reads as its character; a space glyph separates words.
+                    guard let index = glyph.index else {
+                        if text.allSatisfy(\.isWhitespace) { gap = true; continue }
+                        units.append(IndexGlyphSlot(view: letters(text), text: text, wordStart: glyph.wordStart || gap))
+                        gap = false
+                        continue
+                    }
+                    units.append(IndexGlyphSlot(view: letters(pdfKitText(index: index)), text: text, wordStart: glyph.wordStart || gap))
+                    gap = false
+                }
+            } else {
+                guard let text = show.text else { return nil }
+                units += letters(text).map { IndexGlyphSlot(view: [$0], text: nil, wordStart: false) }
+            }
+        }
+        var slots: [IndexGlyphSlot] = [], pending = ""
+        for (position, unit) in units.enumerated() {
+            if unit.view.isEmpty {
+                guard let text = unit.text else { return nil }
+                if pending.isEmpty, !unit.wordStart, let last = slots.last, let before = last.text {
+                    slots[slots.count - 1].text = before + text
+                } else {
+                    guard position + 1 < units.count, !units[position + 1].wordStart, units[position + 1].text != nil else { return nil }
+                    pending += text
+                }
+                continue
+            }
+            var slot = unit
+            if !pending.isEmpty {
+                slot.text = pending + (slot.text ?? "")
+                pending = ""
+            }
+            slots.append(slot)
+        }
+        return pending.isEmpty ? slots : nil
+    }
+
+    /// PDFKit's characters of a line rewritten from `slots` consumed in order: each character's
+    /// letters must be exactly the letters of the slots it consumes. Nil when they are not, or
+    /// when the line holds more characters than the slots.
+    private static func spell(_ attributed: NSAttributedString, with slots: [IndexGlyphSlot]) -> (text: NSAttributedString, consumed: Int)? {
+        let string = attributed.string as NSString
+        var replacements: [(range: NSRange, text: String)] = []
+        var next = 0, position = 0
+        while position < string.length {
+            let range = string.rangeOfComposedCharacterSequence(at: position)
+            position = range.location + range.length
+            let expected = letters(string.substring(with: range))
+            guard !expected.isEmpty else { continue }
+            var spelled: [Unicode.Scalar] = [], texts: [String?] = []
+            while spelled.count < expected.count, next < slots.count {
+                spelled += slots[next].view
+                texts.append(slots[next].text)
+                next += 1
+            }
+            guard spelled == expected else { return nil }
+            if texts.allSatisfy({ $0 == nil }) { continue }
+            guard texts.allSatisfy({ $0 != nil }) else { return nil }
+            replacements.append((range, texts.compactMap { $0 }.joined()))
+        }
+        guard next > 0 else { return nil }
+        let result = NSMutableAttributedString(attributedString: attributed)
+        for (range, text) in replacements.reversed() where text != string.substring(with: range) {
+            result.replaceCharacters(in: range, with: NSAttributedString(string: text,
+                attributes: attributed.attributes(at: range.location, effectiveRange: nil)))
+        }
+        return (result, next)
     }
 
     /// A line's visible letters: whitespace, attachments and soft hyphens removed, NFKC.

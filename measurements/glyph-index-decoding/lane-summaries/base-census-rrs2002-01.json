@@ -1,0 +1,78 @@
+{
+  "passed": false,
+  "converterSHA256": "5313437dd466f509e2c6e609a7c62ec8c8762fd146da0a82d2fc227ea830b4b4",
+  "results": [
+    {
+      "case": "census-rrs2002-01",
+      "passed": false,
+      "reviewPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "contentChecks": 71,
+      "errors": [
+        "Page 3: missing heading '2 Data Files'",
+        "Page 3: missing or reordered text 'Two data \ufb01les were used.'",
+        "Page 3: missing or reordered text '12. Aged exemption \ufb02ag'",
+        "Page 3: missing or reordered text '13. Schedule D \ufb02ag'",
+        "Page 3: 1 images, at most 0 expected",
+        "Page 3: unexpected quality warning damagedTextEncoding, ocrUsed",
+        "Page 17: missing or reordered text 're-identi\ufb01cation risk is only slightly worse'",
+        "Page 17: missing or reordered text 'additional scoring metrics and more applications to di\ufb00erent data situations'",
+        "Page 17: missing or reordered text '[1] Dempster, A. P., Laird, N. M. and Rubin, D. B.: Maximum Likelihood from'",
+        "Page 17: missing or reordered text 'Journal of the Royal Statistical Society, B, 39 (1977) 1\u201338.'",
+        "Page 17: missing or reordered text 'Fellegi, I. P., and Sunter, A. B.: A Theory for Record Linkage, Journal of the American Statistical Association, 64, (1969) 1183\u20131210.'",
+        "Page 17: missing or reordered text 'Journal of O\ufb03cial Statistics, 9, (1993) 383\u2013406.'",
+        "Page 17: 1 images, at most 0 expected",
+        "Page 17: unexpected quality warning damagedTextEncoding, ocrUsed"
+      ],
+      "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+    }
+  ],
+  "notRun": [
+    "faa-phak-8083-25c",
+    "wallace-algebra-2010",
+    "gpo-911-2004",
+    "fed-explained-2021",
+    "dga-2025-2030",
+    "gpo-our-flag-2003",
+    "cdc-zombie-pandemic-2011",
+    "cia-blue-book-14-1955",
+    "usgs-mcs2025-copper",
+    "scotus-loper-bright-2024",
+    "uscis-m618-arabic-2015",
+    "irs-p596-zhs-2025",
+    "nbs-jres-geltman-1977",
+    "arxiv-replay-clocks-2023"
+  ],
+  "knownUnsupportedFullConversions": [
+    {
+      "id": "gpo-warren-1964",
+      "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+      "issue": 5
+    },
+    {
+      "id": "noaa-nca5-2023",
+      "reason": "Known default image-output ceiling failure. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
+      "issue": 5
+    }
+  ]
+}

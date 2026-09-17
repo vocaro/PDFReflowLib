@@ -90,6 +90,10 @@ the unreadable native text and recommends a source-page reference, which `refere
 controls like any other supplementary image. Only English (`en`, `en-*`) is judged; other
 declared languages, short pages, composite fonts and incorrect-but-present `ToUnicode` maps
 are outside this signal. See the [damaged-encoding measurements](../measurements/damaged-text-encoding/record.md).
+Before judging, the converter decodes an index-named font whose words across the document read as
+English at exactly one constant offset (the Census report's EC text fonts, #143); pages whose
+index-glyph lines are all repaired and that hold no numeric table rows reflow natively under every
+policy, and the rest are judged as above. See the [index-glyph measurements](../measurements/glyph-index-decoding/record.md).
 
 The developer client exposes these policies as `--ocr automatic|image-backed|always|never`.
 `--no-ocr` remains an alias for `--ocr never`; when repeated, the last OCR option takes effect.

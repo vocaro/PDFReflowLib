@@ -1,0 +1,158 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "gpo-911-2004",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "5313437dd466f509e2c6e609a7c62ec8c8762fd146da0a82d2fc227ea830b4b4",
+  "candidateConverterSHA256": "a156267655f9922d38dc389a7d68337195b7f397d7ecbb6974d1b5c2c675c9e1",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "3dc11f836bf09bc9d8dab63b6c1ccc7a3f14f8b3635f0db1c2353ee24dd6af6a"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "3dc11f836bf09bc9d8dab63b6c1ccc7a3f14f8b3635f0db1c2353ee24dd6af6a"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    42,
+    45,
+    63,
+    74,
+    75,
+    90,
+    194,
+    202,
+    301,
+    309,
+    380,
+    478,
+    485,
+    489,
+    490,
+    560,
+    580
+  ],
+  "changedPageFields": {
+    "42": [
+      "noterefs"
+    ],
+    "45": [
+      "markup",
+      "noterefs",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "63": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "74": [
+      "noterefs"
+    ],
+    "75": [
+      "noterefs"
+    ],
+    "90": [
+      "noterefs"
+    ],
+    "194": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "202": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "301": [
+      "noterefs"
+    ],
+    "309": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "380": [
+      "noterefs"
+    ],
+    "478": [
+      "anchors",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "485": [
+      "anchors",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "489": [
+      "anchors"
+    ],
+    "490": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "560": [
+      "anchors",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "580": [
+      "anchors",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 0,
+    "fields": {},
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

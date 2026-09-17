@@ -1,0 +1,73 @@
+# rrs2002-01.pdf: 20 pages
+## index-glyph fonts: 14 on 19 pages with unmapped-font evidence; decoded 3
+FCHKGB+dcr10084	glyphs 31679	distinct words 1996	decoded true
+	offset +3 words 5158 long 3232 capitalized 530 inner 0.000 stop 0.456 rare 0.023 lower 0.972 PASSES
+	offset +35 words 5037 long 3162 capitalized 0 inner 0.000 stop 0.443 rare 0.023 lower 0.000 
+	offset +16 words 5669 long 1640 capitalized 1077 inner 0.520 stop 0.050 rare 0.569 lower 0.555 
+FCHMDC+dcti10084	glyphs 854	distinct words 54	decoded true
+	offset +3 words 125 long 89 capitalized 82 inner 0.000 stop 0.264 rare 0.040 lower 0.881 PASSES
+	offset +35 words 122 long 88 capitalized 0 inner 0.000 stop 0.238 rare 0.032 lower 0.000 
+	offset +8 words 140 long 59 capitalized 43 inner 0.000 stop 0.107 rare 0.438 lower 0.869 
+FCHKCL+dcbx100120	glyphs 520	distinct words 72	decoded true
+	offset +3 words 66 long 59 capitalized 55 inner 0.000 stop 0.242 rare 0.027 lower 0.874 PASSES
+	offset +35 words 65 long 52 capitalized 0 inner 0.000 stop 0.062 rare 0.031 lower 0.000 
+	offset -12 words 50 long 5 capitalized 13 inner 0.000 stop 0.060 rare 0.586 lower 0.767 
+FCHMEI+cmmi10084	glyphs 497	distinct words 58	decoded false
+	offset +7 words 41 long 0 capitalized 1 inner 0.000 stop 0.805 rare 0.146 lower 0.432 
+	offset -6 words 52 long 7 capitalized 3 inner 0.154 stop 0.635 rare 0.347 lower 0.453 
+	offset -1 words 46 long 7 capitalized 3 inner 0.043 stop 0.065 rare 0.879 lower 0.509 
+FCHMFE+cmr10084	glyphs 390	distinct words 26	decoded false
+	offset -45 words 10 long 0 capitalized 2 inner 0.700 stop 0.100 rare 0.000 lower 0.638 
+	offset -60 words 17 long 0 capitalized 0 inner 0.000 stop 0.059 rare 0.227 lower 0.988 
+	offset -28 words 17 long 0 capitalized 0 inner 0.000 stop 0.059 rare 0.227 lower 0.079 
+(Type3)	glyphs 196	distinct words 19	decoded false
+	offset -5 words 41 long 0 capitalized 0 inner 0.000 stop 0.415 rare 0.196 lower 0.904 
+	offset +27 words 41 long 0 capitalized 0 inner 0.000 stop 0.415 rare 0.196 lower 0.000 
+	offset -4 words 41 long 0 capitalized 0 inner 0.000 stop 0.122 rare 0.357 lower 0.904 
+FCHNIE+cmex10084	glyphs 122	distinct words 25	decoded false
+	offset -93 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 1.000 
+	offset -92 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 1.000 
+	offset -91 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 1.000 
+FCHMGK+cmsy10084	glyphs 96	distinct words 10	decoded false
+	offset -67 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 0.170 
+	offset -66 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 0.170 
+	offset -65 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 0.200 
+(Type3)	glyphs 72	distinct words 6	decoded false
+	offset -69 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 1.000 
+	offset -68 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 1.000 
+	offset -67 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 1.000 
+FCHKIB+dctt10075	glyphs 63	distinct words 1	decoded false
+	offset -10 words 7 long 2 capitalized 1 inner 0.000 stop 0.143 rare 0.611 lower 0.969 
+	offset +22 words 9 long 3 capitalized 0 inner 0.444 stop 0.111 rare 0.720 lower 0.262 
+	offset -9 words 7 long 5 capitalized 1 inner 0.000 stop 0.000 rare 0.739 lower 0.971 
+(Type3)	glyphs 16	distinct words 2	decoded false
+	offset -70 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 1.000 
+	offset -69 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 1.000 
+	offset -68 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 1.000 
+(Type3)	glyphs 7	distinct words 3	decoded false
+	offset -71 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 0.500 
+	offset -70 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 0.500 
+	offset -69 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 0.571 
+(Type3)	glyphs 1	distinct words 1	decoded false
+	offset -59 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 1.000 
+	offset -58 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 1.000 
+	offset -57 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 1.000 
+FCHKFF+cmmib10084	glyphs 1	distinct words 1	decoded false
+	offset -56 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 1.000 
+	offset -55 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 1.000 
+	offset -54 words 0 long 0 capitalized 0 inner 0.000 stop 0.000 rare 1.000 lower 1.000 
+## letter-shifted lines: 240 of 450 lines with four or more words
+	page 2 shift 3: Glvforvxuh ulvn dvvhvvphqw lq shuwxuedwlyh
+	page 2 shift 3: Devwudfw1 Wklv sdshu ghvfulehv phwkrgv iru gdwd shuwxuedwlrq wkdw lq0
+	page 2 shift 3: rgv ri uh0lghqwlfdwlrq xvlqj suredelolvwlf uhfrug olqndjh1 Wkh hpslulfdo
+	page 2 shift 3: frpsdulvrqv xvh yduldqwv ri wkh iudphzrun iru phdvxulqj lqirupdwlrq
+	page 2 shift 3: Nh|zrugv= dgglwlyh qrlvh/ pl{wxuhv/ udqn vzdsslqj/ HP Dojrulwkp/ uhfrug
+	page 2 shift 3: Qdwlrqdo Vwdwlvwlfdo Lqvwlwxwhv +QVLv, kdyh wkh qhhg wr surylgh sxeolf0xvh pl0
+	page 2 shift 3: lqirupdwlrq vxfk dv wkh qdphv dvvrfldwhg zlwk vrph ri wkh uhfrugv pd| ehfrph
+	page 2 shift 3: ^ 46`/ dovr ^ 8`,/ dgglwlyh qrlvh +^ ;`,/ pl{wxuhv ri dgglwlyh qrlvh +^ 47`,1 Wkh uh0
+	page 2 shift 3: ryhudoo iudphzrun lv edvhg rq yduldqwv ri phwkrgv wkdw vfruh erwk lqirupdwlrq
+	page 2 shift 3: Wkh rxwolqh ri wklv sdshu lv dv iroorzv1 Vhfwlrq 5 fryhuv wkh gdwd ohv wkdw
+	page 2 shift 3: Wklv sdshu uhsruwv wkh uhvxowv ri uhvhdufk dqg dqdo|vlv xqghuwdnhq e| Fhqvxv Exuhdx
+	page 2 shift 3: vwd1 Lw kdv xqghujrqh d Fhqvxv Exuhdx uhylhz pruh olplwhg lq vfrsh wkdq wkdw jlyhq
+	pages: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+## TJ boundaries: 23682; with character spacing of at least 0.1 em: 266 on 15 pages [2, 3, 4, 6, 7, 8, 9, 10, 12, 13, 16, 17, 18, 19, 20]; in compensated arrays: 264 on pages [2, 3, 4, 6, 7, 8, 9, 10, 12, 13, 16, 17, 18, 19, 20]

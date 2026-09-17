@@ -598,7 +598,7 @@ private func nineElevenRepairs(_ page: NineElevenSource.Page, operators: String?
     // each reviewed on 250-dpi renders (kerned-sentence-spaces-and-fusions record).
     let expected: [Int: [String]] = [
         19: ["work. Some", "Towers, the", "World Trade", "New York", "City. Others", "Arlington, Vir-", "Pentagon. Across", "journey. Among", "Boston: American", "Boston, Atta", "later, Atta", "Airport. They"],
-        45: ["9:23: “Okay", ". These", "New York.", "York. The", "area. The", "liaison, NEADS", "NEADS: “We’re", "77.” The", "Washington: “Latest", "report. Aircraft", "fighters: “Okay,", "“Okay, we’re", "instructed, but", "ocean. “I", "said. “Damn", "...Okay. Push", "order, this", "location. Second,", "Second, a", "“generic” flight", "miles. Third,", "Washington. The", "9:38. The", "9:37:46. The", "aircraft. It", "all. After", "second World", "World Trade", "crash, Boston"],
+        45: ["9:23: “Okay", ". These", "New York.", "York. The", "area. The", "liaison, NEADS", "NEADS: “We’re", "77.” The", "Washington: “Latest", "report. Aircraft", "House.... Six,", "Six, south-", "fighters: “Okay,", "“Okay, we’re", "instructed, but", "ocean. “I", "said. “Damn", "... Okay.", "Okay. Push", "order, this", "location. Second,", "Second, a", "“generic” flight", "miles. Third,", "Washington. The", "9:38. The", "9:37:46. The", "aircraft. It", "all. After", "second World", "World Trade", "crash, Boston"],
         48: ["area. Within", "seconds, the", "aircraft, and", "D.C. The", "dispute. The", "radar, the", "Headquarters: Yes.", "Uh, who,", "who, it", "ground. That’s", "10:07. Unaware"],
         57: ["to Vice", "Cheney, Dr.", "Dr. Rice,", "Rice, New", "New York", "airport. The", "9:30, the", "missing. Staff", "the White", "determine, no", "Pentagon. The", "nation. The", "9:45. During", "the Vice", "President: “Sounds", "Pentagon. We’re", "time, Card,", "Card, the", "agent, the", "aide, and", "elsewhere. The", "The Vice", "to Washington.", "Washington. Air", "destination. The", "us.” This", "time. As", "minute, before", "back. This"],
         234: ["mosques. He", "research, which", "instructed, they", "Airport, we", "went.8 They", "community, specifically", "evening, Abdullah", "private. The", "them. This", "Angeles. This", "community, Thumairy"],
@@ -619,14 +619,16 @@ private func nineElevenRepairs(_ page: NineElevenSource.Page, operators: String?
     #expect(texts[48]?.contains("Commission staff’s analysis") == true)
     #expect(texts[48]?.contains("subject of some dispute. The 10:03:11") == true)
     // #128's character rule leaves every closed abbreviation on these pages closed (`U.S.`, `D.C.`,
-    // `S.D.`, `A.M.`, `O.K.`) and an ellipsis before a capital unrepaired (`House....Six`,
-    // `...Okay`): no other punctuation-capital run remains.
+    // `S.D.`, `A.M.`, `O.K.`): no other punctuation-capital run remains. The ellipses before a capital
+    // it left closed (`House....Six`, `...Okay`) sit in letter-spaced lines whose adjustments offset
+    // Tc 0.13–0.18 em (`(...S)131.1(i)`); since #143 their in-string gaps open `House.... Six, south-`
+    // and `... Okay.` as the 200-dpi render sets them.
     let closed = try NSRegularExpression(pattern: #"\S*[.,;:?!][”’)\]]*[A-Z“‘]\S*"#)
     let remaining = texts.keys.sorted().flatMap { page -> [String] in
         let text = texts[page]!, range = NSRange(text.startIndex..., in: text)
         return closed.matches(in: text, range: range).map { "\(page): " + (text as NSString).substring(with: $0.range) }
     }
-    #expect(remaining == ["19: A.M.", "45: House....Six,south-", "45: ...Okay.", "45: D.C.", "48: D.C.", "48: O.K.", "489: U.S.", "489: (S.D.",
+    #expect(remaining == ["19: A.M.", "45: D.C.", "48: D.C.", "48: O.K.", "489: U.S.", "489: (S.D.",
                           "489: N.Y.),", "489: U.S.", "489: U.S.", "489: U.S.", "489: U.S.", "489: U.S.", "489: (S.D.", "489: N.Y.),"])
     #expect(texts[45]?.contains("crank it up. . . . Run them") == true)
     #expect(texts[489]?.contains("(S.D. N.Y.), Oct. 20, 2000") == true)

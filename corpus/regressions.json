@@ -5055,7 +5055,7 @@
     {
       "id": "census-rrs2002-01",
       "sourceSHA256": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
-      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body text layer has no usable Unicode mapping (#38). Pages 2-20 must report damagedTextEncoding and keep a source-page image; page 3's reviewed phrases (section heading, first sentence, subsection title and numbered fields 1 and 13 of the 16 IRS fields) come from the source page and must arrive through OCR under the default policy, with the shifted-letter forms absent. Does not bless OCR accuracy elsewhere on those pages.",
+      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body fonts name their glyphs by index with no Unicode mapping (#38). Since #143 the EC text fonts (dcr, dcbx, dcti) are decoded through the offset the document's own words establish: pages 3 and 17, drawn in those fonts alone and holding no numeric table, reflow from native text without damagedTextEncoding, OCR or a source-page image, and their reviewed phrases (page 3's heading, first sentence, subsection title and numbered fields 1, 12 and 13; page 17's body and references with ligatures, dashes and an italic journal title) were read from 200-dpi renders of the source pages. Pages 12 and 15 are tables no table path reconstructs; they keep damagedTextEncoding and their table images, and must never reflow the table rows run together as prose (Table 2's `0.9620 rnkswp10`, Table 7's `13.85 add01_sw`). Pages 2, 4-11, 13, 14, 16 and 18-20 draw undecodable math or typewriter fonts or lines PDFKit breaks, and must still report damagedTextEncoding and keep a source-page image. Does not bless OCR accuracy on those pages.",
       "pages": [
         {
           "page": 1,
@@ -5085,22 +5085,29 @@
         },
         {
           "page": 3,
-          "minimumImages": 1,
-          "warningCodesAnyOf": [
-            "damagedTextEncoding"
+          "headings": [
+            "2 Data Files"
           ],
           "orderedText": [
-            "Data Files",
-            "Two data files were used.",
-            "Domingo-Ferrer and Mateo-Sanz",
+            "2 Data Files",
+            "Two data ﬁles were used.",
+            "2.1 Domingo-Ferrer and Mateo-Sanz",
+            "The Data Extraction System (http://www.census.gov/DES)",
             "1. Total income",
-            "13. Schedule D flag"
+            "12. Aged exemption ﬂag",
+            "13. Schedule D ﬂag"
           ],
           "absentText": [
             "5GdwdIlohv",
             "Wzr gdwd",
             "Vfkhgxoh G"
-          ]
+          ],
+          "absentWarningCodes": [
+            "damagedTextEncoding",
+            "ocrUsed",
+            "unverifiedTextLayer"
+          ],
+          "maximumImages": 0
         },
         {
           "page": 4,
@@ -5160,9 +5167,15 @@
         },
         {
           "page": 12,
-          "minimumImages": 1,
+          "minimumImages": 3,
           "warningCodesAnyOf": [
             "damagedTextEncoding"
+          ],
+          "absentText": [
+            "0.9620 rnkswp10",
+            "0.7287 rnkswp15",
+            "Wdeoh 51",
+            "uqnvzs38"
           ]
         },
         {
@@ -5181,9 +5194,13 @@
         },
         {
           "page": 15,
-          "minimumImages": 1,
+          "minimumImages": 3,
           "warningCodesAnyOf": [
             "damagedTextEncoding"
+          ],
+          "absentText": [
+            "88.32 rnkswp10",
+            "13.85 add01_sw"
           ]
         },
         {
@@ -5195,10 +5212,23 @@
         },
         {
           "page": 17,
-          "minimumImages": 1,
-          "warningCodesAnyOf": [
-            "damagedTextEncoding"
-          ]
+          "orderedText": [
+            "re-identiﬁcation risk is only slightly worse",
+            "additional scoring metrics and more applications to diﬀerent data situations",
+            "[1] Dempster, A. P., Laird, N. M. and Rubin, D. B.: Maximum Likelihood from",
+            "Journal of the Royal Statistical Society, B, 39 (1977) 1–38.",
+            "Fellegi, I. P., and Sunter, A. B.: A Theory for Record Linkage, Journal of the American Statistical Association, 64, (1969) 1183–1210.",
+            "Journal of Oﬃcial Statistics, 9, (1993) 383–406."
+          ],
+          "absentText": [
+            "Uhihuhqfhv",
+            "R!fldo"
+          ],
+          "absentWarningCodes": [
+            "damagedTextEncoding",
+            "ocrUsed"
+          ],
+          "maximumImages": 0
         },
         {
           "page": 18,

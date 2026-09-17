@@ -32,6 +32,25 @@ enum PDFReflowLibPipeline {
         return words(content.lines.filter { line in crops.contains { $0.intersects(line.rect) } }) * 10 <= words(content.lines)
     }
 
+    /// Whether lines form a numeric grid (#143): at least three rows, each holding at least two
+    /// decimal numbers (`0.8861`, `158.950`) that make up at least half its words. Census's table rows
+    /// (`rnkswp05 0.8861 0.9620`, `46.11 47.06 46.66 49.90 50.85 49.45`) qualify; its prose, numbered
+    /// fields (`12. Aged exemption ﬂag`) and references (`B, 39 (1977) 1–38.`) do not.
+    static func holdsNumericGrid(_ lines: [TextLine]) -> Bool {
+        let decimal = try! NSRegularExpression(pattern: #"^[-−+]?\d+\.\d+%?$"#)
+        var rows = 0
+        for line in lines {
+            let words = line.text.split(whereSeparator: \.isWhitespace)
+            let numbers = words.filter { word in
+                let text = String(word)
+                return decimal.firstMatch(in: text, range: NSRange(text.startIndex..., in: text)) != nil
+            }.count
+            if numbers >= 2, numbers * 2 >= words.count { rows += 1 }
+            if rows >= 3 { return true }
+        }
+        return false
+    }
+
     /// Progress covers extraction/reconstruction only, from zero to one.
     ///
     /// Extraction is one pass over every page that keeps only document-wide evidence:
@@ -50,6 +69,9 @@ enum PDFReflowLibPipeline {
         // Tagged-text association happens once per page; the index is released after extraction.
         var structure: StructureTreeReader.Index? = structureIndex
         let chapterCandidates = try ChapterBoundaryReader.read(source)
+        // Characters of fonts that name glyphs by index, established from the whole document's
+        // words before any page is read (#143).
+        let glyphDecodings = try GlyphIndexDecoder.read(source, language: options.language)
         var chapterStartPages: Set<Int> = []
         // Chapter evidence for note references: the spine's labelled chapters, or an outline
         // that numbers its chapters without the word. Each candidate must still match its page.
@@ -68,6 +90,7 @@ enum PDFReflowLibPipeline {
             throws -> (content: PageContent, attemptsOCR: Bool, damagedEncoding: Bool) {
             // The pool includes every PDFKit accessor, not only string extraction. Page
             // references and annotation arrays also carry autoreleased rendering resources.
+            let glyphReport = NativeTextReader.IndexGlyphReport()
             var (content, unmappedFont, pageSizedGraphic, graphics) = try autoreleasepool {
                 let page = try document.page(at: i)
                 guard let reference = page.pageRef else {
@@ -92,7 +115,8 @@ enum PDFReflowLibPipeline {
                 var content = PageContent(number: i + 1, bounds: bounds,
                     lines: try NativeTextReader.lines(on: page, limit: limit, includeStyle: native,
                         columnJoints: native ? GraphicsReader.columnJoints(graphics.paints.map(\.rect)) : [],
-                        borderlessTableInk: native ? graphics.paints.map(\.rect) : nil),
+                        borderlessTableInk: native ? graphics.paints.map(\.rect) : nil,
+                        glyphDecodings: glyphDecodings, report: glyphReport),
                     graphics: graphics.regions)
                 if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure,
                    let tags = structure.pages[i + 1], !tags.isEmpty,
@@ -136,7 +160,15 @@ enum PDFReflowLibPipeline {
                 let pageArea = bounds.width * bounds.height
                 let pageSized = graphics.regions.contains { $0.width * $0.height > pageArea * 0.75 }
                     && (requiresPageImage || !layoutComesApart(content, graphics: graphics))
-                return (content, !content.lines.isEmpty && !requiresPageImage && TextEncodingCheck.hasUnmappedFont(reference),
+                // The font evidence stands unless line repair read the page's index-glyph shows and
+                // repaired every line (#143): a show in an undecoded font, or a glyph without an
+                // established character, leaves its line unrepaired or its show unplaced, so such a
+                // page drew only established characters. A repaired page holding a numeric grid also
+                // keeps it: no table path reconstructs Census's rule-headed tables (pages 12 and 15),
+                // which reflow as run-together cells, while recognition keeps them as table images.
+                let repaired = glyphReport.repairedLines > 0 && glyphReport.unrepairedLines == 0
+                    && !holdsNumericGrid(content.lines)
+                return (content, !content.lines.isEmpty && !requiresPageImage && !repaired && TextEncodingCheck.hasUnmappedFont(reference),
                         pageSized, graphics)
             }
             // A page that paints nothing and renders as white paper keeps only its boundary: no
@@ -156,9 +188,12 @@ enum PDFReflowLibPipeline {
             let raw = content.lines.map(\.text).joined()
             let damaged = raw.unicodeScalars.filter { $0.value == 0xFFFD || $0.value == 0xFFFC }.count
             // Index-style glyph names without ToUnicode make PDFKit report indexes as characters.
-            // Flag only when the extracted words also fail the declared language's statistics.
+            // Flag only when the extracted words also fail the declared language's statistics, judged
+            // on PDFKit's own text where some lines were repaired (#143).
+            let judgedText = glyphReport.repairedLines > 0
+                ? glyphReport.nativeText.joined(separator: "\n") : content.lines.map(\.text).joined(separator: "\n")
             let damagedEncoding = unmappedFont
-                && TextEncodingCheck.isImplausible(content.lines.map(\.text).joined(separator: "\n"), language: options.language)
+                && TextEncodingCheck.isImplausible(judgedText, language: options.language)
             // Share the same conservative page-sized-graphic signal with the review warning.
             // It identifies a candidate for re-recognition, not an erroneous transcription.
             let imageBackedText = !content.lines.isEmpty && pageSizedGraphic

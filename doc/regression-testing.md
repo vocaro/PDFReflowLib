@@ -112,14 +112,14 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 1667 targeted checks on 390 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 1684 targeted checks on 390 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 506 ordered-text, 137 text, 219 paragraph,
-148 absent-text, 170 heading, 32 absent-heading, 57 list-item, 1 preformatted-lines, 17 script,
+the NBS and Replay Clocks academic papers). They comprise 514 ordered-text, 137 text, 219 paragraph,
+156 absent-text, 171 heading, 32 absent-heading, 57 list-item, 1 preformatted-lines, 17 script,
 11 footnote, 34 note-link, 43 paragraph-continuation, 1 list-item-continuation, 7 paragraph-separation,
-39 distinct-paragraph, 128 image-presence, 63 warning, 22 absent-warning, 17 source-region,
+39 distinct-paragraph, 128 image-presence, 61 warning, 24 absent-warning, 17 source-region,
 3 glyph-structure, 3 image-appearance and 9 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
 anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
 
@@ -1213,14 +1213,48 @@ the mapped control is never flagged, and in a two-page book only the damaged pag
 referenced. The bundled prose, scanned, columns, graphics, lists-code and rotated fixtures carry
 no evidence.
 
-The corpus contract requires `damagedTextEncoding` and an image on Census pages 2–20, the
-reviewed page-3 phrases through OCR with the shifted forms absent, and no damaged-encoding, OCR
-or unverified-layer warning on the cover page through the new `absentWarningCodes` expectation,
+The corpus contract required `damagedTextEncoding` and an image on Census pages 2–20 and the
+reviewed page-3 phrases through OCR (since #143, below, pages 3 and 17 reflow natively), and
+requires no damaged-encoding, OCR or unverified-layer warning on the cover page through the
+`absentWarningCodes` expectation,
 which the checker tests exercise with a same-page negative control. The
 [damaged-encoding evidence](../measurements/damaged-text-encoding/record.md) records the signal
 survey over 5,059 pages of the fourteen English corpus documents: the font evidence appears on
 19 of 20 Census pages and on no other page, and the text statistics alone would touch four
 answer-key and handwriting-OCR pages that the combined rule leaves alone.
+
+## Index-named glyphs
+
+`GlyphIndexDecodingTests.swift` covers [#143](https://github.com/vocaro/PDFReflowLib/issues/143):
+the Census report's EC text fonts name their glyphs `G<n>` with no `ToUnicode`, and PDFKit reports
+U+n, three letters on. `fixtures/census-text-operators.json` (captured by
+`measurements/glyph-index-decoding/capture.swift`, source checksum pinned) holds Census pages 2, 3,
+12, 17 and 20 as font dictionaries, graphics states, content streams and PDFKit's lines, rebuilt
+with non-embedded fonts. The tests require that exactly `dcr`, `dcbx` and `dcti` decode (+3 passes;
+the case-swapped +35 and the unshifted reading fail), with French, the table page alone and the math
+page alone as controls; that every line of pages 3, 12 and 17 is rewritten (ligatures, dashes,
+figures, table rows PDFKit splits in two, reference numbers read as their own lines) while page 2's
+e-mail line and title mark and every line of page 20 stay unrepaired, and that nothing is rewritten
+without decodings; that page 12's repaired rows form a numeric grid and pages 2, 3 and 17 do not;
+and that compensated character spacing restores `2 Data Files` and `Journal of
+Oﬃcial Statistics`. Synthetic controls reject a permutation, capitals only, lowercase only, a short
+text, two-letter mathematics and a capital heading font; place dropped ligatures inside their word
+and refuse one between gaps; carry and abandon a split row; and pin the Cork, shared and PDFKit name
+tables. End to end, Type1 fonts at a constant offset reflow natively under `.never` and `.automatic`,
+a page with an undecodable index font alone reports `damagedTextEncoding` (and OCR) with its
+decodable lines retained repaired, a line mixing a decoded and a WinAnsi font is repaired, and German
+decodes nothing, and a page of numeric table rows in a decoded font keeps #38's path (and OCR)
+rather than reflowing its cells run together. #38's Type3 reproducer still reports damage because PDFKit reads its five shows as
+one line, which a test records. Disabling each of fifteen parts fails at least one test.
+
+The Census contract now requires native text without `damagedTextEncoding` or `ocrUsed` on pages 3
+and 17 (ordered phrases with ligatures and references) with no image; on the table pages 12 and 15,
+`damagedTextEncoding`, three images and none of the run-together rows a native reflow writes (Table
+2's `0.9620 rnkswp10`, Table 7's `13.85 add01_sw`); and `damagedTextEncoding` with an image on the
+other body pages. The
+[index-glyph evidence](../measurements/glyph-index-decoding/record.md) surveys every English corpus
+book (no other index-glyph font and no shifted text), reviews Census against renders, and records the
+9/11 pages whose letter-spaced lines and citations gain spaces from the compensated-spacing rule.
 
 ## Decorative drop caps
 

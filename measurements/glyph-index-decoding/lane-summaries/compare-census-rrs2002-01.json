@@ -1,0 +1,96 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "census-rrs2002-01",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "5313437dd466f509e2c6e609a7c62ec8c8762fd146da0a82d2fc227ea830b4b4",
+  "candidateConverterSHA256": "a156267655f9922d38dc389a7d68337195b7f397d7ecbb6974d1b5c2c675c9e1",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "3dc11f836bf09bc9d8dab63b6c1ccc7a3f14f8b3635f0db1c2353ee24dd6af6a"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "3dc11f836bf09bc9d8dab63b6c1ccc7a3f14f8b3635f0db1c2353ee24dd6af6a"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 17,
+    "baselineWords": 5248,
+    "candidateWords": 5248,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    3,
+    17
+  ],
+  "changedPageFields": {
+    "3": [
+      "anchors",
+      "headings",
+      "images",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "pageReferences",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text",
+      "warnings"
+    ],
+    "17": [
+      "anchors",
+      "headings",
+      "images",
+      "markup",
+      "pageReferences",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ]
+  },
+  "changedImages": [
+    "EPUB/images/image-2.png",
+    "EPUB/images/image-39.png"
+  ],
+  "navigationChanged": true,
+  "changedNavigationPages": [
+    17,
+    3
+  ],
+  "pageMarkersEqual": true,
+  "changedReportFields": [
+    "imageCount",
+    "recognizedPageCount",
+    "warnings"
+  ],
+  "idOnlyShifts": {
+    "pageCount": 16,
+    "fields": {
+      "images": 16,
+      "listItemIDs": 1,
+      "markup": 16,
+      "pageReferences": 16,
+      "paragraphIDs": 12
+    },
+    "navigationEntries": null
+  },
+  "imageRenames": {
+    "count": 50
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

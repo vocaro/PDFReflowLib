@@ -108,8 +108,9 @@ slanted shape (`cmti`, `cmsl`, `dcti`, `SFTI`) or Libertine's `TI`; for a name s
 slope nor roman, the descriptor's `Italic` flag or an `ItalicAngle` of 5° or more, unless the font
 is symbolic or a script face. Math italic (`CMMI`, `LibertineMathMI`, `NewTXMI`, `txmi`) sets
 variables, not emphasis, and is never italic. The shows decode through a simple font's ToUnicode
-map under any codespace, a Type1 font's WinAnsi encoding where it has no map (Wallace), or an
-`Identity-H` composite font's two-byte map (DGA, NOAA), so a line mixing styles is marked character
+map under any codespace, a Type1 font's WinAnsi encoding where it has no map (Wallace), an
+`Identity-H` composite font's two-byte map (DGA, NOAA), or the characters established for an
+index-glyph font (Census, #143), so a line mixing styles is marked character
 by character; a style every show on a line shares needs no decoding. A leading marker without a
 letter or digit in a style its item does not share (DGA's bold `+` bullets) gains no emphasis.
 `EPUBTextEncoder` writes adjacent runs of one style as one element (`<strong>FAA-H-8083-25C</strong>`).
@@ -161,12 +162,17 @@ initial (`C.|A.`) takes the letter threshold. #120 adds three bounded repairs: a
 the text cursor is placed from the previous show's measured advance, spacing and adjustments
 included; a two-glyph show whose character spacing is 0.5–10 em splits there (FAA's chart tables,
 `(52)` at 1.465 em; letter-spacing stays at or below 0.2 em); and the font-change rule accepts
-`) ] , ; :` that close a word or formula before a letter (Wallace's `6)|when`). Shows are decoded
+`) ] , ; :` that close a word or formula before a letter (Wallace's `6)|when`). Where a TJ array's
+adjustments offset a character spacing of 0.1 em or more by at least half of it (the Census
+report's Distiller, Tc 0.46 em with +446 between letters, #143), a gap is adjustment plus spacing,
+a zero adjustment is a boundary, and two glyphs of one string stand the spacing apart (at most
+1 em). Shows are decoded
 through one-byte ToUnicode maps (bfchar and bfrange, ligatures and surrogate pairs; for a simple
 font, Adobe PDF Library's one-byte entries under a `<0000> <FFFF>` codespace are read as one byte,
 as `MarkedTextReader` reads its space codes, #104), or, for a Type1 font with no ToUnicode map,
 through a `WinAnsiEncoding` (codes 32–126 as ASCII, `Differences` names from a small glyph-name
-table, #110), and must spell
+table, #110), or through the characters `GlyphIndexDecoder` established for an index-glyph font
+(#143), and must spell
 the line exactly apart from PDFKit's own spaces (a trailing source space glyph PDFKit trims is
 allowed); rotated shows, Form XObjects and fonts without Widths or maps supply no evidence, Type3
 space removal ignores shows with character or word spacing, and unsupported text state still
@@ -702,6 +708,28 @@ function-word list plus a 300-pair common-bigram table judge the extracted words
 agree before extraction reports `damagedTextEncoding`, makes the page an OCR candidate under
 automatic policies, recommends a source-page reference and withholds the page's words from the
 hyphen-repair vocabulary. No glyph programs are decoded and no network or model is involved.
+
+Before that judgment, `GlyphIndexDecoder` tries to establish such fonts' characters from the
+document's own words (#143). Before any page is read it scans the shows of pages with index-style
+fonts: a simple font without `ToUnicode` whose `Differences` names at least half its codes `G<n>`,
+`g<n>`, `C<n>` or `c<n>` (PDFKit reports such a glyph as U+n) is keyed by subtype, `BaseFont` and
+its whole `Differences` array, and its shows are split into words at gaps of 0.15 em. Every offset
+k that reads at least half the glyphs as ASCII letters (index n as code n − k) is judged with the
+same English tables; a font is decoded only when exactly one offset has at least 20 words (10 of
+four letters or more), 10% function words, at most 10% rare letter pairs, 50% lowercase letters, a
+capitalized word and at most 2% words with a capital after a lowercase letter, which rejects the
+case-swapped offset, a font of capitals read as lowercase and mathematics. Codes then read through
+TeX's Cork table for an EC or DC font name, or through letters, digits and the punctuation standard
+and TeX encodings share. `NativeTextReader` rewrites each PDFKit line whose shows all decode and
+whose PDFKit characters they spell (`FontWeightReader.repairIndexGlyphs`: a glyph PDFKit reports as
+nothing, a ligature, joins a neighbour in its word; glyphs PDFKit continues on a following line of
+the row carry over) before spacing and style repair read it. A page keeps the font evidence unless
+every line with index-glyph shows was repaired and its lines hold no numeric grid (three rows of at
+least two decimal numbers making up half their words: no table path reconstructs Census's
+rule-headed tables, which would reflow as run-together cells while recognition keeps table images),
+and the English statistics judge PDFKit's own text. Census pages 3 and 17 reflow natively; its table
+pages and pages with math fonts, which follow no constant offset, keep `damagedTextEncoding`. See the
+[index-glyph evidence](../measurements/glyph-index-decoding/record.md).
 
 `GraphicsReader` tracks text rendering mode across saved graphics state and nested forms. When
 all observed text uses invisible mode 3 and a graphic covers most of the page, extraction skips

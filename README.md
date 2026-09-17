@@ -167,6 +167,10 @@ that fall back to images skip unused attributed-text decoding. Failures use
   names (`G108`, `c63`) with no `ToUnicode` map extracts as the wrong characters even though
   the page renders correctly. When such a font is present and the page's extracted words also
   fail English function-word and letter-pair statistics, the page reports `damagedTextEncoding`.
+  First, a font whose glyphs are named by index (`G87`) is decoded where the document's own words
+  establish one constant offset as English (the Census report's EC text fonts), and lines drawn only
+  in decoded fonts are rewritten and reflow natively; math fonts without such an offset, and pages
+  of numeric table rows no table path reconstructs, keep the warning.
   Automatic OCR policies recognize the page image instead; `.never` keeps the unreadable text
   with a source-page reference. The English statistics are embedded (no dictionary download or
   model); pages declared in another language, pages with fewer than 20 words, composite (CID)
@@ -199,7 +203,7 @@ and requires identical output. Missing sources fail with acquisition instruction
 automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic lane (it also
 converts each fixture twice and requires byte-identical EPUBs).
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
-and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold 1667
+and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold 1684
 checks on 390 pages of 15 documents, including full-resolution stroke checks for equations and a
 table, scale/contrast/color checks for a flag and an FAA figure, and 9 cell checks on tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and

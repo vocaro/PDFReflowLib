@@ -38,7 +38,7 @@ work offline. Tests and conversion never fetch sources automatically.
 | `arxiv-replay-clocks-2023` | 12 | Born-digital ACM two-column paper, pseudocode, figures, math | 256 MiB |
 | `usgs-mcs2025-copper` | 2 | Borderless tables, indentation-only row groups, spanning headers | 128 MiB |
 | `scotus-loper-bright-2024` | 114 | Page-bottom footnotes continuing across pages, dash separators | 128 MiB |
-| `census-rrs2002-01` | 20 | Born-digital text layer with no Unicode mapping (shifted letters); 19 pages recognized by default | 512 MiB |
+| `census-rrs2002-01` | 20 | Born-digital text layer with no Unicode mapping (shifted letters); 2 pages decoded natively, 17 recognized by default | 512 MiB |
 | `uscis-m618-arabic-2015` | 116 | Right-to-left Arabic with embedded Latin and numbers | 256 MiB |
 | `irs-p596-zhs-2025` | 36 | Simplified Chinese mixed with Latin identifiers and amounts | 256 MiB |
 
@@ -444,7 +444,8 @@ python3 tools/check_corpus_quality.py --case cia-blue-book-14-1955 \
 
 The converter now emits `unverifiedTextLayer` on pages with existing text over a page-sized
 image, and `damagedTextEncoding` on born-digital pages whose fonts lack a usable Unicode mapping
-and whose words fail the embedded English statistics (Census pages 2–20).
+and whose words fail the embedded English statistics (Census pages 2, 4–16 and 18–20;
+pages 3 and 17 decode natively since #143).
 The [current measurement](../measurements/quality-and-raster-fixes/record.md) checks pages
 74 and 150 separately from the [historical failing baseline](../measurements/cia-blue-book-14-1955/record.md).
 Crashes, timeouts, resource failures and generic image-preservation warnings do not satisfy it. No production quality-refusal
@@ -479,7 +480,7 @@ python3 tools/run_corpus_regressions.py --converter .build/corpus-cli/out/Produc
 | --- | --- | --- | --- |
 | [`usgs-mcs2025-copper`](../measurements/usgs-mcs2025-copper/record.md) | Borderless tables | Tables preserved as readable crops, but adjacent prose is absorbed into them | [#36](https://github.com/vocaro/PDFReflowLib/issues/36) |
 | [`scotus-loper-bright-2024`](../measurements/scotus-loper-bright-2024/record.md) | Page-bottom footnotes | Text complete; footnotes merge into body paragraphs; 75 citation-leading lines become preformatted | [#40](https://github.com/vocaro/PDFReflowLib/issues/40), [#39](https://github.com/vocaro/PDFReflowLib/issues/39) |
-| [`census-rrs2002-01`](../measurements/census-rrs2002-01/record.md) | Damaged encoding | Resolved: shifted-letter pages report `damagedTextEncoding`, keep a source image and are recognized by default ([evidence](../measurements/damaged-text-encoding/record.md)) | [#38](https://github.com/vocaro/PDFReflowLib/issues/38) |
+| [`census-rrs2002-01`](../measurements/census-rrs2002-01/record.md) | Damaged encoding | Resolved: shifted-letter pages report `damagedTextEncoding`, keep a source image and are recognized by default ([evidence](../measurements/damaged-text-encoding/record.md)); pages set only in the EC text fonts decode natively ([evidence](../measurements/glyph-index-decoding/record.md)) | [#38](https://github.com/vocaro/PDFReflowLib/issues/38), [#143](https://github.com/vocaro/PDFReflowLib/issues/143) |
 | [`uscis-m618-arabic-2015`](../measurements/uscis-m618-arabic-2015/record.md) | Right-to-left script | Arabic words correct; mixed-direction runs fragment and reverse | [#41](https://github.com/vocaro/PDFReflowLib/issues/41) |
 | [`irs-p596-zhs-2025`](../measurements/irs-p596-zhs-2025/record.md) | CJK script | Order and amounts correct; spaces inserted inside CJK; some columns rasterized | [#42](https://github.com/vocaro/PDFReflowLib/issues/42), [#36](https://github.com/vocaro/PDFReflowLib/issues/36) |
 | [`nbs-jres-geltman-1977`](../measurements/nbs-jres-geltman-1977/record.md) | Scanned two-column paper | Inline images force page fallback on pages 1–6 | [#37](https://github.com/vocaro/PDFReflowLib/issues/37) |

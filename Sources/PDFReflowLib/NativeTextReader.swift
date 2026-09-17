@@ -31,15 +31,30 @@ enum NativeTextReader {
         return try operation()
     }
 
+    /// What line repair found on a page drawn in index-named glyphs (#143).
+    final class IndexGlyphReport {
+        /// Lines rewritten through established characters, and lines with index-glyph shows left
+        /// as PDFKit read them.
+        var repairedLines = 0
+        var unrepairedLines = 0
+        /// Each line's text as PDFKit reported it, before any repair.
+        var nativeText: [String] = []
+        init() {}
+    }
+
     /// `borderlessTableInk`, when given (the page's painted rectangles), also splits the rows of
     /// a borderless table whose cells PDFKit merges into one line; see `splitBorderlessTables`.
+    /// `glyphDecodings` are the characters the document established for index-glyph fonts
+    /// (`GlyphIndexDecoder`); lines drawn in them are repaired, and `report` counts the outcome.
     static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true,
-                      columnJoints: [ColumnJoint] = [], borderlessTableInk: [CGRect]? = nil) throws -> [TextLine] {
+                      columnJoints: [ColumnJoint] = [], borderlessTableInk: [CGRect]? = nil,
+                      glyphDecodings: [String: [UInt8: String]] = [:], report: IndexGlyphReport? = nil) throws -> [TextLine] {
         try withExtractionLock {
             // The page's text shows and their fonts' weights, for bold PDFKit cannot name (#125).
             let weights = includeStyle && page.numberOfCharacters <= limit
-                ? page.pageRef.map(FontWeightReader.read) ?? [] : []
-            var lines = try extractLines(on: page, limit: limit, includeStyle: includeStyle, weights: weights)
+                ? page.pageRef.map { FontWeightReader.read($0, decodings: glyphDecodings) } ?? [] : []
+            var lines = try extractLines(on: page, limit: limit, includeStyle: includeStyle, weights: weights,
+                                         glyphDecodings: glyphDecodings, report: report)
             if !columnJoints.isEmpty {
                 lines = try splitAtColumnJoints(lines, joints: columnJoints, on: page, includeStyle: includeStyle, weights: weights)
             }
@@ -95,10 +110,20 @@ enum NativeTextReader {
               let raw = chosen.string?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else { return nil }
         let bounds = chosen.bounds(for: page)
         guard bounds.isFinite, !bounds.isNull, bounds.width > 0, bounds.height > 0 else { return nil }
-        let attributed = includeStyle ? chosen.attributedString.map {
-            FontWeightReader.apply(weights, to: $0, bounds: bounds, allBounds: [bounds])
+        var semantic = raw
+        let attributed = includeStyle ? chosen.attributedString.map { original -> NSAttributedString in
+            var text = original
+            // Index-named glyphs are repaired in each piece as in its whole line (#143).
+            var carry: FontWeightReader.IndexGlyphCarry?
+            if weights.contains(where: { $0.indexFont != nil }),
+               case let repair = FontWeightReader.repairIndexGlyphs(weights, in: original, bounds: bounds, allBounds: [bounds], carry: &carry),
+               repair.outcome == .repaired, carry == nil, original.string.trimmingCharacters(in: .whitespacesAndNewlines) == raw {
+                text = repair.text
+                semantic = repair.text.string.trimmingCharacters(in: .whitespacesAndNewlines)
+            }
+            return FontWeightReader.apply(weights, to: text, bounds: bounds, allBounds: [bounds])
         } : nil
-        return textLine(semantic: raw.replacingOccurrences(of: "\u{FFFC}", with: " "), bounds: bounds, attributed: attributed)
+        return textLine(semantic: semantic.replacingOccurrences(of: "\u{FFFC}", with: " "), bounds: bounds, attributed: attributed)
     }
 
     /// A line cut in two at `x`: both pieces exist, spell the line apart from the whitespace at
@@ -238,29 +263,52 @@ enum NativeTextReader {
         return result
     }
 
-    private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool, weights: [FontWeightReader.Show]) throws -> [TextLine] {
+    private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool, weights: [FontWeightReader.Show],
+                                     glyphDecodings: [String: [UInt8: String]], report: IndexGlyphReport?) throws -> [TextLine] {
         guard page.numberOfCharacters <= limit else {
             throw ConversionError.resourceLimit("too many characters")
         }
         guard let selection = page.selection(for: page.bounds(for: .cropBox)) else { return [] }
         let selections = selection.selectionsByLine()
         let boundsByLine = selections.map { $0.bounds(for: page) }
-        let spacing = includeStyle ? page.pageRef.map(NativeSpacingReader.read) ?? [] : []
+        let spacing = includeStyle ? page.pageRef.map { NativeSpacingReader.read($0, decodings: glyphDecodings) } ?? [] : []
         var result: [TextLine] = []
+        var carry: FontWeightReader.IndexGlyphCarry?
+        let indexGlyphs = weights.contains { $0.indexFont != nil }
+        if let report, indexGlyphs {
+            report.unrepairedLines += FontWeightReader.unplacedIndexShows(weights, allBounds: boundsByLine)
+        }
+        defer { if carry != nil { report?.unrepairedLines += 1 } }
         for line in selections {
             try Task.checkCancellation()
             guard let raw = line.string else { continue }
             // U+FFFC names an attachment, not a word. Retain a boundary between adjacent
             // words; the graphics reader preserves the object's visible content separately.
-            let semantic = raw.replacingOccurrences(of: "\u{FFFC}", with: " ")
+            var semantic = raw.replacingOccurrences(of: "\u{FFFC}", with: " ")
             guard !semantic.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { continue }
             let bounds = line.bounds(for: page)
             guard bounds.isFinite, !bounds.isNull, bounds.width > 0, bounds.height > 0 else { continue }
+            report?.nativeText.append(raw)
             // Object-only selections were discarded before requesting attributed text,
             // which can make PDFKit decode large image attachments.
-            let attributed = includeStyle ? line.attributedString : nil
+            var attributed = includeStyle ? line.attributedString : nil
+            // Index-named glyphs PDFKit reports as other characters are rewritten first (#143), so
+            // spacing and style evidence read the characters the page draws.
+            let exact = attributed?.string == raw
+            if let original = attributed, indexGlyphs {
+                let repair = FontWeightReader.repairIndexGlyphs(weights, in: original, bounds: bounds,
+                                                                allBounds: boundsByLine, carry: &carry)
+                if repair.abandoned { report?.unrepairedLines += 1 }
+                if repair.outcome == .repaired, exact {
+                    attributed = repair.text
+                    semantic = repair.text.string.replacingOccurrences(of: "\u{FFFC}", with: " ")
+                    report?.repairedLines += 1
+                } else if repair.outcome != .none {
+                    report?.unrepairedLines += 1
+                }
+            }
             let repaired = attributed.map {
-                $0.string == raw ? NativeSpacingReader.apply(spacing, to: $0, bounds: bounds, allBounds: boundsByLine) : $0
+                exact ? NativeSpacingReader.apply(spacing, to: $0, bounds: bounds, allBounds: boundsByLine) : $0
             }
             let corrected = repaired?.string != attributed?.string
                 ? repaired?.string.replacingOccurrences(of: "\u{FFFC}", with: " ") : nil

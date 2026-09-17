@@ -12,7 +12,7 @@ A valid EPUB can still contain incorrect text, wrong reading order or unreadable
   pixels, including crop origins, rotations, annotations and resource ceilings. Preserved-region
   tests also inspect fraction bars, raised exponents and all six cells of a ruled table in actual
   EPUB images at 72/144 DPI, with surrounding-prose and code controls.
-- `scripts/check-all.sh --corpus`: the same checks plus 17 complete PDF conversions,
+- `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->17<!-- counts:end --> complete PDF conversions,
   sequentially, with EPUBCheck, monotonic progress, pinned source identities, memory budgets
   and reviewed page-specific content contracts. All selected cached sources and EPUBCheck
   are required; missing data fails explicitly. The evaluator does not download anything. The lane
@@ -112,17 +112,27 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 1975 targeted checks on 413 reviewed pages
-across 17 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
-comic, Blue Book, the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
-unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers), the US Courts Pro Se 1 fillable form and the NASA
-Word-exported IEEE paper. They comprise 705 ordered-text, 151 text, 250 paragraph,
-164 absent-text, 187 heading, 32 absent-heading, 57 list-item, 1 preformatted-lines, 20 script,
-11 footnote, 34 note-link, 45 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation,
-49 distinct-paragraph, 142 image-presence, 62 warning, 24 absent-warning, 17 source-region,
-3 glyph-structure, 3 image-appearance and 9 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
-anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
+<!-- counts:coverage -->
+[corpus/regressions.json](../corpus/regressions.json) has 1995 targeted checks on 417 reviewed pages
+across 17 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
+Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
+*Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No. 14*, *Mineral Commodity
+Summaries 2025*, *Loper Bright Enterprises v. Raimondo*, *Disclosure Risk Assessment in Perturbative
+Microdata Protection*, *Welcome to the United States*, *Publication 596*, *Stimulated Multiphoton
+Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case* and
+*Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*. They
+comprise 705 ordered-text, 151 text, 266 paragraph, 164 absent-text, 187 heading, 32 absent-heading,
+57 list-item, 1 preformatted-lines, 20 script, 11 footnote, 34 note-link, 45 paragraph-continuation,
+1 list-item-continuation, 8 paragraph-separation, 53 distinct-paragraph, 142 image-presence,
+62 warning, 24 absent-warning, 17 source-region, 3 glyph-structure, 3 image-appearance and
+9 table-cell checks, counted as `tools/check_corpus_content.py` counts them.
+<!-- counts:end -->
+
+All source-page anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
+
+Counts between `<!-- counts:… -->` markers here and in the README are generated. After changing
+contracts or tests, run `python3 tools/update_doc_counts.py`; `scripts/check-all.sh --fast` fails
+while they are stale.
 
 The checks preserve selected correct words, paragraph semantics and cross-page continuity, paragraph/list order, license attribution, image
 presence, source-region content, glyph-level equation and table structure, image scale/contrast/color
@@ -506,7 +516,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-693 Swift tests with no known-issue wrappers, and 219 Python tests.
+<!-- counts:swift-tests -->699 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->230 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

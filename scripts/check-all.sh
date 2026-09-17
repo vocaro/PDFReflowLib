@@ -15,6 +15,9 @@ if [[ $CORPUS == 1 ]] && ! command -v epubcheck >/dev/null; then
 fi
 swift test
 python3 -m unittest discover -s tools -p 'test_*.py' -v
+# Generated doc counts must be current (#156); on failure run python3 tools/update_doc_counts.py.
+# --swift-list also requires the static Swift test count to equal the suite swift test just built.
+python3 tools/update_doc_counts.py --check --swift-list
 swift build -c release
 BINARY_DIR="$(swift build -c release --show-bin-path)"
 WORK="$(mktemp -d "${TMPDIR:-/tmp}/pdfreflow-checks.XXXXXX")"

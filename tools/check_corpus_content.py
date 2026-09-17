@@ -20,6 +20,54 @@ HEADINGS = {HTML + 'h' + str(n) for n in range(1, 7)}
 BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'figure', 'li', 'table', 'caption', 'tr', 'th', 'td')}
 DEFAULT_MAX_ENTRIES = 10_000
 DEFAULT_MAX_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
+# Every expectation key `assess` counts, as (documented name, keys, counted once per page). List
+# keys count one check per entry. The order is the order the docs list them in; `assess` verifies
+# its own count against this table, and tools/update_doc_counts.py reports from it.
+CHECK_TYPES = (
+    ('ordered-text', ('orderedText',), False),
+    ('text', ('text',), False),
+    ('paragraph', ('paragraphs',), False),
+    ('absent-text', ('absentText',), False),
+    ('heading', ('headings',), False),
+    ('absent-heading', ('absentHeadings',), False),
+    ('list-item', ('listItems',), False),
+    ('preformatted-lines', ('preformattedLines',), False),
+    ('script', ('scripts',), False),
+    ('footnote', ('notes',), False),
+    ('note-link', ('noteLinks',), False),
+    ('paragraph-continuation', ('continuedParagraphs',), False),
+    ('list-item-continuation', ('continuedListItems',), False),
+    ('paragraph-separation', ('separateParagraphs',), False),
+    ('distinct-paragraph', ('distinctParagraphs',), False),
+    ('image-presence', ('minimumImages', 'maximumImages'), True),
+    ('warning', ('warningCodesAnyOf',), True),
+    ('absent-warning', ('absentWarningCodes',), True),
+    ('source-region', ('imageRegions',), False),
+    ('glyph-structure', ('glyphRegions',), False),
+    ('image-appearance', ('imageAppearance',), False),
+    ('table-cell', ('tableCells',), False),
+)
+EXPECTATION_KEYS = tuple(key for _, keys, _ in CHECK_TYPES for key in keys)
+
+
+def count_page_checks(item):
+    """Checks one review page contributes, by documented check type (zero types included)."""
+    return {name: sum((1 if key in item else 0) if once else len(item.get(key, [])) for key in keys)
+            for name, keys, once in CHECK_TYPES}
+
+
+def count_checks(contracts):
+    """Totals over regressions.json cases, counted as `assess` counts them."""
+    by_type = dict.fromkeys((name for name, _, _ in CHECK_TYPES), 0)
+    pages = documents = 0
+    for contract in contracts:
+        items = contract.get('pages', [])
+        documents += bool(items)
+        pages += len(items)
+        for item in items:
+            for name, count in count_page_checks(item).items():
+                by_type[name] += count
+    return {'checks': sum(by_type.values()), 'pages': pages, 'documents': documents, 'byType': by_type}
 
 
 def inspection_limit(value, name):
@@ -291,7 +339,7 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'maximumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'absentHeadings', 'paragraphs', 'listItems', 'preformattedLines', 'notes', 'noteLinks', 'continuedParagraphs', 'continuedListItems', 'separateParagraphs', 'distinctParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
+        if not any(key in item for key in EXPECTATION_KEYS):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -548,6 +596,8 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
                 errors.append(f'Page {number}: unexpected quality warning ' + ', '.join(unexpected))
     if checks == 0:
         raise ValueError('Contract has no content checks')
+    if checks != sum(sum(count_page_checks(item).values()) for item in expected):
+        raise ValueError('CHECK_TYPES no longer matches the checks assess counts')
     return {'case': case['id'], 'passed': not errors, 'reviewPages': numbers,
             'contentChecks': checks, 'errors': errors,
             'scope': 'Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification.'}

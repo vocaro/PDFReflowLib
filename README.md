@@ -197,15 +197,15 @@ the internal seams and extension points.
 ## Development and regression tests
 
 For changes to extraction, layout or rendering, run `scripts/check-all.sh --corpus` before
-pushing. This opt-in lane converts 17 complete cached documents and checks reviewed content,
+pushing. This opt-in lane converts <!-- counts:documents -->17<!-- counts:end --> complete cached documents and checks reviewed content,
 EPUB conformance, progress and resource budgets, then converts four of them twice with one binary
 and requires identical output. Missing sources fail with acquisition instructions; there are no
 automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic lane (it also
 converts each fixture twice and requires byte-identical EPUBs).
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
-and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold 1975
-checks on 413 pages of 17 documents, including full-resolution stroke checks for equations and a
-table, scale/contrast/color checks for a flag and an FAA figure, and 9 cell checks on tables
+and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold
+<!-- counts:contract-summary -->1995 checks on 417 pages of 17 documents<!-- counts:end -->, including full-resolution stroke checks for equations and a
+table, scale/contrast/color checks for a flag and an FAA figure, and <!-- counts:table-cell-checks -->9<!-- counts:end --> cell checks on tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and
 adding a case.
 

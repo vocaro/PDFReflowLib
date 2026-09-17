@@ -1,0 +1,88 @@
+{
+  "case": "ntrs-20180003024-earthdata-slides-2018",
+  "pageNumbering": "Physical PDF pages, one-based; each page is one slide, and slide numbers are printed on slides 2-6 and 12-21",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 1,
+      "target": "Title slide",
+      "acceptance": "Correct now: Earthdata Cloud Analytics Project is one h2; the byline, NASA and *U.S. Civil Servant lines follow in order. Wrong now: unverifiedTextLayer and an Original page 1 image although the only full-page graphic is the flat slide background (#164)."
+    },
+    {
+      "page": 2,
+      "target": "EOSDIS diagram with satellite renders and a ground-station photo",
+      "acceptance": "Correct now: the two-line title is one paragraph; the photos survive in the source-page image. Wrong now: the title is not a heading; EOSDIS merges with distribute and the pipeline labels interleave (data, subset, downlink, archive, Users, capture and clean, process) (#165). The Research, Applications and Education boxes have no text layer. Source-page image on every slide (#164)."
+    },
+    {
+      "page": 3,
+      "target": "Archive-volume chart slide",
+      "acceptance": "Correct now: title lines and the projected label in order; the chart raster survives in the source-page image. Wrong now: the two title lines are separate paragraphs, not a heading (#165)."
+    },
+    {
+      "page": 4,
+      "target": "Distribution chart slide",
+      "acceptance": "Correct now: title lines in order; chart preserved in the source-page image. Wrong now: title split into two paragraphs, not a heading (#165)."
+    },
+    {
+      "page": 5,
+      "target": "Question slide without a text layer",
+      "acceptance": "Correct now: the italic question has no text layer (Poppler finds only the slide number), so the slide is carried by its image alone and no text is invented."
+    },
+    {
+      "page": 6,
+      "target": "Data-proximal analysis cloud diagram",
+      "acceptance": "Correct now: title, then Data Archive and Data Analysis as separate paragraphs. Wrong now: the title is a paragraph, not a heading (#165)."
+    },
+    {
+      "page": 7,
+      "target": "Goals numbered list with lettered sub-items",
+      "acceptance": "Correct now: Goals is a heading; items 1-3 and a-b are each one whole <pre> list item in order. Wrong now: a. and b. lose their nesting under item 3 (#165); title level h3 while slide 1 is h2 and slides 20-21 h4."
+    },
+    {
+      "page": 8,
+      "target": "Key Features numbered list",
+      "acceptance": "Correct now: Key Features is a heading; six whole list items in order."
+    },
+    {
+      "page": 9,
+      "target": "Guiding Principles numbered list",
+      "acceptance": "Correct now: heading; five whole list items in order, with the curly quotes of item 5 kept."
+    },
+    {
+      "page": 10,
+      "target": "Architectural Concept statement slide",
+      "acceptance": "Correct now: every line present in order, bold and italic kept. Wrong now: Architectural Concept is a paragraph, not a heading; the italic sentence splits into two paragraphs at its line break (#165)."
+    },
+    {
+      "page": 11,
+      "target": "Abstract analytics workflow circles",
+      "acceptance": "Correct now: heading; data, Extract Transform Load, Analyze, Visualize in pipeline order. Wrong now: Analyze and Visualize merge into one paragraph (#165)."
+    },
+    {
+      "page": 12,
+      "target": "Reference architecture pipeline with footnoted AODS",
+      "acceptance": "Correct now: heading; Extract, Transform, Load and the five boxes in pipeline order; AODS marker is a <sup>1</sup>. Wrong now: the footnote 1 Analytics Optimized Data Store is removed as a repeated footer (#165). The icons are only in the source-page image."
+    },
+    {
+      "page": 13,
+      "target": "Interactive-mode pipeline (slides 13-15 share the layout)",
+      "acceptance": "Correct now on 13-15: heading; box labels in pipeline order; slide 15 has no AODS. Wrong now: Cumulus emitted twice; footnote removed as furniture on 13 and 14 (#165)."
+    },
+    {
+      "page": 16,
+      "target": "Open pipeline build slides 16-18",
+      "acceptance": "Correct now: the two-line title is one heading; box labels and the added end-user boxes in order; the footnote is kept on 18. Wrong now: Cumulus doubled; footnote removed as furniture on 16-17 (#165)."
+    },
+    {
+      "page": 19,
+      "target": "Open pipeline build slides 19-20",
+      "acceptance": "Correct now: title heading; End-User Cloud-Native Analysis, End-User Interpretation, Data Exploration and the footnote present. Wrong now: pipeline boxes are h5/h6; End-User and Interpretation (and on 20, Data and Exploration) are duplicated as extra paragraphs; the footnote precedes AODS on 19; slide 20's title is h4 (#165)."
+    },
+    {
+      "page": 21,
+      "target": "Exploitation Platforms slide",
+      "acceptance": "Correct now: heading; Exploitation Platforms, the five boxes and the footnote in order; AODS <sup>1</sup>. Wrong now: Cumulus doubled; h4 title (#165)."
+    }
+  ],
+  "scope": "Manual targets from 100 DPI Poppler renders of all 21 slides (slide 2 corner at 250 DPI) and the Poppler text layer with word boxes. Google Slides export, untagged, 720x405 pt. No region, glyph or appearance references are committed: the NASA insignia is on every slide; see the manifest rights note."
+}

@@ -1,0 +1,33 @@
+{
+  "case": "ntrs-20210020887-techport-thm-2021",
+  "pageNumbering": "Physical PDF pages, one-based; the print footer reads Page 1 to Page 5",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 1,
+      "target": "Header band, Project Introduction, sidebar photo and table of contents, print footer",
+      "acceptance": "Correct now: Project Introduction is an h2; its five paragraphs are whole, separate and in order, followed by See Figure 1:. Wrong now: the header band (division, title, Completed Technology Project (2015 - 2020)) is one crop with the insignia (#166); the sidebar photo, caption and table of contents are one page-height crop between the third and fourth paragraphs (#166); the footer lines are body paragraphs with Printed on and 03:51 PM CDT split, plus a TechPort logo crop (#167); 22 borderless table-of-contents links force an Original page 1 image (#151)."
+    },
+    {
+      "page": 2,
+      "target": "Bulleted benefits, Anticipated Benefits, sidebar Organizational Responsibility, Project Management and TRL",
+      "acceptance": "Correct now: every bullet item's text is whole and in order, including the nested items and the source's own typos; Anticipated Benefits is an h2; See Image: In-Space Propellant Gauging is italic and last. Wrong now: each bullet marker is a 17 px crop before a <p> item and nesting is lost (#167); the sidebar is one crop placed after MPG technology is aimed: before its sub-items (#166); header crop, footer paragraphs and source-page image as on page 1."
+    },
+    {
+      "page": 3,
+      "target": "Bulleted benefits continued, work-locations map, sidebar Technology Areas",
+      "acceptance": "Correct now: six bullet items whole and in order; Primary U.S. Work Locations and Key Partners is an h2; the US map is a preserved image. Wrong now: bullet markers as crops (#167); Technology Areas, Target Destinations and Supported Mission Type only inside a sidebar crop (#166)."
+    },
+    {
+      "page": 4,
+      "target": "Organizations, co-funding and locations tables, Closeout Documentation, Images",
+      "acceptance": "Correct now: the closeout document title and its link, Images, and the Figure 1 caption and description are present in order; the signal-chain figure is preserved. Wrong now: the three tables are crops with no text (#166); Closeout Documentation merges into its paragraph and Images is not a heading; the wrapped URL becomes imag e/41317 (#167)."
+    },
+    {
+      "page": 5,
+      "target": "Image gallery with three captioned images",
+      "acceptance": "Correct now: the gallery is preserved as an image. Wrong now: all three captions are inside that crop, with only the fragment e/41319) left as a paragraph (#166); footer kept (#167)."
+    }
+  ],
+  "scope": "Manual targets from 80 DPI Poppler renders of all five pages (page-1 sidebar and page-5 gallery at 300 DPI), the Poppler text layer and the converted crops. Chromium/Skia print post-processed by iText, untagged, 27 borderless link annotations. No region, glyph or appearance references are committed: the NASA insignia is on every page; see the manifest rights note."
+}

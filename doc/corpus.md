@@ -45,6 +45,8 @@ work offline. Tests and conversion never fetch sources automatically.
 | `ntrs-20200002975-gwl-2020` | 20 | Microsoft Word export: tagged IEEE two-column paper, Symbol-font characters | 256 MiB |
 | `usda-ars-agresearch-2012-11` | 24 | InDesign magazine: wrapped photos, sidebars, pull quotes, two-page index | 512 MiB |
 | `ntrs-20190030725-dasc-2019` | 10 | pdfTeX IEEEtran paper: small-caps headings, Computer Modern math, algorithm steps | 128 MiB |
+| `ntrs-20180003024-earthdata-slides-2018` | 21 | Google Slides export: slide titles, numbered lists, shape-and-text-box diagrams | 128 MiB |
+| `ntrs-20210020887-techport-thm-2021` | 5 | Chromium web print: header band, sidebar, bullet lists, tables, print footer | 128 MiB |
 
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
@@ -53,8 +55,10 @@ The seven [#30 cases](#issue-30-coverage-expansion) are gated with reviewed cont
 selection and download identities are in [their record](../measurements/corpus-candidates-30/record.md).
 The [Pro Se 1 form](#complaint-for-a-civil-case-pro-se-1), the
 [Word-exported NASA paper](#ground-wind-loads-paper-word-2013), the
-[Agricultural Research magazine](#agricultural-research-magazine-indesign) and the
-[IEEEtran NASA paper](#arrival-scheduling-paper-pdftex-ieeetran) are gated the same way.
+[Agricultural Research magazine](#agricultural-research-magazine-indesign), the
+[IEEEtran NASA paper](#arrival-scheduling-paper-pdftex-ieeetran), the
+[Google Slides deck](#earthdata-cloud-analytics-slides-google-slides) and the
+[TechPort web print](#tank-health-monitoring-techport-web-print) are gated the same way.
 
 ## Comparing conversion runs
 
@@ -194,7 +198,7 @@ scripts/compare-pdf-reflow.sh --pdf corpus/cache/Beginning_and_Intermediate_Alge
 ```
 
 Output directories must be new. `--epubcheck` is optional. The memory runner enforces the
-case's ceiling automatically. `scripts/check-all.sh --corpus` includes algebra in the 19-document gate.
+case's ceiling automatically. `scripts/check-all.sh --corpus` includes algebra in the corpus gate.
 
 [Review points](../corpus/wallace-algebra-2010-review.json) list physical PDF pages and
 acceptance questions. Page 343's inline squared exponent has superscript semantics, while
@@ -681,3 +685,122 @@ The paper reflows with no structure fallbacks, but these defects remain:
   ([#163](https://github.com/vocaro/PDFReflowLib/issues/163)).
 - The Figure 2 caption, page 9's appendices and the Table III caption are out of column order
   ([#153](https://github.com/vocaro/PDFReflowLib/issues/153)).
+
+
+## Earthdata Cloud Analytics slides (Google Slides)
+
+Lynnes and Ramachandran, "Earthdata Cloud Analytics Project", is a 21-slide Google Slides export
+from [NTRS 20180003024](https://ntrs.nasa.gov/citations/20180003024), presented at the CEOS WGISS
+meeting in April 2018. Its only producer mark is the Creator `Google`, and there is no Producer. The
+file is untagged, with 720×405 pt slides and embedded Arial and Verdana with ToUnicode. The slides
+have titles, numbered lists with lettered sub-items, diagrams built from shapes and text boxes on a
+full-bleed background fill, a repeated slide footnote, chart rasters and a question slide with no
+text layer. There are no speaker notes. Bytes are pinned at 510,231, SHA-256
+`f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94`.
+
+Slide 1 marks both presenters "U.S. Civil Servant", and the NTRS record places them at NASA Goddard
+and NASA Marshall. The NTRS API copyright record gives `GOV_PUBLIC_USE_PERMITTED` with
+`containsThirdPartyMaterial: false`. Every slide was checked, and none shows an AWS, Google, partner
+or vendor logo or a screenshot of a commercial product. Every slide does show the NASA insignia,
+whose use 14 CFR 1221 restricts, so **no crop or raster of any slide may be committed**. Even with
+the insignia masked, these slides stay excluded:
+
+- slide 2, for its uncredited satellite renders and ground-station photo;
+- slides 3–4, for their uncredited chart rasters;
+- slides 12–21, for their uncredited icons.
+
+Contract snippets quote only agency-authored slide text. The owner approved the deck on 2026-09-17.
+It is not relicensed under MIT; retain the attribution recorded in the manifest.
+
+```sh
+python3 tools/fetch_corpus.py --case ntrs-20180003024-earthdata-slides-2018
+swift build -c release
+python3 tools/run_corpus_regressions.py --converter .build/release/pdf-reflow \
+  --epubcheck /opt/homebrew/bin/epubcheck --output /tmp/earthdata-slides \
+  --case ntrs-20180003024-earthdata-slides-2018
+```
+
+The run passes EPUBCheck, progress and the 128 MiB Mac RSS gate (41 MiB peak). The
+[review points](../corpus/ntrs-20180003024-earthdata-slides-2018-review.json) cover all 21 slides.
+The contract holds 135 checks, all on output that matches the source:
+
+- the title slide's heading and byline;
+- the slide titles that are headings;
+- each numbered item on slides 7–9 as one whole list item;
+- line order on the title-less slides;
+- the diagram box labels in pipeline order;
+- the AODS superscript;
+- image presence on slides 2–5.
+
+Slide 5's question has no text layer, so only its image carries it. The known defects are:
+
+- The full-bleed background counts as a page-sized graphic, so all 21 slides get
+  `unverifiedTextLayer` and a source-page image
+  ([#164](https://github.com/vocaro/PDFReflowLib/issues/164)).
+- The titles of slides 2–4, 6 and 10 are paragraphs, two-line titles split in two, and the other
+  titles mix h2, h3 and h4.
+- The repeated slide footnote is removed as furniture on five slides.
+- "Cumulus" is doubled, and on slides 19–20 the diagram boxes become h5/h6 with duplicated labels
+  ([#165](https://github.com/vocaro/PDFReflowLib/issues/165)).
+
+
+## Tank Health Monitoring (TechPort web print)
+
+"Tank Health Monitoring" is a five-page print of a NASA TechPort project page, from
+[NTRS 20210020887](https://ntrs.nasa.gov/citations/20210020887). Server-side Chromium printed it
+through Skia/PDF m92 on 08/24/2021, and iText 5.5.13.2 then post-processed it. The file is untagged,
+with embedded Open Sans and Verdana with ToUnicode. The web layout survives into the PDF:
+
+- a dark header band with the NASA insignia;
+- a main column with bullet lists;
+- a shaded right sidebar with the photo, a dot-leader table of contents, organization, management
+  and a TRL chart;
+- HTML tables;
+- an image gallery;
+- Chromium's footer with "Printed on", the page URL and `Page N`.
+
+It also has 27 borderless link annotations. The download filename contains spaces, so the cache
+uses `THM-Close-Out-Report-and-Exec-Summ-for-STI-Review.pdf`. Bytes are pinned at 1,660,263,
+SHA-256 `0fce4b68983ad8a216c8228ec44697c61ab41977ad41733c465ebebec3976ff0`.
+
+The NTRS record lists the author, project manager Rudy Werlink of Kennedy Space Center, as a civil
+servant. The NTRS API copyright record gives `GOV_PUBLIC_USE_PERMITTED` with
+`containsThirdPartyMaterial: false`. Every page shows the NASA insignia (14 CFR 1221), so **no crop
+or raster of any page may be committed**. With the header masked, pages 1 and 5 would still be
+excluded:
+
+- their uncredited lander and Gateway renders (the lander appears to be a commercial CLPS concept);
+- on page 5, a slide screenshot that carries a second insignia.
+
+The owner approved the document on 2026-09-17. It is not relicensed under MIT; retain the
+attribution recorded in the manifest.
+
+```sh
+python3 tools/fetch_corpus.py --case ntrs-20210020887-techport-thm-2021
+swift build -c release
+python3 tools/run_corpus_regressions.py --converter .build/release/pdf-reflow \
+  --epubcheck /opt/homebrew/bin/epubcheck --output /tmp/techport-thm \
+  --case ntrs-20210020887-techport-thm-2021
+```
+
+The run passes EPUBCheck, progress and the 128 MiB Mac RSS gate (61 MiB peak). The
+[review points](../corpus/ntrs-20210020887-techport-thm-2021-review.json) cover all five pages. The
+contract holds 48 checks, all on output that matches the source:
+
+- the main-column headings;
+- the Project Introduction paragraphs, whole and separate;
+- every bullet item's text in order, including the nested items;
+- the page-4 closeout and Figure 1 text;
+- image presence.
+
+The known defects are:
+
+- The header band's title lines stay inside a crop with the insignia on every page. The sidebar
+  panels, the page-4 tables and the page-5 gallery captions exist only as crops
+  ([#166](https://github.com/vocaro/PDFReflowLib/issues/166)).
+- The print footer stays in the reading flow on every page.
+- Bullet markers become tiny image crops before paragraph items, and nesting is lost.
+- "Closeout Documentation" and "Images" are not headings
+  ([#167](https://github.com/vocaro/PDFReflowLib/issues/167)).
+- The borderless links force a source-page image on all five pages
+  ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)).

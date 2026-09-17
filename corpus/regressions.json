@@ -7031,6 +7031,405 @@
           ]
         }
       ]
+    },
+    {
+      "id": "ntrs-20180003024-earthdata-slides-2018",
+      "sourceSHA256": "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94",
+      "basis": "All 21 slides visually reviewed against 100 DPI Poppler renders and the extracted text layer. Protects only output that matches the source: the title slide's title as a heading with the byline, NASA and civil-servant lines in order; the slide titles that are headings (Goals, Key Features, Guiding Principles, Abstract Analytics Workflow and slides 12-21); every numbered item on slides 7-9 whole in its own list item and in order; line order on the title-less text slides 2-4, 6 and 10; the diagram box labels in left-to-right pipeline order on slides 11-18 and 21; the AODS superscript note marker; and a preserved image for the photo, chart and text-less slides 2-5. Slide 5's question is drawn without a text layer, so only its image carries it. Not pinned because wrong now: a source-page image and unverifiedTextLayer on every slide because the full-bleed slide background counts as a page-sized graphic; slide titles 2-4, 6 and 10 as paragraphs and titles 3-4 split in two; mixed h2/h3/h4 title levels; the repeated slide footnote removed as furniture on slides 12-14, 16 and 17; the Cumulus label duplicated on slides 13-21; box labels as h5/h6 and duplicated on slides 19-20; the slide-2 diagram labels interleaved; Analyze and Visualize merged on slide 11 (see the review file). No committed rasters: every slide shows the NASA insignia (14 CFR 1221); see the manifest's rights note.",
+      "pages": [
+        {
+          "page": 1,
+          "headings": [
+            "Earthdata Cloud Analytics Project"
+          ],
+          "orderedText": [
+            "Earthdata Cloud Analytics Project",
+            "Chris Lynnes* and Rahul Ramachandran*",
+            "NASA",
+            "*U.S. Civil Servant"
+          ]
+        },
+        {
+          "page": 2,
+          "text": [
+            "Earth Observing System Data and Information System (EOSDIS)",
+            "capture and clean"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 3,
+          "orderedText": [
+            "Over time, EOSDIS archive volumes",
+            "increase exponentially",
+            "projected"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 4,
+          "orderedText": [
+            "Distribution increases similarly to",
+            "cumulative volume"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 5,
+          "minimumImages": 1
+        },
+        {
+          "page": 6,
+          "orderedText": [
+            "Solution: Data-proximal Analysis",
+            "Data Archive",
+            "Data Analysis"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Data Archive",
+              "second": "Data Analysis"
+            }
+          ]
+        },
+        {
+          "page": 7,
+          "headings": [
+            "Goals"
+          ],
+          "listItems": [
+            "1. Enable big compute next to big data",
+            "2. Encourage user adoption of cloud for analytics",
+            "3. Maximum analytics capability at minimum cost",
+            "a. Use capabilities within NASA more effectively and efficiently",
+            "b. Leverage analytics capabilities of external partners"
+          ],
+          "orderedText": [
+            "Goals",
+            "1. Enable big compute next to big data",
+            "2. Encourage user adoption of cloud for analytics",
+            "3. Maximum analytics capability at minimum cost",
+            "a. Use capabilities within NASA",
+            "b. Leverage analytics capabilities"
+          ]
+        },
+        {
+          "page": 8,
+          "headings": [
+            "Key Features"
+          ],
+          "listItems": [
+            "1. Satisfy a diverse user community",
+            "2. Support analysis in the cloud without egressing data",
+            "3. Facilitate multi-dataset comparison and fusion",
+            "4. Support batch, interactive and streaming modes",
+            "5. Support distributed filesystems and databases",
+            "6. Support cost constraints and cost-sharing"
+          ],
+          "orderedText": [
+            "1. Satisfy",
+            "2. Support analysis",
+            "3. Facilitate",
+            "4. Support batch",
+            "5. Support distributed",
+            "6. Support cost"
+          ]
+        },
+        {
+          "page": 9,
+          "headings": [
+            "Earthdata Cloud Analytics Guiding Principles"
+          ],
+          "listItems": [
+            "1. Infusion- and innovation-friendly framework and building blocks",
+            "2. No monolithic systems",
+            "3. Open code and services",
+            "4. Interoperability and reuse",
+            "5. No unnecessary duplication (“undifferentiated heavy lifting”)"
+          ],
+          "orderedText": [
+            "1. Infusion-",
+            "2. No monolithic",
+            "3. Open code",
+            "4. Interoperability",
+            "5. No unnecessary"
+          ]
+        },
+        {
+          "page": 10,
+          "orderedText": [
+            "Architectural Concept",
+            "Earth Science Data Analytics the Cloud-Native Way:",
+            "Everything is a Service",
+            "This approach produces key important benefits for",
+            "the user community and EOSDIS"
+          ]
+        },
+        {
+          "page": 11,
+          "headings": [
+            "Abstract Analytics Workflow"
+          ],
+          "orderedText": [
+            "Abstract Analytics Workflow",
+            "data",
+            "Extract Transform Load",
+            "Analyze",
+            "Visualize"
+          ]
+        },
+        {
+          "page": 12,
+          "headings": [
+            "Earthdata Cloud Analytics Reference Architecture"
+          ],
+          "orderedText": [
+            "Extract",
+            "Transform",
+            "Load",
+            "Cumulus Data Archive",
+            "Preprocessing as-a-service",
+            "AODS1 as-a-service",
+            "Analysis as-a-service",
+            "Visualization as-a-service"
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "1",
+              "before": "AODS",
+              "after": "as-a-service"
+            }
+          ]
+        },
+        {
+          "page": 13,
+          "headings": [
+            "Interactive Mode: Analytics-Optimized Storage"
+          ],
+          "orderedText": [
+            "Cumulus Data Archive",
+            "Preprocessing as-a-service",
+            "AODS1 as-a-service",
+            "Analysis as-a-service",
+            "Visualization as-a-service"
+          ]
+        },
+        {
+          "page": 14,
+          "headings": [
+            "Batch Mode"
+          ],
+          "orderedText": [
+            "Cumulus Data Archive",
+            "Preprocessing as-a-service",
+            "AODS1 as-a-service",
+            "Analysis as-a-service",
+            "Visualization as-a-service"
+          ]
+        },
+        {
+          "page": 15,
+          "headings": [
+            "Streaming Mode"
+          ],
+          "orderedText": [
+            "Cumulus Data Archive",
+            "Preprocessing as-a-service",
+            "Event Analytics as-a-service",
+            "Visualization as-a-service"
+          ],
+          "absentText": [
+            "AODS"
+          ]
+        },
+        {
+          "page": 16,
+          "headings": [
+            "Open Pipeline Provides Outputs at Different Stages Appropriate for a Diverse User Base"
+          ],
+          "orderedText": [
+            "Cumulus Data Archive",
+            "Preprocessing as-a-service",
+            "End-User-Specific",
+            "AODS1 as-a-service",
+            "Analysis as-a-service",
+            "Visualization as-a-service"
+          ]
+        },
+        {
+          "page": 17,
+          "headings": [
+            "Open Pipeline Provides Outputs at Different Stages Appropriate for a Diverse User Base"
+          ],
+          "orderedText": [
+            "Preprocessing as-a-service",
+            "End-User-Specific",
+            "AODS1 as-a-service",
+            "End-User Cloud-Native Analysis",
+            "Analysis as-a-service",
+            "Visualization as-a-service"
+          ]
+        },
+        {
+          "page": 18,
+          "headings": [
+            "Open Pipeline Provides Outputs at Different Stages Appropriate for a Diverse User Base"
+          ],
+          "orderedText": [
+            "AODS1 as-a-service",
+            "End-User Cloud-Native Analysis",
+            "Analysis as-a-service",
+            "End-User Interpretation",
+            "Visualization as-a-service",
+            "1 Analytics Optimized Data Store"
+          ]
+        },
+        {
+          "page": 19,
+          "headings": [
+            "Open Pipeline Provides Outputs at Different Stages Appropriate for a Diverse User Base"
+          ],
+          "text": [
+            "End-User Cloud-Native Analysis",
+            "End-User Interpretation",
+            "Data Exploration",
+            "Analytics Optimized Data Store"
+          ]
+        },
+        {
+          "page": 20,
+          "headings": [
+            "Open Pipeline Enables Integration with Other Data, Scripts, and Workflows"
+          ],
+          "text": [
+            "End-User Cloud-Native Analysis",
+            "End-User Interpretation",
+            "Data Exploration",
+            "Analytics Optimized Data Store"
+          ]
+        },
+        {
+          "page": 21,
+          "headings": [
+            "Open Pipeline Enables Integration with Exploitation Platforms"
+          ],
+          "orderedText": [
+            "Exploitation Platforms",
+            "Cumulus Data Archive",
+            "Preprocessing as-a-service",
+            "AODS1 as-a-service",
+            "Analysis as-a-service",
+            "Visualization as-a-service",
+            "1 Analytics Optimized Data Store"
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "1",
+              "before": "AODS",
+              "after": "as-a-service"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ntrs-20210020887-techport-thm-2021",
+      "sourceSHA256": "0fce4b68983ad8a216c8228ec44697c61ab41977ad41733c465ebebec3976ff0",
+      "basis": "All five source pages visually reviewed against 80 DPI Poppler renders (sidebar, gallery and header at 300 DPI) and the extracted text layer. Protects only output that matches the source: the main column's section titles as headings; the five Project Introduction paragraphs whole, separate and in order; every bullet item's text whole and in source order on pages 2-3, including the nested items; the See Image and See Figure lines; the closeout-document title and link text and the Figure 1 caption on page 4; and preserved images for the page-1 photo, the page-3 map, the page-4 figure and the page-5 gallery. Not pinned because wrong now: the header band's division, title and status lines kept inside a region crop with the insignia on every page; the right sidebar panels (photo caption, table of contents, organizational responsibility, project management, TRL chart, technology areas, destinations, mission type), the page-4 tables and the page-5 gallery captions kept only inside region crops; the Printed on, URL, page-number and accessible-alternative footer lines left in the reading flow; bullet markers as tiny image crops before paragraph items; Closeout Documentation merged into its paragraph and Images not a heading; a space inside the wrapped image URLs; and the source-page image forced by borderless links on every page (see the review file). No committed rasters: every page shows the NASA insignia (14 CFR 1221); see the manifest's rights note.",
+      "pages": [
+        {
+          "page": 1,
+          "headings": [
+            "Project Introduction"
+          ],
+          "paragraphs": [
+            "Sustained human presence in cislunar space relies on propellant management technologies that either do not exist or exist only at low-TRL. One such low-TRL technology is propellant mass gauging in microgravity. NASA technology roadmaps and Artemis architectures call for the ability to measure propellant in both settled and unsettled states during propellant transfer operations and during quiescent periods of microgravity. Target gauging resolutions are typically one percent of full tank volume. As a variety of propellant systems may be at play in an Artemis mission involving lunar landers, Orion, and the Gateway Power and Propulsion Element, the ability to gauge both cryogenic and earth-storable propellant with the same technology is also necessary.",
+            "Tank Health Monitoring (THM) is an active vibration based technology which provides structural integrity information and fluid amount (mass) in tanks in gravity and zero g environments. The fluid mass application is referred to as Modal Propellant Gauge. The method is completely non-invasive, is fluid independent and is highly accurate, providing near real time data.",
+            "The Modal Propellant Gauging (MPG) experiment seeks to raise TRL for the gauging of settled and unsettled propellants from 6-7 by demonstrating an end-to-end propellant mass gauging system that translates the modal response of liquid-filled tanks in microgravity to liquid mass measurements using a combination of sensor technology, data acquisition hardware, and software algorithms.",
+            "The PZT Health monitoring system like the modal Propellant gauging application uses a PZT actuator to supply a consistent random input while recording PZT sensor responses on the tanks. The Graphs show the relative frequencies transferred between two sensors with differences due to the tanks stiffness changes which affect the frequencies and magnitudes of the responses. (See Image: Equation).",
+            "Where K is the material stiffness which is affected by the type, geometry, temperature of the material and external stress such as pressure, M is the modal mass of the system."
+          ],
+          "orderedText": [
+            "Project Introduction",
+            "Sustained human presence in cislunar space",
+            "Tank Health Monitoring (THM) is an active vibration based technology",
+            "The Modal Propellant Gauging (MPG) experiment",
+            "The PZT Health monitoring system",
+            "Where K is the material stiffness",
+            "See Figure 1:"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Sustained human presence",
+              "second": "Tank Health Monitoring (THM) is an active"
+            },
+            {
+              "first": "The Modal Propellant Gauging (MPG) experiment",
+              "second": "The PZT Health monitoring system"
+            },
+            {
+              "first": "Where K is the material stiffness",
+              "second": "See Figure 1:"
+            }
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 2,
+          "headings": [
+            "Anticipated Benefits"
+          ],
+          "orderedText": [
+            "High accuracy demonstrated on Orion Tank of ~0.25% average in settled state",
+            "Demostrated with Morpheus static engne frings under partial vacumn at GRC Plumbrook test facility that Engine noise did not interfere with MPG mass measurment anks of the same part number behave similarly",
+            "Can use one tank to develop FRF/mass reference table for all other tanks of the same part number and support system",
+            "Zero-G accuracy is on the order of 1% as demonstrated in Flight",
+            "MPG Point Sensor readings provide another accurate method to establish fluid level in the tank during loading or during a burn",
+            "FPGA based avionics and algorithm design provide 1 HZ update on mass measurement",
+            "Design provides Industrial and Rad Tolerant option for avionics for Deep Space Use",
+            "Anticipated Benefits",
+            "NASA requires accurate propellant mass gauging technology which can operate in deep space and microgravity and for differential draining tanks",
+            "MPG technology is aimed:",
+            "increasing human safety with accurate gauging",
+            "Monitoring propellant used for missions and ultimately limiting amount of propellant reserves/mass required",
+            "Mitigates typical estimation errors which can grow towards end of life ~ 10% or more",
+            "See Image: In-Space Propellant Gauging"
+          ]
+        },
+        {
+          "page": 3,
+          "headings": [
+            "Primary U.S. Work Locations and Key Partners"
+          ],
+          "orderedText": [
+            "Technology can be infused into future CLPS landers, Orion (EM- 3+), NASA HLS, Gateway MMH tanks, etc.",
+            "The technology has been highly successfully demonstrated to provide Tank health monitoring and mass propellant gauging including software algorithms",
+            "Very low risk for forward plan for MPG CLIPS experiments which is the path to show deep space tank Zero-G validation",
+            "The capability is required for deep space missions manned and unmanned including CLIPS, Orion, Gateway, and HLS",
+            "To explore deep Space, the future is to develop very reliable much lighter spacecraft, composite tank testing with THM show a necessary sensitivity to structural flaws allowing ultralight tanks with the real time Go/No-go technology",
+            "Modal Propellant Gauge (MPG) allows a highly accurate, non-invasive, near real-time measurement of propellant mass in both gravity and Zero-G",
+            "Primary U.S. Work Locations and Key Partners"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 4,
+          "orderedText": [
+            "Tank Health Monitoring Close Out Report and Executive Summary",
+            "(https://techport.nasa.gov/file/41595)",
+            "Images",
+            "Figure 1: essential signal chain of the MPG technology",
+            "The essential signal chain of the MPG technology"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 5,
+          "minimumImages": 1
+        }
+      ]
     }
   ],
   "excludedFullConversions": [

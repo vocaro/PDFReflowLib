@@ -12,7 +12,7 @@ A valid EPUB can still contain incorrect text, wrong reading order or unreadable
   pixels, including crop origins, rotations, annotations and resource ceilings. Preserved-region
   tests also inspect fraction bars, raised exponents and all six cells of a ruled table in actual
   EPUB images at 72/144 DPI, with surrounding-prose and code controls.
-- `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->19<!-- counts:end --> complete PDF conversions,
+- `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->21<!-- counts:end --> complete PDF conversions,
   sequentially, with EPUBCheck, monotonic progress, pinned source identities, memory budgets
   and reviewed page-specific content contracts. All selected cached sources and EPUBCheck
   are required; missing data fails explicitly. The evaluator does not download anything. The lane
@@ -113,8 +113,8 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 2338 targeted checks on 464 reviewed pages
-across 19 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
+[corpus/regressions.json](../corpus/regressions.json) has 2521 targeted checks on 490 reviewed pages
+across 21 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No. 14*, *Mineral Commodity
 Summaries 2025*, *Loper Bright Enterprises v. Raimondo*, *Disclosure Risk Assessment in Perturbative
@@ -122,12 +122,12 @@ Microdata Protection*, *Welcome to the United States*, *Publication 596*, *Stimu
 Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case*,
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
 Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
-System* and *Agricultural Research*. They comprise 873 ordered-text, 168 text, 327 paragraph,
-175 absent-text, 196 heading, 32 absent-heading, 58 list-item, 1 preformatted-lines, 23 script,
-11 footnote, 34 note-link, 56 paragraph-continuation, 1 list-item-continuation,
-8 paragraph-separation, 73 distinct-paragraph, 174 image-presence, 71 warning, 25 absent-warning,
-17 source-region, 3 glyph-structure, 3 image-appearance and 9 table-cell checks, counted as
-`tools/check_corpus_content.py` counts them.
+System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
+They comprise 992 ordered-text, 178 text, 332 paragraph, 176 absent-text, 214 heading,
+32 absent-heading, 74 list-item, 1 preformatted-lines, 25 script, 11 footnote, 34 note-link,
+56 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 77 distinct-paragraph,
+182 image-presence, 71 warning, 25 absent-warning, 17 source-region, 3 glyph-structure,
+3 image-appearance and 9 table-cell checks, counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
 All source-page anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.

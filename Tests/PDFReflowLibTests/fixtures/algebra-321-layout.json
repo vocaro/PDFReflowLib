@@ -1,0 +1,1784 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        84.9602,
+        745.53924480000001,
+        425.21390640000004,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Dividing with complex numbers also has one thing we need to be careful of. If i is"
+        }
+      ],
+      "text" : "Dividing with complex numbers also has one thing we need to be careful of. If i is"
+    },
+    {
+      "rect" : [
+        94.919539999999984,
+        721.70320800000002,
+        17.258048000000002,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 1"
+        }
+      ],
+      "text" : "− 1"
+    },
+    {
+      "rect" : [
+        84.959739999999982,
+        730.17924480000011,
+        425.20225812042247,
+        21.567355199999952
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 9.6001999999999725,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", and it is in the denominator of a fraction, then we have a radical in the"
+        }
+      ],
+      "text" : "√ , and it is in the denominator of a fraction, then we have a radical in the"
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        715.77924480000013,
+        425.20228980830723,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "denominator! This means we will want to rationalize our denominator so there"
+        }
+      ],
+      "text" : "denominator! This means we will want to rationalize our denominator so there"
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        701.37924480000015,
+        425.20186150727682,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "are no i’s. This is done the same way we rationalized denominators with square"
+        }
+      ],
+      "text" : "are no i’s. This is done the same way we rationalized denominators with square"
+    },
+    {
+      "rect" : [
+        84.959960000000024,
+        686.97924480000017,
+        29.171812267008008,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "roots."
+        }
+      ],
+      "text" : "roots."
+    },
+    {
+      "rect" : [
+        84.959960000000024,
+        659.87130000000013,
+        79.690012177763833,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 436."
+        }
+      ],
+      "text" : "Example 436."
+    },
+    {
+      "rect" : [
+        174.83966000000004,
+        638.37924480000015,
+        28.833236800000009,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "7 +3i"
+        }
+      ],
+      "text" : "7 +3i"
+    },
+    {
+      "rect" : [
+        178.67986000000005,
+        614.90300800000011,
+        21.152826800000014,
+        28.25534719999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7999999999999545,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 5i "
+        }
+      ],
+      "text" : "− 5i "
+    },
+    {
+      "rect" : [
+        220.56,
+        614.90300800000011,
+        229.11312680000009,
+        28.25534719999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Just a monomial in denominator, multiply by i"
+        }
+      ],
+      "text" : "Just a monomial in denominator, multiply by i"
+    },
+    {
+      "rect" : [
+        150.96009000000004,
+        595.6593448000001,
+        28.832836799999995,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "7+ 3i"
+        }
+      ],
+      "text" : "7+ 3i"
+    },
+    {
+      "rect" : [
+        154.79989000000003,
+        572.18310800000006,
+        33.879137199999974,
+        36.554651999999919
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 5i"
+        }
+      ],
+      "text" : "− 5i"
+    },
+    {
+      "rect" : [
+        190.91980000000001,
+        596.22144919999994,
+        3.9930367999999987,
+        10.974873600000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "i"
+        }
+      ],
+      "text" : "i"
+    },
+    {
+      "rect" : [
+        190.91980000000001,
+        572.75260800000001,
+        154.55542543656964,
+        35.985151999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7999899999999798,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "i "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Distribute i in numerator"
+        }
+      ],
+      "text" : "i Distribute i in numerator"
+    },
+    {
+      "rect" : [
+        166.68000000000001,
+        550.53924480000001,
+        36.991868409999995,
+        13.298647699999833
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "7i + 3i"
+        },
+        {
+          "baselineOffset" : 4.3203099999999495,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "7i + 3i2"
+    },
+    {
+      "rect" : [
+        172.43974,
+        527.06301799999994,
+        100.95236840999999,
+        29.574874499999964
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7999900000000935,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 5i"
+        },
+        {
+          "baselineOffset" : -4.3199100000000499,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Simplify i"
+        },
+        {
+          "baselineOffset" : 4.3203099999999495,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "− 5i2 Simplify i2"
+    },
+    {
+      "rect" : [
+        275.2799,
+        534.86300800000004,
+        28.297948000000019,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "=− 1"
+        }
+      ],
+      "text" : "=− 1"
+    },
+    {
+      "rect" : [
+        146.63980000000001,
+        500.30320800000004,
+        57.000275591167991,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "7i + 3(− 1)"
+        }
+      ],
+      "text" : "7i + 3(− 1)"
+    },
+    {
+      "rect" : [
+        152.39995999999999,
+        485.30320800000004,
+        112.50078084290564,
+        28.135147200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.8399000000000001,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 5(− 1) "
+        },
+        {
+          "baselineOffset" : 3.8399000000000001,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Multiply"
+        }
+      ],
+      "text" : "− 5(− 1) Multiply"
+    },
+    {
+      "rect" : [
+        174.47989999999999,
+        457.58300800000006,
+        29.138148000000001,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "7i− 3"
+        }
+      ],
+      "text" : "7i− 3"
+    },
+    {
+      "rect" : [
+        186.1198,
+        451.05924480000004,
+        99.024029552102434,
+        19.779110399999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7999999999999545,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
+        }
+      ],
+      "text" : "5 Our Solution"
+    },
+    {
+      "rect" : [
+        84.960000000000008,
+        427.65924480000001,
+        425.20267486054399,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The solution for these problems can be written several diﬀerent ways, for example"
+        }
+      ],
+      "text" : "The solution for these problems can be written several diﬀerent ways, for example"
+    },
+    {
+      "rect" : [
+        86.160000000000025,
+        414.88838494999999,
+        28.925019820000003,
+        13.58903755
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "− 3 + 7i"
+        }
+      ],
+      "text" : "− 3 + 7i"
+    },
+    {
+      "rect" : [
+        98.519740000000027,
+        409.4675125,
+        50.312408409999975,
+        19.009909999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.9198799999999778,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5 "
+        },
+        {
+          "baselineOffset" : -3.1199199999999792,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "or"
+        },
+        {
+          "baselineOffset" : 3.119920000000036,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "− 3"
+        }
+      ],
+      "text" : "5 or− 3"
+    },
+    {
+      "rect" : [
+        140.63986,
+        409.4675125,
+        29.792268409999991,
+        19.009909999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.7999599999999987,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ "
+        },
+        {
+          "baselineOffset" : 6.2398400000000152,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "7"
+        }
+      ],
+      "text" : "5 + 7"
+    },
+    {
+      "rect" : [
+        166.19999999999999,
+        409.4675125,
+        343.97764640000008,
+        15.770842700000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.7999599999999987,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "i, The author has elected to use the solution as written, but it is"
+        }
+      ],
+      "text" : "5 i, The author has elected to use the solution as written, but it is"
+    },
+    {
+      "rect" : [
+        84.960080000000062,
+        398.13894479999999,
+        356.65258526228479,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "important to express your answer in the form your instructor prefers."
+        }
+      ],
+      "text" : "important to express your answer in the form your instructor prefers."
+    },
+    {
+      "rect" : [
+        84.960080000000062,
+        371.03100000000001,
+        79.690012129943057,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 437."
+        }
+      ],
+      "text" : "Example 437."
+    },
+    {
+      "rect" : [
+        177.11988000000008,
+        340.94280800000001,
+        29.073136799999986,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2− 6i"
+        }
+      ],
+      "text" : "2− 6i"
+    },
+    {
+      "rect" : [
+        177.23978000000005,
+        333.74300800000003,
+        28.833236800000009,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.800200000000018,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4+ 8i "
+        }
+      ],
+      "text" : "4+ 8i "
+    },
+    {
+      "rect" : [
+        223.08000000000001,
+        333.74300800000003,
+        272.55306680000001,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Binomial in denominator, multiply by conjugate, 4− 8i"
+        }
+      ],
+      "text" : "Binomial in denominator, multiply by conjugate, 4− 8i"
+    },
+    {
+      "rect" : [
+        128.28003000000001,
+        298.34300800000005,
+        28.952826800000025,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2− 6i"
+        }
+      ],
+      "text" : "2− 6i"
+    },
+    {
+      "rect" : [
+        128.28002000000004,
+        283.91260799999998,
+        37.839007199999969,
+        35.985152000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4 +8i"
+        }
+      ],
+      "text" : "4 +8i"
+    },
+    {
+      "rect" : [
+        168.36019999999999,
+        298.34292800000003,
+        29.072746799999976,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4− 8i"
+        }
+      ],
+      "text" : "4− 8i"
+    },
+    {
+      "rect" : [
+        168.36021,
+        283.34292800000003,
+        339.05536438305285,
+        36.554831999999976
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.799980000000005,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4− 8i "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "FOIL in numerator, denominator is a diﬀerence of squares"
+        }
+      ],
+      "text" : "4− 8i FOIL in numerator, denominator is a diﬀerence of squares"
+    },
+    {
+      "rect" : [
+        108.96002000000004,
+        253.22300800000005,
+        97.232248410000011,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "8− 16i− 24i +48i"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "8− 16i− 24i +48i2"
+    },
+    {
+      "rect" : [
+        135.11994000000007,
+        238.22302800000008,
+        140.67224840999987,
+        29.574474499999923
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7999799999999198,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "16− 64i"
+        },
+        {
+          "baselineOffset" : -4.319899999999933,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Simplify i"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "16− 64i2 Simplify i2"
+    },
+    {
+      "rect" : [
+        277.79989999999998,
+        246.023008,
+        28.177948000000015,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "=− 1"
+        }
+      ],
+      "text" : "=− 1"
+    },
+    {
+      "rect" : [
+        88.919799999999981,
+        211.46320800000001,
+        117.24024559116802,
+        20.455347199999977
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "8− 16i− 24i + 48(− 1)"
+        }
+      ],
+      "text" : "8− 16i− 24i + 48(− 1)"
+    },
+    {
+      "rect" : [
+        115.08013,
+        196.46320800000001,
+        152.34099376796161,
+        28.135147199999977
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "16− 64(− 1) "
+        },
+        {
+          "baselineOffset" : 7.6798000000000002,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Multiply"
+        }
+      ],
+      "text" : "16− 64(− 1) Multiply"
+    },
+    {
+      "rect" : [
+        116.76000000000001,
+        168.743008,
+        89.366082243584046,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "8− 16i− 24i− 48"
+        }
+      ],
+      "text" : "8− 16i− 24i− 48"
+    },
+    {
+      "rect" : [
+        143.16010000000006,
+        161.54300800000001,
+        36.565982243584017,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.8000000000000114,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "16 +64 "
+        }
+      ],
+      "text" : "16 +64 "
+    },
+    {
+      "rect" : [
+        223.08000000000001,
+        161.54300800000001,
+        266.96618004927996,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Combine like terms 8− 48 and− 16i− 24i and 16 + 64"
+        }
+      ],
+      "text" : "Combine like terms 8− 48 and− 16i− 24i and 16 + 64"
+    },
+    {
+      "rect" : [
+        154.08001000000002,
+        128.18320800000001,
+        52.113036800000003,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 40− 40i"
+        }
+      ],
+      "text" : "− 40− 40i"
+    },
+    {
+      "rect" : [
+        174.23981000000003,
+        121.6594448,
+        11.726182243583992,
+        19.778910400000015
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7998000000000047,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "80 "
+        }
+      ],
+      "text" : "80 "
+    },
+    {
+      "rect" : [
+        223.08000000000001,
+        121.6594448,
+        152.12653681423362,
+        19.778910400000015
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Reduce, divide each term by 40"
+        }
+      ],
+      "text" : "Reduce, divide each term by 40"
+    },
+    {
+      "rect" : [
+        171.71986000000001,
+        88.463108000000005,
+        34.473156799999998,
+        20.443392000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 1− i"
+        }
+      ],
+      "text" : "− 1− i"
+    },
+    {
+      "rect" : [
+        185.99998000000002,
+        81.939344800000001,
+        101.66424383459841,
+        19.779210399999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.8001000000000005,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
+        }
+      ],
+      "text" : "2 Our Solution"
+    },
+    {
+      "rect" : [
+        297.1198,
+        52.379053199999994,
+        15.061000995093593,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "321"
+        }
+      ],
+      "text" : "321"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      92.68010000000001,
+      740.90000000000009,
+      21.519899999999993,
+      4
+    ],
+    [
+      172.24000000000001,
+      634.94000000000005,
+      34,
+      4
+    ],
+    [
+      148.36000000000001,
+      592.22000000000014,
+      34,
+      4
+    ],
+    [
+      188.32000000000002,
+      592.22000000000014,
+      9.1599999999999966,
+      4
+    ],
+    [
+      164.08000000000004,
+      546.98000000000002,
+      42.159999999999968,
+      4
+    ],
+    [
+      144.04000000000002,
+      505.22000000000008,
+      62.199999999999989,
+      4
+    ],
+    [
+      171.88000000000002,
+      462.62,
+      34.359999999999985,
+      4
+    ],
+    [
+      83.560200000000009,
+      417.01999999999998,
+      34.119799999999998,
+      4
+    ],
+    [
+      134.08000000000001,
+      417.01999999999998,
+      17.439999999999998,
+      4
+    ],
+    [
+      163.60000000000002,
+      417.01999999999998,
+      9.3999999999999773,
+      4
+    ],
+    [
+      174.52000000000001,
+      345.98000000000002,
+      34.239999999999981,
+      4
+    ],
+    [
+      125.68000000000002,
+      303.38000000000005,
+      34.11999999999999,
+      4
+    ],
+    [
+      165.76000000000002,
+      303.38000000000005,
+      34.239999999999981,
+      4
+    ],
+    [
+      106.36000000000001,
+      258.26000000000005,
+      102.39999999999998,
+      4
+    ],
+    [
+      86.319900000000018,
+      216.38000000000002,
+      122.44009999999997,
+      4
+    ],
+    [
+      114.16000000000003,
+      173.78000000000003,
+      94.599999999999966,
+      4
+    ],
+    [
+      151.48000000000002,
+      133.09999999999999,
+      57.279999999999973,
+      4
+    ],
+    [
+      169.12,
+      93.5,
+      39.639999999999986,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        745.53924480000001,
+        425.21390640000004,
+        11.979110399999968
+      ],
+      "text" : "Dividing with complex numbers also has one thing we need to be careful of. If i is"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        94.919539999999984,
+        721.70320800000002,
+        17.258048000000002,
+        20.443392000000017
+      ],
+      "text" : "− 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959739999999982,
+        730.17924480000011,
+        425.20225812042247,
+        21.567355199999952
+      ],
+      "text" : "√ , and it is in the denominator of a fraction, then we have a radical in the"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        715.77924480000013,
+        425.20228980830723,
+        11.979110399999968
+      ],
+      "text" : "denominator! This means we will want to rationalize our denominator so there"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        701.37924480000015,
+        425.20186150727682,
+        11.979110399999968
+      ],
+      "text" : "are no i’s. This is done the same way we rationalized denominators with square"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959960000000024,
+        686.97924480000017,
+        29.171812267008008,
+        11.979110399999968
+      ],
+      "text" : "roots."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959960000000024,
+        659.87130000000013,
+        79.690012177763833,
+        11.955199999999991
+      ],
+      "text" : "Example 436."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.83966000000004,
+        638.37924480000015,
+        28.833236800000009,
+        11.967155199999979
+      ],
+      "text" : "7 +3i"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        178.67986000000005,
+        614.90300800000011,
+        21.152826800000014,
+        28.25534719999996
+      ],
+      "text" : "− 5i"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        220.56,
+        614.90300800000011,
+        229.11312680000009,
+        28.25534719999996
+      ],
+      "text" : "Just a monomial in denominator, multiply by i"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        150.96009000000004,
+        595.6593448000001,
+        28.832836799999995,
+        11.967155199999979
+      ],
+      "text" : "7+ 3i"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        154.79989000000003,
+        572.18310800000006,
+        33.879137199999974,
+        36.554651999999919
+      ],
+      "text" : "− 5i"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        190.91980000000001,
+        596.22144919999994,
+        3.9930367999999987,
+        10.974873600000024
+      ],
+      "text" : "i"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        190.91980000000001,
+        572.75260800000001,
+        154.55542543656964,
+        35.985151999999971
+      ],
+      "text" : "i Distribute i in numerator"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        166.68000000000001,
+        550.53924480000001,
+        36.991868409999995,
+        13.298647699999833
+      ],
+      "text" : "7i + 3i2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        172.43974,
+        527.06301799999994,
+        100.95236840999999,
+        29.574874499999964
+      ],
+      "text" : "− 5i2 Simplify i2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        275.2799,
+        534.86300800000004,
+        28.297948000000019,
+        20.443392000000017
+      ],
+      "text" : "=− 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        146.63980000000001,
+        500.30320800000004,
+        57.000275591167991,
+        20.443392000000017
+      ],
+      "text" : "7i + 3(− 1)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        152.39995999999999,
+        485.30320800000004,
+        112.50078084290564,
+        28.135147200000006
+      ],
+      "text" : "− 5(− 1) Multiply"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.47989999999999,
+        457.58300800000006,
+        29.138148000000001,
+        20.443392000000017
+      ],
+      "text" : "7i− 3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        186.1198,
+        451.05924480000004,
+        99.024029552102434,
+        19.779110399999979
+      ],
+      "text" : "5 Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000008,
+        427.65924480000001,
+        425.20267486054399,
+        11.979110400000025
+      ],
+      "text" : "The solution for these problems can be written several diﬀerent ways, for example"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        86.160000000000025,
+        414.88838494999999,
+        28.925019820000003,
+        13.58903755
+      ],
+      "text" : "− 3 + 7i"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        98.519740000000027,
+        409.4675125,
+        50.312408409999975,
+        19.009909999999991
+      ],
+      "text" : "5 or− 3"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        140.63986,
+        409.4675125,
+        29.792268409999991,
+        19.009909999999991
+      ],
+      "text" : "5 + 7"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        166.19999999999999,
+        409.4675125,
+        343.97764640000008,
+        15.770842700000003
+      ],
+      "text" : "5 i, The author has elected to use the solution as written, but it is"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960080000000062,
+        398.13894479999999,
+        356.65258526228479,
+        11.979110400000025
+      ],
+      "text" : "important to express your answer in the form your instructor prefers."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960080000000062,
+        371.03100000000001,
+        79.690012129943057,
+        11.955199999999991
+      ],
+      "text" : "Example 437."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        177.11988000000008,
+        340.94280800000001,
+        29.073136799999986,
+        20.443392000000017
+      ],
+      "text" : "2− 6i"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        177.23978000000005,
+        333.74300800000003,
+        28.833236800000009,
+        20.455347200000006
+      ],
+      "text" : "4+ 8i"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        223.08000000000001,
+        333.74300800000003,
+        272.55306680000001,
+        20.455347200000006
+      ],
+      "text" : "Binomial in denominator, multiply by conjugate, 4− 8i"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        128.28003000000001,
+        298.34300800000005,
+        28.952826800000025,
+        20.443392000000017
+      ],
+      "text" : "2− 6i"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        128.28002000000004,
+        283.91260799999998,
+        37.839007199999969,
+        35.985152000000028
+      ],
+      "text" : "4 +8i"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        168.36019999999999,
+        298.34292800000003,
+        29.072746799999976,
+        20.443392000000017
+      ],
+      "text" : "4− 8i"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        168.36021,
+        283.34292800000003,
+        339.05536438305285,
+        36.554831999999976
+      ],
+      "text" : "4− 8i FOIL in numerator, denominator is a diﬀerence of squares"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        108.96002000000004,
+        253.22300800000005,
+        97.232248410000011,
+        21.774494500000003
+      ],
+      "text" : "8− 16i− 24i +48i2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        135.11994000000007,
+        238.22302800000008,
+        140.67224840999987,
+        29.574474499999923
+      ],
+      "text" : "16− 64i2 Simplify i2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        277.79989999999998,
+        246.023008,
+        28.177948000000015,
+        20.443392000000017
+      ],
+      "text" : "=− 1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        88.919799999999981,
+        211.46320800000001,
+        117.24024559116802,
+        20.455347199999977
+      ],
+      "text" : "8− 16i− 24i + 48(− 1)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        115.08013,
+        196.46320800000001,
+        152.34099376796161,
+        28.135147199999977
+      ],
+      "text" : "16− 64(− 1) Multiply"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        116.76000000000001,
+        168.743008,
+        89.366082243584046,
+        20.455347200000006
+      ],
+      "text" : "8− 16i− 24i− 48"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        143.16010000000006,
+        161.54300800000001,
+        36.565982243584017,
+        20.455347200000006
+      ],
+      "text" : "16 +64"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        223.08000000000001,
+        161.54300800000001,
+        266.96618004927996,
+        20.455347200000006
+      ],
+      "text" : "Combine like terms 8− 48 and− 16i− 24i and 16 + 64"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        154.08001000000002,
+        128.18320800000001,
+        52.113036800000003,
+        20.455347200000006
+      ],
+      "text" : "− 40− 40i"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.23981000000003,
+        121.6594448,
+        11.726182243583992,
+        19.778910400000015
+      ],
+      "text" : "80"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        223.08000000000001,
+        121.6594448,
+        152.12653681423362,
+        19.778910400000015
+      ],
+      "text" : "Reduce, divide each term by 40"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        171.71986000000001,
+        88.463108000000005,
+        34.473156799999998,
+        20.443392000000003
+      ],
+      "text" : "− 1− i"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        185.99998000000002,
+        81.939344800000001,
+        101.66424383459841,
+        19.779210399999997
+      ],
+      "text" : "2 Our Solution"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        297.1198,
+        52.379053199999994,
+        15.061000995093593,
+        9.8729762399999998
+      ],
+      "text" : "321"
+    }
+  ],
+  "page" : 321,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        92.68010000000001,
+        740.90000000000009,
+        21.519899999999993,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        172.24000000000001,
+        634.94000000000005,
+        34,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.36000000000001,
+        592.22000000000014,
+        34,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        188.32000000000002,
+        592.22000000000014,
+        9.1599999999999966,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.08000000000004,
+        546.98000000000002,
+        42.159999999999968,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.04000000000002,
+        505.22000000000008,
+        62.199999999999989,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.88000000000002,
+        462.62,
+        34.359999999999985,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        83.560200000000009,
+        417.01999999999998,
+        34.119799999999998,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        134.08000000000001,
+        417.01999999999998,
+        17.439999999999998,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        163.60000000000002,
+        417.01999999999998,
+        9.3999999999999773,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        174.52000000000001,
+        345.98000000000002,
+        34.239999999999981,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        125.68000000000002,
+        303.38000000000005,
+        34.11999999999999,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        165.76000000000002,
+        303.38000000000005,
+        34.239999999999981,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        106.36000000000001,
+        258.26000000000005,
+        102.39999999999998,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        86.319900000000018,
+        216.38000000000002,
+        122.44009999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        114.16000000000003,
+        173.78000000000003,
+        94.599999999999966,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.48000000000002,
+        133.09999999999999,
+        57.279999999999973,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        169.12,
+        93.5,
+        39.639999999999986,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

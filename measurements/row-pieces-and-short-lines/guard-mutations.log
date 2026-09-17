@@ -1,0 +1,62 @@
+# Each guard of the final candidate mutated in turn (bc5eb8c + working tree); tests run:
+# swift test --filter 'RowPiecesAndSpacedParagraph|SectionLeadIn|InlineFormulaProse|Footnote|MarkerPiece|CitationContinuation|ColumnCut|PreservedRegion' (92 tests).
+# The left-edge radicand mutant survived its first run (page 9's 21. is also refused by the list-line guard);
+# the synthetic (2.828) control was added and the mutant rerun (last entry).
+
+## #95 no column-edge guard
+  failing: syntheticSplitRadicalRowJoinsOnlyAsProse
+  ✘ Test run with 92 tests in 0 suites failed after 2.195 seconds with 1 issue.
+## #95 no sign-at-join guard for gaps wider than a font size
+  failing: sourceAlgebraRowsJoinOnlyWithinTheirRow
+  ✘ Test run with 92 tests in 0 suites failed after 2.115 seconds with 2 issues.
+## #95 sign only in the first/last token
+  failing: sourceAlgebraRowsJoinOnlyWithinTheirRow
+  ✘ Test run with 92 tests in 0 suites failed after 2.153 seconds with 1 issue.
+## #95 staggered overlap needs a full font size
+  failing: sourceAlgebraRowsJoinOnlyWithinTheirRow
+  ✘ Test run with 92 tests in 0 suites failed after 2.138 seconds with 1 issue.
+## #95 staggered overlap needs any extension
+  failing: sourceAlgebraRowsJoinOnlyWithinTheirRow
+  ✘ Test run with 92 tests in 0 suites failed after 2.155 seconds with 3 issues.
+## #95 no radicand containment
+  failing: sourceAlgebraRowsJoinOnlyWithinTheirRow
+  ✘ Test run with 92 tests in 0 suites failed after 2.057 seconds with 1 issue.
+## #95 radicand containment at the left edge
+  failing: none
+  ✔ Test run with 92 tests in 0 suites passed after 2.086 seconds.
+## #95 no image-between guard
+  failing: syntheticSplitRadicalRowJoinsOnlyAsProse
+  ✘ Test run with 92 tests in 0 suites failed after 2.040 seconds with 1 issue.
+## #95 no best-overlap restriction
+  failing: sourceRadicalRowPiecesJoinTheirParagraphsInOrder
+  ✘ Test run with 92 tests in 0 suites failed after 2.058 seconds with 3 issues.
+## #95 no shared-band guard
+  failing: sourceAlgebraRowsJoinOnlyWithinTheirRow
+  ✘ Test run with 92 tests in 0 suites failed after 2.017 seconds with 1 issue.
+## #95 no math-sign requirement
+  failing: syntheticDetachedMarkerNeedsSmallDigitsAtTheLineEnd, syntheticSplitRadicalRowJoinsOnlyAsProse
+  ✘ Test run with 92 tests in 0 suites failed after 2.146 seconds with 2 issues.
+## #95 no prose-row requirement
+  failing: algebraExercisesAndWarrenListsRemainPreformatted, sourceControlPagesKeepEveryBlockBoundary, sourceExerciseColumnsKeepTheirRowPiecesApart, syntheticSplitRadicalRowJoinsOnlyAsProse
+  ✘ Test run with 92 tests in 0 suites failed after 2.200 seconds with 11 issues.
+## #95 no list-line guard
+  failing: sourceAlgebraRowsJoinOnlyWithinTheirRow
+  ✘ Test run with 92 tests in 0 suites failed after 2.191 seconds with 2 issues.
+## #95 union rectangle instead of one-line band
+  failing: sourceAlgebraRowsJoinOnlyWithinTheirRow, sourceControlPagesKeepEveryBlockBoundary, sourceOpeningRadicalRowJoinsTheParagraphBeneathIt, sourceRadicalRowClosesItsNoteParagraph, sourceRadicalRowPiecesJoinTheirParagraphsInOrder, syntheticSplitRadicalRowJoinsOnlyAsProse
+  ✘ Test run with 92 tests in 0 suites failed after 2.038 seconds with 12 issues.
+## #71 added space 0.2 body
+  failing: boldEmphasisInsideAParagraphNeverSplitsIt, syntheticBlankLineOpensAParagraphOnlyAfterASentence
+  ✘ Test run with 92 tests in 0 suites failed after 2.075 seconds with 4 issues.
+## #71 no left-edge check
+  failing: boldEmphasisInsideAParagraphNeverSplitsIt, syntheticBlankLineOpensAParagraphOnlyAfterASentence
+  ✘ Test run with 92 tests in 0 suites failed after 2.060 seconds with 2 issues.
+## #71 no capital check
+  failing: syntheticBlankLineOpensAParagraphOnlyAfterASentence
+  ✘ Test run with 92 tests in 0 suites failed after 2.012 seconds with 1 issue.
+## #71 no sentence-end check
+  failing: boldEmphasisInsideAParagraphNeverSplitsIt, syntheticBlankLineOpensAParagraphOnlyAfterASentence
+  ✘ Test run with 92 tests in 0 suites failed after 2.022 seconds with 2 issues.
+## #95 radicand containment at the left edge
+  failing: syntheticSplitRadicalRowJoinsOnlyAsProse
+  ✘ Test run with 92 tests in 0 suites failed after 2.000 seconds with 1 issue.

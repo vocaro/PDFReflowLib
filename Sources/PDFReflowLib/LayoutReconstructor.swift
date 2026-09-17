@@ -186,6 +186,163 @@ enum LayoutReconstructor {
         return kept
     }
 
+    /// PDFKit splits a prose row at an inline radical: `Not all numbers have a nice even square
+    /// root. For example, if we found 8` and `√ on` (Wallace page 288), `process is being able to
+    /// translate a problem like 180 √ into 36· 5` and `√ . There are sev-` (page 289). Each piece
+    /// used to open a paragraph of its own, and a piece whose radical sign raised its rectangle
+    /// sorted a line early (#95). The pieces of one row rejoin into one line before anything reads
+    /// the lines.
+    ///
+    /// Radical signs overshoot a row's type by most of a line above and below, so rectangle
+    /// overlap alone cannot tell a row from its neighbour (page 288's last two rows overlap by 14
+    /// points). Two pieces can belong to one row when they are untagged, not monospaced, at the
+    /// body's size, overlap vertically as `sameRow` does, and meet horizontally in one of the ways a
+    /// split row does. The right piece can start where the left one ends, within one and a half
+    /// font sizes, on an edge no other line starts on (as a column or table cell would); where that
+    /// gap is wider than a font size a mathematical sign stands at the join (in the left piece's last
+    /// two tokens or the right piece's first two, since PDFKit writes a radicand before its sign:
+    /// `81 √ = 9 but 814√`, page 292) or one piece is mathematics alone (`25 √ .`, `36· 5`). A
+    /// derivation's annotation beside its step has neither (page 189's `Convert 3.21 × 105 to
+    /// standard notation` and `Positive exponent means…`). The radical at the join can make them
+    /// overlap in step by up to four font sizes, each extending past the other by more than half a
+    /// font size. Or a radicand extracted apart from its sign (`x8` inside `√ = x4, because we`,
+    /// page 290) lies within the sign's piece: narrow, without words, and clear of that piece's
+    /// left edge. A short line of the next row at the column's edge (`21.`, `example.`, `equal to`,
+    /// pages 9, 180 and 120) lies within the tall rectangle of a full line above it and joins
+    /// nothing. No preserved image may
+    /// stand between the pieces.
+    ///
+    /// Each piece proposes the candidates it overlaps most vertically, and proposals join strongest
+    /// first, only while every piece of the growing row still shares a band at least half a font
+    /// size tall: the pieces of one row all hold its baseline, whereas a chain through a tall piece
+    /// reaches the next row (page 198's `then combine like terms …` beneath `− 8xy + 21xy− 14y2 and`,
+    /// page 212's `12x3 + 32x. …` beneath `− 3x + 8) = 8x4`). A joined row must carry
+    /// inline mathematics (a radical, operator or relation sign in one of its pieces: page 288's
+    /// `squares" a number. For example, because 52` and `= 25 we say …` split at the raised 2) and
+    /// read as prose on its paragraph's measure (`isProseRow`), so table rows, exercise columns and
+    /// a two-column page's rows stay apart, and a stray same-size digit beside a line end is left
+    /// to the rules that already read it.
+    ///
+    /// The joined line reads its pieces left to right by centre, keeps their styles, and occupies
+    /// one line of its type: from the highest bottom edge among the pieces, as tall as the page's
+    /// ordinary lines of that size, so the paragraph rules see the row's leading rather than the
+    /// radical signs' overshoot.
+    static func joiningRowPieces(_ lines: [TextLine], images: [CGRect], body: CGFloat) -> [TextLine] {
+        let sized = lines.indices.filter { index in
+            let line = lines[index]
+            return line.structure == nil && !line.monospaced && abs(line.fontSize - body) <= body * 0.15
+                && !line.text.trimmingCharacters(in: .whitespaces).isEmpty
+        }
+        guard sized.count >= 2 else { return lines }
+        func signed(_ text: Substring) -> Bool { text.rangeOfCharacter(from: rowMathSymbols) != nil }
+        func word(_ token: Substring) -> Bool { token.filter(\.isLetter).count >= 2 }
+        func candidate(_ a: TextLine, _ b: TextLine) -> Bool {
+            guard sameRow(a.rect, b.rect), abs(a.fontSize - b.fontSize) <= max(a.fontSize, b.fontSize) * 0.1 else { return false }
+            let (left, right) = a.rect.midX <= b.rect.midX ? (a, b) : (b, a)
+            let size = max(a.fontSize, b.fontSize)
+            let gap = right.rect.minX - left.rect.maxX
+            if gap >= 0 {
+                guard gap <= size * 1.5 else { return false }
+                // A column or table cell starts on an edge other lines share; a split row's piece
+                // starts wherever its radical falls.
+                let aligned = lines.filter { other in
+                    other != left && other != right && !sameRow(other.rect, right.rect)
+                        && abs(other.rect.minX - right.rect.minX) <= 2
+                }
+                guard aligned.count < 2 else { return false }
+                if gap > size {
+                    let leftTokens = left.text.split(whereSeparator: \.isWhitespace)
+                    let rightTokens = right.text.split(whereSeparator: \.isWhitespace)
+                    let formulaOnly = [leftTokens, rightTokens].contains { !$0.contains(where: word) && $0.contains(where: signed) }
+                    guard formulaOnly || leftTokens.suffix(2).contains(where: signed) || rightTokens.prefix(2).contains(where: signed)
+                    else { return false }
+                }
+            } else if right.rect.minX - left.rect.minX > size * 0.5, right.rect.maxX - left.rect.maxX > size * 0.5 {
+                guard -gap <= size * 4 else { return false }
+            } else {
+                // A radicand PDFKit extracts apart from its sign lies within the span of the piece
+                // holding the sign: narrow, without words, clear of that piece's left edge, and
+                // only by its own choice (`a` is the piece choosing), since a full line of the next
+                // row also spans a short piece.
+                guard a.rect.width < b.rect.width, a.rect.width <= size * 4,
+                      !a.text.split(whereSeparator: \.isWhitespace).contains(where: word),
+                      a.rect.minX >= b.rect.minX + size * 0.5, a.rect.maxX <= b.rect.maxX + 1 else { return false }
+            }
+            let start = min(left.rect.maxX, right.rect.minX), end = max(left.rect.maxX, right.rect.minX)
+            let band = a.rect.union(b.rect)
+            return !images.contains { image in
+                image.minX < end && image.maxX > start && image.minY < band.maxY && image.maxY > band.minY
+            }
+        }
+        func overlap(_ a: CGRect, _ b: CGRect) -> CGFloat { min(a.maxY, b.maxY) - max(a.minY, b.minY) }
+        var parent = Dictionary(uniqueKeysWithValues: sized.map { ($0, $0) })
+        // Each row's shared band: the highest bottom and the lowest top among its pieces.
+        var band = Dictionary(uniqueKeysWithValues: sized.map { ($0, (bottom: lines[$0].rect.minY, top: lines[$0].rect.maxY)) })
+        func root(_ index: Int) -> Int {
+            var index = index
+            while let next = parent[index], next != index { index = next }
+            return index
+        }
+        var proposals: [(piece: Int, other: Int, overlap: CGFloat)] = []
+        for index in sized {
+            let piece = lines[index]
+            let neighbours = sized.filter { $0 != index && candidate(piece, lines[$0]) }
+            guard let best = neighbours.map({ overlap(piece.rect, lines[$0].rect) }).max() else { continue }
+            for other in neighbours where overlap(piece.rect, lines[other].rect) >= best - 0.01 {
+                proposals.append((index, other, overlap(piece.rect, lines[other].rect)))
+            }
+        }
+        // Strongest first; ties in page order, so the result does not depend on sorting stability.
+        proposals.sort { ($0.overlap, -$0.piece, -$0.other) > ($1.overlap, -$1.piece, -$1.other) }
+        for proposal in proposals {
+            let a = root(proposal.piece), b = root(proposal.other)
+            guard a != b, let first = band[a], let second = band[b] else { continue }
+            let shared = (bottom: max(first.bottom, second.bottom), top: min(first.top, second.top))
+            guard shared.top - shared.bottom >= lines[proposal.piece].fontSize * 0.5 else { continue }
+            parent[b] = a
+            band[a] = shared
+        }
+        let clusters = Dictionary(grouping: sized, by: root).values.filter { $0.count >= 2 }
+        guard !clusters.isEmpty else { return lines }
+        // The page's ordinary line height at a size: the median height of its lines of that size.
+        func lineHeight(_ size: CGFloat) -> CGFloat? {
+            let heights = lines.filter { abs($0.fontSize - size) <= size * 0.1 }.map(\.rect.height).sorted()
+            return heights.isEmpty ? nil : heights[heights.count / 2]
+        }
+        var replaced: [Int: TextLine] = [:]
+        var removed = Set<Int>()
+        for cluster in clusters {
+            let pieces = cluster.sorted { lines[$0].rect.midX < lines[$1].rect.midX }
+            guard pieces.contains(where: { lines[$0].text.rangeOfCharacter(from: rowMathSymbols) != nil }),
+                  isProseRow(pieces: pieces.map { lines[$0] }, in: lines, body: body) else { continue }
+            var content = InlineText()
+            for index in pieces {
+                if !content.elements.isEmpty { content.append(InlineText(" ")) }
+                content.append(lines[index].content)
+            }
+            // A radicand read ahead of its sign must not turn the row into a list line: `− 1` inside
+            // `√ , and it is in the denominator…` (page 321) would open `− 1 √ , …`.
+            if let opening = pieces.min(by: { lines[$0].rect.minX < lines[$1].rect.minX }),
+               isList(content.text), !isList(lines[opening].text) { continue }
+            let first = lines[pieces[0]], last = lines[pieces[pieces.count - 1]]
+            let bounds = union(pieces.map { lines[$0].rect })
+            let bottom = pieces.map { lines[$0].rect.minY }.max() ?? bounds.minY
+            let height = min(bounds.maxY - bottom, lineHeight(first.fontSize) ?? first.rect.height)
+            var joined = TextLine(content: content, rect: CGRect(x: bounds.minX, y: bottom, width: bounds.width, height: height),
+                                  fontSize: first.fontSize, wraps: last.wraps)
+            if pieces.contains(where: { lines[$0].readingRect != nil }) {
+                joined.readingRect = union(pieces.map { lines[$0].readingRect ?? lines[$0].rect })
+            }
+            // The row keeps the reading position of its earliest piece in page order.
+            let anchor = cluster.min()!
+            replaced[anchor] = joined
+            removed.formUnion(cluster.filter { $0 != anchor })
+        }
+        return lines.indices.compactMap { index in
+            removed.contains(index) ? nil : replaced[index] ?? lines[index]
+        }
+    }
+
     private struct Region {
         var seed: CGRect
         var bounds: CGRect
@@ -643,6 +800,8 @@ enum LayoutReconstructor {
     }
 
     private static let mathSymbols = CharacterSet(charactersIn: "∫∑∏√∂∇≈≠≤≥∞")
+    /// Signs of inline mathematics at which PDFKit splits a prose row (`joiningRowPieces`).
+    private static let rowMathSymbols = mathSymbols.union(CharacterSet(charactersIn: "=·×÷±−"))
 
     /// Letters-only words of at least `minimum` letters (surrounding quotes, brackets and
     /// punctuation ignored) and the number of whitespace-separated tokens.
@@ -719,7 +878,12 @@ enum LayoutReconstructor {
     /// repeated annotation (`Change the signs and combine`, set three times down Wallace page
     /// 207 at one indent) shares edges with its repeats but has no adjacent full line.
     static func isProseRow(_ line: TextLine, in lines: [TextLine], body: CGFloat) -> Bool {
-        let row = rowPieces(line, in: lines, body: body)
+        isProseRow(pieces: rowPieces(line, in: lines, body: body), in: lines, body: body)
+    }
+
+    /// `isProseRow` for a row whose pieces are already known; the first piece stands for the row.
+    private static func isProseRow(pieces row: [TextLine], in lines: [TextLine], body: CGFloat) -> Bool {
+        guard let line = row.first else { return false }
         let text = row.map(\.text).joined(separator: " ")
         // A row whose pieces stand at least twice their type size stacks terms (fractions,
         // radical indices) and has spatial structure to preserve unless it reads as a sentence.
@@ -1330,7 +1494,9 @@ enum LayoutReconstructor {
         let tables = ShadedTableDetector.tables(in: page, lines: lines)
         let tableLines = tables.flatMap(\.lines)
         // A marker PDFKit split from its item's text rejoins it before anything reads the lines.
-        let free = joiningMarkerPieces(lines.filter { line in !tableLines.contains(line) })
+        // So do the pieces of a prose row PDFKit split at an inline radical (#95).
+        let free = joiningRowPieces(joiningMarkerPieces(lines.filter { line in !tableLines.contains(line) }),
+                                    images: images.map(\.0), body: body)
         // Preserve existing modest-size headings, but reject candidates within 10% of the
         // supported reflowable body size. This only narrows the original page-size heuristic.
         // Small text inside reflowed boxes and tables does not lower the body estimate, so a
@@ -1723,23 +1889,42 @@ enum LayoutReconstructor {
                       guard case let .text(rest, restStyle) = element else { return false }
                       return !restStyle.contains(.bold) && rest.contains { !$0.isWhitespace }
                   }) else { return false }
-            // The sentence's own last character, past closing quotes and brackets and past a
-            // raised reference marker: USGS sections end `… copper supply.5` before the next
-            // lead-in, and the marker is not the sentence's punctuation.
+            guard endsSentence(prev) else { return false }
+            // A section opens flush with the column the paragraph above it fills, so a run-in
+            // label indented inside an item or a note is not one.
+            return abs(prev.rect.minX - line.rect.minX) <= body * 0.5
+        }
+        // The sentence's own last character, past closing quotes and brackets and past a
+        // raised reference marker: USGS sections end `… copper supply.5` before the next
+        // lead-in, and the marker is not the sentence's punctuation.
+        func endsSentence(_ prev: TextLine) -> Bool {
             let closing: Set<Character> = ["\u{201D}", "\u{2019}", "\"", "'", ")", "]"]
-            var ending: Character?
             for element in prev.content.elements.reversed() {
                 guard case let .text(value, style) = element else { continue }
                 if style.contains(.superscript), value.allSatisfy({ $0.isNumber || $0.isWhitespace }) { continue }
                 if let character = value.reversed().first(where: { !$0.isWhitespace && !closing.contains($0) }) {
-                    ending = character
-                    break
+                    return ".!?".contains(character)
                 }
             }
-            guard let ending, ".!?".contains(ending) else { return false }
-            // A section opens flush with the column the paragraph above it fills, so a run-in
-            // label indented inside an item or a note is not one.
-            return abs(prev.rect.minX - line.rect.minX) <= body * 0.5
+            return false
+        }
+        // A paragraph set off by added space alone opens a paragraph even where that space falls
+        // under the ordinary threshold. The USGS Mineral Commodity Summaries leave a blank line
+        // between paragraphs at 11.04-point leading, but their line rectangles are 13.76 points
+        // tall, so the lines of a paragraph report a gap of -2.72 points and the blank line only
+        // 7.9, under `body * 0.9` (COMEX on copper page 2, #71). The evidence is measured against
+        // the paragraph's own leading: the gap exceeds the gap its last line was attached at by at
+        // least half the body size, the previous line ends a sentence, and this line opens with a
+        // capital (past opening quotes and brackets) on the same left edge in the same type. A
+        // wrapped line inside a paragraph sits at the paragraph's leading; nothing about the right
+        // edge is consulted, so ragged and justified columns are read alike.
+        func opensSpacedParagraph(_ line: TextLine, after prev: TextLine, gap: CGFloat, leading: CGFloat?) -> Bool {
+            guard let leading, gap >= leading + body * 0.5, !line.monospaced,
+                  abs(line.fontSize - prev.fontSize) <= max(line.fontSize, prev.fontSize) * 0.1,
+                  abs(prev.rect.minX - line.rect.minX) <= body * 0.5,
+                  line.text.first(where: { !"([\u{201C}\u{2018}\"'".contains($0) && !$0.isWhitespace })?.isUppercase == true
+            else { return false }
+            return endsSentence(prev)
         }
         // The open heading's first line (the row PDFKit split) and its latest line (for the
         // line stacked beneath it).
@@ -1909,7 +2094,8 @@ enum LayoutReconstructor {
                     let endsCaption = (line.fontSize >= prev.fontSize * 1.15 || leavesCaption)
                         && line.fontSize >= reflowBody * 0.95 && isCaption(paragraph.text)
                     if prev.wraps == false || !sameColumn || shortEnding || endsCaption
-                        || opensSection(line, after: prev, gap: verticalGap, leading: previousGap) {
+                        || opensSection(line, after: prev, gap: verticalGap, leading: previousGap)
+                        || opensSpacedParagraph(line, after: prev, gap: verticalGap, leading: previousGap) {
                         flush()
                     } else { attachedGap = verticalGap }
                 }

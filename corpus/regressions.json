@@ -1018,7 +1018,7 @@
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). The detached, flattened \"x2 +\" paragraph from page 343's \"Factor\" line is a known defect, not blessed. Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438 or fraction answers split between a marker stub and an image (page 471 entries 22 and 29). Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) still reflow as blocks of their own, some a line out of place; that fragmentation is not blessed. Pages 448 and 487 source rasters reviewed (#78): page 448's graphs, numbered along their rows three to a row, read 15-22 in number order; page 487's sub-answers a-i, set in three columns above answers 2-15, read before them. Exercise sets numbered two to a row (pages 10, 26) keep their column order. Pages 175 and 437 (#97) source-reviewed: blank pages whose only text is the folio carry no text once the folio run removes it.",
+      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). The detached, flattened \"x2 +\" paragraph from page 343's \"Factor\" line is a known defect, not blessed. Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438 or fraction answers split between a marker stub and an image (page 471 entries 22 and 29). Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) rejoin their rows and paragraphs in reading order on pages 288, 289 and 299 (#95); the pieces keep PDFKit's own order inside a row (`36· 5 √` for √36·5), which is not blessed. Page 429 source raster reviewed (#71): `When we are solving a triangle` opens a paragraph set off by added space under the paragraph threshold. Pages 448 and 487 source rasters reviewed (#78): page 448's graphs, numbered along their rows three to a row, read 15-22 in number order; page 487's sub-answers a-i, set in three columns above answers 2-15, read before them. Exercise sets numbered two to a row (pages 10, 26) keep their column order. Pages 175 and 437 (#97) source-reviewed: blank pages whose only text is the folio carry no text once the folio run removes it.",
       "pages": [
         {
           "page": 10,
@@ -1092,6 +1092,9 @@
             {
               "reference": "corpus/references/wallace-algebra-2010/page-289-example-378.png"
             }
+          ],
+          "paragraphs": [
+            "process is being able to translate a problem like 180 √ into 36· 5 √ . There are several ways this can be done."
           ]
         },
         {
@@ -1264,6 +1267,11 @@
           "minimumImages": 2,
           "warningCodesAnyOf": [
             "imageRegion"
+          ],
+          "paragraphs": [
+            "The final example,− 81 √ is currently undefined as negatives have no square root. This is because",
+            "Not all numbers have a nice even square root. For example, if we found 8 √ on our calculator, the answer would be",
+            "We can use the product rule to simplify an expression such as 36· 5 √ by spliting it into two roots, 36 √ · 5 √ , and simplifying the first root, 6 5 √ . The trick in this"
           ]
         },
         {
@@ -1310,6 +1318,21 @@
           "page": 437,
           "absentText": [
             "437"
+          ]
+        },
+        {
+          "page": 299,
+          "paragraphs": [
+            "In one of the tables there is an approximation of 2 √ accurate to five decimal places (1.41421)"
+          ]
+        },
+        {
+          "page": 429,
+          "distinctParagraphs": [
+            {
+              "first": "This is called solving a triangle.",
+              "second": "When we are solving a triangle, we can use trig ratios to solve for all the missing"
+            }
           ]
         }
       ]
@@ -2988,7 +3011,7 @@
     {
       "id": "usgs-mcs2025-copper",
       "sourceSHA256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
-      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, preserved statistics, tariff and world-production tables with source-region image checks, the COMEX paragraph and the ordered superscript table-note markers. After #36, the Domestic Production, Recycling, Import Sources, Depletion Allowance, Government Stockpile, Events, World Resources and Substitutes prose must reflow as text in source order while the three borderless tables stay preserved images; table labels and cells must not be flattened into prose. After #60, each bold run-in section label opens its own paragraph although the source sets about 0.3 pt of space between sections, so Import Sources, Government Stockpile, World Mine and Refinery Production and Reserves and Substitutes are not swallowed by the section above them. After #61, page 2's table notes, which carry no drawn rule and are marked with a raised letter or digit set tight against the note, form page-bottom note blocks in source order, the body prose above them stays body text, and the raised 6 and 8 in that prose link to their notes. The sup markers inside prose are not otherwise qualified here, and the Events and COMEX paragraphs still group together. The Salient Statistics table image is also checked stroke by stroke at full resolution (every digit, label and rule) and for scale and ink contrast; cell association will use tableCells once the table is emitted as text (#27).",
+      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, preserved statistics, tariff and world-production tables with source-region image checks, the COMEX paragraph and the ordered superscript table-note markers. After #36, the Domestic Production, Recycling, Import Sources, Depletion Allowance, Government Stockpile, Events, World Resources and Substitutes prose must reflow as text in source order while the three borderless tables stay preserved images; table labels and cells must not be flattened into prose. After #60, each bold run-in section label opens its own paragraph although the source sets about 0.3 pt of space between sections, so Import Sources, Government Stockpile, World Mine and Refinery Production and Reserves and Substitutes are not swallowed by the section above them. After #61, page 2's table notes, which carry no drawn rule and are marked with a raised letter or digit set tight against the note, form page-bottom note blocks in source order, the body prose above them stays body text, and the raised 6 and 8 in that prose link to their notes. The sup markers inside prose are not otherwise qualified here, and the COMEX paragraph, set a blank line below the Events section but without a bold label (7.9 pt box gap at 13.76 pt line rectangles, 11.04 pt leading), is its own paragraph (#71). The Salient Statistics table image is also checked stroke by stroke at full resolution (every digit, label and rule) and for scale and ink contrast; cell association will use tableCells once the table is emitted as text (#27).",
       "pages": [
         {
           "page": 1,
@@ -3080,6 +3103,10 @@
             "Substitutes: Aluminum substitutes for copper in automobile radiators, cooling and refrigeration tube"
           ],
           "distinctParagraphs": [
+            {
+              "first": "expected to begin operating by yearend 2024.",
+              "second": "The COMEX copper price reached a record high in May 2024"
+            },
             {
               "first": "decreasing inflation in the United States.",
               "second": "World Mine and Refinery Production and Reserves: Reserves for Canada"

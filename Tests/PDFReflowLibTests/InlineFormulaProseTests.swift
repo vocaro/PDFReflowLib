@@ -88,8 +88,8 @@ private func expectInsideCrops(_ page: PageContent, _ crops: [CGRect], _ texts: 
     try expectInsideCrops(page, crops, ["75 is divisible by 25, a perfect square", "5 3 √ Our Solution",
                                         "63 is divisible by 9, a perfect square", "5· 3 7 √ Multiply coeﬃcients",
                                         "72 is divisible by 9, a perfect square", "3· 2 2 √ Multiply"])
-    // PDFKit extracts the inline radicals as separate row pieces, which reflow as blocks of their
-    // own; the sentence is complete and in order, but not yet one paragraph (a separate defect).
+    // PDFKit extracts the inline radicals as separate row pieces; they rejoin their row and the
+    // sentence continues into one paragraph (#95, `RowPiecesAndSpacedParagraphTests`).
     let text = reflow(page, crops).map(\.text).joined(separator: "\n")
     let opening = try #require(text.range(of: "process is being able to translate a problem like 180"))
     let method = try #require(text.range(of: "eral ways this can be done. The most common and, with a bit of practice, the fastest method"))

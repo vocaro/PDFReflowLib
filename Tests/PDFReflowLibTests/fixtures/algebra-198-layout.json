@@ -1,0 +1,1558 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        84.9602,
+        745.53924480000001,
+        425.20667119999996,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Some students like to think of the FOIL method as distributing the first term 4x"
+        }
+      ],
+      "text" : "Some students like to think of the FOIL method as distributing the first term 4x"
+    },
+    {
+      "rect" : [
+        84.959779999999967,
+        722.66300799999999,
+        425.17146440000005,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "through the (3x− 2y) and distributing the second term 7y through the (3x− 2y)."
+        }
+      ],
+      "text" : "through the (3x− 2y) and distributing the second term 7y through the (3x− 2y)."
+    },
+    {
+      "rect" : [
+        84.959429999999941,
+        716.73924480000005,
+        425.12730409057275,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Thinking about FOIL in this way makes it possible to extend this method to"
+        }
+      ],
+      "text" : "Thinking about FOIL in this way makes it possible to extend this method to"
+    },
+    {
+      "rect" : [
+        84.959429999999941,
+        702.33924480000007,
+        138.49201402736645,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "problems with more terms."
+        }
+      ],
+      "text" : "problems with more terms."
+    },
+    {
+      "rect" : [
+        84.959429999999941,
+        669.71140000000003,
+        79.690012241126425,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 241."
+        }
+      ],
+      "text" : "Example 241."
+    },
+    {
+      "rect" : [
+        248.99942999999993,
+        631.10330799999997,
+        62.312208410000068,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(2x− 5)(4x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "(2x− 5)(4x2"
+    },
+    {
+      "rect" : [
+        313.31935000000004,
+        631.10330799999997,
+        47.405538854912038,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 7x + 3) "
+        }
+      ],
+      "text" : "− 7x + 3) "
+    },
+    {
+      "rect" : [
+        104.99955000000017,
+        615.61616559999993,
+        255.63673662273601,
+        18.542489600000067
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "(2x)(4x"
+        },
+        {
+          "baselineOffset" : 3.6000000000000227,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738500000000005,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : ")+ (2x)(− 7x)+ (2x)(3)− 5(4x"
+        },
+        {
+          "baselineOffset" : 3.6000000000000227,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738500000000005,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : ")− 5(− 7x)− 5(3) "
+        }
+      ],
+      "text" : "(2x)(4x2)+ (2x)(− 7x)+ (2x)(3)− 5(4x2)− 5(− 7x)− 5(3) "
+    },
+    {
+      "rect" : [
+        189.47950000000017,
+        604.77954480000005,
+        16.712208409999988,
+        13.298257699999908
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.1599600000000692,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "8x"
+        },
+        {
+          "baselineOffset" : 2.1599599999999555,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        }
+      ],
+      "text" : "8x3"
+    },
+    {
+      "rect" : [
+        208.19942000000015,
+        596.30330800000002,
+        152.48651455744005,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 14x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ 6x− 20x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ 35x− 15 "
+        }
+      ],
+      "text" : "− 14x2 + 6x− 20x2 + 35x− 15 "
+    },
+    {
+      "rect" : [
+        251.27964000000017,
+        587.37954480000008,
+        16.712208409999988,
+        13.298257699999908
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.1599599999999555,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "8x"
+        },
+        {
+          "baselineOffset" : 2.1599600000000692,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        }
+      ],
+      "text" : "8x3"
+    },
+    {
+      "rect" : [
+        269.9995600000002,
+        578.90330800000004,
+        90.686504557440003,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 34x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ 41x− 15 "
+        }
+      ],
+      "text" : "− 34x2 + 41x− 15 "
+    },
+    {
+      "rect" : [
+        376.31937000000005,
+        631.10330799999997,
+        107.6182280000001,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Distribute 2x and− 5"
+        }
+      ],
+      "text" : "Distribute 2x and− 5"
+    },
+    {
+      "rect" : [
+        376.31950000000018,
+        615.61616559999993,
+        113.91626548349439,
+        18.542489600000067
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Multiply out each term"
+        }
+      ],
+      "text" : "Multiply out each term"
+    },
+    {
+      "rect" : [
+        376.3199887014402,
+        596.30330800000002,
+        95.695458462924819,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Combine like terms"
+        }
+      ],
+      "text" : "Combine like terms"
+    },
+    {
+      "rect" : [
+        376.32011870144021,
+        578.90330800000004,
+        64.583743355110357,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
+        }
+      ],
+      "text" : "Our Solution"
+    },
+    {
+      "rect" : [
+        84.959870000000194,
+        551.73934480000003,
+        425.15752401996804,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The second step of the FOIL method is often not written, for example, consider"
+        }
+      ],
+      "text" : "The second step of the FOIL method is often not written, for example, consider"
+    },
+    {
+      "rect" : [
+        84.959870000000194,
+        528.86310800000001,
+        425.15443120000003,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "the previous example, a student will often go from the problem (4x + 7y)(3x− 2y)"
+        }
+      ],
+      "text" : "the previous example, a student will often go from the problem (4x + 7y)(3x− 2y)"
+    },
+    {
+      "rect" : [
+        84.959370000000206,
+        522.45964480000009,
+        294.15204840999996,
+        13.298257699999908
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "and do the multiplication mentally to come up with 12x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "and do the multiplication mentally to come up with 12x2"
+    },
+    {
+      "rect" : [
+        381.11913000000021,
+        513.98340800000005,
+        129.02407960345607,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 8xy + 21xy− 14y"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "and"
+        }
+      ],
+      "text" : "− 8xy + 21xy− 14y2 and"
+    },
+    {
+      "rect" : [
+        84.959410000000219,
+        508.05964480000006,
+        305.1730144839425,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "then combine like terms to come up with the final solution."
+        }
+      ],
+      "text" : "then combine like terms to come up with the final solution."
+    },
+    {
+      "rect" : [
+        84.959410000000219,
+        486.35130000000004,
+        116.66736565759999,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Multiplying in rows"
+        }
+      ],
+      "text" : "Multiplying in rows"
+    },
+    {
+      "rect" : [
+        84.959410000000219,
+        464.73934480000003,
+        425.12674881786887,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "A third method for multiplying polynomials looks very similar to multiplying"
+        }
+      ],
+      "text" : "A third method for multiplying polynomials looks very similar to multiplying"
+    },
+    {
+      "rect" : [
+        84.959410000000219,
+        450.33934480000005,
+        166.21279648424968,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "numbers. Consider the problem:"
+        }
+      ],
+      "text" : "numbers. Consider the problem:"
+    },
+    {
+      "rect" : [
+        182.75941000000023,
+        420.09954480000005,
+        11.726182243583992,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "35"
+        }
+      ],
+      "text" : "35"
+    },
+    {
+      "rect" : [
+        171.47931000000023,
+        394.22330800000009,
+        23.006282243583996,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "× 27"
+        }
+      ],
+      "text" : "× 27"
+    },
+    {
+      "rect" : [
+        176.88,
+        385.2992448,
+        140.37794800000006,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "245 Multiply 7by 5then 3"
+        }
+      ],
+      "text" : "245 Multiply 7by 5then 3"
+    },
+    {
+      "rect" : [
+        176.87990000000005,
+        367.89924480000002,
+        17.606271687168004,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "700 "
+        }
+      ],
+      "text" : "700 "
+    },
+    {
+      "rect" : [
+        176.87988000000004,
+        350.49924480000004,
+        17.606271687168004,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "945 "
+        }
+      ],
+      "text" : "945 "
+    },
+    {
+      "rect" : [
+        210.24000000000001,
+        367.89924480000002,
+        213.45792800000004,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Use 0 for placeholder, multiply 2by 5then 3"
+        }
+      ],
+      "text" : "Use 0 for placeholder, multiply 2by 5then 3"
+    },
+    {
+      "rect" : [
+        210.24011648716805,
+        350.49924480000004,
+        118.10471430745611,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Add to get Our Solution"
+        }
+      ],
+      "text" : "Add to get Our Solution"
+    },
+    {
+      "rect" : [
+        84.959980000000044,
+        320.37934480000007,
+        425.19765291573759,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "World View Note: The first known system that used place values comes from"
+        }
+      ],
+      "text" : "World View Note: The first known system that used place values comes from"
+    },
+    {
+      "rect" : [
+        84.959980000000044,
+        305.97934480000009,
+        287.41407925642244,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Chinese mathematics, dating back to 190 AD or earlier."
+        }
+      ],
+      "text" : "Chinese mathematics, dating back to 190 AD or earlier."
+    },
+    {
+      "rect" : [
+        84.959980000000044,
+        284.2594448000001,
+        425.20256264007679,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The same process can be done with polynomials. Multiply each term on the"
+        }
+      ],
+      "text" : "The same process can be done with polynomials. Multiply each term on the"
+    },
+    {
+      "rect" : [
+        84.95998000000003,
+        269.85944480000012,
+        179.4132253809409,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "bottom with each term on the top."
+        }
+      ],
+      "text" : "bottom with each term on the top."
+    },
+    {
+      "rect" : [
+        84.95998000000003,
+        237.23120000000014,
+        79.690012133529621,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 242."
+        }
+      ],
+      "text" : "Example 242."
+    },
+    {
+      "rect" : [
+        133.31978000000004,
+        198.62310800000014,
+        95.154891200000066,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(4x + 7y)(3x− 2y) "
+        }
+      ],
+      "text" : "(4x + 7y)(3x− 2y) "
+    },
+    {
+      "rect" : [
+        190.67994000000007,
+        189.69934480000012,
+        37.742450399999996,
+        11.967155200000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4x + 7y"
+        }
+      ],
+      "text" : "4x + 7y"
+    },
+    {
+      "rect" : [
+        178.91976000000005,
+        163.82310800000013,
+        49.502660400000025,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "× 3x− 2y"
+        }
+      ],
+      "text" : "× 3x− 2y"
+    },
+    {
+      "rect" : [
+        244.19984000000011,
+        198.62310800000014,
+        135.8770306077696,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Rewrite as vertical problem"
+        }
+      ],
+      "text" : "Rewrite as vertical problem"
+    },
+    {
+      "rect" : [
+        161.28,
+        146.42300800000001,
+        67.232148410000036,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 8xy− 14y"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        }
+      ],
+      "text" : "− 8xy− 14y2 "
+    },
+    {
+      "rect" : [
+        132.35982999999999,
+        137.49924479999999,
+        60.897725549440025,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "12x"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+21xy "
+        }
+      ],
+      "text" : "12x2 +21xy "
+    },
+    {
+      "rect" : [
+        130.92014000000003,
+        111.623008,
+        97.592318410000019,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "12x"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+13xy− 14y"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        }
+      ],
+      "text" : "12x2 +13xy− 14y2 "
+    },
+    {
+      "rect" : [
+        244.19992000000002,
+        146.42300800000001,
+        139.3670012,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Multiply− 2y by 7y then 4x"
+        }
+      ],
+      "text" : "Multiply− 2y by 7y then 4x"
+    },
+    {
+      "rect" : [
+        244.20000000000002,
+        137.49924479999999,
+        220.01533955678727,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Multiply 3x by 7y then 4x. Line up like terms"
+        }
+      ],
+      "text" : "Multiply 3x by 7y then 4x. Line up like terms"
+    },
+    {
+      "rect" : [
+        244.20023000000003,
+        111.623008,
+        168.38498811983368,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Add like terms to get Our Solution"
+        }
+      ],
+      "text" : "Add like terms to get Our Solution"
+    },
+    {
+      "rect" : [
+        84.960230000000053,
+        84.459444799999986,
+        351.8530034849025,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "This same process is easily expanded to a problem with more terms."
+        }
+      ],
+      "text" : "This same process is easily expanded to a problem with more terms."
+    },
+    {
+      "rect" : [
+        297.12023000000011,
+        52.379153199999983,
+        15.061000895467203,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "198"
+        }
+      ],
+      "text" : "198"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      169.48000000000002,
+      401.54000000000002,
+      27.039999999999992,
+      4
+    ],
+    [
+      174.88000000000002,
+      367.70000000000005,
+      21.639999999999986,
+      4
+    ],
+    [
+      176.08000000000004,
+      169.82000000000002,
+      53.559999999999974,
+      4
+    ],
+    [
+      130.36000000000001,
+      135.02000000000001,
+      100.12,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        745.53924480000001,
+        425.20667119999996,
+        11.979110399999968
+      ],
+      "text" : "Some students like to think of the FOIL method as distributing the first term 4x"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959779999999967,
+        722.66300799999999,
+        425.17146440000005,
+        20.455347200000006
+      ],
+      "text" : "through the (3x− 2y) and distributing the second term 7y through the (3x− 2y)."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959429999999941,
+        716.73924480000005,
+        425.12730409057275,
+        11.979110399999968
+      ],
+      "text" : "Thinking about FOIL in this way makes it possible to extend this method to"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959429999999941,
+        702.33924480000007,
+        138.49201402736645,
+        11.979110399999968
+      ],
+      "text" : "problems with more terms."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959429999999941,
+        669.71140000000003,
+        79.690012241126425,
+        11.955199999999991
+      ],
+      "text" : "Example 241."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        248.99942999999993,
+        631.10330799999997,
+        62.312208410000068,
+        21.774494499999946
+      ],
+      "text" : "(2x− 5)(4x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        313.31935000000004,
+        631.10330799999997,
+        47.405538854912038,
+        20.455347200000006
+      ],
+      "text" : "− 7x + 3)"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        104.99955000000017,
+        615.61616559999993,
+        255.63673662273601,
+        18.542489600000067
+      ],
+      "text" : "(2x)(4x2)+ (2x)(− 7x)+ (2x)(3)− 5(4x2)− 5(− 7x)− 5(3)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        189.47950000000017,
+        604.77954480000005,
+        16.712208409999988,
+        13.298257699999908
+      ],
+      "text" : "8x3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        208.19942000000015,
+        596.30330800000002,
+        152.48651455744005,
+        21.774494499999946
+      ],
+      "text" : "− 14x2 + 6x− 20x2 + 35x− 15"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        251.27964000000017,
+        587.37954480000008,
+        16.712208409999988,
+        13.298257699999908
+      ],
+      "text" : "8x3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        269.9995600000002,
+        578.90330800000004,
+        90.686504557440003,
+        21.774494499999946
+      ],
+      "text" : "− 34x2 + 41x− 15"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        376.31937000000005,
+        631.10330799999997,
+        107.6182280000001,
+        20.455347200000006
+      ],
+      "text" : "Distribute 2x and− 5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        376.31950000000018,
+        615.61616559999993,
+        113.91626548349439,
+        18.542489600000067
+      ],
+      "text" : "Multiply out each term"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        376.3199887014402,
+        596.30330800000002,
+        95.695458462924819,
+        21.774494499999946
+      ],
+      "text" : "Combine like terms"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        376.32011870144021,
+        578.90330800000004,
+        64.583743355110357,
+        21.774494499999946
+      ],
+      "text" : "Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959870000000194,
+        551.73934480000003,
+        425.15752401996804,
+        11.979110399999968
+      ],
+      "text" : "The second step of the FOIL method is often not written, for example, consider"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959870000000194,
+        528.86310800000001,
+        425.15443120000003,
+        20.455347200000006
+      ],
+      "text" : "the previous example, a student will often go from the problem (4x + 7y)(3x− 2y)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959370000000206,
+        522.45964480000009,
+        294.15204840999996,
+        13.298257699999908
+      ],
+      "text" : "and do the multiplication mentally to come up with 12x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        381.11913000000021,
+        513.98340800000005,
+        129.02407960345607,
+        21.774494499999946
+      ],
+      "text" : "− 8xy + 21xy− 14y2 and"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959410000000219,
+        508.05964480000006,
+        305.1730144839425,
+        11.979110400000025
+      ],
+      "text" : "then combine like terms to come up with the final solution."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959410000000219,
+        486.35130000000004,
+        116.66736565759999,
+        11.955199999999991
+      ],
+      "text" : "Multiplying in rows"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959410000000219,
+        464.73934480000003,
+        425.12674881786887,
+        11.979110400000025
+      ],
+      "text" : "A third method for multiplying polynomials looks very similar to multiplying"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959410000000219,
+        450.33934480000005,
+        166.21279648424968,
+        11.979110400000025
+      ],
+      "text" : "numbers. Consider the problem:"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        182.75941000000023,
+        420.09954480000005,
+        11.726182243583992,
+        11.979110400000025
+      ],
+      "text" : "35"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        171.47931000000023,
+        394.22330800000009,
+        23.006282243583996,
+        20.455347200000006
+      ],
+      "text" : "× 27"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        176.88,
+        385.2992448,
+        140.37794800000006,
+        11.979110400000025
+      ],
+      "text" : "245 Multiply 7by 5then 3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        176.87990000000005,
+        367.89924480000002,
+        17.606271687168004,
+        11.979110400000025
+      ],
+      "text" : "700"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        176.87988000000004,
+        350.49924480000004,
+        17.606271687168004,
+        11.979110400000025
+      ],
+      "text" : "945"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        210.24000000000001,
+        367.89924480000002,
+        213.45792800000004,
+        11.979110400000025
+      ],
+      "text" : "Use 0 for placeholder, multiply 2by 5then 3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        210.24011648716805,
+        350.49924480000004,
+        118.10471430745611,
+        11.979110400000025
+      ],
+      "text" : "Add to get Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959980000000044,
+        320.37934480000007,
+        425.19765291573759,
+        11.979110400000025
+      ],
+      "text" : "World View Note: The first known system that used place values comes from"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959980000000044,
+        305.97934480000009,
+        287.41407925642244,
+        11.979110400000025
+      ],
+      "text" : "Chinese mathematics, dating back to 190 AD or earlier."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959980000000044,
+        284.2594448000001,
+        425.20256264007679,
+        11.979110400000025
+      ],
+      "text" : "The same process can be done with polynomials. Multiply each term on the"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95998000000003,
+        269.85944480000012,
+        179.4132253809409,
+        11.979110400000025
+      ],
+      "text" : "bottom with each term on the top."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95998000000003,
+        237.23120000000014,
+        79.690012133529621,
+        11.955199999999991
+      ],
+      "text" : "Example 242."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        133.31978000000004,
+        198.62310800000014,
+        95.154891200000066,
+        20.455347200000006
+      ],
+      "text" : "(4x + 7y)(3x− 2y)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        190.67994000000007,
+        189.69934480000012,
+        37.742450399999996,
+        11.967155200000008
+      ],
+      "text" : "4x + 7y"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        178.91976000000005,
+        163.82310800000013,
+        49.502660400000025,
+        20.443392000000017
+      ],
+      "text" : "× 3x− 2y"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        244.19984000000011,
+        198.62310800000014,
+        135.8770306077696,
+        20.455347200000006
+      ],
+      "text" : "Rewrite as vertical problem"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        161.28,
+        146.42300800000001,
+        67.232148410000036,
+        21.774494500000003
+      ],
+      "text" : "− 8xy− 14y2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        132.35982999999999,
+        137.49924479999999,
+        60.897725549440025,
+        13.298257700000022
+      ],
+      "text" : "12x2 +21xy"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        130.92014000000003,
+        111.623008,
+        97.592318410000019,
+        21.774494500000003
+      ],
+      "text" : "12x2 +13xy− 14y2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        244.19992000000002,
+        146.42300800000001,
+        139.3670012,
+        21.774494500000003
+      ],
+      "text" : "Multiply− 2y by 7y then 4x"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        244.20000000000002,
+        137.49924479999999,
+        220.01533955678727,
+        13.298257700000022
+      ],
+      "text" : "Multiply 3x by 7y then 4x. Line up like terms"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        244.20023000000003,
+        111.623008,
+        168.38498811983368,
+        21.774494500000003
+      ],
+      "text" : "Add like terms to get Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960230000000053,
+        84.459444799999986,
+        351.8530034849025,
+        11.979110399999996
+      ],
+      "text" : "This same process is easily expanded to a problem with more terms."
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        297.12023000000011,
+        52.379153199999983,
+        15.061000895467203,
+        9.8729762399999998
+      ],
+      "text" : "198"
+    }
+  ],
+  "page" : 198,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        169.48000000000002,
+        401.54000000000002,
+        27.039999999999992,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        174.88000000000002,
+        367.70000000000005,
+        21.639999999999986,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        176.08000000000004,
+        169.82000000000002,
+        53.559999999999974,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        130.36000000000001,
+        135.02000000000001,
+        100.12,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

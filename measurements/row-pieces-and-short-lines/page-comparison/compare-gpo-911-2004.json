@@ -1,0 +1,44 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "gpo-911-2004",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "3c3c78142071b50ab9cc91b038e85e623b07cd69b988eaf9157fc38bf3a29ebb",
+  "candidateConverterSHA256": "84b547104b065f2c3c61a2a4b986e5133cf97d9a600032e0f454e5fac24b42ef",
+  "sameConverter": false,
+  "changedPages": [
+    190,
+    300
+  ],
+  "changedPageFields": {
+    "190": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "300": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 392,
+    "fields": {
+      "paragraphIDs": 392
+    },
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

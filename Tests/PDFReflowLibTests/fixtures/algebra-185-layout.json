@@ -1,0 +1,1992 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        84.9602,
+        745.53924480000001,
+        425.12792197347846,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "As we simplified our fraction we took special care to move the bases that had a"
+        }
+      ],
+      "text" : "As we simplified our fraction we took special care to move the bases that had a"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        730.89944479999997,
+        425.2567627704064,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "negative exponent, but the expression itself did not become negative because of"
+        }
+      ],
+      "text" : "negative exponent, but the expression itself did not become negative because of"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        716.25964479999993,
+        425.15657259110401,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "those exponents. Also, it is important to remember that exponents only eﬀect"
+        }
+      ],
+      "text" : "those exponents. Also, it is important to remember that exponents only eﬀect"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        701.61944479999988,
+        425.21676648371204,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "what they are attached to. The 2 in the denominator of the above example does"
+        }
+      ],
+      "text" : "what they are attached to. The 2 in the denominator of the above example does"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        686.85964479999984,
+        306.49173440000004,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "not have an exponent on it, so it does not move with the d."
+        }
+      ],
+      "text" : "not have an exponent on it, so it does not move with the d."
+    },
+    {
+      "rect" : [
+        84.960119999999961,
+        660.81944479999981,
+        425.2028157164288,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "We now have the following nine properties of exponents. It is important that we"
+        }
+      ],
+      "text" : "We now have the following nine properties of exponents. It is important that we"
+    },
+    {
+      "rect" : [
+        84.960119999999961,
+        646.17964479999978,
+        174.61246157918725,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "are very familiar with all of them."
+        }
+      ],
+      "text" : "are very familiar with all of them."
+    },
+    {
+      "rect" : [
+        228.12011999999996,
+        612.95139999999981,
+        138.86783518756087,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Properties of Exponents"
+        }
+      ],
+      "text" : "Properties of Exponents"
+    },
+    {
+      "rect" : [
+        439.68036999999998,
+        576.8195447999999,
+        6.7307776000000104,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "1"
+        }
+      ],
+      "text" : "1"
+    },
+    {
+      "rect" : [
+        133.92011999999994,
+        569.61954479999986,
+        297.38085000000007,
+        12.972241539999914
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a"
+        },
+        {
+          "baselineOffset" : 4.4402300000000423,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a"
+        },
+        {
+          "baselineOffset" : 4.4402300000000423,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "n "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= a"
+        },
+        {
+          "baselineOffset" : 4.4402300000000423,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m+n "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(ab)"
+        },
+        {
+          "baselineOffset" : 4.4402300000000423,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= a"
+        },
+        {
+          "baselineOffset" : 4.4402300000000423,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        },
+        {
+          "baselineOffset" : 4.4402300000000423,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a "
+        },
+        {
+          "baselineOffset" : 4.4402300000000423,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "aman = am+n (ab)m = ambm a m ="
+    },
+    {
+      "rect" : [
+        434.76044999999999,
+        562.40534959999991,
+        17.06847958000003,
+        11.546206739999889
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.6000000000000227,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        }
+      ],
+      "text" : "am"
+    },
+    {
+      "rect" : [
+        140.64000000000001,
+        537.56504960000007,
+        16.948949580000004,
+        12.38604673999987
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.4398400000000038,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        }
+      ],
+      "text" : "am"
+    },
+    {
+      "rect" : [
+        313.91969000000006,
+        537.56497960000002,
+        16.948949579999976,
+        12.38604673999987
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.4398400000000038,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        }
+      ],
+      "text" : "am"
+    },
+    {
+      "rect" : [
+        404.04000000000002,
+        536.97924480000006,
+        6.7307776000000104,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "1"
+        }
+      ],
+      "text" : "1"
+    },
+    {
+      "rect" : [
+        141.96032000000002,
+        522.56508960000008,
+        14.239090529999999,
+        11.546206739999889
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.6000000000000227,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "n"
+        }
+      ],
+      "text" : "an"
+    },
+    {
+      "rect" : [
+        160.56,
+        510.472758,
+        119.40742160000002,
+        38.007459199999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.4398400000000038,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m n "
+        },
+        {
+          "baselineOffset" : 2.6402299999999741,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a"
+        }
+      ],
+      "text" : "= am n a"
+    },
+    {
+      "rect" : [
+        273.11970200000002,
+        510.47260800000004,
+        16.377552400000013,
+        35.985151999999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        }
+      ],
+      "text" : "b"
+    },
+    {
+      "rect" : [
+        288.83969000000002,
+        541.12972777999994,
+        9.3887895799999797,
+        7.1412185599999702
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        }
+      ],
+      "text" : "m"
+    },
+    {
+      "rect" : [
+        299.87989000000005,
+        529.89909480000006,
+        10.460800000000006,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "="
+    },
+    {
+      "rect" : [
+        314.51969000000008,
+        522.56501960000003,
+        15.629019579999976,
+        11.546206739999889
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.6000000000000227,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        }
+      ],
+      "text" : "bm"
+    },
+    {
+      "rect" : [
+        395.04000000000002,
+        522.44514960000004,
+        25.229019579999999,
+        11.786046739999847
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -1.9199199999999337,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a "
+        },
+        {
+          "baselineOffset" : 1.9199200000000474,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        }
+      ],
+      "text" : "a m"
+    },
+    {
+      "rect" : [
+        137.39999,
+        470.03254800000002,
+        264.00756160000003,
+        38.007459199999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(a"
+        },
+        {
+          "baselineOffset" : 4.4398400000000038,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ")"
+        },
+        {
+          "baselineOffset" : 4.4398400000000038,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "n "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= a a"
+        },
+        {
+          "baselineOffset" : 4.4398400000000038,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "0 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 1 "
+        },
+        {
+          "baselineOffset" : 7.0797200000000089,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a"
+        }
+      ],
+      "text" : "(am)n = a a0 = 1 a"
+    },
+    {
+      "rect" : [
+        394.43991000000005,
+        470.03260799999998,
+        16.37734439999997,
+        35.985152000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        }
+      ],
+      "text" : "b"
+    },
+    {
+      "rect" : [
+        423.24000000000001,
+        529.89924480000002,
+        29.788779579999982,
+        12.971851539999875
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= a"
+        },
+        {
+          "baselineOffset" : 4.4398400000000038,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        }
+      ],
+      "text" : "= am"
+    },
+    {
+      "rect" : [
+        418.43975999999998,
+        500.69011778000004,
+        9.3887895799999797,
+        7.1412185600000271
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        }
+      ],
+      "text" : "m"
+    },
+    {
+      "rect" : [
+        444.23975999999993,
+        497.12497960000007,
+        15.629019579999976,
+        12.386436740000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.4402299999999855,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "b"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        }
+      ],
+      "text" : "bm"
+    },
+    {
+      "rect" : [
+        429.59995999999995,
+        489.45948480000004,
+        10.460800000000006,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "="
+        }
+      ],
+      "text" : "="
+    },
+    {
+      "rect" : [
+        443.51982999999996,
+        482.12500960000006,
+        17.068869579999955,
+        11.546206740000059
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.6000000000000227,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        }
+      ],
+      "text" : "am"
+    },
+    {
+      "rect" : [
+        84.9602,
+        446.8592448,
+        425.22048605575685,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "World View Note: Nicolas Chuquet, the French mathematician of the 15th cen-"
+        }
+      ],
+      "text" : "World View Note: Nicolas Chuquet, the French mathematician of the 15th cen-"
+    },
+    {
+      "rect" : [
+        84.9602,
+        432.21904480000001,
+        83.191848409999963,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "tury wrote 12"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "1m¯"
+        }
+      ],
+      "text" : "tury wrote 121m¯"
+    },
+    {
+      "rect" : [
+        174.23981999999998,
+        431.92826495000003,
+        335.92217539069441,
+        13.58903755
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "to indicate 12x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ". This was the first known use of the negative"
+        }
+      ],
+      "text" : "to indicate 12x−1. This was the first known use of the negative"
+    },
+    {
+      "rect" : [
+        84.960129999999992,
+        417.57924480000003,
+        49.932001740441592,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "exponent."
+        }
+      ],
+      "text" : "exponent."
+    },
+    {
+      "rect" : [
+        84.960129999999992,
+        391.5390448,
+        425.20027403105274,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Simplifying with negative exponents is much the same as simplifying with positive"
+        }
+      ],
+      "text" : "Simplifying with negative exponents is much the same as simplifying with positive"
+    },
+    {
+      "rect" : [
+        84.960129999999992,
+        376.89924480000002,
+        425.20303846369285,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "exponents. It is the advice of the author to keep the negative exponents until the"
+        }
+      ],
+      "text" : "exponents. It is the advice of the author to keep the negative exponents until the"
+    },
+    {
+      "rect" : [
+        84.960129999999992,
+        362.13904480000002,
+        425.219771497728,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "end of the problem and then move them around to their correct location (numer-"
+        }
+      ],
+      "text" : "end of the problem and then move them around to their correct location (numer-"
+    },
+    {
+      "rect" : [
+        84.960129999999992,
+        347.49924480000004,
+        425.15688456442882,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "ator or denominator). As we do this it is important to be very careful of rules for"
+        }
+      ],
+      "text" : "ator or denominator). As we do this it is important to be very careful of rules for"
+    },
+    {
+      "rect" : [
+        84.960129999999992,
+        332.85944480000006,
+        425.21994471316481,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "adding, subtracting, and multiplying with negatives. This is illustrated in the fol-"
+        }
+      ],
+      "text" : "adding, subtracting, and multiplying with negatives. This is illustrated in the fol-"
+    },
+    {
+      "rect" : [
+        84.960129999999992,
+        318.21924480000007,
+        83.574302306303991,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "lowing examples"
+        }
+      ],
+      "text" : "lowing examples"
+    },
+    {
+      "rect" : [
+        84.960129999999992,
+        275.03120000000007,
+        79.690012218411539,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 218."
+        }
+      ],
+      "text" : "Example 218."
+    },
+    {
+      "rect" : [
+        96.839829999999992,
+        240.16866495000011,
+        42.152458410000023,
+        13.58903755
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4x"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−5"
+        },
+        {
+          "baselineOffset" : -4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−3"
+        }
+      ],
+      "text" : "4x−5y−3"
+    },
+    {
+      "rect" : [
+        141,
+        231.9832080000001,
+        40.232138410000005,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "· 3x"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−2"
+        }
+      ],
+      "text" : "· 3x3y−2"
+    },
+    {
+      "rect" : [
+        121.56021,
+        224.3288449500001,
+        34.952058410000021,
+        20.909510249999869
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7997799999998847,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "6x"
+        },
+        {
+          "baselineOffset" : -4.319699999999898,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−5"
+        },
+        {
+          "baselineOffset" : -7.7997799999998847,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : -4.319699999999898,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3 "
+        }
+      ],
+      "text" : "6x−5y3 "
+    },
+    {
+      "rect" : [
+        133.20016000000004,
+        196.12865495,
+        48.032188410000003,
+        13.58903755
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.3203100000000063,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "12x"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−2"
+        },
+        {
+          "baselineOffset" : -4.3203100000000063,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−5"
+        }
+      ],
+      "text" : "12x−2y−5"
+    },
+    {
+      "rect" : [
+        139.80022000000002,
+        180.28843494999998,
+        34.952048410000003,
+        20.909920250000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.8001900000000148,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "6x"
+        },
+        {
+          "baselineOffset" : -4.3201100000000281,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−5"
+        },
+        {
+          "baselineOffset" : -7.8001900000000148,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : -4.3201100000000281,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3 "
+        }
+      ],
+      "text" : "6x−5y3 "
+    },
+    {
+      "rect" : [
+        198.12,
+        224.3288449500001,
+        279.0551555954944,
+        20.909510249999869
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Simplify numerator with product rule, adding exponents"
+        }
+      ],
+      "text" : "Simplify numerator with product rule, adding exponents"
+    },
+    {
+      "rect" : [
+        198.12,
+        180.28843494999998,
+        301.33189440000001,
+        20.909920250000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Quotient rule to subtract exponets, be careful with negatives!"
+        }
+      ],
+      "text" : "Quotient rule to subtract exponets, be careful with negatives!"
+    },
+    {
+      "rect" : [
+        198.12008000000003,
+        158.90320800000001,
+        148.92136233651195,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(− 2)− (− 5) =(− 2)+5 =3"
+        }
+      ],
+      "text" : "(− 2)− (− 5) =(− 2)+5 =3"
+    },
+    {
+      "rect" : [
+        198.12023999999997,
+        141.263408,
+        160.17802799999998,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(− 5)− 3= (− 5)+ (− 3) =− 8"
+        }
+      ],
+      "text" : "(− 5)− 3= (− 5)+ (− 3) =− 8"
+    },
+    {
+      "rect" : [
+        198.12004999999996,
+        131.80866495000001,
+        272.15685491729926,
+        13.58903755
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Negative exponent needs to move down to denominator"
+        }
+      ],
+      "text" : "Negative exponent needs to move down to denominator"
+    },
+    {
+      "rect" : [
+        147.48021999999995,
+        131.80866495000001,
+        34.952058410000006,
+        13.58903755
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2x"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−8 "
+        }
+      ],
+      "text" : "2x3y−8 "
+    },
+    {
+      "rect" : [
+        164.40014999999997,
+        99.339644800000002,
+        16.832128409999996,
+        13.298257700000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.1599599999999981,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2x"
+        },
+        {
+          "baselineOffset" : 2.1599599999999981,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        }
+      ],
+      "text" : "2x3"
+    },
+    {
+      "rect" : [
+        167.63998999999995,
+        84.901559199999994,
+        95.063839552102479,
+        19.216996000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7997800000000126,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : -4.3200900000000075,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "8 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
+        }
+      ],
+      "text" : "y8 Our Solution"
+    },
+    {
+      "rect" : [
+        297.12,
+        52.379053200000001,
+        15.061000895467203,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "185"
+        }
+      ],
+      "text" : "185"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      432.16000000000008,
+      573.2600000000001,
+      21.63999999999993,
+      4
+    ],
+    [
+      138.04000000000002,
+      533.54000000000008,
+      21.640000000000015,
+      4
+    ],
+    [
+      269.80000000000001,
+      533.54000000000008,
+      12.879999999999995,
+      4
+    ],
+    [
+      311.32000000000005,
+      533.54000000000008,
+      21.639999999999986,
+      4
+    ],
+    [
+      392.44000000000005,
+      533.54000000000008,
+      29.920000000000016,
+      4
+    ],
+    [
+      391.24000000000001,
+      493.10000000000002,
+      12.759999999999991,
+      4
+    ],
+    [
+      440.92000000000002,
+      493.10000000000002,
+      21.640000000000043,
+      4
+    ],
+    [
+      94.239800000000002,
+      237.02000000000004,
+      89.560200000000009,
+      4
+    ],
+    [
+      130.59999999999999,
+      192.86000000000001,
+      53.200000000000017,
+      4
+    ],
+    [
+      161.80000000000001,
+      95.780100000000004,
+      22,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        745.53924480000001,
+        425.12792197347846,
+        11.979110399999968
+      ],
+      "text" : "As we simplified our fraction we took special care to move the bases that had a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        730.89944479999997,
+        425.2567627704064,
+        11.979110399999968
+      ],
+      "text" : "negative exponent, but the expression itself did not become negative because of"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        716.25964479999993,
+        425.15657259110401,
+        11.979110399999968
+      ],
+      "text" : "those exponents. Also, it is important to remember that exponents only eﬀect"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        701.61944479999988,
+        425.21676648371204,
+        11.979110399999968
+      ],
+      "text" : "what they are attached to. The 2 in the denominator of the above example does"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        686.85964479999984,
+        306.49173440000004,
+        11.979110399999968
+      ],
+      "text" : "not have an exponent on it, so it does not move with the d."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960119999999961,
+        660.81944479999981,
+        425.2028157164288,
+        11.979110399999968
+      ],
+      "text" : "We now have the following nine properties of exponents. It is important that we"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960119999999961,
+        646.17964479999978,
+        174.61246157918725,
+        11.979110399999968
+      ],
+      "text" : "are very familiar with all of them."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        228.12011999999996,
+        612.95139999999981,
+        138.86783518756087,
+        11.955199999999991
+      ],
+      "text" : "Properties of Exponents"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        439.68036999999998,
+        576.8195447999999,
+        6.7307776000000104,
+        11.967155199999979
+      ],
+      "text" : "1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        133.92011999999994,
+        569.61954479999986,
+        297.38085000000007,
+        12.972241539999914
+      ],
+      "text" : "aman = am+n (ab)m = ambm a m ="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        434.76044999999999,
+        562.40534959999991,
+        17.06847958000003,
+        11.546206739999889
+      ],
+      "text" : "am"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        140.64000000000001,
+        537.56504960000007,
+        16.948949580000004,
+        12.38604673999987
+      ],
+      "text" : "am"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        313.91969000000006,
+        537.56497960000002,
+        16.948949579999976,
+        12.38604673999987
+      ],
+      "text" : "am"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        404.04000000000002,
+        536.97924480000006,
+        6.7307776000000104,
+        11.967155199999979
+      ],
+      "text" : "1"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        141.96032000000002,
+        522.56508960000008,
+        14.239090529999999,
+        11.546206739999889
+      ],
+      "text" : "an"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        160.56,
+        510.472758,
+        119.40742160000002,
+        38.007459199999971
+      ],
+      "text" : "= am n a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        273.11970200000002,
+        510.47260800000004,
+        16.377552400000013,
+        35.985151999999971
+      ],
+      "text" : "b"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        288.83969000000002,
+        541.12972777999994,
+        9.3887895799999797,
+        7.1412185599999702
+      ],
+      "text" : "m"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        299.87989000000005,
+        529.89909480000006,
+        10.460800000000006,
+        11.967155199999979
+      ],
+      "text" : "="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        314.51969000000008,
+        522.56501960000003,
+        15.629019579999976,
+        11.546206739999889
+      ],
+      "text" : "bm"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        395.04000000000002,
+        522.44514960000004,
+        25.229019579999999,
+        11.786046739999847
+      ],
+      "text" : "a m"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        137.39999,
+        470.03254800000002,
+        264.00756160000003,
+        38.007459199999971
+      ],
+      "text" : "(am)n = a a0 = 1 a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        394.43991000000005,
+        470.03260799999998,
+        16.37734439999997,
+        35.985152000000028
+      ],
+      "text" : "b"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        423.24000000000001,
+        529.89924480000002,
+        29.788779579999982,
+        12.971851539999875
+      ],
+      "text" : "= am"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        418.43975999999998,
+        500.69011778000004,
+        9.3887895799999797,
+        7.1412185600000271
+      ],
+      "text" : "m"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        444.23975999999993,
+        497.12497960000007,
+        15.629019579999976,
+        12.386436740000022
+      ],
+      "text" : "bm"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        429.59995999999995,
+        489.45948480000004,
+        10.460800000000006,
+        11.967155199999979
+      ],
+      "text" : "="
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        443.51982999999996,
+        482.12500960000006,
+        17.068869579999955,
+        11.546206740000059
+      ],
+      "text" : "am"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        446.8592448,
+        425.22048605575685,
+        11.979110400000025
+      ],
+      "text" : "World View Note: Nicolas Chuquet, the French mathematician of the 15th cen-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        432.21904480000001,
+        83.191848409999963,
+        13.298257700000022
+      ],
+      "text" : "tury wrote 121m¯"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.23981999999998,
+        431.92826495000003,
+        335.92217539069441,
+        13.58903755
+      ],
+      "text" : "to indicate 12x−1. This was the first known use of the negative"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960129999999992,
+        417.57924480000003,
+        49.932001740441592,
+        11.979110400000025
+      ],
+      "text" : "exponent."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960129999999992,
+        391.5390448,
+        425.20027403105274,
+        11.979110400000025
+      ],
+      "text" : "Simplifying with negative exponents is much the same as simplifying with positive"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960129999999992,
+        376.89924480000002,
+        425.20303846369285,
+        11.979110400000025
+      ],
+      "text" : "exponents. It is the advice of the author to keep the negative exponents until the"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960129999999992,
+        362.13904480000002,
+        425.219771497728,
+        11.979110400000025
+      ],
+      "text" : "end of the problem and then move them around to their correct location (numer-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960129999999992,
+        347.49924480000004,
+        425.15688456442882,
+        11.979110400000025
+      ],
+      "text" : "ator or denominator). As we do this it is important to be very careful of rules for"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960129999999992,
+        332.85944480000006,
+        425.21994471316481,
+        11.979110400000025
+      ],
+      "text" : "adding, subtracting, and multiplying with negatives. This is illustrated in the fol-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960129999999992,
+        318.21924480000007,
+        83.574302306303991,
+        11.979110400000025
+      ],
+      "text" : "lowing examples"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960129999999992,
+        275.03120000000007,
+        79.690012218411539,
+        11.955199999999991
+      ],
+      "text" : "Example 218."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        96.839829999999992,
+        240.16866495000011,
+        42.152458410000023,
+        13.58903755
+      ],
+      "text" : "4x−5y−3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        141,
+        231.9832080000001,
+        40.232138410000005,
+        21.774494500000003
+      ],
+      "text" : "· 3x3y−2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        121.56021,
+        224.3288449500001,
+        34.952058410000021,
+        20.909510249999869
+      ],
+      "text" : "6x−5y3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        133.20016000000004,
+        196.12865495,
+        48.032188410000003,
+        13.58903755
+      ],
+      "text" : "12x−2y−5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        139.80022000000002,
+        180.28843494999998,
+        34.952048410000003,
+        20.909920250000027
+      ],
+      "text" : "6x−5y3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        198.12,
+        224.3288449500001,
+        279.0551555954944,
+        20.909510249999869
+      ],
+      "text" : "Simplify numerator with product rule, adding exponents"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        198.12,
+        180.28843494999998,
+        301.33189440000001,
+        20.909920250000027
+      ],
+      "text" : "Quotient rule to subtract exponets, be careful with negatives!"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        198.12008000000003,
+        158.90320800000001,
+        148.92136233651195,
+        20.443392000000017
+      ],
+      "text" : "(− 2)− (− 5) =(− 2)+5 =3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        198.12023999999997,
+        141.263408,
+        160.17802799999998,
+        20.443392000000017
+      ],
+      "text" : "(− 5)− 3= (− 5)+ (− 3) =− 8"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        198.12004999999996,
+        131.80866495000001,
+        272.15685491729926,
+        13.58903755
+      ],
+      "text" : "Negative exponent needs to move down to denominator"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        147.48021999999995,
+        131.80866495000001,
+        34.952058410000006,
+        13.58903755
+      ],
+      "text" : "2x3y−8"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        164.40014999999997,
+        99.339644800000002,
+        16.832128409999996,
+        13.298257700000008
+      ],
+      "text" : "2x3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        167.63998999999995,
+        84.901559199999994,
+        95.063839552102479,
+        19.216996000000009
+      ],
+      "text" : "y8 Our Solution"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        297.12,
+        52.379053200000001,
+        15.061000895467203,
+        9.8729762399999998
+      ],
+      "text" : "185"
+    }
+  ],
+  "page" : 185,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        432.16000000000008,
+        573.2600000000001,
+        21.63999999999993,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        138.04000000000002,
+        533.54000000000008,
+        21.640000000000015,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        269.80000000000001,
+        533.54000000000008,
+        12.879999999999995,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        311.32000000000005,
+        533.54000000000008,
+        21.639999999999986,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        392.44000000000005,
+        533.54000000000008,
+        29.920000000000016,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        391.24000000000001,
+        493.10000000000002,
+        12.759999999999991,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        440.92000000000002,
+        493.10000000000002,
+        21.640000000000043,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        94.239800000000002,
+        237.02000000000004,
+        89.560200000000009,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        130.59999999999999,
+        192.86000000000001,
+        53.200000000000017,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.80000000000001,
+        95.780100000000004,
+        22,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

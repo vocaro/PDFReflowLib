@@ -1,0 +1,1305 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        84.9602,
+        745.55119999999999,
+        79.69001210961919,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 223."
+        }
+      ],
+      "text" : "Example 223."
+    },
+    {
+      "rect" : [
+        84.9602,
+        701.54310799999996,
+        197.30467063270407,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Convert 3.21 × 10"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "to standard notation "
+        }
+      ],
+      "text" : "Convert 3.21 × 105 to standard notation "
+    },
+    {
+      "rect" : [
+        297.96133092070403,
+        701.54310799999996,
+        212.42450248023039,
+        21.774494499999946
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Positiveexponentmeansstandardnotation"
+        }
+      ],
+      "text" : "Positiveexponentmeansstandardnotation"
+    },
+    {
+      "rect" : [
+        297.96021000000007,
+        692.37954479999996,
+        197.21519414950399,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "big number. Move decimal right 5places"
+        }
+      ],
+      "text" : "big number. Move decimal right 5places"
+    },
+    {
+      "rect" : [
+        241.92008000000004,
+        674.85964479999996,
+        120.62417148797442,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "321, 000 Our Solution"
+        }
+      ],
+      "text" : "321, 000 Our Solution"
+    },
+    {
+      "rect" : [
+        84.960060000000055,
+        631.55129999999997,
+        79.690012133529592,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 224."
+        }
+      ],
+      "text" : "Example 224."
+    },
+    {
+      "rect" : [
+        84.960060000000055,
+        587.54320799999994,
+        194.06444843840001,
+        21.77449450000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Conver 7.4 × 10"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−3 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "to standard notation "
+        }
+      ],
+      "text" : "Conver 7.4 × 10−3 to standard notation "
+    },
+    {
+      "rect" : [
+        294.72096872640009,
+        587.54320799999994,
+        216.74451467453434,
+        21.77449450000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Negativeexponentmeansstandardnotation"
+        }
+      ],
+      "text" : "Negativeexponentmeansstandardnotation"
+    },
+    {
+      "rect" : [
+        294.71986000000004,
+        578.49954479999997,
+        215.455061344,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "is a small number. Move decimal left 3places"
+        }
+      ],
+      "text" : "is a small number. Move decimal left 3places"
+    },
+    {
+      "rect" : [
+        246.47998000000001,
+        560.85974479999993,
+        112.82425432240638,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "0.0074 Our Solution"
+        }
+      ],
+      "text" : "0.0074 Our Solution"
+    },
+    {
+      "rect" : [
+        84.959980000000002,
+        517.65974479999988,
+        425.12669493662725,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Converting between standard notation and scientific notation is important to"
+        }
+      ],
+      "text" : "Converting between standard notation and scientific notation is important to"
+    },
+    {
+      "rect" : [
+        84.959979999999973,
+        503.13944479999981,
+        425.18582631421441,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "understand how scientific notation works and what it does. Here our main"
+        }
+      ],
+      "text" : "understand how scientific notation works and what it does. Here our main"
+    },
+    {
+      "rect" : [
+        84.959979999999973,
+        488.49964479999983,
+        425.24727610841597,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "interest is to be able to multiply and divide numbers in scientific notation using"
+        }
+      ],
+      "text" : "interest is to be able to multiply and divide numbers in scientific notation using"
+    },
+    {
+      "rect" : [
+        84.959979999999973,
+        473.97974479999982,
+        425.15748308728325,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "exponent properties. The way we do this is first do the operation with the front"
+        }
+      ],
+      "text" : "exponent properties. The way we do this is first do the operation with the front"
+    },
+    {
+      "rect" : [
+        84.959979999999973,
+        459.33954479999983,
+        425.17371160445441,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "number (multiply or divide) then use exponent properties to simplify the 10’s."
+        }
+      ],
+      "text" : "number (multiply or divide) then use exponent properties to simplify the 10’s."
+    },
+    {
+      "rect" : [
+        84.959979999999973,
+        444.81964479999982,
+        425.21855839050249,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Scientific notation is the only time where it will be allowed to have negative expo-"
+        }
+      ],
+      "text" : "Scientific notation is the only time where it will be allowed to have negative expo-"
+    },
+    {
+      "rect" : [
+        84.959979999999973,
+        430.29974479999981,
+        425.2010767171073,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "nents in our final solution. The negative exponent simply informs us that we are"
+        }
+      ],
+      "text" : "nents in our final solution. The negative exponent simply informs us that we are"
+    },
+    {
+      "rect" : [
+        84.959979999999973,
+        415.65994479999983,
+        318.731902675968,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "dealing with small numbers. Consider the following examples."
+        }
+      ],
+      "text" : "dealing with small numbers. Consider the following examples."
+    },
+    {
+      "rect" : [
+        84.959979999999973,
+        375.47189999999983,
+        79.690012133529592,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 225."
+        }
+      ],
+      "text" : "Example 225."
+    },
+    {
+      "rect" : [
+        125.87987999999999,
+        331.46380799999986,
+        113.87490119999995,
+        21.654574499999967
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(2.1 × 10"
+        },
+        {
+          "baselineOffset" : 4.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−7"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ")(3.7 × 10"
+        },
+        {
+          "baselineOffset" : 4.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ") "
+        }
+      ],
+      "text" : "(2.1 × 10−7)(3.7 × 105) "
+    },
+    {
+      "rect" : [
+        255.47994999999992,
+        331.46380799999986,
+        190.50185972052481,
+        21.654574499999967
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Deal with numbers and 10"
+        },
+        {
+          "baselineOffset" : 4.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "′"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "s separately"
+        }
+      ],
+      "text" : "Deal with numbers and 10′s separately"
+    },
+    {
+      "rect" : [
+        157.56025999999989,
+        322.29984479999985,
+        187.73576990018566,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(2.1)(3.7)= 7.77 Multiply numbers"
+        }
+      ],
+      "text" : "(2.1)(3.7)= 7.77 Multiply numbers"
+    },
+    {
+      "rect" : [
+        164.40005999999988,
+        304.48916494999986,
+        75.392278410000017,
+        13.58903755
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "10"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−7"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "10"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "=10"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−2 "
+        }
+      ],
+      "text" : "10−7105 =10−2 "
+    },
+    {
+      "rect" : [
+        255.48010999999991,
+        304.48916494999986,
+        213.77549662973439,
+        13.58903755
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Use product rule on 10"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "′"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "s and add exponents"
+        }
+      ],
+      "text" : "Use product rule on 10′s and add exponents"
+    },
+    {
+      "rect" : [
+        182.52002999999991,
+        278.66390799999988,
+        137.54400114864643,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "7.77 × 10"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
+        }
+      ],
+      "text" : "7.77 × 10−2 Our Solution"
+    },
+    {
+      "rect" : [
+        84.960189999999926,
+        243.95209999999989,
+        79.690012157440009,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 226."
+        }
+      ],
+      "text" : "Example 226."
+    },
+    {
+      "rect" : [
+        102.48008999999993,
+        203.18380799999989,
+        50.072028410000001,
+        21.654574499999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4.96 × 10"
+        },
+        {
+          "baselineOffset" : 4.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        }
+      ],
+      "text" : "4.96 × 104"
+    },
+    {
+      "rect" : [
+        101.76018999999994,
+        188.18380799999989,
+        51.511818409999989,
+        29.453694500000125
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.6792000000001224,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3.1 × 10"
+        },
+        {
+          "baselineOffset" : -4.3194300000001249,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−3 "
+        }
+      ],
+      "text" : "3.1 × 10−3 "
+    },
+    {
+      "rect" : [
+        104.27984999999995,
+        170.73924479999999,
+        20.846130887168002,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4.96"
+        }
+      ],
+      "text" : "4.96"
+    },
+    {
+      "rect" : [
+        107.27984999999995,
+        155.73924479999999,
+        144.29489920755202,
+        19.779110400000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7999999999999829,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3.1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 1.6 Divide Numbers"
+        }
+      ],
+      "text" : "3.1= 1.6 Divide Numbers"
+    },
+    {
+      "rect" : [
+        170.03999999999999,
+        188.18380799999989,
+        190.5015750702336,
+        29.453694500000125
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Deal with numbers and 10"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "′"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "s separately"
+        }
+      ],
+      "text" : "Deal with numbers and 10′s separately"
+    },
+    {
+      "rect" : [
+        104.63979999999998,
+        129.0990448,
+        15.992328409999999,
+        13.298257699999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.1599599999999839,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "10"
+        },
+        {
+          "baselineOffset" : 2.1599600000000123,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        }
+      ],
+      "text" : "104"
+    },
+    {
+      "rect" : [
+        127.32000000000001,
+        121.89924480000001,
+        27.152128410000003,
+        13.298257700000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 10"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "7 "
+        }
+      ],
+      "text" : "= 107 "
+    },
+    {
+      "rect" : [
+        170.04000000000002,
+        121.89924480000001,
+        325.33197440000004,
+        13.298257700000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Use quotient rule to subtract exponents, be careful with negatives!"
+        }
+      ],
+      "text" : "Use quotient rule to subtract exponents, be careful with negatives!"
+    },
+    {
+      "rect" : [
+        101.03979999999997,
+        112.96844494999998,
+        23.072388409999988,
+        13.589037550000015
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.480080000000001,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "10"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "−3"
+        }
+      ],
+      "text" : "10−3"
+    },
+    {
+      "rect" : [
+        170.04016000000007,
+        94.103108000000006,
+        233.05197417471999,
+        20.455347199999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Be careful with negatives, 4− (− 3) =4 +3= 7"
+        }
+      ],
+      "text" : "Be careful with negatives, 4− (− 3) =4 +3= 7"
+    },
+    {
+      "rect" : [
+        110.16042000000007,
+        76.463308000000012,
+        124.46396077616643,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "1.6 × 10"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "7 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
+        }
+      ],
+      "text" : "1.6 × 107 Our Solution"
+    },
+    {
+      "rect" : [
+        297.1201200000001,
+        52.379153200000005,
+        15.061000895467203,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "189"
+        }
+      ],
+      "text" : "189"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      99.160000000000011,
+      208.10000000000002,
+      56.680000000000021,
+      4
+    ],
+    [
+      101.68000000000001,
+      167.18000000000004,
+      26.080000000000013,
+      4
+    ],
+    [
+      98.440000000000012,
+      125.66000000000003,
+      28.359999999999999,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        745.55119999999999,
+        79.69001210961919,
+        11.955199999999991
+      ],
+      "text" : "Example 223."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        701.54310799999996,
+        197.30467063270407,
+        21.774494499999946
+      ],
+      "text" : "Convert 3.21 × 105 to standard notation"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        297.96133092070403,
+        701.54310799999996,
+        212.42450248023039,
+        21.774494499999946
+      ],
+      "text" : "Positiveexponentmeansstandardnotation"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        297.96021000000007,
+        692.37954479999996,
+        197.21519414950399,
+        11.979110399999968
+      ],
+      "text" : "big number. Move decimal right 5places"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        241.92008000000004,
+        674.85964479999996,
+        120.62417148797442,
+        11.979110399999968
+      ],
+      "text" : "321, 000 Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960060000000055,
+        631.55129999999997,
+        79.690012133529592,
+        11.955199999999991
+      ],
+      "text" : "Example 224."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960060000000055,
+        587.54320799999994,
+        194.06444843840001,
+        21.77449450000006
+      ],
+      "text" : "Conver 7.4 × 10−3 to standard notation"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        294.72096872640009,
+        587.54320799999994,
+        216.74451467453434,
+        21.77449450000006
+      ],
+      "text" : "Negativeexponentmeansstandardnotation"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        294.71986000000004,
+        578.49954479999997,
+        215.455061344,
+        11.979110399999968
+      ],
+      "text" : "is a small number. Move decimal left 3places"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        246.47998000000001,
+        560.85974479999993,
+        112.82425432240638,
+        11.979110399999968
+      ],
+      "text" : "0.0074 Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959980000000002,
+        517.65974479999988,
+        425.12669493662725,
+        11.979110399999968
+      ],
+      "text" : "Converting between standard notation and scientific notation is important to"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959979999999973,
+        503.13944479999981,
+        425.18582631421441,
+        11.979110400000025
+      ],
+      "text" : "understand how scientific notation works and what it does. Here our main"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959979999999973,
+        488.49964479999983,
+        425.24727610841597,
+        11.979110400000025
+      ],
+      "text" : "interest is to be able to multiply and divide numbers in scientific notation using"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959979999999973,
+        473.97974479999982,
+        425.15748308728325,
+        11.979110400000025
+      ],
+      "text" : "exponent properties. The way we do this is first do the operation with the front"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959979999999973,
+        459.33954479999983,
+        425.17371160445441,
+        11.979110400000025
+      ],
+      "text" : "number (multiply or divide) then use exponent properties to simplify the 10’s."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959979999999973,
+        444.81964479999982,
+        425.21855839050249,
+        11.979110400000025
+      ],
+      "text" : "Scientific notation is the only time where it will be allowed to have negative expo-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959979999999973,
+        430.29974479999981,
+        425.2010767171073,
+        11.979110400000025
+      ],
+      "text" : "nents in our final solution. The negative exponent simply informs us that we are"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959979999999973,
+        415.65994479999983,
+        318.731902675968,
+        11.979110400000025
+      ],
+      "text" : "dealing with small numbers. Consider the following examples."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959979999999973,
+        375.47189999999983,
+        79.690012133529592,
+        11.955199999999991
+      ],
+      "text" : "Example 225."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        125.87987999999999,
+        331.46380799999986,
+        113.87490119999995,
+        21.654574499999967
+      ],
+      "text" : "(2.1 × 10−7)(3.7 × 105)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        255.47994999999992,
+        331.46380799999986,
+        190.50185972052481,
+        21.654574499999967
+      ],
+      "text" : "Deal with numbers and 10′s separately"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        157.56025999999989,
+        322.29984479999985,
+        187.73576990018566,
+        11.979110400000025
+      ],
+      "text" : "(2.1)(3.7)= 7.77 Multiply numbers"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        164.40005999999988,
+        304.48916494999986,
+        75.392278410000017,
+        13.58903755
+      ],
+      "text" : "10−7105 =10−2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        255.48010999999991,
+        304.48916494999986,
+        213.77549662973439,
+        13.58903755
+      ],
+      "text" : "Use product rule on 10′s and add exponents"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        182.52002999999991,
+        278.66390799999988,
+        137.54400114864643,
+        21.774494500000003
+      ],
+      "text" : "7.77 × 10−2 Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960189999999926,
+        243.95209999999989,
+        79.690012157440009,
+        11.955199999999991
+      ],
+      "text" : "Example 226."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        102.48008999999993,
+        203.18380799999989,
+        50.072028410000001,
+        21.654574499999995
+      ],
+      "text" : "4.96 × 104"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        101.76018999999994,
+        188.18380799999989,
+        51.511818409999989,
+        29.453694500000125
+      ],
+      "text" : "3.1 × 10−3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        104.27984999999995,
+        170.73924479999999,
+        20.846130887168002,
+        11.979110399999996
+      ],
+      "text" : "4.96"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        107.27984999999995,
+        155.73924479999999,
+        144.29489920755202,
+        19.779110400000008
+      ],
+      "text" : "3.1= 1.6 Divide Numbers"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        170.03999999999999,
+        188.18380799999989,
+        190.5015750702336,
+        29.453694500000125
+      ],
+      "text" : "Deal with numbers and 10′s separately"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        104.63979999999998,
+        129.0990448,
+        15.992328409999999,
+        13.298257699999994
+      ],
+      "text" : "104"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        127.32000000000001,
+        121.89924480000001,
+        27.152128410000003,
+        13.298257700000008
+      ],
+      "text" : "= 107"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        170.04000000000002,
+        121.89924480000001,
+        325.33197440000004,
+        13.298257700000008
+      ],
+      "text" : "Use quotient rule to subtract exponents, be careful with negatives!"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        101.03979999999997,
+        112.96844494999998,
+        23.072388409999988,
+        13.589037550000015
+      ],
+      "text" : "10−3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        170.04016000000007,
+        94.103108000000006,
+        233.05197417471999,
+        20.455347199999991
+      ],
+      "text" : "Be careful with negatives, 4− (− 3) =4 +3= 7"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        110.16042000000007,
+        76.463308000000012,
+        124.46396077616643,
+        21.774494500000003
+      ],
+      "text" : "1.6 × 107 Our Solution"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        297.1201200000001,
+        52.379153200000005,
+        15.061000895467203,
+        9.8729762399999998
+      ],
+      "text" : "189"
+    }
+  ],
+  "page" : 189,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        99.160000000000011,
+        208.10000000000002,
+        56.680000000000021,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        101.68000000000001,
+        167.18000000000004,
+        26.080000000000013,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        98.440000000000012,
+        125.66000000000003,
+        28.359999999999999,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

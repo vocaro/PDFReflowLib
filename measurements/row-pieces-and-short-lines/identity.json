@@ -1,0 +1,56 @@
+{
+  "environment": "macOS 27.0 (26A428) arm64, Xcode 27.0 (27A266a), release CLI, library defaults",
+  "lane": {
+    "cases": ["wallace-algebra-2010", "usgs-mcs2025-copper", "scotus-loper-bright-2024", "faa-phak-8083-25c", "fed-explained-2021", "gpo-911-2004"],
+    "baseline": {
+      "commit": "9884ed6",
+      "cli": "release build of 9884ed6 (LayoutReconstructor.swift restored from 9884ed6 in the worktree)",
+      "converterSHA256": "3c3c78142071b50ab9cc91b038e85e623b07cd69b988eaf9157fc38bf3a29ebb"
+    },
+    "candidate": {
+      "commit": "9884ed6 + working tree",
+      "converterSHA256": "84b547104b065f2c3c61a2a4b986e5133cf97d9a600032e0f454e5fac24b42ef"
+    }
+  },
+  "survey": {
+    "cases": ["dga-2025-2030", "gpo-our-flag-2003", "cdc-zombie-pandemic-2011", "cia-blue-book-14-1955", "census-rrs2002-01", "nbs-jres-geltman-1977", "arxiv-replay-clocks-2023"],
+    "baseline": {
+      "commit": "36c6265",
+      "cli": "release build of 36c6265 (LayoutReconstructor.swift restored from 36c6265 in the worktree)",
+      "converterSHA256": "19de007aa17bd4d0cfc1816fbb8080ee04b12456f9cd06f0166ac4b0ad755624"
+    },
+    "candidate": {
+      "commit": "36c6265 + working tree (final)",
+      "converterSHA256": "66a421db3fc65718023bfda4c74a66c63d7cec0cc42fc78e08342ab2e91b1f76",
+      "Sources/PDFReflowLib/LayoutReconstructor.swift": "cf7a75688b6fc0542e5782cb13b9aa01265c6b628cb3d46fa3adc2912bd04fad",
+      "alsoRun": "wallace-algebra-2010 and usgs-mcs2025-copper: PASS with every contract, including the #71/#95 additions"
+    }
+  },
+  "environmentProbeSHA256": "851d6d0ac6974d7c3b0869d1ac874e17a2c059c25b73b1c8823077d1ba59a161",
+  "sources": {
+    "wallace-algebra-2010": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+    "usgs-mcs2025-copper": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6"
+  },
+  "fixtures": {
+    "Tests/PDFReflowLibTests/fixtures/algebra-9-layout.json": "b93b052863f080cc1271a253a639001f95ada306ac5d4a978e9a2f759f2d0da5",
+    "Tests/PDFReflowLibTests/fixtures/algebra-120-layout.json": "7946787990b31dfdcdb61d380ca5897394bae2467aeaedae0fc1672aa65c6ba5",
+    "Tests/PDFReflowLibTests/fixtures/algebra-180-layout.json": "ee385db5abf06ade2d0bb2fb3cfb56f4000594fd0adc75dab3c3c51d98ea26ad",
+    "Tests/PDFReflowLibTests/fixtures/algebra-185-layout.json": "b88e79cd7b4215e776826420b3c23e5de9523cb95750159c96ef07f61a9d9c3a",
+    "Tests/PDFReflowLibTests/fixtures/algebra-189-layout.json": "84ba64ba8c8ef3a7d9efd824d0ff2465e6c70473baccd8ae058dc8305b38a02e",
+    "Tests/PDFReflowLibTests/fixtures/algebra-198-layout.json": "89e9cca421f2813f509548301ac5935fbeb384606f6f4bfd6d3f83ac7a64a036",
+    "Tests/PDFReflowLibTests/fixtures/algebra-212-layout.json": "47433c682f34cd94210242084b4e57c32970d2c2d7722b152eb1dcea63232a26",
+    "Tests/PDFReflowLibTests/fixtures/algebra-290-layout.json": "a1451c3fe8b172841ea5f91117d8997c496b15b34da35dd0abf167bf2f1ed1d7",
+    "Tests/PDFReflowLibTests/fixtures/algebra-292-layout.json": "93478c0a4f6b3cb88957b91d1cc6343706d62f124b66d2db9124702811ca9d42",
+    "Tests/PDFReflowLibTests/fixtures/algebra-299-layout.json": "e307324fd7b3d4572255ccdbe19eabfd26d7e337aaa17fed85c4726648f5eb18",
+    "Tests/PDFReflowLibTests/fixtures/algebra-305-layout.json": "ca0d05b25b7bce1ba97deb2c7693f9a3b52c8537030e41967ec5d0d44515fc68",
+    "Tests/PDFReflowLibTests/fixtures/algebra-318-layout.json": "5c6566f7d894dcd278a73a01573502727ad103b8f666f38b54cb32df59dbf605",
+    "Tests/PDFReflowLibTests/fixtures/algebra-321-layout.json": "08e33247d091f8e0f760033b3b7771ef18607547eeab9c45e361de0fb1f3ee76"
+  },
+  "commands": {
+    "lane": "python3 tools/run_corpus_regressions.py --converter <CLI> --epubcheck /opt/homebrew/bin/epubcheck --output <dir> --case <id> --environment-probe <probe> --execution-context host-terminal (one case per call, baseline then candidate)",
+    "compare": "python3 tools/compare_conversion_runs.py --baseline <dir>/<id> --candidate <dir>/<id> --output page-comparison/compare-<id>.json --allow-different-converters",
+    "pagediff": "per-page paragraph lists from tools/check_corpus_content.read_pages on both EPUBs, unified diff of changed pages (page-comparison/pagediff-<id>.txt), plus a per-page multiset check of non-space, non-hyphen characters",
+    "capture": "swiftc Sources/PDFReflowLib/{NativeTextReader,ConversionTypes,DocumentModel,ReflowDocument,GraphicsReader,NativeSpacingReader,StructureTreeReader,MarkedTextReader}.swift tools/capture-layout-fixture.swift -o capture; capture wallace-algebra-2010 <page> Tests/PDFReflowLibTests/fixtures/algebra-<page>-layout.json",
+    "probe": "xcrun swiftc -parse-as-library -O Sources/PDFReflowLib/{PageRasterizer,ConversionTypes,DocumentModel,ReflowDocument}.swift tools/probe-raster-environment.swift -o probe"
+  }
+}

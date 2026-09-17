@@ -1,0 +1,290 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "wallace-algebra-2010",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "3c3c78142071b50ab9cc91b038e85e623b07cd69b988eaf9157fc38bf3a29ebb",
+  "candidateConverterSHA256": "84b547104b065f2c3c61a2a4b986e5133cf97d9a600032e0f454e5fac24b42ef",
+  "sameConverter": false,
+  "changedPages": [
+    7,
+    43,
+    48,
+    64,
+    67,
+    178,
+    185,
+    192,
+    196,
+    198,
+    202,
+    203,
+    212,
+    231,
+    253,
+    255,
+    264,
+    288,
+    289,
+    290,
+    292,
+    295,
+    299,
+    305,
+    318,
+    322,
+    337,
+    366,
+    376,
+    383,
+    388,
+    406,
+    410,
+    429,
+    430
+  ],
+  "changedPageFields": {
+    "7": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "43": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "48": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "64": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "67": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "178": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "185": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "192": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "196": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "198": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "202": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "203": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "212": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "231": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "253": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "255": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "264": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "288": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "289": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "290": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "292": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "295": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "299": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "305": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "318": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "322": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "337": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "366": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "376": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "383": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "388": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "406": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "410": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "429": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "430": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 422,
+    "fields": {
+      "listItemIDs": 107,
+      "paragraphIDs": 415
+    },
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

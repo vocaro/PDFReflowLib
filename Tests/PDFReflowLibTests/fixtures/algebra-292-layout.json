@@ -1,0 +1,1838 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        84.9602,
+        746.01924480000002,
+        14.966047540736,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "8.2"
+        }
+      ],
+      "text" : "8.2"
+    },
+    {
+      "rect" : [
+        199.3202,
+        718.88293639999995,
+        196.45399722348401,
+        16.919463599999972
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 16.936400000000003,
+          "text" : "Radicals - Higher Roots"
+        }
+      ],
+      "text" : "Radicals - Higher Roots"
+    },
+    {
+      "rect" : [
+        84.9602,
+        674.51130000000001,
+        355.8090224,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Objective: Simplify radicals with an index greater than two."
+        }
+      ],
+      "text" : "Objective: Simplify radicals with an index greater than two."
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        650.61924480000005,
+        425.18480057187838,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "While square roots are the most common type of radical we work with, we can"
+        }
+      ],
+      "text" : "While square roots are the most common type of radical we work with, we can"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        636.09934480000004,
+        425.21913749719045,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "take higher roots of numbers as well: cube roots, fourth roots, fifth roots, etc. Fol-"
+        }
+      ],
+      "text" : "take higher roots of numbers as well: cube roots, fourth roots, fifth roots, etc. Fol-"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        621.57944480000003,
+        166.57261405148171,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "lowing is a definition of radicals."
+        }
+      ],
+      "text" : "lowing is a definition of radicals."
+    },
+    {
+      "rect" : [
+        250.80029999999999,
+        590.01924480000002,
+        93.487081599999954,
+        20.236016000000063
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 4.4402300000000423,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        },
+        {
+          "baselineOffset" : 8.5199200000000701,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= b if b"
+        },
+        {
+          "baselineOffset" : 4.4402300000000423,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= a"
+        }
+      ],
+      "text" : "m√= b if bm = a"
+    },
+    {
+      "rect" : [
+        263.52019999999999,
+        590.60504960000003,
+        7.5676416000000017,
+        10.915097599999967
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a"
+        }
+      ],
+      "text" : "a"
+    },
+    {
+      "rect" : [
+        84.959739999999925,
+        556.65944480000007,
+        425.20155288831995,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The small letter m inside the radical is called the index. It tells us which root we"
+        }
+      ],
+      "text" : "The small letter m inside the radical is called the index. It tells us which root we"
+    },
+    {
+      "rect" : [
+        84.959739999999897,
+        542.13914480000005,
+        425.2164915596544,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "are taking, or which power we are “un-doing”. For square roots the index is 2. As"
+        }
+      ],
+      "text" : "are taking, or which power we are “un-doing”. For square roots the index is 2. As"
+    },
+    {
+      "rect" : [
+        84.959739999999897,
+        527.61924480000005,
+        314.89290801205766,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "this is the most common root, the two is not usually written."
+        }
+      ],
+      "text" : "this is the most common root, the two is not usually written."
+    },
+    {
+      "rect" : [
+        84.959739999999897,
+        503.73914479999996,
+        425.18546084060165,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "World View Note: The word for root comes from the French mathematician"
+        }
+      ],
+      "text" : "World View Note: The word for root comes from the French mathematician"
+    },
+    {
+      "rect" : [
+        84.959739999999911,
+        489.21924479999996,
+        213.97356469079057,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Franciscus Vieta in the late 16th century."
+        }
+      ],
+      "text" : "Franciscus Vieta in the late 16th century."
+    },
+    {
+      "rect" : [
+        84.959739999999911,
+        465.33914479999993,
+        268.45256989900793,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The following example includes several higher roots."
+        }
+      ],
+      "text" : "The following example includes several higher roots."
+    },
+    {
+      "rect" : [
+        84.959739999999911,
+        427.1912999999999,
+        79.690012129943042,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 383."
+        }
+      ],
+      "text" : "Example 383."
+    },
+    {
+      "rect" : [
+        221.63957999999994,
+        391.343008,
+        104.84671455744009,
+        30.403441999999927
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 5.6401299999998855,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        },
+        {
+          "baselineOffset" : 9.9600499999999101,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "=5− 64"
+        }
+      ],
+      "text" : "3√ =5− 64"
+    },
+    {
+      "rect" : [
+        231.59973999999994,
+        399.81914479999989,
+        17.606296195328014,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "125"
+        }
+      ],
+      "text" : "125"
+    },
+    {
+      "rect" : [
+        293.3999,
+        391.343008,
+        63.938348000000019,
+        29.923472000000061
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 5.160160000000019,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        },
+        {
+          "baselineOffset" : 9.4800800000000436,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "=− 4"
+        }
+      ],
+      "text" : "3√=− 4"
+    },
+    {
+      "rect" : [
+        224.63984000000002,
+        373.82300800000002,
+        104.72655619532802,
+        30.523472000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 5.7601599999999848,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        },
+        {
+          "baselineOffset" : 10.080080000000009,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 3− 128"
+        }
+      ],
+      "text" : "4√ = 3− 128"
+    },
+    {
+      "rect" : [
+        234.60000000000002,
+        382.2992448,
+        11.726194437888012,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "81"
+        }
+      ],
+      "text" : "81"
+    },
+    {
+      "rect" : [
+        290.51990000000001,
+        373.82300800000002,
+        69.698447999999985,
+        30.04339200000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 5.160160000000019,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "7"
+        },
+        {
+          "baselineOffset" : 9.6000000000000227,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "=− 2"
+        }
+      ],
+      "text" : "7√=− 2"
+    },
+    {
+      "rect" : [
+        224.63984000000002,
+        356.42300800000004,
+        85.64645455744008,
+        30.523472000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 5.7601599999999848,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        },
+        {
+          "baselineOffset" : 10.080080000000009,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 2− 16"
+        }
+      ],
+      "text" : "5√ = 2− 16"
+    },
+    {
+      "rect" : [
+        234.60000000000002,
+        364.89924480000002,
+        11.726194437888012,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "32"
+        }
+      ],
+      "text" : "32"
+    },
+    {
+      "rect" : [
+        277.19990000000001,
+        364.89924480000002,
+        96.264522963967977,
+        21.44723520000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 5.160160000000019,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        },
+        {
+          "baselineOffset" : 9.4800800000000436,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "=undefined"
+        }
+      ],
+      "text" : "4√=undefined"
+    },
+    {
+      "rect" : [
+        84.9602,
+        321.21924480000001,
+        425.22021741447679,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "We must be careful of a few things as we work with higher roots. First its impor-"
+        }
+      ],
+      "text" : "We must be careful of a few things as we work with higher roots. First its impor-"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        305.37924479999998,
+        259.8127675520002,
+        21.927515200000016
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "tant not to forget to check the index on the root. "
+        }
+      ],
+      "text" : "tant not to forget to check the index on the root. "
+    },
+    {
+      "rect" : [
+        360.12651236652789,
+        305.37924479999998,
+        77.256652310464119,
+        21.927515200000016
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "81"
+        },
+        {
+          "baselineOffset" : 9.9601599999999735,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : -0.00020000000000663931,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 9 but 81"
+        },
+        {
+          "baselineOffset" : 5.6396399999999858,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        },
+        {
+          "baselineOffset" : 9.9599499999999921,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        }
+      ],
+      "text" : "81√ = 9 but 814√ "
+    },
+    {
+      "rect" : [
+        447.24000000000001,
+        305.37924479999998,
+        62.93478159001603,
+        21.927515200000016
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.00020000000000663931,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 3. This is"
+        }
+      ],
+      "text" : "= 3. This is"
+    },
+    {
+      "rect" : [
+        84.960200000000043,
+        290.85934479999997,
+        54.632108410000001,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "because 9"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "because 92"
+    },
+    {
+      "rect" : [
+        143.63987000000003,
+        290.85934479999997,
+        63.872408409999991,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 81 and 3"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        }
+      ],
+      "text" : "= 81 and 34"
+    },
+    {
+      "rect" : [
+        211.56023000000002,
+        290.85934479999997,
+        298.55742755235838,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 81. Another thing to watch out for is negatives under"
+        }
+      ],
+      "text" : "= 81. Another thing to watch out for is negatives under"
+    },
+    {
+      "rect" : [
+        84.959930000000014,
+        276.33944479999997,
+        425.15751419878393,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "roots. We can take an odd root of a negative number, because a negative number"
+        }
+      ],
+      "text" : "roots. We can take an odd root of a negative number, because a negative number"
+    },
+    {
+      "rect" : [
+        84.959929999999986,
+        261.81914479999995,
+        425.25570902474243,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "raised to an odd power is still negative. However, we cannot take an even root of"
+        }
+      ],
+      "text" : "raised to an odd power is still negative. However, we cannot take an even root of"
+    },
+    {
+      "rect" : [
+        84.959929999999986,
+        247.29924479999994,
+        425.21697498982405,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "a negative number, this we will say is undefined. In a later section we will discuss"
+        }
+      ],
+      "text" : "a negative number, this we will say is undefined. In a later section we will discuss"
+    },
+    {
+      "rect" : [
+        84.959929999999986,
+        232.77934479999993,
+        425.21807190036475,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "how to work with roots of negative, but for now we will simply say they are unde-"
+        }
+      ],
+      "text" : "how to work with roots of negative, but for now we will simply say they are unde-"
+    },
+    {
+      "rect" : [
+        84.959929999999986,
+        218.37934479999996,
+        28.09210719104,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "fined."
+        }
+      ],
+      "text" : "fined."
+    },
+    {
+      "rect" : [
+        84.959929999999986,
+        194.37934479999996,
+        425.17230426585604,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "We can simplify higher roots in much the same way we simplified square roots,"
+        }
+      ],
+      "text" : "We can simplify higher roots in much the same way we simplified square roots,"
+    },
+    {
+      "rect" : [
+        84.959929999999986,
+        179.85944479999995,
+        198.85312449326085,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "using the product property of radicals."
+        }
+      ],
+      "text" : "using the product property of radicals."
+    },
+    {
+      "rect" : [
+        164.39972999999998,
+        146.85944479999995,
+        201.95076866688004,
+        11.967155200000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Product Property of Radicals: ab"
+        }
+      ],
+      "text" : "Product Property of Radicals: ab"
+    },
+    {
+      "rect" : [
+        338.63972999999999,
+        146.8592448,
+        63.608111600000029,
+        21.676065999999935
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 5.8802799999999138,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        },
+        {
+          "baselineOffset" : 9.9599699999999132,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= a"
+        }
+      ],
+      "text" : "m√= a"
+    },
+    {
+      "rect" : [
+        411.12,
+        148.58188200000001,
+        12.65308159999995,
+        19.953228800000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.0796899999999994,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√"
+        }
+      ],
+      "text" : "m√"
+    },
+    {
+      "rect" : [
+        381.96030000000002,
+        138.62211200000002,
+        48.108259199999964,
+        28.473148800000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 4.4398400000000038,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "m"
+        },
+        {
+          "baselineOffset" : 8.5199200000000133,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "√ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "· b"
+        }
+      ],
+      "text" : "m√ · b"
+    },
+    {
+      "rect" : [
+        84.9602,
+        113.4992448,
+        425.21740763440641,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Often we are not as familiar with higher powers as we are with squares. It is"
+        }
+      ],
+      "text" : "Often we are not as familiar with higher powers as we are with squares. It is"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        98.979344799999993,
+        425.15629040985601,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "important to remember what index we are working with as we try and work our"
+        }
+      ],
+      "text" : "important to remember what index we are working with as we try and work our"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        84.459444799999986,
+        102.25246723092482,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "way to the solution."
+        }
+      ],
+      "text" : "way to the solution."
+    },
+    {
+      "rect" : [
+        297.12019999999995,
+        52.379153199999983,
+        15.061000995093593,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "292"
+        }
+      ],
+      "text" : "292"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      261.16000000000003,
+      599.89999999999998,
+      12.039999999999964,
+      4
+    ],
+    [
+      215.08000000000004,
+      361.10000000000002,
+      164.92000000000002,
+      56.920000000000073
+    ],
+    [
+      358.36000000000007,
+      316.46000000000004,
+      16.119999999999948,
+      4
+    ],
+    [
+      429.16000000000008,
+      316.46000000000004,
+      16.119999999999948,
+      4
+    ],
+    [
+      349,
+      158.30000000000001,
+      19.36000000000007,
+      4
+    ],
+    [
+      392.32000000000005,
+      156.74000000000001,
+      11.919999999999959,
+      4
+    ],
+    [
+      421.48000000000002,
+      158.30000000000001,
+      10.600000000000023,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        746.01924480000002,
+        14.966047540736,
+        11.979110399999968
+      ],
+      "text" : "8.2"
+    },
+    {
+      "fontSize" : 16.936400000000003,
+      "monospaced" : false,
+      "rect" : [
+        199.3202,
+        718.88293639999995,
+        196.45399722348401,
+        16.919463599999972
+      ],
+      "text" : "Radicals - Higher Roots"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        674.51130000000001,
+        355.8090224,
+        11.955199999999991
+      ],
+      "text" : "Objective: Simplify radicals with an index greater than two."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        650.61924480000005,
+        425.18480057187838,
+        11.979110399999968
+      ],
+      "text" : "While square roots are the most common type of radical we work with, we can"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        636.09934480000004,
+        425.21913749719045,
+        11.979110399999968
+      ],
+      "text" : "take higher roots of numbers as well: cube roots, fourth roots, fifth roots, etc. Fol-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        621.57944480000003,
+        166.57261405148171,
+        11.979110399999968
+      ],
+      "text" : "lowing is a definition of radicals."
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        250.80029999999999,
+        590.01924480000002,
+        93.487081599999954,
+        20.236016000000063
+      ],
+      "text" : "m√= b if bm = a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        263.52019999999999,
+        590.60504960000003,
+        7.5676416000000017,
+        10.915097599999967
+      ],
+      "text" : "a"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959739999999925,
+        556.65944480000007,
+        425.20155288831995,
+        11.979110399999968
+      ],
+      "text" : "The small letter m inside the radical is called the index. It tells us which root we"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959739999999897,
+        542.13914480000005,
+        425.2164915596544,
+        11.979110399999968
+      ],
+      "text" : "are taking, or which power we are “un-doing”. For square roots the index is 2. As"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959739999999897,
+        527.61924480000005,
+        314.89290801205766,
+        11.979110399999968
+      ],
+      "text" : "this is the most common root, the two is not usually written."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959739999999897,
+        503.73914479999996,
+        425.18546084060165,
+        11.979110399999968
+      ],
+      "text" : "World View Note: The word for root comes from the French mathematician"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959739999999911,
+        489.21924479999996,
+        213.97356469079057,
+        11.979110400000025
+      ],
+      "text" : "Franciscus Vieta in the late 16th century."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959739999999911,
+        465.33914479999993,
+        268.45256989900793,
+        11.979110400000025
+      ],
+      "text" : "The following example includes several higher roots."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959739999999911,
+        427.1912999999999,
+        79.690012129943042,
+        11.955199999999991
+      ],
+      "text" : "Example 383."
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        221.63957999999994,
+        391.343008,
+        104.84671455744009,
+        30.403441999999927
+      ],
+      "text" : "3√ =5− 64"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        231.59973999999994,
+        399.81914479999989,
+        17.606296195328014,
+        11.979110400000025
+      ],
+      "text" : "125"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        293.3999,
+        391.343008,
+        63.938348000000019,
+        29.923472000000061
+      ],
+      "text" : "3√ =− 4"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        224.63984000000002,
+        373.82300800000002,
+        104.72655619532802,
+        30.523472000000027
+      ],
+      "text" : "4√ = 3− 128"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        234.60000000000002,
+        382.2992448,
+        11.726194437888012,
+        11.979110400000025
+      ],
+      "text" : "81"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        290.51990000000001,
+        373.82300800000002,
+        69.698447999999985,
+        30.04339200000004
+      ],
+      "text" : "7√ =− 2"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        224.63984000000002,
+        356.42300800000004,
+        85.64645455744008,
+        30.523472000000027
+      ],
+      "text" : "5√ = 2− 16"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        234.60000000000002,
+        364.89924480000002,
+        11.726194437888012,
+        11.979110400000025
+      ],
+      "text" : "32"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        277.19990000000001,
+        364.89924480000002,
+        96.264522963967977,
+        21.44723520000008
+      ],
+      "text" : "4√ =undefined"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        321.21924480000001,
+        425.22021741447679,
+        11.979110400000025
+      ],
+      "text" : "We must be careful of a few things as we work with higher roots. First its impor-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        305.37924479999998,
+        259.8127675520002,
+        21.927515200000016
+      ],
+      "text" : "tant not to forget to check the index on the root."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        360.12651236652789,
+        305.37924479999998,
+        77.256652310464119,
+        21.927515200000016
+      ],
+      "text" : "81 √ = 9 but 814√"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        447.24000000000001,
+        305.37924479999998,
+        62.93478159001603,
+        21.927515200000016
+      ],
+      "text" : "= 3. This is"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960200000000043,
+        290.85934479999997,
+        54.632108410000001,
+        13.298257700000022
+      ],
+      "text" : "because 92"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        143.63987000000003,
+        290.85934479999997,
+        63.872408409999991,
+        13.298257700000022
+      ],
+      "text" : "= 81 and 34"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        211.56023000000002,
+        290.85934479999997,
+        298.55742755235838,
+        11.979110400000025
+      ],
+      "text" : "= 81. Another thing to watch out for is negatives under"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959930000000014,
+        276.33944479999997,
+        425.15751419878393,
+        11.979110400000025
+      ],
+      "text" : "roots. We can take an odd root of a negative number, because a negative number"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959929999999986,
+        261.81914479999995,
+        425.25570902474243,
+        11.979110400000025
+      ],
+      "text" : "raised to an odd power is still negative. However, we cannot take an even root of"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959929999999986,
+        247.29924479999994,
+        425.21697498982405,
+        11.979110400000025
+      ],
+      "text" : "a negative number, this we will say is undefined. In a later section we will discuss"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959929999999986,
+        232.77934479999993,
+        425.21807190036475,
+        11.979110399999996
+      ],
+      "text" : "how to work with roots of negative, but for now we will simply say they are unde-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959929999999986,
+        218.37934479999996,
+        28.09210719104,
+        11.979110399999996
+      ],
+      "text" : "fined."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959929999999986,
+        194.37934479999996,
+        425.17230426585604,
+        11.979110399999996
+      ],
+      "text" : "We can simplify higher roots in much the same way we simplified square roots,"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959929999999986,
+        179.85944479999995,
+        198.85312449326085,
+        11.979110399999996
+      ],
+      "text" : "using the product property of radicals."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        164.39972999999998,
+        146.85944479999995,
+        201.95076866688004,
+        11.967155200000008
+      ],
+      "text" : "Product Property of Radicals: ab"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        338.63972999999999,
+        146.8592448,
+        63.608111600000029,
+        21.676065999999935
+      ],
+      "text" : "m√ = a"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        411.12,
+        148.58188200000001,
+        12.65308159999995,
+        19.953228800000005
+      ],
+      "text" : "m√"
+    },
+    {
+      "fontSize" : 7.9701100000000009,
+      "monospaced" : false,
+      "rect" : [
+        381.96030000000002,
+        138.62211200000002,
+        48.108259199999964,
+        28.473148800000018
+      ],
+      "text" : "m√ · b"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        113.4992448,
+        425.21740763440641,
+        11.979110399999996
+      ],
+      "text" : "Often we are not as familiar with higher powers as we are with squares. It is"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        98.979344799999993,
+        425.15629040985601,
+        11.979110399999996
+      ],
+      "text" : "important to remember what index we are working with as we try and work our"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        84.459444799999986,
+        102.25246723092482,
+        11.979110399999996
+      ],
+      "text" : "way to the solution."
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        297.12019999999995,
+        52.379153199999983,
+        15.061000995093593,
+        9.8729762399999998
+      ],
+      "text" : "292"
+    }
+  ],
+  "page" : 292,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        261.16000000000003,
+        599.89999999999998,
+        12.039999999999964,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        229.36000000000001,
+        410.90000000000003,
+        21.879999999999995,
+        4
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        215.08000000000004,
+        396.02000000000004,
+        4.5999999999999943,
+        22.000000000000057
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        270.76000000000005,
+        396.02000000000004,
+        4.6000000000000227,
+        22.000000000000057
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        215.08000000000004,
+        396.02000000000004,
+        60.280100000000004,
+        4.6000000000000227
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        215.08000000000004,
+        413.42000000000002,
+        60.280100000000004,
+        4.5999999999999659
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        301.12000000000006,
+        410.42000000000002,
+        27.399999999999977,
+        4
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        270.76000000000005,
+        396.02000000000004,
+        4.6000000000000227,
+        22.000000000000057
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        375.40000000000003,
+        396.02000000000004,
+        4.5999999999999659,
+        22.000000000000057
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        270.76000000000005,
+        396.02000000000004,
+        109.24000000000001,
+        4.6000000000000227
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        270.76000000000005,
+        413.42000000000002,
+        109.24000000000001,
+        4.5999999999999659
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        232.24000000000001,
+        393.5,
+        16.120000000000033,
+        4
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        215.08000000000004,
+        378.5,
+        4.5999999999999943,
+        22.11990000000003
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        270.76000000000005,
+        378.5,
+        4.6000000000000227,
+        22.11990000000003
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        215.08000000000004,
+        378.5,
+        60.280100000000004,
+        4.6000000000000227
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        215.08000000000004,
+        396.02000000000004,
+        60.280100000000004,
+        4.6000000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        298.12000000000006,
+        393.02000000000004,
+        33.279999999999973,
+        4
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        270.76000000000005,
+        378.5,
+        4.6000000000000227,
+        22.11990000000003
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        375.40000000000003,
+        378.5,
+        4.5999999999999659,
+        22.11990000000003
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        270.76000000000005,
+        378.5,
+        109.24000000000001,
+        4.6000000000000227
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        270.76000000000005,
+        396.02000000000004,
+        109.24000000000001,
+        4.6000000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        232.24000000000001,
+        376.10000000000002,
+        16.120000000000033,
+        4
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        215.08000000000004,
+        361.10000000000002,
+        4.5999999999999943,
+        22
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        270.76000000000005,
+        361.10000000000002,
+        4.6000000000000227,
+        22
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        215.08000000000004,
+        361.10000000000002,
+        60.280100000000004,
+        4.6000000000000227
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        215.08000000000004,
+        378.5,
+        60.280100000000004,
+        4.6000000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        284.92000000000002,
+        375.62000000000006,
+        27.400000000000034,
+        4
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        270.76000000000005,
+        361.10000000000002,
+        4.6000000000000227,
+        22
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        375.40000000000003,
+        361.10000000000002,
+        4.5999999999999659,
+        22
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        270.76000000000005,
+        361.10000000000002,
+        109.24000000000001,
+        4.6000000000000227
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        270.76000000000005,
+        378.5,
+        109.24000000000001,
+        4.6000000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        358.36000000000007,
+        316.46000000000004,
+        16.119999999999948,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        429.16000000000008,
+        316.46000000000004,
+        16.119999999999948,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        349,
+        158.30000000000001,
+        19.36000000000007,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        392.32000000000005,
+        156.74000000000001,
+        11.919999999999959,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        421.48000000000002,
+        158.30000000000001,
+        10.600000000000023,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

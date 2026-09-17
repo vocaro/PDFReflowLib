@@ -128,8 +128,12 @@ page, using `PDFPageSource`'s eight-page document window. Sparse ParentTree arra
 many null slots; loading them all into one Core Graphics document causes avoidable peak memory.
 `MarkedTextReader` matches explicitly positioned text-show origins to unique native line
 rectangles. Unknown glyph-cursor advancement, Form XObjects, missing/duplicate MCIDs, ambiguous
-geometry and incomplete groups retain spatial reconstruction. OCR and unverified image-backed
-text do not inherit native tags. Origin matching is conservative association evidence, not full
+geometry and incomplete groups retain spatial reconstruction. OCR text and image-backed pages
+with any invisible (mode 3) text do not inherit native tags; visible native text drawn over a
+page-sized background image or tint (a chapter opener's photograph) keeps its validated tags while
+still reporting `unverifiedTextLayer` (#72). Invisible text never associates in any case: the
+reader rejects rendering mode 3. A validated `P` group set in heading type keeps its tag above the
+text it introduces when its lines read as a pull quote (the rule below). Origin matching is conservative association evidence, not full
 font decoding or proof of the author's semantic correctness.
 
 Supported roles are P and H1–H6 through grouping containers and transparent inline spans.

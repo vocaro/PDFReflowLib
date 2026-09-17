@@ -624,11 +624,16 @@ enum LayoutReconstructor {
         // label (the Fed's `PUBLIC EDUCATION & OUTREACH`) is followed by the title itself, and a
         // title page's centred imprint (Our Flag's `JOINT COMMITTEE ON PRINTING`, 61 points right
         // of the line under it) heads nothing: both stay the paragraphs they are tagged as (#67).
+        // A group that reads as a multi-line display sentence is a pull quote, not a title, even
+        // above the text it introduces (the Fed's chapter openers, above each chapter's contents;
+        // #72): its validated paragraph stands, as the spatial pull-quote rule would read it.
         let introduces = Set(Dictionary(grouping: elements.indices.filter {
             elements[$0].line?.structure?.headingLevel == 0
         }, by: { elements[$0].line!.structure!.group }).compactMap { group, indices -> Int? in
-            let lines = indices.map { elements[$0].line! }
-            guard lines.allSatisfy(headingTypography), let last = indices.max(),
+            let lines = indices.sorted().map { elements[$0].line! }
+            guard lines.allSatisfy(headingTypography),
+                  pullQuoteLines(in: lines, candidates: { _ in true }).count < lines.count,
+                  let last = indices.max(),
                   let left = lines.map({ $0.rect.minX }).min(), let right = lines.map({ $0.rect.maxX }).max(),
                   let next = elements[(last + 1)...].lazy.compactMap(\.line)
                     .first(where: { $0.rect.minX < right && $0.rect.maxX > left }),

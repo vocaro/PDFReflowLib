@@ -1,0 +1,11 @@
+base headings 12 {'h2': 1, 'h3': 1, 'h4': 6, 'h5': 2, 'h6': 2} blocks 352 images 42 words 3265
+cand headings 12 {'h2': 1, 'h3': 1, 'h4': 6, 'h5': 2, 'h6': 2} blocks 354 images 42 words 3275
+word multiset delta: {'An': 1, 'INOD': 1, 'gseg': 1, 'id': 1, 'END?': 1} {'AND': 1, 'THE': 1, 'CONTROL': 1, 'ATLANTA,': 1, 'GEORGIA...': 1, 'DISEASE': 1, 'PREVENTION': 1, 'IN': 1, 'SEVERAL': 1, 'DAYS': 1, 'LATER': 1, 'AT': 1, 'CENTERS': 1, 'FOR': 1, 'END？': 1}
+--- page 17
+  - p An INOD gseg id
+  + p ATLANTA, GEORGIA...
+  + p DISEASE CONTROL AND PREVENTION IN
+  + p SEVERAL DAYS LATER AT THE CENTERS FOR
+--- page 36
+  - p THE END?
+  + p THE END？

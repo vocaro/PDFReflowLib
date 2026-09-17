@@ -14,6 +14,8 @@ enum GraphicsReader {
         var paints: [Paint] = []
         var unsupported: Bool
         var hasOnlyInvisibleText = false
+        /// Some text-showing operator ran in invisible rendering mode 3 (an inherited OCR layer).
+        var hasInvisibleText = false
     }
     private final class State {
         var matrix = CGAffineTransform.identity
@@ -269,7 +271,8 @@ enum GraphicsReader {
         let bounds = page.getBoxRect(.cropBox)
         let paints = s.paints.map { Paint(rect: $0.rect.intersection(bounds), frame: $0.frame) }
         return Result(regions: clusters(paints.map(\.rect), distance: 4), paints: paints,
-                      unsupported: s.unsupported, hasOnlyInvisibleText: !s.unsupported && s.invisibleText && !s.visibleText)
+                      unsupported: s.unsupported, hasOnlyInvisibleText: !s.unsupported && s.invisibleText && !s.visibleText,
+                      hasInvisibleText: s.invisibleText)
     }
 
     private static func rectangle(_ dictionary: CGPDFDictionaryRef, key: String) -> CGRect? {

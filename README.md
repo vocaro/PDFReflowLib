@@ -136,7 +136,8 @@ that fall back to images skip unused attributed-text decoding. Failures use
   Existing text over a page-sized graphic retains a source reference image by default and reports
   `unverifiedTextLayer`: transcription, tables, numbers and reading order need human review.
   This conservative signal is not an OCR confidence score; it can also flag illustrated pages
-  with valid text. Smaller graphics and undetected scans can still contain transcription errors.
+  with valid text. Validated structure tags still apply to visible native text over such a
+  background (a chapter opener's photograph); pages with invisible text keep spatial reconstruction. Smaller graphics and undetected scans can still contain transcription errors.
 - Born-digital text whose fonts carry a custom `Differences` encoding of index-style glyph
   names (`G108`, `c63`) with no `ToUnicode` map extracts as the wrong characters even though
   the page renders correctly. When such a font is present and the page's extracted words also

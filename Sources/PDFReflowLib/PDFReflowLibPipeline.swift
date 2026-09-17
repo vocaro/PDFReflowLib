@@ -49,7 +49,7 @@ enum PDFReflowLibPipeline {
             throws -> (content: PageContent, attemptsOCR: Bool, damagedEncoding: Bool) {
             // The pool includes every PDFKit accessor, not only string extraction. Page
             // references and annotation arrays also carry autoreleased rendering resources.
-            var (content, unmappedFont, pageSizedGraphic) = try autoreleasepool {
+            var (content, unmappedFont, pageSizedGraphic, invisibleText) = try autoreleasepool {
                 let page = try document.page(at: i)
                 guard let reference = page.pageRef else {
                     throw ConversionError.unreadablePDF
@@ -103,7 +103,8 @@ enum PDFReflowLibPipeline {
                 // The page-sized-graphic signal keeps reading the painted regions before tint
                 // removal, so a full-page background still earns the review warning and reference.
                 return (content, !content.lines.isEmpty && !requiresPageImage && TextEncodingCheck.hasUnmappedFont(reference),
-                        graphics.regions.contains { $0.width * $0.height > bounds.width * bounds.height * 0.75 })
+                        graphics.regions.contains { $0.width * $0.height > bounds.width * bounds.height * 0.75 },
+                        graphics.hasInvisibleText)
             }
             let bounds = content.bounds
             let raw = content.lines.map(\.text).joined()
@@ -140,7 +141,12 @@ enum PDFReflowLibPipeline {
                 // A scan with an existing OCR layer must still reflow. Keep its visual page as a
                 // reference rather than treating the full-page scan as one figure covering all text.
                 content.preservePageReference = true
-                for index in content.lines.indices { content.lines[index].structure = nil }
+                // Tags describe the text they mark. Invisible text over a scan is inherited
+                // transcription whose tags (if any) cannot be trusted; visible native text drawn
+                // over a background image or tint keeps the roles `MarkedTextReader` validated.
+                if invisibleText {
+                    for index in content.lines.indices { content.lines[index].structure = nil }
+                }
                 content.graphics = []
                 content.tints = []
                 content.separators = []

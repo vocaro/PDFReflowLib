@@ -927,7 +927,7 @@
     {
       "id": "fed-explained-2021",
       "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
-      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Pages 11-12 and 21-22 visually reviewed (#45): the paragraph above Figure 1.3 and the ragged-right advisory-council paragraph each continue onto the next page as one paragraph across the source-page marker. Pages 32, 40, 46, 58, 64, 83 and 120 source rasters reviewed (#54): the shaded sidebar boxes reflow as a heading and paragraphs, the Box 3.3 charts stay one image whose region is rendered from the source (corpus/references/fed-explained-2021/box-3-3-charts), the page-46 sidebar reflows beside a preserved Table 3.1, and the entity/overview and regulation tables are transcribed cell by cell from the source; the regulation table reads its letter and name columns as the one \"Regulation (by letter and name)\" column its own header names, and page 120 continues without a header, so its rows are checked in order rather than as cells. Contents page 5 and chapter opener 8 source rasters and page 25 reviewed (#55): the contents page's dot-leader entries are prose under one Contents heading, the chapter numeral and its two-line title are one heading without a subscript, the four-line pull quote is one paragraph, and the two-line section title is one heading. Pages 9, 21 and 58 visually reviewed against 80-DPI source renders (#50, #64). Page 9 is one bulleted column with a hanging indent: each bullet is one block holding its wrapped lines. Page 21's numbered advisory-council item wraps across the page boundary and stays one block with the page-22 marker inside it. Page 58's panel sets two bullet columns under one spanning label: the left column's five items read before the right column's five, each item whole. The source's own repetition of \"Commercial Paper Funding Facility\" in the left column is reproduced, not corrected; the blue label bands remain paragraphs rather than headings, which is not blessed.",
+      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Pages 11-12 and 21-22 visually reviewed (#45): the paragraph above Figure 1.3 and the ragged-right advisory-council paragraph each continue onto the next page as one paragraph across the source-page marker. Pages 32, 40, 46, 58, 64, 83 and 120 source rasters reviewed (#54): the shaded sidebar boxes reflow as a heading and paragraphs, the Box 3.3 charts stay one image whose region is rendered from the source (corpus/references/fed-explained-2021/box-3-3-charts), the page-46 sidebar reflows beside a preserved Table 3.1, and the entity/overview and regulation tables are transcribed cell by cell from the source; the regulation table reads its letter and name columns as the one \"Regulation (by letter and name)\" column its own header names, and page 120 continues without a header, so its rows are checked in order rather than as cells. Contents page 5 and chapter opener 8 source rasters and page 25 reviewed (#55): the contents page's dot-leader entries are prose under one Contents heading, the chapter numeral and its two-line title are one heading without a subscript, the four-line pull quote is one paragraph, and the two-line section title is one heading. Pages 9, 21 and 58 visually reviewed against 80-DPI source renders (#50, #64). Page 9 is one bulleted column with a hanging indent: each bullet is one block holding its wrapped lines. Page 21's numbered advisory-council item wraps across the page boundary and stays one block with the page-22 marker inside it. Page 58's panel sets two bullet columns under one spanning label: the left column's five items read before the right column's five, each item whole. The source's own repetition of \"Commercial Paper Funding Facility\" in the left column is reproduced, not corrected; the blue label bands remain paragraphs rather than headings, which is not blessed. Pages 4, 14 and 116 source rasters and structure trees reviewed (#72): those pages paint a page-sized background (page 4 a tint rectangle, the chapter openers a photograph) behind visible native text, and the colophon's source tags every edition, ISSN and DOI line as its own P, printed one per line; each chapter opener's H2 title is one heading and its P pull quote one paragraph above the chapter contents entries, which stay paragraphs. The review warning and source reference on these pages remain.",
       "pages": [
         {
           "page": 1,
@@ -1284,6 +1284,58 @@
             "What is monetary policy?"
           ],
           "minimumImages": 1
+        },
+        {
+          "page": 4,
+          "distinctParagraphs": [
+            {
+              "first": "First Edition, May 1939",
+              "second": "Second Edition, November 1947"
+            },
+            {
+              "first": "Tenth Edition, October 2016",
+              "second": "Eleventh Edition, August 2021"
+            },
+            {
+              "first": "ISSN: 0199-9729",
+              "second": "DOI: 10.17016/0199-9729.11"
+            }
+          ],
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ]
+        },
+        {
+          "page": 14,
+          "headings": [
+            "2 The Three Key System Entities"
+          ],
+          "absentHeadings": [
+            "The Board of Governors, the Federal Reserve Banks, and the Federal Open Market Committee work together"
+          ],
+          "paragraphs": [
+            "The Board of Governors, the Federal Reserve Banks, and the Federal Open Market Committee work together to promote the health of the U.S. economy and the stability of the U.S. financial system.",
+            "The Federal Reserve Board: Selection and Function"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 116,
+          "headings": [
+            "7 Promoting Consumer Protection and Community Development"
+          ],
+          "absentHeadings": [
+            "Promoting Consumer Protection and Community",
+            "The Federal Reserve advances supervision,"
+          ],
+          "paragraphs": [
+            "The Federal Reserve advances supervision, community reinvestment, and research to improve understanding of the impacts of financial services policies and practices on consumers and communities.",
+            "Consumer Protection Supervision and Examination"
+          ],
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "unverifiedTextLayer"
+          ]
         }
       ]
     },

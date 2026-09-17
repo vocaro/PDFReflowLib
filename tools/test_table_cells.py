@@ -268,6 +268,78 @@ class TableCellTests(unittest.TestCase):
         self.assertEqual(table_cells.check_page(dict(expectation, headerCells=False), grids(as_data)), [])
         self.assertTrue(table_cells.check_page(dict(expectation, headerCells=False), grids(emitted)))
 
+    def test_row_header_columns_name_each_label_column_of_side_by_side_lists(self):
+        # Table A as emitted after #124: the liabilities labels (column 3) name their rows too.
+        first = re.sub(r'<tr><td>([^<]+)</td>', r'<tr><th scope="row">\1</th>', TABLE_A)
+        emitted = re.sub(r'(<tr>(?:<th scope="row">[^<]*</th>|<td></td>)<td>[^<]*</td>)<td>([^<]+)</td>',
+                         r'\1<th scope="row">\2</th>', first)
+        self.assertEqual(emitted.count('scope="row"'), 9)
+        expectation = dict(table_a_expectation(), rowHeaders=True, rowHeaderColumns=[1, 3])
+        self.assertEqual(table_cells.check_page(expectation, grids(emitted)), [])
+        self.assertEqual(grids(emitted)[0]['kinds'][3], ['td', 'td', 'row', 'td'])
+        failing = {
+            # The #121 output: only the first column names its rows.
+            'first column only': first,
+            'one liabilities label a data cell': emitted.replace('<th scope="row">Capital and other liabilities</th>',
+                                                                '<td>Capital and other liabilities</td>'),
+            'an amount a row header': emitted.replace('<td>642</td>', '<th scope="row">642</th>'),
+            'a label without scope': emitted.replace('<th scope="row">Deposits of depository institutions</th>',
+                                                     '<th>Deposits of depository institutions</th>'),
+        }
+        for name, table in failing.items():
+            self.assertNotEqual(table, emitted, name)
+            errors = table_cells.check_page(expectation, grids(table))
+            self.assertTrue(errors and 'cell kinds' in errors[0], (name, errors))
+        # The first-column expectation rejects the second label column.
+        self.assertTrue(table_cells.check_page(dict(table_a_expectation(), rowHeaders=True), grids(emitted)))
+        for invalid in [[], [0], [5], [1, 1], ['1'], [True], 1]:
+            with self.assertRaises(ValueError, msg=invalid):
+                table_cells.validate(dict(table_a_expectation(), rowHeaders=True, rowHeaderColumns=invalid))
+        for rows in [False, None]:
+            with self.assertRaises(ValueError, msg=rows):
+                table_cells.validate(dict(table_a_expectation(), rowHeaderColumns=[1], **({} if rows is None else {'rowHeaders': rows})))
+
+    def test_group_headers_are_rowgroup_cells_opening_their_tbody(self):
+        # Fed page 83's regulation table (#124): each section row names the rows beneath it.
+        head = f'<table {XHTML}><thead><tr><th>Regulation</th><th>Description</th></tr></thead>'
+        def section(name, rows, cell='<th colspan="2" scope="rowgroup">{}</th>'):
+            return '<tbody><tr>' + cell.format(name) + '</tr>' + ''.join(
+                f'<tr><th scope="row">{a}</th><td>{b}</td></tr>' for a, b in rows) + '</tbody>'
+        credit = [('A Extensions of Credit', 'Governs borrowing')]
+        securities = [('T Credit by Brokers', 'Governs brokers'), ('X Borrowers', 'Applies T and U')]
+        emitted = head + section('Federal Reserve Credit', credit) + section('Securities credit transactions', securities) + '</table>'
+        expectation = {'columns': ['Regulation', 'Description'], 'rowHeaders': True, 'groupHeaders': True,
+                       'rows': [{'label': 'A', 'group': ['Federal Reserve Credit'], 'values': ['A Extensions of Credit', 'Governs borrowing']},
+                                {'label': 'X', 'group': ['Securities credit transactions'], 'values': ['X Borrowers', 'Applies T and U']}]}
+        grid = grids(emitted)[0]
+        self.assertEqual(table_cells.check_page(expectation, [grid]), [])
+        self.assertEqual((grid['headerRows'], grid['thRows'], grid['groupStarts']), (1, 1, {0, 1, 3}))
+        self.assertEqual(grid['kinds'][3], ['rowgroup', 'rowgroup'])
+        as_data = re.sub(r'<th colspan="2" scope="rowgroup">([^<]+)</th>', r'<td colspan="2">\1</td>', emitted)
+        failing = {
+            # The #121 output: spanning data cells in one tbody.
+            'data cells in one tbody': as_data.replace('</tbody><tbody>', ''),
+            'data cells': as_data,
+            'no scope': emitted.replace('<th colspan="2" scope="rowgroup">Securities', '<th colspan="2">Securities'),
+            'row scope': emitted.replace('<th colspan="2" scope="rowgroup">Federal', '<th colspan="2" scope="row">Federal'),
+            'one tbody': emitted.replace('</tbody><tbody>', ''),
+        }
+        for name, table in failing.items():
+            self.assertNotEqual(table, emitted, name)
+            errors = table_cells.check_page(expectation, grids(table))
+            self.assertTrue(errors and 'group row' in errors[0], (name, errors))
+        # A leading rowgroup row is not a header row: without a th header the first row serves.
+        headerless = f'<table {XHTML}>' + section('General banking', credit) + section('Depository accounts', securities) + '</table>'
+        self.assertEqual((grids(headerless)[0]['headerRows'], grids(headerless)[0]['thRows']), (1, 0))
+        # Without the key group rows of any kind pass; false requires data cells.
+        del expectation['groupHeaders']
+        self.assertEqual(table_cells.check_page(expectation, grids(emitted)), [])
+        self.assertEqual(table_cells.check_page(dict(expectation, groupHeaders=False), grids(as_data)), [])
+        self.assertTrue(table_cells.check_page(dict(expectation, groupHeaders=False), grids(emitted)))
+        for invalid in ['yes', 1, None]:
+            with self.assertRaises(ValueError, msg=invalid):
+                table_cells.validate(dict(expectation, groupHeaders=invalid))
+
     def test_usgs_review_transcriptions_validate_as_expectations(self):
         review = json.loads((ROOT / 'corpus/usgs-mcs2025-copper-review.json').read_text())
         for table in review['tableReferences']:

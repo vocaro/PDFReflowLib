@@ -1,0 +1,246 @@
+# borderless-survey.swift over the 13 English corpus sources (whole documents).
+# runs: rows split at a >= 2 em glyph gap sharing a gutter (>= 3); merged: runs with a row PDFKit returned as one line.
+# Records below: every run with a merged row, first four rows, pieces separated by |.
+# Wallace (math exercise grids) and the Blue Book (scanned typescript, #31) are counted only.
+
+## faa-phak-8083-25c: runs 555, with merged rows 9, every row merged 5, three or more pieces 6
+page 131	rows 4	merged 3	columns 2	widestPieceEm 9	y 679
+    CATEGORY | LIMIT LOAD FACTOR
+    Normal1 | 3.8 to –1.52
+    Utility (mild acrobatics, | 4.4 to –1.76
+    Acrobatic | 6.0 to –3.00
+page 207	rows 3	merged 3	columns 3	widestPieceEm 23	y 152
+    Mineral Wells altimeter setting | 29.94
+    ￼ | Abilene altimeter setting | 29.69
+    Difference | 0.25
+page 208	rows 3	merged 3	columns 2	widestPieceEm 12	y 602
+    Mineral Wells altimeter setting | 29.94
+    Abilene altimeter setting | 29.69
+    29.94 – 29.69 = Difference | 0.25
+page 208	rows 3	merged 3	columns 2	widestPieceEm 12	y 447
+    Mineral Wells altimeter setting | 29.94
+    Altimeter setting | 30.56
+    29.94 – 30.56 = Difference | –0.62
+page 410	rows 7	merged 7	columns 3	widestPieceEm 13	y 551
+    Class | Altitudes | (Miles)
+    T | 12,000' and below | 25
+    L | Below 18,000' | 40
+    H | Below 14,500' | 40
+page 416	rows 25	merged 6	columns 4	widestPieceEm 23	y 719
+    difficulttomeasuretothatlevelofaccuracy,andinpractical | of 200 to 415 kHz. The frequencies are readily available on
+    application,itisrarelynecessary.Anumberofflightplanning | aeronautical charts or in the Chart Supplement U.S.
+    this precision and the unit accepts those figures. There is a | All radio beacons, except compass locators, transmit
+    subtlebutimportantdifferenceinCDIoperationanddisplay | a continuous three-letter identification in code, except
+page 458	rows 6	merged 2	columns 5	widestPieceEm 19	y 416
+    M0.80 Cruise Speed Time | 0:00 2:00 4:00 | 6:00 | 8:00 | 8:25
+    Distance (NM) | 0 771 1,6852,599 3,5123,701
+    Fuel (lb) | 03,550 7,570 11,98016,820 18,105
+    M0.74 Cruise Speed Time | 0:00 2:00 4:00 | 6:00 | 8:00 | 9:50
+page 459	rows 10	merged 10	columns 4	widestPieceEm 10	y 384
+    310Speed | 481 | 469 | 434
+    Spc Range | 0.165 0.1780.199
+    330 Speed | 477 | 465 | 430
+    Spc Range | 0.174 0.188 0.208
+page 459	rows 6	merged 3	columns 6	widestPieceEm 18	y 250
+    M0.74 "X" | 434 | 430 | 427 | 424 | 424
+    M0.74 "Y" | 0.199 0.208 0.216 0.222 0.223
+    M0.80 "X" | 469 | 465 | 461 | 459 | 459
+    M0.80 "Y" | 0.178 0.188 0.197 0.204 0.205
+
+## wallace-algebra-2010: runs 687, with merged rows 103, every row merged 0, three or more pieces 82
+## gpo-911-2004: runs 29, with merged rows 14, every row merged 0, three or more pieces 2
+page 9	rows 13	merged 3	columns 2	widestPieceEm 24	y 381
+    p. 15 | FAA AirTraffic Control Centers
+    p. 15 | Reporting structure, Northeast Air Defense Sector
+    p. 32–33 | Flight paths and timelines
+    p. 49 | Usama Bin Ladin
+page 14	rows 51	merged 1	columns 2	widestPieceEm 13	y 562
+    xiv | COMMISSION STAFF
+    Lorry M. Fenner | Daniel J. Leopold
+    Professional Staff Member | Staff Assistant
+    Susan Ginsburg | SarahWebb Linden
+page 50	rows 3	merged 1	columns 2	widestPieceEm 12	y 537
+    American Airlines Flight 11 | United Airlines Flight 175
+    (AA 11) | (UA 175)
+    Boston to LosAngeles | Boston to LosAngeles
+page 50	rows 19	merged 9	columns 4	widestPieceEm 12	y 366
+    7:59 | Takeoff | 8:14 | Takeoff
+    8:14 | Last routine radio | 8:42 | Last radio communication
+    communication;likely takeover | 8:42-8:46 Likely takeover
+    8:19 | Flight attendant notifiesAA of | 8:47 | Transponder code changes
+page 51	rows 3	merged 1	columns 2	widestPieceEm 12	y 537
+    American Airlines Flight 77 | United Airlines Flight 93
+    (AA 77) | (UA 93)
+    Washington,D.C.,to LosAngeles | Newark to San Francisco
+page 51	rows 20	merged 11	columns 4	widestPieceEm 12	y 366
+    8:20 | Takeoff | 8:42 | Takeoff
+    8:51 | Last routine radio | 9:24 | Flight 93 receives warning
+    communication | from UA about possible
+    8:51-8:54 Likely takeover | cockpit intrusion
+page 447	rows 29	merged 27	columns 2	widestPieceEm 19	y 381
+    CAP | combat air patrol
+    CAPPS | ComputerAssisted Passenger Prescreening System
+    CENTCOM | Central Command
+    CIA | Central IntelligenceAgency
+page 448	rows 21	merged 16	columns 2	widestPieceEm 22	y 562
+    430 | APPENDIX
+    NORAD | NorthAmericanAerospace Defense Command
+    NTSB | NationalTransportation Safety Board
+    NSA | National SecurityAgency
+page 449	rows 13	merged 1	columns 2	widestPieceEm 19	y 267
+    JohnAshcroft | Attorney General,2001–
+    Monte Belger | Acting DeputyAdministrator,FederalAviation
+    Samuel“Sandy”Berger | National SecurityAdvisor,1997–2001;Deputy
+    J.Cofer Black | Director,DCI Counterterrorist Center,1999–2002
+page 450	rows 17	merged 1	columns 2	widestPieceEm 21	y 562
+    432 | APPENDIX
+    Roger Cressey | NSC counterterrorism official,1999–2001
+    Ralph Eberhart | Commander in Chief,NORAD and U.S.Space
+    Tommy Franks | Commander,U.S.Central Command (CENT-
+page 451	rows 23	merged 1	columns 2	widestPieceEm 19	y 537
+    Thomas Pickering | Under Secretary of State,1997–2000
+    Colin Powell | Secretary of State,2001–
+    Ronald Reagan | 40th President of the United States,1981–1989
+    Janet Reno | Attorney General,1993–2001
+page 452	rows 7	merged 1	columns 2	widestPieceEm 21	y 562
+    434 | APPENDIX
+    AliAbdulAzizAli | (a.k.a.Ammar al Baluchi) Pakistani;KSM’s nephew;
+    Ahmad Khalil Ibrahim | Iraqi intelligence officer who allegedly met with
+    Samir alAni | Atta in Prague,Czech Republic;currently in
+page 454	rows 3	merged 1	columns 2	widestPieceEm 20	y 562
+    436 | APPENDIX
+    Mohamed al Kahtani | Saudi;candidate 9/11 hijacker;currently in U.S.
+    MirAmal Kansi | Pakistani;extremist who killed two CIA em-
+page 454	rows 4	merged 1	columns 2	widestPieceEm 19	y 481
+    Hamid Karzai | Interim Leader and later President ofAfghanistan,
+    Younis Khalis | Afghani;leader of Hizb-e-Islami;hosted UBL
+    Khallad | seeTawfiq binAttash
+    Wali KhanAmin Shah | (a.k.a.OsamaAsmurai)Turkmen;early associate of
+
+## fed-explained-2021: runs 84, with merged rows 8, every row merged 2, three or more pieces 6
+page 5	rows 30	merged 29	columns 2	widestPieceEm 26	y 616
+    1 Overview of the Federal Reserve System | vi
+    The U S Approach to Central Banking | 2
+    The Decentralized System Structure and Its Philosophy | 3
+    The Reserve Banks: A Blend of Private and Governmental Characteristics | 4
+page 6	rows 5	merged 5	columns 2	widestPieceEm 25	y 690
+    7 Promoting Consumer Protection and Community Development | 112
+    Consumer Protection Supervision and Examination | 114
+    Administering Consumer Laws and Drafting Regulations | 123
+    Research and Analysis of Emerging Consumer Issues | 123
+page 46	rows 4	merged 1	columns 3	widestPieceEm 19	y 368
+    Tool | Defnition | In practice
+    Interest on reserve balances | Interest paid on funds that banks hold | Because banks are unlikely to lend funds in
+    (IORB) | in their reserve balance accounts at | the federal funds market for less than they
+    their Federal Reserve Bank. | get paid in their reserve balance account at
+page 47	rows 3	merged 2	columns 4	widestPieceEm 15	y 236
+    Assets (billions of dollars) | Liabilities (billions of dollars)
+    Treasury securities held outright | 4,197 | Deposits of depository institutions | 2,938
+    Agency debt and mortgage-backed | 1,946 | Federal Reserve notes in circulation | 1,915
+page 47	rows 3	merged 3	columns 4	widestPieceEm 13	y 174
+    U.S. Treasury, General Account | 1,587
+    Other assets | 939 | Capital and other liabilities | 642
+    Total | 7,082 | Total | 7,082
+page 77	rows 3	merged 2	columns 4	widestPieceEm 14	y 515
+    Rating system | CAMELS | RFI/C(D) | LFI
+    Applicability | Depository institutions | Bank holding companies (BHCs) | Large BHCs
+    Savings and loan holding companies (SLHCs)* | Large SLHCs
+page 103	rows 8	merged 1	columns 4	widestPieceEm 13	y 240
+    Security thread. | 3-D security ribbon. | Watermark. | Color-shifting ink.
+    Hold the note to light to see an | Tilt the note back and forth while focusing | Hold the note to light and | Tilt the note to see the numeral
+    embedded thread running verti- | on the blue ribbon.You will see the bells | look for a faint image of | 100 in the lower right corner of
+    cally to the left of the portrait.The | change to 100s as they move.When you | Benjamin Franklin in the | the front of the note shift from
+page 109	rows 4	merged 1	columns 3	widestPieceEm 26	y 637
+    Regulation (by letter and name) | Description
+    J | Collection of Checks and Other Items by Federal | Governs the collection and return of checks through the Reserve Banks and Fedwire
+    Reserve Banks and FundsTransfersThrough Fedwire | funds transfers
+    CC | Availability of Funds and Collection of Checks | Governs the availability of funds deposited in transaction accounts and the collec-
+
+## dga-2025-2030: runs 13, with merged rows 0, every row merged 0, three or more pieces 0
+
+## gpo-our-flag-2003: runs 33, with merged rows 2, every row merged 1, three or more pieces 1
+page 4	rows 6	merged 6	columns 2	widestPieceEm 23	y 536
+    ROBERT W. NEY, Representative from Ohio, | SAXBY CHAMBLISS, Senator from Georgia,
+    Chairman | Vice Chairman
+    JOHN T. DOOLITTLE, Representative from California | THAD COCHRAN, Senator from Mississippi
+    JOHN LINDER, Representative from Georgia | GORDON SMITH, Senator from Oregon
+page 19	rows 3	merged 2	columns 3	widestPieceEm 20	y 267
+    ￼ | ￼
+    A.M. | P.M. | On the same halyard with flags of
+    Memorial Day | states, cities and organizations
+
+## cdc-zombie-pandemic-2011: runs 0, with merged rows 0, every row merged 0, three or more pieces 0
+
+## cia-blue-book-14-1955: runs 1005, with merged rows 938, every row merged 302, three or more pieces 906
+## usgs-mcs2025-copper: runs 3, with merged rows 3, every row merged 1, three or more pieces 3
+page 1	rows 17	merged 13	columns 6	widestPieceEm 27	y 567
+    Salient Statistics—United States: | 2020 2021 2022 2023 2024e
+    Mine, recoverable | 1,200 1,230 1,230 1,130 1,100
+    Primary (from ore) | 872 | 922 | 930 | 843 | 850
+    Secondary (from scrap) | 43 | 49 | 40 | 39 | 40
+page 1	rows 6	merged 5	columns 3	widestPieceEm 19	y 170
+    Tariff: Item | Number | Normal Trade Relations
+    Copper ore and concentrates, copper content | 2603.00.0010 | 1.7¢/kg on lead content.
+    Unrefined copper anodes | 7402.00.0000 | Free.
+    Refined copper and alloys, unwrought | 7403.00.0000 | 1% ad valorem.
+page 2	rows 21	merged 21	columns 6	widestPieceEm 9	y 501
+    Mine production | Refinery production | Reserves6
+    2023 | 2024e | 2023 | 2024e
+    United States | 1,130 | 1,100 | 882 | 890 | 47,000
+    Australia | 778 | 800 | 442 | 460 | 7100,000
+
+## scotus-loper-bright-2024: runs 0, with merged rows 0, every row merged 0, three or more pieces 0
+
+## census-rrs2002-01: runs 13, with merged rows 5, every row merged 2, three or more pieces 1
+page 12	rows 9	merged 9	columns 2	widestPieceEm 6	y 590
+    uqnvzs38 | 31;;94 31<953
+    uqnvzs43 | 3159<7 31:5;:
+    uqnvzs48 | 3137<4 316777
+    dgg38 | 31:<:5 31:833
+page 12	rows 9	merged 4	columns 2	widestPieceEm 18	y 307
+    uqnvzs38 | 79144 7:139 79199 7<1<3 831;8 7<178
+    uqnvzs43 | 4916: 4:1<: 481;: 6<167 731<7 6;1;7
+    uqnvzs48 | 9144 ;169 81<4 531;: 56145 6319:
+    dgg34 | 73184 741:9 741;4 6;148 6<173 6<178
+page 14	rows 13	merged 13	columns 3	widestPieceEm 5	y 625
+    uqnvzs38 | 31;365 | 31;365
+    uqnvzs43 | 3193:5 | 3193:5
+    uqnvzs48 | 317;88 | 317;88
+    dgg34 | 3138<3 | 313753
+page 15	rows 9	merged 6	columns 2	widestPieceEm 18	y 579
+    uqnvzs38 | <;168 <;154 ;;165 <;168 <;154 ;;165
+    uqnvzs43 | ;4156 ;51:5 :31<7 ;4156 ;51:5 :31<7
+    uqnvzs48 | 9<136 :514: 931;4 9<136 :514: 931;4
+    dgg34 | 6193 4<183 471:3 51:8 4;1:8 461;8
+page 15	rows 4	merged 2	columns 2	widestPieceEm 26	y 307
+    uqnvzs38 | 31447 313;4 4173: 6<1353 48;1<83 31456 7;1;:8 6<1<56 731474
+    uqnvzs43 | 314<< 31474 316<: 419;5 61<;3 314:< 41893 415;: 414:7
+    uqnvzs48 | 315:: 314<9 31484 31<4; 31:<< 314:7 31844 31797 31663
+    dgg34 | 41697 31<97 3135: 31676 31573 3134: 31489 316<; 31645
+
+## nbs-jres-geltman-1977: runs 8, with merged rows 1, every row merged 0, three or more pieces 1
+page 6	rows 3	merged 1	columns 3	widestPieceEm 32	y 220
+    01 | 10 | 100
+    in essential agreement with Silin's classical results [7]. They | x
+    important while at strong fields multiphoton processes are | absorption coefficient.
+
+## arxiv-replay-clocks-2023: runs 13, with merged rows 4, every row merged 1, three or more pieces 3
+page 4	rows 11	merged 7	columns 3	widestPieceEm 26	y 527
+    First, 𝑚𝑥.𝑗 needs to be increased if the clock of 𝑗 has advanced | 4: 𝑡𝑠.𝑎←Shift(𝑡𝑠.𝑗,𝑛𝑒𝑤𝑚𝑥)
+    beyond epoch 𝑚𝑥.𝑗. Hence, we frst compute 𝑛𝑒𝑤𝑚𝑥.𝑗 which is | 5: 𝑡𝑠.𝑏 ←Shift(𝑡𝑠.𝑚,𝑛𝑒𝑤𝑚𝑥)
+    equal to𝑚𝑎𝑥(𝑚𝑥.𝑗,epoch.𝑗). When 𝑗 sends a message, it does not | 6: 𝑡𝑠.𝑐 ←MergeSameEpoch(𝑡𝑠.𝑎,𝑡𝑠.𝑏)
+    learn any new information about the clock of process 𝑘. | 7: if EqualOfset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧EqualOfset(𝑡𝑠.𝑚,𝑡𝑠.𝑐)then
+page 4	rows 3	merged 2	columns 2	widestPieceEm 23	y 315
+    4: | 𝑡𝑠.offset.𝑘 ←offset.𝑘+(𝑛𝑒𝑤𝑚𝑥−𝑡𝑠.𝑚𝑥)
+    5: | if 𝑡𝑠.offset.𝑘 > 𝜖 then
+    6: | 𝑡𝑠.offset.𝑘 ←𝜖
+page 4	rows 8	merged 4	columns 3	widestPieceEm 34	y 229
+    1: 𝑛𝑒𝑤𝑚𝑥 ←max(𝑚𝑥.𝑗,epoch.𝑗) | information is overridden by the clock synchronization guarantee
+    2: new_offset ←𝑛𝑒𝑤𝑚𝑥−epoch.𝑗 | that says that the clock of P3 is at least 47. Thus, the ofsets are set
+    3: if (𝑚𝑥.𝑗= 𝑛𝑒𝑤𝑚𝑥∧offset.𝑗.𝑗= new_offset)then | to [3,𝑒,𝜖]Here, the permissible ordering is𝐶𝐴𝐵𝐷.
+    4: | counter.𝑗.𝑗 ←counter.𝑗.𝑗+1 | In this fgure, if 𝜖 were 20 then the timestamp of 𝐷 would be
+page 5	rows 3	merged 3	columns 5	widestPieceEm 26	y 104
+    Defnition 2 Given timestamps 𝑅𝑒𝑝𝐶𝑙.𝑒 and 𝑅𝑒𝑝𝐶𝑙.𝑓, we say | 𝑝𝐼𝑡.𝑒− | 𝑝𝐼𝑡.𝑓 |≤ 𝜖−1 | // since E= 𝜖∗𝐼
+    that 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓 if ¬(𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓)∧¬(𝑅𝑒𝑝𝐶𝑙.𝑓 < | ∴ |⌊𝑚𝑝𝐼𝑡.𝑒 | 𝑝𝐼𝑡.𝑒 ⌋−⌊𝑚𝑝𝐼𝑡.𝑓 | 𝑝𝐼𝑡.𝑓 ⌋|≤ 𝜖 | since |(𝑥−⌊𝑥⌋)−(𝑦−⌊𝑦⌋)|< 1
+    𝑅𝑒𝑝𝐶𝑙.𝑒) | ∴ |𝑚𝑥.𝑒−𝑚𝑥.𝑓|≤𝜖 | by defnition of𝑚𝑥
+

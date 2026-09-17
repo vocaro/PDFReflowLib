@@ -193,9 +193,9 @@ and requires identical output. Missing sources fail with acquisition instruction
 automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic lane (it also
 converts each fixture twice and requires byte-identical EPUBs).
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
-and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold 1528
-checks on 353 pages of 15 documents, including full-resolution stroke checks for equations and a
-table, scale/contrast/color checks for a flag and an FAA figure, and 8 cell checks on tables
+and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold 1529
+checks on 354 pages of 15 documents, including full-resolution stroke checks for equations and a
+table, scale/contrast/color checks for a flag and an FAA figure, and 9 cell checks on tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and
 adding a case.
 

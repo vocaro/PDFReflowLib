@@ -71,26 +71,36 @@ enum EPUBTextEncoder {
     }
 
     /// Header rows form `thead`; a cell spanning several columns carries `colspan`. A body cell
-    /// that names its row is `th scope="row"`. A caption's title and description are paragraphs
-    /// of the table's `caption`.
+    /// that names its row is `th scope="row"`. A section row, one header cell spanning every
+    /// column (#124), names the rows beneath it up to the next section: it opens its own `tbody`
+    /// and is `th scope="rowgroup"`. A caption's title and description are paragraphs of the
+    /// table's `caption`.
     static func table(_ table: ReflowBlock.Table) -> String {
+        func isSection(_ row: ReflowBlock.Table.Row) -> Bool {
+            !row.header && row.cells.count == 1 && row.cells[0].header && row.cells[0].span == table.columns
+        }
         func row(_ row: ReflowBlock.Table.Row) -> String {
             let cells = row.cells.map { cell -> String in
                 let tag = row.header || cell.header ? "th" : "td"
                 var attribute = cell.span > 1 ? " colspan=\"\(cell.span)\"" : ""
-                if cell.header && !row.header { attribute += " scope=\"row\"" }
+                if cell.header && !row.header { attribute += isSection(row) ? " scope=\"rowgroup\"" : " scope=\"row\"" }
                 return "<\(tag)\(attribute)>\(inline(cell.text))</\(tag)>"
             }.joined()
             return "<tr>\(cells)</tr>"
         }
         let headers = table.rows.prefix(while: \.header)
         let body = table.rows.dropFirst(headers.count)
+        var groups: [[ReflowBlock.Table.Row]] = []
+        for item in body {
+            if groups.isEmpty || isSection(item) && !groups[groups.count - 1].isEmpty { groups.append([]) }
+            groups[groups.count - 1].append(item)
+        }
         var markup = "<table>"
         if !table.caption.isEmpty {
             markup += "<caption>" + table.caption.map { "<p>\(inline($0))</p>" }.joined() + "</caption>"
         }
         if !headers.isEmpty { markup += "<thead>\(headers.map(row).joined())</thead>" }
-        if !body.isEmpty { markup += "<tbody>\(body.map(row).joined())</tbody>" }
+        for group in groups { markup += "<tbody>\(group.map(row).joined())</tbody>" }
         return markup + "</table>"
     }
 

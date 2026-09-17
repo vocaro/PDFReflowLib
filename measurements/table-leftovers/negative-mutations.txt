@@ -1,0 +1,4 @@
+section-rows-data-cells: exit 1; failing tests ['fedSectionRowsNameTheirRowGroups']; ✘ Test run with 42 tests in 0 suites failed after 0.091 seconds with 15 issues.
+no-label-column-groups: exit 1; failing tests ['fed47LiabilityLabelsNameTheirRowsToo', 'labelColumnsFollowHeaderCellsThatEachSpanALabelAndItsValues']; ✘ Test run with 42 tests in 0 suites failed after 0.096 seconds with 3 issues.
+one-tbody: exit 1; failing tests ['fedSectionRowsNameTheirRowGroups', 'sectionRowsOpenTheirOwnBodyAndOtherSpanningCellsDoNot']; ✘ Test run with 42 tests in 0 suites failed after 0.091 seconds with 8 issues.
+section-row-scope: exit 1; failing tests ['fedSectionRowsNameTheirRowGroups', 'sectionRowsOpenTheirOwnBodyAndOtherSpanningCellsDoNot']; ✘ Test run with 42 tests in 0 suites failed after 0.096 seconds with 10 issues.

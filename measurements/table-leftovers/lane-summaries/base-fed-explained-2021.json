@@ -1,0 +1,96 @@
+{
+  "passed": false,
+  "converterSHA256": "8b41572c34b05a255fa953f22788abb06ab341f6ac0822ae649d2329d93a1e26",
+  "results": [
+    {
+      "case": "fed-explained-2021",
+      "passed": false,
+      "reviewPages": [
+        1,
+        9,
+        11,
+        13,
+        21,
+        32,
+        40,
+        45,
+        46,
+        50,
+        54,
+        58,
+        64,
+        75,
+        77,
+        83,
+        91,
+        97,
+        103,
+        109,
+        120,
+        123,
+        5,
+        8,
+        25,
+        4,
+        14,
+        116,
+        37,
+        19,
+        36,
+        27,
+        81,
+        85,
+        105,
+        26,
+        47,
+        63,
+        95,
+        82
+      ],
+      "contentChecks": 167,
+      "errors": [
+        "Page 83: table cells: group row 'Holding companies and nonbank financial companies' has cell kinds ['td', 'td'], expected rowgroup headers",
+        "Page 83: table cells: group row 'Monetary policy and reserve requirements' has cell kinds ['td', 'td'] and does not open a tbody, expected rowgroup headers",
+        "Page 83: table cells: group row 'Securities credit transactions' has cell kinds ['td', 'td'] and does not open a tbody, expected rowgroup headers",
+        "Page 120: table cells: group row 'Depository accounts' has cell kinds ['td', 'td'] and does not open a tbody, expected rowgroup headers",
+        "Page 120: table cells: group row 'Credit/general lending' has cell kinds ['td', 'td'] and does not open a tbody, expected rowgroup headers",
+        "Page 47: table cells: row 'Treasury securities held outright' has cell kinds ['row', 'td', 'td', 'td'], expected ['row', 'td', 'row', 'td']",
+        "Page 47: table cells: row 'Agency debt and mortgage-backed securities holdings' has cell kinds ['row', 'td', 'td', 'td'], expected ['row', 'td', 'row', 'td']",
+        "Page 47: table cells: row 'U.S. Treasury, General Account' has cell kinds ['td', 'td', 'td', 'td'], expected ['td', 'td', 'row', 'td']",
+        "Page 47: table cells: row 'Other assets' has cell kinds ['row', 'td', 'td', 'td'], expected ['row', 'td', 'row', 'td']",
+        "Page 47: table cells: row 'Total' has cell kinds ['row', 'td', 'td', 'td'], expected ['row', 'td', 'row', 'td']",
+        "Page 82: table cells: group row 'Banks and banking' has cell kinds ['td', 'td'], expected rowgroup headers",
+        "Page 82: table cells: group row 'Banks and banking' has cell kinds ['td', 'td'], expected rowgroup headers"
+      ],
+      "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+    }
+  ],
+  "notRun": [
+    "faa-phak-8083-25c",
+    "wallace-algebra-2010",
+    "gpo-911-2004",
+    "dga-2025-2030",
+    "gpo-our-flag-2003",
+    "cdc-zombie-pandemic-2011",
+    "cia-blue-book-14-1955",
+    "usgs-mcs2025-copper",
+    "scotus-loper-bright-2024",
+    "census-rrs2002-01",
+    "uscis-m618-arabic-2015",
+    "irs-p596-zhs-2025",
+    "nbs-jres-geltman-1977",
+    "arxiv-replay-clocks-2023"
+  ],
+  "knownUnsupportedFullConversions": [
+    {
+      "id": "gpo-warren-1964",
+      "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+      "issue": 5
+    },
+    {
+      "id": "noaa-nca5-2023",
+      "reason": "Known default image-output ceiling failure. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
+      "issue": 5
+    }
+  ]
+}

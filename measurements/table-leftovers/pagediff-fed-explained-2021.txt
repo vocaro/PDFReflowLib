@@ -1,0 +1,53 @@
+==== page 47
+@@ -13,5 +13,5 @@
+-<tbody><tr><th scope="row">Treasury securities held outright</th><td>4,197</td><td>Deposits of depository institutions</td><td>2,938</td></tr>
+-<tr><th scope="row">Agency debt and mortgage-backed securities holdings</th><td>1,946</td><td>Federal Reserve notes in circulation</td><td>1,915</td></tr>
+-<tr><td></td><td></td><td>U.S. Treasury, General Account</td><td>1,587</td></tr>
+-<tr><th scope="row">Other assets</th><td>939</td><td>Capital and other liabilities</td><td>642</td></tr>
+-<tr><th scope="row">Total</th><td>7,082</td><td>Total</td><td>7,082</td></tr>
++<tbody><tr><th scope="row">Treasury securities held outright</th><td>4,197</td><th scope="row">Deposits of depository institutions</th><td>2,938</td></tr>
++<tr><th scope="row">Agency debt and mortgage-backed securities holdings</th><td>1,946</td><th scope="row">Federal Reserve notes in circulation</th><td>1,915</td></tr>
++<tr><td></td><td></td><th scope="row">U.S. Treasury, General Account</th><td>1,587</td></tr>
++<tr><th scope="row">Other assets</th><td>939</td><th scope="row">Capital and other liabilities</th><td>642</td></tr>
++<tr><th scope="row">Total</th><td>7,082</td><th scope="row">Total</th><td>7,082</td></tr>
+==== page 82
+@@ -7 +7 @@
+-<tbody><tr><td colspan="2"><strong>Banks and banking</strong></td></tr>
++<tbody><tr><th colspan="2" scope="rowgroup"><strong>Banks and banking</strong></th></tr>
+==== page 83
+@@ -6 +6 @@
+-<tbody><tr><td colspan="2"><strong>Holding companies and nonbank financial companies</strong></td></tr>
++<tbody><tr><th colspan="2" scope="rowgroup"><strong>Holding companies and nonbank financial companies</strong></th></tr>
+@@ -17 +17,2 @@
+-<tr><td colspan="2"><strong>Federal Reserve Credit</strong></td></tr>
++</tbody>
++<tbody><tr><th colspan="2" scope="rowgroup"><strong>Federal Reserve Credit</strong></th></tr>
+@@ -19 +20,2 @@
+-<tr><td colspan="2"><strong>Monetary policy and reserve requirements</strong></td></tr>
++</tbody>
++<tbody><tr><th colspan="2" scope="rowgroup"><strong>Monetary policy and reserve requirements</strong></th></tr>
+@@ -21 +23,2 @@
+-<tr><td colspan="2"><strong>Securities credit transactions</strong></td></tr>
++</tbody>
++<tbody><tr><th colspan="2" scope="rowgroup"><strong>Securities credit transactions</strong></th></tr>
+==== page 120
+@@ -5 +5 @@
+-<tbody><tr><td colspan="2"><strong>General banking</strong></td></tr>
++<tbody><tr><th colspan="2" scope="rowgroup"><strong>General banking</strong></th></tr>
+@@ -8 +8,2 @@
+-<tr><td colspan="2"><strong>Depository accounts</strong></td></tr>
++</tbody>
++<tbody><tr><th colspan="2" scope="rowgroup"><strong>Depository accounts</strong></th></tr>
+@@ -12 +13,2 @@
+-<tr><td colspan="2"><strong>Credit/general lending</strong></td></tr>
++</tbody>
++<tbody><tr><th colspan="2" scope="rowgroup"><strong>Credit/general lending</strong></th></tr>
+==== page 121
+@@ -8 +8,2 @@
+-<tr><td colspan="2"><strong>Mortgage lending</strong></td></tr>
++</tbody>
++<tbody><tr><th colspan="2" scope="rowgroup"><strong>Mortgage lending</strong></th></tr>
+@@ -12 +13,2 @@
+-<tr><td colspan="2"><strong>Other financial topics</strong></td></tr>
++</tbody>
++<tbody><tr><th colspan="2" scope="rowgroup"><strong>Other financial topics</strong></th></tr>

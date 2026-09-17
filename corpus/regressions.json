@@ -3288,7 +3288,8 @@
               "caption": [
                 "Figure 5.7. Federal Reserve regulations by topic (continued)"
               ],
-              "rowHeaders": true
+              "rowHeaders": true,
+              "groupHeaders": true
             }
           ],
           "text": [
@@ -3424,9 +3425,30 @@
                     "Federal Trade Commission Act",
                     "Prohibits unfair or deceptive acts or practices in any aspect of banking transactions."
                   ]
+                },
+                {
+                  "label": "Electronic Fund Transfer Act/Regulation E*",
+                  "group": [
+                    "Depository accounts"
+                  ],
+                  "values": [
+                    "Electronic Fund Transfer Act/Regulation E*",
+                    "Requires disclosure of the terms and conditions of electronic fund transfers. Protects consumers against unauthorized transfers and establishes procedures for resolving errors and disputes."
+                  ]
+                },
+                {
+                  "label": "Truth in Lending Act/Regulation Z*",
+                  "group": [
+                    "Credit/general lending"
+                  ],
+                  "values": [
+                    "Truth in Lending Act/Regulation Z*",
+                    "Requires lenders to clearly disclose lending terms and costs to borrowers, and incorporates the provisions of the Credit Card Accountability Responsibility and Disclosure Act, Fair Credit Billing Act, Fair Credit and Charge Card Disclosure Act, Home Equity Loan Consumer Protection Act, and Home Ownership and Equity Protection Act."
+                  ]
                 }
               ],
-              "rowHeaders": true
+              "rowHeaders": true,
+              "groupHeaders": true
             }
           ]
         },
@@ -3688,7 +3710,11 @@
                 "Table A. Simplified view of the Federal Reserve balance sheet, as of June 24, 2020",
                 "The Federal Reserve publishes data weekly regarding its balance sheet."
               ],
-              "rowHeaders": true
+              "rowHeaders": true,
+              "rowHeaderColumns": [
+                1,
+                3
+              ]
             }
           ],
           "maximumImages": 1
@@ -3707,6 +3733,47 @@
           "page": 95,
           "headings": [
             "What is check truncation?"
+          ]
+        },
+        {
+          "page": 82,
+          "tableCells": [
+            {
+              "title": "Figure 5.7 regulations",
+              "caption": [
+                "Figure 5.7. Federal Reserve regulations by topic",
+                "The Federal Reserve maintains and ensures compliance with the following regulations, which implement federal banking laws and govern the operations of regulated institutions."
+              ],
+              "columns": [
+                "Regulation (by letter and name)",
+                "Description"
+              ],
+              "rows": [
+                {
+                  "label": "F",
+                  "group": [
+                    "Banks and banking"
+                  ],
+                  "values": [
+                    "F Limitations on Interbank Liabilities",
+                    "Prescribes standards to limit the risks that the failure of one depository institution would pose to another"
+                  ]
+                },
+                {
+                  "label": "K",
+                  "group": [
+                    "Banks and banking"
+                  ],
+                  "values": [
+                    "K International Banking Operations",
+                    "Governs the international banking operations of U.S. banking organizations and the operations of foreign banks in the United States"
+                  ]
+                }
+              ],
+              "rowHeaders": true,
+              "headerCells": true,
+              "groupHeaders": true
+            }
           ]
         }
       ]

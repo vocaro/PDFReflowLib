@@ -112,7 +112,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 1528 targeted checks on 353 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 1529 targeted checks on 354 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
@@ -120,7 +120,7 @@ the NBS and Replay Clocks academic papers). They comprise 499 ordered-text, 113 
 116 absent-text, 161 heading, 32 absent-heading, 53 list-item, 1 preformatted-lines, 17 script,
 11 footnote, 34 note-link, 38 paragraph-continuation, 1 list-item-continuation, 7 paragraph-separation,
 39 distinct-paragraph, 117 image-presence, 59 warning, 10 absent-warning, 12 source-region,
-3 glyph-structure, 3 image-appearance and 8 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
+3 glyph-structure, 3 image-appearance and 9 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
 anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
 
 The checks preserve selected correct words, paragraph semantics and cross-page continuity, paragraph/list order, license attribution, image
@@ -243,7 +243,11 @@ optional `rowHeaders` (boolean) checks the matched rows' cell kinds: when true e
 cell is `<th scope="row">` if it holds text (an empty one stays `<td>`) and no other cell of the row
 is a header; when false no cell of the row is a header. An optional `headerCells` (boolean) requires
 the header rows to be written as `<th>` (true) or the table to have none (false), since without it a
-first row of `<td>` cells still serves as the header (#121). The Fed's
+first row of `<td>` cells still serves as the header (#121). With `rowHeaders` true, an optional
+`rowHeaderColumns` lists the 1-based columns whose cells name their rows instead of the first grid
+cell, for side-by-side label/value lists. An optional `groupHeaders` (boolean) checks the group rows
+named by `group`: when true the group row nearest before each matched row must be
+`<th scope="rowgroup">` cells opening their own `<tbody>`, when false data cells (#124). The Fed's
 entity/overview table (page 64) and regulation table (page 83) are the first corpus tables emitted
 as `<table>` (#54, shaded rows and rules; other tables remain images under #36/#31) and carry
 reviewed transcriptions; `tools/test_table_cells.py` keeps the checker's negative controls, and the
@@ -258,10 +262,13 @@ Table 3.1 (page 46) and of Box 3.5's Table A (page 47, whose amounts are cells u
 spanning a label and an amount column; #65, #114). Pages 46, 47, 64, 83, 97, 109 and 120 check
 each table's caption. Pages 46, 47, 64, 83, 109 and 120 require row-header first cells, and page 97
 a `<th>` header row over data cells; FAA page 131 transcribes the borderless load-factor table with
-a `<th>` header and no row headers (#121). See the
+a `<th>` header and no row headers (#121). Page 47 also requires the liabilities labels (column 3)
+as row headers, and pages 82, 83 and 120 require their section rows as rowgroup headers, each
+opening its own body (#124). See the
 [ruled-table and header-rule evidence](../measurements/ruled-tables-and-header-rules/record.md), the
 [table caption and tag evidence](../measurements/table-captions-and-tags/record.md) and the
-[table header and borderless-table evidence](../measurements/table-headers-and-borderless/record.md).
+[table header and borderless-table evidence](../measurements/table-headers-and-borderless/record.md) and the
+[table leftovers evidence](../measurements/table-leftovers/record.md).
 
 ## Adding or changing a regression
 
@@ -409,6 +416,16 @@ paragraphs. Synthetic lines control the borderless reader (title-case heading, o
 missing value, a label crossing the gap, prose, another size or a tag under the heading, distant
 headings or rows), and a synthetic PDF set like page 131 reproduces PDFKit's merged rows and the
 split, with a title-case heading, a drawn rule and a row too tight for a common gutter as controls.
+
+`TableLeftoversTests.swift` (#124) reads the section rows of `fed-83` and `fed-120` as header cells
+spanning the table, each written `<th scope="rowgroup">` at the start of its own `<tbody>`, with the
+other rows' cell kinds unchanged; synthetic tables check the serialization, with a spanning data
+cell, a row header spanning part of the table and a spanning header row as controls. `fed-47`'s
+liabilities labels (column 3) are row headers beside the asset labels, the Treasury row's empty
+asset label a data cell; synthetic rows check that each list under a spanning header cell is judged
+alone (repeated labels or a label without its own value cost only that list its headers), with a
+header cell over one column, a single spanning header cell and spans short of the body's columns as
+controls that keep the first-column rule.
 
 ## Source-derived fidelity controls
 

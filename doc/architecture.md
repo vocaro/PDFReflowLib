@@ -60,6 +60,8 @@ boundaries) that the EPUB writer serializes as `<table>` (#54). A table's own ti
 are caption paragraphs of that block, serialized as `<p>` elements of the table's `<caption>`, not
 headings or prose before it (#113). A body cell that names its row is a row-header cell, serialized
 as `<th scope="row">`; a borderless table with capital column headings is a table block too (#121).
+A section row, one header cell spanning every column, names the rows beneath it: it opens its own
+`<tbody>` and is serialized as `<th scope="rowgroup">` (#124).
 Output independence does not
 imply richer PDF understanding.
 
@@ -507,7 +509,7 @@ table (#54): band edges and rules crossing half the block give the rows (rows re
 bands only where rules subdivide the rest of the box, so a title and introduction above the
 first band stay outside), the lines' shared left edges give the columns, a single first-column
 line that crosses the columns or sits on a full-width band of its own is a section row spanning
-them, and a first row on its own band with text in two columns is the header, whose cells span
+them (a header cell naming the rows beneath it: the Fed tags all ten such rows `TH`, #124), and a first row on its own band with text in two columns is the header, whose cells span
 empty columns beside them. The header's band may be split into one band per column (Fed page
 97, #121): at least two side-by-side bands through the row, together spanning 90% of the table,
 each holding some of the row's lines and no other row's, with every line of the row on one.
@@ -515,7 +517,11 @@ When at least two body rows have a first cell with a letter in it, a value besid
 label no other row repeats, those first cells are row headers; an empty first cell stays a data
 cell, and one labelled row, a repeated label or a label without a value leaves every cell a
 data cell (the Fed tags exactly these cells `TH /Scope /Row`; PDFKit reports every Fed table
-font as the same face, so a bold label column is not visible). One pair of columns reads as one when PDFKit merged a narrow cell
+font as the same face, so a bold label column is not visible). When the header row is two or more
+cells that each span at least two columns and together span the body's columns (Table A on Fed page
+47: `Assets` over asset names and amounts beside `Liabilities` over liability names and amounts),
+each spanned group is judged alone by the same rule, its first column the labels, so both label
+columns name their rows (#124; the Fed tags both `TH /Scope /Row`). One pair of columns reads as one when PDFKit merged a narrow cell
 into its neighbour, as the Fed's "Regulation (by letter and name)" header names it. Cell lines
 join like paragraph lines. Text outside the rows, a body line crossing a column, a section row
 in another size, fewer than two columns or two body rows (a header on column bands counts as one,

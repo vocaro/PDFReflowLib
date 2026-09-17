@@ -15,8 +15,8 @@ enum ShadedTableDetector {
         struct Cell: Equatable {
             var lines: [TextLine]
             var span: Int
-            /// A body row's first cell that names the row (#121); header-row cells are headers
-            /// through their row.
+            /// A body cell that names its row (#121), or a section row's spanning cell that names
+            /// the rows beneath it (#124); header-row cells are headers through their row.
             var header = false
         }
         struct Row: Equatable {
@@ -73,18 +73,39 @@ enum ShadedTableDetector {
     /// first cell is a list of payment kinds under its column header, is tagged `TD`.
     /// PDFKit reports every Fed table font as the same face, so typography (a bold label column)
     /// cannot confirm it.
+    ///
+    /// A table set as side-by-side label/value lists under one header cell each (#124, Fed page
+    /// 47's Table A: `Assets` over asset names and amounts, `Liabilities` over liability names and
+    /// amounts) is read list by list: when the header row is two or more cells that each span at
+    /// least two columns and together span them all, each spanned group of columns is its own
+    /// table for this rule, its first column the labels and its other columns the values. The Fed
+    /// tags both label columns `TH /Scope /Row`.
     static func rowHeaders(_ rows: [Table.Row]) -> [Table.Row] {
+        var groups: [Range<Int>] = []
+        if let header = rows.first(where: \.header), header.cells.count >= 2, header.cells.allSatisfy({ $0.span >= 2 }) {
+            var start = 0
+            for cell in header.cells { groups.append(start..<(start + cell.span)); start += cell.span }
+            let width = rows.filter { !$0.header && $0.cells.count > 1 }.map { $0.cells.count }
+            if !width.allSatisfy({ $0 == start }) { groups = [] }
+        }
+        guard !groups.isEmpty else { return rowHeaders(rows, columns: nil) }
+        return groups.reduce(rows) { rowHeaders($0, columns: $1) }
+    }
+
+    /// The row-header rule over one group of columns (all of them when `columns` is nil).
+    private static func rowHeaders(_ rows: [Table.Row], columns: Range<Int>?) -> [Table.Row] {
         let body = rows.indices.filter { !rows[$0].header && rows[$0].cells.count > 1 }
-        let labelled = body.filter { !rows[$0].cells[0].lines.isEmpty }
+        func cells(_ index: Int) -> ArraySlice<Table.Cell> { columns.map { rows[index].cells[$0] } ?? rows[index].cells[...] }
+        let labelled = body.filter { !cells($0).first!.lines.isEmpty }
         func label(_ index: Int) -> String {
-            rows[index].cells[0].lines.map(\.text).joined(separator: " ").split(whereSeparator: \.isWhitespace).joined(separator: " ")
+            cells(index).first!.lines.map(\.text).joined(separator: " ").split(whereSeparator: \.isWhitespace).joined(separator: " ")
         }
         guard labelled.count >= 2,
-              labelled.allSatisfy({ index in rows[index].cells.dropFirst().contains { !$0.lines.isEmpty } }),
+              labelled.allSatisfy({ index in cells(index).dropFirst().contains { !$0.lines.isEmpty } }),
               labelled.allSatisfy({ label($0).contains(where: \.isLetter) }),
               Set(labelled.map(label)).count == labelled.count else { return rows }
         var result = rows
-        for index in labelled { result[index].cells[0].header = true }
+        for index in labelled { result[index].cells[cells(index).startIndex].header = true }
         return result
     }
 
@@ -238,7 +259,8 @@ enum ShadedTableDetector {
             for index in start...last {
                 let assigned = assignments[index]
                 if kinds[index] == .section {
-                    result.append(.init(cells: [.init(lines: assigned.map(\.0), span: columns.count)], header: false))
+                    // The section names the rows beneath it (#124): the Fed tags every one `TH`.
+                    result.append(.init(cells: [.init(lines: assigned.map(\.0), span: columns.count, header: true)], header: false))
                     continue
                 }
                 let header = index == first && headerRow

@@ -82,10 +82,13 @@ func fedFirstColumnLabelsAreRowHeaders(_ number: Int) throws {
     #expect(body.count >= 2, "fed-\(number)")
     for row in body {
         #expect(row.cells[0].header == !row.cells[0].text.text.isEmpty, "fed-\(number) \(texts(row))")
-        #expect(row.cells.dropFirst().allSatisfy { !$0.header }, "fed-\(number) \(texts(row))")
+        // Table A's liabilities labels (column 3) name their rows too (#124,
+        // `TableLeftoversTests.fed47LiabilityLabelsNameTheirRowsToo`).
+        #expect(row.cells.indices.dropFirst().allSatisfy { !row.cells[$0].header || number == 47 && $0 == 2 }, "fed-\(number) \(texts(row))")
     }
-    // Header rows and section rows (one spanning cell) carry no row-header cells.
-    #expect(table.rows.filter { $0.header || $0.cells.count == 1 }.allSatisfy { $0.cells.allSatisfy { !$0.header } }, "fed-\(number)")
+    // Header rows carry no row-header cells; a section row's spanning cell names its row group
+    // instead (#124, `TableLeftoversTests.fedSectionRowsNameTheirRowGroups`).
+    #expect(table.rows.filter(\.header).allSatisfy { $0.cells.allSatisfy { !$0.header } }, "fed-\(number)")
     if number == 47 {
         // Table A's liabilities-only row: an empty asset label stays a data cell.
         let treasury = try #require(body.first { $0.cells[2].text.text == "U.S. Treasury, General Account" })

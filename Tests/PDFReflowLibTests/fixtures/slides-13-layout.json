@@ -1,0 +1,835 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        85.8031527457008,
+        348.07267863832578,
+        575.39999786279941,
+        26.263999902447949
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 27.999999895999967,
+          "text" : "Interactive Mode: Analytics-Optimized Storage"
+        }
+      ],
+      "text" : "Interactive Mode: Analytics-Optimized Storage"
+    },
+    {
+      "rect" : [
+        156.06754024416114,
+        186.64812061774003,
+        97.173999639067915,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Preprocessing"
+        }
+      ],
+      "text" : "Preprocessing"
+    },
+    {
+      "rect" : [
+        166.57193033030163,
+        170.14812008974005,
+        76.229999716859908,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "as-a-service"
+        }
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "rect" : [
+        309.29860739755514,
+        186.64812061774003,
+        45.615002367146701,
+        14.984667138242685
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "AODS"
+        },
+        {
+          "baselineOffset" : 5.2500001680000139,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.3333337653333199,
+          "text" : "1"
+        }
+      ],
+      "text" : "AODS1"
+    },
+    {
+      "rect" : [
+        294.00599815819163,
+        170.14812008974005,
+        76.229999716859936,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "as-a-service"
+        }
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "rect" : [
+        432.35793858545361,
+        186.64812061774003,
+        57.539999786279907,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Analysis"
+        }
+      ],
+      "text" : "Analysis"
+    },
+    {
+      "rect" : [
+        423.03550728713577,
+        170.14812008974005,
+        76.229999716859936,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "as-a-service"
+        }
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "rect" : [
+        550.4463228642818,
+        186.85812041446005,
+        79.365005592180182,
+        12.194000859208018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.000000916000017,
+          "text" : "Visualization"
+        }
+      ],
+      "text" : "Visualization"
+    },
+    {
+      "rect" : [
+        552.06506141608145,
+        170.14812008974005,
+        76.229999716859879,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "as-a-service"
+        }
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "rect" : [
+        62.119132987812186,
+        163.80305388669797,
+        59.83599977775193,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Cumulus"
+        }
+      ],
+      "text" : "Cumulus"
+    },
+    {
+      "rect" : [
+        62.119132987812186,
+        163.80305388669797,
+        59.83599977775193,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Cumulus"
+        }
+      ],
+      "text" : "Cumulus"
+    },
+    {
+      "rect" : [
+        76.883351460267164,
+        147.3030518586979,
+        30.337999887315959,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Data"
+        }
+      ],
+      "text" : "Data"
+    },
+    {
+      "rect" : [
+        66.382377624236014,
+        130.80305133069791,
+        51.323999809367947,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Archive"
+        }
+      ],
+      "text" : "Archive"
+    },
+    {
+      "rect" : [
+        523.32481674639359,
+        14.724752511192492,
+        172.60136502324349,
+        12.844000702208003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 4.5000001439999977,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.0000006560000116,
+          "text" : "1 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12.000000384,
+          "text" : "Analytics Optimized Data Store"
+        }
+      ],
+      "text" : "1 Analytics Optimized Data Store"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    720,
+    405
+  ],
+  "caseID" : "ntrs-20180003024-earthdata-slides-2018",
+  "graphics" : [
+    [
+      0,
+      0,
+      720,
+      405
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 27.999999895999967,
+      "monospaced" : false,
+      "rect" : [
+        85.8031527457008,
+        348.07267863832578,
+        575.39999786279941,
+        26.263999902447949
+      ],
+      "text" : "Interactive Mode: Analytics-Optimized Storage"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        156.06754024416114,
+        186.64812061774003,
+        97.173999639067915,
+        13.131999951223975
+      ],
+      "text" : "Preprocessing"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        166.57193033030163,
+        170.14812008974005,
+        76.229999716859908,
+        13.131999951223975
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        309.29860739755514,
+        186.64812061774003,
+        45.615002367146701,
+        14.984667138242685
+      ],
+      "text" : "AODS1"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        294.00599815819163,
+        170.14812008974005,
+        76.229999716859936,
+        13.131999951223975
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        432.35793858545361,
+        186.64812061774003,
+        57.539999786279907,
+        13.131999951223975
+      ],
+      "text" : "Analysis"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        423.03550728713577,
+        170.14812008974005,
+        76.229999716859936,
+        13.131999951223975
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "fontSize" : 13.000000916000017,
+      "monospaced" : false,
+      "rect" : [
+        550.4463228642818,
+        186.85812041446005,
+        79.365005592180182,
+        12.194000859208018
+      ],
+      "text" : "Visualization"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        552.06506141608145,
+        170.14812008974005,
+        76.229999716859879,
+        13.131999951223975
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        62.119132987812186,
+        163.80305388669797,
+        59.83599977775193,
+        13.131999951223975
+      ],
+      "text" : "Cumulus"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        76.883351460267164,
+        147.3030518586979,
+        30.337999887315959,
+        13.131999951223975
+      ],
+      "text" : "Data"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        66.382377624236014,
+        130.80305133069791,
+        51.323999809367947,
+        13.131999951223975
+      ],
+      "text" : "Archive"
+    },
+    {
+      "fontSize" : 8.0000006560000116,
+      "monospaced" : false,
+      "rect" : [
+        523.32481674639359,
+        14.724752511192492,
+        172.60136502324349,
+        12.844000702208003
+      ],
+      "text" : "1 Analytics Optimized Data Store"
+    }
+  ],
+  "page" : 13,
+  "paints" : [
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        0,
+        0,
+        720,
+        405
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        10.037401959999999,
+        340.48720666100803,
+        63.271655440000004,
+        53.07676633423597
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        12.037401959999999,
+        342.48720666100803,
+        59.271655440000004,
+        49.07676633423597
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        18.563591209216,
+        33.271110215920032,
+        672.4663520995839,
+        286.66840865168797
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        43.606182561759994,
+        51.650343087520014,
+        611.76988165336002,
+        234.70353100455998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        18.563591209216,
+        33.271110215920032,
+        672.4663520995839,
+        286.66840865168797
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        43.606182561759994,
+        51.650343087520014,
+        611.76988165336002,
+        234.70353100455998
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        260.23819736799999,
+        196.82873356000002,
+        24.952756576000013,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        260.23819736799999,
+        196.82873356000002,
+        20.452756432000001,
+        4
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        276.69095379999999,
+        195.58993430776002,
+        7.4035827860799941,
+        6.4775985044799995
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        113.899610008,
+        196.82873356000002,
+        35.204725408000002,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        113.899610008,
+        196.82873356000002,
+        30.70472526399999,
+        4
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        140.60433527199999,
+        195.58993430776002,
+        7.4035749120640162,
+        6.4775985044799995
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        379.02068148399997,
+        196.82873356000002,
+        35.204725408000002,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        379.02068148399997,
+        196.82873356000002,
+        30.70472526399999,
+        4
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        405.72540674799995,
+        195.58993430776002,
+        7.4035827860800509,
+        6.4775985044799995
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        508.04430765999996,
+        196.82873356000002,
+        35.204725407999945,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        508.04430765999996,
+        196.82873356000002,
+        30.70472526399999,
+        4
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        534.74903292399995,
+        195.58993430776002,
+        7.4035434160000477,
+        6.4775985044799995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        145.104335416,
+        160.14369301600001,
+        119.13386195199999,
+        77.370081088000006
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        45.696851919999993,
+        154.27164558400003,
+        92.700790239999975,
+        34.661418303999994
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        55.440946719999992,
+        166.69684283200002,
+        70.279529679999996,
+        70.279529679999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        57.440946719999992,
+        168.69684283200002,
+        66.279529679999996,
+        66.279529679999996
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        193.63586452806399,
+        206.09451338406402,
+        18.881858743935993,
+        18.881858743935993
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        195.63586452806399,
+        208.09451338406402,
+        14.881858743935993,
+        14.881858743935993
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        281.19587520399995,
+        160.14369301600001,
+        101.81890076799999,
+        77.370081088000006
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        410.22540689199997,
+        160.14369301600001,
+        101.81890076799999,
+        77.370081088000006
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        451.69493577807998,
+        206.80316301304001,
+        18.881850869919958,
+        17.464547674960016
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        453.69493577807998,
+        208.80316301304001,
+        14.881850869919958,
+        13.464545706455993
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        539.25493857999993,
+        160.14369301600001,
+        101.81890076800005,
+        77.370081088000006
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        320.51280559599996,
+        203.94192276400003,
+        23.187008488000004,
+        23.187008488000004
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        322.51280559599996,
+        205.94192276400003,
+        19.187008488000004,
+        19.187008488000004
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        580.724428096,
+        207.09965908552002,
+        18.881890239999962,
+        16.870807498479991
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        582.724428096,
+        209.09965908552002,
+        14.881859531337568,
+        12.870797065408794
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        77.053152135999994,
+        340.48818697600001,
+        639.24411481599998,
+        49.094489631999977
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        45.696851919999993,
+        128.28739278400002,
+        92.700790239999975,
+        60.645671104000002
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        514.57481967999991,
+        7.875971608000043,
+        193.75591158400005,
+        27.527559807999978
+      ]
+    }
+  ],
+  "rightsBasis" : "Slide 1 marks both presenters with *U.S. Civil Servant, and the NTRS record places Chris Lynnes at NASA Goddard Space Flight Center and Rahul Ramachandran at NASA Marshall Space Flight Center (17 U.S.C. 105). The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and thirdPartyContentCondition NOT_SET; distribution PUBLIC, no export control. Every slide was checked: no AWS, Google, partner or vendor logo and no screenshot of a commercial product appears. Every slide shows the NASA insignia, whose use is restricted by 14 CFR 1221. Slide 2 carries uncredited satellite renders and a ground-station photo, slides 3-4 uncredited EOSDIS metrics chart rasters, and slides 12-21 uncredited pictogram icons. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94",
+  "sourceTitle" : "Earthdata Cloud Analytics Project",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20180003024/downloads/20180003024.pdf"
+}

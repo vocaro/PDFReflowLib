@@ -46,9 +46,12 @@ enum NativeTextReader {
     /// a borderless table whose cells PDFKit merges into one line; see `splitBorderlessTables`.
     /// `glyphDecodings` are the characters the document established for index-glyph fonts
     /// (`GlyphIndexDecoder`); lines drawn in them are repaired, and `report` counts the outcome.
+    /// `removingOverprints` drops a line that only overprints another (`withoutOverprints`, #165);
+    /// only `tools/capture-layout-fixture.swift` turns it off, to record PDFKit's lines as they come.
     static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true,
                       columnJoints: [ColumnJoint] = [], borderlessTableInk: [CGRect]? = nil,
-                      glyphDecodings: [String: [UInt8: String]] = [:], report: IndexGlyphReport? = nil) throws -> [TextLine] {
+                      glyphDecodings: [String: [UInt8: String]] = [:], report: IndexGlyphReport? = nil,
+                      removingOverprints: Bool = true) throws -> [TextLine] {
         try withExtractionLock {
             // The page's text shows and their fonts' weights, for bold PDFKit cannot name (#125).
             let weights = includeStyle && page.numberOfCharacters <= limit
@@ -62,6 +65,13 @@ enum NativeTextReader {
                 ? page.pageRef.map { NativeSpacingReader.read($0, decodings: glyphDecodings) } ?? [] : []
             var lines = try extractLines(on: page, limit: limit, includeStyle: includeStyle, weights: weights,
                                          spacing: spacing, report: report, privateUse: privateUse)
+            // Overprints go before any split. Dropping them changes what the page holds, while
+            // every split below only divides a line the page already has, and each of those asks
+            // which line a show or a rectangle belongs to: `splitDetachedShows` takes a cut only
+            // where each show origin falls inside exactly one line rectangle, which two identical
+            // rectangles can never satisfy, so an overprinted line left standing would refuse its
+            // own split and any other line its rectangle covers (#165, #14).
+            if removingOverprints { lines = withoutOverprints(lines) }
             lines = try splitDetachedShows(lines, shows: spacing, on: page, includeStyle: includeStyle,
                                            weights: weights, privateUse: privateUse)
             if !columnJoints.isEmpty {
@@ -74,6 +84,34 @@ enum NativeTextReader {
             }
             return lines
         }
+    }
+
+    /// Drops a line that only overprints another: the same text, in the same size, drawn on the
+    /// same rectangle to within a twentieth of a point (#165).
+    ///
+    /// A source can stack two text boxes with the same words in the same place. The Earthdata
+    /// deck, exported from Google Slides, keeps each build step's boxes on the finished slide, so
+    /// slides 13–21 draw `Cumulus` once alone and once above `Data` / `Archive`, and slides 19 and
+    /// 20 draw `End-User` / `Interpretation` twice over. Nothing distinguishes the two drawings on
+    /// the rendered page — the second lands glyph for glyph on the first — but PDFKit returns a
+    /// line for each, and reflow read them as separate paragraphs (`Cumulus`, then `Cumulus Data
+    /// Archive`). The second draws no ink the first has not drawn, so it carries no text of its
+    /// own. Fake bold set by drawing a line twice offsets the copy by a fraction of an em, well
+    /// past this tolerance, and keeps both lines; a word genuinely repeated on a page stands
+    /// somewhere else, so its rectangle differs.
+    static func withoutOverprints(_ lines: [TextLine]) -> [TextLine] {
+        guard lines.count > 1 else { return lines }
+        var kept: [TextLine] = []
+        kept.reserveCapacity(lines.count)
+        for line in lines {
+            let overprints = kept.contains { other in
+                other.text == line.text && other.fontSize == line.fontSize
+                    && abs(other.rect.minX - line.rect.minX) <= 0.05 && abs(other.rect.minY - line.rect.minY) <= 0.05
+                    && abs(other.rect.width - line.rect.width) <= 0.05 && abs(other.rect.height - line.rect.height) <= 0.05
+            }
+            if !overprints { kept.append(line) }
+        }
+        return kept
     }
 
     /// The joints a line crosses inside a ruled grid: its middle lies within the joint's rows

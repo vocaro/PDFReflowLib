@@ -7470,12 +7470,18 @@
     {
       "id": "ntrs-20180003024-earthdata-slides-2018",
       "sourceSHA256": "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94",
-      "basis": "All 21 slides visually reviewed against 100 DPI Poppler renders and the extracted text layer. Protects only output that matches the source: the title slide's title as a heading with the byline, NASA and civil-servant lines in order; the slide titles that are headings (Goals, Key Features, Guiding Principles, Abstract Analytics Workflow and slides 12-21); every numbered item on slides 7-9 whole in its own list item and in order; line order on the title-less text slides 2-4, 6 and 10; the diagram box labels in left-to-right pipeline order on slides 11-18 and 21; the AODS superscript note marker; and a preserved image for the photo, chart and text-less slides 2-5. Slide 5's question is drawn without a text layer, so only its image carries it. Not pinned because wrong now: a source-page image and unverifiedTextLayer on every slide because the full-bleed slide background counts as a page-sized graphic; slide titles 2-4, 6 and 10 as paragraphs and titles 3-4 split in two; mixed h2/h3/h4 title levels; the repeated slide footnote removed as furniture on slides 12-14, 16 and 17; the Cumulus label duplicated on slides 13-21; box labels as h5/h6 and duplicated on slides 19-20; the slide-2 diagram labels interleaved; Analyze and Visualize merged on slide 11 (see the review file). No committed rasters: every slide shows the NASA insignia (14 CFR 1221); see the manifest's rights note.",
+      "basis": "All 21 slides visually reviewed against 100 DPI Poppler renders and the extracted text layer. Protects only output that matches the source: every slide's title as one heading at one level (h2 on slides 1-4 and 6-21; slide 5 has no text layer at all), including the two-line titles of slides 2-4, 16-21 as single headings; the title slide's byline, NASA and civil-servant lines in order; every numbered item on slides 7-9 whole in its own list item and in order; line order on slides 2-4, 6 and 10; the diagram box labels in left-to-right pipeline order on slides 11-18 and 21, as paragraphs and not headings on slides 19-20; the repeated slide footnote `1 Analytics Optimized Data Store` kept on every slide that prints the AODS marker (12-14, 16-21) and absent from slide 15, which has no marker; the AODS superscript note marker; the `Cumulus`, `End-User` and `Interpretation` box labels emitted once although the deck draws each of them twice in the same place; and a preserved image for the photo, chart and text-less slides 2-5. Slide 5's question is drawn without a text layer, so only its image carries it. Not pinned because wrong now: a source-page image and unverifiedTextLayer on every slide because the full-bleed slide background counts as a page-sized graphic (#164); the lettered sub-items a. and b. on slide 7 unnested under item 3; the footnote read in the middle of slides 19-20 rather than at their end; the italic sentence on slide 10 split at its line break; the slide-2 diagram labels interleaved; Analyze and Visualize merged on slide 11 (see the review file). No committed rasters: every slide shows the NASA insignia (14 CFR 1221); see the manifest's rights note.",
       "pages": [
         {
           "page": 1,
           "headings": [
             "Earthdata Cloud Analytics Project"
+          ],
+          "headingLevels": [
+            {
+              "heading": "Earthdata Cloud Analytics Project",
+              "level": 2
+            }
           ],
           "orderedText": [
             "Earthdata Cloud Analytics Project",
@@ -7486,6 +7492,15 @@
         },
         {
           "page": 2,
+          "headings": [
+            "Earth Observing System Data and Information System (EOSDIS)"
+          ],
+          "headingLevels": [
+            {
+              "heading": "Earth Observing System Data and Information System (EOSDIS)",
+              "level": 2
+            }
+          ],
           "text": [
             "Earth Observing System Data and Information System (EOSDIS)",
             "capture and clean"
@@ -7494,6 +7509,15 @@
         },
         {
           "page": 3,
+          "headings": [
+            "Over time, EOSDIS archive volumes increase exponentially"
+          ],
+          "headingLevels": [
+            {
+              "heading": "Over time, EOSDIS archive volumes increase exponentially",
+              "level": 2
+            }
+          ],
           "orderedText": [
             "Over time, EOSDIS archive volumes",
             "increase exponentially",
@@ -7503,6 +7527,15 @@
         },
         {
           "page": 4,
+          "headings": [
+            "Distribution increases similarly to cumulative volume"
+          ],
+          "headingLevels": [
+            {
+              "heading": "Distribution increases similarly to cumulative volume",
+              "level": 2
+            }
+          ],
           "orderedText": [
             "Distribution increases similarly to",
             "cumulative volume"
@@ -7515,6 +7548,15 @@
         },
         {
           "page": 6,
+          "headings": [
+            "Solution: Data-proximal Analysis"
+          ],
+          "headingLevels": [
+            {
+              "heading": "Solution: Data-proximal Analysis",
+              "level": 2
+            }
+          ],
           "orderedText": [
             "Solution: Data-proximal Analysis",
             "Data Archive",
@@ -7532,12 +7574,11 @@
           "headings": [
             "Goals"
           ],
-          "listItems": [
-            "1. Enable big compute next to big data",
-            "2. Encourage user adoption of cloud for analytics",
-            "3. Maximum analytics capability at minimum cost",
-            "a. Use capabilities within NASA more effectively and efficiently",
-            "b. Leverage analytics capabilities of external partners"
+          "headingLevels": [
+            {
+              "heading": "Goals",
+              "level": 2
+            }
           ],
           "orderedText": [
             "Goals",
@@ -7546,6 +7587,13 @@
             "3. Maximum analytics capability at minimum cost",
             "a. Use capabilities within NASA",
             "b. Leverage analytics capabilities"
+          ],
+          "listItems": [
+            "1. Enable big compute next to big data",
+            "2. Encourage user adoption of cloud for analytics",
+            "3. Maximum analytics capability at minimum cost",
+            "a. Use capabilities within NASA more effectively and efficiently",
+            "b. Leverage analytics capabilities of external partners"
           ]
         },
         {
@@ -7553,13 +7601,11 @@
           "headings": [
             "Key Features"
           ],
-          "listItems": [
-            "1. Satisfy a diverse user community",
-            "2. Support analysis in the cloud without egressing data",
-            "3. Facilitate multi-dataset comparison and fusion",
-            "4. Support batch, interactive and streaming modes",
-            "5. Support distributed filesystems and databases",
-            "6. Support cost constraints and cost-sharing"
+          "headingLevels": [
+            {
+              "heading": "Key Features",
+              "level": 2
+            }
           ],
           "orderedText": [
             "1. Satisfy",
@@ -7568,6 +7614,14 @@
             "4. Support batch",
             "5. Support distributed",
             "6. Support cost"
+          ],
+          "listItems": [
+            "1. Satisfy a diverse user community",
+            "2. Support analysis in the cloud without egressing data",
+            "3. Facilitate multi-dataset comparison and fusion",
+            "4. Support batch, interactive and streaming modes",
+            "5. Support distributed filesystems and databases",
+            "6. Support cost constraints and cost-sharing"
           ]
         },
         {
@@ -7575,12 +7629,11 @@
           "headings": [
             "Earthdata Cloud Analytics Guiding Principles"
           ],
-          "listItems": [
-            "1. Infusion- and innovation-friendly framework and building blocks",
-            "2. No monolithic systems",
-            "3. Open code and services",
-            "4. Interoperability and reuse",
-            "5. No unnecessary duplication (“undifferentiated heavy lifting”)"
+          "headingLevels": [
+            {
+              "heading": "Earthdata Cloud Analytics Guiding Principles",
+              "level": 2
+            }
           ],
           "orderedText": [
             "1. Infusion-",
@@ -7588,10 +7641,26 @@
             "3. Open code",
             "4. Interoperability",
             "5. No unnecessary"
+          ],
+          "listItems": [
+            "1. Infusion- and innovation-friendly framework and building blocks",
+            "2. No monolithic systems",
+            "3. Open code and services",
+            "4. Interoperability and reuse",
+            "5. No unnecessary duplication (“undifferentiated heavy lifting”)"
           ]
         },
         {
           "page": 10,
+          "headings": [
+            "Architectural Concept"
+          ],
+          "headingLevels": [
+            {
+              "heading": "Architectural Concept",
+              "level": 2
+            }
+          ],
           "orderedText": [
             "Architectural Concept",
             "Earth Science Data Analytics the Cloud-Native Way:",
@@ -7604,6 +7673,12 @@
           "page": 11,
           "headings": [
             "Abstract Analytics Workflow"
+          ],
+          "headingLevels": [
+            {
+              "heading": "Abstract Analytics Workflow",
+              "level": 2
+            }
           ],
           "orderedText": [
             "Abstract Analytics Workflow",
@@ -7618,6 +7693,12 @@
           "headings": [
             "Earthdata Cloud Analytics Reference Architecture"
           ],
+          "headingLevels": [
+            {
+              "heading": "Earthdata Cloud Analytics Reference Architecture",
+              "level": 2
+            }
+          ],
           "orderedText": [
             "Extract",
             "Transform",
@@ -7626,7 +7707,8 @@
             "Preprocessing as-a-service",
             "AODS1 as-a-service",
             "Analysis as-a-service",
-            "Visualization as-a-service"
+            "Visualization as-a-service",
+            "1 Analytics Optimized Data Store"
           ],
           "scripts": [
             {
@@ -7642,12 +7724,22 @@
           "headings": [
             "Interactive Mode: Analytics-Optimized Storage"
           ],
+          "headingLevels": [
+            {
+              "heading": "Interactive Mode: Analytics-Optimized Storage",
+              "level": 2
+            }
+          ],
+          "absentText": [
+            "Cumulus Cumulus"
+          ],
           "orderedText": [
             "Cumulus Data Archive",
             "Preprocessing as-a-service",
             "AODS1 as-a-service",
             "Analysis as-a-service",
-            "Visualization as-a-service"
+            "Visualization as-a-service",
+            "1 Analytics Optimized Data Store"
           ]
         },
         {
@@ -7655,12 +7747,22 @@
           "headings": [
             "Batch Mode"
           ],
+          "headingLevels": [
+            {
+              "heading": "Batch Mode",
+              "level": 2
+            }
+          ],
+          "absentText": [
+            "Cumulus Cumulus"
+          ],
           "orderedText": [
             "Cumulus Data Archive",
             "Preprocessing as-a-service",
             "AODS1 as-a-service",
             "Analysis as-a-service",
-            "Visualization as-a-service"
+            "Visualization as-a-service",
+            "1 Analytics Optimized Data Store"
           ]
         },
         {
@@ -7668,14 +7770,21 @@
           "headings": [
             "Streaming Mode"
           ],
+          "headingLevels": [
+            {
+              "heading": "Streaming Mode",
+              "level": 2
+            }
+          ],
+          "absentText": [
+            "AODS",
+            "Cumulus Cumulus"
+          ],
           "orderedText": [
             "Cumulus Data Archive",
             "Preprocessing as-a-service",
             "Event Analytics as-a-service",
             "Visualization as-a-service"
-          ],
-          "absentText": [
-            "AODS"
           ]
         },
         {
@@ -7683,13 +7792,23 @@
           "headings": [
             "Open Pipeline Provides Outputs at Different Stages Appropriate for a Diverse User Base"
           ],
+          "headingLevels": [
+            {
+              "heading": "Open Pipeline Provides Outputs at Different Stages Appropriate for a Diverse User Base",
+              "level": 2
+            }
+          ],
+          "absentText": [
+            "Cumulus Cumulus"
+          ],
           "orderedText": [
             "Cumulus Data Archive",
             "Preprocessing as-a-service",
             "End-User-Specific",
             "AODS1 as-a-service",
             "Analysis as-a-service",
-            "Visualization as-a-service"
+            "Visualization as-a-service",
+            "1 Analytics Optimized Data Store"
           ]
         },
         {
@@ -7697,19 +7816,38 @@
           "headings": [
             "Open Pipeline Provides Outputs at Different Stages Appropriate for a Diverse User Base"
           ],
+          "headingLevels": [
+            {
+              "heading": "Open Pipeline Provides Outputs at Different Stages Appropriate for a Diverse User Base",
+              "level": 2
+            }
+          ],
+          "absentText": [
+            "Cumulus Cumulus"
+          ],
           "orderedText": [
             "Preprocessing as-a-service",
             "End-User-Specific",
             "AODS1 as-a-service",
             "End-User Cloud-Native Analysis",
             "Analysis as-a-service",
-            "Visualization as-a-service"
+            "Visualization as-a-service",
+            "1 Analytics Optimized Data Store"
           ]
         },
         {
           "page": 18,
           "headings": [
             "Open Pipeline Provides Outputs at Different Stages Appropriate for a Diverse User Base"
+          ],
+          "headingLevels": [
+            {
+              "heading": "Open Pipeline Provides Outputs at Different Stages Appropriate for a Diverse User Base",
+              "level": 2
+            }
+          ],
+          "absentText": [
+            "Cumulus Cumulus"
           ],
           "orderedText": [
             "AODS1 as-a-service",
@@ -7725,11 +7863,30 @@
           "headings": [
             "Open Pipeline Provides Outputs at Different Stages Appropriate for a Diverse User Base"
           ],
+          "headingLevels": [
+            {
+              "heading": "Open Pipeline Provides Outputs at Different Stages Appropriate for a Diverse User Base",
+              "level": 2
+            }
+          ],
+          "absentHeadings": [
+            "Cumulus Cumulus Data Archive",
+            "Preprocessing as-a-service",
+            "AODS1 as-a-service",
+            "Analysis as-a-service",
+            "Visualization as-a-service"
+          ],
           "text": [
             "End-User Cloud-Native Analysis",
             "End-User Interpretation",
             "Data Exploration",
-            "Analytics Optimized Data Store"
+            "Analytics Optimized Data Store",
+            "1 Analytics Optimized Data Store"
+          ],
+          "absentText": [
+            "Cumulus Cumulus",
+            "End-User End-User",
+            "Interpretation Interpretation"
           ]
         },
         {
@@ -7737,17 +7894,47 @@
           "headings": [
             "Open Pipeline Enables Integration with Other Data, Scripts, and Workflows"
           ],
+          "headingLevels": [
+            {
+              "heading": "Open Pipeline Enables Integration with Other Data, Scripts, and Workflows",
+              "level": 2
+            }
+          ],
+          "absentHeadings": [
+            "Cumulus Cumulus Data Archive",
+            "Preprocessing as-a-service",
+            "AODS1 as-a-service",
+            "Analysis as-a-service",
+            "Visualization as-a-service"
+          ],
           "text": [
             "End-User Cloud-Native Analysis",
             "End-User Interpretation",
             "Data Exploration",
-            "Analytics Optimized Data Store"
+            "Analytics Optimized Data Store",
+            "1 Analytics Optimized Data Store"
+          ],
+          "absentText": [
+            "Cumulus Cumulus",
+            "End-User End-User",
+            "Interpretation Interpretation",
+            "Data Data Exploration",
+            "Exploration Exploration"
           ]
         },
         {
           "page": 21,
           "headings": [
             "Open Pipeline Enables Integration with Exploitation Platforms"
+          ],
+          "headingLevels": [
+            {
+              "heading": "Open Pipeline Enables Integration with Exploitation Platforms",
+              "level": 2
+            }
+          ],
+          "absentText": [
+            "Cumulus Cumulus"
           ],
           "orderedText": [
             "Exploitation Platforms",

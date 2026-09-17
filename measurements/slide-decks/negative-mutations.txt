@@ -1,0 +1,17 @@
+measurements/slide-decks/tools/mutate.py on this tree, swift test --filter
+'SlideDeckTests|FurnitureTests|HeadingTests|NavigationHeadingTests|NumberLedParagraphTests'.
+Every mutation is caught. The band and clearance lines were each restored to the source and
+re-run on their own after `aSlideTitleNeedsBothItsBandAndItsClearance` was added: without that
+test the deck's own slides left both uncovered, because slide 1's centred title misses the head
+band by 50 pt and clears its byline by 24.3 pt against a 24.4 pt bar, so either guard alone still
+refused it.
+
+no slide titles: aLandscapeBooksPagesAreNoSlides, aSlideTitleIsAHeadingWhateverTheSlidesBodySizeSays, aSlidesDiagramLabelsAreItsBodyNotItsHeadings, aTitleSetSmallerThanTheSlidesBodyIsStillItsTitle, everySlideTitleOfADeckRanksAlike
+a title anywhere on the page: aSlideTitleNeedsBothItsBandAndItsClearance
+no clearance under the title: aSlideTitleNeedsBothItsBandAndItsClearance
+a slide of any length: aLandscapeBooksPagesAreNoSlides
+the slide body can be a heading: aSlidesDiagramLabelsAreItsBodyNotItsHeadings
+a deck ranks by size: everySlideTitleOfADeckRanksAlike
+a repeated note is furniture: aNoteExplainingAMarkerOnItsSlideIsNoFurniture
+overprinted lines are kept: aLineThatOnlyOverprintsAnotherIsReadOnce
+any repeat of a word is an overprint: aLineThatOnlyOverprintsAnotherIsReadOnce

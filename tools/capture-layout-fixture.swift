@@ -13,12 +13,17 @@ private typealias CaptureFont = UIFont
 // Run from the repository root. Captures extraction evidence, never reconstructed output.
 @main struct CaptureLayoutFixture {
     static func main() throws {
-        guard CommandLine.arguments.count == 4, let pageNumber = Int(CommandLine.arguments[2]), pageNumber > 0 else {
-            fatalError("usage: capture-layout-fixture <corpus-case-id> <physical-page> <output.json>")
+        // `--keep-overprints` writes PDFKit's lines as they come, before extraction drops a line
+        // that only overprints another (#165), so a fixture can carry the duplicates a source
+        // draws twice in one place.
+        let keepOverprints = CommandLine.arguments.contains("--keep-overprints")
+        let arguments = CommandLine.arguments.filter { $0 != "--keep-overprints" }
+        guard arguments.count == 4, let pageNumber = Int(arguments[2]), pageNumber > 0 else {
+            fatalError("usage: capture-layout-fixture <corpus-case-id> <physical-page> <output.json> [--keep-overprints]")
         }
         let manifest = try JSONSerialization.jsonObject(with: Data(contentsOf: URL(fileURLWithPath: "corpus/manifest.json"))) as! [String: Any]
         let cases = manifest["documents"] as! [[String: Any]]
-        guard let item = cases.first(where: { $0["id"] as? String == CommandLine.arguments[1] }),
+        guard let item = cases.first(where: { $0["id"] as? String == arguments[1] }),
               let file = item["filename"] as? String, let expected = item["sha256"] as? String else {
             fatalError("Unknown corpus case")
         }
@@ -36,7 +41,7 @@ private typealias CaptureFont = UIFont
         // (#65) or a borderless table's column gap (#121) are split.
         var lines = try NativeTextReader.lines(on: page, limit: 100_000,
             columnJoints: GraphicsReader.columnJoints(graphics.paints.map(\.rect)),
-            borderlessTableInk: graphics.paints.map(\.rect))
+            borderlessTableInk: graphics.paints.map(\.rect), removingOverprints: !keepOverprints)
         // The tags the pipeline applies where the page's structure validates: every group that
         // matches its lines, even when another does not (`structure` per line; absent in fixtures
         // captured before #89/#90).
@@ -107,6 +112,6 @@ private typealias CaptureFont = UIFont
             fatalError("Non-finite geometry cannot be captured: \(problem)")
         }
         try JSONSerialization.data(withJSONObject: payload, options: [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes])
-            .write(to: URL(fileURLWithPath: CommandLine.arguments[3]))
+            .write(to: URL(fileURLWithPath: arguments[3]))
     }
 }

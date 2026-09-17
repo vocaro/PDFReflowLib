@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 2734 targeted checks on 508 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 2791 targeted checks on 508 reviewed pages
 across 21 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No. 14*, *Mineral Commodity
@@ -125,12 +125,12 @@ Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Ci
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
 Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
 System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 1075 ordered-text, 191 text, 347 paragraph, 194 absent-text, 222 heading,
-34 absent-heading, 80 list-item, 1 preformatted-lines, 28 script, 6 absent-script, 11 footnote,
-34 note-link, 56 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation,
-80 distinct-paragraph, 179 image-presence, 42 page-reference, 88 warning, 25 absent-warning,
-17 source-region, 3 glyph-structure, 3 image-appearance and 9 table-cell checks, counted as
-`tools/check_corpus_content.py` counts them.
+They comprise 1080 ordered-text, 193 text, 347 paragraph, 209 absent-text, 227 heading,
+20 heading-level, 44 absent-heading, 80 list-item, 1 preformatted-lines, 28 script, 6 absent-script,
+11 footnote, 34 note-link, 56 paragraph-continuation, 1 list-item-continuation,
+8 paragraph-separation, 80 distinct-paragraph, 179 image-presence, 42 page-reference, 88 warning,
+25 absent-warning, 17 source-region, 3 glyph-structure, 3 image-appearance and 9 table-cell checks,
+counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
 All source-page anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
@@ -560,7 +560,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->787 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->237 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->796 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->239 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -635,6 +635,11 @@ Corpus contracts support `absentText` for reviewed unwanted text and `headings` 
 must remain semantic headings on the correct source page. Reader tests reject headers reintroduced
 into prose, headings flattened to paragraphs, headings moved to another page and empty expectations;
 heading parsing retains inline styles and page boundaries, including across spine files.
+A `headingLevels` expectation (`{"heading", "level"}`) additionally pins the rank a heading is
+written at: every heading on the page holding the phrase must be that `<h1>`–`<h6>`, and at least
+one must exist, so a heading flattened to a paragraph and a heading ranked one tier off both fail.
+Python negative controls cover a re-ranked heading, a flattened one, the same text on another page,
+two headings holding the phrase at different levels, and malformed entries.
 The 9/11 contract protects chapter titles, source body text and removal of four running-header
 examples; FAA page-16/91 folios supply cross-document controls.
 
@@ -1416,6 +1421,34 @@ The CDC contract requires `implausibleTextLayer` and the reviewed recognized dia
 `ocrUsed` on the plausible page-39 checklist. It fails on the pre-#93 conversion on all seven
 pages. The [plausibility evidence](../measurements/text-layer-plausibility/record.md) records the
 survey of all 1,353 image-backed pages in the English corpus and the review of every failing page.
+
+## Slide decks
+
+`SlideDeckTests.swift` covers [#165](https://github.com/vocaro/PDFReflowLib/issues/165) on nine
+pinned source-layout fixtures: seven Earthdata slides (slide 19 twice), and NOAA page 100, the
+corpus's one landscape book. Slide 3's two-line title is one heading although the page's character-weighted body size is
+the title's own 32-point type, and outside a deck the same page has no heading and two paragraphs;
+slide 10's 26-point title over a 28-point statement is its title although it is *smaller* than the
+body; slide 19's boxes are paragraphs, with the reproducer (the overprinted fixture read as a book)
+giving six headings including `Cumulus Cumulus Data Archive`, and either rule alone leaving one.
+Slide 1, the title slide, centres its title instead of setting it in the head band and so keeps the
+ordinary size rule, in a deck and out of one. Three slide titles of 52, 32 and 28 points rank 2, 2,
+2 as a deck and 2, 3, 4 by size tiers. NOAA page 100 is no slide portrait or turned on its side
+(2,781 characters), while six slides are. The repeated `¹ Analytics Optimized Data Store` survives
+`FurnitureDetector.strip` over slides 12–14 with no warning, and is removed from all three again
+once the `AODS¹` marker on each slide is written as ordinary text. `slides-19-overprints`, captured
+with `capture-layout-fixture --keep-overprints`, holds PDFKit's 26 lines: `withoutOverprints` keeps
+23, one `Cumulus` and one `Interpretation` of two each and two of the three `End-User` lines (the
+third stands on its own rectangle), and matches the deduplicated fixture line for line; controls
+keep both lines for a copy offset 0.3 pt (fake bold), one offset 60 pt, different text on one
+rectangle and a one-point size change. Synthetic landscape pages hold the head band and the
+clearance under the title apart, which the deck's own slides cannot: slide 1 misses the band by
+50 pt *and* clears its byline by 24.3 pt against a 24.4 pt bar, so either guard alone refuses it.
+
+The corpus contract adds the 20 slide titles as `headingLevels` at level 2, the note kept on
+slides 12–14 and 16–21, `absentText` for `Cumulus Cumulus` on 13–21 and for the doubled end-user
+labels on 19–20, and `absentHeadings` for the five box labels on 19–20. The baseline fails 54 of
+them. See the [slide-deck evidence](../measurements/slide-decks/record.md).
 
 ## Symbol-font characters and shifted script bases
 

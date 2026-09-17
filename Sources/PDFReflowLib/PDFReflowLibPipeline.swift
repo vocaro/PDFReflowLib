@@ -307,6 +307,12 @@ enum PDFReflowLibPipeline {
         var listMarkers: [Int: [LayoutReconstructor.PageMarker]] = [:]
         /// Pages headed `NOTES TO CHAPTER N`, by chapter number.
         var numberedNotePages: [Int: ClosedRange<Int>] = [:]
+        /// Slide-deck evidence (#165): the pages carrying text, those of them that read as a slide
+        /// (`LayoutReconstructor.isSlide`), and whether every page so far shares one landscape size.
+        var textPages = 0
+        var slidePages = 0
+        var uniformLandscape = true
+        var deckBounds: CGRect?
         var recognizedPages = 0
         var characters = 0
         for i in 0..<total {
@@ -374,6 +380,15 @@ enum PDFReflowLibPipeline {
                 for style in LayoutReconstructor.labelEvidence(on: content) { labelEvidence[style, default: 0] += 1 }
                 for style in LayoutReconstructor.headingEvidence(on: content) { headingEvidence[style, default: 0] += 1 }
             }
+            // Slide-deck evidence, read from the page as extracted: before furniture removal (a
+            // slide's folio is in neither band a title stands in) and before reconstruction.
+            if let bounds = deckBounds, bounds != content.bounds { uniformLandscape = false }
+            deckBounds = content.bounds
+            if content.bounds.width <= content.bounds.height { uniformLandscape = false }
+            if !content.lines.isEmpty {
+                textPages += 1
+                if LayoutReconstructor.isSlide(content) { slidePages += 1 }
+            }
             let markers = LayoutReconstructor.listMarkers(on: content)
             if !markers.isEmpty { listMarkers[content.number] = markers }
             if let chapters = NumberedNoteDetector.chapters(on: content) { numberedNotePages[content.number] = chapters }
@@ -390,6 +405,11 @@ enum PDFReflowLibPipeline {
         let labelStyles = LayoutReconstructor.labelStyles(from: labelEvidence)
         let equalsMarksHyphens = equalsHyphens.marksHyphens
         let headingStyles = LayoutReconstructor.labelStyles(from: headingEvidence)
+        // A deck: at least three pages, every one the same landscape size, and two thirds of the
+        // pages carrying text read as slides. A landscape book (NOAA's, 1,834 letter pages on
+        // their side) sets thousands of characters to a slide's few hundred and heads its pages
+        // with a running head, so almost none of its pages is a slide (#165).
+        let slideDeck = total >= 3 && uniformLandscape && textPages > 0 && slidePages * 3 >= textPages * 2
         // Furniture warnings keep their place between extraction and reconstruction warnings.
         let furnitureWarningIndex = warnings.count
         var furnitureWarnings: [ConversionWarning] = []
@@ -463,7 +483,8 @@ enum PDFReflowLibPipeline {
                         continuingNote: continuingNote,
                         continuesNote: previousPage != nil && blocks.last?.isFootnote == true,
                         labelStyles: labelStyles, headingStyles: headingStyles,
-                        neighbouringMarkers: (listMarkers[content.number - 1] ?? []) + (listMarkers[content.number + 1] ?? []))
+                        neighbouringMarkers: (listMarkers[content.number - 1] ?? []) + (listMarkers[content.number + 1] ?? []),
+                        slideDeck: slideDeck)
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }
@@ -504,7 +525,7 @@ enum PDFReflowLibPipeline {
         document.releaseCachedPages()
         store.finish()
         // Typographic heading levels need every page's sizes; tagged levels are already final.
-        LayoutReconstructor.rankHeadingLevels(&blocks)
+        LayoutReconstructor.rankHeadingLevels(&blocks, slideDeck: slideDeck)
         warnings.insert(contentsOf: furnitureWarnings.sorted { $0.page < $1.page }, at: furnitureWarningIndex)
         // A body page's chapter is the last matched chapter opening at or before it; an
         // outline entry that failed to match leaves its pages unknown, and a page headed

@@ -29,6 +29,7 @@ CHECK_TYPES = (
     ('paragraph', ('paragraphs',), False),
     ('absent-text', ('absentText',), False),
     ('heading', ('headings',), False),
+    ('heading-level', ('headingLevels',), False),
     ('absent-heading', ('absentHeadings',), False),
     ('list-item', ('listItems',), False),
     ('preformatted-lines', ('preformattedLines',), False),
@@ -185,6 +186,8 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                 if element.tag in HEADINGS:
                     heading_id += 1
                     heading = heading_id
+                    if current is not None:
+                        pages[current].setdefault('headingRanks', {})[heading] = int(element.tag[-1])
                 if element.tag == HTML + 'p':
                     paragraph_id += 1
                     paragraph = paragraph_id
@@ -220,6 +223,10 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
         for anchor in page['anchors'].values():
             anchor['text'] = normalized(anchor['text'])
         page['text'] = normalized(raw)
+        # Each heading's text with the level it is written at, so a contract can pin `<h2>` against
+        # `<h3>` (a deck whose slide titles ranked h2, h3 and h4 by type size, #165).
+        page['headingLevels'] = [(page.get('headingRanks', {}).get(key, 0), normalized(text))
+                                 for key, text in page['headings'].items()]
         page['headings'] = [normalized(text) for text in page['headings'].values()]
         # Paragraph IDs are document-wide, so one <p> crossing a page marker has the same ID on both pages.
         page['paragraphIDs'] = {paragraph: normalized(text) for paragraph, text in page['paragraphs'].items()}
@@ -361,6 +368,23 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
             checks += 1
             if not any(normalized(phrase) in heading for heading in page.get('headings', [])):
                 errors.append(f'Page {number}: missing heading {phrase!r}')
+        # The level a heading is written at (#165): every heading of the page holding the phrase
+        # must be that level, and at least one must exist, so a heading flattened to a paragraph
+        # and a heading ranked one tier off both fail.
+        for entry in item.get('headingLevels', []):
+            if not isinstance(entry, dict) or set(entry) != {'heading', 'level'} \
+                    or not isinstance(entry['heading'], str) or not normalized(entry['heading']) \
+                    or not isinstance(entry['level'], int) or isinstance(entry['level'], bool) \
+                    or not 1 <= entry['level'] <= 6:
+                raise ValueError('Heading level needs a phrase and a level in 1...6')
+            checks += 1
+            phrase = normalized(entry['heading'])
+            matching = [level for level, text in page.get('headingLevels', []) if phrase in text]
+            if not matching:
+                errors.append(f'Page {number}: missing heading {entry["heading"]!r}')
+            elif any(level != entry['level'] for level in matching):
+                errors.append(f'Page {number}: heading {entry["heading"]!r} at level '
+                              f'{sorted(set(matching))} not {entry["level"]}')
         # A line the page still carries, but which must not be in the navigation: a margin
         # folio is text, not a heading (#62).
         for phrase in item.get('absentHeadings', []):

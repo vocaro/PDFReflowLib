@@ -110,6 +110,43 @@ class CorpusContentTests(unittest.TestCase):
                     self.check()
                 self.contract['pages'][0].pop(key)
 
+    def test_heading_level_contract_rejects_flattened_and_re_ranked_headings(self):
+        self.contract['pages'][0]['headingLevels'] = [{'heading': 'alpha beta', 'level': 2}]
+        self.pages[1]['headings'] = ['alpha beta']
+        self.pages[1]['headingLevels'] = [(2, 'alpha beta')]
+        self.assertTrue(self.check()['passed'])
+        # The same heading one tier deeper fails, naming the level it was written at.
+        self.pages[1]['headingLevels'] = [(3, 'alpha beta')]
+        result = self.check()
+        self.assertFalse(result['passed'])
+        self.assertIn("Page 1: heading 'alpha beta' at level [3] not 2", result['errors'])
+        # A heading flattened to a paragraph fails as a missing heading.
+        self.pages[1]['headingLevels'] = []
+        result = self.check()
+        self.assertFalse(result['passed'])
+        self.assertIn("Page 1: missing heading 'alpha beta'", result['errors'])
+        # The same text as a heading on another page cannot satisfy this page.
+        self.pages[2]['headingLevels'] = [(2, 'alpha beta')]
+        self.assertFalse(self.check()['passed'])
+        # Two headings holding the phrase must agree on the level.
+        self.pages[1]['headingLevels'] = [(2, 'alpha beta'), (4, 'alpha beta gamma')]
+        self.assertFalse(self.check()['passed'])
+        for invalid in ([], {'heading': 'alpha beta'}, {'level': 2}, 'alpha beta',
+                        {'heading': '', 'level': 2}, {'heading': 'alpha beta', 'level': 0},
+                        {'heading': 'alpha beta', 'level': 7}, {'heading': 'alpha beta', 'level': True},
+                        {'heading': 'alpha beta', 'level': '2'},
+                        {'heading': 'alpha beta', 'level': 2, 'page': 1}):
+            self.contract['pages'][0]['headingLevels'] = [invalid]
+            with self.assertRaises(ValueError):
+                self.check()
+
+    def test_heading_parser_records_each_heading_level(self):
+        path = self.epub('<span epub:type="pagebreak" id="page-1"/><h2>alpha</h2><h5>beta</h5>',
+                         '<span epub:type="pagebreak" id="page-2"/><h3>gamma</h3><p>prose</p>')
+        pages, _ = read_pages(path)
+        self.assertEqual(pages[1]['headingLevels'], [(2, 'alpha'), (5, 'beta')])
+        self.assertEqual(pages[2]['headingLevels'], [(3, 'gamma')])
+
     def test_heading_parser_preserves_styling_and_page_ownership(self):
         path = self.epub('<span epub:type="pagebreak" id="page-1"/><h2>al<strong>pha</strong> beta</h2>'
                          '<p>ordinary prose</p><h3>first<span epub:type="pagebreak" id="page-2"/>second</h3>',

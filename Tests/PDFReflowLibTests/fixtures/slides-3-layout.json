@@ -1,0 +1,250 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        128.04536659745159,
+        367.83558985073893,
+        517.08803270581643,
+        30.016001898512002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 32.000002024000032,
+          "text" : "Over time, EOSDIS archive volumes"
+        }
+      ],
+      "text" : "Over time, EOSDIS archive volumes"
+    },
+    {
+      "rect" : [
+        228.44271356016662,
+        329.58559087673899,
+        316.51202001938424,
+        30.016001898512002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 32.000002024000032,
+          "text" : "increase exponentially"
+        }
+      ],
+      "text" : "increase exponentially"
+    },
+    {
+      "rect" : [
+        476.70474025455121,
+        261.28195779602282,
+        65.792004161344039,
+        15.008000949256029
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 16.000001012000016,
+          "text" : "projected"
+        }
+      ],
+      "text" : "projected"
+    },
+    {
+      "rect" : [
+        693.26433793445813,
+        0.40710205302763836,
+        7.6200002438399679,
+        11.640000372479999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12.000000384,
+          "text" : "3"
+        }
+      ],
+      "text" : "3"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    720,
+    405
+  ],
+  "caseID" : "ntrs-20180003024-earthdata-slides-2018",
+  "graphics" : [
+    [
+      0,
+      0,
+      720,
+      405
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 32.000002024000032,
+      "monospaced" : false,
+      "rect" : [
+        128.04536659745159,
+        367.83558985073893,
+        517.08803270581643,
+        30.016001898512002
+      ],
+      "text" : "Over time, EOSDIS archive volumes"
+    },
+    {
+      "fontSize" : 32.000002024000032,
+      "monospaced" : false,
+      "rect" : [
+        228.44271356016662,
+        329.58559087673899,
+        316.51202001938424,
+        30.016001898512002
+      ],
+      "text" : "increase exponentially"
+    },
+    {
+      "fontSize" : 16.000001012000016,
+      "monospaced" : false,
+      "rect" : [
+        476.70474025455121,
+        261.28195779602282,
+        65.792004161344039,
+        15.008000949256029
+      ],
+      "text" : "projected"
+    },
+    {
+      "fontSize" : 12.000000384,
+      "monospaced" : false,
+      "rect" : [
+        693.26433793445813,
+        0.40710205302763836,
+        7.6200002438399679,
+        11.640000372479999
+      ],
+      "text" : "3"
+    }
+  ],
+  "page" : 3,
+  "paints" : [
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        0,
+        0,
+        720,
+        405
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        10.037401959999999,
+        356.89710482392002,
+        48.453741579999999,
+        40.807619288079991
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        12.037401959999999,
+        358.89710482392002,
+        44.453741579999999,
+        36.807619288079991
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        671.13781681599994,
+        1.3735107700000526,
+        48.86218318400006,
+        32.275591455999972
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        10.037401959999999,
+        356.89710482392002,
+        48.453741579999999,
+        40.807619288079991
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        12.037401959999999,
+        358.89710482392002,
+        44.453741579999999,
+        36.807619288079991
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.590553823999997,
+        331.26968274400002,
+        612.2677359999999,
+        71.511813184000005
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.12401168598399,
+        3.9349872299200115,
+        464.34943205401601,
+        326.81304182608
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        119.12401168598399,
+        5.9349872299200115,
+        460.34938480991991,
+        322.81304182607994
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        467.95473944799994,
+        264.95668849599997,
+        93.952758784000025,
+        23.79527622400002
+      ]
+    }
+  ],
+  "rightsBasis" : "Slide 1 marks both presenters with *U.S. Civil Servant, and the NTRS record places Chris Lynnes at NASA Goddard Space Flight Center and Rahul Ramachandran at NASA Marshall Space Flight Center (17 U.S.C. 105). The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and thirdPartyContentCondition NOT_SET; distribution PUBLIC, no export control. Every slide was checked: no AWS, Google, partner or vendor logo and no screenshot of a commercial product appears. Every slide shows the NASA insignia, whose use is restricted by 14 CFR 1221. Slide 2 carries uncredited satellite renders and a ground-station photo, slides 3-4 uncredited EOSDIS metrics chart rasters, and slides 12-21 uncredited pictogram icons. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94",
+  "sourceTitle" : "Earthdata Cloud Analytics Project",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20180003024/downloads/20180003024.pdf"
+}

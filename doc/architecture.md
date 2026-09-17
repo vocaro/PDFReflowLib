@@ -186,6 +186,15 @@ space removal ignores shows with character or word spacing, and unsupported text
 disqualifies the page: a `gs` whose ExtGState sets a font or does not resolve, nonzero `Ts`, `Tr`,
 `Tz`, `Tc` or `Tw` beyond 1000 units, and a show without its own positioning that follows a show
 without complete widths.
+A line that only overprints another — the same text in the same size on the same rectangle to
+within a twentieth of a point — is dropped before anything reads the page (#165). A source can
+stack two text boxes with the same words in one place: the Earthdata deck, exported from Google
+Slides, keeps each build step's boxes on the finished slide, so slides 13–21 draw `Cumulus` once
+alone and once above `Data` / `Archive`, and slides 19 and 20 draw `End-User` / `Interpretation`
+twice over; Blue Book page 25 returns one scan artefact four times. The second drawing lands glyph
+for glyph on the first and adds no ink, but PDFKit returns a line for each and reflow read them as
+separate paragraphs. Fake bold drawn twice offsets its copy by a fraction of an em, well past this
+tolerance, and a word genuinely repeated on a page has its own rectangle, so both keep two lines.
 Object-only selections are discarded before attributed-string access
 to avoid unnecessary PDFKit image-attachment decoding. `GraphicsReader` scans bounded Core Graphics paint
 operations and nested Form XObjects. It resolves shading resources and bounds gradient regions
@@ -602,7 +611,25 @@ numeral is neither a subscript nor the line's heading size. Each typographic hea
 every page is reconstructed, the sizes of the whole document rank into tiers 7% apart, the
 largest tier keeps level 2 and each smaller tier is one level deeper (to 6), so equal sizes get
 equal levels on every page and a title outranks the author names beneath it, while tagged
-headings keep their validated levels (#43). Text rotated a quarter turn extracts as a line far taller than wide; one along
+headings keep their validated levels (#43).
+A slide deck ranks otherwise, because a slide carries one title and a deck sets each title to fit
+the words on it (#165): the Earthdata deck's titles run 52, 32, 30, 28 and 26 points, which rank
+into four tiers of one rank, so every ranked heading of a deck is level 2. A deck is decided document-wide before
+reconstruction: at least three pages, every page the same landscape size, and two thirds of the
+pages carrying text are slides. A *slide* is such a page holding one screenful of text (at most 600
+characters, against a slide's 346 at most here) under a *slide title*: the topmost line, its top
+within the outer eighth of the page, reading as a title with no other line on its row, followed by
+the lines that stack under it as a heading's do, and set off from the text below by at least half
+its own height. On a slide that title is a heading whatever its size, and nothing set smaller than
+it is one. Neither decision can come from type size: a slide's few body words leave the
+character-weighted body estimate reading the title's own type (`Over time, EOSDIS archive volumes`
+/ `increase exponentially` against the one word beside its chart), a title can be set smaller than
+the statement beneath it (`Architectural Concept` at 26 points over 28), and a diagram slide's body
+runs from 14-point boxes to an 8-point note, so the smallest of them made the boxes `<h5>` and
+`<h6>`. A page in unrotated page space is what counts, so a landscape book stored rotated (NOAA)
+is portrait here and never a deck, as its 2,800-character pages would not be anyway; a deck's own
+title slide, whose title is centred rather than set in the head band, keeps the ordinary rules.
+Text rotated a quarter turn extracts as a line far taller than wide; one along
 at least a quarter of the outer margin of an otherwise horizontal page is a stamp and is omitted
 with `furnitureRemoved`, while shorter rotated credits stay paragraphs and rotated text is never
 a heading. An `Algorithm N` caption directly beneath a thin rule, over a second rule of the same
@@ -621,7 +648,14 @@ so fallback font estimates do not break matching; a bare folio is a candidate ev
 other line. A line that is nothing but a canonical Roman numeral in 1–400 (one letter included) is a
 bare folio keyed by its offset the same way, so the FAA's front-matter folios `iii` … `xvi` go (#105). Internal digits remain meaningful. Matching body titles, nearby captions and a page's
 only text are retained, except a blank page's lone folio in a folio run (FAA `A-8` and `G-36`,
-Wallace pages 175 and 437; #97), which leaves the page's boundary without text. Each affected page reports
+Wallace pages 175 and 437; #97), which leaves the page's boundary without text. A margin line that
+explains a marker printed on its own page is a note, not furniture, however many pages repeat it
+(#165): it opens with a raised number that another line of the page carries raised inside its text.
+The Earthdata deck footnotes its `AODS¹` box on nine slides with `¹ Analytics Optimized Data
+Store`, and the five slides that set it low enough to fall in the foot band lost it to the
+three-page rule while the four that set it two points higher kept it. The pairing, not the
+repetition, is the evidence, so folios (never raised) and real running heads stay candidates.
+Each affected page reports
 `furnitureRemoved`; clients can disable removal with `removeRepeatedHeadersAndFooters`.
 This is conservative spatial evidence, not validated PDF tag consumption or a universal header
 classifier. Synthetic invisible-text layers retain the established whole-document repeated-margin

@@ -103,7 +103,7 @@ enum FurnitureDetector {
             let line = page.lines[lineIndex]
             guard line.rect.isFinite, line.fontSize > 0, line.fontSize.isFinite else { return }
             let words = line.text.lowercased().split(whereSeparator: \.isWhitespace).map(String.init)
-            guard !words.isEmpty, line.text.count < 100 else { return }
+            guard !words.isEmpty, line.text.count < 100, !explainsMarker(lineIndex, on: page) else { return }
             // The line must be separated from inward content, not just happen to be
             // the first/last line of a paragraph near the page edge.
             let inward = page.lines.enumerated().filter { index, other in
@@ -206,6 +206,30 @@ enum FurnitureDetector {
                   line.rect.maxY >= outerBottom - line.rect.height * 3,
                   outermost(lineIndex, top: true, among: rest) else { continue }
             record(lineIndex, top: true, separation: max(line.rect.height * 0.5, height * 0.006), dependsOn: outer)
+        }
+    }
+
+    /// Whether a margin line is a note explaining a marker printed on its own page: it opens with
+    /// a raised number (`LayoutReconstructor.raisedNoteNumber`) that another line of the page
+    /// carries raised inside its text. Such a line belongs to its page however many pages repeat
+    /// it, so it is no furniture candidate (#165).
+    ///
+    /// The Earthdata deck footnotes its `AODS¹` box on nine slides with `¹ Analytics Optimized
+    /// Data Store`. Five of those slides set the note low enough to fall in the foot band, where
+    /// three of them in a row read as a repeated footer and the note was removed; the four slides
+    /// that set it two points higher kept it. The pairing, not the repetition, is the evidence: a
+    /// page number is never raised, and no running head's words are a note's marker, so folios and
+    /// real running heads (including a head carrying a note marker's digits in ordinary type)
+    /// remain candidates.
+    private static func explainsMarker(_ lineIndex: Int, on page: PageContent) -> Bool {
+        guard let number = LayoutReconstructor.raisedNoteNumber(page.lines[lineIndex]) else { return false }
+        return page.lines.indices.contains { other in
+            guard other != lineIndex else { return false }
+            return page.lines[other].content.elements.contains { element in
+                guard case let .text(value, style) = element, style.contains(.superscript) else { return false }
+                let printed = value.trimmingCharacters(in: .whitespaces.union(.controlCharacters))
+                return Int(printed) == number
+            }
         }
     }
 

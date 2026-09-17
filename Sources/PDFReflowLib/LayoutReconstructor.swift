@@ -995,6 +995,60 @@ enum LayoutReconstructor {
         return titles
     }
 
+    /// The lines of a slide's title: the topmost text of a landscape page, standing in the band
+    /// at the head of the slide, alone on its row and clear of the text beneath it (#165).
+    ///
+    /// A slide's title cannot be told from its type size, which is what `blocks` measures a
+    /// heading by. A slide carries one title and a handful of body words, so the page's
+    /// character-weighted body size is as often the title's own type as the body's (the
+    /// Earthdata deck's two-line `Over time, EOSDIS archive volumes` / `increase exponentially`
+    /// outweighs the one word beside the chart it heads, and `Architectural Concept` is set
+    /// *smaller* than the statement under it), while a diagram slide's body runs from 14-point
+    /// boxes down to an 8-point note, so the smallest of them would make the boxes headings.
+    /// What a deck repeats is the place: every slide sets its title in the same band at the top.
+    ///
+    /// The title is the topmost line, its top within the outer eighth of the page, reading as a
+    /// title (a capital or digit first, a word, no terminal punctuation, no list marker) with no
+    /// other line on its row, followed by the lines that stack under it as a heading's do
+    /// (`continuesHeading`), and set off from the slide's body by at least half its own height.
+    /// A page whose topmost text is a running head, a folio or body prose has no slide title, and
+    /// neither has a portrait page: this is the evidence `isSlide(_:)` counts to decide a deck.
+    static func slideTitle(in lines: [TextLine], bounds: CGRect) -> [TextLine] {
+        guard bounds.width > bounds.height, bounds.height > 0, bounds.isFinite else { return [] }
+        let candidates = lines.filter { !$0.monospaced && $0.fontSize > 0 && $0.rect.isFinite
+            && !$0.text.trimmingCharacters(in: .whitespaces).isEmpty }
+        guard let first = candidates.max(by: { $0.rect.maxY < $1.rect.maxY }),
+              bounds.maxY - first.rect.maxY <= bounds.height * 0.125,
+              first.text.count < 200, first.text.filter(\.isLetter).count >= 2,
+              !isList(first.text), !isContentsEntry(first.text), !endsSentence(first.text),
+              let initial = first.text.first(where: { !"([\u{201C}\"'".contains($0) && !$0.isWhitespace }),
+              initial.isUppercase || initial.isNumber,
+              !candidates.contains(where: { $0 != first && sameRow($0.rect, first.rect) })
+        else { return [] }
+        var title = [first]
+        while let next = candidates.filter({ line in
+            !title.contains(line) && continuesHeading(title.map(\.text).joined(separator: " "), with: line, after: title[title.count - 1])
+        }).max(by: { $0.rect.maxY < $1.rect.maxY }) {
+            title.append(next)
+        }
+        let bottom = title.map(\.rect.minY).min() ?? first.rect.minY // `title` always holds `first`
+        let below = candidates.filter { line in !title.contains(line) && line.rect.maxY < bottom }
+        if let highest = below.map(\.rect.maxY).max(), bottom - highest < first.rect.height * 0.5 { return [] }
+        return title
+    }
+
+    /// Whether a page reads as one slide of a deck: a landscape page carrying one screenful of
+    /// text (at most 600 characters, where the deck's fullest slide sets 346 and the smallest
+    /// landscape book page in the corpus, NOAA's, sets thousands) under a title in its head band
+    /// (`slideTitle`). The pipeline counts these pages: a document of at least three pages, every
+    /// page the same landscape size, where two thirds of the pages carrying text are slides, is a
+    /// deck, and its slides' titles are headings whatever their size.
+    static func isSlide(_ page: PageContent) -> Bool {
+        guard !page.hasSyntheticTextStyle,
+              page.lines.reduce(0, { $0 + $1.text.count }) <= 600 else { return false }
+        return !slideTitle(in: page.lines, bounds: page.bounds).isEmpty
+    }
+
     /// A line's last visible character past closing quotes and brackets and past a raised
     /// reference marker (`…allowed to depart.30`), as `opensSection` reads a sentence's end.
     private static func lastCharacterBeforeMarker(_ line: TextLine) -> Character? {
@@ -1188,7 +1242,12 @@ enum LayoutReconstructor {
     /// one its own typography provides: the Fed's tagged section titles restore the tier their
     /// untagged siblings used to supply, while a book whose validated levels all hold ranks
     /// exactly as it did before any tag applied. One pass over the blocks' sizes; no page geometry.
-    static func rankHeadingLevels(_ blocks: inout [ReflowBlock]) {
+    ///
+    /// `slideDeck` says the document is a deck (`isSlide(_:)`), where the size tiers say nothing:
+    /// a slide carries one title, and a deck sets each slide's title to fit the words on it, so
+    /// the Earthdata deck's 52-, 32-, 30-, 28- and 26-point titles rank into four tiers of one rank.
+    /// Every ranked heading of a deck is level 2; a validated level still holds, as it does above.
+    static func rankHeadingLevels(_ blocks: inout [ReflowBlock], slideDeck: Bool = false) {
         func ranker(_ sizes: [CGFloat]) -> (CGFloat) -> Int {
             let tiers = headingTiers(sizes)
             return { value in min(6, 2 + (tiers.firstIndex { value >= $0 * 0.93 } ?? tiers.count)) }
@@ -1212,7 +1271,8 @@ enum LayoutReconstructor {
                 ? validated : nil
         }.min()
         func yields(_ validated: Int) -> Bool { firstYielding.map { validated >= $0 } ?? false }
-        let ranked = ranker(headings.filter { $0.validated.map(yields) ?? true }.map(\.size))
+        let byTier = ranker(headings.filter { $0.validated.map(yields) ?? true }.map(\.size))
+        let ranked: (CGFloat) -> Int = slideDeck ? { _ in 2 } : byTier
         for index in blocks.indices {
             guard let size = blocks[index].headingSize,
                   case let .heading(id, text, _) = blocks[index].content else { continue }
@@ -2407,7 +2467,9 @@ enum LayoutReconstructor {
     /// inside a numbered note, which this page may resume; `noteLayout` receives this page's
     /// numbered-note layout (nil when the page is not a notes page), so the caller can pass its
     /// open list and last note to the next page. `continuingNote` is the previous page's last note,
-    /// which the lines above this page's first note start may continue (#11).
+    /// which the lines above this page's first note start may continue (#11). `slideDeck` says the
+    /// document reads as a deck (`isSlide(_:)`), so this page's slide title, if it has one, is a
+    /// heading and nothing set smaller than it is (#165).
     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
                        warnings: inout [ConversionWarning], noteChapter: Int? = nil,
                        noteLastChapter: Int? = nil, continuingNoteList: NumberedNoteDetector.OpenList? = nil,
@@ -2415,7 +2477,8 @@ enum LayoutReconstructor {
                        continuingNote: NumberedNoteDetector.Layout.Note? = nil,
                        continuesNote: Bool = false,
                        labelStyles: Set<LabelStyle> = [], headingStyles: Set<LabelStyle> = [],
-                       neighbouringMarkers: [PageMarker] = []) -> [ReflowBlock] {
+                       neighbouringMarkers: [PageMarker] = [],
+                       slideDeck: Bool = false) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         // A rotated stamp in the outer margin is furniture, never content or a heading.
         let stamps = rotatedMarginLines(page)
@@ -2501,12 +2564,24 @@ enum LayoutReconstructor {
             return prev.rect.maxX + wordWidth + edge.size * 0.5 <= right
                 || edge.pairs >= 2 && prev.rect.maxX <= right - edge.size
         }
+        // In a deck, this slide's title (`slideTitle`) and its body. A slide's title is decided by
+        // where it stands, not by a size the slide has too few body words to establish; and once
+        // the title is known, everything set smaller than it on that slide is the slide's body,
+        // whatever the page's own estimate makes of it. Slides 19 and 20 of the Earthdata deck
+        // hold more 10-point labels than 14-point boxes, so the boxes read 40% over the estimate
+        // and became `<h5>`/`<h6>` beneath the real title (#165). A slide with no title in the
+        // band (its title slide, whose title is centred on the page) keeps the ordinary rules.
+        let slideTitle = slideDeck ? LayoutReconstructor.slideTitle(in: free.map(untagged), bounds: page.bounds) : []
         // The page's own typography for a heading, before any tag is consulted. A contents entry
         // is never a heading; a multi-line display sentence is a pull quote (handled below).
         // Neither is a separated margin line that opens or closes with this page's number:
         // that is a running head, whatever furniture removal made of it (#62).
         func headingTypography(_ line: TextLine) -> Bool {
-            (isHeadingSize(line) || labels.contains(untagged(line)))
+            if let title = slideTitle.first {
+                if slideTitle.contains(untagged(line)) { return true }
+                if line.fontSize < title.fontSize * 0.95 { return false }
+            }
+            return (isHeadingSize(line) || labels.contains(untagged(line)))
                 && !isContentsEntry(line.text) && !isHeaderLike(line, in: page, bothBands: true)
         }
         // A section icon reads in its heading's row (#117). DGA pages 3–6 set a circular photo in

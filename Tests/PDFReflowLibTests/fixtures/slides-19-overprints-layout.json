@@ -1,0 +1,1534 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        121.72748864527951,
+        365.49000194568009,
+        542.72399798416757,
+        26.263999902447949
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 27.999999895999967,
+          "text" : "Open Pipeline Provides Outputs at Different"
+        }
+      ],
+      "text" : "Open Pipeline Provides Outputs at Different"
+    },
+    {
+      "rect" : [
+        120.96879087100118,
+        331.73999786567998,
+        544.31999797823926,
+        26.263999902447949
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 27.999999895999967,
+          "text" : "Stages Appropriate for a Diverse User Base"
+        }
+      ],
+      "text" : "Stages Appropriate for a Diverse User Base"
+    },
+    {
+      "rect" : [
+        156.06754024416114,
+        204.64812119374008,
+        97.173999639067915,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Preprocessing"
+        }
+      ],
+      "text" : "Preprocessing"
+    },
+    {
+      "rect" : [
+        166.57193033030163,
+        188.14812066574007,
+        76.229999716859908,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "as-a-service"
+        }
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "rect" : [
+        315.29860758955516,
+        204.64812119374008,
+        45.615002367146701,
+        14.984667138242656
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "AODS"
+        },
+        {
+          "baselineOffset" : 5.2500001679999855,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.3333337653333199,
+          "text" : "1"
+        }
+      ],
+      "text" : "AODS1"
+    },
+    {
+      "rect" : [
+        300.00599835019165,
+        188.14812066574007,
+        76.229999716859936,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "as-a-service"
+        }
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "rect" : [
+        432.35793858545361,
+        204.64812119374008,
+        57.539999786279907,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Analysis"
+        }
+      ],
+      "text" : "Analysis"
+    },
+    {
+      "rect" : [
+        423.03550728713577,
+        188.14812066574007,
+        76.229999716859936,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "as-a-service"
+        }
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "rect" : [
+        550.4463228642818,
+        204.85812099046009,
+        79.365005592180182,
+        12.194000859208018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.000000916000017,
+          "text" : "Visualization"
+        }
+      ],
+      "text" : "Visualization"
+    },
+    {
+      "rect" : [
+        552.06506141608145,
+        188.14812066574007,
+        76.229999716859879,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "as-a-service"
+        }
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "rect" : [
+        62.119132987812186,
+        181.80305446269799,
+        59.83599977775193,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Cumulus"
+        }
+      ],
+      "text" : "Cumulus"
+    },
+    {
+      "rect" : [
+        62.119132987812186,
+        181.80305446269799,
+        59.83599977775193,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Cumulus"
+        }
+      ],
+      "text" : "Cumulus"
+    },
+    {
+      "rect" : [
+        76.883351460267164,
+        165.30305243469792,
+        30.337999887315959,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Data"
+        }
+      ],
+      "text" : "Data"
+    },
+    {
+      "rect" : [
+        66.382377624236014,
+        148.80305190669793,
+        51.323999809367947,
+        13.131999951223975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 13.999999947999983,
+          "text" : "Archive"
+        }
+      ],
+      "text" : "Archive"
+    },
+    {
+      "rect" : [
+        164.39646076068658,
+        110.50862287877622,
+        80.540000563779955,
+        9.3800000656599849
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "End-User-Specific"
+        }
+      ],
+      "text" : "End-User-Specific"
+    },
+    {
+      "rect" : [
+        186.06037345393176,
+        98.508620244776139,
+        37.220000260539962,
+        9.3800000656599849
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "Analysis"
+        }
+      ],
+      "text" : "Analysis"
+    },
+    {
+      "rect" : [
+        316.99638264388398,
+        122.50863226277652,
+        42.22000029553999,
+        9.3800000656599849
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "End-User"
+        }
+      ],
+      "text" : "End-User"
+    },
+    {
+      "rect" : [
+        309.21620189491819,
+        110.50863187877651,
+        57.78000040445994,
+        9.3800000656599849
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "Cloud-Native"
+        }
+      ],
+      "text" : "Cloud-Native"
+    },
+    {
+      "rect" : [
+        319.49540522385269,
+        98.508627744776391,
+        37.220000260539962,
+        9.3800000656599991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "Analysis"
+        }
+      ],
+      "text" : "Analysis"
+    },
+    {
+      "rect" : [
+        440.02614208083605,
+        47.465744111404199,
+        42.22000029553999,
+        9.380000065659992
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "End-User"
+        }
+      ],
+      "text" : "End-User"
+    },
+    {
+      "rect" : [
+        440.02785058089074,
+        47.465744111404199,
+        42.22000029553999,
+        9.380000065659992
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "End-User"
+        }
+      ],
+      "text" : "End-User"
+    },
+    {
+      "rect" : [
+        431.68465231390843,
+        35.465743727404195,
+        58.880000412159973,
+        9.380000065659992
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "Interpretation"
+        }
+      ],
+      "text" : "Interpretation"
+    },
+    {
+      "rect" : [
+        431.68636006396304,
+        35.465743727404195,
+        58.880000412159973,
+        9.380000065659992
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "Interpretation"
+        }
+      ],
+      "text" : "Interpretation"
+    },
+    {
+      "rect" : [
+        580.7637388344391,
+        45.131114036696026,
+        21.110000147769938,
+        9.380000065659992
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "Data"
+        }
+      ],
+      "text" : "Data"
+    },
+    {
+      "rect" : [
+        566.31624762211936,
+        33.131113652696023,
+        50.000000349999937,
+        9.380000065659992
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.000000069999992,
+          "text" : "Exploration"
+        }
+      ],
+      "text" : "Exploration"
+    },
+    {
+      "rect" : [
+        79.232282535432972,
+        17.191292590121748,
+        172.60136502324346,
+        12.844000702208003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 4.5000001439999977,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.0000006560000116,
+          "text" : "1 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12.000000384,
+          "text" : "Analytics Optimized Data Store"
+        }
+      ],
+      "text" : "1 Analytics Optimized Data Store"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    720,
+    405
+  ],
+  "caseID" : "ntrs-20180003024-earthdata-slides-2018",
+  "graphics" : [
+    [
+      0,
+      0,
+      720,
+      405
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 27.999999895999967,
+      "monospaced" : false,
+      "rect" : [
+        121.72748864527951,
+        365.49000194568009,
+        542.72399798416757,
+        26.263999902447949
+      ],
+      "text" : "Open Pipeline Provides Outputs at Different"
+    },
+    {
+      "fontSize" : 27.999999895999967,
+      "monospaced" : false,
+      "rect" : [
+        120.96879087100118,
+        331.73999786567998,
+        544.31999797823926,
+        26.263999902447949
+      ],
+      "text" : "Stages Appropriate for a Diverse User Base"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        156.06754024416114,
+        204.64812119374008,
+        97.173999639067915,
+        13.131999951223975
+      ],
+      "text" : "Preprocessing"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        166.57193033030163,
+        188.14812066574007,
+        76.229999716859908,
+        13.131999951223975
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        315.29860758955516,
+        204.64812119374008,
+        45.615002367146701,
+        14.984667138242656
+      ],
+      "text" : "AODS1"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        300.00599835019165,
+        188.14812066574007,
+        76.229999716859936,
+        13.131999951223975
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        432.35793858545361,
+        204.64812119374008,
+        57.539999786279907,
+        13.131999951223975
+      ],
+      "text" : "Analysis"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        423.03550728713577,
+        188.14812066574007,
+        76.229999716859936,
+        13.131999951223975
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "fontSize" : 13.000000916000017,
+      "monospaced" : false,
+      "rect" : [
+        550.4463228642818,
+        204.85812099046009,
+        79.365005592180182,
+        12.194000859208018
+      ],
+      "text" : "Visualization"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        552.06506141608145,
+        188.14812066574007,
+        76.229999716859879,
+        13.131999951223975
+      ],
+      "text" : "as-a-service"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        62.119132987812186,
+        181.80305446269799,
+        59.83599977775193,
+        13.131999951223975
+      ],
+      "text" : "Cumulus"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        62.119132987812186,
+        181.80305446269799,
+        59.83599977775193,
+        13.131999951223975
+      ],
+      "text" : "Cumulus"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        76.883351460267164,
+        165.30305243469792,
+        30.337999887315959,
+        13.131999951223975
+      ],
+      "text" : "Data"
+    },
+    {
+      "fontSize" : 13.999999947999983,
+      "monospaced" : false,
+      "rect" : [
+        66.382377624236014,
+        148.80305190669793,
+        51.323999809367947,
+        13.131999951223975
+      ],
+      "text" : "Archive"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        164.39646076068658,
+        110.50862287877622,
+        80.540000563779955,
+        9.3800000656599849
+      ],
+      "text" : "End-User-Specific"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        186.06037345393176,
+        98.508620244776139,
+        37.220000260539962,
+        9.3800000656599849
+      ],
+      "text" : "Analysis"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        316.99638264388398,
+        122.50863226277652,
+        42.22000029553999,
+        9.3800000656599849
+      ],
+      "text" : "End-User"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        309.21620189491819,
+        110.50863187877651,
+        57.78000040445994,
+        9.3800000656599849
+      ],
+      "text" : "Cloud-Native"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        319.49540522385269,
+        98.508627744776391,
+        37.220000260539962,
+        9.3800000656599991
+      ],
+      "text" : "Analysis"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        440.02614208083605,
+        47.465744111404199,
+        42.22000029553999,
+        9.380000065659992
+      ],
+      "text" : "End-User"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        440.02785058089074,
+        47.465744111404199,
+        42.22000029553999,
+        9.380000065659992
+      ],
+      "text" : "End-User"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        431.68465231390843,
+        35.465743727404195,
+        58.880000412159973,
+        9.380000065659992
+      ],
+      "text" : "Interpretation"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        431.68636006396304,
+        35.465743727404195,
+        58.880000412159973,
+        9.380000065659992
+      ],
+      "text" : "Interpretation"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        580.7637388344391,
+        45.131114036696026,
+        21.110000147769938,
+        9.380000065659992
+      ],
+      "text" : "Data"
+    },
+    {
+      "fontSize" : 10.000000069999992,
+      "monospaced" : false,
+      "rect" : [
+        566.31624762211936,
+        33.131113652696023,
+        50.000000349999937,
+        9.380000065659992
+      ],
+      "text" : "Exploration"
+    },
+    {
+      "fontSize" : 8.0000006560000116,
+      "monospaced" : false,
+      "rect" : [
+        79.232282535432972,
+        17.191292590121748,
+        172.60136502324346,
+        12.844000702208003
+      ],
+      "text" : "1 Analytics Optimized Data Store"
+    }
+  ],
+  "page" : 19,
+  "paints" : [
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        0,
+        0,
+        720,
+        405
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        10.037401959999999,
+        340.48720666100803,
+        63.271655440000004,
+        53.07676633423597
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        12.037401959999999,
+        342.48720666100803,
+        59.271655440000004,
+        49.07676633423597
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        19.104303824944001,
+        74.410796571760045,
+        672.46252926481588,
+        269.29661675720797
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        44.298406993359997,
+        91.693218384640033,
+        611.51767692087992,
+        220.25081400663998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        19.104303824944001,
+        74.410796571760045,
+        672.46252926481588,
+        269.29661675720797
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        44.298406993359997,
+        91.693218384640033,
+        611.51767692087992,
+        220.25081400663998
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        89.108270631999986,
+        357.90551036800002,
+        608.34647603199994,
+        47.094489631999977
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        153.76181600799998,
+        88.523611984000013,
+        101.81890076799999,
+        64.472442880000017
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        153.76181600799998,
+        88.523611984000013,
+        101.81890076799999,
+        64.472442880000017
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        197.73425835999998,
+        126.42518800000005,
+        13.873189292320006,
+        15.724409823999963
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        199.73425835999998,
+        128.42518800000005,
+        9.8731845679103856,
+        11.724406871244014
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        260.23819736799999,
+        214.82873413600001,
+        30.952756767999972,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        260.23819736799999,
+        214.82873413600001,
+        26.45275662399996,
+        4
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        282.69095399199995,
+        213.58993488376001,
+        7.4035827860799941,
+        6.4775985044799995
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        113.899610008,
+        214.82873413600001,
+        35.204725408000002,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        113.899610008,
+        214.82873413600001,
+        30.70472526399999,
+        4
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        140.60433527199999,
+        213.58993488376001,
+        7.4035749120640162,
+        6.4775985044799995
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        379.02068148399997,
+        214.82873413600001,
+        35.204725408000002,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        379.02068148399997,
+        214.82873413600001,
+        30.70472526399999,
+        4
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        405.72540674799995,
+        213.58993488376001,
+        7.4035827860800509,
+        6.4775985044799995
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        508.04430765999996,
+        214.82873413600001,
+        35.204725407999945,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        508.04430765999996,
+        214.82873413600001,
+        30.70472526399999,
+        4
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        534.74903292399995,
+        213.58993488376001,
+        7.4035434160000477,
+        6.4775985044799995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        145.104335416,
+        178.14369359200003,
+        119.13386195199999,
+        77.370081087999978
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        45.696851919999993,
+        172.27164616000002,
+        92.700790239999975,
+        34.661418303999994
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        55.440946719999992,
+        184.69684340800001,
+        70.279529679999996,
+        70.279529679999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        57.440946719999992,
+        186.69684340800001,
+        66.279529679999996,
+        66.279529679999996
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        193.63586452806399,
+        224.09451396006403,
+        18.881858743935993,
+        18.881858743935993
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        195.63586452806399,
+        226.09451396006403,
+        14.881858743935993,
+        14.881858743935993
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        410.22540689199997,
+        178.14369359200003,
+        101.81890076799999,
+        77.370081087999978
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        451.69493577807998,
+        224.80316358904,
+        18.881850869919958,
+        17.464547674960016
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        453.69493577807998,
+        226.80316358904,
+        14.881850869919958,
+        13.464545706455993
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        539.25493857999993,
+        178.14369359200003,
+        101.81890076800005,
+        77.370081087999978
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        580.724428096,
+        225.09965966152004,
+        18.881890239999962,
+        16.870807498479991
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        582.724428096,
+        227.09965966152004,
+        14.881859531337568,
+        12.870797065408794
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        287.19685964799999,
+        88.523611984000013,
+        101.81890076799999,
+        64.472442880000017
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        287.19685964799999,
+        88.523611984000013,
+        101.81890076799999,
+        64.472442880000017
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        331.16930199999996,
+        132.42518819200001,
+        13.873189292320035,
+        15.72440982400002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        333.16930199999996,
+        134.42518819200001,
+        9.873184567910414,
+        11.724406871244014
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        546.01182855999991,
+        23.328728008000041,
+        90.618664189120068,
+        52.661418879999985
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        546.01182855999991,
+        23.328728008000041,
+        90.618664189120068,
+        52.661418879999985
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        584.94958571151994,
+        55.419280216000004,
+        12.742756185279973,
+        15.72440982400002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        586.94958571151994,
+        57.419280216000004,
+        8.7427050041759458,
+        11.724406871244
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        202.67126639199998,
+        148.99408636000001,
+        4,
+        33.149607232000022
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        202.67126639199998,
+        162.49408679200002,
+        4,
+        19.649606800000015
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        198.95486863528001,
+        152.28335811880001,
+        11.432795513439999,
+        14.210728673200009
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        336.10532577999999,
+        148.99408636000001,
+        4,
+        33.149607232000022
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        336.10532577999999,
+        162.49408679200002,
+        4,
+        19.649606800000015
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        332.38890833823996,
+        152.28335811880001,
+        11.432834883520002,
+        14.210728673200009
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        458.75690450799993,
+        74.324792632000026,
+        4.3779527680000001,
+        107.81890096000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        458.77330214631996,
+        78.824753405920035,
+        4.3615551296799708,
+        103.31894018608
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        457.53450289407999,
+        75.421209989920044,
+        6.4775591343999395,
+        7.408070975199962
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        588.16438896399995,
+        71.986209880000047,
+        4.96850396800005,
+        110.15748371199999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        588.16438896399995,
+        76.486013173600043,
+        4.9274803446400028,
+        105.65768041839999
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        587.85312911151993,
+        73.082607552880006,
+        6.4774803942400467,
+        7.4147048336799912
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        415.82678502399995,
+        25.663373752000041,
+        90.618644504080066,
+        52.661418879999985
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        415.82678502399995,
+        25.663373752000041,
+        90.618644504080066,
+        52.661418879999985
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        454.76454217551998,
+        57.753925960000004,
+        12.742697130160025,
+        15.72440982400002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        456.76454217551998,
+        59.753925960000004,
+        8.7426971301600247,
+        11.724406871244
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        45.696851919999993,
+        146.28739336000001,
+        92.700790239999975,
+        60.645671104000002
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        415.82678502399995,
+        25.663373752000041,
+        90.622050016000003,
+        52.661418879999985
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        415.82678502399995,
+        25.663373752000041,
+        90.622050016000003,
+        52.661418879999985
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        454.20080199999995,
+        60.027548080000031,
+        13.873189292320035,
+        15.72440982400002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        456.20080199999995,
+        62.027548080000031,
+        9.873184567910414,
+        11.724406871244
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        287.19587539599996,
+        178.14369359200003,
+        101.81890076799999,
+        77.370081087999978
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        326.51280578799998,
+        221.94192334000002,
+        23.187008488000004,
+        23.187008488000004
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        328.51280578799998,
+        223.94192334000002,
+        19.187008488000004,
+        19.187008488000004
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        70.482285783999998,
+        10.34250712000005,
+        193.75591158399999,
+        27.527559807999978
+      ]
+    }
+  ],
+  "rightsBasis" : "Slide 1 marks both presenters with *U.S. Civil Servant, and the NTRS record places Chris Lynnes at NASA Goddard Space Flight Center and Rahul Ramachandran at NASA Marshall Space Flight Center (17 U.S.C. 105). The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and thirdPartyContentCondition NOT_SET; distribution PUBLIC, no export control. Every slide was checked: no AWS, Google, partner or vendor logo and no screenshot of a commercial product appears. Every slide shows the NASA insignia, whose use is restricted by 14 CFR 1221. Slide 2 carries uncredited satellite renders and a ground-station photo, slides 3-4 uncredited EOSDIS metrics chart rasters, and slides 12-21 uncredited pictogram icons. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94",
+  "sourceTitle" : "Earthdata Cloud Analytics Project",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20180003024/downloads/20180003024.pdf"
+}

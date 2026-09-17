@@ -73,6 +73,55 @@ enum LayoutReconstructor {
         min(a.maxY, b.maxY) - max(a.minY, b.minY) >= min(a.height, b.height) * 0.5
     }
 
+    /// A piece that is nothing but a list marker: a bullet, or a number of up to three digits or
+    /// a single letter followed by `.` or `)`. A minus or hyphen alone is a sign or a rule.
+    private static func isMarkerPiece(_ text: String) -> Bool {
+        text.trimmingCharacters(in: .whitespaces)
+            .range(of: "^(?:•|[0-9]{1,3}[.)]|[A-Za-z][.)])$", options: .regularExpression) != nil
+    }
+
+    /// PDFKit splits a list marker from its item's text at the gap after the marker: `4.` and
+    /// `Neither the intelligence community…` on one baseline (9/11 page 365), and `•` apart from
+    /// most FAA and NOAA bullets. Neither piece reads as a list line, so the marker became a
+    /// paragraph of its own or joined the end of the block above (FAA page 27's `…reasons: •`),
+    /// and its item's text opened an unmarked paragraph. A marker piece that opens its row (no piece on that row ends within one of its
+    /// font sizes to its left) joins the nearest piece that starts to its right within two font
+    /// sizes, at the same size and in the same structure group, which is not itself a marker
+    /// piece. Every other line passes through unchanged (#69).
+    static func joiningMarkerPieces(_ lines: [TextLine]) -> [TextLine] {
+        var result = lines
+        // Pieces already joined, and the marker pieces absorbed into the piece beside them.
+        var claimed = Set<Int>(), absorbed = Set<Int>()
+        for (index, marker) in lines.enumerated() where !claimed.contains(index) && !marker.monospaced
+            && isMarkerPiece(marker.text) {
+            let size = marker.fontSize
+            let row = lines.indices.filter { $0 != index && !claimed.contains($0) && sameRow(lines[$0].rect, marker.rect) }
+            guard !row.contains(where: {
+                lines[$0].rect.minX < marker.rect.minX && lines[$0].rect.maxX >= marker.rect.minX - size
+            }) else { continue }
+            let pieces = row.filter { other in
+                let line = lines[other]
+                let gap = line.rect.minX - marker.rect.maxX
+                return gap >= -1 && gap <= size * 2 && abs(line.fontSize - size) <= size * 0.1
+                    && !line.monospaced && line.structure?.group == marker.structure?.group
+                    && !isMarkerPiece(line.text)
+            }
+            guard let target = pieces.min(by: { lines[$0].rect.minX < lines[$1].rect.minX }) else { continue }
+            let text = lines[target]
+            var content = marker.content
+            content.append(InlineText(" "))
+            content.append(text.content)
+            var joined = TextLine(content: content, rect: marker.rect.union(text.rect), fontSize: text.fontSize,
+                                  wraps: text.wraps)
+            joined.readingRect = text.readingRect.map { $0.union(marker.rect) }
+            joined.structure = marker.structure ?? text.structure
+            result[target] = joined
+            claimed.formUnion([index, target])
+            absorbed.insert(index)
+        }
+        return result.indices.filter { !absorbed.contains($0) }.map { result[$0] }
+    }
+
     private struct Region {
         var seed: CGRect
         var bounds: CGRect
@@ -656,7 +705,8 @@ enum LayoutReconstructor {
         }
         let tables = ShadedTableDetector.tables(in: page, lines: lines)
         let tableLines = tables.flatMap(\.lines)
-        let free = lines.filter { line in !tableLines.contains(line) }
+        // A marker PDFKit split from its item's text rejoins it before anything reads the lines.
+        let free = joiningMarkerPieces(lines.filter { line in !tableLines.contains(line) })
         // Preserve existing modest-size headings, but reject candidates within 10% of the
         // supported reflowable body size. This only narrows the original page-size heuristic.
         // Small text inside reflowed boxes and tables does not lower the body estimate, so a
@@ -810,6 +860,25 @@ enum LayoutReconstructor {
             // previous line. Ragged item lengths do not establish a margin.
             let justified = column.filter { $0.rect.maxX >= right - body * 0.25 }
             return justified.count >= 3 && prev.rect.maxX >= right - body * 0.25
+        }
+        // PDFKit can drop the space after a numbered marker (`10.August 2001: …` among spaced
+        // items 6 to 9 on 9/11 page 374). Such a line opens a list item only when a capital
+        // letter follows the period, at least two spaced numbered items share its left edge and
+        // size on this page, and its number is next to one of theirs. Decimals (`3.5 percent`),
+        // section numbers (`1.1 INSIDE`) and times (`10.30`) never qualify, and a note run
+        // (`5.This`) has already claimed its lines (#69).
+        let spacedMarkers: [(line: TextLine, number: Int)] = free.compactMap { line in
+            guard !line.monospaced, let end = line.text.range(of: "^[0-9]{1,3}\\.\\s", options: .regularExpression),
+                  let number = Int(line.text[end].dropLast(2)) else { return nil }
+            return (line, number)
+        }
+        func isTightMarker(_ line: TextLine) -> Bool {
+            guard !line.monospaced, let end = line.text.range(of: "^[0-9]{1,3}\\.\\p{Lu}", options: .regularExpression),
+                  let number = Int(line.text[end].dropLast(2)) else { return false }
+            let siblings = spacedMarkers.filter {
+                abs($0.line.rect.minX - line.rect.minX) <= body * 0.5 && abs($0.line.fontSize - line.fontSize) <= line.fontSize * 0.1
+            }
+            return siblings.count >= 2 && siblings.contains { $0.number == number - 1 || $0.number == number + 1 }
         }
         // A list item's marker line opens the item; its wrapped lines are set in the hanging
         // indent under the item's text, at ordinary line spacing and no larger than the item.
@@ -982,7 +1051,7 @@ enum LayoutReconstructor {
                     codeOrigin = line.rect.minX
                     result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))
                 }
-            } else if isList(line.text), !continuesParagraph(line) {
+            } else if isList(line.text) || isTightMarker(line), !continuesParagraph(line) {
                 flush()
                 // Preserve significant breaks and native styles; do not rewrite list markers or code.
                 result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))
@@ -1417,6 +1486,13 @@ enum LayoutReconstructor {
     private static func joinOperation(_ left: String, _ right: String, vocabulary: Set<String>, page: Int,
                                       warnings: inout [ConversionWarning]) -> JoinOperation {
         if left.hasSuffix("\u{00ad}") { return .removeHyphen }
+        // A line broken after a slash inside a compound or an address (`runway/` + `taxiway`,
+        // `and/` + `or`, `www.faa.gov/` + `pilots/`, `https://` + `www.`) continues it with no
+        // space: a letter, digit or slash sits before the slash and a letter or digit follows
+        // the break. A slash the source sets apart (`China /` + `East Asia`) keeps the space, as
+        // does one after other punctuation, which in the corpus is only damaged OCR (#70).
+        if left.hasSuffix("/"), let before = left.dropLast().last, before.isLetter || before.isNumber || before == "/",
+           let next = right.first, next.isLetter || next.isNumber { return .concatenate }
         guard left.hasSuffix("-"), right.first?.isLowercase == true else { return .space }
         let prefix = left.dropLast().reversed().prefix(while: { $0.isLetter }).reversed()
         let suffix = right.prefix(while: { $0.isLetter })

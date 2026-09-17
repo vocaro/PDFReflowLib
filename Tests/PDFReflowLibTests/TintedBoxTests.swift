@@ -327,7 +327,8 @@ func fedSidebarBoxesReflowAsHeadingAndParagraphs(_ number: Int, _ title: String,
     #expect(regions.allSatisfy { $0.height <= 6 })
     let table = try #require(table(in: blocks))
     #expect(table.columns == 2 && table.rows.count == 8)
-    #expect(table.rows[0].header && table.rows[0].cells.map(\.text.text) == ["International authority/ deliberative body", "Overview/Federal Reserve engagement"])
+    // The header cell breaks after `authority/`; the slash joins its line without a space (#70).
+    #expect(table.rows[0].header && table.rows[0].cells.map(\.text.text) == ["International authority/deliberative body", "Overview/Federal Reserve engagement"])
     #expect(table.rows[1].cells[0].text.text == "Financial Stability Board Established: 2009 Location: Basel, Switzerland Website: https://www.fsb.org")
     #expect(table.rows[1].cells[1].text.text.hasPrefix("The Financial Stability Board (FSB), successor to the Financial Stability Forum"))
     #expect(table.rows.map { $0.cells[0].text.text.prefix(12) } == ["Internationa", "Financial St", "Central bank", "Bank for Int", "G7 & G20 Est", "Internationa", "Organisation", "World Bank E"])

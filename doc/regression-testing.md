@@ -50,14 +50,15 @@ conversion policies, routine corpus exclusions, or fidelity qualification.
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 621 targeted checks on 129 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 840 targeted checks on 172 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 200 ordered-text, 66 text, 67 paragraph,
-39 heading, 60 absent-text, 17 script, 8 footnote, 17 paragraph-continuation,
-5 paragraph-separation, 76 image-presence, 43 warning, 3 absent-warning,
-12 source-region, 3 glyph-structure, 3 image-appearance and 2 table-cell checks. All source-page
+the NBS and Replay Clocks academic papers). They comprise 263 ordered-text, 82 text, 87 paragraph,
+87 absent-text, 51 heading, 7 absent-heading, 26 list-item, 17 script, 11 footnote, 10 note-link,
+27 paragraph-continuation, 1 list-item-continuation, 5 paragraph-separation, 8 distinct-paragraph,
+82 image-presence, 55 warning, 1 absent-warning, 12 source-region, 3 glyph-structure,
+3 image-appearance and 2 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
 anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
 
 The checks preserve selected correct words, paragraph semantics and cross-page continuity, paragraph/list order, license attribution, image
@@ -279,6 +280,13 @@ and [#64](https://github.com/vocaro/PDFReflowLib/issues/64) with Wallace page 40
 22 and 58 and synthetic wraps; its controls are Loper Bright page 64 (an indented paragraph under a
 wrapped citation must not join it), the Warren synthetic-text list, the algebra page-10 and -26
 exercises, the 9/11 page-451 rows and the FAA columns, all of which must not change.
+`MarkerPieceTests.swift` covers [#69](https://github.com/vocaro/PDFReflowLib/issues/69) and
+[#70](https://github.com/vocaro/PDFReflowLib/issues/70): a marker PDFKit splits from its item's text
+(9/11 page 365, FAA page 27's bullets, algebra page 101, Loper Bright page 5's `982.`), a `10.August`
+marker with no space among spaced siblings (9/11 page 374), and a line broken after a slash (FAA
+page 365's `runway/` + `taxiway`). Its controls are table columns, mid-row and differently sized
+markers, minus signs, adjacent marker pieces, decimals, section numbers, times, out-of-sequence or
+off-edge numbers, spaced slashes (`China /`) and slashes after punctuation (damaged OCR).
 `BaselineStyleTests.swift` checks both native baseline-attribute keys, unchanged small
 fonts and noisy positioning, a real PDF-to-EPUB superscript/subscript path, and CDC page-5 OCR
 line spacing that must not become inline scripts.
@@ -308,7 +316,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-340 Swift tests with no known-issue wrappers, and 166 Python tests.
+349 Swift tests with no known-issue wrappers, and 166 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

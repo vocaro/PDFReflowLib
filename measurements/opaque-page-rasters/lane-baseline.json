@@ -1,0 +1,212 @@
+[
+ {
+  "case": "arxiv-replay-clocks-2023",
+  "seconds": 1.0,
+  "epubBytes": 1054257,
+  "entryBytes": 1137069,
+  "imageBytes": 1066059,
+  "images": 34,
+  "peakRSS": 169148416,
+  "footprint": 51086200
+ },
+ {
+  "case": "cdc-zombie-pandemic-2011",
+  "seconds": 12.0,
+  "epubBytes": 149719380,
+  "entryBytes": 150101619,
+  "imageBytes": 150056060,
+  "images": 42,
+  "peakRSS": 442580992,
+  "footprint": 341033896
+ },
+ {
+  "case": "census-rrs2002-01",
+  "seconds": 5.4,
+  "epubBytes": 5603145,
+  "entryBytes": 6487288,
+  "imageBytes": 6425006,
+  "images": 51,
+  "peakRSS": 264912896,
+  "footprint": 369411128
+ },
+ {
+  "case": "cia-blue-book-14-1955",
+  "seconds": 35.3,
+  "epubBytes": 206192885,
+  "entryBytes": 216581667,
+  "imageBytes": 215429830,
+  "images": 424,
+  "peakRSS": 269647872,
+  "footprint": 246612928
+ },
+ {
+  "case": "dga-2025-2030",
+  "seconds": 0.6,
+  "epubBytes": 5530314,
+  "entryBytes": 5675662,
+  "imageBytes": 5642963,
+  "images": 37,
+  "peakRSS": 106053632,
+  "footprint": 71123760
+ },
+ {
+  "case": "faa-phak-8083-25c",
+  "seconds": 44.7,
+  "epubBytes": 247075944,
+  "entryBytes": 249859812,
+  "imageBytes": 247749969,
+  "images": 567,
+  "peakRSS": 835452928,
+  "footprint": 558712128
+ },
+ {
+  "case": "fed-explained-2021",
+  "seconds": 4.6,
+  "epubBytes": 31540322,
+  "entryBytes": 32158493,
+  "imageBytes": 31801483,
+  "images": 57,
+  "peakRSS": 282820608,
+  "footprint": 177292176
+ },
+ {
+  "case": "gpo-911-2004",
+  "seconds": 14.0,
+  "epubBytes": 6731229,
+  "entryBytes": 8572123,
+  "imageBytes": 6054052,
+  "images": 50,
+  "peakRSS": 90800128,
+  "footprint": 68633440
+ },
+ {
+  "case": "gpo-our-flag-2003",
+  "seconds": 1.7,
+  "epubBytes": 13305746,
+  "entryBytes": 13444488,
+  "imageBytes": 13321610,
+  "images": 123,
+  "peakRSS": 108052480,
+  "footprint": 179094488
+ },
+ {
+  "case": "irs-p596-zhs-2025",
+  "seconds": 6.2,
+  "epubBytes": 15529419,
+  "entryBytes": 15871810,
+  "imageBytes": 15730481,
+  "images": 124,
+  "peakRSS": 159662080,
+  "footprint": 91587304
+ },
+ {
+  "case": "nbs-jres-geltman-1977",
+  "seconds": 1.9,
+  "epubBytes": 7062503,
+  "entryBytes": 7232414,
+  "imageBytes": 7193589,
+  "images": 42,
+  "peakRSS": 280150016,
+  "footprint": 86066064
+ },
+ {
+  "case": "ntrs-20180003024-earthdata-slides-2018",
+  "seconds": 0.7,
+  "epubBytes": 3978274,
+  "entryBytes": 4444696,
+  "imageBytes": 4426823,
+  "images": 21,
+  "peakRSS": 48496640,
+  "footprint": 25838360
+ },
+ {
+  "case": "ntrs-20190030725-dasc-2019",
+  "seconds": 0.7,
+  "epubBytes": 979867,
+  "entryBytes": 1077371,
+  "imageBytes": 1029344,
+  "images": 28,
+  "peakRSS": 50905088,
+  "footprint": 32473904
+ },
+ {
+  "case": "ntrs-20200002975-gwl-2020",
+  "seconds": 0.8,
+  "epubBytes": 6893081,
+  "entryBytes": 7061924,
+  "imageBytes": 6995849,
+  "images": 31,
+  "peakRSS": 130727936,
+  "footprint": 53855096
+ },
+ {
+  "case": "ntrs-20210020887-techport-thm-2021",
+  "seconds": 0.3,
+  "epubBytes": 1102329,
+  "entryBytes": 1173638,
+  "imageBytes": 1157097,
+  "images": 37,
+  "peakRSS": 42319872,
+  "footprint": 19481344
+ },
+ {
+  "case": "scotus-loper-bright-2024",
+  "seconds": 1.6,
+  "epubBytes": 98540,
+  "entryBytes": 274902,
+  "imageBytes": 0,
+  "images": 0,
+  "peakRSS": 41205760,
+  "footprint": 23593704
+ },
+ {
+  "case": "uscis-m618-arabic-2015",
+  "seconds": 5.8,
+  "epubBytes": 63451684,
+  "entryBytes": 63986302,
+  "imageBytes": 63720474,
+  "images": 148,
+  "peakRSS": 118407168,
+  "footprint": 73352032
+ },
+ {
+  "case": "uscourts-pro-se-1-2016",
+  "seconds": 0.2,
+  "epubBytes": 19931,
+  "entryBytes": 29687,
+  "imageBytes": 14434,
+  "images": 21,
+  "peakRSS": 36585472,
+  "footprint": 15729432
+ },
+ {
+  "case": "usda-ars-agresearch-2012-11",
+  "seconds": 4.8,
+  "epubBytes": 44172391,
+  "entryBytes": 44406469,
+  "imageBytes": 44356539,
+  "images": 52,
+  "peakRSS": 309182464,
+  "footprint": 126976768
+ },
+ {
+  "case": "usgs-mcs2025-copper",
+  "seconds": 0.2,
+  "epubBytes": 379144,
+  "entryBytes": 407132,
+  "imageBytes": 396291,
+  "images": 3,
+  "peakRSS": 34471936,
+  "footprint": 18301672
+ },
+ {
+  "case": "wallace-algebra-2010",
+  "seconds": 23.1,
+  "epubBytes": 43462908,
+  "entryBytes": 46885053,
+  "imageBytes": 45865642,
+  "images": 2025,
+  "peakRSS": 85786624,
+  "footprint": 64389984
+ }
+]

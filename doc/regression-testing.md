@@ -12,7 +12,7 @@ A valid EPUB can still contain incorrect text, wrong reading order or unreadable
   pixels, including crop origins, rotations, annotations and resource ceilings. Preserved-region
   tests also inspect fraction bars, raised exponents and all six cells of a ruled table in actual
   EPUB images at 72/144 DPI, with surrounding-prose and code controls.
-- `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->21<!-- counts:end --> complete PDF conversions,
+- `scripts/check-all.sh --corpus`: the same checks plus <!-- counts:documents -->22<!-- counts:end --> complete PDF conversions,
   sequentially, with EPUBCheck, monotonic progress, pinned source identities,
   [memory budgets](corpus.md) (the lowest peak of up to two conversions, since
   one measurement of a book's peak resident size varies by about 100 MiB under load, #140)
@@ -115,22 +115,23 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3103 targeted checks on 539 reviewed pages
-across 21 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
+[corpus/regressions.json](../corpus/regressions.json) has 3131 targeted checks on 547 reviewed pages
+across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
-*Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No. 14*, *Mineral Commodity
-Summaries 2025*, *Loper Bright Enterprises v. Raimondo*, *Disclosure Risk Assessment in Perturbative
-Microdata Protection*, *Welcome to the United States*, *Publication 596*, *Stimulated Multiphoton
-Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case*,
-*Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
-Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
-System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 1083 ordered-text, 205 text, 381 paragraph, 244 absent-text, 249 heading,
-20 heading-level, 50 absent-heading, 82 list-item, 1 preformatted-lines, 28 script, 6 absent-script,
-11 footnote, 34 note-link, 61 paragraph-continuation, 1 list-item-continuation,
-8 paragraph-separation, 81 distinct-paragraph, 189 image-presence, 35 captioned-image,
-86 page-reference, 102 warning, 111 absent-warning, 17 source-region, 5 glyph-structure,
-4 image-appearance and 9 table-cell checks, counted as `tools/check_corpus_content.py` counts them.
+*Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
+Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v. Raimondo*,
+*Disclosure Risk Assessment in Perturbative Microdata Protection*, *Welcome to the United States*,
+*Publication 596*, *Stimulated Multiphoton Bremsstrahlung in Electron-Ion Collisions*, *Replay
+Clocks*, *Complaint for a Civil Case*, *Investigation of Atmospheric Boundary-Layer Effects on
+Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm Compatible with a Distributed Management
+of Arrivals in the National Airspace System*, *Agricultural Research*, *Earthdata Cloud Analytics
+Project* and *Tank Health Monitoring*. They comprise 1083 ordered-text, 209 text, 387 paragraph,
+244 absent-text, 256 heading, 20 heading-level, 50 absent-heading, 82 list-item,
+1 preformatted-lines, 28 script, 6 absent-script, 11 footnote, 34 note-link,
+61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 81 distinct-paragraph,
+192 image-presence, 35 captioned-image, 93 page-reference, 103 warning, 111 absent-warning,
+17 source-region, 5 glyph-structure, 4 image-appearance and 9 table-cell checks, counted as
+`tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
 All source-page anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
@@ -180,9 +181,11 @@ the source-region, glyph-structure and appearance checks below cover selected re
 on selected regions; robust visual/semantic contracts still need expansion. The corpus
 lane does not supply a whole-book quality score or physical-device performance qualification.
 
-Full Warren and NOAA conversions remain explicitly excluded from this successful-conversion lane
-because of the known image-output ceiling failure (#5). The pinned Warren excerpt separately
-checks its two textless pages. These exclusions are listed in output, never counted as passes.
+The full Warren conversion remains explicitly excluded from this successful-conversion lane because
+of the known image-output ceiling failure (#5); the pinned Warren excerpt separately checks its two
+textless pages. NOAA joined the lane once its entry bytes fell under the default budget
+([evidence](../measurements/opaque-page-rasters/record.md)), and is gated like any other case.
+Exclusions are listed in output, never counted as passes.
 The manifest consistency test requires every corpus document to be covered or explicitly excluded.
 
 ## Source-region image checks
@@ -598,7 +601,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->826 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->827 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

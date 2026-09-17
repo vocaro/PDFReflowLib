@@ -1,0 +1,17 @@
+{
+  "case": "noaa-nca5-2023",
+  "passed": true,
+  "reviewPages": [
+    1,
+    33,
+    48,
+    80,
+    139,
+    900,
+    1700,
+    1834
+  ],
+  "contentChecks": 28,
+  "errors": [],
+  "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+}

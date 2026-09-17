@@ -79,13 +79,34 @@ enum PageRasterizer {
         }
     }
 
+    /// The same pixels, described as opaque, so PNG writes three channels instead of four.
+    ///
+    /// `image(page:rect:options:)` fills the raster opaque white before anything is drawn on
+    /// it, so every alpha byte is 255 and `premultipliedLast` and `noneSkipLast` describe the
+    /// identical bytes: premultiplying by 1 changes nothing. Relabelling reuses the raster's
+    /// own data provider, so no pixel is touched, nothing is copied, and a reader is not asked
+    /// to carry a constant alpha plane. Only the written file changes; the raster handed to
+    /// recognition and to the layer tests keeps the format Vision has been measured against.
+    static func opaque(_ image: CGImage) -> CGImage {
+        guard image.alphaInfo == .premultipliedLast, image.bitsPerPixel == 32,
+              let space = image.colorSpace, let provider = image.dataProvider,
+              let relabelled = CGImage(width: image.width, height: image.height,
+                  bitsPerComponent: image.bitsPerComponent, bitsPerPixel: image.bitsPerPixel,
+                  bytesPerRow: image.bytesPerRow, space: space,
+                  bitmapInfo: CGBitmapInfo(rawValue: CGImageAlphaInfo.noneSkipLast.rawValue),
+                  provider: provider, decode: nil, shouldInterpolate: image.shouldInterpolate,
+                  intent: image.renderingIntent)
+        else { return image }
+        return relabelled
+    }
+
     static func write(_ image: CGImage, to url: URL, jpegQuality: Double? = nil) throws {
         guard let destination = CGImageDestinationCreateWithURL(url as CFURL,
             (jpegQuality == nil ? UTType.png : UTType.jpeg).identifier as CFString, 1, nil) else {
             throw CocoaError(.fileWriteUnknown)
         }
         let properties = jpegQuality.map { [kCGImageDestinationLossyCompressionQuality: $0] as CFDictionary }
-        CGImageDestinationAddImage(destination, image, properties)
+        CGImageDestinationAddImage(destination, opaque(image), properties)
         guard CGImageDestinationFinalize(destination) else { throw CocoaError(.fileWriteUnknown) }
     }
 }

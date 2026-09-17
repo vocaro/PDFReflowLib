@@ -210,7 +210,7 @@
           "resolution": "Source pages 1 and 920 retain image-only fallback; the pinned nine-page excerpt has seven reflowed pages. See measurements/quality-and-raster-fixes/record.md."
         }
       ],
-      "baselineStatus": "Fails maximumOutputBytes (image output) after the last completed reconstruction page 390/920; no EPUB is published. See measurements/gpo-warren-1964/record.md.",
+      "baselineStatus": "Fails maximumOutputBytes (image output) after the last completed reconstruction page 436/920; no EPUB is published. The whole book needs 1,062.69 MiB of entry bytes as PNG, or 512.33 MiB with the smaller of PNG and JPEG 0.90 per image, against the 512 MiB default. See measurements/gpo-warren-1964/record.md and measurements/opaque-page-rasters/record.md.",
       "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/5",
       "rightsClearance": {
         "status": "owner-confirmed",
@@ -493,13 +493,17 @@
         1700,
         1834
       ],
-      "reviewStatus": "Default image-output budget still fails (latest last completed reconstruction page 599/1834). Explicit 4 GiB entry/final caps complete all 1834 pages with PNG or JPEG full pages; full-book structure, exact policy comparison, selected source images and Mac resource measurements are retained in measurements/noaa-output-policies/record.md. Broad fidelity and physical-device budgets remain unqualified.",
+      "reviewStatus": "Full default conversion completes, passes EPUBCheck, progress and the 1,280 MiB Mac RSS gate since the written page rasters stopped carrying a constant alpha plane (486.74 MiB of entry bytes against the 512 MiB default). Eight review pages checked against source renders; chapter-cover artwork, region crops and the page-1834 fallback are contracted. Text trapped inside region crops and whole-book fidelity remain unqualified.",
       "knownFidelityIssues": [],
       "downloadStatus": "Automated fetch returns HTTP 403; supplied cache matches pinned identity and publisher SHA-512. See measurements/noaa-nca5-2023/download-status.json.",
       "chapterReference": "corpus/noaa-nca5-2023-chapters.json",
-      "baselineStatus": "Default-budget failure remains excluded from the passing corpus gate. Explicit-policy full conversions measured on Mac; no configured case RSS ceiling or physical-device budget.",
+      "baselineStatus": "Gated in the default-policy corpus lane. Explicit-policy full conversions remain measured separately in measurements/noaa-output-policies/record.md; no physical-device storage or memory budget is established.",
       "baselineTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/5",
-      "chapterTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/15"
+      "chapterTrackingURL": "https://github.com/vocaro/PDFReflowLib/issues/15",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 1280,
+        "scope": "macOS 27 arm64 release CLI, library defaults; initial regression ceiling over measured peaks of 920-978 MiB, not a physical iOS device budget"
+      }
     },
     {
       "id": "gpo-our-flag-2003",

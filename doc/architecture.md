@@ -1020,6 +1020,11 @@ added; a removed head that furniture removal used to take no longer reports `fur
 selects PNG, JPEG quality, or the smaller encoding for full-page images and cropped regions.
 The asset registry records the actual format and file URL; the writer uses matching extensions
 and MIME types. Encoding selection retains at most one raster and two candidate files at a time.
+Each raster is drawn over an opaque white fill, so its alpha channel is a constant 255 plane;
+writing relabels the image opaque over its own pixel buffer, copying nothing, so PNG records
+three channels instead of four. Recognition, the text-layer tests and annotation evidence keep
+the unrelabelled raster, so only the written file changes
+([evidence](../measurements/opaque-page-rasters/record.md)).
 Supplementary reference policy is independent of mandatory fallback pages and region preservation.
 Omitted recommended references have explicit warnings that refer to the source PDF.
 See [conversion options](conversion-options.md). Whole-page crop/rotation is

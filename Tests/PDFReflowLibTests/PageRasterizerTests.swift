@@ -84,6 +84,40 @@ private func coloredBounds(_ image: CGImage, green: Bool = false) throws -> CGRe
     #expect(try coloredBounds(hidden) == CGRect(x: 30, y: 20, width: 60, height: 40))
 }
 
+@Test func writtenPNGDropsTheRastersConstantAlphaWithoutChangingAPixel() throws {
+    let document = try #require(PDFDocument(data: rasterTestPDF(offset: true, rotation: 0)))
+    let page = try #require(document.page(at: 0))
+    var options = ConversionOptions(); options.rasterDPI = 144
+    let image = try PageRasterizer.image(page: page, rect: page.bounds(for: .cropBox), options: options)
+    // The raster keeps the format recognition is measured against, and every alpha byte in it
+    // is 255 because the page is drawn over an opaque white fill.
+    #expect(image.alphaInfo == .premultipliedLast)
+    let raster = try #require(image.dataProvider?.data as Data?)
+    #expect(stride(from: 3, to: raster.count, by: 4).allSatisfy { raster[$0] == 255 })
+
+    // `opaque` relabels those identical bytes, so the file loses only the constant plane.
+    let relabelled = PageRasterizer.opaque(image)
+    #expect(relabelled.alphaInfo == .noneSkipLast)
+    #expect(relabelled.dataProvider?.data as Data? == raster)
+
+    let directory = FileManager.default.temporaryDirectory
+        .appendingPathComponent("opaque-raster-" + UUID().uuidString)
+    try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+    defer { try? FileManager.default.removeItem(at: directory) }
+    let (url, format) = try PageRasterizer.encode(image, at: directory.appendingPathComponent("page"),
+                                                  encoding: .png)
+    #expect(format == .png)
+    // PNG colour type is the IHDR data's tenth byte: 2 is truecolour, 6 truecolour with alpha.
+    let colorType = try Data(contentsOf: url)[25]
+    #expect(colorType == 2, "expected a three-channel PNG, found colour type \(colorType)")
+
+    // The decoded file still carries the drawn rectangle at the same pixels.
+    let decoded = try #require(CGImageSourceCreateWithURL(url as CFURL, nil)
+        .flatMap { CGImageSourceCreateImageAtIndex($0, 0, nil) })
+    #expect(decoded.width == image.width && decoded.height == image.height)
+    #expect(try coloredBounds(decoded) == coloredBounds(image))
+}
+
 @Test func annotationAndSourceCropShareCoordinatesWithoutPageRotation() throws {
     let document = try #require(PDFDocument(data: rasterTestPDF(offset: true, rotation: 90)))
     let page = try #require(document.page(at: 0))

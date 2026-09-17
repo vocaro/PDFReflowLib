@@ -30,7 +30,7 @@ work offline. Tests and conversion never fetch sources automatically.
 | `gpo-911-2004` | 585 | Untagged digital text, alternating headers, tracked lettering, endnotes | 256 MiB |
 | `fed-explained-2021` | 135 | Tagged text, recurring tables, organization charts and flow diagrams | 768 MiB |
 | `dga-2025-2030` | 10 | Illustrated section bands, gradients, bullet columns and callouts | 192 MiB |
-| `noaa-nca5-2023` | 1,834 | Large tagged report, mixed orientations, 32 chapter starts, uneven graphics | Unset: default conversion fails |
+| `noaa-nca5-2023` | 1,834 | Large tagged report, mixed orientations, 32 chapter starts, uneven graphics | 1,280 MiB |
 | `gpo-our-flag-2003` | 56 | Structure-tree inconsistencies, flag illustrations, drop capitals, one visible table | 192 MiB |
 | `cdc-zombie-pandemic-2011` | 42 | Comic artwork, noisy inherited text, image-only dialogue, panel order | 512 MiB |
 | `cia-blue-book-14-1955` | 312 | Scanned statistical tables, inherited OCR, negative warning/refusal contract | 512 MiB |
@@ -250,9 +250,16 @@ python3 tools/evaluate-real-document.py --case gpo-warren-1964 \
   --output /tmp/warren-baseline --epubcheck /opt/homebrew/bin/epubcheck
 ```
 
-The recorded default-budget baseline exits unsuccessfully after reconstruction page 390
-when page-image output exceeds 512 MiB. The measurement runner retains that failure and
-memory/progress evidence. A [full-book encoding experiment](../measurements/warren-image-encoding/record.md)
+The default-budget baseline exits unsuccessfully after reconstruction page 436 of 920 when
+page-image output exceeds 512 MiB (page 390 before written rasters
+[stopped carrying a constant alpha plane](../measurements/opaque-page-rasters/record.md)). The
+whole book needs 1,114,310,156 entry bytes as PNG, 2.08× the default, and 537,220,320 — still
+349,408 bytes over — when each image takes the smaller of PNG and JPEG 0.90, which is the best any
+per-image encoding choice can do at that quality. Its 910 full-page references are colour scans,
+and 512 MiB over 920 pages is 583 KiB a page. What is left is a policy decision about default
+encoding, raster DPI, or references on books where nearly every page is unverified, not a
+measurement. The measurement runner retains the failure and memory/progress evidence. A
+[full-book encoding experiment](../measurements/warren-image-encoding/record.md)
 completes with an explicit 2 GiB experimental override; the default-budget gate remains unresolved.
 The [production client-policy runs](../measurements/client-options/record.md) also complete all
 920 pages, with JPEG references or with supplementary references omitted, under explicit final
@@ -396,18 +403,31 @@ supplied/downloaded original in the indicated cache; the same fetch command veri
 A failed fresh fetch returns nonzero and does not create a substitute. The original matches
 NOAA's published SHA-512 as well as the manifest's SHA-256. NOAA declares CC0/Public Domain.
 
-The [full-run baseline](../measurements/noaa-nca5-2023/record.md) fails the image-output ceiling
-after reconstruction page 598; the latest default run fails after page 599. The
-[explicit-policy comparison](../measurements/noaa-output-policies/record.md) completes all
-1,834 pages with automatic references, PNG crops and either PNG or JPEG 0.90 full pages under
-4 GiB experimental entry/final caps. Both pass EPUBCheck and preserve identical chapter text,
-source anchors and crop bytes, with selected source-image review and late cancellation checks.
-Peak converter RSS is about 1.04 billion bytes in these single Mac runs; no case RSS ceiling
-or physical-device budget is established. Default-budget failure remains outside the passing
-corpus lane. [Output-budget issue #5](https://github.com/vocaro/PDFReflowLib/issues/5)
-and [chapter-aware splitting issue #15](https://github.com/vocaro/PDFReflowLib/issues/15) track
-separate gaps. The current writer's approximate 60,000-byte file splitting does not follow PDF
-chapters or bound the memory of whole-document reconstruction.
+The full report now converts under library defaults and is gated in the corpus lane. Two earlier
+changes and one made for it moved the book across the 512 MiB entry budget: #151 stopped its
+15,098 links forcing a page image, which removed 803 references and carried the default run from
+reconstruction page 599 to 1,727 of 1,834; then written page rasters
+[stopped carrying their constant alpha plane](../measurements/opaque-page-rasters/record.md),
+taking the book to 510,379,982 entry bytes, 25.26 MiB under the budget. The published EPUB is
+502,665,496 bytes with 1,548 images, of which 62 are source-page references for the chapter
+covers, whose full-bleed artwork exists nowhere else in the output. Conversion takes about 121
+seconds and peaks at 920–978 MiB resident against the 1,280 MiB case ceiling, so NOAA costs a full
+corpus run about two minutes and half a gigabyte of transient output. The contract covers review
+pages 1, 33, 48, 80, 139, 900, 1700 and 1834, read against source renders: chapter covers keep
+their page image, ordinary illustrated pages must not fall back to one, and page 1834's agency
+seals stay an image under `pageImageFallback`. Headroom is 4.9%, so a change that adds image bytes
+to this book will fail this gate.
+
+The [earlier full-run baseline](../measurements/noaa-nca5-2023/record.md) and the
+[explicit-policy comparison](../measurements/noaa-output-policies/record.md), which completed all
+1,834 pages under 4 GiB experimental caps with PNG or JPEG 0.90 full pages, remain the record of
+how the book behaved before those changes. Broad fidelity is still unqualified:
+[issue #181](https://github.com/vocaro/PDFReflowLib/issues/181) records the text trapped inside
+page 48's figure crop and the contributor lines fused into one paragraph, both visible in the
+reviewed pages and neither approved by the contract. No physical-device storage or memory budget is established.
+[Chapter-aware splitting issue #15](https://github.com/vocaro/PDFReflowLib/issues/15) remains open;
+the current writer's approximate 60,000-byte file splitting does not follow PDF chapters or bound
+the memory of whole-document reconstruction.
 
 
 ## Our Flag

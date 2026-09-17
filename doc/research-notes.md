@@ -16,8 +16,14 @@ evidence. Open follow-up work belongs in GitHub issues, not here.
 - **Full-book JPEG re-encoding.** Re-encoding the full 920-page Warren report as JPEG
   substantially reduces file size but both tested quality variants still exceed the default
   entry-byte budget, so this was not adopted as a general fix for the image-output ceiling. See
-  [warren-image-encoding evidence](../measurements/warren-image-encoding/record.md). The
+  [warren-image-encoding evidence](../measurements/warren-image-encoding/record.md). Taking the
+  smaller of PNG and JPEG 0.90 per image, the best a per-image encoding choice can do at that
+  quality, still leaves the book 349,408 bytes over the 512 MiB default
+  ([opaque-page-rasters evidence](../measurements/opaque-page-rasters/record.md)). The
   underlying ceiling is tracked in [#5](https://github.com/vocaro/PDFReflowLib/issues/5).
+- **Grayscale page rasters.** Rewriting the scans as 8-bit gray would cost about 73% of their
+  bytes, but the pages are yellowed paper whose channels differ by a mean of 26–55 levels, so it
+  is a quality change, not a free one, and was not taken.
 
 ## Raster DPI and encoding defaults
 

@@ -105,7 +105,9 @@ that fall back to images skip unused attributed-text decoding. Failures use
   elsewhere in the book and there is no evidence of the corresponding compound. The remainder of
   a broken word at the start of a line is not counted as a book word. Inside a web
   address, the book's own unbroken addresses decide instead of prose compounds. Ambiguous
-  joins retain the hyphen and produce a warning.
+  joins retain the hyphen and produce a warning. A book that prints hundreds of line-end word
+  breaks as `=` (the 9/11 report's chapters 5–9) has them treated as its hyphen. A hyphen inside
+  an alphanumeric code (`265A-NY-` + `280350-HQ`) joins without a space.
 - Short recurring headers and footers can be removed when at least three pages support the
   decision, including a two-row running head (title row with folio, section row) in the outer
   fifth of the page. Page-bottom footnotes under a dash separator, set smaller than the body and
@@ -191,9 +193,9 @@ and requires identical output. Missing sources fail with acquisition instruction
 automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic lane (it also
 converts each fixture twice and requires byte-identical EPUBs).
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
-and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold 502
-checks on 122 pages, including full-resolution stroke checks for equations and a table, and
-scale/contrast/color checks for a flag and an FAA figure; a `tableCells` checker is ready for tables
+and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold 1528
+checks on 353 pages of 15 documents, including full-resolution stroke checks for equations and a
+table, scale/contrast/color checks for a flag and an FAA figure, and 8 cell checks on tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and
 adding a case.
 

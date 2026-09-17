@@ -311,7 +311,25 @@ into a book word and are not both words (`communi-` + `cations.htm`; NOAA's `es-
 where `es` is a book word from DOI segments). Otherwise it stays and the
 page warns (`uncertainHyphen`). A period after a closing parenthesis, or before a capital, ends
 the sentence. The same test keeps a list item's first wrapped line after a marker line ending
-inside an address (`(AIM)—www.faa.` + `gov/…`).
+inside an address (`(AIM)—www.faa.` + `gov/…`). A hyphen inside an alphanumeric code before a
+digit or capital joins without a space and keeps the hyphen (#127: `265A-NY-` + `280350-HQ`,
+`CTC 2002-` + `30060CH`, `C-` + `130H`, `PA-` + `23`). The code is the run of ASCII letters,
+digits and hyphens ending the line (not after an address character) and the run opening the
+next, which ends at a space or closing punctuation. Every hyphen-separated segment is capitals
+and digits or digits with a one- or two-letter lowercase suffix (`7e`), and one segment mixes
+digits and letters, or the line ends in a segment of two or more capitals before a digit.
+Prose compounds (`non-` + `Muslims`, `mid-` + `1990s`) and citation ranges running into the
+next citation (`601-` + `CE 1318`) keep the space.
+A book may print its line-end hyphen as another glyph. The 9/11 report's chapters 5–9 set every
+word break with the embedded Bembo's `equal` glyph (width 667, a two-bar outline, ToUnicode
+U+003D), so it extracts as `=` (#126). Extraction counts, over the book's native pages, lines
+that end in `=` directly after two ASCII letters, hold no other `=` and whose last word is not an
+address, followed by a line opening lowercase, against every other line holding `=`. At least 100
+such breaks, outnumbering the other lines ten to one, mark `=` as the book's hyphen (9/11: 993
+against 5 URL-query lines; no other corpus book has one). Before reconstruction every accepted
+line end in such a book becomes `-`, so the formula seed no longer reads it as an equation and
+the hyphen policy above decides the join. Vocabulary collection skips the word after an accepted
+`=` line end as it does after `-`.
 `FootnoteDetector` recognizes page-bottom footnotes: a line of three or more dash characters
 after at least three body-size lines, followed to the end of the page only by untagged
 proportional lines at most 90% of that body size, in one column at close spacing, each note

@@ -177,6 +177,8 @@ enum PDFReflowLibPipeline {
         let store = PageStore(directory: workspace.appendingPathComponent("pages"))
 
         var vocabulary: Set<String> = []
+        /// Line ends showing the book prints its hyphen as `=` (#126).
+        var equalsHyphens = LayoutReconstructor.EqualsHyphenEvidence()
         /// Pages whose narrow section labels are set in each style (#73).
         var labelEvidence: [LayoutReconstructor.LabelStyle: Int] = [:]
         /// Pages whose heading-size lines are set in each style (#84).
@@ -237,6 +239,7 @@ enum PDFReflowLibPipeline {
             // Retained unreadable text supplies no hyphen-repair vocabulary.
             if !extracted.damagedEncoding || content.recognized {
                 LayoutReconstructor.addVocabulary(of: content, to: &vocabulary)
+                equalsHyphens.add(content)
                 for style in LayoutReconstructor.labelEvidence(on: content) { labelEvidence[style, default: 0] += 1 }
                 for style in LayoutReconstructor.headingEvidence(on: content) { headingEvidence[style, default: 0] += 1 }
             }
@@ -252,6 +255,7 @@ enum PDFReflowLibPipeline {
         let furniturePlan = options.removeRepeatedHeadersAndFooters ? FurnitureDetector.resolve(furniture) : nil
         furniture = FurnitureDetector.Ledger()
         let labelStyles = LayoutReconstructor.labelStyles(from: labelEvidence)
+        let equalsMarksHyphens = equalsHyphens.marksHyphens
         let headingStyles = LayoutReconstructor.labelStyles(from: headingEvidence)
         // Furniture warnings keep their place between extraction and reconstruction warnings.
         let furnitureWarningIndex = warnings.count
@@ -275,6 +279,7 @@ enum PDFReflowLibPipeline {
             if let furniturePlan, let warning = FurnitureDetector.apply(furniturePlan, to: &content, pageIndex: i) {
                 furnitureWarnings.append(warning)
             }
+            if equalsMarksHyphens { LayoutReconstructor.restoreEqualsHyphens(&content) }
             let previousPage = i > 0 && !chapterStartPages.contains(content.number) ? previous : nil
             var regions: [CGRect] = []
             try autoreleasepool {

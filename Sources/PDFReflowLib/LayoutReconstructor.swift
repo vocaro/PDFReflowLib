@@ -18,7 +18,7 @@ enum LayoutReconstructor {
         var previous: String?
         for line in page.lines {
             var words = line.text.lowercased().split(whereSeparator: { !$0.isLetter && $0 != "-" })
-            if let previous, previous.hasSuffix("-") || previous.hasSuffix("\u{00ad}"),
+            if let previous, previous.hasSuffix("-") || previous.hasSuffix("\u{00ad}") || endsWithEqualsHyphen(previous),
                line.text.first?.isLowercase == true, let first = words.first, !first.contains("-") {
                 words.removeFirst()
             }
@@ -58,6 +58,63 @@ enum LayoutReconstructor {
             }
         }
         return result
+    }
+
+    /// A line whose last character may be a book's line-end hyphen printed as `=` (#126): the 9/11
+    /// report's chapters 5–9 set every word break with the Bembo `equal` glyph (`worship=`, `Feb=`),
+    /// which extracts as `=`. The sign follows two ASCII letters with no space, the line holds no
+    /// other `=`, and its last word is not a web address (`?letter=`). Math sets its terms as
+    /// letters too (`b=`, `slope=`), so this shape alone decides nothing; `EqualsHyphenEvidence`
+    /// decides per book.
+    static func endsWithEqualsHyphen(_ text: String) -> Bool {
+        guard text.hasSuffix("="), !text.dropLast().contains("=") else { return false }
+        let letters = text.dropLast().suffix(2)
+        guard letters.count == 2, letters.allSatisfy({ $0.isASCII && $0.isLetter }) else { return false }
+        let word = text.split(whereSeparator: \.isWhitespace).last ?? ""
+        return !word.contains(where: { "/?&#@".contains($0) }) && !word.lowercased().contains("www.")
+    }
+
+    /// Book-level evidence that `=` at a line end is the book's hyphen (#126). A break is a line
+    /// `endsWithEqualsHyphen` accepts whose next line opens lowercase; every other line holding
+    /// `=` counts against. The 9/11 report has 993 breaks against 5 URL-query lines; no other
+    /// English corpus book has a single break (Wallace's `slope=` and `16oz=` lines continue with
+    /// numbers, its `b=` + `c` and `sinθ=` + `opposite` fail the letter test). Hundreds of
+    /// breaks, outnumbering other `=` lines ten to one, mark the book.
+    struct EqualsHyphenEvidence: Equatable {
+        var breaks = 0
+        var equations = 0
+
+        var marksHyphens: Bool { breaks >= 100 && equations * 10 <= breaks }
+
+        mutating func add(_ page: PageContent) {
+            guard !page.recognized else { return }
+            for (index, line) in page.lines.enumerated() where line.text.contains("=") {
+                if LayoutReconstructor.endsWithEqualsHyphen(line.text) {
+                    if index + 1 < page.lines.count, page.lines[index + 1].text.first?.isLowercase == true { breaks += 1 }
+                } else {
+                    equations += 1
+                }
+            }
+        }
+    }
+
+    /// Rewrites each line-end `=` that `endsWithEqualsHyphen` accepts to `-` in a book whose
+    /// evidence marks `=` as its hyphen, before any reconstruction reads the page. The hyphen
+    /// policy then decides the join (`terror=` + `ist` joins, `mid=` + `1990s` keeps its hyphen),
+    /// and the formula seed no longer reads the line as an equation.
+    static func restoreEqualsHyphens(_ page: inout PageContent) {
+        guard !page.recognized else { return }
+        for index in page.lines.indices where endsWithEqualsHyphen(page.lines[index].text) {
+            let old = page.lines[index]
+            guard case let .text(value, style)? = old.content.elements.last, value.hasSuffix("=") else { continue }
+            var content = old.content
+            content.elements[content.elements.count - 1] = .text(String(value.dropLast()) + "-", style)
+            var line = TextLine(content: content, rect: old.rect, fontSize: old.fontSize, monospaced: old.monospaced,
+                                wraps: old.wraps)
+            line.readingRect = old.readingRect
+            line.structure = old.structure
+            page.lines[index] = line
+        }
     }
 
     /// Web addresses seen unbroken, for resolving a line-end hyphen inside an address (#88). The
@@ -3363,6 +3420,43 @@ enum LayoutReconstructor {
         }
     }
 
+    /// A line broken at a hyphen inside an alphanumeric code before a digit or capital continues
+    /// the code with its hyphen and no space (#127): FBI serials (`265A-NY-` + `280350-HQ`,
+    /// `315N-NY-280350-` + `BS`), report numbers (`CTC 2002-` + `30060CH`) and designations (`C-` +
+    /// `130H`, `MI-` + `5`, `PA-` + `23`). The code is the run of
+    /// ASCII letters, digits and hyphens ending the line (not after an address character) and the
+    /// run opening the next, which must end at a space or closing punctuation. Every
+    /// hyphen-separated segment is capitals and digits (`NY`, `280350`, `130H`) or digits with a
+    /// short lowercase suffix (`7e`). One segment must mix digits and letters, or the line must end
+    /// in a segment of capitals before a digit. Prose compounds keep the prose rule (`non-` +
+    /// `Muslims`, `mid-` + `1990s`), as do citation ranges running into the next citation (`601-` +
+    /// `CE 1318`) and hyphenated words before a folio (`pres-` + `62`).
+    static func codeContinues(_ left: String, _ right: String) -> Bool {
+        guard left.hasSuffix("-"), let next = right.first, next.isASCII, next.isNumber || next.isUppercase else { return false }
+        let isCodeCharacter: (Character) -> Bool = { $0.isASCII && ($0.isLetter || $0.isNumber || $0 == "-") }
+        let leftRun = left.reversed().prefix(while: isCodeCharacter).reversed()
+        if let before = left.dropLast(leftRun.count).last, "/._@:#?&=%~+\\".contains(before) { return false }
+        let leftCode = String(leftRun.drop { $0 == "-" })
+        let rightCode = String(right.prefix(while: isCodeCharacter))
+        if let after = right.dropFirst(rightCode.count).first, !after.isWhitespace, !".,;:)]”’\"'".contains(after) {
+            return false
+        }
+        let segments = (leftCode + rightCode).split(separator: "-", omittingEmptySubsequences: false)
+        guard leftCode.count > 1, !rightCode.hasSuffix("-"), segments.count >= 2,
+              !segments.contains(where: \.isEmpty) else { return false }
+        func isUppercaseCode(_ segment: Substring) -> Bool { segment.allSatisfy { $0.isUppercase || $0.isNumber } }
+        func isSuffixedNumber(_ segment: Substring) -> Bool {
+            let digits = segment.prefix(while: \.isNumber)
+            return !digits.isEmpty && (1...2).contains(segment.count - digits.count)
+                && segment.dropFirst(digits.count).allSatisfy(\.isLowercase)
+        }
+        guard segments.allSatisfy({ isUppercaseCode($0) || isSuffixedNumber($0) }) else { return false }
+        let mixed = segments.contains { $0.contains(where: \.isNumber) && $0.contains(where: \.isLetter) }
+        let lastLeft = leftCode.dropLast().split(separator: "-").last ?? ""
+        let capitals = lastLeft.count >= 2 && lastLeft.allSatisfy(\.isUppercase) && next.isNumber
+        return mixed || capitals
+    }
+
     private static let addressDelimiters = Set("/.?#&=:")
     private static let addressPrefixKey = "\u{1}address:"
     private static let addressSegmentKey = "\u{1}segment:"
@@ -3431,6 +3525,7 @@ enum LayoutReconstructor {
         if left.hasSuffix("/"), let before = left.dropLast().last, before.isLetter || before.isNumber || before == "/",
            let next = right.first, next.isLetter || next.isNumber { return .concatenate }
         if addressContinues(left, right) { return .concatenate }
+        if codeContinues(left, right) { return .concatenate }
         guard left.hasSuffix("-"), right.first?.isLowercase == true else { return .space }
         if let address = trailingAddress(left) {
             return addressHyphenOperation(address, right, vocabulary: vocabulary, page: page, warnings: &warnings)

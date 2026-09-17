@@ -112,15 +112,15 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 1116 targeted checks on 251 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 1528 targeted checks on 353 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 340 ordered-text, 94 text, 149 paragraph,
-97 absent-text, 108 heading, 24 absent-heading, 30 list-item, 17 script, 11 footnote, 27 note-link,
-28 paragraph-continuation, 1 list-item-continuation, 5 paragraph-separation, 23 distinct-paragraph,
-84 image-presence, 57 warning, 1 absent-warning, 12 source-region, 3 glyph-structure,
-3 image-appearance and 2 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
+the NBS and Replay Clocks academic papers). They comprise 499 ordered-text, 113 text, 194 paragraph,
+116 absent-text, 161 heading, 32 absent-heading, 53 list-item, 1 preformatted-lines, 17 script,
+11 footnote, 34 note-link, 38 paragraph-continuation, 1 list-item-continuation, 7 paragraph-separation,
+39 distinct-paragraph, 117 image-presence, 59 warning, 10 absent-warning, 12 source-region,
+3 glyph-structure, 3 image-appearance and 8 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
 anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
 
 The checks preserve selected correct words, paragraph semantics and cross-page continuity, paragraph/list order, license attribution, image
@@ -474,7 +474,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-463 Swift tests with no known-issue wrappers, and 204 Python tests.
+590 Swift tests with no known-issue wrappers, and 214 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -499,6 +499,17 @@ spaced example lines out of the list items, with and without crops; synthetic co
 wrapped line at the ordinary gap, a spaced line opening lowercase and a page with no measurable gap
 in the item. The CDC contract adds pages 14, 17, 23 and 34 and the Wallace contract pages 50, 64 and
 218. See the [fallback-block and ligature evidence](../measurements/fallback-blocks-and-ligatures/record.md).
+
+`EqualsHyphenTests.swift` covers [#126](https://github.com/vocaro/PDFReflowLib/issues/126) and
+[#127](https://github.com/vocaro/PDFReflowLib/issues/127). 9/11 fixtures 172, 210, 235 and 313
+crop a body line and its note marker at a `=` line end as extracted, and have no crop and a linked
+marker once the book's `=` hyphens are restored (255 is the control #119 already freed). Pages 172,
+235 and 242 run the restored breaks through the hyphen policy. The book evidence has threshold and
+ratio controls, and the Wallace 110/288/289/291, NBS 7 and FAA 227 fixtures carry none. Code joins
+cover FBI serials within page 546 and across 550→551, with prose-compound, citation-range and
+folio controls. The 9/11 contract checks the four recovered links, their pages' image counts, joined
+and kept breaks and serials. See the
+[equals-hyphen and code evidence](../measurements/equals-hyphen-and-codes/record.md).
 
 `InvisibleTextTests.swift` covers exclusively hidden OCR text, visible Courier and genuine
 font-size headings, mixed text modes, saved graphics state, nested forms and malformed modes.

@@ -734,6 +734,28 @@ test. The FAA contract checks separated rows, addresses and checklist entries on
 318's joined report value; the Dietary Guidelines contract checks pages 2, 4, 8 and 9. See the
 [remaining tag rejection evidence](../measurements/tag-rejections-remaining/record.md).
 
+## Headings left below columns, stacked sections and Roman front-matter folios
+
+`DGABulletsAndContentsFolioTests.swift` covers [#103](https://github.com/vocaro/PDFReflowLib/issues/103)
+and [#105](https://github.com/vocaro/PDFReflowLib/issues/105). The `dga-4` fixture, reconstructed without
+graphics as the pipeline does for its page-sized background, must read the right column's last bullet,
+its `- Vegetables` and `- Fruits` sub-items, `Incorporate Healthy Fats` and that section's first bullet
+consecutively. The `dga-9` fixture must read `Older Adults`, its band, the left column's five lines as
+one paragraph and then the right column's five, with the tagged sections still whole. Synthetic
+controls: a title over two columns and a heading 14 pt beneath them with 15 pt beneath the heading
+(`trailingHeading`), where a body-type line, a list line or a heading without its own 1.1-body band
+stays; and stacked sections joined by a heading row with its band (`headingRow`), refused without a
+figure in the row, with body-type text, with a figure reaching into the lines above, or with nothing
+below. `faa-5`, `faa-6-tagged`, `faa-7` and `faa-8` must lose `vii`, `viii` and `ix` and nothing else,
+while page 5's `v`, whose offset no other page shares, stays, and two pages are no run. Synthetic
+controls accept one-letter numerals and a folio shifted within the band, and refuse a changing
+offset, `iiii`, a word, a folio above the footer band and an Arabic folio of equal value. With the two
+rules disabled and `FurnitureDetector` restored to `d333b4d`, all six tests fail; removing each of eleven
+guards fails a test. The Dietary
+Guidelines contract checks page 4's order and page 9's columns, and the FAA contract checks the absent
+folios on pages 7, 12 and 15. See the
+[DGA bullets and contents folio evidence](../measurements/dga-bullets-and-contents-folio/record.md).
+
 ## Text the rendering never shows
 
 `HiddenTextTests.swift` builds in-memory pages for #74 and #85: a running head painted before an

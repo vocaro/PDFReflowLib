@@ -338,7 +338,8 @@ removed only together with every line of the row above it, so a two-row head (ti
 folio, opinion row) goes as a unit and a repeated line beneath unrepeated titles stays.
 Boundary page numbers use a consistent physical-page offset; chapter-page folios, numbered (`5-17`) or lettered for an appendix (`C-2`, #90), retain their prefix and use glyph height
 so fallback font estimates do not break matching; a bare folio is a candidate even on a page with no
-other line. Internal digits remain meaningful. Matching body titles, nearby captions and a page's
+other line. A line that is nothing but a canonical Roman numeral in 1–400 (one letter included) is a
+bare folio keyed by its offset the same way, so the FAA's front-matter folios `iii` … `xvi` go (#105). Internal digits remain meaningful. Matching body titles, nearby captions and a page's
 only text are retained, except a blank page's lone folio in a folio run (FAA `A-8` and `G-36`,
 Wallace pages 175 and 437; #97), which leaves the page's boundary without text. Each affected page reports
 `furnitureRemoved`; clients can disable removal with `removeRepeatedHeadersAndFooters`.
@@ -353,7 +354,12 @@ band of two or more lines is column content, and a column whose neighbour has en
 own tail. When no gutter separates every element and no horizontal band exists, a gutter
 measured over text lines alone is cut provided every element still lies wholly on one side, so a
 figure whose rectangle overhangs the prose joins the column it heads (#56); a row-banded grid is
-cut into its rows first. `TableRegionDetector`
+cut into its rows first. A horizontal cut that leaves one or two heading-type lines (1.25 body, not
+list lines) alone beneath the last band of more than 1.1 body in the part above is moved to that band,
+so the heading reads with the content below it rather than inside the columns above it; and where
+no cut exists at all, a heading-type line and the figures in its row, with nothing else reaching into
+the row's height, separate the content above the row from the content below it, each part cut on its
+own (DGA pages 4 and 9, #103). `TableRegionDetector`
 recognizes aligned numeric dot-leader rows with a nearby textual header and preserves their
 complete region with `imageRegion` warnings. It also recognizes borderless statistical tables
 whose column headers are underlined: a row of at least three thin underlines, or one short

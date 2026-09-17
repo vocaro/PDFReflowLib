@@ -112,7 +112,13 @@ enum FurnitureDetector {
             let folioParts = words.count == 1 ? words[0].split(separator: "-", omittingEmptySubsequences: false) : []
             // A bare page number, chapter-prefixed (`5-17`) or lettered for an appendix, glossary or
             // index (`c-2`, #90): the prefix names the part and the last number counts its pages.
-            let isFolio = (1...2).contains(folioParts.count) && folioParts.last.map({ Int($0) != nil }) == true
+            // A bare Roman numeral numbers front matter the same way: FAA's front matter carries
+            // `iii` … `xvi` alone at the foot, which no text group could repeat (#105). Alone on its
+            // line, one letter (`v`, `x`) is a numeral too: `folioValue` refuses it only because an
+            // initial beside head text is not a page number.
+            let romanFolio = words.count == 1 ? romanValue(words[0]) : nil
+            let isFolio = romanFolio != nil
+                || (1...2).contains(folioParts.count) && folioParts.last.map({ Int($0) != nil }) == true
                 && (folioParts.count == 1 || Int(folioParts[0]) != nil || isPartLetter(folioParts[0]))
             // A bare folio has its own numeric/position evidence. Nearby figure labels
             // must not stop a chapter-page number from being recognized, and neither must
@@ -144,6 +150,12 @@ enum FurnitureDetector {
                 ledger.folios.append(FolioCandidate(candidate: candidate, edge: edge, kind: folio.kind,
                                                     offset: offset, typeSize: line.fontSize,
                                                     bare: words.count == 1, rowMates: mates))
+            }
+            // Like an Arabic folio below, a bare Roman one is keyed by its offset from the physical
+            // page, so the same three-page run, band and size rules decide it.
+            if let value = romanFolio {
+                let (offset, overflow) = value.subtractingReportingOverflow(page.number)
+                if !overflow { ledger.groups[edge + "roman-#(offset=\(offset))", default: []].append(candidate) }
             }
             if isFolio, folioParts.count == 2, let value = Int(folioParts[1]) {
                 let (offset, overflow) = value.subtractingReportingOverflow(page.number)

@@ -1,0 +1,59 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "dga-2025-2030",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "5390c43c90d30c25e9311ca9e6dae3bb58a03679bd18a4cf81a96fa66e9d6a15",
+  "candidateConverterSHA256": "45d607563079a78a8c6cee34418dc397a1de6f0877aaf2e474c6bd2c5a95e04e",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "base",
+      "programsSHA256": "4f5fad18c8f4a7fb55f30f969c43746a0d9b9d95bb1f6a823b7ef25cae64b9d4"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "cand",
+      "programsSHA256": "4f5fad18c8f4a7fb55f30f969c43746a0d9b9d95bb1f6a823b7ef25cae64b9d4"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [],
+  "changedPages": [
+    4,
+    9
+  ],
+  "changedPageFields": {
+    "4": [
+      "markup",
+      "text"
+    ],
+    "9": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 1,
+    "fields": {
+      "paragraphIDs": 1
+    },
+    "navigationEntries": 1
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

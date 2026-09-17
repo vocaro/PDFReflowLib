@@ -1223,6 +1223,8 @@ enum LayoutReconstructor {
                     + ordered(parts.columns, bodySize: bodySize, depth: depth + 1)
                     + ordered(parts.foot, bodySize: bodySize, depth: depth + 1)
             }
+            // A heading left alone at the foot of the part above heads the part below (#103).
+            let y = trailingHeading(elements, cut: y, bodySize: bodySize) ?? y
             return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1)
                 + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1)
         }
@@ -1250,6 +1252,12 @@ enum LayoutReconstructor {
             return ordered(parts.head, bodySize: bodySize, depth: depth + 1)
                 + ordered(parts.columns, bodySize: bodySize, depth: depth + 1)
                 + ordered(parts.foot, bodySize: bodySize, depth: depth + 1)
+        }
+        // A heading set in a row with a figure divides the sections above and below it (#103).
+        if let parts = headingRow(elements, bodySize: bodySize) {
+            return ordered(parts.above, bodySize: bodySize, depth: depth + 1)
+                + ordered(parts.row, bodySize: bodySize, depth: depth + 1)
+                + ordered(parts.below, bodySize: bodySize, depth: depth + 1)
         }
         if let x = bulletColumns(elements, bodySize: bodySize) {
             return ordered(elements.filter { $0.rect.minX < x && $0.rect.maxX > x }, bodySize: bodySize, depth: depth + 1)
@@ -1309,6 +1317,51 @@ enum LayoutReconstructor {
             let upper = index == 0 ? CGFloat.greatestFiniteMagnitude : boundaries[index - 1]
             let band = elements.filter { $0.rect.minY > lower && $0.rect.maxY < upper }
             if band.count == 1, band[0].line != nil { return index == 0 ? lower : upper }
+        }
+        return nil
+    }
+
+    /// A line set in heading type: at least the 1.25 bodies `blocks` demands of a heading, and
+    /// not a list line.
+    private static func isHeadingType(_ element: Element, bodySize: CGFloat) -> Bool {
+        guard let line = element.line, !line.monospaced else { return false }
+        return line.fontSize >= bodySize * 1.25 && !isList(line.text)
+    }
+
+    /// A horizontal cut can find as much whitespace below a heading as above it. DGA page 4 sets
+    /// `Incorporate Healthy Fats` 13.89 pt under the columns before it and 13.91 pt over its own
+    /// bullets, so the widest band leaves it at the foot of the part above; there the gutter cut
+    /// reads it with the left column, ahead of the right column's last bullet and its sub-items
+    /// (#103). Given the cut, when everything beneath the lowest band of more than 1.1 body in the
+    /// part above is one or two lines in heading type, returns that band instead: the heading
+    /// reads first in the part below, the content it introduces. Nil when the cut stands.
+    static func trailingHeading(_ elements: [Element], cut: CGFloat, bodySize: CGFloat) -> CGFloat? {
+        let upper = elements.filter { $0.rect.minY > cut }
+        // Every element of the part falls on one side of each band `horizontalBands` reports.
+        guard let band = horizontalBands(upper).last(where: { $0.width > bodySize * 1.1 }) else { return nil }
+        let tail = upper.filter { $0.rect.maxY < band.y }
+        guard (1...2).contains(tail.count), tail.allSatisfy({ isHeadingType($0, bodySize: bodySize) }) else { return nil }
+        return band.y
+    }
+
+    /// Stacked sections whose rows sit closer than the whitespace cut's 1.1 body, each a heading
+    /// with a decorative band across the measure over two columns, give no cut at all: the band
+    /// hides the gutter and the sort interleaves the columns line by line. DGA page 9 sets
+    /// `Older Adults` beside its band 8.4 pt over its columns and 10.5 pt under the section
+    /// above; where the tags fall back, its one bullet read across both columns a line at a time
+    /// (#103). A heading-type line and the figures in its row, with nothing else reaching into
+    /// the row's height, separate what is above them from what is below: the parts are read in
+    /// turn, each cut on its own. Returns nil unless there is content on both sides of the row.
+    static func headingRow(_ elements: [Element], bodySize: CGFloat)
+        -> (above: [Element], row: [Element], below: [Element])? {
+        for heading in elements.filter({ isHeadingType($0, bodySize: bodySize) }).sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
+            let row = elements.filter { $0.rect.minY < heading.rect.maxY && $0.rect.maxY > heading.rect.minY }
+            guard row.contains(where: { $0.line == nil && $0.box == nil }) else { continue }
+            let extent = union(row.map(\.rect))
+            let above = elements.filter { $0.rect.minY >= extent.maxY }
+            let below = elements.filter { $0.rect.maxY <= extent.minY }
+            guard !above.isEmpty, !below.isEmpty, above.count + row.count + below.count == elements.count else { continue }
+            return (above, row, below)
         }
         return nil
     }

@@ -232,6 +232,14 @@ reviewed transcriptions; `tools/test_table_cells.py` keeps the checker's negativ
 spine reader separates cell text with spaces and parses each table into a grid. See the
 [table-cells record](../measurements/table-cells/record.md).
 
+A `maximumImages` expectation (a non-negative integer) fails a page with more images than that,
+including source-page reference images; it pins decoration that must not become an image. The Fed
+contract uses it on pages 32, 46, 47, 64 and 120 and Our Flag on pages 12 and 54, where the
+running-header or top-margin rule used to be a crop (#66), with `tableCells` transcriptions of Fed
+Table 3.1 (page 46) and of the label columns of Box 3.5's Table A (page 47, whose amounts are
+ordered text because its spanning headers cover two columns each; #65). See the
+[ruled-table and header-rule evidence](../measurements/ruled-tables-and-header-rules/record.md).
+
 ## Adding or changing a regression
 
 1. Reproduce the defect using a pinned source. Add a small original synthetic PDF/operator
@@ -353,7 +361,11 @@ header. `tools/capture-layout-fixture.swift` now records `paints`; older fixture
 clustered `graphics` and unchanged behaviour. The Fed corpus contract adds headings, paragraphs,
 ordered text, `tableCells` transcriptions for pages 64 and 83, a source-rendered region for the
 Box 3.3 charts and the reflowed page-46 sidebar; see the
-[tinted-box evidence](../measurements/tinted-boxes/record.md).
+[tinted-box evidence](../measurements/tinted-boxes/record.md). The `fed-46` and `fed-83` fixtures were recaptured
+with the column-joint split (#65): page 46's merged `Tool Definition In practice` header is three
+lines and page 83's regulation letters are separate from their names;
+`RuledTablesAndHeaderRulesTests.swift` re-merges page 46's header to reproduce the crop and builds
+a synthetic ruled PDF whose header PDFKit merges.
 
 ## Source-derived fidelity controls
 

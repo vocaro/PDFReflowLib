@@ -31,8 +31,94 @@ enum NativeTextReader {
         return try operation()
     }
 
-    static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true) throws -> [TextLine] {
-        try withExtractionLock { try extractLines(on: page, limit: limit, includeStyle: includeStyle) }
+    static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true,
+                      columnJoints: [ColumnJoint] = []) throws -> [TextLine] {
+        try withExtractionLock {
+            let lines = try extractLines(on: page, limit: limit, includeStyle: includeStyle)
+            return try columnJoints.isEmpty ? lines : splitAtColumnJoints(lines, joints: columnJoints, on: page, includeStyle: includeStyle)
+        }
+    }
+
+    /// The joints a line crosses inside a ruled grid: its middle lies within the joint's rows
+    /// and it reaches more than one em past the joint on both sides.
+    static func crossedJoints(_ line: TextLine, _ joints: [ColumnJoint]) -> [CGFloat] {
+        let em = max(4, line.fontSize)
+        return joints.filter { joint in
+            line.rect.midY > joint.minY && line.rect.midY < joint.maxY
+                && line.rect.minX < joint.x - em && line.rect.maxX > joint.x + em
+        }.map(\.x)
+    }
+
+    /// PDFKit returns a ruled table's cells on one baseline as one line ("Tool Definition In
+    /// practice", Fed page 46). A line crossing a column joint of the rule grid is split there
+    /// when the joint falls in whitespace between the glyphs on either side and those glyphs
+    /// stand at least one em apart, measured with PDFKit's own rectangle selections; prose
+    /// crossing the joint (a caption, a title) has only word spaces and stays whole. The pieces
+    /// must spell the line exactly, apart from the whitespace at the cut, or the line is kept
+    /// (#65).
+    private static func splitAtColumnJoints(_ lines: [TextLine], joints: [ColumnJoint],
+                                            on page: PDFPage, includeStyle: Bool) throws -> [TextLine] {
+        func squeezed(_ text: String) -> String {
+            text.split(whereSeparator: \.isWhitespace).joined(separator: " ")
+        }
+        func selection(_ rect: CGRect, from minX: CGFloat, to maxX: CGFloat) -> PDFSelection? {
+            guard maxX > minX else { return nil }
+            return page.selection(for: CGRect(x: minX, y: rect.minY, width: maxX - minX, height: rect.height))
+        }
+        func visible(_ selection: PDFSelection?) -> String {
+            squeezed(selection?.string?.replacingOccurrences(of: "\u{FFFC}", with: " ") ?? "")
+        }
+        func piece(_ rect: CGRect, from minX: CGFloat, to maxX: CGFloat) -> TextLine? {
+            // A space glyph stretches across the gap; shrink both edges of the selection until
+            // it holds the piece's own characters only.
+            let target = visible(selection(rect, from: minX, to: maxX))
+            guard !target.isEmpty else { return nil }
+            var low = minX, high = maxX
+            for _ in 0..<14 {
+                let middle = (low + high) / 2
+                if visible(selection(rect, from: minX, to: middle)) == target { high = middle } else { low = middle }
+            }
+            var left = minX
+            low = minX
+            var top = high
+            for _ in 0..<14 {
+                let middle = (low + top) / 2
+                if visible(selection(rect, from: middle, to: high)) == target { left = middle; low = middle } else { top = middle }
+            }
+            guard let chosen = selection(rect, from: left, to: high), visible(chosen) == target,
+                  let raw = chosen.string?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else { return nil }
+            let bounds = chosen.bounds(for: page)
+            guard bounds.isFinite, !bounds.isNull, bounds.width > 0, bounds.height > 0 else { return nil }
+            let attributed = includeStyle ? chosen.attributedString : nil
+            return textLine(semantic: raw.replacingOccurrences(of: "\u{FFFC}", with: " "), bounds: bounds, attributed: attributed)
+        }
+        var result: [TextLine] = []
+        for line in lines {
+            try Task.checkCancellation()
+            let crossed = crossedJoints(line, joints)
+            guard !crossed.isEmpty, !line.monospaced else { result.append(line); continue }
+            let rect = line.rect
+            let em = max(4, line.fontSize)
+            // A cut is real when the joint falls between words and the glyphs on either side of
+            // it stand at least one em apart.
+            let cuts = crossed.filter { x in
+                guard let left = piece(rect, from: rect.minX, to: x), let right = piece(rect, from: x, to: rect.maxX) else { return false }
+                return squeezed(left.text + " " + right.text) == squeezed(line.text)
+                    && right.rect.minX - left.rect.maxX >= em
+                    && left.rect.maxX <= x + 1 && right.rect.minX >= x - 1
+            }
+            let edges = [rect.minX] + cuts + [rect.maxX]
+            var pieces: [TextLine] = []
+            for (start, end) in zip(edges, edges.dropFirst()) {
+                guard let next = piece(rect, from: start, to: end) else { pieces = []; break }
+                pieces.append(next)
+            }
+            guard pieces.count >= 2, squeezed(pieces.map(\.text).joined(separator: " ")) == squeezed(line.text) else {
+                result.append(line); continue
+            }
+            result += pieces
+        }
+        return result
     }
 
     private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool) throws -> [TextLine] {

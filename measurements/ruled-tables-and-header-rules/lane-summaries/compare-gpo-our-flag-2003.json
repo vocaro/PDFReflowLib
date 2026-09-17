@@ -1,0 +1,203 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "gpo-our-flag-2003",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "d6f7d89b8642777629855a789b96609e9099ef427c86c102f44a47a350fa179c",
+  "candidateConverterSHA256": "7c25b4605d551b34ac2ad1450e7934e1a45a78627559ebd040682f56196416a0",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "base",
+      "programsSHA256": "4f5fad18c8f4a7fb55f30f969c43746a0d9b9d95bb1f6a823b7ef25cae64b9d4"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "cand",
+      "programsSHA256": "4f5fad18c8f4a7fb55f30f969c43746a0d9b9d95bb1f6a823b7ef25cae64b9d4"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [],
+  "changedPages": [
+    11,
+    12,
+    14,
+    18,
+    19,
+    22,
+    23,
+    24,
+    25,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    48,
+    54
+  ],
+  "changedPageFields": {
+    "11": [
+      "images",
+      "markup"
+    ],
+    "12": [
+      "images",
+      "markup",
+      "warnings"
+    ],
+    "14": [
+      "images",
+      "markup",
+      "warnings"
+    ],
+    "18": [
+      "images",
+      "markup",
+      "warnings"
+    ],
+    "19": [
+      "images",
+      "markup"
+    ],
+    "22": [
+      "images",
+      "markup",
+      "warnings"
+    ],
+    "23": [
+      "images",
+      "markup",
+      "warnings"
+    ],
+    "24": [
+      "images",
+      "markup",
+      "warnings"
+    ],
+    "25": [
+      "images",
+      "markup",
+      "warnings"
+    ],
+    "33": [
+      "images",
+      "markup"
+    ],
+    "34": [
+      "images",
+      "markup"
+    ],
+    "35": [
+      "images",
+      "markup"
+    ],
+    "36": [
+      "images",
+      "markup"
+    ],
+    "37": [
+      "images",
+      "markup"
+    ],
+    "38": [
+      "images",
+      "markup"
+    ],
+    "39": [
+      "images",
+      "markup"
+    ],
+    "40": [
+      "images",
+      "markup"
+    ],
+    "41": [
+      "images",
+      "markup"
+    ],
+    "42": [
+      "images",
+      "markup"
+    ],
+    "43": [
+      "images",
+      "markup"
+    ],
+    "44": [
+      "images",
+      "markup"
+    ],
+    "45": [
+      "images",
+      "markup"
+    ],
+    "48": [
+      "images",
+      "markup"
+    ],
+    "54": [
+      "images",
+      "markup",
+      "warnings"
+    ]
+  },
+  "changedImages": [
+    "EPUB/images/image-17.png",
+    "EPUB/images/image-19.png",
+    "EPUB/images/image-49.png",
+    "EPUB/images/image-51.png",
+    "EPUB/images/image-79.png",
+    "EPUB/images/image-84.png",
+    "EPUB/images/image-89.png",
+    "EPUB/images/image-94.png",
+    "EPUB/images/image-99.png",
+    "EPUB/images/image-104.png",
+    "EPUB/images/image-109.png",
+    "EPUB/images/image-114.png",
+    "EPUB/images/image-119.png",
+    "EPUB/images/image-124.png",
+    "EPUB/images/image-129.png",
+    "EPUB/images/image-134.png",
+    "EPUB/images/image-135.png",
+    "EPUB/images/image-136.png",
+    "EPUB/images/image-139.png",
+    "EPUB/images/image-141.png",
+    "EPUB/images/image-142.png",
+    "EPUB/images/image-143.png",
+    "EPUB/images/image-144.png",
+    "EPUB/images/image-145.png"
+  ],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [
+    "imageCount",
+    "warnings"
+  ],
+  "idOnlyShifts": {
+    "pageCount": 22,
+    "fields": {
+      "images": 22,
+      "markup": 22
+    },
+    "navigationEntries": 3
+  },
+  "imageRenames": {
+    "count": 109
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

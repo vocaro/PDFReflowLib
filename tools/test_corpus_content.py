@@ -29,6 +29,20 @@ class CorpusContentTests(unittest.TestCase):
         self.pages[1]['text'] = 'alpha'
         self.assertFalse(self.check()['passed'])
 
+    def test_image_maximum_counts_images_on_its_page(self):
+        self.contract['pages'][1]['maximumImages'] = 0
+        self.assertTrue(self.check()['passed'])
+        self.pages[2]['images'] = ['rule.png']
+        result = self.check()
+        self.assertFalse(result['passed'])
+        self.assertIn('Page 2: 1 images, at most 0 expected', result['errors'])
+        self.contract['pages'][1]['maximumImages'] = 1
+        self.assertTrue(self.check()['passed'])
+        for invalid in (-1, True, 1.0, '0'):
+            self.contract['pages'][1]['maximumImages'] = invalid
+            with self.assertRaises(ValueError):
+                self.check()
+
     def test_text_on_wrong_page_does_not_pass(self):
         self.pages[1]['text'], self.pages[2]['text'] = 'omega', 'alpha beta'
         self.assertFalse(self.check()['passed'])

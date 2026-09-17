@@ -87,6 +87,14 @@ struct PageContent: Equatable, Codable {
     var preservePageReference = false
 }
 
+/// A ruled grid's column boundary at `x`, spanning the rule rows between `minY` and `maxY`
+/// (`GraphicsReader.columnJoints`). Extraction splits table cells PDFKit merges across it (#65).
+struct ColumnJoint: Equatable {
+    var x: CGFloat
+    var minY: CGFloat
+    var maxY: CGFloat
+}
+
 func union(_ rects: [CGRect]) -> CGRect {
     rects.reduce(CGRect.null) { $0.union($1) }
 }

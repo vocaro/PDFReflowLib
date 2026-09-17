@@ -29,7 +29,13 @@ private typealias CaptureFont = UIFont
         guard let document = PDFDocument(url: source), let page = document.page(at: pageNumber - 1),
               let reference = page.pageRef else { throw CocoaError(.fileReadCorruptFile) }
         func rect(_ r: CGRect) -> [Double] { [r.minX, r.minY, r.width, r.height] }
-        var lines = try NativeTextReader.lines(on: page, limit: 100_000)
+        // `graphics` are the clustered regions every fixture carries; `paints` are the
+        // unclustered footprints with their frame flag, from which tests compose graphics.
+        let graphics = GraphicsReader.read(reference)
+        // Lines as the pipeline extracts them: cells merged across a ruled grid's column joints
+        // are split (#65).
+        var lines = try NativeTextReader.lines(on: page, limit: 100_000,
+            columnJoints: GraphicsReader.columnJoints(graphics.paints.map(\.rect)))
         // The tags the pipeline applies where the page's structure validates: every group that
         // matches its lines, even when another does not (`structure` per line; absent in fixtures
         // captured before #89/#90).
@@ -57,9 +63,6 @@ private typealias CaptureFont = UIFont
             if bounds.isFinite { entry["rect"] = rect(bounds) }
             attributedLines.append(entry)
         }
-        // `graphics` are the clustered regions every fixture carries; `paints` are the
-        // unclustered footprints with their frame flag, from which tests compose graphics.
-        let graphics = GraphicsReader.read(reference)
         let payload: [String: Any] = [
             "caseID": item["id"]!, "sourceSHA256": digest, "page": pageNumber,
             "sourceURL": item["downloadURL"] ?? item["url"] ?? "", "sourceTitle": item["title"]!,

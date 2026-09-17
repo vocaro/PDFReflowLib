@@ -23,7 +23,10 @@ private func headings(_ blocks: [ReflowBlock]) -> [String] {
     }
     #expect(paragraphs.contains { $0.contains("funds rate and other short-term interest rates is exercised primarily through the setting of") })
     #expect(paragraphs.contains { $0.contains("risks to the economic outlook were implemented") })
-    #expect(blocks.filter { if case .image = $0.content { true } else { false } }.count >= 2)
+    // Table 3.1 reads as a table (#65) and the running-header rule is decoration (#66); neither
+    // its cells nor its title become headings.
+    #expect(blocks.contains { if case .table = $0.content { true } else { false } })
+    #expect(!blocks.contains { if case .image = $0.content { true } else { false } })
 }
 
 @Test func neighboringFedProseAndSourceChapterTitlesKeepTheirSemantics() throws {

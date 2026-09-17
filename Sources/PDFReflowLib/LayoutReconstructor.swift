@@ -72,6 +72,28 @@ enum LayoutReconstructor {
         rect.height <= 6 && rect.width >= max(12, rect.height * 3)
     }
 
+    /// A thin rule spanning at least half of the page's text that no text sits against: nothing
+    /// within one body size above or below it, or only a running head's row of body-sized text
+    /// between it and the page edge with all other text beyond it (The Fed Explained's header
+    /// rule on every page, #66). It carries nothing a reader needs as an image. A rule set
+    /// directly beneath a heading (Our Flag page 27's section rules, 1.6 pt under 22-pt titles)
+    /// or beside table text still has text within a body size and is not decoration here.
+    static func isDecorationRule(_ rule: CGRect, in lines: [TextLine], bounds: CGRect, body: CGFloat) -> Bool {
+        guard isThinRule(rule), !lines.isEmpty, !lines.contains(where: { $0.rect.intersects(rule) }) else { return false }
+        let text = union(lines.map(\.rect))
+        guard rule.width >= text.width * 0.5 else { return false }
+        let near = lines.filter { $0.rect.intersects(rule.insetBy(dx: 0, dy: -body)) }
+        guard let first = near.first else { return true }
+        let above = first.rect.midY > rule.midY
+        guard near.allSatisfy({ ($0.rect.midY > rule.midY) == above && $0.fontSize <= body * 1.2
+                                && sameRow($0.rect, first.rect) }) else { return false }
+        // The running head sits between the rule and the page edge; everything else lies beyond.
+        let beyond = lines.filter { line in !near.contains { $0.rect == line.rect && $0.text == line.text } }
+        let margin = bounds.height * 0.12
+        return above ? beyond.allSatisfy { $0.rect.maxY <= rule.midY } && first.rect.minY >= bounds.maxY - margin
+                     : beyond.allSatisfy { $0.rect.minY >= rule.midY } && first.rect.maxY <= bounds.minY + margin
+    }
+
     /// A short rule between a compact mathematical term above it and a term starting directly
     /// beneath it is a fraction bar, whose numerator and denominator belong in one crop, not an
     /// underline. Label underlines have worded prose above them. PDFKit can merge a denominator
@@ -1095,6 +1117,8 @@ enum LayoutReconstructor {
                     && rect.midY >= line.rect.minY - 3 && rect.midY <= line.rect.maxY
             }
         }
+        let otherSeeds = formulas + TableRegionDetector.regions(in: page) + FractionRegionDetector.regions(in: page)
+            + tables + floats.regions
         let graphics = page.graphics.compactMap { rect -> CGRect? in
             // A radical's bar inside a prose row decorates that row (`is written as √25.`, `if
             // we found √8 on`): the tall rectangle PDFKit gives the radical piece would otherwise
@@ -1114,14 +1138,18 @@ enum LayoutReconstructor {
             }
             // A rule inside one line's box belongs to that line: a radical's vinculum or an
             // exercise bar keeps its short mathematical line; an underline beneath prose is
-            // decoration. A rule outside every line stays an isolated graphic.
-            guard let owner = owner(of: rect) else { return rect }
+            // decoration. A rule outside every line stays an isolated graphic unless it is a
+            // page's decoration rule (#66).
+            guard let owner = owner(of: rect) else {
+                let isolated = !page.graphics.contains { $0 != rect && $0.insetBy(dx: -4, dy: -4).intersects(rect) }
+                    && !otherSeeds.contains { $0.insetBy(dx: -4, dy: -4).intersects(rect) }
+                return isolated && isDecorationRule(rect, in: page.lines, bounds: page.bounds, body: body) ? nil : rect
+            }
             let mathematical = owner.text.count <= 40 && !owner.monospaced
                 && owner.text.range(of: #"[A-Za-z]{3,}"#, options: .regularExpression) == nil
             return mathematical ? rect.union(owner.rect) : nil
         }
-        let seeds = graphics + formulas + TableRegionDetector.regions(in: page)
-            + FractionRegionDetector.regions(in: page) + tables + floats.regions
+        let seeds = graphics + otherSeeds
         var regions = clusters(seeds, distance: 3).map { Region(seed: $0, bounds: $0) }
         var previous: [CGRect] = []
         while regions.map(\.bounds) != previous {

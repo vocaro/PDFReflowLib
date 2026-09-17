@@ -1,0 +1,59 @@
+page 46: joints [215, 360]; crossing 3; split 1
+  split: "Tool Definition In practice" -> ["Tool", "Definition", "In practice"]
+  whole: "Table 3.1 Traditional tools in an ample-reserves regime"
+  whole: "In recent years, the Federal Reserve has successfully implemented monetary policy with a v"
+page 47: joints [240, 315, 449]; crossing 8; split 5
+  split: "Treasury securities held outright 4,197 Deposits of depository institutions 2,938" -> ["Treasury securities held outright", "4,197", "Deposits of depository institutions", "2,938"]
+  split: "1,946 Federal Reserve notes in circulation 1,915" -> ["1,946", "Federal Reserve notes in circulation", "1,915"]
+  split: "U.S. Treasury, General Account 1,587" -> ["U.S. Treasury, General Account", "1,587"]
+  split: "Other assets 939 Capital and other liabilities 642" -> ["Other assets", "939", "Capital and other liabilities", "642"]
+  split: "Total 7,082 Total 7,082" -> ["Total", "7,082", "Total", "7,082"]
+  whole: "Table A. Simplified view of the Federal Reserve balance sheet, as of June 24, 2020"
+  whole: "The Federal Reserve publishes data weekly regarding its balance sheet."
+  whole: "Note: The H.4.1 statistical release, “Factors Affecting Reserve Balances,” is published ev"
+page 58: joints [233]; crossing 1; split 0
+  whole: "Emergency lending facilities"
+page 64: joints [243]; crossing 0; split 0
+page 77: joints [168, 270, 402]; crossing 3; split 1
+  split: "Depository institutions Bank holding companies (BHCs)" -> ["Depository institutions", "Bank holding companies (BHCs)"]
+  whole: "Components• Capital adequacy"
+  whole: "For CAMELS and RFI/C(D) ratings systems, institutions score on a scale of 1 (best) to 5"
+page 82: joints [119, 260]; crossing 15; split 10
+  split: "F Limitations on Interbank Liabilities" -> ["F", "Limitations on Interbank Liabilities"]
+  split: "H Membership of State Banking Institutions in the" -> ["H", "Membership of State Banking Institutions in the"]
+  split: "I Issue and Cancellation of Federal Reserve Bank" -> ["I", "Issue and Cancellation of Federal Reserve Bank"]
+  split: "K International Banking Operations" -> ["K", "International Banking Operations"]
+  split: "L Management Official Interlocks" -> ["L", "Management Official Interlocks"]
+  split: "O Loans to Executive Officers, Directors, and Principal" -> ["O", "Loans to Executive Officers, Directors, and Principal"]
+  split: "Q Capital Adequacy of Bank Holding Companies," -> ["Q", "Capital Adequacy of Bank Holding Companies,"]
+  split: "R Exceptions for Banks from the Definition of Broker in" -> ["R", "Exceptions for Banks from the Definition of Broker in"]
+  split: "S Reimbursement for Providing Financial Records;" -> ["S", "Reimbursement for Providing Financial Records;"]
+  split: "W Transactions Between Member Banks and Their" -> ["W", "Transactions Between Member Banks and Their"]
+  whole: "Figure 5.7. Federal Reserve regulations by topic"
+  whole: "The Federal Reserve maintains and ensures compliance with the following regulations, which"
+  whole: "banking laws and govern the operations of regulated institutions."
+  whole: "Regulation (by letter and name)"
+  whole: "Banks and banking"
+page 83: joints [119, 245]; crossing 16; split 6
+  split: "Y Bank Holding Companies and Change in Bank" -> ["Y", "Bank Holding Companies and Change in Bank"]
+  split: "A Extensions of Credit by Federal Reserve Banks" -> ["A", "Extensions of Credit by Federal Reserve Banks"]
+  split: "D Reserve Requirements of Depository" -> ["D", "Reserve Requirements of Depository"]
+  split: "T Credit by Brokers and Dealers" -> ["T", "Credit by Brokers and Dealers"]
+  split: "U Credit by Banks and Persons Other Than" -> ["U", "Credit by Banks and Persons Other Than"]
+  split: "X Borrowers of Securities Credit" -> ["X", "Borrowers of Securities Credit"]
+  whole: "Figure 5.7. Federal Reserve regulations by topic (continued)"
+  whole: "Regulation (by letter and name)"
+  whole: "Holding companies and nonbank financial companies"
+  whole: "Federal Reserve Credit"
+  whole: "Monetary policy and reserve requirements"
+  whole: "Securities credit transactions"
+  whole: "Note: For a list of consumer and community affairs-related regulations, see figure 7.2, “F"
+  whole: "regulations applicable to banks,” on page 116. For a list of regulations governing the U.S"
+  whole: "Reserve regulations governing the payment system,” on page 109. To view the full text of t"
+  whole: "visit https://www.ecfr.gov/cgi-bin/ECFR?page=browse and select “Title 12” of the Code of F"
+page 109: joints [138, 281]; crossing 2; split 1
+  split: "J Collection of Checks and Other Items by Federal" -> ["J", "Collection of Checks and Other Items by Federal"]
+  whole: "Regulation (by letter and name)"
+page 120: joints [248]; crossing 0; split 0
+page 121: joints [246]; crossing 0; split 0
+pages with joints 10; lines crossing a joint 48; split 24

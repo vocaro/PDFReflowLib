@@ -8,6 +8,38 @@ enum GraphicsReader {
     /// stroked) painted outside any `/Figure` marked content: a sidebar box, a tint band or a
     /// table cell background rather than figure ink. Whether it is decoration is decided later
     /// against the page's text (`TintDetector`); this reader records only what was painted.
+    /// Where a ruled grid's columns meet: InDesign draws each row rule as one segment per column,
+    /// so collinear thin segments that abut (the reader pads each by two points, so neighbours
+    /// overlap by up to six) mark a column boundary. A boundary recurring at the same x in at
+    /// least three rule rows is a column joint, spanning those rows vertically (Fed page 46,
+    /// Table 3.1: joints at x ≈ 215.4 and 360 over seven rows). A lone underline, a dashed rule
+    /// in one row or two rules that happen to touch are not a grid (#65).
+    static func columnJoints(_ rects: [CGRect]) -> [ColumnJoint] {
+        var rows: [(y: CGFloat, segments: [CGRect])] = []
+        for rect in rects where rect.isFinite && !rect.isNull && rect.height <= 6 && rect.width >= 24 {
+            if let index = rows.firstIndex(where: { abs($0.y - rect.midY) <= 1.5 }) {
+                rows[index].segments.append(rect)
+            } else { rows.append((rect.midY, [rect])) }
+        }
+        var joints: [(x: CGFloat, ys: [CGFloat])] = []
+        for row in rows {
+            let segments = row.segments.sorted { $0.minX < $1.minX }
+            var seen: [CGFloat] = []
+            for (a, b) in zip(segments, segments.dropFirst())
+            where b.minX <= a.maxX + 1 && b.minX >= a.maxX - 6 && b.maxX > a.maxX {
+                let x = (a.maxX + b.minX) / 2
+                guard !seen.contains(where: { abs($0 - x) <= 3 }) else { continue }
+                seen.append(x)
+                if let index = joints.firstIndex(where: { abs($0.x - x) <= 3 }) {
+                    joints[index].ys.append(row.y)
+                } else { joints.append((x, [row.y])) }
+            }
+        }
+        return joints.filter { $0.ys.count >= 3 }
+            .map { ColumnJoint(x: $0.x, minY: $0.ys.min()!, maxY: $0.ys.max()!) }
+            .sorted { $0.x < $1.x }
+    }
+
     struct Paint: Equatable, Sendable { var rect: CGRect; var frame: Bool }
     /// Where one text-showing operator placed its text, for deciding whether it can be seen
     /// (#74, #85). In horizontal writing every glyph of a show sits on `baseline`; `left` is a

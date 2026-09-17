@@ -112,6 +112,30 @@ enum TintDetector {
         return result.filter { candidate in !result.contains { $0.rect != candidate.rect && $0.rect.contains(candidate.rect) } }
     }
 
+    /// A frame without prose evidence whose rules and bands the table detector reads as a text
+    /// table (#65): Fed page 46's Table 3.1, a shaded title band and header band over body rows
+    /// separated only by rules. The table must have a header row on its own band and at least two
+    /// body rows, no solid ink may lie in the frame, and every line in the frame other than the
+    /// table's own lies above it (a title band). Anything else keeps its image, as before.
+    private static func ruledTextTable(hull: CGRect, tinted: [CGRect], lines: [TextLine], inside: [TextLine],
+                                       rules: [CGRect], solidInk: [CGRect], bounds: CGRect, body: CGFloat) -> Bool {
+        guard !solidInk.contains(where: { $0.intersects(hull) }) else { return false }
+        let grid = rules.filter { hull.insetBy(dx: -body, dy: -body).contains($0) }
+        guard grid.filter({ $0.width > $0.height }).count >= 2 else { return false }
+        var trial = PageContent(number: 0, bounds: bounds, lines: lines, graphics: [])
+        trial.tints = tinted
+        trial.separators = grid
+        return ShadedTableDetector.tables(in: trial, lines: lines).contains { table in
+            let owned = table.lines
+            let bodyRows = table.rows.filter { !$0.header }
+            return table.rows.first?.header == true && bodyRows.count >= 2
+                && hull.insetBy(dx: -2, dy: -2).contains(table.bounds)
+                && inside.allSatisfy { line in
+                    owned.contains { $0.rect == line.rect && $0.text == line.text } || line.rect.minY >= table.bounds.maxY - 1
+                }
+        }
+    }
+
     static func compose(_ paints: [GraphicsReader.Paint], lines: [TextLine], bounds: CGRect) -> Result {
         let finite = paints.filter { !$0.rect.isNull && $0.rect.isFinite }
         let stroked = strokedRectangles(finite.filter { isThin($0.rect) }.map(\.rect))
@@ -123,22 +147,28 @@ enum TintDetector {
         let ink = finite.filter { (!$0.frame || isThin($0.rect)) && !strokes.contains($0.rect) }.map(\.rect)
         let solidInk = ink.filter { !isThin($0) }
         var tints: [CGRect] = []
-        var blocks: [(hull: CGRect, prose: [TextLine])] = []
+        var blocks: [(hull: CGRect, prose: [TextLine], ruled: Bool)] = []
+        let body = max(4, LayoutReconstructor.bodySize(lines))
         for members in groups(candidates, distance: 4) {
             let hull = union(members)
             let inside = lines.filter { line in
                 mostlyInside(line.rect, hull) && !solidInk.contains { $0.intersects(line.rect) }
             }
             let prose = inside.filter { isProse($0, in: hull) }
-            // Prose must carry the text that would reflow: a figure whose labels PDFKit merges
-            // into short fragments (a ratings grid, columns of bullets) keeps its image.
-            guard prose.count >= 3, prose.count * 3 >= inside.count else { continue }
             let tinted = members.filter { member in
                 lines.contains { member.contains(CGPoint(x: $0.rect.midX, y: $0.rect.midY)) }
             }
-            guard !tinted.isEmpty else { continue }
-            tints += tinted
-            blocks.append((union(tinted), prose))
+            // Prose must carry the text that would reflow: a figure whose labels PDFKit merges
+            // into short fragments (a ratings grid, columns of bullets) keeps its image.
+            if prose.count >= 3, prose.count * 3 >= inside.count {
+                guard !tinted.isEmpty else { continue }
+                tints += tinted
+                blocks.append((union(tinted), prose, false))
+            } else if !tinted.isEmpty, ruledTextTable(hull: hull, tinted: tinted, lines: lines, inside: inside,
+                                                      rules: ink.filter(isThin), solidInk: solidInk, bounds: bounds, body: body) {
+                tints += tinted
+                blocks.append((union(tinted), prose, true))
+            }
         }
         guard !tints.isEmpty else {
             return Result(graphics: clusters(paints.map(\.rect), distance: 4), tints: [])
@@ -146,9 +176,8 @@ enum TintDetector {
         // Rules that only touch each other inside a tinted block separate its rows and columns.
         // A rule connected to solid ink (a chart axis) stays with that graphic. A lone fraction
         // bar keeps its terms; a grid of rules between single-letter cells is not a fraction.
-        // A ruled grid whose cells are not shaded is a table this detector cannot read; it
-        // stays an image with the frame drawn around it.
-        let body = max(4, LayoutReconstructor.bodySize(lines))
+        // A ruled grid whose cells are not shaded stays an image with the frame drawn around it,
+        // unless the table reader already accepted its block as a ruled text table (#65).
         var separators: [CGRect] = []
         var carved: [CGRect] = []
         var consumed: [CGRect] = []
@@ -167,7 +196,7 @@ enum TintDetector {
                     !(tint.width * tint.height >= block.hull.width * block.hull.height * 0.9
                       && tints.contains { $0 != tint && tint.contains($0) })
                 }
-                if rules.count >= 2 && coverage(of: union(rules), by: shading) < 0.8 {
+                if !block.ruled && rules.count >= 2 && coverage(of: union(rules), by: shading) < 0.8 {
                     restored += stroked.filter { $0.rect.intersects(hull) }.flatMap(\.strokes)
                     continue
                 }

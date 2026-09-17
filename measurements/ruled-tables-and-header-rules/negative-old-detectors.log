@@ -1,0 +1,39 @@
+✔ Test columnJointsNeedAbuttingSegmentsInThreeRuleRows() passed after 0.003 seconds.
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test fedTable31ReadsAsAThreeColumnTableWithItsHeader() recorded an issue at RuledTablesAndHeaderRulesTests.swift:138:5: Expectation failed: regions.isEmpty
+✘ Test fedTable31ReadsAsAThreeColumnTableWithItsHeader() recorded an issue at RuledTablesAndHeaderRulesTests.swift:139:21: Expectation failed: table(in: blocks)
+✘ Test fedTable31ReadsAsAThreeColumnTableWithItsHeader() failed after 0.021 seconds with 2 issues.
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test fedTableTypographyDoesNotPromoteSurroundingProse() recorded an issue at HeadingTests.swift:27:5: Expectation failed: blocks.contains { if case .table = $0.content { true } else { false } }
+✘ Test fedTableTypographyDoesNotPromoteSurroundingProse() recorded an issue at HeadingTests.swift:28:5: Expectation failed: !blocks.contains { if case .image = $0.content { true } else { false } }
+✘ Test fedTableTypographyDoesNotPromoteSurroundingProse() failed after 0.023 seconds with 2 issues.
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test rulesThatTextOrInkSitsAgainstStayGraphics() recorded an issue at RuledTablesAndHeaderRulesTests.swift:231:5: Expectation failed: !kept(runningHead + body, [headerRule])
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✔ Test ruledGridsWithoutAReadableHeaderOrWithInkKeepTheirImage() passed after 0.029 seconds.
+✘ Test rulesThatTextOrInkSitsAgainstStayGraphics() failed after 0.029 seconds with 1 issue.
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✔ Test mergedHeaderCellsAreSplitAtTheRuleGridsColumnJoints() passed after 0.056 seconds.
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✔ Test proseAndWordGapsAcrossAJointStayWhole() passed after 0.059 seconds.
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:197:9: Expectation failed: !LayoutReconstructor.graphicsWithLabels(page).contains { $0.intersects(rule) }
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:201:5: Expectation failed: LayoutReconstructor.graphicsWithLabels(removed).isEmpty
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() recorded an issue at RuledTablesAndHeaderRulesTests.swift:203:5: Expectation failed: LayoutReconstructor.graphicsWithLabels(kept).isEmpty
+✘ Test runningHeaderRuleIsDecorationOnEveryFedFixture() failed after 0.077 seconds with 25 issues.
+✘ Test run with 8 tests in 0 suites failed after 0.077 seconds with 30 issues.

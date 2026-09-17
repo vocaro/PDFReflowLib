@@ -125,7 +125,13 @@ it keeps the block's full-width band between the prose above and below it as one
 chart's axis labels that PDFKit cannot extract stay with the chart. A rectangle holding no
 text, a bar chart, a flowchart node, a figure whose labels PDFKit merges into short fragments,
 a box with fewer than three prose lines and a ruled grid whose cells are not shaded keep their
-images exactly as before. The page-sized-graphic review signal still reads the painted regions
+images exactly as before, unless the table reader reads that grid as a text table with a header
+on its own band and two body rows, no ink inside and no text below or beside it (Fed page 46's
+Table 3.1, #65). PDFKit returns such a table's cells on one baseline as one line, so extraction
+first finds the grid's column joints (collinear rule segments abutting at the same x in at least
+three rule rows) and splits a line crossing a joint where PDFKit's own rectangle selections show
+at least one em of whitespace around it and the pieces spell the line exactly; titles and prose
+crossing a joint have only word spaces and stay whole. The page-sized-graphic review signal still reads the painted regions
 before tint removal. `OCRReader` uses Vision when policy requests it.
 `StructureTreeReader` parses a separate Core Graphics document into value-only page/MCID
 associations and exact owner paths. It checks structural parent links, page identity, RoleMap
@@ -388,7 +394,11 @@ body-size estimate.
 A thin painted rule beneath prose is that text's decoration and seeds no crop; a rule inside a
 short mathematical line (a radical's vinculum, an exercise bar) or between a word-free term and
 a term starting beneath it (a fraction bar) keeps those lines in one crop, and an isolated rule
-remains a crop, as before. A line with an equals sign seeds a formula crop only when that sign
+remains a crop unless it is page decoration (#66): touching no other graphic or crop seed and
+spanning at least half of the page's text, with no text within one body size of it, or only a
+running head's row of text no larger than 1.2× body between it and the page edge (within the
+outer 12% of the page) with all other text beyond it. A rule directly beneath a heading keeps
+its crop. A line with an equals sign seeds a formula crop only when that sign
 is outside a web address's query string (`print.php3?ReportID=145`, `item_id=1645&content_type_id=7`),
 so notes citing such addresses keep their text (#80), and never in a bold title that spells out a
 mnemonic's letter (`V = EnVironment`, `A = Aircraft`: one capital, the sign, then words; #97), nor

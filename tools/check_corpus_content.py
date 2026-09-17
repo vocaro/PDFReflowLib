@@ -281,7 +281,7 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'absentHeadings', 'paragraphs', 'listItems', 'notes', 'noteLinks', 'continuedParagraphs', 'continuedListItems', 'separateParagraphs', 'distinctParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'maximumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'absentHeadings', 'paragraphs', 'listItems', 'notes', 'noteLinks', 'continuedParagraphs', 'continuedListItems', 'separateParagraphs', 'distinctParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -482,6 +482,14 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
             checks += 1
             if len(page['images']) < minimum:
                 errors.append(f'Page {number}: missing preserved images')
+        if 'maximumImages' in item:
+            # Decoration that must not become an image (a running-header rule, #66).
+            maximum = item['maximumImages']
+            if type(maximum) is not int or maximum < 0:
+                raise ValueError('Image maximum must be a non-negative integer')
+            checks += 1
+            if len(page['images']) > maximum:
+                errors.append(f'Page {number}: {len(page["images"])} images, at most {maximum} expected')
         if 'warningCodesAnyOf' in item:
             codes = item['warningCodesAnyOf']
             if not codes:

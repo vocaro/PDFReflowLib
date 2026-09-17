@@ -2387,7 +2387,8 @@
               "end": "other short-term interest rates, broader financial condi",
               "next": "tions, and the actions of households and businesses"
             }
-          ]
+          ],
+          "maximumImages": 1
         },
         {
           "page": 40,
@@ -2419,7 +2420,6 @@
             "A primer on what an ample-reserves regime is and how it works is available at",
             "A shorter, educators piece that also compares the ample and limited-reserves regimes is available at https://research.stlouisfed.org/publications/page1-econ/2020/08/03/the-feds-new-monetary-policy-tools."
           ],
-          "minimumImages": 2,
           "orderedText": [
             "funds rate and other short-term interest rates",
             "In recent years, the Federal Reserve",
@@ -2430,7 +2430,52 @@
           ],
           "warningCodesAnyOf": [
             "uncertainHyphen"
-          ]
+          ],
+          "tableCells": [
+            {
+              "title": "Table 3.1 Traditional tools in an ample-reserves regime",
+              "columns": [
+                "Tool",
+                "Definition",
+                "In practice"
+              ],
+              "rows": [
+                {
+                  "label": "Interest on reserve balances (IORB)",
+                  "values": [
+                    "Interest on reserve balances (IORB)",
+                    "Interest paid on funds that banks hold in their reserve balance accounts at their Federal Reserve Bank.",
+                    "Because banks are unlikely to lend funds in the federal funds market for less than they get paid in their reserve balance account at the Federal Reserve, IORB is an effective tool for guiding the federal funds rate. In fact, interest on reserve balances is the primary tool for moving the federal funds rate within the target range."
+                  ]
+                },
+                {
+                  "label": "Overnight reverse repurchase agreement (ON RRP) facility",
+                  "values": [
+                    "Overnight reverse repurchase agreement (ON RRP) facility",
+                    "The Federal Reserve’s standing offer to many large nonbank financial institutions to deposit funds at the Fed and earn interest.",
+                    "Because large, nonbank financial institutions who are counterparties to the ON RRP facility are unlikely to lend funds for lower than the ON RRP offering rate, the ON RRP facility acts as a supplementary tool for moving the federal funds rate within the target range."
+                  ]
+                },
+                {
+                  "label": "Open market operations",
+                  "values": [
+                    "Open market operations",
+                    "The Federal Reserve’s buying and selling of securities issued or guaranteed by the U.S. Treasury or U.S. government agencies.",
+                    "Open market operations will be used to maintain an ample supply of reserves."
+                  ]
+                },
+                {
+                  "label": "Discount window",
+                  "values": [
+                    "Discount window",
+                    "The Federal Reserve’s lending to banks (the “discount window”) at the discount rate.",
+                    "Because banks are unlikely to borrow at a rate that’s higher than the discount rate, the discount window helps put a ceiling on the federal funds rate."
+                  ]
+                }
+              ]
+            }
+          ],
+          "maximumImages": 1
         },
         {
           "page": 50,
@@ -2521,7 +2566,8 @@
           ],
           "text": [
             "Website: https://www.bis.org/central_bank_hub_overview.htm"
-          ]
+          ],
+          "maximumImages": 1
         },
         {
           "page": 75,
@@ -2637,7 +2683,8 @@
             "Credit/general lending",
             "Community Reinvestment Act/Regulation BB",
             "Encourages financial institutions to help meet the credit needs of their entire communities"
-          ]
+          ],
+          "maximumImages": 0
         },
         {
           "page": 123,
@@ -2816,6 +2863,55 @@
           "headings": [
             "FOMC composition helps ensure broad perspective",
             "Fed Chair on accountability and transparency"
+          ]
+        },
+        {
+          "page": 47,
+          "tableCells": [
+            {
+              "title": "Table A. Simplified view of the Federal Reserve balance sheet, as of June 24, 2020",
+              "columns": [
+                "Assets (billions of dollars)",
+                "Liabilities (billions of dollars)"
+              ],
+              "rows": [
+                {
+                  "label": "Treasury securities held outright",
+                  "values": [
+                    "Treasury securities held outright",
+                    "Deposits of depository institutions"
+                  ]
+                },
+                {
+                  "label": "Agency debt and mortgage-backed securities holdings",
+                  "values": [
+                    "Agency debt and mortgage-backed securities holdings",
+                    "Federal Reserve notes in circulation"
+                  ]
+                },
+                {
+                  "label": "Other assets",
+                  "values": [
+                    "Other assets",
+                    "Capital and other liabilities"
+                  ]
+                },
+                {
+                  "label": "Total",
+                  "values": [
+                    "Total",
+                    "Total"
+                  ]
+                }
+              ]
+            }
+          ],
+          "maximumImages": 1,
+          "orderedText": [
+            "Treasury securities held outright 4,197 Deposits of depository institutions 2,938",
+            "Agency debt and mortgage-backed securities holdings 1,946 Federal Reserve notes in circulation 1,915",
+            "U.S. Treasury, General Account 1,587",
+            "Other assets 939 Capital and other liabilities 642"
           ]
         },
         {
@@ -3120,7 +3216,12 @@
             "a symbol of Liberty and men rejoiced in it.",
             "As at early dawn the stars shine forth",
             "whether in peace or in war. And yet, though silent, it speaks to us—speaks to us of the past"
-          ]
+          ],
+          "maximumImages": 0
+        },
+        {
+          "page": 54,
+          "maximumImages": 0
         }
       ]
     },

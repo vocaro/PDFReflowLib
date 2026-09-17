@@ -1505,10 +1505,21 @@
       "rect" : [
         101.40429999999998,
         641.68430000000001,
-        136.15169999999998,
+        7.2000000000000028,
         14.20799999999997
       ],
-      "text" : "Y Bank Holding Companies and Change in Bank"
+      "text" : "Y"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        122.5,
+        641.68430000000001,
+        115.05599999999995,
+        14.20799999999997
+      ],
+      "text" : "Bank Holding Companies and Change in Bank"
     },
     {
       "fontSize" : 8,
@@ -2044,10 +2055,21 @@
       "rect" : [
         101.16160000000001,
         329.89140000000003,
-        136.25039999999996,
+        7.6799999999999926,
         14.208000000000027
       ],
-      "text" : "A Extensions of Credit by Federal Reserve Banks"
+      "text" : "A"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        122.5,
+        329.89140000000003,
+        114.91199999999998,
+        14.208000000000027
+      ],
+      "text" : "Extensions of Credit by Federal Reserve Banks"
     },
     {
       "fontSize" : 8,
@@ -2077,10 +2099,21 @@
       "rect" : [
         101.04170000000001,
         299.48570000000001,
-        111.89029999999998,
+        7.9200000000000017,
         14.208000000000027
       ],
-      "text" : "D Reserve Requirements of Depository"
+      "text" : "D"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        122.5,
+        299.48570000000001,
+        90.431999999999988,
+        14.208000000000027
+      ],
+      "text" : "Reserve Requirements of Depository"
     },
     {
       "fontSize" : 8,
@@ -2132,10 +2165,21 @@
       "rect" : [
         101.7616,
         261.82390000000004,
-        95.290399999999991,
+        6.480000000000004,
         14.208000000000027
       ],
-      "text" : "T Credit by Brokers and Dealers"
+      "text" : "T"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        122.5,
+        261.82390000000004,
+        74.551999999999992,
+        14.208000000000027
+      ],
+      "text" : "Credit by Brokers and Dealers"
     },
     {
       "fontSize" : 8,
@@ -2165,10 +2209,21 @@
       "rect" : [
         101.04170000000001,
         238.33590000000001,
-        121.65749999999996,
+        7.9200000000000017,
         14.207999999999998
       ],
-      "text" : "U Credit by Banks and Persons Other Than"
+      "text" : "U"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        122.5,
+        238.33590000000001,
+        100.19919999999996,
+        14.207999999999998
+      ],
+      "text" : "Credit by Banks and Persons Other Than"
     },
     {
       "fontSize" : 8,
@@ -2220,10 +2275,21 @@
       "rect" : [
         101.16160000000001,
         204.84800000000001,
-        95.394399999999976,
+        7.6799999999999926,
         14.207999999999998
       ],
-      "text" : "X Borrowers of Securities Credit"
+      "text" : "X"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        122.5,
+        204.84800000000001,
+        74.055999999999983,
+        14.207999999999998
+      ],
+      "text" : "Borrowers of Securities Credit"
     },
     {
       "fontSize" : 8,

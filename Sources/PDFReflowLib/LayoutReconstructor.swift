@@ -840,6 +840,11 @@ enum LayoutReconstructor {
         }
     }
 
+    /// The line's first character past opening quotes and brackets is a capital letter.
+    static func opensWithCapital(_ line: TextLine) -> Bool {
+        line.text.first(where: { !"([\u{201C}\u{2018}\"'".contains($0) && !$0.isWhitespace })?.isUppercase == true
+    }
+
     /// A title set in title case: at most ten words, every word of four or more letters
     /// capitalised (`Coupled Ailerons and Rudder`, `Southerly Turning Errors`). An italic phrase
     /// in prose or an italic sentence is rarely set so (#90, #97).
@@ -2177,9 +2182,30 @@ enum LayoutReconstructor {
         // author's paragraphs (FAA page 211 tags `…in the AFM/` and `POH. These airspeeds
         // include:` as two paragraphs, page 105 `…upon stability.` and `The allowable location of
         // the CG…`; #75).
-        func wraps(_ upper: TextLine, onto lower: TextLine) -> Bool {
+        //
+        // `opening` says the upper line is its block's only line so far. Such a line may be a
+        // paragraph's indented first line (Our Flag tags each line of page 12's quotations as its own
+        // paragraph, `“A thoughtful mind when it sees a nation's flag, sees not the` set two ems in
+        // from `flag, but the nation itself.`; #147): indented by up to three bodies past the lower
+        // line, opening with a capital, reading as words, reaching the right edge at least three
+        // lines on the lower line's edge share, and continued by a lowercase letter or after a
+        // hyphen or slash.
+        func wraps(_ upper: TextLine, onto lower: TextLine, opening: Bool = false) -> Bool {
             let size = max(upper.fontSize, lower.fontSize)
             let gap = upper.rect.minY - lower.rect.maxY
+            let indent = upper.rect.minX - lower.rect.minX
+            if opening, indent > size * 0.5 {
+                guard indent <= body * 3, opensWithCapital(upper), upper.readingRect == nil, !headingTypography(upper), isWordy(upper.text),
+                      lower.text.first(where: \.isLetter)?.isLowercase == true
+                        || upper.text.last.map({ "-/\u{00AD}".contains($0) }) == true else { return false }
+                guard free.filter({ abs($0.rect.minX - lower.rect.minX) <= body * 0.5 && abs($0.rect.maxX - upper.rect.maxX) <= body * 0.5 })
+                        .count >= 3, lower.rect.maxX <= upper.rect.maxX + body * 0.5 else { return false }
+                // The pair must otherwise wrap as two lines on one edge do.
+                var aligned = upper
+                aligned.rect.origin.x = lower.rect.minX
+                aligned.rect.size.width = upper.rect.maxX - lower.rect.minX
+                return wraps(aligned, onto: lower)
+            }
             guard !sameRow(upper.rect, lower.rect), abs(upper.rect.minX - lower.rect.minX) <= size * 0.5,
                   abs(upper.fontSize - lower.fontSize) <= size * 0.15, gap > -size * 0.4, gap < size * 0.4,
                   !isList(lower.text),
@@ -2385,6 +2411,8 @@ enum LayoutReconstructor {
         // The groups the open tagged block holds, and its last line (see `wraps`).
         var taggedGroups: Set<Int> = []
         var taggedLast: TextLine?
+        // Whether `taggedLast` is the open tagged block's only line (`wraps`' `opening`, #147).
+        var taggedOpening = false
         func flushTagged() {
             guard let (tag, text, size) = tagged else { return }
             // A paragraph group that is one rejoined list item (#81) keeps the representation
@@ -2411,6 +2439,10 @@ enum LayoutReconstructor {
         // The vertical gap the open paragraph's last line was attached at: the leading a
         // section lead-in must exceed to read as added space (#60).
         var previousGap: CGFloat?
+        // The open paragraph's opening line while it is the paragraph's only line, and whether
+        // something other than its own left edge set it apart from the text above (see
+        // `continuesOpening`).
+        var opening: (line: TextLine, evidenced: Bool)?
         func flush() {
             if !paragraph.elements.isEmpty {
                 result.append(ReflowBlock(content: .paragraph(paragraph), page: page.number))
@@ -2418,6 +2450,70 @@ enum LayoutReconstructor {
             paragraph = InlineText()
             previous = nil
             previousGap = nil
+            opening = nil
+        }
+        // A paragraph's opening line can stand further from the column's edge than the lines it
+        // wraps onto, which the same-column test (within one and a half bodies) does not admit (#147):
+        // - Our Flag indents each paragraph's first line two ems (18 points at a 9-point body):
+        //   `Strong evidence indicates that Francis Hopkinson of New Jersey, a` / `signer of the
+        //   Declaration…` (page 7). The opening line opens with a capital, was set apart from the
+        //   text above by more than its indent (a short or sentence-ending line, space, a heading, a
+        //   tag or the top of the text), is indented by up to three bodies, and ends where at least
+        //   three lines on the lower line's edge end, the lower line reaching no further. A hanging
+        //   indent's wrapped line fails: its entry's first line runs onto it at ordinary leading, and
+        //   its last line is short.
+        // - Our Flag also opens each section on a drop cap (#135), whose first lines are set beside
+        //   the initial, up to the initial's width in from the drop-cap line's edge
+        //   (`During the night…bom` / `barded Fort McHenry…`, page 5), before the text returns to
+        //   that edge below the initial. The drop-cap line carries `NativeTextReader`'s evidence
+        //   (`readingRect`, the body-height row beside the initial); the lines beside it lie within
+        //   the initial's depth and end on the drop-cap line's right edge.
+        func continuesOpening(_ line: TextLine, after prev: TextLine) -> Bool {
+            // The upper line reads as words across a measure of at least twelve bodies, as `wraps`
+            // asks. A table's stub column fails (Blue Book page 142's scanned `Evaluation` over
+            // `0-Balloon`, `1-Astronomical`, …, whose labels happen to end together), and so does its
+            // header row (page 70's `Identification 1 2 3 4 5 6 7`, which a margin mark stretches).
+            // Character density is not asked: Our Flag's pledge (page 51) justifies bold capitals
+            // loosely across the measure.
+            guard let opening, !line.monospaced, abs(line.fontSize - prev.fontSize) <= max(line.fontSize, prev.fontSize) * 0.1,
+                  prev.rect.width >= body * 12, isWordy(prev.text)
+            else { return false }
+            if opening.line.readingRect != nil {
+                let cap = opening.line
+                // A line beside the initial: in from the drop-cap line's edge by up to the initial's
+                // width (the line's full height is the initial's), within its depth. The line above
+                // fills the drop-cap line's measure.
+                func beside(_ other: TextLine) -> Bool {
+                    let inset = other.rect.minX - cap.rect.minX
+                    return inset > body * 1.5 && inset <= cap.rect.height * 1.5 && other.rect.midY > cap.rect.minY
+                }
+                guard abs(prev.rect.maxX - cap.rect.maxX) <= body * 0.5 else { return false }
+                if prev == cap { return beside(line) }
+                return beside(prev) && abs(line.rect.minX - cap.rect.minX) <= body * 0.5
+            }
+            guard opening.evidenced, opening.line == prev, prev.readingRect == nil else { return false }
+            // At least three lines on `edge`'s left edge end where the opening line does: it fills
+            // that measure.
+            func fillsMeasure(onEdgeOf edge: TextLine) -> Bool {
+                free.filter { abs($0.rect.minX - edge.rect.minX) <= body * 0.5 && abs($0.rect.maxX - prev.rect.maxX) <= body * 0.5 }
+                    .count >= 3 && line.rect.maxX <= prev.rect.maxX + body * 0.5
+            }
+            let indent = prev.rect.minX - line.rect.minX
+            if indent >= body * 1.5, indent <= body * 3 {
+                return opensWithCapital(prev) && fillsMeasure(onEdgeOf: line)
+            }
+            // The converse, a hanging indent: an entry's first line on the edge and its wrapped lines
+            // up to three bodies in (Our Flag's reading list, pages 53 and 54: `Manning, John R. The
+            // Story of Old Glory. Phoenix, AZ: Continuing Education` / `Institute, 1971.`). The entries
+            // are set apart by space, so the gap above the first line exceeds the leading beneath it
+            // by at least 0.4 body; an indented paragraph or quotation under a full line has no
+            // such space above that line.
+            guard -indent >= body * 1.5, -indent <= body * 3, fillsMeasure(onEdgeOf: prev) else { return false }
+            let leading = prev.rect.minY - line.rect.maxY
+            guard let above = free.filter({ $0 != prev && !sameRow($0.rect, prev.rect) && $0.rect.minY >= prev.rect.maxY - body * 0.4
+                && $0.rect.minX < prev.rect.maxX && $0.rect.maxX > prev.rect.minX }).min(by: { $0.rect.minY < $1.rect.minY })
+            else { return false }
+            return above.rect.minY - prev.rect.maxY >= leading + body * 0.4
         }
         // A wrapped body line can begin with an initial, a citation abbreviation or a year
         // followed by a period. It continues the open paragraph only when the previous line
@@ -2717,14 +2813,17 @@ enum LayoutReconstructor {
                 // evidence that joins two tagged groups joins these too (#89); the group's text
                 // then continues the open paragraph.
                 if tag.headingLevel == 0, !tag.opensWithSplitMarker, !taggedTitles.contains(tag.group), tagged == nil, !line.monospaced,
-                   let prev = previous, prev.wraps != false, !paragraph.elements.isEmpty, wraps(prev, onto: line) {
+                   let prev = previous, prev.wraps != false, !paragraph.elements.isEmpty,
+                   wraps(prev, onto: line, opening: opening?.line == prev && opening?.evidenced == true) {
                     tagged = (tag, join(paragraph, line.content, vocabulary: vocabulary, page: page.number,
                         warnings: &warnings), max(prev.fontSize, line.fontSize))
                     taggedGroups = [tag.group]
                     taggedLast = line
+                    taggedOpening = false
                     paragraph = InlineText()
                     previous = nil
                     previousGap = nil
+                    opening = nil
                     codeOrigin = nil
                     continue
                 }
@@ -2734,11 +2833,12 @@ enum LayoutReconstructor {
                     // Two paragraph groups split at a wrapped line read as one paragraph.
                     if current.0.headingLevel == 0, !current.0.opensWithSplitMarker, tag.headingLevel == 0,
                        !tag.opensWithSplitMarker, !taggedTitles.contains(current.0.group), !taggedTitles.contains(tag.group),
-                       let last = taggedLast, wraps(last, onto: line) {
+                       let last = taggedLast, wraps(last, onto: line, opening: taggedOpening) {
                         taggedGroups.insert(tag.group)
                     } else { flushTagged() }
                 }
                 taggedLast = line
+                taggedOpening = tagged == nil
                 if tagged == nil { taggedGroups = [tag.group] }
                 if let current = tagged {
                     tagged = (current.0, join(current.1, line.content, vocabulary: vocabulary,
@@ -2752,11 +2852,13 @@ enum LayoutReconstructor {
             // the spatial paragraph, and the ordinary rules below attach the line to it.
             if let current = tagged, current.0.headingLevel == 0, !current.0.opensWithSplitMarker,
                !taggedTitles.contains(current.0.group),
-               let last = taggedLast, !line.monospaced, wraps(last, onto: line) {
+               let last = taggedLast, !line.monospaced, wraps(last, onto: line, opening: taggedOpening) {
                 tagged = nil
                 paragraph = current.1
                 previous = last
                 previousGap = nil
+                // A group's only line opened the paragraph, and its tag set it apart.
+                opening = taggedOpening ? (last, true) : nil
             }
             flushTagged()
             if !line.monospaced { codeOrigin = nil }
@@ -2815,14 +2917,20 @@ enum LayoutReconstructor {
                 }
                 // The leading this line was attached at, for the next line's section test.
                 var attachedGap: CGFloat?
+                // Whether this line, should it open a paragraph, is set apart by more than its edge.
+                var evidencedOpening = true
                 if let prev = previous {
-                    let verticalGap = prev.rect.minY - line.rect.maxY
+                    // A drop-cap line's row is its reading rectangle, not the initial's depth (#147).
+                    let verticalGap = (prev.readingRect ?? prev.rect).minY - line.rect.maxY
                     // The overlap allowed grows by either line's extra height (`extraHeight`, #109).
                     // The paragraph gap above is still measured on the rectangles, and such a gap
                     // is not the paragraph's leading.
                     let inflation = extraHeight(prev) + extraHeight(line)
-                    let sameColumn = abs(prev.rect.minX - line.rect.minX) < body * 1.5
-                        && verticalGap >= -(body * 0.4 + inflation) && verticalGap < body * 0.9
+                    let ordinaryLeading = verticalGap >= -(body * 0.4 + inflation) && verticalGap < body * 0.9
+                    evidencedOpening = !ordinaryLeading || prev.wraps == false
+                        || prev.rect.maxX < line.rect.maxX - body || endsSentence(prev)
+                    let sameColumn = ordinaryLeading
+                        && (abs(prev.rect.minX - line.rect.minX) < body * 1.5 || continuesOpening(line, after: prev))
                     let shortEnding = prev.rect.width < line.rect.width * 0.65
                         && prev.text.last.map { ".!?".contains($0) } == true
                     // A figure caption ends where clearly larger type begins at body size or
@@ -2844,10 +2952,14 @@ enum LayoutReconstructor {
                         flush()
                     } else { attachedGap = inflation > 0 ? previousGap : verticalGap }
                 }
-                if paragraph.elements.isEmpty { paragraph = line.content }
-                else {
+                if paragraph.elements.isEmpty {
+                    paragraph = line.content
+                    opening = (line, evidencedOpening)
+                } else {
                     paragraph = join(paragraph, line.content, vocabulary: vocabulary,
                         page: page.number, warnings: &warnings)
+                    // The drop-cap line stays the opening while the lines beside its initial follow.
+                    if opening?.line.readingRect == nil { opening = nil }
                 }
                 previous = line
                 previousGap = attachedGap

@@ -1,0 +1,880 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        64,
+        583.56439999999998,
+        113.18779999999998,
+        22.440000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 22,
+          "text" : "Introduction"
+        }
+      ],
+      "text" : "Introduction"
+    },
+    {
+      "rect" : [
+        64,
+        498.28474800000004,
+        302.01690000000008,
+        44.716452000000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -24,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 43.523000000000003,
+          "text" : "D "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "uring the night of September 13, 1814, the British fleet bom"
+        }
+      ],
+      "text" : "D uring the night of September 13, 1814, the British fleet bom"
+    },
+    {
+      "rect" : [
+        109.75,
+        522.13650000000007,
+        259.23509999999999,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "barded\nFort McHenry in the harbor at Baltimore, Maryland."
+        }
+      ],
+      "text" : "barded\nFort McHenry in the harbor at Baltimore, Maryland."
+    },
+    {
+      "rect" : [
+        109.74999999999997,
+        510.13680000000011,
+        259.245,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Francis Scott Key, a 34-year old lawyer-poet, watched the"
+        }
+      ],
+      "text" : "Francis Scott Key, a 34-year old lawyer-poet, watched the"
+    },
+    {
+      "rect" : [
+        63.99939999999998,
+        498.13710000000009,
+        304.9892999999999,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "attack from the deck of a British prisoner-exchange ship. He had gone to"
+        }
+      ],
+      "text" : "attack from the deck of a British prisoner-exchange ship. He had gone to"
+    },
+    {
+      "rect" : [
+        63.99939999999998,
+        486.13740000000007,
+        304.99289999999991,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "seek the release of a friend but they were refused permission to go ashore"
+        }
+      ],
+      "text" : "seek the release of a friend but they were refused permission to go ashore"
+    },
+    {
+      "rect" : [
+        63.99939999999998,
+        474.13770000000005,
+        302.04179999999997,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "until after the attack had been made. As the battle ceased on the follow"
+        }
+      ],
+      "text" : "until after the attack had been made. As the battle ceased on the follow"
+    },
+    {
+      "rect" : [
+        63.99939999999998,
+        462.13800000000003,
+        304.9892999999999,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "ing\nmorning, Key turned his telescope to the fort and saw that the"
+        }
+      ],
+      "text" : "ing\nmorning, Key turned his telescope to the fort and saw that the"
+    },
+    {
+      "rect" : [
+        63.99939999999998,
+        450.13830000000002,
+        304.98659999999984,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "American flag was still waving. The sight so inspired him that he pulled a"
+        }
+      ],
+      "text" : "American flag was still waving. The sight so inspired him that he pulled a"
+    },
+    {
+      "rect" : [
+        63.99939999999998,
+        438.1386,
+        304.99200000000008,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "letter from his pocket and began to write the poem which eventually was"
+        }
+      ],
+      "text" : "letter from his pocket and began to write the poem which eventually was"
+    },
+    {
+      "rect" : [
+        63.99939999999998,
+        426.13889999999998,
+        304.9821,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "adopted as the national anthem of the United States—“The Star-Spangled"
+        }
+      ],
+      "text" : "adopted as the national anthem of the United States—“The Star-Spangled"
+    },
+    {
+      "rect" : [
+        63.99939999999998,
+        414.13919999999996,
+        304.99920000000003,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Banner.” Key was returned to Baltimore and later that day took a room at"
+        }
+      ],
+      "text" : "Banner.” Key was returned to Baltimore and later that day took a room at"
+    },
+    {
+      "rect" : [
+        63.99939999999998,
+        402.13949999999994,
+        209.61450000000002,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "a Baltimore tavern where he completed the poem."
+        }
+      ],
+      "text" : "a Baltimore tavern where he completed the poem."
+    },
+    {
+      "rect" : [
+        81.99939999999998,
+        390.13979999999992,
+        280.27440000000007,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "Years later, Key told a hometown audience in Frederick, Maryland:"
+        }
+      ],
+      "text" : "Years later, Key told a hometown audience in Frederick, Maryland:"
+    },
+    {
+      "rect" : [
+        109,
+        374.13620000000003,
+        233.00280000000004,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "“I saw the flag of my countr"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "y waving over a city—the"
+        }
+      ],
+      "text" : "“I saw the flag of my country waving over a city—the"
+    },
+    {
+      "rect" : [
+        91,
+        362.13650000000001,
+        251.01989999999989,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "strength and pride of my native State—a city devoted to plunder"
+        }
+      ],
+      "text" : "strength and pride of my native State—a city devoted to plunder"
+    },
+    {
+      "rect" : [
+        91,
+        350.13679999999999,
+        251.0136,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "and desolation by its assailants. I witnessed the preparation for"
+        }
+      ],
+      "text" : "and desolation by its assailants. I witnessed the preparation for"
+    },
+    {
+      "rect" : [
+        91,
+        338.13709999999998,
+        251.0163,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "its assaults. I saw the array of its enemies as they advanced to"
+        }
+      ],
+      "text" : "its assaults. I saw the array of its enemies as they advanced to"
+    },
+    {
+      "rect" : [
+        91,
+        326.13739999999996,
+        251.01990000000001,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "the attack. I heard the sound of battle; the noise of the conflict"
+        }
+      ],
+      "text" : "the attack. I heard the sound of battle; the noise of the conflict"
+    },
+    {
+      "rect" : [
+        91,
+        314.13769999999994,
+        251.00909999999993,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "fell upon my listening ear, and told me that ‘the brave and the"
+        }
+      ],
+      "text" : "fell upon my listening ear, and told me that ‘the brave and the"
+    },
+    {
+      "rect" : [
+        90.999999999999986,
+        302.13799999999992,
+        108.46260000000002,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "free’ had met the invaders.”"
+        }
+      ],
+      "text" : "free’ had met the invaders.”"
+    },
+    {
+      "rect" : [
+        82,
+        286.13620000000003,
+        286.98209999999995,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "The Joint Committee on Printing is pleased to present the latest"
+        }
+      ],
+      "text" : "The Joint Committee on Printing is pleased to present the latest"
+    },
+    {
+      "rect" : [
+        64,
+        274.13650000000001,
+        304.97850000000005,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "edition of Our Flag. This Congressional publication briefly describes the"
+        }
+      ],
+      "text" : "edition of Our Flag. This Congressional publication briefly describes the"
+    },
+    {
+      "rect" : [
+        64,
+        262.13679999999999,
+        301.88789999999995,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "history of the flag, and sets forth the practices and observances appro"
+        }
+      ],
+      "text" : "history of the flag, and sets forth the practices and observances appro"
+    },
+    {
+      "rect" : [
+        64.000000000000028,
+        250.1371,
+        304.98750000000007,
+        8.8649999999999807
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "priate\nto its display. The Committee hopes that this document will be"
+        }
+      ],
+      "text" : "priate\nto its display. The Committee hopes that this document will be"
+    },
+    {
+      "rect" : [
+        64.000000000000014,
+        238.13740000000001,
+        190.08990000000006,
+        8.8650000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9,
+          "text" : "both useful and informative to its audience."
+        }
+      ],
+      "text" : "both useful and informative to its audience."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    423,
+    652
+  ],
+  "caseID" : "gpo-our-flag-2003",
+  "graphics" : [
+    [
+      61,
+      578,
+      310,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 22,
+      "monospaced" : false,
+      "rect" : [
+        64,
+        583.56439999999998,
+        113.18779999999998,
+        22.440000000000055
+      ],
+      "structure" : {
+        "group" : 23,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 24
+      },
+      "text" : "Introduction"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        64,
+        498.28474800000004,
+        302.01690000000008,
+        44.716452000000004
+      ],
+      "text" : "D uring the night of September 13, 1814, the British fleet bom"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        109.75,
+        522.13650000000007,
+        259.23509999999999,
+        8.8650000000000091
+      ],
+      "text" : "barded\nFort McHenry in the harbor at Baltimore, Maryland."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        109.74999999999997,
+        510.13680000000011,
+        259.245,
+        8.8650000000000091
+      ],
+      "text" : "Francis Scott Key, a 34-year old lawyer-poet, watched the"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63.99939999999998,
+        498.13710000000009,
+        304.9892999999999,
+        8.8650000000000091
+      ],
+      "text" : "attack from the deck of a British prisoner-exchange ship. He had gone to"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63.99939999999998,
+        486.13740000000007,
+        304.99289999999991,
+        8.8650000000000091
+      ],
+      "text" : "seek the release of a friend but they were refused permission to go ashore"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63.99939999999998,
+        474.13770000000005,
+        302.04179999999997,
+        8.8650000000000091
+      ],
+      "text" : "until after the attack had been made. As the battle ceased on the follow"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63.99939999999998,
+        462.13800000000003,
+        304.9892999999999,
+        8.8650000000000091
+      ],
+      "text" : "ing\nmorning, Key turned his telescope to the fort and saw that the"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63.99939999999998,
+        450.13830000000002,
+        304.98659999999984,
+        8.8650000000000091
+      ],
+      "text" : "American flag was still waving. The sight so inspired him that he pulled a"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63.99939999999998,
+        438.1386,
+        304.99200000000008,
+        8.8650000000000091
+      ],
+      "text" : "letter from his pocket and began to write the poem which eventually was"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63.99939999999998,
+        426.13889999999998,
+        304.9821,
+        8.8650000000000091
+      ],
+      "text" : "adopted as the national anthem of the United States—“The Star-Spangled"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63.99939999999998,
+        414.13919999999996,
+        304.99920000000003,
+        8.8650000000000091
+      ],
+      "text" : "Banner.” Key was returned to Baltimore and later that day took a room at"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        63.99939999999998,
+        402.13949999999994,
+        209.61450000000002,
+        8.8650000000000091
+      ],
+      "text" : "a Baltimore tavern where he completed the poem."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        81.99939999999998,
+        390.13979999999992,
+        280.27440000000007,
+        8.8650000000000091
+      ],
+      "text" : "Years later, Key told a hometown audience in Frederick, Maryland:"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        109,
+        374.13620000000003,
+        233.00280000000004,
+        8.8650000000000091
+      ],
+      "structure" : {
+        "group" : 25,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 27
+      },
+      "text" : "“I saw the flag of my country waving over a city—the"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        91,
+        362.13650000000001,
+        251.01989999999989,
+        8.8650000000000091
+      ],
+      "structure" : {
+        "group" : 25,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 27
+      },
+      "text" : "strength and pride of my native State—a city devoted to plunder"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        91,
+        350.13679999999999,
+        251.0136,
+        8.8650000000000091
+      ],
+      "structure" : {
+        "group" : 25,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 27
+      },
+      "text" : "and desolation by its assailants. I witnessed the preparation for"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        91,
+        338.13709999999998,
+        251.0163,
+        8.8650000000000091
+      ],
+      "structure" : {
+        "group" : 25,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 27
+      },
+      "text" : "its assaults. I saw the array of its enemies as they advanced to"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        91,
+        326.13739999999996,
+        251.01990000000001,
+        8.8650000000000091
+      ],
+      "structure" : {
+        "group" : 25,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 27
+      },
+      "text" : "the attack. I heard the sound of battle; the noise of the conflict"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        91,
+        314.13769999999994,
+        251.00909999999993,
+        8.8650000000000091
+      ],
+      "structure" : {
+        "group" : 25,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 27
+      },
+      "text" : "fell upon my listening ear, and told me that ‘the brave and the"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        90.999999999999986,
+        302.13799999999992,
+        108.46260000000002,
+        8.8650000000000091
+      ],
+      "structure" : {
+        "group" : 25,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 27
+      },
+      "text" : "free’ had met the invaders.”"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        82,
+        286.13620000000003,
+        286.98209999999995,
+        8.8650000000000091
+      ],
+      "structure" : {
+        "group" : 26,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 28
+      },
+      "text" : "The Joint Committee on Printing is pleased to present the latest"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        64,
+        274.13650000000001,
+        304.97850000000005,
+        8.8650000000000091
+      ],
+      "structure" : {
+        "group" : 26,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 28
+      },
+      "text" : "edition of Our Flag. This Congressional publication briefly describes the"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        64,
+        262.13679999999999,
+        301.88789999999995,
+        8.8650000000000091
+      ],
+      "structure" : {
+        "group" : 26,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 28
+      },
+      "text" : "history of the flag, and sets forth the practices and observances appro"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        64.000000000000028,
+        250.1371,
+        304.98750000000007,
+        8.8649999999999807
+      ],
+      "structure" : {
+        "group" : 26,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 28
+      },
+      "text" : "priate\nto its display. The Committee hopes that this document will be"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        64.000000000000014,
+        238.13740000000001,
+        190.08990000000006,
+        8.8650000000000091
+      ],
+      "structure" : {
+        "group" : 26,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 28
+      },
+      "text" : "both useful and informative to its audience."
+    }
+  ],
+  "page" : 5,
+  "paints" : [
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        61,
+        578,
+        310,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication credited to the Joint Committee on Printing and GPO on physical page 3. External development material, not relicensed under MIT.",
+  "sourceSHA256" : "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
+  "sourceTitle" : "Our Flag",
+  "sourceURL" : "https://www.govinfo.gov/content/pkg/CDOC-108hdoc97/pdf/CDOC-108hdoc97.pdf"
+}

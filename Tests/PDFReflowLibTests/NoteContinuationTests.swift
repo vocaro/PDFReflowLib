@@ -120,9 +120,10 @@ private func note(_ blocks: [ReflowBlock], _ number: Int, chapter: Int) -> Reflo
     #expect(paragraph.text.contains("the United States did not accept a Sudanese offer"))
     #expect(block(notes.blocks, containing: "much recent controversy.")?.text.contains("controversy. After repeatedly demanding") == true)
     #expect(notes.blocks.contains { $0.content == .sourcePage(498) })
-    // Before, spatial prose split each further paragraph after its first line.
+    // Before, spatial prose split each further paragraph after its first line. Since #147 an indented
+    // opening line runs onto its wrapped lines without the hand-off too.
     let before = try chain(["911-497", "911-498"], carry: false)
-    #expect(block(before.blocks, containing: "President Clinton, in a February 2002")?.text.hasSuffix("the United States did") == true)
+    #expect(block(before.blocks, containing: "President Clinton, in a February 2002")?.text.contains("the United States did not accept") == true)
 }
 
 @Test func paragraphAfterAListThatEndsShortIsNotJoined() throws {

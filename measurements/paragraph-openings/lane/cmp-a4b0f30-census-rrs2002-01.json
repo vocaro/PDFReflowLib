@@ -1,0 +1,115 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "census-rrs2002-01",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "eb16c05bf0df0c580d12e7a48a68c8df29f384ae29f5ed6cd6c20267df5e4918",
+  "candidateConverterSHA256": "5f8868ea6c373efaaa8c8ae9d5a5b6098c8e6dd5d55ce44d03865d6d89b49140",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-base",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-cand",
+      "programsSHA256": "67e18185995944de1cefdd0bafaeb452a7f46d48181358a534e2c6fc6c5b8cbb"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 17,
+    "baselineWords": 5248,
+    "candidateWords": 5248,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    3,
+    17
+  ],
+  "changedPageFields": {
+    "3": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "17": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 15,
+    "fields": {
+      "paragraphIDs": 15
+    },
+    "navigationEntries": 0,
+    "pages": {
+      "4": [
+        "paragraphIDs"
+      ],
+      "5": [
+        "paragraphIDs"
+      ],
+      "6": [
+        "paragraphIDs"
+      ],
+      "7": [
+        "paragraphIDs"
+      ],
+      "8": [
+        "paragraphIDs"
+      ],
+      "9": [
+        "paragraphIDs"
+      ],
+      "10": [
+        "paragraphIDs"
+      ],
+      "11": [
+        "paragraphIDs"
+      ],
+      "13": [
+        "paragraphIDs"
+      ],
+      "14": [
+        "paragraphIDs"
+      ],
+      "15": [
+        "paragraphIDs"
+      ],
+      "16": [
+        "paragraphIDs"
+      ],
+      "18": [
+        "paragraphIDs"
+      ],
+      "19": [
+        "paragraphIDs"
+      ],
+      "20": [
+        "paragraphIDs"
+      ]
+    }
+  },
+  "imageRenames": {
+    "count": 0,
+    "pairs": []
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

@@ -336,7 +336,16 @@ The pieces of a prose row PDFKit splits at inline mathematics rejoin before clas
 A joined row whose radicand opens it with a minus sign before a number or variable (`− 1 √ , and
 it is…`) reads as prose, while a line that opens with a minus on its own keeps the list
 representation (#109). Paragraph lines attach at ordinary spacing, overlapping by up to 0.4 body
-sizes. A line that an inline expression makes taller than the page's ordinary line at its size
+sizes, on left edges within one and a half bodies. A paragraph's only line so far may stand further
+out when the page shows why (#147): an opening line indented up to three bodies (Our Flag's two
+ems) that opens with a capital, reads as words over at least twelve bodies, fills the measure three
+lines on the lower line's edge share, and was set apart from the text above by more than its edge
+(a short or sentence-ending line, space, a tag, a heading or the top of the text); a hanging-indent
+entry's first line with space above it exceeding the leading beneath by 0.4 body; and a drop-cap
+line (`readingRect`), whose next lines stand beside the initial within its depth and width before
+returning to its edge, its gap measured from the reading rectangle. A paragraph group whose only
+line is such an indented opening continues into a group or untagged line beneath it that opens
+lowercase or follows a hyphen (Our Flag's quotations, tagged one line per group). A line that an inline expression makes taller than the page's ordinary line at its size
 (Wallace's minus, times and radical glyphs extend a rectangle 8.5 points past the type), at most
 twice that height and set as prose on its paragraph's measure, may overlap by its extra height
 as well, and its gap is not taken as the paragraph's leading for the added-space rule (#71, #109).

@@ -4228,15 +4228,26 @@
     {
       "id": "gpo-our-flag-2003",
       "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
-      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Page 33 source raster reviewed in color: the Colorado flag (blue and white stripes, red C, gold disc) must keep its scale, ink contrast and hues (#27). Pages 33, 34, 42 and 43 reviewed (#62): the printed page number in the margin is retained text and is not a heading. Page 12 (#89) source-reviewed: the Beecher and Wilson quotations, tagged one line per group, join where each line wraps onto the next. Drop caps join their words on pages 5, 7, 13, 27 and 31 (`The`, not `T he`; `Any` and `Archeological` after an `A` initial); page 47's `On`, set without a space glyph, is the control (#135).",
+      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Page 33 source raster reviewed in color: the Colorado flag (blue and white stripes, red C, gold disc) must keep its scale, ink contrast and hues (#27). Pages 33, 34, 42 and 43 reviewed (#62): the printed page number in the margin is retained text and is not a heading. Page 12 (#89) source-reviewed: the Beecher and Wilson quotations, tagged one line per group, join where each line wraps onto the next. Drop caps join their words on pages 5, 7, 13, 27 and 31 (`The`, not `T he`; `Any` and `Archeological` after an `A` initial); page 47's `On`, set without a space glyph, is the control (#135). Paragraph openings (#147) source-reviewed on pages 5, 7, 10, 12, 49, 51, 53 and 54: a first line indented two ems runs onto the lines beneath it, the lines set beside a drop cap run on into the text that returns to the edge below the initial, one-line quotation groups continue into their wrapped lines, and a reading-list entry's hanging lines join the entry; the paragraph breaks before `Years later`, before the Beecher quotation, before `Strong evidence` and between two reading-list entries remain.",
       "pages": [
         {
           "page": 5,
           "paragraphs": [
-            "During the night of September 13, 1814"
+            "During the night of September 13, 1814",
+            "watched the attack from the deck of a British prisoner-exchange ship"
           ],
           "absentText": [
             "D uring the night"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "where he completed the poem.",
+              "second": "Years later, Key told a hometown audience"
+            },
+            {
+              "first": "Years later, Key told a hometown audience",
+              "second": "I saw the flag of my country waving"
+            }
           ]
         },
         {
@@ -4376,13 +4387,21 @@
           ],
           "paragraphs": [
             "Stars and Stripes originated as a result of a resolution",
-            "The Stars and Stripes originated as a result of a resolution"
+            "The Stars and Stripes originated as a result of a resolution",
+            "Philadelphia on June 14, 1777. The resolution read:",
+            "Francis Hopkinson of New Jersey, a signer of the Declaration of Independence"
           ],
           "headings": [
             "The History of the Stars and Stripes"
           ],
           "absentText": [
             "T he Stars"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "while others had eight.",
+              "second": "Strong evidence indicates that Francis Hopkinson"
+            }
           ]
         },
         {
@@ -4440,7 +4459,10 @@
           "paragraphs": [
             "a symbol of Liberty and men rejoiced in it.",
             "As at early dawn the stars shine forth",
-            "whether in peace or in war. And yet, though silent, it speaks to us—speaks to us of the past"
+            "whether in peace or in war. And yet, though silent, it speaks to us—speaks to us of the past",
+            "sees not the flag, but the nation itself.",
+            "bright morning stars of God, and the stripes upon it were beams of morning light.",
+            "under which we serve, is the emblem of our unity"
           ],
           "maximumImages": 0
         },
@@ -4455,7 +4477,43 @@
         },
         {
           "page": 54,
-          "maximumImages": 0
+          "maximumImages": 0,
+          "paragraphs": [
+            "Phoenix, AZ: Continuing Education Institute, 1971.",
+            "The American Flag as Art and as History, from the Birth of the Republic to the Present."
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Continuing Education Institute, 1971.",
+              "second": "Mastai, Bolesaw."
+            }
+          ]
+        },
+        {
+          "page": 10,
+          "paragraphs": [
+            "admitted to the Union (Kentucky and Vermont), a resolution was adopted",
+            "15 stars and 15 stripes. This flag was the official flag of our country"
+          ]
+        },
+        {
+          "page": 49,
+          "paragraphs": [
+            "Baltimore, Maryland. This low citadel overlooks the entrance",
+            "service for nearly a century after the battle but changing technology"
+          ]
+        },
+        {
+          "page": 51,
+          "paragraphs": [
+            "TO THE FLAG OF THE UNITED STATES OF AMERICA"
+          ]
+        },
+        {
+          "page": 53,
+          "paragraphs": [
+            "A New Flag for a New Country: The First National Flag; A Play. Chicago: Childrens Press, 1975."
+          ]
         }
       ]
     },
@@ -5055,7 +5113,7 @@
     {
       "id": "census-rrs2002-01",
       "sourceSHA256": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
-      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body fonts name their glyphs by index with no Unicode mapping (#38). Since #143 the EC text fonts (dcr, dcbx, dcti) are decoded through the offset the document's own words establish: pages 3 and 17, drawn in those fonts alone and holding no numeric table, reflow from native text without damagedTextEncoding, OCR or a source-page image, and their reviewed phrases (page 3's heading, first sentence, subsection title and numbered fields 1, 12 and 13; page 17's body and references with ligatures, dashes and an italic journal title) were read from 200-dpi renders of the source pages. Pages 12 and 15 are tables no table path reconstructs; they keep damagedTextEncoding and their table images, and must never reflow the table rows run together as prose (Table 2's `0.9620 rnkswp10`, Table 7's `13.85 add01_sw`). Pages 2, 4-11, 13, 14, 16 and 18-20 draw undecodable math or typewriter fonts or lines PDFKit breaks, and must still report damagedTextEncoding and keep a source-page image. Does not bless OCR accuracy on those pages.",
+      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body fonts name their glyphs by index with no Unicode mapping (#38). Since #143 the EC text fonts (dcr, dcbx, dcti) are decoded through the offset the document's own words establish: pages 3 and 17, drawn in those fonts alone and holding no numeric table, reflow from native text without damagedTextEncoding, OCR or a source-page image, and their reviewed phrases (page 3's heading, first sentence, subsection title and numbered fields 1, 12 and 13; page 17's body and references with ligatures, dashes and an italic journal title) were read from 200-dpi renders of the source pages. Pages 12 and 15 are tables no table path reconstructs; they keep damagedTextEncoding and their table images, and must never reflow the table rows run together as prose (Table 2's `0.9620 rnkswp10`, Table 7's `13.85 add01_sw`). Pages 2, 4-11, 13, 14, 16 and 18-20 draw undecodable math or typewriter fonts or lines PDFKit breaks, and must still report damagedTextEncoding and keep a source-page image. Does not bless OCR accuracy on those pages. Page 3's paragraph after the income list opens on an indented first line that runs onto `public-use CPS file`, and page 17's first reference hangs `Incomplete Data via the EM Algorithm` under a first line set apart by space; each reads as one paragraph (#147).",
       "pages": [
         {
           "page": 1,
@@ -5107,7 +5165,10 @@
             "ocrUsed",
             "unverifiedTextLayer"
           ],
-          "maximumImages": 0
+          "maximumImages": 0,
+          "paragraphs": [
+            "identiﬁers and data from the public-use CPS ﬁle."
+          ]
         },
         {
           "page": 4,
@@ -5228,7 +5289,10 @@
             "damagedTextEncoding",
             "ocrUsed"
           ],
-          "maximumImages": 0
+          "maximumImages": 0,
+          "paragraphs": [
+            "Maximum Likelihood from Incomplete Data via the EM Algorithm"
+          ]
         },
         {
           "page": 18,

@@ -133,7 +133,11 @@ that fall back to images skip unused attributed-text decoding. Failures use
   sits beside a paragraph does not rasterize that prose. Images preserve compositing and appearance rather than
   exposing raw image resources with missing masks or detached labels.
 - Vision recognizes pages with missing/damaged text by default. OCR text is explicitly reported
-  as transcription, with an accompanying original-page image by default.
+  as transcription, with an accompanying original-page image by default. The recognition request
+  pins revision 1 and writes out its text options at their macOS/iOS 27 defaults (language
+  correction off). Transcription can still differ between processes: separate compiles of
+  Vision's models can read the same page differently, and processes with the same executable
+  name reuse one cached compile ([#94](measurements/ocr-location/record.md)).
   Existing text over a page-sized graphic retains a source reference image by default and reports
   `unverifiedTextLayer`: transcription, tables, numbers and reading order need human review.
   This conservative signal is not an OCR confidence score; it can also flag illustrated pages

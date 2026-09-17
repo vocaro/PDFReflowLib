@@ -8,6 +8,12 @@ page, OCR/report and encoded image differences; an unchanged EPUB ZIP hash is no
 (identifiers/timestamps vary). For repeat runs of one binary see check_reproducibility.py.
 This detects drift, not correctness. Existing content/EPUB/resource gates still apply.
 
+Vision OCR text is not a function of the binary alone (#94): each compile of Vision's models can
+transcribe differently, and a process inherits the programs cached under its name. Changed pages
+that are OCR pages in both runs are listed as changedOCRPages, with an ocrCaveat unless both
+receipts record identical compiled programs; each run's cache mode, name and fingerprint are
+reported. The caveat does not change `passed`.
+
 Generated identifiers are not content (#92): book-wide paragraph and list-item ordinals,
 element ids, spine file names and image asset names all shift when an earlier page gains or
 loses a block, a spine boundary moves or an image is added. Each page is compared with those
@@ -22,7 +28,7 @@ from pathlib import Path, PurePosixPath
 import re
 
 from check_corpus_content import read_pages, resolve_link
-from check_reproducibility import Package
+from check_reproducibility import Package, ocr_pages
 from conversion_provenance import digest, is_digest, probe_errors
 
 NUMBER = re.compile(r'\d+')
@@ -30,6 +36,34 @@ SCHEME = re.compile(r'^[A-Za-z][A-Za-z0-9+.-]*:')
 PAGE_ID = re.compile(r'page-[1-9]\d*')
 TAG = re.compile(r'<[^<>]+>')
 GENERATED_ATTRIBUTE = re.compile(r'(?<=\s)(id|href|src)="([^"]*)"')
+
+
+def vision_caches(left, right, changed_pages):
+    """Flag OCR-page changes that Vision model compilation alone can explain (#94).
+
+    Each compile of Vision's document models can produce a program that transcribes differently,
+    and a process inherits its name's cached programs. Changed pages that are OCR pages in both
+    runs are listed; the caveat is attached unless both receipts record identical compiled
+    programs. Identical programs make such a change genuine; differing programs make it
+    unattributable here (output-equivalent compiles also differ in bytes).
+    """
+    caches = {}
+    for label, receipt in [('baseline', left), ('candidate', right)]:
+        cache = receipt.get('visionModelCache') if isinstance(receipt.get('visionModelCache'), dict) else {}
+        after = cache.get('after') if isinstance(cache.get('after'), dict) else {}
+        caches[label] = {'mode': cache.get('mode'), 'executableName': after.get('executableName'),
+                         'programsSHA256': after.get('programsSHA256')}
+    programs = [caches[label]['programsSHA256'] for label in caches]
+    same = None if not all(is_digest(p) for p in programs) else programs[0] == programs[1]
+    both = ocr_pages(left['conversionReport']) & ocr_pages(right['conversionReport'])
+    changed = [page for page in changed_pages if page in both]
+    result = {'visionModelCaches': caches, 'sameVisionPrograms': same, 'changedOCRPages': changed}
+    if changed and same is not True:
+        result['ocrCaveat'] = (f'OCR pages {changed} changed and the two runs\' compiled Vision programs '
+                               + ('differ' if same is False else 'were not recorded')
+                               + '; Vision model compilation alone can change OCR text (#94), so these pages '
+                                 'do not show a converter change by themselves')
+    return result
 
 
 def compatible_receipts(left, right, allow_different_converters=False):
@@ -272,6 +306,7 @@ def compare(baseline, candidate, allow_different_converters=False, detail=False)
         'baselineConverterSHA256': left['converterSHA256'],
         'candidateConverterSHA256': right['converterSHA256'],
         'sameConverter': left['converterSHA256'] == right['converterSHA256'],
+        **vision_caches(left, right, changed_pages),
         'changedPages': changed_pages, 'changedPageFields': changed_fields,
         'changedImages': changed_images,
         'navigationChanged': navigation_changed, 'changedNavigationPages': navigation_pages,

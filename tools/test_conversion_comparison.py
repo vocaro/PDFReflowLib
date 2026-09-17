@@ -20,6 +20,8 @@ class EvaluationFixture(unittest.TestCase):
             'executionContext': 'host-terminal', 'system': 'macOS', 'systemBuild': 'build',
             'machine': 'arm64', 'options': 'library defaults', 'runPassed': True,
             'converterSHA256': 'c' * 64,
+            'visionModelCache': {'mode': 'fresh', 'after': {'executableName': 'pdf-reflow-1a2b3c4d',
+                                                            'programsSHA256': '9' * 64}},
             'conversionReport': {'pageCount': 1, 'recognizedPageCount': 1, 'warnings': []},
             'environmentProbeCapture': {'executableSHA256': 'd' * 64, 'resultSHA256': 'e' * 64, 'exitCode': 0},
             'environmentProbe': {'schemaVersion': 1, 'runID': 'run-control', 'system': 'macOS build',
@@ -95,6 +97,52 @@ class ConversionComparisonTests(EvaluationFixture):
         result = compare(self.evaluation('left'), self.evaluation('right', receipt=unknown))
         self.assertFalse(result['passed'])
         self.assertNotIn('changedImages', result)
+
+    def ocr_receipt(self, programs='9' * 64, mode='fresh'):
+        receipt = copy.deepcopy(self.receipt)
+        receipt['conversionReport']['warnings'] = [{'code': 'ocrUsed', 'page': 1, 'message': 'OCR'}]
+        receipt['visionModelCache'] = {'mode': mode, 'after': {'executableName': 'pdf-reflow', 'programsSHA256': programs}}
+        if programs is None:
+            del receipt['visionModelCache']
+        return receipt
+
+    def test_changed_ocr_pages_carry_a_caveat_unless_vision_programs_match(self):
+        """#94: OCR text can change with Vision's compiled programs alone; the change is flagged, not hidden."""
+        left = self.evaluation('left', receipt=self.ocr_receipt())
+        cases = [('differ', self.ocr_receipt('8' * 64, mode='inherited'), False, 'differ'),
+                 ('unrecorded', self.ocr_receipt(None), None, 'were not recorded'),
+                 ('same', self.ocr_receipt(), True, None)]
+        for name, receipt, same, wording in cases:
+            with self.subTest(programs=name):
+                result = compare(left, self.evaluation(name, body='<p>Recognized differently</p>', receipt=receipt))
+                self.assertEqual(result['provenanceErrors'], [])
+                self.assertFalse(result['passed'])
+                self.assertEqual(result['changedPages'], [1])
+                self.assertEqual(result['changedOCRPages'], [1])
+                self.assertIs(result['sameVisionPrograms'], same)
+                if wording:
+                    self.assertIn(f"compiled Vision programs {wording}", result['ocrCaveat'])
+                    self.assertIn('#94', result['ocrCaveat'])
+                else:
+                    self.assertNotIn('ocrCaveat', result)
+        self.assertEqual(result['visionModelCaches']['candidate'],
+                         {'mode': 'fresh', 'executableName': 'pdf-reflow', 'programsSHA256': '9' * 64})
+
+    def test_changes_off_ocr_pages_carry_no_vision_caveat(self):
+        candidate = self.ocr_receipt('8' * 64)
+        candidate['conversionReport']['warnings'] = []
+        baseline = self.ocr_receipt()
+        baseline['conversionReport']['warnings'] = []
+        result = compare(self.evaluation('left', receipt=baseline),
+                         self.evaluation('right', body='<p>Changed layout</p>', receipt=candidate))
+        self.assertEqual((result['changedPages'], result['changedOCRPages']), ([1], []))
+        self.assertIs(result['sameVisionPrograms'], False)
+        self.assertNotIn('ocrCaveat', result)
+        # A page recognized in only one run is not an OCR page of both.
+        candidate['conversionReport']['warnings'] = [{'code': 'ocrUsed', 'page': 1, 'message': 'OCR'}]
+        result = compare(self.evaluation('left-2', receipt=baseline),
+                         self.evaluation('right-2', body='<p>Changed layout</p>', receipt=candidate))
+        self.assertEqual(result['changedOCRPages'], [])
 
     def test_context_labels_are_supplemental(self):
         left = self.evaluation('left')

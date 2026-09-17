@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "provenanceErrors": [],
+  "case": "cdc-zombie-pandemic-2011",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "848a0c4a829816d4c9b7534dbea65a897adccad56ab0d905f869d6ddabcdfd49",
+  "candidateConverterSHA256": "848a0c4a829816d4c9b7534dbea65a897adccad56ab0d905f869d6ddabcdfd49",
+  "sameConverter": true,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "fresh",
+      "executableName": "pdf-reflow-af127cc3",
+      "programsSHA256": "43a9e68d6b9058db89cb261be4b1d82f4b4a9f672af7efbb91f40100ac6bcce8"
+    },
+    "candidate": {
+      "mode": "fresh",
+      "executableName": "pdf-reflow-08eac379",
+      "programsSHA256": "4f5fad18c8f4a7fb55f30f969c43746a0d9b9d95bb1f6a823b7ef25cae64b9d4"
+    }
+  },
+  "changedPages": [],
+  "changedPageFields": {},
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 0,
+    "fields": {},
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

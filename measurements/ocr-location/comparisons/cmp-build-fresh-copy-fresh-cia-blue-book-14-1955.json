@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "provenanceErrors": [],
+  "case": "cia-blue-book-14-1955",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "848a0c4a829816d4c9b7534dbea65a897adccad56ab0d905f869d6ddabcdfd49",
+  "candidateConverterSHA256": "848a0c4a829816d4c9b7534dbea65a897adccad56ab0d905f869d6ddabcdfd49",
+  "sameConverter": true,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "fresh",
+      "executableName": "pdf-reflow-456b42d2",
+      "programsSHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "candidate": {
+      "mode": "fresh",
+      "executableName": "pdf-reflow-326c3f59",
+      "programsSHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "changedPages": [],
+  "changedPageFields": {},
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 0,
+    "fields": {},
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

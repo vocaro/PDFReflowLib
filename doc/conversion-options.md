@@ -193,6 +193,20 @@ This covers packaging only. Rendering, OCR and image encoding can still differ a
 or device capabilities (#26). A client pinning output bytes should record the converter revision
 and OS build alongside the digest and treat a mismatch as a reason to re-convert.
 
+OCR text can also differ between two processes running the same binary on the same Mac (#94).
+The library pins the `RecognizeDocumentsRequest` revision (`.revision1`) and writes out every
+text option at its SDK default (language correction off, automatic language detection on,
+minimum text height 1/32, three candidates, no custom words); compute devices stay automatic.
+Vision compiles its document models into a cache keyed by process name
+(`~/Library/Caches/<name>/com.apple.e5rt.e5bundlecache` on macOS; presumably the app's cache
+container on iOS, not measured), separate compiles can read the same page differently, and
+later processes of that name reuse the cached programs until Vision recompiles them. A renamed
+copy of the executable therefore draws its own compile, and a client should not expect OCR text
+to match another installation's byte for byte. Pinning the request to the CPU did not remove the
+dependence. [The measurement](../measurements/ocr-location/record.md) has the details. The book
+language applies to recognition only when it names a region Vision lists (`fr-FR`); a bare `en`
+leaves the recognizer's default, US English.
+
 ## Developer client
 
 The same options are available through `pdf-reflow --help`. For example:

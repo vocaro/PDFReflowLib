@@ -1,0 +1,234 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "census-rrs2002-01",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "848a0c4a829816d4c9b7534dbea65a897adccad56ab0d905f869d6ddabcdfd49",
+  "candidateConverterSHA256": "848a0c4a829816d4c9b7534dbea65a897adccad56ab0d905f869d6ddabcdfd49",
+  "sameConverter": true,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "fresh",
+      "executableName": "pdf-reflow-77114fe5",
+      "programsSHA256": "ea9678d320db23163cb0071340658516c6b0858391cbbff61103eeb0ddeaeb06"
+    },
+    "candidate": {
+      "mode": "fresh",
+      "executableName": "pdf-reflow-be648e49",
+      "programsSHA256": "1d13d406868e3dcbcd7ab3ca8fe28ce140f5023c878fc89aad66c4e4dfdc5c0a"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "ocrCaveat": "OCR pages [2, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20] changed and the two runs' compiled Vision programs differ; Vision model compilation alone can change OCR text (#94), so these pages do not show a converter change by themselves",
+  "changedPages": [
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "changedPageFields": {
+    "2": [
+      "anchors",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "4": [
+      "anchors",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "5": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "6": [
+      "anchors",
+      "headings",
+      "markup",
+      "text"
+    ],
+    "7": [
+      "anchors",
+      "headings",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "8": [
+      "anchors",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "9": [
+      "anchors",
+      "headings",
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "10": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "11": [
+      "anchors",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "13": [
+      "anchors",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "14": [
+      "anchors",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "15": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "16": [
+      "anchors",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "17": [
+      "anchors",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "18": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "19": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "20": [
+      "anchors",
+      "headings",
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ]
+  },
+  "changedImages": [
+    "EPUB/images/image-19.png",
+    "EPUB/images/image-52.png"
+  ],
+  "navigationChanged": true,
+  "changedNavigationPages": [
+    11,
+    13,
+    14,
+    16,
+    17,
+    2,
+    20,
+    4,
+    6,
+    7,
+    8,
+    9
+  ],
+  "pageMarkersEqual": true,
+  "changedReportFields": [
+    "warnings"
+  ],
+  "idOnlyShifts": {
+    "pageCount": 2,
+    "fields": {
+      "images": 1,
+      "markup": 1,
+      "paragraphIDs": 1
+    },
+    "navigationEntries": null
+  },
+  "imageRenames": {
+    "count": 33
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

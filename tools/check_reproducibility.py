@@ -8,7 +8,8 @@ launch and after the last exit; a change refuses the case instead of comparing t
 Byte-identical EPUBs and equal reports (ignoring outputURL) pass. Otherwise a normalized
 comparison runs: spine documents are concatenated and split at page markers, file names
 are stripped from same-book links (spine packing may move), and every page's markup is
-compared. Pages the report marks `ocrUsed` in both runs may differ (Vision output varies
+compared. Each record notes the Vision model cache both runs inherit through the converter's
+file name and whether it changed during the check (#94). Pages the report marks `ocrUsed` in both runs may differ (Vision output varies
 between identical runs); they are reported, never silently ignored. Every other differing
 page, ZIP entry, navigation entry, package field or report field fails.
 
@@ -25,6 +26,8 @@ import subprocess
 import time
 import xml.etree.ElementTree as ET
 import zipfile
+
+from conversion_provenance import vision_model_cache
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / 'Tests/PDFReflowLibTests/fixtures'
@@ -270,6 +273,9 @@ def check_source(label, source, converter, directory, mode, timeout, keep, expec
     record = {'label': label, 'source': str(source), 'mode': mode, 'pinnedOptions': PINNED}
     record['sourceSHA256'] = digest(source)
     record['converterSHA256'] = digest(converter)
+    # Both runs share the process name, so both inherit one Vision model cache (#94). Record it:
+    # another name's runs, or a recompile during the check, can read OCR pages differently.
+    cache = {'before': vision_model_cache(converter)}
     errors = []
     if expected_source and record['sourceSHA256'] != expected_source:
         errors.append('source identity differs from its manifest')
@@ -277,6 +283,9 @@ def check_source(label, source, converter, directory, mode, timeout, keep, expec
     runs = [] if errors else convert_twice(converter, source, directory, mode, timeout)
     record['wallSeconds'] = round(time.monotonic() - start, 2)
     record['runs'] = [{'exitCode': r['exitCode'], 'seconds': r['seconds']} for r in runs]
+    cache['after'] = vision_model_cache(converter)
+    cache['changed'] = cache['before']['programsSHA256'] != cache['after']['programsSHA256']
+    record['visionModelCache'] = cache
     if digest(converter) != record['converterSHA256']:
         errors.append('converter binary changed during the check; refusing to compare two builds')
     if digest(source) != record['sourceSHA256']:

@@ -21,6 +21,8 @@ def main():
     parser.add_argument('--case', action='append', dest='selected')
     parser.add_argument('--execution-context', help='caller-declared launch context recorded in each evaluation')
     parser.add_argument('--environment-probe', type=Path, help='compiled raster/Vision capability probe')
+    parser.add_argument('--fresh-vision-cache', action='store_true',
+                        help='run each conversion from a run-unique converter copy with an empty Vision model cache (#94)')
     args = parser.parse_args()
     manifest = json.loads((ROOT / 'corpus/manifest.json').read_text())['documents']
     definitions = json.loads((ROOT / 'corpus/regressions.json').read_text())
@@ -47,7 +49,8 @@ def main():
                 '--case', name, '--pdf', str(ROOT / 'corpus/cache' / cases[name]['filename']),
                 '--converter', str(converter), '--output', str(directory), '--epubcheck', str(epubcheck)]
                 + (['--execution-context', args.execution_context] if args.execution_context else [])
-                + (['--environment-probe', str(probe)] if probe else []),
+                + (['--environment-probe', str(probe)] if probe else [])
+                + (['--fresh-vision-cache'] if args.fresh_vision_cache else []),
                 stdout=log, stderr=subprocess.STDOUT)
         if run.returncode:
             assessment = {'case': name, 'passed': False, 'errors': ['Conversion/resource/EPUB gate failed; see case log']}

@@ -94,7 +94,29 @@ reporting output drift. It also refuses two evaluations whose `converterSHA256` 
 so a shared `.build/release/pdf-reflow` rebuilt between runs cannot pass as run-to-run drift
 (the likely cause of #68's unreproduced report). The evaluator hashes the converter again after
 conversion and fails the run if it changed; the corpus runner stops if the binary changes
-between cases. To test whether one binary repeats itself, use
+between cases.
+
+The binary is not the whole OCR identity (#94). Vision compiles its document models into a
+cache keyed by the converter's *file name*, separate compiles can transcribe the same page
+differently, and every later process of that name reuses the cached programs (Vision recompiles
+them when, for example, a different binary of that name runs). So `.build/release/pdf-reflow`
+in every worktree, and a same-name copy anywhere, share one cache, while a renamed copy
+(`pdf-reflow-394147f`) draws its own compile. No Vision option removes this.
+
+Every evaluation receipt records `visionModelCache`: the mode, and before and after conversion
+the executable name and a fingerprint of the compiled programs (per-compile `model.anehash`
+files excluded). `--fresh-vision-cache` (evaluator and corpus runner) launches a run-unique copy
+(`<name>-<run id>`) that compiles into an empty cache, removed after the run, so the run is
+isolated from other processes and builds of the same name; it costs model compilation on every
+recognized book (Census: about 60 s instead of 5 s with a cached compile, at load 13–19) and is
+still one draw, not a reproducible transcription. The comparator
+lists changed pages that are OCR pages in both runs as `changedOCRPages` and adds an `ocrCaveat`
+unless both receipts record identical programs: such changes do not show a converter change by
+themselves. Identical programs make them genuine; differing fingerprints do not prove a
+different transcription, since output-equivalent compiles also differ in bytes. For a
+before/after decision on an OCR book, review the text of `changedOCRPages` or repeat each side.
+
+To test whether one binary repeats itself, use
 [repeat-run identity](regression-testing.md#repeat-run-identity), not this comparator.
 
 The comparator verifies the retained EPUB, probe JSON, and conversion report against their

@@ -114,6 +114,60 @@ print(json.dumps({{"pageCount": 1, "reflowedPageCount": 1, "recognizedPageCount"
         _, result = self.invoke(512)
         self.assertEqual(result['options'], 'library defaults')
 
+    def vision_cache_stub(self):
+        """Home for the child and a converter that compiles a 'model' under its own process name (#94)."""
+        home = self.root / "home"
+        home.mkdir()
+        launched = self.root / "launched.json"
+        self.converter.write_text(self.converter.read_text().replace(
+            "import json, shutil, sys, time",
+            "import json, shutil, sys, time\nfrom pathlib import Path\n"
+            f"open({str(launched)!r}, 'w').write(json.dumps(sys.argv[0]))\n"
+            "cache = Path.home() / 'Library/Caches' / Path(sys.argv[0]).name / 'com.apple.e5rt.e5bundlecache/key'\n"
+            "cache.mkdir(parents=True, exist_ok=True)\n"
+            "(cache / 'H.e5').write_text('program')\n(cache / 'model.anehash').write_text(str(time.time()))"))
+        return home, launched
+
+    def test_fresh_vision_cache_launches_a_run_unique_copy_and_removes_its_cache(self):
+        home, launched = self.vision_cache_stub()
+        with patch.dict(runner.os.environ, {"HOME": str(home)}):
+            code, result = self.invoke(512, ["--fresh-vision-cache"])
+        self.assertEqual(code, 0, result)
+        name = Path(json.loads(launched.read_text())).name
+        self.assertEqual(name, "converter-" + result["runID"].split("-")[0])
+        cache = result["visionModelCache"]
+        self.assertEqual(cache["mode"], "fresh")
+        self.assertEqual(cache["before"]["executableName"], name)
+        self.assertFalse(cache["before"]["exists"])
+        self.assertEqual(cache["after"]["programCount"], 1)
+        self.assertEqual(result["converterSHA256AfterConversion"], result["converterSHA256"])
+        self.assertFalse((home / "Library/Caches" / name).exists())
+        self.assertFalse((self.root / "result/converter").exists())
+
+    def test_inherited_vision_cache_is_recorded_and_left_in_place(self):
+        home, launched = self.vision_cache_stub()
+        with patch.dict(runner.os.environ, {"HOME": str(home)}):
+            _, first = self.invoke(512)
+            shutil.rmtree(self.root / "result")
+            code, second = self.invoke(512)
+        self.assertEqual(code, 0, second)
+        self.assertEqual(Path(json.loads(launched.read_text())), self.converter.resolve())
+        self.assertEqual(first["visionModelCache"]["mode"], "inherited")
+        self.assertFalse(first["visionModelCache"]["before"]["exists"])
+        # The second run inherits the first run's programs; anehash churn is not a program change.
+        self.assertEqual(second["visionModelCache"]["before"]["programsSHA256"],
+                         first["visionModelCache"]["after"]["programsSHA256"])
+        self.assertTrue((home / "Library/Caches/converter/com.apple.e5rt.e5bundlecache/key/H.e5").exists())
+
+    def test_fresh_vision_cache_refuses_a_name_already_in_use(self):
+        home, _ = self.vision_cache_stub()
+        fixed = runner.uuid.UUID("12345678-0000-4000-8000-000000000000")
+        (home / "Library/Caches/converter-12345678").mkdir(parents=True)
+        with patch.dict(runner.os.environ, {"HOME": str(home)}), patch.object(runner.uuid, "uuid4", return_value=fixed), \
+                contextlib.redirect_stderr(io.StringIO()), self.assertRaises(SystemExit):
+            self.invoke(512, ["--fresh-vision-cache"])
+        self.assertTrue((home / "Library/Caches/converter-12345678").exists())
+
     def test_malformed_converter_options_are_rejected_before_conversion(self):
         for option in ['raster-dpi=240', '--raster-dpi', '--raster-dpi=', '=240']:
             with self.subTest(option=option), self.assertRaises(SystemExit) as caught:

@@ -13,13 +13,14 @@ import os
 from pathlib import Path
 import platform
 import re
+import shutil
 import signal
 import subprocess
 import sys
 import time
 import uuid
 
-from conversion_provenance import digest, probe_errors
+from conversion_provenance import digest, probe_errors, vision_cache_directory, vision_model_cache
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -62,6 +63,11 @@ def main():
     parser.add_argument("--converter-option", action="append", default=[], metavar="FLAG=VALUE",
                         help="explicit converter option, e.g. --raster-dpi=240, forwarded as two arguments "
                              "after the input/output paths and recorded in the receipt; repeatable")
+    parser.add_argument("--fresh-vision-cache", action="store_true",
+                        help="launch a run-unique copy of the converter so Vision compiles its models into an "
+                             "empty cache instead of reusing (or rewriting) the one shared by every process "
+                             "of the converter's name, then remove it (#94). Isolation only: a fresh compile "
+                             "can itself transcribe differently")
     args = parser.parse_args()
     converter_options = []
     for option in args.converter_option:
@@ -119,12 +125,25 @@ def main():
             capture['error'] = str(error)
         receipt['environmentProbeCheck'] = {'errors': probe_errors(receipt)}
         receipt['environmentProbeCheck']['passed'] = not receipt['environmentProbeCheck']['errors']
+    # Vision caches compiled models under the process name (#94). A fresh run launches a copy whose
+    # name no earlier process used, so recognition uses programs compiled for this run alone.
+    launched = converter
+    if args.fresh_vision_cache:
+        launched = args.output / "converter" / f"{converter.name}-{receipt['runID'].split('-')[0]}"
+        if vision_cache_directory(launched).parent.exists():
+            parser.error("the run-unique Vision cache name is already in use")
+        launched.parent.mkdir()
+        shutil.copy2(converter, launched)
+        if digest(launched) != receipt["converterSHA256"]:
+            parser.error("converter copy differs from the converter")
+    receipt["visionModelCache"] = {"mode": "fresh" if args.fresh_vision_cache else "inherited",
+                                   "before": vision_model_cache(launched)}
     report_path = args.output / "conversion-report.json"
     start = time.monotonic()
     with report_path.open("w") as report, (args.output / "progress.log").open("w") as log:
         read_memory = memory_reader()
         samples = []
-        process = subprocess.Popen([str(converter), str(args.pdf.resolve()), str(output.resolve()), *converter_options],
+        process = subprocess.Popen([str(launched), str(args.pdf.resolve()), str(output.resolve()), *converter_options],
                                    stdout=report, stderr=log)
         stage = "starting"
         pending = ""
@@ -157,6 +176,13 @@ def main():
     receipt["conversionSeconds"] = time.monotonic() - start
     # A shared build path rebuilt mid-run would attribute this output to the wrong binary (#68).
     receipt["converterSHA256AfterConversion"] = digest(converter)
+    receipt["visionModelCache"]["after"] = vision_model_cache(launched)
+    if args.fresh_vision_cache:
+        if digest(launched) != receipt["converterSHA256"]:
+            receipt["converterSHA256AfterConversion"] = digest(launched)
+        shutil.rmtree(launched.parent)
+        # Only this run's process name could have created the directory checked absent above.
+        shutil.rmtree(vision_cache_directory(launched).parent, ignore_errors=True)
     receipt["converterPeakRSSBytes"] = usage.ru_maxrss * (1 if sys.platform == "darwin" else 1024)
     receipt["converterCPUSeconds"] = usage.ru_utime + usage.ru_stime
     receipt["measurementScope"] = "One process run; RSS excludes separate Apple services. Timing excludes validation. Not a latency distribution or physical mobile-device measurement."

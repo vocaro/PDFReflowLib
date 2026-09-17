@@ -97,6 +97,12 @@ bytes on every book tried. Passing cases keep reports, logs and `result.json` bu
 EPUBs (`--keep-epubs failed` is the default). Cost: about 2 s for the six fixtures in every lane
 and about 22 s for the four corpus books in `--corpus`.
 
+Both runs launch the same file name and so inherit one Vision model cache. Each `result.json`
+records it as `visionModelCache` (executable name, compiled-program fingerprint before and after,
+and `changed`). A binary launched under another name, such as a renamed copy, uses a different
+cache and can transcribe OCR pages differently (#94); the repeat check does not cover that, and
+a pass says nothing about another name's compile.
+
 What this does not prove: determinism across machines, OS or Vision versions, other options,
 or other books; that OCR text is stable (OCR pages are exempt by design, so the exemption can
 hide a non-Vision defect confined to those pages); or that two runs under different scheduling

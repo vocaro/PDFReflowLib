@@ -358,6 +358,18 @@ class GeneratedIdentifierTests(EvaluationFixture):
             ['EPUB/images/image-2.png', 'EPUB/images/image-3.png']]})
         self.assertEqual(result['idOnlyShifts']['pages'], {'2': ['images', 'markup'], '3': ['images', 'markup']})
 
+    def test_renamed_source_page_reference_is_an_id_only_shift(self):
+        """#132: removing an earlier image renames a page's `Original page N` reference, not its bytes."""
+        reference = '<p>Text</p><img src="images/image-{}.png" alt="Original page 2"/>'
+        left = self.book('left', {1: '<img src="images/image-1.png"/>', 2: reference.format(2)},
+                         images={'image-1.png': b'A', 'image-2.png': b'B'})
+        right = self.book('right', {1: '', 2: reference.format(1)}, images={'image-1.png': b'B'})
+        result = compare(left, right, detail=True)
+        self.assertEqual(result['changedPages'], [1])
+        self.assertEqual(result['idOnlyShifts']['pages'], {'2': ['images', 'markup', 'pageReferences']})
+        changed = self.book('changed', {1: '', 2: reference.format(1)}, images={'image-1.png': b'C'})
+        self.assertEqual(compare(left, changed)['changedPageFields']['2'], ['images', 'markup', 'pageReferences'])
+
     def test_moved_or_swapped_images_are_reported(self):
         images = {'image-1.png': b'A', 'image-2.png': b'B'}
         left = self.book('left', {1: '<img src="images/image-1.png"/>', 2: '<img src="images/image-2.png"/>'},

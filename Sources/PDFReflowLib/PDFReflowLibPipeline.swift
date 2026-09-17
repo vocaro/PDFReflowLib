@@ -139,6 +139,18 @@ enum PDFReflowLibPipeline {
                 return (content, !content.lines.isEmpty && !requiresPageImage && TextEncodingCheck.hasUnmappedFont(reference),
                         pageSized, graphics)
             }
+            // A page that paints nothing and renders as white paper keeps only its boundary: no
+            // recognition, no page image (#132).
+            if content.lines.isEmpty, try autoreleasepool(invoking: {
+                let page = try document.page(at: i)
+                guard BlankPageDetector.drawsNothing(lines: content.lines, graphics: graphics,
+                                                     annotations: page.annotations.count),
+                      let reference = page.pageRef else { return false }
+                return BlankPageDetector.rendersWhite(reference, bounds: content.bounds)
+            }) {
+                content.requiresPageImage = false
+                return (content, false, false)
+            }
             let invisibleText = graphics.hasInvisibleText
             let bounds = content.bounds
             let raw = content.lines.map(\.text).joined()

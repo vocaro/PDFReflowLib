@@ -1,0 +1,51 @@
+{
+ "passed": true,
+ "provenanceErrors": [],
+ "case": "wallace-algebra-2010",
+ "executionContexts": {
+  "baseline": "host-terminal",
+  "candidate": "host-terminal"
+ },
+ "baselineConverterSHA256": "e299ef995ddd653bc7fe61f4e0f31f064f3d8003cbe59154a3736597397c99da",
+ "candidateConverterSHA256": "43e0ea8eab3b603f71d91f245cdc0975e41c37ad9da0f547149c855e9c46977e",
+ "sameConverter": false,
+ "visionModelCaches": {
+  "baseline": {
+   "mode": "inherited",
+   "executableName": "pdf-reflow",
+   "programsSHA256": "3dc11f836bf09bc9d8dab63b6c1ccc7a3f14f8b3635f0db1c2353ee24dd6af6a"
+  },
+  "candidate": {
+   "mode": "inherited",
+   "executableName": "pdf-reflow",
+   "programsSHA256": "3dc11f836bf09bc9d8dab63b6c1ccc7a3f14f8b3635f0db1c2353ee24dd6af6a"
+  }
+ },
+ "sameVisionPrograms": true,
+ "changedOCRPages": [],
+ "ocrTextVolume": {
+  "pages": 0,
+  "baselineWords": 0,
+  "candidateWords": 0,
+  "pagesWithFewerWords": {
+   "baseline": [],
+   "candidate": []
+  }
+ },
+ "changedPages": [],
+ "changedPageFields": {},
+ "changedImages": [],
+ "navigationChanged": false,
+ "changedNavigationPages": [],
+ "pageMarkersEqual": true,
+ "changedReportFields": [],
+ "idOnlyShifts": {
+  "pageCount": 0,
+  "fields": {},
+  "navigationEntries": 0
+ },
+ "imageRenames": {
+  "count": 0
+ },
+ "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

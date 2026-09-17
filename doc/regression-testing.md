@@ -112,14 +112,14 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 1610 targeted checks on 369 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 1619 targeted checks on 374 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 499 ordered-text, 113 text, 194 paragraph,
-116 absent-text, 161 heading, 32 absent-heading, 53 list-item, 1 preformatted-lines, 17 script,
-11 footnote, 34 note-link, 38 paragraph-continuation, 1 list-item-continuation, 7 paragraph-separation,
-39 distinct-paragraph, 117 image-presence, 59 warning, 10 absent-warning, 12 source-region,
+the NBS and Replay Clocks academic papers). They comprise 506 ordered-text, 124 text, 207 paragraph,
+126 absent-text, 170 heading, 32 absent-heading, 56 list-item, 1 preformatted-lines, 17 script,
+11 footnote, 34 note-link, 43 paragraph-continuation, 1 list-item-continuation, 7 paragraph-separation,
+39 distinct-paragraph, 128 image-presence, 63 warning, 22 absent-warning, 17 source-region,
 3 glyph-structure, 3 image-appearance and 9 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
 anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
 
@@ -505,7 +505,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-670 Swift tests with no known-issue wrappers, and 218 Python tests.
+674 Swift tests with no known-issue wrappers, and 219 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -976,6 +976,19 @@ tested directly. Disabling the pipeline call, the overprinting-caption exclusion
 transcription-layer guard fails the tests that cover it. Contracts: Fed page 8 has no running head and
 reads title before quote; FAA page 159 has no `Figure 5-16` and keeps `Figure 6-20.` apart from the
 body. See the [hidden-text evidence](../measurements/hidden-text/record.md).
+
+## Blank pages
+
+`BlankPageTests.swift` covers #132 with in-memory pages. An empty content stream, a white fill and a
+rotated empty page keep only their page boundaries, with no image, recognition or warning, under
+`never`, `automatic` and `always` OCR, and a converted EPUB carries the empty page's marker without
+an `<img>`. Controls keep their page images: a 0.97 gray tint, a quarter-point hairline, a near-white
+scan, a pure-white scan (painted), and an annotation; 0.99 gray text reflows. The detector's render
+threshold (no channel below 254 at one pixel per point) passes a 0.9985 gray fill and fails 0.99 gray,
+a 0.1-point hairline, a faint scan and a pale pink tint. Disabling the pipeline call fails both
+pipeline tests. Contracts: 9/11 pages 162 and 342 and Fed pages 23 and 134 have no image and neither
+`pageImageFallback` nor `ocrUsed`; Fed page 7, a light photograph without text, keeps its image. See
+the [blank-page evidence](../measurements/blank-pages/record.md).
 
 ## Endnote reference typography and bounded paragraphs
 

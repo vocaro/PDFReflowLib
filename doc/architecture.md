@@ -652,6 +652,14 @@ NOAA's photo-and-chart pages, whose crops would still hold their text, keep the 
 text is OCR, detect every corrupted layer, or assess individual table cells. Fresh OCR keeps
 its separate `ocrUsed` notice; image-only fallbacks keep `pageImageFallback`.
 
+A page without text is an image-only fallback unless it is blank (#132). `BlankPageDetector`
+requires both kinds of evidence before recognition: the drawing places nothing (no extracted line,
+annotation, text show, painted footprint, region or inline image, and nothing unsupported; a white
+fill is no footprint), and the crop box rendered at one pixel per point in device RGB over white
+has no channel of any pixel below 254. Such a page contributes only its source-page boundary, with
+no image, recognition or warning (eight 9/11 pages including 162 and 342, six Fed pages). A light tint, a hairline, a scan of an empty sheet (an image is a footprint) or an
+annotation keeps the page image. See the [blank-page evidence](../measurements/blank-pages/record.md).
+
 `GraphicsReader` handles inline images (`BI … ID … EI`, which `CGPDFScanner` reports as one `EI`
 whose operand is the image stream) as the unit square under the CTM, like image XObjects, after
 validating the dictionary (positive `W`/`H`, `IM true` or a device/indexed colour space with a

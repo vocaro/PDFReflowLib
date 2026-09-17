@@ -240,6 +240,8 @@ class Evaluation:
                 page['paragraphIDs'] = paragraphs[number]
                 page['listItemIDs'] = items[number]
                 page['images'] = [self.package.hashes.get(name) for name in page['images']]
+                if 'pageReferences' in page:
+                    page['pageReferences'] = [self.package.hashes.get(name) for name in page['pageReferences']]
                 page['anchors'] = [{'id': mask(key.partition('#')[2]), 'text': anchor['text'],
                                     'backlink': link_target(anchors, anchor['file'], anchor['backlink'])}
                                    for key, anchor in page['anchors'].items()]

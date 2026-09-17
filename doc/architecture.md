@@ -129,7 +129,7 @@ original `rect` remains the full ink bounds for graphic intersections and crop p
 paragraph-join geometry is unchanged. A lowered oversized single initial followed by substantial,
 consistently sized, normal-baseline prose supplies the evidence. It is not an inline subscript.
 Ambiguous styles, monospaced initials and missing native attributes do not supply this evidence.
-Initial-word spacing and PDF structure-tag consumption are separate concerns. When adjacent similarly sized attributed runs
+Reconstruction joins such an initial to its word, removing the space glyph Our Flag draws after it (`T he` → `The`, #135); `A`, `I` and `O` keep the space only when the book spells the fragment as a word and never the joined word, and a drop-cap line adds its joined word, not its fragment, to the hyphen vocabulary ([drop-cap word evidence](../measurements/drop-cap-words/record.md)). PDF structure-tag consumption is a separate concern. When adjacent similarly sized attributed runs
 jump by more than the inline-script range and one carries a full-line offset, native extraction
 inserts a missing word boundary. Existing whitespace and line-ending hyphens remain unchanged;
 drop caps with different sizes and opposite inline scripts do not supply this evidence. This

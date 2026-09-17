@@ -344,6 +344,7 @@ enum PDFReflowLibPipeline {
                 furnitureWarnings.append(warning)
             }
             if equalsMarksHyphens { LayoutReconstructor.restoreEqualsHyphens(&content) }
+            LayoutReconstructor.joinDropCapInitials(&content, vocabulary: vocabulary)
             let previousPage = i > 0 && !chapterStartPages.contains(content.number) ? previous : nil
             var regions: [CGRect] = []
             var onlyFigures = false

@@ -4115,8 +4115,26 @@
     {
       "id": "gpo-our-flag-2003",
       "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
-      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Page 33 source raster reviewed in color: the Colorado flag (blue and white stripes, red C, gold disc) must keep its scale, ink contrast and hues (#27). Pages 33, 34, 42 and 43 reviewed (#62): the printed page number in the margin is retained text and is not a heading. Page 12 (#89) source-reviewed: the Beecher and Wilson quotations, tagged one line per group, join where each line wraps onto the next.",
+      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Page 33 source raster reviewed in color: the Colorado flag (blue and white stripes, red C, gold disc) must keep its scale, ink contrast and hues (#27). Pages 33, 34, 42 and 43 reviewed (#62): the printed page number in the margin is retained text and is not a heading. Page 12 (#89) source-reviewed: the Beecher and Wilson quotations, tagged one line per group, join where each line wraps onto the next. Drop caps join their words on pages 5, 7, 13, 27 and 31 (`The`, not `T he`; `Any` and `Archeological` after an `A` initial); page 47's `On`, set without a space glyph, is the control (#135).",
       "pages": [
+        {
+          "page": 5,
+          "paragraphs": [
+            "During the night of September 13, 1814"
+          ],
+          "absentText": [
+            "D uring the night"
+          ]
+        },
+        {
+          "page": 13,
+          "paragraphs": [
+            "Archeological digs in northern India"
+          ],
+          "absentText": [
+            "A rcheological"
+          ]
+        },
         {
           "page": 27,
           "imageRegions": [
@@ -4136,11 +4154,17 @@
           ],
           "paragraphs": [
             "life of your flag depends on your care.",
-            "size of the flag is determined by the exposed height"
+            "size of the flag is determined by the exposed height",
+            "The life of your flag depends on your care.",
+            "The size of the flag is determined by the exposed height"
           ],
           "headings": [
             "Care of Your Flag",
             "Sizes of Flags"
+          ],
+          "absentText": [
+            "T he life",
+            "T he size"
           ]
         },
         {
@@ -4149,7 +4173,8 @@
             "How to Obtain a Burial Flag for a Veteran"
           ],
           "absentText": [
-            "Burial Flagfor a Veteran"
+            "Burial Flagfor a Veteran",
+            "A ny honorably"
           ],
           "minimumImages": 1,
           "orderedText": [
@@ -4158,7 +4183,8 @@
             "necessary arrangements for the family on behalf of the veteran."
           ],
           "paragraphs": [
-            "honorably discharged veteran is entitled to a burial flag."
+            "honorably discharged veteran is entitled to a burial flag.",
+            "Any honorably discharged veteran is entitled to a burial flag."
           ]
         },
         {
@@ -4236,10 +4262,14 @@
             "Continental Congress at Philadelphia on June 14, 1777."
           ],
           "paragraphs": [
-            "Stars and Stripes originated as a result of a resolution"
+            "Stars and Stripes originated as a result of a resolution",
+            "The Stars and Stripes originated as a result of a resolution"
           ],
           "headings": [
             "The History of the Stars and Stripes"
+          ],
+          "absentText": [
+            "T he Stars"
           ]
         },
         {
@@ -4300,6 +4330,15 @@
             "whether in peace or in war. And yet, though silent, it speaks to us—speaks to us of the past"
           ],
           "maximumImages": 0
+        },
+        {
+          "page": 47,
+          "paragraphs": [
+            "On July 4, 1776, the Continental Congress passed a resolution"
+          ],
+          "absentText": [
+            "O n July"
+          ]
         },
         {
           "page": 54,

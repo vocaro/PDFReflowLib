@@ -14,9 +14,10 @@ struct TextStructure: Equatable, Codable {
 
 // All geometry is in unrotated PDF page space (bottom-left origin). OCR is mapped back here.
 struct TextLine: Equatable {
-    let content: InlineText
-    // Layout repeatedly inspects plain text. Cache it once; immutable content prevents drift.
-    let text: String
+    private(set) var content: InlineText
+    // Layout repeatedly inspects plain text. Cache it once; content changes only through
+    // `replaceContent`, which refreshes the cache, so the two cannot drift.
+    private(set) var text: String
     var rect: CGRect
     var fontSize: CGFloat
     var monospaced = false
@@ -40,6 +41,13 @@ struct TextLine: Equatable {
         self.fontSize = fontSize
         self.monospaced = monospaced
         self.wraps = wraps
+    }
+
+    /// Replaces the line's text and styles, keeping every other property (geometry, size, reading
+    /// rectangle, structure and direction) as it was.
+    mutating func replaceContent(_ content: InlineText) {
+        self.content = content
+        text = content.text
     }
 }
 

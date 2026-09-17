@@ -22,6 +22,14 @@ enum LayoutReconstructor {
                line.text.first?.isLowercase == true, let first = words.first, !first.contains("-") {
                 words.removeFirst()
             }
+            // A drop cap's initial and fragment are one word: `the`, never `he` or `ny` (#135).
+            // `A`, `I` and `O` record neither, since the line alone cannot say which reading holds.
+            if let split = dropCapSplit(line), words.count >= 2 {
+                words.removeFirst(2)
+                if !"AIO".contains(split.initial) {
+                    vocabulary.insert(String(split.initial).lowercased() + split.fragment.lowercased())
+                }
+            }
             for word in words {
                 vocabulary.insert(String(word))
                 if word.contains(where: isLigature) { vocabulary.insert(ligaturesSpelledOut(word)) }
@@ -114,6 +122,64 @@ enum LayoutReconstructor {
             line.readingRect = old.readingRect
             line.structure = old.structure
             page.lines[index] = line
+        }
+    }
+
+    /// A drop cap's initial and the rest of its word, when PDFKit reads them apart (#135). The line
+    /// must carry `NativeTextReader`'s drop-cap evidence (a `readingRect`: a lowered initial at two to
+    /// eight times the size of consistent body prose that opens in lowercase), and its text must open
+    /// with one capital letter, whitespace and a lowercase letter. Our Flag sets `T` then `he Stars…`
+    /// and PDFKit keeps the space glyph that follows the initial in its script font. A display
+    /// numeral (the Fed's chapter openers) is not a letter and never has a `readingRect`.
+    static func dropCapSplit(_ line: TextLine) -> (initial: Character, fragment: Substring)? {
+        guard line.readingRect != nil, let initial = line.text.first, initial.isUppercase, initial.isLetter else { return nil }
+        let rest = line.text.dropFirst()
+        guard let start = rest.firstIndex(where: { !$0.isWhitespace }), start != rest.startIndex,
+              rest[start].isLowercase else { return nil }
+        return (initial, rest[start...].prefix(while: \.isLetter))
+    }
+
+    /// Whether a drop cap's initial keeps the space before the rest of its line. A letter that is no
+    /// word joins (`T he` → `The`). `A`, `I` and `O` are words: they join unless the book spells the
+    /// fragment as a word of its own and never the joined word (`A new` stays; `A ny` → `Any`,
+    /// `A rcheological` → `Archeological`). `addVocabulary` never records a drop-cap line's fragment.
+    static func dropCapKeepsSpace(initial: Character, fragment: Substring, vocabulary: Set<String>) -> Bool {
+        guard "AIO".contains(initial) else { return false }
+        let word = fragment.lowercased()
+        return vocabulary.contains(word) && !vocabulary.contains(String(initial).lowercased() + word)
+    }
+
+    /// Joins each drop cap's initial to its word before reconstruction reads the page (#135).
+    static func joinDropCapInitials(_ page: inout PageContent, vocabulary: Set<String>) {
+        for index in page.lines.indices {
+            let old = page.lines[index]
+            guard let split = dropCapSplit(old),
+                  !dropCapKeepsSpace(initial: split.initial, fragment: split.fragment, vocabulary: vocabulary) else { continue }
+            var elements = old.content.elements
+            // Drop the whitespace between the initial and the fragment, across element boundaries.
+            var seenInitial = false
+            var position = 0
+            while position < elements.count {
+                guard case let .text(value, style) = elements[position] else { break }
+                var kept = ""
+                var done = false
+                for character in value {
+                    if done { kept.append(character); continue }
+                    if !seenInitial {
+                        kept.append(character)
+                        if !character.isWhitespace { seenInitial = true }
+                    } else if character.isWhitespace {
+                        continue
+                    } else {
+                        kept.append(character); done = true
+                    }
+                }
+                elements[position] = .text(kept, style)
+                if done { break }
+                position += 1
+            }
+            elements.removeAll { if case let .text(value, _) = $0 { value.isEmpty } else { false } }
+            page.lines[index].replaceContent(InlineText(elements: elements))
         }
     }
 

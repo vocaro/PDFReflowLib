@@ -1,0 +1,24 @@
+Mutations (tools/mutate.py) on a copy of 36c6265 + this change; each part disabled in turn, then
+`swift test --filter BoxTitlesAndTwoLineSubheadsTests`. Every mutation fails at least one test.
+
+ 0 box titles wired into labels         fedSidebarTitleOnPage27OpensItsBox, fedSidebarTitlesOnOneOrTwoLinesAreHeadings
+ 1 box title space beneath              boxTitleNeedsSpaceBeneathItsEdgeAndNoSentenceEnd, fedSidebarTitlesOnOneOrTwoLinesAreHeadings
+ 2 box title line beneath on its edge   boxTitleNeedsSpaceBeneathItsEdgeAndNoSentenceEnd
+ 3 box title ending before a marker     boxTitleNeedsSpaceBeneathItsEdgeAndNoSentenceEnd
+ 4 box title measure                    boxTitleNeedsSpaceBeneathItsEdgeAndNoSentenceEnd (after adding the ragged/wide controls; none before)
+ 5 box title two-line leading           boxTitleNeedsSpaceBeneathItsEdgeAndNoSentenceEnd (after adding the page 37 spread control; none before)
+ 6 pair branch                          faaTwoLineBoldSubheadingsAreOneHeading, twoLineItalicSubheadingReadsAsTitleCaseOverPlainText,
+                                        twoLineSubheadingNeedsOneStyleStackedOverItsParagraph
+ 7 pair needs book style                faaTwoLineBoldSubheadingsAreOneHeading
+ 8 pair one style                       twoLineSubheadingNeedsOneStyleStackedOverItsParagraph
+ 9 pair stacks                          twoLineSubheadingNeedsOneStyleStackedOverItsParagraph (after making the `apart` control move the
+                                        second line and paragraph; the first version moved the first line and lost its clear space)
+10 pair second line edge                twoLineSubheadingNeedsOneStyleStackedOverItsParagraph
+11 pair sentence end                    twoLineSubheadingNeedsOneStyleStackedOverItsParagraph
+12 pair italic title case               twoLineItalicSubheadingReadsAsTitleCaseOverPlainText
+13 pair list line                       twoLineSubheadingNeedsOneStyleStackedOverItsParagraph
+14 contents entries seed no formula     faaContentsMnemonicEntriesStayText
+
+Negative control: the 7 tests on unmodified 36c6265 sources (a shim supplying an empty
+`LayoutReconstructor.boxTitles`) all fail, 15 issues (the tests as first written; the controls
+added for mutations 4, 5 and 9 came later).

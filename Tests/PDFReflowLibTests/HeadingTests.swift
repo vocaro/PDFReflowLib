@@ -16,7 +16,8 @@ private func headings(_ blocks: [ReflowBlock]) -> [String] {
 @Test func fedTableTypographyDoesNotPromoteSurroundingProse() throws {
     let page = try SourceLayoutFixture.load("fed-46").content()
     let blocks = headingBlocks(page)
-    #expect(headings(blocks).isEmpty)
+    // The sidebar's own 8-point title is the page's only heading (#100); no prose line is one.
+    #expect(headings(blocks) == ["Learn more about how the Fed uses “ample reserves”"])
     let paragraphs = blocks.compactMap { block -> String? in
         if case .paragraph = block.content { return block.text }; return nil
     }

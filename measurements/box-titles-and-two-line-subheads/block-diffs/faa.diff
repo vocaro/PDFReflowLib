@@ -1,0 +1,29 @@
+68a69
+> p: vii
+134,136c135,138
+< img
+< figcaption: Preserved region from page 6
+< p: vii
+---
+> p: A = Aircraft ............................................................2-8
+> p: V = EnVironment....................................................2-9
+> p: E = External Pressures.............................................2-9
+> p: Human Factors..............................................................2-10
+829,830c831,835
+< img
+< figcaption: Preserved region from page 14
+---
+> p: Converting Minutes to Equivalent Hours................16-11
+> p: Time T = D/GS....................................................16-11
+> p: Distance D = GS X T...........................................16-11
+> p: GS GS = D/T.......................................................16-11
+> p: Converting Knots to Miles Per Hour.......................16-11
+1049c1054
+< p: The Professional Air Traffic Controllers Organization (PATCO) Strike
+---
+> h6: The Professional Air Traffic Controllers Organization (PATCO) Strike
+7027c7032,7033
+< p: Use of Chart Supplement U.S. (formerly Airport/Facility Directory) Study available information about each airport at which a landing is intended. This should include a study of the Notices to Airmen (NOTAMs) and the Chart Supplement U.S. (formerly Airport/Facility Directory). [Figure 16-24] This includes location, elevation, runway and lighting facilities, available services, availability of aeronautical advisory station frequency (UNICOM), types of fuel available (use to
+---
+> h6: Use of Chart Supplement U.S. (formerly Airport/Facility Directory)
+> p: Study available information about each airport at which a landing is intended. This should include a study of the Notices to Airmen (NOTAMs) and the Chart Supplement U.S. (formerly Airport/Facility Directory). [Figure 16-24] This includes location, elevation, runway and lighting facilities, available services, availability of aeronautical advisory station frequency (UNICOM), types of fuel available (use to

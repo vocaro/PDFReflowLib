@@ -527,19 +527,44 @@ enum LayoutReconstructor {
             let prose = column.filter { $0.fontSize < body * 1.1 }.map(\.rect.width).max() ?? 0
             if subheading {
                 let style = LabelStyle(line, body: body)
-                guard style.bold || style.italic && isTitleCase(line.text) && !isCaption(line.text), recordingSubheadings || styles.contains(style),
-                      prose > 0, line.rect.width <= prose * 0.9,
-                      let below = column.filter({ $0.rect.maxY <= line.rect.minY + body * 0.4 })
-                        .max(by: { $0.rect.maxY < $1.rect.maxY }),
-                      line.rect.minY - below.rect.maxY < body * 0.8,
-                      abs(below.fontSize - body) <= body * 0.1, !LabelStyle(below, body: body).bold else { continue }
-                let paragraph = abs(below.rect.minX - line.rect.minX) <= body * 0.5 && below.rect.width > line.rect.width
-                // An italic title opens ordinary body text or a list, never more italic type.
-                let opens = style.bold ? paragraph
-                    : !LabelStyle(below, body: body).italic
-                        && (paragraph && !isList(below.text) || opensListBeneath(below, title: line, body: body))
-                guard opens else { continue }
-                labels.append(line)
+                func nearestBelow(_ title: TextLine) -> TextLine? {
+                    lines.filter { other in
+                        other != title && other.rect.minX < title.rect.maxX && other.rect.maxX > title.rect.minX
+                            && other.rect.maxY <= title.rect.minY + body * 0.4
+                    }.max(by: { $0.rect.maxY < $1.rect.maxY })
+                }
+                // Whether `title`'s paragraph opens directly beneath it (#76, #97).
+                func opens(beneath title: TextLine) -> Bool {
+                    guard let below = nearestBelow(title), title.rect.minY - below.rect.maxY < body * 0.8,
+                          abs(below.fontSize - body) <= body * 0.1, !LabelStyle(below, body: body).bold else { return false }
+                    let paragraph = abs(below.rect.minX - line.rect.minX) <= body * 0.5 && below.rect.width > title.rect.width
+                    // An italic title opens ordinary body text or a list, never more italic type.
+                    return style.bold ? paragraph
+                        : !LabelStyle(below, body: body).italic
+                            && (paragraph && !isList(below.text) || opensListBeneath(below, title: line, body: body))
+                }
+                guard style.bold || style.italic && !isCaption(line.text), recordingSubheadings || styles.contains(style),
+                      prose > 0, line.rect.width <= prose else { continue }
+                if line.rect.width <= prose * 0.9, !style.italic || isTitleCase(line.text), opens(beneath: line) {
+                    labels.append(line)
+                    continue
+                }
+                // A sub-heading set over two lines in the book's recurring style: the second line
+                // stacks under the first on its left edge at heading leading, the pair reads as
+                // one title, and the paragraph opens beneath the second (FAA page 21's `The
+                // Professional Air Traffic Controllers` / `Organization (PATCO) Strike`, page 404's
+                // `Use of Chart Supplement U.S. (formerly Airport/` / `Facility Directory)`; #102).
+                // The first line may run the column's measure, as a wrapping title does. Only a
+                // style the book already repeats qualifies; pairs are no evidence of their own.
+                guard styles.contains(style), let second = nearestBelow(line), LabelStyle(second, body: body) == style,
+                      abs(second.fontSize - line.fontSize) <= line.fontSize * 0.1,
+                      abs(second.rect.minX - line.rect.minX) <= body * 0.5, second.rect.width <= prose * 0.9,
+                      stacksUnderHeading(second, after: line), !opensHeading(second.text),
+                      !isList(second.text), !isContentsEntry(line.text), !isContentsEntry(second.text),
+                      let end = second.text.last, !".,;:".contains(end) else { continue }
+                let text = line.text + " " + second.text
+                guard !style.italic || isTitleCase(text) && !isCaption(text), opens(beneath: second) else { continue }
+                labels += [line, second]
                 continue
             }
             if capitals || line.rect.width <= prose * 0.9 || prose == 0
@@ -649,6 +674,77 @@ enum LayoutReconstructor {
     /// selects the book's recurring heading styles from `headingEvidence(on:)`.
     static func labelStyles(from pages: [LabelStyle: Int]) -> Set<LabelStyle> {
         Set(pages.filter { $0.value >= 3 }.keys)
+    }
+
+    /// The titles of tinted boxes set in the box's own text size (#100). The Fed's narrow sidebars
+    /// open with an 8-point demibold title over 8-point book text (`A fresh look at the monetary
+    /// policy framework`), below the page's heading size and label band, and PDFKit names both
+    /// fonts `Helvetica`, so no bold run marks the title either. The box's spacing does: the title
+    /// is the top line of the box's text column, set off from the text beneath by more than that
+    /// text's own leading (15.6-point pitch over 12). A title set over two lines keeps its lines at
+    /// no more than that leading (10-point pitch) and sets the space after its second line
+    /// (`Finding data on institutions supervised by the` / `Federal Reserve`).
+    ///
+    /// The box's lines are read top to bottom as they stand, so the line directly beneath the title
+    /// and the next one below it are the box's next two lines, whatever their edge: the text
+    /// beneath continues on the title's left edge at the title's size (the leading between those
+    /// two lines is measured, not assumed). A paragraph that opens on a first-line indent is no
+    /// title's text: the 9/11 report's page 348 sidebar indents `The FBI interviewed…` under a
+    /// two-line paragraph. The title reads as one: a capital, digit or quotation mark first, no
+    /// closing `.`, `,`, `;` or `:` before any raised note marker (`…allowed to depart.30`; a
+    /// question stays a title: `What does “systemically important” mean?`), no list marker or
+    /// leader, and no line wider than the box's text measure (the title can outrun the ragged line
+    /// directly beneath it, page 19). A box whose first paragraph ends a sentence before paragraph
+    /// space (the Fed's page 63 `…den’s Riksbank was formed.`) has no title; a box title at heading
+    /// size is a heading already. Recognized and synthetic pages have no trustworthy sizes.
+    static func boxTitles(in lines: [TextLine], page: PageContent) -> [TextLine] {
+        guard !page.hasSyntheticTextStyle, !page.recognized else { return [] }
+        var titles: [TextLine] = []
+        for hull in clusters(page.tints, distance: 4) {
+            let stack = lines.filter { hull.contains(CGPoint(x: $0.rect.midX, y: $0.rect.midY)) }
+                .sorted { $0.rect.maxY > $1.rect.maxY }
+            guard let first = stack.first else { continue }
+            let size = first.fontSize
+            // One line to a row: a row PDFKit split (or two columns) is no stack of lines.
+            guard stack.count >= 3, !zip(stack, stack.dropFirst()).prefix(3).contains(where: { sameRow($0.rect, $1.rect) })
+            else { continue }
+            for count in 1...2 where stack.count >= count + 2 {
+                let title = Array(stack.prefix(count))
+                let below = stack[count]
+                let next = stack[count + 1]
+                guard (title + [below]).allSatisfy({ abs($0.rect.minX - first.rect.minX) <= size * 0.5
+                          && abs($0.fontSize - size) <= size * 0.1 }),
+                      abs(next.fontSize - size) <= size * 0.1 else { break }
+                let leading = below.rect.minY - next.rect.maxY
+                let gap = title[count - 1].rect.minY - below.rect.maxY
+                let measure = stack.dropFirst(count).filter { abs($0.rect.minX - first.rect.minX) <= size * 0.5 }
+                    .map(\.rect.width).max() ?? 0
+                let text = title.map(\.text).joined(separator: " ").trimmingCharacters(in: .whitespaces)
+                guard gap >= leading + size * 0.25, gap <= size * 2.5, leading >= -size * 0.4,
+                      zip(title, title.dropFirst()).allSatisfy({ $0.rect.minY - $1.rect.maxY <= leading + size * 0.1 }),
+                      title.allSatisfy({ $0.rect.width <= measure + size * 0.5 }),
+                      text.count < 150, text.filter(\.isLetter).count >= 2,
+                      let initial = text.first(where: { !"([\u{201C}\"'".contains($0) }), initial.isUppercase || initial.isNumber,
+                      let last = lastCharacterBeforeMarker(title[count - 1]), !".,;:".contains(last),
+                      !title.contains(where: { isList($0.text) || isContentsEntry($0.text) || $0.text.contains("....") })
+                else { continue }
+                titles += title
+                break
+            }
+        }
+        return titles
+    }
+
+    /// A line's last visible character past closing quotes and brackets and past a raised
+    /// reference marker (`…allowed to depart.30`), as `opensSection` reads a sentence's end.
+    private static func lastCharacterBeforeMarker(_ line: TextLine) -> Character? {
+        let closing: Set<Character> = ["\u{201D}", "\u{2019}", "\"", "'", ")", "]"]
+        for element in line.content.elements.reversed() {
+            guard case let .text(value, style) = element else { continue }
+            if style.contains(.superscript), value.allSatisfy({ $0.isNumber || $0.isWhitespace }) { continue }
+            if let character = value.reversed().first(where: { !$0.isWhitespace && !closing.contains($0) }) { return character }
+        }
+        return nil
     }
 
     /// A contents entry: a dot leader of four or more dots running to the line's end, with or
@@ -963,8 +1059,11 @@ enum LayoutReconstructor {
         // that line concatenation cannot reproduce. Preserve recognizable formulas as crops.
         // A prose row with inline mathematics is not a displayed formula, and a formula's
         // margin (raised and lowered terms, radical bars) stops short of neighbouring text.
+        // A contents entry is no display either: FAA page 6 lists the PAVE checklist's `A =
+        // Aircraft` and `V = EnVironment` in plain type with their leaders, and their crop took
+        // the column's last four entries out of the contents (#102).
         let formulas = page.lines.filter { line in
-            guard !line.monospaced, line.text.count < 160 else { return false }
+            guard !line.monospaced, line.text.count < 160, !isContentsEntry(line.text) else { return false }
             let symbols = line.text.rangeOfCharacter(from: mathSymbols) != nil
             let words = line.text.split(whereSeparator: \.isWhitespace)
             let equation = words.count <= 12 && words.contains { $0.contains("=") && !isURLQuery($0) }
@@ -1520,6 +1619,7 @@ enum LayoutReconstructor {
         }
         let labels = sectionLabels(in: free.map(untagged), body: reflowBody,
                                    headingThreshold: headingThreshold, page: page, styles: labelStyles)
+            + boxTitles(in: free.map(untagged), page: page)
         // The page's own typography for a heading, before any tag is consulted. A contents entry
         // is never a heading; a multi-line display sentence is a pull quote (handled below).
         // Neither is a separated margin line that opens or closes with this page's number:

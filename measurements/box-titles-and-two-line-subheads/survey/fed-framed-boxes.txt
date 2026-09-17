@@ -1,0 +1,312 @@
+p4 frame w=612 n=26 title='First Edition, May 1939' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=14.0 pitch=[14.0, 14.0, 14.0] tag=0 dx=0.0
+     out: ['p: First Edition, May 1939']
+p4 frame w=612 n=26 title='First Edition, May 1939' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=14.0 pitch=[14.0, 14.0, 14.0] tag=0 dx=0.0
+     out: ['p: First Edition, May 1939']
+p9 frame w=436 n=3 title='Figure 1.1. The Federal Reserve System' fs=10.0 h=11.84 | next fs=8.0 h=9.31 pitch1=17.0 pitch=[10.0] tag={} dx=0.0
+     out: ['p: Figure 1.1. The Federal Reserve System The Federal Reserve is unique among central bank']
+p10 frame w=436 n=3 title='Figure 1.2. Three key entities, serving the public inte' fs=10.0 h=11.84 | next fs=8.0 h=9.31 pitch1=17.0 pitch=[10.0] tag={} dx=0.0
+     out: []
+p14 frame w=612 n=13 title='6 The Fed Explained: What the Central Bank Does' fs=8.0 h=9.31 | next fs=24.0 h=28.42 pitch1=94.7 pitch=[17.1, 12.8, 18.0] tag={} dx=108.2
+     out: []
+p18 frame w=436 n=2 title='Figure 2.3. Composition of Federal Reserve Bank boards ' fs=10.0 h=11.84 | next fs=10.0 h=11.84 pitch1=12.0 pitch=[] tag={} dx=0.0
+     out: []
+p19 frame w=210 n=7 title='Want to learn more about Reserve Bank directors?' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Want to learn more about Reserve Bank directors?']
+p20 frame w=210 n=5 title='Want to learn more about the FOMC?' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Want to learn more about the FOMC?']
+p22 frame w=210 n=5 title='More on Federal Reserve Advisory Councils' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: More on Federal Reserve Advisory Councils']
+p26 frame w=435 n=7 title='Fed Chair on accountability and transparency' fs=8.0 h=9.47 | next fs=8.0 h=9.14 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Fed Chair on accountability and transparency']
+p26 frame w=211 n=7 title='FOMC composition helps ensure broad perspective' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: FOMC composition helps ensure broad perspective']
+p27 frame w=211 n=9 title='A fresh look at the monetary policy framework' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: A fresh look at the monetary policy framework']
+p28 frame w=211 n=6 title='Monetary policy: Easing and tightening defined' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Monetary policy: Easing and tightening defined']
+p32 frame w=435 n=38 title='Box 3.1. What Happens at an FOMC Meeting' fs=14.0 h=16.58 | next fs=9.0 h=10.66 pitch1=22.9 pitch=[11.0, 11.0, 23.0] tag=4 dx=0.0
+     out: ['h5: Box 3.1. What Happens at an FOMC Meeting']
+p33 frame w=210 n=8 title='Learn more about the context for monetary policy' fs=8.0 h=9.47 | next fs=8.0 h=9.47 pitch1=10.0 pitch=[15.6, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Learn more about the context for monetary policy decisions']
+p34 frame w=210 n=13 title='The Fed’s commitment to its goals' fs=8.0 h=9.47 | next fs=8.0 h=9.09 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: The Fed’s commitment to its goals']
+p35 frame w=211 n=11 title='Regular congressional testimony and reporting' fs=8.0 h=9.47 | next fs=8.0 h=9.47 pitch1=10.0 pitch=[15.6, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Regular congressional testimony and reporting promote accountability and transparency']
+p36 frame w=211 n=9 title='Clear usage of forward guidance' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Clear usage of forward guidance']
+p36 frame w=211 n=11 title='Unprecedented actions to foster maximum' fs=8.0 h=9.47 | next fs=8.0 h=9.47 pitch1=10.0 pitch=[15.6, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Unprecedented actions to foster maximum employment and stable prices']
+p37 frame w=211 n=11 title='Large-Scale Asset Purchase (LSAP) programs' fs=8.0 h=9.47 | next fs=8.0 h=9.47 pitch1=10.0 pitch=[15.6, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Large-Scale Asset Purchase (LSAP) programs supported credit for households and busines']
+p39 frame w=435 n=18 title='Box 3.2. The Fed’s Response to the COVID-19 Shock Is' fs=14.0 h=16.58 | next fs=14.0 h=16.58 pitch1=16.0 pitch=[22.9, 11.0, 23.0] tag=4 dx=1.0
+     out: ['h5: Box 3.2. The Fed’s Response to the COVID-19 Shock Is Reflected in Its Balance Sheet']
+p40 frame w=436 n=30 title='Box 3.3. Interest on Reserve Balances as a Key Tool of' fs=14.0 h=16.58 | next fs=14.0 h=16.58 pitch1=16.0 pitch=[22.9, 11.0, 11.0] tag=4 dx=1.0
+     out: ['h5: Box 3.3. Interest on Reserve Balances as a Key Tool of Monetary Policy Implementation']
+p41 frame w=211 n=5 title='Interest on reserve balances' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Interest on reserve balances']
+p42 frame w=211 n=6 title='Learn more about the Fed’s toolkit' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Learn more about the Fed’s toolkit']
+p44 frame w=436 n=25 title='Box 3.4. Evolution of Reserves in the Banking System' fs=14.0 h=16.58 | next fs=9.0 h=10.66 pitch1=22.9 pitch=[11.0, 11.0, 23.0] tag=4 dx=0.0
+     out: ['h5: Box 3.4. Evolution of Reserves in the Banking System']
+p46 frame w=435 n=3 title='Table 3.1 Traditional tools in an ample-reserves regime' fs=10.0 h=11.84 | next fs=8.0 h=9.31 pitch1=9.5 pitch=[10.0] tag={} dx=0.0
+     out: []
+p46 frame w=210 n=11 title='Learn more about how the Fed uses “ample' fs=8.0 h=9.47 | next fs=8.0 h=9.47 pitch1=10.0 pitch=[15.6, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Learn more about how the Fed uses “ample reserves”']
+p47 frame w=406 n=2 title='Table A. Simplified view of the Federal Reserve balance' fs=10.0 h=11.84 | next fs=8.0 h=9.31 pitch1=9.5 pitch=[] tag={} dx=0.0
+     out: ['p: Table A. Simplified view of the Federal Reserve balance sheet, as of June 24, 2020 The ']
+p47 frame w=406 n=2 title='Assets (billions of dollars)' fs=8.0 h=9.47 | next fs=8.0 h=9.47 pitch1=0.0 pitch=[] tag={} dx=210.8
+     out: ['p: Assets (billions of dollars)']
+p47 frame w=436 n=36 title='Box 3.5. Gauging Monetary Policy through the Fed’s' fs=14.0 h=16.58 | next fs=14.0 h=16.58 pitch1=16.0 pitch=[22.9, 11.0, 11.0] tag=4 dx=1.0
+     out: ['h5: Box 3.5. Gauging Monetary Policy through the Fed’s Balance Sheet']
+p53 frame w=436 n=17 title='Box 4.1. Financial Stability and the Founding of the Fe' fs=14.0 h=16.58 | next fs=14.0 h=16.58 pitch1=16.0 pitch=[22.9, 11.0, 11.0] tag=4 dx=1.0
+     out: ['h5: Box 4.1. Financial Stability and the Founding of the Federal Reserve']
+p54 frame w=211 n=9 title='Assessing resilience of the U.S. financial system' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Assessing resilience of the U.S. financial system']
+p54 frame w=417 n=44 title='Funding' fs=7.8 h=9.47 | next fs=7.8 h=9.47 pitch1=0.2 pitch=[0.0, 0.0, 9.8] tag={} dx=-235.2
+     out: []
+p54 frame w=98 n=9 title='Asset valuations and' fs=7.8 h=9.47 | next fs=7.8 h=9.47 pitch1=10.0 pitch=[20.0, 10.0, 10.0] tag={} dx=14.0
+     out: []
+p54 frame w=98 n=2 title='Asset valuations and' fs=7.8 h=9.47 | next fs=7.8 h=9.47 pitch1=10.0 pitch=[] tag={} dx=14.0
+     out: []
+p54 frame w=98 n=11 title='Funding' fs=7.8 h=9.47 | next fs=7.8 h=9.47 pitch1=10.0 pitch=[20.0, 10.0, 10.0] tag={} dx=7.1
+     out: []
+p54 frame w=98 n=2 title='Funding' fs=7.8 h=9.47 | next fs=7.8 h=9.47 pitch1=10.0 pitch=[] tag={} dx=7.1
+     out: []
+p54 frame w=98 n=13 title='Borrowing by' fs=7.8 h=9.47 | next fs=7.8 h=9.47 pitch1=10.0 pitch=[10.0, 20.0, 10.0] tag={} dx=-4.0
+     out: []
+p54 frame w=98 n=3 title='Borrowing by' fs=7.8 h=9.47 | next fs=7.8 h=9.47 pitch1=10.0 pitch=[10.0] tag={} dx=-4.0
+     out: []
+p54 frame w=98 n=11 title='Financial system' fs=7.8 h=9.47 | next fs=7.8 h=9.47 pitch1=10.0 pitch=[20.0, 10.0, 10.0] tag={} dx=14.4
+     out: []
+p54 frame w=98 n=2 title='Financial system' fs=7.8 h=9.47 | next fs=7.8 h=9.47 pitch1=10.0 pitch=[] tag={} dx=14.4
+     out: []
+p56 frame w=211 n=7 title='Monitoring leverage in the nonbank sector' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Monitoring leverage in the nonbank sector']
+p57 frame w=210 n=10 title='Microprudential supervision and regulation' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Microprudential supervision and regulation']
+p58 frame w=413 n=2 title='Emergency lending facilities' fs=8.0 h=9.47 | next fs=8.0 h=9.47 pitch1=0.0 pitch=[] tag=0 dx=202.2
+     out: ['p: Emergency lending facilities']
+p58 frame w=436 n=61 title='Box 4.2. Responding to Financial System Emergencies' fs=14.0 h=16.58 | next fs=9.0 h=10.66 pitch1=22.9 pitch=[11.0, 11.0, 11.0] tag=4 dx=0.0
+     out: ['h5: Box 4.2. Responding to Financial System Emergencies']
+p60 frame w=210 n=12 title='Countercyclical Capital Buffer' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Countercyclical Capital Buffer', 'p: The Countercyclical Capital Buffer (CCyB) is an element of the Federal Reserve’s regula']
+p60 frame w=210 n=7 title='“Stress testing” of large financial institutions' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: “Stress testing” of large financial institutions']
+p61 frame w=211 n=9 title='Financial stability policy and research' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Financial stability policy and research']
+p63 frame w=211 n=8 title='Regular reporting on FSOC activities' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Regular reporting on FSOC activities']
+p63 frame w=211 n=10 title='Central banks around the world' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 15.6, 12.0] tag={} dx=0.0
+     out: ['h6: Central banks around the world']
+p64 frame w=421 n=3 title='International authority/' fs=8.0 h=9.05 | next fs=8.0 h=9.05 pitch1=0.0 pitch=[10.0] tag={} dx=144.7
+     out: ['th: International authority/deliberative body']
+p64 frame w=421 n=9 title='Financial Stability Board' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=0.0 pitch=[10.0, 0.0, 10.0] tag={} dx=144.7
+     out: ['td: Financial Stability Board Established: 2009 Location: Basel, Switzerland Website: http', 'td: The Financial Stability Board (FSB), successor to the Financial Stability Forum, promo']
+p64 frame w=421 n=10 title='Central banks' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=0.0 pitch=[10.0, 0.0, 10.0] tag={} dx=144.7
+     out: ['td: Central banks Established: 1668 or later Location: Throughout the world Website: https']
+p64 frame w=421 n=9 title='Bank for International Settlements' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=0.0 pitch=[10.0, 0.0, 10.0] tag={} dx=144.7
+     out: ['td: Bank for International Settlements Established: 1930 Location: Basel, Switzerland Webs', 'td: The Bank for International Settlements seeks, among other things, to foster discussion']
+p64 frame w=421 n=9 title='G7 & G20' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=0.0 pitch=[10.0, 0.0, 10.0] tag={} dx=144.7
+     out: ['td: G7 & G20 Established: 1975 (as G6) Location: Varies by nation hosting Website: Varies ']
+p64 frame w=421 n=10 title='International Monetary Fund' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=0.0 pitch=[10.0, 0.0, 10.0] tag={} dx=144.7
+     out: ['td: International Monetary Fund Established: 1945 Location: Washington, D.C. Website: http', 'td: The International Monetary Fund (IMF) works to “foster global monetary cooperation, se']
+p64 frame w=421 n=9 title='Organisation for Economic' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=0.0 pitch=[10.0, 0.0, 10.0] tag={} dx=144.7
+     out: ['td: Organisation for Economic Co-operation and Development Established: 1961 Location: Par', 'td: The Organisation for Economic Co-operation and Development (OECD) promotes “policies t']
+p64 frame w=421 n=9 title='World Bank' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=0.0 pitch=[10.0, 0.0, 10.0] tag={} dx=144.7
+     out: ['td: World Bank Established: 1944 Location: Washington, D.C. Website: https://www.worldbank', 'td: The World Bank functions as a cooperative of 189 member countries. These member countr']
+p68 frame w=436 n=15 title='Bank holding companies constitute the largest segment o' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[10.0, 235.3, 9.0] tag={} dx=0.0
+     out: ['p: Figure 5.2. The Federal Reserve oversees a broad range of financial entities Bank holdi']
+p69 frame w=436 n=6 title='The primary supervisor of a domestic banking organizati' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[330.4, 9.0, 9.0] tag={} dx=0.0
+     out: ['p: Figure 5.3. Oversight of the financial industry is shared among federal regulators The ']
+p70 frame w=436 n=5 title='The Federal Reserve is responsible for examining the in' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[210.5, 9.0, 9.0] tag={} dx=0.0
+     out: ['p: The Federal Reserve has supervisory and regulatory responsibility for the international', 'p: Figure 5.4. U.S. banks operate globally The Federal Reserve is responsible for examinin']
+p71 frame w=211 n=8 title='Bank charters affect which agency supervises' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Bank charters affect which agency supervises']
+p72 frame w=211 n=8 title='Finding data on institutions supervised by the' fs=8.0 h=9.47 | next fs=8.0 h=9.47 pitch1=10.0 pitch=[15.6, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Finding data on institutions supervised by the Federal Reserve']
+p73 frame w=211 n=10 title='What does “systemically important” mean?' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: What does “systemically important” mean?']
+p74 frame w=210 n=6 title='Who conducts examinations and inspections?' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Who conducts examinations and inspections?']
+p75 frame w=436 n=54 title='The Large Institution Supervision Coordinating Committe' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[10.0, 48.7, 1.5] tag={} dx=0.0
+     out: ['p: The Large Institution Supervision Coordinating Committee (LISCC) is a collaborative bod']
+p75 frame w=229 n=3 title='Execute firm-specific examinations and monitoring in co' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=9.0 pitch=[9.0] tag={} dx=0.0
+     out: []
+p75 frame w=229 n=2 title='Assesses the effectiveness of LISCC firms’ boards of di' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=9.0 pitch=[] tag={} dx=0.0
+     out: []
+p75 frame w=229 n=2 title='Assesses the effectiveness of LISCC firms’ capital plan' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=9.0 pitch=[] tag={} dx=0.0
+     out: []
+p75 frame w=229 n=2 title='Assesses the effectiveness of LISCC firms’ liquidity ri' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=9.0 pitch=[] tag={} dx=0.0
+     out: []
+p75 frame w=229 n=3 title='Assesses the effectiveness of LISCC firms’ preparedness' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=9.0 pitch=[9.0] tag={} dx=0.0
+     out: []
+p75 frame w=229 n=3 title='Identifies and explores emerging risks to inform superv' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=9.0 pitch=[9.0] tag={} dx=0.0
+     out: []
+p77 frame w=436 n=2 title='Figure 5.6. Depository institutions and holding compani' fs=10.0 h=11.84 | next fs=10.0 h=11.84 pitch1=12.0 pitch=[] tag={} dx=0.0
+     out: []
+p77 frame w=436 n=49 title='Ratings, which are assigned to an institution after an ' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[25.2, 17.0, 0.0] tag={} dx=0.0
+     out: []
+p77 frame w=345 n=5 title='Depository institutions Bank holding companies (BHCs)' fs=8.0 h=9.05 | next fs=8.0 h=9.02 pitch1=0.0 pitch=[10.0, 0.0, 10.0] tag={} dx=230.8
+     out: []
+p77 frame w=345 n=28 title='Components• Capital adequacy' fs=8.0 h=9.47 | next fs=8.0 h=9.47 pitch1=0.0 pitch=[0.0, 10.0, 3.6] tag={} dx=167.5
+     out: []
+p77 frame w=345 n=8 title='For CAMELS and RFI/C(D) ratings systems, institutions s' fs=8.0 h=9.05 | next fs=8.0 h=9.02 pitch1=0.0 pitch=[10.0, 0.0, 10.0] tag={} dx=234.0
+     out: []
+p78 frame w=210 n=6 title='How the Federal Reserve enforces consumer- and' fs=8.0 h=9.47 | next fs=8.0 h=9.47 pitch1=10.0 pitch=[15.6, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: How the Federal Reserve enforces consumer- and community-oriented laws and regulations']
+p79 frame w=436 n=13 title='Box 5.1. Microprudential versus Macroprudential Supervi' fs=14.0 h=16.58 | next fs=9.0 h=10.66 pitch1=23.0 pitch=[23.0, 11.0, 11.0] tag=4 dx=0.0
+     out: ['h5: Box 5.1. Microprudential versus Macroprudential Supervision']
+p79 frame w=210 n=9 title='Financial Sector Monitoring' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Financial Sector Monitoring']
+p80 frame w=436 n=17 title='Box 5.2. A Further Evolution: Taking Corrective Action ' fs=14.0 h=16.58 | next fs=14.0 h=16.58 pitch1=16.0 pitch=[22.9, 11.0, 11.0] tag=4 dx=1.0
+     out: ['h5: Box 5.2. A Further Evolution: Taking Corrective Action to Address Troubled Institution']
+p80 frame w=211 n=7 title='Finding orders and agreements online' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Finding orders and agreements online']
+p82 frame w=436 n=2 title='The Federal Reserve maintains and ensures compliance wi' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[] tag={} dx=0.0
+     out: ['p: The Federal Reserve maintains and ensures compliance with the following regulations, wh']
+p82 frame w=436 n=2 title='Regulation (by letter and name)' fs=8.0 h=9.05 | next fs=8.0 h=9.05 pitch1=0.0 pitch=[] tag={} dx=168.5
+     out: ['th: Regulation (by letter and name)']
+p82 frame w=436 n=59 title='Banks and banking' fs=9.0 h=10.66 | next fs=12.0 h=14.21 pitch1=17.0 pitch=[0.0, 6.3, 13.5] tag={} dx=6.3
+     out: ['td: Banks and banking']
+p82 frame w=145 n=23 title='F Limitations on Interbank Liabilities' fs=12.0 h=14.21 | next fs=12.0 h=14.21 pitch1=23.5 pitch=[6.3, 47.2, 6.3] tag={} dx=-0.7
+     out: ['td: F Limitations on Interbank Liabilities']
+p82 frame w=268 n=32 title='Prescribes standards to limit the risks that the failur' fs=8.0 h=14.21 | next fs=8.0 h=9.02 pitch1=6.3 pitch=[13.5, 10.0, 10.0] tag={} dx=0.0
+     out: ['td: Prescribes standards to limit the risks that the failure of one depository institution']
+p83 frame w=435 n=2 title='Regulation (by letter and name)' fs=8.0 h=9.05 | next fs=8.0 h=9.05 pitch1=0.0 pitch=[] tag={} dx=153.0
+     out: ['th: Regulation (by letter and name)']
+p83 frame w=435 n=49 title='Holding companies and nonbank financial companies' fs=9.0 h=10.66 | next fs=8.0 h=9.02 pitch1=13.2 pitch=[3.7, 6.3, 0.0] tag={} dx=153.0
+     out: ['td: Holding companies and nonbank financial companies']
+p83 frame w=130 n=13 title='Y Bank Holding Companies and Change in Bank' fs=12.0 h=14.21 | next fs=8.0 h=9.02 pitch1=6.3 pitch=[37.2, 43.5, 43.5] tag={} dx=21.1
+     out: ['td: Y Bank Holding Companies and Change in Bank Control']
+p83 frame w=282 n=26 title='Regulates the acquisition of control of banks and bank ' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[10.0, 10.0, 17.2] tag={} dx=0.0
+     out: ['td: Regulates the acquisition of control of banks and bank holding companies by companies ', 'td: Regulates the acquisition of control of savings associations, defines and regulates th']
+p83 frame w=435 n=3 title='Federal Reserve Credit' fs=9.0 h=10.66 | next fs=12.0 h=14.21 pitch1=17.0 pitch=[0.0] tag={} dx=5.7
+     out: ['td: Federal Reserve Credit']
+p83 frame w=435 n=5 title='Monetary policy and reserve requirements' fs=9.0 h=10.66 | next fs=8.0 h=9.02 pitch1=13.2 pitch=[3.7, 6.3, 0.0] tag={} dx=153.0
+     out: ['td: Monetary policy and reserve requirements']
+p83 frame w=130 n=2 title='D Reserve Requirements of Depository' fs=12.0 h=14.21 | next fs=8.0 h=9.02 pitch1=6.3 pitch=[] tag={} dx=21.5
+     out: ['td: D Reserve Requirements of Depository Institutions']
+p83 frame w=282 n=2 title='Sets uniform requirements for all depository institutio' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[] tag={} dx=0.0
+     out: ['td: Sets uniform requirements for all depository institutions to maintain reserves either ']
+p83 frame w=435 n=12 title='Securities credit transactions' fs=9.0 h=10.66 | next fs=12.0 h=14.21 pitch1=17.0 pitch=[0.0, 6.3, 13.5] tag={} dx=6.3
+     out: ['td: Securities credit transactions']
+p83 frame w=130 n=5 title='T Credit by Brokers and Dealers' fs=12.0 h=14.21 | next fs=12.0 h=14.21 pitch1=23.5 pitch=[6.3, 10.0, 17.2] tag={} dx=-0.7
+     out: ['td: T Credit by Brokers and Dealers']
+p83 frame w=282 n=6 title='Governs extension of credit by securities brokers and d' fs=8.0 h=14.21 | next fs=8.0 h=9.02 pitch1=6.3 pitch=[13.5, 10.0, 27.2] tag={} dx=0.0
+     out: ['td: Governs extension of credit by securities brokers and dealers, including all members o', 'td: Governs extension of credit by banks or persons other than brokers or dealers to finan']
+p84 frame w=210 n=10 title='How do capital and liquidity differ?' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: How do capital and liquidity differ?']
+p85 frame w=210 n=11 title='Financial disclosures by state member banks' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Financial disclosures by state member banks']
+p86 frame w=140 n=9 title='• Increased capital requirements for' fs=8.0 h=9.47 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[13.6, 10.0, 13.6] tag={} dx=9.0
+     out: []
+p86 frame w=140 n=13 title='Building on Basel I, Basel II introduced a three-' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[13.6, 10.0, 10.0] tag={} dx=0.0
+     out: []
+p86 frame w=140 n=16 title='Building on Basel II, and in the wake of the' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[10.0, 13.6, 10.0] tag={} dx=0.0
+     out: []
+p88 frame w=612 n=14 title='84' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=0.0 pitch=[94.7, 17.1, 8.9] tag={} dx=30.0
+     out: []
+p89 frame w=436 n=2 title='Whether you’re paying your babysitter, shopping for gro' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[] tag={} dx=0.0
+     out: ['p: Figure 6.1. The Federal Reserve’s role in everyday transactions Whether you’re paying y']
+p91 frame w=435 n=26 title='Box 6.1. Major Events in the History of the Federal Res' fs=14.0 h=16.58 | next fs=14.0 h=16.58 pitch1=16.0 pitch=[22.9, 11.0, 23.3] tag=3 dx=1.0
+     out: ['h5: Box 6.1. Major Events in the History of the Federal Reserve’s Role in the U.S. Payment']
+p92 frame w=209 n=12 title='Federal Reserve Bank service fees' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Federal Reserve Bank service fees', 'p: Under the Monetary Control Act and the Board’s Principles for Pricing Federal Reserve B']
+p93 frame w=436 n=4 title='Note: All figures include on-us transactions (payments ' fs=7.0 h=8.15 | next fs=7.0 h=8.15 pitch1=15.0 pitch=[15.0, 9.0] tag={} dx=0.0
+     out: ['p: Note: All figures include on-us transactions (payments in which the acquirer and the is']
+p94 frame w=209 n=10 title='What is the automated clearinghouse (ACH)?' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: What is the automated clearinghouse (ACH)?']
+p94 frame w=209 n=6 title='What are “clearing” and “settlement”?' fs=8.0 h=9.47 | next fs=8.0 h=9.47 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: What are “clearing” and “settlement”?']
+p95 frame w=210 n=4 title='What is check truncation?' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0] tag={} dx=0.0
+     out: ['h6: What is check truncation?']
+p95 frame w=436 n=24 title='Public- and private-sector coordination and cooperation' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[194.4, 0.0, 0.0] tag={} dx=0.0
+     out: []
+p96 frame w=436 n=4 title='The number of checks written has been declining as indi' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[252.9, 9.0] tag={} dx=0.0
+     out: ['p: Figure 6.4. Checks collected by the Federal Reserve, selected years, 1920–2019 The numb']
+p97 frame w=206 n=3 title='Payroll direct deposits' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=13.6 pitch=[13.6] tag={} dx=0.0
+     out: ['td: Payroll direct deposits Government benefit payments, such as Social Security benefits ']
+p97 frame w=206 n=4 title='Direct debits of recurring consumer bills, such as mort' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[13.6, 13.6] tag={} dx=8.0
+     out: ['td: Direct debits of recurring consumer bills, such as mortgages, utility payments, and in']
+p98 frame w=436 n=2 title='Figure 6.6. Commercial automated clearinghouse transact' fs=10.0 h=11.84 | next fs=10.0 h=11.84 pitch1=12.0 pitch=[] tag={} dx=0.0
+     out: ['p: Figure 6.6. Commercial automated clearinghouse transactions processed by the Federal Re']
+p98 frame w=436 n=4 title='In less than 25 years, the value of commercial automate' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[252.9, 9.0] tag={} dx=0.0
+     out: ['p: Figure 6.6. Commercial automated clearinghouse transactions processed by the Federal Re']
+p100 frame w=436 n=2 title='Figure 6.7. Electronic payments processed by the Fedwir' fs=10.0 h=11.84 | next fs=10.0 h=11.84 pitch1=12.0 pitch=[] tag={} dx=0.0
+     out: ['p: Figure 6.7. Electronic payments processed by the Fedwire Funds Service, selected years,']
+p100 frame w=436 n=4 title='The Fedwire Funds Service is used by depository institu' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[252.9, 9.0] tag={} dx=0.0
+     out: ['p: As financial markets have become more global in scope, the operating hours of the Fedwi', 'p: Figure 6.7. Electronic payments processed by the Fedwire Funds Service, selected years,']
+p102 frame w=436 n=2 title='Figure 6.8. Securities transfers processed by the Fedwi' fs=10.0 h=11.84 | next fs=10.0 h=11.84 pitch1=12.0 pitch=[] tag={} dx=0.0
+     out: []
+p102 frame w=436 n=37 title='Financial institutions and other parties use this servi' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[10.0, 16.2, 7.7] tag={} dx=0.0
+     out: []
+p103 frame w=436 n=30 title='The Federal Reserve Board, the Treasury’s Bureau of Eng' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[208.4, 15.1, 0.0] tag={} dx=0.0
+     out: []
+p105 frame w=436 n=6 title='The Federal Reserve measures demand for U.S. currency, ' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[252.9, 15.0, 9.0] tag={} dx=0.0
+     out: ['p: Figure 6.10. Value of U.S. currency in circulation, selected years, 1940–2019* The Fede']
+p109 frame w=436 n=35 title='The Federal Reserve has adopted the following set of re' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[20.4, 0.0, 17.0] tag={} dx=0.0
+     out: ['p: The Federal Reserve has adopted the following set of regulations, which implement certa']
+p109 frame w=408 n=2 title='Regulation (by letter and name)' fs=8.0 h=9.05 | next fs=8.0 h=9.05 pitch1=0.0 pitch=[] tag={} dx=178.8
+     out: ['th: Regulation (by letter and name)']
+p109 frame w=39 n=5 title='CC' fs=8.0 h=9.47 | next fs=8.0 h=9.47 pitch1=27.0 pitch=[37.0, 37.0, 27.0] tag={} dx=0.6
+     out: ['td: CC Availability of Funds and Collection of Checks']
+p109 frame w=147 n=8 title='J Collection of Checks and Other Items by Federal' fs=8.0 h=9.47 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[17.0, 27.0, 37.0] tag={} dx=25.1
+     out: ['td: J Collection of Checks and Other Items by Federal Reserve Banks and Funds Transfers Th']
+p109 frame w=230 n=14 title='Governs the collection and return of checks through the' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[17.0, 10.0, 17.0] tag={} dx=0.0
+     out: ['td: Governs the collection and return of checks through the Reserve Banks and Fedwire fund']
+p111 frame w=436 n=22 title='The Federal Reserve measures the account balance of eac' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[10.0, 253.5, 0.0] tag={} dx=0.0
+     out: ['p: Regulation HH sets the Board’s risk-management standards for designated FMUs for which ', 'p: Figure 6.12. Peak and average daylight overdrafts of depository institutions, 1986–2019']
+p113 frame w=436 n=7 title='The Federal Reserve monitors trends in the payment syst' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[10.0, 252.5, 15.0] tag={} dx=0.0
+     out: ['p: The Federal Reserve conducts research on a wide range of topics related to the design a', 'p: Figure 6.13. As popularity of electronic payments grows, use of checks declines The Fed']
+p116 frame w=612 n=14 title='112' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=0.0 pitch=[94.7, 17.1, 8.9] tag={} dx=30.0
+     out: []
+p117 frame w=436 n=2 title='Figure 7.1. The Federal Reserve works to ensure that th' fs=10.0 h=11.84 | next fs=10.0 h=11.84 pitch1=12.0 pitch=[] tag={} dx=0.0
+     out: ['p: Figure 7.1. The Federal Reserve works to ensure that the financial institutions it supe']
+p117 frame w=436 n=9 title='Federal Reserve survey data show that nearly all Americ' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[10.0, 10.0, 247.3] tag={} dx=0.0
+     out: ['p: Figure 7.1. The Federal Reserve works to ensure that the financial institutions it supe']
+p120 frame w=436 n=47 title='Financial institutions must comply with a variety of la' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[10.0, 10.0, 22.2] tag={} dx=0.0
+     out: ['p: Financial institutions must comply with a variety of laws and regulations that protect ']
+p120 frame w=148 n=3 title='Federal Trade Commission Act' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=19.9 pitch=[10.0] tag={} dx=0.0
+     out: ['td: Federal Trade Commission Act']
+p120 frame w=263 n=5 title='Prohibits unfair or deceptive acts or practices in any ' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=19.9 pitch=[10.0, 10.0, 10.0] tag={} dx=0.0
+     out: ['td: Prohibits unfair or deceptive acts or practices in any aspect of banking transactions.']
+p120 frame w=148 n=6 title='Electronic Fund Transfer Act/' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[19.9, 10.0, 19.9] tag={} dx=0.0
+     out: ['td: Electronic Fund Transfer Act/Regulation E*']
+p120 frame w=263 n=6 title='Requires disclosure of the terms and conditions of elec' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[19.9, 10.0, 19.9] tag={} dx=0.0
+     out: ['td: Requires disclosure of the terms and conditions of electronic fund transfers. Protects']
+p120 frame w=148 n=8 title='Truth in Lending Act/' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[39.9, 10.0, 19.9] tag={} dx=0.0
+     out: ['td: Truth in Lending Act/Regulation Z*']
+p120 frame w=263 n=11 title='Requires lenders to clearly disclose lending terms and ' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[10.0, 10.0, 19.9] tag={} dx=0.0
+     out: ['td: Requires lenders to clearly disclose lending terms and costs to borrowers, and incorpo']
+p121 frame w=435 n=2 title='Figure 7.2. Federal consumer financial protection laws ' fs=10.0 h=11.84 | next fs=8.0 h=9.09 pitch1=9.5 pitch=[] tag={} dx=0.0
+     out: ['h6: Figure 7.2. Federal consumer financial protection laws and regulations applicable to b']
+p121 frame w=435 n=44 title='Disclosure and Reporting of' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=0.0 pitch=[10.0, 0.0, 10.0] tag={} dx=143.5
+     out: ['td: Disclosure and Reporting of CRA-Related Agreements/Regulation G']
+p121 frame w=148 n=7 title='Disclosure and Reporting of' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[10.0, 19.9, 10.0] tag={} dx=0.0
+     out: ['td: Disclosure and Reporting of CRA-Related Agreements/Regulation G']
+p121 frame w=264 n=9 title='Requires banks and their affiliates and other parties t' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[10.0, 19.9, 10.0] tag={} dx=0.0
+     out: ['td: Requires banks and their affiliates and other parties to make public certain agreement']
+p121 frame w=148 n=6 title='Fair Housing Act' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=29.9 pitch=[10.0, 10.0, 19.9] tag={} dx=0.0
+     out: ['td: Fair Housing Act']
+p121 frame w=264 n=10 title='Prohibits discrimination in the sale, rental, and finan' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[19.9, 10.0, 10.0] tag={} dx=0.0
+     out: ['td: Prohibits discrimination in the sale, rental, and financing of dwellings and housing-r']
+p121 frame w=148 n=4 title='Flood Disaster Protection Act/' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[19.9, 10.0] tag={} dx=0.0
+     out: ['td: Flood Disaster Protection Act/Regulation H']
+p121 frame w=264 n=4 title='Requires flood insurance in connection with loans secur' fs=8.0 h=9.02 | next fs=8.0 h=9.02 pitch1=10.0 pitch=[19.9, 10.0] tag={} dx=0.0
+     out: ['td: Requires flood insurance in connection with loans secured by property located in a flo']
+p122 frame w=209 n=6 title='Consumer Affairs (CA) letters' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: Consumer Affairs (CA) letters', 'p: The Federal Reserve communicates consumer-related policy and supervisory expectations a']
+p123 frame w=435 n=26 title='Box 7.1. Supporting Compliance with Consumer Laws and' fs=14.0 h=16.58 | next fs=14.0 h=16.58 pitch1=16.0 pitch=[22.9, 11.0, 11.0] tag=4 dx=1.0
+     out: ['h5: Box 7.1. Supporting Compliance with Consumer Laws and Regulations']
+p125 frame w=210 n=16 title='CRA history, public input, and resources' fs=8.0 h=9.47 | next fs=8.0 h=9.31 pitch1=15.6 pitch=[12.0, 12.0, 12.0] tag={} dx=0.0
+     out: ['h6: CRA history, public input, and resources']
+p126 frame w=435 n=7 title='Box 7.2. Federal Reserve Consumer Help: Responding to' fs=14.0 h=16.58 | next fs=14.0 h=16.58 pitch1=16.0 pitch=[22.9, 11.0, 17.0] tag=4 dx=1.0
+     out: ['h5: Box 7.2. Federal Reserve Consumer Help: Responding to Consumer Complaints and Inquirie']
+p128 frame w=436 n=2 title='Figure 7.3. Federal Reserve research examines trends an' fs=10.0 h=11.84 | next fs=10.0 h=11.84 pitch1=12.0 pitch=[] tag=0 dx=0.0
+     out: ['p: Figure 7.3. Federal Reserve research examines trends and issues affecting consumers and']
+p128 frame w=436 n=20 title='The Federal Reserve Board conducts the annual Survey of' fs=8.0 h=9.31 | next fs=8.0 h=9.31 pitch1=10.0 pitch=[10.0, 10.0, 10.0] tag=0 dx=0.0
+     out: ['p: The Federal Reserve produces consumer- and community-focused research and analysis that', 'p: The Federal Reserve Board conducts the annual Survey of Household Economics and Decisio']
+p130 frame w=436 n=2 title='Figure 7.4. Federal Reserve community development effor' fs=10.0 h=11.84 | next fs=10.0 h=11.84 pitch1=12.0 pitch=[] tag={} dx=0.0
+     out: []
+p132 frame w=436 n=21 title='Box 7.3. Community Development: Targeting the Challenge' fs=14.0 h=16.58 | next fs=14.0 h=16.58 pitch1=16.0 pitch=[22.9, 11.0, 11.0] tag=4 dx=1.0
+     out: ['h5: Box 7.3. Community Development: Targeting the Challenges and Concerns on Main Street']

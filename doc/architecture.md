@@ -291,7 +291,15 @@ beside the larger ones, and their smaller sizes rank below the book's titles (#7
 sets it apart, a body-size line wholly in italic is such a label in a recurring italic style
 (`LabelStyle` flags italic only on a line that is not bold), when it is in title case, not a figure
 or table caption, and opens body text that is not italic on its edge or the list it heads (FAA's
-untagged `Southerly Turning Errors`, `Drugs`; #97). A leading
+untagged `Southerly Turning Errors`, `Drugs`; #97). A sub-heading of either kind set over two
+lines is one label when both lines share a style the book already repeats, the second stacks
+under the first on its edge at heading leading and ends no sentence, and the paragraph opens
+beneath the second line (FAA's `The Professional Air Traffic Controllers` / `Organization (PATCO)
+Strike`; the pair is no style evidence of its own; #102). A tinted box's top line is a title
+in the box's own text size when the box's next lines continue on its edge at that size and the
+title is set off from them by more than their leading (a two-line title keeps its lines at that
+leading or tighter), reads as a title, and ends no sentence before any note marker: the Fed's
+8-point demibold sidebar titles, which PDFKit reports without bold (#100). A leading
 bracket or quote is skipped for the capital test (`(EMAS)`). A figure caption paragraph ends at
 a line at least 15% larger than the caption line above it and at body size or above, so it never
 absorbs the title that follows it (#63), and at a body-size line at least 5% larger that shares
@@ -371,7 +379,9 @@ a term starting beneath it (a fraction bar) keeps those lines in one crop, and a
 remains a crop, as before. A line with an equals sign seeds a formula crop only when that sign
 is outside a web address's query string (`print.php3?ReportID=145`, `item_id=1645&content_type_id=7`),
 so notes citing such addresses keep their text (#80), and never in a bold title that spells out a
-mnemonic's letter (`V = EnVironment`, `A = Aircraft`: one capital, the sign, then words; #97). Rows of divisor bars beneath equations are not table headers. Whole-line expansion admits the lines a graphic
+mnemonic's letter (`V = EnVironment`, `A = Aircraft`: one capital, the sign, then words; #97), nor
+in a contents entry with its leader (FAA page 6's plain `A = Aircraft……2-8`, Wallace's `6.3
+Trinomials where a =1……221`; #102). Rows of divisor bars beneath equations are not table headers. Whole-line expansion admits the lines a graphic
 captures and the other pieces of their rows, then trims the crop away from lines it merely
 touches. It does not chain from text line to text line through overlapping leading, so a
 label underline, a column rule or an inline equation beside tightly leaded prose does not

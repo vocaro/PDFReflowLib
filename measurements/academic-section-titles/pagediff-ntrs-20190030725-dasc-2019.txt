@@ -1,0 +1,132 @@
+==== page 1
+@@ -10 +10 @@
+-<pre>I. INTRODUCTION</pre>
++<h3>I. INTRODUCTION</h3>
+==== page 2
+@@ -4,2 +4,2 @@
+-<p>II. PROBLEM INPUT AND OUTPUT</p>
+-<pre><em>A. Input data</em></pre>
++<h3>II. PROBLEM INPUT AND OUTPUT</h3>
++<h3><em>A. Input data</em></h3>
+@@ -36,2 +36,2 @@
+-<pre><em>B. Output data: the format of a “schedule”</em> A schedule will be defined here as a mapping that, for each</pre>
+-<p>flight f, provides every node on its route with a Scheduled Time of Arrival (STA) for that flight. In other words, a schedule is an assignment, to each flight f, of a table, denoted by S(f), of the format (refer to (1) for some of the notation):</p>
++<h3><em>B. Output data: the format of a “schedule”</em></h3>
++<p>A schedule will be defined here as a mapping that, for each flight f, provides every node on its route with a Scheduled Time of Arrival (STA) for that flight. In other words, a schedule is an assignment, to each flight f, of a table, denoted by S(f), of th
+@@ -40 +40 @@
+-<p>III. SCHEDULING CONSTRAINTS</p>
++<h3>III. SCHEDULING CONSTRAINTS</h3>
+==== page 3
+@@ -2 +2 @@
+-<pre><em>B. Node constraints</em></pre>
++<h3><em>B. Node constraints</em></h3>
+@@ -8,2 +8 @@
+-<p>(c) For some nodes along the routes of some flights, the flight</p>
+-<p>(a schedule-frozen flight) must traverse the node at exactly the ETA, which effectively requires the STA to equal the ETA.</p>
++<p>(c) For some nodes along the routes of some flights, the flight (a schedule-frozen flight) must traverse the node at exactly the ETA, which effectively requires the STA to equal the ETA.</p>
+@@ -30 +29 @@
+-<pre><em>C. Edge constraints</em></pre>
++<h3><em>C. Edge constraints</em></h3>
+@@ -33,2 +32 @@
+-<p>(b) If one flight passes another on an edge n<sup>i</sup>,n<sup>i+1 </sup>, then</p>
+-<p>these two flights traverse node n<sup>i+1 </sup>in the order opposite to that of traversing node n<sup>i</sup>. Therefore, a no-passing constraint would imply that the two flights must traverse each of the nodes in the same order.<sup>2</sup> Bounds on tra
++<p>(b) If one flight passes another on an edge n<sup>i</sup>,n<sup>i+1 </sup>, then these two flights traverse node n<sup>i+1 </sup>in the order opposite to that of traversing node n<sup>i</sup>. Therefore, a no-passing constraint would imply that the two fli
+@@ -48 +46,2 @@
+-<p>IV. THE INTERDEPENDENCE OF THE CONSTRAINTS The given flights are scheduled one at a time. In the computation of a schedule, the first step (assumed to have been carried out before the execution of the algorithm in section V) is to impose the order in which
++<h3>IV. THE INTERDEPENDENCE OF THE CONSTRAINTS</h3>
++<p>The given flights are scheduled one at a time. In the computation of a schedule, the first step (assumed to have been carried out before the execution of the algorithm in section V) is to impose the order in which the flights are to be scheduled. The STAs 
+==== page 5
+@@ -11 +11 @@
+-<pre>V. ALGORITHM FORMULATION</pre>
++<h3>V. ALGORITHM FORMULATION</h3>
+@@ -14,2 +14,2 @@
+-<pre><em>A. The algorithm invariants</em> Assume the first (f−1) flights have been scheduled; i.e.,</pre>
+-<p>the schedules of the form (3)</p>
++<h3><em>A. The algorithm invariants</em></h3>
++<p>Assume the first (f−1) flights have been scheduled; i.e., the schedules of the form (3)</p>
+@@ -18 +18 @@
+-<pre><em>B. The generic step: scheduling the next flight</em></pre>
++<h3><em>B. The generic step: scheduling the next flight</em></h3>
+@@ -53,2 +53 @@
+-<p>Step 4. Use the algorithm in Ref. [4] to compute the available</p>
+-<p>time windows for f at the nodes on its route (the region shown green in Ref. [4, Fig. 2(c)]), using:</p>
++<p>Step 4. Use the algorithm in Ref. [4] to compute the available time windows for f at the nodes on its route (the region shown green in Ref. [4, Fig. 2(c)]), using:</p>
+@@ -59,2 +58 @@
+-<p>Step 5. The output of Step 4 is a collection of time windows</p>
+-<p>of availability of nodes in r<sub>f </sub>for flight f. Since a node on the route of f can have multiple such time windows (we can assume they are pairwise nonoverlapping), denote the j-th such window at node n<sup>i</sup></p>
++<p>Step 5. The output of Step 4 is a collection of time windows of availability of nodes in r<sub>f </sub>for flight f. Since a node on the route of f can have multiple such time windows (we can assume they are pairwise nonoverlapping), denote the j-th such w
+@@ -66,2 +64 @@
+-<p>Step 6. To represent the feasible scheduling options for f,</p>
+-<p>form a graph with the time windows Ani</p>
++<p>Step 6. To represent the feasible scheduling options for f, form a graph with the time windows Ani</p>
+==== page 6
+@@ -8,2 +8 @@
+-<p>Step 7. In the graph computed in step 6, find all paths from a</p>
+-<p>time window An1</p>
++<p>Step 7. In the graph computed in step 6, find all paths from a time window An1</p>
+@@ -16,2 +15 @@
+-<p>Step 8. Choose a path from those computed in step 7. It will</p>
+-<p>be a sequence of time windows, indexed by the nodes on the route of f:</p>
++<p>Step 8. Choose a path from those computed in step 7. It will be a sequence of time windows, indexed by the nodes on the route of f:</p>
+@@ -46 +44 @@
+-<p>VI. SAMPLE PROBLEMS AND SOLUTIONS</p>
++<h3>VI. SAMPLE PROBLEMS AND SOLUTIONS</h3>
+==== page 7
+@@ -4,2 +4 @@
+-<p>VII. COMPATIBILITY WITH A DISTRIBUTED SYSTEM FOR</p>
+-<p>MANAGING ARRIVAL AIR TRAFFIC</p>
++<h3>VII. COMPATIBILITY WITH A DISTRIBUTED SYSTEM FOR MANAGING ARRIVAL AIR TRAFFIC</h3>
+@@ -7 +6 @@
+-<pre><em>A. Required supporting functionality</em></pre>
++<h3><em>A. Required supporting functionality</em></h3>
+@@ -14,2 +13,2 @@
+-<pre><em>B. New capabilities</em> Steps 9 and, if executed, step 10 of the algorithm in section</pre>
+-<p>V both involve selecting an STA (for a given flight at a given 
++<h3><em>B. New capabilities</em></h3>
++<p>Steps 9 and, if executed, step 10 of the algorithm in section V both involve selecting an STA (for a given flight at a given 
+==== page 9
+@@ -1 +1 @@
+-<p>VIII. SUMMARY</p>
++<h3>VIII. SUMMARY</h3>
+@@ -12,3 +12 @@
+-<p>APPENDIX A</p>
+-<p>A HIGH-LEVEL DESCRIPTION OF THE SCHEDULING</p>
+-<p>ALGORITHM</p>
++<h3>APPENDIX A A HIGH-LEVEL DESCRIPTION OF THE SCHEDULING ALGORITHM</h3>
+@@ -16,2 +14 @@
+-<p>APPENDIX B</p>
+-<p>QUADRATIC PROGRAM</p>
++<h3>APPENDIX B QUADRATIC PROGRAM</h3>
+==== page 10
+@@ -2 +2 @@
+-<p>REFERENCES</p>
++<h3>REFERENCES</h3>
+@@ -7,12 +7,6 @@
+-<p>[2] FAA-E-3025. Time-Based Flow Management (TBFM) system specifi-</p>
+-<p>cation document (SSD). Federal Aviation Administration, Washington, D.C., 2014.</p>
+-<p>[3] A. Hagberg, P. Swart, and D. Schult. Exploring network structure,</p>
+-<p>dynamics, and function using networkx. http://networkx.github.io, 2008.</p>
+-<p>[4] L. Meyn. A closed-form solution to multi-point scheduling problems.</p>
+-<p>In AIAA Modeling and Simulation Technologies Conference, page 7911, 2010.</p>
+-<p>[5] D. Mulfinger and A. Sadovsky. Design and evaluation of a stochastic</p>
+-<p>time-based arrival scheduling simulation system. In 11th AIAA Aviation <em>Technology, Integration, and Operations (ATIO) Conference, including</em> the AIAA Balloon Systems Conference and 19th AIAA Lighter-Than, page 6874, 2011.</p>
+-<p>[6] C. H. Papadimitriou and K. Steiglitz. Combinatorial Optimization;</p>
+-<p>Algorithms and Complexity. Dover Publications, 1998.</p>
+-<p>[7] J. L. Rios, I. S. Smith, P. Venkatesan, D. R. Smith, V. Baskaran,</p>
+-<p>S. M. Jurcak, S. K. Iyer, and P. Verma. UTM UAS service supplier development: Sprint 2 toward technical capability level 4.</p>
++<p>[2] FAA-E-3025. Time-Based Flow Management (TBFM) system specifi-cation document (SSD). Federal Aviation Administration, Washington, D.C., 2014.</p>
++<p>[3] A. Hagberg, P. Swart, and D. Schult. Exploring network structure, dynamics, and function using networkx. http://networkx.github.io, 2008.</p>
++<p>[4] L. Meyn. A closed-form solution to multi-point scheduling problems. In AIAA Modeling and Simulation Technologies Conference, page 7911, 2010.</p>
++<p>[5] D. Mulfinger and A. Sadovsky. Design and evaluation of a stochastic time-based arrival scheduling simulation system. In 11th AIAA Aviation <em>Technology, Integration, and Operations (ATIO) Conference, including</em> the AIAA Balloon Systems Conference
++<p>[6] C. H. Papadimitriou and K. Steiglitz. Combinatorial Optimization; Algorithms and Complexity. Dover Publications, 1998.</p>
++<p>[7] J. L. Rios, I. S. Smith, P. Venkatesan, D. R. Smith, V. Baskaran, S. M. Jurcak, S. K. Iyer, and P. Verma. UTM UAS service supplier development: Sprint 2 toward technical capability level 4.</p>
+@@ -21,6 +15,3 @@
+-<p>[8] A. S. Tanenbaum and M. Van Steen. Distributed systems: principles</p>
+-<p>and paradigms. Prentice-Hall, 2007.</p>
+-<p>[9] S. Torres and K. L Delpome. An integrated approach to air traffic</p>
+-<p>management to achieve trajectory based operations. In 2012 IEEE/AIAA 31st Digital Avionics Systems Conference (DASC), pages 3E6–1. IEEE, 2012.</p>
+-<p>[10] K. Tumer and A. Agogino. Distributed agent-based air traffic flow</p>
+-<p>management. In Proceedings of the 6th international joint conference on Autonomous agents and multiagent systems, page 255. ACM, 2007.</p>
++<p>[8] A. S. Tanenbaum and M. Van Steen. Distributed systems: principles and paradigms. Prentice-Hall, 2007.</p>
++<p>[9] S. Torres and K. L Delpome. An integrated approach to air traffic management to achieve trajectory based operations. In 2012 IEEE/AIAA 31st Digital Avionics Systems Conference (DASC), pages 3E6–1. IEEE, 2012.</p>
++<p>[10] K. Tumer and A. Agogino. Distributed agent-based air traffic flow management. In Proceedings of the 6th international joint conference on Autonomous agents and multiagent systems, page 255. ACM, 2007.</p>

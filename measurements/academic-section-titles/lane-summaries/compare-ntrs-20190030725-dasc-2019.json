@@ -1,0 +1,151 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "ntrs-20190030725-dasc-2019",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "d254f1c3a95988dad3b663281d6592024edf5d1d4cf387b236a6459490557c04",
+  "candidateConverterSHA256": "b7555c392409656c9e14263a8b4cfd476cda7431ccd0c2a413a007ba16c5afec",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "base",
+      "programsSHA256": "36255bad6646a0e7cead2b4d1aec86af08be0141e6a6a63ae1ef54ca69d41c72"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "cand",
+      "programsSHA256": "a2829a96fcc897d7014804291258bbae471465962586e66a9a381e364bea62c3"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    9,
+    10
+  ],
+  "changedPageFields": {
+    "1": [
+      "anchors",
+      "headings",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines"
+    ],
+    "2": [
+      "anchors",
+      "headings",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts"
+    ],
+    "3": [
+      "anchors",
+      "headings",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts"
+    ],
+    "5": [
+      "anchors",
+      "headings",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "scripts"
+    ],
+    "6": [
+      "anchors",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "7": [
+      "anchors",
+      "headings",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines"
+    ],
+    "9": [
+      "anchors",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "10": [
+      "anchors",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text",
+      "warnings"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": true,
+  "changedNavigationPages": [
+    1,
+    10,
+    2,
+    3,
+    5,
+    6,
+    7,
+    9
+  ],
+  "pageMarkersEqual": true,
+  "changedReportFields": [
+    "warnings"
+  ],
+  "idOnlyShifts": {
+    "pageCount": 2,
+    "fields": {
+      "paragraphIDs": 2
+    },
+    "navigationEntries": null
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

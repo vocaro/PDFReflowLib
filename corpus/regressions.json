@@ -2189,7 +2189,7 @@
     {
       "id": "gpo-911-2004",
       "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
-      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 13-16, 126-127, 192-193 and 357-358 visually reviewed (#45): the bottom folios 108, 174 and 339 on chapter-opening pages and the front-matter folios xiii/xv stay separate paragraphs that never absorb the following page's text, while the body paragraph above each chapter-opening folio continues onto the next page. Pages 19, 20, 64, 65, 469 and 484 visually reviewed (#11): each chapter’s endnotes are numbered from 1, so a marker links only to the note of its own chapter (outline chapter openings validated on the page): page 19’s 1 and page 20’s 4 reach chapter 1’s notes 1 and 4 on page 469, where note 1’s second indented paragraph stays a paragraph of its own; page 64’s 241 reaches chapter 1’s last note on page 484, while page 65’s 1 reaches chapter 2’s note 1 under the chapter-opening heading on that same page. Every linked note returns to its first reference. Pages 13–18, 467–468 and 571–585 visually reviewed (#62): a note-page or front-matter running head whose folio is 18 (Arabic) or 0 (Roman) from the physical page is margin furniture even where no three pages repeat its text, and is never a heading; the genuine per-chapter notes titles (10 Wartime, 11 Foresight—and Hindsight, 12 What to Do?) stay in the navigation, and the prose each removed head had separated joins across the page boundary. #45's front-matter separation checks now name the first paragraph that follows each folio, since the head between them is gone; the folio still must not absorb it. Pages 365 and 374 source rasters reviewed (#69): item 4 is one list item although PDFKit splits its `4.` marker, and `10.August 2001` (no space after the period) is the tenth item beside spaced items 6-9, with item 4's indented second paragraph and items 3 and 9 as controls. Page 492 protects a URL rejoined after a line-ending slash (#70). Page 91 checked against extracted geometry (#83): `3.2 ADAPTATION—AND NONADAPTATION—IN THE` and its hanging second line `LAW ENFORCEMENT COMMUNITY` are one heading. Pages 543, 571, 572, 578 and 581-583 source rasters reviewed (#80): every note on those endnote pages is one paragraph with its wrapped lines, keyed to its chapter and reached from its body marker (pages 253, 334, 341, 343, 356, 357, 393, 406 and 422); a web address with `=` no longer seeds a formula crop that swallowed note lines on 571 and 581-583 (no image remains there: the borderless note links draw nothing, #151); pages 572 and 578 are headed NOTES TO CHAPTERS 9-10 / 10-11 and switch chapters at their titles; note 107’s numbered candidate list (543) and note 4’s bullets (583) are further paragraphs of their notes. Addresses broken inside themselves rejoin without a space on 570 and 581 (#79). Pages 205, 496, 544 and 545 source rasters reviewed (#87): page 496's running head misprints NOTES TO CHAPTER 4 over chapter 3's notes 93–112, which continue page 495's note 92 while chapter 4's own notes 93–112 are on page 502, so pages 115 and 124 reach chapter 3's notes on 496 and page 143 reaches chapter 4's on 502; page 544 continues note 107's numbered candidate list from page 543, so its items 7–9 are further paragraphs of that note and page 234's markers 7 and 9 reach chapter 7's notes on page 532; on 545 item 10 is one paragraph with its wrapped lines and the item's further paragraph (Khalid al Zahrani) is whole; markers raised inside preserved list items link like those in paragraphs (page 205's bullet, page 430's item). Page 348 source-reviewed (#100 control): the framed sidebar opens with a two-line paragraph ending in note 30 over a first-line-indented paragraph; it has no title. Pages 362, 369, 497/498, 531/532, 545/546, 583/584 source rasters and the lines above every notes page's first note start reviewed (#11): a note continuing onto the next page at the notes' dedented wrap edge joins its paragraph there whatever opens the continuation (digits on 473, 508 and 540, a quote on 532, a bracket on 580, capitals on 546 and 582), while page 498's further paragraph at the note indent and page 584's flush-left paragraph after note 4's short last bullet stay paragraphs of their own, and note 3 on 532 stays distinct; the lines above a first note start keep their wrapped lines (498, 584); page 362's `”12` and page 369's `”32`, split from their lines at a kerned closing quote, are raised markers that reach chapter 11's notes 12 and 32 on pages 578 and 579. Pages 172, 210, 235, 242, 255 and 313 source-reviewed with the embedded Bembo font (#126): chapters 5–9 print every line-end word break with the `equal` glyph, which extracts as `=`; once the book's 993 `word=` line ends mark it as the hyphen, those breaks go through the hyphen policy (163 `terrorist`, 235 `February` and `encountered` joined, 172 `excep-tional` kept with a warning, 242 `mid=` a hyphen), the lines no longer seed crops, and markers 36, 132, 16 and 91 once inside them link (page 255's 116, freed by #119, is the control). FBI serials, report numbers and designations broken at a hyphen before a digit or capital continue with the hyphen and no space (#127: 43 `C-130H`, 441 `MI-5`, 537 and 546 serials), while 546's `Hijackers Timeline` and 581's addresses are unchanged. Pages 162 and 342 are blank (nothing painted): each keeps only its page marker, with no image or recognition (#132). Line-end hyphens reviewed across the book (#131): compounds broken before a capital keep the hyphen with no space (143 `non-Muslims`, 426 `Goldwater-Nichols`), or lose it where the book prints the halves as one word (450 `CENTCOM`); a word before a digit keeps it where the book sets that word before a number inside a line (242 `mid-1990s`, 372 `pre-9/11`); number codes join (486 `CTC 96-30015`, 554 `SD 108-00`); and a word broken across two blocks joins through the hyphen policy (220 `briefing` after note marker 178, 438 `intelligence` split from its row). Page 111's suspended `ultra-high- and` keeps its space, and page 147's item 2 keeps `training` inside its list item. Pages 41, 458 and 462 source rasters reviewed (#134): the hearings appendix lists each panel's witnesses one to an entry, flush left, and wraps an entry, or a panel title, one em into a hanging indent; each witness is its own paragraph, a wrapped entry is one paragraph (`Ken Holden, … Department of` / `Design and Construction`), page 462 opens with the indented end of an entry continued from page 461, and the two-line bold titles (`Law Enforcement, Domestic Intelligence, and` / `Homeland Security`, `State of the System: Civil Aviation Security` / `on September 11`) and the single-line title over narrower entries (`Intelligence Oversight and the Joint Inquiry`) are headings. Page 41's transcript sets each speaker's turn the same way: each turn is its own paragraph and a wrapped turn stays whole. Pages 570 and 571 visually reviewed (#151): their web-address links draw a one-point black border, so each keeps its Original page image with annotationsNotConverted.",
+      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 13-16, 126-127, 192-193 and 357-358 visually reviewed (#45): the bottom folios 108, 174 and 339 on chapter-opening pages and the front-matter folios xiii/xv stay separate paragraphs that never absorb the following page's text, while the body paragraph above each chapter-opening folio continues onto the next page. Pages 19, 20, 64, 65, 469 and 484 visually reviewed (#11): each chapter’s endnotes are numbered from 1, so a marker links only to the note of its own chapter (outline chapter openings validated on the page): page 19’s 1 and page 20’s 4 reach chapter 1’s notes 1 and 4 on page 469, where note 1’s second indented paragraph stays a paragraph of its own; page 64’s 241 reaches chapter 1’s last note on page 484, while page 65’s 1 reaches chapter 2’s note 1 under the chapter-opening heading on that same page. Every linked note returns to its first reference. Pages 13–18, 467–468 and 571–585 visually reviewed (#62): a note-page or front-matter running head whose folio is 18 (Arabic) or 0 (Roman) from the physical page is margin furniture even where no three pages repeat its text, and is never a heading; the genuine per-chapter notes titles (10 Wartime, 11 Foresight—and Hindsight, 12 What to Do?) stay in the navigation, and the prose each removed head had separated joins across the page boundary. #45's front-matter separation checks now name the first paragraph that follows each folio, since the head between them is gone; the folio still must not absorb it. Pages 365 and 374 source rasters reviewed (#69): item 4 is one list item although PDFKit splits its `4.` marker, and `10.August 2001` (no space after the period) is the tenth item beside spaced items 6-9, with item 4's indented second paragraph and items 3 and 9 as controls. Page 492 protects a URL rejoined after a line-ending slash (#70). Page 91 checked against extracted geometry (#83): `3.2 ADAPTATION—AND NONADAPTATION—IN THE` and its hanging second line `LAW ENFORCEMENT COMMUNITY` are one heading. Pages 543, 571, 572, 578 and 581-583 source rasters reviewed (#80): every note on those endnote pages is one paragraph with its wrapped lines, keyed to its chapter and reached from its body marker (pages 253, 334, 341, 343, 356, 357, 393, 406 and 422); a web address with `=` no longer seeds a formula crop that swallowed note lines on 571 and 581-583 (no image remains there: the borderless note links draw nothing, #151); pages 572 and 578 are headed NOTES TO CHAPTERS 9-10 / 10-11 and switch chapters at their titles; note 107’s numbered candidate list (543) and note 4’s bullets (583) are further paragraphs of their notes. Addresses broken inside themselves rejoin without a space on 570 and 581 (#79). Pages 205, 496, 544 and 545 source rasters reviewed (#87): page 496's running head misprints NOTES TO CHAPTER 4 over chapter 3's notes 93–112, which continue page 495's note 92 while chapter 4's own notes 93–112 are on page 502, so pages 115 and 124 reach chapter 3's notes on 496 and page 143 reaches chapter 4's on 502; page 544 continues note 107's numbered candidate list from page 543, so its items 7–9 are further paragraphs of that note and page 234's markers 7 and 9 reach chapter 7's notes on page 532; on 545 item 10 is one paragraph with its wrapped lines and the item's further paragraph (Khalid al Zahrani) is whole; markers raised inside preserved list items link like those in paragraphs (page 205's bullet, page 430's item). Page 348 source-reviewed (#100 control): the framed sidebar opens with a two-line paragraph ending in note 30 over a first-line-indented paragraph; it has no title. Pages 362, 369, 497/498, 531/532, 545/546, 583/584 source rasters and the lines above every notes page's first note start reviewed (#11): a note continuing onto the next page at the notes' dedented wrap edge joins its paragraph there whatever opens the continuation (digits on 473, 508 and 540, a quote on 532, a bracket on 580, capitals on 546 and 582), while page 498's further paragraph at the note indent and page 584's flush-left paragraph after note 4's short last bullet stay paragraphs of their own, and note 3 on 532 stays distinct; the lines above a first note start keep their wrapped lines (498, 584); page 362's `”12` and page 369's `”32`, split from their lines at a kerned closing quote, are raised markers that reach chapter 11's notes 12 and 32 on pages 578 and 579. Pages 172, 210, 235, 242, 255 and 313 source-reviewed with the embedded Bembo font (#126): chapters 5–9 print every line-end word break with the `equal` glyph, which extracts as `=`; once the book's 993 `word=` line ends mark it as the hyphen, those breaks go through the hyphen policy (163 `terrorist`, 235 `February` and `encountered` joined, 172 `excep-tional` kept with a warning, 242 `mid=` a hyphen), the lines no longer seed crops, and markers 36, 132, 16 and 91 once inside them link (page 255's 116, freed by #119, is the control). FBI serials, report numbers and designations broken at a hyphen before a digit or capital continue with the hyphen and no space (#127: 43 `C-130H`, 441 `MI-5`, 537 and 546 serials), while 546's `Hijackers Timeline` and 581's addresses are unchanged. Pages 162 and 342 are blank (nothing painted): each keeps only its page marker, with no image or recognition (#132). Line-end hyphens reviewed across the book (#131): compounds broken before a capital keep the hyphen with no space (143 `non-Muslims`, 426 `Goldwater-Nichols`), or lose it where the book prints the halves as one word (450 `CENTCOM`); a word before a digit keeps it where the book sets that word before a number inside a line (242 `mid-1990s`, 372 `pre-9/11`); number codes join (486 `CTC 96-30015`, 554 `SD 108-00`); and a word broken across two blocks joins through the hyphen policy (220 `briefing` after note marker 178, 438 `intelligence` split from its row). Page 111's suspended `ultra-high- and` keeps its space, and page 147's item 2 keeps `training` inside its list item. Pages 41, 458 and 462 source rasters reviewed (#134): the hearings appendix lists each panel's witnesses one to an entry, flush left, and wraps an entry, or a panel title, one em into a hanging indent; each witness is its own paragraph, a wrapped entry is one paragraph (`Ken Holden, … Department of` / `Design and Construction`), page 462 opens with the indented end of an entry continued from page 461, and the two-line bold titles (`Law Enforcement, Domestic Intelligence, and` / `Homeland Security`, `State of the System: Civil Aviation Security` / `on September 11`) and the single-line title over narrower entries (`Intelligence Oversight and the Joint Inquiry`) are headings. Page 41's transcript sets each speaker's turn the same way: each turn is its own paragraph and a wrapped turn stays whole. Pages 570 and 571 visually reviewed (#151): their web-address links draw a one-point black border, so each keeps its Original page image with annotationsNotConverted. #162: page 50’s timeline entries keep the lines wrapped into their hanging indent.",
       "pages": [
         {
           "page": 15,
@@ -3521,6 +3521,12 @@
           "paragraphs": [
             "the 9/11 attack.At the time of their travel through Iran, the al Qaeda operatives"
           ]
+        },
+        {
+          "page": 50,
+          "paragraphs": [
+            "9:24 NEADS scrambles Langley fighter jets in search of AA 11"
+          ]
         }
       ]
     },
@@ -4725,7 +4731,7 @@
     {
       "id": "gpo-our-flag-2003",
       "sourceSHA256": "a47a3153b649022a52b53e7b0c40b55bfea24e7980bbe32fe6fee0cf1936bbd8",
-      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Page 33 source raster reviewed in color: the Colorado flag (blue and white stripes, red C, gold disc) must keep its scale, ink contrast and hues (#27). Pages 33, 34, 42 and 43 reviewed (#62): the printed page number in the margin is retained text and is not a heading. Page 12 (#89) source-reviewed: the Beecher and Wilson quotations, tagged one line per group, join where each line wraps onto the next. Drop caps join their words on pages 5, 7, 13, 27 and 31 (`The`, not `T he`; `Any` and `Archeological` after an `A` initial); page 47's `On`, set without a space glyph, is the control (#135). Paragraph openings (#147) source-reviewed on pages 5, 7, 10, 12, 49, 51, 53 and 54: a first line indented two ems runs onto the lines beneath it, the lines set beside a drop cap run on into the text that returns to the edge below the initial, one-line quotation groups continue into their wrapped lines, and a reading-list entry's hanging lines join the entry; the paragraph breaks before `Years later`, before the Beecher quotation, before `Strong evidence` and between two reading-list entries remain. Page 4 (#14) reviewed against the source: the Joint Committee's two columns are set on shared baselines and PDFKit returns each pair of entries as one line; the rows' text stays whole and in column order, a control for the detached-label split, whose only change here is that Chairman and Vice Chairman keep separate italic runs.",
+      "basis": "Page 27 source raster reviewed; page-33 four-flag target retained from existing review. Does not accept the broken drop-cap, table, or state-description order. Page 27 includes a third region for its table, alongside the two source heading rules. Whole-table containment and ten row associations have source-derived Swift regressions. Source pages 34/42/43 visually reviewed: four illustrated entries follow alphabetical row order, with all four images retained. Protects ordering from changes to margin removal; not general tag/figure ownership qualification. Page 31 visually reviewed: preserve the heading boundary between Flag and for, plus the source photograph. Drop-cap ordering remains unqualified. Physical pages 7/31 visually reviewed: a decorative drop cap must not promote the opening body line to a heading or put its continuation first. Paragraph checks use intact source phrases and do not accept the separate initial-word spacing defect. Page 9 source review confirms the line-ending some-/times join after corrected order; page 30 retains genuine fraction superscripts beside its drop cap. Page 29 source title and logical tree (H3 /K 0) reviewed: both printed lines form one heading, with the Capitol image retained. Page 30 source flag-/pole line break is a joined word. Page 33 source raster reviewed in color: the Colorado flag (blue and white stripes, red C, gold disc) must keep its scale, ink contrast and hues (#27). Pages 33, 34, 42 and 43 reviewed (#62): the printed page number in the margin is retained text and is not a heading. Page 12 (#89) source-reviewed: the Beecher and Wilson quotations, tagged one line per group, join where each line wraps onto the next. Drop caps join their words on pages 5, 7, 13, 27 and 31 (`The`, not `T he`; `Any` and `Archeological` after an `A` initial); page 47's `On`, set without a space glyph, is the control (#135). Paragraph openings (#147) source-reviewed on pages 5, 7, 10, 12, 49, 51, 53 and 54: a first line indented two ems runs onto the lines beneath it, the lines set beside a drop cap run on into the text that returns to the edge below the initial, one-line quotation groups continue into their wrapped lines, and a reading-list entry's hanging lines join the entry; the paragraph breaks before `Years later`, before the Beecher quotation, before `Strong evidence` and between two reading-list entries remain. Page 4 (#14) reviewed against the source: the Joint Committee's two columns are set on shared baselines and PDFKit returns each pair of entries as one line; the rows' text stays whole and in column order, a control for the detached-label split, whose only change here is that Chairman and Vice Chairman keep separate italic runs. #162: page 15’s flag labels stay paragraphs; the centred BENNINGTON FLAG is no heading.",
       "pages": [
         {
           "page": 5,
@@ -5070,6 +5076,12 @@
           "text": [
             "OF THE PEOPLE, BY THE PEOPLE, FOR THE PEOPLE"
           ]
+        },
+        {
+          "page": 15,
+          "absentHeadings": [
+            "BENNINGTON FLAG"
+          ]
         }
       ]
     },
@@ -5403,7 +5415,7 @@
     {
       "id": "scotus-loper-bright-2024",
       "sourceSHA256": "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e",
-      "basis": "Source pages 2, 7, 13, 60, 61, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Pages 2, 7, 13 and 60: wrapped justified lines beginning with \"v.\", a year, \"F.\" or \"U. S.\" must stay inside their source paragraph rather than becoming preformatted fragments (#39); page 2 keeps its four syllabus paragraphs in order. Pages 13, 60, 61, 97 and 98 (#40): each page-bottom footnote is a separate note block opening with its raised marker, the em-dash separator is not prose, footnote 2 is one note element from page 97 through its page-98 continuation and precedes that page's body, page 13's detached body marker 1 stays a superscript inside its sentence, and the two-row running heads (title row with folio, opinion row) are removed with a furnitureRemoved warning; page 13's body paragraph continues onto page 14 past the note block (#45), so footnote 1 follows that paragraph after its marker and is reached under the page-14 anchor. Pages 13, 60, 97 and 98 (#11): each raised marker links to the footnote of its own page and the note returns to the marker; page 13’s note is reached under the page-14 anchor. Pages 44–48 visually reviewed (#62/#10): the Thomas concurrence runs four pages, so each alternating head occurs only twice and the three-occurrence rule left them all. All four pages' folios are 43 less than the physical page, which removes both head rows without touching the body's own `(THOMAS, J., concurring)` citations. Page 48 opens the next concurrence and restarts the numbering. Page 5 source raster reviewed (#69): the justified line `982. That regime is the antithesis…`, whose `982.` PDFKit splits off, continues its paragraph. A word broken across two paragraph blocks joins through the hyphen policy (#131: 4 `triggered`), and a compound broken before a capital keeps its hyphen (104 `pre-APA`).",
+      "basis": "Source pages 2, 7, 13, 60, 61, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Pages 2, 7, 13 and 60: wrapped justified lines beginning with \"v.\", a year, \"F.\" or \"U. S.\" must stay inside their source paragraph rather than becoming preformatted fragments (#39); page 2 keeps its four syllabus paragraphs in order. Pages 13, 60, 61, 97 and 98 (#40): each page-bottom footnote is a separate note block opening with its raised marker, the em-dash separator is not prose, footnote 2 is one note element from page 97 through its page-98 continuation and precedes that page's body, page 13's detached body marker 1 stays a superscript inside its sentence, and the two-row running heads (title row with folio, opinion row) are removed with a furnitureRemoved warning; page 13's body paragraph continues onto page 14 past the note block (#45), so footnote 1 follows that paragraph after its marker and is reached under the page-14 anchor. Pages 13, 60, 97 and 98 (#11): each raised marker links to the footnote of its own page and the note returns to the marker; page 13’s note is reached under the page-14 anchor. Pages 44–48 visually reviewed (#62/#10): the Thomas concurrence runs four pages, so each alternating head occurs only twice and the three-occurrence rule left them all. All four pages' folios are 43 less than the physical page, which removes both head rows without touching the body's own `(THOMAS, J., concurring)` citations. Page 48 opens the next concurrence and restarts the numbering. Page 5 source raster reviewed (#69): the justified line `982. That regime is the antithesis…`, whose `982.` PDFKit splits off, continues its paragraph. A word broken across two paragraph blocks joins through the hyphen policy (#131: 4 `triggered`), and a compound broken before a capital keeps its hyphen (104 `pre-APA`). #162: the case caption’s centred lines and the bare part numerals I-III are not headings.",
       "pages": [
         {
           "page": 2,
@@ -5801,13 +5813,25 @@
           "absentText": [
             "it author- izes"
           ]
+        },
+        {
+          "page": 9,
+          "absentHeadings": [
+            "RELENTLESS, INC., ET AL., PETITIONERS"
+          ]
+        },
+        {
+          "page": 26,
+          "absentHeadings": [
+            "III"
+          ]
         }
       ]
     },
     {
       "id": "census-rrs2002-01",
       "sourceSHA256": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
-      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body fonts name their glyphs by index with no Unicode mapping (#38). Since #143 the EC text fonts (dcr, dcbx, dcti) are decoded through the offset the document's own words establish: pages 3 and 17, drawn in those fonts alone and holding no numeric table, reflow from native text without damagedTextEncoding, OCR or a source-page image, and their reviewed phrases (page 3's heading, first sentence, subsection title and numbered fields 1, 12 and 13; page 17's body and references with ligatures, dashes and an italic journal title) were read from 200-dpi renders of the source pages. Pages 12 and 15 are tables no table path reconstructs; they keep damagedTextEncoding and their table images, and must never reflow the table rows run together as prose (Table 2's `0.9620 rnkswp10`, Table 7's `13.85 add01_sw`). Pages 2, 4-11, 13, 14, 16 and 18-20 draw undecodable math or typewriter fonts or lines PDFKit breaks, and must still report damagedTextEncoding and keep a source-page image. Does not bless OCR accuracy on those pages. Page 3's paragraph after the income list opens on an indented first line that runs onto `public-use CPS file`, and page 17's first reference hangs `Incomplete Data via the EM Algorithm` under a first line set apart by space; each reads as one paragraph (#147).",
+      "basis": "Source page 1 (Word cover) visually reviewed as the clean in-document control for a report whose LaTeX body fonts name their glyphs by index with no Unicode mapping (#38). Since #143 the EC text fonts (dcr, dcbx, dcti) are decoded through the offset the document's own words establish: pages 3 and 17, drawn in those fonts alone and holding no numeric table, reflow from native text without damagedTextEncoding, OCR or a source-page image, and their reviewed phrases (page 3's heading, first sentence, subsection title and numbered fields 1, 12 and 13; page 17's body and references with ligatures, dashes and an italic journal title) were read from 200-dpi renders of the source pages. Pages 12 and 15 are tables no table path reconstructs; they keep damagedTextEncoding and their table images, and must never reflow the table rows run together as prose (Table 2's `0.9620 rnkswp10`, Table 7's `13.85 add01_sw`). Pages 2, 4-11, 13, 14, 16 and 18-20 draw undecodable math or typewriter fonts or lines PDFKit breaks, and must still report damagedTextEncoding and keep a source-page image. Does not bless OCR accuracy on those pages. Page 3's paragraph after the income list opens on an indented first line that runs onto `public-use CPS file`, and page 17's first reference hangs `Incomplete Data via the EM Algorithm` under a first line set apart by space; each reads as one paragraph (#147). #162: page 17’s hanging-indent references keep their wrapped lines.",
       "pages": [
         {
           "page": 1,
@@ -5985,7 +6009,8 @@
           ],
           "maximumImages": 0,
           "paragraphs": [
-            "Maximum Likelihood from Incomplete Data via the EM Algorithm"
+            "Maximum Likelihood from Incomplete Data via the EM Algorithm",
+            "[11] Kim, J. J. and Winkler, W. E.: Multiplicative Noise for Masking Continuous Data,"
           ]
         },
         {
@@ -6073,7 +6098,7 @@
     {
       "id": "nbs-jres-geltman-1977",
       "sourceSHA256": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
-      "basis": "Source pages 1-7 visually reviewed against renders. Pages 1-6 carry Adobe Paper Capture inline images over what its OCR could not transcribe; they are evidence, not crop bounds (#37). Every page reflows with the unverified-text warning and its source-page reference. Figures 1 and 2 are each one whole crop ending above their captions, which stay text; their OCR labels do not reflow. Display equations with evidence, and those the formula heuristic crops, grow to their whole display row with the equation number; the region references exclude the source-page image, which contains every region. Unboxed equation (8) remains OCR text. Page 7 protects the unverified-text warning over its inherited Paper Capture OCR and the reference heading. After #36 the closing left-column prose must reflow as text in source order, ending with its final line inside one paragraph; the inline equation `u0 = eE0/mω` inside a justified line earlier in the column is prose, not a displayed formula, so that line and its neighbours reflow in the paragraph instead of a three-line crop (#51). Reference transcriptions are noisy and are not asserted.",
+      "basis": "Source pages 1-7 visually reviewed against renders. Pages 1-6 carry Adobe Paper Capture inline images over what its OCR could not transcribe; they are evidence, not crop bounds (#37). Every page reflows with the unverified-text warning and its source-page reference. Figures 1 and 2 are each one whole crop ending above their captions, which stay text; their OCR labels do not reflow. Display equations with evidence, and those the formula heuristic crops, grow to their whole display row with the equation number; the region references exclude the source-page image, which contains every region. Unboxed equation (8) remains OCR text. Page 7 protects the unverified-text warning over its inherited Paper Capture OCR and the reference heading. After #36 the closing left-column prose must reflow as text in source order, ending with its final line inside one paragraph; the inline equation `u0 = eE0/mω` inside a justified line earlier in the column is prose, not a displayed formula, so that line and its neighbours reflow in the paragraph instead of a three-line crop (#51). Reference transcriptions are noisy and are not asserted. #162: page 7’s hanging-indent references keep their wrapped lines.",
       "pages": [
         {
           "page": 1,
@@ -6228,7 +6253,8 @@
           ],
           "paragraphs": [
             "In concluding, we would like to bring",
-            "the maximum driven veloc ity Uo = eEo/mw becomes equal to c at a Nd-glass laser"
+            "the maximum driven veloc ity Uo = eEo/mw becomes equal to c at a Nd-glass laser",
+            "[9] Go nti e r, Y. , Rahm an, N. K. , and Trahin , M. , Phy s. Rev. Lett. 34, 779 (1975)."
           ]
         }
       ]
@@ -6236,7 +6262,7 @@
     {
       "id": "arxiv-replay-clocks-2023",
       "sourceSHA256": "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
-      "basis": "Source pages 1, 3 and 4 visually reviewed. Protects abstract, ACM reference and introduction order in the left column before the right-column drone illustration; section 3.1-3.2 order around Figure 1; and algorithm captions with surrounding prose in two-column order. After #43: the rotated arXiv stamp is omitted (furnitureRemoved), the title, ABSTRACT, INTRODUCTION and numbered section labels are headings separate from their paragraphs, the word spaces after mathematical-italic variables are restored from the source text operators, and each algorithm listing is one preserved region beneath its reflowed caption. Author names remain headings ranked below the title. Pages 1-2 visually reviewed (#45): the right-column paragraph that ends page 1 continues at the head of page 2's left column as one paragraph across the source-page marker. Page 6 source raster reviewed (#83): the section 6 title, whose second line hangs under the title text past its number, is one heading. #151: its 75 borderless citation links draw nothing, so pages 1, 3, 4, 6 and 10 carry no Original page image.",
+      "basis": "Source pages 1, 3 and 4 visually reviewed. Protects abstract, ACM reference and introduction order in the left column before the right-column drone illustration; section 3.1-3.2 order around Figure 1; and algorithm captions with surrounding prose in two-column order. After #43: the rotated arXiv stamp is omitted (furnitureRemoved), the title, ABSTRACT, INTRODUCTION and numbered section labels are headings separate from their paragraphs, the word spaces after mathematical-italic variables are restored from the source text operators, and each algorithm listing is one preserved region beneath its reflowed caption. Author names remain headings ranked below the title. Pages 1-2 visually reviewed (#45): the right-column paragraph that ends page 1 continues at the head of page 2's left column as one paragraph across the source-page marker. Page 6 source raster reviewed (#83): the section 6 title, whose second line hangs under the title text past its number, is one heading. #151: its 75 borderless citation links draw nothing, so pages 1, 3, 4, 6 and 10 carry no Original page image. #162: page 10’s reference [11] keeps its wrapped line.",
       "pages": [
         {
           "page": 1,
@@ -6362,7 +6388,10 @@
             "𝑒must occur",
             "Eprovides"
           ],
-          "pageReference": false
+          "pageReference": false,
+          "paragraphs": [
+            "[11] Mukesh Singhal and Ajay D. Kshemkalyani. An efficient implementation of vector clocks."
+          ]
         }
       ]
     },
@@ -6630,7 +6659,7 @@
     {
       "id": "ntrs-20200002975-gwl-2020",
       "sourceSHA256": "a98e4fcdea40b8ea7023880dd88966f04198b4ec311fced0bb9ebb2dec45fe6d",
-      "basis": "All 20 source pages visually reviewed against 60 DPI Poppler renders (page 1 header and page 11 figures at higher resolution). Protects only output that matches the source: the title, TABLE OF CONTENTS, the numbered section titles 1-6, APPENDIX, BIOGRAPHY and the italic subsection titles as headings; references that the source tags as headings read as paragraphs (#154); the author, affiliation and government-work lines; single-column-order prose on pages 3, 4, 6 and 12, including the page-6 paragraph that continues from the left column into the right; the Word subscript in V_ref and the superscript Reynolds-number exponents; figure captions and preserved figure images; the paragraph that continues from page 9 across the text at the top of figure page 10 into page 11; the appendix captions on pages 14-18; the reference entries in order; and the biographies beside their three portraits. Not pinned because wrong now: line-by-line column interleaving on pages 1, 2, 5, 8, 9, 10 and 11 and right-before-left blocks on pages 7-8 (#153); kept or heading folios, and references split after their first line (#154); Symbol-font private-use alpha and bullets and 45degree (#155). No committed rasters: see the manifest's rights note. Page 1's ten borderless links draw nothing: no Original page image, an annotationsNotConverted warning (#151). Protects only output that matches the source: the title, TABLE OF CONTENTS, 1. INTRODUCTION and the italic subsection titles as headings; the author, affiliation and government-work lines; single-column-order prose on pages 3, 4, 6 and 12, including the page-6 paragraph that continues from the left column into the right; the Word subscript in V_ref and the superscript Reynolds-number exponents; figure captions and preserved figure images; the paragraph that continues from page 9 across the text at the top of figure page 10 into page 11; the appendix captions on pages 14-18; the reference entries in order; and the biographies beside their three portraits. Pages 1, 2, 5, 7, 8, 9 and 11 now read column by column and are pinned, each page reviewed again on its render; page 10's Figure 16 and caption follow the paragraph that runs from page 9 into page 11, so they read inside page 11 (#153). Not pinned because wrong now: section titles 2-6 as <pre>, kept or heading folios and references as headings (#154);",
+      "basis": "All 20 source pages visually reviewed against 60 DPI Poppler renders (page 1 header and page 11 figures at higher resolution). Protects only output that matches the source: the title, TABLE OF CONTENTS, the numbered section titles 1-6, APPENDIX, BIOGRAPHY and the italic subsection titles as headings; references that the source tags as headings read as paragraphs (#154); the author, affiliation and government-work lines; single-column-order prose on pages 3, 4, 6 and 12, including the page-6 paragraph that continues from the left column into the right; the Word subscript in V_ref and the superscript Reynolds-number exponents; figure captions and preserved figure images; the paragraph that continues from page 9 across the text at the top of figure page 10 into page 11; the appendix captions on pages 14-18; the reference entries in order; and the biographies beside their three portraits. Not pinned because wrong now: line-by-line column interleaving on pages 1, 2, 5, 8, 9, 10 and 11 and right-before-left blocks on pages 7-8 (#153); kept or heading folios, and references split after their first line (#154); Symbol-font private-use alpha and bullets and 45degree (#155). No committed rasters: see the manifest's rights note. Page 1's ten borderless links draw nothing: no Original page image, an annotationsNotConverted warning (#151). Protects only output that matches the source: the title, TABLE OF CONTENTS, 1. INTRODUCTION and the italic subsection titles as headings; the author, affiliation and government-work lines; single-column-order prose on pages 3, 4, 6 and 12, including the page-6 paragraph that continues from the left column into the right; the Word subscript in V_ref and the superscript Reynolds-number exponents; figure captions and preserved figure images; the paragraph that continues from page 9 across the text at the top of figure page 10 into page 11; the appendix captions on pages 14-18; the reference entries in order; and the biographies beside their three portraits. Pages 1, 2, 5, 7, 8, 9 and 11 now read column by column and are pinned, each page reviewed again on its render; page 10's Figure 16 and caption follow the paragraph that runs from page 9 into page 11, so they read inside page 11 (#153). Not pinned because wrong now: section titles 2-6 as <pre>, kept or heading folios and references as headings (#154); #162: page 19’s hanging-indent references keep their wrapped author lines.",
       "pages": [
         {
           "page": 1,
@@ -7048,7 +7077,8 @@
           "paragraphs": [
             "The authors thank the staff of the NASA Langley Transonic Dynamics Tunnel for their tireless efforts, the hand placement of bulky test articles, and their willingness to try new techniques.",
             "[16] NASA Space Vehicle Design Criteria, Prelaunch Ground Wind Loads, NASA SP-8008, November 1965.",
-            "[5] Irwin, H. P. A. H.; “Design and Use of Spires for Natural Wind Simulation,” National Research Council, Canada, LTR-LA-233, August 1979."
+            "[5] Irwin, H. P. A. H.; “Design and Use of Spires for Natural Wind Simulation,” National Research Council, Canada, LTR-LA-233, August 1979.",
+            "[14] Ivanco, T. G.; Piatak, D. J.; Sekula, M. K.; Simmons, S. A.; Babel, W. C.; Collins, J. G.; Ramey, J. M.; Heald, D. M.;"
           ],
           "absentHeadings": [
             "[16] NASA Space Vehicle Design Criteria, Prelaunch Ground Wind Loads, NASA SP-8008, November 1965.",
@@ -7076,12 +7106,13 @@
     {
       "id": "ntrs-20190030725-dasc-2019",
       "sourceSHA256": "7c2137098ffb75153e0049b970272db97bc91e13168028dc7b53fbe2deb92caa",
-      "basis": "Source pages 1-10 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects output that matches the source now: the title as a heading; the two author blocks in column order; the abstract and index terms as whole, separate paragraphs; the 1st/2nd author superscripts; whole prose sentences and paragraphs across both columns on every page, including the introduction's continuation from page 1 to page 2; the order of section, subsection, step, bullet and numbered-requirement openings, with the page-6 dash items as separate paragraphs; figure, table and display-equation crops present; the Figure 1 caption, table captions and footnote text; the invariant (6) line; and the reference entries in order. Not pinned because wrong now: section and appendix headings as paragraphs or <pre>, subsection titles run into their first paragraph, bullets and numbered requirements as <pre>, steps and references split after their first line, inline math and multi-line index stacks broken into one-token paragraphs with private-use brace pieces, parts of displays (4), (5), (8)-(12) and the page-9 matrices left outside their crops, the page-6 separation-matrix crop swallowing two prose lines, merged paragraphs, a split at page 1's column break and section III's paragraph split at the page-2 footnote (see the review file). Pages 4, 9 and 10 were reviewed again on their renders and their column order is pinned: the left column and Figure 1's caption before Figure 2's, the summary and both appendices before the quadratic program, and Table III's caption whole before REFERENCES (#153). No committed rasters.",
+      "basis": "Source pages 1-10 visually reviewed against 60 DPI Poppler renders and the extracted text layer. Protects output that matches the source now: the title as a heading; the two author blocks in column order; the abstract and index terms as whole, separate paragraphs; the 1st/2nd author superscripts; whole prose sentences and paragraphs across both columns on every page, including the introduction's continuation from page 1 to page 2; the order of section, subsection, step, bullet and numbered-requirement openings, with the page-6 dash items as separate paragraphs; figure, table and display-equation crops present; the Figure 1 caption, table captions and footnote text; the invariant (6) line; and the reference entries in order. Not pinned because wrong now: section and appendix headings as paragraphs or <pre>, subsection titles run into their first paragraph, bullets and numbered requirements as <pre>, steps and references split after their first line, inline math and multi-line index stacks broken into one-token paragraphs with private-use brace pieces, parts of displays (4), (5), (8)-(12) and the page-9 matrices left outside their crops, the page-6 separation-matrix crop swallowing two prose lines, merged paragraphs, a split at page 1's column break and section III's paragraph split at the page-2 footnote (see the review file). Pages 4, 9 and 10 were reviewed again on their renders and their column order is pinned: the left column and Figure 1's caption before Figure 2's, the summary and both appendices before the quadratic program, and Table III's caption whole before REFERENCES (#153). No committed rasters. #162: IEEEtran sets its section titles in small capitals centred in the column and its subsection titles in italic on the column edge, both at the body size; pages 1-3, 5-7, 9 and 10 source-reviewed, each is one heading, the subsection titles no longer run into their first paragraph, and the references, algorithm steps and lettered constraint items keep their hanging-indent wrapped lines. The page-1 Index Terms line and the page-10 table caption are not headings.",
       "pages": [
         {
           "page": 1,
           "headings": [
-            "A Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace System"
+            "A Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace System",
+            "I. INTRODUCTION"
           ],
           "orderedText": [
             "A Scheduling Algorithm Compatible",
@@ -7135,6 +7166,9 @@
               "end": "for each flight that needs a schedule to formulate their objective. For",
               "next": "each flight, some of the constraints result from the schedules computed previously for other flights."
             }
+          ],
+          "absentHeadings": [
+            "Index Terms—arrival scheduling, distributed system, negotiation"
           ]
         },
         {
@@ -7159,7 +7193,8 @@
             "This system would possibly replace or drive upgrades to the current TBFM system for a futuristic traffic management system for the year 2045 or later.",
             "The complete set of arrival scheduling constraints is given in section III. The interdependence of the constraints is explained in section IV",
             "At some of the schedule-furnished nodes, some flights routed through that node may have pre-assigned and fixed STAs. In real operations, this can happen at a node that is within a flight’s freeze horizon [5]. Such nodes will be called schedule-frozen.",
-            "flight f, provides every node on its route with a Scheduled Time of Arrival (STA) for that flight. In other words, a schedule is an assignment, to each flight f, of a table, denoted by S(f), of the format (refer to (1) for some of the notation):"
+            "flight f, provides every node on its route with a Scheduled Time of Arrival (STA) for that flight. In other words, a schedule is an assignment, to each flight f, of a table, denoted by S(f), of the format (refer to (1) for some of the notation):",
+            "A schedule will be defined here as a mapping that, for each flight f, provides every node on its route with a Scheduled Time of Arrival (STA)"
           ],
           "text": [
             "If the node is a departure node, this time is actually the schedule time of departure, STD, but for cleanliness of exposition we retain the notation STA even in this case."
@@ -7170,7 +7205,13 @@
               "second": "The complete set of arrival scheduling constraints"
             }
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "headings": [
+            "II. PROBLEM INPUT AND OUTPUT",
+            "A. Input data",
+            "B. Output data: the format of a “schedule”",
+            "III. SCHEDULING CONSTRAINTS"
+          ]
         },
         {
           "page": 3,
@@ -7192,7 +7233,9 @@
             "(a) A flight’s travel time between two consecutive nodes– which equals the difference between the corresponding two STAs–must lie between the corresponding minimal and maximal travel times (2).",
             "Two flights traversing a given node must traverse it at STAs that are no closer together than a required minimal time duration.",
             "Each node used by one or more of the flights is assigned its own “copy” of the time axis. Following the presentation in Ref. [4], this will be illustrated here (figures 1 and 2, below) as a plot where the horizontal axis has only discrete points, corresponding to the nodes of the given flight, and each node’s copy of the time axis is drawn as a vertical axis, with upward being the direction of increasing time.",
-            "This situation is illustrated notionally in figure 1(A). In general, there can be other previously scheduled flights, using any or all of the three nodes."
+            "This situation is illustrated notionally in figure 1(A). In general, there can be other previously scheduled flights, using any or all of the three nodes.",
+            "The given flights are scheduled one at a time. In the computation of a schedule,",
+            "(c) For some nodes along the routes of some flights, the flight (a schedule-frozen flight) must traverse the node at exactly the ETA"
           ],
           "minimumImages": 1,
           "absentText": [
@@ -7201,6 +7244,11 @@
             "",
             "",
             ""
+          ],
+          "headings": [
+            "B. Node constraints",
+            "C. Edge constraints",
+            "IV. THE INTERDEPENDENCE OF THE CONSTRAINTS"
           ]
         },
         {
@@ -7244,9 +7292,16 @@
             "Controllability and reachability characterize the internodal influence of the time windows for f. The algorithm formulated in Ref. [4] is designed, and used here, to update a given list of unavailable time windows for one flight at each node on that flight’s route.",
             "In a departure operation, one of the parameters that is generally specified by the operational needs is the relative priority of scheduling the departing flights. A flight’s priority in the given operation may change, and a new flight may even be added, with a set priority, to an already tentatively scheduled operation.",
             "The following interval notation will be used: (i) [a,b] denotes the interval with the endpoints included: a≤x≤b; (ii) ]a,b[ will denote the interval: a < x < b. The round parentheses, ( ), are reserved in this paper for ordered pairs.",
-            "S(1), S(2), ..., S(f−1) (6)"
+            "S(1), S(2), ..., S(f−1) (6)",
+            "Assume the first (f−1) flights have been scheduled; i.e., the schedules of the form (3)",
+            "Step 4. Use the algorithm in Ref. [4] to compute the available time windows for f at the nodes on its route"
           ],
-          "minimumImages": 2
+          "minimumImages": 2,
+          "headings": [
+            "V. ALGORITHM FORMULATION",
+            "A. The algorithm invariants",
+            "B. The generic step: scheduling the next flight"
+          ]
         },
         {
           "page": 6,
@@ -7274,7 +7329,8 @@
             "This section shows (tables I and II) two problem instances and the solutions computed by the algorithm of section V. The following properties are shared by all the instances:",
             "– The route network for each problem is a tree weighted by the internodal distances and generated using random_tree function [3].",
             "– Each flight’s ETA at first node is chosen to make the flights contend for the arrival node.",
-            "The ETAs for the flight’s subsequent nodes are estimated by assuming the flight leaves the first node at the provided ETA and travels at the nominal speed of 450.0 KTS:"
+            "The ETAs for the flight’s subsequent nodes are estimated by assuming the flight leaves the first node at the provided ETA and travels at the nominal speed of 450.0 KTS:",
+            "Step 8. Choose a path from those computed in step 7. It will be a sequence of time windows, indexed by the nodes on the route of f:"
           ],
           "distinctParagraphs": [
             {
@@ -7286,7 +7342,10 @@
               "second": "– In each problem instance, all flights are routed to the same node"
             }
           ],
-          "minimumImages": 2
+          "minimumImages": 2,
+          "headings": [
+            "VI. SAMPLE PROBLEMS AND SOLUTIONS"
+          ]
         },
         {
           "page": 7,
@@ -7307,7 +7366,8 @@
           ],
           "paragraphs": [
             "Arrival traffic in a given TRACON [5] can reach high congestion. This, in turn, can lead to the necessity to re-compute a given arrival schedule quickly and reliably.",
-            "The participants of a distributed system, analogous in some ways to instances of a USS (see, e.g., Ref. [7] and Refs therein), would each carry out some of the algorithm described in section IV, maintaining and sharing the required data with the other participants."
+            "The participants of a distributed system, analogous in some ways to instances of a USS (see, e.g., Ref. [7] and Refs therein), would each carry out some of the algorithm described in section IV, maintaining and sharing the required data with the other participants.",
+            "Steps 9 and, if executed, step 10 of the algorithm in section V both involve selecting an STA"
           ],
           "scripts": [
             {
@@ -7317,7 +7377,12 @@
               "after": "currently in the total schedule"
             }
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "headings": [
+            "VII. COMPATIBILITY WITH A DISTRIBUTED SYSTEM FOR MANAGING ARRIVAL AIR TRAFFIC",
+            "A. Required supporting functionality",
+            "B. New capabilities"
+          ]
         },
         {
           "page": 8,
@@ -7368,6 +7433,11 @@
             "",
             "",
             ""
+          ],
+          "headings": [
+            "VIII. SUMMARY",
+            "APPENDIX A A HIGH-LEVEL DESCRIPTION OF THE SCHEDULING ALGORITHM",
+            "APPENDIX B QUADRATIC PROGRAM"
           ]
         },
         {
@@ -7391,7 +7461,18 @@
             "Federal Aviation Administration, Washington, D.C., 2014.",
             "http://networkx.github.io, 2008."
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "headings": [
+            "REFERENCES"
+          ],
+          "absentHeadings": [
+            "TABLE III: A high-level outline of the scheduling algorithm"
+          ],
+          "paragraphs": [
+            "[3] A. Hagberg, P. Swart, and D. Schult. Exploring network structure, dynamics, and function using networkx. http://networkx.github.io, 2008.",
+            "[4] L. Meyn. A closed-form solution to multi-point scheduling problems. In AIAA Modeling and Simulation Technologies Conference, page 7911, 2010.",
+            "[7] J. L. Rios, I. S. Smith, P. Venkatesan, D. R. Smith, V. Baskaran, S. M. Jurcak, S. K. Iyer, and P. Verma. UTM UAS service supplier"
+          ]
         }
       ]
     },

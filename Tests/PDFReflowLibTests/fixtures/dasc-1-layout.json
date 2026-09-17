@@ -1,0 +1,2634 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        90.474000000000004,
+        715.60337520000007,
+        431.05488840000004,
+        21.375808200000051
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 23.910299999999999,
+          "text" : "A Scheduling Algorithm Compatible with a"
+        }
+      ],
+      "text" : "A Scheduling Algorithm Compatible with a"
+    },
+    {
+      "rect" : [
+        51.297000000000004,
+        687.70837520000009,
+        509.40894149999986,
+        21.375808200000051
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 23.910299999999999,
+          "text" : "Distributed Management of Arrivals in the National"
+        }
+      ],
+      "text" : "Distributed Management of Arrivals in the National"
+    },
+    {
+      "rect" : [
+        224.12,
+        659.81237520000013,
+        163.76164470000003,
+        21.375808200000051
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 23.910299999999999,
+          "text" : "Airspace System"
+        }
+      ],
+      "text" : "Airspace System"
+    },
+    {
+      "rect" : [
+        156.58500000000001,
+        631.22787760000017,
+        71.708060899999992,
+        11.52719599999989
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.9589,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 3.9589999999999463,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.6712000000000007,
+          "text" : "st "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.9589,
+          "text" : "A. Sadovsky"
+        }
+      ],
+      "text" : "1st A. Sadovsky"
+    },
+    {
+      "rect" : [
+        108.79399999999998,
+        619.19521820000011,
+        163.35675220000002,
+        8.5877612000000454
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "italic" : true,
+          "text" : "Aviation Systems Division, Branch AFH"
+        }
+      ],
+      "text" : "Aviation Systems Division, Branch AFH"
+    },
+    {
+      "rect" : [
+        132.70399999999998,
+        606.86721820000014,
+        119.2423594,
+        8.5877612000000454
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "italic" : true,
+          "text" : "NASA Ames Research Center"
+        }
+      ],
+      "text" : "NASA Ames Research Center"
+    },
+    {
+      "rect" : [
+        137.02299999999997,
+        594.3090784000002,
+        107.34701499999997,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Moffett Field, CA, U.S.A."
+        }
+      ],
+      "text" : "Moffett Field, CA, U.S.A."
+    },
+    {
+      "rect" : [
+        128.29499999999996,
+        581.98007840000025,
+        128.28840020000001,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "alexander.v.sadovsky@nasa.gov"
+        }
+      ],
+      "text" : "alexander.v.sadovsky@nasa.gov"
+    },
+    {
+      "rect" : [
+        380.96099999999996,
+        631.22787760000028,
+        77.200046100000009,
+        11.52719599999989
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.9589,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 3.9589999999999463,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.6712000000000007,
+          "text" : "nd "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.9589,
+          "text" : "R. Windhorst"
+        }
+      ],
+      "text" : "2nd R. Windhorst"
+    },
+    {
+      "rect" : [
+        335.91499999999996,
+        619.19521820000023,
+        163.35675220000002,
+        8.5877612000000454
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "italic" : true,
+          "text" : "Aviation Systems Division, Branch AFH"
+        }
+      ],
+      "text" : "Aviation Systems Division, Branch AFH"
+    },
+    {
+      "rect" : [
+        359.82499999999999,
+        606.86721820000025,
+        119.2423594,
+        8.5877612000000454
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "italic" : true,
+          "text" : "NASA Ames Research Center"
+        }
+      ],
+      "text" : "NASA Ames Research Center"
+    },
+    {
+      "rect" : [
+        364.14400000000001,
+        594.30907840000032,
+        107.34701499999994,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Moffett Field, CA, U.S.A."
+        }
+      ],
+      "text" : "Moffett Field, CA, U.S.A."
+    },
+    {
+      "rect" : [
+        360.67700000000002,
+        581.98007840000037,
+        117.76789459999998,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "robert.d.windhorst@nasa.gov"
+        }
+      ],
+      "text" : "robert.d.windhorst@nasa.gov"
+    },
+    {
+      "rect" : [
+        58.927000000000021,
+        527.97802240000044,
+        241.09638240000004,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Abstract—The current system used by the FAA to schedule"
+        }
+      ],
+      "text" : "Abstract—The current system used by the FAA to schedule"
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        518.01502240000048,
+        251.05919999999998,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "arrivals is the Traffic Based Flow Manager (TBFM). It is a"
+        }
+      ],
+      "text" : "arrivals is the Traffic Based Flow Manager (TBFM). It is a"
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        508.05302240000049,
+        251.05919999999992,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "centralized system that gives an operator (airline) no influence"
+        }
+      ],
+      "text" : "centralized system that gives an operator (airline) no influence"
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        498.09002240000046,
+        251.05919999999998,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "over scheduled times of arrival assigned to its flights. Future"
+        }
+      ],
+      "text" : "over scheduled times of arrival assigned to its flights. Future"
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        488.12702240000044,
+        251.05919999999998,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "systems for managing arrival scheduling are proposed as dis-"
+        }
+      ],
+      "text" : "systems for managing arrival scheduling are proposed as dis-"
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        478.16502240000045,
+        251.05919999999992,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "tributed systems. Such a system is called upon to give operators"
+        }
+      ],
+      "text" : "tributed systems. Such a system is called upon to give operators"
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        468.20202240000043,
+        251.05920000000003,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "influence to schedule and negotiate resources for their flights, and"
+        }
+      ],
+      "text" : "influence to schedule and negotiate resources for their flights, and"
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        458.23902240000041,
+        251.05919999999998,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "to resolve other technical challenges, such as eliminating a single"
+        }
+      ],
+      "text" : "to resolve other technical challenges, such as eliminating a single"
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        448.27702240000042,
+        251.05919999999992,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "point of failure. A distributed system for managing diverse air"
+        }
+      ],
+      "text" : "point of failure. A distributed system for managing diverse air"
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        438.3140224000004,
+        251.05920000000009,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "traffic will need the capability of computing a schedule for the"
+        }
+      ],
+      "text" : "traffic will need the capability of computing a schedule for the"
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        428.35102240000037,
+        251.05919999999998,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "given arriving flights in a way that complies with the operational"
+        }
+      ],
+      "text" : "given arriving flights in a way that complies with the operational"
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        418.38902240000039,
+        251.05919999999998,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "constraints. This paper contributes an algorithm that computes"
+        }
+      ],
+      "text" : "constraints. This paper contributes an algorithm that computes"
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        408.42602240000036,
+        251.05919999999992,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "such a schedule. Although developed as part of an effort toward"
+        }
+      ],
+      "text" : "such a schedule. Although developed as part of an effort toward"
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        398.46302240000034,
+        251.05919999999992,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "a distributed system, the algorithm itself is neither inherently"
+        }
+      ],
+      "text" : "a distributed system, the algorithm itself is neither inherently"
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        388.50102240000035,
+        251.05920000000003,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "distributed nor inherently centralized and can be used in either"
+        }
+      ],
+      "text" : "distributed nor inherently centralized and can be used in either"
+    },
+    {
+      "rect" : [
+        48.964000000000013,
+        378.53802240000033,
+        58.765785600000001,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "type of system."
+        }
+      ],
+      "text" : "type of system."
+    },
+    {
+      "rect" : [
+        58.927000000000014,
+        368.01302240000035,
+        241.09664320000002,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Index Terms—arrival scheduling, distributed system, negotia-"
+        }
+      ],
+      "text" : "Index Terms—arrival scheduling, distributed system, negotia-"
+    },
+    {
+      "rect" : [
+        48.96400000000002,
+        358.05002240000033,
+        14.9469888,
+        8.0607936000000109
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "tion"
+        }
+      ],
+      "text" : "tion"
+    },
+    {
+      "rect" : [
+        135.62000000000003,
+        331.53907840000034,
+        77.751839799999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "I. I"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "NTRODUCTION"
+        }
+      ],
+      "text" : "I. INTRODUCTION"
+    },
+    {
+      "rect" : [
+        58.927000000000035,
+        313.06907840000036,
+        241.09491999999989,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Airport arrival scheduling assists air traffic controllers with"
+        }
+      ],
+      "text" : "Airport arrival scheduling assists air traffic controllers with"
+    },
+    {
+      "rect" : [
+        48.964000000000034,
+        301.11407840000038,
+        251.05751999999998,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "keeping flights properly sequenced and spaced as they ap-"
+        }
+      ],
+      "text" : "keeping flights properly sequenced and spaced as they ap-"
+    },
+    {
+      "rect" : [
+        48.964000000000034,
+        289.1590784000004,
+        251.05751999999998,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "proach their destination and land. The current system used"
+        }
+      ],
+      "text" : "proach their destination and land. The current system used"
+    },
+    {
+      "rect" : [
+        48.964000000000034,
+        277.20407840000041,
+        251.05751999999998,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "by the Federal Aviation Administration (FAA) for arrival"
+        }
+      ],
+      "text" : "by the Federal Aviation Administration (FAA) for arrival"
+    },
+    {
+      "rect" : [
+        48.964000000000034,
+        265.24907840000043,
+        251.05751999999993,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "scheduling is called Time Based Flow Management (TBFM)"
+        }
+      ],
+      "text" : "scheduling is called Time Based Flow Management (TBFM)"
+    },
+    {
+      "rect" : [
+        48.964000000000034,
+        253.29407840000039,
+        251.05751999999998,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "[2]. It works by assigning each inbound flight a scheduled"
+        }
+      ],
+      "text" : "[2]. It works by assigning each inbound flight a scheduled"
+    },
+    {
+      "rect" : [
+        48.964000000000034,
+        241.3380784000004,
+        251.05751999999993,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "time of arrival at its arrival meter fix, which is located in the"
+        }
+      ],
+      "text" : "time of arrival at its arrival meter fix, which is located in the"
+    },
+    {
+      "rect" : [
+        48.964000000000034,
+        229.38307840000039,
+        251.05799440000001,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "vicinity of the airport and on the boundary of the Center and"
+        }
+      ],
+      "text" : "vicinity of the airport and on the boundary of the Center and"
+    },
+    {
+      "rect" : [
+        48.964000000000027,
+        217.42807840000037,
+        251.05579500000002,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "TRACON (Ref. [5]) airspaces. Each flight’s scheduled time of"
+        }
+      ],
+      "text" : "TRACON (Ref. [5]) airspaces. Each flight’s scheduled time of"
+    },
+    {
+      "rect" : [
+        48.96400000000002,
+        205.47307840000036,
+        251.05751999999993,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "arrival, along with a speed advisory, is displayed to the air"
+        }
+      ],
+      "text" : "arrival, along with a speed advisory, is displayed to the air"
+    },
+    {
+      "rect" : [
+        48.96400000000002,
+        193.51807840000035,
+        251.05751999999981,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "traffic controllers responsible for the airspaces upstream of"
+        }
+      ],
+      "text" : "traffic controllers responsible for the airspaces upstream of"
+    },
+    {
+      "rect" : [
+        48.96400000000002,
+        181.56307840000034,
+        251.06016620000005,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "the arrival meter fix (Ref. [5], the Appendix). The controllers"
+        }
+      ],
+      "text" : "the arrival meter fix (Ref. [5], the Appendix). The controllers"
+    },
+    {
+      "rect" : [
+        48.964000000000041,
+        169.60707840000035,
+        251.05751999999978,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "regulate the flights so that they cross their arrival fixes at times"
+        }
+      ],
+      "text" : "regulate the flights so that they cross their arrival fixes at times"
+    },
+    {
+      "rect" : [
+        48.964000000000041,
+        157.65207840000033,
+        224.84591939999996,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "as close as possible to their scheduled times of arrival."
+        }
+      ],
+      "text" : "as close as possible to their scheduled times of arrival."
+    },
+    {
+      "rect" : [
+        58.927000000000042,
+        145.13407840000033,
+        241.09491999999997,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "TBFM is a centralized closed system operated by the FAA."
+        }
+      ],
+      "text" : "TBFM is a centralized closed system operated by the FAA."
+    },
+    {
+      "rect" : [
+        48.964000000000041,
+        133.17907840000032,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "There are few, if any, ways for airline operators to influence the"
+        }
+      ],
+      "text" : "There are few, if any, ways for airline operators to influence the"
+    },
+    {
+      "rect" : [
+        48.964000000000041,
+        121.22407840000034,
+        251.05752000000001,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "scheduled times of arrival that are assigned by TBFM to their"
+        }
+      ],
+      "text" : "scheduled times of arrival that are assigned by TBFM to their"
+    },
+    {
+      "rect" : [
+        48.964000000000041,
+        109.26907840000034,
+        251.0575199999999,
+        8.9065643999999935
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "flights. These features of the system entail the following risks"
+        }
+      ],
+      "text" : "flights. These features of the system entail the following risks"
+    },
+    {
+      "rect" : [
+        48.964000000000041,
+        97.314078400000341,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "for the TBFM and the FAA. A centralized design is always a"
+        }
+      ],
+      "text" : "for the TBFM and the FAA. A centralized design is always a"
+    },
+    {
+      "rect" : [
+        48.964000000000041,
+        85.358078400000338,
+        251.05751999999978,
+        8.9065643999999935
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "potential single point of failure and can limit scalability if there"
+        }
+      ],
+      "text" : "potential single point of failure and can limit scalability if there"
+    },
+    {
+      "rect" : [
+        48.964000000000041,
+        73.403078400000339,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "is a need to add more users. Furthermore, the stakeholders"
+        }
+      ],
+      "text" : "is a need to add more users. Furthermore, the stakeholders"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        527.70007840000028,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(airline operators) are left with no way to influence the"
+        }
+      ],
+      "text" : "(airline operators) are left with no way to influence the"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        515.74407840000026,
+        108.18387340000004,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "scheduled times of arrival."
+        }
+      ],
+      "text" : "scheduled times of arrival."
+    },
+    {
+      "rect" : [
+        321.94000000000005,
+        503.78907840000034,
+        241.09491999999989,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "To address these and other issues, future systems being"
+        }
+      ],
+      "text" : "To address these and other issues, future systems being"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        491.83407840000035,
+        251.05462460000001,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "proposed for managing air vehicles are distributed systems"
+        }
+      ],
+      "text" : "proposed for managing air vehicles are distributed systems"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        479.87907840000037,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "[8], offering operators influence to schedule and negotiate"
+        }
+      ],
+      "text" : "[8], offering operators influence to schedule and negotiate"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        467.92407840000038,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "resources for their flights. One example of such a system"
+        }
+      ],
+      "text" : "resources for their flights. One example of such a system"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        455.9690784000004,
+        251.05349000000001,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "is the UAS Traffic Management (UTM), being developed at"
+        }
+      ],
+      "text" : "is the UAS Traffic Management (UTM), being developed at"
+    },
+    {
+      "rect" : [
+        311.97800000000001,
+        444.01307840000038,
+        251.05788880000006,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "NASA for mission planning and management of Unmanned"
+        }
+      ],
+      "text" : "NASA for mission planning and management of Unmanned"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        432.0580784000004,
+        251.0602100000001,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Aerial Systems (UAS). The UTM is a distributed system"
+        }
+      ],
+      "text" : "Aerial Systems (UAS). The UTM is a distributed system"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        420.10307840000041,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "and is to include a mechanism that guards against unending"
+        }
+      ],
+      "text" : "and is to include a mechanism that guards against unending"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        408.14807840000043,
+        251.06155120000005,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "negotiations. A participant in the system, called a UAS Service"
+        }
+      ],
+      "text" : "negotiations. A participant in the system, called a UAS Service"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        396.19307840000045,
+        251.05536540000003,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Supplier (USS) (Ref. [7]), can join the system through a"
+        }
+      ],
+      "text" : "Supplier (USS) (Ref. [7]), can join the system through a"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        384.23807840000046,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "standardized process of authentication and communicates with"
+        }
+      ],
+      "text" : "standardized process of authentication and communicates with"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        372.28207840000044,
+        251.05460540000001,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "the other parties via well-defined Application Programming"
+        }
+      ],
+      "text" : "the other parties via well-defined Application Programming"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        360.32707840000046,
+        251.05845180000006,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Interfaces (APIs). USS instances schedule and negotiate re-"
+        }
+      ],
+      "text" : "Interfaces (APIs). USS instances schedule and negotiate re-"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        348.37207840000048,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "sources (extruded polygons in the airspace with a time window"
+        }
+      ],
+      "text" : "sources (extruded polygons in the airspace with a time window"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        336.41707840000049,
+        251.05751999999984,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "of proposed use) for UAS missions. This gives all participants"
+        }
+      ],
+      "text" : "of proposed use) for UAS missions. This gives all participants"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        324.46207840000051,
+        251.05752000000007,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "direct influence over the negotiation process. Each USS in-"
+        }
+      ],
+      "text" : "direct influence over the negotiation process. Each USS in-"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        312.50607840000049,
+        251.05751999999984,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "stance is developed and operated by organizations other than"
+        }
+      ],
+      "text" : "stance is developed and operated by organizations other than"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        300.55107840000051,
+        244.06377480000003,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "the FAA, but they must be certified by the FAA to operate."
+        }
+      ],
+      "text" : "the FAA, but they must be certified by the FAA to operate."
+    },
+    {
+      "rect" : [
+        321.94000000000005,
+        288.59607840000052,
+        241.09491999999989,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "In the broader context, past literature contains also other"
+        }
+      ],
+      "text" : "In the broader context, past literature contains also other"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        276.64107840000054,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "uses of distributed systems in the broad research field of"
+        }
+      ],
+      "text" : "uses of distributed systems in the broad research field of"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        264.68607840000055,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "air traffic management. For example, Ref. [10] proposes a"
+        }
+      ],
+      "text" : "air traffic management. For example, Ref. [10] proposes a"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        252.73107840000051,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "distributed system where the agents are the fixes, and Ref."
+        }
+      ],
+      "text" : "distributed system where the agents are the fixes, and Ref."
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        240.77507840000052,
+        251.05834700000003,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "[9] proposes a swarm intelligence system for trajectory-based"
+        }
+      ],
+      "text" : "[9] proposes a swarm intelligence system for trajectory-based"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        228.82007840000051,
+        205.7666236,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "operations (TBO), where the agents are the pilots."
+        }
+      ],
+      "text" : "operations (TBO), where the agents are the pilots."
+    },
+    {
+      "rect" : [
+        321.94000000000005,
+        216.8650784000005,
+        241.09492,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "The key structural components of the arrival scheduling"
+        }
+      ],
+      "text" : "The key structural components of the arrival scheduling"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        204.91007840000049,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "problem are the same as in UTM: different participants each"
+        }
+      ],
+      "text" : "problem are the same as in UTM: different participants each"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        192.95507840000047,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "operate their own mission, negotiate for resources, and get a"
+        }
+      ],
+      "text" : "operate their own mission, negotiate for resources, and get a"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        181.00007840000046,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "service (scheduling). A distributed systems approach here, too,"
+        }
+      ],
+      "text" : "service (scheduling). A distributed systems approach here, too,"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        169.04407840000047,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "promises the merits outlined above: scalability, elimination of"
+        }
+      ],
+      "text" : "promises the merits outlined above: scalability, elimination of"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        157.08907840000046,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "a single point of failure, and a way for each airline operator"
+        }
+      ],
+      "text" : "a single point of failure, and a way for each airline operator"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        145.13407840000045,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "to develop its own agents to join the system (conforming to"
+        }
+      ],
+      "text" : "to develop its own agents to join the system (conforming to"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        133.17907840000044,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "the accepted standard APIs) and to influence the negotiation"
+        }
+      ],
+      "text" : "the accepted standard APIs) and to influence the negotiation"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        121.22407840000045,
+        32.278823999999986,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "directly."
+        }
+      ],
+      "text" : "directly."
+    },
+    {
+      "rect" : [
+        321.94000000000005,
+        109.26907840000045,
+        241.09492,
+        8.9065643999999935
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Such a distributed system for airport arrival scheduling must"
+        }
+      ],
+      "text" : "Such a distributed system for airport arrival scheduling must"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        97.31307840000045,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "include a complete and precise formulation of the constraints"
+        }
+      ],
+      "text" : "include a complete and precise formulation of the constraints"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        85.358078400000451,
+        251.05751999999984,
+        8.9065643999999935
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "imposed on the schedules, as well as the ability for each"
+        }
+      ],
+      "text" : "imposed on the schedules, as well as the ability for each"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        73.403078400000453,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "flight that needs a schedule to formulate their objective. For"
+        }
+      ],
+      "text" : "flight that needs a schedule to formulate their objective. For"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "ntrs-20190030725-dasc-2019",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 23.910299999999999,
+      "monospaced" : false,
+      "rect" : [
+        90.474000000000004,
+        715.60337520000007,
+        431.05488840000004,
+        21.375808200000051
+      ],
+      "text" : "A Scheduling Algorithm Compatible with a"
+    },
+    {
+      "fontSize" : 23.910299999999999,
+      "monospaced" : false,
+      "rect" : [
+        51.297000000000004,
+        687.70837520000009,
+        509.40894149999986,
+        21.375808200000051
+      ],
+      "text" : "Distributed Management of Arrivals in the National"
+    },
+    {
+      "fontSize" : 23.910299999999999,
+      "monospaced" : false,
+      "rect" : [
+        224.12,
+        659.81237520000013,
+        163.76164470000003,
+        21.375808200000051
+      ],
+      "text" : "Airspace System"
+    },
+    {
+      "fontSize" : 10.9589,
+      "monospaced" : false,
+      "rect" : [
+        156.58500000000001,
+        631.22787760000017,
+        71.708060899999992,
+        11.52719599999989
+      ],
+      "text" : "1st A. Sadovsky"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        108.79399999999998,
+        619.19521820000011,
+        163.35675220000002,
+        8.5877612000000454
+      ],
+      "text" : "Aviation Systems Division, Branch AFH"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        132.70399999999998,
+        606.86721820000014,
+        119.2423594,
+        8.5877612000000454
+      ],
+      "text" : "NASA Ames Research Center"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        137.02299999999997,
+        594.3090784000002,
+        107.34701499999997,
+        8.9065643999999793
+      ],
+      "text" : "Moffett Field, CA, U.S.A."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        128.29499999999996,
+        581.98007840000025,
+        128.28840020000001,
+        8.9065643999999793
+      ],
+      "text" : "alexander.v.sadovsky@nasa.gov"
+    },
+    {
+      "fontSize" : 10.9589,
+      "monospaced" : false,
+      "rect" : [
+        380.96099999999996,
+        631.22787760000028,
+        77.200046100000009,
+        11.52719599999989
+      ],
+      "text" : "2nd R. Windhorst"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        335.91499999999996,
+        619.19521820000023,
+        163.35675220000002,
+        8.5877612000000454
+      ],
+      "text" : "Aviation Systems Division, Branch AFH"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        359.82499999999999,
+        606.86721820000025,
+        119.2423594,
+        8.5877612000000454
+      ],
+      "text" : "NASA Ames Research Center"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        364.14400000000001,
+        594.30907840000032,
+        107.34701499999994,
+        8.9065643999999793
+      ],
+      "text" : "Moffett Field, CA, U.S.A."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        360.67700000000002,
+        581.98007840000037,
+        117.76789459999998,
+        8.9065643999999793
+      ],
+      "text" : "robert.d.windhorst@nasa.gov"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.927000000000021,
+        527.97802240000044,
+        241.09638240000004,
+        8.0607936000000109
+      ],
+      "text" : "Abstract—The current system used by the FAA to schedule"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        518.01502240000048,
+        251.05919999999998,
+        8.0607936000000109
+      ],
+      "text" : "arrivals is the Traffic Based Flow Manager (TBFM). It is a"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        508.05302240000049,
+        251.05919999999992,
+        8.0607936000000109
+      ],
+      "text" : "centralized system that gives an operator (airline) no influence"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        498.09002240000046,
+        251.05919999999998,
+        8.0607936000000109
+      ],
+      "text" : "over scheduled times of arrival assigned to its flights. Future"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        488.12702240000044,
+        251.05919999999998,
+        8.0607936000000109
+      ],
+      "text" : "systems for managing arrival scheduling are proposed as dis-"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        478.16502240000045,
+        251.05919999999992,
+        8.0607936000000109
+      ],
+      "text" : "tributed systems. Such a system is called upon to give operators"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        468.20202240000043,
+        251.05920000000003,
+        8.0607936000000109
+      ],
+      "text" : "influence to schedule and negotiate resources for their flights, and"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        458.23902240000041,
+        251.05919999999998,
+        8.0607936000000109
+      ],
+      "text" : "to resolve other technical challenges, such as eliminating a single"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        448.27702240000042,
+        251.05919999999992,
+        8.0607936000000109
+      ],
+      "text" : "point of failure. A distributed system for managing diverse air"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        438.3140224000004,
+        251.05920000000009,
+        8.0607936000000109
+      ],
+      "text" : "traffic will need the capability of computing a schedule for the"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        428.35102240000037,
+        251.05919999999998,
+        8.0607936000000109
+      ],
+      "text" : "given arriving flights in a way that complies with the operational"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        418.38902240000039,
+        251.05919999999998,
+        8.0607936000000109
+      ],
+      "text" : "constraints. This paper contributes an algorithm that computes"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        408.42602240000036,
+        251.05919999999992,
+        8.0607936000000109
+      ],
+      "text" : "such a schedule. Although developed as part of an effort toward"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        398.46302240000034,
+        251.05919999999992,
+        8.0607936000000109
+      ],
+      "text" : "a distributed system, the algorithm itself is neither inherently"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        388.50102240000035,
+        251.05920000000003,
+        8.0607936000000109
+      ],
+      "text" : "distributed nor inherently centralized and can be used in either"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000013,
+        378.53802240000033,
+        58.765785600000001,
+        8.0607936000000109
+      ],
+      "text" : "type of system."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.927000000000014,
+        368.01302240000035,
+        241.09664320000002,
+        8.0607936000000109
+      ],
+      "text" : "Index Terms—arrival scheduling, distributed system, negotia-"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96400000000002,
+        358.05002240000033,
+        14.9469888,
+        8.0607936000000109
+      ],
+      "text" : "tion"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        135.62000000000003,
+        331.53907840000034,
+        77.751839799999999,
+        8.9065643999999793
+      ],
+      "text" : "I. INTRODUCTION"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.927000000000035,
+        313.06907840000036,
+        241.09491999999989,
+        8.9065643999999793
+      ],
+      "text" : "Airport arrival scheduling assists air traffic controllers with"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000034,
+        301.11407840000038,
+        251.05751999999998,
+        8.9065643999999793
+      ],
+      "text" : "keeping flights properly sequenced and spaced as they ap-"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000034,
+        289.1590784000004,
+        251.05751999999998,
+        8.9065643999999793
+      ],
+      "text" : "proach their destination and land. The current system used"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000034,
+        277.20407840000041,
+        251.05751999999998,
+        8.9065643999999793
+      ],
+      "text" : "by the Federal Aviation Administration (FAA) for arrival"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000034,
+        265.24907840000043,
+        251.05751999999993,
+        8.9065643999999793
+      ],
+      "text" : "scheduling is called Time Based Flow Management (TBFM)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000034,
+        253.29407840000039,
+        251.05751999999998,
+        8.9065643999999793
+      ],
+      "text" : "[2]. It works by assigning each inbound flight a scheduled"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000034,
+        241.3380784000004,
+        251.05751999999993,
+        8.9065644000000077
+      ],
+      "text" : "time of arrival at its arrival meter fix, which is located in the"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000034,
+        229.38307840000039,
+        251.05799440000001,
+        8.9065644000000077
+      ],
+      "text" : "vicinity of the airport and on the boundary of the Center and"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000027,
+        217.42807840000037,
+        251.05579500000002,
+        8.9065644000000077
+      ],
+      "text" : "TRACON (Ref. [5]) airspaces. Each flight’s scheduled time of"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96400000000002,
+        205.47307840000036,
+        251.05751999999993,
+        8.9065644000000077
+      ],
+      "text" : "arrival, along with a speed advisory, is displayed to the air"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96400000000002,
+        193.51807840000035,
+        251.05751999999981,
+        8.9065644000000077
+      ],
+      "text" : "traffic controllers responsible for the airspaces upstream of"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.96400000000002,
+        181.56307840000034,
+        251.06016620000005,
+        8.9065644000000077
+      ],
+      "text" : "the arrival meter fix (Ref. [5], the Appendix). The controllers"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000041,
+        169.60707840000035,
+        251.05751999999978,
+        8.9065644000000077
+      ],
+      "text" : "regulate the flights so that they cross their arrival fixes at times"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000041,
+        157.65207840000033,
+        224.84591939999996,
+        8.9065644000000077
+      ],
+      "text" : "as close as possible to their scheduled times of arrival."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.927000000000042,
+        145.13407840000033,
+        241.09491999999997,
+        8.9065644000000077
+      ],
+      "text" : "TBFM is a centralized closed system operated by the FAA."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000041,
+        133.17907840000032,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "text" : "There are few, if any, ways for airline operators to influence the"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000041,
+        121.22407840000034,
+        251.05752000000001,
+        8.9065644000000077
+      ],
+      "text" : "scheduled times of arrival that are assigned by TBFM to their"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000041,
+        109.26907840000034,
+        251.0575199999999,
+        8.9065643999999935
+      ],
+      "text" : "flights. These features of the system entail the following risks"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000041,
+        97.314078400000341,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "text" : "for the TBFM and the FAA. A centralized design is always a"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000041,
+        85.358078400000338,
+        251.05751999999978,
+        8.9065643999999935
+      ],
+      "text" : "potential single point of failure and can limit scalability if there"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000041,
+        73.403078400000339,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "text" : "is a need to add more users. Furthermore, the stakeholders"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        527.70007840000028,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "(airline operators) are left with no way to influence the"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        515.74407840000026,
+        108.18387340000004,
+        8.9065643999999793
+      ],
+      "text" : "scheduled times of arrival."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.94000000000005,
+        503.78907840000034,
+        241.09491999999989,
+        8.9065643999999793
+      ],
+      "text" : "To address these and other issues, future systems being"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        491.83407840000035,
+        251.05462460000001,
+        8.9065643999999793
+      ],
+      "text" : "proposed for managing air vehicles are distributed systems"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        479.87907840000037,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "[8], offering operators influence to schedule and negotiate"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        467.92407840000038,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "resources for their flights. One example of such a system"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        455.9690784000004,
+        251.05349000000001,
+        8.9065643999999793
+      ],
+      "text" : "is the UAS Traffic Management (UTM), being developed at"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000001,
+        444.01307840000038,
+        251.05788880000006,
+        8.9065643999999793
+      ],
+      "text" : "NASA for mission planning and management of Unmanned"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        432.0580784000004,
+        251.0602100000001,
+        8.9065643999999793
+      ],
+      "text" : "Aerial Systems (UAS). The UTM is a distributed system"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        420.10307840000041,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "and is to include a mechanism that guards against unending"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        408.14807840000043,
+        251.06155120000005,
+        8.9065643999999793
+      ],
+      "text" : "negotiations. A participant in the system, called a UAS Service"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        396.19307840000045,
+        251.05536540000003,
+        8.9065643999999793
+      ],
+      "text" : "Supplier (USS) (Ref. [7]), can join the system through a"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        384.23807840000046,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "standardized process of authentication and communicates with"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        372.28207840000044,
+        251.05460540000001,
+        8.9065643999999793
+      ],
+      "text" : "the other parties via well-defined Application Programming"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        360.32707840000046,
+        251.05845180000006,
+        8.9065643999999793
+      ],
+      "text" : "Interfaces (APIs). USS instances schedule and negotiate re-"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        348.37207840000048,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "sources (extruded polygons in the airspace with a time window"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        336.41707840000049,
+        251.05751999999984,
+        8.9065643999999793
+      ],
+      "text" : "of proposed use) for UAS missions. This gives all participants"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        324.46207840000051,
+        251.05752000000007,
+        8.9065643999999793
+      ],
+      "text" : "direct influence over the negotiation process. Each USS in-"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        312.50607840000049,
+        251.05751999999984,
+        8.9065643999999793
+      ],
+      "text" : "stance is developed and operated by organizations other than"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        300.55107840000051,
+        244.06377480000003,
+        8.9065643999999793
+      ],
+      "text" : "the FAA, but they must be certified by the FAA to operate."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.94000000000005,
+        288.59607840000052,
+        241.09491999999989,
+        8.9065643999999793
+      ],
+      "text" : "In the broader context, past literature contains also other"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        276.64107840000054,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "uses of distributed systems in the broad research field of"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        264.68607840000055,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "air traffic management. For example, Ref. [10] proposes a"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        252.73107840000051,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "distributed system where the agents are the fixes, and Ref."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        240.77507840000052,
+        251.05834700000003,
+        8.9065644000000077
+      ],
+      "text" : "[9] proposes a swarm intelligence system for trajectory-based"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        228.82007840000051,
+        205.7666236,
+        8.9065644000000077
+      ],
+      "text" : "operations (TBO), where the agents are the pilots."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.94000000000005,
+        216.8650784000005,
+        241.09492,
+        8.9065644000000077
+      ],
+      "text" : "The key structural components of the arrival scheduling"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        204.91007840000049,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "text" : "problem are the same as in UTM: different participants each"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        192.95507840000047,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "text" : "operate their own mission, negotiate for resources, and get a"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        181.00007840000046,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "text" : "service (scheduling). A distributed systems approach here, too,"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        169.04407840000047,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "text" : "promises the merits outlined above: scalability, elimination of"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        157.08907840000046,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "text" : "a single point of failure, and a way for each airline operator"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        145.13407840000045,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "text" : "to develop its own agents to join the system (conforming to"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        133.17907840000044,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "text" : "the accepted standard APIs) and to influence the negotiation"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        121.22407840000045,
+        32.278823999999986,
+        8.9065644000000077
+      ],
+      "text" : "directly."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.94000000000005,
+        109.26907840000045,
+        241.09492,
+        8.9065643999999935
+      ],
+      "text" : "Such a distributed system for airport arrival scheduling must"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        97.31307840000045,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "text" : "include a complete and precise formulation of the constraints"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        85.358078400000451,
+        251.05751999999984,
+        8.9065643999999935
+      ],
+      "text" : "imposed on the schedules, as well as the ability for each"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        73.403078400000453,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "text" : "flight that needs a schedule to formulate their objective. For"
+    }
+  ],
+  "page" : 1,
+  "paints" : [
+
+  ],
+  "rightsBasis" : "The paper's byline places both authors, A. Sadovsky and R. Windhorst, in the Aviation Systems Division, NASA Ames Research Center, with nasa.gov addresses, and the NTRS record lists both at NASA Ames Research Center (center ARC): a work of the United States Government under 17 U.S.C. 105. The PDF carries no copyright notice or government-work statement. The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and belongsToAuthors false; distribution PUBLIC, no export control. No figure or table carries a credit, and none is third-party: Figures 1-2 are the authors' time-window plots, the Table I and II route networks are generated with networkx (Ref. [3]) from the paper's own sample problems, and Table III is the authors' outline. No NASA insignia or photographs appear. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "7c2137098ffb75153e0049b970272db97bc91e13168028dc7b53fbe2deb92caa",
+  "sourceTitle" : "A Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace System",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20190030725/downloads/20190030725.pdf"
+}

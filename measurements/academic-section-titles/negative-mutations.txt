@@ -1,0 +1,12 @@
+| no academic section titles at all | `aCentredTitleOverCentredTextIsATableTitleNotASection`, `centredTitlesNeedTheirPlaceInTheSectionSequence`, `italicSubsectionTitlesNeedTheirMarkerStyleAndSpacing`, `sourceItalicSubsectionTitlesStandApartFromTheirParagraph`, `sourceNumberedSectionTitlesAreHeadingsAtTheBodySize`, `sourceTitlesSetOverTwoOrThreeLinesAreOneHeading`, `sourceUnnumberedReferencesHeadIsAHeadingOverSmallerEntries` |
+| no centred section titles | `aCentredTitleOverCentredTextIsATableTitleNotASection`, `centredTitlesNeedTheirPlaceInTheSectionSequence`, `sourceNumberedSectionTitlesAreHeadingsAtTheBodySize`, `sourceTitlesSetOverTwoOrThreeLinesAreOneHeading`, `sourceUnnumberedReferencesHeadIsAHeadingOverSmallerEntries` |
+| every centred line of capitals is a title | `centredTitlesNeedTheirPlaceInTheSectionSequence` |
+| a bold label is a centred title | `centredTitlesNeedTheirPlaceInTheSectionSequence` |
+| a centred title needs no text beneath it | `aCentredTitleOverCentredTextIsATableTitleNotASection` |
+| no italic subsection titles | `italicSubsectionTitlesNeedTheirMarkerStyleAndSpacing`, `sourceItalicSubsectionTitlesStandApartFromTheirParagraph` |
+| a subsection title needs no italic | `italicSubsectionTitlesNeedTheirMarkerStyleAndSpacing` |
+| a title’s next line never continues it | `sourceTitlesSetOverTwoOrThreeLinesAreOneHeading` |
+| no hanging run | `hangingRunsNeedTwoOpeningsAndAWrappedRun`, `sourceHangingEntriesKeepTheirWrappedLines` |
+| any indent is a hanging run | `hangingRunsNeedTwoOpeningsAndAWrappedRun` |
+| the hanging indent stays within three bodies | `sourceHangingEntriesKeepTheirWrappedLines` |
+| an entry’s first line must read as words | `sourceHangingEntriesKeepTheirWrappedLines` |

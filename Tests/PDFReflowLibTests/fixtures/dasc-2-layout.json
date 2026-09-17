@@ -1,0 +1,4450 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        48.963999999999999,
+        730.93807839999999,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "each flight, some of the constraints result from the schedules"
+        }
+      ],
+      "text" : "each flight, some of the constraints result from the schedules"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        718.98207839999998,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "computed previously for other flights. This leads to the need to"
+        }
+      ],
+      "text" : "computed previously for other flights. This leads to the need to"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        707.02707839999994,
+        251.05751999999984,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "negotiate. The distributed system, whatever architecture ends"
+        }
+      ],
+      "text" : "negotiate. The distributed system, whatever architecture ends"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        695.0720783999999,
+        221.99661579999992,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "up being chosen for it, must enable such negotiations."
+        }
+      ],
+      "text" : "up being chosen for it, must enable such negotiations."
+    },
+    {
+      "rect" : [
+        58.927,
+        682.07807839999987,
+        241.09492000000003,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "This paper contributes an algorithm for solving such a"
+        }
+      ],
+      "text" : "This paper contributes an algorithm for solving such a"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        670.12307839999983,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "problem. For clarity, we note that this algorithm, although"
+        }
+      ],
+      "text" : "problem. For clarity, we note that this algorithm, although"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        658.16707839999981,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "developed as part of a project aimed at a distributed system, is"
+        }
+      ],
+      "text" : "developed as part of a project aimed at a distributed system, is"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        646.21207839999977,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "itself neither inherently distributed nor inherently centralized."
+        }
+      ],
+      "text" : "itself neither inherently distributed nor inherently centralized."
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        634.25707839999973,
+        161.53359640000002,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "It can be used in either type of system."
+        }
+      ],
+      "text" : "It can be used in either type of system."
+    },
+    {
+      "rect" : [
+        58.927,
+        621.2630783999997,
+        241.09492000000003,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Before outlining the contribution, we give a brief overview"
+        }
+      ],
+      "text" : "Before outlining the contribution, we give a brief overview"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        609.30707839999968,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "of the challenges of designing such a system, so as to give the"
+        }
+      ],
+      "text" : "of the challenges of designing such a system, so as to give the"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        597.35207839999964,
+        114.68945120000001,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "broad context for this work."
+        }
+      ],
+      "text" : "broad context for this work."
+    },
+    {
+      "rect" : [
+        58.927,
+        584.35807839999961,
+        241.09491999999992,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "This system would possibly replace or drive upgrades to"
+        }
+      ],
+      "text" : "This system would possibly replace or drive upgrades to"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        572.40307839999957,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "the current TBFM system for a futuristic traffic management"
+        }
+      ],
+      "text" : "the current TBFM system for a futuristic traffic management"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        560.44707839999955,
+        251.05752000000001,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "system for the year 2045 or later. The UTM solution cannot"
+        }
+      ],
+      "text" : "system for the year 2045 or later. The UTM solution cannot"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        548.49207839999951,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "be copied as is because of the following differences between"
+        }
+      ],
+      "text" : "be copied as is because of the following differences between"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        536.53707839999947,
+        251.05752000000001,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "UAS and conventional jet traffic. UAS traffic density is sparser"
+        }
+      ],
+      "text" : "UAS and conventional jet traffic. UAS traffic density is sparser"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        524.58207839999943,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "and less directed than conventional jet traffic in the airspace"
+        }
+      ],
+      "text" : "and less directed than conventional jet traffic in the airspace"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        512.62707839999939,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "close to large airports. Jet traffic in the vicinity of a large"
+        }
+      ],
+      "text" : "close to large airports. Jet traffic in the vicinity of a large"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        500.67207839999946,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "airport follows predefined arrival routes and procedures. The"
+        }
+      ],
+      "text" : "airport follows predefined arrival routes and procedures. The"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        488.71607839999945,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "flow of traffic along the routes can be packed to the point"
+        }
+      ],
+      "text" : "flow of traffic along the routes can be packed to the point"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        476.76107839999946,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "where there is no longer space to safely fit flights. The"
+        }
+      ],
+      "text" : "where there is no longer space to safely fit flights. The"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        464.80607839999948,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "traffic density and the need to land on a common runway"
+        }
+      ],
+      "text" : "traffic density and the need to land on a common runway"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        452.85107839999949,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "will require more negotiation with fewer alternatives than"
+        }
+      ],
+      "text" : "will require more negotiation with fewer alternatives than"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        440.89607839999951,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "those needed in UTM. Furthermore, jets cannot be stopped in"
+        }
+      ],
+      "text" : "those needed in UTM. Furthermore, jets cannot be stopped in"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        428.94107839999953,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "mid-air, meaning that arriving at an agreed solution is time-"
+        }
+      ],
+      "text" : "mid-air, meaning that arriving at an agreed solution is time-"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        416.98507839999951,
+        251.05752000000001,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "critical. An arbiter is needed to step in and drive a solution"
+        }
+      ],
+      "text" : "critical. An arbiter is needed to step in and drive a solution"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        405.03007839999952,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "in time critical situations. Finally, the constraints that must be"
+        }
+      ],
+      "text" : "in time critical situations. Finally, the constraints that must be"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        393.07507839999954,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "satisfied in arrival scheduling are more complex than checking"
+        }
+      ],
+      "text" : "satisfied in arrival scheduling are more complex than checking"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        381.12007839999956,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "for airspace box intersections in time and space. In arrival"
+        }
+      ],
+      "text" : "for airspace box intersections in time and space. In arrival"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        369.16507839999957,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "scheduling, there are spacing constraints at the runway and"
+        }
+      ],
+      "text" : "scheduling, there are spacing constraints at the runway and"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        357.20907839999956,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "merge points after the arrival meter fix, and there are arrival"
+        }
+      ],
+      "text" : "merge points after the arrival meter fix, and there are arrival"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        345.25407839999957,
+        251.05751999999984,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "rate constraints that must be followed. These constraints occur"
+        }
+      ],
+      "text" : "rate constraints that must be followed. These constraints occur"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        333.29907839999959,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "at different points in both time and space and require network"
+        }
+      ],
+      "text" : "at different points in both time and space and require network"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        321.3440783999996,
+        106.85884759999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "flow analysis to work out."
+        }
+      ],
+      "text" : "flow analysis to work out."
+    },
+    {
+      "rect" : [
+        58.927,
+        308.3490783999996,
+        241.09491999999992,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "The complete set of arrival scheduling constraints is given in"
+        }
+      ],
+      "text" : "The complete set of arrival scheduling constraints is given in"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        296.39407839999961,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "section III. The interdependence of the constraints is explained"
+        }
+      ],
+      "text" : "section III. The interdependence of the constraints is explained"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        284.43907839999963,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "in section IV, with a high-level description of the algorithmic"
+        }
+      ],
+      "text" : "in section IV, with a high-level description of the algorithmic"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        272.48407839999965,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "procedure (appendix A) . The algorithm is formulated in detail"
+        }
+      ],
+      "text" : "procedure (appendix A) . The algorithm is formulated in detail"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        260.52907839999966,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "in section V. The design of the algorithm is independent of"
+        }
+      ],
+      "text" : "in section V. The design of the algorithm is independent of"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        248.57407839999962,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "whether it will be run on a centralized or distributed system."
+        }
+      ],
+      "text" : "whether it will be run on a centralized or distributed system."
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        236.61807839999963,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Computed solutions to some sample, artificially generated"
+        }
+      ],
+      "text" : "Computed solutions to some sample, artificially generated"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        224.66307839999962,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "problems are presented in section VI. A discussion on how the"
+        }
+      ],
+      "text" : "problems are presented in section VI. A discussion on how the"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        212.70807839999961,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "algorithm would fit into a distributed system and aid operators"
+        }
+      ],
+      "text" : "algorithm would fit into a distributed system and aid operators"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        200.75307839999959,
+        242.67897339999996,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "in influencing their flight schedules is given in section VII."
+        }
+      ],
+      "text" : "in influencing their flight schedules is given in section VII."
+    },
+    {
+      "rect" : [
+        102.74299999999999,
+        173.23907839999958,
+        143.50979909999998,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "II. P"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "ROBLEM INPUT AND OUTPUT"
+        }
+      ],
+      "text" : "II. PROBLEM INPUT AND OUTPUT"
+    },
+    {
+      "rect" : [
+        48.963999999999984,
+        152.13921819999959,
+        55.790559999999999,
+        8.5877611999999885
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "italic" : true,
+          "text" : "A. Input data"
+        }
+      ],
+      "text" : "A. Input data"
+    },
+    {
+      "rect" : [
+        58.926999999999985,
+        133.17907839999958,
+        241.09685219999997,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Flight routes and the graph they make up: Assume we"
+        }
+      ],
+      "text" : "Flight routes and the graph they make up: Assume we"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        121.2240783999996,
+        251.05940834000006,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "are given a set of flights, indexed by f: f = 1,2,...,F,"
+        }
+      ],
+      "text" : "are given a set of flights, indexed by f: f = 1,2,...,F,"
+    },
+    {
+      "rect" : [
+        48.964000000000055,
+        109.2690783999996,
+        251.05751999999995,
+        8.9065643999999935
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "and each flight is assigned a route, which is a sequence"
+        }
+      ],
+      "text" : "and each flight is assigned a route, which is a sequence"
+    },
+    {
+      "rect" : [
+        48.964000000000055,
+        97.314078399999602,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "of waypoints. Generally, a flight is not scheduled at every"
+        }
+      ],
+      "text" : "of waypoints. Generally, a flight is not scheduled at every"
+    },
+    {
+      "rect" : [
+        48.964000000000055,
+        85.358078399999599,
+        251.05751999999995,
+        8.9065643999999935
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "waypoint on its route, but, rather, on some of those waypoints."
+        }
+      ],
+      "text" : "waypoint on its route, but, rather, on some of those waypoints."
+    },
+    {
+      "rect" : [
+        48.964000000000055,
+        73.4030783999996,
+        251.06184919999998,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "These waypoints will be referred to as nodes, for consistency"
+        }
+      ],
+      "text" : "These waypoints will be referred to as nodes, for consistency"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        730.93707839999956,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "with the terminology generally used in scheduling and graph"
+        }
+      ],
+      "text" : "with the terminology generally used in scheduling and graph"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        718.98207839999952,
+        184.67671619999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "theory, and written in the following notation:"
+        }
+      ],
+      "text" : "theory, and written in the following notation:"
+    },
+    {
+      "rect" : [
+        398.90300000000008,
+        700.09725559999947,
+        9.9515791000000604,
+        10.885561600000074
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -4.1130000000000564,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "1"
+        }
+      ],
+      "text" : "n1"
+    },
+    {
+      "rect" : [
+        404.8830000000001,
+        698.21408279999957,
+        22.311579100000017,
+        12.768734399999971
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.4629999999999654,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ", n"
+        },
+        {
+          "baselineOffset" : 4.1130000000000564,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "2"
+        }
+      ],
+      "text" : "f , n2"
+    },
+    {
+      "rect" : [
+        462.04100000000017,
+        705.46362779999947,
+        9.7182091999999898,
+        6.8631894000000102
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 1.0570000000000164,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "N"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "Nf"
+    },
+    {
+      "rect" : [
+        423.22300000000013,
+        698.21408279999957,
+        38.820655320000014,
+        10.729961599999911
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.4629999999999654,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ", ..., n"
+        }
+      ],
+      "text" : "f , ..., n"
+    },
+    {
+      "rect" : [
+        462.04100000000017,
+        697.67208279999954,
+        100.99539160000006,
+        11.271961599999941
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0049999999999955,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ". (1)"
+        }
+      ],
+      "text" : "f. (1)"
+    },
+    {
+      "rect" : [
+        321.94000000000017,
+        681.32607839999946,
+        241.09689999999989,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "We now form the smallest possible undirected graph Gthat"
+        }
+      ],
+      "text" : "We now form the smallest possible undirected graph Gthat"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        669.37107839999942,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "includes all the nodes and all the links involved in the routes"
+        }
+      ],
+      "text" : "includes all the nodes and all the links involved in the routes"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        657.41607839999938,
+        204.18540999999993,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(1). More precisely, the set of nodes of G will be"
+        }
+      ],
+      "text" : "(1). More precisely, the set of nodes of G will be"
+    },
+    {
+      "rect" : [
+        316.95900000000006,
+        638.83507839999936,
+        22.030610280000019,
+        9.6238716000000295
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "{n : "
+        }
+      ],
+      "text" : "{n : "
+    },
+    {
+      "rect" : [
+        348.01100000000008,
+        638.83507839999936,
+        214.83330000000001,
+        9.6238716000000295
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "at least one of the routes (1) has n as a waypoint }"
+        }
+      ],
+      "text" : "at least one of the routes (1) has n as a waypoint }"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        620.05607839999936,
+        126.8039728,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "and the set of its links will be:"
+        }
+      ],
+      "text" : "and the set of its links will be:"
+    },
+    {
+      "rect" : [
+        316.95900000000006,
+        604.12808279999945,
+        43.037300000000016,
+        10.3188672
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "{{n"
+        },
+        {
+          "baselineOffset" : -1.4940000000000282,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ",n"
+        },
+        {
+          "baselineOffset" : -1.4940000000000282,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "} "
+        }
+      ],
+      "text" : "{{n1,n2} "
+    },
+    {
+      "rect" : [
+        369.95900000000012,
+        604.12808279999945,
+        170.66075900000004,
+        10.3188672
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "the waypoints n"
+        },
+        {
+          "baselineOffset" : -1.4940000000000282,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ",n"
+        },
+        {
+          "baselineOffset" : -1.4940000000000282,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "occur consecutively,"
+        }
+      ],
+      "text" : "the waypoints n1,n2 occur consecutively,"
+    },
+    {
+      "rect" : [
+        369.95900000000017,
+        592.86807839999938,
+        195.23561028000006,
+        9.6238716000000295
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "in any order, in at least one of the routes (1) }."
+        }
+      ],
+      "text" : "in any order, in at least one of the routes (1) }."
+    },
+    {
+      "rect" : [
+        321.94000000000017,
+        575.89007839999942,
+        241.09687239999994,
+        9.0261156000000256
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Note: Although each route has its waypoints in a specific"
+        }
+      ],
+      "text" : "Note: Although each route has its waypoints in a specific"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        563.93507839999938,
+        251.05673820000004,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "order, the graph G is constructed as undirected, for conve-"
+        }
+      ],
+      "text" : "order, the graph G is constructed as undirected, for conve-"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        551.98007839999934,
+        251.05751999999984,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "nience of analysis and exposition. (In particular, in this paper"
+        }
+      ],
+      "text" : "nience of analysis and exposition. (In particular, in this paper"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        540.0250783999993,
+        251.05398679999996,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Gwill be restricted to being a tree, and undirected trees allow"
+        }
+      ],
+      "text" : "Gwill be restricted to being a tree, and undirected trees allow"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        528.07007839999926,
+        164.75151620000003,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "simpler verbiage than do directed ones.)"
+        }
+      ],
+      "text" : "simpler verbiage than do directed ones.)"
+    },
+    {
+      "rect" : [
+        321.94000000000017,
+        516.37007839999922,
+        173.11980996,
+        10.607738799999993
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Estimated Times of Arrival: Each node n"
+        },
+        {
+          "baselineOffset" : 3.6159999999999854,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "i"
+        }
+      ],
+      "text" : "Estimated Times of Arrival: Each node ni"
+    },
+    {
+      "rect" : [
+        492.24100000000021,
+        514.34808279999925,
+        70.795399599999996,
+        10.928559999999948
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.8210000000000264,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "in the route (1)"
+        }
+      ],
+      "text" : "f in the route (1)"
+    },
+    {
+      "rect" : [
+        311.97800000000024,
+        504.41507839999929,
+        251.0633876,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "of each flight f is supplied with an Estimated Time of Arrival"
+        }
+      ],
+      "text" : "of each flight f is supplied with an Estimated Time of Arrival"
+    },
+    {
+      "rect" : [
+        356.2510000000002,
+        496.73108279999929,
+        7.5830216800000017,
+        7.816939399999967
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.007000000000005,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "i"
+        }
+      ],
+      "text" : "ni"
+    },
+    {
+      "rect" : [
+        311.97800000000024,
+        489.47930279999929,
+        44.273095000000012,
+        8.9663400000000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(ETA): ETA"
+        }
+      ],
+      "text" : "(ETA): ETA"
+    },
+    {
+      "rect" : [
+        361.17600000000022,
+        495.12562779999922,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        356.2510000000002,
+        487.33308279999926,
+        126.14814140000004,
+        11.271961599999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0049999999999955,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ", which is the nominal time."
+        }
+      ],
+      "text" : "f , which is the nominal time."
+    },
+    {
+      "rect" : [
+        321.94000000000017,
+        478.06921819999923,
+        241.09491999999989,
+        8.5877611999999885
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "italic" : true,
+          "text" : "A flight’s minimal and maximal times for traversing a link:"
+        }
+      ],
+      "text" : "A flight’s minimal and maximal times for traversing a link:"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        465.88507839999926,
+        149.77180995999993,
+        10.607738799999993
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "For each flight f and each link n"
+        },
+        {
+          "baselineOffset" : 3.6159999999999854,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "i"
+        }
+      ],
+      "text" : "For each flight f and each link ni"
+    },
+    {
+      "rect" : [
+        458.93100000000015,
+        463.86308279999923,
+        24.050601700000016,
+        13.275734400000033
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.0830000000000268,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : -4.2620000000000005,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "i+1"
+        }
+      ],
+      "text" : "f ni+1"
+    },
+    {
+      "rect" : [
+        470.07500000000016,
+        463.67908279999926,
+        92.965323600000033,
+        11.112559999999974
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0049999999999955,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ", we are given the"
+        }
+      ],
+      "text" : "f , we are given the"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        453.93007839999927,
+        151.95953780000002,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "minimal and maximal traversal times"
+        }
+      ],
+      "text" : "minimal and maximal traversal times"
+    },
+    {
+      "rect" : [
+        398.81300000000022,
+        441.3120827999993,
+        7.5830216800000017,
+        7.8159393999999338
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0059999999999718,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "i"
+        }
+      ],
+      "text" : "ni"
+    },
+    {
+      "rect" : [
+        413.15600000000023,
+        444.93062779999923,
+        11.168052920000093,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "i+1"
+        }
+      ],
+      "text" : "i+1"
+    },
+    {
+      "rect" : [
+        403.73800000000023,
+        439.70562779999921,
+        9.4178975599999717,
+        7.7991894000000457
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.99649999999996908,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0.99650000000002592,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "f n"
+    },
+    {
+      "rect" : [
+        391.61700000000019,
+        433.92025559999928,
+        7.1949897200000237,
+        8.846788800000013
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "tt"
+        }
+      ],
+      "text" : "tt"
+    },
+    {
+      "rect" : [
+        413.15600000000023,
+        439.28662779999922,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        398.81300000000022,
+        431.49408279999926,
+        62.892021679999971,
+        17.633939399999974
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0060000000000286,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ", TT"
+        },
+        {
+          "baselineOffset" : 6.8120000000000118,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 9.8179999999999836,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "i"
+        }
+      ],
+      "text" : "f , TTni"
+    },
+    {
+      "rect" : [
+        468.46500000000026,
+        444.93062779999923,
+        11.168052920000036,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "i+1"
+        }
+      ],
+      "text" : "i+1"
+    },
+    {
+      "rect" : [
+        459.04700000000025,
+        439.70562779999921,
+        9.4178975599999717,
+        7.7991894000000457
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.99649999999996908,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0.99650000000002592,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "f n"
+    },
+    {
+      "rect" : [
+        468.46500000000026,
+        439.28662779999922,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        452.73800000000028,
+        431.49408279999926,
+        110.29839160000006,
+        11.272961600000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0060000000000286,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ". (2)"
+        }
+      ],
+      "text" : "f. (2)"
+    },
+    {
+      "rect" : [
+        311.97800000000029,
+        415.37821819999925,
+        180.45257379999998,
+        8.5877611999999885
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "italic" : true,
+          "text" : "B. Output data: the format of a “schedule”"
+        }
+      ],
+      "text" : "B. Output data: the format of a “schedule”"
+    },
+    {
+      "rect" : [
+        321.94000000000028,
+        400.18307839999926,
+        241.09491999999989,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "A schedule will be defined here as a mapping that, for each"
+        }
+      ],
+      "text" : "A schedule will be defined here as a mapping that, for each"
+    },
+    {
+      "rect" : [
+        311.97800000000029,
+        388.22807839999928,
+        251.05784699999992,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "flight f, provides every node on its route with a Scheduled"
+        }
+      ],
+      "text" : "flight f, provides every node on its route with a Scheduled"
+    },
+    {
+      "rect" : [
+        311.97800000000029,
+        376.21330279999927,
+        251.05437900000004,
+        8.9663400000000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Time of Arrival (STA) for that flight. In other words, a schedule"
+        }
+      ],
+      "text" : "Time of Arrival (STA) for that flight. In other words, a schedule"
+    },
+    {
+      "rect" : [
+        311.97800000000029,
+        364.31807839999931,
+        251.05864999999994,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "is an assignment, to each flight f, of a table, denoted by S(f),"
+        }
+      ],
+      "text" : "is an assignment, to each flight f, of a table, denoted by S(f),"
+    },
+    {
+      "rect" : [
+        311.97800000000041,
+        352.36307839999932,
+        215.25193559999991,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "of the format (refer to (1) for some of the notation):"
+        }
+      ],
+      "text" : "of the format (refer to (1) for some of the notation):"
+    },
+    {
+      "rect" : [
+        376.47200000000043,
+        333.64707839999932,
+        19.367294399999992,
+        10.607738800000732
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "node "
+        }
+      ],
+      "text" : "node "
+    },
+    {
+      "rect" : [
+        405.80200000000002,
+        333.64707839999932,
+        9.9515791000000036,
+        10.607738800000732
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 3.6160000000007244,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "1"
+        }
+      ],
+      "text" : "n1"
+    },
+    {
+      "rect" : [
+        411.78200000000004,
+        331.62508280000003,
+        39.541579099999922,
+        12.629734400000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.8210000000000264,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 3.6159999999999854,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "2"
+        }
+      ],
+      "text" : "f n2"
+    },
+    {
+      "rect" : [
+        504.50800000000004,
+        339.23262779999999,
+        9.7182091999999329,
+        6.8631894000000671
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 1.0570000000000164,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "N"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "Nf"
+    },
+    {
+      "rect" : [
+        447.35199999999998,
+        331.62508280000003,
+        57.155552520000072,
+        11.087961600000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.8210000000000264,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "... n"
+        }
+      ],
+      "text" : "f... n"
+    },
+    {
+      "rect" : [
+        504.50800000000004,
+        331.44108280000006,
+        3.8851039799999967,
+        6.1927344000000062
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        337.27200000000039,
+        324.26125559999929,
+        28.689271020000035,
+        8.846788800000013
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "S(f) :"
+        }
+      ],
+      "text" : "S(f) :"
+    },
+    {
+      "rect" : [
+        534.97400000000005,
+        324.04207840000004,
+        28.062391600000069,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ". (3)"
+        }
+      ],
+      "text" : ". (3)"
+    },
+    {
+      "rect" : [
+        421.49299999999999,
+        320.7490828,
+        8.3152727799999298,
+        7.8159393999999338
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0059999999999718,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "1"
+        }
+      ],
+      "text" : "n1"
+    },
+    {
+      "rect" : [
+        457.06399999999996,
+        320.7490828,
+        8.3142727799999534,
+        7.8159393999999338
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0059999999999718,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "2"
+        }
+      ],
+      "text" : "n2"
+    },
+    {
+      "rect" : [
+        519.14400000000001,
+        324.92562779999997,
+        8.7662092000000484,
+        6.1663944000000015
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 1.742999999999995,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "N"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "Nf"
+    },
+    {
+      "rect" : [
+        514.21900000000005,
+        321.16808280000004,
+        4.9248975599999767,
+        6.1927344000000062
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "n"
+    },
+    {
+      "rect" : [
+        377.19,
+        313.4973028,
+        17.932680000000005,
+        8.4383221999999591
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STA "
+        }
+      ],
+      "text" : "STA "
+    },
+    {
+      "rect" : [
+        405.80200000000002,
+        313.4973028,
+        15.691095000000018,
+        8.4383221999999591
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STA"
+        }
+      ],
+      "text" : "STA"
+    },
+    {
+      "rect" : [
+        426.41800000000001,
+        319.1426277999999,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        421.49299999999999,
+        311.35108279999997,
+        35.571095000000014,
+        10.445065800000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0050000000000523,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STA"
+        }
+      ],
+      "text" : "f STA"
+    },
+    {
+      "rect" : [
+        461.98799999999994,
+        319.1426277999999,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        457.06399999999996,
+        311.35108279999997,
+        31.499376640000037,
+        11.271961600000054
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -3.0050000000000523,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "... "
+        }
+      ],
+      "text" : "f... "
+    },
+    {
+      "rect" : [
+        498.52800000000002,
+        311.35108279999997,
+        15.691095000000018,
+        11.271961600000054
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STA"
+        }
+      ],
+      "text" : "STA"
+    },
+    {
+      "rect" : [
+        519.14400000000001,
+        319.14262779999996,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9813000000000001,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        514.21900000000005,
+        311.35108280000003,
+        3.8851039800000535,
+        6.1927344000000062
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f"
+        }
+      ],
+      "text" : "f"
+    },
+    {
+      "rect" : [
+        368.17300000000006,
+        295.83507840000004,
+        138.67724059999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "III. S"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "CHEDULING CONSTRAINTS"
+        }
+      ],
+      "text" : "III. SCHEDULING CONSTRAINTS"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        280.80930280000001,
+        204.09362999999996,
+        8.8766765999999961
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "A. ETAs, schedule-frozen nodes, no-passing edges"
+        }
+      ],
+      "text" : "A. ETAs, schedule-frozen nodes, no-passing edges"
+    },
+    {
+      "rect" : [
+        321.94000000000005,
+        265.90407840000006,
+        241.09988480000015,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "For each flight f routed through a node n, the structure of"
+        }
+      ],
+      "text" : "For each flight f routed through a node n, the structure of"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        253.94907840000005,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "air traffic operations suggests using two types of time stamps:"
+        }
+      ],
+      "text" : "air traffic operations suggests using two types of time stamps:"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        241.93430280000004,
+        153.21389755999996,
+        10.676514400000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "(i) the estimated time of arrival ETA"
+        },
+        {
+          "baselineOffset" : 3.625,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "(i) the estimated time of arrival ETAn"
+    },
+    {
+      "rect" : [
+        460.26700000000017,
+        239.98108280000002,
+        102.76756460000001,
+        10.919560000000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.8120000000000118,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ", which is the estimated"
+        }
+      ],
+      "text" : "f , which is the estimated"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        230.03807840000005,
+        251.06173039999999,
+        9.0659660000000315
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "time when flight f can reach n or, if n is a departure airport,"
+        }
+      ],
+      "text" : "time when flight f can reach n or, if n is a departure airport,"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        218.02330280000004,
+        220.88289756000006,
+        10.677514400000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "to leave n, and (ii) the scheduled time of arrival"
+        },
+        {
+          "baselineOffset" : 3.6160000000000139,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "1 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STA"
+        },
+        {
+          "baselineOffset" : 3.6260000000000048,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "to leave n, and (ii) the scheduled time of arrival1 STAn"
+    },
+    {
+      "rect" : [
+        527.93600000000026,
+        216.07108280000003,
+        35.101585399999976,
+        10.918560000000014
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.811000000000007,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "f "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : ", which"
+        }
+      ],
+      "text" : "f , which"
+    },
+    {
+      "rect" : [
+        311.97800000000029,
+        206.06830280000003,
+        251.05334340000002,
+        8.9663400000000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "is the time, computed on the basis of the ETAs, at which flight"
+        }
+      ],
+      "text" : "is the time, computed on the basis of the ETAs, at which flight"
+    },
+    {
+      "rect" : [
+        311.97800000000029,
+        194.17307840000001,
+        147.60008819999996,
+        9.0659660000000315
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "f will be expected at n in actuality."
+        }
+      ],
+      "text" : "f will be expected at n in actuality."
+    },
+    {
+      "rect" : [
+        321.94000000000028,
+        182.34607840000001,
+        241.09492,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "At some of the schedule-furnished nodes, some flights"
+        }
+      ],
+      "text" : "At some of the schedule-furnished nodes, some flights"
+    },
+    {
+      "rect" : [
+        311.97800000000029,
+        170.3910784,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "routed through that node may have pre-assigned and fixed"
+        }
+      ],
+      "text" : "routed through that node may have pre-assigned and fixed"
+    },
+    {
+      "rect" : [
+        311.97800000000029,
+        158.37530280000001,
+        251.05742499999997,
+        8.9663400000000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "STAs. In real operations, this can happen at a node that is"
+        }
+      ],
+      "text" : "STAs. In real operations, this can happen at a node that is"
+    },
+    {
+      "rect" : [
+        311.97800000000029,
+        146.4800784,
+        251.06200760000002,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "within a flight’s freeze horizon [5]. Such nodes will be called"
+        }
+      ],
+      "text" : "within a flight’s freeze horizon [5]. Such nodes will be called"
+    },
+    {
+      "rect" : [
+        311.97800000000029,
+        134.52507839999998,
+        64.97565000000003,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "schedule-frozen."
+        }
+      ],
+      "text" : "schedule-frozen."
+    },
+    {
+      "rect" : [
+        321.94000000000028,
+        122.6980784,
+        241.09491999999989,
+        8.9065643999999935
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "On some of the edges, passing of one flight by another will"
+        }
+      ],
+      "text" : "On some of the edges, passing of one flight by another will"
+    },
+    {
+      "rect" : [
+        311.97800000000029,
+        110.7430784,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "be forbidden. One operational reason for such a constraint is"
+        }
+      ],
+      "text" : "be forbidden. One operational reason for such a constraint is"
+    },
+    {
+      "rect" : [
+        319.94800000000032,
+        91.766458399999991,
+        243.09211629999982,
+        8.5873543999999953
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 2.8130000000000024,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.9776000000000007,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "If the node is a departure node, this time is actually the schedule time of"
+        }
+      ],
+      "text" : "1If the node is a departure node, this time is actually the schedule time of"
+    },
+    {
+      "rect" : [
+        311.97800000000035,
+        82.752637799999988,
+        251.05954238999999,
+        7.1730900000000162
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "departure, STD, but for cleanliness of exposition we retain the notation STA"
+        }
+      ],
+      "text" : "departure, STD, but for cleanliness of exposition we retain the notation STA"
+    },
+    {
+      "rect" : [
+        311.97800000000029,
+        73.833458399999998,
+        56.523949200000004,
+        7.1252693999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "even in this case."
+        }
+      ],
+      "text" : "even in this case."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "ntrs-20190030725-dasc-2019",
+  "graphics" : [
+    [
+      369.49099999999999,
+      309.34800000000001,
+      167.48299999999995,
+      38.673999999999978
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        730.93807839999999,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "each flight, some of the constraints result from the schedules"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        718.98207839999998,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "computed previously for other flights. This leads to the need to"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        707.02707839999994,
+        251.05751999999984,
+        8.9065643999999793
+      ],
+      "text" : "negotiate. The distributed system, whatever architecture ends"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        695.0720783999999,
+        221.99661579999992,
+        8.9065643999999793
+      ],
+      "text" : "up being chosen for it, must enable such negotiations."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.927,
+        682.07807839999987,
+        241.09492000000003,
+        8.9065643999999793
+      ],
+      "text" : "This paper contributes an algorithm for solving such a"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        670.12307839999983,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "problem. For clarity, we note that this algorithm, although"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        658.16707839999981,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "developed as part of a project aimed at a distributed system, is"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        646.21207839999977,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "itself neither inherently distributed nor inherently centralized."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        634.25707839999973,
+        161.53359640000002,
+        8.9065643999999793
+      ],
+      "text" : "It can be used in either type of system."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.927,
+        621.2630783999997,
+        241.09492000000003,
+        8.9065643999999793
+      ],
+      "text" : "Before outlining the contribution, we give a brief overview"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        609.30707839999968,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "of the challenges of designing such a system, so as to give the"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        597.35207839999964,
+        114.68945120000001,
+        8.9065643999999793
+      ],
+      "text" : "broad context for this work."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.927,
+        584.35807839999961,
+        241.09491999999992,
+        8.9065643999999793
+      ],
+      "text" : "This system would possibly replace or drive upgrades to"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        572.40307839999957,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "the current TBFM system for a futuristic traffic management"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        560.44707839999955,
+        251.05752000000001,
+        8.9065643999999793
+      ],
+      "text" : "system for the year 2045 or later. The UTM solution cannot"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        548.49207839999951,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "be copied as is because of the following differences between"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        536.53707839999947,
+        251.05752000000001,
+        8.9065643999999793
+      ],
+      "text" : "UAS and conventional jet traffic. UAS traffic density is sparser"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        524.58207839999943,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "and less directed than conventional jet traffic in the airspace"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        512.62707839999939,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "close to large airports. Jet traffic in the vicinity of a large"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        500.67207839999946,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "airport follows predefined arrival routes and procedures. The"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        488.71607839999945,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "flow of traffic along the routes can be packed to the point"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        476.76107839999946,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "where there is no longer space to safely fit flights. The"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        464.80607839999948,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "traffic density and the need to land on a common runway"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        452.85107839999949,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "will require more negotiation with fewer alternatives than"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        440.89607839999951,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "those needed in UTM. Furthermore, jets cannot be stopped in"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        428.94107839999953,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "mid-air, meaning that arriving at an agreed solution is time-"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        416.98507839999951,
+        251.05752000000001,
+        8.9065643999999793
+      ],
+      "text" : "critical. An arbiter is needed to step in and drive a solution"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        405.03007839999952,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "in time critical situations. Finally, the constraints that must be"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        393.07507839999954,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "satisfied in arrival scheduling are more complex than checking"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        381.12007839999956,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "for airspace box intersections in time and space. In arrival"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        369.16507839999957,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "scheduling, there are spacing constraints at the runway and"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        357.20907839999956,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "merge points after the arrival meter fix, and there are arrival"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        345.25407839999957,
+        251.05751999999984,
+        8.9065643999999793
+      ],
+      "text" : "rate constraints that must be followed. These constraints occur"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        333.29907839999959,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "at different points in both time and space and require network"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        321.3440783999996,
+        106.85884759999999,
+        8.9065643999999793
+      ],
+      "text" : "flow analysis to work out."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.927,
+        308.3490783999996,
+        241.09491999999992,
+        8.9065643999999793
+      ],
+      "text" : "The complete set of arrival scheduling constraints is given in"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        296.39407839999961,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "section III. The interdependence of the constraints is explained"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        284.43907839999963,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "in section IV, with a high-level description of the algorithmic"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        272.48407839999965,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "procedure (appendix A) . The algorithm is formulated in detail"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        260.52907839999966,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "in section V. The design of the algorithm is independent of"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        248.57407839999962,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "whether it will be run on a centralized or distributed system."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        236.61807839999963,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "text" : "Computed solutions to some sample, artificially generated"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        224.66307839999962,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "text" : "problems are presented in section VI. A discussion on how the"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        212.70807839999961,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "text" : "algorithm would fit into a distributed system and aid operators"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        200.75307839999959,
+        242.67897339999996,
+        8.9065644000000077
+      ],
+      "text" : "in influencing their flight schedules is given in section VII."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        102.74299999999999,
+        173.23907839999958,
+        143.50979909999998,
+        8.9065644000000077
+      ],
+      "text" : "II. PROBLEM INPUT AND OUTPUT"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999984,
+        152.13921819999959,
+        55.790559999999999,
+        8.5877611999999885
+      ],
+      "text" : "A. Input data"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.926999999999985,
+        133.17907839999958,
+        241.09685219999997,
+        8.9065644000000077
+      ],
+      "text" : "Flight routes and the graph they make up: Assume we"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        121.2240783999996,
+        251.05940834000006,
+        9.0659660000000031
+      ],
+      "text" : "are given a set of flights, indexed by f: f = 1,2,...,F,"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000055,
+        109.2690783999996,
+        251.05751999999995,
+        8.9065643999999935
+      ],
+      "text" : "and each flight is assigned a route, which is a sequence"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000055,
+        97.314078399999602,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "text" : "of waypoints. Generally, a flight is not scheduled at every"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000055,
+        85.358078399999599,
+        251.05751999999995,
+        8.9065643999999935
+      ],
+      "text" : "waypoint on its route, but, rather, on some of those waypoints."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.964000000000055,
+        73.4030783999996,
+        251.06184919999998,
+        8.9065644000000077
+      ],
+      "text" : "These waypoints will be referred to as nodes, for consistency"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        730.93707839999956,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "with the terminology generally used in scheduling and graph"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        718.98207839999952,
+        184.67671619999999,
+        8.9065643999999793
+      ],
+      "text" : "theory, and written in the following notation:"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        398.90300000000008,
+        700.09725559999947,
+        9.9515791000000604,
+        10.885561600000074
+      ],
+      "text" : "n1"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        404.8830000000001,
+        698.21408279999957,
+        22.311579100000017,
+        12.768734399999971
+      ],
+      "text" : "f , n2"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        462.04100000000017,
+        705.46362779999947,
+        9.7182091999999898,
+        6.8631894000000102
+      ],
+      "text" : "Nf"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        423.22300000000013,
+        698.21408279999957,
+        38.820655320000014,
+        10.729961599999911
+      ],
+      "text" : "f , ..., n"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        462.04100000000017,
+        697.67208279999954,
+        100.99539160000006,
+        11.271961599999941
+      ],
+      "text" : "f. (1)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.94000000000017,
+        681.32607839999946,
+        241.09689999999989,
+        9.0659660000000031
+      ],
+      "text" : "We now form the smallest possible undirected graph Gthat"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        669.37107839999942,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "includes all the nodes and all the links involved in the routes"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        657.41607839999938,
+        204.18540999999993,
+        9.0659660000000031
+      ],
+      "text" : "(1). More precisely, the set of nodes of G will be"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        316.95900000000006,
+        638.83507839999936,
+        22.030610280000019,
+        9.6238716000000295
+      ],
+      "text" : "{n :"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        348.01100000000008,
+        638.83507839999936,
+        214.83330000000001,
+        9.6238716000000295
+      ],
+      "text" : "at least one of the routes (1) has n as a waypoint }"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        620.05607839999936,
+        126.8039728,
+        8.9065643999999793
+      ],
+      "text" : "and the set of its links will be:"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        316.95900000000006,
+        604.12808279999945,
+        43.037300000000016,
+        10.3188672
+      ],
+      "text" : "{{n1,n2}"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        369.95900000000012,
+        604.12808279999945,
+        170.66075900000004,
+        10.3188672
+      ],
+      "text" : "the waypoints n1,n2 occur consecutively,"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        369.95900000000017,
+        592.86807839999938,
+        195.23561028000006,
+        9.6238716000000295
+      ],
+      "text" : "in any order, in at least one of the routes (1) }."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.94000000000017,
+        575.89007839999942,
+        241.09687239999994,
+        9.0261156000000256
+      ],
+      "text" : "Note: Although each route has its waypoints in a specific"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        563.93507839999938,
+        251.05673820000004,
+        9.0659660000000031
+      ],
+      "text" : "order, the graph G is constructed as undirected, for conve-"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        551.98007839999934,
+        251.05751999999984,
+        8.9065643999999793
+      ],
+      "text" : "nience of analysis and exposition. (In particular, in this paper"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        540.0250783999993,
+        251.05398679999996,
+        9.0659660000000031
+      ],
+      "text" : "Gwill be restricted to being a tree, and undirected trees allow"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        528.07007839999926,
+        164.75151620000003,
+        8.9065643999999793
+      ],
+      "text" : "simpler verbiage than do directed ones.)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.94000000000017,
+        516.37007839999922,
+        173.11980996,
+        10.607738799999993
+      ],
+      "text" : "Estimated Times of Arrival: Each node ni"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        492.24100000000021,
+        514.34808279999925,
+        70.795399599999996,
+        10.928559999999948
+      ],
+      "text" : "f in the route (1)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000024,
+        504.41507839999929,
+        251.0633876,
+        9.0659660000000031
+      ],
+      "text" : "of each flight f is supplied with an Estimated Time of Arrival"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        356.2510000000002,
+        496.73108279999929,
+        7.5830216800000017,
+        7.816939399999967
+      ],
+      "text" : "ni"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000024,
+        489.47930279999929,
+        44.273095000000012,
+        8.9663400000000024
+      ],
+      "text" : "(ETA): ETA"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        361.17600000000022,
+        495.12562779999922,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        356.2510000000002,
+        487.33308279999926,
+        126.14814140000004,
+        11.271961599999997
+      ],
+      "text" : "f , which is the nominal time."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.94000000000017,
+        478.06921819999923,
+        241.09491999999989,
+        8.5877611999999885
+      ],
+      "text" : "A flight’s minimal and maximal times for traversing a link:"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        465.88507839999926,
+        149.77180995999993,
+        10.607738799999993
+      ],
+      "text" : "For each flight f and each link ni"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        458.93100000000015,
+        463.86308279999923,
+        24.050601700000016,
+        13.275734400000033
+      ],
+      "text" : "f ni+1"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        470.07500000000016,
+        463.67908279999926,
+        92.965323600000033,
+        11.112559999999974
+      ],
+      "text" : "f , we are given the"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        453.93007839999927,
+        151.95953780000002,
+        8.9065643999999793
+      ],
+      "text" : "minimal and maximal traversal times"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        398.81300000000022,
+        441.3120827999993,
+        7.5830216800000017,
+        7.8159393999999338
+      ],
+      "text" : "ni"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        413.15600000000023,
+        444.93062779999923,
+        11.168052920000093,
+        4.4233944000000065
+      ],
+      "text" : "i+1"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        403.73800000000023,
+        439.70562779999921,
+        9.4178975599999717,
+        7.7991894000000457
+      ],
+      "text" : "f n"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        391.61700000000019,
+        433.92025559999928,
+        7.1949897200000237,
+        8.846788800000013
+      ],
+      "text" : "tt"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        413.15600000000023,
+        439.28662779999922,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        398.81300000000022,
+        431.49408279999926,
+        62.892021679999971,
+        17.633939399999974
+      ],
+      "text" : "f , TTni"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        468.46500000000026,
+        444.93062779999923,
+        11.168052920000036,
+        4.4233944000000065
+      ],
+      "text" : "i+1"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        459.04700000000025,
+        439.70562779999921,
+        9.4178975599999717,
+        7.7991894000000457
+      ],
+      "text" : "f n"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        468.46500000000026,
+        439.28662779999922,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        452.73800000000028,
+        431.49408279999926,
+        110.29839160000006,
+        11.272961600000031
+      ],
+      "text" : "f. (2)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000029,
+        415.37821819999925,
+        180.45257379999998,
+        8.5877611999999885
+      ],
+      "text" : "B. Output data: the format of a “schedule”"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.94000000000028,
+        400.18307839999926,
+        241.09491999999989,
+        8.9065643999999793
+      ],
+      "text" : "A schedule will be defined here as a mapping that, for each"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000029,
+        388.22807839999928,
+        251.05784699999992,
+        9.0659660000000031
+      ],
+      "text" : "flight f, provides every node on its route with a Scheduled"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000029,
+        376.21330279999927,
+        251.05437900000004,
+        8.9663400000000024
+      ],
+      "text" : "Time of Arrival (STA) for that flight. In other words, a schedule"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000029,
+        364.31807839999931,
+        251.05864999999994,
+        9.0659660000000031
+      ],
+      "text" : "is an assignment, to each flight f, of a table, denoted by S(f),"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000041,
+        352.36307839999932,
+        215.25193559999991,
+        8.9065643999999793
+      ],
+      "text" : "of the format (refer to (1) for some of the notation):"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        376.47200000000043,
+        333.64707839999932,
+        19.367294399999992,
+        10.607738800000732
+      ],
+      "text" : "node"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        405.80200000000002,
+        333.64707839999932,
+        9.9515791000000036,
+        10.607738800000732
+      ],
+      "text" : "n1"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        411.78200000000004,
+        331.62508280000003,
+        39.541579099999922,
+        12.629734400000018
+      ],
+      "text" : "f n2"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        504.50800000000004,
+        339.23262779999999,
+        9.7182091999999329,
+        6.8631894000000671
+      ],
+      "text" : "Nf"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        447.35199999999998,
+        331.62508280000003,
+        57.155552520000072,
+        11.087961600000028
+      ],
+      "text" : "f... n"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        504.50800000000004,
+        331.44108280000006,
+        3.8851039799999967,
+        6.1927344000000062
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        337.27200000000039,
+        324.26125559999929,
+        28.689271020000035,
+        8.846788800000013
+      ],
+      "text" : "S(f) :"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        534.97400000000005,
+        324.04207840000004,
+        28.062391600000069,
+        9.0659660000000031
+      ],
+      "text" : ". (3)"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        421.49299999999999,
+        320.7490828,
+        8.3152727799999298,
+        7.8159393999999338
+      ],
+      "text" : "n1"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        457.06399999999996,
+        320.7490828,
+        8.3142727799999534,
+        7.8159393999999338
+      ],
+      "text" : "n2"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        519.14400000000001,
+        324.92562779999997,
+        8.7662092000000484,
+        6.1663944000000015
+      ],
+      "text" : "Nf"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        514.21900000000005,
+        321.16808280000004,
+        4.9248975599999767,
+        6.1927344000000062
+      ],
+      "text" : "n"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        377.19,
+        313.4973028,
+        17.932680000000005,
+        8.4383221999999591
+      ],
+      "text" : "STA"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        405.80200000000002,
+        313.4973028,
+        15.691095000000018,
+        8.4383221999999591
+      ],
+      "text" : "STA"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        426.41800000000001,
+        319.1426277999999,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        421.49299999999999,
+        311.35108279999997,
+        35.571095000000014,
+        10.445065800000009
+      ],
+      "text" : "f STA"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        461.98799999999994,
+        319.1426277999999,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        457.06399999999996,
+        311.35108279999997,
+        31.499376640000037,
+        11.271961600000054
+      ],
+      "text" : "f..."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        498.52800000000002,
+        311.35108279999997,
+        15.691095000000018,
+        11.271961600000054
+      ],
+      "text" : "STA"
+    },
+    {
+      "fontSize" : 4.9813000000000001,
+      "monospaced" : false,
+      "rect" : [
+        519.14400000000001,
+        319.14262779999996,
+        3.4072092000000112,
+        4.4233944000000065
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        514.21900000000005,
+        311.35108280000003,
+        3.8851039800000535,
+        6.1927344000000062
+      ],
+      "text" : "f"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        368.17300000000006,
+        295.83507840000004,
+        138.67724059999995,
+        8.9065643999999793
+      ],
+      "text" : "III. SCHEDULING CONSTRAINTS"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        280.80930280000001,
+        204.09362999999996,
+        8.8766765999999961
+      ],
+      "text" : "A. ETAs, schedule-frozen nodes, no-passing edges"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.94000000000005,
+        265.90407840000006,
+        241.09988480000015,
+        9.0659660000000031
+      ],
+      "text" : "For each flight f routed through a node n, the structure of"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        253.94907840000005,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "text" : "air traffic operations suggests using two types of time stamps:"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        241.93430280000004,
+        153.21389755999996,
+        10.676514400000002
+      ],
+      "text" : "(i) the estimated time of arrival ETAn"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        460.26700000000017,
+        239.98108280000002,
+        102.76756460000001,
+        10.919560000000018
+      ],
+      "text" : "f , which is the estimated"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        230.03807840000005,
+        251.06173039999999,
+        9.0659660000000315
+      ],
+      "text" : "time when flight f can reach n or, if n is a departure airport,"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        218.02330280000004,
+        220.88289756000006,
+        10.677514400000007
+      ],
+      "text" : "to leave n, and (ii) the scheduled time of arrival1 STAn"
+    },
+    {
+      "fontSize" : 6.9738000000000007,
+      "monospaced" : false,
+      "rect" : [
+        527.93600000000026,
+        216.07108280000003,
+        35.101585399999976,
+        10.918560000000014
+      ],
+      "text" : "f , which"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000029,
+        206.06830280000003,
+        251.05334340000002,
+        8.9663400000000024
+      ],
+      "text" : "is the time, computed on the basis of the ETAs, at which flight"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000029,
+        194.17307840000001,
+        147.60008819999996,
+        9.0659660000000315
+      ],
+      "text" : "f will be expected at n in actuality."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.94000000000028,
+        182.34607840000001,
+        241.09492,
+        8.9065644000000077
+      ],
+      "text" : "At some of the schedule-furnished nodes, some flights"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000029,
+        170.3910784,
+        251.05751999999995,
+        8.9065644000000077
+      ],
+      "text" : "routed through that node may have pre-assigned and fixed"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000029,
+        158.37530280000001,
+        251.05742499999997,
+        8.9663400000000024
+      ],
+      "text" : "STAs. In real operations, this can happen at a node that is"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000029,
+        146.4800784,
+        251.06200760000002,
+        8.9065644000000077
+      ],
+      "text" : "within a flight’s freeze horizon [5]. Such nodes will be called"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000029,
+        134.52507839999998,
+        64.97565000000003,
+        8.9065644000000077
+      ],
+      "text" : "schedule-frozen."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.94000000000028,
+        122.6980784,
+        241.09491999999989,
+        8.9065643999999935
+      ],
+      "text" : "On some of the edges, passing of one flight by another will"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000029,
+        110.7430784,
+        251.05751999999984,
+        8.9065644000000077
+      ],
+      "text" : "be forbidden. One operational reason for such a constraint is"
+    },
+    {
+      "fontSize" : 5.9776000000000007,
+      "monospaced" : false,
+      "rect" : [
+        319.94800000000032,
+        91.766458399999991,
+        243.09211629999982,
+        8.5873543999999953
+      ],
+      "text" : "1If the node is a departure node, this time is actually the schedule time of"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000035,
+        82.752637799999988,
+        251.05954238999999,
+        7.1730900000000162
+      ],
+      "text" : "departure, STD, but for cleanliness of exposition we retain the notation STA"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000029,
+        73.833458399999998,
+        56.523949200000004,
+        7.1252693999999934
+      ],
+      "text" : "even in this case."
+    }
+  ],
+  "page" : 2,
+  "paints" : [
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        398.82100000000003,
+        329.43799999999999,
+        4,
+        18.584000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        434.39100000000002,
+        329.43799999999999,
+        4,
+        18.584000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        469.96100000000001,
+        329.43799999999999,
+        4,
+        18.584000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        491.54700000000003,
+        329.43799999999999,
+        4,
+        18.584000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        369.49099999999999,
+        329.23900000000003,
+        167.48299999999995,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        398.82100000000003,
+        309.34800000000001,
+        4,
+        23.692000000000007
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        434.39100000000002,
+        309.34800000000001,
+        4,
+        23.692000000000007
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        469.96100000000001,
+        309.34800000000001,
+        4,
+        23.692000000000007
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        491.54700000000003,
+        309.34800000000001,
+        4,
+        23.692000000000007
+      ]
+    }
+  ],
+  "rightsBasis" : "The paper's byline places both authors, A. Sadovsky and R. Windhorst, in the Aviation Systems Division, NASA Ames Research Center, with nasa.gov addresses, and the NTRS record lists both at NASA Ames Research Center (center ARC): a work of the United States Government under 17 U.S.C. 105. The PDF carries no copyright notice or government-work statement. The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and belongsToAuthors false; distribution PUBLIC, no export control. No figure or table carries a credit, and none is third-party: Figures 1-2 are the authors' time-window plots, the Table I and II route networks are generated with networkx (Ref. [3]) from the paper's own sample problems, and Table III is the authors' outline. No NASA insignia or photographs appear. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "7c2137098ffb75153e0049b970272db97bc91e13168028dc7b53fbe2deb92caa",
+  "sourceTitle" : "A Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace System",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20190030725/downloads/20190030725.pdf"
+}

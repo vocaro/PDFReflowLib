@@ -2628,6 +2628,206 @@ enum LayoutReconstructor {
         return CGFloat(weights.max { ($0.value, -$0.key) < ($1.value, -$1.key) }?.key ?? 12)
     }
 
+    /// The justified measure of the column `line` stands in: the column's own dominant type size
+    /// and the left and right edges that at least three of its lines in that size share. `column`
+    /// is the lines whose horizontal span meets the line's, as `sectionLabels` reads a column. The
+    /// size is the column's, not the page's, because a column can be set smaller than the body
+    /// (the IEEEtran paper's bibliography, 7.97 points under a 9-point page).
+    ///
+    /// A two-column paper's section titles are set at body size, so size alone cannot tell them
+    /// from prose; their place inside this measure can (#162).
+    static func columnMeasure(of column: [TextLine]) -> (left: CGFloat, right: CGFloat, size: CGFloat)? {
+        let size = bodySize(column)
+        let prose = column.filter { !$0.monospaced && abs($0.fontSize - size) <= size * 0.1 }
+        func shared(_ values: [CGFloat]) -> CGFloat? {
+            values.first { value in values.filter { abs($0 - value) <= size * 0.25 }.count >= 3 }
+        }
+        guard size > 0, let left = shared(prose.map(\.rect.minX).sorted()),
+              let right = shared(prose.map(\.rect.maxX).sorted(by: >)), right - left >= size * 8
+        else { return nil }
+        return (left, right, size)
+    }
+
+    /// Whether `line` is set centred inside `measure`: it is inset from both edges, by insets that
+    /// agree within three quarters of the measure's type size. A justified prose line reaches both
+    /// edges exactly, a first-line indent or a hanging indent is inset on one side only, and a
+    /// ragged last line leaves all its space on the right. A two-line title's first line can run
+    /// nearly the whole measure (`VII. COMPATIBILITY WITH A DISTRIBUTED SYSTEM FOR`, half a body
+    /// inside each edge), so the insets are asked to be real rather than wide.
+    static func isCentred(_ line: TextLine, in measure: (left: CGFloat, right: CGFloat, size: CGFloat)) -> Bool {
+        let left = line.rect.minX - measure.left
+        let right = measure.right - line.rect.maxX
+        return left >= measure.size * 0.4 && right >= measure.size * 0.4
+            && abs(left - right) <= measure.size * 0.75
+    }
+
+    /// A Roman-numeral section number opening a line (`I.`, `VII.`, `VIII.`). IEEEtran numbers its
+    /// sections this way, so `I.` and `V.` also read as one-letter list markers (#162). A bare
+    /// numeral with no period is a slip opinion's part label, not a numbered title (Loper Bright's
+    /// `I`, `II`, `III`).
+    static func opensWithRomanNumeral(_ text: String) -> Bool {
+        text.range(of: "^(?:M{0,3}(?:CM|CD|D?C{0,3})(?:XC|XL|L?X{0,3})(?:IX|IV|V?I{0,3}))\\.\\s+\\S",
+                   options: .regularExpression) != nil
+            && text.first.map { "IVXLCDM".contains($0) } == true
+    }
+
+    /// The section heads a numbered paper prints without a number: its appendices and the standard
+    /// end matter. They stand in the same sequence as the numbered titles and are set the same way,
+    /// but carry no numeral of their own (#162).
+    static func isUnnumberedSectionHead(_ text: String) -> Bool {
+        guard let first = text.split(whereSeparator: \.isWhitespace).first else { return false }
+        return ["APPENDIX", "APPENDICES", "REFERENCES", "BIBLIOGRAPHY", "NOMENCLATURE",
+                "ACKNOWLEDGMENT", "ACKNOWLEDGMENTS", "ACKNOWLEDGEMENT", "ACKNOWLEDGEMENTS"]
+            .contains(String(first).trimmingCharacters(in: CharacterSet(charactersIn: ".:")).uppercased())
+    }
+
+    /// Whether `line` is the next line of the centred title `previous` opens, set in the small
+    /// capitals' own size: directly beneath it at ordinary heading leading, sharing its centre.
+    /// `stacksUnderHeading` cannot read such a pair, because PDFKit reports the title's size from
+    /// its full-size initial (9.96 points) and the continuation line's from its small capitals
+    /// (7.97), a fifth apart (#162).
+    static func continuesCentredTitle(_ line: TextLine, after previous: TextLine) -> Bool {
+        let size = previous.fontSize
+        guard line.fontSize >= size * 0.65, line.fontSize <= size * 0.95, !sameRow(previous.rect, line.rect),
+              line.rect.minY < previous.rect.minY, line.rect.maxY >= previous.rect.minY - size,
+              previous.rect.minY - line.rect.minY <= size * 2.2 else { return false }
+        return abs(previous.rect.midX - line.rect.midX) <= size * 0.6
+    }
+
+    /// The section and subsection titles a two-column academic paper sets at its own body size,
+    /// which neither the heading-size threshold nor a recurring `LabelStyle` can reach (#162).
+    /// The NTRS IEEEtran paper (`ntrs-20190030725-dasc-2019`) prints both:
+    ///
+    /// - a **section title** centred in its column's justified measure, wholly in capitals
+    ///   (`II. PROBLEM INPUT AND OUTPUT`, `APPENDIX A`, `REFERENCES`), set off above by more than
+    ///   the column's leading, over text no larger than the body. IEEEtran sets these in small
+    ///   capitals, so a numeral such as `I.` or `V.` also reads as a one-letter list marker and a
+    ///   title wrapped onto a second line carries only small capitals, a fifth smaller than the
+    ///   line PDFKit measures from the full-size initial (`continuesCentredTitle`);
+    /// - a **subsection title**, a single capital letter and period before a sentence-case title
+    ///   set wholly in italic on the column's left edge (`A. Input data`, `B. Output data: the
+    ///   format of a “schedule”`), set off above and below by more than the leading, with the
+    ///   section's first paragraph opening beneath it on the column's own first-line indent.
+    ///
+    /// Both are refused on recognized and synthetic text, where sizes and styles say nothing, and
+    /// on a leader entry, a caption or a line that closes a sentence. `isTitleCase` is not asked:
+    /// IEEEtran sets its subsection titles in sentence case.
+    static func academicSectionTitles(in lines: [TextLine], body: CGFloat, page: PageContent) -> [TextLine] {
+        guard !page.hasSyntheticTextStyle, !page.recognized else { return [] }
+        var titles: [TextLine] = []
+        for line in lines.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
+            guard !line.monospaced, line.text.count >= 3, line.text.count < 200,
+                  !isContentsEntry(line.text), !isCaption(line.text), !line.text.contains("...."),
+                  line.text.filter(\.isLetter).count >= 3,
+                  let last = lastCharacterBeforeMarker(line), !".,;:".contains(last) else { continue }
+            let column = lines.filter { other in
+                other != line && other.rect.minX < line.rect.maxX && other.rect.maxX > line.rect.minX
+            }
+            guard let measure = columnMeasure(of: column) else { continue }
+            // The nearest lines above and below the title in its column.
+            let above = column.filter { $0.rect.minY >= line.rect.maxY - body * 0.25 }
+                .min { $0.rect.minY < $1.rect.minY }
+            let below = column.filter { $0.rect.maxY <= line.rect.minY + body * 0.25 }
+                .max { $0.rect.maxY < $1.rect.maxY }
+            // The rest of the title above: its next line, stacked under it on the same centre at its
+            // own size, or wrapped into the small capitals' size (`continuesCentredTitle`).
+            if let previous = titles.last, previous == above,
+               continuesCentredTitle(line, after: previous) || stacksUnderHeading(line, after: previous),
+               line.text.filter(\.isLetter).allSatisfy(\.isUppercase), !LabelStyle(line, body: body).bold,
+               isCentred(line, in: measure), !opensHeading(line.text), !endsSentence(previous.text) {
+                titles.append(line)
+                continue
+            }
+            // A section title stands at the body's own size or a little over it; past the heading
+            // threshold `isHeadingSize` already has it. The references head is the page's largest
+            // line, since the bibliography is set smaller than the body (`REFERENCES`, 9.96 over
+            // 7.97), so the band reaches a quarter above the body.
+            guard line.fontSize >= body * 0.9, line.fontSize <= body * 1.25 else { continue }
+            let spacedAbove = above.map { $0.rect.minY - line.rect.maxY >= body * 0.5 } ?? true
+                || above.map(titles.contains) == true
+            // The text a centred title heads opens on the measure's own left edge, or on the
+            // column's first-line indent inside it, directly beneath the title's last line. A
+            // table's or display's title is centred over its table instead, and the line beneath
+            // it is centred too (FAA page 416's `NONDIRECTIONAL RADIO BEACON (NDB)` over
+            // `(Usable radius distances for all altitudes)`).
+            func opensText() -> Bool {
+                var next = below
+                for _ in 0..<4 {
+                    guard let candidate = next else { return false }
+                    guard isCentred(candidate, in: measure), candidate.fontSize <= line.fontSize + 0.5,
+                          candidate.text.filter(\.isLetter).allSatisfy(\.isUppercase) else {
+                        let inset = candidate.rect.minX - measure.left
+                        return candidate.fontSize <= body * 1.1 && inset >= -measure.size * 0.5
+                            && inset <= measure.size * 1.5 && candidate.rect.width >= measure.size * 4
+                    }
+                    next = column.filter { $0.rect.maxY <= candidate.rect.minY + body * 0.25 }
+                        .max { $0.rect.maxY < $1.rect.maxY }
+                }
+                return false
+            }
+            // Small capitals are set in the text face, never bold: a bold label over its paragraph
+            // is `sectionLabels`' recurring-style evidence, whatever its measure leaves beside it
+            // (Our Flag page 15 centres `BENNINGTON FLAG` among five flush flag labels, #76).
+            // The title opens the paper's own section sequence — a Roman numeral and a period, an
+            // appendix or one of the standard unnumbered heads. A centred line of capitals with no
+            // such place in the sequence is a caption block (a slip opinion's `RELENTLESS, INC., ET
+            // AL., PETITIONERS` among the lines of its case caption).
+            if line.text.filter(\.isLetter).allSatisfy(\.isUppercase), !LabelStyle(line, body: body).bold,
+               opensWithRomanNumeral(line.text) || isUnnumberedSectionHead(line.text),
+               isCentred(line, in: measure), spacedAbove, opensText() {
+                titles.append(line)
+                continue
+            }
+            // A subsection title: an italic lettered marker on the column's own left edge.
+            guard line.text.range(of: "^[A-Z]\\.\\s+\\p{Lu}", options: .regularExpression) != nil,
+                  abs(line.fontSize - body) <= body * 0.1, LabelStyle(line, body: body).italic,
+                  abs(line.rect.minX - measure.left) <= body * 0.5,
+                  line.rect.maxX <= measure.right - body, spacedAbove,
+                  let below, line.rect.minY - below.rect.maxY >= body * 0.5,
+                  line.rect.minY - below.rect.maxY <= body * 2,
+                  abs(below.fontSize - body) <= body * 0.1, !LabelStyle(below, body: body).italic,
+                  !LabelStyle(below, body: body).bold, !isList(below.text), below.rect.width >= body * 8,
+                  below.rect.minX - measure.left >= -body * 0.5,
+                  below.rect.minX - measure.left <= body * 1.5 else { continue }
+            titles.append(line)
+        }
+        return titles
+    }
+
+    /// Whether the page sets a run of wrapped lines at `indent` under lines on `edge`, in `size`:
+    /// at least two lines at the indent whose nearest line above is on the edge, at least one
+    /// whose nearest line above is itself at the indent, and an indented line reaching the edge
+    /// lines' own right margin (#162).
+    ///
+    /// A hanging-indent list whose entries are set with no space between them (IEEEtran's
+    /// bibliography and its numbered algorithm steps) cannot be told from a first-line indent by
+    /// the space above an entry, which `blocks`' opening rule asks for (#147), nor by #134's
+    /// sentence test, since a reference's first line routinely ends in a full stop or a semicolon
+    /// (`[4] L. Meyn. A closed-form solution to multi-point scheduling problems.`). The run is the
+    /// evidence instead: a first-line indent never sets two lines in a row at the indent, because
+    /// the paragraph returns to the edge beneath its opening line.
+    static func hangingRun(in lines: [TextLine], edge: CGFloat, indent: CGFloat, size: CGFloat) -> Bool {
+        func sized(_ line: TextLine) -> Bool {
+            !line.monospaced && abs(line.fontSize - size) <= size * 0.1
+        }
+        func onEdge(_ line: TextLine) -> Bool { sized(line) && abs(line.rect.minX - edge) <= size * 0.5 }
+        func hangs(_ line: TextLine) -> Bool { sized(line) && abs(line.rect.minX - indent) <= size * 0.5 }
+        func nearestAbove(_ line: TextLine) -> TextLine? {
+            lines.filter { other in
+                other != line && !sameRow(other.rect, line.rect) && other.rect.minY >= line.rect.maxY - size * 0.4
+                    && other.rect.minX < line.rect.maxX && other.rect.maxX > line.rect.minX
+            }.min { $0.rect.minY < $1.rect.minY }
+        }
+        var openings = 0
+        var runs = 0
+        for line in lines where hangs(line) {
+            guard let above = nearestAbove(line), above.rect.minY - line.rect.maxY < size * 0.9 else { continue }
+            if onEdge(above) { openings += 1 } else if hangs(above) { runs += 1 }
+        }
+        guard openings >= 2, runs >= 1, let right = lines.filter(onEdge).map(\.rect.maxX).max() else { return false }
+        return lines.contains { hangs($0) && $0.rect.maxX >= right - size * 0.5 }
+    }
+
     /// Small labels inside preserved images must not turn the surrounding prose into headings.
     /// Keep the page estimate when too little reflowable text remains to establish a body size.
     static func headingBodySize(_ lines: [TextLine], pageBody: CGFloat) -> CGFloat {
@@ -2710,6 +2910,9 @@ enum LayoutReconstructor {
         let labels = sectionLabels(in: free.map(untagged), body: reflowBody,
                                    headingThreshold: headingThreshold, page: page, styles: labelStyles)
             + boxTitles(in: free.map(untagged), page: page)
+            // A two-column paper's centred small-capital sections and italic lettered subsections,
+            // both set at the body's own size (#162).
+            + academicSectionTitles(in: free.map(untagged), body: reflowBody, page: page)
         // Edges whose entries wrap into a hanging indent (#134): a label's second line hanging on
         // one continues its title, and a line back on the edge opens the next entry.
         let entryEdges = page.hasSyntheticTextStyle || page.recognized ? [] : hangingEntryEdges(free.map(untagged), body: reflowBody)
@@ -3117,8 +3320,15 @@ enum LayoutReconstructor {
             // header row (page 70's `Identification 1 2 3 4 5 6 7`, which a margin mark stretches).
             // Character density is not asked: Our Flag's pledge (page 51) justifies bold capitals
             // loosely across the measure.
+            // An entry's own first line can be a list of initials rather than words (a reference's
+            // authors, `[7] J. L. Rios, I. S. Smith, P. Venkatesan, D. R. Smith, V. Baskaran,`), so
+            // the hanging-run path below asks only for real words on it (#162).
+            let hangingEntry = line.rect.minX - prev.rect.minX >= body * 1.5
+                && line.rect.minX - prev.rect.minX <= body * 4
+                && hangingRun(in: free, edge: prev.rect.minX, indent: line.rect.minX, size: line.fontSize)
             guard let opening, !line.monospaced, abs(line.fontSize - prev.fontSize) <= max(line.fontSize, prev.fontSize) * 0.1,
-                  prev.rect.width >= body * 12, isWordy(prev.text)
+                  prev.rect.width >= body * 12,
+                  isWordy(prev.text) || hangingEntry && wordShare(prev.text).words >= 3
             else { return false }
             if opening.line.readingRect != nil {
                 let cap = opening.line
@@ -3150,7 +3360,11 @@ enum LayoutReconstructor {
             // are set apart by space, so the gap above the first line exceeds the leading beneath it
             // by at least 0.4 body; an indented paragraph or quotation under a full line has no
             // such space above that line.
-            guard -indent >= body * 1.5, -indent <= body * 3, fillsMeasure(onEdgeOf: prev) else { return false }
+            guard -indent >= body * 1.5, -indent <= body * 4, fillsMeasure(onEdgeOf: prev) else { return false }
+            // A list whose entries are set with no space between them shows its hanging indent in
+            // the runs of wrapped lines instead (IEEEtran's references and algorithm steps, #162).
+            if hangingEntry { return true }
+            guard -indent <= body * 3 else { return false }
             let leading = prev.rect.minY - line.rect.maxY
             guard let above = free.filter({ $0 != prev && !sameRow($0.rect, prev.rect) && $0.rect.minY >= prev.rect.maxY - body * 0.4
                 && $0.rect.minX < prev.rect.maxX && $0.rect.maxX > prev.rect.minX }).min(by: { $0.rect.minY < $1.rect.minY })
@@ -3574,7 +3788,11 @@ enum LayoutReconstructor {
                    sameRow(row.first.rect, line.rect) && abs(row.first.fontSize - line.fontSize) <= line.fontSize * 0.1
                     && line.rect.minX - row.last.rect.maxX <= line.fontSize * 3
                     || continuesHeading(text.text, with: line, after: row.last)
-                    || continuesHangingTitle(line, after: row.last, heading: text.text) {
+                    || continuesHangingTitle(line, after: row.last, heading: text.text)
+                    // A centred title's second line, set wholly in its small capitals (#162).
+                    || labels.contains(untagged(line)) && labels.contains(untagged(row.last))
+                        && continuesCentredTitle(line, after: row.last)
+                        && !LayoutReconstructor.endsSentence(text.text) && !opensHeading(line.text) {
                     result[last].content = .heading(id: id, text: join(text, line.content, vocabulary: vocabulary,
                         page: page.number, warnings: &warnings), level: level)
                     headingRow = (row.first, line)

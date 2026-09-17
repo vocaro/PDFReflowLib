@@ -1,0 +1,2329 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        318.96378080000011,
+        510.27249919999997,
+        8.0159616000000256,
+        192.03338880000013
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "0 9 8 10 7 13"
+        }
+      ],
+      "text" : "0 9 8 10 7 13"
+    },
+    {
+      "rect" : [
+        328.92678080000013,
+        510.27249919999997,
+        8.0159616000000256,
+        207.72458879999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "0.55 64.71 88.95 121.83 182.95 229.67"
+        }
+      ],
+      "text" : "0.55 64.71 88.95 121.83 182.95 229.67"
+    },
+    {
+      "rect" : [
+        338.88878080000012,
+        510.27249919999997,
+        8.0159616000000256,
+        207.72458879999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "0.55 64.71 88.95 121.83 182.95 229.67"
+        }
+      ],
+      "text" : "0.55 64.71 88.95 121.83 182.95 229.67"
+    },
+    {
+      "rect" : [
+        244.083,
+        734.52407840000001,
+        123.83511800000005,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "TABLE I: A 6-flight example."
+        }
+      ],
+      "text" : "TABLE I: A 6-flight example."
+    },
+    {
+      "rect" : [
+        359.21278080000013,
+        510.27249919999997,
+        8.0159616000000256,
+        155.42357760000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "1 2 6 4 13"
+        }
+      ],
+      "text" : "1 2 6 4 13"
+    },
+    {
+      "rect" : [
+        369.17578080000015,
+        510.27249919999997,
+        8.0159616000000256,
+        171.11477759999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "40.34 93.62 154.82 202.98 231.38"
+        }
+      ],
+      "text" : "40.34 93.62 154.82 202.98 231.38"
+    },
+    {
+      "rect" : [
+        379.13778080000014,
+        510.27249919999997,
+        8.0159616000000256,
+        171.11477759999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "43.63 96.91 158.11 206.27 234.67"
+        }
+      ],
+      "text" : "43.63 96.91 158.11 206.27 234.67"
+    },
+    {
+      "rect" : [
+        298.63978080000004,
+        390.31999999999999,
+        8.0159616000000256,
+        49.315200000000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "SCHEDULE:"
+        }
+      ],
+      "text" : "SCHEDULE:"
+    },
+    {
+      "rect" : [
+        309.00078080000003,
+        390.31999999999999,
+        8.0159616000000824,
+        103.05980160000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Flight 0–Aircraf type: B777"
+        }
+      ],
+      "text" : "Flight 0–Aircraf type: B777"
+    },
+    {
+      "rect" : [
+        318.96378080000005,
+        390.31999999999999,
+        8.0159616000000256,
+        27.392352000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "NODE: "
+        }
+      ],
+      "text" : "NODE: "
+    },
+    {
+      "rect" : [
+        328.92678080000007,
+        390.31999999999999,
+        8.0159616000000256,
+        19.089465599999983
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "ETA: "
+        }
+      ],
+      "text" : "ETA: "
+    },
+    {
+      "rect" : [
+        338.88878080000006,
+        390.31999999999999,
+        8.0159616000000256,
+        18.596313599999974
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "STA: "
+        }
+      ],
+      "text" : "STA: "
+    },
+    {
+      "rect" : [
+        349.24978080000005,
+        390.31999999999999,
+        8.0159616000000824,
+        103.05980160000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Flight 1–Aircraf type: B777"
+        }
+      ],
+      "text" : "Flight 1–Aircraf type: B777"
+    },
+    {
+      "rect" : [
+        359.21278080000008,
+        390.31999999999999,
+        8.0159616000000256,
+        27.392352000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "NODE: "
+        }
+      ],
+      "text" : "NODE: "
+    },
+    {
+      "rect" : [
+        369.1757808000001,
+        390.31999999999999,
+        8.0159616000000256,
+        19.089465599999983
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "ETA: "
+        }
+      ],
+      "text" : "ETA: "
+    },
+    {
+      "rect" : [
+        379.13778080000009,
+        390.31999999999999,
+        8.0159616000000256,
+        18.596313599999974
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "STA: "
+        }
+      ],
+      "text" : "STA: "
+    },
+    {
+      "rect" : [
+        389.49878080000002,
+        390.31999999999999,
+        8.0159616000000824,
+        103.05980160000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Flight 2–Aircraf type: B777"
+        }
+      ],
+      "text" : "Flight 2–Aircraf type: B777"
+    },
+    {
+      "rect" : [
+        399.46178080000004,
+        390.31999999999999,
+        8.0159616000000824,
+        202.14748800000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "NODE: 3 7 13"
+        }
+      ],
+      "text" : "NODE: 3 7 13"
+    },
+    {
+      "rect" : [
+        409.42478080000006,
+        390.31999999999999,
+        8.0159616000000824,
+        217.83868799999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "ETA: 125.62 182.82 229.54"
+        }
+      ],
+      "text" : "ETA: 125.62 182.82 229.54"
+    },
+    {
+      "rect" : [
+        419.38678080000005,
+        390.31999999999999,
+        8.0159616000000824,
+        217.83868799999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "STA: 135.75 192.95 239.67"
+        }
+      ],
+      "text" : "STA: 135.75 192.95 239.67"
+    },
+    {
+      "rect" : [
+        429.74778080000004,
+        390.31999999999999,
+        8.0159616000000824,
+        103.05980160000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Flight 3–Aircraf type: B737"
+        }
+      ],
+      "text" : "Flight 3–Aircraf type: B737"
+    },
+    {
+      "rect" : [
+        439.71078080000007,
+        390.31999999999999,
+        8.0159616000000824,
+        165.53767680000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "NODE: 5 13"
+        }
+      ],
+      "text" : "NODE: 5 13"
+    },
+    {
+      "rect" : [
+        449.67378080000009,
+        390.31999999999999,
+        8.0159616000000824,
+        181.22887680000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "ETA: 154.4 231.36"
+        }
+      ],
+      "text" : "ETA: 154.4 231.36"
+    },
+    {
+      "rect" : [
+        459.63578080000008,
+        390.31999999999999,
+        8.0159616000000824,
+        181.22887680000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "STA: 167.71 244.67"
+        }
+      ],
+      "text" : "STA: 167.71 244.67"
+    },
+    {
+      "rect" : [
+        469.99778080000004,
+        390.31999999999999,
+        8.0159616000000824,
+        103.05980160000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Flight 4–Aircraf type: B777"
+        }
+      ],
+      "text" : "Flight 4–Aircraf type: B777"
+    },
+    {
+      "rect" : [
+        479.95978080000003,
+        390.31999999999999,
+        8.0159616000000824,
+        238.75729920000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "NODE: 11 10 7 13"
+        }
+      ],
+      "text" : "NODE: 11 10 7 13"
+    },
+    {
+      "rect" : [
+        489.92278080000006,
+        390.31999999999999,
+        8.0159616000000824,
+        254.44849920000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "ETA: 45.66 123.58 184.7 231.42"
+        }
+      ],
+      "text" : "ETA: 45.66 123.58 184.7 231.42"
+    },
+    {
+      "rect" : [
+        499.88478080000004,
+        390.31999999999999,
+        8.0159616000000824,
+        254.44849920000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "STA: 63.91 141.83 202.95 249.67"
+        }
+      ],
+      "text" : "STA: 63.91 141.83 202.95 249.67"
+    },
+    {
+      "rect" : [
+        510.24678079999995,
+        390.31999999999999,
+        8.0159616000000256,
+        103.05980160000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "Flight 5–Aircraf type: B737"
+        }
+      ],
+      "text" : "Flight 5–Aircraf type: B737"
+    },
+    {
+      "rect" : [
+        520.2087808,
+        390.31999999999999,
+        8.0159615999999687,
+        238.75729920000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "NODE: 12 6 4 13"
+        }
+      ],
+      "text" : "NODE: 12 6 4 13"
+    },
+    {
+      "rect" : [
+        530.17178080000008,
+        390.31999999999999,
+        8.0159615999999687,
+        254.44849920000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "ETA: 123.56 154.36 202.52 230.92"
+        }
+      ],
+      "text" : "ETA: 123.56 154.36 202.52 230.92"
+    },
+    {
+      "rect" : [
+        540.13478080000016,
+        390.31999999999999,
+        8.0159615999999687,
+        254.44849920000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.9664000000000001,
+          "text" : "STA: 147.31 178.11 226.27 254.67"
+        }
+      ],
+      "text" : "STA: 147.31 178.11 226.27 254.67"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        349.01507840000005,
+        251.05631099999999,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "table II, only node (node 9) has degree 5, and all the other"
+        }
+      ],
+      "text" : "table II, only node (node 9) has degree 5, and all the other"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        337.05907840000003,
+        123.19751159999998,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "nodes have degree 3 or lower."
+        }
+      ],
+      "text" : "nodes have degree 3 or lower."
+    },
+    {
+      "rect" : [
+        53.836999999999996,
+        313.19207840000001,
+        241.31687590000013,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "VII. C"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "OMPATIBILITY WITH A DISTRIBUTED SYSTEM FOR"
+        }
+      ],
+      "text" : "VII. COMPATIBILITY WITH A DISTRIBUTED SYSTEM FOR"
+    },
+    {
+      "rect" : [
+        103.092,
+        301.66745839999999,
+        142.80825179999999,
+        7.1252693999999792
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701000000000004,
+          "text" : "MANAGING ARRIVAL AIR TRAFFIC"
+        }
+      ],
+      "text" : "MANAGING ARRIVAL AIR TRAFFIC"
+    },
+    {
+      "rect" : [
+        58.927,
+        282.48207840000003,
+        241.09491999999992,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Arrival traffic in a given TRACON [5] can reach high"
+        }
+      ],
+      "text" : "Arrival traffic in a given TRACON [5] can reach high"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        270.52707840000005,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "congestion. This, in turn, can lead to the necessity to re-"
+        }
+      ],
+      "text" : "congestion. This, in turn, can lead to the necessity to re-"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        258.57207840000007,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "compute a given arrival schedule quickly and reliably. If such"
+        }
+      ],
+      "text" : "compute a given arrival schedule quickly and reliably. If such"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        246.61707840000003,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "computations and conformance monitoring are performed by"
+        }
+      ],
+      "text" : "computations and conformance monitoring are performed by"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        234.66207840000001,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "a single software thread, this thread becomes a single point of"
+        }
+      ],
+      "text" : "a single software thread, this thread becomes a single point of"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        222.70607840000002,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "failure. Therefore, a distributed system may be desirable for"
+        }
+      ],
+      "text" : "failure. Therefore, a distributed system may be desirable for"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        210.75107840000001,
+        182.86352300000001,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "carrying out the scheduling described above."
+        }
+      ],
+      "text" : "carrying out the scheduling described above."
+    },
+    {
+      "rect" : [
+        58.927,
+        198.18607840000001,
+        241.09491999999997,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Whereas each step of the algorithm formulated in section V,"
+        }
+      ],
+      "text" : "Whereas each step of the algorithm formulated in section V,"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        186.2310784,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "including the ordering by priority, can be executed by either a"
+        }
+      ],
+      "text" : "including the ordering by priority, can be executed by either a"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        174.27607839999999,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "centralized system or a participant in a distributed system, an"
+        }
+      ],
+      "text" : "centralized system or a participant in a distributed system, an"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        162.3200784,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "implementation of a distributed system would require further"
+        }
+      ],
+      "text" : "implementation of a distributed system would require further"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        150.36507839999999,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "supporting functionality and offer new capabilities, which we"
+        }
+      ],
+      "text" : "supporting functionality and offer new capabilities, which we"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        138.41007839999997,
+        116.90114840000004,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "now describe in more detail."
+        }
+      ],
+      "text" : "now describe in more detail."
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        114.77221819999998,
+        150.23600800000006,
+        8.5877612000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "italic" : true,
+          "text" : "A. Required supporting functionality"
+        }
+      ],
+      "text" : "A. Required supporting functionality"
+    },
+    {
+      "rect" : [
+        58.927,
+        97.314078399999985,
+        241.09491999999997,
+        8.9065643999999935
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "The participants of a distributed system, analogous in some"
+        }
+      ],
+      "text" : "The participants of a distributed system, analogous in some"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        85.358078399999982,
+        251.05752000000001,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "ways to instances of a USS (see, e.g., Ref. [7] and Refs"
+        }
+      ],
+      "text" : "ways to instances of a USS (see, e.g., Ref. [7] and Refs"
+    },
+    {
+      "rect" : [
+        48.963999999999999,
+        73.403078399999984,
+        251.0575199999999,
+        8.9065643999999935
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "therein), would each carry out some of the algorithm described"
+        }
+      ],
+      "text" : "therein), would each carry out some of the algorithm described"
+    },
+    {
+      "rect" : [
+        311.97800000000001,
+        349.01507840000005,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "in section IV, maintaining and sharing the required data with"
+        }
+      ],
+      "text" : "in section IV, maintaining and sharing the required data with"
+    },
+    {
+      "rect" : [
+        311.97800000000001,
+        337.05907840000003,
+        88.5974018,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "the other participants."
+        }
+      ],
+      "text" : "the other participants."
+    },
+    {
+      "rect" : [
+        321.94,
+        325.05507840000001,
+        241.09612759999999,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Each such participant, called here an Arrival Fix Schedule"
+        }
+      ],
+      "text" : "Each such participant, called here an Arrival Fix Schedule"
+    },
+    {
+      "rect" : [
+        311.97800000000007,
+        313.10007840000003,
+        251.05845513999998,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Assistant (AFSA), is likely to be handling the schedule S(f)"
+        }
+      ],
+      "text" : "Assistant (AFSA), is likely to be handling the schedule S(f)"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        301.14507840000005,
+        251.060879,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "for one or more flights f, and is unlikely to share the task"
+        }
+      ],
+      "text" : "for one or more flights f, and is unlikely to share the task"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        289.19007840000006,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "of computing the schedule for a given individual flight with"
+        }
+      ],
+      "text" : "of computing the schedule for a given individual flight with"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        277.23407840000004,
+        251.05752000000007,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "other AFSAs. With this stipulation, an AFSA handling the"
+        }
+      ],
+      "text" : "other AFSAs. With this stipulation, an AFSA handling the"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        265.27907840000006,
+        251.06112000000007,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "schedule for flight f is likely to be subject to the following"
+        }
+      ],
+      "text" : "schedule for flight f is likely to be subject to the following"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        253.32407840000002,
+        54.784337400000027,
+        8.9065643999999793
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "requirements:"
+        }
+      ],
+      "text" : "requirements:"
+    },
+    {
+      "rect" : [
+        318.62300000000016,
+        239.27307840000003,
+        244.41398599999991,
+        10.997271600000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "1) The ability to determine, for all other flights f"
+        },
+        {
+          "baselineOffset" : 3.6150000000000091,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "′"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "currently"
+        }
+      ],
+      "text" : "1) The ability to determine, for all other flights f′currently"
+    },
+    {
+      "rect" : [
+        331.90300000000013,
+        227.31807840000002,
+        231.13232000000005,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "in the total schedule (i.e., flights handled by this or other"
+        }
+      ],
+      "text" : "in the total schedule (i.e., flights handled by this or other"
+    },
+    {
+      "rect" : [
+        331.90300000000013,
+        215.36207840000003,
+        231.13716399999998,
+        10.99827160000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "AFSAs), whether f"
+        },
+        {
+          "baselineOffset" : 3.6160000000000139,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9738000000000007,
+          "text" : "′ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "has a higher or lower scheduling"
+        }
+      ],
+      "text" : "AFSAs), whether f′ has a higher or lower scheduling"
+    },
+    {
+      "rect" : [
+        331.90300000000008,
+        203.40707840000002,
+        84.206095800000014,
+        9.0659660000000315
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "priority than f does."
+        }
+      ],
+      "text" : "priority than f does."
+    },
+    {
+      "rect" : [
+        318.6230000000001,
+        191.4520784,
+        244.41246579999989,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "2) The ability to query the other AFSAs for the presence of"
+        }
+      ],
+      "text" : "2) The ability to query the other AFSAs for the presence of"
+    },
+    {
+      "rect" : [
+        331.90300000000013,
+        179.49707839999999,
+        231.13231999999994,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "flights that (i) have already been scheduled and (ii) share"
+        }
+      ],
+      "text" : "flights that (i) have already been scheduled and (ii) share"
+    },
+    {
+      "rect" : [
+        331.90300000000013,
+        167.54207839999998,
+        185.35664999999983,
+        9.0659660000000315
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "one or more route nodes with the route of f."
+        }
+      ],
+      "text" : "one or more route nodes with the route of f."
+    },
+    {
+      "rect" : [
+        318.6230000000001,
+        155.58607839999999,
+        244.41246580000001,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "3) The ability to determine whether all flights with higher"
+        }
+      ],
+      "text" : "3) The ability to determine whether all flights with higher"
+    },
+    {
+      "rect" : [
+        331.90300000000013,
+        143.63107839999998,
+        229.49083580000001,
+        9.0659660000000315
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "scheduling priority than f have already been scheduled."
+        }
+      ],
+      "text" : "scheduling priority than f have already been scheduled."
+    },
+    {
+      "rect" : [
+        318.62300000000016,
+        131.67607839999997,
+        244.41246579999995,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "4) The ability to share its most recently (re)computed sched-"
+        }
+      ],
+      "text" : "4) The ability to share its most recently (re)computed sched-"
+    },
+    {
+      "rect" : [
+        331.90300000000013,
+        119.72107839999998,
+        149.89568280000003,
+        9.0659660000000031
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "ule S(f) with the enquiring AFSAs."
+        }
+      ],
+      "text" : "ule S(f) with the enquiring AFSAs."
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        100.85321819999999,
+        81.105526600000019,
+        8.5877612000000028
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "italic" : true,
+          "text" : "B. New capabilities"
+        }
+      ],
+      "text" : "B. New capabilities"
+    },
+    {
+      "rect" : [
+        321.94000000000017,
+        85.358078399999982,
+        241.09491999999989,
+        8.9065644000000077
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "Steps 9 and, if executed, step 10 of the algorithm in section"
+        }
+      ],
+      "text" : "Steps 9 and, if executed, step 10 of the algorithm in section"
+    },
+    {
+      "rect" : [
+        311.97800000000018,
+        73.343302799999975,
+        251.05755180000006,
+        8.9663400000000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626000000000001,
+          "text" : "V both involve selecting an STA (for a given flight at a given"
+        }
+      ],
+      "text" : "V both involve selecting an STA (for a given flight at a given"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "ntrs-20190030725-dasc-2019",
+  "graphics" : [
+    [
+      62.399000000000001,
+      384.34199999999998,
+      232.56000000000006,
+      235.00732000000005
+    ],
+    [
+      305.90700000000004,
+      382.34199999999998,
+      4,
+      343.63099999999997
+    ],
+    [
+      346.15600000000006,
+      382.34199999999998,
+      4,
+      343.63099999999997
+    ],
+    [
+      386.40500000000003,
+      382.34199999999998,
+      4,
+      343.63099999999997
+    ],
+    [
+      426.65400000000005,
+      382.34199999999998,
+      4,
+      343.63099999999997
+    ],
+    [
+      466.90300000000008,
+      382.34199999999998,
+      4,
+      343.63099999999997
+    ],
+    [
+      507.15300000000008,
+      382.34199999999998,
+      4,
+      343.63099999999997
+    ],
+    [
+      547.40200000000004,
+      382.34199999999998,
+      4,
+      343.63099999999997
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        318.96378080000011,
+        510.27249919999997,
+        8.0159616000000256,
+        192.03338880000013
+      ],
+      "text" : "0 9 8 10 7 13"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        328.92678080000013,
+        510.27249919999997,
+        8.0159616000000256,
+        207.72458879999999
+      ],
+      "text" : "0.55 64.71 88.95 121.83 182.95 229.67"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        338.88878080000012,
+        510.27249919999997,
+        8.0159616000000256,
+        207.72458879999999
+      ],
+      "text" : "0.55 64.71 88.95 121.83 182.95 229.67"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        244.083,
+        734.52407840000001,
+        123.83511800000005,
+        8.9065643999999793
+      ],
+      "text" : "TABLE I: A 6-flight example."
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        359.21278080000013,
+        510.27249919999997,
+        8.0159616000000256,
+        155.42357760000004
+      ],
+      "text" : "1 2 6 4 13"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        369.17578080000015,
+        510.27249919999997,
+        8.0159616000000256,
+        171.11477759999991
+      ],
+      "text" : "40.34 93.62 154.82 202.98 231.38"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        379.13778080000014,
+        510.27249919999997,
+        8.0159616000000256,
+        171.11477759999991
+      ],
+      "text" : "43.63 96.91 158.11 206.27 234.67"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        298.63978080000004,
+        390.31999999999999,
+        8.0159616000000256,
+        49.315200000000004
+      ],
+      "text" : "SCHEDULE:"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        309.00078080000003,
+        390.31999999999999,
+        8.0159616000000824,
+        103.05980160000001
+      ],
+      "text" : "Flight 0–Aircraf type: B777"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        318.96378080000005,
+        390.31999999999999,
+        8.0159616000000256,
+        27.392352000000017
+      ],
+      "text" : "NODE:"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        328.92678080000007,
+        390.31999999999999,
+        8.0159616000000256,
+        19.089465599999983
+      ],
+      "text" : "ETA:"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        338.88878080000006,
+        390.31999999999999,
+        8.0159616000000256,
+        18.596313599999974
+      ],
+      "text" : "STA:"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        349.24978080000005,
+        390.31999999999999,
+        8.0159616000000824,
+        103.05980160000001
+      ],
+      "text" : "Flight 1–Aircraf type: B777"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        359.21278080000008,
+        390.31999999999999,
+        8.0159616000000256,
+        27.392352000000017
+      ],
+      "text" : "NODE:"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        369.1757808000001,
+        390.31999999999999,
+        8.0159616000000256,
+        19.089465599999983
+      ],
+      "text" : "ETA:"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        379.13778080000009,
+        390.31999999999999,
+        8.0159616000000256,
+        18.596313599999974
+      ],
+      "text" : "STA:"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        389.49878080000002,
+        390.31999999999999,
+        8.0159616000000824,
+        103.05980160000001
+      ],
+      "text" : "Flight 2–Aircraf type: B777"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        399.46178080000004,
+        390.31999999999999,
+        8.0159616000000824,
+        202.14748800000001
+      ],
+      "text" : "NODE: 3 7 13"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        409.42478080000006,
+        390.31999999999999,
+        8.0159616000000824,
+        217.83868799999999
+      ],
+      "text" : "ETA: 125.62 182.82 229.54"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        419.38678080000005,
+        390.31999999999999,
+        8.0159616000000824,
+        217.83868799999999
+      ],
+      "text" : "STA: 135.75 192.95 239.67"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        429.74778080000004,
+        390.31999999999999,
+        8.0159616000000824,
+        103.05980160000001
+      ],
+      "text" : "Flight 3–Aircraf type: B737"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        439.71078080000007,
+        390.31999999999999,
+        8.0159616000000824,
+        165.53767680000004
+      ],
+      "text" : "NODE: 5 13"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        449.67378080000009,
+        390.31999999999999,
+        8.0159616000000824,
+        181.22887680000002
+      ],
+      "text" : "ETA: 154.4 231.36"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        459.63578080000008,
+        390.31999999999999,
+        8.0159616000000824,
+        181.22887680000002
+      ],
+      "text" : "STA: 167.71 244.67"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        469.99778080000004,
+        390.31999999999999,
+        8.0159616000000824,
+        103.05980160000001
+      ],
+      "text" : "Flight 4–Aircraf type: B777"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        479.95978080000003,
+        390.31999999999999,
+        8.0159616000000824,
+        238.75729920000009
+      ],
+      "text" : "NODE: 11 10 7 13"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        489.92278080000006,
+        390.31999999999999,
+        8.0159616000000824,
+        254.44849920000007
+      ],
+      "text" : "ETA: 45.66 123.58 184.7 231.42"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        499.88478080000004,
+        390.31999999999999,
+        8.0159616000000824,
+        254.44849920000007
+      ],
+      "text" : "STA: 63.91 141.83 202.95 249.67"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        510.24678079999995,
+        390.31999999999999,
+        8.0159616000000256,
+        103.05980160000001
+      ],
+      "text" : "Flight 5–Aircraf type: B737"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        520.2087808,
+        390.31999999999999,
+        8.0159615999999687,
+        238.75729920000009
+      ],
+      "text" : "NODE: 12 6 4 13"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        530.17178080000008,
+        390.31999999999999,
+        8.0159615999999687,
+        254.44849920000007
+      ],
+      "text" : "ETA: 123.56 154.36 202.52 230.92"
+    },
+    {
+      "fontSize" : 8.9664000000000001,
+      "monospaced" : false,
+      "rect" : [
+        540.13478080000016,
+        390.31999999999999,
+        8.0159615999999687,
+        254.44849920000007
+      ],
+      "text" : "STA: 147.31 178.11 226.27 254.67"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        349.01507840000005,
+        251.05631099999999,
+        9.0659660000000031
+      ],
+      "text" : "table II, only node (node 9) has degree 5, and all the other"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        337.05907840000003,
+        123.19751159999998,
+        8.9065643999999793
+      ],
+      "text" : "nodes have degree 3 or lower."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        53.836999999999996,
+        313.19207840000001,
+        241.31687590000013,
+        8.9065643999999793
+      ],
+      "text" : "VII. COMPATIBILITY WITH A DISTRIBUTED SYSTEM FOR"
+    },
+    {
+      "fontSize" : 7.9701000000000004,
+      "monospaced" : false,
+      "rect" : [
+        103.092,
+        301.66745839999999,
+        142.80825179999999,
+        7.1252693999999792
+      ],
+      "text" : "MANAGING ARRIVAL AIR TRAFFIC"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.927,
+        282.48207840000003,
+        241.09491999999992,
+        8.9065643999999793
+      ],
+      "text" : "Arrival traffic in a given TRACON [5] can reach high"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        270.52707840000005,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "congestion. This, in turn, can lead to the necessity to re-"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        258.57207840000007,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "compute a given arrival schedule quickly and reliably. If such"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        246.61707840000003,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "text" : "computations and conformance monitoring are performed by"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        234.66207840000001,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "text" : "a single software thread, this thread becomes a single point of"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        222.70607840000002,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "text" : "failure. Therefore, a distributed system may be desirable for"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        210.75107840000001,
+        182.86352300000001,
+        8.9065644000000077
+      ],
+      "text" : "carrying out the scheduling described above."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.927,
+        198.18607840000001,
+        241.09491999999997,
+        8.9065644000000077
+      ],
+      "text" : "Whereas each step of the algorithm formulated in section V,"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        186.2310784,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "text" : "including the ordering by priority, can be executed by either a"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        174.27607839999999,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "text" : "centralized system or a participant in a distributed system, an"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        162.3200784,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "text" : "implementation of a distributed system would require further"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        150.36507839999999,
+        251.0575199999999,
+        8.9065644000000077
+      ],
+      "text" : "supporting functionality and offer new capabilities, which we"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        138.41007839999997,
+        116.90114840000004,
+        8.9065644000000077
+      ],
+      "text" : "now describe in more detail."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        114.77221819999998,
+        150.23600800000006,
+        8.5877612000000028
+      ],
+      "text" : "A. Required supporting functionality"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        58.927,
+        97.314078399999985,
+        241.09491999999997,
+        8.9065643999999935
+      ],
+      "text" : "The participants of a distributed system, analogous in some"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        85.358078399999982,
+        251.05752000000001,
+        8.9065644000000077
+      ],
+      "text" : "ways to instances of a USS (see, e.g., Ref. [7] and Refs"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        48.963999999999999,
+        73.403078399999984,
+        251.0575199999999,
+        8.9065643999999935
+      ],
+      "text" : "therein), would each carry out some of the algorithm described"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000001,
+        349.01507840000005,
+        251.0575199999999,
+        8.9065643999999793
+      ],
+      "text" : "in section IV, maintaining and sharing the required data with"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000001,
+        337.05907840000003,
+        88.5974018,
+        8.9065643999999793
+      ],
+      "text" : "the other participants."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.94,
+        325.05507840000001,
+        241.09612759999999,
+        8.9065643999999793
+      ],
+      "text" : "Each such participant, called here an Arrival Fix Schedule"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000007,
+        313.10007840000003,
+        251.05845513999998,
+        9.0659660000000031
+      ],
+      "text" : "Assistant (AFSA), is likely to be handling the schedule S(f)"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        301.14507840000005,
+        251.060879,
+        9.0659660000000031
+      ],
+      "text" : "for one or more flights f, and is unlikely to share the task"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        289.19007840000006,
+        251.05751999999995,
+        8.9065643999999793
+      ],
+      "text" : "of computing the schedule for a given individual flight with"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        277.23407840000004,
+        251.05752000000007,
+        8.9065643999999793
+      ],
+      "text" : "other AFSAs. With this stipulation, an AFSA handling the"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        265.27907840000006,
+        251.06112000000007,
+        9.0659660000000031
+      ],
+      "text" : "schedule for flight f is likely to be subject to the following"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        253.32407840000002,
+        54.784337400000027,
+        8.9065643999999793
+      ],
+      "text" : "requirements:"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        318.62300000000016,
+        239.27307840000003,
+        244.41398599999991,
+        10.997271600000005
+      ],
+      "text" : "1) The ability to determine, for all other flights f′currently"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        331.90300000000013,
+        227.31807840000002,
+        231.13232000000005,
+        8.9065644000000077
+      ],
+      "text" : "in the total schedule (i.e., flights handled by this or other"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        331.90300000000013,
+        215.36207840000003,
+        231.13716399999998,
+        10.99827160000001
+      ],
+      "text" : "AFSAs), whether f′ has a higher or lower scheduling"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        331.90300000000008,
+        203.40707840000002,
+        84.206095800000014,
+        9.0659660000000315
+      ],
+      "text" : "priority than f does."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        318.6230000000001,
+        191.4520784,
+        244.41246579999989,
+        8.9065644000000077
+      ],
+      "text" : "2) The ability to query the other AFSAs for the presence of"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        331.90300000000013,
+        179.49707839999999,
+        231.13231999999994,
+        8.9065644000000077
+      ],
+      "text" : "flights that (i) have already been scheduled and (ii) share"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        331.90300000000013,
+        167.54207839999998,
+        185.35664999999983,
+        9.0659660000000315
+      ],
+      "text" : "one or more route nodes with the route of f."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        318.6230000000001,
+        155.58607839999999,
+        244.41246580000001,
+        8.9065644000000077
+      ],
+      "text" : "3) The ability to determine whether all flights with higher"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        331.90300000000013,
+        143.63107839999998,
+        229.49083580000001,
+        9.0659660000000315
+      ],
+      "text" : "scheduling priority than f have already been scheduled."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        318.62300000000016,
+        131.67607839999997,
+        244.41246579999995,
+        8.9065644000000077
+      ],
+      "text" : "4) The ability to share its most recently (re)computed sched-"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        331.90300000000013,
+        119.72107839999998,
+        149.89568280000003,
+        9.0659660000000031
+      ],
+      "text" : "ule S(f) with the enquiring AFSAs."
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        100.85321819999999,
+        81.105526600000019,
+        8.5877612000000028
+      ],
+      "text" : "B. New capabilities"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        321.94000000000017,
+        85.358078399999982,
+        241.09491999999989,
+        8.9065644000000077
+      ],
+      "text" : "Steps 9 and, if executed, step 10 of the algorithm in section"
+    },
+    {
+      "fontSize" : 9.9626000000000001,
+      "monospaced" : false,
+      "rect" : [
+        311.97800000000018,
+        73.343302799999975,
+        251.05755180000006,
+        8.9663400000000024
+      ],
+      "text" : "V both involve selecting an STA (for a given flight at a given"
+    }
+  ],
+  "page" : 7,
+  "paints" : [
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        62.399000000000001,
+        384.34199999999998,
+        232.56000000000006,
+        235.00732000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        62.399000000000001,
+        384.34199999999998,
+        232.56000000000006,
+        235.00732000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        305.90700000000004,
+        382.34199999999998,
+        4,
+        343.63099999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        346.15600000000006,
+        382.34199999999998,
+        4,
+        343.63099999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        386.40500000000003,
+        382.34199999999998,
+        4,
+        343.63099999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        426.65400000000005,
+        382.34199999999998,
+        4,
+        343.63099999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        466.90300000000008,
+        382.34199999999998,
+        4,
+        343.63099999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        507.15300000000008,
+        382.34199999999998,
+        4,
+        343.63099999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        547.40200000000004,
+        382.34199999999998,
+        4,
+        343.63099999999997
+      ]
+    }
+  ],
+  "rightsBasis" : "The paper's byline places both authors, A. Sadovsky and R. Windhorst, in the Aviation Systems Division, NASA Ames Research Center, with nasa.gov addresses, and the NTRS record lists both at NASA Ames Research Center (center ARC): a work of the United States Government under 17 U.S.C. 105. The PDF carries no copyright notice or government-work statement. The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and belongsToAuthors false; distribution PUBLIC, no export control. No figure or table carries a credit, and none is third-party: Figures 1-2 are the authors' time-window plots, the Table I and II route networks are generated with networkx (Ref. [3]) from the paper's own sample problems, and Table III is the authors' outline. No NASA insignia or photographs appear. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "7c2137098ffb75153e0049b970272db97bc91e13168028dc7b53fbe2deb92caa",
+  "sourceTitle" : "A Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace System",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20190030725/downloads/20190030725.pdf"
+}

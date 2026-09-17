@@ -420,7 +420,17 @@ lines on the lower line's edge share, and was set apart from the text above by m
 (a short or sentence-ending line, space, a tag, a heading or the top of the text); a hanging-indent
 entry's first line with space above it exceeding the leading beneath by 0.4 body; and a drop-cap
 line (`readingRect`), whose next lines stand beside the initial within its depth and width before
-returning to its edge, its gap measured from the reading rectangle. A paragraph group whose only
+returning to its edge, its gap measured from the reading rectangle.
+A list whose entries are set with no space between them shows its hanging indent in the runs of
+wrapped lines instead (#162; IEEEtran's bibliography, its algorithm steps and the 9/11 report's
+page-50 timeline). `hangingRun` reads the page for at least two lines at one indent whose nearest
+line above stands on the entries' edge, at least one whose nearest line above is itself at that
+indent, and an indented line reaching the edge lines' own right margin. A first-line indent never
+sets two lines in a row at the indent, because the paragraph returns to the edge beneath its opening
+line; #134's sentence test cannot separate them, since a reference's first line routinely ends in a
+full stop or a semicolon. On that evidence the indent may reach four bodies (the steps hang 3.4 ems
+under `Step 10.`), and the entry's first line need only carry three real words rather than read as
+words, since a reference opens on a list of initials (`[7] J. L. Rios, I. S. Smith, …`). A paragraph group whose only
 line is such an indented opening continues into a group or untagged line beneath it that opens
 lowercase or follows a hyphen (Our Flag's quotations, tagged one line per group). A line that an inline expression makes taller than the page's ordinary line at its size
 (Wallace's minus, times and radical glyphs extend a rectangle 8.5 points past the type), at most
@@ -625,7 +635,31 @@ untagged `Southerly Turning Errors`, `Drugs`; #97). A sub-heading of either kind
 lines is one label when both lines share a style the book already repeats, the second stacks
 under the first on its edge at heading leading and ends no sentence, and the paragraph opens
 beneath the second line (FAA's `The Professional Air Traffic Controllers` / `Organization (PATCO)
-Strike`; the pair is no style evidence of its own; #102). A tinted box's top line is a title
+Strike`; the pair is no style evidence of its own; #102).
+A two-column academic paper sets both its heading levels at the body's own size, which neither the
+threshold nor a `LabelStyle` can reach, so `academicSectionTitles` reads them from the column's
+measure instead (#162; the IEEEtran conference paper `ntrs-20190030725-dasc-2019`). The measure is
+the left and right edges at least three lines of the column's own dominant size share. A **section
+title** is a line of that size or up to a quarter over it, wholly in capitals and not bold, inset
+from both edges of the measure by insets that agree within three quarters of its size, set off above
+by more than half a body or standing under another such title, and over text no larger than the body
+on the measure's own edge or its first-line indent: a centred line over centred text is a table's or
+display's title instead (FAA page 416's `NONDIRECTIONAL RADIO BEACON (NDB)` over `(Usable radius
+distances for all altitudes)`). It must take its place in the paper's section sequence — a Roman
+numeral and a period (`I.` and `V.` also read as one-letter list markers, which this admits), an
+appendix, or one of the standard unnumbered heads (`REFERENCES`, `BIBLIOGRAPHY`, `NOMENCLATURE`,
+`ACKNOWLEDGMENT(S)`) — so a slip opinion's centred caption line and its bare part numerals `I`–`III`
+are not titles. IEEEtran sets these in small capitals, so the title's next line can carry only small
+capitals, at 0.65–0.95 of the size PDFKit measures from the full-size initial; `continuesCentredTitle`
+stacks such a line on the title's centre where `stacksUnderHeading` reads the two sizes as different
+(`VII. COMPATIBILITY WITH A DISTRIBUTED SYSTEM FOR` / `MANAGING ARRIVAL AIR TRAFFIC`). A **subsection
+title** is a single capital letter and period before a capital, wholly italic at the body size, on the
+measure's left edge and an em clear of its right, set off above and below by more than half a body and
+no more than two, with the section's first paragraph opening beneath it in upright body type on the
+measure's edge or its first-line indent (`A. Input data`, `B. Output data: the format of a
+“schedule”`). Title case is not asked: IEEEtran sets these in sentence case. Both are refused on
+recognized and synthetic text, on a caption, a leader entry and a line that closes a sentence.
+A tinted box's top line is a title
 in the box's own text size when the box's next lines continue on its edge at that size and the
 title is set off from them by more than their leading (a two-line title keeps its lines at that
 leading or tighter), reads as a title, and ends no sentence before any note marker: the Fed's

@@ -391,6 +391,7 @@ enum NativeTextReader {
             styled.append(StyledRun(text: run, style: style, offset: offset, size: Double(font?.pointSize ?? 12),
                                     hasFont: font != nil, first: range.location == 0))
         }
+        remeasureQuotedMarker(&styled)
         var runs: [InlineText.Element] = []
         for (index, run) in styled.enumerated() {
             var style = run.style
@@ -426,5 +427,40 @@ enum NativeTextReader {
             runs.append(.text(run.text, style))
         }
         return InlineText(elements: runs).trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    /// PDFKit can split a row at a closing quote kerned back over the period before it and then
+    /// measure the split piece's baseline on the note marker it holds (#11): 9/11 page 362's
+    /// `to routine.` and `”12`, where the 10.25-point quote reads 3.44 points below the 5.125-point
+    /// `12`, so the marker read as base text and the quote as a subscript. The piece is re-measured
+    /// from its full-size text only when it holds nothing else: closing punctuation, uniformly
+    /// lowered by 0.2–0.5 of its size, each followed by a one- to three-digit run at 0.4–0.7 of that
+    /// size at offset zero, ending the piece or before a space. An exponent after a letter or digit
+    /// (`x2`, `32`) is never re-measured.
+    private static func remeasureQuotedMarker(_ runs: inout [StyledRun]) {
+        let visible = runs.indices.filter { !runs[$0].text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+        guard visible.count >= 2, visible.allSatisfy({ runs[$0].hasFont && runs[$0].size.isFinite && runs[$0].offset.isFinite }),
+              let base = visible.map({ runs[$0].size }).max(), base > 0 else { return }
+        let tolerance = max(0.5, base * 0.12)
+        let closing = Set("\u{201D}\u{2019}\"')].,;:")
+        let full = visible.filter { abs(runs[$0].size - base) <= base * 0.1 }
+        let markers = visible.filter { runs[$0].size <= base * 0.7 }
+        guard full.count + markers.count == visible.count, !markers.isEmpty,
+              let lowest = full.map({ runs[$0].offset }).min(), let highest = full.map({ runs[$0].offset }).max(),
+              highest - lowest <= tolerance, -highest >= base * 0.2, -lowest <= base * 0.5,
+              full.allSatisfy({ runs[$0].text.trimmingCharacters(in: .whitespaces).allSatisfy(closing.contains) }) else { return }
+        for marker in markers {
+            let run = runs[marker]
+            let digits = run.text.trimmingCharacters(in: .whitespaces)
+            guard (1...3).contains(digits.count), digits.allSatisfy(\.isASCII), digits.allSatisfy(\.isNumber),
+                  run.size >= base * 0.4, abs(run.offset) <= tolerance,
+                  let position = visible.firstIndex(of: marker), position > 0,
+                  full.contains(visible[position - 1]), marker == visible[position - 1] + 1,
+                  runs[marker - 1].text.last?.isWhitespace == false else { return }
+            if marker + 1 < runs.count, run.text.last?.isWhitespace != true,
+               runs[marker + 1].text.first?.isWhitespace != true { return }
+        }
+        let shift = -(highest + lowest) / 2
+        for index in runs.indices { runs[index].offset += shift }
     }
 }

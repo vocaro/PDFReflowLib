@@ -260,10 +260,14 @@ enum PDFReflowLibPipeline {
         var previousRegions: [CGRect] = []
         // A numbered list inside a note still open at the previous page's end (#87).
         var openNoteList: NumberedNoteDetector.OpenList?
+        // The note the previous page's last line belongs to, which this page may continue (#11).
+        var openNote: NumberedNoteDetector.Layout.Note?
         for i in 0..<total {
             try Task.checkCancellation()
-            let continuingNoteList = openNoteList
+            let continuingNoteList = openNoteList, continuingNote = openNote
             openNoteList = nil
+            openNote = nil
+            var continuesNote = false
             var content = try store.load(at: i)
             if let furniturePlan, let warning = FurnitureDetector.apply(furniturePlan, to: &content, pageIndex: i) {
                 furnitureWarnings.append(warning)
@@ -306,7 +310,12 @@ enum PDFReflowLibPipeline {
                         noteChapter: numberedNotePages[content.number]?.lowerBound,
                         noteLastChapter: numberedNotePages[content.number]?.upperBound,
                         continuingNoteList: continuingNoteList,
-                        noteLayout: { openNoteList = $0?.openList },
+                        noteLayout: { layout in
+                            openNoteList = layout?.openList
+                            openNote = layout?.lastNote
+                            continuesNote = layout?.continuesParagraph == true
+                        },
+                        continuingNote: continuingNote,
                         continuesNote: previousPage != nil && blocks.last?.isFootnote == true,
                         labelStyles: labelStyles, headingStyles: headingStyles)
                     if pageBlocks.contains(where: \.hasReflowedText) {
@@ -326,7 +335,8 @@ enum PDFReflowLibPipeline {
                     }
                 }
                 LayoutReconstructor.appendPage(pageBlocks, page: content, images: regions, previousPage: previousPage,
-                    previousImages: previousRegions, to: &blocks, vocabulary: vocabulary, warnings: &warnings)
+                    previousImages: previousRegions, to: &blocks, vocabulary: vocabulary, continuesNote: continuesNote,
+                    warnings: &warnings)
                 if previousPage != nil {
                     LayoutReconstructor.joinContinuedFootnote(&blocks, page: content.number,
                         vocabulary: vocabulary, warnings: &warnings)

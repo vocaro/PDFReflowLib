@@ -86,7 +86,13 @@ See [the concurrency evidence](../measurements/pdfkit-concurrency/record.md) and
 
 Explicit Core Text/Foundation baseline offsets preserve
 inline scripts; tiny positioning noise and full-line OCR offsets do not become script styles.
-Font size alone does not establish a superscript. A bounded native drop-cap pattern uses the
+Font size alone does not establish a superscript. PDFKit can measure a split piece's baseline on
+the note marker it holds (9/11 page 362's `”12`, after a closing quote kerned back over the
+period): a piece of closing punctuation uniformly lowered by 0.2–0.5 of its size, each followed
+by a one- to three-digit run at 0.4–0.7 of that size at offset zero, is re-measured from the
+punctuation, so the marker reads as raised (#11). Reconstruction attaches such a piece, on the
+previous line's row and within half a body size of its end, to that line without a space, as it
+attaches a detached digit marker. A bounded native drop-cap pattern uses the
 following body runs' font size and a top-aligned body-height `readingRect` for ordering. The
 original `rect` remains the full ink bounds for graphic intersections and crop preservation;
 paragraph-join geometry is unchanged. A lowered oversized single initial followed by substantial,
@@ -326,7 +332,17 @@ first note start: either above the open note's successor, at the list's inset in
 note's indent (9/11 page 545's `10.` above note 108), or as the page's first start, numbered
 as the list expects rather than as the chapter's next note (page 544's items 7–9 under note
 107). A resumed page may hold no note of its own; one whose resumed reading refuses is read
-on its own. The first start is the
+on its own. The pipeline also hands each notes page's last note to the next physical page (#11).
+When that page's first note start is the next note of the same chapter, the lines above it are
+that note's text if every one reads as note text: a wrapped line at the dedented edge the page's
+notes share, or an unnumbered line of at least ten letters at the note indent opening a further
+paragraph, in the notes' type at their spacing. Otherwise those lines stay spatial prose. A first
+line at the dedented edge continues the previous page's last paragraph whatever opens it (a
+capital, a digit, a quote or a bracket: 9/11 pages 473, 508, 532, 546 and 580–582), so the page
+join takes that reading in place of the lowercase and sentence-end tests, while the previous
+paragraph's last line must still fill its column (page 583's last bullet ends short and page
+584's flush-left paragraph after it stays separate) and no prose may lie below it or above the
+first line. The first start is the
 first numbered line on the edge most numbered lines share, so a dedented `5.This` or a year
 does not set the indent. Each note paragraph carries a `NoteKey` (number, chapter scope); a
 page-bottom footnote carries one with page scope; a note's later paragraphs and marker-less

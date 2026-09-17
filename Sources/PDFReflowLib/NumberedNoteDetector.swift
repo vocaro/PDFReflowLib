@@ -18,6 +18,12 @@ enum NumberedNoteDetector {
         /// its last line running to the column's right edge (9/11 page 543's candidate list under
         /// note 107, whose item 6 continues on page 544). The next page may resume it.
         var openList: OpenList?
+        /// The note the page's last line belongs to, which the next page may continue.
+        var lastNote: Note?
+        /// The page's first line continues the previous page's last note paragraph: it sits at
+        /// the dedented wrap edge above the page's first note start (9/11 page 532's
+        /// `“Alternate View: …` under note 2 of page 531). See `continuedNote` in `layout`.
+        var continuesParagraph = false
     }
 
     /// A numbered list left open at a page's end: the note holding it, the item number the list
@@ -106,17 +112,33 @@ enum NumberedNoteDetector {
     ///
     /// `continuing` is the previous page's `openList`. A page may resume that list (#87): see
     /// `resumption`. When the resumed reading refuses the page, the page is read on its own.
+    ///
+    /// `continuedNote` is the previous page's `lastNote`. The lines above the page's first note
+    /// start are that note's text only when the first start is the next note of the same chapter
+    /// and every one of those lines reads as note text: a wrapped line at the dedented edge the
+    /// page's notes share, or an unnumbered line at the note indent opening a further paragraph,
+    /// in the notes' type at their spacing. A first line at the dedented edge then continues the
+    /// previous page's paragraph (`continuesParagraph`), whatever letter, digit or quote opens it;
+    /// a line at the indent opens a further paragraph. When that reading refuses the page, the
+    /// lines stay spatial prose as before.
     static func layout(in elements: [LayoutReconstructor.Element], page: PageContent,
-                       chapter: Int? = nil, lastChapter: Int? = nil, continuing: OpenList? = nil) -> Layout? {
-        analyze(elements, page: page, chapter: chapter, lastChapter: lastChapter, continuing: continuing).layout
+                       chapter: Int? = nil, lastChapter: Int? = nil, continuing: OpenList? = nil,
+                       continuedNote: Layout.Note? = nil) -> Layout? {
+        analyze(elements, page: page, chapter: chapter, lastChapter: lastChapter, continuing: continuing,
+                continuedNote: continuedNote).layout
     }
 
     static func analyze(_ elements: [LayoutReconstructor.Element], page: PageContent,
                         chapter: Int? = nil, lastChapter: Int? = nil,
-                        continuing: OpenList? = nil) -> (layout: Layout?, reason: String) {
+                        continuing: OpenList? = nil, continuedNote: Layout.Note? = nil) -> (layout: Layout?, reason: String) {
         if let continuing {
             let resumed = analyze(elements, page: page, chapter: chapter, lastChapter: lastChapter, resume: continuing)
             if resumed.layout != nil { return resumed }
+        }
+        if let continuedNote {
+            let continued = analyze(elements, page: page, chapter: chapter, lastChapter: lastChapter, resume: nil,
+                                    continued: continuedNote)
+            if continued.layout != nil { return continued }
         }
         return analyze(elements, page: page, chapter: chapter, lastChapter: lastChapter, resume: nil)
     }
@@ -146,7 +168,8 @@ enum NumberedNoteDetector {
     }
 
     private static func analyze(_ elements: [LayoutReconstructor.Element], page: PageContent,
-                                chapter: Int?, lastChapter: Int?, resume: OpenList?) -> (layout: Layout?, reason: String) {
+                                chapter: Int?, lastChapter: Int?, resume: OpenList?,
+                                continued continuedNote: Layout.Note? = nil) -> (layout: Layout?, reason: String) {
         guard !page.recognized, !page.hasSyntheticTextStyle, !page.requiresPageImage else { return (nil, "page fallback") }
         let read = chapter == nil ? chapters(on: page) : nil
         guard let heading = chapter ?? read?.lowerBound else { return (nil, "no heading") }
@@ -180,6 +203,15 @@ enum NumberedNoteDetector {
             sublist = (item.rect.minX, false, open.next, nil)
             resumed = true
         }
+        // The previous page's last note continues above this page's first start (see `layout`).
+        var continued = false
+        if let note = continuedNote, resume == nil {
+            guard firstNote > 0, note.chapter == heading, number(of: initial) == note.number + 1 else {
+                return (nil, "no continued note")
+            }
+            first = 0
+            continued = true
+        }
         var start = first
         for index in first..<elements.count {
             guard let line = elements[index].line, !line.monospaced, line.structure == nil else {
@@ -207,7 +239,9 @@ enum NumberedNoteDetector {
             }
             // A note's own list opens with its first item (a bullet at or inside the note indent,
             // or `1.` inside it) and may be set off by added space.
-            let noteOpen = count >= 1 || resumed
+            let noteOpen = count >= 1 || resumed || continued
+            // The page's first line of a continued note has its previous line on the previous page.
+            let opensContinuedPage = continued && index == 0
             let marker = noteOpen ? subItem(line) : nil
             let opensSublist = sublist == nil && previous != nil && marker.map { marker in
                 let inset = line.rect.minX - indentX
@@ -275,7 +309,7 @@ enum NumberedNoteDetector {
                 layout.notes[start] = .init(number: value, chapter: chapter)
             } else if atIndent {
                 // A further paragraph of the current note, never a list item or a lone number.
-                guard previous != nil, noteOpen, line.text.filter(\.isLetter).count >= 10,
+                guard previous != nil || opensContinuedPage, noteOpen, line.text.filter(\.isLetter).count >= 10,
                       line.text.range(of: "^(?:[•*−-]|[A-Za-z][.)]|[0-9]+[.)])\\s", options: .regularExpression) == nil
                 else { return (nil, "element \(index): indented non-note") }
                 start = index
@@ -283,14 +317,15 @@ enum NumberedNoteDetector {
                 // A wrapped citation line at the shared dedented edge may open with `p. 11`
                 // or an initial (`E. Booker`); bullets and `a)` items do not wrap a note.
                 let indent = indentX - line.rect.minX
-                guard let previous, previous.wraps != false,
+                let wrapsPrevious = previous.map { $0.wraps != false && $0.rect.width >= size * 12 } ?? opensContinuedPage
+                guard wrapsPrevious,
                       indent >= size * 0.8, indent <= size * 3,
-                      previous.rect.width >= size * 12,
                       line.text.range(of: "^(?:[•*−-]|[A-Za-z]\\))\\s", options: .regularExpression) == nil,
                       continuationX.map({ abs($0 - line.rect.minX) <= size * 0.25 }) ?? true else {
                     return (nil, "element \(index): continuation geometry")
                 }
                 continuationX = line.rect.minX
+                if opensContinuedPage { layout.continuesParagraph = true }
             }
             layout.paragraphs[index] = start
             previous = line
@@ -309,7 +344,8 @@ enum NumberedNoteDetector {
             layout.openList = OpenList(note: .init(number: expected - 1, chapter: chapter), next: open.next,
                                        inset: open.x - indentX)
         }
-        return (layout, resumed ? "accepted resuming a list" : "accepted")
+        layout.lastNote = .init(number: expected - 1, chapter: chapter)
+        return (layout, resumed ? "accepted resuming a list" : continued ? "accepted continuing a note" : "accepted")
     }
 
     /// A notes page keyed to a chapter other than the one its running head prints.

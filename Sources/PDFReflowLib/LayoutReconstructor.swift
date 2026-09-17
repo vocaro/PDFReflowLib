@@ -1775,11 +1775,13 @@ enum LayoutReconstructor {
     /// typography (`headingEvidence(on:)`). `continuingNoteList` is the previous page's open list
     /// inside a numbered note, which this page may resume; `noteLayout` receives this page's
     /// numbered-note layout (nil when the page is not a notes page), so the caller can pass its
-    /// open list to the next page.
+    /// open list and last note to the next page. `continuingNote` is the previous page's last note,
+    /// which the lines above this page's first note start may continue (#11).
     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
                        warnings: inout [ConversionWarning], noteChapter: Int? = nil,
                        noteLastChapter: Int? = nil, continuingNoteList: NumberedNoteDetector.OpenList? = nil,
                        noteLayout reportNoteLayout: ((NumberedNoteDetector.Layout?) -> Void)? = nil,
+                       continuingNote: NumberedNoteDetector.Layout.Note? = nil,
                        continuesNote: Bool = false,
                        labelStyles: Set<LabelStyle> = [], headingStyles: Set<LabelStyle> = []) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
@@ -2033,7 +2035,7 @@ enum LayoutReconstructor {
             return !footnotes.range.contains(index) && index != footnotes.separator
         }
         let noteLayout = NumberedNoteDetector.layout(in: elements, page: page, chapter: noteChapter,
-            lastChapter: noteLastChapter, continuing: continuingNoteList)
+            lastChapter: noteLastChapter, continuing: continuingNoteList, continuedNote: continuingNote)
         reportNoteLayout?(noteLayout)
         let noteGroups = noteLayout?.paragraphs ?? [:]
         func isHeadingCandidate(_ line: TextLine) -> Bool {
@@ -2201,6 +2203,25 @@ enum LayoutReconstructor {
                   line.rect.minX <= prev.rect.maxX + body * 0.5 else { return false }
             return line.rect.minY >= prev.rect.minY + prev.rect.height * 0.2
                 && line.rect.maxY <= prev.rect.maxY + 1
+        }
+        // PDFKit can also split a row at a closing quote kerned back over the period before it,
+        // leaving the quote and the marker after it as a piece of their own (9/11 page 362's
+        // `to routine.` and `”12`, whose marker `NativeTextReader` re-measures as raised, #11). A
+        // piece of closing punctuation and one raised one-to-three digit marker, on the previous
+        // line's row and starting within half a body size of its end, closes that line.
+        func isDetachedQuotedMarker(_ line: TextLine, after prev: TextLine) -> Bool {
+            guard !paragraph.elements.isEmpty, !page.recognized, !page.hasSyntheticTextStyle, line.structure == nil,
+                  abs(line.rect.minX - prev.rect.maxX) <= body * 0.5, sameRow(line.rect, prev.rect) else { return false }
+            let visible = line.content.elements.compactMap { element -> (String, TextStyle)? in
+                guard case let .text(value, style) = element else { return nil }
+                let trimmed = value.trimmingCharacters(in: .whitespaces)
+                return trimmed.isEmpty ? nil : (trimmed, style)
+            }
+            let closing = Set("\u{201D}\u{2019}\"')]")
+            guard visible.count == 2, !visible[0].1.contains(.superscript), visible[0].0.allSatisfy(closing.contains),
+                  visible[1].1.contains(.superscript), (1...3).contains(visible[1].0.count),
+                  visible[1].0.utf8.allSatisfy({ (48...57).contains($0) }) else { return false }
+            return true
         }
         // A bold run-in section label opens a paragraph even where the source sets less than
         // the ordinary paragraph spacing between its sections (the USGS Mineral Commodity
@@ -2440,6 +2461,10 @@ enum LayoutReconstructor {
                     paragraph.append(InlineText(line.text, style: .superscript))
                     continue
                 }
+                if let prev = previous, isDetachedQuotedMarker(line, after: prev) {
+                    paragraph.append(line.content)
+                    continue
+                }
                 // The leading this line was attached at, for the next line's section test.
                 var attachedGap: CGFloat?
                 if let prev = previous {
@@ -2664,10 +2689,13 @@ enum LayoutReconstructor {
     /// The join anchors are the last and first body paragraphs in reading order, past preserved
     /// images, figure captions and bare folios that furniture removal kept (#45). Those blocks
     /// stay on their page, ahead of the joined paragraph. Structure groups, geometry and the
-    /// preserved regions of both pages supply the evidence; see `continuation`.
+    /// preserved regions of both pages supply the evidence; see `continuation`. `continuesNote`
+    /// states that the numbered-note detector read this page's first line as the wrapped text of
+    /// the previous page's last note (`NumberedNoteDetector.Layout.continuesParagraph`).
     static func appendPage(_ pageBlocks: [ReflowBlock], page: PageContent, images: [CGRect] = [],
                            previousPage: PageContent?, previousImages: [CGRect] = [],
                            to blocks: inout [ReflowBlock], vocabulary: Set<String>,
+                           continuesNote: Bool = false,
                            warnings: inout [ConversionWarning]) {
         var remaining = pageBlocks
         // Text inside a tinted box (a sidebar, a figure's title band) competes with a join anchor
@@ -2676,7 +2704,7 @@ enum LayoutReconstructor {
         let previousImages = previousImages + clusters(previousPage?.tints ?? [], distance: 4)
         if let previousPage,
            let anchors = continuation(from: blocks, previousPage: previousPage, previousImages: previousImages,
-                                      to: remaining, page: page, images: images),
+                                      to: remaining, page: page, images: images, continuesNote: continuesNote),
            let left = joinableText(blocks[anchors.previous].content),
            case let .paragraph(right) = remaining[anchors.next].content {
             var joined = blocks[anchors.previous]
@@ -2713,9 +2741,17 @@ enum LayoutReconstructor {
     /// prose lies below or right of that last line, or above or left of that first line. Text
     /// inside a preserved region counts as prose when it is body-sized and wide, so a figure that
     /// swallowed the real neighbour blocks the join instead of corrupting the text.
+    ///
+    /// On a notes page whose first line the numbered-note detector read as the previous page's
+    /// last note wrapping (`continuesNote`: the dedented wrap edge, above the chapter's next note
+    /// start), that reading replaces the text evidence: the continuation may open with a capital,
+    /// a digit or a quote, after any punctuation. The previous block must still be a paragraph,
+    /// its last line must fill its column (page 583's last bullet ends short, and page 584's
+    /// flush-left `The proposed National Counterterrorism Center…` opens a paragraph of its own),
+    /// and no prose may lie below that line or above the first.
     private static func continuation(from blocks: [ReflowBlock], previousPage: PageContent, previousImages: [CGRect],
                                      to pageBlocks: [ReflowBlock], page: PageContent,
-                                     images: [CGRect]) -> (previous: Int, next: Int)? {
+                                     images: [CGRect], continuesNote: Bool = false) -> (previous: Int, next: Int)? {
         var previous = blocks.count - 1
         // A footnote continued onto the previous page starts on an earlier one, and a join
         // moves an earlier page's footnotes behind the paragraph that continued.
@@ -2739,6 +2775,15 @@ enum LayoutReconstructor {
         if let leftGroup = blocks[previous].structureGroup, let rightGroup = pageBlocks[next].structureGroup,
            leftGroup != rightGroup,
            blocks[previous].taggedLevel != 0 || pageBlocks[next].taggedLevel != 0 { return nil }
+        if continuesNote {
+            guard case .paragraph = blocks[previous].content, pageBlocks[next].note == nil,
+                  let last = lastLine(of: left.text, in: previousPage.lines),
+                  let first = firstLine(of: right.text, in: page.lines),
+                  fillsColumn(last, in: previousPage.lines, body: max(4, bodySize(previousPage.lines))),
+                  endsColumn(last, in: previousPage, images: previousImages),
+                  opensColumn(first, in: page, images: images) else { return nil }
+            return (previous, next)
+        }
         guard right.text.first?.isLowercase == true, !endsSentence(left),
               let last = lastLine(of: left.text, in: previousPage.lines),
               let first = firstLine(of: right.text, in: page.lines),

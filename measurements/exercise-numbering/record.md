@@ -74,11 +74,11 @@ not pinned.
    which does not span it. Not bounded (touches every multi-column page).
 2. Fraction answers and exercises split between a marker stub and an image. Page 471 entries 22
    (`22)− 2,` + image of `5/3`) and 29 (`29)−` + image of `2/3`); page 16 exercises 22, 23, 27,
-   28, 30, 32. Expected: one representation per entry. `FractionRegionDetector` unions only a
-   prefix ending in `=`; a marker-with-sign prefix within a few points of the bar is a candidate
-   bounded extension but changes crops on many pages, so it was left for a separate change.
+   28, 30, 32. Expected: one representation per entry. Filed as #48 and **fixed**: a crop now takes
+   the piece of a display row its edge left outside
+   ([split-display-rows](../split-display-rows/record.md)).
 3. Page 340: a stray `x2` paragraph between the Example 462 crops (source `x² + 10x = −24`).
-   Expected: the whole derivation in one image.
+   Expected: the whole derivation in one image. Same cause as 2; **fixed** there.
 4. Instruction and prose lines absorbed into crops. Page 291 loses `Simplify.` from text; page
    289's opening sentence with inline radicals is inside an image, so the paragraph begins at
    `fastest method`. Expected: instructions and prose reflow.

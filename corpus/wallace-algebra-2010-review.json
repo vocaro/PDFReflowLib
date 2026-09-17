@@ -15,7 +15,7 @@
     {
       "page": 16,
       "focus": "Two-column fraction exercises; keep each problem number attached to its full expression.",
-      "observed": "Visible initial fractions are retained as image crops; this spot check does not verify every exercise."
+      "observed": "Every exercise is one image crop carrying its own number; since #48 no entry is split between a marker stub and a fraction image, and the page reads 1-20, \"Find each product.\", 21-36 as printed. The crops are not transcribed."
     },
     {
       "page": 119,
@@ -32,7 +32,7 @@
     {
       "page": 343,
       "focus": "Quadratic-formula derivation with aligned explanations, radicals and inline powers.",
-      "observed": "Displayed derivation is rasterized. Introductory ax-squared is flattened to ax2 in selectable XHTML; confirmed defect. The \"Factor\" line is split: its leading x^2 + is emitted as a standalone flattened \"x2 +\" paragraph while the preserved equation image starts at b/a x (observed 2026-09-16, converter 56e70e2).",
+      "observed": "Displayed derivation is rasterized. The introductory ax-squared keeps its exponent as a superscript in the XHTML (#1), which the contract's script check pins. The \"Factor\" line's leading x^2 + is no longer detached: since #46/#48 a crop takes the piece of a display row its edge left outside, so the whole equation is one preserved region (observed 2026-09-17, converter 58a2ddd + the split-display-rows change).",
       "acceptance": "Keep the introductory squared exponent as superscript (or preserve the entire inline expression as an image), while retaining the surrounding prose and the displayed derivation.",
       "glyphReference": "corpus/references/wallace-algebra-2010/page-343-our-solution-glyphs.png: the \"Our Solution\" line rendered at 180 DPI from source points 176,658-283,690; reviewed to contain x =, the numerator -b +/- sqrt(b^2 - 4ac) with its exponent and radical sign, the fraction bar and 2a."
     },

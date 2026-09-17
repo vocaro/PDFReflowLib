@@ -225,7 +225,10 @@ case's ceiling automatically. `scripts/check-all.sh --corpus` includes algebra i
 [Review points](../corpus/wallace-algebra-2010-review.json) list physical PDF pages and
 acceptance questions. Page 343's inline squared exponent has superscript semantics, while
 displayed mathematics remains in images; see [current regressions](../measurements/three-fidelity-fixes/record.md).
-Detached fractions and broader exercise/answer-key fidelity remain unqualified.
+Each exercise or answer whose value is a fraction is one preserved region carrying its own number,
+and a displayed row is never split between a crop and flattened text
+([evidence](../measurements/split-display-rows/record.md)); semantic exercise lists and
+column-major answer-key order remain unqualified.
 [Baseline and visual evidence](../measurements/wallace-algebra-2010/record.md) separate valid
 EPUB packaging from accurate mathematical content.
 

@@ -1649,7 +1649,7 @@
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). The detached, flattened \"x2 +\" paragraph from page 343's \"Factor\" line is a known defect, not blessed. Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438 or fraction answers split between a marker stub and an image (page 471 entries 22 and 29). Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) rejoin their rows and paragraphs in reading order on pages 288, 289 and 299 (#95); the pieces keep PDFKit's own order inside a row (`36· 5 √` for √36·5), which is not blessed. Page 429 source raster reviewed (#71): `When we are solving a triangle` opens a paragraph set off by added space under the paragraph threshold. Pages 448 and 487 source rasters reviewed (#78): page 448's graphs, numbered along their rows three to a row, read 15-22 in number order; page 487's sub-answers a-i, set in three columns above answers 2-15, read before them. Exercise sets numbered two to a row (pages 10, 26) keep their column order. Pages 175 and 437 (#97) source-reviewed: blank pages whose only text is the folio carry no text once the folio run removes it. Pages 5 and 211 source-reviewed (#102): the contents entry 6.3 Trinomials where a = 1 with its leader is text, not a preserved region. Pages 2, 9, 90, 120, 180, 318, 321 and 401 source-reviewed (#109): a line holding an inline minus, times or radical sign, whose rectangle extends 8.5 points past its type, continues its paragraph into the next line; page 90's point descriptions and page 401's two paragraphs stay separate; page 321's radicand − 1 reads inside its sentence; the license's minus bullets on page 2 and the derivation lines on pages 9 and 120 stay list lines. Pages 34, 40 and 230 source rasters reviewed (#110): a digit set in CMR12 before prose in the EC text font keeps its word space (`Subtract 8 from`, `Plug 2 in`, `The numbers are− 3 and− 3`); PDFKit dropped it and NativeSpacingReader restores it from the fonts' WinAnsi encodings. The flattened minus spacing (`− 3`) is not blessed. Pages 50, 218 and 64 source rasters reviewed (#123): `dif-` + `ferent` joins as `different`, which the book prints with the U+FB00 ligature; the spaced example lines `Three more than a number becomes x + 3` and `Four less than a number becomes x− 4` are paragraphs of their own after their list items. The `Is` bullet inside page 64's formula crop is not blessed. A word broken across two paragraph blocks joins through the hyphen policy (#131: 92 `connect`). Page 101 (#14) reviewed against the source: exercises 9 and 10 each head their own graph on opposite sides of the measure, and PDFKit returns both markers as one line; each marker now reads before its own graph.",
+      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438. Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) rejoin their rows and paragraphs in reading order on pages 288, 289 and 299 (#95); the pieces keep PDFKit's own order inside a row (`36· 5 √` for √36·5), which is not blessed. Page 429 source raster reviewed (#71): `When we are solving a triangle` opens a paragraph set off by added space under the paragraph threshold. Pages 448 and 487 source rasters reviewed (#78): page 448's graphs, numbered along their rows three to a row, read 15-22 in number order; page 487's sub-answers a-i, set in three columns above answers 2-15, read before them. Exercise sets numbered two to a row (pages 10, 26) keep their column order. Pages 175 and 437 (#97) source-reviewed: blank pages whose only text is the folio carry no text once the folio run removes it. Pages 5 and 211 source-reviewed (#102): the contents entry 6.3 Trinomials where a = 1 with its leader is text, not a preserved region. Pages 2, 9, 90, 120, 180, 318, 321 and 401 source-reviewed (#109): a line holding an inline minus, times or radical sign, whose rectangle extends 8.5 points past its type, continues its paragraph into the next line; page 90's point descriptions and page 401's two paragraphs stay separate; page 321's radicand − 1 reads inside its sentence; the license's minus bullets on page 2 and the derivation lines on pages 9 and 120 stay list lines. Pages 34, 40 and 230 source rasters reviewed (#110): a digit set in CMR12 before prose in the EC text font keeps its word space (`Subtract 8 from`, `Plug 2 in`, `The numbers are− 3 and− 3`); PDFKit dropped it and NativeSpacingReader restores it from the fonts' WinAnsi encodings. The flattened minus spacing (`− 3`) is not blessed. Pages 50, 218 and 64 source rasters reviewed (#123): `dif-` + `ferent` joins as `different`, which the book prints with the U+FB00 ligature; the spaced example lines `Three more than a number becomes x + 3` and `Four less than a number becomes x− 4` are paragraphs of their own after their list items. The `Is` bullet inside page 64's formula crop is not blessed. A word broken across two paragraph blocks joins through the hyphen policy (#131: 92 `connect`). Page 101 (#14) reviewed against the source: exercises 9 and 10 each head their own graph on opposite sides of the measure, and PDFKit returns both markers as one line; each marker now reads before its own graph. Pages 16, 252, 340, 343, 424 and 471 source rasters reviewed (#46, #48): a crop takes the piece of a display row that its edge left just outside, because PDFKit breaks such a row at a raised exponent or a fraction. Page 343's \"Factor\" line keeps its leading x² inside the preserved equation instead of emitting a flattened \"x2 +\" paragraph after Example 465, and page 340's derivations leak no \"x2\"; each of page 16's thirty-six fraction exercises and page 252's four is one region with no marker-and-sign stub; page 471's answers 22 and 29 are single regions while the thirty 7.8 dimensional-analysis answers and answers 21, 23, 28, 32 and 33 stay text; page 424's eight triangles keep their side lengths and vertex labels while every exercise number stays a text entry. Page 252 then holds only its four exercise images, and its multiplication dots are no longer navigation headings. Column-major answer-key order, the order of page 424's remaining labels and the page-16 reading order are not blessed.",
       "pages": [
         {
           "page": 10,
@@ -1766,7 +1766,11 @@
           "headings": [
             "Answers - Chapter 8"
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "absentText": [
+            "22)− 2,",
+            "29)−"
+          ]
         },
         {
           "page": 2,
@@ -1832,7 +1836,10 @@
             "Objective: Solve quadratic equations by using the quadratic formula.",
             "Example 465."
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "absentText": [
+            "Example 465. x2 +"
+          ]
         },
         {
           "page": 26,
@@ -2183,6 +2190,62 @@
               "text": "− y"
             }
           ]
+        },
+        {
+          "page": 16,
+          "orderedText": [
+            "0.2 Practice - Fractions",
+            "Simplify each. Leave your answer as an improper fraction.",
+            "Find each product."
+          ],
+          "absentText": [
+            "22) (− 2)(−",
+            "23) (2)(−",
+            "27) (−",
+            "32) (−"
+          ],
+          "headings": [
+            "0.2 Practice - Fractions"
+          ],
+          "minimumImages": 36,
+          "maximumImages": 36
+        },
+        {
+          "page": 252,
+          "absentText": [
+            "·"
+          ],
+          "absentHeadings": [
+            "·"
+          ],
+          "minimumImages": 4,
+          "maximumImages": 4,
+          "warningCodesAnyOf": [
+            "imageRegion"
+          ]
+        },
+        {
+          "page": 340,
+          "text": [
+            "Example 463."
+          ],
+          "absentText": [
+            "x2"
+          ],
+          "minimumImages": 3
+        },
+        {
+          "page": 424,
+          "text": [
+            "13)",
+            "14)",
+            "20)"
+          ],
+          "absentText": [
+            "B 13 A"
+          ],
+          "minimumImages": 8,
+          "maximumImages": 8
         }
       ]
     },

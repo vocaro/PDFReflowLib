@@ -125,10 +125,12 @@ falls to 0.57–0.61. Sharpness cannot gate that case without also failing a σ=
 References assume the library's 180 DPI raster; a different DPI fails alignment until they are
 regenerated.
 
-## Fidelity defect observed (not blessed)
+## Fidelity defect observed (resolved)
 
-Wallace page 343, "Factor" line (x² + (b/a)x + b²/4a² = …): the converter emits the leading
-"x² +" as a standalone paragraph with a flattened exponent ("x2 +") and the preserved equation
-image starts at "(b/a)x". Observed in converter `56e70e2` output; recorded in
-`corpus/wallace-algebra-2010-review.json` and left out of the passing contract for the coordinator
-to file.
+Wallace page 343, "Factor" line (x² + (b/a)x + b²/4a² = …): the converter emitted the leading
+"x² +" as a standalone paragraph with a flattened exponent ("x2 +") while the preserved equation
+image started at "(b/a)x". Observed in converter `56e70e2` output and filed as #46. Fixed by the
+crop rule in [split-display-rows](../split-display-rows/record.md): the crop now takes the piece of
+a display row its edge left outside, so the whole equation is one region. The page-343 glyph
+reference is unaffected — it checks the "Our Solution" line, which was already inside a crop — and
+its control scores above are unchanged.

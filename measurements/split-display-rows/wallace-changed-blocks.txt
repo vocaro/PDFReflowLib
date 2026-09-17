@@ -1,0 +1,555 @@
+########## PAGE 16
+--- baseline
++++ candidate
+@@ -2,18 +2,2 @@
+ p	Simplify each. Leave your answer as an improper fraction.
+-img	IMAGE
+-img	IMAGE
+-img	IMAGE
+-img	IMAGE
+-img	IMAGE
+-img	IMAGE
+-img	IMAGE
+-img	IMAGE
+-img	IMAGE
+-img	IMAGE
+-p	Find each product.
+-img	IMAGE
+-pre	23) (2)(−
+-img	IMAGE
+-img	IMAGE
+-pre	27) (−
+ img	IMAGE
+@@ -33,3 +17,2 @@
+ img	IMAGE
+-pre	22) (− 2)(−
+ img	IMAGE
+@@ -37,7 +20,5 @@
+ img	IMAGE
+-pre	28) (−
+ img	IMAGE
+-pre	30) (− 2)(−
+ img	IMAGE
+-pre	32) (−
++p	Find each product.
+ img	IMAGE
+@@ -45 +26,14 @@
+ img	IMAGE
++img	IMAGE
++img	IMAGE
++img	IMAGE
++img	IMAGE
++img	IMAGE
++img	IMAGE
++img	IMAGE
++img	IMAGE
++img	IMAGE
++img	IMAGE
++img	IMAGE
++img	IMAGE
++img	IMAGE
+########## PAGE 17
+--- baseline
++++ candidate
+@@ -8,3 +8,2 @@
+ img	IMAGE
+-pre	79) (− 1)− (−
+ img	IMAGE
+@@ -12,3 +11 @@
+ img	IMAGE
+-img	IMAGE
+-img	IMAGE
+########## PAGE 21
+--- baseline
++++ candidate
+@@ -22,3 +22,2 @@
+ img	IMAGE
+-pre	− 5
+ pre	14)− 3− {3− [− 3(2 +4)− (− 2)]}
+########## PAGE 95
+--- baseline
++++ candidate
+@@ -15,3 +15,2 @@
+ img	IMAGE
+-p	−
+ img	IMAGE
+########## PAGE 197
+--- baseline
++++ candidate
+@@ -28,2 +28 @@
+ img	IMAGE
+-p	12x2
+########## PAGE 205
+--- baseline
++++ candidate
+@@ -16,5 +16,2 @@
+ p	Reduce each fraction, subtracting exponents Remember negative exponents are moved to denominator
+-p	2x +1−
+-img	IMAGE
+-p	+
+ img	IMAGE
+########## PAGE 208
+--- baseline
++++ candidate
+@@ -1,2 +1 @@
+-p	3x2 + 7x− 4−
+ img	IMAGE
+@@ -13,4 +12,2 @@
+ img	IMAGE
+-p	3x2
+-pre	− 10x + 25 +
+ img	IMAGE
+########## PAGE 249
+--- baseline
++++ candidate
+@@ -8,4 +8,2 @@
+ p	Example 334.
+-img	IMAGE
+-p	÷
+ img	IMAGE
+@@ -20,4 +18,2 @@
+ img	IMAGE
+-p	·
+-img	IMAGE
+ p	Divide out common factors (x +3) and (x− 4)
+########## PAGE 250
+--- baseline
++++ candidate
+@@ -10,9 +10,3 @@
+ img	IMAGE
+-p	·
+-img	IMAGE
+ p	Reciprocal of last fraction
+-img	IMAGE
+-p	·
+-img	IMAGE
+-p	·
+ img	IMAGE
+########## PAGE 252
+--- baseline
++++ candidate
+@@ -3,6 +3,2 @@
+ img	IMAGE
+-h5	·
+ img	IMAGE
+-img	IMAGE
+-h5	·
+-img	IMAGE
+########## PAGE 339
+--- baseline
++++ candidate
+@@ -1,2 +1 @@
+-p	x2 +
+ img	IMAGE
+########## PAGE 340
+--- baseline
++++ candidate
+@@ -3,3 +3,2 @@
+ img	IMAGE
+-p	x2
+ img	IMAGE
+########## PAGE 341
+--- baseline
++++ candidate
+@@ -3,3 +3,2 @@
+ img	IMAGE
+-p	−
+ img	IMAGE
+########## PAGE 343
+--- baseline
++++ candidate
+@@ -6,3 +6,2 @@
+ img	IMAGE
+-p	x2 +
+ img	IMAGE
+########## PAGE 351
+--- baseline
++++ candidate
+@@ -10,5 +10,2 @@
+ img	IMAGE
+-pre	17)−
+-img	IMAGE
+-pre	19)− 6,
+ img	IMAGE
+@@ -23,3 +20,2 @@
+ img	IMAGE
+-pre	16) 2,
+ img	IMAGE
+########## PAGE 365
+--- baseline
++++ candidate
+@@ -11,4 +11,2 @@
+ img	IMAGE
+-p	+
+-img	IMAGE
+ p	Using reciprocals, add individal times equaling total
+########## PAGE 424
+--- baseline
++++ candidate
+@@ -2,6 +2,4 @@
+ p	B
+-p	13
+ img	IMAGE
+ p	A
+-p	C
+ p	15)
+########## PAGE 427
+--- baseline
++++ candidate
+@@ -3,3 +3,2 @@
+ img	IMAGE
+-p	A
+ p	B
+@@ -8,3 +7,2 @@
+ img	IMAGE
+-p	A
+ p	B
+@@ -13,3 +11,2 @@
+ img	IMAGE
+-p	A
+ p	40)
+########## PAGE 433
+--- baseline
++++ candidate
+@@ -14,3 +14,2 @@
+ img	IMAGE
+-p	A
+ p	C
+########## PAGE 435
+--- baseline
++++ candidate
+@@ -10,5 +10,3 @@
+ p	C
+-p	4
+ img	IMAGE
+-p	A
+ p	30)
+########## PAGE 439
+--- baseline
++++ candidate
+@@ -7,8 +7,2 @@
+ pre	33) 3
+-pre	34)−
+-img	IMAGE
+-pre	35)−
+-img	IMAGE
+-img	IMAGE
+-pre	37)−
+ img	IMAGE
+@@ -17,13 +11,3 @@
+ img	IMAGE
+-pre	41)−
+ img	IMAGE
+-img	IMAGE
+-pre	43)−
+-img	IMAGE
+-pre	44)−
+-img	IMAGE
+-img	IMAGE
+-pre	46)−
+-img	IMAGE
+-pre	47)−
+ img	IMAGE
+@@ -37,6 +21,2 @@
+ pre	57) 3
+-pre	58)−
+-img	IMAGE
+-img	IMAGE
+-pre	60)−
+ img	IMAGE
+@@ -45,6 +25,4 @@
+ img	IMAGE
+-pre	64)−
+ img	IMAGE
+ img	IMAGE
+-pre	66)−
+ img	IMAGE
+@@ -53,19 +31,3 @@
+ img	IMAGE
+-pre	70)−
+ img	IMAGE
+-pre	71)−
+-img	IMAGE
+-pre	72)−
+-img	IMAGE
+-img	IMAGE
+-pre	74)−
+-img	IMAGE
+-pre	75)−
+-img	IMAGE
+-pre	76)−
+-img	IMAGE
+-pre	77)−
+-img	IMAGE
+-img	IMAGE
+-pre	79)−
+ img	IMAGE
+########## PAGE 443
+--- baseline
++++ candidate
+@@ -13,10 +13,4 @@
+ img	IMAGE
+-pre	13)−
+-img	IMAGE
+-img	IMAGE
+-pre	15)−
+-img	IMAGE
+ pre	16) 1
+ pre	17) 0
+-pre	18)−
+ img	IMAGE
+@@ -27,11 +21,4 @@
+ pre	23)− 2
+-pre	24)−
+ img	IMAGE
+ pre	25) 16
+-pre	26)−
+-img	IMAGE
+-pre	27)−
+-img	IMAGE
+-pre	28)−
+-img	IMAGE
+ img	IMAGE
+########## PAGE 444
+--- baseline
++++ candidate
+@@ -13,20 +13,11 @@
+ p	Answers to Absolute Value Equations
+-pre	27) 6,−
+ img	IMAGE
+ img	IMAGE
+-pre	29)−
+-img	IMAGE
+ pre	30)− 3, 5
+-pre	31)−
+ img	IMAGE
+ img	IMAGE
+-pre	32)− 6,
+ img	IMAGE
+-pre	33) 7,
+ img	IMAGE
+-pre	34)−
+ img	IMAGE
+-pre	35)−
+ img	IMAGE
+-pre	36) 0,−
+ img	IMAGE
+########## PAGE 448
+--- baseline
++++ candidate
+@@ -28,4 +28,2 @@
+ img	IMAGE
+-pre	16)−
+-img	IMAGE
+ pre	17) 0
+@@ -34,4 +32,2 @@
+ img	IMAGE
+-img	IMAGE
+-pre	29)−
+ img	IMAGE
+########## PAGE 450
+--- baseline
++++ candidate
+@@ -6,6 +6,4 @@
+ pre	1) 2
+-pre	2)−
+ img	IMAGE
+ pre	3) 4
+-pre	4)−
+ img	IMAGE
+@@ -20,3 +18,2 @@
+ pre	15) 2
+-pre	16)−
+ img	IMAGE
+########## PAGE 453
+--- baseline
++++ candidate
+@@ -12,3 +12,2 @@
+ pre	8)− 7, 1
+-pre	9)−
+ img	IMAGE
+########## PAGE 461
+--- baseline
++++ candidate
+@@ -1,3 +1,2 @@
+ img	IMAGE
+-pre	18) 8k− 9−
+ img	IMAGE
+@@ -9,4 +8,2 @@
+ pre	− 8x +7
+-pre	33) 3n2
+-pre	− 9n− 10−
+ img	IMAGE
+@@ -15,7 +12,4 @@
+ img	IMAGE
+-pre	38) m2
+-pre	− 8m + 7−
+ img	IMAGE
+ img	IMAGE
+-pre	41) 6n2
+ img	IMAGE
+########## PAGE 465
+--- baseline
++++ candidate
+@@ -54,3 +54,2 @@
+ pre	22) 8,− 4
+-pre	33)−
+ pre	23) 8,− 2
+@@ -58,2 +57 @@
+ pre	24) 4, 0
+-pre	34)−
+########## PAGE 466
+--- baseline
++++ candidate
+@@ -4,4 +4,2 @@
+ pre	1) 3
+-img	IMAGE
+-pre	3)−
+ img	IMAGE
+@@ -12,3 +10,2 @@
+ pre	8) 0, 2
+-pre	9)−
+ img	IMAGE
+########## PAGE 469
+--- baseline
++++ candidate
+@@ -24,5 +24,2 @@
+ img	IMAGE
+-pre	28)−
+-img	IMAGE
+-pre	29)−
+ img	IMAGE
+########## PAGE 470
+--- baseline
++++ candidate
+@@ -18,3 +18,2 @@
+ p	7.7
+-pre	1)−
+ img	IMAGE
+@@ -34,6 +33,2 @@
+ pre	16) 2
+-pre	17)−
+-img	IMAGE
+-pre	18)−
+-img	IMAGE
+ img	IMAGE
+########## PAGE 471
+--- baseline
++++ candidate
+@@ -1,3 +1,2 @@
+ pre	21) 0, 5
+-pre	22)− 2,
+ img	IMAGE
+@@ -7,5 +6,3 @@
+ pre	28) 1
+-pre	29)−
+ img	IMAGE
+-pre	30)− 1
+ img	IMAGE
+########## PAGE 475
+--- baseline
++++ candidate
+@@ -21,3 +21,2 @@
+ img	IMAGE
+-pre	21) y
+ img	IMAGE
+########## PAGE 478
+--- baseline
++++ candidate
+@@ -1,2 +1 @@
+-pre	15)−
+ img	IMAGE
+@@ -7,3 +6,2 @@
+ pre	20) No Solution
+-pre	21)−
+ img	IMAGE
+@@ -11,3 +9,2 @@
+ img	IMAGE
+-pre	23)−
+ img	IMAGE
+########## PAGE 479
+--- baseline
++++ candidate
+@@ -5,5 +5,3 @@
+ pre	54) 8, 7
+-pre	55) 1,−
+ img	IMAGE
+-pre	56) 3,−
+ p	9.4
+########## PAGE 482
+--- baseline
++++ candidate
+@@ -36,5 +36,3 @@
+ pre	5) (5, 9), (18, 2.5)
+-pre	11) (45, 1), (−
+ img	IMAGE
+-pre	6) (13, 5), (− 20,−
+ img	IMAGE
+########## PAGE 484
+--- baseline
++++ candidate
+@@ -11,3 +11,2 @@
+ pre	2) all real numbers
+-pre	3) x
+ img	IMAGE
+@@ -25,3 +24,2 @@
+ pre	16) 7
+-pre	17)−
+ img	IMAGE
+########## PAGE 485
+--- baseline
++++ candidate
+@@ -4,3 +4,2 @@
+ pre	14) 27
+-pre	15)−
+ img	IMAGE
+@@ -35,3 +34,2 @@
+ pre	33) x +3
+-pre	34)−
+ img	IMAGE
+########## PAGE 486
+--- baseline
++++ candidate
+@@ -21,14 +21,8 @@
+ pre	4) 0
+-pre	18)−
+ pre	32) 3
+-pre	5)−
+-pre	19)−
+ img	IMAGE
+ img	IMAGE
+-pre	6)−
+ img	IMAGE
+-pre	20)−
+ pre	21) No solution
+ img	IMAGE
+-pre	7)−
+ pre	22) 0
+@@ -36,3 +30,2 @@
+ pre	35) 0
+-pre	9)−
+ img	IMAGE
+########## PAGE 487
+--- baseline
++++ candidate
+@@ -4,3 +4,2 @@
+ p	Answers - Logarithmic Functions
+-pre	15)−
+ img	IMAGE
+@@ -20,16 +19,2 @@
+ pre	29) 6552
+-img	IMAGE
+-pre	31)−
+-img	IMAGE
+-pre	32)−
+-img	IMAGE
+-pre	33)−
+-img	IMAGE
+-pre	34)−
+-img	IMAGE
+-pre	35)−
+-img	IMAGE
+-pre	36)−
+-img	IMAGE
+-pre	37)−
+ img	IMAGE

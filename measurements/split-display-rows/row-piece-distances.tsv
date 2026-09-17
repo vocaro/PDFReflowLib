@@ -1,0 +1,1550 @@
+# source	page	distanceToCropEdgePt	pageBodySizePt	lineFontSizePt	MATH (no word of three letters or more) or WORD	line text
+# Baseline 58a2ddd crops over every cached corpus source: every line outside all crops
+# that shares a row (sameRow) with a line inside one, up to 24 pt from that crop's edge.
+20190030725	2	3.530	10.000	9.963	MATH	S(f) :
+20190030725	3	3.560	10.000	9.963	WORD	STAn
+20190030725	3	1.210	10.000	6.974	MATH	f2
+20190030725	3	15.135	10.000	8.966	WORD	reach n
+20190030725	3	15.135	10.000	8.966	WORD	consecutively,
+20190030725	3	3.978	10.000	9.963	MATH	⎫ ⎪⎪⎪⎪⎬ ⎪⎪⎪⎪⎭
+20190030725	3	1.978	10.000	9.963	MATH	⎞ ⎟⎠
+20190030725	3	17.337	10.000	8.966	WORD	if edge ni, ni+1
+20190030725	3	17.337	10.000	8.966	WORD	is shared by the
+20190030725	3	17.337	10.000	8.966	WORD	routes of f1, f2
+20190030725	9	9.956	10.000	9.963	WORD	of flights, ordered by priority, and each with a route and
+20190030725	9	9.956	10.000	9.963	WORD	an estimated time of departure, the algorithm schedules one
+20190030725	9	9.956	10.000	9.963	WORD	individual flight’s individual parameters, but also the separa-
+20190030725	9	9.956	10.000	9.963	WORD	tion constraints imposed by the already scheduled flights. The
+20190030725	9	9.956	10.000	9.963	WORD	algorithm has a two-layer safety net: it first schedules the flight
+20190030725	9	9.956	10.000	9.963	WORD	using a fast heuristic procedure, and then, if the schedule is
+20190030725	9	9.956	10.000	9.963	WORD	infeasible, recomputes it using an optimization method. This
+20190030725	9	9.956	10.000	9.963	WORD	algorithm design pinpoints the steps where a flight operator
+20190030725	9	7.950	10.000	9.963	WORD	For n being the k-th node along the route of a given flight
+20190030725	9	7.951	10.000	9.963	WORD	f (nis the node label, while k is the index of the node along
+20190030725	9	7.955	10.000	6.974	WORD	k be the nominal travel time for f from
+20190030725	9	7.953	10.000	9.963	WORD	available to flight f at node n; these are the time windows (11),
+20190030725	9	2.981	10.000	9.963	MATH	⎫ ⎪⎪⎪⎪⎬ ⎪⎪⎪⎪⎭
+20190030725	9	1.238	10.000	9.963	MATH	⎤ ⎥⎥⎥⎦.
+20190030725	9	10.729	10.000	9.963	WORD	−→x min,
+20190030725	9	10.729	10.000	9.963	MATH	1−1...
+20190030725	9	2.981	10.000	9.963	MATH	−1 2−1...
+20190030725	9	13.220	10.000	9.963	MATH	.
+20190030725	9	13.220	10.000	9.963	MATH	.
+20190030725	9	13.220	10.000	9.963	MATH	.
+20190030725	10	17.888	9.000	7.970	WORD	[2] FAA-E-3025. Time-Based Flow Management (TBFM) system specifi-
+20190030725	10	17.888	9.000	7.970	WORD	[3] A. Hagberg, P. Swart, and D. Schult. Exploring network structure,
+20190030725	10	17.888	9.000	7.970	WORD	[4] L. Meyn. A closed-form solution to multi-point scheduling problems.
+20190030725	10	17.888	9.000	7.970	WORD	[5] D. Mulfinger and A. Sadovsky. Design and evaluation of a stochastic
+20190030725	10	17.888	9.000	7.970	WORD	[6] C. H. Papadimitriou and K. Steiglitz. Combinatorial Optimization;
+20190030725	10	17.888	9.000	7.970	WORD	[7] J. L. Rios, I. S. Smith, P. Venkatesan, D. R. Smith, V. Baskaran,
+20190030725	10	17.888	9.000	7.970	WORD	[8] A. S. Tanenbaum and M. Van Steen. Distributed systems: principles
+20190030725	10	13.903	9.000	7.970	WORD	[10] K. Tumer and A. Agogino. Distributed agent-based air traffic flow
+2311.07842v1	3	20.107	9.000	10.909	WORD	4 ALGORITHM FOR REPLAY CLOCK (REPCL)
+2311.07842v1	3	20.107	9.000	9.056	WORD	In this section, we present our approach for RepCl. As discussed
+2311.07842v1	3	20.107	9.000	8.957	WORD	earlier, we assume that the physical clocks are synchronized to be
+2311.07842v1	3	19.775	9.000	9.029	WORD	within E. We discretize the process execution in terms of epochs,
+2311.07842v1	3	19.775	9.000	9.056	WORD	where each epoch corresponds to an increment of the clock by 𝐼,
+2311.07842v1	3	20.107	9.000	9.043	WORD	0 < 𝐼 ≤E such that E= 𝜖∗𝐼, where 𝜖 is an integer. The timeline
+2311.07842v1	4	21.913	9.000	9.056	WORD	First, 𝑚𝑥.𝑗 needs to be increased if the clock of 𝑗 has advanced
+2311.07842v1	4	21.908	9.000	9.056	WORD	beyond epoch 𝑚𝑥.𝑗. Hence, we first compute 𝑛𝑒𝑤𝑚𝑥.𝑗 which is
+2311.07842v1	4	21.906	9.000	8.926	WORD	equal to 𝑚𝑎𝑥(𝑚𝑥.𝑗, epoch.𝑗). When 𝑗 sends a message, it does not
+2311.07842v1	4	21.909	9.000	9.007	WORD	We consider two cases: The first case is for the scenario where
+2311.07842v1	4	20.920	9.000	8.935	WORD	the newly created event 𝑓 is in a new epoch as the previous event,
+2311.07842v1	4	21.910	9.000	8.966	WORD	𝑒. This will happen if 𝑚𝑥 remains unchanged and offset.𝑗.𝑗 is
+2311.07842v1	4	21.914	9.000	8.917	WORD	unchanged. In this case, we increase counter.𝑗.𝑗. The second case
+2311.07842v1	4	21.911	9.000	9.056	WORD	deals with the scenario where 𝑓 is in a new interval. Thus, the
+2311.07842v1	4	21.910	9.000	8.890	WORD	ure 1. Assuming that 𝜖 = 5,𝐼= 1, and E= 5, the RepCl timestamps
+2311.07842v1	4	21.578	9.000	8.908	WORD	will be as shown in Figure 3. Here, event 𝐴 has physical time of 50.
+2311.07842v1	4	21.910	9.000	8.940	WORD	Since process P1 has not heard from anyone else so far, the offsets
+2311.07842v1	4	21.910	9.000	8.877	WORD	for P2 and P3 will be 𝜖. The offset for process P1 will be 0. Regarding
+2311.07842v1	4	21.910	9.000	8.877	WORD	event 𝐶, the situation is similar except that the offset for process P3
+2311.07842v1	4	21.910	9.000	8.966	WORD	is 0. When event 𝐵 is created upon receiving message 𝑚1, process
+2311.07842v1	4	21.910	9.000	8.953	WORD	information is overridden by the clock synchronization guarantee
+2311.07842v1	4	21.910	9.000	8.908	WORD	that says that the clock of P3 is at least 47. Thus, the offsets are set
+2311.07842v1	4	21.910	9.000	8.966	WORD	to [3,𝑒,𝜖] Here, the permissible ordering is 𝐶𝐴𝐵𝐷.
+2311.07842v1	4	21.910	9.000	9.056	WORD	changed to [3,2,12]. Furthermore, 𝐵 and 𝐶 could be replayed in
+2311.07842v1	4	21.910	9.000	8.886	WORD	any order. Thus, the permissible replays would be 𝐶𝐴𝐵𝐷 or 𝐴𝐵𝐶𝐷
+2311.07842v1	4	21.910	9.000	8.966	WORD	or 𝐴𝐶𝐵𝐷.
+2311.07842v1	5	19.945	9.000	9.056	WORD	Definition 2 Given timestamps 𝑅𝑒𝑝𝐶𝑙.𝑒 and 𝑅𝑒𝑝𝐶𝑙.𝑓, we say
+2311.07842v1	5	20.376	9.000	9.056	WORD	that 𝑅𝑒𝑝𝐶𝑙.𝑒||𝑅𝑒𝑝𝐶𝑙.𝑓 iff ¬(𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓)∧¬(𝑅𝑒𝑝𝐶𝑙.𝑓 <
+2311.07842v1	5	21.552	9.000	8.966	WORD	𝑘 based on the assumption of clock synchronization. Likewise,
+2311.07842v1	5	21.578	9.000	9.056	WORD	when event 𝑒 is created, it will have some information about the
+2311.07842v1	5	21.910	9.000	8.926	WORD	clock of each process. Let 𝑚𝑝𝑡.𝑒 and 𝑚𝑝𝑡.𝑓 be the maximum clock
+2311.07842v1	5	21.641	9.000	9.056	WORD	(of any process) that 𝑒 and 𝑓 are aware of when they occurred.
+2311.07842v1	5	21.910	9.000	9.056	WORD	If 𝑚𝑝𝑡.𝑓 > 𝑚𝑝𝑡.𝑒 +E1 then 𝑓 cannot occur before 𝑒 under the
+2311.07842v1	8	23.678	9.000	9.043	WORD	of the 𝑅𝑒𝑝𝐶𝑙. However, with larger 𝐼, the guarantees provided by
+2311.07842v1	8	20.303	9.000	9.047	WORD	from other processes, subsequently not storing their offsets. As 𝐼
+2311.07842v1	8	20.303	9.000	8.980	WORD	increases, we see this property respected, and 𝜏 increasing consis-
+2311.07842v1	8	23.921	9.000	8.931	WORD	increases as the value of 𝛼 increases. However, for a fixed value of
+2311.07842v1	8	23.697	9.000	8.966	WORD	𝛼, the offset size remains the same. This is illustrated in Figure 11.
+2311.07842v1	9	22.858	9.000	8.940	WORD	the Hybrid Vector Clock and provides an efficient implementation
+2311.07842v1	9	22.858	9.000	9.038	WORD	ing distributed system traces using happens-before relationships.
+2311.07842v1	9	22.858	9.000	9.056	WORD	However, since it uses traditional vector clocks, it uses a higher
+Beginning_and_Intermediate_Algebra	9	14.320	12.000	11.955	WORD	Signs match, answer is positive
+Beginning_and_Intermediate_Algebra	9	14.320	12.000	11.955	WORD	Signs do not match, answer is negative
+Beginning_and_Intermediate_Algebra	12	14.320	12.000	11.955	WORD	Both numerator and denominator are divisible by 4
+Beginning_and_Intermediate_Algebra	12	14.320	12.000	11.955	WORD	Both numerator and denominator are still divisible by 3
+Beginning_and_Intermediate_Algebra	13	14.200	12.000	11.955	WORD	Reduce 25 and 55 by dividing by 5. Reduce 32 and 24 by dividing by 8
+Beginning_and_Intermediate_Algebra	13	14.200	12.000	11.955	WORD	Multiply numerators across and denominators across
+Beginning_and_Intermediate_Algebra	14	14.320	12.000	11.955	WORD	Reduce 21 and 28 by dividing by 7. Reduce 6 and 16 by dividing by 2
+Beginning_and_Intermediate_Algebra	15	14.320	12.000	11.955	WORD	Multiply first fraction by 3 and the second by 2
+Beginning_and_Intermediate_Algebra	15	14.320	12.000	11.955	WORD	Same denominator, add numerators, 15 + 8
+Beginning_and_Intermediate_Algebra	16	0.579	12.000	11.955	MATH	23) (2)(−
+Beginning_and_Intermediate_Algebra	16	0.579	12.000	11.955	MATH	27) (−
+Beginning_and_Intermediate_Algebra	16	0.579	12.000	11.955	MATH	22) (− 2)(−
+Beginning_and_Intermediate_Algebra	16	0.579	12.000	11.955	MATH	28) (−
+Beginning_and_Intermediate_Algebra	16	0.579	12.000	11.955	MATH	30) (− 2)(−
+Beginning_and_Intermediate_Algebra	16	0.579	12.000	11.955	MATH	32) (−
+Beginning_and_Intermediate_Algebra	17	0.579	12.000	11.955	MATH	79) (− 1)− (−
+Beginning_and_Intermediate_Algebra	20	14.200	12.000	11.955	WORD	Exponent in the numerator, divide in denominator
+Beginning_and_Intermediate_Algebra	20	14.200	12.000	11.955	WORD	Multiply in the numerator, subtract in denominator
+Beginning_and_Intermediate_Algebra	20	13.725	12.000	11.955	WORD	Evaluate absolute values first, exponents
+Beginning_and_Intermediate_Algebra	20	13.725	12.000	11.955	WORD	Add inside absolute values
+Beginning_and_Intermediate_Algebra	20	13.725	12.000	11.955	WORD	Evaluate absolute values
+Beginning_and_Intermediate_Algebra	20	13.725	12.000	11.955	WORD	Multiply left to right
+Beginning_and_Intermediate_Algebra	21	1.965	12.000	11.955	MATH	21)
+Beginning_and_Intermediate_Algebra	21	0.520	12.000	11.955	MATH	− 5
+Beginning_and_Intermediate_Algebra	21	2.565	12.000	11.955	MATH	24)
+Beginning_and_Intermediate_Algebra	34	11.617	12.000	11.955	WORD	Start by focusing on the positive 8
+Beginning_and_Intermediate_Algebra	34	11.616	12.000	11.955	WORD	Subtract 8 from both sides
+Beginning_and_Intermediate_Algebra	34	11.616	12.000	11.955	WORD	Negative (subtraction) stays on the x
+Beginning_and_Intermediate_Algebra	34	11.616	12.000	11.955	WORD	Remember, no number in front of variable means 1
+Beginning_and_Intermediate_Algebra	40	11.581	12.000	11.955	WORD	Plug 2 in for each x. Multiply inside parenthesis
+Beginning_and_Intermediate_Algebra	40	11.581	12.000	11.955	WORD	Finish parentesis on left, multiply on right
+Beginning_and_Intermediate_Algebra	41	11.634	12.000	11.955	WORD	Distribute 3through parenthesis
+Beginning_and_Intermediate_Algebra	41	11.634	12.000	11.955	WORD	Notice the variable on both sides
+Beginning_and_Intermediate_Algebra	41	11.633	12.000	11.955	WORD	Subtract 6x from both sides
+Beginning_and_Intermediate_Algebra	41	11.633	12.000	11.955	WORD	Variable is gone! True!
+Beginning_and_Intermediate_Algebra	47	3.810	12.000	11.955	WORD	for n
+Beginning_and_Intermediate_Algebra	48	0.650	12.000	11.955	WORD	answer remains x =
+Beginning_and_Intermediate_Algebra	49	3.766	12.000	11.955	WORD	for m
+Beginning_and_Intermediate_Algebra	49	6.400	12.000	11.955	WORD	for m
+Beginning_and_Intermediate_Algebra	49	3.807	12.000	11.955	WORD	for a
+Beginning_and_Intermediate_Algebra	49	3.895	12.000	11.955	WORD	for a
+Beginning_and_Intermediate_Algebra	49	6.400	12.000	11.955	WORD	for b
+Beginning_and_Intermediate_Algebra	52	11.754	12.000	11.955	WORD	Notice absolute value is not alone
+Beginning_and_Intermediate_Algebra	52	11.754	12.000	11.955	WORD	Divide both sides by− 4
+Beginning_and_Intermediate_Algebra	53	23.440	12.000	11.955	MATH	or
+Beginning_and_Intermediate_Algebra	53	21.445	12.000	11.955	MATH	or
+Beginning_and_Intermediate_Algebra	54	23.440	12.000	11.955	MATH	or
+Beginning_and_Intermediate_Algebra	54	21.445	12.000	11.955	MATH	or
+Beginning_and_Intermediate_Algebra	55	11.737	12.000	11.955	WORD	Notice absolute value is not alone
+Beginning_and_Intermediate_Algebra	55	11.737	12.000	11.955	WORD	Subtract 7 from both sides
+Beginning_and_Intermediate_Algebra	55	11.737	12.000	11.955	WORD	Result of absolute value is negative!
+Beginning_and_Intermediate_Algebra	55	21.458	12.000	11.955	MATH	or
+Beginning_and_Intermediate_Algebra	55	21.445	12.000	11.955	MATH	or
+Beginning_and_Intermediate_Algebra	57	11.754	12.000	7.970	WORD	′′Directly′′ tells us to divide
+Beginning_and_Intermediate_Algebra	57	11.755	12.000	11.955	WORD	Our formula for the relationship
+Beginning_and_Intermediate_Algebra	57	11.635	12.000	7.970	WORD	′′Inversely′′ tells us to multiply
+Beginning_and_Intermediate_Algebra	57	11.635	12.000	11.955	WORD	Our formula for the relationship
+Beginning_and_Intermediate_Algebra	58	11.755	12.000	11.955	WORD	Our formula for the relationship
+Beginning_and_Intermediate_Algebra	72	17.320	12.000	11.955	WORD	We use Adam and Brian for our persons
+Beginning_and_Intermediate_Algebra	72	17.320	12.000	11.955	WORD	We use +2 for change because the second phrase
+Beginning_and_Intermediate_Algebra	72	17.320	12.000	11.955	WORD	is two years in the future
+Beginning_and_Intermediate_Algebra	72	19.240	12.000	11.955	WORD	Adam, not Brian. So Brian is x now. To show Adam
+Beginning_and_Intermediate_Algebra	72	17.320	12.000	11.955	WORD	Now the +2column is filled in. This is done by adding
+Beginning_and_Intermediate_Algebra	72	17.320	12.000	11.955	WORD	2 to both Adam′s and Brian′s now column as shown
+Beginning_and_Intermediate_Algebra	72	17.320	12.000	11.955	WORD	in the table.
+Beginning_and_Intermediate_Algebra	72	17.320	12.000	11.955	WORD	Combine like terms in Adam′s future age:− 20 + 2
+Beginning_and_Intermediate_Algebra	72	17.320	12.000	11.955	WORD	This table is now filled out and we are ready to try
+Beginning_and_Intermediate_Algebra	72	17.320	12.000	11.955	WORD	and solve.
+Beginning_and_Intermediate_Algebra	73	15.665	12.000	11.955	WORD	Brian will be twice as old as Adam. This means
+Beginning_and_Intermediate_Algebra	73	18.280	12.000	11.955	WORD	Five years ago is− 5 in the change column.
+Beginning_and_Intermediate_Algebra	73	17.200	12.000	11.955	WORD	Carmen is 12 years older than David. We don′t
+Beginning_and_Intermediate_Algebra	73	18.280	12.000	11.955	WORD	Subtract 5 from now column to get the change
+Beginning_and_Intermediate_Algebra	74	21.160	12.000	11.955	WORD	The change is +2 for two years in the future
+Beginning_and_Intermediate_Algebra	74	21.160	12.000	11.955	WORD	The total is placed above Age Now
+Beginning_and_Intermediate_Algebra	74	21.160	12.000	11.955	WORD	The first person is x. The second becomes 32− x
+Beginning_and_Intermediate_Algebra	74	18.280	12.000	11.955	WORD	Add 2 to each cell fill in the change column
+Beginning_and_Intermediate_Algebra	74	16.593	12.000	11.955	WORD	Combine like terms 32 + 2, our table is done!
+Beginning_and_Intermediate_Algebra	74	16.593	12.000	11.955	WORD	Nicole is three times as old as Kristin.
+Beginning_and_Intermediate_Algebra	74	16.593	12.000	11.955	WORD	Replace variables with information in change cells
+Beginning_and_Intermediate_Algebra	74	16.593	12.000	11.955	WORD	Distribute through parenthesis
+Beginning_and_Intermediate_Algebra	74	16.593	12.000	11.955	WORD	Add 3x to both sides so variable is only on one side
+Beginning_and_Intermediate_Algebra	75	17.320	12.000	11.955	WORD	As we are given their ages now, these numbers go into
+Beginning_and_Intermediate_Algebra	75	17.320	12.000	11.955	WORD	the table. The change is unknown, so we write + t for
+Beginning_and_Intermediate_Algebra	75	17.320	12.000	11.955	WORD	the change
+Beginning_and_Intermediate_Algebra	75	17.485	12.000	11.955	WORD	Louis will be double her daughter
+Beginning_and_Intermediate_Algebra	75	17.485	12.000	11.955	WORD	Replace variables with information in change cells
+Beginning_and_Intermediate_Algebra	75	16.525	12.000	11.955	WORD	Distribute through parenthesis
+Beginning_and_Intermediate_Algebra	75	17.485	12.000	11.955	WORD	Subtract t from both sides
+Beginning_and_Intermediate_Algebra	75	17.485	12.000	11.955	WORD	Now we have an 8 added to the t
+Beginning_and_Intermediate_Algebra	75	17.485	12.000	11.955	WORD	Subtract 8 from both sides
+Beginning_and_Intermediate_Algebra	75	17.485	12.000	11.955	WORD	In 18 years she will be double her daughter′s age
+Beginning_and_Intermediate_Algebra	80	18.280	12.000	11.955	WORD	The basic table for the joggers, one and two
+Beginning_and_Intermediate_Algebra	81	17.200	12.000	11.955	WORD	Bob walks 2 mph faster than Fred
+Beginning_and_Intermediate_Algebra	81	17.200	12.000	11.955	WORD	We know nothing about Fred, so use r for his rate
+Beginning_and_Intermediate_Algebra	81	17.200	12.000	11.955	WORD	Bob is r + 2, showing 2 mph faster
+Beginning_and_Intermediate_Algebra	81	17.200	12.000	11.955	WORD	As we have the total time, in the first time we have
+Beginning_and_Intermediate_Algebra	81	17.200	12.000	11.955	WORD	t, the second time becomes the subtraction,
+Beginning_and_Intermediate_Algebra	81	17.200	12.000	11.955	WORD	total− t
+Beginning_and_Intermediate_Algebra	82	17.320	12.000	11.955	WORD	Mike′s time is t + 6 showing his 6 hour head start
+Beginning_and_Intermediate_Algebra	83	16.608	12.000	11.955	WORD	Our solution for t, she catches him after 2 hours
+Beginning_and_Intermediate_Algebra	83	17.320	12.000	11.955	WORD	As we have total time, the first time we have t
+Beginning_and_Intermediate_Algebra	83	17.320	12.000	11.955	WORD	The second time is the subtraction problem
+Beginning_and_Intermediate_Algebra	83	17.320	12.000	11.955	MATH	2.5− t
+Beginning_and_Intermediate_Algebra	89	21.840	12.000	11.955	WORD	by a horizontal number line (x-axis)
+Beginning_and_Intermediate_Algebra	89	21.840	12.000	11.955	WORD	and a vertical number line (y-axis).
+Beginning_and_Intermediate_Algebra	89	21.840	12.000	11.955	WORD	Where the two lines meet in the center
+Beginning_and_Intermediate_Algebra	89	21.840	12.000	11.955	WORD	is where x = 0 and y = 0. As we move
+Beginning_and_Intermediate_Algebra	89	21.840	12.000	11.955	WORD	from zero, representing x =1, 2, 3.
+Beginning_and_Intermediate_Algebra	90	21.840	12.000	11.955	WORD	Following these instructions, starting
+Beginning_and_Intermediate_Algebra	90	21.840	12.000	11.955	WORD	from the origin, we get our point.
+Beginning_and_Intermediate_Algebra	90	21.840	12.000	11.955	WORD	down 4 (negative moves backwards).
+Beginning_and_Intermediate_Algebra	90	21.840	12.000	11.955	WORD	The fourth point, D (− 2,− 3) is left
+Beginning_and_Intermediate_Algebra	90	21.840	12.000	11.955	WORD	2, down 3 (both negative, both move
+Beginning_and_Intermediate_Algebra	90	21.840	12.000	11.955	WORD	backwards)
+Beginning_and_Intermediate_Algebra	90	21.840	12.000	11.955	WORD	on the x− axis.
+Beginning_and_Intermediate_Algebra	90	21.840	12.000	11.955	WORD	Then is F (0, 2). This is right zero,
+Beginning_and_Intermediate_Algebra	90	21.840	12.000	11.955	WORD	and up two, right on the y− axis.
+Beginning_and_Intermediate_Algebra	90	21.840	12.000	11.955	WORD	movement. Thus the point is right on
+Beginning_and_Intermediate_Algebra	90	21.840	12.000	11.955	WORD	the origin.
+Beginning_and_Intermediate_Algebra	91	11.742	12.000	11.955	WORD	We make a table of values
+Beginning_and_Intermediate_Algebra	91	11.743	12.000	11.955	WORD	We will test three values for x. Any three can be used
+Beginning_and_Intermediate_Algebra	92	11.616	12.000	11.955	WORD	We will use a table of values
+Beginning_and_Intermediate_Algebra	92	11.618	12.000	11.955	WORD	We will test three values for x. Any three can be used.
+Beginning_and_Intermediate_Algebra	93	13.360	12.000	11.955	WORD	Our completed table.
+Beginning_and_Intermediate_Algebra	95	21.840	12.000	11.955	WORD	Drawing these lines in makes a slope
+Beginning_and_Intermediate_Algebra	95	21.840	12.000	11.955	WORD	one point to the next the graph goes
+Beginning_and_Intermediate_Algebra	95	0.579	12.000	11.955	MATH	−
+Beginning_and_Intermediate_Algebra	96	21.840	12.000	11.955	WORD	To find the slope of this line, the rise
+Beginning_and_Intermediate_Algebra	96	17.948	12.000	11.955	WORD	and all vertical lines, have no slope.
+Beginning_and_Intermediate_Algebra	101	0.508	12.000	11.955	WORD	31) (2, 6) and (x, 2); slope:
+Beginning_and_Intermediate_Algebra	101	0.579	12.000	11.955	WORD	33) (− 3,− 2) and (x, 6); slope:−
+Beginning_and_Intermediate_Algebra	101	0.628	12.000	11.955	WORD	35) (− 8, y) and (− 1, 1); slope:
+Beginning_and_Intermediate_Algebra	101	0.628	12.000	11.955	WORD	37) (x,− 7) and (− 9,− 9); slope:
+Beginning_and_Intermediate_Algebra	101	0.579	12.000	11.955	WORD	39) (x, 5) and (8, 0); slope:−
+Beginning_and_Intermediate_Algebra	101	0.579	12.000	11.955	WORD	32) (8, y) and (− 2, 4); slope:−
+Beginning_and_Intermediate_Algebra	101	0.508	12.000	11.955	WORD	34) (− 2, y) and (2, 4); slope:
+Beginning_and_Intermediate_Algebra	101	0.579	12.000	11.955	WORD	36) (x,− 1) and (− 4, 6); slope:−
+Beginning_and_Intermediate_Algebra	101	0.579	12.000	11.955	WORD	40) (6, 2) and (x, 6); slope:−
+Beginning_and_Intermediate_Algebra	108	1.899	12.000	11.955	WORD	Write the equation of the line through the point (− 6, 2) with a slope of−
+Beginning_and_Intermediate_Algebra	112	19.986	12.000	11.955	WORD	ular lines. The slope of the flatter line
+Beginning_and_Intermediate_Algebra	119	11.720	12.000	11.955	WORD	Interval Notation
+Beginning_and_Intermediate_Algebra	121	13.609	12.000	11.955	WORD	Distribute
+Beginning_and_Intermediate_Algebra	121	13.609	12.000	11.955	WORD	Combine like terms
+Beginning_and_Intermediate_Algebra	121	13.609	12.000	11.955	WORD	Move variable to one side
+Beginning_and_Intermediate_Algebra	121	13.608	12.000	11.955	WORD	Subtract 10x from both sides
+Beginning_and_Intermediate_Algebra	121	13.609	12.000	11.955	WORD	Add 20 to both sides
+Beginning_and_Intermediate_Algebra	124	3.805	12.000	11.955	WORD	Interval Notation
+Beginning_and_Intermediate_Algebra	130	11.725	12.000	11.955	WORD	Interval Notation
+Beginning_and_Intermediate_Algebra	131	13.720	12.000	11.955	WORD	Subtract 12 from both sides
+Beginning_and_Intermediate_Algebra	131	13.720	12.000	11.955	WORD	Divide both sides by 4
+Beginning_and_Intermediate_Algebra	134	11.616	12.000	11.955	WORD	Identify x and y from the orderd pair
+Beginning_and_Intermediate_Algebra	134	11.616	12.000	11.955	WORD	Plug these values into each equation
+Beginning_and_Intermediate_Algebra	135	15.582	12.000	11.955	WORD	To graph we identify slopes and y− intercepts
+Beginning_and_Intermediate_Algebra	135	15.582	12.000	11.955	WORD	Now we can graph both lines on the same plane.
+Beginning_and_Intermediate_Algebra	135	21.840	12.000	11.955	WORD	to get the next point and connect the
+Beginning_and_Intermediate_Algebra	136	15.582	12.000	11.955	WORD	Now we can graph both lines on the same plane
+Beginning_and_Intermediate_Algebra	136	21.840	12.000	11.955	WORD	Remember a negative slope is down-
+Beginning_and_Intermediate_Algebra	136	15.582	12.000	11.955	WORD	Identify slope and y− intercept of each equation
+Beginning_and_Intermediate_Algebra	136	15.582	12.000	11.955	WORD	Now we can graph both equations on the same plane
+Beginning_and_Intermediate_Algebra	137	11.754	12.000	11.955	WORD	Solve each equation for y
+Beginning_and_Intermediate_Algebra	137	11.754	12.000	11.955	WORD	Subtract x terms
+Beginning_and_Intermediate_Algebra	137	11.754	12.000	11.955	WORD	Put x terms first
+Beginning_and_Intermediate_Algebra	137	11.754	12.000	11.955	WORD	Divide by coeﬃcient of y
+Beginning_and_Intermediate_Algebra	137	11.754	12.000	11.955	WORD	Identify the slopes and y− intercepts
+Beginning_and_Intermediate_Algebra	137	11.753	12.000	11.955	WORD	Now we can graph both equations together
+Beginning_and_Intermediate_Algebra	141	15.498	12.000	11.955	WORD	Find the lone variable:x or y in first, or x in second.
+Beginning_and_Intermediate_Algebra	141	15.498	12.000	11.955	WORD	We will chose x in the first
+Beginning_and_Intermediate_Algebra	141	11.658	12.000	11.955	WORD	Solve for the lone variable, subtract y from both sides
+Beginning_and_Intermediate_Algebra	141	11.658	12.000	11.955	WORD	Plug into the untouched equation, the second equation
+Beginning_and_Intermediate_Algebra	141	11.658	12.000	11.955	WORD	Solve, parenthesis are not needed here, combine like terms
+Beginning_and_Intermediate_Algebra	141	11.657	12.000	11.955	WORD	Subtract 5 from both sides
+Beginning_and_Intermediate_Algebra	141	11.657	12.000	11.955	WORD	Divide both sides by− 2
+Beginning_and_Intermediate_Algebra	141	11.658	12.000	11.955	WORD	We have our y!
+Beginning_and_Intermediate_Algebra	141	11.658	12.000	11.955	WORD	Plug into lone variable equation, evaluate
+Beginning_and_Intermediate_Algebra	141	11.657	12.000	11.955	WORD	Now we have our x
+Beginning_and_Intermediate_Algebra	146	19.554	12.000	11.955	WORD	We can get opposites in front of x, by multiplying the
+Beginning_and_Intermediate_Algebra	146	19.554	12.000	11.955	WORD	second equation by 3, to get− 6x and + 6x
+Beginning_and_Intermediate_Algebra	146	11.603	12.000	11.955	WORD	Distribute to get new second equation.
+Beginning_and_Intermediate_Algebra	151	11.616	12.000	11.955	WORD	We will eliminate y using two diﬀerent pairs of equations
+Beginning_and_Intermediate_Algebra	152	11.616	12.000	11.955	WORD	Using (A) and (B) we will solve this system.
+Beginning_and_Intermediate_Algebra	152	11.616	12.000	11.955	WORD	We will solve by addition
+Beginning_and_Intermediate_Algebra	152	11.600	12.000	11.955	WORD	Multiply (A) by− 1
+Beginning_and_Intermediate_Algebra	152	11.600	12.000	11.955	WORD	Add to the second equation, unchanged
+Beginning_and_Intermediate_Algebra	152	11.600	12.000	11.955	WORD	Solve, divide by 2
+Beginning_and_Intermediate_Algebra	152	11.600	12.000	11.955	WORD	We now have x! Plug this into either (A) or (B)
+Beginning_and_Intermediate_Algebra	152	11.616	12.000	11.955	WORD	We plug it into (A), solve this equation, subtract 2
+Beginning_and_Intermediate_Algebra	152	11.616	12.000	11.955	WORD	Divide by 2
+Beginning_and_Intermediate_Algebra	152	11.616	12.000	11.955	WORD	We now have z! Plug this and x into any original equation
+Beginning_and_Intermediate_Algebra	154	11.617	12.000	11.955	WORD	We will eliminate x, start with first two equations
+Beginning_and_Intermediate_Algebra	159	17.320	12.000	11.955	WORD	Using value table, use q for quarters, d for dimes
+Beginning_and_Intermediate_Algebra	159	17.320	12.000	11.955	WORD	Each quarter′s value is 25 cents, dime′s is 10 cents
+Beginning_and_Intermediate_Algebra	159	17.320	12.000	11.955	WORD	We have 11 coins total. This is the number total.
+Beginning_and_Intermediate_Algebra	159	17.320	12.000	11.955	WORD	We have 1.85 for the final total,
+Beginning_and_Intermediate_Algebra	159	17.320	12.000	11.955	WORD	Write final total in cents (185)
+Beginning_and_Intermediate_Algebra	159	17.320	12.000	11.955	WORD	Because 25 and 10 are cents
+Beginning_and_Intermediate_Algebra	159	16.537	12.000	11.955	WORD	Using addition, multiply first equation by− 10
+Beginning_and_Intermediate_Algebra	159	16.538	12.000	11.955	WORD	Add together equations
+Beginning_and_Intermediate_Algebra	159	16.537	12.000	11.955	WORD	Divide both sides by 15
+Beginning_and_Intermediate_Algebra	159	16.537	12.000	11.955	WORD	We have our q, number of quarters is 5
+Beginning_and_Intermediate_Algebra	159	16.537	12.000	11.955	WORD	Plug into one of original equations
+Beginning_and_Intermediate_Algebra	159	16.537	12.000	11.955	WORD	Subtract 5 from both sides
+Beginning_and_Intermediate_Algebra	159	16.537	12.000	11.955	WORD	We have our d, number of dimes is 6
+Beginning_and_Intermediate_Algebra	160	14.874	12.000	11.955	WORD	Firstandlastcolumnsareourequationsbyadding
+Beginning_and_Intermediate_Algebra	160	16.554	12.000	11.955	WORD	We can solve by either addition or substitution
+Beginning_and_Intermediate_Algebra	160	16.527	12.000	11.955	WORD	We will solve by substitution.
+Beginning_and_Intermediate_Algebra	160	17.487	12.000	11.955	WORD	Solve for a by subtracting c
+Beginning_and_Intermediate_Algebra	160	16.527	12.000	11.955	WORD	Substitute into untouched equation
+Beginning_and_Intermediate_Algebra	160	16.527	12.000	11.955	WORD	Distribute
+Beginning_and_Intermediate_Algebra	160	16.528	12.000	11.955	WORD	Combine like terms
+Beginning_and_Intermediate_Algebra	160	16.527	12.000	11.955	WORD	Subtract 82 from both sides
+Beginning_and_Intermediate_Algebra	160	16.526	12.000	11.955	WORD	Divide both sides by− 0.5
+Beginning_and_Intermediate_Algebra	161	17.320	12.000	11.955	WORD	Use value table, f for five cent stamp, and e for eight
+Beginning_and_Intermediate_Algebra	161	17.320	12.000	11.955	WORD	Also list value of each stamp under value column
+Beginning_and_Intermediate_Algebra	161	17.320	12.000	11.955	WORD	The final total was 338(written in cents)
+Beginning_and_Intermediate_Algebra	161	17.320	12.000	11.955	WORD	We do not know the total number, this is left blank.
+Beginning_and_Intermediate_Algebra	161	16.866	12.000	11.955	WORD	3times as many 8cent stamples as 5cent stamps
+Beginning_and_Intermediate_Algebra	161	16.506	12.000	11.955	WORD	Total column gives second equation
+Beginning_and_Intermediate_Algebra	162	16.554	12.000	11.955	WORD	We have e, There are 36 eight cent stamps
+Beginning_and_Intermediate_Algebra	162	17.320	12.000	11.955	WORD	Use our investment table, x and y for accounts
+Beginning_and_Intermediate_Algebra	162	17.320	12.000	11.955	WORD	Fill in interest rates as decimals
+Beginning_and_Intermediate_Algebra	162	17.320	12.000	11.955	WORD	Total investment is 4000,
+Beginning_and_Intermediate_Algebra	162	17.320	12.000	11.955	WORD	Total interest was 276
+Beginning_and_Intermediate_Algebra	162	16.554	12.000	11.955	WORD	First and last column give our two equations
+Beginning_and_Intermediate_Algebra	162	16.554	12.000	11.955	WORD	Solve by either substitution or addition
+Beginning_and_Intermediate_Algebra	162	11.605	12.000	11.955	WORD	Use Addition, multiply first equation by− 0.06
+Beginning_and_Intermediate_Algebra	163	16.554	12.000	11.955	WORD	Add equations together
+Beginning_and_Intermediate_Algebra	163	16.554	12.000	11.955	WORD	Divide both sides by 0.03
+Beginning_and_Intermediate_Algebra	163	16.554	12.000	11.955	WORD	We have y, S1000 invested at 9%
+Beginning_and_Intermediate_Algebra	163	16.554	12.000	11.955	WORD	Plug into original equation
+Beginning_and_Intermediate_Algebra	163	16.554	12.000	11.955	WORD	Subtract 1000 from both sides
+Beginning_and_Intermediate_Algebra	163	16.554	12.000	11.955	WORD	We have x, S3000 invested at 6%
+Beginning_and_Intermediate_Algebra	163	16.554	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	163	17.320	12.000	11.955	WORD	Multiply to fill in interest column.
+Beginning_and_Intermediate_Algebra	163	17.320	12.000	11.955	WORD	Be sure to distribute 8000(x +0.04)
+Beginning_and_Intermediate_Algebra	163	16.554	12.000	11.955	WORD	Last column gives our equation
+Beginning_and_Intermediate_Algebra	163	16.554	12.000	11.955	WORD	Combine like terms
+Beginning_and_Intermediate_Algebra	163	16.553	12.000	11.955	WORD	Subtract 320 from both sides
+Beginning_and_Intermediate_Algebra	163	16.554	12.000	11.955	WORD	Divide both sides by 13000
+Beginning_and_Intermediate_Algebra	163	16.554	12.000	11.955	WORD	We have our x, 7% interest
+Beginning_and_Intermediate_Algebra	163	16.554	12.000	11.955	WORD	Second account is 4% higher
+Beginning_and_Intermediate_Algebra	168	17.200	12.000	11.955	WORD	Multiply amount by part to get total.
+Beginning_and_Intermediate_Algebra	168	17.200	12.000	11.955	WORD	be sure to distribute on the last row:(70 + x)0.6
+Beginning_and_Intermediate_Algebra	168	16.537	12.000	11.955	WORD	The last column is our equation by adding
+Beginning_and_Intermediate_Algebra	168	16.537	12.000	11.955	WORD	Move variables to one side, subtract 0.6x
+Beginning_and_Intermediate_Algebra	168	16.537	12.000	11.955	WORD	Subtract 35 from both sides
+Beginning_and_Intermediate_Algebra	168	16.537	12.000	11.955	WORD	Divide both sides by 0.2
+Beginning_and_Intermediate_Algebra	168	16.536	12.000	11.955	WORD	We have our x!
+Beginning_and_Intermediate_Algebra	168	16.537	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	168	17.200	12.000	11.955	WORD	Add the amounts to get the final amount.
+Beginning_and_Intermediate_Algebra	168	17.200	12.000	11.955	WORD	We want this final amount to sell for S2.50.
+Beginning_and_Intermediate_Algebra	169	17.200	12.000	11.955	WORD	Multiply amount by part to get the total.
+Beginning_and_Intermediate_Algebra	169	17.200	12.000	11.955	WORD	Be sure to distribute on the last row (40 + x)2.5
+Beginning_and_Intermediate_Algebra	169	16.554	12.000	11.955	WORD	The amount column gives one equation
+Beginning_and_Intermediate_Algebra	169	16.554	12.000	11.955	WORD	The total column gives a second equation.
+Beginning_and_Intermediate_Algebra	170	16.554	12.000	11.955	WORD	First equation comes from the first column
+Beginning_and_Intermediate_Algebra	170	16.554	12.000	11.955	WORD	Second equation comes from the total column
+Beginning_and_Intermediate_Algebra	171	16.525	12.000	11.955	WORD	Substitute into untouched equation
+Beginning_and_Intermediate_Algebra	171	16.525	12.000	11.955	WORD	Distribute
+Beginning_and_Intermediate_Algebra	171	16.526	12.000	11.955	WORD	Combine like terms
+Beginning_and_Intermediate_Algebra	171	16.525	12.000	11.955	WORD	Subtract 120 from both sides
+Beginning_and_Intermediate_Algebra	171	16.525	12.000	11.955	WORD	Divide both sides by− 1.5
+Beginning_and_Intermediate_Algebra	171	16.526	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	171	17.320	12.000	11.955	WORD	We use a and w for our variables. Antifreeze
+Beginning_and_Intermediate_Algebra	171	17.320	12.000	11.955	WORD	is pure, 100% or 1 in our table, written as a
+Beginning_and_Intermediate_Algebra	171	17.320	12.000	11.955	WORD	decimal. Water has no antifreeze, its
+Beginning_and_Intermediate_Algebra	171	17.320	12.000	11.955	WORD	percentage is 0. We also fill in the final percent
+Beginning_and_Intermediate_Algebra	171	16.553	12.000	11.955	WORD	First equation comes from first column
+Beginning_and_Intermediate_Algebra	171	15.594	12.000	11.955	WORD	Second equation comes from second column
+Beginning_and_Intermediate_Algebra	171	16.553	12.000	11.955	WORD	We have a, plug into to other equation
+Beginning_and_Intermediate_Algebra	171	16.554	12.000	11.955	WORD	Subtract 45.5 from both sides
+Beginning_and_Intermediate_Algebra	171	16.554	12.000	11.955	WORD	We have our w
+Beginning_and_Intermediate_Algebra	171	16.554	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	178	0.858	12.000	11.955	WORD	Quotient Rule of Exponents:
+Beginning_and_Intermediate_Algebra	180	13.688	12.000	11.955	WORD	Put the exponent of 2 on each factor, multiplying powers
+Beginning_and_Intermediate_Algebra	181	14.200	12.000	11.955	WORD	Simplify numerator with product rule, adding exponents
+Beginning_and_Intermediate_Algebra	181	14.200	12.000	11.955	WORD	Now use the quotient rule to subtract exponents
+Beginning_and_Intermediate_Algebra	181	14.320	12.000	11.955	WORD	Use power rule in denominator
+Beginning_and_Intermediate_Algebra	183	14.320	12.000	11.955	WORD	Use the quotient rule to subtract exponents
+Beginning_and_Intermediate_Algebra	183	14.320	12.000	11.955	WORD	Rewrite exponents as repeated multiplication
+Beginning_and_Intermediate_Algebra	183	11.616	12.000	11.955	WORD	Our Solution, when we combine the two solutions we get:
+Beginning_and_Intermediate_Algebra	183	11.616	12.000	11.955	WORD	Our final result.
+Beginning_and_Intermediate_Algebra	184	14.200	12.000	11.955	WORD	Using the quotient rule, subtract exponents
+Beginning_and_Intermediate_Algebra	184	14.200	12.000	11.955	WORD	Rewrite exponents as repeated multiplication
+Beginning_and_Intermediate_Algebra	184	14.200	12.000	11.955	WORD	Our Solution, putting these solutions together gives:
+Beginning_and_Intermediate_Algebra	184	5.298	12.000	11.955	WORD	Rules of Negative Exponets:
+Beginning_and_Intermediate_Algebra	184	14.200	12.000	11.955	WORD	Negative exponents on b, d, and e need to flip
+Beginning_and_Intermediate_Algebra	185	14.320	12.000	11.955	WORD	Simplify numerator with product rule, adding exponents
+Beginning_and_Intermediate_Algebra	185	11.688	12.000	11.955	MATH	2x3y−8
+Beginning_and_Intermediate_Algebra	186	14.320	12.000	11.955	WORD	In numerator, use product rule to add exponents
+Beginning_and_Intermediate_Algebra	197	0.008	12.000	11.955	MATH	12x2
+Beginning_and_Intermediate_Algebra	198	13.687	12.000	11.955	WORD	Multiply− 2y by 7y then 4x
+Beginning_and_Intermediate_Algebra	198	13.688	12.000	11.955	WORD	Multiply 3x by 7y then 4x. Line up like terms
+Beginning_and_Intermediate_Algebra	198	13.688	12.000	11.955	WORD	Add like terms to get Our Solution
+Beginning_and_Intermediate_Algebra	199	13.715	12.000	11.955	WORD	Rewrite as vertical problem
+Beginning_and_Intermediate_Algebra	199	13.715	12.000	11.955	WORD	Put polynomial with most terms on top
+Beginning_and_Intermediate_Algebra	199	13.715	12.000	11.955	WORD	Multiply− 5by each term
+Beginning_and_Intermediate_Algebra	199	13.715	12.000	11.955	WORD	Multiply 2x by each term. Line up like terms
+Beginning_and_Intermediate_Algebra	199	13.715	12.000	11.955	WORD	Add like terms to get our solution
+Beginning_and_Intermediate_Algebra	199	13.725	12.000	11.955	MATH	2x(4x)+2x(− 5y)− y(4x)− y(− 5y)
+Beginning_and_Intermediate_Algebra	205	14.320	12.000	11.955	WORD	Divide each term in the numerator by 3x2
+Beginning_and_Intermediate_Algebra	205	14.320	12.000	11.955	WORD	Reduce each fraction, subtracting exponents
+Beginning_and_Intermediate_Algebra	205	0.650	12.000	11.955	MATH	+
+Beginning_and_Intermediate_Algebra	205	14.200	12.000	11.955	WORD	Divide each term in the numerator by 4x2
+Beginning_and_Intermediate_Algebra	205	0.579	12.000	11.955	MATH	2x +1−
+Beginning_and_Intermediate_Algebra	205	14.200	12.000	11.955	WORD	Reduce each fraction, subtracting exponents
+Beginning_and_Intermediate_Algebra	207	13.720	12.000	11.955	WORD	Rewrite problem as long division
+Beginning_and_Intermediate_Algebra	207	13.720	12.000	11.955	WORD	Divide front terms:
+Beginning_and_Intermediate_Algebra	207	0.628	12.000	11.955	WORD	Divide front terms:
+Beginning_and_Intermediate_Algebra	207	0.508	12.000	11.955	WORD	Repeat, divide front terms:
+Beginning_and_Intermediate_Algebra	207	13.709	12.000	11.955	WORD	Repeat, divide front terms:
+Beginning_and_Intermediate_Algebra	208	0.579	12.000	11.955	MATH	3x2 + 7x− 4−
+Beginning_and_Intermediate_Algebra	208	14.200	12.000	11.955	WORD	Rewrite problem as long division
+Beginning_and_Intermediate_Algebra	208	0.508	12.000	11.955	WORD	Divide front terms:
+Beginning_and_Intermediate_Algebra	208	0.531	12.000	11.955	MATH	− 10x + 25 +
+Beginning_and_Intermediate_Algebra	209	14.200	12.000	11.955	WORD	Reorder dividend, need x2 term, add 0x2 for this
+Beginning_and_Intermediate_Algebra	209	0.508	12.000	11.955	WORD	Divide front terms:
+Beginning_and_Intermediate_Algebra	209	13.600	12.000	11.955	WORD	Bring down the next term
+Beginning_and_Intermediate_Algebra	210	2.565	8.000	11.955	MATH	2)
+Beginning_and_Intermediate_Algebra	210	2.565	8.000	11.955	MATH	4)
+Beginning_and_Intermediate_Algebra	210	2.565	8.000	11.955	MATH	6)
+Beginning_and_Intermediate_Algebra	210	2.565	8.000	11.955	MATH	40)
+Beginning_and_Intermediate_Algebra	213	11.617	12.000	11.955	WORD	GCF is 5x2
+Beginning_and_Intermediate_Algebra	213	11.616	12.000	11.955	WORD	This is what is left inside the parenthesis
+Beginning_and_Intermediate_Algebra	213	11.616	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	214	11.737	12.000	11.955	WORD	This is what is left inside the parenthesis
+Beginning_and_Intermediate_Algebra	214	11.737	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	217	13.360	12.000	11.955	WORD	GCF on left is 5b, on the right is 2
+Beginning_and_Intermediate_Algebra	217	13.360	12.000	11.955	WORD	(2a + 3) is the same! Factor out this GCF
+Beginning_and_Intermediate_Algebra	217	13.359	12.000	11.955	WORD	Split problem into two groups
+Beginning_and_Intermediate_Algebra	217	13.360	12.000	11.955	WORD	GCF on left is 3x, on right is 7
+Beginning_and_Intermediate_Algebra	217	13.360	12.000	11.955	WORD	The signs in the parenthesis don′t match!
+Beginning_and_Intermediate_Algebra	217	13.360	12.000	11.955	WORD	(2x + 3y) is the same! Factor out this GCF
+Beginning_and_Intermediate_Algebra	217	13.360	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	218	13.360	12.000	11.955	WORD	Split the problem into two groups
+Beginning_and_Intermediate_Algebra	218	13.360	12.000	11.955	WORD	GCF on left is 1, on right is 2ab
+Beginning_and_Intermediate_Algebra	218	13.360	12.000	11.955	WORD	Binomials don′t match!Move second term to end
+Beginning_and_Intermediate_Algebra	218	13.360	12.000	11.955	WORD	Start over, split the problem into two groups
+Beginning_and_Intermediate_Algebra	218	13.360	12.000	11.955	WORD	GCF on left is 2a, on right is− 7b2
+Beginning_and_Intermediate_Algebra	218	13.360	12.000	11.955	WORD	(2a +3b) is the same! Factor out this GCF
+Beginning_and_Intermediate_Algebra	218	13.360	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	219	13.360	12.000	11.955	WORD	Split the problem into two groups
+Beginning_and_Intermediate_Algebra	219	13.360	12.000	11.955	WORD	GCF on left is 1, on the right is− 3x
+Beginning_and_Intermediate_Algebra	219	13.360	12.000	11.955	WORD	y + 7 and 7+ y are the same, use either one
+Beginning_and_Intermediate_Algebra	219	13.360	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	226	11.737	12.000	11.955	MATH	3x2 +11x +6
+Beginning_and_Intermediate_Algebra	226	11.737	12.000	11.955	MATH	3x2 + 9x +2x +6
+Beginning_and_Intermediate_Algebra	227	11.688	12.000	11.955	MATH	− xy− 5y2
+Beginning_and_Intermediate_Algebra	227	11.688	12.000	11.955	MATH	4x2 +4xy− 5xy− 5y2
+Beginning_and_Intermediate_Algebra	227	11.605	12.000	11.955	MATH	4x(x + y)− 5y(x + y)
+Beginning_and_Intermediate_Algebra	227	11.605	12.000	11.955	MATH	(x + y)(4x− 5y)
+Beginning_and_Intermediate_Algebra	227	11.793	12.000	11.955	MATH	− 30x
+Beginning_and_Intermediate_Algebra	227	11.708	12.000	11.955	MATH	3x[6x2 +11x− 10]
+Beginning_and_Intermediate_Algebra	227	11.708	12.000	11.955	MATH	3x[6x2 + 15x− 4x− 10]
+Beginning_and_Intermediate_Algebra	227	11.694	12.000	11.955	MATH	3x[3x(2x +5)− 2(2x + 5)]
+Beginning_and_Intermediate_Algebra	227	11.719	12.000	11.955	MATH	3x(2x + 5)(3x− 2)
+Beginning_and_Intermediate_Algebra	227	11.622	12.000	11.955	MATH	3x2 + 2x− 7
+Beginning_and_Intermediate_Algebra	227	11.592	12.000	11.955	WORD	− 3(7) and− 7(3)
+Beginning_and_Intermediate_Algebra	227	11.695	12.000	11.955	WORD	Prime, cannot be factored
+Beginning_and_Intermediate_Algebra	238	11.754	12.000	11.955	WORD	Set equal to zero by moving terms to the right
+Beginning_and_Intermediate_Algebra	238	11.754	12.000	11.955	WORD	Factor using diﬀerence of squares
+Beginning_and_Intermediate_Algebra	244	14.200	12.000	11.955	WORD	Exponents first
+Beginning_and_Intermediate_Algebra	244	14.200	12.000	11.955	WORD	Multiply
+Beginning_and_Intermediate_Algebra	244	14.320	12.000	11.955	WORD	Reduce , subtract exponents. Negative exponents move to denominator
+Beginning_and_Intermediate_Algebra	245	14.320	12.000	11.955	WORD	Denominator has a common factor of 8
+Beginning_and_Intermediate_Algebra	245	14.320	12.000	11.955	WORD	Reduce by dividing 24 and 8 by 4
+Beginning_and_Intermediate_Algebra	245	14.320	12.000	11.955	WORD	Numerator has a common factor of 3, denominator of 6
+Beginning_and_Intermediate_Algebra	245	14.320	12.000	11.955	WORD	Divide out common factor (3x− 1) and divide 3 and 6 by 3
+Beginning_and_Intermediate_Algebra	245	14.200	12.000	11.955	WORD	Numerator is diﬀerence of squares, denominator is factored using ac
+Beginning_and_Intermediate_Algebra	245	14.200	12.000	11.955	WORD	Divide out common factor (x + 5)
+Beginning_and_Intermediate_Algebra	246	2.565	12.000	11.955	MATH	15)
+Beginning_and_Intermediate_Algebra	246	2.565	12.000	11.955	MATH	32)
+Beginning_and_Intermediate_Algebra	248	14.200	12.000	11.955	WORD	First reduce common factors from numerator and denominator (15 and 7)
+Beginning_and_Intermediate_Algebra	249	18.160	12.000	11.955	WORD	Reduce coeﬃcients by dividing out common factors (3 and 5)
+Beginning_and_Intermediate_Algebra	249	18.160	12.000	11.955	WORD	Reduce, subtracting exponents, negative exponents in denominator
+Beginning_and_Intermediate_Algebra	249	0.579	12.000	11.955	MATH	÷
+Beginning_and_Intermediate_Algebra	249	0.520	12.000	11.955	MATH	÷
+Beginning_and_Intermediate_Algebra	249	14.320	12.000	11.955	WORD	Subtract exponents on variables, negative exponents in denominator
+Beginning_and_Intermediate_Algebra	249	14.200	12.000	11.955	WORD	Factor each numerator and denominator
+Beginning_and_Intermediate_Algebra	249	0.520	12.000	11.955	MATH	·
+Beginning_and_Intermediate_Algebra	249	0.556	12.000	11.955	MATH	·
+Beginning_and_Intermediate_Algebra	249	14.200	12.000	11.955	WORD	Divide out common factors (x +3) and (x− 4)
+Beginning_and_Intermediate_Algebra	250	14.200	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	250	0.556	12.000	11.955	MATH	·
+Beginning_and_Intermediate_Algebra	250	0.520	12.000	11.955	MATH	·
+Beginning_and_Intermediate_Algebra	250	14.320	12.000	11.955	WORD	Reciprocal of last fraction
+Beginning_and_Intermediate_Algebra	250	0.520	12.000	11.955	MATH	·
+Beginning_and_Intermediate_Algebra	250	0.556	12.000	11.955	MATH	·
+Beginning_and_Intermediate_Algebra	250	0.556	12.000	11.955	MATH	·
+Beginning_and_Intermediate_Algebra	250	0.520	12.000	11.955	MATH	·
+Beginning_and_Intermediate_Algebra	250	14.320	12.000	11.955	WORD	Divide out common factors
+Beginning_and_Intermediate_Algebra	250	14.320	12.000	11.955	MATH	(a + 2), (a + 2), (a + 1), (a +5)
+Beginning_and_Intermediate_Algebra	252	0.520	8.000	11.955	MATH	·
+Beginning_and_Intermediate_Algebra	252	0.556	8.000	11.955	MATH	·
+Beginning_and_Intermediate_Algebra	252	0.640	8.000	11.955	MATH	·
+Beginning_and_Intermediate_Algebra	252	0.556	8.000	11.955	MATH	·
+Beginning_and_Intermediate_Algebra	254	14.200	12.000	11.955	WORD	Factor to idenfity factors we need to match denominators
+Beginning_and_Intermediate_Algebra	255	5.440	12.000	11.955	WORD	and 3c
+Beginning_and_Intermediate_Algebra	255	5.440	12.000	11.955	WORD	and 6b2c2
+Beginning_and_Intermediate_Algebra	255	13.595	12.000	11.955	WORD	Factor to find LCD
+Beginning_and_Intermediate_Algebra	255	13.594	12.000	11.955	WORD	Use factors to find LCD
+Beginning_and_Intermediate_Algebra	255	14.200	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	257	14.320	12.000	11.955	WORD	Same denominator, add numerators, combine like terms
+Beginning_and_Intermediate_Algebra	257	14.320	12.000	11.955	WORD	Factor numerator and denominator
+Beginning_and_Intermediate_Algebra	257	14.320	12.000	11.955	WORD	Divide out (x +2)
+Beginning_and_Intermediate_Algebra	258	14.320	12.000	11.955	WORD	Add the opposite of the second fraction (distribute negative)
+Beginning_and_Intermediate_Algebra	258	14.320	12.000	11.955	WORD	Add numerators, combine like terms
+Beginning_and_Intermediate_Algebra	258	14.320	12.000	11.955	WORD	Factor numerator and denominator
+Beginning_and_Intermediate_Algebra	258	14.320	12.000	11.955	WORD	Divide out common factor of 3
+Beginning_and_Intermediate_Algebra	259	14.320	12.000	11.955	WORD	Reduce, dividing out factors 2, a, and b
+Beginning_and_Intermediate_Algebra	260	4.156	12.000	11.955	MATH	+ 1
+Beginning_and_Intermediate_Algebra	260	14.320	12.000	11.955	WORD	Add numerators, combine like terms
+Beginning_and_Intermediate_Algebra	260	14.320	12.000	11.955	WORD	Divide out x− 4 factor
+Beginning_and_Intermediate_Algebra	262	14.200	12.000	11.955	WORD	Get common denominator in top and bottom fractions
+Beginning_and_Intermediate_Algebra	262	14.200	12.000	11.955	WORD	Add and subtract fractions, reducing solutions
+Beginning_and_Intermediate_Algebra	262	14.200	12.000	11.955	WORD	LCD is 12, multiply each term
+Beginning_and_Intermediate_Algebra	263	14.200	12.000	11.955	WORD	Reduce each fraction
+Beginning_and_Intermediate_Algebra	263	14.200	12.000	11.955	WORD	Add and subtract
+Beginning_and_Intermediate_Algebra	263	11.688	12.000	11.955	WORD	Identify LCD (use highest exponent)
+Beginning_and_Intermediate_Algebra	263	11.688	12.000	11.955	WORD	Multiply each term by LCD
+Beginning_and_Intermediate_Algebra	263	14.320	12.000	11.955	WORD	Reduce fractions (subtract exponents)
+Beginning_and_Intermediate_Algebra	263	14.320	12.000	11.955	WORD	Multiply
+Beginning_and_Intermediate_Algebra	263	14.320	12.000	11.955	WORD	Factor
+Beginning_and_Intermediate_Algebra	263	14.320	12.000	11.955	WORD	Divide out (x− 1) factor
+Beginning_and_Intermediate_Algebra	263	14.200	12.000	11.955	WORD	Multiply each term by LCD, (x +4)
+Beginning_and_Intermediate_Algebra	264	14.200	12.000	11.955	WORD	Reduce fractions
+Beginning_and_Intermediate_Algebra	264	14.200	12.000	11.955	WORD	Combine like terms
+Beginning_and_Intermediate_Algebra	264	11.688	12.000	11.955	WORD	Idenfity LCD (highest exponents)
+Beginning_and_Intermediate_Algebra	264	11.688	12.000	11.955	WORD	Multiply each term by LCD
+Beginning_and_Intermediate_Algebra	264	14.200	12.000	11.955	WORD	Reduce each fraction (subtract exponents)
+Beginning_and_Intermediate_Algebra	264	14.200	12.000	11.955	WORD	Distribute the subtraction to numerator
+Beginning_and_Intermediate_Algebra	264	14.200	12.000	11.955	WORD	Identify LCD
+Beginning_and_Intermediate_Algebra	265	11.600	12.000	11.955	WORD	Multiply each term by LCD
+Beginning_and_Intermediate_Algebra	265	11.600	12.000	11.955	WORD	Reduce fractions
+Beginning_and_Intermediate_Algebra	265	14.200	12.000	11.955	WORD	FOIL
+Beginning_and_Intermediate_Algebra	265	14.200	12.000	11.955	WORD	Combine like terms
+Beginning_and_Intermediate_Algebra	265	14.200	12.000	11.955	WORD	Factor out 2 in denominator
+Beginning_and_Intermediate_Algebra	265	14.200	12.000	11.955	WORD	Divide out common factor 2
+Beginning_and_Intermediate_Algebra	265	14.200	12.000	11.955	WORD	Make each negative exponent into a fraction
+Beginning_and_Intermediate_Algebra	265	14.200	12.000	11.955	WORD	Multiply each term by LCD, m2
+Beginning_and_Intermediate_Algebra	265	14.200	12.000	11.955	WORD	Reduce the fractions
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	1)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	3)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	5)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	7)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	9)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	2)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	4)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	6)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	11)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	8)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	10)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	12)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	13)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	15)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	17)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	19)
+Beginning_and_Intermediate_Algebra	266	2.805	8.000	11.955	MATH	14)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	16)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	18)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	20)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	21)
+Beginning_and_Intermediate_Algebra	266	4.245	8.000	11.955	MATH	22)
+Beginning_and_Intermediate_Algebra	267	4.245	12.000	11.955	MATH	23)
+Beginning_and_Intermediate_Algebra	267	4.245	12.000	11.955	MATH	24)
+Beginning_and_Intermediate_Algebra	267	4.245	12.000	11.955	MATH	25)
+Beginning_and_Intermediate_Algebra	267	4.245	12.000	11.955	MATH	26)
+Beginning_and_Intermediate_Algebra	267	4.245	12.000	11.955	MATH	27)
+Beginning_and_Intermediate_Algebra	267	4.245	12.000	11.955	MATH	28)
+Beginning_and_Intermediate_Algebra	267	4.245	12.000	11.955	MATH	29)
+Beginning_and_Intermediate_Algebra	267	4.245	12.000	11.955	MATH	30)
+Beginning_and_Intermediate_Algebra	267	4.245	12.000	11.955	MATH	31)
+Beginning_and_Intermediate_Algebra	267	4.245	12.000	11.955	MATH	33)
+Beginning_and_Intermediate_Algebra	267	4.245	12.000	11.955	MATH	34)
+Beginning_and_Intermediate_Algebra	267	4.245	12.000	11.955	MATH	35)
+Beginning_and_Intermediate_Algebra	271	14.320	12.000	11.955	WORD	The flagpole has a shadow of 8feet, but we don′t know the height
+Beginning_and_Intermediate_Algebra	271	14.200	12.000	11.955	WORD	Don′t know visitor score, but home is 9 points less
+Beginning_and_Intermediate_Algebra	275	14.320	12.000	11.955	WORD	Multiply terms by LCD, (x +1)(x + 2)
+Beginning_and_Intermediate_Algebra	275	12.576	12.000	11.955	WORD	Reduce fractions
+Beginning_and_Intermediate_Algebra	281	14.200	12.000	11.955	WORD	Divide out oz, multiply across. Divide result
+Beginning_and_Intermediate_Algebra	301	19.120	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	305	13.473	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	310	17.200	12.000	11.955	WORD	Index is denominator
+Beginning_and_Intermediate_Algebra	310	17.200	12.000	11.955	WORD	Negative exponents from reciprocals
+Beginning_and_Intermediate_Algebra	310	17.320	12.000	11.955	WORD	Index is denominator
+Beginning_and_Intermediate_Algebra	310	17.320	12.000	11.955	WORD	Negative exponent means reciprocals
+Beginning_and_Intermediate_Algebra	310	12.888	12.000	11.955	WORD	Evaluate radical
+Beginning_and_Intermediate_Algebra	311	14.320	12.000	11.955	WORD	In numerator, need common denominator to add exponents
+Beginning_and_Intermediate_Algebra	312	14.320	12.000	11.955	WORD	Subtract exponents on x, reduce exponent on y
+Beginning_and_Intermediate_Algebra	312	19.120	12.000	11.955	WORD	Evaluate 9
+Beginning_and_Intermediate_Algebra	312	19.120	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	316	14.200	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	321	14.320	12.000	11.955	WORD	Binomial in denominator, multiply by conjugate, 4− 8i
+Beginning_and_Intermediate_Algebra	321	14.320	12.000	11.955	WORD	Combine like terms 8− 48 and− 16i− 24i and 16 + 64
+Beginning_and_Intermediate_Algebra	321	14.320	12.000	11.955	WORD	Reduce, divide each term by 40
+Beginning_and_Intermediate_Algebra	332	11.754	12.000	11.955	WORD	Use even root property ( ± )
+Beginning_and_Intermediate_Algebra	339	0.089	12.000	11.955	MATH	x2 +
+Beginning_and_Intermediate_Algebra	339	11.616	12.000	11.955	WORD	Separate constant term from varaibles
+Beginning_and_Intermediate_Algebra	340	0.008	12.000	11.955	MATH	x2
+Beginning_and_Intermediate_Algebra	341	0.579	12.000	11.955	MATH	−
+Beginning_and_Intermediate_Algebra	343	0.530	12.000	11.955	MATH	x2 +
+Beginning_and_Intermediate_Algebra	349	11.726	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	351	0.579	12.000	11.955	MATH	17)−
+Beginning_and_Intermediate_Algebra	351	0.628	12.000	11.955	MATH	19)− 6,
+Beginning_and_Intermediate_Algebra	351	0.508	12.000	11.955	MATH	16) 2,
+Beginning_and_Intermediate_Algebra	364	3.138	12.000	11.955	WORD	Teamwork Equation:
+Beginning_and_Intermediate_Algebra	364	0.628	12.000	11.955	WORD	Adan: 3, Maria: x, Total:
+Beginning_and_Intermediate_Algebra	364	14.200	12.000	11.955	WORD	Clearly state times for each and total, using x for Maria
+Beginning_and_Intermediate_Algebra	365	14.200	12.000	11.955	WORD	Using reciprocals, add the individual times gives total
+Beginning_and_Intermediate_Algebra	365	14.200	12.000	11.955	WORD	Multiply each term by LCD of 12x
+Beginning_and_Intermediate_Algebra	365	0.530	12.000	11.955	MATH	+
+Beginning_and_Intermediate_Algebra	365	14.200	12.000	11.955	WORD	Using reciprocals, add individal times equaling total
+Beginning_and_Intermediate_Algebra	365	12.805	12.000	11.955	WORD	Multiply each term by LCD, 10x
+Beginning_and_Intermediate_Algebra	373	17.320	12.000	11.955	WORD	Using our table, we don′t know the number
+Beginning_and_Intermediate_Algebra	373	17.320	12.000	11.955	WORD	he bought, or at what price, so we use varibles
+Beginning_and_Intermediate_Algebra	373	19.240	12.000	11.955	WORD	n and p. Total price was S56.
+Beginning_and_Intermediate_Algebra	376	17.320	12.000	11.955	WORD	We do not know rate, r, or time, t he traveled
+Beginning_and_Intermediate_Algebra	376	17.320	12.000	11.955	WORD	on the way to the conference. But we do know
+Beginning_and_Intermediate_Algebra	376	17.320	12.000	11.955	WORD	the distance was 120 miles.
+Beginning_and_Intermediate_Algebra	377	17.200	12.000	11.955	WORD	We know the distance up and down is 30.
+Beginning_and_Intermediate_Algebra	377	17.200	12.000	11.955	WORD	Put t for time downstream. Subtracting
+Beginning_and_Intermediate_Algebra	377	17.200	12.000	11.955	WORD	8− t becomes time upstream
+Beginning_and_Intermediate_Algebra	380	11.721	12.000	11.955	WORD	Make a table of values
+Beginning_and_Intermediate_Algebra	380	11.721	12.000	11.955	WORD	Plug 0 in for x and evaluate
+Beginning_and_Intermediate_Algebra	380	11.721	12.000	11.955	WORD	Plug 1 in for x and evaluate
+Beginning_and_Intermediate_Algebra	380	11.721	12.000	11.955	WORD	Plug 2 in for x and evaluate
+Beginning_and_Intermediate_Algebra	380	11.721	12.000	11.955	WORD	Plug 3 in for x and evaluate
+Beginning_and_Intermediate_Algebra	380	11.721	12.000	11.955	WORD	Plug 4 in for x and evaluate
+Beginning_and_Intermediate_Algebra	381	21.840	12.000	11.955	WORD	Points B and C: x-intercepts: Where
+Beginning_and_Intermediate_Algebra	381	21.840	12.000	11.955	WORD	Point D: Vertex: The point where the
+Beginning_and_Intermediate_Algebra	381	1.134	12.000	11.955	WORD	to find x. Then plug this value into the equation to find
+Beginning_and_Intermediate_Algebra	381	11.617	12.000	11.955	WORD	Find the key points
+Beginning_and_Intermediate_Algebra	388	13.410	12.000	11.955	WORD	With this equation there are no bad values
+Beginning_and_Intermediate_Algebra	388	13.409	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	393	11.728	12.000	11.955	WORD	Evaluate f and g at− 3
+Beginning_and_Intermediate_Algebra	393	11.729	12.000	11.955	WORD	Evaluate f at− 3
+Beginning_and_Intermediate_Algebra	393	11.729	12.000	11.955	WORD	Evaluate g at− 3
+Beginning_and_Intermediate_Algebra	393	11.742	12.000	11.955	WORD	Evaluate h and k at 5
+Beginning_and_Intermediate_Algebra	393	11.742	12.000	11.955	WORD	Evaluate h at 5
+Beginning_and_Intermediate_Algebra	394	11.721	12.000	11.955	WORD	Evaluate k at 5
+Beginning_and_Intermediate_Algebra	394	11.622	12.000	11.955	WORD	Write subtraction problem of functions
+Beginning_and_Intermediate_Algebra	394	17.702	12.000	11.955	WORD	Write division problem of functions
+Beginning_and_Intermediate_Algebra	394	0.008	12.000	11.955	WORD	− 4x− 5) and g(x) with (x− 5)
+Beginning_and_Intermediate_Algebra	394	14.320	12.000	11.955	WORD	To simplify the fraction we must first factor
+Beginning_and_Intermediate_Algebra	395	14.320	12.000	11.955	WORD	Divide out common factor of x− 5
+Beginning_and_Intermediate_Algebra	395	11.737	12.000	11.955	WORD	Write as a sum of functions
+Beginning_and_Intermediate_Algebra	395	11.617	12.000	11.955	WORD	Write as a product of functions
+Beginning_and_Intermediate_Algebra	396	11.622	12.000	11.955	WORD	Rewrite as a function in function
+Beginning_and_Intermediate_Algebra	397	17.685	12.000	11.955	WORD	Rewrite as a function in function
+Beginning_and_Intermediate_Algebra	397	17.565	12.000	11.955	WORD	Rewrite as a function in function
+Beginning_and_Intermediate_Algebra	402	14.320	12.000	11.955	WORD	Distribute 3 and 4 into numerators
+Beginning_and_Intermediate_Algebra	403	14.320	12.000	11.955	WORD	Multiply each term by LCD:3− 4x
+Beginning_and_Intermediate_Algebra	403	14.320	12.000	11.955	WORD	Reduce fractions
+Beginning_and_Intermediate_Algebra	404	14.200	12.000	11.955	WORD	Switch x and y
+Beginning_and_Intermediate_Algebra	404	14.200	12.000	11.955	WORD	Multiply by (4y +2)
+Beginning_and_Intermediate_Algebra	404	11.658	12.000	11.955	WORD	Replace y with g−1(x)
+Beginning_and_Intermediate_Algebra	404	11.658	12.000	11.955	WORD	Our Solution
+Beginning_and_Intermediate_Algebra	413	2.225	12.000	11.955	WORD	15) log343
+Beginning_and_Intermediate_Algebra	413	2.528	12.000	11.955	WORD	18) log4
+Beginning_and_Intermediate_Algebra	422	14.320	12.000	11.955	WORD	Evaluate tan25◦
+Beginning_and_Intermediate_Algebra	423	4.874	12.000	11.955	MATH	8
+Beginning_and_Intermediate_Algebra	423	4.754	12.000	11.955	MATH	8
+Beginning_and_Intermediate_Algebra	423	1.548	12.000	11.955	MATH	C
+Beginning_and_Intermediate_Algebra	424	0.074	12.000	11.955	MATH	13
+Beginning_and_Intermediate_Algebra	424	6.400	12.000	11.955	MATH	A
+Beginning_and_Intermediate_Algebra	424	1.000	12.000	11.955	MATH	B
+Beginning_and_Intermediate_Algebra	424	4.000	12.000	11.955	MATH	A
+Beginning_and_Intermediate_Algebra	424	5.800	12.000	11.955	MATH	B
+Beginning_and_Intermediate_Algebra	425	2.200	12.000	11.955	MATH	C
+Beginning_and_Intermediate_Algebra	425	0.948	12.000	11.955	MATH	C
+Beginning_and_Intermediate_Algebra	425	4.000	12.000	11.955	MATH	A
+Beginning_and_Intermediate_Algebra	425	2.148	12.000	11.955	MATH	C
+Beginning_and_Intermediate_Algebra	425	5.200	12.000	11.955	MATH	B
+Beginning_and_Intermediate_Algebra	425	4.715	12.000	11.955	MATH	B
+Beginning_and_Intermediate_Algebra	426	2.019	12.000	11.955	MATH	x
+Beginning_and_Intermediate_Algebra	426	1.955	12.000	11.955	MATH	B
+Beginning_and_Intermediate_Algebra	426	1.000	12.000	11.955	MATH	C
+Beginning_and_Intermediate_Algebra	426	2.200	12.000	11.955	MATH	A
+Beginning_and_Intermediate_Algebra	426	1.715	12.000	11.955	MATH	B
+Beginning_and_Intermediate_Algebra	427	0.025	12.000	11.955	MATH	A
+Beginning_and_Intermediate_Algebra	427	2.800	12.000	11.955	MATH	B
+Beginning_and_Intermediate_Algebra	427	0.025	12.000	11.955	MATH	A
+Beginning_and_Intermediate_Algebra	427	0.025	12.000	11.955	MATH	A
+Beginning_and_Intermediate_Algebra	427	2.800	12.000	11.955	MATH	B
+Beginning_and_Intermediate_Algebra	429	12.601	12.000	11.955	WORD	Tangent is opposite over adjacent. Use inverse to find angle
+Beginning_and_Intermediate_Algebra	429	12.601	12.000	11.955	WORD	Evaluate fraction, take tangent inverse on table or calculator
+Beginning_and_Intermediate_Algebra	433	0.625	12.000	11.955	MATH	A
+Beginning_and_Intermediate_Algebra	433	2.200	12.000	11.955	MATH	C
+Beginning_and_Intermediate_Algebra	433	6.400	12.000	11.955	MATH	A
+Beginning_and_Intermediate_Algebra	433	1.000	12.000	11.955	MATH	C
+Beginning_and_Intermediate_Algebra	434	3.348	12.000	11.955	MATH	C
+Beginning_and_Intermediate_Algebra	434	2.915	12.000	11.955	MATH	B
+Beginning_and_Intermediate_Algebra	434	4.600	12.000	11.955	MATH	A
+Beginning_and_Intermediate_Algebra	434	4.000	12.000	11.955	MATH	A
+Beginning_and_Intermediate_Algebra	434	7.000	12.000	11.955	MATH	B
+Beginning_and_Intermediate_Algebra	435	4.000	12.000	11.955	MATH	B
+Beginning_and_Intermediate_Algebra	435	8.200	12.000	11.955	MATH	B
+Beginning_and_Intermediate_Algebra	435	0.400	12.000	11.955	MATH	A
+Beginning_and_Intermediate_Algebra	435	6.400	12.000	11.955	MATH	B
+Beginning_and_Intermediate_Algebra	436	2.200	12.000	11.955	MATH	C
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	34)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	35)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	37)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	41)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	43)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	44)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	46)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	47)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	58)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	60)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	64)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	66)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	70)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	71)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	72)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	74)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	75)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	76)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	77)−
+Beginning_and_Intermediate_Algebra	439	0.579	12.000	11.955	MATH	79)−
+Beginning_and_Intermediate_Algebra	443	0.579	12.000	11.955	MATH	13)−
+Beginning_and_Intermediate_Algebra	443	0.579	12.000	11.955	MATH	15)−
+Beginning_and_Intermediate_Algebra	443	0.579	12.000	11.955	MATH	18)−
+Beginning_and_Intermediate_Algebra	443	0.579	12.000	11.955	MATH	24)−
+Beginning_and_Intermediate_Algebra	443	0.579	12.000	11.955	MATH	26)−
+Beginning_and_Intermediate_Algebra	443	0.579	12.000	11.955	MATH	27)−
+Beginning_and_Intermediate_Algebra	443	0.579	12.000	11.955	MATH	28)−
+Beginning_and_Intermediate_Algebra	444	0.579	12.000	11.955	MATH	27) 6,−
+Beginning_and_Intermediate_Algebra	444	0.579	12.000	11.955	MATH	29)−
+Beginning_and_Intermediate_Algebra	444	0.579	12.000	11.955	MATH	31)−
+Beginning_and_Intermediate_Algebra	444	0.628	12.000	11.955	MATH	32)− 6,
+Beginning_and_Intermediate_Algebra	444	0.628	12.000	11.955	MATH	33) 7,
+Beginning_and_Intermediate_Algebra	444	0.579	12.000	11.955	MATH	34)−
+Beginning_and_Intermediate_Algebra	444	0.579	12.000	11.955	MATH	35)−
+Beginning_and_Intermediate_Algebra	444	0.579	12.000	11.955	MATH	36) 0,−
+Beginning_and_Intermediate_Algebra	448	0.579	12.000	11.955	MATH	16)−
+Beginning_and_Intermediate_Algebra	448	0.579	12.000	11.955	MATH	29)−
+Beginning_and_Intermediate_Algebra	450	0.579	12.000	11.955	MATH	2)−
+Beginning_and_Intermediate_Algebra	450	0.579	12.000	11.955	MATH	4)−
+Beginning_and_Intermediate_Algebra	450	0.579	12.000	11.955	MATH	16)−
+Beginning_and_Intermediate_Algebra	453	0.579	12.000	11.955	MATH	9)−
+Beginning_and_Intermediate_Algebra	461	0.579	12.000	11.955	MATH	18) 8k− 9−
+Beginning_and_Intermediate_Algebra	461	0.579	12.000	11.955	MATH	− 9n− 10−
+Beginning_and_Intermediate_Algebra	461	0.579	12.000	11.955	MATH	− 8m + 7−
+Beginning_and_Intermediate_Algebra	461	0.008	12.000	11.955	MATH	41) 6n2
+Beginning_and_Intermediate_Algebra	465	0.579	12.000	11.955	MATH	33)−
+Beginning_and_Intermediate_Algebra	465	0.579	12.000	11.955	MATH	34)−
+Beginning_and_Intermediate_Algebra	466	0.579	12.000	11.955	MATH	3)−
+Beginning_and_Intermediate_Algebra	466	0.579	12.000	11.955	MATH	9)−
+Beginning_and_Intermediate_Algebra	469	0.579	12.000	11.955	MATH	28)−
+Beginning_and_Intermediate_Algebra	469	0.579	12.000	11.955	MATH	29)−
+Beginning_and_Intermediate_Algebra	470	0.578	12.000	11.955	MATH	1)−
+Beginning_and_Intermediate_Algebra	470	0.579	12.000	11.955	MATH	17)−
+Beginning_and_Intermediate_Algebra	470	0.579	12.000	11.955	MATH	18)−
+Beginning_and_Intermediate_Algebra	471	0.628	12.000	11.955	MATH	22)− 2,
+Beginning_and_Intermediate_Algebra	471	0.579	12.000	11.955	MATH	29)−
+Beginning_and_Intermediate_Algebra	475	0.337	12.000	11.955	MATH	21) y
+Beginning_and_Intermediate_Algebra	478	0.579	12.000	11.955	MATH	15)−
+Beginning_and_Intermediate_Algebra	478	0.579	12.000	11.955	MATH	21)−
+Beginning_and_Intermediate_Algebra	478	0.579	12.000	11.955	MATH	23)−
+Beginning_and_Intermediate_Algebra	479	0.579	12.000	11.955	MATH	55) 1,−
+Beginning_and_Intermediate_Algebra	479	0.579	12.000	11.955	MATH	56) 3,−
+Beginning_and_Intermediate_Algebra	482	0.579	12.000	11.955	MATH	6) (13, 5), (− 20,−
+Beginning_and_Intermediate_Algebra	482	0.579	12.000	11.955	MATH	11) (45, 1), (−
+Beginning_and_Intermediate_Algebra	484	0.579	12.000	11.955	MATH	3) x
+Beginning_and_Intermediate_Algebra	484	0.579	12.000	11.955	MATH	17)−
+Beginning_and_Intermediate_Algebra	485	0.579	12.000	11.955	MATH	15)−
+Beginning_and_Intermediate_Algebra	485	0.579	12.000	11.955	MATH	34)−
+Beginning_and_Intermediate_Algebra	486	0.579	12.000	11.955	MATH	5)−
+Beginning_and_Intermediate_Algebra	486	0.579	12.000	11.955	MATH	6)−
+Beginning_and_Intermediate_Algebra	486	0.579	12.000	11.955	MATH	7)−
+Beginning_and_Intermediate_Algebra	486	0.579	12.000	11.955	MATH	9)−
+Beginning_and_Intermediate_Algebra	486	0.579	12.000	11.955	MATH	18)−
+Beginning_and_Intermediate_Algebra	486	0.579	12.000	11.955	MATH	19)−
+Beginning_and_Intermediate_Algebra	486	0.579	12.000	11.955	MATH	20)−
+Beginning_and_Intermediate_Algebra	487	0.579	12.000	11.955	MATH	15)−
+Beginning_and_Intermediate_Algebra	487	0.579	12.000	11.955	MATH	31)−
+Beginning_and_Intermediate_Algebra	487	0.579	12.000	11.955	MATH	32)−
+Beginning_and_Intermediate_Algebra	487	0.579	12.000	11.955	MATH	33)−
+Beginning_and_Intermediate_Algebra	487	0.579	12.000	11.955	MATH	34)−
+Beginning_and_Intermediate_Algebra	487	0.579	12.000	11.955	MATH	35)−
+Beginning_and_Intermediate_Algebra	487	0.579	12.000	11.955	MATH	36)−
+Beginning_and_Intermediate_Algebra	487	0.579	12.000	11.955	MATH	37)−
+GPO-911REPORT	431	6.634	9.000	10.000	WORD	Unity of Effort in Managing Intelligence
+November-December2012	9	10.158	11.000	10.500	WORD	Another laboratory looking for solutions
+November-December2012	9	10.042	11.000	10.500	WORD	is the ARS European Biological Control
+November-December2012	9	9.969	11.000	10.500	WORD	funds from the DWFP program, ARS hired
+November-December2012	9	9.948	11.000	10.500	WORD	Alexandra Chaskopoulou, a native of
+November-December2012	9	4.620	11.000	10.500	WORD	working with a number of products and
+November-December2012	9	4.620	11.000	10.500	WORD	techniques that involve testing new traps,
+November-December2012	9	4.620	11.000	10.500	WORD	ing new methods to control this nuisance.
+November-December2012	9	14.627	11.000	10.500	WORD	CMAVE’s Geden recently teamed with
+November-December2012	11	11.948	11.000	10.500	WORD	Treated uniforms have been standard
+November-December2012	11	11.958	11.000	10.500	WORD	practice since 1951, when an ARS-devel-
+November-December2012	11	11.937	11.000	10.500	WORD	oped miticidal mixture, M-1960, was used.
+November-December2012	11	11.969	11.000	10.500	WORD	M-1960 was discontinued in 1982 because
+November-December2012	11	11.958	11.000	10.500	WORD	it was a skin irritant. ARS scientists devel-
+November-December2012	11	11.969	11.000	10.500	WORD	oped a permethrin treatment of uniforms,
+November-December2012	11	11.874	11.000	10.500	WORD	and field treatment of cotton uniforms with
+November-December2012	11	17.156	11.000	10.500	WORD	this repellent became available in 1991.
+November-December2012	11	11.969	11.000	10.500	WORD	Since then, new uniforms have been
+November-December2012	11	11.958	11.000	10.500	WORD	introduced, and many incorporate fire-
+November-December2012	11	11.958	11.000	10.500	WORD	resistant fibers. Application of permethrin
+November-December2012	11	11.969	11.000	10.500	WORD	to these uniforms is not possible without
+November-December2012	11	16.152	11.000	10.500	WORD	In 2011, scientists examined alternative
+November-December2012	11	6.146	11.000	10.500	WORD	fabrics for potential replacement of the
+November-December2012	11	6.146	11.000	10.500	WORD	original fire-resistant Army combat uni-
+November-December2012	11	6.146	11.000	10.500	WORD	form. Fabric replacement was necessary
+November-December2012	11	6.146	11.000	10.500	WORD	because the material initially selected was
+November-December2012	11	6.146	11.000	10.500	WORD	too easily torn. Earlier this year, Bernier
+November-December2012	11	6.146	11.000	10.500	WORD	completed bite-protection testing on uni-
+November-December2012	11	6.146	11.000	10.500	WORD	forms constructed of this more durable
+November-December2012	11	6.146	11.000	10.500	WORD	fire-resistant fabric.
+November-December2012	11	16.152	11.000	10.500	WORD	Bernier and chemist Chauhan have cre-
+November-December2012	11	6.146	11.000	10.500	WORD	ated an attachable repellent-treated band
+November-December2012	11	6.146	11.000	10.500	WORD	that augments the uniform by conferring
+November-December2012	11	6.146	11.000	10.500	WORD	some spatial protection to exposed skin.
+November-December2012	11	6.146	11.000	10.500	WORD	Preliminary evaluations indicate that the
+November-December2012	12	12.356	11.000	10.500	WORD	new product—a disposable, reversible
+November-December2012	12	12.230	11.000	10.500	WORD	bandage—for short-term protection. The
+November-December2012	12	12.283	11.000	10.500	WORD	invention also has potential application for
+November-December2012	12	12.220	11.000	10.500	WORD	recreation and sports use and as a device
+November-December2012	12	12.230	11.000	10.500	WORD	to protect pets and livestock from biting
+November-December2012	12	12.241	11.000	10.500	WORD	Each year, ARS scientists at the South-
+November-December2012	12	12.230	11.000	10.500	WORD	ern Plains Agricultural Research Center
+November-December2012	12	12.251	11.000	10.500	WORD	(SPARC) in College Station, Texas, pack
+November-December2012	12	12.419	11.000	10.500	WORD	up and head off to an equipment rodeo—the
+November-December2012	12	5.884	11.000	10.500	WORD	and oil-based sprays and insecticides—
+November-December2012	12	5.884	11.000	10.500	WORD	used in insect-control applications.
+November-December2012	12	15.890	11.000	10.500	WORD	“Manufacturers operate their own equip-
+November-December2012	12	5.884	11.000	10.500	WORD	ment, and all testing is done out in the
+November-December2012	12	5.884	11.000	10.500	WORD	open,” says SPARC agricultural engineer
+November-December2012	12	5.884	11.000	10.500	WORD	Clint Hoffmann. “The good and bad results
+November-December2012	12	5.884	11.000	10.500	WORD	are published on all equipment tested.”
+November-December2012	12	15.890	11.000	10.500	WORD	So far, the group has developed droplet
+November-December2012	12	5.884	11.000	10.500	WORD	size spectra for about 88 sprayers.
+November-December2012	12	15.890	11.000	10.500	WORD	“We think we’ve tested every piece of
+November-December2012	12	5.884	11.000	10.500	WORD	equipment that’s in the military arsenal,”
+November-December2012	15	8.558	11.000	10.500	WORD	of Defense’s Navy Entomology Center of
+November-December2012	15	8.558	11.000	10.500	WORD	Excellence in Jacksonville, Florida. The
+November-December2012	15	8.558	11.000	10.500	WORD	ultra-low-volume sprayers and foggers
+November-December2012	15	8.558	11.000	10.500	WORD	range from hand-held and backpack types
+November-December2012	15	8.558	11.000	10.500	WORD	to ones mounted on all-terrain vehicles
+November-December2012	15	8.558	11.000	10.500	WORD	and trucks.
+November-December2012	15	18.564	11.000	10.500	WORD	This public-health project was funded
+November-December2012	15	8.558	11.000	10.500	WORD	by the Deployed War-Fighter Protection
+November-December2012	15	8.558	11.000	10.500	WORD	the app helps the user select the right size
+November-December2012	15	8.558	11.000	10.500	WORD	nozzle opening, spray pressure, nozzle
+November-December2012	15	8.558	11.000	10.500	WORD	orientation, and airspeed so that pesticides
+November-December2012	15	8.558	11.000	10.500	WORD	are delivered at the desired droplet sizes.
+November-December2012	18	12.071	11.000	10.500	WORD	to different groups. These DNA patterns,
+November-December2012	18	12.071	11.000	10.500	WORD	called “fingerprints,” are detected by
+November-December2012	18	12.071	11.000	10.500	WORD	separating bacterial DNA into tiny pieces,
+November-December2012	19	12.068	11.000	10.500	WORD	The sheer range of different antibiotic-
+November-December2012	19	12.015	11.000	10.500	WORD	resistant E. coli isolates identified by
+November-December2012	19	12.078	11.000	10.500	WORD	Ibekwe and his colleagues suggests that
+November-December2012	19	12.089	11.000	10.500	WORD	public-health officials who track water
+THM-Close-Out-Report-and-Exec-Summ-for-STI-Review	1	15.805	9.000	9.000	WORD	frequencies transferred between two sensors with differences due to the tanks
+THM-Close-Out-Report-and-Exec-Summ-for-STI-Review	2	19.850	9.000	9.000	WORD	High accuracy demonstrated on Orion Tank of ~0.25% average in
+THM-Close-Out-Report-and-Exec-Summ-for-STI-Review	2	18.818	9.000	9.000	WORD	Can use one tank to develop FRF/mass reference table
+THM-Close-Out-Report-and-Exec-Summ-for-STI-Review	2	17.406	9.000	9.000	WORD	FPGA based avionics and algorithm design provide 1 HZ update on
+THM-Close-Out-Report-and-Exec-Summ-for-STI-Review	2	20.756	9.000	9.000	WORD	Design provides Industrial and Rad Tolerant option for
+THM-Close-Out-Report-and-Exec-Summ-for-STI-Review	2	16.593	9.000	9.000	WORD	NASA requires accurate propellant mass gauging technology which
+THM-Close-Out-Report-and-Exec-Summ-for-STI-Review	2	21.458	9.000	9.000	WORD	Mitigates typical estimation errors which can grow towards end of
+THM-Close-Out-Report-and-Exec-Summ-for-STI-Review	3	18.105	9.000	9.000	WORD	Very low risk for forward plan for MPG CLIPS experiments which is
+THM-Close-Out-Report-and-Exec-Summ-for-STI-Review	3	17.138	9.000	9.000	WORD	To explore deep Space, the future is to develop very reliable much
+faa-h-8083-25c	159	10.737	10.000	10.000	WORD	helps to move the entire flight control surface in the direction
+faa-h-8083-25c	159	10.737	10.000	10.000	WORD	the aircraft. Servo tabs are sometimes referred to as flight tabs
+faa-h-8083-25c	159	10.737	10.000	10.000	WORD	and are used primarily on large aircraft. They aid the pilot in
+faa-h-8083-25c	159	10.737	10.000	11.000	WORD	Antiservo Tabs
+faa-h-8083-25c	159	10.737	10.000	10.000	WORD	Antiservo tabs work in the same manner as balance tabs
+faa-h-8083-25c	159	10.737	10.000	10.000	WORD	in the same direction as the trailing edge of the stabilator.
+faa-h-8083-25c	159	10.737	10.000	10.000	WORD	In addition to decreasing the sensitivity of the stabilator, an
+faa-h-8083-25c	159	10.737	10.000	10.000	WORD	tab up. When the stabilator moves down, the tab also moves
+faa-h-8083-25c	185	9.857	10.000	10.000	WORD	transfer the fuel from the tanks to the engine. For example, on
+faa-h-8083-25c	185	9.857	10.000	10.000	WORD	high-wing airplanes, the fuel tanks are installed in the wings.
+faa-h-8083-25c	254	7.990	10.000	10.000	WORD	When weight is shifted from one location to another, the
+faa-h-8083-25c	254	7.997	10.000	10.000	WORD	direction and distance the weight is moved. When weight is
+noaa_61592_DS1	9	0.980	10.000	10.000	MATH	6-24
+noaa_61592_DS1	9	0.980	10.000	10.000	MATH	6-30
+noaa_61592_DS1	10	0.980	10.000	10.000	MATH	9-22
+noaa_61592_DS1	10	0.980	10.000	10.000	MATH	9-29
+noaa_61592_DS1	11	0.979	10.000	10.000	MATH	13-12
+noaa_61592_DS1	11	0.980	10.000	10.000	MATH	13-18
+noaa_61592_DS1	11	0.980	10.000	10.000	MATH	13-24
+noaa_61592_DS1	11	0.980	10.000	10.000	MATH	14-20
+noaa_61592_DS1	11	0.980	10.000	10.000	MATH	14-28
+noaa_61592_DS1	13	0.980	10.000	10.000	MATH	19-20
+noaa_61592_DS1	13	0.980	10.000	10.000	MATH	19-25
+noaa_61592_DS1	13	0.980	10.000	10.000	MATH	20-14
+noaa_61592_DS1	13	0.980	10.000	10.000	MATH	20-19
+noaa_61592_DS1	13	0.980	10.000	10.000	MATH	20-26
+noaa_61592_DS1	14	0.980	10.000	10.000	MATH	23-33
+noaa_61592_DS1	14	0.980	10.000	10.000	MATH	23-39
+noaa_61592_DS1	15	0.980	10.000	10.000	MATH	25-17
+noaa_61592_DS1	15	0.980	10.000	10.000	MATH	25-21
+noaa_61592_DS1	15	0.980	10.000	10.000	MATH	25-24
+noaa_61592_DS1	15	0.980	10.000	10.000	MATH	25-33
+noaa_61592_DS1	15	0.980	10.000	10.000	MATH	25-41
+noaa_61592_DS1	15	0.980	10.000	10.000	MATH	26-31
+noaa_61592_DS1	15	0.980	10.000	10.000	MATH	26-38
+noaa_61592_DS1	15	0.980	10.000	10.000	MATH	26-47
+noaa_61592_DS1	16	0.980	10.000	10.000	MATH	28-31
+noaa_61592_DS1	16	0.980	10.000	10.000	MATH	28-40
+noaa_61592_DS1	17	0.980	10.000	10.000	MATH	30-25
+noaa_61592_DS1	17	0.980	10.000	10.000	MATH	30-35
+noaa_61592_DS1	17	0.980	10.000	10.000	MATH	30-38
+noaa_61592_DS1	17	0.980	10.000	10.000	MATH	30-46
+noaa_61592_DS1	18	0.980	10.000	10.000	MATH	32-26
+noaa_61592_DS1	18	0.980	10.000	10.000	MATH	32-35
+noaa_61592_DS1	18	0.980	10.000	10.000	MATH	32-42
+noaa_61592_DS1	18	0.980	10.000	10.000	MATH	32-46
+noaa_61592_DS1	121	9.952	9.000	9.000	MATH	18.
+noaa_61592_DS1	121	9.952	9.000	9.000	MATH	19.
+noaa_61592_DS1	122	8.395	9.000	9.000	MATH	34.
+noaa_61592_DS1	122	8.377	9.000	9.000	MATH	35.
+noaa_61592_DS1	122	8.215	9.000	9.000	MATH	38.
+noaa_61592_DS1	123	8.350	9.000	9.000	MATH	48.
+noaa_61592_DS1	124	8.026	9.000	9.000	MATH	68.
+noaa_61592_DS1	126	8.251	9.000	9.000	MATH	92.
+noaa_61592_DS1	127	4.363	9.000	9.000	MATH	108.
+noaa_61592_DS1	127	8.458	9.000	9.000	MATH	111.
+noaa_61592_DS1	129	5.101	9.000	9.000	MATH	135.
+noaa_61592_DS1	130	5.074	9.000	9.000	MATH	148.
+noaa_61592_DS1	130	5.074	9.000	9.000	MATH	149.
+noaa_61592_DS1	130	5.236	9.000	9.000	MATH	154.
+noaa_61592_DS1	130	6.361	9.000	9.000	MATH	157.
+noaa_61592_DS1	132	4.939	9.000	9.000	MATH	183.
+noaa_61592_DS1	132	4.975	9.000	9.000	MATH	192.
+noaa_61592_DS1	133	2.986	9.000	9.000	MATH	204.
+noaa_61592_DS1	134	6.424	9.000	9.000	MATH	217.
+noaa_61592_DS1	136	5.020	9.000	9.000	MATH	247.
+noaa_61592_DS1	136	5.281	9.000	9.000	MATH	251.
+noaa_61592_DS1	138	4.552	9.000	9.000	MATH	274.
+noaa_61592_DS1	187	9.952	9.000	9.000	MATH	19.
+noaa_61592_DS1	188	7.828	9.000	9.000	MATH	30.
+noaa_61592_DS1	189	8.575	9.000	9.000	MATH	42.
+noaa_61592_DS1	190	9.637	9.000	9.000	MATH	57.
+noaa_61592_DS1	192	8.332	9.000	9.000	MATH	85.
+noaa_61592_DS1	192	3.976	9.000	9.000	MATH	100.
+noaa_61592_DS1	195	5.119	9.000	9.000	MATH	134.
+noaa_61592_DS1	196	6.532	9.000	9.000	MATH	161.
+noaa_61592_DS1	198	4.750	9.000	9.000	MATH	186.
+noaa_61592_DS1	199	4.750	9.000	9.000	MATH	199.
+noaa_61592_DS1	199	2.968	9.000	9.000	MATH	205.
+noaa_61592_DS1	200	5.281	9.000	9.000	MATH	215.
+noaa_61592_DS1	200	3.940	9.000	9.000	MATH	224.
+noaa_61592_DS1	202	3.544	9.000	9.000	MATH	253.
+noaa_61592_DS1	204	4.246	9.000	9.000	MATH	279.
+noaa_61592_DS1	205	4.642	9.000	9.000	MATH	287.
+noaa_61592_DS1	205	4.408	9.000	9.000	MATH	301.
+noaa_61592_DS1	205	2.914	9.000	9.000	MATH	302.
+noaa_61592_DS1	206	2.806	9.000	9.000	MATH	304.
+noaa_61592_DS1	207	3.562	9.000	9.000	MATH	323.
+noaa_61592_DS1	207	4.687	9.000	9.000	MATH	327.
+noaa_61592_DS1	244	8.620	9.000	9.000	MATH	22.
+noaa_61592_DS1	246	8.557	9.000	9.000	MATH	52.
+noaa_61592_DS1	247	9.124	9.000	9.000	MATH	73.
+noaa_61592_DS1	247	9.241	9.000	9.000	MATH	75.
+noaa_61592_DS1	247	10.384	9.000	9.000	MATH	77.
+noaa_61592_DS1	248	8.026	9.000	9.000	MATH	98.
+noaa_61592_DS1	249	6.721	9.000	9.000	MATH	113.
+noaa_61592_DS1	249	6.676	9.000	9.000	MATH	118.
+noaa_61592_DS1	250	4.795	9.000	9.000	MATH	136.
+noaa_61592_DS1	251	6.460	9.000	9.000	MATH	137.
+noaa_61592_DS1	251	4.687	9.000	9.000	MATH	140.
+noaa_61592_DS1	252	5.056	9.000	9.000	MATH	158.
+noaa_61592_DS1	252	4.750	9.000	9.000	MATH	168.
+noaa_61592_DS1	253	3.965	9.000	9.000	MATH	175.
+noaa_61592_DS1	255	2.806	9.000	9.000	MATH	209.
+noaa_61592_DS1	283	9.952	9.000	9.000	MATH	19.
+noaa_61592_DS1	283	7.828	9.000	9.000	MATH	30.
+noaa_61592_DS1	284	7.736	9.000	9.000	MATH	37.
+noaa_61592_DS1	284	8.395	9.000	9.000	MATH	43.
+noaa_61592_DS1	284	8.206	9.000	9.000	MATH	46.
+noaa_61592_DS1	285	6.251	9.000	9.000	MATH	62.
+noaa_61592_DS1	285	6.071	9.000	9.000	MATH	63.
+noaa_61592_DS1	285	9.394	9.000	9.000	MATH	67.
+noaa_61592_DS1	287	9.808	9.000	9.000	MATH	91.
+noaa_61592_DS1	287	8.206	9.000	9.000	MATH	94.
+noaa_61592_DS1	287	8.026	9.000	9.000	MATH	99.
+noaa_61592_DS1	288	3.866	9.000	9.000	MATH	107.
+noaa_61592_DS1	289	4.984	9.000	9.000	MATH	133.
+noaa_61592_DS1	290	6.856	9.000	9.000	MATH	141.
+noaa_61592_DS1	291	4.606	9.000	9.000	MATH	166.
+noaa_61592_DS1	294	6.424	9.000	9.000	MATH	217.
+noaa_61592_DS1	295	3.562	9.000	9.000	MATH	233.
+noaa_61592_DS1	297	3.373	9.000	9.000	MATH	264.
+noaa_61592_DS1	297	3.049	9.000	9.000	MATH	266.
+noaa_61592_DS1	297	4.561	9.000	9.000	MATH	267.
+noaa_61592_DS1	297	3.193	9.000	9.000	MATH	268.
+noaa_61592_DS1	336	6.901	9.000	9.000	MATH	121.
+noaa_61592_DS1	336	5.299	9.000	9.000	MATH	123.
+noaa_61592_DS1	338	5.218	9.000	9.000	MATH	155.
+noaa_61592_DS1	338	4.975	9.000	9.000	MATH	162.
+noaa_61592_DS1	339	5.965	9.000	9.000	MATH	175.
+noaa_61592_DS1	341	4.750	9.000	9.000	MATH	199.
+noaa_61592_DS1	370	7.828	9.000	9.000	MATH	30.
+noaa_61592_DS1	371	9.736	9.000	9.000	MATH	37.
+noaa_61592_DS1	371	8.215	9.000	9.000	MATH	39.
+noaa_61592_DS1	372	8.350	9.000	9.000	MATH	49.
+noaa_61592_DS1	374	8.206	9.000	9.000	MATH	94.
+noaa_61592_DS1	376	6.721	9.000	9.000	MATH	113.
+noaa_61592_DS1	376	4.975	9.000	9.000	MATH	126.
+noaa_61592_DS1	424	8.260	9.000	9.000	MATH	33.
+noaa_61592_DS1	424	8.377	9.000	9.000	MATH	35.
+noaa_61592_DS1	428	4.219	9.000	9.000	MATH	106.
+noaa_61592_DS1	433	5.119	9.000	9.000	MATH	182.
+noaa_61592_DS1	437	3.760	9.000	9.000	MATH	243.
+noaa_61592_DS1	437	3.877	9.000	9.000	MATH	245.
+noaa_61592_DS1	438	3.418	9.000	9.000	MATH	262.
+noaa_61592_DS1	440	3.193	9.000	9.000	MATH	298.
+noaa_61592_DS1	442	3.238	9.000	9.000	MATH	326.
+noaa_61592_DS1	443	3.193	9.000	9.000	MATH	346.
+noaa_61592_DS1	472	9.565	9.000	9.000	MATH	10.
+noaa_61592_DS1	472	11.734	9.000	9.000	MATH	11.
+noaa_61592_DS1	473	8.395	9.000	9.000	MATH	29.
+noaa_61592_DS1	474	8.215	9.000	9.000	MATH	38.
+noaa_61592_DS1	474	10.132	9.000	9.000	MATH	41.
+noaa_61592_DS1	475	7.639	9.000	9.000	MATH	60.
+noaa_61592_DS1	476	8.026	9.000	9.000	MATH	69.
+noaa_61592_DS1	477	8.170	9.000	9.000	MATH	88.
+noaa_61592_DS1	479	6.901	9.000	9.000	MATH	121.
+noaa_61592_DS1	481	4.363	9.000	9.000	MATH	160.
+noaa_61592_DS1	481	6.532	9.000	9.000	MATH	161.
+noaa_61592_DS1	481	4.975	9.000	9.000	MATH	162.
+noaa_61592_DS1	482	5.965	9.000	9.000	MATH	175.
+noaa_61592_DS1	482	7.108	9.000	9.000	MATH	177.
+noaa_61592_DS1	483	4.363	9.000	9.000	MATH	190.
+noaa_61592_DS1	483	4.930	9.000	9.000	MATH	194.
+noaa_61592_DS1	484	2.986	9.000	9.000	MATH	204.
+noaa_61592_DS1	484	2.806	9.000	9.000	MATH	208.
+noaa_61592_DS1	485	5.119	9.000	9.000	MATH	219.
+noaa_61592_DS1	512	11.734	9.000	9.000	MATH	11.
+noaa_61592_DS1	514	8.512	9.000	9.000	MATH	54.
+noaa_61592_DS1	514	8.188	9.000	9.000	MATH	56.
+noaa_61592_DS1	515	7.882	9.000	9.000	MATH	66.
+noaa_61592_DS1	517	2.651	9.000	9.000	MATH	102.
+noaa_61592_DS1	518	6.676	9.000	9.000	MATH	119.
+noaa_61592_DS1	519	6.721	9.000	9.000	MATH	131.
+noaa_61592_DS1	522	7.108	9.000	9.000	MATH	177.
+noaa_61592_DS1	525	5.344	9.000	9.000	MATH	221.
+noaa_61592_DS1	555	13.453	9.000	9.000	MATH	2.
+noaa_61592_DS1	555	13.273	9.000	9.000	MATH	3.
+noaa_61592_DS1	555	11.084	9.000	9.000	MATH	6.
+noaa_61592_DS1	555	14.533	9.000	9.000	MATH	7.
+noaa_61592_DS1	555	13.228	9.000	9.000	MATH	8.
+noaa_61592_DS1	556	9.952	9.000	9.000	MATH	18.
+noaa_61592_DS1	556	8.440	9.000	9.000	MATH	32.
+noaa_61592_DS1	558	8.188	9.000	9.000	MATH	65.
+noaa_61592_DS1	560	8.233	9.000	9.000	MATH	89.
+noaa_61592_DS1	560	8.206	9.000	9.000	MATH	94.
+noaa_61592_DS1	562	4.795	9.000	9.000	MATH	136.
+noaa_61592_DS1	563	6.856	9.000	9.000	MATH	141.
+noaa_61592_DS1	565	5.074	9.000	9.000	MATH	184.
+noaa_61592_DS1	596	11.734	9.000	9.000	MATH	11.
+noaa_61592_DS1	596	10.177	9.000	9.000	MATH	12.
+noaa_61592_DS1	596	9.808	9.000	9.000	MATH	16.
+noaa_61592_DS1	598	8.215	9.000	9.000	MATH	38.
+noaa_61592_DS1	599	10.114	9.000	9.000	MATH	51.
+noaa_61592_DS1	602	7.981	9.000	9.000	MATH	117.
+noaa_61592_DS1	603	5.119	9.000	9.000	MATH	128.
+noaa_61592_DS1	603	4.552	9.000	9.000	MATH	130.
+noaa_61592_DS1	603	4.939	9.000	9.000	MATH	139.
+noaa_61592_DS1	605	6.109	9.000	9.000	MATH	174.
+noaa_61592_DS1	606	5.803	9.000	9.000	MATH	178.
+noaa_61592_DS1	606	5.803	9.000	9.000	MATH	179.
+noaa_61592_DS1	606	4.894	9.000	9.000	MATH	188.
+noaa_61592_DS1	606	4.957	9.000	9.000	MATH	189.
+noaa_61592_DS1	607	3.094	9.000	9.000	MATH	202.
+noaa_61592_DS1	608	3.562	9.000	9.000	MATH	229.
+noaa_61592_DS1	637	7.547	9.000	9.000	MATH	97.
+noaa_61592_DS1	638	6.856	9.000	9.000	MATH	114.
+noaa_61592_DS1	672	8.350	9.000	9.000	MATH	48.
+noaa_61592_DS1	675	5.866	9.000	9.000	MATH	107.
+noaa_61592_DS1	680	4.939	9.000	9.000	MATH	183.
+noaa_61592_DS1	681	4.588	9.000	9.000	MATH	201.
+noaa_61592_DS1	681	2.986	9.000	9.000	MATH	204.
+noaa_61592_DS1	682	2.806	9.000	9.000	MATH	208.
+noaa_61592_DS1	683	4.867	9.000	9.000	MATH	227.
+noaa_61592_DS1	684	3.877	9.000	9.000	MATH	245.
+noaa_61592_DS1	685	2.806	9.000	9.000	MATH	260.
+noaa_61592_DS1	686	6.028	9.000	9.000	MATH	271.
+noaa_61592_DS1	687	1.499	9.000	9.000	MATH	285.
+noaa_61592_DS1	687	3.337	9.000	9.000	MATH	288.
+noaa_61592_DS1	687	1.355	9.000	9.000	MATH	295.
+noaa_61592_DS1	687	1.049	9.000	9.000	MATH	296.
+noaa_61592_DS1	688	4.552	9.000	9.000	MATH	310.
+noaa_61592_DS1	689	3.760	9.000	9.000	MATH	324.
+noaa_61592_DS1	718	10.177	9.000	9.000	MATH	12.
+noaa_61592_DS1	725	5.281	9.000	9.000	MATH	125.
+noaa_61592_DS1	726	5.164	9.000	9.000	MATH	132.
+noaa_61592_DS1	727	4.930	9.000	9.000	MATH	146.
+noaa_61592_DS1	729	4.894	9.000	9.000	MATH	188.
+noaa_61592_DS1	732	3.697	9.000	9.000	MATH	234.
+noaa_61592_DS1	733	3.661	9.000	9.000	MATH	255.
+noaa_61592_DS1	733	3.355	9.000	9.000	MATH	256.
+noaa_61592_DS1	734	4.975	9.000	9.000	MATH	261.
+noaa_61592_DS1	734	3.355	9.000	9.000	MATH	265.
+noaa_61592_DS1	734	6.028	9.000	9.000	MATH	271.
+noaa_61592_DS1	736	3.373	9.000	9.000	MATH	294.
+noaa_61592_DS1	737	6.721	9.000	9.000	MATH	311.
+noaa_61592_DS1	737	5.164	9.000	9.000	MATH	321.
+noaa_61592_DS1	768	8.332	9.000	9.000	MATH	59.
+noaa_61592_DS1	768	8.251	9.000	9.000	MATH	62.
+noaa_61592_DS1	769	9.079	9.000	9.000	MATH	79.
+noaa_61592_DS1	770	7.882	9.000	9.000	MATH	96.
+noaa_61592_DS1	771	6.145	9.000	9.000	MATH	101.
+noaa_61592_DS1	771	6.532	9.000	9.000	MATH	116.
+noaa_61592_DS1	772	3.281	9.000	9.000	MATH	125.
+noaa_61592_DS1	774	4.795	9.000	9.000	MATH	163.
+noaa_61592_DS1	775	5.848	9.000	9.000	MATH	173.
+noaa_61592_DS1	775	3.119	9.000	9.000	MATH	182.
+noaa_61592_DS1	803	9.997	9.000	9.000	MATH	13.
+noaa_61592_DS1	806	8.206	9.000	9.000	MATH	46.
+noaa_61592_DS1	809	4.219	9.000	9.000	MATH	106.
+noaa_61592_DS1	812	4.795	9.000	9.000	MATH	163.
+noaa_61592_DS1	812	4.912	9.000	9.000	MATH	165.
+noaa_61592_DS1	839	10.132	9.000	9.000	MATH	14.
+noaa_61592_DS1	840	9.808	9.000	9.000	MATH	16.
+noaa_61592_DS1	841	10.132	9.000	9.000	MATH	41.
+noaa_61592_DS1	842	7.639	9.000	9.000	MATH	60.
+noaa_61592_DS1	843	9.124	9.000	9.000	MATH	73.
+noaa_61592_DS1	843	8.350	9.000	9.000	MATH	84.
+noaa_61592_DS1	846	5.281	9.000	9.000	MATH	125.
+noaa_61592_DS1	849	6.199	9.000	9.000	MATH	187.
+noaa_61592_DS1	850	2.986	9.000	9.000	MATH	204.
+noaa_61592_DS1	851	2.806	9.000	9.000	MATH	209.
+noaa_61592_DS1	851	5.344	9.000	9.000	MATH	221.
+noaa_61592_DS1	851	3.742	9.000	9.000	MATH	223.
+noaa_61592_DS1	852	3.130	9.000	9.000	MATH	230.
+noaa_61592_DS1	852	3.562	9.000	9.000	MATH	233.
+noaa_61592_DS1	852	5.497	9.000	9.000	MATH	241.
+noaa_61592_DS1	879	13.084	9.000	9.000	MATH	6.
+noaa_61592_DS1	880	8.773	9.000	9.000	MATH	24.
+noaa_61592_DS1	883	9.241	9.000	9.000	MATH	75.
+noaa_61592_DS1	883	10.384	9.000	9.000	MATH	77.
+noaa_61592_DS1	885	5.344	9.000	9.000	MATH	122.
+noaa_61592_DS1	891	3.724	9.000	9.000	MATH	225.
+noaa_61592_DS1	919	8.008	9.000	9.000	MATH	20.
+noaa_61592_DS1	923	4.525	9.000	9.000	MATH	105.
+noaa_61592_DS1	924	5.119	9.000	9.000	MATH	129.
+noaa_61592_DS1	926	5.056	9.000	9.000	MATH	159.
+noaa_61592_DS1	926	6.118	9.000	9.000	MATH	167.
+noaa_61592_DS1	927	7.585	9.000	9.000	MATH	171.
+noaa_61592_DS1	927	5.965	9.000	9.000	MATH	175.
+noaa_61592_DS1	928	4.795	9.000	9.000	MATH	193.
+noaa_61592_DS1	928	4.606	9.000	9.000	MATH	196.
+noaa_61592_DS1	928	2.851	9.000	9.000	MATH	203.
+noaa_61592_DS1	928	2.968	9.000	9.000	MATH	205.
+noaa_61592_DS1	929	6.901	9.000	9.000	MATH	211.
+noaa_61592_DS1	929	3.175	9.000	9.000	MATH	220.
+noaa_61592_DS1	930	3.760	9.000	9.000	MATH	243.
+noaa_61592_DS1	933	2.806	9.000	9.000	MATH	290.
+noaa_61592_DS1	970	8.395	9.000	9.000	MATH	43.
+noaa_61592_DS1	973	8.188	9.000	9.000	MATH	95.
+noaa_61592_DS1	975	6.721	9.000	9.000	MATH	131.
+noaa_61592_DS1	976	4.795	9.000	9.000	MATH	136.
+noaa_61592_DS1	977	6.361	9.000	9.000	MATH	157.
+noaa_61592_DS1	981	1.517	9.000	9.000	MATH	239.
+noaa_61592_DS1	981	1.328	9.000	9.000	MATH	240.
+noaa_61592_DS1	982	1.499	9.000	9.000	MATH	258.
+noaa_61592_DS1	982	1.499	9.000	9.000	MATH	259.
+noaa_61592_DS1	1027	8.575	9.000	9.000	MATH	23.
+noaa_61592_DS1	1027	9.700	9.000	9.000	MATH	27.
+noaa_61592_DS1	1027	9.997	9.000	9.000	MATH	31.
+noaa_61592_DS1	1029	8.332	9.000	9.000	MATH	58.
+noaa_61592_DS1	1029	8.188	9.000	9.000	MATH	65.
+noaa_61592_DS1	1030	8.026	9.000	9.000	MATH	68.
+noaa_61592_DS1	1030	8.026	9.000	9.000	MATH	69.
+noaa_61592_DS1	1030	9.124	9.000	9.000	MATH	73.
+noaa_61592_DS1	1031	8.026	9.000	9.000	MATH	98.
+noaa_61592_DS1	1032	4.363	9.000	9.000	MATH	109.
+noaa_61592_DS1	1032	6.532	9.000	9.000	MATH	116.
+noaa_61592_DS1	1032	6.676	9.000	9.000	MATH	118.
+noaa_61592_DS1	1034	4.939	9.000	9.000	MATH	139.
+noaa_61592_DS1	1034	6.856	9.000	9.000	MATH	141.
+noaa_61592_DS1	1034	5.299	9.000	9.000	MATH	142.
+noaa_61592_DS1	1034	5.074	9.000	9.000	MATH	149.
+noaa_61592_DS1	1035	5.416	9.000	9.000	MATH	170.
+noaa_61592_DS1	1041	4.471	9.000	9.000	MATH	272.
+noaa_61592_DS1	1042	3.382	9.000	9.000	MATH	283.
+noaa_61592_DS1	1042	3.517	9.000	9.000	MATH	284.
+noaa_61592_DS1	1044	4.939	9.000	9.000	MATH	318.
+noaa_61592_DS1	1046	3.544	9.000	9.000	MATH	352.
+noaa_61592_DS1	1046	3.364	9.000	9.000	MATH	353.
+noaa_61592_DS1	1049	2.543	9.000	9.000	MATH	401.
+noaa_61592_DS1	1049	1.049	9.000	9.000	MATH	402.
+noaa_61592_DS1	1049	2.923	9.000	9.000	MATH	405.
+noaa_61592_DS1	1049	4.264	9.000	9.000	MATH	407.
+noaa_61592_DS1	1089	8.773	9.000	9.000	MATH	24.
+noaa_61592_DS1	1092	9.304	9.000	9.000	MATH	72.
+noaa_61592_DS1	1093	8.395	9.000	9.000	MATH	82.
+noaa_61592_DS1	1093	8.170	9.000	9.000	MATH	88.
+noaa_61592_DS1	1094	8.206	9.000	9.000	MATH	94.
+noaa_61592_DS1	1094	7.882	9.000	9.000	MATH	96.
+noaa_61592_DS1	1095	6.676	9.000	9.000	MATH	119.
+noaa_61592_DS1	1096	4.939	9.000	9.000	MATH	138.
+noaa_61592_DS1	1098	5.416	9.000	9.000	MATH	170.
+noaa_61592_DS1	1098	6.109	9.000	9.000	MATH	174.
+noaa_61592_DS1	1098	7.108	9.000	9.000	MATH	177.
+noaa_61592_DS1	1100	4.750	9.000	9.000	MATH	198.
+noaa_61592_DS1	1102	3.742	9.000	9.000	MATH	232.
+noaa_61592_DS1	1103	3.112	9.000	9.000	MATH	250.
+noaa_61592_DS1	1104	4.291	9.000	9.000	MATH	273.
+noaa_61592_DS1	1148	8.575	9.000	9.000	MATH	23.
+noaa_61592_DS1	1148	8.773	9.000	9.000	MATH	24.
+noaa_61592_DS1	1148	7.828	9.000	9.000	MATH	30.
+noaa_61592_DS1	1149	9.736	9.000	9.000	MATH	37.
+noaa_61592_DS1	1151	8.935	9.000	9.000	MATH	76.
+noaa_61592_DS1	1153	4.901	9.000	9.000	MATH	112.
+noaa_61592_DS1	1153	6.856	9.000	9.000	MATH	114.
+noaa_61592_DS1	1154	5.281	9.000	9.000	MATH	125.
+noaa_61592_DS1	1155	5.074	9.000	9.000	MATH	148.
+noaa_61592_DS1	1157	5.416	9.000	9.000	MATH	170.
+noaa_61592_DS1	1160	4.975	9.000	9.000	MATH	216.
+noaa_61592_DS1	1160	5.119	9.000	9.000	MATH	219.
+noaa_61592_DS1	1161	5.038	9.000	9.000	MATH	237.
+noaa_61592_DS1	1161	3.517	9.000	9.000	MATH	239.
+noaa_61592_DS1	1163	6.028	9.000	9.000	MATH	271.
+noaa_61592_DS1	1163	4.246	9.000	9.000	MATH	278.
+noaa_61592_DS1	1205	13.273	9.000	9.000	MATH	3.
+noaa_61592_DS1	1207	8.575	9.000	9.000	MATH	42.
+noaa_61592_DS1	1209	9.394	9.000	9.000	MATH	67.
+noaa_61592_DS1	1210	8.332	9.000	9.000	MATH	85.
+noaa_61592_DS1	1210	8.251	9.000	9.000	MATH	92.
+noaa_61592_DS1	1211	6.856	9.000	9.000	MATH	114.
+noaa_61592_DS1	1211	6.838	9.000	9.000	MATH	115.
+noaa_61592_DS1	1212	6.721	9.000	9.000	MATH	131.
+noaa_61592_DS1	1214	2.912	9.000	9.000	MATH	165.
+noaa_61592_DS1	1215	4.507	9.000	9.000	MATH	180.
+noaa_61592_DS1	1221	3.418	9.000	9.000	MATH	292.
+noaa_61592_DS1	1270	8.773	9.000	9.000	MATH	24.
+noaa_61592_DS1	1273	7.124	9.000	9.000	MATH	73.
+noaa_61592_DS1	1273	7.385	9.000	9.000	MATH	74.
+noaa_61592_DS1	1274	9.547	9.000	9.000	MATH	97.
+noaa_61592_DS1	1275	5.866	9.000	9.000	MATH	107.
+noaa_61592_DS1	1275	4.363	9.000	9.000	MATH	108.
+noaa_61592_DS1	1278	6.028	9.000	9.000	MATH	172.
+noaa_61592_DS1	1279	5.803	9.000	9.000	MATH	179.
+noaa_61592_DS1	1280	2.968	9.000	9.000	MATH	205.
+noaa_61592_DS1	1282	2.867	9.000	9.000	MATH	227.
+noaa_61592_DS1	1282	5.299	9.000	9.000	MATH	231.
+noaa_61592_DS1	1282	1.697	9.000	9.000	MATH	234.
+noaa_61592_DS1	1283	3.760	9.000	9.000	MATH	243.
+noaa_61592_DS1	1283	4.804	9.000	9.000	MATH	257.
+noaa_61592_DS1	1329	9.952	9.000	9.000	MATH	18.
+noaa_61592_DS1	1329	7.828	9.000	9.000	MATH	30.
+noaa_61592_DS1	1331	9.637	9.000	9.000	MATH	57.
+noaa_61592_DS1	1332	9.124	9.000	9.000	MATH	73.
+noaa_61592_DS1	1332	8.935	9.000	9.000	MATH	76.
+noaa_61592_DS1	1335	7.981	9.000	9.000	MATH	117.
+noaa_61592_DS1	1339	4.532	9.000	9.000	MATH	191.
+noaa_61592_DS1	1340	2.806	9.000	9.000	MATH	208.
+noaa_61592_DS1	1341	5.344	9.000	9.000	MATH	212.
+noaa_61592_DS1	1341	6.424	9.000	9.000	MATH	217.
+noaa_61592_DS1	1342	5.299	9.000	9.000	MATH	231.
+noaa_61592_DS1	1344	4.408	9.000	9.000	MATH	275.
+noaa_61592_DS1	1346	3.373	9.000	9.000	MATH	294.
+noaa_61592_DS1	1347	5.101	9.000	9.000	MATH	315.
+noaa_61592_DS1	1351	4.795	9.000	9.000	MATH	391.
+noaa_61592_DS1	1351	3.175	9.000	9.000	MATH	395.
+noaa_61592_DS1	1351	4.534	9.000	9.000	MATH	397.
+noaa_61592_DS1	1352	3.013	9.000	9.000	MATH	399.
+noaa_61592_DS1	1352	3.049	9.000	9.000	MATH	402.
+noaa_61592_DS1	1352	5.299	9.000	9.000	MATH	412.
+noaa_61592_DS1	1393	11.734	9.000	9.000	MATH	11.
+noaa_61592_DS1	1395	8.395	9.000	9.000	MATH	34.
+noaa_61592_DS1	1395	10.114	9.000	9.000	MATH	51.
+noaa_61592_DS1	1396	9.394	9.000	9.000	MATH	67.
+noaa_61592_DS1	1398	8.026	9.000	9.000	MATH	86.
+noaa_61592_DS1	1398	8.233	9.000	9.000	MATH	89.
+noaa_61592_DS1	1401	4.939	9.000	9.000	MATH	138.
+noaa_61592_DS1	1402	3.236	9.000	9.000	MATH	154.
+noaa_61592_DS1	1402	3.218	9.000	9.000	MATH	155.
+noaa_61592_DS1	1404	4.912	9.000	9.000	MATH	195.
+noaa_61592_DS1	1404	4.588	9.000	9.000	MATH	201.
+noaa_61592_DS1	1406	3.940	9.000	9.000	MATH	224.
+noaa_61592_DS1	1406	3.679	9.000	9.000	MATH	235.
+noaa_61592_DS1	1408	3.499	9.000	9.000	MATH	258.
+noaa_61592_DS1	1411	6.244	9.000	9.000	MATH	317.
+noaa_61592_DS1	1412	2.815	9.000	9.000	MATH	330.
+noaa_61592_DS1	1413	3.382	9.000	9.000	MATH	334.
+noaa_61592_DS1	1415	4.327	9.000	9.000	MATH	373.
+noaa_61592_DS1	1415	3.202	9.000	9.000	MATH	383.
+noaa_61592_DS1	1416	0.869	9.000	9.000	MATH	396.
+noaa_61592_DS1	1419	5.254	9.000	9.000	MATH	441.
+noaa_61592_DS1	1465	14.533	9.000	9.000	MATH	7.
+noaa_61592_DS1	1465	11.228	9.000	9.000	MATH	8.
+noaa_61592_DS1	1467	8.530	9.000	9.000	MATH	44.
+noaa_61592_DS1	1468	8.350	9.000	9.000	MATH	49.
+noaa_61592_DS1	1468	10.114	9.000	9.000	MATH	51.
+noaa_61592_DS1	1468	8.188	9.000	9.000	MATH	56.
+noaa_61592_DS1	1468	8.332	9.000	9.000	MATH	58.
+noaa_61592_DS1	1469	10.384	9.000	9.000	MATH	77.
+noaa_61592_DS1	1475	5.803	9.000	9.000	MATH	179.
+noaa_61592_DS1	1480	3.049	9.000	9.000	MATH	266.
+noaa_61592_DS1	1481	3.382	9.000	9.000	MATH	283.
+noaa_61592_DS1	1482	3.418	9.000	9.000	MATH	292.
+noaa_61592_DS1	1530	15.010	9.000	9.000	MATH	1.
+noaa_61592_DS1	1531	6.620	9.000	9.000	MATH	22.
+noaa_61592_DS1	1531	6.575	9.000	9.000	MATH	23.
+noaa_61592_DS1	1531	8.440	9.000	9.000	MATH	32.
+noaa_61592_DS1	1531	8.260	9.000	9.000	MATH	33.
+noaa_61592_DS1	1532	8.215	9.000	9.000	MATH	39.
+noaa_61592_DS1	1533	8.494	9.000	9.000	MATH	55.
+noaa_61592_DS1	1533	7.639	9.000	9.000	MATH	60.
+noaa_61592_DS1	1534	8.026	9.000	9.000	MATH	69.
+noaa_61592_DS1	1535	8.395	9.000	9.000	MATH	82.
+noaa_61592_DS1	1537	6.532	9.000	9.000	MATH	116.
+noaa_61592_DS1	1540	5.965	9.000	9.000	MATH	175.
+noaa_61592_DS1	1542	4.750	9.000	9.000	MATH	199.
+noaa_61592_DS1	1543	5.119	9.000	9.000	MATH	218.
+noaa_61592_DS1	1543	5.119	9.000	9.000	MATH	219.
+noaa_61592_DS1	1545	3.281	9.000	9.000	MATH	251.
+noaa_61592_DS1	1545	1.724	9.000	9.000	MATH	252.
+noaa_61592_DS1	1546	3.355	9.000	9.000	MATH	265.
+noaa_61592_DS1	1546	3.859	9.000	9.000	MATH	270.
+noaa_61592_DS1	1546	6.028	9.000	9.000	MATH	271.
+noaa_61592_DS1	1547	2.246	9.000	9.000	MATH	278.
+noaa_61592_DS1	1548	3.193	9.000	9.000	MATH	299.
+noaa_61592_DS1	1549	5.119	9.000	9.000	MATH	314.
+noaa_61592_DS1	1549	4.939	9.000	9.000	MATH	318.
+noaa_61592_DS1	1549	1.238	9.000	9.000	MATH	326.
+noaa_61592_DS1	1549	2.687	9.000	9.000	MATH	327.
+noaa_61592_DS1	1550	4.723	9.000	9.000	MATH	337.
+noaa_61592_DS1	1551	4.642	9.000	9.000	MATH	347.
+noaa_61592_DS1	1552	3.238	9.000	9.000	MATH	362.
+noaa_61592_DS1	1552	3.175	9.000	9.000	MATH	365.
+noaa_61592_DS1	1554	3.049	9.000	9.000	MATH	402.
+noaa_61592_DS1	1555	3.373	9.000	9.000	MATH	426.
+noaa_61592_DS1	1557	3.499	9.000	9.000	MATH	453.
+noaa_61592_DS1	1558	3.373	9.000	9.000	MATH	462.
+noaa_61592_DS1	1558	4.516	9.000	9.000	MATH	467.
+noaa_61592_DS1	1559	4.057	9.000	9.000	MATH	476.
+noaa_61592_DS1	1559	5.506	9.000	9.000	MATH	477.
+noaa_61592_DS1	1559	3.337	9.000	9.000	MATH	483.
+noaa_61592_DS1	1600	8.575	9.000	9.000	MATH	42.
+noaa_61592_DS1	1600	8.395	9.000	9.000	MATH	43.
+noaa_61592_DS1	1601	9.637	9.000	9.000	MATH	57.
+noaa_61592_DS1	1602	10.384	9.000	9.000	MATH	77.
+noaa_61592_DS1	1602	9.079	9.000	9.000	MATH	78.
+noaa_61592_DS1	1602	9.079	9.000	9.000	MATH	79.
+noaa_61592_DS1	1603	8.332	9.000	9.000	MATH	85.
+noaa_61592_DS1	1603	9.475	9.000	9.000	MATH	87.
+noaa_61592_DS1	1606	4.939	9.000	9.000	MATH	138.
+noaa_61592_DS1	1606	5.074	9.000	9.000	MATH	148.
+noaa_61592_DS1	1607	6.532	9.000	9.000	MATH	161.
+noaa_61592_DS1	1608	5.803	9.000	9.000	MATH	179.
+noaa_61592_DS1	1608	5.119	9.000	9.000	MATH	182.
+noaa_61592_DS1	1610	5.119	9.000	9.000	MATH	218.
+noaa_61592_DS1	1611	3.562	9.000	9.000	MATH	228.
+noaa_61592_DS1	1611	3.373	9.000	9.000	MATH	236.
+noaa_61592_DS1	1611	5.038	9.000	9.000	MATH	237.
+noaa_61592_DS1	1612	3.715	9.000	9.000	MATH	248.
+noaa_61592_DS1	1613	3.418	9.000	9.000	MATH	262.
+noaa_61592_DS1	1613	3.193	9.000	9.000	MATH	268.
+noaa_61592_DS1	1613	4.471	9.000	9.000	MATH	272.
+noaa_61592_DS1	1614	4.246	9.000	9.000	MATH	279.
+noaa_61592_DS1	1618	2.950	9.000	9.000	MATH	340.
+noaa_61592_DS1	1664	13.390	9.000	9.000	MATH	5.
+noaa_61592_DS1	1665	10.114	9.000	9.000	MATH	15.
+noaa_61592_DS1	1665	8.773	9.000	9.000	MATH	24.
+noaa_61592_DS1	1665	8.395	9.000	9.000	MATH	28.
+noaa_61592_DS1	1667	8.251	9.000	9.000	MATH	62.
+noaa_61592_DS1	1669	8.395	9.000	9.000	MATH	82.
+noaa_61592_DS1	1669	9.547	9.000	9.000	MATH	97.
+noaa_61592_DS1	1670	8.026	9.000	9.000	MATH	99.
+noaa_61592_DS1	1670	4.543	9.000	9.000	MATH	104.
+noaa_61592_DS1	1672	5.119	9.000	9.000	MATH	134.
+noaa_61592_DS1	1679	5.281	9.000	9.000	MATH	251.
+noaa_61592_DS1	1679	3.238	9.000	9.000	MATH	263.
+noaa_61592_DS1	1680	3.049	9.000	9.000	MATH	266.
+noaa_61592_DS1	1681	3.562	9.000	9.000	MATH	282.
+noaa_61592_DS1	1681	3.418	9.000	9.000	MATH	292.
+noaa_61592_DS1	1681	3.373	9.000	9.000	MATH	294.
+noaa_61592_DS1	1682	4.939	9.000	9.000	MATH	318.
+noaa_61592_DS1	1684	2.932	9.000	9.000	MATH	350.
+noaa_61592_DS1	1684	3.364	9.000	9.000	MATH	353.
+noaa_61592_DS1	1685	3.319	9.000	9.000	MATH	358.
+noaa_61592_DS1	1686	5.587	9.000	9.000	MATH	377.
+noaa_61592_DS1	1686	3.337	9.000	9.000	MATH	384.
+noaa_61592_DS1	1686	3.013	9.000	9.000	MATH	386.
+noaa_61592_DS1	1687	3.220	9.000	9.000	MATH	389.
+noaa_61592_DS1	1687	2.941	9.000	9.000	MATH	404.
+noaa_61592_DS1	1688	6.856	9.000	9.000	MATH	411.
+noaa_61592_DS1	1696	14.533	9.000	9.000	MATH	7.
+noaa_61592_DS1	1706	13.453	9.000	9.000	MATH	2.
+noaa_61592_DS1	1718	8.251	9.000	9.000	MATH	26.
+noaa_61592_DS1	1719	8.260	9.000	9.000	MATH	33.
+noaa_61592_DS1	1726	13.408	9.000	9.000	MATH	4.
+noaa_61592_DS1	1726	13.228	9.000	9.000	MATH	8.
+noaa_61592_DS1	1735	8.557	9.000	9.000	MATH	25.
+noaa_61592_DS1	1735	7.828	9.000	9.000	MATH	30.
+noaa_61592_DS1	1792	13.228	9.000	9.000	MATH	8.
+noaa_61592_DS1	1794	8.215	9.000	9.000	MATH	39.
+noaa_61592_DS1	1795	8.494	9.000	9.000	MATH	55.
+noaa_61592_DS1	1797	8.332	9.000	9.000	MATH	85.
+noaa_61592_DS1	1797	8.026	9.000	9.000	MATH	86.
+noaa_61592_DS1	1828	8.177	9.000	9.000	MATH	12.
+noaa_61592_DS1	1831	8.071	9.000	9.000	MATH	63.
+noaa_61592_DS1	1832	6.026	9.000	9.000	MATH	86.
+p596zhs--2025	1	23.008	10.000	31.000	WORD	低收入家庭福利优
+p596zhs--2025	2	15.993	9.000	10.000	WORD	提交表格 1040 或 1040-SR 的特定人士在确认他们是否可
+p596zhs--2025	2	15.997	9.000	10.000	WORD	以享受 EIC 时，必须使用本刊物中的工作表 1，而不能执
+p596zhs--2025	2	15.996	9.000	10.000	WORD	行其表格 1040 说明中的第 2 步。如果以下所有陈述均适
+p596zhs--2025	2	23.998	9.000	10.000	WORD	（涉及选择是否申报子女的利息和红利）所列收入。
+p596zhs--2025	3	15.361	10.000	10.000	WORD	有。您可以使用 IRS.gov/EITC 上的 EITC 资格审查助手来
+p596zhs--2025	3	15.367	10.000	10.000	WORD	了解您是否有资格享受抵免。EITC 资格审查助手分为英语
+p596zhs--2025	3	15.358	10.000	10.000	WORD	特朗普帐户和新的 4547 表格。 近期的立法允许父母、监
+p596zhs--2025	3	15.366	10.000	10.000	WORD	护人和其他授权人士选择设立一种为某些儿童的专属福利
+p596zhs--2025	3	15.366	10.000	10.000	WORD	而设的新型个人退休帐户，称为「特朗普帐户」。如果子
+p596zhs--2025	3	15.366	10.000	10.000	WORD	女出生于 2024 年至 2029 年之间，是美国公民，并符合其
+p596zhs--2025	3	15.359	10.000	10.000	WORD	他特定条件，授权人士还可以选择接收 1,000 美元的试点
+p596zhs--2025	3	15.362	10.000	10.000	WORD	计划资金，存入子女的特朗普帐户。这两个选项均可在
+p596zhs--2025	3	15.367	10.000	10.000	WORD	4547 表格上进行，该表格可与授权人士的 2025 年所得税
+p596zhs--2025	3	15.568	10.000	10.000	WORD	申报表同时提交。有关特朗普帐户的更多信息以及如何进
+p596zhs--2025	3	15.366	10.000	10.000	WORD	与 EIC 相关的 1040 表格变更。 1040 表格已被重新设
+p596zhs--2025	3	15.679	10.000	10.000	WORD	计，其中包含多项与低收入家庭福利优惠 (EIC) 相关的变
+p596zhs--2025	3	15.649	10.000	10.000	WORD	更，使国税局 (IRS) 更容易确定您是否符合申报 EIC 的资
+p596zhs--2025	3	18.919	10.000	12.000	WORD	•1040 表格正面新增了一个复选框，用于表明您的主要
+p596zhs--2025	3	16.679	10.000	10.000	WORD	住所（如果您联合报税，则包括您配偶的）在 2025 年
+p596zhs--2025	3	23.253	10.000	12.000	WORD	•在 1040 表或 1040-SR 表第 1 页的 Dependents 部分
+p596zhs--2025	3	23.363	10.000	10.000	WORD	中有一个复选框，用于表明您是否符合分居配偶的特
+p596zhs--2025	3	23.363	10.000	12.000	WORD	•新增的复选框和新增行，用于表明您是否是填写附表
+p596zhs--2025	3	19.273	10.000	10.000	WORD	SE 的神职人员成员，以及您是否不想或没有资格申报
+p596zhs--2025	3	15.363	10.000	10.000	WORD	劳动所得金额。 您可以享受抵免的最高劳动所得金额提高
+p596zhs--2025	3	19.873	10.000	12.000	WORD	•您有三个或更多个有有效的 SSN 的符合条件子女，并
+p596zhs--2025	3	15.583	10.000	10.000	WORD	且您的收入低于 61,555 美元（已婚联合报税为 68,675
+p596zhs--2025	3	19.873	10.000	12.000	WORD	•您有两个有有效的 SSN 的符合条件子女，并且您的收
+p596zhs--2025	3	19.877	10.000	12.000	WORD	•您有一个有有效的 SSN 的符合条件子女，并且您的收
+p596zhs--2025	3	19.873	10.000	12.000	WORD	•您无任何有有效的 SSN 的符合条件子女，并且您的收
+p596zhs--2025	4	15.719	10.000	10.000	WORD	本章讨论第 1-7 条规则。您必须全部符合这七条规则才有
+p596zhs--2025	4	15.717	10.000	10.000	WORD	资格享受 EIC。如果您不全部符合这七条规则，则无法享
+p596zhs--2025	4	15.720	10.000	10.000	WORD	如果您全部符合本章中的这七条规则，请阅读第 2 章或第
+p596zhs--2025	4	13.284	10.000	10.000	WORD	申报 EIC，因为您的 AGI 不低于 50,434 美元。但是，如果
+p596zhs--2025	4	13.284	10.000	10.000	WORD	您的报税身份是已婚联合报税，则您可以申报 EIC，因为
+p596zhs--2025	4	13.286	10.000	10.000	WORD	您的 AGI 低于 57,554 美元。
+p596zhs--2025	4	13.283	10.000	17.000	WORD	第 2 条规则——您必须拥有一个
+p596zhs--2025	4	13.283	10.000	17.000	WORD	有效的社会安全号码 (SSN)
+p596zhs--2025	4	13.280	10.000	10.000	WORD	要申报 EIC，您（和您配偶，如果提交的是联合报税表）
+p596zhs--2025	4	13.283	10.000	10.000	WORD	必须在您的 2025 年报税表（包括延期报税表）到期日期
+p596zhs--2025	4	13.282	10.000	10.000	WORD	之前拥有一个由社会安全局 (SSA) 发放的有效 SSN。
+p596zhs--2025	4	13.282	10.000	10.000	WORD	期日或之前有一个有效的 SSN，您才能根据该子女申请更
+p596zhs--2025	4	13.280	10.000	10.000	WORD	高的 EIC 优惠额。如果您至少有一个子女符合申报 EIC 的
+p596zhs--2025	9	15.741	10.000	10.000	WORD	示例 1——已满 19 岁的子女。 您子女 Sam 在 2025 年
+p596zhs--2025	9	15.875	10.000	10.000	WORD	12 月 10 日已满 19 岁。除非 Sam 有永久性完全伤残或是
+p596zhs--2025	9	15.747	10.000	10.000	WORD	一名学生，否则 Sam 不属于合条件子女，因为到年底
+p596zhs--2025	9	13.452	10.000	14.000	WORD	居住地测试
+p596zhs--2025	9	13.452	10.000	10.000	WORD	您的子女 2025 年必须有半年以上的时间与您同住在美
+p596zhs--2025	11	21.167	10.000	10.000	WORD	暂时离家。 将您或您子女因特殊情况暂时离开住所的时间
+p596zhs--2025	11	15.781	10.000	10.000	WORD	领养的子女。 如果您在 2025 年收养了一个子女，并且该
+p596zhs--2025	11	15.801	10.000	10.000	WORD	子女在 2025 年被您合法收养，或者该子女是在 2025 年期
+p596zhs--2025	11	15.756	10.000	10.000	WORD	间被安置在您那里的合格寄养儿童，如果在 2025 年该子
+p596zhs--2025	11	15.752	10.000	10.000	WORD	女被收养或安置在您那里的一半以上的时间里，您的主要
+p596zhs--2025	11	15.747	10.000	10.000	WORD	住所是这个子女的主要住所，则该子女被认为在 2025 年
+p596zhs--2025	11	15.738	10.000	10.000	WORD	例外情况。 如果您的子女及其配偶提交联合报税表只是为
+p596zhs--2025	11	15.742	10.000	10.000	WORD	了要求退还预扣所得税或已付估计税款，则适用联合报税
+p596zhs--2025	11	15.738	10.000	10.000	WORD	示例 1——子女提交联合报税表。 您将子女抚养到了
+p596zhs--2025	11	13.277	10.000	10.000	WORD	子女的配偶年收入为 25,000 美元。这对夫妇提交的是联
+p596zhs--2025	11	13.280	10.000	10.000	WORD	合报税表, 因此该子女不属于您的合条件子女。
+p596zhs--2025	11	13.028	10.000	10.000	WORD	款。 您 18 岁的子女和其 17 岁的配偶有 800 美元的兼职
+p596zhs--2025	12	13.254	10.000	10.000	WORD	如果您有一个符合申报 EIC 的条件的子女，但这
+p596zhs--2025	12	13.278	10.000	10.000	WORD	个子女没有有效的 SSN，您可能有资格申请一个
+p596zhs--2025	12	15.999	10.000	10.000	WORD	有时，一个子女通过了成为多人的合条件子女的测试。但
+p596zhs--2025	12	15.999	10.000	10.000	WORD	是，这些人中实际上只有一人可以将该子女视为合条件子
+p596zhs--2025	12	15.999	10.000	10.000	WORD	女。只有该人可以凭借该子女的合条件子女身份来享受以
+p596zhs--2025	13	15.991	10.000	10.000	WORD	为 9,300 美元。您通过兼职工作获得唯一收入。您父母的
+p596zhs--2025	13	15.993	10.000	10.000	WORD	AGI 是 15,000 美元。您父母通过工作获得唯一收入。
+p596zhs--2025	13	15.996	10.000	10.000	WORD	Morgan 的父母联合报税，他们的 AGI 低于 9,000 美元，
+p596zhs--2025	13	15.996	10.000	10.000	WORD	并且他们不与您和 Morgan 同住。Morgan 同时是您和您
+p596zhs--2025	13	15.994	10.000	10.000	WORD	父母的合条件子女，因为 Morgan 通过了针对您和您父母
+p596zhs--2025	13	15.997	10.000	10.000	WORD	的关系、年龄、居住地和联合报税表测试。但是，只有您
+p596zhs--2025	13	15.992	10.000	10.000	WORD	父母可以将 Morgan 视为合条件子女。这是因为您父母的
+p596zhs--2025	13	15.994	10.000	10.000	WORD	AGI（15,000 美元）比您的 AGI（9,300 美元）高。
+p596zhs--2025	13	15.995	10.000	10.000	WORD	适用于离异或分居父母的特殊规定。 如果以下所有陈述均
+p596zhs--2025	13	15.995	10.000	10.000	WORD	属实，则相关子女将被视为其非监护父母的合条件子女。
+p596zhs--2025	13	21.165	10.000	10.000	MATH	1. 父母：
+p596zhs--2025	13	21.165	10.000	10.000	WORD	2. 子女在这一年里从父母那里获得了一半以上的抚养
+p596zhs--2025	13	21.165	10.000	10.000	WORD	3. 子女 2025 年有一半以上的时间由父母一方或双方监
+p596zhs--2025	14	15.756	10.000	10.000	WORD	即使您是其合条件子女的人未申报 EIC 或不符合申报 EIC
+p596zhs--2025	14	15.757	10.000	10.000	WORD	的所有规则，情况也是如此。请勾选第 27c 行 （表格
+p596zhs--2025	14	15.750	10.000	10.000	WORD	示例。 您和您子女全年都与您父母同住。您今年 22
+p596zhs--2025	14	15.750	10.000	10.000	WORD	岁，未婚，并且就读于一所全日制职业学校。您有一份兼
+p596zhs--2025	14	15.753	10.000	10.000	WORD	职工作，收入为 5,700 美元。您没有其他收入。因为您通
+p596zhs--2025	14	15.748	10.000	10.000	WORD	过了关系、年龄、居住地和联合报税表测试，所以您是您
+p596zhs--2025	14	13.588	10.000	10.000	WORD	如果您有一个合条件子女。 如果您符合 第 8 条规则，则
+p596zhs--2025	14	13.592	10.000	10.000	WORD	表示您有一个合条件子女。如果您符合 第 8 条规则 并且未
+p596zhs--2025	14	13.592	10.000	10.000	WORD	申请有一个合条件子女时可申请的 EIC，则可以申请无任
+p596zhs--2025	15	15.892	10.000	10.000	WORD	如果其他人可以在其报税表中将您申报为被抚养人但未
+p596zhs--2025	15	15.771	10.000	10.000	WORD	这样做，您仍然不能申请抵免, 除非可以在报税表上申报
+p596zhs--2025	16	16.205	10.000	10.000	WORD	您（和您配偶，如果提交的是联合报税表）必须在美国的
+p596zhs--2025	16	13.263	10.000	10.000	WORD	附表第 2 行所列金额包括也在表格 1040 或 1040-SR 第 1z
+p596zhs--2025	17	13.262	10.000	10.000	WORD	的 IRS 将为您计算 EIC 金额。
+p596zhs--2025	17	13.266	10.000	10.000	WORD	您需要决定是使用 EIC 工作表 A 还是 EIC 工作表 B 来计算
+p596zhs--2025	17	13.269	10.000	10.000	WORD	您的 EIC 金额。本节介绍如何使用这些工作表以及如何在
+p596zhs--2025	17	13.264	10.000	10.000	WORD	您的报税表中申报 EIC 金额。
+p596zhs--2025	17	13.267	10.000	10.000	WORD	EIC 工作表 A。 如果您在 2025 年全年都不是自雇人士，
+p596zhs--2025	17	13.270	10.000	10.000	WORD	也不是神职人员、提交附表 SE 的教会雇员或提交附表 C
+p596zhs--2025	17	13.235	10.000	17.000	WORD	附表 EIC
+p596zhs--2025	17	13.236	10.000	10.000	WORD	如果您有一个合条件子女并且要申报 EIC，您必须填写附
+p596zhs--2025	17	13.238	10.000	10.000	WORD	表 EIC 并将其附在您的报税表中。附表 EIC 用于向 IRS 提
+p596zhs--2025	17	13.235	10.000	10.000	WORD	供有关您的合条件子女的信息，包括其姓名、年龄、
+p596zhs--2025	17	13.243	10.000	10.000	WORD	SSN、与您的关系以及其在相关年度与您同住了多长时
+p596zhs--2025	18	19.280	10.000	12.000	WORD	•在最终确定您是由于实施欺诈行为而提出 EIC 申请后
+p596zhs--2025	21	21.992	10.000	12.000	WORD	•Youtube.com/irsvideosASL（英文）。
+p596zhs--2025	21	15.996	10.000	10.000	WORD	其他语言版本的在线税收信息。 如果英语不是您的母
+p596zhs--2025	21	15.993	10.000	10.000	WORD	语，您可以在 IRS.gov/MyLanguage（英文） 上找到相关
+p596zhs--2025	21	15.996	10.000	10.000	MATH	信息。
+p596zhs--2025	21	15.996	10.000	10.000	WORD	电话口译（OPI）服务。 国税局为需要语言翻译的纳税人
+p596zhs--2025	21	15.996	10.000	10.000	WORD	提供 OPI 服务。纳税人援助中心 (TAC)、大多数国税局办
+p596zhs--2025	21	15.993	10.000	10.000	WORD	事处以及所有 VITA/TCE 报税点均提供 OPI 服务。该服务
+p596zhs--2025	21	15.992	10.000	10.000	WORD	提供西班牙语、普通话、粤语、韩语、越南语、俄语和海
+p596zhs--2025	21	15.996	10.000	10.000	WORD	替代性媒体偏好选择。 9000 表、替代性媒体偏好选择表
+p596zhs--2025	21	13.284	10.000	10.000	WORD	灾害。 请前往 IRS.gov/DisasterRelief（英文）来查看现
+p596zhs--2025	21	13.284	10.000	10.000	WORD	有的灾害税收宽减。
+p596zhs--2025	22	23.710	10.000	12.000	WORD	•进行付款或查看 5 年的付款历史和任何待付或计划的
+p596zhs--2025	22	23.744	10.000	12.000	WORD	•查阅您的税务记录，包括您最近一次报税的关键数据
+p596zhs--2025	23	22.007	10.000	10.000	WORD	以下是纳税人权益服务处（国会设立的独立组织）给您
+p596zhs--2025	23	15.751	10.000	10.000	WORD	纳税人权益服务处 (TAS) 是国税局 (IRS) 内的一个独立组
+p596zhs--2025	23	15.751	10.000	10.000	WORD	织。 TAS 帮助纳税人解决与 IRS 的问题，提出行政和立法
+p596zhs--2025	23	15.756	10.000	10.000	WORD	建议以防止或纠正问题，并保护纳税人的权利。我们努力
+p596zhs--2025	23	15.756	10.000	10.000	WORD	确保每个纳税人都受到公平对待，并确保您知悉并理解纳
+p596zhs--2025	23	15.756	10.000	10.000	WORD	税人权利法案规定的您的权利。我们是您在国税局的代言
+p596zhs--2025	23	15.998	10.000	12.000	WORD	TAS 可以如何帮助我？
+p596zhs--2025	23	16.002	10.000	10.000	WORD	TAS 可以帮助您解决您无法自行与 IRS 解决的问题。请务
+p596zhs--2025	23	15.995	10.000	10.000	WORD	必首先尝试通过 IRS 解决您的问题，但如果无法解决，请
+p596zhs--2025	23	21.991	10.000	12.000	WORD	•TAS 致力于解决影响许多纳税人的大规模（系统性）
+p596zhs--2025	23	15.991	10.000	12.000	WORD	如何联系 TAS？
+p596zhs--2025	23	15.995	10.000	10.000	WORD	TAS 在每个州、哥伦比亚特区和波多黎各都设有办事处。
+rrs2002-01	5	1.838	10.000	10.080	MATH	y3 @
+rrs2002-01	8	4.481	10.000	7.078	MATH	m
+rrs2002-01	8	0.761	10.000	10.080	MATH	[
+rrs2002-01	8	21.521	10.000	7.078	MATH	n
+rrs2002-01	8	16.841	10.000	10.080	MATH	[
+rrs2002-01	8	20.442	10.000	7.078	MATH	m
+rrs2002-01	8	4.481	10.000	7.078	MATH	m
+rrs2002-01	8	16.725	10.000	10.080	MATH	[
+rrs2002-01	8	0.881	10.000	10.080	MATH	[
+rrs2002-01	8	17.080	10.000	7.078	MATH	j@4
+rrs2002-01	8	5.441	10.000	7.078	MATH	n
+rrs2002-01	8	21.641	10.000	7.078	MATH	n
+rrs2002-01	8	0.645	10.000	10.080	MATH	[
+rrs2002-01	8	16.961	10.000	10.080	MATH	[
+rrs2002-01	8	1.481	10.000	7.078	MATH	i@4
+rrs2002-01	8	20.442	10.000	7.078	MATH	m
+rrs2002-01	8	4.481	10.000	7.078	MATH	m
+rrs2002-01	8	16.725	10.000	10.080	MATH	[
+rrs2002-01	8	0.881	10.000	10.080	MATH	[
+rrs2002-01	8	17.080	10.000	7.078	MATH	j@4
+rrs2002-01	8	5.441	10.000	7.078	MATH	n
+rrs2002-01	8	21.641	10.000	7.078	MATH	n
+rrs2002-01	8	0.645	10.000	10.080	MATH	[
+rrs2002-01	8	16.961	10.000	10.080	MATH	[
+rrs2002-01	8	1.481	10.000	7.078	MATH	i@4
+rrs2002-01	9	4.360	10.000	7.078	MATH	m
+rrs2002-01	9	0.760	10.000	10.080	MATH	[
+rrs2002-01	9	18.040	10.000	10.080	WORD	mxj yjm
+rrs2002-01	9	4.479	10.000	7.078	MATH	m
+rrs2002-01	9	0.759	10.000	10.080	MATH	[
+rrs2002-01	9	16.839	10.000	10.080	MATH	[
+rrs2002-01	9	1.119	10.000	7.078	MATH	j@4
+rrs2002-01	9	16.839	10.000	7.078	MATH	k@4
+rrs2002-01	19	1.000	10.000	7.078	MATH	K 4
+rrs2002-01	19	2.440	10.000	10.080	MATH	[
+rrs2002-01	19	19.960	10.000	10.080	MATH	!k¨k
+rrs2002-01	19	0.638	10.000	10.080	MATH	Y@
+rrs2002-01	19	0.881	10.000	10.080	WORD	4 FFFFFFFD
+rrs2002-01	20	1.838	10.000	10.080	MATH	zs @

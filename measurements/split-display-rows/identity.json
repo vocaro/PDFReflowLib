@@ -1,0 +1,40 @@
+{
+  "issues": ["#46", "#48", "#29"],
+  "system": "macOS 27.0 (26A428), arm64, release CLI, host terminal, library defaults",
+  "baseline": {
+    "commit": "58a2ddd",
+    "cli": "release build of 58a2ddd (LayoutReconstructor.swift restored from 58a2ddd in the worktree)",
+    "converterSHA256": "81aa44f325070fda72c717b20429dffc4fbb475d5d09c3e594382977a75dc962"
+  },
+  "candidate": {
+    "commit": "58a2ddd + working tree",
+    "converterSHA256": "a34a9b24826715d45b41e24880b4fd236098f291b7822c9f7fc7b2dbfa6179a4",
+    "sourceLayoutReconstructorSHA256": "376989a66528d8452c3ac81d013304787c26a987047e71ac510d5a062c31f8f7"
+  },
+  "environmentProbeSHA256": "cbf9fabb801c2acd89433d713236eacac103824f3749e254b0b1ef15c4bc72e3",
+  "sources": {
+    "wallace-algebra-2010": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+    "census-rrs2002-01": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
+    "faa-phak-8083-25c": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7"
+  },
+  "fixtures": {
+    "Tests/PDFReflowLibTests/fixtures/algebra-16-layout.json": "1e186c92d4e9dfa1719946bb1e76cddf843fc4ff80f575b8a7092daab09bd66e",
+    "Tests/PDFReflowLibTests/fixtures/algebra-343-layout.json": "3ecf96b5822ad3fdc5b82fa4a40acd67207ae026c0b78ea6e68b4b7636469cc7",
+    "Tests/PDFReflowLibTests/fixtures/algebra-424-layout.json": "cc56c9389125b4361a1c3259cf0fbb1350fd36be9decbdec978102b86ab9acf9",
+    "Tests/PDFReflowLibTests/fixtures/algebra-471-layout.json": "6b98c972466b6e5c421c1a35b25536adffebfc5c1ec913e1cebe972d9744e9f1"
+  },
+  "artefacts": {
+    "row-piece-distances.tsv": "baseline distance survey over every cached corpus source",
+    "page-comparison/*.json": "compare_conversion_runs.py --allow-different-converters, probe-backed",
+    "wallace-changed-blocks.txt": "block-level diff of the two Wallace EPUBs on the 40 changed pages",
+    "before-tests.log.gz": "the new tests with the admission loop removed",
+    "survey.swift": "the distance survey; no fixture or EPUB is committed"
+  },
+  "commands": {
+    "lane": "python3 tools/run_corpus_regressions.py --converter <CLI> --epubcheck /opt/homebrew/bin/epubcheck --output <dir> --case <id> --environment-probe .build/raster-environment/probe --execution-context host-terminal",
+    "compare": "python3 tools/compare_conversion_runs.py --allow-different-converters --baseline <base>/<id> --candidate <cand>/<id> --output page-comparison/<id>.json",
+    "contracts": "python3 tools/check_corpus_content.py --case wallace-algebra-2010 --evaluation <dir>/wallace-algebra-2010",
+    "probe": "xcrun swiftc -parse-as-library -O -module-cache-path .build/raster-environment/module-cache Sources/PDFReflowLib/{PageRasterizer,ConversionTypes,DocumentModel,ReflowDocument}.swift tools/probe-raster-environment.swift -o .build/raster-environment/probe",
+    "survey": "swiftc -swift-version 6 $(ls Sources/PDFReflowLib/*.swift | grep -v 'EPUBWriter\\|PDFConverter\\|PDFReflowLibPipeline\\|EPUBTextEncoder') measurements/split-display-rows/survey.swift -o /tmp/survey; for pdf in corpus/cache/*.pdf; do /tmp/survey \"$pdf\" 24; done"
+  }
+}

@@ -791,11 +791,33 @@ enum LayoutReconstructor {
         return result
     }
 
+    /// A piece of a display row whose rectangle all but touches a crop that already holds the
+    /// rest of that row. PDFKit breaks such a row at a raised exponent or a fraction, and the
+    /// crop's edge falls in the break: Wallace page 340's leading `x²` stands 0.01 pt clear of
+    /// the crop holding the rest of `x² − 3x + 9/4 = 8/4 + 9/4`, page 343's `x² +` 0.53 pt, and
+    /// the answer-key entries `22)− 2,` and `29)−` 0.63 and 0.58 pt from their fraction crops
+    /// (#46, #48). The gap is extraction padding, not typography: across the gated corpus every
+    /// such piece stands at most 0.65 pt clear, while the nearest piece separated by a real
+    /// space is 0.87 pt away, so three quarters of a point separates them.
+    ///
+    /// A piece carrying a word is an explanation set beside the derivation, not part of it
+    /// (`Separate constant term from varaibles`, 11.6 pt clear on Wallace page 339), and a bare
+    /// list marker is a separable entry number whose item happens to start at the crop's edge
+    /// (NOAA's reference numbers `396.`, `402.`). Neither joins the crop.
+    static func adjoinsRow(_ line: TextLine, bounds: CGRect, admitted: [CGRect]) -> Bool {
+        guard !line.monospaced, line.text.count <= 40, !isMarkerPiece(line.text),
+              line.text.range(of: #"\p{L}{3,}"#, options: .regularExpression) == nil else { return false }
+        let gap = line.rect.midX < bounds.midX ? bounds.minX - line.rect.maxX : line.rect.minX - bounds.maxX
+        guard gap >= 0, gap <= 0.75 else { return false }
+        return admitted.contains { sameRow($0, line.rect) }
+    }
+
     /// Whole-line expansion admits the lines a seed captures and the other pieces of their
     /// rows. Tightly leaded line rectangles overlap, so admitting every line that touches an
     /// admitted line would absorb a whole paragraph or column (#36). The crop is then trimmed
     /// away from lines it merely touches, because layout removes every intersecting line from
     /// prose; a line whose rectangle genuinely overlaps admitted text is admitted instead.
+    /// A crop never keeps half a row: a piece its edge left just outside joins it (`adjoinsRow`).
     /// Returns nil for a thin rule that lies inside text it does not strike through.
     private static func expanded(_ region: Region, page: PageContent) -> CGRect? {
         var admitted: [CGRect] = []
@@ -805,6 +827,12 @@ enum LayoutReconstructor {
             var changed = false
             for line in page.lines where !admitted.contains(line.rect) && bounds.intersects(line.rect) {
                 guard captures(region.seed, line) || admitted.contains(where: { sameRow($0, line.rect) }) else { continue }
+                admitted.append(line.rect)
+                changed = true
+            }
+            if changed { continue }
+            for line in page.lines where !admitted.contains(line.rect) && !bounds.intersects(line.rect)
+                && adjoinsRow(line, bounds: bounds, admitted: admitted) {
                 admitted.append(line.rect)
                 changed = true
             }

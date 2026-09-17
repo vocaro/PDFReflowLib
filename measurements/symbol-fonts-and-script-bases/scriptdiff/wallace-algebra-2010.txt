@@ -1,0 +1,17 @@
+==== page 96: lost 2, gained 2, OTHER MARKUP CHANGED
+  - <sup>'y' after 'x1, y1) and (x2, y2) is '
+  - <sup>'− y' after ', y1) and (x2, y2) is y2'
+  + <sub>'1' after '1) and (x2, y2) is y2− y'
+  + <sub>'2' after '1, y1) and (x2, y2) is y'
+==== page 184: lost 1, gained 2
+  - <sub>'2b2f2 ' after ' e need to flip\na 3cde4 '
+  + <sup>'2' after ' need to flip\na 3cde4 2b'
+  + <sup>'2 ' after 'eed to flip\na 3cde4 2b2f'
+==== page 205: lost 1, gained 2
+  - <sub>'4x2 ' after ' is the second term 4x2\n'
+  + <sup>'2' after 'em is the second term 4x'
+  + <sup>'2 ' after 's the second term 4x2\n4x'
+==== page 255: lost 1, gained 1
+  - <sub>'6a2b ' after 'on from page 255\nand 3c\n'
+  + <sup>'2' after ' from page 255\nand 3c\n6a'
+TOTAL {'lost sup': 2, 'gained sub': 2, 'pages': 4, 'pages with other changes': 1, 'lost sub': 3, 'gained sup': 5}

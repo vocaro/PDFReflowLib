@@ -4244,6 +4244,9 @@ enum LayoutReconstructor {
         if let address = trailingAddress(left) {
             return addressHyphenOperation(address, right, vocabulary: vocabulary, page: page, warnings: &warnings)
         }
+        // A hyphen after a number joins a compound (`45-` + `degree-increment`, #155): no word breaks
+        // inside a number, and the letters after it alone would otherwise read as the joined word.
+        if let before = left.dropLast().last, before.isASCII, before.isNumber { return .concatenate }
         let prefix = left.dropLast().reversed().prefix(while: { $0.isLetter }).reversed()
         let suffix = right.prefix(while: { $0.isLetter })
         let joined = (String(prefix) + suffix).lowercased()

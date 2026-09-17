@@ -52,10 +52,13 @@ private typealias CaptureFont = UIFont
         // either carry no such field.
         let selections = page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? []
         let weights = FontWeightReader.read(reference)
+        // Symbol fonts' private-use characters are decoded as the pipeline decodes them (#155).
+        let privateUse = PrivateUseDecoder.characters(on: reference)
         let selectionBounds = selections.map { $0.bounds(for: page) }
         for (selection, lineBounds) in zip(selections, selectionBounds) {
             guard let native = selection.attributedString else { continue }
-            let attributed = FontWeightReader.apply(weights, to: native, bounds: lineBounds, allBounds: selectionBounds)
+            let attributed = PrivateUseDecoder.decode(
+                FontWeightReader.apply(weights, to: native, bounds: lineBounds, allBounds: selectionBounds), privateUse)
             var runs: [[String: Any]] = []
             attributed.enumerateAttributes(in: NSRange(location: 0, length: attributed.length)) { attrs, range, _ in
                 let font = attrs[.font] as? CaptureFont

@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "converterSHA256": "e576aef39bf5f5e76f21a3cddad638cd678e55cc7fda7163f501f2d89770fecc",
+  "results": [
+    {
+      "case": "dga-2025-2030",
+      "passed": true,
+      "reviewPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        9,
+        6,
+        7,
+        10
+      ],
+      "contentChecks": 89,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+    }
+  ],
+  "notRun": [
+    "faa-phak-8083-25c",
+    "wallace-algebra-2010",
+    "gpo-911-2004",
+    "fed-explained-2021",
+    "gpo-our-flag-2003",
+    "cdc-zombie-pandemic-2011",
+    "cia-blue-book-14-1955",
+    "usgs-mcs2025-copper",
+    "scotus-loper-bright-2024",
+    "census-rrs2002-01",
+    "uscis-m618-arabic-2015",
+    "irs-p596-zhs-2025",
+    "nbs-jres-geltman-1977",
+    "arxiv-replay-clocks-2023",
+    "uscourts-pro-se-1-2016",
+    "ntrs-20200002975-gwl-2020",
+    "ntrs-20190030725-dasc-2019",
+    "usda-ars-agresearch-2012-11",
+    "ntrs-20180003024-earthdata-slides-2018",
+    "ntrs-20210020887-techport-thm-2021"
+  ],
+  "knownUnsupportedFullConversions": [
+    {
+      "id": "gpo-warren-1964",
+      "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+      "issue": 5
+    },
+    {
+      "id": "noaa-nca5-2023",
+      "reason": "Known default image-output ceiling failure. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
+      "issue": 5
+    }
+  ]
+}

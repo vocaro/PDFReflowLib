@@ -53,13 +53,18 @@ enum NativeTextReader {
             // The page's text shows and their fonts' weights, for bold PDFKit cannot name (#125).
             let weights = includeStyle && page.numberOfCharacters <= limit
                 ? page.pageRef.map { FontWeightReader.read($0, decodings: glyphDecodings) } ?? [] : []
+            // Symbol fonts' private-use characters, read from the page's font resources the first time
+            // a line holds one (#155).
+            let privateUse = PrivateUseCharacters(page: page)
             var lines = try extractLines(on: page, limit: limit, includeStyle: includeStyle, weights: weights,
-                                         glyphDecodings: glyphDecodings, report: report)
+                                         glyphDecodings: glyphDecodings, report: report, privateUse: privateUse)
             if !columnJoints.isEmpty {
-                lines = try splitAtColumnJoints(lines, joints: columnJoints, on: page, includeStyle: includeStyle, weights: weights)
+                lines = try splitAtColumnJoints(lines, joints: columnJoints, on: page, includeStyle: includeStyle, weights: weights,
+                                                privateUse: privateUse)
             }
             if let ink = borderlessTableInk {
-                lines = try splitBorderlessTables(lines, ink: ink, on: page, includeStyle: includeStyle, weights: weights)
+                lines = try splitBorderlessTables(lines, ink: ink, on: page, includeStyle: includeStyle, weights: weights,
+                                                  privateUse: privateUse)
             }
             return lines
         }
@@ -75,6 +80,31 @@ enum NativeTextReader {
         }.map(\.x)
     }
 
+    /// A page's decodable private-use characters (`PrivateUseDecoder`), read once and only for a
+    /// page whose text holds one.
+    final class PrivateUseCharacters {
+        private let page: PDFPage
+        private var characters: [UInt32: String]?
+        init(page: PDFPage) { self.page = page }
+
+        func decode(_ text: String) -> String {
+            guard PrivateUseDecoder.containsPrivateUse(text) else { return text }
+            return PrivateUseDecoder.decode(text, read())
+        }
+
+        func decode(_ attributed: NSAttributedString) -> NSAttributedString {
+            guard PrivateUseDecoder.containsPrivateUse(attributed.string) else { return attributed }
+            return PrivateUseDecoder.decode(attributed, read())
+        }
+
+        private func read() -> [UInt32: String] {
+            if let characters { return characters }
+            let read = page.pageRef.map(PrivateUseDecoder.characters(on:)) ?? [:]
+            characters = read
+            return read
+        }
+    }
+
     private static func squeezed(_ text: String) -> String {
         text.split(whereSeparator: \.isWhitespace).joined(separator: " ")
     }
@@ -82,7 +112,8 @@ enum NativeTextReader {
     /// The characters of a line between two x positions as a line of their own, measured with
     /// PDFKit's rectangle selections; nil when the span holds no visible text.
     private static func piece(of rect: CGRect, from minX: CGFloat, to maxX: CGFloat,
-                              on page: PDFPage, includeStyle: Bool, weights: [FontWeightReader.Show]) -> TextLine? {
+                              on page: PDFPage, includeStyle: Bool, weights: [FontWeightReader.Show],
+                              privateUse: PrivateUseCharacters) -> TextLine? {
         func selection(from minX: CGFloat, to maxX: CGFloat) -> PDFSelection? {
             guard maxX > minX else { return nil }
             return page.selection(for: CGRect(x: minX, y: rect.minY, width: maxX - minX, height: rect.height))
@@ -121,18 +152,22 @@ enum NativeTextReader {
                 text = repair.text
                 semantic = repair.text.string.trimmingCharacters(in: .whitespacesAndNewlines)
             }
-            return FontWeightReader.apply(weights, to: text, bounds: bounds, allBounds: [bounds])
+            return privateUse.decode(FontWeightReader.apply(weights, to: text, bounds: bounds, allBounds: [bounds]))
         } : nil
-        return textLine(semantic: semantic.replacingOccurrences(of: "\u{FFFC}", with: " "), bounds: bounds, attributed: attributed)
+        return textLine(semantic: privateUse.decode(semantic.replacingOccurrences(of: "\u{FFFC}", with: " ")),
+                        bounds: bounds, attributed: attributed)
     }
 
     /// A line cut in two at `x`: both pieces exist, spell the line apart from the whitespace at
     /// the cut, stand on their own sides of `x` and at least `gap` apart.
     private static func cut(_ line: TextLine, at x: CGFloat, gap: CGFloat, on page: PDFPage,
-                            includeStyle: Bool, weights: [FontWeightReader.Show]) -> (left: TextLine, right: TextLine)? {
+                            includeStyle: Bool, weights: [FontWeightReader.Show],
+                            privateUse: PrivateUseCharacters) -> (left: TextLine, right: TextLine)? {
         let rect = line.rect
-        guard let left = piece(of: rect, from: rect.minX, to: x, on: page, includeStyle: includeStyle, weights: weights),
-              let right = piece(of: rect, from: x, to: rect.maxX, on: page, includeStyle: includeStyle, weights: weights),
+        guard let left = piece(of: rect, from: rect.minX, to: x, on: page, includeStyle: includeStyle, weights: weights,
+                               privateUse: privateUse),
+              let right = piece(of: rect, from: x, to: rect.maxX, on: page, includeStyle: includeStyle, weights: weights,
+                                privateUse: privateUse),
               squeezed(left.text + " " + right.text) == squeezed(line.text),
               right.rect.minX - left.rect.maxX >= gap,
               left.rect.maxX <= x + 1, right.rect.minX >= x - 1 else { return nil }
@@ -147,7 +182,8 @@ enum NativeTextReader {
     /// must spell the line exactly, apart from the whitespace at the cut, or the line is kept
     /// (#65).
     private static func splitAtColumnJoints(_ lines: [TextLine], joints: [ColumnJoint],
-                                            on page: PDFPage, includeStyle: Bool, weights: [FontWeightReader.Show]) throws -> [TextLine] {
+                                            on page: PDFPage, includeStyle: Bool, weights: [FontWeightReader.Show],
+                                            privateUse: PrivateUseCharacters) throws -> [TextLine] {
         var result: [TextLine] = []
         for line in lines {
             try Task.checkCancellation()
@@ -157,11 +193,14 @@ enum NativeTextReader {
             let em = max(4, line.fontSize)
             // A cut is real when the joint falls between words and the glyphs on either side of
             // it stand at least one em apart.
-            let cuts = crossed.filter { cut(line, at: $0, gap: em, on: page, includeStyle: includeStyle, weights: weights) != nil }
+            let cuts = crossed.filter {
+                cut(line, at: $0, gap: em, on: page, includeStyle: includeStyle, weights: weights, privateUse: privateUse) != nil
+            }
             let edges = [rect.minX] + cuts + [rect.maxX]
             var pieces: [TextLine] = []
             for (start, end) in zip(edges, edges.dropFirst()) {
-                guard let next = piece(of: rect, from: start, to: end, on: page, includeStyle: includeStyle, weights: weights) else { pieces = []; break }
+                guard let next = piece(of: rect, from: start, to: end, on: page, includeStyle: includeStyle, weights: weights,
+                                       privateUse: privateUse) else { pieces = []; break }
                 pieces.append(next)
             }
             guard pieces.count >= 2, squeezed(pieces.map(\.text).joined(separator: " ")) == squeezed(line.text) else {
@@ -194,7 +233,8 @@ enum NativeTextReader {
     /// capital heading, with cells too close to share a gutter, or near a drawn rule, is left
     /// exactly as PDFKit read it.
     private static func splitBorderlessTables(_ lines: [TextLine], ink: [CGRect], on page: PDFPage,
-                                              includeStyle: Bool, weights: [FontWeightReader.Show]) throws -> [TextLine] {
+                                              includeStyle: Bool, weights: [FontWeightReader.Show],
+                                              privateUse: PrivateUseCharacters) throws -> [TextLine] {
         func sameRow(_ a: TextLine, _ b: TextLine) -> Bool { abs(a.rect.minY - b.rect.minY) <= 1.5 }
         var result = lines
         for left in lines where !left.monospaced {
@@ -235,7 +275,7 @@ enum NativeTextReader {
                         if line.rect.minX >= middle { rights.append(line); continue }
                         let positions = [lower + em * 0.5, middle, upper - em * 0.5]
                         guard let pieces = positions.lazy.compactMap({
-                            cut(line, at: $0, gap: em * 2, on: page, includeStyle: includeStyle, weights: weights)
+                            cut(line, at: $0, gap: em * 2, on: page, includeStyle: includeStyle, weights: weights, privateUse: privateUse)
                         }).first else { return nil }
                         lefts.append(pieces.left); rights.append(pieces.right)
                         cuts.append((line, [pieces.left, pieces.right]))
@@ -264,7 +304,8 @@ enum NativeTextReader {
     }
 
     private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool, weights: [FontWeightReader.Show],
-                                     glyphDecodings: [String: [UInt8: String]], report: IndexGlyphReport?) throws -> [TextLine] {
+                                     glyphDecodings: [String: [UInt8: String]], report: IndexGlyphReport?,
+                                     privateUse: PrivateUseCharacters) throws -> [TextLine] {
         guard page.numberOfCharacters <= limit else {
             throw ConversionError.resourceLimit("too many characters")
         }
@@ -315,8 +356,10 @@ enum NativeTextReader {
             let weighted = repaired.map {
                 FontWeightReader.apply(weights, to: $0, bounds: bounds, allBounds: boundsByLine)
             }
-            result.append(textLine(semantic: corrected ?? semantic,
-                                   bounds: bounds, attributed: weighted))
+            // Private-use characters are decoded last: spacing and style evidence compare PDFKit's
+            // characters with the shows' own maps, which hold the same private-use values (#155).
+            result.append(textLine(semantic: privateUse.decode(corrected ?? semantic),
+                                   bounds: bounds, attributed: weighted.map(privateUse.decode)))
         }
         return result
     }
@@ -454,6 +497,7 @@ enum NativeTextReader {
                                     resourceItalic: attributes[FontWeightReader.italicAttribute] != nil))
         }
         remeasureQuotedMarker(&styled)
+        let baselines = shiftedBaselines(styled)
         var runs: [InlineText.Element] = []
         for (index, run) in styled.enumerated() {
             var style = run.style
@@ -482,10 +526,13 @@ enum NativeTextReader {
             let tolerance = max(0.5, run.size * 0.12)
             // Some PDFKit selections combine several OCR lines, represented as baseline
             // shifts of a full line height. Those are layout offsets, not inline scripts.
-            if !(hasDropCap && run.first), !display, hasScriptBase(run, index: index, in: styled),
-               run.offset.isFinite, abs(run.offset) <= run.size * 0.75 {
-                if run.offset > tolerance { style.insert(.superscript) }
-                else if run.offset < -tolerance { style.insert(.subscript) }
+            // A run is measured from the baseline of the base it is set beside, where that base is itself
+            // shifted in the selection (#144); a base on a shifted baseline is no script.
+            let offset = run.offset - (baselines.reference[index] ?? 0)
+            if !(hasDropCap && run.first), !display, !baselines.base[index], !isBulletRun(index, in: styled),
+               hasScriptBase(run, index: index, in: styled), offset.isFinite, abs(offset) <= run.size * 0.75 {
+                if offset > tolerance { style.insert(.superscript) }
+                else if offset < -tolerance { style.insert(.subscript) }
             }
             // PDFKit names a font only when the system has one by that name; the page's own font
             // resources state the weight and slope of the rest (#125, #133). A display initial or
@@ -502,6 +549,69 @@ enum NativeTextReader {
             runs.append(.text(run.text, style))
         }
         return InlineText(elements: runs).trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    /// Scripts set beside a base that is itself off the selection's baseline (#144). PDFKit measures
+    /// every run of a selection from one baseline, so Wallace page 255's denominator `6a²b`, set
+    /// 7.8 points below the comment `First identify LCD` beside it, reads `6a` (−7.80) and `b` (−7.80)
+    /// as subscripts and its exponent (−4.32) as one too.
+    ///
+    /// A run followed, with no space between, by a clearly smaller run (at most its size / 1.1) shifted
+    /// to the same side of the selection's baseline and against the run is that run's base, and is no
+    /// script; the smaller run is measured from the base's offset. A run of the base's size that follows
+    /// such a script with no space between, on the base's baseline, resumes the base and is measured from
+    /// it. Where the base stands on the selection's baseline (`x²`, `H₂O`, a note marker) the offsets are
+    /// the ones the selection states, so nothing changes; the Fed's regulation letter (`F ` beside its
+    /// 8-point name, #138) is set apart by a space and the name is on the selection's baseline. A base
+    /// that is itself clearly smaller than the run it follows with no space between is a script too: the
+    /// DASC paper's nested indices (`STA` with `n` raised and `i` raised again, #163) keep the offsets
+    /// the selection states.
+    private static func shiftedBaselines(_ runs: [StyledRun]) -> (reference: [Double?], base: [Bool]) {
+        var reference = [Double?](repeating: nil, count: runs.count)
+        var base = [Bool](repeating: false, count: runs.count)
+        func measured(_ run: StyledRun) -> Bool {
+            run.hasFont && run.size.isFinite && run.size > 0 && run.offset.isFinite
+                && !run.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        }
+        func touching(_ left: StyledRun, _ right: StyledRun) -> Bool {
+            left.text.last?.isWhitespace == false && right.text.first?.isWhitespace == false
+        }
+        func shifted(_ run: StyledRun, from offset: Double) -> Bool {
+            abs(run.offset - offset) > max(0.5, run.size * 0.12)
+        }
+        for index in runs.indices.dropLast() {
+            let carrier = runs[index], script = runs[index + 1]
+            guard measured(carrier), measured(script), touching(carrier, script), script.size <= carrier.size / 1.1,
+                  shifted(carrier, from: 0), shifted(script, from: 0), (carrier.offset > 0) == (script.offset > 0),
+                  shifted(script, from: carrier.offset),
+                  abs(script.offset - carrier.offset) <= carrier.size * 0.75 else { continue }
+            if index > 0, case let before = runs[index - 1], measured(before), touching(before, carrier),
+               carrier.size <= before.size / 1.1 { continue }
+            base[index] = true
+            reference[index + 1] = carrier.offset
+            if index + 2 < runs.count, case let resumed = runs[index + 2], measured(resumed), touching(script, resumed),
+               resumed.size >= carrier.size / 1.1, resumed.size <= carrier.size * 1.1, !shifted(resumed, from: carrier.offset) {
+                reference[index + 2] = carrier.offset
+            }
+        }
+        return (reference, base)
+    }
+
+    /// Filled list bullets. Open marks (`◦`, `○`, `□`) are left out: Wallace sets its degree signs as a
+    /// raised `◦` (`29◦`), and a raised degree sign is a superscript.
+    static let bulletCharacters: Set<Character> = ["\u{2022}", "\u{2023}", "\u{2043}", "\u{25AA}", "\u{25CF}", "\u{25A0}",
+                                                   "\u{25C6}", "\u{2756}", "\u{2751}", "\u{27A2}", "\u{27A4}", "\u{25BA}",
+                                                   "\u{2714}", "\u{2713}"]
+
+    /// A line's opening bullet and the whitespace after it (#144): the run holds bullets and
+    /// whitespace only, and so does everything before it, which holds a bullet if the run does not.
+    /// A bullet opens an item and is no script, however it is raised: the Supreme Court's Symbol
+    /// bullets (pages 86–87) are 7.98-point glyphs raised 1.02 points beside 10.98-point text, just
+    /// past the script tolerance, with the space after them raised alike.
+    private static func isBulletRun(_ index: Int, in runs: [StyledRun]) -> Bool {
+        func bulletsAndSpace(_ text: String) -> Bool { text.allSatisfy { $0.isWhitespace || bulletCharacters.contains($0) } }
+        guard bulletsAndSpace(runs[index].text), runs[...index].allSatisfy({ bulletsAndSpace($0.text) }) else { return false }
+        return runs[...index].contains { $0.text.contains(where: bulletCharacters.contains) }
     }
 
     /// A script is set smaller than, or as large as, the text it is raised or lowered from, so a

@@ -1,0 +1,968 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        300.05000000000001,
+        50.112000000000002,
+        12,
+        13.283999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 12,
+          "text" : "13"
+        }
+      ],
+      "text" : "13"
+    },
+    {
+      "rect" : [
+        54,
+        737.64864000000011,
+        242.64551999999998,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Peak loads from resonant response can be an order of"
+        }
+      ],
+      "text" : "Peak loads from resonant response can be an order of"
+    },
+    {
+      "rect" : [
+        54,
+        726.12864000000002,
+        242.99648000000002,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "magnitude above those produced by static drag loads or"
+        }
+      ],
+      "text" : "magnitude above those produced by static drag loads or"
+    },
+    {
+      "rect" : [
+        54,
+        714.60864000000004,
+        242.93011999999999,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "nonresonant response. Therefore, if wind-tunnel testing is"
+        }
+      ],
+      "text" : "nonresonant response. Therefore, if wind-tunnel testing is"
+    },
+    {
+      "rect" : [
+        54,
+        703.18864000000008,
+        242.6554799999999,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "done to identify regions of peak WIO response, then testing"
+        }
+      ],
+      "text" : "done to identify regions of peak WIO response, then testing"
+    },
+    {
+      "rect" : [
+        54,
+        691.6686400000001,
+        243.06536000000006,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "in uniform flow with an aeroelastically-scaled model is likely"
+        }
+      ],
+      "text" : "in uniform flow with an aeroelastically-scaled model is likely"
+    },
+    {
+      "rect" : [
+        54,
+        680.14864000000011,
+        242.98328000000004,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "adequate and is not overly conservative in predicting resonant"
+        }
+      ],
+      "text" : "adequate and is not overly conservative in predicting resonant"
+    },
+    {
+      "rect" : [
+        54,
+        668.50864000000001,
+        65.327640000000002,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "response events."
+        }
+      ],
+      "text" : "response events."
+    },
+    {
+      "rect" : [
+        150.38,
+        633.14800000000002,
+        50.884560000000022,
+        13.283999999999992
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 12,
+          "text" : "A"
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.4800000000000004,
+          "text" : "PPENDIX"
+        }
+      ],
+      "text" : "APPENDIX"
+    },
+    {
+      "rect" : [
+        54,
+        615.82864000000006,
+        187.07868000000002,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9.9600000000000009,
+          "italic" : true,
+          "text" : "Data Plots Segregated by Wind Azimuth Angle"
+        }
+      ],
+      "text" : "Data Plots Segregated by Wind Azimuth Angle"
+    },
+    {
+      "rect" : [
+        54,
+        598.54864000000009,
+        243.12668000000002,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Included in this appendix are plots of data acquired in 45-"
+        }
+      ],
+      "text" : "Included in this appendix are plots of data acquired in 45-"
+    },
+    {
+      "rect" : [
+        54,
+        587.14864000000011,
+        243.01123999999999,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "degree-increment azimuth regions. Each wind azimuth"
+        }
+      ],
+      "text" : "degree-increment azimuth regions. Each wind azimuth"
+    },
+    {
+      "rect" : [
+        54,
+        575.62864000000002,
+        243.00668000000007,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "region considers only those data records acquired within +/-"
+        }
+      ],
+      "text" : "region considers only those data records acquired within +/-"
+    },
+    {
+      "rect" : [
+        54,
+        564.10864000000004,
+        242.88596000000007,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "15 degrees of the cardinal or ordinal directions. Since the"
+        }
+      ],
+      "text" : "15 degrees of the cardinal or ordinal directions. Since the"
+    },
+    {
+      "rect" : [
+        54,
+        552.58864000000005,
+        242.68535999999995,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "model is geometrically symmetrical about 180 degrees, plots"
+        }
+      ],
+      "text" : "model is geometrically symmetrical about 180 degrees, plots"
+    },
+    {
+      "rect" : [
+        54,
+        541.06864000000007,
+        243.10352,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "are paired with their corresponding azimuth region when"
+        }
+      ],
+      "text" : "are paired with their corresponding azimuth region when"
+    },
+    {
+      "rect" : [
+        54,
+        529.51864,
+        154.34000000000003,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "mirrored about the plane of symmetry."
+        }
+      ],
+      "text" : "mirrored about the plane of symmetry."
+    },
+    {
+      "rect" : [
+        54,
+        506.59863999999999,
+        54.550920000000005,
+        11.025720000000035
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Plots include:"
+        }
+      ],
+      "text" : "Plots include:"
+    },
+    {
+      "rect" : [
+        72.024000000000001,
+        494.35863999999998,
+        214.50175999999999,
+        12.161159999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9600000000000009,
+          "text" : "•"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Peak bending moment due to lift, research model"
+        }
+      ],
+      "text" : "• Peak bending moment due to lift, research model"
+    },
+    {
+      "rect" : [
+        72.024000000000001,
+        482.11863999999997,
+        224.90204,
+        12.161159999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9600000000000009,
+          "text" : "•"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Maximum resultant bending moment, research"
+        }
+      ],
+      "text" : "• Maximum resultant bending moment, research"
+    },
+    {
+      "rect" : [
+        90.024000000000001,
+        470.59863999999999,
+        24.810360000000003,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "model"
+        }
+      ],
+      "text" : "model"
+    },
+    {
+      "rect" : [
+        72.024000000000001,
+        458.35863999999998,
+        224.75963999999999,
+        12.161159999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9600000000000009,
+          "text" : "•"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Normalized mean bending moment due to drag,"
+        }
+      ],
+      "text" : "• Normalized mean bending moment due to drag,"
+    },
+    {
+      "rect" : [
+        90.024000000000001,
+        446.95864,
+        71.77176,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "proprietary model"
+        }
+      ],
+      "text" : "proprietary model"
+    },
+    {
+      "rect" : [
+        72.024000000000001,
+        434.71863999999999,
+        224.7998,
+        12.161159999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9600000000000009,
+          "text" : "•"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Normalized peak bending moment due to lift,"
+        }
+      ],
+      "text" : "• Normalized peak bending moment due to lift,"
+    },
+    {
+      "rect" : [
+        90.024000000000001,
+        423.19864000000001,
+        71.77176,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "proprietary model"
+        }
+      ],
+      "text" : "proprietary model"
+    },
+    {
+      "rect" : [
+        72.024000000000001,
+        410.95864,
+        224.78952000000004,
+        12.161159999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9600000000000009,
+          "text" : "•"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Normalized maximum resultant bending moment,"
+        }
+      ],
+      "text" : "• Normalized maximum resultant bending moment,"
+    },
+    {
+      "rect" : [
+        90.024000000000001,
+        399.43864000000002,
+        71.77176,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "proprietary model"
+        }
+      ],
+      "text" : "proprietary model"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "ntrs-20200002975-gwl-2020",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        300.05000000000001,
+        50.112000000000002,
+        12,
+        13.283999999999999
+      ],
+      "text" : "13"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        737.64864000000011,
+        242.64551999999998,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 155,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 208
+      },
+      "text" : "Peak loads from resonant response can be an order of"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        726.12864000000002,
+        242.99648000000002,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 155,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 208
+      },
+      "text" : "magnitude above those produced by static drag loads or"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        714.60864000000004,
+        242.93011999999999,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 155,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 208
+      },
+      "text" : "nonresonant response. Therefore, if wind-tunnel testing is"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        703.18864000000008,
+        242.6554799999999,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 155,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 208
+      },
+      "text" : "done to identify regions of peak WIO response, then testing"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        691.6686400000001,
+        243.06536000000006,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 155,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 208
+      },
+      "text" : "in uniform flow with an aeroelastically-scaled model is likely"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        680.14864000000011,
+        242.98328000000004,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 155,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 208
+      },
+      "text" : "adequate and is not overly conservative in predicting resonant"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        668.50864000000001,
+        65.327640000000002,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 155,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 208
+      },
+      "text" : "response events."
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        150.38,
+        633.14800000000002,
+        50.884560000000022,
+        13.283999999999992
+      ],
+      "structure" : {
+        "group" : 157,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 210
+      },
+      "text" : "APPENDIX"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        615.82864000000006,
+        187.07868000000002,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 158,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 211
+      },
+      "text" : "Data Plots Segregated by Wind Azimuth Angle"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        598.54864000000009,
+        243.12668000000002,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 159,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 212
+      },
+      "text" : "Included in this appendix are plots of data acquired in 45-"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        587.14864000000011,
+        243.01123999999999,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 159,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 212
+      },
+      "text" : "degree-increment azimuth regions. Each wind azimuth"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        575.62864000000002,
+        243.00668000000007,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 159,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 212
+      },
+      "text" : "region considers only those data records acquired within +/-"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        564.10864000000004,
+        242.88596000000007,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 159,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 212
+      },
+      "text" : "15 degrees of the cardinal or ordinal directions. Since the"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        552.58864000000005,
+        242.68535999999995,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 159,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 212
+      },
+      "text" : "model is geometrically symmetrical about 180 degrees, plots"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        541.06864000000007,
+        243.10352,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 159,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 212
+      },
+      "text" : "are paired with their corresponding azimuth region when"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        529.51864,
+        154.34000000000003,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 159,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 212
+      },
+      "text" : "mirrored about the plane of symmetry."
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        506.59863999999999,
+        54.550920000000005,
+        11.025720000000035
+      ],
+      "structure" : {
+        "group" : 161,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 214
+      },
+      "text" : "Plots include:"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        72.024000000000001,
+        494.35863999999998,
+        214.50175999999999,
+        12.161159999999995
+      ],
+      "text" : "• Peak bending moment due to lift, research model"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        72.024000000000001,
+        482.11863999999997,
+        224.90204,
+        12.161159999999995
+      ],
+      "text" : "• Maximum resultant bending moment, research"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        90.024000000000001,
+        470.59863999999999,
+        24.810360000000003,
+        11.025719999999978
+      ],
+      "text" : "model"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        72.024000000000001,
+        458.35863999999998,
+        224.75963999999999,
+        12.161159999999995
+      ],
+      "text" : "• Normalized mean bending moment due to drag,"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        90.024000000000001,
+        446.95864,
+        71.77176,
+        11.025719999999978
+      ],
+      "text" : "proprietary model"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        72.024000000000001,
+        434.71863999999999,
+        224.7998,
+        12.161159999999995
+      ],
+      "text" : "• Normalized peak bending moment due to lift,"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        90.024000000000001,
+        423.19864000000001,
+        71.77176,
+        11.025719999999978
+      ],
+      "text" : "proprietary model"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        72.024000000000001,
+        410.95864,
+        224.78952000000004,
+        12.161159999999995
+      ],
+      "text" : "• Normalized maximum resultant bending moment,"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        90.024000000000001,
+        399.43864000000002,
+        71.77176,
+        11.025719999999978
+      ],
+      "text" : "proprietary model"
+    }
+  ],
+  "page" : 13,
+  "paints" : [
+
+  ],
+  "rightsBasis" : "Page 1 states U.S. Government work not protected by U.S. copyright; the paper's byline and the NTRS record place all three authors at NASA Langley Research Center (17 U.S.C. 105). The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and licenseType NO; distribution PUBLIC, no export control. No figure or photo carries a third-party credit: Figures 1-21 and A1-A5 are NASA facility sketches, photos, drawings and plots of NASA test data, and no NASA insignia is visible in them. The page-20 author portraits carry no credit at all. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "a98e4fcdea40b8ea7023880dd88966f04198b4ec311fced0bb9ebb2dec45fe6d",
+  "sourceTitle" : "Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20200002975/downloads/20200002975.pdf"
+}

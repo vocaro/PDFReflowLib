@@ -498,6 +498,33 @@ class CorpusContentTests(unittest.TestCase):
         self.assertEqual(pages[1]['scripts'], [{'tag': 'sup', 'text': '2', 'before': 'x', 'after': ''}])
         self.assertEqual(pages[2]['scripts'], [{'tag': 'sup', 'text': '3', 'before': '', 'after': 'y'}])
 
+    def test_absent_script_rejects_the_script_with_its_tag_text_and_context(self):
+        body = ('<span epub:type="pagebreak" id="page-1"/><p>alpha beta</p><p><sup>• </sup>Under the Medicare program</p>'
+                '<p>citizen of <em>(foreign nation) </em><sub>.</sub></p><img src="picture.png"/>')
+        second = '<span epub:type="pagebreak" id="page-2"/><p>omega</p>'
+        pages, _ = read_pages(self.epub(body, second))
+        for expectation in [{'tag': 'sup', 'text': '•'},
+                            {'tag': 'sub', 'text': '.', 'before': '(foreign nation)'},
+                            {'tag': 'sup', 'text': '•', 'after': 'Under the Medicare'}]:
+            self.contract['pages'][0]['absentScripts'] = [expectation]
+            self.assertFalse(self.check(pages=pages)['passed'], expectation)
+        # Controls: the plain text passes; another tag, text or context does not match.
+        plain = body.replace('<sup>• </sup>', '• ').replace('<sub>.</sub>', '.')
+        clean, _ = read_pages(self.epub(plain, second))
+        for expectation in [{'tag': 'sup', 'text': '•'}, {'tag': 'sub', 'text': '.', 'before': '(foreign nation)'}]:
+            self.contract['pages'][0]['absentScripts'] = [expectation]
+            self.assertTrue(self.check(pages=clean)['passed'], expectation)
+        for expectation in [{'tag': 'sub', 'text': '•'}, {'tag': 'sup', 'text': '.'},
+                            {'tag': 'sub', 'text': '.', 'before': '(domestic nation)'},
+                            {'tag': 'sup', 'text': '•', 'after': 'Under the Medicaid'}]:
+            self.contract['pages'][0]['absentScripts'] = [expectation]
+            self.assertTrue(self.check(pages=pages)['passed'], expectation)
+        for invalid in [{}, {'tag': 'span', 'text': '.'}, {'tag': 'sub', 'text': ''},
+                        {'tag': 'sub', 'text': '.', 'before': ''}, {'tag': 'sub', 'text': '.', 'page': 2}]:
+            self.contract['pages'][0]['absentScripts'] = [invalid]
+            with self.assertRaises(ValueError):
+                self.check(pages=pages)
+
     def test_invalid_script_contract_is_not_ignored(self):
         for script in [{}, {'tag': 'span', 'text': '2', 'before': 'a', 'after': 'b'},
                        {'tag': 'sup', 'text': '', 'before': 'a', 'after': 'b'}]:

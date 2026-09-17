@@ -113,7 +113,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 2581 targeted checks on 491 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 2616 targeted checks on 495 reviewed pages
 across 21 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No. 14*, *Mineral Commodity
@@ -123,11 +123,11 @@ Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Ci
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
 Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
 System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 992 ordered-text, 178 text, 335 paragraph, 178 absent-text, 215 heading,
-32 absent-heading, 74 list-item, 1 preformatted-lines, 25 script, 11 footnote, 34 note-link,
-56 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 77 distinct-paragraph,
-177 image-presence, 42 page-reference, 88 warning, 25 absent-warning, 17 source-region,
-3 glyph-structure, 3 image-appearance and 9 table-cell checks, counted as
+They comprise 992 ordered-text, 186 text, 335 paragraph, 191 absent-text, 215 heading,
+32 absent-heading, 79 list-item, 1 preformatted-lines, 28 script, 6 absent-script, 11 footnote,
+34 note-link, 56 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation,
+77 distinct-paragraph, 177 image-presence, 42 page-reference, 88 warning, 25 absent-warning,
+17 source-region, 3 glyph-structure, 3 image-appearance and 9 table-cell checks, counted as
 `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
@@ -341,7 +341,8 @@ To recapture the algebra geometry with full Xcode selected:
 swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/ConversionTypes.swift \
   Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
   Sources/PDFReflowLib/GraphicsReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
-  Sources/PDFReflowLib/FontWeightReader.swift tools/capture-algebra-layout.swift \
+  Sources/PDFReflowLib/FontWeightReader.swift Sources/PDFReflowLib/PrivateUseDecoder.swift \
+  tools/capture-algebra-layout.swift \
   -o /tmp/capture-algebra-layout
 /tmp/capture-algebra-layout corpus/cache/Beginning_and_Intermediate_Algebra.pdf /tmp/algebra-17-layout.json
 ```
@@ -509,7 +510,8 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
   Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
   Sources/PDFReflowLib/GraphicsReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
   Sources/PDFReflowLib/StructureTreeReader.swift Sources/PDFReflowLib/MarkedTextReader.swift \
-  Sources/PDFReflowLib/FontWeightReader.swift tools/capture-layout-fixture.swift \
+  Sources/PDFReflowLib/FontWeightReader.swift Sources/PDFReflowLib/PrivateUseDecoder.swift \
+  tools/capture-layout-fixture.swift \
   -o /tmp/capture-layout-fixture
 /tmp/capture-layout-fixture faa-phak-8083-25c 91 /tmp/faa-91-layout.json
 ```
@@ -528,7 +530,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->739 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->232 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->748 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->233 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1364,6 +1366,44 @@ The CDC contract requires `implausibleTextLayer` and the reviewed recognized dia
 `ocrUsed` on the plausible page-39 checklist. It fails on the pre-#93 conversion on all seven
 pages. The [plausibility evidence](../measurements/text-layer-plausibility/record.md) records the
 survey of all 1,353 image-backed pages in the English corpus and the review of every failing page.
+
+## Symbol-font characters and shifted script bases
+
+`SymbolFontCharacterTests.swift` covers [#155](https://github.com/vocaro/PDFReflowLib/issues/155):
+symbol fonts give PDFKit private-use code points. The font dictionaries and ToUnicode maps are copied
+from the sources (no font program is embedded, so PDFKit reads the maps alone): Word's `SymbolMT`
+(alpha U+F061, bullet U+F0B7, descriptor `Nonsymbolic`), the Supreme Court's `BDGFGH+SymbolMT`
+(`Symbolic`, family `Symbol`), a family-only subset name and a Symbol font inside a Form XObject all
+decode; the same map under another name, with or without the `Symbolic` flag, and a name that only
+begins like Symbol's do not. Wallace's `CMEX10` decodes U+F8EB, U+F8F6 and U+F8F0 from its
+`Differences` names (`parenlefttp`, `uni23A3`), index names decode nothing, the DASC paper's built-in
+Type 1 encoding and a descriptor `CharSet` decode their pieces, a built-in `Symbol` font claims every
+Adobe piece, and a font naming no piece claims none. A Symbol and a Wingdings font that give one page
+the same code point leave it undecoded, while each alone decodes (`♣`, `▪➢`); a Wingdings pictograph
+outside Word's bullet table stays. Unit checks pin the 188-entry Symbol encoding, the family names and
+that decoding keeps attribute ranges.
+
+`ShiftedScriptBaseTests.swift` covers [#144](https://github.com/vocaro/PDFReflowLib/issues/144).
+Wallace page 255's `6a2b` denominator, 7.8 points below the comment beside it, becomes
+`6a<sup>2</sup>b` (source fixture `algebra-255`), as do a raised numerator's exponent, the slope
+formula's `y<sub>2</sub>− y<sub>1</sub>` and FAA page 262's `v<sup>2</sup>`. Controls keep the stated
+offsets: a base on the selection's baseline (`H₂O`, `8x³`), a smaller run at offset zero beside a
+larger shifted one (#138's Fed letter), runs separated by a space, a script followed by a run on a
+third baseline, an equal-size run, opposite-side shifts and a nested index (the DASC paper's `STA`
+with `n` raised and `i` raised again, #163). The Supreme Court's Symbol bullets (`scotus-86`) and the
+spaces after them are list marks, not superscripts, while a raised note marker opening a line, a
+raised degree sign (Wallace's `29◦`) and a raised bullet inside a line stay superscripts. NASA page 13
+(`ntrs-13`) reflows its five decoded bullets as five list items, each with its wrapped line.
+`LineEndCompoundTests.swift` adds `45-` + `degree-increment`: a hyphen after a number is a compound
+hyphen, not a word break.
+
+The corpus contracts require the decoded characters and list items on NASA pages 4 and 13 (with
+`45degree` and the private-use code points absent), the bullet items and no `<sup>` bullet on Supreme
+Court pages 86–87, Wallace page 255's `6a<sup>2</sup>b` and page 96's slope subscripts with the old
+`<sub>`/`<sup>` runs absent, no `<sub>` period after `(foreign nation)` on Pro Se 1 page 3 (#138's fix,
+guarded), and no private-use pieces on DASC pages 3 and 9. `absentScripts` is a new expectation type:
+a `sup`/`sub` tag and text, with optional `before`/`after` context, that the page must not hold.
+See the [symbol-font and script-base evidence](../measurements/symbol-fonts-and-script-bases/record.md).
 
 ## Decorative drop caps
 

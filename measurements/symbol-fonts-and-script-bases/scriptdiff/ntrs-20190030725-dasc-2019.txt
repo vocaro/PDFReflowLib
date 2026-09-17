@@ -1,0 +1,30 @@
+==== page 3: lost 6, gained 6, OTHER MARKUP CHANGED
+  - <sub>'\uf8f4\uf8f4' after '\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8fd \uf8f4\uf8f4'
+  - <sub>'\uf8f8' after '(5)\nif edge ni, ni+1\n\uf8f6 \uf8f7'
+  - <sup>'i' after '\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8fe (5)\nif edge n'
+  - <sup>'i+1' after '\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8fe (5)\nif edge ni, n'
+  - <sup>'\uf8f4' after ' \uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8f4\uf8fd '
+  - <sup>'\uf8f7' after ' (5)\nif edge ni, ni+1\n\uf8f6 '
+  + <sub>'⎠' after '(5)\nif edge ni, ni+1\n⎞ ⎟'
+  + <sub>'⎪⎪' after '⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎬ ⎪⎪'
+  + <sup>'i' after '⎪⎪⎪⎪⎪⎪⎪⎪⎪⎭ (5)\nif edge n'
+  + <sup>'i+1' after '⎪⎪⎪⎪⎪⎭ (5)\nif edge ni, n'
+  + <sup>'⎟' after ' (5)\nif edge ni, ni+1\n⎞ '
+  + <sup>'⎪' after ' ⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎪⎬ '
+==== page 5: lost 1, gained 0
+  - <sub>'n' after ' and a window pair\ni+1\nA'
+==== page 6: lost 2, gained 3
+  - <sub>'n' after ' on the route of f:\nNf\nA'
+  - <sup>'N' after '1\nf , ..., An\nf ,j2\nf ,j'
+  + <sub>'N' after '1\nf , ..., An\nf ,j2\nf ,j'
+  + <sub>'k' after 'ng time window Arf (k),j' x2
+==== page 9: lost 4, gained 4, OTHER MARKUP CHANGED
+  - <sub>'\uf8fa' after 'page 9\n−1 2−1...\n\uf8f9 \uf8fa\uf8fa\uf8fa\uf8fa\uf8fa'
+  - <sub>'\uf8fb' after 'region from page 9\n\uf8f9 \uf8fa\uf8fa\uf8fa'
+  - <sup>'\uf8fa' after 'd region from page 9\n\uf8f9 \uf8fa'
+  - <sup>'\uf8fa' after 'm page 9\n−1 2−1...\n\uf8f9 \uf8fa\uf8fa\uf8fa'
+  + <sub>'⎥' after 'page 9\n−1 2−1...\n⎤ ⎥⎥⎥⎥⎥'
+  + <sub>'⎦' after 'region from page 9\n⎤ ⎥⎥⎥'
+  + <sup>'⎥' after 'd region from page 9\n⎤ ⎥'
+  + <sup>'⎥' after 'm page 9\n−1 2−1...\n⎤ ⎥⎥⎥'
+TOTAL {'lost sub': 6, 'lost sup': 7, 'gained sub': 7, 'gained sup': 6, 'pages': 4, 'pages with other changes': 2}

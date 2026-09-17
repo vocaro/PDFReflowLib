@@ -21,7 +21,7 @@
     {
       "page": 4,
       "target": "Figure 3, Equation (1) and the target-profile prose",
-      "acceptance": "Correct now: Figure 3 and its caption, then left column, then right; Equation (1) preserved as an image with its number; V_ref and Z_ref subscripts. Wrong now: the Symbol-font alpha in the prose is U+F061 twice (#155)."
+      "acceptance": "Correct now: Figure 3 and its caption, then left column, then right; Equation (1) preserved as an image with its number; V_ref and Z_ref subscripts; the Symbol-font alpha in the prose, U+F061 at review, is α twice (#155)."
     },
     {
       "page": 5,
@@ -66,7 +66,7 @@
     {
       "page": 13,
       "target": "Conclusion end, appendix introduction and bullets",
-      "acceptance": "Correct now: text and order; Data Plots Segregated by Wind Azimuth Angle is h4. Wrong now: APPENDIX is a bold paragraph; 45-degree-increment loses its hyphen; Symbol bullets are U+F0B7, the first two bullets merge and wrapped lines split off (#154, #155)."
+      "acceptance": "Correct now: text and order; Data Plots Segregated by Wind Azimuth Angle is h4. Since #155, 45-degree-increment keeps its hyphen and the Symbol bullets (U+F0B7 at review) are • list items, each with its wrapped line. Wrong now: APPENDIX is a bold paragraph (#154)."
     },
     {
       "page": 14,

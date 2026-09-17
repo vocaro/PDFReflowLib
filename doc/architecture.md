@@ -122,7 +122,14 @@ Font size alone does not establish a superscript. PDFKit can measure a split pie
 the note marker it holds (9/11 page 362's `”12`, after a closing quote kerned back over the
 period): a piece of closing punctuation uniformly lowered by 0.2–0.5 of its size, each followed
 by a one- to three-digit run at 0.4–0.7 of that size at offset zero, is re-measured from the
-punctuation, so the marker reads as raised (#11). Reconstruction attaches such a piece, on the
+punctuation, so the marker reads as raised (#11). A shifted run needs another visible run of at
+least nearly its size in its selection (#138). PDFKit measures every run from one baseline, so a
+script beside a base that is itself shifted (Wallace page 255's denominator `6a²b`, 7.8 points below
+the comment beside it) is measured from that base: a run followed, with no space, by a clearly
+smaller run shifted to the same side and against it is the base and no script, and a base-size run
+after the script on the base's baseline resumes it; a base that is itself a smaller script of the run
+before it (a nested index) keeps the stated offsets (#144). A line's opening bullets and the spaces
+after them are never scripts (#144). Reconstruction attaches such a piece, on the
 previous line's row and within half a body size of its end, to that line without a space, as it
 attaches a detached digit marker. A bounded native drop-cap pattern uses the
 following body runs' font size and a top-aligned body-height `readingRect` for ordering. The
@@ -433,7 +440,9 @@ space stays (`Airplanes-` + `14 CFR`, a hyphen set for a dash; `pres-` + `62`, a
 folio). A number before a number joins with its hyphen when both runs are digits and hyphens
 standing apart from other words and one number has two digits (`CTC 96-` + `30015`, `pp. 105-` +
 `106`); a number before a capital is a citation running into the next (`601-` + `CE 1318`) and
-keeps the space. After a page's blocks are built (and its column continuations joined), a
+keeps the space. A hyphen after a number before a lowercase word joins with no space as a compound
+(`45-` + `degree-increment`, #155): nothing breaks a word inside a number, and the letters after the
+hyphen alone would otherwise read as the joined word. After a page's blocks are built (and its column continuations joined), a
 paragraph or list item ending in a hyphen after two letters joins the next block when that block
 is a paragraph opening lowercase and opening no note, neither with a validated role other than
 a paragraph: the halves of one word cannot stand in two paragraphs, whatever split them (9/11
@@ -792,6 +801,20 @@ rule-headed tables, which would reflow as run-together cells while recognition k
 and the English statistics judge PDFKit's own text. Census pages 3 and 17 reflow natively; its table
 pages and pages with math fonts, which follow no constant offset, keep `damagedTextEncoding`. See the
 [index-glyph evidence](../measurements/glyph-index-decoding/record.md).
+
+Symbol fonts give PDFKit private-use code points (#155): Word writes a TrueType symbol font's
+built-in code `xx` as U+F0xx in its ToUnicode map (the NASA paper's alpha as U+F061, Supreme Court
+and NASA bullets as U+F0B7), and Adobe's glyph list assigns the Symbol font's bracket and brace
+pieces to U+F8E6–U+F8FE, which PDFKit reports for TeX's `CMEX10` pieces with or without a map.
+`PrivateUseDecoder` reads a page's font resources (following Form XObjects) the first time one of
+its lines holds such a character, and decodes each code point from the evidence of the font that
+yields it: a glyph name for the code (`Differences`, an embedded Type 1 program's built-in encoding,
+the descriptor's `CharSet`), else the Symbol encoding for a font named Symbol (`BaseFont`, `FontName`
+or `FontFamily`; Word marks SymbolMT `Nonsymbolic`, so the flag is not evidence) and Word's
+Wingdings bullets. A code point a font yields without evidence, or that two fonts on the page decode
+differently, stays. `NativeTextReader` replaces the characters last, one UTF-16 unit each, after
+spacing and style evidence have compared PDFKit's text with the shows' own maps. See the
+[symbol-font and script-base evidence](../measurements/symbol-fonts-and-script-bases/record.md).
 
 `GraphicsReader` tracks text rendering mode across saved graphics state and nested forms. When
 all observed text uses invisible mode 3 and a graphic covers most of the page, extraction skips

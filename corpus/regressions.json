@@ -2069,6 +2069,51 @@
           "absentText": [
             "con- nect"
           ]
+        },
+        {
+          "page": 255,
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "2",
+              "before": "and 3c 6a",
+              "after": "b First identify LCD"
+            }
+          ],
+          "absentScripts": [
+            {
+              "tag": "sub",
+              "text": "6a2b"
+            }
+          ]
+        },
+        {
+          "page": 96,
+          "scripts": [
+            {
+              "tag": "sub",
+              "text": "2",
+              "before": "(x2, y2) is y",
+              "after": "− y1 x2− x1"
+            },
+            {
+              "tag": "sub",
+              "text": "1",
+              "before": "(x2, y2) is y2− y",
+              "after": "x2− x1"
+            }
+          ],
+          "absentScripts": [
+            {
+              "tag": "sup",
+              "text": "y",
+              "before": "(x2, y2) is"
+            },
+            {
+              "tag": "sup",
+              "text": "− y"
+            }
+          ]
         }
       ]
     },
@@ -5416,6 +5461,39 @@
           "absentText": [
             "pre- APA"
           ]
+        },
+        {
+          "page": 86,
+          "text": [
+            "• Under the Public Health Service Act, the Food and",
+            "• Under the Endangered Species Act, the Fish and Wildlife Service"
+          ],
+          "absentScripts": [
+            {
+              "tag": "sup",
+              "text": "•"
+            }
+          ],
+          "absentText": [
+            ""
+          ]
+        },
+        {
+          "page": 87,
+          "text": [
+            "• Under the Medicare program, reimbursements to hospitals",
+            "• Congress directed the Department of the Interior and",
+            "• Or take Chevron itself."
+          ],
+          "absentScripts": [
+            {
+              "tag": "sup",
+              "text": "•"
+            }
+          ],
+          "absentText": [
+            ""
+          ]
         }
       ]
     },
@@ -6145,6 +6223,13 @@
             "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case",
             "’ Federal"
           ],
+          "absentScripts": [
+            {
+              "tag": "sub",
+              "text": ".",
+              "before": "(foreign nation)"
+            }
+          ],
           "pageReference": false,
           "warningCodesAnyOf": [
             "annotationsNotConverted"
@@ -6339,7 +6424,14 @@
               "after": "= reference velocity at elevation Z"
             }
           ],
-          "minimumImages": 2
+          "minimumImages": 2,
+          "text": [
+            "where the exponent α describes the profile shape.",
+            "Therefore, α = 0.14 was chosen as the target profile shape"
+          ],
+          "absentText": [
+            ""
+          ]
         },
         {
           "page": 5,
@@ -6477,7 +6569,19 @@
             "Normalized maximum resultant bending moment,"
           ],
           "text": [
-            "Each wind azimuth region considers only those data records acquired within +/- 15 degrees of the cardinal or ordinal directions."
+            "Each wind azimuth region considers only those data records acquired within +/- 15 degrees of the cardinal or ordinal directions.",
+            "plots of data acquired in 45-degree-increment azimuth regions."
+          ],
+          "listItems": [
+            "• Peak bending moment due to lift, research model",
+            "• Maximum resultant bending moment, research model",
+            "• Normalized mean bending moment due to drag, proprietary model",
+            "• Normalized peak bending moment due to lift, proprietary model",
+            "• Normalized maximum resultant bending moment, proprietary model"
+          ],
+          "absentText": [
+            "45degree",
+            ""
           ]
         },
         {
@@ -6682,7 +6786,14 @@
             "Each node used by one or more of the flights is assigned its own “copy” of the time axis. Following the presentation in Ref. [4], this will be illustrated here (figures 1 and 2, below) as a plot where the horizontal axis has only discrete points, corresponding to the nodes of the given flight, and each node’s copy of the time axis is drawn as a vertical axis, with upward being the direction of increasing time.",
             "This situation is illustrated notionally in figure 1(A). In general, there can be other previously scheduled flights, using any or all of the three nodes."
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "absentText": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
         },
         {
           "page": 4,
@@ -6842,7 +6953,12 @@
               "second": "Table III gives a high-level outline"
             }
           ],
-          "minimumImages": 3
+          "minimumImages": 3,
+          "absentText": [
+            "",
+            "",
+            ""
+          ]
         },
         {
           "page": 10,

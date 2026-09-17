@@ -120,6 +120,20 @@ private func vocabulary(_ lines: [String]) -> Set<String> {
     }
 }
 
+@Test func aNumberBeforeALowercaseWordKeepsItsCompoundHyphen() {
+    // NASA GWL page 13 (#155): `45-` + `degree-increment`, where the page prints `degrees` and the
+    // book `degree`, read `45degree-increment`.
+    let result = join("plots of data acquired in 45-", "degree-increment azimuth regions.", vocabulary: ["degree", "degrees"])
+    #expect(result.text == "plots of data acquired in 45-degree-increment azimuth regions.")
+    #expect(result.warnings.isEmpty)
+    #expect(join("a 3-", "dimensional model").text == "a 3-dimensional model")
+    // Controls: letters before the hyphen still go through the hyphen policy, and a soft hyphen after a
+    // digit and an address segment keep their rules.
+    #expect(join("hijack train-", "ing, according", vocabulary: ["training"]).text == "hijack training, according")
+    #expect(join("item 45\u{00AD}", "degree", vocabulary: ["degree"]).text == "item 45degree")
+    #expect(join("see www.example.org/page1-", "econ/x", vocabulary: ["address"]).text.hasPrefix("see www.example.org/page1-econ/x"))
+}
+
 /// A page's blocks, with the book's `=` hyphen restored (#126). The vocabulary is the page's own
 /// words and the joined words the whole book prints (`training` 275 times, `briefing` 221,
 /// `intelligence` 1,421), none of them as compounds.

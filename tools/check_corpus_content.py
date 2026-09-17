@@ -33,6 +33,7 @@ CHECK_TYPES = (
     ('list-item', ('listItems',), False),
     ('preformatted-lines', ('preformattedLines',), False),
     ('script', ('scripts',), False),
+    ('absent-script', ('absentScripts',), False),
     ('footnote', ('notes',), False),
     ('note-link', ('noteLinks',), False),
     ('paragraph-continuation', ('continuedParagraphs',), False),
@@ -519,6 +520,21 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
                        and span['after'].startswith(normalized(script['after']))
                        for span in page.get('scripts', [])):
                 errors.append(f'Page {number}: missing script or incorrect context {script!r}')
+        # A script that must not be written: its tag and text, and the context around it where given
+        # (a bullet raised as `<sup>`, a period lowered as `<sub>`, #144).
+        for script in item.get('absentScripts', []):
+            if (script.get('tag') not in ('sup', 'sub') or not isinstance(script.get('text'), str)
+                    or not 1 <= len(normalized(script['text'])) <= 96
+                    or any(key not in ('tag', 'text', 'before', 'after') for key in script)
+                    or any(not isinstance(script[k], str) or not 1 <= len(normalized(script[k])) <= 96
+                           for k in ('before', 'after') if k in script)):
+                raise ValueError('Absent script check requires sup/sub, nonempty bounded text and optional context')
+            checks += 1
+            if any(span['tag'] == script['tag'] and span['text'] == normalized(script['text'])
+                   and span['before'].endswith(normalized(script.get('before', '')))
+                   and span['after'].startswith(normalized(script.get('after', '')))
+                   for span in page.get('scripts', [])):
+                errors.append(f'Page {number}: unexpected script {script!r}')
         for expectation in item.get('imageRegions', []):
             reference, minimum = reference_image(case, contract, number, expectation, reference_root)
             checks += 1

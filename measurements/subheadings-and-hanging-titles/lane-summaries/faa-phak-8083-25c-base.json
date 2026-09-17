@@ -1,0 +1,90 @@
+{
+  "passed": false,
+  "converterSHA256": "0e8e857e5b17e36e94be1f56639c9ca655e462f7fcc6503cfcdfc1566b9c92bd",
+  "results": [
+    {
+      "case": "faa-phak-8083-25c",
+      "passed": false,
+      "reviewPages": [
+        16,
+        121,
+        91,
+        511,
+        211,
+        212,
+        50,
+        325,
+        81,
+        191,
+        35,
+        116,
+        22,
+        24,
+        52,
+        165,
+        199,
+        262,
+        164,
+        261,
+        27,
+        365,
+        33,
+        43,
+        49,
+        201,
+        370,
+        136,
+        156,
+        159,
+        340
+      ],
+      "contentChecks": 146,
+      "errors": [
+        "Page 91: missing heading 'Pressure Altitude'",
+        "Page 91: missing heading 'Effect of Pressure on Density'",
+        "Page 165: missing heading 'Fixed-Pitch Propeller'",
+        "Page 199: missing heading 'Pulse Oximeters'",
+        "Page 262: missing heading 'Climb Performance'",
+        "Page 136: missing heading 'Radius of Turn'",
+        "Page 156: missing heading 'Rudder'",
+        "Page 156: missing heading 'V-Tail'",
+        "Page 156: missing heading 'Secondary Flight Controls'",
+        "Page 156: missing heading 'Flaps'",
+        "Page 159: missing heading 'Balance Tabs'",
+        "Page 159: missing heading 'Servo Tabs'",
+        "Page 159: one paragraph carries both {'first': 'Figure 5-16. The movement of the elevator is opposite to the direction of movement of the elevator trim tab.', 'second': 'control pressures that may exist for that flight condition.'}",
+        "Page 340: missing heading 'Runway Safety Area'",
+        "Page 340: missing heading 'Runway Safety Area Boundary Sign'"
+      ],
+      "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+    }
+  ],
+  "notRun": [
+    "wallace-algebra-2010",
+    "gpo-911-2004",
+    "fed-explained-2021",
+    "dga-2025-2030",
+    "gpo-our-flag-2003",
+    "cdc-zombie-pandemic-2011",
+    "cia-blue-book-14-1955",
+    "usgs-mcs2025-copper",
+    "scotus-loper-bright-2024",
+    "census-rrs2002-01",
+    "uscis-m618-arabic-2015",
+    "irs-p596-zhs-2025",
+    "nbs-jres-geltman-1977",
+    "arxiv-replay-clocks-2023"
+  ],
+  "knownUnsupportedFullConversions": [
+    {
+      "id": "gpo-warren-1964",
+      "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+      "issue": 5
+    },
+    {
+      "id": "noaa-nca5-2023",
+      "reason": "Known default image-output ceiling failure. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
+      "issue": 5
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "arxiv-replay-clocks-2023",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "0e8e857e5b17e36e94be1f56639c9ca655e462f7fcc6503cfcdfc1566b9c92bd",
+  "candidateConverterSHA256": "d57453b02172dfb3e745f58d76b779ba6d2fe75a3f046e3e3d86a8e0f0ccfb67",
+  "sameConverter": false,
+  "changedPages": [
+    6
+  ],
+  "changedImages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "scope": "Exact normalized page records, page markers, encoded image bytes and conversion report; not all EPUB semantics or a fidelity qualification."
+}

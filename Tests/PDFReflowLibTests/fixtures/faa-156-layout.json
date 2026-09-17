@@ -1,0 +1,3044 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        14.450000000000003,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "6-8"
+        }
+      ],
+      "text" : "6-8"
+    },
+    {
+      "rect" : [
+        42.681100000000001,
+        90.192400000000006,
+        221.86090000000002,
+        186.82890000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36.273299999999999,
+        61.917700000000004,
+        167.89429999999999,
+        10.812000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 6-15."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "The effect of left rudder pressure."
+        }
+      ],
+      "text" : "Figure 6-15. The effect of left rudder pressure."
+    },
+    {
+      "rect" : [
+        284.79635619999999,
+        567.92754530000002,
+        236.8799947,
+        161.99999639999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        285.25,
+        550.02390000000003,
+        139.13930000000005,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 6-16."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Beechcraft Bonanza V35."
+        }
+      ],
+      "text" : "Figure 6-16. Beechcraft Bonanza V35."
+    },
+    {
+      "rect" : [
+        36,
+        718.32730000000004,
+        33.616,
+        13.309999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Rudder"
+        }
+      ],
+      "text" : "Rudder"
+    },
+    {
+      "rect" : [
+        36,
+        704.55029999999999,
+        237.12,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The rudder controls movement of the aircraft about its vertical"
+        }
+      ],
+      "text" : "The rudder controls movement of the aircraft about its vertical"
+    },
+    {
+      "rect" : [
+        36,
+        692.05029999999999,
+        236.88999999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "axis. This motion is called yaw. Like the other primary control"
+        }
+      ],
+      "text" : "axis. This motion is called yaw. Like the other primary control"
+    },
+    {
+      "rect" : [
+        36,
+        679.55029999999999,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "surfaces, the rudder is a movable surface hinged to a fixed"
+        }
+      ],
+      "text" : "surfaces, the rudder is a movable surface hinged to a fixed"
+    },
+    {
+      "rect" : [
+        36,
+        667.05029999999999,
+        237.04999999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "surface in this case, to the vertical stabilizer or fin. The rudder"
+        }
+      ],
+      "text" : "surface in this case, to the vertical stabilizer or fin. The rudder"
+    },
+    {
+      "rect" : [
+        36,
+        654.55029999999999,
+        190.25000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is controlled by the left and right rudder pedals."
+        }
+      ],
+      "text" : "is controlled by the left and right rudder pedals."
+    },
+    {
+      "rect" : [
+        36,
+        629.55029999999999,
+        237.02099999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When the rudder is deflected into the airflow, a horizontal"
+        }
+      ],
+      "text" : "When the rudder is deflected into the airflow, a horizontal"
+    },
+    {
+      "rect" : [
+        36,
+        617.05029999999999,
+        237.00300000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "force is exerted in the opposite direction. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 6-15] "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "By"
+        }
+      ],
+      "text" : "force is exerted in the opposite direction. [Figure 6-15] By"
+    },
+    {
+      "rect" : [
+        36,
+        604.55029999999999,
+        236.99999999999983,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pushing the left pedal, the rudder moves left. This alters the"
+        }
+      ],
+      "text" : "pushing the left pedal, the rudder moves left. This alters the"
+    },
+    {
+      "rect" : [
+        36,
+        592.05029999999999,
+        236.99599999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "airflow around the vertical stabilizer/rudder and creates a"
+        }
+      ],
+      "text" : "airflow around the vertical stabilizer/rudder and creates a"
+    },
+    {
+      "rect" : [
+        36,
+        579.55029999999999,
+        237.03499999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "sideward lift that moves the tail to the right and yaws the nose"
+        }
+      ],
+      "text" : "sideward lift that moves the tail to the right and yaws the nose"
+    },
+    {
+      "rect" : [
+        36,
+        567.05029999999999,
+        237.08000000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of the airplane to the left. Rudder effectiveness increases with"
+        }
+      ],
+      "text" : "of the airplane to the left. Rudder effectiveness increases with"
+    },
+    {
+      "rect" : [
+        36,
+        554.55029999999999,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "speed; therefore, large deflections at low speeds and small"
+        }
+      ],
+      "text" : "speed; therefore, large deflections at low speeds and small"
+    },
+    {
+      "rect" : [
+        36,
+        542.05029999999999,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "deflections at high speeds may be required to provide the"
+        }
+      ],
+      "text" : "deflections at high speeds may be required to provide the"
+    },
+    {
+      "rect" : [
+        36,
+        529.55029999999999,
+        237.0019999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "desired reaction. In propeller-driven aircraft, any slipstream"
+        }
+      ],
+      "text" : "desired reaction. In propeller-driven aircraft, any slipstream"
+    },
+    {
+      "rect" : [
+        36,
+        517.05029999999999,
+        203,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "flowing over the rudder increases its effectiveness."
+        }
+      ],
+      "text" : "flowing over the rudder increases its effectiveness."
+    },
+    {
+      "rect" : [
+        36,
+        490.82730000000004,
+        29.336999999999989,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "V-Tail"
+        }
+      ],
+      "text" : "V-Tail"
+    },
+    {
+      "rect" : [
+        36,
+        477.05030000000005,
+        237.09000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The V-tail design utilizes two slanted tail surfaces to perform"
+        }
+      ],
+      "text" : "The V-tail design utilizes two slanted tail surfaces to perform"
+    },
+    {
+      "rect" : [
+        36,
+        464.55030000000005,
+        237.02999999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the same functions as the surfaces of a conventional elevator"
+        }
+      ],
+      "text" : "the same functions as the surfaces of a conventional elevator"
+    },
+    {
+      "rect" : [
+        36,
+        452.05030000000005,
+        236.84999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and rudder configuration. The fixed surfaces act as both"
+        }
+      ],
+      "text" : "and rudder configuration. The fixed surfaces act as both"
+    },
+    {
+      "rect" : [
+        36,
+        439.55030000000005,
+        193.82999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "horizontal and vertical stabilizers. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 6-16]"
+        }
+      ],
+      "text" : "horizontal and vertical stabilizers. [Figure 6-16]"
+    },
+    {
+      "rect" : [
+        36,
+        414.55030000000005,
+        237.02200000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The movable surfaces, which are usually called ruddervators,"
+        }
+      ],
+      "text" : "The movable surfaces, which are usually called ruddervators,"
+    },
+    {
+      "rect" : [
+        36,
+        402.05030000000005,
+        237.09000000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are connected through a special linkage that allows the control"
+        }
+      ],
+      "text" : "are connected through a special linkage that allows the control"
+    },
+    {
+      "rect" : [
+        36,
+        389.55030000000005,
+        237.02099999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "wheel to move both surfaces simultaneously. On the other"
+        }
+      ],
+      "text" : "wheel to move both surfaces simultaneously. On the other"
+    },
+    {
+      "rect" : [
+        36,
+        377.05030000000005,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "hand, displacement of the rudder pedals moves the surfaces"
+        }
+      ],
+      "text" : "hand, displacement of the rudder pedals moves the surfaces"
+    },
+    {
+      "rect" : [
+        36,
+        364.55030000000005,
+        207.18999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "differentially, thereby providing directional control."
+        }
+      ],
+      "text" : "differentially, thereby providing directional control."
+    },
+    {
+      "rect" : [
+        36,
+        339.55030000000005,
+        236.98999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When both rudder and elevator controls are moved by the"
+        }
+      ],
+      "text" : "When both rudder and elevator controls are moved by the"
+    },
+    {
+      "rect" : [
+        36,
+        327.05030000000005,
+        237.01399999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pilot, a control mixing mechanism moves each surface the"
+        }
+      ],
+      "text" : "pilot, a control mixing mechanism moves each surface the"
+    },
+    {
+      "rect" : [
+        285,
+        523.13030000000003,
+        236.87400000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "appropriate amount. The control system for the V-tail is more"
+        }
+      ],
+      "text" : "appropriate amount. The control system for the V-tail is more"
+    },
+    {
+      "rect" : [
+        285,
+        510.63030000000003,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "complex than the control system for a conventional tail. In"
+        }
+      ],
+      "text" : "complex than the control system for a conventional tail. In"
+    },
+    {
+      "rect" : [
+        285,
+        498.13030000000003,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "addition, the V-tail design is more susceptible to Dutch roll"
+        }
+      ],
+      "text" : "addition, the V-tail design is more susceptible to Dutch roll"
+    },
+    {
+      "rect" : [
+        285,
+        485.63030000000003,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "tendencies than a conventional tail, and total reduction in"
+        }
+      ],
+      "text" : "tendencies than a conventional tail, and total reduction in"
+    },
+    {
+      "rect" : [
+        285,
+        473.13030000000003,
+        65.279999999999973,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "drag is minimal."
+        }
+      ],
+      "text" : "drag is minimal."
+    },
+    {
+      "rect" : [
+        285,
+        447.56030000000004,
+        125.02000000000004,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Secondary Flight Controls"
+        }
+      ],
+      "text" : "Secondary Flight Controls"
+    },
+    {
+      "rect" : [
+        285,
+        435.13030000000003,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Secondary flight control systems may consist of wing flaps,"
+        }
+      ],
+      "text" : "Secondary flight control systems may consist of wing flaps,"
+    },
+    {
+      "rect" : [
+        285,
+        422.63030000000003,
+        194.69999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "leading edge devices, spoilers, and trim systems."
+        }
+      ],
+      "text" : "leading edge devices, spoilers, and trim systems."
+    },
+    {
+      "rect" : [
+        285,
+        396.4024,
+        25.673999999999978,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Flaps"
+        }
+      ],
+      "text" : "Flaps"
+    },
+    {
+      "rect" : [
+        285,
+        382.62540000000001,
+        236.93999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Flaps are the most common high-lift devices used on aircraft."
+        }
+      ],
+      "text" : "Flaps are the most common high-lift devices used on aircraft."
+    },
+    {
+      "rect" : [
+        285,
+        370.12540000000001,
+        236.99699999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "These surfaces, which are attached to the trailing edge of"
+        }
+      ],
+      "text" : "These surfaces, which are attached to the trailing edge of"
+    },
+    {
+      "rect" : [
+        285,
+        357.62540000000001,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the wing, increase both lift and induced drag for any given"
+        }
+      ],
+      "text" : "the wing, increase both lift and induced drag for any given"
+    },
+    {
+      "rect" : [
+        285,
+        345.12540000000001,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "AOA. Flaps allow a compromise between high cruising"
+        }
+      ],
+      "text" : "AOA. Flaps allow a compromise between high cruising"
+    },
+    {
+      "rect" : [
+        285,
+        332.62540000000001,
+        237.03500000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "speed and low landing speed because they may be extended"
+        }
+      ],
+      "text" : "speed and low landing speed because they may be extended"
+    },
+    {
+      "rect" : [
+        285,
+        320.12540000000001,
+        237.1099999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "when needed and retracted into the wing’s structure when not"
+        }
+      ],
+      "text" : "when needed and retracted into the wing’s structure when not"
+    },
+    {
+      "rect" : [
+        285,
+        307.62540000000001,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "needed. There are four common types of flaps: plain, split,"
+        }
+      ],
+      "text" : "needed. There are four common types of flaps: plain, split,"
+    },
+    {
+      "rect" : [
+        285,
+        295.12540000000001,
+        159.69999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "slotted, and Fowler flaps. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 6-17]"
+        }
+      ],
+      "text" : "slotted, and Fowler flaps. [Figure 6-17]"
+    },
+    {
+      "rect" : [
+        285,
+        270.12540000000001,
+        237.02799999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The plain flap is the simplest of the four types. It increases"
+        }
+      ],
+      "text" : "The plain flap is the simplest of the four types. It increases"
+    },
+    {
+      "rect" : [
+        285,
+        257.62540000000001,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the airfoil camber, resulting in a significant increase in the"
+        }
+      ],
+      "text" : "the airfoil camber, resulting in a significant increase in the"
+    },
+    {
+      "rect" : [
+        285,
+        243.87540000000001,
+        237.00580000000014,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "coefficient of lift (C"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "L"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ") at a given AOA. At the same time, it"
+        }
+      ],
+      "text" : "coefficient of lift (CL) at a given AOA. At the same time, it"
+    },
+    {
+      "rect" : [
+        285.00480000000005,
+        232.62540000000001,
+        237.00999999999988,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "greatly increases drag and moves the center of pressure (CP)"
+        }
+      ],
+      "text" : "greatly increases drag and moves the center of pressure (CP)"
+    },
+    {
+      "rect" : [
+        285.00480000000005,
+        220.12540000000001,
+        237.02300000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aft on the airfoil, resulting in a nose-down pitching moment."
+        }
+      ],
+      "text" : "aft on the airfoil, resulting in a nose-down pitching moment."
+    },
+    {
+      "rect" : [
+        285.00480000000005,
+        195.12540000000001,
+        237.03000000000009,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The split flap is deflected from the lower surface of the airfoil"
+        }
+      ],
+      "text" : "The split flap is deflected from the lower surface of the airfoil"
+    },
+    {
+      "rect" : [
+        285.00480000000005,
+        182.62540000000001,
+        236.99999999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and produces a slightly greater increase in lift than the plain"
+        }
+      ],
+      "text" : "and produces a slightly greater increase in lift than the plain"
+    },
+    {
+      "rect" : [
+        285.00480000000005,
+        170.12540000000001,
+        237.11000000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "flap. More drag is created because of the turbulent air pattern"
+        }
+      ],
+      "text" : "flap. More drag is created because of the turbulent air pattern"
+    },
+    {
+      "rect" : [
+        285.00480000000005,
+        157.62540000000001,
+        237.11000000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "produced behind the airfoil. When fully extended, both plain"
+        }
+      ],
+      "text" : "produced behind the airfoil. When fully extended, both plain"
+    },
+    {
+      "rect" : [
+        285.00480000000005,
+        145.12540000000001,
+        231.65999999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and split flaps produce high drag with little additional lift."
+        }
+      ],
+      "text" : "and split flaps produce high drag with little additional lift."
+    },
+    {
+      "rect" : [
+        285.00480000000005,
+        120.12540000000001,
+        237,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The most popular flap on aircraft today is the slotted flap."
+        }
+      ],
+      "text" : "The most popular flap on aircraft today is the slotted flap."
+    },
+    {
+      "rect" : [
+        285.00480000000005,
+        107.62540000000001,
+        237.01799999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Variations of this design are used for small aircraft, as well"
+        }
+      ],
+      "text" : "Variations of this design are used for small aircraft, as well"
+    },
+    {
+      "rect" : [
+        285.00480000000005,
+        95.125400000000013,
+        237.02399999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "as for large ones. Slotted flaps increase the lift coefficient"
+        }
+      ],
+      "text" : "as for large ones. Slotted flaps increase the lift coefficient"
+    },
+    {
+      "rect" : [
+        285.00480000000005,
+        82.625400000000013,
+        236.84400000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "significantly more than plain or split flaps. On small aircraft,"
+        }
+      ],
+      "text" : "significantly more than plain or split flaps. On small aircraft,"
+    },
+    {
+      "rect" : [
+        285.00480000000005,
+        70.125400000000013,
+        237.01599999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the hinge is located below the lower surface of the flap, and"
+        }
+      ],
+      "text" : "the hinge is located below the lower surface of the flap, and"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      34.25,
+      78.957600000000014,
+      241.82800000000003,
+      238.48340000000002
+    ],
+    [
+      283.25,
+      567.06299999999999,
+      240.76900000000001,
+      163.68700000000001
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        14.450000000000003,
+        12.310000000000002
+      ],
+      "text" : "6-8"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        36.273299999999999,
+        61.917700000000004,
+        167.89429999999999,
+        10.812000000000005
+      ],
+      "text" : "Figure 6-15. The effect of left rudder pressure."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        285.25,
+        550.02390000000003,
+        139.13930000000005,
+        10.812000000000012
+      ],
+      "text" : "Figure 6-16. Beechcraft Bonanza V35."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        718.32730000000004,
+        33.616,
+        13.309999999999945
+      ],
+      "text" : "Rudder"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        704.55029999999999,
+        237.12,
+        11.470000000000027
+      ],
+      "text" : "The rudder controls movement of the aircraft about its vertical"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        692.05029999999999,
+        236.88999999999987,
+        11.470000000000027
+      ],
+      "text" : "axis. This motion is called yaw. Like the other primary control"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        679.55029999999999,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "text" : "surfaces, the rudder is a movable surface hinged to a fixed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        667.05029999999999,
+        237.04999999999984,
+        11.470000000000027
+      ],
+      "text" : "surface in this case, to the vertical stabilizer or fin. The rudder"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        654.55029999999999,
+        190.25000000000003,
+        11.470000000000027
+      ],
+      "text" : "is controlled by the left and right rudder pedals."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        629.55029999999999,
+        237.02099999999996,
+        11.470000000000027
+      ],
+      "text" : "When the rudder is deflected into the airflow, a horizontal"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        617.05029999999999,
+        237.00300000000004,
+        11.470000000000027
+      ],
+      "text" : "force is exerted in the opposite direction. [Figure 6-15] By"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        604.55029999999999,
+        236.99999999999983,
+        11.470000000000027
+      ],
+      "text" : "pushing the left pedal, the rudder moves left. This alters the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        592.05029999999999,
+        236.99599999999987,
+        11.470000000000027
+      ],
+      "text" : "airflow around the vertical stabilizer/rudder and creates a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        579.55029999999999,
+        237.03499999999991,
+        11.470000000000027
+      ],
+      "text" : "sideward lift that moves the tail to the right and yaws the nose"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        567.05029999999999,
+        237.08000000000015,
+        11.470000000000027
+      ],
+      "text" : "of the airplane to the left. Rudder effectiveness increases with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        554.55029999999999,
+        237,
+        11.470000000000027
+      ],
+      "text" : "speed; therefore, large deflections at low speeds and small"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        542.05029999999999,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "text" : "deflections at high speeds may be required to provide the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        529.55029999999999,
+        237.0019999999999,
+        11.470000000000027
+      ],
+      "text" : "desired reaction. In propeller-driven aircraft, any slipstream"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        517.05029999999999,
+        203,
+        11.470000000000027
+      ],
+      "text" : "flowing over the rudder increases its effectiveness."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        490.82730000000004,
+        29.336999999999989,
+        13.310000000000002
+      ],
+      "text" : "V-Tail"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        477.05030000000005,
+        237.09000000000003,
+        11.470000000000027
+      ],
+      "text" : "The V-tail design utilizes two slanted tail surfaces to perform"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        464.55030000000005,
+        237.02999999999992,
+        11.470000000000027
+      ],
+      "text" : "the same functions as the surfaces of a conventional elevator"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        452.05030000000005,
+        236.84999999999991,
+        11.470000000000027
+      ],
+      "text" : "and rudder configuration. The fixed surfaces act as both"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        439.55030000000005,
+        193.82999999999998,
+        11.470000000000027
+      ],
+      "text" : "horizontal and vertical stabilizers. [Figure 6-16]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        414.55030000000005,
+        237.02200000000005,
+        11.470000000000027
+      ],
+      "text" : "The movable surfaces, which are usually called ruddervators,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        402.05030000000005,
+        237.09000000000015,
+        11.470000000000027
+      ],
+      "text" : "are connected through a special linkage that allows the control"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        389.55030000000005,
+        237.02099999999996,
+        11.470000000000027
+      ],
+      "text" : "wheel to move both surfaces simultaneously. On the other"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        377.05030000000005,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "text" : "hand, displacement of the rudder pedals moves the surfaces"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        364.55030000000005,
+        207.18999999999997,
+        11.470000000000027
+      ],
+      "text" : "differentially, thereby providing directional control."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        339.55030000000005,
+        236.98999999999995,
+        11.470000000000027
+      ],
+      "text" : "When both rudder and elevator controls are moved by the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        327.05030000000005,
+        237.01399999999995,
+        11.470000000000027
+      ],
+      "text" : "pilot, a control mixing mechanism moves each surface the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        523.13030000000003,
+        236.87400000000002,
+        11.470000000000027
+      ],
+      "text" : "appropriate amount. The control system for the V-tail is more"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        510.63030000000003,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "text" : "complex than the control system for a conventional tail. In"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        498.13030000000003,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "text" : "addition, the V-tail design is more susceptible to Dutch roll"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        485.63030000000003,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "text" : "tendencies than a conventional tail, and total reduction in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        473.13030000000003,
+        65.279999999999973,
+        11.470000000000027
+      ],
+      "text" : "drag is minimal."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        447.56030000000004,
+        125.02000000000004,
+        13.189999999999998
+      ],
+      "text" : "Secondary Flight Controls"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        435.13030000000003,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "text" : "Secondary flight control systems may consist of wing flaps,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        422.63030000000003,
+        194.69999999999999,
+        11.470000000000027
+      ],
+      "text" : "leading edge devices, spoilers, and trim systems."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        396.4024,
+        25.673999999999978,
+        13.310000000000002
+      ],
+      "text" : "Flaps"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        382.62540000000001,
+        236.93999999999994,
+        11.470000000000027
+      ],
+      "text" : "Flaps are the most common high-lift devices used on aircraft."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        370.12540000000001,
+        236.99699999999984,
+        11.470000000000027
+      ],
+      "text" : "These surfaces, which are attached to the trailing edge of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        357.62540000000001,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "text" : "the wing, increase both lift and induced drag for any given"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        345.12540000000001,
+        237,
+        11.470000000000027
+      ],
+      "text" : "AOA. Flaps allow a compromise between high cruising"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        332.62540000000001,
+        237.03500000000008,
+        11.470000000000027
+      ],
+      "text" : "speed and low landing speed because they may be extended"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        320.12540000000001,
+        237.1099999999999,
+        11.470000000000027
+      ],
+      "text" : "when needed and retracted into the wing’s structure when not"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        307.62540000000001,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "text" : "needed. There are four common types of flaps: plain, split,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        295.12540000000001,
+        159.69999999999999,
+        11.470000000000027
+      ],
+      "text" : "slotted, and Fowler flaps. [Figure 6-17]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        270.12540000000001,
+        237.02799999999991,
+        11.470000000000027
+      ],
+      "text" : "The plain flap is the simplest of the four types. It increases"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        257.62540000000001,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "text" : "the airfoil camber, resulting in a significant increase in the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        243.87540000000001,
+        237.00580000000014,
+        12.720000000000027
+      ],
+      "text" : "coefficient of lift (CL) at a given AOA. At the same time, it"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.00480000000005,
+        232.62540000000001,
+        237.00999999999988,
+        11.469999999999999
+      ],
+      "text" : "greatly increases drag and moves the center of pressure (CP)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.00480000000005,
+        220.12540000000001,
+        237.02300000000002,
+        11.469999999999999
+      ],
+      "text" : "aft on the airfoil, resulting in a nose-down pitching moment."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.00480000000005,
+        195.12540000000001,
+        237.03000000000009,
+        11.469999999999999
+      ],
+      "text" : "The split flap is deflected from the lower surface of the airfoil"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.00480000000005,
+        182.62540000000001,
+        236.99999999999989,
+        11.469999999999999
+      ],
+      "text" : "and produces a slightly greater increase in lift than the plain"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.00480000000005,
+        170.12540000000001,
+        237.11000000000001,
+        11.469999999999999
+      ],
+      "text" : "flap. More drag is created because of the turbulent air pattern"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.00480000000005,
+        157.62540000000001,
+        237.11000000000001,
+        11.469999999999999
+      ],
+      "text" : "produced behind the airfoil. When fully extended, both plain"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.00480000000005,
+        145.12540000000001,
+        231.65999999999997,
+        11.469999999999999
+      ],
+      "text" : "and split flaps produce high drag with little additional lift."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.00480000000005,
+        120.12540000000001,
+        237,
+        11.469999999999999
+      ],
+      "text" : "The most popular flap on aircraft today is the slotted flap."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.00480000000005,
+        107.62540000000001,
+        237.01799999999992,
+        11.469999999999999
+      ],
+      "text" : "Variations of this design are used for small aircraft, as well"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.00480000000005,
+        95.125400000000013,
+        237.02399999999989,
+        11.469999999999999
+      ],
+      "text" : "as for large ones. Slotted flaps increase the lift coefficient"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.00480000000005,
+        82.625400000000013,
+        236.84400000000005,
+        11.469999999999999
+      ],
+      "text" : "significantly more than plain or split flaps. On small aircraft,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.00480000000005,
+        70.125400000000013,
+        237.01599999999996,
+        11.469999999999999
+      ],
+      "text" : "the hinge is located below the lower surface of the flap, and"
+    }
+  ],
+  "page" : 156,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        34.25,
+        78.957999999999998,
+        241.82800000000003,
+        238.48300000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        43.756,
+        102.3729,
+        222.28600000000003,
+        176.09999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        43.756,
+        102.3729,
+        222.28600000000003,
+        176.09999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.398,
+        266.27699999999999,
+        7.1639999999999873,
+        6.1979999999999791
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.39750000000001,
+        266.27730000000003,
+        7.164999999999992,
+        6.1979999999999791
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        43.755300000000005,
+        195.0857,
+        105.54599999999999,
+        41.936000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        43.755300000000005,
+        195.0857,
+        105.54599999999999,
+        41.936000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        105.6568,
+        195.08620000000002,
+        43.608000000000004,
+        16.496000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        105.6568,
+        195.08620000000002,
+        43.608000000000004,
+        16.496000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        105.45480000000001,
+        195.08620000000002,
+        43.882000000000005,
+        16.496000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        105.45480000000001,
+        195.08620000000002,
+        43.882000000000005,
+        16.496000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        49.589800000000011,
+        195.21629999999999,
+        59.239999999999995,
+        21.154000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        49.589800000000011,
+        195.21629999999999,
+        59.239999999999995,
+        21.154000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        49.615600000000001,
+        195.19330000000002,
+        59.201999999999998,
+        21.177999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        49.615600000000001,
+        195.19330000000002,
+        59.201999999999998,
+        21.177999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        52.006999999999998,
+        201.828,
+        96.387,
+        24.364000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        52.007200000000005,
+        201.82920000000001,
+        96.388000000000005,
+        24.361999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        43.756,
+        204.69400000000002,
+        9.855000000000004,
+        29.434999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        43.755500000000005,
+        204.6927,
+        9.8569999999999993,
+        29.436000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        43.859000000000002,
+        204.77000000000001,
+        9.6859999999999999,
+        29.144999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        43.770000000000003,
+        216.65600000000001,
+        6.0929999999999964,
+        16.746999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.005,
+        195.08630000000002,
+        106.03700000000003,
+        41.935000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.005,
+        195.08630000000002,
+        106.03700000000003,
+        41.935000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.04339999999999,
+        195.08620000000002,
+        43.799000000000007,
+        16.496000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.04339999999999,
+        195.08620000000002,
+        43.799000000000007,
+        16.496000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        159.96940000000001,
+        195.08620000000002,
+        44.074999999999989,
+        16.496000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        159.96940000000001,
+        195.08620000000002,
+        44.074999999999989,
+        16.496000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.673,
+        195.21629999999999,
+        59.507000000000005,
+        21.154000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.673,
+        195.21629999999999,
+        59.507000000000005,
+        21.154000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.68410000000003,
+        195.1943,
+        59.469999999999999,
+        21.177000000000021
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.68410000000003,
+        195.1943,
+        59.469999999999999,
+        21.177000000000021
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.916,
+        201.828,
+        96.83499999999998,
+        24.364000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.9171,
+        201.82920000000001,
+        96.834000000000003,
+        24.361999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.15100000000001,
+        222.184,
+        96.599999999999966,
+        14.837000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.1514,
+        222.1833,
+        96.599999999999994,
+        14.838999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        256.15800000000002,
+        204.69400000000002,
+        9.8840000000000146,
+        29.434999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        256.15760000000006,
+        204.6927,
+        9.8839999999999577,
+        29.436000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        256.22500000000002,
+        204.77100000000002,
+        9.7129999999999654,
+        29.143999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        259.92399999999998,
+        216.65600000000001,
+        6.1040000000000418,
+        16.746999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.607,
+        243.422,
+        24.573000000000008,
+        27.830999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.60720000000001,
+        243.4222,
+        24.573000000000008,
+        27.830999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.523,
+        128.14000000000001,
+        25.840000000000003,
+        119.23599999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.52250000000001,
+        128.14019999999999,
+        25.841000000000008,
+        119.23600000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        143.16,
+        141.816,
+        22.818000000000012,
+        48.34899999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.03999999999999,
+        128.14000000000001,
+        19.224000000000018,
+        48.387999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.03980000000001,
+        128.14030000000002,
+        19.22399999999999,
+        50.332999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        119.35300000000001,
+        102.374,
+        36.969999999999999,
+        31.673000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        119.3523,
+        102.3737,
+        36.969999999999985,
+        31.672999999999988
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.4068,
+        108.4277,
+        4,
+        20.539000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        119.56880000000001,
+        114.04860000000001,
+        34.158999999999992,
+        8.7560000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.51480000000001,
+        122.5883,
+        28.971000000000004,
+        10.918000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.36000000000001,
+        102.374,
+        36.969999999999999,
+        31.673000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.35980000000001,
+        102.3737,
+        36.969999999999999,
+        31.672999999999988
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        183.2748,
+        108.4277,
+        4,
+        20.539000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.95420000000001,
+        114.04860000000001,
+        34.158999999999992,
+        8.7560000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        158.1969,
+        122.5883,
+        28.971000000000004,
+        10.918000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.09920000000002,
+        181.29400000000001,
+        15.251000000000005,
+        62.174000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.09920000000002,
+        181.29400000000001,
+        15.251000000000005,
+        62.174000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.60739999999998,
+        181.35040000000001,
+        14.704000000000008,
+        62.175000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.60739999999998,
+        181.35040000000001,
+        14.704000000000008,
+        62.175000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        146.55089999999998,
+        185.3587,
+        15.15900000000002,
+        11.772999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        146.55089999999998,
+        185.3587,
+        15.15900000000002,
+        11.772999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.511,
+        189.37100000000001,
+        11.319000000000017,
+        5.8129999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.50900000000001,
+        232.84100000000001,
+        25.22799999999998,
+        11.555000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        142.86949999999999,
+        231.99710000000002,
+        22.686000000000007,
+        15.427999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.87,
+        233.99700000000001,
+        18.685000000000002,
+        8.0169999999999959
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.87,
+        233.99700000000001,
+        18.685000000000002,
+        8.0169999999999959
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.61150000000001,
+        228.75660000000002,
+        25.296999999999997,
+        8.11099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.61150000000001,
+        228.75660000000002,
+        25.296999999999997,
+        8.11099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.43200000000002,
+        267.673,
+        9.1359999999999957,
+        10.61099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.43230000000003,
+        267.67330000000004,
+        9.1349999999999909,
+        10.848000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.46730000000002,
+        267.65930000000003,
+        6.3859999999999957,
+        5.3759999999999764
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        134.40000000000001,
+        266.78699999999998,
+        19.557999999999993,
+        5.6220000000000141
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        134.4006,
+        266.78700000000003,
+        19.556999999999988,
+        5.6229999999999905
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.42600000000002,
+        267.66800000000001,
+        18.694999999999993,
+        5.3870000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.42630000000003,
+        267.6671,
+        18.694999999999993,
+        5.3870000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        52.006999999999998,
+        222.184,
+        93.788000000000011,
+        14.837000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        52.007100000000008,
+        222.18260000000001,
+        93.787000000000006,
+        14.838999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        45.628900000000002,
+        104.22800000000001,
+        218.5401,
+        172.18200000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        146.66300000000001,
+        81.745999999999995,
+        91.097999999999985,
+        27.958000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        185.39350000000002,
+        214.9725,
+        77.019999999999982,
+        47.635000000000019
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.39600000000002,
+        232.03999999999999,
+        18.554000000000002,
+        5.6480000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.39600000000002,
+        228.99700000000001,
+        18.554000000000002,
+        5.6479999999999961
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        205.39600000000002,
+        230.99700000000001,
+        14.554000000000002,
+        4.6919999999999789
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.39699999999999,
+        243.60599999999999,
+        18.553000000000026,
+        14.978000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.3963,
+        242.46530000000001,
+        18.554000000000002,
+        14.976999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.39650000000003,
+        242.465,
+        18.554000000000002,
+        14.977000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.3963,
+        240.49130000000002,
+        18.554000000000002,
+        7.8230000000000075
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.3963,
+        235.3108,
+        18.554000000000002,
+        10.661000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        222.005,
+        235.64099999999999,
+        18.554000000000002,
+        14.978000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        222.00450000000001,
+        234.50040000000001,
+        18.554000000000002,
+        14.976999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        222.00460000000001,
+        234.5001,
+        18.554000000000002,
+        14.977000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        222.00450000000001,
+        232.52650000000003,
+        18.554000000000002,
+        7.8230000000000075
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        222.00450000000001,
+        227.34539999999998,
+        18.554000000000002,
+        10.661000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        185.39350000000002,
+        214.9725,
+        77.019999999999982,
+        47.635000000000019
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        142.59299999999999,
+        95.007000000000005,
+        14.604000000000013,
+        18.558999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        142.59230000000002,
+        95.006699999999995,
+        14.60499999999999,
+        18.559000000000012
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.96799999999999,
+        108.604,
+        7.2720000000000198,
+        31.875000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.96789999999999,
+        108.604,
+        7.2720000000000198,
+        31.876000000000019
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        97.039200000000022,
+        94.738600000000005,
+        42.182999999999993,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        133.50530000000001,
+        92.174700000000001,
+        12.590000000000003,
+        9.1159999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        41.180999999999997,
+        88.692000000000007,
+        59.721000000000004,
+        18.606999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        41.181100000000001,
+        88.692400000000006,
+        59.719999999999999,
+        18.605999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        138.26500000000001,
+        203.82300000000001,
+        32.060999999999979,
+        32.061000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        140.26500000000001,
+        205.82300000000001,
+        28.060999999999979,
+        28.061000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.39860000000002,
+        210.03670000000002,
+        19.721000000000004,
+        19.71599999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.4725,
+        209.95000000000002,
+        19.721000000000004,
+        19.722999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.40299999999999,
+        210.03300000000002,
+        19.716000000000008,
+        19.722999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.261,
+        240.095,
+        7.1270000000000095,
+        5.7050000000000125
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.57399999999998,
+        238.304,
+        7.1270000000000095,
+        5.7050000000000125
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        139.7141,
+        235.26330000000002,
+        19.917000000000002,
+        14.231999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        157.499,
+        234.57900000000001,
+        7.4500000000000171,
+        14.233000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        157.4992,
+        234.57930000000002,
+        7.4490000000000123,
+        14.233000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        159.499,
+        236.32599999999999,
+        3.703000000000003,
+        10.740000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.93600000000001,
+        231.755,
+        8.7419999999999902,
+        18.072000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.9359,
+        231.75570000000002,
+        8.742999999999995,
+        18.069999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        163.93600000000001,
+        233.50200000000001,
+        4.9960000000000093,
+        14.579000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.49600000000001,
+        228.55199999999999,
+        10.162999999999982,
+        22.289000000000016
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.49630000000002,
+        228.55290000000002,
+        10.163999999999987,
+        22.288000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.49600000000001,
+        230.29900000000001,
+        6.4170000000000016,
+        18.795999999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        172,
+        223.75700000000001,
+        12.436000000000007,
+        29.032000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.99960000000002,
+        223.75670000000002,
+        12.437000000000012,
+        29.032000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        173.999,
+        225.50299999999999,
+        8.6910000000000025,
+        25.539000000000016
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.129,
+        268.779,
+        105.99900000000001,
+        33.548000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        207.797,
+        224.15800000000002,
+        8.7400000000000091,
+        7.5959999999999752
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        34.25,
+        78.957600000000014,
+        241.82799999999997,
+        238.483
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        284.79635619999999,
+        567.92754530000002,
+        236.8799947,
+        161.99999639999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        283.25,
+        567.06299999999999,
+        240.76900000000001,
+        163.68700000000001
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

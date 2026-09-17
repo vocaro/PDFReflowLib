@@ -1,0 +1,51 @@
+{
+  "passed": false,
+  "converterSHA256": "0e8e857e5b17e36e94be1f56639c9ca655e462f7fcc6503cfcdfc1566b9c92bd",
+  "results": [
+    {
+      "case": "arxiv-replay-clocks-2023",
+      "passed": false,
+      "reviewPages": [
+        1,
+        3,
+        4,
+        6
+      ],
+      "contentChecks": 59,
+      "errors": [
+        "Page 6: missing heading '6 REPRESENTATION OF REPCL AND ITS OVERHEAD'",
+        "Page 6: unwanted heading 'OVERHEAD'",
+        "Page 6: unwanted heading '6 REPRESENTATION OF REPCL AND ITS'"
+      ],
+      "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+    }
+  ],
+  "notRun": [
+    "faa-phak-8083-25c",
+    "wallace-algebra-2010",
+    "gpo-911-2004",
+    "fed-explained-2021",
+    "dga-2025-2030",
+    "gpo-our-flag-2003",
+    "cdc-zombie-pandemic-2011",
+    "cia-blue-book-14-1955",
+    "usgs-mcs2025-copper",
+    "scotus-loper-bright-2024",
+    "census-rrs2002-01",
+    "uscis-m618-arabic-2015",
+    "irs-p596-zhs-2025",
+    "nbs-jres-geltman-1977"
+  ],
+  "knownUnsupportedFullConversions": [
+    {
+      "id": "gpo-warren-1964",
+      "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+      "issue": 5
+    },
+    {
+      "id": "noaa-nca5-2023",
+      "reason": "Known default image-output ceiling failure. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
+      "issue": 5
+    }
+  ]
+}

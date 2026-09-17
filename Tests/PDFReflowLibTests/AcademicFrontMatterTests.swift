@@ -268,6 +268,42 @@ private func labelPage(_ label: String, size: CGFloat = 11, width: CGFloat = 80,
     #expect(headings(reconstruct(split).blocks).map(\.text) == ["3.1 Limitations of Existing Clocks"])
 }
 
+@Test func replayNumberedTitleContinuesOnAHangingIndent() throws {
+    // Replay Clocks page 6 sets `OVERHEAD` under the title text, past `6 ` (#83).
+    let page = try SourceLayoutFixture.load("replay-6").content()
+    #expect(try SourceLayoutFixture.load("replay-6").sourceSHA256 == SourceLayoutFixture.load("replay-1").sourceSHA256)
+    let (blocks, _, _) = reconstruct(page)
+    #expect(headings(blocks).map(\.text) == ["6 REPRESENTATION OF REPCL AND ITS OVERHEAD", "7 SIMULATION RESULTS"])
+    #expect(!paragraphs(blocks).contains("OVERHEAD"))
+    #expect(paragraphs(blocks).contains { $0.hasPrefix("In this section, we identify how") })
+    // The 9/11 report hangs its section titles the same way, 18 points in at 12 points.
+    let report = headings(reconstruct(try SourceLayoutFixture.load("911-91").content()).blocks).map(\.text)
+    #expect(report.contains("3.2 ADAPTATION—AND NONADAPTATION—IN THE LAW ENFORCEMENT COMMUNITY"), "\(report)")
+    #expect(!report.contains("LAW ENFORCEMENT COMMUNITY"))
+
+    func stacked(_ title: String, next: String, x: CGFloat) -> [String] {
+        var page = labelPage(title, width: 240, gapBelow: 17)
+        let first = page.lines[4].rect
+        page.lines.insert(TextLine(text: next, rect: CGRect(x: x, y: first.minY - 13, width: 60, height: 11), fontSize: 11), at: 5)
+        return headings(reconstruct(page).blocks).map(\.text)
+    }
+    // At 11 points `6` may hang the next line up to 17.6 points in (0.6 em and an em for the
+    // space) and `6.2` up to 30.8; Replay sets 16.5 at 10.9 points, the 9/11 report 18.1 at 12.
+    #expect(stacked("6 REPRESENTATION OF REPCL AND ITS", next: "OVERHEAD", x: 76.5) == ["6 REPRESENTATION OF REPCL AND ITS OVERHEAD"])
+    #expect(stacked("6.2 REPRESENTATION OF REPCL AND", next: "OVERHEAD", x: 88) == ["6.2 REPRESENTATION OF REPCL AND OVERHEAD"])
+    // An unnumbered title, an indent past the number's width, or a line opening its own number
+    // stay separate headings.
+    #expect(stacked("REPRESENTATION OF REPCL AND ITS", next: "OVERHEAD", x: 74.5).count == 2)
+    #expect(stacked("6 REPRESENTATION OF REPCL AND ITS", next: "OVERHEAD", x: 80).count == 2)
+    #expect(stacked("6.2 REPRESENTATION OF REPCL AND", next: "OVERHEAD", x: 93).count == 2)
+    #expect(stacked("6 REPRESENTATION OF REPCL AND ITS", next: "6.1 OVERHEAD", x: 74.5).count == 2)
+    // Two titles on one row far apart (two columns' headings) are not the pieces of one row.
+    var row = labelPage("RUNWAY SAFETY AREA", width: 120)
+    let left = row.lines[4].rect
+    row.lines.insert(TextLine(text: "BOUNDARY SIGN", rect: CGRect(x: 250, y: left.minY, width: 90, height: 11), fontSize: 11), at: 5)
+    #expect(headings(reconstruct(row).blocks).map(\.text) == ["RUNWAY SAFETY AREA", "BOUNDARY SIGN"])
+}
+
 @Test func sourceHeadingControlsKeepTheirSemanticsUnderRankingAndLabels() throws {
     // 9/11 chapter openings: the chapter title outranks the numbered section label beneath it.
     let opening = headings(reconstruct(try SourceLayoutFixture.load("911-19").content()).blocks)

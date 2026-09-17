@@ -1,0 +1,25 @@
+Converters (release CLI, macOS 27.0 arm64, Xcode 27.0), SHA-256:
+1667254077c620e6c26128292cb28d70d09c3648f50e4dc07649eb137eac8435  5bf5e59
+0e8e857e5b17e36e94be1f56639c9ca655e462f7fcc6503cfcdfc1566b9c92bd  7a29c09 (baseline)
+8617929e9aac64d374a87acc346634c81e1dd01a700c287cedf7d57f3252ba02  cand1: 5bf5e59 + first draft (no row-gap guard; old hanging estimate)
+ae0994858289d56431a2547470596c330a9e9e4bd6af4160642c2fbab6d18611  cand3: 5bf5e59 + final library change
+d57453b02172dfb3e745f58d76b779ba6d2fe75a3f046e3e3d86a8e0f0ccfb67  cand4: 7a29c09 + final library change (candidate)
+851d6d0ac6974d7c3b0869d1ac874e17a2c059c25b73b1c8823077d1ba59a161  raster environment probe (tools/probe-raster-environment.swift)
+
+EPUB SHA-256 prefixes (pinned package identifier and modification date; EPUBs deleted after dumping).
+7a29c09 baseline vs cand4:
+faa-phak-8083-25c         2c443cda20e076a3  4d2c7837d1b48ef2
+arxiv-replay-clocks-2023  28548a43a8fa07b1  534c49ba36867054
+gpo-911-2004              c9012158c131d218  f168c9b631793b5f
+fed-explained-2021        5e2fcfe64d207c24  5e2fcfe64d207c24
+wallace-algebra-2010      14f3b7694cbbe269  14f3b7694cbbe269
+5bf5e59 vs cand3:
+faa-phak-8083-25c         757cbe90f791430f  95eee1f4cd6ad175
+dga-2025-2030             dc29e65f93ba7a9b  dc29e65f93ba7a9b
+gpo-our-flag-2003         4f8bb64bbefe59fa  4f8bb64bbefe59fa
+cia-blue-book-14-1955     f4ddd328edc7d104  f4ddd328edc7d104
+cdc-zombie-pandemic-2011  7279afa97b0c0186  7279afa97b0c0186
+nbs-jres-geltman-1977     391dc35252f28bed  391dc35252f28bed
+usgs-mcs2025-copper       b424021020445017  b424021020445017
+scotus-loper-bright-2024  9c3fd76045cf45de  9c3fd76045cf45de
+census-rrs2002-01         724a2ae3d27a3a0d  1603d9ae91dd9721  (differences only on ocrUsed pages 2-20)

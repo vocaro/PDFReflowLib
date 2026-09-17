@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370).",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's unpainted `Figure 5-16.` caption text ends at its own last line; page 340's two column titles on one row are two headings.",
       "pages": [
         {
           "page": 16,
@@ -51,6 +51,14 @@
           ],
           "absentText": [
             "4-4"
+          ],
+          "headings": [
+            "Pressure Altitude",
+            "Effect of Pressure on Density"
+          ],
+          "paragraphs": [
+            "Pressure altitude is the height above a standard datum plane",
+            "Since air is a gas, it can be compressed or expanded."
           ]
         },
         {
@@ -212,7 +220,13 @@
             "In a fixed-pitch propeller, the tachometer is the indicator of",
             "When operating altitude increases, the tachometer may not"
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "headings": [
+            "Fixed-Pitch Propeller"
+          ],
+          "paragraphs": [
+            "A propeller with fixed blade angles is a fixed-pitch propeller."
+          ]
         },
         {
           "page": 199,
@@ -232,7 +246,13 @@
               "next": "and dirt. Aircraft with permanently installed oxygen tanks"
             }
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "headings": [
+            "Pulse Oximeters"
+          ],
+          "paragraphs": [
+            "A pulse oximeter is a device that measures the amount of"
+          ]
         },
         {
           "page": 262,
@@ -246,7 +266,13 @@
             "We sometimes use the terms",
             "As an example of factor 2, an aircraft is flying level at 120"
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "headings": [
+            "Climb Performance"
+          ],
+          "paragraphs": [
+            "If an aircraft is to move, fly, and perform"
+          ]
         },
         {
           "page": 164,
@@ -340,6 +366,57 @@
           "orderedText": [
             "Engineered Materials Arresting Systems (EMAS)",
             "Aircraft can and do overrun the ends of runways"
+          ]
+        },
+        {
+          "page": 136,
+          "headings": [
+            "Radius of Turn"
+          ],
+          "paragraphs": [
+            "The radius of turn is directly linked to the ROT"
+          ]
+        },
+        {
+          "page": 156,
+          "headings": [
+            "Rudder",
+            "V-Tail",
+            "Secondary Flight Controls",
+            "Flaps"
+          ],
+          "paragraphs": [
+            "The rudder controls movement of the aircraft about its vertical axis",
+            "The V-tail design utilizes two slanted tail surfaces",
+            "Secondary flight control systems may consist of wing flaps",
+            "Flaps are the most common high-lift devices"
+          ]
+        },
+        {
+          "page": 159,
+          "headings": [
+            "Balance Tabs",
+            "Servo Tabs"
+          ],
+          "paragraphs": [
+            "The control forces may be excessively high",
+            "Servo tabs are very similar in operation"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Figure 5-16. The movement of the elevator is opposite to the direction of movement of the elevator trim tab.",
+              "second": "control pressures that may exist for that flight condition."
+            }
+          ]
+        },
+        {
+          "page": 340,
+          "headings": [
+            "Runway Safety Area",
+            "Runway Safety Area Boundary Sign"
+          ],
+          "absentHeadings": [
+            "Runway Safety Area Runway Safety Area Boundary Sign"
           ]
         }
       ]
@@ -579,7 +656,7 @@
     {
       "id": "gpo-911-2004",
       "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
-      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 13-16, 126-127, 192-193 and 357-358 visually reviewed (#45): the bottom folios 108, 174 and 339 on chapter-opening pages and the front-matter folios xiii/xv stay separate paragraphs that never absorb the following page's text, while the body paragraph above each chapter-opening folio continues onto the next page. Pages 19, 20, 64, 65, 469 and 484 visually reviewed (#11): each chapter’s endnotes are numbered from 1, so a marker links only to the note of its own chapter (outline chapter openings validated on the page): page 19’s 1 and page 20’s 4 reach chapter 1’s notes 1 and 4 on page 469, where note 1’s second indented paragraph stays a paragraph of its own; page 64’s 241 reaches chapter 1’s last note on page 484, while page 65’s 1 reaches chapter 2’s note 1 under the chapter-opening heading on that same page. Every linked note returns to its first reference. Pages 13–18, 467–468 and 571–585 visually reviewed (#62): a note-page or front-matter running head whose folio is 18 (Arabic) or 0 (Roman) from the physical page is margin furniture even where no three pages repeat its text, and is never a heading; the genuine per-chapter notes titles (10 Wartime, 11 Foresight—and Hindsight, 12 What to Do?) stay in the navigation, and the prose each removed head had separated joins across the page boundary. #45's front-matter separation checks now name the first paragraph that follows each folio, since the head between them is gone; the folio still must not absorb it. Pages 365 and 374 source rasters reviewed (#69): item 4 is one list item although PDFKit splits its `4.` marker, and `10.August 2001` (no space after the period) is the tenth item beside spaced items 6-9, with item 4's indented second paragraph and items 3 and 9 as controls. Page 492 protects a URL rejoined after a line-ending slash (#70).",
+      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 13-16, 126-127, 192-193 and 357-358 visually reviewed (#45): the bottom folios 108, 174 and 339 on chapter-opening pages and the front-matter folios xiii/xv stay separate paragraphs that never absorb the following page's text, while the body paragraph above each chapter-opening folio continues onto the next page. Pages 19, 20, 64, 65, 469 and 484 visually reviewed (#11): each chapter’s endnotes are numbered from 1, so a marker links only to the note of its own chapter (outline chapter openings validated on the page): page 19’s 1 and page 20’s 4 reach chapter 1’s notes 1 and 4 on page 469, where note 1’s second indented paragraph stays a paragraph of its own; page 64’s 241 reaches chapter 1’s last note on page 484, while page 65’s 1 reaches chapter 2’s note 1 under the chapter-opening heading on that same page. Every linked note returns to its first reference. Pages 13–18, 467–468 and 571–585 visually reviewed (#62): a note-page or front-matter running head whose folio is 18 (Arabic) or 0 (Roman) from the physical page is margin furniture even where no three pages repeat its text, and is never a heading; the genuine per-chapter notes titles (10 Wartime, 11 Foresight—and Hindsight, 12 What to Do?) stay in the navigation, and the prose each removed head had separated joins across the page boundary. #45's front-matter separation checks now name the first paragraph that follows each folio, since the head between them is gone; the folio still must not absorb it. Pages 365 and 374 source rasters reviewed (#69): item 4 is one list item although PDFKit splits its `4.` marker, and `10.August 2001` (no space after the period) is the tenth item beside spaced items 6-9, with item 4's indented second paragraph and items 3 and 9 as controls. Page 492 protects a URL rejoined after a line-ending slash (#70). Page 91 checked against extracted geometry (#83): `3.2 ADAPTATION—AND NONADAPTATION—IN THE` and its hanging second line `LAW ENFORCEMENT COMMUNITY` are one heading.",
       "pages": [
         {
           "page": 15,
@@ -1113,6 +1190,16 @@
           "page": 492,
           "text": [
             "(online at www.usdoj.gov/dea/agency/staffing.htm)"
+          ]
+        },
+        {
+          "page": 91,
+          "headings": [
+            "3.2 ADAPTATION—AND NONADAPTATION—IN THE LAW ENFORCEMENT COMMUNITY"
+          ],
+          "absentHeadings": [
+            "LAW ENFORCEMENT COMMUNITY",
+            "3.2 ADAPTATION—AND NONADAPTATION—IN THE"
           ]
         }
       ]
@@ -2559,7 +2646,7 @@
     {
       "id": "arxiv-replay-clocks-2023",
       "sourceSHA256": "1e8172e4a347bdf6722dacc38755f6fb3299866336b8153f51b2c13f3ac6109a",
-      "basis": "Source pages 1, 3 and 4 visually reviewed. Protects abstract, ACM reference and introduction order in the left column before the right-column drone illustration; section 3.1-3.2 order around Figure 1; and algorithm captions with surrounding prose in two-column order. After #43: the rotated arXiv stamp is omitted (furnitureRemoved), the title, ABSTRACT, INTRODUCTION and numbered section labels are headings separate from their paragraphs, the word spaces after mathematical-italic variables are restored from the source text operators, and each algorithm listing is one preserved region beneath its reflowed caption. Author names remain headings ranked below the title. Pages 1-2 visually reviewed (#45): the right-column paragraph that ends page 1 continues at the head of page 2's left column as one paragraph across the source-page marker.",
+      "basis": "Source pages 1, 3 and 4 visually reviewed. Protects abstract, ACM reference and introduction order in the left column before the right-column drone illustration; section 3.1-3.2 order around Figure 1; and algorithm captions with surrounding prose in two-column order. After #43: the rotated arXiv stamp is omitted (furnitureRemoved), the title, ABSTRACT, INTRODUCTION and numbered section labels are headings separate from their paragraphs, the word spaces after mathematical-italic variables are restored from the source text operators, and each algorithm listing is one preserved region beneath its reflowed caption. Author names remain headings ranked below the title. Pages 1-2 visually reviewed (#45): the right-column paragraph that ends page 1 continues at the head of page 2's left column as one paragraph across the source-page marker. Page 6 source raster reviewed (#83): the section 6 title, whose second line hangs under the title text past its number, is one heading.",
       "pages": [
         {
           "page": 1,
@@ -2658,6 +2745,17 @@
             "1: Input: Message 𝑚",
             "Let 𝑚be the message",
             "Let 𝑚 be the message"
+          ]
+        },
+        {
+          "page": 6,
+          "headings": [
+            "6 REPRESENTATION OF REPCL AND ITS OVERHEAD",
+            "7 SIMULATION RESULTS"
+          ],
+          "absentHeadings": [
+            "OVERHEAD",
+            "6 REPRESENTATION OF REPCL AND ITS"
           ]
         }
       ]

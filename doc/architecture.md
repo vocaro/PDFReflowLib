@@ -213,13 +213,23 @@ than the column's prose. A wider line that still fits the column qualifies when 
 label style the book establishes: the extraction pass records, per page, the size, body size
 and all-bold flag of the narrow labels outside painted graphics and margins, and a style seen on
 three or more pages admits a title set nearly the column's width (FAA's `Crew Resource Management
-(CRM) and`, #73). A leading bracket or quote is skipped for the capital test (`(EMAS)`). A figure
-caption paragraph ends at a line at least 15% larger than the caption line above it and at body
-size or above, so it never absorbs the title that follows it (#63); list markers, lone folios and pages with three or more folio-ending
+(CRM) and`, #73). A book's smallest sub-headings, set in bold at body size up to 15% over it
+(FAA's 10-point Helvetica-Bold `Radius of Turn` and 11-point Times-BoldItalic `Fixed-Pitch
+Propeller` over 10-point Times), are labels only in such a recurring style: the line is entirely
+bold, no wider than 90% of the column's prose, has clear space above it, and a paragraph opens
+directly beneath it on its left edge in non-bold body type; extraction records these styles
+beside the larger ones, and their smaller sizes rank below the book's titles (#76). A leading
+bracket or quote is skipped for the capital test (`(EMAS)`). A figure caption paragraph ends at
+a line at least 15% larger than the caption line above it and at body size or above, so it never
+absorbs the title that follows it (#63), and at a body-size line at least 5% larger that shares
+neither the caption line's left edge nor its centre (#82); list markers, lone folios and pages with three or more folio-ending
 labels (a contents page) are excluded, and the pieces of one heading row that PDFKit split at a
-gap (`3.1` / `Limitations …`) join. The lines of a title set over several lines are one heading
+gap (`3.1` / `Limitations …`) join when no more than three ems apart, so two columns' titles on
+one row stay two headings. The lines of a title set over several lines are one heading
 when each stacks under the previous at the same size and ordinary heading leading, sharing the
-left edge, the centre or the right edge, the heading so far does not end a sentence and the line
+left edge, the centre or the right edge (or, under a numbered first line, hanging past the number
+by no more than 0.6 em per character of the number and an em for its space: Replay Clocks'
+`OVERHEAD`, #83), the heading so far does not end a sentence and the line
 does not open a numbered or `Chapter N` heading of its own; a run of two or more such lines that
 ends in terminal punctuation with at least eight words is a chapter opener's pull quote and
 reflows as one paragraph; a line ending in a dot leader of four or more dots (with or without its

@@ -278,13 +278,23 @@ enum LayoutReconstructor {
     /// and`, 95% of its prose). Its width is then no evidence, but the book's typography is: a
     /// line set in a `LabelStyle` that the book's narrower section labels establish (`styles`)
     /// is a label when it passes every other test and still fits within the column (#73).
+    ///
+    /// A book's smallest sub-headings can be set at body size or barely above it (FAA's 10-point
+    /// Helvetica-Bold `Radius of Turn` and 11-point Times-BoldItalic `Fixed-Pitch Propeller` over
+    /// 10-point Times). Size is then no evidence and only the book's repeated typography is: such a
+    /// line is a label when it is set entirely in bold in a `LabelStyle` of `styles`, fits the same
+    /// narrow width, has clear space above it, and a paragraph opens directly beneath it on its
+    /// left edge in ordinary body text (#76). `recordingSubheadings` admits every such line
+    /// without a style, for `labelEvidence(on:)` to record.
     static func sectionLabels(in lines: [TextLine], body: CGFloat, headingThreshold: CGFloat,
-                              page: PageContent, styles: Set<LabelStyle> = []) -> [TextLine] {
+                              page: PageContent, styles: Set<LabelStyle> = [],
+                              recordingSubheadings: Bool = false) -> [TextLine] {
         guard !page.hasSyntheticTextStyle, !page.recognized else { return [] }
         var labels: [TextLine] = []
         for line in lines.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
+            let subheading = line.fontSize < body * 1.15
             // A list item (an answer-key entry, a contents line) keeps its list representation.
-            guard !line.monospaced, line.fontSize >= body * 1.15, line.fontSize < headingThreshold,
+            guard !line.monospaced, line.fontSize >= body * (subheading ? 0.95 : 1.15), line.fontSize < headingThreshold,
                   line.text.count >= 2, line.text.count < 200, !isList(line.text),
                   // Past an opening bracket or quote: `(EMAS)` finishes FAA page 370's title.
                   let first = line.text.first(where: { !"([\u{201C}\"'".contains($0) }),
@@ -299,10 +309,22 @@ enum LayoutReconstructor {
             let above = column.filter { $0.rect.minY >= line.rect.maxY - body * 0.25 }
                 .min { $0.rect.minY < $1.rect.minY }
             if let above, above.rect.minY - line.rect.maxY < body * 0.8,
-               !(labels.contains(above) && abs(above.fontSize - line.fontSize) <= line.fontSize * 0.05) { continue }
+               subheading || !(labels.contains(above) && abs(above.fontSize - line.fontSize) <= line.fontSize * 0.05) { continue }
             let letters = line.text.filter(\.isLetter)
             let capitals = letters.allSatisfy(\.isUppercase)
             let prose = column.filter { $0.fontSize < body * 1.1 }.map(\.rect.width).max() ?? 0
+            if subheading {
+                let style = LabelStyle(line, body: body)
+                guard style.bold, recordingSubheadings || styles.contains(style),
+                      prose > 0, line.rect.width <= prose * 0.9,
+                      let below = column.filter({ $0.rect.maxY <= line.rect.minY + body * 0.4 })
+                        .max(by: { $0.rect.maxY < $1.rect.maxY }),
+                      line.rect.minY - below.rect.maxY < body * 0.8,
+                      abs(below.rect.minX - line.rect.minX) <= body * 0.5, below.rect.width > line.rect.width,
+                      abs(below.fontSize - body) <= body * 0.1, !LabelStyle(below, body: body).bold else { continue }
+                labels.append(line)
+                continue
+            }
             if capitals || line.rect.width <= prose * 0.9 || prose == 0
                 || line.rect.width <= prose && styles.contains(LabelStyle(line, body: body)) { labels.append(line) }
         }
@@ -347,7 +369,8 @@ enum LayoutReconstructor {
         let outside = lines.filter { line in !boxes.contains { $0.contains(CGPoint(x: line.rect.midX, y: line.rect.midY)) } }
         let reflowBody = headingBodySize(outside, pageBody: body)
         let threshold = max(body * 1.25, reflowBody * 1.1)
-        return Set(sectionLabels(in: lines, body: reflowBody, headingThreshold: threshold, page: page)
+        return Set(sectionLabels(in: lines, body: reflowBody, headingThreshold: threshold, page: page,
+                                 recordingSubheadings: true)
             .filter { !isContentsEntry($0.text) }.map { LabelStyle($0, body: reflowBody) })
     }
 
@@ -368,14 +391,25 @@ enum LayoutReconstructor {
     /// Whether `line` is the next line of the heading `previous` opens: the same size, set
     /// directly beneath it at ordinary heading leading (the rectangles include PDFKit's
     /// leading, so they touch or overlap), sharing the left edge, the centre or the right edge.
-    static func stacksUnderHeading(_ line: TextLine, after previous: TextLine) -> Bool {
+    ///
+    /// With `hanging`, the line may instead start under the previous line's text past its
+    /// section number: acmart indents `OVERHEAD` under `REPRESENTATION` in `6 REPRESENTATION OF
+    /// REPCL AND ITS` (#83), and the 9/11 report `LAW ENFORCEMENT COMMUNITY` under `3.2
+    /// ADAPTATION—AND NONADAPTATION—IN THE`. The indent is past the shared edge but no wider than
+    /// the number and its space can be set: 0.6 em per character and one em for the space.
+    static func stacksUnderHeading(_ line: TextLine, after previous: TextLine, hanging: Bool = false) -> Bool {
         let size = max(previous.fontSize, line.fontSize)
         guard abs(previous.fontSize - line.fontSize) <= size * 0.1, !sameRow(previous.rect, line.rect),
               line.rect.minY < previous.rect.minY, line.rect.maxY >= previous.rect.minY - size,
               previous.rect.minY - line.rect.minY <= size * 2.2 else { return false }
-        return abs(previous.rect.minX - line.rect.minX) <= size * 0.6
+        if abs(previous.rect.minX - line.rect.minX) <= size * 0.6
             || abs(previous.rect.midX - line.rect.midX) <= size * 0.6
-            || abs(previous.rect.maxX - line.rect.maxX) <= size * 0.6
+            || abs(previous.rect.maxX - line.rect.maxX) <= size * 0.6 { return true }
+        guard hanging, let number = previous.text.range(of: #"^\d+(?:\.\d+)*\.?(?=\s+\S)"#, options: .regularExpression)
+        else { return false }
+        let indent = line.rect.minX - previous.rect.minX
+        let characters = CGFloat(previous.text.distance(from: number.lowerBound, to: number.upperBound))
+        return indent > size * 0.6 && indent <= size * (0.6 * characters + 1)
     }
 
     /// Terminal punctuation past closing quotes and brackets; a colon ends a heading's first
@@ -396,9 +430,11 @@ enum LayoutReconstructor {
 
     /// The lines of one heading set over several lines merge into one heading: the next line
     /// stacks under the previous at the same size and alignment, the heading so far does not
-    /// end a sentence, and the line does not open a numbered heading of its own (#55).
+    /// end a sentence, and the line does not open a numbered heading of its own (#55). A line
+    /// hanging under a numbered first line's text continues it too (#83).
     static func continuesHeading(_ heading: String, with line: TextLine, after previous: TextLine) -> Bool {
-        stacksUnderHeading(line, after: previous) && !endsSentence(heading) && !opensHeading(line.text)
+        stacksUnderHeading(line, after: previous, hanging: heading == previous.text)
+            && !endsSentence(heading) && !opensHeading(line.text)
     }
 
     /// A chapter opener's pull quote is set in display type between the body and the title,
@@ -1099,10 +1135,12 @@ enum LayoutReconstructor {
             if isHeadingCandidate(line), !quotes.contains(line) {
                 // PDFKit splits a heading row at a wide gap (a section number and its title);
                 // the pieces form one heading, as do the lines of a title set over several
-                // lines (#55).
+                // lines (#55). The pieces of one row sit within a few ems of each other; two
+                // columns' titles on one row are two headings (FAA page 340, #76).
                 if let row = previousHeading, let last = result.indices.last,
                    case let .heading(id, text, level) = result[last].content,
                    sameRow(row.first.rect, line.rect) && abs(row.first.fontSize - line.fontSize) <= line.fontSize * 0.1
+                    && line.rect.minX - row.last.rect.maxX <= line.fontSize * 3
                     || continuesHeading(text.text, with: line, after: row.last) {
                     result[last].content = .heading(id: id, text: join(text, line.content, vocabulary: vocabulary,
                         page: page.number, warnings: &warnings), level: level)
@@ -1155,7 +1193,14 @@ enum LayoutReconstructor {
                     // above: that line is a section title, not more caption (#63). A caption's
                     // own lines differ by less: FAA opens each with an 8-point bold label and
                     // wraps its 9-point text, and a figure-heavy page can measure a 9-point body.
-                    let endsCaption = line.fontSize >= prev.fontSize * 1.15
+                    // A line only slightly larger ends it too when it leaves the caption's
+                    // alignment, sharing neither its left edge nor its centre: FAA page 159's
+                    // 9-point `Figure 5-16.` caption, indented 3.5 points, over 10-point body text
+                    // flush with the column (#82). Wrapped caption lines keep the caption's edge.
+                    let leavesCaption = line.fontSize >= prev.fontSize * 1.05
+                        && abs(line.rect.minX - prev.rect.minX) > body * 0.25
+                        && abs(line.rect.midX - prev.rect.midX) > body * 0.25
+                    let endsCaption = (line.fontSize >= prev.fontSize * 1.15 || leavesCaption)
                         && line.fontSize >= reflowBody * 0.95 && isCaption(paragraph.text)
                     if prev.wraps == false || !sameColumn || shortEnding || endsCaption
                         || opensSection(line, after: prev, gap: verticalGap, leading: previousGap) {

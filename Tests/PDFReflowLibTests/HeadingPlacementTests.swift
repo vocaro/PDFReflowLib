@@ -201,3 +201,189 @@ private func headingTexts(_ blocks: [ReflowBlock]) -> [String] {
     recognized.recognized = true
     #expect(LayoutReconstructor.labelEvidence(on: recognized).isEmpty)
 }
+
+// Sub-headings set at body size or barely above it (#76). The FAA handbook sets them in 10-point
+// Helvetica-Bold and 11-point Times-BoldItalic over its 10-point Times body, one line above the
+// paragraph they open. Where tags group them (pages 91 and 199) they stayed separate; on the
+// untagged pages 136, 156, 159, 165 and 262 they read into that paragraph.
+
+private func faaStyle(_ size: CGFloat, italic: Bool = false) -> LayoutReconstructor.LabelStyle {
+    let line = TextLine(content: InlineText("Radius of Turn", style: italic ? [.bold, .italic] : .bold),
+                        rect: CGRect(x: 0, y: 0, width: 70, height: 13), fontSize: size)
+    return LayoutReconstructor.LabelStyle(line, body: 10)
+}
+
+private let faaSubheadingStyles: Set<LayoutReconstructor.LabelStyle> = [faaStyle(10), faaStyle(11, italic: true)]
+
+@Test func sourceFAASubheadingsOpenTheirParagraphsOnlyWithTheBookStyle() throws {
+    for (number, cases) in [
+        (136, [("Radius of Turn", "The radius of turn is directly linked to the ROT")]),
+        (156, [("Rudder", "The rudder controls movement of the aircraft about its vertical axis"),
+               ("V-Tail", "The V-tail design utilizes two slanted tail surfaces"),
+               ("Secondary Flight Controls", "Secondary flight control systems may consist of wing flaps"),
+               ("Flaps", "Flaps are the most common high-lift devices")]),
+        (159, [("Balance Tabs", "The control forces may be excessively high"),
+               ("Servo Tabs", "Servo tabs are very similar in operation"),
+               ("Antiservo Tabs", "Antiservo tabs work in the same manner"),
+               ("Ground Adjustable Tabs", "Many small aircraft have a nonmovable metal trim tab")]),
+        (165, [("Fixed-Pitch Propeller", "A propeller with fixed blade angles is a fixed-pitch propeller.")]),
+        (262, [("Climb Performance", "If an aircraft is to move, fly, and perform")]),
+    ] {
+        let page = try faaPage(number)
+        // The page alone: each sub-heading is the opening words of its paragraph.
+        let plain = reconstruct([page])
+        for (title, opening) in cases {
+            #expect(!headingTexts(plain).contains(title), "page \(number): \(title)")
+            #expect(plain.contains { $0.text.hasPrefix(title + " " + opening) }, "page \(number): \(title) runs in")
+        }
+        let blocks = reconstruct([page], labelStyles: faaSubheadingStyles)
+        for (title, opening) in cases {
+            let index = try #require(blocks.firstIndex {
+                if case .heading = $0.content { $0.text == title } else { false }
+            }, "page \(number): \(title) is a heading")
+            #expect(blocks[index + 1].text.hasPrefix(opening), "page \(number): \(title) opens \(blocks[index + 1].text.prefix(60))")
+            #expect(blocks[index].headingSize != nil)
+        }
+        #expect(blocks.map(\.text).joined(separator: " ") == plain.map(\.text).joined(separator: " "),
+                "page \(number): only block boundaries change")
+    }
+}
+
+@Test func sourceFAATaggedPageSubheadingsReadTheSameWithoutTags() throws {
+    // Pages 91 and 199 set the same styles; their fixtures carry no tags, so the spatial reading
+    // alone must agree with the separate lines the tagged pages already had.
+    for (number, titles) in [(91, ["Pressure Altitude", "Density Altitude", "Effect of Pressure on Density",
+                                   "Effect of Temperature on Density"]),
+                             (199, ["Pulse Oximeters", "Servicing of Oxygen Systems"])] {
+        let found = headingTexts(reconstruct([try faaPage(number)], labelStyles: faaSubheadingStyles))
+        for title in titles { #expect(found.contains(title), "page \(number): \(title) in \(found)") }
+    }
+    // The wide 12-point titles of #73 are unchanged beside the sub-heading styles.
+    let wide = headingTexts(reconstruct([try faaPage(43)], labelStyles: faaSubheadingStyles.union([faaTitleStyle])))
+    #expect(wide.contains("Crew Resource Management (CRM) and Single-Pilot Resource Management"))
+    #expect(wide.contains("Hazard and Risk"))
+}
+
+@Test func subheadingNeedsBoldStyleClearSpaceAndAParagraphBeneath() throws {
+    let page = try faaPage(165)
+    let index = try #require(page.lines.firstIndex { $0.text == "Fixed-Pitch Propeller" })
+    let below = try #require(page.lines.firstIndex { $0.text.hasPrefix("A propeller with fixed blade angles") })
+    let original = page.lines[index], opening = page.lines[below]
+    func labels(_ page: PageContent, styles: Set<LayoutReconstructor.LabelStyle> = faaSubheadingStyles) -> [String] {
+        LayoutReconstructor.sectionLabels(in: page.lines, body: 10, headingThreshold: 12.5, page: page, styles: styles).map(\.text)
+    }
+    #expect(labels(page).contains("Fixed-Pitch Propeller"))
+    // Only a style the book repeats counts, and recording admits the line without one.
+    #expect(!labels(page, styles: [faaTitleStyle]).contains("Fixed-Pitch Propeller"))
+    #expect(LayoutReconstructor.sectionLabels(in: page.lines, body: 10, headingThreshold: 12.5, page: page,
+                                              recordingSubheadings: true).map(\.text).contains("Fixed-Pitch Propeller"))
+    // Plain type, sentence punctuation, a line as wide as the prose, and a size below the body,
+    // each even with its own style supplied.
+    for replacement in [
+        TextLine(text: "Fixed-Pitch Propeller", rect: original.rect, fontSize: 11),
+        TextLine(content: InlineText("Fixed-Pitch Propeller.", style: [.bold, .italic]), rect: original.rect, fontSize: 11),
+        TextLine(content: InlineText("Fixed-Pitch Propeller", style: [.bold, .italic]),
+                 rect: CGRect(x: original.rect.minX, y: original.rect.minY, width: 230, height: original.rect.height), fontSize: 11),
+        TextLine(content: InlineText("Fixed-Pitch Propeller", style: .bold), rect: original.rect, fontSize: 9),
+    ] {
+        var changed = page
+        changed.lines[index] = replacement
+        #expect(!labels(changed, styles: faaSubheadingStyles.union([LayoutReconstructor.LabelStyle(replacement, body: 10)]))
+            .contains(replacement.text), "\(replacement.text) \(replacement.fontSize) \(replacement.rect.width)")
+    }
+    // The line beneath must open a paragraph on the label's edge, in ordinary body type, directly under it.
+    for replacement in [
+        TextLine(text: opening.text, rect: opening.rect.offsetBy(dx: 20, dy: 0), fontSize: 10),
+        TextLine(content: InlineText(opening.text, style: .bold), rect: opening.rect, fontSize: 10),
+        TextLine(text: opening.text, rect: opening.rect.offsetBy(dx: 0, dy: -12), fontSize: 10),
+    ] {
+        var changed = page
+        changed.lines[below] = replacement
+        #expect(!labels(changed).contains("Fixed-Pitch Propeller"), "beneath: \(replacement.rect)")
+    }
+    // Without clear space above, it is a line of the paragraph over it.
+    var crowded = page
+    crowded.lines[index].rect.origin.y += 10
+    crowded.lines[below].rect.origin.y += 10
+    #expect(!labels(crowded).contains("Fixed-Pitch Propeller"))
+}
+
+@Test func subheadingEvidenceRecordsTheBookStylesAndRanksBelowTitles() throws {
+    var pages: [LayoutReconstructor.LabelStyle: Int] = [:]
+    // Each page records the styles of its own sub-headings; a style counts from its third page.
+    for (number, recorded) in [(136, [faaStyle(10)]), (165, [faaStyle(11, italic: true)]), (262, [faaStyle(10)]),
+                               (159, [faaStyle(11, italic: true)]), (199, [faaStyle(10)])] {
+        let evidence = LayoutReconstructor.labelEvidence(on: try faaPage(number))
+        #expect(evidence == Set(recorded), "page \(number): \(evidence)")
+        for style in evidence { pages[style, default: 0] += 1 }
+    }
+    #expect(LayoutReconstructor.labelStyles(from: pages) == [faaStyle(10)])
+    for style in LayoutReconstructor.labelEvidence(on: try faaPage(156)) { pages[style, default: 0] += 1 }
+    #expect(LayoutReconstructor.labelStyles(from: pages) == faaSubheadingStyles)
+    // Heading levels: the 12-point titles rank above both sub-heading tiers.
+    var blocks = reconstruct([try faaPage(43)], labelStyles: [faaTitleStyle])
+        + reconstruct([try faaPage(165), try faaPage(262)], labelStyles: faaSubheadingStyles)
+    LayoutReconstructor.rankHeadingLevels(&blocks)
+    func level(_ title: String) -> Int? {
+        blocks.lazy.compactMap { block -> Int? in
+            if case let .heading(_, text, level) = block.content, text.text == title { level } else { nil }
+        }.first
+    }
+    let title = try #require(level("Hazard and Risk"))
+    let italic = try #require(level("Fixed-Pitch Propeller"))
+    let bold = try #require(level("Climb Performance"))
+    #expect(title < italic && italic <= bold, "\(title) \(italic) \(bold)")
+}
+
+// A caption ends at its own last line when the next line leaves its alignment (#82). FAA page
+// 159 carries a `Figure 5-16.` caption the page never paints (it lies outside the placed
+// figure's clip), indented 3.5 points from the body text set 2.8 points beneath it.
+
+@Test func sourceFAACaptionEndsWhereBodyTextLeavesItsAlignment() throws {
+    let texts = reconstruct([try faaPage(159)]).map(\.text)
+    let caption = try #require(texts.firstIndex { $0.hasPrefix("Figure 5-16.") })
+    #expect(texts[caption] == "Figure 5-16. The movement of the elevator is opposite to the direction of movement of the elevator trim tab.")
+    #expect(texts[caption + 1].hasPrefix("control pressures that may exist for that flight condition."))
+    #expect(texts.contains("Figure 6-20. The movement of the elevator is opposite to the direction of movement of the elevator trim tab."))
+    // Wrapped captions whose lines grow from the 8-point label line to 9-point text stay whole.
+    for (number, opening, ending) in [
+        (107, "Figure 5-15. When the vortices of larger aircraft sink close to the ground", "toward another runway (bottom)."),
+        (343, "Figure 14-11. (A) Taxiway Bravo location sign", ""),
+    ] {
+        let page = try faaPage(number)
+        let found = try #require(reconstruct([page]).map(\.text).first { $0.hasPrefix(opening) }, "page \(number)")
+        let first = try #require(page.lines.first { $0.text.hasPrefix(String(opening.prefix(12))) })
+        // Every 9-point line set beneath the caption on its left edge belongs to it.
+        let wrapped = page.lines.filter {
+            $0.fontSize == 9 && abs($0.rect.minX - first.rect.minX) < 1 && $0.rect.maxY <= first.rect.minY + 2
+                && first.rect.minY - $0.rect.maxY < 40
+        }
+        #expect(!wrapped.isEmpty, "page \(number)")
+        for line in wrapped { #expect(found.contains(line.text.prefix(30)), "page \(number): \(line.text)") }
+        if !ending.isEmpty { #expect(found.hasSuffix(ending), "page \(number): \(found.suffix(80))") }
+    }
+}
+
+@Test func captionKeepsABodySizeLineOnItsOwnEdge() {
+    // The alignment rule alone: the same 9 → 10 point step continues a caption when the line
+    // keeps its left edge, and ends it when the line starts and centres elsewhere.
+    let bounds = CGRect(x: 0, y: 0, width: 612, height: 792)
+    var body: [TextLine] = []
+    for index in 0..<8 {
+        body.append(TextLine(text: "Body prose runs across the column in ordinary ten point type line \(index)",
+            rect: CGRect(x: 72, y: 700 - CGFloat(index) * 12.5, width: 237, height: 11.5), fontSize: 10))
+    }
+    func blocks(captionX: CGFloat) -> [String] {
+        let caption = TextLine(text: "Figure 5-16. The movement of the elevator is opposite to the",
+            rect: CGRect(x: captionX, y: 426, width: 220, height: 9.9), fontSize: 9)
+        let wrapped = TextLine(text: "direction of movement of the elevator trim tab.",
+            rect: CGRect(x: captionX, y: 415.2, width: 166.7, height: 9.7), fontSize: 9)
+        let next = TextLine(text: "control pressures that may exist for that flight condition. As",
+            rect: CGRect(x: 72, y: 400.9, width: 237, height: 11.5), fontSize: 10)
+        let page = PageContent(number: 159, bounds: bounds, lines: body + [caption, wrapped, next], graphics: [])
+        var warnings: [ConversionWarning] = []
+        return LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings).map(\.text)
+    }
+    #expect(blocks(captionX: 75.5).contains("Figure 5-16. The movement of the elevator is opposite to the direction of movement of the elevator trim tab."))
+    #expect(blocks(captionX: 72).contains { $0.hasPrefix("Figure 5-16.") && $0.contains("control pressures") })
+}

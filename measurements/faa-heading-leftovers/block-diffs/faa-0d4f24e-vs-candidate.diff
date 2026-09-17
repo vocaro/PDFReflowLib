@@ -1,0 +1,72 @@
+1541,1542c1541
+< img
+< figcaption: Preserved region from page 47
+---
+> h6: A = Aircraft
+1554,1555c1553,1554
+< img
+< figcaption: Preserved region from page 48
+---
+> h6: V = EnVironment
+> h6: Weather
+1568c1567
+< p: Airport
+---
+> h6: Airport
+1573c1572
+< p: Airspace
+---
+> h6: Airspace
+2239d2237
+< p: 4-10
+4268c4266,4267
+< p: Southerly Turning Errors When turning in a southerly direction, the forces are such that the compass float assembly lags rather than leads. The result is a false southerly turn indication. The compass card, or float assembly, should be allowed to pass the desired heading prior to stopping the turn. As with the northerly error, this error is amplified with the proximity to either magnetic pole. To correct this lagging error, the aircraft should be allowed to pass the desired heading prior to stopping the turn. The same rule of 15 degrees plus half of the latitude applies here (i.e., if the aircraft is being operated in a position near 30 degrees latitude, the turn should be stopped 15+15=30 degrees after passing the desired heading). [Figure 8-36B]
+---
+> h6: Southerly Turning Errors
+> p: When turning in a southerly direction, the forces are such that the compass float assembly lags rather than leads. The result is a false southerly turn indication. The compass card, or float assembly, should be allowed to pass the desired heading prior to stopping the turn. As with the northerly error, this error is amplified with the proximity to either magnetic pole. To correct this lagging error, the aircraft should be allowed to pass the desired heading prior to stopping the turn. The same rule of 15 degrees plus half of the latitude applies here (i.e., if the aircraft is being operated in a position near 30 degrees latitude, the turn should be stopped 15+15=30 degrees after passing the desired heading). [Figure 8-36B]
+4271c4270,4271
+< p: Acceleration Error The magnetic dip and the forces of inertia cause magnetic compass errors when accelerating and decelerating on easterly and westerly headings. Because of the pendulous-type mounting, the aft end of the compass card is tilted upward when accelerating and downward when decelerating during changes of airspeed. When accelerating on either an easterly or westerly heading, the error appears as a turn indication toward north. When decelerating on either of these headings, the compass indicates a turn toward south. A mnemonic, or memory jogger, for the effect of acceleration error is the word “ANDS” (Acceleration- North/Deceleration-South) may help you to remember the acceleration error. [Figure 8-37] Acceleration causes an [[p229]]indication toward north; deceleration causes an indication toward south.
+---
+> h6: Acceleration Error
+> p: The magnetic dip and the forces of inertia cause magnetic compass errors when accelerating and decelerating on easterly and westerly headings. Because of the pendulous-type mounting, the aft end of the compass card is tilted upward when accelerating and downward when decelerating during changes of airspeed. When accelerating on either an easterly or westerly heading, the error appears as a turn indication toward north. When decelerating on either of these headings, the compass indicates a turn toward south. A mnemonic, or memory jogger, for the effect of acceleration error is the word “ANDS” (Acceleration- North/Deceleration-South) may help you to remember the acceleration error. [Figure 8-37] Acceleration causes an [[p229]]indication toward north; deceleration causes an indication toward south.
+4509d4508
+< p: 9-14
+4707d4705
+< p: 10-12
+5479d5476
+< p: 12-26
+6776d6772
+< p: 15-12
+7725,7729c7721,7730
+< p: Drugs Drugs can seriously degrade visual acuity during the day and especially at night. Pilots who become ill should consult an aviation medical examiner (AME) or flight surgeon as to which drugs are appropriate to take while flying.
+< p: Exhaustion Pilots who become fatigued during a night flight will not be mentally alert and will respond more slowly to situations requiring immediate action. Exhausted pilots tend to concentrate on one aspect of a situation without considering the total requirement. Their performance may become a safety hazard depending on the degree of fatigue and instead of using proper scanning techniques may get fixated on the instruments or stare off rather than multitask.
+< p: Poor Physical Conditioning To overcome poor physical conditioning, pilots should participate in regular exercise programs. People who are physically fit become less fatigued during flight and have better night scanning efficiency. However, too much exercise in a given day may leave crew members too fatigued for night flying.
+< p: Alcohol Alcohol is a sedative and its use impairs both coordination and judgment. As a result, pilots who are impaired by alcohol fail to apply the proper techniques of night vision. They are likely to stare at objects and to neglect scanning techniques. The amount of alcohol consumed determines the degree to which night vision is affected. The effects of alcohol are long lasting and the residual effects of alcohol can also impair visual scanning efficiency.
+< p: Tobacco Of all the self-imposed stressors, cigarette smoking most decreases visual sensitivity at night. Smoking significantly increases the amount of carbon monoxide carried by the hemoglobin in red blood cells. This reduces the blood’s capacity to combine with oxygen, so less oxygen is carried in the blood. Hypoxia caused by carbon monoxide poisoning
+---
+> h6: Drugs
+> p: Drugs can seriously degrade visual acuity during the day and especially at night. Pilots who become ill should consult an aviation medical examiner (AME) or flight surgeon as to which drugs are appropriate to take while flying.
+> h6: Exhaustion
+> p: Pilots who become fatigued during a night flight will not be mentally alert and will respond more slowly to situations requiring immediate action. Exhausted pilots tend to concentrate on one aspect of a situation without considering the total requirement. Their performance may become a safety hazard depending on the degree of fatigue and instead of using proper scanning techniques may get fixated on the instruments or stare off rather than multitask.
+> h6: Poor Physical Conditioning
+> p: To overcome poor physical conditioning, pilots should participate in regular exercise programs. People who are physically fit become less fatigued during flight and have better night scanning efficiency. However, too much exercise in a given day may leave crew members too fatigued for night flying.
+> h6: Alcohol
+> p: Alcohol is a sedative and its use impairs both coordination and judgment. As a result, pilots who are impaired by alcohol fail to apply the proper techniques of night vision. They are likely to stare at objects and to neglect scanning techniques. The amount of alcohol consumed determines the degree to which night vision is affected. The effects of alcohol are long lasting and the residual effects of alcohol can also impair visual scanning efficiency.
+> h6: Tobacco
+> p: Of all the self-imposed stressors, cigarette smoking most decreases visual sensitivity at night. Smoking significantly increases the amount of carbon monoxide carried by the hemoglobin in red blood cells. This reduces the blood’s capacity to combine with oxygen, so less oxygen is carried in the blood. Hypoxia caused by carbon monoxide poisoning
+7734c7735,7736
+< p: Hypoglycemia and Nutritional Deficiency Missing or postponing meals can cause low blood sugar, which impairs night flight performance. Low blood sugar levels may result in stomach contractions, distraction, breakdown in habit pattern, and a shortened attention span. Likewise, an insufficient consumption of vitamin A may also impair night vision. Foods high in vitamin A include eggs, butter, cheese, liver, apricots, peaches, carrots, squash, spinach, peas, and most types of greens. High quantities of vitamin A do not increase night vision but a lack of vitamin A certainly impairs it.
+---
+> h6: Hypoglycemia and Nutritional Deficiency
+> p: Missing or postponing meals can cause low blood sugar, which impairs night flight performance. Low blood sugar levels may result in stomach contractions, distraction, breakdown in habit pattern, and a shortened attention span. Likewise, an insufficient consumption of vitamin A may also impair night vision. Foods high in vitamin A include eggs, butter, cheese, liver, apricots, peaches, carrots, squash, spinach, peas, and most types of greens. High quantities of vitamin A do not increase night vision but a lack of vitamin A certainly impairs it.
+7737c7739,7740
+< p: Motion Parallax Motion parallax refers to the apparent motion of stationary objects as viewed by an observer moving across the landscape. When the pilot or crewmember looks outside the aircraft perpendicular to the direction of travel, near objects appear to move backward, past, or opposite the path of motion; far objects seem to move in the direction of motion or remain fixed. The rate of apparent movement depends on the distance the observer is from the object.
+---
+> h6: Motion Parallax
+> p: Motion parallax refers to the apparent motion of stationary objects as viewed by an observer moving across the landscape. When the pilot or crewmember looks outside the aircraft perpendicular to the direction of travel, near objects appear to move backward, past, or opposite the path of motion; far objects seem to move in the direction of motion or remain fixed. The rate of apparent movement depends on the distance the observer is from the object.
+7778d7780
+< p: 17-30
+7805d7806
+< p: A-8
+9117d9117
+< p: G-36

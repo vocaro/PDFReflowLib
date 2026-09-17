@@ -324,6 +324,14 @@ enum LayoutReconstructor {
     /// narrow width, has clear space above it, and a paragraph opens directly beneath it on its
     /// left edge in ordinary body text (#76). `recordingSubheadings` admits every such line
     /// without a style, for `labelEvidence(on:)` to record.
+    ///
+    /// The book's lowest titles can be set in its body's italic (FAA's 10-point Times-Italic
+    /// `Southerly Turning Errors`, `Drugs`). Where no tag sets them apart, such a line is a label
+    /// on the same evidence, with the italic in place of bold: set wholly in italic in a recurring
+    /// italic `LabelStyle`, in title case, not a figure or table caption, and over ordinary
+    /// body text that is not itself italic, either on its left edge or as the list it heads
+    /// (`opensListBeneath`). Italic emphasis inside prose has no clear space above it or no
+    /// paragraph opening beneath it (#97).
     static func sectionLabels(in lines: [TextLine], body: CGFloat, headingThreshold: CGFloat,
                               page: PageContent, styles: Set<LabelStyle> = [],
                               recordingSubheadings: Bool = false) -> [TextLine] {
@@ -353,13 +361,18 @@ enum LayoutReconstructor {
             let prose = column.filter { $0.fontSize < body * 1.1 }.map(\.rect.width).max() ?? 0
             if subheading {
                 let style = LabelStyle(line, body: body)
-                guard style.bold, recordingSubheadings || styles.contains(style),
+                guard style.bold || style.italic && isTitleCase(line.text) && !isCaption(line.text), recordingSubheadings || styles.contains(style),
                       prose > 0, line.rect.width <= prose * 0.9,
                       let below = column.filter({ $0.rect.maxY <= line.rect.minY + body * 0.4 })
                         .max(by: { $0.rect.maxY < $1.rect.maxY }),
                       line.rect.minY - below.rect.maxY < body * 0.8,
-                      abs(below.rect.minX - line.rect.minX) <= body * 0.5, below.rect.width > line.rect.width,
                       abs(below.fontSize - body) <= body * 0.1, !LabelStyle(below, body: body).bold else { continue }
+                let paragraph = abs(below.rect.minX - line.rect.minX) <= body * 0.5 && below.rect.width > line.rect.width
+                // An italic title opens ordinary body text or a list, never more italic type.
+                let opens = style.bold ? paragraph
+                    : !LabelStyle(below, body: body).italic
+                        && (paragraph && !isList(below.text) || opensListBeneath(below, title: line, body: body))
+                guard opens else { continue }
                 labels.append(line)
                 continue
             }
@@ -373,21 +386,47 @@ enum LayoutReconstructor {
     }
 
     /// A section label's typography relative to its page: its size and the body's (to the half
-    /// point) and whether every word is bold. The FAA handbook sets its section titles in
-    /// 12-point bold over 10-point prose.
+    /// point), whether every word is bold, and whether a line that is not bold is wholly italic.
+    /// The FAA handbook sets its section titles in 12-point bold over 10-point prose, and its
+    /// lowest titles in 10-point italic (#97). A bold line never carries the italic flag, so
+    /// bold and bold-italic labels keep one style between them as before.
     struct LabelStyle: Hashable {
         var size: Int
         var body: Int
         var bold: Bool
+        var italic: Bool
 
         init(_ line: TextLine, body: CGFloat) {
             size = Int((line.fontSize * 2).rounded())
             self.body = Int((body * 2).rounded())
-            bold = line.content.elements.allSatisfy { element in
-                guard case let .text(value, style) = element else { return true }
-                return style.contains(.bold) || value.allSatisfy(\.isWhitespace)
+            func wholly(_ trait: TextStyle) -> Bool {
+                line.content.elements.allSatisfy { element in
+                    guard case let .text(value, style) = element else { return true }
+                    return style.contains(trait) || value.allSatisfy(\.isWhitespace)
+                }
             }
+            bold = wholly(.bold)
+            italic = !bold && wholly(.italic)
         }
+    }
+
+    /// A title set in title case: at most ten words, every word of four or more letters
+    /// capitalised (`Coupled Ailerons and Rudder`, `Southerly Turning Errors`). An italic phrase
+    /// in prose or an italic sentence is rarely set so (#90, #97).
+    static func isTitleCase(_ text: String) -> Bool {
+        let words = text.split(whereSeparator: \.isWhitespace)
+        return !words.isEmpty && words.count <= 10 && words.allSatisfy { word in
+            let letters = word.drop { !$0.isLetter }
+            return letters.filter(\.isLetter).count < 4 || letters.first?.isUppercase == true
+        }
+    }
+
+    /// A list line set directly beneath a title opens the list the title heads: its marker
+    /// stands on the title's left edge or up to 2.5 em inside it (FAA page 48 indents its
+    /// bullets 9 points under `Airport` and `Airspace`; #97).
+    static func opensListBeneath(_ below: TextLine, title: TextLine, body: CGFloat) -> Bool {
+        let indent = below.rect.minX - title.rect.minX
+        return isList(below.text) && indent >= -body * 0.5 && indent <= body * 2.5
     }
 
     /// The label styles one page's narrow section labels establish, measured as `blocks` measures
@@ -448,9 +487,11 @@ enum LayoutReconstructor {
 
     /// A contents entry: a dot leader of four or more dots running to the line's end, with or
     /// without its folio (PDFKit can split the folio into a same-row line). Contents pages set
-    /// their chapter entries at heading size, but a leader never ends a heading (#55).
+    /// their chapter entries at heading size, but a leader never ends a heading (#55). The folio
+    /// can be numbered within its chapter or lettered part (`Introduction To Flying.......1-1`,
+    /// `Glossary.......G-1`; #97).
     static func isContentsEntry(_ text: String) -> Bool {
-        text.range(of: #"(?:\.\s*){4,}(?:\d{1,4}|[ivxlcdm]{1,8})?\s*$"#,
+        text.range(of: #"(?:\.\s*){4,}(?:\d{1,4}|[ivxlcdm]{1,8}|(?:\d{1,3}|[a-z])[-–]\d{1,4})?\s*$"#,
                    options: [.regularExpression, .caseInsensitive]) != nil
     }
 
@@ -732,6 +773,16 @@ enum LayoutReconstructor {
                           options: .regularExpression) != nil
     }
 
+    /// A title that spells out a mnemonic's letter, set wholly in bold: one capital letter, an
+    /// equals sign and a capitalised word of three or more letters, then words of two or more (the FAA's
+    /// PAVE checklist titles `A = Aircraft` and `V = EnVironment`, pages 47–48). It carries no
+    /// term, number or operator besides the sign, so it is not a displayed equation; as a formula
+    /// seed its crop took the title and the italic title beneath it out of the text (#97).
+    static func isLetterMnemonic(_ line: TextLine) -> Bool {
+        LabelStyle(line, body: line.fontSize).bold
+            && line.text.range(of: #"^\p{Lu} = \p{Lu}\p{L}{2,}(?: [\p{L}()]{2,}){0,6}$"#, options: .regularExpression) != nil
+    }
+
     /// Expand crops to whole intersecting text lines so a label cannot be cut in half.
     static func graphicsWithLabels(_ page: PageContent) -> [CGRect] {
         let body = max(4, bodySize(page.lines))
@@ -744,6 +795,7 @@ enum LayoutReconstructor {
             let symbols = line.text.rangeOfCharacter(from: mathSymbols) != nil
             let words = line.text.split(whereSeparator: \.isWhitespace)
             let equation = words.count <= 12 && words.contains { $0.contains("=") && !isURLQuery($0) }
+                && !isLetterMnemonic(line)
             return (symbols || equation) && !isProseRow(line, in: page.lines, body: body)
         }.map { line -> CGRect in
             var seed = line.rect.insetBy(dx: -4, dy: -8)
@@ -1413,8 +1465,9 @@ enum LayoutReconstructor {
         // - every line is set in bold in a heading or label style the book repeats, and the group
         //   reads as a title (a capital first, no closing punctuation, no list marker or leader); or
         // - it is one line in the body's size set wholly in italic, in title case, over a wider
-        //   body-text line on its own left edge, with space or another title above it: the FAA's
-        //   lowest title level (`Likelihood of an Event`, `Coupled Ailerons and Rudder`). An italic
+        //   body-text line on its own left edge or over the list it heads (#97), with space or
+        //   another title above it: the FAA's lowest title level (`Likelihood of an Event`,
+        //   `Coupled Ailerons and Rudder`, page 48's `Airport` over its bullets). An italic
         //   sentence, quotation or caption fragment ends in punctuation or is not in title case.
         // Such a group is emitted as a heading in tag order, ranked by its size (see `flushTagged`).
         func readsAsTitle(_ lines: [TextLine]) -> Bool {
@@ -1443,20 +1496,16 @@ enum LayoutReconstructor {
                 return style.contains(trait) || value.allSatisfy(\.isWhitespace)
             }
         }
-        func titleCase(_ text: String) -> Bool {
-            let words = text.split(whereSeparator: \.isWhitespace)
-            return words.count <= 10 && words.allSatisfy { word in
-                let letters = word.drop { !$0.isLetter }
-                return letters.filter(\.isLetter).count < 4 || letters.first?.isUppercase == true
-            }
-        }
         func setsItalicTitle(_ line: TextLine) -> Bool {
-            guard wholly(line, .italic), abs(line.fontSize - reflowBody) <= reflowBody * 0.1, titleCase(line.text) else { return false }
+            guard wholly(line, .italic), abs(line.fontSize - reflowBody) <= reflowBody * 0.1, isTitleCase(line.text),
+                  !isCaption(line.text) else { return false }
             let column = free.filter { $0.rect.minX < line.rect.maxX && $0.rect.maxX > line.rect.minX && !sameRow($0.rect, line.rect) }
+            // Beneath it, body text on its own edge or a list it heads (FAA page 48's `Airport`; #97).
             guard let below = column.filter({ $0.rect.maxY <= line.rect.minY + body * 0.4 }).max(by: { $0.rect.maxY < $1.rect.maxY }),
-                  line.rect.minY - below.rect.maxY < body * 0.8, abs(below.rect.minX - line.rect.minX) <= body * 0.5,
-                  below.rect.width > line.rect.width, abs(below.fontSize - reflowBody) <= reflowBody * 0.1, !isList(below.text),
-                  !wholly(below, .italic), !wholly(below, .bold) else { return false }
+                  line.rect.minY - below.rect.maxY < body * 0.8, abs(below.fontSize - reflowBody) <= reflowBody * 0.1,
+                  !wholly(below, .italic), !wholly(below, .bold),
+                  abs(below.rect.minX - line.rect.minX) <= body * 0.5 && below.rect.width > line.rect.width && !isList(below.text)
+                    || opensListBeneath(below, title: line, body: body) else { return false }
             guard let above = column.filter({ $0.rect.minY >= line.rect.maxY - body * 0.25 }).min(by: { $0.rect.minY < $1.rect.minY })
             else { return true }
             return above.rect.minY - line.rect.maxY >= body * 0.5 || wholly(above, .bold) || headingTypography(above)

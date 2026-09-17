@@ -50,6 +50,8 @@ enum FurnitureDetector {
     struct Plan {
         fileprivate var native: [Int: Set<Int>] = [:]
         fileprivate var dependencies: [Int: [Int: [Int]]] = [:]
+        /// Removed lines that are nothing but a page number, by page.
+        fileprivate var bareFolios: [Int: Set<Int>] = [:]
         fileprivate var syntheticOccurrences: [String: Int] = [:]
         fileprivate var syntheticThreshold = Int.max
         fileprivate var pageCount = 0
@@ -113,8 +115,10 @@ enum FurnitureDetector {
             let isFolio = (1...2).contains(folioParts.count) && folioParts.last.map({ Int($0) != nil }) == true
                 && (folioParts.count == 1 || Int(folioParts[0]) != nil || isPartLetter(folioParts[0]))
             // A bare folio has its own numeric/position evidence. Nearby figure labels
-            // must not stop a chapter-page number from being recognized.
-            guard let gap = inward.min(), isFolio || gap >= separation else { return }
+            // must not stop a chapter-page number from being recognized, and neither must
+            // their absence: a blank page whose only text is its folio (FAA `A-8`, `G-36`, the
+            // last page of a lettered part) still numbers its page (#97).
+            guard isFolio || inward.min().map({ $0 >= separation }) == true else { return }
             recorded.insert(lineIndex)
             // Bare folios use measured glyph height: fallback extraction estimates
             // fontSize from that height, whereas native extraction reads font attributes.
@@ -206,6 +210,7 @@ enum FurnitureDetector {
                 guard run.count >= 3 else { return }
                 for candidate in run {
                     plan.native[candidate.pageIndex, default: []].insert(candidate.lineIndex)
+                    if candidate.isFolio { plan.bareFolios[candidate.pageIndex, default: []].insert(candidate.lineIndex) }
                     if !candidate.dependsOn.isEmpty {
                         plan.dependencies[candidate.pageIndex, default: [:]][candidate.lineIndex] = candidate.dependsOn
                     }
@@ -305,7 +310,10 @@ enum FurnitureDetector {
             }
             guard !removed.isEmpty else { return nil }
             kept = page.lines.enumerated().filter { !removed.contains($0.offset) }.map(\.element)
-            guard !kept.isEmpty else { return nil }
+            // A page is not emptied by furniture removal, except a blank page that carries nothing
+            // but its folio (FAA `A-8` and `G-36`, the blank last pages of appendix A and the
+            // glossary; #97): its page boundary survives without text.
+            guard !kept.isEmpty || removed.isSubset(of: plan.bareFolios[pageIndex] ?? []) else { return nil }
         }
         page.lines = kept
         return ConversionWarning(code: .furnitureRemoved, page: page.number,

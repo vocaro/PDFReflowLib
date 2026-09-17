@@ -410,7 +410,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-441 Swift tests with no known-issue wrappers, and 196 Python tests.
+448 Swift tests with no known-issue wrappers, and 196 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -670,13 +670,35 @@ stacked titles stay two, page 72's `Introduction` follows its chapter title, pag
 so are one-line italic titles over their paragraphs (pages 45 and 27); pages 54–55 and 152–153 keep
 the title directly above its paragraph past the figure (#63). Contents labels over leader entries
 (pages 6 and 15), a centred table title and a table header row (416) are not titles, and synthetic
-controls refuse an italic line that is not title case, ends a sentence, or heads a list line or an
-indented line. Appendix folios `C-1`…`C-4` share one offset and go as furniture, and a lettered folio
+controls refuse an italic line that is not title case, ends a sentence, or heads a list nested deeper
+than 2.5 em or an indented line (a list on its edge was refused until #97). Appendix folios `C-1`…`C-4` share one offset and go as furniture, and a lettered folio
 in the foot band is never a heading; a broken offset and a two-letter prefix are no run. Disabling
 each of 18 parts fails a test that covers it. The FAA contract checks the joined paragraphs and
 their distinct neighbours on ten pages, the titles and their order on eleven, the absent contents,
 table-title and folio headings; the Our Flag contract checks page 12's joined quotations. See the
 [tagged splits and titles evidence](../measurements/tagged-splits-and-titles/record.md).
+
+## FAA heading and folio leftovers
+
+`FAAHeadingLeftoversTests.swift` covers [#97](https://github.com/vocaro/PDFReflowLib/issues/97) with
+`faa-N-tagged` fixtures for pages 48, 228, 447, 460 and 512. The book's 10-point italic title style is
+recorded from pages 45, 48, 228 and 447 as its bold label styles are, and a bold-italic label keeps the
+bold key. Untagged italic titles in that style are headings over their paragraphs (447's `Drugs` …
+`Hypoglycemia and Nutritional Deficiency`; 228's `Southerly Turning Errors` and `Acceleration Error`),
+and without the style they open their paragraphs. Page 48's
+`V = EnVironment` no longer seeds a formula crop, so it and `Weather` are headings, and the tagged
+`Airport` and `Airspace` head their bullets. Synthetic controls refuse a line without the style, not
+italic, at ordinary leading inside prose, ending a sentence, not in title case, a caption, over italic
+text, or over a list nested deeper than 2.5 em; plain-type, product (`F = Ma`), term (`E = mc2`),
+multi-letter and operator lines are not mnemonic titles, and a bold equation still crops. The blank
+pages 460 and 512 lose their lone folios to the run; a folio that breaks the offset, and a blank page
+that also carries a running head, keep their lines. Contents entries end in chapter or lettered folios
+(every leader entry on pages 6 and 15); a folio without a leader, an ellipsis before prose, a two-letter
+prefix and a three-part number do not. Disabling each of 13 parts fails a test that covers it. The FAA
+contract checks the headings and their order on pages 47, 48, 228 and 447, the absent folios on 460 and
+512, and controls (page 410's table header, page 447's caption, `E = External Pressures`); the Wallace
+contract checks the blank pages 175 and 437. See the
+[FAA heading leftovers evidence](../measurements/faa-heading-leftovers/record.md).
 
 ## Text the rendering never shows
 

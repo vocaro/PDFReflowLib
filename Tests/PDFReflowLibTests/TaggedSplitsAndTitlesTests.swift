@@ -207,11 +207,14 @@ private func italicTitlePage(_ title: String, italic: Bool = true, beneath: Stri
         return !headings(LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)).isEmpty
     }
     #expect(isTitle(italicTitlePage("Likelihood of an Event")))
-    // Controls: not italic, a sentence, not title case, and a list line or an indent beneath.
+    // A title can head a list set on its edge or indented under it (#97; FAA page 48's `Airport`).
+    #expect(isTitle(italicTitlePage("Likelihood of an Event", beneath: "• What is the current ceiling and visibility?")))
+    // Controls: not italic, a sentence, not title case, a list nested deeper than 2.5 em, and an
+    // indented body line beneath.
     #expect(!isTitle(italicTitlePage("Likelihood of an Event", italic: false)))
     #expect(!isTitle(italicTitlePage("Likelihood of an Event.")))
     #expect(!isTitle(italicTitlePage("Likelihood of something")))
-    #expect(!isTitle(italicTitlePage("Likelihood of an Event", beneath: "• What is the current ceiling and visibility?")))
+    #expect(!isTitle(italicTitlePage("Likelihood of an Event", beneath: "• What is the current ceiling and visibility?", beneathX: 66)))
     #expect(!isTitle(italicTitlePage("Likelihood of an Event", beneathX: 54)))
 }
 

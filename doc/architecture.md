@@ -164,7 +164,8 @@ group fell back beside a figure (#89); a table row, which spreads few characters
 never joins. A paragraph group that reads as a title (a capital first, no closing punctuation, no
 leader on it or on the entry beneath, not centred over the column's text) is emitted as a heading
 ranked by size when every line is bold in a recurring label or heading style, or when it is one
-body-size line wholly in italic and title case over a wider body line on its own edge (#90). Removed furniture or
+body-size line wholly in italic and title case over a wider body line on its own edge (#90) or over the list it
+heads, its marker on that edge or up to 2.5 em inside it (#97). Removed furniture or
 image-contained lines invalidate incomplete groups.
 Validated paragraph identities prevent heuristic cross-page joins into different paragraphs.
 Heading levels belong to the neutral model and serialize as h1–h6; navigation remains flat.
@@ -277,7 +278,11 @@ three or more pages admits a title set nearly the column's width (FAA's `Crew Re
 Propeller` over 10-point Times), are labels only in such a recurring style: the line is entirely
 bold, no wider than 90% of the column's prose, has clear space above it, and a paragraph opens
 directly beneath it on its left edge in non-bold body type; extraction records these styles
-beside the larger ones, and their smaller sizes rank below the book's titles (#76). A leading
+beside the larger ones, and their smaller sizes rank below the book's titles (#76). Where no tag
+sets it apart, a body-size line wholly in italic is such a label in a recurring italic style
+(`LabelStyle` flags italic only on a line that is not bold), when it is in title case, not a figure
+or table caption, and opens body text that is not italic on its edge or the list it heads (FAA's
+untagged `Southerly Turning Errors`, `Drugs`; #97). A leading
 bracket or quote is skipped for the capital test (`(EMAS)`). A figure caption paragraph ends at
 a line at least 15% larger than the caption line above it and at body size or above, so it never
 absorbs the title that follows it (#63), and at a body-size line at least 5% larger that shares
@@ -292,7 +297,8 @@ by no more than 0.6 em per character of the number and an em for its space: Repl
 does not open a numbered or `Chapter N` heading of its own; a run of two or more such lines that
 ends in terminal punctuation with at least eight words is a chapter opener's pull quote and
 reflows as one paragraph; a line ending in a dot leader of four or more dots (with or without its
-folio) is a contents entry and never a heading (#55). A chapter opener's display numeral that
+folio, which can be numbered within a chapter or a lettered part: `…1-1`, `…G-1`, #97) is a contents
+entry and never a heading (#55). A chapter opener's display numeral that
 PDFKit fuses with its title (a 70-point `1` before a 24-point `Overview …`) gives the line the
 title's size, and a run at least twice the size of every run beside it is never a script, so the
 numeral is neither a subscript nor the line's heading size. Each typographic heading block carries its font size; once
@@ -314,8 +320,10 @@ its line heights, at least half a line height clear of the body) is a second hea
 removed only together with every line of the row above it, so a two-row head (title row with
 folio, opinion row) goes as a unit and a repeated line beneath unrepeated titles stays.
 Boundary page numbers use a consistent physical-page offset; chapter-page folios, numbered (`5-17`) or lettered for an appendix (`C-2`, #90), retain their prefix and use glyph height
-so fallback font estimates do not break matching. Internal digits remain meaningful. Matching
-body titles, nearby captions and a page's only text are retained. Each affected page reports
+so fallback font estimates do not break matching; a bare folio is a candidate even on a page with no
+other line. Internal digits remain meaningful. Matching body titles, nearby captions and a page's
+only text are retained, except a blank page's lone folio in a folio run (FAA `A-8` and `G-36`,
+Wallace pages 175 and 437; #97), which leaves the page's boundary without text. Each affected page reports
 `furnitureRemoved`; clients can disable removal with `removeRepeatedHeadersAndFooters`.
 This is conservative spatial evidence, not validated PDF tag consumption or a universal header
 classifier. Synthetic invisible-text layers retain the established whole-document repeated-margin
@@ -353,7 +361,8 @@ short mathematical line (a radical's vinculum, an exercise bar) or between a wor
 a term starting beneath it (a fraction bar) keeps those lines in one crop, and an isolated rule
 remains a crop, as before. A line with an equals sign seeds a formula crop only when that sign
 is outside a web address's query string (`print.php3?ReportID=145`, `item_id=1645&content_type_id=7`),
-so notes citing such addresses keep their text (#80). Rows of divisor bars beneath equations are not table headers. Whole-line expansion admits the lines a graphic
+so notes citing such addresses keep their text (#80), and never in a bold title that spells out a
+mnemonic's letter (`V = EnVironment`, `A = Aircraft`: one capital, the sign, then words; #97). Rows of divisor bars beneath equations are not table headers. Whole-line expansion admits the lines a graphic
 captures and the other pieces of their rows, then trims the crop away from lines it merely
 touches. It does not chain from text line to text line through overlapping leading, so a
 label underline, a column rule or an inline equation beside tightly leaded prose does not

@@ -1,0 +1,146 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "faa-phak-8083-25c",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "36bda487d4b91b33a393092cf7cb67c162de3108311ab9e07af805b1839e4f91",
+  "candidateConverterSHA256": "5ec88fdc68db5bf013e7ce84808a347df50f4acc47ddefe2a5ab09edfba96639",
+  "sameConverter": false,
+  "changedPages": [
+    47,
+    48,
+    97,
+    228,
+    244,
+    256,
+    310,
+    387,
+    447,
+    452,
+    460,
+    512
+  ],
+  "changedPageFields": {
+    "47": [
+      "anchors",
+      "headings",
+      "images",
+      "markup",
+      "text",
+      "warnings"
+    ],
+    "48": [
+      "anchors",
+      "headings",
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "97": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "228": [
+      "anchors",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "244": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "256": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "310": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "387": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "447": [
+      "anchors",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "452": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "460": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "512": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ]
+  },
+  "changedImages": [
+    "EPUB/images/image-53.png",
+    "EPUB/images/image-54.png"
+  ],
+  "navigationChanged": true,
+  "changedNavigationPages": [
+    228,
+    447,
+    47,
+    48
+  ],
+  "pageMarkersEqual": true,
+  "changedReportFields": [
+    "imageCount",
+    "reflowedPageCount",
+    "warnings"
+  ],
+  "idOnlyShifts": {
+    "pageCount": 464,
+    "fields": {
+      "images": 340,
+      "markup": 340,
+      "paragraphIDs": 450
+    },
+    "navigationEntries": null
+  },
+  "imageRenames": {
+    "count": 527
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "provenanceErrors": [],
+  "case": "faa-phak-8083-25c",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "9750a449b0a12c7eeb0991599ffc7841b96e708dd6ac7f6c8cc0b580f7e0364d",
+  "candidateConverterSHA256": "1b39189b35f32d8e66becdb302ec110cf974145c54bbc559c61138ae1651dcac",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-base",
+      "programsSHA256": "117fb2440ec075c382194cd363f92bd3b9c83846fede7e2d99ec7f3ca7a7331c"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-cand",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "changedPages": [],
+  "changedPageFields": {},
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 0,
+    "fields": {},
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

@@ -1,0 +1,30 @@
+{
+  "environment": "macOS 27.0 (26A428) arm64, Xcode 27.0 (27A266a), release CLI, library defaults",
+  "lane": {
+    "cases": ["wallace-algebra-2010", "faa-phak-8083-25c", "fed-explained-2021", "gpo-911-2004", "usgs-mcs2025-copper", "scotus-loper-bright-2024"],
+    "baseline": {
+      "commit": "de0df61",
+      "cli": "release build of an unmodified `git archive de0df61`",
+      "converterSHA256": "9750a449b0a12c7eeb0991599ffc7841b96e708dd6ac7f6c8cc0b580f7e0364d"
+    },
+    "candidate": {
+      "commit": "de0df61 + working tree",
+      "converterSHA256": "1b39189b35f32d8e66becdb302ec110cf974145c54bbc559c61138ae1651dcac",
+      "Sources/PDFReflowLib/LayoutReconstructor.swift": "2a6ba63d68592bfd07e1d95d0d4def6f04a840674facbbb60a748b92624e61ee"
+    },
+    "earlierRuns": "The lane also ran on 785a974 (Wallace, USGS, Loper Bright; baseline b749d3a3…, candidate 8c2ebb0b…) and on 63680df (all six; baseline dfc837f9…, candidate 509c8346…). Each gave the same 53 Wallace pages with the same block-diff hunks and no change in the other cases; the record reports the de0df61 run."
+  },
+  "environmentProbeSHA256": "9d08941089654116bde38496a04bd77cd764955ab5af79daf316a613217e9004",
+  "sources": {
+    "wallace-algebra-2010": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678"
+  },
+  "fixtures": {
+    "Tests/PDFReflowLibTests/fixtures/algebra-2-layout.json": "fb335ab030795915076eb5cff2e480a214ac087aa366e37d9195c2aa2bc00050",
+    "Tests/PDFReflowLibTests/fixtures/algebra-9-layout.json": "b93b052863f080cc1271a253a639001f95ada306ac5d4a978e9a2f759f2d0da5",
+    "Tests/PDFReflowLibTests/fixtures/algebra-120-layout.json": "7946787990b31dfdcdb61d380ca5897394bae2467aeaedae0fc1672aa65c6ba5",
+    "Tests/PDFReflowLibTests/fixtures/algebra-180-layout.json": "ee385db5abf06ade2d0bb2fb3cfb56f4000594fd0adc75dab3c3c51d98ea26ad",
+    "Tests/PDFReflowLibTests/fixtures/algebra-318-layout.json": "5c6566f7d894dcd278a73a01573502727ad103b8f666f38b54cb32df59dbf605",
+    "Tests/PDFReflowLibTests/fixtures/algebra-321-layout.json": "08e33247d091f8e0f760033b3b7771ef18607547eeab9c45e361de0fb1f3ee76"
+  },
+  "captureTool": "tools/capture-layout-fixture.swift compiled with Sources/PDFReflowLib/*.swift and a locally built ZIPFoundation 0.9.20 module; a recapture of algebra-318 was byte-identical to the committed fixture"
+}

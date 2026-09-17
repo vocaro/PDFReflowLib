@@ -1,0 +1,6 @@
+leading-recorded: KILLED ['sourceAlgebraRowsJoinOnlyWithinTheirRow', 'sourceTallInlineExpressionLinesKeepTheirParagraphs', 'syntheticTallLineGapIsNotTheParagraphLeading'] Test run with 44 tests in 0 suites failed after 2.167 seconds with 4 issues.
+no-prose-row-guard: KILLED ['sourceExerciseColumnsKeepTheirRowPiecesApart'] Test run with 44 tests in 0 suites failed after 2.152 seconds with 3 issues.
+no-display-cap: KILLED ['syntheticTallInlineLineKeepsItsParagraph'] Test run with 44 tests in 0 suites failed after 2.174 seconds with 1 issue.
+no-list-exemption: KILLED ['sourceAlgebraRowsJoinOnlyWithinTheirRow', 'sourceMinusRadicandRowReadsAsProse'] Test run with 44 tests in 0 suites failed after 2.341 seconds with 5 issues.
+any-list-join: KILLED ['sourceMinusRadicandRowReadsAsProse'] Test run with 44 tests in 0 suites failed after 2.344 seconds with 2 issues.
+no-min-excess: SURVIVED [] Test run with 44 tests in 0 suites passed after 2.283 seconds.

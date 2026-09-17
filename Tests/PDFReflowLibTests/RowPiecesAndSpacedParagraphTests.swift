@@ -84,9 +84,8 @@ private func paragraph(_ texts: [String], containing phrase: String, sourceLocat
     func texts(_ name: String) throws -> [String] { paragraphs(reflow(try sourcePage(name))) }
     let page9 = try texts("algebra-9")
     #expect(!page9.contains { $0.contains("=− 21.") })
-    let signs = try #require(page9.firstIndex { $0.hasPrefix("10, but if the signs match on multiplication") })
-    let product = try #require(page9.firstIndex { $0 == "21." })
-    #expect(signs < product)
+    // `21.` closes the sentence it continues (#109 keeps it in that paragraph), after the row above.
+    #expect(page9.contains { $0.hasSuffix("the answer is positive, (− 3)(− 7) = 21.") })
     #expect(try !texts("algebra-120").contains { $0.contains("equal to Graph starts") })
     let page180 = try texts("algebra-180")
     #expect(!page180.contains { $0.contains("example. rather") })
@@ -100,20 +99,20 @@ private func paragraph(_ texts: [String], containing phrase: String, sourceLocat
     #expect(try texts("algebra-212").contains { $0.contains("solving problems such as 4x2(2x2 − 3x + 8) = 8x4 − 12x3") })
     // Joins those guards must still allow: a word-space gap with no sign at the join (page 185), a
     // sign in the right piece's second token (page 292), a radicand inside its sign's piece (page
-    // 290) and a short staggered sign piece (page 305). On page 321 the radicand `− 1` would open
-    // its row as a list marker, so that row stays as it was: no preserved list line appears.
+    // 290) and a short staggered sign piece (page 305). On page 321 the radicand `− 1` opens its
+    // row with a minus sign, which is not a list marker (#109): no preserved list line appears.
     #expect(try texts("algebra-185").contains { $0.contains("tury wrote 121m¯ to indicate 12x−1. This was the first known use of the negative") })
     #expect(try texts("algebra-290").contains { $0.contains("For example, x8 √ = x4, because we divide the exponent of 8 by 2.") })
     #expect(try texts("algebra-292").contains { $0.contains("check the index on the root. 81 √ = 9 but 814√ = 3. This is because 92 = 81") })
     #expect(try texts("algebra-305").contains { $0.contains("So for our example with 3 √ − 5 in the denominator, the conjugate would be 3 √ +") })
     let page321 = reflow(try sourcePage("algebra-321"))
     #expect(!page321.contains { if case .preformatted = $0.content { $0.text.contains("and it is in the denominator") } else { false } })
-    #expect(paragraphs(page321).contains { $0.hasPrefix("√ , and it is in the denominator of a fraction") })
+    #expect(paragraphs(page321).contains { $0.contains("If i is − 1 √ , and it is in the denominator of a fraction") })
     // Page 318: two rows split at their equations rejoin, and the World View Note, set off by
     // added space, is its own paragraph (#71).
     let page318 = try texts("algebra-318")
     #expect(page318.contains { $0.contains("manipulating our definition of i2 =− 1. If we multiply both sides of the definition by i,") })
-    #expect(page318.contains { $0.hasPrefix("tion again by i, the equation becomes i4 =− i2 =− (− 1) = 1, or simply i4 = 1. Multiplying") })
+    #expect(page318.contains { $0.contains("equation again by i, the equation becomes i4 =− i2 =− (− 1) = 1, or simply i4 = 1. Multiplying") })
     let note = try paragraph(page318, containing: "World View Note: When mathematics was first used")
     #expect(!note.contains("In mathematics, when the current number system"))
 }
@@ -130,7 +129,7 @@ private func paragraph(_ texts: [String], containing phrase: String, sourceLocat
                                             ("algebra-449", 28, 74), ("algebra-487", 64, 88), ("algebra-291", 7, 53)] {
         let page = try sourcePage(name)
         #expect(reflow(page).count == withCrops, "\(name) with crops")
-        #expect(reflow(page, crops: false).count == withoutCrops, "\(name) without crops")
+        #expect(reflow(page, crops: false).count == withoutCrops, "\(name) without crops \(reflow(page, crops: false).count)")
     }
 }
 

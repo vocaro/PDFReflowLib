@@ -215,6 +215,14 @@ that at least three same-size lines of the column share within a quarter body si
 line must sit on the column's majority left edge (or outdent from an indented opening line)
 at ordinary line spacing. Bullets never continue prose; ragged-right columns, hanging-indent
 continuations and OCR lines that Vision marks as unwrapped keep the list representation.
+The pieces of a prose row PDFKit splits at inline mathematics rejoin before classification (#95).
+A joined row whose radicand opens it with a minus sign before a number or variable (`− 1 √ , and
+it is…`) reads as prose, while a line that opens with a minus on its own keeps the list
+representation (#109). Paragraph lines attach at ordinary spacing, overlapping by up to 0.4 body
+sizes. A line that an inline expression makes taller than the page's ordinary line at its size
+(Wallace's minus, times and radical glyphs extend a rectangle 8.5 points past the type), at most
+twice that height and set as prose on its paragraph's measure, may overlap by its extra height
+as well, and its gap is not taken as the paragraph's leading for the added-space rule (#71, #109).
 Joined lines meet at a space except in three cases. A line-ending hyphen before a lowercase
 letter is removed when the book's vocabulary knows the joined word and not the compound, and
 kept otherwise. The vocabulary skips the word that opens a lowercase line after a line-end hyphen

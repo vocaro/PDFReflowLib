@@ -1,0 +1,341 @@
+216,220c216
+< p: A few things to be careful of when working with integers. First be sure not to confuse a problem like− 3− 8 with− 3(− 8). The second problem is a multipli-
+< p: cation problem because there is nothing between the 3 and the parenthesis. If there is no operation written in between the parts, then we assume that means we are multiplying. The− 3− 8 problem, is subtraction because the subtraction sep-
+< p: arates the 3 from what comes after it. Another item to watch out for is to be careful not to mix up the pattern for adding and subtracting integers with the pattern for multiplying and dividing integers. They can look very similar, for example if the signs match on addition, the we keep the negative,− 3 + (− 7) =−
+< p: 10, but if the signs match on multiplication, the answer is positive, (− 3)(− 7) =
+< p: 21.
+---
+> p: A few things to be careful of when working with integers. First be sure not to confuse a problem like− 3− 8 with− 3(− 8). The second problem is a multiplication problem because there is nothing between the 3 and the parenthesis. If there is no operation written in between the parts, then we assume that means we are multiplying. The− 3− 8 problem, is subtraction because the subtraction sep-arates the 3 from what comes after it. Another item to watch out for is to be careful not to mix up the pattern for adding and subtracting integers with the pattern for multiplying and dividing integers. They can look very similar, for example if the signs match on addition, the we keep the negative,− 3 + (− 7) =− 10, but if the signs match on multiplication, the answer is positive, (− 3)(− 7) = 21.
+553,555c549
+< p: The above example also illustrates an important point about exponents. Exponents only are considered to be on the number they are attached to. This means when we see− 42, only the 4 is squared, giving us− (42) or− 16. But when the
+< p: negative is in parentheses, such as (− 5)2 the negative is part of the number and
+< p: is also squared giving us a positive solution, 25.
+---
+> p: The above example also illustrates an important point about exponents. Exponents only are considered to be on the number they are attached to. This means when we see− 42, only the 4 is squared, giving us− (42) or− 16. But when the negative is in parentheses, such as (− 5)2 the negative is part of the number and is also squared giving us a positive solution, 25.
+613,614c607
+< p: It will be more common in our study of algebra that we do not know the value of the variables. In this case, we will have to simplify what we can and leave the variables in our final solution. One way we can simplify expressions is to combine like terms. Like terms are terms where the variables match exactly (exponents included). Examples of like terms would be 3xy and− 7xy or 3a2b and 8a2b or−
+< p: 3 and 5. If we have like terms we are allowed to add (or subtract) the numbers in front of the variables, then keep the variables the same. This is shown in the following examples
+---
+> p: It will be more common in our study of algebra that we do not know the value of the variables. In this case, we will have to simplify what we can and leave the variables in our final solution. One way we can simplify expressions is to combine like terms. Like terms are terms where the variables match exactly (exponents included). Examples of like terms would be 3xy and− 7xy or 3a2b and 8a2b or− 3 and 5. If we have like terms we are allowed to add (or subtract) the numbers in front of the variables, then keep the variables the same. This is shown in the following examples
+638,639c631
+< p: In the previous example we again use the fact that the sign goes with the number, this means we treat the− 6 as a negative number, this gives (− 7)(− 6) = 42, a
+< p: positive number. The most common error in distributing is a sign error, be very careful with your signs!
+---
+> p: In the previous example we again use the fact that the sign goes with the number, this means we treat the− 6 as a negative number, this gives (− 7)(− 6) = 42, a positive number. The most common error in distributing is a sign error, be very careful with your signs!
+782,783c774
+< p: Notice the above problem has a missing part, or unknown, that is marked by x. If we are given that the solution to this equation is− 5, it could be plugged into the
+< p: equation, replacing the x with− 5. This is shown in Example 2.
+---
+> p: Notice the above problem has a missing part, or unknown, that is marked by x. If we are given that the solution to this equation is− 5, it could be plugged into the equation, replacing the x with− 5. This is shown in Example 2.
+798,799c789
+< p: Then we get our solution, x =− 12. The same process is used in each of the fol-
+< p: lowing examples.
+---
+> p: Then we get our solution, x =− 12. The same process is used in each of the following examples.
+847,848c837
+< p: Then we get our solution x =− 15. The same process is used in each of the fol-
+< p: lowing examples.
+---
+> p: Then we get our solution x =− 15. The same process is used in each of the following examples.
+1085,1086c1074
+< p: As p and m are not like terms, they cannot be combined. For this reason we leave the expression as p− m. This same one-step process can be used with grouping
+< p: symbols.
+---
+> p: As p and m are not like terms, they cannot be combined. For this reason we leave the expression as p− m. This same one-step process can be used with grouping symbols.
+1094,1095c1082
+< p: Because (x− y) is in parenthesis, if we are not searching for what is inside the
+< p: parenthesis, we can keep them together as a group and divide by that group. However, if we are searching for what is inside the parenthesis, we will have to break up the parenthesis by distributing. The following example is the same formula, but this time we will solve for x.
+---
+> p: Because (x− y) is in parenthesis, if we are not searching for what is inside the parenthesis, we can keep them together as a group and divide by that group. However, if we are searching for what is inside the parenthesis, we will have to break up the parenthesis by distributing. The following example is the same formula, but this time we will solve for x.
+1196,1199c1183
+< p: To get the absolute value alone we first need to get rid of the 2 by subtracting, then divide by− 4. Notice we cannot combine the 2 and− 4 becuase they are
+< p: not like terms, the− 4 has the absolute value connected to it. Also notice we do
+< p: not distribute the− 4 into the absolute value. This is because the numbers out-
+< p: side cannot be combined with the numbers inside the absolute value. Thus we get the absolute value alone in the following way:
+---
+> p: To get the absolute value alone we first need to get rid of the 2 by subtracting, then divide by− 4. Notice we cannot combine the 2 and− 4 becuase they are not like terms, the− 4 has the absolute value connected to it. Also notice we do not distribute the− 4 into the absolute value. This is because the numbers outside cannot be combined with the numbers inside the absolute value. Thus we get the absolute value alone in the following way:
+1666,1667c1650
+< p: Some problems will require us to do a bit of work before we can just fill in the cells. One example of this is if we are given a total time, rather than the individual times like we had in the previous example. If we are given total time we will write this above the time column, use t for the first person’s time, and make a subtraction problem, Total− t, for the second person’s time. This is shown in
+< p: the next example
+---
+> p: Some problems will require us to do a bit of work before we can just fill in the cells. One example of this is if we are given a total time, rather than the individual times like we had in the previous example. If we are given total time we will write this above the time column, use t for the first person’s time, and make a subtraction problem, Total− t, for the second person’s time. This is shown in the next example
+1778,1782c1761
+< p: To the left the numbers count down from zero, representing x =− 1,− 2,− 3.
+< p: Similarly, as we move up the number count up from zero, y = 1, 2, 3., and as we move down count down from zero, y=− 1,− 2,− 3. We can put dots on the
+< p: graph which we will call points. Each point has an “address” that defines its location. The first number will be the value on the x− axis or horizontal number line.
+< p: This is the distance the point moves left/right from the origin. The second number will represent the value on the y− axis or vertical number line. This is
+< p: the distance the point moves up/down from the origin. The points are given as an ordered pair (x, y).
+---
+> p: To the left the numbers count down from zero, representing x =− 1,− 2,− 3. Similarly, as we move up the number count up from zero, y = 1, 2, 3., and as we move down count down from zero, y=− 1,− 2,− 3. We can put dots on the graph which we will call points. Each point has an “address” that defines its location. The first number will be the value on the x− axis or horizontal number line. This is the distance the point moves left/right from the origin. The second number will represent the value on the y− axis or vertical number line. This is the distance the point moves up/down from the origin. The points are given as an ordered pair (x, y).
+1803,1806c1782,1783
+< p: The second point, B (− 2, 1), is left 2
+< p: (negative moves backwards), up 1. This is also illustrated on the graph.
+< p: The third point, C (3,− 4) is right 3,
+< p: down 4 (negative moves backwards).
+---
+> p: The second point, B (− 2, 1), is left 2 (negative moves backwards), up 1. This is also illustrated on the graph.
+> p: The third point, C (3,− 4) is right 3, down 4 (negative moves backwards).
+1809,1810c1786
+< p: The fourth point, D (− 2,− 3) is left
+< p: 2, down 3 (both negative, both move backwards)
+---
+> p: The fourth point, D (− 2,− 3) is left 2, down 3 (both negative, both move backwards)
+1812,1813c1788
+< p: Next is E (− 3, 0). This is left 3 (nega-
+< p: tive is backwards), and up zero, right on the x− axis.
+---
+> p: Next is E (− 3, 0). This is left 3 (negative is backwards), and up zero, right on the x− axis.
+1822,1823c1797
+< p: The main purpose of graphs is not to plot random points, but rather to give a picture of the solutions to an equation. We may have an equation such as y= 2x− 3. We may be interested in what type of solution are possible in this equa-
+< p: tion. We can visualize the solution by making a graph of possible x and y combinations that make this equation a true statement. We will have to start by finding possible x and y combinations. We will do this using a table of values.
+---
+> p: The main purpose of graphs is not to plot random points, but rather to give a picture of the solutions to an equation. We may have an equation such as y= 2x− 3. We may be interested in what type of solution are possible in this equation. We can visualize the solution by making a graph of possible x and y combinations that make this equation a true statement. We will have to start by finding possible x and y combinations. We will do this using a table of values.
+1842,1845c1816
+< p: What this line tells us is that any point on the line will work in the equation y= 2x− 3. For example, notice the graph also goes through the point (2, 1). If we use
+< p: x = 2, we should get y = 1. Sure enough, y = 2(2)− 3 = 4− 3 = 1, just as the graph
+< p: suggests. Thus we have the line is a picture of all the solutions for y = 2x− 3. We
+< p: can use this table of values method to draw a graph of any linear equation.
+---
+> p: What this line tells us is that any point on the line will work in the equation y= 2x− 3. For example, notice the graph also goes through the point (2, 1). If we use x = 2, we should get y = 1. Sure enough, y = 2(2)− 3 = 4− 3 = 1, just as the graph suggests. Thus we have the line is a picture of all the solutions for y = 2x− 3. We can use this table of values method to draw a graph of any linear equation.
+2077,2079c2048
+< p: We want to be very careful not to confuse using slope to find the next point with use a coordinate such as (4,− 2) to find an individule point. Coordinates such as
+< p: (4,− 2) start from the origin and move horizontally first, and vertically second.
+< p: Slope starts from a point on the line that could be anywhere on the graph. The numerator is the vertical change and the denominator is the horizontal change. Lines with zero slope or no slope can make a problem seem very diﬀerent. Zero slope, or horiztonal line, will simply have a slope of zero which when multiplied by x gives zero. So the equation simply becomes y= b or y is equal to the y-coordinate of the graph. If we have no slope, or a vertical line, the equation can’t be written in slope intercept at all because the slope is undefined. There is no y in these equations. We will simply make x equal to the x-coordinate of the graph.
+---
+> p: We want to be very careful not to confuse using slope to find the next point with use a coordinate such as (4,− 2) to find an individule point. Coordinates such as (4,− 2) start from the origin and move horizontally first, and vertically second. Slope starts from a point on the line that could be anywhere on the graph. The numerator is the vertical change and the denominator is the horizontal change. Lines with zero slope or no slope can make a problem seem very diﬀerent. Zero slope, or horiztonal line, will simply have a slope of zero which when multiplied by x gives zero. So the equation simply becomes y= b or y is equal to the y-coordinate of the graph. If we have no slope, or a vertical line, the equation can’t be written in slope intercept at all because the slope is undefined. There is no y in these equations. We will simply make x equal to the x-coordinate of the graph.
+2157,2158c2126
+< p: Find the equation of the line through the points (− 3, 4) and (− 1,− 2) in slope-
+< p: intercept form.
+---
+> p: Find the equation of the line through the points (− 3, 4) and (− 1,− 2) in slope-intercept form.
+2162,2163c2130
+< p: Find the equation of the line through the points (6,− 2) and (− 4, 1) in slope-
+< p: intercept form.
+---
+> p: Find the equation of the line through the points (6,− 2) and (− 4, 1) in slope-intercept form.
+2292c2259
+< p: If we have an expression such as x < 4, this means our variable can be any number smaller than 4 such as− 2, 0, 3, 3.9 or even 3.999999999 as long as it is smaller [[p119]]than 4. If we have an expression such as x− 2, this means our variable can be
+---
+> p: If we have an expression such as x < 4, this means our variable can be any number smaller than 4 such as− 2, 0, 3, 3.9 or even 3.999999999 as long as it is smaller [[p119]]than 4. If we have an expression such as x− 2, this means our variable can be any number greater than or equal to− 2, such as 5, 0,− 1,− 1.9999, or even− 2. Because we don’t have one set value for our variable, it is often useful to draw a picture of the solutions to the inequality on a number line. We will start from the value in the problem and bold the lower part of the number line if the variable is smaller than the number, and bold the upper part of the number line if the variable is larger. The value itself we will mark with brackets, either ) or ( for less than or greater than respectively, and ] or [ for less than or equal to or greater than or equal to respectively.
+2294,2297c2261
+< p: any number greater than or equal to− 2, such as 5, 0,− 1,− 1.9999, or even− 2. Because we don’t have one set value for our variable, it is often useful to draw a picture of the solutions to the inequality on a number line. We will start from the value in the problem and bold the lower part of the number line if the variable is smaller than the number, and bold the upper part of the number line if the variable is larger. The value itself we will mark with brackets, either ) or ( for less than or greater than respectively, and ] or [ for less than or equal to or greater than or equal to respectively.
+< p: Once the graph is drawn we can quickly convert the graph into what is called interval notation. Interval notation gives two numbers, the first is the smallest value, the second is the largest value. If there is no largest value, we can use ∞
+< p: (infinity). If there is no smallest value, we can use − ∞ negative infinity. If we
+< p: use either positive or negative infinity we will always use a curved bracket for that value.
+---
+> p: Once the graph is drawn we can quickly convert the graph into what is called interval notation. Interval notation gives two numbers, the first is the smallest value, the second is the largest value. If there is no largest value, we can use ∞ (infinity). If there is no smallest value, we can use − ∞ negative infinity. If we use either positive or negative infinity we will always use a curved bracket for that value.
+2325,2326c2289
+< p: Give the inequality for the graph: Graph starts at− 4 and goes down or less. Square bracket means less than or
+< p: equal to
+---
+> p: Give the inequality for the graph: Graph starts at− 4 and goes down or less. Square bracket means less than or equal to
+2435,2436c2398
+< p: When we give interval notation for our solution, if there are two diﬀerent parts to the graph we will put a ∪ (union) symbol between two sets of interval notation,
+< p: one for each part.
+---
+> p: When we give interval notation for our solution, if there are two diﬀerent parts to the graph we will put a ∪ (union) symbol between two sets of interval notation, one for each part.
+2456,2457c2418
+< p: The second type of compound inequality is an AND inequality. AND inequalities require both statements to be true. If one is false, they both are false. When we graph these inequalities we can follow a similar process, first graph both inequalities above the number line, but this time only where they overlap will be drawn onto the number line for our final graph. When our solution is given in interval notation it will be expressed in a manner very similar to single inequalities (there is a symbol that can be used for AND, the intersection - ∩ , but we will not use it
+< p: here).
+---
+> p: The second type of compound inequality is an AND inequality. AND inequalities require both statements to be true. If one is false, they both are false. When we graph these inequalities we can follow a similar process, first graph both inequalities above the number line, but this time only where they overlap will be drawn onto the number line for our final graph. When our solution is given in interval notation it will be expressed in a manner very similar to single inequalities (there is a symbol that can be used for AND, the intersection - ∩ , but we will not use it here).
+2539,2540c2500
+< p: This graph looks just like the graphs of the three part compound inequalities! When the absolute value is less than a number we will remove the absolute value by changing the problem to a three part inequality, with the negative value on the left and the positive value on the right. So |x| < 2 becomes− 2 < x < 2, as the
+< p: graph above illustrates.
+---
+> p: This graph looks just like the graphs of the three part compound inequalities! When the absolute value is less than a number we will remove the absolute value by changing the problem to a three part inequality, with the negative value on the left and the positive value on the right. So |x| < 2 becomes− 2 < x < 2, as the graph above illustrates.
+2545,2546c2505
+< p: This graph looks just like the graphs of the OR compound inequalities! When the absolute value is greater than a number we will remove the absolute value by changing the problem to an OR inequality, the first inequality looking just like the problem with no absolute value, the second flipping the inequality symbol and changing the value to a negative. So |x| > 2 becomes x > 2 or x <− 2, as the graph
+< p: above illustrates.
+---
+> p: This graph looks just like the graphs of the OR compound inequalities! When the absolute value is greater than a number we will remove the absolute value by changing the problem to an OR inequality, the first inequality looking just like the problem with no absolute value, the second flipping the inequality symbol and changing the value to a negative. So |x| > 2 becomes x > 2 or x <− 2, as the graph above illustrates.
+2645,2646c2604
+< p: We have solved problems like 3x− 4 = 11 by adding 4 to both sides and then
+< p: dividing by 3 (solution is x = 5). We also have methods to solve equations with more than one variable in them. It turns out that to solve for more than one variable we will need the same number of equations as variables. For example, to solve for two variables such as x and y we will need two equations. When we have several equations we are using to solve, we call the equations a system of equations. When solving a system of equations we are looking for a solution that works in both equations. This solution is usually given as an ordered pair (x, y). The following example illustrates a solution working in both equations
+---
+> p: We have solved problems like 3x− 4 = 11 by adding 4 to both sides and then dividing by 3 (solution is x = 5). We also have methods to solve equations with more than one variable in them. It turns out that to solve for more than one variable we will need the same number of equations as variables. For example, to solve for two variables such as x and y we will need two equations. When we have several equations we are using to solve, we call the equations a system of equations. When solving a system of equations we are looking for a solution that works in both equations. This solution is usually given as an ordered pair (x, y). The following example illustrates a solution working in both equations
+2743,2744c2701
+< p: By using the entire expression 3x− 7 to replace y in the other equation we were
+< p: able to reduce the system to a single linear equation which we can easily solve for our first variable. However, the lone variable (a variable without a coeﬃcient) is not always alone on one side of the equation. If this happens we can isolate it by solving for the lone variable.
+---
+> p: By using the entire expression 3x− 7 to replace y in the other equation we were able to reduce the system to a single linear equation which we can easily solve for our first variable. However, the lone variable (a variable without a coeﬃcient) is not always alone on one side of the equation. If this happens we can isolate it by solving for the lone variable.
+2800,2801c2757
+< p: In the previous example one variable had opposites in front of it,− 4y and 4y.
+< p: Adding these together eliminated the y completely. This allowed us to solve for the x. This is the idea behind the addition method. However, generally we won’t have opposites in front of one of the variables. In this case we will manipulate the equations to get the opposites we want by multiplying one or both equations (on both sides!). This is shown in the next example.
+---
+> p: In the previous example one variable had opposites in front of it,− 4y and 4y. Adding these together eliminated the y completely. This allowed us to solve for the x. This is the idea behind the addition method. However, generally we won’t have opposites in front of one of the variables. In this case we will manipulate the equations to get the opposites we want by multiplying one or both equations (on both sides!). This is shown in the next example.
+2813,2815c2769
+< p: When we looked at the x terms,− 6x and 2x we decided to multiply the 2x by 3
+< p: to get the opposites we were looking for. What we are looking for with our opposites is the least common multiple (LCM) of the coeﬃcients. We also could have solved the above problem by looking at the terms with y, 5y and 3y. The LCM of 3 and 5 is 15. So we would want to multiply both equations, the 5y by 3, and the 3y by− 5 to get opposites, 15y and− 15y. This illustrates an important point,
+< p: some problems we will have to multiply both equations by a constant (on both sides) to get the opposites we want.
+---
+> p: When we looked at the x terms,− 6x and 2x we decided to multiply the 2x by 3 to get the opposites we were looking for. What we are looking for with our opposites is the least common multiple (LCM) of the coeﬃcients. We also could have solved the above problem by looking at the terms with y, 5y and 3y. The LCM of 3 and 5 is 15. So we would want to multiply both equations, the 5y by 3, and the 3y by− 5 to get opposites, 15y and− 15y. This illustrates an important point, some problems we will have to multiply both equations by a constant (on both sides) to get the opposites we want.
+2919,2920c2873
+< p: The first column in the table is used for the number of things we have. Quite often, this will be our variables. The second column is used for the that value each item has. The third column is used for the total value which we calculate by multiplying the number by the value. For example, if we have 7 dimes, each with a value of 10 cents, the total value is 7· 10= 70 cents. The last row of the table is
+< p: for totals. We only will use the third row (also marked total) for the totals that [[p159]]are given to use. This means sometimes this row may have some blanks in it. Once the table is filled in we can easily make equations by adding each column, setting it equal to the total at the bottom of the column. This is shown in the following example.
+---
+> p: The first column in the table is used for the number of things we have. Quite often, this will be our variables. The second column is used for the that value each item has. The third column is used for the total value which we calculate by multiplying the number by the value. For example, if we have 7 dimes, each with a value of 10 cents, the total value is 7· 10= 70 cents. The last row of the table is for totals. We only will use the third row (also marked total) for the totals that [[p159]]are given to use. This means sometimes this row may have some blanks in it. Once the table is filled in we can easily make equations by adding each column, setting it equal to the total at the bottom of the column. This is shown in the following example.
+3355,3356c3308
+< p: As we multiply exponents its important to remember these properties apply to exponents, not bases. An expressions such as 53 does not mean we multipy 5 by 3, rather we multiply 5 three times, 5 × 5 × 5 = 125. This is shown in the next
+< p: example.
+---
+> p: As we multiply exponents its important to remember these properties apply to exponents, not bases. An expressions such as 53 does not mean we multipy 5 by 3, rather we multiply 5 three times, 5 × 5 × 5 = 125. This is shown in the next example.
+3743,3744c3695
+< p: It is important to be careful with negative variables and exponents. Remember the exponent only eﬀects the number it is physically attached to. This means−
+< p: 32 =− 9 because the exponent is only attached to the 3. Also, (− 3)2 = 9 because the exponent is attached to the parenthesis and eﬀects everything inside. When we replace a variable with parenthesis like in the previous example, the substituted value is in parenthesis. So the (− 4)2 = 16 in the example. However, consider the next example.
+---
+> p: It is important to be careful with negative variables and exponents. Remember the exponent only eﬀects the number it is physically attached to. This means− 32 =− 9 because the exponent is only attached to the 3. Also, (− 3)2 = 9 because the exponent is attached to the parenthesis and eﬀects everything inside. When we replace a variable with parenthesis like in the previous example, the substituted value is in parenthesis. So the (− 4)2 = 16 in the example. However, consider the next example.
+3915,3916c3866
+< p: Some students like to think of the FOIL method as distributing the first term 4x through the (3x− 2y) and distributing the second term 7y through the (3x− 2y).
+< p: Thinking about FOIL in this way makes it possible to extend this method to problems with more terms.
+---
+> p: Some students like to think of the FOIL method as distributing the first term 4x through the (3x− 2y) and distributing the second term 7y through the (3x− 2y). Thinking about FOIL in this way makes it possible to extend this method to problems with more terms.
+3929,3930c3879
+< p: The second step of the FOIL method is often not written, for example, consider the previous example, a student will often go from the problem (4x + 7y)(3x− 2y)
+< p: and do the multiplication mentally to come up with 12x2 − 8xy + 21xy− 14y2 and then combine like terms to come up with the final solution.
+---
+> p: The second step of the FOIL method is often not written, for example, consider the previous example, a student will often go from the problem (4x + 7y)(3x− 2y) and do the multiplication mentally to come up with 12x2 − 8xy + 21xy− 14y2 and then combine like terms to come up with the final solution.
+4080,4081c4029
+< p: Be very careful when we are squaring a binomial to NOT distribute the square through the parenthesis. A common error is to do the following: (x− 5)2 = x2 − 25 (or x2 + 25). Notice both of these are missing the middle term,− 10x. This is
+< p: why it is important to use the shortcut to help us find the correct solution. Another important observation is that the middle term in the solution always has the same sign as the middle term in the problem. This is illustrated in the next examples.
+---
+> p: Be very careful when we are squaring a binomial to NOT distribute the square through the parenthesis. A common error is to do the following: (x− 5)2 = x2 − 25 (or x2 + 25). Notice both of these are missing the middle term,− 10x. This is why it is important to use the shortcut to help us find the correct solution. Another important observation is that the middle term in the solution always has the same sign as the middle term in the problem. This is illustrated in the next examples.
+4452,4453c4400
+< p: when the signs don’t match on both terms we can easily make them match by factoring the opposite of the GCF on the right side. Instead of 7 we will use− 7.
+< p: This will change the signs inside the second parenthesis.
+---
+> p: when the signs don’t match on both terms we can easily make them match by factoring the opposite of the GCF on the right side. Instead of 7 we will use− 7. This will change the signs inside the second parenthesis.
+4463,4464c4410
+< p: Sometimes when factoring the GCF out of the left or right side there is no GCF to factor out. In this case we will use either the GCF of 1 or− 1. Often this is all
+< p: we need to be sure the two binomials match.
+---
+> p: Sometimes when factoring the GCF out of the left or right side there is no GCF to factor out. In this case we will use either the GCF of 1 or− 1. Often this is all we need to be sure the two binomials match.
+4484,4485c4430
+< p: However, if the binomial has subtraction, then we need to be a bit more careful. For example, if the binomials are (a− b) and (b− a), we will factor out the oppo-
+< p: site of the GCF on one part, usually the second. Notice what happens when we factor out− 1.
+---
+> p: However, if the binomial has subtraction, then we need to be a bit more careful. For example, if the binomials are (a− b) and (b− a), we will factor out the opposite of the GCF on one part, usually the second. Notice what happens when we factor out− 1.
+4559,4560c4504
+< p: You may notice that if you reverse the last three steps the process looks like grouping. This is because it is grouping! The GCF of the left two terms is x and the GCF of the second two terms is− 4. The way we will factor trinomials is to
+< p: make them into a polynomial with four terms and then factor by grouping. This is shown in the following example, the same problem worked backwards
+---
+> p: You may notice that if you reverse the last three steps the process looks like grouping. This is because it is grouping! The GCF of the left two terms is x and the GCF of the second two terms is− 4. The way we will factor trinomials is to make them into a polynomial with four terms and then factor by grouping. This is shown in the following example, the same problem worked backwards
+4569,4570c4513
+< p: The trick to make these problems work is how we split the middle term. Why did we pick + 6x− 4x and not + 5x− 3x? The reason is because 6x− 4x is the only
+< p: combination that works! So how do we know what is the one combination that works? To find the correct way to split the middle term we will use what is called the ac method. In the next lesson we will discuss why it is called the ac method. The way the ac method works is we find a pair of numers that multiply to a certain number and add to another number. Here we will try to multiply to get the last term and add to get the coeﬃcient of the middle term. In the previous [[p222]]example that would mean we wanted to multiply to− 24 and add to + 2. The
+---
+> p: The trick to make these problems work is how we split the middle term. Why did we pick + 6x− 4x and not + 5x− 3x? The reason is because 6x− 4x is the only combination that works! So how do we know what is the one combination that works? To find the correct way to split the middle term we will use what is called the ac method. In the next lesson we will discuss why it is called the ac method. The way the ac method works is we find a pair of numers that multiply to a certain number and add to another number. Here we will try to multiply to get the last term and add to get the coeﬃcient of the middle term. In the previous [[p222]]example that would mean we wanted to multiply to− 24 and add to + 2. The
+4632,4633c4575
+< p: You may have noticed a shortcut for factoring these problems. Once we identify the two numbers that are used to split the middle term, these are the two numbers in our factors! In the previous example, the numbers used to split the middle term were 6 and− 1, our factors turned out to be (x + 6)(x− 1). This pattern
+< p: does not always work, so be careful getting in the habit of using it. We can use it however, when we have no number (technically we have a 1) in front of x2
+---
+> p: You may have noticed a shortcut for factoring these problems. Once we identify the two numbers that are used to split the middle term, these are the two numbers in our factors! In the previous example, the numbers used to split the middle term were 6 and− 1, our factors turned out to be (x + 6)(x− 1). This pattern does not always work, so be careful getting in the habit of using it. We can use it however, when we have no number (technically we have a 1) in front of x2
+4727,4728c4669
+< p: The ac method is named ac because we multiply a· c to find out what we want to
+< p: multiply to. In the previous lesson we always multiplied to just c because there was no number in front of x2. This meant the number was 1 and we were multiplying to 1c or just c. Now we will have a number in front of x2 so we will be looking for numbers that multiply to ac and add to b. Other than this, the process will be the same.
+---
+> p: The ac method is named ac because we multiply a· c to find out what we want to multiply to. In the previous lesson we always multiplied to just c because there was no number in front of x2. This meant the number was 1 and we were multiplying to 1c or just c. Now we will have a number in front of x2 so we will be looking for numbers that multiply to ac and add to b. Other than this, the process will be the same.
+4737,4738c4678
+< p: When a = 1, or no coeﬃcient in front of x2, we were able to use a shortcut, using the numbers that split the middle term in the factors. The previous example illustrates an important point, the shortcut does not work when a 1. We must go
+< p: through all the steps of grouping in order to factor the problem.
+---
+> p: When a = 1, or no coeﬃcient in front of x2, we were able to use a shortcut, using the numbers that split the middle term in the factors. The previous example illustrates an important point, the shortcut does not work when a 1. We must go through all the steps of grouping in order to factor the problem.
+5157,5158c5097
+< p: When solving linear equations such as 2x− 5 = 21 we can solve for the variable
+< p: directly by adding 5 and dividing by 2 to get 13. However, when we have x2 (or a higher power of x) we cannot just isolate the variable as we did with the linear equations. One method that we can use to solve for the varaible is known as the zero product rule
+---
+> p: When solving linear equations such as 2x− 5 = 21 we can solve for the variable directly by adding 5 and dividing by 2 to get 13. However, when we have x2 (or a higher power of x) we cannot just isolate the variable as we did with the linear equations. One method that we can use to solve for the varaible is known as the zero product rule
+5518,5519c5457
+< p: The previous example could have also been done with factoring the first polynomial to (x− 5)(x− 5). Then we would have used (x− 5) twice in the LCD
+< p: because it showed up twice in one of the polynomials. However, it is the author’s suggestion to use the exponents in factored form so as to use the same pattern (highest exponent) as used with monomials.
+---
+> p: The previous example could have also been done with factoring the first polynomial to (x− 5)(x− 5). Then we would have used (x− 5) twice in the LCD because it showed up twice in one of the polynomials. However, it is the author’s suggestion to use the exponents in factored form so as to use the same pattern (highest exponent) as used with monomials.
+6250,6251c6188
+< p: The previous example could have been done in fewer steps if we had noticed that 72= 36· 2, but often the time it takes to discover the larger perfect square is more
+< p: than it would take to simplify in several steps.
+---
+> p: The previous example could have been done in fewer steps if we had noticed that 72= 36· 2, but often the time it takes to discover the larger perfect square is more than it would take to simplify in several steps.
+6438,6439c6375
+< p: these we get a diﬀerence of squares. Squaring 3 √ and 5, with subtraction in the middle gives the product 3− 25=− 22. Our answer when multiplying conjugates
+< p: will no longer have a square root. This is exactly what we want.
+---
+> p: these we get a diﬀerence of squares. Squaring 3 √ and 5, with subtraction in the middle gives the product 3− 25=− 22. Our answer when multiplying conjugates will no longer have a square root. This is exactly what we want.
+6659,6662c6595
+< p: With this definition, the square root of a negative number is no longer undefined. We now are allowed to do basic operations with the square root of negatives. First we will consider exponents on imaginary numbers. We will do this by manipulating our definition of i2 =− 1. If we multiply both sides of the definition by i, the equation becomes i3 =− i. Then if we multiply both sides of the equa-
+< p: tion again by i, the equation becomes i4 =− i2 =− (− 1) = 1, or simply i4 = 1. Multiplying again by i gives i5 = i. One more time gives i6 = i2 =− 1. And if this
+< p: pattern continues we see a cycle forming, the exponents on i change we cycle through simplified answers of i,− 1,− i, 1. As there are 4 diﬀerent possible
+< p: answers in this cycle, if we divide the exponent by 4 and consider the remainder, we can simplify any exponent on i by learning just the following four values:
+---
+> p: With this definition, the square root of a negative number is no longer undefined. We now are allowed to do basic operations with the square root of negatives. First we will consider exponents on imaginary numbers. We will do this by manipulating our definition of i2 =− 1. If we multiply both sides of the definition by i, the equation becomes i3 =− i. Then if we multiply both sides of the equation again by i, the equation becomes i4 =− i2 =− (− 1) = 1, or simply i4 = 1. Multiplying again by i gives i5 = i. One more time gives i6 = i2 =− 1. And if this pattern continues we see a cycle forming, the exponents on i change we cycle through simplified answers of i,− 1,− i, 1. As there are 4 diﬀerent possible answers in this cycle, if we divide the exponent by 4 and consider the remainder, we can simplify any exponent on i by learning just the following four values:
+6715,6718c6648
+< p: Dividing with complex numbers also has one thing we need to be careful of. If i is
+< p: √ , and it is in the denominator of a fraction, then we have a radical in the
+< pre: − 1
+< p: denominator! This means we will want to rationalize our denominator so there are no i’s. This is done the same way we rationalized denominators with square roots.
+---
+> p: Dividing with complex numbers also has one thing we need to be careful of. If i is − 1 √ , and it is in the denominator of a fraction, then we have a radical in the denominator! This means we will want to rationalize our denominator so there are no i’s. This is done the same way we rationalized denominators with square roots.
+6751,6752c6681
+< p: When simplifying complex radicals it is important that we take the− 1 out of the
+< p: radical (as an i) before we combine radicals.
+---
+> p: When simplifying complex radicals it is important that we take the− 1 out of the radical (as an i) before we combine radicals.
+6903,6904c6832
+< p: However, when the exponent is even we will have two results from taking an even root of both sides. One will be positive and one will be negative. This is because both 32 = 9 and (− 3)2 = 9. so when solving x2 = 9 we will have two solutions, one
+< p: positive and one negative: x = 3and− 3
+---
+> p: However, when the exponent is even we will have two results from taking an even root of both sides. One will be positive and one will be negative. This is because both 32 = 9 and (− 3)2 = 9. so when solving x2 = 9 we will have two solutions, one positive and one negative: x = 3and− 3
+6918,6919c6846
+< p: In the previous example we needed two equations to simplify because when we took the root, our solutions were two rational numbers, 6 and− 6. If the roots did
+< p: not simplify to rational numbers we can keep the ± in the equation.
+---
+> p: In the previous example we needed two equations to simplify because when we took the root, our solutions were two rational numbers, 6 and− 6. If the roots did not simplify to rational numbers we can keep the ± in the equation.
+6933,6934c6860
+< p: have done this we can clear the exponent using either the even ( ± ) or odd root
+< p: property. Then we can clear the radical by raising both sides to an exponent (remember to check answers if the index is even).
+---
+> p: have done this we can clear the exponent using either the even ( ± ) or odd root property. Then we can clear the radical by raising both sides to an exponent (remember to check answers if the index is even).
+6944,6945c6870
+< p: With rational exponents it is very helpful to convert to radical form to be able to see if we need a ± because we used the even root property, or to see if we need
+< p: to check our answer because there was an even root in the problem. When checking we will usually want to check in the radical form as it will be easier to evaluate.
+---
+> p: With rational exponents it is very helpful to convert to radical form to be able to see if we need a ± because we used the even root property, or to see if we need to check our answer because there was an even root in the problem. When checking we will usually want to check in the radical form as it will be easier to evaluate.
+7099,7100c7024
+< p: If the solutions have radicals (or complex numbers) then we cannot use reverse factoring. In these cases we will use reverse completing the square. When there are radicals the solutions will always come in pairs, one with a plus, one with a minus, that can be combined into “one” solution using ± . We will then set this
+< p: solution equal to x and square both sides. This will clear the radical from our problem.
+---
+> p: If the solutions have radicals (or complex numbers) then we cannot use reverse factoring. In these cases we will use reverse completing the square. When there are radicals the solutions will always come in pairs, one with a plus, one with a minus, that can be combined into “one” solution using ± . We will then set this solution equal to x and square both sides. This will clear the radical from our problem.
+7572,7574c7496
+< p: Graph the y-intercept at 3, the x-intercepts at− 3 and− 1, and the
+< p: vertex at (− 2,− 1). Connect the dots
+< p: with a smooth curve in a U shape to get our parabola.
+---
+> p: Graph the y-intercept at 3, the x-intercepts at− 3 and− 1, and the vertex at (− 2,− 1). Connect the dots with a smooth curve in a U shape to get our parabola.
+7580,7581c7502
+< p: Graph the y-intercept at− 9, the x-
+< p: intercepts at 3 and 1, and the vertex at (2, 3). Connect the dots with smooth curve in an upside-down U shape to
+---
+> p: Graph the y-intercept at− 9, the x-intercepts at 3 and 1, and the vertex at (2, 3). Connect the dots with smooth curve in an upside-down U shape to
+7853,7854c7774
+< p: It is important to note that very rarely is (f ◦ g)(x) the same as (g ◦ f)(x) as the
+< p: following example will show, using the same equations, but compositing them in the opposite direction.
+---
+> p: It is important to note that very rarely is (f ◦ g)(x) the same as (g ◦ f)(x) as the following example will show, using the same equations, but compositing them in the opposite direction.
+7906,7910c7826,7827
+< p: For example, if f(x) = x + 5, we could deduce that the inverse function would be f−1(x) = x− 5. If we had an input of 3, we could calculate f(3) = (3) + 5 = 8. Our
+< p: output is 8. If we plug this output into the inverse function we get f−1(8) = (8)−
+< p: 5= 3, which is the original input.
+< p: Often the functions are much more involved than those described above. It may be diﬃcult to determine just by looking at the functions if they are inverses. In order to test if two functions, f(x) and g(x) are inverses we will calculate the composition of the two functions at x. If f changes the variable x in some way, then g undoes whatever f did, then we will be back at x again for our final solution. In otherwords, if we simplify (f ◦ g)(x) the solution will be x. If it is any-
+< p: thing but x the functions are not inverses.
+---
+> p: For example, if f(x) = x + 5, we could deduce that the inverse function would be f−1(x) = x− 5. If we had an input of 3, we could calculate f(3) = (3) + 5 = 8. Our output is 8. If we plug this output into the inverse function we get f−1(8) = (8)− 5= 3, which is the original input.
+> p: Often the functions are much more involved than those described above. It may be diﬃcult to determine just by looking at the functions if they are inverses. In order to test if two functions, f(x) and g(x) are inverses we will calculate the composition of the two functions at x. If f changes the variable x in some way, then g undoes whatever f did, then we will be back at x again for our final solution. In otherwords, if we simplify (f ◦ g)(x) the solution will be x. If it is anything but x the functions are not inverses.
+7986,7987c7903
+< p: Solving exponetial equations cannot be done using the skill set we have seen in the past. For example, if 3x = 9, we cannot take the x− root of 9 because we do
+< p: not know what the index is and this doesn’t get us any closer to finding x. However, we may notice that 9 is 32. We can then conclude that if 3x = 32 then x = 2. This is the process we will use to solve exponential functions. If we can re-write a problem so the bases match, then the exponents must also match.
+---
+> p: Solving exponetial equations cannot be done using the skill set we have seen in the past. For example, if 3x = 9, we cannot take the x− root of 9 because we do not know what the index is and this doesn’t get us any closer to finding x. However, we may notice that 9 is 32. We can then conclude that if 3x = 32 then x = 2. This is the process we will use to solve exponential functions. If we can re-write a problem so the bases match, then the exponents must also match.
+8448,8449c8364
+< p: Just as with inverse functions, the− 1 is not an exponent, it is a notation to tell
+< p: us that these are inverse functions. While the regular trig functions take angles as inputs, these inverse functions will always take a ratio of sides as inputs. We can calculate inverse trig values using a table or a calculator (usually pressing shift or 2nd first).
+---
+> p: Just as with inverse functions, the− 1 is not an exponent, it is a notation to tell us that these are inverse functions. While the regular trig functions take angles as inputs, these inverse functions will always take a ratio of sides as inputs. We can calculate inverse trig values using a table or a calculator (usually pressing shift or 2nd first).

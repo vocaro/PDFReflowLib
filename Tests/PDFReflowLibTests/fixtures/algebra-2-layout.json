@@ -1,0 +1,849 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        84.9602,
+        746.81915319999996,
+        113.7000548131863,
+        9.8729762399999572
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "ISBN #978-1-4583-7768-5"
+        }
+      ],
+      "text" : "ISBN #978-1-4583-7768-5"
+    },
+    {
+      "rect" : [
+        84.9602,
+        725.33905319999997,
+        212.16940711367329,
+        9.8729762399999572
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "Copyright 2010, Some Rights Reserved CC-BY."
+        }
+      ],
+      "text" : "Copyright 2010, Some Rights Reserved CC-BY."
+    },
+    {
+      "rect" : [
+        84.9602,
+        671.93914829999994,
+        425.24258283277186,
+        9.8729960599999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "Beginning and Intermediate Algebra by Tyler Wallace is licensed under a Creative Commons"
+        }
+      ],
+      "text" : "Beginning and Intermediate Algebra by Tyler Wallace is licensed under a Creative Commons"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        659.69894829999998,
+        359.55226951521337,
+        9.8729960599999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "Attribution 3.0 Unported License. (http://creativecommons.org/licenses/by/3.0/)"
+        }
+      ],
+      "text" : "Attribution 3.0 Unported License. (http://creativecommons.org/licenses/by/3.0/)"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        638.21884829999999,
+        287.6491484785372,
+        9.8729960599999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "Based on a work at http://wallace.ccfaculty.org/book/book.html."
+        }
+      ],
+      "text" : "Based on a work at http://wallace.ccfaculty.org/book/book.html."
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        595.2586483,
+        55.929374184455213,
+        9.8729960599999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "You are free:"
+        }
+      ],
+      "text" : "You are free:"
+    },
+    {
+      "rect" : [
+        98.28009999999999,
+        559.69554640000001,
+        241.77949940352079,
+        17.036148600000047
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "• to Share: to copy, distribute and transmit the work"
+        }
+      ],
+      "text" : "• to Share: to copy, distribute and transmit the work"
+    },
+    {
+      "rect" : [
+        98.28009999999999,
+        531.25534640000001,
+        142.05953283096915,
+        17.036148600000047
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "• to Remix: to adapt the work"
+        }
+      ],
+      "text" : "• to Remix: to adapt the work"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        509.93884830000007,
+        137.04969936021274,
+        9.8729960600000481
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "Under the following conditions:"
+        }
+      ],
+      "text" : "Under the following conditions:"
+    },
+    {
+      "rect" : [
+        98.28009999999999,
+        474.37534640000007,
+        411.90457009027119,
+        17.03614859999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "• Attribution: You must attribute the work in the manner specified by the author or"
+        }
+      ],
+      "text" : "• Attribution: You must attribute the work in the manner specified by the author or"
+    },
+    {
+      "rect" : [
+        114.96019999999999,
+        469.25884830000007,
+        395.14079182002081,
+        9.8729960599999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "licensor (but not in any way that suggests that they endorse you or your use of the"
+        }
+      ],
+      "text" : "licensor (but not in any way that suggests that they endorse you or your use of the"
+    },
+    {
+      "rect" : [
+        114.96019999999999,
+        457.1389483000001,
+        27.849698967146992,
+        9.8729960599999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "work)."
+        }
+      ],
+      "text" : "work)."
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        428.69874830000009,
+        129.72863458448478,
+        9.8729960599999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "With the understanding that:"
+        }
+      ],
+      "text" : "With the understanding that:"
+    },
+    {
+      "rect" : [
+        98.28009999999999,
+        393.13524640000009,
+        411.91770294055453,
+        17.03614859999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "• Waiver: Any of the above conditions can be waived if you get permission from the copy-"
+        }
+      ],
+      "text" : "• Waiver: Any of the above conditions can be waived if you get permission from the copy-"
+    },
+    {
+      "rect" : [
+        114.96019999999999,
+        388.01874830000008,
+        54.249701847996391,
+        9.8729960599999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "right holder."
+        }
+      ],
+      "text" : "right holder."
+    },
+    {
+      "rect" : [
+        98.28009999999999,
+        352.45524640000008,
+        411.90383715468846,
+        17.03614859999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "• Public Domain: Where the work or any of its elements is in the public domain under"
+        }
+      ],
+      "text" : "• Public Domain: Where the work or any of its elements is in the public domain under"
+    },
+    {
+      "rect" : [
+        114.96019999999999,
+        347.45864830000011,
+        274.32847123775184,
+        9.8729960599999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "applicable law, that status is in no way aﬀected by the license."
+        }
+      ],
+      "text" : "applicable law, that status is in no way aﬀected by the license."
+    },
+    {
+      "rect" : [
+        98.280200000000036,
+        311.89554640000011,
+        360.24688185988248,
+        17.03614859999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "• Other Rights: In no way are any of the following rights aﬀected by the license:"
+        }
+      ],
+      "text" : "• Other Rights: In no way are any of the following rights aﬀected by the license:"
+    },
+    {
+      "rect" : [
+        125.51930000000004,
+        283.45534640000011,
+        384.6068059372958,
+        17.03614859999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "− Your fair dealing or fair use rights, or other applicable copyright exceptions and"
+        }
+      ],
+      "text" : "− Your fair dealing or fair use rights, or other applicable copyright exceptions and"
+    },
+    {
+      "rect" : [
+        144.95950000000005,
+        278.33884830000011,
+        49.449298057465484,
+        9.8729960599999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "limitations;"
+        }
+      ],
+      "text" : "limitations;"
+    },
+    {
+      "rect" : [
+        125.51930000000004,
+        242.7753464000001,
+        134.88966210174522,
+        17.03614859999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "− The author’s moral rights;"
+        }
+      ],
+      "text" : "− The author’s moral rights;"
+    },
+    {
+      "rect" : [
+        125.51930000000004,
+        214.33554640000011,
+        384.61059574223134,
+        17.03614859999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "− Rights other persons may have either in the work itself or in how the work is used"
+        }
+      ],
+      "text" : "− Rights other persons may have either in the work itself or in how the work is used"
+    },
+    {
+      "rect" : [
+        144.95950000000005,
+        209.21864830000013,
+        148.52492799052891,
+        9.8729960599999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "such as publicity or privacy rights"
+        }
+      ],
+      "text" : "such as publicity or privacy rights"
+    },
+    {
+      "rect" : [
+        98.279400000000038,
+        173.65554640000013,
+        411.87678364097462,
+        17.036148600000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "• Notice: For any reuse or distribution, you must make clear to others the license term of"
+        }
+      ],
+      "text" : "• Notice: For any reuse or distribution, you must make clear to others the license term of"
+    },
+    {
+      "rect" : [
+        114.95950000000005,
+        168.65854830000012,
+        331.32954118579602,
+        9.8729960599999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "this work. The best way to do this is with a link to the following web page:"
+        }
+      ],
+      "text" : "this work. The best way to do this is with a link to the following web page:"
+    },
+    {
+      "rect" : [
+        114.95950000000005,
+        147.17844830000013,
+        198.17977246106329,
+        9.8729960599999913
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "http://creativecommons.org/licenses/by/3.0/"
+        }
+      ],
+      "text" : "http://creativecommons.org/licenses/by/3.0/"
+    },
+    {
+      "rect" : [
+        84.959500000000048,
+        118.73864830000012,
+        425.21971911797726,
+        9.8729960600000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "This is a human readable summary of the full legal code which can be read at the following"
+        }
+      ],
+      "text" : "This is a human readable summary of the full legal code which can be read at the following"
+    },
+    {
+      "rect" : [
+        84.959500000000048,
+        106.49844830000012,
+        265.18135275628464,
+        9.8729960600000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "URL: http://creativecommons.org/licenses/by/3.0/legalcode"
+        }
+      ],
+      "text" : "URL: http://creativecommons.org/licenses/by/3.0/legalcode"
+    },
+    {
+      "rect" : [
+        302.15960000000007,
+        52.378548300000112,
+        4.981330000000014,
+        9.8729960599999984
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626600000000014,
+          "text" : "2"
+        }
+      ],
+      "text" : "2"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      84.960000000000008,
+      695.86000000000013,
+      52.800000000000011,
+      18.600000000000023
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        746.81915319999996,
+        113.7000548131863,
+        9.8729762399999572
+      ],
+      "text" : "ISBN #978-1-4583-7768-5"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        725.33905319999997,
+        212.16940711367329,
+        9.8729762399999572
+      ],
+      "text" : "Copyright 2010, Some Rights Reserved CC-BY."
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        671.93914829999994,
+        425.24258283277186,
+        9.8729960599999913
+      ],
+      "text" : "Beginning and Intermediate Algebra by Tyler Wallace is licensed under a Creative Commons"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        659.69894829999998,
+        359.55226951521337,
+        9.8729960599999913
+      ],
+      "text" : "Attribution 3.0 Unported License. (http://creativecommons.org/licenses/by/3.0/)"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        638.21884829999999,
+        287.6491484785372,
+        9.8729960599999913
+      ],
+      "text" : "Based on a work at http://wallace.ccfaculty.org/book/book.html."
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        595.2586483,
+        55.929374184455213,
+        9.8729960599999913
+      ],
+      "text" : "You are free:"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        98.28009999999999,
+        559.69554640000001,
+        241.77949940352079,
+        17.036148600000047
+      ],
+      "text" : "• to Share: to copy, distribute and transmit the work"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        98.28009999999999,
+        531.25534640000001,
+        142.05953283096915,
+        17.036148600000047
+      ],
+      "text" : "• to Remix: to adapt the work"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        509.93884830000007,
+        137.04969936021274,
+        9.8729960600000481
+      ],
+      "text" : "Under the following conditions:"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        98.28009999999999,
+        474.37534640000007,
+        411.90457009027119,
+        17.03614859999999
+      ],
+      "text" : "• Attribution: You must attribute the work in the manner specified by the author or"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        114.96019999999999,
+        469.25884830000007,
+        395.14079182002081,
+        9.8729960599999913
+      ],
+      "text" : "licensor (but not in any way that suggests that they endorse you or your use of the"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        114.96019999999999,
+        457.1389483000001,
+        27.849698967146992,
+        9.8729960599999913
+      ],
+      "text" : "work)."
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        428.69874830000009,
+        129.72863458448478,
+        9.8729960599999913
+      ],
+      "text" : "With the understanding that:"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        98.28009999999999,
+        393.13524640000009,
+        411.91770294055453,
+        17.03614859999999
+      ],
+      "text" : "• Waiver: Any of the above conditions can be waived if you get permission from the copy-"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        114.96019999999999,
+        388.01874830000008,
+        54.249701847996391,
+        9.8729960599999913
+      ],
+      "text" : "right holder."
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        98.28009999999999,
+        352.45524640000008,
+        411.90383715468846,
+        17.03614859999999
+      ],
+      "text" : "• Public Domain: Where the work or any of its elements is in the public domain under"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        114.96019999999999,
+        347.45864830000011,
+        274.32847123775184,
+        9.8729960599999913
+      ],
+      "text" : "applicable law, that status is in no way aﬀected by the license."
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        98.280200000000036,
+        311.89554640000011,
+        360.24688185988248,
+        17.03614859999999
+      ],
+      "text" : "• Other Rights: In no way are any of the following rights aﬀected by the license:"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        125.51930000000004,
+        283.45534640000011,
+        384.6068059372958,
+        17.03614859999999
+      ],
+      "text" : "− Your fair dealing or fair use rights, or other applicable copyright exceptions and"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        144.95950000000005,
+        278.33884830000011,
+        49.449298057465484,
+        9.8729960599999913
+      ],
+      "text" : "limitations;"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        125.51930000000004,
+        242.7753464000001,
+        134.88966210174522,
+        17.03614859999999
+      ],
+      "text" : "− The author’s moral rights;"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        125.51930000000004,
+        214.33554640000011,
+        384.61059574223134,
+        17.03614859999999
+      ],
+      "text" : "− Rights other persons may have either in the work itself or in how the work is used"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        144.95950000000005,
+        209.21864830000013,
+        148.52492799052891,
+        9.8729960599999913
+      ],
+      "text" : "such as publicity or privacy rights"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        98.279400000000038,
+        173.65554640000013,
+        411.87678364097462,
+        17.036148600000018
+      ],
+      "text" : "• Notice: For any reuse or distribution, you must make clear to others the license term of"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        114.95950000000005,
+        168.65854830000012,
+        331.32954118579602,
+        9.8729960599999913
+      ],
+      "text" : "this work. The best way to do this is with a link to the following web page:"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        114.95950000000005,
+        147.17844830000013,
+        198.17977246106329,
+        9.8729960599999913
+      ],
+      "text" : "http://creativecommons.org/licenses/by/3.0/"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        84.959500000000048,
+        118.73864830000012,
+        425.21971911797726,
+        9.8729960600000055
+      ],
+      "text" : "This is a human readable summary of the full legal code which can be read at the following"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        84.959500000000048,
+        106.49844830000012,
+        265.18135275628464,
+        9.8729960600000055
+      ],
+      "text" : "URL: http://creativecommons.org/licenses/by/3.0/legalcode"
+    },
+    {
+      "fontSize" : 9.9626600000000014,
+      "monospaced" : false,
+      "rect" : [
+        302.15960000000007,
+        52.378548300000112,
+        4.981330000000014,
+        9.8729960599999984
+      ],
+      "text" : "2"
+    }
+  ],
+  "page" : 2,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        84.960000000000008,
+        695.86000000000013,
+        52.800000000000011,
+        18.600000000000023
+      ]
+    }
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

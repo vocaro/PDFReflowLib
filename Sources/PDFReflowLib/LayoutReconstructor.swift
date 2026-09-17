@@ -249,13 +249,25 @@ enum LayoutReconstructor {
     /// one line of its type: from the highest bottom edge among the pieces, as tall as the page's
     /// ordinary lines of that size, so the paragraph rules see the row's leading rather than the
     /// radical signs' overshoot.
+    ///
+    /// A joined row that opens with a mathematical minus before a number or a variable (page 321's
+    /// radicand `− 1`, read ahead of `√ , and it is in the denominator…`) is not a list line, though
+    /// `isList` reads `− ` as a bullet; its opening piece must not have been a list line on its own
+    /// (#109). Such rows are returned in `mathMinusRows`, and the list rules pass over them. `isList`
+    /// itself is unchanged: across the corpus a line opening with U+2212 is Wallace's alone, and the
+    /// equation and derivation lines that open with one stay separate blocks.
     static func joiningRowPieces(_ lines: [TextLine], images: [CGRect], body: CGFloat) -> [TextLine] {
+        joinedRows(lines, images: images, body: body).lines
+    }
+
+    static func joinedRows(_ lines: [TextLine], images: [CGRect], body: CGFloat)
+        -> (lines: [TextLine], mathMinusRows: [TextLine]) {
         let sized = lines.indices.filter { index in
             let line = lines[index]
             return line.structure == nil && !line.monospaced && abs(line.fontSize - body) <= body * 0.15
                 && !line.text.trimmingCharacters(in: .whitespaces).isEmpty
         }
-        guard sized.count >= 2 else { return lines }
+        guard sized.count >= 2 else { return (lines, []) }
         func signed(_ text: Substring) -> Bool { text.rangeOfCharacter(from: rowMathSymbols) != nil }
         func word(_ token: Substring) -> Bool { token.filter(\.isLetter).count >= 2 }
         func candidate(_ a: TextLine, _ b: TextLine) -> Bool {
@@ -325,14 +337,10 @@ enum LayoutReconstructor {
             band[a] = shared
         }
         let clusters = Dictionary(grouping: sized, by: root).values.filter { $0.count >= 2 }
-        guard !clusters.isEmpty else { return lines }
-        // The page's ordinary line height at a size: the median height of its lines of that size.
-        func lineHeight(_ size: CGFloat) -> CGFloat? {
-            let heights = lines.filter { abs($0.fontSize - size) <= size * 0.1 }.map(\.rect.height).sorted()
-            return heights.isEmpty ? nil : heights[heights.count / 2]
-        }
+        guard !clusters.isEmpty else { return (lines, []) }
         var replaced: [Int: TextLine] = [:]
         var removed = Set<Int>()
+        var mathMinusRows: [TextLine] = []
         for cluster in clusters {
             let pieces = cluster.sorted { lines[$0].rect.midX < lines[$1].rect.midX }
             guard pieces.contains(where: { lines[$0].text.rangeOfCharacter(from: rowMathSymbols) != nil }),
@@ -342,14 +350,19 @@ enum LayoutReconstructor {
                 if !content.elements.isEmpty { content.append(InlineText(" ")) }
                 content.append(lines[index].content)
             }
-            // A radicand read ahead of its sign must not turn the row into a list line: `− 1` inside
-            // `√ , and it is in the denominator…` (page 321) would open `− 1 √ , …`.
+            // The joined row must not turn into a list line that its opening piece was not, unless
+            // what reads as a marker is a minus sign before a number or variable: page 321's
+            // radicand `− 1`, read ahead of `√ , and it is in the denominator…` (#109).
+            var opensWithMathMinus = false
             if let opening = pieces.min(by: { lines[$0].rect.minX < lines[$1].rect.minX }),
-               isList(content.text), !isList(lines[opening].text) { continue }
+               isList(content.text), !isList(lines[opening].text) {
+                guard opensWithMinusSign(content.text) else { continue }
+                opensWithMathMinus = true
+            }
             let first = lines[pieces[0]], last = lines[pieces[pieces.count - 1]]
             let bounds = union(pieces.map { lines[$0].rect })
             let bottom = pieces.map { lines[$0].rect.minY }.max() ?? bounds.minY
-            let height = min(bounds.maxY - bottom, lineHeight(first.fontSize) ?? first.rect.height)
+            let height = min(bounds.maxY - bottom, ordinaryLineHeight(first.fontSize, in: lines) ?? first.rect.height)
             var joined = TextLine(content: content, rect: CGRect(x: bounds.minX, y: bottom, width: bounds.width, height: height),
                                   fontSize: first.fontSize, wraps: last.wraps)
             if pieces.contains(where: { lines[$0].readingRect != nil }) {
@@ -359,10 +372,24 @@ enum LayoutReconstructor {
             let anchor = cluster.min()!
             replaced[anchor] = joined
             removed.formUnion(cluster.filter { $0 != anchor })
+            if opensWithMathMinus { mathMinusRows.append(joined) }
         }
-        return lines.indices.compactMap { index in
+        return (lines.indices.compactMap { index in
             removed.contains(index) ? nil : replaced[index] ?? lines[index]
-        }
+        }, mathMinusRows)
+    }
+
+    /// A line that opens with a mathematical minus (U+2212) before a number or a single-letter
+    /// variable (`− 1`, `− 3x`, `− x +6y`), rather than a bullet before a word (`− Your fair dealing`,
+    /// the license list on Wallace page 2).
+    static func opensWithMinusSign(_ text: String) -> Bool {
+        text.range(of: "^−\\s+(?:[0-9]|[A-Za-z](?![A-Za-z]))", options: .regularExpression) != nil
+    }
+
+    /// The page's ordinary line height at a size: the median height of its lines of that size.
+    static func ordinaryLineHeight(_ size: CGFloat, in lines: [TextLine]) -> CGFloat? {
+        let heights = lines.filter { abs($0.fontSize - size) <= size * 0.1 }.map(\.rect.height).sorted()
+        return heights.isEmpty ? nil : heights[heights.count / 2]
     }
 
     private struct Region {
@@ -1675,8 +1702,10 @@ enum LayoutReconstructor {
         let tableLines = tables.flatMap(\.lines)
         // A marker PDFKit split from its item's text rejoins it before anything reads the lines.
         // So do the pieces of a prose row PDFKit split at an inline radical (#95).
-        let free = joiningRowPieces(joiningMarkerPieces(lines.filter { line in !tableLines.contains(line) }),
-                                    images: images.map(\.0), body: body)
+        let (free, mathMinusRows) = joinedRows(joiningMarkerPieces(lines.filter { line in !tableLines.contains(line) }),
+                                               images: images.map(\.0), body: body)
+        // A list line, except a joined prose row whose apparent marker is a minus sign (#109).
+        func listLine(_ line: TextLine) -> Bool { isList(line.text) && !mathMinusRows.contains(line) }
         // Preserve existing modest-size headings, but reject candidates within 10% of the
         // supported reflowable body size. This only narrows the original page-size heuristic.
         // Small text inside reflowed boxes and tables does not lower the body estimate, so a
@@ -2012,7 +2041,7 @@ enum LayoutReconstructor {
         // a heading, an image, a table or a box edge, each of which another branch takes
         // first, so this line joins the open item instead of opening a paragraph (#50, #64).
         func continuesListItem(_ line: TextLine, item: (marker: TextLine, last: TextLine, indent: CGFloat?, index: Int)) -> Bool {
-            guard !isList(line.text), line.fontSize <= item.marker.fontSize + 0.5 else { return false }
+            guard !listLine(line), line.fontSize <= item.marker.fontSize + 0.5 else { return false }
             let verticalGap = item.last.rect.minY - line.rect.maxY
             guard verticalGap >= -body * 0.4, verticalGap < body * 0.9 else { return false }
             // The wrapped line starts past the marker, within the width a marker occupies;
@@ -2238,7 +2267,7 @@ enum LayoutReconstructor {
                     codeOrigin = line.rect.minX
                     result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))
                 }
-            } else if isList(line.text) || isTightMarker(line), !continuesParagraph(line) {
+            } else if listLine(line) || isTightMarker(line), !continuesParagraph(line) {
                 flush()
                 // Preserve significant breaks and native styles; do not rewrite list markers or code.
                 result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))
@@ -2257,8 +2286,24 @@ enum LayoutReconstructor {
                 var attachedGap: CGFloat?
                 if let prev = previous {
                     let verticalGap = prev.rect.minY - line.rect.maxY
+                    // An inline expression makes its line's rectangle taller than the page's
+                    // ordinary line of that size, above the type (a radical's bar) or below it
+                    // (Wallace's minus and times glyphs drop the rectangle 8.5 points), so that
+                    // line overlaps its neighbour by more than tight leading does (#109). The
+                    // overlap allowed grows by the extra height of a line set as prose on its
+                    // paragraph's measure (`isProseRow`); a derivation's stacked terms and
+                    // annotations are not, and a rectangle more than twice the ordinary height is
+                    // a display, not an inline expression. The paragraph gap above is still
+                    // measured on the rectangles, and such a gap is not the paragraph's leading.
+                    let inflation = [prev, line].map { neighbour -> CGFloat in
+                        guard let ordinary = ordinaryLineHeight(neighbour.fontSize, in: lines),
+                              neighbour.rect.height > ordinary + body * 0.25,
+                              neighbour.rect.height <= ordinary * 2,
+                              isProseRow(neighbour, in: free, body: body) else { return 0 }
+                        return neighbour.rect.height - ordinary
+                    }.reduce(0, +)
                     let sameColumn = abs(prev.rect.minX - line.rect.minX) < body * 1.5
-                        && verticalGap >= -body * 0.4 && verticalGap < body * 0.9
+                        && verticalGap >= -(body * 0.4 + inflation) && verticalGap < body * 0.9
                     let shortEnding = prev.rect.width < line.rect.width * 0.65
                         && prev.text.last.map { ".!?".contains($0) } == true
                     // A figure caption ends where clearly larger type begins at body size or
@@ -2278,7 +2323,7 @@ enum LayoutReconstructor {
                         || opensSection(line, after: prev, gap: verticalGap, leading: previousGap)
                         || opensSpacedParagraph(line, after: prev, gap: verticalGap, leading: previousGap) {
                         flush()
-                    } else { attachedGap = verticalGap }
+                    } else { attachedGap = inflation > 0 ? previousGap : verticalGap }
                 }
                 if paragraph.elements.isEmpty { paragraph = line.content }
                 else {

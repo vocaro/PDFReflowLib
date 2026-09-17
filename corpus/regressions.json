@@ -1140,7 +1140,7 @@
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). The detached, flattened \"x2 +\" paragraph from page 343's \"Factor\" line is a known defect, not blessed. Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438 or fraction answers split between a marker stub and an image (page 471 entries 22 and 29). Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) rejoin their rows and paragraphs in reading order on pages 288, 289 and 299 (#95); the pieces keep PDFKit's own order inside a row (`36· 5 √` for √36·5), which is not blessed. Page 429 source raster reviewed (#71): `When we are solving a triangle` opens a paragraph set off by added space under the paragraph threshold. Pages 448 and 487 source rasters reviewed (#78): page 448's graphs, numbered along their rows three to a row, read 15-22 in number order; page 487's sub-answers a-i, set in three columns above answers 2-15, read before them. Exercise sets numbered two to a row (pages 10, 26) keep their column order. Pages 175 and 437 (#97) source-reviewed: blank pages whose only text is the folio carry no text once the folio run removes it. Pages 5 and 211 source-reviewed (#102): the contents entry 6.3 Trinomials where a = 1 with its leader is text, not a preserved region.",
+      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). The detached, flattened \"x2 +\" paragraph from page 343's \"Factor\" line is a known defect, not blessed. Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438 or fraction answers split between a marker stub and an image (page 471 entries 22 and 29). Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) rejoin their rows and paragraphs in reading order on pages 288, 289 and 299 (#95); the pieces keep PDFKit's own order inside a row (`36· 5 √` for √36·5), which is not blessed. Page 429 source raster reviewed (#71): `When we are solving a triangle` opens a paragraph set off by added space under the paragraph threshold. Pages 448 and 487 source rasters reviewed (#78): page 448's graphs, numbered along their rows three to a row, read 15-22 in number order; page 487's sub-answers a-i, set in three columns above answers 2-15, read before them. Exercise sets numbered two to a row (pages 10, 26) keep their column order. Pages 175 and 437 (#97) source-reviewed: blank pages whose only text is the folio carry no text once the folio run removes it. Pages 5 and 211 source-reviewed (#102): the contents entry 6.3 Trinomials where a = 1 with its leader is text, not a preserved region. Pages 2, 9, 90, 120, 180, 318, 321 and 401 source-reviewed (#109): a line holding an inline minus, times or radical sign, whose rectangle extends 8.5 points past its type, continues its paragraph into the next line; page 90's point descriptions and page 401's two paragraphs stay separate; page 321's radicand − 1 reads inside its sentence; the license's minus bullets on page 2 and the derivation lines on pages 9 and 120 stay list lines.",
       "pages": [
         {
           "page": 10,
@@ -1264,6 +1264,10 @@
           "text": [
             "Beginning and Intermediate Algebra by Tyler Wallace",
             "Creative Commons Attribution 3.0 Unported License"
+          ],
+          "listItems": [
+            "− Your fair dealing or fair use rights",
+            "− The author’s moral rights;"
           ]
         },
         {
@@ -1467,6 +1471,71 @@
           "page": 5,
           "text": [
             "6.3 Trinomials where a"
+          ]
+        },
+        {
+          "page": 9,
+          "paragraphs": [
+            "The second problem is a multiplication problem because there is nothing between the 3 and the parenthesis.",
+            "but if the signs match on multiplication, the answer is positive, (− 3)(− 7) = 21."
+          ],
+          "listItems": [
+            "− 24 Our Solution"
+          ]
+        },
+        {
+          "page": 90,
+          "paragraphs": [
+            "The second point, B (− 2, 1), is left 2 (negative moves backwards), up 1.",
+            "The third point, C (3,− 4) is right 3, down 4 (negative moves backwards)."
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "The second point, B (− 2, 1), is left 2",
+              "second": "The third point, C (3,− 4) is right 3"
+            }
+          ]
+        },
+        {
+          "page": 120,
+          "paragraphs": [
+            "Square bracket means less than or equal to"
+          ],
+          "listItems": [
+            "− 18 <− 12"
+          ]
+        },
+        {
+          "page": 180,
+          "paragraphs": [
+            "rather we multiply 5 three times, 5 × 5 × 5 = 125. This is shown in the next example."
+          ]
+        },
+        {
+          "page": 318,
+          "paragraphs": [
+            "Then if we multiply both sides of the equation again by i, the equation becomes i4",
+            "One more time gives i6 = i2 =− 1. And if this pattern continues we see a cycle forming",
+            "As there are 4 diﬀerent possible answers in this cycle, if we divide the exponent by 4"
+          ]
+        },
+        {
+          "page": 401,
+          "paragraphs": [
+            "If we plug this output into the inverse function we get f−1(8) = (8)− 5= 3, which is the original input.",
+            "If it is anything but x the functions are not inverses."
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "which is the original input.",
+              "second": "Often the functions are much more involved"
+            }
+          ]
+        },
+        {
+          "page": 321,
+          "paragraphs": [
+            "If i is − 1 √ , and it is in the denominator of a fraction, then we have a radical in the denominator!"
           ]
         }
       ]

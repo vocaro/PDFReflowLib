@@ -140,6 +140,41 @@ class CorpusContentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.check()
 
+    def test_paragraph_continuation_past_a_page_holding_only_figures(self):
+        # #118: page 2 holds only a figure; both page markers sit at the text boundary.
+        self.contract['pages'] = [{'page': 1, 'continuedParagraphs': [
+            {'end': 'the sentence', 'next': 'continues here', 'nextPage': 3}]}]
+        joined = self.epub('<span epub:type="pagebreak" id="page-1"/><p>starts the sentence'
+                           '<span epub:type="pagebreak" id="page-2"/><span epub:type="pagebreak" id="page-3"/>'
+                           ' continues here</p>', '<p>later</p>')
+        # Page 2 carries text of its own: the paragraph skipped it.
+        texted = self.epub('<span epub:type="pagebreak" id="page-1"/><p>starts the sentence'
+                           '<span epub:type="pagebreak" id="page-2"/> a body line of page two'
+                           '<span epub:type="pagebreak" id="page-3"/> continues here</p>', '<p>later</p>')
+        split = self.epub('<span epub:type="pagebreak" id="page-1"/><p>starts the sentence</p>'
+                          '<span epub:type="pagebreak" id="page-2"/><span epub:type="pagebreak" id="page-3"/>'
+                          '<p>continues here</p>', '<p>later</p>')
+        self.case['pages'] = self.report['pageCount'] = 3
+        for path, passes in [(joined, True), (texted, False), (split, False)]:
+            pages, markers = read_pages(path)
+            result = self.check(pages=pages, markers=markers)
+            self.assertEqual(result['passed'], passes, (path, result['errors']))
+        # A page between that the reader never saw cannot be vouched for as empty.
+        pages, markers = read_pages(joined)
+        del pages[2]
+        result = self.check(pages=pages, markers=markers)
+        self.assertEqual(result['errors'], ["Page 1: paragraph does not continue onto page 3 "
+                                            "{'end': 'the sentence', 'next': 'continues here', 'nextPage': 3}"])
+        # Without nextPage the same output does not continue onto page 2.
+        self.contract['pages'][0]['continuedParagraphs'] = [{'end': 'the sentence', 'next': 'continues here'}]
+        pages, markers = read_pages(joined)
+        self.assertFalse(self.check(pages=pages, markers=markers)['passed'])
+        for invalid in [2, 1, 0, '3', True, 3.0]:
+            self.contract['pages'][0]['continuedParagraphs'] = [
+                {'end': 'the sentence', 'next': 'continues here', 'nextPage': invalid}]
+            with self.assertRaises(ValueError):
+                self.check()
+
     def test_note_contract_requires_a_footnote_block_on_the_page(self):
         self.contract['pages'][0]['notes'] = ['alpha beta']
         self.pages[1]['notes'] = ['alpha beta']

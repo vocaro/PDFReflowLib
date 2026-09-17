@@ -1,0 +1,3307 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        14.450000000000003,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "2-8"
+        }
+      ],
+      "text" : "2-8"
+    },
+    {
+      "rect" : [
+        36,
+        719.5696999999999,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "capabilities, etc. The scores are added and the overall score"
+        }
+      ],
+      "text" : "capabilities, etc. The scores are added and the overall score"
+    },
+    {
+      "rect" : [
+        36,
+        707.0696999999999,
+        236.87000000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "falls into various ranges, with the range representative of"
+        }
+      ],
+      "text" : "falls into various ranges, with the range representative of"
+    },
+    {
+      "rect" : [
+        36,
+        694.5696999999999,
+        204.32999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "actions that a pilot imposes upon himself or herself."
+        }
+      ],
+      "text" : "actions that a pilot imposes upon himself or herself."
+    },
+    {
+      "rect" : [
+        36,
+        668.34340000000009,
+        70.608999999999995,
+        13.309999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Mitigating Risk"
+        }
+      ],
+      "text" : "Mitigating Risk"
+    },
+    {
+      "rect" : [
+        36,
+        654.56640000000004,
+        236.87,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Risk assessment is only part of the equation. After"
+        }
+      ],
+      "text" : "Risk assessment is only part of the equation. After"
+    },
+    {
+      "rect" : [
+        36,
+        642.06640000000004,
+        237.00699999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "determining the level of risk, the pilot needs to mitigate the"
+        }
+      ],
+      "text" : "determining the level of risk, the pilot needs to mitigate the"
+    },
+    {
+      "rect" : [
+        36,
+        629.56640000000004,
+        237.09500000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "risk. For example, the pilot flying from point A to point B (50"
+        }
+      ],
+      "text" : "risk. For example, the pilot flying from point A to point B (50"
+    },
+    {
+      "rect" : [
+        36,
+        617.06640000000004,
+        237.00699999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "miles) in MVFR conditions has several ways to reduce risk:"
+        }
+      ],
+      "text" : "miles) in MVFR conditions has several ways to reduce risk:"
+    },
+    {
+      "rect" : [
+        45,
+        600.06640000000004,
+        228.01899999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Wait for the weather to improve to good visual flight"
+        }
+      ],
+      "text" : "• Wait for the weather to improve to good visual flight"
+    },
+    {
+      "rect" : [
+        63,
+        587.56640000000004,
+        94.720000000000027,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "rules (VFR) conditions."
+        }
+      ],
+      "text" : "rules (VFR) conditions."
+    },
+    {
+      "rect" : [
+        45,
+        570.56640000000004,
+        141.87000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Take an instrument-rated pilot."
+        }
+      ],
+      "text" : "• Take an instrument-rated pilot."
+    },
+    {
+      "rect" : [
+        45,
+        553.56640000000004,
+        83.27000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Delay the flight."
+        }
+      ],
+      "text" : "• Delay the flight."
+    },
+    {
+      "rect" : [
+        45,
+        536.56640000000004,
+        87.160000000000025,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Cancel the flight."
+        }
+      ],
+      "text" : "• Cancel the flight."
+    },
+    {
+      "rect" : [
+        45,
+        519.56640000000004,
+        43.27000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Drive."
+        }
+      ],
+      "text" : "• Drive."
+    },
+    {
+      "rect" : [
+        36,
+        494.56640000000004,
+        237.01799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "One of the best ways single pilots can mitigate risk is to use"
+        }
+      ],
+      "text" : "One of the best ways single pilots can mitigate risk is to use"
+    },
+    {
+      "rect" : [
+        36,
+        482.06640000000004,
+        237.09000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the IMSAFE checklist to determine physical and mental"
+        }
+      ],
+      "text" : "the IMSAFE checklist to determine physical and mental"
+    },
+    {
+      "rect" : [
+        36,
+        469.56640000000004,
+        80.54000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "readiness for flying:"
+        }
+      ],
+      "text" : "readiness for flying:"
+    },
+    {
+      "rect" : [
+        45,
+        452.56640000000004,
+        222.71999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "1. Illness—Am I sick? Illness is an obvious pilot risk."
+        }
+      ],
+      "text" : "1. Illness—Am I sick? Illness is an obvious pilot risk."
+    },
+    {
+      "rect" : [
+        45,
+        435.56640000000004,
+        228.00300000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "2. Medication—Am I taking any medicines that might"
+        }
+      ],
+      "text" : "2. Medication—Am I taking any medicines that might"
+    },
+    {
+      "rect" : [
+        63,
+        423.06640000000004,
+        164.41000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "affect my judgment or make me drowsy?"
+        }
+      ],
+      "text" : "affect my judgment or make me drowsy?"
+    },
+    {
+      "rect" : [
+        45,
+        406.06640000000004,
+        228.01100000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "3. Stress—Am I under psychological pressure from the"
+        }
+      ],
+      "text" : "3. Stress—Am I under psychological pressure from the"
+    },
+    {
+      "rect" : [
+        63,
+        393.56640000000004,
+        210.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "job? Do I have money, health, or family problems?"
+        }
+      ],
+      "text" : "job? Do I have money, health, or family problems?"
+    },
+    {
+      "rect" : [
+        63,
+        381.06640000000004,
+        210.05999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Stress causes concentration and performance problems."
+        }
+      ],
+      "text" : "Stress causes concentration and performance problems."
+    },
+    {
+      "rect" : [
+        63,
+        368.56640000000004,
+        210.03999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "While the regulations list medical conditions that"
+        }
+      ],
+      "text" : "While the regulations list medical conditions that"
+    },
+    {
+      "rect" : [
+        63,
+        356.06640000000004,
+        210.04999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "require grounding, stress is not among them. The pilot"
+        }
+      ],
+      "text" : "require grounding, stress is not among them. The pilot"
+    },
+    {
+      "rect" : [
+        63,
+        343.56640000000004,
+        210.00999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "should consider the effects of stress on performance."
+        }
+      ],
+      "text" : "should consider the effects of stress on performance."
+    },
+    {
+      "rect" : [
+        45,
+        326.56639999999999,
+        227.88999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "4. Alcohol—Have I been drinking within 8 hours?"
+        }
+      ],
+      "text" : "4. Alcohol—Have I been drinking within 8 hours?"
+    },
+    {
+      "rect" : [
+        63,
+        314.06639999999999,
+        209.99799999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Within 24 hours? As little as one ounce of liquor, one"
+        }
+      ],
+      "text" : "Within 24 hours? As little as one ounce of liquor, one"
+    },
+    {
+      "rect" : [
+        63,
+        301.56639999999999,
+        210.08000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "bottle of beer, or four ounces of wine can impair flying"
+        }
+      ],
+      "text" : "bottle of beer, or four ounces of wine can impair flying"
+    },
+    {
+      "rect" : [
+        63,
+        289.06639999999999,
+        210.00999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "skills. Alcohol also renders a pilot more susceptible"
+        }
+      ],
+      "text" : "skills. Alcohol also renders a pilot more susceptible"
+    },
+    {
+      "rect" : [
+        63,
+        276.56639999999999,
+        119.44000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to disorientation and hypoxia."
+        }
+      ],
+      "text" : "to disorientation and hypoxia."
+    },
+    {
+      "rect" : [
+        45,
+        259.56639999999999,
+        227.89999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "5. Fatigue—Am I tired and not adequately rested?"
+        }
+      ],
+      "text" : "5. Fatigue—Am I tired and not adequately rested?"
+    },
+    {
+      "rect" : [
+        63,
+        247.06640000000002,
+        209.94999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Fatigue continues to be one of the most insidious"
+        }
+      ],
+      "text" : "Fatigue continues to be one of the most insidious"
+    },
+    {
+      "rect" : [
+        63,
+        234.56640000000002,
+        210.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "hazards to flight safety, as it may not be apparent to"
+        }
+      ],
+      "text" : "hazards to flight safety, as it may not be apparent to"
+    },
+    {
+      "rect" : [
+        63,
+        222.06640000000002,
+        144.14000000000004,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a pilot until serious errors are made."
+        }
+      ],
+      "text" : "a pilot until serious errors are made."
+    },
+    {
+      "rect" : [
+        45,
+        205.06640000000002,
+        161.61000000000004,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "6. Emotion—Am I emotionally upset?"
+        }
+      ],
+      "text" : "6. Emotion—Am I emotionally upset?"
+    },
+    {
+      "rect" : [
+        36,
+        179.49640000000002,
+        95.03000000000003,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "The PAVE Checklist"
+        }
+      ],
+      "text" : "The PAVE Checklist"
+    },
+    {
+      "rect" : [
+        36,
+        167.06640000000002,
+        237.14500000000021,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Another way to mitigate risk is to perceive hazards. By"
+        }
+      ],
+      "text" : "Another way to mitigate risk is to perceive hazards. By"
+    },
+    {
+      "rect" : [
+        36,
+        154.56640000000002,
+        237.00799999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "incorporating the PAVE checklist into preflight planning,"
+        }
+      ],
+      "text" : "incorporating the PAVE checklist into preflight planning,"
+    },
+    {
+      "rect" : [
+        36,
+        141.77640000000002,
+        237,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the pilot divides the risks of flight into four categories: "
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "P"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ilot-"
+        }
+      ],
+      "text" : "the pilot divides the risks of flight into four categories: Pilot-"
+    },
+    {
+      "rect" : [
+        36,
+        129.27640000000002,
+        237,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in-command (PIC), "
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "A"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ircraft, en"
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "V"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ironment, and "
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "E"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "xternal"
+        }
+      ],
+      "text" : "in-command (PIC), Aircraft, enVironment, and External"
+    },
+    {
+      "rect" : [
+        36,
+        117.06640000000002,
+        237.10000000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pressures (PAVE) which form part of a pilot’s decision-"
+        }
+      ],
+      "text" : "pressures (PAVE) which form part of a pilot’s decision-"
+    },
+    {
+      "rect" : [
+        36,
+        104.56640000000002,
+        64.990000000000009,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "making process."
+        }
+      ],
+      "text" : "making process."
+    },
+    {
+      "rect" : [
+        36,
+        79.566400000000016,
+        236.9899999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "With the PAVE checklist, pilots have a simple way to"
+        }
+      ],
+      "text" : "With the PAVE checklist, pilots have a simple way to"
+    },
+    {
+      "rect" : [
+        36,
+        67.066400000000016,
+        236.88999999999987,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "remember each category to examine for risk prior to each flight."
+        }
+      ],
+      "text" : "remember each category to examine for risk prior to each flight."
+    },
+    {
+      "rect" : [
+        285,
+        719.56640000000004,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Once a pilot identifies the risks of a flight, he or she needs"
+        }
+      ],
+      "text" : "Once a pilot identifies the risks of a flight, he or she needs"
+    },
+    {
+      "rect" : [
+        285,
+        707.06640000000004,
+        237.02799999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to decide whether the risk, or combination of risks, can be"
+        }
+      ],
+      "text" : "to decide whether the risk, or combination of risks, can be"
+    },
+    {
+      "rect" : [
+        285,
+        694.56640000000004,
+        237.04999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "managed safely and successfully. If not, make the decision to"
+        }
+      ],
+      "text" : "managed safely and successfully. If not, make the decision to"
+    },
+    {
+      "rect" : [
+        285,
+        682.06640000000004,
+        236.83600000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "cancel the flight. If the pilot decides to continue with the flight,"
+        }
+      ],
+      "text" : "cancel the flight. If the pilot decides to continue with the flight,"
+    },
+    {
+      "rect" : [
+        285,
+        669.56640000000004,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "he or she should develop strategies to mitigate the risks. One"
+        }
+      ],
+      "text" : "he or she should develop strategies to mitigate the risks. One"
+    },
+    {
+      "rect" : [
+        285,
+        657.06640000000004,
+        237.04000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "way a pilot can control the risks is to set personal minimums"
+        }
+      ],
+      "text" : "way a pilot can control the risks is to set personal minimums"
+    },
+    {
+      "rect" : [
+        285,
+        644.56640000000004,
+        237.03999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "for items in each risk category. These are limits unique to that"
+        }
+      ],
+      "text" : "for items in each risk category. These are limits unique to that"
+    },
+    {
+      "rect" : [
+        285,
+        632.06640000000004,
+        237.05999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "individual pilot’s current level of experience and proficiency."
+        }
+      ],
+      "text" : "individual pilot’s current level of experience and proficiency."
+    },
+    {
+      "rect" : [
+        285,
+        607.06640000000004,
+        236.99400000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "For example, the aircraft may have a maximum crosswind"
+        }
+      ],
+      "text" : "For example, the aircraft may have a maximum crosswind"
+    },
+    {
+      "rect" : [
+        285,
+        594.56640000000004,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "component of 15 knots listed in the aircraft flight manual"
+        }
+      ],
+      "text" : "component of 15 knots listed in the aircraft flight manual"
+    },
+    {
+      "rect" : [
+        285,
+        582.06640000000004,
+        237.00599999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(AFM), and the pilot has experience with 10 knots of direct"
+        }
+      ],
+      "text" : "(AFM), and the pilot has experience with 10 knots of direct"
+    },
+    {
+      "rect" : [
+        285,
+        569.56640000000004,
+        237.01800000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "crosswind. It could be unsafe to exceed a 10 knot crosswind"
+        }
+      ],
+      "text" : "crosswind. It could be unsafe to exceed a 10 knot crosswind"
+    },
+    {
+      "rect" : [
+        285,
+        557.06640000000004,
+        237.05300000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "component without additional training. Therefore, the 10 knot"
+        }
+      ],
+      "text" : "component without additional training. Therefore, the 10 knot"
+    },
+    {
+      "rect" : [
+        285,
+        544.56640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "crosswind experience level is that pilot’s personal limitation"
+        }
+      ],
+      "text" : "crosswind experience level is that pilot’s personal limitation"
+    },
+    {
+      "rect" : [
+        285,
+        532.06640000000004,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "until additional training with a certificated flight instructor"
+        }
+      ],
+      "text" : "until additional training with a certificated flight instructor"
+    },
+    {
+      "rect" : [
+        285,
+        519.56640000000004,
+        237.02999999999975,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(CFI) provides the pilot with additional experience for flying"
+        }
+      ],
+      "text" : "(CFI) provides the pilot with additional experience for flying"
+    },
+    {
+      "rect" : [
+        285,
+        507.06640000000004,
+        141.65000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in crosswinds that exceed 10 knots."
+        }
+      ],
+      "text" : "in crosswinds that exceed 10 knots."
+    },
+    {
+      "rect" : [
+        285,
+        482.06640000000004,
+        236.86999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "One of the most important concepts that safe pilots"
+        }
+      ],
+      "text" : "One of the most important concepts that safe pilots"
+    },
+    {
+      "rect" : [
+        285,
+        469.56640000000004,
+        237.03400000000033,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "understand is the difference between what is “legal” in terms"
+        }
+      ],
+      "text" : "understand is the difference between what is “legal” in terms"
+    },
+    {
+      "rect" : [
+        285,
+        457.06640000000004,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of the regulations, and what is “smart” or “safe” in terms of"
+        }
+      ],
+      "text" : "of the regulations, and what is “smart” or “safe” in terms of"
+    },
+    {
+      "rect" : [
+        285,
+        444.56640000000004,
+        131.63000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pilot experience and proficiency."
+        }
+      ],
+      "text" : "pilot experience and proficiency."
+    },
+    {
+      "rect" : [
+        285,
+        418.34340000000003,
+        130.04200000000003,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "P = Pilot in Command (PIC)"
+        }
+      ],
+      "text" : "P = Pilot in Command (PIC)"
+    },
+    {
+      "rect" : [
+        285,
+        404.56640000000004,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The pilot is one of the risk factors in a flight. The pilot must"
+        }
+      ],
+      "text" : "The pilot is one of the risk factors in a flight. The pilot must"
+    },
+    {
+      "rect" : [
+        285,
+        392.06640000000004,
+        236.84800000000018,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ask, “Am I ready for this trip?” in terms of experience,"
+        }
+      ],
+      "text" : "ask, “Am I ready for this trip?” in terms of experience,"
+    },
+    {
+      "rect" : [
+        285,
+        379.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "recency, currency, physical, and emotional condition. The"
+        }
+      ],
+      "text" : "recency, currency, physical, and emotional condition. The"
+    },
+    {
+      "rect" : [
+        285,
+        367.06640000000004,
+        163.59000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "IMSAFE checklist provides the answers."
+        }
+      ],
+      "text" : "IMSAFE checklist provides the answers."
+    },
+    {
+      "rect" : [
+        285,
+        340.84340000000003,
+        55.16500000000002,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "A = Aircraft"
+        }
+      ],
+      "text" : "A = Aircraft"
+    },
+    {
+      "rect" : [
+        285,
+        327.06640000000004,
+        236.99600000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "What limitations will the aircraft impose upon the trip? Ask"
+        }
+      ],
+      "text" : "What limitations will the aircraft impose upon the trip? Ask"
+    },
+    {
+      "rect" : [
+        285,
+        314.56640000000004,
+        96.670000000000016,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the following questions:"
+        }
+      ],
+      "text" : "the following questions:"
+    },
+    {
+      "rect" : [
+        294,
+        297.56639999999999,
+        167.14000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Is this the right aircraft for the flight?"
+        }
+      ],
+      "text" : "• Is this the right aircraft for the flight?"
+    },
+    {
+      "rect" : [
+        294,
+        280.56639999999999,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        312,
+        280.56639999999999,
+        210.06999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Am I familiar with and current in this aircraft? Aircraft"
+        }
+      ],
+      "text" : "Am I familiar with and current in this aircraft? Aircraft"
+    },
+    {
+      "rect" : [
+        312,
+        268.06639999999999,
+        210.04000000000019,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "performance figures and the AFM are based on a brand"
+        }
+      ],
+      "text" : "performance figures and the AFM are based on a brand"
+    },
+    {
+      "rect" : [
+        312,
+        255.56639999999999,
+        210.00400000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "new aircraft flown by a professional test pilot. Keep"
+        }
+      ],
+      "text" : "new aircraft flown by a professional test pilot. Keep"
+    },
+    {
+      "rect" : [
+        312,
+        243.06639999999999,
+        210.1400000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "that in mind while assessing personal and aircraft"
+        }
+      ],
+      "text" : "that in mind while assessing personal and aircraft"
+    },
+    {
+      "rect" : [
+        312,
+        230.56639999999999,
+        53.029999999999973,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "performance."
+        }
+      ],
+      "text" : "performance."
+    },
+    {
+      "rect" : [
+        294,
+        213.56640000000002,
+        228.00900000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Is this aircraft equipped for the flight? Instruments?"
+        }
+      ],
+      "text" : "• Is this aircraft equipped for the flight? Instruments?"
+    },
+    {
+      "rect" : [
+        312,
+        201.06640000000002,
+        210.11999999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Lights? Navigation and communication equipment"
+        }
+      ],
+      "text" : "Lights? Navigation and communication equipment"
+    },
+    {
+      "rect" : [
+        312,
+        188.56640000000002,
+        39.980000000000018,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "adequate?"
+        }
+      ],
+      "text" : "adequate?"
+    },
+    {
+      "rect" : [
+        294,
+        171.56640000000002,
+        228.00100000000009,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Can this aircraft use the runways available for the trip"
+        }
+      ],
+      "text" : "• Can this aircraft use the runways available for the trip"
+    },
+    {
+      "rect" : [
+        312,
+        159.06640000000002,
+        210.08999999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "with an adequate margin of safety under the conditions"
+        }
+      ],
+      "text" : "with an adequate margin of safety under the conditions"
+    },
+    {
+      "rect" : [
+        312,
+        146.56640000000002,
+        49.990000000000009,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to be flown?"
+        }
+      ],
+      "text" : "to be flown?"
+    },
+    {
+      "rect" : [
+        294,
+        129.56640000000002,
+        178.51000000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Can this aircraft carry the planned load?"
+        }
+      ],
+      "text" : "• Can this aircraft carry the planned load?"
+    },
+    {
+      "rect" : [
+        294,
+        112.5664,
+        228.10000000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Can this aircraft operate at the altitudes needed for the"
+        }
+      ],
+      "text" : "• Can this aircraft operate at the altitudes needed for the"
+    },
+    {
+      "rect" : [
+        312,
+        100.0664,
+        18.329999999999984,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "trip?"
+        }
+      ],
+      "text" : "trip?"
+    },
+    {
+      "rect" : [
+        294,
+        83.066400000000002,
+        3.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        312,
+        83.066400000000002,
+        210.01300000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Does this aircraft have sufficient fuel capacity, with"
+        }
+      ],
+      "text" : "Does this aircraft have sufficient fuel capacity, with"
+    },
+    {
+      "rect" : [
+        312,
+        70.566400000000002,
+        123.02000000000004,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "reserves, for trip legs planned?"
+        }
+      ],
+      "text" : "reserves, for trip legs planned?"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        14.450000000000003,
+        12.310000000000002
+      ],
+      "text" : "2-8"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        719.5696999999999,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1382,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 4772
+      },
+      "text" : "capabilities, etc. The scores are added and the overall score"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        707.0696999999999,
+        236.87000000000012,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1382,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 4773
+      },
+      "text" : "falls into various ranges, with the range representative of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        694.5696999999999,
+        204.32999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1382,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 4774
+      },
+      "text" : "actions that a pilot imposes upon himself or herself."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        668.34340000000009,
+        70.608999999999995,
+        13.309999999999945
+      ],
+      "structure" : {
+        "group" : 1383,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4775
+      },
+      "text" : "Mitigating Risk"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        654.56640000000004,
+        236.87,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1384,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4776
+      },
+      "text" : "Risk assessment is only part of the equation. After"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        642.06640000000004,
+        237.00699999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1384,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4777
+      },
+      "text" : "determining the level of risk, the pilot needs to mitigate the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        629.56640000000004,
+        237.09500000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1384,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4778
+      },
+      "text" : "risk. For example, the pilot flying from point A to point B (50"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        617.06640000000004,
+        237.00699999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1384,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4779
+      },
+      "text" : "miles) in MVFR conditions has several ways to reduce risk:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        600.06640000000004,
+        228.01899999999989,
+        11.470000000000027
+      ],
+      "text" : "• Wait for the weather to improve to good visual flight"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        587.56640000000004,
+        94.720000000000027,
+        11.470000000000027
+      ],
+      "text" : "rules (VFR) conditions."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        570.56640000000004,
+        141.87000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1386,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4782
+      },
+      "text" : "• Take an instrument-rated pilot."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        553.56640000000004,
+        83.27000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1387,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4783
+      },
+      "text" : "• Delay the flight."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        536.56640000000004,
+        87.160000000000025,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1388,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4784
+      },
+      "text" : "• Cancel the flight."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        519.56640000000004,
+        43.27000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1389,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4785
+      },
+      "text" : "• Drive."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        494.56640000000004,
+        237.01799999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1390,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 4786
+      },
+      "text" : "One of the best ways single pilots can mitigate risk is to use"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        482.06640000000004,
+        237.09000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1390,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 4787
+      },
+      "text" : "the IMSAFE checklist to determine physical and mental"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        469.56640000000004,
+        80.54000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1390,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 4788
+      },
+      "text" : "readiness for flying:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        452.56640000000004,
+        222.71999999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1391,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4789
+      },
+      "text" : "1. Illness—Am I sick? Illness is an obvious pilot risk."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        435.56640000000004,
+        228.00300000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1392,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4790
+      },
+      "text" : "2. Medication—Am I taking any medicines that might"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        423.06640000000004,
+        164.41000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1392,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4791
+      },
+      "text" : "affect my judgment or make me drowsy?"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        406.06640000000004,
+        228.01100000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1393,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 4792
+      },
+      "text" : "3. Stress—Am I under psychological pressure from the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        393.56640000000004,
+        210.005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1393,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 4793
+      },
+      "text" : "job? Do I have money, health, or family problems?"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        381.06640000000004,
+        210.05999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1393,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 4794
+      },
+      "text" : "Stress causes concentration and performance problems."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        368.56640000000004,
+        210.03999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1393,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 4795
+      },
+      "text" : "While the regulations list medical conditions that"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        356.06640000000004,
+        210.04999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1393,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 4796
+      },
+      "text" : "require grounding, stress is not among them. The pilot"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        343.56640000000004,
+        210.00999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1393,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 4797
+      },
+      "text" : "should consider the effects of stress on performance."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        326.56639999999999,
+        227.88999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1394,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 4798
+      },
+      "text" : "4. Alcohol—Have I been drinking within 8 hours?"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        314.06639999999999,
+        209.99799999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1394,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 4799
+      },
+      "text" : "Within 24 hours? As little as one ounce of liquor, one"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        301.56639999999999,
+        210.08000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1394,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 4800
+      },
+      "text" : "bottle of beer, or four ounces of wine can impair flying"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        289.06639999999999,
+        210.00999999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1394,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 4801
+      },
+      "text" : "skills. Alcohol also renders a pilot more susceptible"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        276.56639999999999,
+        119.44000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1394,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 4802
+      },
+      "text" : "to disorientation and hypoxia."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        259.56639999999999,
+        227.89999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1395,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4803
+      },
+      "text" : "5. Fatigue—Am I tired and not adequately rested?"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        247.06640000000002,
+        209.94999999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1395,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4804
+      },
+      "text" : "Fatigue continues to be one of the most insidious"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        234.56640000000002,
+        210.00999999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1395,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4805
+      },
+      "text" : "hazards to flight safety, as it may not be apparent to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        222.06640000000002,
+        144.14000000000004,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1395,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4806
+      },
+      "text" : "a pilot until serious errors are made."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        205.06640000000002,
+        161.61000000000004,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1396,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4807
+      },
+      "text" : "6. Emotion—Am I emotionally upset?"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        179.49640000000002,
+        95.03000000000003,
+        13.189999999999998
+      ],
+      "structure" : {
+        "group" : 1397,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4808
+      },
+      "text" : "The PAVE Checklist"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        167.06640000000002,
+        237.14500000000021,
+        11.469999999999999
+      ],
+      "text" : "Another way to mitigate risk is to perceive hazards. By"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        154.56640000000002,
+        237.00799999999992,
+        11.469999999999999
+      ],
+      "text" : "incorporating the PAVE checklist into preflight planning,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        141.77640000000002,
+        237,
+        12.02000000000001
+      ],
+      "text" : "the pilot divides the risks of flight into four categories: Pilot-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        129.27640000000002,
+        237,
+        12.02000000000001
+      ],
+      "text" : "in-command (PIC), Aircraft, enVironment, and External"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        117.06640000000002,
+        237.10000000000002,
+        11.469999999999999
+      ],
+      "text" : "pressures (PAVE) which form part of a pilot’s decision-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        104.56640000000002,
+        64.990000000000009,
+        11.469999999999999
+      ],
+      "text" : "making process."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        79.566400000000016,
+        236.9899999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1399,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4823
+      },
+      "text" : "With the PAVE checklist, pilots have a simple way to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        67.066400000000016,
+        236.88999999999987,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1399,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4824
+      },
+      "text" : "remember each category to examine for risk prior to each flight."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        719.56640000000004,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1399,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4825
+      },
+      "text" : "Once a pilot identifies the risks of a flight, he or she needs"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        707.06640000000004,
+        237.02799999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1399,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4826
+      },
+      "text" : "to decide whether the risk, or combination of risks, can be"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        694.56640000000004,
+        237.04999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1399,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4827
+      },
+      "text" : "managed safely and successfully. If not, make the decision to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        682.06640000000004,
+        236.83600000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1399,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4828
+      },
+      "text" : "cancel the flight. If the pilot decides to continue with the flight,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        669.56640000000004,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1399,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4829
+      },
+      "text" : "he or she should develop strategies to mitigate the risks. One"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        657.06640000000004,
+        237.04000000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1399,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4830
+      },
+      "text" : "way a pilot can control the risks is to set personal minimums"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        644.56640000000004,
+        237.03999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1399,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4831
+      },
+      "text" : "for items in each risk category. These are limits unique to that"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        632.06640000000004,
+        237.05999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1399,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 4832
+      },
+      "text" : "individual pilot’s current level of experience and proficiency."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        607.06640000000004,
+        236.99400000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1400,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 4833
+      },
+      "text" : "For example, the aircraft may have a maximum crosswind"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        594.56640000000004,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1400,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 4834
+      },
+      "text" : "component of 15 knots listed in the aircraft flight manual"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        582.06640000000004,
+        237.00599999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1400,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 4835
+      },
+      "text" : "(AFM), and the pilot has experience with 10 knots of direct"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        569.56640000000004,
+        237.01800000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1400,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 4836
+      },
+      "text" : "crosswind. It could be unsafe to exceed a 10 knot crosswind"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        557.06640000000004,
+        237.05300000000011,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1400,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 4837
+      },
+      "text" : "component without additional training. Therefore, the 10 knot"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        544.56640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1400,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 4838
+      },
+      "text" : "crosswind experience level is that pilot’s personal limitation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        532.06640000000004,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1400,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 4839
+      },
+      "text" : "until additional training with a certificated flight instructor"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        519.56640000000004,
+        237.02999999999975,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1400,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 4840
+      },
+      "text" : "(CFI) provides the pilot with additional experience for flying"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        507.06640000000004,
+        141.65000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1400,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 4841
+      },
+      "text" : "in crosswinds that exceed 10 knots."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        482.06640000000004,
+        236.86999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1401,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4842
+      },
+      "text" : "One of the most important concepts that safe pilots"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        469.56640000000004,
+        237.03400000000033,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1401,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4843
+      },
+      "text" : "understand is the difference between what is “legal” in terms"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        457.06640000000004,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1401,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4844
+      },
+      "text" : "of the regulations, and what is “smart” or “safe” in terms of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        444.56640000000004,
+        131.63000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1401,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4845
+      },
+      "text" : "pilot experience and proficiency."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        418.34340000000003,
+        130.04200000000003,
+        13.310000000000002
+      ],
+      "structure" : {
+        "group" : 1402,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4846
+      },
+      "text" : "P = Pilot in Command (PIC)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        404.56640000000004,
+        237,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1403,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4847
+      },
+      "text" : "The pilot is one of the risk factors in a flight. The pilot must"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        392.06640000000004,
+        236.84800000000018,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1403,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4848
+      },
+      "text" : "ask, “Am I ready for this trip?” in terms of experience,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        379.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1403,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4849
+      },
+      "text" : "recency, currency, physical, and emotional condition. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        367.06640000000004,
+        163.59000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1403,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 4850
+      },
+      "text" : "IMSAFE checklist provides the answers."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        340.84340000000003,
+        55.16500000000002,
+        13.310000000000002
+      ],
+      "structure" : {
+        "group" : 1404,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4851
+      },
+      "text" : "A = Aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        327.06640000000004,
+        236.99600000000009,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1405,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4852
+      },
+      "text" : "What limitations will the aircraft impose upon the trip? Ask"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        314.56640000000004,
+        96.670000000000016,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1405,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4853
+      },
+      "text" : "the following questions:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        297.56639999999999,
+        167.14000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1406,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4854
+      },
+      "text" : "• Is this the right aircraft for the flight?"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        280.56639999999999,
+        3.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1407,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 4855
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        280.56639999999999,
+        210.06999999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1407,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 4855
+      },
+      "text" : "Am I familiar with and current in this aircraft? Aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        268.06639999999999,
+        210.04000000000019,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1407,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 4856
+      },
+      "text" : "performance figures and the AFM are based on a brand"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        255.56639999999999,
+        210.00400000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1407,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 4857
+      },
+      "text" : "new aircraft flown by a professional test pilot. Keep"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        243.06639999999999,
+        210.1400000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1407,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 4858
+      },
+      "text" : "that in mind while assessing personal and aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        230.56639999999999,
+        53.029999999999973,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1407,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 4859
+      },
+      "text" : "performance."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        213.56640000000002,
+        228.00900000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1408,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 4860
+      },
+      "text" : "• Is this aircraft equipped for the flight? Instruments?"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        201.06640000000002,
+        210.11999999999989,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1408,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 4861
+      },
+      "text" : "Lights? Navigation and communication equipment"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        188.56640000000002,
+        39.980000000000018,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1408,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 4862
+      },
+      "text" : "adequate?"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        171.56640000000002,
+        228.00100000000009,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1409,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 4863
+      },
+      "text" : "• Can this aircraft use the runways available for the trip"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        159.06640000000002,
+        210.08999999999992,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1409,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 4864
+      },
+      "text" : "with an adequate margin of safety under the conditions"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        146.56640000000002,
+        49.990000000000009,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1409,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 4865
+      },
+      "text" : "to be flown?"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        129.56640000000002,
+        178.51000000000005,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1410,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 4866
+      },
+      "text" : "• Can this aircraft carry the planned load?"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        112.5664,
+        228.10000000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1411,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4867
+      },
+      "text" : "• Can this aircraft operate at the altitudes needed for the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        100.0664,
+        18.329999999999984,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1411,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 4868
+      },
+      "text" : "trip?"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        83.066400000000002,
+        3.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1412,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 4869
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        83.066400000000002,
+        210.01300000000003,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1412,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 4869
+      },
+      "text" : "Does this aircraft have sufficient fuel capacity, with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        70.566400000000002,
+        123.02000000000004,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1412,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 4870
+      },
+      "text" : "reserves, for trip legs planned?"
+    }
+  ],
+  "page" : 47,
+  "paints" : [
+
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

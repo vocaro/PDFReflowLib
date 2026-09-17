@@ -112,7 +112,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 1599 targeted checks on 363 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 1610 targeted checks on 369 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
@@ -505,7 +505,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-641 Swift tests with no known-issue wrappers, and 217 Python tests.
+670 Swift tests with no known-issue wrappers, and 218 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -678,7 +678,11 @@ headings kept with it. No spine document except the last may end with such a hea
 Python negative controls reject multi-block overflow, unwrapped text and separated headings.
 
 Corpus contracts can also require `continuedParagraphs`: one paragraph element must end page N
-with one phrase and continue page N+1 with the other. The
+with one phrase and continue page N+1 with the other. An optional integer `nextPage` greater than
+N+1 names the continuation's page when the pages between hold only figures (#118); each of those
+pages must exist and carry no text at all, and Python negative controls reject a page between with
+text, a missing page, a split paragraph, the same output without `nextPage`, and a `nextPage` that
+is not a later integer. The
 [continuity evidence](../measurements/spine-continuity/record.md) lists the reviewed page pairs;
 known cross-page splits and folio joins are tracked in [#45](https://github.com/vocaro/PDFReflowLib/issues/45).
 
@@ -928,6 +932,30 @@ column cut makes redundant on these pages. The DGA contract checks the absent wa
 and headings on pages 3–5, the callouts and first bullet row on pages 6 and 8, and page 2's footnotes;
 the baseline fails exactly those 17 checks. See the
 [DGA preservation evidence](../measurements/dga-preservation/record.md).
+
+## Sentences split around figures at column and page breaks
+
+`ColumnContinuationRecountTests.swift` covers [#118](https://github.com/vocaro/PDFReflowLib/issues/118)
+with source-derived FAA fixtures. `faa-21-continuation` must join `…then, now, and into` / `the
+future.` past figure 1-10's wrapped 9-pt caption line, with the caption after the paragraph;
+`faa-68`/`faa-69` join across the page past figure 2-24's wrapped caption; `faa-230` joins `…twisted`
+/ `into a helix.`, the next line of the column, past the gauge beside it; `faa-411` joins `…by means
+of the` / `course select knob.` beneath the figure heading the right column; `faa-286`/`faa-287` join
+`…every` / `1,000 feet` with figure 12-2 kept ahead; and `faa-45-continuation`, `faa-46`, `faa-47`
+join `…weather,` / `capabilities, etc.` past the full-page form, both page markers at the boundary
+and the form after the paragraph (refused when joining only adjacent pages). Negative controls:
+`faa-341` must not join `…the threshold for` to the 9-pt caption fragment `14 with collocated…`,
+and the existing `faa-19` fixture, whose crop swallows the right column's first lines, must not
+join `…this system. The` to `standard beacon tower`. Synthetic controls refuse a capital, digit or
+quote after a word that can end a sentence, a next line at a paragraph pitch, indented, in another
+size, above or beside, or with a line between; a head below the foot without a figure over it,
+beside a tinted box, under a figure ending below the foot, or in caption type; a short capital head
+line that does not close its sentence, on the same page and across pages, and a full line in other
+type; a caption's wrapped line in body type; and a figure page holding prose, a caption-only page or
+a third figure page (two figure pages join with every marker inline). All 26 single-rule and
+single-guard mutations fail at least one test. The FAA contract checks the joins on pages 19, 21,
+45 (with `nextPage` 47), 68, 126, 145, 230, 235, 286, 341 and 411 and re-expresses page 286's order.
+See the [column continuation recount evidence](../measurements/column-continuation-recount/record.md).
 
 ## Text the rendering never shows
 

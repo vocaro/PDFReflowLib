@@ -1,0 +1,140 @@
+diff --git a/Sources/PDFReflowLib/LayoutReconstructor.swift b/Sources/PDFReflowLib/LayoutReconstructor.swift
+index 5059511..621d54c 100644
+--- a/Sources/PDFReflowLib/LayoutReconstructor.swift
++++ b/Sources/PDFReflowLib/LayoutReconstructor.swift
+@@ -2940,11 +2940,19 @@ enum LayoutReconstructor {
+                 || blocks[previous].sourcePages.contains(previousPage.number)
+                 || (blocks[previous].isFootnote && blocks[previous].page < previousPage.number),
+               isSkippable(blocks[previous], page: previousPage) { previous -= 1 }
++        if traceJoins, previous >= 0, joinableText(blocks[previous].content) == nil, blocks[previous].page == previousPage.number {
++            tr(page.number, blocks[previous].text, "", "page:prevKind " + "\(blocks[previous].content)".prefix(40))
++        }
+         guard previous >= 0, let left = joinableText(blocks[previous].content),
+               blocks[previous].page == previousPage.number
+                 || blocks[previous].sourcePages.contains(previousPage.number) else { return nil }
+         var next = 0
+         while next < pageBlocks.count, isSkippable(pageBlocks[next], page: page) { next += 1 }
++        if traceJoins, previous >= 0, let l = joinableText(blocks[previous].content), !endsSentence(l), next < pageBlocks.count {
++            if case .paragraph = pageBlocks[next].content {} else {
++                tr(page.number, l.text, pageBlocks[next].text, "page:nextKind " + "\(pageBlocks[next].content)".prefix(40))
++            }
++        }
+         guard next < pageBlocks.count, case let .paragraph(right) = pageBlocks[next].content else { return nil }
+         // Two validated identities are the author's evidence of separation, but only when one of
+         // them is something other than a plain paragraph: a heading, a list item, a caption. Where
+@@ -2965,6 +2973,18 @@ enum LayoutReconstructor {
+                   opensColumn(first, in: page, images: images) else { return nil }
+             return (previous, next)
+         }
++        if traceJoins, !endsSentence(left) {
++            let lastL = lastLine(of: left.text, in: previousPage.lines), firstL = firstLine(of: right.text, in: page.lines)
++            var why = "JOIN"
++            if right.text.first?.isLowercase != true { why = "notLower" }
++            else if lastL == nil || firstL == nil { why = "noLine" }
++            else if isHeaderLike(firstL!, in: page) { why = "header" }
++            else if wordCount(firstL!.text) < 2 || !readsAsProse(lastL!.text) || !readsAsProse(firstL!.text) { why = "prose" }
++            else if !fillsColumn(lastL!, in: previousPage.lines, body: max(4, bodySize(previousPage.lines))) { why = "fill \(lastL!.rect)" }
++            else if !endsColumn(lastL!, in: previousPage, images: previousImages) { why = "endsColumn \(lastL!.rect)" }
++            else if !opensColumn(firstL!, in: page, images: images) { why = "opensColumn \(firstL!.rect)" }
++            tr(page.number, left.text, right.text, "page:" + why)
++        }
+         guard right.text.first?.isLowercase == true, !endsSentence(left),
+               let last = lastLine(of: left.text, in: previousPage.lines),
+               let first = firstLine(of: right.text, in: page.lines),
+@@ -3000,6 +3020,11 @@ enum LayoutReconstructor {
+             guard let left = joinableText(blocks[index].content) else { continue }
+             var next = index + 1
+             while next < blocks.count, isSkippable(blocks[next], page: page) { next += 1 }
++            if next < blocks.count, !endsSentence(left), traceJoins {
++                if case .paragraph = blocks[next].content {} else {
++                    tr(page.number, left.text, blocks[next].text, "col:nextKind \(blocks[next].content)".prefix(60).description)
++                }
++            }
+             guard next < blocks.count, case let .paragraph(right) = blocks[next].content,
+                   continuesColumn(left, blocks[index], into: right, blocks[next], page: page, images: images, body: body)
+             else { continue }
+@@ -3014,18 +3039,27 @@ enum LayoutReconstructor {
+         }
+     }
+ 
++    static let traceJoins = ProcessInfo.processInfo.environment["TRACE_JOINS"] != nil
++    static func tr(_ page: Int, _ left: String, _ right: String, _ why: String) {
++        guard traceJoins else { return }
++        FileHandle.standardError.write("TRACE p\(page) \(why) | …\(left.suffix(40)) ‖ \(right.prefix(40))\n".data(using: .utf8)!)
++    }
+     private static func continuesColumn(_ left: InlineText, _ leftBlock: ReflowBlock, into right: InlineText,
+                                         _ rightBlock: ReflowBlock, page: PageContent, images: [CGRect],
+                                         body: CGFloat) -> Bool {
++        let T = { (why: String) -> Bool in tr(page.number, left.text, right.text, "col:" + why); return false }
++        if endsSentence(left) { return false }
+         if let leftGroup = leftBlock.structureGroup, let rightGroup = rightBlock.structureGroup,
+-           leftGroup != rightGroup { return false }
+-        guard right.text.first?.isLowercase == true, !endsSentence(left),
+-              let last = lastLine(of: left.text, in: page.lines),
+-              let first = firstLine(of: right.text, in: page.lines),
+-              wordCount(first.text) >= 2, readsAsProse(last.text), readsAsProse(first.text),
+-              first.rect.minX >= last.rect.maxX - body * 0.5, first.rect.midY > last.rect.midY,
+-              fillsColumn(last, in: page.lines, body: body) else { return false }
+-        if case .preformatted = leftBlock.content, last.monospaced { return false }
++           leftGroup != rightGroup { return T("groups") }
++        guard right.text.first?.isLowercase == true else { return T("notLower") }
++        guard let last = lastLine(of: left.text, in: page.lines) else { return T("noLast") }
++        guard let first = firstLine(of: right.text, in: page.lines) else { return T("noFirst") }
++        guard wordCount(first.text) >= 2 else { return T("firstWords") }
++        guard readsAsProse(last.text), readsAsProse(first.text) else { return T("prose") }
++        guard first.rect.minX >= last.rect.maxX - body * 0.5 else { return T("notRight last=\(last.rect) first=\(first.rect)") }
++        guard first.rect.midY > last.rect.midY else { return T("notHigher last=\(last.rect) first=\(first.rect)") }
++        guard fillsColumn(last, in: page.lines, body: body) else { return T("fill last=\(last.rect) '\(last.text)'") }
++        if case .preformatted = leftBlock.content, last.monospaced { return T("mono") }
+         // The lowest element over the first line that crosses the gutter bounds the section.
+         let gutter = (start: last.rect.maxX, end: first.rect.minX)
+         let ceiling = (page.lines.map(\.rect) + images)
+@@ -3033,7 +3067,7 @@ enum LayoutReconstructor {
+             .map(\.minY).min() ?? .infinity
+         let separator = page.lines.filter { FootnoteDetector.isSeparator($0) && $0.rect.midY < last.rect.minY }
+             .map(\.rect.minY).max()
+-        return !page.lines.contains { other in
++        let blocker = page.lines.first { other in
+             guard other != last, other != first, other.rect.midY < ceiling else { return false }
+             if let separator, other.rect.midY < separator, other.fontSize <= last.fontSize * 0.9 { return false }
+             let below = other.rect.midY < last.rect.minY && other.rect.maxX > last.rect.minX && other.rect.minX < last.rect.maxX
+@@ -3043,6 +3077,9 @@ enum LayoutReconstructor {
+                 || between && isProse(other, beside: last, share: 0.9, page: page, images: images)
+                 || above && isProse(other, beside: first, share: 0.5, page: page, images: images)
+         }
++        if let blocker { return T("competing ceiling=\(ceiling) '\(blocker.text.prefix(50))' \(blocker.rect) last=\(last.rect) first=\(first.rect)") }
++        tr(page.number, left.text, right.text, "col:JOIN")
++        return true
+     }
+ 
+     /// The text a page-crossing join may continue: a body paragraph, or the wrapped line of a
+@@ -3201,6 +3238,14 @@ enum LayoutReconstructor {
+         // Page-bottom footnotes (smaller type under a dash separator) are not the body's continuation.
+         let separator = page.lines.filter { FootnoteDetector.isSeparator($0) && $0.rect.midY < last.rect.minY }
+             .map(\.rect.minY).max()
++        let found = page.lines.first { other in
++            if let separator, other.rect.midY < separator, other.fontSize <= last.fontSize * 0.9 { return false }
++            let below = other.rect.midY < last.rect.minY && other.rect.maxX > last.rect.minX && other.rect.minX < last.rect.maxX
++            let beside = other.rect.minX >= last.rect.maxX
++            return below && isProse(other, beside: last, share: 0.5, page: page, images: images)
++                || beside && isProse(other, beside: last, share: 0.9, page: page, images: images)
++        }
++        if let found { tr(page.number, "", "", "endsBlocker '\(found.text.prefix(60))' \(found.rect) size \(found.fontSize)") }
+         return !page.lines.contains { other in
+             if let separator, other.rect.midY < separator, other.fontSize <= last.fontSize * 0.9 { return false }
+             let below = other.rect.midY < last.rect.minY && other.rect.maxX > last.rect.minX && other.rect.minX < last.rect.maxX
+@@ -3211,7 +3256,13 @@ enum LayoutReconstructor {
+     }
+ 
+     private static func opensColumn(_ first: TextLine, in page: PageContent, images: [CGRect]) -> Bool {
+-        !page.lines.contains { other in
++        if let found = page.lines.first(where: { other in
++            let above = other.rect.midY > first.rect.maxY && other.rect.maxX > first.rect.minX && other.rect.minX < first.rect.maxX
++            let beside = other.rect.maxX <= first.rect.minX
++            return above && isProse(other, beside: first, share: 0.5, page: page, images: images)
++                || beside && isProse(other, beside: first, share: 0.9, page: page, images: images)
++        }) { tr(page.number, "", "", "opensBlocker '\(found.text.prefix(60))' \(found.rect) size \(found.fontSize)") }
++        return !page.lines.contains { other in
+             let above = other.rect.midY > first.rect.maxY && other.rect.maxX > first.rect.minX && other.rect.minX < first.rect.maxX
+             let beside = other.rect.maxX <= first.rect.minX
+             return above && isProse(other, beside: first, share: 0.5, page: page, images: images)

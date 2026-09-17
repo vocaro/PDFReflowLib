@@ -1,0 +1,1694 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "8-28"
+        }
+      ],
+      "text" : "8-28"
+    },
+    {
+      "rect" : [
+        285.11860000000001,
+        582.29140000000007,
+        235.95299999999997,
+        146.84799999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        285,
+        562.91730000000007,
+        185.86000000000001,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 8-39. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Outside air temperature (OAT) gauge."
+        }
+      ],
+      "text" : "Figure 8-39. Outside air temperature (OAT) gauge."
+    },
+    {
+      "rect" : [
+        36,
+        715.97970000000009,
+        216.81600000000006,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "Outside Air Temperature (OAT) Gauge"
+        }
+      ],
+      "text" : "Outside Air Temperature (OAT) Gauge"
+    },
+    {
+      "rect" : [
+        36,
+        701.21370000000002,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The outside air temperature (OAT) gauge is a simple and"
+        }
+      ],
+      "text" : "The outside air temperature (OAT) gauge is a simple and"
+    },
+    {
+      "rect" : [
+        36,
+        688.71370000000002,
+        236.99999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "effective device mounted so that the sensing element is"
+        }
+      ],
+      "text" : "effective device mounted so that the sensing element is"
+    },
+    {
+      "rect" : [
+        36,
+        676.21370000000002,
+        236.88999999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "exposed to the outside air. The sensing element consists"
+        }
+      ],
+      "text" : "exposed to the outside air. The sensing element consists"
+    },
+    {
+      "rect" : [
+        36,
+        663.71370000000002,
+        237.02299999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of a bimetallic-type thermometer in which two dissimilar"
+        }
+      ],
+      "text" : "of a bimetallic-type thermometer in which two dissimilar"
+    },
+    {
+      "rect" : [
+        36,
+        651.21370000000002,
+        237.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "materials are welded together in a single strip and twisted"
+        }
+      ],
+      "text" : "materials are welded together in a single strip and twisted"
+    },
+    {
+      "rect" : [
+        36,
+        638.71370000000002,
+        237.02099999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "into a helix. One end is anchored into protective tube and the"
+        }
+      ],
+      "text" : "into a helix. One end is anchored into protective tube and the"
+    },
+    {
+      "rect" : [
+        36,
+        626.21370000000002,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "other end is affixed to the pointer, which reads against the"
+        }
+      ],
+      "text" : "other end is affixed to the pointer, which reads against the"
+    },
+    {
+      "rect" : [
+        36,
+        613.71370000000002,
+        237.01199999999983,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "calibration on a circular face. OAT gauges are calibrated in"
+        }
+      ],
+      "text" : "calibration on a circular face. OAT gauges are calibrated in"
+    },
+    {
+      "rect" : [
+        36,
+        601.21370000000002,
+        237.09000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "degrees °C, °F, or both. An accurate air temperature provides"
+        }
+      ],
+      "text" : "degrees °C, °F, or both. An accurate air temperature provides"
+    },
+    {
+      "rect" : [
+        36,
+        588.71370000000002,
+        236.89999999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the pilot with useful information about temperature lapse rate"
+        }
+      ],
+      "text" : "the pilot with useful information about temperature lapse rate"
+    },
+    {
+      "rect" : [
+        36,
+        576.21370000000002,
+        141.91000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "with altitude change. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 8-39]"
+        }
+      ],
+      "text" : "with altitude change. [Figure 8-39]"
+    },
+    {
+      "rect" : [
+        36,
+        549.92970000000003,
+        102.85199999999998,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "Chapter Summary"
+        }
+      ],
+      "text" : "Chapter Summary"
+    },
+    {
+      "rect" : [
+        36,
+        535.16370000000006,
+        237.11000000000013,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Flight instruments enable an aircraft to be operated with"
+        }
+      ],
+      "text" : "Flight instruments enable an aircraft to be operated with"
+    },
+    {
+      "rect" : [
+        36,
+        522.66370000000006,
+        237.03999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "maximum performance and enhanced safety, especially when"
+        }
+      ],
+      "text" : "maximum performance and enhanced safety, especially when"
+    },
+    {
+      "rect" : [
+        36,
+        510.16370000000006,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "flying long distances. Manufacturers provide the necessary"
+        }
+      ],
+      "text" : "flying long distances. Manufacturers provide the necessary"
+    },
+    {
+      "rect" : [
+        36,
+        497.66370000000006,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "flight instruments, but to use them effectively, pilots need"
+        }
+      ],
+      "text" : "flight instruments, but to use them effectively, pilots need"
+    },
+    {
+      "rect" : [
+        36,
+        485.16370000000006,
+        237.00699999999983,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to understand how they operate. As a pilot, it is important to"
+        }
+      ],
+      "text" : "to understand how they operate. As a pilot, it is important to"
+    },
+    {
+      "rect" : [
+        36,
+        472.66370000000006,
+        237.07300000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "become very familiar with the operational aspects of the pitot-"
+        }
+      ],
+      "text" : "become very familiar with the operational aspects of the pitot-"
+    },
+    {
+      "rect" : [
+        36,
+        460.16370000000006,
+        237.05300000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "static system and associated instruments, the vacuum system"
+        }
+      ],
+      "text" : "static system and associated instruments, the vacuum system"
+    },
+    {
+      "rect" : [
+        36,
+        447.66370000000006,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and associated instruments, the gyroscopic instruments, and"
+        }
+      ],
+      "text" : "and associated instruments, the gyroscopic instruments, and"
+    },
+    {
+      "rect" : [
+        36,
+        435.16370000000006,
+        90.820000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the magnetic compass."
+        }
+      ],
+      "text" : "the magnetic compass."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      285,
+      581.01400000000001,
+      236.10500000000002,
+      148.98599999999999
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "text" : "8-28"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        562.91730000000007,
+        185.86000000000001,
+        10.812000000000012
+      ],
+      "structure" : {
+        "group" : 3548,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 17245
+      },
+      "text" : "Figure 8-39. Outside air temperature (OAT) gauge."
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        715.97970000000009,
+        216.81600000000006,
+        15.827999999999975
+      ],
+      "structure" : {
+        "group" : 3502,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 17071
+      },
+      "text" : "Outside Air Temperature (OAT) Gauge"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        701.21370000000002,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3503,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 17072
+      },
+      "text" : "The outside air temperature (OAT) gauge is a simple and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        688.71370000000002,
+        236.99999999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3503,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 17073
+      },
+      "text" : "effective device mounted so that the sensing element is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        676.21370000000002,
+        236.88999999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3503,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 17074
+      },
+      "text" : "exposed to the outside air. The sensing element consists"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        663.71370000000002,
+        237.02299999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3503,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 17075
+      },
+      "text" : "of a bimetallic-type thermometer in which two dissimilar"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        651.21370000000002,
+        237.005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3503,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 17076
+      },
+      "text" : "materials are welded together in a single strip and twisted"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        638.71370000000002,
+        237.02099999999984,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3503,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 17077
+      },
+      "text" : "into a helix. One end is anchored into protective tube and the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        626.21370000000002,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3503,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 17078
+      },
+      "text" : "other end is affixed to the pointer, which reads against the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        613.71370000000002,
+        237.01199999999983,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3503,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 17079
+      },
+      "text" : "calibration on a circular face. OAT gauges are calibrated in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        601.21370000000002,
+        237.09000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3503,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 17080
+      },
+      "text" : "degrees °C, °F, or both. An accurate air temperature provides"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        588.71370000000002,
+        236.89999999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3503,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 17081
+      },
+      "text" : "the pilot with useful information about temperature lapse rate"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        576.21370000000002,
+        141.91000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3503,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 17082
+      },
+      "text" : "with altitude change. [Figure 8-39]"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        549.92970000000003,
+        102.85199999999998,
+        15.827999999999975
+      ],
+      "structure" : {
+        "group" : 3504,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 17084
+      },
+      "text" : "Chapter Summary"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        535.16370000000006,
+        237.11000000000013,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3505,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 17085
+      },
+      "text" : "Flight instruments enable an aircraft to be operated with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        522.66370000000006,
+        237.03999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3505,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 17086
+      },
+      "text" : "maximum performance and enhanced safety, especially when"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        510.16370000000006,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3505,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 17087
+      },
+      "text" : "flying long distances. Manufacturers provide the necessary"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        497.66370000000006,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3505,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 17088
+      },
+      "text" : "flight instruments, but to use them effectively, pilots need"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        485.16370000000006,
+        237.00699999999983,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3505,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 17089
+      },
+      "text" : "to understand how they operate. As a pilot, it is important to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        472.66370000000006,
+        237.07300000000009,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3505,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 17090
+      },
+      "text" : "become very familiar with the operational aspects of the pitot-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        460.16370000000006,
+        237.05300000000011,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3505,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 17091
+      },
+      "text" : "static system and associated instruments, the vacuum system"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        447.66370000000006,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3505,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 17092
+      },
+      "text" : "and associated instruments, the gyroscopic instruments, and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        435.16370000000006,
+        90.820000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3505,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 17093
+      },
+      "text" : "the magnetic compass."
+    }
+  ],
+  "page" : 230,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        285.61799999999999,
+        582.79200000000003,
+        234.95300000000003,
+        145.84699999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        285.61799999999999,
+        582.79200000000003,
+        234.95400000000001,
+        145.84699999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        285,
+        581.01400000000001,
+        236.10500000000002,
+        148.98599999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        337.63400000000001,
+        587.71400000000006,
+        136.74299999999999,
+        136.19200000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        346.16030000000001,
+        595.26089999999999,
+        120.63200000000001,
+        120.63200000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        347.5342,
+        596.63490000000002,
+        117.88400000000001,
+        117.88400000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        362.73910000000006,
+        612.35849999999994,
+        87.621999999999957,
+        87.621000000000095
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        404.68490000000003,
+        615.63970000000006,
+        4,
+        89.736999999999966
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        357.55790000000002,
+        654.25170000000003,
+        98.25200000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        359.16430000000003,
+        642.05439999999999,
+        95.038000000000011,
+        28.394000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        359.16430000000003,
+        642.05399999999997,
+        95.038000000000011,
+        28.394000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        371.36160000000001,
+        620.92900000000009,
+        70.644999999999982,
+        70.644999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        363.87139999999999,
+        630.68920000000003,
+        85.624000000000024,
+        51.124000000000024
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        363.87139999999999,
+        630.68920000000003,
+        85.624000000000024,
+        51.124000000000024
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        371.36210000000005,
+        620.92900000000009,
+        70.644999999999982,
+        70.644999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        392.48720000000003,
+        608.73220000000003,
+        28.392999999999972,
+        95.038999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        381.12140000000005,
+        613.43920000000003,
+        51.125999999999976,
+        85.624000000000024
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        381.12139999999999,
+        613.43920000000003,
+        51.125999999999976,
+        85.624000000000024
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        392.48760000000004,
+        608.73220000000003,
+        28.393000000000029,
+        95.038999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        398.5335,
+        615.38940000000002,
+        15.120000000000005,
+        85.476599999999962
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        362.06799999999998,
+        648.10130000000004,
+        89.231000000000051,
+        16.302000000000021
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        362.06799999999998,
+        636.21850000000006,
+        89.231000000000051,
+        40.067000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        362.06799999999998,
+        648.10109999999997,
+        89.231000000000051,
+        16.302000000000021
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        367.29520000000002,
+        625.56420000000003,
+        78.774000000000001,
+        61.375
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        362.06799999999998,
+        636.21889999999996,
+        89.231000000000051,
+        40.066000000000031
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        367.29520000000002,
+        625.56420000000003,
+        78.77600000000001,
+        61.375
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        375.99540000000002,
+        616.86540000000002,
+        61.37700000000001,
+        78.773000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        399.40320000000003,
+        614.88940000000002,
+        15.432000000000016,
+        85.976599999999962
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        386.65010000000001,
+        611.63599999999997,
+        40.067999999999984,
+        89.230000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        375.99540000000002,
+        616.86540000000002,
+        61.37700000000001,
+        78.773000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        386.6497,
+        611.63599999999997,
+        40.067999999999984,
+        89.230000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        363.29310000000004,
+        606.40750000000003,
+        86.632999999999981,
+        93.086999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        380.97700000000003,
+        650.14179999999999,
+        9.0769999999999982,
+        11.046000000000049
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        382.27570000000003,
+        652.06230000000005,
+        9.5529999999999973,
+        7.6169999999999618
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        381.64499999999998,
+        650.43500000000006,
+        10.824000000000012,
+        10.471000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        382.50730000000004,
+        652.60720000000003,
+        9.3249999999999886,
+        7.0499999999999545
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        416.39200000000005,
+        649.80670000000009,
+        10.661999999999978,
+        10.34699999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        417.27480000000003,
+        653.52809999999999,
+        10.067000000000007,
+        5.0190000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        417.27600000000001,
+        650.90000000000009,
+        10.084000000000003,
+        10.175999999999931
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        417.2758,
+        653.98820000000001,
+        10.048999999999978,
+        4.5330000000000155
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        389.86400000000003,
+        603.14060000000006,
+        33.33499999999998,
+        5.9919999999999618
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        416.80240000000003,
+        602.20140000000004,
+        12.831999999999994,
+        9.0559999999999263
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        383.91710000000006,
+        602.11300000000006,
+        12.642999999999972,
+        10.268000000000029
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        399.34180000000003,
+        597.7527,
+        13.928999999999974,
+        16.336000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        391.32840000000004,
+        627.13890000000004,
+        26.658999999999992,
+        70.335000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        398.87549999999999,
+        617.24340000000007,
+        15.574000000000012,
+        81.937999999999988
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        382.7319,
+        625.75690000000009,
+        50.324000000000012,
+        65.778999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        370.69960000000003,
+        630.54240000000004,
+        77.620999999999981,
+        38.42999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        375.35720000000003,
+        620.97249999999997,
+        57.463000000000022,
+        66.599000000000046
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        364.9871,
+        636.13940000000002,
+        80.665999999999997,
+        34.83299999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        363.75659999999999,
+        647.5847,
+        85.896999999999991,
+        11.221000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        387.89580000000001,
+        626.97289999999998,
+        32.091999999999985,
+        69.16700000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        402.49040000000002,
+        616.58539999999994,
+        8.2950000000000159,
+        82.969000000000051
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        385.32780000000002,
+        624.69299999999998,
+        44.690999999999974,
+        68.923000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        372.94560000000001,
+        627.62339999999995,
+        70.708000000000027,
+        52.849000000000046
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        372.86990000000003,
+        623.13970000000006,
+        63.283999999999992,
+        61.717999999999961
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        364.02370000000002,
+        640.30560000000003,
+        83.296999999999969,
+        26.139999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        364.51350000000002,
+        643.98120000000006,
+        84.97399999999999,
+        17.823999999999955
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        384.59649999999999,
+        627.80510000000004,
+        38.557000000000016,
+        66.701999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        403.10480000000001,
+        616.91780000000006,
+        6.4920000000000186,
+        82.682999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        388.25790000000006,
+        623.46570000000008,
+        38.548999999999978,
+        71.951999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        375.43860000000006,
+        624.91740000000004,
+        65.048999999999978,
+        59.05499999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        370.63260000000002,
+        626.47280000000001,
+        68.355000000000018,
+        55.461000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        363.45830000000001,
+        644.47230000000002,
+        85.028999999999996,
+        18.336000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        365.58670000000001,
+        640.4597,
+        83.73399999999998,
+        25.17999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        381.45580000000001,
+        630.80520000000001,
+        41.365000000000009,
+        61.782000000000039
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        399.43389999999999,
+        617.2396,
+        13.387,
+        82.080000000000041
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        391.61750000000001,
+        622.774,
+        31.833000000000027,
+        74.15300000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        378.16460000000006,
+        622.44240000000002,
+        59.988999999999976,
+        64.529999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.66480000000001,
+        629.30499999999995,
+        72.489000000000033,
+        49.518000000000029
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        363.21850000000001,
+        647.97249999999997,
+        86.102000000000032,
+        11.162000000000035
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        366.97050000000002,
+        637.04860000000008,
+        78.516999999999996,
+        39.423999999999978
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        363.22590000000002,
+        612.92669999999998,
+        86.711999999999989,
+        86.712999999999965
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        395.32060000000001,
+        624.30490000000009,
+        22.333000000000027,
+        74.500999999999976
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        399.30560000000003,
+        619.30240000000003,
+        20.182000000000016,
+        78.836999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        381.24360000000001,
+        620.10440000000006,
+        54.744000000000028,
+        69.034999999999968
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.74760000000003,
+        633.61439999999993,
+        78.572999999999979,
+        38.858000000000061
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        378.4871,
+        618.47239999999999,
+        51,
+        71.5
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        366.96809999999999,
+        632.30510000000004,
+        76.519999999999982,
+        42.494000000000028
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        363.34699999999998,
+        651.20580000000007,
+        86.64100000000002,
+        4.7670000000000528
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        364.95820000000003,
+        614.60069999999996,
+        83.298000000000002,
+        83.297000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        390.76640000000003,
+        619.274,
+        30.327999999999975,
+        7.0090000000000146
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        414.60120000000006,
+        619.01160000000004,
+        12.805000000000007,
+        9.4339999999999691
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        384.73949999999996,
+        619.27099999999996,
+        12.686000000000035,
+        10.109000000000037
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        397.49180000000001,
+        614.31029999999998,
+        17.778999999999996,
+        16.336000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        394.14010000000002,
+        636.04349999999999,
+        20.490999999999985,
+        61.718000000000075
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        401.28399999999999,
+        648.375,
+        9.6760000000000446,
+        9.3390000000000555
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        401.44499999999999,
+        648.43330000000003,
+        9.3490000000000464,
+        9.3509999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        403.53399999999999,
+        650.52300000000002,
+        5.1720000000000255,
+        5.1169999999999618
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

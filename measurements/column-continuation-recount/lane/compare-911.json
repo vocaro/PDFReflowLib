@@ -1,0 +1,256 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "gpo-911-2004",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "420e1d57291a3448b1603f453fe52d28530dfe959fd5e5588d267644153ea9c7",
+  "candidateConverterSHA256": "39c9bbc80bf2fa30b26b7af2843643bf68925c7fe7c36560b9ab42992f4cd2e8",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-base",
+      "programsSHA256": "b7e8a53e3b55832cf440fa89ea3c27b3546abbdce99932be2c12871a79ad171a"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-cand",
+      "programsSHA256": "44644cc3de6094dac4a224cae74aac32aa52a75b5597347aa95348a1fc881f60"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 8,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    67,
+    68,
+    80,
+    81,
+    99,
+    100,
+    102,
+    103,
+    139,
+    140,
+    142,
+    143,
+    146,
+    147,
+    160,
+    161,
+    179,
+    199,
+    200,
+    206,
+    213,
+    214,
+    215,
+    229,
+    241,
+    242,
+    264,
+    265,
+    347,
+    348,
+    362,
+    363,
+    397,
+    398,
+    399
+  ],
+  "changedPageFields": {
+    "67": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "68": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "80": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "81": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "99": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "100": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "102": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "103": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "139": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "140": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "142": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "143": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "146": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines"
+    ],
+    "147": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text"
+    ],
+    "160": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "161": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "179": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines"
+    ],
+    "199": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "200": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "206": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines"
+    ],
+    "213": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "214": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "215": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text"
+    ],
+    "229": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines"
+    ],
+    "241": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "242": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "264": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "265": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "347": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "348": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "362": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "363": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "397": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "398": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "399": [
+      "markup",
+      "paragraphIDs"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 481,
+    "fields": {
+      "paragraphIDs": 481
+    },
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

@@ -315,6 +315,8 @@ enum PDFReflowLibPipeline {
         var imageBytes: Int64 = 0
         var previous: PageContent?
         var previousRegions: [CGRect] = []
+        // Up to two pages after `previous` that hold only figures; a paragraph may continue past them.
+        var figurePages: [(page: PageContent, images: [CGRect])] = []
         // A numbered list inside a note still open at the previous page's end (#87).
         var openNoteList: NumberedNoteDetector.OpenList?
         // The note the previous page's last line belongs to, which this page may continue (#11).
@@ -332,6 +334,7 @@ enum PDFReflowLibPipeline {
             if equalsMarksHyphens { LayoutReconstructor.restoreEqualsHyphens(&content) }
             let previousPage = i > 0 && !chapterStartPages.contains(content.number) ? previous : nil
             var regions: [CGRect] = []
+            var onlyFigures = false
             try autoreleasepool {
                 let page = try document.page(at: i)
                 func saveImage(_ rect: CGRect, fullPage: Bool = false, rotate: Bool = false) throws -> String {
@@ -379,6 +382,7 @@ enum PDFReflowLibPipeline {
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }
+                    onlyFigures = LayoutReconstructor.holdsOnlyFigures(pageBlocks, page: content)
                     let includeReference = options.referenceImages == .always
                         || (options.referenceImages == .automatic && content.preservePageReference)
                     if includeReference {
@@ -393,15 +397,22 @@ enum PDFReflowLibPipeline {
                     }
                 }
                 LayoutReconstructor.appendPage(pageBlocks, page: content, images: regions, previousPage: previousPage,
-                    previousImages: previousRegions, to: &blocks, vocabulary: vocabulary, continuesNote: continuesNote,
-                    warnings: &warnings)
+                    previousImages: previousRegions, skippedPages: previousPage == nil ? [] : figurePages,
+                    to: &blocks, vocabulary: vocabulary, continuesNote: continuesNote, warnings: &warnings)
                 if previousPage != nil {
                     LayoutReconstructor.joinContinuedFootnote(&blocks, page: content.number,
                         vocabulary: vocabulary, warnings: &warnings)
                 }
             }
-            previous = content
-            previousRegions = regions
+            // A figure-only page keeps the last body page as `previous`, unless it opens a
+            // chapter or two such pages already stand between.
+            if onlyFigures, previousPage != nil, figurePages.count < 2 {
+                figurePages.append((content, regions))
+            } else {
+                previous = content
+                previousRegions = regions
+                figurePages = []
+            }
             await progress(.init(stage: .reconstructing, fractionCompleted: 0.6875 + 0.3125 * Double(i + 1) / Double(total),
                 page: i + 1, totalPages: total))
         }

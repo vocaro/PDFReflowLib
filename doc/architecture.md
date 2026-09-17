@@ -294,20 +294,31 @@ last body paragraph and the next page's first body paragraph, in reading order, 
 evidence: preserved images, figure captions and bare margin folios that furniture removal kept
 are stepped over (and stay on their page, ahead of the joined paragraph, while headings directly
 above that paragraph move with it past them, #63); two different
-validated paragraph identities refuse; the next text starts lowercase; the previous text lacks
+validated paragraph identities refuse; the next text starts lowercase, or (#118) after a last word
+that cannot end a sentence (an article, preposition, conjunction, auxiliary, determiner or
+possessive) opens with a capital, digit or quote in the anchor's type size on a first line that
+fills its column or closes its sentence; the previous text lacks
 terminal punctuation past closing quotes and superscript note markers; the previous paragraph's
 last line reads as prose and fills its column (a justified column's shared right edge, three
 quarters of a ragged column's measure, or a line-ending hyphen); the next paragraph's first line
 is not a retained running header with a folio word; and no other prose lies below or right of
 that last line or above or left of that first line, counting body-sized wide text inside a
 preserved region so that a figure which swallowed the real neighbour blocks the join rather
-than corrupting the text. The same evidence joins a paragraph at one column's foot to the next
+than corrupting the text. A caption's wrapped lines, set smaller than the anchor, belong to the
+caption and do not compete (#118). Up to two reflowed pages between that hold only preserved images,
+captions and folios, and no prose line even inside their regions, are stepped over (#118): their page
+markers join the next page's at the text boundary and their figures follow the joined paragraph.
+The same evidence joins a paragraph at one column's foot to the next
 paragraph at a column head to its right on the same page (#111): they are adjacent in reading order
 apart from figures, captions and folios (which then follow the joined paragraph); the head line is
-higher than the foot line; and no prose lies below the foot line in its span, between the two
-columns, or above the head line in its span, searched only beneath the lowest line, figure or box
-over the head line that crosses the gutter, so a section band bounds its section from the stacked
-sections above. A line that begins with a number or single letter followed by a
+higher than the foot line, or lower only beneath a figure standing over it that reaches above the
+foot line, in the anchor's type (#118); and no prose lies below the foot line in its span, between
+the two columns, or above the head line in its span, searched only up to the top of the lowest
+line, figure or box over the head line that crosses the gutter (that element itself set aside, body
+prose a crossing region swallowed still counting), so a section band bounds its section from the
+stacked sections above. A paragraph also continues in the next line of its own column when reading
+order set a figure or caption beside it between the two (#118): same size and left edge, directly
+below at no more than one and a half line heights, with no line between. A line that begins with a number or single letter followed by a
 period or parenthesis and a space, or a number and parenthesis set tight against a minus sign
 (`1)− 2`), is a preformatted list item unless it wraps an open paragraph: the
 previous line must read as prose, end without terminal punctuation and reach a right edge

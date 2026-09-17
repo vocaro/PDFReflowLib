@@ -1,0 +1,189 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "wallace-algebra-2010",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "420e1d57291a3448b1603f453fe52d28530dfe959fd5e5588d267644153ea9c7",
+  "candidateConverterSHA256": "39c9bbc80bf2fa30b26b7af2843643bf68925c7fe7c36560b9ab42992f4cd2e8",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-base",
+      "programsSHA256": "b7e8a53e3b55832cf440fa89ea3c27b3546abbdce99932be2c12871a79ad171a"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-cand",
+      "programsSHA256": "44644cc3de6094dac4a224cae74aac32aa52a75b5597347aa95348a1fc881f60"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    72,
+    73,
+    75,
+    80,
+    81,
+    89,
+    90,
+    95,
+    104,
+    146,
+    167,
+    168,
+    169,
+    171,
+    219,
+    274,
+    275,
+    337,
+    373,
+    374,
+    376,
+    381
+  ],
+  "changedPageFields": {
+    "72": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "73": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "75": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "80": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "81": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "89": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "90": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "95": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "104": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "146": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "167": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "168": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "169": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts"
+    ],
+    "171": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "219": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "274": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "275": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "337": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "373": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "374": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "376": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "381": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 365,
+    "fields": {
+      "paragraphIDs": 365
+    },
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

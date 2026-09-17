@@ -2961,6 +2961,7 @@ enum LayoutReconstructor {
     /// the previous page's last note (`NumberedNoteDetector.Layout.continuesParagraph`).
     static func appendPage(_ pageBlocks: [ReflowBlock], page: PageContent, images: [CGRect] = [],
                            previousPage: PageContent?, previousImages: [CGRect] = [],
+                           skippedPages: [(page: PageContent, images: [CGRect])] = [],
                            to blocks: inout [ReflowBlock], vocabulary: Set<String>,
                            continuesNote: Bool = false,
                            warnings: inout [ConversionWarning]) {
@@ -2971,12 +2972,20 @@ enum LayoutReconstructor {
         let previousImages = previousImages + clusters(previousPage?.tints ?? [], distance: 4)
         if let previousPage,
            let anchors = continuation(from: blocks, previousPage: previousPage, previousImages: previousImages,
-                                      to: remaining, page: page, images: images, continuesNote: continuesNote),
+                                      skippedPages: skippedPages, to: remaining, page: page, images: images,
+                                      continuesNote: continuesNote),
            let left = joinableText(blocks[anchors.previous].content),
-           case let .paragraph(right) = remaining[anchors.next].content {
+           case .paragraph(var right) = remaining[anchors.next].content {
+            // Pages holding only figures between the halves open at the text boundary as well,
+            // ahead of this page; their figures follow the paragraph, as this page's leading
+            // figures do.
+            let skipped = skippedPages.map(\.page.number)
+            if !skipped.isEmpty {
+                right.elements.insert(contentsOf: (skipped.dropFirst() + [page.number]).map { .sourcePage($0) }, at: 0)
+            }
             var joined = blocks[anchors.previous]
             let text = join(left, right, vocabulary: vocabulary, page: page.number,
-                sourceBoundary: page.number, warnings: &warnings)
+                sourceBoundary: skipped.first ?? page.number, warnings: &warnings)
             // A continued list item keeps its representation; only its text grows.
             if case .preformatted = joined.content { joined.content = .preformatted(text) }
             else { joined.content = .paragraph(text) }
@@ -2990,9 +2999,15 @@ enum LayoutReconstructor {
             var start = anchors.previous
             while start > 0, case .heading = blocks[start - 1].content { start -= 1 }
             let headings = Array(blocks[start..<anchors.previous])
-            let trailing = Array(blocks[(anchors.previous + 1)...])
+            let after = blocks[(anchors.previous + 1)...]
+            let trailing = after.filter { !skipped.contains($0.page) }
+            let skippedBlocks = after.filter {
+                guard skipped.contains($0.page) else { return false }
+                if case .sourcePage = $0.content { return false }
+                return true
+            }
             blocks.replaceSubrange(start..., with: trailing.filter { !$0.isFootnote } + headings + [joined]
-                + trailing.filter(\.isFootnote))
+                + trailing.filter(\.isFootnote) + skippedBlocks)
             remaining.remove(at: anchors.next)
         } else {
             blocks.append(ReflowBlock(content: .sourcePage(page.number), page: page.number))
@@ -3017,9 +3032,14 @@ enum LayoutReconstructor {
     /// flush-left `The proposed National Counterterrorism Center…` opens a paragraph of its own),
     /// and no prose may lie below that line or above the first.
     private static func continuation(from blocks: [ReflowBlock], previousPage: PageContent, previousImages: [CGRect],
+                                     skippedPages: [(page: PageContent, images: [CGRect])] = [],
                                      to pageBlocks: [ReflowBlock], page: PageContent,
                                      images: [CGRect], continuesNote: Bool = false) -> (previous: Int, next: Int)? {
         var previous = blocks.count - 1
+        // Pages between that hold only figures, captions and folios, with their page markers.
+        let skipped = Set(skippedPages.map(\.page.number))
+        if !skipped.isEmpty && continuesNote { return nil }
+        while previous >= 0, skipped.contains(blocks[previous].page) { previous -= 1 }
         // A footnote continued onto the previous page starts on an earlier one, and a join
         // moves an earlier page's footnotes behind the paragraph that continued.
         while previous >= 0, blocks[previous].page == previousPage.number
@@ -3042,23 +3062,39 @@ enum LayoutReconstructor {
         if let leftGroup = blocks[previous].structureGroup, let rightGroup = pageBlocks[next].structureGroup,
            leftGroup != rightGroup,
            blocks[previous].taggedLevel != 0 || pageBlocks[next].taggedLevel != 0 { return nil }
+        let previousCaptions = captionTexts(blocks, page: previousPage.number)
+        let nextCaptions = captionTexts(pageBlocks, page: page.number)
         if continuesNote {
             guard case .paragraph = blocks[previous].content, pageBlocks[next].note == nil,
                   let last = lastLine(of: left.text, in: previousPage.lines),
                   let first = firstLine(of: right.text, in: page.lines),
                   fillsColumn(last, in: previousPage.lines, body: max(4, bodySize(previousPage.lines))),
-                  endsColumn(last, in: previousPage, images: previousImages),
-                  opensColumn(first, in: page, images: images) else { return nil }
+                  endsColumn(last, in: previousPage, images: previousImages, captions: previousCaptions),
+                  opensColumn(first, in: page, images: images, captions: nextCaptions) else { return nil }
             return (previous, next)
         }
-        guard right.text.first?.isLowercase == true, !endsSentence(left),
+        guard continuesSentence(left, into: right),
               let last = lastLine(of: left.text, in: previousPage.lines),
+              // A skipped page holds no prose, even inside its regions.
+              !skippedPages.contains(where: { skippedPage in
+                  let captions = captionTexts(blocks, page: skippedPage.page.number)
+                  return skippedPage.page.lines.contains {
+                      isProse($0, beside: last, share: 0.5, page: skippedPage.page, images: skippedPage.images,
+                              captions: captions)
+                  }
+              }),
               let first = firstLine(of: right.text, in: page.lines),
               !isHeaderLike(first, in: page), wordCount(first.text) >= 2,
               readsAsProse(last.text), readsAsProse(first.text),
               fillsColumn(last, in: previousPage.lines, body: max(4, bodySize(previousPage.lines))),
-              endsColumn(last, in: previousPage, images: previousImages),
-              opensColumn(first, in: page, images: images) else { return nil }
+              endsColumn(last, in: previousPage, images: previousImages, captions: previousCaptions),
+              opensColumn(first, in: page, images: images, captions: nextCaptions),
+              // A capital, digit or quote continues only in the anchor's type and on a full line:
+              // 9/11 page 302's credit `The World Trade Center Radio Repeater System` under the
+              // rendering, and page 246's run-in title `Atta’s Alleged Trip to Prague`, are short.
+              right.text.first?.isLowercase == true
+                || Int(first.fontSize.rounded()) == Int(last.fontSize.rounded())
+                && opensOnAFullLine(first, in: page.lines, body: max(4, bodySize(page.lines))) else { return nil }
         // A code block is preformatted because its breaks are significant; a list item is
         // preformatted because its marker is. Only the item continues as running text.
         if case .preformatted = blocks[previous].content, last.monospaced { return nil }
@@ -3087,7 +3123,8 @@ enum LayoutReconstructor {
             var next = index + 1
             while next < blocks.count, isSkippable(blocks[next], page: page) { next += 1 }
             guard next < blocks.count, case let .paragraph(right) = blocks[next].content,
-                  continuesColumn(left, blocks[index], into: right, blocks[next], page: page, images: images, body: body)
+                  continuesColumn(left, blocks[index], into: right, blocks[next], page: page, images: images,
+                                  captions: captionTexts(blocks, page: page.number), body: body)
             else { continue }
             let text = join(left, right, vocabulary: vocabulary, page: page.number, warnings: &warnings)
             if case .preformatted = blocks[index].content { blocks[index].content = .preformatted(text) }
@@ -3102,33 +3139,120 @@ enum LayoutReconstructor {
 
     private static func continuesColumn(_ left: InlineText, _ leftBlock: ReflowBlock, into right: InlineText,
                                         _ rightBlock: ReflowBlock, page: PageContent, images: [CGRect],
-                                        body: CGFloat) -> Bool {
+                                        captions: [String], body: CGFloat) -> Bool {
         if let leftGroup = leftBlock.structureGroup, let rightGroup = rightBlock.structureGroup,
            leftGroup != rightGroup { return false }
-        guard right.text.first?.isLowercase == true, !endsSentence(left),
+        guard continuesSentence(left, into: right),
               let last = lastLine(of: left.text, in: page.lines),
               let first = firstLine(of: right.text, in: page.lines),
               wordCount(first.text) >= 2, readsAsProse(last.text), readsAsProse(first.text),
-              first.rect.minX >= last.rect.maxX - body * 0.5, first.rect.midY > last.rect.midY,
               fillsColumn(last, in: page.lines, body: body) else { return false }
+        // Evidence weaker than a lowercase opening needs the continuation in the anchor's type (FAA
+        // page 341's `…the threshold for` does not continue in the wrapped caption line `14 with
+        // collocated Taxiway Alpha location sign.` beneath figure 14-9) and on a full line.
+        let sameSize = Int(first.fontSize.rounded()) == Int(last.fontSize.rounded())
+        guard right.text.first?.isLowercase == true || sameSize && opensOnAFullLine(first, in: page.lines, body: body)
+        else { return false }
         if case .preformatted = leftBlock.content, last.monospaced { return false }
-        // The lowest element over the first line that crosses the gutter bounds the section.
+        // A figure or caption set beside the paragraph was read between two of its lines (FAA
+        // page 230's `…twisted` / `into a helix`, beside figure 8-39): the next line lies directly
+        // below, on the column's edge, at the paragraph's own line pitch.
+        if nextLineInColumn(last, first, page: page, body: body) { return true }
+        // The next column's head is higher than the foot, or lower only beneath a figure that
+        // heads that column and reaches above the foot (FAA page 411: `…by means of the` over
+        // figure 16-29, `course select knob` under figure 16-30).
+        let headedByFigure = images.contains {
+            $0.minX < first.rect.maxX && $0.maxX > first.rect.minX
+                && $0.minY >= first.rect.maxY - body * 0.5 && $0.maxY > last.rect.midY
+        }
+        guard first.rect.minX >= last.rect.maxX - body * 0.5,
+              first.rect.midY > last.rect.midY || headedByFigure && sameSize else { return false }
+        // The lowest element over the first line that crosses the gutter bounds the section. Body
+        // prose a crossing region swallowed still competes: the bound is that element's top, and
+        // only the element itself is set aside (FAA page 19's fixture, whose full-width crop took
+        // the right column's first lines, #118).
         let gutter = (start: last.rect.maxX, end: first.rect.minX)
-        let ceiling = (page.lines.map(\.rect) + images)
+        let lowest = (page.lines.map(\.rect) + images)
             .filter { $0.minX < gutter.start && $0.maxX > gutter.end && $0.midY > first.rect.maxY }
-            .map(\.minY).min() ?? .infinity
+            .min { $0.minY < $1.minY }
+        let ceiling = lowest?.maxY ?? .infinity
         let separator = page.lines.filter { FootnoteDetector.isSeparator($0) && $0.rect.midY < last.rect.minY }
             .map(\.rect.minY).max()
         return !page.lines.contains { other in
-            guard other != last, other != first, other.rect.midY < ceiling else { return false }
+            guard other != last, other != first, other.rect.midY < ceiling, other.rect != lowest else { return false }
             if let separator, other.rect.midY < separator, other.fontSize <= last.fontSize * 0.9 { return false }
             let below = other.rect.midY < last.rect.minY && other.rect.maxX > last.rect.minX && other.rect.minX < last.rect.maxX
             let between = other.rect.minX >= last.rect.maxX && other.rect.maxX <= first.rect.minX
             let above = other.rect.midY > first.rect.maxY && other.rect.maxX > first.rect.minX && other.rect.minX < first.rect.maxX
-            return below && isProse(other, beside: last, share: 0.5, page: page, images: images)
-                || between && isProse(other, beside: last, share: 0.9, page: page, images: images)
-                || above && isProse(other, beside: first, share: 0.5, page: page, images: images)
+            return below && isProse(other, beside: last, share: 0.5, page: page, images: images, captions: captions)
+                || between && isProse(other, beside: last, share: 0.9, page: page, images: images, captions: captions)
+                || above && isProse(other, beside: first, share: 0.5, page: page, images: images, captions: captions)
         }
+    }
+
+    /// `first` is the line after `last` in one column: the same size, on the same left edge (half
+    /// a body), directly below at a pitch of at most one and a half line heights, with no line
+    /// between them.
+    static func nextLineInColumn(_ last: TextLine, _ first: TextLine, page: PageContent, body: CGFloat) -> Bool {
+        let pitch = last.rect.midY - first.rect.midY
+        guard Int(first.fontSize.rounded()) == Int(last.fontSize.rounded()),
+              abs(first.rect.minX - last.rect.minX) <= body * 0.5,
+              first.rect.maxY <= last.rect.minY + last.rect.height * 0.25,
+              pitch <= max(last.rect.height, first.rect.height) * 1.5 else { return false }
+        return !page.lines.contains { other in
+            other != last && other != first && other.rect.midY < last.rect.midY && other.rect.midY > first.rect.midY
+                && other.rect.maxX > first.rect.minX && other.rect.minX < first.rect.maxX
+        }
+    }
+
+    /// The previous text leaves its sentence open and the next text carries it on: it opens
+    /// lowercase or, after a word that cannot end a sentence (an article, preposition,
+    /// conjunction, auxiliary, determiner or possessive), with a capital, a digit or an opening
+    /// quote (FAA `…further increasing the` / `AOA.`, `…about 2 °Celsius (C) every` / `1,000 feet`).
+    static func continuesSentence(_ left: InlineText, into right: InlineText) -> Bool {
+        guard !endsSentence(left), let opening = right.text.first else { return false }
+        if opening.isLowercase { return true }
+        guard opening.isUppercase || opening.isNumber || opening == "\u{201C}" || opening == "\"",
+              let last = left.text.split(whereSeparator: \.isWhitespace).last else { return false }
+        let word = String(last)
+        for suffix in ["\u{2019}s", "'s"] where word.hasSuffix(suffix) {
+            let stem = word.dropLast(2)
+            return stem.count >= 2 && stem.allSatisfy(\.isLetter)
+        }
+        return openWords.contains(word.lowercased())
+    }
+
+    /// The continuation's first line fills its column, or ends short because it closes the sentence
+    /// (FAA page 127's `87 percent, depending on how much the propeller “slips.”`). A short title or
+    /// credit line (9/11 page 302's `The World Trade Center Radio Repeater System`) does neither.
+    private static func opensOnAFullLine(_ first: TextLine, in lines: [TextLine], body: CGFloat) -> Bool {
+        fillsColumn(first, in: lines, body: body) || endsSentence(InlineText(first.text))
+    }
+
+    private static let openWords: Set<String> = [
+        "a", "an", "the", "of", "to", "in", "on", "at", "by", "for", "from", "with", "into", "onto", "upon",
+        "about", "between", "over", "under", "through", "per", "via", "and", "or", "nor", "but", "than",
+        "as", "is", "are", "was", "were", "be", "been", "being", "can", "may", "must", "should", "will",
+        "would", "could", "every", "each", "its", "their", "his", "her", "our", "your", "this", "these",
+        "those", "whose",
+    ]
+
+    /// The text of the figure and table captions among a page's blocks.
+    private static func captionTexts(_ blocks: [ReflowBlock], page: Int) -> [String] {
+        blocks.compactMap {
+            guard $0.page == page, case .paragraph = $0.content else { return nil }
+            let text = $0.text.trimmingCharacters(in: .whitespacesAndNewlines)
+            return isCaption(text) ? text : nil
+        }
+    }
+
+    /// A reflowed page whose blocks are only preserved images, figure captions and margin folios,
+    /// at least one of them an image. A cross-page join may step over it when it also holds no
+    /// prose line (FAA page 46, a full-page risk assessment form between `…health, fatigue,
+    /// weather,` and `capabilities, etc.`).
+    static func holdsOnlyFigures(_ pageBlocks: [ReflowBlock], page: PageContent) -> Bool {
+        pageBlocks.contains { if case .image = $0.content { true } else { false } }
+            && pageBlocks.allSatisfy { !$0.isFootnote && isSkippable($0, page: page) }
     }
 
     /// The text a page-crossing join may continue: a body paragraph, or the wrapped line of a
@@ -3272,10 +3396,17 @@ enum LayoutReconstructor {
     /// except captions and margin folios; inside a preserved region it must also be the
     /// anchor's size, so figure labels do not count but swallowed body text does.
     private static func isProse(_ other: TextLine, beside line: TextLine, share: CGFloat,
-                                page: PageContent, images: [CGRect]) -> Bool {
+                                page: PageContent, images: [CGRect], captions: [String] = []) -> Bool {
         let text = other.text.trimmingCharacters(in: .whitespaces)
         guard other != line, !text.isEmpty, other.rect.width >= line.rect.width * share,
               !isCaption(text), !(isFolio(text) && inMargin(other, of: page)) else { return false }
+        // A caption's wrapped lines, set smaller than the anchor, belong to the caption (FAA page
+        // 21's `Richard “Pete” Quesada, 1959–1961.` under `Figure 1-10.`).
+        if other.fontSize < line.fontSize * 0.95 {
+            var wrapped = text
+            if wrapped.last == "-" || wrapped.last == "\u{00ad}" { wrapped.removeLast() }
+            if wrapped.count >= 3, captions.contains(where: { $0.contains(wrapped) }) { return false }
+        }
         guard images.contains(where: { $0.intersects(other.rect) }) else { return true }
         return Int(other.fontSize.rounded()) == Int(line.fontSize.rounded())
     }
@@ -3283,7 +3414,7 @@ enum LayoutReconstructor {
     /// Prose below the last line, even a short swallowed line, means the paragraph did not end
     /// the page; a column of prose to its right (lines as wide as the anchor, so a name column
     /// beside a hanging-indent entry does not count) means the anchor is not the last column.
-    private static func endsColumn(_ last: TextLine, in page: PageContent, images: [CGRect]) -> Bool {
+    private static func endsColumn(_ last: TextLine, in page: PageContent, images: [CGRect], captions: [String]) -> Bool {
         // Page-bottom footnotes (smaller type under a dash separator) are not the body's continuation.
         let separator = page.lines.filter { FootnoteDetector.isSeparator($0) && $0.rect.midY < last.rect.minY }
             .map(\.rect.minY).max()
@@ -3291,17 +3422,17 @@ enum LayoutReconstructor {
             if let separator, other.rect.midY < separator, other.fontSize <= last.fontSize * 0.9 { return false }
             let below = other.rect.midY < last.rect.minY && other.rect.maxX > last.rect.minX && other.rect.minX < last.rect.maxX
             let beside = other.rect.minX >= last.rect.maxX
-            return below && isProse(other, beside: last, share: 0.5, page: page, images: images)
-                || beside && isProse(other, beside: last, share: 0.9, page: page, images: images)
+            return below && isProse(other, beside: last, share: 0.5, page: page, images: images, captions: captions)
+                || beside && isProse(other, beside: last, share: 0.9, page: page, images: images, captions: captions)
         }
     }
 
-    private static func opensColumn(_ first: TextLine, in page: PageContent, images: [CGRect]) -> Bool {
+    private static func opensColumn(_ first: TextLine, in page: PageContent, images: [CGRect], captions: [String]) -> Bool {
         !page.lines.contains { other in
             let above = other.rect.midY > first.rect.maxY && other.rect.maxX > first.rect.minX && other.rect.minX < first.rect.maxX
             let beside = other.rect.maxX <= first.rect.minX
-            return above && isProse(other, beside: first, share: 0.5, page: page, images: images)
-                || beside && isProse(other, beside: first, share: 0.9, page: page, images: images)
+            return above && isProse(other, beside: first, share: 0.5, page: page, images: images, captions: captions)
+                || beside && isProse(other, beside: first, share: 0.9, page: page, images: images, captions: captions)
         }
     }
 

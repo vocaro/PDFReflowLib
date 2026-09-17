@@ -1,0 +1,4354 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        25.570000000000007,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "16-24"
+        }
+      ],
+      "text" : "16-24"
+    },
+    {
+      "rect" : [
+        285,
+        318.53040000000004,
+        162.11960000000005,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 16-30."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Horizontal situation indicator."
+        }
+      ],
+      "text" : "Figure 16-30. Horizontal situation indicator."
+    },
+    {
+      "rect" : [
+        285.89480000000003,
+        337.55360000000002,
+        234.46600000000001,
+        392.03000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        35.863600000000005,
+        61.730399999999996,
+        106.8506,
+        10.812000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 16-29."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "VOR indicator."
+        }
+      ],
+      "text" : "Figure 16-29. VOR indicator."
+    },
+    {
+      "rect" : [
+        36.523499999999984,
+        80.2346,
+        235.953,
+        226.55599999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36,
+        719.56640000000004,
+        237.00600000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "needle is centered, the radial (magnetic course “FROM” the"
+        }
+      ],
+      "text" : "needle is centered, the radial (magnetic course “FROM” the"
+    },
+    {
+      "rect" : [
+        36,
+        707.06640000000004,
+        237.00499999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "station) or its reciprocal (magnetic course “TO” the station)"
+        }
+      ],
+      "text" : "station) or its reciprocal (magnetic course “TO” the station)"
+    },
+    {
+      "rect" : [
+        36,
+        694.56640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "can be determined. The course deviation needle also moves"
+        }
+      ],
+      "text" : "can be determined. The course deviation needle also moves"
+    },
+    {
+      "rect" : [
+        36,
+        682.06640000000004,
+        237.01400000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to the right or left if the aircraft is flown or drifting away"
+        }
+      ],
+      "text" : "to the right or left if the aircraft is flown or drifting away"
+    },
+    {
+      "rect" : [
+        36,
+        669.56640000000004,
+        198.84999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "from the radial which is set in the course selector."
+        }
+      ],
+      "text" : "from the radial which is set in the course selector."
+    },
+    {
+      "rect" : [
+        36,
+        644.56640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "By centering the needle, the course selector indicates either"
+        }
+      ],
+      "text" : "By centering the needle, the course selector indicates either"
+    },
+    {
+      "rect" : [
+        36,
+        632.06640000000004,
+        236.88,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the course “FROM” the station or the course “TO” the station."
+        }
+      ],
+      "text" : "the course “FROM” the station or the course “TO” the station."
+    },
+    {
+      "rect" : [
+        36,
+        619.56640000000004,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "If the flag displays a “TO,” the course shown on the course"
+        }
+      ],
+      "text" : "If the flag displays a “TO,” the course shown on the course"
+    },
+    {
+      "rect" : [
+        36,
+        607.06640000000004,
+        237.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "selector must be flown to the station. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 16-29] "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "If"
+        }
+      ],
+      "text" : "selector must be flown to the station. [Figure 16-29] If"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        594.56640000000004,
+        237.01399999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "“FROM” is displayed and the course shown is followed, the"
+        }
+      ],
+      "text" : "“FROM” is displayed and the course shown is followed, the"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        582.06640000000004,
+        155.80000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft is flown away from the station."
+        }
+      ],
+      "text" : "aircraft is flown away from the station."
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        556.49639999999999,
+        139.46000000000006,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Horizontal Situation Indicator"
+        }
+      ],
+      "text" : "Horizontal Situation Indicator"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        544.06640000000004,
+        236.85999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The HSI is a direction indicator that uses the output"
+        }
+      ],
+      "text" : "The HSI is a direction indicator that uses the output"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        531.56640000000004,
+        237.09799999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "from a flux valve to drive the compass card. The HSI"
+        }
+      ],
+      "text" : "from a flux valve to drive the compass card. The HSI"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        519.06640000000004,
+        237.04999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 16-30] "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "combines the magnetic compass with"
+        }
+      ],
+      "text" : "[Figure 16-30] combines the magnetic compass with"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        506.56640000000004,
+        237.00999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "navigation signals and a glideslope. The HSI gives the pilot"
+        }
+      ],
+      "text" : "navigation signals and a glideslope. The HSI gives the pilot"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        494.06640000000004,
+        236.9959999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "an indication of the location of the aircraft in relation to the"
+        }
+      ],
+      "text" : "an indication of the location of the aircraft in relation to the"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        481.56640000000004,
+        94.969999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "chosen course or radial."
+        }
+      ],
+      "text" : "chosen course or radial."
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        456.56640000000004,
+        237.01999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "In "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Figure 16-30,"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " the aircraft magnetic heading displayed"
+        }
+      ],
+      "text" : "In Figure 16-30, the aircraft magnetic heading displayed"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        444.06640000000004,
+        236.99000000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "on the compass card under the lubber line is 184°. The"
+        }
+      ],
+      "text" : "on the compass card under the lubber line is 184°. The"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        431.56640000000004,
+        237.00499999999985,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "course select pointer shown is set to 295°; the tail of the"
+        }
+      ],
+      "text" : "course select pointer shown is set to 295°; the tail of the"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        419.06640000000004,
+        236.99799999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pointer indicates the reciprocal, 115°. The course deviation"
+        }
+      ],
+      "text" : "pointer indicates the reciprocal, 115°. The course deviation"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        406.56640000000004,
+        236.85999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "bar operates with a VOR/Localizer (VOR/LOC) or GPS"
+        }
+      ],
+      "text" : "bar operates with a VOR/Localizer (VOR/LOC) or GPS"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        394.06640000000004,
+        237.00499999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "navigation receiver to indicate left or right deviations from"
+        }
+      ],
+      "text" : "navigation receiver to indicate left or right deviations from"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        381.56640000000004,
+        237.00599999999983,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the course selected with the course select pointer; operating"
+        }
+      ],
+      "text" : "the course selected with the course select pointer; operating"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        369.06640000000004,
+        237.05899999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in the same manner, the angular movement of a conventional"
+        }
+      ],
+      "text" : "in the same manner, the angular movement of a conventional"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        356.56640000000004,
+        203.30000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "VOR/LOC needle indicates deviation from course."
+        }
+      ],
+      "text" : "VOR/LOC needle indicates deviation from course."
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        331.56640000000004,
+        237.00599999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The desired course is selected by rotating the course select"
+        }
+      ],
+      "text" : "The desired course is selected by rotating the course select"
+    },
+    {
+      "rect" : [
+        36.010000000000019,
+        319.06640000000004,
+        236.90999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pointer, in relation to the compass card, by means of the"
+        }
+      ],
+      "text" : "pointer, in relation to the compass card, by means of the"
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        293.14640000000003,
+        237.12000000000029,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "course select knob. The HSI has a fixed aircraft symbol"
+        }
+      ],
+      "text" : "course select knob. The HSI has a fixed aircraft symbol"
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        280.64640000000003,
+        237.01599999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and the course deviation bar displays the aircraft’s position"
+        }
+      ],
+      "text" : "and the course deviation bar displays the aircraft’s position"
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        268.14640000000003,
+        237.00299999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "relative to the selected course. The TO/FROM indicator is a"
+        }
+      ],
+      "text" : "relative to the selected course. The TO/FROM indicator is a"
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        255.64640000000003,
+        237.05500000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "triangular pointer. When the indicator points to the head of the"
+        }
+      ],
+      "text" : "triangular pointer. When the indicator points to the head of the"
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        243.14640000000003,
+        237.00399999999985,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "course select pointer, the arrow shows the course selected. If"
+        }
+      ],
+      "text" : "course select pointer, the arrow shows the course selected. If"
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        230.64640000000003,
+        237.00799999999975,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "properly intercepted and flown, the course takes the aircraft"
+        }
+      ],
+      "text" : "properly intercepted and flown, the course takes the aircraft"
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        218.14640000000003,
+        237.01399999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to the chosen facility. When the indicator points to the tail"
+        }
+      ],
+      "text" : "to the chosen facility. When the indicator points to the tail"
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        205.64640000000003,
+        237.01599999999991,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of the course, the arrow shows that the course selected, if"
+        }
+      ],
+      "text" : "of the course, the arrow shows that the course selected, if"
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        193.14640000000003,
+        237.01999999999981,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "properly intercepted and flown, takes the aircraft directly"
+        }
+      ],
+      "text" : "properly intercepted and flown, takes the aircraft directly"
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        180.64640000000003,
+        121.36000000000007,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "away from the chosen facility."
+        }
+      ],
+      "text" : "away from the chosen facility."
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        155.64640000000003,
+        237.0499999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When the NAV warning flag appears, it indicates no reliable"
+        }
+      ],
+      "text" : "When the NAV warning flag appears, it indicates no reliable"
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        143.14640000000003,
+        237.01600000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "signal is being received. The appearance of the HDG flag"
+        }
+      ],
+      "text" : "signal is being received. The appearance of the HDG flag"
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        130.64640000000003,
+        218.85999999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "indicates the compass card is not functioning properly."
+        }
+      ],
+      "text" : "indicates the compass card is not functioning properly."
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        105.07640000000004,
+        146.68000000000001,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Radio Magnetic Indicator (RMI)"
+        }
+      ],
+      "text" : "Radio Magnetic Indicator (RMI)"
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        92.646400000000028,
+        237.01599999999991,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The RMI is a navigational aid providing aircraft magnetic"
+        }
+      ],
+      "text" : "The RMI is a navigational aid providing aircraft magnetic"
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        80.146400000000028,
+        236.81000000000012,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or directional gyro heading and very high frequency"
+        }
+      ],
+      "text" : "or directional gyro heading and very high frequency"
+    },
+    {
+      "rect" : [
+        285.01000000000005,
+        67.646400000000028,
+        237.01900000000018,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "omnidirectional range (VOR), GPS, and automatic direction"
+        }
+      ],
+      "text" : "omnidirectional range (VOR), GPS, and automatic direction"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      285.45699999999999,
+      337.31999999999999,
+      235.45299999999997,
+      392.80000000000001
+    ],
+    [
+      36,
+      80.519999999999996,
+      237,
+      226.98000000000002
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        25.570000000000007,
+        12.310000000000002
+      ],
+      "text" : "16-24"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        318.53040000000004,
+        162.11960000000005,
+        10.812000000000012
+      ],
+      "structure" : {
+        "group" : 5959,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 28788
+      },
+      "text" : "Figure 16-30. Horizontal situation indicator."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        35.863600000000005,
+        61.730399999999996,
+        106.8506,
+        10.812000000000005
+      ],
+      "structure" : {
+        "group" : 5960,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 28792
+      },
+      "text" : "Figure 16-29. VOR indicator."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        719.56640000000004,
+        237.00600000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5787,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 27814
+      },
+      "text" : "needle is centered, the radial (magnetic course “FROM” the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        707.06640000000004,
+        237.00499999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5787,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 27815
+      },
+      "text" : "station) or its reciprocal (magnetic course “TO” the station)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        694.56640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5787,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 27816
+      },
+      "text" : "can be determined. The course deviation needle also moves"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        682.06640000000004,
+        237.01400000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5787,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 27817
+      },
+      "text" : "to the right or left if the aircraft is flown or drifting away"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        669.56640000000004,
+        198.84999999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5787,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 27818
+      },
+      "text" : "from the radial which is set in the course selector."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        644.56640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5788,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27819
+      },
+      "text" : "By centering the needle, the course selector indicates either"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        632.06640000000004,
+        236.88,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5788,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27820
+      },
+      "text" : "the course “FROM” the station or the course “TO” the station."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        619.56640000000004,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5788,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27821
+      },
+      "text" : "If the flag displays a “TO,” the course shown on the course"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        607.06640000000004,
+        237.005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5788,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27822
+      },
+      "text" : "selector must be flown to the station. [Figure 16-29] If"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        594.56640000000004,
+        237.01399999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5788,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27825
+      },
+      "text" : "“FROM” is displayed and the course shown is followed, the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        582.06640000000004,
+        155.80000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5788,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27826
+      },
+      "text" : "aircraft is flown away from the station."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        556.49639999999999,
+        139.46000000000006,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 5789,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 27827
+      },
+      "text" : "Horizontal Situation Indicator"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        544.06640000000004,
+        236.85999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5790,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27828
+      },
+      "text" : "The HSI is a direction indicator that uses the output"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        531.56640000000004,
+        237.09799999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5790,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27829
+      },
+      "text" : "from a flux valve to drive the compass card. The HSI"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        519.06640000000004,
+        237.04999999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5790,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27830
+      },
+      "text" : "[Figure 16-30] combines the magnetic compass with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        506.56640000000004,
+        237.00999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5790,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27832
+      },
+      "text" : "navigation signals and a glideslope. The HSI gives the pilot"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        494.06640000000004,
+        236.9959999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5790,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27833
+      },
+      "text" : "an indication of the location of the aircraft in relation to the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        481.56640000000004,
+        94.969999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5790,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 27834
+      },
+      "text" : "chosen course or radial."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        456.56640000000004,
+        237.01999999999995,
+        11.470000000000027
+      ],
+      "text" : "In Figure 16-30, the aircraft magnetic heading displayed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        444.06640000000004,
+        236.99000000000009,
+        11.470000000000027
+      ],
+      "text" : "on the compass card under the lubber line is 184°. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        431.56640000000004,
+        237.00499999999985,
+        11.470000000000027
+      ],
+      "text" : "course select pointer shown is set to 295°; the tail of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        419.06640000000004,
+        236.99799999999991,
+        11.470000000000027
+      ],
+      "text" : "pointer indicates the reciprocal, 115°. The course deviation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        406.56640000000004,
+        236.85999999999999,
+        11.470000000000027
+      ],
+      "text" : "bar operates with a VOR/Localizer (VOR/LOC) or GPS"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        394.06640000000004,
+        237.00499999999997,
+        11.470000000000027
+      ],
+      "text" : "navigation receiver to indicate left or right deviations from"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        381.56640000000004,
+        237.00599999999983,
+        11.470000000000027
+      ],
+      "text" : "the course selected with the course select pointer; operating"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        369.06640000000004,
+        237.05899999999994,
+        11.470000000000027
+      ],
+      "text" : "in the same manner, the angular movement of a conventional"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        356.56640000000004,
+        203.30000000000001,
+        11.470000000000027
+      ],
+      "text" : "VOR/LOC needle indicates deviation from course."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        331.56640000000004,
+        237.00599999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5792,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27846
+      },
+      "text" : "The desired course is selected by rotating the course select"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.010000000000019,
+        319.06640000000004,
+        236.90999999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5792,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27847
+      },
+      "text" : "pointer, in relation to the compass card, by means of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        293.14640000000003,
+        237.12000000000029,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5792,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27848
+      },
+      "text" : "course select knob. The HSI has a fixed aircraft symbol"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        280.64640000000003,
+        237.01599999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5792,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27849
+      },
+      "text" : "and the course deviation bar displays the aircraft’s position"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        268.14640000000003,
+        237.00299999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5792,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27850
+      },
+      "text" : "relative to the selected course. The TO/FROM indicator is a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        255.64640000000003,
+        237.05500000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5792,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27851
+      },
+      "text" : "triangular pointer. When the indicator points to the head of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        243.14640000000003,
+        237.00399999999985,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5792,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27852
+      },
+      "text" : "course select pointer, the arrow shows the course selected. If"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        230.64640000000003,
+        237.00799999999975,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5792,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27853
+      },
+      "text" : "properly intercepted and flown, the course takes the aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        218.14640000000003,
+        237.01399999999995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5792,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27854
+      },
+      "text" : "to the chosen facility. When the indicator points to the tail"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        205.64640000000003,
+        237.01599999999991,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5792,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27855
+      },
+      "text" : "of the course, the arrow shows that the course selected, if"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        193.14640000000003,
+        237.01999999999981,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5792,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27856
+      },
+      "text" : "properly intercepted and flown, takes the aircraft directly"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        180.64640000000003,
+        121.36000000000007,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5792,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 27857
+      },
+      "text" : "away from the chosen facility."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        155.64640000000003,
+        237.0499999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5793,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 27858
+      },
+      "text" : "When the NAV warning flag appears, it indicates no reliable"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        143.14640000000003,
+        237.01600000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5793,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 27859
+      },
+      "text" : "signal is being received. The appearance of the HDG flag"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        130.64640000000003,
+        218.85999999999996,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5793,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 27860
+      },
+      "text" : "indicates the compass card is not functioning properly."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        105.07640000000004,
+        146.68000000000001,
+        13.189999999999998
+      ],
+      "structure" : {
+        "group" : 5794,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 27861
+      },
+      "text" : "Radio Magnetic Indicator (RMI)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        92.646400000000028,
+        237.01599999999991,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5795,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 27862
+      },
+      "text" : "The RMI is a navigational aid providing aircraft magnetic"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        80.146400000000028,
+        236.81000000000012,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5795,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 27863
+      },
+      "text" : "or directional gyro heading and very high frequency"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285.01000000000005,
+        67.646400000000028,
+        237.01900000000018,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 5795,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 27864
+      },
+      "text" : "omnidirectional range (VOR), GPS, and automatic direction"
+    }
+  ],
+  "page" : 411,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        286.39499999999998,
+        338.05400000000003,
+        233.46500000000003,
+        391.03000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        286.39499999999998,
+        338.05399999999997,
+        233.46500000000003,
+        391.03000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        285.45699999999999,
+        337.31999999999999,
+        235.45299999999997,
+        392.80000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        307.59610000000004,
+        450.66850000000005,
+        193.64400000000001,
+        180.17699999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        314.84670000000006,
+        459.9907,
+        176.702,
+        159.03699999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        334.81999999999999,
+        470.84199999999998,
+        139.56200000000001,
+        139.56200000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        334.74099999999999,
+        470.762,
+        139.72000000000003,
+        139.72100000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        449.15090000000004,
+        485.88600000000002,
+        7.6619999999999777,
+        7.6909999999999741
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        350.47710000000001,
+        586.93690000000004,
+        7.5079999999999814,
+        7.5299999999999727
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        450.4948,
+        586.59030000000007,
+        7.6770000000000209,
+        7.6769999999999072
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        351.22140000000002,
+        486.94929999999999,
+        7.5199999999999818,
+        7.5180000000000291
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        324.30400000000003,
+        500.44400000000002,
+        26.452999999999975,
+        82.731000000000051
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        458.15500000000003,
+        500.44400000000002,
+        26.452999999999975,
+        82.731000000000051
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        326.423,
+        539.20299999999997,
+        10.158999999999992,
+        4.5370000000000346
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        326.423,
+        550.56299999999999,
+        10.158999999999992,
+        4.5380000000000109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        328.09829999999999,
+        549.48180000000002,
+        6.77800000000002,
+        6.7770000000000437
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        326.42200000000003,
+        563.08000000000004,
+        10.158999999999992,
+        4.5389999999999873
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        328.09829999999999,
+        561.99810000000002,
+        6.77800000000002,
+        6.77800000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        326.42200000000003,
+        527.79300000000001,
+        10.158999999999992,
+        4.5380000000000109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        328.1139,
+        526.68740000000003,
+        6.7760000000000105,
+        6.7759999999999536
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        326.42200000000003,
+        515.27700000000004,
+        10.158999999999992,
+        4.5380000000000109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        328.1139,
+        514.16950000000008,
+        6.7760000000000105,
+        6.7779999999999063
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        470.70000000000005,
+        539.20299999999997,
+        10.160000000000025,
+        4.5380000000000109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        470.70000000000005,
+        550.56299999999999,
+        10.160000000000025,
+        4.5389999999999873
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.40610000000004,
+        549.48180000000002,
+        6.77800000000002,
+        6.7770000000000437
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        470.70000000000005,
+        563.08000000000004,
+        10.160000000000025,
+        4.5389999999999873
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.40610000000004,
+        561.99810000000002,
+        6.77800000000002,
+        6.77800000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        470.70000000000005,
+        527.79300000000001,
+        10.160000000000025,
+        4.5380000000000109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.39060000000001,
+        526.68740000000003,
+        6.7769999999999868,
+        6.7759999999999536
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        470.70000000000005,
+        515.27700000000004,
+        10.160000000000025,
+        4.5380000000000109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.39060000000001,
+        514.16950000000008,
+        6.7769999999999868,
+        6.7779999999999063
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        350.45300000000003,
+        486.721,
+        108.447,
+        102.90499999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        372.85310000000004,
+        512.86680000000001,
+        30.937000000000012,
+        69.355000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        372.64540000000005,
+        513.86400000000003,
+        29.238999999999976,
+        67.034999999999968
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        361.06999999999999,
+        493.21204169999999,
+        79.651999999999987,
+        95.392560799999956
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        361.06999999999999,
+        493.21199999999999,
+        79.652000000000044,
+        95.393000000000029
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        383.77100000000002,
+        505.42500000000001,
+        43.505999999999972,
+        71.757999999999981
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        409.36090000000002,
+        557.9910000000001,
+        6.5390000000000441,
+        6.5349999999999682
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        411.31620000000004,
+        563.09080000000006,
+        6.5400000000000205,
+        6.5380000000000109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        405.54829999999998,
+        547.9212,
+        6.5370000000000346,
+        6.54099999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        397.47669999999999,
+        527.26900000000001,
+        6.5400000000000205,
+        6.5400000000000773
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        399.43390000000005,
+        532.37080000000003,
+        6.5380000000000109,
+        6.5389999999999873
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        393.66160000000002,
+        517.20029999999997,
+        6.5390000000000441,
+        6.54200000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        407.40559999999999,
+        552.88919999999996,
+        6.5400000000000205,
+        6.5360000000000582
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        403.59300000000002,
+        542.82049999999992,
+        6.5370000000000346,
+        6.5410000000000537
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        395.52230000000003,
+        522.16770000000008,
+        6.5389999999999873,
+        6.5399999999999636
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        391.70580000000001,
+        512.10000000000002,
+        6.5390000000000441,
+        6.5410000000000537
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        409.58260000000001,
+        562.98829999999998,
+        9.9429999999999836,
+        6.7069999999999936
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        407.67790000000002,
+        558.01990000000001,
+        9.9440000000000168,
+        6.7060000000000173
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        405.69340000000005,
+        552.84130000000005,
+        9.9429999999999836,
+        6.70799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        403.79050000000001,
+        547.8759,
+        9.9410000000000309,
+        6.7050000000000409
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        401.83130000000006,
+        542.76690000000008,
+        9.9429999999999836,
+        6.70799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        397.80850000000004,
+        532.27060000000006,
+        9.94399999999996,
+        6.7089999999999463
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        395.9051,
+        527.30340000000001,
+        9.9420000000000073,
+        6.7060000000000173
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        393.91980000000001,
+        522.12530000000004,
+        9.9429999999999836,
+        6.70799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        392.0163,
+        517.15899999999999,
+        9.9420000000000073,
+        6.7069999999999936
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        390.05760000000004,
+        512.05090000000007,
+        9.9429999999999836,
+        6.7069999999999936
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        431.97320000000002,
+        520.07600000000002,
+        8.8530000000000086,
+        6.9710000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        432.63720000000006,
+        518.75800000000004,
+        7.478999999999985,
+        6.8419999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        432.08500000000004,
+        517.91100000000006,
+        8.5699999999999932,
+        8.3139999999999645
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        432.8931,
+        518.76260000000002,
+        7.2130000000000223,
+        6.5910000000000082
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.8836,
+        553.85850000000005,
+        6.9700000000000273,
+        8.8529999999999518
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        370.3306,
+        554.52200000000005,
+        6.839999999999975,
+        7.4799999999999045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        369.48500000000001,
+        553.96900000000005,
+        8.5310000000000059,
+        8.3299999999999272
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        370.57460000000003,
+        554.77800000000002,
+        6.5919999999999845,
+        7.2140000000000555
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.57408629999998,
+        471.79149530000001,
+        136.17286150000001,
+        136.17250470000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.57400000000001,
+        471.791,
+        136.173,
+        136.17300000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.25290000000001,
+        471.70530000000002,
+        138.577,
+        138.57300000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        338.56229999999999,
+        475.91539999999998,
+        131.18300000000005,
+        131.18500000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        338.5333,
+        475.88610000000006,
+        131.24299999999999,
+        131.24800000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        443.61870000000005,
+        535.98180000000002,
+        12.589999999999975,
+        14.518000000000029
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        352.47460000000001,
+        534.11880000000008,
+        12.646999999999991,
+        10.793999999999983
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        396.82160000000005,
+        580.28869999999995,
+        10.856999999999971,
+        12.79200000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        400.54599999999999,
+        488.92180000000002,
+        11.060000000000002,
+        12.536000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        387.20499999999998,
+        534.89920000000006,
+        14.127999999999986,
+        17.701000000000022
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        431.04410000000001,
+        518.19979999999998,
+        29.540999999999997,
+        15.037000000000035
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        349.10910000000007,
+        527.928,
+        85.252999999999986,
+        37.120000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        390.42640000000006,
+        527.69180000000006,
+        29.156999999999982,
+        25.312999999999988
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        318.75720000000001,
+        535.35299999999995,
+        14.468000000000018,
+        12.825000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        474.7448,
+        535.35299999999995,
+        14.466000000000008,
+        12.825000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        400.858,
+        466.279,
+        6.0489999999999782,
+        7.4139999999999873
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        396.52800000000002,
+        599.61800000000005,
+        17.654999999999973,
+        10.739000000000033
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        396.08400000000006,
+        600.34500000000003,
+        17.654999999999973,
+        10.739000000000033
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        316.637,
+        459.14400000000001,
+        174.56,
+        161.85699999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        396.74200000000002,
+        474.74099999999999,
+        15.319000000000017,
+        15.093000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        319.09240000000005,
+        461.24250000000001,
+        169.49099999999999,
+        157.16400000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        306.24700000000001,
+        445.274,
+        41.822999999999979,
+        42.624000000000024
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        306.24700000000001,
+        445.274,
+        41.822999999999979,
+        42.624000000000024
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        303.83890000000002,
+        447.84660000000002,
+        44.870000000000005,
+        43.935000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        303.68970000000002,
+        447.8578,
+        42.132000000000005,
+        42.132999999999981
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        305.9846,
+        450.15480000000002,
+        37.543000000000006,
+        37.539999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        326.72800000000001,
+        483.17599999999999,
+        10.09699999999998,
+        8.1490000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        331.077,
+        482.20800000000003,
+        9.2909999999999968,
+        7.5029999999999859
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        334.71500000000003,
+        479.99099999999999,
+        8.5799999999999841,
+        7.3900000000000432
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        337.32900000000001,
+        477.512,
+        8.2599999999999909,
+        7.1709999999999923
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        339.58100000000002,
+        473.82100000000003,
+        7.9060000000000059,
+        7.5779999999999745
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.41800000000001,
+        483.80599999999998,
+        10.08499999999998,
+        7.8600000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        340.26800000000003,
+        469.28500000000003,
+        8.2949999999999591,
+        7.7579999999999814
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        340.976,
+        464.63200000000001,
+        7.6560000000000059,
+        7.6979999999999791
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        339.55200000000002,
+        459.97800000000001,
+        8.5459999999999923,
+        7.5810000000000173
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        337.64300000000003,
+        455.98200000000003,
+        8.9039999999999964,
+        7.2799999999999727
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        311.96879999999999,
+        457.0326,
+        22.213999999999999,
+        22.088000000000022
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        460.322,
+        445.29599999999999,
+        41.822000000000003,
+        42.620999999999981
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        460.322,
+        445.29599999999999,
+        41.822000000000003,
+        42.621000000000038
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        459.68310000000002,
+        447.86580000000004,
+        44.87299999999999,
+        43.933999999999969
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        462.57140000000004,
+        447.87820000000005,
+        42.134000000000015,
+        42.133999999999958
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        464.86630000000002,
+        450.17619999999999,
+        37.543999999999983,
+        37.54000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        471.56600000000003,
+        483.19400000000002,
+        10.097999999999956,
+        8.1479999999999677
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        468.024,
+        482.23200000000003,
+        9.29200000000003,
+        7.4989999999999668
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        465.09800000000001,
+        480.01300000000003,
+        8.5779999999999745,
+        7.3879999999999768
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        462.80599999999998,
+        477.53100000000001,
+        8.2600000000000477,
+        7.1730000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        460.90600000000001,
+        473.83699999999999,
+        7.9069999999999823,
+        7.5840000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        476.89100000000002,
+        483.82499999999999,
+        10.081999999999994,
+        7.8600000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        459.83199999999999,
+        469.30599999999998,
+        8.2950000000000159,
+        7.7540000000000191
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        459.75999999999999,
+        464.65500000000003,
+        7.6560000000000059,
+        7.69399999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        460.29599999999999,
+        459.99799999999999,
+        8.5459999999999923,
+        7.5810000000000173
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        461.84800000000001,
+        456.00200000000001,
+        8.90300000000002,
+        7.2819999999999823
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        474.43180000000001,
+        459.18680000000001,
+        19.969000000000051,
+        19.649999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        372.8931,
+        563.77280000000007,
+        23.355000000000018,
+        12.704999999999927
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        412.9821,
+        563.59370000000001,
+        23.355999999999995,
+        12.704999999999927
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        402.30180000000001,
+        565.96940000000006,
+        4,
+        45.149999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        399.86220000000003,
+        604.26859999999999,
+        9.40300000000002,
+        6.8949999999999818
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        491.28300000000002,
+        377.3827,
+        23.644000000000005,
+        146.19600000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        459.00640000000004,
+        519.62430000000006,
+        42.09699999999998,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        452.27210000000002,
+        517.12290000000007,
+        12.41500000000002,
+        9.0139999999998963
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        413.21280000000002,
+        626.97829999999999,
+        4,
+        12.268000000000029
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        496.76620000000003,
+        550.38710000000015,
+        20.22199999999998,
+        167.67099999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        397.84970000000004,
+        450.2192,
+        4,
+        22.788000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        395.34829999999999,
+        467.32620000000003,
+        9.0129999999999768,
+        12.41500000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        377.44170000000003,
+        377.64110000000005,
+        24.408000000000015,
+        76.464999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        482.2321,
+        550.37959999999998,
+        18.194999999999993,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        475.4982,
+        547.87820000000011,
+        12.41500000000002,
+        9.0139999999998963
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        408.06390000000005,
+        605.1404,
+        9.1490000000000009,
+        25.837999999999965
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        402.12850000000003,
+        601.96010000000001,
+        12.599999999999966,
+        10.188999999999965
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        432.0625,
+        575.82990000000007,
+        37.600999999999999,
+        54.25
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        427.87050000000005,
+        570.56050000000005,
+        11.19599999999997,
+        12.148000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        465.56299999999999,
+        626.45860000000005,
+        4,
+        41.20799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        307.67150000000004,
+        541.9914,
+        80.146000000000015,
+        33.23599999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        381.34809999999999,
+        539.57259999999997,
+        12.754000000000019,
+        9.3559999999999945
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        288.92350000000005,
+        571.22739999999999,
+        22.74799999999999,
+        123.15200000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        361.00970000000001,
+        626.10829999999999,
+        29.829999999999984,
+        43.881999999999948
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        386.83969999999999,
+        607.85720000000003,
+        4,
+        22.601999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        384.32710000000003,
+        601.12329999999997,
+        9.01400000000001,
+        12.415000000000077
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.05210000000005,
+        403.79870000000005,
+        28.639999999999986,
+        50.418999999999983
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        392.69210000000004,
+        450.21770000000004,
+        8.0430000000000064,
+        90.472999999999956
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        395.05470000000003,
+        534.17880000000002,
+        12.41500000000002,
+        9.0139999999998963
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        362.49369999999999,
+        574.37699999999995,
+        14.569999999999993,
+        55.711000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        370.09490000000005,
+        568.17129999999997,
+        9.5840000000000032,
+        12.728000000000065
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        489.32820000000004,
+        352.86169999999998,
+        29.819999999999936,
+        116.46100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        499.0598,
+        462.8218,
+        12.41500000000002,
+        9.0130000000000337
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        362.58590000000004,
+        626.42639999999994,
+        4,
+        17.18100000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.95700000000005,
+        436.21890000000002,
+        5.8419999999999845,
+        14.314999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        332.04710000000006,
+        443.71180000000004,
+        10.930999999999983,
+        12.303999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        497.34660000000002,
+        557.55880000000002,
+        14.656999999999982,
+        137.04899999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        420.91470000000004,
+        557.67790000000002,
+        79.850999999999999,
+        4.0019999999999527
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        414.18060000000003,
+        555.17790000000014,
+        12.41500000000002,
+        9.0139999999998963
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        399.16200000000003,
+        635.63499999999999,
+        58.322999999999979,
+        18.227999999999952
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        399.16230000000002,
+        635.63440000000003,
+        58.322999999999979,
+        18.227999999999952
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        411.23099999999999,
+        660.23400000000004,
+        95.004000000000019,
+        17.765999999999963
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        411.23090000000002,
+        660.23469999999998,
+        95.004999999999995,
+        17.764999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        396.46500000000003,
+        707.16200000000003,
+        109.72899999999998,
+        18.307999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        396.46520000000004,
+        707.16190000000006,
+        109.72899999999998,
+        18.308999999999969
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        296.01900000000001,
+        635.55500000000006,
+        77.867999999999995,
+        18.229000000000042
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        296.01859999999999,
+        635.55489999999998,
+        77.869000000000028,
+        18.227999999999952
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        403.80099999999999,
+        396.74799999999999,
+        90.216000000000008,
+        18.309000000000026
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        403.80070000000001,
+        396.74760000000003,
+        90.216000000000008,
+        18.309000000000026
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        404.04300000000001,
+        346.178,
+        88.850999999999999,
+        18.309000000000026
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        404.0428,
+        346.17760000000004,
+        88.850999999999999,
+        18.309000000000026
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        403.80200000000002,
+        370.74900000000002,
+        91.387,
+        18.307999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        403.80119999999999,
+        370.74810000000002,
+        91.388000000000034,
+        18.309000000000026
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        294.83600000000001,
+        660.77800000000002,
+        69.687000000000012,
+        17.764999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        294.83630000000005,
+        660.77830000000006,
+        69.685999999999979,
+        17.764999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        295.101,
+        396.74799999999999,
+        76.483000000000004,
+        18.309000000000026
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        295.10130000000004,
+        396.74760000000003,
+        76.483000000000004,
+        18.309000000000026
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        295.101,
+        370.74900000000002,
+        85.817999999999984,
+        18.307999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        295.10090000000002,
+        370.74810000000002,
+        85.817999999999984,
+        18.309000000000026
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        295.10200000000003,
+        422.65699999999998,
+        85.817000000000007,
+        18.307999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        295.1019,
+        422.65660000000003,
+        85.817000000000007,
+        18.309000000000026
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        294.82900000000001,
+        684,
+        79.834000000000003,
+        18.289999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        294.82870000000003,
+        683.99940000000004,
+        79.834000000000003,
+        18.291000000000054
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        409.66700000000003,
+        683.98199999999997,
+        96.569000000000017,
+        18.29200000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        409.6669,
+        683.98149999999998,
+        96.569000000000017,
+        18.29200000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        412.13760000000002,
+        411.1576,
+        4,
+        44.078000000000031
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        412.13760000000002,
+        451.23570000000007,
+        4,
+        82.5
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        409.63620000000003,
+        528.0548,
+        9.01400000000001,
+        12.415000000000077
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37.023200000000003,
+        80.735099999999989,
+        234.9528,
+        225.55590000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37.023200000000003,
+        80.735099999999989,
+        234.9528,
+        225.55590000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        36,
+        80.519999999999996,
+        237,
+        226.98000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        48.735000000000014,
+        90.791900000000012,
+        210.334,
+        210.56200000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        55.826999999999998,
+        95.719999999999999,
+        200.78100000000001,
+        200.78200000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        52.935000000000002,
+        93.237000000000009,
+        205.93200000000002,
+        204.625
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        67.108000000000004,
+        268.46210000000002,
+        15.867000000000004,
+        15.865999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        67.108000000000004,
+        271.404,
+        15.670999999999992,
+        12.924000000000035
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        224.74700000000001,
+        268.46210000000002,
+        15.86699999999999,
+        15.865999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        224.94300000000001,
+        271.404,
+        15.670999999999992,
+        12.924000000000035
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        224.74700000000001,
+        110.3849,
+        15.86699999999999,
+        15.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        224.94300000000001,
+        110.38500000000001,
+        15.670999999999992,
+        12.923999999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        67.108500000000006,
+        110.3849,
+        15.867000000000004,
+        15.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        67.108000000000004,
+        110.38500000000001,
+        15.670999999999992,
+        12.923999999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        56.989200000000004,
+        100.64100000000001,
+        39.929800000000007,
+        40.692999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        56.989200000000004,
+        100.64100000000001,
+        39.93,
+        40.692999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        54.599600000000002,
+        103.00470000000001,
+        43.021000000000008,
+        42.12700000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        54.457600000000006,
+        103.01830000000001,
+        40.407000000000004,
+        40.406000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        56.647700000000007,
+        105.2103,
+        36.026000000000003,
+        36.022000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        76.453000000000003,
+        136.733,
+        9.8229999999999933,
+        7.9610000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        80.606000000000009,
+        135.81200000000001,
+        9.0509999999999877,
+        7.3429999999999893
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        84.079999999999998,
+        133.697,
+        8.3740000000000094,
+        7.2340000000000089
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        86.573999999999998,
+        131.32599999999999,
+        8.0670000000000073,
+        7.0310000000000059
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        88.725000000000009,
+        127.80199999999999,
+        7.7279999999999944,
+        7.4200000000000159
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        71.382999999999996,
+        137.33600000000001,
+        9.8120000000000118,
+        7.6850000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        89.379000000000005,
+        123.47200000000001,
+        8.1009999999999991,
+        7.5889999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        90.057000000000002,
+        119.03,
+        7.4920000000000044,
+        7.5310000000000059
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        88.697000000000003,
+        114.589,
+        8.3400000000000034,
+        7.4150000000000063
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        86.875,
+        110.77500000000001,
+        8.679000000000002,
+        7.1289999999999907
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        56.900000000000006,
+        105.37,
+        36.024999999999991,
+        36.022999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        89.815400000000011,
+        130.52460000000002,
+        134.45599999999999,
+        134.45699999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        89.814999999999998,
+        130.56200000000001,
+        134.45600000000002,
+        134.45499999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        52.779200000000003,
+        163.97814320000001,
+        208.99979999999999,
+        119.9998568
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        52.779200000000003,
+        163.97800000000001,
+        208.99979999999999,
+        120
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        66.084600000000009,
+        195.8708,
+        181.71899999999999,
+        92.919000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        184.74080000000001,
+        220.8897,
+        11.969999999999999,
+        11.969999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        85.474000000000018,
+        193.92500000000001,
+        142.34999999999999,
+        6.6310000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.33199999999999,
+        126.066,
+        6.632000000000005,
+        142.34999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        140.9537,
+        120.47070000000001,
+        31.472000000000008,
+        153.29199999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        80.043500000000023,
+        181.37909999999999,
+        153.292,
+        31.473000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.35580000000002,
+        120.404,
+        30.667000000000002,
+        153.42500000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        79.977200000000011,
+        181.78280000000001,
+        153.42500000000001,
+        30.667000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        130.0215,
+        123.15010000000001,
+        53.336000000000013,
+        147.93299999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        82.72320000000002,
+        170.44900000000001,
+        147.93299999999999,
+        53.335000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        119.5009,
+        127.50740000000002,
+        74.377999999999986,
+        139.21800000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        87.079700000000003,
+        159.9265,
+        139.21899999999999,
+        74.378000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.11010000000002,
+        133.90690000000001,
+        95.157999999999987,
+        126.41899999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        93.480300000000014,
+        149.53659999999999,
+        126.419,
+        95.157999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        99.319800000000001,
+        142.5573,
+        114.73999999999999,
+        109.119
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        102.12989999999999,
+        139.74620000000002,
+        109.12,
+        114.73999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        90.795600000000007,
+        153.4391,
+        131.78799999999998,
+        87.355000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        113.01210000000002,
+        131.22260000000003,
+        87.355000000000004,
+        131.78799999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        84.039000000000001,
+        166.75550000000001,
+        145.30099999999999,
+        60.721000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        126.3287,
+        124.46550000000001,
+        60.719999999999999,
+        145.30200000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        86.7363,
+        127.41340000000002,
+        140.066,
+        140.06600000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        146.28060000000002,
+        187.51280000000003,
+        20.925999999999988,
+        20.923999999999978
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.16200000000001,
+        137.471,
+        6.632000000000005,
+        119.24000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.745,
+        253.88800000000001,
+        15.746000000000009,
+        16.010000000000019
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.08600000000001,
+        127.364,
+        11.001999999999981,
+        12.36699999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.94499999999999,
+        190.899,
+        6.6330000000000098,
+        12.157999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        190.74299999999999,
+        190.899,
+        6.632000000000005,
+        12.157999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        180.542,
+        190.899,
+        6.632000000000005,
+        12.157999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        170.34100000000001,
+        190.899,
+        6.632000000000005,
+        12.157999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        199.72220000000002,
+        192.54850000000002,
+        8.8610000000000184,
+        8.8600000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        189.56699999999998,
+        192.54850000000002,
+        8.8610000000000184,
+        8.8600000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        179.41120000000001,
+        192.54850000000002,
+        8.8610000000000184,
+        8.8600000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        169.25640000000001,
+        192.54850000000002,
+        8.8600000000000136,
+        8.8600000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.82900000000001,
+        190.899,
+        6.632000000000005,
+        12.157999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        126.62800000000001,
+        190.899,
+        6.632000000000005,
+        12.157999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        116.426,
+        190.899,
+        6.632000000000005,
+        12.157999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        106.22500000000001,
+        190.899,
+        6.6329999999999956,
+        12.157999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        135.70069999999998,
+        192.54850000000002,
+        8.8610000000000184,
+        8.8600000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        125.54600000000001,
+        192.54850000000002,
+        8.8599999999999994,
+        8.8600000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        115.3897,
+        192.54850000000002,
+        8.8610000000000042,
+        8.8600000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        105.23440000000001,
+        192.54850000000002,
+        8.8610000000000042,
+        8.8600000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        169.495,
+        221.96000000000001,
+        14.305000000000007,
+        26.484000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        174.4452,
+        248.28390000000002,
+        4,
+        36.218000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.9171,
+        241.50790000000003,
+        9.0449999999999875,
+        12.467999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.00700000000001,
+        273.30099999999999,
+        93.064999999999998,
+        18.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.00720000000001,
+        273.30130000000003,
+        93.064999999999998,
+        18.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        188.56730000000002,
+        162.3973,
+        4,
+        57.097000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.05040000000002,
+        213.80199999999999,
+        9.0449999999999875,
+        12.468999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        172.11600000000001,
+        151.94800000000001,
+        87.957000000000022,
+        18.402000000000015
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        172.11619999999999,
+        151.94840000000002,
+        87.956000000000017,
+        18.400000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        74.289000000000001,
+        89.789999999999992,
+        51.656999999999996,
+        21.859000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        71.132700000000014,
+        104.9783,
+        10.182000000000002,
+        12.667000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        88.487000000000009,
+        83.747,
+        54.798999999999992,
+        18.400000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        88.487099999999998,
+        83.746700000000004,
+        54.798000000000002,
+        18.400000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        98.955999999999989,
+        262.59640000000002,
+        54.417000000000002,
+        21.904999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        146.33070000000001,
+        256.99080000000004,
+        10.84899999999999,
+        12.419999999999959
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        67.710000000000008,
+        273.30099999999999,
+        66.536000000000001,
+        18.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        67.709499999999991,
+        273.30130000000003,
+        66.536000000000001,
+        18.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        102.4169,
+        221.7209,
+        50.079999999999984,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        146.80430000000001,
+        219.19280000000001,
+        12.468999999999994,
+        9.0449999999999875
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.950000000000003,
+        215.09,
+        57.982000000000014,
+        18.40100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.950500000000005,
+        215.09050000000002,
+        57.981999999999999,
+        18.400000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        107.54090000000001,
+        154.45950000000002,
+        4,
+        35.088999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        105.0245,
+        183.8562,
+        9.0439999999999969,
+        12.468999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        117.86810000000001,
+        154.45950000000002,
+        4,
+        35.088999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        115.35170000000001,
+        183.8562,
+        9.0439999999999969,
+        12.468999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        43.572000000000003,
+        154.499,
+        109.964,
+        27.001000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        43.572500000000019,
+        154.49970000000002,
+        109.964,
+        27
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

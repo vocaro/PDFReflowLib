@@ -655,7 +655,8 @@
         {
           "page": 235,
           "paragraphs": [
-            "propeller, or components. This section also describes preventive maintenance that"
+            "propeller, or components. This section also describes preventive maintenance that",
+            "(not provided with the standard aircraft). Some of this information may be supplied"
           ],
           "distinctParagraphs": [
             {
@@ -729,6 +730,13 @@
           "headings": [
             "Likelihood of an Event",
             "Severity of an Event"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "specific to the pilot and assesses health, fatigue, weather,",
+              "next": "capabilities, etc. The scores are added",
+              "nextPage": 47
+            }
           ]
         },
         {
@@ -1068,6 +1076,9 @@
           "absentHeadings": [
             "The Professional Air Traffic Controllers",
             "Organization (PATCO) Strike"
+          ],
+          "paragraphs": [
+            "then, now, and into the future. The DOT began operation on April 1, 1967."
           ]
         },
         {
@@ -1111,12 +1122,33 @@
             "The Air Commerce Act charged",
             "Department of Commerce made significant advances"
           ],
-          "minimumImages": 2
+          "minimumImages": 2,
+          "paragraphs": [
+            "had initiated this system. The Department of Commerce made significant advances"
+          ]
+        },
+        {
+          "page": 68,
+          "continuedParagraphs": [
+            {
+              "end": "percent of all GA accidents take place in the",
+              "next": "landing phase, one realm of flight that still does not involve"
+            }
+          ]
         },
         {
           "page": 103,
           "paragraphs": [
             "until it eventually rejoins downstream. Form drag is the easiest to reduce"
+          ]
+        },
+        {
+          "page": 126,
+          "continuedParagraphs": [
+            {
+              "end": "Propeller efficiency varies from 50 to",
+              "next": "87 percent, depending on how much the propeller"
+            }
           ]
         },
         {
@@ -1217,13 +1249,19 @@
             "nitrogen accounts for 78 percent",
             "Four distinct layers or spheres of the",
             "atmosphere have been identified using thermal characteristics",
-            "The first layer, known as the troposphere",
-            "Figure 12-2. Layers of the atmosphere."
+            "Figure 12-2. Layers of the atmosphere.",
+            "The first layer, known as the troposphere"
           ],
           "minimumImages": 2,
           "absentWarningCodes": [
             "pageImageFallback",
             "unsupportedGraphics"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "decreases at a rate of about 2 °Celsius (C) every",
+              "next": "1,000 feet of altitude gain, and the pressure decreases"
+            }
           ]
         },
         {
@@ -1371,6 +1409,21 @@
           ]
         },
         {
+          "page": 145,
+          "continuedParagraphs": [
+            {
+              "end": "further increasing the",
+              "next": "AOA. In this situation, without reliable AOA information"
+            }
+          ]
+        },
+        {
+          "page": 230,
+          "paragraphs": [
+            "welded together in a single strip and twisted into a helix. One end is anchored"
+          ]
+        },
+        {
           "page": 298,
           "paragraphs": [
             "The height of the cloud base is 3,180 feet AGL."
@@ -1378,9 +1431,21 @@
           "minimumImages": 2
         },
         {
+          "page": 341,
+          "paragraphs": [
+            "relative location of the respective runway thresholds. Figure 14-10 shows"
+          ]
+        },
+        {
           "page": 350,
           "paragraphs": [
             "The system configuration depends on whether the runway is a precision"
+          ]
+        },
+        {
+          "page": 411,
+          "paragraphs": [
+            "by means of the course select knob. The HSI has a fixed aircraft symbol"
           ]
         },
         {

@@ -402,16 +402,25 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
                 errors.append(f'Page {number}: note lacks a return link to its reference on this page {link!r}')
         following = pages.get(number + 1, {})
         for continuation in item.get('continuedParagraphs', []):
-            if (not isinstance(continuation, dict) or set(continuation) != {'end', 'next'}
-                    or any(not isinstance(continuation[k], str) or not normalized(continuation[k]) for k in ('end', 'next'))):
-                raise ValueError('Paragraph continuation requires nonempty end and next phrases')
+            if (not isinstance(continuation, dict) or set(continuation) - {'nextPage'} != {'end', 'next'}
+                    or any(not isinstance(continuation[k], str) or not normalized(continuation[k]) for k in ('end', 'next'))
+                    or ('nextPage' in continuation and (type(continuation['nextPage']) is not int
+                                                        or continuation['nextPage'] <= number + 1))):
+                raise ValueError('Paragraph continuation requires nonempty end and next phrases'
+                                 ' and a later nextPage when one is given')
             checks += 1
             end, after = normalized(continuation['end']), normalized(continuation['next'])
+            # `nextPage` names a later page when the pages between hold only figures (#118): they must
+            # exist and carry no text at all, so the paragraph cannot skip text of theirs.
+            target = continuation.get('nextPage', number + 1)
+            later = pages.get(target, {})
+            skipped = range(number + 1, target)
             # The same paragraph element must end this page with one phrase and continue the next page with the other.
-            if not any(end in text and paragraph in following.get('paragraphIDs', {})
-                       and after in following['paragraphIDs'][paragraph]
-                       for paragraph, text in page.get('paragraphIDs', {}).items()):
-                errors.append(f'Page {number}: paragraph does not continue onto page {number + 1} {continuation!r}')
+            if (any(skipped_page not in pages or normalized(pages[skipped_page]['text']) for skipped_page in skipped)
+                    or not any(end in text and paragraph in later.get('paragraphIDs', {})
+                               and after in later['paragraphIDs'][paragraph]
+                               for paragraph, text in page.get('paragraphIDs', {}).items())):
+                errors.append(f'Page {number}: paragraph does not continue onto page {target} {continuation!r}')
         for continuation in item.get('continuedListItems', []):
             if (not isinstance(continuation, dict) or set(continuation) != {'end', 'next'}
                     or any(not isinstance(continuation[k], str) or not normalized(continuation[k]) for k in ('end', 'next'))):

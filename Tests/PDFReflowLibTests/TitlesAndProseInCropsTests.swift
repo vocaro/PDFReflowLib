@@ -239,8 +239,11 @@ private func paragraphTexts(_ page: PageContent, images: [CGRect] = []) -> [Stri
     // The left column ends its sentence.
     #expect(!joins(paragraphTexts(columns(leftLast: "the paragraph keeps running to the foot of the."))))
     #expect(!paragraphTexts(columns(leftLast: "the paragraph keeps running to the foot of it.")).contains { $0.contains("it. column and") })
-    // The right column opens a new sentence.
-    #expect(!paragraphTexts(columns(rightFirst: "Column text continues at the head of the next one.")).contains { $0.contains("of the Column text") })
+    // The right column opens a new sentence after a word that can end one.
+    #expect(!paragraphTexts(columns(leftLast: "the paragraph keeps running to the foot of it all",
+                                    rightFirst: "Column text continues at the head of the next one.")).contains { $0.contains("of it all Column text") })
+    // After an article the capital carries the sentence on (#118).
+    #expect(paragraphTexts(columns(rightFirst: "Column text continues at the head of the next one.")).contains { $0.contains("foot of the Column text") })
     // The last line does not fill the justified column.
     #expect(!paragraphTexts(columns(leftLastWidth: 170)).contains { $0.contains("foot of the column and") })
     // Two different validated paragraph identities.

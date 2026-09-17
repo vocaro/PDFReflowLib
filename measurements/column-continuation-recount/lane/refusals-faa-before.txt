@@ -1,0 +1,100 @@
+p19->19 [ICIC] …'tem, had initiated this system. The' ‖ 'Department of Commerce ma'
+     TRACE p19 col:notLower | …e system, had initiated this system. The ‖ Department of Commerce made significant
+p19->20 [BICIICIC] …'rought together a group of airlines' ‖ 'and encouraged them to fo'
+     TRACE p20 page:opensColumn (321.0, 415.06640000000004, 236.8499999999999, 11.470000000000027) | …rce brought together a group of airlines ‖ and encouraged them to form the first th
+p21->21 [IC] …'merican people, then, now, and into' ‖ 'the future. The DOT began'
+     TRACE p21 col:competing ceiling=inf 'Richard “Pete” Quesada, 1959–1961.' (35.7513, 62.487899999999996, 138.74399999999997, 10.206000000000003) last=(36.0, 368.56640000000004, 237.01, 11.470000000000027) first=(285.0, 719.5664, 237.00900000000001, 11.470000000000027) | …the American people, then, now, and into ‖ the future. The D
+p24->24 [IC] …'g, outreach, and education. The FAA' ‖ 'Safety Team (FAASTeam) ex'
+     TRACE p24 col:notLower | …aining, outreach, and education. The FAA ‖ Safety Team (FAASTeam) exemplifies this
+p25->25 [IC] …' community. This can be in the form' ‖ 'of a text book used in a '
+     TRACE p25 col:competing ceiling=inf 'can be downloaded free of charge from the FAA webs' (284.99600000000004, 276.19570000000004, 205.47899999999998, 10.206000000000017) last=(36.0, 71.52470000000001, 237.0100000000001, 11.469999999999999) first=(285.0, 251.0131, 237.015, 11.470000000000027) | …ation community. This can be in th
+p45->45 [IC] …'s, coupled with the forecast, might' ‖ 'cause the pilot to assign'
+     TRACE p45 col:competing ceiling=inf 'by assigning likelihood and consequence. In the ca' (284.36510000000004, 573.7018, 235.9998, 10.206000000000017) last=(36.0, 76.21969999999999, 236.9999999999999, 11.469999999999999) first=(285.0, 520.6496999999999, 236.88999999999987, 11.470000000000027) | …pilots, coupled with the forecast,
+p45->47 [BICB] …' assesses health, fatigue, weather,' ‖ 'capabilities, etc. The sc'
+        (no trace)
+p60->62 [BICICB] …'skills to evaluate whether there is' ‖ 'time to use a particular '
+        (no trace)
+p65->65 [IC] …'lot chooses to plan a flight, it is' ‖ 'important to remember to '
+     TRACE p65 col:competing ceiling=inf 'systems and provides a myriad of information to th' (35.401399999999995, 91.1654, 208.50299999999993, 10.206000000000003) last=(36.0, 443.56640000000004, 237.1500000000002, 11.470000000000027) first=(285.0, 718.5664, 237.00499999999988, 11.470000000000027) | … a pilot chooses to plan a flight
+p68->69 [ICB] …' all GA accidents take place in the' ‖ 'landing phase, one realm '
+     TRACE p69 page:endsColumn (321.0, 535.0664, 237.06899999999996, 11.470000000000027) | …nt of all GA accidents take place in the ‖ landing phase, one realm of flight that
+p106->108 [ICBICICB] …'tely 3 minutes provides a margin of' ‖ 'safety that allows wake t'
+        (no trace)
+p109->110 [ICB] …'he motion about its lateral axis is' ‖ '“pitch,” and the motion a'
+     TRACE p110 page:notLower | …l,” the motion about its lateral axis is ‖ “pitch,” and the motion about its vertic
+p115->115 [ICIC] …'xis. When a high-winged aircraft is' ‖ 'disturbed and one wing di'
+     TRACE p115 col:competing ceiling=inf 'depiction and the rear view of a Ryanair Boeing 73' (36.00380000000001, 60.9017, 191.98800000000003, 10.205999999999996) last=(36.00000000000003, 236.56640000000004, 236.99399999999994, 11.469999999999999) first=(285.00000000000006, 293.4064000000001, 237.01999999999992, 11.470000000000027) 
+p122->123 [BIC] …' control. This increases the wing’s' ‖ 'AOA and results in increa'
+     TRACE p123 page:notLower | …vator control. This increases the wing’s ‖ AOA and results in increased lift. The A
+p136->136 [ICIC] …'aircraft to travel through a longer' ‖ 'arc due to a greater spee'
+     TRACE p136 col:competing ceiling=inf 'at 120 knots, an increase of bank angle is require' (321.0004, 534.6758000000001, 185.23799999999994, 10.206000000000017) last=(72.0, 229.03859999999997, 237.01799999999992, 11.469999999999999) first=(321.0, 508.2386, 237.01300000000003, 11.470000000000027) | … the aircraft to travel through
+p136->136 [IC] …' An aircraft’s speed (in knots) can' ‖ '.'
+     TRACE p136 col:notLower | …rcle. An aircraft’s speed (in knots) can ‖ .
+p145->146 [BICIC] …'ch attitude, further increasing the' ‖ 'AOA. In this situation, w'
+     TRACE p146 page:notLower | …n pitch attitude, further increasing the ‖ AOA. In this situation, without reliable
+p154->155 [ICBIC] …'sually reduced, which decreases the' ‖ 'airflow over the empennag'
+     TRACE p155 page:opensColumn (72.0, 460.0695, 237.00400000000002, 11.470000000000027) | … is usually reduced, which decreases the ‖ airflow over the empennage. This, couple
+p155->155 [IC] …'izontal stabilizer located in front' ‖ 'of the main wings. In eff'
+     TRACE p155 col:competing ceiling=inf 'that pivots up and down about a central hinge poin' (320.8358, 520.7232, 189.00899999999996, 10.206000000000017) last=(72.0, 67.5695, 237.02600000000018, 11.469999999999999) first=(321.0, 492.6395, 237.02000000000044, 11.470000000000027) | …a horizontal stabilizer located in front ‖ of the m
+p158->159 [BIC] …'d then trim the aircraft to relieve' ‖ 'control pressures that ma'
+     TRACE p159 page:opensColumn (72.0, 400.8571, 237.00300000000004, 11.470000000000027) | …t, and then trim the aircraft to relieve ‖ control pressures that may exist for tha
+p159->160 [ICB] …' by trial and error. Usually, small' ‖ 'adjustments are necessary'
+     TRACE p160 page:endsColumn (321.0, 364.56640000000004, 237.1099999999999, 11.470000000000027) | …mined by trial and error. Usually, small ‖ adjustments are necessary until the airc
+p164->164 [IC] …'o an aircraft engine. The advantage' ‖ 'of a diesel-fueled recipr'
+     TRACE p164 col:competing ceiling=inf 'motion of the crankshaft and piston during the fou' (35.998999999999995, 67.5654, 232.48799999999986, 10.206000000000003) last=(36.00000000000001, 494.56640000000004, 236.99000000000012, 11.470000000000027) first=(285.00000000000006, 719.5664, 237.0109999999999, 11.470000000000027) | …y into
+p169->170 [ICB] …'nheit degrees (70 x 100/180 = 38.89' ‖ 'Celsius degrees) (Remembe'
+     TRACE p170 page:notLower | …Fahrenheit degrees (70 x 100/180 = 38.89 ‖ Celsius degrees) (Remember there are 180
+p170->170 [IC] …'checks should be made to detect its' ‖ 'presence. If detected, fu'
+     TRACE p170 col:competing ceiling=inf 'the temperature and humidity are in ranges indicat' (36.55940000000001, 76.3176, 238.08959999999993, 10.206000000000003) last=(36.0, 279.56640000000004, 237.0, 11.470000000000027) first=(285.0, 719.5664, 237.01499999999987, 11.470000000000027) | …odic checks should be made to detect its ‖ pr
+p193->193 [ICIC] …' either at the front or rear of the' ‖ 'airplane. Landing gear em'
+     TRACE p193 col:competing ceiling=inf 'takeoff run, landing, taxiing, and when parked.' (320.7502, 539.8496, 169.497, 10.206000000000017) last=(72.0, 317.5828, 236.98999999999995, 11.470000000000027) first=(321.0, 512.5427999999999, 237.00800000000004, 11.470000000000027) | …ioned either at the front or rear of the ‖ airplane. La
+p207->207 [IC] …' not account for the irregularities' ‖ 'at higher levels, particu'
+     TRACE p207 col:competing ceiling=inf 'an aircraft altitude of 1,000 feet above the airpo' (72.00139999999999, 103.1154, 236.9934, 10.206000000000003) last=(72.0, 279.56640000000004, 237.03799999999984, 11.470000000000027) first=(321.0, 719.5664, 236.8900000000001, 11.470000000000027) | … does not account for the irregularities ‖
+p216->216 [IC] …' does; however, the static pressure' ‖ 'does not enter a diaphrag'
+     TRACE p216 col:competing ceiling=inf 'computes air data information from the pitot-stati' (284.9974, 519.0542, 237.0689999999999, 10.206000000000017) last=(36.0, 71.67430000000002, 237.02000000000004, 11.469999999999999) first=(285.0, 472.51430000000005, 237.03999999999974, 11.470000000000027) | …ystem does; however, the static 
+p217->218 [ICB] …'nt of the tire, causing the bicycle' ‖ 'to move to the left. Ther'
+     TRACE p218 page:endsColumn (321.0, 342.06640000000004, 237.02999999999997, 11.470000000000027) | …e front of the tire, causing the bicycle ‖ to move to the left. There is a need to
+p221->222 [ICB] …' the magnetic compass are numerous,' ‖ 'making straight flight an'
+     TRACE p222 page:fill (321.0834, 524.7092, 214.58780400000023, 12.123100000000022) | …rs in the magnetic compass are numerous, ‖ making straight flight and precision tur
+p223->224 [ICB] …'rce, after being amplified, becomes' ‖ 'a signal relayed to the h'
+     TRACE p224 page:endsColumn (321.0, 405.7189000000001, 237.01099999999997, 11.470000000000027) | …ic force, after being amplified, becomes ‖ a signal relayed to the heading indicato
+p224->224 [IC] …' exceeded, the instrument “tumbles”' ‖ 'or “spills” and no longer'
+     TRACE p224 col:competing ceiling=inf 'in this RMI indicates the heading of the aircraft ' (36.002600000000015, 75.8269, 236.98889999999994, 10.206000000000003) last=(36.0, 307.06640000000004, 237.01199999999994, 11.470000000000027) first=(285.0, 719.5664, 236.99399999999991, 11.470000000000027) | …ts is exceeded, the instrument 
+p230->230 [I] …'ether in a single strip and twisted' ‖ 'into a helix. One end is '
+     TRACE p230 col:notRight last=(36.0, 651.2137, 237.005, 11.470000000000027) first=(36.0, 638.7137, 237.02099999999984, 11.470000000000027) | …d together in a single strip and twisted ‖ into a helix. One end is anchored into p
+p235->235 [I] …'scribes preventive maintenance that' ‖ 'may be accomplished by ce'
+     TRACE p235 col:notRight last=(72.0, 290.73920000000004, 237.094, 11.470000000000027) first=(72.0, 278.23920000000004, 237.01300000000003, 11.470000000000027) | …so describes preventive maintenance that ‖ may be accomplished by certificated pilo
+p235->235 [C] …'nd equipment (not provided with the' ‖ 'standard aircraft). Some '
+     TRACE p235 col:notRight last=(72.0, 177.73920000000004, 237.01499999999993, 11.469999999999999) first=(72.0, 165.23920000000004, 237.01399999999995, 11.469999999999999) | …ems and equipment (not provided with the ‖ standard aircraft). Some of this informa
+p251->251 [IC] …'ight of 3,400 pounds, and the CG of' ‖ '84.8 is within the 78–86 '
+     TRACE p251 col:notLower | …ss weight of 3,400 pounds, and the CG of ‖ 84.8 is within the 78–86 inch range; the
+p251->253 [ICBICICB] …'er moments were determined the same' ‖ 'way.) Once this has been '
+        (no trace)
+p259->260 [ICB] …' performance increases. Conversely,' ‖ 'as air density decreases '
+     TRACE p260 page:endsColumn (321.0, 547.1164, 237.03399999999988, 11.470000000000027) | …craft performance increases. Conversely, ‖ as air density decreases (higher density
+p281->281 [IC] …' Draw a line straight across to the' ‖ '65 percent, best power li'
+     TRACE p281 col:notLower | …feet. Draw a line straight across to the ‖ 65 percent, best power line. This is the
+p286->287 [ICB] …' rate of about 2 °Celsius (C) every' ‖ '1,000 feet of altitude ga'
+     TRACE p287 page:notLower | … at a rate of about 2 °Celsius (C) every ‖ 1,000 feet of altitude gain, and the pre
+p292->294 [BICICBIC] …'anding phase of flight, an aircraft' ‖ 'may “drop in” due to the '
+        (no trace)
+p326->328 [ICBIICB] …'tation is normally more severe than' ‖ 'any associated with lesse'
+        (no trace)
+p329->331 [ICBICICB] …'e display. You should consider this' ‖ 'potential delay when usin'
+        (no trace)
+p331->333 [BICICBIC] …'ather conditions. Data link weather' ‖ 'provides the pilot with a'
+        (no trace)
+p341->341 [C] …'e location of the respective runway' ‖ 'thresholds. Figure 14-10 '
+     TRACE p341 col:notRight last=(72.0, 267.1755, 236.99499999999995, 11.470000000000027) first=(72.0, 254.6755, 237.06399999999996, 11.470000000000027) | …lative location of the respective runway ‖ thresholds. Figure 14-10 shows “18-36” t
+p344->344 [IC] …' may require your participation and' ‖ 'compliance. As pilot in c'
+     TRACE p344 col:competing ceiling=inf 'is 2,000 feet of runway remaining.' (285.2486, 531.6524000000001, 123.75, 10.206000000000017) last=(36.0, 64.05030000000001, 237.00999999999993, 11.469999999999999) first=(285.0, 502.48030000000006, 237.00699999999995, 11.470000000000027) | … that may require your participation and ‖ complia
+p391->391 [C] …'tward—especially if the flight must' ‖ 'be completed before dark.'
+     TRACE p391 col:notRight last=(285.0, 91.01640000000003, 237.01999999999998, 11.469999999999999) first=(285.0, 78.51640000000003, 237.01099999999997, 11.469999999999999) | …s eastward—especially if the flight must ‖ be completed before dark. Remember, an h
+p396->396 [IC] …'40 knots. On the other hand, if the' ‖ 'mass of air is moving wes'
+     TRACE p396 col:competing ceiling=inf 'move over the Earth’s surface. Airspeed, the rate ' (72.75319999999999, 87.1094, 237.04200000000003, 10.206000000000003) last=(72.0, 502.56640000000004, 237.01499999999993, 11.470000000000027) first=(321.0, 719.5664, 236.9699999999999, 11.470000000000027) | … of 140 knots. On the other hand,
+p405->407 [BICBIIC] …'ted that the tallest obstruction is' ‖ 'part of a series of anten'
+        (no trace)
+p411->411 [ICIC] …'o the compass card, by means of the' ‖ 'course select knob. The H'
+     TRACE p411 col:notHigher last=(36.01000000000002, 319.06640000000004, 236.90999999999994, 11.470000000000027) first=(285.01000000000005, 293.1464, 237.1200000000003, 11.470000000000027) | …ion to the compass card, by means of the ‖ course select knob. The HSI has a fixed
+p441->442 [ICBIC] …' light sensitive cells that convert' ‖ 'light energy into electri'
+     TRACE p442 page:endsColumn (321.0, 295.26120000000003, 237.01999999999987, 11.470000000000027) | …tains light sensitive cells that convert ‖ light energy into electrical impulses th

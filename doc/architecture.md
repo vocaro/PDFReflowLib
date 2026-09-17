@@ -790,6 +790,22 @@ A paragraph that continues onto the next page takes that page's figures and capt
 ahead of the page after: their markers lie inside the joined text, and they would otherwise read
 inside the page before it (the Word paper's Figure 16, #153).
 
+One numbered key stacked under another is separated by its numbering, because nothing else on the
+page separates them (#178). Wallace's answer keys set short numeric entries in two or three columns
+numbered down each column, one key under the next, each under a title that runs across every
+gutter: no vertical band of whitespace divides the page, the entries are nowhere near the twelve
+bodies a narrow gutter's prose test asks, and the keys sit closer than the 1.1 bodies a horizontal
+cut asks, so page 486's second key read `1) 0`, `15) 1`, `29) 0`, `2)− 1`… along its rows. Once the
+whitespace cuts, the spanning figures, the heading row, the bullet columns and the margin bands
+have all declined, the region is cut at its highest whitespace band whose `N)` markers below it
+read down their columns — at least two columns on their own left edges, at least two markers each,
+each column counting up from its top, and each column's numbers standing wholly below the column
+left of it — and open at a number no higher than any number above the band. That restart is what
+makes two keys: a band inside one key leaves that key's own first entry above it, and a key the
+entries above continue opens higher still. Each part is then cut on its own, by its own gutters.
+A grid numbered along its rows (#78's graphs, the exercise sets set two to a row) interleaves its
+columns' numbers and is refused at every band.
+
 Where no cut and no bullet-column split applies, the reading-order
 sort still reads two centred units set beside each other whole (#122, CDC pages 14, 23 and 34): the
 region's lines are grouped from the top into stacks at ordinary leading, and when they form exactly
@@ -880,7 +896,17 @@ captures and the other pieces of their rows, then trims the crop away from lines
 touches. It does not chain from text line to text line through overlapping leading, so a
 label underline, a column rule or an inline equation beside tightly leaded prose does not
 absorb the paragraph or column (#36); a line whose rectangle genuinely overlaps admitted text
-is still admitted whole rather than clipped. Graphic-region merging and expansion repeat until
+is still admitted whole rather than clipped. A drawing also takes its own labels, set a word space
+from its ink (#179): Wallace's trigonometry answers letter each right triangle's vertices 1 to 11 pt
+clear of the crop, too far for the piece-of-a-row rule's three quarters of a point, so they reflowed
+as one-character paragraphs around the image. A line of one or two letters or digits joins the crop
+when it overlaps the crop's span in one direction and stands at most one body size clear in the
+other, the crop is bounded by a painted region at least one body wide and one body tall, and the
+crop holds nothing but labels itself (at most eight lines, none over eight characters and none
+carrying a word). A fraction bar is painted a body wide and four points tall, so a worked example is
+no drawing and its terms' digits keep their text; an exercise number carries its parenthesis, which
+is what tells page 483's `5)` half a point from its graph from a vertex letter. Graphic-region
+merging and expansion repeat until
 the bounds stabilize, so a merged crop cannot cut through a newly intersecting text line.
 Only text outside those regions reflows. `FractionRegionDetector` groups short horizontal bars with nearby compact
 mathematical terms above and below, optionally including a nearby equation prefix. It leaves

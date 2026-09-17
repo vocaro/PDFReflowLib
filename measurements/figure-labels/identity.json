@@ -1,0 +1,46 @@
+{
+  "issues": [
+    "#179",
+    "#46",
+    "#48"
+  ],
+  "system": "macOS 27.0 (26A428), arm64, Swift 6, release CLI, host terminal, library defaults",
+  "baseline": {
+    "commit": "ce9e288",
+    "cli": "release build of ce9e288 (LayoutReconstructor.swift restored from ce9e288 in the worktree)",
+    "converterSHA256": "26ff9e71c8e5a5df912f9ea22e008d63a555d25a2f6ea9a7280ba56bdb7da496"
+  },
+  "candidate": {
+    "commit": "ce9e288 + working tree",
+    "converterSHA256": "fe74dba9752a775ce4e8b78d3b9491873c31bf4f790c17ab891c7133d04b80d2",
+    "sourceLayoutReconstructorSHA256": "a0c166a61c4bdb0ff86593744fa6774818fd2b38765a2fbd71bb49c9e63e6b75"
+  },
+  "environmentProbeSHA256": "cbf9fabb801c2acd89433d713236eacac103824f3749e254b0b1ef15c4bc72e3",
+  "sources": {
+    "wallace-algebra-2010": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+    "faa-phak-8083-25c": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+    "gpo-911-2004": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+    "census-rrs2002-01": "0f97380ae4308581bd70013b7317faafd7c217654236bd31d1448f26eae56905",
+    "nbs-jres-geltman-1977": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
+    "ntrs-20190030725-dasc-2019": "7c2137098ffb75153e0049b970272db97bc91e13168028dc7b53fbe2deb92caa",
+    "ntrs-20200002975-gwl-2020": "a98e4fcdea40b8ea7023880dd88966f04198b4ec311fced0bb9ebb2dec45fe6d"
+  },
+  "fixtures": {
+    "Tests/PDFReflowLibTests/fixtures/algebra-424-layout.json": "cc56c9389125b4361a1c3259cf0fbb1350fd36be9decbdec978102b86ab9acf9",
+    "Tests/PDFReflowLibTests/fixtures/algebra-427-layout.json": "eec547d531b0e268e3c5b0759ead4d2ef1572aa61d0381d5e66531235a2e2fd4",
+    "Tests/PDFReflowLibTests/fixtures/algebra-465-layout.json": "65ad3b5c8000758d521688779b733a89d86719c101e6d40bd53822dc7a215604"
+  },
+  "artefacts": {
+    "label-distances.tsv": "the baseline label survey over every cached corpus source (11,115 measurements)",
+    "survey.swift": "the label survey; no fixture or EPUB is committed",
+    "../answer-key-columns/page-comparison/wallace-algebra-2010.json": "the shared conversion comparison",
+    "../answer-key-columns/guard-mutations.log": "each single-guard mutation of both rules against the new tests"
+  },
+  "commands": {
+    "lane": "python3 tools/run_corpus_regressions.py --converter <CLI> --epubcheck /opt/homebrew/bin/epubcheck --output <dir> --case <id> --environment-probe .build/raster-environment/probe --execution-context host-terminal",
+    "compare": "python3 tools/compare_conversion_runs.py --allow-different-converters --baseline <base>/<id> --candidate <cand>/<id> --output page-comparison/<id>.json",
+    "contracts": "python3 tools/check_corpus_content.py --case wallace-algebra-2010 --evaluation <dir>/wallace-algebra-2010",
+    "probe": "xcrun swiftc -parse-as-library -O -module-cache-path .build/raster-environment/module-cache Sources/PDFReflowLib/{PageRasterizer,ConversionTypes,DocumentModel,ReflowDocument}.swift tools/probe-raster-environment.swift -o .build/raster-environment/probe",
+    "fixtures": "swiftc Sources/PDFReflowLib/{NativeTextReader,ConversionTypes,DocumentModel,ReflowDocument,GraphicsReader,NativeSpacingReader,StructureTreeReader,MarkedTextReader,FontWeightReader,PrivateUseDecoder}.swift tools/capture-layout-fixture.swift -o /tmp/capture-layout-fixture"
+  }
+}

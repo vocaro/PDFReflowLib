@@ -1,0 +1,12 @@
+#178 band: the numbering need not restart                    -> aKeyBandNeedsANumberingThatRestarts
+#178 band: a page with fewer markers is judged too           -> aKeyBandNeedsANumberingThatRestarts
+#178 columns: a column's numbers may overlap the column left of it -> aKeyBandNeedsANumberingThatRestarts, onlyNumbersRunningDownTheColumnsReadDownThem
+#178 columns: a column need not count up                     -> everyKeyOfAPageIsCutOnItsOwn, onlyNumbersRunningDownTheColumnsReadDownThem
+#178 columns: one marker to a column is enough               -> aKeyBandNeedsANumberingThatRestarts, onlyNumbersRunningDownTheColumnsReadDownThem
+#178 columns: one column is enough                           -> onlyNumbersRunningDownTheColumnsReadDownThem
+#179 label: any short line, parenthesis and all              -> onlyAShortLabelBesideADrawingJoinsIt
+#179 label: a corner counts as beside                        -> onlyAShortLabelBesideADrawingJoinsIt
+#179 label: no distance limit                                -> onlyAShortLabelBesideADrawingJoinsIt, sideLengthsJoinTheirDiagramsAndFractionCropsTakeNoLabel, sourceExerciseColumnsKeepTheirRowPiecesApart, triangleVertexLettersJoinTheirTriangle, workedExampleNotesAreNotColumnsUnderAFigure
+#179 label: the crop need not be a drawing                   -> onlyAShortLabelBesideADrawingJoinsIt, sourceExerciseColumnsKeepTheirRowPiecesApart
+#179 label: the crop may hold anything                       -> onlyAShortLabelBesideADrawingJoinsIt
+restored; baseline run: all pass

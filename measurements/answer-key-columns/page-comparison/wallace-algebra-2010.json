@@ -1,0 +1,278 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "wallace-algebra-2010",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "26ff9e71c8e5a5df912f9ea22e008d63a555d25a2f6ea9a7280ba56bdb7da496",
+  "candidateConverterSHA256": "fe74dba9752a775ce4e8b78d3b9491873c31bf4f790c17ab891c7133d04b80d2",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-baseline",
+      "programsSHA256": "1d83732cbc871b3f57e939929abdbb294e339af54e548e68954ebeea62579ac7"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    422,
+    423,
+    424,
+    425,
+    426,
+    427,
+    429,
+    430,
+    431,
+    432,
+    433,
+    434,
+    435,
+    436,
+    463,
+    465,
+    482,
+    486
+  ],
+  "changedPageFields": {
+    "422": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "423": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "424": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "425": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "426": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "427": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "429": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "430": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "431": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "scripts",
+      "text"
+    ],
+    "432": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "433": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "434": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "435": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "436": [
+      "images",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "463": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "465": [
+      "images",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "scripts",
+      "text"
+    ],
+    "482": [
+      "images",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines",
+      "text"
+    ],
+    "486": [
+      "images",
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "preformattedLines",
+      "text"
+    ]
+  },
+  "changedImages": [
+    "EPUB/images/image-1445.png",
+    "EPUB/images/image-1446.png",
+    "EPUB/images/image-1454.png",
+    "EPUB/images/image-1455.png",
+    "EPUB/images/image-1457.png",
+    "EPUB/images/image-1458.png",
+    "EPUB/images/image-1459.png",
+    "EPUB/images/image-1460.png",
+    "EPUB/images/image-1462.png",
+    "EPUB/images/image-1463.png",
+    "EPUB/images/image-1464.png",
+    "EPUB/images/image-1465.png",
+    "EPUB/images/image-1466.png",
+    "EPUB/images/image-1468.png",
+    "EPUB/images/image-1469.png",
+    "EPUB/images/image-1470.png",
+    "EPUB/images/image-1471.png",
+    "EPUB/images/image-1472.png",
+    "EPUB/images/image-1473.png",
+    "EPUB/images/image-1474.png",
+    "EPUB/images/image-1475.png",
+    "EPUB/images/image-1476.png",
+    "EPUB/images/image-1477.png",
+    "EPUB/images/image-1478.png",
+    "EPUB/images/image-1479.png",
+    "EPUB/images/image-1480.png",
+    "EPUB/images/image-1481.png",
+    "EPUB/images/image-1483.png",
+    "EPUB/images/image-1484.png",
+    "EPUB/images/image-1485.png",
+    "EPUB/images/image-1486.png",
+    "EPUB/images/image-1487.png",
+    "EPUB/images/image-1488.png",
+    "EPUB/images/image-1489.png",
+    "EPUB/images/image-1494.png",
+    "EPUB/images/image-1498.png",
+    "EPUB/images/image-1499.png",
+    "EPUB/images/image-1502.png",
+    "EPUB/images/image-1507.png",
+    "EPUB/images/image-1508.png",
+    "EPUB/images/image-1511.png",
+    "EPUB/images/image-1514.png",
+    "EPUB/images/image-1515.png",
+    "EPUB/images/image-1516.png",
+    "EPUB/images/image-1517.png",
+    "EPUB/images/image-1518.png",
+    "EPUB/images/image-1519.png",
+    "EPUB/images/image-1520.png",
+    "EPUB/images/image-1521.png",
+    "EPUB/images/image-1522.png",
+    "EPUB/images/image-1523.png",
+    "EPUB/images/image-1524.png",
+    "EPUB/images/image-1525.png",
+    "EPUB/images/image-1527.png",
+    "EPUB/images/image-1528.png",
+    "EPUB/images/image-1530.png",
+    "EPUB/images/image-1531.png",
+    "EPUB/images/image-1532.png",
+    "EPUB/images/image-1533.png",
+    "EPUB/images/image-1534.png",
+    "EPUB/images/image-1535.png",
+    "EPUB/images/image-1536.png",
+    "EPUB/images/image-1537.png",
+    "EPUB/images/image-1538.png",
+    "EPUB/images/image-1540.png",
+    "EPUB/images/image-1543.png"
+  ],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 46,
+    "fields": {
+      "paragraphIDs": 46
+    },
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

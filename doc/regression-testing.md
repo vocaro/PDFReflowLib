@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 3157 targeted checks on 550 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3220 targeted checks on 555 reviewed pages
 across 22 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Fifth National Climate Assessment*, *Our Flag*, *Preparedness 101*, *Project Blue Book Special
@@ -125,11 +125,11 @@ Report No. 14*, *Mineral Commodity Summaries 2025*, *Loper Bright Enterprises v.
 Clocks*, *Complaint for a Civil Case*, *Investigation of Atmospheric Boundary-Layer Effects on
 Launch-Vehicle Ground Wind Loads*, *A Scheduling Algorithm Compatible with a Distributed Management
 of Arrivals in the National Airspace System*, *Agricultural Research*, *Earthdata Cloud Analytics
-Project* and *Tank Health Monitoring*. They comprise 1083 ordered-text, 209 text, 395 paragraph,
-244 absent-text, 256 heading, 20 heading-level, 50 absent-heading, 89 list-item,
+Project* and *Tank Health Monitoring*. They comprise 1131 ordered-text, 209 text, 395 paragraph,
+257 absent-text, 256 heading, 20 heading-level, 50 absent-heading, 89 list-item,
 1 preformatted-lines, 28 script, 6 absent-script, 11 footnote, 34 note-link,
 61 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation, 81 distinct-paragraph,
-194 image-presence, 35 captioned-image, 102 page-reference, 103 warning, 111 absent-warning,
+196 image-presence, 35 captioned-image, 102 page-reference, 103 warning, 111 absent-warning,
 17 source-region, 5 glyph-structure, 4 image-appearance and 9 table-cell checks, counted as
 `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
@@ -601,7 +601,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->850 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->858 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1411,6 +1411,28 @@ word and is not a bare list marker. Pages 343, 16, 471 and 424 are pinned from c
 fixtures, with controls on the rule at measured distances: a piece a word space clear, a bare entry
 number, a worded explanation, a monospaced piece and a piece on another row all keep their text.
 See [the split-display-row evidence](../measurements/split-display-rows/record.md).
+
+`AnswerKeyColumnsAndDiagramLabelsTests.swift` covers the two defects that lane left open.
+[#178](https://github.com/vocaro/PDFReflowLib/issues/178): a key numbered down its columns read
+across its rows, because its title bridges every gutter, its entries are far too short for a narrow
+gutter's prose test, and it sits closer to the key above it than a horizontal cut asks. The region
+is now cut at its highest whitespace band whose markers below read down their columns and open at a
+number no higher than any above it, and each part is cut on its own. Checksum-pinned pages 465, 486
+and 463 must read 11–42 then 1–34, 1–40 under its title, and three keys of 7–34, 1–40 and 1–4;
+controls on the rule itself refuse #78's row-numbered grids, a column counting down, a repeated
+number, a single column, two runs on one edge, a band inside one key, a key the entries above
+continue and a figure spanning the whitespace between two keys.
+[#179](https://github.com/vocaro/PDFReflowLib/issues/179): a right triangle's vertex letters and
+side lengths stand a word space from its ink, so they reflowed as one-character paragraphs around
+the image. Page 427's twelve labels and page 424's must now be inside their crops with every
+exercise number still a text entry, and page 465 is the control where fraction crops take no label.
+The rule's own controls refuse a word, a three-character number, a monospaced piece, a label off a
+corner, a label more than a body clear, an exercise number's parenthesis at half a point, a crop
+with no painted region, a fraction bar's four points of height, a crop holding prose and a crop
+holding nine lines. The corpus contract adds Wallace pages 427, 463, 465, 482 and 486 and extends
+page 424; the previous converter fails thirty of its checks. See the
+[answer-key column evidence](../measurements/answer-key-columns/record.md) and the
+[figure-label evidence](../measurements/figure-labels/record.md).
 
 ## Citation-leading wrapped lines
 

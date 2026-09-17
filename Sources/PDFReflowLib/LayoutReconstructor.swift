@@ -879,14 +879,55 @@ enum LayoutReconstructor {
         return admitted.contains { sameRow($0, line.rect) }
     }
 
+    /// A drawing's own label, set a word space from its ink (#179). Wallace's trigonometry
+    /// answers draw a right triangle for each exercise and letter its vertices: page 427 sets
+    /// `C` 1.6–4.0 pt over each triangle and `B` 2.8–5.2 pt to its right, page 424's `A`
+    /// 1.0–6.4 pt beside it. That is typography, not the extraction padding `adjoinsRow`
+    /// measures, so those labels stood outside the crop and reflowed as one-character
+    /// paragraphs around the image, while the labels that happened to touch the crop joined it.
+    ///
+    /// A line is such a label when it is one or two letters or digits — an exercise number
+    /// carries its `)` and a word its letters — standing at most one body size clear of a crop
+    /// it overlaps in the other direction, where the crop is a drawing (a painted region at
+    /// least one body wide and one body tall reaches into it) that holds nothing but labels
+    /// itself: at most eight lines, none over eight characters and none carrying a word.
+    ///
+    /// Each guard answers a measured neighbour. A fraction bar is painted a body wide and four
+    /// points tall, so Wallace's worked examples are no drawings and their terms' digits keep
+    /// their text (page 13's `25` and `55`, whose crop went on to swallow two explanations); the
+    /// `or` between the FAA's page-265 fractions and the folio 6.2 pt under Wallace page 33's
+    /// derivation are refused for the same reason, and so are the USDA magazine's folios beside
+    /// its running-foot rule. The graph pages set their exercise numbers against the drawing
+    /// itself — page 483's `5)` stands 0.54 pt from its graph and page 447's `3)` 2.3 pt — and
+    /// the closing parenthesis is what tells them from a vertex letter. Across the gated corpus
+    /// every line this admits is a vertex letter or a side length on Wallace pages 422–436, at
+    /// 0.03 to 0.93 of a body from its drawing.
+    static func isDiagramLabel(_ line: TextLine, bounds: CGRect, held: [TextLine], page: PageContent,
+                               body: CGFloat) -> Bool {
+        guard !line.monospaced,
+              line.text.trimmingCharacters(in: .whitespaces)
+                  .range(of: "^[A-Za-z0-9]{1,2}$", options: .regularExpression) != nil else { return false }
+        let dx = max(bounds.minX - line.rect.maxX, line.rect.minX - bounds.maxX, 0)
+        let dy = max(bounds.minY - line.rect.maxY, line.rect.minY - bounds.maxY, 0)
+        // Beside the drawing or over it, never diagonally off a corner: an exercise number set
+        // above and to the left of its triangle overlaps neither span (page 426's `30)`).
+        guard (dx == 0) != (dy == 0), max(dx, dy) <= body else { return false }
+        guard held.count <= 8, held.allSatisfy({ other in
+            other.text.trimmingCharacters(in: .whitespaces).count <= 8
+                && other.text.range(of: #"\p{L}{3,}"#, options: .regularExpression) == nil
+        }) else { return false }
+        return page.graphics.contains { bounds.intersects($0) && $0.width >= body && $0.height >= body }
+    }
+
     /// Whole-line expansion admits the lines a seed captures and the other pieces of their
     /// rows. Tightly leaded line rectangles overlap, so admitting every line that touches an
     /// admitted line would absorb a whole paragraph or column (#36). The crop is then trimmed
     /// away from lines it merely touches, because layout removes every intersecting line from
     /// prose; a line whose rectangle genuinely overlaps admitted text is admitted instead.
     /// A crop never keeps half a row: a piece its edge left just outside joins it (`adjoinsRow`).
+    /// A drawing takes its own vertex and side labels with it (`isDiagramLabel`, #179).
     /// Returns nil for a thin rule that lies inside text it does not strike through.
-    private static func expanded(_ region: Region, page: PageContent) -> CGRect? {
+    private static func expanded(_ region: Region, page: PageContent, body: CGFloat) -> CGRect? {
         var admitted: [CGRect] = []
         while true {
             var bounds = admitted.reduce(region.seed) { $0.union($1.insetBy(dx: -2, dy: -2)) }
@@ -900,6 +941,13 @@ enum LayoutReconstructor {
             if changed { continue }
             for line in page.lines where !admitted.contains(line.rect) && !bounds.intersects(line.rect)
                 && adjoinsRow(line, bounds: bounds, admitted: admitted) {
+                admitted.append(line.rect)
+                changed = true
+            }
+            if changed { continue }
+            let held = page.lines.filter { admitted.contains($0.rect) || bounds.intersects($0.rect) }
+            for line in page.lines where !admitted.contains(line.rect) && !bounds.intersects(line.rect)
+                && isDiagramLabel(line, bounds: bounds, held: held, page: page, body: body) {
                 admitted.append(line.rect)
                 changed = true
             }
@@ -1900,7 +1948,7 @@ enum LayoutReconstructor {
         while regions.map(\.bounds) != previous {
             previous = regions.map(\.bounds)
             regions = regions.compactMap { region in
-                expanded(region, page: page).map { Region(seed: region.seed, bounds: $0) }
+                expanded(region, page: page, body: body).map { Region(seed: region.seed, bounds: $0) }
             }
             // A merged bounding rectangle can newly intersect a label that neither component
             // touched. Expand again before rasterizing, or its text is removed from prose while
@@ -2028,6 +2076,12 @@ enum LayoutReconstructor {
                 + ordered(parts.columns.filter { $0.rect.maxX < parts.gutter }, bodySize: bodySize, depth: depth + 1)
                 + ordered(parts.columns.filter { $0.rect.minX > parts.gutter }, bodySize: bodySize, depth: depth + 1)
                 + ordered(parts.foot, bodySize: bodySize, depth: depth + 1)
+        }
+        // One numbered key stacked under another, with no band wide enough to cut between them
+        // (#178). The numbering says where the upper key ends; each key is then cut on its own.
+        if let y = numberedKeyBand(elements, bodySize: bodySize) {
+            return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1)
+                + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1)
         }
         // Blocks set beside each other at different leadings, with no whitespace between them
         // (the CDC comic's speech balloons beside its caption boxes, #122), read block by block.
@@ -2638,6 +2692,67 @@ enum LayoutReconstructor {
         let ceiling = first.map(\.rect.maxY).max()!
         guard elements.allSatisfy({ $0.rect.maxY <= ceiling + bodySize * 0.25 }) else { return nil }
         return labels
+    }
+
+    /// Where one numbered key ends and the next begins (#178). Wallace's answer keys set short
+    /// numeric entries in two or three columns numbered down each column, one key under the next,
+    /// each under its own title. The title runs across every gutter, so no vertical band of
+    /// whitespace divides the page; the entries are nowhere near the twelve bodies a narrow
+    /// gutter's prose test demands, and a key sits closer to the key above it than the 1.1 bodies
+    /// a horizontal cut asks. Page 486's second key therefore read `1) 0`, `15) 1`, `29) 0`,
+    /// `2)− 1`… across its rows and page 465's first key read `11)`, `27)`, `12)`, `28)`… across
+    /// its own.
+    ///
+    /// The numbers decide where the cut goes, as they decide which way #78's grids read. Returns
+    /// the highest whitespace band of the region — a line no element crosses — whose markers below
+    /// it read down their columns (`readsDownColumns`) and open at a number no higher than any
+    /// number above it. That restart is what makes them two keys: a band inside one key leaves
+    /// that key's own first entry above it, so what is below opens higher and is refused, and a
+    /// key the entries above continue (1–7 over 8–11) opens higher still. A grid numbered along
+    /// its rows (page 448's graphs, the two-to-a-row exercise sets on pages 10, 26 and 424)
+    /// interleaves its columns' numbers and is refused at every band.
+    static func numberedKeyBand(_ elements: [Element], bodySize: CGFloat) -> CGFloat? {
+        let markers = elements.compactMap { element -> (rect: CGRect, number: Int)? in
+            guard let line = element.line, !line.monospaced,
+                  let range = line.text.range(of: #"^[0-9]{1,3}(?=\))"#, options: .regularExpression),
+                  let number = Int(line.text[range]), number > 0 else { return nil }
+            return (element.rect, number)
+        }
+        guard markers.count >= 6 else { return nil }
+        for band in horizontalBands(elements) {
+            let below = markers.filter { $0.rect.maxY < band.y }
+            let above = markers.filter { $0.rect.minY > band.y }
+            guard let opening = below.map(\.number).min(),
+                  let earliest = above.map(\.number).min(), opening <= earliest,
+                  readsDownColumns(below, bodySize: bodySize) else { continue }
+            return band.y
+        }
+        return nil
+    }
+
+    /// Markers set in columns at their own left edges and numbered down each column: at least two
+    /// columns, each holding at least two markers on its own edge, each column counting up from
+    /// its top, and each column's numbers standing wholly below the column to its left. A key
+    /// numbered along its rows fails the last test, since its columns' numbers interleave.
+    static func readsDownColumns(_ markers: [(rect: CGRect, number: Int)], bodySize: CGFloat) -> Bool {
+        var edges: [CGFloat] = []
+        for x in markers.map(\.rect.minX).sorted() where edges.last.map({ x - $0 > bodySize * 1.5 }) ?? true {
+            edges.append(x)
+        }
+        guard edges.count >= 2 else { return false }
+        var columns = Array(repeating: [(rect: CGRect, number: Int)](), count: edges.count)
+        for marker in markers {
+            guard let column = edges.lastIndex(where: { marker.rect.minX >= $0 - bodySize * 0.5 }) else { return false }
+            columns[column].append(marker)
+        }
+        var previous = 0
+        for column in columns {
+            guard column.count >= 2 else { return false }
+            let down = column.sorted { $0.rect.maxY > $1.rect.maxY }.map(\.number)
+            guard down[0] > previous, zip(down, down.dropFirst()).allSatisfy({ $1 > $0 }) else { return false }
+            previous = down[down.count - 1]
+        }
+        return true
     }
 
     /// Column-ordered cells regrouped by their labels' numbers: each label leads the elements that

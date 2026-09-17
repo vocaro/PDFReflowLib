@@ -123,11 +123,12 @@ private func paragraph(_ texts: [String], containing phrase: String, sourceLocat
 // derivation row is exposed to the join. The `withCrops` counts are the same reconstruction except
 // on the seven pages where a crop now takes the piece its edge used to leave outside (#46, #48):
 // 471 52 → 49, 343 9 → 8, 16 45 → 39, 479 14 → 12, 424 30 → 28, 448 48 → 44 and 487 64 → 49.
+// Page 424 falls again, 28 → 16, once each triangle keeps its own vertex letters (#179).
 @Test func sourceExerciseColumnsKeepTheirRowPiecesApart() throws {
     for (name, withCrops, withoutCrops) in [("algebra-10", 47, 47), ("algebra-26", 54, 54), ("algebra-438", 71, 71),
                                             ("algebra-471", 49, 57), ("algebra-101", 44, 51), ("algebra-343", 8, 93),
                                             ("algebra-16", 39, 74), ("algebra-40", 16, 30), ("algebra-479", 12, 194),
-                                            ("algebra-186", 12, 35), ("algebra-424", 28, 45), ("algebra-448", 44, 68),
+                                            ("algebra-186", 12, 35), ("algebra-424", 16, 45), ("algebra-448", 44, 68),
                                             ("algebra-449", 28, 74), ("algebra-487", 49, 88), ("algebra-291", 7, 53)] {
         let page = try sourcePage(name)
         #expect(reflow(page).count == withCrops, "\(name) with crops \(reflow(page).count)")

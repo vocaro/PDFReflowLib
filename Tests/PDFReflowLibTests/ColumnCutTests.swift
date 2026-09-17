@@ -231,12 +231,13 @@ func captionOfAColumnFigureStaysInItsColumn(name: String, folio: String, order: 
 }
 
 // Control: Wallace's worked examples set formula crops and triangles beside short notes. Those are
-// not prose columns under a figure, so the notes keep their places beside their steps: page 429's
-// side-length label `12` follows the note it sits under, and page 186's first note follows its step.
+// not prose columns under a figure, so the notes keep their places beside their steps. Page 429's
+// side-length label `12` is drawn under its triangle and is preserved with it (#179), so the notes
+// alone are checked here; page 186's first note follows its step.
 @Test func workedExampleNotesAreNotColumnsUnderAFigure() throws {
     #expect(try SourceLayoutFixture.load("algebra-429").sourceSHA256 == algebraSHA256)
     let (_, examples, _) = try reflow("algebra-429", removing: ["429"])
-    expectBlocksInOrder(examples, ["From angle θ the given sides", "12", "Because we are looking for an angle",
+    expectBlocksInOrder(examples, ["From angle θ the given sides", "Because we are looking for an angle",
                                    "45◦ Our Solution", "Example 556.", "Find the indicated angle"])
     #expect(try SourceLayoutFixture.load("algebra-186").sourceSHA256 == algebraSHA256)
     let (_, powers, _) = try reflow("algebra-186", removing: ["186"])

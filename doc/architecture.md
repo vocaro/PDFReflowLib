@@ -285,7 +285,13 @@ preserved images are barriers. Captions, list-like text and headings of 200 or m
 fall back as well, with one exception: a paragraph group whose only list line opens it and was
 rejoined from a marker piece PDFKit split off (the FAA handbook tags each bullet item as one `P`)
 is exactly one item. It keeps its tag order, loses the absorbed piece from its line count, and is
-emitted as the list item the same text is when untagged (#81). A paragraph group that holds a
+emitted as the list item the same text is when untagged (#81). A validated heading tag is refused
+where the page's own tags and typography contradict it: a group set no larger than the page's body
+text, in a type the page's paragraph groups also use, that closes a sentence (past closing quotes,
+over 40 characters) or opens lowercase is a paragraph. The NASA Word paper tags eight of its
+page-19 references, a DOI line and a wrapped reference line `H1` in the references' 9-point type
+(#154); Our Flag's body-size bold `§174. Time and occasions for display` closes no sentence, and a
+heading tag with no paragraph in its type on the page keeps its identity. A paragraph group that holds a
 heading-type line above body text falls back too (FAA page 203 tags `Introduction`, its paragraph
 and the next section as one `P`, #84). A source can also tag one paragraph in pieces: where a
 paragraph group's first line continues the previous group's last line (same edge and type, ordinary
@@ -355,8 +361,25 @@ period or parenthesis and a space, or a number and parenthesis set tight against
 previous line must read as prose, end without terminal punctuation and reach a right edge
 that at least three same-size lines of the column share within a quarter body size, and the
 line must sit on the column's majority left edge (or outdent from an indented opening line)
-at ordinary line spacing. Bullets never continue prose; ragged-right columns, hanging-indent
+at ordinary line spacing. That right edge is the one most lines of the column share within a
+quarter body of its furthest line, not the furthest line itself, since a book can set a few lines
+past its measure (the 9/11 report hangs lines 2.9 points past the column on pages 179, 206, 215
+and 229; #146). Bullets never continue prose; ragged-right columns, hanging-indent
 continuations and OCR lines that Vision marks as unwrapped keep the list representation.
+A numbered or lettered marker that no other marker continues is a further exception, since a list
+is a sequence: a marker has a sibling when a line of this page, or of the page before or after it,
+opens with a marker of the same kind and punctuation one or two values away in the same type size
+(extraction records each page's markers, so the 9/11 report's page-146 item `1.` keeps its
+representation because page 147 prints `2.` and `3.`, and Wallace's answer keys, which print the
+odd exercises only, keep theirs). A marker without a sibling continues an open paragraph on the
+evidence above except that its previous line need only run three quarters of the column's measure,
+so a ragged column joins too (Fed page 92's `…was established in` / `1913. At that time,…`); it
+opens a paragraph of its own where it runs on into the line directly beneath it — the marker line
+leaves its sentence open, reads as words, runs three quarters of the measure its edge shares, and
+the line beneath sits on its own left edge at ordinary leading in its type and opens no list (9/11
+page 288's `2000. They decided … he should be` over `found.`; FAA page 18's `P. E. Fansler, a
+Florida businessman…`; #146); and it wraps an open list item at that item's hanging indent (NOAA's
+reference author lists, `S. Martinuzzi, A.D. Syphard, …`).
 The pieces of a prose row PDFKit splits at inline mathematics rejoin before classification (#95).
 A joined row whose radicand opens it with a minus sign before a number or variable (`− 1 √ , and
 it is…`) reads as prose, while a line that opens with a minus on its own keeps the list
@@ -525,7 +548,11 @@ whitespace cuts and paragraph geometry. Below that threshold, a section label se
 over the supported body (acmart's `ABSTRACT`, the 9/11 report's `1.1 INSIDE THE FOUR FLIGHTS`)
 is a heading when it starts with a capital or digit, ends without sentence punctuation, has clear
 space above it or continues a label of the same size, and is either set in capitals or shorter
-than the column's prose. A wider line that still fits the column qualifies when it is set in a
+than the column's prose. A list marker bars a label, with one exception: a numbered section title,
+a one- or two-digit number and period before a title wholly in capitals or wholly bold, not ending
+in a folio and with no other line on the page opening a marker that continues its number (the NASA
+Word paper's 12-point bold `2. TEST DESCRIPTION` over 10-point prose, against the 9/11 report's
+contents entries `10.` to `13.` and Wallace's body-size answer keys; #154). A wider line that still fits the column qualifies when it is set in a
 label style the book establishes: the extraction pass records, per page, the size, body size
 and all-bold flag of the narrow labels outside painted graphics and margins, and a style seen on
 three or more pages admits a title set nearly the column's width (FAA's `Crew Resource Management

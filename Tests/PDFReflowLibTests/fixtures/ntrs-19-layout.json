@@ -1,0 +1,3234 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        300.05000000000001,
+        50.112000000000002,
+        12,
+        13.283999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 12,
+          "text" : "19"
+        }
+      ],
+      "text" : "19"
+    },
+    {
+      "rect" : [
+        118.82000000000001,
+        735.16800000000001,
+        113.56464000000004,
+        13.283999999999992
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 12,
+          "text" : "A"
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.4800000000000004,
+          "text" : "CKNOWLEDGEMENTS"
+        }
+      ],
+      "text" : "ACKNOWLEDGEMENTS"
+    },
+    {
+      "rect" : [
+        54,
+        717.84864000000005,
+        242.89964000000003,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "The authors thank the staff of the NASA Langley Transonic"
+        }
+      ],
+      "text" : "The authors thank the staff of the NASA Langley Transonic"
+    },
+    {
+      "rect" : [
+        54,
+        706.32864000000006,
+        242.56583999999998,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Dynamics Tunnel for their tireless efforts, the hand"
+        }
+      ],
+      "text" : "Dynamics Tunnel for their tireless efforts, the hand"
+    },
+    {
+      "rect" : [
+        54,
+        694.7886400000001,
+        242.83620000000008,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "placement of bulky test articles, and their willingness to try"
+        }
+      ],
+      "text" : "placement of bulky test articles, and their willingness to try"
+    },
+    {
+      "rect" : [
+        54,
+        683.26864,
+        64.271879999999996,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "new techniques."
+        }
+      ],
+      "text" : "new techniques."
+    },
+    {
+      "rect" : [
+        142.94,
+        639.50800000000004,
+        65.576880000000017,
+        13.283999999999992
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 12,
+          "text" : "R"
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.4800000000000004,
+          "text" : "EFERENCES"
+        }
+      ],
+      "text" : "REFERENCES"
+    },
+    {
+      "rect" : [
+        54,
+        623.2360000000001,
+        233.6579999999999,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[1] Hanson, P. W.; and Jones, G. W.; “On the Use of Dynamic"
+        }
+      ],
+      "text" : "[1] Hanson, P. W.; and Jones, G. W.; “On the Use of Dynamic"
+    },
+    {
+      "rect" : [
+        75.384,
+        612.91600000000005,
+        207.38299999999998,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Models for Studying Launch Vehicle Buffet and Ground-"
+        }
+      ],
+      "text" : "Models for Studying Launch Vehicle Buffet and Ground-"
+    },
+    {
+      "rect" : [
+        75.384,
+        602.596,
+        196.43399999999986,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Wind Loads,” NASA TM X 50548, September 1963."
+        }
+      ],
+      "text" : "Wind Loads,” NASA TM X 50548, September 1963."
+    },
+    {
+      "rect" : [
+        54,
+        582.19600000000003,
+        224.4380000000001,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[2] Farmer, M. G.; and Jones, G. W.; “Summary of Langley"
+        }
+      ],
+      "text" : "[2] Farmer, M. G.; and Jones, G. W.; “Summary of Langley"
+    },
+    {
+      "rect" : [
+        75.384,
+        571.87600000000009,
+        203.74400000000003,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Wind Tunnel Studies of Ground-Wind Loads on Launch"
+        }
+      ],
+      "text" : "Wind Tunnel Studies of Ground-Wind Loads on Launch"
+    },
+    {
+      "rect" : [
+        75.384,
+        561.55600000000004,
+        198.38600000000008,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Vehicles,” "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : "Compiled Papers from the 1966 Meeting on"
+        }
+      ],
+      "text" : "Vehicles,” Compiled Papers from the 1966 Meeting on"
+    },
+    {
+      "rect" : [
+        75.384,
+        551.2360000000001,
+        187.22699999999998,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "Ground Wind Load Problems in Relation to Launch"
+        }
+      ],
+      "text" : "Ground Wind Load Problems in Relation to Launch"
+    },
+    {
+      "rect" : [
+        75.384,
+        540.79600000000005,
+        210.31100000000004,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : "Vehicles"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : ","
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "NASA Langley Research Center, Hampton, VA,"
+        }
+      ],
+      "text" : "Vehicles, NASA Langley Research Center, Hampton, VA,"
+    },
+    {
+      "rect" : [
+        75.384,
+        530.44600000000003,
+        55.489999999999995,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "June 7-8, 1966."
+        }
+      ],
+      "text" : "June 7-8, 1966."
+    },
+    {
+      "rect" : [
+        54,
+        510.166,
+        241.40700000000004,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[3] Keller, D. K.; and Ivanco, T. G.; “Wind Tunnel Investigation"
+        }
+      ],
+      "text" : "[3] Keller, D. K.; and Ivanco, T. G.; “Wind Tunnel Investigation"
+    },
+    {
+      "rect" : [
+        75.384,
+        499.726,
+        219.23599999999999,
+        10.29000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "of Ground Wind Loads for Ares Launch Vehicle,” "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : "28"
+        },
+        {
+          "baselineOffset" : 3,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 6,
+          "text" : "th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : " AIAA"
+        }
+      ],
+      "text" : "of Ground Wind Loads for Ares Launch Vehicle,” 28th AIAA"
+    },
+    {
+      "rect" : [
+        75.384,
+        489.40600000000001,
+        202.82299999999998,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : "Applied Aerodynamics Conference, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Chicago, IL, AIAA-"
+        }
+      ],
+      "text" : "Applied Aerodynamics Conference, Chicago, IL, AIAA-"
+    },
+    {
+      "rect" : [
+        75.384,
+        479.08600000000001,
+        140.32699999999994,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "2010-4371, June 2010. June 7-8, 1966."
+        }
+      ],
+      "text" : "2010-4371, June 2010. June 7-8, 1966."
+    },
+    {
+      "rect" : [
+        54,
+        458.68599999999998,
+        231.767,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[4] Ivanco, T. G.; and Keller, D. K. “Investigation of Ground-"
+        }
+      ],
+      "text" : "[4] Ivanco, T. G.; and Keller, D. K. “Investigation of Ground-"
+    },
+    {
+      "rect" : [
+        75.384,
+        448.36599999999999,
+        183.92400000000004,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Wind Loads for Ares Launch Vehicles,” Journal of"
+        }
+      ],
+      "text" : "Wind Loads for Ares Launch Vehicles,” Journal of"
+    },
+    {
+      "rect" : [
+        75.384,
+        438.04599999999999,
+        216.08299999999997,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Spacecraft and Rockets, Vol. 449, No. 4, July-August 2012."
+        }
+      ],
+      "text" : "Spacecraft and Rockets, Vol. 449, No. 4, July-August 2012."
+    },
+    {
+      "rect" : [
+        54,
+        417.64600000000002,
+        227.65499999999986,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[5] Irwin, H. P. A. H.; “Design and Use of Spires for Natural"
+        }
+      ],
+      "text" : "[5] Irwin, H. P. A. H.; “Design and Use of Spires for Natural"
+    },
+    {
+      "rect" : [
+        75.384,
+        407.32599999999996,
+        200.78999999999996,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Wind Simulation,” National Research Council, Canada,"
+        }
+      ],
+      "text" : "Wind Simulation,” National Research Council, Canada,"
+    },
+    {
+      "rect" : [
+        75.384,
+        397.00599999999997,
+        101.53400000000001,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "LTR-LA-233, August 1979."
+        }
+      ],
+      "text" : "LTR-LA-233, August 1979."
+    },
+    {
+      "rect" : [
+        54,
+        376.60599999999999,
+        205.55399999999997,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[6] Irwin, H. P. A. H.; “The Design of Spires for Wind"
+        }
+      ],
+      "text" : "[6] Irwin, H. P. A. H.; “The Design of Spires for Wind"
+    },
+    {
+      "rect" : [
+        75.623999999999995,
+        366.286,
+        206.74100000000001,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Simulation,” "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : "Journal of Wind Engineering and Industrial"
+        }
+      ],
+      "text" : "Simulation,” Journal of Wind Engineering and Industrial"
+    },
+    {
+      "rect" : [
+        75.623999999999995,
+        355.94599999999997,
+        215.62100000000001,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : "Aerodynamics"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : ", Elsevier Scientific Publishing Company, the"
+        }
+      ],
+      "text" : "Aerodynamics, Elsevier Scientific Publishing Company, the"
+    },
+    {
+      "rect" : [
+        75.623999999999995,
+        345.50599999999997,
+        143.381,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Netherlands, Vol. 7, 1981, pp. 361-366."
+        }
+      ],
+      "text" : "Netherlands, Vol. 7, 1981, pp. 361-366."
+    },
+    {
+      "rect" : [
+        75.384,
+        335.18599999999998,
+        132.08599999999996,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "doi: 10.1016/0167-6105(81)90058-1"
+        }
+      ],
+      "text" : "doi: 10.1016/0167-6105(81)90058-1"
+    },
+    {
+      "rect" : [
+        54,
+        314.90600000000001,
+        201.56300000000005,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[7] De Paepe, W.; Pindado, S.; Bram, S.; Contino, F.;"
+        }
+      ],
+      "text" : "[7] De Paepe, W.; Pindado, S.; Bram, S.; Contino, F.;"
+    },
+    {
+      "rect" : [
+        75.623999999999995,
+        304.46600000000001,
+        206.62400000000005,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "“Simplified elements for wind-tunnel measurements with"
+        }
+      ],
+      "text" : "“Simplified elements for wind-tunnel measurements with"
+    },
+    {
+      "rect" : [
+        75.623999999999995,
+        294.14600000000002,
+        211.49000000000004,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "type-III-terrain atmospheric boundary layer,” Elsevier Ltd."
+        }
+      ],
+      "text" : "type-III-terrain atmospheric boundary layer,” Elsevier Ltd."
+    },
+    {
+      "rect" : [
+        75.623999999999995,
+        283.82599999999996,
+        20.34899999999999,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "2016."
+        }
+      ],
+      "text" : "2016."
+    },
+    {
+      "rect" : [
+        75.384,
+        273.50599999999997,
+        147.85200000000003,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "doi: 10.1016/j.measurement.2016.05.078"
+        }
+      ],
+      "text" : "doi: 10.1016/j.measurement.2016.05.078"
+    },
+    {
+      "rect" : [
+        54,
+        253.10600000000002,
+        228.66899999999998,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[8] Ivanco, T. G.; “Unique Testing Capabilities of the NASA"
+        }
+      ],
+      "text" : "[8] Ivanco, T. G.; “Unique Testing Capabilities of the NASA"
+    },
+    {
+      "rect" : [
+        75.623999999999995,
+        242.78600000000003,
+        189.51800000000006,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Langley Transonic Dynamics Tunnel, an Exercise in"
+        }
+      ],
+      "text" : "Langley Transonic Dynamics Tunnel, an Exercise in"
+    },
+    {
+      "rect" : [
+        75.623999999999995,
+        232.46600000000001,
+        205.96499999999995,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Aeroelastic Scaling,” AIAA Ground Testing Conference,"
+        }
+      ],
+      "text" : "Aeroelastic Scaling,” AIAA Ground Testing Conference,"
+    },
+    {
+      "rect" : [
+        75.623999999999995,
+        222.02600000000001,
+        107.345,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "June 2013, AIAA 2013-2625."
+        }
+      ],
+      "text" : "June 2013, AIAA 2013-2625."
+    },
+    {
+      "rect" : [
+        75.623999999999995,
+        211.70600000000002,
+        93.764000000000038,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "doi: 10.2514/6.2013-2625"
+        }
+      ],
+      "text" : "doi: 10.2514/6.2013-2625"
+    },
+    {
+      "rect" : [
+        54,
+        191.30600000000001,
+        211.4369999999999,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[9] Anton, P. S.; Gritton, E. C.; Mesic, R.; Steinberg, P.;"
+        }
+      ],
+      "text" : "[9] Anton, P. S.; Gritton, E. C.; Mesic, R.; Steinberg, P.;"
+    },
+    {
+      "rect" : [
+        75.384,
+        180.95600000000002,
+        216.32299999999998,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Johnson, D.; Block, M.; Brown, M.; Drezner, J.; Dryden, J.;"
+        }
+      ],
+      "text" : "Johnson, D.; Block, M.; Brown, M.; Drezner, J.; Dryden, J.;"
+    },
+    {
+      "rect" : [
+        75.384,
+        170.63600000000002,
+        209.12399999999997,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Hamilton, T.; Hogan, T.; Peetz, D.; Raman, R.; Strong, J.;"
+        }
+      ],
+      "text" : "Hamilton, T.; Hogan, T.; Peetz, D.; Raman, R.; Strong, J.;"
+    },
+    {
+      "rect" : [
+        75.384,
+        160.316,
+        212.30999999999983,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Trimble, W.; “Wind Tunnel and Propulsion Test Facilities,"
+        }
+      ],
+      "text" : "Trimble, W.; “Wind Tunnel and Propulsion Test Facilities,"
+    },
+    {
+      "rect" : [
+        75.384,
+        149.99600000000001,
+        206.56799999999993,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "an Assessment of NASA’s Capabilities to Serve National"
+        }
+      ],
+      "text" : "an Assessment of NASA’s Capabilities to Serve National"
+    },
+    {
+      "rect" : [
+        75.384,
+        139.55600000000001,
+        214.31700000000001,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Needs,” The RAND Corporation, Santa Monica, CA, 2004."
+        }
+      ],
+      "text" : "Needs,” The RAND Corporation, Santa Monica, CA, 2004."
+    },
+    {
+      "rect" : [
+        54,
+        119.276,
+        241.601,
+        9.9630000000000081
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[10] Anton, P. S.; Johnson, D. J.; Block, M.; Brown, M.; Drezner,"
+        }
+      ],
+      "text" : "[10] Anton, P. S.; Johnson, D. J.; Block, M.; Brown, M.; Drezner,"
+    },
+    {
+      "rect" : [
+        75.384,
+        108.836,
+        195.57000000000005,
+        9.9630000000000081
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "J.; Dryden, J.; Gritton, E. C.; Hamilton, T.; Hogan, T.;"
+        }
+      ],
+      "text" : "J.; Dryden, J.; Gritton, E. C.; Hamilton, T.; Hogan, T.;"
+    },
+    {
+      "rect" : [
+        75.384,
+        98.516000000000005,
+        207.59399999999994,
+        9.9630000000000081
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Mesic, R.; Peetz, D.; Raman, R.; Steinberg, P.; Strong, J.;"
+        }
+      ],
+      "text" : "Mesic, R.; Peetz, D.; Raman, R.; Steinberg, P.; Strong, J.;"
+    },
+    {
+      "rect" : [
+        75.384,
+        88.200000000000003,
+        212.30999999999983,
+        9.9630000000000081
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Trimble, W.; “Wind Tunnel and Propulsion Test Facilities,"
+        }
+      ],
+      "text" : "Trimble, W.; “Wind Tunnel and Propulsion Test Facilities,"
+    },
+    {
+      "rect" : [
+        75.384,
+        77.879999999999995,
+        182.91800000000001,
+        9.9629999999999939
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Supporting Analyses to an Assessment of NASA’s"
+        }
+      ],
+      "text" : "Supporting Analyses to an Assessment of NASA’s"
+    },
+    {
+      "rect" : [
+        336.43000000000001,
+        738.69600000000003,
+        183.00600000000014,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Capabilities to Serve National Needs,” The RAND"
+        }
+      ],
+      "text" : "Capabilities to Serve National Needs,” The RAND"
+    },
+    {
+      "rect" : [
+        336.43000000000001,
+        728.37600000000009,
+        139.48200000000003,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Corporation, Santa Monica, CA, 2004."
+        }
+      ],
+      "text" : "Corporation, Santa Monica, CA, 2004."
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        707.976,
+        231.07099999999986,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[11] Anton, P. S.; Raman, R.; Osburg, J.; Kallimani, J. G.; “An"
+        }
+      ],
+      "text" : "[11] Anton, P. S.; Raman, R.; Osburg, J.; Kallimani, J. G.; “An"
+    },
+    {
+      "rect" : [
+        336.43000000000001,
+        697.63600000000008,
+        197.57700000000006,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Update of the Nation’s Long-Term Strategic Needs for"
+        }
+      ],
+      "text" : "Update of the Nation’s Long-Term Strategic Needs for"
+    },
+    {
+      "rect" : [
+        336.43000000000001,
+        687.31600000000003,
+        179.80200000000019,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "NASA’s Aeronautics Test Facilities,” The RAND"
+        }
+      ],
+      "text" : "NASA’s Aeronautics Test Facilities,” The RAND"
+    },
+    {
+      "rect" : [
+        336.43000000000001,
+        676.87600000000009,
+        139.50900000000007,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Corporation, Santa Monica, CA, 2009."
+        }
+      ],
+      "text" : "Corporation, Santa Monica, CA, 2009."
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        656.596,
+        205.32200000000006,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[12] Cole, S. R.; Garcia, J. L.; “Past, Present and Future"
+        }
+      ],
+      "text" : "[12] Cole, S. R.; Garcia, J. L.; “Past, Present and Future"
+    },
+    {
+      "rect" : [
+        336.43000000000001,
+        646.27600000000007,
+        202.38299999999987,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Capabilities of the Langley Transonic Dynamics Tunnel"
+        }
+      ],
+      "text" : "Capabilities of the Langley Transonic Dynamics Tunnel"
+    },
+    {
+      "rect" : [
+        336.43000000000001,
+        635.83600000000001,
+        191.06399999999991,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "from an Aeroelasticity Perspective,” "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : "AIAA Dynamics"
+        }
+      ],
+      "text" : "from an Aeroelasticity Perspective,” AIAA Dynamics"
+    },
+    {
+      "rect" : [
+        336.43000000000001,
+        625.51600000000008,
+        201.63899999999995,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : "Specialists Conference"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : ", Atlanta, GA; April 2000, AIAA"
+        }
+      ],
+      "text" : "Specialists Conference, Atlanta, GA; April 2000, AIAA"
+    },
+    {
+      "rect" : [
+        336.43000000000001,
+        615.19600000000003,
+        41.34899999999999,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "2000-1767."
+        }
+      ],
+      "text" : "2000-1767."
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        594.79600000000005,
+        236.25799999999998,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[13] Ivanco, T. G.; Keller, D. F.; Pinkerton, J. L.; Disotell, K. J.;"
+        }
+      ],
+      "text" : "[13] Ivanco, T. G.; Keller, D. F.; Pinkerton, J. L.; Disotell, K. J.;"
+    },
+    {
+      "rect" : [
+        336.67000000000002,
+        584.476,
+        171.56699999999995,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Collins J. G.; Seliquini, S.; “Development of an"
+        }
+      ],
+      "text" : "Collins J. G.; Seliquini, S.; “Development of an"
+    },
+    {
+      "rect" : [
+        336.67000000000002,
+        574.15600000000006,
+        216.16500000000002,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Atmospheric-Boundary-Layer Profile at the NASA Langley"
+        }
+      ],
+      "text" : "Atmospheric-Boundary-Layer Profile at the NASA Langley"
+    },
+    {
+      "rect" : [
+        336.67000000000002,
+        563.83600000000001,
+        178.82999999999998,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Transonic Dynamics Tunnel,” AIAA SPACE and"
+        }
+      ],
+      "text" : "Transonic Dynamics Tunnel,” AIAA SPACE and"
+    },
+    {
+      "rect" : [
+        336.67000000000002,
+        553.39600000000007,
+        193.90500000000003,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Astronautics Forum and Exposition, September 2018,"
+        }
+      ],
+      "text" : "Astronautics Forum and Exposition, September 2018,"
+    },
+    {
+      "rect" : [
+        336.67000000000002,
+        543.07600000000002,
+        112.86899999999997,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Orlando FL, AIAA 2018-5184."
+        }
+      ],
+      "text" : "Orlando FL, AIAA 2018-5184."
+    },
+    {
+      "rect" : [
+        336.67000000000002,
+        532.75600000000009,
+        93.767999999999972,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "doi: 10.2514/6.2018-5184"
+        }
+      ],
+      "text" : "doi: 10.2514/6.2018-5184"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        512.32600000000002,
+        236.35399999999998,
+        9.9629999999999654
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[14] Ivanco, T. G.; Piatak, D. J.; Sekula, M. K.; Simmons, S. A.;"
+        }
+      ],
+      "text" : "[14] Ivanco, T. G.; Piatak, D. J.; Sekula, M. K.; Simmons, S. A.;"
+    },
+    {
+      "rect" : [
+        336.43000000000001,
+        502.00599999999997,
+        218.72699999999992,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Babel, W. C.; Collins, J. G.; Ramey, J. M.; Heald, D. M.; “A"
+        }
+      ],
+      "text" : "Babel, W. C.; Collins, J. G.; Ramey, J. M.; Heald, D. M.; “A"
+    },
+    {
+      "rect" : [
+        336.43000000000001,
+        491.68599999999998,
+        177.76499999999993,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "New High Channel-Count, High Scan-Rate, Data"
+        }
+      ],
+      "text" : "New High Channel-Count, High Scan-Rate, Data"
+    },
+    {
+      "rect" : [
+        336.43000000000001,
+        481.36599999999999,
+        193.52100000000002,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Acquisition System for the NASA Langley Transonic"
+        }
+      ],
+      "text" : "Acquisition System for the NASA Langley Transonic"
+    },
+    {
+      "rect" : [
+        336.43000000000001,
+        470.92599999999999,
+        138.78900000000004,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Dynamics Tunnel,” AIAA 2016-1149."
+        }
+      ],
+      "text" : "Dynamics Tunnel,” AIAA 2016-1149."
+    },
+    {
+      "rect" : [
+        336.67000000000002,
+        460.60599999999999,
+        93.767999999999972,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "doi: 10.2514/6.2016-1149"
+        }
+      ],
+      "text" : "doi: 10.2514/6.2016-1149"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        440.32599999999996,
+        240.79699999999985,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[15] Johnson, D. L.; “Terrestrial Environment (Climatic) Criteria,"
+        }
+      ],
+      "text" : "[15] Johnson, D. L.; “Terrestrial Environment (Climatic) Criteria,"
+    },
+    {
+      "rect" : [
+        336.67000000000002,
+        429.88599999999997,
+        204.60599999999994,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Guidelines for Use in Aerospace Vehicle Development,”"
+        }
+      ],
+      "text" : "Guidelines for Use in Aerospace Vehicle Development,”"
+    },
+    {
+      "rect" : [
+        336.67000000000002,
+        419.56599999999997,
+        214.34699999999992,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Marshal Space Flight Center, August 2000, NASA-HDBK-"
+        }
+      ],
+      "text" : "Marshal Space Flight Center, August 2000, NASA-HDBK-"
+    },
+    {
+      "rect" : [
+        336.67000000000002,
+        409.24599999999998,
+        20.34899999999999,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "1001."
+        }
+      ],
+      "text" : "1001."
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        388.846,
+        227.81000000000012,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[16] NASA Space Vehicle Design Criteria, Prelaunch Ground"
+        }
+      ],
+      "text" : "[16] NASA Space Vehicle Design Criteria, Prelaunch Ground"
+    },
+    {
+      "rect" : [
+        336.67000000000002,
+        378.52600000000001,
+        171.59999999999997,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Wind Loads, NASA SP-8008, November 1965."
+        }
+      ],
+      "text" : "Wind Loads, NASA SP-8008, November 1965."
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        358.12599999999998,
+        234.62299999999999,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[17] Szechenyi, E., \"Supercritical Reynolds Number Simulation"
+        }
+      ],
+      "text" : "[17] Szechenyi, E., \"Supercritical Reynolds Number Simulation"
+    },
+    {
+      "rect" : [
+        336.67000000000002,
+        347.786,
+        196.17599999999999,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "for Two-Dimensional Flow Over Circular Cylinders.\","
+        }
+      ],
+      "text" : "for Two-Dimensional Flow Over Circular Cylinders.\","
+    },
+    {
+      "rect" : [
+        336.67000000000002,
+        337.46600000000001,
+        208.51800000000009,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9,
+          "text" : "Journal of Fluid Mechanics"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : ", Volume 70, part 3, 1975, pp."
+        }
+      ],
+      "text" : "Journal of Fluid Mechanics, Volume 70, part 3, 1975, pp."
+    },
+    {
+      "rect" : [
+        336.67000000000002,
+        327.14600000000002,
+        32.355000000000075,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "529-542."
+        }
+      ],
+      "text" : "529-542."
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        306.74599999999998,
+        243.13399999999996,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "[18] McCullough, G. B.; and Steinmetz, W. J.; “A Wind-Tunnel"
+        }
+      ],
+      "text" : "[18] McCullough, G. B.; and Steinmetz, W. J.; “A Wind-Tunnel"
+    },
+    {
+      "rect" : [
+        337.38999999999999,
+        296.42599999999999,
+        220.72800000000018,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Study of Ground-Wind Loads on Launch Vehicles Including"
+        }
+      ],
+      "text" : "Study of Ground-Wind Loads on Launch Vehicles Including"
+    },
+    {
+      "rect" : [
+        337.38999999999999,
+        286.10599999999999,
+        220.41899999999998,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "the Effects of Conduits and Adjacent Structures,” NASA TN"
+        }
+      ],
+      "text" : "the Effects of Conduits and Adjacent Structures,” NASA TN"
+    },
+    {
+      "rect" : [
+        337.38999999999999,
+        275.666,
+        69.483000000000061,
+        9.9630000000000223
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "D-2889, July 1965."
+        }
+      ],
+      "text" : "D-2889, July 1965."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "ntrs-20200002975-gwl-2020",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        300.05000000000001,
+        50.112000000000002,
+        12,
+        13.283999999999999
+      ],
+      "text" : "19"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        118.82000000000001,
+        735.16800000000001,
+        113.56464000000004,
+        13.283999999999992
+      ],
+      "structure" : {
+        "group" : 204,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 267
+      },
+      "text" : "ACKNOWLEDGEMENTS"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        717.84864000000005,
+        242.89964000000003,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 205,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 268
+      },
+      "text" : "The authors thank the staff of the NASA Langley Transonic"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        706.32864000000006,
+        242.56583999999998,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 205,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 268
+      },
+      "text" : "Dynamics Tunnel for their tireless efforts, the hand"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        694.7886400000001,
+        242.83620000000008,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 205,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 268
+      },
+      "text" : "placement of bulky test articles, and their willingness to try"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        683.26864,
+        64.271879999999996,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 205,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 268
+      },
+      "text" : "new techniques."
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        142.94,
+        639.50800000000004,
+        65.576880000000017,
+        13.283999999999992
+      ],
+      "structure" : {
+        "group" : 207,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 270
+      },
+      "text" : "REFERENCES"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        623.2360000000001,
+        233.6579999999999,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 208,
+        "headingLevel" : 1,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 271
+      },
+      "text" : "[1] Hanson, P. W.; and Jones, G. W.; “On the Use of Dynamic"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        612.91600000000005,
+        207.38299999999998,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 208,
+        "headingLevel" : 1,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 271
+      },
+      "text" : "Models for Studying Launch Vehicle Buffet and Ground-"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        602.596,
+        196.43399999999986,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 208,
+        "headingLevel" : 1,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 271
+      },
+      "text" : "Wind Loads,” NASA TM X 50548, September 1963."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        582.19600000000003,
+        224.4380000000001,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 209,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 272
+      },
+      "text" : "[2] Farmer, M. G.; and Jones, G. W.; “Summary of Langley"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        571.87600000000009,
+        203.74400000000003,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 209,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 272
+      },
+      "text" : "Wind Tunnel Studies of Ground-Wind Loads on Launch"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        561.55600000000004,
+        198.38600000000008,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 209,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 272
+      },
+      "text" : "Vehicles,” Compiled Papers from the 1966 Meeting on"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        551.2360000000001,
+        187.22699999999998,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 209,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 272
+      },
+      "text" : "Ground Wind Load Problems in Relation to Launch"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        540.79600000000005,
+        210.31100000000004,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 209,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 272
+      },
+      "text" : "Vehicles, NASA Langley Research Center, Hampton, VA,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        530.44600000000003,
+        55.489999999999995,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 209,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 272
+      },
+      "text" : "June 7-8, 1966."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        510.166,
+        241.40700000000004,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 210,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 273
+      },
+      "text" : "[3] Keller, D. K.; and Ivanco, T. G.; “Wind Tunnel Investigation"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        499.726,
+        219.23599999999999,
+        10.29000000000002
+      ],
+      "structure" : {
+        "group" : 210,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 273
+      },
+      "text" : "of Ground Wind Loads for Ares Launch Vehicle,” 28th AIAA"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        489.40600000000001,
+        202.82299999999998,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 210,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 273
+      },
+      "text" : "Applied Aerodynamics Conference, Chicago, IL, AIAA-"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        479.08600000000001,
+        140.32699999999994,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 210,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 273
+      },
+      "text" : "2010-4371, June 2010. June 7-8, 1966."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        458.68599999999998,
+        231.767,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 211,
+        "headingLevel" : 1,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 274
+      },
+      "text" : "[4] Ivanco, T. G.; and Keller, D. K. “Investigation of Ground-"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        448.36599999999999,
+        183.92400000000004,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 211,
+        "headingLevel" : 1,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 274
+      },
+      "text" : "Wind Loads for Ares Launch Vehicles,” Journal of"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        438.04599999999999,
+        216.08299999999997,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 211,
+        "headingLevel" : 1,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 274
+      },
+      "text" : "Spacecraft and Rockets, Vol. 449, No. 4, July-August 2012."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        417.64600000000002,
+        227.65499999999986,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 212,
+        "headingLevel" : 1,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 275
+      },
+      "text" : "[5] Irwin, H. P. A. H.; “Design and Use of Spires for Natural"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        407.32599999999996,
+        200.78999999999996,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 212,
+        "headingLevel" : 1,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 275
+      },
+      "text" : "Wind Simulation,” National Research Council, Canada,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        397.00599999999997,
+        101.53400000000001,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 212,
+        "headingLevel" : 1,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 275
+      },
+      "text" : "LTR-LA-233, August 1979."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        376.60599999999999,
+        205.55399999999997,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 213,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 276
+      },
+      "text" : "[6] Irwin, H. P. A. H.; “The Design of Spires for Wind"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.623999999999995,
+        366.286,
+        206.74100000000001,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 213,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 276
+      },
+      "text" : "Simulation,” Journal of Wind Engineering and Industrial"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.623999999999995,
+        355.94599999999997,
+        215.62100000000001,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 213,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 276
+      },
+      "text" : "Aerodynamics, Elsevier Scientific Publishing Company, the"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.623999999999995,
+        345.50599999999997,
+        143.381,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 213,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 276
+      },
+      "text" : "Netherlands, Vol. 7, 1981, pp. 361-366."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        335.18599999999998,
+        132.08599999999996,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 214,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 277
+      },
+      "text" : "doi: 10.1016/0167-6105(81)90058-1"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        314.90600000000001,
+        201.56300000000005,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 215,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 278
+      },
+      "text" : "[7] De Paepe, W.; Pindado, S.; Bram, S.; Contino, F.;"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.623999999999995,
+        304.46600000000001,
+        206.62400000000005,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 215,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 278
+      },
+      "text" : "“Simplified elements for wind-tunnel measurements with"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.623999999999995,
+        294.14600000000002,
+        211.49000000000004,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 215,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 278
+      },
+      "text" : "type-III-terrain atmospheric boundary layer,” Elsevier Ltd."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.623999999999995,
+        283.82599999999996,
+        20.34899999999999,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 215,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 278
+      },
+      "text" : "2016."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        273.50599999999997,
+        147.85200000000003,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 216,
+        "headingLevel" : 1,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 279
+      },
+      "text" : "doi: 10.1016/j.measurement.2016.05.078"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        253.10600000000002,
+        228.66899999999998,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 217,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 280
+      },
+      "text" : "[8] Ivanco, T. G.; “Unique Testing Capabilities of the NASA"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.623999999999995,
+        242.78600000000003,
+        189.51800000000006,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 217,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 280
+      },
+      "text" : "Langley Transonic Dynamics Tunnel, an Exercise in"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.623999999999995,
+        232.46600000000001,
+        205.96499999999995,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 217,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 280
+      },
+      "text" : "Aeroelastic Scaling,” AIAA Ground Testing Conference,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.623999999999995,
+        222.02600000000001,
+        107.345,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 217,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 280
+      },
+      "text" : "June 2013, AIAA 2013-2625."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.623999999999995,
+        211.70600000000002,
+        93.764000000000038,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 218,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 281
+      },
+      "text" : "doi: 10.2514/6.2013-2625"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        191.30600000000001,
+        211.4369999999999,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 219,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 282
+      },
+      "text" : "[9] Anton, P. S.; Gritton, E. C.; Mesic, R.; Steinberg, P.;"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        180.95600000000002,
+        216.32299999999998,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 219,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 282
+      },
+      "text" : "Johnson, D.; Block, M.; Brown, M.; Drezner, J.; Dryden, J.;"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        170.63600000000002,
+        209.12399999999997,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 219,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 282
+      },
+      "text" : "Hamilton, T.; Hogan, T.; Peetz, D.; Raman, R.; Strong, J.;"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        160.316,
+        212.30999999999983,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 219,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 282
+      },
+      "text" : "Trimble, W.; “Wind Tunnel and Propulsion Test Facilities,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        149.99600000000001,
+        206.56799999999993,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 219,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 282
+      },
+      "text" : "an Assessment of NASA’s Capabilities to Serve National"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        139.55600000000001,
+        214.31700000000001,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 219,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 282
+      },
+      "text" : "Needs,” The RAND Corporation, Santa Monica, CA, 2004."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        119.276,
+        241.601,
+        9.9630000000000081
+      ],
+      "structure" : {
+        "group" : 220,
+        "headingLevel" : 1,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 283
+      },
+      "text" : "[10] Anton, P. S.; Johnson, D. J.; Block, M.; Brown, M.; Drezner,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        108.836,
+        195.57000000000005,
+        9.9630000000000081
+      ],
+      "structure" : {
+        "group" : 220,
+        "headingLevel" : 1,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 283
+      },
+      "text" : "J.; Dryden, J.; Gritton, E. C.; Hamilton, T.; Hogan, T.;"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        98.516000000000005,
+        207.59399999999994,
+        9.9630000000000081
+      ],
+      "structure" : {
+        "group" : 220,
+        "headingLevel" : 1,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 283
+      },
+      "text" : "Mesic, R.; Peetz, D.; Raman, R.; Steinberg, P.; Strong, J.;"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        88.200000000000003,
+        212.30999999999983,
+        9.9630000000000081
+      ],
+      "structure" : {
+        "group" : 220,
+        "headingLevel" : 1,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 283
+      },
+      "text" : "Trimble, W.; “Wind Tunnel and Propulsion Test Facilities,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        75.384,
+        77.879999999999995,
+        182.91800000000001,
+        9.9629999999999939
+      ],
+      "structure" : {
+        "group" : 220,
+        "headingLevel" : 1,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 283
+      },
+      "text" : "Supporting Analyses to an Assessment of NASA’s"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.43000000000001,
+        738.69600000000003,
+        183.00600000000014,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 221,
+        "headingLevel" : 1,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 284
+      },
+      "text" : "Capabilities to Serve National Needs,” The RAND"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.43000000000001,
+        728.37600000000009,
+        139.48200000000003,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 221,
+        "headingLevel" : 1,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 284
+      },
+      "text" : "Corporation, Santa Monica, CA, 2004."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        707.976,
+        231.07099999999986,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 222,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 285
+      },
+      "text" : "[11] Anton, P. S.; Raman, R.; Osburg, J.; Kallimani, J. G.; “An"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.43000000000001,
+        697.63600000000008,
+        197.57700000000006,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 222,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 285
+      },
+      "text" : "Update of the Nation’s Long-Term Strategic Needs for"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.43000000000001,
+        687.31600000000003,
+        179.80200000000019,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 222,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 285
+      },
+      "text" : "NASA’s Aeronautics Test Facilities,” The RAND"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.43000000000001,
+        676.87600000000009,
+        139.50900000000007,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 222,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 285
+      },
+      "text" : "Corporation, Santa Monica, CA, 2009."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        656.596,
+        205.32200000000006,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 223,
+        "headingLevel" : 1,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 286
+      },
+      "text" : "[12] Cole, S. R.; Garcia, J. L.; “Past, Present and Future"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.43000000000001,
+        646.27600000000007,
+        202.38299999999987,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 223,
+        "headingLevel" : 1,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 286
+      },
+      "text" : "Capabilities of the Langley Transonic Dynamics Tunnel"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.43000000000001,
+        635.83600000000001,
+        191.06399999999991,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 223,
+        "headingLevel" : 1,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 286
+      },
+      "text" : "from an Aeroelasticity Perspective,” AIAA Dynamics"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.43000000000001,
+        625.51600000000008,
+        201.63899999999995,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 223,
+        "headingLevel" : 1,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 286
+      },
+      "text" : "Specialists Conference, Atlanta, GA; April 2000, AIAA"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.43000000000001,
+        615.19600000000003,
+        41.34899999999999,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 223,
+        "headingLevel" : 1,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 286
+      },
+      "text" : "2000-1767."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        594.79600000000005,
+        236.25799999999998,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 224,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 287
+      },
+      "text" : "[13] Ivanco, T. G.; Keller, D. F.; Pinkerton, J. L.; Disotell, K. J.;"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.67000000000002,
+        584.476,
+        171.56699999999995,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 224,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 287
+      },
+      "text" : "Collins J. G.; Seliquini, S.; “Development of an"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.67000000000002,
+        574.15600000000006,
+        216.16500000000002,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 224,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 287
+      },
+      "text" : "Atmospheric-Boundary-Layer Profile at the NASA Langley"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.67000000000002,
+        563.83600000000001,
+        178.82999999999998,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 224,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 287
+      },
+      "text" : "Transonic Dynamics Tunnel,” AIAA SPACE and"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.67000000000002,
+        553.39600000000007,
+        193.90500000000003,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 224,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 287
+      },
+      "text" : "Astronautics Forum and Exposition, September 2018,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.67000000000002,
+        543.07600000000002,
+        112.86899999999997,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 224,
+        "headingLevel" : 1,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 287
+      },
+      "text" : "Orlando FL, AIAA 2018-5184."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.67000000000002,
+        532.75600000000009,
+        93.767999999999972,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 225,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 288
+      },
+      "text" : "doi: 10.2514/6.2018-5184"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        512.32600000000002,
+        236.35399999999998,
+        9.9629999999999654
+      ],
+      "structure" : {
+        "group" : 226,
+        "headingLevel" : 1,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 289
+      },
+      "text" : "[14] Ivanco, T. G.; Piatak, D. J.; Sekula, M. K.; Simmons, S. A.;"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.43000000000001,
+        502.00599999999997,
+        218.72699999999992,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 226,
+        "headingLevel" : 1,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 289
+      },
+      "text" : "Babel, W. C.; Collins, J. G.; Ramey, J. M.; Heald, D. M.; “A"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.43000000000001,
+        491.68599999999998,
+        177.76499999999993,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 226,
+        "headingLevel" : 1,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 289
+      },
+      "text" : "New High Channel-Count, High Scan-Rate, Data"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.43000000000001,
+        481.36599999999999,
+        193.52100000000002,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 226,
+        "headingLevel" : 1,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 289
+      },
+      "text" : "Acquisition System for the NASA Langley Transonic"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.43000000000001,
+        470.92599999999999,
+        138.78900000000004,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 226,
+        "headingLevel" : 1,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 289
+      },
+      "text" : "Dynamics Tunnel,” AIAA 2016-1149."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.67000000000002,
+        460.60599999999999,
+        93.767999999999972,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 227,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 290
+      },
+      "text" : "doi: 10.2514/6.2016-1149"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        440.32599999999996,
+        240.79699999999985,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 228,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 291
+      },
+      "text" : "[15] Johnson, D. L.; “Terrestrial Environment (Climatic) Criteria,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.67000000000002,
+        429.88599999999997,
+        204.60599999999994,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 228,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 291
+      },
+      "text" : "Guidelines for Use in Aerospace Vehicle Development,”"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.67000000000002,
+        419.56599999999997,
+        214.34699999999992,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 228,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 291
+      },
+      "text" : "Marshal Space Flight Center, August 2000, NASA-HDBK-"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.67000000000002,
+        409.24599999999998,
+        20.34899999999999,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 228,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 291
+      },
+      "text" : "1001."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        388.846,
+        227.81000000000012,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 229,
+        "headingLevel" : 1,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 292
+      },
+      "text" : "[16] NASA Space Vehicle Design Criteria, Prelaunch Ground"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.67000000000002,
+        378.52600000000001,
+        171.59999999999997,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 229,
+        "headingLevel" : 1,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 292
+      },
+      "text" : "Wind Loads, NASA SP-8008, November 1965."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        358.12599999999998,
+        234.62299999999999,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 230,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 293
+      },
+      "text" : "[17] Szechenyi, E., \"Supercritical Reynolds Number Simulation"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.67000000000002,
+        347.786,
+        196.17599999999999,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 230,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 293
+      },
+      "text" : "for Two-Dimensional Flow Over Circular Cylinders.\","
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.67000000000002,
+        337.46600000000001,
+        208.51800000000009,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 230,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 293
+      },
+      "text" : "Journal of Fluid Mechanics, Volume 70, part 3, 1975, pp."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        336.67000000000002,
+        327.14600000000002,
+        32.355000000000075,
+        9.9630000000000223
+      ],
+      "structure" : {
+        "group" : 230,
+        "headingLevel" : 1,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 293
+      },
+      "text" : "529-542."
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        306.74599999999998,
+        243.13399999999996,
+        9.9630000000000223
+      ],
+      "text" : "[18] McCullough, G. B.; and Steinmetz, W. J.; “A Wind-Tunnel"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        337.38999999999999,
+        296.42599999999999,
+        220.72800000000018,
+        9.9630000000000223
+      ],
+      "text" : "Study of Ground-Wind Loads on Launch Vehicles Including"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        337.38999999999999,
+        286.10599999999999,
+        220.41899999999998,
+        9.9630000000000223
+      ],
+      "text" : "the Effects of Conduits and Adjacent Structures,” NASA TN"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        337.38999999999999,
+        275.666,
+        69.483000000000061,
+        9.9630000000000223
+      ],
+      "text" : "D-2889, July 1965."
+    }
+  ],
+  "page" : 19,
+  "paints" : [
+
+  ],
+  "rightsBasis" : "Page 1 states U.S. Government work not protected by U.S. copyright; the paper's byline and the NTRS record place all three authors at NASA Langley Research Center (17 U.S.C. 105). The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and licenseType NO; distribution PUBLIC, no export control. No figure or photo carries a third-party credit: Figures 1-21 and A1-A5 are NASA facility sketches, photos, drawings and plots of NASA test data, and no NASA insignia is visible in them. The page-20 author portraits carry no credit at all. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "a98e4fcdea40b8ea7023880dd88966f04198b4ec311fced0bb9ebb2dec45fe6d",
+  "sourceTitle" : "Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20200002975/downloads/20200002975.pdf"
+}

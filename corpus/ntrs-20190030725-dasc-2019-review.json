@@ -51,7 +51,7 @@
     {
       "page": 10,
       "target": "Table III (ruled algorithm outline) and references",
-      "acceptance": "Correct now: references [1]-[10] in order; Table III preserved as a crop. Wrong now: the Table III caption is split by REFERENCES from the right column (#153); REFERENCES is a paragraph; every entry splits after its first line, [7]'s second line is <pre> and NASA is a separate paragraph (#162); the table's prose cells do not reflow."
+      "acceptance": "Correct now: references [1]-[10] in order; Table III preserved as a crop. Wrong now: the Table III caption is split by REFERENCES from the right column (#153); REFERENCES is a paragraph; every entry splits after its first line, [7]'s second line and NASA are separate paragraphs (#162); the table's prose cells do not reflow."
     }
   ],
   "scope": "Manual targets from 60 DPI Poppler renders of all 10 pages, the EPUB's block structure and the Poppler text layer. pdfTeX IEEEtran conference paper, untagged; Computer Modern math without ToUnicode; figures from plotting tools (DejaVu Type 3, Tahoma, Helvetica) and two 640x480 networkx rasters. No region, glyph or appearance references are committed; see the manifest rights note."

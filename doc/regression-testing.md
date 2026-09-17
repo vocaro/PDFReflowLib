@@ -113,7 +113,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 2616 targeted checks on 495 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 2638 targeted checks on 506 reviewed pages
 across 21 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No. 14*, *Mineral Commodity
@@ -123,8 +123,8 @@ Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Ci
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
 Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
 System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 992 ordered-text, 186 text, 335 paragraph, 191 absent-text, 215 heading,
-32 absent-heading, 79 list-item, 1 preformatted-lines, 28 script, 6 absent-script, 11 footnote,
+They comprise 992 ordered-text, 186 text, 347 paragraph, 191 absent-text, 222 heading,
+34 absent-heading, 80 list-item, 1 preformatted-lines, 28 script, 6 absent-script, 11 footnote,
 34 note-link, 56 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation,
 77 distinct-paragraph, 177 image-presence, 42 page-reference, 88 warning, 25 absent-warning,
 17 source-region, 3 glyph-structure, 3 image-appearance and 9 table-cell checks, counted as
@@ -530,7 +530,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->748 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->233 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->760 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->233 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

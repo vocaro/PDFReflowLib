@@ -745,9 +745,14 @@ enum LayoutReconstructor {
         let entryEdges = hangingEntryEdges(lines, body: body)
         for line in lines.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
             let subheading = line.fontSize < body * 1.15
-            // A list item (an answer-key entry, a contents line) keeps its list representation.
+            // A list item (an answer-key entry, a contents line) keeps its list representation; a
+            // numbered title set above the body in capitals or bold is a label (#154).
             guard !line.monospaced, line.fontSize >= body * (subheading ? 0.95 : 1.15), line.fontSize < headingThreshold,
-                  line.text.count >= 2, line.text.count < 200, !isList(line.text),
+                  line.text.count >= 2, line.text.count < 200,
+                  !isList(line.text) || !subheading && isNumberedTitle(line, body: body)
+                    && !lines.contains(where: { other in
+                        other != line && ListMarker(other.text).map { ListMarker(line.text)?.isSibling(of: $0) == true } == true
+                    }),
                   // Past an opening bracket or quote: `(EMAS)` finishes FAA page 370's title.
                   let first = line.text.first(where: { !"([\u{201C}\"'".contains($0) }),
                   first.isUppercase || first.isNumber,
@@ -2236,7 +2241,8 @@ enum LayoutReconstructor {
                        noteLayout reportNoteLayout: ((NumberedNoteDetector.Layout?) -> Void)? = nil,
                        continuingNote: NumberedNoteDetector.Layout.Note? = nil,
                        continuesNote: Bool = false,
-                       labelStyles: Set<LabelStyle> = [], headingStyles: Set<LabelStyle> = []) -> [ReflowBlock] {
+                       labelStyles: Set<LabelStyle> = [], headingStyles: Set<LabelStyle> = [],
+                       neighbouringMarkers: [PageMarker] = []) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         // A rotated stamp in the outer margin is furniture, never content or a heading.
         let stamps = rotatedMarginLines(page)
@@ -2451,6 +2457,30 @@ enum LayoutReconstructor {
         // `Principles of Flight` as paragraphs over the `Introduction` heading (#84). A title
         // page's one-off imprint (Our Flag) and a cover's publication label (the Fed) are set in
         // no recurring style, so they still need the column test.
+        //
+        // A heading tag is not taken literally either where the page's own tags and typography
+        // contradict it: a group set no larger than the page's body text, in the type of the page's
+        // paragraph-tagged text, that closes a sentence or opens lowercase is a paragraph. The NASA
+        // Word paper tags eight of its page-19 references, a DOI line and a wrapped reference line
+        // as `H1` (`[16] NASA Space Vehicle Design Criteria, …, November 1965.`, `doi: 10.1016/…`),
+        // among references in the same 9-point type tagged `P` (#154). Our Flag's body-size bold
+        // `§174. Time and occasions for display` closes no sentence and stays a heading, and a
+        // heading tag with no paragraph in its type on the page keeps its identity.
+        let paragraphTypes = Set(elements.compactMap { element -> LabelStyle? in
+            guard let line = element.line, line.structure?.headingLevel == 0 else { return nil }
+            return LabelStyle(line, body: reflowBody)
+        })
+        for (_, indices) in Dictionary(grouping: elements.indices.filter({ (elements[$0].line?.structure?.headingLevel ?? 0) > 0 }),
+                                       by: { elements[$0].line!.structure!.group }) {
+            let lines = indices.sorted().map { elements[$0].line! }
+            let text = lines.map(\.text).joined(separator: " ").trimmingCharacters(in: .whitespaces)
+            let closing: Set<Character> = ["\u{201D}", "\u{2019}", "\"", "'", ")", "]"]
+            guard !page.hasSyntheticTextStyle, lines.allSatisfy({ $0.fontSize <= reflowBody * 1.05
+                      && paragraphTypes.contains(LabelStyle($0, body: reflowBody)) }),
+                  text.reversed().first(where: { !$0.isWhitespace && !closing.contains($0) }) == "." && text.count >= 40
+                    || text.first(where: \.isLetter)?.isLowercase == true else { continue }
+            for index in indices { elements[index].line?.structure?.headingLevel = 0 }
+        }
         let bookStyles = labelStyles.union(headingStyles)
         func inBookHeadingStyle(_ line: TextLine) -> Bool {
             line.text.filter(\.isLetter).count >= 2 && bookStyles.contains(LabelStyle(line, body: reflowBody))
@@ -2698,7 +2728,7 @@ enum LayoutReconstructor {
         // majority left edge (or outdents from an indented opening line) with ordinary line
         // spacing, and at least three same-size lines establish the column's right edge.
         // Genuine list items follow short, terminal or separated lines, or open a block of their own.
-        func continuesParagraph(_ line: TextLine) -> Bool {
+        func continuesParagraph(_ line: TextLine, lonely: Bool) -> Bool {
             guard let prev = previous, prev.wraps != false, !paragraph.elements.isEmpty,
                   line.text.range(of: "^(?:[0-9]+|[A-Za-z])[.)]\\s", options: .regularExpression) != nil else { return false }
             let verticalGap = prev.rect.minY - line.rect.maxY
@@ -2718,11 +2748,68 @@ enum LayoutReconstructor {
             // The candidate sits on the column's majority left edge, so an indented note or
             // hanging list marker beside dedented continuations does not qualify.
             let onEdge = column.filter { abs($0.rect.minX - line.rect.minX) < body * 0.5 }.count
-            guard onEdge * 2 > column.count, let right = column.map(\.rect.maxX).max() else { return false }
-            // A justified column: at least three lines agree on the right edge, and so does the
-            // previous line. Ragged item lengths do not establish a margin.
+            guard onEdge * 2 > column.count, column.count >= 3 else { return false }
+            // A justified column: at least three lines agree on the right edge, and the previous
+            // line reaches it. The edge is the one most lines share within half a body of the
+            // furthest, not the furthest itself: the 9/11 report sets some lines 2.9 points past
+            // its measure (pages 179, 206, 215, 229; #146). Ragged item lengths do not establish
+            // a margin.
+            let furthest = column.map(\.rect.maxX).max() ?? prev.rect.maxX
+            let right = column.map(\.rect.maxX).filter { $0 >= furthest - body * 0.5 }.max { a, b in
+                let shareA = column.filter { abs($0.rect.maxX - a) <= body * 0.25 }.count
+                let shareB = column.filter { abs($0.rect.maxX - b) <= body * 0.25 }.count
+                return shareA != shareB ? shareA < shareB : a < b
+            } ?? furthest
             let justified = column.filter { $0.rect.maxX >= right - body * 0.25 }
-            return justified.count >= 3 && prev.rect.maxX >= right - body * 0.25
+            if justified.count >= 3 && prev.rect.maxX >= right - body * 0.25 { return true }
+            // A marker no other marker on the page continues (`1913.` after `…the Federal Reserve
+            // was established in`, Fed page 92's ragged column) is no list's item: the previous
+            // line need only run most of the column's measure, as a wrapped prose line does.
+            guard lonely, let measure = column.map(\.rect.width).max() else { return false }
+            return prev.rect.width >= measure * 0.75
+        }
+        // A numbered or lettered marker that no other marker on the page continues (no neighbour
+        // one or two away in the same kind, punctuation and type size) belongs to no list.
+        // The previous and next pages' markers count, so a list broken by the page keeps its items.
+        let pageMarkers: [(line: TextLine?, marker: PageMarker)] = free.compactMap { line in
+            ListMarker(line.text).map { (line, PageMarker(marker: $0, fontSize: line.fontSize)) }
+        } + neighbouringMarkers.map { (nil, $0) }
+        func isLonely(_ line: TextLine) -> Bool {
+            guard let marker = ListMarker(line.text) else { return false }
+            return !pageMarkers.contains { other in
+                other.line != line && other.marker.marker.isSibling(of: marker)
+                    && abs(other.marker.fontSize - line.fontSize) <= line.fontSize * 0.1
+            }
+        }
+        // A lonely marker line that runs on into the line directly beneath it, on its own left
+        // edge, is a paragraph's opening line: a list item's text wraps past its marker. The
+        // marker line leaves its sentence open and runs most of its column's measure, and the
+        // line beneath, at ordinary leading in the same type, opens no list of its own (9/11 page
+        // 288's `2000. They decided that if Mihdhar was in the United States, he should be` over
+        // `found.`; FAA page 18's `P. E. Fansler, a Florida businessman…`; #146). A title such as
+        // `3. Quantum Description` is short and does not run on.
+        func runsOnFlush(_ line: TextLine) -> Bool {
+            let closing: Set<Character> = ["\u{201D}", "\u{2019}", "\"", "'", ")", "]"]
+            guard let ending = line.text.reversed().first(where: { !$0.isWhitespace && !closing.contains($0) }),
+                  !".!?:;".contains(ending), line.text.split(whereSeparator: { !$0.isLetter }).filter({ $0.count >= 2 }).count >= 3
+            else { return false }
+            let beneath = free.filter { other in
+                other != line && other.rect.maxY <= line.rect.minY + body * 0.4
+                    && other.rect.minX < line.rect.maxX && other.rect.maxX > line.rect.minX
+            }.max { $0.rect.maxY < $1.rect.maxY }
+            guard let next = beneath, !isList(next.text), !next.monospaced,
+                  abs(next.rect.minX - line.rect.minX) <= body * 0.5,
+                  abs(next.fontSize - line.fontSize) <= line.fontSize * 0.1 else { return false }
+            let gap = line.rect.minY - next.rect.maxY
+            guard gap >= -body * 0.4, gap < body * 0.9 else { return false }
+            let measure = free.filter { abs($0.rect.minX - line.rect.minX) <= body * 0.5
+                && abs($0.fontSize - line.fontSize) <= line.fontSize * 0.1 }.map(\.rect.width).max() ?? 0
+            return line.rect.width >= measure * 0.75
+        }
+        // Whether a marker line reads as prose rather than a list item.
+        func readsAsProse(_ line: TextLine) -> Bool {
+            let lonely = isLonely(line)
+            return continuesParagraph(line, lonely: lonely) || lonely && !line.monospaced && runsOnFlush(line)
         }
         // PDFKit can drop the space after a numbered marker (`10.August 2001: …` among spaced
         // items 6 to 9 on 9/11 page 374). Such a line opens a list item only when a capital
@@ -2776,7 +2863,9 @@ enum LayoutReconstructor {
             return gap
         }
         func continuesListItem(_ line: TextLine, item: (marker: TextLine, last: TextLine, indent: CGFloat?, index: Int)) -> Bool {
-            guard !listLine(line), line.fontSize <= item.marker.fontSize + 0.5 else { return false }
+            // A lonely marker line that reads as prose is item text too: NOAA's reference 177 wraps
+            // `S. Martinuzzi, A.D. Syphard, …` at its hanging indent (#146).
+            guard !listLine(line) || isLonely(line), line.fontSize <= item.marker.fontSize + 0.5 else { return false }
             let verticalGap = item.last.rect.minY - line.rect.maxY
             // A tall marker line (Wallace page 2's license bullets, whose rectangles stand 17 points
             // against the page's 9.9) overlaps its wrapped line as a tall prose line does (#109, #115).
@@ -3075,7 +3164,7 @@ enum LayoutReconstructor {
                     codeOrigin = line.rect.minX
                     result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))
                 }
-            } else if listLine(line) || isTightMarker(line), !continuesParagraph(line) {
+            } else if listLine(line) || isTightMarker(line), !readsAsProse(line) {
                 flush()
                 // Preserve significant breaks and native styles; do not rewrite list markers or code.
                 result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))
@@ -4035,6 +4124,63 @@ enum LayoutReconstructor {
     /// dedented note continuations such as `5.This` keep their existing handling.
     static func isList(_ text: String) -> Bool {
         text.range(of: "^(?:(?:[•*−-]|[0-9]+[.)]|[A-Za-z][.)])\\s|[0-9]+\\)−)", options: .regularExpression) != nil
+    }
+
+    /// A numbered or lettered marker opening a line (`12.`, `b)`, `P.`) before a space: its kind
+    /// (0 digits, 1 a lowercase letter, 2 a capital), punctuation and value. Bullets, the tight
+    /// `1)−` answer form and unmarked text carry none.
+    struct ListMarker: Equatable {
+        var kind: Int
+        var punctuation: Character
+        var value: Int
+
+        init?(_ text: String) {
+            guard let range = text.range(of: "^(?:[0-9]{1,9}|[A-Za-z])[.)](?=\\s)", options: .regularExpression),
+                  let punctuation = text[range].last else { return nil }
+            let token = text[range].dropLast()
+            if let number = Int(token) {
+                (kind, value) = (0, number)
+            } else if let letter = token.first, let ascii = letter.asciiValue {
+                (kind, value) = (letter.isUppercase ? 2 : 1, Int(ascii))
+            } else { return nil }
+            self.punctuation = punctuation
+        }
+
+        /// The next or previous marker of this list, or the one after that: Wallace's answer keys
+        /// print the odd exercises only (`11) 4`, `13) 3`).
+        func isSibling(of other: ListMarker) -> Bool {
+            kind == other.kind && punctuation == other.punctuation && (1...2).contains(abs(value - other.value))
+        }
+    }
+
+    /// The numbered and lettered markers opening this page's lines, with their type size, which
+    /// the pipeline records during extraction so the neighbouring pages' blocks can read a list
+    /// that continues across the page boundary (9/11 pages 146–147's items `1.` to `3.`, #146).
+    static func listMarkers(on page: PageContent) -> [PageMarker] {
+        page.lines.compactMap { line in
+            guard !line.monospaced, let marker = ListMarker(line.text) else { return nil }
+            return PageMarker(marker: marker, fontSize: line.fontSize)
+        }
+    }
+
+    struct PageMarker: Equatable {
+        var marker: ListMarker
+        var fontSize: CGFloat
+    }
+
+    /// A numbered section title set as a label: a one- or two-digit number and period before a
+    /// title wholly in capitals or wholly bold (the NASA Word paper's 12-point bold `2. TEST
+    /// DESCRIPTION` over 10-point prose, #154). An answer-key entry (`1) 6p− 42`) or a list item
+    /// in text type is neither, nor is a contents entry ending in its folio (`1. “WE HAVE SOME PLANES”
+    /// 1`), and `sectionLabels` also refuses a number another line on the page
+    /// continues: the 9/11 report's contents set `11. FORESIGHT—AND HINDSIGHT` over `12. WHAT TO
+    /// DO?`, each folio on a line of its own.
+    static func isNumberedTitle(_ line: TextLine, body: CGFloat) -> Bool {
+        guard let range = line.text.range(of: "^[0-9]{1,2}\\.\\s+", options: .regularExpression),
+              line.text.range(of: "\\s[0-9]+$", options: .regularExpression) == nil else { return false }
+        let letters = line.text[range.upperBound...].filter(\.isLetter)
+        guard letters.count >= 3 else { return false }
+        return letters.allSatisfy(\.isUppercase) || LabelStyle(line, body: body).bold
     }
 
     private enum JoinOperation { case space, concatenate, removeHyphen }

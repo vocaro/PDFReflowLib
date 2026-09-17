@@ -11,12 +11,12 @@
     {
       "page": 2,
       "target": "Introduction, Figure 1, section 2 and its subsections",
-      "acceptance": "Correct now: Data Acquisition and Wind-Tunnel Facility are h4; the purpose and data-sampling paragraphs are whole; Figure 1 is preserved with its caption. Wrong now: the side-by-side column prose above and below the figure interleaves line by line (#153); 2. TEST DESCRIPTION is <pre> and the folio 2 is appended to the last paragraph (#154); the two caption lines are separate paragraphs."
+      "acceptance": "Correct now: Data Acquisition and Wind-Tunnel Facility are h4; the purpose and data-sampling paragraphs are whole; Figure 1 is preserved with its caption. Correct now also: 2. TEST DESCRIPTION is an h3. Wrong now: the side-by-side column prose above and below the figure interleaves line by line (#153); the folio 2 is appended to the last paragraph (#154); the two caption lines are separate paragraphs."
     },
     {
       "page": 3,
       "target": "Section 3 subsections and the full-width Figure 2 photo",
-      "acceptance": "Correct now: left column before right, whole paragraphs including the one continuing from the left column into the right; Summary and Flow Survey Rake Instrumentation are h4; Figure 2 preserved before its caption. Wrong now: 3. DESIGN AND DEVELOPMENT OF THE ABL is <pre>; folio kept."
+      "acceptance": "Correct now: left column before right, whole paragraphs including the one continuing from the left column into the right; Summary and Flow Survey Rake Instrumentation are h4; Figure 2 preserved before its caption. Correct now also: 3. DESIGN AND DEVELOPMENT OF THE ABL is an h3. Wrong now: folio kept."
     },
     {
       "page": 4,
@@ -31,7 +31,7 @@
     {
       "page": 6,
       "target": "Section 4 general description, Figures 7-8",
-      "acceptance": "Correct now: left column, then right column, with the model-base paragraph joined across the columns; General Description is h4; Figure 8 with its caption before the assembly paragraph, then the full-width Figure 7. Wrong now: 4. LAUNCH VEHICLE MODEL DESCRIPTION is <pre>."
+      "acceptance": "Correct now: left column, then right column, with the model-base paragraph joined across the columns; General Description is h4; Figure 8 with its caption before the assembly paragraph, then the full-width Figure 7. Correct now also: 4. LAUNCH VEHICLE MODEL DESCRIPTION is an h3."
     },
     {
       "page": 7,
@@ -41,7 +41,7 @@
     {
       "page": 8,
       "target": "Figures 11-12, section 5 start",
-      "acceptance": "Wrong now: right-column paragraphs precede the left column's figures and section 5; the bottom of both columns interleaves line by line; 5. TEST RESULTS AND ANALYSIS is <pre>; folio 8 appended (#153, #154). Present Focus, Determination of Comparable Velocities and Comparison of Loads are h4."
+      "acceptance": "Correct now: 5. TEST RESULTS AND ANALYSIS is an h3. Wrong now: right-column paragraphs precede the left column's figures and section 5; the bottom of both columns interleaves line by line; folio 8 appended (#153, #154). Present Focus, Determination of Comparable Velocities and Comparison of Loads are h4."
     },
     {
       "page": 9,
@@ -61,12 +61,12 @@
     {
       "page": 12,
       "target": "Figures 19-21 and conclusions",
-      "acceptance": "Correct now: left column (continuation, Figures 19-20, note) then right column (Figure 21, CONCLUSIONS, conclusion paragraphs), whole paragraphs, separate from page 13's opening. Wrong now: 6. CONCLUSIONS is <pre>."
+      "acceptance": "Correct now: left column (continuation, Figures 19-20, note) then right column (Figure 21, CONCLUSIONS, conclusion paragraphs), whole paragraphs, separate from page 13's opening. Correct now also: 6. CONCLUSIONS is an h3."
     },
     {
       "page": 13,
       "target": "Conclusion end, appendix introduction and bullets",
-      "acceptance": "Correct now: text and order; Data Plots Segregated by Wind Azimuth Angle is h4. Since #155, 45-degree-increment keeps its hyphen and the Symbol bullets (U+F0B7 at review) are • list items, each with its wrapped line. Wrong now: APPENDIX is a bold paragraph (#154)."
+      "acceptance": "Correct now: text and order; Data Plots Segregated by Wind Azimuth Angle is h4; APPENDIX is an h3 (#154). Since #155, 45-degree-increment keeps its hyphen and the Symbol bullets (U+F0B7 at review) are \u2022 list items, each with its wrapped line."
     },
     {
       "page": 14,
@@ -76,12 +76,12 @@
     {
       "page": 19,
       "target": "Acknowledgements and references",
-      "acceptance": "Correct now: acknowledgement paragraph whole; references [1]-[18] and their doi lines in order. Wrong now: ACKNOWLEDGEMENTS and REFERENCES are bold paragraphs; eight entries, a doi line and a wrapped line are h5; most other entries split after their first line (#154)."
+      "acceptance": "Correct now: acknowledgement paragraph whole; references [1]-[18] and their doi lines in order. Correct now also: no reference is a heading, and reference [10]’s wrapped line rejoins its entry. Wrong now: ACKNOWLEDGEMENTS and REFERENCES are bold paragraphs; most other entries split after their first line (#154)."
     },
     {
       "page": 20,
       "target": "Biographies with portraits",
-      "acceptance": "Correct now: three portraits preserved; each biography's text complete and in order. Wrong now: BIOGRAPHY is a bold paragraph; each biography splits into two paragraphs around its portrait."
+      "acceptance": "Correct now: three portraits preserved; each biography's text complete and in order. Correct now also: BIOGRAPHY is an h3. Wrong now: each biography splits into two paragraphs around its portrait."
     }
   ],
   "scope": "Manual targets from 60 DPI Poppler renders of all 20 pages (page 1 header, Figures 1-2 and page-11 figures at 90-110 DPI). Microsoft Word 2013 export, tagged, IEEE two-column template; 13 pages report structureFallback. No region, glyph or appearance references are committed; see the manifest rights note."

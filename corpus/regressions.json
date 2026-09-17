@@ -1585,6 +1585,12 @@
           "headings": [
             "Clearing Procedures"
           ]
+        },
+        {
+          "page": 18,
+          "paragraphs": [
+            "P. E. Fansler, a Florida businessman living in St. Petersburg, approached Tom Benoist of the Benoist Aircraft Company"
+          ]
         }
       ]
     },
@@ -3390,6 +3396,43 @@
               "second": "Gerard J. Arpey, Chief Executive Officer, American Airlines"
             }
           ]
+        },
+        {
+          "page": 146,
+          "listItems": [
+            "1. Reporting [—] suggests Bin Ladin and his allies are preparing for attacks in the US"
+          ]
+        },
+        {
+          "page": 179,
+          "paragraphs": [
+            "he and Atta first met at a mosque in Hamburg in 1995. The two men became close friends"
+          ]
+        },
+        {
+          "page": 206,
+          "paragraphs": [
+            "encountered in 1998 and 1999. Although the intelligence community sometimes knew where Bin Ladin was"
+          ]
+        },
+        {
+          "page": 215,
+          "paragraphs": [
+            "it was sent to Clarke on December 29. The memo proposed",
+            "renewed Predator flights in March 2001. A sentence called for military action"
+          ]
+        },
+        {
+          "page": 229,
+          "paragraphs": [
+            "cost-sharing arrangements in place by August 1. Rice told us that this attempt by Hadley"
+          ]
+        },
+        {
+          "page": 288,
+          "paragraphs": [
+            "2000. They decided that if Mihdhar was in the United States, he should be found."
+          ]
         }
       ]
     },
@@ -4275,6 +4318,12 @@
               "first": "Foreign banking organizations primarily operate in the U.S.",
               "second": "Edge Act and agreement corporations are subsidiaries of banks"
             }
+          ]
+        },
+        {
+          "page": 92,
+          "paragraphs": [
+            "since the Federal Reserve was established in 1913. At that time, cash and checks were the predominant means of payment."
           ]
         }
       ]
@@ -5494,6 +5543,18 @@
           "absentText": [
             ""
           ]
+        },
+        {
+          "page": 51,
+          "paragraphs": [
+            "“the vapours and fumes of law.” F. Bacon, The Lord Keeper’s Speech in the Exchequer (1617), in 2 The Works of Francis Bacon 478"
+          ]
+        },
+        {
+          "page": 73,
+          "paragraphs": [
+            "Relentless Tr. 102. But, in truth, the Constitution, the APA, and our longstanding precedents"
+          ]
         }
       ]
     },
@@ -6323,7 +6384,7 @@
     {
       "id": "ntrs-20200002975-gwl-2020",
       "sourceSHA256": "a98e4fcdea40b8ea7023880dd88966f04198b4ec311fced0bb9ebb2dec45fe6d",
-      "basis": "All 20 source pages visually reviewed against 60 DPI Poppler renders (page 1 header and page 11 figures at higher resolution). Protects only output that matches the source: the title, TABLE OF CONTENTS, 1. INTRODUCTION and the italic subsection titles as headings; the author, affiliation and government-work lines; single-column-order prose on pages 3, 4, 6 and 12, including the page-6 paragraph that continues from the left column into the right; the Word subscript in V_ref and the superscript Reynolds-number exponents; figure captions and preserved figure images; the paragraph that continues from page 9 across the text at the top of figure page 10 into page 11; the appendix captions on pages 14-18; the reference entries in order; and the biographies beside their three portraits. Not pinned because wrong now: line-by-line column interleaving on pages 1, 2, 5, 8, 9, 10 and 11 and right-before-left blocks on pages 7-8 (#153); section titles 2-6 as <pre>, kept or heading folios and references as headings (#154); Symbol-font private-use alpha and bullets and 45degree (#155). No committed rasters: see the manifest's rights note. Page 1's ten borderless links draw nothing: no Original page image, an annotationsNotConverted warning (#151).",
+      "basis": "All 20 source pages visually reviewed against 60 DPI Poppler renders (page 1 header and page 11 figures at higher resolution). Protects only output that matches the source: the title, TABLE OF CONTENTS, the numbered section titles 1-6, APPENDIX, BIOGRAPHY and the italic subsection titles as headings; references that the source tags as headings read as paragraphs (#154); the author, affiliation and government-work lines; single-column-order prose on pages 3, 4, 6 and 12, including the page-6 paragraph that continues from the left column into the right; the Word subscript in V_ref and the superscript Reynolds-number exponents; figure captions and preserved figure images; the paragraph that continues from page 9 across the text at the top of figure page 10 into page 11; the appendix captions on pages 14-18; the reference entries in order; and the biographies beside their three portraits. Not pinned because wrong now: line-by-line column interleaving on pages 1, 2, 5, 8, 9, 10 and 11 and right-before-left blocks on pages 7-8 (#153); kept or heading folios, and references split after their first line (#154); Symbol-font private-use alpha and bullets and 45degree (#155). No committed rasters: see the manifest's rights note. Page 1's ten borderless links draw nothing: no Original page image, an annotationsNotConverted warning (#151).",
       "pages": [
         {
           "page": 1,
@@ -6354,7 +6415,8 @@
           "page": 2,
           "headings": [
             "Data Acquisition",
-            "Wind-Tunnel Facility"
+            "Wind-Tunnel Facility",
+            "2. TEST DESCRIPTION"
           ],
           "paragraphs": [
             "The purpose of the research effort described in this paper is to evaluate the effect of an ABL upon the WIO response of launch vehicles and to create a database for community use. Aeroelastically-scaled models of representative vehicles were constructed and were tested at flight-representative Reynolds numbers.",
@@ -6370,7 +6432,8 @@
           "page": 3,
           "headings": [
             "Summary",
-            "Flow Survey Rake Instrumentation"
+            "Flow Survey Rake Instrumentation",
+            "3. DESIGN AND DEVELOPMENT OF THE ABL"
           ],
           "orderedText": [
             "For more information regarding the TDT Aeroelasticity Branch Data Acquisition System (AB-DAS), refer to Reference [14].",
@@ -6447,7 +6510,8 @@
         {
           "page": 6,
           "headings": [
-            "General Description"
+            "General Description",
+            "4. LAUNCH VEHICLE MODEL DESCRIPTION"
           ],
           "orderedText": [
             "with elevation for all launch site simulations as expected.",
@@ -6549,12 +6613,16 @@
               "next": "Peak loads from resonant response can be an order of magnitude above those produced by static drag loads"
             }
           ],
-          "minimumImages": 3
+          "minimumImages": 3,
+          "headings": [
+            "6. CONCLUSIONS"
+          ]
         },
         {
           "page": 13,
           "headings": [
-            "Data Plots Segregated by Wind Azimuth Angle"
+            "Data Plots Segregated by Wind Azimuth Angle",
+            "APPENDIX"
           ],
           "orderedText": [
             "Peak loads from resonant response can be an order of magnitude above those produced by static drag loads or nonresonant response.",
@@ -6647,7 +6715,13 @@
             "[18] McCullough, G. B.; and Steinmetz, W. J.;"
           ],
           "paragraphs": [
-            "The authors thank the staff of the NASA Langley Transonic Dynamics Tunnel for their tireless efforts, the hand placement of bulky test articles, and their willingness to try new techniques."
+            "The authors thank the staff of the NASA Langley Transonic Dynamics Tunnel for their tireless efforts, the hand placement of bulky test articles, and their willingness to try new techniques.",
+            "[16] NASA Space Vehicle Design Criteria, Prelaunch Ground Wind Loads, NASA SP-8008, November 1965.",
+            "[5] Irwin, H. P. A. H.; “Design and Use of Spires for Natural Wind Simulation,” National Research Council, Canada, LTR-LA-233, August 1979."
+          ],
+          "absentHeadings": [
+            "[16] NASA Space Vehicle Design Criteria, Prelaunch Ground Wind Loads, NASA SP-8008, November 1965.",
+            "doi: 10.1016/j.measurement.2016.05.078"
           ]
         },
         {
@@ -6661,7 +6735,16 @@
             "Jennifer L. Pinkerton received a B.S. in Aerospace Engineering from Texas A&M University in 1994.",
             "parachutes and airplanes adapted to the Martian environment, and vertical tail buffet."
           ],
-          "minimumImages": 3
+          "minimumImages": 3,
+          "headings": [
+            "BIOGRAPHY"
+          ]
+        },
+        {
+          "page": 8,
+          "headings": [
+            "5. TEST RESULTS AND ANALYSIS"
+          ]
         }
       ]
     },

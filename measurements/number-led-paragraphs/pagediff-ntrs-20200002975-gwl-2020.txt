@@ -1,0 +1,55 @@
+==== page 2
+@@ -36 +36 @@
+-<pre><strong>2. TEST DESCRIPTION</strong></pre>
++<h3><strong>2. TEST DESCRIPTION</strong></h3>
+==== page 3
+@@ -2 +2 @@
+-<pre><strong>3. DESIGN AND DEVELOPMENT OF THE ABL</strong></pre>
++<h3><strong>3. DESIGN AND DEVELOPMENT OF THE ABL</strong></h3>
+==== page 6
+@@ -3 +3 @@
+-<pre><strong>4. LAUNCH VEHICLE MODEL DESCRIPTION</strong></pre>
++<h3><strong>4. LAUNCH VEHICLE MODEL DESCRIPTION</strong></h3>
+==== page 8
+@@ -11 +11 @@
+-<pre><strong>5. TEST RESULTS AND ANALYSIS</strong></pre>
++<h3><strong>5. TEST RESULTS AND ANALYSIS</strong></h3>
+==== page 12
+@@ -12 +12 @@
+-<pre><strong>6. CONCLUSIONS</strong></pre>
++<h3><strong>6. CONCLUSIONS</strong></h3>
+==== page 13
+@@ -2 +2 @@
+-<p><strong>APPENDIX</strong></p>
++<h3><strong>APPENDIX</strong></h3>
+==== page 19
+@@ -4 +4 @@
+-<h5>[1] Hanson, P. W.; and Jones, G. W.; “On the Use of Dynamic Models for Studying Launch Vehicle Buffet and Ground-Wind Loads,” NASA TM X 50548, September 1963.</h5>
++<p>[1] Hanson, P. W.; and Jones, G. W.; “On the Use of Dynamic Models for Studying Launch Vehicle Buffet and Ground-Wind Loads,” NASA TM X 50548, September 1963.</p>
+@@ -7,2 +7,2 @@
+-<h5>[4] Ivanco, T. G.; and Keller, D. K. “Investigation of Ground-Wind Loads for Ares Launch Vehicles,” Journal of Spacecraft and Rockets, Vol. 449, No. 4, July-August 2012.</h5>
+-<h5>[5] Irwin, H. P. A. H.; “Design and Use of Spires for Natural Wind Simulation,” National Research Council, Canada, LTR-LA-233, August 1979.</h5>
++<p>[4] Ivanco, T. G.; and Keller, D. K. “Investigation of Ground-Wind Loads for Ares Launch Vehicles,” Journal of Spacecraft and Rockets, Vol. 449, No. 4, July-August 2012.</p>
++<p>[5] Irwin, H. P. A. H.; “Design and Use of Spires for Natural Wind Simulation,” National Research Council, Canada, LTR-LA-233, August 1979.</p>
+@@ -12,3 +12,3 @@
+-<h5>[7] De Paepe, W.; Pindado, S.; Bram, S.; Contino, F.; “Simplified elements for wind-tunnel measurements with type-III-terrain atmospheric boundary layer,” Elsevier Ltd. 2016.</h5>
+-<h5>doi: 10.1016/j.measurement.2016.05.078</h5>
+-<h5>[8] Ivanco, T. G.; “Unique Testing Capabilities of the NASA Langley Transonic Dynamics Tunnel, an Exercise in Aeroelastic Scaling,” AIAA Ground Testing Conference, June 2013, AIAA 2013-2625.</h5>
++<p>[7] De Paepe, W.; Pindado, S.; Bram, S.; Contino, F.; “Simplified elements for wind-tunnel measurements with type-III-terrain atmospheric boundary layer,” Elsevier Ltd. 2016.</p>
++<p>doi: 10.1016/j.measurement.2016.05.078</p>
++<p>[8] Ivanco, T. G.; “Unique Testing Capabilities of the NASA Langley Transonic Dynamics Tunnel, an Exercise in Aeroelastic Scaling,” AIAA Ground Testing Conference, June 2013, AIAA 2013-2625.</p>
+@@ -18,2 +18 @@
+-<p>[10] Anton, P. S.; Johnson, D. J.; Block, M.; Brown, M.; Drezner, J.; Dryden, J.; Gritton, E. C.; Hamilton, T.; Hogan, T.; Mesic, R.; Peetz, D.; Raman, R.; Steinberg, P.; Strong, J.; Trimble, W.; “Wind Tunnel and Propulsion Test Facilities, Supporting Anal
+-<h5>Capabilities to Serve National Needs,” The RAND Corporation, Santa Monica, CA, 2004.</h5>
++<p>[10] Anton, P. S.; Johnson, D. J.; Block, M.; Brown, M.; Drezner, J.; Dryden, J.; Gritton, E. C.; Hamilton, T.; Hogan, T.; Mesic, R.; Peetz, D.; Raman, R.; Steinberg, P.; Strong, J.; Trimble, W.; “Wind Tunnel and Propulsion Test Facilities, Supporting Anal
+@@ -29,3 +28,3 @@
+-<h5>[15] Johnson, D. L.; “Terrestrial Environment (Climatic) Criteria, Guidelines for Use in Aerospace Vehicle Development,” Marshal Space Flight Center, August 2000, NASA-HDBK-1001.</h5>
+-<h5>[16] NASA Space Vehicle Design Criteria, Prelaunch Ground Wind Loads, NASA SP-8008, November 1965.</h5>
+-<h5>[17] Szechenyi, E., &quot;Supercritical Reynolds Number Simulation for Two-Dimensional Flow Over Circular Cylinders.&quot;, <em>Journal of Fluid Mechanics</em>, Volume 70, part 3, 1975, pp. 529-542.</h5>
++<p>[15] Johnson, D. L.; “Terrestrial Environment (Climatic) Criteria, Guidelines for Use in Aerospace Vehicle Development,” Marshal Space Flight Center, August 2000, NASA-HDBK-1001.</p>
++<p>[16] NASA Space Vehicle Design Criteria, Prelaunch Ground Wind Loads, NASA SP-8008, November 1965.</p>
++<p>[17] Szechenyi, E., &quot;Supercritical Reynolds Number Simulation for Two-Dimensional Flow Over Circular Cylinders.&quot;, <em>Journal of Fluid Mechanics</em>, Volume 70, part 3, 1975, pp. 529-542.</p>
+==== page 20
+@@ -1 +1 @@
+-<p><strong>BIOGRAPHY</strong></p>
++<h3><strong>BIOGRAPHY</strong></h3>

@@ -1,0 +1,9 @@
+| the sequence and shared-edge rules reverted together | `aListBrokenByThePageKeepsItsFirstItem`, `initialsOpeningAParagraphAreNoListMarker`, `justifiedEdgeIsTheSharedEdgeNotTheFurthestLine`, `yearAfterAnOpenRaggedLineContinuesItsParagraph`, `yearInAJustifiedColumnContinuesItsParagraph`, `yearOpeningAFlushParagraphIsNoListItem` |
+| no marker is lonely | `aListBrokenByThePageKeepsItsFirstItem`, `initialsOpeningAParagraphAreNoListMarker`, `yearAfterAnOpenRaggedLineContinuesItsParagraph` |
+| every marker is lonely | `aListBrokenByThePageKeepsItsFirstItem`, `initialsOpeningAParagraphAreNoListMarker`, `justifiedEdgeIsTheSharedEdgeNotTheFurthestLine`, `numberedListAfterAShortIntroductionStaysSeparate`, `yearAfterAnOpenRaggedLineContinuesItsParagraph` |
+| the justified edge is the furthest line | `justifiedEdgeIsTheSharedEdgeNotTheFurthestLine` |
+| a lonely marker never opens a flush paragraph | `aListBrokenByThePageKeepsItsFirstItem`, `initialsOpeningAParagraphAreNoListMarker` |
+| every numbered list line is a title | `numberedTitleNeedsCapitalsOrBold`, `sectionLabelsNeedSizeShapeAndClearSpaceAbove` |
+| no numbered title is a label | `numberedSectionTitleIsAHeading`, `numberedTitleNeedsCapitalsOrBold` |
+| heading tags are always taken literally | `bodySizeTaggedTitleStaysAHeading`, `headingTagOnReferenceTextIsAParagraph` |
+| any heading tag over a sentence is demoted | `headingTagOnReferenceTextIsAParagraph`, `twoParagraphIdentitiesFallThroughToGeometryWhileOtherRolesStaySeparate` |

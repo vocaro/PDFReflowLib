@@ -303,6 +303,8 @@ enum PDFReflowLibPipeline {
         /// Pages whose heading-size lines are set in each style (#84).
         var headingEvidence: [LayoutReconstructor.LabelStyle: Int] = [:]
         var furniture = FurnitureDetector.Ledger()
+        /// Each page's numbered and lettered line markers, by page number (#146).
+        var listMarkers: [Int: [LayoutReconstructor.PageMarker]] = [:]
         /// Pages headed `NOTES TO CHAPTER N`, by chapter number.
         var numberedNotePages: [Int: ClosedRange<Int>] = [:]
         var recognizedPages = 0
@@ -372,6 +374,8 @@ enum PDFReflowLibPipeline {
                 for style in LayoutReconstructor.labelEvidence(on: content) { labelEvidence[style, default: 0] += 1 }
                 for style in LayoutReconstructor.headingEvidence(on: content) { headingEvidence[style, default: 0] += 1 }
             }
+            let markers = LayoutReconstructor.listMarkers(on: content)
+            if !markers.isEmpty { listMarkers[content.number] = markers }
             if let chapters = NumberedNoteDetector.chapters(on: content) { numberedNotePages[content.number] = chapters }
             if options.removeRepeatedHeadersAndFooters { FurnitureDetector.collect(content, pageIndex: i, into: &furniture) }
             if content.recognized { recognizedPages += 1 }
@@ -458,7 +462,8 @@ enum PDFReflowLibPipeline {
                         },
                         continuingNote: continuingNote,
                         continuesNote: previousPage != nil && blocks.last?.isFootnote == true,
-                        labelStyles: labelStyles, headingStyles: headingStyles)
+                        labelStyles: labelStyles, headingStyles: headingStyles,
+                        neighbouringMarkers: (listMarkers[content.number - 1] ?? []) + (listMarkers[content.number + 1] ?? []))
                     if pageBlocks.contains(where: \.hasReflowedText) {
                         reflowed += 1
                     }

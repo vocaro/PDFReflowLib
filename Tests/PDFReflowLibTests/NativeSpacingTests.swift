@@ -592,14 +592,17 @@ private func nineElevenRepairs(_ page: NineElevenSource.Page, operators: String?
     #expect(source.sourceSHA256 == (try SourceLayoutFixture.load("911-19")).sourceSHA256)
     // Every insertion on these pages, reviewed on 200-dpi renders of the original (#119 record):
     // spaces after punctuation set as a TJ adjustment (`mosques.)-108.9(He`), before capitals whose
-    // kern takes the space (`New|York`), before `(`, and the note reference `went.8They`.
+    // kern takes the space (`New|York`), before `(`, and the note reference `went.8They`. Since #128
+    // also every sentence space a kern absorbs entirely (`dispute.|The`, `v.|Yousef`), across a
+    // semibold speaker label (`Headquarters:|Yes.`) and after an ellipsis's last word (`...Okay.|Push`),
+    // each reviewed on 250-dpi renders (kerned-sentence-spaces-and-fusions record).
     let expected: [Int: [String]] = [
-        19: ["work. Some", "Towers, the", "World Trade", "New York", "City. Others", "Pentagon. Across", "journey. Among", "Boston: American", "Boston, Atta", "later, Atta", "Airport. They"],
-        45: ["9:23: “Okay", ". These", "New York.", "York. The", "area. The", "liaison, NEADS", "NEADS: “We’re", "77.” The", "Washington: “Latest", "report. Aircraft", "fighters: “Okay,", "“Okay, we’re", "instructed, but", "said. “Damn", "order, this", "location. Second,", "Second, a", "“generic” flight", "Washington. The", "9:38. The", "aircraft. It", "all. After", "second World", "World Trade", "crash, Boston"],
-        48: ["seconds, the", "aircraft, and", "D.C. The", "radar, the", "Uh, who,", "who, it", "10:07. Unaware"],
-        57: ["to Vice", "Cheney, Dr.", "Dr. Rice,", "Rice, New", "New York", "airport. The", "9:30, the", "missing. Staff", "the White", "determine, no", "9:45. During", "the Vice", "President: “Sounds", "Pentagon. We’re", "time, Card,", "Card, the", "agent, the", "aide, and", "The Vice", "to Washington.", "Washington. Air", "destination. The", "us.” This", "time. As", "minute, before"],
+        19: ["work. Some", "Towers, the", "World Trade", "New York", "City. Others", "Arlington, Vir-", "Pentagon. Across", "journey. Among", "Boston: American", "Boston, Atta", "later, Atta", "Airport. They"],
+        45: ["9:23: “Okay", ". These", "New York.", "York. The", "area. The", "liaison, NEADS", "NEADS: “We’re", "77.” The", "Washington: “Latest", "report. Aircraft", "fighters: “Okay,", "“Okay, we’re", "instructed, but", "ocean. “I", "said. “Damn", "...Okay. Push", "order, this", "location. Second,", "Second, a", "“generic” flight", "miles. Third,", "Washington. The", "9:38. The", "9:37:46. The", "aircraft. It", "all. After", "second World", "World Trade", "crash, Boston"],
+        48: ["area. Within", "seconds, the", "aircraft, and", "D.C. The", "dispute. The", "radar, the", "Headquarters: Yes.", "Uh, who,", "who, it", "ground. That’s", "10:07. Unaware"],
+        57: ["to Vice", "Cheney, Dr.", "Dr. Rice,", "Rice, New", "New York", "airport. The", "9:30, the", "missing. Staff", "the White", "determine, no", "Pentagon. The", "nation. The", "9:45. During", "the Vice", "President: “Sounds", "Pentagon. We’re", "time, Card,", "Card, the", "agent, the", "aide, and", "elsewhere. The", "The Vice", "to Washington.", "Washington. Air", "destination. The", "us.” This", "time. As", "minute, before", "back. This"],
         234: ["mosques. He", "research, which", "instructed, they", "Airport, we", "went.8 They", "community, specifically", "evening, Abdullah", "private. The", "them. This", "Angeles. This", "community, Thumairy"],
-        489: ["v. Ali", "Davies, “Saudis", "(London), Aug.", "later. Testimony", "88. “World", "U.S. Attorney", "Odeh, Aug.", "U.S. Attorney", "interview, “To", "U.S. Attorney", "93. ABC", "interview, “Terror", "Suspect: An", "1. Brief", "v. Ramzi", "Ahmed Yousef,", "Yousef, Lead", "No. 98-1041", "Cir. filed", "Aug. 25,", "25, 2000),", "War: The", "CIA, Afghanistan,", "3. Trial", "v. Rahman,", "Rahman, 189", "88, 104", "Cir. 1999);", "1999); Brief", "v. Siddig", "No. 96-1044", "Cir. filed", "3, 1997),", "1997), pp.", "pp. 10,", "10, 15.", "15. See", "report, “Review"],
+        489: ["v. Ali", "Davies, “Saudis", "(London), Aug.", "later. Testimony", "88. “World", "U.S. Attorney", "Odeh, Aug.", "U.S. Attorney", "interview, “To", "U.S. Attorney", "93. ABC", "interview, “Terror", "Suspect: An", "1. Brief", "v. Ramzi", "Ahmed Yousef,", "Yousef, Lead", "No. 98-1041", "Cir. filed", "Aug. 25,", "25, 2000),", "War: The", "CIA, Afghanistan,", "3. Trial", "v. Yousef,", "v. Yousef,", "v. Rahman,", "Rahman, 189", "88, 104", "Cir. 1999);", "1999); Brief", "v. Siddig", "No. 96-1044", "Cir. filed", "3, 1997),", "1997), pp.", "pp. 10,", "10, 15.", "15. See", "report, “Review"],
     ]
     var texts: [Int: String] = [:]
     for page in source.pages {
@@ -609,12 +612,22 @@ private func nineElevenRepairs(_ page: NineElevenSource.Page, operators: String?
     }
     // Negative controls on the same pages: letter-spaced small caps (Tc), a time whose adjustment
     // Tc cancels (`9:|34`, +31 against -0.031 em), the `f|’` kern at +0.125 em, ellipsis dots,
-    // initials inside an abbreviation, a kerned space glyph, and a sentence space narrower than
-    // the overhang threshold (`dispute.|The`) all stay as PDFKit read them.
+    // initials inside an abbreviation, and a kerned space glyph all stay as PDFKit read them. The
+    // sentence space narrower than the overhang threshold (`dispute.|The`) is restored by #128.
     #expect(texts[19]?.contains("Tuesday, September 11, 2001, dawned temperate") == true)
     #expect(texts[57]?.contains("White House, at 9:34. It") == true)
     #expect(texts[48]?.contains("Commission staff’s analysis") == true)
-    #expect(texts[48]?.contains("subject of some dispute.The 10:03:11") == true)
+    #expect(texts[48]?.contains("subject of some dispute. The 10:03:11") == true)
+    // #128's character rule leaves every closed abbreviation on these pages closed (`U.S.`, `D.C.`,
+    // `S.D.`, `A.M.`, `O.K.`) and an ellipsis before a capital unrepaired (`House....Six`,
+    // `...Okay`): no other punctuation-capital run remains.
+    let closed = try NSRegularExpression(pattern: #"\S*[.,;:?!][”’)\]]*[A-Z“‘]\S*"#)
+    let remaining = texts.keys.sorted().flatMap { page -> [String] in
+        let text = texts[page]!, range = NSRange(text.startIndex..., in: text)
+        return closed.matches(in: text, range: range).map { "\(page): " + (text as NSString).substring(with: $0.range) }
+    }
+    #expect(remaining == ["19: A.M.", "45: House....Six,south-", "45: ...Okay.", "45: D.C.", "48: D.C.", "48: O.K.", "489: U.S.", "489: (S.D.",
+                          "489: N.Y.),", "489: U.S.", "489: U.S.", "489: U.S.", "489: U.S.", "489: U.S.", "489: (S.D.", "489: N.Y.),"])
     #expect(texts[45]?.contains("crank it up. . . . Run them") == true)
     #expect(texts[489]?.contains("(S.D. N.Y.), Oct. 20, 2000") == true)
     #expect(texts[234]?.contains("Customs at Los Angeles International") == true)
@@ -697,4 +710,153 @@ private func nineElevenRepairs(_ page: NineElevenSource.Page, operators: String?
     #expect(repairedBoundary(try line("8", next: "they"), "ent.8they") == "ent.8they")
     #expect(repairedBoundary(try line("8", size: 9), "ent.8They") == "ent.8They")
     #expect(repairedBoundary(try line("a"), "ent.aThey") == "ent.aThey")
+}
+
+// MARK: - Kerned sentence spaces (#128) and remaining fusions (#120)
+
+@Test func sentenceSpaceSeparatesSentencesFromInitialsAbbreviationsAndAddresses() {
+    func sentence(_ word: String, _ following: String, gap: CGFloat = -0.02, startsShow: Bool = false) -> Bool {
+        NativeSpacingReader.sentenceSpace(word: Array(word.unicodeScalars), startsShow: startsShow,
+                                          following: Array(following.unicodeScalars), gap: gap)
+    }
+    // 9/11's absorbed sentence spaces: a word, sentence punctuation (and closing quotes or brackets),
+    // then a capitalized word, an acronym, a one-letter word or an opening quote.
+    #expect(sentence("casualties.", "The ") && sentence("unharmed.", "We") && sentence("Berger,", "Tenet ") && sentence("FAA:", "Yes. "))
+    #expect(sentence("2004);", "Vice ") && sentence("Jews.\u{201D}", "The ") && sentence("(OMB).", "They ") && sentence("City].", "They\u{2019}re "))
+    #expect(sentence("alert.", "\u{201C}Is ") && sentence("memo,", "\u{201C}Bin ") && sentence("States.", "FBI ") && sentence("aircraft.", "A "))
+    // The book spaces an abbreviation or an initial before a capitalized word (`U.S.|Army` 157 of 157,
+    // initials 230 of 236), and a year that ends a sentence inside a show.
+    #expect(sentence("v.", "Yousef, ") && sentence("F.", "Verga, ") && sentence("U.S.", "VISIT ") && sentence("Asst.", "Doc. "))
+    #expect(sentence("...Okay.", "Push ") && sentence("1998.", "The ") && sentence("10.", "August ") && sentence("S.", "Court "))
+    // Set closed: a capital that continues an abbreviation (781 of 791), an initial before a short
+    // capitalized abbreviation (Our Flag's `H.Doc.`), an apostrophe after a letter, an ellipsis,
+    // an address, and a number that opens its show (list and note numbers, `10.August 2001`).
+    #expect(!sentence("U.", "S. ") && !sentence("(S.D.N.", "Y.), ") && !sentence("Ladin.", "U.S. ") && !sentence("Washington,D.", "C. "))
+    #expect(!sentence("H.", "Doc. ") && !sentence("S.", "Ct. ") && !sentence("Ph.", "D. "))
+    #expect(!sentence("O\u{2019}", "Neill ") && !sentence("QAEDA\u{2019}", "S ") && sentence("Jones\u{2019}.", "The "))
+    #expect(!sentence("....", "We ") && !sentence("House....", "Six,") && !sentence("\u{2019}...", "Islamism "))
+    #expect(!sentence("reports/print.php3?", "ReportID=145). ") && !sentence("www.fbi.", "Gov ") && !sentence("name@site.", "Org "))
+    #expect(!sentence("10.", "August ", startsShow: true) && !sentence("21.", "While ", startsShow: true) && sentence("(21).", "While ", startsShow: true))
+    // Not sentence boundaries: no punctuation, a lowercase continuation, punctuation alone, a
+    // mathematical letter, a capital that ends the show (its word is unknown), an opening quote
+    // before a space, and gaps outside -0.15 to 1 em.
+    #expect(!sentence("event", "Must ") && !sentence("e.", "must ") && !sentence(".", "The ") && !sentence(",", "The ") && !sentence(")).", "The "))
+    #expect(!sentence("\u{1D452}.", "The ") && !sentence("x.", "\u{1D434} ") && !sentence("done.", "T") && !sentence("said,", "\u{201C} "))
+    #expect(sentence("casualties.", "The ", gap: -0.15) && !sentence("casualties.", "The ", gap: -0.16) && sentence("casualties.", "The ", gap: 1))
+    #expect(!sentence("casualties.", "The ", gap: 1.01) && !sentence("casualties.", "The ", gap: .nan))
+}
+
+@Test func kernedSentenceSpacesAreRestoredInsideAndAcrossJustifiedShows() throws {
+    // 10-point fonts with 500-unit advances; nonzero Tc and Tw mark a justified show (#119).
+    func read(_ body: String, spacing: String = "0.001 Tc -0.07 Tw") throws -> [NativeSpacingReader.Evidence] {
+        try boundaryEvidence("BT \(spacing) \(body) ET")
+    }
+    // 9/11 page 134, `casualties.)19.7(The`: the kern before the overhanging T takes the whole space.
+    let adjusted = try read("/Fa 10 Tf 1 0 0 1 40 700 Tm [(ties.)19.7(The)] TJ")
+    #expect(adjusted.first?.wordSpaces == [] && adjusted.first?.sentenceSpaces == [5])
+    #expect(repairedBoundary(adjusted, "ties.The") == "ties. The")
+    // Page 312, `unharmed.We`: no adjustment at all.
+    let unadjusted = try read("/Fa 10 Tf 1 0 0 1 40 700 Tm (med.We know) Tj")
+    #expect(unadjusted.first?.sentenceSpaces == [4])
+    #expect(repairedBoundary(unadjusted, "med.We know") == "med. We know")
+    // Closed forms in the same kind of show stay as PDFKit reads them.
+    for text in ["U.S.", "N.Y. law", "H.Doc. 108", "10.August", "a....We", "x/p.php?Id", "O'Neill"] {
+        let evidence = try read("/Fa 10 Tf 1 0 0 1 40 700 Tm (\(text)) Tj")
+        #expect(evidence.first?.sentenceSpaces == [], "\(text)")
+        #expect(repairedBoundary(evidence, text) == text)
+    }
+    // Without character or word spacing the producer model does not hold (TeX, InDesign).
+    #expect(try read("/Fa 10 Tf 1 0 0 1 40 700 Tm (med.We know) Tj", spacing: "0 Tc 0 Tw").first?.sentenceSpaces == [])
+    // A semibold speaker label (9/11 page 44, `FAA:|Yes.`): the next show resumes 0.1 em later, below
+    // the font-change rule's 0.15 em.
+    func label(_ reply: String, size: CGFloat = 10, spacing: String = "0.001 Tc -0.07 Tw") throws -> [NativeSpacingReader.Evidence] {
+        try read("/Fb 10 Tf 1 0 0 1 40 700 Tm (FAA:) Tj /Fa \(size) Tf 1 0 0 1 61 700 Tm (\(reply)) Tj", spacing: spacing)
+    }
+    #expect(repairedBoundary(try label("Yes."), "FAA:Yes.") == "FAA: Yes.")
+    #expect(repairedBoundary(try label("yes."), "FAA:yes.") == "FAA:yes.")
+    #expect(repairedBoundary(try label("Yes.", size: 7), "FAA:Yes.") == "FAA:Yes.")
+    #expect(repairedBoundary(try label("Yes.", spacing: "0 Tc 0 Tw"), "FAA:Yes.") == "FAA:Yes.")
+    // The word or the capital's word continues into another show: an italic title before roman
+    // punctuation (page 193, `Encyclopedia|.Six`) and a show split inside a name (page 223,
+    // `June,T|enet`, whose second show continues the cursor).
+    let italic = try read("/Fb 10 Tf 1 0 0 1 40 700 Tm (Encyc) Tj /Fa 10 Tf 1 0 0 1 65.004 700 Tm (.Six of) Tj")
+    #expect(italic.last?.sentenceSpaces == [] && italic.last?.sentenceCandidates.keys.sorted() == [1])
+    #expect(repairedBoundary(italic, "Encyc.Six of") == "Encyc. Six of")
+    #expect(repairedBoundary(try read("/Fa 10 Tf 1 0 0 1 40 700 Tm (June,T) Tj (enet) Tj"), "June,Tenet") == "June, Tenet")
+    // A word gap before the punctuation's show leaves it a word of its own.
+    let apart = try read("/Fb 10 Tf 1 0 0 1 40 700 Tm (Encyc) Tj /Fa 10 Tf 1 0 0 1 80 700 Tm (.Six of) Tj")
+    #expect(repairedBoundary(apart, "Encyc .Six of") == "Encyc .Six of")
+}
+
+@Test func chainedInitialsTakeTheLetterThresholdBeforeAnOverhangingCapital() throws {
+    // NOAA page 518: Lora kerns `.|A` by +0.027 em inside initials it sets closed, on lines with word
+    // spacing of -0.002 em (`0 Tc -0.018 Tw` at 9 points).
+    let initials = try boundaryEvidence("BT 0 Tc -0.018 Tw /Fa 9 Tf 1 0 0 1 40 700 Tm [(C.)-27(A. Morgan)] TJ ET")
+    #expect(initials.first?.wordSpaces == [] && initials.first?.sentenceSpaces == [])
+    #expect(repairedBoundary(initials, "C.A. Morgan") == "C.A. Morgan")
+    // The same kern after a word is a sentence space's remainder.
+    let sentence = try boundaryEvidence("BT 0 Tc -0.018 Tw /Fa 9 Tf 1 0 0 1 40 700 Tm [(ic.)-27(A plane)] TJ ET")
+    #expect(sentence.first?.wordSpaces == [3])
+    // 9/11 `George H.|W.Bush` at 0.015-0.050 em now stays closed, as page 358 sets it; `Samuel M.|W.`
+    // at 0.081 em keeps its space.
+    func space(_ before: Unicode.Scalar, _ gap: CGFloat, after: Unicode.Scalar?) -> Bool {
+        NativeSpacingReader.sameFontWordSpace(before: before, left: ".", right: "W", gap: gap, after: after)
+    }
+    #expect(!space("H", 0.029, after: ".") && space("M", 0.081, after: ".") && space("H", 0.029, after: "a") && space("e", 0.029, after: "."))
+    #expect(space("H", 0.029, after: nil))
+}
+
+@Test func showsThatContinueTheTextCursorAreReadFromTheMeasuredAdvance() throws {
+    // Replay Clocks page 10 continues the cursor after a measured show (`[([8])]TJ 0 g 0 G [-571(D)…]TJ`).
+    // A math show that ends with a trailing adjustment moves the next show by it: `must` resumes
+    // 0.15 em after `e`, a font-change word space.
+    let continued = try boundaryEvidence("BT /Fa 10 Tf 1 0 0 1 40 700 Tm (if ) Tj /Fb 10 Tf [(e)-150] TJ /Fa 10 Tf (must) Tj ET")
+    #expect(continued.map(\.origin.x) == [40, 55, 61.5])
+    #expect(continued.map(\.end) == [55, 60, 81.5])
+    #expect(repairedBoundary(continued, "if emust") == "if e must")
+    // Character spacing after the last glyph moves the cursor; `Td` stays relative to the line start.
+    let spaced = try boundaryEvidence("BT 2 Tc /Fa 10 Tf 1 0 0 1 40 700 Tm (ab) Tj (c) Tj 0 -12 Td (d) Tj ET")
+    #expect(spaced.map(\.origin) == [CGPoint(x: 40, y: 700), CGPoint(x: 54, y: 700), CGPoint(x: 40, y: 688)])
+    // A show without complete widths gives no advance, so a show that continues it still disqualifies
+    // the page, as do `'` and a show before any positioning.
+    let unmeasured = [BoundaryFont(name: "Fa"), BoundaryFont(name: "Fb", widths: nil)]
+    #expect(try boundaryEvidence("BT /Fb 10 Tf 1 0 0 1 40 700 Tm (e) Tj /Fa 10 Tf (must) Tj ET", fonts: unmeasured).isEmpty)
+    #expect(try boundaryEvidence("BT /Fa 10 Tf 1 0 0 1 40 700 Tm (if) Tj 12 TL (e) ' ET").isEmpty)
+    #expect(try boundaryEvidence("BT /Fa 10 Tf (must) Tj ET").isEmpty)
+}
+
+@Test func characterSpacingColumnGapsSplitTwoGlyphTableCells() throws {
+    // FAA page 458, the Challenger 605 table: Helvetica at `1 Tf` under an 8× text matrix, where
+    // `(68)Tj 1.465 Tc -1.465 Tw (52)Tj` sets the column gap between 5 and 2 as character spacing and
+    // `(52)` continues the cursor. Fonts have 500-unit advances.
+    func row(_ cell: String, spacing: String = "1.465") throws -> [NativeSpacingReader.Evidence] {
+        try boundaryEvidence("BT /Fa 1 Tf 8 0 0 8 40 700 Tm -0.002 Tc 0.002 Tw (1,68) Tj \(spacing) Tc -\(spacing) Tw (\(cell)) Tj "
+            + "-0.002 Tc 0.002 Tw (,599) Tj ET")
+    }
+    let table = try row("52")
+    #expect(table.map(\.unicode) == ["1,68", "52", ",599"] && table[1].wordSpaces == [1])
+    #expect(repairedBoundary(table, "1,6852,599") == "1,685 2,599")
+    #expect(repairedBoundary(try row("52", spacing: "0.756"), "1,6852,599") == "1,685 2,599")
+    // Letter-spacing (FAA's largest is 0.2 em), a longer show and a gap beyond 10 em stay joined.
+    #expect(try row("52", spacing: "0.2").map(\.wordSpaces) == [[], [], []])
+    #expect(try row("523", spacing: "1.465").map(\.wordSpaces) == [[], [], []])
+    #expect(try row("52", spacing: "10.5").map(\.wordSpaces) == [[], [], []])
+}
+
+@Test func mathPunctuationClosingAFormulaBeforeProseAtAFontChangeRestoresItsSpace() throws {
+    // Wallace page 22, `(x − 6) when`: the closing parenthesis is set in the math font against the
+    // formula and the prose resumes 0.16 em later in the text font. Fonts have 500-unit advances.
+    func line(closing: String = "\\)", at x: CGFloat = 60, next: CGFloat = 66.6, word: String = "when") throws -> [NativeSpacingReader.Evidence] {
+        try boundaryEvidence("BT /Fa 10 Tf 1 0 0 1 40 700 Tm (\\(x-6) Tj /Fb 10 Tf 1 0 0 1 \(x) 700 Tm (\(closing)) Tj "
+            + "/Fa 10 Tf 1 0 0 1 \(next) 700 Tm (\(word)) Tj ET")
+    }
+    #expect(repairedBoundary(try line(), "(x-6)when") == "(x-6) when")
+    #expect(repairedBoundary(try line(closing: ";"), "(x-6;when") == "(x-6; when")
+    // Below the word gap, before a digit, after a word gap, after a space in its own show, or after a
+    // period, the punctuation stays joined.
+    #expect(repairedBoundary(try line(next: 66.4), "(x-6)when") == "(x-6)when")
+    #expect(repairedBoundary(try line(word: "3"), "(x-6)3") == "(x-6)3")
+    #expect(repairedBoundary(try line(at: 62, next: 68.6), "(x-6 )when") == "(x-6 )when")
+    #expect(repairedBoundary(try line(closing: " \\)", next: 71.6), "(x-6 )when") == "(x-6 )when")
+    #expect(repairedBoundary(try line(closing: "."), "(x-6.when") == "(x-6.when")
 }

@@ -23,6 +23,30 @@ enum NativeSpacingReader {
         /// UTF-16 offsets in `unicode` where a TJ adjustment between two glyphs of this show sets
         /// a word space without a space glyph (`sameFontWordSpace`), #119.
         var wordSpaces: Set<Int> = []
+        /// UTF-16 offsets in `unicode` where sentence punctuation meets a capital or an opening
+        /// quote with no measurable gap (`sentenceSpace`), #128.
+        var sentenceSpaces: Set<Int> = []
+        /// Sentence-space candidates whose word before or after reaches the edge of the show, with
+        /// their gaps in em; `missingSpaces` decides them with the neighbouring shows on the line.
+        var sentenceCandidates: [Int: CGFloat] = [:]
+        /// Whether the show sets nonzero character or word spacing, the producer condition of #119.
+        var spaced = false
+
+        /// The characters of the show's last word (after its last space character, word space or
+        /// sentence space), and whether that word begins the show.
+        var lastWord: (word: [Unicode.Scalar], startsShow: Bool)? {
+            guard let unicode else { return nil }
+            return NativeSpacingReader.word(in: Array(unicode.unicodeScalars), offsets: NativeSpacingReader.offsets(unicode),
+                                            before: unicode.unicodeScalars.count, breaks: wordSpaces.union(sentenceSpaces))
+        }
+
+        /// The show's first word, with a trailing space where a space, word space or sentence space
+        /// ends it.
+        var firstWord: [Unicode.Scalar] {
+            guard let unicode else { return [] }
+            return NativeSpacingReader.word(in: Array(unicode.unicodeScalars), offsets: NativeSpacingReader.offsets(unicode),
+                                            from: 0, breaks: wordSpaces.union(sentenceSpaces))
+        }
 
         func extraSpaces(in native: String) -> [Int]? {
             guard let text else { return nil }
@@ -52,23 +76,71 @@ enum NativeSpacingReader {
     static func missingSpaces(in native: String, shows: [Evidence]) -> [Int]? {
         var source: [UInt16] = [], boundaries: Set<Int> = []
         var previous: Evidence?
+        // The line's characters with their UTF-16 offsets in `source`, the sentence-space candidates
+        // at show edges, and the show transitions that separate words (#128).
+        var scalars: [Unicode.Scalar] = [], scalarOffsets: [Int] = [], candidates: [(Int, CGFloat)] = [], separated: Set<Int> = []
         func word(_ character: Character?) -> Bool { character.map { $0.isLetter || $0.isNumber } ?? false }
+        // Punctuation that closes a word or a formula (Wallace's `6)|when`, `Second:|m`, #120): it
+        // follows a character of its own show, or its one-character show follows the one before
+        // without a word gap (a space, or 0.15 em on one baseline; a subscript's shift is no gap).
+        var previousStart = 0, wordGaps: Set<Int> = []
+        func closesWord(_ show: Evidence, start: Int) -> Bool {
+            guard let characters = show.unicode.map(Array.init), let last = characters.last, ")],;:".contains(last) else { return false }
+            if characters.count >= 2 { return !characters[characters.count - 2].isWhitespace }
+            return start > 0 && !wordGaps.contains(start)
+        }
         for show in shows.sorted(by: { $0.origin.x < $1.origin.x }) {
             guard let unicode = show.unicode, !unicode.isEmpty, source.count + unicode.utf16.count <= 8192 else { return nil }
+            if let previous {
+                let size = max(previous.size, show.size)
+                if abs(previous.origin.y - show.origin.y) > size * 0.1 || previous.end.map({ show.origin.x - $0 >= size * 0.1 }) != false {
+                    separated.insert(source.count)
+                }
+                if previous.unicode?.last?.isWhitespace == true
+                    || abs(previous.origin.y - show.origin.y) <= size * 0.1 && previous.end.map({ show.origin.x - $0 >= size * 0.15 }) == true {
+                    wordGaps.insert(source.count)
+                }
+            }
+            scalars += unicode.unicodeScalars
+            scalarOffsets += offsets(unicode).dropLast().map { source.count + $0 }
+            candidates += show.sentenceCandidates.map { (source.count + $0.key, $0.value) }
             if let previous, let end = previous.end, previous.font != show.font,
                abs(previous.origin.y - show.origin.y) <= max(previous.size, show.size) * 0.1,
                show.origin.x - end >= max(previous.size, show.size) * 0.15,
-               word(previous.unicode?.last), word(unicode.first) {
+               word(previous.unicode?.last) || closesWord(previous, start: previousStart) && unicode.first?.isLetter == true,
+               word(unicode.first) {
                 boundaries.insert(source.count)
             }
             if let previous, let end = previous.end, noteReference(previous, before: show, end: end) {
                 boundaries.insert(source.count)
             }
-            for offset in show.wordSpaces where offset > 0 && offset < unicode.utf16.count {
+            // A sentence boundary split across two shows on one baseline (9/11's semibold speaker
+            // labels, `FAA:|Yes.`), in a producer that justifies with character or word spacing (#128).
+            if let previous, let end = previous.end, previous.spaced || show.spaced,
+               previous.size > 0, show.size > 0, min(previous.size, show.size) >= max(previous.size, show.size) * 0.8,
+               abs(previous.origin.y - show.origin.y) <= max(previous.size, show.size) * 0.1,
+               let (word, startsShow) = previous.lastWord,
+               sentenceSpace(word: word, startsShow: startsShow, following: show.firstWord,
+                             gap: (show.origin.x - end) / max(previous.size, show.size)) {
+                boundaries.insert(source.count)
+            }
+            for offset in show.wordSpaces.union(show.sentenceSpaces) where offset > 0 && offset < unicode.utf16.count {
                 boundaries.insert(source.count + offset)
             }
+            previousStart = source.count
             source += unicode.utf16
             previous = show
+        }
+        if !candidates.isEmpty {
+            let index = Dictionary(scalarOffsets.enumerated().map { ($1, $0) }, uniquingKeysWith: { first, _ in first })
+            let lineOffsets = scalarOffsets + [source.count]
+            for (offset, gap) in candidates.sorted(by: { $0.0 < $1.0 }) {
+                guard let k = index[offset] else { continue }
+                let breaks = boundaries.union(separated)
+                let (before, startsLine) = NativeSpacingReader.word(in: scalars, offsets: lineOffsets, before: k, breaks: breaks)
+                let after = NativeSpacingReader.word(in: scalars, offsets: lineOffsets, from: k, breaks: breaks)
+                if sentenceSpace(word: before, startsShow: startsLine, following: after, gap: gap) { boundaries.insert(offset) }
+            }
         }
         guard !boundaries.isEmpty else { return nil }
         let extracted = Array(native.utf16)
@@ -100,6 +172,9 @@ enum NativeSpacingReader {
     /// +0.037 em), so it takes the letter threshold.
     static let wordSpaceGap: CGFloat = 0.066
     static let overhangWordSpaceGap: CGFloat = 0.005
+    /// Character spacing of at least this many em between the two glyphs of a show is a column
+    /// gap (#120: FAA's chart tables set 0.59–1.58 em; its letter-spacing stays at or below 0.2 em).
+    static let characterSpacingColumnGap: CGFloat = 0.5
 
     /// Whether a same-font gap of `gap` em between `left` and `right` (after `before`, the
     /// character preceding `left`) is a word space. The left side ends a word (a letter, a digit,
@@ -107,7 +182,14 @@ enum NativeSpacingReader {
     /// letter, a digit, an opening quote or parenthesis). A period or colon between digits (`3.5`, `8:46`)
     /// is never a boundary, nor is a mathematical letter (TeX math italic sets kerns and italic
     /// corrections, Replay Clocks' `ℎ𝑙𝑐.𝑓`), and gaps above one em are not word spaces.
-    static func sameFontWordSpace(before: Unicode.Scalar?, left: Unicode.Scalar, right: Unicode.Scalar, gap: CGFloat) -> Bool {
+    ///
+    /// A chained initial, a capital and a period before a capital that `after` (the character
+    /// following `right`) makes an initial too (`C.|A.`), takes the letter threshold like two
+    /// capitals: NOAA's Lora kerns `.|A` by +0.027 em inside initials it sets closed (`B.A. Muhling`)
+    /// on lines with word spacing of -0.002 em (#120, reached once shows that continue the cursor
+    /// were read).
+    static func sameFontWordSpace(before: Unicode.Scalar?, left: Unicode.Scalar, right: Unicode.Scalar, gap: CGFloat,
+                                  after: Unicode.Scalar? = nil) -> Bool {
         func mathematical(_ scalar: Unicode.Scalar) -> Bool {
             (0x1D400...0x1D7FF).contains(scalar.value) || (0x2100...0x214F).contains(scalar.value)
         }
@@ -118,7 +200,8 @@ enum NativeSpacingReader {
         let rightWord = overhang || letters.contains(right) || digits.contains(right) || right == "("
         guard leftWord, rightWord, !mathematical(left), !mathematical(right), gap.isFinite, gap <= 1 else { return false }
         if ".:".unicodeScalars.contains(left), let before, digits.contains(before), digits.contains(right) { return false }
-        let narrow = overhang && (closing || CharacterSet.lowercaseLetters.contains(left))
+        let chained = left == "." && before.map(CharacterSet.uppercaseLetters.contains) == true && after == "."
+        let narrow = overhang && (closing || CharacterSet.lowercaseLetters.contains(left)) && !chained
         return gap >= (narrow ? overhangWordSpaceGap : wordSpaceGap)
     }
 
@@ -134,6 +217,83 @@ enum NativeSpacingReader {
               note.size > 0, show.size > 0, note.size <= show.size * 0.8 else { return false }
         let raise = note.origin.y - show.origin.y, gap = (show.origin.x - end) / note.size
         return raise >= show.size * 0.15 && raise <= show.size * 0.6 && gap >= wordSpaceGap && gap <= 1
+    }
+
+    /// The UTF-16 offset of each Unicode scalar of `string`, plus the string's length.
+    static func offsets(_ string: String) -> [Int] {
+        var result: [Int] = [], offset = 0
+        for scalar in string.unicodeScalars { result.append(offset); offset += scalar.utf16.count }
+        return result + [offset]
+    }
+
+    /// The word that ends before scalar `index`: the scalars back to a whitespace character or
+    /// to a scalar whose UTF-16 offset is a break, and whether it reaches the start.
+    static func word(in scalars: [Unicode.Scalar], offsets: [Int], before index: Int,
+                     breaks: Set<Int>) -> (word: [Unicode.Scalar], startsShow: Bool) {
+        var start = index
+        while start > 0, !scalars[start - 1].properties.isWhitespace, !breaks.contains(offsets[start]) { start -= 1 }
+        return (Array(scalars[start..<index]), start == 0 && !breaks.contains(offsets[0]))
+    }
+
+    /// The word that starts at scalar `index`, up to a whitespace character or a break, with a
+    /// space appended where one of those ends it (none where the show ends).
+    static func word(in scalars: [Unicode.Scalar], offsets: [Int], from index: Int, breaks: Set<Int>) -> [Unicode.Scalar] {
+        var end = index
+        while end < scalars.count, !scalars[end].properties.isWhitespace, end == index || !breaks.contains(offsets[end]) { end += 1 }
+        return Array(scalars[index..<end]) + (end < scalars.count ? [" "] : [])
+    }
+
+    /// Sentence spaces that a kern before an overhanging capital absorbs entirely (#128). 9/11 sets
+    /// 331 sentence boundaries such as `casualties.The` at -0.13 to +0.005 em, where abbreviations
+    /// and initials also lie, so no gap separates them. Measured on the book's own boundaries after a
+    /// period before a capital, a word followed by a capitalized word or an acronym is spaced in 5,646
+    /// of 5,977 (`U.S.|Army` 157 of 157, an initial `H.|Kean` 230 of 236); the only form set closed is
+    /// a capital that continues an abbreviation, a capital followed by a period (`U.|S.`, `D.|C.`,
+    /// `N.|Y.`: 781 of 791). So a boundary is a sentence space when:
+    /// - `word`, the characters before it back to a space, ends with `. , ; : ? !`, optionally
+    ///   followed by closing quotes, parentheses or brackets (`Jews.”|The`);
+    /// - the punctuation follows a letter or digit, or a closing parenthesis, bracket or quote
+    ///   (`(OMB).|They`); an apostrophe after a letter (`O’|Neill`, `QAEDA’|S`) and an ellipsis are not;
+    /// - `following`, the word after it (with a trailing space where a space or word space ends it),
+    ///   starts with a capital not followed by a period, or with an opening quote before a letter or
+    ///   digit;
+    /// - an initial (a capital and at most one more letter) is not followed by a capitalized
+    ///   abbreviation of at most four letters that ends with a period, which is set closed (Our Flag's
+    ///   title page `H.Doc. 108-97`);
+    /// - the word holds no address characters (`/ @ = \`, `www`: `print.php3?|ReportID`) and no
+    ///   mathematical letters;
+    /// - a period does not end a number that begins the show (list and note numbers, `10.|August 2001`,
+    ///   `21.|While`);
+    /// - the gap is between -0.15 and 1 em.
+    static func sentenceSpace(word: [Unicode.Scalar], startsShow: Bool, following: [Unicode.Scalar], gap: CGFloat) -> Bool {
+        func mathematical(_ scalar: Unicode.Scalar) -> Bool {
+            (0x1D400...0x1D7FF).contains(scalar.value) || (0x2100...0x214F).contains(scalar.value)
+        }
+        let alphanumerics = CharacterSet.alphanumerics, letters = CharacterSet.letters
+        guard gap.isFinite, gap >= -0.15, gap <= 1, following.count > 1 else { return false }
+        let right = following[0], next = following[1]
+        guard !mathematical(right), !mathematical(next) else { return false }
+        if right == "\u{201C}" || right == "\u{2018}" {
+            guard alphanumerics.contains(next) else { return false }
+        } else {
+            guard CharacterSet.uppercaseLetters.contains(right), next != "." else { return false }
+        }
+        let closers = "\u{201D}\u{2019})]".unicodeScalars
+        var end = word.count
+        while end > 0, closers.contains(word[end - 1]) { end -= 1 }
+        guard end > 1, ".,;:?!".unicodeScalars.contains(word[end - 1]) else { return false }
+        let body = word[..<(end - 1)], last = body[body.endIndex - 1]
+        guard !body.contains(where: { "/@=\\".unicodeScalars.contains($0) || mathematical($0) }),
+              !String(String.UnicodeScalarView(body)).lowercased().contains("www") else { return false }
+        if closers.contains(last) { return !body.dropLast().allSatisfy { closers.contains($0) } }
+        guard alphanumerics.contains(last) else { return false }
+        guard word[end - 1] == "." else { return true }
+        if startsShow, body.allSatisfy({ CharacterSet.decimalDigits.contains($0) }) { return false }
+        let initial = Array(body.reversed().prefix { letters.contains($0) }.reversed())
+        let abbreviation = following.last == " " ? Array(following.dropLast()) : following
+        return !((1...2).contains(initial.count) && CharacterSet.uppercaseLetters.contains(initial[0])
+                 && (3...5).contains(abbreviation.count) && abbreviation.last == "."
+                 && abbreviation.dropLast().allSatisfy { letters.contains($0) })
     }
 
     /// Only complete one-byte bfchar maps are supported. Ranges, inherited maps, duplicate
@@ -353,7 +513,10 @@ enum NativeSpacingReader {
     }
     private final class State {
         var matrix = CGAffineTransform.identity
+        /// The text line matrix (Tlm), which `Td`, `TD` and `T*` move, and the text matrix (Tm),
+        /// which a show advances (#120).
         var line = CGAffineTransform.identity
+        var text = CGAffineTransform.identity
         var font: Font?
         var size: CGFloat = 0
         var leading: CGFloat = 0
@@ -385,9 +548,10 @@ enum NativeSpacingReader {
             } else {
                 guard CGPDFScannerPopString(scanner, &single), single != nil else { invalid = true; return }
             }
+            // A show that continues the text cursor needs the previous show's complete advance.
             guard positioned else { invalid = true; return }
             positioned = false
-            let transform = line.concatenating(matrix)
+            let transform = text.concatenating(matrix)
             guard transform.tx.isFinite, transform.ty.isFinite, transform.a.isFinite else { invalid = true; return }
             // Rotated or mirrored text (a margin stamp) supplies no word-boundary evidence and
             // does not disqualify the page's upright text.
@@ -395,7 +559,7 @@ enum NativeSpacingReader {
             var item = Evidence(origin: CGPoint(x: transform.tx, y: transform.ty), size: size * transform.a, font: font?.id ?? 0)
             // Type3 space removal models no character or word spacing.
             var value = "", gaps: Set<Int> = [], valid = font?.map != nil && size > 0 && characterSpacing == 0 && wordSpacing == 0
-            var unicode = "", advance: CGFloat = 0, trailingSpacing: CGFloat = 0
+            var unicode = "", advance: CGFloat = 0, trailingSpacing: CGFloat = 0, glyphStarts: Set<Int> = []
             var decodable = font?.unicode != nil && size > 0, measurable = font?.widths != nil && size > 0
             let spacing = (characterSpacing, wordSpacing)
             func append(_ string: CGPDFStringRef) {
@@ -408,6 +572,7 @@ enum NativeSpacingReader {
                     let code = bytes[index]
                     if valid, let decoded = font.map?[code] { value += decoded } else { valid = false }
                     if decodable, let decoded = font.unicode?[code], unicode.utf16.count + decoded.utf16.count <= 4096 {
+                        glyphStarts.insert(unicode.utf16.count)
                         unicode += decoded
                     } else { decodable = false }
                     // A simple font's code 32 is the space that word spacing widens.
@@ -418,12 +583,14 @@ enum NativeSpacingReader {
             /// Adjusted boundaries between strings: the UTF-16 offset, the gap in em, the index of
             /// the non-empty string after it and the code count of the one before it.
             var boundaries: [(offset: Int, gap: CGFloat, string: Int, before: Int)] = []
+            var trailingAdjustment: CGFloat = 0
             if let values {
                 var previousWasString = false
                 // An adjustment moves the glyphs after it. A trailing one moves none of this show's
-                // glyphs, and every accepted show is positioned on its own, so it cannot shorten the
-                // measured end (#110: Ghostscript ends each TeX math show with one, `[(5)178.4]TJ`).
+                // glyphs, so it cannot shorten the measured end (#110: Ghostscript ends each TeX math
+                // show with one, `[(5)178.4]TJ`); it moves only a show that continues the cursor.
                 var pending: CGFloat = 0
+                defer { trailingAdjustment = pending }
                 // Adjustment units since the last glyph, the number of non-empty strings so far,
                 // and the code count of the last one.
                 var sinceGlyph: CGFloat = 0, strings = 0, lastCount = 0
@@ -476,8 +643,11 @@ enum NativeSpacingReader {
                 let words = boundaries.map { boundary -> Bool in
                     guard boundary.offset > 0, boundary.offset < scalars.count,
                           let (left, leftOffset) = scalar(before: boundary.offset) else { return false }
-                    let right = unicode.unicodeScalars[String.Index(utf16Offset: boundary.offset, in: unicode)]
-                    return NativeSpacingReader.sameFontWordSpace(before: scalar(before: leftOffset)?.0, left: left, right: right, gap: boundary.gap)
+                    let rightIndex = String.Index(utf16Offset: boundary.offset, in: unicode)
+                    let right = unicode.unicodeScalars[rightIndex]
+                    let afterIndex = unicode.unicodeScalars.index(after: rightIndex)
+                    return NativeSpacingReader.sameFontWordSpace(before: scalar(before: leftOffset)?.0, left: left, right: right, gap: boundary.gap,
+                                                                 after: afterIndex < unicode.unicodeScalars.endIndex ? unicode.unicodeScalars[afterIndex] : nil)
                 }
                 // Letter-spaced type (`C H A P`) adjusts every glyph alike: a boundary beside a
                 // one-glyph string whose other side is also a word gap is not a word space.
@@ -488,10 +658,52 @@ enum NativeSpacingReader {
                     }
                     if !spaced { item.wordSpaces.insert(boundary.offset) }
                 }
+                // A column gap set as character spacing (#120, FAA page 458's chart table:
+                // `(68)Tj 1.465 Tc -1.465 Tw (52)Tj` draws `1,685 2,599`). FAA's letter-spacing ends at
+                // 0.2 em; its column gaps start at 0.6 em. Only a two-glyph show is read, so
+                // letter-spaced type cannot split.
+                let characterGap = spacing.0 / size
+                if boundaries.isEmpty, glyphStarts.count == 2, characterGap >= NativeSpacingReader.characterSpacingColumnGap,
+                   characterGap <= 10, let offset = glyphStarts.max(), offset > 0, offset < unicode.utf16.count,
+                   let (left, _) = scalar(before: offset) {
+                    let right = unicode.unicodeScalars[String.Index(utf16Offset: offset, in: unicode)]
+                    // The characters follow the in-show word-space classes; the gap itself is above them.
+                    if NativeSpacingReader.sameFontWordSpace(before: nil, left: left, right: right, gap: 1) {
+                        item.wordSpaces.insert(offset)
+                    }
+                }
+                // Sentence spaces with no measurable gap (#128): at every glyph boundary between
+                // sentence punctuation and a capital or opening quote that is not already a word
+                // space. A boundary without an adjustment has the character spacing as its gap.
+                item.spaced = true
+                let characters = Array(unicode.unicodeScalars), offsets = NativeSpacingReader.offsets(unicode)
+                let gaps = Dictionary(boundaries.map { ($0.offset, $0.gap) }, uniquingKeysWith: { first, _ in first })
+                let lefts = ".,;:?!\u{201D}\u{2019})]".unicodeScalars
+                for k in characters.indices.dropFirst() where lefts.contains(characters[k - 1]) {
+                    let offset = offsets[k]
+                    guard glyphStarts.contains(offset), !item.wordSpaces.contains(offset) else { continue }
+                    let breaks = item.wordSpaces.union(item.sentenceSpaces)
+                    let (word, startsShow) = NativeSpacingReader.word(in: characters, offsets: offsets, before: k, breaks: breaks)
+                    let following = NativeSpacingReader.word(in: characters, offsets: offsets, from: k, breaks: breaks)
+                    let gap = gaps[offset] ?? min(0, spacing.0 / size)
+                    if NativeSpacingReader.sentenceSpace(word: word, startsShow: startsShow, following: following, gap: gap) {
+                        item.sentenceSpaces.insert(offset)
+                    } else if startsShow || following.last != " " {
+                        // The word or the capital's word continues into another show (an italic
+                        // title, `Encyclopedia|.Six`; a show split inside a word, `June,T|enet`).
+                        item.sentenceCandidates[offset] = gap
+                    }
+                }
             }
             // A glyph's ink ends at its width; the spacing after the last one moves no glyph.
             if measurable, advance.isFinite, advance >= 0 { item.end = transform.tx + (advance - trailingSpacing) * transform.a }
             evidence.append(item)
+            // The next show may continue from this one's full advance, spacing and adjustments
+            // included (Replay Clocks page 10's reference list, `[([8])]TJ 0 g 0 G [-571(D)…]TJ`, #120).
+            let full = advance - trailingAdjustment
+            if measurable, full.isFinite, abs(full) <= 100_000 {
+                text = text.translatedBy(x: full, y: 0); positioned = true
+            }
         }
     }
     private static func state(_ info: UnsafeMutableRawPointer?) -> State {
@@ -623,7 +835,7 @@ enum NativeSpacingReader {
         CGPDFOperatorTableSetCallback(table, "BT") { scanner, info in
             let s = Self.state(info)
             guard s.accept(scanner), !s.inText else { s.invalid = true; return }
-            s.inText = true; s.line = .identity; s.positioned = false
+            s.inText = true; s.line = .identity; s.text = .identity; s.positioned = false
         }
         CGPDFOperatorTableSetCallback(table, "ET") { scanner, info in
             let s = Self.state(info)
@@ -633,22 +845,22 @@ enum NativeSpacingReader {
         CGPDFOperatorTableSetCallback(table, "Tm") { scanner, info in
             let s = Self.state(info)
             guard s.accept(scanner), s.inText, let n = Self.numbers(scanner, 6) else { s.invalid = true; return }
-            s.line = CGAffineTransform(a: n[0], b: n[1], c: n[2], d: n[3], tx: n[4], ty: n[5]); s.positioned = true
+            s.line = CGAffineTransform(a: n[0], b: n[1], c: n[2], d: n[3], tx: n[4], ty: n[5]); s.text = s.line; s.positioned = true
         }
         CGPDFOperatorTableSetCallback(table, "Td") { scanner, info in
             let s = Self.state(info)
             guard s.accept(scanner), s.inText, let n = Self.numbers(scanner, 2) else { s.invalid = true; return }
-            s.line = s.line.translatedBy(x: n[0], y: n[1]); s.positioned = true
+            s.line = s.line.translatedBy(x: n[0], y: n[1]); s.text = s.line; s.positioned = true
         }
         CGPDFOperatorTableSetCallback(table, "TD") { scanner, info in
             let s = Self.state(info)
             guard s.accept(scanner), s.inText, let n = Self.numbers(scanner, 2) else { s.invalid = true; return }
-            s.leading = -n[1]; s.line = s.line.translatedBy(x: n[0], y: n[1]); s.positioned = true
+            s.leading = -n[1]; s.line = s.line.translatedBy(x: n[0], y: n[1]); s.text = s.line; s.positioned = true
         }
         CGPDFOperatorTableSetCallback(table, "T*") { scanner, info in
             let s = Self.state(info)
             guard s.accept(scanner), s.inText else { s.invalid = true; return }
-            s.line = s.line.translatedBy(x: 0, y: -s.leading); s.positioned = true
+            s.line = s.line.translatedBy(x: 0, y: -s.leading); s.text = s.line; s.positioned = true
         }
         CGPDFOperatorTableSetCallback(table, "TL") { scanner, info in
             let s = Self.state(info)

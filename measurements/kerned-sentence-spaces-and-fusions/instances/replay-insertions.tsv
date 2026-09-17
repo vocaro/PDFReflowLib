@@ -1,0 +1,42 @@
+replay	2	31	punct	)	v	𝑂(𝑛) vector	(unbounded clock drift) then it is required to have 𝑂(𝑛) vector
+replay	3	73	punct	,	o	⟨𝑚𝑥.𝑗, offset.𝑗[],	⟨𝑚𝑥.𝑗, offset.𝑗[], counter.𝑗[]⟩, (1)
+replay	3	73	punct	,	c	offset.𝑗[], counter.𝑗[]⟩,	⟨𝑚𝑥.𝑗, offset.𝑗[], counter.𝑗[]⟩, (1)
+replay	4	11	punct	,	o	⟨𝑚𝑥.𝑗, offset.𝑗[],	⟨𝑚𝑥.𝑗, offset.𝑗[], counter.𝑗[]⟩
+replay	4	11	punct	,	c	offset.𝑗[], counter.𝑗[]⟩	⟨𝑚𝑥.𝑗, offset.𝑗[], counter.𝑗[]⟩
+replay	4	14	punct	,	e	𝑚𝑎𝑥(𝑚𝑥.𝑗, epoch.𝑗).	equal to 𝑚𝑎𝑥(𝑚𝑥.𝑗, epoch.𝑗). When 𝑗 sends a message, it does not
+replay	4	36	punct	,	e	←max(𝑚𝑥.𝑗, epoch.𝑗)	1: 𝑛𝑒𝑤𝑚𝑥 ←max(𝑚𝑥.𝑗, epoch.𝑗)
+replay	4	38	punct	)	t	new_offset) then	3: if (𝑚𝑥.𝑗= 𝑛𝑒𝑤𝑚𝑥∧offset.𝑗.𝑗= new_offset) then
+replay	4	46	punct	,	o	⟨𝑚𝑥.𝑗, offset.𝑗[],	𝑗 (with timestamp ⟨𝑚𝑥.𝑗, offset.𝑗[], counter.𝑗[]⟩receives a mes-
+replay	4	46	punct	,	c	offset.𝑗[], counter.𝑗[]⟩receives	𝑗 (with timestamp ⟨𝑚𝑥.𝑗, offset.𝑗[], counter.𝑗[]⟩receives a mes-
+replay	4	47	punct	,	o	⟨𝑚𝑥.𝑚, offset.𝑚[],	sage 𝑚 with timestamp ⟨𝑚𝑥.𝑚, offset.𝑚[], counter.𝑚[]⟩.
+replay	4	47	punct	,	c	offset.𝑚[], counter.𝑚[]⟩.	sage 𝑚 with timestamp ⟨𝑚𝑥.𝑚, offset.𝑚[], counter.𝑚[]⟩.
+replay	4	65	punct	,	e	←max(𝑚𝑥.𝑗,𝑚𝑥.𝑚, epoch.𝑗)	3: 𝑛𝑒𝑤𝑚𝑥 ←max(𝑚𝑥.𝑗,𝑚𝑥.𝑚, epoch.𝑗)
+replay	4	69	punct	)	t	EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐) then	7: if EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐) then
+replay	4	71	punct	,	c	←max(counter.𝑗.𝑘, counter.𝑚.𝑘)	9: counter.𝑗.𝑘 ←max(counter.𝑗.𝑘, counter.𝑚.𝑘)
+replay	4	73	punct	)	t	EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧¬EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐) then	11: if EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧¬EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐) then
+replay	4	75	punct	)	t	if¬EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐) then	13: if¬EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐) then
+replay	4	78	punct	)	t	if¬EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧¬EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐) then	16: if¬EqualOffset(𝑡𝑠.𝑗,𝑡𝑠.𝑐)∧¬EqualOffset(𝑡𝑠.𝑚,𝑡𝑠.𝑐) then
+replay	4	81	punct	,	a	1, and	ure 1. Assuming that 𝜖 = 5,𝐼= 1, and E= 5, the RepCl timestamps
+replay	4	88	word	]	r	[0,2,𝜖] respectively.	is aware of. Hence, offsets are [0,2,𝜖] respectively. When event 𝐷
+replay	4	93	word	]	H	[3,𝑒,𝜖] Here,	to [3,𝑒,𝜖] Here, the permissible ordering is 𝐶𝐴𝐵𝐷.
+replay	4	103	punct	,	o	⟨𝑚𝑥.𝑒, offset.𝑒[],	⟨𝑚𝑥.𝑒, offset.𝑒[], counter.𝑒[]⟩and
+replay	4	103	punct	,	c	offset.𝑒[], counter.𝑒[]⟩and	⟨𝑚𝑥.𝑒, offset.𝑒[], counter.𝑒[]⟩and
+replay	5	10	punct	)	t	𝑡2.offset.𝑗) then	2: if 𝑡1.𝑚𝑥 ≠ 𝑡2.𝑚𝑥∨(∃𝑗𝑡1.offset.𝑗 ≠ 𝑡2.offset.𝑗) then
+replay	5	14	punct	,	o	⟨𝑚𝑥.𝑓, offset.𝑓[],	𝑅𝑒𝑝𝐶𝑙.𝑓= ⟨𝑚𝑥.𝑓, offset.𝑓[], counter.𝑓[]⟩, we say that
+replay	5	14	punct	,	c	offset.𝑓[], counter.𝑓[]⟩,	𝑅𝑒𝑝𝐶𝑙.𝑓= ⟨𝑚𝑥.𝑓, offset.𝑓[], counter.𝑓[]⟩, we say that
+replay	6	56	punct	)	t	𝑂(𝑥) time	using 𝑂(𝑥) time where 𝑥 is the number of bits set to 1 in the bitmap.
+replay	6	66	punct	)	t	𝑂(𝑥) time	can determine if 𝑅𝑒𝑝𝐶𝑙.𝑒 < 𝑅𝑒𝑝𝐶𝑙.𝑓 in 𝑂(𝑥) time where 𝑥 is the
+replay	7	16	punct	,	E	𝛼,𝛿, E	𝛼,𝛿, E and 𝐼.
+replay	9	49	punct	)	c	𝑂(𝑛) complexity	While vector clocks are upper bounded by 𝑂(𝑛) complexity in
+replay	10	2	word	E	i	E instead	Figure 13: Effect of using E instead of E𝑎 in 𝑅𝑒𝑝𝐶𝑙.
+replay	10	7	word	E	p	E provides	observe that E provides one way to reduce the overhead if we
+replay	10	18	word	𝑗	a	𝑗 and	𝑗 and 𝑘) is often less than E𝑎. Hence, if 𝑒 and 𝑓
+replay	10	18	word	𝑒	a	𝑒 and	𝑗 and 𝑘) is often less than E𝑎. Hence, if 𝑒 and 𝑓
+replay	10	21	word	E	d	E depends	E depends upon the area of the shaded part (cf. Figure 13). In this
+replay	10	35	word	E	t	≈E time	before 𝑓 (as defined in [6]) or 𝑓 occurred E1 ≈E time after 𝑒 then
+replay	10	36	word	𝑒	m	𝑒 must	𝑒 must occur before 𝑓. And, by uncertainty, we mean that if 𝑒 and 𝑓
+replay	10	36	word	𝑒	a	𝑒 and	𝑒 must occur before 𝑓. And, by uncertainty, we mean that if 𝑒 and 𝑓
+replay	10	39	word	E	t	≈E then	occurred within time E2 ≈E then the replay permits them to be
+replay	10	41	word	𝑙	t	𝑅𝑒𝑝𝐶𝑙 to	We presented 𝑅𝑒𝑝𝐶𝑙 to solve the replay problem with E1 = E+𝐼
+replay	10	54	word	E	w	E window.	that communicate with 𝑗 (directly or indirectly) in E window. This
+replay	10	77	word	E	i	E in	of the future works is to identify the effect of reducing E in this

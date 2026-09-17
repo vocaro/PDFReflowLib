@@ -1879,6 +1879,15 @@
           "absentText": [
             "dif-ferent"
           ]
+        },
+        {
+          "page": 24,
+          "text": [
+            "Negative (subtract) in middle"
+          ],
+          "absentText": [
+            "(subtract)in middle"
+          ]
         }
       ]
     },
@@ -2952,6 +2961,33 @@
           ],
           "absentText": [
             "265A-NY- 280350"
+          ]
+        },
+        {
+          "page": 134,
+          "text": [
+            "10,000 casualties. The CIA"
+          ],
+          "absentText": [
+            "casualties.The CIA"
+          ]
+        },
+        {
+          "page": 193,
+          "text": [
+            "Encyclopedia. Six of"
+          ],
+          "absentText": [
+            "Encyclopedia.Six"
+          ]
+        },
+        {
+          "page": 312,
+          "text": [
+            "relatively unharmed. We know"
+          ],
+          "absentText": [
+            "unharmed.We know"
           ]
         }
       ]
@@ -5093,6 +5129,17 @@
           "absentHeadings": [
             "OVERHEAD",
             "6 REPRESENTATION OF REPCL AND ITS"
+          ]
+        },
+        {
+          "page": 10,
+          "text": [
+            "then 𝑒 must occur before 𝑓",
+            "observe that E provides one way"
+          ],
+          "absentText": [
+            "𝑒must occur",
+            "Eprovides"
           ]
         }
       ]

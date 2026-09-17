@@ -106,9 +106,13 @@ private func leadInPage(label: String = "Substitutes:", rest: String = " Aluminu
 /// defects: the Fed box's closing `For more information on the FOMC…` paragraph, set off by the
 /// same added space as the box's lead-ins, is its own paragraph (#71: 11, 9 → 12, 10), and the
 /// opening sentence of `algebra-289` (with no crops in this test) is one paragraph again once its
-/// radical pieces rejoin their row (#95: 36 → 34).
+/// radical pieces rejoin their row (#95: 36 → 34). Two more lose one block each to the column
+/// continuation (#111): `faa-211`'s `White arc` definition ends the left column at `…the maximum flap`
+/// and continues at the right column's head (`speed. Approaches and landings…`), and `faa-212`'s left
+/// column ends `…enter the pitot system. Air` and continues `already in the system vents…` (18, 7 → 17, 6
+/// and 19, 9 → 18, 8).
 @Test func sourceControlPagesKeepEveryBlockBoundary() throws {
-    for (name, expected) in [("faa-211", (18, 7, 0)), ("faa-212", (19, 9, 0)), ("fed-32", (12, 10, 0)),
+    for (name, expected) in [("faa-211", (17, 6, 0)), ("faa-212", (18, 8, 0)), ("fed-32", (12, 10, 0)),
                              ("flag-27", (13, 9, 0)), ("algebra-289", (34, 34, 0)), ("loper-60", (6, 5, 1))] {
         let page = try SourceLayoutFixture.load(name).styledContent()
         let blocks = leadInBlocks(page)

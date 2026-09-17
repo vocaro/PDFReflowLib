@@ -1,0 +1,3085 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        542.43849999999998,
+        33.709700000000005,
+        15.559999999999945,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "B-1"
+        }
+      ],
+      "text" : "B-1"
+    },
+    {
+      "rect" : [
+        72,
+        548.89970000000005,
+        8.6640000000000015,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "A"
+        }
+      ],
+      "text" : "A"
+    },
+    {
+      "rect" : [
+        72,
+        533.84370000000001,
+        56.090000000000003,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "A/C"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—aircraft"
+        }
+      ],
+      "text" : "A/C—aircraft"
+    },
+    {
+      "rect" : [
+        72,
+        521.34370000000001,
+        129.70000000000005,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "A/FD"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—airport/facility directory"
+        }
+      ],
+      "text" : "A/FD—airport/facility directory"
+    },
+    {
+      "rect" : [
+        72,
+        508.84369999999996,
+        79.439999999999998,
+        12.020000000000039
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "A/G"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—air to ground"
+        }
+      ],
+      "text" : "A/G—air to ground"
+    },
+    {
+      "rect" : [
+        72,
+        496.34369999999996,
+        92.780000000000001,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "A/HA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—altitude/height"
+        }
+      ],
+      "text" : "A/HA—altitude/height"
+    },
+    {
+      "rect" : [
+        72,
+        483.84369999999996,
+        92.769999999999982,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AAF"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Army Air Field"
+        }
+      ],
+      "text" : "AAF—Army Air Field"
+    },
+    {
+      "rect" : [
+        72,
+        471.34369999999996,
+        121.35000000000005,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AAI"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " —arrival aircraft interval"
+        }
+      ],
+      "text" : "AAI —arrival aircraft interval"
+    },
+    {
+      "rect" : [
+        72,
+        458.84369999999996,
+        152.19,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AAP"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—advanced automation program"
+        }
+      ],
+      "text" : "AAP—advanced automation program"
+    },
+    {
+      "rect" : [
+        72,
+        446.34369999999996,
+        122.17000000000002,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AAR"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—airport acceptance rate"
+        }
+      ],
+      "text" : "AAR—airport acceptance rate"
+    },
+    {
+      "rect" : [
+        72,
+        433.84369999999996,
+        229.69999999999999,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ABDIS"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Automated Data Interchange System Service B"
+        }
+      ],
+      "text" : "ABDIS—Automated Data Interchange System Service B"
+    },
+    {
+      "rect" : [
+        72,
+        421.34369999999996,
+        104.69,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ABN"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—aerodrome beacon"
+        }
+      ],
+      "text" : "ABN—aerodrome beacon"
+    },
+    {
+      "rect" : [
+        72,
+        408.84369999999996,
+        54.989999999999995,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ABV"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—above"
+        }
+      ],
+      "text" : "ABV—above"
+    },
+    {
+      "rect" : [
+        72,
+        396.34369999999996,
+        192.76000000000005,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACAIS"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—air carrier activity information system"
+        }
+      ],
+      "text" : "ACAIS—air carrier activity information system"
+    },
+    {
+      "rect" : [
+        72,
+        383.84369999999996,
+        176.37000000000003,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACAS"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—aircraft collision avoidance system"
+        }
+      ],
+      "text" : "ACAS—aircraft collision avoidance system"
+    },
+    {
+      "rect" : [
+        72,
+        371.34369999999996,
+        228.58000000000004,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACC"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—area control center; Airports Consultants Council"
+        }
+      ],
+      "text" : "ACC—area control center; Airports Consultants Council"
+    },
+    {
+      "rect" : [
+        72,
+        358.84369999999996,
+        114.13999999999999,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACCT"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—accounting records"
+        }
+      ],
+      "text" : "ACCT—accounting records"
+    },
+    {
+      "rect" : [
+        72,
+        346.34369999999996,
+        93.859999999999985,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACCUM"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—accumulate"
+        }
+      ],
+      "text" : "ACCUM—accumulate"
+    },
+    {
+      "rect" : [
+        72,
+        333.84369999999996,
+        139.44000000000003,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACD"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Automatic Call Distributor"
+        }
+      ],
+      "text" : "ACD—Automatic Call Distributor"
+    },
+    {
+      "rect" : [
+        72,
+        321.34369999999996,
+        144.13000000000005,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACDO"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Air Carrier District Office"
+        }
+      ],
+      "text" : "ACDO—Air Carrier District Office"
+    },
+    {
+      "rect" : [
+        72,
+        308.84369999999996,
+        116.10000000000002,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACF"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Area Control Facility"
+        }
+      ],
+      "text" : "ACF—Area Control Facility"
+    },
+    {
+      "rect" : [
+        72,
+        296.34369999999996,
+        174.13000000000005,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACFO"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Aircraft Certification Field Office"
+        }
+      ],
+      "text" : "ACFO—Aircraft Certification Field Office"
+    },
+    {
+      "rect" : [
+        72,
+        283.84369999999996,
+        66.090000000000003,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACFT"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—aircraft"
+        }
+      ],
+      "text" : "ACFT—aircraft"
+    },
+    {
+      "rect" : [
+        72,
+        271.34369999999996,
+        120.26000000000002,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACID"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—aircraft identification"
+        }
+      ],
+      "text" : "ACID—aircraft identification"
+    },
+    {
+      "rect" : [
+        72,
+        258.84369999999996,
+        230.79999999999995,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACI-NA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Airports Council International-North America"
+        }
+      ],
+      "text" : "ACI-NA—Airports Council International-North America"
+    },
+    {
+      "rect" : [
+        72,
+        246.34369999999998,
+        165.81000000000006,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACIP"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—airport capital improvement plan"
+        }
+      ],
+      "text" : "ACIP—airport capital improvement plan"
+    },
+    {
+      "rect" : [
+        72,
+        233.84369999999998,
+        167.48000000000002,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACLS"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—automatic carrier landing system"
+        }
+      ],
+      "text" : "ACLS—automatic carrier landing system"
+    },
+    {
+      "rect" : [
+        72,
+        221.34369999999998,
+        157.48000000000008,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACLT"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—actual landing time calculated"
+        }
+      ],
+      "text" : "ACLT—actual landing time calculated"
+    },
+    {
+      "rect" : [
+        72,
+        208.84369999999998,
+        236.91999999999996,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACO"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Office of Airports Compliance and Field Operations;"
+        }
+      ],
+      "text" : "ACO—Office of Airports Compliance and Field Operations;"
+    },
+    {
+      "rect" : [
+        72,
+        196.63369999999998,
+        112.74000000000004,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Aircraft Certification Office"
+        }
+      ],
+      "text" : "Aircraft Certification Office"
+    },
+    {
+      "rect" : [
+        72,
+        183.84369999999998,
+        70.800000000000011,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACR"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—air carrier"
+        }
+      ],
+      "text" : "ACR—air carrier"
+    },
+    {
+      "rect" : [
+        72,
+        171.34369999999998,
+        194.68000000000006,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACRP"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Airport Cooperative Research Program"
+        }
+      ],
+      "text" : "ACRP—Airport Cooperative Research Program"
+    },
+    {
+      "rect" : [
+        72,
+        158.84369999999998,
+        151.65000000000003,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACS"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Airman Certification Standard"
+        }
+      ],
+      "text" : "ACS—Airman Certification Standard"
+    },
+    {
+      "rect" : [
+        72,
+        146.34369999999998,
+        141.92000000000004,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ACT"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—active, activated, or activity"
+        }
+      ],
+      "text" : "ACT—active, activated, or activity"
+    },
+    {
+      "rect" : [
+        72,
+        133.84369999999998,
+        94.400000000000006,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—air defense area"
+        }
+      ],
+      "text" : "ADA—air defense area"
+    },
+    {
+      "rect" : [
+        72,
+        121.34369999999997,
+        178.03000000000003,
+        12.019999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADAP"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Airport Development Aid Program"
+        }
+      ],
+      "text" : "ADAP—Airport Development Aid Program"
+    },
+    {
+      "rect" : [
+        72,
+        108.84369999999997,
+        162.5,
+        12.019999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADAS"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—AWOS data acquisition system"
+        }
+      ],
+      "text" : "ADAS—AWOS data acquisition system"
+    },
+    {
+      "rect" : [
+        72,
+        96.34369999999997,
+        237.00999999999999,
+        12.019999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADCCP"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—advanced data communications control procedure"
+        }
+      ],
+      "text" : "ADCCP—advanced data communications control procedure"
+    },
+    {
+      "rect" : [
+        72,
+        83.84369999999997,
+        115.27000000000004,
+        12.019999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADDA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—administrative data"
+        }
+      ],
+      "text" : "ADDA—administrative data"
+    },
+    {
+      "rect" : [
+        72,
+        71.34369999999997,
+        139.43000000000001,
+        12.019999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADF"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—automatic direction finding"
+        }
+      ],
+      "text" : "ADF—automatic direction finding"
+    },
+    {
+      "rect" : [
+        72,
+        58.843699999999977,
+        148.59000000000003,
+        12.020000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADI"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—automatic de-ice and inhibitor"
+        }
+      ],
+      "text" : "ADI—automatic de-ice and inhibitor"
+    },
+    {
+      "rect" : [
+        72,
+        658.29169999999999,
+        439.10399999999998,
+        56.831999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 48,
+          "text" : "Acronyms, Abbreviations, and"
+        }
+      ],
+      "text" : "Acronyms, Abbreviations, and"
+    },
+    {
+      "rect" : [
+        72,
+        611.29169999999999,
+        301.34399999999999,
+        56.831999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 48,
+          "text" : "NOTAM Contractions"
+        }
+      ],
+      "text" : "NOTAM Contractions"
+    },
+    {
+      "rect" : [
+        72,
+        713.57339999999999,
+        55.744,
+        18.94399999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 16,
+          "text" : "Appendix B"
+        }
+      ],
+      "text" : "Appendix B"
+    },
+    {
+      "rect" : [
+        321,
+        552.19650000000001,
+        111.92000000000002,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADIN"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—AUTODIN service"
+        }
+      ],
+      "text" : "ADIN—AUTODIN service"
+    },
+    {
+      "rect" : [
+        321,
+        539.69650000000001,
+        155.80000000000007,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADIZ"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—air defense identification zone"
+        }
+      ],
+      "text" : "ADIZ—air defense identification zone"
+    },
+    {
+      "rect" : [
+        321,
+        527.19650000000001,
+        62.759999999999991,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADJ"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—adjacent"
+        }
+      ],
+      "text" : "ADJ—adjacent"
+    },
+    {
+      "rect" : [
+        321,
+        514.69650000000001,
+        118.03000000000003,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADL"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—aeronautical data-link"
+        }
+      ],
+      "text" : "ADL—aeronautical data-link"
+    },
+    {
+      "rect" : [
+        321,
+        502.19649999999996,
+        88.589999999999975,
+        12.020000000000039
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADLY"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—arrival delay"
+        }
+      ],
+      "text" : "ADLY—arrival delay"
+    },
+    {
+      "rect" : [
+        321,
+        489.69649999999996,
+        119.42000000000007,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADO"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—airline dispatch office"
+        }
+      ],
+      "text" : "ADO—airline dispatch office"
+    },
+    {
+      "rect" : [
+        321,
+        477.19649999999996,
+        136.63999999999999,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADP"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—automated data processing"
+        }
+      ],
+      "text" : "ADP—automated data processing"
+    },
+    {
+      "rect" : [
+        321,
+        464.69649999999996,
+        163.86000000000007,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADS"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—automatic dependent surveillance"
+        }
+      ],
+      "text" : "ADS—automatic dependent surveillance"
+    },
+    {
+      "rect" : [
+        321,
+        452.19649999999996,
+        171.10000000000002,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADSIM"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " —airfield delay simulation model"
+        }
+      ],
+      "text" : "ADSIM —airfield delay simulation model"
+    },
+    {
+      "rect" : [
+        321,
+        439.69649999999996,
+        173.34000000000003,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADSY"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—administrative equipment systems"
+        }
+      ],
+      "text" : "ADSY—administrative equipment systems"
+    },
+    {
+      "rect" : [
+        321,
+        427.19649999999996,
+        213.59000000000003,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADTN"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Administrative Data Transmission Network"
+        }
+      ],
+      "text" : "ADTN—Administrative Data Transmission Network"
+    },
+    {
+      "rect" : [
+        321,
+        414.69649999999996,
+        237.00099999999998,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADTN2000"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Administrative Data Transmission Network"
+        }
+      ],
+      "text" : "ADTN2000—Administrative Data Transmission Network"
+    },
+    {
+      "rect" : [
+        321,
+        402.48649999999998,
+        20,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "2000"
+        }
+      ],
+      "text" : "2000"
+    },
+    {
+      "rect" : [
+        321,
+        389.69649999999996,
+        120.82000000000005,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADVO"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—administrative voice"
+        }
+      ],
+      "text" : "ADVO—administrative voice"
+    },
+    {
+      "rect" : [
+        321,
+        377.19649999999996,
+        68.879999999999995,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ADZD"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—advised"
+        }
+      ],
+      "text" : "ADZD—advised"
+    },
+    {
+      "rect" : [
+        321,
+        364.69649999999996,
+        137.20000000000005,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AEG"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Aircraft Evaluation Group"
+        }
+      ],
+      "text" : "AEG—Aircraft Evaluation Group"
+    },
+    {
+      "rect" : [
+        321,
+        352.19649999999996,
+        185.79000000000008,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AERA"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—automated en route air traffic control"
+        }
+      ],
+      "text" : "AERA—automated en route air traffic control"
+    },
+    {
+      "rect" : [
+        321,
+        339.69649999999996,
+        114.15000000000003,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AEX"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—automated execution"
+        }
+      ],
+      "text" : "AEX—automated execution"
+    },
+    {
+      "rect" : [
+        321,
+        327.19649999999996,
+        87.480000000000018,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AF"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—airway facilities"
+        }
+      ],
+      "text" : "AF—airway facilities"
+    },
+    {
+      "rect" : [
+        321,
+        314.69649999999996,
+        90.54000000000002,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AFB"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Air Force Base"
+        }
+      ],
+      "text" : "AFB—Air Force Base"
+    },
+    {
+      "rect" : [
+        321,
+        302.19649999999996,
+        172.5,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AFIS"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—automated flight inspection system"
+        }
+      ],
+      "text" : "AFIS—automated flight inspection system"
+    },
+    {
+      "rect" : [
+        321,
+        289.69649999999996,
+        89.980000000000018,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AFP"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—area flight plan"
+        }
+      ],
+      "text" : "AFP—area flight plan"
+    },
+    {
+      "rect" : [
+        321,
+        277.19649999999996,
+        146.93000000000001,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AFRES"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Air Force Reserve Station"
+        }
+      ],
+      "text" : "AFRES—Air Force Reserve Station"
+    },
+    {
+      "rect" : [
+        321,
+        264.69649999999996,
+        123.31000000000006,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AFS"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—airways facilities sector"
+        }
+      ],
+      "text" : "AFS—airways facilities sector"
+    },
+    {
+      "rect" : [
+        321,
+        252.19649999999999,
+        107.76999999999998,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AFSFO"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—AFS field office"
+        }
+      ],
+      "text" : "AFSFO—AFS field office"
+    },
+    {
+      "rect" : [
+        321,
+        239.69649999999999,
+        99.450000000000045,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AFSFU"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—AFS field unit"
+        }
+      ],
+      "text" : "AFSFU—AFS field unit"
+    },
+    {
+      "rect" : [
+        321,
+        227.19649999999999,
+        219.99000000000001,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AFSOU"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—AFS field office unit (standard is AFSFOU)"
+        }
+      ],
+      "text" : "AFSOU—AFS field office unit (standard is AFSFOU)"
+    },
+    {
+      "rect" : [
+        321,
+        214.69649999999999,
+        160.27000000000004,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AFSS"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—automated flight service station"
+        }
+      ],
+      "text" : "AFSS—automated flight service station"
+    },
+    {
+      "rect" : [
+        321,
+        202.19649999999999,
+        230.81000000000017,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AFTN"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Automated Fixed Telecommunications Network"
+        }
+      ],
+      "text" : "AFTN—Automated Fixed Telecommunications Network"
+    },
+    {
+      "rect" : [
+        321,
+        189.69649999999999,
+        191.93000000000006,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AGIS"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—airports geographic information system"
+        }
+      ],
+      "text" : "AGIS—airports geographic information system"
+    },
+    {
+      "rect" : [
+        321,
+        177.19649999999999,
+        108.32000000000005,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AGL"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—above ground level"
+        }
+      ],
+      "text" : "AGL—above ground level"
+    },
+    {
+      "rect" : [
+        321,
+        164.69649999999999,
+        125.54000000000002,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AID"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—airport information desk"
+        }
+      ],
+      "text" : "AID—airport information desk"
+    },
+    {
+      "rect" : [
+        321,
+        152.19649999999999,
+        126.10000000000002,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AIG"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Airbus Industries Group"
+        }
+      ],
+      "text" : "AIG—Airbus Industries Group"
+    },
+    {
+      "rect" : [
+        321,
+        139.69649999999999,
+        151.64000000000004,
+        12.02000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AIM"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Airman’s Information Manual"
+        }
+      ],
+      "text" : "AIM—Airman’s Information Manual"
+    },
+    {
+      "rect" : [
+        321,
+        127.19649999999997,
+        128.32000000000005,
+        12.019999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AlP"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—airport improvement plan"
+        }
+      ],
+      "text" : "AlP—airport improvement plan"
+    },
+    {
+      "rect" : [
+        321,
+        114.69649999999997,
+        202.75,
+        12.019999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AIRMET"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Airmen’s Meteorological Information"
+        }
+      ],
+      "text" : "AIRMET—Airmen’s Meteorological Information"
+    },
+    {
+      "rect" : [
+        321,
+        102.19649999999997,
+        190.84000000000003,
+        12.019999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AIRNET"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—Airport Network Simulation Model"
+        }
+      ],
+      "text" : "AIRNET—Airport Network Simulation Model"
+    },
+    {
+      "rect" : [
+        321,
+        89.696499999999972,
+        156.08000000000004,
+        12.019999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AIS"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—aeronautical lnformation service"
+        }
+      ],
+      "text" : "AIS—aeronautical lnformation service"
+    },
+    {
+      "rect" : [
+        321,
+        77.196499999999972,
+        151.09000000000003,
+        12.019999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "AlT"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—automated information transfer"
+        }
+      ],
+      "text" : "AlT—automated information transfer"
+    },
+    {
+      "rect" : [
+        321,
+        64.696499999999972,
+        103.88,
+        12.019999999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "ALP"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—airport layout plan"
+        }
+      ],
+      "text" : "ALP—airport layout plan"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        599.04649999999992,
+        486.03199999999981,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "This is a list of common acronyms and abbreviations used in the aviation industry as well as NOTAM contractions. For"
+        }
+      ],
+      "text" : "This is a list of common acronyms and abbreviations used in the aviation industry as well as NOTAM contractions. For"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        586.54649999999992,
+        486.00600000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a more complete list of contractions used in aviation, see FAA Order JO 7340.2 (as amended). Additional information"
+        }
+      ],
+      "text" : "a more complete list of contractions used in aviation, see FAA Order JO 7340.2 (as amended). Additional information"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        574.04649999999992,
+        276.61000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "regarding NOTAMs can be found at pilotweb.nas.faa.gov/PilotWeb/."
+        }
+      ],
+      "text" : "regarding NOTAMs can be found at pilotweb.nas.faa.gov/PilotWeb/."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      75.579999999999998,
+      608.49800000000005,
+      445.31999999999999,
+      94.319999999999936
+    ],
+    [
+      70,
+      712.74220000000003,
+      59.744,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        542.43849999999998,
+        33.709700000000005,
+        15.559999999999945,
+        12.310000000000002
+      ],
+      "structure" : {
+        "group" : 6395,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30815
+      },
+      "text" : "B-1"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        548.89970000000005,
+        8.6640000000000015,
+        15.827999999999975
+      ],
+      "structure" : {
+        "group" : 6400,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30824
+      },
+      "text" : "A"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        533.84370000000001,
+        56.090000000000003,
+        12.019999999999982
+      ],
+      "text" : "A/C—aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        521.34370000000001,
+        129.70000000000005,
+        12.019999999999982
+      ],
+      "text" : "A/FD—airport/facility directory"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        508.84369999999996,
+        79.439999999999998,
+        12.020000000000039
+      ],
+      "text" : "A/G—air to ground"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        496.34369999999996,
+        92.780000000000001,
+        12.019999999999982
+      ],
+      "text" : "A/HA—altitude/height"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        483.84369999999996,
+        92.769999999999982,
+        12.019999999999982
+      ],
+      "text" : "AAF—Army Air Field"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        471.34369999999996,
+        121.35000000000005,
+        12.019999999999982
+      ],
+      "text" : "AAI —arrival aircraft interval"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        458.84369999999996,
+        152.19,
+        12.019999999999982
+      ],
+      "text" : "AAP—advanced automation program"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        446.34369999999996,
+        122.17000000000002,
+        12.019999999999982
+      ],
+      "text" : "AAR—airport acceptance rate"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        433.84369999999996,
+        229.69999999999999,
+        12.019999999999982
+      ],
+      "structure" : {
+        "group" : 6409,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30841
+      },
+      "text" : "ABDIS—Automated Data Interchange System Service B"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        421.34369999999996,
+        104.69,
+        12.019999999999982
+      ],
+      "text" : "ABN—aerodrome beacon"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        408.84369999999996,
+        54.989999999999995,
+        12.019999999999982
+      ],
+      "text" : "ABV—above"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        396.34369999999996,
+        192.76000000000005,
+        12.019999999999982
+      ],
+      "structure" : {
+        "group" : 6412,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30847
+      },
+      "text" : "ACAIS—air carrier activity information system"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        383.84369999999996,
+        176.37000000000003,
+        12.019999999999982
+      ],
+      "structure" : {
+        "group" : 6413,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30849
+      },
+      "text" : "ACAS—aircraft collision avoidance system"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        371.34369999999996,
+        228.58000000000004,
+        12.019999999999982
+      ],
+      "text" : "ACC—area control center; Airports Consultants Council"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        358.84369999999996,
+        114.13999999999999,
+        12.019999999999982
+      ],
+      "text" : "ACCT—accounting records"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        346.34369999999996,
+        93.859999999999985,
+        12.019999999999982
+      ],
+      "text" : "ACCUM—accumulate"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        333.84369999999996,
+        139.44000000000003,
+        12.019999999999982
+      ],
+      "text" : "ACD—Automatic Call Distributor"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        321.34369999999996,
+        144.13000000000005,
+        12.019999999999982
+      ],
+      "text" : "ACDO—Air Carrier District Office"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        308.84369999999996,
+        116.10000000000002,
+        12.019999999999982
+      ],
+      "text" : "ACF—Area Control Facility"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        296.34369999999996,
+        174.13000000000005,
+        12.019999999999982
+      ],
+      "text" : "ACFO—Aircraft Certification Field Office"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        283.84369999999996,
+        66.090000000000003,
+        12.019999999999982
+      ],
+      "text" : "ACFT—aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        271.34369999999996,
+        120.26000000000002,
+        12.019999999999982
+      ],
+      "structure" : {
+        "group" : 6422,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30867
+      },
+      "text" : "ACID—aircraft identification"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        258.84369999999996,
+        230.79999999999995,
+        12.019999999999982
+      ],
+      "structure" : {
+        "group" : 6423,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30869
+      },
+      "text" : "ACI-NA—Airports Council International-North America"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        246.34369999999998,
+        165.81000000000006,
+        12.02000000000001
+      ],
+      "text" : "ACIP—airport capital improvement plan"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        233.84369999999998,
+        167.48000000000002,
+        12.02000000000001
+      ],
+      "text" : "ACLS—automatic carrier landing system"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        221.34369999999998,
+        157.48000000000008,
+        12.02000000000001
+      ],
+      "text" : "ACLT—actual landing time calculated"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        208.84369999999998,
+        236.91999999999996,
+        12.02000000000001
+      ],
+      "structure" : {
+        "group" : 6427,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 30877
+      },
+      "text" : "ACO—Office of Airports Compliance and Field Operations;"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        196.63369999999998,
+        112.74000000000004,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 6427,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 30879
+      },
+      "text" : "Aircraft Certification Office"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        183.84369999999998,
+        70.800000000000011,
+        12.02000000000001
+      ],
+      "text" : "ACR—air carrier"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        171.34369999999998,
+        194.68000000000006,
+        12.02000000000001
+      ],
+      "text" : "ACRP—Airport Cooperative Research Program"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        158.84369999999998,
+        151.65000000000003,
+        12.02000000000001
+      ],
+      "text" : "ACS—Airman Certification Standard"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        146.34369999999998,
+        141.92000000000004,
+        12.02000000000001
+      ],
+      "text" : "ACT—active, activated, or activity"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        133.84369999999998,
+        94.400000000000006,
+        12.02000000000001
+      ],
+      "text" : "ADA—air defense area"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        121.34369999999997,
+        178.03000000000003,
+        12.019999999999996
+      ],
+      "text" : "ADAP—Airport Development Aid Program"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        108.84369999999997,
+        162.5,
+        12.019999999999996
+      ],
+      "structure" : {
+        "group" : 6434,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30892
+      },
+      "text" : "ADAS—AWOS data acquisition system"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        96.34369999999997,
+        237.00999999999999,
+        12.019999999999996
+      ],
+      "text" : "ADCCP—advanced data communications control procedure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        83.84369999999997,
+        115.27000000000004,
+        12.019999999999996
+      ],
+      "structure" : {
+        "group" : 6436,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30896
+      },
+      "text" : "ADDA—administrative data"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        71.34369999999997,
+        139.43000000000001,
+        12.019999999999996
+      ],
+      "text" : "ADF—automatic direction finding"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        58.843699999999977,
+        148.59000000000003,
+        12.020000000000003
+      ],
+      "text" : "ADI—automatic de-ice and inhibitor"
+    },
+    {
+      "fontSize" : 48,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        658.29169999999999,
+        439.10399999999998,
+        56.831999999999994
+      ],
+      "text" : "Acronyms, Abbreviations, and"
+    },
+    {
+      "fontSize" : 48,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        611.29169999999999,
+        301.34399999999999,
+        56.831999999999994
+      ],
+      "text" : "NOTAM Contractions"
+    },
+    {
+      "fontSize" : 16,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        713.57339999999999,
+        55.744,
+        18.94399999999996
+      ],
+      "structure" : {
+        "group" : 6397,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30817
+      },
+      "text" : "Appendix B"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        552.19650000000001,
+        111.92000000000002,
+        12.019999999999982
+      ],
+      "structure" : {
+        "group" : 6439,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30902
+      },
+      "text" : "ADIN—AUTODIN service"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        539.69650000000001,
+        155.80000000000007,
+        12.019999999999982
+      ],
+      "text" : "ADIZ—air defense identification zone"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        527.19650000000001,
+        62.759999999999991,
+        12.019999999999982
+      ],
+      "text" : "ADJ—adjacent"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        514.69650000000001,
+        118.03000000000003,
+        12.019999999999982
+      ],
+      "text" : "ADL—aeronautical data-link"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        502.19649999999996,
+        88.589999999999975,
+        12.020000000000039
+      ],
+      "text" : "ADLY—arrival delay"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        489.69649999999996,
+        119.42000000000007,
+        12.019999999999982
+      ],
+      "text" : "ADO—airline dispatch office"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        477.19649999999996,
+        136.63999999999999,
+        12.019999999999982
+      ],
+      "text" : "ADP—automated data processing"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        464.69649999999996,
+        163.86000000000007,
+        12.019999999999982
+      ],
+      "text" : "ADS—automatic dependent surveillance"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        452.19649999999996,
+        171.10000000000002,
+        12.019999999999982
+      ],
+      "text" : "ADSIM —airfield delay simulation model"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        439.69649999999996,
+        173.34000000000003,
+        12.019999999999982
+      ],
+      "structure" : {
+        "group" : 6448,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30920
+      },
+      "text" : "ADSY—administrative equipment systems"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        427.19649999999996,
+        213.59000000000003,
+        12.019999999999982
+      ],
+      "text" : "ADTN—Administrative Data Transmission Network"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        414.69649999999996,
+        237.00099999999998,
+        12.019999999999982
+      ],
+      "text" : "ADTN2000—Administrative Data Transmission Network"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        402.48649999999998,
+        20,
+        11.470000000000027
+      ],
+      "text" : "2000"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        389.69649999999996,
+        120.82000000000005,
+        12.019999999999982
+      ],
+      "text" : "ADVO—administrative voice"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        377.19649999999996,
+        68.879999999999995,
+        12.019999999999982
+      ],
+      "text" : "ADZD—advised"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        364.69649999999996,
+        137.20000000000005,
+        12.019999999999982
+      ],
+      "text" : "AEG—Aircraft Evaluation Group"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        352.19649999999996,
+        185.79000000000008,
+        12.019999999999982
+      ],
+      "text" : "AERA—automated en route air traffic control"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        339.69649999999996,
+        114.15000000000003,
+        12.019999999999982
+      ],
+      "text" : "AEX—automated execution"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        327.19649999999996,
+        87.480000000000018,
+        12.019999999999982
+      ],
+      "text" : "AF—airway facilities"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        314.69649999999996,
+        90.54000000000002,
+        12.019999999999982
+      ],
+      "text" : "AFB—Air Force Base"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        302.19649999999996,
+        172.5,
+        12.019999999999982
+      ],
+      "text" : "AFIS—automated flight inspection system"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        289.69649999999996,
+        89.980000000000018,
+        12.019999999999982
+      ],
+      "text" : "AFP—area flight plan"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        277.19649999999996,
+        146.93000000000001,
+        12.019999999999982
+      ],
+      "text" : "AFRES—Air Force Reserve Station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        264.69649999999996,
+        123.31000000000006,
+        12.019999999999982
+      ],
+      "text" : "AFS—airways facilities sector"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        252.19649999999999,
+        107.76999999999998,
+        12.02000000000001
+      ],
+      "text" : "AFSFO—AFS field office"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        239.69649999999999,
+        99.450000000000045,
+        12.02000000000001
+      ],
+      "text" : "AFSFU—AFS field unit"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        227.19649999999999,
+        219.99000000000001,
+        12.02000000000001
+      ],
+      "text" : "AFSOU—AFS field office unit (standard is AFSFOU)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        214.69649999999999,
+        160.27000000000004,
+        12.02000000000001
+      ],
+      "text" : "AFSS—automated flight service station"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        202.19649999999999,
+        230.81000000000017,
+        12.02000000000001
+      ],
+      "text" : "AFTN—Automated Fixed Telecommunications Network"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        189.69649999999999,
+        191.93000000000006,
+        12.02000000000001
+      ],
+      "text" : "AGIS—airports geographic information system"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        177.19649999999999,
+        108.32000000000005,
+        12.02000000000001
+      ],
+      "text" : "AGL—above ground level"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        164.69649999999999,
+        125.54000000000002,
+        12.02000000000001
+      ],
+      "text" : "AID—airport information desk"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        152.19649999999999,
+        126.10000000000002,
+        12.02000000000001
+      ],
+      "text" : "AIG—Airbus Industries Group"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        139.69649999999999,
+        151.64000000000004,
+        12.02000000000001
+      ],
+      "text" : "AIM—Airman’s Information Manual"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        127.19649999999997,
+        128.32000000000005,
+        12.019999999999996
+      ],
+      "text" : "AlP—airport improvement plan"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        114.69649999999997,
+        202.75,
+        12.019999999999996
+      ],
+      "text" : "AIRMET—Airmen’s Meteorological Information"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        102.19649999999997,
+        190.84000000000003,
+        12.019999999999996
+      ],
+      "structure" : {
+        "group" : 6474,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30973
+      },
+      "text" : "AIRNET—Airport Network Simulation Model"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        89.696499999999972,
+        156.08000000000004,
+        12.019999999999996
+      ],
+      "text" : "AIS—aeronautical lnformation service"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        77.196499999999972,
+        151.09000000000003,
+        12.019999999999996
+      ],
+      "text" : "AlT—automated information transfer"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        64.696499999999972,
+        103.88,
+        12.019999999999996
+      ],
+      "text" : "ALP—airport layout plan"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        599.04649999999992,
+        486.03199999999981,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 6399,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 30820
+      },
+      "text" : "This is a list of common acronyms and abbreviations used in the aviation industry as well as NOTAM contractions. For"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        586.54649999999992,
+        486.00600000000009,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 6399,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 30821
+      },
+      "text" : "a more complete list of contractions used in aviation, see FAA Order JO 7340.2 (as amended). Additional information"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        574.04649999999992,
+        276.61000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 6399,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 30822
+      },
+      "text" : "regarding NOTAMs can be found at pilotweb.nas.faa.gov/PilotWeb/."
+    }
+  ],
+  "page" : 461,
+  "paints" : [
+    {
+      "frame" : true,
+      "rect" : [
+        75.579999999999998,
+        608.49800000000005,
+        445.31999999999999,
+        94.319999999999936
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        75.579999999999998,
+        608.49800000000005,
+        445.31999999999999,
+        94.319999999999936
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        70,
+        712.74220000000003,
+        59.744,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

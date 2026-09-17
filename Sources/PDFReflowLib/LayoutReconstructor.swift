@@ -1076,7 +1076,7 @@ enum LayoutReconstructor {
            !lines.contains(where: { $0 != line && sameRow($0.rect, line.rect) }) {
             return true
         }
-        return isProseRow(line, in: lines, body: body)
+        return isSentenceRow(line, in: lines) || isProseRow(line, in: lines, body: body)
     }
 
     /// A word whose equals signs belong to a web address's query string, not an equation: an
@@ -1101,6 +1101,98 @@ enum LayoutReconstructor {
             && line.text.range(of: #"^\p{Lu} = \p{Lu}\p{L}{2,}(?: [\p{L}()]{2,}){0,6}$"#, options: .regularExpression) != nil
     }
 
+    /// A sentence set on its own row beside a formula: it opens with a capital, closes with a full
+    /// stop, carries function words and no term or operator (FAA page 298's `The height of the
+    /// cloud base is 3,180 feet AGL.` beneath the worked example, #112). A derivation's
+    /// conclusion carries its terms (`x = 3.`) or reads as a label (`Infinite solutions`).
+    private static func isSentenceRow(_ line: TextLine, in lines: [TextLine]) -> Bool {
+        let text = line.text.trimmingCharacters(in: .whitespaces)
+        return text.first?.isUppercase == true && text.last == "." && wordShare(text).words >= 4 && isWordy(text)
+            && readsAsSentence(text) && text.rangeOfCharacter(from: rowMathSymbols) == nil && !text.contains("=")
+            && !lines.contains(where: { $0 != line && sameRow($0.rect, line.rect) })
+    }
+
+    /// A formula candidate that is the wrapped end of the sentence on the line above it: that line
+    /// reads as words and leaves its sentence open, and this one continues in lower case from its
+    /// left edge or hanging indent (FAA page 251's `2. Enter the moment for each item listed.
+    /// Remember` / `“weight x arm = moment.”`, #112). A display starts its own row with a term.
+    private static func continuesSentenceAbove(_ line: TextLine, in lines: [TextLine], body: CGFloat) -> Bool {
+        guard !lines.contains(where: { $0 != line && sameRow($0.rect, line.rect) }),
+              !line.rect.isEmpty, line.rect.height < line.fontSize * 2, isWordy(line.text) else { return false }
+        let quotes = CharacterSet(charactersIn: "\"'“‘(")
+        guard let opening = line.text.split(whereSeparator: \.isWhitespace).first.map({ String($0).trimmingCharacters(in: quotes) }),
+              opening.count >= 3, opening.first?.isLowercase == true,
+              opening.unicodeScalars.allSatisfy(CharacterSet.letters.contains) else { return false }
+        let above = lines.filter { other in
+            other != line && other.rect.minY > line.rect.midY && other.rect.minY - line.rect.maxY <= body * 0.9
+                && min(other.rect.maxX, line.rect.maxX) > max(other.rect.minX, line.rect.minX)
+        }
+        guard above.count == 1, let previous = above.first, !previous.monospaced,
+              abs(previous.fontSize - line.fontSize) <= line.fontSize * 0.1,
+              wordShare(previous.text).words >= 4, isWordy(previous.text),
+              let ending = previous.text.trimmingCharacters(in: .whitespaces).last, !".!?:;".contains(ending),
+              previous.text.rangeOfCharacter(from: rowMathSymbols) == nil, !previous.text.contains("=") else { return false }
+        return line.rect.minX >= previous.rect.minX - body * 0.5 && line.rect.minX <= previous.rect.minX + body * 2.5
+            && line.rect.maxX <= previous.rect.maxX + body * 0.5
+    }
+
+    /// Art set behind a title, found from the title lines a painted cluster touches (#111, #112).
+    /// `nil`: not title art. `.some(nil)`: decoration to drop. `.some(rect)`: the art's part beside
+    /// the title, which stays a crop.
+    ///
+    /// - A drop shadow is an offset, blurred copy of its title: the titles' rectangles cover at
+    ///   least 60% of it and it reaches no further than one type size beyond them (FAA's appendix
+    ///   and chapter-opener titles, pages 3, 453, 461, 473 and 477; PDFKit merges page 473's title
+    ///   with `Appendix C` into one line whose rectangle starts at x −18.7, 27 pt short of the
+    ///   shadow's right end). It is decoration; the title reflows as a heading,
+    ///   and a body line its blur touches (page 461) reflows too.
+    /// - A band is a strip no taller than twice its one title's line, set level with the title and
+    ///   touching no other text (DGA page 9's section bands under `Young Adulthood`, `Pregnant
+    ///   Women` and `Lactating Women`). A band the title overhangs keeps its part beyond the title,
+    ///   as the band beside `Older Adults` (0.9 pt clear of its title) always did; a band that holds
+    ///   the whole title is the title's background and is dropped.
+    ///
+    /// Title type is at least 1.25 body (the heading threshold of `blocks`) and carries a word.
+    /// Paint order is not recorded in the page model, so the evidence is the art's shape: a figure
+    /// behind a title extends well beyond it or holds other text.
+    private static func titleArt(_ rect: CGRect, in lines: [TextLine], body: CGFloat) -> CGRect?? {
+        guard !isThinRule(rect), rect.width > 0, rect.height > 0 else { return nil }
+        let touching = lines.filter { $0.rect.intersects(rect) }
+        let titles = touching.filter { line in
+            !line.monospaced && line.fontSize >= body * 1.25
+                && line.text.range(of: #"\p{L}{3,}"#, options: .regularExpression) != nil
+        }
+        guard !titles.isEmpty else { return nil }
+        let others = touching.filter { !titles.contains($0) }
+        let size = titles.map(\.fontSize).max() ?? body
+        let hull = union(titles.map(\.rect))
+        func area(_ r: CGRect) -> CGFloat { r.isNull ? 0 : r.width * r.height }
+        // Stacked title lines' rectangles overlap; count their shared part once.
+        var covered = titles.reduce(CGFloat(0)) { $0 + area($1.rect.intersection(rect)) }
+        for (offset, a) in titles.enumerated() {
+            for b in titles.dropFirst(offset + 1) { covered -= area(a.rect.intersection(b.rect).intersection(rect)) }
+        }
+        // Another line may only graze the shadow's blur (page 461's first body line, 2 pt of 11.5).
+        let grazed = others.allSatisfy { other in
+            min(other.rect.maxY, rect.maxY) - max(other.rect.minY, rect.minY) <= other.rect.height * 0.25
+        }
+        if grazed, hull.insetBy(dx: -size, dy: -size).contains(rect), covered >= area(rect) * 0.6 {
+            return .some(nil)
+        }
+        guard titles.count == 1, others.isEmpty, let title = titles.first,
+              rect.height <= title.rect.height * 2, rect.width >= rect.height * 3,
+              rect.minY <= title.rect.minY + 2, rect.maxY >= title.rect.maxY - 2 else { return nil }
+        let gap: CGFloat = 0.5
+        var kept: CGRect?
+        if title.rect.minX < rect.minX, title.rect.maxX < rect.maxX {
+            kept = CGRect(x: title.rect.maxX + gap, y: rect.minY, width: rect.maxX - title.rect.maxX - gap, height: rect.height)
+        } else if title.rect.maxX > rect.maxX, title.rect.minX > rect.minX {
+            kept = CGRect(x: rect.minX, y: rect.minY, width: title.rect.minX - gap - rect.minX, height: rect.height)
+        }
+        guard let band = kept, band.width >= rect.height else { return .some(nil) }
+        return .some(band)
+    }
+
     /// Expand crops to whole intersecting text lines so a label cannot be cut in half.
     static func graphicsWithLabels(_ page: PageContent) -> [CGRect] {
         let body = max(4, bodySize(page.lines))
@@ -1118,6 +1210,7 @@ enum LayoutReconstructor {
             let equation = words.count <= 12 && words.contains { $0.contains("=") && !isURLQuery($0) }
                 && !isLetterMnemonic(line)
             return (symbols || equation) && !isProseRow(line, in: page.lines, body: body)
+                && !continuesSentenceAbove(line, in: page.lines, body: body)
         }.map { line -> CGRect in
             var seed = line.rect.insetBy(dx: -4, dy: -8)
             for other in page.lines where other != line && seed.intersects(other.rect)
@@ -1157,6 +1250,7 @@ enum LayoutReconstructor {
                isProseRow(owner, in: page.lines, body: body) {
                 return nil
             }
+            if let art = titleArt(rect, in: page.lines, body: body) { return art }
             guard isThinRule(rect) else { return rect }
             if tables.contains(where: { $0.contains(rect) }) || floats.decorations.contains(rect) { return nil }
             // A fraction bar keeps the terms it touches, as any intersecting graphic does.
@@ -1840,7 +1934,14 @@ enum LayoutReconstructor {
                   let left = lines.map({ $0.rect.minX }).min(), let right = lines.map({ $0.rect.maxX }).max(),
                   let next = elements[(last + 1)...].lazy.compactMap(\.line)
                     .first(where: { $0.rect.minX < right && $0.rect.maxX > left }),
-                  !headingTypography(next), left <= next.rect.minX + body else { return nil }
+                  left <= next.rect.minX + body else { return nil }
+            // A page title stacked over a smaller section title on its edge introduces that section
+            // (DGA page 7's `Special Populations & Considerations` over `Infancy & Early Childhood`,
+            // whose band crop hid it until #111). A label over a larger title (the Fed's cover) does not.
+            if headingTypography(next) {
+                guard let smallest = lines.map(\.fontSize).min(), next.fontSize <= smallest * 0.9,
+                      abs(next.rect.minX - left) <= body else { return nil }
+            }
             return group
         })
         // A paragraph group can also be a title that the page's own label test cannot see, because
@@ -2382,6 +2483,8 @@ enum LayoutReconstructor {
         flushNote()
         flushTagged()
         flush()
+        joinColumnContinuations(&result, page: page, images: images.map(\.0) + clusters(page.tints, distance: 4),
+                                vocabulary: vocabulary, warnings: &warnings)
         for note in footnotes?.notes ?? [] {
             var text = FootnoteDetector.normalizedMarker(elements[note.range.lowerBound].line!.content)
             for index in note.range.dropFirst() {
@@ -2648,6 +2751,72 @@ enum LayoutReconstructor {
         // preformatted because its marker is. Only the item continues as running text.
         if case .preformatted = blocks[previous].content, last.monospaced { return nil }
         return (previous, next)
+    }
+
+    /// A paragraph that ends one column's foot continues at the next column's head on the same
+    /// page (DGA page 9, `Older Adults`: `…dairy, meats, seafood,` / `eggs, legumes…`, #111).
+    /// Tags join a tagged page's columns; untagged text had no such join. The evidence is the
+    /// cross-page rule's (#45): the paragraphs are adjacent in reading order apart from figures,
+    /// captions and folios; neither carries a different validated identity; the next text starts
+    /// lowercase and the previous one leaves its sentence open; both anchor lines read as prose
+    /// and the last fills its column. Geometry replaces the page ends: the next paragraph's first
+    /// line sits in a column to the right whose head is higher than the last line; no prose lies
+    /// below the last line in its span, between the two columns, or above the first line in its
+    /// span. Stacked sections above do not compete: the search stops at the lowest line, figure
+    /// or box above the first line that crosses the gutter (DGA's section band), so the columns
+    /// of earlier sections are not this section's text.
+    private static func joinColumnContinuations(_ blocks: inout [ReflowBlock], page: PageContent, images: [CGRect],
+                                                vocabulary: Set<String>, warnings: inout [ConversionWarning]) {
+        let body = max(4, bodySize(page.lines))
+        var index = 0
+        while index < blocks.count {
+            defer { index += 1 }
+            guard let left = joinableText(blocks[index].content) else { continue }
+            var next = index + 1
+            while next < blocks.count, isSkippable(blocks[next], page: page) { next += 1 }
+            guard next < blocks.count, case let .paragraph(right) = blocks[next].content,
+                  continuesColumn(left, blocks[index], into: right, blocks[next], page: page, images: images, body: body)
+            else { continue }
+            let text = join(left, right, vocabulary: vocabulary, page: page.number, warnings: &warnings)
+            if case .preformatted = blocks[index].content { blocks[index].content = .preformatted(text) }
+            else { blocks[index].content = .paragraph(text) }
+            // Figures and captions between the column's foot and the next column's head follow
+            // the sentence rather than interrupt it.
+            let between = Array(blocks[(index + 1)..<next])
+            blocks.replaceSubrange((index + 1)...next, with: between)
+            index -= 1
+        }
+    }
+
+    private static func continuesColumn(_ left: InlineText, _ leftBlock: ReflowBlock, into right: InlineText,
+                                        _ rightBlock: ReflowBlock, page: PageContent, images: [CGRect],
+                                        body: CGFloat) -> Bool {
+        if let leftGroup = leftBlock.structureGroup, let rightGroup = rightBlock.structureGroup,
+           leftGroup != rightGroup { return false }
+        guard right.text.first?.isLowercase == true, !endsSentence(left),
+              let last = lastLine(of: left.text, in: page.lines),
+              let first = firstLine(of: right.text, in: page.lines),
+              wordCount(first.text) >= 2, readsAsProse(last.text), readsAsProse(first.text),
+              first.rect.minX >= last.rect.maxX - body * 0.5, first.rect.midY > last.rect.midY,
+              fillsColumn(last, in: page.lines, body: body) else { return false }
+        if case .preformatted = leftBlock.content, last.monospaced { return false }
+        // The lowest element over the first line that crosses the gutter bounds the section.
+        let gutter = (start: last.rect.maxX, end: first.rect.minX)
+        let ceiling = (page.lines.map(\.rect) + images)
+            .filter { $0.minX < gutter.start && $0.maxX > gutter.end && $0.midY > first.rect.maxY }
+            .map(\.minY).min() ?? .infinity
+        let separator = page.lines.filter { FootnoteDetector.isSeparator($0) && $0.rect.midY < last.rect.minY }
+            .map(\.rect.minY).max()
+        return !page.lines.contains { other in
+            guard other != last, other != first, other.rect.midY < ceiling else { return false }
+            if let separator, other.rect.midY < separator, other.fontSize <= last.fontSize * 0.9 { return false }
+            let below = other.rect.midY < last.rect.minY && other.rect.maxX > last.rect.minX && other.rect.minX < last.rect.maxX
+            let between = other.rect.minX >= last.rect.maxX && other.rect.maxX <= first.rect.minX
+            let above = other.rect.midY > first.rect.maxY && other.rect.maxX > first.rect.minX && other.rect.minX < first.rect.maxX
+            return below && isProse(other, beside: last, share: 0.5, page: page, images: images)
+                || between && isProse(other, beside: last, share: 0.9, page: page, images: images)
+                || above && isProse(other, beside: first, share: 0.5, page: page, images: images)
+        }
     }
 
     /// The text a page-crossing join may continue: a body paragraph, or the wrapped line of a

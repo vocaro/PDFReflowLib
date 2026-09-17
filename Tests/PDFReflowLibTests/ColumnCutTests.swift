@@ -85,20 +85,22 @@ private func expectCharactersConserved(_ page: PageContent, _ blocks: [ReflowBlo
 @Test(arguments: [
     ("faa-165", "7-5",
      ["Figure 7-6. Changes in propeller blade angle", "throughout its entire length would be inefficient",
-      "Fixed-Pitch Propeller", "simplicity, and low cost are needed.", "climb or cruise propeller",
-      "Figure 7-7. Relationship of travel distance"],
-     ["installed depends upon its intended use.", "The cruise propeller has a higher pitch",
+      "Fixed-Pitch Propeller", "simplicity, and low cost are needed.", "climb or cruise propeller"],
+     // The column's last sentence continues at the right column's head (#111); the caption
+     // between them follows the joined paragraph.
+     ["installed depends upon its intended use.", "Figure 7-7. Relationship of travel distance",
+      "The cruise propeller has a higher pitch",
       "When operating altitude increases", "Figure 7-8. Engine rpm"]),
     ("faa-199", "7-39",
      ["Figure 7-45. Continuous flow mask", "breathing cycle because oxygen is only delivered during",
       "altitude is increased. [Figure 7-46]", "Pulse Oximeters", "oxygen. [Figure 7-47]",
       "Servicing of Oxygen Systems", "whenever aircraft oxygen"],
-     ["Figure 7-46. EDS-011", "systems are to be serviced.", "free of oil, grease,", "Figure 7-47. Onyx"]),
+     ["systems are to be serviced.", "free of oil, grease,", "Figure 7-46. EDS-011", "Figure 7-47. Onyx"]),
     ("faa-262", "11-6",
      ["Figure 11-5. Drag versus speed.", "aircraft is operated in steady, level flight at twice",
       "When an aircraft is in steady, level flight", "The maximum level flight speed", "Climb Performance",
-      "acquires mechanical energy when it moves.", "Figure 11-6. Power versus speed."],
-     ["energy comes in two forms", "Aircraft motion (KE) is described", "We sometimes use the terms",
+      "acquires mechanical energy when it moves."],
+     ["energy comes in two forms", "Figure 11-6. Power versus speed.", "Aircraft motion (KE) is described", "We sometimes use the terms",
       "Positive climb performance occurs", "As an example of factor 2"]),
 ])
 func figureOverhangingTheGutterJoinsItsColumn(name: String, folio: String, left: [String], right: [String]) throws {
@@ -184,8 +186,8 @@ func figureOverhangingTheGutterJoinsItsColumn(name: String, folio: String, left:
       "true course) and another at 45°", "Figure 16-20. The wind triangle"]),
     ("faa-108", "5-11", false,
      ["Ground Effect", "When an aircraft in flight comes", "While the aerodynamic characteristics",
-      "downwash, and wingtip vortices.", "Figure 5-16. Ground effect changes airflow.",
-      "the spanwise lift distribution", "Ground effect also alters", "In order for ground effect",
+      "downwash, and wingtip vortices.", "the spanwise lift distribution",
+      "Figure 5-16. Ground effect changes airflow.", "Ground effect also alters", "In order for ground effect",
       "Figure 5-17. Ground effect changes drag and lift."]),
     ("faa-439", "17-17", false,
      ["and use of marijuana", "Stimulants are drugs that excite", "stimulant reaction, even though",
@@ -212,8 +214,10 @@ func fullMeasureFigureReadsApartFromTheColumns(name: String, folio: String, figu
 // it lies below all column text. Page 194's `Figure 7-38` is under its photo in the left column,
 // above the full-width figure 7-39; page 19's photo caption wraps below the right column's foot.
 @Test(arguments: [
-    ("faa-194", "7-34", ["Landing gear can also be classified", "Figure 7-38. Tailwheel landing gear.",
-                         "maintenance. Retractable landing gear", "Pressurized Aircraft",
+    // The left column's last sentence continues at the right column's head (#111), so the caption
+    // follows that joined paragraph, still ahead of the right column's next section.
+    ("faa-194", "7-34", ["Landing gear can also be classified", "maintenance. Retractable landing gear",
+                         "Figure 7-38. Tailwheel landing gear.", "Pressurized Aircraft",
                          "Figure 7-39. Fixed (left) and retractable (right) gear airplanes."]),
     ("faa-19", "1-4", ["United States. This legislation", "The Air Commerce Act charged",
                        "Figure 1-5. The de Haviland DH-4 on the New York to San Francisco inaugural route in 1921.",

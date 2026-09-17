@@ -1,0 +1,23 @@
+0 shadow: no coverage test: killed ['titleArtRequiresAShadowOrABandShape'] Test run with 11 tests in 0 suites failed after 0.028 seconds with 1 issue.
+1 shadow: no extent bound: killed ['titleArtRequiresAShadowOrABandShape'] Test run with 11 tests in 0 suites failed after 0.027 seconds with 1 issue.
+2 shadow: any line may touch: killed ['titleArtRequiresAShadowOrABandShape'] Test run with 11 tests in 0 suites failed after 0.027 seconds with 1 issue.
+3 title: any type size: killed ['titleArtRequiresAShadowOrABandShape'] Test run with 11 tests in 0 suites failed after 0.027 seconds with 2 issues.
+4 band: other lines may touch: killed ['titleArtRequiresAShadowOrABandShape'] Test run with 11 tests in 0 suites failed after 0.028 seconds with 1 issue.
+5 band: any height: killed ['titleArtRequiresAShadowOrABandShape'] Test run with 11 tests in 0 suites failed after 0.028 seconds with 1 issue.
+6 band: dropped instead of trimmed: killed ['sectionBandsKeepOnlyTheirPartBesideTheTitle', 'titleArtRequiresAShadowOrABandShape'] Test run with 11 tests in 0 suites failed after 0.027 seconds with 3 issues.
+7 wrapped end: rule off: killed ['formulaMarginSentenceAndWrappedEndControls', 'wrappedSentenceEndIsNotAFormula'] Test run with 11 tests in 0 suites failed after 0.028 seconds with 6 issues.
+8 wrapped end: line above may close its sentence: killed ['formulaMarginSentenceAndWrappedEndControls'] Test run with 11 tests in 0 suites failed after 0.028 seconds with 1 issue.
+9 wrapped end: opening term allowed: killed ['formulaMarginSentenceAndWrappedEndControls'] Test run with 11 tests in 0 suites failed after 0.028 seconds with 1 issue.
+10 sentence row: rule off: killed ['formulaMarginSentenceAndWrappedEndControls', 'sentenceBeneathADisplayIsNotItsMargin'] Test run with 11 tests in 0 suites failed after 0.028 seconds with 2 issues.
+11 sentence row: operators allowed: killed ['formulaMarginSentenceAndWrappedEndControls'] Test run with 11 tests in 0 suites failed after 0.027 seconds with 1 issue.
+12 sentence row: no capital or full stop needed: killed ['formulaMarginSentenceAndWrappedEndControls'] Test run with 11 tests in 0 suites failed after 0.027 seconds with 1 issue.
+13 column join: rule off: killed ['columnContinuationGuards', 'columnContinuationJoinsBelowASectionBand', 'dgaOlderAdultsReadsEachColumnWhole'] Test run with 11 tests in 0 suites failed after 0.027 seconds with 6 issues.
+14 column join: uppercase continuation: killed ['columnContinuationGuards'] Test run with 11 tests in 0 suites failed after 0.029 seconds with 1 issue.
+15 column join: closed sentence: killed ['columnContinuationGuards'] Test run with 11 tests in 0 suites failed after 0.028 seconds with 1 issue.
+16 column join: no fill test: killed ['columnContinuationGuards'] Test run with 11 tests in 0 suites failed after 0.033 seconds with 1 issue.
+17 column join: identities ignored: killed ['columnContinuationGuards'] Test run with 11 tests in 0 suites failed after 0.028 seconds with 1 issue.
+18 column join: prose below allowed: killed ['columnContinuationGuards'] Test run with 11 tests in 0 suites failed after 0.028 seconds with 1 issue.
+19 column join: prose between allowed: killed ['columnContinuationGuards'] Test run with 11 tests in 0 suites failed after 0.028 seconds with 1 issue.
+20 column join: prose above allowed: killed ['columnContinuationGuards', 'columnContinuationJoinsBelowASectionBand'] Test run with 11 tests in 0 suites failed after 0.028 seconds with 2 issues.
+21 column join: no section ceiling: killed ['columnContinuationGuards', 'columnContinuationJoinsBelowASectionBand', 'dgaOlderAdultsReadsEachColumnWhole'] Test run with 11 tests in 0 suites failed after 0.033 seconds with 4 issues.
+22 stacked titles: refinement off: killed ['pageTitleOverASmallerSectionTitleStaysAHeading'] Test run with 11 tests in 0 suites failed after 0.033 seconds with 1 issue.

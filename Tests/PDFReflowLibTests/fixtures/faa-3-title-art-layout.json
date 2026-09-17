@@ -1,0 +1,701 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        551.33500000000004,
+        33.709700000000005,
+        6.6599999999999682,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "iii"
+        }
+      ],
+      "text" : "iii"
+    },
+    {
+      "rect" : [
+        72,
+        673.54999999999995,
+        116.78399999999999,
+        56.831999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 48,
+          "text" : "Preface"
+        }
+      ],
+      "text" : "Preface"
+    },
+    {
+      "rect" : [
+        72,
+        583.99599999999998,
+        486.13490000000002,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10,
+          "text" : "is handbook"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " provides "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "basic knowledge that is essential for pilots. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10,
+          "text" : "It"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " introduces pilots to the broad spectrum of"
+        }
+      ],
+      "text" : "This handbook provides the basic knowledge that is essential for pilots. It introduces pilots to the broad spectrum of"
+    },
+    {
+      "rect" : [
+        71.999999999999943,
+        572.06600000000003,
+        486.16699999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "knowledge that will be needed as they progress in their pilot training. Except for the Code of Federal Regulations"
+        }
+      ],
+      "text" : "knowledge that will be needed as they progress in their pilot training. Except for the Code of Federal Regulations"
+    },
+    {
+      "rect" : [
+        71.999999999999943,
+        559.56600000000003,
+        486.161,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pertinent to civil aviation, most of the knowledge areas applicable to pilot certification are presented. This handbook is"
+        }
+      ],
+      "text" : "pertinent to civil aviation, most of the knowledge areas applicable to pilot certification are presented. This handbook is"
+    },
+    {
+      "rect" : [
+        71.999999999999943,
+        547.06600000000003,
+        339.95999999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "useful to beginning pilots, as well as those pursuing more advanced pilot certificates."
+        }
+      ],
+      "text" : "useful to beginning pilots, as well as those pursuing more advanced pilot certificates."
+    },
+    {
+      "rect" : [
+        71.999999999999943,
+        522.06600000000003,
+        486.1359999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Occasionally the word “must” or similar language is used where the desired action is deemed critical. The use of such"
+        }
+      ],
+      "text" : "Occasionally the word “must” or similar language is used where the desired action is deemed critical. The use of such"
+    },
+    {
+      "rect" : [
+        72,
+        509.56600000000003,
+        486.09699999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "language is not intended to add to, interpret, or relieve a duty imposed by Title 14 of the Code of Federal Regulations (14"
+        }
+      ],
+      "text" : "language is not intended to add to, interpret, or relieve a duty imposed by Title 14 of the Code of Federal Regulations (14"
+    },
+    {
+      "rect" : [
+        72,
+        497.06600000000003,
+        24.730000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "CFR)."
+        }
+      ],
+      "text" : "CFR)."
+    },
+    {
+      "rect" : [
+        72,
+        472.06600000000003,
+        486.1099999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "It is essential for persons using this handbook to become familiar with and apply the pertinent parts of 14 CFR and the"
+        }
+      ],
+      "text" : "It is essential for persons using this handbook to become familiar with and apply the pertinent parts of 14 CFR and the"
+    },
+    {
+      "rect" : [
+        72,
+        459.56600000000003,
+        486.04660000000035,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Aeronautical Information Manual (AIM). The AIM is available online at www.faa.gov. The current Flight Standards"
+        }
+      ],
+      "text" : "Aeronautical Information Manual (AIM). The AIM is available online at www.faa.gov. The current Flight Standards"
+    },
+    {
+      "rect" : [
+        71.999999999999986,
+        447.06600000000003,
+        485.89199999999983,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Service airman training and testing material and learning statements for all airman certificates and ratings can be obtained"
+        }
+      ],
+      "text" : "Service airman training and testing material and learning statements for all airman certificates and ratings can be obtained"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        434.56600000000003,
+        78.310000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "from www.faa.gov."
+        }
+      ],
+      "text" : "from www.faa.gov."
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        408.99600000000004,
+        486.16700000000003,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "This handbook supersedes FAA-H-8083-25"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "B"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ", Pilot’s Handbook of Aeronautical Knowledge, dated "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "2016; the Pilot’s"
+        }
+      ],
+      "text" : "This handbook supersedes FAA-H-8083-25B, Pilot’s Handbook of Aeronautical Knowledge, dated 2016; the Pilot’s"
+    },
+    {
+      "rect" : [
+        72,
+        396.99600000000004,
+        486.17400000000009,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Handbook of Aeronautical Knowledge Addendum A, dated February 2021; the Pilot’s Handbook of Aeronautical"
+        }
+      ],
+      "text" : "Handbook of Aeronautical Knowledge Addendum A, dated February 2021; the Pilot’s Handbook of Aeronautical"
+    },
+    {
+      "rect" : [
+        72,
+        384.99600000000004,
+        486.16500000000008,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "Knowledge Addendum B, dated January 2022; and the Pilot’s Handbook of Aeronautical Knowledge Addendum C,"
+        }
+      ],
+      "text" : "Knowledge Addendum B, dated January 2022; and the Pilot’s Handbook of Aeronautical Knowledge Addendum C,"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        372.99600000000004,
+        75.254999999999995,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "dated March 2023."
+        }
+      ],
+      "text" : "dated March 2023."
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        348.56600000000003,
+        309.67999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "This handbook is available for download, in PDF format, from www.faa.gov."
+        }
+      ],
+      "text" : "This handbook is available for download, in PDF format, from www.faa.gov."
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        323.56600000000003,
+        485.77099999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "This handbook is published by the United States Department of Transportation, Federal Aviation Administration, Airman"
+        }
+      ],
+      "text" : "This handbook is published by the United States Department of Transportation, Federal Aviation Administration, Airman"
+    },
+    {
+      "rect" : [
+        72,
+        311.06600000000003,
+        330.26999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Testing Standards Branch, AFS-630, P.O. Box 25082, Oklahoma City, OK 73125."
+        }
+      ],
+      "text" : "Testing Standards Branch, AFS-630, P.O. Box 25082, Oklahoma City, OK 73125."
+    },
+    {
+      "rect" : [
+        72,
+        285.49600000000004,
+        352.4380000000001,
+        13.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Comments regarding this publication should be "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 10,
+          "text" : "emailed to AFS630comments@faa.gov."
+        }
+      ],
+      "text" : "Comments regarding this publication should be emailed to AFS630comments@faa.gov."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      76.549199999999999,
+      670.84400000000005,
+      122.0398,
+      47.519999999999982
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        551.33500000000004,
+        33.709700000000005,
+        6.6599999999999682,
+        12.310000000000002
+      ],
+      "structure" : {
+        "group" : 1,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 1
+      },
+      "text" : "iii"
+    },
+    {
+      "fontSize" : 48,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        673.54999999999995,
+        116.78399999999999,
+        56.831999999999994
+      ],
+      "text" : "Preface"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        583.99599999999998,
+        486.13490000000002,
+        13.470000000000027
+      ],
+      "text" : "This handbook provides the basic knowledge that is essential for pilots. It introduces pilots to the broad spectrum of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999943,
+        572.06600000000003,
+        486.16699999999997,
+        11.470000000000027
+      ],
+      "text" : "knowledge that will be needed as they progress in their pilot training. Except for the Code of Federal Regulations"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999943,
+        559.56600000000003,
+        486.161,
+        11.470000000000027
+      ],
+      "text" : "pertinent to civil aviation, most of the knowledge areas applicable to pilot certification are presented. This handbook is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999943,
+        547.06600000000003,
+        339.95999999999987,
+        11.470000000000027
+      ],
+      "text" : "useful to beginning pilots, as well as those pursuing more advanced pilot certificates."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999943,
+        522.06600000000003,
+        486.1359999999998,
+        11.470000000000027
+      ],
+      "text" : "Occasionally the word “must” or similar language is used where the desired action is deemed critical. The use of such"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        509.56600000000003,
+        486.09699999999998,
+        11.470000000000027
+      ],
+      "text" : "language is not intended to add to, interpret, or relieve a duty imposed by Title 14 of the Code of Federal Regulations (14"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        497.06600000000003,
+        24.730000000000004,
+        11.470000000000027
+      ],
+      "text" : "CFR)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        472.06600000000003,
+        486.1099999999999,
+        11.470000000000027
+      ],
+      "text" : "It is essential for persons using this handbook to become familiar with and apply the pertinent parts of 14 CFR and the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        459.56600000000003,
+        486.04660000000035,
+        11.470000000000027
+      ],
+      "text" : "Aeronautical Information Manual (AIM). The AIM is available online at www.faa.gov. The current Flight Standards"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999986,
+        447.06600000000003,
+        485.89199999999983,
+        11.470000000000027
+      ],
+      "text" : "Service airman training and testing material and learning statements for all airman certificates and ratings can be obtained"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        434.56600000000003,
+        78.310000000000002,
+        11.470000000000027
+      ],
+      "text" : "from www.faa.gov."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        408.99600000000004,
+        486.16700000000003,
+        13.470000000000027
+      ],
+      "text" : "This handbook supersedes FAA-H-8083-25B, Pilot’s Handbook of Aeronautical Knowledge, dated 2016; the Pilot’s"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        396.99600000000004,
+        486.17400000000009,
+        13.470000000000027
+      ],
+      "text" : "Handbook of Aeronautical Knowledge Addendum A, dated February 2021; the Pilot’s Handbook of Aeronautical"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        384.99600000000004,
+        486.16500000000008,
+        13.470000000000027
+      ],
+      "text" : "Knowledge Addendum B, dated January 2022; and the Pilot’s Handbook of Aeronautical Knowledge Addendum C,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        372.99600000000004,
+        75.254999999999995,
+        13.470000000000027
+      ],
+      "text" : "dated March 2023."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        348.56600000000003,
+        309.67999999999995,
+        11.470000000000027
+      ],
+      "text" : "This handbook is available for download, in PDF format, from www.faa.gov."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        323.56600000000003,
+        485.77099999999996,
+        11.470000000000027
+      ],
+      "text" : "This handbook is published by the United States Department of Transportation, Federal Aviation Administration, Airman"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        311.06600000000003,
+        330.26999999999998,
+        11.470000000000027
+      ],
+      "text" : "Testing Standards Branch, AFS-630, P.O. Box 25082, Oklahoma City, OK 73125."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        285.49600000000004,
+        352.4380000000001,
+        13.470000000000027
+      ],
+      "text" : "Comments regarding this publication should be emailed to AFS630comments@faa.gov."
+    }
+  ],
+  "page" : 3,
+  "paints" : [
+    {
+      "frame" : true,
+      "rect" : [
+        76.549199999999999,
+        670.84400000000005,
+        122.0398,
+        47.519999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        76.549199999999999,
+        670.84400000000005,
+        122.0398,
+        47.519999999999982
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

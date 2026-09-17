@@ -1,0 +1,272 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        542.43849999999998,
+        33.709700000000005,
+        15.559999999999945,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "A-1"
+        }
+      ],
+      "text" : "A-1"
+    },
+    {
+      "rect" : [
+        131,
+        152.29460639999999,
+        379.19999150000001,
+        422.39999060000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        72,
+        581.3451,
+        390.69000000000011,
+        21.312000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 18,
+          "text" : "Short Field Takeoff Distance at 2,450 Pounds for a Cessna Model 172R"
+        }
+      ],
+      "text" : "Short Field Takeoff Distance at 2,450 Pounds for a Cessna Model 172R"
+    },
+    {
+      "rect" : [
+        72,
+        658.29169999999999,
+        442.89599999999996,
+        56.831999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 48,
+          "text" : "Performance Data for Cessna"
+        }
+      ],
+      "text" : "Performance Data for Cessna"
+    },
+    {
+      "rect" : [
+        72,
+        616.29169999999999,
+        459.4079999999999,
+        56.831999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 48,
+          "text" : "Model 172R and Challenger 605"
+        }
+      ],
+      "text" : "Model 172R and Challenger 605"
+    },
+    {
+      "rect" : [
+        72,
+        713.57339999999999,
+        55.343999999999994,
+        18.94399999999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 16,
+          "text" : "Appendix A"
+        }
+      ],
+      "text" : "Appendix A"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      74.5,
+      153.5,
+      434.70000000000005,
+      443.58000000000004
+    ],
+    [
+      76.659999999999997,
+      604.89800000000002,
+      464.40000000000009,
+      98.279999999999973
+    ],
+    [
+      70,
+      712.74220000000003,
+      59.346000000000004,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        542.43849999999998,
+        33.709700000000005,
+        15.559999999999945,
+        12.310000000000002
+      ],
+      "structure" : {
+        "group" : 6384,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30796
+      },
+      "text" : "A-1"
+    },
+    {
+      "fontSize" : 18,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        581.3451,
+        390.69000000000011,
+        21.312000000000012
+      ],
+      "structure" : {
+        "group" : 6388,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30802
+      },
+      "text" : "Short Field Takeoff Distance at 2,450 Pounds for a Cessna Model 172R"
+    },
+    {
+      "fontSize" : 48,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        658.29169999999999,
+        442.89599999999996,
+        56.831999999999994
+      ],
+      "text" : "Performance Data for Cessna"
+    },
+    {
+      "fontSize" : 48,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        616.29169999999999,
+        459.4079999999999,
+        56.831999999999994
+      ],
+      "text" : "Model 172R and Challenger 605"
+    },
+    {
+      "fontSize" : 16,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        713.57339999999999,
+        55.343999999999994,
+        18.94399999999996
+      ],
+      "structure" : {
+        "group" : 6386,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 30798
+      },
+      "text" : "Appendix A"
+    }
+  ],
+  "page" : 453,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        131,
+        153.5,
+        378.20000000000005,
+        420.13599999999997
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        74.5,
+        572.24000000000001,
+        399.60000000000002,
+        24.840000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        74.5,
+        572.24000000000001,
+        399.60000000000002,
+        24.840000000000032
+      ]
+    },
+    {
+      "frame" : true,
+      "rect" : [
+        76.659999999999997,
+        604.89800000000002,
+        464.40000000000009,
+        98.279999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        76.659999999999997,
+        604.89800000000002,
+        464.40000000000009,
+        98.279999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        70,
+        712.74220000000003,
+        59.346000000000004,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

@@ -795,8 +795,9 @@ test. The FAA contract checks separated rows, addresses and checklist entries on
 and [#105](https://github.com/vocaro/PDFReflowLib/issues/105). The `dga-4` fixture, reconstructed without
 graphics as the pipeline does for its page-sized background, must read the right column's last bullet,
 its `- Vegetables` and `- Fruits` sub-items, `Incorporate Healthy Fats` and that section's first bullet
-consecutively. The `dga-9` fixture must read `Older Adults`, its band, the left column's five lines as
-one paragraph and then the right column's five, with the tagged sections still whole. Synthetic
+consecutively. The `dga-9` fixture must read `Older Adults`, its band, then the bullet as one paragraph
+(its left column's five lines continue at the right column's head since #111), with the tagged sections
+still whole. Synthetic
 controls: a title over two columns and a heading 14 pt beneath them with 15 pt beneath the heading
 (`trailingHeading`), where a body-type line, a list line or a heading without its own 1.1-body band
 stays; and stacked sections joined by a heading row with its band (`headingRow`), refused without a
@@ -810,6 +811,33 @@ guards fails a test. The Dietary
 Guidelines contract checks page 4's order and page 9's columns, and the FAA contract checks the absent
 folios on pages 7, 12 and 15. See the
 [DGA bullets and contents folio evidence](../measurements/dga-bullets-and-contents-folio/record.md).
+
+## Titles over art, worked-example prose and same-page column continuations
+
+`TitlesAndProseInCropsTests.swift` covers [#111](https://github.com/vocaro/PDFReflowLib/issues/111) and
+[#112](https://github.com/vocaro/PDFReflowLib/issues/112). Source-derived `faa-{3,461,473,477}-title-art`
+fixtures must keep each title (and page 461's first body line) outside every crop and read it as a
+heading, with page 473's figure still one crop; `faa-453-title-art` keeps the performance figure whole
+with its in-frame table title while the appendix title reflows. `dga-9` must keep each section band
+only beyond its title (the `Older Adults` band unchanged) and read all four titles as headings, and
+`dga-7` must keep `Special Populations & Considerations` a heading over the section title it
+introduces. `faa-251-worked-example` must reflow steps 2 and 3 with the quoted `“weight x arm =
+moment.”` and keep both figure crops; `faa-298-worked-example` must reflow the closing sentence while
+every displayed line stays cropped. `dga-9` must join the `Older Adults` bullet across its columns
+beneath the section band and refuse the join without the bands' crops. Synthetic controls refuse title
+art for a figure extending below the title, art the title covers for less than 60% (also within its
+extent), art reaching more than one type size beyond it (then a trimmed band), a shadow another line
+overlaps, a band touching another line, a band taller than twice the title row and body-size text; they
+refuse the formula-margin sentence without a capital and full stop or with a term, and the wrapped
+sentence end under a closed sentence or opening with a term; and they refuse the column join for a
+closed sentence, an uppercase continuation, an unfilled last line, two validated identities, and
+swallowed prose below the foot, between the columns or above the head (accepted beneath a band that
+crosses the gutter). Against the previous `LayoutReconstructor.swift` all fifteen new and updated tests
+fail, and each of 23 single-guard mutations fails at least one. The FAA contract checks the titles on
+pages 3, 453, 461, 473 and 477, the steps and sentence on pages 251 and 298, joins on pages 17, 103,
+211 and 350 and the reordered captions on 165, 199 and 262; the DGA contract checks the headings on
+pages 7–10 and the joins on 7, 9 and 10. See the
+[titles and prose in crops evidence](../measurements/titles-and-prose-in-crops/record.md).
 
 ## Text the rendering never shows
 

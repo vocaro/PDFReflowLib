@@ -1,0 +1,3276 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        25.570000000000007,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "12-14"
+        }
+      ],
+      "text" : "12-14"
+    },
+    {
+      "rect" : [
+        36.616000000000042,
+        426.08879999999999,
+        484.084,
+        303.86900000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36,
+        407.06370000000004,
+        296.33859999999999,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 12-20."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " Relationship between relative humidity, temperature, and dewpoint."
+        }
+      ],
+      "text" : "Figure 12-20. Relationship between relative humidity, temperature, and dewpoint."
+    },
+    {
+      "rect" : [
+        36,
+        379.72630000000004,
+        236.99699999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "As moist, unstable air rises, clouds often form at the altitude"
+        }
+      ],
+      "text" : "As moist, unstable air rises, clouds often form at the altitude"
+    },
+    {
+      "rect" : [
+        36,
+        367.22630000000004,
+        236.96000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "where temperature and dew point reach the same value. When"
+        }
+      ],
+      "text" : "where temperature and dew point reach the same value. When"
+    },
+    {
+      "rect" : [
+        36,
+        354.72630000000004,
+        236.99000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "lifted, unsaturated air cools at a rate of 5.4 °F per 1,000 feet"
+        }
+      ],
+      "text" : "lifted, unsaturated air cools at a rate of 5.4 °F per 1,000 feet"
+    },
+    {
+      "rect" : [
+        36,
+        342.22630000000004,
+        237.00100000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and the dew point temperature decreases at a rate of 1 °F per"
+        }
+      ],
+      "text" : "and the dew point temperature decreases at a rate of 1 °F per"
+    },
+    {
+      "rect" : [
+        36,
+        329.72630000000004,
+        237.02299999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "1,000 feet. This results in a convergence of temperature and"
+        }
+      ],
+      "text" : "1,000 feet. This results in a convergence of temperature and"
+    },
+    {
+      "rect" : [
+        36,
+        317.22630000000004,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "dew point at a rate of 4.4 °F. Apply the convergence rate"
+        }
+      ],
+      "text" : "dew point at a rate of 4.4 °F. Apply the convergence rate"
+    },
+    {
+      "rect" : [
+        36,
+        304.72630000000004,
+        237.01399999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to the reported temperature and dew point to determine the"
+        }
+      ],
+      "text" : "to the reported temperature and dew point to determine the"
+    },
+    {
+      "rect" : [
+        36,
+        292.22630000000004,
+        98.04000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "height of the cloud base."
+        }
+      ],
+      "text" : "height of the cloud base."
+    },
+    {
+      "rect" : [
+        36,
+        267.22630000000004,
+        27.219999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Given:"
+        }
+      ],
+      "text" : "Given:"
+    },
+    {
+      "rect" : [
+        45,
+        250.22630000000004,
+        99.060000000000031,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Temperature (T) = 85 °F"
+        }
+      ],
+      "text" : "Temperature (T) = 85 °F"
+    },
+    {
+      "rect" : [
+        45,
+        233.22630000000004,
+        96.580000000000013,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Dew point (DP) = 71 °F"
+        }
+      ],
+      "text" : "Dew point (DP) = 71 °F"
+    },
+    {
+      "rect" : [
+        45,
+        216.22630000000004,
+        123.23000000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Convergence Rate (CR) = 4.4°"
+        }
+      ],
+      "text" : "Convergence Rate (CR) = 4.4°"
+    },
+    {
+      "rect" : [
+        45,
+        199.22630000000004,
+        193.94000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "T – DP = Temperature Dew Point Spread (TDS)"
+        }
+      ],
+      "text" : "T – DP = Temperature Dew Point Spread (TDS)"
+    },
+    {
+      "rect" : [
+        45,
+        182.22630000000004,
+        60.730000000000004,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "TDS ÷ CR = X"
+        }
+      ],
+      "text" : "TDS ÷ CR = X"
+    },
+    {
+      "rect" : [
+        45,
+        165.22630000000004,
+        172.36000000000004,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "X × 1,000 feet = height of cloud base AGL"
+        }
+      ],
+      "text" : "X × 1,000 feet = height of cloud base AGL"
+    },
+    {
+      "rect" : [
+        36,
+        148.22630000000004,
+        38.329999999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Example:"
+        }
+      ],
+      "text" : "Example:"
+    },
+    {
+      "rect" : [
+        45,
+        131.22630000000004,
+        86.819999999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "85 °F – 71 °F = 14 °F"
+        }
+      ],
+      "text" : "85 °F – 71 °F = 14 °F"
+    },
+    {
+      "rect" : [
+        45,
+        114.22630000000004,
+        85.399999999999977,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "14 °F ÷ 4.4 °F = 3.18"
+        }
+      ],
+      "text" : "14 °F ÷ 4.4 °F = 3.18"
+    },
+    {
+      "rect" : [
+        45,
+        97.226300000000037,
+        124.32000000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "3.18 × 1,000 = 3,180 feet AGL"
+        }
+      ],
+      "text" : "3.18 × 1,000 = 3,180 feet AGL"
+    },
+    {
+      "rect" : [
+        45,
+        80.226300000000037,
+        190.80000000000007,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The height of the cloud base is 3,180 feet AGL."
+        }
+      ],
+      "text" : "The height of the cloud base is 3,180 feet AGL."
+    },
+    {
+      "rect" : [
+        285,
+        379.72630000000004,
+        51.099999999999966,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Explanation:"
+        }
+      ],
+      "text" : "Explanation:"
+    },
+    {
+      "rect" : [
+        285,
+        363.72630000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "With an outside air temperature (OAT) of 85 °F at the surface"
+        }
+      ],
+      "text" : "With an outside air temperature (OAT) of 85 °F at the surface"
+    },
+    {
+      "rect" : [
+        285,
+        351.22630000000004,
+        237.07999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and dew point at the surface of 71 °F, the spread is 14°. Divide"
+        }
+      ],
+      "text" : "and dew point at the surface of 71 °F, the spread is 14°. Divide"
+    },
+    {
+      "rect" : [
+        285,
+        338.72630000000004,
+        236.99599999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the temperature dew point spread by the convergence rate of"
+        }
+      ],
+      "text" : "the temperature dew point spread by the convergence rate of"
+    },
+    {
+      "rect" : [
+        285,
+        326.22630000000004,
+        237.03099999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "4.4 °F, and multiply by 1,000 to determine the approximate"
+        }
+      ],
+      "text" : "4.4 °F, and multiply by 1,000 to determine the approximate"
+    },
+    {
+      "rect" : [
+        285,
+        313.72630000000004,
+        98.04000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "height of the cloud base."
+        }
+      ],
+      "text" : "height of the cloud base."
+    },
+    {
+      "rect" : [
+        285,
+        288.15630000000004,
+        237.03099999999995,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Methods by Which Air Reaches the Saturation Point"
+        }
+      ],
+      "text" : "Methods by Which Air Reaches the Saturation Point"
+    },
+    {
+      "rect" : [
+        285,
+        275.72630000000004,
+        237.14499999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "If air reaches the saturation point while temperature and"
+        }
+      ],
+      "text" : "If air reaches the saturation point while temperature and"
+    },
+    {
+      "rect" : [
+        285,
+        263.22630000000004,
+        237.00700000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "dew point are close together, it is highly likely that fog, low"
+        }
+      ],
+      "text" : "dew point are close together, it is highly likely that fog, low"
+    },
+    {
+      "rect" : [
+        285,
+        250.72630000000004,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "clouds, and precipitation will form. There are four methods"
+        }
+      ],
+      "text" : "clouds, and precipitation will form. There are four methods"
+    },
+    {
+      "rect" : [
+        285,
+        238.22630000000004,
+        236.91000000000008,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "by which air can reach the saturation point. First, when warm"
+        }
+      ],
+      "text" : "by which air can reach the saturation point. First, when warm"
+    },
+    {
+      "rect" : [
+        285,
+        225.72630000000004,
+        237.01199999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "air moves over a cold surface, the air temperature drops and"
+        }
+      ],
+      "text" : "air moves over a cold surface, the air temperature drops and"
+    },
+    {
+      "rect" : [
+        285,
+        213.22630000000004,
+        236.86199999999985,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "reaches the saturation point. Second, the saturation point may"
+        }
+      ],
+      "text" : "reaches the saturation point. Second, the saturation point may"
+    },
+    {
+      "rect" : [
+        285,
+        200.72630000000004,
+        237.01999999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "be reached when cold air and warm air mix. Third, when air"
+        }
+      ],
+      "text" : "be reached when cold air and warm air mix. Third, when air"
+    },
+    {
+      "rect" : [
+        285,
+        188.22630000000004,
+        237.01300000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "cools at night through contact with the cooler ground, air"
+        }
+      ],
+      "text" : "cools at night through contact with the cooler ground, air"
+    },
+    {
+      "rect" : [
+        285,
+        175.72630000000004,
+        237.00900000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "reaches its saturation point. The fourth method occurs when"
+        }
+      ],
+      "text" : "reaches its saturation point. The fourth method occurs when"
+    },
+    {
+      "rect" : [
+        285,
+        163.22630000000004,
+        199.96000000000004,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "air is lifted or is forced upward in the atmosphere."
+        }
+      ],
+      "text" : "air is lifted or is forced upward in the atmosphere."
+    },
+    {
+      "rect" : [
+        285,
+        138.22630000000004,
+        237.10500000000025,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "As air rises, it uses heat energy to expand. As a result, the rising"
+        }
+      ],
+      "text" : "As air rises, it uses heat energy to expand. As a result, the rising"
+    },
+    {
+      "rect" : [
+        285,
+        125.72630000000004,
+        237.05999999999972,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "air loses heat rapidly. Unsaturated air loses heat at a rate of"
+        }
+      ],
+      "text" : "air loses heat rapidly. Unsaturated air loses heat at a rate of"
+    },
+    {
+      "rect" : [
+        285,
+        113.22630000000004,
+        237.10000000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "3.0 °C (5.4 °F) for every 1,000 feet of altitude gain. No matter"
+        }
+      ],
+      "text" : "3.0 °C (5.4 °F) for every 1,000 feet of altitude gain. No matter"
+    },
+    {
+      "rect" : [
+        285,
+        100.72630000000004,
+        237.05999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "what causes the air to reach its saturation point, saturated air"
+        }
+      ],
+      "text" : "what causes the air to reach its saturation point, saturated air"
+    },
+    {
+      "rect" : [
+        285,
+        88.226300000000037,
+        220.92999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "brings clouds, rain, and other critical weather situations."
+        }
+      ],
+      "text" : "brings clouds, rain, and other critical weather situations."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      35.200000000000003,
+      425.16000000000003,
+      486.00000000000006,
+      304.68000000000001
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        25.570000000000007,
+        12.310000000000002
+      ],
+      "text" : "12-14"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        407.06370000000004,
+        296.33859999999999,
+        10.812000000000012
+      ],
+      "structure" : {
+        "group" : 4516,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22171
+      },
+      "text" : "Figure 12-20. Relationship between relative humidity, temperature, and dewpoint."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        379.72630000000004,
+        236.99699999999984,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4360,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 21388
+      },
+      "text" : "As moist, unstable air rises, clouds often form at the altitude"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        367.22630000000004,
+        236.96000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4360,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 21389
+      },
+      "text" : "where temperature and dew point reach the same value. When"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        354.72630000000004,
+        236.99000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4360,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 21390
+      },
+      "text" : "lifted, unsaturated air cools at a rate of 5.4 °F per 1,000 feet"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        342.22630000000004,
+        237.00100000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4360,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 21391
+      },
+      "text" : "and the dew point temperature decreases at a rate of 1 °F per"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        329.72630000000004,
+        237.02299999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4360,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 21392
+      },
+      "text" : "1,000 feet. This results in a convergence of temperature and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        317.22630000000004,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4360,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 21393
+      },
+      "text" : "dew point at a rate of 4.4 °F. Apply the convergence rate"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        304.72630000000004,
+        237.01399999999984,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4360,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 21394
+      },
+      "text" : "to the reported temperature and dew point to determine the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        292.22630000000004,
+        98.04000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4360,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 21395
+      },
+      "text" : "height of the cloud base."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        267.22630000000004,
+        27.219999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4361,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 21396
+      },
+      "text" : "Given:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        250.22630000000004,
+        99.060000000000031,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4362,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 21397
+      },
+      "text" : "Temperature (T) = 85 °F"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        233.22630000000004,
+        96.580000000000013,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4363,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 21398
+      },
+      "text" : "Dew point (DP) = 71 °F"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        216.22630000000004,
+        123.23000000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4364,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 21399
+      },
+      "text" : "Convergence Rate (CR) = 4.4°"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        199.22630000000004,
+        193.94000000000003,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4365,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 21400
+      },
+      "text" : "T – DP = Temperature Dew Point Spread (TDS)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        182.22630000000004,
+        60.730000000000004,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4366,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 21401
+      },
+      "text" : "TDS ÷ CR = X"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        165.22630000000004,
+        172.36000000000004,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4367,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 21402
+      },
+      "text" : "X × 1,000 feet = height of cloud base AGL"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        148.22630000000004,
+        38.329999999999998,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4368,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 21403
+      },
+      "text" : "Example:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        131.22630000000004,
+        86.819999999999993,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4369,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 21404
+      },
+      "text" : "85 °F – 71 °F = 14 °F"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        114.22630000000004,
+        85.399999999999977,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4370,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 21405
+      },
+      "text" : "14 °F ÷ 4.4 °F = 3.18"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        97.226300000000037,
+        124.32000000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4371,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 21406
+      },
+      "text" : "3.18 × 1,000 = 3,180 feet AGL"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        80.226300000000037,
+        190.80000000000007,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4372,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 21407
+      },
+      "text" : "The height of the cloud base is 3,180 feet AGL."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        379.72630000000004,
+        51.099999999999966,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4373,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 21408
+      },
+      "text" : "Explanation:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        363.72630000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4374,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 21410
+      },
+      "text" : "With an outside air temperature (OAT) of 85 °F at the surface"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        351.22630000000004,
+        237.07999999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4374,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 21411
+      },
+      "text" : "and dew point at the surface of 71 °F, the spread is 14°. Divide"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        338.72630000000004,
+        236.99599999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4374,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 21412
+      },
+      "text" : "the temperature dew point spread by the convergence rate of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        326.22630000000004,
+        237.03099999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4374,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 21413
+      },
+      "text" : "4.4 °F, and multiply by 1,000 to determine the approximate"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        313.72630000000004,
+        98.04000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4374,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 21414
+      },
+      "text" : "height of the cloud base."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        288.15630000000004,
+        237.03099999999995,
+        13.189999999999998
+      ],
+      "structure" : {
+        "group" : 4375,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 21415
+      },
+      "text" : "Methods by Which Air Reaches the Saturation Point"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        275.72630000000004,
+        237.14499999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4376,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 21416
+      },
+      "text" : "If air reaches the saturation point while temperature and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        263.22630000000004,
+        237.00700000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4376,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 21417
+      },
+      "text" : "dew point are close together, it is highly likely that fog, low"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        250.72630000000004,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4376,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 21418
+      },
+      "text" : "clouds, and precipitation will form. There are four methods"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        238.22630000000004,
+        236.91000000000008,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4376,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 21419
+      },
+      "text" : "by which air can reach the saturation point. First, when warm"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        225.72630000000004,
+        237.01199999999994,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4376,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 21420
+      },
+      "text" : "air moves over a cold surface, the air temperature drops and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        213.22630000000004,
+        236.86199999999985,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4376,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 21421
+      },
+      "text" : "reaches the saturation point. Second, the saturation point may"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        200.72630000000004,
+        237.01999999999998,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4376,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 21422
+      },
+      "text" : "be reached when cold air and warm air mix. Third, when air"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        188.22630000000004,
+        237.01300000000003,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4376,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 21423
+      },
+      "text" : "cools at night through contact with the cooler ground, air"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        175.72630000000004,
+        237.00900000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4376,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 21424
+      },
+      "text" : "reaches its saturation point. The fourth method occurs when"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        163.22630000000004,
+        199.96000000000004,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4376,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 21425
+      },
+      "text" : "air is lifted or is forced upward in the atmosphere."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        138.22630000000004,
+        237.10500000000025,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4377,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 21426
+      },
+      "text" : "As air rises, it uses heat energy to expand. As a result, the rising"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        125.72630000000004,
+        237.05999999999972,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4377,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 21427
+      },
+      "text" : "air loses heat rapidly. Unsaturated air loses heat at a rate of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        113.22630000000004,
+        237.10000000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4377,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 21428
+      },
+      "text" : "3.0 °C (5.4 °F) for every 1,000 feet of altitude gain. No matter"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        100.72630000000004,
+        237.05999999999995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4377,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 21429
+      },
+      "text" : "what causes the air to reach its saturation point, saturated air"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        88.226300000000037,
+        220.92999999999995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4377,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 21430
+      },
+      "text" : "brings clouds, rain, and other critical weather situations."
+    }
+  ],
+  "page" : 298,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        37.116,
+        426.589,
+        483.08400000000006,
+        302.86799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37.116,
+        426.589,
+        483.08400000000006,
+        302.86799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        35.200000000000003,
+        425.16000000000003,
+        486.00000000000006,
+        304.68000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        55.335300000000004,
+        507.56,
+        138.42570000000001,
+        123.20599999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        57.335300000000004,
+        509.56,
+        134.42570000000001,
+        119.20599999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        55.816000000000003,
+        507.47500000000002,
+        137.94499999999999,
+        64.34699999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        57.492400000000004,
+        509.33600000000001,
+        134.53459999999998,
+        60.618000000000052
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        57.492400000000004,
+        509.33600000000001,
+        134.53460000000001,
+        60.618000000000052
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        55.335000000000001,
+        529.99000000000001,
+        70.498999999999995,
+        101.31100000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        57.210300000000004,
+        531.77499999999998,
+        66.748699999999999,
+        97.701000000000022
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        57.210300000000004,
+        531.77499999999998,
+        66.748699999999999,
+        97.701000000000022
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.902,
+        553.63900000000001,
+        71.858999999999995,
+        77.793999999999983
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        123.777,
+        555.48500000000001,
+        68.108999999999995,
+        74.092999999999961
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        123.777,
+        555.48500000000001,
+        68.108999999999995,
+        74.092999999999961
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        113.438,
+        551.85000000000002,
+        31.166000000000011,
+        31.168000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.032,
+        574.64300000000003,
+        15.459000000000017,
+        70.087999999999965
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.032,
+        574.64300000000003,
+        15.459000000000017,
+        71.725000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        114.265,
+        552.72800000000007,
+        29.454999999999998,
+        29.455999999999904
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        113.438,
+        551.85000000000002,
+        31.166000000000011,
+        31.168000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        115.437,
+        553.85000000000002,
+        27.167000000000016,
+        27.168000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.05,
+        575.10199999999998,
+        13.759,
+        34.897000000000048
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.04600000000001,
+        603.91600000000005,
+        13.772000000000006,
+        7.5709999999999127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.292,
+        574.78899999999999,
+        15.183999999999997,
+        69.942000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        123.292,
+        576.78899999999999,
+        11.185000000000002,
+        65.942000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        138.48500000000001,
+        507.56,
+        55.151999999999987,
+        113.791
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        140.36000000000001,
+        509.279,
+        51.402999999999992,
+        110.27599999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        140.36000000000001,
+        509.279,
+        51.402999999999992,
+        110.27600000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        55.276000000000003,
+        590.40200000000004,
+        138.36099999999999,
+        40.812000000000012
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        57.237000000000002,
+        592.27200000000005,
+        134.79900000000001,
+        37.069999999999936
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        57.236499999999999,
+        592.27200000000005,
+        134.79949999999999,
+        37.069999999999936
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.303,
+        604.08299999999997,
+        15.171999999999997,
+        40.648000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.303,
+        605.64300000000003,
+        15.171999999999997,
+        40.725000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.05,
+        604.08299999999997,
+        13.756000000000014,
+        5.9160000000000537
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.04600000000001,
+        603.91600000000005,
+        13.772000000000006,
+        7.5709999999999127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.292,
+        604.08299999999997,
+        15.183999999999997,
+        40.648000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        123.292,
+        606.08299999999997,
+        11.185000000000002,
+        36.648000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        366.27600000000001,
+        550.39400000000001,
+        138.48399999999998,
+        115.21799999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.15100000000001,
+        552.14400000000001,
+        134.67599999999999,
+        111.61400000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.15100000000001,
+        552.14400000000001,
+        134.67599999999999,
+        111.61400000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        367.44400000000002,
+        550.39400000000001,
+        136.77600000000001,
+        57.102999999999952
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        369.15500000000003,
+        552.25300000000004,
+        133.43699999999995,
+        53.374000000000024
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        369.15500000000003,
+        552.25300000000004,
+        133.43699999999995,
+        53.374000000000024
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        434.20300000000003,
+        579.322,
+        70.498999999999967,
+        85.623000000000047
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        436.07800000000003,
+        581.14400000000001,
+        66.748999999999967,
+        81.947000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        436.07800000000003,
+        581.14400000000001,
+        66.748999999999967,
+        81.947000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        366.27600000000001,
+        588.61199999999997,
+        71.85899999999998,
+        77
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.15100000000001,
+        590.45699999999999,
+        68.10899999999998,
+        73.301000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.15100000000001,
+        590.45699999999999,
+        68.10899999999998,
+        73.301000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        415.43299999999999,
+        601.18299999999999,
+        31.165999999999997,
+        31.16700000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        423.54500000000002,
+        623.97500000000002,
+        15.45999999999998,
+        70.090000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        423.54500000000002,
+        623.97500000000002,
+        15.45999999999998,
+        71.726999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        416.31600000000003,
+        602.06100000000004,
+        29.45599999999996,
+        29.456999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        415.43200000000002,
+        601.18200000000002,
+        31.166999999999973,
+        31.168000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        417.43200000000002,
+        603.18200000000002,
+        27.166999999999973,
+        27.168000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        424.22700000000003,
+        624.43500000000006,
+        13.759999999999991,
+        34.897999999999911
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        424.21800000000002,
+        653.24900000000002,
+        13.772999999999968,
+        7.5710000000000264
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        423.56,
+        624.12199999999996,
+        15.185000000000002,
+        69.942000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        425.56,
+        626.12199999999996,
+        11.185000000000002,
+        65.942000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        366.399,
+        550.39400000000001,
+        55.15300000000002,
+        104.97699999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.274,
+        552.14400000000001,
+        51.40300000000002,
+        101.38800000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.274,
+        552.14400000000001,
+        51.40300000000002,
+        101.38800000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        366.399,
+        638.49699999999996,
+        138.36099999999999,
+        27.115000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.37,
+        640.37,
+        134.41199999999998,
+        23.368000000000052
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.37,
+        640.37,
+        134.41199999999998,
+        23.368000000000052
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        423.35300000000001,
+        653.41499999999996,
+        15.172000000000025,
+        40.525000000000091
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        423.35300000000001,
+        654.78100000000006,
+        15.172000000000025,
+        40.796999999999912
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        424.23099999999999,
+        653.41499999999996,
+        13.756000000000029,
+        20.234000000000037
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        424.21800000000002,
+        667.56600000000003,
+        13.772999999999968,
+        7.5710000000000264
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        423.56,
+        653.41499999999996,
+        15.185000000000002,
+        40.649000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        425.56,
+        655.41499999999996,
+        11.185000000000002,
+        36.649000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        205.06900000000002,
+        455.09100000000001,
+        144.50200000000001,
+        126.19399999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        206.833,
+        456.96600000000001,
+        140.93500000000003,
+        122.44399999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        206.833,
+        456.96600000000001,
+        140.93500000000003,
+        122.44399999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        205.06999999999999,
+        455.58800000000002,
+        144.50100000000003,
+        72.285000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        206.86100000000002,
+        457.46300000000002,
+        140.90700000000001,
+        68.535000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        206.86100000000002,
+        457.46300000000002,
+        140.90700000000001,
+        68.535000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        205.53,
+        455.99099999999999,
+        39.521999999999991,
+        124.57799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        207.405,
+        457.93200000000002,
+        35.771999999999991,
+        121.04200000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        207.405,
+        457.93200000000002,
+        35.771999999999991,
+        121.04200000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        313.53399999999999,
+        455.58800000000002,
+        36.037000000000035,
+        125.67799999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        315.40899999999999,
+        457.536,
+        32.286999999999978,
+        122.18300000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        315.40899999999999,
+        457.536,
+        32.287000000000035,
+        122.18300000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        271.28000000000003,
+        463.43700000000001,
+        26.54299999999995,
+        9.5439999999999827
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        271.28000000000003,
+        463.43700000000001,
+        26.54299999999995,
+        9.5439999999999827
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        267.37400000000002,
+        461.04599999999999,
+        32.373999999999967,
+        14.229000000000042
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        242.00300000000001,
+        483.31100000000004,
+        12.378999999999991,
+        14.267999999999972
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        242.00300000000001,
+        483.31099999999998,
+        12.378999999999991,
+        14.268000000000029
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        240.24600000000001,
+        481.79000000000002,
+        16.358000000000033,
+        17.798000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        284.61400000000003,
+        492.82300000000004,
+        12.378999999999962,
+        8.9139999999999873
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        284.61400000000003,
+        492.82299999999998,
+        12.378999999999962,
+        8.9140000000000441
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        282.39100000000002,
+        491.12299999999999,
+        16.35899999999998,
+        12.620000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        263.43700000000001,
+        489.68299999999999,
+        31.166999999999973,
+        31.168000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        271.03199999999998,
+        512.476,
+        15.459000000000003,
+        70.087999999999965
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        271.03199999999998,
+        512.476,
+        15.459000000000003,
+        71.726999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        264.26400000000001,
+        490.56200000000001,
+        29.456999999999994,
+        29.455000000000041
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        263.43700000000001,
+        489.68299999999999,
+        31.166999999999973,
+        31.168000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        265.43700000000001,
+        491.68299999999999,
+        27.166999999999973,
+        27.168000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        272.04899999999998,
+        512.93500000000006,
+        13.761000000000024,
+        20.397999999999911
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        272.04599999999999,
+        527.24900000000002,
+        13.773000000000025,
+        7.5710000000000264
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        271.29200000000003,
+        512.62300000000005,
+        15.185000000000002,
+        69.940999999999917
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        273.29200000000003,
+        514.62199999999996,
+        11.185000000000002,
+        65.942000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        205.06999999999999,
+        523.577,
+        144.50100000000003,
+        57.70799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        206.833,
+        525.452,
+        140.95900000000003,
+        53.95799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        206.833,
+        525.452,
+        140.95900000000003,
+        53.95799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        238.62800000000001,
+        504.94900000000001,
+        2.367999999999995,
+        0.92599999999998772
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        238.62800000000001,
+        504.94900000000001,
+        2.367999999999995,
+        0.92599999999998772
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        236.505,
+        503.36400000000003,
+        6.9960000000000093,
+        7.9629999999999654
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        228.584,
+        479.178,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        228.584,
+        479.178,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        226.46100000000001,
+        477.59300000000002,
+        6.9969999999999857,
+        7.9639999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        327.73399999999998,
+        516.17899999999997,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        327.73399999999998,
+        516.17899999999997,
+        2.3680000000000518,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        325.61099999999999,
+        514.59400000000005,
+        6.9960000000000377,
+        7.9639999999999418
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        329.03500000000003,
+        492.041,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        329.03500000000003,
+        492.041,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        326.91200000000003,
+        490.45699999999999,
+        6.9959999999999809,
+        7.9630000000000223
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        306.77699999999999,
+        509.53000000000003,
+        2.367999999999995,
+        0.92599999999998772
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        306.77699999999999,
+        509.52999999999997,
+        2.367999999999995,
+        0.92600000000004457
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        304.654,
+        507.94499999999999,
+        6.9970000000000141,
+        7.9630000000000223
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        307.35500000000002,
+        483.803,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        307.35500000000002,
+        483.803,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        305.23200000000003,
+        482.21800000000002,
+        6.9959999999999809,
+        7.9639999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        258.358,
+        515.88999999999999,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        258.358,
+        515.88999999999999,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        256.23500000000001,
+        514.30500000000006,
+        6.9959999999999809,
+        7.9629999999999654
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        257.49099999999999,
+        469.35000000000002,
+        2.367999999999995,
+        0.92699999999996407
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        257.49099999999999,
+        469.35000000000002,
+        2.367999999999995,
+        0.92699999999996407
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        255.36799999999999,
+        467.76499999999999,
+        6.9960000000000377,
+        7.9630000000000223
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        289,
+        469.78399999999999,
+        2.367999999999995,
+        0.92600000000004457
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        289,
+        469.78399999999999,
+        2.367999999999995,
+        0.92600000000004457
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        286.87700000000001,
+        468.19900000000001,
+        6.9959999999999809,
+        7.9630000000000223
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        251.565,
+        500.858,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        251.565,
+        500.858,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        249.44200000000001,
+        499.27300000000002,
+        6.9959999999999809,
+        16.096000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        299.22899999999998,
+        505.65600000000001,
+        2.367999999999995,
+        0.92599999999998772
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        299.22899999999998,
+        505.65600000000001,
+        2.367999999999995,
+        0.92599999999998772
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        297.10599999999999,
+        504.07100000000003,
+        6.9960000000000377,
+        16.096000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        237.249,
+        465.47000000000003,
+        2.367999999999995,
+        0.92699999999996407
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        237.249,
+        465.47000000000003,
+        2.3680000000000234,
+        0.92699999999996407
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        235.12700000000001,
+        463.88499999999999,
+        6.9960000000000093,
+        16.097000000000037
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        326.23700000000002,
+        467.55400000000003,
+        2.367999999999995,
+        0.92699999999996407
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        326.23700000000002,
+        467.55399999999997,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        324.11400000000003,
+        465.96899999999999,
+        6.9959999999999809,
+        16.096000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        248.345,
+        561.41999999999996,
+        2.3689999999999998,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        248.345,
+        561.41999999999996,
+        2.3689999999999998,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        246.22300000000001,
+        559.83500000000004,
+        6.9959999999999809,
+        6.6440000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        264.10000000000002,
+        563.274,
+        2.3689999999999714,
+        0.92600000000004457
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        264.10000000000002,
+        563.274,
+        2.3689999999999714,
+        0.92600000000004457
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        261.97700000000003,
+        561.68899999999996,
+        6.9959999999999809,
+        6.6430000000000291
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        238.667,
+        544.22400000000005,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        238.667,
+        544.22400000000005,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        236.54400000000001,
+        542.63900000000001,
+        6.9950000000000045,
+        6.6440000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        248.036,
+        534.33900000000006,
+        2.3689999999999998,
+        0.92699999999990723
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        248.036,
+        534.33900000000006,
+        2.3689999999999998,
+        0.92699999999990723
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        245.91300000000001,
+        532.75400000000002,
+        6.9959999999999809,
+        6.6440000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        258.334,
+        546.59199999999998,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        258.334,
+        546.59199999999998,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        256.21100000000001,
+        545.00700000000006,
+        6.9959999999999809,
+        6.6440000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        293.85700000000003,
+        564.61199999999997,
+        2.367999999999995,
+        0.92600000000004457
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        293.85700000000003,
+        564.61199999999997,
+        2.367999999999995,
+        0.92600000000004457
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        291.73399999999998,
+        563.02600000000007,
+        6.9960000000000377,
+        6.6449999999999818
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        310.53899999999999,
+        561.86800000000005,
+        2.367999999999995,
+        0.92699999999990723
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        310.53899999999999,
+        561.86800000000005,
+        2.367999999999995,
+        0.92699999999990723
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        308.41500000000002,
+        560.28300000000002,
+        6.9970000000000141,
+        6.6440000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        294.77199999999999,
+        552.51200000000006,
+        2.367999999999995,
+        0.92699999999990723
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        294.77199999999999,
+        552.51199999999994,
+        2.367999999999995,
+        0.92700000000002092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        292.649,
+        550.92700000000002,
+        6.9959999999999809,
+        6.6440000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        310.43599999999998,
+        534.23599999999999,
+        2.367999999999995,
+        0.92600000000004457
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        310.43599999999998,
+        534.23599999999999,
+        2.3680000000000518,
+        0.92600000000004457
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        308.31299999999999,
+        532.64999999999998,
+        6.9960000000000377,
+        6.6449999999999818
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        271.512,
+        541.91499999999996,
+        15.172000000000025,
+        40.525000000000091
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        271.512,
+        543.28200000000004,
+        15.172000000000025,
+        40.795999999999935
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        271.29200000000003,
+        541.91499999999996,
+        15.185000000000002,
+        40.649000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        273.29200000000003,
+        543.91499999999996,
+        11.185000000000002,
+        36.649000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        48.412400000000005,
+        435.94299999999998,
+        147.39359999999999,
+        62.250999999999976
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        48.412400000000005,
+        435.94299999999998,
+        147.39359999999999,
+        62.251000000000033
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        46.412000000000006,
+        433.94220000000001,
+        151.39400000000001,
+        66.250999999999976
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        359.07900000000001,
+        490.94299999999998,
+        147.39299999999997,
+        56.097999999999956
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        359.07900000000001,
+        490.94299999999998,
+        147.39300000000003,
+        56.09800000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        357.07850000000002,
+        488.94220000000001,
+        151.39400000000001,
+        60.09899999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        205.96600000000001,
+        588.428,
+        147.39299999999997,
+        55.251999999999953
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        205.96600000000001,
+        588.428,
+        147.39299999999997,
+        55.252000000000066
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.96520000000004,
+        586.428,
+        151.39400000000001,
+        59.252000000000066
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        47.698999999999998,
+        664.96199999999999,
+        164.23699999999997,
+        43.690000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        47.698999999999998,
+        664.96199999999999,
+        164.23700000000002,
+        43.690000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        45.699300000000022,
+        662.96119999999996,
+        168.23699999999999,
+        47.581999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        45.699399999999997,
+        704.02280000000007,
+        168.239,
+        18.996999999999957
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        45.699399999999997,
+        704.02280000000007,
+        168.239,
+        18.996999999999957
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

@@ -1,0 +1,2829 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "10-7"
+        }
+      ],
+      "text" : "10-7"
+    },
+    {
+      "rect" : [
+        321.72769999999997,
+        622.49950000000001,
+        235.77630000000005,
+        106.495
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        320.72730000000001,
+        603.21040000000005,
+        213.89329999999995,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 10-5."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Example of weight and balance computations."
+        }
+      ],
+      "text" : "Figure 10-5. Example of weight and balance computations."
+    },
+    {
+      "rect" : [
+        321.52390000000003,
+        81.096900000000005,
+        235.77700000000004,
+        186.29449999999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        321.22730000000001,
+        60.812899999999999,
+        139.64530000000002,
+        10.811999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 10-6."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " Weight and balance data."
+        }
+      ],
+      "text" : "Figure 10-6. Weight and balance data."
+    },
+    {
+      "rect" : [
+        72,
+        719.56640000000004,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "weight and balance distribution prior to takeoff are runway"
+        }
+      ],
+      "text" : "weight and balance distribution prior to takeoff are runway"
+    },
+    {
+      "rect" : [
+        72,
+        707.06640000000004,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "length, runway surface, runway slope, surface wind, and the"
+        }
+      ],
+      "text" : "length, runway surface, runway slope, surface wind, and the"
+    },
+    {
+      "rect" : [
+        72,
+        694.56640000000004,
+        237.00599999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "presence of obstacles. These factors may require a reduction"
+        }
+      ],
+      "text" : "presence of obstacles. These factors may require a reduction"
+    },
+    {
+      "rect" : [
+        72,
+        682.06640000000004,
+        174.44000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in or redistribution of weight prior to flight."
+        }
+      ],
+      "text" : "in or redistribution of weight prior to flight."
+    },
+    {
+      "rect" : [
+        72,
+        657.06640000000004,
+        237.02799999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Some aircraft are designed so that it is difficult to load them"
+        }
+      ],
+      "text" : "Some aircraft are designed so that it is difficult to load them"
+    },
+    {
+      "rect" : [
+        72,
+        644.56640000000004,
+        236.90999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in a manner that places the CG out of limits. These are"
+        }
+      ],
+      "text" : "in a manner that places the CG out of limits. These are"
+    },
+    {
+      "rect" : [
+        72,
+        632.06640000000004,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "usually small aircraft with the seats, fuel, and baggage areas"
+        }
+      ],
+      "text" : "usually small aircraft with the seats, fuel, and baggage areas"
+    },
+    {
+      "rect" : [
+        72,
+        619.56640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "located near the CG limit. Pilots must be aware that while"
+        }
+      ],
+      "text" : "located near the CG limit. Pilots must be aware that while"
+    },
+    {
+      "rect" : [
+        72,
+        607.06640000000004,
+        237.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "within CG limits these aircraft can be overloaded in weight."
+        }
+      ],
+      "text" : "within CG limits these aircraft can be overloaded in weight."
+    },
+    {
+      "rect" : [
+        72,
+        594.56640000000004,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Other aircraft can be loaded in such a manner that they will"
+        }
+      ],
+      "text" : "Other aircraft can be loaded in such a manner that they will"
+    },
+    {
+      "rect" : [
+        72,
+        582.06640000000004,
+        236.995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "be out of CG limits even though the useful load has not been"
+        }
+      ],
+      "text" : "be out of CG limits even though the useful load has not been"
+    },
+    {
+      "rect" : [
+        72,
+        569.56640000000004,
+        236.83600000000013,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "exceeded. Because of the effects of an out-of-balance or"
+        }
+      ],
+      "text" : "exceeded. Because of the effects of an out-of-balance or"
+    },
+    {
+      "rect" : [
+        72,
+        557.06640000000004,
+        237.00699999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "overweight condition, a pilot should always be sure that an"
+        }
+      ],
+      "text" : "overweight condition, a pilot should always be sure that an"
+    },
+    {
+      "rect" : [
+        72,
+        544.56640000000004,
+        106.08000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft is properly loaded."
+        }
+      ],
+      "text" : "aircraft is properly loaded."
+    },
+    {
+      "rect" : [
+        72,
+        517.28240000000005,
+        204.24000000000012,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "Determining Loaded Weight and CG"
+        }
+      ],
+      "text" : "Determining Loaded Weight and CG"
+    },
+    {
+      "rect" : [
+        72,
+        502.51640000000003,
+        237.048,
+        11.46999999999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "There are various methods for determining the loaded weight"
+        }
+      ],
+      "text" : "There are various methods for determining the loaded weight"
+    },
+    {
+      "rect" : [
+        72,
+        490.01640000000003,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and CG of an aircraft. There is the computational method as"
+        }
+      ],
+      "text" : "and CG of an aircraft. There is the computational method as"
+    },
+    {
+      "rect" : [
+        72,
+        477.51640000000003,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "well as methods that utilize graphs and tables provided by"
+        }
+      ],
+      "text" : "well as methods that utilize graphs and tables provided by"
+    },
+    {
+      "rect" : [
+        72,
+        465.01640000000003,
+        101.90000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the aircraft manufacturer."
+        }
+      ],
+      "text" : "the aircraft manufacturer."
+    },
+    {
+      "rect" : [
+        72,
+        439.44640000000004,
+        108.33000000000004,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Computational Method"
+        }
+      ],
+      "text" : "Computational Method"
+    },
+    {
+      "rect" : [
+        72,
+        427.01640000000003,
+        237.00399999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The following is an example of the computational method"
+        }
+      ],
+      "text" : "The following is an example of the computational method"
+    },
+    {
+      "rect" : [
+        72,
+        414.51640000000003,
+        198.60000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "involving the application of basic math functions."
+        }
+      ],
+      "text" : "involving the application of basic math functions."
+    },
+    {
+      "rect" : [
+        81,
+        397.51640000000003,
+        84.140000000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Aircraft Allowances:"
+        }
+      ],
+      "text" : "Aircraft Allowances:"
+    },
+    {
+      "rect" : [
+        99,
+        380.51640000000003,
+        210.01200000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Maximum gross weight......................3,400 pounds"
+        }
+      ],
+      "text" : "Maximum gross weight......................3,400 pounds"
+    },
+    {
+      "rect" : [
+        99,
+        363.51640000000003,
+        209.85000000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "CG range.............................................78–86 inches"
+        }
+      ],
+      "text" : "CG range.............................................78–86 inches"
+    },
+    {
+      "rect" : [
+        81,
+        346.51640000000003,
+        27.219999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Given:"
+        }
+      ],
+      "text" : "Given:"
+    },
+    {
+      "rect" : [
+        99,
+        329.51640000000003,
+        209.97000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Weight of front seat occupants.............340 pounds"
+        }
+      ],
+      "text" : "Weight of front seat occupants.............340 pounds"
+    },
+    {
+      "rect" : [
+        99,
+        312.51640000000003,
+        210.13000000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Weight of rear seat occupants..............350 pounds"
+        }
+      ],
+      "text" : "Weight of rear seat occupants..............350 pounds"
+    },
+    {
+      "rect" : [
+        99,
+        295.51640000000003,
+        210.08000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Fuel...........................................................75 gallons"
+        }
+      ],
+      "text" : "Fuel...........................................................75 gallons"
+    },
+    {
+      "rect" : [
+        99,
+        278.51640000000003,
+        209.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Weight of baggage in area 1....................80 pounds"
+        }
+      ],
+      "text" : "Weight of baggage in area 1....................80 pounds"
+    },
+    {
+      "rect" : [
+        81,
+        261.51640000000003,
+        228.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "1. List the weight of the aircraft, occupants, fuel, and"
+        }
+      ],
+      "text" : "1. List the weight of the aircraft, occupants, fuel, and"
+    },
+    {
+      "rect" : [
+        99,
+        249.0164,
+        210.08499999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "baggage. Remember that aviation gas (AVGAS)"
+        }
+      ],
+      "text" : "baggage. Remember that aviation gas (AVGAS)"
+    },
+    {
+      "rect" : [
+        99,
+        236.5164,
+        209.84099999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "weighs 6 pounds per gallon and is used in this"
+        }
+      ],
+      "text" : "weighs 6 pounds per gallon and is used in this"
+    },
+    {
+      "rect" : [
+        99,
+        224.0164,
+        36.379999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "example."
+        }
+      ],
+      "text" : "example."
+    },
+    {
+      "rect" : [
+        81,
+        207.0164,
+        228.09999999999991,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "2. Enter the moment for each item listed. Remember"
+        }
+      ],
+      "text" : "2. Enter the moment for each item listed. Remember"
+    },
+    {
+      "rect" : [
+        99,
+        194.5164,
+        107.56999999999999,
+        12.530000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "“weight "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "MicrosoftSansSerif",
+          "fontSize" : 10,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " arm = moment.”"
+        }
+      ],
+      "text" : "“weight x arm = moment.”"
+    },
+    {
+      "rect" : [
+        81,
+        177.5164,
+        176.06000000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "3. Find the total weight and total moment."
+        }
+      ],
+      "text" : "3. Find the total weight and total moment."
+    },
+    {
+      "rect" : [
+        81,
+        160.5164,
+        228.01700000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "4. To determine the CG, divide the total moment by the"
+        }
+      ],
+      "text" : "4. To determine the CG, divide the total moment by the"
+    },
+    {
+      "rect" : [
+        99,
+        148.0164,
+        50,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "total weight."
+        }
+      ],
+      "text" : "total weight."
+    },
+    {
+      "rect" : [
+        72,
+        123.0164,
+        237.03500000000008,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "NOTE: The weight and balance records for a particular"
+        }
+      ],
+      "text" : "NOTE: The weight and balance records for a particular"
+    },
+    {
+      "rect" : [
+        72,
+        110.5164,
+        237.0630000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft provide the empty weight and moment, as well as the"
+        }
+      ],
+      "text" : "aircraft provide the empty weight and moment, as well as the"
+    },
+    {
+      "rect" : [
+        72,
+        98.016400000000004,
+        188.56999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "information on the arm distance. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 10-5]"
+        }
+      ],
+      "text" : "information on the arm distance. [Figure 10-5]"
+    },
+    {
+      "rect" : [
+        72,
+        73.016400000000004,
+        237.01299999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The total loaded weight of 3,320 pounds does not exceed"
+        }
+      ],
+      "text" : "The total loaded weight of 3,320 pounds does not exceed"
+    },
+    {
+      "rect" : [
+        72,
+        60.516400000000004,
+        237.00400000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the maximum gross weight of 3,400 pounds, and the CG of"
+        }
+      ],
+      "text" : "the maximum gross weight of 3,400 pounds, and the CG of"
+    },
+    {
+      "rect" : [
+        321,
+        574.56639999999993,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "84.8 is within the 78–86 inch range; therefore, the aircraft is"
+        }
+      ],
+      "text" : "84.8 is within the 78–86 inch range; therefore, the aircraft is"
+    },
+    {
+      "rect" : [
+        321,
+        562.06639999999993,
+        82.509999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "loaded within limits."
+        }
+      ],
+      "text" : "loaded within limits."
+    },
+    {
+      "rect" : [
+        321,
+        536.49639999999988,
+        67.779999999999973,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Graph Method"
+        }
+      ],
+      "text" : "Graph Method"
+    },
+    {
+      "rect" : [
+        321,
+        524.06639999999993,
+        237.00700000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Another method for determining the loaded weight and CG is"
+        }
+      ],
+      "text" : "Another method for determining the loaded weight and CG is"
+    },
+    {
+      "rect" : [
+        321,
+        511.56639999999993,
+        237.0100000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the use of graphs provided by the manufacturers. To simplify"
+        }
+      ],
+      "text" : "the use of graphs provided by the manufacturers. To simplify"
+    },
+    {
+      "rect" : [
+        321,
+        499.06639999999993,
+        237.08500000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "calculations, the moment may sometimes be divided by 100,"
+        }
+      ],
+      "text" : "calculations, the moment may sometimes be divided by 100,"
+    },
+    {
+      "rect" : [
+        321,
+        486.56639999999993,
+        194.71000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "1,000, or 10,000. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figures 10-6, 10-7, and 10-8]"
+        }
+      ],
+      "text" : "1,000, or 10,000. [Figures 10-6, 10-7, and 10-8]"
+    },
+    {
+      "rect" : [
+        330,
+        469.56639999999993,
+        228.17500000000018,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Front seat occupants....................................340 pounds"
+        }
+      ],
+      "text" : "Front seat occupants....................................340 pounds"
+    },
+    {
+      "rect" : [
+        330,
+        452.56639999999993,
+        228.03999999999996,
+        11.470100000000116
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.00010000000008858478,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Rear seat occupants"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ".......................................300 pounds"
+        }
+      ],
+      "text" : "Rear seat occupants.......................................300 pounds"
+    },
+    {
+      "rect" : [
+        330,
+        435.56650000000002,
+        228.02300000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Fuel ..................................................................40 gallons"
+        }
+      ],
+      "text" : "Fuel ..................................................................40 gallons"
+    },
+    {
+      "rect" : [
+        330,
+        418.56650000000002,
+        227.96000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Baggage area 1................................................20 pounds"
+        }
+      ],
+      "text" : "Baggage area 1................................................20 pounds"
+    },
+    {
+      "rect" : [
+        321,
+        393.56650000000002,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The same steps should be followed in the graph method as"
+        }
+      ],
+      "text" : "The same steps should be followed in the graph method as"
+    },
+    {
+      "rect" : [
+        321,
+        381.06650000000002,
+        236.99099999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "were used in the computational method except the graphs"
+        }
+      ],
+      "text" : "were used in the computational method except the graphs"
+    },
+    {
+      "rect" : [
+        321,
+        368.56650000000002,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "provided will calculate the moments and allow the pilot to"
+        }
+      ],
+      "text" : "provided will calculate the moments and allow the pilot to"
+    },
+    {
+      "rect" : [
+        321,
+        356.06650000000002,
+        236.91000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "determine if the aircraft is loaded within limits. To determine"
+        }
+      ],
+      "text" : "determine if the aircraft is loaded within limits. To determine"
+    },
+    {
+      "rect" : [
+        321,
+        343.56650000000002,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the moment using the loading graph, find the weight and draw"
+        }
+      ],
+      "text" : "the moment using the loading graph, find the weight and draw"
+    },
+    {
+      "rect" : [
+        321,
+        331.06650000000002,
+        237.01900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a line straight across until it intercepts the item for which the"
+        }
+      ],
+      "text" : "a line straight across until it intercepts the item for which the"
+    },
+    {
+      "rect" : [
+        321,
+        318.56650000000002,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "moment is to be calculated. Then draw a line straight down"
+        }
+      ],
+      "text" : "moment is to be calculated. Then draw a line straight down"
+    },
+    {
+      "rect" : [
+        321,
+        306.06650000000002,
+        237.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to determine the moment. (The red line on the loading graph"
+        }
+      ],
+      "text" : "to determine the moment. (The red line on the loading graph"
+    },
+    {
+      "rect" : [
+        321,
+        293.56650000000002,
+        237.00500000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Figure 10-7 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "represents the moment for the pilot and front"
+        }
+      ],
+      "text" : "in Figure 10-7 represents the moment for the pilot and front"
+    },
+    {
+      "rect" : [
+        321.00000000000006,
+        281.06650000000002,
+        236.92999999999978,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "passenger. All other moments were determined the same"
+        }
+      ],
+      "text" : "passenger. All other moments were determined the same"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      320.40600000000001,
+      622,
+      238.59800000000001,
+      108
+    ],
+    [
+      320.11340000000001,
+      81.004999999999995,
+      238.68729999999999,
+      187.66700000000003
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "text" : "10-7"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        320.72730000000001,
+        603.21040000000005,
+        213.89329999999995,
+        10.812000000000012
+      ],
+      "structure" : {
+        "group" : 3887,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18885
+      },
+      "text" : "Figure 10-5. Example of weight and balance computations."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        321.22730000000001,
+        60.812899999999999,
+        139.64530000000002,
+        10.811999999999998
+      ],
+      "structure" : {
+        "group" : 3888,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18889
+      },
+      "text" : "Figure 10-6. Weight and balance data."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        719.56640000000004,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3827,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 18665
+      },
+      "text" : "weight and balance distribution prior to takeoff are runway"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        707.06640000000004,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3827,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 18666
+      },
+      "text" : "length, runway surface, runway slope, surface wind, and the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        694.56640000000004,
+        237.00599999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3827,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 18667
+      },
+      "text" : "presence of obstacles. These factors may require a reduction"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        682.06640000000004,
+        174.44000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3827,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 18668
+      },
+      "text" : "in or redistribution of weight prior to flight."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        657.06640000000004,
+        237.02799999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3828,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18669
+      },
+      "text" : "Some aircraft are designed so that it is difficult to load them"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        644.56640000000004,
+        236.90999999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3828,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18670
+      },
+      "text" : "in a manner that places the CG out of limits. These are"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        632.06640000000004,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3828,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18671
+      },
+      "text" : "usually small aircraft with the seats, fuel, and baggage areas"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        619.56640000000004,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3828,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18672
+      },
+      "text" : "located near the CG limit. Pilots must be aware that while"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        607.06640000000004,
+        237.005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3828,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18673
+      },
+      "text" : "within CG limits these aircraft can be overloaded in weight."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        594.56640000000004,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3828,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18674
+      },
+      "text" : "Other aircraft can be loaded in such a manner that they will"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        582.06640000000004,
+        236.995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3828,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18675
+      },
+      "text" : "be out of CG limits even though the useful load has not been"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        569.56640000000004,
+        236.83600000000013,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3828,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18676
+      },
+      "text" : "exceeded. Because of the effects of an out-of-balance or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        557.06640000000004,
+        237.00699999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3828,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18677
+      },
+      "text" : "overweight condition, a pilot should always be sure that an"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        544.56640000000004,
+        106.08000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3828,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18678
+      },
+      "text" : "aircraft is properly loaded."
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        517.28240000000005,
+        204.24000000000012,
+        15.827999999999975
+      ],
+      "structure" : {
+        "group" : 3829,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18679
+      },
+      "text" : "Determining Loaded Weight and CG"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        502.51640000000003,
+        237.048,
+        11.46999999999997
+      ],
+      "structure" : {
+        "group" : 3830,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 18680
+      },
+      "text" : "There are various methods for determining the loaded weight"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        490.01640000000003,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3830,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 18681
+      },
+      "text" : "and CG of an aircraft. There is the computational method as"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        477.51640000000003,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3830,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 18682
+      },
+      "text" : "well as methods that utilize graphs and tables provided by"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        465.01640000000003,
+        101.90000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3830,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 18683
+      },
+      "text" : "the aircraft manufacturer."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        439.44640000000004,
+        108.33000000000004,
+        13.189999999999998
+      ],
+      "structure" : {
+        "group" : 3831,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18684
+      },
+      "text" : "Computational Method"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        427.01640000000003,
+        237.00399999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3832,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 18685
+      },
+      "text" : "The following is an example of the computational method"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        414.51640000000003,
+        198.60000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3832,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 18686
+      },
+      "text" : "involving the application of basic math functions."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        397.51640000000003,
+        84.140000000000015,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3833,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18687
+      },
+      "text" : "Aircraft Allowances:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        380.51640000000003,
+        210.01200000000006,
+        11.470000000000027
+      ],
+      "text" : "Maximum gross weight......................3,400 pounds"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        363.51640000000003,
+        209.85000000000014,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3835,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18689
+      },
+      "text" : "CG range.............................................78–86 inches"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        346.51640000000003,
+        27.219999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3836,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18690
+      },
+      "text" : "Given:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        329.51640000000003,
+        209.97000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3837,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18691
+      },
+      "text" : "Weight of front seat occupants.............340 pounds"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        312.51640000000003,
+        210.13000000000011,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3838,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18692
+      },
+      "text" : "Weight of rear seat occupants..............350 pounds"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        295.51640000000003,
+        210.08000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3839,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18693
+      },
+      "text" : "Fuel...........................................................75 gallons"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        278.51640000000003,
+        209.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3840,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18694
+      },
+      "text" : "Weight of baggage in area 1....................80 pounds"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        261.51640000000003,
+        228.005,
+        11.470000000000027
+      ],
+      "text" : "1. List the weight of the aircraft, occupants, fuel, and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        249.0164,
+        210.08499999999992,
+        11.469999999999999
+      ],
+      "text" : "baggage. Remember that aviation gas (AVGAS)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        236.5164,
+        209.84099999999989,
+        11.469999999999999
+      ],
+      "text" : "weighs 6 pounds per gallon and is used in this"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        224.0164,
+        36.379999999999995,
+        11.469999999999999
+      ],
+      "text" : "example."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        207.0164,
+        228.09999999999991,
+        11.469999999999999
+      ],
+      "text" : "2. Enter the moment for each item listed. Remember"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        194.5164,
+        107.56999999999999,
+        12.530000000000001
+      ],
+      "text" : "“weight x arm = moment.”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        177.5164,
+        176.06000000000006,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3843,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18703
+      },
+      "text" : "3. Find the total weight and total moment."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        160.5164,
+        228.01700000000005,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3844,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 18704
+      },
+      "text" : "4. To determine the CG, divide the total moment by the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        148.0164,
+        50,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3844,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 18705
+      },
+      "text" : "total weight."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        123.0164,
+        237.03500000000008,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3845,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 18706
+      },
+      "text" : "NOTE: The weight and balance records for a particular"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        110.5164,
+        237.0630000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3845,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 18707
+      },
+      "text" : "aircraft provide the empty weight and moment, as well as the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        98.016400000000004,
+        188.56999999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3845,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 18708
+      },
+      "text" : "information on the arm distance. [Figure 10-5]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        73.016400000000004,
+        237.01299999999998,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3846,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 18710
+      },
+      "text" : "The total loaded weight of 3,320 pounds does not exceed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        60.516400000000004,
+        237.00400000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3846,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 18711
+      },
+      "text" : "the maximum gross weight of 3,400 pounds, and the CG of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        574.56639999999993,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3846,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 18712
+      },
+      "text" : "84.8 is within the 78–86 inch range; therefore, the aircraft is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        562.06639999999993,
+        82.509999999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3846,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 18713
+      },
+      "text" : "loaded within limits."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        536.49639999999988,
+        67.779999999999973,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 3847,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18714
+      },
+      "text" : "Graph Method"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        524.06639999999993,
+        237.00700000000006,
+        11.470000000000027
+      ],
+      "text" : "Another method for determining the loaded weight and CG is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        511.56639999999993,
+        237.0100000000001,
+        11.470000000000027
+      ],
+      "text" : "the use of graphs provided by the manufacturers. To simplify"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        499.06639999999993,
+        237.08500000000004,
+        11.470000000000027
+      ],
+      "text" : "calculations, the moment may sometimes be divided by 100,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        486.56639999999993,
+        194.71000000000004,
+        11.470000000000027
+      ],
+      "text" : "1,000, or 10,000. [Figures 10-6, 10-7, and 10-8]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        469.56639999999993,
+        228.17500000000018,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3849,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18720
+      },
+      "text" : "Front seat occupants....................................340 pounds"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        452.56639999999993,
+        228.03999999999996,
+        11.470100000000116
+      ],
+      "structure" : {
+        "group" : 3850,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18721
+      },
+      "text" : "Rear seat occupants.......................................300 pounds"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        435.56650000000002,
+        228.02300000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3851,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18724
+      },
+      "text" : "Fuel ..................................................................40 gallons"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        418.56650000000002,
+        227.96000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3852,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 18727
+      },
+      "text" : "Baggage area 1................................................20 pounds"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        393.56650000000002,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3853,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18730
+      },
+      "text" : "The same steps should be followed in the graph method as"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        381.06650000000002,
+        236.99099999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3853,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18731
+      },
+      "text" : "were used in the computational method except the graphs"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        368.56650000000002,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3853,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18732
+      },
+      "text" : "provided will calculate the moments and allow the pilot to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        356.06650000000002,
+        236.91000000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3853,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18733
+      },
+      "text" : "determine if the aircraft is loaded within limits. To determine"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        343.56650000000002,
+        237,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3853,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18734
+      },
+      "text" : "the moment using the loading graph, find the weight and draw"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        331.06650000000002,
+        237.01900000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3853,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18735
+      },
+      "text" : "a line straight across until it intercepts the item for which the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        318.56650000000002,
+        237,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3853,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18736
+      },
+      "text" : "moment is to be calculated. Then draw a line straight down"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        306.06650000000002,
+        237.005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3853,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18737
+      },
+      "text" : "to determine the moment. (The red line on the loading graph"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        293.56650000000002,
+        237.00500000000011,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3853,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18738
+      },
+      "text" : "in Figure 10-7 represents the moment for the pilot and front"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00000000000006,
+        281.06650000000002,
+        236.92999999999978,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3853,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 18741
+      },
+      "text" : "passenger. All other moments were determined the same"
+    }
+  ],
+  "page" : 251,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        322.22700000000003,
+        658.44299999999998,
+        234.77699999999999,
+        10.982000000000085
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.22700000000003,
+        658.44299999999998,
+        234.77699999999999,
+        10.982000000000085
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.22700000000003,
+        680.44399999999996,
+        234.77699999999999,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.22700000000003,
+        680.44399999999996,
+        234.77699999999999,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.22700000000003,
+        702.44399999999996,
+        234.77699999999999,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.22700000000003,
+        702.44399999999996,
+        234.77699999999999,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.22700000000003,
+        636.44299999999998,
+        234.77699999999999,
+        10.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.22700000000003,
+        636.44299999999998,
+        234.77699999999999,
+        10.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.22700000000003,
+        711.55470000000003,
+        236.95200000000006,
+        18.445299999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        430.22800000000001,
+        623,
+        126.66699999999997,
+        105.49400000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        430.22800000000001,
+        623,
+        126.66699999999997,
+        105.49400000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        512.56130000000007,
+        634.21659999999997,
+        4,
+        95.783400000000029
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        470.56130000000002,
+        633.98860000000002,
+        4,
+        96.011399999999981
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        428.06130000000002,
+        633.98860000000002,
+        4,
+        96.011399999999981
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.97700000000003,
+        622.75,
+        235.27600000000001,
+        105.99400000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.97700000000003,
+        622.75,
+        235.27600000000001,
+        105.99400000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.22700000000003,
+        622,
+        236.95200000000006,
+        108
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.40600000000001,
+        645.17380000000003,
+        238.59800000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.40600000000001,
+        634.10739999999998,
+        238.59800000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.774,
+        81.668000000000006,
+        235.27599999999995,
+        185.45299999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.774,
+        81.668000000000006,
+        235.27599999999995,
+        185.45299999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.774,
+        81.667599999999993,
+        235.27600000000007,
+        185.45339999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.024,
+        81.004999999999995,
+        236.952,
+        187.66700000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.024,
+        246.26420000000002,
+        236.952,
+        22.407800000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.024,
+        246.26420000000002,
+        236.952,
+        22.407800000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        478.108,
+        81.695000000000007,
+        78.834000000000003,
+        185.44600000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        478.108,
+        81.695000000000007,
+        78.834000000000003,
+        185.44600000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        478.108,
+        81.694999999999993,
+        78.834000000000003,
+        185.44600000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        476.358,
+        81.004999999999995,
+        81.617999999999995,
+        187.66700000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.20269999999999,
+        215.4967,
+        238.59800000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.11340000000001,
+        246.06310000000002,
+        238.59800000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.20269999999999,
+        167.4537,
+        238.59800000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.20269999999999,
+        146.4537,
+        238.59800000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.11340000000001,
+        134.43370000000002,
+        238.59800000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.20269999999999,
+        113.45370000000001,
+        238.59800000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.20269999999999,
+        91.453699999999998,
+        238.59800000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        516.35800000000006,
+        81.004999999999995,
+        4,
+        187.66700000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        476.358,
+        196.06620000000001,
+        82.165999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        476.358,
+        205.8912,
+        82.165999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        476.358,
+        186.96890000000002,
+        82.165999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        476.358,
+        177.87270000000001,
+        82.165999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        336.09199999999998,
+        199.32400000000001,
+        6.7520000000000095,
+        7.1069999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        336.09199999999998,
+        190.32400000000001,
+        6.7520000000000095,
+        7.1069999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        336.09199999999998,
+        181.32400000000001,
+        6.7520000000000095,
+        7.1069999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        336.09199999999998,
+        172.32300000000001,
+        6.7520000000000095,
+        7.1069999999999993
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

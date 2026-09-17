@@ -85,7 +85,7 @@ extracted text, geometry and attributed runs from pages 1 and 2. These derivativ
 
 ## Government-document development fixtures
 
-The `faa-{24,25,91,195,227,363…365,437…439,511}`, `faa-{6,15,27,45,54,55,72,96,114,127,152,153,319,360,416,429,462,476}-tagged`, `fed-{11,12,13,32,45,46,54,75,77,103,109,123}`, `flag-{27,31}`, `911-{19…26,33,50,51,65…71,126,127,451,471…476,579…585}`, `cdc-5`, `dga-1`, `warren-50`, `warren-910`, `blue-5`, `blue-12`, `noaa-{33,80,139,1619}`, `usgs-{1,2}` and `nbs-7` layout JSONs under the test fixtures
+The `faa-{24,25,91,195,227,363…365,437…439,511}`, `faa-{6,15,27,45,54,55,72,96,114,127,152,153,319,360,416,429,462,476}-tagged`, `fed-{11,12,13,32,45,46,54,75,77,103,109,123}`, `flag-{27,31}`, `911-{19…26,33,50,51,65…71,126,127,451,471…476,579…585}`, `faa-{3,453,461,473,477}-title-art`, `faa-{251,298}-worked-example`, `cdc-5`, `dga-1`, `dga-7`, `warren-50`, `warren-910`, `blue-5`, `blue-12`, `noaa-{33,80,139,1619}`, `usgs-{1,2}` and `nbs-7` layout JSONs under the test fixtures
 contain extracted text and geometry from the corresponding U.S. government corpus documents.
 Each records its publisher URL, title and pinned source checksum. The source and output renders
 in `measurements/three-fidelity-fixes/`, `measurements/fractions-and-invisible-text/`,

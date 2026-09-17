@@ -61,16 +61,16 @@ private func texts(_ elements: [LayoutReconstructor.Element]) -> [String] {
     let text = result.map(\.text)
     let heading = try index(of: "Older Adults", in: result)
     let bullet = try index(of: "+ Some older adults", in: result)
-    // The heading, its band (a preserved region), the left column's five lines, then the right
-    // column's five. The column break still opens a paragraph: no rule joins prose from one
-    // column's foot to the next column's head.
+    // The heading, its band (a preserved region), then the bullet: the left column's five lines
+    // continue at the right column's head (#111), so the sentence is one paragraph.
     #expect(bullet == heading + 2)
     guard case .image = result[heading + 1].content else { Issue.record("no band after the heading"); return }
     #expect(text[bullet] == "+ Some older adults need fewer calories but still require equal or greater amounts of key "
         + "nutrients such as protein, vitamin B12, vitamin D, and calcium. To meet these needs, they should prioritize "
-        + "nutrient-dense foods such as dairy, meats, seafood,")
-    #expect(text[bullet + 1] == "eggs, legumes, and whole plant foods (vegetables and fruits, whole grains, nuts, and seeds). "
-        + "When dietary intake or absorption is insufficient, fortified foods or supplements may be needed under medical supervision.")
+        + "nutrient-dense foods such as dairy, meats, seafood, eggs, legumes, and whole plant foods (vegetables and fruits, "
+        + "whole grains, nuts, and seeds). When dietary intake or absorption is insufficient, fortified foods or supplements "
+        + "may be needed under medical supervision.")
+    #expect(!text.contains { $0.hasPrefix("eggs, legumes") })
     // Sections whose tags apply are unchanged: whole bullets across both columns.
     #expect(text.contains { $0.hasPrefix("+ Lactation increases") && $0.hasSuffix("and vitamin A–rich vegetables.") })
     #expect(text.contains { $0.hasPrefix("+ Pregnant women should") && $0.hasSuffix("(e.g., salmon, sardines, trout).") })

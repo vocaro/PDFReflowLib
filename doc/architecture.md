@@ -177,7 +177,9 @@ title when the next text in its column is ordinary text on its edge (#67), or wh
 set in a heading or label style the book repeats on three or more pages, even directly above
 another heading: extraction records the size, body size and all-bold flag of each page's
 heading-size lines outside painted graphics and running heads, as it records label styles (FAA's
-16-point `Chapter 4` over its 48-point title, #84). A one-off title-page imprint stays a paragraph. Origin matching is conservative association evidence, not full
+16-point `Chapter 4` over its 48-point title, #84), or when it stands directly over a smaller title
+on its left edge (at most 90% of its size), which it introduces (DGA page 7's `Special Populations &
+Considerations` over `Infancy & Early Childhood`, #111). A one-off title-page imprint stays a paragraph. Origin matching is conservative association evidence, not full
 font decoding or proof of the author's semantic correctness.
 
 Supported roles are P and H1–H6 through grouping containers and transparent inline spans.
@@ -224,7 +226,13 @@ quarters of a ragged column's measure, or a line-ending hyphen); the next paragr
 is not a retained running header with a folio word; and no other prose lies below or right of
 that last line or above or left of that first line, counting body-sized wide text inside a
 preserved region so that a figure which swallowed the real neighbour blocks the join rather
-than corrupting the text. A line that begins with a number or single letter followed by a
+than corrupting the text. The same evidence joins a paragraph at one column's foot to the next
+paragraph at a column head to its right on the same page (#111): they are adjacent in reading order
+apart from figures, captions and folios (which then follow the joined paragraph); the head line is
+higher than the foot line; and no prose lies below the foot line in its span, between the two
+columns, or above the head line in its span, searched only beneath the lowest line, figure or box
+over the head line that crosses the gutter, so a section band bounds its section from the stacked
+sections above. A line that begins with a number or single letter followed by a
 period or parenthesis and a space, or a number and parenthesis set tight against a minus sign
 (`1)− 2`), is a preformatted list item unless it wraps an open paragraph: the
 previous line must read as prose, end without terminal punctuation and reach a right edge
@@ -465,12 +473,23 @@ remains a crop unless it is page decoration (#66): touching no other graphic or 
 spanning at least half of the page's text, with no text within one body size of it, or only a
 running head's row of text no larger than 1.2× body between it and the page edge (within the
 outer 12% of the page) with all other text beyond it. A rule directly beneath a heading keeps
-its crop. A line with an equals sign seeds a formula crop only when that sign
+its crop. Art behind a title is judged from the title lines (at least 1.25 body, carrying a word)
+that a painted cluster touches (#111, #112): a drop shadow, which the titles' rectangles cover for at
+least 60% and which reaches no further than one type size beyond them while other lines at most graze
+it, is decoration (FAA's appendix and chapter-opener titles); a band no taller than twice its one
+title's row, level with it and touching no other text, keeps only its part beyond a title that
+overhangs its end, and is dropped when it holds the whole title (DGA's section bands). Paint order
+is not in the page model, so a figure behind a title is told apart by extending well beyond it or
+holding other text. A line with an equals sign seeds a formula crop only when that sign
 is outside a web address's query string (`print.php3?ReportID=145`, `item_id=1645&content_type_id=7`),
 so notes citing such addresses keep their text (#80), and never in a bold title that spells out a
 mnemonic's letter (`V = EnVironment`, `A = Aircraft`: one capital, the sign, then words; #97), nor
 in a contents entry with its leader (FAA page 6's plain `A = Aircraft……2-8`, Wallace's `6.3
-Trinomials where a =1……221`; #102). Rows of divisor bars beneath equations are not table headers. Whole-line expansion admits the lines a graphic
+Trinomials where a =1……221`; #102). A formula candidate that continues in lower case, from the left
+edge or hanging indent of the one line above it, a sentence that line leaves open is that sentence's
+end, not a display (FAA page 251's `Remember` / `“weight x arm = moment.”`), and a formula's margin
+stops short of a sentence on its own row (a capital, a full stop, function words, no term or
+operator: page 298's `The height of the cloud base is 3,180 feet AGL.`; #112). Rows of divisor bars beneath equations are not table headers. Whole-line expansion admits the lines a graphic
 captures and the other pieces of their rows, then trims the crop away from lines it merely
 touches. It does not chain from text line to text line through overlapping leading, so a
 label underline, a column rule or an inline equation beside tightly leaded prose does not

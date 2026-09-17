@@ -8,6 +8,13 @@
       "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; since #98 the bus-bar and fuse paragraphs, the loadmeter, voltage-regulator and hydraulic paragraphs reflow and only the master-switch figure is preserved. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's `Figure 6-20.` caption ends at its own last line and the unpainted `Figure 5-16.` caption left outside the artwork's clip is not emitted (#85); page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph. Pages 88, 98, 203, 231 and 335 (#84): chapter openers tagged P remain headings once their text-free Form XObjects no longer discard the page tags; page 203 source-reviewed, its tagged group spanning Introduction and the next section falls back. Page 89 (#75) source-reviewed: the applied tags read the viscosity and friction columns in order. Pages 105, 211 and 227 source-reviewed: paragraphs and a caption the source tags in pieces read as one element. Page 227 source raster reviewed (#77): the compass-rose figure's group box overhangs its rounded frame into the left column, but only its clipped part is figure ink, so the sentence ending `true course desired.` reflows whole; the word equations under `Step 1:`, `Step 2:` and `course is known:` are body text in the column's measure and reflow in order. Pages 96, 114, 127, 128, 179, 235, 263, 360, 366 and 412 (#89) source-reviewed: a paragraph the source tags in two pieces, one of them falling back beside a figure or in a justified column spaced only around a heading, reads as one paragraph; page 319's TAF change groups and page 416's NDB table rows stay separate. Pages 27, 45, 49, 54, 72, 152, 285, 311, 383, 409 and 429 (#90) source-reviewed: tagged titles in the book's bold, bold-italic and italic title styles are headings, stacked titles stay two headings, and titles on pages 54 and 152 follow their figure directly above the paragraph they open; contents labels (pages 6, 15) and a centred table title (416) are not headings. Lettered appendix folios A-5 to A-7 and C-2 to C-4 are furniture, not headings. Pages 340, 401, 317, 439 and 108 source rasters reviewed (#86): a figure set across both columns' full measure, within points of their first or last lines, reads before or after the complete columns; each column reads whole (page 340's left column before `Some taxiway stubs`, page 401's left column before `Suppose a flight`, page 317's items 8-11 before item 12 and the METAR example, page 439's two drug paragraphs before the right column, page 108's last left-column line before figure 5-16). Pages 47, 48, 228, 447, 460 and 512 (#97) source-reviewed: untagged 10-point italic titles in the book's recurring italic title style (pages 228, 447) and italic titles over bullet lists (48) are headings; the PAVE titles A = Aircraft and V = EnVironment are text, not formula crops; the blank pages 460 and 512 carry no folio. Page 410's italic table header Distance is not a heading. Pages 24, 55, 64, 207, 249, 251, 318, 392 and 416 (#91) source-reviewed: with space-only shows no longer rejecting their tag groups, tagged table rows, time-zone rows, address lines and checklist entries stay separate paragraphs. Pages 6, 21 and 404 source-reviewed (#102): the two-line bold sub-headings The Professional Air Traffic Controllers / Organization (PATCO) Strike and Use of Chart Supplement U.S. (formerly Airport/ / Facility Directory) are one heading each; page 6's contents entries A = Aircraft through Human Factors are text, not a preserved region. Pages 7, 12 and 15 (#105) source-reviewed: the bare Roman folios at the foot of the front matter (iii to xvi, pages 3 to 15) are furniture, not paragraphs. Pages 19, 96, 130, 146, 191, 351 and 361 (#98, #52) source-reviewed: a path or image drawn beyond the frame that clips it no longer claims the column beside the figure; page 19's left column reads whole before the right column, the prose and headings beside each figure reflow in column order, and every figure stays preserved. Pages 226, 286, 288 and 302 (#13) source-reviewed: dense vector illustrations of 101,594–183,417 operations no longer exceed the graphics reader's operation budget, so the columns, headings, bullets and captions beside each complete figure reflow instead of a whole-page image, and the sentences that cross from pages 225, 287 and 301 continue. Page 348 source-reviewed: both two-line titles and their paragraphs reflow beside the four preserved figures. Page 448's 1.95-million-operation illustration still exceeds the budget and the paint cap and keeps its page image. Page 131 source raster reviewed (#121): the borderless CATEGORY / LIMIT LOAD FACTOR table reads as a table, its header row th, the two-line Utility label one cell, the footnote marker on Normal kept, with no row headers (the tags mark those cells TD).",
       "pages": [
         {
+          "page": 3,
+          "headings": [
+            "Preface"
+          ],
+          "maximumImages": 0
+        },
+        {
           "page": 16,
           "orderedText": [
             "Introduction To Flying",
@@ -90,6 +97,9 @@
           "minimumImages": 1,
           "paragraphs": [
             "placards and in the AFM/POH. These airspeeds include:"
+          ],
+          "listItems": [
+            "its upper limit provides the maximum flap speed. Approaches and landings"
           ]
         },
         {
@@ -230,9 +240,8 @@
             "Figure 7-6. Changes in propeller blade angle from hub to tip.",
             "Fixed-Pitch Propeller",
             "simplicity, and low cost are needed.",
-            "Whether the airplane has a climb or cruise propeller",
+            "Whether the airplane has a climb or cruise propeller installed depends upon its intended use.",
             "Figure 7-7. Relationship of travel distance and speed",
-            "installed depends upon its intended use.",
             "In a fixed-pitch propeller, the tachometer is the indicator of",
             "When operating altitude increases, the tachometer may not"
           ],
@@ -250,10 +259,9 @@
             "Figure 7-45. Continuous flow mask and rebreather bag.",
             "A pulse oximeter is a device that measures the amount of",
             "within one percent of directly measured blood oxygen.",
-            "Servicing of Oxygen Systems",
-            "Certain precautions should be observed whenever aircraft oxygen",
             "Figure 7-46. EDS-011 portable pulse-demand oxygen system.",
-            "systems are to be serviced.",
+            "Servicing of Oxygen Systems",
+            "Certain precautions should be observed whenever aircraft oxygen systems are to be serviced.",
             "Personal cleanliness and good housekeeping"
           ],
           "continuedParagraphs": [
@@ -277,8 +285,8 @@
             "When an aircraft is in steady, level flight, the condition of",
             "The maximum level flight speed for the aircraft is obtained",
             "Climb Performance",
+            "Mechanical energy comes in two forms: (1) Kinetic Energy (KE), the",
             "Figure 11-6. Power versus speed.",
-            "energy comes in two forms: (1) Kinetic Energy (KE), the",
             "We sometimes use the terms",
             "As an example of factor 2, an aircraft is flying level at 120"
           ],
@@ -1026,7 +1034,12 @@
               "first": "Weight of front seat occupants",
               "second": "Weight of rear seat occupants"
             }
-          ]
+          ],
+          "listItems": [
+            "2. Enter the moment for each item listed. Remember “weight x arm = moment.”",
+            "3. Find the total weight and total moment."
+          ],
+          "minimumImages": 2
         },
         {
           "page": 249,
@@ -1080,6 +1093,12 @@
           ]
         },
         {
+          "page": 17,
+          "paragraphs": [
+            "the balloon was little more than a billowing heap of cloth"
+          ]
+        },
+        {
           "page": 19,
           "headings": [
             "Transcontinental Air Mail Route"
@@ -1093,6 +1112,12 @@
             "Department of Commerce made significant advances"
           ],
           "minimumImages": 2
+        },
+        {
+          "page": 103,
+          "paragraphs": [
+            "until it eventually rejoins downstream. Form drag is the easiest to reduce"
+          ]
         },
         {
           "page": 130,
@@ -1344,6 +1369,50 @@
               ]
             }
           ]
+        },
+        {
+          "page": 298,
+          "paragraphs": [
+            "The height of the cloud base is 3,180 feet AGL."
+          ],
+          "minimumImages": 2
+        },
+        {
+          "page": 350,
+          "paragraphs": [
+            "The system configuration depends on whether the runway is a precision"
+          ]
+        },
+        {
+          "page": 453,
+          "headings": [
+            "Performance Data for Cessna Model 172R and Challenger 605"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 461,
+          "headings": [
+            "Acronyms, Abbreviations, and NOTAM Contractions"
+          ],
+          "paragraphs": [
+            "This is a list of common acronyms and abbreviations used in the aviation industry as well as NOTAM contractions. For a more complete list"
+          ],
+          "maximumImages": 0
+        },
+        {
+          "page": 473,
+          "headings": [
+            "Airport Signs and Markings"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 477,
+          "headings": [
+            "Glossary"
+          ],
+          "maximumImages": 0
         }
       ]
     },
@@ -3464,20 +3533,29 @@
           "paragraphs": [
             "+ Focus on whole, nutrient-dense foods such as protein foods, dairy, vegetables, fruits, healthy fats, and whole grains.",
             "+ Adolescents should eat nutrient-dense foods such as dairy, leafy greens, and iron-rich animal foods, while significantly limiting sugary drinks and energy drinks and avoiding highly processed foods."
+          ],
+          "headings": [
+            "Middle Childhood (5–10 Years)",
+            "Adolescence (11–18 Years)"
           ]
         },
         {
           "page": 9,
           "paragraphs": [
             "+ Pregnant women should consume diverse nutrient-dense foods, including iron-rich meats, folate-rich greens and legumes",
-            "+ Some older adults need fewer calories but still require equal or greater amounts of key nutrients such as protein, vitamin B12, vitamin D, and calcium. To meet these needs, they should prioritize nutrient-dense foods such as dairy, meats, seafood,",
-            "eggs, legumes, and whole plant foods (vegetables and fruits, whole grains, nuts, and seeds). When dietary intake or absorption is insufficient, fortified foods or supplements may be needed under medical supervision."
+            "nutrient-dense foods such as dairy, meats, seafood, eggs, legumes, and whole plant foods"
           ],
           "orderedText": [
             "Older Adults",
             "+ Some older adults need fewer calories",
             "nutrient-dense foods such as dairy, meats, seafood,",
             "eggs, legumes, and whole plant foods"
+          ],
+          "headings": [
+            "Young Adulthood",
+            "Pregnant Women",
+            "Lactating Women",
+            "Older Adults"
           ]
         },
         {
@@ -3494,23 +3572,32 @@
         {
           "page": 7,
           "headings": [
-            "Special Populations & Considerations"
+            "Special Populations & Considerations",
+            "Infancy & Early Childhood (Birth–4 Years)"
           ],
           "minimumImages": 1,
           "absentWarningCodes": [
             "pageImageFallback",
             "unsupportedGraphics"
+          ],
+          "listItems": [
+            "peanut introduction as early as 4 to 6 months"
           ]
         },
         {
           "page": 10,
           "paragraphs": [
-            "Individuals with certain chronic diseases may experience improved health outcomes when following a lower carbohydrate diet."
+            "Individuals with certain chronic diseases may experience improved health outcomes when following a lower carbohydrate diet.",
+            "whereas vegan diets show broader shortfalls"
           ],
           "minimumImages": 1,
           "absentWarningCodes": [
             "pageImageFallback",
             "unsupportedGraphics"
+          ],
+          "headings": [
+            "Individuals with Chronic Disease",
+            "Vegetarians & Vegans"
           ]
         }
       ]

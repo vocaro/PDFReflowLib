@@ -1,0 +1,87 @@
+# noaa-nca5-2023 pages 601-1200; pages whose scan failed: 0
+baseFont	subtype	FontWeight	StemV	Flags	ToUnicode	shows	PDFKit names	name rule bold	weight-aware bold
+OFKQWA+Lora-Regular	TrueType	400	88	34	yes	39099	Helvetica×17558	no	no
+OFKQWA+Roboto-Regular	TrueType	400	92	32	yes	4706	Helvetica×2052	no	no
+OFKQWA+Lora-Italic	TrueType	400	80	98	yes	3575	Helvetica×19	no	no
+OFKQWA+Lora-Regular	Type0	400	88	6	yes	2677	Helvetica×1187	no	no
+OFKQWA+Lora-Bold	TrueType	700	144	34	yes	2391		-	yes
+OFKQWA+Roboto-Bold	TrueType	700	144	32	yes	2109	Helvetica×915	no	yes
+OFKQWA+Roboto-Medium	Type0	500	120	4	yes	750	Helvetica×749	no	no
+OFKQWA+Roboto-Medium	TrueType	500	120	32	yes	587	Helvetica×587	no	no
+OFKQWA+Roboto-Regular	Type0	400	92	4	yes	386	Helvetica×186	no	no
+OFKQWA+Roboto-Italic	Type0	400	88	68	yes	204	Helvetica×3	no	no
+OFKQWA+Lora-Italic	Type0	400	80	70	yes	204	Helvetica×1	no	no
+OFKQWA+Roboto-BoldItalic	TrueType	700	140	96	yes	147	Helvetica×140	no	yes
+OFKQWA+Roboto-Italic	TrueType	400	88	96	yes	124		-	no
+OFKQWA+ProximaNova-Bold	Type1	700	128	32	yes	42	ProximaNova-Bold×16	yes	yes
+OFKQWA+Roboto-Bold	Type0	700	144	4	yes	40	Helvetica×32	no	yes
+OFKQWA+TimesNewRomanPSMT	Type0	400	80	6	yes	9		-	no
+OFKQWA+TimesNewRomanPSMT	TrueType	400	80	34	yes	6		-	no
+OFKQWA+Roboto-BoldItalic	Type0	700	140	68	yes	4	Helvetica×4	no	yes
+OFKQWA+Lora-Bold	Type0	700	144	6	yes	3		-	yes
+OFKQWA+Calibri-Bold	TrueType	700	124	32	yes	2		-	yes
+OFKQWA+ArialMT	TrueType	400	88	32	yes	1		-	no
+OFKQWA+ArialMT	Type0	400	88	4	yes	1		-	no
+OFKQWA+Calibri	Type0	400	80	4	yes	1		-	no
+# line runs 32604; bold by name rule 40; bold with font resources 1601; changed 1561 on 406 pages
+# pages with changes: 601 602 604 606 607 609 610 611 612 613 614 616 618 619 620 621 622 624 626 627 628 629 630 632 634 642 643 644 645 646 648 649 650 651 652 653 654 655 656 657 658 659 661 663 664 666 667 669 680 681 683 691 692 693 694 696 697 698 699 701 702 703 704 705 706 707 708 709 710 711 713 715 718 721 726 732 734 735 736 737 739 740 741 742 743 744 745 746 747 748 749 751 752 753 754 755 756 757 758 759 760 761 762 763 764 765 771 773 779 780 781 782 783 785 786 787 789 790 791 793 794 795 798 799 800 802 803 810 815 816 817 818 819 820 822 823 824 825 828 829 830 833 834 835 836 837 839 840 841 842 844 846 848 850 851 855 856 857 858 859 860 861 862 863 864 865 866 867 868 869 870 871 872 873 874 876 878 879 883 884 885 887 888 889 890 891 893 894 895 896 897 898 899 900 901 902 903 904 905 906 907 908 909 910 911 912 914 916 918 919 920 921 922 923 924 925 926 927 929 930 931 934 935 936 937 938 939 940 942 943 944 945 947 949 950 952 954 955 956 957 958 959 961 963 964 965 966 968 974 977 985 986 987 988 990 991 992 993 994 996 998 999 1000 1001 1002 1003 1005 1006 1007 1008 1009 1010 1011 1012 1013 1014 1015 1016 1017 1018 1019 1020 1021 1023 1024 1026 1027 1028 1035 1038 1041 1042 1046 1047 1050 1051 1052 1053 1055 1056 1057 1058 1059 1060 1061 1062 1063 1064 1065 1066 1067 1068 1069 1070 1071 1072 1073 1074 1075 1076 1077 1078 1079 1080 1081 1082 1084 1085 1086 1087 1088 1089 1090 1096 1100 1101 1106 1107 1108 1109 1111 1112 1113 1114 1115 1116 1117 1118 1119 1121 1123 1124 1125 1126 1127 1128 1130 1131 1132 1133 1134 1135 1137 1138 1139 1141 1142 1144 1145 1147 1155 1162 1165 1166 1167 1168 1170 1171 1172 1173 1174 1175 1176 1177 1178 1179 1180 1181 1182 1183 1184 1185 1186 1187 1188 1189 1190 1191 1192 1193 1194 1195 1196 1197 1199 1200
+  p601	Helvetica	577 
+  p601	Helvetica	100
+  p601	Helvetica	177
+  p602	Helvetica	42 
+  p604	Helvetica	10 
+  p606	Helvetica	84
+  p607	Helvetica	24 
+  p609	Helvetica	Fifth National Climate Assessment: Chapter 13
+  p609	Helvetica	Transportation
+  p610	Helvetica	Chapter 13. Transportation
+  p610	Helvetica	Authors and Contributors
+  p610	Helvetica	Federal Coordinating Lead Author
+  p610	Helvetica	Chapter Lead Author
+  p610	Helvetica	Chapter Authors
+  p610	Helvetica	Technical Contributors
+  p610	Helvetica	Samuel A. Markolf
+  p610	Helvetica	Madison A. Walker
+  p611	Helvetica	Review Editor
+  p611	Helvetica	John R. Posey
+  p611	Helvetica	Cover Art
+  p611	Helvetica	Oxana Kovalchuk
+  p611	Helvetica	Recommended Citation
+  p612	Helvetica	Table of Contents
+  p612	Helvetica	Limiting Transportation Sector Emissions and
+  p612	Helvetica	Climate Change Combined with Other Disruptors Requires
+  p612	Helvetica	Sustainable Transportation Would Produce Societal Benefits............
+  p612	Helvetica	Equitable Distribution of Transportation Trade-Offs
+  p612	Helvetica	and Benefits Requires Community Involvement ..........................
+  p613	Helvetica	Introduction
+  p614	Helvetica	Key Message 13.1
+  p614	Helvetica	Limiting Transportation Sector Emissions and
+  p614	Helvetica	Integrating Climate Projections Can Reduce Risks
+  p614	Helvetica	2021 Greenhouse Gas Emissions from US Domestic Transportation by Mode
+  p614	Helvetica	Transportation remains the largest source of emissions in the US, with
+  p614	Helvetica	contributors.
+  p614	Helvetica	Figure 13.1. 
+  p616	Helvetica	Table 13.1. Climate and Transportation Vulnerabilities
+  p618	Helvetica	Key Message 13.2
+  p618	Helvetica	Climate Change Combined with Other Disruptors Requires
+  p618	Helvetica	New Frameworks and Competencies
+  p618	Helvetica	Transportation Futures
+  p618	Helvetica	A shifting transportation landscape, and how we respond to it, will de
+  p618	Helvetica	Figure 13.2. 
+  p619	Helvetica	Resilience Planning Cycle
+  p619	Helvetica	Improving transportation resilience requires an iterative approach.
+  p619	Helvetica	Figure 13.3. 
+  p620	Helvetica	Key Message 13.3
+  p620	Helvetica	Sustainable Transportation Would Produce Societal Benefits
+  p621	Helvetica	Co-benefits of Mitigation and Resilience
+  p621	Helvetica	Decarbonizing transportation could save money and improve air quality,
+  p621	Helvetica	and ecosystems.
+  p621	Helvetica	Figure 13.4. 
+  p622	Helvetica	Key Message 13.4
+  p622	Helvetica	Equitable Distribution of Transportation Trade-Offs
+  p622	Helvetica	and Benefits Requires Community Involvement
+  p624	Helvetica	Considerations of Equitable Climate Adaptation and GHG Mitigation from
+  p624	Helvetica	Transportation Systems
+  p624	Helvetica	Reducing emissions involves trade-offs that have implications for reli
+  p626	Helvetica	Traceable Accounts
+  p626	Helvetica	Process Description

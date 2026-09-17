@@ -1,0 +1,93 @@
+# noaa-nca5-2023 pages 1-600; pages whose scan failed: 0
+baseFont	subtype	FontWeight	StemV	Flags	ToUnicode	shows	PDFKit names	name rule bold	weight-aware bold
+OFKQWA+Lora-Regular	TrueType	400	88	34	yes	33826	Helvetica×15271	no	no
+OFKQWA+Roboto-Regular	TrueType	400	92	32	yes	4899	Helvetica×1930	no	no
+OFKQWA+Lora-Italic	TrueType	400	80	98	yes	3074	Helvetica×21	no	no
+OFKQWA+Lora-Regular	Type0	400	88	6	yes	2328	Helvetica×1014	no	no
+OFKQWA+Lora-Bold	TrueType	700	144	34	yes	2270	Helvetica×1	no	yes
+OFKQWA+Roboto-Bold	TrueType	700	144	32	yes	2087	Helvetica×860	no	yes
+OFKQWA+Roboto-Medium	Type0	500	120	4	yes	715	Helvetica×566	no	no
+OFKQWA+Roboto-Medium	TrueType	500	120	32	yes	517	Helvetica×514	no	no
+OFKQWA+Roboto-Regular	Type0	400	92	4	yes	383	Helvetica×196	no	no
+OFKQWA+Lora-Italic	Type0	400	80	70	yes	162	Helvetica×1	no	no
+XNWSSI+ProximaNova-Medium	Type1	500	92	32	yes	156	ProximaNova-Medium×92	no	no
+OFKQWA+ProximaNova-Bold	Type1	700	128	32	yes	149	ProximaNova-Bold×90	yes	yes
+OFKQWA+Roboto-BoldItalic	TrueType	700	140	96	yes	130	Helvetica×119	no	yes
+OFKQWA+Roboto-Italic	Type0	400	88	68	yes	118		-	no
+OFKQWA+ProximaNova-Regular	Type1	400	76	32	yes	114	ProximaNova-Regular×107	no	no
+OFKQWA+Roboto-Italic	TrueType	400	88	96	yes	77		-	no
+OFKQWA+TimesNewRomanPSMT	TrueType	400	80	34	yes	77	TimesNewRomanPSMT×13	no	no
+OFKQWA+Roboto-Bold	Type0	700	144	4	yes	50	Helvetica×40	no	yes
+OFKQWA+ArialMT	TrueType	400	88	32	yes	15		-	no
+OFKQWA+TimesNewRomanPSMT	Type0	400	80	6	yes	15	TimesNewRomanPSMT×1	no	no
+OFKQWA+Calibri-Bold	TrueType	700	124	32	yes	8		-	yes
+OFKQWA+Calibri	TrueType	400	80	32	yes	6		-	no
+OFKQWA+MinionPro-Regular	Type1	400	80	34	yes	6	Helvetica×3	no	no
+OFKQWA+Calibri-Bold	Type0	700	124	4	yes	4		-	yes
+OFKQWA+Roboto-BoldItalic	Type0	700	140	68	yes	4	Helvetica×4	no	yes
+OFKQWA+Arial-ItalicMT	TrueType	400	92	96	yes	3		-	no
+OFKQWA+ArialMT	Type0	400	88	4	yes	2		-	no
+OFKQWA+ArialUnicodeMS	TrueType	400	88	32	yes	1		-	no
+OFKQWA+TimesNewRomanPS-BoldMT	TrueType	700	136	34	yes	1		-	yes
+# line runs 30236; bold by name rule 145; bold with font resources 1741; changed 1596 on 406 pages
+# pages with changes: 2 3 6 7 8 17 21 22 23 25 26 27 28 29 30 31 32 33 34 35 37 38 39 40 41 43 44 46 48 49 50 51 52 53 55 56 57 58 59 60 61 62 63 65 66 67 68 69 71 72 73 74 75 76 80 81 82 83 84 85 86 87 88 89 90 91 93 94 95 96 97 98 100 101 102 103 104 105 106 107 108 109 110 111 113 116 117 120 127 129 130 134 138 139 140 141 143 144 145 146 147 148 149 151 152 153 154 155 156 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 174 175 179 184 186 188 191 192 195 196 198 201 202 203 206 207 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 240 241 243 246 248 249 250 252 253 256 257 258 259 260 261 263 264 265 266 267 268 269 270 271 272 273 274 275 276 279 282 283 288 292 295 300 301 302 303 304 305 306 307 308 309 310 311 312 314 315 316 317 318 319 320 321 322 323 325 326 329 332 335 340 341 342 343 344 345 346 347 348 349 351 352 354 355 356 357 358 359 360 361 362 363 365 366 368 369 371 374 380 384 385 386 387 388 389 391 392 393 394 395 396 397 398 399 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 418 420 422 428 430 433 442 444 445 446 447 448 449 451 453 454 455 456 457 459 460 461 462 463 464 465 466 467 469 472 482 483 484 487 488 489 490 491 492 493 494 495 496 497 499 500 501 502 503 505 506 507 509 511 512 514 516 524 526 527 528 529 530 531 532 533 534 535 536 538 539 540 541 542 544 545 546 547 549 551 553 555 556 557 559 565 567 568 569 570 571 572 573 574 575 576 577 578 580 582 583 584 585 586 587 588 589 590 591 593 594 596 600
+  p2	Helvetica	Cover image
+  p3	Helvetica	Fifth National Climate Assessment
+  p6	Helvetica	Allison R. Crimmins
+  p6	Helvetica	Margaret Walsh
+  p6	Helvetica	Daniel Barrie
+  p6	Helvetica	Kurt Preston
+  p6	Helvetica	Tristram O. West
+  p6	Helvetica	Daniel Dodgen
+  p6	Helvetica	Merissa Zuzulock
+  p6	Helvetica	Paul Wagner
+  p6	Helvetica	Sierra Woodruff
+  p6	Helvetica	Rebecca Beavers
+  p6	Helvetica	April Marchese
+  p6	Helvetica	Darrell A. Winner
+  p6	Helvetica	Kathy A. Hibbard
+  p6	Helvetica	Maria Uhle
+  p6	Helvetica	Jennifer Carroll
+  p6	Helvetica	Rebecca N. Johnson
+  p6	Helvetica	Emily Weeks
+  p6	Helvetica	Subcommittee on Global Change Research
+  p6	Helvetica	Wayne Higgins
+  p6	Helvetica	J. Michael Kuperberg
+  p6	Helvetica	William Hohenstein
+  p6	Helvetica	Ben DeAngelo
+  p6	Helvetica	Ben Petro
+  p6	Helvetica	Gary Geernaert
+  p6	Helvetica	John Balbus
+  p6	Helvetica	David Bascom
+  p6	Helvetica	Geoff Plumlee
+  p6	Helvetica	Trigg Talley
+  p6	Helvetica	Gretchen Goldman
+  p6	Helvetica	April Marchese
+  p6	Helvetica	Rebecca S. Dodder
+  p6	Helvetica	Andy Miller
+  p6	Helvetica	Jack Kaye
+  p6	Helvetica	Maria Uhle
+  p6	Helvetica	Kirk Johnson
+  p6	Helvetica	Noel P. Gurwick
+  p6	Helvetica	USGCRP National Climate Assessment (NCA) Coordination Office
+  p6	Helvetica	Allison R. Crimmins
+  p6	Helvetica	Christopher W. Avery
+  p6	Helvetica	J. Michael Kuperberg
+  p6	Helvetica	Samantha Basile
+  p6	Helvetica	David J. Dokken
+  p6	Helvetica	Leo Goldsmith
+  p6	Helvetica	Aaron M. Grade
+  p6	Helvetica	Joshua Hernandez
+  p6	Helvetica	Katia Kontar
+  p6	Helvetica	Yishen Li
+  p6	Helvetica	Fredric Lipschultz
+  p6	Helvetica	Allyza R. Lustig
+  p6	Helvetica	Austin A. Scheetz
+  p6	Helvetica	Reid A. Sherman
+  p6	Helvetica	Susan C. Aragon-Long 
+  p6	Helvetica	Drew Story
+  p6	Helvetica	Laurie Howell
+  p6	Helvetica	Alexa K. Jay
+  p6	Helvetica	Stephanie Lopez
+  p6	Helvetica	Katie Reeves
+  p6	Helvetica	Charles A. Brodine

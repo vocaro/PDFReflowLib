@@ -1,0 +1,38 @@
+# census-rrs2002-01 pages 1-20; pages whose scan failed: 0
+baseFont	subtype	FontWeight	StemV	Flags	ToUnicode	shows	PDFKit names	name rule bold	weight-aware bold
+FCHKGB+dcr10084	Type1	-	0	4	no	817	Helvetica×448	no	no
+FCHMEI+cmmi10084	Type1	-	0	68	no	393	Helvetica×6	no	no
+FCHMFE+cmr10084	Type1	-	0	4	no	236	Helvetica×5	no	no
+-	Type3	-	-	-	no	214	Helvetica×11	no	unknown
+FCHNIE+cmex10084	Type1	-	0	4	no	122	Helvetica×3	no	no
+FCHMGK+cmsy10084	Type1	-	0	4	no	96		-	no
+FCHMDC+dcti10084	Type1	-	0	68	no	40	Helvetica×3	no	no
+FCHKCL+dcbx100120	Type1	-	0	4	no	40	Helvetica×19	no	yes
+TimesNewRoman	TrueType	-	73	34	no	12	TimesNewRomanPSMT×7	no	no
+TimesNewRoman,Italic	TrueType	-	73	98	no	3		-	no
+TimesNewRoman,Bold	TrueType	-	136	16418	no	2	TimesNewRomanPS-BoldMT×2	yes	yes
+FCHKIB+dctt10075	Type1	-	0	4	no	1	Helvetica×1	no	no
+FCHKFF+cmmib10084	Type1	-	0	68	no	1		-	yes
+# line runs 1093; bold by name rule 2; bold with font resources 23; changed 21 on 10 pages
+# pages with changes: 2 3 4 5 8 10 11 16 17 18
+  p2	Helvetica	Glvforvxuh ulvn dvvhvvphqw lq shuwxuedwlyh
+  p2	Helvetica	plfurgdwd surwhfwlrq
+  p2	Helvetica	f
+  p2	Helvetica	4Lqwurgxfwlrq
+  p3	Helvetica	5GdwdIlohv
+  p3	Helvetica	514 Grplqjr0Ihuuhu dqg Pdwhr0Vdq}
+  p3	Helvetica	515 Nlp0Zlqnohu
+  p4	Helvetica	6 Phwkrgv
+  p4	Helvetica	614 Udqn Vzdsslqj
+  p4	Helvetica	615 Dgglwlyh Qrlvh
+  p4	Helvetica	616 Pl{wxuhv ri Dgglwlyh Qrlvh
+  p5	Helvetica	617 Uh0lghqwlfdwlrq
+  p8	Helvetica	618 Lqirupdwlrq0Orvv dqg Vfrulqj Phwulf
+  p10	Helvetica	7Uhvxowv
+  p10	Helvetica	714 Grplqjr Gdwd Vwdwlvwlfv
+  p11	Helvetica	715 Nlp0Zlqnohu Gdwd Vwdwlvwlfv
+  p16	Helvetica	8 Glvfxvvlrq
+  p16	Helvetica	9FrqfoxglqjUhpdunv
+  p17	Helvetica	: Uhihuhqfhv
+  p17	Helvetica	Uhihuhqfhv
+  p18	Helvetica	; Dsshqgl{= Dgglwlyh Pl{wxuh Qrlvh Phwkrgrorj|

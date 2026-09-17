@@ -47,16 +47,24 @@ private typealias CaptureFont = UIFont
             tagged = true
         }
         var attributedLines: [[String: Any]] = []
-        for selection in page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? [] {
-            guard let attributed = selection.attributedString else { continue }
+        // Runs drawn in a bold font resource PDFKit does not name bold carry `bold` (#125;
+        // absent in fixtures captured before it).
+        let selections = page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? []
+        let weights = FontWeightReader.read(reference)
+        let selectionBounds = selections.map { $0.bounds(for: page) }
+        for (selection, lineBounds) in zip(selections, selectionBounds) {
+            guard let native = selection.attributedString else { continue }
+            let attributed = FontWeightReader.apply(weights, to: native, bounds: lineBounds, allBounds: selectionBounds)
             var runs: [[String: Any]] = []
             attributed.enumerateAttributes(in: NSRange(location: 0, length: attributed.length)) { attrs, range, _ in
                 let font = attrs[.font] as? CaptureFont
                 let baseline = attrs[NSAttributedString.Key(kCTBaselineOffsetAttributeName as String)] as? NSNumber
                     ?? attrs[.baselineOffset] as? NSNumber
-                runs.append(["text": (attributed.string as NSString).substring(with: range),
+                var run: [String: Any] = ["text": (attributed.string as NSString).substring(with: range),
                     "fontName": font?.fontName ?? "", "fontSize": font?.pointSize ?? 0,
-                    "baselineOffset": baseline?.doubleValue ?? 0])
+                    "baselineOffset": baseline?.doubleValue ?? 0]
+                if attrs[FontWeightReader.boldAttribute] != nil { run["bold"] = true }
+                runs.append(run)
             }
             // A selection over figure text can report infinite bounds (FAA page 474), which JSON cannot hold.
             var entry: [String: Any] = ["text": attributed.string, "runs": runs]

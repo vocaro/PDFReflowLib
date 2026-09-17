@@ -28,18 +28,23 @@ struct SourceLayoutFixture: Decodable {
             var fontName: String
             var fontSize: Double
             var baselineOffset: Double
+            /// Drawn in a bold font resource PDFKit does not name bold (#125; absent in fixtures
+            /// captured before it, and on runs that are not).
+            var bold: Bool?
         }
         var text: String
         /// The selection's own bounds, captured beside the runs (absent in older fixtures).
         var rect: [Double]?
         var runs: [Run]
-        func attributedString() -> NSAttributedString {
+        /// `fontWeights: false` replays PDFKit's runs alone, as extraction read them before #125.
+        func attributedString(fontWeights: Bool = true) -> NSAttributedString {
             let value = NSMutableAttributedString(string: "")
             for run in runs {
                 var attributes: [NSAttributedString.Key: Any] = [
                     NSAttributedString.Key(kCTBaselineOffsetAttributeName as String): run.baselineOffset,
                 ]
                 attributes[.font] = FixtureFont(name: run.fontName, size: run.fontSize)
+                if fontWeights, run.bold == true { attributes[FontWeightReader.boldAttribute] = true }
                 value.append(NSAttributedString(string: run.text, attributes: attributes))
             }
             return value
@@ -90,14 +95,14 @@ struct SourceLayoutFixture: Decodable {
 
     /// The page with each line's native style runs (emphasis, superscripts), as the
     /// converter extracts them; lines without a matching attributed selection stay plain.
-    func styledContent() -> PageContent {
+    func styledContent(fontWeights: Bool = true) -> PageContent {
         var result = content()
         let attributed = Dictionary(attributedLines.map {
             ($0.text.trimmingCharacters(in: .whitespacesAndNewlines), $0)
         }, uniquingKeysWith: { first, _ in first })
         result.lines = result.lines.map { line in
             guard let match = attributed[line.text] else { return line }
-            let styled = NativeTextReader.inlineText(from: match.attributedString())
+            let styled = NativeTextReader.inlineText(from: match.attributedString(fontWeights: fontWeights))
             guard styled.text == line.text else { return line }
             var copy = TextLine(content: styled, rect: line.rect, fontSize: line.fontSize, monospaced: line.monospaced)
             copy.structure = line.structure

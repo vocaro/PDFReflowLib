@@ -1,0 +1,11 @@
+# nbs-jres-geltman-1977 pages 1-7; pages whose scan failed: 0
+baseFont	subtype	FontWeight	StemV	Flags	ToUnicode	shows	PDFKit names	name rule bold	weight-aware bold
+Times-Roman	Type1	-	-	-	no	8595	Times-Roman×2407	no	no
+Times-Italic	Type1	-	-	-	no	358	Times-Italic×20	no	no
+Helvetica	Type1	-	-	-	no	198	Helvetica×25	no	no
+Helvetica-Oblique	Type1	-	-	-	no	81	Helvetica-Oblique×3	no	no
+HiddenHorzOCR	Type0	0	100	4	yes	30	Helvetica×4	no	no
+Helvetica-Bold	Type1	-	-	-	no	14	Helvetica-Bold×11	yes	yes
+Times-Bold	Type1	-	-	-	no	10	Times-Bold×9	yes	yes
+# line runs 3686; bold by name rule 24; bold with font resources 24; changed 0 on 0 pages
+# pages with changes: 

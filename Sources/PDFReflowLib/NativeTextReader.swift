@@ -36,12 +36,15 @@ enum NativeTextReader {
     static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true,
                       columnJoints: [ColumnJoint] = [], borderlessTableInk: [CGRect]? = nil) throws -> [TextLine] {
         try withExtractionLock {
-            var lines = try extractLines(on: page, limit: limit, includeStyle: includeStyle)
+            // The page's text shows and their fonts' weights, for bold PDFKit cannot name (#125).
+            let weights = includeStyle && page.numberOfCharacters <= limit
+                ? page.pageRef.map(FontWeightReader.read) ?? [] : []
+            var lines = try extractLines(on: page, limit: limit, includeStyle: includeStyle, weights: weights)
             if !columnJoints.isEmpty {
-                lines = try splitAtColumnJoints(lines, joints: columnJoints, on: page, includeStyle: includeStyle)
+                lines = try splitAtColumnJoints(lines, joints: columnJoints, on: page, includeStyle: includeStyle, weights: weights)
             }
             if let ink = borderlessTableInk {
-                lines = try splitBorderlessTables(lines, ink: ink, on: page, includeStyle: includeStyle)
+                lines = try splitBorderlessTables(lines, ink: ink, on: page, includeStyle: includeStyle, weights: weights)
             }
             return lines
         }
@@ -64,7 +67,7 @@ enum NativeTextReader {
     /// The characters of a line between two x positions as a line of their own, measured with
     /// PDFKit's rectangle selections; nil when the span holds no visible text.
     private static func piece(of rect: CGRect, from minX: CGFloat, to maxX: CGFloat,
-                              on page: PDFPage, includeStyle: Bool) -> TextLine? {
+                              on page: PDFPage, includeStyle: Bool, weights: [FontWeightReader.Show]) -> TextLine? {
         func selection(from minX: CGFloat, to maxX: CGFloat) -> PDFSelection? {
             guard maxX > minX else { return nil }
             return page.selection(for: CGRect(x: minX, y: rect.minY, width: maxX - minX, height: rect.height))
@@ -92,17 +95,19 @@ enum NativeTextReader {
               let raw = chosen.string?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else { return nil }
         let bounds = chosen.bounds(for: page)
         guard bounds.isFinite, !bounds.isNull, bounds.width > 0, bounds.height > 0 else { return nil }
-        let attributed = includeStyle ? chosen.attributedString : nil
+        let attributed = includeStyle ? chosen.attributedString.map {
+            FontWeightReader.apply(weights, to: $0, bounds: bounds, allBounds: [bounds])
+        } : nil
         return textLine(semantic: raw.replacingOccurrences(of: "\u{FFFC}", with: " "), bounds: bounds, attributed: attributed)
     }
 
     /// A line cut in two at `x`: both pieces exist, spell the line apart from the whitespace at
     /// the cut, stand on their own sides of `x` and at least `gap` apart.
     private static func cut(_ line: TextLine, at x: CGFloat, gap: CGFloat, on page: PDFPage,
-                            includeStyle: Bool) -> (left: TextLine, right: TextLine)? {
+                            includeStyle: Bool, weights: [FontWeightReader.Show]) -> (left: TextLine, right: TextLine)? {
         let rect = line.rect
-        guard let left = piece(of: rect, from: rect.minX, to: x, on: page, includeStyle: includeStyle),
-              let right = piece(of: rect, from: x, to: rect.maxX, on: page, includeStyle: includeStyle),
+        guard let left = piece(of: rect, from: rect.minX, to: x, on: page, includeStyle: includeStyle, weights: weights),
+              let right = piece(of: rect, from: x, to: rect.maxX, on: page, includeStyle: includeStyle, weights: weights),
               squeezed(left.text + " " + right.text) == squeezed(line.text),
               right.rect.minX - left.rect.maxX >= gap,
               left.rect.maxX <= x + 1, right.rect.minX >= x - 1 else { return nil }
@@ -117,7 +122,7 @@ enum NativeTextReader {
     /// must spell the line exactly, apart from the whitespace at the cut, or the line is kept
     /// (#65).
     private static func splitAtColumnJoints(_ lines: [TextLine], joints: [ColumnJoint],
-                                            on page: PDFPage, includeStyle: Bool) throws -> [TextLine] {
+                                            on page: PDFPage, includeStyle: Bool, weights: [FontWeightReader.Show]) throws -> [TextLine] {
         var result: [TextLine] = []
         for line in lines {
             try Task.checkCancellation()
@@ -127,11 +132,11 @@ enum NativeTextReader {
             let em = max(4, line.fontSize)
             // A cut is real when the joint falls between words and the glyphs on either side of
             // it stand at least one em apart.
-            let cuts = crossed.filter { cut(line, at: $0, gap: em, on: page, includeStyle: includeStyle) != nil }
+            let cuts = crossed.filter { cut(line, at: $0, gap: em, on: page, includeStyle: includeStyle, weights: weights) != nil }
             let edges = [rect.minX] + cuts + [rect.maxX]
             var pieces: [TextLine] = []
             for (start, end) in zip(edges, edges.dropFirst()) {
-                guard let next = piece(of: rect, from: start, to: end, on: page, includeStyle: includeStyle) else { pieces = []; break }
+                guard let next = piece(of: rect, from: start, to: end, on: page, includeStyle: includeStyle, weights: weights) else { pieces = []; break }
                 pieces.append(next)
             }
             guard pieces.count >= 2, squeezed(pieces.map(\.text).joined(separator: " ")) == squeezed(line.text) else {
@@ -164,7 +169,7 @@ enum NativeTextReader {
     /// capital heading, with cells too close to share a gutter, or near a drawn rule, is left
     /// exactly as PDFKit read it.
     private static func splitBorderlessTables(_ lines: [TextLine], ink: [CGRect], on page: PDFPage,
-                                              includeStyle: Bool) throws -> [TextLine] {
+                                              includeStyle: Bool, weights: [FontWeightReader.Show]) throws -> [TextLine] {
         func sameRow(_ a: TextLine, _ b: TextLine) -> Bool { abs(a.rect.minY - b.rect.minY) <= 1.5 }
         var result = lines
         for left in lines where !left.monospaced {
@@ -205,7 +210,7 @@ enum NativeTextReader {
                         if line.rect.minX >= middle { rights.append(line); continue }
                         let positions = [lower + em * 0.5, middle, upper - em * 0.5]
                         guard let pieces = positions.lazy.compactMap({
-                            cut(line, at: $0, gap: em * 2, on: page, includeStyle: includeStyle)
+                            cut(line, at: $0, gap: em * 2, on: page, includeStyle: includeStyle, weights: weights)
                         }).first else { return nil }
                         lefts.append(pieces.left); rights.append(pieces.right)
                         cuts.append((line, [pieces.left, pieces.right]))
@@ -233,7 +238,7 @@ enum NativeTextReader {
         return result
     }
 
-    private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool) throws -> [TextLine] {
+    private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool, weights: [FontWeightReader.Show]) throws -> [TextLine] {
         guard page.numberOfCharacters <= limit else {
             throw ConversionError.resourceLimit("too many characters")
         }
@@ -259,8 +264,11 @@ enum NativeTextReader {
             }
             let corrected = repaired?.string != attributed?.string
                 ? repaired?.string.replacingOccurrences(of: "\u{FFFC}", with: " ") : nil
+            let weighted = repaired.map {
+                FontWeightReader.apply(weights, to: $0, bounds: bounds, allBounds: boundsByLine)
+            }
             result.append(textLine(semantic: corrected ?? semantic,
-                                   bounds: bounds, attributed: repaired))
+                                   bounds: bounds, attributed: weighted))
         }
         return result
     }
@@ -371,6 +379,8 @@ enum NativeTextReader {
         var size: Double
         var hasFont: Bool
         var first: Bool
+        /// Drawn in a bold font resource PDFKit does not name bold (#125).
+        var resourceBold = false
     }
 
     static func inlineText(from attributed: NSAttributedString) -> InlineText {
@@ -389,7 +399,8 @@ enum NativeTextReader {
             let offset = (attributes[NSAttributedString.Key(kCTBaselineOffsetAttributeName as String)] as? NSNumber
                 ?? attributes[.baselineOffset] as? NSNumber)?.doubleValue ?? 0
             styled.append(StyledRun(text: run, style: style, offset: offset, size: Double(font?.pointSize ?? 12),
-                                    hasFont: font != nil, first: range.location == 0))
+                                    hasFont: font != nil, first: range.location == 0,
+                                    resourceBold: attributes[FontWeightReader.boldAttribute] != nil))
         }
         remeasureQuotedMarker(&styled)
         var runs: [InlineText.Element] = []
@@ -424,6 +435,11 @@ enum NativeTextReader {
                 if run.offset > tolerance { style.insert(.superscript) }
                 else if run.offset < -tolerance { style.insert(.subscript) }
             }
+            // PDFKit names a font only when the system has one by that name; the page's own font
+            // resources state the weight of the rest (#125). A display initial or numeral (Our
+            // Flag's drop caps in a bold script face) is ornament, not emphasis; a display-size
+            // title beside a small marker keeps its weight.
+            if run.resourceBold, !(display && run.text.filter(\.isLetter).count <= 1) { style.insert(.bold) }
             runs.append(.text(run.text, style))
         }
         return InlineText(elements: runs).trimmingCharacters(in: .whitespacesAndNewlines)

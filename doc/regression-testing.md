@@ -303,7 +303,7 @@ To recapture the algebra geometry with full Xcode selected:
 swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/ConversionTypes.swift \
   Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
   Sources/PDFReflowLib/GraphicsReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
-  tools/capture-algebra-layout.swift \
+  Sources/PDFReflowLib/FontWeightReader.swift tools/capture-algebra-layout.swift \
   -o /tmp/capture-algebra-layout
 /tmp/capture-algebra-layout corpus/cache/Beginning_and_Intermediate_Algebra.pdf /tmp/algebra-17-layout.json
 ```
@@ -461,10 +461,14 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
   Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
   Sources/PDFReflowLib/GraphicsReader.swift Sources/PDFReflowLib/NativeSpacingReader.swift \
   Sources/PDFReflowLib/StructureTreeReader.swift Sources/PDFReflowLib/MarkedTextReader.swift \
-  tools/capture-layout-fixture.swift \
+  Sources/PDFReflowLib/FontWeightReader.swift tools/capture-layout-fixture.swift \
   -o /tmp/capture-layout-fixture
 /tmp/capture-layout-fixture faa-phak-8083-25c 91 /tmp/faa-91-layout.json
 ```
+
+Since #125 an attributed run drawn in a bold font resource that PDFKit does not name bold (a
+`Dm`, `Demi` or `Semibold` face, or any embedded font PDFKit reports as `Helvetica`) records
+`"bold": true`; fixtures captured before carry no such field and replay PDFKit's runs alone.
 
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Paints wholly outside the crop box are not recorded (`GraphicsReader` drops them; FAA pages 474

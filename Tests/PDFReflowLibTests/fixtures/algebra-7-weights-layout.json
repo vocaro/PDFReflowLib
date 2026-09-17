@@ -1,0 +1,1039 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        84.9602,
+        746.01924480000002,
+        14.966047660287998,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "0.1"
+        }
+      ],
+      "text" : "0.1"
+    },
+    {
+      "rect" : [
+        206.1602,
+        724.64303639999991,
+        182.65439819868814,
+        16.919463599999972
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 16.936400000000003,
+          "text" : "Pre-Algebra - Integers"
+        }
+      ],
+      "text" : "Pre-Algebra - Integers"
+    },
+    {
+      "rect" : [
+        84.9602,
+        687.23119999999994,
+        425.17306379337214,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Objective: Add, Subtract, Multiply and Divide Positive and Negative"
+        }
+      ],
+      "text" : "Objective: Add, Subtract, Multiply and Divide Positive and Negative"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        672.83119999999997,
+        57.490316754176007,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Numbers."
+        }
+      ],
+      "text" : "Numbers."
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        651.09934479999993,
+        425.18557104762874,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The ability to work comfortably with negative numbers is essential to success in"
+        }
+      ],
+      "text" : "The ability to work comfortably with negative numbers is essential to success in"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        636.69934479999995,
+        425.21965458524164,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "algebra. For this reason we will do a quick review of adding, subtracting, multi-"
+        }
+      ],
+      "text" : "algebra. For this reason we will do a quick review of adding, subtracting, multi-"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        622.29934479999997,
+        425.17229848066563,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "plying and dividing of integers. Integers are all the positive whole numbers, zero,"
+        }
+      ],
+      "text" : "plying and dividing of integers. Integers are all the positive whole numbers, zero,"
+    },
+    {
+      "rect" : [
+        84.959999999999951,
+        607.89934479999999,
+        425.20322187233296,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "and their opposites (negatives). As this is intended to be a review of integers, the"
+        }
+      ],
+      "text" : "and their opposites (negatives). As this is intended to be a review of integers, the"
+    },
+    {
+      "rect" : [
+        84.95999999999998,
+        593.49934480000002,
+        353.53220089267205,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "descriptions and examples will not be as detailed as a normal lesson."
+        }
+      ],
+      "text" : "descriptions and examples will not be as detailed as a normal lesson."
+    },
+    {
+      "rect" : [
+        84.95999999999998,
+        571.65954480000005,
+        425.21749884500485,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "World View Note: The first set of rules for working with negative numbers was"
+        }
+      ],
+      "text" : "World View Note: The first set of rules for working with negative numbers was"
+    },
+    {
+      "rect" : [
+        84.95999999999998,
+        557.25954480000007,
+        284.6541923450626,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "written out by the Indian mathematician Brahmagupa."
+        }
+      ],
+      "text" : "written out by the Indian mathematician Brahmagupa."
+    },
+    {
+      "rect" : [
+        84.95999999999998,
+        535.53964480000002,
+        425.21730710269441,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "When adding integers we have two cases to consider. The first is if the signs"
+        }
+      ],
+      "text" : "When adding integers we have two cases to consider. The first is if the signs"
+    },
+    {
+      "rect" : [
+        84.95999999999998,
+        521.13964480000004,
+        425.21612349079038,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "match, both positive or both negative. If the signs match we will add the num-"
+        }
+      ],
+      "text" : "match, both positive or both negative. If the signs match we will add the num-"
+    },
+    {
+      "rect" : [
+        84.95999999999998,
+        506.73964480000001,
+        395.21525103879679,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "bers together and keep the sign. This is illustrated in the following examples"
+        }
+      ],
+      "text" : "bers together and keep the sign. This is illustrated in the following examples"
+    },
+    {
+      "rect" : [
+        84.95999999999998,
+        473.87189999999998,
+        66.250121549209609,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 1."
+        }
+      ],
+      "text" : "Example 1."
+    },
+    {
+      "rect" : [
+        164.87989999999996,
+        435.02350799999999,
+        58.440103277312005,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 5+ (− 3) "
+        }
+      ],
+      "text" : "− 5+ (− 3) "
+    },
+    {
+      "rect" : [
+        239.03969999999995,
+        435.02350799999999,
+        191.20186602739213,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Same sign, add 5+ 3, keep the negative"
+        }
+      ],
+      "text" : "Same sign, add 5+ 3, keep the negative"
+    },
+    {
+      "rect" : [
+        206.16002000000006,
+        417.62350800000002,
+        97.463529552102415,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 8 Our Solution"
+        }
+      ],
+      "text" : "− 8 Our Solution"
+    },
+    {
+      "rect" : [
+        84.959720000000033,
+        390.35149999999999,
+        66.250121549209638,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 2."
+        }
+      ],
+      "text" : "Example 2."
+    },
+    {
+      "rect" : [
+        164.87962000000005,
+        351.50350800000001,
+        58.440103277312005,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 7+ (− 5) "
+        }
+      ],
+      "text" : "− 7+ (− 5) "
+    },
+    {
+      "rect" : [
+        239.03942000000004,
+        351.50350800000001,
+        191.20186602739207,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Same sign, add 7+ 5, keep the negative"
+        }
+      ],
+      "text" : "Same sign, add 7+ 5, keep the negative"
+    },
+    {
+      "rect" : [
+        200.27974000000015,
+        334.10350800000003,
+        103.34408890954242,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 12 Our Solution"
+        }
+      ],
+      "text" : "− 12 Our Solution"
+    },
+    {
+      "rect" : [
+        84.959840000000142,
+        306.69964480000004,
+        425.15647421329919,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "If the signs don’t match, one positive and one negative number, we will subtract"
+        }
+      ],
+      "text" : "If the signs don’t match, one positive and one negative number, we will subtract"
+    },
+    {
+      "rect" : [
+        84.959840000000156,
+        292.29964480000007,
+        425.15693304593918,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "the numbers (as if they were all positive) and then use the sign from the larger"
+        }
+      ],
+      "text" : "the numbers (as if they were all positive) and then use the sign from the larger"
+    },
+    {
+      "rect" : [
+        84.959840000000156,
+        277.89964480000009,
+        425.20148403888646,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "number. This means if the larger number is positive, the answer is positive. If the"
+        }
+      ],
+      "text" : "number. This means if the larger number is positive, the answer is positive. If the"
+    },
+    {
+      "rect" : [
+        84.959840000000156,
+        263.49964480000011,
+        425.12786820610557,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "larger number is negative, the answer is negative. This is shown in the following"
+        }
+      ],
+      "text" : "larger number is negative, the answer is negative. This is shown in the following"
+    },
+    {
+      "rect" : [
+        84.959840000000156,
+        249.09964480000014,
+        50.051935254784013,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "examples."
+        }
+      ],
+      "text" : "examples."
+    },
+    {
+      "rect" : [
+        84.959840000000156,
+        216.23150000000012,
+        66.250121549209609,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 3."
+        }
+      ],
+      "text" : "Example 3."
+    },
+    {
+      "rect" : [
+        102.83954000000016,
+        177.50350800000012,
+        36.108683270399993,
+        20.455347199999977
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 7+ 2 "
+        }
+      ],
+      "text" : "− 7+ 2 "
+    },
+    {
+      "rect" : [
+        154.55984000000018,
+        177.50350800000012,
+        337.7207944600064,
+        20.455347199999977
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Diﬀerent signs, subtract 7− 2, use sign from bigger number, negative"
+        }
+      ],
+      "text" : "Diﬀerent signs, subtract 7− 2, use sign from bigger number, negative"
+    },
+    {
+      "rect" : [
+        121.79975000000019,
+        160.10350800000012,
+        97.343992502937624,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 5 Our Solution"
+        }
+      ],
+      "text" : "− 5 Our Solution"
+    },
+    {
+      "rect" : [
+        84.959950000000177,
+        132.71160000000012,
+        66.250121549209624,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 4."
+        }
+      ],
+      "text" : "Example 4."
+    },
+    {
+      "rect" : [
+        104.27985000000018,
+        93.863608000000113,
+        36.108683270400007,
+        20.455347199999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 4+ 6 "
+        }
+      ],
+      "text" : "− 4+ 6 "
+    },
+    {
+      "rect" : [
+        155.99975000000018,
+        93.863608000000113,
+        334.84033949360639,
+        20.455347199999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Diﬀerent signs, subtract 6− 4, use sign from bigger number, positive"
+        }
+      ],
+      "text" : "Diﬀerent signs, subtract 6− 4, use sign from bigger number, positive"
+    },
+    {
+      "rect" : [
+        134.51967000000019,
+        84.939844800000103,
+        86.063904721152028,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2 Our Solution"
+        }
+      ],
+      "text" : "2 Our Solution"
+    },
+    {
+      "rect" : [
+        302.15977000000021,
+        52.3794532000001,
+        4.9813199999999824,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "7"
+        }
+      ],
+      "text" : "7"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        746.01924480000002,
+        14.966047660287998,
+        11.979110399999968
+      ],
+      "text" : "0.1"
+    },
+    {
+      "fontSize" : 16.936400000000003,
+      "monospaced" : false,
+      "rect" : [
+        206.1602,
+        724.64303639999991,
+        182.65439819868814,
+        16.919463599999972
+      ],
+      "text" : "Pre-Algebra - Integers"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        687.23119999999994,
+        425.17306379337214,
+        11.955199999999991
+      ],
+      "text" : "Objective: Add, Subtract, Multiply and Divide Positive and Negative"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        672.83119999999997,
+        57.490316754176007,
+        11.955199999999991
+      ],
+      "text" : "Numbers."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        651.09934479999993,
+        425.18557104762874,
+        11.979110399999968
+      ],
+      "text" : "The ability to work comfortably with negative numbers is essential to success in"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        636.69934479999995,
+        425.21965458524164,
+        11.979110399999968
+      ],
+      "text" : "algebra. For this reason we will do a quick review of adding, subtracting, multi-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        622.29934479999997,
+        425.17229848066563,
+        11.979110399999968
+      ],
+      "text" : "plying and dividing of integers. Integers are all the positive whole numbers, zero,"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959999999999951,
+        607.89934479999999,
+        425.20322187233296,
+        11.979110399999968
+      ],
+      "text" : "and their opposites (negatives). As this is intended to be a review of integers, the"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95999999999998,
+        593.49934480000002,
+        353.53220089267205,
+        11.979110399999968
+      ],
+      "text" : "descriptions and examples will not be as detailed as a normal lesson."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95999999999998,
+        571.65954480000005,
+        425.21749884500485,
+        11.979110399999968
+      ],
+      "text" : "World View Note: The first set of rules for working with negative numbers was"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95999999999998,
+        557.25954480000007,
+        284.6541923450626,
+        11.979110399999968
+      ],
+      "text" : "written out by the Indian mathematician Brahmagupa."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95999999999998,
+        535.53964480000002,
+        425.21730710269441,
+        11.979110399999968
+      ],
+      "text" : "When adding integers we have two cases to consider. The first is if the signs"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95999999999998,
+        521.13964480000004,
+        425.21612349079038,
+        11.979110399999968
+      ],
+      "text" : "match, both positive or both negative. If the signs match we will add the num-"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95999999999998,
+        506.73964480000001,
+        395.21525103879679,
+        11.979110400000025
+      ],
+      "text" : "bers together and keep the sign. This is illustrated in the following examples"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.95999999999998,
+        473.87189999999998,
+        66.250121549209609,
+        11.955199999999991
+      ],
+      "text" : "Example 1."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        164.87989999999996,
+        435.02350799999999,
+        58.440103277312005,
+        20.455347200000006
+      ],
+      "text" : "− 5+ (− 3)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        239.03969999999995,
+        435.02350799999999,
+        191.20186602739213,
+        20.455347200000006
+      ],
+      "text" : "Same sign, add 5+ 3, keep the negative"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        206.16002000000006,
+        417.62350800000002,
+        97.463529552102415,
+        20.455347200000006
+      ],
+      "text" : "− 8 Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959720000000033,
+        390.35149999999999,
+        66.250121549209638,
+        11.955199999999991
+      ],
+      "text" : "Example 2."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        164.87962000000005,
+        351.50350800000001,
+        58.440103277312005,
+        20.455347200000006
+      ],
+      "text" : "− 7+ (− 5)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        239.03942000000004,
+        351.50350800000001,
+        191.20186602739207,
+        20.455347200000006
+      ],
+      "text" : "Same sign, add 7+ 5, keep the negative"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        200.27974000000015,
+        334.10350800000003,
+        103.34408890954242,
+        20.455347200000006
+      ],
+      "text" : "− 12 Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959840000000142,
+        306.69964480000004,
+        425.15647421329919,
+        11.979110400000025
+      ],
+      "text" : "If the signs don’t match, one positive and one negative number, we will subtract"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959840000000156,
+        292.29964480000007,
+        425.15693304593918,
+        11.979110400000025
+      ],
+      "text" : "the numbers (as if they were all positive) and then use the sign from the larger"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959840000000156,
+        277.89964480000009,
+        425.20148403888646,
+        11.979110400000025
+      ],
+      "text" : "number. This means if the larger number is positive, the answer is positive. If the"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959840000000156,
+        263.49964480000011,
+        425.12786820610557,
+        11.979110400000025
+      ],
+      "text" : "larger number is negative, the answer is negative. This is shown in the following"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959840000000156,
+        249.09964480000014,
+        50.051935254784013,
+        11.979110400000025
+      ],
+      "text" : "examples."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959840000000156,
+        216.23150000000012,
+        66.250121549209609,
+        11.955199999999991
+      ],
+      "text" : "Example 3."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        102.83954000000016,
+        177.50350800000012,
+        36.108683270399993,
+        20.455347199999977
+      ],
+      "text" : "− 7+ 2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        154.55984000000018,
+        177.50350800000012,
+        337.7207944600064,
+        20.455347199999977
+      ],
+      "text" : "Diﬀerent signs, subtract 7− 2, use sign from bigger number, negative"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        121.79975000000019,
+        160.10350800000012,
+        97.343992502937624,
+        20.455347200000006
+      ],
+      "text" : "− 5 Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959950000000177,
+        132.71160000000012,
+        66.250121549209624,
+        11.955199999999991
+      ],
+      "text" : "Example 4."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        104.27985000000018,
+        93.863608000000113,
+        36.108683270400007,
+        20.455347199999991
+      ],
+      "text" : "− 4+ 6"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        155.99975000000018,
+        93.863608000000113,
+        334.84033949360639,
+        20.455347199999991
+      ],
+      "text" : "Diﬀerent signs, subtract 6− 4, use sign from bigger number, positive"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        134.51967000000019,
+        84.939844800000103,
+        86.063904721152028,
+        11.979110399999996
+      ],
+      "text" : "2 Our Solution"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        302.15977000000021,
+        52.3794532000001,
+        4.9813199999999824,
+        9.8729762399999998
+      ],
+      "text" : "7"
+    }
+  ],
+  "page" : 7,
+  "paints" : [
+
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

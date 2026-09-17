@@ -84,6 +84,22 @@ in the lock, so this is a bounded mitigation rather than a framework-wide thread
 See [the concurrency evidence](../measurements/pdfkit-concurrency/record.md) and
 [contention cancellation evidence](../measurements/extraction-cancellation/record.md).
 
+A run is bold when PDFKit's font name contains `bold`, or when the page's own font resource
+drawing it is bold (#125). PDFKit names an embedded font only when the system has one by that
+name (every Fed, 9/11, Wallace, Our Flag, DGA and NOAA run reports `Helvetica`), and runs in two
+embedded fonts of one colour merge. `FontWeightReader` scans a page's text shows, following Form
+XObjects, and classifies each font resource: a `BaseFont` naming a bold weight (`Bold`, `Demi`,
+`Dm`, `Semibold`, `SemiBd`, `Heavy`, `Black`, TeX's `cmbx`/`cmmib`/`dcbx`) is bold unless a
+descriptor `FontWeight` below 500 contradicts a weight other than `Bold`; a name stating a lighter
+weight (`Book`, `Medium`, `Light`, `Regular`) is never bold; a name stating none is bold for
+`FontWeight` 600 or more or the `ForceBold` flag. `StemV` is not used. A PDFKit line is marked only
+where its shows (origin in the line's bounds; a show inside several lines' bounds belongs to a
+clearly tighter one) explain it: the leftmost starts within half an em of the line's edge, and
+either every show is one bold weight or the shows' one-byte ToUnicode text spells the line, giving
+each character its weight. Whitespace follows PDFKit's run, a display initial or numeral gains no
+emphasis, and anything else is left as PDFKit read it. See
+[the font weight evidence](../measurements/font-weight-detection/record.md).
+
 Explicit Core Text/Foundation baseline offsets preserve
 inline scripts; tiny positioning noise and full-line OCR offsets do not become script styles.
 Font size alone does not establish a superscript. PDFKit can measure a split piece's baseline on

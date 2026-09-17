@@ -1,0 +1,2397 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "8-25"
+        }
+      ],
+      "text" : "8-25"
+    },
+    {
+      "rect" : [
+        320.40002440000001,
+        637.92953350000005,
+        237.91930850000006,
+        91.470491000000038
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        321,
+        619.60140000000001,
+        236.86540000000014,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 8-35. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "A compass correction card shows the deviation"
+        }
+      ],
+      "text" : "Figure 8-35. A compass correction card shows the deviation"
+    },
+    {
+      "rect" : [
+        320.99800000000005,
+        607.70640000000003,
+        98.990999999999985,
+        10.206000000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "correction for any heading."
+        }
+      ],
+      "text" : "correction for any heading."
+    },
+    {
+      "rect" : [
+        129.93260000000001,
+        140.8058,
+        125.07840000000002,
+        133.78780000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        72,
+        105.4038,
+        234.88299999999992,
+        10.811999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 8-34. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Utilization of a compass rose aids compensation for"
+        }
+      ],
+      "text" : "Figure 8-34. Utilization of a compass rose aids compensation for"
+    },
+    {
+      "rect" : [
+        72.001000000000005,
+        93.508799999999994,
+        60.498000000000019,
+        10.206000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "deviation errors."
+        }
+      ],
+      "text" : "deviation errors."
+    },
+    {
+      "rect" : [
+        72,
+        719.56640000000004,
+        237.03000000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "To swing the compass, an AMT positions the aircraft"
+        }
+      ],
+      "text" : "To swing the compass, an AMT positions the aircraft"
+    },
+    {
+      "rect" : [
+        72,
+        707.06640000000004,
+        237.04999999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "on a series of known headings, usually at a compass"
+        }
+      ],
+      "text" : "on a series of known headings, usually at a compass"
+    },
+    {
+      "rect" : [
+        72,
+        694.56640000000004,
+        237.06,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "rose."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : " [Figure 8-34] "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A compass rose consists of a series"
+        }
+      ],
+      "text" : "rose. [Figure 8-34] A compass rose consists of a series"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        682.06640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of lines marked every 30° on an airport ramp, oriented to"
+        }
+      ],
+      "text" : "of lines marked every 30° on an airport ramp, oriented to"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        669.56640000000004,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "magnetic north. There is minimal magnetic interference at"
+        }
+      ],
+      "text" : "magnetic north. There is minimal magnetic interference at"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        657.06640000000004,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the compass rose. The pilot or the AMT, if authorized, can"
+        }
+      ],
+      "text" : "the compass rose. The pilot or the AMT, if authorized, can"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        644.56640000000004,
+        237.12999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "taxi the aircraft to the compass rose and maneuver the aircraft"
+        }
+      ],
+      "text" : "taxi the aircraft to the compass rose and maneuver the aircraft"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        632.06640000000004,
+        159.14000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to the headings prescribed by the AMT."
+        }
+      ],
+      "text" : "to the headings prescribed by the AMT."
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        607.06640000000004,
+        237.00899999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "As the aircraft is “swung” or aligned to each compass rose"
+        }
+      ],
+      "text" : "As the aircraft is “swung” or aligned to each compass rose"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        594.56640000000004,
+        237.07499999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "heading, the AMT adjusts the compensator assembly located"
+        }
+      ],
+      "text" : "heading, the AMT adjusts the compensator assembly located"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        582.06640000000004,
+        237.11600000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "on the top or bottom of the compass. The compensator"
+        }
+      ],
+      "text" : "on the top or bottom of the compass. The compensator"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        569.56640000000004,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "assembly has two shafts whose ends have screwdriver slots"
+        }
+      ],
+      "text" : "assembly has two shafts whose ends have screwdriver slots"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        557.06640000000004,
+        236.99999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "accessible from the front of the compass. Each shaft rotates"
+        }
+      ],
+      "text" : "accessible from the front of the compass. Each shaft rotates"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        544.56640000000004,
+        237.08000000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "one or two small compensating magnets. The end of one shaft"
+        }
+      ],
+      "text" : "one or two small compensating magnets. The end of one shaft"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        532.06640000000004,
+        237.0270000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is marked E-W, and its magnets affect the compass when the"
+        }
+      ],
+      "text" : "is marked E-W, and its magnets affect the compass when the"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        519.56640000000004,
+        237.01699999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft is pointed east or west. The other shaft is marked"
+        }
+      ],
+      "text" : "aircraft is pointed east or west. The other shaft is marked"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        507.06640000000004,
+        237.00599999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "N-S and its magnets affect the compass when the aircraft is"
+        }
+      ],
+      "text" : "N-S and its magnets affect the compass when the aircraft is"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        494.56640000000004,
+        91.110000000000028,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pointed north or south."
+        }
+      ],
+      "text" : "pointed north or south."
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        469.56640000000004,
+        237.13999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The adjustments position the compensating magnets to"
+        }
+      ],
+      "text" : "The adjustments position the compensating magnets to"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        457.06640000000004,
+        236.97000000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "minimize the difference between the compass indication and"
+        }
+      ],
+      "text" : "minimize the difference between the compass indication and"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        444.56640000000004,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the actual aircraft magnetic heading. The AMT records any"
+        }
+      ],
+      "text" : "the actual aircraft magnetic heading. The AMT records any"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        432.06640000000004,
+        237.00499999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "remaining error on a compass correction card like the one"
+        }
+      ],
+      "text" : "remaining error on a compass correction card like the one"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        419.56640000000004,
+        237.00000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Figure 8-35"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " and places it in a holder near the compass."
+        }
+      ],
+      "text" : "in Figure 8-35 and places it in a holder near the compass."
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        407.06640000000004,
+        236.91000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Only AMTs can adjust the compass or complete the compass"
+        }
+      ],
+      "text" : "Only AMTs can adjust the compass or complete the compass"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        394.56640000000004,
+        237.01799999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "correction card. Pilots determine and fly compass headings"
+        }
+      ],
+      "text" : "correction card. Pilots determine and fly compass headings"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        382.06640000000004,
+        237.02099999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "using the deviation errors noted on the card. Pilots must also"
+        }
+      ],
+      "text" : "using the deviation errors noted on the card. Pilots must also"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        369.56640000000004,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "note the use of any equipment causing operational magnetic"
+        }
+      ],
+      "text" : "note the use of any equipment causing operational magnetic"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        357.06640000000004,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "interference such as radios, deicing equipment, pitot heat,"
+        }
+      ],
+      "text" : "interference such as radios, deicing equipment, pitot heat,"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        344.56640000000004,
+        100.24000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "radar, or magnetic cargo."
+        }
+      ],
+      "text" : "radar, or magnetic cargo."
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        319.56640000000004,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The corrections for variation and deviation must be applied"
+        }
+      ],
+      "text" : "The corrections for variation and deviation must be applied"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        307.06640000000004,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in the correct sequence as shown below, starting from the"
+        }
+      ],
+      "text" : "in the correct sequence as shown below, starting from the"
+    },
+    {
+      "rect" : [
+        71.990000000000023,
+        294.56640000000004,
+        78.030000000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "true course desired."
+        }
+      ],
+      "text" : "true course desired."
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        579.56640000000004,
+        158.59000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Step 1: Determine the Magnetic Course"
+        }
+      ],
+      "text" : "Step 1: Determine the Magnetic Course"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        567.06640000000004,
+        237.01600000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "True Course (180°) ± Variation (+10°) = Magnetic Course"
+        }
+      ],
+      "text" : "True Course (180°) ± Variation (+10°) = Magnetic Course"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        554.56640000000004,
+        25.660000000000025,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(190°)"
+        }
+      ],
+      "text" : "(190°)"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        529.56640000000004,
+        237.03999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The magnetic course (190°) is steered if there is no deviation"
+        }
+      ],
+      "text" : "The magnetic course (190°) is steered if there is no deviation"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        517.06640000000004,
+        236.94,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "error to be applied. The compass card must now be considered"
+        }
+      ],
+      "text" : "error to be applied. The compass card must now be considered"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        504.56640000000004,
+        126.75,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "for the compass course of 190°."
+        }
+      ],
+      "text" : "for the compass course of 190°."
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        479.56640000000004,
+        157.49000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Step 2: Determine the Compass Course"
+        }
+      ],
+      "text" : "Step 2: Determine the Compass Course"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        467.06640000000004,
+        236.97999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Magnetic Course (190°, from step 1) ± Deviation (–2°, from"
+        }
+      ],
+      "text" : "Magnetic Course (190°, from step 1) ± Deviation (–2°, from"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        454.56640000000004,
+        169.88,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "correction card) = Compass Course (188°)"
+        }
+      ],
+      "text" : "correction card) = Compass Course (188°)"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        429.56640000000004,
+        236.9969999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "NOTE: Intermediate magnetic courses between those listed"
+        }
+      ],
+      "text" : "NOTE: Intermediate magnetic courses between those listed"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        417.06640000000004,
+        237.00499999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "on the compass card need to be interpreted. Therefore, to"
+        }
+      ],
+      "text" : "on the compass card need to be interpreted. Therefore, to"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        404.56640000000004,
+        237.01999999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "steer a true course of 180°, the pilot would follow a compass"
+        }
+      ],
+      "text" : "steer a true course of 180°, the pilot would follow a compass"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        392.06640000000004,
+        60.930000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "course of 188°."
+        }
+      ],
+      "text" : "course of 188°."
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        367.06640000000004,
+        237.084,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "To find the true course that is being flown when the compass"
+        }
+      ],
+      "text" : "To find the true course that is being flown when the compass"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        354.56640000000004,
+        67.770000000000039,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "course is known:"
+        }
+      ],
+      "text" : "course is known:"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        342.06640000000004,
+        237.10999999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Compass Course ± Deviation = Magnetic Course ±"
+        }
+      ],
+      "text" : "Compass Course ± Deviation = Magnetic Course ±"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        329.56640000000004,
+        95.620000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Variation= True Course"
+        }
+      ],
+      "text" : "Variation= True Course"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        304.56640000000004,
+        44.170000000000016,
+        11.339999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Dip Errors"
+        }
+      ],
+      "text" : "Dip Errors"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        290.06640000000004,
+        236.98799999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The Earth's magnetic field runs parallel to its surface only at"
+        }
+      ],
+      "text" : "The Earth's magnetic field runs parallel to its surface only at"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        277.56640000000004,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the Magnetic Equator, which is the point halfway between"
+        }
+      ],
+      "text" : "the Magnetic Equator, which is the point halfway between"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        265.06640000000004,
+        237.00200000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the Magnetic North and South Poles. As you move away"
+        }
+      ],
+      "text" : "the Magnetic North and South Poles. As you move away"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        252.56640000000004,
+        237.01099999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "from the Magnetic Equator towards the magnetic poles, the"
+        }
+      ],
+      "text" : "from the Magnetic Equator towards the magnetic poles, the"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        240.06640000000004,
+        236.84599999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "angle created by the vertical pull of the Earth's magnetic field"
+        }
+      ],
+      "text" : "angle created by the vertical pull of the Earth's magnetic field"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        227.56640000000004,
+        237.01299999999986,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in relation to the Earth’s surface increases gradually. This"
+        }
+      ],
+      "text" : "in relation to the Earth’s surface increases gradually. This"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        215.06640000000004,
+        237.01499999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "angle is known as the dip angle. The dip angle increases in"
+        }
+      ],
+      "text" : "angle is known as the dip angle. The dip angle increases in"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        202.56640000000004,
+        236.99499999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a downward direction as you move towards the Magnetic"
+        }
+      ],
+      "text" : "a downward direction as you move towards the Magnetic"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        190.06640000000004,
+        236.98999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "North Pole and increases in an upward direction as you move"
+        }
+      ],
+      "text" : "North Pole and increases in an upward direction as you move"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        177.56640000000004,
+        135.27000000000004,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "towards the Magnetic South Pole."
+        }
+      ],
+      "text" : "towards the Magnetic South Pole."
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        152.56640000000004,
+        237.01499999999982,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "If the compass needle were mounted so that it could pivot"
+        }
+      ],
+      "text" : "If the compass needle were mounted so that it could pivot"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        140.06640000000004,
+        236.88000000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "freely in three dimensions, it would align itself with the"
+        }
+      ],
+      "text" : "freely in three dimensions, it would align itself with the"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        127.56640000000004,
+        237.01600000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "magnetic field, pointing up or down at the dip angle in the"
+        }
+      ],
+      "text" : "magnetic field, pointing up or down at the dip angle in the"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        115.06640000000004,
+        237.00999999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "direction of local Magnetic North. Because the dip angle is"
+        }
+      ],
+      "text" : "direction of local Magnetic North. Because the dip angle is"
+    },
+    {
+      "rect" : [
+        320.99000000000007,
+        102.56640000000004,
+        236.86799999999988,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of no navigational interest, the compass is made so that it can"
+        }
+      ],
+      "text" : "of no navigational interest, the compass is made so that it can"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      320.40002440000001,
+      637.92953350000005,
+      237.91930850000006,
+      91.470491000000038
+    ],
+    [
+      70,
+      122.14400000000001,
+      241,
+      162.774
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "text" : "8-25"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        619.60140000000001,
+        236.86540000000014,
+        10.812000000000012
+      ],
+      "text" : "Figure 8-35. A compass correction card shows the deviation"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        320.99800000000005,
+        607.70640000000003,
+        98.990999999999985,
+        10.206000000000017
+      ],
+      "text" : "correction for any heading."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        105.4038,
+        234.88299999999992,
+        10.811999999999998
+      ],
+      "text" : "Figure 8-34. Utilization of a compass rose aids compensation for"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        72.001000000000005,
+        93.508799999999994,
+        60.498000000000019,
+        10.206000000000003
+      ],
+      "text" : "deviation errors."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        719.56640000000004,
+        237.03000000000009,
+        11.470000000000027
+      ],
+      "text" : "To swing the compass, an AMT positions the aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        707.06640000000004,
+        237.04999999999984,
+        11.470000000000027
+      ],
+      "text" : "on a series of known headings, usually at a compass"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        694.56640000000004,
+        237.06,
+        11.470000000000027
+      ],
+      "text" : "rose. [Figure 8-34] A compass rose consists of a series"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        682.06640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "text" : "of lines marked every 30° on an airport ramp, oriented to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        669.56640000000004,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "text" : "magnetic north. There is minimal magnetic interference at"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        657.06640000000004,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "text" : "the compass rose. The pilot or the AMT, if authorized, can"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        644.56640000000004,
+        237.12999999999994,
+        11.470000000000027
+      ],
+      "text" : "taxi the aircraft to the compass rose and maneuver the aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        632.06640000000004,
+        159.14000000000004,
+        11.470000000000027
+      ],
+      "text" : "to the headings prescribed by the AMT."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        607.06640000000004,
+        237.00899999999996,
+        11.470000000000027
+      ],
+      "text" : "As the aircraft is “swung” or aligned to each compass rose"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        594.56640000000004,
+        237.07499999999993,
+        11.470000000000027
+      ],
+      "text" : "heading, the AMT adjusts the compensator assembly located"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        582.06640000000004,
+        237.11600000000004,
+        11.470000000000027
+      ],
+      "text" : "on the top or bottom of the compass. The compensator"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        569.56640000000004,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "text" : "assembly has two shafts whose ends have screwdriver slots"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        557.06640000000004,
+        236.99999999999994,
+        11.470000000000027
+      ],
+      "text" : "accessible from the front of the compass. Each shaft rotates"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        544.56640000000004,
+        237.08000000000015,
+        11.470000000000027
+      ],
+      "text" : "one or two small compensating magnets. The end of one shaft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        532.06640000000004,
+        237.0270000000001,
+        11.470000000000027
+      ],
+      "text" : "is marked E-W, and its magnets affect the compass when the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        519.56640000000004,
+        237.01699999999988,
+        11.470000000000027
+      ],
+      "text" : "aircraft is pointed east or west. The other shaft is marked"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        507.06640000000004,
+        237.00599999999991,
+        11.470000000000027
+      ],
+      "text" : "N-S and its magnets affect the compass when the aircraft is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        494.56640000000004,
+        91.110000000000028,
+        11.470000000000027
+      ],
+      "text" : "pointed north or south."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        469.56640000000004,
+        237.13999999999999,
+        11.470000000000027
+      ],
+      "text" : "The adjustments position the compensating magnets to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        457.06640000000004,
+        236.97000000000014,
+        11.470000000000027
+      ],
+      "text" : "minimize the difference between the compass indication and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        444.56640000000004,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "text" : "the actual aircraft magnetic heading. The AMT records any"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        432.06640000000004,
+        237.00499999999994,
+        11.470000000000027
+      ],
+      "text" : "remaining error on a compass correction card like the one"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        419.56640000000004,
+        237.00000000000006,
+        11.470000000000027
+      ],
+      "text" : "in Figure 8-35 and places it in a holder near the compass."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        407.06640000000004,
+        236.91000000000008,
+        11.470000000000027
+      ],
+      "text" : "Only AMTs can adjust the compass or complete the compass"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        394.56640000000004,
+        237.01799999999997,
+        11.470000000000027
+      ],
+      "text" : "correction card. Pilots determine and fly compass headings"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        382.06640000000004,
+        237.02099999999996,
+        11.470000000000027
+      ],
+      "text" : "using the deviation errors noted on the card. Pilots must also"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        369.56640000000004,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "text" : "note the use of any equipment causing operational magnetic"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        357.06640000000004,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "text" : "interference such as radios, deicing equipment, pitot heat,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        344.56640000000004,
+        100.24000000000002,
+        11.470000000000027
+      ],
+      "text" : "radar, or magnetic cargo."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        319.56640000000004,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "text" : "The corrections for variation and deviation must be applied"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        307.06640000000004,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "text" : "in the correct sequence as shown below, starting from the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.990000000000023,
+        294.56640000000004,
+        78.030000000000015,
+        11.470000000000027
+      ],
+      "text" : "true course desired."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        579.56640000000004,
+        158.59000000000003,
+        11.470000000000027
+      ],
+      "text" : "Step 1: Determine the Magnetic Course"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        567.06640000000004,
+        237.01600000000002,
+        11.470000000000027
+      ],
+      "text" : "True Course (180°) ± Variation (+10°) = Magnetic Course"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        554.56640000000004,
+        25.660000000000025,
+        11.470000000000027
+      ],
+      "text" : "(190°)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        529.56640000000004,
+        237.03999999999991,
+        11.470000000000027
+      ],
+      "text" : "The magnetic course (190°) is steered if there is no deviation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        517.06640000000004,
+        236.94,
+        11.470000000000027
+      ],
+      "text" : "error to be applied. The compass card must now be considered"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        504.56640000000004,
+        126.75,
+        11.470000000000027
+      ],
+      "text" : "for the compass course of 190°."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        479.56640000000004,
+        157.49000000000001,
+        11.470000000000027
+      ],
+      "text" : "Step 2: Determine the Compass Course"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        467.06640000000004,
+        236.97999999999996,
+        11.470000000000027
+      ],
+      "text" : "Magnetic Course (190°, from step 1) ± Deviation (–2°, from"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        454.56640000000004,
+        169.88,
+        11.470000000000027
+      ],
+      "text" : "correction card) = Compass Course (188°)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        429.56640000000004,
+        236.9969999999999,
+        11.470000000000027
+      ],
+      "text" : "NOTE: Intermediate magnetic courses between those listed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        417.06640000000004,
+        237.00499999999994,
+        11.470000000000027
+      ],
+      "text" : "on the compass card need to be interpreted. Therefore, to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        404.56640000000004,
+        237.01999999999992,
+        11.470000000000027
+      ],
+      "text" : "steer a true course of 180°, the pilot would follow a compass"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        392.06640000000004,
+        60.930000000000007,
+        11.470000000000027
+      ],
+      "text" : "course of 188°."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        367.06640000000004,
+        237.084,
+        11.470000000000027
+      ],
+      "text" : "To find the true course that is being flown when the compass"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        354.56640000000004,
+        67.770000000000039,
+        11.470000000000027
+      ],
+      "text" : "course is known:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        342.06640000000004,
+        237.10999999999984,
+        11.470000000000027
+      ],
+      "text" : "Compass Course ± Deviation = Magnetic Course ±"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        329.56640000000004,
+        95.620000000000005,
+        11.470000000000027
+      ],
+      "text" : "Variation= True Course"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        304.56640000000004,
+        44.170000000000016,
+        11.339999999999975
+      ],
+      "text" : "Dip Errors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        290.06640000000004,
+        236.98799999999989,
+        11.470000000000027
+      ],
+      "text" : "The Earth's magnetic field runs parallel to its surface only at"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        277.56640000000004,
+        237.00999999999993,
+        11.470000000000027
+      ],
+      "text" : "the Magnetic Equator, which is the point halfway between"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        265.06640000000004,
+        237.00200000000012,
+        11.470000000000027
+      ],
+      "text" : "the Magnetic North and South Poles. As you move away"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        252.56640000000004,
+        237.01099999999991,
+        11.470000000000027
+      ],
+      "text" : "from the Magnetic Equator towards the magnetic poles, the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        240.06640000000004,
+        236.84599999999995,
+        11.469999999999999
+      ],
+      "text" : "angle created by the vertical pull of the Earth's magnetic field"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        227.56640000000004,
+        237.01299999999986,
+        11.469999999999999
+      ],
+      "text" : "in relation to the Earth’s surface increases gradually. This"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        215.06640000000004,
+        237.01499999999993,
+        11.469999999999999
+      ],
+      "text" : "angle is known as the dip angle. The dip angle increases in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        202.56640000000004,
+        236.99499999999995,
+        11.469999999999999
+      ],
+      "text" : "a downward direction as you move towards the Magnetic"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        190.06640000000004,
+        236.98999999999995,
+        11.469999999999999
+      ],
+      "text" : "North Pole and increases in an upward direction as you move"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        177.56640000000004,
+        135.27000000000004,
+        11.469999999999999
+      ],
+      "text" : "towards the Magnetic South Pole."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        152.56640000000004,
+        237.01499999999982,
+        11.469999999999999
+      ],
+      "text" : "If the compass needle were mounted so that it could pivot"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        140.06640000000004,
+        236.88000000000005,
+        11.469999999999999
+      ],
+      "text" : "freely in three dimensions, it would align itself with the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        127.56640000000004,
+        237.01600000000002,
+        11.469999999999999
+      ],
+      "text" : "magnetic field, pointing up or down at the dip angle in the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        115.06640000000004,
+        237.00999999999993,
+        11.469999999999999
+      ],
+      "text" : "direction of local Magnetic North. Because the dip angle is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99000000000007,
+        102.56640000000004,
+        236.86799999999988,
+        11.469999999999999
+      ],
+      "text" : "of no navigational interest, the compass is made so that it can"
+    }
+  ],
+  "page" : 227,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        320.40002440000001,
+        637.92953350000005,
+        237.91930850000006,
+        91.470491000000038
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        70,
+        122.14400000000001,
+        241,
+        162.774
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72,
+        124.14400000000001,
+        237,
+        158.774
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        70,
+        150.97399999999999,
+        29.233000000000004,
+        133.94400000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        282.089,
+        264.43099999999998,
+        28.911000000000001,
+        20.487000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        173.18370000000002,
+        199.23250000000002,
+        15.914999999999992,
+        43.562999999999988
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        173.14680000000001,
+        200.6986,
+        21.703000000000003,
+        42.085000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.88070000000002,
+        197.45270000000002,
+        38.266999999999996,
+        31.60499999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.91180000000003,
+        193.65630000000002,
+        34.014999999999986,
+        35.427999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        127.93890000000002,
+        174.84200000000001,
+        51.625,
+        19.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        127.93260000000001,
+        174.8785,
+        53.477000000000004,
+        14.754999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        143.4332,
+        151.87430000000001,
+        40.290999999999997,
+        36.147999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        143.39870000000002,
+        151.90099999999998,
+        45.171999999999997,
+        32.359000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        188.03690000000003,
+        139.18340000000001,
+        28.911999999999978,
+        42.086999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        194.40970000000002,
+        139.17160000000001,
+        22.489000000000004,
+        43.534999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.803,
+        152.85810000000001,
+        45.182999999999993,
+        35.49799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.58370000000002,
+        152.88470000000001,
+        49.432999999999993,
+        31.60499999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.90699999999998,
+        192.21730000000002,
+        48.417000000000002,
+        14.756
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.16730000000001,
+        187.11870000000002,
+        46.134999999999991,
+        19.893000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        194.15770000000001,
+        197.68540000000002,
+        35.013000000000005,
+        32.358000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.92310000000001,
+        193.99109999999999,
+        30.211999999999989,
+        36.080000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.25820000000002,
+        200.7756,
+        17.334000000000003,
+        42.361999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        192.30680000000001,
+        199.4735,
+        11.24799999999999,
+        43.674000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        175.36670000000001,
+        138.8058,
+        15.284999999999997,
+        43.697000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        175.31480000000002,
+        138.81470000000002,
+        21.828000000000003,
+        42.363
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.97200000000001,
+        176.20429999999999,
+        53.037999999999982,
+        18.989000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        202.95600000000002,
+        176.2389,
+        54.055000000000007,
+        13.729000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        131.4795,
+        191.91740000000001,
+        49.399000000000001,
+        13.727000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        131.49680000000001,
+        186.78190000000001,
+        47.893000000000001,
+        18.900000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        170.40180000000001,
+        173.10520000000002,
+        40.985000000000014,
+        35.331999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.93280000000001,
+        174.3674,
+        38.007000000000005,
+        32.807999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        189.1831,
+        183.62010000000001,
+        4,
+        44.929000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        189.1831,
+        183.62010000000001,
+        4,
+        44.929000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        157.4384,
+        225.44460000000001,
+        61.326999999999998,
+        50.649000000000029
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        157.4384,
+        225.44460000000001,
+        61.326999999999998,
+        50.649000000000029
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        158.12780000000001,
+        260.31220000000002,
+        14.188999999999993,
+        15.586999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        70,
+        122.14439999999999,
+        241,
+        162.773
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

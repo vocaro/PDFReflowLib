@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's `Figure 6-20.` caption ends at its own last line and the unpainted `Figure 5-16.` caption left outside the artwork's clip is not emitted (#85); page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph. Pages 88, 98, 203, 231 and 335 (#84): chapter openers tagged P remain headings once their text-free Form XObjects no longer discard the page tags; page 203 source-reviewed, its tagged group spanning Introduction and the next section falls back. Page 89 (#75) source-reviewed: the applied tags read the viscosity and friction columns in order. Pages 105, 211 and 227 source-reviewed: paragraphs and a caption the source tags in pieces read as one element.",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's `Figure 6-20.` caption ends at its own last line and the unpainted `Figure 5-16.` caption left outside the artwork's clip is not emitted (#85); page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph. Pages 88, 98, 203, 231 and 335 (#84): chapter openers tagged P remain headings once their text-free Form XObjects no longer discard the page tags; page 203 source-reviewed, its tagged group spanning Introduction and the next section falls back. Page 89 (#75) source-reviewed: the applied tags read the viscosity and friction columns in order. Pages 105, 211 and 227 source-reviewed: paragraphs and a caption the source tags in pieces read as one element. Page 227 source raster reviewed (#77): the compass-rose figure's group box overhangs its rounded frame into the left column, but only its clipped part is figure ink, so the sentence ending `true course desired.` reflows whole; the word equations under `Step 1:`, `Step 2:` and `course is known:` are body text in the column's measure and reflow in order.",
       "pages": [
         {
           "page": 16,
@@ -547,15 +547,26 @@
         {
           "page": 227,
           "paragraphs": [
-            "compass rose aids compensation for deviation errors."
-          ]
+            "compass rose aids compensation for deviation errors.",
+            "The corrections for variation and deviation must be applied in the correct sequence as shown below, starting from the true course desired."
+          ],
+          "orderedText": [
+            "starting from the true course desired.",
+            "Step 1: Determine the Magnetic Course",
+            "True Course (180°) ± Variation (+10°) = Magnetic Course (190°)",
+            "Step 2: Determine the Compass Course",
+            "Magnetic Course (190°, from step 1) ± Deviation (–2°, from correction card) = Compass Course (188°)",
+            "course is known:",
+            "Compass Course ± Deviation = Magnetic Course ± Variation= True Course"
+          ],
+          "minimumImages": 1
         }
       ]
     },
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). The detached, flattened \"x2 +\" paragraph from page 343's \"Factor\" line is a known defect, not blessed. Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438, fraction answers split between a marker stub and an image (page 471 entries 22 and 29), or instruction text absorbed into the page-291 crops. Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18.",
+      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). The detached, flattened \"x2 +\" paragraph from page 343's \"Factor\" line is a known defect, not blessed. Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438 or fraction answers split between a marker stub and an image (page 471 entries 22 and 29). Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) still reflow as blocks of their own, some a line out of place; that fragmentation is not blessed.",
       "pages": [
         {
           "page": 10,
@@ -609,6 +620,8 @@
         {
           "page": 289,
           "orderedText": [
+            "process is being able to translate a problem like 180",
+            "eral ways this can be done. The most common and, with a bit of practice, the fastest method",
             "Example 378.",
             "Example 379.",
             "Example 380."
@@ -641,6 +654,10 @@
           "minimumImages": 1,
           "warningCodesAnyOf": [
             "imageRegion"
+          ],
+          "orderedText": [
+            "8.1 Practice - Square Roots",
+            "Simplify."
           ]
         },
         {
@@ -780,6 +797,21 @@
             "17) (− 16,− 14), (11,− 14)",
             "28) (− 18,− 5), (14,− 3)",
             "18) (13, 15), (2, 10)"
+          ]
+        },
+        {
+          "page": 288,
+          "orderedText": [
+            "Square roots are the most common type of radical used.",
+            "Example 377.",
+            "This is because if we square a positive or a negative, the answer will be positive.",
+            "Not all numbers have a nice even square root.",
+            "We can use the product rule to simplify an expression such as",
+            "The trick in this"
+          ],
+          "minimumImages": 2,
+          "warningCodesAnyOf": [
+            "imageRegion"
           ]
         }
       ]
@@ -3067,7 +3099,7 @@
     {
       "id": "nbs-jres-geltman-1977",
       "sourceSHA256": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
-      "basis": "Source pages 1, 2 and 7 visually reviewed. Pages 1-6 currently fall back to explicit original-page images; that conservative signal is protected, not reflow quality (#37). Page 7 protects the unverified-text warning over its inherited Paper Capture OCR and the reference heading. After #36 the closing left-column prose must reflow as text in source order, ending with its final line inside one paragraph; the inline-equation line earlier in the column still becomes a bounded formula crop. Reference transcriptions are noisy and are not asserted.",
+      "basis": "Source pages 1, 2 and 7 visually reviewed. Pages 1-6 currently fall back to explicit original-page images; that conservative signal is protected, not reflow quality (#37). Page 7 protects the unverified-text warning over its inherited Paper Capture OCR and the reference heading. After #36 the closing left-column prose must reflow as text in source order, ending with its final line inside one paragraph; the inline equation `u0 = eE0/mω` inside a justified line earlier in the column is prose, not a displayed formula, so that line and its neighbours reflow in the paragraph instead of a three-line crop (#51). Reference transcriptions are noisy and are not asserted.",
       "pages": [
         {
           "page": 1,
@@ -3098,13 +3130,17 @@
             "unverifiedTextLayer"
           ],
           "orderedText": [
+            "Relativisti c effects",
+            "becomes equal to c at a Nd-glass laser",
+            "it would be worthwhile to make a more",
             "Our remarks above have been confined to the case of",
             "In concluding, we would like to bring",
             "on neutral atoms.",
             "References"
           ],
           "paragraphs": [
-            "In concluding, we would like to bring"
+            "In concluding, we would like to bring",
+            "the maximum driven veloc ity Uo = eEo/mw becomes equal to c at a Nd-glass laser"
           ]
         }
       ]

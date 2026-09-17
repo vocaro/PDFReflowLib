@@ -1,0 +1,28 @@
+applied no-prose-row
+== no-prose-row
+✘ Test geltmanClosingProseReflowsAroundItsInlineEquation() failed after 0.407 seconds with 2 issues.
+✘ Test radicalProseReflowsBesideSquareRootDisplays() failed after 0.405 seconds with 15 issues.
+✘ Test compassFigureLeavesTheSentenceAboveItToProse() failed after 0.405 seconds with 4 issues.
+✘ Test openingSentenceWithInlineRadicalsReflowsAboveDerivations() failed after 0.406 seconds with 4 issues.
+✘ Test run with 393 tests in 3 suites failed after 1.616 seconds with 25 issues.
+applied no-margin-trim
+== no-margin-trim
+✘ Test practiceInstructionStaysOutOfRadicalExerciseCrops() failed after 0.407 seconds with 2 issues.
+✘ Test run with 393 tests in 3 suites failed after 1.619 seconds with 2 issues.
+applied no-radical-bar
+== no-radical-bar
+✘ Test radicalProseReflowsBesideSquareRootDisplays() failed after 0.321 seconds with 10 issues.
+✘ Test run with 393 tests in 3 suites failed after 1.656 seconds with 10 issues.
+applied no-stacked-guard
+== no-stacked-guard
+✘ Test stackedDisplayOnTheMeasureWithoutASentenceStaysPreserved() failed after 0.416 seconds with 1 issue.
+✘ Test run with 393 tests in 3 suites failed after 1.601 seconds with 1 issue.
+applied no-tolerance
+== no-tolerance
+✘ Test figureBoxEndingAtItsCropEdgeLeavesTouchingLinesToProse() failed after 0.404 seconds with 2 issues.
+✘ Test run with 393 tests in 3 suites failed after 1.614 seconds with 2 issues.
+applied no-clip
+== no-clip
+✘ Test formBoundingBoxIsLimitedToItsClip() failed after 0.356 seconds with 2 issues.
+✘ Test run with 393 tests in 3 suites failed after 1.671 seconds with 2 issues.
+applied restore

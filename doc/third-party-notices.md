@@ -62,7 +62,7 @@ SOFTWARE.
 [author's site](http://wallace.ccfaculty.org/book/book.html),
 [Creative Commons Attribution 3.0 Unported](https://creativecommons.org/licenses/by/3.0/).
 
-`Tests/PDFReflowLibTests/fixtures/algebra-{16,17,26,343,479}-layout.json` contains extracted text,
+`Tests/PDFReflowLibTests/fixtures/algebra-{16,17,26,288,343,479}-layout.json` contains extracted text,
 bounding geometry and attributed runs from those physical pages, transformed into test-only
 JSON representations. Algebra source rasters and EPUB comparisons in
 `measurements/preserved-region-regressions/`, `measurements/three-fidelity-fixes/` and
@@ -85,7 +85,7 @@ extracted text, geometry and attributed runs from pages 1 and 2. These derivativ
 
 ## Government-document development fixtures
 
-The `faa-{24,25,91,363…365,437…439,511}`, `fed-{11,12,13,32,45,46,54,75,77,103,109,123}`, `flag-{27,31}`, `911-{19…26,33,50,51,65…71,126,127,451,471…476,579…585}`, `cdc-5`, `dga-1`, `warren-50`, `warren-910`, `blue-5`, `blue-12`, `noaa-{33,80,139,1619}`, `usgs-{1,2}` and `nbs-7` layout JSONs under the test fixtures
+The `faa-{24,25,91,195,227,363…365,437…439,511}`, `fed-{11,12,13,32,45,46,54,75,77,103,109,123}`, `flag-{27,31}`, `911-{19…26,33,50,51,65…71,126,127,451,471…476,579…585}`, `cdc-5`, `dga-1`, `warren-50`, `warren-910`, `blue-5`, `blue-12`, `noaa-{33,80,139,1619}`, `usgs-{1,2}` and `nbs-7` layout JSONs under the test fixtures
 contain extracted text and geometry from the corresponding U.S. government corpus documents.
 Each records its publisher URL, title and pinned source checksum. The source and output renders
 in `measurements/three-fidelity-fixes/`, `measurements/fractions-and-invisible-text/`,

@@ -1,0 +1,9582 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "7-35"
+        }
+      ],
+      "text" : "7-35"
+    },
+    {
+      "rect" : [
+        72.818200000000004,
+        61.6877,
+        228.36700000000002,
+        10.812000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 7-40. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "High performance airplane pressurization system."
+        }
+      ],
+      "text" : "Figure 7-40. High performance airplane pressurization system."
+    },
+    {
+      "rect" : [
+        -246.61879999999996,
+        82.145899999999997,
+        871.82929999999999,
+        351.34600000000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        322.09090000000003,
+        503.52380000000005,
+        183.61900000000003,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 7-41. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Standard atmospheric pressure chart."
+        }
+      ],
+      "text" : "Figure 7-41. Standard atmospheric pressure chart."
+    },
+    {
+      "rect" : [
+        321.93140000000005,
+        521.97770000000003,
+        234.43740000000003,
+        206.31389999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        72,
+        719.56650000000002,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a device called an outflow valve. By regulating the air exit,"
+        }
+      ],
+      "text" : "a device called an outflow valve. By regulating the air exit,"
+    },
+    {
+      "rect" : [
+        72,
+        707.06650000000002,
+        236.9799999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the outflow valve allows for a constant inflow of air to the"
+        }
+      ],
+      "text" : "the outflow valve allows for a constant inflow of air to the"
+    },
+    {
+      "rect" : [
+        72,
+        694.56650000000002,
+        125.50999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pressurized area. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 7-40]"
+        }
+      ],
+      "text" : "pressurized area. [Figure 7-40]"
+    },
+    {
+      "rect" : [
+        72,
+        669.56650000000002,
+        237.02199999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A cabin pressurization system typically maintains a cabin"
+        }
+      ],
+      "text" : "A cabin pressurization system typically maintains a cabin"
+    },
+    {
+      "rect" : [
+        72,
+        657.06650000000002,
+        237.13000000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pressure altitude of approximately 8,000 feet at the maximum"
+        }
+      ],
+      "text" : "pressure altitude of approximately 8,000 feet at the maximum"
+    },
+    {
+      "rect" : [
+        72,
+        644.56650000000002,
+        237.02099999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "designed cruising altitude of an aircraft. This prevents rapid"
+        }
+      ],
+      "text" : "designed cruising altitude of an aircraft. This prevents rapid"
+    },
+    {
+      "rect" : [
+        72,
+        632.06650000000002,
+        237.08000000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "changes of cabin altitude that may be uncomfortable or cause"
+        }
+      ],
+      "text" : "changes of cabin altitude that may be uncomfortable or cause"
+    },
+    {
+      "rect" : [
+        72,
+        619.56650000000002,
+        237.03000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "injury to passengers and crew. In addition, the pressurization"
+        }
+      ],
+      "text" : "injury to passengers and crew. In addition, the pressurization"
+    },
+    {
+      "rect" : [
+        72,
+        607.06650000000002,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "system permits a reasonably fast exchange of air from"
+        }
+      ],
+      "text" : "system permits a reasonably fast exchange of air from"
+    },
+    {
+      "rect" : [
+        72,
+        594.56650000000002,
+        236.99999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the inside to the outside of the cabin. This is necessary to"
+        }
+      ],
+      "text" : "the inside to the outside of the cabin. This is necessary to"
+    },
+    {
+      "rect" : [
+        72,
+        582.06650000000002,
+        216.32999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "eliminate odors and to remove stale air. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 7-41]"
+        }
+      ],
+      "text" : "eliminate odors and to remove stale air. [Figure 7-41]"
+    },
+    {
+      "rect" : [
+        72,
+        557.06650000000002,
+        237.01199999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Pressurization of the aircraft cabin is necessary in order to"
+        }
+      ],
+      "text" : "Pressurization of the aircraft cabin is necessary in order to"
+    },
+    {
+      "rect" : [
+        72,
+        544.56650000000002,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "protect occupants against hypoxia. Within a pressurized"
+        }
+      ],
+      "text" : "protect occupants against hypoxia. Within a pressurized"
+    },
+    {
+      "rect" : [
+        72,
+        532.06650000000002,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "cabin, occupants can be transported comfortably and safely"
+        }
+      ],
+      "text" : "cabin, occupants can be transported comfortably and safely"
+    },
+    {
+      "rect" : [
+        72,
+        519.56650000000002,
+        237.02599999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "for long periods of time, particularly if the cabin altitude"
+        }
+      ],
+      "text" : "for long periods of time, particularly if the cabin altitude"
+    },
+    {
+      "rect" : [
+        72,
+        507.06650000000002,
+        236.96999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is maintained at 8,000 feet or below, where the use of"
+        }
+      ],
+      "text" : "is maintained at 8,000 feet or below, where the use of"
+    },
+    {
+      "rect" : [
+        72,
+        494.56650000000002,
+        237.01400000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "oxygen equipment is not required. The flight crew in this"
+        }
+      ],
+      "text" : "oxygen equipment is not required. The flight crew in this"
+    },
+    {
+      "rect" : [
+        72,
+        482.06650000000002,
+        237.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "type of aircraft must be aware of the danger of accidental"
+        }
+      ],
+      "text" : "type of aircraft must be aware of the danger of accidental"
+    },
+    {
+      "rect" : [
+        72,
+        469.56650000000002,
+        236.9799999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "loss of cabin pressure and be prepared to deal with such an"
+        }
+      ],
+      "text" : "loss of cabin pressure and be prepared to deal with such an"
+    },
+    {
+      "rect" : [
+        72,
+        457.06650000000002,
+        124.40000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "emergency whenever it occurs."
+        }
+      ],
+      "text" : "emergency whenever it occurs."
+    },
+    {
+      "rect" : [
+        321,
+        477.5265,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The following terms will aid in understanding the operating"
+        }
+      ],
+      "text" : "The following terms will aid in understanding the operating"
+    },
+    {
+      "rect" : [
+        321,
+        465.0265,
+        228.86999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "principles of pressurization and air conditioning systems:"
+        }
+      ],
+      "text" : "principles of pressurization and air conditioning systems:"
+    },
+    {
+      "rect" : [
+        330,
+        448.02730000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        348,
+        448.02730000000003,
+        210.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Aircraft altitude—the actual height above sea level at"
+        }
+      ],
+      "text" : "Aircraft altitude—the actual height above sea level at"
+    },
+    {
+      "rect" : [
+        348,
+        435.52730000000003,
+        106.09000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "which the aircraft is flying"
+        }
+      ],
+      "text" : "which the aircraft is flying"
+    },
+    {
+      "rect" : [
+        330,
+        418.52730000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        348,
+        418.52730000000003,
+        209.98000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Ambient temperature—the temperature in the area"
+        }
+      ],
+      "text" : "Ambient temperature—the temperature in the area"
+    },
+    {
+      "rect" : [
+        348,
+        406.02730000000003,
+        146.92000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "immediately surrounding the aircraft"
+        }
+      ],
+      "text" : "immediately surrounding the aircraft"
+    },
+    {
+      "rect" : [
+        330,
+        389.02730000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        348,
+        389.02730000000003,
+        210.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Ambient pressure—the pressure in the area"
+        }
+      ],
+      "text" : "Ambient pressure—the pressure in the area"
+    },
+    {
+      "rect" : [
+        348,
+        376.52730000000003,
+        146.92000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "immediately surrounding the aircraft"
+        }
+      ],
+      "text" : "immediately surrounding the aircraft"
+    },
+    {
+      "rect" : [
+        330,
+        359.52730000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        348,
+        359.52730000000003,
+        210.07999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Cabin altitude—cabin pressure in terms of equivalent"
+        }
+      ],
+      "text" : "Cabin altitude—cabin pressure in terms of equivalent"
+    },
+    {
+      "rect" : [
+        348,
+        347.02730000000003,
+        93.590000000000032,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "altitude above sea level"
+        }
+      ],
+      "text" : "altitude above sea level"
+    },
+    {
+      "rect" : [
+        330,
+        330.02730000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        348,
+        330.02730000000003,
+        210.10000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Differential pressure—the difference in pressure"
+        }
+      ],
+      "text" : "Differential pressure—the difference in pressure"
+    },
+    {
+      "rect" : [
+        348,
+        317.52730000000003,
+        210.04999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "between the pressure acting on one side of a wall"
+        }
+      ],
+      "text" : "between the pressure acting on one side of a wall"
+    },
+    {
+      "rect" : [
+        348,
+        305.02730000000003,
+        209.83799999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and the pressure acting on the other side of the"
+        }
+      ],
+      "text" : "and the pressure acting on the other side of the"
+    },
+    {
+      "rect" : [
+        348,
+        292.52730000000003,
+        209.93000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "wall. In aircraft air-conditioning and pressurizing"
+        }
+      ],
+      "text" : "wall. In aircraft air-conditioning and pressurizing"
+    },
+    {
+      "rect" : [
+        348,
+        280.02730000000003,
+        210.05000000000018,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "systems, it is the difference between cabin pressure"
+        }
+      ],
+      "text" : "systems, it is the difference between cabin pressure"
+    },
+    {
+      "rect" : [
+        348,
+        267.52730000000003,
+        106.53999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and atmospheric pressure."
+        }
+      ],
+      "text" : "and atmospheric pressure."
+    },
+    {
+      "rect" : [
+        321,
+        242.52730000000003,
+        236.99000000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The cabin pressure control system provides cabin pressure"
+        }
+      ],
+      "text" : "The cabin pressure control system provides cabin pressure"
+    },
+    {
+      "rect" : [
+        321,
+        230.02730000000003,
+        237.04999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "regulation, pressure relief, vacuum relief, and the means"
+        }
+      ],
+      "text" : "regulation, pressure relief, vacuum relief, and the means"
+    },
+    {
+      "rect" : [
+        321,
+        217.52730000000003,
+        237.01700000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "for selecting the desired cabin altitude in the isobaric and"
+        }
+      ],
+      "text" : "for selecting the desired cabin altitude in the isobaric and"
+    },
+    {
+      "rect" : [
+        321,
+        205.02730000000003,
+        237.01999999999987,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "differential range. In addition, dumping of the cabin pressure"
+        }
+      ],
+      "text" : "differential range. In addition, dumping of the cabin pressure"
+    },
+    {
+      "rect" : [
+        321,
+        192.52730000000003,
+        237.10500000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is a function of the pressure control system. A cabin pressure"
+        }
+      ],
+      "text" : "is a function of the pressure control system. A cabin pressure"
+    },
+    {
+      "rect" : [
+        321,
+        180.02730000000003,
+        237.01799999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "regulator, an outflow valve, and a safety valve are used to"
+        }
+      ],
+      "text" : "regulator, an outflow valve, and a safety valve are used to"
+    },
+    {
+      "rect" : [
+        321,
+        167.52730000000003,
+        110.82000000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "accomplish these functions."
+        }
+      ],
+      "text" : "accomplish these functions."
+    },
+    {
+      "rect" : [
+        321,
+        142.52730000000003,
+        237.15499999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The cabin pressure regulator controls cabin pressure to a"
+        }
+      ],
+      "text" : "The cabin pressure regulator controls cabin pressure to a"
+    },
+    {
+      "rect" : [
+        321,
+        130.02730000000003,
+        237.0089999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "selected value in the isobaric range and limits cabin pressure"
+        }
+      ],
+      "text" : "selected value in the isobaric range and limits cabin pressure"
+    },
+    {
+      "rect" : [
+        321,
+        117.52730000000003,
+        237.02999999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to a preset differential value in the differential range. When an"
+        }
+      ],
+      "text" : "to a preset differential value in the differential range. When an"
+    },
+    {
+      "rect" : [
+        321,
+        105.02730000000003,
+        237.01699999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft reaches the altitude at which the difference between"
+        }
+      ],
+      "text" : "aircraft reaches the altitude at which the difference between"
+    },
+    {
+      "rect" : [
+        321,
+        92.527300000000025,
+        236.95000000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the pressure inside and outside the cabin is equal to the"
+        }
+      ],
+      "text" : "the pressure inside and outside the cabin is equal to the"
+    },
+    {
+      "rect" : [
+        321,
+        80.027300000000025,
+        237.00599999999986,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "highest differential pressure for which the fuselage structure"
+        }
+      ],
+      "text" : "highest differential pressure for which the fuselage structure"
+    },
+    {
+      "rect" : [
+        321,
+        67.527300000000025,
+        237.0139999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is designed, a further increase in aircraft altitude will result"
+        }
+      ],
+      "text" : "is designed, a further increase in aircraft altitude will result"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      0,
+      80.645899999999997,
+      594,
+      354.34600000000006
+    ],
+    [
+      320.43099999999998,
+      520.47770000000003,
+      237.4378000000001,
+      209.31389999999999
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "text" : "7-35"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        72.818200000000004,
+        61.6877,
+        228.36700000000002,
+        10.812000000000005
+      ],
+      "text" : "Figure 7-40. High performance airplane pressurization system."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        322.09090000000003,
+        503.52380000000005,
+        183.61900000000003,
+        10.812000000000012
+      ],
+      "text" : "Figure 7-41. Standard atmospheric pressure chart."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        719.56650000000002,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "text" : "a device called an outflow valve. By regulating the air exit,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        707.06650000000002,
+        236.9799999999999,
+        11.470000000000027
+      ],
+      "text" : "the outflow valve allows for a constant inflow of air to the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        694.56650000000002,
+        125.50999999999999,
+        11.470000000000027
+      ],
+      "text" : "pressurized area. [Figure 7-40]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        669.56650000000002,
+        237.02199999999993,
+        11.470000000000027
+      ],
+      "text" : "A cabin pressurization system typically maintains a cabin"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        657.06650000000002,
+        237.13000000000011,
+        11.470000000000027
+      ],
+      "text" : "pressure altitude of approximately 8,000 feet at the maximum"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        644.56650000000002,
+        237.02099999999996,
+        11.470000000000027
+      ],
+      "text" : "designed cruising altitude of an aircraft. This prevents rapid"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        632.06650000000002,
+        237.08000000000015,
+        11.470000000000027
+      ],
+      "text" : "changes of cabin altitude that may be uncomfortable or cause"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        619.56650000000002,
+        237.03000000000003,
+        11.470000000000027
+      ],
+      "text" : "injury to passengers and crew. In addition, the pressurization"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        607.06650000000002,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "text" : "system permits a reasonably fast exchange of air from"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        594.56650000000002,
+        236.99999999999994,
+        11.470000000000027
+      ],
+      "text" : "the inside to the outside of the cabin. This is necessary to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        582.06650000000002,
+        216.32999999999998,
+        11.470000000000027
+      ],
+      "text" : "eliminate odors and to remove stale air. [Figure 7-41]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        557.06650000000002,
+        237.01199999999989,
+        11.470000000000027
+      ],
+      "text" : "Pressurization of the aircraft cabin is necessary in order to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        544.56650000000002,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "text" : "protect occupants against hypoxia. Within a pressurized"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        532.06650000000002,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "text" : "cabin, occupants can be transported comfortably and safely"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        519.56650000000002,
+        237.02599999999995,
+        11.470000000000027
+      ],
+      "text" : "for long periods of time, particularly if the cabin altitude"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        507.06650000000002,
+        236.96999999999991,
+        11.470000000000027
+      ],
+      "text" : "is maintained at 8,000 feet or below, where the use of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        494.56650000000002,
+        237.01400000000001,
+        11.470000000000027
+      ],
+      "text" : "oxygen equipment is not required. The flight crew in this"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        482.06650000000002,
+        237.005,
+        11.470000000000027
+      ],
+      "text" : "type of aircraft must be aware of the danger of accidental"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        469.56650000000002,
+        236.9799999999999,
+        11.470000000000027
+      ],
+      "text" : "loss of cabin pressure and be prepared to deal with such an"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        457.06650000000002,
+        124.40000000000003,
+        11.470000000000027
+      ],
+      "text" : "emergency whenever it occurs."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        477.5265,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "text" : "The following terms will aid in understanding the operating"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        465.0265,
+        228.86999999999989,
+        11.470000000000027
+      ],
+      "text" : "principles of pressurization and air conditioning systems:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        448.02730000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        448.02730000000003,
+        210.00599999999997,
+        11.470000000000027
+      ],
+      "text" : "Aircraft altitude—the actual height above sea level at"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        435.52730000000003,
+        106.09000000000003,
+        11.470000000000027
+      ],
+      "text" : "which the aircraft is flying"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        418.52730000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        418.52730000000003,
+        209.98000000000002,
+        11.470000000000027
+      ],
+      "text" : "Ambient temperature—the temperature in the area"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        406.02730000000003,
+        146.92000000000007,
+        11.470000000000027
+      ],
+      "text" : "immediately surrounding the aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        389.02730000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        389.02730000000003,
+        210.00999999999999,
+        11.470000000000027
+      ],
+      "text" : "Ambient pressure—the pressure in the area"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        376.52730000000003,
+        146.92000000000007,
+        11.470000000000027
+      ],
+      "text" : "immediately surrounding the aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        359.52730000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        359.52730000000003,
+        210.07999999999993,
+        11.470000000000027
+      ],
+      "text" : "Cabin altitude—cabin pressure in terms of equivalent"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        347.02730000000003,
+        93.590000000000032,
+        11.470000000000027
+      ],
+      "text" : "altitude above sea level"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        330.02730000000003,
+        3.5,
+        11.470000000000027
+      ],
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        330.02730000000003,
+        210.10000000000002,
+        11.470000000000027
+      ],
+      "text" : "Differential pressure—the difference in pressure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        317.52730000000003,
+        210.04999999999995,
+        11.470000000000027
+      ],
+      "text" : "between the pressure acting on one side of a wall"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        305.02730000000003,
+        209.83799999999997,
+        11.470000000000027
+      ],
+      "text" : "and the pressure acting on the other side of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        292.52730000000003,
+        209.93000000000006,
+        11.470000000000027
+      ],
+      "text" : "wall. In aircraft air-conditioning and pressurizing"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        280.02730000000003,
+        210.05000000000018,
+        11.470000000000027
+      ],
+      "text" : "systems, it is the difference between cabin pressure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        267.52730000000003,
+        106.53999999999996,
+        11.470000000000027
+      ],
+      "text" : "and atmospheric pressure."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        242.52730000000003,
+        236.99000000000001,
+        11.469999999999999
+      ],
+      "text" : "The cabin pressure control system provides cabin pressure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        230.02730000000003,
+        237.04999999999995,
+        11.469999999999999
+      ],
+      "text" : "regulation, pressure relief, vacuum relief, and the means"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        217.52730000000003,
+        237.01700000000005,
+        11.469999999999999
+      ],
+      "text" : "for selecting the desired cabin altitude in the isobaric and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        205.02730000000003,
+        237.01999999999987,
+        11.469999999999999
+      ],
+      "text" : "differential range. In addition, dumping of the cabin pressure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        192.52730000000003,
+        237.10500000000002,
+        11.469999999999999
+      ],
+      "text" : "is a function of the pressure control system. A cabin pressure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        180.02730000000003,
+        237.01799999999992,
+        11.469999999999999
+      ],
+      "text" : "regulator, an outflow valve, and a safety valve are used to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        167.52730000000003,
+        110.82000000000005,
+        11.469999999999999
+      ],
+      "text" : "accomplish these functions."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        142.52730000000003,
+        237.15499999999997,
+        11.469999999999999
+      ],
+      "text" : "The cabin pressure regulator controls cabin pressure to a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        130.02730000000003,
+        237.0089999999999,
+        11.469999999999999
+      ],
+      "text" : "selected value in the isobaric range and limits cabin pressure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        117.52730000000003,
+        237.02999999999997,
+        11.469999999999999
+      ],
+      "text" : "to a preset differential value in the differential range. When an"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        105.02730000000003,
+        237.01699999999994,
+        11.469999999999999
+      ],
+      "text" : "aircraft reaches the altitude at which the difference between"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        92.527300000000025,
+        236.95000000000005,
+        11.469999999999999
+      ],
+      "text" : "the pressure inside and outside the cabin is equal to the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        80.027300000000025,
+        237.00599999999986,
+        11.469999999999999
+      ],
+      "text" : "highest differential pressure for which the fuselage structure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        67.527300000000025,
+        237.0139999999999,
+        11.469999999999999
+      ],
+      "text" : "is designed, a further increase in aircraft altitude will result"
+    }
+  ],
+  "page" : 195,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        70.881200000000035,
+        80.645899999999997,
+        238.952,
+        354.34600000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.881600000000006,
+        82.646000000000015,
+        234.95140000000004,
+        350.79399999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        70.881200000000035,
+        80.645899999999997,
+        238.952,
+        354.34600000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        0,
+        160.86320000000003,
+        160.98919999999998,
+        155.33799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        82.617999999999995,
+        184.70000000000002,
+        69.207000000000022,
+        21.246999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        0,
+        160.86280000000002,
+        160.83929999999998,
+        45.084000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        82.617999999999995,
+        185.08799999999999,
+        69.207999999999998,
+        20.861000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        0,
+        160.86280000000002,
+        161.1302,
+        45.085999999999984
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        0,
+        189.31030000000001,
+        146.99829999999997,
+        125.542
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        80.109999999999999,
+        197.489,
+        66.887999999999991,
+        118.71200000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        0,
+        190.65820000000002,
+        146.99789999999996,
+        125.54300000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        0,
+        189.73620000000003,
+        146.9983,
+        126.465
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        90.527500000000003,
+        268.5718,
+        56.441000000000003,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        80.4465,
+        184.7011,
+        66.172000000000011,
+        131.69
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        215.64750000000004,
+        160.86270000000002,
+        378.35249999999996,
+        155.33799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        215.64750000000004,
+        160.86270000000002,
+        378.35249999999996,
+        155.33799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        215.79550000000003,
+        160.86280000000002,
+        162.77500000000001,
+        53.854000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        215.79550000000003,
+        160.86280000000002,
+        162.77500000000001,
+        53.854000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        215.5052,
+        160.86280000000002,
+        163.87299999999999,
+        53.854000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        215.5052,
+        160.86280000000002,
+        163.87299999999999,
+        53.854000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        219.28100000000001,
+        187.761,
+        78.146999999999991,
+        85.207000000000022
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        219.28100000000001,
+        187.76169999999999,
+        374.35399999999998,
+        85.231999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        220.21899999999999,
+        268.96300000000002,
+        76.701999999999998,
+        47.238
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        220.21860000000001,
+        268.9624,
+        373.41599999999994,
+        47.239000000000033
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        223.81870000000001,
+        176.30109999999999,
+        73.999999999999972,
+        140.19300000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        137.482,
+        182.89699999999999,
+        95.562000000000012,
+        176.16500000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        137.4813,
+        182.89660000000001,
+        95.561999999999983,
+        183.62300000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        142.249,
+        353.69400000000002,
+        86.076999999999998,
+        72.189999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        142.24939999999998,
+        353.6943,
+        86.076000000000022,
+        72.189000000000021
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.04400000000001,
+        384.05900000000003,
+        8.3299999999999841,
+        15.475999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.04330000000002,
+        384.05889999999999,
+        8.3309999999999889,
+        15.475999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.249,
+        384.05900000000003,
+        14.86699999999999,
+        15.476999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.24939999999998,
+        384.05900000000003,
+        14.866000000000014,
+        15.475999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.50800000000001,
+        384.05900000000003,
+        7.757000000000005,
+        15.475999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.50739999999999,
+        384.05870000000004,
+        7.7580000000000098,
+        15.475999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.30500000000001,
+        383.108,
+        11.436000000000007,
+        5.9200000000000159
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.30439999999999,
+        383.108,
+        11.436000000000007,
+        5.9200000000000159
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.30500000000001,
+        394.56200000000001,
+        11.436000000000007,
+        5.9209999999999923
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.30439999999999,
+        394.56200000000001,
+        11.436000000000007,
+        5.9200000000000159
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.185,
+        382.14300000000003,
+        4.320999999999998,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.18540000000002,
+        382.14300000000003,
+        4.320999999999998,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.857,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.85640000000001,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        155.52500000000001,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        155.52540000000002,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.196,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.19540000000001,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.86500000000001,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.86540000000002,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        157.536,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        157.53540000000001,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        158.20500000000001,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        158.20540000000003,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        158.875,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        158.87540000000001,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        159.52500000000001,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        159.52440000000001,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.19400000000002,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.1944,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.864,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.86440000000002,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.535,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.53440000000001,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        162.167,
+        382.86200000000002,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        162.16740000000001,
+        382.86200000000002,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        162.83799999999999,
+        382.86200000000002,
+        4.3189999999999884,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        162.83740000000003,
+        382.86200000000002,
+        4.3189999999999884,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        163.506,
+        382.86200000000002,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        163.50640000000001,
+        382.86200000000002,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.17600000000002,
+        382.86200000000002,
+        4.320999999999998,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.1764,
+        382.86200000000002,
+        4.320999999999998,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.846,
+        382.86200000000002,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.84540000000001,
+        382.86200000000002,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.87,
+        384.56999999999999,
+        4.3199999999999932,
+        14.451000000000022
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.87040000000002,
+        384.56999999999999,
+        4.3199999999999932,
+        14.451000000000022
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.53999999999999,
+        384.14400000000001,
+        4.3199999999999932,
+        15.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.54040000000001,
+        384.14400000000001,
+        4.3199999999999932,
+        15.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.21100000000001,
+        383.71600000000001,
+        4.3199999999999932,
+        16.161000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.21040000000002,
+        383.71600000000001,
+        4.3199999999999932,
+        16.161000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.88,
+        383.28800000000001,
+        4.3199999999999932,
+        17.01400000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.88040000000001,
+        383.28800000000001,
+        4.3199999999999932,
+        17.01400000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.55100000000002,
+        382.86200000000002,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.55040000000002,
+        382.86200000000002,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.78200000000001,
+        389.25200000000001,
+        5.6659999999999968,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.7825,
+        389.25240000000002,
+        5.6659999999999968,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.91059999999999,
+        389.43020000000001,
+        4.4480000000000075,
+        4.9920000000000186
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.101,
+        389.6431,
+        4.3449999999999989,
+        4.7719999999999914
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.2886,
+        390.05520000000001,
+        4.1529999999999916,
+        4.3489999999999895
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.73269999999999,
+        389.43000000000001,
+        4.4310000000000116,
+        4.9850000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.55420000000001,
+        389.42580000000004,
+        4.4269999999999925,
+        4.9850000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.40039999999999,
+        389.43209999999999,
+        4.4060000000000059,
+        4.9769999999999754
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.20960000000002,
+        389.43650000000002,
+        4.4019999999999868,
+        4.9569999999999936
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.02290000000002,
+        389.42140000000001,
+        4.4269999999999925,
+        4.9060000000000059
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.91400000000002,
+        389.41890000000001,
+        4.3449999999999989,
+        4.714999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.393,
+        389.15300000000002,
+        5.0630000000000166,
+        5.4379999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        389.1533,
+        5.0629999999999882,
+        5.4379999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        390.24880000000002,
+        5.0629999999999882,
+        4.7189999999999941
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        390.24880000000002,
+        5.0629999999999882,
+        4.7189999999999941
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39380000000003,
+        389.52850000000001,
+        5.063999999999993,
+        4.7200000000000273
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39380000000003,
+        389.52850000000001,
+        5.063999999999993,
+        4.7200000000000273
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        388.81130000000002,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        388.81130000000002,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.78200000000001,
+        384.76499999999999,
+        5.6659999999999968,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.7825,
+        384.76510000000002,
+        5.6659999999999968,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.91059999999999,
+        384.94290000000001,
+        4.4480000000000075,
+        4.9920000000000186
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.101,
+        385.15770000000003,
+        4.3449999999999989,
+        4.7699999999999818
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.2886,
+        385.56790000000001,
+        4.1529999999999916,
+        4.3489999999999895
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.73269999999999,
+        384.9427,
+        4.4310000000000116,
+        4.9850000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.55420000000001,
+        384.93850000000003,
+        4.4269999999999925,
+        4.9870000000000232
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.40039999999999,
+        384.94480000000004,
+        4.4060000000000059,
+        4.9769999999999754
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.20960000000002,
+        384.94920000000002,
+        4.4019999999999868,
+        4.9569999999999936
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.02290000000002,
+        384.93600000000004,
+        4.4269999999999925,
+        4.9039999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.91400000000002,
+        384.9316,
+        4.3449999999999989,
+        4.714999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.393,
+        384.666,
+        5.0630000000000166,
+        5.4379999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        384.666,
+        5.0629999999999882,
+        5.4379999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        385.76150000000001,
+        5.0629999999999882,
+        4.7189999999999941
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        385.76150000000001,
+        5.0629999999999882,
+        4.7189999999999941
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39380000000003,
+        385.04320000000001,
+        5.063999999999993,
+        4.7180000000000177
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39380000000003,
+        385.04320000000001,
+        5.063999999999993,
+        4.7180000000000177
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        384.32400000000001,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        384.32400000000001,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.78200000000001,
+        393.74000000000001,
+        5.6659999999999968,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.7825,
+        393.73930000000001,
+        5.6659999999999968,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.91059999999999,
+        393.91500000000002,
+        4.4480000000000075,
+        4.9940000000000282
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.101,
+        394.13040000000001,
+        4.3449999999999989,
+        4.7719999999999914
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.2886,
+        394.54250000000002,
+        4.1529999999999916,
+        4.3489999999999895
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.73269999999999,
+        393.9153,
+        4.4310000000000116,
+        4.9870000000000232
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.55420000000001,
+        393.91310000000004,
+        4.4269999999999925,
+        4.9850000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.40039999999999,
+        393.9194,
+        4.4060000000000059,
+        4.9769999999999754
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.20960000000002,
+        393.92189999999999,
+        4.4019999999999868,
+        4.9580000000000268
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.02290000000002,
+        393.90870000000001,
+        4.4269999999999925,
+        4.9060000000000059
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.91400000000002,
+        393.90630000000004,
+        4.3449999999999989,
+        4.714999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.393,
+        393.64100000000002,
+        5.0630000000000166,
+        5.4370000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        393.64060000000001,
+        5.0629999999999882,
+        5.4379999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        394.73610000000002,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        394.73610000000002,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39380000000003,
+        394.01640000000003,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39380000000003,
+        394.01640000000003,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        393.29860000000002,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        393.29860000000002,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.11600000000001,
+        383.36799999999999,
+        4.7920000000000016,
+        16.857000000000028
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.1164,
+        383.36799999999999,
+        4.7920000000000016,
+        16.858000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.029,
+        386.72500000000002,
+        7.9860000000000184,
+        10.15100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.81530000000001,
+        387.33230000000003,
+        6.9489999999999839,
+        8.6779999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.81530000000001,
+        387.33230000000003,
+        6.9489999999999839,
+        8.6779999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.292,
+        387.92900000000003,
+        6.2599999999999909,
+        7.5589999999999691
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.2921,
+        387.92930000000001,
+        6.2599999999999909,
+        7.5590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.99100000000001,
+        387.92900000000003,
+        6.2599999999999909,
+        7.5589999999999691
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.99040000000002,
+        387.92930000000001,
+        6.2599999999999909,
+        7.5590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.61500000000001,
+        388.291,
+        7.2579999999999814,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.61449999999999,
+        388.291,
+        7.2580000000000098,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.732,
+        388.291,
+        5.8089999999999975,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.73150000000001,
+        388.2912,
+        5.8089999999999975,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.732,
+        388.48900000000003,
+        5.5620000000000118,
+        6.4619999999999891
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.726,
+        388.291,
+        5.1310000000000002,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.72640000000001,
+        388.2912,
+        5.1310000000000002,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.67310000000001,
+        388.31300000000005,
+        4.9039999999999964,
+        6.8109999999999786
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.02799999999999,
+        386.65870000000001,
+        5.5030000000000143,
+        5.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.029,
+        391.69,
+        5.5030000000000143,
+        5.0620000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.23070000000001,
+        385.46940000000006,
+        6.5840000000000032,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.23070000000001,
+        385.46940000000006,
+        6.5840000000000032,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.65299999999999,
+        385.56799999999998,
+        6.1610000000000014,
+        5.9840000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.65310000000002,
+        385.56780000000003,
+        6.1619999999999777,
+        5.9839999999999804
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.24299999999999,
+        385.95400000000001,
+        27.027000000000015,
+        5.2119999999999891
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.24369999999999,
+        385.9545,
+        27.02600000000001,
+        5.2110000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.23070000000001,
+        391.98410000000007,
+        6.5840000000000032,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.23070000000001,
+        391.98410000000007,
+        6.5840000000000032,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.65299999999999,
+        392.08100000000002,
+        6.1610000000000014,
+        5.9830000000000041
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.65310000000002,
+        392.08050000000003,
+        6.1619999999999777,
+        5.9839999999999804
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.24299999999999,
+        392.46699999999998,
+        27.027000000000015,
+        5.2110000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.24369999999999,
+        392.46719999999999,
+        27.02600000000001,
+        5.2110000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.05500000000001,
+        384.52600000000001,
+        5.7460000000000093,
+        14.54000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.05549999999999,
+        384.52590000000004,
+        5.7460000000000093,
+        14.540999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.767,
+        384.221,
+        4.7920000000000016,
+        15.15100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.76740000000001,
+        384.221,
+        4.7920000000000016,
+        15.15100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.04400000000001,
+        401.18000000000001,
+        8.3299999999999841,
+        15.475999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.04330000000002,
+        401.18000000000001,
+        8.3309999999999889,
+        15.475999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.249,
+        401.18000000000001,
+        14.86699999999999,
+        15.478999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.24939999999998,
+        401.18000000000001,
+        14.866000000000014,
+        15.478999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.50800000000001,
+        401.18000000000001,
+        7.757000000000005,
+        15.478999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.50739999999999,
+        401.17970000000003,
+        7.7580000000000098,
+        15.478999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.30500000000001,
+        400.23200000000003,
+        11.436000000000007,
+        5.9209999999999923
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.30439999999999,
+        400.23199999999997,
+        11.436000000000007,
+        5.9200000000000159
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.30500000000001,
+        411.68600000000004,
+        11.436000000000007,
+        5.9180000000000064
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.30439999999999,
+        411.68599999999998,
+        11.436000000000007,
+        5.9180000000000064
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.185,
+        399.267,
+        4.320999999999998,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.18540000000002,
+        399.267,
+        4.320999999999998,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.85599999999999,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.85640000000001,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        155.52500000000001,
+        399.267,
+        4.3199999999999932,
+        19.303999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        155.52540000000002,
+        399.267,
+        4.3199999999999932,
+        19.302999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.196,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.19540000000001,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.86500000000001,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.86540000000002,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        157.536,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        157.53540000000001,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        158.20500000000001,
+        399.267,
+        4.3199999999999932,
+        19.303999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        158.20540000000003,
+        399.267,
+        4.3199999999999932,
+        19.302999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        158.875,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        158.87540000000001,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        159.52500000000001,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        159.52440000000001,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.19400000000002,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.1944,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.864,
+        399.267,
+        4.3199999999999932,
+        19.303999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.86440000000002,
+        399.267,
+        4.3199999999999932,
+        19.302999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.535,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.53440000000001,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        162.167,
+        399.98399999999998,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        162.16740000000001,
+        399.98400000000004,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        162.83799999999999,
+        399.98399999999998,
+        4.3189999999999884,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        162.83740000000003,
+        399.98400000000004,
+        4.3189999999999884,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        163.506,
+        399.98399999999998,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        163.50640000000001,
+        399.98400000000004,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.17600000000002,
+        399.98399999999998,
+        4.320999999999998,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.1764,
+        399.98400000000004,
+        4.320999999999998,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.846,
+        399.98399999999998,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.84540000000001,
+        399.98400000000004,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.87,
+        401.69400000000002,
+        4.3199999999999932,
+        14.449000000000012
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.87040000000002,
+        401.69400000000002,
+        4.3199999999999932,
+        14.449000000000012
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.53999999999999,
+        401.26600000000002,
+        4.3199999999999932,
+        15.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.54040000000001,
+        401.26600000000002,
+        4.3199999999999932,
+        15.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.21000000000001,
+        400.83800000000002,
+        4.3199999999999932,
+        16.161000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.21040000000002,
+        400.83800000000002,
+        4.3199999999999932,
+        16.161000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.88,
+        400.41200000000003,
+        4.3199999999999932,
+        17.01600000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.88040000000001,
+        400.41200000000003,
+        4.3199999999999932,
+        17.014999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.55100000000002,
+        399.98399999999998,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.55040000000002,
+        399.98400000000004,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.78200000000001,
+        406.37400000000002,
+        5.6659999999999968,
+        5.3389999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.7825,
+        406.37399999999997,
+        5.6659999999999968,
+        5.3389999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.91059999999999,
+        406.55180000000001,
+        4.4480000000000075,
+        4.9940000000000282
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.101,
+        406.76710000000003,
+        4.3449999999999989,
+        4.7719999999999914
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.2886,
+        407.17970000000003,
+        4.1529999999999916,
+        4.3489999999999895
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.73269999999999,
+        406.55160000000001,
+        4.4310000000000116,
+        4.9879999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.55420000000001,
+        406.54740000000004,
+        4.4269999999999925,
+        4.9879999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.40039999999999,
+        406.55620000000005,
+        4.4060000000000059,
+        4.9750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.20960000000002,
+        406.55860000000001,
+        4.4019999999999868,
+        4.9590000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.02290000000002,
+        406.54540000000003,
+        4.4269999999999925,
+        4.9039999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.91400000000002,
+        406.541,
+        4.3449999999999989,
+        4.714999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.393,
+        406.27800000000002,
+        5.0630000000000166,
+        5.4370000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        406.27780000000001,
+        5.0629999999999882,
+        5.4370000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        407.37280000000004,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        407.37280000000004,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39380000000003,
+        406.65260000000001,
+        5.063999999999993,
+        4.7180000000000177
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39380000000003,
+        406.65260000000001,
+        5.063999999999993,
+        4.7180000000000177
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        405.93279999999999,
+        5.063999999999993,
+        4.7200000000000273
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        405.93279999999999,
+        5.063999999999993,
+        4.7200000000000273
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.78200000000001,
+        401.88900000000001,
+        5.6659999999999968,
+        5.3369999999999891
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.7825,
+        401.88909999999998,
+        5.6659999999999968,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.91059999999999,
+        402.06450000000001,
+        4.4480000000000075,
+        4.9940000000000282
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.101,
+        402.27980000000002,
+        4.3449999999999989,
+        4.7719999999999914
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.2886,
+        402.69240000000002,
+        4.1529999999999916,
+        4.3489999999999895
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.73269999999999,
+        402.0643,
+        4.4310000000000116,
+        4.9879999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.55420000000001,
+        402.0625,
+        4.4269999999999925,
+        4.9850000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.40039999999999,
+        402.06890000000004,
+        4.4060000000000059,
+        4.9750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.20960000000002,
+        402.07130000000001,
+        4.4019999999999868,
+        4.9590000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.02290000000002,
+        402.05810000000002,
+        4.4269999999999925,
+        4.9060000000000059
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.91400000000002,
+        402.05369999999999,
+        4.3449999999999989,
+        4.714999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.393,
+        401.791,
+        5.0630000000000166,
+        5.4370000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        401.79050000000001,
+        5.0629999999999882,
+        5.4370000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        402.88550000000004,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        402.88550000000004,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39380000000003,
+        402.1653,
+        5.063999999999993,
+        4.7180000000000177
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39380000000003,
+        402.1653,
+        5.063999999999993,
+        4.7180000000000177
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        401.44850000000002,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        401.44850000000002,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.78200000000001,
+        410.86099999999999,
+        5.6659999999999968,
+        5.3370000000000459
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.7825,
+        410.86129999999997,
+        5.6659999999999968,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.91059999999999,
+        411.03910000000002,
+        4.4480000000000075,
+        4.9920000000000186
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.101,
+        411.25440000000003,
+        4.3449999999999989,
+        4.7699999999999818
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.2886,
+        411.66460000000001,
+        4.1529999999999916,
+        4.3489999999999895
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.73269999999999,
+        411.0394,
+        4.4310000000000116,
+        4.9850000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.55420000000001,
+        411.03470000000004,
+        4.4269999999999925,
+        4.9879999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.40039999999999,
+        411.04150000000004,
+        4.4060000000000059,
+        4.9769999999999754
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.20960000000002,
+        411.04590000000002,
+        4.4019999999999868,
+        4.9590000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.02290000000002,
+        411.03270000000003,
+        4.4269999999999925,
+        4.9039999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.91400000000002,
+        411.0283,
+        4.3449999999999989,
+        4.714999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.393,
+        410.76300000000003,
+        5.0630000000000166,
+        5.4389999999999645
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        410.7627,
+        5.0629999999999882,
+        5.4390000000000214
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        411.86020000000002,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        411.86020000000002,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39380000000003,
+        411.14040000000006,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39380000000003,
+        411.14040000000006,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        410.42070000000001,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.39330000000001,
+        410.42070000000001,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.11600000000001,
+        400.49000000000001,
+        4.7920000000000016,
+        16.860000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.1164,
+        400.49000000000001,
+        4.7920000000000016,
+        16.860000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.029,
+        403.84899999999999,
+        7.9860000000000184,
+        10.148000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.81530000000001,
+        404.45680000000004,
+        6.9489999999999839,
+        8.6779999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.81530000000001,
+        404.45680000000004,
+        6.9489999999999839,
+        8.6779999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.292,
+        405.05099999999999,
+        6.2599999999999909,
+        7.5590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.2921,
+        405.05040000000002,
+        6.2599999999999909,
+        7.5600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.99100000000001,
+        405.05099999999999,
+        6.2599999999999909,
+        7.5590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.99040000000002,
+        405.05040000000002,
+        6.2599999999999909,
+        7.5600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.61500000000001,
+        405.41300000000001,
+        7.2579999999999814,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.61449999999999,
+        405.41310000000004,
+        7.2580000000000098,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.732,
+        405.41300000000001,
+        5.8089999999999975,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.73150000000001,
+        405.41329999999999,
+        5.8089999999999975,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.732,
+        405.613,
+        5.5620000000000118,
+        6.4600000000000364
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.726,
+        405.41300000000001,
+        5.1310000000000002,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.72640000000001,
+        405.41329999999999,
+        5.1310000000000002,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.67310000000001,
+        405.43710000000004,
+        4.9039999999999964,
+        6.8109999999999786
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.02799999999999,
+        403.7808,
+        5.5030000000000143,
+        5.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.029,
+        408.81400000000002,
+        5.5020000000000095,
+        5.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.23070000000001,
+        402.59350000000006,
+        6.5840000000000032,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.23070000000001,
+        402.59350000000006,
+        6.5840000000000032,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.65299999999999,
+        402.69,
+        6.1610000000000014,
+        5.98599999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.65310000000002,
+        402.68980000000005,
+        6.1619999999999777,
+        5.98599999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.24299999999999,
+        403.07900000000001,
+        27.027000000000015,
+        5.2090000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.24369999999999,
+        403.07859999999999,
+        27.02600000000001,
+        5.2090000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.23070000000001,
+        409.10620000000006,
+        6.5840000000000032,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.23070000000001,
+        409.10620000000006,
+        6.5840000000000032,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.65299999999999,
+        409.20300000000003,
+        6.1610000000000014,
+        5.9849999999999568
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.65310000000002,
+        409.20250000000004,
+        6.1619999999999777,
+        5.98599999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.24299999999999,
+        409.59100000000001,
+        27.027000000000015,
+        5.2110000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.24369999999999,
+        409.59129999999999,
+        27.02600000000001,
+        5.2110000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.05500000000001,
+        401.64800000000002,
+        5.7460000000000093,
+        14.540999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.05549999999999,
+        401.64800000000002,
+        5.7460000000000093,
+        14.540999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.767,
+        401.34300000000002,
+        4.7920000000000016,
+        15.15100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.76740000000001,
+        401.34300000000002,
+        4.7920000000000016,
+        15.15100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.92600000000002,
+        384.05900000000003,
+        8.3299999999999841,
+        15.475999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.92600000000002,
+        384.05889999999999,
+        8.3300000000000125,
+        15.475999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.18299999999999,
+        384.05900000000003,
+        14.86699999999999,
+        15.476999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.18340000000001,
+        384.05900000000003,
+        14.865999999999985,
+        15.475999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.035,
+        384.05900000000003,
+        7.757000000000005,
+        15.475999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.03440000000001,
+        384.05870000000004,
+        7.7580000000000098,
+        15.475999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.55799999999999,
+        383.108,
+        11.436000000000007,
+        5.9200000000000159
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.55840000000001,
+        383.108,
+        11.436000000000007,
+        5.9200000000000159
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.55799999999999,
+        394.56200000000001,
+        11.436000000000007,
+        5.9209999999999923
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.55840000000001,
+        394.56200000000001,
+        11.436000000000007,
+        5.9200000000000159
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.79400000000001,
+        382.14300000000003,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.7944,
+        382.14300000000003,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.124,
+        382.14300000000003,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.1234,
+        382.14300000000003,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.453,
+        382.14300000000003,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.45340000000002,
+        382.14300000000003,
+        4.3180000000000121,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        208.78300000000002,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        208.78240000000002,
+        382.14300000000003,
+        4.320999999999998,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        208.114,
+        382.14300000000003,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        208.11440000000002,
+        382.14300000000003,
+        4.3180000000000121,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        207.44300000000001,
+        382.14300000000003,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        207.4434,
+        382.14300000000003,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        206.773,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        206.77340000000001,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        206.10400000000001,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        206.1044,
+        382.14300000000003,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        205.45500000000001,
+        382.14300000000003,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        205.4554,
+        382.14300000000003,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        204.78399999999999,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        204.78440000000001,
+        382.14300000000003,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        204.114,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        204.11440000000002,
+        382.14300000000003,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.44300000000001,
+        382.14300000000003,
+        4.320999999999998,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.4434,
+        382.14300000000003,
+        4.320999999999998,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        202.81100000000001,
+        382.86200000000002,
+        4.320999999999998,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        202.81140000000002,
+        382.86200000000002,
+        4.320999999999998,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        202.143,
+        382.86200000000002,
+        4.3180000000000121,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        202.14340000000001,
+        382.86200000000002,
+        4.3180000000000121,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        201.47200000000001,
+        382.86200000000002,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        201.47240000000002,
+        382.86200000000002,
+        4.3189999999999884,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.80199999999999,
+        382.86200000000002,
+        4.320999999999998,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.80240000000001,
+        382.86200000000002,
+        4.320999999999998,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.13300000000001,
+        382.86200000000002,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.13240000000002,
+        382.86200000000002,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        214.107,
+        384.56999999999999,
+        4.320999999999998,
+        14.451000000000022
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        214.10740000000001,
+        384.56999999999999,
+        4.320999999999998,
+        14.451000000000022
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        213.43899999999999,
+        384.14400000000001,
+        4.3180000000000121,
+        15.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        213.43940000000001,
+        384.14400000000001,
+        4.3180000000000121,
+        15.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.76900000000001,
+        383.71600000000001,
+        4.3189999999999884,
+        16.161000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.76840000000001,
+        383.71600000000001,
+        4.3189999999999884,
+        16.161000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.09800000000001,
+        383.28800000000001,
+        4.3199999999999932,
+        17.01400000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.0984,
+        383.28800000000001,
+        4.3199999999999932,
+        17.01400000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.429,
+        382.86200000000002,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.42840000000001,
+        382.86200000000002,
+        4.320999999999998,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84999999999999,
+        389.25200000000001,
+        5.6659999999999968,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.85090000000002,
+        389.25240000000002,
+        5.664999999999992,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.94070000000002,
+        389.43020000000001,
+        4.4480000000000075,
+        4.9920000000000186
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.8528,
+        389.6431,
+        4.3460000000000036,
+        4.7719999999999914
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.8586,
+        390.05520000000001,
+        4.1510000000000105,
+        4.3489999999999895
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.13460000000001,
+        389.43000000000001,
+        4.4329999999999927,
+        4.9850000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.3176,
+        389.42580000000004,
+        4.429000000000002,
+        4.9850000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.4924,
+        389.43209999999999,
+        4.4070000000000107,
+        4.9769999999999754
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.68870000000001,
+        389.43650000000002,
+        4.4010000000000105,
+        4.9569999999999936
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.84980000000002,
+        389.42140000000001,
+        4.4259999999999877,
+        4.9060000000000059
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.0403,
+        389.41890000000001,
+        4.3460000000000036,
+        4.714999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84300000000002,
+        389.15300000000002,
+        5.0619999999999834,
+        5.4379999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        389.1533,
+        5.0629999999999882,
+        5.4379999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        390.24880000000002,
+        5.0629999999999882,
+        4.7189999999999941
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        390.24880000000002,
+        5.0629999999999882,
+        4.7189999999999941
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84110000000001,
+        389.52850000000001,
+        5.063999999999993,
+        4.7200000000000273
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84110000000001,
+        389.52850000000001,
+        5.063999999999993,
+        4.7200000000000273
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84150000000002,
+        388.81130000000002,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84150000000002,
+        388.81130000000002,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84999999999999,
+        384.76499999999999,
+        5.6659999999999968,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.85090000000002,
+        384.76510000000002,
+        5.664999999999992,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.94070000000002,
+        384.94290000000001,
+        4.4480000000000075,
+        4.9920000000000186
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.8528,
+        385.15770000000003,
+        4.3460000000000036,
+        4.7699999999999818
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.8586,
+        385.56790000000001,
+        4.1510000000000105,
+        4.3489999999999895
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.13460000000001,
+        384.9427,
+        4.4329999999999927,
+        4.9850000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.3176,
+        384.93850000000003,
+        4.429000000000002,
+        4.9870000000000232
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.4924,
+        384.94480000000004,
+        4.4070000000000107,
+        4.9769999999999754
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.68870000000001,
+        384.94920000000002,
+        4.4010000000000105,
+        4.9569999999999936
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.84980000000002,
+        384.93600000000004,
+        4.4259999999999877,
+        4.9039999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.0403,
+        384.9316,
+        4.3460000000000036,
+        4.714999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84300000000002,
+        384.666,
+        5.0619999999999834,
+        5.4379999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        384.666,
+        5.0629999999999882,
+        5.4379999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        385.76150000000001,
+        5.0629999999999882,
+        4.7189999999999941
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        385.76150000000001,
+        5.0629999999999882,
+        4.7189999999999941
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84110000000001,
+        385.04320000000001,
+        5.063999999999993,
+        4.7180000000000177
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84110000000001,
+        385.04320000000001,
+        5.063999999999993,
+        4.7180000000000177
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84150000000002,
+        384.32400000000001,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84150000000002,
+        384.32400000000001,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84999999999999,
+        393.74000000000001,
+        5.6659999999999968,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.85090000000002,
+        393.73930000000001,
+        5.664999999999992,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.94070000000002,
+        393.91500000000002,
+        4.4480000000000075,
+        4.9940000000000282
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.8528,
+        394.13040000000001,
+        4.3460000000000036,
+        4.7719999999999914
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.8586,
+        394.54250000000002,
+        4.1510000000000105,
+        4.3489999999999895
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.13460000000001,
+        393.9153,
+        4.4329999999999927,
+        4.9870000000000232
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.3176,
+        393.91310000000004,
+        4.429000000000002,
+        4.9850000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.4924,
+        393.9194,
+        4.4070000000000107,
+        4.9769999999999754
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.68870000000001,
+        393.92189999999999,
+        4.4010000000000105,
+        4.9580000000000268
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.84980000000002,
+        393.90870000000001,
+        4.4259999999999877,
+        4.9060000000000059
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.0403,
+        393.90630000000004,
+        4.3460000000000036,
+        4.714999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84300000000002,
+        393.64100000000002,
+        5.0619999999999834,
+        5.4370000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        393.64060000000001,
+        5.0629999999999882,
+        5.4379999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        394.73610000000002,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        394.73610000000002,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84110000000001,
+        394.01640000000003,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84110000000001,
+        394.01640000000003,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84150000000002,
+        393.29860000000002,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84150000000002,
+        393.29860000000002,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.39099999999999,
+        383.36799999999999,
+        4.7909999999999968,
+        16.857000000000028
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.3914,
+        383.36799999999999,
+        4.7909999999999968,
+        16.858000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.28700000000001,
+        386.72500000000002,
+        7.9830000000000041,
+        10.15100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.53500000000003,
+        387.33230000000003,
+        6.9499999999999886,
+        8.6779999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.53500000000003,
+        387.33230000000003,
+        6.9499999999999886,
+        8.6779999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.74700000000001,
+        387.92900000000003,
+        6.2599999999999909,
+        7.5589999999999691
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.74720000000002,
+        387.92930000000001,
+        6.2589999999999861,
+        7.5590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.04900000000001,
+        387.92900000000003,
+        6.2609999999999957,
+        7.5589999999999691
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.0489,
+        387.92930000000001,
+        6.2609999999999957,
+        7.5590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.42500000000001,
+        388.291,
+        7.2599999999999909,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.42490000000001,
+        388.291,
+        7.2609999999999957,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.75999999999999,
+        388.291,
+        5.8070000000000164,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.7593,
+        388.2912,
+        5.8079999999999927,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        213.005,
+        388.48900000000003,
+        5.5620000000000118,
+        6.4619999999999891
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.441,
+        388.291,
+        5.1310000000000002,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.4419,
+        388.2912,
+        5.1299999999999955,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.72220000000002,
+        388.31300000000005,
+        4.9050000000000011,
+        6.8109999999999786
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.76570000000001,
+        386.65870000000001,
+        5.5049999999999955,
+        5.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.76500000000001,
+        391.69,
+        5.5049999999999955,
+        5.0620000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.48259999999999,
+        385.46940000000006,
+        6.5860000000000127,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.48259999999999,
+        385.46940000000006,
+        6.5860000000000127,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.482,
+        385.56799999999998,
+        6.1640000000000157,
+        5.9840000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.48270000000002,
+        385.56780000000003,
+        6.1629999999999825,
+        5.9839999999999804
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        192.03,
+        385.95400000000001,
+        27.02600000000001,
+        5.2119999999999891
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        192.0301,
+        385.9545,
+        27.025000000000006,
+        5.2110000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.48259999999999,
+        391.98410000000007,
+        6.5860000000000127,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.48259999999999,
+        391.98410000000007,
+        6.5860000000000127,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.482,
+        392.08100000000002,
+        6.1640000000000157,
+        5.9830000000000041
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.48270000000002,
+        392.08050000000003,
+        6.1629999999999825,
+        5.9839999999999804
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        192.03,
+        392.46699999999998,
+        27.02600000000001,
+        5.2110000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        192.0301,
+        392.46719999999999,
+        27.025000000000006,
+        5.2110000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        215.49799999999999,
+        384.52600000000001,
+        5.7460000000000093,
+        14.54000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        215.49730000000002,
+        384.52590000000004,
+        5.7460000000000093,
+        14.540999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        214.74100000000001,
+        384.221,
+        4.7909999999999968,
+        15.15100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        214.74040000000002,
+        384.221,
+        4.7909999999999968,
+        15.15100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.92600000000002,
+        401.18000000000001,
+        8.3299999999999841,
+        15.475999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.92600000000002,
+        401.18000000000001,
+        8.3300000000000125,
+        15.475999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.18299999999999,
+        401.18000000000001,
+        14.86699999999999,
+        15.478999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.18340000000001,
+        401.18000000000001,
+        14.865999999999985,
+        15.478999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.035,
+        401.18000000000001,
+        7.757000000000005,
+        15.478999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.03440000000001,
+        401.17970000000003,
+        7.7580000000000098,
+        15.478999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.55799999999999,
+        400.23200000000003,
+        11.436000000000007,
+        5.9209999999999923
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.55840000000001,
+        400.23199999999997,
+        11.436000000000007,
+        5.9200000000000159
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.55799999999999,
+        411.68600000000004,
+        11.436000000000007,
+        5.9180000000000064
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.55840000000001,
+        411.68599999999998,
+        11.436000000000007,
+        5.9180000000000064
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.79400000000001,
+        399.267,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.7944,
+        399.267,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.124,
+        399.267,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.1234,
+        399.267,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.453,
+        399.267,
+        4.3189999999999884,
+        19.303999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.45340000000002,
+        399.267,
+        4.3180000000000121,
+        19.302999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        208.78300000000002,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        208.78240000000002,
+        399.267,
+        4.320999999999998,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        208.114,
+        399.267,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        208.11440000000002,
+        399.267,
+        4.3180000000000121,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        207.44300000000001,
+        399.267,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        207.4434,
+        399.267,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        206.773,
+        399.267,
+        4.3199999999999932,
+        19.303999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        206.77340000000001,
+        399.267,
+        4.3199999999999932,
+        19.302999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        206.10400000000001,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        206.1044,
+        399.267,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        205.45500000000001,
+        399.267,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        205.4554,
+        399.267,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        204.78399999999999,
+        399.267,
+        4.3199999999999932,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        204.78440000000001,
+        399.267,
+        4.3189999999999884,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        204.114,
+        399.267,
+        4.3199999999999932,
+        19.303999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        204.11440000000002,
+        399.267,
+        4.3199999999999932,
+        19.302999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.44300000000001,
+        399.267,
+        4.320999999999998,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.4434,
+        399.267,
+        4.320999999999998,
+        19.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        202.81100000000001,
+        399.98399999999998,
+        4.320999999999998,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        202.81140000000002,
+        399.98400000000004,
+        4.320999999999998,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        202.143,
+        399.98399999999998,
+        4.3180000000000121,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        202.14340000000001,
+        399.98400000000004,
+        4.3180000000000121,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        201.47200000000001,
+        399.98399999999998,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        201.47240000000002,
+        399.98400000000004,
+        4.3189999999999884,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.80199999999999,
+        399.98399999999998,
+        4.320999999999998,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.80240000000001,
+        399.98400000000004,
+        4.320999999999998,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.13300000000001,
+        399.98399999999998,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.13240000000002,
+        399.98400000000004,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        214.107,
+        401.69400000000002,
+        4.320999999999998,
+        14.449000000000012
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        214.10740000000001,
+        401.69400000000002,
+        4.320999999999998,
+        14.449000000000012
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        213.43899999999999,
+        401.26600000000002,
+        4.3180000000000121,
+        15.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        213.43940000000001,
+        401.26600000000002,
+        4.3180000000000121,
+        15.305000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.76900000000001,
+        400.83800000000002,
+        4.3189999999999884,
+        16.161000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.76840000000001,
+        400.83800000000002,
+        4.3189999999999884,
+        16.161000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.09800000000001,
+        400.41200000000003,
+        4.3199999999999932,
+        17.01600000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.0984,
+        400.41200000000003,
+        4.3199999999999932,
+        17.014999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.429,
+        399.98399999999998,
+        4.3199999999999932,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.42840000000001,
+        399.98400000000004,
+        4.320999999999998,
+        17.867999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84999999999999,
+        406.37400000000002,
+        5.6659999999999968,
+        5.3389999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.85090000000002,
+        406.37399999999997,
+        5.664999999999992,
+        5.3389999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.94070000000002,
+        406.55180000000001,
+        4.4480000000000075,
+        4.9940000000000282
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.8528,
+        406.76710000000003,
+        4.3460000000000036,
+        4.7719999999999914
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.8586,
+        407.17970000000003,
+        4.1510000000000105,
+        4.3489999999999895
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.13460000000001,
+        406.55160000000001,
+        4.4329999999999927,
+        4.9879999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.3176,
+        406.54740000000004,
+        4.429000000000002,
+        4.9879999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.4924,
+        406.55620000000005,
+        4.4070000000000107,
+        4.9750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.68870000000001,
+        406.55860000000001,
+        4.4010000000000105,
+        4.9590000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.84980000000002,
+        406.54540000000003,
+        4.4259999999999877,
+        4.9039999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.0403,
+        406.541,
+        4.3460000000000036,
+        4.714999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84300000000002,
+        406.27800000000002,
+        5.0619999999999834,
+        5.4370000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        406.27780000000001,
+        5.0629999999999882,
+        5.4370000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        407.37280000000004,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        407.37280000000004,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84110000000001,
+        406.65260000000001,
+        5.063999999999993,
+        4.7180000000000177
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84110000000001,
+        406.65260000000001,
+        5.063999999999993,
+        4.7180000000000177
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84150000000002,
+        405.93279999999999,
+        5.063999999999993,
+        4.7200000000000273
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84150000000002,
+        405.93279999999999,
+        5.063999999999993,
+        4.7200000000000273
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84999999999999,
+        401.88900000000001,
+        5.6659999999999968,
+        5.3369999999999891
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.85090000000002,
+        401.88909999999998,
+        5.664999999999992,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.94070000000002,
+        402.06450000000001,
+        4.4480000000000075,
+        4.9940000000000282
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.8528,
+        402.27980000000002,
+        4.3460000000000036,
+        4.7719999999999914
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.8586,
+        402.69240000000002,
+        4.1510000000000105,
+        4.3489999999999895
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.13460000000001,
+        402.0643,
+        4.4329999999999927,
+        4.9879999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.3176,
+        402.0625,
+        4.429000000000002,
+        4.9850000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.4924,
+        402.06890000000004,
+        4.4070000000000107,
+        4.9750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.68870000000001,
+        402.07130000000001,
+        4.4010000000000105,
+        4.9590000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.84980000000002,
+        402.05810000000002,
+        4.4259999999999877,
+        4.9060000000000059
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.0403,
+        402.05369999999999,
+        4.3460000000000036,
+        4.714999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84300000000002,
+        401.791,
+        5.0619999999999834,
+        5.4370000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        401.79050000000001,
+        5.0629999999999882,
+        5.4370000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        402.88550000000004,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        402.88550000000004,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84110000000001,
+        402.1653,
+        5.063999999999993,
+        4.7180000000000177
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84110000000001,
+        402.1653,
+        5.063999999999993,
+        4.7180000000000177
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84150000000002,
+        401.44850000000002,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84150000000002,
+        401.44850000000002,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84999999999999,
+        410.86099999999999,
+        5.6659999999999968,
+        5.3370000000000459
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.85090000000002,
+        410.86129999999997,
+        5.664999999999992,
+        5.3360000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.94070000000002,
+        411.03910000000002,
+        4.4480000000000075,
+        4.9920000000000186
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.8528,
+        411.25440000000003,
+        4.3460000000000036,
+        4.7699999999999818
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.8586,
+        411.66460000000001,
+        4.1510000000000105,
+        4.3489999999999895
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.13460000000001,
+        411.0394,
+        4.4329999999999927,
+        4.9850000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.3176,
+        411.03470000000004,
+        4.429000000000002,
+        4.9879999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.4924,
+        411.04150000000004,
+        4.4070000000000107,
+        4.9769999999999754
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.68870000000001,
+        411.04590000000002,
+        4.4010000000000105,
+        4.9590000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.84980000000002,
+        411.03270000000003,
+        4.4259999999999877,
+        4.9039999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.0403,
+        411.0283,
+        4.3460000000000036,
+        4.714999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84300000000002,
+        410.76300000000003,
+        5.0619999999999834,
+        5.4389999999999645
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        410.7627,
+        5.0629999999999882,
+        5.4390000000000214
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        411.86020000000002,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84250000000003,
+        411.86020000000002,
+        5.0629999999999882,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84110000000001,
+        411.14040000000006,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84110000000001,
+        411.14040000000006,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84150000000002,
+        410.42070000000001,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.84150000000002,
+        410.42070000000001,
+        5.063999999999993,
+        4.7169999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.39099999999999,
+        400.49000000000001,
+        4.7909999999999968,
+        16.860000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.3914,
+        400.49000000000001,
+        4.7909999999999968,
+        16.860000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.28700000000001,
+        403.84899999999999,
+        7.9830000000000041,
+        10.148000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.53500000000003,
+        404.45680000000004,
+        6.9499999999999886,
+        8.6779999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.53500000000003,
+        404.45680000000004,
+        6.9499999999999886,
+        8.6779999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.74700000000001,
+        405.05099999999999,
+        6.2599999999999909,
+        7.5590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.74720000000002,
+        405.05040000000002,
+        6.2589999999999861,
+        7.5600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.04900000000001,
+        405.05099999999999,
+        6.2609999999999957,
+        7.5590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.0489,
+        405.05040000000002,
+        6.2609999999999957,
+        7.5600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.42500000000001,
+        405.41300000000001,
+        7.2599999999999909,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        210.42490000000001,
+        405.41310000000004,
+        7.2609999999999957,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.75999999999999,
+        405.41300000000001,
+        5.8070000000000164,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.7593,
+        405.41329999999999,
+        5.8079999999999927,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        213.005,
+        405.613,
+        5.5620000000000118,
+        6.4600000000000364
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.441,
+        405.41300000000001,
+        5.1310000000000002,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.4419,
+        405.41329999999999,
+        5.1299999999999955,
+        6.8460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.72220000000002,
+        405.43710000000004,
+        4.9050000000000011,
+        6.8109999999999786
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.76570000000001,
+        403.7808,
+        5.5049999999999955,
+        5.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.76599999999999,
+        408.81400000000002,
+        5.5040000000000191,
+        5.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.48259999999999,
+        402.59350000000006,
+        6.5860000000000127,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.48259999999999,
+        402.59350000000006,
+        6.5860000000000127,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.482,
+        402.69,
+        6.1640000000000157,
+        5.98599999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.48270000000002,
+        402.68980000000005,
+        6.1629999999999825,
+        5.98599999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        192.03,
+        403.07900000000001,
+        27.02600000000001,
+        5.2090000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        192.0301,
+        403.07859999999999,
+        27.025000000000006,
+        5.2090000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.48259999999999,
+        409.10620000000006,
+        6.5860000000000127,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.48259999999999,
+        409.10620000000006,
+        6.5860000000000127,
+        6.1789999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.482,
+        409.20300000000003,
+        6.1640000000000157,
+        5.9849999999999568
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.48270000000002,
+        409.20250000000004,
+        6.1629999999999825,
+        5.98599999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        192.03,
+        409.59100000000001,
+        27.02600000000001,
+        5.2110000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        192.0301,
+        409.59129999999999,
+        27.025000000000006,
+        5.2110000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        215.49799999999999,
+        401.64800000000002,
+        5.7460000000000093,
+        14.540999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        215.49730000000002,
+        401.64800000000002,
+        5.7460000000000093,
+        14.540999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        214.74100000000001,
+        401.34300000000002,
+        4.7909999999999968,
+        15.15100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        214.74040000000002,
+        401.34300000000002,
+        4.7909999999999968,
+        15.15100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.57900000000001,
+        376.59100000000001,
+        31.924000000000007,
+        46.240000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.57930000000002,
+        376.59109999999998,
+        31.924000000000007,
+        46.240000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.41740000000001,
+        413.85670000000005,
+        5.6539999999999964,
+        6.2379999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.41740000000001,
+        413.85670000000005,
+        5.6539999999999964,
+        6.2379999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.53999999999999,
+        414.166,
+        12.793000000000006,
+        7.9560000000000173
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.53999999999999,
+        414.16640000000001,
+        12.793000000000006,
+        7.9560000000000173
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        193.2296,
+        414.66660000000002,
+        5.0260000000000105,
+        4.5570000000000164
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        193.1251,
+        415.33070000000004,
+        5.0270000000000152,
+        4.5579999999999927
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        194.4991,
+        415.1046,
+        5.0260000000000105,
+        4.5579999999999927
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        194.3956,
+        415.7722,
+        5.0260000000000105,
+        4.5550000000000068
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        195.79399999999998,
+        415.44110000000001,
+        5.02800000000002,
+        4.5570000000000164
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        195.69050000000001,
+        416.10810000000004,
+        5.02800000000002,
+        4.5550000000000068
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.0968,
+        415.86880000000002,
+        5.0260000000000105,
+        4.5550000000000068
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.99029999999999,
+        416.53379999999999,
+        5.0290000000000248,
+        4.5570000000000164
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        178.46299999999999,
+        418.75600000000003,
+        11.085000000000008,
+        5.8740000000000236
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        178.4624,
+        418.75599999999997,
+        11.085000000000008,
+        5.8740000000000236
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        177.84200000000001,
+        420.63,
+        12.326999999999998,
+        5
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        177.84140000000002,
+        420.63,
+        12.326999999999998,
+        5
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        177.648,
+        422.60300000000001,
+        12.619,
+        7.7370000000000232
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        177.64880000000002,
+        422.60300000000001,
+        12.712999999999994,
+        7.7370000000000232
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        174.50399999999999,
+        421.66800000000001,
+        19.00200000000001,
+        5.0360000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        174.5044,
+        421.66800000000001,
+        19.00200000000001,
+        5.0360000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.91,
+        381.91800000000001,
+        8.2950000000000159,
+        6.8530000000000086
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.9101,
+        394.59280000000001,
+        8.2950000000000159,
+        6.9710000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.91,
+        399.036,
+        8.2950000000000159,
+        6.8509999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.9101,
+        411.71049999999997,
+        8.2950000000000159,
+        6.9690000000000509
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.84700000000001,
+        381.91800000000001,
+        8.2959999999999923,
+        6.8530000000000086
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.8476,
+        394.59280000000001,
+        8.2959999999999923,
+        6.9710000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.84700000000001,
+        399.036,
+        8.2959999999999923,
+        6.8509999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.8476,
+        411.71049999999997,
+        8.2959999999999923,
+        6.9690000000000509
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.904,
+        373.92099999999999,
+        25.079000000000008,
+        4.9809999999999945
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.904,
+        374.81,
+        25.079000000000008,
+        4.6840000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        172.68299999999999,
+        375.45300000000003,
+        23.522999999999996,
+        5.2280000000000086
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        175.80199999999999,
+        418.05900000000003,
+        16.555000000000007,
+        4.8050000000000068
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.239,
+        415.459,
+        6.6769999999999925,
+        6.9350000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.23940000000002,
+        415.45870000000002,
+        6.6759999999999877,
+        7.0080000000000382
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.239,
+        415.5,
+        6.1119999999999948,
+        6.8199999999999932
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.23950000000002,
+        415.50029999999998,
+        6.11099999999999,
+        6.8199999999999932
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.9143,
+        415.76120000000003,
+        4.4199999999999875,
+        4.1270000000000095
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.68190000000001,
+        415.9785,
+        4.4199999999999875,
+        4.1429999999999723
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.54320000000001,
+        416.18460000000005,
+        4.3499999999999943,
+        4.1650000000000205
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.39870000000002,
+        416.45260000000002,
+        4.3540000000000134,
+        4.2099999999999795
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.3391,
+        416.8408,
+        4.3309999999999889,
+        4.1909999999999741
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.31270000000001,
+        417.25100000000003,
+        4.3940000000000055,
+        4.1820000000000164
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.47190000000001,
+        417.63720000000001,
+        4.3439999999999941,
+        4.2130000000000223
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.6926,
+        417.99510000000004,
+        4.3429999999999893,
+        4.1999999999999886
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.93000000000001,
+        375.92099999999999,
+        69.437999999999988,
+        52.54400000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        140.19889999999998,
+        229.75540000000001,
+        89.035000000000025,
+        123.79200000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        140.19889999999998,
+        229.75540000000001,
+        89.035000000000025,
+        123.79200000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.32500000000002,
+        395.97500000000002,
+        17.012999999999977,
+        25.966000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.32500000000002,
+        395.9753,
+        17.012,
+        25.965000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.55930000000001,
+        396.11870000000005,
+        11.078000000000003,
+        10.062999999999988
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.41400000000002,
+        360.52800000000002,
+        27.138999999999982,
+        28.252999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.4136,
+        360.52809999999999,
+        27.140000000000015,
+        28.252999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.285,
+        361.29700000000003,
+        7.7079999999999984,
+        12.12700000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.28440000000001,
+        361.2978,
+        7.7090000000000032,
+        12.12700000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        142.44210000000001,
+        322.33840000000004,
+        83.579000000000008,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.21889999999999,
+        382.2593,
+        9.7870000000000061,
+        9.4010000000000105
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.21889999999999,
+        382.2593,
+        9.7870000000000061,
+        9.4010000000000105
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.88300000000001,
+        386.14400000000001,
+        22.316000000000003,
+        32.685999999999979
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.88300000000001,
+        386.14359999999999,
+        22.316000000000003,
+        32.687000000000012
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.88300000000001,
+        388.08690000000001,
+        22.316000000000003,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.46899999999999,
+        399.3818,
+        14.592999999999989,
+        4.0040000000000191
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.51590000000002,
+        397.12310000000002,
+        14.545999999999992,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.9924,
+        394.86430000000001,
+        22.069999999999993,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.02030000000002,
+        392.60500000000002,
+        22.317000000000007,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.02030000000002,
+        390.34620000000001,
+        22.317000000000007,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.7107,
+        401.64400000000001,
+        14.546999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.7107,
+        403.90280000000001,
+        14.546999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.63060000000002,
+        406.16210000000001,
+        14.546999999999997,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.65360000000001,
+        408.4556,
+        14.674000000000007,
+        4.0040000000000191
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.57250000000002,
+        410.71480000000003,
+        14.548000000000002,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.58520000000001,
+        412.97410000000002,
+        14.544000000000011,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        183.80000000000001,
+        205.584,
+        14.933999999999997,
+        16.787000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        183.80000000000001,
+        205.5838,
+        14.967000000000013,
+        16.965000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        199.68600000000001,
+        201.00700000000001,
+        12.477000000000004,
+        18.528999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        199.66050000000001,
+        201.0077,
+        12.502999999999986,
+        18.711000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        142.69850000000002,
+        356.9205,
+        12.87299999999999,
+        14.141999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        143.01400000000001,
+        366.82400000000001,
+        13.370000000000005,
+        20.12299999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        143.01480000000001,
+        366.82370000000003,
+        13.370000000000005,
+        20.123999999999967
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.77540000000002,
+        330.16340000000002,
+        71.634999999999991,
+        55.250999999999976
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.733,
+        330.16300000000001,
+        7.9410000000000025,
+        7.5029999999999859
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.73220000000001,
+        330.16310000000004,
+        7.9420000000000073,
+        7.5029999999999859
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.18700000000001,
+        330.73900000000003,
+        8.0480000000000018,
+        7.3409999999999513
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.18680000000001,
+        330.73899999999998,
+        8.0490000000000066,
+        7.3419999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.08000000000001,
+        369.11500000000001,
+        8.8789999999999907,
+        10.016999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        162.08000000000001,
+        371.11500000000001,
+        4.8789999999999907,
+        6.0169999999999959
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        156.61199999999999,
+        332.00299999999999,
+        56.927999999999997,
+        7.6750000000000114
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        165.36799999999999,
+        337.61700000000002,
+        18.844000000000023,
+        22.301999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        178.99600000000001,
+        347.06900000000002,
+        9.6040000000000134,
+        10.94599999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        180.99600000000001,
+        349.06900000000002,
+        5.6040000000000134,
+        6.9459999999999695
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        183.66400000000002,
+        337.63999999999999,
+        5.0180000000000007,
+        15.610000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        185.66300000000001,
+        339.63999999999999,
+        1.0180000000000007,
+        11.610000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.70349999999999,
+        308.16770000000002,
+        87.183000000000021,
+        50.449999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.703,
+        308.16800000000001,
+        10.336000000000013,
+        12.452999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.70310000000001,
+        308.16760000000005,
+        10.336000000000013,
+        12.452999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        217.32599999999999,
+        308.16800000000001,
+        11.561000000000007,
+        12.338999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        217.3254,
+        308.16769999999997,
+        11.562000000000012,
+        12.340000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.315,
+        312.59500000000003,
+        79.53400000000002,
+        41.430000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.6661,
+        308.7484,
+        4.8969999999999914,
+        25.434000000000026
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        223.23750000000001,
+        308.93090000000001,
+        5.5949999999999989,
+        21.86099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.68299999999999,
+        352.25900000000001,
+        20.004000000000019,
+        31.105999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        146.20970000000003,
+        353.14810000000006,
+        42.649000000000001,
+        32.343999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.209,
+        355.14800000000002,
+        38.353000000000009,
+        28.120000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        165.35230000000001,
+        352.63140000000004,
+        4.375,
+        7.25
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.352,
+        354.63099999999997,
+        0.375,
+        3.2500000000000568
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        155.101,
+        324.94499999999999,
+        7.26400000000001,
+        11.477000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        155.10090000000002,
+        324.94550000000004,
+        7.2639999999999816,
+        11.564999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        207.53399999999999,
+        325.43799999999999,
+        7.3090000000000259,
+        11.456000000000017
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        207.5341,
+        325.43779999999998,
+        7.3120000000000118,
+        11.545000000000016
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.81399999999999,
+        306.97399999999999,
+        12.969000000000023,
+        9.938000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        212.81370000000001,
+        306.9742,
+        13.524000000000001,
+        10.58299999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.55199999999999,
+        306.80700000000002,
+        12.980000000000018,
+        9.9839999999999804
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.48220000000001,
+        306.80670000000003,
+        13.049999999999983,
+        10.06899999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        163.54730000000001,
+        359.56060000000002,
+        7.188999999999993,
+        10.206000000000017
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        165.548,
+        361.56099999999998,
+        3.188999999999993,
+        6.2050000000000409
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.50110000000001,
+        360.69730000000004,
+        5.179000000000002,
+        7.8369999999999891
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.50110000000001,
+        360.69730000000004,
+        5.179000000000002,
+        7.8369999999999891
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        180.18000000000001,
+        368.84899999999999,
+        34.831999999999994,
+        10.367999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        180.18010000000001,
+        368.8501,
+        34.831999999999994,
+        10.367000000000019
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        187.17099999999999,
+        370.84030000000001,
+        4,
+        6.4270000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        187.1711,
+        370.84059999999999,
+        4,
+        6.4270000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        180.82240000000002,
+        370.87630000000001,
+        4,
+        6.3910000000000196
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        180.82250000000002,
+        370.8766,
+        4,
+        6.3910000000000196
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        187.6318,
+        370.82230000000004,
+        4,
+        6.5090000000000146
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        187.63210000000001,
+        370.82249999999999,
+        4,
+        6.5090000000000146
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.447,
+        369.435,
+        38.784999999999997,
+        9.63900000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.44739999999999,
+        369.43570000000005,
+        38.78400000000002,
+        9.6379999999999768
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.64400000000001,
+        369.54000000000002,
+        9.36099999999999,
+        9.3600000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        147.64400000000001,
+        371.54000000000002,
+        5.36099999999999,
+        5.3600000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        189.93980000000002,
+        237.15950000000001,
+        24.177999999999997,
+        29.662000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        189.93980000000002,
+        237.15950000000001,
+        24.177999999999997,
+        29.662000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        207.26300000000001,
+        222.45099999999999,
+        6.9519999999999982,
+        13.506
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        207.26310000000001,
+        222.45080000000002,
+        6.9519999999999982,
+        13.506
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        205.19499999999999,
+        231.404,
+        11.086999999999989,
+        9.6090000000000089
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        205.19540000000001,
+        231.404,
+        11.086000000000013,
+        9.6090000000000089
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        182.53300000000002,
+        229.11100000000002,
+        25.777999999999992,
+        18.369
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        182.53310000000002,
+        229.11100000000002,
+        25.777999999999992,
+        18.369
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        190.64849999999998,
+        233.49170000000001,
+        15.070999999999998,
+        7.8379999999999939
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        190.64849999999998,
+        233.49170000000001,
+        15.070999999999998,
+        7.8379999999999939
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        178.273,
+        223.00300000000001,
+        6.9519999999999982,
+        36.962999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        178.27280000000002,
+        223.0035,
+        6.9519999999999982,
+        36.962999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        176.20500000000001,
+        231.95699999999999,
+        11.086000000000013,
+        9.61099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        176.2054,
+        231.95699999999999,
+        11.086000000000013,
+        9.6090000000000089
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.79599999999999,
+        253.01300000000001,
+        24.444000000000017,
+        6.953000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.7955,
+        253.01329999999999,
+        24.444999999999993,
+        6.953000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.79500000000002,
+        236.441,
+        6.9519999999999982,
+        23.525000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.79480000000001,
+        236.44080000000002,
+        6.9519999999999982,
+        23.524999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        155.69300000000001,
+        264.28500000000003,
+        12.054000000000002,
+        6.9519999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        155.69380000000001,
+        264.28480000000002,
+        12.052999999999997,
+        6.9529999999999745
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.79500000000002,
+        255.99599999999998,
+        6.9519999999999982,
+        15.241000000000042
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.79470000000001,
+        255.99549999999999,
+        6.9519999999999982,
+        15.242000000000019
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        159.27000000000001,
+        256.58499999999998,
+        10.200999999999993,
+        7.2450000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        159.27040000000002,
+        256.58600000000001,
+        10.200999999999993,
+        7.2459999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.85400000000001,
+        229.11100000000002,
+        26.531999999999982,
+        18.369
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.85380000000001,
+        229.11100000000002,
+        26.533000000000015,
+        18.369
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.7242,
+        228.49170000000001,
+        15.070999999999998,
+        7.8379999999999939
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.7242,
+        228.49170000000001,
+        15.070999999999998,
+        7.8379999999999939
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        77.789900000000017,
+        87.900400000000005,
+        161.893,
+        90.914000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        77.790000000000006,
+        87.900000000000006,
+        23.572000000000003,
+        90.913999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        77.790600000000012,
+        87.899999999999991,
+        23.569999999999993,
+        90.914000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.84700000000001,
+        161.27700000000002,
+        19.007999999999996,
+        11.86099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.84740000000001,
+        161.27699999999999,
+        19.007000000000005,
+        11.860000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.84700000000001,
+        147.5,
+        19.007999999999996,
+        11.86099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.84740000000001,
+        147.5,
+        19.007000000000005,
+        11.860000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.84700000000001,
+        133.72300000000001,
+        19.007999999999996,
+        11.86099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.84740000000001,
+        133.72299999999998,
+        19.007000000000005,
+        11.860000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.84700000000001,
+        119.944,
+        19.007999999999996,
+        11.861000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.84740000000001,
+        119.944,
+        19.007000000000005,
+        11.859999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.84699999999999,
+        106.167,
+        19.007000000000005,
+        11.859999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.84740000000001,
+        106.167,
+        19.007000000000005,
+        11.859999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.84699999999999,
+        92.390000000000001,
+        19.007000000000005,
+        11.859999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.84740000000001,
+        92.390000000000001,
+        19.007000000000005,
+        11.859999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.26659999999998,
+        416.87740000000002,
+        88.552000000000021,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.49000000000001,
+        414.3605,
+        12.468999999999994,
+        9.0450000000000159
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        213.41820000000001,
+        375.70010000000002,
+        8.6009999999999991,
+        45.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        214.99140000000003,
+        369.72210000000001,
+        10.218999999999994,
+        12.657000000000039
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        226.35900000000001,
+        410.041,
+        56.27000000000001,
+        18.40100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        226.35810000000004,
+        410.04150000000004,
+        56.271999999999991,
+        18.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        202.39180000000002,
+        358.41590000000002,
+        39.02600000000001,
+        12.48399999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        199.87539999999998,
+        365.20720000000006,
+        9.0450000000000159,
+        12.468999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        233.55700000000002,
+        340.78500000000003,
+        65.771999999999991,
+        39.000999999999976
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        233.5573,
+        340.78559999999999,
+        65.771999999999991,
+        39
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        108.04810000000001,
+        380.82230000000004,
+        52.969999999999999,
+        14.87700000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.32980000000001,
+        388.6705,
+        12.644000000000005,
+        10.262
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        75.614000000000004,
+        374.88100000000003,
+        59.772999999999996,
+        18.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        75.615000000000009,
+        374.8809,
+        59.771999999999991,
+        18.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.01800000000003,
+        385.89949999999999,
+        71.199999999999989,
+        11.620000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.35550000000001,
+        383.73600000000005,
+        12.787000000000006,
+        8.9590000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        226.15200000000002,
+        383.54399999999998,
+        72.419000000000011,
+        18.40100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        226.15050000000002,
+        383.54490000000004,
+        72.420000000000016,
+        18.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.255,
+        332.64100000000002,
+        7.6009999999999991,
+        7.6000000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        123.0159,
+        337.90030000000002,
+        86.802999999999983,
+        10.15100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.06830000000002,
+        334.41640000000001,
+        12.562999999999988,
+        10.512
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.0564,
+        334.44040000000001,
+        4,
+        13.61099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        75.614000000000004,
+        332.803,
+        51.24799999999999,
+        27
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        75.614500000000021,
+        332.8032,
+        51.24799999999999,
+        27
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        97.418499999999995,
+        392.69970000000001,
+        48.800000000000011,
+        17
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        139.8646,
+        390.72559999999999,
+        12.836000000000013,
+        8.8740000000000236
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        75.614000000000004,
+        403.18099999999998,
+        55.771999999999991,
+        27
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        75.615000000000009,
+        403.18120000000005,
+        55.771999999999991,
+        27
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.0159,
+        293.04000000000002,
+        99.802999999999983,
+        19.860000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        216.85380000000004,
+        305.90490000000005,
+        11.851999999999975,
+        11.689999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.45609999999999,
+        293.84030000000001,
+        20.800000000000011,
+        25.211000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        142.97919999999999,
+        312.14870000000002,
+        12.836000000000013,
+        8.8940000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        75.614000000000004,
+        288.00299999999999,
+        80.248000000000019,
+        18.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        75.614500000000007,
+        288.00290000000001,
+        80.248000000000005,
+        18.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        155.88059999999999,
+        210.36850000000001,
+        16.103000000000009,
+        29.13300000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        165.46670000000003,
+        233.80880000000002,
+        9.0449999999999875,
+        12.468999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        75.614000000000004,
+        203.54500000000002,
+        83.068999999999988,
+        18.399000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        75.61490000000002,
+        203.5454,
+        83.067999999999998,
+        18.399000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        187.01820000000001,
+        322.96879999999999,
+        55.566000000000003,
+        43.730999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        184.18290000000002,
+        360.10810000000004,
+        9.8400000000000034,
+        12.745999999999981
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        236.41499999999999,
+        310.84500000000003,
+        62.868000000000023,
+        27
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        236.41450000000003,
+        310.84520000000003,
+        62.867999999999995,
+        27
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.61789999999999,
+        265.8999,
+        28.312000000000012,
+        15.418999999999983
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        193.06370000000001,
+        262.01850000000002,
+        12.384999999999991,
+        10.921999999999969
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        220.863,
+        265.94499999999999,
+        78.420000000000016,
+        27
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        220.86250000000001,
+        265.94479999999999,
+        78.420000000000016,
+        27
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.21800000000002,
+        207.96870000000001,
+        34.653999999999996,
+        26.730999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        194.45499999999998,
+        227.89429999999999,
+        10.805000000000007,
+        12.441000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        225.416,
+        201.14500000000001,
+        67.156999999999982,
+        18.399000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        225.41549999999998,
+        201.14500000000001,
+        67.157000000000011,
+        18.399000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.20340000000004,
+        520.47790000000009,
+        118.66500000000002,
+        209.28599999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.20340000000004,
+        520.47790000000009,
+        118.66500000000002,
+        209.28599999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        440.95400000000001,
+        522.22799999999995,
+        115.16400000000004,
+        205.78600000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.20400000000001,
+        685.649,
+        118.66400000000004,
+        14.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        441.20400000000001,
+        687.649,
+        114.66400000000004,
+        10.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.20400000000001,
+        663.649,
+        118.66400000000004,
+        14.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        441.20400000000001,
+        665.649,
+        114.66400000000004,
+        10.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.20400000000001,
+        641.64800000000002,
+        118.66400000000004,
+        14.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        441.20400000000001,
+        643.649,
+        114.66400000000004,
+        10.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.20400000000001,
+        619.649,
+        118.66400000000004,
+        14.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        441.20400000000001,
+        621.649,
+        114.66400000000004,
+        10.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.20400000000001,
+        597.64999999999998,
+        118.66400000000004,
+        14.979000000000042
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        441.20400000000001,
+        599.64999999999998,
+        114.66400000000004,
+        10.979000000000042
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.20400000000001,
+        575.64999999999998,
+        118.66400000000004,
+        14.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        441.20400000000001,
+        577.64999999999998,
+        114.66400000000004,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.20400000000001,
+        553.64800000000002,
+        118.66400000000004,
+        14.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        441.20400000000001,
+        555.64800000000002,
+        114.66400000000004,
+        10.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.20400000000001,
+        531.64800000000002,
+        118.66400000000004,
+        14.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        441.20400000000001,
+        533.64800000000002,
+        114.66400000000004,
+        10.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.53700000000003,
+        641.78300000000002,
+        118.15599999999995,
+        14.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.536,
+        641.78300000000002,
+        118.15699999999998,
+        12.303999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        441.536,
+        643.78300000000002,
+        114.15699999999998,
+        8.3039999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.53700000000003,
+        531.53300000000002,
+        118.15599999999995,
+        14.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.536,
+        531.53300000000002,
+        118.15699999999998,
+        12.303999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        441.536,
+        533.53300000000002,
+        114.15699999999998,
+        8.3039999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.20340000000004,
+        520.47770000000003,
+        58.160000000000025,
+        194.226
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        493.37240000000008,
+        520.47810000000004,
+        64.495999999999981,
+        196.31399999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.39480000000003,
+        696.96500000000003,
+        118.47400000000005,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.20350000000002,
+        710.79160000000002,
+        118.66500000000002,
+        19
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.20350000000002,
+        710.79160000000002,
+        118.66500000000002,
+        19
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        378.01590000000004,
+        647.13930000000005,
+        56.661000000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        428.98430000000002,
+        644.61120000000005,
+        12.468999999999994,
+        9.0449999999999591
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        378.01590000000004,
+        536.13819999999998,
+        56.661000000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        428.98430000000002,
+        533.60969999999998,
+        12.468999999999994,
+        9.0449999999999591
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.43099999999998,
+        526.77800000000002,
+        103.33300000000003,
+        95.052000000000021
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.43140000000005,
+        526.77800000000002,
+        103.33299999999997,
+        95.052000000000021
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.43099999999998,
+        627.44500000000005,
+        103.33300000000003,
+        45.201999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.43140000000005,
+        627.44450000000006,
+        103.33299999999997,
+        45.202999999999975
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

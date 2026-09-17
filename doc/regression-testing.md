@@ -106,14 +106,14 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 1016 targeted checks on 217 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 1041 targeted checks on 218 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 305 ordered-text, 92 text, 131 paragraph,
+the NBS and Replay Clocks academic papers). They comprise 325 ordered-text, 92 text, 133 paragraph,
 94 absent-text, 89 heading, 12 absent-heading, 30 list-item, 17 script, 11 footnote, 27 note-link,
 28 paragraph-continuation, 1 list-item-continuation, 5 paragraph-separation, 16 distinct-paragraph,
-82 image-presence, 55 warning, 1 absent-warning, 12 source-region, 3 glyph-structure,
+84 image-presence, 56 warning, 1 absent-warning, 12 source-region, 3 glyph-structure,
 3 image-appearance and 2 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
 anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
 
@@ -293,12 +293,34 @@ outside them).
 Source-derived `usgs-{1,2}` and `nbs-7` fixtures require every USGS prose section outside the
 crops, the three tables whole inside crops that fit the reviewed reference regions, and the
 Geltman closing paragraph reflowed through "on neutral atoms." with the references untouched;
-the inline-equation crop there stays bounded to its own line and immediate neighbours. Fraction
+since #51 the inline-equation line there reflows in its paragraph with no crop at all. Fraction
 bars sit like underlines beneath their numerators, so a synthetic bar and algebra practice
 page 16 (`algebra-16`, 25 fraction bars, 36 crops) require every bar to keep its terms in one
 crop. The first eight tests fail against the previous sources. The corpus contract adds ordered prose,
 paragraph, absent-cell and image-region checks on USGS pages 1/2 and NBS page 7. See the
 [rule-adjacent prose evidence](../measurements/rule-adjacent-prose/record.md).
+
+## Inline mathematics beside formula and figure crops
+
+`InlineFormulaProseTests.swift` covers [#51](https://github.com/vocaro/PDFReflowLib/issues/51),
+[#58](https://github.com/vocaro/PDFReflowLib/issues/58),
+[#49](https://github.com/vocaro/PDFReflowLib/issues/49) and
+[#77](https://github.com/vocaro/PDFReflowLib/issues/77). A line with an `=` or a mathematical
+symbol is a displayed formula unless its row reads as prose on its paragraph's measure; a
+formula's margin stops at neighbouring prose and at an instruction line of words alone; a
+radical's bar inside a prose row is that row's decoration; and a form's bounding box is figure
+ink only where its clip lets it show. Source-derived `algebra-288`, `algebra-289`,
+`algebra-291`, `faa-227` and `faa-195` fixtures require Wallace's inline-radical sentences, the
+page-289 opening sentence, the page-291 `Simplify.` instruction and FAA's `true course desired.`
+outside every crop, while the Example 377 table, the displayed product rule, the page-289
+derivations, every page-291 exercise, the compass-rose figure and the page-195 pressurization
+figure stay inside crops (page 195 also guards a trimming edge that rounding used to miss).
+Synthetic controls keep a displayed equation between paragraphs and a stacked full-measure
+display without a sentence preserved, and an original in-memory PDF checks the clipped form box
+against the same form unclipped. Seven of the nine tests (with the updated Geltman test) fail
+against the previous sources, and removing any one rule fails at least one of them. The corpus
+contract adds ordered prose and paragraph checks on Wallace pages 288, 289 and 291, FAA page 227
+and NBS page 7. See the [inline-formula prose evidence](../measurements/inline-formula-prose/record.md).
 
 ## Shaded boxes and text tables
 
@@ -374,7 +396,7 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-393 Swift tests with no known-issue wrappers, and 186 Python tests.
+410 Swift tests with no known-issue wrappers, and 196 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

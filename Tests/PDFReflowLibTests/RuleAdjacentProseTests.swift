@@ -294,12 +294,13 @@ func geltmanClosingProseReflowsAroundItsInlineEquation() throws {
     for line in page.lines where line.rect.minX > 260 {
         #expect(!regions.contains { $0.intersects(line.rect) }, "reference entry inside a crop: \(line.text)")
     }
-    // The inline equation line still matches the formula heuristic; its crop stays bounded to
-    // that line and its immediate neighbours instead of the column.
-    #expect(regions.count == 1)
-    let crop = try #require(regions.first)
-    #expect(crop.height < 40)
+    // The inline equation sits inside a justified prose line; it is not a displayed formula, so
+    // it and the prose lines around it reflow instead of becoming a three-line crop (#51).
+    #expect(regions.isEmpty)
     let blocks = reflowed(page, regions: regions).filter(\.hasReflowedText)
+    let inline = try #require(blocks.first { $0.text.contains("the maximum driven veloc ity Uo = eEo/mw becomes") })
+    #expect(inline.text.contains("the qua litative absorption c harac te ri sti cs [6, 22]. Howe ve r, s ince"))
+    #expect(inline.text.contains("becomes equal to c at a Nd-glass laser intens ity"))
     let paragraph = try #require(blocks.first { $0.text.contains("In concluding, we would like to bring") })
     #expect(paragraph.text.hasSuffix("on neutral atoms."))
     let texts = blocks.map(\.text).joined(separator: "\n")

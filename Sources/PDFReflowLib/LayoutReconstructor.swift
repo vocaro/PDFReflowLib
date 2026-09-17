@@ -199,7 +199,10 @@ enum LayoutReconstructor {
                     CGRect(x: bounds.minX, y: bounds.minY, width: bounds.width, height: rect.minY - bounds.minY),
                     CGRect(x: rect.maxX, y: bounds.minY, width: bounds.maxX - rect.maxX, height: bounds.height),
                     CGRect(x: bounds.minX, y: bounds.minY, width: rect.minX - bounds.minX, height: bounds.height),
-                ].filter { $0.width > 0 && $0.height > 0 && $0.contains(kept) }
+                // A cut rebuilt from origin and size can fall short of an edge it shares with
+                // the kept ink by rounding (FAA page 195: a figure box ending exactly at the
+                // crop's top); a hundredth of a point is below any drawn distinction.
+                ].filter { $0.width > 0 && $0.height > 0 && $0.insetBy(dx: -0.01, dy: -0.01).contains(kept) }
                 if let cut = cuts.max(by: { $0.width * $0.height < $1.width * $1.height }) {
                     bounds = cut
                 } else if admitted.isEmpty && isThinRule(region.seed) {
@@ -554,6 +557,134 @@ enum LayoutReconstructor {
         }
     }
 
+    private static let mathSymbols = CharacterSet(charactersIn: "∫∑∏√∂∇≈≠≤≥∞")
+
+    /// Letters-only words of at least `minimum` letters (surrounding quotes, brackets and
+    /// punctuation ignored) and the number of whitespace-separated tokens.
+    private static func wordShare(_ text: String, minimum: Int = 3) -> (words: Int, tokens: Int) {
+        let tokens = text.split(whereSeparator: \.isWhitespace)
+        let edges = CharacterSet(charactersIn: "\"'“”‘’()[]{}.,;:!?")
+        let words = tokens.filter { token in
+            let core = String(token).trimmingCharacters(in: edges)
+            return core.count >= minimum && core.unicodeScalars.allSatisfy(CharacterSet.letters.contains)
+        }.count
+        return (words, tokens.count)
+    }
+
+    /// Text that reads as words: at least two words of three or more letters, and words of two
+    /// or more letters making up at least 40% of the tokens. Prose dense with inline mathematics
+    /// (`is where x = 0 and y = 0. As we move`) stays above that share, single-letter variables
+    /// do not count; whether a wordy row is prose is decided by its measure.
+    private static func isWordy(_ text: String) -> Bool {
+        let share = wordShare(text, minimum: 2)
+        return wordShare(text).words >= 2 && share.words * 5 >= share.tokens * 2
+    }
+
+    private static let functionWords: Set<String> = [
+        "a", "an", "and", "are", "as", "at", "be", "but", "by", "can", "for", "from", "if", "in", "is",
+        "it", "not", "of", "on", "or", "our", "so", "that", "the", "then", "there", "these", "this",
+        "to", "was", "we", "when", "which", "will", "with",
+    ]
+
+    /// Words set as a sentence carry function words (`the`, `we`, `is`, `of`). A stacked display
+    /// set the full measure reads as terms and names alone (`sin⁻¹(opposite/hypotenuse) = θ …`,
+    /// Wallace page 428), however many letters its words have.
+    private static func readsAsSentence(_ text: String) -> Bool {
+        let edges = CharacterSet(charactersIn: "\"'“”‘’()[]{}.,;:!?")
+        return text.split(whereSeparator: \.isWhitespace).contains {
+            functionWords.contains(String($0).trimmingCharacters(in: edges).lowercased())
+        }
+    }
+
+    /// The pieces of a line's visual row that read with it. PDFKit splits a prose row at an
+    /// inline radical or superscript (`The square root of 25 is written as` / `25 √ .`); the
+    /// pieces sit beside each other with text above or below spanning the gap between them,
+    /// whereas a column gutter stays blank.
+    private static func rowPieces(_ line: TextLine, in lines: [TextLine], body: CGFloat) -> [TextLine] {
+        let candidates = lines.filter { $0 != line && sameRow($0.rect, line.rect) }
+        var row = [line]
+        var changed = true
+        while changed {
+            changed = false
+            for piece in candidates where !row.contains(piece) {
+                let joins = row.contains { member in
+                    let start = min(member.rect.maxX, piece.rect.maxX), end = max(member.rect.minX, piece.rect.minX)
+                    guard end > start else { return true }
+                    guard end - start <= body * 2 else { return false }
+                    return lines.contains { other in
+                        !row.contains(other) && other != piece && !sameRow(other.rect, line.rect)
+                            && other.rect.minX <= start && other.rect.maxX >= end
+                            && max(other.rect.minY - line.rect.maxY, line.rect.minY - other.rect.maxY) <= body * 2
+                    }
+                }
+                if joins { row.append(piece); changed = true }
+            }
+        }
+        return row
+    }
+
+    /// A line whose visual row is prose: the row reads as a sentence and is set on its
+    /// paragraph's measure. Either it is a full line of a justified paragraph (at least three
+    /// other prose lines on the page share both of its edges, or two with one adjacent at
+    /// ordinary leading), or an adjacent full line shares its left or right edge (a paragraph's
+    /// indented first or short last line). An inline equation in such a row (`since the maximum
+    /// driven velocity Uo = eEo/mw becomes`, NBS page 7; `We can use the product rule to
+    /// simplify an expression such as √36·5`, Wallace page 288) is read as text (#51, #58). A
+    /// displayed derivation is set apart from the paragraph's edges and stays a formula; a
+    /// repeated annotation (`Change the signs and combine`, set three times down Wallace page
+    /// 207 at one indent) shares edges with its repeats but has no adjacent full line.
+    static func isProseRow(_ line: TextLine, in lines: [TextLine], body: CGFloat) -> Bool {
+        let row = rowPieces(line, in: lines, body: body)
+        let text = row.map(\.text).joined(separator: " ")
+        // A row whose pieces stand at least twice their type size stacks terms (fractions,
+        // radical indices) and has spatial structure to preserve unless it reads as a sentence.
+        // A single-level row keeps no structure a line of text cannot carry, so a word equation
+        // set in the column's measure (`True Course (180°) ± Variation (+10°) = Magnetic
+        // Course`, FAA page 227) reads as the text it is.
+        let stacked = row.contains { $0.rect.height >= $0.fontSize * 2 }
+        guard isWordy(text), !stacked || readsAsSentence(text) else { return false }
+        let bounds = union(row.map(\.rect))
+        let prose = lines.filter { other in
+            !other.monospaced && wordShare(other.text).words >= 4 && isWordy(other.text)
+        }
+        func sharesEdges(_ a: CGRect, _ b: CGRect) -> Bool {
+            abs(a.minX - b.minX) <= 2 && abs(a.maxX - b.maxX) <= 2
+        }
+        func adjacent(_ a: CGRect, _ b: CGRect) -> Bool {
+            max(a.minY - b.maxY, b.minY - a.maxY) <= body * 2
+        }
+        func fullLine(_ rect: CGRect, excluding: [TextLine]) -> Bool {
+            let sharing = prose.filter { !excluding.contains($0) && sharesEdges($0.rect, rect) }
+            return sharing.count >= 3 || (sharing.count == 2 && sharing.contains { adjacent($0.rect, rect) })
+        }
+        if fullLine(bounds, excluding: row) { return true }
+        return prose.contains { other in
+            !row.contains(other) && fullLine(other.rect, excluding: [other])
+                && !sameRow(other.rect, line.rect) && adjacent(other.rect, bounds)
+                && min(bounds.maxX, other.rect.maxX) > max(bounds.minX, other.rect.minX)
+                && (abs(other.rect.minX - bounds.minX) <= 2 || abs(other.rect.maxX - bounds.maxX) <= 2)
+        }
+    }
+
+    /// A text line a formula's margin must not reach: prose, or a row of words alone above the
+    /// formula, an instruction or label introducing it (`Simplify.` over the page-291 exercises).
+    /// A line carrying any term, number or operator (`Find g(3)+ f(3)` closing a page-398
+    /// exercise) can belong to the formula beside it, and so can words that share their row with
+    /// other pieces (a derivation's `Our Solution`) or conclude it from beneath (`Infinite
+    /// solutions Our Solution`, page 149).
+    private static func isTextNeighbour(_ line: TextLine, above: Bool, in lines: [TextLine], body: CGFloat) -> Bool {
+        let edges = CharacterSet(charactersIn: "\"'“”‘’.,;:!?")
+        let tokens = line.text.split(whereSeparator: \.isWhitespace).map { String($0).trimmingCharacters(in: edges) }
+        // Words of two or more letters: a single letter is a variable (`y Use two variables, x
+        // and y` opens a page-359 derivation row).
+        if above, wordShare(line.text).words >= 1,
+           tokens.allSatisfy({ $0.count >= 2 && $0.unicodeScalars.allSatisfy(CharacterSet.letters.contains) }),
+           !lines.contains(where: { $0 != line && sameRow($0.rect, line.rect) }) {
+            return true
+        }
+        return isProseRow(line, in: lines, body: body)
+    }
+
     /// A word whose equals signs belong to a web address's query string, not an equation: an
     /// address with a query (`…/print.php3?ReportID=145).`, `www.nftc.org/…?Mode=View&…`), or
     /// the wrapped rest of one, two or more `name=value` pairs joined by `&`
@@ -568,21 +699,54 @@ enum LayoutReconstructor {
 
     /// Expand crops to whole intersecting text lines so a label cannot be cut in half.
     static func graphicsWithLabels(_ page: PageContent) -> [CGRect] {
+        let body = max(4, bodySize(page.lines))
         // Displayed formulas have spatial meaning (superscripts, fractions, aligned terms)
         // that line concatenation cannot reproduce. Preserve recognizable formulas as crops.
+        // A prose row with inline mathematics is not a displayed formula, and a formula's
+        // margin (raised and lowered terms, radical bars) stops short of neighbouring text.
         let formulas = page.lines.filter { line in
             guard !line.monospaced, line.text.count < 160 else { return false }
-            let mathSymbols = line.text.rangeOfCharacter(from: CharacterSet(charactersIn: "∫∑∏√∂∇≈≠≤≥∞")) != nil
+            let symbols = line.text.rangeOfCharacter(from: mathSymbols) != nil
             let words = line.text.split(whereSeparator: \.isWhitespace)
             let equation = words.count <= 12 && words.contains { $0.contains("=") && !isURLQuery($0) }
-            return mathSymbols || equation
-        }.map { $0.rect.insetBy(dx: -4, dy: -8) }
+            return (symbols || equation) && !isProseRow(line, in: page.lines, body: body)
+        }.map { line -> CGRect in
+            var seed = line.rect.insetBy(dx: -4, dy: -8)
+            for other in page.lines where other != line && seed.intersects(other.rect)
+                && !sameRow(other.rect, line.rect)
+                && isTextNeighbour(other, above: other.rect.midY > line.rect.midY, in: page.lines, body: body) {
+                if other.rect.midY > line.rect.midY {
+                    let top = max(line.rect.maxY, min(seed.maxY, other.rect.minY - 0.5))
+                    seed.size.height = top - seed.minY
+                } else {
+                    let bottom = min(line.rect.minY, max(seed.minY, other.rect.maxY + 0.5))
+                    seed.size.height = seed.maxY - bottom
+                    seed.origin.y = bottom
+                }
+            }
+            return seed
+        }
         // A rule underlining one text line is that text's decoration, not a figure. Rows of
         // column-header underlines are table evidence instead (#36).
         let tables = TableRegionDetector.underlinedColumnRegions(in: page)
         let floats = algorithmFloats(in: page)
-        let body = max(4, bodySize(page.lines))
+        func owner(of rect: CGRect) -> TextLine? {
+            page.lines.first { line in
+                rect.minX >= line.rect.minX - body && rect.maxX <= line.rect.maxX + body
+                    && rect.midY >= line.rect.minY - 3 && rect.midY <= line.rect.maxY
+            }
+        }
         let graphics = page.graphics.compactMap { rect -> CGRect? in
+            // A radical's bar inside a prose row decorates that row (`is written as √25.`, `if
+            // we found √8 on`): the tall rectangle PDFKit gives the radical piece would otherwise
+            // read as a fraction's terms around it, and a bar over one or two digits is shorter
+            // than a rule (#58). Only a row that carries the radical sign qualifies; any other
+            // small mark touching prose keeps its line.
+            if rect.height <= 6, rect.width > rect.height, let owner = owner(of: rect),
+               rowPieces(owner, in: page.lines, body: body).contains(where: { $0.text.rangeOfCharacter(from: mathSymbols) != nil }),
+               isProseRow(owner, in: page.lines, body: body) {
+                return nil
+            }
             guard isThinRule(rect) else { return rect }
             if tables.contains(where: { $0.contains(rect) }) || floats.decorations.contains(rect) { return nil }
             // A fraction bar keeps the terms it touches, as any intersecting graphic does.
@@ -592,10 +756,7 @@ enum LayoutReconstructor {
             // A rule inside one line's box belongs to that line: a radical's vinculum or an
             // exercise bar keeps its short mathematical line; an underline beneath prose is
             // decoration. A rule outside every line stays an isolated graphic.
-            guard let owner = page.lines.first(where: { line in
-                rect.minX >= line.rect.minX - body && rect.maxX <= line.rect.maxX + body
-                    && rect.midY >= line.rect.minY - 3 && rect.midY <= line.rect.maxY
-            }) else { return rect }
+            guard let owner = owner(of: rect) else { return rect }
             let mathematical = owner.text.count <= 40 && !owner.monospaced
                 && owner.text.range(of: #"[A-Za-z]{3,}"#, options: .regularExpression) == nil
             return mathematical ? rect.union(owner.rect) : nil

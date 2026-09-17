@@ -475,8 +475,14 @@ enum GraphicsReader {
                                 transform = CGAffineTransform(a: m[0], b: m[1], c: m[2], d: m[3], tx: m[4], ty: m[5])
                             }
                         }
-                        let rect = CGRect(x: n[0], y: n[1], width: n[2] - n[0], height: n[3] - n[1])
+                        // Only the part of the box inside the clip in force can show: a figure
+                        // group whose box overhangs its rounded frame into the prose above it
+                        // (FAA page 227) must not claim that prose (#77). The clip is a
+                        // conservative bounding rectangle, so no visible mark is excluded.
+                        var rect = CGRect(x: n[0], y: n[1], width: n[2] - n[0], height: n[3] - n[1])
                             .applying(transform.concatenating(s.matrix))
+                        let visible = rect.intersection(s.clip)
+                        if !visible.isNull, !visible.isEmpty { rect = visible }
                         if rect.isFinite, rect.width * rect.height < s.pageBounds.width * s.pageBounds.height * 0.7 {
                             s.add(rect)
                         }

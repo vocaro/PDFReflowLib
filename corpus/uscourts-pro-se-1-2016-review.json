@@ -1,0 +1,33 @@
+{
+  "case": "uscourts-pro-se-1-2016",
+  "pageNumbering": "Physical PDF pages, one-based; printed folios read Page 1 of 5 to Page 5 of 5",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 1,
+      "target": "Court caption, party blocks, Jury Trial checkboxes and section I.A-B",
+      "acceptance": "Correct now: UNITED STATES DISTRICT COURT and COMPLAINT FOR A CIVIL CASE are headings; the left caption block (plaintiff and defendant instructions, -v-) reads before the right block (Case No., Jury Trial); both instruction paragraphs are whole; the Name to E-mail Address labels are present in order; the running header is removed. Wrong now: the six plaintiff labels run together as one paragraph with no blank for each field; the checkbox glyphs extract as a right single quotation mark (Jury Trial: (check one) ’ Yes ’ No); I. and The Parties to This Complaint are separate paragraphs and A. The Plaintiff(s) is <pre>; the column of fifteen ) caption brackets becomes a paragraph; the header rule crop shows the clipped lower half of the removed header text; Page 1 of 5 stays in the text; a full source-page image is appended because the page carries form widgets."
+    },
+    {
+      "page": 2,
+      "target": "Defendant No. 1-4 label blocks",
+      "acceptance": "Correct now: each Defendant No. heading line is its own paragraph and every label, including Job or Title (if known) and E-mail Address (if known), is present in source order. Wrong now: each block's eight labels run together as one paragraph; Page 2 of 5 kept; source-page image appended."
+    },
+    {
+      "page": 3,
+      "target": "Section II prose, jurisdiction checkboxes and diversity-of-citizenship fill-in sentences",
+      "acceptance": "Correct now: the Federal courts paragraph (28 U.S.C. § 1331 and § 1332, $75,000) is whole; the check-all-that-apply question, both checkbox labels and the fill-out instruction are separate paragraphs in order; every sentence fragment around the blanks is present in source order. Wrong now: II. Basis for Jurisdiction and the A./B. titles are bold paragraphs, not headings, and A./B. split from their titles; a. and If the plaintiff is an individual split apart while that title merges into the next sentence; the fill-in sentences break into separate paragraphs at each blank and the blank rules become crops placed after the following fragment; the period after (foreign nation) is a <sub>; checkbox glyphs extract as ’."
+    },
+    {
+      "page": 4,
+      "target": "Corporate defendant sentences, amount in controversy, sections III-IV",
+      "acceptance": "Correct now: the fragments are in source order; the parenthetical instruction, amount-in-controversy and Relief paragraphs are whole; Statement of Claim and Relief paragraphs are separate. Wrong now: the Statement of Claim paragraph splits mid-line into three paragraphs (after the claim. and after as possible the); section titles III. and IV. are bold paragraphs, not headings; blank rules become crops between fragments."
+    },
+    {
+      "page": 5,
+      "target": "Section V certification, signature blocks and form buttons",
+      "acceptance": "Correct now: the Rule 11 paragraph and the Clerk's Office address paragraph are whole and separate; the signature and attorney labels are present in order; the Print, Save As..., Add Attachment and Reset push buttons stay out of the text. Wrong now: V. Certification and Closing and B. For Attorneys are <pre>, not headings; the attorney labels run together as one paragraph; Page 5 of 5 kept; the source-page image shows the push buttons."
+    }
+  ],
+  "scope": "Manual targets from 70 DPI Poppler renders and the extracted text layer. Unfilled AcroForm (77 fields, no XFA, untagged, WordPerfect via PScript5/Distiller). No region, glyph or appearance references are committed: the form has no raster images and its only graphics are field rules and checkbox borders."
+}

@@ -1,0 +1,88 @@
+{
+  "case": "ntrs-20200002975-gwl-2020",
+  "pageNumbering": "Physical PDF pages, one-based; printed folios match (1-20)",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 1,
+      "target": "Title block, abstract, table of contents and introduction start",
+      "acceptance": "Correct now: the title is one h2; author, affiliation, address and e-mail lines in order; TABLE OF CONTENTS and 1. INTRODUCTION are headings; the U.S. Government work line is present. Wrong now: the abstract, contents and introduction interleave line by line across the columns, and the abstract's right-column end precedes its left-column middle (#153); contents entries 1-6 are <pre>; the folio 1 is an h3 (#154); ten borderless internal links force an Original page 1 image (#151)."
+    },
+    {
+      "page": 2,
+      "target": "Introduction, Figure 1, section 2 and its subsections",
+      "acceptance": "Correct now: Data Acquisition and Wind-Tunnel Facility are h4; the purpose and data-sampling paragraphs are whole; Figure 1 is preserved with its caption. Wrong now: the side-by-side column prose above and below the figure interleaves line by line (#153); 2. TEST DESCRIPTION is <pre> and the folio 2 is appended to the last paragraph (#154); the two caption lines are separate paragraphs."
+    },
+    {
+      "page": 3,
+      "target": "Section 3 subsections and the full-width Figure 2 photo",
+      "acceptance": "Correct now: left column before right, whole paragraphs including the one continuing from the left column into the right; Summary and Flow Survey Rake Instrumentation are h4; Figure 2 preserved before its caption. Wrong now: 3. DESIGN AND DEVELOPMENT OF THE ABL is <pre>; folio kept."
+    },
+    {
+      "page": 4,
+      "target": "Figure 3, Equation (1) and the target-profile prose",
+      "acceptance": "Correct now: Figure 3 and its caption, then left column, then right; Equation (1) preserved as an image with its number; V_ref and Z_ref subscripts. Wrong now: the Symbol-font alpha in the prose is U+F061 twice (#155)."
+    },
+    {
+      "page": 5,
+      "target": "Velocity-profile figures and turbulence-spectra prose",
+      "acceptance": "Correct now: Figures 4-6 preserved with their captions; the 40 Hz paragraph is whole. Wrong now: the column prose beside and below Figures 5 and 6 interleaves line by line, with the Figure 6 caption lines inside it; folio 5 is appended to a paragraph (#153, #154)."
+    },
+    {
+      "page": 6,
+      "target": "Section 4 general description, Figures 7-8",
+      "acceptance": "Correct now: left column, then right column, with the model-base paragraph joined across the columns; General Description is h4; Figure 8 with its caption before the assembly paragraph, then the full-width Figure 7. Wrong now: 4. LAUNCH VEHICLE MODEL DESCRIPTION is <pre>."
+    },
+    {
+      "page": 7,
+      "target": "Figure 9 photo, instrumentation, vibration and wind-tunnel conditions",
+      "acceptance": "Correct now: the three italic subsection titles are h4; Figures 9-10 preserved; 2.22x10^6 and 3.6x10^6 exponents are superscripts. Wrong now: the right column's opening continuation comes first, the Wind-Tunnel Conditions paragraph is cut before its last line by Figure 9, and the right column's Surface roughness paragraph sits between Vibration Characteristics and its paragraph (#153)."
+    },
+    {
+      "page": 8,
+      "target": "Figures 11-12, section 5 start",
+      "acceptance": "Wrong now: right-column paragraphs precede the left column's figures and section 5; the bottom of both columns interleaves line by line; 5. TEST RESULTS AND ANALYSIS is <pre>; folio 8 appended (#153, #154). Present Focus, Determination of Comparable Velocities and Comparison of Loads are h4."
+    },
+    {
+      "page": 9,
+      "target": "Figures 13-15 and loads prose",
+      "acceptance": "Correct now: figures preserved with captions; the paragraph ending the right column continues onto page 10. Wrong now: column prose above and below the figures interleaves line by line; the Figure 13-15 order around the captions is mixed (#153)."
+    },
+    {
+      "page": 10,
+      "target": "Two-column text over full-width Figure 16",
+      "acceptance": "Correct now: the page-9 paragraph continues through the top text of both columns into page 11. Wrong now: the Figure 16 crop, caption and folio are placed before the page-10 marker (#153)."
+    },
+    {
+      "page": 11,
+      "target": "Figures 17a, 17b, 18 and the proprietary-model prose",
+      "acceptance": "Wrong now: the Figure 18 crop precedes the Figure 17a caption, Figure 17b comes after the right column's proprietary-model paragraph, and the remaining column prose interleaves line by line (#153)."
+    },
+    {
+      "page": 12,
+      "target": "Figures 19-21 and conclusions",
+      "acceptance": "Correct now: left column (continuation, Figures 19-20, note) then right column (Figure 21, CONCLUSIONS, conclusion paragraphs), whole paragraphs, separate from page 13's opening. Wrong now: 6. CONCLUSIONS is <pre>."
+    },
+    {
+      "page": 13,
+      "target": "Conclusion end, appendix introduction and bullets",
+      "acceptance": "Correct now: text and order; Data Plots Segregated by Wind Azimuth Angle is h4. Wrong now: APPENDIX is a bold paragraph; 45-degree-increment loses its hyphen; Symbol bullets are U+F0B7, the first two bullets merge and wrapped lines split off (#154, #155)."
+    },
+    {
+      "page": 14,
+      "target": "Appendix Figures A1-A5 (pages 14-18)",
+      "acceptance": "Correct now on each page: one preserved figure and its caption as one paragraph. Wrong now: folios kept."
+    },
+    {
+      "page": 19,
+      "target": "Acknowledgements and references",
+      "acceptance": "Correct now: acknowledgement paragraph whole; references [1]-[18] and their doi lines in order. Wrong now: ACKNOWLEDGEMENTS and REFERENCES are bold paragraphs; eight entries, a doi line and a wrapped line are h5; most other entries split after their first line (#154)."
+    },
+    {
+      "page": 20,
+      "target": "Biographies with portraits",
+      "acceptance": "Correct now: three portraits preserved; each biography's text complete and in order. Wrong now: BIOGRAPHY is a bold paragraph; each biography splits into two paragraphs around its portrait."
+    }
+  ],
+  "scope": "Manual targets from 60 DPI Poppler renders of all 20 pages (page 1 header, Figures 1-2 and page-11 figures at 90-110 DPI). Microsoft Word 2013 export, tagged, IEEE two-column template; 13 pages report structureFallback. No region, glyph or appearance references are committed; see the manifest rights note."
+}

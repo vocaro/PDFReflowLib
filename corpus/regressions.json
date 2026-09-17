@@ -5602,6 +5602,560 @@
           ]
         }
       ]
+    },
+    {
+      "id": "uscourts-pro-se-1-2016",
+      "sourceSHA256": "9fe218570d311b0deab9413e39efda41210e60f2a5221eb360d43912ce05a118",
+      "basis": "Source pages 1-5 visually reviewed against 70 DPI Poppler renders and the extracted text layer. Protects the court caption and COMPLAINT FOR A CIVIL CASE as headings; the caption's left block (plaintiff and defendant instructions) before its right block (Case No., Jury Trial); every fill-in label (plaintiff, four defendant and attorney blocks) present in source order; whole instruction paragraphs for sections I-V, kept separate from each other; the diversity-of-citizenship sentence fragments in source order; and the running header removed on every page. The AcroForm push buttons on page 5 (Save As..., Add Attachment, Reset) are widgets, not page content, and must not enter the text. Not pinned because wrong now: fill-in labels run together into one paragraph per block, sentences broken into fragments around blank rules, section numbers split from their titles or set as <pre>, the checkbox glyph extracted as a right single quotation mark, the Statement of Claim paragraph split mid-line, the Page N of 5 folio kept, and a source-page image on every page forced by the form widgets (see the review file). No committed rasters: the form has no images and every region is text or rules.",
+      "pages": [
+        {
+          "page": 1,
+          "headings": [
+            "UNITED STATES DISTRICT COURT",
+            "COMPLAINT FOR A CIVIL CASE"
+          ],
+          "orderedText": [
+            "UNITED STATES DISTRICT COURT",
+            "for the",
+            "District of",
+            "Division",
+            "Plaintiff(s)",
+            "(Write the full name of each plaintiff who is filing this complaint.",
+            "-v-",
+            "Defendant(s)",
+            "(Write the full name of each defendant who is being sued.",
+            "Case No.",
+            "(to be filled in by the Clerk’s Office)",
+            "Jury Trial:",
+            "COMPLAINT FOR A CIVIL CASE",
+            "The Parties to This Complaint",
+            "The Plaintiff(s)",
+            "Provide the information below for each plaintiff named in the complaint.",
+            "Name",
+            "Street Address",
+            "City and County",
+            "State and Zip Code",
+            "Telephone Number",
+            "E-mail Address",
+            "The Defendant(s)",
+            "Provide the information below for each defendant named in the complaint"
+          ],
+          "paragraphs": [
+            "(Write the full name of each plaintiff who is filing this complaint. If the names of all the plaintiffs cannot fit in the space above, please write “see attached” in the space and attach an additional page with the full list of names.)",
+            "(Write the full name of each defendant who is being sued. If the names of all the defendants cannot fit in the space above, please write “see attached” in the space and attach an additional page with the full list of names.)",
+            "Provide the information below for each plaintiff named in the complaint. Attach additional pages if needed.",
+            "Provide the information below for each defendant named in the complaint, whether the defendant is an individual, a government agency, an organization, or a corporation. For an individual defendant, include the person's job or title (if known). Attach additional pages if needed."
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "(Write the full name of each plaintiff",
+              "second": "(Write the full name of each defendant"
+            },
+            {
+              "first": "Provide the information below for each plaintiff",
+              "second": "Provide the information below for each defendant"
+            }
+          ],
+          "absentText": [
+            "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case"
+          ],
+          "warningCodesAnyOf": [
+            "furnitureRemoved"
+          ]
+        },
+        {
+          "page": 2,
+          "orderedText": [
+            "Defendant No. 1",
+            "Name",
+            "Job or Title (if known)",
+            "Street Address",
+            "City and County",
+            "State and Zip Code",
+            "Telephone Number",
+            "E-mail Address (if known)",
+            "Defendant No. 2",
+            "Name",
+            "Job or Title (if known)",
+            "E-mail Address (if known)",
+            "Defendant No. 3",
+            "Name",
+            "Job or Title (if known)",
+            "E-mail Address (if known)",
+            "Defendant No. 4",
+            "Name",
+            "Job or Title (if known)",
+            "Street Address",
+            "City and County",
+            "State and Zip Code",
+            "Telephone Number",
+            "E-mail Address (if known)"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Defendant No. 1",
+              "second": "Defendant No. 2"
+            },
+            {
+              "first": "Defendant No. 3",
+              "second": "Defendant No. 4"
+            }
+          ],
+          "absentText": [
+            "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case"
+          ]
+        },
+        {
+          "page": 3,
+          "orderedText": [
+            "Basis for Jurisdiction",
+            "Federal courts are courts of limited jurisdiction (limited power).",
+            "no defendant may be a citizen of the same State as any plaintiff.",
+            "What is the basis for federal court jurisdiction? (check all that apply)",
+            "Federal question",
+            "Diversity of citizenship",
+            "Fill out the paragraphs in this section that apply to this case.",
+            "If the Basis for Jurisdiction Is a Federal Question",
+            "List the specific federal statutes, federal treaties, and/or provisions of the United States Constitution that are at issue in this case.",
+            "If the Basis for Jurisdiction Is Diversity of Citizenship",
+            "The Plaintiff(s)",
+            "If the plaintiff is an individual",
+            "The plaintiff, (name)",
+            ", is a citizen of the",
+            "State of (name)",
+            "If the plaintiff is a corporation",
+            ", is incorporated",
+            "under the laws of the State of (name)",
+            "and has its principal place of business in the State of (name)",
+            "(If more than one plaintiff is named in the complaint, attach an additional page providing the same information for each additional plaintiff.)",
+            "The Defendant(s)",
+            "If the defendant is an individual",
+            "The defendant, (name)",
+            "Or is a citizen of",
+            "(foreign nation)"
+          ],
+          "text": [
+            "Under 28 U.S.C. § 1331, a case arising under the United States Constitution or federal laws or treaties is a federal question case.",
+            "the amount at stake is more than $75,000 is a diversity of citizenship case."
+          ],
+          "paragraphs": [
+            "Federal courts are courts of limited jurisdiction (limited power). Generally, only two types of cases can be heard in federal court: cases involving a federal question and cases involving diversity of citizenship of the parties. Under 28 U.S.C. § 1331, a case arising under the United States Constitution or federal laws or treaties is a federal question case. Under 28 U.S.C. § 1332, a case in which a citizen of one State sues a citizen of another State or nation and the amount at stake is more than $75,000 is a diversity of citizenship case. In a diversity of citizenship case, no defendant may be a citizen of the same State as any plaintiff.",
+            "What is the basis for federal court jurisdiction? (check all that apply)",
+            "Fill out the paragraphs in this section that apply to this case.",
+            "(If more than one plaintiff is named in the complaint, attach an additional page providing the same information for each additional plaintiff.)"
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "no defendant may be a citizen of the same State as any plaintiff.",
+              "second": "What is the basis for federal court jurisdiction?"
+            },
+            {
+              "first": "Federal question",
+              "second": "Diversity of citizenship"
+            }
+          ],
+          "absentText": [
+            "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case"
+          ]
+        },
+        {
+          "page": 4,
+          "orderedText": [
+            "If the defendant is a corporation",
+            "The defendant, (name)",
+            ", is incorporated under",
+            "the laws of the State of (name)",
+            "principal place of business in the State of (name)",
+            "Or is incorporated under the laws of (foreign nation)",
+            "and has its principal place of business in (name)",
+            "(If more than one defendant is named in the complaint, attach an additional page providing the same information for each additional defendant.)",
+            "The Amount in Controversy",
+            "The amount in controversy–the amount the plaintiff claims the defendant owes",
+            "Statement of Claim",
+            "Write a short and plain statement of the claim.",
+            "Do not make legal arguments. State as briefly as possible the",
+            "facts showing that each plaintiff is entitled to the damages or other relief sought.",
+            "Attach additional pages if needed.",
+            "Relief",
+            "State briefly and precisely what damages or other relief the plaintiff asks the court to order."
+          ],
+          "paragraphs": [
+            "(If more than one defendant is named in the complaint, attach an additional page providing the same information for each additional defendant.)",
+            "The amount in controversy–the amount the plaintiff claims the defendant owes or the amount at stake–is more than $75,000, not counting interest and costs of court, because (explain):",
+            "State briefly and precisely what damages or other relief the plaintiff asks the court to order. Do not make legal arguments. Include any basis for claiming that the wrongs alleged are continuing at the present time. Include the amounts of any actual damages claimed for the acts alleged and the basis for these amounts. Include any punitive or exemplary damages claimed, the amounts, and the reasons you claim you are entitled to actual or punitive money damages."
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "a separate paragraph. Attach additional pages if needed.",
+              "second": "State briefly and precisely what damages"
+            }
+          ],
+          "absentText": [
+            "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case"
+          ]
+        },
+        {
+          "page": 5,
+          "orderedText": [
+            "Certification and Closing",
+            "Under Federal Rule of Civil Procedure 11, by signing below,",
+            "the complaint otherwise complies with the requirements of Rule 11.",
+            "For Parties Without an Attorney",
+            "I agree to provide the Clerk’s Office with any changes to my address",
+            "Date of signing:",
+            "Signature of Plaintiff",
+            "Printed Name of Plaintiff",
+            "For Attorneys",
+            "Date of signing:",
+            "Signature of Attorney",
+            "Printed Name of Attorney",
+            "Bar Number",
+            "Name of Law Firm",
+            "Street Address",
+            "State and Zip Code",
+            "Telephone Number",
+            "E-mail Address"
+          ],
+          "paragraphs": [
+            "Under Federal Rule of Civil Procedure 11, by signing below, I certify to the best of my knowledge, information, and belief that this complaint: (1) is not being presented for an improper purpose, such as to harass, cause unnecessary delay, or needlessly increase the cost of litigation; (2) is supported by existing law or by a nonfrivolous argument for extending, modifying, or reversing existing law; (3) the factual contentions have evidentiary support or, if specifically so identified, will likely have evidentiary support after a reasonable opportunity for further investigation or discovery; and (4) the complaint otherwise complies with the requirements of Rule 11.",
+            "I agree to provide the Clerk’s Office with any changes to my address where case–related papers may be served. I understand that my failure to keep a current address on file with the Clerk’s Office may result in the dismissal of my case."
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "requirements of Rule 11.",
+              "second": "I agree to provide the Clerk’s Office"
+            }
+          ],
+          "absentText": [
+            "Pro Se 1 (Rev. 12/16) Complaint for a Civil Case",
+            "Save As",
+            "Add Attachment",
+            "Reset"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ntrs-20200002975-gwl-2020",
+      "sourceSHA256": "a98e4fcdea40b8ea7023880dd88966f04198b4ec311fced0bb9ebb2dec45fe6d",
+      "basis": "All 20 source pages visually reviewed against 60 DPI Poppler renders (page 1 header and page 11 figures at higher resolution). Protects only output that matches the source: the title, TABLE OF CONTENTS, 1. INTRODUCTION and the italic subsection titles as headings; the author, affiliation and government-work lines; single-column-order prose on pages 3, 4, 6 and 12, including the page-6 paragraph that continues from the left column into the right; the Word subscript in V_ref and the superscript Reynolds-number exponents; figure captions and preserved figure images; the paragraph that continues from page 9 across the text at the top of figure page 10 into page 11; the appendix captions on pages 14-18; the reference entries in order; and the biographies beside their three portraits. Not pinned because wrong now: line-by-line column interleaving on pages 1, 2, 5, 8, 9, 10 and 11 and right-before-left blocks on pages 7-8 (#153); section titles 2-6 as <pre>, kept or heading folios and references as headings (#154); Symbol-font private-use alpha and bullets and 45degree (#155); and the page-1 source image forced by invisible links (#151). No committed rasters: see the manifest's rights note.",
+      "pages": [
+        {
+          "page": 1,
+          "headings": [
+            "Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads",
+            "TABLE OF CONTENTS",
+            "1. INTRODUCTION"
+          ],
+          "orderedText": [
+            "Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads",
+            "Thomas G. Ivanco, Donald F. Keller, and Jennifer L. Pinkerton",
+            "NASA Langley Research Center",
+            "Aeroelasticity Branch, MS 340",
+            "Hampton, VA 23681",
+            "Thomas.G.Ivanco@nasa.gov, Donald.F.Keller@nasa.gov, and Jennifer.L.Pinkerton@nasa.gov",
+            "Abstract—A launch vehicle ground-wind-loads program is"
+          ],
+          "text": [
+            "U.S. Government work not protected by U.S. copyright",
+            "response of a launch vehicle when a von Kármán vortex street"
+          ]
+        },
+        {
+          "page": 2,
+          "headings": [
+            "Data Acquisition",
+            "Wind-Tunnel Facility"
+          ],
+          "paragraphs": [
+            "The purpose of the research effort described in this paper is to evaluate the effect of an ABL upon the WIO response of launch vehicles and to create a database for community use. Aeroelastically-scaled models of representative vehicles were constructed and were tested at flight-representative Reynolds numbers.",
+            "Data records were sampled at 10 kHz. Signal conditioning provided by a Precision Filters Inc. (PFI) system filtered all analog channels with a low-pass, 4-pole, pulse-mode (LP4P) filter with a cutoff frequency of 3 kHz."
+          ],
+          "text": [
+            "Figure 1. Sketch of the Transonic Dynamics Tunnel with",
+            "cutaways revealing key features"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 3,
+          "headings": [
+            "Summary",
+            "Flow Survey Rake Instrumentation"
+          ],
+          "orderedText": [
+            "For more information regarding the TDT Aeroelasticity Branch Data Acquisition System (AB-DAS), refer to Reference [14].",
+            "DESIGN AND DEVELOPMENT OF THE ABL",
+            "Summary",
+            "The techniques discussed in References [5]-[7] were used to design a lateral array of drag devices",
+            "Flow Survey Rake Instrumentation",
+            "Data for ABL characterization were acquired with an instrumented rake",
+            "The instrumentation rake was mounted on a traversing and rolling sting.",
+            "Figure 2. Photo of spire and roughness element (block) installation in the TDT, with instrumentation rake in the",
+            "foreground, looking upstream"
+          ],
+          "paragraphs": [
+            "consisted of four steady pitot-static pressure probes, two unsteady total pressure probes, two unsteady static pressure probes, two unsteady five-hole probes, and a total temperature probe, as illustrated in Figure 3.",
+            "An image of the Irwin spires, roughness elements, and flow measuring rake detailed in [13] is shown in Figure 2."
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "Data for ABL characterization were acquired",
+              "second": "The instrumentation rake was mounted on a traversing and rolling sting."
+            }
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 4,
+          "headings": [
+            "Target Profile Determination",
+            "Resulting Wind-Tunnel ABL Characteristics"
+          ],
+          "orderedText": [
+            "Figure 3. Illustration of instrumentation rake with instrument locations",
+            "Target Profile Determination",
+            "Three launch sites were chosen for ABL simulation: space launch complex 40 (SLC-40) at Cape Canaveral Air Force Station",
+            "Measured wind data at the SLC-40 and SLC-TX launch sites were used to derive a power law model",
+            "(1)",
+            "It is important to note that the ABL changes significantly with time for any given launch site",
+            "Resulting Wind-Tunnel ABL Characteristics",
+            "ABL design metrics include velocity profile, turbulence intensity",
+            "The results of the ABL profiles for SLC-TX, SLC-40, and SLC-39 are shown in Figure 4"
+          ],
+          "paragraphs": [
+            "Three launch sites were chosen for ABL simulation: space launch complex 40 (SLC-40) at Cape Canaveral Air Force Station, space launch complex 39 (SLC-39) at the NASA Kennedy Space Center, and an additional launch site in Texas designated herein as SLC-TX.",
+            "During these identified conditions of interest, the majority of wind data are reasonably represented by an exponent value of 0.14."
+          ],
+          "scripts": [
+            {
+              "tag": "sub",
+              "text": "ref",
+              "before": "= local velocity at elevation Z, and V",
+              "after": "= reference velocity at elevation Z"
+            }
+          ],
+          "minimumImages": 2
+        },
+        {
+          "page": 5,
+          "text": [
+            "Figure 4. Results of velocity profile simulation in the TDT for three launch sites",
+            "Figure 5. Uniform flow velocity profile"
+          ],
+          "paragraphs": [
+            "Additionally, the wind-tunnel data above 40 Hz full-scale frequency are starting to be attenuated by the data system antialias filter and are well above typical launch vehicle frequencies of interest."
+          ],
+          "minimumImages": 3
+        },
+        {
+          "page": 6,
+          "headings": [
+            "General Description"
+          ],
+          "orderedText": [
+            "with elevation for all launch site simulations as expected.",
+            "For more details regarding the computation of target spectra or turbulence intensities, refer to Reference [13].",
+            "LAUNCH VEHICLE MODEL DESCRIPTION",
+            "General Description",
+            "The launch vehicle model used in the acquisition of the majority of load data",
+            "The model base was constructed from 6061 Aluminum",
+            "Figure 8. Turbulence intensity with uniform flow",
+            "An assembly drawing of the model is shown in Figure 11.",
+            "Figure 7. Turbulence intensities at various simulated launch sites"
+          ],
+          "paragraphs": [
+            "The model base was constructed from 6061 Aluminum that was nominally 0.15 inches thick but varied as shown in Figure 10. The remainder of the body was a 0.1 inch-thick prepreg carbon fiber tube slip fit over the aluminum base and bonded in place.",
+            "With the ballast and all components (excluding the adapter plates and pedestal balance), the model weighed approximately 44 lbs."
+          ],
+          "distinctParagraphs": [
+            {
+              "first": "The launch vehicle model used in the acquisition",
+              "second": "The model base was constructed from 6061 Aluminum"
+            }
+          ],
+          "minimumImages": 2
+        },
+        {
+          "page": 7,
+          "headings": [
+            "Wind-Tunnel Conditions",
+            "Instrumentation",
+            "Vibration Characteristics"
+          ],
+          "text": [
+            "Figure 9. Research model installed in TDT, looking",
+            "Figure 10. Aluminum base details, research model"
+          ],
+          "paragraphs": [
+            "Visible in Figures 9 and 11 is the location of the pressure transducer ring. At this model station, unsteady pressure transducers were located every 22.5 degrees around the circumference of the model."
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "6",
+              "before": "the diametrical Reynolds number was 2.22x10",
+              "after": ". Reynolds number scales linearly with velocity"
+            },
+            {
+              "tag": "sup",
+              "text": "6",
+              "before": "diametrical Reynolds number was 3.6x10",
+              "after": "at a model-scale velocity of 100 ft/s."
+            }
+          ],
+          "minimumImages": 2
+        },
+        {
+          "page": 9,
+          "text": [
+            "Figure 13. ABL velocity profile and equivalent uniform",
+            "Figure 14. Illustration of load components",
+            "Figure 15. Static bending moment due to drag, research"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "an order of magnitude higher than the static loads resulting",
+              "next": "from drag for many conditions. Second, data can be decomposed into regions of low response and high response."
+            }
+          ],
+          "minimumImages": 3
+        },
+        {
+          "page": 10,
+          "continuedParagraphs": [
+            {
+              "end": "This behavior is expected since a lowly-damped structure will respond more",
+              "next": "when exposed to an increased broad-band forcing."
+            }
+          ]
+        },
+        {
+          "page": 12,
+          "orderedText": [
+            "due to lift exhibits nearly the same resonant response magnitudes.",
+            "Figure 19. Normalized static bending moment due to",
+            "Figure 20. Normalized peak bending moment due to lift,",
+            "Not presented in this report are data from the proprietary model acquired at flight Reynolds numbers.",
+            "Figure 21. Normalized maximum resultant bending",
+            "CONCLUSIONS",
+            "A comprehensive test program is underway at the NASA Langley Transonic Dynamics Tunnel",
+            "Some regions of nonresonant response show that ABL simulation produces an increase in dynamic response.",
+            "Peak loads generated by resonant response are similar when acquired in uniform flow or within an ABL."
+          ],
+          "paragraphs": [
+            "Not presented in this report are data from the proprietary model acquired at flight Reynolds numbers. The trends and relative magnitudes are nearly identical to those presented in Figures 19-21.",
+            "Some regions of nonresonant response show that ABL simulation produces an increase in dynamic response. Therefore, if nonresonant response conditions are of interest in determining launch placards, then ABL simulation is of significant importance."
+          ],
+          "separateParagraphs": [
+            {
+              "end": "the same static base bending moment is achieved with either velocity profile.",
+              "next": "Peak loads from resonant response can be an order of magnitude above those produced by static drag loads"
+            }
+          ],
+          "minimumImages": 3
+        },
+        {
+          "page": 13,
+          "headings": [
+            "Data Plots Segregated by Wind Azimuth Angle"
+          ],
+          "orderedText": [
+            "Peak loads from resonant response can be an order of magnitude above those produced by static drag loads or nonresonant response.",
+            "APPENDIX",
+            "Data Plots Segregated by Wind Azimuth Angle",
+            "Included in this appendix are plots of data acquired in",
+            "Plots include:",
+            "Peak bending moment due to lift, research model",
+            "Maximum resultant bending moment, research",
+            "Normalized mean bending moment due to drag,",
+            "Normalized peak bending moment due to lift,",
+            "Normalized maximum resultant bending moment,"
+          ],
+          "text": [
+            "Each wind azimuth region considers only those data records acquired within +/- 15 degrees of the cardinal or ordinal directions."
+          ]
+        },
+        {
+          "page": 14,
+          "paragraphs": [
+            "Figure A1. Peak bending moment due to lift, research model, segregated by azimuth angle regions"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 15,
+          "paragraphs": [
+            "Figure A2. Maximum resultant bending moment, research model, segregated by azimuth angle regions"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 16,
+          "paragraphs": [
+            "Figure A3. Bending moment due to drag, proprietary model, segregated by azimuth angle regions"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 17,
+          "paragraphs": [
+            "Figure A4. Peak bending moment due to lift, proprietary model, segregated by azimuth angle regions"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 18,
+          "paragraphs": [
+            "Figure A5. Maximum resultant bending moment, proprietary model, segregated by azimuth angle regions"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 19,
+          "orderedText": [
+            "ACKNOWLEDGEMENTS",
+            "The authors thank the staff of the NASA Langley Transonic Dynamics Tunnel",
+            "REFERENCES",
+            "[1] Hanson, P. W.; and Jones, G. W.;",
+            "[2] Farmer, M. G.;",
+            "[3] Keller, D. K.; and Ivanco, T. G.;",
+            "[4] Ivanco, T. G.; and Keller, D. K.",
+            "[5] Irwin, H. P. A. H.;",
+            "[6] Irwin, H. P. A. H.;",
+            "doi: 10.1016/0167-6105(81)90058-1",
+            "[7] De Paepe, W.;",
+            "[8] Ivanco, T. G.;",
+            "[9] Anton, P. S.; Gritton, E. C.;",
+            "[10] Anton, P. S.; Johnson, D. J.;",
+            "[11] Anton, P. S.; Raman, R.;",
+            "[12] Cole, S. R.; Garcia, J. L.;",
+            "[13] Ivanco, T. G.; Keller, D. F.; Pinkerton, J. L.;",
+            "doi: 10.2514/6.2018-5184",
+            "[14] Ivanco, T. G.; Piatak, D. J.;",
+            "[15] Johnson, D. L.;",
+            "[16] NASA Space Vehicle Design Criteria, Prelaunch Ground Wind Loads, NASA SP-8008, November 1965.",
+            "[17] Szechenyi, E.,",
+            "[18] McCullough, G. B.; and Steinmetz, W. J.;"
+          ],
+          "paragraphs": [
+            "The authors thank the staff of the NASA Langley Transonic Dynamics Tunnel for their tireless efforts, the hand placement of bulky test articles, and their willingness to try new techniques."
+          ]
+        },
+        {
+          "page": 20,
+          "orderedText": [
+            "BIOGRAPHY",
+            "Thomas G Ivanco received a B.S. in Aerospace Engineering from Penn State University in 1999",
+            "has been a researcher with NASA Langley Research Center for more than 20 years",
+            "Donald F. Keller received a B.S. in Aerospace Engineering from Iowa State University in 1986",
+            "has been a researcher in the Aeroelasticity Branch at NASA Langley Research Center since 1987.",
+            "Jennifer L. Pinkerton received a B.S. in Aerospace Engineering from Texas A&M University in 1994.",
+            "parachutes and airplanes adapted to the Martian environment, and vertical tail buffet."
+          ],
+          "minimumImages": 3
+        }
+      ]
     }
   ],
   "excludedFullConversions": [

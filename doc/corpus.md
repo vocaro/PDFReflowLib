@@ -41,12 +41,16 @@ work offline. Tests and conversion never fetch sources automatically.
 | `census-rrs2002-01` | 20 | Born-digital text layer with no Unicode mapping (shifted letters); 2 pages decoded natively, 17 recognized by default | 512 MiB |
 | `uscis-m618-arabic-2015` | 116 | Right-to-left Arabic with embedded Latin and numbers | 256 MiB |
 | `irs-p596-zhs-2025` | 36 | Simplified Chinese mixed with Latin identifiers and amounts | 256 MiB |
+| `uscourts-pro-se-1-2016` | 5 | Fillable AcroForm: field labels beside blanks, checkboxes, push buttons | 128 MiB |
+| `ntrs-20200002975-gwl-2020` | 20 | Microsoft Word export: tagged IEEE two-column paper, Symbol-font characters | 256 MiB |
 
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
 before conversion and records progress, timing, memory, output structure and optional EPUBCheck.
 The seven [#30 cases](#issue-30-coverage-expansion) are gated with reviewed contracts; their
 selection and download identities are in [their record](../measurements/corpus-candidates-30/record.md).
+The [Pro Se 1 form](#complaint-for-a-civil-case-pro-se-1) and the
+[Word-exported NASA paper](#ground-wind-loads-paper-word-2013) are gated the same way.
 
 ## Comparing conversion runs
 
@@ -186,7 +190,7 @@ scripts/compare-pdf-reflow.sh --pdf corpus/cache/Beginning_and_Intermediate_Alge
 ```
 
 Output directories must be new. `--epubcheck` is optional. The memory runner enforces the
-case's ceiling automatically. `scripts/check-all.sh --corpus` includes algebra in the eight-document gate.
+case's ceiling automatically. `scripts/check-all.sh --corpus` includes algebra in the 17-document gate.
 
 [Review points](../corpus/wallace-algebra-2010-review.json) list physical PDF pages and
 acceptance questions. Page 343's inline squared exponent has superscript semantics, while
@@ -491,3 +495,80 @@ two-column scanned format. Replay Clocks is CC BY 4.0: retain the attribution re
 manifest. USCIS states some guide images are licensed, so that case commits no page rasters.
 Vertical CJK, Hebrew and Devanagari layouts remain uncovered for lack of clearly licensed sources
 ([#44](https://github.com/vocaro/PDFReflowLib/issues/44)).
+
+
+## Complaint for a Civil Case (Pro Se 1)
+
+The US Courts form Pro Se 1 (Rev. 12/16), effective December 1, 2016, is a five-page fillable
+AcroForm: 77 fields (68 text, 1 choice, 8 buttons including Print, Save As..., Add Attachment and
+Reset), no XFA, untagged, distilled from WordPerfect with mostly unembedded Times fonts. It mixes
+numbered instruction prose with stacked field labels, fill-in sentences broken by blank rules,
+checkboxes and a two-block court caption. The download URL is not versioned; bytes are pinned at
+1,054,771, SHA-256 `9fe218570d311b0deab9413e39efda41210e60f2a5221eb360d43912ce05a118`.
+
+The form was prepared by the Administrative Office of the U.S. Courts and is a work of the United
+States Government (17 U.S.C. 105). Neither the PDF nor its
+[uscourts.gov page](https://www.uscourts.gov/forms-rules/forms/complaint-a-civil-case) carries a
+copyright notice or a third-party credit, and it contains no raster images. The owner approved it
+on 2026-09-17. It is not relicensed under MIT; retain the attribution recorded in the manifest.
+
+```sh
+python3 tools/fetch_corpus.py --case uscourts-pro-se-1-2016
+swift build -c release
+python3 tools/run_corpus_regressions.py --converter .build/release/pdf-reflow \
+  --epubcheck /opt/homebrew/bin/epubcheck --output /tmp/pro-se-1 --case uscourts-pro-se-1-2016
+```
+
+The run passes EPUBCheck, progress and the 128 MiB Mac RSS gate (64 MiB peak). The
+[review points](../corpus/uscourts-pro-se-1-2016-review.json) cover all five pages. The
+contract holds 142 checks: headings, caption and field-label order, whole instruction
+paragraphs, the running header's removal, and the page-5 push buttons kept out of the text.
+Because the widgets count as annotations, every page also gets a full source-page image, and the
+checkbox glyphs come out as `’` ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)).
+Other defects: stacked labels run together into one paragraph, fill-in sentences break apart at
+each blank, section labels are split or set as `<pre>`, one paragraph splits mid-line, and the
+`Page N of 5` folio stays in the text ([#152](https://github.com/vocaro/PDFReflowLib/issues/152)).
+A period after a blank becomes a subscript ([#144](https://github.com/vocaro/PDFReflowLib/issues/144)).
+No region references are committed: the form has no images, only rules and boxes.
+
+
+## Ground wind loads paper (Word 2013)
+
+Ivanco, Keller and Pinkerton, "Investigation of Atmospheric Boundary-Layer Effects on
+Launch-Vehicle Ground Wind Loads" (2020 IEEE Aerospace Conference), is a 20-page Microsoft Word
+2013 export from [NTRS 20200002975](https://ntrs.nasa.gov/citations/20200002975). It is tagged
+with Word's structure tree, set in the IEEE two-column template with a table of contents, and has
+27 figure rasters, an OMML equation, Symbol-font Greek letters and bullets, references and author
+portraits. Five of its twelve fonts are not embedded. Bytes are pinned at 3,268,329, SHA-256
+`a98e4fcdea40b8ea7023880dd88966f04198b4ec311fced0bb9ebb2dec45fe6d`. NTRS returned HTTP 503 for
+a few minutes during capture. The fetcher fails in that case and never substitutes a file.
+
+Page 1 states "U.S. Government work not protected by U.S. copyright", and the byline and the NTRS
+record place all three authors at NASA Langley Research Center. The NTRS API copyright record
+gives `GOV_PUBLIC_USE_PERMITTED` with `containsThirdPartyMaterial: false`. No figure or photo
+carries a third-party credit, and no NASA insignia is visible in the figures. The page-20 author
+portraits carry no credit at all, so no crops or rasters of page 20 may be committed. The case
+commits no rasters from any page. The owner approved it on 2026-09-17. It is not relicensed under
+MIT; retain the attribution recorded in the manifest.
+
+```sh
+python3 tools/fetch_corpus.py --case ntrs-20200002975-gwl-2020
+swift build -c release
+python3 tools/run_corpus_regressions.py --converter .build/release/pdf-reflow \
+  --epubcheck /opt/homebrew/bin/epubcheck --output /tmp/ntrs-gwl --case ntrs-20200002975-gwl-2020
+```
+
+The run passes EPUBCheck, progress and the 256 MiB Mac RSS gate (127–129 MiB peak). The
+[review points](../corpus/ntrs-20200002975-gwl-2020-review.json) cover all 20 pages. The
+contract holds 149 checks, all on output that matches the source: headings, pages 3, 4, 6 and 12
+where the columns read in order, figure presence and captions, the `V_ref` subscript and the
+Reynolds-number exponents, the paragraph continuing from page 9 through the top of figure page 10,
+the appendix captions, reference order and the biographies. Pages 1–12 and 19 report
+`structureFallback`. Where columns sit side by side, on pages 1, 2, 5 and 8–11, the prose
+interleaves line by line, pages 7 and 8 read right-column blocks first, and the figures on pages
+10–11 are out of order ([#153](https://github.com/vocaro/PDFReflowLib/issues/153)). Section titles
+2–6 are `<pre>`, folios are kept or made headings, and references become headings
+([#154](https://github.com/vocaro/PDFReflowLib/issues/154)). Symbol-font α and bullets stay as
+private-use characters, and `45-degree` loses its hyphen
+([#155](https://github.com/vocaro/PDFReflowLib/issues/155)). Invisible table-of-contents links
+force a page-1 source image ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)).

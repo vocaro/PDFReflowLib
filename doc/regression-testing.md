@@ -12,7 +12,7 @@ A valid EPUB can still contain incorrect text, wrong reading order or unreadable
   pixels, including crop origins, rotations, annotations and resource ceilings. Preserved-region
   tests also inspect fraction bars, raised exponents and all six cells of a ruled table in actual
   EPUB images at 72/144 DPI, with surrounding-prose and code controls.
-- `scripts/check-all.sh --corpus`: the same checks plus 15 complete PDF conversions,
+- `scripts/check-all.sh --corpus`: the same checks plus 17 complete PDF conversions,
   sequentially, with EPUBCheck, monotonic progress, pinned source identities, memory budgets
   and reviewed page-specific content contracts. All selected cached sources and EPUBCheck
   are required; missing data fails explicitly. The evaluator does not download anything. The lane
@@ -112,14 +112,15 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 1684 targeted checks on 390 reviewed pages
-across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
-comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
+[corpus/regressions.json](../corpus/regressions.json) has 1975 targeted checks on 413 reviewed pages
+across 17 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
+comic, Blue Book, the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 514 ordered-text, 137 text, 219 paragraph,
-156 absent-text, 171 heading, 32 absent-heading, 57 list-item, 1 preformatted-lines, 17 script,
-11 footnote, 34 note-link, 43 paragraph-continuation, 1 list-item-continuation, 7 paragraph-separation,
-39 distinct-paragraph, 128 image-presence, 61 warning, 24 absent-warning, 17 source-region,
+the NBS and Replay Clocks academic papers), the US Courts Pro Se 1 fillable form and the NASA
+Word-exported IEEE paper. They comprise 705 ordered-text, 151 text, 250 paragraph,
+164 absent-text, 187 heading, 32 absent-heading, 57 list-item, 1 preformatted-lines, 20 script,
+11 footnote, 34 note-link, 45 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation,
+49 distinct-paragraph, 142 image-presence, 62 warning, 24 absent-warning, 17 source-region,
 3 glyph-structure, 3 image-appearance and 9 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
 anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
 
@@ -505,7 +506,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-685 Swift tests with no known-issue wrappers, and 219 Python tests.
+693 Swift tests with no known-issue wrappers, and 219 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

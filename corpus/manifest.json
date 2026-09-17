@@ -1074,6 +1074,154 @@
         "maxPeakRSSMiB": 256,
         "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
       }
+    },
+    {
+      "role": "development",
+      "identity": {
+        "suppliedBy": "publisher-download"
+      },
+      "id": "uscourts-pro-se-1-2016",
+      "title": "Complaint for a Civil Case (Pro Se 1, Rev. 12/16)",
+      "author": "Administrative Office of the United States Courts",
+      "publicationYear": 2016,
+      "url": "https://www.uscourts.gov/forms-rules/forms/complaint-a-civil-case",
+      "publisherPageURL": "https://www.uscourts.gov/forms-rules/forms/complaint-a-civil-case",
+      "downloadURL": "https://www.uscourts.gov/sites/default/files/complaint_for_a_civil_case.pdf",
+      "filename": "complaint_for_a_civil_case.pdf",
+      "bytes": 1054771,
+      "sha256": "9fe218570d311b0deab9413e39efda41210e60f2a5221eb360d43912ce05a118",
+      "pages": 5,
+      "provenance": "Pro Se 1 (Rev. 12/16), effective December 1, 2016, linked as the PDF download from the uscourts.gov form page (a .docx is also offered). Unversioned URL, so bytes are pinned. Acrobat Distiller 11.0 over PScript5 (WordPerfect source; WP-IconicSymbolsA checkbox font); untagged; AcroForm with 77 fields (68 text, 1 choice, 8 buttons including 4 push buttons on page 5), no XFA, document JavaScript; 7 of 11 fonts not embedded; no raster images.",
+      "rightsBasis": "Court form prepared by the Administrative Office of the United States Courts for the federal judiciary: a work of the United States Government under 17 U.S.C. 105. The PDF and its uscourts.gov form page carry no copyright notice or third-party credit, and the form contains no images. Owner approved on 2026-09-17. Not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "owner-confirmed",
+        "scope": "Owner approved on 2026-09-17 for the development corpus with committed derivatives (contract snippets); statutory basis only, no explicit uscourts.gov rights statement. Attribution: Administrative Office of the U.S. Courts, Complaint for a Civil Case (Pro Se 1), uscourts.gov."
+      },
+      "coverage": [
+        "fillable AcroForm without XFA: text fields, checkboxes, a choice field and push buttons",
+        "field labels stacked beside blank rules",
+        "fill-in sentences broken by blank rules",
+        "two-block court caption with a bracket column",
+        "numbered and lettered section labels set with tabs",
+        "unembedded WinAnsi TrueType fonts and a symbol font with a misleading ToUnicode map",
+        "running header over a double rule and a Page N of M folio"
+      ],
+      "reviewPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "attribution": "Complaint for a Civil Case (Pro Se 1, Rev. 12/16), Administrative Office of the United States Courts. Source: https://www.uscourts.gov/forms-rules/forms/complaint-a-civil-case. The PDF is unmodified.",
+      "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-17, as did an independent curl download.",
+      "reviewStatus": "Converted with EPUBCheck, progress and 128 MiB Mac RSS gate (64 MiB peak). Contract protects headings, caption and label order, whole instruction paragraphs, header removal and push buttons kept out of the text on all five pages. Field-label flattening, fill-in sentence fragmentation, section labels, checkbox glyphs, folio retention and the widget-forced page images are unqualified.",
+      "knownFidelityIssues": [
+        {
+          "page": 1,
+          "issue": "Empty field widgets add an Original page image and annotationsNotConverted on every page (the page-5 image shows the push buttons); checkbox glyphs extract as U+2019 on pages 1 and 3.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/151"
+        },
+        {
+          "page": 2,
+          "issue": "Stacked field labels run together into one paragraph per block (pages 1, 2, 5); fill-in sentences break at each blank with rule crops out of place (pages 3-4); section labels split from titles or set as <pre>; Statement of Claim split mid-line (page 4); ) bracket column, header-rule crop with clipped header text and Page N of 5 folio kept.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/152"
+        },
+        {
+          "page": 3,
+          "issue": "Period after the (foreign nation) blank emitted as a subscript.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/144"
+        }
+      ],
+      "baselineStatus": "Reviewed contract and corpus/uscourts-pro-se-1-2016-review.json recorded 2026-09-17; included in the corpus gate.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 128,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+      }
+    },
+    {
+      "role": "development",
+      "identity": {
+        "suppliedBy": "publisher-download"
+      },
+      "id": "ntrs-20200002975-gwl-2020",
+      "title": "Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads",
+      "author": "Thomas G. Ivanco, Donald F. Keller and Jennifer L. Pinkerton, NASA Langley Research Center",
+      "publicationYear": 2020,
+      "url": "https://ntrs.nasa.gov/citations/20200002975",
+      "publisherPageURL": "https://ntrs.nasa.gov/citations/20200002975",
+      "downloadURL": "https://ntrs.nasa.gov/api/citations/20200002975/downloads/20200002975.pdf",
+      "filename": "20200002975.pdf",
+      "bytes": 3268329,
+      "sha256": "a98e4fcdea40b8ea7023880dd88966f04198b4ec311fced0bb9ebb2dec45fe6d",
+      "pages": 20,
+      "provenance": "NASA Technical Reports Server record 20200002975 (report NF1676L-33598), author manuscript of the 2020 IEEE Aerospace Conference paper (DOI 10.1109/AERO47225.2020.9172608). Microsoft Word 2013 export (Creator and Producer), tagged (StructTreeRoot, MarkInfo), IEEE two-column template with a table of contents, Symbol-font Greek and bullets, an OMML equation, 27 figure rasters and 3 author portraits; 5 of 12 fonts not embedded.",
+      "rightsBasis": "Page 1 states U.S. Government work not protected by U.S. copyright; the paper's byline and the NTRS record place all three authors at NASA Langley Research Center (17 U.S.C. 105). The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and licenseType NO; distribution PUBLIC, no export control. No figure or photo carries a third-party credit: Figures 1-21 and A1-A5 are NASA facility sketches, photos, drawings and plots of NASA test data, and no NASA insignia is visible in them. The page-20 author portraits carry no credit at all. Owner approved on 2026-09-17. Not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "owner-confirmed",
+        "scope": "Owner approved on 2026-09-17 for the development corpus with committed text derivatives (contract snippets). No crops or rasters are committed: the page-20 portraits have no stated credit, so page 20 is excluded from raster references, and the contract needs no image references elsewhere. Attribution: Ivanco, Keller and Pinkerton, NASA Langley Research Center, NTRS 20200002975."
+      },
+      "coverage": [
+        "Microsoft Word 2013 PDF export with Word's structure tree",
+        "IEEE Aerospace two-column template with a table of contents",
+        "two-column prose broken by full-width and single-column figures",
+        "non-embedded Times New Roman and Arial fonts",
+        "Symbol-font Greek letters and bullets mapped to private-use code points",
+        "OMML display equation and Word sub/superscripts",
+        "references with doi lines and biographies wrapped around portraits"
+      ],
+      "reviewPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "attribution": "Thomas G. Ivanco, Donald F. Keller and Jennifer L. Pinkerton (NASA Langley Research Center), Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads, 2020 IEEE Aerospace Conference. Source: https://ntrs.nasa.gov/citations/20200002975. The PDF is unmodified.",
+      "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-17, as did an independent curl download (NTRS returned HTTP 503 for about ten minutes before that).",
+      "reviewStatus": "Converted with EPUBCheck, progress and 256 MiB Mac RSS gate (127 MiB peak). Contract protects headings, correct single-order pages 3, 4, 6 and 12, figure presence and captions, script semantics, cross-page continuation through page 10, appendix captions, reference order and biographies. Column interleaving, section-title and folio structure, reference headings and Symbol-font characters are unqualified.",
+      "knownFidelityIssues": [
+        {
+          "page": 2,
+          "issue": "Side-by-side column prose interleaves line by line on pages 1, 2, 5, 8, 9, 10 and 11; pages 7-8 read right-column blocks first; page-10 and page-11 figures out of page or caption order. 13 pages report structureFallback.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/153"
+        },
+        {
+          "page": 19,
+          "issue": "Section titles 2-6 are <pre> and unnumbered section titles bold paragraphs; folio 1 an h3, other folios kept or appended to paragraphs; references become h5 or split after their first line.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/154"
+        },
+        {
+          "page": 4,
+          "issue": "Symbol-font alpha emitted as U+F061 (page 4) and bullets as U+F0B7 with merged and split items (page 13); 45-degree-increment loses its hyphen.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/155"
+        },
+        {
+          "page": 1,
+          "issue": "Ten borderless internal link annotations force an Original page 1 image.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/151"
+        }
+      ],
+      "baselineStatus": "Reviewed contract and corpus/ntrs-20200002975-gwl-2020-review.json recorded 2026-09-17; included in the corpus gate.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 256,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+      }
     }
   ]
 }

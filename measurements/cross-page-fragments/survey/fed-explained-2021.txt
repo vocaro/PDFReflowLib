@@ -1,0 +1,18 @@
+# fed-explained-2021
+pages 135, old words 4355, new words 4353, reference words 4354
+furniture lines removed: head 200, foot 0, middle 3
+  MIDDLE p19#1/41 [The Three Key System Entities] / [11] / [bank financial institutions that have be]
+  MIDDLE p21#1/32 [The Three Key System Entities] / [13] / [All 12 of the Reserve Bank presidents at]
+  MIDDLE p135#1/7 [ed Explained: What the Central Bank Does] / [131] / [Find other Federal Reserve Board publica]
+skips: old 471, new 473, reference 473
+new drops from old 2: munications teristics
+new adds over old 0: 
+reference drops that new keeps 0: 
+reference keeps that new drops 1: munications
+SKIP 125:43 old=false new=false ref=true above [tive obligation to help meet the credit needs of their] line [local communities, including low- and moderate-]
+SKIP 13:6 old=false new=true ref=true above [ed structure of the System and its blend of private and public charac-] line [teristics, envisioned by the System’s creators, therefore, r]
+SKIP 34:2 old=false new=true ref=false above [The Fed Explained: What the Central Bank Does] line [munications are tied to FOMC meetings and]
+in-page hyphen decisions changed: 0, still short of the reference: 0
+XPAGE p34 com- + munications are tied to FOMC m -> old communications new communications
+XPAGE p107 pro- + cess federal payroll payments, -> old process new process
+cross-page hyphen breaks: 2, changed by the vocabulary: 0

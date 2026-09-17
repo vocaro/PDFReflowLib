@@ -1,0 +1,32 @@
+# cia-blue-book-14-1955
+pages 312, old words 7397, new words 7397, reference words 7399
+furniture lines removed: head 0, foot 150, middle 99
+  MIDDLE p17#43/51 [I] / [I] / [Any witness reporting to a proper author]
+  MIDDLE p22#49/51 [I] / [I] / [12]
+  MIDDLE p66#21/25 [I] / [I] / [FIGURE 39 DIAGRAM OF A CELESTIAL SPHERE]
+  MIDDLE p92#33/36 [I] / [I] / [Deep red]
+  MIDDLE p95#27/31 [I] / [I] / [. Side view]
+  MIDDLE p114#21/113 [I] / [I] / [Table A206.]
+  MIDDLE p122#21/229 [I] / [I] / [Evaluation]
+  MIDDLE p124#21/229 [I] / [I] / [Ewaluation]
+  MIDDLE p126#21/186 [I] / [I] / [!]
+  MIDDLE p128#21/191 [I] / [I] / [Enluabon]
+skips: old 53, new 59, reference 54
+new drops from old 0: 
+new adds over old 0: 
+reference drops that new keeps 0: 
+reference keeps that new drops 2: faawo rtjmber
+SKIP 148:22 old=false new=true ref=false above [I] line [i]
+SKIP 148:23 old=false new=true ref=false above [i] line [l Evaluahon]
+SKIP 156:23 old=false new=true ref=true above [E--] line [u,u ..]
+SKIP 183:1 old=true new=true ref=false above [VJIILE Ii Ill] line [fAAwO~{/ ,C,t:-!Rfl"A"]
+SKIP 183:2 old=true new=true ref=false above [fAAwO~{/ ,C,t:-!Rfl"A"] line [rtJmber Per Cent Number Per Cent]
+SKIP 183:7 old=true new=true ref=false above [J
+~] line [tJ 0 tJ.O o.o o.o]
+SKIP 225:31 old=false new=true ref=true above [6-] line [g.]
+SKIP 311:1 old=false new=true ref=true above [----------------------] line [w]
+SKIP 56:81 old=false new=true ref=true above ["~ ~ I I \_ '-] line [i..::::
+~]
+in-page hyphen decisions changed: 0, still short of the reference: 0
+XPAGE p183 /t1ti- + tJ 0 tJ.O o.o o.o -> old /t1titJ new /t1titJ
+cross-page hyphen breaks: 1, changed by the vocabulary: 0

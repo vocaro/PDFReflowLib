@@ -601,7 +601,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->840 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->850 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -610,6 +610,16 @@ NOAA page-553 and page-284 fixtures join `community-resilience-es-` + `timates.h
 continuation `timates` is no longer a book word, with controls for compounds opening a
 continuation line, words seen elsewhere, Fed page 27 and prose joins. See the
 [hyphen-fragment evidence](../measurements/hyphen-fragments/record.md).
+
+`CrossPageFragmentTests.swift` covers [#107](https://github.com/vocaro/PDFReflowLib/issues/107):
+matter outside a page's own text stream must not hide the word a page break cut in half. The
+fixtures keep their furniture, as the pipeline collects it — Wallace 212→213 under its folio, the
+9/11 report 101→102 under a running head set at the body's size, and Fed 33→34 under a note — and
+9/11 227+228+344 shows the fragment the running head hid deciding `strand-` + `ing` further on.
+Controls cover the carry a page's own first text line consumes, a capital continuation, a compound
+keeping its hyphen, a plate with no text stream, a script without case, and Loper Bright 11→12 with
+its head matter present. See the
+[cross-page fragment evidence](../measurements/cross-page-fragments/record.md).
 
 `FallbackBlocksAndLigaturesTests.swift` covers [#122](https://github.com/vocaro/PDFReflowLib/issues/122)
 and [#123](https://github.com/vocaro/PDFReflowLib/issues/123) items 1–2. CDC pages 14, 23 and 34

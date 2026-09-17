@@ -1,0 +1,2159 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        84.9602,
+        745.53924480000001,
+        425.18631317757445,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "bers using mental math, then we take any variables that are in common with each"
+        }
+      ],
+      "text" : "bers using mental math, then we take any variables that are in common with each"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        730.77944479999996,
+        349.47933210956802,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "term, using the lowest exponent. This is shown in the next example"
+        }
+      ],
+      "text" : "term, using the lowest exponent. This is shown in the next example"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        686.1511999999999,
+        79.690012178959392,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 263."
+        }
+      ],
+      "text" : "Example 263."
+    },
+    {
+      "rect" : [
+        97.56019999999998,
+        647.37944479999987,
+        117.87203841000007,
+        13.298257699999908
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "GCF of 24x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "z, 18x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        }
+      ],
+      "text" : "GCF of 24x4y2z, 18x2y4"
+    },
+    {
+      "rect" : [
+        215.40011000000004,
+        647.37944479999987,
+        66.271928409999987,
+        13.298257699999908
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", and 12x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "yz"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        }
+      ],
+      "text" : ", and 12x3yz5"
+    },
+    {
+      "rect" : [
+        167.39991000000003,
+        634.05956479999986,
+        11.726182243583992,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "24"
+        }
+      ],
+      "text" : "24"
+    },
+    {
+      "rect" : [
+        208.56006000000002,
+        634.0595548,
+        11.72619455744001,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "18"
+        }
+      ],
+      "text" : "18"
+    },
+    {
+      "rect" : [
+        249.83967000000001,
+        634.0595548,
+        11.72619455744001,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "12"
+        }
+      ],
+      "text" : "12"
+    },
+    {
+      "rect" : [
+        170.27999000000003,
+        619.05956479999986,
+        32.171724399999988,
+        19.646835200000169
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.6796800000001895,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "6 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "=4,"
+        }
+      ],
+      "text" : "6 =4,"
+    },
+    {
+      "rect" : [
+        211.56006000000002,
+        619.0595548,
+        32.171654400000023,
+        19.64684520000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.6796900000000505,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "6 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "=3,"
+        }
+      ],
+      "text" : "6 =3,"
+    },
+    {
+      "rect" : [
+        252.71975,
+        619.0595548,
+        29.023713577600034,
+        19.658800400000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.6796900000000505,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "6 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 2 "
+        }
+      ],
+      "text" : "6 = 2 "
+    },
+    {
+      "rect" : [
+        297.36020000000002,
+        619.0595548,
+        161.37804800000004,
+        19.658800400000018
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Each number can be divided by 6"
+        }
+      ],
+      "text" : "Each number can be divided by 6"
+    },
+    {
+      "rect" : [
+        264.48020000000008,
+        606.81934480000007,
+        17.222550400000046,
+        13.298257699999908
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y "
+        }
+      ],
+      "text" : "x2y "
+    },
+    {
+      "rect" : [
+        297.35533510400012,
+        606.81934480000007,
+        200.22032821898244,
+        13.298257699999908
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x and y are in all 3, using lowest exponets"
+        }
+      ],
+      "text" : "x and y are in all 3, using lowest exponets"
+    },
+    {
+      "rect" : [
+        220.20033000000009,
+        589.17954480000003,
+        141.74396104104963,
+        13.298257699999908
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "GCF = 6x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y Our Solution"
+        }
+      ],
+      "text" : "GCF = 6x2y Our Solution"
+    },
+    {
+      "rect" : [
+        84.960450000000122,
+        541.41934479999998,
+        425.17294493235204,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "To factor out a GCF from a polynomial we first need to identify the GCF of all"
+        }
+      ],
+      "text" : "To factor out a GCF from a polynomial we first need to identify the GCF of all"
+    },
+    {
+      "rect" : [
+        84.960450000000151,
+        526.77954479999994,
+        425.20448959280645,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "the terms, this is the part that goes in front of the parenthesis, then we divide"
+        }
+      ],
+      "text" : "the terms, this is the part that goes in front of the parenthesis, then we divide"
+    },
+    {
+      "rect" : [
+        84.960450000000151,
+        512.01934479999989,
+        425.21692481996797,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "each term by the GCF, the answer is what is left inside the parenthesis. This is"
+        }
+      ],
+      "text" : "each term by the GCF, the answer is what is left inside the parenthesis. This is"
+    },
+    {
+      "rect" : [
+        84.960450000000151,
+        497.37954479999985,
+        165.89406510179845,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "shown in the following examples"
+        }
+      ],
+      "text" : "shown in the following examples"
+    },
+    {
+      "rect" : [
+        84.960450000000151,
+        452.63129999999984,
+        79.690012202869752,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 264."
+        }
+      ],
+      "text" : "Example 264."
+    },
+    {
+      "rect" : [
+        111.12065000000007,
+        398.73934479999986,
+        16.832128409999996,
+        13.298647700000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.1601550000000316,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4x"
+        },
+        {
+          "baselineOffset" : 2.1601549999999747,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "4x2"
+    },
+    {
+      "rect" : [
+        162.48027999999999,
+        390.26300800000001,
+        29.686991200000023,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 20x"
+        }
+      ],
+      "text" : "− 20x"
+    },
+    {
+      "rect" : [
+        131.03999999999999,
+        391.53924480000001,
+        22.112248409999978,
+        13.298647700000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= x"
+        },
+        {
+          "baselineOffset" : 4.3203100000000063,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "= x2"
+    },
+    {
+      "rect" : [
+        153.12011999999999,
+        392.10113920000003,
+        3.2518144000000007,
+        10.974873600000024
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ","
+        }
+      ],
+      "text" : ","
+    },
+    {
+      "rect" : [
+        116.64057000000008,
+        383.73935479999989,
+        5.8580479999999966,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4"
+        }
+      ],
+      "text" : "4"
+    },
+    {
+      "rect" : [
+        174.36038000000002,
+        383.73924479999999,
+        5.8580479999999966,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4"
+        }
+      ],
+      "text" : "4"
+    },
+    {
+      "rect" : [
+        198.84045000000015,
+        413.97954479999987,
+        16.712208409999988,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -2.1599600000000123,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4x"
+        },
+        {
+          "baselineOffset" : 2.1599600000000123,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "4x2"
+    },
+    {
+      "rect" : [
+        195.36000000000001,
+        383.06300800000002,
+        38.766783171840018,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "=− 5x,"
+        }
+      ],
+      "text" : "=− 5x,"
+    },
+    {
+      "rect" : [
+        201.48009999999999,
+        371.61934480000002,
+        21.271928409999987,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4(x"
+        },
+        {
+          "baselineOffset" : 4.3199200000000246,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "4(x2"
+    },
+    {
+      "rect" : [
+        217.56076000000013,
+        405.50330799999989,
+        54.446212424447992,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 20x + 16 "
+        }
+      ],
+      "text" : "− 20x + 16 "
+    },
+    {
+      "rect" : [
+        287.76093722444807,
+        405.50330799999989,
+        152.01776077555201,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "GCF is 4, divide each term by 4"
+        }
+      ],
+      "text" : "GCF is 4, divide each term by 4"
+    },
+    {
+      "rect" : [
+        240.23968000000002,
+        398.73924479999999,
+        11.72619455744001,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "16"
+        }
+      ],
+      "text" : "16"
+    },
+    {
+      "rect" : [
+        243.11976000000001,
+        383.73924479999999,
+        28.903386444799963,
+        19.779110400000036
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.8000000000000114,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "4 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "=4 "
+        }
+      ],
+      "text" : "4 =4 "
+    },
+    {
+      "rect" : [
+        287.7602,
+        383.73924479999999,
+        197.45551268062724,
+        19.779110400000036
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "This is what is left inside the parenthesis"
+        }
+      ],
+      "text" : "This is what is left inside the parenthesis"
+    },
+    {
+      "rect" : [
+        224.76012999999998,
+        363.14310800000004,
+        127.58383955210243,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 5x +4) Our Solution"
+        }
+      ],
+      "text" : "− 5x +4) Our Solution"
+    },
+    {
+      "rect" : [
+        84.960139999999967,
+        323.97954480000004,
+        425.18405972093439,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "With factoring we can always check our solutions by multiplying (distributing in"
+        }
+      ],
+      "text" : "With factoring we can always check our solutions by multiplying (distributing in"
+    },
+    {
+      "rect" : [
+        84.960139999999967,
+        309.21934480000004,
+        383.05233496880641,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "this case) out the answer and the solution should be the original equation."
+        }
+      ],
+      "text" : "this case) out the answer and the solution should be the original equation."
+    },
+    {
+      "rect" : [
+        84.960139999999967,
+        264.59150000000005,
+        79.690012202869752,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 265."
+        }
+      ],
+      "text" : "Example 265."
+    },
+    {
+      "rect" : [
+        97.680279999999982,
+        210.69944480000009,
+        22.59192840999998,
+        13.298257699999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "25x"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        }
+      ],
+      "text" : "25x4"
+    },
+    {
+      "rect" : [
+        100.56037999999998,
+        195.6994648000001,
+        50.791548410000019,
+        21.098037699999907
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.7997799999999131,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5x"
+        },
+        {
+          "baselineOffset" : -4.3196999999999264,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 5x"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "5x2 = 5x2"
+    },
+    {
+      "rect" : [
+        151.43971999999999,
+        204.06113920000001,
+        3.2518144000000007,
+        10.974873599999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ","
+        }
+      ],
+      "text" : ","
+    },
+    {
+      "rect" : [
+        160.79988,
+        202.22300799999999,
+        33.872028410000013,
+        21.774494500000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 15x"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        }
+      ],
+      "text" : "− 15x3"
+    },
+    {
+      "rect" : [
+        169.31988000000001,
+        195.69926479999998,
+        16.832128409999996,
+        12.458417700000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -1.7400399999999934,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5x"
+        },
+        {
+          "baselineOffset" : 1.7400399999999934,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "5x2"
+    },
+    {
+      "rect" : [
+        191.28013999999996,
+        225.81934480000007,
+        22.591848410000011,
+        13.298647700000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "25x"
+        },
+        {
+          "baselineOffset" : 4.3203100000000063,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        }
+      ],
+      "text" : "25x4"
+    },
+    {
+      "rect" : [
+        215.88008999999997,
+        217.34310800000009,
+        69.632258409999991,
+        21.774884500000013
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 15x"
+        },
+        {
+          "baselineOffset" : 4.3203100000000063,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ 20x"
+        },
+        {
+          "baselineOffset" : 4.3203100000000063,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        }
+      ],
+      "text" : "− 15x3 + 20x2 "
+    },
+    {
+      "rect" : [
+        242.76006000000004,
+        210.69924479999997,
+        22.591928410000008,
+        13.298257700000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "20x"
+        },
+        {
+          "baselineOffset" : 4.3199199999999962,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "20x2"
+    },
+    {
+      "rect" : [
+        197.88,
+        195.023008,
+        38.766763171840012,
+        20.443392000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "=− 3x,"
+        }
+      ],
+      "text" : "=− 3x,"
+    },
+    {
+      "rect" : [
+        198.1198,
+        183.5793448,
+        38.072328409999983,
+        13.178337699999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5x"
+        },
+        {
+          "baselineOffset" : 4.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(5x"
+        },
+        {
+          "baselineOffset" : 4.1999999999999886,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "5x2(5x2"
+    },
+    {
+      "rect" : [
+        245.63976000000008,
+        195.69926479999998,
+        16.832128409999939,
+        19.779090400000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -7.799980000000005,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5x"
+        },
+        {
+          "baselineOffset" : -4.3199000000000183,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2 "
+        }
+      ],
+      "text" : "5x2 "
+    },
+    {
+      "rect" : [
+        268.56,
+        195.69926479999998,
+        17.023463577600012,
+        19.779090400000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "= 4 "
+        }
+      ],
+      "text" : "= 4 "
+    },
+    {
+      "rect" : [
+        238.19983999999999,
+        175.10310799999999,
+        47.405538854912038,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 3x + 4) "
+        }
+      ],
+      "text" : "− 3x + 4) "
+    },
+    {
+      "rect" : [
+        301.20011999999997,
+        217.34310800000009,
+        54.032128410000041,
+        21.774884500000013
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "GCF is 5x"
+        },
+        {
+          "baselineOffset" : 4.3203100000000063,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "GCF is 5x2"
+    },
+    {
+      "rect" : [
+        355.20011999999997,
+        225.81934480000007,
+        122.09552801809923,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", divide each term by this"
+        }
+      ],
+      "text" : ", divide each term by this"
+    },
+    {
+      "rect" : [
+        301.19979999999998,
+        195.69926479999998,
+        197.45590720222719,
+        19.779090400000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "This is what is left inside the parenthesis"
+        }
+      ],
+      "text" : "This is what is left inside the parenthesis"
+    },
+    {
+      "rect" : [
+        301.19986,
+        175.10310799999999,
+        64.583841041049652,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Our Solution"
+        }
+      ],
+      "text" : "Our Solution"
+    },
+    {
+      "rect" : [
+        84.959859999999992,
+        135.83109999999999,
+        79.690012226780198,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 266."
+        }
+      ],
+      "text" : "Example 266."
+    },
+    {
+      "rect" : [
+        186.71985999999998,
+        97.179344799999981,
+        84.872308409999903,
+        13.178337700000014
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "3x"
+        },
+        {
+          "baselineOffset" : 4.2000000000000028,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 4.2000000000000028,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "z + 5x"
+        },
+        {
+          "baselineOffset" : 4.2000000000000028,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "y"
+        },
+        {
+          "baselineOffset" : 4.2000000000000028,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "3"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "z"
+        },
+        {
+          "baselineOffset" : 4.2000000000000028,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "5"
+        }
+      ],
+      "text" : "3x3y2z + 5x4y3z5"
+    },
+    {
+      "rect" : [
+        273.59987999999993,
+        88.703107999999986,
+        106.11220840999994,
+        21.65457450000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "− 4xy"
+        },
+        {
+          "baselineOffset" : 4.2000000000000028,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "4 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "GCF is xy"
+        },
+        {
+          "baselineOffset" : 4.2000000000000028,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9701100000000009,
+          "text" : "2"
+        }
+      ],
+      "text" : "− 4xy4 GCF is xy2"
+    },
+    {
+      "rect" : [
+        379.67995999999994,
+        97.179344799999981,
+        122.09549949998075,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : ", divide each term by this"
+        }
+      ],
+      "text" : ", divide each term by this"
+    },
+    {
+      "rect" : [
+        297.11983999999995,
+        52.37905319999998,
+        15.061000995093593,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "213"
+        }
+      ],
+      "text" : "213"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      164.80000000000001,
+      630.5,
+      16.960000000000008,
+      4
+    ],
+    [
+      205.96000000000001,
+      630.5,
+      16.960000000000036,
+      4
+    ],
+    [
+      247.24000000000001,
+      630.5,
+      16.95999999999998,
+      4
+    ],
+    [
+      108.52000000000001,
+      395.30000000000001,
+      22,
+      4
+    ],
+    [
+      159.88000000000002,
+      395.30000000000001,
+      34.960000000000008,
+      4
+    ],
+    [
+      237.64000000000001,
+      395.30000000000001,
+      16.960000000000008,
+      4
+    ],
+    [
+      95.080100000000016,
+      207.14000000000001,
+      27.879900000000006,
+      4
+    ],
+    [
+      158.20000000000002,
+      207.14000000000001,
+      39.159999999999997,
+      4
+    ],
+    [
+      240.16,
+      207.14000000000001,
+      27.880000000000024,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        745.53924480000001,
+        425.18631317757445,
+        11.979110399999968
+      ],
+      "text" : "bers using mental math, then we take any variables that are in common with each"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        730.77944479999996,
+        349.47933210956802,
+        11.979110399999968
+      ],
+      "text" : "term, using the lowest exponent. This is shown in the next example"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        686.1511999999999,
+        79.690012178959392,
+        11.955199999999991
+      ],
+      "text" : "Example 263."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        97.56019999999998,
+        647.37944479999987,
+        117.87203841000007,
+        13.298257699999908
+      ],
+      "text" : "GCF of 24x4y2z, 18x2y4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        215.40011000000004,
+        647.37944479999987,
+        66.271928409999987,
+        13.298257699999908
+      ],
+      "text" : ", and 12x3yz5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        167.39991000000003,
+        634.05956479999986,
+        11.726182243583992,
+        11.979110399999968
+      ],
+      "text" : "24"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        208.56006000000002,
+        634.0595548,
+        11.72619455744001,
+        11.979110399999968
+      ],
+      "text" : "18"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        249.83967000000001,
+        634.0595548,
+        11.72619455744001,
+        11.979110399999968
+      ],
+      "text" : "12"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        170.27999000000003,
+        619.05956479999986,
+        32.171724399999988,
+        19.646835200000169
+      ],
+      "text" : "6 =4,"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        211.56006000000002,
+        619.0595548,
+        32.171654400000023,
+        19.64684520000003
+      ],
+      "text" : "6 =3,"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        252.71975,
+        619.0595548,
+        29.023713577600034,
+        19.658800400000018
+      ],
+      "text" : "6 = 2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        297.36020000000002,
+        619.0595548,
+        161.37804800000004,
+        19.658800400000018
+      ],
+      "text" : "Each number can be divided by 6"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        264.48020000000008,
+        606.81934480000007,
+        17.222550400000046,
+        13.298257699999908
+      ],
+      "text" : "x2y"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        297.35533510400012,
+        606.81934480000007,
+        200.22032821898244,
+        13.298257699999908
+      ],
+      "text" : "x and y are in all 3, using lowest exponets"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        220.20033000000009,
+        589.17954480000003,
+        141.74396104104963,
+        13.298257699999908
+      ],
+      "text" : "GCF = 6x2y Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960450000000122,
+        541.41934479999998,
+        425.17294493235204,
+        11.979110399999968
+      ],
+      "text" : "To factor out a GCF from a polynomial we first need to identify the GCF of all"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960450000000151,
+        526.77954479999994,
+        425.20448959280645,
+        11.979110399999968
+      ],
+      "text" : "the terms, this is the part that goes in front of the parenthesis, then we divide"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960450000000151,
+        512.01934479999989,
+        425.21692481996797,
+        11.979110399999968
+      ],
+      "text" : "each term by the GCF, the answer is what is left inside the parenthesis. This is"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960450000000151,
+        497.37954479999985,
+        165.89406510179845,
+        11.979110400000025
+      ],
+      "text" : "shown in the following examples"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960450000000151,
+        452.63129999999984,
+        79.690012202869752,
+        11.955199999999991
+      ],
+      "text" : "Example 264."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        111.12065000000007,
+        398.73934479999986,
+        16.832128409999996,
+        13.298647700000004
+      ],
+      "text" : "4x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        162.48027999999999,
+        390.26300800000001,
+        29.686991200000023,
+        20.455347200000006
+      ],
+      "text" : "− 20x"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        131.03999999999999,
+        391.53924480000001,
+        22.112248409999978,
+        13.298647700000004
+      ],
+      "text" : "= x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        153.12011999999999,
+        392.10113920000003,
+        3.2518144000000007,
+        10.974873600000024
+      ],
+      "text" : ","
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        116.64057000000008,
+        383.73935479999989,
+        5.8580479999999966,
+        11.967155199999979
+      ],
+      "text" : "4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        174.36038000000002,
+        383.73924479999999,
+        5.8580479999999966,
+        11.967155199999979
+      ],
+      "text" : "4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        198.84045000000015,
+        413.97954479999987,
+        16.712208409999988,
+        13.298257700000022
+      ],
+      "text" : "4x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        195.36000000000001,
+        383.06300800000002,
+        38.766783171840018,
+        20.443392000000017
+      ],
+      "text" : "=− 5x,"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        201.48009999999999,
+        371.61934480000002,
+        21.271928409999987,
+        13.298257700000022
+      ],
+      "text" : "4(x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        217.56076000000013,
+        405.50330799999989,
+        54.446212424447992,
+        20.455347200000006
+      ],
+      "text" : "− 20x + 16"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        287.76093722444807,
+        405.50330799999989,
+        152.01776077555201,
+        20.455347200000006
+      ],
+      "text" : "GCF is 4, divide each term by 4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        240.23968000000002,
+        398.73924479999999,
+        11.72619455744001,
+        11.979110400000025
+      ],
+      "text" : "16"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        243.11976000000001,
+        383.73924479999999,
+        28.903386444799963,
+        19.779110400000036
+      ],
+      "text" : "4 =4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        287.7602,
+        383.73924479999999,
+        197.45551268062724,
+        19.779110400000036
+      ],
+      "text" : "This is what is left inside the parenthesis"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        224.76012999999998,
+        363.14310800000004,
+        127.58383955210243,
+        20.455347200000006
+      ],
+      "text" : "− 5x +4) Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960139999999967,
+        323.97954480000004,
+        425.18405972093439,
+        11.979110400000025
+      ],
+      "text" : "With factoring we can always check our solutions by multiplying (distributing in"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960139999999967,
+        309.21934480000004,
+        383.05233496880641,
+        11.979110400000025
+      ],
+      "text" : "this case) out the answer and the solution should be the original equation."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960139999999967,
+        264.59150000000005,
+        79.690012202869752,
+        11.955199999999991
+      ],
+      "text" : "Example 265."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        97.680279999999982,
+        210.69944480000009,
+        22.59192840999998,
+        13.298257699999994
+      ],
+      "text" : "25x4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        100.56037999999998,
+        195.6994648000001,
+        50.791548410000019,
+        21.098037699999907
+      ],
+      "text" : "5x2 = 5x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        151.43971999999999,
+        204.06113920000001,
+        3.2518144000000007,
+        10.974873599999995
+      ],
+      "text" : ","
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        160.79988,
+        202.22300799999999,
+        33.872028410000013,
+        21.774494500000003
+      ],
+      "text" : "− 15x3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        169.31988000000001,
+        195.69926479999998,
+        16.832128409999996,
+        12.458417700000012
+      ],
+      "text" : "5x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        191.28013999999996,
+        225.81934480000007,
+        22.591848410000011,
+        13.298647700000032
+      ],
+      "text" : "25x4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        215.88008999999997,
+        217.34310800000009,
+        69.632258409999991,
+        21.774884500000013
+      ],
+      "text" : "− 15x3 + 20x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        242.76006000000004,
+        210.69924479999997,
+        22.591928410000008,
+        13.298257700000022
+      ],
+      "text" : "20x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        197.88,
+        195.023008,
+        38.766763171840012,
+        20.443392000000017
+      ],
+      "text" : "=− 3x,"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        198.1198,
+        183.5793448,
+        38.072328409999983,
+        13.178337699999986
+      ],
+      "text" : "5x2(5x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        245.63976000000008,
+        195.69926479999998,
+        16.832128409999939,
+        19.779090400000001
+      ],
+      "text" : "5x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        268.56,
+        195.69926479999998,
+        17.023463577600012,
+        19.779090400000001
+      ],
+      "text" : "= 4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        238.19983999999999,
+        175.10310799999999,
+        47.405538854912038,
+        20.455347200000006
+      ],
+      "text" : "− 3x + 4)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        301.20011999999997,
+        217.34310800000009,
+        54.032128410000041,
+        21.774884500000013
+      ],
+      "text" : "GCF is 5x2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        355.20011999999997,
+        225.81934480000007,
+        122.09552801809923,
+        11.979110399999996
+      ],
+      "text" : ", divide each term by this"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        301.19979999999998,
+        195.69926479999998,
+        197.45590720222719,
+        19.779090400000001
+      ],
+      "text" : "This is what is left inside the parenthesis"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        301.19986,
+        175.10310799999999,
+        64.583841041049652,
+        20.455347200000006
+      ],
+      "text" : "Our Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959859999999992,
+        135.83109999999999,
+        79.690012226780198,
+        11.955199999999991
+      ],
+      "text" : "Example 266."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        186.71985999999998,
+        97.179344799999981,
+        84.872308409999903,
+        13.178337700000014
+      ],
+      "text" : "3x3y2z + 5x4y3z5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        273.59987999999993,
+        88.703107999999986,
+        106.11220840999994,
+        21.65457450000001
+      ],
+      "text" : "− 4xy4 GCF is xy2"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        379.67995999999994,
+        97.179344799999981,
+        122.09549949998075,
+        11.979110399999996
+      ],
+      "text" : ", divide each term by this"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        297.11983999999995,
+        52.37905319999998,
+        15.061000995093593,
+        9.8729762399999998
+      ],
+      "text" : "213"
+    }
+  ],
+  "page" : 213,
+  "paints" : [
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        164.80000000000001,
+        630.5,
+        16.960000000000008,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        205.96000000000001,
+        630.5,
+        16.960000000000036,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        247.24000000000001,
+        630.5,
+        16.95999999999998,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        108.52000000000001,
+        395.30000000000001,
+        22,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        159.88000000000002,
+        395.30000000000001,
+        34.960000000000008,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        237.64000000000001,
+        395.30000000000001,
+        16.960000000000008,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        95.080100000000016,
+        207.14000000000001,
+        27.879900000000006,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        158.20000000000002,
+        207.14000000000001,
+        39.159999999999997,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        240.16,
+        207.14000000000001,
+        27.880000000000024,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

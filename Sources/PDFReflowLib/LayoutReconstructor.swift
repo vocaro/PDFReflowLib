@@ -20,13 +20,18 @@ enum LayoutReconstructor {
         addVocabulary(of: page, to: &vocabulary, after: &previous)
     }
 
-    /// `previous` carries the last line of the page before this one and comes back holding this
-    /// page's last line, so a word the page break cut in half is skipped as a word a line break
-    /// cut in half is (#148). A page's head matter — a running head, an opinion line, a folio —
-    /// stands outside the text stream and neither breaks the word nor carries it on, so the lines
-    /// before this page's first body-sized line leave the carried line standing (Loper Bright page
-    /// 11 ends `…And in general, it author-`; page 12 sets `4 LOPER BRIGHT ENTERPRISES v.
-    /// RAIMONDO` and `Opinion of the Court` over `izes the Secretary…`, and `izes` is no word).
+    /// `previous` carries the line the page before this one carried on with and comes back holding
+    /// this page's, so a word the page break cut in half is skipped as a word a line break cut in
+    /// half is (#148). Matter outside the page's own text stream — a running head, an opinion line,
+    /// a folio, a note under the last body line — neither breaks the word nor carries it on, so it
+    /// leaves the carried line standing where it stands above the continuation, and is passed over
+    /// where it stands below the broken word (#107). A page's text stream is its lines set in the
+    /// body's size that print a letter which is no capital: a running head set in that size prints
+    /// none beside its page number (the 9/11 report's `84 THE 9/11 COMMISSION REPORT` over
+    /// `rorists…`, page 102), and so does a folio (Wallace page 62's `62` under `…as the pres-`),
+    /// while a script without case reads as text wherever it is set. Head matter still stands as
+    /// the line above the one below it, so a break among the lines before the first text-stream
+    /// line is read too (Wallace page 245's `…denomi-` over `nator,…`).
     static func addVocabulary(of page: PageContent, to vocabulary: inout Set<String>,
                               after previous: inout String?) {
         let body = max(4, bodySize(page.lines))
@@ -35,12 +40,15 @@ enum LayoutReconstructor {
         // the page printed, so the fragment rule below reads it as any other break. Only a native
         // page has a measure to read this from (`blocks`).
         let measures = page.recognized || page.hasSyntheticTextStyle ? [:] : justifiedMeasures(page.lines)
-        var reachedBody = false
+        let carried = previous
+        var reachedStream = false
+        // The line printed above this one on this page, and the last of the page's own text stream.
+        var above: String?, lastInStream: String?
         for line in page.lines {
-            let isBody = abs(line.fontSize - body) <= body * 0.15
+            let inStream = abs(line.fontSize - body) <= body * 0.15 && line.text.contains(where: isMinuscule)
             var words = line.text.lowercased().split(whereSeparator: { !$0.isLetter && $0 != "-" })
-            if let previous, previous.hasSuffix("-") || previous.hasSuffix("\u{00ad}") || endsWithEqualsHyphen(previous),
-               line.text.first?.isLowercase == true, let first = words.first, !first.contains("-") {
+            if opensBrokenWord(after: above, line: line, first: words.first)
+                || (!reachedStream && opensBrokenWord(after: carried, line: line, first: words.first)) {
                 words.removeFirst()
             }
             // A drop cap's initial and fragment are one word: `the`, never `he` or `ny` (#135).
@@ -58,11 +66,29 @@ enum LayoutReconstructor {
             addAddressVocabulary(of: line.text, to: &vocabulary)
             addNumberPrefixVocabulary(of: line.text, to: &vocabulary)
             addDashVocabulary(of: line.text, to: &vocabulary)
-            if isBody { reachedBody = true }
-            if reachedBody {
-                previous = line.text + (endsShortOfMeasure(line, measures: measures) ? "-" : "")
+            above = line.text + (endsShortOfMeasure(line, measures: measures) ? "-" : "")
+            if inStream {
+                reachedStream = true
+                lastInStream = above
             }
         }
+        // A page with no text stream of its own — a plate, a full-page table — carries the word on.
+        if let lastInStream { previous = lastInStream }
+    }
+
+    /// A letter that is not a capital, which is what a running head set in capitals never prints.
+    /// A script without case — Arabic, Chinese — writes only such letters, so every prose line of
+    /// such a book reads as its page's text, which is all this evidence can say about it.
+    static func isMinuscule(_ character: Character) -> Bool { character.isLetter && !character.isUppercase }
+
+    /// Whether a line opens with the rest of a word the line above broke (#101): the line above
+    /// carries on with a hyphen, a soft hyphen or the book's own line-end sign, and this line opens
+    /// in lower case with a word holding no hyphen of its own (`straight-` + `and-level` keeps its
+    /// own unbroken hyphen, so it is a compound the book prints and not a fragment).
+    private static func opensBrokenWord(after previous: String?, line: TextLine, first: Substring?) -> Bool {
+        guard let previous, previous.hasSuffix("-") || previous.hasSuffix("\u{00ad}") || endsWithEqualsHyphen(previous),
+              line.text.first?.isLowercase == true, let first, !first.contains("-") else { return false }
+        return true
     }
 
     /// The Latin typographic ligatures U+FB00–U+FB06.

@@ -536,9 +536,21 @@ ending in a letter between a fifth and a half of its type size inside that measu
 the book's words then decide the break as they decide a printed one, and only a break the policy
 resolves by removing the hyphen closes up (`bom` + `barded` where the book prints `bombarded`;
 `real` + `ity`, which it never prints, keeps its space). Vocabulary collection skips the word
-after such a line as it skips the word after a printed hyphen, and carries the previous page's
-last line past a page's running heads and folios so a word a page break cut in half is skipped
-too. A recognized or synthetic page has no such measure.
+after such a line as it skips the word after a printed hyphen, and carries the line the page
+before carried on with, so a word a page break cut in half is skipped too. A recognized or
+synthetic page has no such measure.
+Collection runs before furniture removal, so it reads a page's own text stream to know what the
+page carries on with (#107): the lines set in the body's size that print a letter which is no
+capital, so a script without case reads as text wherever it is set. A
+running head or a folio the book sets in the body's own size prints none beside its page number
+(the 9/11 report's `84 THE 9/11 COMMISSION REPORT`, Wallace's `62`), and a note under the last
+body line is set smaller (the Fed's page 33). Such a line neither ends the carry nor replaces it:
+the carried line stands until the page's first text-stream line, and the line carried on is the
+last one. Every line still stands as the line above the one below it, so a break among a page's
+opening lines is read as well (Fed page 13's `…public charac-` over `teristics`). A running head
+the book sets in the body's size with ordinary capitalization (NOAA's `23-29 | US Caribbean`) has
+no evidence of its own on one page and still hides its break; furniture removal, which reads the
+whole book, is where that case belongs.
 A book may print its line-end hyphen as another glyph. The 9/11 report's chapters 5–9 set every
 word break with the embedded Bembo's `equal` glyph (width 667, a two-bar outline, ToUnicode
 U+003D), so it extracts as `=` (#126). Extraction counts, over the book's native pages, lines

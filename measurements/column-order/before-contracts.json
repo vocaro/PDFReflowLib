@@ -1,0 +1,31 @@
+{
+  "faa-phak-8083-25c": {
+    "contentChecks": 299,
+    "errors": [
+      "Page 340: missing or reordered text 'Some taxiway stubs also have a runway safety area boundary'",
+      "Page 340: missing or reordered text 'surface painted marking.'",
+      "Page 340: missing or reordered text 'Noncompliance with a runway holding position sign'",
+      "Page 401: missing or reordered text 'Suppose a flight is to be flown from E to P'",
+      "Page 401: missing or reordered text 'Place the protractor with the base resting'",
+      "Page 317: missing or reordered text 'Figure 13-6. Reportable contractions for sky condition.'",
+      "Page 317: missing or reordered text '12. Remarks'",
+      "Page 317: missing or reordered text 'METAR KGGG 161753Z'",
+      "Page 439: missing or reordered text 'this reaction is not their primary function'",
+      "Page 108: missing or reordered text 'Figure 5-16. Ground effect changes airflow.'",
+      "Page 108: missing or reordered text 'Ground effect also alters the thrust required'"
+    ]
+  },
+  "wallace-algebra-2010": {
+    "contentChecks": 128,
+    "errors": [
+      "Page 448: missing or reordered text '18)'",
+      "Page 448: missing or reordered text '19)'",
+      "Page 448: missing or reordered text '21)'",
+      "Page 448: missing or reordered text '22)'",
+      "Page 487: missing or reordered text '2) 1640.70'",
+      "Page 487: missing or reordered text '6) 1507.08'",
+      "Page 487: missing or reordered text '7) 2001.60'",
+      "Page 487: missing or reordered text '11) 13742.19'"
+    ]
+  }
+}

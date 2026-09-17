@@ -1,0 +1,71 @@
+====================================================================================================
+PAGE 448  blocks 66->66  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -1,25 +1,25 @@
+   p    15)
+   img  image-1670.png
+  +cap  Preserved region from page 448
+  +p    16)
+  +img  image-1673.png
+  +cap  Preserved region from page 448
+  +p    17)
+  +img  image-1676.png
+   cap  Preserved region from page 448
+   p    18)
+   img  image-1671.png
+   cap  Preserved region from page 448
+  +p    19)
+  +img  image-1674.png
+  +cap  Preserved region from page 448
+  +p    20)
+  +img  image-1677.png
+  +cap  Preserved region from page 448
+   p    21)
+   img  image-1672.png
+   cap  Preserved region from page 448
+  -p    16)
+  -img  image-1673.png
+  -cap  Preserved region from page 448
+  -p    19)
+  -img  image-1674.png
+  -cap  Preserved region from page 448
+   p    22)
+   img  image-1675.png
+  -cap  Preserved region from page 448
+  -p    17)
+  -img  image-1676.png
+  -cap  Preserved region from page 448
+  -p    20)
+  -img  image-1677.png
+   cap  Preserved region from page 448
+   p    2.2
+====================================================================================================
+PAGE 487  blocks 78->78  sameCharacters=True  sameBlockSet=True
+  --- before
+  +++ after
+  @@ -58,4 +58,9 @@
+   pre  c. 950.08; 953.44
+   pre  d. 1979.22; 1984.69
+  +pre  e. 1209.52; 1214.87
+  +pre  f. 1528.02; 1535.27
+  +pre  g. 2694.70; 2699.72
+  +pre  h. 3219.23; 3224.99
+  +pre  i. 7152.17; 7190.52
+   pre  2) 1640.70
+   pre  3) 2868.41
+  @@ -63,8 +68,4 @@
+   pre  5) 1726.16
+   pre  6) 1507.08
+  -pre  e. 1209.52; 1214.87
+  -pre  f. 1528.02; 1535.27
+  -pre  g. 2694.70; 2699.72
+  -pre  h. 3219.23; 3224.99
+   pre  7) 2001.60
+   pre  8) 2009.66
+  @@ -72,5 +73,4 @@
+   pre  10) 6386.12
+   pre  11) 13742.19
+  -pre  i. 7152.17; 7190.52
+   pre  12) 28240.43
+   pre  13) 12.02; 3.96

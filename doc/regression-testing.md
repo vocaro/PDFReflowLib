@@ -380,6 +380,17 @@ page 511 with its folio keeps the left column's tail ahead of the right column, 
 two-line speech balloons are not heading bands, and a synthetic figure spanning both columns is
 never dropped by a gutter measured over text. See the
 [column-cut evidence](../measurements/column-cuts/record.md).
+The same file covers [#86](https://github.com/vocaro/PDFReflowLib/issues/86) and
+[#78](https://github.com/vocaro/PDFReflowLib/issues/78): FAA pages 340, 401, 108, 439 and 392 read a
+figure set across both columns' full measure before or after the complete columns, where its crop
+comes within points of the columns (formerly interleaved line by line, or left, right, left, right
+across aligned paragraph space); Wallace page 487's stacked answer blocks read block by block and
+page 448's row-numbered graph grid reads 15–22 in number order. Controls: FAA 194 and 19 keep a
+column figure's caption in its column, Wallace 186/429 worked examples keep their notes, Wallace 449's
+column-numbered graphs and the two-to-a-row exercise sets (pages 10, 26, 424) keep column order, and
+synthetic layouts isolate the remaining guards (short cells under a figure, a figure between column
+blocks, a wide band under a head figure, aligned space in prose columns, a column's own tail). See
+the [column-order evidence](../measurements/column-order/record.md).
 
 These small JSONs capture native extraction from checksum-pinned sources, not converter output.
 They run offline on macOS and iOS. Capture another page with full Xcode selected:
@@ -399,7 +410,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-421 Swift tests with no known-issue wrappers, and 196 Python tests.
+441 Swift tests with no known-issue wrappers, and 196 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

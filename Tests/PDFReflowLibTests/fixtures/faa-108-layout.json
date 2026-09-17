@@ -1,0 +1,5583 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "5-11"
+        }
+      ],
+      "text" : "5-11"
+    },
+    {
+      "rect" : [
+        71.44199999999995,
+        78.475400000000008,
+        484.92400000000004,
+        142.523
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        72.25,
+        59.879200000000004,
+        178.14730000000003,
+        10.812000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 5-17."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " Ground effect changes drag and lift."
+        }
+      ],
+      "text" : "Figure 5-17. Ground effect changes drag and lift."
+    },
+    {
+      "rect" : [
+        320.92480000000006,
+        640.55730000000005,
+        237.81199999999995,
+        72.677999999999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        321,
+        623.40470000000005,
+        159.14830000000006,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 5-16."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " Ground effect changes airflow."
+        }
+      ],
+      "text" : "Figure 5-16. Ground effect changes airflow."
+    },
+    {
+      "rect" : [
+        72,
+        719.56640000000004,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "safety that allows wake turbulence dissipation. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 5-15]"
+        }
+      ],
+      "text" : "safety that allows wake turbulence dissipation. [Figure 5-15]"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        707.06640000000004,
+        236.84200000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "For more information on wake turbulence, see Advisory"
+        }
+      ],
+      "text" : "For more information on wake turbulence, see Advisory"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        694.56640000000004,
+        189.71000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Circular (AC) 90-23, Aircraft Wake Turbulence."
+        }
+      ],
+      "text" : "Circular (AC) 90-23, Aircraft Wake Turbulence."
+    },
+    {
+      "rect" : [
+        72,
+        668.28240000000005,
+        79.572000000000003,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "Ground Effect"
+        }
+      ],
+      "text" : "Ground Effect"
+    },
+    {
+      "rect" : [
+        72,
+        653.51639999999998,
+        237.01499999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Ever since the beginning of manned flight, pilots realized"
+        }
+      ],
+      "text" : "Ever since the beginning of manned flight, pilots realized"
+    },
+    {
+      "rect" : [
+        72,
+        641.01639999999998,
+        237.01999999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "that just before touchdown it would suddenly feel like the"
+        }
+      ],
+      "text" : "that just before touchdown it would suddenly feel like the"
+    },
+    {
+      "rect" : [
+        72,
+        628.51639999999998,
+        237.02300000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft did not want to go lower, and it would just want to go"
+        }
+      ],
+      "text" : "aircraft did not want to go lower, and it would just want to go"
+    },
+    {
+      "rect" : [
+        72,
+        616.01639999999998,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "on and on. This is due to the air that is trapped between the"
+        }
+      ],
+      "text" : "on and on. This is due to the air that is trapped between the"
+    },
+    {
+      "rect" : [
+        72,
+        603.51639999999998,
+        237.02099999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "wing and the landing surface, as if there were an air cushion."
+        }
+      ],
+      "text" : "wing and the landing surface, as if there were an air cushion."
+    },
+    {
+      "rect" : [
+        72,
+        591.01639999999998,
+        166.08000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "This phenomenon is called ground effect."
+        }
+      ],
+      "text" : "This phenomenon is called ground effect."
+    },
+    {
+      "rect" : [
+        72,
+        566.01639999999998,
+        237.00499999999982,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When an aircraft in flight comes within several feet of the"
+        }
+      ],
+      "text" : "When an aircraft in flight comes within several feet of the"
+    },
+    {
+      "rect" : [
+        72,
+        553.51639999999998,
+        237.00800000000038,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "surface, ground or water, a change occurs in the three-"
+        }
+      ],
+      "text" : "surface, ground or water, a change occurs in the three-"
+    },
+    {
+      "rect" : [
+        72,
+        541.01639999999998,
+        237.09900000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "dimensional flow pattern around the aircraft because the"
+        }
+      ],
+      "text" : "dimensional flow pattern around the aircraft because the"
+    },
+    {
+      "rect" : [
+        72,
+        528.51639999999998,
+        236.85199999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "vertical component of the airflow around the wing is"
+        }
+      ],
+      "text" : "vertical component of the airflow around the wing is"
+    },
+    {
+      "rect" : [
+        72,
+        516.01639999999998,
+        237.11399999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "restricted by the surface. This alters the wing’s upwash,"
+        }
+      ],
+      "text" : "restricted by the surface. This alters the wing’s upwash,"
+    },
+    {
+      "rect" : [
+        72,
+        503.51639999999998,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "downwash, and wingtip vortices. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 5-16]"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " Ground"
+        }
+      ],
+      "text" : "downwash, and wingtip vortices. [Figure 5-16] Ground"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        491.01639999999998,
+        237.02800000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "effect, then, is due to the interference of the ground (or water)"
+        }
+      ],
+      "text" : "effect, then, is due to the interference of the ground (or water)"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        478.51639999999998,
+        237.00599999999983,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "surface with the airflow patterns about the aircraft in flight."
+        }
+      ],
+      "text" : "surface with the airflow patterns about the aircraft in flight."
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        466.01639999999998,
+        237.00599999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "While the aerodynamic characteristics of the tail surfaces"
+        }
+      ],
+      "text" : "While the aerodynamic characteristics of the tail surfaces"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        453.51639999999998,
+        237.02099999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and the fuselage are altered by ground effect, the principal"
+        }
+      ],
+      "text" : "and the fuselage are altered by ground effect, the principal"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        441.01639999999998,
+        237.01399999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "effects due to proximity of the ground are the changes in"
+        }
+      ],
+      "text" : "effects due to proximity of the ground are the changes in"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        428.51639999999998,
+        237.00500000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the aerodynamic characteristics of the wing. As the wing"
+        }
+      ],
+      "text" : "the aerodynamic characteristics of the wing. As the wing"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        416.01639999999998,
+        237.15000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "encounters ground effect and is maintained at a constant"
+        }
+      ],
+      "text" : "encounters ground effect and is maintained at a constant"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        403.51639999999998,
+        236.88000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "AOA, there is consequent reduction in the upwash,"
+        }
+      ],
+      "text" : "AOA, there is consequent reduction in the upwash,"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        391.01639999999998,
+        131.93000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "downwash, and wingtip vortices."
+        }
+      ],
+      "text" : "downwash, and wingtip vortices."
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        366.01639999999998,
+        237.02000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Induced drag is a result of the airfoil’s work of sustaining"
+        }
+      ],
+      "text" : "Induced drag is a result of the airfoil’s work of sustaining"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        353.51639999999998,
+        237.00499999999985,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the aircraft, and a wing or rotor lifts the aircraft simply by"
+        }
+      ],
+      "text" : "the aircraft, and a wing or rotor lifts the aircraft simply by"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        341.01639999999998,
+        237.00699999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "accelerating a mass of air downward. It is true that reduced"
+        }
+      ],
+      "text" : "accelerating a mass of air downward. It is true that reduced"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        328.51639999999998,
+        236.97999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pressure on top of an airfoil is essential to lift, but that is"
+        }
+      ],
+      "text" : "pressure on top of an airfoil is essential to lift, but that is"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        316.01639999999998,
+        237.0029999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "only one of the things contributing to the overall effect of"
+        }
+      ],
+      "text" : "only one of the things contributing to the overall effect of"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        303.51639999999998,
+        236.99599999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pushing an air mass downward. The more downwash there"
+        }
+      ],
+      "text" : "pushing an air mass downward. The more downwash there"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        291.01639999999998,
+        236.97,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is, the harder the wing pushes the mass of air down. At high"
+        }
+      ],
+      "text" : "is, the harder the wing pushes the mass of air down. At high"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        278.51639999999998,
+        236.86199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "angles of attack, the amount of induced drag is high; since this"
+        }
+      ],
+      "text" : "angles of attack, the amount of induced drag is high; since this"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        266.01639999999998,
+        236.99499999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "corresponds to lower airspeeds in actual flight, it can be said"
+        }
+      ],
+      "text" : "corresponds to lower airspeeds in actual flight, it can be said"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        253.51639999999998,
+        237.00399999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "that induced drag predominates at low speed. However, the"
+        }
+      ],
+      "text" : "that induced drag predominates at low speed. However, the"
+    },
+    {
+      "rect" : [
+        72.000000000000028,
+        241.01639999999998,
+        237.00999999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "reduction of the wingtip vortices due to ground effect alters"
+        }
+      ],
+      "text" : "reduction of the wingtip vortices due to ground effect alters"
+    },
+    {
+      "rect" : [
+        321.00000000000006,
+        595.67640000000006,
+        237.01000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the spanwise lift distribution and reduces the induced AOA"
+        }
+      ],
+      "text" : "the spanwise lift distribution and reduces the induced AOA"
+    },
+    {
+      "rect" : [
+        321.00000000000006,
+        583.17640000000006,
+        237.01099999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and induced drag. Therefore, the wing will require a lower"
+        }
+      ],
+      "text" : "and induced drag. Therefore, the wing will require a lower"
+    },
+    {
+      "rect" : [
+        321.00000000000006,
+        569.43100000000004,
+        237.00509999999991,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "AOA in ground effect to produce the same C"
+        },
+        {
+          "baselineOffset" : -1.9954000000000178,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "L"
+        },
+        {
+          "baselineOffset" : 0.0045999999999821739,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ". If a constant"
+        }
+      ],
+      "text" : "AOA in ground effect to produce the same CL. If a constant"
+    },
+    {
+      "rect" : [
+        320.99509999999998,
+        556.93100000000004,
+        237.0027,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "AOA is maintained, an increase in C"
+        },
+        {
+          "baselineOffset" : -2,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "L"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " results. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 5-17]"
+        }
+      ],
+      "text" : "AOA is maintained, an increase in CL results. [Figure 5-17]"
+    },
+    {
+      "rect" : [
+        320.99780000000004,
+        533.18100000000004,
+        237.03999999999979,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Ground effect also alters the thrust required versus velocity."
+        }
+      ],
+      "text" : "Ground effect also alters the thrust required versus velocity."
+    },
+    {
+      "rect" : [
+        320.99780000000004,
+        520.68100000000004,
+        237.13500000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Since induced drag predominates at low speeds, the reduction"
+        }
+      ],
+      "text" : "Since induced drag predominates at low speeds, the reduction"
+    },
+    {
+      "rect" : [
+        320.99780000000004,
+        508.18100000000004,
+        236.99999999999983,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of induced drag due to ground effect will cause a significant"
+        }
+      ],
+      "text" : "of induced drag due to ground effect will cause a significant"
+    },
+    {
+      "rect" : [
+        320.99780000000004,
+        495.68100000000004,
+        237.00999999999982,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "reduction of thrust required (parasite plus induced drag) at low"
+        }
+      ],
+      "text" : "reduction of thrust required (parasite plus induced drag) at low"
+    },
+    {
+      "rect" : [
+        320.99780000000004,
+        483.18100000000004,
+        236.99999999999983,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "speeds. Due to the change in upwash, downwash, and wingtip"
+        }
+      ],
+      "text" : "speeds. Due to the change in upwash, downwash, and wingtip"
+    },
+    {
+      "rect" : [
+        320.99780000000004,
+        470.68100000000004,
+        237.10499999999985,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "vortices, there may be a change in position (installation) error"
+        }
+      ],
+      "text" : "vortices, there may be a change in position (installation) error"
+    },
+    {
+      "rect" : [
+        320.99780000000004,
+        458.18100000000004,
+        237.01999999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of the airspeed system associated with ground effect. In the"
+        }
+      ],
+      "text" : "of the airspeed system associated with ground effect. In the"
+    },
+    {
+      "rect" : [
+        320.99780000000004,
+        445.68100000000004,
+        237.05000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "majority of cases, ground effect causes an increase in the local"
+        }
+      ],
+      "text" : "majority of cases, ground effect causes an increase in the local"
+    },
+    {
+      "rect" : [
+        320.99780000000004,
+        433.18100000000004,
+        237.0449999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pressure at the static source and produces a lower indication"
+        }
+      ],
+      "text" : "pressure at the static source and produces a lower indication"
+    },
+    {
+      "rect" : [
+        320.99780000000004,
+        420.68100000000004,
+        237.06999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of airspeed and altitude. Thus, an aircraft may be airborne at"
+        }
+      ],
+      "text" : "of airspeed and altitude. Thus, an aircraft may be airborne at"
+    },
+    {
+      "rect" : [
+        320.99780000000004,
+        408.18100000000004,
+        214.44999999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "an indicated airspeed less than that normally required."
+        }
+      ],
+      "text" : "an indicated airspeed less than that normally required."
+    },
+    {
+      "rect" : [
+        320.99780000000004,
+        383.18100000000004,
+        236.98999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "In order for ground effect to be of significant magnitude, the"
+        }
+      ],
+      "text" : "In order for ground effect to be of significant magnitude, the"
+    },
+    {
+      "rect" : [
+        320.99780000000004,
+        370.68100000000004,
+        236.98999999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "wing must be quite close to the ground. One of the direct"
+        }
+      ],
+      "text" : "wing must be quite close to the ground. One of the direct"
+    },
+    {
+      "rect" : [
+        320.99780000000004,
+        358.18100000000004,
+        236.99899999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "results of ground effect is the variation of induced drag with"
+        }
+      ],
+      "text" : "results of ground effect is the variation of induced drag with"
+    },
+    {
+      "rect" : [
+        320.99780000000004,
+        344.43099999999998,
+        237.0093,
+        12.720000000000084
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "wing height above the ground at a constant C"
+        },
+        {
+          "baselineOffset" : -2.0000000000000568,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "L"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ". When the"
+        }
+      ],
+      "text" : "wing height above the ground at a constant CL. When the"
+    },
+    {
+      "rect" : [
+        321.00410000000005,
+        333.18099999999998,
+        237.01599999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "wing is at a height equal to its span, the reduction in induced"
+        }
+      ],
+      "text" : "wing is at a height equal to its span, the reduction in induced"
+    },
+    {
+      "rect" : [
+        321.00410000000005,
+        320.68099999999998,
+        237.02500000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "drag is only 1.4 percent. However, when the wing is at a"
+        }
+      ],
+      "text" : "drag is only 1.4 percent. However, when the wing is at a"
+    },
+    {
+      "rect" : [
+        321.00410000000005,
+        308.18099999999998,
+        237.012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "height equal to one-fourth its span, the reduction in induced"
+        }
+      ],
+      "text" : "height equal to one-fourth its span, the reduction in induced"
+    },
+    {
+      "rect" : [
+        321.00410000000005,
+        295.68099999999998,
+        237.03099999999978,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "drag is 23.5 percent and, when the wing is at a height equal"
+        }
+      ],
+      "text" : "drag is 23.5 percent and, when the wing is at a height equal"
+    },
+    {
+      "rect" : [
+        321.00410000000005,
+        283.18099999999998,
+        236.99999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to one-tenth its span, the reduction in induced drag is 47.6"
+        }
+      ],
+      "text" : "to one-tenth its span, the reduction in induced drag is 47.6"
+    },
+    {
+      "rect" : [
+        321.00410000000005,
+        270.68099999999998,
+        236.99999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "percent. Thus, a large reduction in induced drag takes place"
+        }
+      ],
+      "text" : "percent. Thus, a large reduction in induced drag takes place"
+    },
+    {
+      "rect" : [
+        321.00410000000005,
+        258.18099999999998,
+        237.00299999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "only when the wing is very close to the ground. Because of"
+        }
+      ],
+      "text" : "only when the wing is very close to the ground. Because of"
+    },
+    {
+      "rect" : [
+        321.00410000000005,
+        245.68099999999998,
+        236.8239999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "this variation, ground effect is most usually recognized during"
+        }
+      ],
+      "text" : "this variation, ground effect is most usually recognized during"
+    },
+    {
+      "rect" : [
+        321.00410000000005,
+        233.18099999999998,
+        237.10499999999985,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the liftoff for takeoff or just prior to touchdown when landing."
+        }
+      ],
+      "text" : "the liftoff for takeoff or just prior to touchdown when landing."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      69.94199999999995,
+      76.975400000000008,
+      487.92400000000004,
+      145.523
+    ],
+    [
+      318.92480000000006,
+      638.55730000000005,
+      241.81199999999995,
+      92.192699999999945
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "text" : "5-11"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        72.25,
+        59.879200000000004,
+        178.14730000000003,
+        10.812000000000005
+      ],
+      "structure" : {
+        "group" : 2498,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 11562
+      },
+      "text" : "Figure 5-17. Ground effect changes drag and lift."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        623.40470000000005,
+        159.14830000000006,
+        10.812000000000012
+      ],
+      "structure" : {
+        "group" : 2497,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 11559
+      },
+      "text" : "Figure 5-16. Ground effect changes airflow."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        719.56640000000004,
+        237,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2068,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 8661
+      },
+      "text" : "safety that allows wake turbulence dissipation. [Figure 5-15]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        707.06640000000004,
+        236.84200000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2068,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 8664
+      },
+      "text" : "For more information on wake turbulence, see Advisory"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        694.56640000000004,
+        189.71000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2068,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 8665
+      },
+      "text" : "Circular (AC) 90-23, Aircraft Wake Turbulence."
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        668.28240000000005,
+        79.572000000000003,
+        15.827999999999975
+      ],
+      "structure" : {
+        "group" : 2069,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 8666
+      },
+      "text" : "Ground Effect"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        653.51639999999998,
+        237.01499999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2070,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 8667
+      },
+      "text" : "Ever since the beginning of manned flight, pilots realized"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        641.01639999999998,
+        237.01999999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2070,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 8668
+      },
+      "text" : "that just before touchdown it would suddenly feel like the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        628.51639999999998,
+        237.02300000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2070,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 8669
+      },
+      "text" : "aircraft did not want to go lower, and it would just want to go"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        616.01639999999998,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2070,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 8670
+      },
+      "text" : "on and on. This is due to the air that is trapped between the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        603.51639999999998,
+        237.02099999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2070,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 8671
+      },
+      "text" : "wing and the landing surface, as if there were an air cushion."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        591.01639999999998,
+        166.08000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2070,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 8672
+      },
+      "text" : "This phenomenon is called ground effect."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        566.01639999999998,
+        237.00499999999982,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2071,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 8673
+      },
+      "text" : "When an aircraft in flight comes within several feet of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        553.51639999999998,
+        237.00800000000038,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2071,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 8674
+      },
+      "text" : "surface, ground or water, a change occurs in the three-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        541.01639999999998,
+        237.09900000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2071,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 8675
+      },
+      "text" : "dimensional flow pattern around the aircraft because the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        528.51639999999998,
+        236.85199999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2071,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 8676
+      },
+      "text" : "vertical component of the airflow around the wing is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        516.01639999999998,
+        237.11399999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2071,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 8677
+      },
+      "text" : "restricted by the surface. This alters the wing’s upwash,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        503.51639999999998,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2071,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 8678
+      },
+      "text" : "downwash, and wingtip vortices. [Figure 5-16] Ground"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        491.01639999999998,
+        237.02800000000011,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2071,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 8681
+      },
+      "text" : "effect, then, is due to the interference of the ground (or water)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        478.51639999999998,
+        237.00599999999983,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2071,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 8682
+      },
+      "text" : "surface with the airflow patterns about the aircraft in flight."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        466.01639999999998,
+        237.00599999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2072,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 8683
+      },
+      "text" : "While the aerodynamic characteristics of the tail surfaces"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        453.51639999999998,
+        237.02099999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2072,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 8684
+      },
+      "text" : "and the fuselage are altered by ground effect, the principal"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        441.01639999999998,
+        237.01399999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2072,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 8685
+      },
+      "text" : "effects due to proximity of the ground are the changes in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        428.51639999999998,
+        237.00500000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2072,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 8686
+      },
+      "text" : "the aerodynamic characteristics of the wing. As the wing"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        416.01639999999998,
+        237.15000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2072,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 8687
+      },
+      "text" : "encounters ground effect and is maintained at a constant"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        403.51639999999998,
+        236.88000000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2072,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 8688
+      },
+      "text" : "AOA, there is consequent reduction in the upwash,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        391.01639999999998,
+        131.93000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2072,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 8689
+      },
+      "text" : "downwash, and wingtip vortices."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        366.01639999999998,
+        237.02000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2073,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 8690
+      },
+      "text" : "Induced drag is a result of the airfoil’s work of sustaining"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        353.51639999999998,
+        237.00499999999985,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2073,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 8691
+      },
+      "text" : "the aircraft, and a wing or rotor lifts the aircraft simply by"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        341.01639999999998,
+        237.00699999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2073,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 8692
+      },
+      "text" : "accelerating a mass of air downward. It is true that reduced"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        328.51639999999998,
+        236.97999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2073,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 8693
+      },
+      "text" : "pressure on top of an airfoil is essential to lift, but that is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        316.01639999999998,
+        237.0029999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2073,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 8694
+      },
+      "text" : "only one of the things contributing to the overall effect of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        303.51639999999998,
+        236.99599999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2073,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 8695
+      },
+      "text" : "pushing an air mass downward. The more downwash there"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        291.01639999999998,
+        236.97,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2073,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 8696
+      },
+      "text" : "is, the harder the wing pushes the mass of air down. At high"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        278.51639999999998,
+        236.86199999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2073,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 8697
+      },
+      "text" : "angles of attack, the amount of induced drag is high; since this"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        266.01639999999998,
+        236.99499999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2073,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 8698
+      },
+      "text" : "corresponds to lower airspeeds in actual flight, it can be said"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        253.51639999999998,
+        237.00399999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2073,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 8699
+      },
+      "text" : "that induced drag predominates at low speed. However, the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.000000000000028,
+        241.01639999999998,
+        237.00999999999996,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2073,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 8700
+      },
+      "text" : "reduction of the wingtip vortices due to ground effect alters"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00000000000006,
+        595.67640000000006,
+        237.01000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2073,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 8701
+      },
+      "text" : "the spanwise lift distribution and reduces the induced AOA"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00000000000006,
+        583.17640000000006,
+        237.01099999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2073,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 8702
+      },
+      "text" : "and induced drag. Therefore, the wing will require a lower"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00000000000006,
+        569.43100000000004,
+        237.00509999999991,
+        12.720000000000027
+      ],
+      "structure" : {
+        "group" : 2073,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 8703
+      },
+      "text" : "AOA in ground effect to produce the same CL. If a constant"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99509999999998,
+        556.93100000000004,
+        237.0027,
+        12.720000000000027
+      ],
+      "structure" : {
+        "group" : 2073,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 8706
+      },
+      "text" : "AOA is maintained, an increase in CL results. [Figure 5-17]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99780000000004,
+        533.18100000000004,
+        237.03999999999979,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2074,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 8710
+      },
+      "text" : "Ground effect also alters the thrust required versus velocity."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99780000000004,
+        520.68100000000004,
+        237.13500000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2074,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 8711
+      },
+      "text" : "Since induced drag predominates at low speeds, the reduction"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99780000000004,
+        508.18100000000004,
+        236.99999999999983,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2074,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 8712
+      },
+      "text" : "of induced drag due to ground effect will cause a significant"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99780000000004,
+        495.68100000000004,
+        237.00999999999982,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2074,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 8713
+      },
+      "text" : "reduction of thrust required (parasite plus induced drag) at low"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99780000000004,
+        483.18100000000004,
+        236.99999999999983,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2074,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 8714
+      },
+      "text" : "speeds. Due to the change in upwash, downwash, and wingtip"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99780000000004,
+        470.68100000000004,
+        237.10499999999985,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2074,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 8715
+      },
+      "text" : "vortices, there may be a change in position (installation) error"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99780000000004,
+        458.18100000000004,
+        237.01999999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2074,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 8716
+      },
+      "text" : "of the airspeed system associated with ground effect. In the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99780000000004,
+        445.68100000000004,
+        237.05000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2074,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 8717
+      },
+      "text" : "majority of cases, ground effect causes an increase in the local"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99780000000004,
+        433.18100000000004,
+        237.0449999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2074,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 8718
+      },
+      "text" : "pressure at the static source and produces a lower indication"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99780000000004,
+        420.68100000000004,
+        237.06999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2074,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 8719
+      },
+      "text" : "of airspeed and altitude. Thus, an aircraft may be airborne at"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99780000000004,
+        408.18100000000004,
+        214.44999999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2074,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 8720
+      },
+      "text" : "an indicated airspeed less than that normally required."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99780000000004,
+        383.18100000000004,
+        236.98999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2075,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 8721
+      },
+      "text" : "In order for ground effect to be of significant magnitude, the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99780000000004,
+        370.68100000000004,
+        236.98999999999984,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2075,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 8722
+      },
+      "text" : "wing must be quite close to the ground. One of the direct"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99780000000004,
+        358.18100000000004,
+        236.99899999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2075,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 8723
+      },
+      "text" : "results of ground effect is the variation of induced drag with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        320.99780000000004,
+        344.43099999999998,
+        237.0093,
+        12.720000000000084
+      ],
+      "structure" : {
+        "group" : 2075,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 8724
+      },
+      "text" : "wing height above the ground at a constant CL. When the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00410000000005,
+        333.18099999999998,
+        237.01599999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2075,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 8727
+      },
+      "text" : "wing is at a height equal to its span, the reduction in induced"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00410000000005,
+        320.68099999999998,
+        237.02500000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2075,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 8728
+      },
+      "text" : "drag is only 1.4 percent. However, when the wing is at a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00410000000005,
+        308.18099999999998,
+        237.012,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2075,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 8729
+      },
+      "text" : "height equal to one-fourth its span, the reduction in induced"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00410000000005,
+        295.68099999999998,
+        237.03099999999978,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2075,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 8730
+      },
+      "text" : "drag is 23.5 percent and, when the wing is at a height equal"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00410000000005,
+        283.18099999999998,
+        236.99999999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2075,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 8731
+      },
+      "text" : "to one-tenth its span, the reduction in induced drag is 47.6"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00410000000005,
+        270.68099999999998,
+        236.99999999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2075,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 8732
+      },
+      "text" : "percent. Thus, a large reduction in induced drag takes place"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00410000000005,
+        258.18099999999998,
+        237.00299999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2075,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 8733
+      },
+      "text" : "only when the wing is very close to the ground. Because of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00410000000005,
+        245.68099999999998,
+        236.8239999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2075,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 8734
+      },
+      "text" : "this variation, ground effect is most usually recognized during"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00410000000005,
+        233.18099999999998,
+        237.10499999999985,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2075,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 8735
+      },
+      "text" : "the liftoff for takeoff or just prior to touchdown when landing."
+    }
+  ],
+  "page" : 108,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        69.94199999999995,
+        76.975400000000008,
+        487.92400000000004,
+        145.523
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        71.941699999999997,
+        78.975499999999982,
+        483.92430000000002,
+        142.99950000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        69.94199999999995,
+        76.975400000000008,
+        487.92400000000004,
+        145.523
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.16919999999999,
+        97.254800000000003,
+        180.58100000000002,
+        120.51800000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.16919999999999,
+        97.254800000000003,
+        180.58100000000002,
+        120.51800000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17100000000001,
+        194.613,
+        180.084,
+        7.8720000000000141
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.17100000000001,
+        196.613,
+        176.084,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17100000000001,
+        186.87800000000001,
+        180.084,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.17100000000001,
+        188.87700000000001,
+        176.084,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17100000000001,
+        179.14099999999999,
+        180.084,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.17100000000001,
+        181.14099999999999,
+        176.084,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17100000000001,
+        171.40600000000001,
+        180.084,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.17100000000001,
+        173.405,
+        176.084,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17100000000001,
+        163.66800000000001,
+        180.084,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.17100000000001,
+        165.66900000000001,
+        176.084,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17100000000001,
+        155.93299999999999,
+        180.084,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.17100000000001,
+        157.93199999999999,
+        176.084,
+        3.8720000000000141
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17100000000001,
+        148.19800000000001,
+        180.084,
+        7.8689999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.17100000000001,
+        150.19800000000001,
+        176.084,
+        3.8689999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17100000000001,
+        140.464,
+        180.084,
+        7.8689999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.17100000000001,
+        142.464,
+        176.084,
+        3.8689999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17100000000001,
+        132.727,
+        180.084,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.17100000000001,
+        134.727,
+        176.084,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17100000000001,
+        124.992,
+        180.084,
+        7.8699999999999903
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.17100000000001,
+        126.991,
+        176.084,
+        3.8709999999999951
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.63560000000001,
+        117.4081,
+        180.08499999999998,
+        7.2519999999999953
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.636,
+        119.408,
+        176.08500000000001,
+        3.2519999999999953
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17100000000001,
+        108.72800000000001,
+        180.084,
+        7.8709999999999951
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.17100000000001,
+        110.727,
+        176.084,
+        3.8709999999999951
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17100000000001,
+        100.992,
+        180.084,
+        7.8709999999999951
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.17100000000001,
+        102.991,
+        176.084,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17100000000001,
+        210.08600000000001,
+        180.084,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.17100000000001,
+        212.08500000000001,
+        176.084,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.1712,
+        202.9684,
+        180.084,
+        7.2520000000000095
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.17100000000001,
+        204.96799999999999,
+        176.084,
+        3.2520000000000095
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17070000000001,
+        136.5966,
+        180.34300000000002,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17070000000001,
+        117.13760000000001,
+        180.34300000000002,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17070000000001,
+        156.0566,
+        180.34300000000002,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17070000000001,
+        175.5155,
+        180.14099999999996,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17070000000001,
+        194.97499999999999,
+        180.34300000000002,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        105.536,
+        97.254000000000005,
+        16.5,
+        120.51799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.17,
+        81.262,
+        180.58100000000002,
+        16.5
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        158.47929999999999,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        127.54179999999999,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        131.96170000000001,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        154.05940000000001,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.63990000000001,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.3811,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.22050000000002,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        140.8006,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        162.89870000000002,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.3186,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.7381,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        189.41680000000002,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        176.1575,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        184.99690000000001,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        180.57689999999999,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.25560000000002,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        193.83620000000002,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        202.67510000000001,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        207.095,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.51390000000001,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        215.93390000000002,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        220.35380000000001,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        224.54230000000001,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        228.96220000000002,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        251.05980000000002,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        246.64090000000002,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        233.3811,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        242.221,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        237.80110000000002,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        255.51390000000004,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        259.93389999999999,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        264.35380000000004,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        268.54230000000001,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        272.9622,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        295.0598,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        290.64089999999999,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        277.3811,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        286.22090000000003,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        281.80110000000002,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.17079999999999,
+        97.254800000000003,
+        180.58000000000004,
+        120.51800000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.17079999999999,
+        97.254800000000003,
+        180.58000000000004,
+        120.51800000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.173,
+        194.613,
+        180.08400000000006,
+        7.8720000000000141
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.173,
+        196.613,
+        176.084,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.173,
+        186.87800000000001,
+        180.08400000000006,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.173,
+        188.87700000000001,
+        176.084,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.173,
+        179.14099999999999,
+        180.08400000000006,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.173,
+        181.14099999999999,
+        176.084,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.173,
+        171.40600000000001,
+        180.08400000000006,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.173,
+        173.405,
+        176.084,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.173,
+        163.66800000000001,
+        180.08400000000006,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.173,
+        165.66900000000001,
+        176.084,
+        3.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.173,
+        155.93299999999999,
+        180.08400000000006,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.173,
+        157.93199999999999,
+        176.084,
+        3.8720000000000141
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.173,
+        148.19800000000001,
+        180.08400000000006,
+        7.8689999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.173,
+        150.19800000000001,
+        176.084,
+        3.8689999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.173,
+        140.464,
+        180.08400000000006,
+        7.8689999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.173,
+        142.464,
+        176.084,
+        3.8689999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.173,
+        132.727,
+        180.08400000000006,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.173,
+        134.727,
+        176.084,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.173,
+        124.992,
+        180.08400000000006,
+        7.8699999999999903
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.173,
+        126.991,
+        176.084,
+        3.8709999999999951
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.637,
+        117.4081,
+        180.084,
+        7.2519999999999953
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.637,
+        119.408,
+        176.084,
+        3.2519999999999953
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.173,
+        108.72800000000001,
+        180.08400000000006,
+        7.8709999999999951
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.173,
+        110.727,
+        176.084,
+        3.8709999999999951
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.173,
+        100.992,
+        180.08400000000006,
+        7.8709999999999951
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.173,
+        102.991,
+        176.084,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.173,
+        210.08600000000001,
+        180.08400000000006,
+        7.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.173,
+        212.08500000000001,
+        176.084,
+        3.8710000000000093
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.17259999999999,
+        202.9684,
+        180.08399999999995,
+        7.2520000000000095
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        335.173,
+        204.96799999999999,
+        176.084,
+        3.2520000000000095
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.17259999999999,
+        136.5966,
+        180.34199999999998,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.17259999999999,
+        117.13760000000001,
+        180.34199999999998,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.17259999999999,
+        156.0566,
+        180.34199999999998,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.17259999999999,
+        175.5155,
+        180.14099999999996,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.17259999999999,
+        194.97499999999999,
+        180.34199999999998,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        316.53800000000001,
+        97.254000000000005,
+        16.5,
+        120.51799999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.17099999999999,
+        81.262,
+        180.57999999999998,
+        16.5
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.4812,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        337.5437,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        341.96370000000002,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        364.06130000000002,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        359.64140000000003,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        346.38159999999999,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        355.22149999999999,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        350.80150000000003,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        372.89920000000001,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        377.31909999999999,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        381.73900000000003,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        399.4187,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        386.15899999999999,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        394.99880000000002,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        390.57890000000003,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        408.25659999999999,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        403.83670000000001,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        412.67650000000003,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        417.09649999999999,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        421.51440000000002,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        425.93440000000004,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        430.35430000000002,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        434.5437,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        438.96370000000002,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        461.06130000000002,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        456.64140000000003,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        443.38160000000005,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        452.22150000000005,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        447.80150000000003,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        465.84740000000005,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        470.26740000000001,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        474.68730000000005,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        478.87670000000003,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        483.29670000000004,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        505.39430000000004,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        500.9744,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        487.71460000000002,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.71460000000002,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        496.55450000000002,
+        97.624300000000005,
+        4,
+        120.006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        492.13460000000003,
+        97.623900000000006,
+        4,
+        120.00600000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.0325,
+        153.74700000000001,
+        15.667000000000002,
+        24.834000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.65129999999999,
+        171.53300000000002,
+        82.76600000000002,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.65129999999999,
+        171.53300000000002,
+        82.76600000000002,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        201.4495,
+        120.081,
+        18,
+        26.500000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        174.40129999999999,
+        108.283,
+        79.76600000000002,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        174.40129999999999,
+        108.283,
+        79.76600000000002,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        411.36599999999999,
+        149.41300000000001,
+        15.668000000000006,
+        24.834000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        400.98480000000001,
+        136.19900000000001,
+        82.76600000000002,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        400.98480000000001,
+        136.19900000000001,
+        82.76600000000002,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        385.11599999999999,
+        177.08100000000002,
+        18,
+        26.5
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        338.73480000000001,
+        197.28300000000002,
+        79.76600000000002,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        338.73480000000001,
+        197.28300000000002,
+        79.76600000000002,
+        18
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        139.93180000000001,
+        129.34350000000001,
+        118.089,
+        73.754999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        139.93200000000002,
+        116.93899999999999,
+        97.955999999999989,
+        64.806000000000012
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        351.5496,
+        100.90910000000001,
+        117.88299999999998,
+        112.76200000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        351.7937,
+        101.39540000000001,
+        85.204999999999984,
+        113.49400000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        319.75,
+        664.78399999999999,
+        240.81799999999998,
+        65.966000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        318.92480000000006,
+        638.55730000000005,
+        241.81199999999995,
+        36.741999999999962
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        319.75,
+        659.61099999999999,
+        240.81799999999998,
+        15.444000000000074
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        340.154,
+        659.73199999999997,
+        59.79200000000003,
+        14.597000000000094
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        366.72500000000002,
+        659.73199999999997,
+        51.99799999999999,
+        14.902000000000044
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        405.75200000000001,
+        661.81200000000001,
+        66.324999999999989,
+        11.850000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        441.61099999999999,
+        663.01099999999997,
+        78.500999999999976,
+        11.901000000000067
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        531.11000000000001,
+        663.02700000000004,
+        29.45799999999997,
+        8.0059999999999718
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.75,
+        661.61000000000001,
+        236.81799999999998,
+        11.44500000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        468.452,
+        717.07900000000006,
+        92.115999999999985,
+        13.670999999999935
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        434.31700000000001,
+        680.80700000000002,
+        126.25099999999998,
+        49.942999999999984
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        334.87520000000001,
+        647.24389999999994,
+        203.42599999999999,
+        10.503000000000043
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        336.875,
+        649.24400000000003,
+        199.42500000000007,
+        6.5029999999999291
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        344.5283,
+        650.81790000000001,
+        172.12299999999999,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        496.98099999999999,
+        701.70000000000005,
+        29.685000000000059,
+        11.975999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        519.94799999999998,
+        707.87300000000005,
+        5.7889999999999873,
+        4.3500000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        519.70400000000006,
+        707.49900000000002,
+        5.79099999999994,
+        4.34699999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        519.50400000000002,
+        707.06200000000001,
+        5.8559999999999945,
+        4.3550000000000182
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        519.19600000000003,
+        706.59900000000005,
+        5.9230000000000018,
+        4.3629999999999427
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        518.94799999999998,
+        706.178,
+        5.9329999999999927,
+        4.3630000000000564
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        518.65800000000002,
+        705.66499999999996,
+        5.9879999999999427,
+        4.3690000000000282
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        518.40700000000004,
+        705.24000000000001,
+        6.0419999999999163,
+        4.375
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        518.12599999999998,
+        704.77499999999998,
+        6.0670000000000073,
+        4.3799999999999955
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        517.89999999999998,
+        704.35000000000002,
+        6.0960000000000036,
+        4.3799999999999955
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        517.63599999999997,
+        703.90499999999997,
+        6.1589999999999918,
+        4.3899999999999864
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        517.41100000000006,
+        703.47900000000004,
+        6.1730000000000018,
+        4.3909999999999627
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        517.12900000000002,
+        703.01700000000005,
+        6.1979999999999791,
+        4.3929999999999154
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        516.87599999999998,
+        702.59100000000001,
+        6.2440000000000282,
+        4.3990000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.58800000000002,
+        697.31299999999999,
+        50.526999999999987,
+        14.594000000000051
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        476.40899999999999,
+        698.48900000000003,
+        5.1910000000000309,
+        6.2509999999999764
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        476.40870000000007,
+        698.48840000000007,
+        5.1919999999999504,
+        6.2519999999999527
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        487.012,
+        696.97400000000005,
+        5.5939999999999941,
+        6.9329999999999927
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        486.99840000000006,
+        696.97410000000002,
+        5.6080000000000041,
+        7.1290000000000191
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        475.255,
+        696.27800000000002,
+        6.29200000000003,
+        6.2290000000000418
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        475.72500000000002,
+        696.75,
+        5.3519999999999754,
+        5.3139999999999645
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        473.53199999999998,
+        696.52499999999998,
+        10.135000000000048,
+        6.2540000000000191
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        473.66500000000002,
+        697.63999999999999,
+        8.6419999999999959,
+        4.9070000000000391
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        473.66300000000001,
+        696.52499999999998,
+        9.9660000000000082,
+        5.8230000000000928
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        473.50490000000002,
+        696.52480000000003,
+        10.163000000000011,
+        6.3810000000000855
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        485.51999999999998,
+        693.49900000000002,
+        7.3630000000000564,
+        7.4059999999999491
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        486.15800000000002,
+        694.21699999999998,
+        6.0349999999999682,
+        6.0120000000000573
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        483.23700000000002,
+        693.94000000000005,
+        12.243999999999971,
+        7.3789999999999054
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        483.41399999999999,
+        695.63400000000001,
+        10.301000000000045,
+        5.3740000000000236
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        483.41800000000001,
+        693.94200000000001,
+        12.004000000000019,
+        6.7749999999999773
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        483.20589999999999,
+        693.94010000000003,
+        12.274000000000001,
+        7.5570000000000164
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.86700000000002,
+        697.26599999999996,
+        45.27600000000001,
+        10.171000000000049
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.62,
+        697.25400000000002,
+        50,
+        10.961999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.63600000000002,
+        701.34100000000001,
+        50.009999999999934,
+        7.7240000000000464
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        486.12200000000001,
+        703.92200000000003,
+        5.1050000000000182,
+        5.2759999999999536
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        488.12200000000001,
+        705.92200000000003,
+        1.1050000000000182,
+        1.2770000000000437
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        490.77199999999999,
+        703.32299999999998,
+        5.1370000000000005,
+        5.2680000000000291
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        492.77199999999999,
+        705.322,
+        1.1370000000000005,
+        1.2690000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        479.88100000000003,
+        704.89200000000005,
+        5.8839999999999577,
+        5.51299999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        481.88,
+        706.89200000000005,
+        1.8849999999999909,
+        1.51400000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        493.52600000000001,
+        703.48400000000004,
+        7.3460000000000036,
+        6.1920000000000073
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        493.52500000000003,
+        703.46879999999999,
+        7.34699999999998,
+        6.2069999999999936
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        495.47000000000003,
+        705.47199999999998,
+        3.4159999999999968,
+        2.2570000000000618
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        489.29399999999998,
+        703.14200000000005,
+        8.5300000000000296,
+        6.3009999999999309
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        489.29230000000007,
+        703.12270000000001,
+        8.6169999999999618,
+        6.32000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        491.262,
+        705.14200000000005,
+        4.5620000000000118,
+        2.3299999999999272
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        483.56299999999999,
+        703.70600000000002,
+        8.9050000000000296,
+        6.6299999999999955
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        483.56200000000001,
+        703.70609999999999,
+        8.9049999999999727,
+        6.6299999999999955
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        485.53100000000001,
+        705.67700000000002,
+        4.9660000000000082,
+        2.6879999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        479.40800000000002,
+        704.79200000000003,
+        7.2969999999999686,
+        6.6720000000000255
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        479.40780000000001,
+        704.79160000000002,
+        7.2970000000000255,
+        6.6720000000000255
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        481.31799999999998,
+        706.76099999999997,
+        3.4180000000000064,
+        2.7320000000000846
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        481.62,
+        700.77600000000007,
+        5.8210000000000264,
+        11.430999999999926
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        481.6207,
+        700.77640000000008,
+        5.8220000000000027,
+        11.551000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        511.55500000000006,
+        699.327,
+        8.0469999999999118,
+        4.7799999999999727
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        511.55660000000012,
+        699.32760000000007,
+        8.0459999999999354,
+        4.8709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        515.48800000000006,
+        699.29899999999998,
+        6.5529999999999973,
+        4.3659999999999854
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        515.48829999999998,
+        699.2989,
+        6.5529999999999973,
+        4.3659999999999854
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        479.86700000000002,
+        705.73900000000003,
+        16.423000000000002,
+        6.8299999999999272
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        479.50990000000002,
+        705.73950000000002,
+        16.78000000000003,
+        6.9809999999999945
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        479.86700000000002,
+        706.71000000000004,
+        11.043999999999983,
+        5.8589999999999236
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        479.50930000000005,
+        706.71130000000005,
+        11.401999999999987,
+        6.0090000000000146
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        487.48700000000002,
+        705.72900000000004,
+        8.7830000000000155,
+        5.90199999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        487.48670000000004,
+        705.72939999999994,
+        8.7829999999999586,
+        5.9020000000000437
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        471.57430000000005,
+        699.52179999999998,
+        4.8439999999999941,
+        9.3880000000000337
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        471.57430000000005,
+        699.52179999999998,
+        4.8439999999999941,
+        9.3880000000000337
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.26390000000004,
+        705.36330000000009,
+        4.9490000000000123,
+        9.3719999999999573
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.26390000000004,
+        705.36330000000009,
+        4.9490000000000123,
+        9.3719999999999573
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        470.63499999999999,
+        704.35400000000004,
+        6.1850000000000023,
+        5.6290000000000191
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        470.6345,
+        704.35419999999999,
+        6.1850000000000023,
+        5.6290000000000191
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        482.39699999999999,
+        700.11910000000012,
+        10.927000000000021,
+        10.701999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        386.048,
+        667.63,
+        29.682999999999993,
+        11.975000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        409.01499999999999,
+        673.803,
+        5.7900000000000205,
+        4.3500000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        408.77100000000002,
+        673.428,
+        5.7900000000000205,
+        4.34800000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        408.572,
+        672.99199999999996,
+        5.8550000000000182,
+        4.3540000000000418
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        408.26400000000001,
+        672.52800000000002,
+        5.9220000000000255,
+        4.3640000000000327
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        408.01600000000002,
+        672.10699999999997,
+        5.9329999999999927,
+        4.3630000000000564
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        407.72500000000002,
+        671.59400000000005,
+        5.9869999999999663,
+        4.3709999999999809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        407.47500000000002,
+        671.16899999999998,
+        6.0399999999999636,
+        4.3740000000000236
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        407.19299999999998,
+        670.70500000000004,
+        6.0660000000000309,
+        4.3799999999999955
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        406.96699999999998,
+        670.279,
+        6.0960000000000036,
+        4.3799999999999955
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        406.70300000000003,
+        669.83500000000004,
+        6.1589999999999918,
+        4.38900000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        406.47800000000001,
+        669.40899999999999,
+        6.1730000000000018,
+        4.3899999999999864
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        406.197,
+        668.94500000000005,
+        6.1970000000000027,
+        4.3949999999999818
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        405.94400000000002,
+        668.52099999999996,
+        6.2409999999999854,
+        4.3970000000000482
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        361.65500000000003,
+        663.24199999999996,
+        50.527999999999963,
+        14.595000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        365.47500000000002,
+        664.41800000000001,
+        5.1920000000000073,
+        6.2509999999999764
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        365.47550000000007,
+        664.41780000000006,
+        5.1919999999999504,
+        6.2519999999999527
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        376.06600000000003,
+        662.90300000000002,
+        5.6069999999999709,
+        6.9329999999999927
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        376.0652,
+        662.90280000000007,
+        5.6080000000000041,
+        7.1299999999999955
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        364.32100000000003,
+        662.20699999999999,
+        6.2919999999999732,
+        6.2290000000000418
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        364.79200000000003,
+        662.678,
+        5.3529999999999518,
+        5.3150000000000546
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        362.60000000000002,
+        662.45500000000004,
+        10.133999999999958,
+        6.2519999999999527
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        362.733,
+        663.57000000000005,
+        8.6410000000000196,
+        4.9080000000000155
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        362.72899999999998,
+        662.45500000000004,
+        9.9660000000000082,
+        5.8199999999999363
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        362.5718,
+        662.45360000000005,
+        10.163000000000011,
+        6.3809999999999718
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        374.58800000000002,
+        659.42899999999997,
+        7.3619999999999663,
+        7.4050000000000864
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        375.22399999999999,
+        660.14599999999996,
+        6.0370000000000346,
+        6.0130000000000337
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        372.303,
+        659.87,
+        12.244000000000028,
+        7.3769999999999527
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        372.48200000000003,
+        661.56399999999996,
+        10.298999999999978,
+        5.3740000000000236
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        372.48500000000001,
+        659.87199999999996,
+        12.002999999999986,
+        6.7750000000000909
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        372.27269999999999,
+        659.86940000000004,
+        12.274000000000001,
+        7.5570000000000164
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        361.93299999999999,
+        663.19500000000005,
+        45.277000000000044,
+        10.171999999999912
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        361.68600000000004,
+        663.18399999999997,
+        50.001999999999953,
+        10.961000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        361.70300000000003,
+        667.27099999999996,
+        50.008999999999958,
+        7.7240000000000464
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        375.18900000000002,
+        669.85199999999998,
+        5.1049999999999613,
+        5.2760000000000673
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        377.18900000000002,
+        671.85199999999998,
+        1.1049999999999613,
+        1.2760000000000673
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        379.839,
+        669.25099999999998,
+        5.1370000000000005,
+        5.2699999999999818
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        381.839,
+        671.25099999999998,
+        1.1370000000000005,
+        1.2699999999999818
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.947,
+        670.822,
+        5.8849999999999909,
+        5.5130000000000337
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        370.947,
+        672.822,
+        1.8849999999999909,
+        1.5130000000000337
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        382.59199999999998,
+        669.41300000000001,
+        7.3460000000000036,
+        6.1920000000000073
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        382.59180000000003,
+        669.39869999999996,
+        7.34699999999998,
+        6.2060000000000173
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        384.53800000000001,
+        671.40200000000004,
+        3.4150000000000205,
+        2.2559999999999718
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        378.36000000000001,
+        669.07100000000003,
+        8.5310000000000059,
+        6.3009999999999309
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        378.35920000000004,
+        669.0521,
+        8.6169999999999618,
+        6.32000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        380.32999999999998,
+        671.07100000000003,
+        4.5610000000000355,
+        2.3310000000000173
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        372.62900000000002,
+        669.63599999999997,
+        8.9049999999999727,
+        6.6299999999999955
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        372.62880000000001,
+        669.6354,
+        8.9049999999999727,
+        6.6299999999999955
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        374.59800000000001,
+        671.60599999999999,
+        4.9660000000000082,
+        2.6889999999999645
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.47399999999999,
+        670.72000000000003,
+        7.2970000000000255,
+        6.6730000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.47460000000001,
+        670.72040000000004,
+        7.2970000000000255,
+        6.6730000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        370.38400000000001,
+        672.69000000000005,
+        3.4189999999999827,
+        2.7329999999999472
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        370.68600000000004,
+        666.70500000000004,
+        5.8229999999999791,
+        11.432000000000016
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        370.6875,
+        666.70540000000005,
+        5.8220000000000027,
+        11.552000000000021
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        400.62299999999999,
+        665.255,
+        8.0459999999999923,
+        4.7820000000000391
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        400.6234,
+        665.25639999999999,
+        8.0459999999999923,
+        4.8719999999999573
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        404.55400000000003,
+        665.22900000000004,
+        6.5529999999999973,
+        4.3659999999999854
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        404.55520000000001,
+        665.22820000000002,
+        6.5529999999999973,
+        4.3659999999999854
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.93200000000002,
+        671.66800000000001,
+        16.425000000000011,
+        6.8300000000000409
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.57679999999999,
+        671.66880000000003,
+        16.78000000000003,
+        6.9809999999999945
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.93200000000002,
+        672.63999999999999,
+        11.045999999999992,
+        5.8580000000000609
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        368.57610000000005,
+        672.64049999999997,
+        11.401999999999987,
+        6.0090000000000146
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        376.55400000000003,
+        671.65999999999997,
+        8.7819999999999823,
+        5.9010000000000673
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        376.55360000000002,
+        671.65990000000011,
+        8.7829999999999586,
+        5.9009999999999536
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        360.64110000000005,
+        665.45170000000007,
+        4.8439999999999941,
+        9.38799999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        360.64110000000005,
+        665.45170000000007,
+        4.8439999999999941,
+        9.38799999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        361.33080000000001,
+        671.29210000000012,
+        4.9499999999999886,
+        9.3719999999999573
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        361.33080000000001,
+        671.29210000000012,
+        4.9499999999999886,
+        9.3719999999999573
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        359.70100000000002,
+        670.28399999999999,
+        6.1850000000000023,
+        5.6290000000000191
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        359.70140000000004,
+        670.28440000000001,
+        6.1850000000000023,
+        5.6280000000000427
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        371.46379999999999,
+        666.04880000000003,
+        10.927000000000021,
+        10.701999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        319.75,
+        652.82600000000002,
+        240.81799999999998,
+        28.956000000000017
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.75,
+        654.82600000000002,
+        236.81799999999998,
+        24.956000000000017
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        326.56600000000003,
+        664.01400000000001,
+        35.905999999999949,
+        9.9230000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        437.23900000000003,
+        696.69900000000007,
+        35.906999999999982,
+        10.183999999999969
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        430.71500000000003,
+        667.23300000000006,
+        129.83899999999994,
+        31.024000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        432.714,
+        669.23199999999997,
+        125.83999999999997,
+        27.026000000000067
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        431.40800000000002,
+        679.02700000000004,
+        129.15999999999997,
+        37.148000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        433.40800000000002,
+        681.02700000000004,
+        125.15999999999997,
+        33.149000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        399.15199999999999,
+        660.99800000000005,
+        32.035000000000025,
+        12.789999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        508.38200000000001,
+        684.67899999999997,
+        30.189999999999998,
+        17.407000000000039
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        319.75,
+        646.92200000000003,
+        240.81799999999998,
+        21.110000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.75,
+        648.92200000000003,
+        236.81799999999998,
+        17.110000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        319.75,
+        639.75099999999998,
+        240.81799999999998,
+        90.999000000000024
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

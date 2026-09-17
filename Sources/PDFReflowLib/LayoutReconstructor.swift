@@ -836,7 +836,8 @@ enum LayoutReconstructor {
         /// kept only when every element of the region falls wholly on one side of it: ordering
         /// drops an element that straddles its cut, so a subset may not choose a line that the
         /// elements it leaves out would cross.
-        func gap(horizontal: Bool, measuring measured: [Element]) -> CGFloat? {
+        func gap(horizontal: Bool, measuring measured: [Element], in part: [Element]? = nil) -> CGFloat? {
+            let region = part ?? elements
             guard measured.count > 1 else { return nil }
             let intervals = measured.map { horizontal ? ($0.rect.minX, $0.rect.maxX) : ($0.rect.minY, $0.rect.maxY) }
                 .sorted { $0.0 < $1.0 }
@@ -850,8 +851,8 @@ enum LayoutReconstructor {
                     // contain substantial text lines. Short labels and numeric answer cells
                     // need row associations; the whitespace alone must not separate them.
                     if horizontal, width <= bodySize * 1.5 {
-                        let left = elements.filter { $0.rect.maxX < middle }
-                        let right = elements.filter { $0.rect.minX > middle }
+                        let left = region.filter { $0.rect.maxX < middle }
+                        let right = region.filter { $0.rect.minX > middle }
                         let proseColumns = [left, right].allSatisfy { column in
                             column.filter { $0.line != nil && $0.rect.width >= bodySize * 12 }.count >= 2
                         }
@@ -861,7 +862,7 @@ enum LayoutReconstructor {
                 }
                 end = max(end, interval.1)
             }
-            guard let middle = best?.1, elements.allSatisfy({
+            guard let middle = best?.1, region.allSatisfy({
                 horizontal ? ($0.rect.maxX < middle || $0.rect.minX > middle)
                     : ($0.rect.maxY < middle || $0.rect.minY > middle)
             }) else { return nil }
@@ -872,10 +873,32 @@ enum LayoutReconstructor {
                 return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1)
                     + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1)
             }
-            return ordered(elements.filter { $0.rect.maxX < x }, bodySize: bodySize, depth: depth + 1)
+            if let y = stackedBlocks(elements, gutter: x, bodySize: bodySize) {
+                return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1)
+                    + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1)
+            }
+            let columns = ordered(elements.filter { $0.rect.maxX < x }, bodySize: bodySize, depth: depth + 1)
                 + ordered(elements.filter { $0.rect.minX > x }, bodySize: bodySize, depth: depth + 1)
+            // Cells numbered along their rows read in number order, not down each column (#78).
+            if let labels = rowMajorLabels(elements, bodySize: bodySize) {
+                return inNumberOrder(columns, labels: labels)
+            }
+            return columns
         }
         if let y = gap(horizontal: false, measuring: elements) {
+            // Two prose columns can break a paragraph at the same height, and when a figure across
+            // their full measure closes the gutter, that aligned paragraph space is the widest
+            // whitespace: FAA page 439's drug table and page 392's time-zone map read left, right,
+            // left, right (#86). A band no wider than paragraph spacing gives way to the figure
+            // partition (`spanningFigures`); Our Flag's state grids band their rows with 62 pt.
+            let width = horizontalBands(elements).first { abs($0.y - y) < 0.01 }?.width ?? .greatestFiniteMagnitude
+            if width <= bodySize * 1.5, let parts = spanningFigures(elements, bodySize: bodySize, gutter: {
+                gap(horizontal: true, measuring: $0.filter { $0.line != nil }, in: $0)
+            }) {
+                return ordered(parts.head, bodySize: bodySize, depth: depth + 1)
+                    + ordered(parts.columns, bodySize: bodySize, depth: depth + 1)
+                    + ordered(parts.foot, bodySize: bodySize, depth: depth + 1)
+            }
             return ordered(elements.filter { $0.rect.minY > y }, bodySize: bodySize, depth: depth + 1)
                 + ordered(elements.filter { $0.rect.maxY < y }, bodySize: bodySize, depth: depth + 1)
         }
@@ -894,6 +917,15 @@ enum LayoutReconstructor {
         if let x = gap(horizontal: true, measuring: elements.filter { $0.line != nil }) {
             return ordered(elements.filter { $0.rect.maxX < x }, bodySize: bodySize, depth: depth + 1)
                 + ordered(elements.filter { $0.rect.minX > x }, bodySize: bodySize, depth: depth + 1)
+        }
+        // A figure set across the full measure above or below two columns, its rectangle within
+        // a few points of the columns' first or last lines (#86, `spanningFigures`).
+        if let parts = spanningFigures(elements, bodySize: bodySize, gutter: {
+            gap(horizontal: true, measuring: $0.filter { $0.line != nil }, in: $0)
+        }) {
+            return ordered(parts.head, bodySize: bodySize, depth: depth + 1)
+                + ordered(parts.columns, bodySize: bodySize, depth: depth + 1)
+                + ordered(parts.foot, bodySize: bodySize, depth: depth + 1)
         }
         if let x = bulletColumns(elements, bodySize: bodySize) {
             return ordered(elements.filter { $0.rect.minX < x && $0.rect.maxX > x }, bodySize: bodySize, depth: depth + 1)
@@ -955,6 +987,182 @@ enum LayoutReconstructor {
             if band.count == 1, band[0].line != nil { return index == 0 ? lower : upper }
         }
         return nil
+    }
+
+    /// Whitespace bands across a region, top to bottom: the midpoint of each band and its height.
+    static func horizontalBands(_ elements: [Element]) -> [(y: CGFloat, width: CGFloat)] {
+        let intervals = elements.map { ($0.rect.minY, $0.rect.maxY) }.sorted { $0.1 > $1.1 }
+        guard var floor = intervals.first?.0 else { return [] }
+        var bands: [(y: CGFloat, width: CGFloat)] = []
+        for interval in intervals.dropFirst() {
+            if interval.1 < floor { bands.append(((floor + interval.1) / 2, floor - interval.1)) }
+            floor = min(floor, interval.0)
+        }
+        return bands
+    }
+
+    /// A figure set across both columns' full measure, above or below them, bridges their
+    /// gutter, so the text-measured gutter refuses to cut it; when its rectangle comes within
+    /// 1.1 body of the columns' first or last lines no horizontal band separates it either, and
+    /// the page falls to the reading-order sort, which interleaves the columns line by line.
+    /// FAA page 340's runway figure ends 0.7 pt above the columns' headings, and page 401's two
+    /// wind-triangle figures begin 8 pt below the left column's last line with a caption under
+    /// them (#86). A crop can also come nearer still: page 108's ground-effect figure rises to
+    /// within a few points of both columns' last lines, and page 19's airmail map to the lines
+    /// beneath it, so no whitespace band isolates the figure without taking column lines too.
+    ///
+    /// The figures are therefore separated by partition, not by a cut. The gutter is measured
+    /// over the text lines other than captions (`Figure N`/`Table N` lines and the lines wrapped
+    /// beneath them). The figures that straddle it must all lie above the columns' first line or
+    /// below their last (within half a body); a figure between two blocks of columns is not
+    /// moved. Every other element, captions set beside the columns included, must fall wholly on
+    /// one side of a gutter that separates prose on both sides (two lines at least 12 bodies wide
+    /// each): short cells keep their row associations. A caption whose lines all lie beyond the
+    /// columns goes with the figures, unless it sits against a figure of the columns' own: page
+    /// 194's `Figure 7-38` under its photo stays with the left column, as does page 19's photo
+    /// caption, whose first line stands beside the right column's last lines. Returns the figures
+    /// and captions read before the columns, the columns, and those read after them; nil when the
+    /// region has no such figure. Tinted boxes are not figures.
+    static func spanningFigures(_ elements: [Element], bodySize: CGFloat, gutter: ([Element]) -> CGFloat?)
+        -> (head: [Element], columns: [Element], foot: [Element])? {
+        guard elements.contains(where: { $0.line == nil && $0.box == nil }) else { return nil }
+        // Each caption line keys its caption: a `Figure N` line and the lines wrapped beneath it on
+        // its left edge at ordinary leading.
+        var caption: [Int: Int] = [:]
+        for index in elements.indices where elements[index].line.map({ isCaption($0.text) }) ?? false { caption[index] = index }
+        var grown = true
+        while grown {
+            grown = false
+            for index in elements.indices where caption[index] == nil {
+                guard let line = elements[index].line,
+                      let owner = caption.first(where: { member, _ in
+                          let above = elements[member].rect
+                          return abs(above.minX - line.rect.minX) <= bodySize * 0.5
+                              && above.minY - line.rect.maxY > -bodySize * 0.4 && above.minY - line.rect.maxY < bodySize * 0.5
+                      })?.value else { continue }
+                caption[index] = owner; grown = true
+            }
+        }
+        let captions = Set(caption.keys)
+        let text = elements.indices.filter { elements[$0].line != nil && !captions.contains($0) }.map { elements[$0] }
+        guard let measured = gutter(text) else { return nil }
+        let spanning = elements.indices.filter { index in
+            let element = elements[index]
+            return element.line == nil && element.box == nil && element.rect.minX < measured && element.rect.maxX > measured
+        }
+        guard !spanning.isEmpty else { return nil }
+        let body = elements.indices.filter { !spanning.contains($0) && !captions.contains($0) }
+        guard let top = body.map({ elements[$0].rect.maxY }).max(), let bottom = body.map({ elements[$0].rect.minY }).min()
+        else { return nil }
+        let tolerance = bodySize * 0.5
+        func above(_ index: Int) -> Bool { elements[index].rect.minY >= top - tolerance }
+        func below(_ index: Int) -> Bool { elements[index].rect.maxY <= bottom + tolerance }
+        guard spanning.allSatisfy({ above($0) || below($0) }) else { return nil }
+        // A caption goes with the spanning figures only when all of its lines lie beyond the columns
+        // and it does not sit against a figure of the columns' own.
+        let own = elements.indices.filter { elements[$0].line == nil && !spanning.contains($0) }.map { elements[$0].rect }
+        let beyond = Set(Dictionary(grouping: captions, by: { caption[$0]! }).filter { owner, lines in
+            let label = elements[owner].rect
+            let captionsOwnFigure = own.contains { figure in
+                figure.minX < label.maxX && figure.maxX > label.minX
+                    && (abs(figure.minY - label.maxY) <= bodySize * 1.5 || abs(label.minY - figure.maxY) <= bodySize * 1.5)
+            }
+            return !captionsOwnFigure && (lines.allSatisfy(above) || lines.allSatisfy(below))
+        }.values.joined())
+        let outer = Set(spanning + beyond)
+        let columns = elements.indices.filter { !outer.contains($0) }.map { elements[$0] }
+        guard let x = gutter(columns) else { return nil }
+        let sides = [columns.filter { $0.rect.maxX < x }, columns.filter { $0.rect.minX > x }]
+        guard sides.allSatisfy({ side in side.filter { $0.line != nil && $0.rect.width >= bodySize * 12 }.count >= 2 })
+        else { return nil }
+        let head = outer.sorted().filter { above($0) }.map { elements[$0] }
+        let foot = outer.sorted().filter { !above($0) }.map { elements[$0] }
+        return (head, columns, foot)
+    }
+
+    /// Stacked blocks of short answer columns that share one gutter. Wallace page 487 sets item
+    /// 1's sub-answers a–i in three columns above answers 2–15 in three columns on the same
+    /// edges, so the gutter runs through both blocks and cutting it read `a`–`d`, `2`–`6`,
+    /// `e`–`h`… (#78). The blocks stand 38 pt apart, while no column's own rows are more than 15 pt
+    /// apart.
+    ///
+    /// Returns the widest horizontal band of at least two bodies, at least twice the widest
+    /// whitespace inside either side of the gutter above or below it, that has columns running
+    /// beside each other on both sides of it. Prose columns (any line at least 12 bodies wide)
+    /// are never stacked blocks: their paragraphs flow from one column's foot to the next
+    /// column's head.
+    static func stackedBlocks(_ elements: [Element], gutter: CGFloat, bodySize: CGFloat) -> CGFloat? {
+        guard !elements.contains(where: { $0.line != nil && $0.rect.width >= bodySize * 12 }) else { return nil }
+        /// The part's two sides of the gutter, when both hold content running beside each other.
+        func sides(_ part: [Element]) -> [[Element]]? {
+            let left = part.filter { $0.rect.maxX < gutter }, right = part.filter { $0.rect.minX > gutter }
+            guard !left.isEmpty, !right.isEmpty else { return nil }
+            let l = union(left.map(\.rect)), r = union(right.map(\.rect))
+            return min(l.maxY, r.maxY) > max(l.minY, r.minY) ? [left, right] : nil
+        }
+        var best: (y: CGFloat, width: CGFloat)?
+        for band in horizontalBands(elements) where band.width >= bodySize * 2 && band.width > (best?.width ?? 0) {
+            guard let above = sides(elements.filter { $0.rect.minY > band.y }),
+                  let below = sides(elements.filter { $0.rect.maxY < band.y }) else { continue }
+            let spacing = (above + below).map { horizontalBands($0).map(\.width).max() ?? 0 }.max() ?? 0
+            if band.width >= spacing * 2 { best = band }
+        }
+        return best?.y
+    }
+
+    /// Labelled cells numbered along their rows. Wallace page 448 sets graphs 15–22 three to a
+    /// row under their labels `15)`, `16)`, `17)` / `18)`… with no whitespace between the rows
+    /// (graph 20 hangs below label 21's top), so only the column gutters cut them, and they read
+    /// 15, 18, 21, 16… (#78). The answer lists and exercise sets are numbered down their columns
+    /// by design and must keep reading that way, so the geometry does not decide; the numbers do.
+    ///
+    /// Returns the region's `N)` labels when they form a grid read row-major: at least four
+    /// labels in two or more rows of at least two, at least three columns, each row's labels on
+    /// the first row's column edges, the numbers consecutive row by row, and nothing in the region
+    /// above the first row. Otherwise nil. Wallace sets its exercises two to a row and numbers them
+    /// along the rows (`1)` | `2)`), but the book reads them column by column by contract (pages 10,
+    /// 26 and 424's triangles), so a two-column grid is never reordered.
+    static func rowMajorLabels(_ elements: [Element], bodySize: CGFloat) -> [(rect: CGRect, number: Int)]? {
+        let labels = elements.compactMap { element -> (rect: CGRect, number: Int)? in
+            guard let text = element.line?.text,
+                  let range = text.range(of: #"^[0-9]{1,3}(?=\))"#, options: .regularExpression),
+                  let number = Int(text[range]) else { return nil }
+            return (element.rect, number)
+        }
+        guard labels.count >= 4 else { return nil }
+        var rows: [[(rect: CGRect, number: Int)]] = []
+        for label in labels.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
+            if let anchor = rows.last?.first, anchor.rect.maxY - label.rect.maxY <= bodySize { rows[rows.count - 1].append(label) }
+            else { rows.append([label]) }
+        }
+        rows = rows.map { $0.sorted { $0.rect.minX < $1.rect.minX } }
+        guard rows.count >= 2, rows.filter({ $0.count >= 2 }).count >= 2,
+              let first = rows.first, first.count >= 3, rows.allSatisfy({ $0.count <= first.count }) else { return nil }
+        // A grid: the i-th label of every row stands on the i-th label's left edge in the first row.
+        guard rows.allSatisfy({ row in row.indices.allSatisfy { abs(row[$0].rect.minX - first[$0].rect.minX) <= bodySize } })
+        else { return nil }
+        let sequence = rows.flatMap { $0.map(\.number) }
+        guard zip(sequence, sequence.dropFirst()).allSatisfy({ $1 == $0 + 1 }) else { return nil }
+        // Every cell hangs beneath its label: nothing in the region stands above the first row.
+        let ceiling = first.map(\.rect.maxY).max()!
+        guard elements.allSatisfy({ $0.rect.maxY <= ceiling + bodySize * 0.25 }) else { return nil }
+        return labels
+    }
+
+    /// Column-ordered cells regrouped by their labels' numbers: each label leads the elements that
+    /// follow it in its column.
+    static func inNumberOrder(_ columns: [Element], labels: [(rect: CGRect, number: Int)]) -> [Element] {
+        var head: [Element] = [], cells: [(number: Int, elements: [Element])] = []
+        for element in columns {
+            if element.line != nil, let label = labels.first(where: { $0.rect == element.rect }) {
+                cells.append((label.number, [element]))
+            } else if cells.isEmpty {
+                head.append(element)
+            } else {
+                cells[cells.count - 1].elements.append(element)
+            }
+        }
+        return head + cells.sorted { $0.number < $1.number }.flatMap(\.elements)
     }
 
     /// Bulleted columns the whitespace cuts cannot separate: their items are far shorter than

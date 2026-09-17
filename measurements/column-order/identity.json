@@ -1,0 +1,45 @@
+{
+  "baseline": {
+    "commit": "d63bbbc",
+    "cli": "release build of d63bbbc (LayoutReconstructor.swift restored from d63bbbc in the worktree)",
+    "converterSHA256": "66080206d7db46d4d5249a64ea64f8780512dfda3422b81c1f13fb3947eefd59"
+  },
+  "candidate": {
+    "commit": "d63bbbc + working tree",
+    "converterSHA256": "869db19d8a73ae7dd7cc474456c4239da9da9687ba37f9528f7ec6237dda848c",
+    "sourceLayoutReconstructorSHA256AtLane": "2015a6ccb1e26553c323b969ecefbbf88d14facc5195d9e19510ccac3c1d042e"
+  },
+  "environmentProbeSHA256": "851d6d0ac6974d7c3b0869d1ac874e17a2c059c25b73b1c8823077d1ba59a161",
+  "sources": {
+    "faa-phak-8083-25c": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+    "wallace-algebra-2010": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678"
+  },
+  "fixtures": {
+    "Tests/PDFReflowLibTests/fixtures/faa-19-layout.json": "da8745d809c716250de8d269a158424e849e81b4fb5bb15c47064d2292612a3e",
+    "Tests/PDFReflowLibTests/fixtures/faa-108-layout.json": "e388803b7719e99d7a0b8c02e7d381ea5a5d382579aec5fb64e501295f5ab1ab",
+    "Tests/PDFReflowLibTests/fixtures/faa-194-layout.json": "02100916cae832d22a567c8de4a554243bc5509ef3ebfde0028a557bbb3e50b8",
+    "Tests/PDFReflowLibTests/fixtures/faa-340-layout.json": "abe2289badc850a1c30d14fe072ea4ecc229b43dfb3590c074157a181c34be16",
+    "Tests/PDFReflowLibTests/fixtures/faa-392-layout.json": "83eab632ba553db01e7a7d38ac8ff151e41223a5191a66dd8df75bc9077b36d8",
+    "Tests/PDFReflowLibTests/fixtures/faa-401-layout.json": "f8c0ab1d83fabcad3027b8dbb8ac56c7e6e9af2d379f913a68fcaa8c47567c58",
+    "Tests/PDFReflowLibTests/fixtures/algebra-186-layout.json": "0bb70b94a754fdaaf847cc4685d7486b8ec03be254ff119c23d55dc885fe8706",
+    "Tests/PDFReflowLibTests/fixtures/algebra-424-layout.json": "cc56c9389125b4361a1c3259cf0fbb1350fd36be9decbdec978102b86ab9acf9",
+    "Tests/PDFReflowLibTests/fixtures/algebra-429-layout.json": "2f6daa7f77140b9710b4041ea80f6d714c2bf53e57ccd43ef1cc38f30659be5a",
+    "Tests/PDFReflowLibTests/fixtures/algebra-448-layout.json": "9cf3c8fb8cade08cf4a04be81af5eecb58be3b0a91edb4562a8e21aa76ff9f3c",
+    "Tests/PDFReflowLibTests/fixtures/algebra-449-layout.json": "3eb323cb9d3239f5ea3a83a06d114149b03d53a8db044dd056f2cbb6067ad420",
+    "Tests/PDFReflowLibTests/fixtures/algebra-487-layout.json": "31dff28dd64b6392971dc626957372f54037e4b26f7fc09ddd4a47d24bbef91e"
+  },
+  "commands": {
+    "lane": "python3 tools/run_corpus_regressions.py --converter <CLI> --epubcheck /opt/homebrew/bin/epubcheck --output <dir> --case <id> --environment-probe <probe> --execution-context host-terminal (one case per call, baseline then candidate)",
+    "compare": "python3 tools/compare_conversion_runs.py --baseline <dir>/<id> --candidate <dir>/<id> --output page-comparison/<id>.json --allow-different-converters",
+    "blockOrder": "python3 measurements/column-cuts/block-order.py BEFORE.epub AFTER.epub <changed pages> order-<id>.txt",
+    "contracts": "python3 tools/check_corpus_content.py --case <id> --evaluation <dir>/<id>",
+    "capture": "swiftc Sources/PDFReflowLib/{NativeTextReader,ConversionTypes,DocumentModel,ReflowDocument,GraphicsReader,NativeSpacingReader,StructureTreeReader,MarkedTextReader}.swift tools/capture-layout-fixture.swift -o capture; capture <case> <page> Tests/PDFReflowLibTests/fixtures/<name>-layout.json",
+    "probe": "xcrun swiftc -parse-as-library -O Sources/PDFReflowLib/{PageRasterizer,ConversionTypes,DocumentModel,ReflowDocument}.swift tools/probe-raster-environment.swift -o probe"
+  },
+  "merged": {
+    "commit": "213c944 + working tree",
+    "converterSHA256": "6f0b88806d480fd0854e9a08c5af1904a6d4d47a3af959d2fe4f8d1d0763c8e0",
+    "Sources/PDFReflowLib/LayoutReconstructor.swift": "33a615547451e81e9a441d518a87ec24bc3d357e5f27e44996f186da92daae8f",
+    "lane": "all six cases PASS (gates and contracts), single run each"
+  }
+}

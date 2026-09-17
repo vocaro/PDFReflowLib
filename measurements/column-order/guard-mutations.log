@@ -1,0 +1,11 @@
+# Each guard removed from the candidate in turn; full `swift test` (433 tests); failing tests listed.
+prose-sides: failing=['shortCellsUnderAFigureKeepTheirRows'] | ['✘ Test run with 433 tests in 3 suites failed after 2.618 seconds with 1 issue.']
+beyond-columns: failing=['figureBetweenColumnBlocksKeepsItsPlace'] | ['✘ Test run with 433 tests in 3 suites failed after 25.346 seconds with 1 issue.']
+paragraph-band-width: failing=['wideBandBeneathAHeadFigureIsCutFirst'] | ['✘ Test run with 433 tests in 3 suites failed after 30.487 seconds with 1 issue.']
+own-figure-caption: failing=['captionOfAColumnFigureStaysInItsColumn'] | ['✘ Test run with 433 tests in 3 suites failed after 1.817 seconds with 1 issue.']
+caption-group: failing=['captionOfAColumnFigureStaysInItsColumn'] | ['✘ Test run with 433 tests in 3 suites failed after 1.855 seconds with 1 issue.']
+three-columns: failing=['columnNumberedGridsAndExerciseSetsKeepColumnOrder'] | ['✘ Test run with 433 tests in 3 suites failed after 1.896 seconds with 3 issues.']
+consecutive: failing=[] | ['✔ Test run with 433 tests in 3 suites passed after 3.332 seconds.']
+stacked-prose: failing=['alignedSpaceInProseColumnsIsNotAStackedBlock'] | ['✘ Test run with 433 tests in 3 suites failed after 27.172 seconds with 1 issue.']
+stacked-spacing: failing=['columnNumberedGridsAndExerciseSetsKeepColumnOrder'] | ['✘ Test run with 433 tests in 3 suites failed after 1.945 seconds with 1 issue.']
+stacked-sides: failing=['columnTailBelowABandStaysWithItsColumn'] | ['✘ Test run with 433 tests in 3 suites failed after 31.697 seconds with 1 issue.']

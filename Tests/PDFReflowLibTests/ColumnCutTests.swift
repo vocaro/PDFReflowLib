@@ -162,3 +162,208 @@ func figureOverhangingTheGutterJoinsItsColumn(name: String, folio: String, left:
     #expect(ordered.count == elements.count)
     #expect(ordered.contains { $0.image == "figure" })
 }
+
+// #86: a figure set across both columns' full measure, above or below them, bridges the text
+// gutter, and its crop comes within a few points of the columns' first or last lines, so neither
+// whitespace cut applies and the page fell to the reading-order sort, which interleaved the columns
+// line by line. Page 340's runway figure ends 0.7 pt above the column headings; page 401's figures
+// begin 8 pt below the left column with a caption under them; page 108's ground-effect crop rises
+// to within points of both columns' last lines; pages 439 and 392 also break both columns'
+// paragraphs at one height, so a paragraph-sized band was cut first (left, right, left, right).
+// The figures and their captions now read before or after the complete columns.
+@Test(arguments: [
+    ("faa-340", "14-6", true,
+     ["Runway Safety Area", "The runway safety area (RSA) is a defined surface", "The RSA is typically graded",
+      "operations at uncontrolled airports. [Figure 14-7]", "Runway Safety Area Boundary Sign",
+      "Some taxiway stubs also have", "surface painted marking.", "Runway Holding Position Sign",
+      "result in the FAA filing a Pilot Deviation"]),
+    ("faa-401", "16-14", false,
+     ["so familiar with the fundamental principles", "of wind triangle.", "If flight is to be made on a course",
+      "In actual practice, the triangle", "the blue, yellow, and black lines in Figure 16-20",
+      "Suppose a flight is to be flown", "Now, on a plain sheet of paper", "Step 1",
+      "true course) and another at 45°", "Figure 16-20. The wind triangle"]),
+    ("faa-108", "5-11", false,
+     ["Ground Effect", "When an aircraft in flight comes", "While the aerodynamic characteristics",
+      "downwash, and wingtip vortices.", "Figure 5-16. Ground effect changes airflow.",
+      "the spanwise lift distribution", "Ground effect also alters", "In order for ground effect",
+      "Figure 5-17. Ground effect changes drag and lift."]),
+    ("faa-439", "17-17", false,
+     ["and use of marijuana", "Stimulants are drugs that excite", "stimulant reaction, even though",
+      "this reaction is not their primary function", "Depressants are drugs that reduce",
+      "The most common depressant is alcohol.", "Figure 17-9. Adverse affects of various drugs."]),
+    ("faa-392", "16-5", true,
+     ["flying eastward from one time zone", "In most aviation operations", "Because a pilot may cross",
+      "Pacific Standard Time", "For Daylight Saving Time", "Measurement of Direction",
+      "Because meridians converge", "As shown in Figure 16-7"]),
+])
+func fullMeasureFigureReadsApartFromTheColumns(name: String, folio: String, figureFirst: Bool, order: [String]) throws {
+    #expect(try SourceLayoutFixture.load(name).sourceSHA256 == faaSHA256)
+    let (page, blocks, crops) = try reflow(name, removing: [folio])
+    if case .image = try #require(blocks.first).content {
+        #expect(figureFirst, "the page opens with a figure")
+    } else {
+        #expect(!figureFirst, "the page does not open with its figure")
+    }
+    expectInOrder(blocks.map(\.text).joined(separator: " "), order)
+    expectCharactersConserved(page, blocks, crops: crops)
+}
+
+// Control: a caption that sits against a figure of a column's own stays with that column even when
+// it lies below all column text. Page 194's `Figure 7-38` is under its photo in the left column,
+// above the full-width figure 7-39; page 19's photo caption wraps below the right column's foot.
+@Test(arguments: [
+    ("faa-194", "7-34", ["Landing gear can also be classified", "Figure 7-38. Tailwheel landing gear.",
+                         "maintenance. Retractable landing gear", "Pressurized Aircraft",
+                         "Figure 7-39. Fixed (left) and retractable (right) gear airplanes."]),
+    ("faa-19", "1-4", ["United States. This legislation", "The Air Commerce Act charged",
+                       "Figure 1-5. The de Haviland DH-4 on the New York to San Francisco inaugural route in 1921.",
+                       "standard beacon tower was 51 feet high", "In 1934, to recognize"]),
+])
+func captionOfAColumnFigureStaysInItsColumn(name: String, folio: String, order: [String]) throws {
+    #expect(try SourceLayoutFixture.load(name).sourceSHA256 == faaSHA256)
+    let (page, blocks, crops) = try reflow(name, removing: [folio])
+    expectInOrder(blocks.map(\.text).joined(separator: " "), order)
+    expectCharactersConserved(page, blocks, crops: crops)
+}
+
+// Control: Wallace's worked examples set formula crops and triangles beside short notes. Those are
+// not prose columns under a figure, so the notes keep their places beside their steps: page 429's
+// side-length label `12` follows the note it sits under, and page 186's first note follows its step.
+@Test func workedExampleNotesAreNotColumnsUnderAFigure() throws {
+    #expect(try SourceLayoutFixture.load("algebra-429").sourceSHA256 == algebraSHA256)
+    let (_, examples, _) = try reflow("algebra-429", removing: ["429"])
+    expectBlocksInOrder(examples, ["From angle θ the given sides", "12", "Because we are looking for an angle",
+                                   "45◦ Our Solution", "Example 556.", "Find the indicated angle"])
+    #expect(try SourceLayoutFixture.load("algebra-186").sourceSHA256 == algebraSHA256)
+    let (_, powers, _) = try reflow("algebra-186", removing: ["186"])
+    expectBlocksInOrder(powers, ["Example 219.", "In numerator, use product rule", "In the previous example"])
+}
+
+// #78: page 487's section 10.6 sets item 1's sub-answers a–i in three columns above answers 2–15 in
+// three columns on the same edges. One gutter ran through both blocks, so they read `a`–`d`, `2`–`6`,
+// `e`–`h`, `7`–`11`, `i`, `12`–`15`. The 38-pt band between the blocks is more than twice any gap
+// inside a column, and the blocks now read one after the other.
+@Test func stackedAnswerBlocksReadBlockByBlock() throws {
+    #expect(try SourceLayoutFixture.load("algebra-487").sourceSHA256 == algebraSHA256)
+    let (page, blocks, crops) = try reflow("algebra-487", removing: ["487"])
+    expectBlocksInOrder(blocks, ["10.6", "Answers - Interest Rate Problems", "1)", "a. 740.12", "d. 1979.22",
+                                 "e. 1209.52", "h. 3219.23", "i. 7152.17", "2) 1640.70", "6) 1507.08",
+                                 "7) 2001.60", "11) 13742.19", "12) 28240.43", "15) 101.68"])
+    expectCharactersConserved(page, blocks, crops: crops)
+}
+
+// #78: page 448 sets graphs 15–22 three to a row under bare labels numbered along the rows, with no
+// whitespace between rows (graph 20 hangs below label 21's top). Only the column gutters cut them,
+// so they read 15, 18, 21, 16… The labels now read in number order, each followed by its graph.
+@Test func rowNumberedGraphGridReadsInNumberOrder() throws {
+    #expect(try SourceLayoutFixture.load("algebra-448").sourceSHA256 == algebraSHA256)
+    let (_, blocks, _) = try reflow("algebra-448", removing: ["448"])
+    let labels = ["15)", "16)", "17)", "18)", "19)", "20)", "21)", "22)"]
+    expectBlocksInOrder(blocks, labels + ["2.2"])
+    for label in labels {
+        let index = try #require(blocks.firstIndex { $0.text == label })
+        if case .image = blocks[index + 1].content {} else { Issue.record("\(label) is not followed by its graph") }
+    }
+}
+
+// Controls: numbering decides a grid's order, never geometry alone. Page 449's graphs are numbered
+// down their columns (31–36, then 37–42) and keep that order. The exercise sets are numbered along
+// their rows two to a row (1 | 2), but the book reads them column by column by contract: pages 10
+// and 26 with inline problems, and page 424's triangles under bare labels, are unchanged.
+@Test func columnNumberedGridsAndExerciseSetsKeepColumnOrder() throws {
+    #expect(try SourceLayoutFixture.load("algebra-449").sourceSHA256 == algebraSHA256)
+    let (_, graphs, _) = try reflow("algebra-449", removing: ["449"])
+    expectBlocksInOrder(graphs, ["31)", "32)", "33)", "34)", "35)", "36)", "37)", "38)", "39)", "40)", "41)", "42)"])
+    #expect(try SourceLayoutFixture.load("algebra-424").sourceSHA256 == algebraSHA256)
+    let (_, triangles, _) = try reflow("algebra-424", removing: ["424"])
+    expectBlocksInOrder(triangles, ["13)", "15)", "17)", "19)", "14)", "16)", "18)", "20)"])
+    let (_, integers, _) = try reflow("algebra-10", removing: ["10"])
+    expectInOrder(integers.map(\.text).joined(separator: " "),
+                  ["Evaluate each expression.", "1) 1", "29)", "Find each product.", "43)", "2) 4", "30)", "44)"])
+    let (_, polynomials, _) = try reflow("algebra-26", removing: ["26"])
+    expectInOrder(polynomials.map(\.text).joined(separator: " "), ["37)", "39)", "41)", "38)", "40)"])
+}
+
+// Synthetic guard controls for #86 and #78: each layout is protected by exactly one guard, and the
+// test fails when that guard is removed (measurements/column-order/guard-mutations.log).
+private func textAt(_ text: String, x: Double, y: Double, width: Double) -> LayoutReconstructor.Element {
+    let rect = CGRect(x: x, y: y, width: width, height: 12)
+    return .init(rect: rect, line: TextLine(text: text, rect: rect, fontSize: 10))
+}
+
+private func figureAt(_ name: String, x: Double, y: Double, width: Double, height: Double) -> LayoutReconstructor.Element {
+    .init(rect: CGRect(x: x, y: y, width: width, height: height), image: name)
+}
+
+private func names(_ elements: [LayoutReconstructor.Element]) -> [String] {
+    elements.map { $0.line?.text ?? $0.image ?? "box" }
+}
+
+/// Two prose columns of `count` lines at 12.5-pt leading from `top`, labelled `<prefix>L1…`/`<prefix>R1…`.
+private func proseColumns(_ prefix: String, top: Double, count: Int) -> [LayoutReconstructor.Element] {
+    (0..<count).flatMap { row in
+        [textAt("\(prefix)L\(row + 1)", x: 36, y: top - 12.5 * Double(row), width: 240),
+         textAt("\(prefix)R\(row + 1)", x: 290, y: top - 12.5 * Double(row), width: 240)]
+    }
+}
+
+// Guard: the columns under a spanning figure must be prose. A two-column table of short names and
+// values set 2 pt under a full-width figure keeps its rows.
+@Test func shortCellsUnderAFigureKeepTheirRows() {
+    let figure = figureAt("figure", x: 36, y: 500, width: 494, height: 200)
+    let rows = (0..<4).flatMap { row in
+        [textAt("Name \(row + 1)", x: 36, y: 486 - 12.5 * Double(row), width: 60),
+         textAt("Value \(row + 1)", x: 200, y: 486 - 12.5 * Double(row), width: 80)]
+    }
+    #expect(names(LayoutReconstructor.ordered([figure] + rows, bodySize: 10))
+        == ["figure", "Name 1", "Value 1", "Name 2", "Value 2", "Name 3", "Value 3", "Name 4", "Value 4"])
+}
+
+// Guard: only a figure above or below every column line is set apart. A full-width figure between
+// two blocks of columns, 3 pt from each, is not moved after both blocks.
+@Test func figureBetweenColumnBlocksKeepsItsPlace() {
+    let figure = figureAt("figure", x: 36, y: 560, width: 494, height: 112)
+    let ordered = names(LayoutReconstructor.ordered(proseColumns("A", top: 675, count: 3) + [figure]
+        + proseColumns("B", top: 545, count: 3), bodySize: 10))
+    let position = ordered.firstIndex(of: "figure") ?? -1
+    #expect(ordered.prefix(position).allSatisfy { $0.hasPrefix("A") })
+    #expect(ordered.dropFirst(position + 1).allSatisfy { $0.hasPrefix("B") })
+}
+
+// Guard: only a paragraph-sized band gives way to the figure partition. A 40-pt band between two
+// blocks of columns under a head figure is still cut first, so each block reads left then right.
+@Test func wideBandBeneathAHeadFigureIsCutFirst() {
+    let figure = figureAt("figure", x: 36, y: 720, width: 494, height: 80)
+    let ordered = names(LayoutReconstructor.ordered([figure] + proseColumns("A", top: 705, count: 3)
+        + proseColumns("B", top: 628, count: 3), bodySize: 10))
+    #expect(ordered == ["figure", "AL1", "AL2", "AL3", "AR1", "AR2", "AR3", "BL1", "BL2", "BL3", "BR1", "BR2", "BR3"])
+}
+
+// Guard: labels must be consecutive along the rows. A three-column graph grid numbered down its
+// columns (1–2, 3–4, 5–6) keeps column order.
+@Test func columnNumberedThreeColumnGridKeepsColumnOrder() {
+    let cells = [(1, 40.0, 700.0), (2, 40, 590), (3, 190, 700), (4, 190, 590), (5, 340, 700), (6, 340, 590)]
+        .flatMap { number, x, y in
+            [textAt("\(number))", x: x, y: y, width: 16), figureAt("graph \(number)", x: x, y: y - 105, width: 130, height: 103)]
+        }
+    #expect(names(LayoutReconstructor.ordered(cells, bodySize: 10))
+        == ["1)", "graph 1", "2)", "graph 2", "3)", "graph 3", "4)", "graph 4", "5)", "graph 5", "6)", "graph 6"])
+}
+
+// Guard: prose columns are never stacked blocks. Both columns break for a 30-pt space at the same
+// height, and the left column still completes before the right.
+@Test func alignedSpaceInProseColumnsIsNotAStackedBlock() {
+    let upper = proseColumns("upper ", top: 700, count: 2), lower = proseColumns("lower ", top: 645, count: 2)
+    #expect(names(LayoutReconstructor.ordered(upper + lower, bodySize: 10))
+        == ["upper L1", "upper L2", "lower L1", "lower L2", "upper R1", "upper R2", "lower R1", "lower R2"])
+}
+
+// Guard: a stacked block needs columns on both sides of the gutter above and below the band. A
+// left column that continues 40 pt below the right column's end is that column's own tail.
+@Test func columnTailBelowABandStaysWithItsColumn() {
+    let cells = [textAt("a1", x: 40, y: 700, width: 60), textAt("a2", x: 40, y: 680, width: 60),
+                 textAt("a3", x: 40, y: 660, width: 60), textAt("a4", x: 40, y: 608, width: 60),
+                 textAt("a5", x: 40, y: 588, width: 60), textAt("b1", x: 200, y: 700, width: 60),
+                 textAt("b2", x: 200, y: 680, width: 60), textAt("b3", x: 200, y: 660, width: 60)]
+    #expect(names(LayoutReconstructor.ordered(cells, bodySize: 10)) == ["a1", "a2", "a3", "a4", "a5", "b1", "b2", "b3"])
+}

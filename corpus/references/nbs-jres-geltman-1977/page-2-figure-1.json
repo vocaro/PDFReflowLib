@@ -1,0 +1,23 @@
+{
+  "case": "nbs-jres-geltman-1977",
+  "sourceSHA256": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
+  "page": 2,
+  "regionPoints": [
+    120.0,
+    38.0,
+    432.0,
+    194.0
+  ],
+  "target": "Figure 1 drawing with all its labels, above its caption",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "kind": "region",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    147,
+    73
+  ],
+  "sha256": "0fab3ab347dc1369950e3908fc88b95ed6e6ddbae3e83ab2d315baeea0f311c7"
+}

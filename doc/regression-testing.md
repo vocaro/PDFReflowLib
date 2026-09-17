@@ -112,7 +112,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 1529 targeted checks on 354 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 1564 targeted checks on 358 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
@@ -192,6 +192,14 @@ blur still scores 0.96. The check proves
 a region is present, complete and aligned; it does not prove every glyph. Erasing one exponent from
 the Wallace exercise still scores 0.97, which is why the glyph-structure check below exists. See the
 [image-region evidence](../measurements/image-regions/record.md).
+
+A page that reflows beside its source-page reference image carries every region inside that image,
+which also satisfies a region reference (0.98–0.99 on NBS). `"excludePageReference": true` on an
+`imageRegions` expectation skips the page's `Original page N` image, so only a crop can pass. Five
+such references cover NBS figures 1 and 2 and display equations (4), (11) and (15): the converter's
+crops score 0.985–0.998, while the Paper Capture evidence boxes alone, half of figure 1 or equation
+(4) without its number cannot be placed at all. See the
+[scan-figure evidence](../measurements/scan-figure-regions/record.md).
 
 ## Glyph-structure checks
 
@@ -495,7 +503,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-590 Swift tests with no known-issue wrappers, and 214 Python tests.
+617 Swift tests with no known-issue wrappers, and 217 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

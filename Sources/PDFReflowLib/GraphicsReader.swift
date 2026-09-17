@@ -90,6 +90,9 @@ enum GraphicsReader {
         /// Some text could not be placed on a horizontal baseline (rotated or vertical writing,
         /// clip-only rendering, unreadable operands): its visibility cannot be judged.
         var textPlacementUnsupported = false
+        /// Page-space squares of the validated inline images (`BI … ID … EI`), also in `paints`.
+        /// An OCR tool such as Adobe Paper Capture places them over what it could not transcribe.
+        var inlineImages: [CGRect] = []
     }
     /// Text state parameters; like the CTM they belong to the graphics state (`q`/`Q`).
     private struct TextParameters {
@@ -164,6 +167,7 @@ enum GraphicsReader {
         var covers: [Cover] = []
         var slantedShows: [SlantedShow] = []
         var textPlacementUnsupported = false
+        var inlineImages: [CGRect] = []
 
         func accept() -> Bool {
             operations += 1
@@ -457,9 +461,10 @@ enum GraphicsReader {
         CGPDFOperatorTableSetCallback(table, "sh") { scanner, info in
             Self.shading(scanner, state: Self.state(info))
         }
-        // Unsupported placement/compositing must remain visible, never silently disappear.
-        for op in ["EI"] {
-            CGPDFOperatorTableSetCallback(table, op) { _, info in Self.state(info).unsupported = true }
+        // `CGPDFScanner` parses `BI … ID … EI` itself and reports one `EI` whose single operand is
+        // the image as a stream (#37). Unreadable or truncated images keep the page image.
+        CGPDFOperatorTableSetCallback(table, "EI") { scanner, info in
+            Self.inlineImage(scanner, state: Self.state(info))
         }
         CGPDFOperatorTableSetCallback(table, "Do") { scanner, info in
             let s = Self.state(info)
@@ -561,7 +566,8 @@ enum GraphicsReader {
         return Result(regions: clusters(paints.map(\.rect), distance: 4), paints: paints,
                       unsupported: s.unsupported, hasOnlyInvisibleText: !s.unsupported && s.invisibleText && !s.visibleText,
                       hasInvisibleText: s.invisibleText, textShows: s.shows, covers: s.covers, slantedShows: s.slantedShows,
-                      textPlacementUnsupported: s.textPlacementUnsupported || s.inText)
+                      textPlacementUnsupported: s.textPlacementUnsupported || s.inText,
+                      inlineImages: s.inlineImages.map { $0.intersection(bounds) }.filter { !$0.isNull && !$0.isEmpty })
     }
 
     static func axisAligned(_ m: CGAffineTransform) -> Bool {
@@ -794,6 +800,92 @@ enum GraphicsReader {
         // PDF rectangles can name either pair of opposite corners (InDesign uses both orders).
         let rect = CGRect(x: n[0], y: n[1], width: n[2] - n[0], height: n[3] - n[1]).standardized
         return rect.isFinite ? rect : nil
+    }
+
+    /// `EI`: an inline image occupies the unit square under the CTM, like an image XObject.
+    /// The operand must be a stream whose dictionary names positive dimensions and a readable
+    /// sample layout (`IM true`, or `BPC` 1/2/4/8/16 with a device or indexed colour space); a
+    /// decoded stream must hold every row. Core Graphics delimits unfiltered data by that
+    /// length, and a missing `EI` makes it swallow the rest of the content while the scan
+    /// still succeeds, so anything short of this keeps the page image.
+    private static func inlineImage(_ scanner: CGPDFScannerRef, state s: State) {
+        guard s.accept() else { return }
+        var object: CGPDFObjectRef?
+        var stream: CGPDFStreamRef?
+        guard CGPDFScannerPopObject(scanner, &object), let object,
+              CGPDFObjectGetValue(object, .stream, &stream), let stream,
+              let dictionary = CGPDFStreamGetDictionary(stream) else {
+            s.unsupported = true; return
+        }
+        func integer(_ keys: String...) -> Int? {
+            for key in keys {
+                var value: CGPDFInteger = 0
+                if CGPDFDictionaryGetInteger(dictionary, key, &value) { return value }
+            }
+            return nil
+        }
+        var flag: CGPDFBoolean = 0
+        let mask = (CGPDFDictionaryGetBoolean(dictionary, "IM", &flag) || CGPDFDictionaryGetBoolean(dictionary, "ImageMask", &flag))
+            && flag != 0
+        guard let width = integer("W", "Width"), let height = integer("H", "Height"),
+              (1...100_000).contains(width), (1...100_000).contains(height) else {
+            s.unsupported = true; return
+        }
+        let bits: Int
+        let components: Int
+        if mask {
+            bits = integer("BPC", "BitsPerComponent") ?? 1
+            components = 1
+        } else {
+            guard let declared = integer("BPC", "BitsPerComponent"), let count = Self.inlineComponents(dictionary) else {
+                s.unsupported = true; return
+            }
+            bits = declared
+            components = count
+        }
+        guard mask ? bits == 1 : [1, 2, 4, 8, 16].contains(bits) else { s.unsupported = true; return }
+        var format = CGPDFDataFormat.raw
+        guard let data = CGPDFStreamCopyData(stream, &format) else { s.unsupported = true; return }
+        let rowBytes = (width * bits * components + 7) / 8
+        if format == .raw {
+            guard rowBytes <= Int.max / height, CFDataGetLength(data) >= rowBytes * height else {
+                s.unsupported = true; return
+            }
+        } else if CFDataGetLength(data) == 0 {
+            s.unsupported = true; return
+        }
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1).applying(s.matrix)
+        guard rect.isFinite else { s.unsupported = true; return }
+        // Like an image XObject, only the part inside the clip in force can show.
+        if let shown = s.visible(rect) {
+            s.add(shown)
+            if s.inlineImages.count < 10_000 { s.inlineImages.append(shown) }
+        }
+        // A stencil mask paints only where its samples mark; a sampled image paints its square.
+        if !mask, Self.axisAligned(s.matrix) { s.cover(rect) }
+    }
+
+    /// Components per sample of an inline image's colour space: the abbreviated and full device
+    /// names or an `Indexed` array. A colour space named from the resources is not followed.
+    private static func inlineComponents(_ dictionary: CGPDFDictionaryRef) -> Int? {
+        func device(_ name: String) -> Int? {
+            switch name {
+            case "G", "DeviceGray", "CalGray": 1
+            case "RGB", "DeviceRGB", "CalRGB": 3
+            case "CMYK", "DeviceCMYK": 4
+            default: nil
+            }
+        }
+        var name: UnsafePointer<CChar>?
+        var array: CGPDFArrayRef?
+        for key in ["CS", "ColorSpace"] {
+            if CGPDFDictionaryGetName(dictionary, key, &name), let name { return device(String(cString: name)) }
+            if CGPDFDictionaryGetArray(dictionary, key, &array), let array,
+               CGPDFArrayGetName(array, 0, &name), let name {
+                return ["I", "Indexed"].contains(String(cString: name)) ? 1 : nil
+            }
+        }
+        return nil
     }
 
     // The sh operator paints within the active clip and optional shading BBox. Do not infer

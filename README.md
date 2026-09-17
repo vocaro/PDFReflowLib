@@ -158,7 +158,7 @@ that fall back to images skip unused attributed-text decoding. Failures use
   `unverifiedTextLayer`: transcription, tables, numbers and reading order need human review.
   This conservative signal is not an OCR confidence score; it can also flag illustrated pages
   with valid text. Validated structure tags still apply to visible native text over such a
-  background (a chapter opener's photograph); pages with invisible text keep spatial reconstruction. Smaller graphics and undetected scans can still contain transcription errors.
+  background (a chapter opener's photograph); pages with invisible text keep spatial reconstruction. When an inherited OCR layer marks what it could not transcribe with inline images (Adobe Paper Capture), those marks are evidence only: each grows over the scan's ink to a whole figure ending above its `FIGURE N.` caption, or to a whole display-equation row with its number, and a figure that cannot grow without reaching prose keeps the page image. Smaller graphics and undetected scans can still contain transcription errors.
 - Born-digital text whose fonts carry a custom `Differences` encoding of index-style glyph
   names (`G108`, `c63`) with no `ToUnicode` map extracts as the wrong characters even though
   the page renders correctly. When such a font is present and the page's extracted words also
@@ -195,8 +195,8 @@ and requires identical output. Missing sources fail with acquisition instruction
 automatic downloads. `scripts/check-all.sh --fast` remains the offline synthetic lane (it also
 converts each fixture twice and requires byte-identical EPUBs).
 Python tool tests and the source-region, glyph-structure and image-appearance checks require numpy
-and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold 1529
-checks on 354 pages of 15 documents, including full-resolution stroke checks for equations and a
+and Pillow. Poppler is needed only to render new region references. The reviewed contracts hold 1564
+checks on 358 pages of 15 documents, including full-resolution stroke checks for equations and a
 table, scale/contrast/color checks for a flag and an FAA figure, and 9 cell checks on tables
 emitted as text. See [regression testing](doc/regression-testing.md) for coverage, limitations and
 adding a case.

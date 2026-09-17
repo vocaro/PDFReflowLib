@@ -14,10 +14,15 @@
       "acceptance": "Preserve Figure 1 with its caption; keep numbered equations with their numbers; left column before right column."
     },
     {
+      "page": 3,
+      "target": "Figure 2 beside right-column equations 13-17",
+      "acceptance": "Preserve Figure 2 as one image with its top axis and axis labels, caption as text below; left column before right column; equation (15) keeps both lines and its number."
+    },
+    {
       "page": 7,
       "target": "Closing prose and two-column references",
       "acceptance": "Reflow the closing paragraph as text; References is a heading; entries [1]-[33] each separate and in order across both columns; OCR noise flagged."
     }
   ],
-  "scope": "Manual targets. Current converter falls back to page images on pages 1-6 (#37) and rasterizes page-7 prose (#36)."
+  "scope": "Manual targets. Pages 1-6 reflow with the unverified-text warning and source-page references; Paper Capture inline images are grown into whole figure and display-equation crops (#37). Unboxed equation (8) remains OCR text; page 1 folds the line between equations (2) and (3) into their formula crop; page 4 reads the right column's first line before equation (18)."
 }

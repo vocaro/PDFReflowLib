@@ -602,6 +602,24 @@ an accompanying source-page image under the default reference policy. This conse
 text is OCR, detect every corrupted layer, or assess individual table cells. Fresh OCR keeps
 its separate `ocrUsed` notice; image-only fallbacks keep `pageImageFallback`.
 
+`GraphicsReader` handles inline images (`BI … ID … EI`, which `CGPDFScanner` reports as one `EI`
+whose operand is the image stream) as the unit square under the CTM, like image XObjects, after
+validating the dictionary (positive `W`/`H`, `IM true` or a device/indexed colour space with a
+valid `BPC`) and, for decoded data, the full sample length; anything else keeps the page image.
+On a page whose invisible OCR layer lies over a page-sized scan, those inline images are OCR
+evidence rather than crops (#37): Adobe Paper Capture places them over what recognition could not
+transcribe, as strips of a figure or part of an equation. `ScanEvidenceRegions` renders the page at
+four pixels per point into a one-point ink grid and grows the evidence over it, with prose rows
+(`isProseRow`) and captions as walls. Evidence above a `FIGURE N.` caption, over its measure with
+no prose between, is merged into one figure that grows within a 1.25-body margin and down to the
+caption, so labels between the drawing and its caption stay in the crop. Other evidence, and the
+formula crops layout would make from the OCR text, grow across their column row within a
+0.6-body margin, keeping multi-line displays and equation numbers whole. A figure that would reach
+prose sends the page to its image; an equation that would keeps only its own box's ink. Evidence
+outside the text block's measure or over blank paper is dropped. Only on these pages do sub-page
+paints survive beside the grown regions; every other image-backed page still clears its graphics,
+since art behind visible text (DGA, CDC) would take that text into crops.
+
 `TextEncodingCheck` covers the born-digital counterpart: a simple font in the page resources
 (or a nested Form) with a `Differences` encoding of index-style glyph names and no `ToUnicode`
 map is structural evidence read from the Core Graphics page dictionary, and an embedded English

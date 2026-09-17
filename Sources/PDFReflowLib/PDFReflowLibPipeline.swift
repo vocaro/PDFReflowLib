@@ -49,7 +49,7 @@ enum PDFReflowLibPipeline {
             throws -> (content: PageContent, attemptsOCR: Bool, damagedEncoding: Bool) {
             // The pool includes every PDFKit accessor, not only string extraction. Page
             // references and annotation arrays also carry autoreleased rendering resources.
-            var (content, unmappedFont, pageSizedGraphic, invisibleText) = try autoreleasepool {
+            var (content, unmappedFont, pageSizedGraphic, graphics) = try autoreleasepool {
                 let page = try document.page(at: i)
                 guard let reference = page.pageRef else {
                     throw ConversionError.unreadablePDF
@@ -115,8 +115,9 @@ enum PDFReflowLibPipeline {
                 // removal, so a full-page background still earns the review warning and reference.
                 return (content, !content.lines.isEmpty && !requiresPageImage && TextEncodingCheck.hasUnmappedFont(reference),
                         graphics.regions.contains { $0.width * $0.height > bounds.width * bounds.height * 0.75 },
-                        graphics.hasInvisibleText)
+                        graphics)
             }
+            let invisibleText = graphics.hasInvisibleText
             let bounds = content.bounds
             let raw = content.lines.map(\.text).joined()
             let damaged = raw.unicodeScalars.filter { $0.value == 0xFFFD || $0.value == 0xFFFC }.count
@@ -148,6 +149,33 @@ enum PDFReflowLibPipeline {
                 content.preservePageReference = true
                 for index in content.lines.indices { content.lines[index].structure = nil }
             }
+            // Inline images over an inherited OCR layer mark what recognition could not transcribe:
+            // evidence for whole figures and display rows, not crops (#37). On such a page only the
+            // page-sized scan is background; what is drawn over it keeps its crop. Every other
+            // image-backed page clears its graphics as before: art behind visible text (DGA, CDC)
+            // would otherwise take that text into crops.
+            var retainedGraphics: [CGRect] = []
+            if !content.requiresPageImage, imageBackedText, invisibleText, !graphics.inlineImages.isEmpty {
+                // A path with no extent (`0 0 m 0 0 l S`, NBS) is only the reader's 2-point
+                // margin around a point: nothing distinguishable from the scan's own ink.
+                let paints = graphics.paints.filter {
+                    $0.rect.width * $0.rect.height <= bounds.width * bounds.height * 0.75
+                        && ($0.rect.width > 4.01 || $0.rect.height > 4.01)
+                        && !graphics.inlineImages.contains($0.rect)
+                }
+                let grown: [CGRect]? = try autoreleasepool {
+                    guard let reference = try document.page(at: i).pageRef,
+                          let ink = ScanEvidenceRegions.inkMap(reference, bounds: bounds) else { return nil }
+                    return ScanEvidenceRegions.regions(evidence: graphics.inlineImages, lines: content.lines,
+                                                       bounds: bounds, ink: ink)
+                }
+                if let grown {
+                    retainedGraphics = TintDetector.compose(paints, lines: content.lines, bounds: bounds).graphics + grown
+                } else {
+                    // A figure that cannot be grown whole is never cropped in pieces.
+                    content.requiresPageImage = true
+                }
+            }
             if !content.requiresPageImage, imageBackedText {
                 // A scan with an existing OCR layer must still reflow. Keep its visual page as a
                 // reference rather than treating the full-page scan as one figure covering all text.
@@ -158,7 +186,7 @@ enum PDFReflowLibPipeline {
                 if invisibleText {
                     for index in content.lines.indices { content.lines[index].structure = nil }
                 }
-                content.graphics = []
+                content.graphics = retainedGraphics
                 content.tints = []
                 content.separators = []
                 warnings.append(.init(code: .unverifiedTextLayer, page: i + 1,

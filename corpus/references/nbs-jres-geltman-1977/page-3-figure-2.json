@@ -1,0 +1,23 @@
+{
+  "case": "nbs-jres-geltman-1977",
+  "sourceSHA256": "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
+  "page": 3,
+  "regionPoints": [
+    8.0,
+    120.0,
+    256.0,
+    342.0
+  ],
+  "target": "Figure 2 plot with its top axis, axis labels and curve labels, above its caption",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "kind": "region",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    117,
+    107
+  ],
+  "sha256": "f99ac8b92ab4d34f407ea94c56439eee4f358784ed93948072d458ef9b03b35b"
+}

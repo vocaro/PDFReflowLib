@@ -124,6 +124,18 @@ class ImageRegionContractTests(unittest.TestCase):
         self.contract['pages'][0]['imageRegions'][0]['minimumCorrelation'] = 1
         self.assertFalse(self.check({'EPUB/images/b.png': png(table_image(ROWS, offset=(2, 1)))})['passed'])
 
+    def test_an_excluded_page_reference_cannot_satisfy_a_region(self):
+        # The source-page image beside reflowed text contains the region; only a crop may count.
+        self.pages[1]['pageReferences'] = ['EPUB/images/b.png']
+        self.assertTrue(self.check()['passed'])
+        self.contract['pages'][0]['imageRegions'][0]['excludePageReference'] = True
+        self.assertFalse(self.check()['passed'])
+        self.pages[1]['images'].append('EPUB/images/c.png')
+        self.assertTrue(self.check({**self.images, 'EPUB/images/c.png': png(table_image(ROWS))})['passed'])
+        self.contract['pages'][0]['imageRegions'][0]['excludePageReference'] = 'yes'
+        with self.assertRaises(ValueError):
+            self.check()
+
     def test_reference_identity_path_and_threshold_are_validated(self):
         for sidecar in [{'sourceSHA256': 'other'}, {'page': 2}, {'renderDPI': 144}]:
             self.write_reference(**sidecar)

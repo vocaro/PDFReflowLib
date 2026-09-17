@@ -110,6 +110,9 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                     if asset not in names:
                         raise ValueError('Missing image asset: ' + asset)
                     pages[current]['images'].append(asset)
+                    # The converter's supplementary source-page image, which contains every region.
+                    if element.get('alt') == f'Original page {current}':
+                        pages[current].setdefault('pageReferences', []).append(asset)
                 if element.tag == HTML + 'table' and current is not None:
                     import table_cells
                     pages[current]['tables'].append(table_cells.grid_from_table(element))
@@ -224,7 +227,10 @@ def load_reference(case, contract, number, expectation, reference_root, kinds, k
 def reference_image(case, contract, number, expectation, reference_root=ROOT):
     """Validate a region expectation and return its reference PNG bytes and threshold."""
     import image_regions
-    data, _ = load_reference(case, contract, number, expectation, reference_root, {'region'}, {'minimumCorrelation'})
+    data, _ = load_reference(case, contract, number, expectation, reference_root, {'region'},
+                             {'minimumCorrelation', 'excludePageReference'})
+    if type(expectation.get('excludePageReference', False)) is not bool:
+        raise ValueError('excludePageReference must be a boolean')
     return data, bounded(expectation, 'minimumCorrelation', image_regions.DEFAULT_MINIMUM_CORRELATION, 0.5, 1)
 
 
@@ -462,7 +468,11 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
                 errors.append(f'Page {number}: converted images unavailable for {expectation["reference"]}')
                 continue
             import image_regions
-            score = image_regions.region_score(reference, [image_data(asset) for asset in page['images']])
+            # A region crop must show the reference itself: the source-page image beside reflowed
+            # text contains every region, so it satisfies nothing when excluded (#37).
+            excluded = page.get('pageReferences', []) if expectation.get('excludePageReference') else []
+            score = image_regions.region_score(reference, [image_data(asset) for asset in page['images']
+                                                           if asset not in excluded])
             if score < minimum:
                 errors.append(f'Page {number}: no image shows {expectation["reference"]} '
                               f'(best correlation {score:.3f} < {minimum})')

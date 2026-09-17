@@ -56,8 +56,14 @@ enum NativeTextReader {
             // Symbol fonts' private-use characters, read from the page's font resources the first time
             // a line holds one (#155).
             let privateUse = PrivateUseCharacters(page: page)
+            // The page's text shows, for word boundaries PDFKit drops (#119, #128) and for
+            // detached content it joins into one line (#14).
+            let spacing = includeStyle && page.numberOfCharacters <= limit
+                ? page.pageRef.map { NativeSpacingReader.read($0, decodings: glyphDecodings) } ?? [] : []
             var lines = try extractLines(on: page, limit: limit, includeStyle: includeStyle, weights: weights,
-                                         glyphDecodings: glyphDecodings, report: report, privateUse: privateUse)
+                                         spacing: spacing, report: report, privateUse: privateUse)
+            lines = try splitDetachedShows(lines, shows: spacing, on: page, includeStyle: includeStyle,
+                                           weights: weights, privateUse: privateUse)
             if !columnJoints.isEmpty {
                 lines = try splitAtColumnJoints(lines, joints: columnJoints, on: page, includeStyle: includeStyle, weights: weights,
                                                 privateUse: privateUse)
@@ -211,6 +217,74 @@ enum NativeTextReader {
         return result
     }
 
+    /// Empty space that separates content standing on two sides of a page from a word space, a
+    /// column gap or a table's cells (#14). Measured on the corpus's own merged lines: every gap
+    /// a column, a cell or a graph label leaves reaches at most 11.5 ems and 19.4% of the page's
+    /// width (Wallace's answer columns and coordinate labels, the FAA's beacon table, the Census
+    /// report's figures), while content set against the opposite side of a page begins at 17.8 ems
+    /// and 35.7% (Wallace's two-graph exercise row, Our Flag's signature block, the *Dietary
+    /// Guidelines* cover's labels and footer). Nothing at all lies between.
+    static let detachedShowGap: CGFloat = 8
+    static let detachedShowPageShare: CGFloat = 0.25
+
+    /// Detached content PDFKit returns as one line (#14, the *Dietary Guidelines* cover, whose
+    /// `& Healthy Fats` labels the left of the food pyramid and `& Fruits` its right on the same
+    /// baseline). PDFKit joins the two with a space glyph 343 pt wide and reports character
+    /// positions that no longer follow the text, so a cut cannot be found by walking characters.
+    /// The text-show positions in the content stream can still say where each piece begins.
+    ///
+    /// A cut is proposed at a show whose origin stands `detachedShowGap` ems and
+    /// `detachedShowPageShare` of the page beyond the previous show's origin — a necessary
+    /// condition for that much empty page, since neither show's ink begins before its origin, and
+    /// cheap enough to leave ordinary prose untouched. PDFKit's own rectangle selections then
+    /// measure the pieces, which must spell the line exactly apart from the whitespace at the
+    /// cuts, stand on their own sides of them, and leave every neighbouring pair that same
+    /// distance apart with more empty page between them than their own ink. Word spaces, prose
+    /// rows and a table's columns leave far less. Any failure keeps the whole line, so a line
+    /// that mixes a real gap with a doubtful one is never taken apart.
+    private static func splitDetachedShows(_ lines: [TextLine], shows: [NativeSpacingReader.Evidence],
+                                           on page: PDFPage, includeStyle: Bool, weights: [FontWeightReader.Show],
+                                           privateUse: PrivateUseCharacters) throws -> [TextLine] {
+        guard !shows.isEmpty, lines.count <= 10_000, shows.count * lines.count <= 2_000_000 else { return lines }
+        let allBounds = lines.map(\.rect)
+        let share = page.bounds(for: .cropBox).width * detachedShowPageShare
+        var result: [TextLine] = []
+        for line in lines {
+            try Task.checkCancellation()
+            let rect = line.rect
+            guard !line.monospaced, rect.width > share else { result.append(line); continue }
+            let least = max(max(4, line.fontSize) * detachedShowGap, share)
+            // Every show placed on this line, and on no other: overlapping line rectangles
+            // cannot say which line a show belongs to.
+            let matches = shows.filter { rect.insetBy(dx: -0.75, dy: -0.75).contains($0.origin) }
+            guard matches.count >= 2, matches.allSatisfy({ match in
+                allBounds.filter { $0.insetBy(dx: -0.75, dy: -0.75).contains(match.origin) }.count == 1
+            }) else { result.append(line); continue }
+            let ordered = matches.sorted { $0.origin.x < $1.origin.x }
+            let cuts = zip(ordered, ordered.dropFirst()).compactMap { left, right -> CGFloat? in
+                right.origin.x - left.origin.x > least ? right.origin.x - 0.5 : nil
+            }
+            guard !cuts.isEmpty else { result.append(line); continue }
+            let edges = [rect.minX] + cuts + [rect.maxX]
+            var pieces: [TextLine] = []
+            for (start, end) in zip(edges, edges.dropFirst()) {
+                guard let next = piece(of: rect, from: start, to: end, on: page, includeStyle: includeStyle,
+                                       weights: weights, privateUse: privateUse) else { pieces = []; break }
+                pieces.append(next)
+            }
+            guard pieces.count == cuts.count + 1,
+                  squeezed(pieces.map(\.text).joined(separator: " ")) == squeezed(line.text),
+                  zip(pieces, cuts).allSatisfy({ $0.rect.maxX <= $1 + 1 }),
+                  zip(pieces.dropFirst(), cuts).allSatisfy({ $0.rect.minX >= $1 - 1 }),
+                  zip(pieces, pieces.dropFirst()).allSatisfy({ left, right in
+                      let gap = right.rect.minX - left.rect.maxX
+                      return gap >= least && gap >= left.rect.width + right.rect.width
+                  }) else { result.append(line); continue }
+            result += pieces
+        }
+        return result
+    }
+
     /// Letters, all capitals: a borderless table's column headings (`CATEGORY`, `LIMIT LOAD FACTOR`).
     static func isCapitalHeading(_ text: String) -> Bool {
         let letters = text.filter(\.isLetter)
@@ -304,7 +378,7 @@ enum NativeTextReader {
     }
 
     private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool, weights: [FontWeightReader.Show],
-                                     glyphDecodings: [String: [UInt8: String]], report: IndexGlyphReport?,
+                                     spacing: [NativeSpacingReader.Evidence], report: IndexGlyphReport?,
                                      privateUse: PrivateUseCharacters) throws -> [TextLine] {
         guard page.numberOfCharacters <= limit else {
             throw ConversionError.resourceLimit("too many characters")
@@ -312,7 +386,6 @@ enum NativeTextReader {
         guard let selection = page.selection(for: page.bounds(for: .cropBox)) else { return [] }
         let selections = selection.selectionsByLine()
         let boundsByLine = selections.map { $0.bounds(for: page) }
-        let spacing = includeStyle ? page.pageRef.map { NativeSpacingReader.read($0, decodings: glyphDecodings) } ?? [] : []
         var result: [TextLine] = []
         var carry: FontWeightReader.IndexGlyphCarry?
         let indexGlyphs = weights.contains { $0.indexFont != nil }

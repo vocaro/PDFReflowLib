@@ -1,0 +1,46 @@
+Line changes across the 21 corpus documents, e21ef31 against this change
+(survey-line-changes.swift; every line PDFKit returns that the reader reads differently).
+
+Totals, identical in both runs except the four lines listed below:
+  7627 lines whose characters change (#119/#128 word spaces, #143 glyphs, #155 symbols)
+  1512 -> 1516 lines split into pieces (#65 column joints, #121 borderless tables, #14)
+    25 pages whose lines could not be aligned with PDFKit's, unchanged
+
+Added by this change (diff of the two runs, complete):
+  wallace-algebra-2010 p101 SPLIT 2 raw="9) 10)" pieces="9)" | "10)"
+  dga-2025-2030 p1 SPLIT 2 raw="realfood.gov 2025–2030" pieces="realfood.gov" | "2025–2030"
+  dga-2025-2030 p1 SPLIT 2 raw="& Healthy Fats & Fruits" pieces="& Healthy Fats" | "& Fruits"
+  gpo-our-flag-2003 p4 SPLIT 2 raw="Chairman Vice Chairman" pieces="Chairman" | "Vice Chairman"
+
+Removed by this change: none. Lines whose characters change: unchanged, 7627 in both.
+
+Every gap the rule could take, measured with the distance threshold lowered to 2 ems and
+no page share, sorted by the empty space between the pieces (`ink` is the two pieces'
+own width together). The rule takes a gap of at least 8 ems and a quarter of the page:
+
+     em   points      ink  page%  pieces
+  35.95    414.2    121.0  67.7%  'realfood.gov' | '2025–2030'
+  20.62    144.3     77.2  34.1%  'Chairman' | 'Vice Chairman'
+  19.41    349.0    183.2  57.0%  '& Healthy Fats' | '& Fruits'
+  17.86    213.6     93.0  35.9%  'Solution' | '(− 1,− 3)'
+  17.75    212.2     26.8  35.7%  '9)' | '10)'
+  11.53    115.2     60.2  19.4%  'Difference' | '0.25'
+  10.33    103.3     42.2  17.4%  'H' | '50–1999'
+   9.90    118.3     17.1  19.9%  'B' | 'A'
+   9.75    116.5     17.1  19.6%  'B' | 'A'
+   9.62    115.0     53.6  19.3%  '1)− 4' | '2) 7'
+   9.35    111.8     17.1  18.8%  'A' | 'B'
+   9.00    107.7     92.8  18.1%  'x = 1' | 'First solution'
+   8.29     99.1     17.1  16.7%  'B' | 'A'
+   7.37     88.1     51.8  14.8%  '1=1' | 'True!'
+   7.07     84.5     16.7  14.2%  'B' | 'C'
+   6.00     71.7     17.6  12.1%  '24' | '8'
+   5.53     66.2     20.8  11.1%  '4' | '6.8'
+   5.23     62.5     16.7  10.5%  'B' | 'C'
+   4.98     59.6     17.6  10.0%  '8' | '11'
+   4.90     58.6     37.8   9.8%  '23)' | '23 + 4'
+   4.89     58.4     23.7   9.8%  'A' | '9.3'
+   4.37     52.3     27.4   8.8%  'Bob' | '3'
+   4.28     51.2     29.7   8.6%  'Fred' | '3'
+   4.26     50.9     11.7   8.6%  '5' | '5'
+... 63 further candidates, all below 7.4 em and 19% of the page

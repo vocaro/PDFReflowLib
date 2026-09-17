@@ -220,7 +220,13 @@ the same way without rules (#121, FAA page 131): where PDFKit keeps one row's tw
 ems' leading, in the same size, are read against that gap, and their crossing lines are cut where
 the selections show two ems of whitespace, only when the run opens with a heading in capitals on
 both sides, at least three rows hold text on both sides, an em of whitespace is common to every
-row and nothing painted lies within it. The reader also marks image XObject footprints and paths
+row and nothing painted lies within it. Before either of those, a line whose content-stream shows
+stand at least eight ems and a quarter of the page apart is cut there (#14, the *Dietary Guidelines*
+cover's `& Healthy Fats` and `& Fruits`, which label the two sides of the food pyramid on one
+baseline): PDFKit's character positions on such a page need not follow the text, but its rectangle
+selections do, and the split is taken only when the pieces spell the line, stand on their own sides
+of the cut and leave every neighbouring pair that distance apart with more empty page between them
+than their own ink. The reader also marks image XObject footprints and paths
 painted by a fill operator (#117), and composition applies three more rules before clustering.
 A filled vector shape that is not a rectangle and holds no other paint (a rounded callout box)
 is a tint candidate on the same prose evidence, with any filled shape touching it that holds only

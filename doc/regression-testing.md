@@ -113,7 +113,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 2638 targeted checks on 506 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 2655 targeted checks on 507 reviewed pages
 across 21 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No. 14*, *Mineral Commodity
@@ -123,10 +123,10 @@ Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Ci
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
 Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
 System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 992 ordered-text, 186 text, 347 paragraph, 191 absent-text, 222 heading,
+They comprise 999 ordered-text, 191 text, 347 paragraph, 193 absent-text, 222 heading,
 34 absent-heading, 80 list-item, 1 preformatted-lines, 28 script, 6 absent-script, 11 footnote,
 34 note-link, 56 paragraph-continuation, 1 list-item-continuation, 8 paragraph-separation,
-77 distinct-paragraph, 177 image-presence, 42 page-reference, 88 warning, 25 absent-warning,
+80 distinct-paragraph, 177 image-presence, 42 page-reference, 88 warning, 25 absent-warning,
 17 source-region, 3 glyph-structure, 3 image-appearance and 9 table-cell checks, counted as
 `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
@@ -459,6 +459,34 @@ alone (repeated labels or a label without its own value cost only that list its 
 header cell over one column, a single spanning header cell and spans short of the body's columns as
 controls that keep the first-column rule.
 
+## Labels joined across a page
+
+`DetachedLabelTests.swift` covers [#14](https://github.com/vocaro/PDFReflowLib/issues/14): PDFKit
+returns content set against opposite sides of a page as one line (the *Dietary Guidelines* cover's
+`& Healthy Fats` and `& Fruits`, which label the two sides of the food pyramid, joined by a space
+glyph 343 pt wide), and its character positions on that page no longer follow the text, so no cut
+can be found by walking characters. `NativeTextReader.splitDetachedShows` proposes a cut where a
+text show in the content stream begins at least eight ems and a quarter of the page beyond the
+previous show, and takes it only when PDFKit's own rectangle selections show pieces that spell the
+line, stand on their own sides of the cut and leave every neighbouring pair that distance apart
+with more empty page between them than their own ink. Column gaps, cells and word spaces leave far
+less: the corpus's own merged lines put every column, cell and graph-label gap at or below 11.5 ems
+and 19% of the page, and every gap across a page at or above 17.8 ems and 35%.
+
+Original in-memory PDFs supply the reproducer (two labels on one baseline, a three-label row, a
+split label's styled run) and every control: a table row's column gap, a row whose pieces carry
+more ink than the space between them, prose with ordinary word spaces, a line narrower than a
+quarter of the page, labels already on separate baselines, a font without widths (so the spacing
+reader supplies no shows, the state of every fixture captured before #14) and an unmodelled text
+mode. Removing the page share fails the table-row and short-line controls; removing the ink test
+fails the ink-heavy row. The corpus contracts add DGA page 1 (`Protein, Dairy & Healthy Fats`,
+`& Fruits`, `realfood.gov` and `2025–2030` present, `& Healthy Fats & Fruits` and
+`realfood.gov 2025–2030` absent, each pair distinct paragraphs) and Wallace page 101 (exercises
+`9)` and `10)` distinct paragraphs, in order before their instruction); Our Flag page 4's
+two-column committee entries are the corpus control that must stay whole. Across all 21 documents
+this adds four split lines and changes no word space; see the
+[detached-label evidence](../measurements/detached-labels/record.md).
+
 ## Source-derived fidelity controls
 
 `FidelityIssueTests.swift` checks the FAA page-91/511 columns, all ten Our Flag page-27 table
@@ -530,7 +558,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->760 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->233 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->771 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->233 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 

@@ -91,16 +91,29 @@ drawing it is bold (#125). PDFKit names an embedded font only when the system ha
 name (every Fed, 9/11, Wallace, Our Flag, DGA and NOAA run reports `Helvetica`), and runs in two
 embedded fonts of one colour merge. `FontWeightReader` scans a page's text shows, following Form
 XObjects, and classifies each font resource: a `BaseFont` naming a bold weight (`Bold`, `Demi`,
-`Dm`, `Semibold`, `SemiBd`, `Heavy`, `Black`, TeX's `cmbx`/`cmmib`/`dcbx`) is bold unless a
+`Dm`, `Semibold`, `SemiBd`, `Heavy`, `Black`, TeX's `cmbx`/`cmmib`/`dcbx`, Libertine's `TB`/`TZ`) is bold unless a
 descriptor `FontWeight` below 500 contradicts a weight other than `Bold`; a name stating a lighter
 weight (`Book`, `Medium`, `Light`, `Regular`) is never bold; a name stating none is bold for
 `FontWeight` 600 or more or the `ForceBold` flag. `StemV` is not used. A PDFKit line is marked only
 where its shows (origin in the line's bounds; a show inside several lines' bounds belongs to a
 clearly tighter one) explain it: the leftmost starts within half an em of the line's edge, and
-either every show is one bold weight or the shows' one-byte ToUnicode text spells the line, giving
+either every show is one bold weight or the shows' decoded text spells the line, giving
 each character its weight. Whitespace follows PDFKit's run, a display initial or numeral gains no
 emphasis, and anything else is left as PDFKit read it. See
 [the font weight evidence](../measurements/font-weight-detection/record.md).
+
+A run is italic in the same way when its font resource sets italic text (#133): a name stating
+`Italic`, `Oblique`, `Kursiv` or a style-suffix `It` (`BkIt`), a TeX, EC or cm-super italic or
+slanted shape (`cmti`, `cmsl`, `dcti`, `SFTI`) or Libertine's `TI`; for a name stating neither
+slope nor roman, the descriptor's `Italic` flag or an `ItalicAngle` of 5° or more, unless the font
+is symbolic or a script face. Math italic (`CMMI`, `LibertineMathMI`, `NewTXMI`, `txmi`) sets
+variables, not emphasis, and is never italic. The shows decode through a simple font's ToUnicode
+map under any codespace, a Type1 font's WinAnsi encoding where it has no map (Wallace), or an
+`Identity-H` composite font's two-byte map (DGA, NOAA), so a line mixing styles is marked character
+by character; a style every show on a line shares needs no decoding. A leading marker without a
+letter or digit in a style its item does not share (DGA's bold `+` bullets) gains no emphasis.
+`EPUBTextEncoder` writes adjacent runs of one style as one element (`<strong>FAA-H-8083-25C</strong>`).
+See [the font style evidence](../measurements/font-style-detection/record.md).
 
 Explicit Core Text/Foundation baseline offsets preserve
 inline scripts; tiny positioning noise and full-line OCR offsets do not become script styles.

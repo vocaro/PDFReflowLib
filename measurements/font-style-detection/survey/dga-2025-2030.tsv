@@ -1,0 +1,61 @@
+# dga-2025-2030 pages 1-10; pages whose scan failed: 0
+baseFont	subtype	FontWeight	StemV	Flags	ItalicAngle	ToUnicode	shows	PDFKit names	name rule bold	weight-aware bold	name slope	name rule italic	slope-aware italic
+SEFYEN+RobotoCondensed-Regular	Type0	400	84	4	0	yes	397	Helvetica×208	no	no	upright	no	no
+SEFYEN+RobotoCondensed-Bold	TrueType	700	140	32	0	yes	126	Helvetica×29	no	yes	unstated	no	no
+SEFYEN+RobotoCondensed-Regular	TrueType	400	84	32	0	yes	108	Helvetica×27	no	no	upright	no	no
+-	Type3	-	-	32	0	yes	11	Helvetica×8	no	no	-	no	no
+SEFYEN+RobotoCondensed-Italic	TrueType	400	84	96	-12	yes	6		-	no	italic	-	yes
+SEFYEN+RobotoCondensed-Bold	Type0	700	140	4	0	yes	1	Helvetica×1	no	yes	unstated	no	no
+# line runs 428; bold by name rule 0; bold with font resources 40; changed 40 on 9 pages
+# italic by name rule 0; italic with font resources 5; changed 5 on 3 pages
+# unresolved mixed-style lines: 0 on 0 pages; by undecoded font kind: 
+# pages with bold changes: 2 3 4 5 6 7 8 9 10
+# pages with italic changes: 2 9 10
+# bold examples
+  p2	helvetica	1
+  p2	helvetica	The message is simple: eat real food.
+  p2	helvetica	This changes today.
+  p2	helvetica	We are putting real food back at the center of the American diet. Real
+  p2	helvetica	health. Real food that fuels energy and encourages movement and exerci
+  p2	helvetica	This is the foundation that will Make America Healthy Again.
+  p2	helvetica	Robert F. Kennedy, Jr.
+  p2	helvetica	Brooke L. Rollins
+  p2	helvetica	Message from the Secretaries
+  p3	helvetica	2
+  p3	helvetica	Prioritize Protein Foods at Every Meal
+  p3	helvetica	Consume Dairy
+  p3	helvetica	Eat the Right Amount for You
+  p3	helvetica	Gut Health
+  p4	helvetica	3
+  p4	helvetica	Eat Vegetables & Fruits Throughout the Day
+  p4	helvetica	Incorporate Healthy Fats
+  p4	helvetica	Focus on Whole Grains
+  p5	helvetica	4
+  p5	helvetica	Limit Highly Processed Foods, Added Sugars,
+  p5	helvetica	& Refined Carbohydrates
+  p5	helvetica	Added Sugars
+  p6	helvetica	5
+  p6	helvetica	Sodium
+  p6	helvetica	Limit Alcoholic Beverages
+  p7	helvetica	6
+  p7	helvetica	Special Populations & Considerations
+  p7	helvetica	Infancy & Early Childhood (Birth–4 Years)
+  p8	helvetica	7
+  p8	helvetica	Introducing Food to Infants & Toddlers
+  p8	helvetica	Middle Childhood (5–10 Years)
+  p8	helvetica	Adolescence (11–18 Years)
+  p9	helvetica	8
+  p9	helvetica	Young Adulthood
+  p9	helvetica	Pregnant Women
+  p9	helvetica	Lactating Women
+  p9	helvetica	Older Adults
+  p10	helvetica	9
+  p10	helvetica	Individuals with Chronic Disease
+  p10	helvetica	Vegetarians & Vegans
+# italic examples
+  p2	helvetica	Dietary Guidelines for Americans, 2025–2030.
+  p9	helvetica	Dietary Guidelines 
+  p9	helvetica	Dietary Guidelines 
+  p10	helvetica	Dietary Guidelines 
+  p10	helvetica	Dietary Guidelines 
+# unresolved examples

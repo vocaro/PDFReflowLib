@@ -475,7 +475,7 @@ enum NativeSpacingReader {
         return result
     }
 
-    private static func encodingUnicodeMap(_ dict: CGPDFDictionaryRef) -> [UInt8: String]? {
+    static func encodingUnicodeMap(_ dict: CGPDFDictionaryRef) -> [UInt8: String]? {
         var name: UnsafePointer<CChar>?, encoding: CGPDFDictionaryRef?
         if CGPDFDictionaryGetName(dict, "Encoding", &name), let name {
             return String(cString: name) == "WinAnsiEncoding" ? winAnsiUnicodeMap(differences: []) : nil

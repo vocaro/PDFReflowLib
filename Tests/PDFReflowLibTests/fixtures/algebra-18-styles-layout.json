@@ -1,0 +1,1413 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        84.9602,
+        746.01924480000002,
+        14.966047660287998,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "0.3"
+        }
+      ],
+      "text" : "0.3"
+    },
+    {
+      "rect" : [
+        156.23990000000001,
+        723.80283639999993,
+        282.4948266128041,
+        16.919463599999972
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 16.936400000000003,
+          "text" : "Pre-Algebra - Order of Operations"
+        }
+      ],
+      "text" : "Pre-Algebra - Order of Operations"
+    },
+    {
+      "rect" : [
+        84.9602,
+        695.75110000000006,
+        425.15773787074556,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Objective: Evaluate expressions using the order of operations, including"
+        }
+      ],
+      "text" : "Objective: Evaluate expressions using the order of operations, including"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        681.35110000000009,
+        149.64996996783867,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "the use of absolute value."
+        }
+      ],
+      "text" : "the use of absolute value."
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        662.37934480000013,
+        425.15569152284161,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "When simplifying expressions it is important that we simplify them in the correct"
+        }
+      ],
+      "text" : "When simplifying expressions it is important that we simplify them in the correct"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        647.97934480000015,
+        324.13198042342401,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "order. Consider the following problem done two diﬀerent ways:"
+        }
+      ],
+      "text" : "order. Consider the following problem done two diﬀerent ways:"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        622.19130000000018,
+        72.970066709862408,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 24."
+        }
+      ],
+      "text" : "Example 24."
+    },
+    {
+      "rect" : [
+        185.04019999999997,
+        598.94300799999996,
+        95.875034712832075,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -9.9999999861211109e-05,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2+5"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "· 3 Add First "
+        }
+      ],
+      "text" : "2+5· 3 Add First "
+    },
+    {
+      "rect" : [
+        320.03988000000004,
+        598.94300799999996,
+        90.061243648409572,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "2+ 5· 3 Multiply"
+        }
+      ],
+      "text" : "2+ 5· 3 Multiply"
+    },
+    {
+      "rect" : [
+        194.39999999999998,
+        583.94300799999996,
+        204.38358483584011,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "7· 3 Multiply 2+ 15 Add"
+        }
+      ],
+      "text" : "7· 3 Multiply 2+ 15 Add"
+    },
+    {
+      "rect" : [
+        198.12000000000003,
+        577.05944480000005,
+        211.10490611801615,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "21 Solution 17 Solution"
+        }
+      ],
+      "text" : "21 Solution 17 Solution"
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        542.49924480000004,
+        425.15760431178239,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The previous example illustrates that if the same problem is done two diﬀerent"
+        }
+      ],
+      "text" : "The previous example illustrates that if the same problem is done two diﬀerent"
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        528.09924480000006,
+        425.20286774781448,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "ways we will arrive at two diﬀerent solutions. However, only one method can be"
+        }
+      ],
+      "text" : "ways we will arrive at two diﬀerent solutions. However, only one method can be"
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        513.69924480000009,
+        425.25699774602242,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "correct. It turns out the second method, 17, is the correct method. The order of"
+        }
+      ],
+      "text" : "correct. It turns out the second method, 17, is the correct method. The order of"
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        499.29924480000005,
+        425.17502307330562,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "operations ends with the most basic of operations, addition (or subtraction)."
+        }
+      ],
+      "text" : "operations ends with the most basic of operations, addition (or subtraction)."
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        484.89924480000008,
+        425.15609772416002,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Before addition is completed we must do repeated addition or multiplication (or"
+        }
+      ],
+      "text" : "Before addition is completed we must do repeated addition or multiplication (or"
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        470.4992448000001,
+        425.18523314936317,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "division). Before multiplication is completed we must do repeated multiplication"
+        }
+      ],
+      "text" : "division). Before multiplication is completed we must do repeated multiplication"
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        456.09924480000012,
+        425.15779774947839,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "or exponents. When we want to do something out of order and make it come first"
+        }
+      ],
+      "text" : "or exponents. When we want to do something out of order and make it come first"
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        441.69924480000014,
+        425.25485616289279,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "we will put it in parenthesis (or grouping symbols). This list then is our order of"
+        }
+      ],
+      "text" : "we will put it in parenthesis (or grouping symbols). This list then is our order of"
+    },
+    {
+      "rect" : [
+        84.960000000000036,
+        427.29924480000017,
+        236.29307477370878,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "operations we will use to simplify expressions."
+        }
+      ],
+      "text" : "operations we will use to simplify expressions."
+    },
+    {
+      "rect" : [
+        238.20000000000005,
+        408.33904480000018,
+        118.70197760000002,
+        11.967155199999979
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Order of Operations:"
+        }
+      ],
+      "text" : "Order of Operations:"
+    },
+    {
+      "rect" : [
+        228.36000000000001,
+        384.95119999999997,
+        138.42439704207356,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Parenthesis (Grouping)"
+        }
+      ],
+      "text" : "Parenthesis (Grouping)"
+    },
+    {
+      "rect" : [
+        266.6397,
+        365.99139999999994,
+        61.948110758656014,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Exponents"
+        }
+      ],
+      "text" : "Exponents"
+    },
+    {
+      "rect" : [
+        191.03969999999998,
+        347.03119999999996,
+        213.06491423146497,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Multiply and Divide (Left to Right)"
+        }
+      ],
+      "text" : "Multiply and Divide (Left to Right)"
+    },
+    {
+      "rect" : [
+        198.11977999999999,
+        327.95149999999995,
+        198.90507762966013,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Add and Subtract (Left to Right)"
+        }
+      ],
+      "text" : "Add and Subtract (Left to Right)"
+    },
+    {
+      "rect" : [
+        84.959779999999995,
+        308.97934479999998,
+        425.18288441799677,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Multiply and Divide are on the same level because they are the same operation"
+        }
+      ],
+      "text" : "Multiply and Divide are on the same level because they are the same operation"
+    },
+    {
+      "rect" : [
+        84.959779999999967,
+        294.5793448,
+        425.155722080256,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "(division is just multiplying by the reciprocal). This means they must be done left"
+        }
+      ],
+      "text" : "(division is just multiplying by the reciprocal). This means they must be done left"
+    },
+    {
+      "rect" : [
+        84.959779999999967,
+        280.17934480000002,
+        425.20106227448321,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "to right, so some problems we will divide first, others we will multiply first. The"
+        }
+      ],
+      "text" : "to right, so some problems we will divide first, others we will multiply first. The"
+    },
+    {
+      "rect" : [
+        84.959779999999967,
+        265.77934480000005,
+        418.45389098572792,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "same is true for adding and subtracting (subtracting is just adding the opposite)."
+        }
+      ],
+      "text" : "same is true for adding and subtracting (subtracting is just adding the opposite)."
+    },
+    {
+      "rect" : [
+        84.959779999999967,
+        246.81914480000006,
+        425.21833906938883,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Often students use the word PEMDAS to remember the order of operations, as"
+        }
+      ],
+      "text" : "Often students use the word PEMDAS to remember the order of operations, as"
+    },
+    {
+      "rect" : [
+        84.959779999999967,
+        232.41914480000008,
+        425.20380585469439,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "the first letter of each operation creates the word PEMDAS. However, it is the"
+        }
+      ],
+      "text" : "the first letter of each operation creates the word PEMDAS. However, it is the"
+    },
+    {
+      "rect" : [
+        492.36027999999993,
+        219.81914480000006,
+        7.9621632000000204,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "P"
+        }
+      ],
+      "text" : "P"
+    },
+    {
+      "rect" : [
+        492.36027999999993,
+        205.41914480000008,
+        7.9621632000000204,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "E"
+        }
+      ],
+      "text" : "E"
+    },
+    {
+      "rect" : [
+        84.959779999999967,
+        198.57934480000006,
+        393.13323619422721,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "author’s suggestion to think about PEMDAS as a vertical word written as:"
+        }
+      ],
+      "text" : "author’s suggestion to think about PEMDAS as a vertical word written as:"
+    },
+    {
+      "rect" : [
+        486.48019999999991,
+        191.01914480000005,
+        19.742524855808085,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "MD"
+        }
+      ],
+      "text" : "MD"
+    },
+    {
+      "rect" : [
+        488.76027999999991,
+        176.61914480000007,
+        15.26380423014399,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "AS"
+        }
+      ],
+      "text" : "AS"
+    },
+    {
+      "rect" : [
+        84.960279999999898,
+        161.01914480000005,
+        425.20302815513605,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "so we don’t forget that multiplication and division are done left to right (same"
+        }
+      ],
+      "text" : "so we don’t forget that multiplication and division are done left to right (same"
+    },
+    {
+      "rect" : [
+        84.960279999999898,
+        146.61914480000007,
+        425.25878155092482,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "with addition and subtraction). Another way students remember the order of"
+        }
+      ],
+      "text" : "with addition and subtraction). Another way students remember the order of"
+    },
+    {
+      "rect" : [
+        84.960279999999898,
+        132.21914480000004,
+        425.21829506073595,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "operations is to think of a phrase such as “Please Excuse My Dear Aunt Sally”"
+        }
+      ],
+      "text" : "operations is to think of a phrase such as “Please Excuse My Dear Aunt Sally”"
+    },
+    {
+      "rect" : [
+        84.960279999999898,
+        117.81914480000005,
+        424.69375233856005,
+        11.97911040000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "where each word starts with the same letters as the order of operations start with."
+        }
+      ],
+      "text" : "where each word starts with the same letters as the order of operations start with."
+    },
+    {
+      "rect" : [
+        84.960279999999898,
+        98.859344800000045,
+        425.20346330393613,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "World View Note: "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The first use of grouping symbols are found in 1646 in the"
+        }
+      ],
+      "text" : "World View Note: The first use of grouping symbols are found in 1646 in the"
+    },
+    {
+      "rect" : [
+        84.960279999999898,
+        84.459344800000039,
+        425.15704791731207,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Dutch mathematician, Franciscus van Schooten’s text, Vieta. He used a bar over"
+        }
+      ],
+      "text" : "Dutch mathematician, Franciscus van Schooten’s text, Vieta. He used a bar over"
+    },
+    {
+      "rect" : [
+        299.63947999999993,
+        52.379053200000037,
+        10.021160447733621,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "18"
+        }
+      ],
+      "text" : "18"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      185.44000000000003,
+      604.82000000000005,
+      23.919999999999987,
+      5.4400000000000546
+    ],
+    [
+      339.40000000000003,
+      606.0200000000001,
+      18.04000000000002,
+      5.2000000000000455
+    ],
+    [
+      194.92000000000002,
+      591.0200000000001,
+      18.039999999999992,
+      5.2000000000000455
+    ],
+    [
+      324.16000000000008,
+      589.46000000000004,
+      29.67999999999995,
+      5.8000000000000682
+    ],
+    [
+      238.72000000000003,
+      401.90000000000003,
+      117.75999999999999,
+      7.839999999999975
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        746.01924480000002,
+        14.966047660287998,
+        11.979110399999968
+      ],
+      "text" : "0.3"
+    },
+    {
+      "fontSize" : 16.936400000000003,
+      "monospaced" : false,
+      "rect" : [
+        156.23990000000001,
+        723.80283639999993,
+        282.4948266128041,
+        16.919463599999972
+      ],
+      "text" : "Pre-Algebra - Order of Operations"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        695.75110000000006,
+        425.15773787074556,
+        11.955199999999991
+      ],
+      "text" : "Objective: Evaluate expressions using the order of operations, including"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        681.35110000000009,
+        149.64996996783867,
+        11.955199999999991
+      ],
+      "text" : "the use of absolute value."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        662.37934480000013,
+        425.15569152284161,
+        11.979110399999968
+      ],
+      "text" : "When simplifying expressions it is important that we simplify them in the correct"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        647.97934480000015,
+        324.13198042342401,
+        11.979110399999968
+      ],
+      "text" : "order. Consider the following problem done two diﬀerent ways:"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        622.19130000000018,
+        72.970066709862408,
+        11.955199999999991
+      ],
+      "text" : "Example 24."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        185.04019999999997,
+        598.94300799999996,
+        95.875034712832075,
+        20.455347200000006
+      ],
+      "text" : "2+5· 3 Add First"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        320.03988000000004,
+        598.94300799999996,
+        90.061243648409572,
+        20.455347200000006
+      ],
+      "text" : "2+ 5· 3 Multiply"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        194.39999999999998,
+        583.94300799999996,
+        204.38358483584011,
+        20.455347200000006
+      ],
+      "text" : "7· 3 Multiply 2+ 15 Add"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        198.12000000000003,
+        577.05944480000005,
+        211.10490611801615,
+        11.979110399999968
+      ],
+      "text" : "21 Solution 17 Solution"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        542.49924480000004,
+        425.15760431178239,
+        11.979110399999968
+      ],
+      "text" : "The previous example illustrates that if the same problem is done two diﬀerent"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        528.09924480000006,
+        425.20286774781448,
+        11.979110399999968
+      ],
+      "text" : "ways we will arrive at two diﬀerent solutions. However, only one method can be"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        513.69924480000009,
+        425.25699774602242,
+        11.979110399999968
+      ],
+      "text" : "correct. It turns out the second method, 17, is the correct method. The order of"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        499.29924480000005,
+        425.17502307330562,
+        11.979110400000025
+      ],
+      "text" : "operations ends with the most basic of operations, addition (or subtraction)."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        484.89924480000008,
+        425.15609772416002,
+        11.979110400000025
+      ],
+      "text" : "Before addition is completed we must do repeated addition or multiplication (or"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        470.4992448000001,
+        425.18523314936317,
+        11.979110400000025
+      ],
+      "text" : "division). Before multiplication is completed we must do repeated multiplication"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        456.09924480000012,
+        425.15779774947839,
+        11.979110400000025
+      ],
+      "text" : "or exponents. When we want to do something out of order and make it come first"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        441.69924480000014,
+        425.25485616289279,
+        11.979110400000025
+      ],
+      "text" : "we will put it in parenthesis (or grouping symbols). This list then is our order of"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960000000000036,
+        427.29924480000017,
+        236.29307477370878,
+        11.979110400000025
+      ],
+      "text" : "operations we will use to simplify expressions."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        238.20000000000005,
+        408.33904480000018,
+        118.70197760000002,
+        11.967155199999979
+      ],
+      "text" : "Order of Operations:"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        228.36000000000001,
+        384.95119999999997,
+        138.42439704207356,
+        11.955199999999991
+      ],
+      "text" : "Parenthesis (Grouping)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        266.6397,
+        365.99139999999994,
+        61.948110758656014,
+        11.955199999999991
+      ],
+      "text" : "Exponents"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        191.03969999999998,
+        347.03119999999996,
+        213.06491423146497,
+        11.955199999999991
+      ],
+      "text" : "Multiply and Divide (Left to Right)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        198.11977999999999,
+        327.95149999999995,
+        198.90507762966013,
+        11.955199999999991
+      ],
+      "text" : "Add and Subtract (Left to Right)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959779999999995,
+        308.97934479999998,
+        425.18288441799677,
+        11.979110400000025
+      ],
+      "text" : "Multiply and Divide are on the same level because they are the same operation"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959779999999967,
+        294.5793448,
+        425.155722080256,
+        11.979110400000025
+      ],
+      "text" : "(division is just multiplying by the reciprocal). This means they must be done left"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959779999999967,
+        280.17934480000002,
+        425.20106227448321,
+        11.979110400000025
+      ],
+      "text" : "to right, so some problems we will divide first, others we will multiply first. The"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959779999999967,
+        265.77934480000005,
+        418.45389098572792,
+        11.979110400000025
+      ],
+      "text" : "same is true for adding and subtracting (subtracting is just adding the opposite)."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959779999999967,
+        246.81914480000006,
+        425.21833906938883,
+        11.979110400000025
+      ],
+      "text" : "Often students use the word PEMDAS to remember the order of operations, as"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959779999999967,
+        232.41914480000008,
+        425.20380585469439,
+        11.979110399999996
+      ],
+      "text" : "the first letter of each operation creates the word PEMDAS. However, it is the"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        492.36027999999993,
+        219.81914480000006,
+        7.9621632000000204,
+        11.979110399999996
+      ],
+      "text" : "P"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        492.36027999999993,
+        205.41914480000008,
+        7.9621632000000204,
+        11.979110399999996
+      ],
+      "text" : "E"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.959779999999967,
+        198.57934480000006,
+        393.13323619422721,
+        11.979110399999996
+      ],
+      "text" : "author’s suggestion to think about PEMDAS as a vertical word written as:"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        486.48019999999991,
+        191.01914480000005,
+        19.742524855808085,
+        11.979110399999996
+      ],
+      "text" : "MD"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        488.76027999999991,
+        176.61914480000007,
+        15.26380423014399,
+        11.979110399999996
+      ],
+      "text" : "AS"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960279999999898,
+        161.01914480000005,
+        425.20302815513605,
+        11.979110399999996
+      ],
+      "text" : "so we don’t forget that multiplication and division are done left to right (same"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960279999999898,
+        146.61914480000007,
+        425.25878155092482,
+        11.979110399999996
+      ],
+      "text" : "with addition and subtraction). Another way students remember the order of"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960279999999898,
+        132.21914480000004,
+        425.21829506073595,
+        11.979110399999996
+      ],
+      "text" : "operations is to think of a phrase such as “Please Excuse My Dear Aunt Sally”"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960279999999898,
+        117.81914480000005,
+        424.69375233856005,
+        11.97911040000001
+      ],
+      "text" : "where each word starts with the same letters as the order of operations start with."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960279999999898,
+        98.859344800000045,
+        425.20346330393613,
+        11.979110399999996
+      ],
+      "text" : "World View Note: The first use of grouping symbols are found in 1646 in the"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960279999999898,
+        84.459344800000039,
+        425.15704791731207,
+        11.979110399999996
+      ],
+      "text" : "Dutch mathematician, Franciscus van Schooten’s text, Vieta. He used a bar over"
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        299.63947999999993,
+        52.379053200000037,
+        10.021160447733621,
+        9.8729762399999998
+      ],
+      "text" : "18"
+    }
+  ],
+  "page" : 18,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        185.44000000000003,
+        604.82000000000005,
+        11.02000000000001,
+        5.4400000000000546
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        192.40000000000001,
+        604.94000000000005,
+        10,
+        5.2000000000000455
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.34000000000003,
+        604.82000000000005,
+        11.019999999999982,
+        5.4400000000000546
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        339.40000000000003,
+        606.0200000000001,
+        8.8600000000000136,
+        5.0799999999999272
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        344.32000000000005,
+        606.1400000000001,
+        8.1999999999999886,
+        4.9599999999999227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        348.58000000000004,
+        606.1400000000001,
+        8.8600000000000136,
+        5.0800000000000409
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        194.92000000000002,
+        591.0200000000001,
+        8.8600000000000136,
+        5.0799999999999272
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        199.84000000000003,
+        591.1400000000001,
+        8.1999999999999886,
+        4.8399999999999181
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        204.10000000000002,
+        591.1400000000001,
+        8.8599999999999852,
+        5.0800000000000409
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        324.16000000000008,
+        589.46000000000004,
+        13,
+        5.6800000000000637
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.16000000000008,
+        589.70000000000005,
+        11.67999999999995,
+        5.32000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        340.84000000000003,
+        589.58000000000004,
+        13,
+        5.6800000000000637
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        238.72000000000003,
+        401.90000000000003,
+        43.95999999999998,
+        7.839999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        278.68000000000001,
+        402.38000000000005,
+        37.840000000000032,
+        6.8799999999999955
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        312.52000000000004,
+        401.90000000000003,
+        43.95999999999998,
+        7.839999999999975
+      ]
+    }
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

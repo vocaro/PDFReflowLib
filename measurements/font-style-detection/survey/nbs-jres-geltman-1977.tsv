@@ -1,0 +1,30 @@
+# nbs-jres-geltman-1977 pages 1-7; pages whose scan failed: 0
+baseFont	subtype	FontWeight	StemV	Flags	ItalicAngle	ToUnicode	shows	PDFKit names	name rule bold	weight-aware bold	name slope	name rule italic	slope-aware italic
+Times-Roman	Type1	-	-	-	-	no	8595	Times-Roman×2407	no	no	upright	no	no
+Times-Italic	Type1	-	-	-	-	no	358	Times-Italic×20	no	no	italic	yes	yes
+Helvetica	Type1	-	-	-	-	no	198	Helvetica×25	no	no	unstated	no	no
+Helvetica-Oblique	Type1	-	-	-	-	no	81	Helvetica-Oblique×3	no	no	italic	yes	yes
+HiddenHorzOCR	Type0	0	100	4	0	yes	30	Helvetica×4	no	no	unstated	no	no
+Helvetica-Bold	Type1	-	-	-	-	no	14	Helvetica-Bold×11	yes	yes	unstated	no	no
+Times-Bold	Type1	-	-	-	-	no	10	Times-Bold×9	yes	yes	unstated	no	no
+# line runs 3686; bold by name rule 24; bold with font resources 24; changed 0 on 0 pages
+# italic by name rule 318; italic with font resources 318; changed 0 on 0 pages
+# unresolved mixed-style lines: 13 on 5 pages; by undecoded font kind: Type0 5, Type0+Type1 no ToUnicode 2, Type1 no ToUnicode 6
+# pages with bold changes: 
+# pages with italic changes: 
+# bold examples
+# italic examples
+# unresolved examples
+  p1	Type0	with T ~ 00 being a valid id ealization for large mean free
+  p2	Type0	compatible with the transition Vi ~ V'c' For applied fields
+  p2	Type0	which are so intense that Uo ~ YiJe, dOc/dO will become an
+  p2	Type0+Type1 no ToUnicode	where Eo = 1/2 mu~. The above correspondence will give n-
+  p2	Type1 no ToUnicode	field in units of hw only, we could define a semi-classical n-
+  p2	Type0	= ~ (2W)
+  p3	Type1 no ToUnicode	W 1.' and as l/uo for Uo » w 1.' In fi gure 2 we have curves
+  p3	Type1 no ToUnicode	rates are th en related to a differenti al cross section for n-
+  p3	Type1 no ToUnicode	'lfi (r, T), and consequently for d(F±(n) / dO. In th e limit of
+  p4	Type0	for the very strong fi eld situation where E o/2w ~ 1 a. u.
+  p6	Type1 no ToUnicode	and the strong-field cross section (25) is taken for a±(n). The
+  p6	Type1 no ToUnicode	da±(n)/dfl (n > 1) are even further below the respective
+  p6	Type0+Type1 no ToUnicode	y ~ 0, F ~ 1, or the entire absorption is due to single-

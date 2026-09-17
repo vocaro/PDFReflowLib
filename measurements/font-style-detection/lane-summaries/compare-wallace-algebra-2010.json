@@ -1,0 +1,492 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "wallace-algebra-2010",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "130fcace83545864b9827ef3c0e97b9e55c79778b037b1171e97af470a19bd9c",
+  "candidateConverterSHA256": "9b069788c578f337e14cc21d9baea687b7b935cced392eb8cdb63861acb2b7cf",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "base",
+      "programsSHA256": "2dda869df5640452e2e1e7cf7d4eaa701db418ef50c614bf36a8a81c4e5b8202"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "cand",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    5,
+    7,
+    12,
+    18,
+    22,
+    23,
+    31,
+    35,
+    38,
+    40,
+    41,
+    43,
+    45,
+    50,
+    52,
+    57,
+    64,
+    65,
+    67,
+    72,
+    73,
+    75,
+    79,
+    83,
+    89,
+    95,
+    102,
+    103,
+    109,
+    112,
+    118,
+    124,
+    128,
+    134,
+    137,
+    143,
+    148,
+    151,
+    153,
+    154,
+    160,
+    169,
+    177,
+    179,
+    184,
+    185,
+    190,
+    192,
+    193,
+    197,
+    198,
+    201,
+    202,
+    203,
+    205,
+    209,
+    214,
+    219,
+    224,
+    226,
+    231,
+    234,
+    235,
+    240,
+    243,
+    244,
+    250,
+    255,
+    258,
+    264,
+    268,
+    269,
+    277,
+    283,
+    288,
+    292,
+    296,
+    299,
+    305,
+    307,
+    310,
+    314,
+    316,
+    318,
+    326,
+    328,
+    329,
+    333,
+    339,
+    344,
+    349,
+    352,
+    360,
+    364,
+    371,
+    373,
+    376,
+    380,
+    386,
+    388,
+    397,
+    401,
+    406,
+    411,
+    414,
+    417,
+    420,
+    431
+  ],
+  "changedPageFields": {
+    "5": [
+      "markup"
+    ],
+    "7": [
+      "markup"
+    ],
+    "12": [
+      "markup"
+    ],
+    "18": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "22": [
+      "markup"
+    ],
+    "23": [
+      "markup"
+    ],
+    "31": [
+      "markup"
+    ],
+    "35": [
+      "markup"
+    ],
+    "38": [
+      "markup"
+    ],
+    "40": [
+      "markup"
+    ],
+    "41": [
+      "markup"
+    ],
+    "43": [
+      "markup"
+    ],
+    "45": [
+      "markup"
+    ],
+    "50": [
+      "markup"
+    ],
+    "52": [
+      "markup"
+    ],
+    "57": [
+      "markup"
+    ],
+    "64": [
+      "markup"
+    ],
+    "65": [
+      "markup"
+    ],
+    "67": [
+      "markup"
+    ],
+    "72": [
+      "markup"
+    ],
+    "73": [
+      "markup"
+    ],
+    "75": [
+      "markup"
+    ],
+    "79": [
+      "markup"
+    ],
+    "83": [
+      "markup"
+    ],
+    "89": [
+      "markup"
+    ],
+    "95": [
+      "markup"
+    ],
+    "102": [
+      "markup"
+    ],
+    "103": [
+      "markup"
+    ],
+    "109": [
+      "markup"
+    ],
+    "112": [
+      "markup"
+    ],
+    "118": [
+      "markup"
+    ],
+    "124": [
+      "markup"
+    ],
+    "128": [
+      "markup"
+    ],
+    "134": [
+      "markup"
+    ],
+    "137": [
+      "markup"
+    ],
+    "143": [
+      "markup"
+    ],
+    "148": [
+      "markup"
+    ],
+    "151": [
+      "markup"
+    ],
+    "153": [
+      "markup"
+    ],
+    "154": [
+      "markup"
+    ],
+    "160": [
+      "markup"
+    ],
+    "169": [
+      "markup"
+    ],
+    "177": [
+      "markup"
+    ],
+    "179": [
+      "markup"
+    ],
+    "184": [
+      "markup"
+    ],
+    "185": [
+      "markup"
+    ],
+    "190": [
+      "markup"
+    ],
+    "192": [
+      "markup"
+    ],
+    "193": [
+      "markup"
+    ],
+    "197": [
+      "markup"
+    ],
+    "198": [
+      "markup"
+    ],
+    "201": [
+      "markup"
+    ],
+    "202": [
+      "markup"
+    ],
+    "203": [
+      "markup"
+    ],
+    "205": [
+      "markup"
+    ],
+    "209": [
+      "markup"
+    ],
+    "214": [
+      "markup"
+    ],
+    "219": [
+      "markup"
+    ],
+    "224": [
+      "markup"
+    ],
+    "226": [
+      "markup"
+    ],
+    "231": [
+      "markup"
+    ],
+    "234": [
+      "markup"
+    ],
+    "235": [
+      "markup"
+    ],
+    "240": [
+      "markup"
+    ],
+    "243": [
+      "markup"
+    ],
+    "244": [
+      "markup"
+    ],
+    "250": [
+      "markup"
+    ],
+    "255": [
+      "markup"
+    ],
+    "258": [
+      "markup"
+    ],
+    "264": [
+      "markup"
+    ],
+    "268": [
+      "markup"
+    ],
+    "269": [
+      "markup"
+    ],
+    "277": [
+      "markup"
+    ],
+    "283": [
+      "markup"
+    ],
+    "288": [
+      "markup"
+    ],
+    "292": [
+      "markup"
+    ],
+    "296": [
+      "markup"
+    ],
+    "299": [
+      "markup"
+    ],
+    "305": [
+      "markup"
+    ],
+    "307": [
+      "markup"
+    ],
+    "310": [
+      "markup"
+    ],
+    "314": [
+      "markup"
+    ],
+    "316": [
+      "markup"
+    ],
+    "318": [
+      "markup"
+    ],
+    "326": [
+      "markup"
+    ],
+    "328": [
+      "markup"
+    ],
+    "329": [
+      "markup"
+    ],
+    "333": [
+      "markup"
+    ],
+    "339": [
+      "markup"
+    ],
+    "344": [
+      "markup"
+    ],
+    "349": [
+      "markup"
+    ],
+    "352": [
+      "markup"
+    ],
+    "360": [
+      "markup"
+    ],
+    "364": [
+      "markup"
+    ],
+    "371": [
+      "markup"
+    ],
+    "373": [
+      "markup"
+    ],
+    "376": [
+      "markup"
+    ],
+    "380": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "386": [
+      "markup"
+    ],
+    "388": [
+      "markup"
+    ],
+    "397": [
+      "markup"
+    ],
+    "401": [
+      "markup"
+    ],
+    "406": [
+      "markup"
+    ],
+    "411": [
+      "markup"
+    ],
+    "414": [
+      "markup"
+    ],
+    "417": [
+      "markup"
+    ],
+    "420": [
+      "markup"
+    ],
+    "431": [
+      "markup"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 335,
+    "fields": {
+      "anchors": 3,
+      "paragraphIDs": 334
+    },
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

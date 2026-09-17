@@ -312,6 +312,8 @@ python3 measurements/font-weight-detection/tools/categorize.py <base.epub> <cand
 
 ## Limitations and defects to file
 
+Items 1, 2, 3 and 7 are addressed by #133 ([the font style evidence](../font-style-detection/record.md)).
+
 1. **Undeclared bold faces.** arXiv's `LinLibertineTB`/`LinBiolinumTB` (section titles, 240 shows)
    state bold in neither a weight word nor a descriptor. Only a family-relative StemV comparison
    could see them, and StemV is not comparable across families.

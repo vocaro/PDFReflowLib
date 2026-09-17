@@ -494,6 +494,8 @@ swiftc Sources/PDFReflowLib/NativeTextReader.swift Sources/PDFReflowLib/Conversi
 Since #125 an attributed run drawn in a bold font resource that PDFKit does not name bold (a
 `Dm`, `Demi` or `Semibold` face, or any embedded font PDFKit reports as `Helvetica`) records
 `"bold": true`; fixtures captured before carry no such field and replay PDFKit's runs alone.
+Since #133 a run drawn in an italic text font resource that PDFKit does not name italic records
+`"italic": true` the same way.
 
 Run from the repository root. The tool verifies the cached PDF against the manifest SHA-256.
 Paints wholly outside the crop box are not recorded (`GraphicsReader` drops them; FAA pages 474
@@ -1199,6 +1201,27 @@ checksum-verified FAA source. Its 192 MiB Mac RSS ceiling protects the initial s
 from eager loading of sparse ParentTree arrays; `--maximum-rss-mib` overrides the development
 limit. Full conversion retains its separate per-book memory gates. Neither budget qualifies
 physical iPhone/iPad performance.
+
+## Font styles PDFKit renames
+
+`FontWeightDetectionTests.swift` covers [#125](https://github.com/vocaro/PDFReflowLib/issues/125)
+(bold) and [#133](https://github.com/vocaro/PDFReflowLib/issues/133) (italic, Libertine weights,
+undecoded mixed lines and split runs). Name classification lists italic faces (`Bembo-Italic`,
+`FranklinGothicLTPro-BkIt`, `TimesNewRoman,Italic`, TeX `cmti`/`dcti`/`SFTI`, `LinLibertineTI`)
+and upright ones whose descriptor leans (`CMSY10`), with math italic (`CMMI12`, `LibertineMathMI`,
+`NewTXMI`, `txmiaX`) and script faces (`SnellRoundhand-BoldScript`) never italic, and Libertine's
+`TB`/`TZ` and cm-super's `sfbx` bold. Synthetic PDFs read italic through PDFKit's `Helvetica`
+names, mark only the italic word of a mixed line (also under PScript5's two-range codespace), and
+decode an `Identity-H` Type0 show two bytes per code; controls leave undecoded lines, math italic,
+script faces and upright names unmarked. A leading marker without a letter in a style its item does
+not share gains no emphasis, and adjacent same-style runs are written as one element, with page
+boundaries, note references and other styles kept apart. `*-styles` source fixtures, each with a
+`fontWeights: false` negative control: the Supreme Court's italic case names (page 9), 9/11's ship
+names (171), the Fed's chapter summary (8), Replay Clocks' Libertine titles and italic venue beside
+unstyled math italic (1), Wallace's `World View Note:` opening its own paragraph (18) and its
+upright variables (23), DGA's unemphasised bullets (3), and Our Flag's script title without italic
+beside its italic quotation (7). Disabling each of ten parts fails a test that covers it. See the
+[font style evidence](../measurements/font-style-detection/record.md).
 
 
 ## Concurrent native extraction

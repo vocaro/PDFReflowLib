@@ -1,0 +1,361 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "fed-explained-2021",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "130fcace83545864b9827ef3c0e97b9e55c79778b037b1171e97af470a19bd9c",
+  "candidateConverterSHA256": "9b069788c578f337e14cc21d9baea687b7b935cced392eb8cdb63861acb2b7cf",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "base",
+      "programsSHA256": "2dda869df5640452e2e1e7cf7d4eaa701db418ef50c614bf36a8a81c4e5b8202"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "cand",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 7,
+    "baselineWords": 1,
+    "candidateWords": 1,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    5,
+    6,
+    8,
+    14,
+    19,
+    24,
+    26,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    37,
+    38,
+    39,
+    41,
+    44,
+    47,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    58,
+    60,
+    61,
+    64,
+    66,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    76,
+    77,
+    78,
+    79,
+    81,
+    82,
+    84,
+    86,
+    88,
+    90,
+    91,
+    93,
+    94,
+    97,
+    98,
+    99,
+    101,
+    103,
+    104,
+    105,
+    106,
+    107,
+    109,
+    110,
+    113,
+    114,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    128,
+    132
+  ],
+  "changedPageFields": {
+    "5": [
+      "markup"
+    ],
+    "6": [
+      "markup"
+    ],
+    "8": [
+      "markup"
+    ],
+    "14": [
+      "markup"
+    ],
+    "19": [
+      "markup"
+    ],
+    "24": [
+      "markup"
+    ],
+    "26": [
+      "markup"
+    ],
+    "30": [
+      "markup"
+    ],
+    "31": [
+      "markup"
+    ],
+    "32": [
+      "markup"
+    ],
+    "33": [
+      "markup"
+    ],
+    "34": [
+      "markup"
+    ],
+    "35": [
+      "markup"
+    ],
+    "37": [
+      "markup"
+    ],
+    "38": [
+      "markup"
+    ],
+    "39": [
+      "markup"
+    ],
+    "41": [
+      "markup"
+    ],
+    "44": [
+      "markup"
+    ],
+    "47": [
+      "markup"
+    ],
+    "50": [
+      "markup"
+    ],
+    "51": [
+      "markup"
+    ],
+    "52": [
+      "markup"
+    ],
+    "53": [
+      "markup"
+    ],
+    "54": [
+      "markup"
+    ],
+    "55": [
+      "markup"
+    ],
+    "56": [
+      "markup"
+    ],
+    "58": [
+      "markup"
+    ],
+    "60": [
+      "markup"
+    ],
+    "61": [
+      "markup"
+    ],
+    "64": [
+      "markup"
+    ],
+    "66": [
+      "markup"
+    ],
+    "68": [
+      "markup"
+    ],
+    "69": [
+      "markup"
+    ],
+    "70": [
+      "markup"
+    ],
+    "71": [
+      "markup"
+    ],
+    "72": [
+      "markup"
+    ],
+    "73": [
+      "markup"
+    ],
+    "74": [
+      "markup"
+    ],
+    "76": [
+      "markup"
+    ],
+    "77": [
+      "markup"
+    ],
+    "78": [
+      "markup"
+    ],
+    "79": [
+      "markup"
+    ],
+    "81": [
+      "markup"
+    ],
+    "82": [
+      "markup"
+    ],
+    "84": [
+      "markup"
+    ],
+    "86": [
+      "markup"
+    ],
+    "88": [
+      "markup"
+    ],
+    "90": [
+      "markup"
+    ],
+    "91": [
+      "markup"
+    ],
+    "93": [
+      "markup"
+    ],
+    "94": [
+      "markup"
+    ],
+    "97": [
+      "markup"
+    ],
+    "98": [
+      "markup"
+    ],
+    "99": [
+      "markup"
+    ],
+    "101": [
+      "markup"
+    ],
+    "103": [
+      "markup"
+    ],
+    "104": [
+      "markup"
+    ],
+    "105": [
+      "markup"
+    ],
+    "106": [
+      "markup"
+    ],
+    "107": [
+      "markup"
+    ],
+    "109": [
+      "markup"
+    ],
+    "110": [
+      "markup"
+    ],
+    "113": [
+      "markup"
+    ],
+    "114": [
+      "markup"
+    ],
+    "116": [
+      "markup"
+    ],
+    "117": [
+      "markup"
+    ],
+    "118": [
+      "markup"
+    ],
+    "119": [
+      "markup"
+    ],
+    "120": [
+      "markup"
+    ],
+    "121": [
+      "markup"
+    ],
+    "122": [
+      "markup"
+    ],
+    "123": [
+      "markup"
+    ],
+    "124": [
+      "markup"
+    ],
+    "125": [
+      "markup"
+    ],
+    "126": [
+      "markup"
+    ],
+    "128": [
+      "markup"
+    ],
+    "132": [
+      "markup"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 0,
+    "fields": {},
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

@@ -381,6 +381,8 @@ enum NativeTextReader {
         var first: Bool
         /// Drawn in a bold font resource PDFKit does not name bold (#125).
         var resourceBold = false
+        /// Drawn in an italic text font resource PDFKit does not name italic (#133).
+        var resourceItalic = false
     }
 
     static func inlineText(from attributed: NSAttributedString) -> InlineText {
@@ -400,7 +402,8 @@ enum NativeTextReader {
                 ?? attributes[.baselineOffset] as? NSNumber)?.doubleValue ?? 0
             styled.append(StyledRun(text: run, style: style, offset: offset, size: Double(font?.pointSize ?? 12),
                                     hasFont: font != nil, first: range.location == 0,
-                                    resourceBold: attributes[FontWeightReader.boldAttribute] != nil))
+                                    resourceBold: attributes[FontWeightReader.boldAttribute] != nil,
+                                    resourceItalic: attributes[FontWeightReader.italicAttribute] != nil))
         }
         remeasureQuotedMarker(&styled)
         var runs: [InlineText.Element] = []
@@ -436,10 +439,17 @@ enum NativeTextReader {
                 else if run.offset < -tolerance { style.insert(.subscript) }
             }
             // PDFKit names a font only when the system has one by that name; the page's own font
-            // resources state the weight of the rest (#125). A display initial or numeral (Our
-            // Flag's drop caps in a bold script face) is ornament, not emphasis; a display-size
-            // title beside a small marker keeps its weight.
-            if run.resourceBold, !(display && run.text.filter(\.isLetter).count <= 1) { style.insert(.bold) }
+            // resources state the weight and slope of the rest (#125, #133). A display initial or
+            // numeral (Our Flag's drop caps in a bold, italic-flagged script face) is ornament, not
+            // emphasis; a display-size title beside a small marker keeps its style.
+            let ornament = display && run.text.filter(\.isLetter).count <= 1
+            // A list marker without a letter or digit opening the line in a style the text after it
+            // does not share (DGA's bold `+` bullets) marks the item, not an emphasis.
+            let opening = styled[..<index].allSatisfy { $0.text.allSatisfy(\.isWhitespace) }
+            let following = styled[(index + 1)...].first { !$0.text.allSatisfy(\.isWhitespace) }
+            let marker = opening && !run.text.contains { $0.isLetter || $0.isNumber } && following != nil
+            if run.resourceBold, !ornament, !(marker && following?.resourceBold == false) { style.insert(.bold) }
+            if run.resourceItalic, !ornament, !(marker && following?.resourceItalic == false) { style.insert(.italic) }
             runs.append(.text(run.text, style))
         }
         return InlineText(elements: runs).trimmingCharacters(in: .whitespacesAndNewlines)

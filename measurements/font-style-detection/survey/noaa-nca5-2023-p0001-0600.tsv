@@ -1,0 +1,139 @@
+# noaa-nca5-2023 pages 1-600; pages whose scan failed: 0
+baseFont	subtype	FontWeight	StemV	Flags	ItalicAngle	ToUnicode	shows	PDFKit names	name rule bold	weight-aware bold	name slope	name rule italic	slope-aware italic
+OFKQWA+Lora-Regular	TrueType	400	88	34	0	yes	33826	Helvetica×15271	no	no	upright	no	no
+OFKQWA+Roboto-Regular	TrueType	400	92	32	0	yes	4899	Helvetica×1930	no	no	upright	no	no
+OFKQWA+Lora-Italic	TrueType	400	80	98	-3	yes	3074	Helvetica×21	no	no	italic	no	yes
+OFKQWA+Lora-Regular	Type0	400	88	6	0	yes	2328	Helvetica×1014	no	no	upright	no	no
+OFKQWA+Lora-Bold	TrueType	700	144	34	0	yes	2270	Helvetica×1	no	yes	unstated	no	no
+OFKQWA+Roboto-Bold	TrueType	700	144	32	0	yes	2087	Helvetica×860	no	yes	unstated	no	no
+OFKQWA+Roboto-Medium	Type0	500	120	4	0	yes	715	Helvetica×566	no	no	unstated	no	no
+OFKQWA+Roboto-Medium	TrueType	500	120	32	0	yes	517	Helvetica×514	no	no	unstated	no	no
+OFKQWA+Roboto-Regular	Type0	400	92	4	0	yes	383	Helvetica×196	no	no	upright	no	no
+OFKQWA+Lora-Italic	Type0	400	80	70	-3	yes	162	Helvetica×1	no	no	italic	no	yes
+XNWSSI+ProximaNova-Medium	Type1	500	92	32	0	yes	156	ProximaNova-Medium×92	no	no	unstated	no	no
+OFKQWA+ProximaNova-Bold	Type1	700	128	32	0	yes	149	ProximaNova-Bold×90	yes	yes	unstated	no	no
+OFKQWA+Roboto-BoldItalic	TrueType	700	140	96	-12	yes	130	Helvetica×119	no	yes	italic	no	yes
+OFKQWA+Roboto-Italic	Type0	400	88	68	-12	yes	118		-	no	italic	-	yes
+OFKQWA+ProximaNova-Regular	Type1	400	76	32	0	yes	114	ProximaNova-Regular×107	no	no	upright	no	no
+OFKQWA+Roboto-Italic	TrueType	400	88	96	-12	yes	77		-	no	italic	-	yes
+OFKQWA+TimesNewRomanPSMT	TrueType	400	80	34	0	yes	77	TimesNewRomanPSMT×13	no	no	upright	no	no
+OFKQWA+Roboto-Bold	Type0	700	144	4	0	yes	50	Helvetica×40	no	yes	unstated	no	no
+OFKQWA+ArialMT	TrueType	400	88	32	0	yes	15		-	no	unstated	-	no
+OFKQWA+TimesNewRomanPSMT	Type0	400	80	6	0	yes	15	TimesNewRomanPSMT×1	no	no	upright	no	no
+OFKQWA+Calibri-Bold	TrueType	700	124	32	0	yes	8		-	yes	unstated	-	no
+OFKQWA+Calibri	TrueType	400	80	32	0	yes	6		-	no	unstated	-	no
+OFKQWA+MinionPro-Regular	Type1	400	80	34	0	yes	6	Helvetica×3	no	no	upright	no	no
+OFKQWA+Calibri-Bold	Type0	700	124	4	0	yes	4		-	yes	unstated	-	no
+OFKQWA+Roboto-BoldItalic	Type0	700	140	68	-12	yes	4	Helvetica×4	no	yes	italic	no	yes
+OFKQWA+Arial-ItalicMT	TrueType	400	92	96	-12	yes	3		-	no	italic	-	yes
+OFKQWA+ArialMT	Type0	400	88	4	0	yes	2		-	no	unstated	-	no
+OFKQWA+ArialUnicodeMS	TrueType	400	88	32	0	yes	1		-	no	unstated	-	no
+OFKQWA+TimesNewRomanPS-BoldMT	TrueType	700	136	34	0	yes	1		-	yes	unstated	-	no
+# line runs 31451; bold by name rule 145; bold with font resources 1835; changed 1690 on 409 pages
+# italic by name rule 2; italic with font resources 952; changed 950 on 307 pages
+# unresolved mixed-style lines: 0 on 0 pages; by undecoded font kind: 
+# pages with bold changes: 2 3 6 7 8 21 22 23 25 26 27 28 29 30 31 32 33 34 35 37 38 39 40 41 43 44 46 48 49 50 51 52 53 55 56 57 58 59 60 61 62 63 65 66 67 68 69 71 72 73 74 75 76 80 81 82 83 84 85 86 87 88 89 90 91 93 94 95 96 97 98 100 101 102 103 104 105 106 107 108 109 110 111 113 116 117 120 127 129 130 134 138 139 140 141 143 144 145 146 147 148 149 151 152 153 154 155 156 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 174 175 179 184 186 188 191 192 195 196 198 201 202 203 206 207 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 240 241 243 244 246 248 249 250 252 253 254 256 257 258 259 260 261 263 264 265 266 267 268 269 270 271 272 273 274 275 276 279 282 283 288 292 295 300 301 302 303 304 305 306 307 308 309 310 311 312 314 315 316 317 318 319 320 321 322 323 325 326 329 330 332 335 340 341 342 343 344 345 346 347 348 349 351 352 354 355 356 357 358 359 360 361 362 363 365 366 368 369 371 374 380 384 385 386 387 388 389 391 392 393 394 395 396 397 398 399 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 418 420 422 428 430 433 434 442 444 445 446 447 448 449 451 453 454 455 456 457 459 460 461 462 463 464 465 466 467 469 472 482 483 484 487 488 489 490 491 492 493 494 495 496 497 499 500 501 502 503 505 506 507 509 511 512 514 516 524 526 527 528 529 530 531 532 533 534 535 536 538 539 540 541 542 544 545 546 547 549 551 553 555 556 557 559 565 567 568 569 570 571 572 573 574 575 576 577 578 580 582 583 584 585 586 587 588 589 590 591 593 594 596 600
+# pages with italic changes: 4 5 25 31 32 34 81 84 86 87 89 90 94 95 100 101 103 104 105 106 107 109 110 113 115 117 119 120 121 123 125 126 127 128 129 130 133 134 135 136 137 138 140 144 145 146 147 148 149 150 151 152 154 155 156 158 159 161 163 164 165 166 168 170 172 173 175 177 178 181 182 185 186 187 188 190 191 192 195 196 198 199 200 201 202 203 204 206 207 208 209 211 213 215 216 217 218 219 220 221 225 227 228 232 234 236 237 238 239 240 241 242 243 244 246 247 248 249 250 251 252 253 254 257 259 261 263 264 265 266 267 268 270 271 273 274 276 278 281 283 284 285 286 287 288 289 291 292 295 298 302 308 310 312 314 315 316 319 322 323 324 326 328 329 330 331 332 333 334 335 339 340 341 344 349 351 355 361 365 366 367 368 369 370 371 372 373 374 375 380 382 386 393 397 398 399 400 401 403 404 407 408 409 412 416 417 418 419 420 421 422 428 430 431 433 434 436 438 439 440 442 445 448 449 450 451 454 455 457 458 459 460 463 464 465 467 468 472 473 474 475 478 480 481 482 483 484 485 488 491 493 496 497 499 500 501 502 503 505 507 508 510 511 512 514 516 522 523 524 525 527 530 539 541 542 545 549 550 551 552 553 554 555 556 557 558 559 562 564 565 569 572 575 582 587 589 590 591 592 593 594 595 596 597 598 599 600
+# bold examples
+  p2	helvetica	Cover image
+  p3	helvetica	Fifth National Climate Assessment
+  p6	helvetica	Allison R. Crimmins
+  p6	helvetica	Margaret Walsh
+  p6	helvetica	Daniel Barrie
+  p6	helvetica	Kurt Preston
+  p6	helvetica	Tristram O. West
+  p6	helvetica	Daniel Dodgen
+  p6	helvetica	Merissa Zuzulock
+  p6	helvetica	Paul Wagner
+  p6	helvetica	Sierra Woodruff
+  p6	helvetica	Rebecca Beavers
+  p6	helvetica	April Marchese
+  p6	helvetica	Darrell A. Winner
+  p6	helvetica	Kathy A. Hibbard
+  p6	helvetica	Maria Uhle
+  p6	helvetica	Jennifer Carroll
+  p6	helvetica	Rebecca N. Johnson
+  p6	helvetica	Emily Weeks
+  p6	helvetica	Subcommittee on Global Change Research
+  p6	helvetica	Wayne Higgins
+  p6	helvetica	J. Michael Kuperberg
+  p6	helvetica	William Hohenstein
+  p6	helvetica	Ben DeAngelo
+  p6	helvetica	Ben Petro
+  p6	helvetica	Gary Geernaert
+  p6	helvetica	John Balbus
+  p6	helvetica	David Bascom
+  p6	helvetica	Geoff Plumlee
+  p6	helvetica	Trigg Talley
+  p6	helvetica	Gretchen Goldman
+  p6	helvetica	April Marchese
+  p6	helvetica	Rebecca S. Dodder
+  p6	helvetica	Andy Miller
+  p6	helvetica	Jack Kaye
+  p6	helvetica	Maria Uhle
+  p6	helvetica	Kirk Johnson
+  p6	helvetica	Noel P. Gurwick
+  p6	helvetica	USGCRP National Climate Assessment (NCA) Coordination Office
+  p6	helvetica	Allison R. Crimmins
+# italic examples
+  p4	helvetica	Fifth National Climate Assessment
+  p4	helvetica	Fifth National Climate Assessment
+  p5	helvetica	by Ada Limón, 24th Poet Laureate Consultant in Poetry at
+  p5	helvetica	the Library of Congress
+  p5	helvetica	A poem written for the Fifth National Climate Assessment.
+  p5	helvetica	© 2023 Ada Limón. All Rights Reserved.
+  p25	helvetica	italics 
+  p31	helvetica	Impacts, Risks, and Adaptation in the United States: Fourth National C
+  p31	helvetica	Review of the Draft Fifth National Climate Assessment
+  p31	helvetica	Climatic Change, 
+  p31	helvetica	Climate Change 2021: The Physical Science Basis. Contribution of
+  p31	helvetica	Working Group I to the Sixth Assessment Report of the Intergovernmenta
+  p31	helvetica	Geoscientific Model Development, 
+  p31	helvetica	Geoscientific Model
+  p31	helvetica	Development, 
+  p32	helvetica	Global Environmental
+  p32	helvetica	Change, 
+  p32	helvetica	Global Environmental Change, 
+  p32	helvetica	Climatic Change, 
+  p34	helvetica	Fifth National Climate Assessment
+  p81	helvetica	Fifth National Climate
+  p81	helvetica	Assessment
+  p84	helvetica	virtually certain
+  p84	helvetica	very high confidence
+  p84	helvetica	very high confidence
+  p84	helvetica	virtually
+  p84	helvetica	certain 
+  p84	helvetica	very high confidence
+  p86	helvetica	CO
+  p86	helvetica	2
+  p86	helvetica	 Emitted Long Ago Continues to Contribute to Climate Change Today
+  p87	helvetica	Greenhouse Gases Are Not the Only Air Pollutants That Affect the Clima
+  p89	helvetica	Climate Change Is Already Here
+  p90	helvetica	The Changes We Face Are Unprecedented in Human History
+  p90	helvetica	The Climate in the United States Is Changing
+  p94	helvetica	Changes Outside National Borders Affect the United States
+  p95	helvetica	high confidence
+  p95	helvetica	very high confidence
+  p95	helvetica	very high confidence
+  p95	helvetica	high confidence
+  p95	helvetica	high confidence
+  p95	helvetica	very high confidence
+  p100	helvetica	very high confidence
+  p100	helvetica	virtually certain 
+  p100	helvetica	very high confidence
+  p100	helvetica	very likely 
+  p100	helvetica	very high confidence
+  p100	helvetica	high confidence
+  p100	helvetica	As the World Warms, the United States Warms More
+  p100	helvetica	very likely 
+  p100	helvetica	likely 
+  p101	helvetica	Some Regions Will Get Wetter While Others Will Get Drier
+  p101	helvetica	very likely 
+  p101	helvetica	likely 
+  p101	helvetica	very likely 
+  p101	helvetica	virtually certain 
+  p103	helvetica	The Risk of Extreme Heat Increases with the Global Warming Level
+  p103	helvetica	very likely 
+  p103	helvetica	very likely 
+  p103	helvetica	very likely 
+# unresolved examples

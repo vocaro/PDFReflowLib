@@ -61,26 +61,32 @@ private struct WeightFont {
     var baseFont: String
     var fontWeight: Int?
     var toUnicode = true
+    /// `WinAnsiEncoding` by name; without it (and without ToUnicode) the codes cannot be decoded.
+    var encoding = true
+    var italicAngle = 0
+    var flags = 32
+    /// The ToUnicode map's codespace declaration.
+    var codespace = "1 begincodespacerange <00> <FF> endcodespacerange"
 }
 
-/// One page whose shows each select one of `fonts` (non-embedded Type1, WinAnsi, 600-unit widths).
+/// One page whose shows each select one of `fonts` (non-embedded Type1, 600-unit widths).
 private func weightDocument(_ fonts: [WeightFont], shows: [(font: Int, x: Int, y: Int, text: String)]) throws -> PDFDocument {
     var objects = ["<< /Type /Catalog /Pages 2 0 R >>", "<< /Type /Pages /Kids [3 0 R] /Count 1 >>", "", ""]
     var names: [String] = []
     for (index, font) in fonts.enumerated() {
         let fontObject = objects.count + 1
-        var entries = "/Type /Font /Subtype /Type1 /BaseFont /\(font.baseFont) /Encoding /WinAnsiEncoding"
+        var entries = "/Type /Font /Subtype /Type1 /BaseFont /\(font.baseFont)" + (font.encoding ? " /Encoding /WinAnsiEncoding" : "")
             + " /FirstChar 32 /LastChar 126 /Widths [\(Array(repeating: "600", count: 95).joined(separator: " "))]"
         objects.append("")
         // Core Graphics lays out a font it cannot find only with a descriptor's metrics.
-        objects.append("<< /Type /FontDescriptor /FontName /\(font.baseFont) /Flags 32 /FontBBox [0 -200 1000 900]"
-            + " /ItalicAngle 0 /Ascent 900 /Descent -200 /CapHeight 700 /StemV 80"
+        objects.append("<< /Type /FontDescriptor /FontName /\(font.baseFont) /Flags \(font.flags) /FontBBox [0 -200 1000 900]"
+            + " /ItalicAngle \(font.italicAngle) /Ascent 900 /Descent -200 /CapHeight 700 /StemV 80"
             + (font.fontWeight.map { " /FontWeight \($0)" } ?? "") + " >>")
         entries += " /FontDescriptor \(objects.count) 0 R"
         if font.toUnicode {
             objects.append(testPDFStream("""
                 /CIDInit /ProcSet findresource begin 12 dict begin begincmap
-                1 begincodespacerange <00> <FF> endcodespacerange
+                \(font.codespace)
                 1 beginbfrange <20> <7E> <0020> endbfrange
                 endcmap CMapName currentdict /CMap defineresource pop end end
                 """))
@@ -146,9 +152,14 @@ private func line(_ lines: [TextLine], _ prefix: String) throws -> TextLine {
     let transcript = try line(lines, "NEADS:")
     #expect(transcript.text == "NEADS: He is heading into Washington?")
     #expect(boldText(transcript).trimmingCharacters(in: .whitespaces) == "NEADS:")
-    // Negative control: without ToUnicode maps the shows cannot be aligned with PDFKit's
+    // Without ToUnicode maps, a Type1 font's WinAnsi encoding still decodes its codes (Wallace's
+    // Computer Modern fonts, #133), so the label is marked.
+    let encoded = fonts.map { WeightFont(baseFont: $0.baseFont, toUnicode: false) }
+    let winAnsi = try line(try styledLines(try weightDocument(encoded, shows: [(0, 72, 700, "NEADS:"), (1, 124, 700, "He is heading into Washington?")])), "NEADS:")
+    #expect(boldText(winAnsi).trimmingCharacters(in: .whitespaces) == "NEADS:")
+    // Negative control: with neither a map nor an encoding the shows cannot be aligned with PDFKit's
     // characters, so a line mixing weights is left as PDFKit read it.
-    let undecoded = fonts.map { WeightFont(baseFont: $0.baseFont, toUnicode: false) }
+    let undecoded = fonts.map { WeightFont(baseFont: $0.baseFont, toUnicode: false, encoding: false) }
     let plain = try line(try styledLines(try weightDocument(undecoded, shows: [(0, 72, 700, "NEADS:"), (1, 124, 700, "He is heading into Washington?")])), "NEADS:")
     #expect(boldText(plain) == "")
     // ... while a wholly bold line needs no alignment.
@@ -232,12 +243,16 @@ private func marked(_ attributed: NSAttributedString) -> String {
             == "[Figure 2-8. ]Caption text")
 }
 
-@Test func readerFindsNoEvidenceOnPagesWithoutABoldFont() throws {
-    let document = try weightDocument([WeightFont(baseFont: "SyntheticSerif-Roman"), WeightFont(baseFont: "SyntheticSerif-Italic")],
-                                      shows: [(0, 72, 700, "Plain"), (1, 72, 650, "Italic")])
+@Test func readerFindsNoEvidenceOnPagesWithoutABoldOrItalicFont() throws {
+    let document = try weightDocument([WeightFont(baseFont: "SyntheticSerif-Roman"), WeightFont(baseFont: "CMMI12", italicAngle: -14)],
+                                      shows: [(0, 72, 700, "Plain"), (1, 72, 650, "x")])
     let page = try #require(document.page(at: 0)?.pageRef)
     #expect(FontWeightReader.read(page).isEmpty)
     #expect(FontWeightReader.read(page, fonts: nil).count == 2)
+    // Positive control: an italic text font is evidence since #133.
+    let italic = try weightDocument([WeightFont(baseFont: "SyntheticSerif-Roman"), WeightFont(baseFont: "SyntheticSerif-Italic")],
+                                    shows: [(0, 72, 700, "Plain"), (1, 72, 650, "Italic")])
+    #expect(FontWeightReader.read(try #require(italic.page(at: 0)?.pageRef)).count == 2)
 }
 
 // MARK: - Source fixtures
@@ -349,4 +364,335 @@ private func paragraphTexts(_ blocks: [ReflowBlock]) -> [String] {
     for name in ["algebra-7-weights", "dga-3-weights", "flag-7-weights"] {
         #expect(try sourceBold(name, fontWeights: false).values.allSatisfy { $0.isEmpty }, "\(name)")
     }
+}
+
+// MARK: - Slope, Libertine weights, composite maps and run merging (#133)
+
+// PDFKit's `Helvetica` renaming hides italic as it hid bold: `Bembo-Italic` (9/11),
+// `FranklinGothicLTPro-BkIt` (Fed), `CenturySchoolbook-Italic` (Supreme Court) and `LinLibertineTI`
+// (arXiv) reach extraction as upright Helvetica. The same resources state the slope in the name
+// and the descriptor's Italic flag and ItalicAngle. Math italic and script faces lean without
+// emphasis and stay upright.
+
+/// The text of a line's runs set in italic.
+private func italicText(_ line: TextLine) -> String {
+    line.content.elements.map {
+        if case let .text(value, style) = $0, style.contains(.italic) { value } else { "" }
+    }.joined()
+}
+
+@Test func fontNamesStateItalicAndUprightSlopes() {
+    let italic = ["KAFJDA+Bembo-Italic", "WODUNB+FranklinGothicLTPro-BkIt", "CSBZTP+FranklinGothicLTPro-DmIt", "OFKQWA+Lora-Italic",
+                  "TimesNewRomanPS-ItalicMT", "TimesNewRoman,Italic", "Helvetica-Oblique", "Roboto-BoldItalic", "MyriadPro-SemiboldIt",
+                  "SJYHJJ+FrutigerLTStd-LightItalic", "FGHYMC+EuropeanComputerModern-ItalicRegular12pt", "cmti10", "CMBXTI10", "cmsl10",
+                  "cmitt10", "FCHMDC+dcti10084", "ecbi1000", "SFTI1000", "MWZXMA+LinLibertineTI", "LinLibertineTBI", "LinBiolinumTO",
+                  "QSABOY+Corbel-BoldItalic", "PGIBGF+CenturySchoolbook-Italic", "Garamond-Kursiv"]
+    for name in italic {
+        #expect(FontWeightReader.nameSlope(name) == .italic, "\(name)")
+        #expect(FontWeightReader.isItalic(baseFont: name, italicAngle: nil, flags: nil), "\(name)")
+    }
+    let upright = ["KAFHKN+Bembo", "Times-Roman", "TimesNewRoman", "Sabon-Roman", "ZMRZBV+LinLibertineT", "HCPGUR+LinLibertineTB",
+                   "PZGVTZ+CMR12", "GQFBEA+CMSY10", "cmex10", "FCHKGB+dcr10084", "SFRM1000", "Lora-Regular", "Bembo-Semibold",
+                   "FranklinGothicLTPro-Bk", "Italian-Old-Style-Unit"]
+    for name in upright {
+        #expect(FontWeightReader.nameSlope(name) != .italic, "\(name)")
+        // A name stating upright or a TeX shape overrides a leaning descriptor (TeX's `CMSY10` leans at -14°).
+        if FontWeightReader.nameSlope(name) == .upright {
+            #expect(!FontWeightReader.isItalic(baseFont: name, italicAngle: -14, flags: 96), "\(name)")
+        }
+    }
+    #expect(FontWeightReader.nameSlope("Italian-Old-Style-Unit") == .unstated)
+}
+
+@Test func mathItalicAndScriptFacesAreNotEmphasis() {
+    // TeX's and newtx's math italic set variables, a notation: Wallace would gain 14,183 `<em>` runs.
+    for name in ["MXANZU+CMMI12", "cmmib10", "FCHMEI+cmmi10084", "RXIKPM+LibertineMathMI", "ICKJDT+LibertineMathMI7",
+                 "ZMKHJD+NewTXMI", "OYHSJR+NewTXMI5", "PPKSGE+txmiaX"] {
+        #expect(FontWeightReader.nameSlope(name) == .mathItalic, "\(name)")
+        #expect(!FontWeightReader.isItalic(baseFont: name, italicAngle: -14, flags: 68), "\(name)")
+    }
+    // A name stating no slope: the Italic flag or an angle of 5° or more is italic.
+    #expect(FontWeightReader.isItalic(baseFont: "SyntheticSans", italicAngle: 0, flags: 96))
+    #expect(FontWeightReader.isItalic(baseFont: "SyntheticSans", italicAngle: -12, flags: 32))
+    #expect(FontWeightReader.isItalic(baseFont: nil, italicAngle: -12, flags: 34))
+    // Controls: a slight angle, no evidence, a symbol font, and script faces by flag or name
+    // (Our Flag's `SnellRoundhand-BoldScript` titles: Flags 262240, ItalicAngle -40).
+    #expect(!FontWeightReader.isItalic(baseFont: "SyntheticSans", italicAngle: -1, flags: 32))
+    #expect(!FontWeightReader.isItalic(baseFont: "SyntheticSans", italicAngle: nil, flags: nil))
+    #expect(!FontWeightReader.isItalic(baseFont: "txsys", italicAngle: -12, flags: 4))
+    #expect(!FontWeightReader.isItalic(baseFont: "SnellRoundhand-BoldScript", italicAngle: -40, flags: 262_240))
+    #expect(!FontWeightReader.isItalic(baseFont: "SyntheticHand", italicAngle: -20, flags: 104))
+    #expect(FontWeightReader.weight(baseFont: "SnellRoundhand-BoldScript", fontWeight: nil, flags: 262_240) == .bold)
+}
+
+@Test func libertineAndCMSuperNamesStateTheirWeight() {
+    for name in ["HCPGUR+LinLibertineTB", "IVKDOT+LinBiolinumTB", "LinLibertineTZ", "LinLibertineTBI", "LinLibertineOB",
+                 "sfbx1200", "ecbi1000", "SFSX1000"] {
+        #expect(FontWeightReader.weight(baseFont: name, fontWeight: nil, flags: 4) == .bold, "\(name)")
+    }
+    for name in ["ZMRZBV+LinLibertineT", "MWZXMA+LinLibertineTI", "ZIZFHV+LinBiolinumT", "LinBiolinumTO", "LinLibertineO",
+                 "sfrm1000", "SFTI1000", "LinLibertineTX", "LinLibertineDisplay"] {
+        #expect(FontWeightReader.weight(baseFont: name, fontWeight: nil, flags: 4) == .regular, "\(name)")
+    }
+}
+
+@Test func italicFontsReadItalicThroughPDFKitsSubstitutedName() throws {
+    let fonts = [WeightFont(baseFont: "SyntheticSerif-Italic", italicAngle: -12, flags: 98), WeightFont(baseFont: "SyntheticGothic-BkIt"),
+                 WeightFont(baseFont: "SyntheticSans", italicAngle: -12, flags: 96), WeightFont(baseFont: "CMMI12", italicAngle: -14, flags: 96),
+                 WeightFont(baseFont: "SyntheticRoundhand-BoldScript", italicAngle: -40, flags: 96),
+                 WeightFont(baseFont: "SyntheticSerif-Roman", italicAngle: -12, flags: 96)]
+    let document = try weightDocument(fonts, shows: [(0, 72, 700, "The Sullivans attack"), (1, 72, 650, "Annual Report tables"),
+                                                     (2, 72, 600, "Leaning descriptor"), (3, 72, 550, "xyz"),
+                                                     (4, 72, 500, "The History of"), (5, 72, 450, "Upright roman")])
+    let page = try #require(document.page(at: 0))
+    let names = (page.selection(for: page.bounds(for: .cropBox))?.selectionsByLine() ?? []).compactMap {
+        ($0.attributedString?.attribute(.font, at: 0, effectiveRange: nil) as? WeightTestFont)?.fontName.lowercased()
+    }
+    #expect(names.count == 6 && names.allSatisfy { !$0.contains("italic") && !$0.contains("oblique") })
+    let lines = try styledLines(document)
+    #expect(try italicText(line(lines, "The Sullivans")) == "The Sullivans attack")
+    #expect(try italicText(line(lines, "Annual Report")) == "Annual Report tables")
+    #expect(try italicText(line(lines, "Leaning")) == "Leaning descriptor")
+    // Controls: math italic, a script face and a name stating roman stay upright.
+    #expect(try italicText(line(lines, "xyz")) == "")
+    #expect(try italicText(line(lines, "The History")) == "")
+    #expect(try italicText(line(lines, "Upright")) == "")
+}
+
+@Test func mixedSlopeLineMarksOnlyTheItalicShipName() throws {
+    let fonts = [WeightFont(baseFont: "SyntheticSerif"), WeightFont(baseFont: "SyntheticSerif-Italic", italicAngle: -12, flags: 96)]
+    let lines = try styledLines(try weightDocument(fonts, shows: [(0, 72, 700, "the USS"), (1, 128, 700, "Cole"), (0, 162, 700, "bombing")]))
+    let text = try line(lines, "the USS")
+    #expect(text.text == "the USS Cole bombing")
+    #expect(italicText(text).trimmingCharacters(in: .whitespaces) == "Cole")
+    #expect(boldText(text).isEmpty)
+    // PScript5's symbol-style codespace over the same one-byte entries (the Supreme Court's opinions).
+    let pscript = fonts.map { WeightFont(baseFont: $0.baseFont, italicAngle: $0.italicAngle, flags: $0.flags,
+                                         codespace: "2 begincodespacerange <00> <EF> <F000> <FFFF> endcodespacerange") }
+    let opinion = try line(try styledLines(try weightDocument(pscript, shows: [(0, 72, 700, "the USS"), (1, 128, 700, "Cole"), (0, 162, 700, "bombing")])), "the USS")
+    #expect(italicText(opinion).trimmingCharacters(in: .whitespaces) == "Cole")
+    // Negative control: shows that cannot be decoded leave a mixed line upright.
+    let undecoded = fonts.map { WeightFont(baseFont: $0.baseFont, toUnicode: false, encoding: false, italicAngle: $0.italicAngle, flags: $0.flags) }
+    let plain = try line(try styledLines(try weightDocument(undecoded, shows: [(0, 72, 700, "the USS"), (1, 128, 700, "Cole"), (0, 162, 700, "bombing")])), "the USS")
+    #expect(italicText(plain).isEmpty)
+}
+
+@Test func lineMatchingMarksBoldAndItalicIndependently() {
+    let bounds = CGRect(x: 72, y: 698, width: 300, height: 14)
+    var boldItalic = show(72, 700, "Demand Shocks", .bold, size: 10)
+    boldItalic.italic = true
+    var italic = show(150, 700, " in brief", .regular, size: 10)
+    italic.italic = true
+    let result = FontWeightReader.apply([boldItalic, italic], to: pdfkitRuns(["Demand Shocks in brief"]), bounds: bounds, allBounds: [bounds])
+    #expect(marked(result) == "[Demand Shocks ]in brief")
+    var slanted = ""
+    result.enumerateAttribute(FontWeightReader.italicAttribute, in: NSRange(location: 0, length: result.length)) { value, range, _ in
+        slanted += value == nil ? "" : (result.string as NSString).substring(with: range)
+    }
+    #expect(slanted == "Demand Shocks in brief")
+    // Undecoded shows mark a style only where every show carries it.
+    let undecoded = [boldItalic, italic].map { var copy = $0; copy.text = nil; return copy }
+    let whole = FontWeightReader.apply(undecoded, to: pdfkitRuns(["Demand Shocks in brief"]), bounds: bounds, allBounds: [bounds])
+    #expect(marked(whole) == "Demand Shocks in brief")
+    #expect(whole.attribute(FontWeightReader.italicAttribute, at: 0, effectiveRange: nil) != nil)
+}
+
+@Test func compositeAndPScriptToUnicodeMapsDecode() throws {
+    let wide = Data("""
+        /CIDInit /ProcSet findresource begin 12 dict begin begincmap
+        1 begincodespacerange
+        <0000> <FFFF>
+        endcodespacerange
+        2 beginbfchar
+        <0005> <0020>
+        <0502> <2154>
+        endbfchar
+        1 beginbfrange
+        <0024> <003D> <0041>
+        endbfrange
+        endcmap CMapName currentdict /CMap defineresource pop end end
+        """.utf8)
+    let map = try #require(FontWeightReader.wideUnicodeMap(wide))
+    #expect(map[0x0024] == "A" && map[0x003D] == "Z" && map[0x0005] == " " && map[0x0502] == "\u{2154}")
+    // Controls: a one-byte codespace and an inherited map are not composite maps.
+    #expect(FontWeightReader.wideUnicodeMap(Data(String(decoding: wide, as: UTF8.self)
+        .replacingOccurrences(of: "<0000> <FFFF>", with: "<00> <FF>").utf8)) == nil)
+    #expect(FontWeightReader.wideUnicodeMap(Data(String(decoding: wide, as: UTF8.self)
+        .replacingOccurrences(of: "begincmap", with: "/Identity-H usecmap begincmap").utf8)) == nil)
+    // PScript5's symbol-style codespace over one-byte entries (Supreme Court's Century Schoolbook).
+    let pscript = Data("""
+        /CIDInit /ProcSet findresource begin 12 dict begin begincmap
+        2 begincodespacerange
+        <00> <EF>
+        <F000> <FFFF>
+        endcodespacerange
+        3 beginbfchar
+        <00> <FFFD>
+        <43> <0043>
+        <68> <0068>
+        endbfchar
+        endcmap CMapName currentdict /CMap defineresource pop end end
+        """.utf8)
+    #expect(NativeSpacingReader.simpleFontUnicodeMap(pscript) == nil)
+    let simple = try #require(FontWeightReader.oneByteUnicodeMap(pscript))
+    #expect(simple[0x43] == "C" && simple[0x68] == "h")
+    // Control: a two-byte entry still fails the one-byte parse.
+    #expect(FontWeightReader.oneByteUnicodeMap(Data(String(decoding: pscript, as: UTF8.self)
+        .replacingOccurrences(of: "<68> <0068>", with: "<F068> <0068>").utf8)) == nil)
+}
+
+@Test func compositeIdentityHShowsDecodeTwoBytesPerCode() throws {
+    let map = testPDFStream("""
+        /CIDInit /ProcSet findresource begin 12 dict begin begincmap
+        1 begincodespacerange <0000> <FFFF> endcodespacerange
+        1 beginbfrange <0024> <003D> <0041> endbfrange
+        1 beginbfchar <0003> <0020> endbfchar
+        endcmap CMapName currentdict /CMap defineresource pop end end
+        """)
+    func document(encoding: String) -> PDFDocument? {
+        let objects = [
+            "<< /Type /Catalog /Pages 2 0 R >>", "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+            "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F0 5 0 R >> >> /Contents 4 0 R >>",
+            testPDFStream("BT /F0 12 Tf 72 700 Td <002B002C0003002B002C> Tj ET"),
+            "<< /Type /Font /Subtype /Type0 /BaseFont /SyntheticSans-Bold /Encoding /\(encoding) /DescendantFonts [6 0 R] /ToUnicode 8 0 R >>",
+            "<< /Type /Font /Subtype /CIDFontType2 /BaseFont /SyntheticSans-Bold /CIDSystemInfo << /Registry (Adobe) /Ordering (Identity) /Supplement 0 >> /FontDescriptor 7 0 R /DW 600 >>",
+            "<< /Type /FontDescriptor /FontName /SyntheticSans-Bold /Flags 32 /FontBBox [0 -200 1000 900] /ItalicAngle 0 /Ascent 900 /Descent -200 /CapHeight 700 /StemV 140 /FontWeight 700 >>",
+            map,
+        ]
+        return PDFDocument(data: testPDF(objects: objects))
+    }
+    let shows = FontWeightReader.read(try #require(document(encoding: "Identity-H")?.page(at: 0)?.pageRef))
+    #expect(shows.count == 1 && shows.first?.text == "HI HI" && shows.first?.weight == .bold)
+    // Control: a composite font under another CMap is not decoded.
+    let other = FontWeightReader.read(try #require(document(encoding: "UniJIS-UCS2-H")?.page(at: 0)?.pageRef))
+    #expect(other.count == 1 && other.first?.text == nil)
+}
+
+/// PDFKit-like runs with the reader's marks: `(text, bold, italic)`.
+private func resourceRuns(_ pieces: [(String, Bool, Bool)]) -> NSAttributedString {
+    let value = NSMutableAttributedString()
+    for (index, piece) in pieces.enumerated() {
+        var attributes: [NSAttributedString.Key: Any] = [.font: WeightTestFont(name: "Helvetica", size: 10)!, NSAttributedString.Key("run"): index]
+        if piece.1 { attributes[FontWeightReader.boldAttribute] = true }
+        if piece.2 { attributes[FontWeightReader.italicAttribute] = true }
+        value.append(NSAttributedString(string: piece.0, attributes: attributes))
+    }
+    return value
+}
+
+private func styledRuns(_ text: InlineText) -> [String] {
+    text.elements.compactMap {
+        guard case let .text(value, style) = $0 else { return nil }
+        return (style.contains(.bold) ? "B" : "") + (style.contains(.italic) ? "I" : "") + ":" + value
+    }
+}
+
+@Test func listMarkerInAStyleItsItemDoesNotShareCarriesNoEmphasis() {
+    // DGA's bullets: a bold `+` before a regular item.
+    #expect(styledRuns(NativeTextReader.inlineText(from: resourceRuns([("+ ", true, false), ("Prioritize protein foods", false, false)])))
+            == [":+ ", ":Prioritize protein foods"])
+    #expect(styledRuns(NativeTextReader.inlineText(from: resourceRuns([("• ", false, true), ("Plain item", false, false)])))
+            == [":• ", ":Plain item"])
+    // Controls: a label with letters, a marker before an item in its own style, and punctuation inside a line.
+    #expect(styledRuns(NativeTextReader.inlineText(from: resourceRuns([("NEADS: ", true, false), ("He is heading", false, false)])))
+            == ["B:NEADS: ", ":He is heading"])
+    #expect(styledRuns(NativeTextReader.inlineText(from: resourceRuns([("• ", true, false), ("Bold item", true, false)])))
+            == ["B:• ", "B:Bold item"])
+    #expect(styledRuns(NativeTextReader.inlineText(from: resourceRuns([("the USS ", false, false), ("; ", false, true), ("Cole", false, true)])))
+            == [":the USS ", "I:; ", "I:Cole"])
+}
+
+@Test func adjacentRunsOfOneStyleAreOneElement() {
+    // The FAA cover: PDFKit splits `FAA-H-8083-25C` into nine bold runs.
+    let cover = InlineText(elements: ["F", "AA", "-", "H", "-", "8083", "-", "2", "5C"].map { .text($0, .bold) })
+    #expect(EPUBTextEncoder.inline(cover) == "<strong>FAA-H-8083-25C</strong>")
+    let caption = InlineText(elements: [.text("Figure 14-59. ", .bold), .text("EMAS information (formerly Airport/", .italic),
+                                        .text("Facility Directory).", .italic)])
+    #expect(EPUBTextEncoder.inline(caption)
+            == "<strong>Figure 14-59. </strong><em>EMAS information (formerly Airport/Facility Directory).</em>")
+    // Controls: different styles, a page boundary and a note reference stay apart.
+    let mixed = InlineText(elements: [.text("Demand", [.bold, .italic]), .text(" Shocks", .bold), .sourcePage(31), .text("next", .bold),
+                                      .noteReference("3", .superscript, NoteKey(number: 3, scope: .page(31))), .text("4", .superscript)])
+    #expect(EPUBTextEncoder.inline(mixed).hasPrefix("<strong><em>Demand</em></strong><strong> Shocks</strong><span epub:type=\"pagebreak\""))
+    #expect(EPUBTextEncoder.inline(mixed).contains("aria-label=\"31\"/><strong>next</strong><sup><a "))
+    #expect(EPUBTextEncoder.inline(mixed).hasSuffix("</a></sup><sup>4</sup>"))
+    // A note's opening number and its text are merged before the number is read.
+    let note = InlineText(elements: [.text("1", .superscript), .text("2", .superscript), .text(" See the report.", [])])
+    #expect(EPUBTextEncoder.note(note, number: 12, backlink: "noteref-p1-12").hasPrefix("<sup><a href=\"#noteref-p1-12\""))
+}
+
+// MARK: - Source fixtures (#133)
+
+private func sourceItalic(_ name: String, fontWeights: Bool = true) throws -> [String: String] {
+    let lines = try SourceLayoutFixture.load(name).styledContent(fontWeights: fontWeights).lines
+    return Dictionary(lines.map { ($0.text, italicText($0)) }, uniquingKeysWith: { first, _ in first })
+}
+
+@Test func sourceSupremeCourtCaseNamesCarryItalicInsideProseLines() throws {
+    // Century Schoolbook's ToUnicode maps declare PScript5's two-range codespace.
+    let italic = try sourceItalic("scotus-9-styles")
+    #expect(italic["Since our decision in Chevron U. S. A. Inc. v. Natural Re-"] == "Chevron U. S. A. Inc. Natural Re-")
+    #expect(italic["Our Chevron doctrine requires courts to use a two-step"] == "Chevron ")
+    #expect(italic.values.contains { !$0.isEmpty })
+    #expect(try sourceItalic("scotus-9-styles", fontWeights: false).values.allSatisfy { $0.isEmpty })
+}
+
+@Test func sourceNineElevenShipNamesAndFedSummariesCarryItalic() throws {
+    let report = try sourceItalic("911-171-styles")
+    #expect(report["USS Cole."] == "Cole")
+    #expect(report["October 6, 2002, bombing of the French tanker Limburg in the Gulf of Aden"] == "Limburg ")
+    let fed = try sourceItalic("fed-8-styles")
+    #expect(fed["The Federal Reserve performs five key functions"] == "The Federal Reserve performs five key functions")
+    // Controls: the contents entries in the book weight stay upright.
+    #expect(fed["The U.S. Approach to Central Banking ......................2"] == "")
+    for name in ["911-171-styles", "fed-8-styles"] {
+        #expect(try sourceItalic(name, fontWeights: false).values.allSatisfy { $0.isEmpty }, "\(name)")
+    }
+}
+
+@Test func sourceReplayClocksLibertineTitlesBoldAndVenueItalicButNotMathItalic() throws {
+    let fixture = try SourceLayoutFixture.load("arxiv-1-styles")
+    let lines = fixture.styledContent().lines
+    let bold = Dictionary(lines.map { ($0.text, boldText($0)) }, uniquingKeysWith: { first, _ in first })
+    #expect(bold["Replay Clocks"] == "Replay Clocks")
+    #expect(bold["1 INTRODUCTION"] == "1 INTRODUCTION")
+    let italic = try sourceItalic("arxiv-1-styles")
+    #expect(italic["ings of ACM Conference (Conference’17). ACM, New York, NY, USA, 12 pages."]?.hasPrefix("ings of ACM Conference") == true)
+    // Libertine math italic is already slanted Unicode (`𝑅𝑒𝑝𝐶𝑙`) and gains no emphasis.
+    let math = try #require(lines.first { $0.text.hasPrefix("In this work, we focus on the problem of replay clocks") })
+    #expect(italicText(math).isEmpty && boldText(math).isEmpty)
+    #expect(fixture.styledContent(fontWeights: false).lines.allSatisfy { boldText($0).isEmpty && italicText($0).isEmpty })
+}
+
+@Test func sourceAlgebraWorldViewNoteLabelOpensItsParagraphAndVariablesStayUpright() throws {
+    // `World View Note:` is set in bold on a line of regular text; the Computer Modern fonts have no
+    // ToUnicode map, only a WinAnsi encoding.
+    let fixture = try SourceLayoutFixture.load("algebra-18-styles")
+    let note = try #require(fixture.styledContent().lines.first { $0.text.hasPrefix("World View Note:") })
+    #expect(boldText(note).trimmingCharacters(in: .whitespaces) == "World View Note:")
+    let paragraphs = paragraphTexts(reflow(fixture.styledContent(), labelStyles: []))
+    #expect(paragraphs.contains { $0.hasPrefix("World View Note: The first use of grouping symbols") })
+    #expect(paragraphs.contains { $0.hasSuffix("start with.") })
+    // Negative control: without resource styles the note runs on from the paragraph above.
+    let fused = paragraphTexts(reflow(fixture.styledContent(fontWeights: false), labelStyles: []))
+    #expect(fused.contains { $0.contains("start with. World View Note:") })
+    // Math italic control: page 23's CMMI variables gain no italic, while its bold labels are marked.
+    let algebra = try SourceLayoutFixture.load("algebra-23-styles").styledContent().lines
+    #expect(algebra.contains { $0.text == "Example 32." && boldText($0) == "Example 32." })
+    #expect(algebra.contains { $0.text.contains("5x") })
+    #expect(algebra.allSatisfy { italicText($0).isEmpty })
+}
+
+@Test func sourceDGABulletsAndOurFlagScriptTitleGainNoEmphasis() throws {
+    let dga = try SourceLayoutFixture.load("dga-3-styles")
+    let bullet = try #require(dga.styledContent().lines.first { $0.text.hasPrefix("+ Prioritize high-quality") })
+    #expect(boldText(bullet).isEmpty)
+    #expect(dga.attributedLines.contains { $0.text.hasPrefix("+ Prioritize high-quality") && $0.runs.first?.bold == true })
+    #expect(dga.styledContent().lines.contains { $0.text == "Prioritize Protein Foods at Every Meal" && boldText($0) == $0.text })
+    let flag = try SourceLayoutFixture.load("flag-7-styles").styledContent().lines
+    let title = try #require(flag.first { $0.text == "The History of the Stars and Stripes" })
+    #expect(boldText(title) == title.text && italicText(title).isEmpty)
+    let quote = try #require(flag.first { $0.text.hasPrefix("stripes, alternate red and white") })
+    #expect(italicText(quote) == quote.text)
+    #expect(try SourceLayoutFixture.load("flag-7-styles").styledContent(fontWeights: false).lines.allSatisfy { italicText($0).isEmpty })
 }

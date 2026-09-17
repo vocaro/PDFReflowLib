@@ -1,0 +1,108 @@
+# arxiv-replay-clocks-2023 pages 1-12; pages whose scan failed: 0
+baseFont	subtype	FontWeight	StemV	Flags	ItalicAngle	ToUnicode	shows	PDFKit names	name rule bold	weight-aware bold	name slope	name rule italic	slope-aware italic
+ZMRZBV+LinLibertineT	Type1	-	79	4	0	yes	1713	Helvetica×403	no	no	upright	no	no
+RXIKPM+LibertineMathMI	Type1	-	82	4	-12	yes	930		-	no	mathItalic	-	no
+ZDZKHZ+txsys	Type1	-	52	4	0	yes	427		-	no	unstated	-	no
+HCPGUR+LinLibertineTB	Type1	-	130	4	0	yes	239	Helvetica×29	no	yes	upright	no	no
+LJUXHB+Inconsolatazi4-Regular	Type1	-	72	4	0	yes	90		-	no	upright	-	no
+ICKJDT+LibertineMathMI7	Type1	-	82	4	-12	yes	83	Helvetica×1	no	no	mathItalic	no	no
+ZMKHJD+NewTXMI	Type1	-	82	4	-15	yes	56		-	no	mathItalic	-	no
+MWZXMA+LinLibertineTI	Type1	-	76	4	-12	yes	40	Helvetica×5	no	no	italic	no	yes
+PPKSGE+txmiaX	Type1	-	65	4	0	yes	40		-	no	mathItalic	-	no
+ZIZFHV+LinBiolinumT	Type1	-	80	4	0	yes	34	Helvetica×22	no	no	upright	no	no
+TAKWKO+LibertineMathMI5	Type1	-	82	4	-12	yes	28		-	no	mathItalic	-	no
+UMEVBP+txexs	Type1	-	1000	4	0	yes	8		-	no	unstated	-	no
+TBSGGC+txsya	Type1	-	74	4	0	yes	6		-	no	unstated	-	no
+OYHSJR+NewTXMI5	Type1	-	82	4	-12	yes	3		-	no	mathItalic	-	no
+AFQFLD+Inconsolatazi4-Bold	Type1	-	112	4	0	yes	1		-	yes	unstated	-	no
+IVKDOT+LinBiolinumTB	Type1	-	132	4	0	yes	1	Helvetica×1	no	yes	upright	no	no
+RFQEKA+LibertineMathRM	Type1	-	85	4	0	yes	1		-	no	unstated	-	no
+TQCFPP+txsyb	Type1	-	74	4	0	yes	1		-	no	unstated	-	no
+Times-Roman	Type1	-	-	-	-	no	0		-	no	upright	-	no
+# line runs 2553; bold by name rule 0; bold with font resources 206; changed 206 on 12 pages
+# italic by name rule 0; italic with font resources 39; changed 39 on 8 pages
+# unresolved mixed-style lines: 0 on 0 pages; by undecoded font kind: 
+# pages with bold changes: 1 2 3 4 5 6 7 8 9 10 11 12
+# pages with italic changes: 1 2 3 4 6 9 10 11
+# bold examples
+  p1	helvetica	Replay Clocks
+  p1	helvetica	ABSTRACT
+  p1	helvetica	ACM Reference Format:
+  p1	helvetica	1 INTRODUCTION
+  p2	helvetica	Contributions of the paper: 
+  p2	helvetica	Organization of the paper: 
+  p2	helvetica	2 PRELIMINARIES
+  p2	helvetica	3 REPLAY WITH CLOCKS
+  p3	helvetica	Algorithm 1 
+  p3	helvetica	Input: 
+  p3	helvetica	while 
+  p3	helvetica	do
+  p3	helvetica	Figure 1: Sample Execution Sequence and Application of
+  p3	helvetica	Replay Algorithm.
+  p3	helvetica	Requirement 1. 
+  p3	helvetica	Requirement 2. 
+  p3	helvetica	Requirement 3. 
+  p3	helvetica	4 ALGORITHM FOR REPLAY CLOCK (REPCL)
+  p3	helvetica	Structure of RepCl timestamp. 
+  p4	helvetica	Figure 2: Working of Shift() on Process 0. Here, 
+  p4	helvetica	=15, and the
+  p4	helvetica	shift is issued to advance to epoch 20.
+  p4	helvetica	Description of the Algorithm. 
+  p4	helvetica	Algorithm 2 
+  p4	helvetica	for 
+  p4	helvetica	do
+  p4	helvetica	if 
+  p4	helvetica	then
+  p4	helvetica	Output: 
+  p4	helvetica	Algorithm 3 
+  p4	helvetica	if 
+  p4	helvetica	then
+  p4	helvetica	else
+  p4	helvetica	Algorithm 4 
+  p4	helvetica	Input: 
+  p4	helvetica	if 
+  p4	helvetica	then
+  p4	helvetica	for 
+  p4	helvetica	do
+  p4	helvetica	if 
+# italic examples
+  p1	helvetica	Proceed-
+  p1	helvetica	ings of ACM Conference (Conference’17). 
+  p2	helvetica	Given the amount of permissible
+  p2	helvetica	overhead for logging events, what are the scenarios where perfect
+  p2	helvetica	replay of events is possible?
+  p2	helvetica	minimum message
+  p2	helvetica	delay 
+  p3	helvetica	efficient 
+  p3	helvetica	at most 
+  p3	helvetica	Shift 
+  p3	helvetica	MergeSameEpoch
+  p4	helvetica	Local/Send event. 
+  p4	helvetica	Receive event. 
+  p6	helvetica	no
+  p6	helvetica	information about the offset of 
+  p6	helvetica	clock tick
+  p9	helvetica	perfect-replay 
+  p9	helvetica	perfect-replay 
+  p9	helvetica	partial-replay
+  p10	helvetica	what can a user
+  p10	helvetica	do if the given system parameters fall into the infeasible region? 
+  p10	helvetica	quickly
+  p10	helvetica	Communications of the ACM
+  p10	helvetica	Proceedings of the 11th Australian Computer
+  p10	helvetica	Science Conference (ACSC)
+  p10	helvetica	Proceed-
+  p10	helvetica	ings.,10th International Conference on Distributed Computing Systems
+  p10	helvetica	Distributed Computing and Networking
+  p10	helvetica	Principles of Distributed Systems: 18th
+  p10	helvetica	International Conference, OPODIS 2014, Cortina d’Ampezzo, Italy, Decem
+  p10	helvetica	2014. Proceedings 18
+  p10	helvetica	Commun. ACM
+  p10	helvetica	Virtual time and global states of distributed systems
+  p10	helvetica	IEEE
+  p10	helvetica	Transactions on communications
+  p10	helvetica	Inf. Process. Lett.
+  p10	helvetica	IEEE Transactions
+  p10	helvetica	on Parallel and Distributed Systems
+  p11	helvetica	past
+# unresolved examples

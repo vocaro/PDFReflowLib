@@ -1,0 +1,24 @@
+merge-only pages (9): 43 102 184 205 268 314 326 373 414
+emphasis-only pages (96): 5 7 12 22 23 31 35 38 40 41 45 50 52 57 64 65 67 72 73 75 79 83 89 95 103 109 112 118 124 128 134 137 143 148 151 153 154 160 169 177 179 185 190 192 193 197 198 201 202 203 209 214 219 224 226 231 234 235 240 243 244 250 258 264 269 277 283 288 292 296 299 305 307 310 316 318 328 329 333 339 344 349 352 360 364 371 376 386 388 397 401 406 411 417 420 431
+structural pages (3): 18 255 380
+
+=== page 18 (other fields: paragraphIDs, paragraphs)
+  @@ -20,2 +20,3 @@
+   <p>MD AS</p>
+  -<p>so we don’t forget that multiplication and division are done left to right (same with addition and subtraction). Another way students remember the order of operations is to think of a phrase such as “Please Excuse My Dear Aunt Sally” where each word starts with the same letters as the order of o
+  +<p>so we don’t forget that multiplication and division are done left to right (same with addition and subtraction). Another way students remember the order of operations is to think of a phrase such as “Please Excuse My Dear Aunt Sally” where each word starts with the same letters as the order of o
+  +<p>World View Note: The first use of grouping symbols are found in 1646 in the Dutch mathematician, Franciscus van Schooten’s text, Vieta. He used a bar over
+
+=== page 255 (other fields: none)
+  @@ -8,3 +8,3 @@
+   <p>and <sup>3c</sup></p>
+  -<p><sub>6a</sub><sub>2</sub><sub>b </sub>First identify LCD</p>
+  +<p><sub>6a2b </sub>First identify LCD</p>
+   <p>12a<sup>2</sup>b<sup>3</sup>c</p>
+
+=== page 380 (other fields: paragraphIDs, paragraphs)
+  @@ -20,2 +20,3 @@
+   <p>Our Solution</p>
+  -<p>When we have x<sup>2 </sup>in our equations, the graph will no longer be a straight line. Quadratics have a graph that looks like a U shape that is called a parabola. World View Note: The first major female mathematician was Hypatia of Egypt who was born around 370 AD. She studied conic sections
+  +<p>When we have x<sup>2 </sup>in our equations, the graph will no longer be a straight line. Quadratics have a graph that looks like a U shape that is called a parabola.</p>
+  +<p>World View Note: The first major female mathematician was Hypatia of Egypt who was born around 370 AD. She studied conic sections. The parabola is one type of conic section.</p>

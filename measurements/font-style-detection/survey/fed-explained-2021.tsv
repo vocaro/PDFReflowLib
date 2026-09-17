@@ -1,0 +1,135 @@
+# fed-explained-2021 pages 1-135; pages whose scan failed: 0
+baseFont	subtype	FontWeight	StemV	Flags	ItalicAngle	ToUnicode	shows	PDFKit names	name rule bold	weight-aware bold	name slope	name rule italic	slope-aware italic
+NSVCRT+FranklinGothicLTPro-Bk	Type1	400	80	32	0	yes	3729	Helvetica×3023	no	no	unstated	no	no
+IBDJZD+FranklinGothicLTPro-Bk	Type1	400	80	4	0	no	528	Helvetica×47	no	no	unstated	no	no
+PNWOTP+ITCFranklinGothicStd-Book	Type1	400	80	32	0	yes	527	Helvetica×208	no	no	unstated	no	no
+JDMKNB+FranklinGothicLTPro-BkCm	Type1	400	68	32	0	yes	426	Helvetica×348	no	no	unstated	no	no
+KGIFBZ+FranklinGothicLTPro-Dm	Type1	600	148	32	0	yes	391	Helvetica×251	no	yes	unstated	no	no
+KECVBZ+FranklinGothicLTPro-BkCm	Type1	400	68	4	0	no	273	Helvetica×37	no	no	unstated	no	no
+FZPRJJ+FranklinGothicLTPro-DmCm	Type1	600	128	4	0	no	163	Helvetica×26	no	yes	unstated	no	no
+BIUDFR+ITCFranklinGothicStd-Demi	Type1	600	148	32	0	yes	153	Helvetica×40	no	yes	unstated	no	no
+KECVBZ+FranklinGothicLTPro-Dm	Type1	600	148	4	0	no	134	Helvetica×11	no	yes	unstated	no	no
+QNEFHN+FranklinGothicLTPro-Md	Type1	500	112	4	0	no	82		-	no	unstated	-	no
+WODUNB+FranklinGothicLTPro-BkIt	Type1	400	76	96	-1	yes	61	Helvetica×41	no	no	italic	no	yes
+CSBZTP+FranklinGothicLTPro-DmIt	Type1	600	140	96	-1	yes	56	Helvetica×53	no	yes	italic	no	yes
+KZYQBZ+FranklinGothicLTPro-DmCm	Type1	600	128	32	0	yes	33	Helvetica×25	no	yes	unstated	no	no
+ICWUZD+FrutigerLTStd-Cn	Type1	400	84	32	0	no	30		-	no	unstated	-	no
+KECVBZ+FrutigerLTStd-BoldCn	Type1	700	124	32	0	no	14		-	yes	unstated	-	no
+Impact	TrueType	400	204	32	0	no	12		-	no	unstated	-	no
+GRUNXH+FrutigerLTStd-Roman	Type1	400	96	32	0	no	11		-	no	upright	-	no
+JYIFNB+SegoeUI	TrueType	400	80	32	0	yes	4		-	no	unstated	-	no
+IBDJZD+HelveticaNeueLTPro-Lt	Type1	300	64	32	0	yes	3		-	no	unstated	-	no
+CSBZTP+FrutigerLTStd-LightCn	Type1	300	88	32	0	no	2		-	no	unstated	-	no
+FNKHJJ+MinionPro-BoldIt	Type1	700	120	98	-12	yes	2	Helvetica×2	no	yes	italic	no	yes
+POPZTP+MinionPro-Regular	Type1	400	80	34	0	yes	2		-	no	upright	-	no
+GRUNXH+MinionPro-Semibold	Type1	600	112	34	0	no	1		-	yes	unstated	-	no
+NBMIRT+BerlinSansFBDemi-Bold	TrueType	700	172	32	0	no	1		-	yes	unstated	-	no
+SJYHJJ+FrutigerLTStd-LightItalic	Type1	300	68	96	-12	yes	1	Helvetica×1	no	no	italic	no	yes
+# line runs 4793; bold by name rule 0; bold with font resources 530; changed 530 on 121 pages
+# italic by name rule 0; italic with font resources 119; changed 119 on 61 pages
+# unresolved mixed-style lines: 0 on 0 pages; by undecoded font kind: 
+# pages with bold changes: 5 6 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132
+# pages with italic changes: 8 14 19 24 26 30 31 32 33 34 35 37 38 39 41 50 51 52 53 54 55 56 66 68 69 70 71 72 73 74 76 77 78 79 81 82 84 86 88 93 94 97 98 99 101 103 104 105 106 107 109 110 116 119 120 121 122 123 125 126 128
+# bold examples
+  p5	helvetica	Contents
+  p5	helvetica	1 
+  p5	helvetica	Overview of the Federal Reserve System
+  p5	helvetica	2 
+  p5	helvetica	The Three Key System Entities
+  p5	helvetica	3 
+  p5	helvetica	Conducting Monetary Policy
+  p5	helvetica	4 
+  p5	helvetica	Promoting Financial System Stability
+  p5	helvetica	5 
+  p5	helvetica	Supervising and Regulating Financial Institutions and Activities
+  p5	helvetica	6 
+  p5	helvetica	Fostering Payment and Settlement System Safety and Efficiency
+  p6	helvetica	7 
+  p6	helvetica	Promoting Consumer Protection and Community Development
+  p8	helvetica	Overview of the Federal
+  p8	helvetica	Reserve System
+  p9	helvetica	• conducts the nation’s monetary policy 
+  p9	helvetica	• promotes the stability of the financial system 
+  p9	helvetica	• promotes the safety and soundness of individual financial institutio
+  p9	helvetica	• fosters payment and settlement system safety and efficiency 
+  p9	helvetica	• promotes consumer protection and community development 
+  p9	helvetica	Figure 1.1. The Federal Reserve System
+  p10	helvetica	The U.S. Approach to Central Banking
+  p10	helvetica	Figure 1.2. Three key entities, serving the public interest
+  p11	helvetica	The Decentralized System Structure and Its Philosophy
+  p11	helvetica	Figure 1.3. Twelve Federal Reserve Districts operate independently but
+  p12	helvetica	The Reserve Banks: A Blend of Private and Governmental
+  p12	helvetica	Characteristics
+  p13	helvetica	Figure 1.4. Federal Reserve net earnings are paid to the U.S. Treasury
+  p14	helvetica	The Three Key System
+  p14	helvetica	Entities
+  p15	helvetica	The Federal Reserve Board: Selection and Function
+  p15	helvetica	Figure 2.1. How the Federal Reserve operates within the U.S. governmen
+  p16	helvetica	The Federal Reserve Banks: Structure and Function
+  p17	helvetica	Reserve Bank Leadership
+  p17	helvetica	Figure 2.2. Serving on the Board of Governors
+  p18	helvetica	Reserve Bank Responsibilities
+  p18	helvetica	supervising and examining state member banks 
+  p18	helvetica	Figure 2.3. Composition of Federal Reserve Bank boards of directors an
+# italic examples
+  p8	helvetica	The Federal Reserve performs five key functions
+  p8	helvetica	in the public interest to promote the health of the
+  p8	helvetica	U.S. economy and the stability of the U.S. financial
+  p8	helvetica	system.
+  p14	helvetica	The Board of Governors, the Federal Reserve
+  p14	helvetica	Banks, and the Federal Open Market Committee
+  p14	helvetica	work together to promote the health of the U.S.
+  p14	helvetica	economy and the stability of the U.S. financial
+  p14	helvetica	system.
+  p19	helvetica	Roles and Re-
+  p19	helvetica	sponsibilities of Federal Reserve Directors 
+  p24	helvetica	The Federal Reserve sets U.S. monetary policy to
+  p24	helvetica	promote maximum employment and stable prices
+  p24	helvetica	in the U.S. economy.
+  p26	helvetica	We are committed to providing clear explanations about our policies an
+  p26	helvetica	Congress has given us an
+  p26	helvetica	important degree of independence so that we can effectively pursue our
+  p26	helvetica	and data. We appreciate that our independence brings with it an obliga
+  p26	helvetica	can hold us accountable.”
+  p30	helvetica	Anticipated Factors
+  p30	helvetica	Demand Shocks
+  p31	helvetica	Supply Shocks
+  p31	helvetica	FOMC Meetings: Assessing an Evolving U.S. and World Economy
+  p32	helvetica	How the FOMC Determines the Appropriate Stance of Monetary Policy
+  p33	helvetica	FOMC Statement and Chair’s Press Conference
+  p34	helvetica	Monetary Policy Report 
+  p34	helvetica	“Overall, our new Statement on Longer-Run Goals
+  p34	helvetica	and Monetary Policy Strategy conveys our continued
+  p34	helvetica	strong commitment to achieving our goals, given the
+  p34	helvetica	difficult challenges presented by the proximity of in-
+  p34	helvetica	terest rates to the effective lower bound. In conduct-
+  p34	helvetica	ing monetary policy, we will remain highly focused
+  p34	helvetica	on fostering as strong a labor market as possible for
+  p34	helvetica	the benefit of all Americans. And we will steadfastly
+  p34	helvetica	seek to achieve a 2 percent inflation rate over time.”
+  p35	helvetica	Monetary Policy during and after the 2007–09 Financial Crisis
+  p35	helvetica	Monetary Policy Report 
+  p37	helvetica	2015–19: Normalizing Monetary Policy in a Normalizing Economy
+  p38	helvetica	2020 and Beyond: Taking Aggressive Action Amid the Global Pandemic
+  p39	helvetica	Report on the Federal Reserve’s Balance Sheet
+  p41	helvetica	Overnight reverse repurchase facility. 
+  p41	helvetica	Purchases and sales of securities. 
+  p50	helvetica	The Federal Reserve monitors financial system
+  p50	helvetica	risks and engages at home and abroad to help
+  p50	helvetica	ensure the system supports a healthy economy for
+  p50	helvetica	U.S. households, communities, and businesses.
+  p51	helvetica	Financial Markets and Institutions
+  p52	helvetica	across and between 
+  p53	helvetica	The Federal Reserve Act: Its Origin and Prin-
+  p53	helvetica	ciples, 
+  p54	helvetica	Asset Valuations and Risk Appetite
+  p54	helvetica	Financial Stability Report
+  p55	helvetica	Leverage in the Financial System
+  p56	helvetica	Financial Stability Report 
+  p56	helvetica	Funding Risk and Maturity Transformation by the Financial System
+  p56	helvetica	Borrowing by Businesses and Households
+  p66	helvetica	The Federal Reserve promotes the safety and
+  p66	helvetica	soundness of individual financial institutions and
+  p66	helvetica	monitors their impact on the financial system as a
+  p66	helvetica	whole.
+# unresolved examples

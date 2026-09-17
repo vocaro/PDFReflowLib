@@ -31,12 +31,16 @@ struct SourceLayoutFixture: Decodable {
             /// Drawn in a bold font resource PDFKit does not name bold (#125; absent in fixtures
             /// captured before it, and on runs that are not).
             var bold: Bool?
+            /// Drawn in an italic text font resource PDFKit does not name italic (#133; absent in
+            /// fixtures captured before it, and on runs that are not).
+            var italic: Bool?
         }
         var text: String
         /// The selection's own bounds, captured beside the runs (absent in older fixtures).
         var rect: [Double]?
         var runs: [Run]
-        /// `fontWeights: false` replays PDFKit's runs alone, as extraction read them before #125.
+        /// `fontWeights: false` replays PDFKit's runs alone, as extraction read them before #125
+        /// and #133 (no resource bold or italic).
         func attributedString(fontWeights: Bool = true) -> NSAttributedString {
             let value = NSMutableAttributedString(string: "")
             for run in runs {
@@ -45,6 +49,7 @@ struct SourceLayoutFixture: Decodable {
                 ]
                 attributes[.font] = FixtureFont(name: run.fontName, size: run.fontSize)
                 if fontWeights, run.bold == true { attributes[FontWeightReader.boldAttribute] = true }
+                if fontWeights, run.italic == true { attributes[FontWeightReader.italicAttribute] = true }
                 value.append(NSAttributedString(string: run.text, attributes: attributes))
             }
             return value

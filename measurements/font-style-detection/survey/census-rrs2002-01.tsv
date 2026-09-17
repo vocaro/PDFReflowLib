@@ -1,0 +1,75 @@
+# census-rrs2002-01 pages 1-20; pages whose scan failed: 0
+baseFont	subtype	FontWeight	StemV	Flags	ItalicAngle	ToUnicode	shows	PDFKit names	name rule bold	weight-aware bold	name slope	name rule italic	slope-aware italic
+FCHKGB+dcr10084	Type1	-	0	4	0	no	817	Helvetica×448	no	no	upright	no	no
+FCHMEI+cmmi10084	Type1	-	0	68	-14	no	393	Helvetica×6	no	no	mathItalic	no	no
+FCHMFE+cmr10084	Type1	-	0	4	0	no	236	Helvetica×5	no	no	upright	no	no
+-	Type3	-	-	-	-	no	214	Helvetica×11	no	unknown	-	no	unknown
+FCHNIE+cmex10084	Type1	-	0	4	0	no	122	Helvetica×3	no	no	upright	no	no
+FCHMGK+cmsy10084	Type1	-	0	4	0	no	96		-	no	upright	-	no
+FCHKCL+dcbx100120	Type1	-	0	4	0	no	40	Helvetica×19	no	yes	upright	no	no
+FCHMDC+dcti10084	Type1	-	0	68	-14	no	40	Helvetica×3	no	no	italic	no	yes
+TimesNewRoman	TrueType	-	73	34	0	no	12	TimesNewRomanPSMT×7	no	no	upright	no	no
+TimesNewRoman,Italic	TrueType	-	73	98	-11	no	3		-	no	italic	-	yes
+TimesNewRoman,Bold	TrueType	-	136	16418	0	no	2	TimesNewRomanPS-BoldMT×2	yes	yes	unstated	no	no
+FCHKFF+cmmib10084	Type1	-	0	68	-14	no	1		-	yes	mathItalic	-	no
+FCHKIB+dctt10075	Type1	-	0	4	0	no	1	Helvetica×1	no	no	upright	no	no
+# line runs 1093; bold by name rule 2; bold with font resources 23; changed 21 on 10 pages
+# italic by name rule 3; italic with font resources 4; changed 1 on 1 pages
+# unresolved mixed-style lines: 50 on 14 pages; by undecoded font kind: TrueType no ToUnicode 3, Type1 no ToUnicode 46, Type1 no ToUnicode+Type3 no ToUnicode 1
+# pages with bold changes: 2 3 4 5 8 10 11 16 17 18
+# pages with italic changes: 17
+# bold examples
+  p2	helvetica	Glvforvxuh ulvn dvvhvvphqw lq shuwxuedwlyh
+  p2	helvetica	plfurgdwd surwhfwlrq
+  p2	helvetica	f
+  p2	helvetica	4Lqwurgxfwlrq
+  p3	helvetica	5GdwdIlohv
+  p3	helvetica	514 Grplqjr0Ihuuhu dqg Pdwhr0Vdq}
+  p3	helvetica	515 Nlp0Zlqnohu
+  p4	helvetica	6 Phwkrgv
+  p4	helvetica	614 Udqn Vzdsslqj
+  p4	helvetica	615 Dgglwlyh Qrlvh
+  p4	helvetica	616 Pl{wxuhv ri Dgglwlyh Qrlvh
+  p5	helvetica	617 Uh0lghqwlfdwlrq
+  p8	helvetica	618 Lqirupdwlrq0Orvv dqg Vfrulqj Phwulf
+  p10	helvetica	7Uhvxowv
+  p10	helvetica	714 Grplqjr Gdwd Vwdwlvwlfv
+  p11	helvetica	715 Nlp0Zlqnohu Gdwd Vwdwlvwlfv
+  p16	helvetica	8 Glvfxvvlrq
+  p16	helvetica	9FrqfoxglqjUhpdunv
+  p17	helvetica	: Uhihuhqfhv
+  p17	helvetica	Uhihuhqfhv
+  p18	helvetica	; Dsshqgl{= Dgglwlyh Pl{wxuh Qrlvh Phwkrgrorj|
+# italic examples
+  p17	helvetica	+4<<9,1
+# unresolved examples
+  p1	TrueType no ToUnicode	(Statistics #2002-01)
+  p1	TrueType no ToUnicode	Report Issued: January 31, 2002
+  p1	TrueType no ToUnicode	Disclaimer: This paper reports the results of research and analysis un
+  p2	Type1 no ToUnicode	Devwudfw1 Wklv sdshu ghvfulehv phwkrgv iru gdwd shuwxuedwlrq wkdw lq0
+  p4	Type1 no ToUnicode	Grplqjr0Ihuuhu hwdo1^ 8`1 dqg vrph yduldqwv1
+  p4	Type1 no ToUnicode+Type3 no ToUnicode	Ihuuhu hw do1 ^8`1WkhgdwdX lv uhsuhvhqwhg e| +Xij ,/ 4 i n;4 j k/
+  p7	Type1 no ToUnicode	ri Zlqnohu lv vlplodu wr wkh fodvvlf dojrulwkp ri Exundug dqg Ghuljv +
+  p7	Type1 no ToUnicode	Ihuuhu hw do1 dovr xvhg lqwhuydo glvforvxuh +LG, wkdw zh gr qrw eholhy
+  p8	Type1 no ToUnicode	zdqw wr frqvlghu d phdvxuh ri wkh fkdqjh lq gdwd/ l1h1d phdvxuhphqw ir
+  p9	Type1 no ToUnicode	wkh gdwd vhw/ dqg zkloh wkh vwdwlvwlf grhv qrw kdyh dq d sulrul xsshu 
+  p11	Type1 no ToUnicode	Wdeoh 41 Grplqjr Gdwd Lqirupdwlrq Orvv Vwdwlvwlfv
+  p12	Type1 no ToUnicode	Wdeoh 51 GrplqjrGdwdUhlghqwlfdwlrqUdwhv
+  p12	Type1 no ToUnicode	g phwulf o phwulf
+  p12	Type1 no ToUnicode	Wdeoh 61 Grplqjr Gdwd Vfrulqj Phwulfv
+  p12	Type1 no ToUnicode	g Phwulf o Phwulf
+  p13	Type1 no ToUnicode	Wdeoh 71 Nlp0Zlqnohu Gdwd Lqirupdwlrq Orvv Vwdwlvwlfv/ 44 Yduldeohv
+  p13	Type1 no ToUnicode	Wdeoh 81 Nlp0Zlqnohu Gdwd Lqirupdwlrq Orvv Vwdwlvwlfv/ ; Yduldeohv
+  p14	Type1 no ToUnicode	Wdeoh 91 Nlp0Zlqnohu Gdwd Uhlghqwlfdwlrq Udwhv/ o Phwulf
+  p14	Type1 no ToUnicode	Vxesrsxodwlrq Lqirupdwlrq Orvv Vwdwlvwlfv Wkh dgglwlyh qrlvh surfhgxuh
+  p15	Type1 no ToUnicode	Wdeoh :1 Nlp0Zlqnhu Gdwd Vfrulqj Phwulfv
+  p15	Type1 no ToUnicode	Wdeoh ;1 V7 Uhwxuq W|sh Lqirupdwlrq Orvv/ ; Yduldeohv/ 8;;8 Uhfrugv
+  p16	Type1 no ToUnicode	Wdeoh <1 Vfkhgxoh F Vxevhw Lqirupdwlrq Orvv/ ; Yduldeohv/ :;4< Uhfrugv
+  p17	Type1 no ToUnicode	Lqfrpsohwh Gdwd yld wkh HP Dojrulwkp/ MrxuqdoriwkhUr|doVwdwlvwlfdoVrfl
+  p17	Type1 no ToUnicode	E/ 6< +4<::, 46;1
+  p17	Type1 no ToUnicode	ri Plfurgdwd/ MrxuqdoriVwdwlvwlfdoSodqqlqjdqg Lqihuhqfh/ 9 +4<;5, :6;8
+  p17	Type1 no ToUnicode	wuro ri Plfurgdwd/ Vxuyh|Phwkrgrorj|/ 55/ +4<<9, <84361
+  p17	Type1 no ToUnicode	gdwd/ MrxuqdoriR!fldoVwdwlvwlfv/ 47/ +4<<;, 7547681
+  p17	Type1 no ToUnicode	iru Plfurgdwd rq wkh Edvlv ri Lqirupdwlrq Orvv dqg Glvforvxuh Ulvn/ Su
+  p17	Type1 no ToUnicode	riHWN0QWWV *5334/ +5334, wr dsshdu1
+  p17	Type1 no ToUnicode	Dphulfdq VwdwlvwlfdoDvvrfldwlrq/ 97/ +4<9<, 44;645431

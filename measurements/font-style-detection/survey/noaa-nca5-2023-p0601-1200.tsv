@@ -1,0 +1,133 @@
+# noaa-nca5-2023 pages 601-1200; pages whose scan failed: 0
+baseFont	subtype	FontWeight	StemV	Flags	ItalicAngle	ToUnicode	shows	PDFKit names	name rule bold	weight-aware bold	name slope	name rule italic	slope-aware italic
+OFKQWA+Lora-Regular	TrueType	400	88	34	0	yes	39099	Helvetica×17558	no	no	upright	no	no
+OFKQWA+Roboto-Regular	TrueType	400	92	32	0	yes	4706	Helvetica×2052	no	no	upright	no	no
+OFKQWA+Lora-Italic	TrueType	400	80	98	-3	yes	3575	Helvetica×19	no	no	italic	no	yes
+OFKQWA+Lora-Regular	Type0	400	88	6	0	yes	2677	Helvetica×1187	no	no	upright	no	no
+OFKQWA+Lora-Bold	TrueType	700	144	34	0	yes	2391		-	yes	unstated	-	no
+OFKQWA+Roboto-Bold	TrueType	700	144	32	0	yes	2109	Helvetica×915	no	yes	unstated	no	no
+OFKQWA+Roboto-Medium	Type0	500	120	4	0	yes	750	Helvetica×749	no	no	unstated	no	no
+OFKQWA+Roboto-Medium	TrueType	500	120	32	0	yes	587	Helvetica×587	no	no	unstated	no	no
+OFKQWA+Roboto-Regular	Type0	400	92	4	0	yes	386	Helvetica×186	no	no	upright	no	no
+OFKQWA+Lora-Italic	Type0	400	80	70	-3	yes	204	Helvetica×1	no	no	italic	no	yes
+OFKQWA+Roboto-Italic	Type0	400	88	68	-12	yes	204	Helvetica×3	no	no	italic	no	yes
+OFKQWA+Roboto-BoldItalic	TrueType	700	140	96	-12	yes	147	Helvetica×140	no	yes	italic	no	yes
+OFKQWA+Roboto-Italic	TrueType	400	88	96	-12	yes	124		-	no	italic	-	yes
+OFKQWA+ProximaNova-Bold	Type1	700	128	32	0	yes	42	ProximaNova-Bold×16	yes	yes	unstated	no	no
+OFKQWA+Roboto-Bold	Type0	700	144	4	0	yes	40	Helvetica×32	no	yes	unstated	no	no
+OFKQWA+TimesNewRomanPSMT	Type0	400	80	6	0	yes	9		-	no	upright	-	no
+OFKQWA+TimesNewRomanPSMT	TrueType	400	80	34	0	yes	6		-	no	upright	-	no
+OFKQWA+Roboto-BoldItalic	Type0	700	140	68	-12	yes	4	Helvetica×4	no	yes	italic	no	yes
+OFKQWA+Lora-Bold	Type0	700	144	6	0	yes	3		-	yes	unstated	-	no
+OFKQWA+Calibri-Bold	TrueType	700	124	32	0	yes	2		-	yes	unstated	-	no
+OFKQWA+ArialMT	TrueType	400	88	32	0	yes	1		-	no	unstated	-	no
+OFKQWA+ArialMT	Type0	400	88	4	0	yes	1		-	no	unstated	-	no
+OFKQWA+Calibri	Type0	400	80	4	0	yes	1		-	no	unstated	-	no
+# line runs 34408; bold by name rule 40; bold with font resources 1731; changed 1691 on 419 pages
+# italic by name rule 0; italic with font resources 1361; changed 1361 on 363 pages
+# unresolved mixed-style lines: 0 on 0 pages; by undecoded font kind: 
+# pages with bold changes: 601 602 604 606 607 609 610 611 612 613 614 616 618 619 620 621 622 624 626 627 628 629 630 632 634 642 643 644 645 646 648 649 650 651 652 653 654 655 656 657 658 659 661 663 664 666 667 669 680 681 683 684 691 692 693 694 696 697 698 699 701 702 703 704 705 706 707 708 709 710 711 713 715 718 721 726 732 734 735 736 737 739 740 741 742 743 744 745 746 747 748 749 751 752 753 754 755 756 757 758 759 760 761 762 763 764 765 766 770 771 773 775 779 780 781 782 783 785 786 787 789 790 791 793 794 795 798 799 800 802 803 805 806 810 812 813 815 816 817 818 819 820 822 823 824 825 828 829 830 833 834 835 836 837 839 840 841 842 844 846 848 850 851 855 856 857 858 859 860 861 862 863 864 865 866 867 868 869 870 871 872 873 874 876 878 879 883 884 885 887 888 889 890 891 893 894 895 896 897 898 899 900 901 902 903 904 905 906 907 908 909 910 911 912 914 916 918 919 920 921 922 923 924 925 926 927 929 930 931 934 935 936 937 938 939 940 942 943 944 945 947 949 950 952 954 955 956 957 958 959 961 963 964 965 966 968 974 977 985 986 987 988 990 991 992 993 994 996 998 999 1000 1001 1002 1003 1005 1006 1007 1008 1009 1010 1011 1012 1013 1014 1015 1016 1017 1018 1019 1020 1021 1023 1024 1026 1027 1028 1031 1032 1033 1035 1037 1038 1041 1042 1046 1047 1050 1051 1052 1053 1055 1056 1057 1058 1059 1060 1061 1062 1063 1064 1065 1066 1067 1068 1069 1070 1071 1072 1073 1074 1075 1076 1077 1078 1079 1080 1081 1082 1084 1085 1086 1087 1088 1089 1090 1094 1096 1100 1101 1106 1107 1108 1109 1111 1112 1113 1114 1115 1116 1117 1118 1119 1121 1123 1124 1125 1126 1127 1128 1130 1131 1132 1133 1134 1135 1137 1138 1139 1141 1142 1144 1145 1147 1155 1162 1165 1166 1167 1168 1170 1171 1172 1173 1174 1175 1176 1177 1178 1179 1180 1181 1182 1183 1184 1185 1186 1187 1188 1189 1190 1191 1192 1193 1194 1195 1196 1197 1199 1200
+# pages with italic changes: 601 602 603 604 605 606 607 608 611 614 618 620 622 626 627 629 630 631 632 633 634 635 636 637 638 639 640 644 646 650 652 655 657 661 663 664 665 666 668 678 680 681 682 683 684 686 687 693 696 697 698 699 702 703 704 705 707 708 709 711 712 713 714 715 716 717 718 721 724 726 728 730 732 733 734 735 736 737 740 746 747 748 749 750 752 753 754 755 759 760 761 762 763 764 765 766 767 768 769 770 771 772 773 774 775 776 777 778 780 783 786 790 794 798 799 800 801 802 803 804 805 806 807 809 810 811 812 813 814 817 820 823 825 830 831 834 835 836 837 838 839 840 841 842 843 844 845 846 847 848 850 851 852 853 857 859 860 865 867 868 869 871 872 874 875 876 877 878 879 883 884 885 886 887 888 889 890 891 894 896 898 899 901 903 905 906 908 909 911 913 915 917 918 919 920 921 922 923 924 925 926 927 928 929 930 931 932 935 938 942 943 944 945 946 949 952 956 958 963 964 965 966 967 968 969 972 974 976 977 983 987 991 993 996 998 1001 1002 1005 1006 1007 1012 1014 1015 1016 1017 1019 1020 1021 1022 1023 1024 1025 1026 1027 1028 1031 1032 1033 1034 1035 1036 1037 1038 1041 1042 1043 1044 1045 1046 1047 1048 1049 1052 1057 1058 1061 1064 1065 1066 1067 1069 1071 1072 1075 1076 1079 1080 1082 1083 1084 1085 1086 1087 1088 1089 1090 1091 1094 1095 1096 1097 1098 1099 1100 1101 1102 1103 1104 1105 1106 1108 1112 1116 1118 1121 1123 1125 1126 1127 1131 1132 1135 1138 1139 1141 1142 1143 1144 1146 1147 1148 1150 1154 1155 1156 1157 1158 1160 1161 1162 1167 1170 1172 1174 1175 1177 1178 1179 1180 1181 1183 1184 1185 1186 1188 1192 1193 1194 1195 1196 1197 1198 1200
+# bold examples
+  p601	helvetica	577 
+  p601	helvetica	100
+  p601	helvetica	177
+  p602	helvetica	42 
+  p604	helvetica	10 
+  p606	helvetica	84
+  p607	helvetica	13 
+  p607	helvetica	24 
+  p609	helvetica	Fifth National Climate Assessment: Chapter 13
+  p609	helvetica	Transportation
+  p610	helvetica	Chapter 13. Transportation
+  p610	helvetica	Authors and Contributors
+  p610	helvetica	Federal Coordinating Lead Author
+  p610	helvetica	Robert Kafalenos
+  p610	helvetica	Chapter Lead Author
+  p610	helvetica	Cris B. Liban
+  p610	helvetica	Chapter Authors
+  p610	helvetica	Lilian Alessa
+  p610	helvetica	Susan Anenberg
+  p610	helvetica	Mikhail Chester
+  p610	helvetica	Joshua DeFlorio
+  p610	helvetica	Francisco J. Dóñez
+  p610	helvetica	Aimee Flannery
+  p610	helvetica	Michael R. Sanio
+  p610	helvetica	Beverly A. Scott
+  p610	helvetica	Anne Marie K. Stoner
+  p610	helvetica	Technical Contributors
+  p610	helvetica	Jack Clark
+  p610	helvetica	Kristina A. Dahl
+  p610	helvetica	Alissa Kendall
+  p610	helvetica	Samuel A. Markolf
+  p610	helvetica	Katelyn O’Dell
+  p610	helvetica	Steven Olmsted
+  p610	helvetica	Laurel Paget-Seekins
+  p610	helvetica	Karen E. Philbrick
+  p610	helvetica	Tara L. Ramani
+  p610	helvetica	Manjit K. Sooch
+  p610	helvetica	Benjamin S. Underwood
+  p610	helvetica	Madison A. Walker
+  p611	helvetica	Review Editor
+# italic examples
+  p601	helvetica	Nature, 
+  p601	helvetica	Bulletin of the American Meteorological Society, 
+  p601	helvetica	Economics Letters, 
+  p602	helvetica	Journal of Planning Education and Research, 
+  p602	helvetica	Climate Change and Society: Sociological Perspectives
+  p602	helvetica	Climate Change
+  p602	helvetica	2022: Impacts, Adaptation and Vulnerability. Contribution of Working G
+  p602	helvetica	of the Intergovernmental Panel on Climate Change
+  p603	helvetica	Climate Change 2022: Impacts, Adaptation and Vulnerability.
+  p603	helvetica	Contribution of Working Group II to the Sixth Assessment Report of the
+  p603	helvetica	Climate Change 2022: Mitigation of Climate Change. Contribution of
+  p603	helvetica	Working Group III to the Sixth Assessment Report of the Intergovernmen
+  p604	helvetica	Ancillary Benefits of Climate Policy: New Theoretical Developments and
+  p604	helvetica	IPCC, 2022: Climate Change 2022: Mitigation of
+  p604	helvetica	Climate Change. Contribution of Working Group III to the Sixth Assessm
+  p604	helvetica	on Climate Change
+  p604	helvetica	Nature Climate Change, 
+  p605	helvetica	Climate Action Planning: A Guide to Creating Low-Carbon, Resilient
+  p605	helvetica	Communities
+  p605	helvetica	Climate Change in Cities: Innovations in Multi-Level Governance
+  p606	helvetica	Environmental Science & Policy, 
+  p606	helvetica	Journal of Environmental Planning and Management
+  p607	helvetica	Annual Review of Financial Economics, 
+  p607	helvetica	Environmental Management
+  p607	helvetica	Journal of Planning Education and Research
+  p607	helvetica	Local Environment, 
+  p608	helvetica	Climate Change in Cities: Innovations in Multi-Level Governance
+  p608	helvetica	Climate Adaptation and
+  p608	helvetica	Resilience Across Scales: From Buildings to Cities
+  p608	helvetica	Resilient Urban Futures
+  p608	helvetica	Climate Change 2023: Synthesis Report. Contribution of Working Groups
+  p608	helvetica	I, II and III to the Sixth Assessment Report of the Intergovernmental 
+  p611	helvetica	Fifth National Climate Assessment
+  p614	helvetica	very high confidence
+  p614	helvetica	very high confidence
+  p614	helvetica	very
+  p614	helvetica	high confidence
+  p618	helvetica	medium confidence
+  p618	helvetica	high
+  p618	helvetica	confidence
+  p618	helvetica	high confidence
+  p620	helvetica	very high confidence
+  p620	helvetica	high confidence
+  p622	helvetica	high confidence
+  p626	helvetica	Process Description
+  p627	helvetica	very high confidence 
+  p627	helvetica	very high confidence 
+  p627	helvetica	very high confidence 
+  p629	helvetica	medium confidence
+  p629	helvetica	high confidence 
+  p629	helvetica	high confidence 
+  p630	helvetica	very high confidence 
+  p630	helvetica	high confidence 
+  p631	helvetica	high confidence 
+  p631	helvetica	high confidence 
+  p632	helvetica	Climate Change 2022: Mitigation of Climate Change. Contribution of Wor
+  p632	helvetica	Sixth Assessment Report of the Intergovernmental Panel on Climate Chan
+  p632	helvetica	Assessment of Technologies for Improving
+  p632	helvetica	Light-Duty Vehicle Fuel Economy—2025–2035
+  p632	helvetica	Zero Carbon Action Plan 188
+# unresolved examples

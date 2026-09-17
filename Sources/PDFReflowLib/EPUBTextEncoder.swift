@@ -35,10 +35,27 @@ enum EPUBTextEncoder {
         return run
     }
 
+    /// Adjacent text runs of one style as one run. PDFKit splits a line into runs wherever any
+    /// attribute changes (kerning, a font resource), and lines join run by run, so equal styles
+    /// would otherwise be emitted as separate elements (`<strong>F</strong><strong>AA</strong>`, #133).
+    static func coalesced(_ elements: [InlineText.Element]) -> [InlineText.Element] {
+        var result: [InlineText.Element] = []
+        result.reserveCapacity(elements.count)
+        for element in elements {
+            if case let .text(value, style) = element, case let .text(previous, previousStyle)? = result.last,
+               style == previousStyle {
+                result[result.count - 1] = .text(previous + value, style)
+            } else {
+                result.append(element)
+            }
+        }
+        return result
+    }
+
     /// `referenceID` names the id a linked marker receives (its first occurrence); nil emits
     /// the link without an id, as later references to the same note do.
     static func inline(_ text: InlineText, referenceID: (NoteKey) -> String? = { _ in nil }) -> String {
-        text.elements.map { element in
+        coalesced(text.elements).map { element in
             switch element {
             case let .text(text, style): return styled(text, style)
             case let .sourcePage(page): return sourcePage(page)
@@ -55,6 +72,7 @@ enum EPUBTextEncoder {
     /// endnote paragraph; a note that opens otherwise gets the link appended instead.
     static func note(_ text: InlineText, number: Int, backlink: String) -> String {
         let anchor = "<a href=\"#\(xml(backlink))\" role=\"doc-backlink\" epub:type=\"backlink\">"
+        let text = InlineText(elements: coalesced(text.elements))
         guard case let .text(value, style)? = text.elements.first else {
             return inline(text) + " \(anchor)\u{21A9}</a>"
         }

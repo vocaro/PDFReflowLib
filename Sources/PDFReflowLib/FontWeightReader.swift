@@ -13,6 +13,8 @@ import CoreGraphics
 enum FontWeightReader {
     /// Set on the characters of an attributed line drawn in a bold font resource.
     static let boldAttribute = NSAttributedString.Key("PDFReflowFontResourceBold")
+    /// Set on the characters of an attributed line drawn in an italic text font resource (#133).
+    static let italicAttribute = NSAttributedString.Key("PDFReflowFontResourceItalic")
 
     enum Weight: Equatable { case bold, regular }
 
@@ -63,15 +65,32 @@ enum FontWeightReader {
     }
 
     /// TeX's Computer Modern and European Computer Modern short names state bold in their
-    /// shape code: `cmbx12`, `cmb10`, `cmmib10`, `cmbsy10`, `cmssbx10`, `cmbxti10`, `dcbx10`, `ecbx1200`.
+    /// shape code: `cmbx12`, `cmb10`, `cmmib10`, `cmbsy10`, `cmssbx10`, `cmbxti10`, `dcbx10`, `ecbx1200`,
+    /// and EC's and cm-super's bold italic, bold slanted and sans bold shapes (`ecbi1000`, `sfbx1200`, `sfsx1000`).
     static func isTeXBold(_ lower: String) -> Bool {
         lower.range(of: #"^(cm|dc|ec|tc)(ss)?(bx|b|mib|bsy)(sl|ti|sc)?[0-9]+$"#, options: .regularExpression) != nil
+            || lower.range(of: #"^(dc|ec|tc|sf)(bx|bi|bl|sx|so)[0-9]+$"#, options: .regularExpression) != nil
+    }
+
+    /// The Linux Libertine and Biolinum Type 1 and OpenType names state their style in capitals
+    /// after the family and its format letter (`T` or `O`): `B` bold, `Z` semibold, `I` italic,
+    /// `O` Biolinum's oblique. arXiv's `LinLibertineTB` section titles state bold in nothing else.
+    static func libertineStyle(_ name: String) -> (bold: Bool, italic: Bool)? {
+        guard let match = name.range(of: #"^Lin(Libertine|Biolinum)(Display)?[TO]([BZ]?)([IO]?)$"#, options: .regularExpression) else {
+            return nil
+        }
+        let family = name.hasPrefix("LinLibertine") ? "LinLibertine" : "LinBiolinum"
+        var rest = name[match].dropFirst(family.count)
+        if rest.hasPrefix("Display") { rest = rest.dropFirst("Display".count) }
+        rest = rest.dropFirst()
+        return (rest.contains("B") || rest.contains("Z"), rest.contains("I") || rest.contains("O"))
     }
 
     static func nameWeight(_ baseFont: String) -> NameWeight {
         let name = strippedName(baseFont)
         let lower = name.lowercased()
         if isTeXBold(lower) { return .bold }
+        if let libertine = libertineStyle(name) { return libertine.bold ? .bold : .unstated }
         // A style suffix follows the family after a hyphen or comma (`Arial,Bold`); a name
         // without one is read whole for the weight words only.
         let separator = name.lastIndex(where: { $0 == "-" || $0 == "," })
@@ -110,16 +129,86 @@ enum FontWeightReader {
         }
     }
 
+    // MARK: - Slope (#133)
+
+    /// What a font name states about its slope. Math italic is TeX's and newtx's variable face
+    /// (`CMMI12`, `LibertineMathMI`): a notation, not emphasis, so it never reads italic.
+    enum NameSlope: Equatable { case italic, upright, mathItalic, unstated }
+
+    static let italicWords = ["italic", "oblique", "kursiv", "slanted", "inclined"]
+    static let italicSuffixTokens: Set<String> = ["it", "ital", "obl"]
+    static let uprightWords = ["roman", "upright", "regular", "normal"]
+    static let uprightSuffixTokens: Set<String> = ["rom", "reg", "rg"]
+
+    /// A TeX Computer Modern, European Computer Modern or cm-super short name (`cmti10`, `CMMI12`,
+    /// `dcti10084`, `SFTI1000`) states its shape in full: its descriptor's `ItalicAngle` describes the design (TeX's `CMSY10`
+    /// symbols lean at −14°), not the text.
+    static func teXSlope(_ lower: String) -> NameSlope? {
+        guard lower.range(of: #"^(cm|dc|ec|tc|sf)[a-z]+[0-9]+$"#, options: .regularExpression) != nil else { return nil }
+        if lower.range(of: #"^cmmib?[0-9]+$"#, options: .regularExpression) != nil { return .mathItalic }
+        if lower.range(of: #"^cm(ti|bxti|sl|bxsl|itt|sltt|ssi|ssqi|u)[0-9]+$"#, options: .regularExpression) != nil
+            || lower.range(of: #"^(dc|ec|tc|sf)(ti|sl|bi|bl|si|so|it|st|ui)[0-9]+$"#, options: .regularExpression) != nil {
+            return .italic
+        }
+        return .upright
+    }
+
+    static func nameSlope(_ baseFont: String) -> NameSlope {
+        let name = strippedName(baseFont)
+        let lower = name.lowercased()
+        if let tex = teXSlope(lower) { return tex }
+        if let libertine = libertineStyle(name) { return libertine.italic ? .italic : .upright }
+        if lower.contains("mathmi") || lower.range(of: #"^(newtx|ntx|tx|zx)b?mi"#, options: .regularExpression) != nil {
+            return .mathItalic
+        }
+        let separator = name.lastIndex(where: { $0 == "-" || $0 == "," })
+        let suffix = separator.map { String(name[name.index(after: $0)...]) } ?? ""
+        let suffixTokens = tokens(suffix)
+        if italicWords.contains(where: lower.contains) || suffixTokens.contains(where: italicSuffixTokens.contains) {
+            return .italic
+        }
+        // An upright word is read in the style suffix where there is one (`TimesNewRoman,Italic`).
+        let style = separator == nil ? lower : suffix.lowercased()
+        if uprightWords.contains(where: style.contains) || suffixTokens.contains(where: uprightSuffixTokens.contains) {
+            return .upright
+        }
+        return .unstated
+    }
+
+    /// Whether a font sets italic text. The name decides when it states a slope; a name stating
+    /// none is italic when its descriptor sets the `Italic` flag (bit 7) or leans by at least
+    /// `minimumItalicAngle` degrees, unless it is a symbol font (`Symbolic` without `Nonsymbolic`)
+    /// or a script face (the `Script` flag, or `Script` in its name): Our Flag's
+    /// `SnellRoundhand-BoldScript` titles lean at 40° with the Italic flag, as calligraphy, not emphasis.
+    static let minimumItalicAngle: CGFloat = 5
+    static func isItalic(baseFont: String?, italicAngle: CGFloat?, flags: Int?) -> Bool {
+        switch baseFont.map(nameSlope) ?? .unstated {
+        case .italic: return true
+        case .upright, .mathItalic: return false
+        case .unstated:
+            let flags = flags ?? 0
+            let symbolic = flags & (1 << 2) != 0 && flags & (1 << 5) == 0
+            let script = flags & (1 << 3) != 0 || baseFont.map { strippedName($0).lowercased().contains("script") } == true
+            return !symbolic && !script && (flags & (1 << 6) != 0 || abs(italicAngle ?? 0) >= minimumItalicAngle)
+        }
+    }
+
     struct FontInfo {
         var baseFont: String?
         var subtype: String
         var fontWeight: CGFloat?
         var stemV: CGFloat?
         var flags: Int?
+        var italicAngle: CGFloat? = nil
         var hasToUnicode: Bool
         /// Nil for a Type3 font with no descriptor: its glyphs are procedures with no weight.
         var weight: Weight?
+        /// Nil exactly where `weight` is.
+        var italic: Bool?
+        /// A simple font's one-byte map: its ToUnicode map, or a Type1 font's WinAnsi encoding.
         var unicode: [UInt8: String]?
+        /// A composite `Identity-H` font's two-byte ToUnicode map (#133).
+        var wideUnicode: [UInt16: String]?
     }
 
     private static func name(_ dict: CGPDFDictionaryRef, _ key: String) -> String? {
@@ -154,18 +243,116 @@ enum FontWeightReader {
         let fontWeight = descriptor.flatMap { number($0, "FontWeight") }
         var stream: CGPDFStreamRef?
         let hasMap = CGPDFDictionaryGetStream(dict, "ToUnicode", &stream) && stream != nil
+        let italicAngle = descriptor.flatMap { number($0, "ItalicAngle") }
         var info = FontInfo(baseFont: baseFont, subtype: subtype, fontWeight: fontWeight,
-                            stemV: descriptor.flatMap { number($0, "StemV") }, flags: flags, hasToUnicode: hasMap)
+                            stemV: descriptor.flatMap { number($0, "StemV") }, flags: flags, italicAngle: italicAngle,
+                            hasToUnicode: hasMap)
         if subtype != "Type3" || hasDescriptor || baseFont != nil {
             info.weight = weight(baseFont: baseFont, fontWeight: fontWeight, flags: flags)
+            info.italic = isItalic(baseFont: baseFont, italicAngle: italicAngle, flags: flags)
         }
-        if ["Type1", "TrueType", "MMType1"].contains(subtype), hasMap, let stream {
-            var format = CGPDFDataFormat.raw
-            if let data = CGPDFStreamCopyData(stream, &format), format == .raw {
-                info.unicode = NativeSpacingReader.simpleFontUnicodeMap(data as Data)
+        var format = CGPDFDataFormat.raw
+        let data = hasMap ? stream.flatMap { CGPDFStreamCopyData($0, &format) }.flatMap { format == .raw ? $0 as Data : nil } : nil
+        if ["Type1", "TrueType", "MMType1"].contains(subtype) {
+            if let data {
+                info.unicode = NativeSpacingReader.simpleFontUnicodeMap(data) ?? oneByteUnicodeMap(data)
+            } else if !hasMap, subtype != "TrueType" {
+                // Ghostscript's TeX output (Wallace) writes only a WinAnsi encoding (#110).
+                info.unicode = NativeSpacingReader.encodingUnicodeMap(dict)
             }
+        } else if subtype == "Type0", name(dict, "Encoding") == "Identity-H", let data {
+            info.wideUnicode = wideUnicodeMap(data)
         }
         return info
+    }
+
+    /// A simple font's codes are one byte whatever codespace its ToUnicode map declares. PScript5
+    /// writes a symbol-style `<00> <EF>` and `<F000> <FFFF>` pair over one-byte entries (the Supreme
+    /// Court's Century Schoolbook), which `simpleFontUnicodeMap` refuses; here any codespace is
+    /// read as one byte, and a two-byte entry still fails the parse.
+    static func oneByteUnicodeMap(_ data: Data) -> [UInt8: String]? {
+        guard data.count <= 65_536, let text = String(data: data, encoding: .isoLatin1),
+              text.components(separatedBy: "begincodespacerange").count == 2,
+              let normalized = text.replacingOccurrences(
+                of: #"[0-9]+\s+begincodespacerange[\s\S]*?endcodespacerange"#,
+                with: "1 begincodespacerange <00> <FF> endcodespacerange", options: .regularExpression
+              ).data(using: .isoLatin1) else { return nil }
+        return NativeSpacingReader.unicodeMap(normalized)
+    }
+
+    /// An `Identity-H` composite font's ToUnicode map: bfchar and bfrange entries from four-digit
+    /// codes to UTF-16 (DGA's and NOAA's Type0 Roboto and Lora). Identity-H codes are two bytes, so
+    /// the codespace must consist of two-byte ranges: `<0000> <FFFF>`, or the CDC comic's narrowed
+    /// `<0001> <0022>`. Inherited maps, one-byte codespaces, duplicate codes and malformed entries fall back.
+    static func wideUnicodeMap(_ data: Data) -> [UInt16: String]? {
+        guard data.count <= 1_048_576, let input = String(data: data, encoding: .isoLatin1) else { return nil }
+        let text = input.replacingOccurrences(of: "%[^\r\n]*", with: "", options: .regularExpression)
+        guard !text.contains("usecmap"), text.contains("begincmap"),
+              text.range(of: #"begincodespacerange(\s*<[0-9a-fA-F]{4}>\s*<[0-9a-fA-F]{4}>)+\s*endcodespacerange"#,
+                         options: .regularExpression) != nil,
+              text.components(separatedBy: "begincodespacerange").count == 2 else { return nil }
+        func units(_ hex: String) -> [UInt16]? {
+            guard hex.count % 4 == 0, !hex.isEmpty, hex.count <= 64 else { return nil }
+            var result: [UInt16] = [], index = hex.startIndex
+            while index < hex.endIndex {
+                let next = hex.index(index, offsetBy: 4)
+                guard let unit = UInt16(hex[index..<next], radix: 16) else { return nil }
+                result.append(unit); index = next
+            }
+            return result
+        }
+        var result: [UInt16: String] = [:]
+        func assign(_ code: Int, _ values: [UInt16]) -> Bool {
+            let value = String(utf16CodeUnits: values, count: values.count)
+            guard (0...0xFFFF).contains(code), result[UInt16(code)] == nil, Array(value.utf16) == values,
+                  result.count < 65_536 else { return false }
+            result[UInt16(code)] = value
+            return true
+        }
+        let ns = text as NSString
+        let blocks = try! NSRegularExpression(pattern: #"(\d+)\s+begin(bfchar|bfrange)\s*([\s\S]*?)\s*end\2"#)
+        let chars = try! NSRegularExpression(pattern: #"<([0-9a-fA-F]{4})>\s*<([0-9a-fA-F]+)>"#)
+        let ranges = try! NSRegularExpression(
+            pattern: #"<([0-9a-fA-F]{4})>\s*<([0-9a-fA-F]{4})>\s*(?:<([0-9a-fA-F]+)>|\[((?:\s*<[0-9a-fA-F]+>)+)\s*\])"#)
+        let hexes = try! NSRegularExpression(pattern: #"<([0-9a-fA-F]+)>"#)
+        let matches = blocks.matches(in: text, range: NSRange(location: 0, length: ns.length))
+        guard !matches.isEmpty, matches.count <= 1024,
+              matches.count == text.components(separatedBy: "beginbf").count - 1 else { return nil }
+        for block in matches {
+            let kind = ns.substring(with: block.range(at: 2))
+            let body = ns.substring(with: block.range(at: 3)) as NSString
+            let whole = NSRange(location: 0, length: body.length)
+            let expression = kind == "bfchar" ? chars : ranges
+            let entries = expression.matches(in: body as String, range: whole)
+            guard Int(ns.substring(with: block.range(at: 1))) == entries.count,
+                  expression.stringByReplacingMatches(in: body as String, range: whole, withTemplate: "")
+                    .trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return nil }
+            for entry in entries {
+                guard let low = Int(body.substring(with: entry.range(at: 1)), radix: 16) else { return nil }
+                if kind == "bfchar" {
+                    guard let values = units(body.substring(with: entry.range(at: 2))), assign(low, values) else { return nil }
+                    continue
+                }
+                guard let high = Int(body.substring(with: entry.range(at: 2)), radix: 16), high >= low,
+                      high - low < 65_536 else { return nil }
+                if entry.range(at: 3).location != NSNotFound {
+                    guard var values = units(body.substring(with: entry.range(at: 3))), let last = values.last else { return nil }
+                    for code in low...high {
+                        guard Int(last) + (code - low) <= 0xFFFF else { return nil }
+                        values[values.count - 1] = last + UInt16(code - low)
+                        guard assign(code, values) else { return nil }
+                    }
+                } else {
+                    let list = body.substring(with: entry.range(at: 4)) as NSString
+                    let items = hexes.matches(in: list as String, range: NSRange(location: 0, length: list.length))
+                    guard items.count == high - low + 1 else { return nil }
+                    for (offset, item) in items.enumerated() {
+                        guard let values = units(list.substring(with: item.range(at: 1))), assign(low + offset, values) else { return nil }
+                    }
+                }
+            }
+        }
+        return result.isEmpty ? nil : result
     }
 
     // MARK: - Page scan
@@ -180,6 +367,10 @@ enum FontWeightReader {
         /// The show's text through its font's one-byte ToUnicode map; nil when any code is unmapped.
         var text: String?
         var placed: Bool
+        /// Drawn in an italic text font; nil where `weight` is.
+        var italic: Bool? = false
+
+        var styled: Bool { weight == .bold || italic == true }
     }
 
     private final class State {
@@ -239,17 +430,27 @@ enum FontWeightReader {
         s.positioned = false
         s.lastOrigin = origin
         let info = s.font.flatMap { s.fonts[$0] }
-        var text: String? = info?.unicode == nil ? nil : ""
-        for string in strings {
+        var text: String? = info?.unicode == nil && info?.wideUnicode == nil ? nil : ""
+        for string in strings where text != nil {
             let count = CGPDFStringGetLength(string)
             guard let bytes = CGPDFStringGetBytePtr(string), count <= 4096 else { text = nil; break }
-            for index in 0..<count {
-                guard let decoded = info?.unicode?[bytes[index]], (text?.utf16.count ?? 0) < 8192 else { text = nil; break }
-                text? += decoded
+            if let wide = info?.wideUnicode {
+                // An Identity-H show's codes are two bytes, high byte first.
+                guard count % 2 == 0 else { text = nil; break }
+                for index in stride(from: 0, to: count, by: 2) {
+                    guard let decoded = wide[UInt16(bytes[index]) << 8 | UInt16(bytes[index + 1])],
+                          (text?.utf16.count ?? 0) < 8192 else { text = nil; break }
+                    text? += decoded
+                }
+            } else {
+                for index in 0..<count {
+                    guard let decoded = info?.unicode?[bytes[index]], (text?.utf16.count ?? 0) < 8192 else { text = nil; break }
+                    text? += decoded
+                }
             }
         }
         s.shows.append(Show(origin: origin, size: s.size * transform.d, font: s.font ?? 0,
-                            weight: info?.weight, text: text, placed: placed))
+                            weight: info?.weight, text: text, placed: placed, italic: info?.italic))
     }
 
     private static func scan(_ content: CGPDFContentStreamRef, _ s: State) {
@@ -398,10 +599,10 @@ enum FontWeightReader {
     }
 
     /// The page's text shows, or none when the content stream cannot be scanned or no show is
-    /// drawn in a bold font (then no line can gain bold).
+    /// drawn in a bold or italic font (then no line can gain a style).
     static func read(_ page: CGPDFPage) -> [Show] {
         let shows = read(page, fonts: nil)
-        return shows.contains(where: { $0.weight == .bold }) ? shows : []
+        return shows.contains(where: \.styled) ? shows : []
     }
 
     /// The page's shows and, when `fonts` is given, every font resource it selected (survey).
@@ -421,13 +622,14 @@ enum FontWeightReader {
     // MARK: - Lines
 
     /// Marks the characters of `attributed` (a PDFKit line with `bounds`) drawn in bold font
-    /// resources with `boldAttribute`. The line's shows are those whose origin lies in its bounds
-    /// and in no other line's. They explain the line when the leftmost starts within half an em of
-    /// the line's left edge (so no show begun on another line draws its first glyphs) and, where
-    /// every show decodes, their text spells the line apart from whitespace. Then a line whose
-    /// shows are all one bold font weight is bold throughout; a line mixing weights is marked
-    /// character by character from the decoded shows in reading order, and left unmarked when
-    /// they do not decode or do not spell it. A regular line is returned unchanged.
+    /// resources with `boldAttribute`, and those drawn in italic text fonts with `italicAttribute`
+    /// (#133). The line's shows are those whose origin lies in its bounds and in no other line's.
+    /// They explain the line when the leftmost starts within half an em of the line's left edge
+    /// (so no show begun on another line draws its first glyphs) and, where every show decodes,
+    /// their text spells the line apart from whitespace. Then a line whose shows all share a style
+    /// carries it throughout; a line mixing styles is marked character by character from the
+    /// decoded shows in reading order. A style the shows do not all share is left unmarked when
+    /// they do not decode or do not spell the line. A line without a styled show is unchanged.
     static func apply(_ shows: [Show], to attributed: NSAttributedString, bounds: CGRect,
                       allBounds: [CGRect]) -> NSAttributedString {
         guard attributed.length > 0, !shows.isEmpty, shows.count <= 50_000, allBounds.count <= 10_000,
@@ -450,78 +652,96 @@ enum FontWeightReader {
             } else { return attributed }
         }
         guard !matches.isEmpty,
-              matches.contains(where: { $0.weight == .bold }),
+              matches.contains(where: \.styled),
               !chosen || matches.allSatisfy({ $0.text != nil }),
               let left = matches.map(\.origin.x).min(),
               left - bounds.minX <= max(2, (matches.map(\.size).max() ?? 0) * 0.5) else { return attributed }
-        func letters(_ text: String) -> [Unicode.Scalar] {
-            text.precomposedStringWithCompatibilityMapping.unicodeScalars.filter {
-                !CharacterSet.whitespacesAndNewlines.contains($0) && $0 != "\u{FFFC}" && $0 != "\u{00AD}"
-            }
-        }
         let decoded = matches.allSatisfy { $0.text != nil }
-        let target = letters(attributed.string)
-        var weights: [Weight]?
+        // Per style, each letter's flag in reading order, or nil to mark the whole line.
+        var styles: [(key: NSAttributedString.Key, flags: [Bool]?)] = []
         if decoded {
             // Reading order: by origin, a show drawn straight after another keeping stream order.
-            var sequence: [(Unicode.Scalar, Weight?)] = []
+            var sequence: [(Unicode.Scalar, Show)] = []
             for show in matches.enumerated().sorted(by: { ($0.element.origin.x, $0.offset) < ($1.element.origin.x, $1.offset) }) {
-                sequence += letters(show.element.text ?? "").map { ($0, show.element.weight) }
+                sequence += letters(show.element.text ?? "").map { ($0, show.element) }
             }
-            guard sequence.map(\.0) == target else { return attributed }
-            guard sequence.allSatisfy({ $0.1 != nil }) else { return attributed }
-            weights = sequence.map { $0.1! }
+            guard sequence.map(\.0) == letters(attributed.string),
+                  sequence.allSatisfy({ $0.1.weight != nil }) else { return attributed }
+            styles = [(boldAttribute, sequence.map { $0.1.weight == .bold }),
+                      (italicAttribute, sequence.map { $0.1.italic == true })]
         } else {
-            guard matches.allSatisfy({ $0.weight == .bold }) else { return attributed }
+            if matches.allSatisfy({ $0.weight == .bold }) { styles.append((boldAttribute, nil)) }
+            if matches.allSatisfy({ $0.italic == true }) { styles.append((italicAttribute, nil)) }
+            guard !styles.isEmpty else { return attributed }
+        }
+        var marks: [(key: NSAttributedString.Key, ranges: [NSRange])] = []
+        for (key, flags) in styles {
+            guard let flags else {
+                marks.append((key, [NSRange(location: 0, length: attributed.length)]))
+                continue
+            }
+            guard flags.contains(true) else { continue }
+            guard let ranges = markedRanges(flags, in: attributed) else { return attributed }
+            marks.append((key, ranges))
         }
         let result = NSMutableAttributedString(attributedString: attributed)
-        guard let weights else {
-            result.addAttribute(boldAttribute, value: true, range: NSRange(location: 0, length: result.length))
-            return result
+        for (key, ranges) in marks {
+            for range in ranges { result.addAttribute(key, value: true, range: range) }
         }
-        // Walk the attributed string's characters against the weighted letters.
+        return result
+    }
+
+    /// A line's visible letters: whitespace, attachments and soft hyphens removed, NFKC.
+    private static func letters(_ text: String) -> [Unicode.Scalar] {
+        text.precomposedStringWithCompatibilityMapping.unicodeScalars.filter {
+            !CharacterSet.whitespacesAndNewlines.contains($0) && $0 != "\u{FFFC}" && $0 != "\u{00AD}"
+        }
+    }
+
+    /// The character ranges of `attributed` to mark, given each letter's flag in reading order: a
+    /// character whose letters are all flagged, and whitespace as PDFKit's runs place it. Nil when
+    /// the characters do not align with `flags`.
+    private static func markedRanges(_ flags: [Bool], in attributed: NSAttributedString) -> [NSRange]? {
         let string = attributed.string as NSString
+        var positions: [(range: NSRange, blank: Bool, marked: Bool)] = []
         var index = 0, position = 0
         while position < string.length {
             let range = string.rangeOfComposedCharacterSequence(at: position)
             let count = letters(string.substring(with: range)).count
+            var marked = false
             if count > 0 {
-                guard index + count <= weights.count else { return attributed }
-                if weights[index..<(index + count)].allSatisfy({ $0 == .bold }) {
-                    result.addAttribute(boldAttribute, value: true, range: range)
-                }
+                guard index + count <= flags.count else { return nil }
+                marked = flags[index..<(index + count)].allSatisfy { $0 }
                 index += count
             }
+            positions.append((range, count == 0, marked))
             position = range.location + range.length
         }
-        guard index == weights.count else { return attributed }
-        // Whitespace draws no weight, so it follows PDFKit's run: a space inside a run whose other
-        // characters are all bold is bold (`Figure 2-8. ` stays one bold run), and one inside a
-        // wholly regular run or a run of spaces alone is not. In a run PDFKit merged across fonts
-        // a space takes the weight of the character before it (after it at the start).
-        var positions: [(range: NSRange, blank: Bool, bold: Bool)] = []
-        position = 0
-        while position < string.length {
-            let range = string.rangeOfComposedCharacterSequence(at: position)
-            positions.append((range, letters(string.substring(with: range)).isEmpty,
-                              result.attribute(boldAttribute, at: range.location, effectiveRange: nil) != nil))
-            position = range.location + range.length
-        }
+        guard index == flags.count else { return nil }
+        // Whitespace draws no style, so it follows PDFKit's run: a space inside a run whose other
+        // characters are all marked is marked (`Figure 2-8. ` stays one bold run), and one inside a
+        // wholly unmarked run or a run of spaces alone is not. In a run PDFKit merged across fonts
+        // a space takes the style of the character before it (after it at the start).
+        var ranges: [NSRange] = []
         var previous: Bool?
-        var runs: [Int: Bool?] = [:]  // run start: all bold, all regular, or nil (mixed or blank)
+        var runs: [Int: Bool?] = [:]  // run start: all marked, all unmarked, or nil (mixed)
         for (offset, entry) in positions.enumerated() {
-            guard entry.blank else { previous = entry.bold; continue }
+            guard entry.blank else {
+                previous = entry.marked
+                if entry.marked { ranges.append(entry.range) }
+                continue
+            }
             var run = NSRange()
             _ = attributed.attributes(at: entry.range.location, effectiveRange: &run)
             if runs[run.location] == nil {
                 let neighbours = positions.filter { !$0.blank && NSIntersectionRange($0.range, run).length > 0 }
                 runs[run.location] = neighbours.isEmpty ? false
-                    : neighbours.allSatisfy(\.bold) ? true : neighbours.contains(where: \.bold) ? .some(nil) : false
+                    : neighbours.allSatisfy(\.marked) ? true : neighbours.contains(where: \.marked) ? .some(nil) : false
             }
-            let bold = (runs[run.location] ?? nil)
-                ?? previous ?? positions[(offset + 1)...].first(where: { !$0.blank })?.bold ?? false
-            if bold { result.addAttribute(boldAttribute, value: true, range: entry.range) }
+            let marked = (runs[run.location] ?? nil)
+                ?? previous ?? positions[(offset + 1)...].first(where: { !$0.blank })?.marked ?? false
+            if marked { ranges.append(entry.range) }
         }
-        return result
+        return ranges
     }
 }

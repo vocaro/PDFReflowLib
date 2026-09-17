@@ -98,18 +98,45 @@ between cases. To test whether one binary repeats itself, use
 [repeat-run identity](regression-testing.md#repeat-run-identity), not this comparator.
 
 The comparator verifies the retained EPUB, probe JSON, and conversion report against their
-evaluation receipt. Under compatible measured conditions it compares normalized page
-records, source-page markers, encoded image assets, and conversion report fields; generated
-output paths and ZIP timestamps/identifiers are not drift; clients needing identical bytes can
-pin both ([reproducible packages](conversion-options.md#reproducible-packages)). A changed EPUB
-hash is permitted between runs, but each EPUB must match its own receipt. Exit status is 0 only
-for compatible runs with no differences in this scope. Historical receipts without this evidence
+evaluation receipt. Under compatible measured conditions it compares, page by page, the parsed
+page record (text, headings, paragraphs, list items, notes, tables, sub/superscripts, note
+links), the page's body markup (element types, heading levels, classes, inline styling, order),
+the bytes of each image in order, and the report warnings for that page; plus source-page
+markers, image assets, navigation entries, and conversion report fields. Generated output paths
+and ZIP timestamps/identifiers are not drift; clients needing identical bytes can pin both
+([reproducible packages](conversion-options.md#reproducible-packages)). A changed EPUB hash is
+permitted between runs, but each EPUB must match its own receipt. Exit status is 0 only for
+compatible runs with no differences in this scope. Historical receipts without this evidence
 must be recaptured; manually adding context labels cannot qualify them.
+
+Identifiers the writer or inspector generates are not content, because one earlier change
+shifts all of them (#92). Before pages are compared:
+
+- book-wide paragraph and `pre` ordinals become, per block, whether it continues from the
+  previous page and onto the next, so splitting or joining a block across a marker still counts;
+- element ids lose their numbers (`heading-8-2`, `note-c3-4`, `noteref-c3-4` become
+  `heading-#-#`, `note-c#-#`, `noteref-c#-#`);
+- note links, backlinks and in-book markup/navigation links name their target by page, masked
+  id and (for note links) target text, not by `chapter-N.xhtml` file name, so a moved spine
+  boundary is not a change but a link retargeted to another note is;
+- `images/image-N` sources become the asset's SHA-256, so an added image does not change the
+  pages of every later image, while a moved, swapped or re-encoded image still changes its pages.
+
+The result lists `changedPages` with the differing normalized fields per page
+(`changedPageFields`), `changedImages` (assets whose bytes have no counterpart in the other run),
+`navigationChanged`/`changedNavigationPages`, `pageMarkersEqual` and `changedReportFields`.
+Informational, not drift: `idOnlyShifts` counts pages whose raw records differ only in generated
+identifiers (by raw field, plus navigation entries whose target id changed) and `imageRenames`
+counts assets with identical bytes under another name; `--detail` lists both. A warning with a
+`page` also appears in `changedReportFields` when it changes. Fed Explained and FAA evaluations
+from `090cc70` and `394147f` report exactly Fed pages 8, 14, 66, 88 and 116 (14–116 lost a
+`furnitureRemoved` warning) and FAA page 159, with 118 and 354 id-only pages; the same-binary
+Fed repeat and the unchanged 9/11 pair (1,587 cross-file note links) pass with no shifts.
 
 These local receipts provide consistency checks, not signed attestation. A page-1 probe samples
 capability at one instant and cannot prove all pages or later service states equivalent. The
-comparison does not cover every EPUB semantic detail (for example CSS, navigation, and inline
-styling), decoded image equivalence, or visual fidelity. Keep the existing content, resource,
+comparison does not cover every EPUB semantic detail (for example CSS, package metadata, and
+navigation list nesting), decoded image equivalence, or visual fidelity. Keep the existing content, resource,
 EPUB, and human-review gates. Evaluations without `--environment-probe` retain their existing
 gate behavior but are ineligible for strict comparison.
 

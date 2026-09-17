@@ -24,6 +24,12 @@ A valid EPUB can still contain incorrect text, wrong reading order or unreadable
 - `tools/run_corpus_regressions.py --converter <CLI> --epubcheck <executable> --output <new-directory>`:
   run the corpus lane directly. Repeat `--case <id>` to narrow a debugging run; the summary
   lists omitted cases explicitly. A failing case does not hide subsequent results.
+- `tools/compare_conversion_runs.py --baseline <evaluation> --candidate <evaluation> --output <json>
+  [--allow-different-converters] [--detail]`: compare two probe-backed evaluations of one case
+  page by page ([comparing conversion runs](corpus.md#comparing-conversion-runs)). Generated
+  identifiers are normalized, so removing one paragraph reports that page rather than every later
+  page; pages that differ only in ids, and image assets renamed without a byte change, are
+  counted separately (`idOnlyShifts`, `imageRenames`; `--detail` lists them).
 
 Fetch originals explicitly with `tools/fetch_corpus.py --case <id>`. Downloads are cached and
 checksum-verified. Publisher-blocked downloads require an owner-supplied matching original;
@@ -231,7 +237,9 @@ spine reader separates cell text with spaces and parses each table into a grid. 
 4. Add positive controls for neighboring behaviors and another document type. For example,
    attachment filtering must retain mixed styled text, blank scans, recoverable OCR and images.
 5. Run the synthetic and corpus lanes. Review changed content/image counts; increases and decreases
-   can both be suspicious. Update expectations only after reviewing the source and explaining
+   can both be suspicious. `tools/compare_conversion_runs.py --allow-different-converters` on
+   before/after evaluations lists the changed pages and why (`changedPageFields`), without a
+   per-change comparison script. Update expectations only after reviewing the source and explaining
    the intended behavior change. Preserve historical measurement receipts.
 
 [Issue-fix measurements](../measurements/quality-and-raster-fixes/record.md) and the

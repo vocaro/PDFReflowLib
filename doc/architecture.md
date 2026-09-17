@@ -58,7 +58,9 @@ math trees or semantic tables. A text table whose shaded rows and rules the layo
 table block of rows and cells (header rows, column spans, styled cell text with source-page
 boundaries) that the EPUB writer serializes as `<table>` (#54). A table's own title and description
 are caption paragraphs of that block, serialized as `<p>` elements of the table's `<caption>`, not
-headings or prose before it (#113). Output independence does not
+headings or prose before it (#113). A body cell that names its row is a row-header cell, serialized
+as `<th scope="row">`; a borderless table with capital column headings is a table block too (#121).
+Output independence does not
 imply richer PDF understanding.
 
 ## Reconstruction boundary
@@ -140,7 +142,13 @@ Table 3.1, #65). PDFKit returns such a table's cells on one baseline as one line
 first finds the grid's column joints (collinear rule segments abutting at the same x in at least
 three rule rows) and splits a line crossing a joint where PDFKit's own rectangle selections show
 at least one em of whitespace around it and the pieces spell the line exactly; titles and prose
-crossing a joint have only word spaces and stay whole. The page-sized-graphic review signal still reads the painted regions
+crossing a joint have only word spaces and stay whole. A borderless table's merged rows are split
+the same way without rules (#121, FAA page 131): where PDFKit keeps one row's two short cells apart
+(two to ten ems, each at most fifteen ems wide), the rows chained to that pair at no more than 1.8
+ems' leading, in the same size, are read against that gap, and their crossing lines are cut where
+the selections show two ems of whitespace, only when the run opens with a heading in capitals on
+both sides, at least three rows hold text on both sides, an em of whitespace is common to every
+row and nothing painted lies within it. The page-sized-graphic review signal still reads the painted regions
 before tint removal. `OCRReader` uses Vision when policy requests it.
 `StructureTreeReader` parses a separate Core Graphics document into value-only page/MCID
 associations and exact owner paths. It checks structural parent links, page identity, RoleMap
@@ -417,10 +425,18 @@ bands only where rules subdivide the rest of the box, so a title and introductio
 first band stay outside), the lines' shared left edges give the columns, a single first-column
 line that crosses the columns or sits on a full-width band of its own is a section row spanning
 them, and a first row on its own band with text in two columns is the header, whose cells span
-empty columns beside them. One pair of columns reads as one when PDFKit merged a narrow cell
+empty columns beside them. The header's band may be split into one band per column (Fed page
+97, #121): at least two side-by-side bands through the row, together spanning 90% of the table,
+each holding some of the row's lines and no other row's, with every line of the row on one.
+When at least two body rows have a first cell with a letter in it, a value beside it and a
+label no other row repeats, those first cells are row headers; an empty first cell stays a data
+cell, and one labelled row, a repeated label or a label without a value leaves every cell a
+data cell (the Fed tags exactly these cells `TH /Scope /Row`; PDFKit reports every Fed table
+font as the same face, so a bold label column is not visible). One pair of columns reads as one when PDFKit merged a narrow cell
 into its neighbour, as the Fed's "Regulation (by letter and name)" header names it. Cell lines
 join like paragraph lines. Text outside the rows, a body line crossing a column, a section row
-in another size, fewer than two columns or two body rows leave the block to ordinary reflow.
+in another size, fewer than two columns or two body rows (a header on column bands counts as one,
+as it did when it was read as a body row) leave the block to ordinary reflow.
 The lines inside the block above the table's first row are its caption when, scanned upward from
 the table, they are body-sized description lines (at most six) under one to three title lines at
 least 15% larger, one line per row on one left edge and no more than two body sizes apart; the
@@ -429,6 +445,15 @@ there is no caption (#113). Tagged `Table`/`TR`/`TH`/`TD` structure is not consu
 survey found every table the geometry reads cell-for-cell identical to its tags, and the remaining
 tagged tables either lie inside preserved figures or share merged lines between cells (see the
 [table caption and tag evidence](../measurements/table-captions-and-tags/record.md)).
+`BorderlessTableDetector` reads untagged lines under a heading of two or more capital lines on one
+baseline (each at most fifteen ems wide, two to ten ems apart) as a table: the baselines beneath
+it at no more than 1.8 ems' leading, in the same size and at most fifteen ems wide, among the lines
+overlapping the heading's width widened by an em, with each line in the column whose heading it
+overlaps most and an em of whitespace between neighbouring columns. A baseline with text in two
+columns starts a row, one with text in a single column continues the row above, and every body
+row must fill every column, with at least two body rows; no row headers are inferred (FAA tags
+page 131's first cells `TD`). See the
+[table header and borderless-table evidence](../measurements/table-headers-and-borderless/record.md).
 Tinted boxes are read as units: their elements are ordered among themselves, the box follows
 the lines beside it and precedes the lines below it, as its image did, and paragraphs never
 join across its edge. Small text inside reflowed boxes and tables does not lower the heading

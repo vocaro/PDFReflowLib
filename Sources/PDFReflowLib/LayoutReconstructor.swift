@@ -1698,7 +1698,9 @@ enum LayoutReconstructor {
         let lines = page.lines.filter { line in
             !stamps.contains(line) && !images.contains { $0.0.intersects(line.rect) }
         }
-        let tables = ShadedTableDetector.tables(in: page, lines: lines)
+        let shaded = ShadedTableDetector.tables(in: page, lines: lines)
+        let shadedLines = shaded.flatMap(\.ownedLines)
+        let tables = shaded + BorderlessTableDetector.tables(in: lines.filter { !shadedLines.contains($0) })
         let tableLines = tables.flatMap(\.ownedLines)
         // A marker PDFKit split from its item's text rejoins it before anything reads the lines.
         // So do the pieces of a prose row PDFKit split at an inline radical (#95).
@@ -2539,7 +2541,7 @@ enum LayoutReconstructor {
             ReflowBlock.Table.Row(cells: row.cells.map { cell in
                 ReflowBlock.Table.Cell(text: cell.lines.dropFirst().reduce(cell.lines.first?.content ?? InlineText()) {
                     join($0, $1.content, vocabulary: vocabulary, page: page, warnings: &warnings)
-                }, span: cell.span)
+                }, span: cell.span, header: cell.header)
             }, header: row.header)
         }
         // The title and the description are separate caption paragraphs, joined like prose.

@@ -1,0 +1,5 @@
+no-column-band-header: exit 1; failing tests ['columnBandsThatAreNotTheRowsOwnLeaveItABodyRow', 'fed97HeaderOnColumnBandsIsTheHeaderRow']; 38 tests, 5 issues
+no-row-headers: exit 1; failing tests ['fedFirstColumnLabelsAreRowHeaders']; 38 tests, 46 issues
+no-borderless-split: exit 1; failing tests ['borderlessRowsPDFKitMergesAreSplitAtTheColumnGap']; 38 tests, 1 issue
+no-borderless-gutter: exit 1; failing tests ['borderlessRowsPDFKitMergesAreSplitAtTheColumnGap']; 38 tests, 2 issues
+no-borderless-detector: exit 1; failing tests ['faa131LoadFactorTableReadsAsATable']; 38 tests, 2 issues

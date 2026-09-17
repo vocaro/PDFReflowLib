@@ -14,14 +14,20 @@ whose label sits under such a column instead of the first grid column names it w
 `labelColumn` (1-based, into `columns`). An optional `caption` lists the table's caption
 paragraphs in order (title, then description); they must equal the paragraphs of the table's
 own `<caption>` exactly, so a title emitted as prose before the table, or merged with its
-description, fails.
+description, fails. An optional `rowHeaders` (boolean) checks cell semantics in the matched rows:
+when true, each row's first grid cell is a `<th scope="row">` if it holds text (an empty one stays
+`<td>`) and no other cell of the row is a header; when false, no cell of the row is a header.
+An optional `headerCells` (boolean) checks the header rows the columns are read from: when true
+they must be written as `<th>` cells, when false the table has no `<th>` header row and its first
+row serves as the header.
 
 The spine parser expands `<table>` elements on each page into rectangular grids of normalized
 cell text, honouring colspan/rowspan. A page passes when some table on that page has a header
 column for every expected column, and for every expected row a body row whose label cell starts
 with the expected label and whose cells under those columns equal the expected values exactly.
-Merged cells, swapped values, missing rows and missing group rows all fail. This checks text
-association only; it does not judge table styling or accessibility markup.
+Merged cells, swapped values, missing rows and missing group rows all fail. Apart from
+`rowHeaders` and `headerCells`, this checks text association only; it does not judge table styling or other
+accessibility markup.
 """
 import re
 
@@ -44,12 +50,14 @@ def grid_from_table(table):
     """Expand a <table> element into {'cells': rows of cell strings, 'headerRows': n}.
 
     colspan/rowspan are honoured. Header rows are the leading rows whose every nonempty cell is a
-    <th>; a table without any <th> treats its first row as the header.
+    <th>; a table without any <th> treats its first row as the header. A `<th scope="row">` names a
+    body row and never makes its row a header row; `kinds` records each expanded cell as 'row', 'th'
+    or 'td'.
     """
     rows = [row for section in [table] + list(table) for row in
             ([section] if section.tag == HTML + 'tr' else [r for r in section if r.tag == HTML + 'tr'])]
-    grid, header_flags, spans = [], [], []
-    pending = {}  # (row, column) -> (text, is_header) carried by a rowspan
+    grid, header_flags, spans, kinds = [], [], [], []
+    pending = {}  # (row, column) -> (text, kind) carried by a rowspan
     for index, row in enumerate(rows):
         cells = []
         column = 0
@@ -58,7 +66,8 @@ def grid_from_table(table):
             while (index, column) in pending:
                 cells.append(pending.pop((index, column)))
                 column += 1
-            entry = (normalized(_cell_text(cell)), cell.tag == HTML + 'th')
+            kind = 'td' if cell.tag == HTML + 'td' else 'row' if cell.get('scope') == 'row' else 'th'
+            entry = (normalized(_cell_text(cell)), kind)
             span = _span(cell.get('colspan'))
             rowspan = _span(cell.get('rowspan'))
             spans.append((index, column, span))
@@ -71,11 +80,13 @@ def grid_from_table(table):
             cells.append(pending.pop((index, column)))
             column += 1
         grid.append([text for text, _ in cells])
-        header_flags.append(any(text for text, _ in cells) and all(is_header for text, is_header in cells if text))
+        kinds.append([kind for _, kind in cells])
+        header_flags.append(any(text for text, _ in cells) and all(kind == 'th' for text, kind in cells if text))
     width = max((len(row) for row in grid), default=0)
     header_rows = 0
     while header_rows < len(grid) and header_flags[header_rows]:
         header_rows += 1
+    th_rows = header_rows
     if header_rows == 0 and grid:
         header_rows = 1
     caption = table.find(HTML + 'caption')
@@ -84,6 +95,7 @@ def grid_from_table(table):
         blocks = [child for child in caption if child.tag == HTML + 'p']
         paragraphs = [normalized(_cell_text(p)) for p in blocks] if blocks else [normalized(_cell_text(caption))]
     return {'cells': [row + [''] * (width - len(row)) for row in grid], 'headerRows': header_rows,
+            'kinds': [row + ['td'] * (width - len(row)) for row in kinds], 'thRows': th_rows,
             # (row, first grid column, colspan) of every cell as written, before expansion.
             'spans': spans, 'caption': [p for p in paragraphs if p]}
 
@@ -102,8 +114,8 @@ def _positive(value):
 
 def validate(expectation):
     if not isinstance(expectation, dict) or not {'columns', 'rows'} <= set(expectation) \
-            or not set(expectation) <= {'columns', 'rows', 'title', 'caption'}:
-        raise ValueError('Table cells expectation needs columns and rows (optional title and caption)')
+            or not set(expectation) <= {'columns', 'rows', 'title', 'caption', 'rowHeaders', 'headerCells'}:
+        raise ValueError('Table cells expectation needs columns and rows (optional title, caption, rowHeaders, headerCells)')
     columns = expectation['columns']
     invalid_columns = 'Table columns must be distinct nonempty strings or spanning column objects'
     if not isinstance(columns, list) or not columns:
@@ -135,6 +147,9 @@ def validate(expectation):
     if 'caption' in expectation and (not isinstance(expectation['caption'], list) or not expectation['caption']
                                      or any(not isinstance(p, str) or not normalized(p) for p in expectation['caption'])):
         raise ValueError('Table caption must be a nonempty list of nonempty paragraph strings')
+    for key in ('rowHeaders', 'headerCells'):
+        if key in expectation and not isinstance(expectation[key], bool):
+            raise ValueError(f'Table {key} must be true or false')
 
 
 def _header_columns(table, columns, body_start):
@@ -180,6 +195,9 @@ def check_table(expectation, table):
     if mapping is None:
         return [f'header columns not found: {columns!r}']
     errors = []
+    if 'headerCells' in expectation and expectation['headerCells'] != (table.get('thRows', 0) > 0):
+        errors.append(f'header cells: {table.get("thRows", 0)} <th> header rows, expected '
+                      + ('at least one' if expectation['headerCells'] else 'none'))
     if 'caption' in expectation:
         wanted = [normalized(p) for p in expectation['caption']]
         if table.get('caption', []) != wanted:
@@ -204,6 +222,13 @@ def check_table(expectation, table):
             errors.append(f'row {row["label"]!r} has cells {cells!r}, expected {row["values"]!r}')
             continue
         used.add(matched)
+        if 'rowHeaders' in expectation:
+            kinds = table.get('kinds', [['td'] * len(r) for r in grid])[matched]
+            wanted = ['td'] * len(kinds)
+            if expectation['rowHeaders'] and grid[matched][0]:
+                wanted[0] = 'row'
+            if kinds != wanted:
+                errors.append(f'row {row["label"]!r} has cell kinds {kinds!r}, expected {wanted!r}')
         for group in row.get('group', []):
             wanted = normalized(group)
             if not any(grid[i][0] == wanted for i in range(body_start, matched)):

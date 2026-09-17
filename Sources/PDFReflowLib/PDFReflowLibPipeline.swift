@@ -67,11 +67,13 @@ enum PDFReflowLibPipeline {
                 // Invisible text over a scan supplies transcription, not source typography.
                 // Fallback pages contribute vocabulary and furniture evidence, but their
                 // formatting is never emitted. Avoid decoding attributed image attachments.
-                // A ruled grid's column joints split table cells PDFKit merges into one line (#65).
+                // A ruled grid's column joints split table cells PDFKit merges into one line (#65),
+                // and so does the column gap of a borderless table with capital headings (#121).
                 let native = !requiresPageImage && !syntheticStyle
                 var content = PageContent(number: i + 1, bounds: bounds,
                     lines: try NativeTextReader.lines(on: page, limit: limit, includeStyle: native,
-                        columnJoints: native ? GraphicsReader.columnJoints(graphics.paints.map(\.rect)) : []),
+                        columnJoints: native ? GraphicsReader.columnJoints(graphics.paints.map(\.rect)) : [],
+                        borderlessTableInk: native ? graphics.paints.map(\.rect) : nil),
                     graphics: graphics.regions)
                 if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure,
                    let tags = structure.pages[i + 1], !tags.isEmpty,

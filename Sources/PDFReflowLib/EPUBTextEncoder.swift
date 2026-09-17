@@ -70,13 +70,15 @@ enum EPUBTextEncoder {
         return inline(text) + " \(anchor)\u{21A9}</a>"
     }
 
-    /// Header rows form `thead`; a cell spanning several columns carries `colspan`. A caption's
-    /// title and description are paragraphs of the table's `caption`.
+    /// Header rows form `thead`; a cell spanning several columns carries `colspan`. A body cell
+    /// that names its row is `th scope="row"`. A caption's title and description are paragraphs
+    /// of the table's `caption`.
     static func table(_ table: ReflowBlock.Table) -> String {
         func row(_ row: ReflowBlock.Table.Row) -> String {
-            let tag = row.header ? "th" : "td"
             let cells = row.cells.map { cell -> String in
-                let attribute = cell.span > 1 ? " colspan=\"\(cell.span)\"" : ""
+                let tag = row.header || cell.header ? "th" : "td"
+                var attribute = cell.span > 1 ? " colspan=\"\(cell.span)\"" : ""
+                if cell.header && !row.header { attribute += " scope=\"row\"" }
                 return "<\(tag)\(attribute)>\(inline(cell.text))</\(tag)>"
             }.joined()
             return "<tr>\(cells)</tr>"

@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 import tempfile
 import unittest
@@ -205,6 +206,67 @@ class TableCellTests(unittest.TestCase):
             with self.assertRaises(ValueError, msg=caption):
                 table_cells.validate({'columns': ['a'], 'rows': [{'label': 'x', 'values': ['1']}], 'caption': caption})
         table_cells.validate(table_a_expectation())
+
+    def test_row_headers_are_the_first_cells_of_the_matched_rows(self):
+        # Table A as emitted after #121: every nonempty first cell names its row; the Treasury row's
+        # empty asset label stays a data cell.
+        emitted = re.sub(r'<tr><td>([^<]+)</td>', r'<tr><th scope="row">\1</th>', TABLE_A)
+        self.assertEqual(emitted.count('scope="row"'), 4)
+        expectation = table_a_expectation()
+        expectation['rowHeaders'] = True
+        self.assertEqual(table_cells.check_page(expectation, grids(emitted)), [])
+        self.assertEqual(grids(emitted)[0]['headerRows'], 1)
+        self.assertEqual(grids(emitted)[0]['kinds'][1], ['row', 'td', 'td', 'td'])
+        # Without the expectation cell kinds are not checked.
+        self.assertEqual(table_cells.check_page(table_a_expectation(), grids(emitted)), [])
+        failing = {
+            'data cells': TABLE_A,
+            'no scope': emitted.replace('<th scope="row">Other assets</th>', '<th>Other assets</th>'),
+            'column scope': emitted.replace('<th scope="row">Total</th>', '<th scope="col">Total</th>'),
+            'second label a header': emitted.replace('<td>Capital and other liabilities</td>',
+                                                     '<th scope="row">Capital and other liabilities</th>'),
+            'value a header': emitted.replace('<td>939</td>', '<th>939</th>'),
+            'empty label a header': emitted.replace('<tr><td></td><td></td><td>U.S. Treasury',
+                                                    '<tr><th scope="row"></th><td></td><td>U.S. Treasury'),
+        }
+        for name, table in failing.items():
+            self.assertNotEqual(table, emitted, name)
+            errors = table_cells.check_page(expectation, grids(table))
+            self.assertTrue(errors and 'cell kinds' in errors[0], (name, errors))
+        # rowHeaders false: the emitted row headers fail and plain data cells pass.
+        expectation['rowHeaders'] = False
+        self.assertEqual(table_cells.check_page(expectation, grids(TABLE_A)), [])
+        self.assertTrue(table_cells.check_page(expectation, grids(emitted)))
+        # A leading body row whose only text is a row header is not a header row.
+        leading = f'<table {XHTML}><tr><th>Name</th><th>Value</th></tr><tr><th scope="row">A</th><td></td></tr><tr><th scope="row">B</th><td>2</td></tr></table>'
+        self.assertEqual(grids(leading)[0]['headerRows'], 1)
+        for invalid in ['yes', 1, None]:
+            with self.assertRaises(ValueError, msg=invalid):
+                table_cells.validate(dict(table_a_expectation(), rowHeaders=invalid))
+            with self.assertRaises(ValueError, msg=invalid):
+                table_cells.validate(dict(table_a_expectation(), headerCells=invalid))
+
+    def test_header_cells_distinguish_a_th_header_from_a_first_row_of_data_cells(self):
+        # Fed page 97's ACH table (#121): the header row used to be written as td cells, and the
+        # checker's fallback read that first row as the header all the same.
+        header = '<tr><th>Credit transfer</th><th>Debit transfer</th></tr>'
+        body = '<tr><td>Payroll direct deposits</td><td>Direct debits of recurring consumer bills</td></tr>'
+        emitted = f'<table {XHTML}><thead>{header}</thead><tbody>{body}</tbody></table>'
+        as_data = f'<table {XHTML}><tbody>{header.replace("th>", "td>")}{body}</tbody></table>'
+        expectation = {'columns': ['Credit transfer', 'Debit transfer'], 'headerCells': True, 'rowHeaders': False,
+                       'rows': [{'label': 'Payroll direct deposits',
+                                 'values': ['Payroll direct deposits', 'Direct debits of recurring consumer bills']}]}
+        self.assertEqual(table_cells.check_page(expectation, grids(emitted)), [])
+        errors = table_cells.check_page(expectation, grids(as_data))
+        self.assertTrue(errors and 'header cells' in errors[0], errors)
+        # One header cell written as td leaves no all-th header row.
+        half = emitted.replace('<th>Debit transfer</th>', '<td>Debit transfer</td>')
+        self.assertTrue(table_cells.check_page(expectation, grids(half)))
+        # Without the key both pass, as before; false requires the data-cell first row.
+        del expectation['headerCells']
+        self.assertEqual(table_cells.check_page(expectation, grids(as_data)), [])
+        self.assertEqual(table_cells.check_page(dict(expectation, headerCells=False), grids(as_data)), [])
+        self.assertTrue(table_cells.check_page(dict(expectation, headerCells=False), grids(emitted)))
 
     def test_usgs_review_transcriptions_validate_as_expectations(self):
         review = json.loads((ROOT / 'corpus/usgs-mcs2025-copper-review.json').read_text())

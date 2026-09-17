@@ -33,9 +33,10 @@ private typealias CaptureFont = UIFont
         // unclustered footprints with their frame flag, from which tests compose graphics.
         let graphics = GraphicsReader.read(reference)
         // Lines as the pipeline extracts them: cells merged across a ruled grid's column joints
-        // are split (#65).
+        // (#65) or a borderless table's column gap (#121) are split.
         var lines = try NativeTextReader.lines(on: page, limit: 100_000,
-            columnJoints: GraphicsReader.columnJoints(graphics.paints.map(\.rect)))
+            columnJoints: GraphicsReader.columnJoints(graphics.paints.map(\.rect)),
+            borderlessTableInk: graphics.paints.map(\.rect))
         // The tags the pipeline applies where the page's structure validates: every group that
         // matches its lines, even when another does not (`structure` per line; absent in fixtures
         // captured before #89/#90).

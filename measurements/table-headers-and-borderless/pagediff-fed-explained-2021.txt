@@ -1,0 +1,163 @@
+==== page 46
+@@ -13,4 +13,4 @@
+-<tbody><tr><td>Interest on reserve balances (IORB)</td><td>Interest paid on funds that banks hold in their reserve balance accounts at their Federal Reserve Bank.</td><td>Because banks are unlikely to lend funds in the federal funds market for less than they 
+-<tr><td>Overnight reverse repurchase agreement (ON RRP) facility</td><td>The Federal Reserve’s standing offer to many large nonbank financial institutions to deposit funds at the Fed and earn interest.</td><td>Because large, nonbank financial institutions who
+-<tr><td>Open market operations</td><td>The Federal Reserve’s buying and selling of securities issued or guaranteed by the U.S. Treasury or U.S. government agencies.</td><td>Open market operations will be used to maintain an ample supply of reserves.</td></tr>
+-<tr><td>Discount window</td><td>The Federal Reserve’s lending to banks (the “discount window”) at the discount rate.</td><td>Because banks are unlikely to borrow at a rate that’s higher than the discount rate, the discount window helps put a ceiling on the fe
++<tbody><tr><th scope="row">Interest on reserve balances (IORB)</th><td>Interest paid on funds that banks hold in their reserve balance accounts at their Federal Reserve Bank.</td><td>Because banks are unlikely to lend funds in the federal funds market for les
++<tr><th scope="row">Overnight reverse repurchase agreement (ON RRP) facility</th><td>The Federal Reserve’s standing offer to many large nonbank financial institutions to deposit funds at the Fed and earn interest.</td><td>Because large, nonbank financial inst
++<tr><th scope="row">Open market operations</th><td>The Federal Reserve’s buying and selling of securities issued or guaranteed by the U.S. Treasury or U.S. government agencies.</td><td>Open market operations will be used to maintain an ample supply of reserve
++<tr><th scope="row">Discount window</th><td>The Federal Reserve’s lending to banks (the “discount window”) at the discount rate.</td><td>Because banks are unlikely to borrow at a rate that’s higher than the discount rate, the discount window helps put a ceili
+==== page 47
+@@ -13,2 +13,2 @@
+-<tbody><tr><td>Treasury securities held outright</td><td>4,197</td><td>Deposits of depository institutions</td><td>2,938</td></tr>
+-<tr><td>Agency debt and mortgage-backed securities holdings</td><td>1,946</td><td>Federal Reserve notes in circulation</td><td>1,915</td></tr>
++<tbody><tr><th scope="row">Treasury securities held outright</th><td>4,197</td><td>Deposits of depository institutions</td><td>2,938</td></tr>
++<tr><th scope="row">Agency debt and mortgage-backed securities holdings</th><td>1,946</td><td>Federal Reserve notes in circulation</td><td>1,915</td></tr>
+@@ -16,2 +16,2 @@
+-<tr><td>Other assets</td><td>939</td><td>Capital and other liabilities</td><td>642</td></tr>
+-<tr><td>Total</td><td>7,082</td><td>Total</td><td>7,082</td></tr>
++<tr><th scope="row">Other assets</th><td>939</td><td>Capital and other liabilities</td><td>642</td></tr>
++<tr><th scope="row">Total</th><td>7,082</td><td>Total</td><td>7,082</td></tr>
+==== page 64
+@@ -7,7 +7,7 @@
+-<tbody><tr><td>Financial Stability Board Established: 2009 Location: Basel, Switzerland Website: https://www.fsb.org</td><td>The Financial Stability Board (FSB), successor to the Financial Stability Forum, promotes stability in the international financial sys
+-<tr><td>Central banks Established: 1668 or later Location: Throughout the world Website: https://www.bis.org/central_bank_hub_overview.htm</td><td>Nearly all developed and developing nations maintain central banks to promote a sound and stable financial syste
+-<tr><td>Bank for International Settlements Established: 1930 Location: Basel, Switzerland Website: https://www.bis.org</td><td>The Bank for International Settlements seeks, among other things, to foster discussion and facilitate collaboration among central ba
+-<tr><td>G7 &amp; G20 Established: 1975 (as G6) Location: Varies by nation hosting Website: Varies by nation hosting</td><td>The Group of Seven (G7) is an informal bloc of industrialized democracies (also including Canada, France, Germany, Italy, Japan, and th
+-<tr><td>International Monetary Fund Established: 1945 Location: Washington, D.C. Website: https://www.imf.org</td><td>The International Monetary Fund (IMF) works to “foster global monetary cooperation, secure financial stability, facilitate international trad
+-<tr><td>Organisation for Economic Co-operation and Development Established: 1961 Location: Paris, France Website: https://www.oecd.org</td><td>The Organisation for Economic Co-operation and Development (OECD) promotes “policies that will improve the economic 
+-<tr><td>World Bank Established: 1944 Location: Washington, D.C. Website: https://www.worldbank.org</td><td>The World Bank functions as a cooperative of 189 member countries. These member countries, or shareholders, are represented by a board of governors, who
++<tbody><tr><th scope="row">Financial Stability Board Established: 2009 Location: Basel, Switzerland Website: https://www.fsb.org</th><td>The Financial Stability Board (FSB), successor to the Financial Stability Forum, promotes stability in the international f
++<tr><th scope="row">Central banks Established: 1668 or later Location: Throughout the world Website: https://www.bis.org/central_bank_hub_overview.htm</th><td>Nearly all developed and developing nations maintain central banks to promote a sound and stable fin
++<tr><th scope="row">Bank for International Settlements Established: 1930 Location: Basel, Switzerland Website: https://www.bis.org</th><td>The Bank for International Settlements seeks, among other things, to foster discussion and facilitate collaboration amon
++<tr><th scope="row">G7 &amp; G20 Established: 1975 (as G6) Location: Varies by nation hosting Website: Varies by nation hosting</th><td>The Group of Seven (G7) is an informal bloc of industrialized democracies (also including Canada, France, Germany, Italy, J
++<tr><th scope="row">International Monetary Fund Established: 1945 Location: Washington, D.C. Website: https://www.imf.org</th><td>The International Monetary Fund (IMF) works to “foster global monetary cooperation, secure financial stability, facilitate intern
++<tr><th scope="row">Organisation for Economic Co-operation and Development Established: 1961 Location: Paris, France Website: https://www.oecd.org</th><td>The Organisation for Economic Co-operation and Development (OECD) promotes “policies that will improve t
++<tr><th scope="row">World Bank Established: 1944 Location: Washington, D.C. Website: https://www.worldbank.org</th><td>The World Bank functions as a cooperative of 189 member countries. These member countries, or shareholders, are represented by a board of go
+==== page 82
+@@ -8,13 +8,13 @@
+-<tr><td><sub>F</sub> Limitations on Interbank Liabilities</td><td>Prescribes standards to limit the risks that the failure of one depository institution would pose to another</td></tr>
+-<tr><td><sub>H</sub> Membership of State Banking Institutions in the Federal Reserve System</td><td>Defines the requirements for membership of state-chartered banks in the Federal Reserve System and sets out the rules member banks must follow in the areas of 
+-<tr><td><sub>I</sub> Issue and Cancellation of Federal Reserve Bank Capital Stock</td><td>Sets out stock-subscription requirements for all banks joining the Federal Reserve System</td></tr>
+-<tr><td><sub>K</sub> International Banking Operations</td><td>Governs the international banking operations of U.S. banking organizations and the operations of foreign banks in the United States</td></tr>
+-<tr><td><sub>L</sub> Management Official Interlocks</td><td>Generally prohibits a management official from serving two nonaffiliated depository institutions, depository institution holding companies, or any combination thereof, in situations where the managem
+-<tr><td><sub>O</sub> Loans to Executive Officers, Directors, and Principal Shareholders of Member Banks</td><td>Restricts credit that a member bank may extend to its executive officers, directors, and principal shareholders and their related interests</td></t
+-<tr><td><sub>Q</sub> Capital Adequacy of Bank Holding Companies, Savings and Loan Holding Companies, and State Member Banks</td><td>Establishes minimum capital requirements and overall capital adequacy standards for bank holding companies, savings and loan ho
+-<tr><td><sub>R</sub> Exceptions for Banks from the Definition of Broker in the Securities Exchange Act of 1934</td><td>Defines the scope of securities activities that banks may conduct without registering with the Securities Exchange Commission as a securitie
+-<tr><td><sub>S</sub> Reimbursement for Providing Financial Records; Recordkeeping Requirements for Certain Financial Records</td><td>Establishes rates and conditions for reimbursement to financial institutions for providing customer records to a government au
+-<tr><td><sub>W</sub> Transactions Between Member Banks and Their Affiliates</td><td>Implements sections 23A and 23B of the Federal Reserve Act, which establish certain restrictions on and requirements for transactions between a member bank and its affiliates<
+-<tr><td><sub>KK</sub> Swaps Margin and Swaps Push-Out</td><td>Establishes margin and capital requirements for covered swap entities and implements the prohibition against federal assistance to swap entities</td></tr>
+-<tr><td><sub>NN</sub> Retail Foreign Exchange Transactions</td><td>Sets standards for banking organizations regulated by the Federal Reserve that engage in certain types of foreign exchange transactions with retail consumers</td></tr>
+-<tr><td><sub>VV</sub> Proprietary Trading and Certain Interests in and Relationships with Covered Funds</td><td>Establishes prohibitions and restrictions on proprietary trading and investments in or relationships with covered funds by certain banking entities
++<tr><th scope="row"><sub>F</sub> Limitations on Interbank Liabilities</th><td>Prescribes standards to limit the risks that the failure of one depository institution would pose to another</td></tr>
++<tr><th scope="row"><sub>H</sub> Membership of State Banking Institutions in the Federal Reserve System</th><td>Defines the requirements for membership of state-chartered banks in the Federal Reserve System and sets out the rules member banks must follow in t
++<tr><th scope="row"><sub>I</sub> Issue and Cancellation of Federal Reserve Bank Capital Stock</th><td>Sets out stock-subscription requirements for all banks joining the Federal Reserve System</td></tr>
++<tr><th scope="row"><sub>K</sub> International Banking Operations</th><td>Governs the international banking operations of U.S. banking organizations and the operations of foreign banks in the United States</td></tr>
++<tr><th scope="row"><sub>L</sub> Management Official Interlocks</th><td>Generally prohibits a management official from serving two nonaffiliated depository institutions, depository institution holding companies, or any combination thereof, in situations where
++<tr><th scope="row"><sub>O</sub> Loans to Executive Officers, Directors, and Principal Shareholders of Member Banks</th><td>Restricts credit that a member bank may extend to its executive officers, directors, and principal shareholders and their related inter
++<tr><th scope="row"><sub>Q</sub> Capital Adequacy of Bank Holding Companies, Savings and Loan Holding Companies, and State Member Banks</th><td>Establishes minimum capital requirements and overall capital adequacy standards for bank holding companies, savings
++<tr><th scope="row"><sub>R</sub> Exceptions for Banks from the Definition of Broker in the Securities Exchange Act of 1934</th><td>Defines the scope of securities activities that banks may conduct without registering with the Securities Exchange Commission as
++<tr><th scope="row"><sub>S</sub> Reimbursement for Providing Financial Records; Recordkeeping Requirements for Certain Financial Records</th><td>Establishes rates and conditions for reimbursement to financial institutions for providing customer records to a g
++<tr><th scope="row"><sub>W</sub> Transactions Between Member Banks and Their Affiliates</th><td>Implements sections 23A and 23B of the Federal Reserve Act, which establish certain restrictions on and requirements for transactions between a member bank and its
++<tr><th scope="row"><sub>KK</sub> Swaps Margin and Swaps Push-Out</th><td>Establishes margin and capital requirements for covered swap entities and implements the prohibition against federal assistance to swap entities</td></tr>
++<tr><th scope="row"><sub>NN</sub> Retail Foreign Exchange Transactions</th><td>Sets standards for banking organizations regulated by the Federal Reserve that engage in certain types of foreign exchange transactions with retail consumers</td></tr>
++<tr><th scope="row"><sub>VV</sub> Proprietary Trading and Certain Interests in and Relationships with Covered Funds</th><td>Establishes prohibitions and restrictions on proprietary trading and investments in or relationships with covered funds by certain bank
+==== page 83
+@@ -7,10 +7,10 @@
+-<tr><td><sub>Y</sub> Bank Holding Companies and Change in Bank Control</td><td>Regulates the acquisition of control of banks and bank holding companies by companies and individuals, defines and regulates the nonbanking activities in which bank holding compani
+-<tr><td><sub>LL</sub> Savings and Loan Holding Companies</td><td>Regulates the acquisition of control of savings associations, defines and regulates the activities of savings and loan holding companies, sets forth procedures under which directors and executiv
+-<tr><td><sub>MM</sub> Mutual Holding Companies</td><td>Regulates the reorganization of mutual savings associations to mutual holding companies and the creation of subsidiary holding companies of mutual holding companies, defines and regulates the operations o
+-<tr><td><sub>OO</sub> Securities Holding Companies</td><td>Outlines the procedures and requirements for securities holding companies to elect to be supervised by the Federal Reserve</td></tr>
+-<tr><td><sub>QQ</sub> Resolution Plans</td><td>Requires large, systemically significant bank holding companies and nonbank financial companies to submit annual resolution plans</td></tr>
+-<tr><td><sub>RR</sub> Credit Risk Retention</td><td>Requires sponsors of securitization transactions to retain risk in those transactions</td></tr>
+-<tr><td><sub>TT</sub> Supervision and Regulation Assessments of Fees</td><td>Establishes an annual assessment of fees on certain bank holding companies, savings and loan holding companies, and nonbank financial companies supervised by the Federal Reserve</td>
+-<tr><td><sub>WW</sub> Liquidity Risk Measurement, Standards, and Monitoring</td><td>Establishes a minimum liquidity standard and stable funding standard for certain Board-regulated institutions on a consolidated basis</td></tr>
+-<tr><td><sub>XX</sub> Concentration Limits</td><td>Establishes a financial sector concentration limit that generally prohibits a financial company from merging or consolidating with, or acquiring, another company if the resulting company’s liabilities would e
+-<tr><td><sub>YY</sub> Enhanced Prudential Standards</td><td>Implements the enhanced prudential standards mandated by the Dodd-Frank Wall Street Reform and Consumer Protection Act for large bank holding companies</td></tr>
++<tr><th scope="row"><sub>Y</sub> Bank Holding Companies and Change in Bank Control</th><td>Regulates the acquisition of control of banks and bank holding companies by companies and individuals, defines and regulates the nonbanking activities in which bank hol
++<tr><th scope="row"><sub>LL</sub> Savings and Loan Holding Companies</th><td>Regulates the acquisition of control of savings associations, defines and regulates the activities of savings and loan holding companies, sets forth procedures under which directors 
++<tr><th scope="row"><sub>MM</sub> Mutual Holding Companies</th><td>Regulates the reorganization of mutual savings associations to mutual holding companies and the creation of subsidiary holding companies of mutual holding companies, defines and regulates the 
++<tr><th scope="row"><sub>OO</sub> Securities Holding Companies</th><td>Outlines the procedures and requirements for securities holding companies to elect to be supervised by the Federal Reserve</td></tr>
++<tr><th scope="row"><sub>QQ</sub> Resolution Plans</th><td>Requires large, systemically significant bank holding companies and nonbank financial companies to submit annual resolution plans</td></tr>
++<tr><th scope="row"><sub>RR</sub> Credit Risk Retention</th><td>Requires sponsors of securitization transactions to retain risk in those transactions</td></tr>
++<tr><th scope="row"><sub>TT</sub> Supervision and Regulation Assessments of Fees</th><td>Establishes an annual assessment of fees on certain bank holding companies, savings and loan holding companies, and nonbank financial companies supervised by the Federal 
++<tr><th scope="row"><sub>WW</sub> Liquidity Risk Measurement, Standards, and Monitoring</th><td>Establishes a minimum liquidity standard and stable funding standard for certain Board-regulated institutions on a consolidated basis</td></tr>
++<tr><th scope="row"><sub>XX</sub> Concentration Limits</th><td>Establishes a financial sector concentration limit that generally prohibits a financial company from merging or consolidating with, or acquiring, another company if the resulting company’s liabili
++<tr><th scope="row"><sub>YY</sub> Enhanced Prudential Standards</th><td>Implements the enhanced prudential standards mandated by the Dodd-Frank Wall Street Reform and Consumer Protection Act for large bank holding companies</td></tr>
+@@ -18 +18 @@
+-<tr><td><sub>A</sub> Extensions of Credit by Federal Reserve Banks</td><td>Governs borrowing by depository institutions and others at the Federal Reserve discount window</td></tr>
++<tr><th scope="row"><sub>A</sub> Extensions of Credit by Federal Reserve Banks</th><td>Governs borrowing by depository institutions and others at the Federal Reserve discount window</td></tr>
+@@ -20 +20 @@
+-<tr><td><sub>D</sub> Reserve Requirements of Depository Institutions</td><td>Sets uniform requirements for all depository institutions to maintain reserves either with their Federal Reserve Bank or as cash in their vaults</td></tr>
++<tr><th scope="row"><sub>D</sub> Reserve Requirements of Depository Institutions</th><td>Sets uniform requirements for all depository institutions to maintain reserves either with their Federal Reserve Bank or as cash in their vaults</td></tr>
+@@ -22,3 +22,3 @@
+-<tr><td><sub>T</sub> Credit by Brokers and Dealers</td><td>Governs extension of credit by securities brokers and dealers, including all members of national securities exchanges (see also Regulations U and X)</td></tr>
+-<tr><td><sub>U</sub> Credit by Banks and Persons Other Than Brokers or Dealers for the Purpose of Purchasing or Carrying Margin Stock</td><td>Governs extension of credit by banks or persons other than brokers or dealers to finance the purchase or the carrying
+-<tr><td><sub>X</sub> Borrowers of Securities Credit</td><td>Applies the provisions of Regulations T and U to borrowers who are subject to U.S. laws and who obtain credit within or outside the United States for the purpose of purchasing securities</td></tr>
++<tr><th scope="row"><sub>T</sub> Credit by Brokers and Dealers</th><td>Governs extension of credit by securities brokers and dealers, including all members of national securities exchanges (see also Regulations U and X)</td></tr>
++<tr><th scope="row"><sub>U</sub> Credit by Banks and Persons Other Than Brokers or Dealers for the Purpose of Purchasing or Carrying Margin Stock</th><td>Governs extension of credit by banks or persons other than brokers or dealers to finance the purchase or 
++<tr><th scope="row"><sub>X</sub> Borrowers of Securities Credit</th><td>Applies the provisions of Regulations T and U to borrowers who are subject to U.S. laws and who obtain credit within or outside the United States for the purpose of purchasing securities<
+==== page 97
+@@ -12,2 +12,3 @@
+-<tbody><tr><td>Credit transfer</td><td>Debit transfer</td></tr>
+-<tr><td>Payroll direct deposits Government benefit payments, such as Social Security benefits Corporate payments to contractors and vendors</td><td>Direct debits of recurring consumer bills, such as mortgages, utility payments, and insurance premiums Checks c
++<thead><tr><th>Credit transfer</th><th>Debit transfer</th></tr>
++</thead>
++<tbody><tr><td>Payroll direct deposits Government benefit payments, such as Social Security benefits Corporate payments to contractors and vendors</td><td>Direct debits of recurring consumer bills, such as mortgages, utility payments, and insurance premiums C
+==== page 109
+@@ -7,6 +7,6 @@
+-<tbody><tr><td>J Collection of Checks and Other Items by Federal Reserve Banks and Funds Transfers Through Fedwire</td><td>Governs the collection and return of checks through the Reserve Banks and Fedwire funds transfers</td></tr>
+-<tr><td>CC Availability of Funds and Collection of Checks</td><td>Governs the availability of funds deposited in transaction accounts and the collection and return of checks</td></tr>
+-<tr><td>EE Netting Eligibility for Financial Institutions</td><td>Defines financial institutions to be covered by statutory provisions that validate netting contracts, thereby permitting one institution to pay or receive the net, rather than the gross, amount
+-<tr><td>GG Prohibition on Funding of Unlawful Internet Gambling</td><td>Requires U.S. financial firms that participate in designated payment systems to establish and implement policies and procedures reasonably designed to prevent payments connected to unlawf
+-<tr><td>HH Designated Financial Market Utilities</td><td>Establishes standards and procedures related to the supervision of certain financial market utilities designated as systemically important</td></tr>
+-<tr><td>II Debit Card Interchange Fees and Routing</td><td>Establishes standards for debit card interchange fees and prohibits payment card network exclusivity arrangements and routing restrictions for debit card trans actions</td></tr>
++<tbody><tr><th scope="row">J Collection of Checks and Other Items by Federal Reserve Banks and Funds Transfers Through Fedwire</th><td>Governs the collection and return of checks through the Reserve Banks and Fedwire funds transfers</td></tr>
++<tr><th scope="row">CC Availability of Funds and Collection of Checks</th><td>Governs the availability of funds deposited in transaction accounts and the collection and return of checks</td></tr>
++<tr><th scope="row">EE Netting Eligibility for Financial Institutions</th><td>Defines financial institutions to be covered by statutory provisions that validate netting contracts, thereby permitting one institution to pay or receive the net, rather than the g
++<tr><th scope="row">GG Prohibition on Funding of Unlawful Internet Gambling</th><td>Requires U.S. financial firms that participate in designated payment systems to establish and implement policies and procedures reasonably designed to prevent payments connect
++<tr><th scope="row">HH Designated Financial Market Utilities</th><td>Establishes standards and procedures related to the supervision of certain financial market utilities designated as systemically important</td></tr>
++<tr><th scope="row">II Debit Card Interchange Fees and Routing</th><td>Establishes standards for debit card interchange fees and prohibits payment card network exclusivity arrangements and routing restrictions for debit card trans actions</td></tr>
+==== page 120
+@@ -6,2 +6,2 @@
+-<tr><td>Federal Trade Commission Act</td><td>Prohibits unfair or deceptive acts or practices in any aspect of banking transactions.</td></tr>
+-<tr><td>Gramm-Leach-Bliley Act (title V, subpart A), Disclosure of Nonpublic Personal Information*</td><td>Describes the conditions under which a financial institution may disclose nonpublic personal information about consumers to nonaffiliated third parties,
++<tr><th scope="row">Federal Trade Commission Act</th><td>Prohibits unfair or deceptive acts or practices in any aspect of banking transactions.</td></tr>
++<tr><th scope="row">Gramm-Leach-Bliley Act (title V, subpart A), Disclosure of Nonpublic Personal Information*</th><td>Describes the conditions under which a financial institution may disclose nonpublic personal information about consumers to nonaffiliated th
+@@ -9,3 +9,3 @@
+-<tr><td>Electronic Fund Transfer Act/Regulation E*</td><td>Requires disclosure of the terms and conditions of electronic fund transfers. Protects consumers against unauthorized transfers and establishes procedures for resolving errors and disputes.</td></tr>
+-<tr><td>Expedited Funds Availability Act/Regulation CC</td><td>Limits hold periods on deposits made to depository institutions and requires appropriate consumer disclosures.</td></tr>
+-<tr><td>Truth in Savings Act/Regulation DD*</td><td>Requires uniform disclosure of terms and conditions regarding interest rates and fees associated with deposit accounts. Prohibits misleading and inaccurate advertisements.</td></tr>
++<tr><th scope="row">Electronic Fund Transfer Act/Regulation E*</th><td>Requires disclosure of the terms and conditions of electronic fund transfers. Protects consumers against unauthorized transfers and establishes procedures for resolving errors and disputes
++<tr><th scope="row">Expedited Funds Availability Act/Regulation CC</th><td>Limits hold periods on deposits made to depository institutions and requires appropriate consumer disclosures.</td></tr>
++<tr><th scope="row">Truth in Savings Act/Regulation DD*</th><td>Requires uniform disclosure of terms and conditions regarding interest rates and fees associated with deposit accounts. Prohibits misleading and inaccurate advertisements.</td></tr>
+@@ -13,4 +13,4 @@
+-<tr><td>Truth in Lending Act/Regulation Z*</td><td>Requires lenders to clearly disclose lending terms and costs to borrowers, and incorporates the provisions of the Credit Card Accountability Responsibility and Disclosure Act, Fair Credit Billing Act, Fair Cr
+-<tr><td>Fair Credit Reporting Act/Regulation V*</td><td>Protects consumers from unfair credit reporting practices and requires credit-reporting agencies to allow credit applicants to correct inaccurate credit reports.</td></tr>
+-<tr><td>Equal Credit Opportunity Act/Regulation B*</td><td>Prohibits creditors from discriminating on the basis of race, color, national origin, religion, sex, marital status, age, receipt of public assistance, and exercise of rights under the Consumer Credit
+-<tr><td>Community Reinvestment Act/Regulation BB</td><td>Encourages financial institutions to help meet the credit needs of their entire communities, including low- and moderate-income neighborhoods.</td></tr>
++<tr><th scope="row">Truth in Lending Act/Regulation Z*</th><td>Requires lenders to clearly disclose lending terms and costs to borrowers, and incorporates the provisions of the Credit Card Accountability Responsibility and Disclosure Act, Fair Credit Billing 
++<tr><th scope="row">Fair Credit Reporting Act/Regulation V*</th><td>Protects consumers from unfair credit reporting practices and requires credit-reporting agencies to allow credit applicants to correct inaccurate credit reports.</td></tr>
++<tr><th scope="row">Equal Credit Opportunity Act/Regulation B*</th><td>Prohibits creditors from discriminating on the basis of race, color, national origin, religion, sex, marital status, age, receipt of public assistance, and exercise of rights under the Con
++<tr><th scope="row">Community Reinvestment Act/Regulation BB</th><td>Encourages financial institutions to help meet the credit needs of their entire communities, including low- and moderate-income neighborhoods.</td></tr>
+==== page 121
+@@ -5,3 +5,3 @@
+-<tbody><tr><td>Disclosure and Reporting of CRA-Related Agreements/Regulation G</td><td>Requires banks and their affiliates and other parties to make public certain agreements that are in fulfillment of the Community Reinvestment Act, and to file annual report
+-<tr><td>Fair and Accurate Credit Transactions Act*</td><td>Amends the Fair Credit Reporting Act. Enhances consumers’ ability to combat identity theft, increases the accuracy of consumer reports, allows consumers to exercise greater control over the type and a
+-<tr><td>Servicemembers Civil Relief Act and Military Lending Act</td><td>Provides members of the military certain financial protections while on active duty.</td></tr>
++<tbody><tr><th scope="row">Disclosure and Reporting of CRA-Related Agreements/Regulation G</th><td>Requires banks and their affiliates and other parties to make public certain agreements that are in fulfillment of the Community Reinvestment Act, and to file a
++<tr><th scope="row">Fair and Accurate Credit Transactions Act*</th><td>Amends the Fair Credit Reporting Act. Enhances consumers’ ability to combat identity theft, increases the accuracy of consumer reports, allows consumers to exercise greater control over th
++<tr><th scope="row">Servicemembers Civil Relief Act and Military Lending Act</th><td>Provides members of the military certain financial protections while on active duty.</td></tr>
+@@ -9,3 +9,3 @@
+-<tr><td>Fair Housing Act</td><td>Prohibits discrimination in the sale, rental, and financing of dwellings and housing-related transactions on the basis of race, color, national origin, religion, sex, handicap, or familial status.</td></tr>
+-<tr><td>Real Estate Settlement Procedures Act/Regulation X*</td><td>Requires that the nature and costs of real estate settlements be disclosed to borrowers. Also protects borrowers against abusive practices, such as kickbacks, and regulates the use of escrow 
+-<tr><td>Home Mortgage Disclosure Act/Regulation C*</td><td>Requires mortgage lenders to annually disclose to the public data on the geographic distribution of applications and loans for originations, purchases, home-improvement, and refinancings. Requires len
++<tr><th scope="row">Fair Housing Act</th><td>Prohibits discrimination in the sale, rental, and financing of dwellings and housing-related transactions on the basis of race, color, national origin, religion, sex, handicap, or familial status.</td></tr>
++<tr><th scope="row">Real Estate Settlement Procedures Act/Regulation X*</th><td>Requires that the nature and costs of real estate settlements be disclosed to borrowers. Also protects borrowers against abusive practices, such as kickbacks, and regulates the us
++<tr><th scope="row">Home Mortgage Disclosure Act/Regulation C*</th><td>Requires mortgage lenders to annually disclose to the public data on the geographic distribution of applications and loans for originations, purchases, home-improvement, and refinancings. 
+@@ -13,2 +13,2 @@
+-<tr><td>Flood Disaster Protection Act/Regulation H</td><td>Requires flood insurance in connection with loans secured by property located in a flood hazard area designated under the National Flood Insurance Program.</td></tr>
+-<tr><td>Consumer Leasing Act/Regulation M*</td><td>Requires disclosure of information about the costs and terms of consumer leases for vehicles and other personal property.</td></tr>
++<tr><th scope="row">Flood Disaster Protection Act/Regulation H</th><td>Requires flood insurance in connection with loans secured by property located in a flood hazard area designated under the National Flood Insurance Program.</td></tr>
++<tr><th scope="row">Consumer Leasing Act/Regulation M*</th><td>Requires disclosure of information about the costs and terms of consumer leases for vehicles and other personal property.</td></tr>

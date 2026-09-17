@@ -154,6 +154,9 @@ struct ReflowBlock: Sendable, Equatable {
         struct Cell: Sendable, Equatable {
             var text: InlineText
             var span = 1
+            /// A body cell that names its row (`th scope="row"`); header rows' cells are headers
+            /// through `Row.header`.
+            var header = false
         }
         struct Row: Sendable, Equatable {
             var cells: [Cell]

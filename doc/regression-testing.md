@@ -238,7 +238,12 @@ that spans a label column and an amount column names each column beneath it as
 unspanned or wider header fails. A row whose label sits under such a column names it with
 `labelColumn`. An optional `caption` lists the table's caption paragraphs, which must equal the
 paragraphs of that table's `<caption>` in order, so a title emitted as prose or merged with its
-description fails (#113, #114). Caption paragraphs are also page paragraphs, never headings. The Fed's
+description fails (#113, #114). Caption paragraphs are also page paragraphs, never headings. An
+optional `rowHeaders` (boolean) checks the matched rows' cell kinds: when true each row's first grid
+cell is `<th scope="row">` if it holds text (an empty one stays `<td>`) and no other cell of the row
+is a header; when false no cell of the row is a header. An optional `headerCells` (boolean) requires
+the header rows to be written as `<th>` (true) or the table to have none (false), since without it a
+first row of `<td>` cells still serves as the header (#121). The Fed's
 entity/overview table (page 64) and regulation table (page 83) are the first corpus tables emitted
 as `<table>` (#54, shaded rows and rules; other tables remain images under #36/#31) and carry
 reviewed transcriptions; `tools/test_table_cells.py` keeps the checker's negative controls, and the
@@ -251,9 +256,12 @@ contract uses it on pages 32, 46, 47, 64 and 120 and Our Flag on pages 12 and 54
 running-header or top-margin rule used to be a crop (#66), with `tableCells` transcriptions of Fed
 Table 3.1 (page 46) and of Box 3.5's Table A (page 47, whose amounts are cells under headers
 spanning a label and an amount column; #65, #114). Pages 46, 47, 64, 83, 97, 109 and 120 check
-each table's caption. See the
-[ruled-table and header-rule evidence](../measurements/ruled-tables-and-header-rules/record.md) and the
-[table caption and tag evidence](../measurements/table-captions-and-tags/record.md).
+each table's caption. Pages 46, 47, 64, 83, 109 and 120 require row-header first cells, and page 97
+a `<th>` header row over data cells; FAA page 131 transcribes the borderless load-factor table with
+a `<th>` header and no row headers (#121). See the
+[ruled-table and header-rule evidence](../measurements/ruled-tables-and-header-rules/record.md), the
+[table caption and tag evidence](../measurements/table-captions-and-tags/record.md) and the
+[table header and borderless-table evidence](../measurements/table-headers-and-borderless/record.md).
 
 ## Adding or changing a regression
 
@@ -389,6 +397,18 @@ two lines in a row, an offset or resized description, a wide gap, a long introdu
 lines, text above the caption) and caption serialization. `fed-47` and `fed-97` are new captures;
 `fed-77` and `fed-109` were recaptured (#114): they gain `paints`, the column-joint split and the
 tags the pipeline now applies, and their heading and body checks also hold with the tags removed.
+
+`TableHeadersAndBorderlessTests.swift` (#121) reads `fed-97`'s header on two column bands as the
+header row, with controls that edit those bands (too narrow together, running down through the
+body, one band, overlapping) and keep the first row as data cells; checks row-header first cells on
+`fed-{46,47,64,83,109,120}` (not header rows, section rows or Table A's empty asset label), with
+synthetic controls for one labelled row, repeated labels, a label without a value and numeric
+labels, and their serialization. A new `faa-131` capture reads the load-factor table as a
+four-row table between its introduction and footnote; re-merging its rows reproduces the scrambled
+paragraphs. Synthetic lines control the borderless reader (title-case heading, one body row, a
+missing value, a label crossing the gap, prose, another size or a tag under the heading, distant
+headings or rows), and a synthetic PDF set like page 131 reproduces PDFKit's merged rows and the
+split, with a title-case heading, a drawn rule and a row too tight for a common gutter as controls.
 
 ## Source-derived fidelity controls
 

@@ -15,6 +15,9 @@ enum ShadedTableDetector {
         struct Cell: Equatable {
             var lines: [TextLine]
             var span: Int
+            /// A body row's first cell that names the row (#121); header-row cells are headers
+            /// through their row.
+            var header = false
         }
         struct Row: Equatable {
             var cells: [Cell]
@@ -57,6 +60,32 @@ enum ShadedTableDetector {
         }
         guard !title.isEmpty, title.count <= 3, description.count <= 6 else { return ([], []) }
         return (title, description)
+    }
+
+    /// Row headers (#121): the first cell of each body row names that row when at least two body
+    /// rows are labelled that way. A label holds a letter, differs from every other row's label,
+    /// and has a value beside it in the same row; a row whose first cell is empty (Fed page 47's
+    /// `U.S. Treasury, General Account`, on the liabilities side only) keeps an ordinary cell but
+    /// does not cost the others theirs. Any labelled row without a value, or two rows with the same
+    /// label, leaves every cell a data cell. Section rows (one spanning cell) and header rows are
+    /// not body rows. The Fed tags every such first-column cell of the tables this detector reads
+    /// `TH /Scope /Row` (pages 46, 47, 64, 82, 83, 109, 120, 121); page 97's single body row, whose
+    /// first cell is a list of payment kinds under its column header, is tagged `TD`.
+    /// PDFKit reports every Fed table font as the same face, so typography (a bold label column)
+    /// cannot confirm it.
+    static func rowHeaders(_ rows: [Table.Row]) -> [Table.Row] {
+        let body = rows.indices.filter { !rows[$0].header && rows[$0].cells.count > 1 }
+        let labelled = body.filter { !rows[$0].cells[0].lines.isEmpty }
+        func label(_ index: Int) -> String {
+            rows[index].cells[0].lines.map(\.text).joined(separator: " ").split(whereSeparator: \.isWhitespace).joined(separator: " ")
+        }
+        guard labelled.count >= 2,
+              labelled.allSatisfy({ index in rows[index].cells.dropFirst().contains { !$0.lines.isEmpty } }),
+              labelled.allSatisfy({ label($0).contains(where: \.isLetter) }),
+              Set(labelled.map(label)).count == labelled.count else { return rows }
+        var result = rows
+        for index in labelled { result[index].cells[0].header = true }
+        return result
     }
 
     static func tables(in page: PageContent, lines: [TextLine]) -> [Table] {
@@ -125,6 +154,24 @@ enum ShadedTableDetector {
                         && !members.contains { $0 != band && $0.width < hull.width * 0.9 && $0.minY <= rowRect.midY && $0.maxY >= rowRect.midY }
                 }
             }
+            // A header may sit on one band per column instead of one band across the table (Fed
+            // page 97's `Credit transfer` / `Debit transfer`, #121): at least two bands through
+            // the row, each narrower than the table, side by side (overlapping by at most a body
+            // size), together spanning 90% of its width. Every band holds some of the row's lines
+            // and no other row's, and every line of the row lies on one of them, so the column
+            // bands of a body beneath (which hold many rows) never qualify.
+            func ownColumnBands(_ index: Int) -> Bool {
+                let rowRect = rowRects[index]
+                func centre(_ line: TextLine) -> CGPoint { CGPoint(x: line.rect.midX, y: line.rect.midY) }
+                let bands = members.filter { $0.minY <= rowRect.midY && $0.maxY >= rowRect.midY }.sorted { $0.minX < $1.minX }
+                guard bands.count >= 2, bands.allSatisfy({ $0.width < hull.width * 0.9 }),
+                      zip(bands, bands.dropFirst()).allSatisfy({ $1.minX >= $0.maxX - body }),
+                      bands[bands.count - 1].maxX - bands[0].minX >= hull.width * 0.9 else { return false }
+                let others = rowLines.indices.filter { $0 != index }.flatMap { rowLines[$0] }
+                return bands.allSatisfy { band in
+                    rowLines[index].contains { band.contains(centre($0)) } && !others.contains { band.contains(centre($0)) }
+                } && rowLines[index].allSatisfy { line in bands.contains { $0.contains(centre(line)) } }
+            }
             // PDFKit can merge a narrow cell with the cell beside it into one line ("Y Bank
             // Holding Companies"). One pair of columns may read as one when such a line spans
             // exactly those two, as the source's spanning header does; a line running across
@@ -176,10 +223,12 @@ enum ShadedTableDetector {
             guard let first = kinds.firstIndex(of: .grid), let last else { return nil }
             let sizes = (first...last).filter { kinds[$0] == .grid }.flatMap { rowLines[$0].map(\.fontSize) }.sorted()
             let bodySize = sizes[sizes.count / 2]
-            // The header is the first grid row when it sits on a band of its own with text in
-            // two columns; a continuation page's first body row does not. Section rows may
-            // precede the body only when there is no header.
-            let headerRow = Set(assignments[first].map(\.1)).count >= 2 && first < last && ownBand(first)
+            // The header is the first grid row when it sits on a band of its own (or one band per
+            // column) with text in two columns; a continuation page's first body row does not.
+            // Section rows may precede the body only when there is no header.
+            let spansTable = Set(assignments[first].map(\.1)).count >= 2 && first < last
+            let columnBandHeader = spansTable && !ownBand(first) && ownColumnBands(first)
+            let headerRow = spansTable && (ownBand(first) || columnBandHeader)
             var start = first
             while !headerRow, start > 0, kinds[start - 1] == .section,
                   abs(rowLines[start - 1][0].fontSize - bodySize) <= bodySize * 0.3 { start -= 1 }
@@ -207,8 +256,12 @@ enum ShadedTableDetector {
                     result.append(.init(cells: cells.map { .init(lines: $0, span: 1) }, header: false))
                 }
             }
-            let bodyRows = result.filter { !$0.header && $0.cells.count > 1 }
+            // A header on column bands was read as the first body row before #121; it still counts
+            // toward the two rows a table needs, so Fed page 97's header over one body row stays
+            // a table and nothing else is newly accepted.
+            let bodyRows = result.filter { (!$0.header || columnBandHeader) && $0.cells.count > 1 }
             guard bodyRows.count >= 2, bodyRows.contains(where: { $0.cells.filter { !$0.lines.isEmpty }.count >= 2 }) else { return nil }
+            result = rowHeaders(result)
             let caption = caption(above: rowLines[..<start].flatMap { $0 }, bodySize: bodySize)
             return Table(bounds: union(Array(rowRects[start...last])), columns: columns.count, rows: result,
                          title: caption.title, description: caption.description)

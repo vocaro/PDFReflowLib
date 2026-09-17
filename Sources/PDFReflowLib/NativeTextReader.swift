@@ -31,11 +31,19 @@ enum NativeTextReader {
         return try operation()
     }
 
+    /// `borderlessTableInk`, when given (the page's painted rectangles), also splits the rows of
+    /// a borderless table whose cells PDFKit merges into one line; see `splitBorderlessTables`.
     static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true,
-                      columnJoints: [ColumnJoint] = []) throws -> [TextLine] {
+                      columnJoints: [ColumnJoint] = [], borderlessTableInk: [CGRect]? = nil) throws -> [TextLine] {
         try withExtractionLock {
-            let lines = try extractLines(on: page, limit: limit, includeStyle: includeStyle)
-            return try columnJoints.isEmpty ? lines : splitAtColumnJoints(lines, joints: columnJoints, on: page, includeStyle: includeStyle)
+            var lines = try extractLines(on: page, limit: limit, includeStyle: includeStyle)
+            if !columnJoints.isEmpty {
+                lines = try splitAtColumnJoints(lines, joints: columnJoints, on: page, includeStyle: includeStyle)
+            }
+            if let ink = borderlessTableInk {
+                lines = try splitBorderlessTables(lines, ink: ink, on: page, includeStyle: includeStyle)
+            }
+            return lines
         }
     }
 
@@ -49,6 +57,58 @@ enum NativeTextReader {
         }.map(\.x)
     }
 
+    private static func squeezed(_ text: String) -> String {
+        text.split(whereSeparator: \.isWhitespace).joined(separator: " ")
+    }
+
+    /// The characters of a line between two x positions as a line of their own, measured with
+    /// PDFKit's rectangle selections; nil when the span holds no visible text.
+    private static func piece(of rect: CGRect, from minX: CGFloat, to maxX: CGFloat,
+                              on page: PDFPage, includeStyle: Bool) -> TextLine? {
+        func selection(from minX: CGFloat, to maxX: CGFloat) -> PDFSelection? {
+            guard maxX > minX else { return nil }
+            return page.selection(for: CGRect(x: minX, y: rect.minY, width: maxX - minX, height: rect.height))
+        }
+        func visible(_ selection: PDFSelection?) -> String {
+            squeezed(selection?.string?.replacingOccurrences(of: "\u{FFFC}", with: " ") ?? "")
+        }
+        // A space glyph stretches across the gap; shrink both edges of the selection until
+        // it holds the piece's own characters only.
+        let target = visible(selection(from: minX, to: maxX))
+        guard !target.isEmpty else { return nil }
+        var low = minX, high = maxX
+        for _ in 0..<14 {
+            let middle = (low + high) / 2
+            if visible(selection(from: minX, to: middle)) == target { high = middle } else { low = middle }
+        }
+        var left = minX
+        low = minX
+        var top = high
+        for _ in 0..<14 {
+            let middle = (low + top) / 2
+            if visible(selection(from: middle, to: high)) == target { left = middle; low = middle } else { top = middle }
+        }
+        guard let chosen = selection(from: left, to: high), visible(chosen) == target,
+              let raw = chosen.string?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else { return nil }
+        let bounds = chosen.bounds(for: page)
+        guard bounds.isFinite, !bounds.isNull, bounds.width > 0, bounds.height > 0 else { return nil }
+        let attributed = includeStyle ? chosen.attributedString : nil
+        return textLine(semantic: raw.replacingOccurrences(of: "\u{FFFC}", with: " "), bounds: bounds, attributed: attributed)
+    }
+
+    /// A line cut in two at `x`: both pieces exist, spell the line apart from the whitespace at
+    /// the cut, stand on their own sides of `x` and at least `gap` apart.
+    private static func cut(_ line: TextLine, at x: CGFloat, gap: CGFloat, on page: PDFPage,
+                            includeStyle: Bool) -> (left: TextLine, right: TextLine)? {
+        let rect = line.rect
+        guard let left = piece(of: rect, from: rect.minX, to: x, on: page, includeStyle: includeStyle),
+              let right = piece(of: rect, from: x, to: rect.maxX, on: page, includeStyle: includeStyle),
+              squeezed(left.text + " " + right.text) == squeezed(line.text),
+              right.rect.minX - left.rect.maxX >= gap,
+              left.rect.maxX <= x + 1, right.rect.minX >= x - 1 else { return nil }
+        return (left, right)
+    }
+
     /// PDFKit returns a ruled table's cells on one baseline as one line ("Tool Definition In
     /// practice", Fed page 46). A line crossing a column joint of the rule grid is split there
     /// when the joint falls in whitespace between the glyphs on either side and those glyphs
@@ -58,40 +118,6 @@ enum NativeTextReader {
     /// (#65).
     private static func splitAtColumnJoints(_ lines: [TextLine], joints: [ColumnJoint],
                                             on page: PDFPage, includeStyle: Bool) throws -> [TextLine] {
-        func squeezed(_ text: String) -> String {
-            text.split(whereSeparator: \.isWhitespace).joined(separator: " ")
-        }
-        func selection(_ rect: CGRect, from minX: CGFloat, to maxX: CGFloat) -> PDFSelection? {
-            guard maxX > minX else { return nil }
-            return page.selection(for: CGRect(x: minX, y: rect.minY, width: maxX - minX, height: rect.height))
-        }
-        func visible(_ selection: PDFSelection?) -> String {
-            squeezed(selection?.string?.replacingOccurrences(of: "\u{FFFC}", with: " ") ?? "")
-        }
-        func piece(_ rect: CGRect, from minX: CGFloat, to maxX: CGFloat) -> TextLine? {
-            // A space glyph stretches across the gap; shrink both edges of the selection until
-            // it holds the piece's own characters only.
-            let target = visible(selection(rect, from: minX, to: maxX))
-            guard !target.isEmpty else { return nil }
-            var low = minX, high = maxX
-            for _ in 0..<14 {
-                let middle = (low + high) / 2
-                if visible(selection(rect, from: minX, to: middle)) == target { high = middle } else { low = middle }
-            }
-            var left = minX
-            low = minX
-            var top = high
-            for _ in 0..<14 {
-                let middle = (low + top) / 2
-                if visible(selection(rect, from: middle, to: high)) == target { left = middle; low = middle } else { top = middle }
-            }
-            guard let chosen = selection(rect, from: left, to: high), visible(chosen) == target,
-                  let raw = chosen.string?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else { return nil }
-            let bounds = chosen.bounds(for: page)
-            guard bounds.isFinite, !bounds.isNull, bounds.width > 0, bounds.height > 0 else { return nil }
-            let attributed = includeStyle ? chosen.attributedString : nil
-            return textLine(semantic: raw.replacingOccurrences(of: "\u{FFFC}", with: " "), bounds: bounds, attributed: attributed)
-        }
         var result: [TextLine] = []
         for line in lines {
             try Task.checkCancellation()
@@ -101,22 +127,108 @@ enum NativeTextReader {
             let em = max(4, line.fontSize)
             // A cut is real when the joint falls between words and the glyphs on either side of
             // it stand at least one em apart.
-            let cuts = crossed.filter { x in
-                guard let left = piece(rect, from: rect.minX, to: x), let right = piece(rect, from: x, to: rect.maxX) else { return false }
-                return squeezed(left.text + " " + right.text) == squeezed(line.text)
-                    && right.rect.minX - left.rect.maxX >= em
-                    && left.rect.maxX <= x + 1 && right.rect.minX >= x - 1
-            }
+            let cuts = crossed.filter { cut(line, at: $0, gap: em, on: page, includeStyle: includeStyle) != nil }
             let edges = [rect.minX] + cuts + [rect.maxX]
             var pieces: [TextLine] = []
             for (start, end) in zip(edges, edges.dropFirst()) {
-                guard let next = piece(rect, from: start, to: end) else { pieces = []; break }
+                guard let next = piece(of: rect, from: start, to: end, on: page, includeStyle: includeStyle) else { pieces = []; break }
                 pieces.append(next)
             }
             guard pieces.count >= 2, squeezed(pieces.map(\.text).joined(separator: " ")) == squeezed(line.text) else {
                 result.append(line); continue
             }
             result += pieces
+        }
+        return result
+    }
+
+    /// Letters, all capitals: a borderless table's column headings (`CATEGORY`, `LIMIT LOAD FACTOR`).
+    static func isCapitalHeading(_ text: String) -> Bool {
+        let letters = text.filter(\.isLetter)
+        return letters.count >= 2 && letters.allSatisfy(\.isUppercase)
+    }
+
+    /// A borderless two-column table whose rows PDFKit merges (#121, FAA page 131's `CATEGORY` /
+    /// `LIMIT LOAD FACTOR` table: `Normal1 3.8 to –1.52` is one line, but `Utility (mild
+    /// acrobatics,` and `4.4 to –1.76` are two). Where PDFKit keeps one row's cells apart, their
+    /// gap (two to ten ems, both pieces at most fifteen ems wide, nothing between them) is the
+    /// column gap. The table is the run of rows through that pair, each row's baseline within
+    /// 1.8 ems of the next, among the lines overlapping the pair's width widened by an em
+    /// (so a neighbouring page column is not part of it): every line in the run is the same size
+    /// and not monospaced, lies on one side of the gap's middle, or is cut inside the gap where
+    /// PDFKit's selections show glyphs at least two ems apart on either side. The run's first row
+    /// is its heading, in capitals on both sides; at least three rows (the heading among them) hold
+    /// text on both sides, every row's left text ends at least an em before any row's right text
+    /// begins, and nothing painted lies within the run. Only then are its crossing lines split. A
+    /// prose line crossing the gap has word spaces there, so it ends the run; a run without a
+    /// capital heading, with cells too close to share a gutter, or near a drawn rule, is left
+    /// exactly as PDFKit read it.
+    private static func splitBorderlessTables(_ lines: [TextLine], ink: [CGRect], on page: PDFPage,
+                                              includeStyle: Bool) throws -> [TextLine] {
+        func sameRow(_ a: TextLine, _ b: TextLine) -> Bool { abs(a.rect.minY - b.rect.minY) <= 1.5 }
+        var result = lines
+        for left in lines where !left.monospaced {
+            let em = max(4, left.fontSize)
+            guard left.rect.width <= em * 15 else { continue }
+            for right in lines where right != left && !right.monospaced && sameRow(left, right) {
+                let gap = right.rect.minX - left.rect.maxX
+                guard right.rect.width <= em * 15, gap >= em * 2, gap <= em * 10,
+                      abs(right.fontSize - left.fontSize) <= em * 0.15,
+                      result.contains(left), result.contains(right),
+                      !lines.contains(where: { $0 != left && $0 != right && sameRow($0, left)
+                          && $0.rect.maxX > left.rect.maxX && $0.rect.minX < right.rect.minX }) else { continue }
+                try Task.checkCancellation()
+                let lower = left.rect.maxX, upper = right.rect.minX
+                let window = (left.rect.minX - em, right.rect.maxX + em)
+                var rows: [[TextLine]] = []
+                for line in result.filter({ $0.rect.maxX > window.0 && $0.rect.minX < window.1 })
+                    .sorted(by: { $0.rect.minY > $1.rect.minY }) {
+                    if let last = rows.last?.first, sameRow(last, line) { rows[rows.count - 1].append(line) } else { rows.append([line]) }
+                }
+                guard let anchor = rows.firstIndex(where: { $0.contains(left) }) else { continue }
+                func step(_ upperRow: Int) -> Bool { rows[upperRow][0].rect.minY - rows[upperRow + 1][0].rect.minY <= em * 1.8 }
+                // Before measuring any glyphs: the rows chained to the pair must start with a
+                // capital heading.
+                var top = anchor
+                while top > 0, step(top - 1) { top -= 1 }
+                guard let heading = rows[top...anchor].firstIndex(where: { row in
+                    row.allSatisfy { isCapitalHeading($0.text) }
+                }) else { continue }
+                // Each row read against the gap: its lines by side of the gap's middle, crossing
+                // lines cut.
+                let middle = (lower + upper) / 2
+                func read(_ row: [TextLine]) -> (left: [TextLine], right: [TextLine], cuts: [(TextLine, [TextLine])])? {
+                    var lefts: [TextLine] = [], rights: [TextLine] = [], cuts: [(TextLine, [TextLine])] = []
+                    for line in row {
+                        guard !line.monospaced, abs(line.fontSize - left.fontSize) <= em * 0.15 else { return nil }
+                        if line.rect.maxX <= middle { lefts.append(line); continue }
+                        if line.rect.minX >= middle { rights.append(line); continue }
+                        let positions = [lower + em * 0.5, middle, upper - em * 0.5]
+                        guard let pieces = positions.lazy.compactMap({
+                            cut(line, at: $0, gap: em * 2, on: page, includeStyle: includeStyle)
+                        }).first else { return nil }
+                        lefts.append(pieces.left); rights.append(pieces.right)
+                        cuts.append((line, [pieces.left, pieces.right]))
+                    }
+                    return (lefts, rights, cuts)
+                }
+                guard let head = read(rows[heading]), !head.left.isEmpty, !head.right.isEmpty,
+                      (head.left + head.right).allSatisfy({ isCapitalHeading($0.text) }) else { continue }
+                var readRows = [head]
+                var bottom = heading
+                while bottom + 1 < rows.count, step(bottom), let next = read(rows[bottom + 1]) {
+                    readRows.append(next)
+                    bottom += 1
+                }
+                // Every row's left text ends at least an em before any row's right text begins.
+                let gutter = (readRows.flatMap(\.right).map(\.rect.minX).min() ?? 0) - (readRows.flatMap(\.left).map(\.rect.maxX).max() ?? 0)
+                guard bottom >= anchor, gutter >= em, readRows.filter({ !$0.left.isEmpty && !$0.right.isEmpty }).count >= 3,
+                      !ink.contains(where: { $0.intersects(union(rows[heading...bottom].flatMap { $0.map(\.rect) })) }) else { continue }
+                for (line, pieces) in readRows.flatMap(\.cuts) {
+                    guard let index = result.firstIndex(of: line) else { continue }
+                    result.replaceSubrange(index...index, with: pieces)
+                }
+            }
         }
         return result
     }

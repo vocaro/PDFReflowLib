@@ -1,0 +1,5011 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        -9.0365000000000002,
+        317.21210000000002,
+        325.49990000000003,
+        430.09399999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        284.09878049999998,
+        89.505519300000003,
+        239.30362679999996,
+        158.36637920000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        285.25,
+        72.330100000000016,
+        236.98270000000002,
+        10.811999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 14-50."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : " A sound practice is to write down taxi instructions"
+        }
+      ],
+      "text" : "Figure 14-50. A sound practice is to write down taxi instructions"
+    },
+    {
+      "rect" : [
+        285.25370000000004,
+        62.937100000000015,
+        38.007000000000005,
+        10.206000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "from ATC."
+        }
+      ],
+      "text" : "from ATC."
+    },
+    {
+      "rect" : [
+        36,
+        327.95300000000003,
+        194.36000000000001,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 14-49."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : " Confusing runway/runway intersection."
+        }
+      ],
+      "text" : "Figure 14-49. Confusing runway/runway intersection."
+    },
+    {
+      "rect" : [
+        36,
+        300.83600000000001,
+        236.98980000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Since inattention and confusion often are factors contributing to"
+        }
+      ],
+      "text" : "Since inattention and confusion often are factors contributing to"
+    },
+    {
+      "rect" : [
+        36,
+        288.33600000000001,
+        236.82209999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "runway incursion, it is important to remain extremely cautious"
+        }
+      ],
+      "text" : "runway incursion, it is important to remain extremely cautious"
+    },
+    {
+      "rect" : [
+        36,
+        275.83600000000001,
+        236.98900000000003,
+        11.470200000000034
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.00020000000000663931,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and maintain"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " situational awareness (SA). When instructed to"
+        }
+      ],
+      "text" : "and maintain situational awareness (SA). When instructed to"
+    },
+    {
+      "rect" : [
+        36,
+        263.33620000000002,
+        237.00730000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "use a runway as a taxiway, do not become confused and take"
+        }
+      ],
+      "text" : "use a runway as a taxiway, do not become confused and take"
+    },
+    {
+      "rect" : [
+        36,
+        250.83620000000002,
+        179.0942,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "off on the runway you are using as a taxiway."
+        }
+      ],
+      "text" : "off on the runway you are using as a taxiway."
+    },
+    {
+      "rect" : [
+        36,
+        225.26620000000003,
+        80.560000000000002,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "ATC Instructions"
+        }
+      ],
+      "text" : "ATC Instructions"
+    },
+    {
+      "rect" : [
+        36,
+        212.83620000000002,
+        236.99399999999991,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Title 14 of the Code of Federal Regulations (14 CFR) part"
+        }
+      ],
+      "text" : "Title 14 of the Code of Federal Regulations (14 CFR) part"
+    },
+    {
+      "rect" : [
+        35.999999999999993,
+        200.33620000000002,
+        236.81319999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "91, section 91.123 requires you to follow all ATC clearances"
+        }
+      ],
+      "text" : "91, section 91.123 requires you to follow all ATC clearances"
+    },
+    {
+      "rect" : [
+        35.999999999999993,
+        187.83620000000002,
+        237.072,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and instructions. Request clarification if you are unsure of the"
+        }
+      ],
+      "text" : "and instructions. Request clarification if you are unsure of the"
+    },
+    {
+      "rect" : [
+        36,
+        175.33620000000002,
+        236.99700000000007,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "clearance or instruction to be followed. If you are unfamiliar"
+        }
+      ],
+      "text" : "clearance or instruction to be followed. If you are unfamiliar"
+    },
+    {
+      "rect" : [
+        36.000000000000014,
+        162.83620000000002,
+        236.88100000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "with the airport or unsure of a taxi route, ask ATC for a"
+        }
+      ],
+      "text" : "with the airport or unsure of a taxi route, ask ATC for a"
+    },
+    {
+      "rect" : [
+        36.000000000000028,
+        150.33620000000002,
+        236.99899999999988,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "“progressive taxi.” Progressive taxi requires the controller"
+        }
+      ],
+      "text" : "“progressive taxi.” Progressive taxi requires the controller"
+    },
+    {
+      "rect" : [
+        36.000000000000028,
+        137.83620000000002,
+        161.38000000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to provide step-by-step taxi instructions."
+        }
+      ],
+      "text" : "to provide step-by-step taxi instructions."
+    },
+    {
+      "rect" : [
+        36.000000000000028,
+        112.83620000000002,
+        237.09699999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The final decision to act on ATC’s instruction rests with you."
+        }
+      ],
+      "text" : "The final decision to act on ATC’s instruction rests with you."
+    },
+    {
+      "rect" : [
+        36.000000000000028,
+        100.33620000000001,
+        237.00099999999995,
+        11.470000000000013
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "If you cannot safely comply with any of ATC’s instructions,"
+        }
+      ],
+      "text" : "If you cannot safely comply with any of ATC’s instructions,"
+    },
+    {
+      "rect" : [
+        36,
+        87.836200000000005,
+        236.97900000000016,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "inform them immediately by using the word “UNABLE.”"
+        }
+      ],
+      "text" : "inform them immediately by using the word “UNABLE.”"
+    },
+    {
+      "rect" : [
+        36,
+        75.336200000000005,
+        236.98099999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "There is nothing wrong with telling a controller that you are"
+        }
+      ],
+      "text" : "There is nothing wrong with telling a controller that you are"
+    },
+    {
+      "rect" : [
+        36,
+        62.836200000000005,
+        173.57000000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "unable to safely comply with the clearance."
+        }
+      ],
+      "text" : "unable to safely comply with the clearance."
+    },
+    {
+      "rect" : [
+        285,
+        719.56640000000004,
+        236.98199999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Another way to mitigate the risk of runway incursions is to"
+        }
+      ],
+      "text" : "Another way to mitigate the risk of runway incursions is to"
+    },
+    {
+      "rect" : [
+        285,
+        707.06640000000004,
+        236.98999999999978,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "write down all taxi instructions as soon as they are received"
+        }
+      ],
+      "text" : "write down all taxi instructions as soon as they are received"
+    },
+    {
+      "rect" : [
+        285,
+        694.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "from ATC. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "italic" : true,
+          "text" : "[Figure 14-50]"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " It is also helpful to monitor ATC"
+        }
+      ],
+      "text" : "from ATC. [Figure 14-50] It is also helpful to monitor ATC"
+    },
+    {
+      "rect" : [
+        285,
+        682.06640000000004,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "clearances and instructions that are issued to other aircraft."
+        }
+      ],
+      "text" : "clearances and instructions that are issued to other aircraft."
+    },
+    {
+      "rect" : [
+        285,
+        669.56640000000004,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "You should be especially vigilant if another aircraft has a"
+        }
+      ],
+      "text" : "You should be especially vigilant if another aircraft has a"
+    },
+    {
+      "rect" : [
+        285,
+        657.06640000000004,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "similar sounding call sign so there is no mistake about who"
+        }
+      ],
+      "text" : "similar sounding call sign so there is no mistake about who"
+    },
+    {
+      "rect" : [
+        285,
+        644.56640000000004,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ATC is contacting or to whom they are giving instructions"
+        }
+      ],
+      "text" : "ATC is contacting or to whom they are giving instructions"
+    },
+    {
+      "rect" : [
+        285,
+        632.06640000000004,
+        61.079999999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and clearances."
+        }
+      ],
+      "text" : "and clearances."
+    },
+    {
+      "rect" : [
+        285,
+        607.06640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Read back your complete ATC clearance with your aircraft"
+        }
+      ],
+      "text" : "Read back your complete ATC clearance with your aircraft"
+    },
+    {
+      "rect" : [
+        285,
+        594.56640000000004,
+        237.0120000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "call sign. This gives ATC the opportunity to clarify any"
+        }
+      ],
+      "text" : "call sign. This gives ATC the opportunity to clarify any"
+    },
+    {
+      "rect" : [
+        285,
+        582.06640000000004,
+        236.84999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "misunderstandings and ensure that instructions were given to"
+        }
+      ],
+      "text" : "misunderstandings and ensure that instructions were given to"
+    },
+    {
+      "rect" : [
+        285,
+        569.56640000000004,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the correct aircraft. If, at any time, there is uncertainty about"
+        }
+      ],
+      "text" : "the correct aircraft. If, at any time, there is uncertainty about"
+    },
+    {
+      "rect" : [
+        285,
+        557.06640000000004,
+        237.00099999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "any ATC instructions or clearances, ask ATC to “say again”"
+        }
+      ],
+      "text" : "any ATC instructions or clearances, ask ATC to “say again”"
+    },
+    {
+      "rect" : [
+        285,
+        544.56640000000004,
+        156.09000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or ask for progressive taxi instructions."
+        }
+      ],
+      "text" : "or ask for progressive taxi instructions."
+    },
+    {
+      "rect" : [
+        285,
+        518.34340000000009,
+        89.169899999999984,
+        13.309999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "ATC Instructions"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "—"
+        }
+      ],
+      "text" : "ATC Instructions—"
+    },
+    {
+      "rect" : [
+        374.16990000000004,
+        518.34340000000009,
+        60.935000000000002,
+        13.309999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "“"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Hold Short”"
+        }
+      ],
+      "text" : "“Hold Short”"
+    },
+    {
+      "rect" : [
+        285,
+        504.56640000000004,
+        236.99499999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The most important sign and marking on the airport is the"
+        }
+      ],
+      "text" : "The most important sign and marking on the airport is the"
+    },
+    {
+      "rect" : [
+        285,
+        492.06640000000004,
+        237.16000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "hold sign and hold marking. These are located on a stub"
+        }
+      ],
+      "text" : "hold sign and hold marking. These are located on a stub"
+    },
+    {
+      "rect" : [
+        285,
+        479.56640000000004,
+        236.85599999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "taxiway leading directly to a runway. They depict the holding"
+        }
+      ],
+      "text" : "taxiway leading directly to a runway. They depict the holding"
+    },
+    {
+      "rect" : [
+        285,
+        467.06640000000004,
+        237.09999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "position or the location where the aircraft is to stop so as not to"
+        }
+      ],
+      "text" : "position or the location where the aircraft is to stop so as not to"
+    },
+    {
+      "rect" : [
+        285,
+        454.56640000000004,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "enter the runway environment. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "italic" : true,
+          "text" : "[Figure 14-51] "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "For example,"
+        }
+      ],
+      "text" : "enter the runway environment. [Figure 14-51] For example,"
+    },
+    {
+      "rect" : [
+        285,
+        442.06640000000004,
+        237.00700000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "italic" : true,
+          "text" : "Figure 14-52 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "shows the holding position sign and marking"
+        }
+      ],
+      "text" : "Figure 14-52 shows the holding position sign and marking"
+    },
+    {
+      "rect" : [
+        285,
+        429.56640000000004,
+        127.75999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "for Runway 13 and Runway 31."
+        }
+      ],
+      "text" : "for Runway 13 and Runway 31."
+    },
+    {
+      "rect" : [
+        285,
+        404.27640000000002,
+        236.99000000000001,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When ATC issues a “"
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "hold short"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "” clearance, you are"
+        }
+      ],
+      "text" : "When ATC issues a “hold short” clearance, you are"
+    },
+    {
+      "rect" : [
+        285,
+        392.06640000000004,
+        237.06000000000017,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "expected to taxi up to, but not cross any part of the runway"
+        }
+      ],
+      "text" : "expected to taxi up to, but not cross any part of the runway"
+    },
+    {
+      "rect" : [
+        285,
+        379.56640000000004,
+        236.84900000000016,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "holding marking. At a towered airport, runway hold"
+        }
+      ],
+      "text" : "holding marking. At a towered airport, runway hold"
+    },
+    {
+      "rect" : [
+        285,
+        367.06640000000004,
+        237.04500000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "markings should never be crossed without explicit ATC"
+        }
+      ],
+      "text" : "markings should never be crossed without explicit ATC"
+    },
+    {
+      "rect" : [
+        285,
+        354.56640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "instructions. Do not enter a runway at a towered airport"
+        }
+      ],
+      "text" : "instructions. Do not enter a runway at a towered airport"
+    },
+    {
+      "rect" : [
+        285,
+        342.06640000000004,
+        236.99000000000024,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "unless instructions are given from ATC to cross, takeoff"
+        }
+      ],
+      "text" : "unless instructions are given from ATC to cross, takeoff"
+    },
+    {
+      "rect" : [
+        285,
+        329.56640000000004,
+        212.00000000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "from, or “line up and wait” on that specific runway."
+        }
+      ],
+      "text" : "from, or “line up and wait” on that specific runway."
+    },
+    {
+      "rect" : [
+        285,
+        304.56640000000004,
+        237.00600000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ATC is required to obtain a read-back from the pilot of"
+        }
+      ],
+      "text" : "ATC is required to obtain a read-back from the pilot of"
+    },
+    {
+      "rect" : [
+        285,
+        291.77640000000002,
+        236.97000000000003,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "all runway “"
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "hold short"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "” instructions. Therefore, you"
+        }
+      ],
+      "text" : "all runway “hold short” instructions. Therefore, you"
+    },
+    {
+      "rect" : [
+        285,
+        279.27640000000002,
+        237,
+        12.019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "must read back the entire clearance and “"
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Times-Bold",
+          "fontSize" : 10,
+          "text" : "hold short"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "”"
+        }
+      ],
+      "text" : "must read back the entire clearance and “hold short”"
+    },
+    {
+      "rect" : [
+        284.99999999999994,
+        267.06640000000004,
+        237.05000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "instruction, to include runway identifier and your call sign."
+        }
+      ],
+      "text" : "instruction, to include runway identifier and your call sign."
+    },
+    {
+      "rect" : [
+        502.80099999999999,
+        32.334499999999998,
+        25.401139999999998,
+        13.677299999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialMT",
+          "fontSize" : 10.02,
+          "text" : "14-33"
+        }
+      ],
+      "text" : "14-33"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      35.030000000000001,
+      345.84199999999998,
+      238.35600000000002,
+      384.66700000000003
+    ],
+    [
+      283.25,
+      88.676299999999998,
+      241,
+      159.989
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        285.25,
+        72.330100000000016,
+        236.98270000000002,
+        10.811999999999998
+      ],
+      "text" : "Figure 14-50. A sound practice is to write down taxi instructions"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        285.25370000000004,
+        62.937100000000015,
+        38.007000000000005,
+        10.206000000000003
+      ],
+      "text" : "from ATC."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        327.95300000000003,
+        194.36000000000001,
+        10.812000000000012
+      ],
+      "text" : "Figure 14-49. Confusing runway/runway intersection."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        300.83600000000001,
+        236.98980000000006,
+        11.470000000000027
+      ],
+      "text" : "Since inattention and confusion often are factors contributing to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        288.33600000000001,
+        236.82209999999998,
+        11.470000000000027
+      ],
+      "text" : "runway incursion, it is important to remain extremely cautious"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        275.83600000000001,
+        236.98900000000003,
+        11.470200000000034
+      ],
+      "text" : "and maintain situational awareness (SA). When instructed to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        263.33620000000002,
+        237.00730000000004,
+        11.470000000000027
+      ],
+      "text" : "use a runway as a taxiway, do not become confused and take"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        250.83620000000002,
+        179.0942,
+        11.470000000000027
+      ],
+      "text" : "off on the runway you are using as a taxiway."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        225.26620000000003,
+        80.560000000000002,
+        13.189999999999998
+      ],
+      "text" : "ATC Instructions"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        212.83620000000002,
+        236.99399999999991,
+        11.469999999999999
+      ],
+      "text" : "Title 14 of the Code of Federal Regulations (14 CFR) part"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999993,
+        200.33620000000002,
+        236.81319999999994,
+        11.469999999999999
+      ],
+      "text" : "91, section 91.123 requires you to follow all ATC clearances"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999993,
+        187.83620000000002,
+        237.072,
+        11.469999999999999
+      ],
+      "text" : "and instructions. Request clarification if you are unsure of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        175.33620000000002,
+        236.99700000000007,
+        11.469999999999999
+      ],
+      "text" : "clearance or instruction to be followed. If you are unfamiliar"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.000000000000014,
+        162.83620000000002,
+        236.88100000000003,
+        11.469999999999999
+      ],
+      "text" : "with the airport or unsure of a taxi route, ask ATC for a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.000000000000028,
+        150.33620000000002,
+        236.99899999999988,
+        11.469999999999999
+      ],
+      "text" : "“progressive taxi.” Progressive taxi requires the controller"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.000000000000028,
+        137.83620000000002,
+        161.38000000000005,
+        11.469999999999999
+      ],
+      "text" : "to provide step-by-step taxi instructions."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.000000000000028,
+        112.83620000000002,
+        237.09699999999995,
+        11.469999999999999
+      ],
+      "text" : "The final decision to act on ATC’s instruction rests with you."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36.000000000000028,
+        100.33620000000001,
+        237.00099999999995,
+        11.470000000000013
+      ],
+      "text" : "If you cannot safely comply with any of ATC’s instructions,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        87.836200000000005,
+        236.97900000000016,
+        11.469999999999999
+      ],
+      "text" : "inform them immediately by using the word “UNABLE.”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        75.336200000000005,
+        236.98099999999994,
+        11.469999999999999
+      ],
+      "text" : "There is nothing wrong with telling a controller that you are"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        62.836200000000005,
+        173.57000000000005,
+        11.469999999999999
+      ],
+      "text" : "unable to safely comply with the clearance."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        719.56640000000004,
+        236.98199999999997,
+        11.470000000000027
+      ],
+      "text" : "Another way to mitigate the risk of runway incursions is to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        707.06640000000004,
+        236.98999999999978,
+        11.470000000000027
+      ],
+      "text" : "write down all taxi instructions as soon as they are received"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        694.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "text" : "from ATC. [Figure 14-50] It is also helpful to monitor ATC"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        682.06640000000004,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "text" : "clearances and instructions that are issued to other aircraft."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        669.56640000000004,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "text" : "You should be especially vigilant if another aircraft has a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        657.06640000000004,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "text" : "similar sounding call sign so there is no mistake about who"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        644.56640000000004,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "text" : "ATC is contacting or to whom they are giving instructions"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        632.06640000000004,
+        61.079999999999984,
+        11.470000000000027
+      ],
+      "text" : "and clearances."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        607.06640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "text" : "Read back your complete ATC clearance with your aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        594.56640000000004,
+        237.0120000000004,
+        11.470000000000027
+      ],
+      "text" : "call sign. This gives ATC the opportunity to clarify any"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        582.06640000000004,
+        236.84999999999991,
+        11.470000000000027
+      ],
+      "text" : "misunderstandings and ensure that instructions were given to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        569.56640000000004,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "text" : "the correct aircraft. If, at any time, there is uncertainty about"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        557.06640000000004,
+        237.00099999999998,
+        11.470000000000027
+      ],
+      "text" : "any ATC instructions or clearances, ask ATC to “say again”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        544.56640000000004,
+        156.09000000000003,
+        11.470000000000027
+      ],
+      "text" : "or ask for progressive taxi instructions."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        518.34340000000009,
+        89.169899999999984,
+        13.309999999999945
+      ],
+      "text" : "ATC Instructions—"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        374.16990000000004,
+        518.34340000000009,
+        60.935000000000002,
+        13.309999999999945
+      ],
+      "text" : "“Hold Short”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        504.56640000000004,
+        236.99499999999989,
+        11.470000000000027
+      ],
+      "text" : "The most important sign and marking on the airport is the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        492.06640000000004,
+        237.16000000000008,
+        11.470000000000027
+      ],
+      "text" : "hold sign and hold marking. These are located on a stub"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        479.56640000000004,
+        236.85599999999999,
+        11.470000000000027
+      ],
+      "text" : "taxiway leading directly to a runway. They depict the holding"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        467.06640000000004,
+        237.09999999999991,
+        11.470000000000027
+      ],
+      "text" : "position or the location where the aircraft is to stop so as not to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        454.56640000000004,
+        237,
+        11.470000000000027
+      ],
+      "text" : "enter the runway environment. [Figure 14-51] For example,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        442.06640000000004,
+        237.00700000000006,
+        11.470000000000027
+      ],
+      "text" : "Figure 14-52 shows the holding position sign and marking"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        429.56640000000004,
+        127.75999999999999,
+        11.470000000000027
+      ],
+      "text" : "for Runway 13 and Runway 31."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        404.27640000000002,
+        236.99000000000001,
+        12.019999999999982
+      ],
+      "text" : "When ATC issues a “hold short” clearance, you are"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        392.06640000000004,
+        237.06000000000017,
+        11.470000000000027
+      ],
+      "text" : "expected to taxi up to, but not cross any part of the runway"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        379.56640000000004,
+        236.84900000000016,
+        11.470000000000027
+      ],
+      "text" : "holding marking. At a towered airport, runway hold"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        367.06640000000004,
+        237.04500000000007,
+        11.470000000000027
+      ],
+      "text" : "markings should never be crossed without explicit ATC"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        354.56640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "text" : "instructions. Do not enter a runway at a towered airport"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        342.06640000000004,
+        236.99000000000024,
+        11.470000000000027
+      ],
+      "text" : "unless instructions are given from ATC to cross, takeoff"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        329.56640000000004,
+        212.00000000000011,
+        11.470000000000027
+      ],
+      "text" : "from, or “line up and wait” on that specific runway."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        304.56640000000004,
+        237.00600000000009,
+        11.470000000000027
+      ],
+      "text" : "ATC is required to obtain a read-back from the pilot of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        291.77640000000002,
+        236.97000000000003,
+        12.019999999999982
+      ],
+      "text" : "all runway “hold short” instructions. Therefore, you"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        279.27640000000002,
+        237,
+        12.019999999999982
+      ],
+      "text" : "must read back the entire clearance and “hold short”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        284.99999999999994,
+        267.06640000000004,
+        237.05000000000001,
+        11.470000000000027
+      ],
+      "text" : "instruction, to include runway identifier and your call sign."
+    },
+    {
+      "fontSize" : 10.02,
+      "monospaced" : false,
+      "rect" : [
+        502.80099999999999,
+        32.334499999999998,
+        25.401139999999998,
+        13.677299999999995
+      ],
+      "text" : "14-33"
+    }
+  ],
+  "page" : 367,
+  "paints" : [
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.029400000000003,
+        347.84500000000003,
+        234.35660000000001,
+        380.77700000000004
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.029400000000003,
+        347.84500000000003,
+        234.35660000000001,
+        380.77700000000004
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        36.817999999999998,
+        346.84100000000001,
+        236.09800000000001,
+        382.15899999999999
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.030000000000001,
+        347.81100000000004,
+        234.35600000000002,
+        380.69799999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.030000000000001,
+        347.81100000000004,
+        234.35600000000002,
+        380.69799999999998
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.030000000000001,
+        347.81100000000004,
+        234.35600000000002,
+        87.783199999999965
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.030000000000001,
+        347.81100000000004,
+        234.35600000000002,
+        87.783199999999965
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        148.90690000000001,
+        473.82999999999998,
+        10.601099999999974,
+        24.372000000000014
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        135.03580000000002,
+        473.82999999999998,
+        12.602000000000004,
+        24.372000000000014
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        121.1647,
+        473.82999999999998,
+        12.602000000000018,
+        24.372000000000014
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        109.294,
+        473.82999999999998,
+        10.601600000000005,
+        24.372000000000014
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        109.294,
+        473.82999999999998,
+        50.214000000000013,
+        24.372000000000014
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.630700000000004,
+        386.60150000000004,
+        42.700000000000003,
+        113.64400000000001
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        108.29300000000001,
+        517.68100000000004,
+        7.5999999999999943,
+        90.830000000000041
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        113.67500000000001,
+        517.68100000000004,
+        7.5999999999999943,
+        90.830000000000041
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        119.05800000000001,
+        517.68100000000004,
+        7.5999999999999943,
+        90.830000000000041
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        124.44,
+        517.68100000000004,
+        7.5999999999999943,
+        90.830000000000041
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        137.297,
+        517.68100000000004,
+        7.5999999999999943,
+        90.830000000000041
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        142.68000000000001,
+        517.68100000000004,
+        7.5999999999999943,
+        90.830000000000041
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        148.06200000000001,
+        517.68100000000004,
+        7.5999999999999943,
+        90.830000000000041
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        153.44500000000002,
+        517.68100000000004,
+        7.5999999999999943,
+        90.830000000000041
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        103.15100000000001,
+        505.19620000000009,
+        62.5,
+        223.31279999999992
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        104.02800000000001,
+        615.77700000000004,
+        60.603999999999999,
+        8.58299999999997
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        132.33000000000001,
+        684.16200000000003,
+        6.4259999999999877,
+        44.34699999999998
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        144.82980000000003,
+        397.27230000000003,
+        50.705999999999989,
+        46.25200000000001
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        224.29220000000001,
+        467.50310000000007,
+        47.093800000000016,
+        51.94599999999997
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        52.650600000000011,
+        347.81100000000004,
+        57.643000000000001,
+        19.347100000000012
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.030000000000001,
+        347.81100000000004,
+        231.43350000000001,
+        66.234299999999962
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        161.46200000000002,
+        451.44900000000001,
+        111.92400000000001,
+        279.06
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        179.16300000000001,
+        366.46500000000003,
+        94.223000000000013,
+        115.19199999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        35.030000000000001,
+        345.84199999999998,
+        36.671999999999997,
+        39.131000000000029
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        35.030000000000001,
+        405.28899999999999,
+        74.370999999999995,
+        281.73400000000004
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        103.151,
+        505.19960000000003,
+        4,
+        223.30939999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        161.46350000000001,
+        505.19660000000005,
+        4,
+        223.31239999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        35.030000000000001,
+        713.40000000000009,
+        44.349999999999994,
+        17.108999999999924
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.030000000000001,
+        683.08109999999999,
+        87.710899999999995,
+        18.825000000000045
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.030000000000001,
+        697.90610000000004,
+        99.300900000000013,
+        30.602899999999977
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.030000000000001,
+        697.90610000000004,
+        159.6789,
+        30.602899999999977
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.030000000000001,
+        413.5532,
+        37.658000000000001,
+        19.788000000000011
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.030000000000001,
+        713.25620000000004,
+        11.600300000000004,
+        4.1710000000000491
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        188.29650000000001,
+        717.58240000000001,
+        42.239000000000004,
+        10.926600000000008
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.030000000000001,
+        379.28730000000002,
+        9.1760000000000019,
+        5.6720000000000255
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.030000000000001,
+        682.72190000000001,
+        11.600300000000004,
+        4.1710000000000491
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        191.52420000000001,
+        466.15890000000002,
+        81.391799999999989,
+        75.562999999999988
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        202.63070000000005,
+        419.34019999999998,
+        70.28529999999995,
+        64.749000000000024
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        208.65880000000001,
+        366.58570000000003,
+        64.257199999999983,
+        17.689999999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        36.817999999999998,
+        346.84100000000001,
+        236.09800000000001,
+        382.15899999999999
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        59.404400000000003,
+        363.37099999999998,
+        41.707599999999992,
+        50.007000000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        59.404400000000003,
+        363.37099999999998,
+        41.707600000000006,
+        50.007000000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        99.364000000000004,
+        389.47399999999999,
+        4.5559999999999974,
+        4.7610000000000241
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        99.364599999999996,
+        389.47400000000005,
+        3.9844000000000079,
+        4.7620000000000005
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        82.320800000000006,
+        390.1062,
+        13.338999999999999,
+        25.828800000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        82.320800000000006,
+        390.1062,
+        13.338999999999999,
+        25.828800000000001
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        82.320400000000006,
+        390.11750000000001,
+        7.5139999999999958,
+        13.26400000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        82.320400000000006,
+        390.11750000000001,
+        7.5139999999999958,
+        13.26400000000001
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        82.31750000000001,
+        390.10240000000005,
+        7.5210000000000008,
+        13.324999999999989
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        82.31750000000001,
+        390.10240000000005,
+        7.5210000000000008,
+        13.324999999999989
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        82.335100000000011,
+        399.35059999999999,
+        6.9479999999999933,
+        16.584400000000016
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        82.335100000000011,
+        399.35059999999999,
+        6.9479999999999933,
+        16.584400000000016
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        82.328800000000015,
+        399.35329999999999,
+        6.9539999999999935,
+        16.581700000000012
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        82.328800000000015,
+        399.35329999999999,
+        6.9539999999999935,
+        16.581700000000012
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        83.989000000000004,
+        390.43400000000003,
+        9.1929999999999978,
+        25.452999999999975
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        83.989500000000007,
+        390.43400000000003,
+        9.1920000000000073,
+        25.451999999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        87.567999999999998,
+        390.89100000000002,
+        8.0919999999999987,
+        25.132999999999981
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        87.567300000000003,
+        390.89100000000002,
+        8.0930000000000035,
+        25.043999999999983
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        83.441000000000003,
+        412.12900000000002,
+        9.8610000000000042,
+        5.6820000000000164
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        83.440400000000011,
+        412.1284,
+        9.8619999999999948,
+        3.8066000000000031
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        83.460000000000008,
+        412.14600000000002,
+        9.8259999999999934,
+        5.4610000000000127
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        86.192000000000007,
+        413.19299999999998,
+        6.9119999999999919,
+        4.6100000000000136
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        83.2761,
+        363.80310000000003,
+        13.777000000000001,
+        27.352999999999952
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        83.2761,
+        363.80310000000003,
+        13.777000000000001,
+        27.352999999999952
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        83.294200000000004,
+        377.65370000000001,
+        7.5370000000000061,
+        13.091000000000008
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        83.294200000000004,
+        377.65370000000001,
+        7.5370000000000061,
+        13.091000000000008
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        83.29310000000001,
+        377.60860000000002,
+        7.5409999999999968,
+        13.149000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        83.29310000000001,
+        377.60860000000002,
+        7.5409999999999968,
+        13.149000000000001
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        84.020600000000002,
+        364.95940000000002,
+        8.8930000000000007,
+        16.661999999999978
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        84.020600000000002,
+        364.95940000000002,
+        8.8930000000000007,
+        16.661999999999978
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        84.01570000000001,
+        364.96710000000002,
+        8.8979999999999961,
+        16.665999999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        84.01570000000001,
+        364.96710000000002,
+        8.8979999999999961,
+        16.665999999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        84.831000000000003,
+        365.61700000000002,
+        10.283000000000001,
+        25.319999999999993
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        84.8309,
+        365.61660000000001,
+        10.283000000000001,
+        25.32000000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        89.484999999999999,
+        365.82499999999999,
+        7.4240000000000066,
+        25.331000000000017
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        89.485500000000002,
+        365.82429999999999,
+        7.4230000000000018,
+        25.33200000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        87.186000000000007,
+        363.80400000000003,
+        9.8859999999999957,
+        5.59699999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        87.185200000000009,
+        363.80370000000005,
+        9.8870000000000005,
+        5.59699999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        87.204999999999998,
+        363.80900000000003,
+        9.7360000000000042,
+        5.5859999999999559
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        89.959000000000003,
+        363.85399999999998,
+        6.9099999999999966,
+        4.6840000000000259
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.990000000000009,
+        387.10500000000002,
+        9.6969999999999885,
+        8.8379999999999654
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.989900000000006,
+        387.10520000000002,
+        9.359099999999998,
+        8.9200000000000159
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        67.819000000000003,
+        386.09800000000001,
+        30.519999999999996,
+        9.7040000000000077
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        67.819300000000013,
+        386.0985,
+        30.519999999999996,
+        9.7040000000000077
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        70.963000000000008,
+        386.12900000000002,
+        14.117999999999995,
+        8.3120000000000118
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        67.822000000000003,
+        386.255,
+        14.664000000000001,
+        7.4759999999999991
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        67.822400000000002,
+        386.2552,
+        14.664000000000001,
+        7.4759999999999991
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        61.881999999999998,
+        387.08300000000003,
+        10.381999999999998,
+        11.608000000000004
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        61.881999999999998,
+        387.08280000000002,
+        10.381999999999998,
+        11.710999999999956
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        62.810699999999997,
+        394.0403,
+        7.7750000000000057,
+        4.2900000000000205
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        64.1601,
+        387.67189999999999,
+        5.0870000000000033,
+        10.973000000000013
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        66.044600000000003,
+        388.63,
+        6.0210000000000008,
+        9.6349999999999909
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        62.064999999999998,
+        379.47199999999998,
+        10.25200000000001,
+        11.603000000000009
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        62.064599999999999,
+        379.47199999999998,
+        10.251999999999995,
+        11.604000000000042
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        63.896600000000007,
+        379.9144,
+        7.777000000000001,
+        4.2919999999999732
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        64.684399999999997,
+        379.67420000000004,
+        5.6159999999999997,
+        10.805000000000007
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        67.131500000000003,
+        380.18880000000001,
+        5.1380000000000052,
+        9.8229999999999791
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        59.515999999999998,
+        386.69900000000001,
+        14.274000000000008,
+        5.0010000000000332
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        59.516200000000005,
+        386.69960000000003,
+        14.273999999999994,
+        5.0289999999999964
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        79.988100000000003,
+        386.14130000000006,
+        17.444999999999993,
+        7.19399999999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        79.988100000000003,
+        386.14130000000006,
+        17.444999999999993,
+        7.19399999999996
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        79.9452,
+        388.26729999999998,
+        17.343000000000004,
+        7.3629999999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        79.9452,
+        388.26729999999998,
+        17.343000000000004,
+        7.3629999999999995
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        83.269999999999996,
+        389.05700000000002,
+        1.5714000000000112,
+        2.7679999999999723
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        83.269999999999996,
+        389.05700000000002,
+        1.5714000000000112,
+        2.7679999999999723
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        83.2697,
+        389.05700000000002,
+        1.571700000000007,
+        2.7679999999999723
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        91.582000000000008,
+        386.79000000000002,
+        6.0699999999999932,
+        8.8600000000000136
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.655000000000001,
+        389.411,
+        1.7797000000000054,
+        3.9289999999999736
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.655000000000001,
+        389.411,
+        1.7797000000000054,
+        3.9289999999999736
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.655000000000001,
+        389.411,
+        1.7797000000000054,
+        3.9289999999999736
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.971000000000004,
+        391.16200000000003,
+        1.4612999999999943,
+        0.36099999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.970800000000011,
+        391.16199999999998,
+        1.4614999999999867,
+        0.36200000000002319
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.654899999999998,
+        389.411,
+        1.7798000000000087,
+        3.9290000000000305
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        90.640799999999999,
+        386.68190000000004,
+        5.3100000000000023,
+        8.9340000000000259
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        90.640799999999999,
+        386.68190000000004,
+        5.3100000000000023,
+        8.9340000000000259
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        99.721000000000004,
+        389.26999999999998,
+        5.578000000000003,
+        5.1760000000000446
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        99.720500000000001,
+        389.26890000000003,
+        3.6285000000000025,
+        5.1779999999999973
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        99.702100000000002,
+        389.43700000000001,
+        3.6469000000000023,
+        4.5590000000000259
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        99.362000000000009,
+        390.33699999999999,
+        4.4789999999999992,
+        7.54200000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        99.362100000000012,
+        390.33630000000005,
+        3.9868999999999915,
+        7.5419999999999732
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        99.852000000000004,
+        386.42900000000003,
+        4.438999999999993,
+        7.3389999999999986
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        99.852100000000007,
+        386.42900000000003,
+        3.4968999999999966,
+        7.3389999999999986
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        59.404400000000003,
+        363.37099999999998,
+        43.944600000000001,
+        52.565000000000055
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.029400000000003,
+        367.375,
+        40.130599999999994,
+        48.773000000000025
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.029400000000003,
+        367.375,
+        40.130900000000004,
+        48.774000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        76.147000000000006,
+        387.94499999999999,
+        4.6880000000000024,
+        4.8369999999999891
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        76.147600000000011,
+        387.94560000000001,
+        3.9755999999999858,
+        4.8369999999999891
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        61.046399999999998,
+        392.30560000000003,
+        18.258999999999993,
+        25.489399999999989
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        61.046399999999998,
+        392.30560000000003,
+        18.258999999999993,
+        25.489399999999989
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        61.062900000000006,
+        394.16190000000006,
+        9.2970000000000041,
+        13.062999999999988
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        61.062900000000006,
+        394.16190000000006,
+        9.2970000000000041,
+        13.062999999999988
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        61.058600000000006,
+        394.12890000000004,
+        9.3140000000000001,
+        13.139999999999986
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        61.058600000000006,
+        394.12890000000004,
+        9.3140000000000001,
+        13.139999999999986
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        63.696799999999996,
+        402.79920000000004,
+        11.345000000000013,
+        14.995799999999974
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        63.696799999999996,
+        402.79920000000004,
+        11.345000000000013,
+        14.995799999999974
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        63.690899999999999,
+        402.78649999999999,
+        11.351000000000013,
+        15.008500000000026
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        63.690899999999999,
+        402.78649999999999,
+        11.351000000000013,
+        15.008500000000026
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        62.585000000000008,
+        393.04200000000003,
+        14.461999999999989,
+        24.974999999999966
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        62.584999999999994,
+        393.0412,
+        14.462000000000003,
+        24.753800000000012
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        67.084000000000003,
+        392.30599999999998,
+        11.688999999999993,
+        24.944000000000017
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        67.083600000000004,
+        392.30599999999998,
+        11.689000000000007,
+        24.944000000000017
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        69.381,
+        413.28199999999998,
+        9.9429999999999978,
+        6.3830000000000382
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        69.380200000000002,
+        413.28160000000003,
+        9.9440000000000026,
+        4.5133999999999901
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        69.403999999999996,
+        413.29200000000003,
+        9.6400000000000006,
+        6.3659999999999854
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        72.227000000000004,
+        414.13400000000001,
+        6.8010000000000019,
+        5.2369999999999663
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        55.622800000000005,
+        367.375,
+        16.726999999999997,
+        27.914300000000026
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        55.622800000000005,
+        367.375,
+        16.726999999999997,
+        27.914300000000026
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        57.509399999999999,
+        381.72650000000004,
+        9.1929999999999978,
+        13.548000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        57.509399999999999,
+        381.72650000000004,
+        9.1929999999999978,
+        13.548000000000002
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        57.496200000000002,
+        381.68350000000004,
+        9.2150000000000034,
+        13.605000000000018
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        57.496200000000002,
+        381.68350000000004,
+        9.2150000000000034,
+        13.605000000000018
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        55.976100000000002,
+        369.05689999999998,
+        7.5690000000000026,
+        17.287000000000035
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        55.976100000000002,
+        369.05689999999998,
+        7.5690000000000026,
+        17.287000000000035
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        55.972300000000004,
+        369.05710000000005,
+        7.5960000000000036,
+        17.288999999999987
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        55.972300000000004,
+        369.05710000000005,
+        7.5960000000000036,
+        17.288999999999987
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        57.381,
+        368.94100000000003,
+        12.579000000000008,
+        25.70799999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        57.380900000000004,
+        368.9418,
+        12.579000000000001,
+        25.708000000000027
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        59.969000000000001,
+        368.43099999999998,
+        12.381000000000007,
+        24.802999999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        59.969200000000001,
+        368.43060000000003,
+        12.381,
+        24.803999999999974
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        55.642000000000003,
+        366.60300000000001,
+        9.8780000000000072,
+        6.9340000000000259
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        55.642200000000003,
+        367.375,
+        9.8780000000000001,
+        6.1628000000000043
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        55.660000000000004,
+        367.32499999999999,
+        9.8449999999999918,
+        6.1949999999999932
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        58.352000000000004,
+        366.78800000000001,
+        6.7999999999999972,
+        5.15300000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        70.566000000000003,
+        386.59399999999999,
+        10.153999999999996,
+        9.6000000000000227
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        70.566000000000003,
+        386.59370000000001,
+        9.5570000000000022,
+        9.6000000000000227
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        45.698999999999998,
+        387.67700000000002,
+        30.192999999999998,
+        14.075999999999965
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        45.698999999999998,
+        387.6771,
+        30.192999999999998,
+        14.076000000000022
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        48.831000000000003,
+        391.48599999999999,
+        14.393000000000001,
+        9.1210000000000377
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        45.701000000000001,
+        392.846,
+        14.172000000000004,
+        8.9060000000000059
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        45.701099999999997,
+        392.84610000000004,
+        14.172000000000004,
+        8.9060000000000059
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        40.564,
+        397.52300000000002,
+        10.689,
+        12.278999999999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        40.563600000000001,
+        397.52340000000004,
+        10.689,
+        12.348000000000013
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        43.560200000000002,
+        404.31010000000003,
+        7.6310000000000002,
+        5.0729999999999791
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        42.959600000000002,
+        398.79760000000005,
+        7,
+        10.317999999999984
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        45.877200000000009,
+        398.50880000000001,
+        4.7849999999999966,
+        9.9329999999999927
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        39.145000000000003,
+        390.291,
+        11.058,
+        11.915999999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        39.145300000000006,
+        390.29130000000004,
+        11.058,
+        11.914999999999964
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        39.548000000000002,
+        390.72429999999997,
+        7.6330000000000027,
+        5.0710000000000264
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        41.026600000000002,
+        390.71510000000001,
+        5.5940000000000012,
+        10.935000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        42.668600000000005,
+        390.90070000000003,
+        7.1360000000000028,
+        9.2379999999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.869,
+        396.40600000000001,
+        13.920999999999999,
+        7.2880000000000109
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.8688,
+        396.40570000000002,
+        13.920999999999999,
+        7.2889999999999873
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        57.158200000000001,
+        388.12490000000003,
+        17.195,
+        9.7900000000000205
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        57.158200000000001,
+        388.12490000000003,
+        17.195,
+        9.7900000000000205
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        57.574200000000012,
+        390.09800000000001,
+        17.372999999999998,
+        9.3879999999999768
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        57.574200000000012,
+        390.09800000000001,
+        17.372999999999998,
+        9.3879999999999768
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        60.731000000000002,
+        394.04700000000003,
+        1.8346000000000018,
+        2.6829999999999927
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        60.731000000000002,
+        394.04700000000003,
+        1.8346000000000018,
+        2.6829999999999927
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        60.730600000000003,
+        394.04700000000003,
+        1.8350000000000009,
+        2.6829999999999927
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        68.207000000000008,
+        387.97700000000003,
+        7.0359999999999872,
+        8.8859999999999673
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        70.495000000000005,
+        390.459,
+        2.1432999999999964,
+        3.8709999999999809
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        70.495000000000005,
+        390.459,
+        2.1432999999999964,
+        3.8709999999999809
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        70.495000000000005,
+        390.459,
+        2.1432999999999964,
+        3.8709999999999809
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        71.093000000000004,
+        392.03100000000001,
+        1.4588999999999999,
+        0.64900000000000091
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        71.0929,
+        392.03100000000001,
+        1.4590000000000032,
+        0.64900000000000091
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        70.494799999999998,
+        390.459,
+        2.1435000000000031,
+        3.8709999999999809
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        67.317999999999998,
+        388.23820000000001,
+        6.2630000000000052,
+        8.9069999999999823
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        67.317999999999998,
+        388.23820000000001,
+        6.2630000000000052,
+        8.9069999999999823
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        76.388000000000005,
+        387.601,
+        5.6329999999999956,
+        5.2880000000000109
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        76.387799999999999,
+        387.60070000000002,
+        3.7352000000000061,
+        5.2880000000000109
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        76.450400000000002,
+        387.86510000000004,
+        3.6726000000000028,
+        4.5739999999999554
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        76.847999999999999,
+        388.74200000000002,
+        4.9039999999999964,
+        7.4470000000000027
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        76.848600000000005,
+        388.74279999999999,
+        3.2744,
+        7.4460000000000264
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        75.841000000000008,
+        384.93200000000002,
+        4.8149999999999977,
+        7.2760000000000105
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        75.841099999999997,
+        384.93099999999998,
+        4.2819000000000074,
+        7.2769999999999868
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.029400000000003,
+        367.375,
+        43.093799999999995,
+        50.420000000000016
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        91.821400000000011,
+        372.42000000000002,
+        42.198599999999971,
+        42.375
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        91.821400000000011,
+        372.42000000000002,
+        42.199600000000004,
+        42.375
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        121.886,
+        403.12099999999998,
+        4.855000000000004,
+        4.8740000000000236
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        121.88630000000001,
+        403.11950000000002,
+        4.855000000000004,
+        4.8760000000000332
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        95.240600000000001,
+        393.71560000000005,
+        24.001000000000005,
+        26.70999999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        95.240600000000001,
+        393.71560000000005,
+        24.001000000000005,
+        26.70999999999998
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        102.8888,
+        393.73220000000003,
+        11.850999999999999,
+        12.673999999999978
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        102.8888,
+        393.73220000000003,
+        11.850999999999999,
+        12.673999999999978
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        102.85850000000001,
+        393.72030000000001,
+        11.903999999999996,
+        12.720000000000027
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        102.85850000000001,
+        393.72030000000001,
+        11.903999999999996,
+        12.720000000000027
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        96.019800000000004,
+        400.6678,
+        12.367999999999995,
+        16.060000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        96.019800000000004,
+        400.6678,
+        12.367999999999995,
+        16.060000000000002
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        96.020600000000002,
+        400.66560000000004,
+        12.388000000000005,
+        16.062000000000012
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        96.020600000000002,
+        400.66560000000004,
+        12.388000000000005,
+        16.062000000000012
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        97.361000000000004,
+        394.89600000000002,
+        20,
+        22.920999999999992
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        97.359999999999999,
+        394.8947,
+        20.001000000000005,
+        22.923000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        99.381,
+        398.06400000000002,
+        19.859999999999999,
+        20.947999999999979
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        99.380700000000004,
+        398.06270000000001,
+        19.861000000000004,
+        20.949000000000012
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        95.257000000000005,
+        411.584,
+        9.0870000000000033,
+        8.4250000000000114
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        95.256900000000002,
+        411.58430000000004,
+        9.0870000000000033,
+        8.853999999999985
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        95.274000000000001,
+        411.60899999999998,
+        9.054000000000002,
+        8.2340000000000373
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        97.293000000000006,
+        414.029,
+        6.387999999999991,
+        5.9669999999999845
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        111.14620000000001,
+        375.30590000000001,
+        25.495999999999995,
+        25.459000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        111.14620000000001,
+        375.30590000000001,
+        25.495999999999995,
+        25.459000000000003
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        111.16629999999999,
+        384.37049999999999,
+        12.178000000000011,
+        12.369000000000028
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        111.16629999999999,
+        384.37049999999999,
+        12.178000000000011,
+        12.369000000000028
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        111.1576,
+        384.33620000000002,
+        12.216000000000008,
+        12.427000000000021
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        111.1576,
+        384.33620000000002,
+        12.216000000000008,
+        12.427000000000021
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.3519,
+        376.18430000000006,
+        15.363,
+        13.48399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.3519,
+        376.18430000000006,
+        15.363,
+        13.48399999999998
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.34729999999999,
+        376.1859,
+        15.367999999999995,
+        13.504000000000019
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.34729999999999,
+        376.1859,
+        15.367999999999995,
+        13.504000000000019
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        112.441,
+        377.464,
+        21.594999999999999,
+        21.631000000000029
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        112.44130000000001,
+        377.46420000000006,
+        21.594999999999999,
+        21.630999999999972
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        115.995,
+        379.25600000000003,
+        19.38900000000001,
+        21.508999999999958
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        115.99430000000001,
+        379.25640000000004,
+        19.389999999999986,
+        21.509000000000015
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        127.42400000000001,
+        375.31999999999999,
+        9.2340000000000089,
+        8.6980000000000359
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        127.42529999999999,
+        375.31890000000004,
+        9.2330000000000041,
+        8.6999999999999886
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        127.447,
+        375.33300000000003,
+        8.6680000000000064,
+        8.6719999999999686
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        130.02799999999999,
+        377.096,
+        6.231000000000023,
+        6.1960000000000264
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        116.633,
+        398.16700000000003,
+        10.654000000000011,
+        10.480999999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        116.63390000000001,
+        398.16770000000002,
+        10.653000000000006,
+        10.73399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        98.207000000000008,
+        381.85000000000002,
+        25.545000000000002,
+        23.838999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        98.207099999999997,
+        381.84970000000004,
+        25.545000000000016,
+        23.837999999999965
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        100.73,
+        384.262,
+        13.045000000000002,
+        12.465000000000032
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        98.209000000000003,
+        381.851,
+        12.710999999999999,
+        12.124000000000024
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        98.209100000000007,
+        381.85050000000001,
+        12.710999999999999,
+        12.124000000000024
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        89.932000000000002,
+        379.31299999999999,
+        12.674999999999997,
+        11.872000000000014
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        89.932699999999997,
+        379.31270000000001,
+        12.675000000000011,
+        12.141999999999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        90.435700000000011,
+        384.63999999999999,
+        6.8340000000000032,
+        6.5120000000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        91.933700000000002,
+        380.64160000000004,
+        7.769999999999996,
+        9.8919999999999959
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        92.877099999999999,
+        383.0718,
+        8.980000000000004,
+        7.7010000000000218
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        94.893000000000001,
+        373.529,
+        12.034000000000006,
+        12.833000000000027
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        94.892700000000005,
+        373.52870000000001,
+        12.034000000000006,
+        12.834000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        99.836100000000002,
+        374.0394,
+        6.8329999999999984,
+        6.5149999999999864
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        96.497600000000006,
+        375.30020000000002,
+        9.3990000000000009,
+        8.4470000000000027
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        99.101200000000006,
+        376.21320000000003,
+        7.1460000000000008,
+        9.3269999999999982
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        92.245999999999995,
+        376.79900000000004,
+        11.949000000000012,
+        10.809999999999945
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        92.246200000000002,
+        376.79920000000004,
+        11.948999999999998,
+        10.99799999999999
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        107.5849,
+        389.22230000000002,
+        15.364000000000004,
+        14.072000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        107.5849,
+        389.22230000000002,
+        15.364000000000004,
+        14.072000000000003
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        106.54590000000002,
+        390.42790000000002,
+        15.045999999999992,
+        14.41500000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        106.54590000000002,
+        390.42790000000002,
+        15.045999999999992,
+        14.41500000000002
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        109.985,
+        392.57400000000001,
+        2.2800000000000011,
+        2.5380000000000109
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        109.985,
+        392.57400000000001,
+        2.2800000000000011,
+        2.5380000000000109
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        109.985,
+        392.57400000000001,
+        2.2800000000000011,
+        2.5380000000000109
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        114.837,
+        396.46500000000003,
+        8.3319999999999936,
+        8.0859999999999559
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.464,
+        399.20100000000002,
+        3.0330000000000013,
+        3.2509999999999764
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.464,
+        399.20100000000002,
+        3.0330000000000013,
+        3.2509999999999764
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.464,
+        399.20100000000002,
+        3.0330000000000013,
+        3.2509999999999764
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        118.468,
+        400.38200000000001,
+        1.2489999999999952,
+        1.1469999999999914
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        118.468,
+        400.38200000000001,
+        1.2489999999999952,
+        1.1480000000000246
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.464,
+        399.20100000000002,
+        3.0330000000000013,
+        3.2509999999999764
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        114.1212,
+        395.82850000000002,
+        7.9140000000000015,
+        8.2599999999999909
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        114.1212,
+        395.82850000000002,
+        7.9140000000000015,
+        8.2599999999999909
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        122.01900000000001,
+        403.15800000000002,
+        5.7270000000000039,
+        5.450999999999965
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        122.0189,
+        403.15860000000004,
+        5.7270000000000039,
+        5.5950000000000273
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        122.3301,
+        403.32570000000004,
+        4.5060000000000002,
+        4.5259999999999536
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        119.738,
+        404.06200000000001,
+        6.4440000000000026,
+        6.589999999999975
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        119.73740000000001,
+        404.06060000000002,
+        6.4440000000000026,
+        6.5919999999999845
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        122.533,
+        401.21899999999999,
+        6.3689999999999856,
+        6.396000000000015
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        122.53350000000002,
+        401.21910000000003,
+        6.3679999999999808,
+        6.396000000000015
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        285.25,
+        90.677000000000007,
+        237,
+        155.98899999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        283.25,
+        88.676299999999998,
+        241,
+        159.989
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

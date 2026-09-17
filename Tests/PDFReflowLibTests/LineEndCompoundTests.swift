@@ -159,9 +159,10 @@ private func reconstructed(_ name: String) throws -> (blocks: [ReflowBlock], war
     // Page 220: note marker 178 set the line in note type, so its wrap opened a paragraph.
     let page220 = try reconstructed("911-220").blocks
     #expect(page220.contains { $0.text.contains("In March 2001, the CIA’s briefing slides for Rice were still describing") })
-    // Page 438: PDFKit split `the intel-` from its row.
+    // Page 438: PDFKit split `the intel-` from its row. Since #148 the row itself rejoins, so the
+    // break is inside the paragraph rather than between two blocks; either way it is one word.
     let page438 = try reconstructed("911-438").blocks
-    #expect(page438.contains { $0.text.hasPrefix("the intelligence establishment and be clearly accountable") })
+    #expect(page438.contains { $0.text.contains("of the intelligence establishment and be clearly accountable") })
     for (number, blocks) in [(147, page147), (220, page220), (438, page438)] {
         let texts = blocks.map(\.text)
         #expect(!texts.contains { $0.range(of: "[A-Za-z]- [a-z]", options: .regularExpression) != nil }, "\(number)")

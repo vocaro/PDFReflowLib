@@ -344,7 +344,10 @@ tree holds the anchor's last line and the continuation's first line in one parag
 with a capital, digit or quote in the anchor's type size on a first line that
 fills its column or closes its sentence; the previous text lacks
 terminal punctuation past closing quotes and superscript note markers; the previous paragraph's
-last line reads as prose and fills its column (a justified column's shared right edge, three
+last line reads as prose, or ends in a word break the book's own words resolve without a warning,
+which is evidence of its own whatever else the line carries (#148: Loper Bright page 11's
+`§§1854(d)(2)(B), 1862(b)(2)(E). And in general, it author-` is under half letters); it
+fills its column (a justified column's shared right edge, three
 quarters of a ragged column's measure, or a line-ending hyphen), or, before a lowercase opening,
 ends on a comma after a word in the page's body size, at least three words and twelve bodies wide
 (#145: FAA pages 221 and 438 set a text frame's last line short in print); the next paragraph's first line
@@ -396,6 +399,17 @@ page 288's `2000. They decided … he should be` over `found.`; FAA page 18's `P
 Florida businessman…`; #146); and it wraps an open list item at that item's hanging indent (NOAA's
 reference author lists, `S. Martinuzzi, A.D. Syphard, …`).
 The pieces of a prose row PDFKit splits at inline mathematics rejoin before classification (#95).
+The pieces of a prose row PDFKit splits rejoin before classification (#95, #148). Every such row
+reads as prose on its paragraph's measure; a row that carries no inline mathematics must be a full
+line of that measure, sharing both edges with the lines around it, and its text must run on across
+each junction: no junction wider than half the type size, and at each one the left piece leaves its
+sentence open or the right piece opens with a raised note marker, which closes the line it was
+raised over with no space (9/11 page 220's `…for the Cole.` and `178 In March 2001, the CIA's
+brief-`, page 438's `…to conduct oversight of` and `the intel-`). PDFKit measures a line from its
+first run, so a piece opening with such a marker carries the marker's size; a piece of that shape
+whose rectangle is the page's ordinary line at the body size is read as body type. Where either
+reading admits a row, no piece of the page may stand in one of its junctions, so a period PDFKit
+split from the marker after it keeps the pieces apart.
 A joined row whose radicand opens it with a minus sign before a number or variable (`− 1 √ , and
 it is…`) reads as prose, while a line that opens with a minus on its own keeps the list
 representation (#109). Paragraph lines attach at ordinary spacing, overlapping by up to 0.4 body
@@ -485,9 +499,36 @@ paragraph or list item ending in a hyphen after two letters joins the next block
 is a paragraph opening lowercase and opening no note, neither with a validated role other than
 a paragraph: the halves of one word cannot stand in two paragraphs, whatever split them (9/11
 page 220's `brief-` + `ing` after a detached note marker, page 438's `intel-` split from its
-row). The hyphen policy above decides that join, and the blocks stay apart where it has no
-evidence and would warn, since reading order can set a broken fragment beside the wrong
-neighbour (NOAA's `acidifica-` before `oceans, animal…`).
+row). Where the next block is not the continuation, the first later block on the page that is
+joins instead, provided its first line is the next line of the anchor's own column — directly
+beneath it, on its edge, in its type, with no line between — so a tinted box or figure read
+between the halves no longer cuts the word (#148, the Fed's sidebars on pages 22, 28, 56, 57 and
+80: `…banking insti-`, the box, then `tutions. Stress tests are required…`); the box keeps its
+place and follows the joined paragraph. The hyphen policy above decides that join, and the blocks
+stay apart where it has no evidence and would warn, since reading order can set a broken fragment
+beside the wrong neighbour (NOAA's `acidifica-` before `oceans, animal…`).
+A compound the source sets with a space after its hyphen, inside one printed line, closes up on
+the same evidence before reconstruction reads the page (#148): the run of letters and hyphens
+ending in `- `, which must open its word, joins when the book prints that compound as one word
+(the Fed's `check- collection` beside `check-collection`, the FAA's `low- wing`, `self- imposed`
+and `Service- Broadcast`). Both halves are letters, so a hyphen between numbers is never touched,
+and a suspended hyphen keeps its space because no book prints `low-and`. Failing that, an em dash
+the book itself sets between the same two tokens replaces the hyphen and its space, and only
+before a digit or a capital, since a suspended hyphen always carries on in lower case (FAA page
+73's `Commuter Category Airplanes- 14 CFR part 23` beside `Transport Category Airplanes—14 CFR
+part 25`). Vocabulary collection records such dash pairs under a key no word can hold.
+A book's line-end hyphen can also be lost in extraction (#157). PDFKit drops the glyph from some
+of Our Flag's justified lines, and the line's rectangle loses its advance with it, so the break
+reads as a word space. The measure of a type size on a native page is the line end most of its
+lines share — the commonest, not the furthest, since a line ending in the book's own hyphen
+overhangs it — when at least three lines and a quarter of that size's lines reach it. A line
+ending in a letter between a fifth and a half of its type size inside that measure lost a hyphen:
+the book's words then decide the break as they decide a printed one, and only a break the policy
+resolves by removing the hyphen closes up (`bom` + `barded` where the book prints `bombarded`;
+`real` + `ity`, which it never prints, keeps its space). Vocabulary collection skips the word
+after such a line as it skips the word after a printed hyphen, and carries the previous page's
+last line past a page's running heads and folios so a word a page break cut in half is skipped
+too. A recognized or synthetic page has no such measure.
 A book may print its line-end hyphen as another glyph. The 9/11 report's chapters 5–9 set every
 word break with the embedded Bembo's `equal` glyph (width 667, a two-bar outline, ToUnicode
 U+003D), so it extracts as `=` (#126). Extraction counts, over the book's native pages, lines

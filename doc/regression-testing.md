@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 2791 targeted checks on 508 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 2849 targeted checks on 527 reviewed pages
 across 21 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No. 14*, *Mineral Commodity
@@ -125,10 +125,10 @@ Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Ci
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*, *A
 Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace
 System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
-They comprise 1080 ordered-text, 193 text, 347 paragraph, 209 absent-text, 227 heading,
-20 heading-level, 44 absent-heading, 80 list-item, 1 preformatted-lines, 28 script, 6 absent-script,
-11 footnote, 34 note-link, 56 paragraph-continuation, 1 list-item-continuation,
-8 paragraph-separation, 80 distinct-paragraph, 179 image-presence, 42 page-reference, 88 warning,
+They comprise 1080 ordered-text, 201 text, 366 paragraph, 234 absent-text, 229 heading,
+20 heading-level, 44 absent-heading, 82 list-item, 1 preformatted-lines, 28 script, 6 absent-script,
+11 footnote, 34 note-link, 57 paragraph-continuation, 1 list-item-continuation,
+8 paragraph-separation, 81 distinct-paragraph, 179 image-presence, 42 page-reference, 88 warning,
 25 absent-warning, 17 source-region, 3 glyph-structure, 3 image-appearance and 9 table-cell checks,
 counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
@@ -560,7 +560,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->796 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->239 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->812 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->239 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -597,6 +597,22 @@ cover FBI serials within page 546 and across 550→551, with prose-compound, cit
 folio controls. The 9/11 contract checks the four recovered links, their pages' image counts, joined
 and kept breaks and serials. See the
 [equals-hyphen and code evidence](../measurements/equals-hyphen-and-codes/record.md).
+
+`SplitRowsAndLostHyphensTests.swift` covers
+[#148](https://github.com/vocaro/PDFReflowLib/issues/148) and item 1 of
+[#157](https://github.com/vocaro/PDFReflowLib/issues/157). 9/11 fixtures 145, 220 and 438 are rows
+PDFKit split outside mathematics, at a raised note marker or at a justified line's word space; FAA
+367 is the short split row that must not read as prose. Fed 22 is a paragraph a sidebar cuts,
+with `nextLineInColumn` asserted on the two halves; Loper Bright 11→12 is the cross-page word
+break whose anchor line is under half letters. Fed 95 and FAA 73 are mid-line compounds the source
+spaced, one closed on the book's own compound and one on the book's own em dash. Our Flag 5 and 9
+are line-end hyphens PDFKit lost, with `real ity` — which the book never prints joined — as the
+control. Synthetic rows, blocks, measures and vocabularies carry the negative controls: a junction
+wider than a word space, a sentence end, a piece of the page in the junction, a row short of the
+measure, a continuation in another column or with a line between, a suspended hyphen, a number, an
+address, a ragged column and a recognized page. The 9/11, Fed, Loper Bright, FAA and Our Flag
+contracts check the joined paragraphs and their spaced forms' absence. See the
+[split-row and lost-hyphen evidence](../measurements/split-rows-and-lost-hyphens/record.md).
 
 `InvisibleTextTests.swift` covers exclusively hidden OCR text, visible Courier and genuine
 font-size headings, mixed text modes, saved graphics state, nested forms and malformed modes.

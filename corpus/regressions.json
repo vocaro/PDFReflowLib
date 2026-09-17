@@ -953,6 +953,12 @@
           ],
           "absentHeadings": [
             "Figure 17-20. Self-imposed stress."
+          ],
+          "paragraphs": [
+            "many self-imposed stressors can limit night vision"
+          ],
+          "absentText": [
+            "self- imposed stressors"
           ]
         },
         {
@@ -1122,9 +1128,13 @@
         {
           "page": 12,
           "absentText": [
-            "xiii"
+            "xiii",
+            "Service- Broadcast"
           ],
-          "pageReference": false
+          "pageReference": false,
+          "text": [
+            "Flight Information Service-Broadcast (FIS-B)"
+          ]
         },
         {
           "page": 17,
@@ -1590,6 +1600,48 @@
           "page": 18,
           "paragraphs": [
             "P. E. Fansler, a Florida businessman living in St. Petersburg, approached Tom Benoist of the Benoist Aircraft Company"
+          ]
+        },
+        {
+          "page": 73,
+          "listItems": [
+            "Commuter Category Airplanes—14 CFR part 23"
+          ],
+          "absentText": [
+            "Airplanes- 14 CFR part 23"
+          ]
+        },
+        {
+          "page": 333,
+          "headings": [
+            "Flight Information Service-Broadcast (FIS-B)"
+          ],
+          "absentText": [
+            "Service- Broadcast"
+          ]
+        },
+        {
+          "page": 364,
+          "paragraphs": [
+            "pilot of a low-wing aircraft should momentarily lower"
+          ],
+          "absentText": [
+            "low- wing aircraft"
+          ]
+        },
+        {
+          "page": 367,
+          "distinctParagraphs": [
+            {
+              "first": "“Hold Short”",
+              "second": "The most important sign and marking on the airport"
+            }
+          ]
+        },
+        {
+          "page": 296,
+          "text": [
+            "Isobars help identify low- and high-pressure systems"
           ]
         }
       ]
@@ -3279,7 +3331,8 @@
         {
           "page": 111,
           "text": [
-            "such as high-frequency radios and ultra-high- and very-high-frequency"
+            "such as high-frequency radios and ultra-high- and very-high-frequency",
+            "ultra-high- and very-high-frequency"
           ]
         },
         {
@@ -3291,10 +3344,12 @@
         {
           "page": 220,
           "paragraphs": [
-            "In March 2001, the CIA’s briefing slides for Rice were still describing"
+            "In March 2001, the CIA’s briefing slides for Rice were still describing",
+            "responsible” for the Cole.178 In March 2001, the CIA’s briefing slides for Rice"
           ],
           "absentText": [
-            "brief- ing"
+            "brief- ing",
+            "for the Cole. 178 In March 2001"
           ]
         },
         {
@@ -3318,7 +3373,8 @@
         {
           "page": 438,
           "paragraphs": [
-            "the intelligence establishment and be clearly accountable for their work"
+            "the intelligence establishment and be clearly accountable for their work",
+            "to conduct oversight of the intelligence establishment and be clearly accountable"
           ],
           "absentText": [
             "intel- ligence"
@@ -3443,6 +3499,27 @@
           "page": 288,
           "paragraphs": [
             "2000. They decided that if Mihdhar was in the United States, he should be found."
+          ]
+        },
+        {
+          "page": 145,
+          "paragraphs": [
+            "after a leak to the Washington Times.105 This made it much more difficult"
+          ],
+          "absentText": [
+            "Washington Times. 105 This made it"
+          ]
+        },
+        {
+          "page": 254,
+          "paragraphs": [
+            "check with Atta to confirm that each had arrived.Hawsawi told"
+          ]
+        },
+        {
+          "page": 259,
+          "paragraphs": [
+            "the 9/11 attack.At the time of their travel through Iran, the al Qaeda operatives"
           ]
         }
       ]
@@ -4255,6 +4332,12 @@
           "page": 95,
           "headings": [
             "What is check truncation?"
+          ],
+          "paragraphs": [
+            "from the check-collection system (called check truncation)"
+          ],
+          "absentText": [
+            "check- collection system"
           ]
         },
         {
@@ -4335,6 +4418,72 @@
           "page": 92,
           "paragraphs": [
             "since the Federal Reserve was established in 1913. At that time, cash and checks were the predominant means of payment."
+          ]
+        },
+        {
+          "page": 22,
+          "listItems": [
+            "stress tests of banking institutions. Stress tests are required under the Dodd-Frank"
+          ],
+          "absentText": [
+            "banking insti- More on Federal Reserve Advisory Councils"
+          ],
+          "headings": [
+            "More on Federal Reserve Advisory Councils"
+          ]
+        },
+        {
+          "page": 28,
+          "paragraphs": [
+            "to a level lower than previously expected. Conversely, short-term interest"
+          ],
+          "absentText": [
+            "lower than previ- Monetary policy"
+          ]
+        },
+        {
+          "page": 56,
+          "paragraphs": [
+            "repurchase agreements (or “repos”), asset-backed commercial paper"
+          ],
+          "absentText": [
+            "asset- Monitoring leverage in the nonbank sector"
+          ]
+        },
+        {
+          "page": 57,
+          "paragraphs": [
+            "In the case of individual institutions, the Federal Reserve may take more direct action"
+          ],
+          "absentText": [
+            "individual in- Microprudential supervision"
+          ]
+        },
+        {
+          "page": 80,
+          "paragraphs": [
+            "to adapt the nation’s banking laws to respond to changes in the marketplace"
+          ],
+          "absentText": [
+            "banking laws to re- Finding orders and agreements online"
+          ]
+        },
+        {
+          "page": 96,
+          "paragraphs": [
+            "check-collection processes becoming almost entirely electronic"
+          ],
+          "absentText": [
+            "check- collection processes"
+          ]
+        },
+        {
+          "page": 118,
+          "paragraphs": [
+            "consumer- and community-oriented laws commensurate with their size"
+          ],
+          "absentText": [
+            "community- oriented laws"
           ]
         }
       ]
@@ -4582,10 +4731,13 @@
           "page": 5,
           "paragraphs": [
             "During the night of September 13, 1814",
-            "watched the attack from the deck of a British prisoner-exchange ship"
+            "watched the attack from the deck of a British prisoner-exchange ship",
+            "the British fleet bombarded"
           ],
           "absentText": [
-            "D uring the night"
+            "D uring the night",
+            "fleet bom barded",
+            "ceased on the follow ing"
           ],
           "distinctParagraphs": [
             {
@@ -4596,6 +4748,9 @@
               "first": "Years later, Key told a hometown audience",
               "second": "I saw the flag of my country waving"
             }
+          ],
+          "text": [
+            "ceased on the following"
           ]
         },
         {
@@ -4628,7 +4783,8 @@
             "life of your flag depends on your care.",
             "size of the flag is determined by the exposed height",
             "The life of your flag depends on your care.",
-            "The size of the flag is determined by the exposed height"
+            "The size of the flag is determined by the exposed height",
+            "Dirt can cut fabrics"
           ],
           "headings": [
             "Care of Your Flag",
@@ -4636,7 +4792,8 @@
           ],
           "absentText": [
             "T he life",
-            "T he size"
+            "T he size",
+            "cut fab rics"
           ]
         },
         {
@@ -4760,12 +4917,16 @@
             "sometimes referred to as the Congress Colors"
           ],
           "paragraphs": [
-            "first flag of the colonists to have any resemblance to the"
+            "first flag of the colonists to have any resemblance to the",
+            "13 stripes, alternately"
           ],
           "headings": [
             "The Grand Union Flag"
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "absentText": [
+            "stripes, alter nately"
+          ]
         },
         {
           "page": 30,
@@ -4817,10 +4978,15 @@
         {
           "page": 47,
           "paragraphs": [
-            "On July 4, 1776, the Continental Congress passed a resolution"
+            "On July 4, 1776, the Continental Congress passed a resolution",
+            "each element has a specific meaning"
           ],
           "absentText": [
-            "O n July"
+            "O n July",
+            "a specific mean ing"
+          ],
+          "text": [
+            "did not become a real ity"
           ]
         },
         {
@@ -4874,6 +5040,35 @@
           "text": [
             "JOHN T. DOOLITTLE, Representative from California",
             "THAD COCHRAN, Senator from Mississippi"
+          ]
+        },
+        {
+          "page": 22,
+          "absentText": [
+            "staff pro jecting",
+            "is suspend ed over a sidewalk"
+          ],
+          "text": [
+            "staff projecting",
+            "is suspended over a sidewalk"
+          ]
+        },
+        {
+          "page": 46,
+          "paragraphs": [
+            "a new flag to symbolize"
+          ],
+          "absentText": [
+            "flag to sym bolize"
+          ]
+        },
+        {
+          "page": 52,
+          "absentText": [
+            "BY THE PEO PLE"
+          ],
+          "text": [
+            "OF THE PEOPLE, BY THE PEOPLE, FOR THE PEOPLE"
           ]
         }
       ]
@@ -5593,6 +5788,18 @@
           "page": 73,
           "paragraphs": [
             "Relentless Tr. 102. But, in truth, the Constitution, the APA, and our longstanding precedents"
+          ]
+        },
+        {
+          "page": 11,
+          "continuedParagraphs": [
+            {
+              "end": "1862(b)(2)(E). And in general, it author",
+              "next": "izes the Secretary to impose “sanctions”"
+            }
+          ],
+          "absentText": [
+            "it author- izes"
           ]
         }
       ]

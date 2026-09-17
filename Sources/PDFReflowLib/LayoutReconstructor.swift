@@ -4,7 +4,8 @@ import CoreGraphics
 enum LayoutReconstructor {
     static func vocabulary(in pages: [PageContent]) -> Set<String> {
         var result: Set<String> = []
-        for page in pages { addVocabulary(of: page, to: &result) }
+        var previous: String?
+        for page in pages { addVocabulary(of: page, to: &result, after: &previous) }
         return result
     }
 
@@ -16,7 +17,27 @@ enum LayoutReconstructor {
     /// there keeps its own unbroken hyphen (`straight-` + `and-level`), so it still counts.
     static func addVocabulary(of page: PageContent, to vocabulary: inout Set<String>) {
         var previous: String?
+        addVocabulary(of: page, to: &vocabulary, after: &previous)
+    }
+
+    /// `previous` carries the last line of the page before this one and comes back holding this
+    /// page's last line, so a word the page break cut in half is skipped as a word a line break
+    /// cut in half is (#148). A page's head matter — a running head, an opinion line, a folio —
+    /// stands outside the text stream and neither breaks the word nor carries it on, so the lines
+    /// before this page's first body-sized line leave the carried line standing (Loper Bright page
+    /// 11 ends `…And in general, it author-`; page 12 sets `4 LOPER BRIGHT ENTERPRISES v.
+    /// RAIMONDO` and `Opinion of the Court` over `izes the Secretary…`, and `izes` is no word).
+    static func addVocabulary(of page: PageContent, to vocabulary: inout Set<String>,
+                              after previous: inout String?) {
+        let body = max(4, bodySize(page.lines))
+        // A line the extractor lost its hyphen from broke a word too, so the next line opens with
+        // a fragment and not a word (#157: `alter` over `nately`). It is carried with the hyphen
+        // the page printed, so the fragment rule below reads it as any other break. Only a native
+        // page has a measure to read this from (`blocks`).
+        let measures = page.recognized || page.hasSyntheticTextStyle ? [:] : justifiedMeasures(page.lines)
+        var reachedBody = false
         for line in page.lines {
+            let isBody = abs(line.fontSize - body) <= body * 0.15
             var words = line.text.lowercased().split(whereSeparator: { !$0.isLetter && $0 != "-" })
             if let previous, previous.hasSuffix("-") || previous.hasSuffix("\u{00ad}") || endsWithEqualsHyphen(previous),
                line.text.first?.isLowercase == true, let first = words.first, !first.contains("-") {
@@ -36,7 +57,11 @@ enum LayoutReconstructor {
             }
             addAddressVocabulary(of: line.text, to: &vocabulary)
             addNumberPrefixVocabulary(of: line.text, to: &vocabulary)
-            previous = line.text
+            addDashVocabulary(of: line.text, to: &vocabulary)
+            if isBody { reachedBody = true }
+            if reachedBody {
+                previous = line.text + (endsShortOfMeasure(line, measures: measures) ? "-" : "")
+            }
         }
     }
 
@@ -184,6 +209,86 @@ enum LayoutReconstructor {
         }
     }
 
+    /// A compound the source sets with a space after its hyphen, inside one printed line
+    /// (#148): the Fed's `check- collection` (pages 95 and 96) and `community- oriented` (118),
+    /// the FAA's `low- wing` (364), `self- imposed` (447) and `Service- Broadcast` (12 and 333).
+    /// No line-end rule reaches these, because no line ends there. The book's own setting decides,
+    /// as it decides a line-end hyphen: the hyphen closes up when the book prints the compound as
+    /// one word elsewhere (`check-collection` 7 times, `low-wing` 6, `self-imposed` 6).
+    ///
+    /// Both halves are letters, so a hyphen between numbers is never touched: `12- 15`, a fraction
+    /// or a subtraction, can be no vocabulary word, since word splitting reads letters and hyphens
+    /// alone. A suspended hyphen keeps its space for the same reason — the book never prints
+    /// `low-and` beside `low- and moderate-income`, `consumer-and` or `ultra-high-and`.
+    ///
+    /// Failing that, the book may print an em dash where this line prints a hyphen: the FAA's
+    /// `Commuter Category Airplanes- 14 CFR part 23` stands among `Transport Category
+    /// Airplanes—14 CFR part 25` and `Normal Category—14 CFR part 27` (page 73). The dash the book
+    /// sets between the same two words replaces the hyphen and its space. Nothing is normalized
+    /// without one of these two kinds of evidence, so a source typo the book never resolves stays
+    /// as printed.
+    static func closeSpacedCompounds(_ page: inout PageContent, vocabulary: Set<String>) {
+        for index in page.lines.indices {
+            guard page.lines[index].text.contains("- ") else { continue }
+            var elements = page.lines[index].content.elements
+            var changed = false
+            for position in elements.indices {
+                guard case let .text(value, style) = elements[position] else { continue }
+                guard let replacement = closingSpacedCompounds(value, vocabulary: vocabulary) else { continue }
+                elements[position] = .text(replacement, style)
+                changed = true
+            }
+            if changed { page.lines[index].replaceContent(InlineText(elements: elements)) }
+        }
+    }
+
+    /// `text` with every evidenced `x- y` closed up, or nil where none is (`closeSpacedCompounds`).
+    /// The left half is the run of letters and hyphens ending at the hyphen; it must open the word
+    /// (nothing but whitespace, an opening bracket or a quote stands before it), so no break inside
+    /// a web address is read. The book's own compound decides first, over the halves' letters
+    /// alone; then the book's own em dash, over letters or digits, and only before a digit or a
+    /// capital, since a dash joins a name to a number or to another name (`Airplanes—14`) while a
+    /// suspended hyphen always carries on in lower case (NOAA prints `region- and scale-dependent`
+    /// on one page and, in a parenthetical elsewhere, `region—and`).
+    static func closingSpacedCompounds(_ text: String, vocabulary: Set<String>) -> String? {
+        let opening = Set(" \t\u{a0}([{\u{201C}\u{2018}\"'")
+        let characters = Array(text)
+        var result = ""
+        var index = 0
+        var changed = false
+        while index < characters.count {
+            defer { index += 1 }
+            guard characters[index] == "-", index + 1 < characters.count, characters[index + 1] == " " else {
+                result.append(characters[index])
+                continue
+            }
+            let left = String(characters[..<index].reversed().prefix(while: { $0.isLetter || $0 == "-" }).reversed())
+            let rest = characters[(index + 2)...]
+            let letters = String(rest.prefix(while: \.isLetter))
+            let coded = String(rest.prefix(while: { $0.isLetter || $0.isNumber }))
+            let before = characters[..<(index - left.count)].last
+            func closes(_ right: String) -> Bool {
+                rest.dropFirst(right.count).first.map { !$0.isLetter && !$0.isNumber && $0 != "-" } ?? true
+            }
+            guard left.count >= 2, left.first?.isLetter == true, before.map(opening.contains) ?? true else {
+                result.append(characters[index])
+                continue
+            }
+            if letters.count >= 2, closes(letters), vocabulary.contains((left + "-" + letters).lowercased()) {
+                result.append("-")
+            } else if coded.first.map({ $0.isNumber || $0.isUppercase }) ?? false, closes(coded),
+                      vocabulary.contains(dashKey + (left + "\u{2014}" + coded).lowercased()) {
+                result.append("\u{2014}")
+            } else {
+                result.append(characters[index])
+                continue
+            }
+            changed = true
+            index += 1
+        }
+        return changed ? result : nil
+    }
+
     /// Words the book sets as a compound's first half before a number, inside a line (`mid-1980s`,
     /// `pre-9/11`), for a line-end hyphen before a digit (#131). Word splitting drops the digits,
     /// so `mid-1980s` would leave only `mid-`, which every line ending `mid-` leaves too; the
@@ -195,6 +300,20 @@ enum LayoutReconstructor {
             guard characters[index + 1].isASCII, characters[index + 1].isNumber else { continue }
             let word = characters[..<index].reversed().prefix(while: \.isLetter)
             if !word.isEmpty { vocabulary.insert(numberPrefixKey + String(word.reversed()).lowercased()) }
+        }
+    }
+
+    /// Pairs the book sets around an em dash with no space (`Airplanes—14`), for a mid-line hyphen
+    /// the source printed where its neighbours print a dash (#148). The entries sit under a prefix
+    /// no word can hold, because a word's own split drops the dash and the digits beside it.
+    static func addDashVocabulary(of text: String, to vocabulary: inout Set<String>) {
+        guard text.contains("\u{2014}") else { return }
+        let characters = Array(text)
+        for index in characters.indices where characters[index] == "\u{2014}" {
+            let left = characters[..<index].reversed().prefix(while: { $0.isLetter || $0.isNumber })
+            let right = characters[(index + 1)...].prefix(while: { $0.isLetter || $0.isNumber })
+            guard left.count >= 2, !right.isEmpty else { continue }
+            vocabulary.insert(dashKey + (String(left.reversed()) + "\u{2014}" + String(right)).lowercased())
         }
     }
 
@@ -408,12 +527,27 @@ enum LayoutReconstructor {
     /// first, only while every piece of the growing row still shares a band at least half a font
     /// size tall: the pieces of one row all hold its baseline, whereas a chain through a tall piece
     /// reaches the next row (page 198's `then combine like terms …` beneath `− 8xy + 21xy− 14y2 and`,
-    /// page 212's `12x3 + 32x. …` beneath `− 3x + 8) = 8x4`). A joined row must carry
-    /// inline mathematics (a radical, operator or relation sign in one of its pieces: page 288's
-    /// `squares" a number. For example, because 52` and `= 25 we say …` split at the raised 2) and
-    /// read as prose on its paragraph's measure (`isProseRow`), so table rows, exercise columns and
-    /// a two-column page's rows stay apart, and a stray same-size digit beside a line end is left
-    /// to the rules that already read it.
+    /// page 212's `12x3 + 32x. …` beneath `− 3x + 8) = 8x4`). Every joined row must read as prose
+    /// on its paragraph's measure (`isProseRow`), so table rows, exercise columns and a two-column
+    /// page's rows stay apart, and a stray same-size digit beside a line end is left to the rules
+    /// that already read it. Beyond that a row qualifies in one of two ways.
+    ///
+    /// It carries inline mathematics: a radical, operator or relation sign in one of its pieces
+    /// (page 288's `squares" a number. For example, because 52` and `= 25 we say …`, split at the
+    /// raised 2).
+    ///
+    /// Or its text simply runs on across the split (#148). PDFKit splits a prose row at a raised
+    /// note marker (9/11 page 220's `that al-Qida was responsible” for the Cole.` and `178 In March
+    /// 2001, the CIA’s brief-`) and, on a justified line, at a stretched word space (page 438's
+    /// `…to conduct oversight of` and `the intel-`, 4.2 points apart). Each piece then opened a
+    /// paragraph of its own, cutting the sentence and stranding the word break at the row's end.
+    /// Such a row's pieces stand at most half a font size apart — narrower than any gutter, and
+    /// narrower than the word spaces PDFKit itself keeps — and at each junction the left piece
+    /// leaves its sentence open or the right piece opens with a raised note marker. A marker
+    /// closes the line it was raised over with no space, as a detached marker does; every other
+    /// junction is a word space. PDFKit reports a piece that opens with a raised marker at the
+    /// marker's size, so a piece of that shape whose rectangle is the page's ordinary line at the
+    /// body size is read as body type (`typeSize`).
     ///
     /// The joined line reads its pieces left to right by centre, keeps their styles, and occupies
     /// one line of its type: from the highest bottom edge among the pieces, as tall as the page's
@@ -432,18 +566,29 @@ enum LayoutReconstructor {
 
     static func joinedRows(_ lines: [TextLine], images: [CGRect], body: CGFloat)
         -> (lines: [TextLine], mathMinusRows: [TextLine]) {
+        let ordinary = ordinaryLineHeight(body, in: lines)
+        // A piece that opens with a raised note marker carries the marker's size, because PDFKit
+        // measures the line from its first run (9/11 page 220's 7.175-point
+        // `178 In March 2001, the CIA’s brief-`). Its type is the body it sets, which its
+        // rectangle — an ordinary line of that body — still shows.
+        func typeSize(_ line: TextLine) -> CGFloat {
+            guard line.fontSize < body * 0.8, raisedNoteNumber(line.content) != nil, let ordinary,
+                  abs(line.rect.height - ordinary) <= ordinary * 0.15 else { return line.fontSize }
+            return body
+        }
         let sized = lines.indices.filter { index in
             let line = lines[index]
-            return line.structure == nil && !line.monospaced && abs(line.fontSize - body) <= body * 0.15
+            return line.structure == nil && !line.monospaced && abs(typeSize(line) - body) <= body * 0.15
                 && !line.text.trimmingCharacters(in: .whitespaces).isEmpty
         }
         guard sized.count >= 2 else { return (lines, []) }
         func signed(_ text: Substring) -> Bool { text.rangeOfCharacter(from: rowMathSymbols) != nil }
         func word(_ token: Substring) -> Bool { token.filter(\.isLetter).count >= 2 }
         func candidate(_ a: TextLine, _ b: TextLine) -> Bool {
-            guard sameRow(a.rect, b.rect), abs(a.fontSize - b.fontSize) <= max(a.fontSize, b.fontSize) * 0.1 else { return false }
+            guard sameRow(a.rect, b.rect),
+                  abs(typeSize(a) - typeSize(b)) <= max(typeSize(a), typeSize(b)) * 0.1 else { return false }
             let (left, right) = a.rect.midX <= b.rect.midX ? (a, b) : (b, a)
-            let size = max(a.fontSize, b.fontSize)
+            let size = max(typeSize(a), typeSize(b))
             let gap = right.rect.minX - left.rect.maxX
             if gap >= 0 {
                 guard gap <= size * 1.5 else { return false }
@@ -513,11 +658,43 @@ enum LayoutReconstructor {
         var mathMinusRows: [TextLine] = []
         for cluster in clusters {
             let pieces = cluster.sorted { lines[$0].rect.midX < lines[$1].rect.midX }
-            guard pieces.contains(where: { lines[$0].text.rangeOfCharacter(from: rowMathSymbols) != nil }),
-                  isProseRow(pieces: pieces.map { lines[$0] }, in: lines, body: body) else { continue }
+            let math = pieces.contains { lines[$0].text.rangeOfCharacter(from: rowMathSymbols) != nil }
+            // A junction a raised note marker made: the marker closes the line to its left with
+            // no space, exactly as a marker PDFKit detached past the line's end does. A raised
+            // term inside mathematics is not one; those rows meet at a space, as they always have.
+            func closesWithMarker(_ right: Int) -> Bool { !math && raisedNoteNumber(lines[right].content) != nil }
+            // Where this reading admits a row #95's did not — a row outside mathematics, or a
+            // piece PDFKit measured at its raised marker's size — no piece of the page may stand
+            // in one of its junctions (#148): NOAA page 145 sets `…0.7 W/m2`, `.` and the raised
+            // `2 Since NCA4, the` as three pieces of one row, and joining the outer two would
+            // carry the period past the end of the line. A row of mathematics that #95 already
+            // read joins as it always has, since a radical's pieces routinely overlap the terms
+            // beside them.
+            let widened = !math || pieces.contains { typeSize(lines[$0]) != lines[$0].fontSize }
+            let clear = zip(pieces, pieces.dropFirst()).allSatisfy { left, right in
+                let (start, end) = (lines[left].rect.maxX, lines[right].rect.minX)
+                return !lines.indices.contains { other in
+                    !cluster.contains(other) && sameRow(lines[other].rect, lines[left].rect)
+                        && lines[other].rect.maxX > start && lines[other].rect.minX < end
+                }
+            }
+            // The row's text runs on across each junction: no junction is wider than the word
+            // space a justified line's piece ends with, and the left piece leaves its sentence
+            // open or the right piece opens with a raised note marker.
+            let runsOn = zip(pieces, pieces.dropFirst()).allSatisfy { left, right in
+                lines[right].rect.minX - lines[left].rect.maxX <= typeSize(lines[right]) * 0.5
+                    && (!endsSentence(lines[left].content) || closesWithMarker(right))
+            }
+            // Outside mathematics the row must also be a full line of its justified paragraph,
+            // sharing both edges with the lines around it. A short row that merely sits on a
+            // paragraph's edge is something else set beside it: the FAA's heading `ATC
+            // Instructions—` and `“Hold Short”`, two pieces of one row over the body text.
+            guard math || runsOn, !widened || clear,
+                  isProseRow(pieces: pieces.map { lines[$0] }, in: lines, body: body, fillingItsMeasure: !math)
+            else { continue }
             var content = InlineText()
-            for index in pieces {
-                if !content.elements.isEmpty { content.append(InlineText(" ")) }
+            for (position, index) in pieces.enumerated() {
+                if position > 0, !closesWithMarker(index) { content.append(InlineText(" ")) }
                 content.append(lines[index].content)
             }
             // The joined row must not turn into a list line that its opening piece was not, unless
@@ -532,9 +709,10 @@ enum LayoutReconstructor {
             let first = lines[pieces[0]], last = lines[pieces[pieces.count - 1]]
             let bounds = union(pieces.map { lines[$0].rect })
             let bottom = pieces.map { lines[$0].rect.minY }.max() ?? bounds.minY
-            let height = min(bounds.maxY - bottom, ordinaryLineHeight(first.fontSize, in: lines) ?? first.rect.height)
+            let size = typeSize(first)
+            let height = min(bounds.maxY - bottom, ordinaryLineHeight(size, in: lines) ?? first.rect.height)
             var joined = TextLine(content: content, rect: CGRect(x: bounds.minX, y: bottom, width: bounds.width, height: height),
-                                  fontSize: first.fontSize, wraps: last.wraps)
+                                  fontSize: size, wraps: last.wraps)
             if pieces.contains(where: { lines[$0].readingRect != nil }) {
                 joined.readingRect = union(pieces.map { lines[$0].readingRect ?? lines[$0].rect })
             }
@@ -1365,7 +1543,10 @@ enum LayoutReconstructor {
     }
 
     /// `isProseRow` for a row whose pieces are already known; the first piece stands for the row.
-    private static func isProseRow(pieces row: [TextLine], in lines: [TextLine], body: CGFloat) -> Bool {
+    /// `fillingItsMeasure` drops the weaker reading, where an adjacent full line merely shares one
+    /// of the row's edges: the row itself must be a full line of its paragraph (#148).
+    private static func isProseRow(pieces row: [TextLine], in lines: [TextLine], body: CGFloat,
+                                   fillingItsMeasure: Bool = false) -> Bool {
         guard let line = row.first else { return false }
         let text = row.map(\.text).joined(separator: " ")
         // A row whose pieces stand at least twice their type size stacks terms (fractions,
@@ -1390,6 +1571,7 @@ enum LayoutReconstructor {
             return sharing.count >= 3 || (sharing.count == 2 && sharing.contains { adjacent($0.rect, rect) })
         }
         if fullLine(bounds, excluding: row) { return true }
+        guard !fillingItsMeasure else { return false }
         return prose.contains { other in
             !row.contains(other) && fullLine(other.rect, excluding: [other])
                 && !sameRow(other.rect, line.rect) && adjacent(other.rect, bounds)
@@ -2499,6 +2681,11 @@ enum LayoutReconstructor {
                                                images: images.map(\.0), body: body)
         // A list line, except a joined prose row whose apparent marker is a minus sign (#109).
         func listLine(_ line: TextLine) -> Bool { isList(line.text) && !mathMinusRows.contains(line) }
+        // The flush edge of each size, for the line-end hyphens PDFKit loses (#157). Only a native
+        // page has one: a recognized line's quadrilateral is the ink Vision read, which says
+        // nothing about the advance a dropped hyphen would have taken, and a synthetic layer's
+        // typography is not the page's either.
+        let measures = page.recognized || page.hasSyntheticTextStyle ? [:] : justifiedMeasures(free)
         // Preserve existing modest-size headings, but reject candidates within 10% of the
         // supported reflowable body size. This only narrows the original page-size heuristic.
         // Small text inside reflowed boxes and tables does not lower the body estimate, so a
@@ -3477,8 +3664,14 @@ enum LayoutReconstructor {
                     opening = (line, evidencedOpening)
                     paragraphFirst = line
                 } else {
-                    paragraph = join(paragraph, line.content, vocabulary: vocabulary,
-                        page: page.number, warnings: &warnings)
+                    // A line-end hyphen the extractor never saw closes up with no space (#157).
+                    if let prev = previous, lostLineEndHyphen(prev, line, measures: measures,
+                                                              vocabulary: vocabulary) {
+                        paragraph.append(line.content)
+                    } else {
+                        paragraph = join(paragraph, line.content, vocabulary: vocabulary,
+                            page: page.number, warnings: &warnings)
+                    }
                     // The drop-cap line stays the opening while the lines beside its initial follow.
                     if opening?.line.readingRect == nil { opening = nil }
                 }
@@ -3492,7 +3685,7 @@ enum LayoutReconstructor {
         joinWrappedCaptionLines(&result, page: page, body: body, vocabulary: vocabulary, warnings: &warnings)
         joinColumnContinuations(&result, page: page, images: images.map(\.0) + clusters(page.tints, distance: 4),
                                 vocabulary: vocabulary, warnings: &warnings)
-        joinWordBreaks(&result, page: page.number, vocabulary: vocabulary, warnings: &warnings)
+        joinWordBreaks(&result, page: page, body: body, vocabulary: vocabulary, warnings: &warnings)
         for note in footnotes?.notes ?? [] {
             var text = FootnoteDetector.normalizedMarker(elements[note.range.lowerBound].line!.content)
             for index in note.range.dropFirst() {
@@ -3688,8 +3881,8 @@ enum LayoutReconstructor {
         let previousImages = previousImages + clusters(previousPage?.tints ?? [], distance: 4)
         if let previousPage,
            let anchors = continuation(from: blocks, previousPage: previousPage, previousImages: previousImages,
-                                      skippedPages: skippedPages, to: remaining, page: page, images: images,
-                                      continuesNote: continuesNote),
+                                      skippedPages: skippedPages, to: remaining, page: page,
+                                      vocabulary: vocabulary, images: images, continuesNote: continuesNote),
            let left = joinableText(blocks[anchors.previous].content),
            case .paragraph(var right) = remaining[anchors.next].content {
             // Pages holding only figures between the halves open at the text boundary as well,
@@ -3760,7 +3953,7 @@ enum LayoutReconstructor {
     /// and no prose may lie below that line or above the first.
     private static func continuation(from blocks: [ReflowBlock], previousPage: PageContent, previousImages: [CGRect],
                                      skippedPages: [(page: PageContent, images: [CGRect])] = [],
-                                     to pageBlocks: [ReflowBlock], page: PageContent,
+                                     to pageBlocks: [ReflowBlock], page: PageContent, vocabulary: Set<String>,
                                      images: [CGRect], continuesNote: Bool = false) -> (previous: Int, next: Int)? {
         var previous = blocks.count - 1
         // Pages between that hold only figures, captions and folios, with their page markers.
@@ -3813,7 +4006,10 @@ enum LayoutReconstructor {
               }),
               let first = firstLine(of: right.text, in: page.lines),
               !isHeaderLike(first, in: page), wordCount(first.text) >= 2,
-              readsAsProse(last.text), readsAsProse(first.text),
+              // A word the page break cut in half is evidence of its own, whatever else the line
+              // carries: Loper Bright page 11's citations leave `…it author-` under half letters.
+              readsAsProse(last.text) || continuesWordBreak(last.text, first.text, vocabulary: vocabulary),
+              readsAsProse(first.text),
               fillsColumn(last, in: previousPage.lines, body: max(4, bodySize(previousPage.lines)))
                 || right.text.first?.isLowercase == true && endsOnAComma(last, body: max(4, bodySize(previousPage.lines))),
               endsColumn(last, in: previousPage, images: previousImages, captions: previousCaptions),
@@ -3875,33 +4071,54 @@ enum LayoutReconstructor {
     /// page 4's `trig-` + `gered`). Two letters precede the hyphen, as a word break leaves at least
     /// two (never the Blue Book's OCR debris `/9, Z-` + `r.,mbel`). The left block is a paragraph or
     /// a list item, the right one a paragraph that opens no note of its own, neither with a
-    /// validated role other than a paragraph. The blocks are adjacent in reading order and on one
-    /// page. The hyphen policy decides the join, as it does inside a paragraph, but the blocks stay
-    /// apart where it has no evidence (`uncertainHyphen`): reading order can place a broken
-    /// fragment beside the wrong neighbour (NOAA's `acidifica-` before `oceans, animal…`).
-    private static func joinWordBreaks(_ blocks: inout [ReflowBlock], page: Int, vocabulary: Set<String>,
-                                       warnings: inout [ConversionWarning]) {
+    /// validated role other than a paragraph. The hyphen policy decides the join, as it does inside
+    /// a paragraph, but the blocks stay apart where it has no evidence (`uncertainHyphen`): reading
+    /// order can place a broken fragment beside the wrong neighbour (NOAA's `acidifica-` before
+    /// `oceans, animal…`).
+    ///
+    /// The halves are usually adjacent in reading order. Where a tinted box or a figure cuts the
+    /// paragraph they are not: the Fed sets a sidebar into its measure, and its title and text are
+    /// read between the two halves (page 22's `…stress tests of banking insti-`, `More on Federal
+    /// Reserve Advisory Councils`, the box's paragraph, then `tutions. Stress tests are required…`;
+    /// also pages 28, 56, 57 and 80). Then the geometry must say the two lines are one paragraph's
+    /// (#148): the continuation's first line is the next line of the anchor's own column
+    /// (`nextLineInColumn` — directly beneath it, on its edge, in its type, with no line between),
+    /// and both blocks are this page's. The box keeps its place and follows the joined paragraph,
+    /// as a figure between a column's foot and the next column's head does.
+    private static func joinWordBreaks(_ blocks: inout [ReflowBlock], page: PageContent, body: CGFloat,
+                                       vocabulary: Set<String>, warnings: inout [ConversionWarning]) {
         var index = 0
         while index + 1 < blocks.count {
-            let (leftBlock, rightBlock) = (blocks[index], blocks[index + 1])
-            guard let left = joinableText(leftBlock.content), case let .paragraph(right) = rightBlock.content,
-                  rightBlock.note == nil, (leftBlock.taggedLevel ?? 0) == 0, (rightBlock.taggedLevel ?? 0) == 0,
-                  left.text.hasSuffix("-"), left.text.dropLast().suffix(2).filter(\.isLetter).count == 2,
-                  right.text.first?.isLowercase == true else {
+            let leftBlock = blocks[index]
+            guard let left = joinableText(leftBlock.content), (leftBlock.taggedLevel ?? 0) == 0,
+                  left.text.hasSuffix("-"), left.text.dropLast().suffix(2).filter(\.isLetter).count == 2 else {
                 index += 1
                 continue
             }
             // The blocks' separation stands unless the book vouches for the word or the compound.
-            var uncertain: [ConversionWarning] = []
-            _ = joinOperation(left.text, right.text, vocabulary: vocabulary, page: page, warnings: &uncertain)
-            guard uncertain.isEmpty else {
+            var anchor: TextLine??
+            func continues(_ candidate: Int) -> Bool {
+                guard case let .paragraph(right) = blocks[candidate].content, blocks[candidate].note == nil,
+                      (blocks[candidate].taggedLevel ?? 0) == 0,
+                      continuesWordBreak(left.text, right.text, vocabulary: vocabulary) else { return false }
+                if candidate == index + 1 { return true }
+                if anchor == nil {
+                    anchor = leftBlock.page == page.number ? lastLine(of: left.text, in: page.lines) : .some(nil)
+                }
+                guard blocks[candidate].page == page.number, let last = anchor ?? nil,
+                      let first = firstLine(of: right.text, in: page.lines) else { return false }
+                return nextLineInColumn(last, first, page: page, body: body)
+            }
+            guard let next = ((index + 1)..<blocks.count).first(where: continues),
+                  case let .paragraph(right) = blocks[next].content else {
                 index += 1
                 continue
             }
-            let text = join(left, right, vocabulary: vocabulary, page: page, warnings: &warnings)
+            let text = join(left, right, vocabulary: vocabulary, page: page.number, warnings: &warnings)
             if case .preformatted = leftBlock.content { blocks[index].content = .preformatted(text) }
             else { blocks[index].content = .paragraph(text) }
-            blocks.remove(at: index + 1)
+            // A box read between the halves keeps its place and follows the joined paragraph.
+            blocks.remove(at: next)
         }
     }
 
@@ -4230,6 +4447,83 @@ enum LayoutReconstructor {
     private static func readsAsProse(_ text: String) -> Bool {
         let ink = text.filter { !$0.isWhitespace }
         return !ink.isEmpty && ink.filter(\.isLetter).count * 2 >= ink.count
+    }
+
+    /// The flush right edge of each type size on a page: the line end most of that size's lines
+    /// share, which is the measure a justified column is set to. It is the commonest end, not the
+    /// furthest: a line ending in the book's own hyphen overhangs the measure (the 9/11 report's
+    /// `=` is two-thirds of an em wide, half again what its longest line otherwise reaches), and a
+    /// measure taken from such a line would read every ordinary line as ending short. At least
+    /// three lines and a quarter of the size's lines must share the edge, so a ragged column, a
+    /// size set on too few lines, and a page of mixed columns have no measure of their own.
+    static func justifiedMeasures(_ lines: [TextLine]) -> [Int: CGFloat] {
+        var edges: [Int: [CGFloat]] = [:]
+        for line in lines where !line.monospaced && line.fontSize > 0 {
+            edges[Int(line.fontSize.rounded()), default: []].append(line.rect.maxX)
+        }
+        return edges.compactMapValues { values in
+            let sorted = values.sorted()
+            var best: (edge: CGFloat, count: Int)?
+            var start = 0
+            for index in sorted.indices {
+                while sorted[index] - sorted[start] > 1 { start += 1 }
+                let count = index - start + 1
+                if best.map({ (count, sorted[index]) > ($0.count, $0.edge) }) ?? true {
+                    best = (sorted[index], count)
+                }
+            }
+            guard let best, best.count >= 3, best.count * 4 >= sorted.count else { return nil }
+            return best.edge
+        }
+    }
+
+    /// A line the extraction lost a line-end hyphen from (#157). PDFKit drops the hyphen glyph
+    /// from some of Our Flag's justified lines, and the line's rectangle loses the glyph's advance
+    /// with it, so the break reads as a word space (`…the British fleet bom` over `barded Fort
+    /// McHenry…`, page 5; also `fab` + `rics`, `sym` + `bolize`, `mean` + `ing`, `PEO` + `PLE`).
+    /// The line's own position is what says a glyph is missing: its column is justified, and this
+    /// line ends in a letter short of the measure by between a fifth and a half of its type size —
+    /// where a hyphen's advance falls (0.33 em in the book's Times) and no character else does.
+    static func endsShortOfMeasure(_ line: TextLine, measures: [Int: CGFloat]) -> Bool {
+        guard !line.monospaced, line.fontSize > 0,
+              line.text.trimmingCharacters(in: .whitespaces).last?.isLetter == true,
+              let measure = measures[Int(line.fontSize.rounded())] else { return false }
+        let shortfall = measure - line.rect.maxX
+        return shortfall >= line.fontSize * 0.2 && shortfall <= line.fontSize * 0.5
+    }
+
+    /// Two lines one lost hyphen broke a word across (#157): `last` ends short of its column's
+    /// measure by a hyphen's width, `next` opens in the same type, and the book's words decide the
+    /// break as they decide a hyphen the source did print. Only a break the policy resolves to
+    /// `removeHyphen` closes up, so the halves must join into a word the book prints (or an
+    /// inflected form of one, #115) while the compound is not one. A line that merely ends short
+    /// keeps its word space, because no word comes of joining it.
+    static func lostLineEndHyphen(_ last: TextLine, _ next: TextLine, measures: [Int: CGFloat],
+                                  vocabulary: Set<String>) -> Bool {
+        guard endsShortOfMeasure(last, measures: measures), !next.monospaced,
+              next.text.first?.isLetter == true,
+              abs(next.fontSize - last.fontSize) <= last.fontSize * 0.1 else { return false }
+        var uncertain: [ConversionWarning] = []
+        let text = last.text.trimmingCharacters(in: .whitespaces)
+        let operation = joinOperation(text + "-", next.text, vocabulary: vocabulary, page: 0, warnings: &uncertain)
+        guard uncertain.isEmpty, case .removeHyphen = operation else { return false }
+        return true
+    }
+
+    /// One word broken across `left` and `right`, with the book's evidence for the join (#148).
+    /// `left` ends in a hyphen after two letters, `right` opens lowercase, and the hyphen policy
+    /// decides the break without warning `uncertainHyphen`, so the book prints the joined word
+    /// (or the compound) and the halves are not being guessed at. This is the evidence
+    /// `joinWordBreaks` already requires of two blocks; a break is the same evidence wherever the
+    /// halves ended up, and it stands where a line's other ink would not read as prose (Loper
+    /// Bright page 11 ends `§§1854(d)(2)(B), 1862(b)(2)(E). And in general, it author-` over
+    /// page 12's `izes the Secretary…`).
+    static func continuesWordBreak(_ left: String, _ right: String, vocabulary: Set<String>) -> Bool {
+        guard left.hasSuffix("-"), left.dropLast().suffix(2).filter(\.isLetter).count == 2,
+              right.first?.isLowercase == true else { return false }
+        var uncertain: [ConversionWarning] = []
+        _ = joinOperation(left, right, vocabulary: vocabulary, page: 0, warnings: &uncertain)
+        return uncertain.isEmpty
     }
 
     /// A paragraph cut by the page ends on a full prose line. The column is the same-size lines
@@ -4578,6 +4872,7 @@ enum LayoutReconstructor {
     private static let addressPrefixKey = "\u{1}address:"
     private static let addressSegmentKey = "\u{1}segment:"
     private static let numberPrefixKey = "\u{1}number-prefix:"
+    private static let dashKey = "\u{1}dash:"
 
     /// An address without its scheme or `www.`, lowercased: the form address evidence compares.
     static func normalizedAddress(_ address: Substring) -> String {

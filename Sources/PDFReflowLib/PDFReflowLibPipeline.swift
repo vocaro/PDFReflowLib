@@ -296,6 +296,8 @@ enum PDFReflowLibPipeline {
         let store = PageStore(directory: workspace.appendingPathComponent("pages"))
 
         var vocabulary: Set<String> = []
+        /// The previous page's last line, so a word the page break cut in half is no vocabulary (#148).
+        var previousLine: String?
         /// Line ends showing the book prints its hyphen as `=` (#126).
         var equalsHyphens = LayoutReconstructor.EqualsHyphenEvidence()
         /// Pages whose narrow section labels are set in each style (#73).
@@ -375,10 +377,13 @@ enum PDFReflowLibPipeline {
             // Retain heading evidence before removing furniture, after all extraction/OCR work.
             // Retained unreadable text supplies no hyphen-repair vocabulary.
             if !extracted.damagedEncoding || content.recognized {
-                LayoutReconstructor.addVocabulary(of: content, to: &vocabulary)
+                LayoutReconstructor.addVocabulary(of: content, to: &vocabulary, after: &previousLine)
                 equalsHyphens.add(content)
                 for style in LayoutReconstructor.labelEvidence(on: content) { labelEvidence[style, default: 0] += 1 }
                 for style in LayoutReconstructor.headingEvidence(on: content) { headingEvidence[style, default: 0] += 1 }
+            } else {
+                // An unread page carries no word across its far edge either.
+                previousLine = nil
             }
             // Slide-deck evidence, read from the page as extracted: before furniture removal (a
             // slide's folio is in neither band a title stands in) and before reconstruction.
@@ -436,6 +441,7 @@ enum PDFReflowLibPipeline {
             }
             if equalsMarksHyphens { LayoutReconstructor.restoreEqualsHyphens(&content) }
             LayoutReconstructor.joinDropCapInitials(&content, vocabulary: vocabulary)
+            LayoutReconstructor.closeSpacedCompounds(&content, vocabulary: vocabulary)
             let previousPage = i > 0 && !chapterStartPages.contains(content.number) ? previous : nil
             var regions: [CGRect] = []
             var onlyFigures = false

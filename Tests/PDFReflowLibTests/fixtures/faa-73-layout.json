@@ -1,0 +1,3113 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        14.450000000000003,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "3-2"
+        }
+      ],
+      "text" : "3-2"
+    },
+    {
+      "rect" : [
+        36,
+        715.97970000000009,
+        189.48000000000008,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "Aircraft Design, Certification, and"
+        }
+      ],
+      "text" : "Aircraft Design, Certification, and"
+    },
+    {
+      "rect" : [
+        36,
+        703.97970000000009,
+        79.584000000000003,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "Airworthiness"
+        }
+      ],
+      "text" : "Airworthiness"
+    },
+    {
+      "rect" : [
+        36,
+        689.21370000000002,
+        237.01099999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The FAA certifies three types of aviation products: aircraft,"
+        }
+      ],
+      "text" : "The FAA certifies three types of aviation products: aircraft,"
+    },
+    {
+      "rect" : [
+        36,
+        676.71370000000002,
+        237.11000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft engines, and propellers. Each of these products"
+        }
+      ],
+      "text" : "aircraft engines, and propellers. Each of these products"
+    },
+    {
+      "rect" : [
+        36,
+        664.21370000000002,
+        236.82600000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "has been designed to a set of airworthiness standards."
+        }
+      ],
+      "text" : "has been designed to a set of airworthiness standards."
+    },
+    {
+      "rect" : [
+        36,
+        651.71370000000002,
+        236.87999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "These standards are parts of Title 14 of the Code of"
+        }
+      ],
+      "text" : "These standards are parts of Title 14 of the Code of"
+    },
+    {
+      "rect" : [
+        36,
+        639.21370000000002,
+        236.99799999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Federal Regulations (14 CFR), published by the FAA. The"
+        }
+      ],
+      "text" : "Federal Regulations (14 CFR), published by the FAA. The"
+    },
+    {
+      "rect" : [
+        36,
+        626.71370000000002,
+        237.02100000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "airworthiness standards were developed to help ensure that"
+        }
+      ],
+      "text" : "airworthiness standards were developed to help ensure that"
+    },
+    {
+      "rect" : [
+        36,
+        614.21370000000002,
+        236.82399999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aviation products are designed with no unsafe features."
+        }
+      ],
+      "text" : "aviation products are designed with no unsafe features."
+    },
+    {
+      "rect" : [
+        36,
+        601.71370000000002,
+        236.83000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Different airworthiness standards apply to the different"
+        }
+      ],
+      "text" : "Different airworthiness standards apply to the different"
+    },
+    {
+      "rect" : [
+        36,
+        589.21370000000002,
+        169.14000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "categories of aviation products as follows:"
+        }
+      ],
+      "text" : "categories of aviation products as follows:"
+    },
+    {
+      "rect" : [
+        45,
+        572.21370000000002,
+        228.00600000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Normal, Utility, Acrobatic, and Commuter Category"
+        }
+      ],
+      "text" : "• Normal, Utility, Acrobatic, and Commuter Category"
+    },
+    {
+      "rect" : [
+        63,
+        559.71370000000002,
+        106.66000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Airplanes- 14 CFR part 23"
+        }
+      ],
+      "text" : "Airplanes- 14 CFR part 23"
+    },
+    {
+      "rect" : [
+        45,
+        542.71370000000002,
+        209.36999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Transport Category Airplanes—14 CFR part 25"
+        }
+      ],
+      "text" : "• Transport Category Airplanes—14 CFR part 25"
+    },
+    {
+      "rect" : [
+        45,
+        525.71370000000002,
+        159.66,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Normal Category—14 CFR part 27"
+        }
+      ],
+      "text" : "• Normal Category—14 CFR part 27"
+    },
+    {
+      "rect" : [
+        45,
+        508.71370000000002,
+        211.58999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Transport Category Rotorcraft—14 CFR part 29"
+        }
+      ],
+      "text" : "• Transport Category Rotorcraft—14 CFR part 29"
+    },
+    {
+      "rect" : [
+        45,
+        491.71370000000002,
+        181.05000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Manned Free Balloons—14 CFR part 31"
+        }
+      ],
+      "text" : "• Manned Free Balloons—14 CFR part 31"
+    },
+    {
+      "rect" : [
+        45,
+        474.71370000000002,
+        156.31999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Aircraft Engines—14 CFR part 33"
+        }
+      ],
+      "text" : "• Aircraft Engines—14 CFR part 33"
+    },
+    {
+      "rect" : [
+        45,
+        457.71370000000002,
+        130.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "• Propellers—14 CFR part 35"
+        }
+      ],
+      "text" : "• Propellers—14 CFR part 35"
+    },
+    {
+      "rect" : [
+        36,
+        430.81370000000004,
+        237.03500000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Some aircraft are considered “special classes” of aircraft and"
+        }
+      ],
+      "text" : "Some aircraft are considered “special classes” of aircraft and"
+    },
+    {
+      "rect" : [
+        36,
+        418.31370000000004,
+        237.09100000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "do not have their own airworthiness standards, such as gliders"
+        }
+      ],
+      "text" : "do not have their own airworthiness standards, such as gliders"
+    },
+    {
+      "rect" : [
+        36,
+        405.81370000000004,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and powered lift. The airworthiness standards used for these"
+        }
+      ],
+      "text" : "and powered lift. The airworthiness standards used for these"
+    },
+    {
+      "rect" : [
+        36,
+        393.31370000000004,
+        237.00200000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft are a combination of requirements in 14 CFR parts"
+        }
+      ],
+      "text" : "aircraft are a combination of requirements in 14 CFR parts"
+    },
+    {
+      "rect" : [
+        36,
+        380.81370000000004,
+        237.08000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "23, 25, 27, and 29 that the FAA and the designer have agreed"
+        }
+      ],
+      "text" : "23, 25, 27, and 29 that the FAA and the designer have agreed"
+    },
+    {
+      "rect" : [
+        36,
+        368.31370000000004,
+        162.16000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are appropriate for the proposed aircraft."
+        }
+      ],
+      "text" : "are appropriate for the proposed aircraft."
+    },
+    {
+      "rect" : [
+        36,
+        343.31370000000004,
+        236.90999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The FAA issues a Type Certificate (TC) for the product"
+        }
+      ],
+      "text" : "The FAA issues a Type Certificate (TC) for the product"
+    },
+    {
+      "rect" : [
+        36,
+        330.81370000000004,
+        236.90999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "when they are satisfied it complies with the applicable"
+        }
+      ],
+      "text" : "when they are satisfied it complies with the applicable"
+    },
+    {
+      "rect" : [
+        36,
+        318.31370000000004,
+        236.95999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "airworthiness standards. When the TC is issued, a Type"
+        }
+      ],
+      "text" : "airworthiness standards. When the TC is issued, a Type"
+    },
+    {
+      "rect" : [
+        36,
+        305.81370000000004,
+        237.00599999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Certificate Data Sheet (TCDS) is generated that specifies"
+        }
+      ],
+      "text" : "Certificate Data Sheet (TCDS) is generated that specifies"
+    },
+    {
+      "rect" : [
+        36,
+        293.31370000000004,
+        236.9969999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the important design and operational characteristics of the"
+        }
+      ],
+      "text" : "the important design and operational characteristics of the"
+    },
+    {
+      "rect" : [
+        36,
+        280.81370000000004,
+        237.00300000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft, aircraft engine, or propeller. The TCDS defines the"
+        }
+      ],
+      "text" : "aircraft, aircraft engine, or propeller. The TCDS defines the"
+    },
+    {
+      "rect" : [
+        36,
+        268.31370000000004,
+        236.95000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "product and are available to the public from the FAA website"
+        }
+      ],
+      "text" : "product and are available to the public from the FAA website"
+    },
+    {
+      "rect" : [
+        36,
+        255.81370000000004,
+        66.090000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "at www.faa.gov."
+        }
+      ],
+      "text" : "at www.faa.gov."
+    },
+    {
+      "rect" : [
+        36,
+        230.24370000000005,
+        158.33000000000001,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "A Note About Light Sport Aircraft"
+        }
+      ],
+      "text" : "A Note About Light Sport Aircraft"
+    },
+    {
+      "rect" : [
+        36,
+        217.81370000000004,
+        237.01400000000012,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Light sport aircraft are not designed according to FAA"
+        }
+      ],
+      "text" : "Light sport aircraft are not designed according to FAA"
+    },
+    {
+      "rect" : [
+        36,
+        205.31370000000004,
+        237.12500000000011,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "airworthiness standards. Instead, they are designed to a"
+        }
+      ],
+      "text" : "airworthiness standards. Instead, they are designed to a"
+    },
+    {
+      "rect" : [
+        36,
+        192.81370000000004,
+        237.01199999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "consensus of standards agreed upon in the aviation industry."
+        }
+      ],
+      "text" : "consensus of standards agreed upon in the aviation industry."
+    },
+    {
+      "rect" : [
+        36,
+        180.31370000000004,
+        237.0870000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The FAA has agreed the consensus of standards is acceptable"
+        }
+      ],
+      "text" : "The FAA has agreed the consensus of standards is acceptable"
+    },
+    {
+      "rect" : [
+        36,
+        167.81370000000004,
+        237.1400000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "as the design criteria for these aircraft. Light sport aircraft do"
+        }
+      ],
+      "text" : "as the design criteria for these aircraft. Light sport aircraft do"
+    },
+    {
+      "rect" : [
+        36,
+        155.31370000000004,
+        237.01099999999991,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "not necessarily have individually type certificated engines"
+        }
+      ],
+      "text" : "not necessarily have individually type certificated engines"
+    },
+    {
+      "rect" : [
+        36,
+        142.81370000000004,
+        237.00399999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and propellers. Instead, a TC is issued to the aircraft as a"
+        }
+      ],
+      "text" : "and propellers. Instead, a TC is issued to the aircraft as a"
+    },
+    {
+      "rect" : [
+        36,
+        130.31370000000004,
+        214.66999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "whole. It includes the airframe, engine, and propeller."
+        }
+      ],
+      "text" : "whole. It includes the airframe, engine, and propeller."
+    },
+    {
+      "rect" : [
+        36,
+        105.31370000000004,
+        237.0440000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Aircraft, aircraft engines, and propellers can be manufactured"
+        }
+      ],
+      "text" : "Aircraft, aircraft engines, and propellers can be manufactured"
+    },
+    {
+      "rect" : [
+        36,
+        92.81370000000004,
+        236.976,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "one at a time from the design drawings, or through an FAA"
+        }
+      ],
+      "text" : "one at a time from the design drawings, or through an FAA"
+    },
+    {
+      "rect" : [
+        36,
+        80.31370000000004,
+        237.00299999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "approved manufacturing process, depending on the size and"
+        }
+      ],
+      "text" : "approved manufacturing process, depending on the size and"
+    },
+    {
+      "rect" : [
+        36,
+        67.81370000000004,
+        237.01799999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "capabilities of the manufacturer. During the manufacturing"
+        }
+      ],
+      "text" : "capabilities of the manufacturer. During the manufacturing"
+    },
+    {
+      "rect" : [
+        285,
+        719.56370000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "process, each part is inspected to ensure that it has been built"
+        }
+      ],
+      "text" : "process, each part is inspected to ensure that it has been built"
+    },
+    {
+      "rect" : [
+        285,
+        707.06370000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "exactly according to the approved design. This inspection is"
+        }
+      ],
+      "text" : "exactly according to the approved design. This inspection is"
+    },
+    {
+      "rect" : [
+        285,
+        694.56370000000004,
+        123.87,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "called a conformity inspection."
+        }
+      ],
+      "text" : "called a conformity inspection."
+    },
+    {
+      "rect" : [
+        285,
+        669.56370000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When the aircraft is complete, with the airframe, engine, and"
+        }
+      ],
+      "text" : "When the aircraft is complete, with the airframe, engine, and"
+    },
+    {
+      "rect" : [
+        285,
+        657.06370000000004,
+        236.95000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "propeller, it is inspected and the FAA issues an airworthiness"
+        }
+      ],
+      "text" : "propeller, it is inspected and the FAA issues an airworthiness"
+    },
+    {
+      "rect" : [
+        285,
+        644.56370000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "certificate for the aircraft. Having an airworthiness"
+        }
+      ],
+      "text" : "certificate for the aircraft. Having an airworthiness"
+    },
+    {
+      "rect" : [
+        285,
+        632.06370000000004,
+        237.00900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "certificate means the complete aircraft meets the design and"
+        }
+      ],
+      "text" : "certificate means the complete aircraft meets the design and"
+    },
+    {
+      "rect" : [
+        285,
+        619.56370000000004,
+        237.10000000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "manufacturing standards, and is in a condition for safe flight."
+        }
+      ],
+      "text" : "manufacturing standards, and is in a condition for safe flight."
+    },
+    {
+      "rect" : [
+        285,
+        607.06370000000004,
+        237.00799999999981,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "This airworthiness certificate must be carried in the aircraft"
+        }
+      ],
+      "text" : "This airworthiness certificate must be carried in the aircraft"
+    },
+    {
+      "rect" : [
+        285,
+        594.56370000000004,
+        237.02600000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "during all flight operations. The airworthiness certificate"
+        }
+      ],
+      "text" : "during all flight operations. The airworthiness certificate"
+    },
+    {
+      "rect" : [
+        285,
+        582.06370000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "remains valid as long as the required maintenance and"
+        }
+      ],
+      "text" : "remains valid as long as the required maintenance and"
+    },
+    {
+      "rect" : [
+        285,
+        569.56370000000004,
+        184.12,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "inspections are kept up to date for the aircraft."
+        }
+      ],
+      "text" : "inspections are kept up to date for the aircraft."
+    },
+    {
+      "rect" : [
+        285,
+        544.56370000000004,
+        237.07400000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Airworthiness certificates are classified as either “Standard”"
+        }
+      ],
+      "text" : "Airworthiness certificates are classified as either “Standard”"
+    },
+    {
+      "rect" : [
+        285,
+        532.06370000000004,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or “Special.” Standard airworthiness certificates are white,"
+        }
+      ],
+      "text" : "or “Special.” Standard airworthiness certificates are white,"
+    },
+    {
+      "rect" : [
+        285,
+        519.56370000000004,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and are issued for normal, utility, acrobatic, commuter, or"
+        }
+      ],
+      "text" : "and are issued for normal, utility, acrobatic, commuter, or"
+    },
+    {
+      "rect" : [
+        285,
+        507.06370000000004,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "transport category aircraft. They are also issued for manned"
+        }
+      ],
+      "text" : "transport category aircraft. They are also issued for manned"
+    },
+    {
+      "rect" : [
+        285,
+        494.56370000000004,
+        223.82999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "free balloons and aircraft designated as “Special Class.”"
+        }
+      ],
+      "text" : "free balloons and aircraft designated as “Special Class.”"
+    },
+    {
+      "rect" : [
+        285,
+        469.56370000000004,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Special airworthiness certificates are pink, and are issued"
+        }
+      ],
+      "text" : "Special airworthiness certificates are pink, and are issued"
+    },
+    {
+      "rect" : [
+        285,
+        457.06370000000004,
+        237.12000000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "for primary, restricted, and limited category aircraft, and"
+        }
+      ],
+      "text" : "for primary, restricted, and limited category aircraft, and"
+    },
+    {
+      "rect" : [
+        285,
+        444.56370000000004,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "light sport aircraft. They are also issued as provisional"
+        }
+      ],
+      "text" : "light sport aircraft. They are also issued as provisional"
+    },
+    {
+      "rect" : [
+        285,
+        432.06370000000004,
+        236.88000000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "airworthiness certificates, special flight permits (ferry"
+        }
+      ],
+      "text" : "airworthiness certificates, special flight permits (ferry"
+    },
+    {
+      "rect" : [
+        285,
+        419.56370000000004,
+        155.5100000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "permits), and for experimental aircraft."
+        }
+      ],
+      "text" : "permits), and for experimental aircraft."
+    },
+    {
+      "rect" : [
+        285,
+        394.56370000000004,
+        236.98599999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "More information on airworthiness certificates can be found"
+        }
+      ],
+      "text" : "More information on airworthiness certificates can be found"
+    },
+    {
+      "rect" : [
+        285,
+        382.06370000000004,
+        236.9799999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in Chapter 9, in 14 CFR parts 175-225, and also on the FAA"
+        }
+      ],
+      "text" : "in Chapter 9, in 14 CFR parts 175-225, and also on the FAA"
+    },
+    {
+      "rect" : [
+        285,
+        369.56370000000004,
+        99.139999999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "website at www.faa.gov."
+        }
+      ],
+      "text" : "website at www.faa.gov."
+    },
+    {
+      "rect" : [
+        285,
+        343.28240000000005,
+        163.78800000000001,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "Lift and Basic Aerodynamics"
+        }
+      ],
+      "text" : "Lift and Basic Aerodynamics"
+    },
+    {
+      "rect" : [
+        285,
+        328.51640000000003,
+        237.1099999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "In order to understand the operation of the major components"
+        }
+      ],
+      "text" : "In order to understand the operation of the major components"
+    },
+    {
+      "rect" : [
+        285,
+        316.01640000000003,
+        237.1400000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and subcomponents of an aircraft, it is important to"
+        }
+      ],
+      "text" : "and subcomponents of an aircraft, it is important to"
+    },
+    {
+      "rect" : [
+        285,
+        303.51640000000003,
+        236.97999999999979,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "understand basic aerodynamic concepts. This chapter briefly"
+        }
+      ],
+      "text" : "understand basic aerodynamic concepts. This chapter briefly"
+    },
+    {
+      "rect" : [
+        285,
+        291.01640000000003,
+        236.87599999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "introduces aerodynamics; a more detailed explanation can be"
+        }
+      ],
+      "text" : "introduces aerodynamics; a more detailed explanation can be"
+    },
+    {
+      "rect" : [
+        285,
+        278.51640000000003,
+        178.31999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "found in Chapter 5, Aerodynamics of Flight."
+        }
+      ],
+      "text" : "found in Chapter 5, Aerodynamics of Flight."
+    },
+    {
+      "rect" : [
+        285,
+        253.51640000000003,
+        237.02499999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Four forces act upon an aircraft in relation to straight-and-"
+        }
+      ],
+      "text" : "Four forces act upon an aircraft in relation to straight-and-"
+    },
+    {
+      "rect" : [
+        285,
+        241.01640000000003,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "level, unaccelerated flight. These forces are thrust, lift,"
+        }
+      ],
+      "text" : "level, unaccelerated flight. These forces are thrust, lift,"
+    },
+    {
+      "rect" : [
+        285,
+        228.51640000000003,
+        122.75999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "weight, and drag. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "italic" : true,
+          "text" : "[Figure 3-1]"
+        }
+      ],
+      "text" : "weight, and drag. [Figure 3-1]"
+    },
+    {
+      "rect" : [
+        285,
+        203.51640000000003,
+        237.09000000000015,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Thrust is the forward force produced by the powerplant/"
+        }
+      ],
+      "text" : "Thrust is the forward force produced by the powerplant/"
+    },
+    {
+      "rect" : [
+        285,
+        191.01640000000003,
+        236.99599999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "propeller. It opposes or overcomes the force of drag. As a"
+        }
+      ],
+      "text" : "propeller. It opposes or overcomes the force of drag. As a"
+    },
+    {
+      "rect" : [
+        285,
+        178.51640000000003,
+        237.01999999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "general rule, it is said to act parallel to the longitudinal axis."
+        }
+      ],
+      "text" : "general rule, it is said to act parallel to the longitudinal axis."
+    },
+    {
+      "rect" : [
+        285,
+        166.01640000000003,
+        181.91000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "This is not always the case as explained later."
+        }
+      ],
+      "text" : "This is not always the case as explained later."
+    },
+    {
+      "rect" : [
+        285,
+        141.01640000000003,
+        237.08999999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Drag is a rearward, retarding force and is caused by disruption"
+        }
+      ],
+      "text" : "Drag is a rearward, retarding force and is caused by disruption"
+    },
+    {
+      "rect" : [
+        285,
+        128.51640000000003,
+        237.03999999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of airflow by the wing, fuselage, and other protruding objects."
+        }
+      ],
+      "text" : "of airflow by the wing, fuselage, and other protruding objects."
+    },
+    {
+      "rect" : [
+        285,
+        116.01640000000003,
+        236.83800000000019,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Drag opposes thrust and acts rearward parallel to the relative"
+        }
+      ],
+      "text" : "Drag opposes thrust and acts rearward parallel to the relative"
+    },
+    {
+      "rect" : [
+        285,
+        103.51640000000003,
+        22.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "wind."
+        }
+      ],
+      "text" : "wind."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        14.450000000000003,
+        12.310000000000002
+      ],
+      "structure" : {
+        "group" : 1726,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 6552
+      },
+      "text" : "3-2"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        715.97970000000009,
+        189.48000000000008,
+        15.827999999999975
+      ],
+      "text" : "Aircraft Design, Certification, and"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        703.97970000000009,
+        79.584000000000003,
+        15.827999999999975
+      ],
+      "text" : "Airworthiness"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        689.21370000000002,
+        237.01099999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1732,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6579
+      },
+      "text" : "The FAA certifies three types of aviation products: aircraft,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        676.71370000000002,
+        237.11000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1732,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6580
+      },
+      "text" : "aircraft engines, and propellers. Each of these products"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        664.21370000000002,
+        236.82600000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1732,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6581
+      },
+      "text" : "has been designed to a set of airworthiness standards."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        651.71370000000002,
+        236.87999999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1732,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6582
+      },
+      "text" : "These standards are parts of Title 14 of the Code of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        639.21370000000002,
+        236.99799999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1732,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6583
+      },
+      "text" : "Federal Regulations (14 CFR), published by the FAA. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        626.71370000000002,
+        237.02100000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1732,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6584
+      },
+      "text" : "airworthiness standards were developed to help ensure that"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        614.21370000000002,
+        236.82399999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1732,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6585
+      },
+      "text" : "aviation products are designed with no unsafe features."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        601.71370000000002,
+        236.83000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1732,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6586
+      },
+      "text" : "Different airworthiness standards apply to the different"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        589.21370000000002,
+        169.14000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1732,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6587
+      },
+      "text" : "categories of aviation products as follows:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        572.21370000000002,
+        228.00600000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1733,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 6588
+      },
+      "text" : "• Normal, Utility, Acrobatic, and Commuter Category"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        559.71370000000002,
+        106.66000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1733,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 6589
+      },
+      "text" : "Airplanes- 14 CFR part 23"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        542.71370000000002,
+        209.36999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1734,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 6590
+      },
+      "text" : "• Transport Category Airplanes—14 CFR part 25"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        525.71370000000002,
+        159.66,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1735,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 6591
+      },
+      "text" : "• Normal Category—14 CFR part 27"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        508.71370000000002,
+        211.58999999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1736,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 6592
+      },
+      "text" : "• Transport Category Rotorcraft—14 CFR part 29"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        491.71370000000002,
+        181.05000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1737,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 6593
+      },
+      "text" : "• Manned Free Balloons—14 CFR part 31"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        474.71370000000002,
+        156.31999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1738,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 6594
+      },
+      "text" : "• Aircraft Engines—14 CFR part 33"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        457.71370000000002,
+        130.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1739,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 6595
+      },
+      "text" : "• Propellers—14 CFR part 35"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        430.81370000000004,
+        237.03500000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1740,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 6596
+      },
+      "text" : "Some aircraft are considered “special classes” of aircraft and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        418.31370000000004,
+        237.09100000000012,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1740,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 6597
+      },
+      "text" : "do not have their own airworthiness standards, such as gliders"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        405.81370000000004,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1740,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 6598
+      },
+      "text" : "and powered lift. The airworthiness standards used for these"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        393.31370000000004,
+        237.00200000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1740,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 6599
+      },
+      "text" : "aircraft are a combination of requirements in 14 CFR parts"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        380.81370000000004,
+        237.08000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1740,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 6600
+      },
+      "text" : "23, 25, 27, and 29 that the FAA and the designer have agreed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        368.31370000000004,
+        162.16000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1740,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 6601
+      },
+      "text" : "are appropriate for the proposed aircraft."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        343.31370000000004,
+        236.90999999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1741,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6602
+      },
+      "text" : "The FAA issues a Type Certificate (TC) for the product"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        330.81370000000004,
+        236.90999999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1741,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6603
+      },
+      "text" : "when they are satisfied it complies with the applicable"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        318.31370000000004,
+        236.95999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1741,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6604
+      },
+      "text" : "airworthiness standards. When the TC is issued, a Type"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        305.81370000000004,
+        237.00599999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1741,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6605
+      },
+      "text" : "Certificate Data Sheet (TCDS) is generated that specifies"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        293.31370000000004,
+        236.9969999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1741,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6606
+      },
+      "text" : "the important design and operational characteristics of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        280.81370000000004,
+        237.00300000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1741,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6607
+      },
+      "text" : "aircraft, aircraft engine, or propeller. The TCDS defines the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        268.31370000000004,
+        236.95000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1741,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6608
+      },
+      "text" : "product and are available to the public from the FAA website"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        255.81370000000004,
+        66.090000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1741,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6609
+      },
+      "text" : "at www.faa.gov."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        230.24370000000005,
+        158.33000000000001,
+        13.189999999999998
+      ],
+      "structure" : {
+        "group" : 1742,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 6610
+      },
+      "text" : "A Note About Light Sport Aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        217.81370000000004,
+        237.01400000000012,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1743,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6611
+      },
+      "text" : "Light sport aircraft are not designed according to FAA"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        205.31370000000004,
+        237.12500000000011,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1743,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6612
+      },
+      "text" : "airworthiness standards. Instead, they are designed to a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        192.81370000000004,
+        237.01199999999989,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1743,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6613
+      },
+      "text" : "consensus of standards agreed upon in the aviation industry."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        180.31370000000004,
+        237.0870000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1743,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6614
+      },
+      "text" : "The FAA has agreed the consensus of standards is acceptable"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        167.81370000000004,
+        237.1400000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1743,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6615
+      },
+      "text" : "as the design criteria for these aircraft. Light sport aircraft do"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        155.31370000000004,
+        237.01099999999991,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1743,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6616
+      },
+      "text" : "not necessarily have individually type certificated engines"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        142.81370000000004,
+        237.00399999999996,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1743,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6617
+      },
+      "text" : "and propellers. Instead, a TC is issued to the aircraft as a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        130.31370000000004,
+        214.66999999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1743,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 6618
+      },
+      "text" : "whole. It includes the airframe, engine, and propeller."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        105.31370000000004,
+        237.0440000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1744,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 6619
+      },
+      "text" : "Aircraft, aircraft engines, and propellers can be manufactured"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        92.81370000000004,
+        236.976,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1744,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 6620
+      },
+      "text" : "one at a time from the design drawings, or through an FAA"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        80.31370000000004,
+        237.00299999999993,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1744,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 6621
+      },
+      "text" : "approved manufacturing process, depending on the size and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        67.81370000000004,
+        237.01799999999997,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1744,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 6622
+      },
+      "text" : "capabilities of the manufacturer. During the manufacturing"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        719.56370000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1744,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 6623
+      },
+      "text" : "process, each part is inspected to ensure that it has been built"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        707.06370000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1744,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 6624
+      },
+      "text" : "exactly according to the approved design. This inspection is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        694.56370000000004,
+        123.87,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1744,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 6625
+      },
+      "text" : "called a conformity inspection."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        669.56370000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1745,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6626
+      },
+      "text" : "When the aircraft is complete, with the airframe, engine, and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        657.06370000000004,
+        236.95000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1745,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6627
+      },
+      "text" : "propeller, it is inspected and the FAA issues an airworthiness"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        644.56370000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1745,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6628
+      },
+      "text" : "certificate for the aircraft. Having an airworthiness"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        632.06370000000004,
+        237.00900000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1745,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6629
+      },
+      "text" : "certificate means the complete aircraft meets the design and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        619.56370000000004,
+        237.10000000000014,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1745,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6630
+      },
+      "text" : "manufacturing standards, and is in a condition for safe flight."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        607.06370000000004,
+        237.00799999999981,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1745,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6631
+      },
+      "text" : "This airworthiness certificate must be carried in the aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        594.56370000000004,
+        237.02600000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1745,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6632
+      },
+      "text" : "during all flight operations. The airworthiness certificate"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        582.06370000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1745,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6633
+      },
+      "text" : "remains valid as long as the required maintenance and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        569.56370000000004,
+        184.12,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1745,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 6634
+      },
+      "text" : "inspections are kept up to date for the aircraft."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        544.56370000000004,
+        237.07400000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1746,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 6635
+      },
+      "text" : "Airworthiness certificates are classified as either “Standard”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        532.06370000000004,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1746,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 6636
+      },
+      "text" : "or “Special.” Standard airworthiness certificates are white,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        519.56370000000004,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1746,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 6637
+      },
+      "text" : "and are issued for normal, utility, acrobatic, commuter, or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        507.06370000000004,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1746,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 6638
+      },
+      "text" : "transport category aircraft. They are also issued for manned"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        494.56370000000004,
+        223.82999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1746,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 6639
+      },
+      "text" : "free balloons and aircraft designated as “Special Class.”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        469.56370000000004,
+        237,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1747,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 6640
+      },
+      "text" : "Special airworthiness certificates are pink, and are issued"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        457.06370000000004,
+        237.12000000000012,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1747,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 6641
+      },
+      "text" : "for primary, restricted, and limited category aircraft, and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        444.56370000000004,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1747,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 6642
+      },
+      "text" : "light sport aircraft. They are also issued as provisional"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        432.06370000000004,
+        236.88000000000011,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1747,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 6643
+      },
+      "text" : "airworthiness certificates, special flight permits (ferry"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        419.56370000000004,
+        155.5100000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1747,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 6644
+      },
+      "text" : "permits), and for experimental aircraft."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        394.56370000000004,
+        236.98599999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1748,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 6645
+      },
+      "text" : "More information on airworthiness certificates can be found"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        382.06370000000004,
+        236.9799999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1748,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 6646
+      },
+      "text" : "in Chapter 9, in 14 CFR parts 175-225, and also on the FAA"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        369.56370000000004,
+        99.139999999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1748,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 6647
+      },
+      "text" : "website at www.faa.gov."
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        343.28240000000005,
+        163.78800000000001,
+        15.827999999999975
+      ],
+      "structure" : {
+        "group" : 1749,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 6648
+      },
+      "text" : "Lift and Basic Aerodynamics"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        328.51640000000003,
+        237.1099999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1750,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 6650
+      },
+      "text" : "In order to understand the operation of the major components"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        316.01640000000003,
+        237.1400000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1750,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 6651
+      },
+      "text" : "and subcomponents of an aircraft, it is important to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        303.51640000000003,
+        236.97999999999979,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1750,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 6652
+      },
+      "text" : "understand basic aerodynamic concepts. This chapter briefly"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        291.01640000000003,
+        236.87599999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1750,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 6653
+      },
+      "text" : "introduces aerodynamics; a more detailed explanation can be"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        278.51640000000003,
+        178.31999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1750,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 6654
+      },
+      "text" : "found in Chapter 5, Aerodynamics of Flight."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        253.51640000000003,
+        237.02499999999998,
+        11.470000000000027
+      ],
+      "text" : "Four forces act upon an aircraft in relation to straight-and-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        241.01640000000003,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "text" : "level, unaccelerated flight. These forces are thrust, lift,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        228.51640000000003,
+        122.75999999999999,
+        11.469999999999999
+      ],
+      "text" : "weight, and drag. [Figure 3-1]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        203.51640000000003,
+        237.09000000000015,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1752,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 6662
+      },
+      "text" : "Thrust is the forward force produced by the powerplant/"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        191.01640000000003,
+        236.99599999999998,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1752,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 6663
+      },
+      "text" : "propeller. It opposes or overcomes the force of drag. As a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        178.51640000000003,
+        237.01999999999998,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1752,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 6664
+      },
+      "text" : "general rule, it is said to act parallel to the longitudinal axis."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        166.01640000000003,
+        181.91000000000003,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1752,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 6665
+      },
+      "text" : "This is not always the case as explained later."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        141.01640000000003,
+        237.08999999999992,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1753,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 6666
+      },
+      "text" : "Drag is a rearward, retarding force and is caused by disruption"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        128.51640000000003,
+        237.03999999999996,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1753,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 6667
+      },
+      "text" : "of airflow by the wing, fuselage, and other protruding objects."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        116.01640000000003,
+        236.83800000000019,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1753,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 6668
+      },
+      "text" : "Drag opposes thrust and acts rearward parallel to the relative"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        103.51640000000003,
+        22.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 1753,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 6669
+      },
+      "text" : "wind."
+    }
+  ],
+  "page" : 73,
+  "paints" : [
+
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

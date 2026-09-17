@@ -181,9 +181,14 @@ private func splitRowPage(right: TextLine, left: TextLine? = nil, extra: [TextLi
     ], graphics: [])
     #expect(!paragraphs(reflow(edgePage, crops: false)).contains { $0.contains("(2.828) Not all numbers") })
 
-    // Without a mathematical sign the pieces are left to the existing rules.
+    // Without a mathematical sign the pieces are one row too, since #148: the row is a full line of
+    // its paragraph and its text runs on across a gap no wider than a word space.
     let plain = TextLine(text: "on", rect: CGRect(x: 494, y: 667.8, width: 16, height: 12), fontSize: 12)
-    #expect(paragraphs(reflow(splitRowPage(right: plain), crops: false)).contains("on"))
+    #expect(paragraphs(reflow(splitRowPage(right: plain), crops: false)).contains { $0.contains("if we found 8 on our calculator") })
+    // A piece the left one does not run on into stays apart without a sign: the sentence ends, and
+    // no raised note marker opens the piece beside it.
+    let ended = mathLine("Not all numbers have a nice even square root. For example, we found it.", baseline: 670.8, width: 407)
+    #expect(paragraphs(reflow(splitRowPage(right: plain, left: ended), crops: false)).contains("on"))
 
     // A piece that starts on an edge other lines share is a column, not the rest of a row.
     let column = TextLine(text: "= 5 and y = 6 for the second system", rect: CGRect(x: 496, y: 667.8, width: 90, height: 12), fontSize: 12)

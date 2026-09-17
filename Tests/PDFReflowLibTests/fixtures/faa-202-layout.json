@@ -1,0 +1,220 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "7-42"
+        }
+      ],
+      "text" : "7-42"
+    },
+    {
+      "rect" : [
+        36,
+        718.74969999999996,
+        237.03100000000018,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "environmental control systems to support flight. Understanding"
+        }
+      ],
+      "text" : "environmental control systems to support flight. Understanding"
+    },
+    {
+      "rect" : [
+        36,
+        706.24969999999996,
+        237.0100000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the aircraft systems of the aircraft being flown is critical to"
+        }
+      ],
+      "text" : "the aircraft systems of the aircraft being flown is critical to"
+    },
+    {
+      "rect" : [
+        36,
+        693.74969999999996,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "its safe operation and proper maintenance. Consult the AFM/"
+        }
+      ],
+      "text" : "its safe operation and proper maintenance. Consult the AFM/"
+    },
+    {
+      "rect" : [
+        36,
+        681.24969999999996,
+        237.0200000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "POH for specific information pertaining to the aircraft being"
+        }
+      ],
+      "text" : "POH for specific information pertaining to the aircraft being"
+    },
+    {
+      "rect" : [
+        36,
+        668.74969999999996,
+        237.03999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "flown. Various manufacturer and owners group websites can"
+        }
+      ],
+      "text" : "flown. Various manufacturer and owners group websites can"
+    },
+    {
+      "rect" : [
+        36,
+        656.24969999999996,
+        201.95000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "also be a valuable source of additional information."
+        }
+      ],
+      "text" : "also be a valuable source of additional information."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "text" : "7-42"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        718.74969999999996,
+        237.03100000000018,
+        11.470000000000027
+      ],
+      "text" : "environmental control systems to support flight. Understanding"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        706.24969999999996,
+        237.0100000000001,
+        11.470000000000027
+      ],
+      "text" : "the aircraft systems of the aircraft being flown is critical to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        693.74969999999996,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "text" : "its safe operation and proper maintenance. Consult the AFM/"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        681.24969999999996,
+        237.0200000000001,
+        11.470000000000027
+      ],
+      "text" : "POH for specific information pertaining to the aircraft being"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        668.74969999999996,
+        237.03999999999996,
+        11.470000000000027
+      ],
+      "text" : "flown. Various manufacturer and owners group websites can"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        656.24969999999996,
+        201.95000000000005,
+        11.470000000000027
+      ],
+      "text" : "also be a valuable source of additional information."
+    }
+  ],
+  "page" : 202,
+  "paints" : [
+
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

@@ -1,0 +1,21 @@
+baseline 04efe85 release CLI sha256 3b239a1dab115c0831b1595859def7f4c630926855287571d2c6d68195e2eed9
+candidate (04efe85 + #63/#73, library unchanged by 78a4ba1) release CLI sha256 d4d33990a69d6f0228524cbfdcc0cd7401a8e1ef21322bdd0f7f295495739987
+EPUB SHA-256 prefixes; --package-identifier urn:uuid:00000000-0000-4000-8000-000000000001 --modification-date 2026-01-01T00:00:00Z
+faa base f60a144221c46d62 candidate 757cbe90f791430f
+gpo-911 base 981e1bf2de0ff55e candidate c9012158c131d218
+fed base feb80a171101ab5d candidate 5e2fcfe64d207c24
+replay-clocks base 65fcd6acbddd8cee candidate 28548a43a8fa07b1
+census base 1122eb63228d9201 candidate 1603d9ae91dd9721 (repeated: identical on both sides)
+our-flag base 4f8bb64bbefe59fa candidate 4f8bb64bbefe59fa
+loper-bright base 9c3fd76045cf45de candidate 9c3fd76045cf45de
+nbs base 391dc35252f28bed candidate 391dc35252f28bed
+usgs-copper base b424021020445017 candidate b424021020445017
+algebra base 14f3b7694cbbe269 candidate 14f3b7694cbbe269
+dga base dc29e65f93ba7a9b candidate dc29e65f93ba7a9b
+blue-book base f4ddd328edc7d104 candidate f4ddd328edc7d104
+cdc base 7279afa97b0c0186 candidate 7279afa97b0c0186
+uscis-arabic base 0a41faaf3ea13e7e candidate 0a41faaf3ea13e7e
+irs-p596 base d4ca3a7611e02526 candidate d4ca3a7611e02526
+warren-excerpt base 4893736748f47dde candidate 4893736748f47dde
+Census cross-check on b9efcc9 (sha256 5a13369b…) and b9efcc9 + this change (2175d83e…):
+census base 914d5384eb96dd15 candidate 1603d9ae91dd9721

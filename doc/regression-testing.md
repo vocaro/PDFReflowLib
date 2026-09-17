@@ -100,12 +100,12 @@ are, in the page markup). Evidence and negative controls on real output are in
 
 ## Current content coverage
 
-[corpus/regressions.json](../corpus/regressions.json) has 840 targeted checks on 172 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 860 targeted checks on 177 reviewed pages
 across 15 documents: FAA, algebra, 9/11, The Fed Explained, Dietary Guidelines, Our Flag, the CDC
 comic, Blue Book, and the seven #30 cases (USGS copper tables, Loper Bright footnotes, the Census
 unmapped-encoding report, the USCIS Arabic guide, IRS Publication 596 in Simplified Chinese, and
-the NBS and Replay Clocks academic papers). They comprise 263 ordered-text, 82 text, 87 paragraph,
-87 absent-text, 51 heading, 7 absent-heading, 26 list-item, 17 script, 11 footnote, 10 note-link,
+the NBS and Replay Clocks academic papers). They comprise 277 ordered-text, 82 text, 87 paragraph,
+87 absent-text, 57 heading, 7 absent-heading, 26 list-item, 17 script, 11 footnote, 10 note-link,
 27 paragraph-continuation, 1 list-item-continuation, 5 paragraph-separation, 8 distinct-paragraph,
 82 image-presence, 55 warning, 1 absent-warning, 12 source-region, 3 glyph-structure,
 3 image-appearance and 2 table-cell checks, counted as `tools/check_corpus_content.py` counts them. All source-page
@@ -577,6 +577,21 @@ column, and a label set at the leading the paragraph already wraps at. Six sourc
 carry bold emphasis, bulleted definitions, box run-in heads, heading rules, exercises and a dash
 separator (FAA 211/212, Fed 32, Our Flag 27, algebra 289, Loper 60) keep every block boundary
 they had at `62877e6`.
+
+## Headings beside trailing figures and wide section titles
+
+`HeadingPlacementTests.swift` covers [#63](https://github.com/vocaro/PDFReflowLib/issues/63) and
+[#73](https://github.com/vocaro/PDFReflowLib/issues/73). FAA pages 33/34, 49/50 and 201/202 keep
+`Selecting a Flight School`, `Human Factors` and `Chapter Summary` directly above the paragraph
+that continues onto the next page, after the figure caption that closes the page; a synthetic join
+moves only a heading directly above the paragraph. A caption closes at a title set directly
+beneath it in larger type but keeps its own 8 → 9 pt wrapped line. FAA page 43's two-line
+`Crew Resource Management (CRM) and Single-Pilot Resource Management` is one heading only when the
+book's 12-point bold label style is supplied, while page 43's narrower `Hazard and Risk` is a
+heading either way; a wide line with sentence punctuation, one wider than the column's prose and
+one in another style stay prose, and pages 33, 49 and 201 each supply the style, which counts from
+the third page. The FAA contract checks the three orderings and the wide titles on pages 43 and
+370; see the [heading-placement evidence](../measurements/heading-placement/record.md).
 
 ## Endnote reference typography and bounded paragraphs
 

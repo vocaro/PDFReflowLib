@@ -153,7 +153,8 @@ not partial ordering. Cancellation is checked during traversal and text scanning
 cross-page continuation. A paragraph continues across a source page when the previous page's
 last body paragraph and the next page's first body paragraph, in reading order, meet the join
 evidence: preserved images, figure captions and bare margin folios that furniture removal kept
-are stepped over (and stay on their page, ahead of the joined paragraph); two different
+are stepped over (and stay on their page, ahead of the joined paragraph, while headings directly
+above that paragraph move with it past them, #63); two different
 validated paragraph identities refuse; the next text starts lowercase; the previous text lacks
 terminal punctuation past closing quotes and superscript note markers; the previous paragraph's
 last line reads as prose and fills its column (a justified column's shared right edge, three
@@ -204,7 +205,13 @@ whitespace cuts and paragraph geometry. Below that threshold, a section label se
 over the supported body (acmart's `ABSTRACT`, the 9/11 report's `1.1 INSIDE THE FOUR FLIGHTS`)
 is a heading when it starts with a capital or digit, ends without sentence punctuation, has clear
 space above it or continues a label of the same size, and is either set in capitals or shorter
-than the column's prose; list markers, lone folios and pages with three or more folio-ending
+than the column's prose. A wider line that still fits the column qualifies when it is set in a
+label style the book establishes: the extraction pass records, per page, the size, body size
+and all-bold flag of the narrow labels outside painted graphics and margins, and a style seen on
+three or more pages admits a title set nearly the column's width (FAA's `Crew Resource Management
+(CRM) and`, #73). A leading bracket or quote is skipped for the capital test (`(EMAS)`). A figure
+caption paragraph ends at a line at least 15% larger than the caption line above it and at body
+size or above, so it never absorbs the title that follows it (#63); list markers, lone folios and pages with three or more folio-ending
 labels (a contents page) are excluded, and the pieces of one heading row that PDFKit split at a
 gap (`3.1` / `Limitations …`) join. The lines of a title set over several lines are one heading
 when each stacks under the previous at the same size and ordinary heading leading, sharing the

@@ -253,15 +253,22 @@ enum LayoutReconstructor {
     /// has clear space above it or continues a label of the same size, and is either set in
     /// capitals or shorter than the column's prose lines. Recognized and synthetic pages have
     /// no typographic sizes to trust.
+    ///
+    /// A title can run nearly the column's width (FAA page 43's `Crew Resource Management (CRM)
+    /// and`, 95% of its prose). Its width is then no evidence, but the book's typography is: a
+    /// line set in a `LabelStyle` that the book's narrower section labels establish (`styles`)
+    /// is a label when it passes every other test and still fits within the column (#73).
     static func sectionLabels(in lines: [TextLine], body: CGFloat, headingThreshold: CGFloat,
-                              page: PageContent) -> [TextLine] {
+                              page: PageContent, styles: Set<LabelStyle> = []) -> [TextLine] {
         guard !page.hasSyntheticTextStyle, !page.recognized else { return [] }
         var labels: [TextLine] = []
         for line in lines.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
             // A list item (an answer-key entry, a contents line) keeps its list representation.
             guard !line.monospaced, line.fontSize >= body * 1.15, line.fontSize < headingThreshold,
                   line.text.count >= 2, line.text.count < 200, !isList(line.text),
-                  let first = line.text.first, first.isUppercase || first.isNumber,
+                  // Past an opening bracket or quote: `(EMAS)` finishes FAA page 370's title.
+                  let first = line.text.first(where: { !"([\u{201C}\"'".contains($0) }),
+                  first.isUppercase || first.isNumber,
                   let last = line.text.last, !".,;:".contains(last),
                   // Words, or a dotted section number whose title PDFKit split off at the gap.
                   line.text.contains(where: \.isLetter)
@@ -276,12 +283,58 @@ enum LayoutReconstructor {
             let letters = line.text.filter(\.isLetter)
             let capitals = letters.allSatisfy(\.isUppercase)
             let prose = column.filter { $0.fontSize < body * 1.1 }.map(\.rect.width).max() ?? 0
-            if capitals || line.rect.width <= prose * 0.9 || prose == 0 { labels.append(line) }
+            if capitals || line.rect.width <= prose * 0.9 || prose == 0
+                || line.rect.width <= prose && styles.contains(LabelStyle(line, body: body)) { labels.append(line) }
         }
         // Three or more labels ending in folios are a table of contents, not section labels.
         let folio = #"\s(?:\d{1,4}|[ivxlc]+(?:[–-][ivxlc]+)?)$"#
         let entries = labels.filter { $0.text.range(of: folio, options: .regularExpression) != nil }
         return entries.count >= 3 ? labels.filter { !entries.contains($0) } : labels
+    }
+
+    /// A section label's typography relative to its page: its size and the body's (to the half
+    /// point) and whether every word is bold. The FAA handbook sets its section titles in
+    /// 12-point bold over 10-point prose.
+    struct LabelStyle: Hashable {
+        var size: Int
+        var body: Int
+        var bold: Bool
+
+        init(_ line: TextLine, body: CGFloat) {
+            size = Int((line.fontSize * 2).rounded())
+            self.body = Int((body * 2).rounded())
+            bold = line.content.elements.allSatisfy { element in
+                guard case let .text(value, style) = element else { return true }
+                return style.contains(.bold) || value.allSatisfy(\.isWhitespace)
+            }
+        }
+    }
+
+    /// The label styles one page's narrow section labels establish, measured as `blocks` measures
+    /// them but before image regions are known: lines inside a painted graphic, running heads and
+    /// margin lines are no evidence. `labelStyles(from:)` keeps the styles that recur.
+    static func labelEvidence(on page: PageContent) -> Set<LabelStyle> {
+        guard !page.hasSyntheticTextStyle, !page.recognized else { return [] }
+        let figures = page.graphics.filter { !isThinRule($0) }
+        let lines = page.lines.map { line -> TextLine in
+            var copy = line; copy.structure = nil; return copy
+        }.filter { line in
+            !figures.contains { $0.contains(CGPoint(x: line.rect.midX, y: line.rect.midY)) }
+                && !inMargin(line, of: page) && !isHeaderLike(line, in: page, bothBands: true)
+        }
+        let body = max(4, bodySize(page.lines))
+        let boxes = clusters(page.tints, distance: 4)
+        let outside = lines.filter { line in !boxes.contains { $0.contains(CGPoint(x: line.rect.midX, y: line.rect.midY)) } }
+        let reflowBody = headingBodySize(outside, pageBody: body)
+        let threshold = max(body * 1.25, reflowBody * 1.1)
+        return Set(sectionLabels(in: lines, body: reflowBody, headingThreshold: threshold, page: page)
+            .filter { !isContentsEntry($0.text) }.map { LabelStyle($0, body: reflowBody) })
+    }
+
+    /// A style is the book's label typography once narrow labels set in it appear on at least
+    /// three pages; `pages` counts the pages whose evidence names each style.
+    static func labelStyles(from pages: [LabelStyle: Int]) -> Set<LabelStyle> {
+        Set(pages.filter { $0.value >= 3 }.keys)
     }
 
     /// A contents entry: a dot leader of four or more dots running to the line's end, with or
@@ -689,10 +742,11 @@ enum LayoutReconstructor {
     /// `noteChapter` is the chapter named by this page's `NOTES TO CHAPTER N` running head,
     /// retained before furniture removal; nil for pages without one. `continuesNote` states
     /// that the previous page ended in a page-bottom footnote, so a marker-less note under
-    /// this page's separator may continue it.
+    /// this page's separator may continue it. `labelStyles` is the book's section-label
+    /// typography (`labelStyles(from:)`).
     static func blocks(page: PageContent, images: [(CGRect, String)], vocabulary: Set<String>,
                        warnings: inout [ConversionWarning], noteChapter: Int? = nil,
-                       continuesNote: Bool = false) -> [ReflowBlock] {
+                       continuesNote: Bool = false, labelStyles: Set<LabelStyle> = []) -> [ReflowBlock] {
         let body = max(4, bodySize(page.lines))
         // A rotated stamp in the outer margin is furniture, never content or a heading.
         let stamps = rotatedMarginLines(page)
@@ -729,7 +783,7 @@ enum LayoutReconstructor {
             var copy = line; copy.structure = nil; return copy
         }
         let labels = sectionLabels(in: free.map(untagged), body: reflowBody,
-                                   headingThreshold: headingThreshold, page: page)
+                                   headingThreshold: headingThreshold, page: page, styles: labelStyles)
         // The page's own typography for a heading, before any tag is consulted. A contents entry
         // is never a heading; a multi-line display sentence is a pull quote (handled below).
         // Neither is a separated margin line that opens or closes with this page's number:
@@ -1074,7 +1128,13 @@ enum LayoutReconstructor {
                         && verticalGap >= -body * 0.4 && verticalGap < body * 0.9
                     let shortEnding = prev.rect.width < line.rect.width * 0.65
                         && prev.text.last.map { ".!?".contains($0) } == true
-                    if prev.wraps == false || !sameColumn || shortEnding
+                    // A figure caption ends where clearly larger type begins at body size or
+                    // above: that line is a section title, not more caption (#63). A caption's
+                    // own lines differ by less: FAA opens each with an 8-point bold label and
+                    // wraps its 9-point text, and a figure-heavy page can measure a 9-point body.
+                    let endsCaption = line.fontSize >= prev.fontSize * 1.15
+                        && line.fontSize >= reflowBody * 0.95 && isCaption(paragraph.text)
+                    if prev.wraps == false || !sameColumn || shortEnding || endsCaption
                         || opensSection(line, after: prev, gap: verticalGap, leading: previousGap) {
                         flush()
                     } else { attachedGap = verticalGap }
@@ -1242,9 +1302,15 @@ enum LayoutReconstructor {
             // Images, captions and folios keep their place ahead of the joined paragraph. A
             // page-bottom footnote follows it instead: its reference is inside that paragraph,
             // and note text must not precede its marker (#40). It then sits past the inline
-            // boundary, so page navigation reaches it from the next page.
+            // boundary, so page navigation reaches it from the next page. Headings directly above
+            // the paragraph move with it: the section they open starts with that paragraph, and
+            // a figure the page set beside or below the section must not come between them (FAA
+            // page 33's `Selecting a Flight School`, #63).
+            var start = anchors.previous
+            while start > 0, case .heading = blocks[start - 1].content { start -= 1 }
+            let headings = Array(blocks[start..<anchors.previous])
             let trailing = Array(blocks[(anchors.previous + 1)...])
-            blocks.replaceSubrange(anchors.previous..., with: trailing.filter { !$0.isFootnote } + [joined]
+            blocks.replaceSubrange(start..., with: trailing.filter { !$0.isFootnote } + headings + [joined]
                 + trailing.filter(\.isFootnote))
             remaining.remove(at: anchors.next)
         } else {

@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space.",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370).",
       "pages": [
         {
           "page": 16,
@@ -285,6 +285,61 @@
           ],
           "absentText": [
             "runway/ taxiway"
+          ]
+        },
+        {
+          "page": 33,
+          "headings": [
+            "Selecting a Flight School"
+          ],
+          "orderedText": [
+            "Type of aircraft flown by an airline transport pilot",
+            "Selecting a Flight School",
+            "Selecting a flight school is an important consideration"
+          ]
+        },
+        {
+          "page": 43,
+          "headings": [
+            "Crew Resource Management (CRM) and Single-Pilot Resource Management",
+            "Hazard and Risk"
+          ],
+          "orderedText": [
+            "all pilots should become familiar with and employ ADM",
+            "Crew Resource Management (CRM) and Single-Pilot Resource Management",
+            "While CRM focuses on pilots operating in crew environments"
+          ]
+        },
+        {
+          "page": 49,
+          "headings": [
+            "Human Factors"
+          ],
+          "orderedText": [
+            "The PAVE checklist",
+            "Human Factors",
+            "Why are human conditions, such as fatigue"
+          ]
+        },
+        {
+          "page": 201,
+          "headings": [
+            "Chapter Summary"
+          ],
+          "orderedText": [
+            "Prop ammeter and anti-ice boots",
+            "Chapter Summary",
+            "All aircraft have a requirement for essential systems"
+          ]
+        },
+        {
+          "page": 370,
+          "headings": [
+            "Engineered Materials Arresting Systems (EMAS)"
+          ],
+          "orderedText": [
+            "Engineered Materials Arresting Systems (EMAS)",
+            "Aircraft can and do overrun the ends of runways"
           ]
         }
       ]

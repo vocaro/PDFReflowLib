@@ -34,9 +34,13 @@ import Vision
             "caseID": item["id"]!, "sourceSHA256": digest, "page": number,
             "sourceTitle": item["title"]!, "extraction": "Vision RecognizeDocumentsRequest, default ConversionOptions",
             "bounds": rect(page.bounds(for: .cropBox)), "graphics": result.tables.map(rect),
-            "lines": result.lines.map { ["text": $0.text, "rect": rect($0.rect),
-                "fontSize": $0.fontSize, "monospaced": $0.monospaced,
-                "wraps": $0.wraps ?? false] as [String: Any] }, "attributedLines": [],
+            "lines": result.lines.map { line -> [String: Any] in
+                var entry: [String: Any] = ["text": line.text, "rect": rect(line.rect),
+                    "fontSize": line.fontSize, "monospaced": line.monospaced, "wraps": line.wraps ?? false]
+                // A rotated line's reading direction (#122).
+                if let direction = line.readingDirection { entry["readingDirection"] = [direction.dx, direction.dy] }
+                return entry
+            }, "attributedLines": [],
             "quadrilaterals": observations.first?.document.text.lines.map { line in
                 ["text": line.transcript, "isTitle": line.isTitle,
                  "points": [line.topLeft, line.topRight, line.bottomRight, line.bottomLeft].map { [$0.x, $0.y] }]

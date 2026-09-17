@@ -1419,7 +1419,7 @@
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). The detached, flattened \"x2 +\" paragraph from page 343's \"Factor\" line is a known defect, not blessed. Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438 or fraction answers split between a marker stub and an image (page 471 entries 22 and 29). Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) rejoin their rows and paragraphs in reading order on pages 288, 289 and 299 (#95); the pieces keep PDFKit's own order inside a row (`36· 5 √` for √36·5), which is not blessed. Page 429 source raster reviewed (#71): `When we are solving a triangle` opens a paragraph set off by added space under the paragraph threshold. Pages 448 and 487 source rasters reviewed (#78): page 448's graphs, numbered along their rows three to a row, read 15-22 in number order; page 487's sub-answers a-i, set in three columns above answers 2-15, read before them. Exercise sets numbered two to a row (pages 10, 26) keep their column order. Pages 175 and 437 (#97) source-reviewed: blank pages whose only text is the folio carry no text once the folio run removes it. Pages 5 and 211 source-reviewed (#102): the contents entry 6.3 Trinomials where a = 1 with its leader is text, not a preserved region. Pages 2, 9, 90, 120, 180, 318, 321 and 401 source-reviewed (#109): a line holding an inline minus, times or radical sign, whose rectangle extends 8.5 points past its type, continues its paragraph into the next line; page 90's point descriptions and page 401's two paragraphs stay separate; page 321's radicand − 1 reads inside its sentence; the license's minus bullets on page 2 and the derivation lines on pages 9 and 120 stay list lines. Pages 34, 40 and 230 source rasters reviewed (#110): a digit set in CMR12 before prose in the EC text font keeps its word space (`Subtract 8 from`, `Plug 2 in`, `The numbers are− 3 and− 3`); PDFKit dropped it and NativeSpacingReader restores it from the fonts' WinAnsi encodings. The flattened minus spacing (`− 3`) is not blessed.",
+      "basis": "Page 12 source raster reviewed; license and page-347 formula targets come from the existing corpus review. Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Page 343 source raster reviewed for the \"Our Solution\" line x = (-b +/- sqrt(b^2 - 4ac)) / 2a: its exponent, radical sign and fraction bar are checked stroke by stroke at full resolution, as are both exponents of exercise 35 on page 347 (#27). The detached, flattened \"x2 +\" paragraph from page 343's \"Factor\" line is a known defect, not blessed. Pages 10, 438, 289, 291 and 471 visually reviewed (#29): section 0.1 exercises and their answers keep every number within each column's order (column-major page order is not blessed, only within-column order), the 8.1 square-root exercises and the page-289 derivations are preserved as warned image regions, and the 7.8 dimensional-analysis answers keep thirty text entries. Does not bless the displaced chapter heading on page 438 or fraction answers split between a marker stub and an image (page 471 entries 22 and 29). Page 40 visually reviewed (#50): the five-step list keeps one block per step, and item 4's wrapped line (\"multiply or\" / \"divide)\"), set in the item's hanging indent, stays inside item 4 while item 5 opens a new block. The aligned derivation below it remains a warned image and is not blessed. Page 101 source raster reviewed (#69): exercises 17 and 28, whose numbers PDFKit splits from their point pairs, are single entries like exercise 18. Pages 288, 289 and 291 source rasters reviewed (#58, #49): sentences with inline radicals (page 288's square-root introduction and product-rule sentence, page 289's opening sentence) and the page-291 instruction reflow as text, while page 288's Example 377 table and displayed product rule, the page-289 derivations and every page-291 exercise stay preserved. PDFKit's separate radical pieces (`√ on`, `√ by spliting`, `√ . There are sev-`) rejoin their rows and paragraphs in reading order on pages 288, 289 and 299 (#95); the pieces keep PDFKit's own order inside a row (`36· 5 √` for √36·5), which is not blessed. Page 429 source raster reviewed (#71): `When we are solving a triangle` opens a paragraph set off by added space under the paragraph threshold. Pages 448 and 487 source rasters reviewed (#78): page 448's graphs, numbered along their rows three to a row, read 15-22 in number order; page 487's sub-answers a-i, set in three columns above answers 2-15, read before them. Exercise sets numbered two to a row (pages 10, 26) keep their column order. Pages 175 and 437 (#97) source-reviewed: blank pages whose only text is the folio carry no text once the folio run removes it. Pages 5 and 211 source-reviewed (#102): the contents entry 6.3 Trinomials where a = 1 with its leader is text, not a preserved region. Pages 2, 9, 90, 120, 180, 318, 321 and 401 source-reviewed (#109): a line holding an inline minus, times or radical sign, whose rectangle extends 8.5 points past its type, continues its paragraph into the next line; page 90's point descriptions and page 401's two paragraphs stay separate; page 321's radicand − 1 reads inside its sentence; the license's minus bullets on page 2 and the derivation lines on pages 9 and 120 stay list lines. Pages 34, 40 and 230 source rasters reviewed (#110): a digit set in CMR12 before prose in the EC text font keeps its word space (`Subtract 8 from`, `Plug 2 in`, `The numbers are− 3 and− 3`); PDFKit dropped it and NativeSpacingReader restores it from the fonts' WinAnsi encodings. The flattened minus spacing (`− 3`) is not blessed. Pages 50, 218 and 64 source rasters reviewed (#123): `dif-` + `ferent` joins as `different`, which the book prints with the U+FB00 ligature; the spaced example lines `Three more than a number becomes x + 3` and `Four less than a number becomes x− 4` are paragraphs of their own after their list items. The `Is` bullet inside page 64's formula crop is not blessed.",
       "pages": [
         {
           "page": 10,
@@ -1856,6 +1856,28 @@
           "listItems": [
             "• More than often represents addition and is usually built backwards, writing the second part plus the first",
             "• Less than often represents subtraction and is usually built backwards as well, writing the second part minus the first"
+          ],
+          "paragraphs": [
+            "Three more than a number becomes x + 3",
+            "Four less than a number becomes x− 4"
+          ]
+        },
+        {
+          "page": 50,
+          "paragraphs": [
+            "just written in a different form because we solved them in"
+          ],
+          "absentText": [
+            "dif-ferent"
+          ]
+        },
+        {
+          "page": 218,
+          "paragraphs": [
+            "more than just the signs are different. In this case"
+          ],
+          "absentText": [
+            "dif-ferent"
           ]
         }
       ]
@@ -3915,7 +3937,7 @@
     {
       "id": "cdc-zombie-pandemic-2011",
       "sourceSHA256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
-      "basis": "Page 39 checklist source raster reviewed. Page 5/13 only protect artwork and transcription warnings; damaged dialogue and comic narrative order remain unqualified.",
+      "basis": "Page 39 checklist source raster reviewed. Page 5/13 only protect artwork and transcription warnings; damaged dialogue and comic narrative order remain unqualified. Pages 14, 23, 34 and 17 source rasters reviewed (#122): a speech balloon beside a caption box reads whole, the left unit first (page 14 `Nothing but snow. Let's try the radio...` before the broadcast, page 23 the left-panel balloon before the right-panel broadcast, page 34 `wow... that old thing still works!` before the storm warning); the rotated OCR caption on page 17 reads its three lines in order. Balloon order across panels (#18) is not blessed.",
       "pages": [
         {
           "page": 5,
@@ -3948,6 +3970,54 @@
             "Consider the needs of all family members"
           ],
           "minimumImages": 1
+        },
+        {
+          "page": 14,
+          "paragraphs": [
+            "le t 's tr y the radio..."
+          ],
+          "orderedText": [
+            "Nothing eut snow .",
+            "le t 's tr y the radio...",
+            "sray in your Homes.",
+            "slow bo MovBMenr",
+            "thbm ro a secure area",
+            "sray runed For more"
+          ]
+        },
+        {
+          "page": 23,
+          "paragraphs": [
+            "aLm ost a week, todd, and we haven't le f t the"
+          ],
+          "orderedText": [
+            "w e're aLmosT",
+            "H o u s e !",
+            "...coNr/Nues ro spreAd.",
+            "cdc is ure/Ne",
+            "stay in your Homes.",
+            "ro a des/eNAred"
+          ]
+        },
+        {
+          "page": 34,
+          "paragraphs": [
+            "wow... THAT o ld THINg STILL"
+          ],
+          "orderedText": [
+            "wow... THAT",
+            "w o r k s !",
+            ".severe TttuaeesTom",
+            "in effect fo r THe"
+          ]
+        },
+        {
+          "page": 17,
+          "orderedText": [
+            "SEVERAL DAYS LATER",
+            "DISEASE CONTROL",
+            "ATLANTA"
+          ]
         }
       ]
     },

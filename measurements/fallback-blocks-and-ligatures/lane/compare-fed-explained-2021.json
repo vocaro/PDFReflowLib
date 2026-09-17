@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "provenanceErrors": [],
+  "case": "fed-explained-2021",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "65ac9c13aba5caedfdc37dc9bd9e319e96677a14c0ec90abfadd562afbd169d5",
+  "candidateConverterSHA256": "a3bf6549b888d755a4acbee03fd72f69d9f779d33d4bf08ded10af837aba417d",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "3dc11f836bf09bc9d8dab63b6c1ccc7a3f14f8b3635f0db1c2353ee24dd6af6a"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "3dc11f836bf09bc9d8dab63b6c1ccc7a3f14f8b3635f0db1c2353ee24dd6af6a"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 7,
+    "baselineWords": 1,
+    "candidateWords": 1,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [],
+  "changedPageFields": {},
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 0,
+    "fields": {},
+    "navigationEntries": 0,
+    "pages": {}
+  },
+  "imageRenames": {
+    "count": 0,
+    "pairs": []
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

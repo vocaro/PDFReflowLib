@@ -81,6 +81,19 @@ enum OCRReader {
         return sameCode.first { $0.script == requested.script } ?? sameCode.first
     }
 
+    /// The direction a recognized line reads, from its quadrilateral's top edge in normalized
+    /// coordinates, when that edge runs more than 45° from left to right; nil otherwise. A caption
+    /// set sideways (CDC page 17) has an axis-aligned rectangle taller than wide, and only this
+    /// edge says whether its lines run down the page, stacking leftward, or up it, stacking
+    /// rightward (#122).
+    static func readingDirection(from start: (x: Double, y: Double), to end: (x: Double, y: Double),
+                                 in bounds: CGRect) -> CGVector? {
+        let dx = (end.x - start.x) * bounds.width, dy = (end.y - start.y) * bounds.height
+        let length = (dx * dx + dy * dy).squareRoot()
+        guard length > 0, abs(dy) > abs(dx) || dx < 0 else { return nil }
+        return CGVector(dx: dx / length, dy: dy / length)
+    }
+
     static func read(page: PDFPage, options: ConversionOptions) async throws -> Result {
         let bounds = page.bounds(for: .cropBox)
         let image = try PageRasterizer.image(page: page, rect: bounds, options: options)
@@ -128,7 +141,11 @@ enum OCRReader {
         }
         let lines: [TextLine] = recognition.lines.map { line in
             let rect = pageRect(line.box)
-            return TextLine(text: line.text, rect: rect, fontSize: rect.height, wraps: line.wraps)
+            var result = TextLine(text: line.text, rect: rect, fontSize: rect.height, wraps: line.wraps)
+            if let edge = line.topEdge {
+                result.readingDirection = readingDirection(from: (0, 0), to: (Double(edge.dx), Double(edge.dy)), in: bounds)
+            }
+            return result
         }
         return Result(lines: lines, tables: recognition.tables.map {
             pageRect($0).insetBy(dx: -3, dy: -3).intersection(bounds)
@@ -137,7 +154,12 @@ enum OCRReader {
 
     /// One recognition, in Vision's normalized lower-left coordinates of the recognized image.
     struct Recognition: Equatable {
-        struct Line: Equatable { var text: String; var box: CGRect; var wraps: Bool? }
+        struct Line: Equatable {
+            var text: String; var box: CGRect; var wraps: Bool?
+            /// The quadrilateral's top edge, from its top-left to its top-right corner, in the same
+            /// normalized coordinates as `box`: the direction the text runs (#122).
+            var topEdge: CGVector? = nil
+        }
         var lines: [Line] = []
         var tables: [CGRect] = []
     }
@@ -155,7 +177,9 @@ enum OCRReader {
             // Preserve uncertain transcription rather than dropping low-confidence words silently.
             guard let candidate = observation.topCandidates(1).first else { return nil }
             return .init(text: candidate.string, box: observation.boundingRegion.boundingBox.cgRect,
-                         wraps: observation.shouldWrapToNextLine)
+                         wraps: observation.shouldWrapToNextLine,
+                         topEdge: CGVector(dx: observation.topRight.x - observation.topLeft.x,
+                                           dy: observation.topRight.y - observation.topLeft.y))
         }, tables: document.tables.map { $0.boundingRegion.boundingBox.cgRect })
     }
 
@@ -172,7 +196,10 @@ enum OCRReader {
             }
             let ownsUpper = bottom + height / 2 >= retryBandSplit
             func owns(_ box: CGRect) -> Bool { ownsUpper ? box.midY >= retryBandSplit : box.midY < retryBandSplit }
-            merged.lines += recognition.lines.map { .init(text: $0.text, box: place($0.box), wraps: $0.wraps) }
+            merged.lines += recognition.lines.map { line in
+                .init(text: line.text, box: place(line.box), wraps: line.wraps,
+                      topEdge: line.topEdge.map { CGVector(dx: $0.dx, dy: $0.dy * height) })
+            }
                 .filter { owns($0.box) }
             tables += recognition.tables.map(place).filter { owns($0) || ($0.minY < retryBandSplit && $0.maxY > retryBandSplit) }
         }

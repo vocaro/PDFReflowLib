@@ -1,0 +1,1103 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        84.9602,
+        746.01924480000002,
+        14.966047540736,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "1.8"
+        }
+      ],
+      "text" : "1.8"
+    },
+    {
+      "rect" : [
+        123.36020000000001,
+        721.1630363999999,
+        348.15596851287211,
+        16.919463599999972
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 16.936400000000003,
+          "text" : "Linear Equations - Number and Geometry"
+        }
+      ],
+      "text" : "Linear Equations - Number and Geometry"
+    },
+    {
+      "rect" : [
+        84.9602,
+        683.9914,
+        425.19118382668802,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Objective: Solve number and geometry problems by creating and"
+        }
+      ],
+      "text" : "Objective: Solve number and geometry problems by creating and"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        669.59140000000002,
+        148.57025677668094,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "solving a linear equation."
+        }
+      ],
+      "text" : "solving a linear equation."
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        647.85954479999998,
+        425.20065362480648,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Word problems can be tricky. Often it takes a bit of practice to convert the"
+        }
+      ],
+      "text" : "Word problems can be tricky. Often it takes a bit of practice to convert the"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        633.4595448,
+        425.20192568266242,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "English sentence into a mathematical sentence. This is what we will focus on here"
+        }
+      ],
+      "text" : "English sentence into a mathematical sentence. This is what we will focus on here"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        619.05954480000003,
+        389.29325223805444,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "with some basic number problems, geometry problems, and parts problems."
+        }
+      ],
+      "text" : "with some basic number problems, geometry problems, and parts problems."
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        597.33924480000007,
+        425.15803162928643,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "A few important phrases are described below that can give us clues for how to set"
+        }
+      ],
+      "text" : "A few important phrases are described below that can give us clues for how to set"
+    },
+    {
+      "rect" : [
+        84.960199999999986,
+        582.9392448000001,
+        71.771905997465609,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "up a problem."
+        }
+      ],
+      "text" : "up a problem."
+    },
+    {
+      "rect" : [
+        101.16019999999999,
+        547.34310800000003,
+        360.16192985656323,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "• A number (or unknown, a value, etc) often becomes our variable"
+        }
+      ],
+      "text" : "• A number (or unknown, a value, etc) often becomes our variable"
+    },
+    {
+      "rect" : [
+        101.16019999999997,
+        520.10330800000008,
+        396.95660977029121,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "• Is (or other forms of is: was, will be, are, etc) often represents equals (=)"
+        }
+      ],
+      "text" : "• Is (or other forms of is: was, will be, are, etc) often represents equals (=)"
+    },
+    {
+      "rect" : [
+        120.96089999999998,
+        506.85964480000007,
+        104.50319644480004,
+        11.979110399999968
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x is 5 becomes x =5"
+        }
+      ],
+      "text" : "x is 5 becomes x =5"
+    },
+    {
+      "rect" : [
+        101.16094999999999,
+        471.2631080000001,
+        408.97380410703352,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "• More than often represents addition and is usually built backwards,"
+        }
+      ],
+      "text" : "• More than often represents addition and is usually built backwards,"
+    },
+    {
+      "rect" : [
+        120.96094999999998,
+        465.33934480000011,
+        189.47655028464652,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "writing the second part plus the first"
+        }
+      ],
+      "text" : "writing the second part plus the first"
+    },
+    {
+      "rect" : [
+        120.96094999999998,
+        443.61944480000011,
+        215.62369357760002,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Three more than a number becomes x + 3"
+        }
+      ],
+      "text" : "Three more than a number becomes x + 3"
+    },
+    {
+      "rect" : [
+        101.16117999999997,
+        407.90340800000013,
+        409.01663266048013,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "• Less than often represents subtraction and is usually built backwards as"
+        }
+      ],
+      "text" : "• Less than often represents subtraction and is usually built backwards as"
+    },
+    {
+      "rect" : [
+        120.96107999999998,
+        401.97964480000013,
+        225.95560459299844,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "well, writing the second part minus the first"
+        }
+      ],
+      "text" : "well, writing the second part minus the first"
+    },
+    {
+      "rect" : [
+        120.96107999999998,
+        371.78350800000015,
+        201.93782800000002,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Four less than a number becomes x− 4"
+        }
+      ],
+      "text" : "Four less than a number becomes x− 4"
+    },
+    {
+      "rect" : [
+        84.960859999999997,
+        353.13984480000016,
+        425.18804027363831,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Using these key phrases we can take a number problem and set up and equation"
+        }
+      ],
+      "text" : "Using these key phrases we can take a number problem and set up and equation"
+    },
+    {
+      "rect" : [
+        84.960859999999968,
+        338.73984480000018,
+        51.012476384588808,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "and solve."
+        }
+      ],
+      "text" : "and solve."
+    },
+    {
+      "rect" : [
+        84.960859999999968,
+        306.11160000000018,
+        79.690012155048976,
+        11.955199999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 102."
+        }
+      ],
+      "text" : "Example 102."
+    },
+    {
+      "rect" : [
+        84.960859999999968,
+        284.3797448000002,
+        368.40352132503045,
+        11.979110400000025
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "If 28 less than five times a certain number is 232. What is the number?"
+        }
+      ],
+      "text" : "If 28 less than five times a certain number is 232. What is the number?"
+    },
+    {
+      "rect" : [
+        142.08085999999997,
+        245.66370800000021,
+        37.766052243583999,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5x− 28 "
+        }
+      ],
+      "text" : "5x− 28 "
+    },
+    {
+      "rect" : [
+        111.36080999999996,
+        228.26370800000021,
+        68.485941687168065,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5x− 28=232 "
+        }
+      ],
+      "text" : "5x− 28=232 "
+    },
+    {
+      "rect" : [
+        125.16077999999999,
+        219.33924480000002,
+        54.71839000448,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.00070000000019376785,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "+ 28 + 28 "
+        }
+      ],
+      "text" : "+ 28 + 28 "
+    },
+    {
+      "rect" : [
+        195.48096638758398,
+        245.66370800000021,
+        288.217891612416,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Subtraction is built backwards, multiply the unknown by 5"
+        }
+      ],
+      "text" : "Subtraction is built backwards, multiply the unknown by 5"
+    },
+    {
+      "rect" : [
+        195.48080583116803,
+        228.26370800000021,
+        106.6158603460608,
+        20.455347200000006
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Is translates to equals"
+        }
+      ],
+      "text" : "Is translates to equals"
+    },
+    {
+      "rect" : [
+        195.48000000000002,
+        219.33924480000002,
+        99.654861280332852,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Add 28 to both sides"
+        }
+      ],
+      "text" : "Add 28 to both sides"
+    },
+    {
+      "rect" : [
+        195.48004583116801,
+        201.93924479999998,
+        148.17772216883196,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The variable is multiplied by 5"
+        }
+      ],
+      "text" : "The variable is multiplied by 5"
+    },
+    {
+      "rect" : [
+        140.51971999999998,
+        184.53924480000001,
+        162.57832800000003,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5 5 Divide both sides by 5"
+        }
+      ],
+      "text" : "5 5 Divide both sides by 5"
+    },
+    {
+      "rect" : [
+        148.31999999999999,
+        167.13924479999997,
+        31.526212243583984,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "x = 52 "
+        }
+      ],
+      "text" : "x = 52 "
+    },
+    {
+      "rect" : [
+        195.48026638758398,
+        167.13924479999997,
+        87.851578012415985,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "The number is 52."
+        }
+      ],
+      "text" : "The number is 52."
+    },
+    {
+      "rect" : [
+        136.68000000000001,
+        201.93924479999998,
+        43.165991687168002,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "5x =260 "
+        }
+      ],
+      "text" : "5x =260 "
+    },
+    {
+      "rect" : [
+        84.960029999999961,
+        131.49904479999998,
+        425.15661357516797,
+        11.979110399999996
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "This same idea can be extended to a more involved problem as shown in the next"
+        }
+      ],
+      "text" : "This same idea can be extended to a more involved problem as shown in the next"
+    },
+    {
+      "rect" : [
+        84.960029999999961,
+        117.09904479999999,
+        45.371846978815995,
+        11.97911040000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "example."
+        }
+      ],
+      "text" : "example."
+    },
+    {
+      "rect" : [
+        84.960029999999961,
+        84.471199999999982,
+        79.690012178959392,
+        11.955200000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.955200000000001,
+          "text" : "Example 103."
+        }
+      ],
+      "text" : "Example 103."
+    },
+    {
+      "rect" : [
+        299.64002999999997,
+        52.378953199999977,
+        10.021160447733621,
+        9.8729762399999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.9626400000000004,
+          "text" : "64"
+        }
+      ],
+      "text" : "64"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    595,
+    842
+  ],
+  "caseID" : "wallace-algebra-2010",
+  "graphics" : [
+    [
+      123.16000000000003,
+      217.70000000000002,
+      58.719999999999999,
+      4
+    ],
+    [
+      133.96000000000001,
+      194.54000000000002,
+      19.840000000000003,
+      4
+    ],
+    [
+      162.16000000000003,
+      194.54000000000002,
+      19.719999999999999,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        746.01924480000002,
+        14.966047540736,
+        11.979110399999968
+      ],
+      "text" : "1.8"
+    },
+    {
+      "fontSize" : 16.936400000000003,
+      "monospaced" : false,
+      "rect" : [
+        123.36020000000001,
+        721.1630363999999,
+        348.15596851287211,
+        16.919463599999972
+      ],
+      "text" : "Linear Equations - Number and Geometry"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.9602,
+        683.9914,
+        425.19118382668802,
+        11.955199999999991
+      ],
+      "text" : "Objective: Solve number and geometry problems by creating and"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        669.59140000000002,
+        148.57025677668094,
+        11.955199999999991
+      ],
+      "text" : "solving a linear equation."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        647.85954479999998,
+        425.20065362480648,
+        11.979110399999968
+      ],
+      "text" : "Word problems can be tricky. Often it takes a bit of practice to convert the"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        633.4595448,
+        425.20192568266242,
+        11.979110399999968
+      ],
+      "text" : "English sentence into a mathematical sentence. This is what we will focus on here"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        619.05954480000003,
+        389.29325223805444,
+        11.979110399999968
+      ],
+      "text" : "with some basic number problems, geometry problems, and parts problems."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        597.33924480000007,
+        425.15803162928643,
+        11.979110399999968
+      ],
+      "text" : "A few important phrases are described below that can give us clues for how to set"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960199999999986,
+        582.9392448000001,
+        71.771905997465609,
+        11.979110399999968
+      ],
+      "text" : "up a problem."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        101.16019999999999,
+        547.34310800000003,
+        360.16192985656323,
+        20.455347200000006
+      ],
+      "text" : "• A number (or unknown, a value, etc) often becomes our variable"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        101.16019999999997,
+        520.10330800000008,
+        396.95660977029121,
+        20.455347200000006
+      ],
+      "text" : "• Is (or other forms of is: was, will be, are, etc) often represents equals (=)"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        120.96089999999998,
+        506.85964480000007,
+        104.50319644480004,
+        11.979110399999968
+      ],
+      "text" : "x is 5 becomes x =5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        101.16094999999999,
+        471.2631080000001,
+        408.97380410703352,
+        20.455347200000006
+      ],
+      "text" : "• More than often represents addition and is usually built backwards,"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        120.96094999999998,
+        465.33934480000011,
+        189.47655028464652,
+        11.979110400000025
+      ],
+      "text" : "writing the second part plus the first"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        120.96094999999998,
+        443.61944480000011,
+        215.62369357760002,
+        11.979110400000025
+      ],
+      "text" : "Three more than a number becomes x + 3"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        101.16117999999997,
+        407.90340800000013,
+        409.01663266048013,
+        20.455347200000006
+      ],
+      "text" : "• Less than often represents subtraction and is usually built backwards as"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        120.96107999999998,
+        401.97964480000013,
+        225.95560459299844,
+        11.979110400000025
+      ],
+      "text" : "well, writing the second part minus the first"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        120.96107999999998,
+        371.78350800000015,
+        201.93782800000002,
+        20.455347200000006
+      ],
+      "text" : "Four less than a number becomes x− 4"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960859999999997,
+        353.13984480000016,
+        425.18804027363831,
+        11.979110400000025
+      ],
+      "text" : "Using these key phrases we can take a number problem and set up and equation"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960859999999968,
+        338.73984480000018,
+        51.012476384588808,
+        11.979110400000025
+      ],
+      "text" : "and solve."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960859999999968,
+        306.11160000000018,
+        79.690012155048976,
+        11.955199999999991
+      ],
+      "text" : "Example 102."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960859999999968,
+        284.3797448000002,
+        368.40352132503045,
+        11.979110400000025
+      ],
+      "text" : "If 28 less than five times a certain number is 232. What is the number?"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        142.08085999999997,
+        245.66370800000021,
+        37.766052243583999,
+        20.455347200000006
+      ],
+      "text" : "5x− 28"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        111.36080999999996,
+        228.26370800000021,
+        68.485941687168065,
+        20.455347200000006
+      ],
+      "text" : "5x− 28=232"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        125.16077999999999,
+        219.33924480000002,
+        54.71839000448,
+        11.979110399999996
+      ],
+      "text" : "+ 28 + 28"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        195.48096638758398,
+        245.66370800000021,
+        288.217891612416,
+        20.455347200000006
+      ],
+      "text" : "Subtraction is built backwards, multiply the unknown by 5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        195.48080583116803,
+        228.26370800000021,
+        106.6158603460608,
+        20.455347200000006
+      ],
+      "text" : "Is translates to equals"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        195.48000000000002,
+        219.33924480000002,
+        99.654861280332852,
+        11.979110399999996
+      ],
+      "text" : "Add 28 to both sides"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        195.48004583116801,
+        201.93924479999998,
+        148.17772216883196,
+        11.979110399999996
+      ],
+      "text" : "The variable is multiplied by 5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        140.51971999999998,
+        184.53924480000001,
+        162.57832800000003,
+        11.979110399999996
+      ],
+      "text" : "5 5 Divide both sides by 5"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        148.31999999999999,
+        167.13924479999997,
+        31.526212243583984,
+        11.979110399999996
+      ],
+      "text" : "x = 52"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        195.48026638758398,
+        167.13924479999997,
+        87.851578012415985,
+        11.979110399999996
+      ],
+      "text" : "The number is 52."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        136.68000000000001,
+        201.93924479999998,
+        43.165991687168002,
+        11.979110399999996
+      ],
+      "text" : "5x =260"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960029999999961,
+        131.49904479999998,
+        425.15661357516797,
+        11.979110399999996
+      ],
+      "text" : "This same idea can be extended to a more involved problem as shown in the next"
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960029999999961,
+        117.09904479999999,
+        45.371846978815995,
+        11.97911040000001
+      ],
+      "text" : "example."
+    },
+    {
+      "fontSize" : 11.955200000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.960029999999961,
+        84.471199999999982,
+        79.690012178959392,
+        11.955200000000005
+      ],
+      "text" : "Example 103."
+    },
+    {
+      "fontSize" : 9.9626400000000004,
+      "monospaced" : false,
+      "rect" : [
+        299.64002999999997,
+        52.378953199999977,
+        10.021160447733621,
+        9.8729762399999998
+      ],
+      "text" : "64"
+    }
+  ],
+  "page" : 64,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        123.16000000000003,
+        217.70000000000002,
+        58.719999999999999,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        133.96000000000001,
+        194.54000000000002,
+        19.840000000000003,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        162.16000000000003,
+        194.54000000000002,
+        19.719999999999999,
+        4
+      ]
+    }
+  ],
+  "rightsBasis" : "Page 2 states Copyright 2010 Tyler Wallace and Creative Commons Attribution 3.0 Unported. The PDF remains an external local corpus source; it is not bundled or relicensed under MIT.",
+  "sourceSHA256" : "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "sourceTitle" : "Beginning and Intermediate Algebra",
+  "sourceURL" : "https://s3.amazonaws.com/myopenmath/cfiles/19515/Beginning_and_Intermediate_Algebra.pdf"
+}

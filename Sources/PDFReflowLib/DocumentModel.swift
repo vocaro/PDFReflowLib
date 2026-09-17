@@ -24,6 +24,10 @@ struct TextLine: Equatable {
     // Reading order may use the body line beside a drop cap. Ink bounds remain in rect.
     var readingRect: CGRect?
     var structure: TextStructure?
+    /// The unit direction in which a recognized line's text runs, in page space, when it is set
+    /// more than 45° from left to right (a rotated caption, #122); nil for native and upright text.
+    /// `rect` is then the rotated line's axis-aligned bounds, which do not say which way it reads.
+    var readingDirection: CGVector?
 
     init(text: String, rect: CGRect, fontSize: CGFloat, monospaced: Bool = false, wraps: Bool? = nil) {
         self.init(content: InlineText(text), rect: rect, fontSize: fontSize, monospaced: monospaced, wraps: wraps)
@@ -44,7 +48,7 @@ struct TextLine: Equatable {
 // schema, and the cached plain text is rebuilt from the styled content rather than stored.
 extension TextLine: Codable {
     private enum CodingKeys: String, CodingKey {
-        case content, rect, fontSize, monospaced, wraps, readingRect, structure
+        case content, rect, fontSize, monospaced, wraps, readingRect, structure, readingDirection
     }
 
     init(from decoder: Decoder) throws {
@@ -56,6 +60,7 @@ extension TextLine: Codable {
                   wraps: try values.decodeIfPresent(Bool.self, forKey: .wraps))
         readingRect = try values.decodeIfPresent(CGRect.self, forKey: .readingRect)
         structure = try values.decodeIfPresent(TextStructure.self, forKey: .structure)
+        readingDirection = try values.decodeIfPresent(CGVector.self, forKey: .readingDirection)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -67,6 +72,7 @@ extension TextLine: Codable {
         try values.encodeIfPresent(wraps, forKey: .wraps)
         try values.encodeIfPresent(readingRect, forKey: .readingRect)
         try values.encodeIfPresent(structure, forKey: .structure)
+        try values.encodeIfPresent(readingDirection, forKey: .readingDirection)
     }
 }
 

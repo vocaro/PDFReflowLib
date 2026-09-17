@@ -1,0 +1,193 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "cia-blue-book-14-1955",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "65ac9c13aba5caedfdc37dc9bd9e319e96677a14c0ec90abfadd562afbd169d5",
+  "candidateConverterSHA256": "a3bf6549b888d755a4acbee03fd72f69d9f779d33d4bf08ded10af837aba417d",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "3dc11f836bf09bc9d8dab63b6c1ccc7a3f14f8b3635f0db1c2353ee24dd6af6a"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "3dc11f836bf09bc9d8dab63b6c1ccc7a3f14f8b3635f0db1c2353ee24dd6af6a"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    272,
+    273
+  ],
+  "changedPageFields": {
+    "272": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines"
+    ],
+    "273": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "preformattedLines"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 39,
+    "fields": {
+      "paragraphIDs": 39
+    },
+    "navigationEntries": 0,
+    "pages": {
+      "274": [
+        "paragraphIDs"
+      ],
+      "275": [
+        "paragraphIDs"
+      ],
+      "276": [
+        "paragraphIDs"
+      ],
+      "277": [
+        "paragraphIDs"
+      ],
+      "278": [
+        "paragraphIDs"
+      ],
+      "279": [
+        "paragraphIDs"
+      ],
+      "280": [
+        "paragraphIDs"
+      ],
+      "281": [
+        "paragraphIDs"
+      ],
+      "282": [
+        "paragraphIDs"
+      ],
+      "283": [
+        "paragraphIDs"
+      ],
+      "284": [
+        "paragraphIDs"
+      ],
+      "285": [
+        "paragraphIDs"
+      ],
+      "286": [
+        "paragraphIDs"
+      ],
+      "287": [
+        "paragraphIDs"
+      ],
+      "288": [
+        "paragraphIDs"
+      ],
+      "289": [
+        "paragraphIDs"
+      ],
+      "290": [
+        "paragraphIDs"
+      ],
+      "291": [
+        "paragraphIDs"
+      ],
+      "292": [
+        "paragraphIDs"
+      ],
+      "293": [
+        "paragraphIDs"
+      ],
+      "294": [
+        "paragraphIDs"
+      ],
+      "295": [
+        "paragraphIDs"
+      ],
+      "296": [
+        "paragraphIDs"
+      ],
+      "297": [
+        "paragraphIDs"
+      ],
+      "298": [
+        "paragraphIDs"
+      ],
+      "299": [
+        "paragraphIDs"
+      ],
+      "300": [
+        "paragraphIDs"
+      ],
+      "301": [
+        "paragraphIDs"
+      ],
+      "302": [
+        "paragraphIDs"
+      ],
+      "303": [
+        "paragraphIDs"
+      ],
+      "304": [
+        "paragraphIDs"
+      ],
+      "305": [
+        "paragraphIDs"
+      ],
+      "306": [
+        "paragraphIDs"
+      ],
+      "307": [
+        "paragraphIDs"
+      ],
+      "308": [
+        "paragraphIDs"
+      ],
+      "309": [
+        "paragraphIDs"
+      ],
+      "310": [
+        "paragraphIDs"
+      ],
+      "311": [
+        "paragraphIDs"
+      ],
+      "312": [
+        "paragraphIDs"
+      ]
+    }
+  },
+  "imageRenames": {
+    "count": 0,
+    "pairs": []
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

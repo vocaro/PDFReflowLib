@@ -1,0 +1,159 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "cdc-zombie-pandemic-2011",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "65ac9c13aba5caedfdc37dc9bd9e319e96677a14c0ec90abfadd562afbd169d5",
+  "candidateConverterSHA256": "a3bf6549b888d755a4acbee03fd72f69d9f779d33d4bf08ded10af837aba417d",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "3dc11f836bf09bc9d8dab63b6c1ccc7a3f14f8b3635f0db1c2353ee24dd6af6a"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow",
+      "programsSHA256": "3dc11f836bf09bc9d8dab63b6c1ccc7a3f14f8b3635f0db1c2353ee24dd6af6a"
+    }
+  },
+  "sameVisionPrograms": true,
+  "changedOCRPages": [
+    16,
+    17
+  ],
+  "ocrTextVolume": {
+    "pages": 9,
+    "baselineWords": 56,
+    "candidateWords": 56,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    14,
+    16,
+    17,
+    23,
+    34
+  ],
+  "changedPageFields": {
+    "14": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "16": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "17": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "23": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ],
+    "34": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 21,
+    "fields": {
+      "paragraphIDs": 21
+    },
+    "navigationEntries": 0,
+    "pages": {
+      "15": [
+        "paragraphIDs"
+      ],
+      "18": [
+        "paragraphIDs"
+      ],
+      "19": [
+        "paragraphIDs"
+      ],
+      "20": [
+        "paragraphIDs"
+      ],
+      "21": [
+        "paragraphIDs"
+      ],
+      "22": [
+        "paragraphIDs"
+      ],
+      "24": [
+        "paragraphIDs"
+      ],
+      "25": [
+        "paragraphIDs"
+      ],
+      "26": [
+        "paragraphIDs"
+      ],
+      "27": [
+        "paragraphIDs"
+      ],
+      "28": [
+        "paragraphIDs"
+      ],
+      "29": [
+        "paragraphIDs"
+      ],
+      "30": [
+        "paragraphIDs"
+      ],
+      "31": [
+        "paragraphIDs"
+      ],
+      "32": [
+        "paragraphIDs"
+      ],
+      "33": [
+        "paragraphIDs"
+      ],
+      "35": [
+        "paragraphIDs"
+      ],
+      "36": [
+        "paragraphIDs"
+      ],
+      "37": [
+        "paragraphIDs"
+      ],
+      "39": [
+        "paragraphIDs"
+      ],
+      "42": [
+        "paragraphIDs"
+      ]
+    }
+  },
+  "imageRenames": {
+    "count": 0,
+    "pairs": []
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

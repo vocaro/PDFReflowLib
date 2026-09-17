@@ -484,6 +484,22 @@ continuation `timates` is no longer a book word, with controls for compounds ope
 continuation line, words seen elsewhere, Fed page 27 and prose joins. See the
 [hyphen-fragment evidence](../measurements/hyphen-fragments/record.md).
 
+`FallbackBlocksAndLigaturesTests.swift` covers [#122](https://github.com/vocaro/PDFReflowLib/issues/122)
+and [#123](https://github.com/vocaro/PDFReflowLib/issues/123) items 1–2. CDC pages 14, 23 and 34
+(`cdc-14`, `cdc-23`, `cdc-34`) read a speech balloon and the caption box beside it whole, the left
+unit first; synthetic controls isolate each guard (a name beside its description, left-aligned
+columns off each other's baselines, uncentred units, a third unit, a box that begins at the
+balloon's last line, close centres, a list line, shared baselines, an overhanging row piece).
+`cdc-17-ocr` is Vision output captured with `tools/capture-ocr-layout-fixture.swift`, which now
+records each rotated line's `readingDirection`; its sideways caption reads in line order, and
+synthetic lines check both rotations, mixed directions, upright text, the direction's threshold, its
+scaling in a retry band and its page-store encoding. Wallace pages 50 and 218 (`algebra-50`,
+`algebra-218`) join `dif-` + `ferent` on the book's `diﬀerent`, and page 64 (`algebra-64`) keeps its
+spaced example lines out of the list items, with and without crops; synthetic controls keep a
+wrapped line at the ordinary gap, a spaced line opening lowercase and a page with no measurable gap
+in the item. The CDC contract adds pages 14, 17, 23 and 34 and the Wallace contract pages 50, 64 and
+218. See the [fallback-block and ligature evidence](../measurements/fallback-blocks-and-ligatures/record.md).
+
 `InvisibleTextTests.swift` covers exclusively hidden OCR text, visible Courier and genuine
 font-size headings, mixed text modes, saved graphics state, nested forms and malformed modes.
 Warren pages 50/910 supply pinned source geometry; ordinary prose/index entries must not become

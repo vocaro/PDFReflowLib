@@ -18,6 +18,9 @@ struct SourceLayoutFixture: Decodable {
         /// The tag the pipeline applied to the line, where the page's structure validated
         /// (captured since #89/#90; absent in older fixtures and on untagged lines).
         var structure: TextStructure?
+        /// A recognized line's reading direction `[dx, dy]` when it is rotated (captured by
+        /// `capture-ocr-layout-fixture` since #122; absent otherwise).
+        var readingDirection: [Double]?
     }
     struct AttributedLine: Decodable {
         struct Run: Decodable {
@@ -71,6 +74,7 @@ struct SourceLayoutFixture: Decodable {
             var line = TextLine(text: source.text, rect: rect(source.rect), fontSize: source.fontSize,
                                 monospaced: source.monospaced)
             line.structure = source.structure
+            line.readingDirection = source.readingDirection.map { CGVector(dx: $0[0], dy: $0[1]) }
             return line
         }
         var page = PageContent(number: page, bounds: rect(bounds), lines: textLines, graphics: graphics.map(rect))

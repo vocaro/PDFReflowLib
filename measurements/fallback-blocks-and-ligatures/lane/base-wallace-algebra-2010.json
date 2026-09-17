@@ -1,0 +1,85 @@
+{
+  "passed": false,
+  "converterSHA256": "65ac9c13aba5caedfdc37dc9bd9e319e96677a14c0ec90abfadd562afbd169d5",
+  "results": [
+    {
+      "case": "wallace-algebra-2010",
+      "passed": false,
+      "reviewPages": [
+        10,
+        438,
+        289,
+        291,
+        471,
+        2,
+        12,
+        347,
+        343,
+        26,
+        18,
+        40,
+        34,
+        230,
+        43,
+        101,
+        288,
+        448,
+        487,
+        175,
+        437,
+        299,
+        429,
+        211,
+        5,
+        9,
+        90,
+        120,
+        180,
+        318,
+        401,
+        321,
+        64,
+        50,
+        218
+      ],
+      "contentChecks": 178,
+      "errors": [
+        "Page 64: missing paragraph 'Three more than a number becomes x + 3'",
+        "Page 64: missing paragraph 'Four less than a number becomes x\u2212 4'",
+        "Page 50: unwanted text 'dif-ferent'",
+        "Page 50: missing paragraph 'just written in a different form because we solved them in'",
+        "Page 218: unwanted text 'dif-ferent'",
+        "Page 218: missing paragraph 'more than just the signs are different. In this case'"
+      ],
+      "scope": "Reviewed text/order/script-context/image-presence, source-region, glyph-structure, appearance and table-cell checks; not full-book fidelity qualification."
+    }
+  ],
+  "notRun": [
+    "faa-phak-8083-25c",
+    "gpo-911-2004",
+    "fed-explained-2021",
+    "dga-2025-2030",
+    "gpo-our-flag-2003",
+    "cdc-zombie-pandemic-2011",
+    "cia-blue-book-14-1955",
+    "usgs-mcs2025-copper",
+    "scotus-loper-bright-2024",
+    "census-rrs2002-01",
+    "uscis-m618-arabic-2015",
+    "irs-p596-zhs-2025",
+    "nbs-jres-geltman-1977",
+    "arxiv-replay-clocks-2023"
+  ],
+  "knownUnsupportedFullConversions": [
+    {
+      "id": "gpo-warren-1964",
+      "reason": "Known default image-output ceiling failure; the nine-page excerpt regression is recorded separately.",
+      "issue": 5
+    },
+    {
+      "id": "noaa-nca5-2023",
+      "reason": "Known default image-output ceiling failure. Full conversions with explicit larger storage caps are measured separately in measurements/noaa-output-policies/record.md; this gate retains library defaults.",
+      "issue": 5
+    }
+  ]
+}

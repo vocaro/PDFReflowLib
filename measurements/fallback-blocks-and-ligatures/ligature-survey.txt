@@ -1,0 +1,19 @@
+== arxiv-replay-clocks-2023.txt | breaks 35, warned 2, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 1336 | cand: breaks 35, warned 2, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 1336
+== cdc-zombie-pandemic-2011.txt | breaks 0, warned 0, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 841 | cand: breaks 0, warned 0, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 841
+== census-rrs2002-01.txt | breaks 0, warned 0, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 1246 | cand: breaks 0, warned 0, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 1246
+== cia-blue-book-14-1955.txt | breaks 55, warned 5, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 7335 | cand: breaks 55, warned 5, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 7335
+== dga-2025-2030.txt | breaks 1, warned 0, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 916 | cand: breaks 1, warned 0, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 916
+== faa-phak-8083-25c.txt | breaks 103, warned 43, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 11510 | cand: breaks 103, warned 43, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 11510
+== fed-explained-2021.txt | breaks 473, warned 24, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 4246 | cand: breaks 473, warned 24, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 4246
+== gpo-911-2004.txt | breaks 2972, warned 130, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 15782 | cand: breaks 2972, warned 130, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 15782
+== gpo-our-flag-2003.txt | breaks 14, warned 6, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 2630 | cand: breaks 14, warned 6, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 2630
+== gpo-warren-1964.txt | breaks 4101, warned 317, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 22500 | cand: breaks 4101, warned 317, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 22500
+== nbs-jres-geltman-1977.txt | breaks 26, warned 9, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 1297 | cand: breaks 26, warned 9, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 1297
+== noaa-nca5-2023.txt | breaks 2204, warned 437, lines with ligatures 1, vocabulary words with ligatures 1, vocabulary 51228 | cand: breaks 2204, warned 437, lines with ligatures 1, vocabulary words with ligatures 1, vocabulary 51228
+== scotus-loper-bright-2024.txt | breaks 913, warned 75, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 4458 | cand: breaks 913, warned 75, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 4458
+== usgs-mcs2025-copper.txt | breaks 0, warned 0, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 401 | cand: breaks 0, warned 0, lines with ligatures 0, vocabulary words with ligatures 0, vocabulary 401
+== wallace-algebra-2010.txt | breaks 340, warned 13, lines with ligatures 210, vocabulary words with ligatures 24, vocabulary 3357 | cand: breaks 340, warned 11, lines with ligatures 210, vocabulary words with ligatures 24, vocabulary 3381
+< p50 dif- + ferent form because we solved  -> dif-ferent form because we solved them in diﬀerent ways. Thi [uncertainHyphen]
+> p50 dif- + ferent form because we solved  -> different form because we solved them in diﬀerent ways. This
+< p218 dif- + ferent. In this case we may ha -> dif-ferent. In this case we may have to adjust the problem s [uncertainHyphen]
+> p218 dif- + ferent. In this case we may ha -> different. In this case we may have to adjust the problem sl

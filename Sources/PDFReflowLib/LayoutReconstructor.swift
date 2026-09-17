@@ -22,10 +22,42 @@ enum LayoutReconstructor {
                line.text.first?.isLowercase == true, let first = words.first, !first.contains("-") {
                 words.removeFirst()
             }
-            for word in words { vocabulary.insert(String(word)) }
+            for word in words {
+                vocabulary.insert(String(word))
+                if word.contains(where: isLigature) { vocabulary.insert(ligaturesSpelledOut(word)) }
+            }
             addAddressVocabulary(of: line.text, to: &vocabulary)
             previous = line.text
         }
+    }
+
+    /// The Latin typographic ligatures U+FB00–U+FB06.
+    static func isLigature(_ character: Character) -> Bool {
+        character.unicodeScalars.contains { (0xFB00...0xFB06).contains($0.value) }
+    }
+
+    /// A vocabulary word with its ligatures spelled out (#123). Wallace prints `diﬀerent` with U+FB00
+    /// wherever the word is whole, while a line break extracts plain letters (`dif-` + `ferent`,
+    /// pages 50 and 218), so the book's own evidence for the join was never found and the hyphen
+    /// stayed with a warning. `addVocabulary` records a word holding a ligature both as printed
+    /// and spelled out, so the hyphen lookups are unchanged and a break inside a ligature word
+    /// (`oﬃ-` + `cial`) still finds the printed form. Only U+FB00–U+FB06 are spelled out, not the
+    /// rest of Unicode compatibility mapping (superscripts, fractions, full-width forms), and
+    /// emitted text keeps its ligatures.
+    static func ligaturesSpelledOut<S: StringProtocol>(_ word: S) -> String {
+        var result = ""
+        for character in word {
+            switch character {
+            case "\u{FB00}": result += "ff"
+            case "\u{FB01}": result += "fi"
+            case "\u{FB02}": result += "fl"
+            case "\u{FB03}": result += "ffi"
+            case "\u{FB04}": result += "ffl"
+            case "\u{FB05}", "\u{FB06}": result += "st"
+            default: result.append(character)
+            }
+        }
+        return result
     }
 
     /// Web addresses seen unbroken, for resolving a line-end hyphen inside an address (#88). The
@@ -390,6 +422,26 @@ enum LayoutReconstructor {
     static func ordinaryLineHeight(_ size: CGFloat, in lines: [TextLine]) -> CGFloat? {
         let heights = lines.filter { abs($0.fontSize - size) <= size * 0.1 }.map(\.rect.height).sorted()
         return heights.isEmpty ? nil : heights[heights.count / 2]
+    }
+
+    /// The page's ordinary gap between wrapped lines at a size: the lower quartile, over lines of
+    /// that size and ordinary height, of the gap to the nearest such line directly beneath on the
+    /// same left edge (within half a body) inside the prose window (`-0.4…0.9` body). Paragraph
+    /// spacing falls inside that window too, and on Wallace page 64 it is nearly as common as the
+    /// wrapped lines' own gap (9.7 against 2.4 points), so a median can land on it; wrapped lines
+    /// set the smallest common gap. Nil when no line has one.
+    static func ordinaryLineGap(_ size: CGFloat, in lines: [TextLine], body: CGFloat) -> CGFloat? {
+        guard let height = ordinaryLineHeight(size, in: lines) else { return nil }
+        let ordinary = lines.filter { abs($0.fontSize - size) <= size * 0.1 && $0.rect.height <= height + body * 0.25 }
+        let gaps = ordinary.compactMap { upper -> CGFloat? in
+            ordinary.compactMap { lower -> CGFloat? in
+                let gap = upper.rect.minY - lower.rect.maxY
+                guard lower != upper, abs(upper.rect.minX - lower.rect.minX) <= body * 0.5,
+                      gap >= -body * 0.4, gap < body * 0.9, lower.rect.midY < upper.rect.midY else { return nil }
+                return gap
+            }.min()
+        }.sorted()
+        return gaps.isEmpty ? nil : gaps[gaps.count / 4]
     }
 
     private struct Region {
@@ -1305,6 +1357,7 @@ enum LayoutReconstructor {
     // No page-wide y/x sort of interleaved column text.
     static func ordered(_ elements: [Element], bodySize: CGFloat, depth: Int = 0) -> [Element] {
         guard elements.count > 1, depth < 32 else { return elements }
+        if let rotated = rotatedLineOrder(elements) { return rotated }
         /// The widest whitespace band in one direction, measured over `measured`. The cut is
         /// kept only when every element of the region falls wholly on one side of it: ordering
         /// drops an element that straddles its cut, so a subset may not choose a line that the
@@ -1413,11 +1466,121 @@ enum LayoutReconstructor {
                 + ordered(elements.filter { $0.rect.maxX <= x }, bodySize: bodySize, depth: depth + 1)
                 + ordered(elements.filter { $0.rect.minX >= x }, bodySize: bodySize, depth: depth + 1)
         }
-        // A floated box reads after the lines beside it and before the lines below it.
+        // Blocks set beside each other at different leadings, with no whitespace between them
+        // (the CDC comic's speech balloons beside its caption boxes, #122), read block by block.
+        if let blocks = interleavedBlocks(elements, bodySize: bodySize) {
+            return blocks.flatMap { sortedByRows($0, bodySize: bodySize) }
+        }
+        return sortedByRows(elements, bodySize: bodySize)
+    }
+
+    /// Lines that all read in one rotated direction (`TextLine.readingDirection`, within 20°),
+    /// in the order their text advances (#122). Whitespace cuts and the row sort measure upright
+    /// geometry: CDC page 17's sideways caption runs down the page, so its lines stack from right
+    /// to left, but the row sort read the three narrow rectangles from left to right, last line
+    /// first. Each line's centre is projected on the direction a new line advances (the reading
+    /// direction turned a quarter clockwise); lines within 0.4 of their thickness of each other
+    /// share a line position and read along the text. Nil for any other region, including one
+    /// that mixes rotated and upright text.
+    static func rotatedLineOrder(_ elements: [Element]) -> [Element]? {
+        guard let direction = elements.first?.line?.readingDirection,
+              elements.allSatisfy({ element in
+                  guard let other = element.line?.readingDirection, element.box == nil else { return false }
+                  return direction.dx * other.dx + direction.dy * other.dy >= cos(CGFloat.pi / 9)
+              }) else { return nil }
+        let advance = CGVector(dx: direction.dy, dy: -direction.dx)
+        func across(_ element: Element) -> CGFloat { element.rect.midX * advance.dx + element.rect.midY * advance.dy }
+        func along(_ element: Element) -> CGFloat {
+            [CGPoint(x: element.rect.minX, y: element.rect.minY), CGPoint(x: element.rect.maxX, y: element.rect.maxY),
+             CGPoint(x: element.rect.minX, y: element.rect.maxY), CGPoint(x: element.rect.maxX, y: element.rect.minY)]
+                .map { $0.x * direction.dx + $0.y * direction.dy }.min()!
+        }
+        return elements.sorted { a, b in
+            let thickness = min(a.rect.width, a.rect.height, b.rect.width, b.rect.height)
+            return abs(across(a) - across(b)) > thickness * 0.4 ? across(a) < across(b) : along(a) < along(b)
+        }
+    }
+
+    /// The reading-order sort: rows from the top, left to right within a row. A floated box reads
+    /// after the lines beside it and before the lines below it.
+    static func sortedByRows(_ elements: [Element], bodySize: CGFloat) -> [Element] {
         func key(_ element: Element) -> CGFloat { element.box == nil ? element.rect.midY : element.rect.minY }
         return elements.sorted {
             abs(key($0) - key($1)) > bodySize * 0.4 ? key($0) > key($1) : $0.rect.minX < $1.rect.minX
         }
+    }
+
+    /// Text blocks that interleave by baseline where no whitespace cut separates them (#122). The
+    /// CDC comic sets a speech balloon beside a caption box: each is a stack of short lines at its
+    /// own leading, and the inherited text layer's rectangles overhang the lettering, so the
+    /// balloon's lines overlap the box's in both directions and the row sort alternates them
+    /// (page 14's `Nothing but snow.` between the broadcast's lines, page 34's `works!` after it).
+    ///
+    /// Lines are taken from the top and each joins the block whose lowest line it sits under at
+    /// ordinary leading (`-0.4…0.9` of the larger size, the prose window) and overlaps horizontally,
+    /// the block with the nearest centre when several qualify; a line sharing most of the lowest
+    /// line's height and set within one body beside it continues that row (page 34's
+    /// `L o o k in g` + `f o r ?`). Returns the two blocks, left one first as a column cut would read
+    /// them, only when the region's lines form exactly two blocks that stand apart (centres more
+    /// than a quarter of the wider measure apart), are both set centred, share at most a third of
+    /// the smaller block's baselines and alternate in the row sort at least three times, which
+    /// they can only do beside each other. Across the fifteen English corpus books the
+    /// step fires only on CDC pages 14, 23 and 34 (`measurements/fallback-blocks-and-ligatures`).
+    /// Rows of a table or a name beside its description share baselines or form many blocks (9/11
+    /// page 452's glossary); left-aligned columns are not centred (Project Blue Book's tables);
+    /// lines of one paragraph around a formula piece share a measure (Wallace's worked examples).
+    /// Nil for any region holding anything but plain lines, or a list line.
+    static func interleavedBlocks(_ elements: [Element], bodySize: CGFloat) -> [[Element]]? {
+        guard elements.count >= 4, elements.allSatisfy({ element in
+            guard let line = element.line, element.box == nil, !element.boundary else { return false }
+            return !isList(line.text)
+        }) else { return nil }
+        var blocks: [[Element]] = []
+        for element in elements.sorted(by: { $0.rect.maxY != $1.rect.maxY ? $0.rect.maxY > $1.rect.maxY : $0.rect.minX < $1.rect.minX }) {
+            let rect = element.rect, size = element.line!.fontSize
+            var best: (index: Int, distance: CGFloat)?
+            for (index, block) in blocks.enumerated() {
+                guard let lowest = block.min(by: { $0.rect.minY < $1.rect.minY })?.rect else { continue }
+                let scale = max(size, block.last!.line!.fontSize)
+                let distance: CGFloat
+                if min(lowest.maxY, rect.maxY) - max(lowest.minY, rect.minY) >= max(lowest.height, rect.height) * 0.5 {
+                    let gap = max(lowest.minX, rect.minX) - min(lowest.maxX, rect.maxX)
+                    guard gap >= 0, gap <= bodySize else { continue }
+                    distance = 0
+                } else {
+                    let gap = lowest.minY - rect.maxY
+                    guard gap > -scale * 0.4, gap < scale * 0.9, rect.minX < lowest.maxX, rect.maxX > lowest.minX else { continue }
+                    distance = abs(rect.midX - lowest.midX)
+                }
+                if distance < (best?.distance ?? .greatestFiniteMagnitude) { best = (index, distance) }
+            }
+            if let best { blocks[best.index].append(element) } else { blocks.append([element]) }
+        }
+        // Two blocks with their centres apart by more than a quarter of the wider one's measure.
+        // (Alternating three times below implies that they share part of their height and hold
+        // at least two lines each.)
+        guard blocks.count == 2 else { return nil }
+        let (first, second) = (union(blocks[0].map(\.rect)), union(blocks[1].map(\.rect)))
+        guard abs(first.midX - second.midX) > max(first.width, second.width) * 0.25 else { return nil }
+        // Both blocks are set centred, as balloon and caption lettering is: their lines' centres
+        // spread over less than half as much as their left edges (CDC 14's box, 21 against 116
+        // points). Table columns and prose share a left edge (Project Blue Book's scanned
+        // statistics tables, whose row labels sit a few points off their figures' baselines).
+        func centred(_ block: [Element]) -> Bool {
+            let centres = block.map(\.rect.midX), edges = block.map(\.rect.minX)
+            return centres.max()! - centres.min()! < (edges.max()! - edges.min()!) * 0.5
+        }
+        guard blocks.allSatisfy(centred) else { return nil }
+        // At most a third of the smaller block's baselines fall on the other's.
+        let (small, large) = blocks[0].count <= blocks[1].count ? (blocks[0], blocks[1]) : (blocks[1], blocks[0])
+        let shared = small.filter { line in large.contains { abs($0.rect.minY - line.rect.minY) <= bodySize * 0.2 } }
+        guard shared.count * 3 <= small.count else { return nil }
+        // The row sort alternates between them at least three times, rather than reading one first.
+        let owners = sortedByRows(elements, bodySize: bodySize).map { element in
+            blocks[0].contains { $0.rect == element.rect && $0.line == element.line }
+        }
+        guard zip(owners, owners.dropFirst()).filter({ $0 != $1 }).count >= 3 else { return nil }
+        return first.minX <= second.minX ? blocks : [blocks[1], blocks[0]]
     }
 
     /// A line set above columns heads all of them, but it need not span the gutter that
@@ -2164,6 +2327,14 @@ enum LayoutReconstructor {
         // The item closes at the next marker, a paragraph gap, a dedent to the marker's edge,
         // a heading, an image, a table or a box edge, each of which another branch takes
         // first, so this line joins the open item instead of opening a paragraph (#50, #64).
+        var listGaps: [Int: CGFloat?] = [:]
+        func listGap(_ size: CGFloat) -> CGFloat? {
+            let key = Int((size * 10).rounded())
+            if let known = listGaps[key] { return known }
+            let gap = ordinaryLineGap(size, in: lines, body: body)
+            listGaps[key] = gap
+            return gap
+        }
         func continuesListItem(_ line: TextLine, item: (marker: TextLine, last: TextLine, indent: CGFloat?, index: Int)) -> Bool {
             guard !listLine(line), line.fontSize <= item.marker.fontSize + 0.5 else { return false }
             let verticalGap = item.last.rect.minY - line.rect.maxY
@@ -2171,6 +2342,16 @@ enum LayoutReconstructor {
             // against the page's 9.9) overlaps its wrapped line as a tall prose line does (#109, #115).
             let inflation = extraHeight(item.last, listText: true) + extraHeight(line, listText: true)
             guard verticalGap >= -(body * 0.4 + inflation), verticalGap < body * 0.9 else { return false }
+            // A line set off by added space under the item is a display line of its own, not more of
+            // the item: Wallace page 64 sets `Three more than a number becomes x + 3` 9.7 points under
+            // `writing the second part plus the first`, where its wrapped lines stand 2.4 apart
+            // (#123). The evidence is the page's ordinary gap at the line's size plus half a body,
+            // and a capital opening the line; the item's own text need not end a sentence, since
+            // Wallace's items carry no final period.
+            if let ordinary = listGap(line.fontSize), verticalGap >= ordinary + body * 0.5,
+               line.text.first(where: { !"([\u{201C}\u{2018}\"'".contains($0) && !$0.isWhitespace })?.isUppercase == true {
+                return false
+            }
             // The wrapped line starts past the marker, within the width a marker occupies;
             // a deeper indent is nested content and a dedent ends the item.
             let indent = line.rect.minX - item.marker.rect.minX

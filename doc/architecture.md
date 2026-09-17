@@ -265,7 +265,11 @@ twice that height and set as prose on its paragraph's measure, may overlap by it
 as well, and its gap is not taken as the paragraph's leading for the added-space rule (#71, #109).
 A list item's wrapped line joins the item under the same allowance; an item's own line also
 earns it when it reads as a sentence, because it is set on the item's measure rather than the
-paragraph's (Wallace page 2's 17-point license bullets over 9.9-point lines, #115).
+paragraph's (Wallace page 2's 17-point license bullets over 9.9-point lines, #115). A line opening
+with a capital that sits at least half a body further below the item than the page's ordinary gap
+between wrapped lines at its size (the lower quartile of each line's gap to the line directly
+beneath it on its left edge) is a display line of its own, not more of the item (Wallace page 64's
+`Three more than a number becomes x + 3`, #123).
 A coded weather report set over several lines is one preformatted block (#96). A run opens on a
 line holding only report characters (capitals, digits, `/ + -`) with at least three groups of the
 METAR, TAF or PIREP formats (date-time `161753Z`, wind `14021G26KT`, visibility `3/4SM`, sky
@@ -284,7 +288,9 @@ word (an ending `s es d ed ing ly` taken off, a dropped `e` restored, and an end
 `sep-` + `arates` beside `separate`), no such form of the compound, and the halves are not both
 book words, with at least six letters in all (#115). Otherwise it is kept. The vocabulary skips the word that opens a lowercase line after a line-end hyphen
 or soft hyphen, because it is the rest of a broken word (`es-` + `timates.html`), unless it holds
-a hyphen of its own (`straight-` + `and-level`); the same letters seen anywhere else count (#101). A slash after a letter, digit or slash before a letter or digit joins
+a hyphen of its own (`straight-` + `and-level`); the same letters seen anywhere else count (#101). A
+word printed with a Latin ligature (U+FB00–U+FB06) is recorded both as printed and spelled out, so
+Wallace's `diﬀerent` vouches for `dif-` + `ferent`; emitted text keeps its ligatures (#123). A slash after a letter, digit or slash before a letter or digit joins
 (`runway/` + `taxiway`, #70). A break inside a web address joins (#79). The address is the run
 of URL characters ending the line: it has a scheme, starts with `www.` or opens with a domain
 and a slash, and holds a dot. It continues without a space after `_ = & ? # % ~` that follows a
@@ -446,7 +452,17 @@ list lines) alone beneath the last band of more than 1.1 body in the part above 
 so the heading reads with the content below it rather than inside the columns above it; and where
 no cut exists at all, a heading-type line and the figures in its row, with nothing else reaching into
 the row's height, separate the content above the row from the content below it, each part cut on its
-own (DGA pages 4 and 9, #103). `TableRegionDetector`
+own (DGA pages 4 and 9, #103). Where no cut and no bullet-column split applies, the reading-order
+sort still reads two centred units set beside each other whole (#122, CDC pages 14, 23 and 34): the
+region's lines are grouped from the top into stacks at ordinary leading, and when they form exactly
+two, both centred (line centres spread less than half as far as left edges), their centres apart by
+more than a quarter of the wider measure, sharing at most a third of the smaller's baselines and
+alternating at least three times in the sort, the left stack reads before the right. Regions with a
+list line or anything but plain lines keep the sort; across the fifteen English corpus books only
+those three CDC pages qualify. Recognized lines Vision reports more than 45° from left to right carry
+their reading direction (`TextLine.readingDirection`, from the quadrilateral's top edge, scaled back
+to page proportions for a banded retry), and a region made only of lines rotated the same way reads
+in the order the text advances rather than by row (CDC pages 16 and 17). `TableRegionDetector`
 recognizes aligned numeric dot-leader rows with a nearby textual header and preserves their
 complete region with `imageRegion` warnings. It also recognizes borderless statistical tables
 whose column headers are underlined: a row of at least three thin underlines, or one short

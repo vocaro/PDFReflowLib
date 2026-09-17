@@ -1,0 +1,137 @@
+{
+  "attributedLines" : [
+
+  ],
+  "bounds" : [
+    0,
+    0,
+    392.15000000000003,
+    613.20000000000005
+  ],
+  "caseID" : "cdc-zombie-pandemic-2011",
+  "extraction" : "Vision RecognizeDocumentsRequest, default ConversionOptions",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 224.84000000000003,
+      "monospaced" : false,
+      "readingDirection" : [
+        -4.3344135106490161e-08,
+        -0.99999999999999911
+      ],
+      "rect" : [
+        355.10650483265005,
+        24.272502810499876,
+        8.9415504356160422,
+        224.84000000000003
+      ],
+      "text" : "SEVERAL DAYS LATER AT THE CENTERS FOR",
+      "wraps" : false
+    },
+    {
+      "fontSize" : 201.84500000000006,
+      "monospaced" : false,
+      "readingDirection" : [
+        -4.2246815230376476e-08,
+        -0.999999999999999
+      ],
+      "rect" : [
+        342.33289041885121,
+        47.267502018450003,
+        10.218909562760167,
+        201.84500000000006
+      ],
+      "text" : "DISEASE CONTROL AND PREVENTION IN",
+      "wraps" : true
+    },
+    {
+      "fontSize" : 106.03249999999997,
+      "monospaced" : false,
+      "readingDirection" : [
+        -4.595522758278476e-08,
+        -0.99999999999999889
+      ],
+      "rect" : [
+        332.11400188258898,
+        143.080001060325,
+        8.9415400810273127,
+        106.03249999999997
+      ],
+      "text" : "ATLANTA, GEORGIA...",
+      "wraps" : false
+    }
+  ],
+  "page" : 17,
+  "quadrilaterals" : [
+    {
+      "isTitle" : true,
+      "points" : [
+        [
+          0.92833878686284854,
+          0.40625000458333316
+        ],
+        [
+          0.92833876201140053,
+          0.039583337916666461
+        ],
+        [
+          0.90553743422835653,
+          0.039583337916666461
+        ],
+        [
+          0.90553745907980454,
+          0.40625000458333316
+        ]
+      ],
+      "text" : "SEVERAL DAYS LATER AT THE CENTERS FOR"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.8990228228525089,
+          0.40625000329166672
+        ],
+        [
+          0.89902280110749189,
+          0.077083336624999998
+        ],
+        [
+          0.87296414744065076,
+          0.077083336624999998
+        ],
+        [
+          0.87296416918566777,
+          0.40625000329166672
+        ]
+      ],
+      "text" : "DISEASE CONTROL AND PREVENTION IN"
+    },
+    {
+      "isTitle" : false,
+      "points" : [
+        [
+          0.86970685187712937,
+          0.40625000172916659
+        ],
+        [
+          0.86970683945140537,
+          0.23333333506249998
+        ],
+        [
+          0.84690552564730071,
+          0.23333333506249998
+        ],
+        [
+          0.84690553807302471,
+          0.40625000172916659
+        ]
+      ],
+      "text" : "ATLANTA, GEORGIA..."
+    }
+  ],
+  "sourceSHA256" : "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
+  "sourceTitle" : "Preparedness 101: Zombie Pandemic"
+}

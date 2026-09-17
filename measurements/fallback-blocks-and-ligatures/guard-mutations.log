@@ -1,0 +1,19 @@
+remove-block-step: KILLED ['interleavedBlocksNeedTwoCentredUnitsSideBySide', 'sourceBalloonBesideACaptionBoxReadsWhole', 'sourceFoodBalloonReadsBeforeTheBroadcast'] Test run with 65 tests in 0 suites failed after 2.083 seconds with 4 issues.
+remove-rotated-order: KILLED ['sourceRotatedOCRCaptionReadsInLineOrder'] Test run with 65 tests in 0 suites failed after 2.101 seconds with 1 issue.
+remove-ligature-vocabulary: KILLED ['sourceDifferentJoinsOnTheBooksLigatureSpelling', 'vocabularyRecordsLigatureWordsSpelledOut'] Test run with 65 tests in 0 suites failed after 2.063 seconds with 10 issues.
+remove-spaced-item-line: KILLED ['addedSpaceUnderAWrappedItemOpensALine', 'sourceSpacedExampleLinesStandApartFromTheirItems'] Test run with 65 tests in 0 suites failed after 2.170 seconds with 9 issues.
+blocks-allow-lists: KILLED ['interleavedBlocksNeedTwoCentredUnitsSideBySide'] Test run with 65 tests in 0 suites failed after 2.150 seconds with 1 issue.
+blocks-any-count: KILLED ['interleavedBlocksNeedTwoCentredUnitsSideBySide'] Test run with 65 tests in 0 suites failed after 2.057 seconds with 1 issue.
+blocks-no-centres-apart: KILLED ['interleavedBlocksNeedTwoCentredUnitsSideBySide'] Test run with 65 tests in 0 suites failed after 2.101 seconds with 1 issue.
+blocks-no-centred: KILLED ['interleavedBlocksNeedTwoCentredUnitsSideBySide'] Test run with 65 tests in 0 suites failed after 2.098 seconds with 2 issues.
+blocks-no-baseline-guard: KILLED ['interleavedBlocksNeedTwoCentredUnitsSideBySide'] Test run with 65 tests in 0 suites failed after 2.098 seconds with 1 issue.
+blocks-no-alternation: KILLED ['interleavedBlocksNeedTwoCentredUnitsSideBySide'] Test run with 65 tests in 0 suites failed after 2.093 seconds with 2 issues.
+blocks-row-by-sameRow: KILLED ['sourceBalloonBesideACaptionBoxReadsWhole'] Test run with 65 tests in 0 suites failed after 2.038 seconds with 1 issue.
+blocks-row-overlapping-pieces: KILLED ['interleavedBlocksNeedTwoCentredUnitsSideBySide'] Test run with 65 tests in 0 suites failed after 2.088 seconds with 3 issues.
+rotated-any-direction: KILLED ['rotatedLinesReadAlongTheirAdvance'] Test run with 65 tests in 0 suites failed after 2.004 seconds with 1 issue.
+rotated-with-upright: KILLED ['rotatedLinesReadAlongTheirAdvance'] Test run with 65 tests in 0 suites failed after 2.087 seconds with 1 issue.
+ocr-direction-for-upright: KILLED ['rotatedLinesReadAlongTheirAdvance'] Test run with 65 tests in 0 suites failed after 2.024 seconds with 2 issues.
+ocr-band-edge-unscaled: KILLED ['rotatedLinesReadAlongTheirAdvance'] Test run with 65 tests in 0 suites failed after 2.078 seconds with 1 issue.
+spaced-no-capital: KILLED ['addedSpaceUnderAWrappedItemOpensALine'] Test run with 65 tests in 0 suites failed after 2.012 seconds with 1 issue.
+spaced-no-added-space: KILLED ['addedSpaceUnderAWrappedItemOpensALine', 'fedAdvisoryCouncilItemsRunToSeveralSentencesAndAcrossThePageBreak'] Test run with 65 tests in 0 suites failed after 2.017 seconds with 3 issues.
+spaced-median-gap: KILLED ['sourceSpacedExampleLinesStandApartFromTheirItems'] Test run with 65 tests in 0 suites failed after 2.073 seconds with 4 issues.

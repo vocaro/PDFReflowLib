@@ -1,0 +1,3435 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "7-31"
+        }
+      ],
+      "text" : "7-31"
+    },
+    {
+      "rect" : [
+        72,
+        89.108300000000014,
+        237.28980000000001,
+        10.811999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 7-33. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "On this master switch, the left half is for the alternator"
+        }
+      ],
+      "text" : "Figure 7-33. On this master switch, the left half is for the alternator"
+    },
+    {
+      "rect" : [
+        72.001200000000011,
+        77.213300000000004,
+        127.00800000000004,
+        10.206000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "and the right half is for the battery."
+        }
+      ],
+      "text" : "and the right half is for the battery."
+    },
+    {
+      "rect" : [
+        94.780899999999974,
+        -245.86720000000003,
+        700.29460000000006,
+        714.59159999999997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        81,
+        719.56640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        719.56640000000004,
+        74.430000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Electric fuel pump"
+        }
+      ],
+      "text" : "Electric fuel pump"
+    },
+    {
+      "rect" : [
+        81,
+        702.56640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        702.56640000000004,
+        83.890000000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Stall warning system"
+        }
+      ],
+      "text" : "Stall warning system"
+    },
+    {
+      "rect" : [
+        81,
+        685.56640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        685.56640000000004,
+        38.060000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Pitot heat"
+        }
+      ],
+      "text" : "Pitot heat"
+    },
+    {
+      "rect" : [
+        81,
+        668.56640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        99,
+        668.56640000000004,
+        58.060000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Starting motor"
+        }
+      ],
+      "text" : "Starting motor"
+    },
+    {
+      "rect" : [
+        72,
+        643.56640000000004,
+        237.08499999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Many aircraft are equipped with a battery switch that"
+        }
+      ],
+      "text" : "Many aircraft are equipped with a battery switch that"
+    },
+    {
+      "rect" : [
+        72,
+        631.06640000000004,
+        237.06999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "controls the electrical power to the aircraft in a manner"
+        }
+      ],
+      "text" : "controls the electrical power to the aircraft in a manner"
+    },
+    {
+      "rect" : [
+        72,
+        618.56640000000004,
+        236.86000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "similar to the master switch. In addition, an alternator switch"
+        }
+      ],
+      "text" : "similar to the master switch. In addition, an alternator switch"
+    },
+    {
+      "rect" : [
+        72,
+        606.06640000000004,
+        237.02599999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is installed that permits the pilot to exclude the alternator"
+        }
+      ],
+      "text" : "is installed that permits the pilot to exclude the alternator"
+    },
+    {
+      "rect" : [
+        72,
+        593.56640000000004,
+        237.01099999999985,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "from the electrical system in the event of alternator failure."
+        }
+      ],
+      "text" : "from the electrical system in the event of alternator failure."
+    },
+    {
+      "rect" : [
+        72,
+        581.06640000000004,
+        55.829999999999998,
+        11.340000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 7-33]"
+        }
+      ],
+      "text" : "[Figure 7-33]"
+    },
+    {
+      "rect" : [
+        72,
+        556.06640000000004,
+        236.87199999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "With the alternator half of the switch in the OFF position, the"
+        }
+      ],
+      "text" : "With the alternator half of the switch in the OFF position, the"
+    },
+    {
+      "rect" : [
+        72,
+        543.56640000000004,
+        237.1099999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "entire electrical load is placed on the battery. All nonessential"
+        }
+      ],
+      "text" : "entire electrical load is placed on the battery. All nonessential"
+    },
+    {
+      "rect" : [
+        72,
+        531.06640000000004,
+        236.85199999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "electrical equipment should be turned off to conserve"
+        }
+      ],
+      "text" : "electrical equipment should be turned off to conserve"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        518.56640000000004,
+        57.760000000000019,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "battery power."
+        }
+      ],
+      "text" : "battery power."
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        493.56640000000004,
+        236.9999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A bus bar is used as a terminal in the aircraft electrical system"
+        }
+      ],
+      "text" : "A bus bar is used as a terminal in the aircraft electrical system"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        481.06640000000004,
+        237.00500000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to connect the main electrical system to the equipment using"
+        }
+      ],
+      "text" : "to connect the main electrical system to the equipment using"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        468.56640000000004,
+        237.00799999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "electricity as a source of power. This simplifies the wiring"
+        }
+      ],
+      "text" : "electricity as a source of power. This simplifies the wiring"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        456.06640000000004,
+        236.8720000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "system and provides a common point from which voltage can"
+        }
+      ],
+      "text" : "system and provides a common point from which voltage can"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        443.56640000000004,
+        206.91999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "be distributed throughout the system. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 7-34]"
+        }
+      ],
+      "text" : "be distributed throughout the system. [Figure 7-34]"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        418.56640000000004,
+        237.00000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Fuses or circuit breakers are used in the electrical system to"
+        }
+      ],
+      "text" : "Fuses or circuit breakers are used in the electrical system to"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        406.06640000000004,
+        237.06999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "protect the circuits and equipment from electrical overload."
+        }
+      ],
+      "text" : "protect the circuits and equipment from electrical overload."
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        393.56640000000004,
+        236.99000000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Spare fuses of the proper amperage limit should be carried in"
+        }
+      ],
+      "text" : "Spare fuses of the proper amperage limit should be carried in"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        381.06640000000004,
+        236.99000000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the aircraft to replace defective or blown fuses. Circuit breakers"
+        }
+      ],
+      "text" : "the aircraft to replace defective or blown fuses. Circuit breakers"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        368.56640000000004,
+        237.03000000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "have the same function as a fuse but can be manually reset,"
+        }
+      ],
+      "text" : "have the same function as a fuse but can be manually reset,"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        356.06640000000004,
+        237.03,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "rather than replaced, if an overload condition occurs in the"
+        }
+      ],
+      "text" : "rather than replaced, if an overload condition occurs in the"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        343.56640000000004,
+        237.01000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "electrical system. Placards at the fuse or circuit breaker panel"
+        }
+      ],
+      "text" : "electrical system. Placards at the fuse or circuit breaker panel"
+    },
+    {
+      "rect" : [
+        71.999999999999972,
+        331.06640000000004,
+        226.60000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "identify the circuit by name and show the amperage limit."
+        }
+      ],
+      "text" : "identify the circuit by name and show the amperage limit."
+    },
+    {
+      "rect" : [
+        321,
+        719.56640000000004,
+        237.12999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "An ammeter is used to monitor the performance of the aircraft"
+        }
+      ],
+      "text" : "An ammeter is used to monitor the performance of the aircraft"
+    },
+    {
+      "rect" : [
+        321,
+        707.06640000000004,
+        237.02300000000025,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "electrical system. The ammeter shows if the alternator/"
+        }
+      ],
+      "text" : "electrical system. The ammeter shows if the alternator/"
+    },
+    {
+      "rect" : [
+        321,
+        694.56640000000004,
+        236.83799999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "generator is producing an adequate supply of electrical power."
+        }
+      ],
+      "text" : "generator is producing an adequate supply of electrical power."
+    },
+    {
+      "rect" : [
+        321,
+        682.06640000000004,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "It also indicates whether or not the battery is receiving an"
+        }
+      ],
+      "text" : "It also indicates whether or not the battery is receiving an"
+    },
+    {
+      "rect" : [
+        321,
+        669.56640000000004,
+        68.300000000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "electrical charge."
+        }
+      ],
+      "text" : "electrical charge."
+    },
+    {
+      "rect" : [
+        321,
+        644.56640000000004,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Ammeters are designed with the zero point in the center"
+        }
+      ],
+      "text" : "Ammeters are designed with the zero point in the center"
+    },
+    {
+      "rect" : [
+        321,
+        632.06640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of the face and a negative or positive indication on either"
+        }
+      ],
+      "text" : "of the face and a negative or positive indication on either"
+    },
+    {
+      "rect" : [
+        321,
+        619.56640000000004,
+        237.06999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "side. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 7-35]"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " When the pointer of the ammeter is"
+        }
+      ],
+      "text" : "side. [Figure 7-35] When the pointer of the ammeter is"
+    },
+    {
+      "rect" : [
+        321,
+        607.06640000000004,
+        237.01599999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "on the plus side, it shows the charging rate of the battery."
+        }
+      ],
+      "text" : "on the plus side, it shows the charging rate of the battery."
+    },
+    {
+      "rect" : [
+        321,
+        594.56640000000004,
+        237.1099999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A minus indication means more current is being drawn"
+        }
+      ],
+      "text" : "A minus indication means more current is being drawn"
+    },
+    {
+      "rect" : [
+        321,
+        582.06640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "from the battery than is being replaced. A full-scale minus"
+        }
+      ],
+      "text" : "from the battery than is being replaced. A full-scale minus"
+    },
+    {
+      "rect" : [
+        321,
+        569.56640000000004,
+        237.10000000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "deflection indicates a malfunction of the alternator/generator."
+        }
+      ],
+      "text" : "deflection indicates a malfunction of the alternator/generator."
+    },
+    {
+      "rect" : [
+        321,
+        557.06640000000004,
+        237.00099999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A full-scale positive deflection indicates a malfunction of"
+        }
+      ],
+      "text" : "A full-scale positive deflection indicates a malfunction of"
+    },
+    {
+      "rect" : [
+        321,
+        544.56640000000004,
+        236.8359999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the regulator. In either case, consult the AFM/POH for"
+        }
+      ],
+      "text" : "the regulator. In either case, consult the AFM/POH for"
+    },
+    {
+      "rect" : [
+        321,
+        532.06640000000004,
+        121.36000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "appropriate action to be taken."
+        }
+      ],
+      "text" : "appropriate action to be taken."
+    },
+    {
+      "rect" : [
+        321,
+        507.06640000000004,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Not all aircraft are equipped with an ammeter. Some have"
+        }
+      ],
+      "text" : "Not all aircraft are equipped with an ammeter. Some have"
+    },
+    {
+      "rect" : [
+        321,
+        494.56640000000004,
+        236.99299999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a warning light that, when lighted, indicates a discharge in"
+        }
+      ],
+      "text" : "a warning light that, when lighted, indicates a discharge in"
+    },
+    {
+      "rect" : [
+        321,
+        482.06640000000004,
+        237.08500000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the system as a generator/alternator malfunction. Refer to the"
+        }
+      ],
+      "text" : "the system as a generator/alternator malfunction. Refer to the"
+    },
+    {
+      "rect" : [
+        321,
+        469.56640000000004,
+        182.47000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "AFM/POH for appropriate action to be taken."
+        }
+      ],
+      "text" : "AFM/POH for appropriate action to be taken."
+    },
+    {
+      "rect" : [
+        321,
+        444.56640000000004,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Another electrical monitoring indicator is a loadmeter."
+        }
+      ],
+      "text" : "Another electrical monitoring indicator is a loadmeter."
+    },
+    {
+      "rect" : [
+        321,
+        432.06640000000004,
+        237.11500000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "This type of gauge has a scale beginning with zero and"
+        }
+      ],
+      "text" : "This type of gauge has a scale beginning with zero and"
+    },
+    {
+      "rect" : [
+        321,
+        419.56640000000004,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "shows the load being placed on the alternator/generator."
+        }
+      ],
+      "text" : "shows the load being placed on the alternator/generator."
+    },
+    {
+      "rect" : [
+        321,
+        407.06640000000004,
+        236.99500000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 7-35] "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The loadmeter reflects the total percentage of"
+        }
+      ],
+      "text" : "[Figure 7-35] The loadmeter reflects the total percentage of"
+    },
+    {
+      "rect" : [
+        321,
+        394.56640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the load placed on the generating capacity of the electrical"
+        }
+      ],
+      "text" : "the load placed on the generating capacity of the electrical"
+    },
+    {
+      "rect" : [
+        321,
+        382.06640000000004,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "system by the electrical accessories and battery. When all"
+        }
+      ],
+      "text" : "system by the electrical accessories and battery. When all"
+    },
+    {
+      "rect" : [
+        321,
+        369.56640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "electrical components are turned off, it reflects only the"
+        }
+      ],
+      "text" : "electrical components are turned off, it reflects only the"
+    },
+    {
+      "rect" : [
+        321,
+        357.06640000000004,
+        212.73000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "amount of charging current demanded by the battery."
+        }
+      ],
+      "text" : "amount of charging current demanded by the battery."
+    },
+    {
+      "rect" : [
+        321,
+        332.06640000000004,
+        237.01599999999985,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A voltage regulator controls the rate of charge to the battery"
+        }
+      ],
+      "text" : "A voltage regulator controls the rate of charge to the battery"
+    },
+    {
+      "rect" : [
+        321,
+        319.56640000000004,
+        237.11999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "by stabilizing the generator or alternator electrical output. The"
+        }
+      ],
+      "text" : "by stabilizing the generator or alternator electrical output. The"
+    },
+    {
+      "rect" : [
+        321,
+        307.06640000000004,
+        236.92000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "generator/alternator voltage output should be higher than the"
+        }
+      ],
+      "text" : "generator/alternator voltage output should be higher than the"
+    },
+    {
+      "rect" : [
+        321,
+        294.56640000000004,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "battery voltage. For example, a 12-volt battery would be fed"
+        }
+      ],
+      "text" : "battery voltage. For example, a 12-volt battery would be fed"
+    },
+    {
+      "rect" : [
+        321,
+        282.06640000000004,
+        237.01599999999985,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "by a generator/alternator system of approximately 14 volts."
+        }
+      ],
+      "text" : "by a generator/alternator system of approximately 14 volts."
+    },
+    {
+      "rect" : [
+        321,
+        269.56640000000004,
+        207.71000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The difference in voltage keeps the battery charged."
+        }
+      ],
+      "text" : "The difference in voltage keeps the battery charged."
+    },
+    {
+      "rect" : [
+        321,
+        243.28240000000002,
+        106.79999999999995,
+        15.828000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "Hydraulic Systems"
+        }
+      ],
+      "text" : "Hydraulic Systems"
+    },
+    {
+      "rect" : [
+        321,
+        228.5164,
+        237.00799999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "There are multiple applications for hydraulic use in aircraft,"
+        }
+      ],
+      "text" : "There are multiple applications for hydraulic use in aircraft,"
+    },
+    {
+      "rect" : [
+        321,
+        216.0164,
+        237,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "depending on the complexity of the aircraft. For example, a"
+        }
+      ],
+      "text" : "depending on the complexity of the aircraft. For example, a"
+    },
+    {
+      "rect" : [
+        321,
+        203.5164,
+        237.02099999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "hydraulic system is often used on small airplanes to operate"
+        }
+      ],
+      "text" : "hydraulic system is often used on small airplanes to operate"
+    },
+    {
+      "rect" : [
+        321,
+        191.0164,
+        237.02099999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "wheel brakes, retractable landing gear, and some constant-"
+        }
+      ],
+      "text" : "wheel brakes, retractable landing gear, and some constant-"
+    },
+    {
+      "rect" : [
+        321,
+        178.5164,
+        237.00199999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "speed propellers. On large airplanes, a hydraulic system is"
+        }
+      ],
+      "text" : "speed propellers. On large airplanes, a hydraulic system is"
+    },
+    {
+      "rect" : [
+        321,
+        166.0164,
+        236.97999999999979,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "used for flight control surfaces, wing flaps, spoilers, and"
+        }
+      ],
+      "text" : "used for flight control surfaces, wing flaps, spoilers, and"
+    },
+    {
+      "rect" : [
+        321,
+        153.5164,
+        57.220000000000027,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "other systems."
+        }
+      ],
+      "text" : "other systems."
+    },
+    {
+      "rect" : [
+        321,
+        128.5164,
+        237.05999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A basic hydraulic system consists of a reservoir, pump"
+        }
+      ],
+      "text" : "A basic hydraulic system consists of a reservoir, pump"
+    },
+    {
+      "rect" : [
+        321,
+        116.0164,
+        237.00299999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(either hand, electric, or engine-driven), a filter to keep the"
+        }
+      ],
+      "text" : "(either hand, electric, or engine-driven), a filter to keep the"
+    },
+    {
+      "rect" : [
+        321,
+        103.5164,
+        237.01199999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "fluid clean, a selector valve to control the direction of flow,"
+        }
+      ],
+      "text" : "fluid clean, a selector valve to control the direction of flow,"
+    },
+    {
+      "rect" : [
+        321,
+        91.016400000000004,
+        237.0300000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a relief valve to relieve excess pressure, and an actuator."
+        }
+      ],
+      "text" : "a relief valve to relieve excess pressure, and an actuator."
+    },
+    {
+      "rect" : [
+        321,
+        78.516400000000004,
+        55.829999999999984,
+        11.340000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 7-36]"
+        }
+      ],
+      "text" : "[Figure 7-36]"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      109.956,
+      108.099,
+      160.88499999999999,
+      201.74100000000004
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "text" : "7-31"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        89.108300000000014,
+        237.28980000000001,
+        10.811999999999998
+      ],
+      "structure" : {
+        "group" : 3198,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 15394
+      },
+      "text" : "Figure 7-33. On this master switch, the left half is for the alternator"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        72.001200000000011,
+        77.213300000000004,
+        127.00800000000004,
+        10.206000000000003
+      ],
+      "structure" : {
+        "group" : 3198,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 15396
+      },
+      "text" : "and the right half is for the battery."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        719.56640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3061,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 14602
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        719.56640000000004,
+        74.430000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3061,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 14602
+      },
+      "text" : "Electric fuel pump"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        702.56640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3062,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 14603
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        702.56640000000004,
+        83.890000000000015,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3062,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 14603
+      },
+      "text" : "Stall warning system"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        685.56640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3063,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 14604
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        685.56640000000004,
+        38.060000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3063,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 14604
+      },
+      "text" : "Pitot heat"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        668.56640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3064,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 14605
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        668.56640000000004,
+        58.060000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3064,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 14605
+      },
+      "text" : "Starting motor"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        643.56640000000004,
+        237.08499999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3065,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 14606
+      },
+      "text" : "Many aircraft are equipped with a battery switch that"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        631.06640000000004,
+        237.06999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3065,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 14607
+      },
+      "text" : "controls the electrical power to the aircraft in a manner"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        618.56640000000004,
+        236.86000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3065,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 14608
+      },
+      "text" : "similar to the master switch. In addition, an alternator switch"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        606.06640000000004,
+        237.02599999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3065,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 14609
+      },
+      "text" : "is installed that permits the pilot to exclude the alternator"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        593.56640000000004,
+        237.01099999999985,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3065,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 14610
+      },
+      "text" : "from the electrical system in the event of alternator failure."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        581.06640000000004,
+        55.829999999999998,
+        11.340000000000032
+      ],
+      "structure" : {
+        "group" : 3065,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 14611
+      },
+      "text" : "[Figure 7-33]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        556.06640000000004,
+        236.87199999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3066,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 14612
+      },
+      "text" : "With the alternator half of the switch in the OFF position, the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        543.56640000000004,
+        237.1099999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3066,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 14613
+      },
+      "text" : "entire electrical load is placed on the battery. All nonessential"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        531.06640000000004,
+        236.85199999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3066,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 14614
+      },
+      "text" : "electrical equipment should be turned off to conserve"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        518.56640000000004,
+        57.760000000000019,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3066,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 14616
+      },
+      "text" : "battery power."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        493.56640000000004,
+        236.9999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3067,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 14617
+      },
+      "text" : "A bus bar is used as a terminal in the aircraft electrical system"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        481.06640000000004,
+        237.00500000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3067,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 14619
+      },
+      "text" : "to connect the main electrical system to the equipment using"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        468.56640000000004,
+        237.00799999999984,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3067,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 14620
+      },
+      "text" : "electricity as a source of power. This simplifies the wiring"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        456.06640000000004,
+        236.8720000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3067,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 14621
+      },
+      "text" : "system and provides a common point from which voltage can"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        443.56640000000004,
+        206.91999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3067,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 14622
+      },
+      "text" : "be distributed throughout the system. [Figure 7-34]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        418.56640000000004,
+        237.00000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3068,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14624
+      },
+      "text" : "Fuses or circuit breakers are used in the electrical system to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        406.06640000000004,
+        237.06999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3068,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14625
+      },
+      "text" : "protect the circuits and equipment from electrical overload."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        393.56640000000004,
+        236.99000000000015,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3068,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14626
+      },
+      "text" : "Spare fuses of the proper amperage limit should be carried in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        381.06640000000004,
+        236.99000000000015,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3068,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14627
+      },
+      "text" : "the aircraft to replace defective or blown fuses. Circuit breakers"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        368.56640000000004,
+        237.03000000000011,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3068,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14628
+      },
+      "text" : "have the same function as a fuse but can be manually reset,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        356.06640000000004,
+        237.03,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3068,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14629
+      },
+      "text" : "rather than replaced, if an overload condition occurs in the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        343.56640000000004,
+        237.01000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3068,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14630
+      },
+      "text" : "electrical system. Placards at the fuse or circuit breaker panel"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        71.999999999999972,
+        331.06640000000004,
+        226.60000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3068,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14631
+      },
+      "text" : "identify the circuit by name and show the amperage limit."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        719.56640000000004,
+        237.12999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3069,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 14632
+      },
+      "text" : "An ammeter is used to monitor the performance of the aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        707.06640000000004,
+        237.02300000000025,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3069,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 14634
+      },
+      "text" : "electrical system. The ammeter shows if the alternator/"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        694.56640000000004,
+        236.83799999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3069,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 14635
+      },
+      "text" : "generator is producing an adequate supply of electrical power."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        682.06640000000004,
+        237,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3069,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 14636
+      },
+      "text" : "It also indicates whether or not the battery is receiving an"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        669.56640000000004,
+        68.300000000000011,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3069,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 14637
+      },
+      "text" : "electrical charge."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        644.56640000000004,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3070,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 14638
+      },
+      "text" : "Ammeters are designed with the zero point in the center"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        632.06640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3070,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 14639
+      },
+      "text" : "of the face and a negative or positive indication on either"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        619.56640000000004,
+        237.06999999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3070,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 14640
+      },
+      "text" : "side. [Figure 7-35] When the pointer of the ammeter is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        607.06640000000004,
+        237.01599999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3070,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 14643
+      },
+      "text" : "on the plus side, it shows the charging rate of the battery."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        594.56640000000004,
+        237.1099999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3070,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 14644
+      },
+      "text" : "A minus indication means more current is being drawn"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        582.06640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3070,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 14645
+      },
+      "text" : "from the battery than is being replaced. A full-scale minus"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        569.56640000000004,
+        237.10000000000014,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3070,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 14646
+      },
+      "text" : "deflection indicates a malfunction of the alternator/generator."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        557.06640000000004,
+        237.00099999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3070,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 14647
+      },
+      "text" : "A full-scale positive deflection indicates a malfunction of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        544.56640000000004,
+        236.8359999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3070,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 14648
+      },
+      "text" : "the regulator. In either case, consult the AFM/POH for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        532.06640000000004,
+        121.36000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3070,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 14649
+      },
+      "text" : "appropriate action to be taken."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        507.06640000000004,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3071,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 14650
+      },
+      "text" : "Not all aircraft are equipped with an ammeter. Some have"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        494.56640000000004,
+        236.99299999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3071,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 14651
+      },
+      "text" : "a warning light that, when lighted, indicates a discharge in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        482.06640000000004,
+        237.08500000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3071,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 14652
+      },
+      "text" : "the system as a generator/alternator malfunction. Refer to the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        469.56640000000004,
+        182.47000000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3071,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 14653
+      },
+      "text" : "AFM/POH for appropriate action to be taken."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        444.56640000000004,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3072,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14654
+      },
+      "text" : "Another electrical monitoring indicator is a loadmeter."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        432.06640000000004,
+        237.11500000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3072,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14656
+      },
+      "text" : "This type of gauge has a scale beginning with zero and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        419.56640000000004,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3072,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14657
+      },
+      "text" : "shows the load being placed on the alternator/generator."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        407.06640000000004,
+        236.99500000000012,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3072,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14658
+      },
+      "text" : "[Figure 7-35] The loadmeter reflects the total percentage of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        394.56640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3072,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14660
+      },
+      "text" : "the load placed on the generating capacity of the electrical"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        382.06640000000004,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3072,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14661
+      },
+      "text" : "system by the electrical accessories and battery. When all"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        369.56640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3072,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14662
+      },
+      "text" : "electrical components are turned off, it reflects only the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        357.06640000000004,
+        212.73000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3072,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 14663
+      },
+      "text" : "amount of charging current demanded by the battery."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        332.06640000000004,
+        237.01599999999985,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3073,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 14664
+      },
+      "text" : "A voltage regulator controls the rate of charge to the battery"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        319.56640000000004,
+        237.11999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3073,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 14665
+      },
+      "text" : "by stabilizing the generator or alternator electrical output. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        307.06640000000004,
+        236.92000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3073,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 14666
+      },
+      "text" : "generator/alternator voltage output should be higher than the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        294.56640000000004,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3073,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 14667
+      },
+      "text" : "battery voltage. For example, a 12-volt battery would be fed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        282.06640000000004,
+        237.01599999999985,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3073,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 14668
+      },
+      "text" : "by a generator/alternator system of approximately 14 volts."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        269.56640000000004,
+        207.71000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3073,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 14669
+      },
+      "text" : "The difference in voltage keeps the battery charged."
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        243.28240000000002,
+        106.79999999999995,
+        15.828000000000003
+      ],
+      "structure" : {
+        "group" : 3074,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 14670
+      },
+      "text" : "Hydraulic Systems"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        228.5164,
+        237.00799999999992,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3075,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 14671
+      },
+      "text" : "There are multiple applications for hydraulic use in aircraft,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        216.0164,
+        237,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3075,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 14672
+      },
+      "text" : "depending on the complexity of the aircraft. For example, a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        203.5164,
+        237.02099999999996,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3075,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 14673
+      },
+      "text" : "hydraulic system is often used on small airplanes to operate"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        191.0164,
+        237.02099999999996,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3075,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 14674
+      },
+      "text" : "wheel brakes, retractable landing gear, and some constant-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        178.5164,
+        237.00199999999995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3075,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 14675
+      },
+      "text" : "speed propellers. On large airplanes, a hydraulic system is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        166.0164,
+        236.97999999999979,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3075,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 14676
+      },
+      "text" : "used for flight control surfaces, wing flaps, spoilers, and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        153.5164,
+        57.220000000000027,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3075,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 14677
+      },
+      "text" : "other systems."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        128.5164,
+        237.05999999999995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3076,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 14678
+      },
+      "text" : "A basic hydraulic system consists of a reservoir, pump"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        116.0164,
+        237.00299999999993,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3076,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 14679
+      },
+      "text" : "(either hand, electric, or engine-driven), a filter to keep the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        103.5164,
+        237.01199999999994,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3076,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 14680
+      },
+      "text" : "fluid clean, a selector valve to control the direction of flow,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        91.016400000000004,
+        237.0300000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 3076,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 14681
+      },
+      "text" : "a relief valve to relieve excess pressure, and an actuator."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        78.516400000000004,
+        55.829999999999984,
+        11.340000000000003
+      ],
+      "structure" : {
+        "group" : 3076,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 14682
+      },
+      "text" : "[Figure 7-36]"
+    }
+  ],
+  "page" : 191,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        109.956,
+        108.099,
+        160.88499999999999,
+        201.74100000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.956,
+        108.099,
+        160.88499999999999,
+        201.74100000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.80700000000002,
+        125.25700000000001,
+        73.913999999999987,
+        134.28800000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.553,
+        121.736,
+        77.135999999999996,
+        140.84300000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.49299999999999,
+        121.758,
+        77.286000000000001,
+        7.0570000000000022
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        155.33540000000002,
+        264.09570000000002,
+        14.183999999999997,
+        14.716999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.95480000000001,
+        264.09620000000001,
+        11.563999999999993,
+        14.716999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        175.15450000000001,
+        264.096,
+        12.698000000000008,
+        14.716999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        190.55350000000001,
+        264.09620000000001,
+        12.847000000000008,
+        14.716999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.50210000000001,
+        264.09570000000002,
+        14.182999999999993,
+        14.716999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.1994,
+        264.096,
+        12.699000000000012,
+        14.716999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        123.82940000000001,
+        227.89630000000002,
+        14.296000000000006,
+        15.314999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        135.82500000000002,
+        228.1952,
+        12.751999999999981,
+        14.716000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        155.77810000000002,
+        279.9717,
+        14.628999999999991,
+        14.958000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.74090000000001,
+        279.97210000000001,
+        14.407999999999987,
+        14.95799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        179.06890000000001,
+        279.6678,
+        12.992999999999995,
+        15.567999999999984
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        188.85939999999999,
+        279.97180000000003,
+        12.89500000000001,
+        14.95799999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        199.11950000000002,
+        279.9717,
+        12.313999999999993,
+        14.958000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        209.30090000000001,
+        279.97149999999999,
+        13.185000000000002,
+        14.958000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        226.20800000000003,
+        227.89630000000002,
+        14.296999999999997,
+        15.314999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        238.20360000000002,
+        228.1952,
+        12.751000000000005,
+        14.716000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.65840000000003,
+        128.22550000000001,
+        21.917999999999978,
+        127.672
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.52600000000001,
+        248.45850000000002,
+        36.049999999999983,
+        7.438999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        138.54810000000001,
+        143.0744,
+        49.277000000000015,
+        51.423000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        138.548,
+        128.22499999999999,
+        49.277000000000015,
+        18.850000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.46500000000003,
+        190.39600000000002,
+        34.360000000000014,
+        62.062999999999988
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.464,
+        240.727,
+        34.863,
+        6.3120000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.464,
+        236.95600000000002,
+        34.863,
+        6.3269999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.464,
+        233.19800000000001,
+        34.863,
+        6.3149999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.464,
+        229.43100000000001,
+        34.863,
+        6.3129999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.464,
+        225.322,
+        34.863,
+        6.3249999999999886
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.464,
+        221.56399999999999,
+        34.863,
+        6.3140000000000214
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.464,
+        217.79500000000002,
+        34.863,
+        6.3129999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.464,
+        213.91400000000002,
+        34.863,
+        6.3249999999999886
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.464,
+        209.81800000000001,
+        34.854000000000013,
+        6.313999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.464,
+        206.04900000000001,
+        34.863,
+        6.3120000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.464,
+        202.27700000000002,
+        34.863,
+        6.3160000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.464,
+        198.18200000000002,
+        34.863,
+        6.3149999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.464,
+        194.298,
+        34.863,
+        6.313999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.464,
+        190.339,
+        34.863,
+        6.3100000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.464,
+        244.721,
+        34.863,
+        6.3129999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        138.67099999999999,
+        143.11000000000001,
+        49.053000000000026,
+        49.637999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        200.08780000000002,
+        128.1686,
+        21.567999999999984,
+        127.66200000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.2321,
+        248.3886,
+        35.424000000000007,
+        7.4420000000000073
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.54660000000001,
+        143.00580000000002,
+        48.399000000000001,
+        51.433999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.11099999999999,
+        128.16800000000001,
+        50.213000000000022,
+        18.837999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17399999999998,
+        190.328,
+        33.771000000000015,
+        62.061000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17099999999999,
+        240.67099999999999,
+        34.256,
+        6.3150000000000261
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17099999999999,
+        236.90100000000001,
+        34.256,
+        6.313999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17099999999999,
+        233.131,
+        34.256,
+        6.313999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17099999999999,
+        229.36199999999999,
+        34.256,
+        6.3260000000000218
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17099999999999,
+        225.26599999999999,
+        34.256,
+        6.3260000000000218
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17099999999999,
+        221.49600000000001,
+        34.256,
+        6.3149999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17099999999999,
+        217.726,
+        34.256,
+        6.313999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17099999999999,
+        213.84700000000001,
+        34.256,
+        6.3220000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17099999999999,
+        209.74799999999999,
+        34.247000000000014,
+        6.3130000000000166
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17099999999999,
+        205.982,
+        34.256,
+        6.3220000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17099999999999,
+        202.21000000000001,
+        34.256,
+        6.3239999999999839
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17099999999999,
+        198.114,
+        34.256,
+        6.311000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17099999999999,
+        194.23099999999999,
+        34.256,
+        6.3250000000000171
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17099999999999,
+        190.27000000000001,
+        34.256,
+        6.3230000000000075
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.17099999999999,
+        244.654,
+        34.256,
+        6.3250000000000171
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.667,
+        143.054,
+        48.173000000000002,
+        49.63900000000001
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

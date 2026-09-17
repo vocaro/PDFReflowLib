@@ -5,7 +5,7 @@
     {
       "id": "faa-phak-8083-25c",
       "sourceSHA256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
-      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; the remaining page is still preserved as an image. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's `Figure 6-20.` caption ends at its own last line and the unpainted `Figure 5-16.` caption left outside the artwork's clip is not emitted (#85); page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph. Pages 88, 98, 203, 231 and 335 (#84): chapter openers tagged P remain headings once their text-free Form XObjects no longer discard the page tags; page 203 source-reviewed, its tagged group spanning Introduction and the next section falls back. Page 89 (#75) source-reviewed: the applied tags read the viscosity and friction columns in order. Pages 105, 211 and 227 source-reviewed: paragraphs and a caption the source tags in pieces read as one element. Page 227 source raster reviewed (#77): the compass-rose figure's group box overhangs its rounded frame into the left column, but only its clipped part is figure ink, so the sentence ending `true course desired.` reflows whole; the word equations under `Step 1:`, `Step 2:` and `course is known:` are body text in the column's measure and reflow in order. Pages 96, 114, 127, 128, 179, 235, 263, 360, 366 and 412 (#89) source-reviewed: a paragraph the source tags in two pieces, one of them falling back beside a figure or in a justified column spaced only around a heading, reads as one paragraph; page 319's TAF change groups and page 416's NDB table rows stay separate. Pages 27, 45, 49, 54, 72, 152, 285, 311, 383, 409 and 429 (#90) source-reviewed: tagged titles in the book's bold, bold-italic and italic title styles are headings, stacked titles stay two headings, and titles on pages 54 and 152 follow their figure directly above the paragraph they open; contents labels (pages 6, 15) and a centred table title (416) are not headings. Lettered appendix folios A-5 to A-7 and C-2 to C-4 are furniture, not headings. Pages 340, 401, 317, 439 and 108 source rasters reviewed (#86): a figure set across both columns' full measure, within points of their first or last lines, reads before or after the complete columns; each column reads whole (page 340's left column before `Some taxiway stubs`, page 401's left column before `Suppose a flight`, page 317's items 8-11 before item 12 and the METAR example, page 439's two drug paragraphs before the right column, page 108's last left-column line before figure 5-16). Pages 47, 48, 228, 447, 460 and 512 (#97) source-reviewed: untagged 10-point italic titles in the book's recurring italic title style (pages 228, 447) and italic titles over bullet lists (48) are headings; the PAVE titles A = Aircraft and V = EnVironment are text, not formula crops; the blank pages 460 and 512 carry no folio. Page 410's italic table header Distance is not a heading. Pages 24, 55, 64, 207, 249, 251, 318, 392 and 416 (#91) source-reviewed: with space-only shows no longer rejecting their tag groups, tagged table rows, time-zone rows, address lines and checklist entries stay separate paragraphs. Pages 6, 21 and 404 source-reviewed (#102): the two-line bold sub-headings The Professional Air Traffic Controllers / Organization (PATCO) Strike and Use of Chart Supplement U.S. (formerly Airport/ / Facility Directory) are one heading each; page 6's contents entries A = Aircraft through Human Factors are text, not a preserved region. Pages 7, 12 and 15 (#105) source-reviewed: the bare Roman folios at the foot of the front matter (iii to xvi, pages 3 to 15) are furniture, not paragraphs.",
+      "basis": "Source pages 16 and 121 visually reviewed. Protects the introductory prose and figure preservation; does not approve page-121 column order. Pages 91/511 are source-reviewed narrow-gutter column-order regressions; the complete left column precedes the right. Reviewed chapter-page folios on pages 16/91 must remain absent from prose. Pages 211/212 visually reviewed: V-speed designators retain their source subscripts in bulleted definitions; source ASI figures remain preserved. Source pages 50/325 visually reviewed for tag-restored left-column-before-right-column order; page 81 caption remains beside the preceding image, before body prose. Page 191 reviewed: four separate left-column items precede the ammeter paragraph; since #98 the bus-bar and fuse paragraphs, the loadmeter, voltage-regulator and hydraulic paragraphs reflow and only the master-switch figure is preserved. Pages 35-36 and 116-117 visually reviewed: each two-column paragraph continues from the bottom of one page onto the next and must remain one paragraph across the source-page marker (#27). Figure 5-36 on page 121 reviewed in color (blue sky, yellow labels, aircraft): the preserved crop must keep its scale, ink contrast and hues (#27). Pages 22-25 and 52-53 visually reviewed (#45): the paragraph between page 22's figures, page 24's right column continued below the figure that opens page 25, and the tagged page 52 continued on the untagged page 53 must each remain one paragraph across the source-page marker. Pages 27, 191 and 365 source rasters reviewed (#69, #70): a bullet PDFKit splits from its text opens that item, not the tail of the block above, and a line broken after a slash inside a compound (`runway/` + `taxiway`, `alternator/` + `generator`) joins without a space. Pages 33, 43, 49, 201 and 370 source rasters reviewed (#63, #73): a section title that opens a paragraph continued on the next page follows the figure caption that closes its page and directly precedes that paragraph (pages 33, 49, 201); a two-line title set nearly the column's width is one heading (pages 43, 370). Pages 136, 159 and 340 source rasters reviewed, with pages 91, 156, 165, 199 and 262 checked against extracted geometry (#76, #82): a 10-point bold or 11-point bold-italic sub-heading on its own line is a heading followed by its paragraph, not the paragraph's opening words; page 159's `Figure 6-20.` caption ends at its own last line and the unpainted `Figure 5-16.` caption left outside the artwork's clip is not emitted (#85); page 340's two column titles on one row are two headings. Pages 25, 92 and 372 source rasters reviewed (#79): addresses broken after a dot or underscore rejoin without a space, including `(NACO)—www.faa.` + `gov/…` and the AIM bullet whose marker line ends inside its address; page 92’s `?n=wxcalc_densityaltitude` address no longer seeds a formula crop that split its paragraph. Pages 88, 98, 203, 231 and 335 (#84): chapter openers tagged P remain headings once their text-free Form XObjects no longer discard the page tags; page 203 source-reviewed, its tagged group spanning Introduction and the next section falls back. Page 89 (#75) source-reviewed: the applied tags read the viscosity and friction columns in order. Pages 105, 211 and 227 source-reviewed: paragraphs and a caption the source tags in pieces read as one element. Page 227 source raster reviewed (#77): the compass-rose figure's group box overhangs its rounded frame into the left column, but only its clipped part is figure ink, so the sentence ending `true course desired.` reflows whole; the word equations under `Step 1:`, `Step 2:` and `course is known:` are body text in the column's measure and reflow in order. Pages 96, 114, 127, 128, 179, 235, 263, 360, 366 and 412 (#89) source-reviewed: a paragraph the source tags in two pieces, one of them falling back beside a figure or in a justified column spaced only around a heading, reads as one paragraph; page 319's TAF change groups and page 416's NDB table rows stay separate. Pages 27, 45, 49, 54, 72, 152, 285, 311, 383, 409 and 429 (#90) source-reviewed: tagged titles in the book's bold, bold-italic and italic title styles are headings, stacked titles stay two headings, and titles on pages 54 and 152 follow their figure directly above the paragraph they open; contents labels (pages 6, 15) and a centred table title (416) are not headings. Lettered appendix folios A-5 to A-7 and C-2 to C-4 are furniture, not headings. Pages 340, 401, 317, 439 and 108 source rasters reviewed (#86): a figure set across both columns' full measure, within points of their first or last lines, reads before or after the complete columns; each column reads whole (page 340's left column before `Some taxiway stubs`, page 401's left column before `Suppose a flight`, page 317's items 8-11 before item 12 and the METAR example, page 439's two drug paragraphs before the right column, page 108's last left-column line before figure 5-16). Pages 47, 48, 228, 447, 460 and 512 (#97) source-reviewed: untagged 10-point italic titles in the book's recurring italic title style (pages 228, 447) and italic titles over bullet lists (48) are headings; the PAVE titles A = Aircraft and V = EnVironment are text, not formula crops; the blank pages 460 and 512 carry no folio. Page 410's italic table header Distance is not a heading. Pages 24, 55, 64, 207, 249, 251, 318, 392 and 416 (#91) source-reviewed: with space-only shows no longer rejecting their tag groups, tagged table rows, time-zone rows, address lines and checklist entries stay separate paragraphs. Pages 6, 21 and 404 source-reviewed (#102): the two-line bold sub-headings The Professional Air Traffic Controllers / Organization (PATCO) Strike and Use of Chart Supplement U.S. (formerly Airport/ / Facility Directory) are one heading each; page 6's contents entries A = Aircraft through Human Factors are text, not a preserved region. Pages 7, 12 and 15 (#105) source-reviewed: the bare Roman folios at the foot of the front matter (iii to xvi, pages 3 to 15) are furniture, not paragraphs. Pages 19, 96, 130, 146, 191, 351 and 361 (#98, #52) source-reviewed: a path or image drawn beyond the frame that clips it no longer claims the column beside the figure; page 19's left column reads whole before the right column, the prose and headings beside each figure reflow in column order, and every figure stays preserved.",
       "pages": [
         {
           "page": 16,
@@ -153,7 +153,11 @@
             "Stall warning system",
             "Pitot heat",
             "Starting motor",
-            "An ammeter is used to monitor"
+            "A bus bar is used as a terminal in the aircraft electrical system",
+            "Fuses or circuit breakers are used in the electrical system to protect the circuits and equipment from electrical overload.",
+            "An ammeter is used to monitor",
+            "Another electrical monitoring indicator is a loadmeter.",
+            "There are multiple applications for hydraulic use in aircraft"
           ],
           "paragraphs": [
             "The ammeter shows if the alternator/generator is producing an adequate supply of electrical power."
@@ -164,7 +168,10 @@
             "• Pitot heat",
             "• Starting motor"
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "headings": [
+            "Hydraulic Systems"
+          ]
         },
         {
           "page": 35,
@@ -593,6 +600,12 @@
               "first": "resulting in a measurable velocity force and direction.",
               "second": "Manufacturers have developed different methods"
             }
+          ],
+          "orderedText": [
+            "are identical. In both examples, the only difference is the relationship of the airfoil with the oncoming airstream (angle).",
+            "As an airfoil moves through air, the airfoil is inclined against the airflow",
+            "To this point, the discussion has centered on the flow across the upper and lower surfaces",
+            "Modern general aviation aircraft have what may be considered high performance characteristics."
           ]
         },
         {
@@ -1053,6 +1066,74 @@
           "absentText": [
             "xiii"
           ]
+        },
+        {
+          "page": 19,
+          "headings": [
+            "Transcontinental Air Mail Route"
+          ],
+          "orderedText": [
+            "mass produced to serve as fighters, bombers, trainers, as well as reconnaissance platforms.",
+            "Aviation advocates continued to look for ways to use airplanes.",
+            "pilots and their planes into the program as postal employees.",
+            "Airmail routes continued to expand until the Transcontinental Mail Route was inaugurated.",
+            "The Air Commerce Act charged",
+            "Department of Commerce made significant advances"
+          ],
+          "minimumImages": 2
+        },
+        {
+          "page": 130,
+          "headings": [
+            "Load Factors in Aircraft Design"
+          ],
+          "orderedText": [
+            "In aerodynamics, the maximum load factor",
+            "Load Factors in Aircraft Design",
+            "The answer to the question “How strong should an aircraft be?” is determined largely by the use to which the aircraft is subjected.",
+            "The problem of load factors in aircraft design becomes how to determine the highest load factors"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 146,
+          "headings": [
+            "High Speed Flight Controls"
+          ],
+          "orderedText": [
+            "It is a characteristic of T-tail aircraft",
+            "necessitating a high AOA is the most likely situation to cause a low-speed Mach buffet.",
+            "High altitudes—the higher an aircraft flies, the thinner the air",
+            "G loading—an increase in the G loading on the aircraft",
+            "On high-speed aircraft, flight controls are divided into primary flight controls"
+          ],
+          "minimumImages": 2
+        },
+        {
+          "page": 351,
+          "headings": [
+            "Runway Lighting"
+          ],
+          "orderedText": [
+            "Pulsating VASIs normally consist",
+            "The “slightly below glidepath” indication is a steady red light.",
+            "day and up to ten miles at night. [Figure 14-32]",
+            "There are various lights that identify parts of the runway complex.",
+            "Runway end identifier lights (REIL)"
+          ],
+          "minimumImages": 3
+        },
+        {
+          "page": 361,
+          "headings": [
+            "En Route"
+          ],
+          "orderedText": [
+            "En route wake turbulence events have been influenced by changes to the aircraft fleet mix",
+            "(A380) and “Heavy” (B-747, B-777, A340, etc.) aircraft operating in the NAS.",
+            "Vortices are generated from the moment an aircraft leaves the ground (until it touches down), since trailing vortices are the byproduct of wing lift."
+          ],
+          "minimumImages": 2
         }
       ]
     },

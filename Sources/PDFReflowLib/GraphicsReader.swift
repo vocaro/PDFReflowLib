@@ -234,7 +234,17 @@ enum GraphicsReader {
         func paint() {
             defer { finishPath() }
             guard accept(), !path.isNull else { return }
-            add(path.insetBy(dx: -2, dy: -2), frame: pathIsRectangles && figureDepth == 0)
+            guard let shown = visible(path.insetBy(dx: -2, dy: -2)) else { return }
+            add(shown, frame: pathIsRectangles && figureDepth == 0)
+        }
+        /// The part of a footprint the clip in force lets show, or nil when none of it can. A
+        /// path's or image's extent is not its ink: FAA illustrations draw streamlines, arrows and
+        /// photographs far beyond the frame that clips them, into the neighbouring column (#98,
+        /// #52), and a bleed rectangle can lie wholly outside its clip (page 361). The clip
+        /// over-approximates the real clipping region, so no visible mark is lost.
+        func visible(_ rect: CGRect) -> CGRect? {
+            let shown = rect.intersection(clip)
+            return shown.isNull || shown.isEmpty ? nil : shown
         }
         func add(_ rect: CGRect, frame: Bool = false) {
             if paints.count < 10_000 { paints.append(Paint(rect: rect, frame: frame)) }
@@ -433,7 +443,7 @@ enum GraphicsReader {
             }
             switch String(cString: subtype) {
             case "Image":
-                s.add(CGRect(x: 0, y: 0, width: 1, height: 1).applying(s.matrix))
+                if let shown = s.visible(CGRect(x: 0, y: 0, width: 1, height: 1).applying(s.matrix)) { s.add(shown) }
                 // Masked, soft-masked, stencil and optional images can leave what is beneath visible.
                 var flag: CGPDFBoolean = 0
                 var object: CGPDFObjectRef?

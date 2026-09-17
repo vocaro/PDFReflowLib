@@ -1,0 +1,5562 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        532.42380000000003,
+        33.709700000000005,
+        25.57000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "14-17"
+        }
+      ],
+      "text" : "14-17"
+    },
+    {
+      "rect" : [
+        72.293800000000005,
+        578.06770000000006,
+        280.06100000000004,
+        184.32989999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        72,
+        557.66830000000004,
+        131.84559999999999,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 14-29."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " Two-bar VASI system."
+        }
+      ],
+      "text" : "Figure 14-29. Two-bar VASI system."
+    },
+    {
+      "rect" : [
+        72.191700000000083,
+        249.67099999999999,
+        484,
+        127.36100000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        72.269199999999998,
+        229.74990000000003,
+        276.70059999999989,
+        10.811999999999983
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 14-30."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " Precision approach path indicator for a typical 3° glide slope."
+        }
+      ],
+      "text" : "Figure 14-30. Precision approach path indicator for a typical 3° glide slope."
+    },
+    {
+      "rect" : [
+        60.695400616500002,
+        89.666697727199988,
+        484.70522403500001,
+        92.01616317280002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        72,
+        62.157199999999996,
+        203.85450000000003,
+        10.812000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 14-31."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " Tri-color visual approach slope indicator."
+        }
+      ],
+      "text" : "Figure 14-31. Tri-color visual approach slope indicator."
+    },
+    {
+      "rect" : [
+        72,
+        531.96559999999999,
+        236.99499999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A tri-color system consists of a single-light unit projecting"
+        }
+      ],
+      "text" : "A tri-color system consists of a single-light unit projecting"
+    },
+    {
+      "rect" : [
+        72,
+        519.46559999999999,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a three-color visual approach path. Below the glidepath is"
+        }
+      ],
+      "text" : "a three-color visual approach path. Below the glidepath is"
+    },
+    {
+      "rect" : [
+        72,
+        506.96559999999999,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "indicated by red, on the glidepath is indicated by green, and"
+        }
+      ],
+      "text" : "indicated by red, on the glidepath is indicated by green, and"
+    },
+    {
+      "rect" : [
+        72,
+        494.46559999999999,
+        236.91000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "above the glidepath is indicated by amber. When descending"
+        }
+      ],
+      "text" : "above the glidepath is indicated by amber. When descending"
+    },
+    {
+      "rect" : [
+        72,
+        481.96559999999999,
+        237.07999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "below the glidepath, there is a small area of dark amber. Pilots"
+        }
+      ],
+      "text" : "below the glidepath, there is a small area of dark amber. Pilots"
+    },
+    {
+      "rect" : [
+        72,
+        469.46559999999999,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "should not mistake this area for an “above the glidepath”"
+        }
+      ],
+      "text" : "should not mistake this area for an “above the glidepath”"
+    },
+    {
+      "rect" : [
+        72,
+        456.96559999999999,
+        105.81999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "indication. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 14-31]"
+        }
+      ],
+      "text" : "indication. [Figure 14-31]"
+    },
+    {
+      "rect" : [
+        72,
+        431.96559999999999,
+        237.12,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Pulsating VASIs normally consist of a single-light unit"
+        }
+      ],
+      "text" : "Pulsating VASIs normally consist of a single-light unit"
+    },
+    {
+      "rect" : [
+        72,
+        419.46559999999999,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "projecting a two-color visual approach path into the final"
+        }
+      ],
+      "text" : "projecting a two-color visual approach path into the final"
+    },
+    {
+      "rect" : [
+        72,
+        406.96559999999999,
+        237.0100000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "approach area of the runway upon which the indicator is"
+        }
+      ],
+      "text" : "approach area of the runway upon which the indicator is"
+    },
+    {
+      "rect" : [
+        72,
+        394.46559999999999,
+        236.91999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "installed. The “on glidepath” indication is a steady white"
+        }
+      ],
+      "text" : "installed. The “on glidepath” indication is a steady white"
+    },
+    {
+      "rect" : [
+        321,
+        719.5655999999999,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "light. The “slightly below glidepath” indication is a steady red"
+        }
+      ],
+      "text" : "light. The “slightly below glidepath” indication is a steady red"
+    },
+    {
+      "rect" : [
+        321,
+        707.0655999999999,
+        237.01700000000017,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "light. If the aircraft descends further below the glidepath, the"
+        }
+      ],
+      "text" : "light. If the aircraft descends further below the glidepath, the"
+    },
+    {
+      "rect" : [
+        321,
+        694.5655999999999,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "red light starts to pulsate. The “above glidepath” indication"
+        }
+      ],
+      "text" : "red light starts to pulsate. The “above glidepath” indication"
+    },
+    {
+      "rect" : [
+        321,
+        682.0655999999999,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is a pulsating white light. The pulsating rate increases as the"
+        }
+      ],
+      "text" : "is a pulsating white light. The pulsating rate increases as the"
+    },
+    {
+      "rect" : [
+        321,
+        669.5655999999999,
+        237.00599999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft gets further above or below the desired glideslope."
+        }
+      ],
+      "text" : "aircraft gets further above or below the desired glideslope."
+    },
+    {
+      "rect" : [
+        321,
+        657.0655999999999,
+        236.9799999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The useful range of the system is about four miles during the"
+        }
+      ],
+      "text" : "The useful range of the system is about four miles during the"
+    },
+    {
+      "rect" : [
+        321,
+        644.5655999999999,
+        191.63999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "day and up to ten miles at night. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 14-32]"
+        }
+      ],
+      "text" : "day and up to ten miles at night. [Figure 14-32]"
+    },
+    {
+      "rect" : [
+        321,
+        618.99559999999985,
+        80.560000000000002,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Runway Lighting"
+        }
+      ],
+      "text" : "Runway Lighting"
+    },
+    {
+      "rect" : [
+        321,
+        606.5655999999999,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "There are various lights that identify parts of the runway"
+        }
+      ],
+      "text" : "There are various lights that identify parts of the runway"
+    },
+    {
+      "rect" : [
+        321,
+        594.0655999999999,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "complex. These assist a pilot in safely making a takeoff or"
+        }
+      ],
+      "text" : "complex. These assist a pilot in safely making a takeoff or"
+    },
+    {
+      "rect" : [
+        321,
+        581.5655999999999,
+        128.33000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "landing during night operations."
+        }
+      ],
+      "text" : "landing during night operations."
+    },
+    {
+      "rect" : [
+        321,
+        555.34350000000006,
+        171.75400000000002,
+        13.309999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Runway End Identifier Lights (REIL)"
+        }
+      ],
+      "text" : "Runway End Identifier Lights (REIL)"
+    },
+    {
+      "rect" : [
+        321,
+        541.56650000000002,
+        236.995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Runway end identifier lights (REIL) are installed at many"
+        }
+      ],
+      "text" : "Runway end identifier lights (REIL) are installed at many"
+    },
+    {
+      "rect" : [
+        321,
+        529.06650000000002,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "airfields to provide rapid and positive identification of the"
+        }
+      ],
+      "text" : "airfields to provide rapid and positive identification of the"
+    },
+    {
+      "rect" : [
+        321,
+        516.56650000000002,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "approach end of a particular runway. The system consists"
+        }
+      ],
+      "text" : "approach end of a particular runway. The system consists"
+    },
+    {
+      "rect" : [
+        321,
+        504.06650000000002,
+        237.11800000000017,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of a pair of synchronized flashing lights located laterally"
+        }
+      ],
+      "text" : "of a pair of synchronized flashing lights located laterally"
+    },
+    {
+      "rect" : [
+        321,
+        491.56650000000002,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "on each side of the runway threshold. REILs may be either"
+        }
+      ],
+      "text" : "on each side of the runway threshold. REILs may be either"
+    },
+    {
+      "rect" : [
+        321,
+        479.06650000000002,
+        235.21999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "omnidirectional or unidirectional facing the approach area."
+        }
+      ],
+      "text" : "omnidirectional or unidirectional facing the approach area."
+    },
+    {
+      "rect" : [
+        321,
+        452.84350000000001,
+        94.742999999999995,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "text" : "Runway Edge Lights"
+        }
+      ],
+      "text" : "Runway Edge Lights"
+    },
+    {
+      "rect" : [
+        321,
+        439.06650000000002,
+        237.11000000000013,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Runway edge lights are used to outline the edges of"
+        }
+      ],
+      "text" : "Runway edge lights are used to outline the edges of"
+    },
+    {
+      "rect" : [
+        321,
+        426.56650000000002,
+        236.85000000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "runways at night or during low visibility conditions."
+        }
+      ],
+      "text" : "runways at night or during low visibility conditions."
+    },
+    {
+      "rect" : [
+        321,
+        414.06650000000002,
+        236.99900000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 14-33] "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "These lights are classified according to the"
+        }
+      ],
+      "text" : "[Figure 14-33] These lights are classified according to the"
+    },
+    {
+      "rect" : [
+        321,
+        401.56650000000002,
+        237.11000000000013,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "intensity they are capable of producing: high intensity runway"
+        }
+      ],
+      "text" : "intensity they are capable of producing: high intensity runway"
+    },
+    {
+      "rect" : [
+        321,
+        389.06650000000002,
+        237.01300000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "lights (HIRL), medium intensity runway lights (MIRL), and"
+        }
+      ],
+      "text" : "lights (HIRL), medium intensity runway lights (MIRL), and"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      71.727000000000004,
+      578.11000000000001,
+      236.95199999999997,
+      150.88999999999999
+    ],
+    [
+      70.691700000000083,
+      248.846,
+      485.99929999999995,
+      129.15899999999999
+    ],
+    [
+      70.25,
+      78.503800000000012,
+      489.76900000000001,
+      144.72719999999998
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        532.42380000000003,
+        33.709700000000005,
+        25.57000000000005,
+        12.310000000000002
+      ],
+      "text" : "14-17"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        557.66830000000004,
+        131.84559999999999,
+        10.812000000000012
+      ],
+      "structure" : {
+        "group" : 5203,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 25272
+      },
+      "text" : "Figure 14-29. Two-bar VASI system."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        72.269199999999998,
+        229.74990000000003,
+        276.70059999999989,
+        10.811999999999983
+      ],
+      "structure" : {
+        "group" : 5204,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 25275
+      },
+      "text" : "Figure 14-30. Precision approach path indicator for a typical 3° glide slope."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        62.157199999999996,
+        203.85450000000003,
+        10.812000000000005
+      ],
+      "structure" : {
+        "group" : 5205,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 25278
+      },
+      "text" : "Figure 14-31. Tri-color visual approach slope indicator."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        531.96559999999999,
+        236.99499999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5041,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 24458
+      },
+      "text" : "A tri-color system consists of a single-light unit projecting"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        519.46559999999999,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5041,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 24459
+      },
+      "text" : "a three-color visual approach path. Below the glidepath is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        506.96559999999999,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5041,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 24461
+      },
+      "text" : "indicated by red, on the glidepath is indicated by green, and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        494.46559999999999,
+        236.91000000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5041,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 24462
+      },
+      "text" : "above the glidepath is indicated by amber. When descending"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        481.96559999999999,
+        237.07999999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5041,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 24463
+      },
+      "text" : "below the glidepath, there is a small area of dark amber. Pilots"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        469.46559999999999,
+        237,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5041,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 24464
+      },
+      "text" : "should not mistake this area for an “above the glidepath”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        456.96559999999999,
+        105.81999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5041,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 24465
+      },
+      "text" : "indication. [Figure 14-31]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        431.96559999999999,
+        237.12,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5042,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 24467
+      },
+      "text" : "Pulsating VASIs normally consist of a single-light unit"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        419.46559999999999,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5042,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 24468
+      },
+      "text" : "projecting a two-color visual approach path into the final"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        406.96559999999999,
+        237.0100000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5042,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 24469
+      },
+      "text" : "approach area of the runway upon which the indicator is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        394.46559999999999,
+        236.91999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5042,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 24470
+      },
+      "text" : "installed. The “on glidepath” indication is a steady white"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        719.5655999999999,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5042,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 24471
+      },
+      "text" : "light. The “slightly below glidepath” indication is a steady red"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        707.0655999999999,
+        237.01700000000017,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5042,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 24472
+      },
+      "text" : "light. If the aircraft descends further below the glidepath, the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        694.5655999999999,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5042,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 24473
+      },
+      "text" : "red light starts to pulsate. The “above glidepath” indication"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        682.0655999999999,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5042,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 24474
+      },
+      "text" : "is a pulsating white light. The pulsating rate increases as the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        669.5655999999999,
+        237.00599999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5042,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 24475
+      },
+      "text" : "aircraft gets further above or below the desired glideslope."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        657.0655999999999,
+        236.9799999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5042,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 24476
+      },
+      "text" : "The useful range of the system is about four miles during the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        644.5655999999999,
+        191.63999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5042,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 24477
+      },
+      "text" : "day and up to ten miles at night. [Figure 14-32]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        618.99559999999985,
+        80.560000000000002,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 5043,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 24479
+      },
+      "text" : "Runway Lighting"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        606.5655999999999,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5044,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 24480
+      },
+      "text" : "There are various lights that identify parts of the runway"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        594.0655999999999,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5044,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 24481
+      },
+      "text" : "complex. These assist a pilot in safely making a takeoff or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        581.5655999999999,
+        128.33000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5044,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 24482
+      },
+      "text" : "landing during night operations."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        555.34350000000006,
+        171.75400000000002,
+        13.309999999999945
+      ],
+      "structure" : {
+        "group" : 5045,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 24483
+      },
+      "text" : "Runway End Identifier Lights (REIL)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        541.56650000000002,
+        236.995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5046,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 24484
+      },
+      "text" : "Runway end identifier lights (REIL) are installed at many"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        529.06650000000002,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5046,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 24485
+      },
+      "text" : "airfields to provide rapid and positive identification of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        516.56650000000002,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5046,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 24486
+      },
+      "text" : "approach end of a particular runway. The system consists"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        504.06650000000002,
+        237.11800000000017,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5046,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 24487
+      },
+      "text" : "of a pair of synchronized flashing lights located laterally"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        491.56650000000002,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5046,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 24488
+      },
+      "text" : "on each side of the runway threshold. REILs may be either"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        479.06650000000002,
+        235.21999999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5046,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 24489
+      },
+      "text" : "omnidirectional or unidirectional facing the approach area."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        452.84350000000001,
+        94.742999999999995,
+        13.310000000000002
+      ],
+      "structure" : {
+        "group" : 5047,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 24490
+      },
+      "text" : "Runway Edge Lights"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        439.06650000000002,
+        237.11000000000013,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5048,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 24491
+      },
+      "text" : "Runway edge lights are used to outline the edges of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        426.56650000000002,
+        236.85000000000014,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5048,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 24492
+      },
+      "text" : "runways at night or during low visibility conditions."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        414.06650000000002,
+        236.99900000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5048,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 24493
+      },
+      "text" : "[Figure 14-33] These lights are classified according to the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        401.56650000000002,
+        237.11000000000013,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5048,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 24495
+      },
+      "text" : "intensity they are capable of producing: high intensity runway"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        389.06650000000002,
+        237.01300000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 5048,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 24496
+      },
+      "text" : "lights (HIRL), medium intensity runway lights (MIRL), and"
+    }
+  ],
+  "page" : 351,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        72.793999999999997,
+        578.11000000000001,
+        234.952,
+        148.74199999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.793700000000001,
+        578.11000000000001,
+        234.95229999999998,
+        148.74199999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        71.727000000000004,
+        578.11000000000001,
+        236.95199999999997,
+        150.88999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.447000000000003,
+        581.88099999999997,
+        74.155000000000001,
+        69.189000000000078
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        91.564700000000002,
+        585.23699999999997,
+        41.835300000000004,
+        61.30600000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        91.564700000000002,
+        585.23699999999997,
+        41.835300000000004,
+        61.30600000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        108.81790000000001,
+        593.66869999999994,
+        5.3309999999999889,
+        30.788999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        107.96520000000001,
+        620.25840000000005,
+        5.1989999999999981,
+        27.966000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.8032,
+        584.53640000000007,
+        13.262,
+        11.232999999999947
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        110.81120000000001,
+        584.38060000000007,
+        12.565999999999988,
+        11.135999999999967
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        86.473700000000008,
+        597.16180000000008,
+        8.2949999999999875,
+        5.3590000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        86.474000000000004,
+        596.45280000000002,
+        8.0589999999999975,
+        4.7089999999999463
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        90.407200000000003,
+        596.47449999999992,
+        4.4920000000000044,
+        6.0520000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        85.682700000000011,
+        593.84540000000004,
+        8.2949999999999875,
+        5.3590000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        85.682900000000004,
+        593.13639999999998,
+        8.0589999999999975,
+        4.7089999999999463
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        89.615700000000004,
+        593.15809999999999,
+        4.4920000000000044,
+        6.0529999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        81.71350000000001,
+        597.16180000000008,
+        8.4409999999999883,
+        5.3590000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        81.713499999999996,
+        596.45280000000002,
+        7.9830000000000041,
+        4.7089999999999463
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        85.646200000000007,
+        596.47449999999992,
+        4.5649999999999977,
+        6.0520000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        80.567000000000007,
+        593.84540000000004,
+        8.4409999999999883,
+        5.3590000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        80.567099999999996,
+        593.13639999999998,
+        7.9830000000000041,
+        4.7089999999999463
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        84.500200000000007,
+        593.15809999999999,
+        4.563999999999993,
+        6.0529999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.98699999999999,
+        581.88099999999997,
+        74.155000000000001,
+        69.189000000000078
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.10499999999999,
+        585.23699999999997,
+        41.835000000000008,
+        61.30600000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        171.10499999999999,
+        585.23699999999997,
+        41.835000000000008,
+        61.30600000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        188.52450000000002,
+        592.41970000000003,
+        5.3299999999999841,
+        31.462999999999965
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        187.67020000000002,
+        620.25840000000005,
+        5.1999999999999886,
+        27.966000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        181.32310000000001,
+        584.53679999999997,
+        12.281000000000006,
+        9.9630000000000791
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        190.35060000000001,
+        584.38070000000005,
+        12.399000000000001,
+        10.008000000000038
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.01370000000003,
+        597.16180000000008,
+        8.2949999999999875,
+        5.3590000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.01400000000001,
+        596.45280000000002,
+        8.0589999999999975,
+        4.7089999999999463
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        169.94720000000001,
+        596.47449999999992,
+        4.4919999999999902,
+        6.0520000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        165.2227,
+        593.84540000000004,
+        8.2949999999999875,
+        5.3590000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        165.22300000000001,
+        593.13639999999998,
+        8.0589999999999975,
+        4.7089999999999463
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        169.15570000000002,
+        593.15809999999999,
+        4.4919999999999902,
+        6.0529999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.2535,
+        597.16180000000008,
+        8.4410000000000025,
+        5.3590000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.25360000000001,
+        596.45280000000002,
+        7.9830000000000041,
+        4.7089999999999463
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        165.18720000000002,
+        596.47449999999992,
+        4.563999999999993,
+        6.0520000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.107,
+        593.84540000000004,
+        8.4410000000000025,
+        5.3590000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.1071,
+        593.13639999999998,
+        7.9830000000000041,
+        4.7089999999999463
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.0403,
+        593.15809999999999,
+        4.563999999999993,
+        6.0529999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        232.36100000000002,
+        581.88099999999997,
+        74.157000000000011,
+        69.189000000000078
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        250.47900000000001,
+        585.23699999999997,
+        41.833999999999975,
+        61.30600000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        250.47900000000001,
+        585.23699999999997,
+        41.833999999999975,
+        61.30600000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        267.98439999999999,
+        593.33569999999997,
+        5.3310000000000173,
+        31.121999999999957
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        267.13120000000004,
+        620.25840000000005,
+        5.1999999999999886,
+        27.966000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        261.06610000000001,
+        584.53679999999997,
+        11.913000000000011,
+        9.9630000000000791
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        269.72550000000001,
+        584.38070000000005,
+        12.108000000000004,
+        10.008000000000038
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        245.38780000000003,
+        597.16180000000008,
+        8.2949999999999875,
+        5.3590000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        245.387,
+        596.45280000000002,
+        8.0600000000000023,
+        4.7089999999999463
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        249.32120000000003,
+        596.47449999999992,
+        4.4919999999999902,
+        6.0520000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        244.59680000000003,
+        593.84540000000004,
+        8.2949999999999875,
+        5.3590000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        244.596,
+        593.13639999999998,
+        8.0600000000000023,
+        4.7089999999999463
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        248.53020000000001,
+        593.15809999999999,
+        4.4919999999999902,
+        6.0529999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        240.62800000000001,
+        597.16180000000008,
+        8.4399999999999977,
+        5.3590000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        240.62810000000002,
+        596.45280000000002,
+        7.9819999999999993,
+        4.7089999999999463
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        244.56170000000003,
+        596.47449999999992,
+        4.563999999999993,
+        6.0520000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        239.48150000000001,
+        593.84540000000004,
+        8.4399999999999977,
+        5.3590000000000373
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        239.48160000000001,
+        593.13639999999998,
+        7.9819999999999993,
+        4.7089999999999463
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        243.41430000000003,
+        593.15809999999999,
+        4.563999999999993,
+        6.0529999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.94900000000001,
+        706.11000000000001,
+        78.424000000000007,
+        18.400999999999954
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.94730000000001,
+        706.11000000000001,
+        78.424000000000007,
+        18.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.948000000000008,
+        706.11000000000001,
+        78.424000000000007,
+        18.400999999999954
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.949299999999994,
+        706.11000000000001,
+        78.423000000000002,
+        18.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        227.94800000000001,
+        706.11000000000001,
+        78.424000000000007,
+        18.400999999999954
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        227.94730000000001,
+        706.11000000000001,
+        78.424000000000007,
+        18.399999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        78.689600000000013,
+        600.11410000000001,
+        64.483000000000004,
+        99.967000000000098
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        78.689600000000013,
+        600.11410000000001,
+        64.483000000000004,
+        99.967000000000098
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        87.537000000000006,
+        647.55700000000002,
+        55.634999999999991,
+        52.524000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        118.17100000000001,
+        651.96600000000001,
+        23.000999999999991,
+        46.115000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        118.17100000000001,
+        651.96600000000001,
+        23.000999999999991,
+        46.115000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.13469999999998,
+        652.2758,
+        5.0373000000000161,
+        16.849000000000046
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        110.67970000000001,
+        674.70330000000001,
+        11.629999999999995,
+        6.4139999999999873
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        110.6799,
+        673.44399999999996,
+        11.210999999999999,
+        5.2590000000000146
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        117.66730000000001,
+        673.48090000000002,
+        4.8739999999999952,
+        7.6459999999999582
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.2745,
+        668.81260000000009,
+        11.629999999999995,
+        6.4149999999999636
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.27460000000001,
+        667.55290000000002,
+        11.210999999999999,
+        5.2599999999999909
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        116.26150000000001,
+        667.59030000000007,
+        4.8739999999999952,
+        7.6459999999999582
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        102.22370000000001,
+        674.70330000000001,
+        11.887999999999991,
+        6.4139999999999873
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        102.22410000000001,
+        673.44399999999996,
+        11.075000000000003,
+        5.2590000000000146
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.21010000000001,
+        673.48090000000002,
+        5.0030000000000001,
+        7.6459999999999582
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.18710000000002,
+        668.81260000000009,
+        11.887999999999991,
+        6.4149999999999636
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        100.1875,
+        667.55290000000002,
+        11.075000000000003,
+        5.2599999999999909
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        107.1735,
+        667.59030000000007,
+        5.0019999999999953,
+        7.6459999999999582
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        84.813900000000018,
+        676.85069999999996,
+        44.61699999999999,
+        19.201000000000022
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        84.813900000000018,
+        676.85069999999996,
+        44.61699999999999,
+        19.201000000000022
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        119.65260000000001,
+        687.52699999999993,
+        9.1539999999999964,
+        7.98700000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        85.449300000000008,
+        687.52699999999993,
+        9.1539999999999964,
+        7.98700000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        81.528700000000015,
+        652.96370000000002,
+        52.700999999999993,
+        19.91599999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        81.528700000000015,
+        652.96370000000002,
+        52.700999999999993,
+        19.91599999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.26150000000001,
+        653.50200000000007,
+        9.1550000000000011,
+        7.9849999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        82.359400000000008,
+        653.50200000000007,
+        9.1539999999999964,
+        7.9849999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        78.689600000000013,
+        599.40010000000007,
+        64.483000000000004,
+        100.68100000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        157.85849999999999,
+        599.7971,
+        64.484000000000009,
+        100.28400000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        157.85849999999999,
+        599.7971,
+        64.484000000000009,
+        100.28400000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.274,
+        646.95699999999999,
+        55.381,
+        52.999000000000024
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.452,
+        651.41399999999999,
+        22.203000000000003,
+        46.54200000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.452,
+        651.41399999999999,
+        22.203000000000003,
+        46.54200000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        217.57190000000003,
+        651.76699999999994,
+        2.0830999999999733,
+        14.796000000000049
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        189.85680000000002,
+        674.62220000000002,
+        11.775999999999982,
+        6.4600000000000364
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        189.85680000000002,
+        673.33850000000007,
+        11.34899999999999,
+        5.2839999999999918
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        196.97690000000003,
+        673.37630000000001,
+        4.8909999999999911,
+        7.7160000000000082
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        188.42510000000001,
+        668.61880000000008,
+        11.775999999999982,
+        6.4610000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        188.42519999999999,
+        667.3356,
+        11.348000000000013,
+        5.2830000000000155
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        195.54530000000003,
+        667.37340000000006,
+        4.8909999999999911,
+        7.7150000000000318
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        181.23860000000002,
+        674.62220000000002,
+        12.038999999999987,
+        6.4600000000000364
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        181.239,
+        673.33850000000007,
+        11.211000000000013,
+        5.2839999999999918
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        188.36060000000003,
+        673.37630000000001,
+        5.0209999999999866,
+        7.7160000000000082
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        179.16340000000002,
+        668.61880000000008,
+        12.037999999999982,
+        6.4610000000000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        179.16380000000001,
+        667.3356,
+        11.210000000000008,
+        5.2830000000000155
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.28440000000003,
+        667.37340000000006,
+        5.0209999999999866,
+        7.7150000000000318
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        163.64880000000002,
+        676.81000000000006,
+        45.393000000000001,
+        19.490999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        163.64880000000002,
+        676.81000000000006,
+        45.393000000000001,
+        19.490999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        199.15210000000002,
+        687.69029999999998,
+        9.2529999999999859,
+        8.0629999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        164.29660000000001,
+        687.69029999999998,
+        9.2520000000000095,
+        8.0629999999999882
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.30140000000003,
+        652.46789999999999,
+        53.628999999999991,
+        20.220000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        160.30140000000003,
+        652.46789999999999,
+        53.628999999999991,
+        20.220000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.8494,
+        653.01560000000006,
+        9.2529999999999859,
+        8.0620000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        161.14670000000001,
+        653.01560000000006,
+        9.2529999999999859,
+        8.0620000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        157.17099999999999,
+        599.6721,
+        64.484000000000009,
+        100.28400000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        236.62989999999999,
+        602.18410000000006,
+        64.323000000000008,
+        97.897000000000048
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        236.62989999999999,
+        602.18410000000006,
+        64.323000000000008,
+        97.897000000000048
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        246.779,
+        647.24400000000003,
+        55.173000000000002,
+        52.836999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        277.58499999999998,
+        651.66999999999996,
+        22.367000000000019,
+        46.411000000000058
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        277.58499999999998,
+        651.66999999999996,
+        22.367000000000019,
+        46.411000000000058
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        298.0831,
+        651.99240000000009,
+        1.8688999999999965,
+        14.658000000000015
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        270.06110000000001,
+        674.55579999999998,
+        11.675999999999988,
+        6.42999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        270.06120000000004,
+        673.28870000000006,
+        11.254999999999995,
+        5.2670000000000528
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        277.09040000000005,
+        673.32680000000005,
+        4.8809999999999718,
+        7.66700000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        268.64699999999999,
+        668.62950000000001,
+        11.676999999999964,
+        6.4289999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        268.64710000000002,
+        667.36290000000008,
+        11.255999999999972,
+        5.2670000000000528
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        275.67739999999998,
+        667.39999999999998,
+        4.8790000000000191,
+        7.6680000000000064
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        261.5532,
+        674.55579999999998,
+        11.937000000000012,
+        6.42999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        261.55349999999999,
+        673.28870000000006,
+        11.119000000000028,
+        5.2670000000000528
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        268.58250000000004,
+        673.32680000000005,
+        5.0099999999999909,
+        7.66700000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        259.50440000000003,
+        668.62950000000001,
+        11.935999999999979,
+        6.4289999999999736
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        259.50480000000005,
+        667.36290000000008,
+        11.118999999999971,
+        5.2670000000000528
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        266.53370000000001,
+        667.39999999999998,
+        5.0079999999999814,
+        7.6680000000000064
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        244.6337,
+        676.71550000000002,
+        44.864000000000004,
+        19.293999999999983
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        244.6337,
+        676.71550000000002,
+        44.864000000000004,
+        19.293999999999983
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        279.68430000000001,
+        687.45760000000007,
+        9.1859999999999786,
+        8.0109999999999673
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        245.27370000000002,
+        687.45760000000007,
+        9.1850000000000023,
+        8.0109999999999673
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        241.32899999999998,
+        652.68460000000005,
+        52.996000000000009,
+        20.011999999999944
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        241.32899999999998,
+        652.68460000000005,
+        52.996000000000009,
+        20.011999999999944
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        284.32100000000003,
+        653.22559999999999,
+        9.1859999999999786,
+        8.0099999999999909
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        242.1644,
+        653.22559999999999,
+        9.1850000000000023,
+        8.0099999999999909
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        237.46779999999998,
+        602.18410000000006,
+        64.484000000000009,
+        97.897000000000048
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.692000000000007,
+        250.17099999999999,
+        483,
+        126.36000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.691600000000008,
+        250.17099999999999,
+        483.00040000000001,
+        126.36099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        70.691700000000083,
+        248.846,
+        485.99929999999995,
+        129.15899999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        455.755,
+        255.01800000000003,
+        96.479000000000042,
+        87.370000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        488.59700000000004,
+        258.75299999999999,
+        53.499999999999943,
+        78.40100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        488.59700000000004,
+        258.75299999999999,
+        53.499999999999943,
+        78.40100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        511.21910000000003,
+        270.09520000000003,
+        5.7009999999999081,
+        38.257999999999981
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        510.12699999999995,
+        304.09860000000003,
+        5.5339999999999918,
+        34.647999999999968
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        500.96690000000007,
+        258.4178,
+        15.845999999999947,
+        13.248999999999967
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        513.76710000000003,
+        258.21859999999998,
+        14.954000000000065,
+        13.125
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        467.36279999999999,
+        273.29470000000003,
+        7.6960000000000264,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        467.11400000000003,
+        273.161,
+        7.6949999999999932,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.6968,
+        273.29470000000003,
+        7.6940000000000168,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        472.44800000000004,
+        273.161,
+        7.6959999999999695,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        478.02980000000002,
+        273.29470000000003,
+        7.6940000000000168,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        477.78100000000001,
+        273.161,
+        7.6940000000000168,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        483.36290000000002,
+        273.29470000000003,
+        7.6929999999999836,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        483.11400000000003,
+        273.161,
+        7.6949999999999932,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        360.67000000000002,
+        255.01800000000003,
+        96.480000000000018,
+        87.370000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        393.512,
+        258.75299999999999,
+        53.5,
+        78.40100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        393.512,
+        258.75299999999999,
+        53.5,
+        78.40100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        416.13409999999999,
+        270.09520000000003,
+        5.7019999999999982,
+        38.257999999999981
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        415.04289999999997,
+        304.09860000000003,
+        5.5330000000000155,
+        34.647999999999968
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        405.88200000000001,
+        258.4178,
+        15.847000000000037,
+        13.248999999999967
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        418.6832,
+        258.21859999999998,
+        14.954000000000008,
+        13.125
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        372.27780000000001,
+        273.29470000000003,
+        7.6960000000000264,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        372.02800000000002,
+        273.161,
+        7.6959999999999695,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        377.61290000000002,
+        273.29470000000003,
+        7.6929999999999836,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        377.36400000000003,
+        273.161,
+        7.6919999999999504,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        382.94490000000002,
+        273.29470000000003,
+        7.6940000000000168,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        382.697,
+        273.161,
+        7.6929999999999836,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        388.27790000000005,
+        273.29470000000003,
+        7.6929999999999836,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        388.03000000000003,
+        273.161,
+        7.6949999999999932,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        265.58600000000001,
+        255.01800000000003,
+        96.478999999999985,
+        87.370000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        298.428,
+        258.75299999999999,
+        53.501000000000033,
+        78.40100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        298.428,
+        258.75299999999999,
+        53.501000000000033,
+        78.40100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.05099999999999,
+        270.09520000000003,
+        5.6999999999999886,
+        38.257999999999981
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        319.9599,
+        304.09860000000003,
+        5.5330000000000155,
+        34.647999999999968
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        310.79990000000004,
+        258.4178,
+        15.84499999999997,
+        13.248999999999967
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        323.59920000000005,
+        258.21859999999998,
+        14.95599999999996,
+        13.125
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        277.19480000000004,
+        273.29470000000003,
+        7.6949999999999932,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        276.94600000000003,
+        273.161,
+        7.69399999999996,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        282.52890000000002,
+        273.29470000000003,
+        7.6929999999999836,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        282.28000000000003,
+        273.161,
+        7.6949999999999932,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        287.86090000000002,
+        273.29470000000003,
+        7.6940000000000168,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        287.613,
+        273.161,
+        7.6929999999999836,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        293.19389999999999,
+        273.29470000000003,
+        7.6940000000000168,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        292.94600000000003,
+        273.161,
+        7.6949999999999932,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        170.50300000000001,
+        255.01800000000003,
+        96.47799999999998,
+        87.370000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.34399999999999,
+        258.75299999999999,
+        53.5,
+        78.40100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.34399999999999,
+        258.75299999999999,
+        53.5,
+        78.40100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        225.96609999999998,
+        270.09520000000003,
+        5.7010000000000218,
+        38.257999999999981
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        224.87500000000003,
+        304.09860000000003,
+        5.532999999999987,
+        34.647999999999968
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        215.714,
+        258.4178,
+        15.846000000000004,
+        13.248999999999967
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        228.51420000000002,
+        258.21859999999998,
+        14.954999999999984,
+        13.125
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        182.10940000000002,
+        273.29470000000003,
+        7.695999999999998,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        181.86199999999999,
+        273.161,
+        7.6930000000000121,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        187.4444,
+        273.29470000000003,
+        7.6930000000000121,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        187.19499999999999,
+        273.161,
+        7.6950000000000216,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        192.77590000000001,
+        273.29470000000003,
+        7.6949999999999932,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        192.52799999999999,
+        273.161,
+        7.6940000000000168,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        198.10990000000001,
+        273.29470000000003,
+        7.6930000000000121,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.863,
+        273.161,
+        7.6930000000000121,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        75.418999999999997,
+        255.01800000000003,
+        96.477999999999994,
+        87.370000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        108.26000000000001,
+        258.75299999999999,
+        53.499999999999986,
+        78.40100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        108.26000000000001,
+        258.75299999999999,
+        53.499999999999986,
+        78.40100000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        130.88209999999998,
+        270.09520000000003,
+        5.7010000000000218,
+        38.257999999999981
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        129.79050000000001,
+        304.09860000000003,
+        5.5339999999999918,
+        34.647999999999968
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        120.63050000000001,
+        258.4178,
+        15.846000000000004,
+        13.248999999999967
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        133.43020000000001,
+        258.21859999999998,
+        14.954999999999984,
+        13.125
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        87.025900000000007,
+        273.29470000000003,
+        7.695999999999998,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        86.777000000000001,
+        273.161,
+        7.6940000000000026,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        92.360399999999998,
+        273.29470000000003,
+        7.6940000000000026,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        92.111000000000004,
+        273.161,
+        7.6949999999999932,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        97.692900000000009,
+        273.29470000000003,
+        7.6940000000000026,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        97.445000000000007,
+        273.161,
+        7.6929999999999978,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        103.0254,
+        273.29470000000003,
+        7.6940000000000026,
+        8.0600000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        102.779,
+        273.161,
+        7.6940000000000026,
+        8.0590000000000259
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        75.287000000000006,
+        342.68700000000001,
+        96.424000000000007,
+        29
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        75.287599999999998,
+        342.68880000000001,
+        96.423000000000002,
+        29
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        170.45600000000002,
+        342.68700000000001,
+        96.425000000000011,
+        29
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        170.45660000000004,
+        342.68880000000001,
+        96.423000000000002,
+        29
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        265.62700000000001,
+        342.68700000000001,
+        96.423000000000002,
+        29
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        265.6266,
+        342.68880000000001,
+        96.423000000000002,
+        29
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        360.79599999999999,
+        342.68700000000001,
+        96.424000000000035,
+        29
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        360.79560000000004,
+        342.68880000000001,
+        96.423000000000002,
+        29
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        455.96699999999998,
+        342.68700000000001,
+        96.423000000000002,
+        29
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        455.96559999999999,
+        342.68880000000001,
+        96.423000000000002,
+        29
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        70.25,
+        109.31700000000001,
+        489.76900000000001,
+        113.91399999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        98.027000000000001,
+        120.251,
+        11.519000000000005,
+        16.611999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        101.005,
+        119.622,
+        11.52000000000001,
+        16.608999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        95.811000000000007,
+        118.70400000000001,
+        10.527999999999992,
+        17.337999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        105.379,
+        118.239,
+        10.530000000000001,
+        17.337999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        89.415999999999997,
+        118.994,
+        10.527000000000001,
+        17.337999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        83.361000000000004,
+        118.26900000000001,
+        11.521000000000001,
+        16.61099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        91.361000000000004,
+        117.696,
+        11.518999999999991,
+        16.611999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.26600000000001,
+        118.57600000000001,
+        11.519999999999996,
+        16.609999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        78.257999999999996,
+        117.74000000000001,
+        11.52000000000001,
+        16.609999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.501999999999995,
+        120.095,
+        11.519000000000005,
+        16.611999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        75.480999999999995,
+        119.464,
+        11.52000000000001,
+        16.611999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        79.853999999999999,
+        118.083,
+        10.530000000000001,
+        17.337999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.078000000000003,
+        117.789,
+        11.522000000000006,
+        16.611000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        84.902000000000001,
+        117.867,
+        11.522000000000006,
+        16.611000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        105.04000000000001,
+        120.402,
+        11.518000000000001,
+        16.611000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        108.051,
+        117.74900000000001,
+        11.521000000000001,
+        16.608999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        103.938,
+        119.021,
+        10.528000000000006,
+        17.339999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        113.35600000000001,
+        118.529,
+        10.528999999999996,
+        17.336000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        99.254999999999995,
+        117.753,
+        11.519000000000005,
+        16.612000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        116.28,
+        118.726,
+        11.521000000000001,
+        16.613
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        98.027000000000001,
+        120.251,
+        11.519000000000005,
+        16.611999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        101.005,
+        119.622,
+        11.52000000000001,
+        16.608999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        95.811000000000007,
+        118.70400000000001,
+        10.527999999999992,
+        17.337999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        105.379,
+        118.239,
+        10.530000000000001,
+        17.337999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        89.415999999999997,
+        117.57900000000001,
+        12.174000000000007,
+        20.705999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        83.361000000000004,
+        118.26900000000001,
+        11.521000000000001,
+        16.61099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        92.397999999999996,
+        117.309,
+        11.522000000000006,
+        16.614000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.26600000000001,
+        118.57600000000001,
+        11.519999999999996,
+        16.609999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        78.257999999999996,
+        117.74000000000001,
+        11.52000000000001,
+        16.609999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        74.442999999999998,
+        117.023,
+        11.52000000000001,
+        16.609000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        79.725000000000009,
+        117.18300000000001,
+        10.527999999999992,
+        17.337000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        84.644000000000005,
+        116.71000000000001,
+        11.518999999999991,
+        16.614000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        105.04000000000001,
+        120.402,
+        11.518000000000001,
+        16.611000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        108.051,
+        117.74900000000001,
+        11.521000000000001,
+        16.608999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        103.938,
+        119.021,
+        10.528000000000006,
+        17.339999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        113.35600000000001,
+        118.529,
+        11.567999999999998,
+        19.456000000000017
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        99.254999999999995,
+        117.753,
+        11.519000000000005,
+        16.612000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        116.28,
+        118.726,
+        11.521000000000001,
+        16.613
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.185,
+        120.774,
+        11.52000000000001,
+        16.61099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        147.16300000000001,
+        120.14400000000001,
+        11.522999999999996,
+        16.61099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.971,
+        119.226,
+        10.527999999999992,
+        17.337000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.536,
+        118.76300000000001,
+        10.530000000000001,
+        17.335999999999984
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        135.57400000000001,
+        119.51600000000001,
+        11.686999999999983,
+        19.707999999999984
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        129.52100000000002,
+        118.79000000000001,
+        11.518999999999977,
+        16.612000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        137.51900000000001,
+        118.22,
+        11.52000000000001,
+        16.610000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.416,
+        118.262,
+        11.522999999999996,
+        16.613
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        118.66,
+        120.616,
+        11.52000000000001,
+        16.612000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.63800000000001,
+        119.988,
+        11.522999999999996,
+        16.61099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        116.447,
+        119.07000000000001,
+        10.528000000000006,
+        17.338000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        126.01500000000001,
+        118.605,
+        10.527999999999992,
+        17.337000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        119.238,
+        118.312,
+        11.52000000000001,
+        16.611000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        131.06200000000001,
+        118.39100000000001,
+        11.520999999999987,
+        16.609999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.75300000000001,
+        120.925,
+        13.008999999999986,
+        19.106000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.096,
+        119.544,
+        10.527999999999992,
+        17.338000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.59899999999999,
+        117.75700000000001,
+        11.52000000000001,
+        16.61099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.185,
+        120.774,
+        11.52000000000001,
+        16.61099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        147.16300000000001,
+        120.14400000000001,
+        11.522999999999996,
+        16.61099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.971,
+        119.226,
+        10.527999999999992,
+        17.337000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.536,
+        118.76300000000001,
+        10.530000000000001,
+        17.335999999999984
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        135.57400000000001,
+        119.51600000000001,
+        10.526999999999987,
+        17.335999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        129.52100000000002,
+        118.79000000000001,
+        11.518999999999977,
+        16.612000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        137.51900000000001,
+        118.22,
+        11.52000000000001,
+        16.610000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.416,
+        118.262,
+        11.522999999999996,
+        16.613
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        118.66,
+        120.616,
+        11.52000000000001,
+        16.612000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.63800000000001,
+        119.988,
+        11.522999999999996,
+        16.61099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        116.447,
+        119.07000000000001,
+        10.528000000000006,
+        17.338000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        126.01500000000001,
+        118.605,
+        10.527999999999992,
+        17.337000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        119.238,
+        118.312,
+        11.52000000000001,
+        16.611000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        131.06200000000001,
+        118.39100000000001,
+        11.520999999999987,
+        16.609999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        151.197,
+        120.925,
+        11.52000000000001,
+        16.609999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.096,
+        119.544,
+        10.527999999999992,
+        17.338000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.41300000000001,
+        118.277,
+        11.521999999999991,
+        16.611000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        70.25,
+        78.542000000000002,
+        489.76900000000001,
+        47.040999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.25,
+        101.081,
+        106.85300000000001,
+        15.019999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.25,
+        101.081,
+        106.85400000000001,
+        15.021000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.25,
+        106.89679000000001,
+        67.036692700000003,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        134.52687003200001,
+        104.2621910812,
+        13.097065496499994,
+        5.170999531599989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.58494610350002,
+        106.5794901156,
+        15.627114243999984,
+        7.3409986636000042
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        143.36618369999999,
+        103.3986914,
+        26.740138742499994,
+        5.0919995632000052
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        140.3416392,
+        100.31689262960001,
+        26.648228788000011,
+        4.9969996012000024
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        144.90047390000001,
+        104.9240908,
+        26.785588719999993,
+        5.1889995244000033
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.90885539999999,
+        101.94949200000001,
+        26.691658766499984,
+        4.9959996016000048
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        150.74443199999999,
+        110.71118850000001,
+        26.486628867999997,
+        5.0929995628000029
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.386388205,
+        112.3514878064,
+        26.461378880500007,
+        5.1119995552000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        149.0335939,
+        109.13998909999999,
+        26.656308784000004,
+        5.0819995672000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        147.64292560000001,
+        107.6164897,
+        26.520968850999992,
+        5.0399995840000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        102.919,
+        88.471000000000004,
+        19.318000000000012,
+        15.391000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        102.919,
+        88.471000000000004,
+        19.318000000000012,
+        15.391000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        106.524,
+        88.036000000000001,
+        11.549000000000007,
+        11.936000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        102.09400000000001,
+        86.471000000000004,
+        20.408000000000001,
+        17.977999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.09400000000001,
+        88.471000000000004,
+        16.408000000000001,
+        13.977999999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        110.206,
+        89.666300000000007,
+        6.7270000000000039,
+        2.1356999999999857
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        110.206,
+        89.666300000000007,
+        6.7270000000000039,
+        2.1358000000000033
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        106.431,
+        87.838000000000008,
+        11.653000000000006,
+        12.11699999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        169.6271807,
+        97.563793799599992,
+        316.4261753335,
+        21.666992933200007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        169.6271807,
+        106.56279019999999,
+        316.4261753335,
+        18.668994132400002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        169.6271807,
+        106.56279019999999,
+        316.4261753335,
+        37.390986643600002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        169.6271807,
+        106.56279019999999,
+        316.4261753335,
+        56.710978915599981
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        482.05325502099998,
+        97.761993650799994,
+        19.596412278999992,
+        42.095984761600008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        482.05325502099998,
+        115.23048665399999,
+        19.596412278999992,
+        30.134989546
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        482.05325502099998,
+        139.69887689360002,
+        19.596412278999992,
+        43.983984006399993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        482.05325502099998,
+        120.97568439560001,
+        19.596412278999992,
+        43.488984204399998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        169.6271807,
+        106.56279019999999,
+        331.9842076315,
+        76.761970895199994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        502.30200000000002,
+        102.119,
+        39.16599999999994,
+        7.4650000000000034
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        502.30200000000002,
+        102.119,
+        39.16599999999994,
+        7.4650000000000034
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        522.25400000000002,
+        156.42699999999999,
+        24.640999999999963,
+        12.25200000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        522.25325512050006,
+        156.42697025160001,
+        24.642369780999957,
+        12.251996699199992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        540.77200000000005,
+        163.458,
+        5.52800000000002,
+        4.217000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        540.62599999999998,
+        163.125,
+        5.5289999999999964,
+        4.217000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        540.52200000000005,
+        162.75700000000001,
+        5.5869999999999891,
+        4.2229999999999848
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        540.34000000000003,
+        162.35300000000001,
+        5.6399999999999864,
+        4.2229999999999848
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        540.19299999999998,
+        161.983,
+        5.6539999999999964,
+        4.2239999999999895
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        540.03200000000004,
+        161.541,
+        5.6999999999999318,
+        4.2270000000000039
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        539.88700000000006,
+        161.172,
+        5.7439999999999145,
+        4.2300000000000182
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        539.72400000000005,
+        160.767,
+        5.7649999999999864,
+        4.2340000000000089
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        539.60199999999998,
+        160.399,
+        5.7889999999999873,
+        4.2340000000000089
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        539.44600000000003,
+        160.01599999999999,
+        5.84699999999998,
+        4.2379999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        539.327,
+        159.648,
+        5.8559999999999945,
+        4.2360000000000184
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        539.16399999999999,
+        159.24299999999999,
+        5.8759999999999764,
+        4.2390000000000043
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        539.01900000000001,
+        158.874,
+        5.9110000000000582,
+        4.2390000000000043
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        538.62342802600006,
+        158.5155693392,
+        8.0925179739999749,
+        9.5979977608000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        500.238,
+        153.59399999999999,
+        5.4250000000000114,
+        5.0060000000000286
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        500.23738699649999,
+        153.5938714024,
+        5.4261192940000456,
+        5.0059995976000096
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        501.37555551050002,
+        153.97957115279999,
+        4.3090598470000145,
+        4.4789998084000047
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        501.55500000000001,
+        150.65299999999999,
+        4.4230000000000018,
+        7.0360000000000014
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        501.55412335450001,
+        150.65267249999999,
+        4.4221797910000191,
+        7.0359987855999861
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        501.185,
+        154.17400000000001,
+        4.3640000000000327,
+        6.8669999999999902
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        501.18466560000002,
+        154.17327114720001,
+        4.3635998199999904,
+        6.8679988528000138
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        501.67653530700005,
+        151.15797235920002,
+        43.404120492999994,
+        11.147997140799987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        505.81400000000002,
+        149.33000000000001,
+        4.6809999999999832,
+        5.8220000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        505.8150082555,
+        149.33067302840001,
+        4.6787196640000275,
+        5.8209992715999874
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        505.03700000000003,
+        147.52100000000002,
+        5.9019999999999868,
+        5.7669999999999959
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        505.42400000000004,
+        147.887,
+        5.1259999999999764,
+        5.0450000000000159
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        503.375,
+        147.95600000000002,
+        9.3099999999999454,
+        5.5339999999999918
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        503.55799999999999,
+        148.596,
+        7.9410000000000309,
+        4.8830000000000098
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        503.60399999999998,
+        147.976,
+        9.0680000000000405,
+        5.4579999999999984
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        503.37434443749999,
+        147.96727361359999,
+        9.3115873705000922,
+        5.59499936200001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        511.99599999999998,
+        148.31300000000002,
+        6.5750000000000455,
+        6.6999999999999886
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        512.52413193699999,
+        148.87467324439999,
+        5.5180292484999427,
+        5.6199993520000078
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.76499999999999,
+        148.99799999999999,
+        11.141000000000076,
+        6.3210000000000264
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        510.01300000000003,
+        149.98699999999999,
+        9.1820000000000164,
+        5.3060000000000116
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        510.08500000000004,
+        149.005,
+        10.803999999999974,
+        6.2150000000000034
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.76430827899998,
+        149.00967315600002,
+        11.141706464500032,
+        6.4089990363999902
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        514.31799999999998,
+        149.78100000000001,
+        5.2000000000000455,
+        6.328000000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        514.31910309350008,
+        149.78087292800001,
+        5.1988694064999663,
+        6.4829990068000143
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        511.53948342199999,
+        150.69537253640001,
+        5.4584392780000144,
+        6.5279989887999932
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        511.53948342199999,
+        150.69537253640001,
+        5.4584392780000144,
+        6.5279989887999932
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        513.97400000000005,
+        146.97999999999999,
+        6.7919999999999163,
+        6.7050000000000125
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        514.5,
+        147.54300000000001,
+        5.6929999999999836,
+        5.5949999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        511.74300000000005,
+        147.66,
+        11.135999999999967,
+        6.3220000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        511.99099999999999,
+        148.65100000000001,
+        9.3250000000000455,
+        5.3089999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        512.05600000000004,
+        147.69800000000001,
+        10.805999999999926,
+        6.1839999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        511.7439073795,
+        147.67377375560002,
+        11.13564646750001,
+        6.4059990375999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        502.089,
+        151.04400000000001,
+        39.506000000000029,
+        7.0789999999999793
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        501.76100000000002,
+        152.297,
+        43.073000000000036,
+        9.0879999999999939
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        501.70800000000003,
+        153.40800000000002,
+        42.958000000000027,
+        8.9299999999999784
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        513.09199999999998,
+        155.125,
+        4.8179999999999836,
+        4.9979999999999905
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        515.09199999999998,
+        157.124,
+        0.81799999999998363,
+        0.99899999999999523
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        517.08500000000004,
+        155.33699999999999,
+        4.8410000000000082,
+        5.0230000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        519.08500000000004,
+        157.33699999999999,
+        0.84100000000000819,
+        1.0240000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        507.517,
+        155.102,
+        5.7159999999999513,
+        5.1189999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.517,
+        157.102,
+        1.7160000000000082,
+        1.1200000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        521.024,
+        158.03999999999999,
+        3.1180000000000518,
+        1.4990000000000236
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        521.024,
+        158.03999999999999,
+        3.1180000000000518,
+        1.4990000000000236
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        521.024,
+        158.03999999999999,
+        3.1180000000000518,
+        1.4990000000000236
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        517.81000000000006,
+        157.203,
+        3.8309999999999036,
+        1.5749999999999886
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        517.81000000000006,
+        157.203,
+        3.8309999999999036,
+        1.5749999999999886
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        517.81000000000006,
+        157.203,
+        3.8309999999999036,
+        1.5749999999999886
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        512.87800000000004,
+        156.99700000000001,
+        3.9560000000000173,
+        1.6779999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        512.87800000000004,
+        156.99700000000001,
+        3.9560000000000173,
+        1.6779999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        512.87800000000004,
+        156.99700000000001,
+        3.9560000000000173,
+        1.6779999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.06700000000001,
+        157.06399999999999,
+        2.8509999999999991,
+        1.9919999999999902
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.06700000000001,
+        157.06399999999999,
+        2.8509999999999991,
+        1.9919999999999902
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.06700000000001,
+        157.06399999999999,
+        2.8509999999999991,
+        1.9920000000000186
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.60300000000001,
+        151.58600000000001,
+        8.4580000000000268,
+        9.0339999999999918
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.60412235550007,
+        151.58637211319999,
+        8.4571277935000353,
+        9.0329979868000123
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        535.44100000000003,
+        155.90000000000001,
+        9.48599999999999,
+        4.7419999999999902
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        535.44223261249999,
+        155.89927039,
+        9.4842972850000251,
+        4.7429997028000059
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        535.46223061450007,
+        155.8717704092,
+        9.483287285499955,
+        4.7729996907999919
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        506.35101500000002,
+        153.55567132119998,
+        5.0736294684999734,
+        6.3029990788000134
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        516.17100000000005,
+        156.03,
+        7.2799999999999727,
+        5.3760000000000048
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        516.17093709999995,
+        156.03057035,
+        7.2804783760000191,
+        5.37499944999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        517.19600000000003,
+        155.24000000000001,
+        6.2709999999999582,
+        5.1189999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        517.19568260000005,
+        155.2392706876,
+        6.2714888755000402,
+        5.1189995523999983
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        512.899,
+        154.59899999999999,
+        9.8039999999999736,
+        4.8550000000000182
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        512.89924580000002,
+        154.59887098320002,
+        9.8034571270000015,
+        4.8559996575999946
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        513.07600000000002,
+        154.88200000000001,
+        9.8099999999999454,
+        4.5080000000000098
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        513.07538968749998,
+        154.88207081799999,
+        9.8105271235000373,
+        4.5189997923999954
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        513.53200000000004,
+        154.643,
+        7.09699999999998,
+        4.4550000000000125
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        513.53190943300001,
+        154.6433708916,
+        7.0966584669999975,
+        4.4549998180000046
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        512.25999999999999,
+        155.29300000000001,
+        9.1140000000000327,
+        6.132000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        512.26052212949992,
+        155.29367065880001,
+        9.1126174690000425,
+        6.129999147999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.86799999999999,
+        155.03200000000001,
+        8.8489999999999895,
+        6.1229999999999905
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.86813626999998,
+        155.03257074919998,
+        8.8490075994999984,
+        6.1229991508000126
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        512.87700000000007,
+        157.64699999999999,
+        8.875,
+        5.5560000000000116
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        512.87722773249993,
+        157.64656970280001,
+        8.8742575869999882,
+        5.5559993775999885
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        511.45400000000006,
+        159.149,
+        7.2559999999999718,
+        4.5250000000000057
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        511.45434049999994,
+        159.15016910920002,
+        7.2562383880000425,
+        4.5229997907999859
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.55599999999998,
+        157.709,
+        9.6659999999999968,
+        5.960000000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.55574341400006,
+        157.70826968439999,
+        9.6660971950000203,
+        5.9609992155999976
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        508.11700000000002,
+        157.26300000000001,
+        7.4300000000000068,
+        6.3259999999999934
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        508.11609009849997,
+        157.26256987279999,
+        7.4309683015000019,
+        6.3269990692000135
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        508.54715790949996,
+        157.2138699052,
+        4.8483995800000343,
+        4.7629996947999871
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.334,
+        156.98699999999999,
+        10.761000000000024,
+        4.9060000000000059
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.33394753999994,
+        156.9869699612,
+        10.760936653000044,
+        4.9059996375999901
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        510.46797500000002,
+        156.97226996159998,
+        4.8574895755000398,
+        4.6679997328000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        510.46797500000002,
+        156.97226996159998,
+        4.8574895755000398,
+        4.6679997328000127
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        508.01670614699998,
+        157.8501696452,
+        4.5494397279999816,
+        5.6129993547999959
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        508.01670614699998,
+        157.8501696452,
+        4.5494397279999816,
+        5.6129993547999959
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.8683383,
+        155.61017055720001,
+        5.3281493424999553,
+        5.1429995427999984
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        509.8683383,
+        155.61017055720001,
+        5.3281493424999553,
+        5.1429995427999984
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        511.19709362849994,
+        154.6944709352,
+        6.6795286735000445,
+        5.0509995795999885
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        511.19709362849994,
+        154.6944709352,
+        6.6795286735000445,
+        5.0509995795999885
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        508.56634789999998,
+        157.23186989799999,
+        4.8110295984999993,
+        4.7449997020000012
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        501.33515549550003,
+        138.22977750000001,
+        17.524903304500015,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        496.86146371000001,
+        136.759378062,
+        9.4741972900000064,
+        6.9049988380000116
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        70.25,
+        78.503800000000012,
+        489.76900000000001,
+        144.727
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

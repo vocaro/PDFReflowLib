@@ -1,0 +1,4173 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "5-49"
+        }
+      ],
+      "text" : "5-49"
+    },
+    {
+      "rect" : [
+        49.201700000000002,
+        465.262,
+        276.69739999999996,
+        265.82400000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        72.2727,
+        583.98070000000007,
+        110.6563,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 5-69."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " Wingtip pre-stall."
+        }
+      ],
+      "text" : "Figure 5-69. Wingtip pre-stall."
+    },
+    {
+      "rect" : [
+        72,
+        432.48840000000001,
+        87.166300000000007,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 5-70."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " T-tail stall."
+        }
+      ],
+      "text" : "Figure 5-70. T-tail stall."
+    },
+    {
+      "rect" : [
+        49.951700000000002,
+        445.96899999999999,
+        276.69739999999996,
+        265.82400000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        72,
+        406.61260000000004,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "AOA. In this situation, without reliable AOA information,"
+        }
+      ],
+      "text" : "AOA. In this situation, without reliable AOA information,"
+    },
+    {
+      "rect" : [
+        72,
+        394.11260000000004,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a nose-down pitch attitude with an increasing airspeed is no"
+        }
+      ],
+      "text" : "a nose-down pitch attitude with an increasing airspeed is no"
+    },
+    {
+      "rect" : [
+        72,
+        381.61260000000004,
+        237.05999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "guarantee that recovery has been affected, and up-elevator"
+        }
+      ],
+      "text" : "guarantee that recovery has been affected, and up-elevator"
+    },
+    {
+      "rect" : [
+        72,
+        369.11260000000004,
+        237.02999999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "movement at this stage may merely keep the aircraft stalled."
+        }
+      ],
+      "text" : "movement at this stage may merely keep the aircraft stalled."
+    },
+    {
+      "rect" : [
+        72,
+        344.11260000000004,
+        236.99200000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "It is a characteristic of T-tail aircraft to pitch up viciously"
+        }
+      ],
+      "text" : "It is a characteristic of T-tail aircraft to pitch up viciously"
+    },
+    {
+      "rect" : [
+        72,
+        331.61260000000004,
+        237.09000000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "when stalled in extreme nose-high attitudes, making"
+        }
+      ],
+      "text" : "when stalled in extreme nose-high attitudes, making"
+    },
+    {
+      "rect" : [
+        72,
+        319.11260000000004,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "recovery difficult or violent. The stick pusher inhibits this"
+        }
+      ],
+      "text" : "recovery difficult or violent. The stick pusher inhibits this"
+    },
+    {
+      "rect" : [
+        72,
+        306.61260000000004,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "type of stall. At approximately one knot above stall speed,"
+        }
+      ],
+      "text" : "type of stall. At approximately one knot above stall speed,"
+    },
+    {
+      "rect" : [
+        72,
+        294.11260000000004,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pre-programmed stick forces automatically move the stick"
+        }
+      ],
+      "text" : "pre-programmed stick forces automatically move the stick"
+    },
+    {
+      "rect" : [
+        72,
+        281.61260000000004,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "forward, preventing the stall from developing. A G-limiter"
+        }
+      ],
+      "text" : "forward, preventing the stall from developing. A G-limiter"
+    },
+    {
+      "rect" : [
+        72,
+        269.11260000000004,
+        236.99599999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "may also be incorporated into the system to prevent the pitch"
+        }
+      ],
+      "text" : "may also be incorporated into the system to prevent the pitch"
+    },
+    {
+      "rect" : [
+        72,
+        256.61260000000004,
+        237.09999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "down generated by the stick pusher from imposing excessive"
+        }
+      ],
+      "text" : "down generated by the stick pusher from imposing excessive"
+    },
+    {
+      "rect" : [
+        72,
+        244.11260000000004,
+        236.995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "loads on the aircraft. A “stick shaker,” on the other hand,"
+        }
+      ],
+      "text" : "loads on the aircraft. A “stick shaker,” on the other hand,"
+    },
+    {
+      "rect" : [
+        72,
+        231.61260000000004,
+        237.0089999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "provides stall warning when the airspeed is five to seven"
+        }
+      ],
+      "text" : "provides stall warning when the airspeed is five to seven"
+    },
+    {
+      "rect" : [
+        72,
+        219.11260000000004,
+        102.75000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "percent above stall speed."
+        }
+      ],
+      "text" : "percent above stall speed."
+    },
+    {
+      "rect" : [
+        72,
+        193.54260000000005,
+        115.01000000000002,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Mach Buffet Boundaries"
+        }
+      ],
+      "text" : "Mach Buffet Boundaries"
+    },
+    {
+      "rect" : [
+        72,
+        181.11260000000004,
+        236.99000000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Mach buffet is a function of the speed of the airflow over the"
+        }
+      ],
+      "text" : "Mach buffet is a function of the speed of the airflow over the"
+    },
+    {
+      "rect" : [
+        72,
+        168.61260000000004,
+        236.85800000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "wing—not necessarily the speed of the aircraft. Any time that"
+        }
+      ],
+      "text" : "wing—not necessarily the speed of the aircraft. Any time that"
+    },
+    {
+      "rect" : [
+        72,
+        156.11260000000004,
+        236.98000000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "too great a lift demand is made on the wing, whether from too"
+        }
+      ],
+      "text" : "too great a lift demand is made on the wing, whether from too"
+    },
+    {
+      "rect" : [
+        72,
+        142.36260000000001,
+        237.0009,
+        12.720000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "fast an airspeed or from too high an AOA near the M"
+        },
+        {
+          "baselineOffset" : -2.0000000000000284,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7,
+          "text" : "MO"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : ", the"
+        }
+      ],
+      "text" : "fast an airspeed or from too high an AOA near the MMO, the"
+    },
+    {
+      "rect" : [
+        72.00090000000003,
+        131.11260000000001,
+        237.01399999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "“high-speed” buffet occurs. There are also occasions when"
+        }
+      ],
+      "text" : "“high-speed” buffet occurs. There are also occasions when"
+    },
+    {
+      "rect" : [
+        72.00090000000003,
+        118.61260000000001,
+        237.01399999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the buffet can be experienced at much lower speeds known"
+        }
+      ],
+      "text" : "the buffet can be experienced at much lower speeds known"
+    },
+    {
+      "rect" : [
+        72.00090000000003,
+        106.11260000000001,
+        129.68000000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "as the “low-speed Mach buffet.”"
+        }
+      ],
+      "text" : "as the “low-speed Mach buffet.”"
+    },
+    {
+      "rect" : [
+        72.00090000000003,
+        81.112600000000015,
+        237.02600000000027,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "An aircraft flown at a speed too slow for its weight and"
+        }
+      ],
+      "text" : "An aircraft flown at a speed too slow for its weight and"
+    },
+    {
+      "rect" : [
+        72.00090000000003,
+        68.612600000000015,
+        236.85800000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "altitude necessitating a high AOA is the most likely situation"
+        }
+      ],
+      "text" : "altitude necessitating a high AOA is the most likely situation"
+    },
+    {
+      "rect" : [
+        321.00090000000006,
+        719.56260000000009,
+        237.00599999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to cause a low-speed Mach buffet. This very high AOA has"
+        }
+      ],
+      "text" : "to cause a low-speed Mach buffet. This very high AOA has"
+    },
+    {
+      "rect" : [
+        321.00090000000006,
+        707.06260000000009,
+        237.04000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the effect of increasing airflow velocity over the upper surface"
+        }
+      ],
+      "text" : "the effect of increasing airflow velocity over the upper surface"
+    },
+    {
+      "rect" : [
+        321.00090000000006,
+        694.56260000000009,
+        237.02500000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of the wing until the same effects of the shock waves and"
+        }
+      ],
+      "text" : "of the wing until the same effects of the shock waves and"
+    },
+    {
+      "rect" : [
+        321.00090000000006,
+        682.06260000000009,
+        237.01100000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "buffet occur as in the high-speed buffet situation. The AOA"
+        }
+      ],
+      "text" : "buffet occur as in the high-speed buffet situation. The AOA"
+    },
+    {
+      "rect" : [
+        321.00090000000006,
+        669.56260000000009,
+        237.01500000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of the wing has the greatest effect on inducing the Mach"
+        }
+      ],
+      "text" : "of the wing has the greatest effect on inducing the Mach"
+    },
+    {
+      "rect" : [
+        321.00090000000006,
+        657.06260000000009,
+        237.01399999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "buffet at either the high-speed or low-speed boundaries for"
+        }
+      ],
+      "text" : "buffet at either the high-speed or low-speed boundaries for"
+    },
+    {
+      "rect" : [
+        321.00090000000006,
+        644.56260000000009,
+        237.01300000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the aircraft. The conditions that increase the AOA, the speed"
+        }
+      ],
+      "text" : "the aircraft. The conditions that increase the AOA, the speed"
+    },
+    {
+      "rect" : [
+        321.00090000000006,
+        632.06260000000009,
+        236.86599999999981,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of the airflow over the wing, and chances of Mach buffet are:"
+        }
+      ],
+      "text" : "of the airflow over the wing, and chances of Mach buffet are:"
+    },
+    {
+      "rect" : [
+        330,
+        615.06640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        348,
+        615.06640000000004,
+        210.02999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "High altitudes—the higher an aircraft flies, the thinner"
+        }
+      ],
+      "text" : "High altitudes—the higher an aircraft flies, the thinner"
+    },
+    {
+      "rect" : [
+        348,
+        602.56640000000004,
+        210.01900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the air and the greater the AOA required to produce"
+        }
+      ],
+      "text" : "the air and the greater the AOA required to produce"
+    },
+    {
+      "rect" : [
+        348,
+        590.06640000000004,
+        153.60000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the lift needed to maintain level flight."
+        }
+      ],
+      "text" : "the lift needed to maintain level flight."
+    },
+    {
+      "rect" : [
+        330,
+        573.06640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        348,
+        573.06640000000004,
+        210,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Heavy weights—the heavier the aircraft, the greater"
+        }
+      ],
+      "text" : "Heavy weights—the heavier the aircraft, the greater"
+    },
+    {
+      "rect" : [
+        348,
+        560.56640000000004,
+        210.03500000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the lift required of the wing, and all other factors being"
+        }
+      ],
+      "text" : "the lift required of the wing, and all other factors being"
+    },
+    {
+      "rect" : [
+        348,
+        548.06640000000004,
+        110.51999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "equal, the greater the AOA."
+        }
+      ],
+      "text" : "equal, the greater the AOA."
+    },
+    {
+      "rect" : [
+        330,
+        531.06640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "•"
+        }
+      ],
+      "text" : "•"
+    },
+    {
+      "rect" : [
+        348,
+        531.06640000000004,
+        209.8900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "G loading—an increase in the G loading on the aircraft"
+        }
+      ],
+      "text" : "G loading—an increase in the G loading on the aircraft"
+    },
+    {
+      "rect" : [
+        348,
+        518.56640000000004,
+        210.01099999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "has the same effect as increasing the weight of the"
+        }
+      ],
+      "text" : "has the same effect as increasing the weight of the"
+    },
+    {
+      "rect" : [
+        348,
+        506.06640000000004,
+        210.00400000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft. Whether the increase in G forces is caused"
+        }
+      ],
+      "text" : "aircraft. Whether the increase in G forces is caused"
+    },
+    {
+      "rect" : [
+        348,
+        493.56640000000004,
+        210.10300000000018,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "by turns, rough control usage, or turbulence, the effect"
+        }
+      ],
+      "text" : "by turns, rough control usage, or turbulence, the effect"
+    },
+    {
+      "rect" : [
+        348,
+        481.06640000000004,
+        169.97000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of increasing the wing’s AOA is the same."
+        }
+      ],
+      "text" : "of increasing the wing’s AOA is the same."
+    },
+    {
+      "rect" : [
+        321,
+        455.49640000000005,
+        128.89999999999998,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "High Speed Flight Controls"
+        }
+      ],
+      "text" : "High Speed Flight Controls"
+    },
+    {
+      "rect" : [
+        321,
+        443.06640000000004,
+        236.93000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "On high-speed aircraft, flight controls are divided into"
+        }
+      ],
+      "text" : "On high-speed aircraft, flight controls are divided into"
+    },
+    {
+      "rect" : [
+        321,
+        430.56640000000004,
+        236.82199999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "primary flight controls and secondary or auxiliary flight"
+        }
+      ],
+      "text" : "primary flight controls and secondary or auxiliary flight"
+    },
+    {
+      "rect" : [
+        321,
+        418.06640000000004,
+        237.00799999999981,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "controls. The primary flight controls maneuver the aircraft"
+        }
+      ],
+      "text" : "controls. The primary flight controls maneuver the aircraft"
+    },
+    {
+      "rect" : [
+        321,
+        405.56640000000004,
+        237.02300000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "about the pitch, roll, and yaw axes. They include the ailerons,"
+        }
+      ],
+      "text" : "about the pitch, roll, and yaw axes. They include the ailerons,"
+    },
+    {
+      "rect" : [
+        321,
+        393.06640000000004,
+        237.01399999999978,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "elevator, and rudder. Secondary or auxiliary flight controls"
+        }
+      ],
+      "text" : "elevator, and rudder. Secondary or auxiliary flight controls"
+    },
+    {
+      "rect" : [
+        321,
+        380.56640000000004,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "include tabs, leading edge flaps, trailing edge flaps, spoilers,"
+        }
+      ],
+      "text" : "include tabs, leading edge flaps, trailing edge flaps, spoilers,"
+    },
+    {
+      "rect" : [
+        321,
+        368.06640000000004,
+        37.220000000000027,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and slats."
+        }
+      ],
+      "text" : "and slats."
+    },
+    {
+      "rect" : [
+        321,
+        343.06640000000004,
+        237.02200000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Spoilers are used on the upper surface of the wing to spoil or"
+        }
+      ],
+      "text" : "Spoilers are used on the upper surface of the wing to spoil or"
+    },
+    {
+      "rect" : [
+        321,
+        330.56640000000004,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "reduce lift. High speed aircraft, due to their clean low drag"
+        }
+      ],
+      "text" : "reduce lift. High speed aircraft, due to their clean low drag"
+    },
+    {
+      "rect" : [
+        321,
+        318.06640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "design, use spoilers as speed brakes to slow them down."
+        }
+      ],
+      "text" : "design, use spoilers as speed brakes to slow them down."
+    },
+    {
+      "rect" : [
+        321,
+        305.56640000000004,
+        237.00999999999976,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Spoilers are extended immediately after touchdown to dump"
+        }
+      ],
+      "text" : "Spoilers are extended immediately after touchdown to dump"
+    },
+    {
+      "rect" : [
+        321,
+        293.06640000000004,
+        237.03999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "lift and thus transfer the weight of the aircraft from the wings"
+        }
+      ],
+      "text" : "lift and thus transfer the weight of the aircraft from the wings"
+    },
+    {
+      "rect" : [
+        321,
+        280.56640000000004,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "onto the wheels for better braking performance. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 5-71]"
+        }
+      ],
+      "text" : "onto the wheels for better braking performance. [Figure 5-71]"
+    },
+    {
+      "rect" : [
+        321,
+        255.56640000000004,
+        236.94000000000028,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Jet transport aircraft have small ailerons. The space for"
+        }
+      ],
+      "text" : "Jet transport aircraft have small ailerons. The space for"
+    },
+    {
+      "rect" : [
+        321,
+        243.06640000000004,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ailerons is limited because as much of the wing trailing"
+        }
+      ],
+      "text" : "ailerons is limited because as much of the wing trailing"
+    },
+    {
+      "rect" : [
+        321,
+        230.56640000000004,
+        237.02499999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "edge as possible is needed for flaps. Also, a conventional"
+        }
+      ],
+      "text" : "edge as possible is needed for flaps. Also, a conventional"
+    },
+    {
+      "rect" : [
+        321,
+        218.06640000000004,
+        237.01699999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "size aileron would cause wing twist at high speed. For that"
+        }
+      ],
+      "text" : "size aileron would cause wing twist at high speed. For that"
+    },
+    {
+      "rect" : [
+        321,
+        205.56640000000004,
+        237.02099999999984,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "reason, spoilers are used in unison with ailerons to provide"
+        }
+      ],
+      "text" : "reason, spoilers are used in unison with ailerons to provide"
+    },
+    {
+      "rect" : [
+        321,
+        193.06640000000004,
+        89.720000000000027,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "additional roll control."
+        }
+      ],
+      "text" : "additional roll control."
+    },
+    {
+      "rect" : [
+        321,
+        168.06640000000004,
+        237.08999999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Some jet transports have two sets of ailerons, a pair of outboard"
+        }
+      ],
+      "text" : "Some jet transports have two sets of ailerons, a pair of outboard"
+    },
+    {
+      "rect" : [
+        321,
+        155.56640000000004,
+        236.99000000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "low-speed ailerons and a pair of high-speed inboard ailerons."
+        }
+      ],
+      "text" : "low-speed ailerons and a pair of high-speed inboard ailerons."
+    },
+    {
+      "rect" : [
+        321,
+        143.06640000000004,
+        237,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When the flaps are fully retracted after takeoff, the outboard"
+        }
+      ],
+      "text" : "When the flaps are fully retracted after takeoff, the outboard"
+    },
+    {
+      "rect" : [
+        321,
+        130.56640000000004,
+        229.79999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ailerons are automatically locked out in the faired position."
+        }
+      ],
+      "text" : "ailerons are automatically locked out in the faired position."
+    },
+    {
+      "rect" : [
+        321,
+        105.56640000000004,
+        237.02599999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When used for roll control, the spoiler on the side of the"
+        }
+      ],
+      "text" : "When used for roll control, the spoiler on the side of the"
+    },
+    {
+      "rect" : [
+        321,
+        93.066400000000044,
+        237.00499999999988,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "up-going aileron extends and reduces the lift on that side,"
+        }
+      ],
+      "text" : "up-going aileron extends and reduces the lift on that side,"
+    },
+    {
+      "rect" : [
+        321,
+        80.566400000000044,
+        237.0100000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "causing the wing to drop. If the spoilers are extended as speed"
+        }
+      ],
+      "text" : "causing the wing to drop. If the spoilers are extended as speed"
+    },
+    {
+      "rect" : [
+        321,
+        68.066400000000044,
+        237.02599999999984,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "brakes, they can still be used for roll control. If they are the"
+        }
+      ],
+      "text" : "brakes, they can still be used for roll control. If they are the"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      70.5227,
+      600.327,
+      241.00030000000004,
+      130.423
+    ],
+    [
+      70.2727,
+      448.834,
+      241,
+      130.4237
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "text" : "5-49"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        72.2727,
+        583.98070000000007,
+        110.6563,
+        10.812000000000012
+      ],
+      "text" : "Figure 5-69. Wingtip pre-stall."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        432.48840000000001,
+        87.166300000000007,
+        10.812000000000012
+      ],
+      "structure" : {
+        "group" : 2551,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 11739
+      },
+      "text" : "Figure 5-70. T-tail stall."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        406.61260000000004,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2457,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11358
+      },
+      "text" : "AOA. In this situation, without reliable AOA information,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        394.11260000000004,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2457,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11359
+      },
+      "text" : "a nose-down pitch attitude with an increasing airspeed is no"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        381.61260000000004,
+        237.05999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2457,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11360
+      },
+      "text" : "guarantee that recovery has been affected, and up-elevator"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        369.11260000000004,
+        237.02999999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2457,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11361
+      },
+      "text" : "movement at this stage may merely keep the aircraft stalled."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        344.11260000000004,
+        236.99200000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2458,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11362
+      },
+      "text" : "It is a characteristic of T-tail aircraft to pitch up viciously"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        331.61260000000004,
+        237.09000000000015,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2458,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11363
+      },
+      "text" : "when stalled in extreme nose-high attitudes, making"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        319.11260000000004,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2458,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11364
+      },
+      "text" : "recovery difficult or violent. The stick pusher inhibits this"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        306.61260000000004,
+        237,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2458,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11365
+      },
+      "text" : "type of stall. At approximately one knot above stall speed,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        294.11260000000004,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2458,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11366
+      },
+      "text" : "pre-programmed stick forces automatically move the stick"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        281.61260000000004,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2458,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11367
+      },
+      "text" : "forward, preventing the stall from developing. A G-limiter"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        269.11260000000004,
+        236.99599999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2458,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11368
+      },
+      "text" : "may also be incorporated into the system to prevent the pitch"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        256.61260000000004,
+        237.09999999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2458,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11369
+      },
+      "text" : "down generated by the stick pusher from imposing excessive"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        244.11260000000004,
+        236.995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2458,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11370
+      },
+      "text" : "loads on the aircraft. A “stick shaker,” on the other hand,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        231.61260000000004,
+        237.0089999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2458,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11371
+      },
+      "text" : "provides stall warning when the airspeed is five to seven"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        219.11260000000004,
+        102.75000000000003,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2458,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 11372
+      },
+      "text" : "percent above stall speed."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        193.54260000000005,
+        115.01000000000002,
+        13.189999999999998
+      ],
+      "structure" : {
+        "group" : 2459,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 11373
+      },
+      "text" : "Mach Buffet Boundaries"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        181.11260000000004,
+        236.99000000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2460,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11374
+      },
+      "text" : "Mach buffet is a function of the speed of the airflow over the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        168.61260000000004,
+        236.85800000000006,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2460,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11375
+      },
+      "text" : "wing—not necessarily the speed of the aircraft. Any time that"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        156.11260000000004,
+        236.98000000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2460,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11376
+      },
+      "text" : "too great a lift demand is made on the wing, whether from too"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        142.36260000000001,
+        237.0009,
+        12.720000000000027
+      ],
+      "structure" : {
+        "group" : 2460,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11377
+      },
+      "text" : "fast an airspeed or from too high an AOA near the MMO, the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.00090000000003,
+        131.11260000000001,
+        237.01399999999998,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2460,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11380
+      },
+      "text" : "“high-speed” buffet occurs. There are also occasions when"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.00090000000003,
+        118.61260000000001,
+        237.01399999999998,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2460,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11381
+      },
+      "text" : "the buffet can be experienced at much lower speeds known"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.00090000000003,
+        106.11260000000001,
+        129.68000000000006,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2460,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11382
+      },
+      "text" : "as the “low-speed Mach buffet.”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.00090000000003,
+        81.112600000000015,
+        237.02600000000027,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2461,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 11383
+      },
+      "text" : "An aircraft flown at a speed too slow for its weight and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72.00090000000003,
+        68.612600000000015,
+        236.85800000000003,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2461,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 11384
+      },
+      "text" : "altitude necessitating a high AOA is the most likely situation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00090000000006,
+        719.56260000000009,
+        237.00599999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2461,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 11385
+      },
+      "text" : "to cause a low-speed Mach buffet. This very high AOA has"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00090000000006,
+        707.06260000000009,
+        237.04000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2461,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 11386
+      },
+      "text" : "the effect of increasing airflow velocity over the upper surface"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00090000000006,
+        694.56260000000009,
+        237.02500000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2461,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 11387
+      },
+      "text" : "of the wing until the same effects of the shock waves and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00090000000006,
+        682.06260000000009,
+        237.01100000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2461,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 11388
+      },
+      "text" : "buffet occur as in the high-speed buffet situation. The AOA"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00090000000006,
+        669.56260000000009,
+        237.01500000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2461,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 11389
+      },
+      "text" : "of the wing has the greatest effect on inducing the Mach"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00090000000006,
+        657.06260000000009,
+        237.01399999999984,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2461,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 11390
+      },
+      "text" : "buffet at either the high-speed or low-speed boundaries for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00090000000006,
+        644.56260000000009,
+        237.01300000000009,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2461,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 11391
+      },
+      "text" : "the aircraft. The conditions that increase the AOA, the speed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321.00090000000006,
+        632.06260000000009,
+        236.86599999999981,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2461,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 11392
+      },
+      "text" : "of the airflow over the wing, and chances of Mach buffet are:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        615.06640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2462,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11393
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        615.06640000000004,
+        210.02999999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2462,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11393
+      },
+      "text" : "High altitudes—the higher an aircraft flies, the thinner"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        602.56640000000004,
+        210.01900000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2462,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11394
+      },
+      "text" : "the air and the greater the AOA required to produce"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        590.06640000000004,
+        153.60000000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2462,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11395
+      },
+      "text" : "the lift needed to maintain level flight."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        573.06640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2463,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11396
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        573.06640000000004,
+        210,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2463,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11396
+      },
+      "text" : "Heavy weights—the heavier the aircraft, the greater"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        560.56640000000004,
+        210.03500000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2463,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11397
+      },
+      "text" : "the lift required of the wing, and all other factors being"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        548.06640000000004,
+        110.51999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2463,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11398
+      },
+      "text" : "equal, the greater the AOA."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        531.06640000000004,
+        3.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2464,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11399
+      },
+      "text" : "•"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        531.06640000000004,
+        209.8900000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2464,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11399
+      },
+      "text" : "G loading—an increase in the G loading on the aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        518.56640000000004,
+        210.01099999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2464,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11400
+      },
+      "text" : "has the same effect as increasing the weight of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        506.06640000000004,
+        210.00400000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2464,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11401
+      },
+      "text" : "aircraft. Whether the increase in G forces is caused"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        493.56640000000004,
+        210.10300000000018,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2464,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11402
+      },
+      "text" : "by turns, rough control usage, or turbulence, the effect"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        481.06640000000004,
+        169.97000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2464,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11403
+      },
+      "text" : "of increasing the wing’s AOA is the same."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        455.49640000000005,
+        128.89999999999998,
+        13.189999999999998
+      ],
+      "structure" : {
+        "group" : 2465,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 11404
+      },
+      "text" : "High Speed Flight Controls"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        443.06640000000004,
+        236.93000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2466,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11405
+      },
+      "text" : "On high-speed aircraft, flight controls are divided into"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        430.56640000000004,
+        236.82199999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2466,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11406
+      },
+      "text" : "primary flight controls and secondary or auxiliary flight"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        418.06640000000004,
+        237.00799999999981,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2466,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11407
+      },
+      "text" : "controls. The primary flight controls maneuver the aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        405.56640000000004,
+        237.02300000000014,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2466,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11408
+      },
+      "text" : "about the pitch, roll, and yaw axes. They include the ailerons,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        393.06640000000004,
+        237.01399999999978,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2466,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11409
+      },
+      "text" : "elevator, and rudder. Secondary or auxiliary flight controls"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        380.56640000000004,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2466,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11410
+      },
+      "text" : "include tabs, leading edge flaps, trailing edge flaps, spoilers,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        368.06640000000004,
+        37.220000000000027,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2466,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 11411
+      },
+      "text" : "and slats."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        343.06640000000004,
+        237.02200000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2467,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11412
+      },
+      "text" : "Spoilers are used on the upper surface of the wing to spoil or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        330.56640000000004,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2467,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11413
+      },
+      "text" : "reduce lift. High speed aircraft, due to their clean low drag"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        318.06640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2467,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11414
+      },
+      "text" : "design, use spoilers as speed brakes to slow them down."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        305.56640000000004,
+        237.00999999999976,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2467,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11415
+      },
+      "text" : "Spoilers are extended immediately after touchdown to dump"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        293.06640000000004,
+        237.03999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2467,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11416
+      },
+      "text" : "lift and thus transfer the weight of the aircraft from the wings"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        280.56640000000004,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2467,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11417
+      },
+      "text" : "onto the wheels for better braking performance. [Figure 5-71]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        255.56640000000004,
+        236.94000000000028,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2468,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11419
+      },
+      "text" : "Jet transport aircraft have small ailerons. The space for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        243.06640000000004,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2468,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11420
+      },
+      "text" : "ailerons is limited because as much of the wing trailing"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        230.56640000000004,
+        237.02499999999998,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2468,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11421
+      },
+      "text" : "edge as possible is needed for flaps. Also, a conventional"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        218.06640000000004,
+        237.01699999999994,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2468,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11422
+      },
+      "text" : "size aileron would cause wing twist at high speed. For that"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        205.56640000000004,
+        237.02099999999984,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2468,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11423
+      },
+      "text" : "reason, spoilers are used in unison with ailerons to provide"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        193.06640000000004,
+        89.720000000000027,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2468,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 11424
+      },
+      "text" : "additional roll control."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        168.06640000000004,
+        237.08999999999992,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2469,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11425
+      },
+      "text" : "Some jet transports have two sets of ailerons, a pair of outboard"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        155.56640000000004,
+        236.99000000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2469,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11426
+      },
+      "text" : "low-speed ailerons and a pair of high-speed inboard ailerons."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        143.06640000000004,
+        237,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2469,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11427
+      },
+      "text" : "When the flaps are fully retracted after takeoff, the outboard"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        130.56640000000004,
+        229.79999999999995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2469,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11428
+      },
+      "text" : "ailerons are automatically locked out in the faired position."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        105.56640000000004,
+        237.02599999999995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2470,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11429
+      },
+      "text" : "When used for roll control, the spoiler on the side of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        93.066400000000044,
+        237.00499999999988,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2470,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11430
+      },
+      "text" : "up-going aileron extends and reduces the lift on that side,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        80.566400000000044,
+        237.0100000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2470,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11431
+      },
+      "text" : "causing the wing to drop. If the spoilers are extended as speed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        68.066400000000044,
+        237.02599999999984,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2470,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 11432
+      },
+      "text" : "brakes, they can still be used for roll control. If they are the"
+    }
+  ],
+  "page" : 146,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        70.522999999999996,
+        600.327,
+        241.00000000000003,
+        130.423
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        78.378,
+        652.41600000000005,
+        217.03900000000004,
+        71.628999999999905
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        78.376900000000006,
+        652.41489999999999,
+        217.03999999999999,
+        76.317000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        236.85980000000001,
+        676.86720000000003,
+        19.661000000000001,
+        10.981999999999971
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        262.79520000000002,
+        659.59199999999998,
+        29.956999999999994,
+        21.663000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        220.59200000000001,
+        658.351,
+        29.717999999999989,
+        17.515999999999963
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        220.5932,
+        658.35110000000009,
+        29.716000000000008,
+        17.893999999999892
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        223.28300000000002,
+        664.48300000000006,
+        6.8639999999999759,
+        11.217999999999961
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        223.28310000000002,
+        664.48340000000007,
+        6.8640000000000043,
+        11.217999999999961
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        234.85400000000001,
+        660.12900000000002,
+        6.8640000000000043,
+        11.33299999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        234.85400000000001,
+        660.12930000000006,
+        6.8640000000000043,
+        11.33299999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        238.75,
+        659.32900000000006,
+        6.2890000000000157,
+        10.184999999999945
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        238.75020000000001,
+        659.32820000000004,
+        6.289999999999992,
+        10.186000000000035
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        118.04600000000001,
+        708.35699999999997,
+        8.7469999999999999,
+        9.4740000000000464
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        118.0455,
+        708.35660000000007,
+        8.7480000000000047,
+        9.5209999999999582
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        123.31100000000001,
+        706.37900000000002,
+        8.7469999999999857,
+        9.4750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        123.31000000000002,
+        706.37920000000008,
+        8.7480000000000047,
+        9.5220000000000482
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        128.57499999999999,
+        704.40100000000007,
+        8.7460000000000093,
+        9.4759999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        128.57399999999998,
+        704.40180000000009,
+        8.7480000000000189,
+        9.5219999999999345
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        133.839,
+        702.423,
+        8.7460000000000093,
+        9.4750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        133.83850000000001,
+        702.42340000000002,
+        8.7470000000000141,
+        9.5230000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        139.102,
+        700.44600000000003,
+        8.7479999999999905,
+        9.4739999999999327
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        139.10249999999999,
+        700.44590000000005,
+        8.7480000000000189,
+        9.5229999999999109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        141.54360000000003,
+        691.00059999999996,
+        15.251999999999981,
+        19.427999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.50800000000001,
+        697.61199999999997,
+        8.7489999999999952,
+        9.4759999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.50899999999999,
+        697.61340000000007,
+        8.7470000000000141,
+        9.5209999999999582
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.49000000000001,
+        695.41499999999996,
+        8.7489999999999952,
+        9.4759999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.49089999999998,
+        695.41660000000002,
+        8.7480000000000189,
+        9.5230000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        157.755,
+        693.43899999999996,
+        8.7480000000000189,
+        9.4740000000000464
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        157.755,
+        693.43810000000008,
+        8.7480000000000189,
+        9.5230000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        163.02000000000001,
+        691.46100000000001,
+        8.7459999999999809,
+        9.4750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        163.01939999999999,
+        691.46070000000009,
+        8.7470000000000141,
+        9.5229999999999109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.28300000000002,
+        689.48400000000004,
+        8.7469999999999857,
+        9.4739999999999327
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.2824,
+        689.48440000000005,
+        8.7480000000000189,
+        9.5209999999999582
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        173.548,
+        687.505,
+        8.7460000000000093,
+        9.4759999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        173.54739999999998,
+        687.50580000000002,
+        8.7470000000000141,
+        9.5230000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        175.76510000000002,
+        678.14380000000006,
+        15.251999999999981,
+        19.427999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        179.72900000000001,
+        684.75700000000006,
+        8.7479999999999905,
+        9.4739999999999327
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        179.7296,
+        684.75650000000007,
+        8.7480000000000189,
+        9.5229999999999109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.488,
+        682.64499999999998,
+        8.7470000000000141,
+        9.4750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        186.48749999999998,
+        682.64510000000007,
+        8.7480000000000189,
+        9.5230000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.75200000000001,
+        680.66600000000005,
+        8.7469999999999857,
+        9.4759999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        191.75139999999999,
+        680.66660000000002,
+        8.7480000000000189,
+        9.5230000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.017,
+        678.68799999999999,
+        8.7450000000000045,
+        9.4759999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.0164,
+        678.68920000000003,
+        8.7470000000000141,
+        9.5219999999999345
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        202.28,
+        676.71199999999999,
+        8.7470000000000141,
+        9.4750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        202.27949999999998,
+        676.71079999999995,
+        8.7480000000000189,
+        9.5240000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        207.54400000000001,
+        674.73400000000004,
+        8.7469999999999857,
+        9.4759999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        207.54339999999999,
+        674.73440000000005,
+        8.7490000000000236,
+        9.5230000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        262.42500000000001,
+        673.86000000000001,
+        43.478000000000009,
+        19.413999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        261.3888,
+        673.86000000000001,
+        44.51400000000001,
+        20.867999999999938
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        263.84000000000003,
+        675.49599999999998,
+        37.024999999999977,
+        16.951999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        263.82020000000006,
+        675.49599999999998,
+        37.043999999999983,
+        16.975000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        146.637,
+        665.16499999999996,
+        69.163000000000011,
+        30.665000000000077
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        145.40219999999999,
+        665.16450000000009,
+        70.397999999999996,
+        31.431999999999903
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.56200000000001,
+        665.16499999999996,
+        48.238,
+        22.102000000000089
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        166.72500000000002,
+        665.16499999999996,
+        49.074999999999989,
+        22.621999999999957
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        101.01900000000001,
+        715.72000000000003,
+        8.3939999999999912,
+        7.0779999999999745
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        101.01790000000001,
+        715.71990000000005,
+        8.3960000000000008,
+        7.0779999999999745
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.974,
+        714.40200000000004,
+        8.1760000000000019,
+        7.0760000000000218
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        104.9739,
+        714.40140000000008,
+        8.1770000000000067,
+        7.0769999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        108.93000000000001,
+        713.303,
+        7.7369999999999948,
+        6.1979999999999791
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        108.93000000000001,
+        713.30220000000008,
+        7.737000000000009,
+        6.1989999999999554
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.522999999999996,
+        602.327,
+        237.00000000000003,
+        97.63900000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.522999999999996,
+        602.327,
+        237.00000000000003,
+        97.639999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.522999999999996,
+        637.55029999999999,
+        237.00000000000003,
+        76.830000000000041
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.522999999999996,
+        628.2487000000001,
+        237.00000000000003,
+        82.509000000000015
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.522999999999996,
+        623.7133,
+        237.00000000000003,
+        83.307000000000016
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.522999999999996,
+        613.66849999999999,
+        237.00000000000003,
+        72.134999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.522999999999996,
+        606.54070000000002,
+        237.00000000000003,
+        68.59699999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.522999999999996,
+        602.327,
+        237.00000000000003,
+        62.430899999999951
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        308.536,
+        602.327,
+        0.98700000000002319,
+        126.423
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        87.915999999999997,
+        607.98400000000004,
+        206.279,
+        15.440000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        79.856400000000008,
+        607.98410000000001,
+        222.399,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        70.5227,
+        600.327,
+        241,
+        130.423
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        70.272999999999996,
+        448.834,
+        240.999,
+        129.67199999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        79.128,
+        492.72399999999999,
+        217.04000000000002,
+        71.627999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        79.126900000000006,
+        492.72360000000009,
+        217.03999999999999,
+        76.315999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        237.60980000000001,
+        517.17500000000007,
+        19.661000000000001,
+        10.981999999999971
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        263.54520000000002,
+        499.89960000000002,
+        29.956999999999994,
+        21.662999999999954
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        221.34200000000001,
+        498.65800000000002,
+        29.717999999999989,
+        17.515999999999963
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        221.3432,
+        498.65890000000002,
+        29.716000000000008,
+        17.894000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        224.03300000000002,
+        504.791,
+        6.8639999999999759,
+        11.218000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        224.03310000000002,
+        504.79120000000006,
+        6.8640000000000043,
+        11.218000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        235.60400000000001,
+        500.43799999999999,
+        6.8640000000000043,
+        11.33200000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        235.60400000000001,
+        500.43710000000004,
+        6.8640000000000043,
+        11.333000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        239.5,
+        499.637,
+        6.289999999999992,
+        10.185000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        239.50020000000001,
+        499.63590000000005,
+        6.289999999999992,
+        10.185999999999979
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        118.795,
+        548.66399999999999,
+        8.7480000000000047,
+        9.4750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        118.7955,
+        548.6644,
+        8.7480000000000047,
+        9.5209999999999582
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.06100000000001,
+        546.68700000000001,
+        8.7479999999999905,
+        9.4740000000000464
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        124.06000000000002,
+        546.68690000000004,
+        8.7480000000000047,
+        9.5220000000000482
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        129.32400000000001,
+        544.70900000000006,
+        8.7469999999999857,
+        9.4749999999999091
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        129.32399999999998,
+        544.70950000000005,
+        8.7480000000000189,
+        9.5219999999999345
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        134.589,
+        542.73000000000002,
+        8.7460000000000093,
+        9.4759999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        134.58850000000001,
+        542.73110000000008,
+        8.7470000000000141,
+        9.5230000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        139.85300000000001,
+        540.75400000000002,
+        8.7469999999999857,
+        9.4750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        139.85249999999999,
+        540.75370000000009,
+        8.7480000000000189,
+        9.5229999999999109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        142.29360000000003,
+        531.30830000000003,
+        15.251999999999981,
+        19.427000000000021
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        146.25900000000001,
+        537.92100000000005,
+        8.7469999999999857,
+        9.4749999999999091
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        146.25899999999999,
+        537.92110000000002,
+        8.7470000000000141,
+        9.5209999999999582
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.24000000000001,
+        535.72299999999996,
+        8.7479999999999905,
+        9.4759999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.24089999999998,
+        535.72430000000008,
+        8.7480000000000189,
+        9.5230000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        158.506,
+        533.74699999999996,
+        8.7470000000000141,
+        9.47300000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        158.505,
+        533.74580000000003,
+        8.7480000000000189,
+        9.5230000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        163.77000000000001,
+        531.76800000000003,
+        8.7459999999999809,
+        9.4759999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        163.76939999999999,
+        531.76840000000004,
+        8.7470000000000141,
+        9.5229999999999109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        169.03200000000001,
+        529.79200000000003,
+        8.7479999999999905,
+        9.4739999999999327
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        169.0324,
+        529.79200000000003,
+        8.7480000000000189,
+        9.5219999999999345
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        174.298,
+        527.81299999999999,
+        8.7470000000000141,
+        9.4750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        174.29739999999998,
+        527.81360000000006,
+        8.7470000000000141,
+        9.5230000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        176.51510000000002,
+        518.45150000000001,
+        15.251999999999981,
+        19.427999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        180.47900000000001,
+        525.06399999999996,
+        8.7479999999999905,
+        9.4750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        180.4796,
+        525.06420000000003,
+        8.7480000000000189,
+        9.5229999999999109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        187.238,
+        522.95299999999997,
+        8.7470000000000141,
+        9.4750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        187.23749999999998,
+        522.95280000000002,
+        8.7480000000000189,
+        9.5230000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        192.50300000000001,
+        520.97400000000005,
+        8.7459999999999809,
+        9.4749999999999091
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        192.50139999999999,
+        520.97440000000006,
+        8.7480000000000189,
+        9.5230000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.767,
+        518.99599999999998,
+        8.7450000000000045,
+        9.4769999999999754
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        197.7664,
+        518.99700000000007,
+        8.7470000000000141,
+        9.5219999999999345
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.03,
+        517.01900000000001,
+        8.7470000000000141,
+        9.4759999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.02949999999998,
+        517.01850000000002,
+        8.7480000000000189,
+        9.5240000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        208.29500000000002,
+        515.04200000000003,
+        8.7469999999999857,
+        9.4750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        208.29339999999999,
+        515.04220000000009,
+        8.7490000000000236,
+        9.5230000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        263.17500000000001,
+        514.16800000000001,
+        43.478000000000009,
+        19.413000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        262.1388,
+        514.16770000000008,
+        44.51400000000001,
+        20.867999999999938
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        264.59000000000003,
+        515.803,
+        37.024999999999977,
+        16.951999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        264.57020000000006,
+        515.80370000000005,
+        37.043999999999983,
+        16.975000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        147.387,
+        505.47300000000001,
+        69.163000000000011,
+        30.664000000000044
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        146.15219999999999,
+        505.47219999999999,
+        70.397999999999996,
+        31.43199999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        168.31100000000001,
+        505.47300000000001,
+        48.239000000000004,
+        22.102000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        167.47500000000002,
+        505.47270000000003,
+        49.074999999999989,
+        22.621999999999957
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        101.768,
+        556.02800000000002,
+        8.3960000000000008,
+        7.0779999999999745
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        101.76790000000001,
+        556.02760000000012,
+        8.3960000000000008,
+        7.0779999999999745
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        105.724,
+        554.70900000000006,
+        8.1769999999999925,
+        7.0769999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        105.7239,
+        554.70920000000001,
+        8.1770000000000067,
+        7.0769999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.68000000000001,
+        553.61000000000001,
+        7.7379999999999995,
+        6.1989999999999554
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.68000000000001,
+        553.61000000000001,
+        7.737000000000009,
+        6.1989999999999554
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.272999999999996,
+        483.76800000000003,
+        236.999,
+        72.574999999999932
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.272999999999996,
+        483.76800000000003,
+        236.999,
+        72.574999999999932
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.272999999999996,
+        483.76799999999997,
+        236.999,
+        72.574999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.272999999999996,
+        541.65520000000004,
+        236.999,
+        18.838999999999942
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.272999999999996,
+        535.01710000000003,
+        236.999,
+        18.057999999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.272999999999996,
+        527.20690000000002,
+        236.999,
+        17.27800000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.272999999999996,
+        486.20560000000006,
+        236.999,
+        35.238999999999976
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.272999999999996,
+        482.69140000000004,
+        236.999,
+        32.115000000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.272999999999996,
+        482.29930000000007,
+        236.999,
+        22.828999999999951
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72.272999999999996,
+        450.834,
+        0.93300000000000693,
+        126.42300000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        88.665999999999997,
+        455.572,
+        206.279,
+        15.439999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        80.606400000000008,
+        455.57190000000003,
+        222.399,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        70.2727,
+        448.8347,
+        241,
+        130.423
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

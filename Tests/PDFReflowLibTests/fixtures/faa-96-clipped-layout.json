@@ -1,0 +1,4360 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        543.54690000000005,
+        33.709700000000005,
+        14.450000000000045,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "4-9"
+        }
+      ],
+      "text" : "4-9"
+    },
+    {
+      "rect" : [
+        259.92840000000001,
+        532.61520000000007,
+        319.48829999999998,
+        228.2921
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        321,
+        531.51900000000001,
+        81.70010000000002,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 4-8."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " Tip vortex."
+        }
+      ],
+      "text" : "Figure 4-8. Tip vortex."
+    },
+    {
+      "rect" : [
+        72,
+        719.56640000000004,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are identical. In both examples, the only difference is the"
+        }
+      ],
+      "text" : "are identical. In both examples, the only difference is the"
+    },
+    {
+      "rect" : [
+        72,
+        707.06640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "relationship of the airfoil with the oncoming airstream"
+        }
+      ],
+      "text" : "relationship of the airfoil with the oncoming airstream"
+    },
+    {
+      "rect" : [
+        72,
+        694.56640000000004,
+        237.02099999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(angle). A paper airplane, which is simply a flat plate, has a"
+        }
+      ],
+      "text" : "(angle). A paper airplane, which is simply a flat plate, has a"
+    },
+    {
+      "rect" : [
+        72,
+        682.06640000000004,
+        237.00500000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "bottom and top exactly the same shape and length. Yet, these"
+        }
+      ],
+      "text" : "bottom and top exactly the same shape and length. Yet, these"
+    },
+    {
+      "rect" : [
+        72,
+        669.56640000000004,
+        237.10000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "airfoils do produce lift, and “flow turning” is partly (or fully)"
+        }
+      ],
+      "text" : "airfoils do produce lift, and “flow turning” is partly (or fully)"
+    },
+    {
+      "rect" : [
+        72,
+        657.06640000000004,
+        111.09000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "responsible for creating lift."
+        }
+      ],
+      "text" : "responsible for creating lift."
+    },
+    {
+      "rect" : [
+        72,
+        632.06640000000004,
+        237.12999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "As an airfoil moves through air, the airfoil is inclined"
+        }
+      ],
+      "text" : "As an airfoil moves through air, the airfoil is inclined"
+    },
+    {
+      "rect" : [
+        72,
+        619.56640000000004,
+        237.01000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "against the airflow, producing a different flow caused by the"
+        }
+      ],
+      "text" : "against the airflow, producing a different flow caused by the"
+    },
+    {
+      "rect" : [
+        72,
+        607.06640000000004,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "airfoil’s relationship to the oncoming air. Think of a hand"
+        }
+      ],
+      "text" : "airfoil’s relationship to the oncoming air. Think of a hand"
+    },
+    {
+      "rect" : [
+        72,
+        594.56640000000004,
+        237.03399999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "being placed outside the car window at a high speed. If the"
+        }
+      ],
+      "text" : "being placed outside the car window at a high speed. If the"
+    },
+    {
+      "rect" : [
+        72,
+        582.06640000000004,
+        237.01900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "hand is inclined in one direction or another, the hand will"
+        }
+      ],
+      "text" : "hand is inclined in one direction or another, the hand will"
+    },
+    {
+      "rect" : [
+        72,
+        569.56640000000004,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "move upward or downward. This is caused by deflection,"
+        }
+      ],
+      "text" : "move upward or downward. This is caused by deflection,"
+    },
+    {
+      "rect" : [
+        72,
+        557.06640000000004,
+        236.98999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "which in turn causes the air to turn about the object within"
+        }
+      ],
+      "text" : "which in turn causes the air to turn about the object within"
+    },
+    {
+      "rect" : [
+        72,
+        544.56640000000004,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the air stream. As a result of this change, the velocity about"
+        }
+      ],
+      "text" : "the air stream. As a result of this change, the velocity about"
+    },
+    {
+      "rect" : [
+        72,
+        532.06640000000004,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the object changes in both magnitude and direction, in turn"
+        }
+      ],
+      "text" : "the object changes in both magnitude and direction, in turn"
+    },
+    {
+      "rect" : [
+        72,
+        519.56640000000004,
+        215.50999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "resulting in a measurable velocity force and direction."
+        }
+      ],
+      "text" : "resulting in a measurable velocity force and direction."
+    },
+    {
+      "rect" : [
+        72,
+        493.28240000000005,
+        106.10400000000001,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "A Third Dimension"
+        }
+      ],
+      "text" : "A Third Dimension"
+    },
+    {
+      "rect" : [
+        72,
+        478.51640000000003,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "To this point, the discussion has centered on the flow across"
+        }
+      ],
+      "text" : "To this point, the discussion has centered on the flow across"
+    },
+    {
+      "rect" : [
+        72,
+        466.01640000000003,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the upper and lower surfaces of an airfoil. While most of the"
+        }
+      ],
+      "text" : "the upper and lower surfaces of an airfoil. While most of the"
+    },
+    {
+      "rect" : [
+        72,
+        453.51640000000003,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "lift is produced by these two dimensions, a third dimension,"
+        }
+      ],
+      "text" : "lift is produced by these two dimensions, a third dimension,"
+    },
+    {
+      "rect" : [
+        72,
+        441.01640000000003,
+        237.06099999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the tip of the airfoil also has an aerodynamic effect. The high-"
+        }
+      ],
+      "text" : "the tip of the airfoil also has an aerodynamic effect. The high-"
+    },
+    {
+      "rect" : [
+        72,
+        428.51640000000003,
+        236.86200000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pressure area on the bottom of an airfoil pushes around the tip"
+        }
+      ],
+      "text" : "pressure area on the bottom of an airfoil pushes around the tip"
+    },
+    {
+      "rect" : [
+        72,
+        416.01640000000003,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to the low-pressure area on the top. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 4-8]"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " This action"
+        }
+      ],
+      "text" : "to the low-pressure area on the top. [Figure 4-8] This action"
+    },
+    {
+      "rect" : [
+        72,
+        403.51640000000003,
+        236.99799999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "creates a rotating flow called a tip vortex. The vortex flows"
+        }
+      ],
+      "text" : "creates a rotating flow called a tip vortex. The vortex flows"
+    },
+    {
+      "rect" : [
+        72,
+        391.01640000000003,
+        237.00799999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "behind the airfoil creating a downwash that extends back to"
+        }
+      ],
+      "text" : "behind the airfoil creating a downwash that extends back to"
+    },
+    {
+      "rect" : [
+        72,
+        378.51640000000003,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the trailing edge of the airfoil. This downwash results in an"
+        }
+      ],
+      "text" : "the trailing edge of the airfoil. This downwash results in an"
+    },
+    {
+      "rect" : [
+        72,
+        366.01640000000003,
+        237.02299999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "overall reduction in lift for the affected portion of the airfoil."
+        }
+      ],
+      "text" : "overall reduction in lift for the affected portion of the airfoil."
+    },
+    {
+      "rect" : [
+        72,
+        353.51640000000003,
+        237.1350000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Manufacturers have developed different methods to"
+        }
+      ],
+      "text" : "Manufacturers have developed different methods to"
+    },
+    {
+      "rect" : [
+        72,
+        341.01640000000003,
+        237.01300000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "counteract this action. Winglets can be added to the tip of"
+        }
+      ],
+      "text" : "counteract this action. Winglets can be added to the tip of"
+    },
+    {
+      "rect" : [
+        72,
+        328.51640000000003,
+        237.05000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "an airfoil to reduce this flow. The winglets act as a dam"
+        }
+      ],
+      "text" : "an airfoil to reduce this flow. The winglets act as a dam"
+    },
+    {
+      "rect" : [
+        72,
+        316.01640000000003,
+        237.017,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "preventing the vortex from forming. Winglets can be on the"
+        }
+      ],
+      "text" : "preventing the vortex from forming. Winglets can be on the"
+    },
+    {
+      "rect" : [
+        72,
+        303.51640000000003,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "top or bottom of the airfoil. Another method of countering"
+        }
+      ],
+      "text" : "top or bottom of the airfoil. Another method of countering"
+    },
+    {
+      "rect" : [
+        72,
+        291.01640000000003,
+        236.81200000000013,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the flow is to taper the airfoil tip, reducing the pressure"
+        }
+      ],
+      "text" : "the flow is to taper the airfoil tip, reducing the pressure"
+    },
+    {
+      "rect" : [
+        72,
+        278.51640000000003,
+        212.75,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "differential and smoothing the airflow around the tip."
+        }
+      ],
+      "text" : "differential and smoothing the airflow around the tip."
+    },
+    {
+      "rect" : [
+        321,
+        501.20690000000002,
+        102.85199999999998,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "Chapter Summary"
+        }
+      ],
+      "text" : "Chapter Summary"
+    },
+    {
+      "rect" : [
+        321,
+        486.4409,
+        236.85300000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Modern general aviation aircraft have what may be considered"
+        }
+      ],
+      "text" : "Modern general aviation aircraft have what may be considered"
+    },
+    {
+      "rect" : [
+        321,
+        473.9409,
+        237.02200000000016,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "high performance characteristics. Therefore, it is increasingly"
+        }
+      ],
+      "text" : "high performance characteristics. Therefore, it is increasingly"
+    },
+    {
+      "rect" : [
+        321,
+        461.4409,
+        237.07999999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "necessary that pilots appreciate and understand the principles"
+        }
+      ],
+      "text" : "necessary that pilots appreciate and understand the principles"
+    },
+    {
+      "rect" : [
+        321,
+        448.9409,
+        237.125,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "upon which the art of flying is based. For additional"
+        }
+      ],
+      "text" : "upon which the art of flying is based. For additional"
+    },
+    {
+      "rect" : [
+        321,
+        436.4409,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "information on the principles discussed in this chapter, visit"
+        }
+      ],
+      "text" : "information on the principles discussed in this chapter, visit"
+    },
+    {
+      "rect" : [
+        321,
+        423.9409,
+        236.87400000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the National Aeronautics and Space Administration (NASA)"
+        }
+      ],
+      "text" : "the National Aeronautics and Space Administration (NASA)"
+    },
+    {
+      "rect" : [
+        321,
+        411.4409,
+        237.00900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Beginner’s Guide to Aerodynamics at www.grc.nasa.gov/"
+        }
+      ],
+      "text" : "Beginner’s Guide to Aerodynamics at www.grc.nasa.gov/"
+    },
+    {
+      "rect" : [
+        321,
+        398.9409,
+        118.32000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "www/k-12/airplane/bga.html."
+        }
+      ],
+      "text" : "www/k-12/airplane/bga.html."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      320.72899999999998,
+      549.61599999999999,
+      238.47300000000001,
+      180.56500000000005
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        543.54690000000005,
+        33.709700000000005,
+        14.450000000000045,
+        12.310000000000002
+      ],
+      "text" : "4-9"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        531.51900000000001,
+        81.70010000000002,
+        10.812000000000012
+      ],
+      "structure" : {
+        "group" : 1974,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 8009
+      },
+      "text" : "Figure 4-8. Tip vortex."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        719.56640000000004,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1960,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 7939
+      },
+      "text" : "are identical. In both examples, the only difference is the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        707.06640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1960,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 7940
+      },
+      "text" : "relationship of the airfoil with the oncoming airstream"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        694.56640000000004,
+        237.02099999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1960,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 7941
+      },
+      "text" : "(angle). A paper airplane, which is simply a flat plate, has a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        682.06640000000004,
+        237.00500000000011,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1960,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 7942
+      },
+      "text" : "bottom and top exactly the same shape and length. Yet, these"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        669.56640000000004,
+        237.10000000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1960,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 7943
+      },
+      "text" : "airfoils do produce lift, and “flow turning” is partly (or fully)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        657.06640000000004,
+        111.09000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1960,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 7944
+      },
+      "text" : "responsible for creating lift."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        632.06640000000004,
+        237.12999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1961,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 7945
+      },
+      "text" : "As an airfoil moves through air, the airfoil is inclined"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        619.56640000000004,
+        237.01000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1961,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 7946
+      },
+      "text" : "against the airflow, producing a different flow caused by the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        607.06640000000004,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1961,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 7947
+      },
+      "text" : "airfoil’s relationship to the oncoming air. Think of a hand"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        594.56640000000004,
+        237.03399999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1961,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 7948
+      },
+      "text" : "being placed outside the car window at a high speed. If the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        582.06640000000004,
+        237.01900000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1961,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 7949
+      },
+      "text" : "hand is inclined in one direction or another, the hand will"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        569.56640000000004,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1961,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 7950
+      },
+      "text" : "move upward or downward. This is caused by deflection,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        557.06640000000004,
+        236.98999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1961,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 7951
+      },
+      "text" : "which in turn causes the air to turn about the object within"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        544.56640000000004,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1961,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 7952
+      },
+      "text" : "the air stream. As a result of this change, the velocity about"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        532.06640000000004,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1961,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 7953
+      },
+      "text" : "the object changes in both magnitude and direction, in turn"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        519.56640000000004,
+        215.50999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1961,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 7954
+      },
+      "text" : "resulting in a measurable velocity force and direction."
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        493.28240000000005,
+        106.10400000000001,
+        15.827999999999975
+      ],
+      "structure" : {
+        "group" : 1962,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 7955
+      },
+      "text" : "A Third Dimension"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        478.51640000000003,
+        237.01499999999999,
+        11.470000000000027
+      ],
+      "text" : "To this point, the discussion has centered on the flow across"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        466.01640000000003,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "text" : "the upper and lower surfaces of an airfoil. While most of the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        453.51640000000003,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "text" : "lift is produced by these two dimensions, a third dimension,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        441.01640000000003,
+        237.06099999999992,
+        11.470000000000027
+      ],
+      "text" : "the tip of the airfoil also has an aerodynamic effect. The high-"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        428.51640000000003,
+        236.86200000000008,
+        11.470000000000027
+      ],
+      "text" : "pressure area on the bottom of an airfoil pushes around the tip"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        416.01640000000003,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "text" : "to the low-pressure area on the top. [Figure 4-8] This action"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        403.51640000000003,
+        236.99799999999993,
+        11.470000000000027
+      ],
+      "text" : "creates a rotating flow called a tip vortex. The vortex flows"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        391.01640000000003,
+        237.00799999999998,
+        11.470000000000027
+      ],
+      "text" : "behind the airfoil creating a downwash that extends back to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        378.51640000000003,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "text" : "the trailing edge of the airfoil. This downwash results in an"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        366.01640000000003,
+        237.02299999999991,
+        11.470000000000027
+      ],
+      "text" : "overall reduction in lift for the affected portion of the airfoil."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        353.51640000000003,
+        237.1350000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1964,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 7968
+      },
+      "text" : "Manufacturers have developed different methods to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        341.01640000000003,
+        237.01300000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1964,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 7969
+      },
+      "text" : "counteract this action. Winglets can be added to the tip of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        328.51640000000003,
+        237.05000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1964,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 7971
+      },
+      "text" : "an airfoil to reduce this flow. The winglets act as a dam"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        316.01640000000003,
+        237.017,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1964,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 7972
+      },
+      "text" : "preventing the vortex from forming. Winglets can be on the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        303.51640000000003,
+        237,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1964,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 7973
+      },
+      "text" : "top or bottom of the airfoil. Another method of countering"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        291.01640000000003,
+        236.81200000000013,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1964,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 7974
+      },
+      "text" : "the flow is to taper the airfoil tip, reducing the pressure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        278.51640000000003,
+        212.75,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1964,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 7975
+      },
+      "text" : "differential and smoothing the airflow around the tip."
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        501.20690000000002,
+        102.85199999999998,
+        15.827999999999975
+      ],
+      "structure" : {
+        "group" : 1965,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 7976
+      },
+      "text" : "Chapter Summary"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        486.4409,
+        236.85300000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1966,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 7977
+      },
+      "text" : "Modern general aviation aircraft have what may be considered"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        473.9409,
+        237.02200000000016,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1966,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 7978
+      },
+      "text" : "high performance characteristics. Therefore, it is increasingly"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        461.4409,
+        237.07999999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1966,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 7979
+      },
+      "text" : "necessary that pilots appreciate and understand the principles"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        448.9409,
+        237.125,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1966,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 7980
+      },
+      "text" : "upon which the art of flying is based. For additional"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        436.4409,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1966,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 7981
+      },
+      "text" : "information on the principles discussed in this chapter, visit"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        423.9409,
+        236.87400000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1966,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 7982
+      },
+      "text" : "the National Aeronautics and Space Administration (NASA)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        411.4409,
+        237.00900000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1966,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 7983
+      },
+      "text" : "Beginner’s Guide to Aerodynamics at www.grc.nasa.gov/"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        398.9409,
+        118.32000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 1966,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 7984
+      },
+      "text" : "www/k-12/airplane/bga.html."
+    }
+  ],
+  "page" : 96,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        550.90100000000007,
+        234.47300000000001,
+        177.00699999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        550.90099999999995,
+        234.47300000000001,
+        177.00700000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.25,
+        549.61599999999999,
+        236.952,
+        180
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        400.37799999999999,
+        592.46299999999997,
+        26.799000000000035,
+        18.689000000000078
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        434.13600000000002,
+        695.73599999999999,
+        9.5620000000000118,
+        9.3430000000000746
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        434.13600000000002,
+        695.73670000000004,
+        9.5609999999999786,
+        9.3429999999999609
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        434.36099999999999,
+        696.39599999999996,
+        8.18100000000004,
+        8.2750000000000909
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        437.82800000000003,
+        693.26900000000001,
+        6.8899999999999864,
+        6.66700000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        438.911,
+        693.74300000000005,
+        5.4990000000000236,
+        5.4729999999999563
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        436.32000000000005,
+        693.22940000000006,
+        10.103999999999985,
+        8.2319999999999709
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        436.32000000000005,
+        693.22940000000006,
+        10.103999999999985,
+        8.2319999999999709
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        436.34300000000002,
+        693.21199999999999,
+        10.07099999999997,
+        8.2630000000000337
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        436.43000000000001,
+        694.13800000000003,
+        8.7839999999999918,
+        6.8909999999999627
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        436.673,
+        694.61000000000001,
+        8.0880000000000223,
+        6.2269999999999754
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        422.35000000000002,
+        692.40499999999997,
+        6.5159999999999627,
+        7.1000000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        423.36799999999999,
+        692.96400000000006,
+        5.2479999999999905,
+        5.6349999999999909
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        420.97860000000003,
+        692.77700000000004,
+        9.8779999999999859,
+        7.7980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        420.97860000000003,
+        692.77700000000004,
+        9.8779999999999859,
+        7.7980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        421.10500000000002,
+        693.97800000000007,
+        8.5799999999999841,
+        6.5720000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        420.99700000000001,
+        692.69600000000003,
+        9.8489999999999895,
+        7.8790000000000191
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        421.38800000000003,
+        694.404,
+        7.7809999999999491,
+        6.0919999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        422.90100000000001,
+        695.67899999999997,
+        4.4080000000000155,
+        6.6900000000000546
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        422.90110000000004,
+        695.67920000000004,
+        4.4080000000000155,
+        6.6900000000000546
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        423.30900000000003,
+        697.43200000000002,
+        5.1479999999999677,
+        5.8899999999999864
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        423.30770000000007,
+        697.43170000000009,
+        5.1499999999999773,
+        5.8899999999999864
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        421.51999999999998,
+        697.495,
+        5.7980000000000018,
+        6.1359999999999673
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        421.51940000000002,
+        697.49520000000007,
+        5.7980000000000018,
+        6.1369999999999436
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        418.94,
+        706.976,
+        9.7100000000000364,
+        18.291000000000054
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        418.9402,
+        706.97660000000008,
+        9.7099999999999795,
+        18.291000000000054
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        423.64400000000001,
+        702.43799999999999,
+        9.2939999999999827,
+        9.1770000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        423.70100000000002,
+        703.51099999999997,
+        11.475999999999999,
+        12.009999999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        425.63600000000002,
+        705.5,
+        7.5980000000000132,
+        8.0960000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        425.63600000000002,
+        705.5,
+        7.5980000000000132,
+        8.0960000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        416.93299999999999,
+        696.43299999999999,
+        24.633000000000038,
+        14.379000000000019
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        416.93290000000007,
+        696.43299999999999,
+        24.632999999999981,
+        14.379000000000019
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        416.76999999999998,
+        697.00700000000006,
+        7.0870000000000459,
+        9.2389999999999191
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        416.76990000000001,
+        697.07030000000009,
+        6.3860000000000241,
+        9.1649999999999636
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        417.755,
+        698.35900000000004,
+        30.107000000000028,
+        13.307000000000016
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        419.755,
+        700.35900000000004,
+        26.107000000000028,
+        9.3070000000000164
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        417.375,
+        694.76900000000001,
+        31.538000000000011,
+        16.474000000000046
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        429.81900000000002,
+        698.83500000000004,
+        5.2450000000000045,
+        5.2619999999999436
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        429.81810000000002,
+        698.83580000000006,
+        5.2459999999999809,
+        5.2619999999999436
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        430.2937,
+        699.05859999999996,
+        4.4750000000000227,
+        4.5830000000000837
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        430.2937,
+        699.05859999999996,
+        4.4750000000000227,
+        4.5830000000000837
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        430.26400000000001,
+        699.13700000000006,
+        23.995999999999981,
+        6.1809999999999263
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        430.26390000000004,
+        699.13740000000007,
+        23.997000000000014,
+        6.17999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        436.86200000000002,
+        708.80100000000004,
+        9.3849999999999909,
+        6.9130000000000109
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        438.69400000000002,
+        710.745,
+        5.5949999999999704,
+        3.0190000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        438.69400000000002,
+        710.745,
+        5.5949999999999704,
+        3.0190000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        439.803,
+        705.875,
+        22.194000000000017,
+        14.474000000000046
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        441.62099999999998,
+        707.80399999999997,
+        18.427999999999997,
+        10.611999999999966
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        441.62099999999998,
+        707.80399999999997,
+        18.428000000000054,
+        10.61200000000008
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        446.858,
+        714.11300000000006,
+        10.764999999999986,
+        7.5039999999999054
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        446.85820000000001,
+        714.11380000000008,
+        10.764999999999986,
+        7.5030000000000427
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        447.63950000000006,
+        714.99950000000001,
+        6.72199999999998,
+        5.6029999999999518
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        447.28630000000004,
+        715.96460000000002,
+        8.9730000000000132,
+        4.9499999999999318
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        448.83750000000003,
+        715.97040000000004,
+        7.3529999999999518,
+        5.5119999999999436
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        451.786,
+        716.10000000000002,
+        5.2040000000000077,
+        4.5259999999999536
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        453.786,
+        718.10000000000002,
+        1.2040000000000077,
+        0.52599999999995362
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        449.91700000000003,
+        716.75300000000004,
+        5.1730000000000018,
+        4.5119999999999436
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        451.91700000000003,
+        718.75300000000004,
+        1.1730000000000018,
+        0.51199999999994361
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        449.34000000000003,
+        716.96400000000006,
+        5.1519999999999868,
+        4.5009999999999764
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        451.34000000000003,
+        718.96400000000006,
+        1.1519999999999868,
+        0.50099999999997635
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        449.053,
+        717.06799999999998,
+        4.8029999999999973,
+        4.3010000000000446
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        451.053,
+        719.06799999999998,
+        0.80299999999999727,
+        0.30100000000004457
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        449.62400000000002,
+        716.86699999999996,
+        5.1510000000000105,
+        4.5040000000000191
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        451.62299999999999,
+        718.86699999999996,
+        1.1520000000000437,
+        0.5040000000000191
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        450.99700000000001,
+        716.38200000000006,
+        5.1839999999999691,
+        4.5149999999999864
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        452.99700000000001,
+        718.38199999999995,
+        1.1839999999999691,
+        0.51500000000010004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        450.26999999999998,
+        716.63599999999997,
+        5.1690000000000396,
+        4.5110000000000809
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        452.26999999999998,
+        718.63599999999997,
+        1.1690000000000396,
+        0.51100000000008095
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        451.392,
+        716.24000000000001,
+        5.1960000000000264,
+        4.5209999999999582
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        453.392,
+        718.23900000000003,
+        1.1960000000000264,
+        0.52199999999993452
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        450.59700000000004,
+        716.51200000000006,
+        5.1889999999999645,
+        4.5190000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        452.59700000000004,
+        718.51199999999994,
+        1.1889999999999645,
+        0.51900000000011914
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        451.053,
+        718.10000000000002,
+        3.9370000000000118,
+        1.3650000000000091
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        444.08699999999999,
+        711.65100000000007,
+        20.161000000000001,
+        16.30499999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        444.08699999999999,
+        711.65060000000005,
+        20.161000000000001,
+        16.30600000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        457.637,
+        723.50599999999997,
+        4.2379999999999995,
+        4.2129999999999654
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        457.202,
+        723.33799999999997,
+        7.4300000000000068,
+        4.70900000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        457.20089999999999,
+        723.33860000000004,
+        7.43100000000004,
+        4.7089999999999463
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        444.12099999999998,
+        707.03100000000006,
+        17.858000000000004,
+        13.02699999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        440.75299999999999,
+        707.57299999999998,
+        21.427000000000021,
+        13.672000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        442.80099999999999,
+        712.197,
+        7.5,
+        4.7820000000000391
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        444.80099999999999,
+        714.197,
+        3.5,
+        0.78200000000003911
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        432.46800000000002,
+        711.78200000000004,
+        7.9289999999999736,
+        5.4739999999999327
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        432.46890000000002,
+        711.78269999999998,
+        7.9279999999999973,
+        5.4750000000000227
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        426.46940000000001,
+        707.6884,
+        17.218999999999994,
+        8.9220000000000255
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        426.46940000000001,
+        707.6884,
+        17.218999999999994,
+        8.9220000000000255
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        426.18580000000003,
+        717.74779999999998,
+        5.9420000000000073,
+        4.6660000000000537
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        417.18000000000001,
+        718.18399999999997,
+        14.884000000000015,
+        8.8930000000000291
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        417.1789,
+        718.18360000000007,
+        14.886000000000024,
+        8.8940000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        412.59680000000003,
+        721.79660000000001,
+        7.8840000000000146,
+        5.4270000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        412.59680000000003,
+        721.79660000000001,
+        7.8840000000000146,
+        5.4270000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        426.66899999999998,
+        712.84199999999998,
+        12.883000000000038,
+        9.5130000000000337
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        426.66910000000001,
+        712.84330000000011,
+        12.882000000000005,
+        9.5109999999999673
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        413.30599999999998,
+        711.21900000000005,
+        24.13900000000001,
+        15.738999999999919
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        413.30680000000001,
+        711.21969999999999,
+        24.137999999999977,
+        15.739000000000033
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        412.86900000000003,
+        710.02200000000005,
+        18.412999999999954,
+        16.218999999999937
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        412.86880000000002,
+        710.0222,
+        18.413999999999987,
+        16.219000000000051
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        412.68900000000002,
+        721.80200000000002,
+        10.161000000000001,
+        5.5009999999999764
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        412.68860000000001,
+        721.80179999999996,
+        10.161999999999978,
+        5.6760000000000446
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        412.54000000000002,
+        722.08500000000004,
+        7.375,
+        5.1119999999999663
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        412.53960000000006,
+        722.08540000000005,
+        7.3759999999999764,
+        5.1100000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        448.51800000000003,
+        703.16800000000001,
+        5.7819999999999823,
+        5.1230000000000473
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        448.51800000000003,
+        703.16800000000001,
+        5.7819999999999823,
+        5.1230000000000473
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        437.88299999999998,
+        703.75300000000004,
+        16.41700000000003,
+        10.766999999999939
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        437.88290000000001,
+        703.75369999999998,
+        16.416999999999973,
+        10.767000000000053
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        448.53899999999999,
+        690.45500000000004,
+        22.893000000000029,
+        17.702999999999975
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        448.53919999999999,
+        690.45440000000008,
+        22.894000000000005,
+        17.703999999999951
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        429.5068,
+        686.3451,
+        39.925000000000011,
+        27.772000000000048
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        429.5068,
+        686.3451,
+        39.925000000000011,
+        27.772000000000048
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        431.45280000000002,
+        688.10210000000006,
+        37.978999999999985,
+        26.014999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        431.45280000000002,
+        688.10210000000006,
+        37.978999999999985,
+        26.014999999999986
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        458.97300000000001,
+        685.51099999999997,
+        13.718999999999994,
+        9.9089999999999918
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        458.97329999999999,
+        685.51189999999997,
+        13.718999999999994,
+        9.9080000000000155
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        459.49370000000005,
+        685.57979999999998,
+        10.175000000000011,
+        8.0579999999999927
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        459.49370000000005,
+        685.57979999999998,
+        10.175000000000011,
+        8.0579999999999927
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        459.82600000000002,
+        685.55700000000002,
+        8.9809999999999945,
+        7.3410000000000082
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        459.82530000000003,
+        685.39780000000007,
+        8.9809999999999945,
+        7.5
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        456.28100000000001,
+        709.91600000000005,
+        11.971000000000004,
+        8.2999999999999545
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        456.28140000000002,
+        709.91530000000012,
+        11.971000000000004,
+        8.2999999999999545
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        452.54200000000003,
+        709.64300000000003,
+        12.18199999999996,
+        7.6399999999999864
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        452.54230000000001,
+        709.64230000000009,
+        12.180999999999983,
+        7.6409999999999627
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        453.27300000000002,
+        710.20699999999999,
+        12.444999999999993,
+        8.1820000000000164
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        453.27360000000004,
+        710.20720000000006,
+        12.444000000000017,
+        8.1820000000000164
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        460.137,
+        709.35500000000002,
+        6.3400000000000318,
+        5.15300000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        460.13640000000004,
+        709.35380000000009,
+        6.3389999999999986,
+        5.1539999999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        460.40500000000003,
+        711.83000000000004,
+        5.5439999999999827,
+        4.4470000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        462.40500000000003,
+        713.82899999999995,
+        1.5439999999999827,
+        0.44800000000009277
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        460.78700000000003,
+        711.61400000000003,
+        5.5329999999999586,
+        4.44399999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        462.78700000000003,
+        713.61300000000006,
+        1.5329999999999586,
+        0.44499999999993634
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        459.99299999999999,
+        712.08299999999997,
+        5.5320000000000391,
+        4.4460000000000264
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        461.99299999999999,
+        714.08299999999997,
+        1.5320000000000391,
+        0.44600000000002638
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        459.60200000000003,
+        712.298,
+        5.5539999999999736,
+        4.4490000000000691
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        461.60200000000003,
+        714.29700000000003,
+        1.5539999999999736,
+        0.45000000000004547
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        461.18299999999999,
+        711.38300000000004,
+        5.5270000000000437,
+        4.4420000000000073
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        463.18299999999999,
+        713.38300000000004,
+        1.5270000000000437,
+        0.44200000000000728
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        456.53700000000003,
+        714.03200000000004,
+        4.7949999999999591,
+        4.1779999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        458.53700000000003,
+        716.03200000000004,
+        0.79499999999995907,
+        0.17799999999999727
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        461.61099999999999,
+        711.13200000000006,
+        5.5240000000000009,
+        4.4429999999999836
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        463.61099999999999,
+        713.13199999999995,
+        1.5240000000000009,
+        0.44300000000009732
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        462.02300000000002,
+        710.90300000000002,
+        5.5079999999999814,
+        4.4370000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        464.02300000000002,
+        712.90200000000004,
+        1.5079999999999814,
+        0.43799999999998818
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        459.197,
+        712.529,
+        5.5629999999999882,
+        4.4529999999999745
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        461.197,
+        714.529,
+        1.5629999999999882,
+        0.45299999999997453
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        458.81400000000002,
+        712.745,
+        5.575999999999965,
+        4.4560000000000173
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        460.81299999999999,
+        714.745,
+        1.5769999999999982,
+        0.45600000000001728
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        457.37799999999999,
+        713.54899999999998,
+        5.6310000000000286,
+        4.4700000000000273
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        459.37799999999999,
+        715.548,
+        1.6310000000000286,
+        0.47100000000000364
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        457.09100000000001,
+        713.72000000000003,
+        5.6290000000000191,
+        4.4710000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        459.09100000000001,
+        715.72000000000003,
+        1.6290000000000191,
+        0.47100000000000364
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        462.48200000000003,
+        710.66399999999999,
+        5.4599999999999795,
+        4.4160000000000537
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        464.48200000000003,
+        712.66399999999999,
+        1.4599999999999795,
+        0.41600000000005366
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        456.81600000000003,
+        713.87099999999998,
+        5.3940000000000055,
+        4.3380000000000791
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        458.81600000000003,
+        715.87099999999998,
+        1.3940000000000055,
+        0.33800000000007913
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        458.43000000000001,
+        712.96500000000003,
+        5.5849999999999795,
+        4.4589999999999463
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        460.43000000000001,
+        714.96500000000003,
+        1.5849999999999795,
+        0.45899999999994634
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        458.04000000000002,
+        713.17399999999998,
+        5.6100000000000136,
+        4.4650000000000318
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        460.04000000000002,
+        715.17399999999998,
+        1.6100000000000136,
+        0.46500000000003183
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        457.721,
+        713.36300000000006,
+        5.61099999999999,
+        4.4649999999999181
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        459.721,
+        715.36300000000006,
+        1.61099999999999,
+        0.46499999999991815
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        456.31560000000002,
+        710.65940000000001,
+        11.62700000000001,
+        7.5510000000000446
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        416.9282,
+        699.63480000000004,
+        4.8640000000000327,
+        5.4909999999999854
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        416.9282,
+        699.63480000000004,
+        4.8640000000000327,
+        5.4909999999999854
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        418.0797,
+        698.48280000000011,
+        4.8650000000000091,
+        5.4929999999999382
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        418.0797,
+        698.48280000000011,
+        4.8650000000000091,
+        5.4929999999999382
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        414.31900000000002,
+        699.98099999999999,
+        6.5860000000000127,
+        6.8759999999999764
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        415.25400000000002,
+        698.40200000000004,
+        7.3600000000000136,
+        6.4370000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        415.25299999999999,
+        698.40030000000002,
+        7.3600000000000136,
+        6.4669999999999845
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        417.45300000000003,
+        698.59199999999998,
+        4.4830000000000041,
+        5.0810000000000173
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        417.45250000000004,
+        698.5920000000001,
+        4.4830000000000041,
+        5.1689999999999827
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        417.50900000000001,
+        695.71199999999999,
+        7.0779999999999745,
+        7.8910000000000764
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        398.25020000000001,
+        647.86469999999997,
+        72.334000000000003,
+        48.41700000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        475.68700000000001,
+        695.37599999999998,
+        8.6259999999999764,
+        6.8440000000000509
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        495.83300000000003,
+        702.28399999999999,
+        12.217999999999961,
+        13.245000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        485.66800000000001,
+        699.30700000000002,
+        10.298999999999978,
+        9.2619999999999436
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        467.41000000000003,
+        691.41999999999996,
+        50.767999999999972,
+        29.924000000000092
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        469.33600000000001,
+        693.29899999999998,
+        46.871999999999957,
+        26.145999999999958
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        469.33600000000001,
+        693.29899999999998,
+        46.871999999999957,
+        26.146000000000072
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        467.41000000000003,
+        691.41999999999996,
+        52.843000000000018,
+        31.046000000000049
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        469.33600000000001,
+        693.29899999999998,
+        48.91700000000003,
+        27.29200000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        469.33600000000001,
+        693.29899999999998,
+        48.91700000000003,
+        27.29200000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        467.41030000000001,
+        691.4203,
+        54.197000000000003,
+        34.643000000000029
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        500.37,
+        702.40999999999997,
+        16.816000000000031,
+        17.975999999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        489.60300000000001,
+        699.02800000000002,
+        14.117999999999995,
+        13.783000000000015
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        480.35599999999999,
+        695.94000000000005,
+        11.334000000000003,
+        10.520999999999958
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.72899999999998,
+        683.37200000000007,
+        7.6450000000000387,
+        7.5019999999999527
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.72899999999998,
+        657.26900000000001,
+        30.535000000000025,
+        8.2350000000000136
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        652.17509999999993,
+        28.53570000000002,
+        13.329000000000065
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.72899999999998,
+        681.01200000000006,
+        63.646000000000015,
+        48.826999999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        682.83500000000004,
+        59.77600000000001,
+        45.173000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        682.83500000000004,
+        59.77600000000001,
+        45.173000000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        333.47399999999999,
+        716.27700000000004,
+        32.185000000000002,
+        13.903999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        332.70120000000003,
+        716.27690000000007,
+        32.958000000000027,
+        11.903099999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        336.04690000000005,
+        720.0684,
+        15.646999999999991,
+        8.1116000000000668
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        334.53530000000001,
+        724.19709999999998,
+        25.285000000000025,
+        3.982900000000086
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        341.1748,
+        724.22130000000004,
+        18.350999999999999,
+        3.9587000000000216
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        353.79200000000003,
+        724.77800000000002,
+        9.1559999999999491,
+        5.4020000000000437
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        355.79200000000003,
+        726.77800000000002,
+        5.1559999999999491,
+        1.4020000000000437
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        350.41500000000002,
+        725.98199999999997,
+        9.0679999999999836,
+        4.1980000000000928
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        352.41500000000002,
+        727.98199999999997,
+        5.06899999999996,
+        0.19800000000009277
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        352.10599999999999,
+        725.37300000000005,
+        9.1210000000000377,
+        4.8070000000000164
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        354.10599999999999,
+        727.37300000000005,
+        5.1210000000000377,
+        0.80700000000001637
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        344.096,
+        726.77800000000002,
+        16.852000000000032,
+        1.4020000000000437
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.839,
+        705.73300000000006,
+        63.307999999999993,
+        24.447999999999979
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        705.7333000000001,
+        71.283000000000072,
+        22.446699999999964
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.98700000000002,
+        685.95799999999997,
+        63.313999999999965,
+        42.641000000000076
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.72899999999998,
+        688.27700000000004,
+        63.460000000000036,
+        41.903999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.72899999999998,
+        708.072,
+        13.590000000000032,
+        7.3460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        710.072,
+        9.5900000000000318,
+        3.3460000000000036
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        339.80280000000005,
+        669.42840000000001,
+        11.627999999999986,
+        8.8020000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        339.80280000000005,
+        669.42840000000001,
+        11.627999999999986,
+        8.8020000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.72899999999998,
+        671.93000000000006,
+        30.701999999999998,
+        22.188999999999965
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        671.93100000000004,
+        28.701900000000023,
+        32.964999999999918
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        339.89600000000002,
+        615.00200000000007,
+        84.870000000000005,
+        62.661999999999921
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        339.89609999999999,
+        615.00170000000003,
+        84.868999999999971,
+        62.661999999999921
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.72899999999998,
+        597.41399999999999,
+        95.472000000000037,
+        89.979000000000042
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        597.41300000000001,
+        93.47240000000005,
+        105.75500000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.72899999999998,
+        604.93700000000001,
+        95.472000000000037,
+        82.456000000000017
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        604.93769999999995,
+        93.472500000000025,
+        98.230000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        384.55900000000003,
+        593.84900000000005,
+        45.600999999999999,
+        29.29099999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        384.5591,
+        593.84859999999992,
+        45.600999999999999,
+        29.291000000000054
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        386.78199999999998,
+        594.13900000000001,
+        30.43300000000005,
+        21.374000000000024
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        386.78219999999999,
+        594.13850000000002,
+        30.434000000000026,
+        21.375
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        388.20400000000001,
+        594.04700000000003,
+        25.322000000000003,
+        18.295999999999935
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        388.2047,
+        593.36300000000006,
+        25.321000000000026,
+        18.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        373.03399999999999,
+        698.30600000000004,
+        38.119000000000028,
+        22.403999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        373.03440000000001,
+        698.30600000000004,
+        38.117999999999995,
+        22.403999999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        357.03000000000003,
+        697.13599999999997,
+        39.020999999999958,
+        19.587000000000103
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        357.02980000000002,
+        697.13640000000009,
+        39.021000000000015,
+        19.585999999999899
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        360.161,
+        699.55500000000006,
+        40.143000000000029,
+        21.90199999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        360.16130000000004,
+        699.5557,
+        40.142999999999972,
+        21.901000000000067
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        389.53300000000002,
+        695.90100000000007,
+        14.01600000000002,
+        8.9399999999999409
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        389.53270000000003,
+        695.90129999999999,
+        14.015999999999963,
+        8.9400000000000546
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        390.68600000000004,
+        706.49800000000005,
+        10.607999999999947,
+        5.9169999999999163
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        392.68600000000004,
+        708.49800000000005,
+        6.6089999999999804,
+        1.9169999999999163
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        392.31799999999998,
+        705.57000000000005,
+        10.564000000000021,
+        5.9049999999999727
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        394.31799999999998,
+        707.57000000000005,
+        6.5640000000000214,
+        1.9049999999999727
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        388.92200000000003,
+        707.58799999999997,
+        10.55699999999996,
+        5.90300000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        390.92200000000003,
+        709.58799999999997,
+        6.5569999999999595,
+        1.90300000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        387.25,
+        708.5,
+        10.648000000000025,
+        5.9270000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        389.25,
+        710.5,
+        6.6490000000000009,
+        1.9270000000000209
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        394.01499999999999,
+        704.58699999999999,
+        10.537000000000035,
+        5.8980000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        396.01499999999999,
+        706.58699999999999,
+        6.5370000000000346,
+        1.8980000000000246
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        374.12700000000001,
+        715.92700000000002,
+        7.4060000000000059,
+        4.7609999999999673
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        376.12700000000001,
+        717.92700000000002,
+        3.4060000000000059,
+        0.76099999999996726
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        395.84699999999998,
+        703.51400000000001,
+        10.523000000000025,
+        5.8930000000000291
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        397.84699999999998,
+        705.51300000000003,
+        6.5230000000000246,
+        1.8940000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        397.61599999999999,
+        702.52999999999997,
+        10.448000000000036,
+        5.8740000000000236
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        399.61599999999999,
+        704.52999999999997,
+        6.4480000000000359,
+        1.8740000000000236
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        385.51999999999998,
+        709.49400000000003,
+        10.684000000000026,
+        5.9370000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        387.51999999999998,
+        711.49400000000003,
+        6.6840000000000259,
+        1.9370000000000118
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        383.87799999999999,
+        710.41800000000001,
+        10.740000000000009,
+        5.9519999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        385.87799999999999,
+        712.41800000000001,
+        6.7400000000000091,
+        1.9519999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        377.73099999999999,
+        713.85599999999999,
+        10.979000000000042,
+        6.0149999999999864
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        379.73099999999999,
+        715.85599999999999,
+        6.9790000000000418,
+        2.0149999999999864
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        376.50100000000003,
+        714.59100000000001,
+        10.970999999999947,
+        6.0130000000000337
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        378.50100000000003,
+        716.59100000000001,
+        6.9709999999999468,
+        2.0130000000000337
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        399.577,
+        701.50800000000004,
+        10.24799999999999,
+        5.7839999999999918
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        401.577,
+        703.50800000000004,
+        6.2479999999999905,
+        1.7839999999999918
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        375.32300000000004,
+        715.24099999999999,
+        9.9639999999999986,
+        5.4440000000000737
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        377.32300000000004,
+        717.24000000000001,
+        5.9639999999999986,
+        1.44500000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        382.23000000000002,
+        711.35800000000006,
+        10.783999999999992,
+        5.9639999999999418
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        384.23000000000002,
+        713.35799999999995,
+        6.7839999999999918,
+        1.9640000000000555
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        380.56600000000003,
+        712.25300000000004,
+        10.888999999999953,
+        5.9909999999999854
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        382.56600000000003,
+        714.25300000000004,
+        6.8889999999999532,
+        1.9909999999999854
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        379.197,
+        713.06000000000006,
+        10.893000000000029,
+        5.9929999999999382
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        381.197,
+        715.05999999999995,
+        6.8930000000000291,
+        1.9930000000000518
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        373.17940000000004,
+        701.48640000000012,
+        36.646000000000015,
+        19.203999999999951
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        550.90100000000007,
+        234.47300000000001,
+        105.7349999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        550.90100000000007,
+        234.47300000000001,
+        105.7349999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        550.90100000000007,
+        234.47300000000001,
+        117.37099999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        550.90100000000007,
+        234.47300000000001,
+        117.37099999999998
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        550.90100000000007,
+        234.47300000000001,
+        126.3549999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        550.90100000000007,
+        234.47300000000001,
+        126.3549999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        550.90100000000007,
+        234.47300000000001,
+        139.3069999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        550.90100000000007,
+        234.47300000000001,
+        139.3069999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        550.90100000000007,
+        234.47300000000001,
+        147.94199999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        550.90100000000007,
+        234.47300000000001,
+        147.94199999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        550.90100000000007,
+        234.47300000000001,
+        156.24899999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        550.90100000000007,
+        234.47300000000001,
+        156.24899999999991
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        553.87700000000007,
+        234.47300000000001,
+        162.23899999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        553.87699999999995,
+        234.47300000000001,
+        162.23900000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        557.87700000000007,
+        234.47300000000001,
+        165.55399999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        557.87699999999995,
+        234.47300000000001,
+        165.55400000000009
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        561.87700000000007,
+        234.47300000000001,
+        166.03199999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.72899999999998,
+        561.87699999999995,
+        234.47300000000001,
+        166.03200000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        347.113,
+        550.90100000000007,
+        210.089,
+        100.19099999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        347.113,
+        550.90100000000007,
+        210.089,
+        100.19099999999992
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        349.36599999999999,
+        550.90100000000007,
+        207.83600000000001,
+        101.54799999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        349.36599999999999,
+        550.90100000000007,
+        207.83600000000001,
+        101.548
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        353.60200000000003,
+        550.90100000000007,
+        203.59999999999997,
+        94.711999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        353.60200000000003,
+        550.90100000000007,
+        203.59999999999997,
+        94.711999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        357.60200000000003,
+        550.90100000000007,
+        199.59999999999997,
+        88.588999999999942
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        357.60200000000003,
+        550.90100000000007,
+        199.59999999999997,
+        88.588999999999942
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        361.60200000000003,
+        550.90100000000007,
+        195.59999999999997,
+        83.981999999999971
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        361.60200000000003,
+        550.90100000000007,
+        195.59999999999997,
+        83.981999999999971
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        365.57600000000002,
+        550.90100000000007,
+        191.62599999999998,
+        79.788999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        365.57600000000002,
+        550.90100000000007,
+        191.62599999999998,
+        79.788999999999987
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        422.79599999999999,
+        617.21100000000001,
+        136.40600000000001,
+        68.816000000000031
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        422.22300000000001,
+        613.17200000000003,
+        43.130999999999972,
+        16.038000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        449.63100000000003,
+        612.32100000000003,
+        46.754999999999995,
+        28.674999999999955
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        483.69800000000004,
+        623.61199999999997,
+        47.603000000000009,
+        25.830000000000041
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        516.5,
+        635.95100000000002,
+        42.701999999999998,
+        29.904999999999973
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        398.88999999999999,
+        593.70000000000005,
+        30.346000000000004,
+        40.052999999999997
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        400.88900000000001,
+        595.70000000000005,
+        26.34699999999998,
+        36.053999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        398.64800000000002,
+        593.70000000000005,
+        31.169999999999959,
+        39.793000000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        400.23700000000002,
+        595.48400000000004,
+        27.58099999999996,
+        36.483000000000061
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        400.23700000000002,
+        595.48400000000004,
+        27.58099999999996,
+        36.483999999999924
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.25,
+        549.61599999999999,
+        236.952,
+        180
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

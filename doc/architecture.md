@@ -108,7 +108,13 @@ to avoid unnecessary PDFKit image-attachment decoding. `GraphicsReader` scans bo
 operations and nested Form XObjects. It resolves shading resources and bounds gradient regions
 with conservative clipping, Form bounds and optional shading bounds. Core Graphics rasterizes
 the original region; the model stores an image asset, not an editable gradient. Unsafe or
-page-spanning bounds retain the page fallback. The reader also records every painted footprint
+page-spanning bounds retain the page fallback. A path's, image's or form box's footprint is only
+the part the clip in force lets show (the clip is a conservative bounding rectangle, so no visible
+mark is lost), and a path or image wholly outside its clip paints nothing: illustrations routinely
+draw streamlines, arrows, photographs and maps far beyond the frame that clips them, and their raw
+extents claimed the column beside the figure (#77, #98, #52). The same clipped footprints feed the
+page-sized-graphic signal, so an image merely placed larger than the page no longer marks a page
+image-backed. The reader also records every painted footprint
 with whether it was a rectangle-only path (`re`, filled or stroked) painted outside `/Figure`
 marked content. `TintDetector` then lets the page's text decide what those rectangles are (#54):
 a cluster of them holding at least three wide prose lines that no solid ink touches, making up

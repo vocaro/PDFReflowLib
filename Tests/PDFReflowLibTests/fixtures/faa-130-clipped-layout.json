@@ -1,0 +1,3800 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "5-33"
+        }
+      ],
+      "text" : "5-33"
+    },
+    {
+      "rect" : [
+        80.456699999999998,
+        584.62599999999998,
+        366.86070000000001,
+        105.53920000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        72.0227,
+        560.33330000000001,
+        211.88830000000002,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 5-51."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " Asymmetrical loading of propeller (P-factor)."
+        }
+      ],
+      "text" : "Figure 5-51. Asymmetrical loading of propeller (P-factor)."
+    },
+    {
+      "rect" : [
+        72,
+        528.12980000000005,
+        74.951999999999998,
+        15.827999999999975
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12,
+          "text" : "Load Factors"
+        }
+      ],
+      "text" : "Load Factors"
+    },
+    {
+      "rect" : [
+        72,
+        513.36379999999997,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "In aerodynamics, the maximum load factor (at given bank"
+        }
+      ],
+      "text" : "In aerodynamics, the maximum load factor (at given bank"
+    },
+    {
+      "rect" : [
+        72,
+        500.86379999999997,
+        236.88000000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "angle) is a proportion between lift and weight and has a"
+        }
+      ],
+      "text" : "angle) is a proportion between lift and weight and has a"
+    },
+    {
+      "rect" : [
+        72,
+        488.36379999999997,
+        237.01499999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "trigonometric relationship. The load factor is measured in"
+        }
+      ],
+      "text" : "trigonometric relationship. The load factor is measured in"
+    },
+    {
+      "rect" : [
+        72,
+        475.86379999999997,
+        236.98299999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Gs (acceleration of gravity), a unit of force equal to the force"
+        }
+      ],
+      "text" : "Gs (acceleration of gravity), a unit of force equal to the force"
+    },
+    {
+      "rect" : [
+        72,
+        463.36379999999997,
+        237.02199999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "exerted by gravity on a body at rest and indicates the force to"
+        }
+      ],
+      "text" : "exerted by gravity on a body at rest and indicates the force to"
+    },
+    {
+      "rect" : [
+        72,
+        450.86379999999997,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "which a body is subjected when it is accelerated. Any force"
+        }
+      ],
+      "text" : "which a body is subjected when it is accelerated. Any force"
+    },
+    {
+      "rect" : [
+        72,
+        438.36379999999997,
+        237.01799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "applied to an aircraft to deflect its flight from a straight line"
+        }
+      ],
+      "text" : "applied to an aircraft to deflect its flight from a straight line"
+    },
+    {
+      "rect" : [
+        72,
+        425.86379999999997,
+        237.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "produces a stress on its structure. The amount of this force"
+        }
+      ],
+      "text" : "produces a stress on its structure. The amount of this force"
+    },
+    {
+      "rect" : [
+        72,
+        413.36379999999997,
+        237.00399999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is the load factor. While a course in aerodynamics is not a"
+        }
+      ],
+      "text" : "is the load factor. While a course in aerodynamics is not a"
+    },
+    {
+      "rect" : [
+        72,
+        400.86379999999997,
+        237.01899999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "prerequisite for obtaining a pilot’s license, the competent"
+        }
+      ],
+      "text" : "prerequisite for obtaining a pilot’s license, the competent"
+    },
+    {
+      "rect" : [
+        72,
+        388.36379999999997,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pilot should have a solid understanding of the forces that act"
+        }
+      ],
+      "text" : "pilot should have a solid understanding of the forces that act"
+    },
+    {
+      "rect" : [
+        72,
+        375.86379999999997,
+        237.02299999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "on the aircraft, the advantageous use of these forces, and the"
+        }
+      ],
+      "text" : "on the aircraft, the advantageous use of these forces, and the"
+    },
+    {
+      "rect" : [
+        72,
+        363.36379999999997,
+        193.03000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "operating limitations of the aircraft being flown."
+        }
+      ],
+      "text" : "operating limitations of the aircraft being flown."
+    },
+    {
+      "rect" : [
+        72,
+        338.36379999999997,
+        237.01599999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "For example, a load factor of 3 means the total load on an"
+        }
+      ],
+      "text" : "For example, a load factor of 3 means the total load on an"
+    },
+    {
+      "rect" : [
+        72,
+        325.86379999999997,
+        236.95000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft’s structure is three times its weight. Since load factors"
+        }
+      ],
+      "text" : "aircraft’s structure is three times its weight. Since load factors"
+    },
+    {
+      "rect" : [
+        72,
+        313.36379999999997,
+        237.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are expressed in terms of Gs, a load factor of 3 may be spoken"
+        }
+      ],
+      "text" : "are expressed in terms of Gs, a load factor of 3 may be spoken"
+    },
+    {
+      "rect" : [
+        72,
+        300.86379999999997,
+        158.85000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of as 3 Gs, or a load factor of 4 as 4 Gs."
+        }
+      ],
+      "text" : "of as 3 Gs, or a load factor of 4 as 4 Gs."
+    },
+    {
+      "rect" : [
+        72,
+        275.86379999999997,
+        237.02599999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "If an aircraft is pulled up from a dive, subjecting the pilot to"
+        }
+      ],
+      "text" : "If an aircraft is pulled up from a dive, subjecting the pilot to"
+    },
+    {
+      "rect" : [
+        72,
+        263.36379999999997,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "3 Gs, he or she would be pressed down into the seat with a"
+        }
+      ],
+      "text" : "3 Gs, he or she would be pressed down into the seat with a"
+    },
+    {
+      "rect" : [
+        72,
+        250.86379999999997,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "force equal to three times his or her weight. Since modern"
+        }
+      ],
+      "text" : "force equal to three times his or her weight. Since modern"
+    },
+    {
+      "rect" : [
+        72,
+        238.36379999999997,
+        236.88,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft operate at significantly higher speeds than older"
+        }
+      ],
+      "text" : "aircraft operate at significantly higher speeds than older"
+    },
+    {
+      "rect" : [
+        72,
+        225.86379999999997,
+        237.01099999999991,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft, increasing the potential for large load factors, this"
+        }
+      ],
+      "text" : "aircraft, increasing the potential for large load factors, this"
+    },
+    {
+      "rect" : [
+        72,
+        213.36379999999997,
+        236.99900000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "effect has become a primary consideration in the design of"
+        }
+      ],
+      "text" : "effect has become a primary consideration in the design of"
+    },
+    {
+      "rect" : [
+        72,
+        200.86379999999997,
+        106.91000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the structure of all aircraft."
+        }
+      ],
+      "text" : "the structure of all aircraft."
+    },
+    {
+      "rect" : [
+        72,
+        175.86379999999997,
+        237.00399999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "With the structural design of aircraft planned to withstand"
+        }
+      ],
+      "text" : "With the structural design of aircraft planned to withstand"
+    },
+    {
+      "rect" : [
+        72,
+        163.36379999999997,
+        237.11000000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "only a certain amount of overload, a knowledge of load"
+        }
+      ],
+      "text" : "only a certain amount of overload, a knowledge of load"
+    },
+    {
+      "rect" : [
+        72,
+        150.86379999999997,
+        237.00999999999988,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "factors has become essential for all pilots. Load factors are"
+        }
+      ],
+      "text" : "factors has become essential for all pilots. Load factors are"
+    },
+    {
+      "rect" : [
+        72,
+        138.36379999999997,
+        105.81999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "important for two reasons:"
+        }
+      ],
+      "text" : "important for two reasons:"
+    },
+    {
+      "rect" : [
+        81,
+        121.36380000000001,
+        227.86400000000015,
+        11.470000000000013
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "1. It is possible for a pilot to impose a dangerous overload"
+        }
+      ],
+      "text" : "1. It is possible for a pilot to impose a dangerous overload"
+    },
+    {
+      "rect" : [
+        99,
+        108.86380000000001,
+        99.969999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "on the aircraft structures."
+        }
+      ],
+      "text" : "on the aircraft structures."
+    },
+    {
+      "rect" : [
+        81,
+        91.863799999999998,
+        227.88999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "2. An increased load factor increases the stalling speed and"
+        }
+      ],
+      "text" : "2. An increased load factor increases the stalling speed and"
+    },
+    {
+      "rect" : [
+        99,
+        79.363799999999998,
+        207.41000000000008,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "makes stalls possible at seemingly safe flight speeds."
+        }
+      ],
+      "text" : "makes stalls possible at seemingly safe flight speeds."
+    },
+    {
+      "rect" : [
+        321,
+        718.15379999999993,
+        148.92000000000007,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Load Factors in Aircraft Design"
+        }
+      ],
+      "text" : "Load Factors in Aircraft Design"
+    },
+    {
+      "rect" : [
+        321,
+        705.72379999999998,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The answer to the question “How strong should an aircraft"
+        }
+      ],
+      "text" : "The answer to the question “How strong should an aircraft"
+    },
+    {
+      "rect" : [
+        321,
+        693.22379999999998,
+        237.01099999999985,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "be?” is determined largely by the use to which the aircraft is"
+        }
+      ],
+      "text" : "be?” is determined largely by the use to which the aircraft is"
+    },
+    {
+      "rect" : [
+        321,
+        680.72379999999998,
+        237.01900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "subjected. This is a difficult problem because the maximum"
+        }
+      ],
+      "text" : "subjected. This is a difficult problem because the maximum"
+    },
+    {
+      "rect" : [
+        321,
+        668.22379999999998,
+        236.97499999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "possible loads are much too high for use in efficient design."
+        }
+      ],
+      "text" : "possible loads are much too high for use in efficient design."
+    },
+    {
+      "rect" : [
+        321,
+        655.72379999999998,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "It is true that any pilot can make a very hard landing or an"
+        }
+      ],
+      "text" : "It is true that any pilot can make a very hard landing or an"
+    },
+    {
+      "rect" : [
+        321,
+        643.22379999999998,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "extremely sharp pull up from a dive, which would result in"
+        }
+      ],
+      "text" : "extremely sharp pull up from a dive, which would result in"
+    },
+    {
+      "rect" : [
+        321,
+        630.72379999999998,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "abnormal loads. However, such extremely abnormal loads"
+        }
+      ],
+      "text" : "abnormal loads. However, such extremely abnormal loads"
+    },
+    {
+      "rect" : [
+        321,
+        618.22379999999998,
+        237.0150000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "must be dismissed somewhat if aircraft are built that take off"
+        }
+      ],
+      "text" : "must be dismissed somewhat if aircraft are built that take off"
+    },
+    {
+      "rect" : [
+        321,
+        605.72379999999998,
+        212.47000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "quickly, land slowly, and carry worthwhile payloads."
+        }
+      ],
+      "text" : "quickly, land slowly, and carry worthwhile payloads."
+    },
+    {
+      "rect" : [
+        321,
+        580.72379999999998,
+        237.01200000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The problem of load factors in aircraft design becomes how"
+        }
+      ],
+      "text" : "The problem of load factors in aircraft design becomes how"
+    },
+    {
+      "rect" : [
+        321,
+        568.22379999999998,
+        237.02699999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to determine the highest load factors that can be expected in"
+        }
+      ],
+      "text" : "to determine the highest load factors that can be expected in"
+    },
+    {
+      "rect" : [
+        321,
+        555.72379999999998,
+        236.94000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "normal operation under various operational situations. These"
+        }
+      ],
+      "text" : "normal operation under various operational situations. These"
+    },
+    {
+      "rect" : [
+        321,
+        543.22379999999998,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "load factors are called “limit load factors.” For reasons of"
+        }
+      ],
+      "text" : "load factors are called “limit load factors.” For reasons of"
+    },
+    {
+      "rect" : [
+        321,
+        530.72379999999998,
+        237.10000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "safety, it is required that the aircraft be designed to withstand"
+        }
+      ],
+      "text" : "safety, it is required that the aircraft be designed to withstand"
+    },
+    {
+      "rect" : [
+        321,
+        518.22379999999998,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "these load factors without any structural damage. Although"
+        }
+      ],
+      "text" : "these load factors without any structural damage. Although"
+    },
+    {
+      "rect" : [
+        321,
+        505.72379999999998,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the Code of Federal Regulations (CFR) requires the aircraft"
+        }
+      ],
+      "text" : "the Code of Federal Regulations (CFR) requires the aircraft"
+    },
+    {
+      "rect" : [
+        321,
+        493.22379999999998,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "structure be capable of supporting one and one-half times"
+        }
+      ],
+      "text" : "structure be capable of supporting one and one-half times"
+    },
+    {
+      "rect" : [
+        321,
+        480.72379999999998,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "these limit load factors without failure, it is accepted that"
+        }
+      ],
+      "text" : "these limit load factors without failure, it is accepted that"
+    },
+    {
+      "rect" : [
+        321,
+        468.22379999999998,
+        237.02199999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "parts of the aircraft may bend or twist under these loads and"
+        }
+      ],
+      "text" : "parts of the aircraft may bend or twist under these loads and"
+    },
+    {
+      "rect" : [
+        321,
+        455.72379999999998,
+        159.41000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "that some structural damage may occur."
+        }
+      ],
+      "text" : "that some structural damage may occur."
+    },
+    {
+      "rect" : [
+        321,
+        430.72379999999998,
+        237.05999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "This 1.5 load limit factor is called the “factor of safety” and"
+        }
+      ],
+      "text" : "This 1.5 load limit factor is called the “factor of safety” and"
+    },
+    {
+      "rect" : [
+        321,
+        418.22379999999998,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "provides, to some extent, for loads higher than those expected"
+        }
+      ],
+      "text" : "provides, to some extent, for loads higher than those expected"
+    },
+    {
+      "rect" : [
+        321,
+        405.72379999999998,
+        237.02499999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "under normal and reasonable operation. This strength reserve"
+        }
+      ],
+      "text" : "under normal and reasonable operation. This strength reserve"
+    },
+    {
+      "rect" : [
+        321,
+        393.22379999999998,
+        237.08200000000011,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is not something that pilots should willfully abuse; rather, it is"
+        }
+      ],
+      "text" : "is not something that pilots should willfully abuse; rather, it is"
+    },
+    {
+      "rect" : [
+        321,
+        380.72379999999998,
+        236.8599999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "there for protection when encountering unexpected conditions."
+        }
+      ],
+      "text" : "there for protection when encountering unexpected conditions."
+    },
+    {
+      "rect" : [
+        321,
+        355.72379999999998,
+        237.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The above considerations apply to all loading conditions,"
+        }
+      ],
+      "text" : "The above considerations apply to all loading conditions,"
+    },
+    {
+      "rect" : [
+        321,
+        343.22379999999998,
+        237.00599999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "whether they be due to gusts, maneuvers, or landings. The"
+        }
+      ],
+      "text" : "whether they be due to gusts, maneuvers, or landings. The"
+    },
+    {
+      "rect" : [
+        321,
+        330.72379999999998,
+        237.01099999999985,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "gust load factor requirements now in effect are substantially"
+        }
+      ],
+      "text" : "gust load factor requirements now in effect are substantially"
+    },
+    {
+      "rect" : [
+        321,
+        318.22379999999998,
+        237.12000000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the same as those that have been in existence for years."
+        }
+      ],
+      "text" : "the same as those that have been in existence for years."
+    },
+    {
+      "rect" : [
+        321,
+        305.72379999999998,
+        237.08899999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Hundreds of thousands of operational hours have proven"
+        }
+      ],
+      "text" : "Hundreds of thousands of operational hours have proven"
+    },
+    {
+      "rect" : [
+        321,
+        293.22379999999998,
+        237.06999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "them adequate for safety. Since the pilot has little control over"
+        }
+      ],
+      "text" : "them adequate for safety. Since the pilot has little control over"
+    },
+    {
+      "rect" : [
+        321,
+        280.72379999999998,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "gust load factors (except to reduce the aircraft’s speed when"
+        }
+      ],
+      "text" : "gust load factors (except to reduce the aircraft’s speed when"
+    },
+    {
+      "rect" : [
+        321,
+        268.22379999999998,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "rough air is encountered), the gust loading requirements are"
+        }
+      ],
+      "text" : "rough air is encountered), the gust loading requirements are"
+    },
+    {
+      "rect" : [
+        321,
+        255.72379999999998,
+        237.13999999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "substantially the same for most general aviation type aircraft"
+        }
+      ],
+      "text" : "substantially the same for most general aviation type aircraft"
+    },
+    {
+      "rect" : [
+        321,
+        243.22379999999998,
+        237.00699999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "regardless of their operational use. Generally, the gust load"
+        }
+      ],
+      "text" : "regardless of their operational use. Generally, the gust load"
+    },
+    {
+      "rect" : [
+        321,
+        230.72379999999998,
+        237.02699999999982,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "factors control the design of aircraft which are intended for"
+        }
+      ],
+      "text" : "factors control the design of aircraft which are intended for"
+    },
+    {
+      "rect" : [
+        321,
+        218.22379999999998,
+        109.70000000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "strictly nonacrobatic usage."
+        }
+      ],
+      "text" : "strictly nonacrobatic usage."
+    },
+    {
+      "rect" : [
+        321,
+        193.22379999999998,
+        237.01299999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "An entirely different situation exists in aircraft design with"
+        }
+      ],
+      "text" : "An entirely different situation exists in aircraft design with"
+    },
+    {
+      "rect" : [
+        321,
+        180.72379999999998,
+        236.84999999999968,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "maneuvering load factors. It is necessary to discuss this matter"
+        }
+      ],
+      "text" : "maneuvering load factors. It is necessary to discuss this matter"
+    },
+    {
+      "rect" : [
+        321,
+        168.22379999999998,
+        237.05700000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "separately with respect to: (1) aircraft designed in accordance"
+        }
+      ],
+      "text" : "separately with respect to: (1) aircraft designed in accordance"
+    },
+    {
+      "rect" : [
+        321,
+        155.72379999999998,
+        237.13000000000011,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "with the category system (i.e., normal, utility, acrobatic); and"
+        }
+      ],
+      "text" : "with the category system (i.e., normal, utility, acrobatic); and"
+    },
+    {
+      "rect" : [
+        321,
+        143.22379999999998,
+        236.846,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(2) older designs built according to requirements that did not"
+        }
+      ],
+      "text" : "(2) older designs built according to requirements that did not"
+    },
+    {
+      "rect" : [
+        321,
+        130.72379999999998,
+        137.74000000000007,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "provide for operational categories."
+        }
+      ],
+      "text" : "provide for operational categories."
+    },
+    {
+      "rect" : [
+        321,
+        105.72379999999998,
+        237.1099999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Aircraft designed under the category system are readily"
+        }
+      ],
+      "text" : "Aircraft designed under the category system are readily"
+    },
+    {
+      "rect" : [
+        321,
+        93.223799999999983,
+        237.01499999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "identified by a placard in the flight deck, which states the"
+        }
+      ],
+      "text" : "identified by a placard in the flight deck, which states the"
+    },
+    {
+      "rect" : [
+        321,
+        80.723799999999983,
+        236.803,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "operational category (or categories) in which the aircraft"
+        }
+      ],
+      "text" : "operational category (or categories) in which the aircraft"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      70.25,
+      576.68000000000006,
+      240.81799999999998,
+      154.06999999999994
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "text" : "5-33"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        72.0227,
+        560.33330000000001,
+        211.88830000000002,
+        10.812000000000012
+      ],
+      "structure" : {
+        "group" : 2532,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 11665
+      },
+      "text" : "Figure 5-51. Asymmetrical loading of propeller (P-factor)."
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        528.12980000000005,
+        74.951999999999998,
+        15.827999999999975
+      ],
+      "structure" : {
+        "group" : 2281,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 10150
+      },
+      "text" : "Load Factors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        513.36379999999997,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2282,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 10151
+      },
+      "text" : "In aerodynamics, the maximum load factor (at given bank"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        500.86379999999997,
+        236.88000000000011,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2282,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 10152
+      },
+      "text" : "angle) is a proportion between lift and weight and has a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        488.36379999999997,
+        237.01499999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2282,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 10153
+      },
+      "text" : "trigonometric relationship. The load factor is measured in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        475.86379999999997,
+        236.98299999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2282,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 10154
+      },
+      "text" : "Gs (acceleration of gravity), a unit of force equal to the force"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        463.36379999999997,
+        237.02199999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2282,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 10155
+      },
+      "text" : "exerted by gravity on a body at rest and indicates the force to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        450.86379999999997,
+        237.01699999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2282,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 10156
+      },
+      "text" : "which a body is subjected when it is accelerated. Any force"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        438.36379999999997,
+        237.01799999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2282,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 10157
+      },
+      "text" : "applied to an aircraft to deflect its flight from a straight line"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        425.86379999999997,
+        237.005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2282,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 10158
+      },
+      "text" : "produces a stress on its structure. The amount of this force"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        413.36379999999997,
+        237.00399999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2282,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 10159
+      },
+      "text" : "is the load factor. While a course in aerodynamics is not a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        400.86379999999997,
+        237.01899999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2282,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 10160
+      },
+      "text" : "prerequisite for obtaining a pilot’s license, the competent"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        388.36379999999997,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2282,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 10161
+      },
+      "text" : "pilot should have a solid understanding of the forces that act"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        375.86379999999997,
+        237.02299999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2282,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 10162
+      },
+      "text" : "on the aircraft, the advantageous use of these forces, and the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        363.36379999999997,
+        193.03000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2282,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 10163
+      },
+      "text" : "operating limitations of the aircraft being flown."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        338.36379999999997,
+        237.01599999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2283,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 10164
+      },
+      "text" : "For example, a load factor of 3 means the total load on an"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        325.86379999999997,
+        236.95000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2283,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 10165
+      },
+      "text" : "aircraft’s structure is three times its weight. Since load factors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        313.36379999999997,
+        237.005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2283,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 10166
+      },
+      "text" : "are expressed in terms of Gs, a load factor of 3 may be spoken"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        300.86379999999997,
+        158.85000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2283,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 10167
+      },
+      "text" : "of as 3 Gs, or a load factor of 4 as 4 Gs."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        275.86379999999997,
+        237.02599999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2284,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 10168
+      },
+      "text" : "If an aircraft is pulled up from a dive, subjecting the pilot to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        263.36379999999997,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2284,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 10169
+      },
+      "text" : "3 Gs, he or she would be pressed down into the seat with a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        250.86379999999997,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2284,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 10170
+      },
+      "text" : "force equal to three times his or her weight. Since modern"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        238.36379999999997,
+        236.88,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2284,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 10171
+      },
+      "text" : "aircraft operate at significantly higher speeds than older"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        225.86379999999997,
+        237.01099999999991,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2284,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 10172
+      },
+      "text" : "aircraft, increasing the potential for large load factors, this"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        213.36379999999997,
+        236.99900000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2284,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 10173
+      },
+      "text" : "effect has become a primary consideration in the design of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        200.86379999999997,
+        106.91000000000003,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2284,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 10174
+      },
+      "text" : "the structure of all aircraft."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        175.86379999999997,
+        237.00399999999996,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2285,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 10175
+      },
+      "text" : "With the structural design of aircraft planned to withstand"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        163.36379999999997,
+        237.11000000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2285,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 10176
+      },
+      "text" : "only a certain amount of overload, a knowledge of load"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        150.86379999999997,
+        237.00999999999988,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2285,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 10177
+      },
+      "text" : "factors has become essential for all pilots. Load factors are"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        138.36379999999997,
+        105.81999999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2285,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 10178
+      },
+      "text" : "important for two reasons:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        121.36380000000001,
+        227.86400000000015,
+        11.470000000000013
+      ],
+      "text" : "1. It is possible for a pilot to impose a dangerous overload"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        108.86380000000001,
+        99.969999999999999,
+        11.469999999999999
+      ],
+      "text" : "on the aircraft structures."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        91.863799999999998,
+        227.88999999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2287,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 10181
+      },
+      "text" : "2. An increased load factor increases the stalling speed and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        79.363799999999998,
+        207.41000000000008,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2287,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 10182
+      },
+      "text" : "makes stalls possible at seemingly safe flight speeds."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        718.15379999999993,
+        148.92000000000007,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 2288,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 10183
+      },
+      "text" : "Load Factors in Aircraft Design"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        705.72379999999998,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2289,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10184
+      },
+      "text" : "The answer to the question “How strong should an aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        693.22379999999998,
+        237.01099999999985,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2289,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10185
+      },
+      "text" : "be?” is determined largely by the use to which the aircraft is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        680.72379999999998,
+        237.01900000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2289,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10186
+      },
+      "text" : "subjected. This is a difficult problem because the maximum"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        668.22379999999998,
+        236.97499999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2289,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10187
+      },
+      "text" : "possible loads are much too high for use in efficient design."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        655.72379999999998,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2289,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10188
+      },
+      "text" : "It is true that any pilot can make a very hard landing or an"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        643.22379999999998,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2289,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10189
+      },
+      "text" : "extremely sharp pull up from a dive, which would result in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        630.72379999999998,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2289,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10190
+      },
+      "text" : "abnormal loads. However, such extremely abnormal loads"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        618.22379999999998,
+        237.0150000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2289,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10191
+      },
+      "text" : "must be dismissed somewhat if aircraft are built that take off"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        605.72379999999998,
+        212.47000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2289,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 10192
+      },
+      "text" : "quickly, land slowly, and carry worthwhile payloads."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        580.72379999999998,
+        237.01200000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2290,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 10193
+      },
+      "text" : "The problem of load factors in aircraft design becomes how"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        568.22379999999998,
+        237.02699999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2290,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 10194
+      },
+      "text" : "to determine the highest load factors that can be expected in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        555.72379999999998,
+        236.94000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2290,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 10195
+      },
+      "text" : "normal operation under various operational situations. These"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        543.22379999999998,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2290,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 10196
+      },
+      "text" : "load factors are called “limit load factors.” For reasons of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        530.72379999999998,
+        237.10000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2290,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 10197
+      },
+      "text" : "safety, it is required that the aircraft be designed to withstand"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        518.22379999999998,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2290,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 10198
+      },
+      "text" : "these load factors without any structural damage. Although"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        505.72379999999998,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2290,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 10199
+      },
+      "text" : "the Code of Federal Regulations (CFR) requires the aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        493.22379999999998,
+        237.00499999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2290,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 10200
+      },
+      "text" : "structure be capable of supporting one and one-half times"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        480.72379999999998,
+        237.00699999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2290,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 10201
+      },
+      "text" : "these limit load factors without failure, it is accepted that"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        468.22379999999998,
+        237.02199999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2290,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 10202
+      },
+      "text" : "parts of the aircraft may bend or twist under these loads and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        455.72379999999998,
+        159.41000000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2290,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 10203
+      },
+      "text" : "that some structural damage may occur."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        430.72379999999998,
+        237.05999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2291,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 10204
+      },
+      "text" : "This 1.5 load limit factor is called the “factor of safety” and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        418.22379999999998,
+        237,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2291,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 10205
+      },
+      "text" : "provides, to some extent, for loads higher than those expected"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        405.72379999999998,
+        237.02499999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2291,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 10206
+      },
+      "text" : "under normal and reasonable operation. This strength reserve"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        393.22379999999998,
+        237.08200000000011,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2291,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 10207
+      },
+      "text" : "is not something that pilots should willfully abuse; rather, it is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        380.72379999999998,
+        236.8599999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2291,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 10208
+      },
+      "text" : "there for protection when encountering unexpected conditions."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        355.72379999999998,
+        237.005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2292,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 10209
+      },
+      "text" : "The above considerations apply to all loading conditions,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        343.22379999999998,
+        237.00599999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2292,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 10210
+      },
+      "text" : "whether they be due to gusts, maneuvers, or landings. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        330.72379999999998,
+        237.01099999999985,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2292,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 10211
+      },
+      "text" : "gust load factor requirements now in effect are substantially"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        318.22379999999998,
+        237.12000000000012,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2292,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 10212
+      },
+      "text" : "the same as those that have been in existence for years."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        305.72379999999998,
+        237.08899999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2292,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 10213
+      },
+      "text" : "Hundreds of thousands of operational hours have proven"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        293.22379999999998,
+        237.06999999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2292,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 10214
+      },
+      "text" : "them adequate for safety. Since the pilot has little control over"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        280.72379999999998,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2292,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 10215
+      },
+      "text" : "gust load factors (except to reduce the aircraft’s speed when"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        268.22379999999998,
+        237.00599999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2292,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 10216
+      },
+      "text" : "rough air is encountered), the gust loading requirements are"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        255.72379999999998,
+        237.13999999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2292,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 10217
+      },
+      "text" : "substantially the same for most general aviation type aircraft"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        243.22379999999998,
+        237.00699999999995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2292,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 10218
+      },
+      "text" : "regardless of their operational use. Generally, the gust load"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        230.72379999999998,
+        237.02699999999982,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2292,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 10219
+      },
+      "text" : "factors control the design of aircraft which are intended for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        218.22379999999998,
+        109.70000000000005,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2292,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 10220
+      },
+      "text" : "strictly nonacrobatic usage."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        193.22379999999998,
+        237.01299999999992,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2293,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 10221
+      },
+      "text" : "An entirely different situation exists in aircraft design with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        180.72379999999998,
+        236.84999999999968,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2293,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 10222
+      },
+      "text" : "maneuvering load factors. It is necessary to discuss this matter"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        168.22379999999998,
+        237.05700000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2293,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 10223
+      },
+      "text" : "separately with respect to: (1) aircraft designed in accordance"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        155.72379999999998,
+        237.13000000000011,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2293,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 10224
+      },
+      "text" : "with the category system (i.e., normal, utility, acrobatic); and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        143.22379999999998,
+        236.846,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2293,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 10225
+      },
+      "text" : "(2) older designs built according to requirements that did not"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        130.72379999999998,
+        137.74000000000007,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2293,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 10226
+      },
+      "text" : "provide for operational categories."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        105.72379999999998,
+        237.1099999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2294,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 10227
+      },
+      "text" : "Aircraft designed under the category system are readily"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        93.223799999999983,
+        237.01499999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2294,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 10228
+      },
+      "text" : "identified by a placard in the flight deck, which states the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        80.723799999999983,
+        236.803,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2294,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 10229
+      },
+      "text" : "operational category (or categories) in which the aircraft"
+    }
+  ],
+  "page" : 130,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        70.412000000000006,
+        578.23800000000006,
+        240.65599999999998,
+        152.51199999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        86.703000000000003,
+        583.12599999999998,
+        93.459000000000003,
+        14.995000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        78.956699999999998,
+        583.12599999999998,
+        108.95200000000001,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        201.31900000000002,
+        583.12599999999998,
+        93.459000000000003,
+        14.995000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        193.57230000000001,
+        583.12599999999998,
+        108.95200000000003,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        136.274,
+        622.94500000000005,
+        13.966000000000008,
+        13.894999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        138.315,
+        624.98900000000003,
+        9.8850000000000193,
+        9.8369999999999891
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        140.81100000000001,
+        633.06000000000006,
+        8.5180000000000007,
+        14.17999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        140.8115,
+        633.05970000000013,
+        8.5180000000000007,
+        14.17999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        127.71000000000001,
+        624.86500000000001,
+        32.091000000000008,
+        13.024000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        128.52500000000001,
+        629.63999999999999,
+        25.123999999999995,
+        7.8450000000000273
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        128.642,
+        624.86599999999999,
+        31.063000000000017,
+        12.024999999999977
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        127.67490000000001,
+        624.8651000000001,
+        32.12700000000001,
+        13.195999999999913
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        98.400999999999996,
+        646.505,
+        45.978999999999999,
+        65.970000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        98.400999999999996,
+        646.505,
+        45.978999999999999,
+        65.970000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.884,
+        661.97000000000003,
+        18.392999999999986,
+        38.91599999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        98.400999999999996,
+        609.5213516,
+        45.978999999999999,
+        67.969585700000039
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        98.400999999999996,
+        609.52099999999996,
+        45.978999999999999,
+        67.970000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        109.884,
+        625.37800000000004,
+        18.39200000000001,
+        40.504999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        218.34732629999999,
+        654.50122469999997,
+        37.982673699999992,
+        57.973775300000057
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        218.34700000000001,
+        654.50099999999998,
+        37.982999999999976,
+        57.974000000000046
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        229.68200000000002,
+        669.96600000000001,
+        11.194999999999993,
+        30.919999999999959
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.35045719999999,
+        609.52135080000005,
+        51.976542800000004,
+        77.96464919999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        211.34999999999999,
+        609.52099999999996,
+        51.977000000000004,
+        77.965000000000032
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        222.483,
+        625.37800000000004,
+        25.592000000000013,
+        50.500999999999976
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        89.956000000000003,
+        667.26300000000003,
+        23.609999999999999,
+        14.795999999999935
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        89.956000000000003,
+        645.52099999999996,
+        23.609999999999999,
+        14.797000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.404,
+        675.50900000000001,
+        23.611000000000018,
+        14.794999999999959
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        203.404,
+        655.51700000000005,
+        23.611000000000018,
+        14.795999999999935
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        113.81100000000001,
+        659.35900000000004,
+        11.634999999999991,
+        9.69399999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        113.80799999999999,
+        659.36020000000008,
+        11.638000000000005,
+        9.6929999999999836
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        119.85170000000001,
+        661.61969999999997,
+        5.5799999999999983,
+        6.6730000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        120.494,
+        642.67100000000005,
+        5.6150000000000091,
+        21.288000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        120.49290000000001,
+        642.67070000000001,
+        5.6170000000000044,
+        21.288000000000011
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        120.282,
+        662.69299999999998,
+        5.4190000000000111,
+        20.339000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        120.28240000000001,
+        662.69380000000001,
+        5.4180000000000064,
+        20.339000000000055
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.03829999999999,
+        641.10900000000004,
+        73.153700000000015,
+        41.02699999999993
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        172.15299999999999,
+        618.02600000000007,
+        24.039000000000016,
+        17.978999999999928
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        173.28800000000001,
+        625.30899999999997,
+        22.903999999999996,
+        9.8710000000000946
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        173.44,
+        618.024,
+        22.75200000000001,
+        16.263000000000034
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        172.15250000000003,
+        618.02560000000005,
+        22.039499999999975,
+        17.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        122.773,
+        642.17399999999998,
+        52.814999999999998,
+        15.426000000000045
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.324,
+        649.18100000000004,
+        59.559000000000012,
+        11.826000000000022
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        121.236,
+        657.02499999999998,
+        61.810999999999993,
+        7.8680000000000518
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        153.25,
+        663.87099999999998,
+        12.796999999999997,
+        10.608000000000061
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        155.25,
+        665.87099999999998,
+        8.796999999999997,
+        6.6080000000000609
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        172.51900000000001,
+        663.09400000000005,
+        21.673000000000002,
+        10.437999999999988
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        172.51900000000001,
+        663.09400000000005,
+        21.673000000000002,
+        10.437999999999988
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        172.51900000000001,
+        663.09400000000005,
+        21.673000000000002,
+        10.437999999999988
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.65100000000001,
+        665.42700000000002,
+        15.325999999999993,
+        11.971000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.65100000000001,
+        665.42700000000002,
+        15.325999999999993,
+        11.971000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        152.65100000000001,
+        665.42700000000002,
+        15.325999999999993,
+        11.971000000000004
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        163.37899999999999,
+        645.68100000000004,
+        9.2790000000000248,
+        37.581000000000017
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        163.37880000000001,
+        645.68110000000001,
+        9.2779999999999916,
+        38.169000000000096
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.96899999999999,
+        673.327,
+        36.812000000000012,
+        9.9510000000000218
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.9676,
+        672.56230000000005,
+        45.224400000000003,
+        11.047000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.96899999999999,
+        673.32600000000002,
+        36.812000000000012,
+        9.9519999999999982
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        148.96780000000001,
+        673.31020000000001,
+        37.774000000000001,
+        10.146000000000072
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        228.251,
+        668.08799999999997,
+        11.72399999999999,
+        9.5750000000000455
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        228.25030000000001,
+        668.08760000000007,
+        11.724999999999994,
+        9.5760000000000218
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        233.96470000000002,
+        670.32200000000012,
+        5.8369999999999891,
+        6.7569999999999482
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        231.94900000000001,
+        651.62900000000002,
+        6.9749999999999943,
+        21.125999999999976
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        231.9478,
+        651.62860000000001,
+        6.9770000000000039,
+        21.125999999999976
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        234.92600000000002,
+        671.43000000000006,
+        6.6189999999999998,
+        20.2349999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        234.92720000000003,
+        671.42920000000004,
+        6.617999999999995,
+        20.23599999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        234.08340000000001,
+        623.89100000000008,
+        74.724599999999981,
+        60.428999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        250.64500000000001,
+        638.75999999999999,
+        9.8479999999999848,
+        14.206000000000017
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        250.6455,
+        638.76070000000004,
+        9.8479999999999848,
+        14.206000000000017
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        245.054,
+        628.81500000000005,
+        14.592000000000013,
+        14.211000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        247.22300000000001,
+        630.99000000000001,
+        10.253999999999962,
+        10.023000000000025
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        237.64400000000001,
+        629.49900000000002,
+        31.620000000000005,
+        14.963999999999942
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        238.15600000000001,
+        634.70900000000006,
+        24.959000000000003,
+        8.7389999999999191
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        238.06200000000001,
+        629.50999999999999,
+        30.978999999999985,
+        12.372000000000071
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        237.50070000000002,
+        629.49830000000009,
+        31.765000000000015,
+        15.622999999999934
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        291.029,
+        613.79200000000003,
+        19.543999999999983,
+        20.144000000000005
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        293.97899999999998,
+        617.10500000000002,
+        13.41500000000002,
+        13.553999999999974
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        281.09699999999998,
+        615.25900000000001,
+        29.711000000000013,
+        21.211999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        281.93599999999998,
+        623.11400000000003,
+        28.872000000000014,
+        10.640999999999963
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        281.76300000000003,
+        615.27099999999996,
+        29.044999999999959,
+        16.70900000000006
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        281.09780000000001,
+        615.25909999999999,
+        27.710199999999986,
+        21.211999999999989
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        235.673,
+        643.38400000000001,
+        58.175999999999988,
+        22.751999999999953
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        234.71899999999999,
+        649.24900000000002,
+        63.369000000000028,
+        20.466999999999985
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        234.88200000000001,
+        657.10900000000004,
+        64.562999999999988,
+        16.439999999999941
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        295.87099999999998,
+        661.20000000000005,
+        9.1510000000000105,
+        9.8489999999999327
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        297.87099999999998,
+        663.20000000000005,
+        5.1510000000000105,
+        5.8489999999999327
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        268.07600000000002,
+        666.78100000000006,
+        12.408999999999992,
+        11.013999999999896
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        270.07600000000002,
+        668.78099999999995,
+        8.4089999999999918,
+        7.01400000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        286.178,
+        661.83199999999999,
+        22.629999999999995,
+        13.113000000000056
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        286.178,
+        661.83199999999999,
+        22.629999999999995,
+        13.113000000000056
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        286.178,
+        661.83199999999999,
+        22.629999999999995,
+        13.113000000000056
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        267.50600000000003,
+        668.09800000000007,
+        15.613,
+        12.594000000000051
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        267.50600000000003,
+        668.09800000000007,
+        15.613,
+        12.594000000000051
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        267.50600000000003,
+        668.09799999999996,
+        15.613,
+        12.595000000000027
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        274.75999999999999,
+        647.89599999999996,
+        13.795999999999992,
+        37.692000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        274.76070000000004,
+        647.89550000000008,
+        13.795999999999992,
+        38.204999999999927
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        269.64800000000002,
+        674.78300000000002,
+        29.370000000000005,
+        12.513000000000034
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        266.93349999999998,
+        668.26980000000003,
+        41.874500000000012,
+        20.336000000000013
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        269.64800000000002,
+        674.78399999999999,
+        29.370000000000005,
+        12.512000000000057
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        266.93450000000001,
+        673.91730000000007,
+        37.34699999999998,
+        14.688999999999965
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        70.25,
+        576.68000000000006,
+        240.81799999999998,
+        154.06999999999994
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

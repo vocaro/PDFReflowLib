@@ -102,11 +102,14 @@ private func note(_ blocks: [ReflowBlock], _ number: Int, chapter: Int) -> Reflo
         #expect(second.layouts[page]?.continuesParagraph == true, "\(page)")
         #expect(!second.blocks.contains { $0.content == .sourcePage(page) }, "\(page)")
     }
-    // Without the hand-off each continuation stays a separate unkeyed paragraph.
+    // Without the hand-off each continuation stays a separate unkeyed paragraph, except that the
+    // body join carries `Waleed al Shehri` on after the parenthesis `(Wail al Shehri,` leaves open
+    // (#145).
     let before = try chain(["911-579", "911-580", "911-581", "911-582"], carry: false)
-    for opening in ["(Nov. 10, 2003)", "2003).For the request", "Waleed al Shehri, Mohand"] {
+    for opening in ["(Nov. 10, 2003)", "2003).For the request"] {
         #expect(block(before.blocks, containing: opening)?.text.hasPrefix(opening) == true, "\(opening)")
     }
+    #expect(block(before.blocks, containing: "Waleed al Shehri, Mohand")?.text.contains("(Wail al Shehri, Waleed al Shehri, Mohand") == true)
 }
 
 @Test func furtherParagraphAtTheIndentStaysItsOwnParagraphButKeepsItsWrappedLines() throws {

@@ -1,0 +1,22 @@
+{
+  "case": "faa-phak-8083-25c",
+  "side": "base",
+  "passed": false,
+  "contentChecks": 516,
+  "errors": [
+    "Page 24: missing paragraph 'through training, outreach, and education. The FAA Safety Team (FAASTeam) exemplifies this commitment.'",
+    "Page 21: paragraph does not continue onto page 22 {'end': 'An earlier period of discord between management and the Professional Air', 'next': 'Traffic Controllers Organization (PATCO) culminated in'}",
+    "Page 20: paragraph does not continue onto page 21 {'end': 'the responsibility of administering the Federal Aid', 'next': 'Airport Program. This program was designed to promote'}",
+    "Page 169: paragraph does not continue onto page 170 {'end': 'Fahrenheit degrees (70 x 100/180 = 38.89', 'next': 'Celsius degrees) (Remember there are 180 Fahrenheit degrees'}",
+    "Page 221: paragraph does not continue onto page 222 {'end': 'Errors in the magnetic compass are numerous,', 'next': 'making straight flight and precision turns to headings difficult'}",
+    "Page 320: paragraph does not continue onto page 321 {'end': 'with a scattered layer at 10,000 feet AGL. After', 'next': '2000Z, the forecast calls for scattered thunderstorms'}",
+    "Page 341: missing paragraph 'Figure 14-8. Runway safety area boundary sign and marking located on Taxiway Kilo.'",
+    "Page 341: missing paragraph 'Figure 14-9. Runway holding position sign at takeoff end of Runway 14 with collocated Taxiway Alpha location sign.'",
+    "Page 341: paragraph does not continue onto page 342 {'end': 'the threshold for Runway 18 is to the left and the threshold for', 'next': 'Runway 36 is to the right. The sign also indicates'}",
+    "Page 391: missing paragraph 'Figure 16-4. Meridians and parallels—the basis of measuring time, distance, and direction.'",
+    "Page 391: paragraph does not continue onto page 392 {'end': 'must be completed before dark. Remember, an hour is lost when', 'next': 'flying eastward from one time zone to another'}",
+    "Page 397: missing paragraph 'Figure 16-16. Relationship between true, magnetic, and compass headings for a particular instance.'",
+    "Page 397: missing list item '• GS—rate of the aircraft’s inflight progress over the ground.'",
+    "Page 438: paragraph does not continue onto page 439 {'end': 'states have taken steps to allow the possession, sale,', 'next': 'and use of marijuana withing their border.'}"
+  ]
+}

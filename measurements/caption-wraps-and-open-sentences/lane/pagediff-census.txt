@@ -1,0 +1,33 @@
+=== page 2: images 1 -> 1; words 335 -> 335
+  -P This paper describes methods for masking microdata so that it is better protected against re-identification. The masking methods are rank swapping (
+  -P 13], also [ 5]), additive noise ([ 8]), mixtures of additive noise ([ 14]). The re-identification methods are based on record linkage ([ 6], also [ 16]) with variants that are specially developed for re-identification experiments (] 10], [ 18]). The overall framework is based on variants of methods that score both information loss and re-identification risk that were introduced by [5].
+  +P This paper describes methods for masking microdata so that it is better protected against re-identification. The masking methods are rank swapping ( 13], also [ 5]), additive noise ([ 8]), mixtures of additive noise ([ 14]). The re-identification methods are based on record linkage ([ 6], also [ 16]) with variants that are specially developed for re-identification experiments (] 10], [ 18]). Th
+=== page 8: images 4 -> 4; words 419 -> 421
+  -H k and variauce o2 then the random variable Y = X - 2 has mean O and
+  +H u and variance o?, then the random variable Y = X - Z has mean 0 and
+  -P In [ 5] a number of formulas are suggested for measuring the "information loss"
+  -P or amount which the masked data set has been statistically altered from the original raw data set.
+  +P In [ 5] a number of formulas are suggested for measuring the "information loss" or amount which the masked data set has been statistically altered from the original raw data set.
+  -P indicate how much the maskod data set statistically differs from the original.
+  -P T'he problem becomes one of identitying what one considers to be signincant
+  -P statistical properties and then to deline a way to compute their dillerence for
+  -P two data sets.
+  -P For original data set X and ed data set 2, both n xm arrays, one might want to considler a mensure of the change in data, i.c. a measurement for 7- X.
+  +P indicate how much the masked data set statistically differs from the original.
+  +P The problem becomes one of identifying what one considers to be significant statistical properties and then to define a way to compute their difference for two data sets.
+  +P For original data set X and masked data set Z, both n x m arrays, one might want to consider a measure of the change in data, i.e. a measurement. for Z - X.
+  -P but this is undefined whenever we have an original data element &u = 0. One
+  -P can replace the denominstor by a specified constant when tig - 0, but then the value of this score can vary greatly with the choice of constant, especially when the data set has a lot ot zero elements, as in the Kim-Winkler data. Furthermore, the size of this data perturbation score tends to be several orders of magnitude larger than the other informalion loss scores described below, so that it
+  -P improve this situation by modifying the above formula to
+  -P which helge with the score magnitucle problem, since it is now boundes by ILI E 2, but it only reduces but does not eliminate the possibility of dividing by zero.
+  -P However, beyond these problems, by scaling the statistic by the individual data
+  -P points, the resulting statistic is not very stable. Leaving aside zero data values, when the data values are very small, then small adjustments in the masked data produce large ellects on the summary statistic. If we view our data set as iudependent samples from a common distribution, it is more stable to measure variations in the sample values by scaling them all by a value common to the
+  -P variable. Thus if X and 2 are independent. rancom variables both with mean
+  +P but this is undefined whenever we have an original data element xg = O. One
+  +P can replace the denominator by a specified constant when Fij = 0, but then the value of this score can vary greatly with the choice of constant, especially when the data set has a lot of zero elements, as in the Kim-Winkler data. Furthermore, the size of this data perturbation score tends to be several orders of magnitude larger than the other information loss scores described below, so that it
+  +P which helps with the score magnitude problem, since it is now bounded by IL1 ≤ 2, but it only reduces but does not eliminate the possibility of dividing by zero.
+  +P However, beyond these problems, by scaling the statistic by the individual data points, the resulting statistic is not very stable. Leaving aside zero data values, when the data values are very small, then small adjustments in the masked data produce large effects on the summary statistic. If we view our data set as independent samples from a common distribution, it is more stable to measure va
+  -P In our case, we can estimate that standard deviation with the sample standard deviation S. This motivates the proposed modification for the dats perturbation
+  -P information loss statistic given by
+  +P In our case, we can estimate that standard deviation with the sample standard deviation S. This motivates the proposed modification for the data perturbation information loss statistic given by
+changed pages: [2, 8]

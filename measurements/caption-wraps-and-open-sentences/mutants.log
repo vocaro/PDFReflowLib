@@ -1,0 +1,30 @@
+noop: SURVIVED
+caption-rule-off: KILLED by captionKeepsTheLineItWrapsOntoAcrossTheOtherColumn, onlyAnOpenCaptionTakesALineReadApartFromIt, wrappedCaptionLinesRejoinTheirCaptionsAndReleaseTheColumnJoin
+caption-adjacent-allowed: KILLED by onlyAnOpenCaptionTakesALineReadApartFromIt
+caption-closed-sentence-allowed: KILLED by onlyAnOpenCaptionTakesALineReadApartFromIt
+caption-candidate-caption-allowed: KILLED by onlyAnOpenCaptionTakesALineReadApartFromIt
+caption-body-type-off: KILLED by bodyTypeLineOpeningWithAFigureReferenceTakesNoWrap
+caption-beneath-off: KILLED by onlyAnOpenCaptionTakesALineReadApartFromIt
+wrap-size-off: KILLED by captionWrapNeedsTheNextLineOnTheCaptionsEdgeAtItsLeading
+wrap-above-off: KILLED by captionWrapNeedsTheNextLineOnTheCaptionsEdgeAtItsLeading
+wrap-leading-off: KILLED by captionWrapNeedsTheNextLineOnTheCaptionsEdgeAtItsLeading, onlyAnOpenCaptionTakesALineReadApartFromIt
+wrap-edge-off: KILLED by captionWrapNeedsTheNextLineOnTheCaptionsEdgeAtItsLeading
+wrap-centre-off: KILLED by captionWrapNeedsTheNextLineOnTheCaptionsEdgeAtItsLeading
+wrap-between-off: KILLED by captionWrapNeedsTheNextLineOnTheCaptionsEdgeAtItsLeading
+comma-page-off: KILLED by lineEndingOnACommaContinuesAcrossThePage, shortCommaLineNeedsProseAndALowercaseOpening
+comma-page-lowercase-off: KILLED by shortCommaLineNeedsProseAndALowercaseOpening
+comma-column-off: KILLED by shortCommaLineNeedsProseAndALowercaseOpening
+comma-column-lowercase-off: KILLED by shortCommaLineNeedsProseAndALowercaseOpening
+comma-letter-off: KILLED by shortCommaLineNeedsProseAndALowercaseOpening
+comma-comma-off: KILLED by shortCommaLineNeedsProseAndALowercaseOpening
+comma-words-off: KILLED by shortCommaLineNeedsProseAndALowercaseOpening
+comma-width-off: KILLED by shortCommaLineNeedsProseAndALowercaseOpening
+comma-body-size-off: KILLED by commaEndingInOtherTypeDoesNotContinueAColumn
+tag-off: KILLED by oneTaggedParagraphContinuesAcrossThePage, oneTaggedParagraphContinuesBeforeACapital, parenthesisIsOpenOnlyInTheLastSentence
+paren-off: KILLED by openParenthesisContinuesBeforeACapital, parenthesisIsOpenOnlyInTheLastSentence
+paren-sentence-bound-off: KILLED by parenthesisIsOpenOnlyInTheLastSentence
+paren-last-sentence-off: KILLED by parenthesisIsOpenOnlyInTheLastSentence
+tag-heading-off: KILLED by oneTaggedParagraphContinuesBeforeACapital
+tag-group-off: KILLED by oneTaggedParagraphContinuesBeforeACapital
+tag-page-off: KILLED by oneTaggedParagraphContinuesAcrossThePage
+tag-column-off: KILLED by oneTaggedParagraphContinuesBeforeACapital

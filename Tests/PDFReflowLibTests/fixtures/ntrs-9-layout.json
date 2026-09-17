@@ -1,0 +1,2305 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        303.05000000000001,
+        50.112000000000002,
+        6,
+        13.283999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 12,
+          "text" : "9"
+        }
+      ],
+      "text" : "9"
+    },
+    {
+      "rect" : [
+        54,
+        737.64864000000011,
+        242.62559999999996,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "moments were then interrogated to resolve moments about"
+        }
+      ],
+      "text" : "moments were then interrogated to resolve moments about"
+    },
+    {
+      "rect" : [
+        54,
+        726.12864000000002,
+        242.95532000000003,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "the wind-axis system. It is convenient to view the wind-axis"
+        }
+      ],
+      "text" : "the wind-axis system. It is convenient to view the wind-axis"
+    },
+    {
+      "rect" : [
+        54,
+        714.60864000000004,
+        242.89004,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "moments as those resulting from loads applied parallel to the"
+        }
+      ],
+      "text" : "moments as those resulting from loads applied parallel to the"
+    },
+    {
+      "rect" : [
+        54,
+        703.18864000000008,
+        242.65548000000001,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "wind direction (drag) and loads applied perpendicular to the"
+        }
+      ],
+      "text" : "wind direction (drag) and loads applied perpendicular to the"
+    },
+    {
+      "rect" : [
+        54,
+        691.6686400000001,
+        242.83784000000003,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "wind direction (lift). The root-sum-square of these moments"
+        }
+      ],
+      "text" : "wind direction (lift). The root-sum-square of these moments"
+    },
+    {
+      "rect" : [
+        54,
+        680.14864000000011,
+        242.76504,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "were also computed to derive a resultant bending moment"
+        }
+      ],
+      "text" : "were also computed to derive a resultant bending moment"
+    },
+    {
+      "rect" : [
+        54,
+        668.62864000000002,
+        242.82479999999987,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "indicative of the combined load experienced at the base of the"
+        }
+      ],
+      "text" : "indicative of the combined load experienced at the base of the"
+    },
+    {
+      "rect" : [
+        54,
+        657.10864000000004,
+        242.79476000000005,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "vehicle. Figure 14 is an illustration of these load components"
+        }
+      ],
+      "text" : "vehicle. Figure 14 is an illustration of these load components"
+    },
+    {
+      "rect" : [
+        54,
+        645.58864000000005,
+        242.77316000000008,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "with a representative time history response. When bending"
+        }
+      ],
+      "text" : "with a representative time history response. When bending"
+    },
+    {
+      "rect" : [
+        54,
+        634.18864000000008,
+        242.77499999999986,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "moment in one body axis is plotted as a function of the other,"
+        }
+      ],
+      "text" : "moment in one body axis is plotted as a function of the other,"
+    },
+    {
+      "rect" : [
+        54,
+        622.6686400000001,
+        242.75507999999996,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "the response envelope typically approximates an ellipse. The"
+        }
+      ],
+      "text" : "the response envelope typically approximates an ellipse. The"
+    },
+    {
+      "rect" : [
+        54,
+        611.14864000000011,
+        242.8097600000001,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "center of the ellipse is approximately the arithmetic mean of"
+        }
+      ],
+      "text" : "center of the ellipse is approximately the arithmetic mean of"
+    },
+    {
+      "rect" : [
+        54,
+        599.50864000000001,
+        38.274000000000001,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "the loads."
+        }
+      ],
+      "text" : "the loads."
+    },
+    {
+      "rect" : [
+        54,
+        376.87864000000002,
+        235.30500000000001,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Figure 13. ABL velocity profile and equivalent uniform"
+        }
+      ],
+      "text" : "Figure 13. ABL velocity profile and equivalent uniform"
+    },
+    {
+      "rect" : [
+        99.024000000000001,
+        365.35863999999998,
+        186.99900000000002,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "speed that produces the same static bending"
+        }
+      ],
+      "text" : "speed that produces the same static bending"
+    },
+    {
+      "rect" : [
+        99.024000000000001,
+        353.69864000000001,
+        34.860000000000014,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "moment"
+        }
+      ],
+      "text" : "moment"
+    },
+    {
+      "rect" : [
+        85.823999999999998,
+        137.18863999999999,
+        179.15084000000007,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Figure 14. Illustration of load components"
+        }
+      ],
+      "text" : "Figure 14. Illustration of load components"
+    },
+    {
+      "rect" : [
+        54,
+        116.06864,
+        242.98280000000005,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Static Loads—"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Static bending moment due to drag for ABL"
+        }
+      ],
+      "text" : "Static Loads—Static bending moment due to drag for ABL"
+    },
+    {
+      "rect" : [
+        54,
+        104.54864000000001,
+        242.76504,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "and uniform flow acquired with the model described in"
+        }
+      ],
+      "text" : "and uniform flow acquired with the model described in"
+    },
+    {
+      "rect" : [
+        54,
+        93.032640000000001,
+        243.07027999999997,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "section 4 is presented in Figure 15 for all wind azimuth"
+        }
+      ],
+      "text" : "section 4 is presented in Figure 15 for all wind azimuth"
+    },
+    {
+      "rect" : [
+        54,
+        81.512640000000005,
+        242.72520000000003,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "angles. There is a scatter of the static values for a fixed"
+        }
+      ],
+      "text" : "angles. There is a scatter of the static values for a fixed"
+    },
+    {
+      "rect" : [
+        54,
+        70.112639999999999,
+        242.99348000000009,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "velocity resulting from the change in azimuth angle for"
+        }
+      ],
+      "text" : "velocity resulting from the change in azimuth angle for"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        737.64864000000011,
+        242.70560000000006,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "varying data records. Even with the one small protuberance"
+        }
+      ],
+      "text" : "varying data records. Even with the one small protuberance"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        726.12864000000002,
+        242.73516000000001,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "mounted at a vehicle azimuth of 180 degrees, there is a"
+        }
+      ],
+      "text" : "mounted at a vehicle azimuth of 180 degrees, there is a"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        714.60864000000004,
+        242.97800000000001,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "significant change in static coefficients consistent with the"
+        }
+      ],
+      "text" : "significant change in static coefficients consistent with the"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        703.18864000000008,
+        242.76332000000008,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "findings of Reference [18]. It should also be noted that"
+        }
+      ],
+      "text" : "findings of Reference [18]. It should also be noted that"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        691.6686400000001,
+        243.05000000000001,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "uniform flow data were acquired at additional velocity values"
+        }
+      ],
+      "text" : "uniform flow data were acquired at additional velocity values"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        680.14864000000011,
+        243.10171999999994,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "and tunnel conditions in addition to those acquired with an"
+        }
+      ],
+      "text" : "and tunnel conditions in addition to those acquired with an"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        668.62864000000002,
+        242.72519999999992,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "ABL. Therefore, there is additional scatter in the uniform"
+        }
+      ],
+      "text" : "ABL. Therefore, there is additional scatter in the uniform"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        656.98864000000003,
+        204.62000000000006,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "flow data that does not have ABL counterpart data."
+        }
+      ],
+      "text" : "flow data that does not have ABL counterpart data."
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        635.62864000000002,
+        242.7849599999999,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Plotting these same results for specific wind azimuth angles"
+        }
+      ],
+      "text" : "Plotting these same results for specific wind azimuth angles"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        624.10864000000004,
+        243.07616000000002,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "and velocities improves clarity and enables a direct"
+        }
+      ],
+      "text" : "and velocities improves clarity and enables a direct"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        612.58864000000005,
+        242.89147999999994,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "comparison with similar protuberance orientations. Since"
+        }
+      ],
+      "text" : "comparison with similar protuberance orientations. Since"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        601.18864000000008,
+        242.67540000000002,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "there is a single protuberance at 180 degrees, the data should"
+        }
+      ],
+      "text" : "there is a single protuberance at 180 degrees, the data should"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        589.6686400000001,
+        243.04424,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "be symmetrical about the North-South plane and one should"
+        }
+      ],
+      "text" : "be symmetrical about the North-South plane and one should"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        578.14864000000011,
+        242.86939999999998,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "expect higher drag as the protuberance becomes increasingly"
+        }
+      ],
+      "text" : "expect higher drag as the protuberance becomes increasingly"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        566.50864000000001,
+        91.550000000000011,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "orthogonal to the flow."
+        }
+      ],
+      "text" : "orthogonal to the flow."
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        545.14864000000011,
+        242.84472,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Static bending moment due to drag acquired at a series of"
+        }
+      ],
+      "text" : "Static bending moment due to drag acquired at a series of"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        533.62864000000002,
+        242.96984000000015,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "wind azimuth angle regions are plotted in Figure 16. Each"
+        }
+      ],
+      "text" : "wind azimuth angle regions are plotted in Figure 16. Each"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        522.07864000000006,
+        242.74511999999987,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "wind azimuth region considers only those data records"
+        }
+      ],
+      "text" : "wind azimuth region considers only those data records"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        510.55864000000003,
+        242.76980000000009,
+        11.025720000000035
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "acquired within +/- 15 degrees of the cardinal or ordinal"
+        }
+      ],
+      "text" : "acquired within +/- 15 degrees of the cardinal or ordinal"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        499.15863999999999,
+        242.96899999999999,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "directions such as N, NE, E, SE and so forth. Data are plotted"
+        }
+      ],
+      "text" : "directions such as N, NE, E, SE and so forth. Data are plotted"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        487.63864000000001,
+        242.97307999999992,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "adjacent to the corresponding wind azimuth angle when"
+        }
+      ],
+      "text" : "adjacent to the corresponding wind azimuth angle when"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        476.11863999999997,
+        242.93000000000001,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "mirrored about the geometric plane of reflection. As one can"
+        }
+      ],
+      "text" : "mirrored about the geometric plane of reflection. As one can"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        464.59863999999999,
+        243.00788000000006,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "observe, there does appear to be symmetry about 180 degrees."
+        }
+      ],
+      "text" : "observe, there does appear to be symmetry about 180 degrees."
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        453.07864000000001,
+        242.64551999999998,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Furthermore, the static moment is approximately the same"
+        }
+      ],
+      "text" : "Furthermore, the static moment is approximately the same"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        441.67863999999997,
+        242.86903999999998,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "between ABL and uniform flow data. The reasonable"
+        }
+      ],
+      "text" : "between ABL and uniform flow data. The reasonable"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        430.15863999999999,
+        242.90408000000019,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "comparison of static magnitude with velocity between ABL"
+        }
+      ],
+      "text" : "comparison of static magnitude with velocity between ABL"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        418.63864000000001,
+        242.70524000000017,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "and uniform flow lends confidence to the selection of the"
+        }
+      ],
+      "text" : "and uniform flow lends confidence to the selection of the"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        406.99864000000002,
+        235.42700000000008,
+        11.025719999999978
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "appropriate ABL reference height for velocity comparison."
+        }
+      ],
+      "text" : "appropriate ABL reference height for velocity comparison."
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        197.33864,
+        237.65996000000013,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Figure 15. Static bending moment due to drag, research"
+        }
+      ],
+      "text" : "Figure 15. Static bending moment due to drag, research"
+    },
+    {
+      "rect" : [
+        360.06999999999999,
+        185.69863999999998,
+        26.025480000000016,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "TimesNewRomanPS-BoldMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "model"
+        }
+      ],
+      "text" : "model"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        164.54864000000001,
+        242.8966400000001,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPS-ItalicMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Dynamic Loads due to Lift—"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "The time history of the base"
+        }
+      ],
+      "text" : "Dynamic Loads due to Lift—The time history of the base"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        153.02864,
+        242.59571999999997,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "bending moment due to lift was analyzed to determine"
+        }
+      ],
+      "text" : "bending moment due to lift was analyzed to determine"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        141.50863999999999,
+        243.03332000000006,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "response characteristics. Peak bending moment due to lift"
+        }
+      ],
+      "text" : "response characteristics. Peak bending moment due to lift"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        129.98864,
+        242.77831999999995,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "was computed as the maximum of the absolute values of the"
+        }
+      ],
+      "text" : "was computed as the maximum of the absolute values of the"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        118.58864000000001,
+        243.04940000000005,
+        11.025719999999993
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "time history for a given data record, and is illustrated in"
+        }
+      ],
+      "text" : "time history for a given data record, and is illustrated in"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        107.06864,
+        242.90384000000012,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "Figure 14. These peak values acquired in uniform flow and"
+        }
+      ],
+      "text" : "Figure 14. These peak values acquired in uniform flow and"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        95.552640000000011,
+        242.82416000000006,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "an ABL are shown in Figure 17. Five observations can be"
+        }
+      ],
+      "text" : "an ABL are shown in Figure 17. Five observations can be"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        84.032640000000001,
+        243.14096000000001,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "made about this data set. First, the peak loads due to lift are"
+        }
+      ],
+      "text" : "made about this data set. First, the peak loads due to lift are"
+    },
+    {
+      "rect" : [
+        315.05000000000001,
+        72.512640000000005,
+        242.76503999999994,
+        11.025720000000007
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "an order of magnitude higher than the static loads resulting"
+        }
+      ],
+      "text" : "an order of magnitude higher than the static loads resulting"
+    },
+    {
+      "rect" : [
+        55.950000000000003,
+        395.06,
+        239.10000000000002,
+        194.24999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        54,
+        154.97,
+        248.60000000000002,
+        188.84999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        315,
+        214.78,
+        242.5,
+        182.05000000000004
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9.9600000000000009,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "ntrs-20200002975-gwl-2020",
+  "graphics" : [
+    [
+      55.950000000000003,
+      395.06,
+      239.10000000000002,
+      194.24999999999994
+    ],
+    [
+      54,
+      154.97,
+      248.60000000000002,
+      188.83000000000001
+    ],
+    [
+      315,
+      214.78,
+      242.5,
+      182.05000000000004
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        303.05000000000001,
+        50.112000000000002,
+        6,
+        13.283999999999999
+      ],
+      "text" : "9"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        737.64864000000011,
+        242.62559999999996,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 114,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 157
+      },
+      "text" : "moments were then interrogated to resolve moments about"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        726.12864000000002,
+        242.95532000000003,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 114,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 157
+      },
+      "text" : "the wind-axis system. It is convenient to view the wind-axis"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        714.60864000000004,
+        242.89004,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 114,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 157
+      },
+      "text" : "moments as those resulting from loads applied parallel to the"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        703.18864000000008,
+        242.65548000000001,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 114,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 157
+      },
+      "text" : "wind direction (drag) and loads applied perpendicular to the"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        691.6686400000001,
+        242.83784000000003,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 114,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 157
+      },
+      "text" : "wind direction (lift). The root-sum-square of these moments"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        680.14864000000011,
+        242.76504,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 114,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 157
+      },
+      "text" : "were also computed to derive a resultant bending moment"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        668.62864000000002,
+        242.82479999999987,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 114,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 157
+      },
+      "text" : "indicative of the combined load experienced at the base of the"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        657.10864000000004,
+        242.79476000000005,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 114,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 157
+      },
+      "text" : "vehicle. Figure 14 is an illustration of these load components"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        645.58864000000005,
+        242.77316000000008,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 114,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 157
+      },
+      "text" : "with a representative time history response. When bending"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        634.18864000000008,
+        242.77499999999986,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 114,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 157
+      },
+      "text" : "moment in one body axis is plotted as a function of the other,"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        622.6686400000001,
+        242.75507999999996,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 114,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 157
+      },
+      "text" : "the response envelope typically approximates an ellipse. The"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        611.14864000000011,
+        242.8097600000001,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 114,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 157
+      },
+      "text" : "center of the ellipse is approximately the arithmetic mean of"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        599.50864000000001,
+        38.274000000000001,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 114,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 157
+      },
+      "text" : "the loads."
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        376.87864000000002,
+        235.30500000000001,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 116,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 160
+      },
+      "text" : "Figure 13. ABL velocity profile and equivalent uniform"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        99.024000000000001,
+        365.35863999999998,
+        186.99900000000002,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 116,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 160
+      },
+      "text" : "speed that produces the same static bending"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        99.024000000000001,
+        353.69864000000001,
+        34.860000000000014,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 116,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 160
+      },
+      "text" : "moment"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        85.823999999999998,
+        137.18863999999999,
+        179.15084000000007,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 118,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 163
+      },
+      "text" : "Figure 14. Illustration of load components"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        116.06864,
+        242.98280000000005,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 119,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 164
+      },
+      "text" : "Static Loads—Static bending moment due to drag for ABL"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        104.54864000000001,
+        242.76504,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 119,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 164
+      },
+      "text" : "and uniform flow acquired with the model described in"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        93.032640000000001,
+        243.07027999999997,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 119,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 164
+      },
+      "text" : "section 4 is presented in Figure 15 for all wind azimuth"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        81.512640000000005,
+        242.72520000000003,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 119,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 164
+      },
+      "text" : "angles. There is a scatter of the static values for a fixed"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        54,
+        70.112639999999999,
+        242.99348000000009,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 119,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 164
+      },
+      "text" : "velocity resulting from the change in azimuth angle for"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        737.64864000000011,
+        242.70560000000006,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 119,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 164
+      },
+      "text" : "varying data records. Even with the one small protuberance"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        726.12864000000002,
+        242.73516000000001,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 119,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 164
+      },
+      "text" : "mounted at a vehicle azimuth of 180 degrees, there is a"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        714.60864000000004,
+        242.97800000000001,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 119,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 164
+      },
+      "text" : "significant change in static coefficients consistent with the"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        703.18864000000008,
+        242.76332000000008,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 119,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 164
+      },
+      "text" : "findings of Reference [18]. It should also be noted that"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        691.6686400000001,
+        243.05000000000001,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 119,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 164
+      },
+      "text" : "uniform flow data were acquired at additional velocity values"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        680.14864000000011,
+        243.10171999999994,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 119,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 164
+      },
+      "text" : "and tunnel conditions in addition to those acquired with an"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        668.62864000000002,
+        242.72519999999992,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 119,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 164
+      },
+      "text" : "ABL. Therefore, there is additional scatter in the uniform"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        656.98864000000003,
+        204.62000000000006,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 119,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 164
+      },
+      "text" : "flow data that does not have ABL counterpart data."
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        635.62864000000002,
+        242.7849599999999,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 120,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 165
+      },
+      "text" : "Plotting these same results for specific wind azimuth angles"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        624.10864000000004,
+        243.07616000000002,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 120,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 165
+      },
+      "text" : "and velocities improves clarity and enables a direct"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        612.58864000000005,
+        242.89147999999994,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 120,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 165
+      },
+      "text" : "comparison with similar protuberance orientations. Since"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        601.18864000000008,
+        242.67540000000002,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 120,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 165
+      },
+      "text" : "there is a single protuberance at 180 degrees, the data should"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        589.6686400000001,
+        243.04424,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 120,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 165
+      },
+      "text" : "be symmetrical about the North-South plane and one should"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        578.14864000000011,
+        242.86939999999998,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 120,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 165
+      },
+      "text" : "expect higher drag as the protuberance becomes increasingly"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        566.50864000000001,
+        91.550000000000011,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 120,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 165
+      },
+      "text" : "orthogonal to the flow."
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        545.14864000000011,
+        242.84472,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 121,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 166
+      },
+      "text" : "Static bending moment due to drag acquired at a series of"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        533.62864000000002,
+        242.96984000000015,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 121,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 166
+      },
+      "text" : "wind azimuth angle regions are plotted in Figure 16. Each"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        522.07864000000006,
+        242.74511999999987,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 121,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 166
+      },
+      "text" : "wind azimuth region considers only those data records"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        510.55864000000003,
+        242.76980000000009,
+        11.025720000000035
+      ],
+      "structure" : {
+        "group" : 121,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 166
+      },
+      "text" : "acquired within +/- 15 degrees of the cardinal or ordinal"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        499.15863999999999,
+        242.96899999999999,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 121,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 166
+      },
+      "text" : "directions such as N, NE, E, SE and so forth. Data are plotted"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        487.63864000000001,
+        242.97307999999992,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 121,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 166
+      },
+      "text" : "adjacent to the corresponding wind azimuth angle when"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        476.11863999999997,
+        242.93000000000001,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 121,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 166
+      },
+      "text" : "mirrored about the geometric plane of reflection. As one can"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        464.59863999999999,
+        243.00788000000006,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 121,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 166
+      },
+      "text" : "observe, there does appear to be symmetry about 180 degrees."
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        453.07864000000001,
+        242.64551999999998,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 121,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 166
+      },
+      "text" : "Furthermore, the static moment is approximately the same"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        441.67863999999997,
+        242.86903999999998,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 121,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 166
+      },
+      "text" : "between ABL and uniform flow data. The reasonable"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        430.15863999999999,
+        242.90408000000019,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 121,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 166
+      },
+      "text" : "comparison of static magnitude with velocity between ABL"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        418.63864000000001,
+        242.70524000000017,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 121,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 166
+      },
+      "text" : "and uniform flow lends confidence to the selection of the"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        406.99864000000002,
+        235.42700000000008,
+        11.025719999999978
+      ],
+      "structure" : {
+        "group" : 121,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 166
+      },
+      "text" : "appropriate ABL reference height for velocity comparison."
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        197.33864,
+        237.65996000000013,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 123,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 169
+      },
+      "text" : "Figure 15. Static bending moment due to drag, research"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        360.06999999999999,
+        185.69863999999998,
+        26.025480000000016,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 123,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 169
+      },
+      "text" : "model"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        164.54864000000001,
+        242.8966400000001,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 124,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 170
+      },
+      "text" : "Dynamic Loads due to Lift—The time history of the base"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        153.02864,
+        242.59571999999997,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 124,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 170
+      },
+      "text" : "bending moment due to lift was analyzed to determine"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        141.50863999999999,
+        243.03332000000006,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 124,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 170
+      },
+      "text" : "response characteristics. Peak bending moment due to lift"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        129.98864,
+        242.77831999999995,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 124,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 170
+      },
+      "text" : "was computed as the maximum of the absolute values of the"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        118.58864000000001,
+        243.04940000000005,
+        11.025719999999993
+      ],
+      "structure" : {
+        "group" : 124,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 170
+      },
+      "text" : "time history for a given data record, and is illustrated in"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        107.06864,
+        242.90384000000012,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 124,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 170
+      },
+      "text" : "Figure 14. These peak values acquired in uniform flow and"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        95.552640000000011,
+        242.82416000000006,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 124,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 170
+      },
+      "text" : "an ABL are shown in Figure 17. Five observations can be"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        84.032640000000001,
+        243.14096000000001,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 124,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 170
+      },
+      "text" : "made about this data set. First, the peak loads due to lift are"
+    },
+    {
+      "fontSize" : 9.9600000000000009,
+      "monospaced" : false,
+      "rect" : [
+        315.05000000000001,
+        72.512640000000005,
+        242.76503999999994,
+        11.025720000000007
+      ],
+      "structure" : {
+        "group" : 124,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 170
+      },
+      "text" : "an order of magnitude higher than the static loads resulting"
+    }
+  ],
+  "page" : 9,
+  "paints" : [
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        55.950000000000003,
+        395.06,
+        239.10000000000002,
+        194.24999999999994
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        54,
+        154.97,
+        248.60000000000002,
+        188.83000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        315,
+        214.78,
+        242.5,
+        182.05000000000004
+      ]
+    }
+  ],
+  "rightsBasis" : "Page 1 states U.S. Government work not protected by U.S. copyright; the paper's byline and the NTRS record place all three authors at NASA Langley Research Center (17 U.S.C. 105). The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and licenseType NO; distribution PUBLIC, no export control. No figure or photo carries a third-party credit: Figures 1-21 and A1-A5 are NASA facility sketches, photos, drawings and plots of NASA test data, and no NASA insignia is visible in them. The page-20 author portraits carry no credit at all. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "a98e4fcdea40b8ea7023880dd88966f04198b4ec311fced0bb9ebb2dec45fe6d",
+  "sourceTitle" : "Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20200002975/downloads/20200002975.pdf"
+}

@@ -113,7 +113,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 1995 targeted checks on 417 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 2011 targeted checks on 426 reviewed pages
 across 17 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No. 14*, *Mineral Commodity
@@ -121,8 +121,8 @@ Summaries 2025*, *Loper Bright Enterprises v. Raimondo*, *Disclosure Risk Assess
 Microdata Protection*, *Welcome to the United States*, *Publication 596*, *Stimulated Multiphoton
 Bremsstrahlung in Electron-Ion Collisions*, *Replay Clocks*, *Complaint for a Civil Case* and
 *Investigation of Atmospheric Boundary-Layer Effects on Launch-Vehicle Ground Wind Loads*. They
-comprise 705 ordered-text, 151 text, 266 paragraph, 164 absent-text, 187 heading, 32 absent-heading,
-57 list-item, 1 preformatted-lines, 20 script, 11 footnote, 34 note-link, 45 paragraph-continuation,
+comprise 705 ordered-text, 151 text, 271 paragraph, 164 absent-text, 187 heading, 32 absent-heading,
+58 list-item, 1 preformatted-lines, 20 script, 11 footnote, 34 note-link, 55 paragraph-continuation,
 1 list-item-continuation, 8 paragraph-separation, 53 distinct-paragraph, 142 image-presence,
 62 warning, 24 absent-warning, 17 source-region, 3 glyph-structure, 3 image-appearance and
 9 table-cell checks, counted as `tools/check_corpus_content.py` counts them.
@@ -516,7 +516,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->699 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->230 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->712 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->230 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -967,6 +967,26 @@ a third figure page (two figure pages join with every marker inline). All 26 sin
 single-guard mutations fail at least one test. The FAA contract checks the joins on pages 19, 21,
 45 (with `nextPage` 47), 68, 126, 145, 230, 235, 286, 341 and 411 and re-expresses page 286's order.
 See the [column continuation recount evidence](../measurements/column-continuation-recount/record.md).
+
+`CaptionWrapsAndOpenSentencesTests.swift` covers [#145](https://github.com/vocaro/PDFReflowLib/issues/145),
+the six FAA splits left after #118. `faa-391`/`faa-392` and `faa-341`/`faa-342` keep figure 16-4's,
+14-8's and 14-9's wrapped lines in their captions, which releases `…an hour is lost when` / `flying
+eastward` and `…the threshold for` / `Runway 36 is to the right.`; `faa-221`/`faa-222` and
+`faa-438`/`faa-439` join a column's last line that ends short on a comma; `faa-169`/`faa-170` join
+past an open parenthesis (`…= 38.89` / `Celsius degrees)`); `faa-24-tagged` and
+`faa-20-tagged`/`faa-21-tagged` join a capital where one structure-tree paragraph holds both lines.
+Negative controls: `fed-13-tagged` keeps the Fed's 8-point description apart from the `Figure 1.4.`
+title it sits under (read in sequence and split by the paragraph rule), `nbs-1` does not continue
+the 3-point footnote `…of thi s paper,` into the next column, `ntrs-9` keeps the NASA paper's body sentence
+opening `Figure 14. These peak values…` from taking the body lines beneath, and the untagged or retagged
+page 24 refuses. Synthetic controls refuse a caption wrap off the caption's edge and centre, below a
+paragraph space, above it, larger, or with a line between; a caption that closes its sentence or a
+second caption, a later paragraph not on the line beneath, or lines read in sequence; a comma line without a comma after a word, with too few words, too narrow, or
+before a capital (also after an open parenthesis), across pages and between columns; a parenthesis
+opened in an earlier sentence; and a heading or different tag group. All 29 single-rule and
+single-guard mutations fail at least one test. The FAA contract checks pages 20, 21, 24, 169, 221,
+320, 341, 391, 397 and 438, and the Loper Bright contract the open-parenthesis joins on pages 3 and
+34. See the [caption wrap and open sentence evidence](../measurements/caption-wraps-and-open-sentences/record.md).
 
 ## Text the rendering never shows
 

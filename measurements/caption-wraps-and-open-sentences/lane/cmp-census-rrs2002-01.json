@@ -1,0 +1,76 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "census-rrs2002-01",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "276f8cf1fe9de8821588f996233561953ce167a65d9b082aaf24005827defd64",
+  "candidateConverterSHA256": "dbf75c1f062c171c4ba39c2a0c2ad870f30ff3f7c041d8627ea2a3b01b065047",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-base",
+      "programsSHA256": "22614cb0d67a8299f20da78a741db0b43f328b8fc7a2760ed28c0de40fec086d"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-cand",
+      "programsSHA256": "2dda869df5640452e2e1e7cf7d4eaa701db418ef50c614bf36a8a81c4e5b8202"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [
+    2,
+    8
+  ],
+  "ocrCaveat": "OCR pages [2, 8] changed and the two runs' compiled Vision programs differ; Vision model compilation alone can change OCR text (#94), so these pages do not show a converter change by themselves",
+  "ocrTextVolume": {
+    "pages": 19,
+    "baselineWords": 5933,
+    "candidateWords": 5935,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    2,
+    8
+  ],
+  "changedPageFields": {
+    "2": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "8": [
+      "anchors",
+      "headings",
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": true,
+  "changedNavigationPages": [
+    8
+  ],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 16,
+    "fields": {
+      "paragraphIDs": 16
+    },
+    "navigationEntries": null
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

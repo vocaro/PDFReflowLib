@@ -2968,6 +2968,7 @@ enum LayoutReconstructor {
         flushNote()
         flushTagged()
         flush()
+        joinWrappedCaptionLines(&result, page: page, body: body, vocabulary: vocabulary, warnings: &warnings)
         joinColumnContinuations(&result, page: page, images: images.map(\.0) + clusters(page.tints, distance: 4),
                                 vocabulary: vocabulary, warnings: &warnings)
         joinWordBreaks(&result, page: page.number, vocabulary: vocabulary, warnings: &warnings)
@@ -3267,8 +3268,9 @@ enum LayoutReconstructor {
                   opensColumn(first, in: page, images: images, captions: nextCaptions) else { return nil }
             return (previous, next)
         }
-        guard continuesSentence(left, into: right),
-              let last = lastLine(of: left.text, in: previousPage.lines),
+        guard !endsSentence(left), let last = lastLine(of: left.text, in: previousPage.lines),
+              continuesSentence(left, into: right,
+                                sameTag: sameParagraphTag(last, firstLine(of: right.text, in: page.lines))),
               // A skipped page holds no prose, even inside its regions.
               !skippedPages.contains(where: { skippedPage in
                   let captions = captionTexts(blocks, page: skippedPage.page.number)
@@ -3280,7 +3282,8 @@ enum LayoutReconstructor {
               let first = firstLine(of: right.text, in: page.lines),
               !isHeaderLike(first, in: page), wordCount(first.text) >= 2,
               readsAsProse(last.text), readsAsProse(first.text),
-              fillsColumn(last, in: previousPage.lines, body: max(4, bodySize(previousPage.lines))),
+              fillsColumn(last, in: previousPage.lines, body: max(4, bodySize(previousPage.lines)))
+                || right.text.first?.isLowercase == true && endsOnAComma(last, body: max(4, bodySize(previousPage.lines))),
               endsColumn(last, in: previousPage, images: previousImages, captions: previousCaptions),
               opensColumn(first, in: page, images: images, captions: nextCaptions),
               // A capital, digit or quote continues only in the anchor's type and on a full line:
@@ -3370,16 +3373,68 @@ enum LayoutReconstructor {
         }
     }
 
+    /// A figure or table caption keeps the line it wraps onto when reading order read that line
+    /// apart from it (#145). The row sort interleaves a caption at a column's foot with the prose
+    /// beside it, so the caption's second line became a paragraph of its own: FAA page 391's
+    /// `Figure 16-4. Meridians and parallels—the basis of measuring time,` / `distance, and
+    /// direction.` beside `…an hour is lost when`, and page 341's `…marking located` / `on Taxiway
+    /// Kilo.` and `…takeoff end of Runway` / `14 with collocated Taxiway Alpha location sign.`,
+    /// with figure 14-7's caption read between. The evidence is the paragraph rule's: the caption
+    /// leaves its sentence open; a later paragraph on the page opens on the line directly beneath
+    /// the caption's last line, on its left edge or centre, at ordinary leading (-0.4…0.9 of the
+    /// larger size), no more than 15% larger, set smaller than the page's body (NASA's paper sets
+    /// `…is illustrated in` / `Figure 14. These peak values…` in body type, a sentence that opens with
+    /// a figure reference, not a caption), and no line lies between them. Something else must
+    /// have been read between the two blocks: where the paragraph rule saw the lines in sequence
+    /// and still set them apart, that decision stands (the Fed's 8-point description beneath each
+    /// 10-point bold `Figure N.` title, page 13's `…paid to the U.S. Treasury` / `The Federal
+    /// Reserve transfers its net earnings to the U.S. Treasury.`).
+    private static func joinWrappedCaptionLines(_ blocks: inout [ReflowBlock], page: PageContent, body: CGFloat,
+                                                vocabulary: Set<String>, warnings: inout [ConversionWarning]) {
+        var index = 0
+        while index < blocks.count {
+            defer { index += 1 }
+            guard blocks[index].page == page.number, case let .paragraph(caption) = blocks[index].content,
+                  isCaption(caption.text), !endsSentence(caption),
+                  let last = lastLine(of: caption.text, in: page.lines) else { continue }
+            let beneath = page.lines.filter { $0.fontSize < body * 0.95 && wrapsCaption(last, onto: $0, page: page, body: body) }
+            guard !beneath.isEmpty, let wrapped = blocks.indices.dropFirst(index + 2).first(where: { candidate in
+                guard blocks[candidate].page == page.number, case let .paragraph(text) = blocks[candidate].content,
+                      !isCaption(text.text), let first = firstLine(of: text.text, in: page.lines) else { return false }
+                return beneath.contains(first)
+            }), case let .paragraph(text) = blocks[wrapped].content else { continue }
+            blocks[index].content = .paragraph(join(caption, text, vocabulary: vocabulary, page: page.number,
+                                                    warnings: &warnings))
+            blocks.remove(at: wrapped)
+            index -= 1
+        }
+    }
+
+    /// `first` is the line a caption's `last` line wraps onto (`joinWrappedCaptionLines`).
+    static func wrapsCaption(_ last: TextLine, onto first: TextLine, page: PageContent, body: CGFloat) -> Bool {
+        let size = max(last.fontSize, first.fontSize)
+        let gap = last.rect.minY - first.rect.maxY
+        guard first.fontSize < last.fontSize * 1.15, gap > -size * 0.4, gap < size * 0.9,
+              abs(first.rect.minX - last.rect.minX) <= body * 0.5 || abs(first.rect.midX - last.rect.midX) <= body * 0.5,
+              first != last else { return false }
+        return !page.lines.contains { other in
+            other != last && other != first && other.rect.midY < last.rect.midY && other.rect.midY > first.rect.midY
+                && other.rect.maxX > first.rect.minX && other.rect.minX < first.rect.maxX
+                && other.rect.maxX > last.rect.minX && other.rect.minX < last.rect.maxX
+        }
+    }
+
     private static func continuesColumn(_ left: InlineText, _ leftBlock: ReflowBlock, into right: InlineText,
                                         _ rightBlock: ReflowBlock, page: PageContent, images: [CGRect],
                                         captions: [String], body: CGFloat) -> Bool {
         if let leftGroup = leftBlock.structureGroup, let rightGroup = rightBlock.structureGroup,
            leftGroup != rightGroup { return false }
-        guard continuesSentence(left, into: right),
-              let last = lastLine(of: left.text, in: page.lines),
+        guard !endsSentence(left), let last = lastLine(of: left.text, in: page.lines),
               let first = firstLine(of: right.text, in: page.lines),
+              continuesSentence(left, into: right, sameTag: sameParagraphTag(last, first)),
               wordCount(first.text) >= 2, readsAsProse(last.text), readsAsProse(first.text),
-              fillsColumn(last, in: page.lines, body: body) else { return false }
+              fillsColumn(last, in: page.lines, body: body)
+                || right.text.first?.isLowercase == true && endsOnAComma(last, body: body) else { return false }
         // Evidence weaker than a lowercase opening needs the continuation in the anchor's type (FAA
         // page 341's `…the threshold for` does not continue in the wrapped caption line `14 with
         // collocated Taxiway Alpha location sign.` beneath figure 14-9) and on a full line.
@@ -3442,17 +3497,56 @@ enum LayoutReconstructor {
     /// lowercase or, after a word that cannot end a sentence (an article, preposition,
     /// conjunction, auxiliary, determiner or possessive), with a capital, a digit or an opening
     /// quote (FAA `…further increasing the` / `AOA.`, `…about 2 °Celsius (C) every` / `1,000 feet`).
-    static func continuesSentence(_ left: InlineText, into right: InlineText) -> Bool {
+    /// Two more kinds of evidence admit those openings after any word (#145): the last sentence
+    /// leaves a parenthesis open (FAA page 169's `…Fahrenheit degrees (70 x 100/180 = 38.89` /
+    /// `Celsius degrees)`), or `sameTag`, the source's structure tree puts the anchor's last line
+    /// and the continuation's first line in one paragraph (FAA page 24's `…education. The FAA` /
+    /// `Safety Team (FAASTeam) exemplifies this commitment.`, both in one `P` interrupted by a figure).
+    static func continuesSentence(_ left: InlineText, into right: InlineText, sameTag: Bool = false) -> Bool {
         guard !endsSentence(left), let opening = right.text.first else { return false }
         if opening.isLowercase { return true }
         guard opening.isUppercase || opening.isNumber || opening == "\u{201C}" || opening == "\"",
               let last = left.text.split(whereSeparator: \.isWhitespace).last else { return false }
+        if sameTag || leavesParenthesisOpen(left.text) { return true }
         let word = String(last)
         for suffix in ["\u{2019}s", "'s"] where word.hasSuffix(suffix) {
             let stem = word.dropLast(2)
             return stem.count >= 2 && stem.allSatisfy(\.isLetter)
         }
         return openWords.contains(word.lowercased())
+    }
+
+    /// The text after its last sentence end (terminal punctuation, closing quotes or brackets, then a
+    /// space) opens more parentheses than it closes.
+    static func leavesParenthesisOpen(_ text: String) -> Bool {
+        guard text.contains("(") else { return false }
+        let whole = NSRange(text.startIndex..., in: text)
+        let start = sentenceEnd.matches(in: text, range: whole).last
+            .flatMap { Range($0.range, in: text)?.upperBound } ?? text.startIndex
+        let sentence = text[start...]
+        return sentence.filter { $0 == "(" }.count > sentence.filter { $0 == ")" }.count
+    }
+
+    private static let sentenceEnd = try! NSRegularExpression(pattern: "[.!?][\u{201D}\u{2019}\"')\\]]*\\s")
+
+    /// Both lines carry one validated paragraph identity from the source's structure tree.
+    static func sameParagraphTag(_ last: TextLine?, _ first: TextLine?) -> Bool {
+        guard let left = last?.structure, let right = first?.structure else { return false }
+        return left.group == right.group && left.headingLevel == 0 && right.headingLevel == 0
+    }
+
+    /// A column's last line that ends on a comma after a word of prose, in the page's body size, at
+    /// least three words and twelve bodies wide. The comma leaves the sentence open, so the line need
+    /// not reach the column's edge: FAA page 221 ends its right column `compass. Errors in the magnetic
+    /// compass are numerous,` at x 535.7 against the column's 562.3, and page 438 `list, states have
+    /// taken steps to allow the possession, sale,` at 510.5 against 522.1, each the last line of its
+    /// text frame, set short in print (the shows' measured advances agree with PDFKit's rectangles,
+    /// #145). NBS page 1's 3-point footnote `…references al the end of thi s paper,`, whose period
+    /// OCR read as a comma, is not body type. Used only before a lowercase opening.
+    private static func endsOnAComma(_ last: TextLine, body: CGFloat) -> Bool {
+        let text = last.text.trimmingCharacters(in: .whitespaces)
+        guard text.hasSuffix(","), text.dropLast().last?.isLetter == true else { return false }
+        return wordCount(text) >= 3 && last.rect.width >= body * 12 && Int(last.fontSize.rounded()) == Int(body)
     }
 
     /// The continuation's first line fills its column, or ends short because it closes the sentence

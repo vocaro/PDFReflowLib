@@ -1,0 +1,4661 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "7-10"
+        }
+      ],
+      "text" : "7-10"
+    },
+    {
+      "rect" : [
+        36.788100000000014,
+        107.5022,
+        235.95099999999999,
+        159.97899999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36.561700000000002,
+        88.212600000000009,
+        238.09900000000002,
+        10.811999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 7-12."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "Although carburetor ice is most likely to form when"
+        }
+      ],
+      "text" : "Figure 7-12. Although carburetor ice is most likely to form when"
+    },
+    {
+      "rect" : [
+        36.559400000000011,
+        76.317599999999999,
+        238.08959999999993,
+        10.206000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "the temperature and humidity are in ranges indicated by this chart,"
+        }
+      ],
+      "text" : "the temperature and humidity are in ranges indicated by this chart,"
+    },
+    {
+      "rect" : [
+        36.559400000000011,
+        63.816599999999994,
+        210.99599999999992,
+        10.206000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "carburetor icing is possible under conditions not depicted."
+        }
+      ],
+      "text" : "carburetor icing is possible under conditions not depicted."
+    },
+    {
+      "rect" : [
+        285,
+        719.56640000000004,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "presence. If detected, full carburetor heat should be applied"
+        }
+      ],
+      "text" : "presence. If detected, full carburetor heat should be applied"
+    },
+    {
+      "rect" : [
+        285,
+        707.06640000000004,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "immediately, and it should be left in the ON position until"
+        }
+      ],
+      "text" : "immediately, and it should be left in the ON position until"
+    },
+    {
+      "rect" : [
+        285,
+        694.56640000000004,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the pilot is certain that all the ice has been removed. If ice"
+        }
+      ],
+      "text" : "the pilot is certain that all the ice has been removed. If ice"
+    },
+    {
+      "rect" : [
+        285,
+        682.06640000000004,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is present, applying partial heat or leaving heat on for an"
+        }
+      ],
+      "text" : "is present, applying partial heat or leaving heat on for an"
+    },
+    {
+      "rect" : [
+        285,
+        669.56640000000004,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "insufficient time might aggravate the situation. In extreme"
+        }
+      ],
+      "text" : "insufficient time might aggravate the situation. In extreme"
+    },
+    {
+      "rect" : [
+        285,
+        657.06640000000004,
+        237.01999999999975,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "cases of carburetor icing, even after the ice has been removed,"
+        }
+      ],
+      "text" : "cases of carburetor icing, even after the ice has been removed,"
+    },
+    {
+      "rect" : [
+        285,
+        644.56640000000004,
+        237.04000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "full carburetor heat should be used to prevent further ice"
+        }
+      ],
+      "text" : "full carburetor heat should be used to prevent further ice"
+    },
+    {
+      "rect" : [
+        285,
+        632.06640000000004,
+        236.79599999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "formation. If installed, a carburetor temperature gauge is"
+        }
+      ],
+      "text" : "formation. If installed, a carburetor temperature gauge is"
+    },
+    {
+      "rect" : [
+        285,
+        619.56640000000004,
+        201.06999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "useful in determining when to use carburetor heat."
+        }
+      ],
+      "text" : "useful in determining when to use carburetor heat."
+    },
+    {
+      "rect" : [
+        285,
+        594.56640000000004,
+        237.10000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Whenever the throttle is closed during flight, the engine cools"
+        }
+      ],
+      "text" : "Whenever the throttle is closed during flight, the engine cools"
+    },
+    {
+      "rect" : [
+        285,
+        582.06640000000004,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "rapidly and vaporization of the fuel is less complete than if"
+        }
+      ],
+      "text" : "rapidly and vaporization of the fuel is less complete than if"
+    },
+    {
+      "rect" : [
+        285,
+        569.56640000000004,
+        237.05000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the engine is warm. Also, in this condition, the engine is more"
+        }
+      ],
+      "text" : "the engine is warm. Also, in this condition, the engine is more"
+    },
+    {
+      "rect" : [
+        285,
+        557.06640000000004,
+        237.08000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "susceptible to carburetor icing. If carburetor icing conditions"
+        }
+      ],
+      "text" : "susceptible to carburetor icing. If carburetor icing conditions"
+    },
+    {
+      "rect" : [
+        285,
+        544.56640000000004,
+        237.01499999999965,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are suspected and closed-throttle operation anticipated, adjust"
+        }
+      ],
+      "text" : "are suspected and closed-throttle operation anticipated, adjust"
+    },
+    {
+      "rect" : [
+        285,
+        532.06640000000004,
+        237.00699999999983,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the carburetor heat to the full ON position before closing the"
+        }
+      ],
+      "text" : "the carburetor heat to the full ON position before closing the"
+    },
+    {
+      "rect" : [
+        285,
+        519.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "throttle and leave it on during the closed-throttle operation."
+        }
+      ],
+      "text" : "throttle and leave it on during the closed-throttle operation."
+    },
+    {
+      "rect" : [
+        285,
+        507.06640000000004,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The heat aids in vaporizing the fuel and helps prevent the"
+        }
+      ],
+      "text" : "The heat aids in vaporizing the fuel and helps prevent the"
+    },
+    {
+      "rect" : [
+        285,
+        494.56640000000004,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "formation of carburetor ice. Periodically, open the throttle"
+        }
+      ],
+      "text" : "formation of carburetor ice. Periodically, open the throttle"
+    },
+    {
+      "rect" : [
+        285,
+        482.06640000000004,
+        236.84400000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "smoothly for a few seconds to keep the engine warm;"
+        }
+      ],
+      "text" : "smoothly for a few seconds to keep the engine warm;"
+    },
+    {
+      "rect" : [
+        285,
+        469.56640000000004,
+        236.9799999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "otherwise, the carburetor heater may not provide enough"
+        }
+      ],
+      "text" : "otherwise, the carburetor heater may not provide enough"
+    },
+    {
+      "rect" : [
+        285,
+        457.06640000000004,
+        84.430000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "heat to prevent icing."
+        }
+      ],
+      "text" : "heat to prevent icing."
+    },
+    {
+      "rect" : [
+        285,
+        432.06640000000004,
+        237.11999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The use of carburetor heat causes a decrease in engine"
+        }
+      ],
+      "text" : "The use of carburetor heat causes a decrease in engine"
+    },
+    {
+      "rect" : [
+        285,
+        419.56640000000004,
+        237.10699999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "power, sometimes up to 15 percent, because the heated"
+        }
+      ],
+      "text" : "power, sometimes up to 15 percent, because the heated"
+    },
+    {
+      "rect" : [
+        285,
+        407.06640000000004,
+        237.01599999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "air is less dense than the outside air that had been entering"
+        }
+      ],
+      "text" : "air is less dense than the outside air that had been entering"
+    },
+    {
+      "rect" : [
+        285,
+        394.56640000000004,
+        237.02399999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the engine. This enriches the mixture. When ice is present"
+        }
+      ],
+      "text" : "the engine. This enriches the mixture. When ice is present"
+    },
+    {
+      "rect" : [
+        285,
+        382.06640000000004,
+        237.11500000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in an aircraft with a fixed-pitch propeller and carburetor"
+        }
+      ],
+      "text" : "in an aircraft with a fixed-pitch propeller and carburetor"
+    },
+    {
+      "rect" : [
+        285,
+        369.56640000000004,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "heat is being used, there is a decrease in rpm, followed by"
+        }
+      ],
+      "text" : "heat is being used, there is a decrease in rpm, followed by"
+    },
+    {
+      "rect" : [
+        285,
+        357.06640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a gradual increase in rpm as the ice melts. The engine also"
+        }
+      ],
+      "text" : "a gradual increase in rpm as the ice melts. The engine also"
+    },
+    {
+      "rect" : [
+        285,
+        344.56640000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "should run more smoothly after the ice has been removed."
+        }
+      ],
+      "text" : "should run more smoothly after the ice has been removed."
+    },
+    {
+      "rect" : [
+        285,
+        332.06640000000004,
+        237.1450000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "If ice is not present, the rpm decreases and then remains"
+        }
+      ],
+      "text" : "If ice is not present, the rpm decreases and then remains"
+    },
+    {
+      "rect" : [
+        285,
+        319.56640000000004,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "constant. When carburetor heat is used on an aircraft with a"
+        }
+      ],
+      "text" : "constant. When carburetor heat is used on an aircraft with a"
+    },
+    {
+      "rect" : [
+        285,
+        307.06640000000004,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "constant-speed propeller and ice is present, a decrease in the"
+        }
+      ],
+      "text" : "constant-speed propeller and ice is present, a decrease in the"
+    },
+    {
+      "rect" : [
+        285,
+        294.56640000000004,
+        237.04000000000019,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "manifold pressure is noticed, followed by a gradual increase."
+        }
+      ],
+      "text" : "manifold pressure is noticed, followed by a gradual increase."
+    },
+    {
+      "rect" : [
+        285,
+        282.06640000000004,
+        236.82599999999979,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "If carburetor icing is not present, the gradual increase in"
+        }
+      ],
+      "text" : "If carburetor icing is not present, the gradual increase in"
+    },
+    {
+      "rect" : [
+        285,
+        269.56640000000004,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "manifold pressure is not apparent until the carburetor heat"
+        }
+      ],
+      "text" : "manifold pressure is not apparent until the carburetor heat"
+    },
+    {
+      "rect" : [
+        285,
+        257.06640000000004,
+        51.379999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is turned off."
+        }
+      ],
+      "text" : "is turned off."
+    },
+    {
+      "rect" : [
+        285,
+        232.06640000000004,
+        237.09000000000003,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "It is imperative for a pilot to recognize carburetor ice when it"
+        }
+      ],
+      "text" : "It is imperative for a pilot to recognize carburetor ice when it"
+    },
+    {
+      "rect" : [
+        285,
+        219.56640000000004,
+        237.11499999999978,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "forms during flight to prevent a loss in power, altitude, and/or"
+        }
+      ],
+      "text" : "forms during flight to prevent a loss in power, altitude, and/or"
+    },
+    {
+      "rect" : [
+        285,
+        207.06640000000004,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "airspeed. These symptoms may sometimes be accompanied"
+        }
+      ],
+      "text" : "airspeed. These symptoms may sometimes be accompanied"
+    },
+    {
+      "rect" : [
+        285,
+        194.56640000000004,
+        237.01999999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "by vibration or engine roughness. Once a power loss is"
+        }
+      ],
+      "text" : "by vibration or engine roughness. Once a power loss is"
+    },
+    {
+      "rect" : [
+        285,
+        182.06640000000004,
+        237.0089999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "noticed, immediate action should be taken to eliminate ice"
+        }
+      ],
+      "text" : "noticed, immediate action should be taken to eliminate ice"
+    },
+    {
+      "rect" : [
+        285,
+        169.56640000000004,
+        237.01799999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "already formed in the carburetor and to prevent further ice"
+        }
+      ],
+      "text" : "already formed in the carburetor and to prevent further ice"
+    },
+    {
+      "rect" : [
+        285,
+        157.06640000000004,
+        237.01299999999992,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "formation. This is accomplished by applying full carburetor"
+        }
+      ],
+      "text" : "formation. This is accomplished by applying full carburetor"
+    },
+    {
+      "rect" : [
+        285,
+        144.56640000000004,
+        236.99000000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "heat, which will further reduce power and may cause engine"
+        }
+      ],
+      "text" : "heat, which will further reduce power and may cause engine"
+    },
+    {
+      "rect" : [
+        285,
+        132.06640000000004,
+        237.12699999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "roughness as melted ice goes through the engine. These"
+        }
+      ],
+      "text" : "roughness as melted ice goes through the engine. These"
+    },
+    {
+      "rect" : [
+        285,
+        119.56640000000004,
+        237.10600000000022,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "symptoms may last from 30 seconds to several minutes,"
+        }
+      ],
+      "text" : "symptoms may last from 30 seconds to several minutes,"
+    },
+    {
+      "rect" : [
+        285,
+        107.06640000000004,
+        237.10800000000006,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "depending on the severity of the icing. During this period, the"
+        }
+      ],
+      "text" : "depending on the severity of the icing. During this period, the"
+    },
+    {
+      "rect" : [
+        285,
+        94.566400000000044,
+        237.06999999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pilot must resist the temptation to decrease the carburetor heat"
+        }
+      ],
+      "text" : "pilot must resist the temptation to decrease the carburetor heat"
+    },
+    {
+      "rect" : [
+        285,
+        82.066400000000044,
+        237.01499999999987,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "usage. Carburetor heat must remain in the full-hot position"
+        }
+      ],
+      "text" : "usage. Carburetor heat must remain in the full-hot position"
+    },
+    {
+      "rect" : [
+        285,
+        69.566400000000044,
+        109.43000000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "until normal power returns."
+        }
+      ],
+      "text" : "until normal power returns."
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        719.56640000000004,
+        237.07999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Celsius degrees) (Remember there are 180 Fahrenheit degrees"
+        }
+      ],
+      "text" : "Celsius degrees) (Remember there are 180 Fahrenheit degrees"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        707.06640000000004,
+        237.01399999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "from freezing to boiling versus 100 degrees for the Celsius"
+        }
+      ],
+      "text" : "from freezing to boiling versus 100 degrees for the Celsius"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        694.56640000000004,
+        237.09399999999985,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "scale.) Therefore, an outside air temperature of 100 F (38 C),"
+        }
+      ],
+      "text" : "scale.) Therefore, an outside air temperature of 100 F (38 C),"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        682.06640000000004,
+        237.00500000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a temperature drop of an absolute 70 F degrees (38.89 Celsius"
+        }
+      ],
+      "text" : "a temperature drop of an absolute 70 F degrees (38.89 Celsius"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        669.56640000000004,
+        237.01300000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "degrees) results in an air temperature in the carburetor of 30"
+        }
+      ],
+      "text" : "degrees) results in an air temperature in the carburetor of 30"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        657.06640000000004,
+        93.049999999999983,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "F (-1 C). "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "italic" : true,
+          "text" : "[Figure 7-12]"
+        }
+      ],
+      "text" : "F (-1 C). [Figure 7-12]"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        632.06640000000004,
+        237.00199999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The first indication of carburetor icing in an aircraft with"
+        }
+      ],
+      "text" : "The first indication of carburetor icing in an aircraft with"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        619.56640000000004,
+        237.01800000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a fixed-pitch propeller is a decrease in engine rpm, which"
+        }
+      ],
+      "text" : "a fixed-pitch propeller is a decrease in engine rpm, which"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        607.06640000000004,
+        236.98699999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "may be followed by engine roughness. In an aircraft with a"
+        }
+      ],
+      "text" : "may be followed by engine roughness. In an aircraft with a"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        594.56640000000004,
+        237.01999999999978,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "constant-speed propeller, carburetor icing is usually indicated"
+        }
+      ],
+      "text" : "constant-speed propeller, carburetor icing is usually indicated"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        582.06640000000004,
+        236.99999999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "by a decrease in manifold pressure, but no reduction in rpm."
+        }
+      ],
+      "text" : "by a decrease in manifold pressure, but no reduction in rpm."
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        569.56640000000004,
+        237.00399999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Propeller pitch is automatically adjusted to compensate for"
+        }
+      ],
+      "text" : "Propeller pitch is automatically adjusted to compensate for"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        557.06640000000004,
+        237.01199999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "loss of power. Thus, a constant rpm is maintained. Although"
+        }
+      ],
+      "text" : "loss of power. Thus, a constant rpm is maintained. Although"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        544.56640000000004,
+        237.12700000000021,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "carburetor ice can occur during any phase of flight, it is"
+        }
+      ],
+      "text" : "carburetor ice can occur during any phase of flight, it is"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        532.06640000000004,
+        237.01399999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "particularly dangerous when using reduced power during a"
+        }
+      ],
+      "text" : "particularly dangerous when using reduced power during a"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        519.56640000000004,
+        236.94999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "descent. Under certain conditions, carburetor ice could build"
+        }
+      ],
+      "text" : "descent. Under certain conditions, carburetor ice could build"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        507.06640000000004,
+        237.0079999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "unnoticed until power is added. To combat the effects of"
+        }
+      ],
+      "text" : "unnoticed until power is added. To combat the effects of"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        494.56640000000004,
+        237.00299999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "carburetor ice, engines with float-type carburetors employ a"
+        }
+      ],
+      "text" : "carburetor ice, engines with float-type carburetors employ a"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        482.06640000000004,
+        93.03000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "carburetor heat system."
+        }
+      ],
+      "text" : "carburetor heat system."
+    },
+    {
+      "rect" : [
+        36,
+        455.84340000000003,
+        75.481999999999999,
+        13.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Times-BoldItalic",
+          "fontSize" : 11,
+          "italic" : true,
+          "text" : "Carburetor Heat"
+        }
+      ],
+      "text" : "Carburetor Heat"
+    },
+    {
+      "rect" : [
+        36,
+        442.06640000000004,
+        237.06000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Carburetor heat is an anti-icing system that preheats the air"
+        }
+      ],
+      "text" : "Carburetor heat is an anti-icing system that preheats the air"
+    },
+    {
+      "rect" : [
+        36,
+        429.56640000000004,
+        237.01999999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "before it reaches the carburetor and is intended to keep the"
+        }
+      ],
+      "text" : "before it reaches the carburetor and is intended to keep the"
+    },
+    {
+      "rect" : [
+        36,
+        417.06640000000004,
+        237.05999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "fuel-air mixture above freezing to prevent the formation of"
+        }
+      ],
+      "text" : "fuel-air mixture above freezing to prevent the formation of"
+    },
+    {
+      "rect" : [
+        36,
+        404.56640000000004,
+        237.03000000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "carburetor ice. Carburetor heat can be used to melt ice that has"
+        }
+      ],
+      "text" : "carburetor ice. Carburetor heat can be used to melt ice that has"
+    },
+    {
+      "rect" : [
+        36,
+        392.06640000000004,
+        237.03999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "already formed in the carburetor if the accumulation is not too"
+        }
+      ],
+      "text" : "already formed in the carburetor if the accumulation is not too"
+    },
+    {
+      "rect" : [
+        36,
+        379.56640000000004,
+        237.07000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "great, but using carburetor heat as a preventative measure is"
+        }
+      ],
+      "text" : "great, but using carburetor heat as a preventative measure is"
+    },
+    {
+      "rect" : [
+        36,
+        367.06640000000004,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the better option. Additionally, carburetor heat may be used"
+        }
+      ],
+      "text" : "the better option. Additionally, carburetor heat may be used"
+    },
+    {
+      "rect" : [
+        36,
+        354.56640000000004,
+        237.03000000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "as an alternate air source if the intake filter clogs, such as in"
+        }
+      ],
+      "text" : "as an alternate air source if the intake filter clogs, such as in"
+    },
+    {
+      "rect" : [
+        36,
+        342.06640000000004,
+        237.11999999999983,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "sudden or unexpected airframe icing conditions. The carburetor"
+        }
+      ],
+      "text" : "sudden or unexpected airframe icing conditions. The carburetor"
+    },
+    {
+      "rect" : [
+        36,
+        329.56640000000004,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "heat should be checked during the engine runup. When using"
+        }
+      ],
+      "text" : "heat should be checked during the engine runup. When using"
+    },
+    {
+      "rect" : [
+        36,
+        317.06640000000004,
+        237.03500000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "carburetor heat, follow the manufacturer’s recommendations."
+        }
+      ],
+      "text" : "carburetor heat, follow the manufacturer’s recommendations."
+    },
+    {
+      "rect" : [
+        36,
+        292.06640000000004,
+        237.00399999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When conditions are conducive to carburetor icing during"
+        }
+      ],
+      "text" : "When conditions are conducive to carburetor icing during"
+    },
+    {
+      "rect" : [
+        36,
+        279.56640000000004,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "flight, periodic checks should be made to detect its"
+        }
+      ],
+      "text" : "flight, periodic checks should be made to detect its"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      36.288000000000004,
+      107.002,
+      236.952,
+      160.71799999999996
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "text" : "7-10"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        36.561700000000002,
+        88.212600000000009,
+        238.09900000000002,
+        10.811999999999998
+      ],
+      "structure" : {
+        "group" : 3177,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 15318
+      },
+      "text" : "Figure 7-12. Although carburetor ice is most likely to form when"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        36.559400000000011,
+        76.317599999999999,
+        238.08959999999993,
+        10.206000000000003
+      ],
+      "structure" : {
+        "group" : 3177,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 15321
+      },
+      "text" : "the temperature and humidity are in ranges indicated by this chart,"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        36.559400000000011,
+        63.816599999999994,
+        210.99599999999992,
+        10.206000000000003
+      ],
+      "structure" : {
+        "group" : 3177,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 15322
+      },
+      "text" : "carburetor icing is possible under conditions not depicted."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        719.56640000000004,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2772,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13138
+      },
+      "text" : "presence. If detected, full carburetor heat should be applied"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        707.06640000000004,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2772,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13139
+      },
+      "text" : "immediately, and it should be left in the ON position until"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        694.56640000000004,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2772,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13140
+      },
+      "text" : "the pilot is certain that all the ice has been removed. If ice"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        682.06640000000004,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2772,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13141
+      },
+      "text" : "is present, applying partial heat or leaving heat on for an"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        669.56640000000004,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2772,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13142
+      },
+      "text" : "insufficient time might aggravate the situation. In extreme"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        657.06640000000004,
+        237.01999999999975,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2772,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13143
+      },
+      "text" : "cases of carburetor icing, even after the ice has been removed,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        644.56640000000004,
+        237.04000000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2772,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13144
+      },
+      "text" : "full carburetor heat should be used to prevent further ice"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        632.06640000000004,
+        236.79599999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2772,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13145
+      },
+      "text" : "formation. If installed, a carburetor temperature gauge is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        619.56640000000004,
+        201.06999999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2772,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13146
+      },
+      "text" : "useful in determining when to use carburetor heat."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        594.56640000000004,
+        237.10000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2773,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 13147
+      },
+      "text" : "Whenever the throttle is closed during flight, the engine cools"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        582.06640000000004,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2773,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 13148
+      },
+      "text" : "rapidly and vaporization of the fuel is less complete than if"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        569.56640000000004,
+        237.05000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2773,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 13149
+      },
+      "text" : "the engine is warm. Also, in this condition, the engine is more"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        557.06640000000004,
+        237.08000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2773,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 13150
+      },
+      "text" : "susceptible to carburetor icing. If carburetor icing conditions"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        544.56640000000004,
+        237.01499999999965,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2773,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 13151
+      },
+      "text" : "are suspected and closed-throttle operation anticipated, adjust"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        532.06640000000004,
+        237.00699999999983,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2773,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 13152
+      },
+      "text" : "the carburetor heat to the full ON position before closing the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        519.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2773,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 13153
+      },
+      "text" : "throttle and leave it on during the closed-throttle operation."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        507.06640000000004,
+        237,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2773,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 13154
+      },
+      "text" : "The heat aids in vaporizing the fuel and helps prevent the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        494.56640000000004,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2773,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 13155
+      },
+      "text" : "formation of carburetor ice. Periodically, open the throttle"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        482.06640000000004,
+        236.84400000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2773,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 13156
+      },
+      "text" : "smoothly for a few seconds to keep the engine warm;"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        469.56640000000004,
+        236.9799999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2773,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 13157
+      },
+      "text" : "otherwise, the carburetor heater may not provide enough"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        457.06640000000004,
+        84.430000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2773,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 13158
+      },
+      "text" : "heat to prevent icing."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        432.06640000000004,
+        237.11999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2774,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 13159
+      },
+      "text" : "The use of carburetor heat causes a decrease in engine"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        419.56640000000004,
+        237.10699999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2774,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 13160
+      },
+      "text" : "power, sometimes up to 15 percent, because the heated"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        407.06640000000004,
+        237.01599999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2774,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 13161
+      },
+      "text" : "air is less dense than the outside air that had been entering"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        394.56640000000004,
+        237.02399999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2774,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 13162
+      },
+      "text" : "the engine. This enriches the mixture. When ice is present"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        382.06640000000004,
+        237.11500000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2774,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 13163
+      },
+      "text" : "in an aircraft with a fixed-pitch propeller and carburetor"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        369.56640000000004,
+        237.01299999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2774,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 13164
+      },
+      "text" : "heat is being used, there is a decrease in rpm, followed by"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        357.06640000000004,
+        237.0139999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2774,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 13165
+      },
+      "text" : "a gradual increase in rpm as the ice melts. The engine also"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        344.56640000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2774,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 13166
+      },
+      "text" : "should run more smoothly after the ice has been removed."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        332.06640000000004,
+        237.1450000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2774,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 13167
+      },
+      "text" : "If ice is not present, the rpm decreases and then remains"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        319.56640000000004,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2774,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 13168
+      },
+      "text" : "constant. When carburetor heat is used on an aircraft with a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        307.06640000000004,
+        237.00399999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2774,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 13169
+      },
+      "text" : "constant-speed propeller and ice is present, a decrease in the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        294.56640000000004,
+        237.04000000000019,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2774,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 13170
+      },
+      "text" : "manifold pressure is noticed, followed by a gradual increase."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        282.06640000000004,
+        236.82599999999979,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2774,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 13171
+      },
+      "text" : "If carburetor icing is not present, the gradual increase in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        269.56640000000004,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2774,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 13172
+      },
+      "text" : "manifold pressure is not apparent until the carburetor heat"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        257.06640000000004,
+        51.379999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2774,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 13173
+      },
+      "text" : "is turned off."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        232.06640000000004,
+        237.09000000000003,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2775,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 13174
+      },
+      "text" : "It is imperative for a pilot to recognize carburetor ice when it"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        219.56640000000004,
+        237.11499999999978,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2775,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 13175
+      },
+      "text" : "forms during flight to prevent a loss in power, altitude, and/or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        207.06640000000004,
+        237.00999999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2775,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 13176
+      },
+      "text" : "airspeed. These symptoms may sometimes be accompanied"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        194.56640000000004,
+        237.01999999999998,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2775,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 13177
+      },
+      "text" : "by vibration or engine roughness. Once a power loss is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        182.06640000000004,
+        237.0089999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2775,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 13178
+      },
+      "text" : "noticed, immediate action should be taken to eliminate ice"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        169.56640000000004,
+        237.01799999999992,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2775,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 13179
+      },
+      "text" : "already formed in the carburetor and to prevent further ice"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        157.06640000000004,
+        237.01299999999992,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2775,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 13180
+      },
+      "text" : "formation. This is accomplished by applying full carburetor"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        144.56640000000004,
+        236.99000000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2775,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 13181
+      },
+      "text" : "heat, which will further reduce power and may cause engine"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        132.06640000000004,
+        237.12699999999995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2775,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 13182
+      },
+      "text" : "roughness as melted ice goes through the engine. These"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        119.56640000000004,
+        237.10600000000022,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2775,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 13183
+      },
+      "text" : "symptoms may last from 30 seconds to several minutes,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        107.06640000000004,
+        237.10800000000006,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2775,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 13184
+      },
+      "text" : "depending on the severity of the icing. During this period, the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        94.566400000000044,
+        237.06999999999994,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2775,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 13185
+      },
+      "text" : "pilot must resist the temptation to decrease the carburetor heat"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        82.066400000000044,
+        237.01499999999987,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2775,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 13186
+      },
+      "text" : "usage. Carburetor heat must remain in the full-hot position"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        69.566400000000044,
+        109.43000000000001,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 2775,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 13187
+      },
+      "text" : "until normal power returns."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        719.56640000000004,
+        237.07999999999996,
+        11.470000000000027
+      ],
+      "text" : "Celsius degrees) (Remember there are 180 Fahrenheit degrees"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        707.06640000000004,
+        237.01399999999992,
+        11.470000000000027
+      ],
+      "text" : "from freezing to boiling versus 100 degrees for the Celsius"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        694.56640000000004,
+        237.09399999999985,
+        11.470000000000027
+      ],
+      "text" : "scale.) Therefore, an outside air temperature of 100 F (38 C),"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        682.06640000000004,
+        237.00500000000002,
+        11.470000000000027
+      ],
+      "text" : "a temperature drop of an absolute 70 F degrees (38.89 Celsius"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        669.56640000000004,
+        237.01300000000001,
+        11.470000000000027
+      ],
+      "text" : "degrees) results in an air temperature in the carburetor of 30"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        657.06640000000004,
+        93.049999999999983,
+        11.470000000000027
+      ],
+      "text" : "F (-1 C). [Figure 7-12]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        632.06640000000004,
+        237.00199999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2769,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 13111
+      },
+      "text" : "The first indication of carburetor icing in an aircraft with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        619.56640000000004,
+        237.01800000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2769,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 13112
+      },
+      "text" : "a fixed-pitch propeller is a decrease in engine rpm, which"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        607.06640000000004,
+        236.98699999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2769,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 13113
+      },
+      "text" : "may be followed by engine roughness. In an aircraft with a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        594.56640000000004,
+        237.01999999999978,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2769,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 13114
+      },
+      "text" : "constant-speed propeller, carburetor icing is usually indicated"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        582.06640000000004,
+        236.99999999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2769,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 13115
+      },
+      "text" : "by a decrease in manifold pressure, but no reduction in rpm."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        569.56640000000004,
+        237.00399999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2769,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 13116
+      },
+      "text" : "Propeller pitch is automatically adjusted to compensate for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        557.06640000000004,
+        237.01199999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2769,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 13117
+      },
+      "text" : "loss of power. Thus, a constant rpm is maintained. Although"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        544.56640000000004,
+        237.12700000000021,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2769,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 13118
+      },
+      "text" : "carburetor ice can occur during any phase of flight, it is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        532.06640000000004,
+        237.01399999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2769,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 13119
+      },
+      "text" : "particularly dangerous when using reduced power during a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        519.56640000000004,
+        236.94999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2769,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 13120
+      },
+      "text" : "descent. Under certain conditions, carburetor ice could build"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        507.06640000000004,
+        237.0079999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2769,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 13121
+      },
+      "text" : "unnoticed until power is added. To combat the effects of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        494.56640000000004,
+        237.00299999999984,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2769,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 13122
+      },
+      "text" : "carburetor ice, engines with float-type carburetors employ a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        482.06640000000004,
+        93.03000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2769,
+        "headingLevel" : 0,
+        "lineCount" : 13,
+        "opensWithSplitMarker" : false,
+        "order" : 13123
+      },
+      "text" : "carburetor heat system."
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        455.84340000000003,
+        75.481999999999999,
+        13.310000000000002
+      ],
+      "structure" : {
+        "group" : 2770,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 13124
+      },
+      "text" : "Carburetor Heat"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        442.06640000000004,
+        237.06000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2771,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13125
+      },
+      "text" : "Carburetor heat is an anti-icing system that preheats the air"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        429.56640000000004,
+        237.01999999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2771,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13126
+      },
+      "text" : "before it reaches the carburetor and is intended to keep the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        417.06640000000004,
+        237.05999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2771,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13127
+      },
+      "text" : "fuel-air mixture above freezing to prevent the formation of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        404.56640000000004,
+        237.03000000000009,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2771,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13128
+      },
+      "text" : "carburetor ice. Carburetor heat can be used to melt ice that has"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        392.06640000000004,
+        237.03999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2771,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13129
+      },
+      "text" : "already formed in the carburetor if the accumulation is not too"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        379.56640000000004,
+        237.07000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2771,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13130
+      },
+      "text" : "great, but using carburetor heat as a preventative measure is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        367.06640000000004,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2771,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13131
+      },
+      "text" : "the better option. Additionally, carburetor heat may be used"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        354.56640000000004,
+        237.03000000000009,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2771,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13132
+      },
+      "text" : "as an alternate air source if the intake filter clogs, such as in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        342.06640000000004,
+        237.11999999999983,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2771,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13133
+      },
+      "text" : "sudden or unexpected airframe icing conditions. The carburetor"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        329.56640000000004,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2771,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13134
+      },
+      "text" : "heat should be checked during the engine runup. When using"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        317.06640000000004,
+        237.03500000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2771,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13135
+      },
+      "text" : "carburetor heat, follow the manufacturer’s recommendations."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        292.06640000000004,
+        237.00399999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2772,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13136
+      },
+      "text" : "When conditions are conducive to carburetor icing during"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        279.56640000000004,
+        237,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 2772,
+        "headingLevel" : 0,
+        "lineCount" : 11,
+        "opensWithSplitMarker" : false,
+        "order" : 13137
+      },
+      "text" : "flight, periodic checks should be made to detect its"
+    }
+  ],
+  "page" : 170,
+  "paints" : [
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.2883,
+        108.00200000000001,
+        234.95069999999998,
+        159.71799999999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        37.2883,
+        108.00200000000001,
+        234.95070000000004,
+        159.71799999999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        36.288000000000004,
+        107.002,
+        236.952,
+        160.71799999999996
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        78.145900000000012,
+        137.08340000000001,
+        184.143,
+        126.785
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        78.145900000000012,
+        137.08340000000001,
+        184.143,
+        126.785
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        249.87700000000001,
+        179.5702,
+        2.421999999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        249.87700000000001,
+        179.5702,
+        2.421999999999997
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        245.035,
+        179.5702,
+        2.4230000000000018
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        245.035,
+        179.5702,
+        2.4230000000000018
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        240.19300000000001,
+        179.5702,
+        2.4230000000000018
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        240.19300000000001,
+        179.5702,
+        2.4230000000000018
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        235.351,
+        179.5702,
+        2.421999999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        235.351,
+        179.5702,
+        2.421999999999997
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        259.56099999999998,
+        179.5702,
+        2.4220000000000255
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        259.56099999999998,
+        179.5702,
+        2.4220000000000255
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        255.10599999999999,
+        179.5702,
+        2.035000000000025
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        255.10599999999999,
+        179.5702,
+        2.035000000000025
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        230.50800000000001,
+        179.5702,
+        2.4230000000000018
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        230.50800000000001,
+        179.5702,
+        2.4230000000000018
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        225.667,
+        179.5702,
+        2.421999999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        225.667,
+        179.5702,
+        2.421999999999997
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        220.82599999999999,
+        179.5702,
+        2.4210000000000207
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        220.82599999999999,
+        179.5702,
+        2.4210000000000207
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        215.98400000000001,
+        179.5702,
+        2.421999999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        215.98400000000001,
+        179.5702,
+        2.421999999999997
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        211.143,
+        179.5702,
+        2.421999999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        211.143,
+        179.5702,
+        2.421999999999997
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        206.30099999999999,
+        179.5702,
+        2.4220000000000255
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        206.30099999999999,
+        179.5702,
+        2.4220000000000255
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.780100000000004,
+        201.554,
+        179.56990000000002,
+        2.0360000000000014
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.780100000000004,
+        201.554,
+        179.56990000000002,
+        2.0360000000000014
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        196.12100000000001,
+        179.5702,
+        2.4230000000000018
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        196.12100000000001,
+        179.5702,
+        2.4230000000000018
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        191.279,
+        179.5702,
+        2.4230000000000018
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        191.279,
+        179.5702,
+        2.4230000000000018
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        186.28800000000001,
+        179.5702,
+        2.4240000000000066
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        186.28800000000001,
+        179.5702,
+        2.4240000000000066
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        181.447,
+        179.5702,
+        2.4230000000000018
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        181.447,
+        179.5702,
+        2.4230000000000018
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        176.607,
+        179.5702,
+        2.4209999999999923
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        176.607,
+        179.5702,
+        2.4209999999999923
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        171.76499999999999,
+        179.5702,
+        2.4220000000000255
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        171.76499999999999,
+        179.5702,
+        2.4220000000000255
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        166.923,
+        179.5702,
+        2.4230000000000018
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        166.923,
+        179.5702,
+        2.4230000000000018
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        162.08099999999999,
+        179.5702,
+        2.4220000000000255
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        162.08099999999999,
+        179.5702,
+        2.4220000000000255
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.780100000000004,
+        157.33500000000001,
+        179.56990000000002,
+        2.0349999999999966
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.780100000000004,
+        157.33500000000001,
+        179.56990000000002,
+        2.0349999999999966
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        151.90199999999999,
+        179.5702,
+        2.4230000000000302
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        151.90199999999999,
+        179.5702,
+        2.4230000000000302
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        147.06,
+        179.5702,
+        2.421999999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        147.06,
+        179.5702,
+        2.421999999999997
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        141.90199999999999,
+        179.5702,
+        2.4230000000000302
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.146799999999999,
+        141.90199999999999,
+        179.5702,
+        2.4230000000000302
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        78.146799999999999,
+        211.5643,
+        183.66400000000004,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        78.146799999999999,
+        199.38510000000002,
+        183.66400000000004,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        78.146799999999999,
+        223.74450000000002,
+        183.66400000000004,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        78.146799999999999,
+        235.92370000000003,
+        183.38600000000002,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        78.146799999999999,
+        248.10290000000001,
+        183.66400000000004,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        78.146799999999999,
+        150.2328,
+        183.66400000000004,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        78.146799999999999,
+        162.4134,
+        183.66400000000004,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        78.146799999999999,
+        174.59210000000002,
+        183.38600000000002,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        78.146799999999999,
+        186.77180000000001,
+        183.66400000000004,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        100.2718,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.882600000000011,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        83.652600000000007,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        97.502300000000005,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        94.732200000000006,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        86.422700000000006,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        91.96220000000001,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        89.1922,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        103.04180000000001,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        105.81180000000001,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        108.5818,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        119.6614,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        111.35140000000001,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        116.8914,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        114.12140000000001,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        125.20100000000001,
+        137.48520000000002,
+        4.0000000000000142,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        122.4315,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        127.971,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        133.511,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        136.28059999999999,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        139.0506,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        130.74100000000001,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        141.82060000000001,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        144.59059999999999,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        158.4402,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        155.66970000000001,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        147.36020000000002,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        152.90020000000001,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        150.13070000000002,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        180.5993,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        161.2098,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        163.9803,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        177.8289,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        175.05940000000001,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        166.74980000000002,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        172.28990000000002,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        169.51930000000002,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        183.369,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        186.1395,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        188.90899999999999,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        199.98910000000001,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        191.67850000000001,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        197.21860000000001,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        194.44900000000001,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        205.52810000000002,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        202.7586,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        208.29860000000002,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        213.83870000000002,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        216.60820000000001,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        219.3777,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        211.06820000000002,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        222.14830000000001,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        224.9178,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        238.76740000000001,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        235.99790000000002,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        227.6883,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        233.22740000000002,
+        137.48520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        230.45780000000002,
+        137.4846,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        241.83870000000002,
+        137.23520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        244.60820000000001,
+        137.23520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        247.3777,
+        137.23520000000002,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        250.14830000000001,
+        137.2346,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        252.9178,
+        137.2346,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        255.68830000000003,
+        137.2346,
+        4,
+        126.29399999999998
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        42.160000000000004,
+        137.083,
+        16.5,
+        126.78100000000003
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        78.146000000000001,
+        111.413,
+        183.892,
+        16.5
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        78.676000000000002,
+        211.834,
+        114.10199999999999,
+        51.865000000000009
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.675600000000003,
+        213.833,
+        110.10239999999999,
+        47.866000000000014
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.675600000000003,
+        213.833,
+        110.10239999999999,
+        47.866000000000014
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.675600000000003,
+        213.833,
+        110.10239999999999,
+        47.866000000000014
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.675600000000003,
+        213.786,
+        4.8524000000000029,
+        47.913000000000011
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        185.86959999999999,
+        213.786,
+        4.9084000000000003,
+        47.913000000000011
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        78.676000000000002,
+        257.56700000000001,
+        114.10100000000001,
+        6.132000000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        78.676000000000002,
+        211.786,
+        114.10100000000001,
+        6.132000000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        80.675600000000003,
+        213.786,
+        110.10239999999999,
+        47.913000000000011
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        76.619399999999999,
+        136.79820000000001,
+        7.8889999999999958,
+        6.9439999999999884
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        123.47490000000001,
+        136.79820000000001,
+        7.8889999999999958,
+        6.9439999999999884
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        187.17270000000002,
+        136.79820000000001,
+        7.8899999999999864,
+        6.9439999999999884
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        256.05740000000003,
+        136.79820000000001,
+        7.8899999999999864,
+        6.9439999999999884
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        119.25920000000001,
+        175.22580000000002,
+        102.765,
+        18
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        119.25920000000001,
+        175.22580000000002,
+        102.765,
+        18
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

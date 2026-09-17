@@ -302,11 +302,15 @@ are stepped over (and stay on their page, ahead of the joined paragraph, while h
 above that paragraph move with it past them, #63); two different
 validated paragraph identities refuse; the next text starts lowercase, or (#118) after a last word
 that cannot end a sentence (an article, preposition, conjunction, auxiliary, determiner or
-possessive) opens with a capital, digit or quote in the anchor's type size on a first line that
+possessive), after a last sentence that leaves a parenthesis open, or where the source's structure
+tree holds the anchor's last line and the continuation's first line in one paragraph (#145) opens
+with a capital, digit or quote in the anchor's type size on a first line that
 fills its column or closes its sentence; the previous text lacks
 terminal punctuation past closing quotes and superscript note markers; the previous paragraph's
 last line reads as prose and fills its column (a justified column's shared right edge, three
-quarters of a ragged column's measure, or a line-ending hyphen); the next paragraph's first line
+quarters of a ragged column's measure, or a line-ending hyphen), or, before a lowercase opening,
+ends on a comma after a word in the page's body size, at least three words and twelve bodies wide
+(#145: FAA pages 221 and 438 set a text frame's last line short in print); the next paragraph's first line
 is not a retained running header with a folio word; and no other prose lies below or right of
 that last line or above or left of that first line, counting body-sized wide text inside a
 preserved region so that a figure which swallowed the real neighbour blocks the join rather
@@ -324,7 +328,12 @@ line, figure or box over the head line that crosses the gutter (that element its
 prose a crossing region swallowed still counting), so a section band bounds its section from the
 stacked sections above. A paragraph also continues in the next line of its own column when reading
 order set a figure or caption beside it between the two (#118): same size and left edge, directly
-below at no more than one and a half line heights, with no line between. A line that begins with a number or single letter followed by a
+below at no more than one and a half line heights, with no line between. Before those joins, a
+figure or table caption that leaves its sentence open takes back the line it wraps onto when reading
+order read something else between them (#145, a caption at a column's foot interleaved with the
+prose beside it): a later paragraph on the page whose first line lies directly beneath the caption's
+last line, on its left edge or centre, at ordinary leading, no more than 15% larger and smaller than the
+page's body type, with no line between; where the paragraph rule read the two lines in sequence and set them apart, they stay apart. A line that begins with a number or single letter followed by a
 period or parenthesis and a space, or a number and parenthesis set tight against a minus sign
 (`1)− 2`), is a preformatted list item unless it wraps an open paragraph: the
 previous line must read as prose, end without terminal punctuation and reach a right edge

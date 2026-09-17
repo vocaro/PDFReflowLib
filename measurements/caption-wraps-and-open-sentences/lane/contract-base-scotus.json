@@ -1,0 +1,10 @@
+{
+  "case": "scotus-loper-bright-2024",
+  "side": "base",
+  "passed": false,
+  "contentChecks": 97,
+  "errors": [
+    "Page 3: paragraph does not continue onto page 4 {'end': '576 U. S. 743, 750 (quoting Allentown Mack Sales &', 'next': 'Service, Inc. v. NLRB, 522 U. S. 359, 374). By doing so'}",
+    "Page 34: paragraph does not continue onto page 35 {'end': 'See Buffington v. McDonough, 598 U. S. ___, ___ (2022) (GORSUCH,', 'next': 'J., dissenting from denial of certiorari)'}"
+  ]
+}

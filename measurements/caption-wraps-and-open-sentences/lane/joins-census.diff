@@ -1,0 +1,27 @@
+8d7
+< p2->2 P [] digit w22 …'ification. The masking methods are rank swapping (' ‖ '13], also [ 5]), additive noise ([ 8]), mixtures o'
+50,53c49
+< p8->8 P [] lower w14 …'are suggested for measuring the "information loss"' ‖ 'or amount which the masked data set has been stati'
+< p8->8 P [] lower w11 …'e idea is to compute some kind of penalty score to' ‖ 'indicate how much the maskod data set statisticall'
+< p8->8 P [] lower w12 …'of identitying what one considers to be signincant' ‖ 'statistical properties and then to deline a way to'
+< p8->8 P [] lower w13 …'en to deline a way to compute their dillerence for' ‖ 'two data sets.'
+---
+> p8->8 P [] lower w11 …'e idea is to compute some kind of penalty score to' ‖ 'indicate how much the masked data set statisticall'
+55,62c51,54
+< p8->8 P [] lower w15 …'never we have an original data element &u = 0. One' ‖ 'can replace the denominstor by a specified constan'
+< p8->8 P [] lower w85 …'ores when they are combined. Initially we tried to' ‖ 'improve this situation by modifying the above form'
+< p8->8 P [] lower w9 …'e this situation by modifying the above formula to' ‖ 'which helge with the score magnitucle problem, sin'
+< p8->8 P [] lower w12 …'s, by scaling the statistic by the individual data' ‖ 'points, the resulting statistic is not very stable'
+< p8->8 P [] lower w68 …'alues by scaling them all by a value common to the' ‖ 'variable. Thus if X and 2 are independent. rancom '
+< p8->8 P [H] lower w13 …'2 are independent. rancom variables both with mean' ‖ 'variance 202. Hence a common scale for Z would be '
+< p8->8 P [] lower w24 …'he proposed modification for the dats perturbation' ‖ 'information loss statistic given by'
+< p8->8 P [I] upper w5 …'information loss statistic given by' ‖ 'V2S;'
+---
+> p8->8 P [] lower w15 …'never we have an original data element xg = O. One' ‖ 'can replace the denominator by a specified constan'
+> p8->8 P [] lower w94 …'e this situation by modifying the above formula to' ‖ 'which helps with the score magnitude problem, sinc'
+> p8->8 P [H] lower w93 …' Z are independent random variables both with mean' ‖ 'variance 202. Hence a common scale for Z would be '
+> p8->8 P [I] upper w29 …'a perturbation information loss statistic given by' ‖ 'V2S;'
+183c175
+< Counter({'lower': 92, 'upper': 53, 'digit': 27, 'other': 10}) 182
+---
+> Counter({'lower': 85, 'upper': 53, 'digit': 26, 'other': 10}) 174

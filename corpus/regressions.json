@@ -223,6 +223,9 @@
               "first": "800 Independence Ave, SW",
               "second": "Washington, DC 20591"
             }
+          ],
+          "paragraphs": [
+            "through training, outreach, and education. The FAA Safety Team (FAASTeam) exemplifies this commitment."
           ]
         },
         {
@@ -1089,6 +1092,12 @@
           ],
           "paragraphs": [
             "then, now, and into the future. The DOT began operation on April 1, 1967."
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "An earlier period of discord between management and the Professional Air",
+              "next": "Traffic Controllers Organization (PATCO) culminated in"
+            }
           ]
         },
         {
@@ -1135,6 +1144,15 @@
           "minimumImages": 2,
           "paragraphs": [
             "had initiated this system. The Department of Commerce made significant advances"
+          ]
+        },
+        {
+          "page": 20,
+          "continuedParagraphs": [
+            {
+              "end": "the responsibility of administering the Federal Aid",
+              "next": "Airport Program. This program was designed to promote"
+            }
           ]
         },
         {
@@ -1428,6 +1446,24 @@
           ]
         },
         {
+          "page": 169,
+          "continuedParagraphs": [
+            {
+              "end": "Fahrenheit degrees (70 x 100/180 = 38.89",
+              "next": "Celsius degrees) (Remember there are 180 Fahrenheit degrees"
+            }
+          ]
+        },
+        {
+          "page": 221,
+          "continuedParagraphs": [
+            {
+              "end": "Errors in the magnetic compass are numerous,",
+              "next": "making straight flight and precision turns to headings difficult"
+            }
+          ]
+        },
+        {
           "page": 230,
           "paragraphs": [
             "welded together in a single strip and twisted into a helix. One end is anchored"
@@ -1441,9 +1477,26 @@
           "minimumImages": 2
         },
         {
+          "page": 320,
+          "continuedParagraphs": [
+            {
+              "end": "with a scattered layer at 10,000 feet AGL. After",
+              "next": "2000Z, the forecast calls for scattered thunderstorms"
+            }
+          ]
+        },
+        {
           "page": 341,
           "paragraphs": [
-            "relative location of the respective runway thresholds. Figure 14-10 shows"
+            "relative location of the respective runway thresholds. Figure 14-10 shows",
+            "Figure 14-8. Runway safety area boundary sign and marking located on Taxiway Kilo.",
+            "Figure 14-9. Runway holding position sign at takeoff end of Runway 14 with collocated Taxiway Alpha location sign."
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "the threshold for Runway 18 is to the left and the threshold for",
+              "next": "Runway 36 is to the right. The sign also indicates"
+            }
           ]
         },
         {
@@ -1453,9 +1506,39 @@
           ]
         },
         {
+          "page": 391,
+          "paragraphs": [
+            "Figure 16-4. Meridians and parallels—the basis of measuring time, distance, and direction."
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "must be completed before dark. Remember, an hour is lost when",
+              "next": "flying eastward from one time zone to another"
+            }
+          ]
+        },
+        {
+          "page": 397,
+          "paragraphs": [
+            "Figure 16-16. Relationship between true, magnetic, and compass headings for a particular instance."
+          ],
+          "listItems": [
+            "• GS—rate of the aircraft’s inflight progress over the ground."
+          ]
+        },
+        {
           "page": 411,
           "paragraphs": [
             "by means of the course select knob. The HSI has a fixed aircraft symbol"
+          ]
+        },
+        {
+          "page": 438,
+          "continuedParagraphs": [
+            {
+              "end": "states have taken steps to allow the possession, sale,",
+              "next": "and use of marijuana withing their border."
+            }
           ]
         },
         {
@@ -4800,6 +4883,15 @@
           ]
         },
         {
+          "page": 3,
+          "continuedParagraphs": [
+            {
+              "end": "576 U. S. 743, 750 (quoting Allentown Mack Sales &",
+              "next": "Service, Inc. v. NLRB, 522 U. S. 359, 374). By doing so"
+            }
+          ]
+        },
+        {
           "page": 7,
           "paragraphs": [
             "has not deferred to an agency interpretation under Chevron since 2016. But because Chevron remains on the books, litigants must"
@@ -5097,6 +5189,15 @@
           ],
           "absentText": [
             "trig- gered"
+          ]
+        },
+        {
+          "page": 34,
+          "continuedParagraphs": [
+            {
+              "end": "See Buffington v. McDonough, 598 U. S. ___, ___ (2022) (GORSUCH,",
+              "next": "J., dissenting from denial of certiorari)"
+            }
           ]
         },
         {

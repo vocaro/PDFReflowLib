@@ -1,0 +1,5996 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "8-20"
+        }
+      ],
+      "text" : "8-20"
+    },
+    {
+      "rect" : [
+        36.197300000000013,
+        133.65690000000001,
+        235.953,
+        199.10200000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36,
+        114.92110000000001,
+        237.05489999999998,
+        10.811999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 8-25. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "A heading indicator displays headings based on a 360°"
+        }
+      ],
+      "text" : "Figure 8-25. A heading indicator displays headings based on a 360°"
+    },
+    {
+      "rect" : [
+        36.003899999999994,
+        103.0261,
+        236.9898,
+        10.206000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "azimuth, with the final zero omitted. For example, “6” represents"
+        }
+      ],
+      "text" : "azimuth, with the final zero omitted. For example, “6” represents"
+    },
+    {
+      "rect" : [
+        36.003899999999994,
+        90.525099999999995,
+        236.9853,
+        10.206000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "060°, while “21” indicates 210°. The adjustment knob is used to"
+        }
+      ],
+      "text" : "060°, while “21” indicates 210°. The adjustment knob is used to"
+    },
+    {
+      "rect" : [
+        36.003899999999994,
+        78.02409999999999,
+        199.99799999999999,
+        10.206000000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "align the heading indicator with the magnetic compass."
+        }
+      ],
+      "text" : "align the heading indicator with the magnetic compass."
+    },
+    {
+      "rect" : [
+        287.86502080000002,
+        122.6581722,
+        229.77000910000004,
+        193.32000769999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        285,
+        104.76740000000001,
+        217.59400000000005,
+        10.811999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 8-26. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "italic" : true,
+          "text" : "Attitude and heading reference system (AHRS)."
+        }
+      ],
+      "text" : "Figure 8-26. Attitude and heading reference system (AHRS)."
+    },
+    {
+      "rect" : [
+        36,
+        719.56640000000004,
+        237.02499999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "making straight flight and precision turns to headings difficult"
+        }
+      ],
+      "text" : "making straight flight and precision turns to headings difficult"
+    },
+    {
+      "rect" : [
+        36,
+        707.06640000000004,
+        236.96000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to accomplish, particularly in turbulent air. A heading"
+        }
+      ],
+      "text" : "to accomplish, particularly in turbulent air. A heading"
+    },
+    {
+      "rect" : [
+        36,
+        694.56640000000004,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "indicator, however, is not affected by the forces that make"
+        }
+      ],
+      "text" : "indicator, however, is not affected by the forces that make"
+    },
+    {
+      "rect" : [
+        36,
+        682.06640000000004,
+        230.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the magnetic compass difficult to interpret. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "italic" : true,
+          "text" : "[Figure 8-25]"
+        }
+      ],
+      "text" : "the magnetic compass difficult to interpret. [Figure 8-25]"
+    },
+    {
+      "rect" : [
+        36,
+        657.06640000000004,
+        237.14999999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The operation of the heading indicator depends upon the"
+        }
+      ],
+      "text" : "The operation of the heading indicator depends upon the"
+    },
+    {
+      "rect" : [
+        36,
+        644.56640000000004,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "principle of rigidity in space. The rotor turns in a vertical"
+        }
+      ],
+      "text" : "principle of rigidity in space. The rotor turns in a vertical"
+    },
+    {
+      "rect" : [
+        36,
+        632.06640000000004,
+        237.04999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "plane and fixed to the rotor is a compass card. Since the rotor"
+        }
+      ],
+      "text" : "plane and fixed to the rotor is a compass card. Since the rotor"
+    },
+    {
+      "rect" : [
+        36,
+        619.56640000000004,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "remains rigid in space, the points on the card hold the same"
+        }
+      ],
+      "text" : "remains rigid in space, the points on the card hold the same"
+    },
+    {
+      "rect" : [
+        36,
+        607.06640000000004,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "position in space relative to the vertical plane of the gyro. The"
+        }
+      ],
+      "text" : "position in space relative to the vertical plane of the gyro. The"
+    },
+    {
+      "rect" : [
+        36,
+        594.56640000000004,
+        237.06099999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "aircraft actually rotates around the rotating gyro, not the other"
+        }
+      ],
+      "text" : "aircraft actually rotates around the rotating gyro, not the other"
+    },
+    {
+      "rect" : [
+        36,
+        582.06640000000004,
+        236.99899999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "way around. As the instrument case and the aircraft revolve"
+        }
+      ],
+      "text" : "way around. As the instrument case and the aircraft revolve"
+    },
+    {
+      "rect" : [
+        36,
+        569.56640000000004,
+        237.01300000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "around the vertical axis of the gyro, the card provides clear"
+        }
+      ],
+      "text" : "around the vertical axis of the gyro, the card provides clear"
+    },
+    {
+      "rect" : [
+        36,
+        557.06640000000004,
+        136.63000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and accurate heading information."
+        }
+      ],
+      "text" : "and accurate heading information."
+    },
+    {
+      "rect" : [
+        36,
+        532.06640000000004,
+        237.125,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Because of precession caused by friction, the heading"
+        }
+      ],
+      "text" : "Because of precession caused by friction, the heading"
+    },
+    {
+      "rect" : [
+        36,
+        519.56640000000004,
+        237.13499999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "indicator creeps or drifts from its set position. Among"
+        }
+      ],
+      "text" : "indicator creeps or drifts from its set position. Among"
+    },
+    {
+      "rect" : [
+        36,
+        507.06640000000004,
+        237.01800000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "other factors, the amount of drift depends largely upon the"
+        }
+      ],
+      "text" : "other factors, the amount of drift depends largely upon the"
+    },
+    {
+      "rect" : [
+        36,
+        494.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "condition of the instrument. If the bearings are worn, dirty,"
+        }
+      ],
+      "text" : "condition of the instrument. If the bearings are worn, dirty,"
+    },
+    {
+      "rect" : [
+        36,
+        482.06640000000004,
+        236.98999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or improperly lubricated, the drift may be excessive. Another"
+        }
+      ],
+      "text" : "or improperly lubricated, the drift may be excessive. Another"
+    },
+    {
+      "rect" : [
+        36,
+        469.56640000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "error in the heading indicator is caused by the fact that the"
+        }
+      ],
+      "text" : "error in the heading indicator is caused by the fact that the"
+    },
+    {
+      "rect" : [
+        36,
+        457.06640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "gyro is oriented in space, and the Earth rotates in space at a"
+        }
+      ],
+      "text" : "gyro is oriented in space, and the Earth rotates in space at a"
+    },
+    {
+      "rect" : [
+        36,
+        444.56640000000004,
+        237.00799999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "rate of 15° in 1 hour. Thus, discounting precession caused"
+        }
+      ],
+      "text" : "rate of 15° in 1 hour. Thus, discounting precession caused"
+    },
+    {
+      "rect" : [
+        36,
+        432.06640000000004,
+        237.00599999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "by friction, the heading indicator may indicate as much as"
+        }
+      ],
+      "text" : "by friction, the heading indicator may indicate as much as"
+    },
+    {
+      "rect" : [
+        36,
+        419.56640000000004,
+        150.34000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "15° error per every hour of operation."
+        }
+      ],
+      "text" : "15° error per every hour of operation."
+    },
+    {
+      "rect" : [
+        36,
+        394.56640000000004,
+        237.00599999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Some heading indicators referred to as horizontal situation"
+        }
+      ],
+      "text" : "Some heading indicators referred to as horizontal situation"
+    },
+    {
+      "rect" : [
+        36,
+        382.06640000000004,
+        237.09400000000016,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "indicators (HSI) receive a magnetic north reference from"
+        }
+      ],
+      "text" : "indicators (HSI) receive a magnetic north reference from"
+    },
+    {
+      "rect" : [
+        36,
+        369.56640000000004,
+        236.93000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a magnetic slaving transmitter and generally need no"
+        }
+      ],
+      "text" : "a magnetic slaving transmitter and generally need no"
+    },
+    {
+      "rect" : [
+        36,
+        357.06640000000004,
+        237.12000000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "adjustment. The magnetic slaving transmitter is called"
+        }
+      ],
+      "text" : "adjustment. The magnetic slaving transmitter is called"
+    },
+    {
+      "rect" : [
+        35.999999999999972,
+        344.56640000000004,
+        66.650000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a magnetometer."
+        }
+      ],
+      "text" : "a magnetometer."
+    },
+    {
+      "rect" : [
+        285,
+        718.14639999999997,
+        227.81000000000006,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Attitude and Heading Reference System (AHRS)"
+        }
+      ],
+      "text" : "Attitude and Heading Reference System (AHRS)"
+    },
+    {
+      "rect" : [
+        285,
+        705.71640000000002,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Electronic flight displays have replaced free-spinning gyros"
+        }
+      ],
+      "text" : "Electronic flight displays have replaced free-spinning gyros"
+    },
+    {
+      "rect" : [
+        285,
+        693.21640000000002,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "with solid-state laser systems that are capable of flight at"
+        }
+      ],
+      "text" : "with solid-state laser systems that are capable of flight at"
+    },
+    {
+      "rect" : [
+        285,
+        680.71640000000002,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "any attitude without tumbling. This capability is the result"
+        }
+      ],
+      "text" : "any attitude without tumbling. This capability is the result"
+    },
+    {
+      "rect" : [
+        285,
+        668.21640000000002,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of the development of the Attitude and Heading Reference"
+        }
+      ],
+      "text" : "of the development of the Attitude and Heading Reference"
+    },
+    {
+      "rect" : [
+        285,
+        655.71640000000002,
+        67.779999999999973,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "System (AHRS)."
+        }
+      ],
+      "text" : "System (AHRS)."
+    },
+    {
+      "rect" : [
+        285,
+        630.71640000000002,
+        237.00099999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The AHRS sends attitude information to the PFD in order"
+        }
+      ],
+      "text" : "The AHRS sends attitude information to the PFD in order"
+    },
+    {
+      "rect" : [
+        285,
+        618.21640000000002,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to generate the pitch and bank information of the attitude"
+        }
+      ],
+      "text" : "to generate the pitch and bank information of the attitude"
+    },
+    {
+      "rect" : [
+        285,
+        605.71640000000002,
+        237.11999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "indicator. The heading information is derived from a"
+        }
+      ],
+      "text" : "indicator. The heading information is derived from a"
+    },
+    {
+      "rect" : [
+        285,
+        593.21640000000002,
+        237.01199999999983,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "magnetometer that senses the earth’s lines of magnetic flux."
+        }
+      ],
+      "text" : "magnetometer that senses the earth’s lines of magnetic flux."
+    },
+    {
+      "rect" : [
+        285,
+        580.71640000000002,
+        236.98199999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "This information is then processed and sent out to the PFD"
+        }
+      ],
+      "text" : "This information is then processed and sent out to the PFD"
+    },
+    {
+      "rect" : [
+        285,
+        568.21640000000002,
+        185.22999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to generate the heading display. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "italic" : true,
+          "text" : "[Figure 8-26]"
+        }
+      ],
+      "text" : "to generate the heading display. [Figure 8-26]"
+    },
+    {
+      "rect" : [
+        285,
+        542.64639999999997,
+        152.27000000000004,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "The Flux Gate Compass System"
+        }
+      ],
+      "text" : "The Flux Gate Compass System"
+    },
+    {
+      "rect" : [
+        285,
+        530.21640000000002,
+        236.92000000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "As mentioned earlier, the lines of flux in the Earth’s magnetic"
+        }
+      ],
+      "text" : "As mentioned earlier, the lines of flux in the Earth’s magnetic"
+    },
+    {
+      "rect" : [
+        285,
+        517.71640000000002,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "field have two basic characteristics: a magnet aligns with"
+        }
+      ],
+      "text" : "field have two basic characteristics: a magnet aligns with"
+    },
+    {
+      "rect" : [
+        285,
+        505.21640000000002,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "them, and an electrical current is induced, or generated, in"
+        }
+      ],
+      "text" : "them, and an electrical current is induced, or generated, in"
+    },
+    {
+      "rect" : [
+        285,
+        492.71640000000002,
+        104.70000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "any wire crossed by them."
+        }
+      ],
+      "text" : "any wire crossed by them."
+    },
+    {
+      "rect" : [
+        285,
+        467.71640000000002,
+        236.94000000000017,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The flux gate compass that drives slaved gyros uses the"
+        }
+      ],
+      "text" : "The flux gate compass that drives slaved gyros uses the"
+    },
+    {
+      "rect" : [
+        285,
+        455.21640000000002,
+        237.00099999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "characteristic of current induction. The flux valve is a small,"
+        }
+      ],
+      "text" : "characteristic of current induction. The flux valve is a small,"
+    },
+    {
+      "rect" : [
+        285,
+        442.71640000000002,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "segmented ring, like the one in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "italic" : true,
+          "text" : "Figure 8-27, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "made of soft iron"
+        }
+      ],
+      "text" : "segmented ring, like the one in Figure 8-27, made of soft iron"
+    },
+    {
+      "rect" : [
+        285,
+        430.21640000000002,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "that readily accepts lines of magnetic flux. An electrical coil"
+        }
+      ],
+      "text" : "that readily accepts lines of magnetic flux. An electrical coil"
+    },
+    {
+      "rect" : [
+        285,
+        417.71640000000002,
+        236.99499999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is wound around each of the three legs to accept the current"
+        }
+      ],
+      "text" : "is wound around each of the three legs to accept the current"
+    },
+    {
+      "rect" : [
+        285,
+        405.21640000000002,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "induced in this ring by the Earth’s magnetic field. A coil"
+        }
+      ],
+      "text" : "induced in this ring by the Earth’s magnetic field. A coil"
+    },
+    {
+      "rect" : [
+        285,
+        392.71640000000002,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "wound around the iron spacer in the center of the frame has"
+        }
+      ],
+      "text" : "wound around the iron spacer in the center of the frame has"
+    },
+    {
+      "rect" : [
+        285,
+        380.21640000000002,
+        236.98800000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "400 Hz alternating current (AC) flowing through it. During"
+        }
+      ],
+      "text" : "400 Hz alternating current (AC) flowing through it. During"
+    },
+    {
+      "rect" : [
+        285,
+        367.71640000000002,
+        237.01400000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the times when this current reaches its peak, twice during"
+        }
+      ],
+      "text" : "the times when this current reaches its peak, twice during"
+    },
+    {
+      "rect" : [
+        285,
+        355.21640000000002,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "each cycle, there is so much magnetism produced by this"
+        }
+      ],
+      "text" : "each cycle, there is so much magnetism produced by this"
+    },
+    {
+      "rect" : [
+        285,
+        342.71640000000002,
+        237.02600000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "coil that the frame cannot accept the lines of flux from the"
+        }
+      ],
+      "text" : "coil that the frame cannot accept the lines of flux from the"
+    },
+    {
+      "rect" : [
+        285,
+        330.21640000000002,
+        52.20999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Earth’s field."
+        }
+      ],
+      "text" : "Earth’s field."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      36,
+      133.017,
+      236.64999999999998,
+      200.45300000000003
+    ],
+    [
+      282.75,
+      121.11360000000002,
+      241,
+      199.75
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "text" : "8-20"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        114.92110000000001,
+        237.05489999999998,
+        10.811999999999998
+      ],
+      "structure" : {
+        "group" : 3533,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 17192
+      },
+      "text" : "Figure 8-25. A heading indicator displays headings based on a 360°"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        36.003899999999994,
+        103.0261,
+        236.9898,
+        10.206000000000003
+      ],
+      "structure" : {
+        "group" : 3533,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 17194
+      },
+      "text" : "azimuth, with the final zero omitted. For example, “6” represents"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        36.003899999999994,
+        90.525099999999995,
+        236.9853,
+        10.206000000000003
+      ],
+      "structure" : {
+        "group" : 3533,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 17195
+      },
+      "text" : "060°, while “21” indicates 210°. The adjustment knob is used to"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        36.003899999999994,
+        78.02409999999999,
+        199.99799999999999,
+        10.206000000000003
+      ],
+      "structure" : {
+        "group" : 3533,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 17196
+      },
+      "text" : "align the heading indicator with the magnetic compass."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        104.76740000000001,
+        217.59400000000005,
+        10.811999999999998
+      ],
+      "structure" : {
+        "group" : 3534,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 17197
+      },
+      "text" : "Figure 8-26. Attitude and heading reference system (AHRS)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        719.56640000000004,
+        237.02499999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3422,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 16624
+      },
+      "text" : "making straight flight and precision turns to headings difficult"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        707.06640000000004,
+        236.96000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3422,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 16625
+      },
+      "text" : "to accomplish, particularly in turbulent air. A heading"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        694.56640000000004,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3422,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 16626
+      },
+      "text" : "indicator, however, is not affected by the forces that make"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        682.06640000000004,
+        230.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3422,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 16627
+      },
+      "text" : "the magnetic compass difficult to interpret. [Figure 8-25]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        657.06640000000004,
+        237.14999999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3423,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 16629
+      },
+      "text" : "The operation of the heading indicator depends upon the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        644.56640000000004,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3423,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 16630
+      },
+      "text" : "principle of rigidity in space. The rotor turns in a vertical"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        632.06640000000004,
+        237.04999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3423,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 16631
+      },
+      "text" : "plane and fixed to the rotor is a compass card. Since the rotor"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        619.56640000000004,
+        237.00999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3423,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 16632
+      },
+      "text" : "remains rigid in space, the points on the card hold the same"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        607.06640000000004,
+        236.9899999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3423,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 16633
+      },
+      "text" : "position in space relative to the vertical plane of the gyro. The"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        594.56640000000004,
+        237.06099999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3423,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 16634
+      },
+      "text" : "aircraft actually rotates around the rotating gyro, not the other"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        582.06640000000004,
+        236.99899999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3423,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 16635
+      },
+      "text" : "way around. As the instrument case and the aircraft revolve"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        569.56640000000004,
+        237.01300000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3423,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 16636
+      },
+      "text" : "around the vertical axis of the gyro, the card provides clear"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        557.06640000000004,
+        136.63000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3423,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 16637
+      },
+      "text" : "and accurate heading information."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        532.06640000000004,
+        237.125,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3424,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 16638
+      },
+      "text" : "Because of precession caused by friction, the heading"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        519.56640000000004,
+        237.13499999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3424,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 16639
+      },
+      "text" : "indicator creeps or drifts from its set position. Among"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        507.06640000000004,
+        237.01800000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3424,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 16640
+      },
+      "text" : "other factors, the amount of drift depends largely upon the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        494.56640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3424,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 16641
+      },
+      "text" : "condition of the instrument. If the bearings are worn, dirty,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        482.06640000000004,
+        236.98999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3424,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 16642
+      },
+      "text" : "or improperly lubricated, the drift may be excessive. Another"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        469.56640000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3424,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 16643
+      },
+      "text" : "error in the heading indicator is caused by the fact that the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        457.06640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3424,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 16644
+      },
+      "text" : "gyro is oriented in space, and the Earth rotates in space at a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        444.56640000000004,
+        237.00799999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3424,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 16645
+      },
+      "text" : "rate of 15° in 1 hour. Thus, discounting precession caused"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        432.06640000000004,
+        237.00599999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3424,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 16646
+      },
+      "text" : "by friction, the heading indicator may indicate as much as"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        419.56640000000004,
+        150.34000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3424,
+        "headingLevel" : 0,
+        "lineCount" : 10,
+        "opensWithSplitMarker" : false,
+        "order" : 16647
+      },
+      "text" : "15° error per every hour of operation."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        394.56640000000004,
+        237.00599999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3425,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 16648
+      },
+      "text" : "Some heading indicators referred to as horizontal situation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        382.06640000000004,
+        237.09400000000016,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3425,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 16649
+      },
+      "text" : "indicators (HSI) receive a magnetic north reference from"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        369.56640000000004,
+        236.93000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3425,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 16650
+      },
+      "text" : "a magnetic slaving transmitter and generally need no"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        357.06640000000004,
+        237.12000000000012,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3425,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 16651
+      },
+      "text" : "adjustment. The magnetic slaving transmitter is called"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        35.999999999999972,
+        344.56640000000004,
+        66.650000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3425,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 16653
+      },
+      "text" : "a magnetometer."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        718.14639999999997,
+        227.81000000000006,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 3426,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 16654
+      },
+      "text" : "Attitude and Heading Reference System (AHRS)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        705.71640000000002,
+        237.00800000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3427,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 16655
+      },
+      "text" : "Electronic flight displays have replaced free-spinning gyros"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        693.21640000000002,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3427,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 16656
+      },
+      "text" : "with solid-state laser systems that are capable of flight at"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        680.71640000000002,
+        237.00799999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3427,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 16657
+      },
+      "text" : "any attitude without tumbling. This capability is the result"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        668.21640000000002,
+        237.01499999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3427,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 16658
+      },
+      "text" : "of the development of the Attitude and Heading Reference"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        655.71640000000002,
+        67.779999999999973,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3427,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 16659
+      },
+      "text" : "System (AHRS)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        630.71640000000002,
+        237.00099999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3428,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 16660
+      },
+      "text" : "The AHRS sends attitude information to the PFD in order"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        618.21640000000002,
+        237.0089999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3428,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 16661
+      },
+      "text" : "to generate the pitch and bank information of the attitude"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        605.71640000000002,
+        237.11999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3428,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 16662
+      },
+      "text" : "indicator. The heading information is derived from a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        593.21640000000002,
+        237.01199999999983,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3428,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 16663
+      },
+      "text" : "magnetometer that senses the earth’s lines of magnetic flux."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        580.71640000000002,
+        236.98199999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3428,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 16664
+      },
+      "text" : "This information is then processed and sent out to the PFD"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        568.21640000000002,
+        185.22999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3428,
+        "headingLevel" : 0,
+        "lineCount" : 6,
+        "opensWithSplitMarker" : false,
+        "order" : 16665
+      },
+      "text" : "to generate the heading display. [Figure 8-26]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        542.64639999999997,
+        152.27000000000004,
+        13.190000000000055
+      ],
+      "text" : "The Flux Gate Compass System"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        530.21640000000002,
+        236.92000000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3430,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 16669
+      },
+      "text" : "As mentioned earlier, the lines of flux in the Earth’s magnetic"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        517.71640000000002,
+        237,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3430,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 16670
+      },
+      "text" : "field have two basic characteristics: a magnet aligns with"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        505.21640000000002,
+        237.00299999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3430,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 16671
+      },
+      "text" : "them, and an electrical current is induced, or generated, in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        492.71640000000002,
+        104.70000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 3430,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 16672
+      },
+      "text" : "any wire crossed by them."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        467.71640000000002,
+        236.94000000000017,
+        11.470000000000027
+      ],
+      "text" : "The flux gate compass that drives slaved gyros uses the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        455.21640000000002,
+        237.00099999999998,
+        11.470000000000027
+      ],
+      "text" : "characteristic of current induction. The flux valve is a small,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        442.71640000000002,
+        237,
+        11.470000000000027
+      ],
+      "text" : "segmented ring, like the one in Figure 8-27, made of soft iron"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        430.21640000000002,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "text" : "that readily accepts lines of magnetic flux. An electrical coil"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        417.71640000000002,
+        236.99499999999989,
+        11.470000000000027
+      ],
+      "text" : "is wound around each of the three legs to accept the current"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        405.21640000000002,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "text" : "induced in this ring by the Earth’s magnetic field. A coil"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        392.71640000000002,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "text" : "wound around the iron spacer in the center of the frame has"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        380.21640000000002,
+        236.98800000000006,
+        11.470000000000027
+      ],
+      "text" : "400 Hz alternating current (AC) flowing through it. During"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        367.71640000000002,
+        237.01400000000012,
+        11.470000000000027
+      ],
+      "text" : "the times when this current reaches its peak, twice during"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        355.21640000000002,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "text" : "each cycle, there is so much magnetism produced by this"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        342.71640000000002,
+        237.02600000000007,
+        11.470000000000027
+      ],
+      "text" : "coil that the frame cannot accept the lines of flux from the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        330.21640000000002,
+        52.20999999999998,
+        11.470000000000027
+      ],
+      "text" : "Earth’s field."
+    }
+  ],
+  "page" : 222,
+  "paints" : [
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        36.697200000000002,
+        134.15700000000001,
+        234.95279999999997,
+        198.102
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        36.697200000000002,
+        134.15700000000001,
+        234.95279999999997,
+        198.102
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        36,
+        133.017,
+        236.64999999999998,
+        200.45300000000003
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        62.313000000000002,
+        181.101,
+        174.64499999999998,
+        112.02199999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        62.3125,
+        181.101,
+        174.6455,
+        112.02199999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        79.697000000000003,
+        186.97999999999999,
+        139.68700000000001,
+        98.349000000000018
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        79.696200000000005,
+        186.97919999999999,
+        139.68700000000001,
+        98.350000000000023
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        63.507999999999996,
+        192.08799999999999,
+        29.90100000000001,
+        89.81200000000004
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        63.508300000000006,
+        192.08710000000002,
+        29.900000000000006,
+        89.813999999999965
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        64.896000000000001,
+        191.92400000000001,
+        29.900999999999996,
+        89.813999999999993
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        64.896000000000001,
+        191.92509999999999,
+        29.900999999999996,
+        89.814000000000021
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.35900000000001,
+        187.22800000000001,
+        14.591999999999985,
+        12.802999999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.35939999999999,
+        187.2278,
+        14.591000000000008,
+        12.803000000000026
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.417,
+        194.75399999999999,
+        14.513000000000005,
+        6.554000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.4171,
+        194.75420000000003,
+        14.513000000000005,
+        6.5529999999999973
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        119.99900000000001,
+        195.12700000000001,
+        9.2790000000000106,
+        12.067999999999984
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        119.99980000000001,
+        195.12800000000001,
+        9.2789999999999822,
+        12.066000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        153.934,
+        193.25300000000001,
+        26.328000000000003,
+        53.030000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        153.9348,
+        193.25430000000003,
+        26.328000000000003,
+        53.027999999999992
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        156.17000000000002,
+        192.06900000000002,
+        29.716999999999985,
+        53.765999999999991
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        156.1687,
+        192.06840000000003,
+        29.718999999999994,
+        53.766999999999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        139.78700000000001,
+        232.17699999999999,
+        13.262,
+        18.887
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        139.78710000000001,
+        232.17690000000002,
+        13.263000000000005,
+        18.888000000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        126.679,
+        234.542,
+        25.588999999999999,
+        9.4029999999999916
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        126.679,
+        234.541,
+        25.604000000000013,
+        9.5240000000000009
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        118.55500000000001,
+        209.04599999999999,
+        28.210999999999984,
+        54.619000000000028
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        118.55540000000001,
+        209.04599999999999,
+        28.210999999999999,
+        54.815999999999974
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        102.554,
+        208.845,
+        38.02000000000001,
+        54.690000000000026
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        102.554,
+        208.84480000000002,
+        38.02000000000001,
+        54.889999999999986
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        107.89700000000001,
+        217.739,
+        26.106999999999985,
+        36.949000000000012
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        107.8964,
+        217.738,
+        26.108000000000004,
+        37.079999999999984
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        110.417,
+        219.63900000000001,
+        23.907000000000011,
+        33.653999999999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        110.41730000000001,
+        219.6388,
+        23.906000000000006,
+        33.769000000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        112.21600000000001,
+        225.46700000000001,
+        18.960999999999984,
+        21.913999999999987
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        112.2163,
+        225.46010000000001,
+        18.960999999999999,
+        21.920999999999992
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        112.093,
+        225.376,
+        15.930999999999997,
+        22.028999999999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        112.0929,
+        225.37720000000002,
+        15.931000000000026,
+        22.098000000000013
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        113.80800000000001,
+        229.161,
+        12.259,
+        14.753999999999991
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        113.8068,
+        229.1609,
+        12.26100000000001,
+        14.760999999999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        113.661,
+        229.203,
+        11.156999999999996,
+        14.676000000000016
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        113.66150000000002,
+        229.2021,
+        11.155999999999992,
+        14.728000000000009
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        124.47,
+        256.78000000000003,
+        10.311000000000007,
+        6.1619999999999777
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        124.47070000000001,
+        256.77910000000003,
+        10.309000000000012,
+        6.1629999999999541
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        129.89699999999999,
+        252.25700000000001,
+        9.7940000000000111,
+        7.0600000000000023
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        129.8974,
+        252.25730000000001,
+        9.7940000000000111,
+        7.061000000000007
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        133.136,
+        246.678,
+        8.8050000000000068,
+        7.7770000000000152
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        133.13670000000002,
+        246.67790000000002,
+        8.804000000000002,
+        7.7769999999999868
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        135.73400000000001,
+        239.71700000000001,
+        8.1910000000000025,
+        8.1219999999999857
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        135.7338,
+        239.71720000000002,
+        8.1910000000000025,
+        8.1219999999999857
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        136.99299999999999,
+        232.90000000000001,
+        8.1950000000000216,
+        8.2189999999999941
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        136.99340000000001,
+        232.90010000000001,
+        8.1940000000000168,
+        8.2199999999999989
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        136.90200000000002,
+        226.31900000000002,
+        8.0539999999999736,
+        7.9839999999999804
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        136.90199999999999,
+        226.31870000000001,
+        8.054000000000002,
+        7.9840000000000089
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        124.47,
+        257.71899999999999,
+        7.7419999999999902,
+        5.3389999999999986
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        124.47070000000001,
+        257.71879999999999,
+        7.7420000000000044,
+        5.3380000000000223
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        129.816,
+        254.11099999999999,
+        7.9759999999999991,
+        5.2839999999999918
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        129.8169,
+        254.11099999999999,
+        7.9759999999999991,
+        5.2830000000000155
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        133.059,
+        249.17000000000002,
+        8.1310000000000002,
+        5.2849999999999966
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        133.059,
+        249.17060000000001,
+        8.1310000000000002,
+        5.2849999999999966
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        135.73099999999999,
+        242.89600000000002,
+        7.8970000000000198,
+        5.0169999999999959
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        135.73090000000002,
+        242.89570000000001,
+        7.8969999999999914,
+        5.0180000000000007
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        137.05199999999999,
+        236.446,
+        7.8990000000000009,
+        4.6690000000000111
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        137.0521,
+        236.44630000000001,
+        7.8990000000000009,
+        4.6680000000000064
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        132.495,
+        213.81900000000002,
+        9.1289999999999907,
+        8.1379999999999768
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        132.495,
+        213.81909999999999,
+        9.1289999999999907,
+        8.1380000000000052
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        127.208,
+        209.43600000000001,
+        10.37299999999999,
+        7.0660000000000025
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        127.20850000000002,
+        209.43700000000001,
+        10.37299999999999,
+        7.0649999999999977
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        135.02700000000002,
+        219.67400000000001,
+        9.1289999999999907,
+        8.1349999999999909
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        135.02770000000001,
+        219.67250000000001,
+        9.1289999999999907,
+        8.1370000000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        96.716999999999999,
+        230.501,
+        25.590000000000003,
+        9.4019999999999868
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        96.717100000000002,
+        230.5001,
+        25.605999999999995,
+        9.5229999999999961
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        162.46600000000001,
+        241.399,
+        13.585000000000008,
+        8.539999999999992
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        162.4657,
+        241.39740000000003,
+        13.586000000000013,
+        8.5409999999999968
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        162.495,
+        242.124,
+        13.581999999999994,
+        8.5409999999999968
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        162.49530000000001,
+        242.12559999999999,
+        13.581999999999994,
+        8.5400000000000205
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        168.28900000000002,
+        226.298,
+        10.775999999999982,
+        22.227000000000004
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        168.28989999999999,
+        226.2971,
+        10.775000000000006,
+        22.228000000000009
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        168.16499999999999,
+        226.298,
+        11.650000000000006,
+        22.262
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        168.16479999999999,
+        226.297,
+        11.65100000000001,
+        22.263000000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        170.92500000000001,
+        226.31100000000001,
+        13.59899999999999,
+        22.187999999999988
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        170.92450000000002,
+        226.31150000000002,
+        13.599999999999994,
+        22.187999999999988
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        174.58000000000001,
+        231.44499999999999,
+        7.867999999999995,
+        11.729000000000013
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        174.58100000000002,
+        231.44450000000001,
+        7.8669999999999902,
+        11.730000000000018
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        175.184,
+        231.44499999999999,
+        7.8660000000000139,
+        11.729000000000013
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        175.18450000000001,
+        231.44450000000001,
+        7.8650000000000091,
+        11.730000000000018
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        163.82900000000001,
+        214.358,
+        11.632000000000005,
+        5.1450000000000102
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        163.8289,
+        214.35850000000002,
+        11.631,
+        5.1450000000000102
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        165.155,
+        205.64000000000001,
+        14.836999999999989,
+        22.724999999999994
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        165.15559999999999,
+        205.64020000000002,
+        14.838000000000022,
+        22.724999999999994
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        167.03300000000002,
+        205.70699999999999,
+        14.146999999999991,
+        22.613
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        167.03220000000002,
+        205.70570000000001,
+        14.147999999999996,
+        22.614999999999981
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        166.2998,
+        209.03230000000002,
+        6.0349999999999966,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        165.5908,
+        218.93370000000002,
+        5.8460000000000036,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        165.23340000000002,
+        213.709,
+        5.7810000000000059,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        165.2002,
+        216.2861,
+        5.8460000000000036,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        167.62010000000001,
+        207.1876,
+        5.6539999999999964,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        165.51850000000002,
+        211.21870000000001,
+        5.8789999999999907,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        168.90720000000002,
+        206.0566,
+        5.6560000000000059,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        166.3955,
+        221.209,
+        6.0370000000000061,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        167.7158,
+        222.86330000000001,
+        5.6539999999999964,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        169.0361,
+        223.89750000000001,
+        5.6539999999999964,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        170.61500000000001,
+        210.941,
+        7.8649999999999807,
+        11.729000000000013
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        170.61420000000001,
+        210.94159999999999,
+        7.8650000000000091,
+        11.729000000000013
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        171.21800000000002,
+        210.941,
+        7.8629999999999995,
+        11.729000000000013
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        171.21770000000001,
+        210.94159999999999,
+        7.8629999999999995,
+        11.729000000000013
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        160.51300000000001,
+        189.875,
+        14.841000000000008,
+        22.724000000000018
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        160.51390000000001,
+        189.87360000000001,
+        14.841000000000008,
+        22.725999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        162.393,
+        189.93899999999999,
+        14.147999999999996,
+        22.614000000000004
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        162.39260000000002,
+        189.93900000000002,
+        14.146999999999991,
+        22.614999999999981
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        161.6611,
+        193.2646,
+        6.0349999999999966,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        160.9521,
+        203.1671,
+        5.8460000000000036,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        160.59470000000002,
+        197.9434,
+        5.7810000000000059,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        160.5625,
+        200.5196,
+        5.8449999999999989,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        162.9804,
+        191.41890000000001,
+        5.6529999999999916,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        160.87980000000002,
+        195.4521,
+        5.8770000000000095,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        164.2705,
+        190.291,
+        5.6519999999999868,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        161.75480000000002,
+        205.44050000000001,
+        6.0370000000000061,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        163.0761,
+        207.0967,
+        5.6529999999999916,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        164.3974,
+        208.1309,
+        5.6539999999999964,
+        4
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        165.97399999999999,
+        195.17600000000002,
+        7.8640000000000043,
+        11.72999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        165.9736,
+        195.17500000000001,
+        7.8650000000000091,
+        11.730000000000018
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        166.577,
+        195.17600000000002,
+        7.8650000000000091,
+        11.72999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        166.5771,
+        195.17500000000001,
+        7.8650000000000091,
+        11.730000000000018
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        172.82500000000002,
+        214.27000000000001,
+        11.363,
+        5.1440000000000055
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        172.8254,
+        214.2706,
+        11.363,
+        5.1430000000000007
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        168.36000000000001,
+        198.52799999999999,
+        11.363,
+        5.1490000000000009
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        168.36060000000001,
+        198.5284,
+        11.363,
+        5.1479999999999961
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        162.06300000000002,
+        205.465,
+        6.0539999999999736,
+        10.900000000000006
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        162.0634,
+        205.4648,
+        6.0529999999999973,
+        10.899000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        162.999,
+        207.208,
+        5.8770000000000095,
+        9.6920000000000073
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        162.99930000000001,
+        207.20750000000001,
+        5.8770000000000095,
+        9.6930000000000121
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        163.68000000000001,
+        212.36500000000001,
+        6.7139999999999986,
+        4.5349999999999966
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        163.68040000000002,
+        212.36430000000001,
+        6.7129999999999939,
+        4.5360000000000014
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        163.881,
+        211.494,
+        5.9770000000000039,
+        4.8710000000000093
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        163.88150000000002,
+        211.49369999999999,
+        5.9770000000000039,
+        4.8710000000000093
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        165.858,
+        211.46000000000001,
+        4.5020000000000095,
+        5.4070000000000107
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        165.85840000000002,
+        211.46000000000001,
+        4.5020000000000095,
+        5.4070000000000107
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        190.51500000000001,
+        206.75160000000002,
+        4.0269999999999868,
+        4.1419999999999959
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        166.809,
+        243.833,
+        5.1630000000000109,
+        29.104000000000013
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        166.8092,
+        243.83390000000003,
+        5.1620000000000061,
+        29.180000000000007
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        168.49299999999999,
+        192.626,
+        26.14700000000002,
+        52.496000000000009
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        168.49279999999999,
+        192.62620000000001,
+        26.14700000000002,
+        52.495000000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        171.08100000000002,
+        191.64600000000002,
+        29.187999999999988,
+        53.027999999999992
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        171.08109999999999,
+        191.64580000000001,
+        29.187000000000012,
+        53.028999999999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        181.62200000000001,
+        214.077,
+        7.2789999999999964,
+        5.2139999999999986
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        181.62230000000002,
+        214.07670000000002,
+        7.2789999999999964,
+        5.2239999999999895
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        153.63300000000001,
+        264.47700000000003,
+        31.849999999999994,
+        13.377999999999986
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        153.63320000000002,
+        264.47620000000001,
+        31.849999999999994,
+        13.379000000000019
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        153.572,
+        265.67599999999999,
+        31.873999999999995,
+        13.970000000000027
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        153.57270000000003,
+        265.67710000000005,
+        31.873999999999995,
+        13.968999999999994
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        166.3896,
+        264.4796,
+        4,
+        5.2010000000000218
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        168.96380000000002,
+        264.50150000000002,
+        4,
+        5.1999999999999886
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        171.7978,
+        264.72910000000002,
+        4,
+        5.1170000000000186
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        174.37200000000001,
+        265.10059999999999,
+        4,
+        5.2010000000000218
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        158.8974,
+        265.64999999999998,
+        4,
+        5.1990000000000123
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        161.21770000000001,
+        265.11080000000004,
+        4,
+        5.1170000000000186
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        163.74700000000001,
+        264.63569999999999,
+        4,
+        5.1999999999999886
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        178.55760000000001,
+        266.40440000000001,
+        4,
+        5.117999999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        176.60050000000001,
+        265.70120000000003,
+        4,
+        5.1999999999999886
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        179.99510000000001,
+        267.24180000000001,
+        4,
+        5.117999999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        181.0478,
+        268.11130000000003,
+        4,
+        5.1999999999999886
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        156.9306,
+        266.34230000000002,
+        4,
+        5.117999999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        155.35740000000001,
+        267.03520000000003,
+        4,
+        5.1999999999999886
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        154.26660000000001,
+        267.97710000000001,
+        4,
+        5.1999999999999886
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        165.08000000000001,
+        269.98599999999999,
+        9.2330000000000041,
+        5.7030000000000314
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        165.07929999999999,
+        269.98680000000002,
+        9.2340000000000089,
+        5.7029999999999745
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        165.08000000000001,
+        270.25299999999999,
+        9.2330000000000041,
+        5.7019999999999982
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        165.07929999999999,
+        270.25200000000001,
+        9.2340000000000089,
+        5.7029999999999745
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        166.60599999999999,
+        270.76800000000003,
+        6.1770000000000209,
+        5.367999999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        166.6061,
+        270.76770000000005,
+        6.1779999999999973,
+        5.3689999999999714
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        166.602,
+        271.93299999999999,
+        6.1899999999999977,
+        4.4540000000000077
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        166.60229999999999,
+        271.9332,
+        6.1900000000000261,
+        4.4529999999999745
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        149.38400000000001,
+        233.86700000000002,
+        6.8799999999999955,
+        6.5879999999999939
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        149.38380000000001,
+        233.86620000000002,
+        6.8810000000000002,
+        6.5889999999999986
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        149.55799999999999,
+        234.92400000000001,
+        6.1769999999999925,
+        4.4120000000000061
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        149.55719999999999,
+        234.92529999999999,
+        6.1779999999999973,
+        4.4120000000000061
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.341999999999999,
+        219.99600000000001,
+        60.021000000000001,
+        23.272999999999996
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.340900000000005,
+        219.995,
+        60.02200000000002,
+        23.274000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        121.108,
+        226.20099999999999,
+        32.200999999999993,
+        24.799000000000007
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        121.10830000000001,
+        226.20120000000003,
+        32.200999999999993,
+        24.798000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        92.228999999999999,
+        202.49199999999999,
+        42.343000000000004,
+        71.205000000000013
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        92.2303,
+        202.49180000000001,
+        42.342000000000013,
+        71.204999999999984
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.90600000000001,
+        202.517,
+        38.557999999999993,
+        71.341000000000008
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.90620000000001,
+        202.51749999999998,
+        46.40100000000001,
+        71.384000000000015
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        92.084000000000003,
+        202.68299999999999,
+        60.580999999999989,
+        71.309000000000026
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        92.083200000000005,
+        202.68220000000002,
+        60.581999999999994,
+        71.309000000000026
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.210999999999999,
+        231.96600000000001,
+        15.710000000000008,
+        19.850999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.211800000000011,
+        231.96550000000002,
+        15.709999999999994,
+        19.850999999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.655,
+        226.21200000000002,
+        8.355000000000004,
+        4.0799999999999841
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.65520000000001,
+        226.21320000000003,
+        8.355000000000004,
+        4.0789999999999793
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.183999999999997,
+        219.99000000000001,
+        32.631,
+        23.274000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.183199999999999,
+        219.99010000000001,
+        32.632000000000005,
+        23.274000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.085999999999999,
+        226.19800000000001,
+        32.234000000000009,
+        25.620000000000005
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        93.086600000000004,
+        226.19690000000003,
+        32.233999999999995,
+        25.620999999999981
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        149.37,
+        230.24299999999999,
+        5.7379999999999995,
+        7.2830000000000155
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        149.36969999999999,
+        230.2431,
+        5.7390000000000043,
+        7.282999999999987
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        91.849000000000004,
+        260.90600000000001,
+        66.358999999999995,
+        21.031000000000006
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        91.848600000000005,
+        260.90630000000004,
+        66.358000000000004,
+        21.031000000000006
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        91.917000000000002,
+        262.48399999999998,
+        66.290999999999997,
+        21.481000000000051
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        91.916499999999999,
+        262.48439999999999,
+        66.291000000000011,
+        21.479000000000042
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        113.96000000000001,
+        269.63800000000003,
+        22.521999999999991,
+        9.1359999999999673
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        113.95920000000001,
+        269.63870000000003,
+        22.521999999999991,
+        9.1349999999999909
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        119.3969,
+        261.00049999999999,
+        4,
+        5.5149999999999864
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        121.82220000000001,
+        260.95030000000003,
+        4,
+        5.5149999999999864
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        124.32910000000001,
+        261.00049999999999,
+        4,
+        5.4119999999999777
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        126.99700000000001,
+        261.00049999999999,
+        4,
+        5.5149999999999864
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        109.97850000000001,
+        261.8082,
+        4,
+        5.5129999999999768
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        112.24260000000001,
+        261.55619999999999,
+        4,
+        5.5129999999999768
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        114.58640000000001,
+        261.3546,
+        4,
+        5.4119999999999777
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.01220000000001,
+        261.15230000000003,
+        4,
+        5.51400000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        137.50630000000001,
+        261.959,
+        4,
+        5.5149999999999864
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        135.08150000000001,
+        261.70760000000001,
+        4,
+        5.5129999999999768
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        132.49360000000001,
+        261.4556,
+        4,
+        5.4119999999999777
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        129.82660000000001,
+        261.20359999999999,
+        4,
+        5.5129999999999768
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        101.208,
+        263.524,
+        4,
+        5.5129999999999768
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        103.22800000000001,
+        263.01859999999999,
+        4,
+        5.5129999999999768
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        105.27,
+        262.4708,
+        4,
+        5.8159999999999741
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        107.5937,
+        262.16059999999999,
+        4,
+        5.51400000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        146.07560000000001,
+        263.81990000000002,
+        4,
+        5.5389999999999873
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        144.13420000000002,
+        263.32089999999999,
+        4,
+        5.51400000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        142.1953,
+        262.86770000000001,
+        4,
+        5.4119999999999777
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        139.9316,
+        262.41270000000003,
+        4,
+        5.5149999999999864
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        151.77630000000002,
+        266.39840000000004,
+        4,
+        5.51400000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        150.7236,
+        265.6422,
+        4,
+        5.5129999999999768
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        149.4306,
+        265.13780000000003,
+        4,
+        5.4119999999999777
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        147.8955,
+        264.4307,
+        4,
+        5.51400000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        94.942300000000003,
+        265.9443,
+        4,
+        5.51400000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        96.154700000000005,
+        265.28860000000003,
+        4,
+        5.51400000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        97.690899999999999,
+        264.73490000000004,
+        4,
+        5.4119999999999777
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        99.30810000000001,
+        264.07820000000004,
+        4,
+        5.5129999999999768
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.574,
+        270.90100000000001,
+        14.228999999999999,
+        7.1890000000000214
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.57389999999999,
+        270.90050000000002,
+        14.228999999999999,
+        7.1899999999999977
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.574,
+        271.39699999999999,
+        14.228999999999999,
+        7.1920000000000073
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        117.57389999999999,
+        271.39750000000004,
+        14.228999999999999,
+        7.1920000000000073
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        120.56100000000001,
+        272.363,
+        8.2549999999999955,
+        6.5670000000000073
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        120.5604,
+        272.36250000000001,
+        8.255999999999986,
+        6.5679999999999836
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        120.54900000000001,
+        274.54899999999998,
+        8.2789999999999964,
+        4.8490000000000464
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        120.5479,
+        274.54880000000003,
+        8.2810000000000059,
+        4.8500000000000227
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        175.173,
+        198.52799999999999,
+        20.962999999999994,
+        5.1490000000000009
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        175.17270000000002,
+        198.5284,
+        20.962999999999994,
+        5.1479999999999961
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        195.57679999999999,
+        197.64670000000001,
+        4.8210000000000264,
+        6.0560000000000116
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        196.54769999999999,
+        198.08709999999999,
+        4.8460000000000036,
+        5.8210000000000264
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        197.54390000000001,
+        198.4187,
+        4.8480000000000132,
+        5.6949999999999932
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        198.54580000000001,
+        198.85990000000001,
+        4.8180000000000121,
+        5.4470000000000027
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        95.331000000000003,
+        239.018,
+        5.4140000000000015,
+        6.0500000000000114
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        95.331000000000003,
+        239.0181,
+        5.4139999999999873,
+        6.0490000000000066
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        94.213999999999999,
+        229.73000000000002,
+        5.7379999999999995,
+        6.9549999999999841
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        94.213499999999996,
+        229.73050000000001,
+        5.7390000000000043,
+        6.9550000000000125
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        104.34400000000001,
+        262.07100000000003,
+        42.022000000000006,
+        14.531999999999982
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        176.91499999999999,
+        234.727,
+        20.473000000000013,
+        5.146000000000015
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        176.91469999999998,
+        234.72760000000002,
+        20.473000000000013,
+        5.1450000000000102
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        68.667000000000002,
+        186.97999999999999,
+        116.31399999999999,
+        20.268000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        68.666200000000003,
+        186.97909999999999,
+        116.315,
+        20.268000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        67.623000000000005,
+        264.15199999999999,
+        115.27800000000001,
+        20.998000000000047
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        67.622799999999998,
+        264.15280000000001,
+        115.27900000000001,
+        20.99799999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        60.312000000000005,
+        186.36500000000001,
+        133.60899999999998,
+        99.401999999999987
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        60.312100000000001,
+        186.36430000000001,
+        133.60899999999998,
+        99.401999999999987
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        177.047,
+        186.39699999999999,
+        42.430000000000007,
+        99.413000000000011
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        177.0478,
+        186.39710000000002,
+        42.430000000000007,
+        99.413000000000011
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        190.38200000000001,
+        181.108,
+        46.575999999999993,
+        111.94200000000001
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        190.38200000000001,
+        181.108,
+        46.575999999999993,
+        111.94200000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        190.49700000000001,
+        186.91800000000001,
+        43.786000000000001,
+        101.37799999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        190.45600000000002,
+        186.864,
+        43.861999999999995,
+        101.48800000000003
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        190.38200000000001,
+        189.82730000000001,
+        42.648099999999999,
+        96.943999999999988
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        190.38200000000001,
+        191.0395,
+        41.440400000000011,
+        92.498000000000019
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        190.38200000000001,
+        191.13079999999999,
+        41.396200000000022,
+        92.317000000000036
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        218.32420000000002,
+        232.5479,
+        7.5180000000000007,
+        8.3799999999999955
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        199.04130000000004,
+        200.7936,
+        6.8919999999999959,
+        10.100999999999999
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        199.72800000000001,
+        264.5865,
+        6.9499999999999886,
+        9.8729999999999905
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        190.38200000000001,
+        188.7946,
+        42.910599999999988,
+        97.881000000000029
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        217.465,
+        262.81709999999998,
+        7.3230000000000075,
+        9.2010000000000218
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        217.84460000000001,
+        202.29170000000002,
+        7.2129999999999939,
+        9.3900000000000148
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        224.49980000000002,
+        232.25810000000001,
+        7.3220000000000027,
+        7.6589999999999918
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        199.149,
+        190.1651,
+        6.2230000000000132,
+        9.8000000000000114
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        197.98370000000003,
+        229.65610000000001,
+        9.6539999999999964,
+        13.26400000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        198.61099999999999,
+        230.68600000000001,
+        8.3970000000000198,
+        11.204000000000008
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        198.61099999999999,
+        230.77500000000001,
+        8.3970000000000198,
+        7.7249999999999943
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        197.98400000000001,
+        234.24200000000002,
+        9.6539999999999964,
+        8.7509999999999764
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        190.38200000000001,
+        206.81830000000002,
+        27.791699999999992,
+        71.901999999999987
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        190.41499999999999,
+        181.30600000000001,
+        47.398000000000025,
+        111.70399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        188.43000000000001,
+        179.10900000000001,
+        50.524000000000001,
+        115.941
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        190.38200000000001,
+        187.29810000000003,
+        43.880700000000019,
+        100.23399999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        187.42099999999999,
+        187.89099999999999,
+        13.400000000000006,
+        96.276000000000039
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        186.32500000000002,
+        279.82400000000001,
+        9.1019999999999754,
+        11.565999999999974
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        193.399,
+        179.64400000000001,
+        8.1620000000000061,
+        12.524000000000001
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        191.28399999999999,
+        185.87200000000001,
+        44.059000000000026,
+        103.11599999999999
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        193.12299999999999,
+        187.87200000000001,
+        40.340000000000003,
+        99.236999999999966
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        193.12299999999999,
+        187.87200000000001,
+        40.340000000000003,
+        99.236999999999966
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        191.083,
+        185.95099999999999,
+        14.412000000000006,
+        100.46600000000004
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        193.083,
+        187.94999999999999,
+        10.412000000000006,
+        96.467000000000041
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        185.483,
+        190.68200000000002,
+        14.341000000000008,
+        21.480999999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        185.4828,
+        190.68299999999999,
+        14.341000000000008,
+        21.829000000000008
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        185.49700000000001,
+        196.952,
+        9.1999999999999886,
+        5.3470000000000084
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        185.53100000000001,
+        198.88200000000001,
+        9.0840000000000032,
+        5.695999999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        185.703,
+        194.964,
+        9.4610000000000127,
+        5.3149999999999977
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        186.101,
+        193.31999999999999,
+        9.8520000000000039,
+        5.2270000000000039
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        186.74600000000001,
+        191.797,
+        10.579000000000008,
+        5.1400000000000148
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        188.16800000000001,
+        190.81999999999999,
+        10.945999999999998,
+        4.6129999999999995
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        185.59399999999999,
+        201.227,
+        9.3460000000000036,
+        5.6949999999999932
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        185.99700000000001,
+        203.36199999999999,
+        9.4939999999999998,
+        5.3460000000000036
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        186.66200000000001,
+        205.11799999999999,
+        9.6810000000000116,
+        5.1120000000000232
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        187.523,
+        206.59800000000001,
+        9.695999999999998,
+        4.5569999999999879
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        188.83500000000001,
+        207.505,
+        9.7069999999999936,
+        4.6050000000000182
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        185.4828,
+        190.68299999999999,
+        14.341000000000008,
+        21.829000000000008
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        190.56999999999999,
+        190.75900000000001,
+        13.859000000000009,
+        21.442999999999984
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        190.56999999999999,
+        190.75890000000001,
+        13.860000000000014,
+        21.443999999999988
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        191.8741,
+        191.78320000000002,
+        11.903999999999996,
+        19.302999999999997
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        193.03880000000001,
+        196.03470000000002,
+        5.2700000000000102,
+        11.311000000000007
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        194.4667,
+        195.78920000000002,
+        5.320999999999998,
+        11.522999999999996
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        195.9135,
+        195.75470000000001,
+        5.2630000000000052,
+        11.709000000000003
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        197.3366,
+        195.90720000000002,
+        5.375,
+        11.334000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        176.08240000000001,
+        247.85660000000001,
+        11.105999999999995,
+        68.824999999999989
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        173.50140000000002,
+        241.5907,
+        9.5519999999999925,
+        12.792000000000002
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        170.078,
+        309.60200000000003,
+        84.954000000000008,
+        18.399999999999977
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        170.07820000000001,
+        309.60110000000003,
+        84.954000000000008,
+        18.399999999999977
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        149.22270000000003,
+        179.26730000000003,
+        19.705999999999989,
+        41.889999999999986
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        162.30289999999999,
+        214.1431,
+        12.717000000000013,
+        9.9840000000000089
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        113.468,
+        167.85300000000001,
+        77.082000000000008,
+        17.566000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        113.4678,
+        167.8526,
+        77.082000000000008,
+        17.564999999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        66.729500000000002,
+        176.62899999999999,
+        36.853999999999999,
+        56.915999999999997
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        96.650199999999998,
+        226.5292,
+        12.022000000000006,
+        11.490000000000009
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        49.056000000000004,
+        167.017,
+        41.177,
+        17.566000000000003
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        49.056400000000004,
+        167.01770000000002,
+        41.177,
+        17.564999999999998
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        146.8569,
+        276.87360000000001,
+        4,
+        39.807999999999993
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        144.3288,
+        270.09710000000001,
+        9.0449999999999875,
+        12.468999999999994
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        94.778999999999996,
+        309.60200000000003,
+        72.620999999999981,
+        18.399999999999977
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        94.778300000000016,
+        309.60110000000003,
+        72.622,
+        18.399999999999977
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        100.3647,
+        152.03810000000001,
+        22.882999999999996,
+        69.277000000000015
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        116.32680000000001,
+        214.2944,
+        12.078999999999994,
+        11.415999999999997
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        85.691000000000003,
+        140.87299999999999,
+        34.177999999999997,
+        18.400000000000006
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        85.691600000000008,
+        140.87299999999999,
+        34.177999999999997,
+        18.400000000000006
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        197.74520000000001,
+        154.03810000000001,
+        13.784999999999997,
+        40.378000000000014
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        193.55120000000002,
+        187.52810000000002,
+        11.226999999999975,
+        12.211000000000013
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        176.142,
+        140.87299999999999,
+        73.731999999999999,
+        18.400000000000006
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        176.14200000000002,
+        140.87299999999999,
+        73.730999999999995,
+        18.400000000000006
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        109.46680000000001,
+        276.15340000000003,
+        4,
+        18.286999999999978
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        106.93870000000001,
+        269.37639999999999,
+        9.0450000000000017,
+        12.468999999999994
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        73.055999999999997,
+        287.35899999999998,
+        69.954999999999998,
+        18.399999999999977
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        73.056200000000004,
+        287.35939999999999,
+        69.954999999999998,
+        18.399999999999977
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        149.4633,
+        197.48350000000002,
+        15.399000000000001,
+        4
+      ]
+    },
+    {
+      "filled" : true,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        159.1703,
+        194.95540000000003,
+        12.468999999999994,
+        9.0449999999999875
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        287.86502080000002,
+        123.114,
+        229.76997919999997,
+        192.864
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : false,
+      "rect" : [
+        282.75,
+        121.11360000000002,
+        241,
+        199.75
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

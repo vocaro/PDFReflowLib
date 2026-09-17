@@ -1,0 +1,23 @@
+893,895d892
+< p20->21 P [B] upper w94 …'he responsibility of administering the Federal Aid' ‖ 'Airport Program. This program was designed to prom'
+< p21->22 P [B] upper w27 …'iscord between management and the Professional Air' ‖ 'Traffic Controllers Organization (PATCO) culminate'
+< p24->24 P [IC] upper w26 …'through training, outreach, and education. The FAA' ‖ 'Safety Team (FAASTeam) exemplifies this commitment'
+964d960
+< p169->170 P [ICB] upper w138 …'relative) Fahrenheit degrees (70 x 100/180 = 38.89' ‖ 'Celsius degrees) (Remember there are 180 Fahrenhei'
+982d977
+< p221->222 P [ICB] lower w26 …'pass. Errors in the magnetic compass are numerous,' ‖ 'making straight flight and precision turns to head'
+1109d1103
+< p320->321 P [B] digit w52 …'L with a scattered layer at 10,000 feet AGL. After' ‖ '2000Z, the forecast calls for scattered thundersto'
+1132,1133d1125
+< p341->341 P [C] lower w47 …'sholds. Figure 14-10 shows “18-36” to indicate the' ‖ 'on Taxiway Kilo.'
+< p341->341 P [IICC] digit w12 …'for Runway 18 is to the left and the threshold for' ‖ '14 with collocated Taxiway Alpha location sign.'
+1154d1145
+< p391->391 P [C] lower w27 …'pleted before dark. Remember, an hour is lost when' ‖ 'distance, and direction.'
+1160d1150
+< p397->397 R [] lower w8 …'• GS—rate of the aircraft’s inflight progress over' ‖ 'headings for a particular instance.'
+1193d1182
+< p438->439 P [B] lower w43 …'es have taken steps to allow the possession, sale,' ‖ 'and use of marijuana withing their border. The FAA'
+2451c2440
+< Counter({'upper': 2418, 'lower': 12, 'digit': 11, 'other': 9}) 2450
+---
+> Counter({'upper': 2414, 'digit': 9, 'other': 9, 'lower': 7}) 2439

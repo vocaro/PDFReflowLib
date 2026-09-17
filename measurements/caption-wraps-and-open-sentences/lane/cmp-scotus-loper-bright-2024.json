@@ -1,0 +1,75 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "scotus-loper-bright-2024",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "276f8cf1fe9de8821588f996233561953ce167a65d9b082aaf24005827defd64",
+  "candidateConverterSHA256": "dbf75c1f062c171c4ba39c2a0c2ad870f30ff3f7c041d8627ea2a3b01b065047",
+  "sameConverter": false,
+  "visionModelCaches": {
+    "baseline": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-base",
+      "programsSHA256": "71a4bfd31e0fb32a2fd77ef33fc6e6c5083c5bb3f6f01e889377f52d73a54de6"
+    },
+    "candidate": {
+      "mode": "inherited",
+      "executableName": "pdf-reflow-cand",
+      "programsSHA256": "3a51cc85168c50f141da30b19cbaa607cd95ca1a3fb40f25a8a86d0139278c11"
+    }
+  },
+  "sameVisionPrograms": false,
+  "changedOCRPages": [],
+  "ocrTextVolume": {
+    "pages": 0,
+    "baselineWords": 0,
+    "candidateWords": 0,
+    "pagesWithFewerWords": {
+      "baseline": [],
+      "candidate": []
+    }
+  },
+  "changedPages": [
+    3,
+    4,
+    34,
+    35
+  ],
+  "changedPageFields": {
+    "3": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "4": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "34": [
+      "markup",
+      "paragraphIDs"
+    ],
+    "35": [
+      "markup",
+      "paragraphIDs"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 108,
+    "fields": {
+      "paragraphIDs": 108
+    },
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

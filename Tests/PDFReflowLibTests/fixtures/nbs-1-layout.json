@@ -1,0 +1,5438 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        503.77000000000004,
+        723.83000000000004,
+        13.906151999999963,
+        9.2000000000000455
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 14.311,
+          "text" : "--"
+        }
+      ],
+      "text" : "--"
+    },
+    {
+      "rect" : [
+        400.03000000000003,
+        724.58000000000004,
+        101.62590710000001,
+        6.2000000000000455
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 15.30585,
+          "text" : "-----------"
+        }
+      ],
+      "text" : "-----------"
+    },
+    {
+      "rect" : [
+        161.71000000000001,
+        675.77713867187492,
+        203.70444000000001,
+        7.1000000000000227
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.1000000000000005,
+          "text" : "JOURNAL "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.8125,
+          "text" : "OF "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.7095500000000001,
+          "text" : "RESEARCH "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.1697000000000006,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.1000000000000005,
+          "text" : "the Notional Bureau "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.1697000000000006,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.1000000000000005,
+          "text" : "Standards"
+        }
+      ],
+      "text" : "JOURNAL OF RESEARCH of the Notional Bureau of Standards"
+    },
+    {
+      "rect" : [
+        185.75999999999999,
+        667.60713867187496,
+        156.14764000000002,
+        7.1000000000000227
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 6.9983000000000004,
+          "text" : "Vo "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.1000000000000005,
+          "text" : "lume 82, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.4232000000000005,
+          "text" : "No.3, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.1000000000000005,
+          "text" : "November- December 1977"
+        }
+      ],
+      "text" : "Vo lume 82, No.3, November- December 1977"
+    },
+    {
+      "rect" : [
+        53.600000000000001,
+        629.88228515624996,
+        419.77475999999996,
+        14.600000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 14.719350000000002,
+          "text" : "Stimulated "
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 14.709950000000001,
+          "text" : "Multiphoton "
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 14.600000000000001,
+          "text" : "Bremsstrahlung "
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 14.676350000000001,
+          "text" : "in "
+        },
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 14.600000000000001,
+          "text" : "Electron-Ion"
+        }
+      ],
+      "text" : "Stimulated Multiphoton Bremsstrahlung in Electron-Ion"
+    },
+    {
+      "rect" : [
+        223.72059999999996,
+        612.12868515624996,
+        79.248799999999989,
+        14.600000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "bold" : true,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 14.600000000000001,
+          "text" : "Collisions*"
+        }
+      ],
+      "text" : "Collisions*"
+    },
+    {
+      "rect" : [
+        215.55000000000001,
+        583.19500000000005,
+        95.125451599999963,
+        11.100000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 11.224400000000001,
+          "text" : "Sydney "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 11.171950000000001,
+          "text" : "Geltman**"
+        }
+      ],
+      "text" : "Sydney Geltman**"
+    },
+    {
+      "rect" : [
+        82.5,
+        561.80499999999995,
+        362.15782000000002,
+        9.2999999999999545
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.3079500000000017,
+          "text" : "Institute "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.3000000000000007,
+          "text" : "for Basic "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.4693500000000004,
+          "text" : "Standards, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.4005500000000008,
+          "text" : "National "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.3000000000000007,
+          "text" : "Bureau of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.4693500000000004,
+          "text" : "Standards, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.3000000000000007,
+          "text" : "Boulder, Colorado "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.6033000000000008,
+          "text" : "80302"
+        }
+      ],
+      "text" : "Institute for Basic Standards, National Bureau of Standards, Boulder, Colorado 80302"
+    },
+    {
+      "rect" : [
+        232.47,
+        544.53499999999997,
+        62.057400000000058,
+        7.2999999999999545
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.3506499999999999,
+          "text" : "(August "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.4363500000000009,
+          "text" : "22, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.5500000000000007,
+          "text" : "1977)"
+        }
+      ],
+      "text" : "(August 22, 1977)"
+    },
+    {
+      "rect" : [
+        101.75,
+        515.92000000000007,
+        339.54600000000005,
+        6.6000000000000227
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "A re"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.3957500000000005,
+          "text" : "vi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "e w is "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7325499999999998,
+          "text" : "pr"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.841800000000001,
+          "text" : "ese"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.5490000000000004,
+          "text" : "nt "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "ed of the bas ic "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7756500000000006,
+          "text" : "cla"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7382000000000009,
+          "text" : "ss"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "i"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9683500000000009,
+          "text" : "ca"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "l m"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7052000000000005,
+          "text" : "ec"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6439000000000004,
+          "text" : "hani"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "s m whereby a n e l"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7052000000000005,
+          "text" : "ec"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "tron "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7063500000000005,
+          "text" : "ca"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "n a bso"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6987000000000005,
+          "text" : "rb "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "e ner"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.5832000000000006,
+          "text" : "gy "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "frolll an"
+        }
+      ],
+      "text" : "A revi e w is present ed of the bas ic classical mechanis m whereby a n e lectron can a bsorb e nergy frolll an"
+    },
+    {
+      "rect" : [
+        85.370000000000005,
+        508.00000000000006,
+        355.25040000000001,
+        6.5999999999999659
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7748000000000008,
+          "text" : "ele"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "c tromagnetic "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.3292999999999999,
+          "text" : "fi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "e ld while "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6763000000000003,
+          "text" : "und"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "ergoing a collis ion with a n atom o r ion. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.76295,
+          "text" : "Th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "e "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6707999999999998,
+          "text" : "pro"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "ce"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7382000000000009,
+          "text" : "ss "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "is also "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9585500000000007,
+          "text" : "de"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "scribed for a"
+        }
+      ],
+      "text" : "elec tromagnetic fi e ld while undergoing a collis ion with a n atom o r ion. The process is also described for a"
+    },
+    {
+      "rect" : [
+        85.129999999999995,
+        500.08000000000004,
+        355.98040000000003,
+        6.6000000000000227
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.8776500000000009,
+          "text" : "qu"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.8440000000000003,
+          "text" : "an"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "tum m"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.8361999999999998,
+          "text" : "ec"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "hani"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.8373500000000007,
+          "text" : "ca"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "l "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6301000000000005,
+          "text" : "co"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "lli s ion a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6247500000000006,
+          "text" : "nd "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7924000000000007,
+          "text" : "th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "e a bsorption "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6387499999999999,
+          "text" : "or "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "emi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7382000000000009,
+          "text" : "ss"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "ion "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7778500000000008,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "photons . "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.8678500000000007,
+          "text" : "Th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "e "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9033000000000007,
+          "text" : "app"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "r"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9528500000000006,
+          "text" : "opr"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "i"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6547999999999998,
+          "text" : "ate "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.623050000000001,
+          "text" : "formulation"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "s "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.8340000000000005,
+          "text" : "ar"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "c"
+        }
+      ],
+      "text" : "quantum mechanical colli s ion and the a bsorption or emi ssion of photons . The appropriate formulations arc"
+    },
+    {
+      "rect" : [
+        85.139399999999966,
+        491.92000000000002,
+        356.14640000000014,
+        6.6024000000000456
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0024000000000228283,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "d"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.841800000000001,
+          "text" : "esc"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "ribed f"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7778500000000008,
+          "text" : "or "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "weak a nd strong a "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6274500000000005,
+          "text" : "ppli"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "ed "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.1273499999999999,
+          "text" : "fi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "e ld"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9158500000000007,
+          "text" : "s. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "A brie f re "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.3957500000000005,
+          "text" : "vi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "ew is give n for "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6469000000000005,
+          "text" : "th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "e r"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.779300000000001,
+          "text" : "es"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7870000000000008,
+          "text" : "ultin"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "g pl"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6067999999999998,
+          "text" : "as"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "ma abso rption"
+        }
+      ],
+      "text" : "described for weak a nd strong a pplied fi e lds. A brie f re vi ew is give n for the resulting plasma abso rption"
+    },
+    {
+      "rect" : [
+        85.129999999999995,
+        483.92500000000001,
+        37.654200000000003,
+        6.8999999999999773
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9000000000000004,
+          "text" : "coe"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.5434999999999999,
+          "text" : "ffi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9000000000000004,
+          "text" : "cients."
+        }
+      ],
+      "text" : "coeffi cients."
+    },
+    {
+      "rect" : [
+        93.570000000000007,
+        468,
+        347.10592000000003,
+        7.1999999999999886
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.8000000000000007,
+          "text" : "Key word s: Bremsstra hlung; el"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.805200000000001,
+          "text" : "ec"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.8000000000000007,
+          "text" : "tron-ion "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9768000000000008,
+          "text" : "co"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.8000000000000007,
+          "text" : "lli sions; "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7221000000000011,
+          "text" : "fr"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9097500000000007,
+          "text" : "ee-"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7221000000000011,
+          "text" : "fr"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9362000000000004,
+          "text" : "ee "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.8000000000000007,
+          "text" : "tra nsitions; "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.0412499999999998,
+          "text" : "l11ultiph"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2000000000000002,
+          "text" : "oton "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.8000000000000007,
+          "text" : "pro"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.9376000000000007,
+          "text" : "cesses; "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.8000000000000007,
+          "text" : "plasma"
+        }
+      ],
+      "text" : "Key word s: Bremsstra hlung; electron-ion colli sions; free-free tra nsitions; l11ultiphoton processes; plasma"
+    },
+    {
+      "rect" : [
+        85.129999999999995,
+        460.00000000000006,
+        34.460399999999993,
+        6.6000000000000227
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7704500000000003,
+          "text" : "abso"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "rption."
+        }
+      ],
+      "text" : "absorption."
+    },
+    {
+      "rect" : [
+        97.769999999999996,
+        424.79500000000002,
+        80.919970000000021,
+        11.100000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 11.100000000000001,
+          "text" : "1. Introduction"
+        }
+      ],
+      "text" : "1. Introduction"
+    },
+    {
+      "rect" : [
+        29.02,
+        405.69,
+        226.52520000000004,
+        8.8000000000000114
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "A free electron "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8401500000000013,
+          "text" : "co"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "lliding with an ion is a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.9140499999999996,
+          "text" : "cce"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "lerated in its"
+        }
+      ],
+      "text" : "A free electron colliding with an ion is accelerated in its"
+    },
+    {
+      "rect" : [
+        19.212400000000002,
+        395.59640000000002,
+        236.24080000000004,
+        8.8036000000000172
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.0036000000000058208,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "potential "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.2371499999999997,
+          "text" : "fi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "eld a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7673000000000005,
+          "text" : "nd "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "on the basis of classi"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8544499999999999,
+          "text" : "ca"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "l el"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8529499999999999,
+          "text" : "ec"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "trodynamics"
+        }
+      ],
+      "text" : "potential fi eld and on the basis of classical electrodynamics"
+    },
+    {
+      "rect" : [
+        19.18640000000002,
+        385.61000000000001,
+        236.19967999999997,
+        9.3999999999999773
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "will emit el"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8529499999999999,
+          "text" : "ec"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "tromagneti c radiation [1, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.0589000000000013,
+          "text" : "2].1 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "Such bremsstrah-"
+        }
+      ],
+      "text" : "will emit electromagneti c radiation [1, 2].1 Such bremsstrah-"
+    },
+    {
+      "rect" : [
+        19.131599999999963,
+        375.93000000000001,
+        236.53840000000005,
+        8.8004000000000246
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "lung radiation has long been ob"
+        },
+        {
+          "baselineOffset" : -0.00040000000001327862,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8821000000000012,
+          "text" : "se"
+        },
+        {
+          "baselineOffset" : -0.00040000000001327862,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7626000000000008,
+          "text" : "rv"
+        },
+        {
+          "baselineOffset" : -0.00040000000001327862,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ed in collisions be"
+        },
+        {
+          "baselineOffset" : -0.00040000000001327862,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6427000000000014,
+          "text" : "tw"
+        },
+        {
+          "baselineOffset" : -0.00040000000001327862,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8529499999999999,
+          "text" : "ee"
+        },
+        {
+          "baselineOffset" : -0.00040000000001327862,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "lung radiation has long been observed in collisions between"
+    },
+    {
+      "rect" : [
+        19.187599999999975,
+        365.85000000000002,
+        236.38560000000004,
+        8.8039999999999736
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "high energy charged particles and nucle"
+        },
+        {
+          "baselineOffset" : -0.003999999999962256,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6871000000000009,
+          "text" : "i. "
+        },
+        {
+          "baselineOffset" : -0.003999999999962256,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8489500000000003,
+          "text" : "If "
+        },
+        {
+          "baselineOffset" : -0.003999999999962256,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "an external"
+        }
+      ],
+      "text" : "high energy charged particles and nuclei. If an external"
+    },
+    {
+      "rect" : [
+        18.949999999999989,
+        356.00999999999999,
+        236.58720000000005,
+        8.8016000000000645
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0016000000000531145,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "radiation "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.2371499999999997,
+          "text" : "fi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "e"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6931000000000012,
+          "text" : "ld "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "is applied "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7804500000000019,
+          "text" : "to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "an electron-ion system one has"
+        }
+      ],
+      "text" : "radiation fi eld is applied to an electron-ion system one has"
+    },
+    {
+      "rect" : [
+        19.072400000000016,
+        346.16000000000003,
+        237.02519999999998,
+        8.8027999999999906
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0027999999999792635,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "stimulated free-"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.4603000000000002,
+          "text" : "fr"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8529499999999999,
+          "text" : "ee "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "transitions of the electron , corresponding"
+        }
+      ],
+      "text" : "stimulated free-free transitions of the electron , corresponding"
+    },
+    {
+      "rect" : [
+        19.18,
+        336.09000000000003,
+        236.06072,
+        8.8000000000000114
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6182499999999997,
+          "text" : "to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "both the e"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.4215000000000018,
+          "text" : "mi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ssion (bremsstrahlun"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.3832000000000004,
+          "text" : "g) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "and absorption (inverse"
+        }
+      ],
+      "text" : "to both the emi ssion (bremsstrahlung) and absorption (inverse"
+    },
+    {
+      "rect" : [
+        19.210000000000001,
+        326.25,
+        107.61240000000001,
+        8.8000000000000114
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.9340500000000009,
+          "text" : "br"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "emsstrahlun"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6896000000000004,
+          "text" : "g) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "of photons."
+        }
+      ],
+      "text" : "bremsstrahlung) of photons."
+    },
+    {
+      "rect" : [
+        28.983999999999995,
+        316.64920000000001,
+        226.18728000000004,
+        8.8008000000000379
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.00080000000002655725,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "In a fully ionized plasma "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8408000000000015,
+          "text" : "irr"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "adiated by a laser with"
+        }
+      ],
+      "text" : "In a fully ionized plasma irradiated by a laser with"
+    },
+    {
+      "rect" : [
+        18.868400000000008,
+        306.56999999999999,
+        236.70399999999995,
+        8.8040000000000305
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0040000000000190994,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "frequency not ne"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8175000000000008,
+          "text" : "ar "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "the plasma "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6448999999999998,
+          "text" : "fr"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "equency, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6646000000000001,
+          "text" : "we "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8544499999999999,
+          "text" : "ca"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "n expect the"
+        }
+      ],
+      "text" : "frequency not near the plasma frequency, we can expect the"
+    },
+    {
+      "rect" : [
+        19.107599999999962,
+        296.73000000000002,
+        236.22880000000004,
+        8.8016000000000076
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "above stimulated processes in electron-ion collisions "
+        },
+        {
+          "baselineOffset" : -0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6182499999999997,
+          "text" : "to "
+        },
+        {
+          "baselineOffset" : -0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "be"
+        }
+      ],
+      "text" : "above stimulated processes in electron-ion collisions to be"
+    },
+    {
+      "rect" : [
+        18.941999999999979,
+        286.88,
+        235.2604,
+        8.8028000000000475
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0028000000000361069,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "the main m"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8529499999999999,
+          "text" : "ec"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ha"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7861000000000011,
+          "text" : "ni"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "sms for the electron heating "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8516499999999994,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "the plasma."
+        }
+      ],
+      "text" : "the main mechanisms for the electron heating of the plasma."
+    },
+    {
+      "rect" : [
+        18.916799999999967,
+        276.80000000000001,
+        236.14320000000006,
+        8.8039999999999736
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.003999999999962256,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "Electron-el"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8529499999999999,
+          "text" : "ec"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "tron "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8401500000000013,
+          "text" : "co"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "llisions do not l"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8529499999999999,
+          "text" : "ea"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "d "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7804500000000019,
+          "text" : "to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.9216499999999996,
+          "text" : "ab"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "sorption "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8516499999999994,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "this"
+        }
+      ],
+      "text" : "Electron-electron collisions do not lead to absorption of this"
+    },
+    {
+      "rect" : [
+        18.938400000000001,
+        266.97000000000003,
+        236.35920000000002,
+        8.8003999999999678
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0003999999999564352,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "type sin"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8544499999999999,
+          "text" : "ce "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "that syste m does not have a dipole moment. Thus"
+        }
+      ],
+      "text" : "type since that syste m does not have a dipole moment. Thus"
+    },
+    {
+      "rect" : [
+        18.621600000000001,
+        257.13,
+        236.38679999999999,
+        8.8016000000000645
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0016000000000531145,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "contributions "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.9908000000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "this type "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8090500000000009,
+          "text" : "as "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "well as of stimulated Compton"
+        }
+      ],
+      "text" : "contributions of this type as well as of stimulated Compton"
+    },
+    {
+      "rect" : [
+        18.84,
+        247.05000000000001,
+        160.62404000000001,
+        8.8000000000000114
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "scattering [3] will be of higher order in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 6.1000000000000005,
+          "italic" : true,
+          "text" : "lY."
+        }
+      ],
+      "text" : "scattering [3] will be of higher order in lY."
+    },
+    {
+      "rect" : [
+        28.740000000000002,
+        236.97000000000003,
+        226.24439999999998,
+        8.8000000000000114
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "In this review "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7712000000000003,
+          "text" : "we "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "will confine ourselves "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7804500000000019,
+          "text" : "to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "the nonrelativ-"
+        }
+      ],
+      "text" : "In this review we will confine ourselves to the nonrelativ-"
+    },
+    {
+      "rect" : [
+        18.893599999999964,
+        227.13000000000002,
+        236.00440000000003,
+        8.8016000000000076
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "is tic treatment of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8625000000000007,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "electron motion, both classically and"
+        }
+      ],
+      "text" : "is tic treatment of the electron motion, both classically and"
+    },
+    {
+      "rect" : [
+        18.640000000000001,
+        217.29000000000002,
+        235.76016000000004,
+        8.8000000000000114
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8048000000000002,
+          "text" : "quantum "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "mechanically. We treat the electromagnetic field"
+        }
+      ],
+      "text" : "quantum mechanically. We treat the electromagnetic field"
+    },
+    {
+      "rect" : [
+        18.637599999999992,
+        207.45000000000002,
+        236.46200000000002,
+        8.8016000000000076
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "entirely "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8090500000000009,
+          "text" : "as "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "a classical, monochromatic, coherent "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.0351500000000016,
+          "text" : "fi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "eld, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8090500000000009,
+          "text" : "as "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "we"
+        }
+      ],
+      "text" : "entirely as a classical, monochromatic, coherent fi eld, as we"
+    },
+    {
+      "rect" : [
+        18.634800000000013,
+        197.61000000000001,
+        236.59495999999999,
+        8.8016000000000076
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "are not con"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.9854500000000002,
+          "text" : "ce"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "rned with spontaneous e"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6580499999999994,
+          "text" : "mi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ssion or higher order"
+        }
+      ],
+      "text" : "are not concerned with spontaneous emi ssion or higher order"
+    },
+    {
+      "rect" : [
+        18.640000000000001,
+        187.53,
+        125.72023999999998,
+        8.8000000000000114
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8048000000000002,
+          "text" : "quantum "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "electrodynamic effects."
+        }
+      ],
+      "text" : "quantum electrodynamic effects."
+    },
+    {
+      "rect" : [
+        85.850000000000009,
+        165.11500000000001,
+        102.47368000000002,
+        11.099999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 11.100000000000001,
+          "text" : "2. Classical Picture"
+        }
+      ],
+      "text" : "2. Classical Picture"
+    },
+    {
+      "rect" : [
+        28.5,
+        146.01000000000002,
+        225.88000000000005,
+        8.8000000000000114
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "In a harmonic, linea"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.3673500000000001,
+          "text" : "rl "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "y polarized electric field, a free"
+        }
+      ],
+      "text" : "In a harmonic, linearl y polarized electric field, a free"
+    },
+    {
+      "rect" : [
+        18.386000000000024,
+        135.93000000000001,
+        236.2876,
+        8.8040000000000305
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0040000000000190994,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "electron having drift or th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8651499999999999,
+          "text" : "er"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "mal velocity, v, has the instanta-"
+        }
+      ],
+      "text" : "electron having drift or thermal velocity, v, has the instanta-"
+    },
+    {
+      "rect" : [
+        18.710400000000021,
+        126.08999999999999,
+        91.537192599999969,
+        8.8015999999999934
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "neous resultant veloc"
+        },
+        {
+          "baselineOffset" : -0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7395500000000013,
+          "text" : "ity"
+        }
+      ],
+      "text" : "neous resultant velocity"
+    },
+    {
+      "rect" : [
+        103.64,
+        106.1722265625,
+        65.63767,
+        11.600000000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9.5,
+          "italic" : true,
+          "text" : "wet) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.8000000000000007,
+          "text" : "= "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.3000000000000007,
+          "text" : "v "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.600000000000001,
+          "text" : "+ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.3000000000000007,
+          "text" : "o (t), "
+        }
+      ],
+      "text" : "wet) = v + o (t), "
+    },
+    {
+      "rect" : [
+        244.65000000000001,
+        106.1722265625,
+        10.569400000000002,
+        11.600000000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.23999999999999488,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.5999999999999996,
+          "text" : "(1)"
+        }
+      ],
+      "text" : "(1)"
+    },
+    {
+      "rect" : [
+        268.06999999999999,
+        424.43000000000001,
+        237.16240000000005,
+        11.600000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6620000000000008,
+          "text" : "wh"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ere u (t) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 11.600000000000001,
+          "text" : "= "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "Uo sinwt "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.4755500000000001,
+          "text" : "(w "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ith "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.1340500000000002,
+          "text" : "00 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.8000000000000007,
+          "text" : "= "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "eEo/mw) is "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7804500000000019,
+          "text" : "th "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "e driven or"
+        }
+      ],
+      "text" : "where u (t) = Uo sinwt (w ith 00 = eEo/mw) is th e driven or"
+    },
+    {
+      "rect" : [
+        267.75559999999996,
+        415.29000000000002,
+        238.01591999999999,
+        8.8016000000000076
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "quiver velocity "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7803500000000003,
+          "text" : "whi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ch is imparted "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.4559999999999995,
+          "text" : "to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7804500000000019,
+          "text" : "th "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "e classical motion of"
+        }
+      ],
+      "text" : "quiver velocity whi ch is imparted to th e classical motion of"
+    },
+    {
+      "rect" : [
+        267.74119999999994,
+        405.45000000000005,
+        236.98784000000001,
+        8.8016000000000076
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "an electron "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7961000000000009,
+          "text" : "by "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.0351500000000016,
+          "text" : "fi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "eld [4]. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8489500000000003,
+          "text" : "If "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7804500000000019,
+          "text" : "th "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "e e lectron did not make any"
+        }
+      ],
+      "text" : "an electron by the fi eld [4]. If th e e lectron did not make any"
+    },
+    {
+      "rect" : [
+        267.74679999999989,
+        395.37,
+        237.03920000000016,
+        8.8040000000000305
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0040000000000190994,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "collisions, its "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6984500000000011,
+          "text" : "in"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "stantan"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.838750000000001,
+          "text" : "eo"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "us kinetic ener"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.5671500000000016,
+          "text" : "gy "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "would simpl y"
+        }
+      ],
+      "text" : "collisions, its instantaneous kinetic energy would simpl y"
+    },
+    {
+      "rect" : [
+        267.75800000000004,
+        385.35500000000002,
+        237.39240000000007,
+        9.5
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "oscillate about "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6955500000000008,
+          "text" : "it"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "s thermal "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.5219000000000005,
+          "text" : "va "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "lue "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.3000000000000007,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.0660500000000006,
+          "text" : "/2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9.4955500000000015,
+          "italic" : true,
+          "text" : "mv"
+        },
+        {
+          "baselineOffset" : 1.6700000000000159,
+          "fontName" : "Times-Italic",
+          "fontSize" : 5.9000000000000004,
+          "italic" : true,
+          "text" : "2 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "a"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7673000000000005,
+          "text" : "nd "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "an ass mbl "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.788450000000001,
+          "text" : "yo"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "f"
+        }
+      ],
+      "text" : "oscillate about its thermal va lue 1/2 mv2 and an ass mbl yof"
+    },
+    {
+      "rect" : [
+        267.7176,
+        375.69,
+        236.762,
+        8.8016000000000645
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0016000000000531145,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "such free "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8399999999999999,
+          "text" : "ele"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ctron s would have a temperature "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6961000000000013,
+          "text" : "whi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ch rema "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6984500000000011,
+          "text" : "in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ed"
+        }
+      ],
+      "text" : "such free electron s would have a temperature whi ch rema in ed"
+    },
+    {
+      "rect" : [
+        267.75959999999998,
+        365.85000000000002,
+        64.251040000000046,
+        8.8016000000000076
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "co nstant "
+        },
+        {
+          "baselineOffset" : -0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6984500000000011,
+          "text" : "in "
+        },
+        {
+          "baselineOffset" : -0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "time."
+        }
+      ],
+      "text" : "co nstant in time."
+    },
+    {
+      "rect" : [
+        277.66800000000001,
+        356.00999999999999,
+        226.78440000000001,
+        8.8016000000000645
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0016000000000531145,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "A h"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8529499999999999,
+          "text" : "ea"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ting of such a plas"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7708499999999994,
+          "text" : "ma "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "co uld occur o"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6236500000000014,
+          "text" : "nl "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "y if there were"
+        }
+      ],
+      "text" : "A heating of such a plasma co uld occur onl y if there were"
+    },
+    {
+      "rect" : [
+        267.74119999999999,
+        346.16000000000003,
+        236.70760000000001,
+        8.8027999999999906
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0027999999999792635,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "a mechanism "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6182499999999997,
+          "text" : "to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "convert some "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8516499999999994,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7804500000000019,
+          "text" : "th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "e driven ener"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6934000000000005,
+          "text" : "gy "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "of the"
+        }
+      ],
+      "text" : "a mechanism to convert some of the driven energy of the"
+    },
+    {
+      "rect" : [
+        267.5,
+        336.31999999999999,
+        236.95719999999994,
+        8.8016000000000645
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0016000000000531145,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "electrons into "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7804500000000019,
+          "text" : "th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ermal energy, and this will "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8526000000000007,
+          "text" : "occur "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "if "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7804500000000019,
+          "text" : "th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "e"
+        }
+      ],
+      "text" : "electrons into thermal energy, and this will occur if the"
+    },
+    {
+      "rect" : [
+        267.5172,
+        326.25,
+        237.27160000000003,
+        8.8027999999999906
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0027999999999792635,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "osci"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.687850000000001,
+          "text" : "ll "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ating electrons "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8544499999999999,
+          "text" : "ca"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "n make c"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7586499999999994,
+          "text" : "oli "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "is ions with "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7330500000000004,
+          "text" : "ion "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "s. In such"
+        }
+      ],
+      "text" : "oscill ating electrons can make coli is ions with ion s. In such"
+    },
+    {
+      "rect" : [
+        267.50559999999996,
+        315.59499999999997,
+        237.28440000000001,
+        9.3650000000000659
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "a collision, characterized as o"
+        },
+        {
+          "baselineOffset" : 0.0036000000000058208,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8544499999999999,
+          "text" : "cc"
+        },
+        {
+          "baselineOffset" : 0.0036000000000058208,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "urring at time "
+        },
+        {
+          "baselineOffset" : 0.0036000000000058208,
+          "fontName" : "Times-Italic",
+          "fontSize" : 8.5,
+          "italic" : true,
+          "text" : "t "
+        },
+        {
+          "baselineOffset" : -0.83640000000002601,
+          "fontName" : "Times-Italic",
+          "fontSize" : 7.7000000000000002,
+          "italic" : true,
+          "text" : "c"
+        },
+        {
+          "baselineOffset" : 0.0028999999999541615,
+          "fontName" : "Times-Italic",
+          "fontSize" : 7.7000000000000002,
+          "italic" : true,
+          "text" : ", "
+        },
+        {
+          "baselineOffset" : 0.0036000000000058208,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "one "
+        },
+        {
+          "baselineOffset" : 0.0036000000000058208,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8544499999999999,
+          "text" : "ca"
+        },
+        {
+          "baselineOffset" : 0.0036000000000058208,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "n"
+        }
+      ],
+      "text" : "a collision, characterized as occurring at time t c, one can"
+    },
+    {
+      "rect" : [
+        267.50679999999994,
+        306.31999999999999,
+        236.9504,
+        8.8016000000000645
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0016000000000531145,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "eva"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8124500000000019,
+          "text" : "luat"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "e the thermal ener"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.5671500000000016,
+          "text" : "gy "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ga"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.533100000000001,
+          "text" : "in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "(or loss) by solving "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7804500000000019,
+          "text" : "th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "e"
+        }
+      ],
+      "text" : "evaluate the thermal energy gain (or loss) by solving the"
+    },
+    {
+      "rect" : [
+        267.50839999999999,
+        296.25,
+        236.96080000000001,
+        8.8027999999999906
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0027999999999792635,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "c"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8518000000000008,
+          "text" : "la"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ssi"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.9854500000000002,
+          "text" : "ca"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "l equations of motion of the electron under the"
+        }
+      ],
+      "text" : "classical equations of motion of the electron under the"
+    },
+    {
+      "rect" : [
+        267.78440000000001,
+        286.41000000000003,
+        236.67280000000005,
+        8.8016000000000076
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "influen"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8544499999999999,
+          "text" : "ce "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8516499999999994,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "both the applied radiation field and the io"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6236500000000014,
+          "text" : "ni"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "c"
+        }
+      ],
+      "text" : "influence of both the applied radiation field and the ionic"
+    },
+    {
+      "rect" : [
+        267.85159999999996,
+        276.56999999999999,
+        123.82992000000013,
+        8.8016000000000645
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0016000000000531145,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "potential "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.4390999999999998,
+          "text" : "fi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "eld, and determining"
+        }
+      ],
+      "text" : "potential fi eld, and determining"
+    },
+    {
+      "rect" : [
+        327.31999999999999,
+        256.297236328125,
+        117.73759999999999,
+        12.100000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9.5,
+          "italic" : true,
+          "text" : "w(t"
+        },
+        {
+          "baselineOffset" : -0.83999999999997499,
+          "fontName" : "Times-Italic",
+          "fontSize" : 6.6000000000000005,
+          "italic" : true,
+          "text" : "c "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.600000000000001,
+          "text" : "+ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 8.7314000000000007,
+          "italic" : true,
+          "text" : "T) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.8000000000000007,
+          "text" : "= "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.0145499999999998,
+          "text" : "VI"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.6000000000000005,
+          "text" : "c "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12.100000000000001,
+          "text" : "+ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9.6916000000000011,
+          "italic" : true,
+          "text" : "o(t"
+        },
+        {
+          "baselineOffset" : -0.83999999999997499,
+          "fontName" : "Times-Italic",
+          "fontSize" : 6.6000000000000005,
+          "italic" : true,
+          "text" : "e "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 11.600000000000001,
+          "text" : "+ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 8.7314000000000007,
+          "italic" : true,
+          "text" : "T) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 9.2000000000000011,
+          "italic" : true,
+          "text" : ", "
+        }
+      ],
+      "text" : "w(tc + T) = VIc + o(te + T) , "
+    },
+    {
+      "rect" : [
+        494.28680000000003,
+        256.297236328125,
+        10.49351999999999,
+        12.100000000000023
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.71760000000000446,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.2000000000000011,
+          "text" : "(2)"
+        }
+      ],
+      "text" : "(2)"
+    },
+    {
+      "rect" : [
+        267.23000000000002,
+        236.97000000000003,
+        117.05464000000001,
+        8.8000000000000114
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8462500000000013,
+          "text" : "subject "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6182499999999997,
+          "text" : "to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "the initial condition"
+        }
+      ],
+      "text" : "subject to the initial condition"
+    },
+    {
+      "rect" : [
+        328.75999999999999,
+        216.75,
+        114.67320000000007,
+        12.451240234375035
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9.5,
+          "italic" : true,
+          "text" : "w(t"
+        },
+        {
+          "baselineOffset" : -0.97000000000002728,
+          "fontName" : "Times-Italic",
+          "fontSize" : 7.6000000000000005,
+          "italic" : true,
+          "text" : "c "
+        },
+        {
+          "baselineOffset" : 0.0027999999999792635,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6000000000000005,
+          "text" : "- "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 8.69815,
+          "italic" : true,
+          "text" : "T) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 11.600000000000001,
+          "text" : "= "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.5687499999999996,
+          "text" : "Vi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12.300000000000001,
+          "text" : "+ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9.5,
+          "italic" : true,
+          "text" : "o "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9.0430500000000009,
+          "italic" : true,
+          "text" : "(t "
+        },
+        {
+          "baselineOffset" : -1.0800000000000125,
+          "fontName" : "Times-Italic",
+          "fontSize" : 7.6000000000000005,
+          "italic" : true,
+          "text" : "c "
+        },
+        {
+          "baselineOffset" : -0.00080000000002655725,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.6000000000000005,
+          "text" : "- "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 8.8314000000000004,
+          "italic" : true,
+          "text" : "T) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 9.4000000000000004,
+          "italic" : true,
+          "text" : ", "
+        }
+      ],
+      "text" : "w(tc - T) = Vi + o (t c - T) , "
+    },
+    {
+      "rect" : [
+        494.25,
+        216.75,
+        10.569399999999973,
+        12.451240234375035
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.23999999999998067,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.5999999999999996,
+          "text" : "(3)"
+        }
+      ],
+      "text" : "(3)"
+    },
+    {
+      "rect" : [
+        267.35000000000002,
+        197.37,
+        236.99373420000001,
+        8.9761718750000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "with "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 8.8000000000000007,
+          "text" : "T "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.9199999999999999,
+          "text" : "~ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4672000000000001,
+          "text" : "00 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "being a valid id ealization for large m"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8529499999999999,
+          "text" : "ea"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "n fr"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8529499999999999,
+          "text" : "ee"
+        }
+      ],
+      "text" : "with T ~ 00 being a valid id ealization for large mean free"
+    },
+    {
+      "rect" : [
+        267.34000000000003,
+        187.29000000000002,
+        236.69080000000008,
+        8.8000000000000114
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "time between collisions. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.9123000000000019,
+          "text" : "Th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "e ion takes up a reco"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.456900000000001,
+          "text" : "il "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "momentum"
+        }
+      ],
+      "text" : "time between collisions. The ion takes up a recoil momentum"
+    },
+    {
+      "rect" : [
+        267.34160000000003,
+        177.45000000000002,
+        237.18000000000001,
+        8.8016000000000076
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "which corresponds "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6182499999999997,
+          "text" : "to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "a very small part of the ener"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6934000000000005,
+          "text" : "gy "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "transfer"
+        }
+      ],
+      "text" : "which corresponds to a very small part of the energy transfer"
+    },
+    {
+      "rect" : [
+        267.01840000000004,
+        166.75999999999999,
+        236.95879999999988,
+        12.199999999999989
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "(since "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9.9000000000000004,
+          "text" : "m/M "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 12.200000000000001,
+          "text" : "« "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "1) and the net thermal ener"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6934000000000005,
+          "text" : "gy "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "change of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7804500000000019,
+          "text" : "th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "e"
+        }
+      ],
+      "text" : "(since m/M « 1) and the net thermal energy change of the"
+    },
+    {
+      "rect" : [
+        267.51239999999996,
+        157.47,
+        236.78400000000011,
+        10
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0015999999999962711,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "electron, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6209500000000006,
+          "text" : "LlEc "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.8000000000000007,
+          "text" : "= "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.533100000000001,
+          "text" : "112 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9.5,
+          "italic" : true,
+          "text" : "m("
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9.0588499999999996,
+          "italic" : true,
+          "text" : "vjc "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.5,
+          "text" : "- "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9.5,
+          "italic" : true,
+          "text" : "vD, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "is considered "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6182499999999997,
+          "text" : "to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "be taken"
+        }
+      ],
+      "text" : "electron, LlEc = 112 m(vjc - vD, is considered to be taken"
+    },
+    {
+      "rect" : [
+        267.25080000000003,
+        147.69000000000003,
+        184.25744000000009,
+        8.804000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0039999999999906777,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "from (or delivered "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6789000000000005,
+          "text" : "to) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.0385000000000009,
+          "text" : "el"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ectromagne"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.5808,
+          "text" : "ti "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "c "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.0351500000000016,
+          "text" : "fi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "eld."
+        }
+      ],
+      "text" : "from (or delivered to) the electromagneti c fi eld."
+    },
+    {
+      "rect" : [
+        277.12919999999997,
+        137.84,
+        227.1416000000001,
+        8.8028000000000191
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0028000000000076852,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "The detailed solution "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.9908000000000001,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6182499999999997,
+          "text" : "th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "e classical equations of motion"
+        }
+      ],
+      "text" : "The detailed solution of the classical equations of motion"
+    },
+    {
+      "rect" : [
+        267.26920000000007,
+        128.01000000000002,
+        237.32751999999999,
+        8.8003999999999962
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.00039999999998485691,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "during a collision is "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.844850000000001,
+          "text" : "quite "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "complicated in general, so one"
+        }
+      ],
+      "text" : "during a collision is quite complicated in general, so one"
+    },
+    {
+      "rect" : [
+        267.34520000000003,
+        117.92999999999999,
+        236.66144000000003,
+        8.8040000000000163
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0040000000000190994,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "makes the simplifying "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8445500000000017,
+          "text" : "assumpt"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ion that if "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7804500000000019,
+          "text" : "th "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "e collision dura-"
+        }
+      ],
+      "text" : "makes the simplifying assumption that if th e collision dura-"
+    },
+    {
+      "rect" : [
+        267.5788,
+        107.520234375,
+        236.6188654,
+        12
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0027999999999934744,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "tion is much small"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.0139999999999993,
+          "text" : "er "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.833400000000001,
+          "text" : "than "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 9.0215999999999994,
+          "text" : "app"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.687850000000001,
+          "text" : "li "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "ed period "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9.2000000000000011,
+          "text" : "(Tc "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12,
+          "text" : "« "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9.4529500000000013,
+          "text" : "l/w)"
+        }
+      ],
+      "text" : "tion is much smaller than the appli ed period (Tc « l/w)"
+    },
+    {
+      "rect" : [
+        267.57999999999998,
+        98,
+        236.61040000000008,
+        8.7999999999999972
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "the scattering by the ion "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.9022500000000004,
+          "text" : "can "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "be "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8398000000000003,
+          "text" : "id"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8529499999999999,
+          "text" : "ea"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "lized as an "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.6984500000000011,
+          "text" : "in"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "stantaneous"
+        }
+      ],
+      "text" : "the scattering by the ion can be idealized as an instantaneous"
+    },
+    {
+      "rect" : [
+        267.27680000000004,
+        88.399199999999993,
+        236.82399999999996,
+        9.4389835937500237
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.00080000000001234639,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "elastic deflection from "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 9.016,
+          "italic" : true,
+          "text" : "w(t;:-) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.8000000000000007,
+          "text" : "= "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.7920500000000006,
+          "text" : "We "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7804500000000019,
+          "text" : "to "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 9.3834,
+          "italic" : true,
+          "text" : "w(t"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 10.5532,
+          "italic" : true,
+          "text" : "t) "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.8000000000000007,
+          "text" : "= "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.2068000000000003,
+          "text" : "W' "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 6.8000000000000007,
+          "text" : "e "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7107500000000009,
+          "text" : "(s"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8529499999999999,
+          "text" : "ee "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "fig ."
+        }
+      ],
+      "text" : "elastic deflection from w(t;:-) = We to w(tt) = W' e (see fig ."
+    },
+    {
+      "rect" : [
+        267.77679999999998,
+        78.319999999999993,
+        224.89079999999996,
+        8.804000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.0040000000000048885,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "1). In "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8155000000000001,
+          "text" : "such "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "an impact model the "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.7804500000000019,
+          "text" : "th "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 8.8000000000000007,
+          "text" : "e rmal energy change is"
+        }
+      ],
+      "text" : "1). In such an impact model the th e rmal energy change is"
+    },
+    {
+      "rect" : [
+        29.200000000000003,
+        76.780000000000001,
+        226.21084000000002,
+        5.4000000000000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "• Bused "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 3.6000000000000001,
+          "text" : "0 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 3.0086000000000004,
+          "text" : "11 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "a tulk "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.5833500000000003,
+          "text" : "pr"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "esented "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.3708500000000008,
+          "text" : "at "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.2958499999999997,
+          "text" : "th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "e 2"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.3204000000000002,
+          "text" : "nd "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "Conferen"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4512999999999998,
+          "text" : "ce "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.3678000000000008,
+          "text" : "on "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "the I"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.1367500000000001,
+          "text" : "nt "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "erac"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.2549500000000009,
+          "text" : "ti"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "on of Elec tr"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.3678000000000008,
+          "text" : "on"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "s with Sirong"
+        }
+      ],
+      "text" : "• Bused 0 11 a tulk presented at the 2nd Conference on the Int eraction of Elec trons with Sirong"
+    },
+    {
+      "rect" : [
+        19.650000000000002,
+        70.780000000000001,
+        155.11359999999996,
+        5.4000000000000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.2740500000000008,
+          "text" : "El"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "ectromagne"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.2549500000000009,
+          "text" : "ti "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "c "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.1588500000000002,
+          "text" : "Fi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "e lds, Budllpcs"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4770500000000002,
+          "text" : "l, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "Hung"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.1136999999999997,
+          "text" : "lll"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 4.6211500000000001,
+          "text" : ")\" "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "October 6- 10, 1975 ."
+        }
+      ],
+      "text" : "Electromagneti c Fi e lds, Budllpcsl, Hunglll)\" October 6- 10, 1975 ."
+    },
+    {
+      "rect" : [
+        29.07,
+        65.010000000000005,
+        226.11464000000001,
+        5.4000000000000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 7.66655,
+          "text" : ".. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "Sta"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.0993000000000004,
+          "text" : "ff "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "Membe r, Quantulll "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.3252000000000006,
+          "text" : "Ph"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.2391500000000004,
+          "text" : "ys "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "ics "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.3111500000000005,
+          "text" : "Divi "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "sion "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 4.0687499999999996,
+          "text" : "III "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "the Joint "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.3044000000000002,
+          "text" : "In"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "stitute "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.3901500000000002,
+          "text" : "for "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "Laboratory Astro"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.3360000000000003,
+          "text" : "ph "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.2391500000000004,
+          "text" : "ys "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "ics,"
+        }
+      ],
+      "text" : ".. Staff Membe r, Quantulll Phys ics Divi sion III the Joint Institute for Laboratory Astroph ys ics,"
+    },
+    {
+      "rect" : [
+        19.66579999999999,
+        58.778399999999998,
+        43.277600000000007,
+        5.4016000000000091
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.0016000000000033765,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "Boulder, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "Colorado."
+        }
+      ],
+      "text" : "Boulder, Colorado."
+    },
+    {
+      "rect" : [
+        28.949999999999999,
+        52.539999999999999,
+        183.20160320000002,
+        5.3999999999999986
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 3.3000000000000003,
+          "text" : "I "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "Figures "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.1166,
+          "text" : "ill "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "brackets indicllLe "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.2958499999999997,
+          "text" : "th"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "e literature references "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.3708500000000008,
+          "text" : "al "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.4000000000000004,
+          "text" : "the end of thi s pape"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 5.3292000000000002,
+          "text" : "r,"
+        }
+      ],
+      "text" : "I Figures ill brackets indicllLe the literature references al the end of thi s paper,"
+    },
+    {
+      "rect" : [
+        253.28999999999999,
+        23.024999999999999,
+        16.392480000000006,
+        11.100000000000001
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 11.100000000000001,
+          "text" : "173"
+        }
+      ],
+      "text" : "173"
+    }
+  ],
+  "bounds" : [
+    2.8799999999999999,
+    2.1600000000000001,
+    536.03999999999996,
+    727.68000000000006
+  ],
+  "caseID" : "nbs-jres-geltman-1977",
+  "graphics" : [
+    [
+      2.8799999999999999,
+      2.1600000000000001,
+      536.03999999999996,
+      727.68000000000006
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 14.311,
+      "monospaced" : false,
+      "rect" : [
+        503.77000000000004,
+        723.83000000000004,
+        13.906151999999963,
+        9.2000000000000455
+      ],
+      "text" : "--"
+    },
+    {
+      "fontSize" : 15.30585,
+      "monospaced" : false,
+      "rect" : [
+        400.03000000000003,
+        724.58000000000004,
+        101.62590710000001,
+        6.2000000000000455
+      ],
+      "text" : "-----------"
+    },
+    {
+      "fontSize" : 7.1000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        161.71000000000001,
+        675.77713867187492,
+        203.70444000000001,
+        7.1000000000000227
+      ],
+      "text" : "JOURNAL OF RESEARCH of the Notional Bureau of Standards"
+    },
+    {
+      "fontSize" : 6.9983000000000004,
+      "monospaced" : false,
+      "rect" : [
+        185.75999999999999,
+        667.60713867187496,
+        156.14764000000002,
+        7.1000000000000227
+      ],
+      "text" : "Vo lume 82, No.3, November- December 1977"
+    },
+    {
+      "fontSize" : 14.719350000000002,
+      "monospaced" : false,
+      "rect" : [
+        53.600000000000001,
+        629.88228515624996,
+        419.77475999999996,
+        14.600000000000023
+      ],
+      "text" : "Stimulated Multiphoton Bremsstrahlung in Electron-Ion"
+    },
+    {
+      "fontSize" : 14.600000000000001,
+      "monospaced" : false,
+      "rect" : [
+        223.72059999999996,
+        612.12868515624996,
+        79.248799999999989,
+        14.600000000000023
+      ],
+      "text" : "Collisions*"
+    },
+    {
+      "fontSize" : 11.224400000000001,
+      "monospaced" : false,
+      "rect" : [
+        215.55000000000001,
+        583.19500000000005,
+        95.125451599999963,
+        11.100000000000023
+      ],
+      "text" : "Sydney Geltman**"
+    },
+    {
+      "fontSize" : 9.3079500000000017,
+      "monospaced" : false,
+      "rect" : [
+        82.5,
+        561.80499999999995,
+        362.15782000000002,
+        9.2999999999999545
+      ],
+      "text" : "Institute for Basic Standards, National Bureau of Standards, Boulder, Colorado 80302"
+    },
+    {
+      "fontSize" : 7.3506499999999999,
+      "monospaced" : false,
+      "rect" : [
+        232.47,
+        544.53499999999997,
+        62.057400000000058,
+        7.2999999999999545
+      ],
+      "text" : "(August 22, 1977)"
+    },
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        101.75,
+        515.92000000000007,
+        339.54600000000005,
+        6.6000000000000227
+      ],
+      "text" : "A revi e w is present ed of the bas ic classical mechanis m whereby a n e lectron can a bsorb e nergy frolll an"
+    },
+    {
+      "fontSize" : 6.7748000000000008,
+      "monospaced" : false,
+      "rect" : [
+        85.370000000000005,
+        508.00000000000006,
+        355.25040000000001,
+        6.5999999999999659
+      ],
+      "text" : "elec tromagnetic fi e ld while undergoing a collis ion with a n atom o r ion. The process is also described for a"
+    },
+    {
+      "fontSize" : 6.8776500000000009,
+      "monospaced" : false,
+      "rect" : [
+        85.129999999999995,
+        500.08000000000004,
+        355.98040000000003,
+        6.6000000000000227
+      ],
+      "text" : "quantum mechanical colli s ion and the a bsorption or emi ssion of photons . The appropriate formulations arc"
+    },
+    {
+      "fontSize" : 6.6000000000000005,
+      "monospaced" : false,
+      "rect" : [
+        85.139399999999966,
+        491.92000000000002,
+        356.14640000000014,
+        6.6024000000000456
+      ],
+      "text" : "described for weak a nd strong a pplied fi e lds. A brie f re vi ew is give n for the resulting plasma abso rption"
+    },
+    {
+      "fontSize" : 6.9000000000000004,
+      "monospaced" : false,
+      "rect" : [
+        85.129999999999995,
+        483.92500000000001,
+        37.654200000000003,
+        6.8999999999999773
+      ],
+      "text" : "coeffi cients."
+    },
+    {
+      "fontSize" : 6.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        93.570000000000007,
+        468,
+        347.10592000000003,
+        7.1999999999999886
+      ],
+      "text" : "Key word s: Bremsstra hlung; electron-ion colli sions; free-free tra nsitions; l11ultiphoton processes; plasma"
+    },
+    {
+      "fontSize" : 6.7704500000000003,
+      "monospaced" : false,
+      "rect" : [
+        85.129999999999995,
+        460.00000000000006,
+        34.460399999999993,
+        6.6000000000000227
+      ],
+      "text" : "absorption."
+    },
+    {
+      "fontSize" : 11.100000000000001,
+      "monospaced" : false,
+      "rect" : [
+        97.769999999999996,
+        424.79500000000002,
+        80.919970000000021,
+        11.100000000000023
+      ],
+      "text" : "1. Introduction"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        29.02,
+        405.69,
+        226.52520000000004,
+        8.8000000000000114
+      ],
+      "text" : "A free electron colliding with an ion is accelerated in its"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        19.212400000000002,
+        395.59640000000002,
+        236.24080000000004,
+        8.8036000000000172
+      ],
+      "text" : "potential fi eld and on the basis of classical electrodynamics"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        19.18640000000002,
+        385.61000000000001,
+        236.19967999999997,
+        9.3999999999999773
+      ],
+      "text" : "will emit electromagneti c radiation [1, 2].1 Such bremsstrah-"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        19.131599999999963,
+        375.93000000000001,
+        236.53840000000005,
+        8.8004000000000246
+      ],
+      "text" : "lung radiation has long been observed in collisions between"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        19.187599999999975,
+        365.85000000000002,
+        236.38560000000004,
+        8.8039999999999736
+      ],
+      "text" : "high energy charged particles and nuclei. If an external"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        18.949999999999989,
+        356.00999999999999,
+        236.58720000000005,
+        8.8016000000000645
+      ],
+      "text" : "radiation fi eld is applied to an electron-ion system one has"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        19.072400000000016,
+        346.16000000000003,
+        237.02519999999998,
+        8.8027999999999906
+      ],
+      "text" : "stimulated free-free transitions of the electron , corresponding"
+    },
+    {
+      "fontSize" : 8.6182499999999997,
+      "monospaced" : false,
+      "rect" : [
+        19.18,
+        336.09000000000003,
+        236.06072,
+        8.8000000000000114
+      ],
+      "text" : "to both the emi ssion (bremsstrahlung) and absorption (inverse"
+    },
+    {
+      "fontSize" : 8.9340500000000009,
+      "monospaced" : false,
+      "rect" : [
+        19.210000000000001,
+        326.25,
+        107.61240000000001,
+        8.8000000000000114
+      ],
+      "text" : "bremsstrahlung) of photons."
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        28.983999999999995,
+        316.64920000000001,
+        226.18728000000004,
+        8.8008000000000379
+      ],
+      "text" : "In a fully ionized plasma irradiated by a laser with"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        18.868400000000008,
+        306.56999999999999,
+        236.70399999999995,
+        8.8040000000000305
+      ],
+      "text" : "frequency not near the plasma frequency, we can expect the"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        19.107599999999962,
+        296.73000000000002,
+        236.22880000000004,
+        8.8016000000000076
+      ],
+      "text" : "above stimulated processes in electron-ion collisions to be"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        18.941999999999979,
+        286.88,
+        235.2604,
+        8.8028000000000475
+      ],
+      "text" : "the main mechanisms for the electron heating of the plasma."
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        18.916799999999967,
+        276.80000000000001,
+        236.14320000000006,
+        8.8039999999999736
+      ],
+      "text" : "Electron-electron collisions do not lead to absorption of this"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        18.938400000000001,
+        266.97000000000003,
+        236.35920000000002,
+        8.8003999999999678
+      ],
+      "text" : "type since that syste m does not have a dipole moment. Thus"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        18.621600000000001,
+        257.13,
+        236.38679999999999,
+        8.8016000000000645
+      ],
+      "text" : "contributions of this type as well as of stimulated Compton"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        18.84,
+        247.05000000000001,
+        160.62404000000001,
+        8.8000000000000114
+      ],
+      "text" : "scattering [3] will be of higher order in lY."
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        28.740000000000002,
+        236.97000000000003,
+        226.24439999999998,
+        8.8000000000000114
+      ],
+      "text" : "In this review we will confine ourselves to the nonrelativ-"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        18.893599999999964,
+        227.13000000000002,
+        236.00440000000003,
+        8.8016000000000076
+      ],
+      "text" : "is tic treatment of the electron motion, both classically and"
+    },
+    {
+      "fontSize" : 8.8048000000000002,
+      "monospaced" : false,
+      "rect" : [
+        18.640000000000001,
+        217.29000000000002,
+        235.76016000000004,
+        8.8000000000000114
+      ],
+      "text" : "quantum mechanically. We treat the electromagnetic field"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        18.637599999999992,
+        207.45000000000002,
+        236.46200000000002,
+        8.8016000000000076
+      ],
+      "text" : "entirely as a classical, monochromatic, coherent fi eld, as we"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        18.634800000000013,
+        197.61000000000001,
+        236.59495999999999,
+        8.8016000000000076
+      ],
+      "text" : "are not concerned with spontaneous emi ssion or higher order"
+    },
+    {
+      "fontSize" : 8.8048000000000002,
+      "monospaced" : false,
+      "rect" : [
+        18.640000000000001,
+        187.53,
+        125.72023999999998,
+        8.8000000000000114
+      ],
+      "text" : "quantum electrodynamic effects."
+    },
+    {
+      "fontSize" : 11.100000000000001,
+      "monospaced" : false,
+      "rect" : [
+        85.850000000000009,
+        165.11500000000001,
+        102.47368000000002,
+        11.099999999999994
+      ],
+      "text" : "2. Classical Picture"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        28.5,
+        146.01000000000002,
+        225.88000000000005,
+        8.8000000000000114
+      ],
+      "text" : "In a harmonic, linearl y polarized electric field, a free"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        18.386000000000024,
+        135.93000000000001,
+        236.2876,
+        8.8040000000000305
+      ],
+      "text" : "electron having drift or thermal velocity, v, has the instanta-"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        18.710400000000021,
+        126.08999999999999,
+        91.537192599999969,
+        8.8015999999999934
+      ],
+      "text" : "neous resultant velocity"
+    },
+    {
+      "fontSize" : 9.5,
+      "monospaced" : false,
+      "rect" : [
+        103.64,
+        106.1722265625,
+        65.63767,
+        11.600000000000009
+      ],
+      "text" : "wet) = v + o (t),"
+    },
+    {
+      "fontSize" : 8.5999999999999996,
+      "monospaced" : false,
+      "rect" : [
+        244.65000000000001,
+        106.1722265625,
+        10.569400000000002,
+        11.600000000000009
+      ],
+      "text" : "(1)"
+    },
+    {
+      "fontSize" : 8.6620000000000008,
+      "monospaced" : false,
+      "rect" : [
+        268.06999999999999,
+        424.43000000000001,
+        237.16240000000005,
+        11.600000000000023
+      ],
+      "text" : "where u (t) = Uo sinwt (w ith 00 = eEo/mw) is th e driven or"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.75559999999996,
+        415.29000000000002,
+        238.01591999999999,
+        8.8016000000000076
+      ],
+      "text" : "quiver velocity whi ch is imparted to th e classical motion of"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.74119999999994,
+        405.45000000000005,
+        236.98784000000001,
+        8.8016000000000076
+      ],
+      "text" : "an electron by the fi eld [4]. If th e e lectron did not make any"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.74679999999989,
+        395.37,
+        237.03920000000016,
+        8.8040000000000305
+      ],
+      "text" : "collisions, its instantaneous kinetic energy would simpl y"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.75800000000004,
+        385.35500000000002,
+        237.39240000000007,
+        9.5
+      ],
+      "text" : "oscillate about its thermal va lue 1/2 mv2 and an ass mbl yof"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.7176,
+        375.69,
+        236.762,
+        8.8016000000000645
+      ],
+      "text" : "such free electron s would have a temperature whi ch rema in ed"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.75959999999998,
+        365.85000000000002,
+        64.251040000000046,
+        8.8016000000000076
+      ],
+      "text" : "co nstant in time."
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        277.66800000000001,
+        356.00999999999999,
+        226.78440000000001,
+        8.8016000000000645
+      ],
+      "text" : "A heating of such a plasma co uld occur onl y if there were"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.74119999999999,
+        346.16000000000003,
+        236.70760000000001,
+        8.8027999999999906
+      ],
+      "text" : "a mechanism to convert some of the driven energy of the"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.5,
+        336.31999999999999,
+        236.95719999999994,
+        8.8016000000000645
+      ],
+      "text" : "electrons into thermal energy, and this will occur if the"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.5172,
+        326.25,
+        237.27160000000003,
+        8.8027999999999906
+      ],
+      "text" : "oscill ating electrons can make coli is ions with ion s. In such"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.50559999999996,
+        315.59499999999997,
+        237.28440000000001,
+        9.3650000000000659
+      ],
+      "text" : "a collision, characterized as occurring at time t c, one can"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.50679999999994,
+        306.31999999999999,
+        236.9504,
+        8.8016000000000645
+      ],
+      "text" : "evaluate the thermal energy gain (or loss) by solving the"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.50839999999999,
+        296.25,
+        236.96080000000001,
+        8.8027999999999906
+      ],
+      "text" : "classical equations of motion of the electron under the"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.78440000000001,
+        286.41000000000003,
+        236.67280000000005,
+        8.8016000000000076
+      ],
+      "text" : "influence of both the applied radiation field and the ionic"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.85159999999996,
+        276.56999999999999,
+        123.82992000000013,
+        8.8016000000000645
+      ],
+      "text" : "potential fi eld, and determining"
+    },
+    {
+      "fontSize" : 9.5,
+      "monospaced" : false,
+      "rect" : [
+        327.31999999999999,
+        256.297236328125,
+        117.73759999999999,
+        12.100000000000023
+      ],
+      "text" : "w(tc + T) = VIc + o(te + T) ,"
+    },
+    {
+      "fontSize" : 9.2000000000000011,
+      "monospaced" : false,
+      "rect" : [
+        494.28680000000003,
+        256.297236328125,
+        10.49351999999999,
+        12.100000000000023
+      ],
+      "text" : "(2)"
+    },
+    {
+      "fontSize" : 8.8462500000000013,
+      "monospaced" : false,
+      "rect" : [
+        267.23000000000002,
+        236.97000000000003,
+        117.05464000000001,
+        8.8000000000000114
+      ],
+      "text" : "subject to the initial condition"
+    },
+    {
+      "fontSize" : 9.5,
+      "monospaced" : false,
+      "rect" : [
+        328.75999999999999,
+        216.75,
+        114.67320000000007,
+        12.451240234375035
+      ],
+      "text" : "w(tc - T) = Vi + o (t c - T) ,"
+    },
+    {
+      "fontSize" : 8.5999999999999996,
+      "monospaced" : false,
+      "rect" : [
+        494.25,
+        216.75,
+        10.569399999999973,
+        12.451240234375035
+      ],
+      "text" : "(3)"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.35000000000002,
+        197.37,
+        236.99373420000001,
+        8.9761718750000057
+      ],
+      "text" : "with T ~ 00 being a valid id ealization for large mean free"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.34000000000003,
+        187.29000000000002,
+        236.69080000000008,
+        8.8000000000000114
+      ],
+      "text" : "time between collisions. The ion takes up a recoil momentum"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.34160000000003,
+        177.45000000000002,
+        237.18000000000001,
+        8.8016000000000076
+      ],
+      "text" : "which corresponds to a very small part of the energy transfer"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.01840000000004,
+        166.75999999999999,
+        236.95879999999988,
+        12.199999999999989
+      ],
+      "text" : "(since m/M « 1) and the net thermal energy change of the"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.51239999999996,
+        157.47,
+        236.78400000000011,
+        10
+      ],
+      "text" : "electron, LlEc = 112 m(vjc - vD, is considered to be taken"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.25080000000003,
+        147.69000000000003,
+        184.25744000000009,
+        8.804000000000002
+      ],
+      "text" : "from (or delivered to) the electromagneti c fi eld."
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        277.12919999999997,
+        137.84,
+        227.1416000000001,
+        8.8028000000000191
+      ],
+      "text" : "The detailed solution of the classical equations of motion"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.26920000000007,
+        128.01000000000002,
+        237.32751999999999,
+        8.8003999999999962
+      ],
+      "text" : "during a collision is quite complicated in general, so one"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.34520000000003,
+        117.92999999999999,
+        236.66144000000003,
+        8.8040000000000163
+      ],
+      "text" : "makes the simplifying assumption that if th e collision dura-"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.5788,
+        107.520234375,
+        236.6188654,
+        12
+      ],
+      "text" : "tion is much smaller than the appli ed period (Tc « l/w)"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.57999999999998,
+        98,
+        236.61040000000008,
+        8.7999999999999972
+      ],
+      "text" : "the scattering by the ion can be idealized as an instantaneous"
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.27680000000004,
+        88.399199999999993,
+        236.82399999999996,
+        9.4389835937500237
+      ],
+      "text" : "elastic deflection from w(t;:-) = We to w(tt) = W' e (see fig ."
+    },
+    {
+      "fontSize" : 8.8000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        267.77679999999998,
+        78.319999999999993,
+        224.89079999999996,
+        8.804000000000002
+      ],
+      "text" : "1). In such an impact model the th e rmal energy change is"
+    },
+    {
+      "fontSize" : 5.4000000000000004,
+      "monospaced" : false,
+      "rect" : [
+        29.200000000000003,
+        76.780000000000001,
+        226.21084000000002,
+        5.4000000000000057
+      ],
+      "text" : "• Bused 0 11 a tulk presented at the 2nd Conference on the Int eraction of Elec trons with Sirong"
+    },
+    {
+      "fontSize" : 5.2740500000000008,
+      "monospaced" : false,
+      "rect" : [
+        19.650000000000002,
+        70.780000000000001,
+        155.11359999999996,
+        5.4000000000000057
+      ],
+      "text" : "Electromagneti c Fi e lds, Budllpcsl, Hunglll)\" October 6- 10, 1975 ."
+    },
+    {
+      "fontSize" : 7.66655,
+      "monospaced" : false,
+      "rect" : [
+        29.07,
+        65.010000000000005,
+        226.11464000000001,
+        5.4000000000000057
+      ],
+      "text" : ".. Staff Membe r, Quantulll Phys ics Divi sion III the Joint Institute for Laboratory Astroph ys ics,"
+    },
+    {
+      "fontSize" : 5.4000000000000004,
+      "monospaced" : false,
+      "rect" : [
+        19.66579999999999,
+        58.778399999999998,
+        43.277600000000007,
+        5.4016000000000091
+      ],
+      "text" : "Boulder, Colorado."
+    },
+    {
+      "fontSize" : 3.3000000000000003,
+      "monospaced" : false,
+      "rect" : [
+        28.949999999999999,
+        52.539999999999999,
+        183.20160320000002,
+        5.3999999999999986
+      ],
+      "text" : "I Figures ill brackets indicllLe the literature references al the end of thi s paper,"
+    },
+    {
+      "fontSize" : 11.100000000000001,
+      "monospaced" : false,
+      "rect" : [
+        253.28999999999999,
+        23.024999999999999,
+        16.392480000000006,
+        11.100000000000001
+      ],
+      "text" : "173"
+    }
+  ],
+  "page" : 1,
+  "paints" : [
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        2.8799999999999999,
+        2.1600000000000001,
+        536.03999999999996,
+        727.68000000000006
+      ]
+    },
+    {
+      "filled" : false,
+      "frame" : false,
+      "image" : true,
+      "rect" : [
+        303.36000000000001,
+        46.439999999999998,
+        201.60000000000002,
+        22.079999999999998
+      ]
+    }
+  ],
+  "rightsBasis" : "NIST Library FAQ: publications of NIST, as publications of the Federal government, are in the public domain and not subject to copyright in the United States; credit the source. Author was NBS staff (JILA, Boulder). Not relicensed under MIT.",
+  "sourceSHA256" : "44653967317ce75f324b8051cdf2f123429ca1cbd199fefbffabe9acb9b0c86d",
+  "sourceTitle" : "Stimulated Multiphoton Bremsstrahlung in Electron-Ion Collisions",
+  "sourceURL" : "https://nvlpubs.nist.gov/nistpubs/jres/82/jresv82n3p173_A1b.pdf"
+}

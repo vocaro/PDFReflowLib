@@ -11,9 +11,18 @@ enum MarkedTextReader {
     private final class State {
         var matrix = CGAffineTransform.identity
         var lineMatrix = CGAffineTransform.identity
-        var saved: [(CGAffineTransform, CGFloat, CGFloat)] = []
+        var saved: [(CGAffineTransform, CGFloat, CGFloat, Set<UInt8>, CGFloat)] = []
         var leading: CGFloat = 0
         var rise: CGFloat = 0
+        /// The current font's codes whose glyph is a space; empty when the font cannot say (#91).
+        var spaces: Set<UInt8> = []
+        /// Space codes per font dictionary on this page, by identity.
+        var fontSpaces: [UInt: Set<UInt8>] = [:]
+        /// The text render mode; 3 shows nothing (invisible text).
+        var renderMode: CGFloat = 0
+        /// Identifiers whose marked content showed text consisting only of spaces. Such a show
+        /// places no visible text, so it anchors no line, but its identifier was shown.
+        var blankIdentifiers: Set<Int> = []
         var positioned = false
         var inText = false
         var marks: [Mark] = []
@@ -46,6 +55,15 @@ enum MarkedTextReader {
             // operand either way, so an unknown origin can be scoped instead of stopping the scan.
             var known = positioned
             positioned = false
+            // Whether every byte shown is a space code of the current font; false for no bytes.
+            var blank = !spaces.isEmpty, empty = true
+            func inspect(_ string: CGPDFStringRef) {
+                let count = CGPDFStringGetLength(string)
+                guard blank, count > 0 else { return }
+                guard let bytes = CGPDFStringGetBytePtr(string) else { blank = false; return }
+                empty = false
+                for index in 0..<count where !spaces.contains(bytes[index]) { blank = false; return }
+            }
             if array {
                 var values: CGPDFArrayRef?
                 guard CGPDFScannerPopArray(scanner, &values), let values else { invalid = true; return }
@@ -54,9 +72,25 @@ enum MarkedTextReader {
                     var number: CGPDFReal = 0
                     if CGPDFArrayGetNumber(values, 0, &number), number != 0 { known = false }
                 }
+                for index in 0..<CGPDFArrayGetCount(values) {
+                    var string: CGPDFStringRef?
+                    if CGPDFArrayGetString(values, index, &string), let string { inspect(string) }
+                }
             } else {
                 var value: CGPDFStringRef?
                 guard CGPDFScannerPopString(scanner, &value) else { invalid = true; return }
+                if let value { inspect(value) }
+            }
+            // Invisible text is inherited transcription (an OCR layer over a scan), not the text
+            // the tags describe. Inside an artifact it carries no structure and costs nothing;
+            // anywhere else the page's tags cannot be trusted (#91).
+            if renderMode == 3, marks.last?.artifact != true { invalid = true; return }
+            // A show of only spaces draws no visible text, and PDFKit trims trailing spaces from
+            // its line boxes, so its origin often lies past every line. It owns no line, so it
+            // neither places nor costs a group (#91).
+            if blank && !empty {
+                if let id = marks.last?.id { blankIdentifiers.insert(id) }
+                return
             }
             guard known else { unknownOrigin(); return }
             let point = CGPoint(x: 0, y: rise).applying(lineMatrix).applying(matrix)
@@ -162,6 +196,31 @@ enum MarkedTextReader {
         return true
     }
 
+    /// The one-byte codes a simple font draws as a space (U+0020). The ToUnicode map decides when
+    /// the font has one, since it states what each code shows; a font with a map this reader
+    /// cannot parse has none. Without a map, code 32 is the space of the standard named
+    /// encodings. Type3 glyphs are procedures and composite fonts use multi-byte codes: none.
+    static func spaceCodes(_ font: CGPDFDictionaryRef) -> Set<UInt8> {
+        guard let subtype = StructureTreeReader.name(font, "Subtype"),
+              ["Type1", "TrueType", "MMType1"].contains(subtype) else { return [] }
+        var stream: CGPDFStreamRef?
+        if CGPDFDictionaryGetStream(font, "ToUnicode", &stream) {
+            var format = CGPDFDataFormat.raw
+            guard let stream, let data = CGPDFStreamCopyData(stream, &format), format == .raw,
+                  CFDataGetLength(data) <= 65_536, var text = String(data: data as Data, encoding: .isoLatin1) else { return [] }
+            // A simple font's codes are one byte whatever its map declares. Adobe PDF Library
+            // writes one-byte entries under a two-byte `<0000> <FFFF>` codespace (FAA, DGA, Fed);
+            // any entry that is not one byte still fails the parse.
+            text = text.replacingOccurrences(of: #"begincodespacerange\s*<0000>\s*<[fF]{4}>\s*endcodespacerange"#,
+                with: "begincodespacerange <00> <FF> endcodespacerange", options: .regularExpression)
+            guard let normalized = text.data(using: .isoLatin1), let map = NativeSpacingReader.unicodeMap(normalized) else { return [] }
+            return Set(map.filter { $0.value == " " }.keys)
+        }
+        guard let encoding = StructureTreeReader.name(font, "Encoding"),
+              ["WinAnsiEncoding", "MacRomanEncoding", "StandardEncoding"].contains(encoding) else { return [] }
+        return [0x20]
+    }
+
     /// Returns false if any supported group could not be used. Unmapped lines remain untouched.
     static func apply(_ tags: [Int: TextStructure], page: CGPDFPage,
                       lines: inout [TextLine]) -> Bool {
@@ -171,12 +230,12 @@ enum MarkedTextReader {
         CGPDFOperatorTableSetCallback(table, "q") { scanner, info in
             let s = Self.state(info)
             guard s.accept(scanner), s.saved.count < 128 else { s.invalid = true; return }
-            s.saved.append((s.matrix, s.leading, s.rise))
+            s.saved.append((s.matrix, s.leading, s.rise, s.spaces, s.renderMode))
         }
         CGPDFOperatorTableSetCallback(table, "Q") { scanner, info in
             let s = Self.state(info)
             guard s.accept(scanner), let saved = s.saved.popLast() else { s.invalid = true; return }
-            (s.matrix, s.leading, s.rise) = saved
+            (s.matrix, s.leading, s.rise, s.spaces, s.renderMode) = saved
         }
         CGPDFOperatorTableSetCallback(table, "cm") { scanner, info in
             let s = Self.state(info)
@@ -226,9 +285,25 @@ enum MarkedTextReader {
         }
         CGPDFOperatorTableSetCallback(table, "Tr") { scanner, info in
             let s = Self.state(info)
-            guard s.accept(scanner), let n = Self.numbers(scanner, 1), (0...2).contains(n[0]) else {
+            // Mode 3 is judged where text is shown, by its mark; clipping modes still fall back.
+            guard s.accept(scanner), let n = Self.numbers(scanner, 1), [0, 1, 2, 3].contains(n[0]) else {
                 s.invalid = true; return
             }
+            s.renderMode = n[0]
+        }
+        CGPDFOperatorTableSetCallback(table, "Tf") { scanner, info in
+            let s = Self.state(info)
+            guard s.accept(scanner) else { return }
+            // A font this reader cannot resolve has no space codes; its shows keep the other rules.
+            s.spaces = []
+            var name: UnsafePointer<CChar>?
+            var font: CGPDFDictionaryRef?
+            guard Self.numbers(scanner, 1) != nil, CGPDFScannerPopName(scanner, &name), let name,
+                  let resource = CGPDFContentStreamGetResource(CGPDFScannerGetContentStream(scanner), "Font", name),
+                  CGPDFObjectGetValue(resource, .dictionary, &font), let font else { return }
+            let identity = UInt(bitPattern: font.rawValue)
+            if s.fontSpaces[identity] == nil { s.fontSpaces[identity] = Self.spaceCodes(font) }
+            s.spaces = s.fontSpaces[identity] ?? []
         }
         CGPDFOperatorTableSetCallback(table, "Tj") { scanner, info in Self.state(info).show(scanner) }
         CGPDFOperatorTableSetCallback(table, "TJ") { scanner, info in Self.state(info).show(scanner, array: true) }
@@ -347,6 +422,7 @@ enum MarkedTextReader {
             }
             assignments[index, default: []].append(tag)
         }
+        found.formUnion(s.blankIdentifiers)
         for (id, tag) in tags where !found.contains(id) { rejected.insert(tag.group) }
         for values in assignments.values {
             let groups = Set(values.compactMap { $0?.group })

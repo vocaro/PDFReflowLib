@@ -135,8 +135,12 @@ Guidelines' and FAA handbook's figures, #75); a form that shows text, draws an u
 resource or exhausts the budget still invalidates the page. OCR text and image-backed pages
 with any invisible (mode 3) text do not inherit native tags; visible native text drawn over a
 page-sized background image or tint (a chapter opener's photograph) keeps its validated tags while
-still reporting `unverifiedTextLayer` (#72). Invisible text never associates in any case: the
-reader rejects rendering mode 3. A validated `P` group set in heading type keeps its tag above the
+still reporting `unverifiedTextLayer` (#72). Invisible text never associates in any case: a show
+in rendering mode 3 outside an `/Artifact` invalidates the page, while one inside an artifact, which
+carries no structure, costs nothing (the Fed's running head, #91). A show whose every code the current
+simple font maps to U+0020 (through its ToUnicode map, or code 32 under a standard named encoding)
+draws nothing, so it places no line and costs no group; its identifier still counts as shown (PDFKit
+trims trailing spaces from line boxes, so such shows often lie past every line: FAA, DGA). A validated `P` group set in heading type keeps its tag above the
 text it introduces when its lines read as a pull quote (the rule below). Such a group is read as a
 title when the next text in its column is ordinary text on its edge (#67), or when every line is
 set in a heading or label style the book repeats on three or more pages, even directly above

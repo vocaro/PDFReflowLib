@@ -1,0 +1,209 @@
+SAMPLE	16	ambiguous(2)	54.0,672.3	len13	496e74726f647563	Introduction 	nearest (54.0,713.6 47.6x18.9) Chapter 1
+SAMPLE	16	ambiguous(2)	54.0,716.8	len9	4368617074657220	Chapter 1	nearest (54.0,713.6 47.6x18.9) Chapter 1
+SAMPLE	18	ambiguous(2)	72.0,472.6	len32	486973746f727920	History of the Federal A	nearest (72.0,456.3 120.0x15.8) Administration (FAA)
+SAMPLE	18	noLine	321.0,422.1	len1	20	 	nearest (321.0,432.1 77.8x11.5) commercial airline.
+SAMPLE	19	noLine	36.0,384.1	len1	20	 	nearest (36.0,394.1 133.3x11.5) Government in improving safety
+SAMPLE	19	noLine	285.0,345.8	len1	20	 	nearest (285.0,355.8 160.8x11.5) “feather” end of the arrow. [F
+SAMPLE	24	noLine	321.0,346.6	len1	20	 	nearest (321.0,369.1 41.1x11.5) be sent to:
+SAMPLE	24	noLine	321.0,334.1	len1	20	 	nearest (321.0,369.1 41.1x11.5) be sent to:
+SAMPLE	24	noLine	321.0,321.6	len1	20	 	nearest (321.0,369.1 41.1x11.5) be sent to:
+SAMPLE	29	noLine	226.4,583.6	len1	20	 	nearest (63.0,564.1 210.0x11.5) Time (identifies the effective
+SAMPLE	29	noLine	36.0,304.7	len1	20	 	nearest (36.0,316.7 103.3x11.3) 0709050000-0709050400
+SAMPLE	29	ambiguous(2)	285.0,289.2	len40	4169726372616674	Aircraft Classifications	nearest (285.0,272.9 48.4x15.8) Vehicles
+SAMPLE	31	noLine	285.0,540.7	len1	20	 	nearest (285.0,525.1 50.6x13.2) Sport Pilot
+SAMPLE	36	noLine	258.1,155.5	len1	20	 	nearest (72.0,165.5 237.1x11.5) aeronautical knowledge, profic
+SAMPLE	39	noLine	36.0,421.6	len1	20	 	nearest (36.0,431.6 67.8x11.5) FAA employees.
+SAMPLE	39	noLine	285.0,294.0	len1	20	 	nearest (285.0,304.0 126.6x11.5) Aeronautical Decision-Making.
+SAMPLE	40	ambiguous(2)	72.0,600.2	len13	4165726f6e617574	Aeronautical 	nearest (72.1,640.6 50.6x18.9) Chapter 2
+SAMPLE	40	ambiguous(2)	72.1,643.8	len9	4368617074657220	Chapter 2	nearest (72.1,640.6 50.6x18.9) Chapter 2
+SAMPLE	46	noLine	73.0,150.0	len13	2046696775726520	 Figure 2-6. 	nearest (75.2,147.1 261.1x10.8) Figure 2-6. Example of a more 
+SAMPLE	52	noLine	72.0,572.1	len1	20	 	nearest (72.0,582.1 146.4x11.5) pilot in organizing critical d
+SAMPLE	55	noLine	45.2,302.6	len1	20	 	nearest (63.2,287.6 80.5x11.5) fatigue and pressure
+SAMPLE	55	noLine	294.2,722.1	len1	20	 	nearest (312.2,707.1 58.1x11.5) meeting; drive
+SAMPLE	55	noLine	294.2,692.6	len1	20	 	nearest (312.2,707.1 58.1x11.5) meeting; drive
+SAMPLE	55	noLine	294.2,663.1	len1	20	 	nearest (312.2,648.1 77.8x11.5) might influence me
+SAMPLE	55	noLine	294.2,443.1	len1	20	 	nearest (312.2,415.6 70.3x11.5) flight instructor?)
+SAMPLE	55	noLine	294.2,401.1	len1	20	 	nearest (312.2,369.1 39.2x11.5) the costs?
+SAMPLE	55	noLine	294.2,384.1	len1	20	 	nearest (312.2,369.1 39.2x11.5) the costs?
+SAMPLE	55	noLine	294.2,354.6	len1	20	 	nearest (312.2,369.1 39.2x11.5) the costs?
+SAMPLE	62	noLine	72.0,289.1	len1	20	 	nearest (72.0,299.1 82.8x11.5) these characteristics.
+SAMPLE	64	noLine	99.0,539.1	len1	20	 	nearest (81.0,570.6 3.5x11.5) •
+SAMPLE	64	noLine	99.0,522.1	len1	20	 	nearest (81.0,570.6 3.5x11.5) •
+SAMPLE	64	noLine	99.0,488.1	len1	20	 	nearest (99.0,502.3 153.5x12.0) A Air vents (location and oper
+SAMPLE	64	noLine	99.0,471.1	len1	20	 	nearest (99.0,502.3 153.5x12.0) A Air vents (location and oper
+SAMPLE	64	noLine	99.0,420.1	len1	20	 	nearest (117.0,417.6 111.1x11.5) Emergency evacuation plan
+SAMPLE	64	noLine	99.0,403.1	len1	20	 	nearest (117.0,417.6 111.1x11.5) Emergency evacuation plan
+SAMPLE	64	noLine	99.0,369.1	len1	20	 	nearest (99.0,349.3 132.7x12.0) Y Your questions? (Speak up!)
+SAMPLE	69	noLine	36.0,684.6	len1	20	 	nearest (36.0,669.6 237.0x11.5) An advanced avionics safety is
+SAMPLE	72	ambiguous(2)	321.0,633.1	len9	4169726372616674	Aircraft 	nearest (321.0,671.8 51.1x18.9) Chapter 3
+SAMPLE	72	ambiguous(2)	321.0,675.0	len9	4368617074657220	Chapter 3	nearest (321.0,671.8 51.1x18.9) Chapter 3
+SAMPLE	73	ambiguous(2)	36.0,720.3	len36	4169726372616674	Aircraft Design, Certifi	nearest (36.0,704.0 79.6x15.8) Airworthiness
+SAMPLE	81	noLine	285.0,659.6	len1	20	 	nearest (285.0,557.1 83.3x11.5) costs for the airlines.
+SAMPLE	93	noLine	36.0,509.6	len1	20	 	nearest (36.0,519.6 110.5x11.5) forces the airplane forward.
+SAMPLE	101	noLine	142.5,443.1	len6	202020202032	     2	nearest (110.5,447.5 88.1x21.1) L = CL . ρ . V2 . S
+SAMPLE	102	noLine	427.5,509.6	len6	202020202032	     2	nearest (393.7,514.0 91.7x21.1) D = CD . ρ . V2 . S
+SAMPLE	111	noLine	36.0,431.0	len1	20	 	nearest (36.0,415.4 38.9x13.2) Stability
+SAMPLE	136	noLine	321.0,398.2	len8	2020202020202020	        	nearest (341.0,389.7 103.0x18.1) R = V2
+SAMPLE	137	noLine	466.1,609.6	len2	2020	  	nearest (285.0,619.6 237.0x11.5) distribution causes accidents.
+SAMPLE	137	noLine	285.0,597.1	len1	20	 	nearest (285.0,669.6 69.7x11.5) CG is positioned.
+SAMPLE	143	noLine	36.0,209.6	len1	20	 	nearest (36.0,219.6 111.7x11.5) KIAS as well) is falling off.
+SAMPLE	143	noLine	285.0,672.1	len1	20	 	nearest (285.0,682.1 88.6x11.5) laminar and turbulent.
+SAMPLE	144	noLine	81.0,148.8	len3	209520	 . 	nearest (81.0,175.8 3.5x11.5) •
+SAMPLE	162	noLine	36.0,658.2	len1	20	 	nearest (36.0,718.1 108.4x13.2) Reciprocating Engines
+SAMPLE	172	noLine	36.0,597.1	len1	20	 	nearest (45.0,565.1 3.5x11.5) •
+SAMPLE	172	noLine	36.0,226.1	len1	20	 	nearest (36.0,236.1 101.9x11.5) engine’s intake manifold.
+SAMPLE	180	ambiguous(2)	36.0,622.6	len38	46756c6c20417574	Full Authority Digital E	nearest (36.0,606.3 49.1x15.8) (FADEC)
+SAMPLE	189	noLine	321.0,296.6	len1	20	 	nearest (321.0,281.0 136.1x13.2) Combustion Heater Systems
+SAMPLE	194	noLine	285.0,672.1	len1	20	 	nearest (285.0,656.5 33.4x13.2) Brakes
+SAMPLE	207	noLine	330.0,155.1	len1	20	 	nearest (321.0,81.1 165.5x12.5) of altitude, 0.25 × 1,000 feet
+SAMPLE	207	noLine	330.0,138.1	len1	20	 	nearest (321.0,81.1 165.5x12.5) of altitude, 0.25 × 1,000 feet
+SAMPLE	207	noLine	330.0,121.1	len1	20	 	nearest (321.0,81.1 165.5x12.5) of altitude, 0.25 × 1,000 feet
+SAMPLE	208	noLine	45.0,605.1	len1	20	 	nearest (63.0,602.6 175.5x11.5) Mineral Wells altimeter settin
+SAMPLE	208	noLine	45.0,588.1	len1	20	 	nearest (36.0,518.6 156.1x11.5) the number from the indicated 
+SAMPLE	208	noLine	45.0,571.1	len1	20	 	nearest (36.0,518.6 156.1x11.5) the number from the indicated 
+SAMPLE	208	noLine	45.0,504.1	len1	20	 	nearest (36.0,464.1 108.2x11.5) setting 29.94 to 30.56 "Hg.
+SAMPLE	208	noLine	45.0,449.6	len1	20	 	nearest (36.0,464.1 108.2x11.5) setting 29.94 to 30.56 "Hg.
+SAMPLE	208	noLine	45.0,432.6	len1	20	 	nearest (36.0,464.1 108.2x11.5) setting 29.94 to 30.56 "Hg.
+SAMPLE	208	noLine	45.0,415.6	len1	20	 	nearest (36.0,464.1 108.2x11.5) setting 29.94 to 30.56 "Hg.
+SAMPLE	208	noLine	45.0,348.6	len1	20	 	nearest (36.0,321.1 124.2x11.5) The pilot will be 620 feet hig
+SAMPLE	208	noLine	304.0,215.1	len1	20	 	nearest (294.0,212.6 7.5x11.5) 1.
+SAMPLE	208	noLine	304.0,173.1	len1	20	 	nearest (294.0,170.6 7.5x11.5) 2.
+SAMPLE	209	noLine	91.0,722.1	len1	20	 	nearest (81.0,719.6 7.5x11.5) 3.
+SAMPLE	209	noLine	91.0,692.6	len1	20	 	nearest (81.0,690.1 7.5x11.5) 4.
+SAMPLE	236	noLine	285.0,571.1	len1	20	 	nearest (285.0,581.1 68.6x11.5) and mailing it to:
+SAMPLE	236	noLine	285.0,558.6	len1	20	 	nearest (285.0,581.1 68.6x11.5) and mailing it to:
+SAMPLE	236	noLine	285.0,546.1	len1	20	 	nearest (285.0,581.1 68.6x11.5) and mailing it to:
+SAMPLE	236	noLine	285.0,533.6	len1	20	 	nearest (285.0,581.1 68.6x11.5) and mailing it to:
+SAMPLE	237	noLine	340.0,655.1	len1	20	 	nearest (330.0,652.6 7.5x11.5) 1.
+SAMPLE	249	noLine	330.0,491.6	len1	20	 	nearest (348.0,560.6 13.1x11.5) oil.
+SAMPLE	249	noLine	330.0,474.6	len1	20	 	nearest (348.0,560.6 13.1x11.5) oil.
+SAMPLE	249	noLine	330.0,457.6	len1	20	 	nearest (348.0,354.1 69.4x11.5) arm of 50 inches.
+SAMPLE	249	noLine	330.0,440.6	len1	20	 	nearest (348.0,354.1 69.4x11.5) arm of 50 inches.
+SAMPLE	249	noLine	330.0,423.6	len1	20	 	nearest (348.0,354.1 69.4x11.5) arm of 50 inches.
+SAMPLE	251	noLine	81.0,383.0	len1	20	 	nearest (81.0,346.5 27.2x11.5) Given:
+SAMPLE	251	noLine	81.0,366.0	len1	20	 	nearest (81.0,346.5 27.2x11.5) Given:
+SAMPLE	251	noLine	81.0,332.0	len1	20	 	nearest (81.0,346.5 27.2x11.5) Given:
+SAMPLE	251	noLine	81.0,315.0	len1	20	 	nearest (81.0,346.5 27.2x11.5) Given:
+SAMPLE	251	noLine	81.0,298.0	len1	20	 	nearest (81.0,346.5 27.2x11.5) Given:
+SAMPLE	251	noLine	81.0,281.0	len1	20	 	nearest (99.0,224.0 36.4x11.5) example.
+SAMPLE	254	noLine	285.0,98.7	len48	2020202020202020	                        	nearest (285.0,71.2 205.0x11.5) The shift has caused the CG to
+SAMPLE	257	ambiguous(2)	72.0,651.3	len9	4169726372616674	Aircraft 	nearest (72.5,692.6 51.0x18.9) Chapter 11
+SAMPLE	257	ambiguous(2)	72.5,695.8	len10	4368617074657220	Chapter 11	nearest (72.5,692.6 51.0x18.9) Chapter 11
+SAMPLE	262	noLine	356.5,572.1	len2	2020	  	nearest (285.0,564.6 69.0x16.5) KE = ½ × m × v2
+SAMPLE	262	noLine	285.0,559.6	len3	202020	   	nearest (285.0,564.6 69.0x16.5) KE = ½ × m × v2
+SAMPLE	262	noLine	393.0,559.6	len20	2076203d206f626a	 v = object velocity	nearest (285.0,519.6 210.0x11.5) PE = m × g × h g = gravity fie
+SAMPLE	262	noLine	285.0,534.6	len3	202020	   	nearest (285.0,564.6 69.0x16.5) KE = ½ × m × v2
+SAMPLE	262	noLine	497.5,522.1	len1	20	 	nearest (395.5,507.1 67.6x11.5) h = object height
+SAMPLE	262	noLine	285.0,509.6	len3	202020	   	nearest (285.0,564.6 69.0x16.5) KE = ½ × m × v2
+SAMPLE	262	noLine	393.0,509.6	len18	2068203d206f626a	 h = object height	nearest (285.0,519.6 210.0x11.5) PE = m × g × h g = gravity fie
+SAMPLE	265	noLine	390.1,547.1	len27	2020202020202020	        pounds of fuel/h	nearest (321.0,551.1 162.8x17.5) specific endurance = flight ho
+SAMPLE	265	noLine	321.0,484.6	len44	2020202020202020	                        	nearest (321.0,488.6 107.8x17.5) specific endurance = 1
+SAMPLE	266	noLine	110.1,647.1	len23	20202020706f756e	    pounds of fuel/hour	nearest (36.0,651.1 141.2x17.5) specific range = NM/hour
+SAMPLE	266	noLine	36.0,584.6	len2	2020	  	nearest (36.0,588.6 128.1x17.5) specific range = knots
+SAMPLE	266	noLine	108.0,584.6	len20	2020202020202020	           fuel flow	nearest (36.0,588.6 128.1x17.5) specific range = knots
+SAMPLE	272	noLine	36.0,63.1	len1	20	 	nearest (36.0,33.7 25.6x12.3) 11-16
+SAMPLE	274	noLine	36.0,597.1	len1	20	 	nearest (36.0,507.1 42.5x11.5) 1,920 feet.
+SAMPLE	274	noLine	36.0,222.1	len1	20	 	nearest (36.0,232.1 182.5x11.5) 9). Braking is ineffective whe
+SAMPLE	280	noLine	285.0,282.9	len1	20	 	nearest (285.0,326.6 78.3x12.0) Sample Problem 8
+SAMPLE	284	ambiguous(2)	285.0,720.3	len31	4169722043617272	Air Carrier Obstacle Cle	nearest (285.0,704.0 79.6x15.8) Requirements
+SAMPLE	301	noLine	72.0,335.6	len1	20	 	nearest (72.0,320.0 41.1x13.2) Visibility
+SAMPLE	307	noLine	72.0,200.7	len1	20	 	nearest (72.0,146.9 37.9x13.3) Hazards
+SAMPLE	307	noLine	72.0,85.7	len1	20	 	nearest (72.0,146.9 37.9x13.3) Hazards
+SAMPLE	308	noLine	285.0,336.3	len1	20	 	nearest (285.0,320.1 23.8x13.3) Icing
+SAMPLE	308	noLine	285.0,221.3	len1	20	 	nearest (285.0,231.3 116.3x11.5) supercooled water decreases.
+SAMPLE	311	ambiguous(2)	54.0,716.8	len10	4368617074657220	Chapter 13	nearest (54.0,713.6 54.5x18.9) Chapter 13
+SAMPLE	313	noLine	80.5,187.6	len1	20	 	nearest (98.5,202.1 98.6x11.5) 10 minutes in this mode.
+SAMPLE	314	noLine	55.0,550.7	len1	20	 	nearest (45.0,548.2 7.5x11.5) 4.
+SAMPLE	316	noLine	294.0,617.6	len1	20	 	nearest (294.0,558.7 7.5x11.5) 5.
+SAMPLE	318	noLine	36.0,446.6	len1	20	 	nearest (36.0,456.6 75.0x11.5) inflight advisories.
+SAMPLE	318	noLine	515.9,572.1	len1	20	 	nearest (393.0,557.1 80.5x11.5) Gregg County VOR
+SAMPLE	318	noLine	285.0,559.6	len2	2020	  	nearest (285.0,594.6 51.1x11.5) Explanation:
+SAMPLE	318	noLine	357.0,559.6	len1	20	 	nearest (285.0,544.6 149.4x11.5) Time: ........................
+SAMPLE	318	noLine	359.5,559.6	len1	20	 	nearest (285.0,544.6 149.4x11.5) Time: ........................
+SAMPLE	321	noLine	72.0,609.6	len1	20	 	nearest (72.0,594.0 129.5x13.2) Inflight Weather Advisories
+SAMPLE	328	noLine	45.0,500.1	len2	2095	 .	nearest (45.0,527.1 3.5x11.5) •
+SAMPLE	328	noLine	45.0,483.1	len2	2095	 .	nearest (45.0,527.1 3.5x11.5) •
+SAMPLE	328	noLine	45.0,466.1	len2	2095	 .	nearest (45.0,527.1 3.5x11.5) •
+SAMPLE	370	ambiguous(2)	72.0,622.6	len39	456e67696e656572	Engineered Materials Arr	nearest (72.0,606.3 42.5x15.8) (EMAS)
+SAMPLE	382	ambiguous(2)	72.0,334.1	len28	4169722054726166	Air Traffic Control and 	nearest (72.0,317.8 96.2x15.8) Airspace System
+SAMPLE	392	noLine	81.0,123.7	len1	20	 	nearest (72.0,138.2 125.8x11.5) a pilot should do the followin
+SAMPLE	392	noLine	81.0,106.7	len1	20	 	nearest (72.0,138.2 125.8x11.5) a pilot should do the followin
+SAMPLE	392	noLine	81.0,89.7	len1	20	 	nearest (72.0,138.2 125.8x11.5) a pilot should do the followin
+SAMPLE	392	noLine	81.0,72.7	len1	20	 	nearest (72.0,138.2 125.8x11.5) a pilot should do the followin
+SAMPLE	396	noLine	72.0,580.1	len1	20	 	nearest (72.0,590.1 138.0x11.5) drift right or left with a cro
+SAMPLE	404	noLine	72.0,583.6	len1	20	 	nearest (81.0,606.1 3.5x11.5) •
+SAMPLE	405	noLine	45.0,348.0	len69	2054727565206169	 True airspeed (TAS)....	nearest (36.0,251.4 137.8x13.2) Steps in Charting the Course
+SAMPLE	405	noLine	45.0,331.0	len71	2057696e64732061	 Winds aloft............	nearest (36.0,251.4 137.8x13.2) Steps in Charting the Course
+SAMPLE	405	noLine	45.0,314.0	len75	20557361626c6520	 Usable fuel............	nearest (36.0,251.4 137.8x13.2) Steps in Charting the Course
+SAMPLE	405	noLine	45.0,297.0	len78	204675656c207261	 Fuel rate..............	nearest (36.0,251.4 137.8x13.2) Steps in Charting the Course
+SAMPLE	405	noLine	45.0,280.0	len79	2044657669617469	 Deviation..............	nearest (36.0,251.4 137.8x13.2) Steps in Charting the Course
+SAMPLE	410	noLine	72.0,566.6	len4	20202020	    	nearest (72.0,618.6 78.3x11.5) the following table:
+SAMPLE	410	noLine	216.0,566.6	len12	2020202044697374	    Distance	nearest (74.5,551.6 234.5x11.3) Class Altitudes ( M i l e s )
+SAMPLE	410	noLine	72.0,554.1	len7	20436c61737320	 Class 	nearest (72.0,618.6 78.3x11.5) the following table:
+SAMPLE	410	noLine	72.0,541.6	len3	205420	 T 	nearest (72.0,618.6 78.3x11.5) the following table:
+SAMPLE	410	noLine	72.0,529.1	len3	204c20	 L 	nearest (72.0,618.6 78.3x11.5) the following table:
+SAMPLE	410	noLine	72.0,516.6	len3	204820	 H 	nearest (74.5,501.6 206.2x11.5) H Within the conterminous 48 s
+SAMPLE	410	noLine	72.0,504.1	len3	204820	 H 	nearest (72.0,401.6 68.1x11.5) Supplement U.S.
+SAMPLE	410	noLine	72.0,491.6	len2	2020	  	nearest (72.0,401.6 68.1x11.5) Supplement U.S.
+SAMPLE	410	noLine	72.0,479.1	len3	204820	 H 	nearest (72.0,401.6 68.1x11.5) Supplement U.S.
+SAMPLE	410	noLine	72.0,466.6	len3	204820	 H 	nearest (72.0,401.6 68.1x11.5) Supplement U.S.
+SAMPLE	414	noLine	72.0,284.6	len5	2020202020	     	nearest (72.0,269.0 79.5x13.2) Course Intercept
+SAMPLE	416	noLine	321.0,697.1	len1	20	 	nearest (321.0,632.1 97.2x11.5) two-letter identification.
+SAMPLE	416	noLine	321.0,397.1	len1	20	 	nearest (321.0,344.6 145.5x11.5) H 50–1999
+SAMPLE	416	noLine	323.5,397.1	len3	202020	   	nearest (321.0,344.6 145.5x11.5) H 50–1999
+SAMPLE	416	noLine	429.0,397.1	len2	2020	  	nearest (321.0,381.8 216.8x12.0) Class (Watts) (Miles)
+SAMPLE	416	noLine	469.0,347.1	len1	20	 	nearest (321.0,332.1 237.0x11.5) HH 2000 or more 75
+SAMPLE	416	noLine	501.0,347.1	len7	20202020202020	       	nearest (542.6,344.6 15.4x12.1) *50
+SAMPLE	418	noLine	321.0,597.1	len1	20	 	nearest (321.0,607.1 117.8x11.5) through the NOTAM system.
+SAMPLE	418	noLine	321.0,359.6	len1	20	 	nearest (321.0,344.6 237.1x11.5) RAIM messages vary somewhat be
+SAMPLE	419	noLine	285.0,157.1	len1	20	 	nearest (285.0,167.1 45.5x11.5) route chart.
+SAMPLE	420	noLine	321.0,534.6	len1	20	 	nearest (321.0,519.0 73.3x13.2) VFR Waypoints
+SAMPLE	423	ambiguous(2)	321.0,672.3	len12	4165726f6d656469	Aeromedical 	nearest (321.0,713.6 53.6x18.9) Chapter 17
+SAMPLE	423	ambiguous(2)	321.0,716.8	len10	4368617074657220	Chapter 17	nearest (321.0,713.6 53.6x18.9) Chapter 17
+SAMPLE	428	noLine	285.0,397.1	len1	20	 	nearest (285.0,407.1 202.5x11.5) convincing illusions that are 
+SAMPLE	438	noLine	213.0,62.6	len1	20	 	nearest (36.0,72.0 237.1x13.5) as well for cognitive impairme
+SAMPLE	453	ambiguous(2)	72.0,667.9	len28	506572666f726d61	Performance Data for Ces	nearest (72.0,713.6 55.3x18.9) Appendix A
+SAMPLE	461	ambiguous(2)	72.0,667.9	len29	4163726f6e796d73	Acronyms, Abbreviations,	nearest (72.0,713.6 55.7x18.9) Appendix B
+SAMPLE	462	noLine	296.9,172.6	len1	20	 	nearest (285.0,168.3 8.7x15.8) B
+SAMPLE	463	noLine	83.9,485.1	len1	20	 	nearest (72.0,480.8 8.7x15.8) C
+SAMPLE	464	noLine	47.9,597.1	len1	20	 	nearest (36.0,592.8 8.7x15.8) D
+SAMPLE	464	noLine	296.3,397.6	len1	20	 	nearest (285.0,393.3 8.0x15.8) E
+SAMPLE	465	noLine	82.6,535.6	len1	20	 	nearest (72.0,531.3 7.3x15.8) F
+SAMPLE	466	noLine	47.9,568.5	len1	20	 	nearest (36.0,564.2 8.7x15.8) H
+SAMPLE	466	noLine	42.6,202.5	len1	20	 	nearest (36.0,198.2 3.3x15.8) I
+SAMPLE	466	noLine	296.9,322.7	len1	20	 	nearest (285.0,318.4 8.7x15.8) K
+SAMPLE	466	noLine	295.6,244.1	len1	20	 	nearest (285.0,239.9 7.3x15.8) L
+SAMPLE	467	noLine	85.3,319.0	len1	20	 	nearest (72.0,314.7 10.0x15.8) M
+SAMPLE	468	noLine	47.9,720.3	len1	20	 	nearest (36.0,716.0 8.7x15.8) N
+SAMPLE	468	noLine	297.6,484.6	len1	20	 	nearest (285.0,480.3 9.3x15.8) O
+SAMPLE	468	noLine	296.3,143.0	len1	20	 	nearest (285.0,138.7 8.0x15.8) P
+SAMPLE	469	noLine	72.0,72.1	len1	20	 	nearest (72.0,81.8 57.8x12.0) PVT—private
+SAMPLE	469	noLine	74.5,72.1	len1	20	 	nearest (72.0,81.8 57.8x12.0) PVT—private
+SAMPLE	469	noLine	332.9,720.3	len1	20	 	nearest (321.0,716.0 8.7x15.8) R
+SAMPLE	470	noLine	47.3,334.6	len1	20	 	nearest (36.0,330.3 8.0x15.8) S
+SAMPLE	471	noLine	82.6,609.6	len1	20	 	nearest (72.0,605.3 7.3x15.8) T
+SAMPLE	472	noLine	47.9,720.3	len1	20	 	nearest (36.0,716.0 8.7x15.8) U
+SAMPLE	472	noLine	47.3,516.2	len1	20	 	nearest (36.0,511.9 8.0x15.8) V
+SAMPLE	472	noLine	299.6,720.3	len1	20	 	nearest (285.0,716.0 11.3x15.8) W
+SAMPLE	491	noLine	330.0,580.1	len1	20	 	nearest (321.0,594.6 146.7x11.5) types of instrument landing sy
+SAMPLE	491	noLine	330.0,538.1	len1	20	 	nearest (321.0,594.6 146.7x11.5) types of instrument landing sy
+SAMPLE	491	noLine	330.0,496.1	len1	20	 	nearest (348.0,468.6 123.0x11.5) range of not less than 700 fee
+SAMPLE	491	noLine	330.0,454.1	len1	20	 	nearest (348.0,384.6 66.1x11.5) range minimum.
+SAMPLE	491	noLine	330.0,412.1	len1	20	 	nearest (348.0,384.6 66.1x11.5) range minimum.
+SAMPLE	514	ambiguous(2)	403.0,465.6	len1	58	X	nearest (285.0,464.2 234.0x13.8) Best angle-of-climb speed (VX)
+SAMPLE	514	ambiguous(2)	396.3,452.6	len1	59	Y	nearest (285.0,451.2 234.0x13.8) Best rate-of-climb speed (VY).
+SAMPLE	515	ambiguous(2)	442.4,231.6	len1	41	A	nearest (321.0,230.2 234.0x13.8) Design maneuvering speed (VA).
+SAMPLE	517	ambiguous(2)	450.9,110.3	len2	4c45	LE	nearest (321.0,108.9 234.0x13.8) Landing gear extended speed (V
+SAMPLE	517	ambiguous(2)	452.6,97.3	len2	4c4f	LO	nearest (321.0,95.9 234.0x13.8) Landing gear operating speed (
+SAMPLE	518	ambiguous(2)	292.2,439.6	len1	31	1	nearest (285.0,454.7 8.7x15.8) N
+SAMPLE	518	ambiguous(2)	292.2,426.6	len1	32	2	nearest (285.0,454.7 8.7x15.8) N
+SAMPLE	520	ambiguous(2)	427.5,627.7	len3	595345	YSE	nearest (285.0,626.3 234.0x13.8) Single-engine best rate-of-cli
+SAMPLE	521	ambiguous(2)	328.2,252.5	len1	41	A	nearest (321.0,267.6 8.0x15.8) V
+SAMPLE	522	ambiguous(2)	43.2,679.7	len2	4645	FE	nearest (36.0,678.3 234.0x13.8) VFE...........................
+SAMPLE	522	ambiguous(2)	43.2,510.7	len2	4c45	LE	nearest (36.0,509.3 234.0x13.8) VLE...........................
+SAMPLE	522	ambiguous(2)	43.2,497.7	len2	4c4f	LO	nearest (36.0,496.3 234.0x13.8) VLO...........................
+SAMPLE	522	ambiguous(2)	43.2,484.7	len2	4e45	NE	nearest (36.0,483.3 234.0x13.8) VNE...........................
+SAMPLE	522	ambiguous(2)	43.2,471.7	len2	4e4f	NO	nearest (36.0,470.3 234.0x13.8) VNO...........................
+SAMPLE	522	ambiguous(2)	43.2,393.7	len2	5330	S0	nearest (36.0,311.7 11.3x15.8) W
+SAMPLE	522	ambiguous(2)	43.2,380.7	len2	5331	S1	nearest (36.0,311.7 11.3x15.8) W
+SAMPLE	522	ambiguous(2)	43.2,354.7	len1	58	X	nearest (36.0,311.7 11.3x15.8) W

@@ -1,0 +1,238 @@
+{
+  "passed": false,
+  "provenanceErrors": [],
+  "case": "faa-phak-8083-25c",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "64783bf64ec15edb90f12ce8470629fa94182e2f52bc93a7701b7563d04c3dd7",
+  "candidateConverterSHA256": "f14e4854989b815e8fc4e0d135e66339a0ed008d733f648577ecd0f84f4630c6",
+  "sameConverter": false,
+  "changedPages": [
+    7,
+    24,
+    55,
+    64,
+    81,
+    99,
+    111,
+    143,
+    150,
+    172,
+    207,
+    208,
+    209,
+    236,
+    249,
+    251,
+    301,
+    307,
+    308,
+    318,
+    321,
+    392,
+    415,
+    416,
+    418,
+    419,
+    420,
+    462,
+    463,
+    464,
+    465,
+    466,
+    467,
+    468,
+    469,
+    470,
+    471,
+    472
+  ],
+  "changedPageFields": {
+    "7": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "text",
+      "warnings"
+    ],
+    "24": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "55": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "64": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "81": [
+      "warnings"
+    ],
+    "99": [
+      "warnings"
+    ],
+    "111": [
+      "warnings"
+    ],
+    "143": [
+      "warnings"
+    ],
+    "150": [
+      "warnings"
+    ],
+    "172": [
+      "warnings"
+    ],
+    "207": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "208": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "209": [
+      "warnings"
+    ],
+    "236": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "249": [
+      "listItemIDs",
+      "listItems",
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "251": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "301": [
+      "warnings"
+    ],
+    "307": [
+      "warnings"
+    ],
+    "308": [
+      "warnings"
+    ],
+    "318": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "321": [
+      "warnings"
+    ],
+    "392": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "415": [
+      "warnings"
+    ],
+    "416": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs",
+      "warnings"
+    ],
+    "418": [
+      "warnings"
+    ],
+    "419": [
+      "warnings"
+    ],
+    "420": [
+      "warnings"
+    ],
+    "462": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "463": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "464": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "465": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "466": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "467": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "468": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "469": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "470": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "471": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ],
+    "472": [
+      "markup",
+      "paragraphIDs",
+      "paragraphs"
+    ]
+  },
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [
+    "warnings"
+  ],
+  "idOnlyShifts": {
+    "pageCount": 440,
+    "fields": {
+      "anchors": 3,
+      "paragraphIDs": 440
+    },
+    "navigationEntries": 9
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

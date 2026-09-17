@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "provenanceErrors": [],
+  "case": "cia-blue-book-14-1955",
+  "executionContexts": {
+    "baseline": "host-terminal",
+    "candidate": "host-terminal"
+  },
+  "baselineConverterSHA256": "64783bf64ec15edb90f12ce8470629fa94182e2f52bc93a7701b7563d04c3dd7",
+  "candidateConverterSHA256": "f14e4854989b815e8fc4e0d135e66339a0ed008d733f648577ecd0f84f4630c6",
+  "sameConverter": false,
+  "changedPages": [],
+  "changedPageFields": {},
+  "changedImages": [],
+  "navigationChanged": false,
+  "changedNavigationPages": [],
+  "pageMarkersEqual": true,
+  "changedReportFields": [],
+  "idOnlyShifts": {
+    "pageCount": 0,
+    "fields": {},
+    "navigationEntries": 0
+  },
+  "imageRenames": {
+    "count": 0
+  },
+  "scope": "Per page: text, block records, element markup, image bytes, link targets and warnings, with generated identifiers (block ordinals, element ids, spine file names, image asset names) normalized; page markers; image assets by bytes; navigation entries; conversion report. Not CSS, package metadata, decoded image equivalence or a fidelity qualification."
+}

@@ -410,7 +410,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-448 Swift tests with no known-issue wrappers, and 196 Python tests.
+455 Swift tests with no known-issue wrappers, and 196 Python tests.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -699,6 +699,25 @@ contract checks the headings and their order on pages 47, 48, 228 and 447, the a
 512, and controls (page 410's table header, page 447's caption, `E = External Pressures`); the Wallace
 contract checks the blank pages 175 and 437. See the
 [FAA heading leftovers evidence](../measurements/faa-heading-leftovers/record.md).
+
+## Space-only shows and invisible text inside artifacts
+
+`TaggedRejectionsRemainingTests.swift` covers [#91](https://github.com/vocaro/PDFReflowLib/issues/91)
+on a synthetic tagged page with independent line geometry. A show of only spaces costs its paragraph
+group nothing wherever it lies: at the next line's origin below every line box (FAA page 18's shape),
+past a line's trimmed end, from an unknown cursor or as a `TJ` array; a letter in the same place still
+rejects the group. A show is blank only when its simple font says code 32 is a space: through a
+ToUnicode map (including Adobe PDF Library's one-byte entries under a `<0000> <FFFF>` codespace) or,
+without a map, a standard named encoding. A map sending 32 elsewhere, a built-in encoding, Type3 and
+composite fonts, and a map with a two-byte entry are negative controls; an empty show is not blank; the
+font is restored with the graphics state; a marked section showing only spaces counts as shown.
+Invisible text (`3 Tr`) inside an `/Artifact` costs nothing (the Fed's page-131 shape, and text), and
+the mode is restored with the graphics state; invisible text in marked body text, in a nested span,
+unmarked, or left on after the artifact still refuses the whole page, and clipping modes still fall
+back. On the d63bbbc reader five of the seven tests fail, and removing each of twelve parts fails a
+test. The FAA contract checks separated rows, addresses and checklist entries on nine pages and page
+318's joined report value; the Dietary Guidelines contract checks pages 2, 4, 8 and 9. See the
+[remaining tag rejection evidence](../measurements/tag-rejections-remaining/record.md).
 
 ## Text the rendering never shows
 

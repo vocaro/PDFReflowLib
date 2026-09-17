@@ -1,0 +1,10 @@
+page	tags	groups	imageBacked	invisibleText	validates	applies	pageReason	rejectedGroups	groupReasons	blank	taggedLines	lines
+2	67	24	false	false	true	partial	-	8	noLineAtOrigin=4,unknownOrigin=4	-	28	46
+3	65	13	true	false	true	partial	-	1	noLineAtOrigin=1	-	39	45
+4	79	17	true	false	true	partial	-	4	noLineAtOrigin=4	-	33	47
+5	55	9	true	false	true	partial	-	3	noLineAtOrigin=3	-	25	39
+6	39	10	false	false	true	partial	-	1	noLineAtOrigin=1	-	20	23
+7	99	17	false	false	true	partial	-	6	noLineAtOrigin=6	-	28	55
+8	74	19	false	false	true	partial	-	3	noLineAtOrigin=3	-	25	39
+9	73	11	false	false	true	partial	-	3	ambiguousOrigin=1,lineSharedWithUntaggedOrAmbiguousShow=1,noLineAtOrigin=2	-	30	49
+10	58	9	false	false	true	partial	-	1	ambiguousOrigin=1,lineSharedWithUntaggedOrAmbiguousShow=1	-	26	37

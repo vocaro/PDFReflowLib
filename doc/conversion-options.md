@@ -47,13 +47,19 @@ converter looks, in the same raster, for rows of glyph-sized ink standing on cle
 (at least five pieces 2.5–40 pt tall side by side) that lie outside every recognized line box,
 ignoring Vision's table regions. When at least 8 such rows hold at least 20% of that ink, the page
 is recognized once more as two overlapping bands (the top and bottom 60% of the page), and the
-banded result replaces the first when it leaves less of that ink uncovered. The `ocrUsed`
+banded result replaces the first when it leaves less of that ink uncovered. Its table regions,
+which become images whose text does not reflow, are kept only where the first recognition also
+found a table: the two recognitions rarely agree on tables, and a region only one of them
+reports would hide text the retry recovered (#129). The `ocrUsed`
 message then adds "The first recognition left text-shaped ink outside every recognized line, so
 the page was recognized again in two overlapping bands." When the kept result still fails the
 check, it adds "About N% of the page's text-shaped ink is still outside every recognized line, so
 some text may be missing; compare the original page image." ("compare the source PDF." when
 `referenceImages` is `.never`). The check costs about 10 ms per recognized page; the retry costs
-two more recognitions on the pages that fail it. It cannot see text drawn as artwork (comic
+two more recognitions on the pages that fail it. On the Blue Book with `.always` (61 of 312 pages
+retried) that is about 206 → 300 s and about 100 MiB more peak RSS on a Mac, which is Vision's
+purgeable buffer memory for the band images; peak physical footprint did not rise
+([retry side effects](../measurements/ocr-retry-side-effects/record.md)). It cannot see text drawn as artwork (comic
 lettering, text in photographs), text smaller than 2.5 pt, or loss inside a table region, and a
 page with fewer than 8 uncovered text rows never fails it. See the
 [text-loss measurements](../measurements/ocr-text-loss/record.md).

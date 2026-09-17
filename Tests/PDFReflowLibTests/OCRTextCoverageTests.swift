@@ -71,14 +71,44 @@ private struct SyntheticPage {
         bytesPerRow: 0, space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGImageAlphaInfo.none.rawValue))
     gray.draw(rgba, in: CGRect(x: 0, y: 0, width: rgba.width, height: rgba.height))
     let grayImage = try #require(gray.makeImage())
+    // Text on a transparent background, alpha first and little-endian: read over white (#129).
+    let bgra = try #require(CGContext(data: nil, width: rgba.width, height: rgba.height, bitsPerComponent: 8,
+        bytesPerRow: 0, space: CGColorSpaceCreateDeviceRGB(),
+        bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue | CGBitmapInfo.byteOrder32Little.rawValue))
+    let words = "Recognition quality depends on the scan, the typeface and the compiled models in use"
+    let font = CTFontCreateWithName("Helvetica" as CFString, 10, nil)
+    let line = CTLineCreateWithAttributedString(NSAttributedString(string: words, attributes: [
+        NSAttributedString.Key(kCTFontAttributeName as String): font,
+        NSAttributedString.Key(kCTForegroundColorAttributeName as String): CGColor(gray: 0, alpha: 1)]))
+    bgra.scaleBy(x: SyntheticPage.scale, y: SyntheticPage.scale)
+    for index in 0..<40 {
+        bgra.textPosition = CGPoint(x: 72, y: 740 - CGFloat(index) * 14)
+        CTLineDraw(line, bgra)
+    }
+    let transparentImage = try #require(bgra.makeImage())
     let kept = Array(page.lineBoxes.prefix(8))
     for lines in [page.lineBoxes, kept] {
         let direct = OCRTextCoverage.measure(image: rgba, lines: lines, pixelsPerPoint: SyntheticPage.scale)
-        let drawn = OCRTextCoverage.measure(image: grayImage, lines: lines, pixelsPerPoint: SyntheticPage.scale)
-        #expect(direct.indicatesLoss == drawn.indicatesLoss)
-        #expect(abs(direct.textRows - drawn.textRows) <= 2)
-        #expect(abs(direct.uncoveredFraction - drawn.uncoveredFraction) < 0.05)
+        for other in [grayImage, transparentImage] {
+            let converted = OCRTextCoverage.measure(image: other, lines: lines, pixelsPerPoint: SyntheticPage.scale)
+            #expect(direct.indicatesLoss == converted.indicatesLoss)
+            #expect(abs(direct.textRows - converted.textRows) <= 2)
+            #expect(abs(direct.uncoveredFraction - converted.uncoveredFraction) < 0.05)
+        }
     }
+}
+
+@Test func retriedRecognitionKeepsOnlyTableRegionsBothRecognitionsFound() {
+    // #129: the retry's table regions become images only where the first recognition saw a table.
+    let upper = CGRect(x: 0.1, y: 0.55, width: 0.8, height: 0.35)
+    let lower = CGRect(x: 0.1, y: 0.1, width: 0.8, height: 0.35)
+    let lowerSeenFirst = CGRect(x: 0.12, y: 0.12, width: 0.7, height: 0.2)
+    // A retry that finds a table the first recognition missed adds no image.
+    #expect(OCRReader.retainedTables(first: [], retry: [upper, lower]).isEmpty)
+    // A table both saw keeps the retry's region; one only the first saw is not kept either.
+    #expect(OCRReader.retainedTables(first: [lowerSeenFirst], retry: [upper, lower]) == [lower])
+    #expect(OCRReader.retainedTables(first: [upper, lowerSeenFirst], retry: [lower]) == [lower])
+    #expect(OCRReader.retainedTables(first: [upper], retry: []).isEmpty)
 }
 
 @Test func coverageDetectsEightyPercentOfLinesDropped() {

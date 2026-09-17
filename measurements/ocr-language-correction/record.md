@@ -56,7 +56,8 @@ content classifier the library does not have.
 
 `probe-language-correction.swift` is compiled together with `OCRReader.swift`,
 `PageRasterizer.swift`, `ConversionTypes.swift`, `DocumentModel.swift` and
-`ReflowDocument.swift`, with the command in its header. It uses no hook or public option. For
+`ReflowDocument.swift`, with the command in its header. Since #116 `OCRReader.swift` also needs
+`OCRTextCoverage.swift`, which the header's command now includes (#129). It uses no hook or public option. For
 each page it:
 
 - rasterizes the crop box once, exactly as the converter does (`PageRasterizer`, default

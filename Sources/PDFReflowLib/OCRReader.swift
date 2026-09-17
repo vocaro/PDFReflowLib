@@ -127,9 +127,10 @@ enum OCRReader {
                 let second = OCRTextCoverage.measure(image: image, lines: merged.lines.map(\.box),
                                                      pixelsPerPoint: pixelsPerPoint)
                 if second.uncoveredInk < first.uncoveredInk {
-                    recognition = merged
-                    coverage = OCRTextCoverage.measure(image: image, lines: merged.lines.map(\.box),
-                                                       excluded: merged.tables, pixelsPerPoint: pixelsPerPoint)
+                    recognition = Recognition(lines: merged.lines,
+                                              tables: retainedTables(first: recognition.tables, retry: merged.tables))
+                    coverage = OCRTextCoverage.measure(image: image, lines: recognition.lines.map(\.box),
+                                                       excluded: recognition.tables, pixelsPerPoint: pixelsPerPoint)
                     retried = true
                 }
             }
@@ -169,6 +170,16 @@ enum OCRReader {
     static let retryBands: [ClosedRange<Double>] = [0.4...1.0, 0.0...0.6]
     /// Where the bands hand over: a line belongs to the band holding its center.
     static let retryBandSplit = 0.5
+
+    /// The table regions a kept retry reports (#129): only those that overlap a table region of the
+    /// first recognition. Table regions become images whose text does not reflow, and the two
+    /// recognitions of one raster rarely agree on them: on the Blue Book's retried table pages the
+    /// retry's 72 regions overlapped the first recognition's in 14 places. A region only one
+    /// recognition reports would hide text the retry recovered (whole pages of it on Blue Book 148
+    /// and 175), so the retry can remove table images but never add them.
+    static func retainedTables(first: [CGRect], retry: [CGRect]) -> [CGRect] {
+        retry.filter { table in first.contains { $0.intersects(table) } }
+    }
 
     static func recognize(_ image: CGImage, request: RecognizeDocumentsRequest) async throws -> Recognition {
         let observations = try await request.perform(on: image, orientation: nil)

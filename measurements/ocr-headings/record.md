@@ -91,6 +91,7 @@ Capture source evidence without applying the prototype:
 
 ```sh
 xcrun swiftc -parse-as-library Sources/PDFReflowLib/OCRReader.swift \
+  Sources/PDFReflowLib/OCRTextCoverage.swift \
   Sources/PDFReflowLib/PageRasterizer.swift Sources/PDFReflowLib/ConversionTypes.swift \
   Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
   tools/capture-ocr-layout-fixture.swift -o /tmp/capture-ocr-layout-fixture

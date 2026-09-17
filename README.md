@@ -146,7 +146,9 @@ that fall back to images skip unused attributed-text decoding. Failures use
   name reuse one cached compile ([#94](measurements/ocr-location/record.md)).
   Vision can also report success while leaving whole paragraphs or table cells out, so each
   recognized page is checked for rows of text-shaped ink outside every recognized line. A page
-  that fails is recognized once more in two overlapping bands, kept when it covers more; the
+  that fails is recognized once more in two overlapping bands, kept when it covers more (its table
+  regions only where the first recognition also found a table,
+  [#129](measurements/ocr-retry-side-effects/record.md)); the
   `ocrUsed` message then adds "The first recognition left text-shaped ink outside every
   recognized line, so the page was recognized again in two overlapping bands." If text-shaped
   ink is still uncovered it adds "About N% of the page's text-shaped ink is still outside every

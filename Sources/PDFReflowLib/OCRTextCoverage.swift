@@ -1,3 +1,4 @@
+import Accelerate
 import CoreGraphics
 
 /// Checks a recognized page for text Vision silently left out (#116).
@@ -206,16 +207,25 @@ enum OCRTextCoverage {
                 pixels = buffer
                 return
             }
-            let drawn = buffer.withUnsafeMutableBytes { bytes -> Bool in
-                guard let context = CGContext(data: bytes.baseAddress, width: width, height: height,
-                    bitsPerComponent: 8, bytesPerRow: width, space: CGColorSpaceCreateDeviceGray(),
-                    bitmapInfo: CGImageAlphaInfo.none.rawValue) else { return false }
-                context.setFillColor(gray: 1, alpha: 1)
-                context.fill(CGRect(x: 0, y: 0, width: width, height: height))
-                context.draw(image, in: CGRect(x: 0, y: 0, width: width, height: height))
-                return true
+            // Other layouts are converted by vImage, never drawn: drawing an image into a gray bitmap
+            // context, even over our own buffer, through a proxy image or in an autorelease pool,
+            // leaves up to 32 buffers held by Core Graphics (Blue Book pages 121–175 during
+            // recognition: +190 MB peak RSS). vImage leaves none (#129).
+            let colorSpace = CGColorSpaceCreateDeviceGray()
+            var format = vImage_CGImageFormat(bitsPerComponent: 8, bitsPerPixel: 8,
+                colorSpace: Unmanaged.passUnretained(colorSpace),
+                bitmapInfo: CGBitmapInfo(rawValue: CGImageAlphaInfo.none.rawValue), version: 0,
+                decode: nil, renderingIntent: .defaultIntent)
+            let converted = buffer.withUnsafeMutableBytes { bytes -> Bool in
+                var destination = vImage_Buffer(data: bytes.baseAddress, height: vImagePixelCount(height),
+                                                width: vImagePixelCount(width), rowBytes: width)
+                let white: [CGFloat] = [1]
+                return withExtendedLifetime(colorSpace) {
+                    vImageBuffer_InitWithCGImage(&destination, &format, white, image,
+                                                 vImage_Flags(kvImageNoAllocate)) == kvImageNoError
+                }
             }
-            guard drawn else { return nil }
+            guard converted else { return nil }
             pixels = buffer
         }
 

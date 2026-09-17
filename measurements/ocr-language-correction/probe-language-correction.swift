@@ -8,7 +8,7 @@ import Vision
 // `useLanguageCorrection`. Both settings therefore share one set of compiled Vision programs (#94).
 // Build with the library's sources (no library change):
 //   xcrun swiftc -parse-as-library -O Sources/PDFReflowLib/OCRReader.swift \
-//     Sources/PDFReflowLib/PageRasterizer.swift Sources/PDFReflowLib/ConversionTypes.swift \
+//     Sources/PDFReflowLib/OCRTextCoverage.swift Sources/PDFReflowLib/PageRasterizer.swift Sources/PDFReflowLib/ConversionTypes.swift \
 //     Sources/PDFReflowLib/DocumentModel.swift Sources/PDFReflowLib/ReflowDocument.swift \
 //     measurements/ocr-language-correction/probe-language-correction.swift -o <unique name>
 // Usage: <probe> <pdf> <order: off-on|on-off> <page>...

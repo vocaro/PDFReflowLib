@@ -206,14 +206,9 @@ enum MarkedTextReader {
         var stream: CGPDFStreamRef?
         if CGPDFDictionaryGetStream(font, "ToUnicode", &stream) {
             var format = CGPDFDataFormat.raw
+            // The Adobe `<0000> <FFFF>` codespace is read as one byte, as for spacing evidence.
             guard let stream, let data = CGPDFStreamCopyData(stream, &format), format == .raw,
-                  CFDataGetLength(data) <= 65_536, var text = String(data: data as Data, encoding: .isoLatin1) else { return [] }
-            // A simple font's codes are one byte whatever its map declares. Adobe PDF Library
-            // writes one-byte entries under a two-byte `<0000> <FFFF>` codespace (FAA, DGA, Fed);
-            // any entry that is not one byte still fails the parse.
-            text = text.replacingOccurrences(of: #"begincodespacerange\s*<0000>\s*<[fF]{4}>\s*endcodespacerange"#,
-                with: "begincodespacerange <00> <FF> endcodespacerange", options: .regularExpression)
-            guard let normalized = text.data(using: .isoLatin1), let map = NativeSpacingReader.unicodeMap(normalized) else { return [] }
+                  let map = NativeSpacingReader.simpleFontUnicodeMap(data as Data) else { return [] }
             return Set(map.filter { $0.value == " " }.keys)
         }
         guard let encoding = StructureTreeReader.name(font, "Encoding"),

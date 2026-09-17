@@ -183,6 +183,19 @@ enum NativeSpacingReader {
         return result.isEmpty ? nil : result
     }
 
+    /// A simple font's ToUnicode map (Type1, TrueType, MMType1). A simple font's codes are one
+    /// byte whatever its map declares, and Adobe PDF Library writes one-byte entries under a
+    /// two-byte `<0000> <FFFF>` codespace (FAA, DGA, Fed), so that codespace is read as one byte.
+    /// Any entry that is not one byte, and any other codespace, still fails the parse (#91, #104).
+    static func simpleFontUnicodeMap(_ data: Data) -> [UInt8: String]? {
+        guard data.count <= 65_536, let text = String(data: data, encoding: .isoLatin1),
+              let normalized = text.replacingOccurrences(
+                of: #"begincodespacerange\s*<0000>\s*<[fF]{4}>\s*endcodespacerange"#,
+                with: "begincodespacerange <00> <FF> endcodespacerange", options: .regularExpression
+              ).data(using: .isoLatin1) else { return nil }
+        return unicodeMap(normalized)
+    }
+
     private struct Font {
         var id: Int
         /// The Type3 identity-matrix bfchar map that authorizes space removal.
@@ -313,7 +326,7 @@ enum NativeSpacingReader {
             return result
         }
         guard ["Type1", "TrueType", "MMType1"].contains(kind) else { return result }
-        if let data { result.unicode = unicodeMap(data) }
+        if let data { result.unicode = simpleFontUnicodeMap(data) }
         var first: CGPDFInteger = 0, widths: CGPDFArrayRef?
         if CGPDFDictionaryGetInteger(dict, "FirstChar", &first), first >= 0, first <= 255,
            CGPDFDictionaryGetArray(dict, "Widths", &widths), let widths, CGPDFArrayGetCount(widths) <= 256 {

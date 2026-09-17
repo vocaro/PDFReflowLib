@@ -856,6 +856,19 @@ general one-byte CMap parser is tested on bfrange, surrogate-pair, ligature and 
 and rejects inherited maps, two-byte codespaces, duplicates, malformed hex, lone surrogates,
 reversed ranges, wrong counts and oversized streams.
 
+Two tests cover simple-font maps written by Adobe PDF Library, one-byte entries under a two-byte
+`<0000> <FFFF>` codespace ([#104](https://github.com/vocaro/PDFReflowLib/issues/104)).
+`NativeSpacingReader.simpleFontUnicodeMap` reads that codespace as one byte for both the spacing
+reader and `MarkedTextReader`'s space codes. The synthetic two-font page must decode, measure and
+repair `event emust` whichever font uses the Adobe form; it fails against the strict parser. A
+0.14 em gap and a map with a two-byte entry stay controls. The helper must equal the strict parse
+of the one-byte form, and it rejects FAA's mixed `<0020>` entries, the two-range symbol codespace
+`<00> <EF> <F000> <FFFF>` (Loper Bright, Fed), other two-byte codespaces, a second codespace
+block, inherited maps and oversized streams. A Type3 font with the Adobe form authorizes no
+removal. The [census](../measurements/spacing-one-byte-maps/record.md) shows that no corpus output
+changes. The reader's unmodeled-state gates disqualify every FAA, DGA and Fed page whatever the
+map: `gs` first (a nonzero `Tc` on one FAA page), then `Tc`, `Tw` and unpositioned shows.
+
 `AcademicFrontMatterTests.swift` uses the pinned Replay Clocks pages 1, 3 and 4. Page 1 must drop
 the rotated stamp with a `furnitureRemoved` warning, rank `Replay Clocks` (level 2) above the
 author names (3) and the `ABSTRACT` / `1 INTRODUCTION` labels (4), and keep the abstract,

@@ -1,0 +1,41 @@
+Maps (identical in every label; one binary reports both parses)
+book | pages with measured simple fonts | pages with a rejected map | pages with an Adobe one-byte map | pages still rejected (strict, one-byte) | font-page uses rejected: strict -> one-byte | remaining rejection classes
+faa | 521 of which styled 516 | 521 | 512 | 521 -> 514 | 2603 of 2603 -> 820 | {'codespace(<0000> <FFFF>)+twoByteEntry(<0020> …)': 820}
+dga | 9 of which styled 9 | 9 | 9 | 9 -> 0 | 21 of 21 -> 0 | -
+fed | 128 of which styled 128 | 128 | 127 | 128 -> 1 | 500 of 500 -> 3 | {'codespace(<00> <EF> <F000> <FFFF>)': 3}
+our-flag | 52 of which styled 52 | 0 | 0 | 0 -> 0 | 0 of 164 -> 0 | -
+911 | 577 of which styled 577 | 0 | 0 | 0 -> 0 | 0 of 1047 -> 0 | -
+wallace | 429 of which styled 429 | 0 | 0 | 0 -> 0 | 0 of 811 -> 0 | -
+loper | 114 of which styled 114 | 114 | 0 | 114 -> 114 | 241 of 241 -> 241 | {'codespace(<00> <EF> <F000> <FFFF>)': 241}
+usgs | 2 of which styled 2 | 2 | 2 | 2 -> 0 | 5 of 5 -> 0 | -
+replay | 12 of which styled 12 | 0 | 0 | 0 -> 0 | 0 of 111 -> 0 | -
+
+Evidence and repairs per label (base: 36c6265 reader; cand: this tree; gs: this tree with a textless ExtGState accepted)
+book | label | shows | decoded | pages with decoded shows | first disqualifying check (pages) | repaired lines | inserted spaces
+faa | base | 0 | 0 | 0 | {'gs': 520, 'Tc': 1} | 0 | 0
+faa | cand | 0 | 0 | 0 | {'gs': 520, 'Tc': 1} | 0 | 0
+faa | gs | 288 | 94 | 7 | {'Tc': 235, 'Tw': 216, 'show': 54, '-': 16} | 0 | 0
+dga | base | 0 | 0 | 0 | {'gs': 9} | 2 | -2
+dga | cand | 0 | 0 | 0 | {'gs': 9} | 2 | -2
+dga | gs | 564 | 211 | 8 | {'-': 8, 'Tc': 1} | 2 | -2
+fed | base | 0 | 0 | 0 | {'gs': 128} | 0 | 0
+fed | cand | 0 | 0 | 0 | {'gs': 128} | 0 | 0
+fed | gs | 0 | 0 | 0 | {'show': 102, 'Tw': 21, 'Tc': 4, 'Tr': 1} | 0 | 0
+our-flag | base | 0 | 0 | 0 | {'gs': 52} | 0 | 0
+our-flag | cand | 0 | 0 | 0 | {'gs': 52} | 0 | 0
+our-flag | gs | 0 | 0 | 0 | {'Tc': 52} | 0 | 0
+911 | base | 0 | 0 | 0 | {'gs': 577} | 0 | 0
+911 | cand | 0 | 0 | 0 | {'gs': 577} | 0 | 0
+911 | gs | 0 | 0 | 0 | {'Tc': 576, 'Tw': 1} | 0 | 0
+wallace | base | 0 | 0 | 0 | {'gs': 429} | 0 | 0
+wallace | cand | 0 | 0 | 0 | {'gs': 429} | 0 | 0
+wallace | gs | 90787 | 14596 | 418 | {'-': 429} | 0 | 0
+loper | base | 0 | 0 | 0 | {'gs': 114} | 0 | 0
+loper | cand | 0 | 0 | 0 | {'gs': 114} | 0 | 0
+loper | gs | 0 | 0 | 0 | {'Tc': 114} | 0 | 0
+usgs | base | 0 | 0 | 0 | {'Tc': 2} | 0 | 0
+usgs | cand | 0 | 0 | 0 | {'Tc': 2} | 0 | 0
+usgs | gs | 0 | 0 | 0 | {'Tc': 2} | 0 | 0
+replay | base | 3407 | 3399 | 11 | {'-': 11, 'show': 1} | 61 | 72
+replay | cand | 3407 | 3399 | 11 | {'-': 11, 'show': 1} | 61 | 72
+replay | gs | 3407 | 3399 | 11 | {'-': 11, 'show': 1} | 61 | 72

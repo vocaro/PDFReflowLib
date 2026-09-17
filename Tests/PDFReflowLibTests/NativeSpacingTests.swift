@@ -351,3 +351,65 @@ private func repairedBoundary(_ evidence: [NativeSpacingReader.Evidence], _ nati
         #expect(NativeSpacingReader.unicodeMap(Data(bad.utf8)) == nil)
     }
 }
+
+// MARK: - Adobe one-byte maps under a two-byte codespace (#104)
+
+/// A simple-font ToUnicode map as Adobe PDF Library writes it (FAA, DGA, Fed): the one-byte entries
+/// of `simpleSpacingMap()` under a two-byte `<0000> <FFFF>` codespace.
+private func adobeUnicodeMap(_ entries: String = simpleSpacingMap()) -> String {
+    "/CIDInit /ProcSet findresource begin 12 dict begin begincmap\n/CMapName /Adobe-Identity-UCS def /CMapType 2 def\n"
+        + entries.replacingOccurrences(of: "1 begincodespacerange <00> <FF> endcodespacerange",
+                                       with: "1 begincodespacerange\n<0000> <FFFF>\nendcodespacerange")
+        + "\nendcmap CMapName currentdict /CMap defineresource pop end end"
+}
+
+@Test func adobeOneByteMapsUnderATwoByteCodespaceSupplyWordBoundaryEvidence() throws {
+    let ops = "BT /Fa 10 Tf 1 0 0 1 40 700 Tm (event) Tj /Fb 10 Tf 1 0 0 1 68 700 Tm (e) Tj /Fa 10 Tf 1 0 0 1 76 700 Tm (must) Tj ET"
+    let adobeFonts = [BoundaryFont(name: "Fa", map: adobeUnicodeMap()), BoundaryFont(name: "Fb", map: adobeUnicodeMap())]
+    let adobe = try boundaryEvidence(ops, fonts: adobeFonts)
+    #expect(adobe.map(\.unicode) == ["event", "e", "must"])
+    #expect(adobe.map(\.end) == [65, 73, 96])
+    #expect(repairedBoundary(adobe, "event emust") == "event e must")
+    // Either font may use either form; the evidence is the same as for a one-byte codespace.
+    let mixed = try boundaryEvidence(ops, fonts: [BoundaryFont(name: "Fa"), BoundaryFont(name: "Fb", map: adobeUnicodeMap())])
+    #expect(mixed.map(\.unicode) == ["event", "e", "must"])
+    #expect(repairedBoundary(mixed, "event emust") == "event e must")
+    // The gap rule is unchanged: a 0.14 em gap stays joined under the Adobe form.
+    let kern = try boundaryEvidence(ops.replacingOccurrences(of: "76 700 Tm", with: "74.4 700 Tm"), fonts: adobeFonts)
+    #expect(repairedBoundary(kern, "event emust") == "event emust")
+    // A map this reading still rejects leaves its shows undecoded, so the line is not matched.
+    let twoByte = adobeUnicodeMap().replacingOccurrences(of: "<65> <0065>", with: "<0065> <0065>")
+    let rejected = try boundaryEvidence(ops, fonts: [BoundaryFont(name: "Fa"), BoundaryFont(name: "Fb", map: twoByte)])
+    #expect(rejected.map(\.unicode) == ["event", nil, "must"])
+    #expect(repairedBoundary(rejected, "event emust") == "event emust")
+}
+
+@Test func onlyTheAdobeCodespaceIsReadAsOneByteAndOnlyForSimpleFonts() throws {
+    let oneByte = "begincmap\n" + simpleSpacingMap() + "\nendcmap"
+    let expected = try #require(NativeSpacingReader.unicodeMap(Data(oneByte.utf8)))
+    #expect(NativeSpacingReader.simpleFontUnicodeMap(Data(adobeUnicodeMap().utf8)) == expected)
+    #expect(NativeSpacingReader.simpleFontUnicodeMap(Data(oneByte.utf8)) == expected)
+    // The general parser itself still refuses a two-byte codespace.
+    #expect(NativeSpacingReader.unicodeMap(Data(adobeUnicodeMap().utf8)) == nil)
+    let adobe = adobeUnicodeMap()
+    for bad in [
+        // FAA's mixed maps: one-byte entries plus a two-byte `<0020>` entry.
+        adobe.replacingOccurrences(of: "<20> <0020>", with: "<0020> <0020>"),
+        // Loper Bright's and three Fed maps: a symbol-font codespace in two ranges.
+        adobe.replacingOccurrences(of: "1 begincodespacerange\n<0000> <FFFF>", with: "2 begincodespacerange\n<00> <EF> <F000> <FFFF>"),
+        // Any other two-byte codespace, a second codespace block, an inherited map, an oversized stream.
+        adobe.replacingOccurrences(of: "<0000> <FFFF>", with: "<0000> <00FF>"),
+        adobe.replacingOccurrences(of: "\nendcmap", with: "\n1 begincodespacerange <00> <FF> endcodespacerange\nendcmap"),
+        adobe + " /Other usecmap",
+        adobe + String(repeating: " ", count: 65_536),
+    ] {
+        #expect(NativeSpacingReader.simpleFontUnicodeMap(Data(bad.utf8)) == nil)
+    }
+    // Type3 space removal keeps its own explicit one-byte bfchar map: the Adobe form authorizes nothing.
+    let show = " BT /T3_0 1 Tf 18 0 0 18 40 460 Tm [(Dair)-5.6(y)] TJ ET "
+    let type3 = NativeSpacingReader.read(try #require(try spacingPDF(show, map: simpleSpacingMap()).page(at: 1)))
+    #expect(type3.map(\.text) == ["Dairy"])
+    let adobeType3 = NativeSpacingReader.read(try #require(try spacingPDF(show, map: adobeUnicodeMap()).page(at: 1)))
+    #expect(adobeType3.count == 1)
+    #expect(adobeType3.first?.text == nil)
+}

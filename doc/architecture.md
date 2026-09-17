@@ -98,7 +98,9 @@ bounded word-boundary repairs: a Type3 TJ array whose tiny adjustment contradict
 removes that space, and a font change on one baseline whose measured gap (simple-font Widths, Tm
 scale, TJ adjustments) is at least 0.15 em between a letter or digit on either side inserts the
 space PDFKit drops after a mathematical variable set in its own font (#43). Shows are decoded
-through one-byte ToUnicode maps (bfchar and bfrange, ligatures and surrogate pairs) and must spell
+through one-byte ToUnicode maps (bfchar and bfrange, ligatures and surrogate pairs; for a simple
+font, Adobe PDF Library's one-byte entries under a `<0000> <FFFF>` codespace are read as one byte,
+as `MarkedTextReader` reads its space codes, #104) and must spell
 the line exactly apart from PDFKit's own spaces; rotated shows, Form XObjects and fonts without
 Widths or maps supply no evidence, and unsupported text state still disqualifies the page.
 Object-only selections are discarded before attributed-string access

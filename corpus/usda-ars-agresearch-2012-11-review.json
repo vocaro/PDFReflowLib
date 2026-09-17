@@ -1,0 +1,128 @@
+{
+  "case": "usda-ars-agresearch-2012-11",
+  "pageNumbering": "Physical PDF pages, one-based; printed folios match (cover and back cover unnumbered)",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 1,
+      "target": "Cover: header strip, nameplate, cover lines and tagline over a full-bleed flag photo",
+      "acceptance": "Correct now: header strip lines, Keeping Our Troops Safe, From Insects and pages 2, 4-14 in order; the two cover lines are headings; the photo is kept in the Original page 1 image. Wrong now: the Agricultural Research nameplate is outlined art and has no text; pages 2, 4-14 and the tagline are h4 headings and enter the contents; unverifiedTextLayer for text over the page-sized photo."
+    },
+    {
+      "page": 2,
+      "target": "FORUM column: flag banner, title, three columns and the signature box",
+      "acceptance": "Correct now: the banner is preserved; the running foot is removed. Wrong now: the title, all three columns of prose, the (See story on page 4/15) links and the Daniel Strickman signature box are held inside a preserved-region crop, so no column text reflows (#158); link annotations add an Original page 2 image (#151)."
+    },
+    {
+      "page": 3,
+      "target": "Masthead box, cover photo, contents and cover caption",
+      "acceptance": "Correct now: the date, volume and ISSN lines in order (as one paragraph); the breadfruit photo is preserved. Wrong now: the masthead staff box with the public-property statement, the photo caption, the contents list and the cover caption are inside preserved-region crops and do not reflow (#158); Original page 3 image (#151)."
+    },
+    {
+      "page": 4,
+      "target": "DWFP title spread (left page): display title, screenhouse photo, first column",
+      "acceptance": "Correct now: the STEPHEN AUSMUS (D2627-12) credit; the photo is preserved. Wrong now: the display title, the photo caption and the opening column prose are inside crops together with the photo (#158); the credit is a detached paragraph before the photo (#159)."
+    },
+    {
+      "page": 5,
+      "target": "DWFP title spread (right page): three columns wrapped around two mosquito photos",
+      "acceptance": "Correct now: the photos are preserved. Wrong now: the display title, all column prose, both captions and credits are inside one crop (#158)."
+    },
+    {
+      "page": 6,
+      "target": "DWFP: three columns, subhead, wide paragraph under the columns and two captioned photos",
+      "acceptance": "Correct now: the Left: and Below: captions are whole, separate paragraphs; the two photos and both credits are present; the full-width Jatropha paragraphs read in order. Wrong now: the three columns above interleave line by line with one paragraph per line (#153); the Unlocking the Chemistries of Folk Remedies subhead is two bold paragraphs; Mis-/sissippi split across paragraphs; com-panies keeps its hyphen; the full-width paragraphs are merged into one; the running foot is kept with its bullet as <sup>l</sup> (#159)."
+    },
+    {
+      "page": 7,
+      "target": "DWFP: subheads Learning How Repellents Hinder Mosquito Attacks and Outmaneuvering Mosquitoes, lab photo with caption",
+      "acceptance": "Correct now: the NEIL SANSCRAINTE (D2645-2) credit; the photo is preserved. Wrong now: all three columns, both subheads and the caption are inside a crop with the photo (#158); running foot kept (#159)."
+    },
+    {
+      "page": 8,
+      "target": "DWFP: sand fly subhead, sand fly photo, lab photo with overlaid caption",
+      "acceptance": "Correct now: the STEPHEN AUSMUS (D2622-3) credit; photos preserved. Wrong now: only the top lines of the left two columns reflow, one paragraph per line and interleaved (#153); the rest of the prose, the New Recruits To Help Fight Sand Flies subhead as bold paragraph above a crop, captions and the rotated D2642-4 credit are inside crops (#158); running foot kept (#159)."
+    },
+    {
+      "page": 9,
+      "target": "DWFP: Fighting Filth Flies sidebar with fly photo, wide screenhouse photo",
+      "acceptance": "Correct now: the left and right column prose above the photo reflows as text; the wide screenhouse caption is one whole paragraph; the STEPHEN AUSMUS (D2619-4) credit. Wrong now: the left column's three source paragraphs are merged into one, as are the right column's; the right column precedes the middle column's closing lines (Nonbiting flies ... cause diar-), which interleave line by line (#153); Fighting Filth Flies is a bold paragraph; the fly photo, its caption and rotated credit (D2620-1) are in a crop (#158); running foot kept (#159)."
+    },
+    {
+      "page": 10,
+      "target": "DWFP: stable fly trap photo, caption, What To Wear subhead and three columns",
+      "acceptance": "Correct now: the STEPHEN AUSMUS (D2628-4) credit; photo preserved. Wrong now: the caption, the What To Wear subhead and all prose are inside one crop with the photo, over a faint flag background (#158); running foot kept (#159)."
+    },
+    {
+      "page": 11,
+      "target": "DWFP: Douglas Burkett pull quote, uniform lab photo and caption",
+      "acceptance": "Correct now: the STEPHEN AUSMUS (D2624-2) credit; the photo is preserved. Wrong now: the pull quote is only a crop, with no text (#158); the column prose reads one paragraph per line with the left and right columns interleaved, and the two-line caption interleaves with the left column's last line (#153); running foot kept (#159)."
+    },
+    {
+      "page": 12,
+      "target": "DWFP: Dan Kline pull quote, Rounding Up the Best Equipment subhead, Iraq photo",
+      "acceptance": "Correct now: the Chauhan patent paragraph and the Iraq caption are whole, separate paragraphs; the SPARC equipment-rodeo sentence is whole; SETH BRITCH (D2643-1) credit. Wrong now: the Rounding Up the Best Equipment subhead runs into its paragraph; the right column's top paragraphs are merged and read before the middle column's last lines, and the bottom lines interleave (#153); the pull quote is a crop with no text (#158); running foot kept (#159)."
+    },
+    {
+      "page": 13,
+      "target": "DWFP: Kenya fogger photo with caption, Taking It to the Field subhead, three columns",
+      "acceptance": "Correct now: the caption's sentences reflow; SETH BRITCH (D2644-1) credit; the photo is in the page image; the running foot is removed. Wrong now: the caption is merged with the first column line (what works and what doesn't); the three columns interleave line by line (#153); Taking It to the Field is a bold paragraph; the whole page is also an Original page 13 image (#151); unverifiedTextLayer."
+    },
+    {
+      "page": 14,
+      "target": "DWFP end: three columns, Getting Products to Troops subhead, Ken Linthicum pull quote over a full-page flag background",
+      "acceptance": "Wrong now: the whole text area, including the Sandra Avant byline, program note and contact paragraph and the pull quote, is one crop over the flag background, and no text reflows (#158); Original page 14 image (#151)."
+    },
+    {
+      "page": 15,
+      "target": "Spraying Insecticide? There's an App for That! display title, phone photo, three columns, byline",
+      "acceptance": "Correct now: the right column's top paragraphs (aircraft ... compli-) read in order with whole sentences; the phone photo is preserved. Wrong now: the right column top precedes the article's start in the left column; its three source paragraphs are merged into one; the rest interleaves line by line (#153); the display title and caption are in a crop (#158); the credit reads BRAD FRITz for Brad Fritz; the end mark * is tripled as ***; running foot kept (#159)."
+    },
+    {
+      "page": 16,
+      "target": "Finding Ways To Save Water in Peach Orchards: title box, drop cap, portrait photo, three columns",
+      "acceptance": "Correct now: the PEGGY GREB (D2683-1) credit; the photo is preserved. Wrong now: the title box, drop-cap opening and all prose are inside crops with the photo (#158); Original page 16 image (#151)."
+    },
+    {
+      "page": 17,
+      "target": "Peach orchards end: three subheads, two photos wrapped into narrow columns, byline and contact",
+      "acceptance": "Correct now: both photos and both credits present. Wrong now: column prose, wrapped lines, the caption and the italic program note interleave line by line (#153); subheads are bold paragraphs; the end mark is tripled as ***; the 3˚ and 10˚ degree marks are U+02DA as in the text layer; running foot kept (#159)."
+    },
+    {
+      "page": 18,
+      "target": "Where Does E. coli Come From? display title over a wetland photo, lead-in, three columns",
+      "acceptance": "Correct now: the right column's paragraphs (Ibekwe ... fingerprint similarities) reflow with whole sentences in source order; PEGGY GREB (D2691-1) credit; photo preserved; running foot removed. Wrong now: the right column is read before the lead-in and the left and middle columns, which interleave line by line (#153); the Sourcing Solutions subhead runs into its paragraph and the right column breaks mid-sentence at the photo crop; source paragraphs are merged; the display title and caption are inside the crop (#158)."
+    },
+    {
+      "page": 19,
+      "target": "E. coli end: three columns, water-sampling photo with caption, byline, program note",
+      "acceptance": "Correct now: the A Range of Resistance paragraphs and the Tetracycline paragraphs have whole sentences in order; credit PEGGY GREB (D2687-1); photo preserved. Wrong now: the top of the three columns interleaves line by line (#153); lines beginning with italic E. coli become <pre>; A Range of Resistance runs into its paragraph and later paragraphs merge; infec-tions keeps its hyphen; the caption is in a crop (#158); end mark tripled as ***; running foot kept (#159)."
+    },
+    {
+      "page": 20,
+      "target": "Livestock Waste Management 2.0: boxed title, drop cap, three columns, pig photo with caption",
+      "acceptance": "Correct now: the page is preserved visually. Wrong now: the whole page is a pageImageFallback image (unsupportedGraphics), so the article's title and text are absent from the text and contents (#158)."
+    },
+    {
+      "page": 21,
+      "target": "Eco-Based Fire Logs: boxed title, drop cap, three columns, fire photo with caption",
+      "acceptance": "Correct now: the page is preserved visually. Wrong now: the whole page is a pageImageFallback image (unsupportedGraphics); no text (#158)."
+    },
+    {
+      "page": 22,
+      "target": "2012 INDEX (left page): letter-range heads and hanging-indent entries in three columns",
+      "acceptance": "Wrong now: the title and all index entries are inside one crop; nothing reflows (#158); the running foot is kept (#159)."
+    },
+    {
+      "page": 23,
+      "target": "2012 INDEX (right page)",
+      "acceptance": "Wrong now: all index entries are inside one crop; nothing reflows (#158)."
+    },
+    {
+      "page": 24,
+      "target": "Back cover: return address, postal indicia, mailing panel, 150 Years mark and subscribe box",
+      "acceptance": "Correct now: the mailing-label instruction is a paragraph. Wrong now: the return address lines, Official Business and the web/Twitter line are h6 headings and enter the contents; the postal indicia and subscribe box are crops; the bullet is <sup>l</sup> (#159); Original page 24 image (#151)."
+    }
+  ],
+  "scope": "Manual targets from 60 DPI Poppler renders of all 24 pages, the EPUB's block structure and the Poppler text layer. InDesign CS5 magazine, untagged; 12 standard Arial and Times fonts not embedded; 55 link annotations. No region, glyph or appearance references are committed: page 24 carries agency logos and the mailing panel, and the index holly ornaments are uncredited; see the manifest rights note."
+}

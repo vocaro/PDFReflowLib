@@ -1222,6 +1222,164 @@
         "maxPeakRSSMiB": 256,
         "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
       }
+    },
+    {
+      "role": "development",
+      "identity": {
+        "suppliedBy": "publisher-download"
+      },
+      "id": "usda-ars-agresearch-2012-11",
+      "title": "Agricultural Research, Vol. 60, No. 10 (November/December 2012)",
+      "author": "Agricultural Research Service, U.S. Department of Agriculture",
+      "publicationYear": 2012,
+      "url": "https://agresearchmag.ars.usda.gov/2012/nov/?t=tableofcontent",
+      "publisherPageURL": "https://agresearchmag.ars.usda.gov/2012/nov/?t=tableofcontent",
+      "downloadURL": "https://agresearchmag.ars.usda.gov/AR/archive/2012/Nov/November-December2012.pdf",
+      "filename": "November-December2012.pdf",
+      "bytes": 9329928,
+      "sha256": "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761",
+      "pages": 24,
+      "provenance": "USDA Agricultural Research Service magazine issue (ISSN 0002-161X), linked from the issue's table of contents in the agresearchmag.ars.usda.gov archive. Unversioned legacy URL, so bytes are pinned. Adobe InDesign CS5 (7.0.4) with Adobe PDF Library 9.9; PDF 1.4, optimized, untagged; no forms or JavaScript; stale Title metadata (AR Magazine, January 2011). 26 fonts, all with ToUnicode, 12 not embedded (Arial, Arial Narrow, Times New Roman, Helvetica-Bold, Times-Roman); 150 image XObjects including many small grayscale shadow tiles; 55 link annotations.",
+      "rightsBasis": "Published by the Agricultural Research Service, U.S. Department of Agriculture: a work of the United States Government under 17 U.S.C. 105. The page-3 masthead states: Most information in this magazine is public property and may be reprinted without permission (except where copyright is noted); no copyright, courtesy or permission notice appears anywhere in the issue. The masthead staff are the ARS Information Staff, every article byline is ARS (Ann Perry, Dennis O'Brien, Marcia Wood, Sandra Avant), and the page-2 Forum is by Daniel Strickman, ARS National Program Leader. All 24 printed photo numbers (D2619-4 through D2700-2 and K5657-3; photographers Peggy Greb, Stephen Ausmus, Seth Britch, Brad Fritz, Regis Lefebure, Neil Sanscrainte and Dong Wang) were resolved on 2026-09-17 in the ARS Image Gallery (https://www.ars.usda.gov/oc/images/photos/nov12/<id>/), with photographers matching the printed credits. The gallery rights page (https://www.ars.usda.gov/oc/images/copyright/, checked 2026-09-17) says its photos are copyright-free, public domain unless otherwise indicated, may not be used to infer or imply ARS endorsement of any product, company, or position, and asks for credit to the Agricultural Research Service. The masthead also states no endorsement by USDA is implied. Uncredited elements are the flag treatments on pages 1, 2 and 14 (the cover photo is D2700-2), small holly ornaments on the index pages 22-23, and the USDA, ARS and 150 Years marks and mailing panel on page 24. Owner approved on 2026-09-17. Not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "owner-confirmed",
+        "scope": "Owner approved on 2026-09-17 for the development corpus with committed text derivatives (contract snippets). No crops or rasters are committed: page 24 (agency logos and mailing panel only) must never be committed as a raster or crop, and the contract needs no image references elsewhere. Reuse must not imply USDA or ARS endorsement. Attribution: Agricultural Research magazine, USDA Agricultural Research Service; photos by the credited photographers, USDA Agricultural Research Service."
+      },
+      "coverage": [
+        "Adobe InDesign CS5 magazine layout, untagged",
+        "two- and three-column justified articles with photos wrapped into the columns",
+        "boxed sidebars, colored pull quotes and a full-page background image",
+        "display titles, drop caps, rotated photo credits and captions over photos",
+        "masthead box with contents and See story on page N cross-references",
+        "dense three-column hanging-indent index across two pages",
+        "non-embedded Arial and Times fonts, dingbat separators and end-of-story marks",
+        "back-cover mailing panel and URI link annotations on credits and e-mail addresses"
+      ],
+      "reviewPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "attribution": "Agricultural Research, Vol. 60, No. 10, November/December 2012, U.S. Department of Agriculture, Agricultural Research Service. Photos by Peggy Greb, Stephen Ausmus, Seth Britch, Brad Fritz, Regis Lefebure, Neil Sanscrainte and Dong Wang, USDA Agricultural Research Service. Source: https://agresearchmag.ars.usda.gov/2012/nov/?t=tableofcontent. The PDF is unmodified.",
+      "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-17, as did an independent curl download (HTTP 200, application/pdf, 9,329,928 bytes).",
+      "reviewStatus": "Converted with EPUBCheck, progress and 512 MiB Mac RSS gate (276-314 MiB peak). Contract protects cover lines and headings, masthead date lines, photo presence and printed credits, whole captions on pages 6, 9 and 12, reflowed sentences on pages 6, 9, 12, 13, 15, 18 and 19 in source order, and the back-cover mailing instruction. Text held in region crops and page images, column interleaving, subheads, paragraph merging, the running foot, end marks, credits placement and the link-forced page images are unqualified.",
+      "knownFidelityIssues": [
+        {
+          "page": 2,
+          "issue": "Body text, the Forum column, masthead and contents, sidebars, pull quotes and the two-page index are held inside preserved-region crops (pages 2-5, 7, 8, 10, 14, 16, 22, 23 and parts of 9, 11, 12, 15, 18); pages 20 and 21 fall back to whole-page images (unsupportedGraphics). The EPUB holds 29,882 of about 83,400 source characters, and no article title reaches the contents.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/158"
+        },
+        {
+          "page": 6,
+          "issue": "Side-by-side column prose is one paragraph per line and interleaves across columns (pages 6, 8, 11, 13, 17, 19); right-column blocks read before the column to their left (pages 9, 12, 15, 18).",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/153"
+        },
+        {
+          "page": 15,
+          "issue": "Running foot kept with its dingbat bullet as <sup>l</sup> (pages 6-12, 15, 17, 19, 22, 24); end-of-story mark tripled as ***; subheads bold paragraphs or run into their paragraph; source paragraphs merged; italic-led lines as <pre> (page 19); credits detached from photos and BRAD FRITz; mailing panel and cover lines as h4-h6 headings; com-panies and infec-tions keep hyphens.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/159"
+        },
+        {
+          "page": 3,
+          "issue": "55 borderless URI link annotations add an Original page image and annotationsNotConverted on pages 2-21 and 24.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/151"
+        }
+      ],
+      "baselineStatus": "Reviewed contract and corpus/usda-ars-agresearch-2012-11-review.json recorded 2026-09-17; included in the corpus gate.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 512,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+      }
+    },
+    {
+      "role": "development",
+      "identity": {
+        "suppliedBy": "publisher-download"
+      },
+      "id": "ntrs-20190030725-dasc-2019",
+      "title": "A Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace System",
+      "author": "A. Sadovsky and R. Windhorst, NASA Ames Research Center",
+      "publicationYear": 2019,
+      "url": "https://ntrs.nasa.gov/citations/20190030725",
+      "publisherPageURL": "https://ntrs.nasa.gov/citations/20190030725",
+      "downloadURL": "https://ntrs.nasa.gov/api/citations/20190030725/downloads/20190030725.pdf",
+      "filename": "20190030725.pdf",
+      "bytes": 384479,
+      "sha256": "7c2137098ffb75153e0049b970272db97bc91e13168028dc7b53fbe2deb92caa",
+      "pages": 10,
+      "provenance": "NASA Technical Reports Server record 20190030725 (report ARC-E-DAA-TN70859), author manuscript of the 2019 IEEE/AIAA 38th Digital Avionics Systems Conference paper (San Diego, September 8-12, 2019). pdfTeX-1.40.18 (Creator TeX), IEEEtran conference class, untagged, no forms; 33 embedded fonts (NimbusRomNo9L body text, Computer Modern math without ToUnicode, DejaVu Type 3, Tahoma and Helvetica from included figure PDFs); vector time-window figures, two 640x480 networkx route-network rasters, rotated and ruled tables, display equations, an algorithm step list and appendices.",
+      "rightsBasis": "The paper's byline places both authors, A. Sadovsky and R. Windhorst, in the Aviation Systems Division, NASA Ames Research Center, with nasa.gov addresses, and the NTRS record lists both at NASA Ames Research Center (center ARC): a work of the United States Government under 17 U.S.C. 105. The PDF carries no copyright notice or government-work statement. The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and belongsToAuthors false; distribution PUBLIC, no export control. No figure or table carries a credit, and none is third-party: Figures 1-2 are the authors' time-window plots, the Table I and II route networks are generated with networkx (Ref. [3]) from the paper's own sample problems, and Table III is the authors' outline. No NASA insignia or photographs appear. Owner approved on 2026-09-17. Not relicensed under MIT.",
+      "rightsClearance": {
+        "status": "owner-confirmed",
+        "scope": "Owner approved on 2026-09-17 for the development corpus with committed text derivatives (contract snippets). No crops or rasters are committed; the contract needs no image references. Statutory basis and the NTRS determination only; the PDF has no rights statement. Attribution: Sadovsky and Windhorst, NASA Ames Research Center, NTRS 20190030725."
+      },
+      "coverage": [
+        "pdfTeX IEEEtran conference paper, untagged",
+        "IEEE small-caps Roman-numeral section headings and italic subsection titles",
+        "Computer Modern inline math with stacked sub- and superscripts and no ToUnicode",
+        "numbered display equations with cases braces and matrices",
+        "algorithm step list, itemize bullets and nested dash items",
+        "rotated schedule tables with network plots and a ruled text table",
+        "footnotes and a numbered reference list"
+      ],
+      "reviewPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "attribution": "A. Sadovsky and R. Windhorst (NASA Ames Research Center), A Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the National Airspace System, 2019 IEEE/AIAA 38th Digital Avionics Systems Conference. Source: https://ntrs.nasa.gov/citations/20190030725. The PDF is unmodified.",
+      "downloadVerification": "Fresh download through tools/fetch_corpus.py into an empty temporary cache matched this identity on 2026-09-17, as did an independent curl download (HTTP 200, application/pdf, 384,479 bytes). NTRS returned HTTP 503 for every request for about 50 minutes before that; the fetcher failed without substituting a file.",
+      "reviewStatus": "Converted with EPUBCheck, progress and 128 MiB Mac RSS gate (49-51 MiB peak). Contract protects the title heading, author blocks, abstract and index terms, whole prose paragraphs in column order on all ten pages, the page 1 to 2 continuation, separate page-6 dash items, the order of section, subsection, step, bullet and requirement openings, figure, table and display crops, captions and footnote text, and reference order. Headings, list and reference structure, paragraph boundaries, math fragmentation, partial display crops, private-use brace pieces and three column-order spots are unqualified.",
+      "knownFidelityIssues": [
+        {
+          "page": 1,
+          "issue": "Only the title is a heading: section, appendix and references headings are <p> or <pre>, subsection titles <pre> swallowing their first line; bullets and requirements <pre>; steps and references split after their first line; paragraphs split at the page-1 column break and the page-2 footnote, indented paragraphs merged, lone . paragraphs.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/162"
+        },
+        {
+          "page": 3,
+          "issue": "Inline stacked indices shatter sentences into one-token paragraphs (pages 2, 5, 6); displays (4), (5) and the page-9 matrices are partly crops and partly loose text, (8) has no crop; 146 CMEX brace pieces as U+F8F4-U+F8FE (pages 3, 9); the page-6 separation-matrix crop swallows two prose lines.",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/163"
+        },
+        {
+          "page": 4,
+          "issue": "Figure 2 caption interleaves with the left column (page 4); the right column's quadratic objective precedes Appendix A (page 9); the Table III caption is split by REFERENCES (page 10).",
+          "trackingURL": "https://github.com/vocaro/PDFReflowLib/issues/153"
+        }
+      ],
+      "baselineStatus": "Reviewed contract and corpus/ntrs-20190030725-dasc-2019-review.json recorded 2026-09-17; included in the corpus gate.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 128,
+        "scope": "macOS 27 arm64 isolated release CLI, defaults; initial RSS regression ceiling, not a mobile device budget"
+      }
     }
   ]
 }

@@ -1,0 +1,58 @@
+{
+  "case": "ntrs-20190030725-dasc-2019",
+  "pageNumbering": "Physical PDF pages, one-based; the paper prints no folios",
+  "qualifiedForFidelity": false,
+  "reviewPoints": [
+    {
+      "page": 1,
+      "target": "Title block with two author columns, bold abstract, index terms and introduction",
+      "acceptance": "Correct now: the title is the only h2; both author blocks in column order with 1st/2nd superscripts; the abstract and index terms are whole, separate paragraphs; left column before right; the last paragraph continues onto page 2. Wrong now: I. INTRODUCTION is <pre> (#162); the introduction paragraph splits at the column break (the stakeholders | (airline operators)), and indented paragraphs merge (#162); affiliation, city and e-mail lines are merged into one paragraph."
+    },
+    {
+      "page": 2,
+      "target": "Problem input and output: definitions (1)-(3), section III start and footnote 1",
+      "acceptance": "Correct now: prose paragraphs whole and in column order; display (3), the S(f) table, is one crop; the footnote text is present. Wrong now: II. and III. are paragraphs and the italic subsection titles are <pre>, B. Output data and A. ETAs swallowing their first line (#162); definitions (1) and (2) and the inline n_f^i, ETA and tt/TT symbols shatter into one-token paragraphs (#163); Gthat, Gwill lose spaces; section III's last paragraph does not join page 3 across footnote 1 (#162)."
+    },
+    {
+      "page": 3,
+      "target": "Node and edge constraints with displays (4) and (5), section IV start, footnote 2",
+      "acceptance": "Correct now: the constraint descriptions (a)-(c), section IV's paragraphs and the footnote text are whole and in order; crops exist for the formulas of (4) and (5). Wrong now: the condition text, case labels and equation numbers of (4) and (5) are loose paragraphs around the crops, with 121 private-use CMEX brace pieces (#163); B./C. subsection titles <pre> and IV. runs into its paragraph (#162); ≥the loses a space."
+    },
+    {
+      "page": 4,
+      "target": "Figures 1 and 2 (plots of time windows) with captions, and the column text beside them",
+      "acceptance": "Correct now: two figure crops cover all five panels; the Figure 1 caption is whole. Wrong now: panel labels (A), (B), (C) are loose paragraphs, and the (B) label is merged into the Figure 1 caption; the Figure 2 caption interleaves line by line with the left column's prose (#153); m,nand and kat lose spaces."
+    },
+    {
+      "page": 5,
+      "target": "Controllability and reachability bullets, section V, invariants (6), Steps 1-6 with displays (7)-(10)",
+      "acceptance": "Correct now: section V's prose, the interval-notation paragraph and invariant (6) are whole; Steps 1-6 in order; displays (7) and (9) are crops. Wrong now: bullets are <pre> holding only their first line; V. is <pre>; Steps split after their first line; Controllability: and Reachability: run-in paragraphs merge with the one above; a lone . paragraph follows T^k twice (#162); display (8) and inline STA/A-window symbols shatter into one-token paragraphs (#163)."
+    },
+    {
+      "page": 6,
+      "target": "Steps 7-10, section VI bullets with the separation matrix and the ETA formula",
+      "acceptance": "Correct now: Steps 7-10 and section VI openings in order; the dash sub-bullets are separate, whole paragraphs, as is the distinctions paragraph; the separation matrix and ETA formula are crops. Wrong now: the separation-matrix crop swallows the prose lines leading one: and – Constraints of the types (4.c) and (5.a) are not (#163); displays (10) and (11) and Step 9 symbols shatter (#163); VI. is a paragraph and the top-level bullets are <pre> (#162)."
+    },
+    {
+      "page": 7,
+      "target": "Table I (route network plot and rotated 6-flight schedule), section VII and its requirement list",
+      "acceptance": "Correct now: the caption, the network plot and rotated table preserved as one crop; section VII's paragraphs whole; requirements 1)-4) in order; f′ primes as superscripts. Wrong now: VII.'s two-line title is two paragraphs; A./B. subsection titles <pre>; requirements are <pre> (#162); the table is not reconstructed as text; rotated margin text is reported as removed furniture."
+    },
+    {
+      "page": 8,
+      "target": "Table II (9-flight network and schedule), section VII end, footnote 3",
+      "acceptance": "Correct now: the caption and one crop holding the network and schedule; the closing paragraph and footnote text present. Wrong now: the table's SCHEDULE: label is a paragraph outside the crop; the paragraph continuing from page 7 is split at the table; a lone . paragraph after the footnote marker (#162)."
+    },
+    {
+      "page": 9,
+      "target": "Summary, appendices A and B, the quadratic program and matrices, cvxopt code",
+      "acceptance": "Correct now: the summary, appendix and cvxopt prose paragraphs whole; the left column's openings in order; display crops present. Wrong now: the right column's quadratic objective comes before APPENDIX A (#153); VIII., APPENDIX A/B and their titles are split paragraphs (#162); the objective and the P, q, G, h matrices are partly crops and partly text, with eighteen . paragraphs and 25 private-use pieces (#163); the two-line code listing is a paragraph and a crop."
+    },
+    {
+      "page": 10,
+      "target": "Table III (ruled algorithm outline) and references",
+      "acceptance": "Correct now: references [1]-[10] in order; Table III preserved as a crop. Wrong now: the Table III caption is split by REFERENCES from the right column (#153); REFERENCES is a paragraph; every entry splits after its first line, [7]'s second line is <pre> and NASA is a separate paragraph (#162); the table's prose cells do not reflow."
+    }
+  ],
+  "scope": "Manual targets from 60 DPI Poppler renders of all 10 pages, the EPUB's block structure and the Poppler text layer. pdfTeX IEEEtran conference paper, untagged; Computer Modern math without ToUnicode; figures from plotting tools (DejaVu Type 3, Tahoma, Helvetica) and two 640x480 networkx rasters. No region, glyph or appearance references are committed; see the manifest rights note."
+}

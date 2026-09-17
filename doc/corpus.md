@@ -43,14 +43,18 @@ work offline. Tests and conversion never fetch sources automatically.
 | `irs-p596-zhs-2025` | 36 | Simplified Chinese mixed with Latin identifiers and amounts | 256 MiB |
 | `uscourts-pro-se-1-2016` | 5 | Fillable AcroForm: field labels beside blanks, checkboxes, push buttons | 128 MiB |
 | `ntrs-20200002975-gwl-2020` | 20 | Microsoft Word export: tagged IEEE two-column paper, Symbol-font characters | 256 MiB |
+| `usda-ars-agresearch-2012-11` | 24 | InDesign magazine: wrapped photos, sidebars, pull quotes, two-page index | 512 MiB |
+| `ntrs-20190030725-dasc-2019` | 10 | pdfTeX IEEEtran paper: small-caps headings, Computer Modern math, algorithm steps | 128 MiB |
 
 These are regression limits for release CLI processes on macOS arm64, not physical-device
 budgets or guarantees about Apple service memory. Each evaluation verifies exact input identity
 before conversion and records progress, timing, memory, output structure and optional EPUBCheck.
 The seven [#30 cases](#issue-30-coverage-expansion) are gated with reviewed contracts; their
 selection and download identities are in [their record](../measurements/corpus-candidates-30/record.md).
-The [Pro Se 1 form](#complaint-for-a-civil-case-pro-se-1) and the
-[Word-exported NASA paper](#ground-wind-loads-paper-word-2013) are gated the same way.
+The [Pro Se 1 form](#complaint-for-a-civil-case-pro-se-1), the
+[Word-exported NASA paper](#ground-wind-loads-paper-word-2013), the
+[Agricultural Research magazine](#agricultural-research-magazine-indesign) and the
+[IEEEtran NASA paper](#arrival-scheduling-paper-pdftex-ieeetran) are gated the same way.
 
 ## Comparing conversion runs
 
@@ -190,7 +194,7 @@ scripts/compare-pdf-reflow.sh --pdf corpus/cache/Beginning_and_Intermediate_Alge
 ```
 
 Output directories must be new. `--epubcheck` is optional. The memory runner enforces the
-case's ceiling automatically. `scripts/check-all.sh --corpus` includes algebra in the 17-document gate.
+case's ceiling automatically. `scripts/check-all.sh --corpus` includes algebra in the 19-document gate.
 
 [Review points](../corpus/wallace-algebra-2010-review.json) list physical PDF pages and
 acceptance questions. Page 343's inline squared exponent has superscript semantics, while
@@ -572,3 +576,103 @@ interleaves line by line, pages 7 and 8 read right-column blocks first, and the 
 private-use characters, and `45-degree` loses its hyphen
 ([#155](https://github.com/vocaro/PDFReflowLib/issues/155)). Invisible table-of-contents links
 force a page-1 source image ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)).
+
+
+## Agricultural Research magazine (InDesign)
+
+*Agricultural Research* Vol. 60, No. 10 (November/December 2012), from the USDA Agricultural
+Research Service, is a 24-page Adobe InDesign CS5 magazine, untagged, from the
+[issue's contents page](https://agresearchmag.ars.usda.gov/2012/nov/?t=tableofcontent). It has a
+cover, a Forum column, a masthead with contents, an 11-page feature, four short articles and a
+two-page index. The layout uses two- and three-column justified text with wrapped photos, boxed
+sidebars, colored pull quotes, a full-page background image, display titles, drop caps, rotated
+photo credits, "See story on page N" cross-references and a back-cover mailing panel. Twelve
+standard Arial and Times fonts are not embedded, and there are 55 link annotations. The download
+URL is not versioned, so bytes are pinned at 9,329,928, SHA-256
+`2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761`.
+
+The page-3 masthead says "Most information in this magazine is public property and may be
+reprinted without permission (except where copyright is noted)". No copyright notice appears in
+the issue. All masthead staff and article bylines are ARS employees (17 U.S.C. 105). All 24 printed
+photo numbers resolve in the ARS Image Gallery to the credited photographers. The gallery's
+[rights page](https://www.ars.usda.gov/oc/images/copyright/) calls its photos copyright-free and
+public domain, asks for credit to the Agricultural Research Service, and forbids using them to
+imply ARS endorsement; the masthead also disclaims USDA endorsement. Page 24 holds only the USDA,
+ARS and 150 Years marks and the mailing panel. No raster or crop of page 24 may be committed, and
+the case commits no rasters from any page. The owner approved it on 2026-09-17. It is not
+relicensed under MIT; retain the attribution recorded in the manifest.
+
+```sh
+python3 tools/fetch_corpus.py --case usda-ars-agresearch-2012-11
+swift build -c release
+python3 tools/run_corpus_regressions.py --converter .build/release/pdf-reflow \
+  --epubcheck /opt/homebrew/bin/epubcheck --output /tmp/ag-research --case usda-ars-agresearch-2012-11
+```
+
+The run passes EPUBCheck, progress and the 512 MiB Mac RSS gate (276–314 MiB peak). The
+[review points](../corpus/usda-ars-agresearch-2012-11-review.json) cover all 24 pages. The
+contract holds 99 checks on 21 pages, all on output that matches the source: the cover lines and
+headings, the masthead date lines, photo presence and printed credits, whole captions on pages 6,
+9 and 12, reflowed sentences in source order on pages 6, 9, 12, 13, 15, 18 and 19, and the
+back-cover mailing instruction.
+
+Most of the text does not reflow. The EPUB carries 29,882 of about 83,400 source characters, and
+no article title reaches the contents:
+- The Forum column, masthead, contents, pull quotes, sidebars, most feature pages and the index
+  stay inside region crops, and pages 20–21 fall back to whole-page images
+  ([#158](https://github.com/vocaro/PDFReflowLib/issues/158)).
+- Side-by-side columns come out one line per paragraph and interleave, or read right-column
+  blocks first ([#153](https://github.com/vocaro/PDFReflowLib/issues/153)).
+- The running foot is kept with its bullet as a superscript `l`, and end-of-story marks are
+  tripled. Subheads are not headings, paragraphs merge, and the mailing panel becomes
+  headings ([#159](https://github.com/vocaro/PDFReflowLib/issues/159)).
+- Borderless links force a source-page image on 21 pages
+  ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)).
+
+
+## Arrival scheduling paper (pdfTeX IEEEtran)
+
+Sadovsky and Windhorst, "A Scheduling Algorithm Compatible with a Distributed Management of
+Arrivals in the National Airspace System" (2019 IEEE/AIAA Digital Avionics Systems Conference), is
+a 10-page pdfTeX IEEEtran paper from [NTRS 20190030725](https://ntrs.nasa.gov/citations/20190030725).
+It is untagged. Section headings are IEEE small-caps Roman numerals. The math is Computer Modern
+without ToUnicode: inline symbols with stacked indices, numbered displays with cases braces, and
+matrices. It also has an algorithm step list, bullets, time-window figures, rotated schedule tables
+with networkx route plots, a ruled outline table, footnotes and references. Bytes are pinned at
+384,479, SHA-256 `7c2137098ffb75153e0049b970272db97bc91e13168028dc7b53fbe2deb92caa`. NTRS
+returned HTTP 503 for about 50 minutes during capture. The fetcher fails in that case and never
+substitutes a file.
+
+The byline and the NTRS record place both authors at NASA Ames Research Center (17 U.S.C. 105).
+The NTRS API copyright record gives `GOV_PUBLIC_USE_PERMITTED` with
+`containsThirdPartyMaterial: false`. The PDF itself has no copyright notice or government-work
+statement. No figure or table carries a credit. The figures are the authors' own plots, and the
+route networks are generated from the paper's sample problems. No insignia or photographs appear.
+The case commits no rasters. The owner approved it on 2026-09-17. It is not relicensed under MIT;
+retain the attribution recorded in the manifest.
+
+```sh
+python3 tools/fetch_corpus.py --case ntrs-20190030725-dasc-2019
+swift build -c release
+python3 tools/run_corpus_regressions.py --converter .build/release/pdf-reflow \
+  --epubcheck /opt/homebrew/bin/epubcheck --output /tmp/ntrs-dasc --case ntrs-20190030725-dasc-2019
+```
+
+The run passes EPUBCheck, progress and the 128 MiB Mac RSS gate (49–51 MiB peak). The
+[review points](../corpus/ntrs-20190030725-dasc-2019-review.json) cover all 10 pages. The contract
+holds 173 checks, all on output that matches the source: the title heading, author blocks,
+abstract and index terms, whole prose paragraphs in column order, the page 1 to 2 continuation,
+the order of section, step, bullet and requirement openings, separate dash items, figure, table and display crops,
+captions, footnote text and reference order.
+
+The paper reflows with no structure fallbacks, but these defects remain:
+- The title is the only heading. Section and appendix headings are `<p>` or `<pre>`, and
+  subsection titles swallow their first line. Bullets and requirements are `<pre>`, and steps and
+  references split after their first line. Paragraphs split at a column break and at a footnote
+  ([#162](https://github.com/vocaro/PDFReflowLib/issues/162)).
+- Symbols with stacked indices shatter their sentences into one-token paragraphs. Several
+  displays are partly cropped and partly loose text, with 146 private-use brace pieces. The
+  separation-matrix crop swallows two prose lines
+  ([#163](https://github.com/vocaro/PDFReflowLib/issues/163)).
+- The Figure 2 caption, page 9's appendices and the Table III caption are out of column order
+  ([#153](https://github.com/vocaro/PDFReflowLib/issues/153)).

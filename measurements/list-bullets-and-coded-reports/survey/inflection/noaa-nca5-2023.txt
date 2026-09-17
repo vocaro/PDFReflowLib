@@ -1,0 +1,97 @@
+# noaa-nca5-2023
+kept    p50 back-to- + back Atlantic hurricanes in 20 -> to-back forms=[] prefixWord=true suffixWord=true
+kept    p122 COVID- + driven changes in atmospheric  -> covid-driven forms=[] prefixWord=true suffixWord=true
+kept    p226 well- + fields,90 and in farmlands hig -> well-fields forms=[] prefixWord=true suffixWord=true
+kept    p227 acknowl- + edgement that higher temperatu -> acknowl-edgement forms=[] prefixWord=false suffixWord=false
+kept    p233 provinc- + es, eight US states, and many  -> provinc-es forms=[] prefixWord=false suffixWord=true
+kept    p243 middle- + income countries: A scoping re -> middle-income forms=[] prefixWord=true suffixWord=true
+kept    p296 gas- + and coal-fired power plants in -> gas-and forms=[] prefixWord=true suffixWord=true
+kept    p341 human- + climate feedbacks differ at di -> human-climate forms=[] prefixWord=true suffixWord=true
+kept    p434 more- + than-human world through the L -> more-than forms=[] prefixWord=true suffixWord=true
+kept    p442 temperature- + mediated phenological asynchro -> temperature-mediated forms=[] prefixWord=true suffixWord=true
+kept    p533 overre- + liance on agrochemicals can fu -> overre-liance forms=[] prefixWord=false suffixWord=false
+REMOVED p533 agrochem- + ical inputs. Further, a spatia -> agrochemical forms=[agrochemicals] prefixWord=false suffixWord=false
+kept    p537 consolida- + tion of business activities. E -> consolida-tion forms=[] prefixWord=false suffixWord=true
+kept    p558 anti- + consumers’ preferences for sus -> anti-consumers forms=[] prefixWord=true suffixWord=true
+kept    p586 city-to- + city networks.107,174,175,176, -> to-city forms=[] prefixWord=true suffixWord=true
+kept    p598 intensity-duration- + frequency curves and stormwate -> duration-frequency forms=[] prefixWord=true suffixWord=true
+kept    p616 short- + and long-term health -> short-and forms=[] prefixWord=true suffixWord=true
+kept    p627 state- + of-good-repair challenges cont -> state-of forms=[] prefixWord=true suffixWord=true
+REMOVED p651 trans- + lations. Communication of thes -> translations forms=[translation] prefixWord=true suffixWord=false
+kept    p673 temperature- + ozone relationships across the -> temperature-ozone forms=[] prefixWord=true suffixWord=true
+kept    p678 middle- + school students to air emissio -> middle-school forms=[] prefixWord=true suffixWord=true
+kept    p688 Graph-deep-learning- + based inference of fine-graine -> learning-based forms=[] prefixWord=true suffixWord=true
+kept    p689 class- + imbalance in a deep learning a -> class-imbalance forms=[] prefixWord=true suffixWord=true
+REMOVED p752 shov- + el-ready projects, and financi -> shovel forms=[shoveled] prefixWord=false suffixWord=true
+kept    p761 bib- + liographic references, and inf -> bib-liographic forms=[] prefixWord=false suffixWord=false
+REMOVED p761 territo- + rially, and politically. For t -> territorially forms=[territorial] prefixWord=false suffixWord=false
+kept    p802 achiev- + ability of the 2030 Sustainabl -> achiev-ability forms=[] prefixWord=false suffixWord=true
+kept    p824 unafford- + ability, the COVID-19 pandemic -> unafford-ability forms=[] prefixWord=false suffixWord=true
+kept    p830 inex- + tricable from current decision -> inex-tricable forms=[] prefixWord=false suffixWord=false
+kept    p836 hard-to- + reach populations, and this ca -> to-reach forms=[] prefixWord=true suffixWord=true
+kept    p849 ptation-action-area-in-little- + river-mdc.hub.arcgis.com/ -> little-river forms=[] prefixWord=true suffixWord=true
+kept    p849 https://miami-dade- + county-sea-level-rise-strategy -> dade-county forms=[] prefixWord=true suffixWord=true
+kept    p849 ttps://adaptation-action-area- + in-little-river-mdc.hub.arcgis -> area-in forms=[] prefixWord=true suffixWord=true
+REMOVED p860 CO2-en- + riched environment is not well -> enriched forms=[enrich] prefixWord=true suffixWord=false
+REMOVED p905 proce- + durally just than top-down eff -> procedurally forms=[procedural] prefixWord=false suffixWord=false
+REMOVED p916 amelio- + rating histories of environmen -> ameliorating forms=[ameliorate,ameliorated,ameliorates] prefixWord=false suffixWord=true
+REMOVED p964 amelio- + rating the impacts of sea leve -> ameliorating forms=[ameliorate,ameliorated,ameliorates] prefixWord=false suffixWord=true
+kept    p965 low- + and moderate-income communitie -> low-and forms=[] prefixWord=true suffixWord=true
+kept    p992 weather- + and climate-related risks such -> weather-and forms=[] prefixWord=true suffixWord=true
+kept    p1010 Son- + ny Perdue, USDA; (bottom right -> son-ny forms=[] prefixWord=true suffixWord=true
+kept    p1033 intensity-duration- + frequency curves and stormwate -> duration-frequency forms=[] prefixWord=true suffixWord=true
+kept    p1037 seepage- + induced deformation and relate -> seepage-induced forms=[] prefixWord=false suffixWord=true
+kept    p1044 freight- + transportation infrastructure: -> freight-transportation forms=[] prefixWord=true suffixWord=true
+kept    p1056 national- + or regional-scale discourses r -> national-or forms=[] prefixWord=true suffixWord=true
+REMOVED p1063 condi- + tioned by culture, tradition,  -> conditioned forms=[condition,conditioning,conditions] prefixWord=false suffixWord=false
+REMOVED p1072 telecommu- + nication and water supplies, a -> telecommunication forms=[telecommunications] prefixWord=false suffixWord=false
+REMOVED p1081 underscor- + ing the need for pooling of re -> underscoring forms=[underscore,underscored] prefixWord=false suffixWord=true
+kept    p1084 biodiversity- + level changes in response to c -> biodiversity-level forms=[] prefixWord=true suffixWord=true
+kept    p1086 geodatabas- + es of infrastructure systems.  -> geodatabas-es forms=[] prefixWord=false suffixWord=true
+kept    p1088 Rican- + origin children living in Puer -> rican-origin forms=[] prefixWord=true suffixWord=true
+kept    p1115 weather- + and climate-related risks.73 H -> weather-and forms=[] prefixWord=true suffixWord=true
+kept    p1116 homogeneous- + ly managed zones within the sa -> homogeneous-ly forms=[] prefixWord=false suffixWord=true
+kept    p1153 weather- + induced phenological mismatch  -> weather-induced forms=[] prefixWord=true suffixWord=true
+kept    p1158 age- + stratified risk of exposure to -> age-stratified forms=[] prefixWord=true suffixWord=false
+kept    p1216 nation- + building path to a prosperous, -> nation-building forms=[] prefixWord=true suffixWord=true
+kept    p1217 values- + based approach in forests. Peo -> values-based forms=[] prefixWord=true suffixWord=true
+kept    p1236 Valen- + tine’s Day, snow fell along th -> valen-tine forms=[] prefixWord=false suffixWord=false
+kept    p1250 predeter- + mined jurisdictions, often in  -> predeter-mined forms=[] prefixWord=false suffixWord=false
+kept    p1253 desali- + nating seawater are twice thos -> desali-nating forms=[] prefixWord=false suffixWord=false
+kept    p1257 denomina- + tional bodies, local worshippi -> denomina-tional forms=[] prefixWord=false suffixWord=false
+kept    p1261 under- + standably choose to protect th -> under-standably forms=[] prefixWord=true suffixWord=false
+kept    p1273 fuel- + dependent workers and communit -> fuel-dependent forms=[] prefixWord=true suffixWord=true
+kept    p1274 hot- + dry-windy events. Nature Commu -> hot-dry forms=[] prefixWord=true suffixWord=true
+kept    p1284 inter- + religious perspectives on our  -> inter-religious forms=[] prefixWord=false suffixWord=true
+kept    p1294 huckleber- + ries for cultural and economic -> huckleber-ries forms=[] prefixWord=false suffixWord=true
+kept    p1294 unafford- + able for low-income households -> unafford-able forms=[] prefixWord=false suffixWord=true
+kept    p1314 com- + monalities. Supporting the con -> com-monalities forms=[] prefixWord=true suffixWord=false
+kept    p1330 inland- + penetrating atmospheric river  -> inland-penetrating forms=[] prefixWord=true suffixWord=false
+kept    p1335 fire- + facilitated conversion to non- -> fire-facilitated forms=[] prefixWord=true suffixWord=true
+kept    p1337 life- + histories of Pacific salmon. N -> life-histories forms=[] prefixWord=true suffixWord=true
+kept    p1342 Fire- + catalyzed vegetation shifts in -> fire-catalyzed forms=[] prefixWord=true suffixWord=true
+kept    p1352 change- + threatened resources. Nebraska -> change-threatened forms=[] prefixWord=true suffixWord=true
+kept    p1411 fire- + facilitated conversion to non- -> fire-facilitated forms=[] prefixWord=true suffixWord=true
+kept    p1412 wind- + dominated fires. Fire Ecology, -> wind-dominated forms=[] prefixWord=true suffixWord=true
+kept    p1499 ocean- + centered culture and -> ocean-centered forms=[] prefixWord=true suffixWord=true
+kept    p1503 age- + old tradition.193 The normal l -> age-old forms=[] prefixWord=true suffixWord=true
+kept    p1552 space-for- + time substitution approach to  -> for-time forms=[] prefixWord=true suffixWord=true
+kept    p1570 inter- + locking social processes and t -> inter-locking forms=[] prefixWord=false suffixWord=true
+kept    p1579 interorganiza- + tional group to oversee adapta -> interorganiza-tional forms=[] prefixWord=false suffixWord=false
+kept    p1586 mitigation- + and adaptation-related activit -> mitigation-and forms=[] prefixWord=true suffixWord=true
+kept    p1586 confi- + dentiality restrictions, uncer -> confi-dentiality forms=[] prefixWord=false suffixWord=false
+REMOVED p1594 pre- + scriptively improving public d -> prescriptively forms=[prescriptive] prefixWord=true suffixWord=false
+kept    p1642 electro- + chemical engineering approache -> electro-chemical forms=[] prefixWord=false suffixWord=true
+kept    p1647 net-zero-emissions- + aligned areas in 2022.290 Ener -> emissions-aligned forms=[] prefixWord=true suffixWord=true
+kept    p1664 near- + real-time daily dataset of glo -> near-real forms=[] prefixWord=true suffixWord=true
+kept    p1667 hydrogen- + based e-fuels in climate chang -> hydrogen-based forms=[] prefixWord=true suffixWord=true
+kept    p1682 fuel- + dependent workers and communit -> fuel-dependent forms=[] prefixWord=true suffixWord=true
+kept    p1682 nation- + building path to a prosperous, -> nation-building forms=[] prefixWord=true suffixWord=true
+kept    p1691 back-to- + back Atlantic hurricanes in 20 -> to-back forms=[] prefixWord=true suffixWord=true
+kept    p1719 COVID- + driven changes in atmospheric  -> covid-driven forms=[] prefixWord=true suffixWord=true
+kept    p1803 zoo- + xanthellae) and/or loss of the -> zoo-xanthellae forms=[] prefixWord=false suffixWord=false
+REMOVED p1806 succes- + sively, combinations of extrem -> successively forms=[successive] prefixWord=false suffixWord=false
+kept    p1810 refrigera- + tion, and illumination.2 -> refrigera-tion forms=[] prefixWord=false suffixWord=true
+kept    p1816 human- + centered approach to addressin -> human-centered forms=[] prefixWord=true suffixWord=true
+kept    p1827 unautho- + rized and accidental human-cau -> unautho-rized forms=[] prefixWord=false suffixWord=false
+breaks 1836, joined decides 1639, compound decides 102, reach tier 95, tier removes 13

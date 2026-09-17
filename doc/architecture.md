@@ -232,9 +232,26 @@ sizes. A line that an inline expression makes taller than the page's ordinary li
 (Wallace's minus, times and radical glyphs extend a rectangle 8.5 points past the type), at most
 twice that height and set as prose on its paragraph's measure, may overlap by its extra height
 as well, and its gap is not taken as the paragraph's leading for the added-space rule (#71, #109).
+A list item's wrapped line joins the item under the same allowance; an item's own line also
+earns it when it reads as a sentence, because it is set on the item's measure rather than the
+paragraph's (Wallace page 2's 17-point license bullets over 9.9-point lines, #115).
+A coded weather report set over several lines is one preformatted block (#96). A run opens on a
+line holding only report characters (capitals, digits, `/ + -`) with at least three groups of the
+METAR, TAF or PIREP formats (date-time `161753Z`, wind `14021G26KT`, visibility `3/4SM`, sky
+`OVC012CB`, temperature `18/17`, altimeter `A2970`, valid period `1112/1212`, change groups,
+report types and modifiers, coded weather, PIREP fields, and a station before its date-time
+group), or on a lone report type above such a line. It continues through lines in the same column
+at ordinary leading and size that hold only report characters, carry a group (or follow `RMK`)
+and do not open another report. A wrapped line joins with a space; the line after a lone report
+type and a line opening a TAF change group (`FM1500`, `TEMPO`, `BECMG`, `PROB30`) keep their
+break. The source sets each report line as a paragraph of its own, so this format evidence, not
+layout, is what separates a wrapped METAR from a TAF's change groups.
 Joined lines meet at a space except in three cases. A line-ending hyphen before a lowercase
-letter is removed when the book's vocabulary knows the joined word and not the compound, and
-kept otherwise. The vocabulary skips the word that opens a lowercase line after a line-end hyphen
+letter is removed when the book's vocabulary knows the joined word and not the compound. When it
+knows neither, the hyphen is also removed when the book uses another inflected form of the joined
+word (an ending `s es d ed ing ly` taken off, a dropped `e` restored, and an ending put back:
+`sep-` + `arates` beside `separate`), no such form of the compound, and the halves are not both
+book words, with at least six letters in all (#115). Otherwise it is kept. The vocabulary skips the word that opens a lowercase line after a line-end hyphen
 or soft hyphen, because it is the rest of a broken word (`es-` + `timates.html`), unless it holds
 a hyphen of its own (`straight-` + `and-level`); the same letters seen anywhere else count (#101). A slash after a letter, digit or slash before a letter or digit joins
 (`runway/` + `taxiway`, #70). A break inside a web address joins (#79). The address is the run

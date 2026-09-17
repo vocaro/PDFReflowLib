@@ -282,6 +282,28 @@ class CorpusContentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.check(pages=pages, markers=markers)
 
+    def test_preformatted_lines_need_one_block_with_each_line_whole_and_in_order(self):
+        self.contract['pages'] = [{'page': 1, 'preformattedLines': [
+            ['TAF', 'FM1500 16015G25KT P6SM SCT040 BKN250', 'FM120400 1408KT P6SM']]}]
+        def book(body):
+            return self.epub('<span epub:type="pagebreak" id="page-1"/>' + body + '<span epub:type="pagebreak" id="page-2"/>', '<p>x</p>')
+        kept = book('<pre>TAF\nKPIR 111130Z\nFM1500 16015G25KT P6SM SCT040 BKN250\nFM120400 1408KT P6SM</pre>')
+        merged = book('<pre>TAF KPIR 111130Z FM1500 16015G25KT P6SM SCT040 BKN250 FM120400 1408KT P6SM</pre>')
+        split = book('<pre>TAF\nFM1500 16015G25KT P6SM SCT040 BKN250</pre><pre>FM120400 1408KT P6SM</pre>')
+        paragraphs = book('<p>TAF</p><p>FM1500 16015G25KT P6SM SCT040 BKN250</p><p>FM120400 1408KT P6SM</p>')
+        reordered = book('<pre>TAF\nFM120400 1408KT P6SM\nFM1500 16015G25KT P6SM SCT040 BKN250</pre>')
+        for path, passes in [(kept, True), (merged, False), (split, False), (paragraphs, False), (reordered, False)]:
+            pages, markers = read_pages(path)
+            self.assertEqual(self.check(pages=pages, markers=markers)['passed'], passes, str(path))
+        pages, markers = read_pages(kept)
+        # A line must be whole: a prefix of a longer line does not match.
+        self.contract['pages'][0]['preformattedLines'] = [['TAF', 'FM1500 16015G25KT']]
+        self.assertFalse(self.check(pages=pages, markers=markers)['passed'])
+        for invalid in [['TAF'], ['TAF', ''], ['TAF', 1], 'TAF']:
+            self.contract['pages'][0]['preformattedLines'] = [invalid]
+            with self.assertRaises(ValueError):
+                self.check(pages=pages, markers=markers)
+
     def test_paragraph_parser_keeps_inline_styles_and_cross_page_ownership(self):
         path = self.epub('<span epub:type="pagebreak" id="page-1"/><h2>title</h2>'
                          '<p>al<strong>pha</strong> beta<span epub:type="pagebreak" id="page-2"/> gamma</p>',

@@ -1,0 +1,2222 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "13-7"
+        }
+      ],
+      "text" : "13-7"
+    },
+    {
+      "rect" : [
+        73,
+        99.012200000000007,
+        484.00010000000009,
+        266.31319999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        72,
+        79.350400000000008,
+        275.63329999999996,
+        10.811999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 13-5."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Descriptors and weather phenomena used in a typical METAR."
+        }
+      ],
+      "text" : "Figure 13-5. Descriptors and weather phenomena used in a typical METAR."
+    },
+    {
+      "rect" : [
+        322.02460000000002,
+        657.23010000000011,
+        235.45210000000003,
+        70.671999999999912
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        321,
+        637.78100000000006,
+        199.39630000000011,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 13-6."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " Reportable contractions for sky condition."
+        }
+      ],
+      "text" : "Figure 13-6. Reportable contractions for sky condition."
+    },
+    {
+      "rect" : [
+        99,
+        719.56640000000004,
+        210.01300000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Descriptions of weather phenomena as they begin or"
+        }
+      ],
+      "text" : "Descriptions of weather phenomena as they begin or"
+    },
+    {
+      "rect" : [
+        99,
+        707.06640000000004,
+        210.07299999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "end and hailstone size are also listed in the “Remarks”"
+        }
+      ],
+      "text" : "end and hailstone size are also listed in the “Remarks”"
+    },
+    {
+      "rect" : [
+        99,
+        694.56640000000004,
+        144.96999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "sections of the report. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 13-5]"
+        }
+      ],
+      "text" : "sections of the report. [Figure 13-5]"
+    },
+    {
+      "rect" : [
+        81,
+        677.56640000000004,
+        7.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "8. "
+        }
+      ],
+      "text" : "8. "
+    },
+    {
+      "rect" : [
+        99,
+        677.56640000000004,
+        210.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Sky condition—always reported in the sequence of"
+        }
+      ],
+      "text" : "Sky condition—always reported in the sequence of"
+    },
+    {
+      "rect" : [
+        99,
+        665.06640000000004,
+        210.02099999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "amount, height, and type or indefinite ceiling/height"
+        }
+      ],
+      "text" : "amount, height, and type or indefinite ceiling/height"
+    },
+    {
+      "rect" : [
+        99,
+        652.56640000000004,
+        209.99200000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(vertical visibility) (BKN008 OVC012CB, VV003)."
+        }
+      ],
+      "text" : "(vertical visibility) (BKN008 OVC012CB, VV003)."
+    },
+    {
+      "rect" : [
+        99,
+        640.06640000000004,
+        210.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The heights of the cloud bases are reported with a"
+        }
+      ],
+      "text" : "The heights of the cloud bases are reported with a"
+    },
+    {
+      "rect" : [
+        99,
+        627.56640000000004,
+        210.00900000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "three-digit number in hundreds of feet AGL. Clouds"
+        }
+      ],
+      "text" : "three-digit number in hundreds of feet AGL. Clouds"
+    },
+    {
+      "rect" : [
+        99,
+        615.06640000000004,
+        210.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "above 12,000 feet are not detected or reported by an"
+        }
+      ],
+      "text" : "above 12,000 feet are not detected or reported by an"
+    },
+    {
+      "rect" : [
+        99,
+        602.56640000000004,
+        210.01599999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "automated station. The types of clouds, specifically"
+        }
+      ],
+      "text" : "automated station. The types of clouds, specifically"
+    },
+    {
+      "rect" : [
+        99,
+        590.06640000000004,
+        210.09400000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "towering cumulus (TCU) or cumulonimbus (CB)"
+        }
+      ],
+      "text" : "towering cumulus (TCU) or cumulonimbus (CB)"
+    },
+    {
+      "rect" : [
+        99,
+        577.56640000000004,
+        210.01399999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "clouds, are reported with their height. Contractions"
+        }
+      ],
+      "text" : "clouds, are reported with their height. Contractions"
+    },
+    {
+      "rect" : [
+        99,
+        565.06640000000004,
+        210.06699999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are used to describe the amount of cloud coverage and"
+        }
+      ],
+      "text" : "are used to describe the amount of cloud coverage and"
+    },
+    {
+      "rect" : [
+        99,
+        552.56640000000004,
+        210.072,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "obscuring phenomena. The amount of sky coverage is"
+        }
+      ],
+      "text" : "obscuring phenomena. The amount of sky coverage is"
+    },
+    {
+      "rect" : [
+        99,
+        540.06640000000004,
+        210,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "reported in eighths of the sky from horizon to horizon."
+        }
+      ],
+      "text" : "reported in eighths of the sky from horizon to horizon."
+    },
+    {
+      "rect" : [
+        99,
+        527.56640000000004,
+        55.829999999999984,
+        11.340000000000032
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 13-6]"
+        }
+      ],
+      "text" : "[Figure 13-6]"
+    },
+    {
+      "rect" : [
+        81,
+        510.56640000000004,
+        7.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "9. "
+        }
+      ],
+      "text" : "9. "
+    },
+    {
+      "rect" : [
+        99,
+        510.56640000000004,
+        210.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Temperature and dew point—the air temperature and"
+        }
+      ],
+      "text" : "Temperature and dew point—the air temperature and"
+    },
+    {
+      "rect" : [
+        99,
+        498.06640000000004,
+        209.99999999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "dew point are always given in degrees Celsius (C) or"
+        }
+      ],
+      "text" : "dew point are always given in degrees Celsius (C) or"
+    },
+    {
+      "rect" : [
+        99,
+        485.56640000000004,
+        210.01400000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(18/17). Temperatures below 0 °C are preceded by"
+        }
+      ],
+      "text" : "(18/17). Temperatures below 0 °C are preceded by"
+    },
+    {
+      "rect" : [
+        99,
+        473.06640000000004,
+        129.43000000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the letter “M” to indicate minus."
+        }
+      ],
+      "text" : "the letter “M” to indicate minus."
+    },
+    {
+      "rect" : [
+        81,
+        456.06640000000004,
+        227.96000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "10. Altimeter setting—reported as inches of mercury"
+        }
+      ],
+      "text" : "10. Altimeter setting—reported as inches of mercury"
+    },
+    {
+      "rect" : [
+        99,
+        443.56640000000004,
+        209.91000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(\"Hg) in a four-digit number group (A2970). It is"
+        }
+      ],
+      "text" : "(\"Hg) in a four-digit number group (A2970). It is"
+    },
+    {
+      "rect" : [
+        99,
+        431.06640000000004,
+        210.01599999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "always preceded by the letter “A.” Rising or falling"
+        }
+      ],
+      "text" : "always preceded by the letter “A.” Rising or falling"
+    },
+    {
+      "rect" : [
+        99,
+        418.56640000000004,
+        209.87,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pressure may also be denoted in the “Remarks”"
+        }
+      ],
+      "text" : "pressure may also be denoted in the “Remarks”"
+    },
+    {
+      "rect" : [
+        99,
+        406.06640000000004,
+        205.82999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "sections as “PRESRR” or “PRESFR,” respectively."
+        }
+      ],
+      "text" : "sections as “PRESRR” or “PRESFR,” respectively."
+    },
+    {
+      "rect" : [
+        81,
+        389.06640000000004,
+        228.01400000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "11. Zulu time—a term used in aviation for UTC, which"
+        }
+      ],
+      "text" : "11. Zulu time—a term used in aviation for UTC, which"
+    },
+    {
+      "rect" : [
+        99,
+        376.56640000000004,
+        179.41000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "places the entire world on one time standard."
+        }
+      ],
+      "text" : "places the entire world on one time standard."
+    },
+    {
+      "rect" : [
+        330,
+        609.22210000000007,
+        12.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "12. "
+        }
+      ],
+      "text" : "12. "
+    },
+    {
+      "rect" : [
+        348,
+        609.22210000000007,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Remarks—the remarks section always begins with the"
+        }
+      ],
+      "text" : "Remarks—the remarks section always begins with the"
+    },
+    {
+      "rect" : [
+        348,
+        596.72210000000007,
+        210,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "letters “RMK.” Comments may or may not appear in"
+        }
+      ],
+      "text" : "letters “RMK.” Comments may or may not appear in"
+    },
+    {
+      "rect" : [
+        348,
+        584.22210000000007,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "this section of the METAR. The information contained"
+        }
+      ],
+      "text" : "this section of the METAR. The information contained"
+    },
+    {
+      "rect" : [
+        348,
+        571.72210000000007,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in this section may include wind data, variable"
+        }
+      ],
+      "text" : "in this section may include wind data, variable"
+    },
+    {
+      "rect" : [
+        348,
+        559.22210000000007,
+        210.00499999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "visibility, beginning and ending times of particular"
+        }
+      ],
+      "text" : "visibility, beginning and ending times of particular"
+    },
+    {
+      "rect" : [
+        348,
+        546.72210000000007,
+        210.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "phenomenon, pressure information, and various other"
+        }
+      ],
+      "text" : "phenomenon, pressure information, and various other"
+    },
+    {
+      "rect" : [
+        348,
+        534.22210000000007,
+        209.86599999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "information deemed necessary. An example of a"
+        }
+      ],
+      "text" : "information deemed necessary. An example of a"
+    },
+    {
+      "rect" : [
+        348,
+        521.72210000000007,
+        210.00600000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "remark regarding weather phenomenon that does not"
+        }
+      ],
+      "text" : "remark regarding weather phenomenon that does not"
+    },
+    {
+      "rect" : [
+        348,
+        509.22210000000007,
+        209.96000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "fit in any other category would be: OCNL LTGICCG."
+        }
+      ],
+      "text" : "fit in any other category would be: OCNL LTGICCG."
+    },
+    {
+      "rect" : [
+        348,
+        496.72210000000007,
+        210.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "This translates as occasional lightning in the clouds"
+        }
+      ],
+      "text" : "This translates as occasional lightning in the clouds"
+    },
+    {
+      "rect" : [
+        348,
+        484.22210000000007,
+        209.99000000000024,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and from cloud to ground. Automated stations also use"
+        }
+      ],
+      "text" : "and from cloud to ground. Automated stations also use"
+    },
+    {
+      "rect" : [
+        348,
+        471.72210000000007,
+        210.01300000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the remarks section to indicate the equipment needs"
+        }
+      ],
+      "text" : "the remarks section to indicate the equipment needs"
+    },
+    {
+      "rect" : [
+        348,
+        459.22210000000007,
+        53.04000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "maintenance."
+        }
+      ],
+      "text" : "maintenance."
+    },
+    {
+      "rect" : [
+        321,
+        434.22210000000007,
+        38.329999999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Example:"
+        }
+      ],
+      "text" : "Example:"
+    },
+    {
+      "rect" : [
+        321,
+        421.72210000000007,
+        223.03999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "METAR KGGG 161753Z AUTO 14021G26KT 3/4SM"
+        }
+      ],
+      "text" : "METAR KGGG 161753Z AUTO 14021G26KT 3/4SM"
+    },
+    {
+      "rect" : [
+        321,
+        409.22210000000007,
+        217.88,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "+TSRA BR BKN008 OVC012CB 18/17 A2970 RMK"
+        }
+      ],
+      "text" : "+TSRA BR BKN008 OVC012CB 18/17 A2970 RMK"
+    },
+    {
+      "rect" : [
+        321,
+        396.72210000000007,
+        36.129999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "PRESFR"
+        }
+      ],
+      "text" : "PRESFR"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      71.5,
+      98.140000000000001,
+      486.99900000000002,
+      268.17220000000003
+    ],
+    [
+      320.52460000000002,
+      655.923,
+      238.45099999999996,
+      73.214000000000055
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        537.98540000000003,
+        33.709700000000005,
+        20.009999999999991,
+        12.310000000000002
+      ],
+      "text" : "13-7"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        79.350400000000008,
+        275.63329999999996,
+        10.811999999999998
+      ],
+      "structure" : {
+        "group" : 4884,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 23659
+      },
+      "text" : "Figure 13-5. Descriptors and weather phenomena used in a typical METAR."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        637.78100000000006,
+        199.39630000000011,
+        10.812000000000012
+      ],
+      "structure" : {
+        "group" : 4883,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 23656
+      },
+      "text" : "Figure 13-6. Reportable contractions for sky condition."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        719.56640000000004,
+        210.01300000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 22677
+      },
+      "text" : "Descriptions of weather phenomena as they begin or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        707.06640000000004,
+        210.07299999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 22678
+      },
+      "text" : "end and hailstone size are also listed in the “Remarks”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        694.56640000000004,
+        144.96999999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 3,
+        "opensWithSplitMarker" : false,
+        "order" : 22679
+      },
+      "text" : "sections of the report. [Figure 13-5]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        677.56640000000004,
+        7.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4606,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22681
+      },
+      "text" : "8."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        677.56640000000004,
+        210.00299999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4606,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22682
+      },
+      "text" : "Sky condition—always reported in the sequence of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        665.06640000000004,
+        210.02099999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4606,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22683
+      },
+      "text" : "amount, height, and type or indefinite ceiling/height"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        652.56640000000004,
+        209.99200000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4606,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22684
+      },
+      "text" : "(vertical visibility) (BKN008 OVC012CB, VV003)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        640.06640000000004,
+        210.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4606,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22685
+      },
+      "text" : "The heights of the cloud bases are reported with a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        627.56640000000004,
+        210.00900000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4606,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22686
+      },
+      "text" : "three-digit number in hundreds of feet AGL. Clouds"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        615.06640000000004,
+        210.005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4606,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22687
+      },
+      "text" : "above 12,000 feet are not detected or reported by an"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        602.56640000000004,
+        210.01599999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4606,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22688
+      },
+      "text" : "automated station. The types of clouds, specifically"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        590.06640000000004,
+        210.09400000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4606,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22689
+      },
+      "text" : "towering cumulus (TCU) or cumulonimbus (CB)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        577.56640000000004,
+        210.01399999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4606,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22690
+      },
+      "text" : "clouds, are reported with their height. Contractions"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        565.06640000000004,
+        210.06699999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4606,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22691
+      },
+      "text" : "are used to describe the amount of cloud coverage and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        552.56640000000004,
+        210.072,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4606,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22692
+      },
+      "text" : "obscuring phenomena. The amount of sky coverage is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        540.06640000000004,
+        210,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4606,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22693
+      },
+      "text" : "reported in eighths of the sky from horizon to horizon."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        527.56640000000004,
+        55.829999999999984,
+        11.340000000000032
+      ],
+      "structure" : {
+        "group" : 4606,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22694
+      },
+      "text" : "[Figure 13-6]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        510.56640000000004,
+        7.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4607,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22695
+      },
+      "text" : "9."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        510.56640000000004,
+        210.00299999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4607,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22696
+      },
+      "text" : "Temperature and dew point—the air temperature and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        498.06640000000004,
+        209.99999999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4607,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22697
+      },
+      "text" : "dew point are always given in degrees Celsius (C) or"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        485.56640000000004,
+        210.01400000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4607,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22698
+      },
+      "text" : "(18/17). Temperatures below 0 °C are preceded by"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        473.06640000000004,
+        129.43000000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4607,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22699
+      },
+      "text" : "the letter “M” to indicate minus."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        456.06640000000004,
+        227.96000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4608,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22700
+      },
+      "text" : "10. Altimeter setting—reported as inches of mercury"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        443.56640000000004,
+        209.91000000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4608,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22702
+      },
+      "text" : "(\"Hg) in a four-digit number group (A2970). It is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        431.06640000000004,
+        210.01599999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4608,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22703
+      },
+      "text" : "always preceded by the letter “A.” Rising or falling"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        418.56640000000004,
+        209.87,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4608,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22704
+      },
+      "text" : "pressure may also be denoted in the “Remarks”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        406.06640000000004,
+        205.82999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4608,
+        "headingLevel" : 0,
+        "lineCount" : 5,
+        "opensWithSplitMarker" : false,
+        "order" : 22705
+      },
+      "text" : "sections as “PRESRR” or “PRESFR,” respectively."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        389.06640000000004,
+        228.01400000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4609,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 22706
+      },
+      "text" : "11. Zulu time—a term used in aviation for UTC, which"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        99,
+        376.56640000000004,
+        179.41000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4609,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 22708
+      },
+      "text" : "places the entire world on one time standard."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        330,
+        609.22210000000007,
+        12.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4610,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22709
+      },
+      "text" : "12."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        609.22210000000007,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4610,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22710
+      },
+      "text" : "Remarks—the remarks section always begins with the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        596.72210000000007,
+        210,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4610,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22711
+      },
+      "text" : "letters “RMK.” Comments may or may not appear in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        584.22210000000007,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4610,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22712
+      },
+      "text" : "this section of the METAR. The information contained"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        571.72210000000007,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4610,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22713
+      },
+      "text" : "in this section may include wind data, variable"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        559.22210000000007,
+        210.00499999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4610,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22714
+      },
+      "text" : "visibility, beginning and ending times of particular"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        546.72210000000007,
+        210.005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4610,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22715
+      },
+      "text" : "phenomenon, pressure information, and various other"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        534.22210000000007,
+        209.86599999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4610,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22716
+      },
+      "text" : "information deemed necessary. An example of a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        521.72210000000007,
+        210.00600000000009,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4610,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22717
+      },
+      "text" : "remark regarding weather phenomenon that does not"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        509.22210000000007,
+        209.96000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4610,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22718
+      },
+      "text" : "fit in any other category would be: OCNL LTGICCG."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        496.72210000000007,
+        210.00299999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4610,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22719
+      },
+      "text" : "This translates as occasional lightning in the clouds"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        484.22210000000007,
+        209.99000000000024,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4610,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22720
+      },
+      "text" : "and from cloud to ground. Automated stations also use"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        471.72210000000007,
+        210.01300000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4610,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22721
+      },
+      "text" : "the remarks section to indicate the equipment needs"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        348,
+        459.22210000000007,
+        53.04000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4610,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22722
+      },
+      "text" : "maintenance."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        434.22210000000007,
+        38.329999999999984,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4611,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22723
+      },
+      "text" : "Example:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        421.72210000000007,
+        223.03999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4612,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22724
+      },
+      "text" : "METAR KGGG 161753Z AUTO 14021G26KT 3/4SM"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        409.22210000000007,
+        217.88,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4613,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22725
+      },
+      "text" : "+TSRA BR BKN008 OVC012CB 18/17 A2970 RMK"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        321,
+        396.72210000000007,
+        36.129999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4614,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22726
+      },
+      "text" : "PRESFR"
+    }
+  ],
+  "page" : 317,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        73.25,
+        99.262400000000014,
+        483.5,
+        265.78460000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.25,
+        99.262400000000014,
+        483.5,
+        265.78460000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.25,
+        99.262400000000014,
+        483.5,
+        265.78460000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72,
+        98.140000000000001,
+        485.5,
+        267.30000000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        290.68299999999999,
+        482.99900000000002,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        290.68299999999999,
+        482.99900000000002,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        312.68299999999999,
+        482.99900000000002,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        312.68299999999999,
+        482.99900000000002,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        268.68299999999999,
+        482.99900000000002,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        268.68299999999999,
+        482.99900000000002,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        246.68299999999999,
+        482.99900000000002,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        246.68299999999999,
+        482.99900000000002,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        224.68299999999999,
+        482.99900000000002,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        224.68299999999999,
+        482.99900000000002,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        202.68299999999999,
+        482.99900000000002,
+        10.981000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        202.68299999999999,
+        482.99900000000002,
+        10.981000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        180.68199999999999,
+        482.99900000000002,
+        10.981000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        180.68199999999999,
+        482.99900000000002,
+        10.981000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        158.68199999999999,
+        482.99900000000002,
+        10.981000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        158.68199999999999,
+        482.99900000000002,
+        10.981000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        136.68199999999999,
+        482.99900000000002,
+        10.981000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        73.5,
+        136.68199999999999,
+        482.99900000000002,
+        10.981000000000023
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72,
+        347.8254,
+        485.5,
+        17.614599999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        72,
+        347.8254,
+        485.5,
+        17.614599999999996
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        71.5,
+        321.78870000000001,
+        486.99900000000002,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        71.5,
+        134.45480000000001,
+        486.99900000000002,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        253,
+        134.81220000000002,
+        4,
+        231.5
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        174,
+        134.81220000000002,
+        4,
+        216.5
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        370.66700000000003,
+        134.81220000000002,
+        4,
+        216.5
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        444,
+        134.81220000000002,
+        4,
+        216.5
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.27500000000003,
+        657.48000000000002,
+        234.95199999999994,
+        67.784999999999968
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.27500000000003,
+        657.48000000000002,
+        234.95199999999994,
+        67.784999999999968
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.27500000000003,
+        657.48000000000002,
+        234.95199999999994,
+        67.784999999999968
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.02500000000003,
+        710.62189999999998,
+        236.95200000000006,
+        17.999099999999999
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        321.02500000000003,
+        656.62099999999998,
+        236.95200000000006,
+        72
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.52500000000003,
+        679.73000000000002,
+        234.45099999999996,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.52500000000003,
+        679.73000000000002,
+        234.45099999999996,
+        10.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.52500000000003,
+        701.73000000000002,
+        234.45099999999996,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.52500000000003,
+        701.73000000000002,
+        234.45099999999996,
+        10.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.52500000000003,
+        657.73000000000002,
+        234.45099999999996,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        322.52500000000003,
+        657.73000000000002,
+        234.45099999999996,
+        10.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        320.52460000000002,
+        710.49689999999998,
+        238.45099999999996,
+        4
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        437.2004,
+        655.923,
+        4,
+        73.214000000000055
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

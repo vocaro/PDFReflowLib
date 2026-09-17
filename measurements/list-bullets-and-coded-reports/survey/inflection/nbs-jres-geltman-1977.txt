@@ -1,0 +1,12 @@
+# nbs-jres-geltman-1977
+kept    p1 nonrelativ- + is tic treatment of the electr -> nonrelativ-is forms=[] prefixWord=false suffixWord=true
+kept    p1 dura- + tion is much smaller than the  -> dura-tion forms=[] prefixWord=false suffixWord=true
+kept    p2 Further- + more, for the Coulomb case the -> further-more forms=[] prefixWord=true suffixWord=true
+REMOVED p4 ab- + sorptions or emi ssions of pho -> absorptions forms=[absorption] prefixWord=false suffixWord=false
+kept    p4 bound- + free calculations have been do -> bound-free forms=[] prefixWord=true suffixWord=true
+kept    p4 fre- + quencies. -> fre-quencies forms=[] prefixWord=false suffixWord=false
+kept    p5 c- + tory values for the cross sect -> c-tory forms=[] prefixWord=true suffixWord=false
+kept    p6 zeroth- + order assumption of a Maxwelli -> zeroth-order forms=[] prefixWord=false suffixWord=true
+kept    p7 ver- + sit y of Colorado, Boulder, 19 -> ver-sit forms=[] prefixWord=false suffixWord=false
+kept    p7 Am- + sterdam, in press). -> am-sterdam forms=[] prefixWord=false suffixWord=false
+breaks 26, joined decides 10, compound decides 6, reach tier 10, tier removes 1

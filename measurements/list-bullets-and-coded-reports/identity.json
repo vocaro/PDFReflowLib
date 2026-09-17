@@ -1,0 +1,46 @@
+{
+  "issues": [115, 96],
+  "host": "macOS 27.0 (26A428) arm64, Xcode 27.0 (27A266a), six-agent host load",
+  "tree": "43b20aa plus this working tree (work began on 3f59dff and was fast-forwarded to 9bf4e76, then 43b20aa)",
+  "converters": {
+    "baseline-9bf4e76": {
+      "cli": "release build of an unmodified `git archive 9bf4e76` (Wallace and FAA baseline)",
+      "sha256": "d892bf7dbe772975aaadd29309dfa6d90995657f4922532d6b55a045dd45d79a"
+    },
+    "baseline-43b20aa": {
+      "cli": "release build of an unmodified `git archive 43b20aa` (Fed and 9/11 baseline)",
+      "sha256": "1216e7f8727fd55e2c8a1d64524fb6734dbd6025b609b8c8c5c4fbbcb734f369"
+    },
+    "candidate": {
+      "cli": "release build of 43b20aa plus this working tree",
+      "sha256": "6f668649cacf78f5cf4c3f7e32a931e8b23d18f72b03c93222af3a1089db08d9"
+    }
+  },
+  "probe": {
+    "build": "xcrun swiftc -parse-as-library -O Sources/PDFReflowLib/{PageRasterizer,ConversionTypes,DocumentModel,ReflowDocument}.swift tools/probe-raster-environment.swift -o rp-probe",
+    "sha256": "94e58a20c8c71d52c49ccc7a5061b2a32fa1a3ac452081ad929aa68e01749b29",
+    "tools/probe-raster-environment.swift": "5f82c70d3561a5be248b19f0fd5c7e3115c04fb8d7cc6d345ccfbf6d69020961"
+  },
+  "lane": "tools/lane.sh and tools/compare.sh, one case per invocation: tools/run_corpus_regressions.py --epubcheck /opt/homebrew/bin/epubcheck --execution-context host-terminal, then tools/compare_conversion_runs.py --allow-different-converters --detail",
+  "sources": {
+    "wallace-algebra-2010": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+    "faa-phak-8083-25c": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7"
+  },
+  "fixtures": {
+    "capture": "swiftc Sources/PDFReflowLib/{NativeTextReader,ConversionTypes,DocumentModel,ReflowDocument,GraphicsReader,NativeSpacingReader,StructureTreeReader,MarkedTextReader}.swift tools/capture-layout-fixture.swift -o capture; capture faa-phak-8083-25c <page> Tests/PDFReflowLibTests/fixtures/faa-<page>-tagged-layout.json",
+    "tools/capture-layout-fixture.swift": "e527a6a624bb831337ba250d8293050cc2f7776ca7a4fc7763468682b1184d72",
+    "new": {
+      "faa-316-tagged-layout.json": "ecd2c721c8e8c780c5c144946174b1f097ef72ac0aa5320c284565992ef2a1cf",
+      "faa-317-tagged-layout.json": "372bab0cf0b8e131ef606258a7ae564f9d73c16b268a3421a2361939c96af99a",
+      "faa-318-tagged-layout.json": "1073271ee5a0990209257ef7a6e26d7119aa15abe03cc0c2e01626154605ac1d"
+    },
+    "recaptured-identical": {
+      "faa-319-tagged-layout.json": "66a6fefe1be5c75528dc2838a8c372cabee45110b683b074670462246ea2fd4e"
+    },
+    "used": {
+      "algebra-2-layout.json": "fb335ab030795915076eb5cff2e480a214ac087aa366e37d9195c2aa2bc00050",
+      "algebra-9-layout.json": "b93b052863f080cc1271a253a639001f95ada306ac5d4a978e9a2f759f2d0da5"
+    },
+    "note": "316-319 were captured on 3f59dff and recaptured byte-identically on 9bf4e76's capture tool and readers"
+  }
+}

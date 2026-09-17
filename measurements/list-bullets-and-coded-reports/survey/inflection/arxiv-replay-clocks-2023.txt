@@ -1,0 +1,8 @@
+# arxiv-replay-clocks-2023
+kept    p1 cooper- + ating to perform a task. Each  -> cooper-ating forms=[] prefixWord=false suffixWord=false
+REMOVED p3 func- + tions, Shift and MergeSameEpoc -> functions forms=[function] prefixWord=false suffixWord=false
+REMOVED p9 imple- + mentations of the past have tr -> implementations forms=[implementation] prefixWord=false suffixWord=false
+kept    p9 depen- + dencies and update the vector  -> depen-dencies forms=[] prefixWord=false suffixWord=false
+REMOVED p9 generat- + ing distributed system traces  -> generating forms=[generate] prefixWord=false suffixWord=false
+REMOVED p10 signifi- + cantly lower overhead compared -> significantly forms=[significant] prefixWord=false suffixWord=false
+breaks 35, joined decides 29, compound decides 0, reach tier 6, tier removes 4

@@ -704,11 +704,16 @@
         },
         {
           "page": 319,
-          "distinctParagraphs": [
-            {
-              "first": "FM1500 16015G25KT P6SM SCT040 BKN250",
-              "second": "FM120000 14012KT P6SM BKN080 OVC150"
-            }
+          "preformattedLines": [
+            [
+              "TAF",
+              "KPIR 111130Z 1112/1212",
+              "TEMPO 1112/1114 5SM BR",
+              "FM1500 16015G25KT P6SM SCT040 BKN250",
+              "FM120000 14012KT P6SM BKN080 OVC150 PROB30 1200/1204 3SM TSRA BKN030CB",
+              "FM120400 1408KT P6SM SCT040 OVC080",
+              "TEMPO 1204/1208 3SM TSRA OVC030CB"
+            ]
           ]
         },
         {
@@ -874,6 +879,9 @@
             "12. Remarks",
             "METAR KGGG 161753Z",
             "Figure 13-5. Descriptors and weather phenomena"
+          ],
+          "listItems": [
+            "METAR KGGG 161753Z AUTO 14021G26KT 3/4SM +TSRA BR BKN008 OVC012CB 18/17 A2970 RMK PRESFR"
           ]
         },
         {
@@ -1032,7 +1040,11 @@
         {
           "page": 318,
           "paragraphs": [
-            "25 NM out on the 090° radial, Gregg County VOR"
+            "25 NM out on the 090° radial, Gregg County VOR",
+            "Explanation:"
+          ],
+          "listItems": [
+            "UA/OV GGG 090025/TM 1450/FL 060/TP C182/SK 080 OVC/WX FV04SM RA/TA 05/WV 270030KT/TB LGT/RM HVY RAIN"
           ]
         },
         {
@@ -1286,6 +1298,15 @@
           "warningCodesAnyOf": [
             "pageImageFallback"
           ]
+        },
+        {
+          "page": 316,
+          "listItems": [
+            "METAR KGGG 161753Z AUTO 14021G26KT 3/4SM +TSRA BR BKN008 OVC012CB 18/17 A2970 RMK PRESFR"
+          ],
+          "paragraphs": [
+            "A typical METAR report contains the following information in sequential order:"
+          ]
         }
       ]
     },
@@ -1419,7 +1440,13 @@
           ],
           "listItems": [
             "− Your fair dealing or fair use rights",
-            "− The author’s moral rights;"
+            "− The author’s moral rights;",
+            "• Attribution: You must attribute the work in the manner specified by the author or licensor (but not in any way",
+            "• Waiver: Any of the above conditions can be waived if you get permission from the copyright holder.",
+            "• Public Domain: Where the work or any of its elements is in the public domain under applicable law,",
+            "− Your fair dealing or fair use rights, or other applicable copyright exceptions and limitations;",
+            "− Rights other persons may have either in the work itself or in how the work is used such as publicity or privacy rights",
+            "• Notice: For any reuse or distribution, you must make clear to others the license term of this work. The best way"
           ]
         },
         {
@@ -1653,10 +1680,14 @@
           "page": 9,
           "paragraphs": [
             "The second problem is a multiplication problem because there is nothing between the 3 and the parenthesis.",
-            "but if the signs match on multiplication, the answer is positive, (− 3)(− 7) = 21."
+            "but if the signs match on multiplication, the answer is positive, (− 3)(− 7) = 21.",
+            "is subtraction because the subtraction separates the 3 from what comes after it."
           ],
           "listItems": [
             "− 24 Our Solution"
+          ],
+          "absentText": [
+            "sep-arates"
           ]
         },
         {
@@ -1712,6 +1743,13 @@
           "page": 321,
           "paragraphs": [
             "If i is − 1 √ , and it is in the denominator of a fraction, then we have a radical in the denominator!"
+          ]
+        },
+        {
+          "page": 64,
+          "listItems": [
+            "• More than often represents addition and is usually built backwards, writing the second part plus the first",
+            "• Less than often represents subtraction and is usually built backwards as well, writing the second part minus the first"
           ]
         }
       ]

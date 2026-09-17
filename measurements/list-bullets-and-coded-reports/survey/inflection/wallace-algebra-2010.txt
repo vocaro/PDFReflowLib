@@ -1,0 +1,16 @@
+# wallace-algebra-2010
+kept    p3 Hamp- + shire, Melissa Hanson, Adriana -> hamp-shire forms=[] prefixWord=false suffixWord=false
+REMOVED p9 sep- + arates the 3 from what comes a -> separates forms=[separate,separated,separately,separatly] prefixWord=false suffixWord=false
+kept    p50 dif- + ferent form because we solved  -> dif-ferent forms=[] prefixWord=false suffixWord=false
+kept    p52 doc- + trines of the equations and ma -> doc-trines forms=[] prefixWord=false suffixWord=false
+kept    p75 dis- + puted. -> dis-puted forms=[] prefixWord=false suffixWord=false
+kept    p89 representa- + tion of an equation, we first  -> representa-tion forms=[] prefixWord=false suffixWord=true
+kept    p112 geome- + tries! -> geome-tries forms=[] prefixWord=false suffixWord=false
+kept    p126 appro- + priate brackets on the ends. -> appro-priate forms=[] prefixWord=false suffixWord=false
+kept    p218 dif- + ferent. In this case we may ha -> dif-ferent forms=[] prefixWord=false suffixWord=false
+kept    p224 Fran- + cois Vieta in 1591 in France.  -> fran-cois forms=[] prefixWord=false suffixWord=false
+kept    p288 “un- + squares” a number. For example -> un-squares forms=[] prefixWord=false suffixWord=true
+kept    p301 re- + writing the radical as 52 -> re-writing forms=[rewrite] prefixWord=true suffixWord=true
+kept    p364 cumber- + some style of using fractions  -> cumber-some forms=[] prefixWord=false suffixWord=true
+kept    p410 intro- + ductory look at how logarithms -> intro-ductory forms=[] prefixWord=false suffixWord=false
+breaks 340, joined decides 316, compound decides 10, reach tier 14, tier removes 1

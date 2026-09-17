@@ -1,0 +1,38 @@
+17,18c17
+< pre: • Attribution: You must attribute the work in the manner specified by the author or
+< p: licensor (but not in any way that suggests that they endorse you or your use of the work).
+---
+> pre: • Attribution: You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
+20,23c19,20
+< pre: • Waiver: Any of the above conditions can be waived if you get permission from the copy-
+< p: right holder.
+< pre: • Public Domain: Where the work or any of its elements is in the public domain under
+< p: applicable law, that status is in no way aﬀected by the license.
+---
+> pre: • Waiver: Any of the above conditions can be waived if you get permission from the copyright holder.
+> pre: • Public Domain: Where the work or any of its elements is in the public domain under applicable law, that status is in no way aﬀected by the license.
+25,26c22
+< pre: − Your fair dealing or fair use rights, or other applicable copyright exceptions and
+< p: limitations;
+---
+> pre: − Your fair dealing or fair use rights, or other applicable copyright exceptions and limitations;
+28,31c24,25
+< pre: − Rights other persons may have either in the work itself or in how the work is used
+< p: such as publicity or privacy rights
+< pre: • Notice: For any reuse or distribution, you must make clear to others the license term of
+< p: this work. The best way to do this is with a link to the following web page:
+---
+> pre: − Rights other persons may have either in the work itself or in how the work is used such as publicity or privacy rights
+> pre: • Notice: For any reuse or distribution, you must make clear to others the license term of this work. The best way to do this is with a link to the following web page:
+216c210
+< p: A few things to be careful of when working with integers. First be sure not to confuse a problem like− 3− 8 with− 3(− 8). The second problem is a multiplication problem because there is nothing between the 3 and the parenthesis. If there is no operation written in between the parts, then we assume that means we are multiplying. The− 3− 8 problem, is subtraction because the subtraction sep-arates the 3 from what comes after it. Another item to watch out for is to be careful not to mix up the pattern for adding and subtracting integers with the pattern for multiplying and dividing integers. They can look very similar, for example if the signs match on addition, the we keep the negative,− 3 + (− 7) =− 10, but if the signs match on multiplication, the answer is positive, (− 3)(− 7) = 21.
+---
+> p: A few things to be careful of when working with integers. First be sure not to confuse a problem like− 3− 8 with− 3(− 8). The second problem is a multiplication problem because there is nothing between the 3 and the parenthesis. If there is no operation written in between the parts, then we assume that means we are multiplying. The− 3− 8 problem, is subtraction because the subtraction separates the 3 from what comes after it. Another item to watch out for is to be careful not to mix up the pattern for adding and subtracting integers with the pattern for multiplying and dividing integers. They can look very similar, for example if the signs match on addition, the we keep the negative,− 3 + (− 7) =− 10, but if the signs match on multiplication, the answer is positive, (− 3)(− 7) = 21.
+1345,1348c1339,1340
+< pre: • More than often represents addition and is usually built backwards,
+< p: writing the second part plus the first Three more than a number becomes x + 3
+< pre: • Less than often represents subtraction and is usually built backwards as
+< p: well, writing the second part minus the first Four less than a number becomes x− 4
+---
+> pre: • More than often represents addition and is usually built backwards, writing the second part plus the first Three more than a number becomes x + 3
+> pre: • Less than often represents subtraction and is usually built backwards as well, writing the second part minus the first Four less than a number becomes x− 4

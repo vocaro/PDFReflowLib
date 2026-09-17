@@ -142,6 +142,13 @@ second on page N+1. Both read `<pre>` identities, which `continuedParagraphs` do
 list item that regressed into a paragraph fails the list check rather than quietly satisfying the
 paragraph one. See the [list-continuation evidence](../measurements/list-continuations/record.md).
 
+`preformattedLines` names two or more lines that one `<pre>` block on the page must hold, each as a
+whole line of its own (its line breaks are read before whitespace is normalized) and in the order
+given. A block whose lines merged into one, split into separate elements or became paragraphs
+fails, as does a named line that is only a prefix of a block line. FAA page 319's TAF uses it: the
+report is one block and each change group stays its own line
+([coded-report evidence](../measurements/list-bullets-and-coded-reports/record.md)).
+
 The checker has negative controls for deleted text, text moved to the wrong page, reversed order,
 missing images, flattened or misplaced superscripts/subscripts, missing/wrong-page warnings, changed source identity, failed conversion, missing
 or duplicate page markers, split or wrongly joined paragraphs across a page marker, and captions

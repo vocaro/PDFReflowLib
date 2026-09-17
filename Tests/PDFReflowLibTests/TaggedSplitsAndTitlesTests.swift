@@ -114,10 +114,16 @@ private func separate(_ blocks: [ReflowBlock], _ end: String, _ next: String) ->
     let acronyms = reconstruct([try faa(462)])
     #expect(paragraphs(acronyms).contains("ARRA—American Recovery and Reinvestment Act of 2009"))
     #expect(paragraphs(acronyms).contains("ARSA—airport service radar area"))
-    // FAA page 319: a TAF's change groups are separate lines of the report.
+    // FAA page 319: a TAF's change groups are separate lines of the report, which is one
+    // preformatted block (#96).
     let taf = reconstruct([try faa(319)])
-    #expect(paragraphs(taf).contains("FM1500 16015G25KT P6SM SCT040 BKN250"))
-    #expect(paragraphs(taf).contains { $0.hasPrefix("FM120400 1408KT") })
+    let report = try #require(taf.compactMap { block -> String? in
+        if case let .preformatted(text) = block.content, text.text.hasPrefix("TAF\n") { text.text } else { nil }
+    }.first)
+    let lines = report.components(separatedBy: "\n")
+    #expect(lines.contains("FM1500 16015G25KT P6SM SCT040 BKN250"))
+    #expect(lines.contains { $0.hasPrefix("FM120400 1408KT") })
+    #expect(!paragraphs(taf).contains { $0.contains("FM1500") })
     // FAA page 416: NDB class rows fill the measure only because their numbers are right-aligned.
     let rows = reconstruct([try faa(416)])
     #expect(!paragraphs(rows).contains { $0.contains("Under 25 15 MH") })

@@ -2035,6 +2035,25 @@ enum LayoutReconstructor {
             }
             return siblings.count >= 2 && siblings.contains { $0.number == number - 1 || $0.number == number + 1 }
         }
+        // An inline expression makes its line's rectangle taller than the page's ordinary line of
+        // that size, above the type (a radical's bar) or below it (Wallace's minus and times glyphs
+        // drop the rectangle 8.5 points), so that line overlaps its neighbour by more than tight
+        // leading does (#109). The extra height counts for a line set as prose on its paragraph's
+        // measure (`isProseRow`); a derivation's stacked terms and annotations are not, and a
+        // rectangle more than twice the ordinary height is a display, not an inline expression.
+        //
+        // A list item's lines are set on the item's own measure, not the paragraph's, so for them
+        // `listText` also accepts a line that reads as a sentence (Wallace page 2's `− Your fair
+        // dealing or fair use rights, …`, whose measure only one other line shares, #115). An
+        // exercise row of terms is still not.
+        func extraHeight(_ line: TextLine, listText: Bool = false) -> CGFloat {
+            guard let ordinary = ordinaryLineHeight(line.fontSize, in: lines),
+                  line.rect.height > ordinary + body * 0.25,
+                  line.rect.height <= ordinary * 2 else { return 0 }
+            let readsAsItemText = listText && isWordy(line.text) && readsAsSentence(line.text)
+            guard readsAsItemText || isProseRow(line, in: free, body: body) else { return 0 }
+            return line.rect.height - ordinary
+        }
         // A list item's marker line opens the item; its wrapped lines are set in the hanging
         // indent under the item's text, at ordinary line spacing and no larger than the item.
         // The item closes at the next marker, a paragraph gap, a dedent to the marker's edge,
@@ -2043,7 +2062,10 @@ enum LayoutReconstructor {
         func continuesListItem(_ line: TextLine, item: (marker: TextLine, last: TextLine, indent: CGFloat?, index: Int)) -> Bool {
             guard !listLine(line), line.fontSize <= item.marker.fontSize + 0.5 else { return false }
             let verticalGap = item.last.rect.minY - line.rect.maxY
-            guard verticalGap >= -body * 0.4, verticalGap < body * 0.9 else { return false }
+            // A tall marker line (Wallace page 2's license bullets, whose rectangles stand 17 points
+            // against the page's 9.9) overlaps its wrapped line as a tall prose line does (#109, #115).
+            let inflation = extraHeight(item.last, listText: true) + extraHeight(line, listText: true)
+            guard verticalGap >= -(body * 0.4 + inflation), verticalGap < body * 0.9 else { return false }
             // The wrapped line starts past the marker, within the width a marker occupies;
             // a deeper indent is nested content and a dedent ends the item.
             let indent = line.rect.minX - item.marker.rect.minX
@@ -2143,6 +2165,25 @@ enum LayoutReconstructor {
         // and the block holding it. Every other branch closes it, as `codeOrigin` closes a
         // code block.
         var listItem: (marker: TextLine, last: TextLine, indent: CGFloat?, index: Int)?
+        // Coded weather reports set over several lines read as one preformatted block each (#96).
+        // A run spans consecutive text lines of the body order; an image, table, boundary or note
+        // between them ends it. Each member maps to the break before it: nil opens the report.
+        var codedReport: [Int: Bool?] = [:]
+        do {
+            var segment: [Int] = []
+            func findRuns() {
+                for run in codedReportRuns(segment.map { elements[$0].line! }, body: body) {
+                    for (offset, member) in run.enumerated() {
+                        codedReport[segment[member.index]] = .some(offset == 0 ? nil : member.lineBreak)
+                    }
+                }
+                segment = []
+            }
+            for index in bodyElements {
+                if elements[index].line != nil, noteGroups[index] == nil { segment.append(index) } else { findRuns() }
+            }
+            findRuns()
+        }
         for index in bodyElements {
             let element = elements[index]
             let previousHeading = headingRow
@@ -2183,6 +2224,20 @@ enum LayoutReconstructor {
                 continue
             }
             guard let line = element.line else { continue }
+            if let member = codedReport[index] {
+                flushTagged()
+                flush()
+                codeOrigin = nil
+                if let lineBreak = member, let last = result.indices.last, case let .preformatted(text) = result[last].content {
+                    var combined = text
+                    combined.append(InlineText(lineBreak ? "\n" : " "))
+                    combined.append(line.content)
+                    result[last].content = .preformatted(combined)
+                } else {
+                    result.append(ReflowBlock(content: .preformatted(line.content), page: page.number))
+                }
+                continue
+            }
             if let tag = line.structure {
                 // A paragraph group can open on the line an untagged paragraph wraps onto: FAA page
                 // 127 tags `…there is maximum thrust.` with text across a figure, so its group falls
@@ -2286,22 +2341,10 @@ enum LayoutReconstructor {
                 var attachedGap: CGFloat?
                 if let prev = previous {
                     let verticalGap = prev.rect.minY - line.rect.maxY
-                    // An inline expression makes its line's rectangle taller than the page's
-                    // ordinary line of that size, above the type (a radical's bar) or below it
-                    // (Wallace's minus and times glyphs drop the rectangle 8.5 points), so that
-                    // line overlaps its neighbour by more than tight leading does (#109). The
-                    // overlap allowed grows by the extra height of a line set as prose on its
-                    // paragraph's measure (`isProseRow`); a derivation's stacked terms and
-                    // annotations are not, and a rectangle more than twice the ordinary height is
-                    // a display, not an inline expression. The paragraph gap above is still
-                    // measured on the rectangles, and such a gap is not the paragraph's leading.
-                    let inflation = [prev, line].map { neighbour -> CGFloat in
-                        guard let ordinary = ordinaryLineHeight(neighbour.fontSize, in: lines),
-                              neighbour.rect.height > ordinary + body * 0.25,
-                              neighbour.rect.height <= ordinary * 2,
-                              isProseRow(neighbour, in: free, body: body) else { return 0 }
-                        return neighbour.rect.height - ordinary
-                    }.reduce(0, +)
+                    // The overlap allowed grows by either line's extra height (`extraHeight`, #109).
+                    // The paragraph gap above is still measured on the rectangles, and such a gap
+                    // is not the paragraph's leading.
+                    let inflation = extraHeight(prev) + extraHeight(line)
                     let sameColumn = abs(prev.rect.minX - line.rect.minX) < body * 1.5
                         && verticalGap >= -(body * 0.4 + inflation) && verticalGap < body * 0.9
                     let shortEnding = prev.rect.width < line.rect.width * 0.65
@@ -2779,6 +2822,89 @@ enum LayoutReconstructor {
         }
     }
 
+    /// The groups of the aviation weather report formats (METAR/SPECI, TAF, PIREP; FAA-H-8083-25C
+    /// chapter 13) a line carries, or nil when the line cannot belong to a coded report because a
+    /// token holds a lowercase letter or a character the formats never use. Groups are a
+    /// date-time group (`161753Z`), wind (`14021G26KT`), visibility (`3/4SM`, `P6SM`), sky
+    /// condition (`OVC012CB`), temperature and dew point (`18/17`), altimeter (`A2970`), a valid
+    /// period (`1112/1212`), a change group (`FM1500`, `TEMPO`, `PROB30`), the report types and
+    /// modifiers (`METAR`, `AUTO`, `RMK`), coded weather (`+TSRA`, `BR`) and PIREP fields
+    /// (`UA/OV`, `C182/SK`).
+    static func codedReportGroupCount(_ text: String) -> Int? {
+        let tokens = text.split(whereSeparator: \.isWhitespace)
+        guard !tokens.isEmpty, tokens.allSatisfy({ token in
+            token.allSatisfy { $0.isASCII && ($0.isUppercase || $0.isNumber || "/+-".contains($0)) }
+        }) else { return nil }
+        return tokens.indices.reduce(0) { count, index in
+            let word = String(tokens[index])
+            let fields = word.split(separator: "/", omittingEmptySubsequences: false).dropFirst()
+                .filter { codedReportFields.contains(String($0)) }.count
+            if fields > 0 { return count + fields + (word.hasPrefix("UA/") || word.hasPrefix("UUA/") ? 1 : 0) }
+            // A station identifier is four letters or digits only before the report's date-time group.
+            let station = word.range(of: "^[A-Z][A-Z0-9]{3}$", options: .regularExpression) != nil
+                && index + 1 < tokens.count && tokens[index + 1].range(of: "^[0-9]{6}Z$", options: .regularExpression) != nil
+            return count + (station || word.range(of: codedReportGroup, options: .regularExpression) != nil ? 1 : 0)
+        }
+    }
+
+    private static let codedReportFields: Set<String> = ["OV", "TM", "FL", "TP", "SK", "WX", "TA", "WV", "TB", "IC", "RM"]
+
+    private static let codedReportGroup = "^(?:[0-9]{6}Z|(?:[0-9]{3}|VRB)[0-9]{2,3}(?:G[0-9]{2,3})?KT|P?[0-9]{1,2}SM|M?[0-9]/[0-9]SM"
+        + "|(?:FEW|SCT|BKN|OVC|VV)[0-9]{3}(?:CB|TCU)?|SKC|CLR|M?[0-9]{2}/M?[0-9]{2}|A[0-9]{4}|[0-9]{4}/[0-9]{4}"
+        + "|FM[0-9]{4,6}|TEMPO|BECMG|PROB[0-9]{2}|METAR|SPECI|TAF|AUTO|COR|AMD|RMK"
+        + "|[+-]?(?:VC)?(?:MI|PR|BC|DR|BL|SH|TS|FZ)?(?:DZ|RA|SN|SG|IC|PL|GR|GS|UP|BR|FG|FU|VA|DU|SA|HZ|PY|PO|SQ|FC|SS|DS)+)$"
+
+    /// A line that is only a report type (`TAF` above `KPIR 111130Z 1112/1212`, FAA page 319).
+    static func isCodedReportType(_ text: String) -> Bool {
+        text.range(of: "^(?:METAR|SPECI|TAF)(?: AMD| COR)?$", options: .regularExpression) != nil
+    }
+
+    /// The runs of lines, in reading order, that set one coded weather report over several lines
+    /// (#96). The source sets each report line as a paragraph of its own, so no layout evidence
+    /// joins a METAR's wrapped `…A2970 RMK` / `PRESFR` while keeping a TAF's change groups apart;
+    /// the report's own format does. A run opens on a line of at least three report groups, or on
+    /// a lone report type directly above such a line. It continues through lines in the same
+    /// column at ordinary leading and size that hold only report characters, carry a report group
+    /// (or follow `RMK`, whose remarks are free text in capitals) and do not open another report.
+    /// Each member records whether the source's break before it is significant: after a lone
+    /// report type and before a TAF change group (`FM1500`, `TEMPO`, `BECMG`, `PROB30`) it is; a
+    /// report wrapped at the column's edge is not.
+    static func codedReportRuns(_ lines: [TextLine], body: CGFloat) -> [[(index: Int, lineBreak: Bool)]] {
+        var runs: [[(index: Int, lineBreak: Bool)]] = []
+        var current: [(index: Int, lineBreak: Bool)] = []
+        var remarks = false
+        func close() {
+            if current.count >= 2 { runs.append(current) }
+            current = []
+            remarks = false
+        }
+        func holdsRemarks(_ text: String) -> Bool { text.split(whereSeparator: \.isWhitespace).contains("RMK") }
+        for (index, line) in lines.enumerated() {
+            let count = line.monospaced ? nil : codedReportGroupCount(line.text)
+            if let last = current.last.map({ lines[$0.index] }), let count {
+                let gap = last.rect.minY - line.rect.maxY
+                let opensReport = line.text.range(of: "^(?:METAR|SPECI|TAF|UUA|UA)(?:\\s|/|$)", options: .regularExpression) != nil
+                if abs(last.rect.minX - line.rect.minX) <= body * 0.5, abs(last.fontSize - line.fontSize) <= 0.5,
+                   gap >= -body * 0.4, gap < body * 0.9, !opensReport, count >= 1 || remarks {
+                    let changeGroup = line.text.range(of: "^(?:FM[0-9]{4,6}|TEMPO|BECMG|PROB[0-9]{2})(?:\\s|$)",
+                                                      options: .regularExpression) != nil
+                    current.append((index, isCodedReportType(last.text) || changeGroup))
+                    remarks = remarks || holdsRemarks(line.text)
+                    continue
+                }
+            }
+            close()
+            guard let count else { continue }
+            let next = index + 1 < lines.count ? codedReportGroupCount(lines[index + 1].text) ?? 0 : 0
+            if count >= 3 || isCodedReportType(line.text) && next >= 3 {
+                current = [(index, false)]
+                remarks = holdsRemarks(line.text)
+            }
+        }
+        close()
+        return runs
+    }
+
     /// A numeric parenthesis marker set tight against a minus sign (`1)− 2`, as the algebra
     /// answer keys extract) is also a list item; the period form stays space-delimited so
     /// dedented note continuations such as `5.This` keep their existing handling.
@@ -2917,8 +3043,51 @@ enum LayoutReconstructor {
         let joined = (String(prefix) + suffix).lowercased()
         let compound = (String(prefix) + "-" + suffix).lowercased()
         if vocabulary.contains(joined), !vocabulary.contains(compound) { return .removeHyphen }
-        if !vocabulary.contains(compound) { uncertainHyphen(page: page, warnings: &warnings) }
+        if vocabulary.contains(compound) { return .concatenate }
+        if inflectionVouches(prefix: String(prefix).lowercased(), suffix: suffix.lowercased(), vocabulary: vocabulary) {
+            return .removeHyphen
+        }
+        uncertainHyphen(page: page, warnings: &warnings)
         return .concatenate
+    }
+
+    private static let inflections = ["s", "es", "d", "ed", "ing", "ly"]
+
+    /// The forms a word shares its stem with: the word, and the word without one inflectional
+    /// ending, with a dropped final `e` restored (`separates` → `separate`, `distributing` →
+    /// `distribut`, `distribute`), each with every ending added back.
+    static func inflectedForms(_ word: String) -> Set<String> {
+        var stems: Set<String> = [word]
+        for ending in inflections where word.hasSuffix(ending) && word.count - ending.count >= 4 {
+            let stem = String(word.dropLast(ending.count))
+            stems.insert(stem)
+            if !stem.hasSuffix("e") { stems.insert(stem + "e") }
+        }
+        var forms = stems
+        for stem in stems {
+            for ending in inflections {
+                forms.insert(stem + ending)
+                if stem.hasSuffix("e"), ending.first.map({ "ei".contains($0) }) == true { forms.insert(stem.dropLast() + ending) }
+            }
+        }
+        return forms
+    }
+
+    /// A line-end hyphen neither the joined word nor the compound decides (#115). The book vouches
+    /// for the join when it uses another inflected form of the joined word (`sep-` + `arates`, where
+    /// Wallace prints `separate`, `separated` and `separately` but never `separates`), no inflected
+    /// form of the compound, and the halves are not both words of their own, as a compound's halves
+    /// are (`sharp-` + `edged`). Short stems are not evidence.
+    static func inflectionVouches(prefix: String, suffix: String, vocabulary: Set<String>) -> Bool {
+        guard prefix.count >= 2, suffix.count >= 2, prefix.count + suffix.count >= 6,
+              !(vocabulary.contains(prefix) && vocabulary.contains(suffix)) else { return false }
+        let joined = prefix + suffix
+        let compounds = inflectedForms(joined).compactMap { form -> String? in
+            guard form.hasPrefix(prefix), form.count > prefix.count else { return nil }
+            return prefix + "-" + form.dropFirst(prefix.count)
+        }
+        guard !compounds.contains(where: vocabulary.contains) else { return false }
+        return inflectedForms(joined).contains { $0 != joined && vocabulary.contains($0) }
     }
 
     static func join(_ left: String, _ right: String, vocabulary: Set<String>, page: Int,

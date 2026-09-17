@@ -173,6 +173,10 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
         # A <pre> list item carries its own identity, so a wrapped item continued across a page
         # marker is one block there too (#50).
         page['listItemIDs'] = {item: normalized(text) for item, text in page['listItems'].items()}
+        # A <pre> block's own line breaks, which normalization would erase: a coded report's
+        # change groups are separate lines of one block (#96).
+        page['preformattedLines'] = [[normalized(line) for line in text.split('\n') if normalized(line)]
+                                     for text in page['listItems'].values()]
         page['listItems'] = [normalized(text) for text in page['listItems'].values()]
         page['paragraphs'] = [normalized(text) for text in page['paragraphs'].values()]
         page['notes'] = [normalized(text) for text in page['notes'].values()]
@@ -281,7 +285,7 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'maximumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'absentHeadings', 'paragraphs', 'listItems', 'notes', 'noteLinks', 'continuedParagraphs', 'continuedListItems', 'separateParagraphs', 'distinctParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'maximumImages', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentText', 'headings', 'absentHeadings', 'paragraphs', 'listItems', 'preformattedLines', 'notes', 'noteLinks', 'continuedParagraphs', 'continuedListItems', 'separateParagraphs', 'distinctParagraphs', 'imageRegions', 'glyphRegions', 'imageAppearance', 'tableCells')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -323,6 +327,23 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
             # under its hanging indent are one item (#50, #64).
             if not any(normalized(phrase) in block for block in page.get('listItems', [])):
                 errors.append(f'Page {number}: missing list item {phrase!r}')
+        for lines in item.get('preformattedLines', []):
+            if (not isinstance(lines, list) or len(lines) < 2
+                    or any(not isinstance(line, str) or not normalized(line) for line in lines)):
+                raise ValueError('Preformatted lines require at least two nonempty lines')
+            checks += 1
+            # One <pre> block holds every named line, each as a whole line of its own and in this
+            # order, so the block's lines neither merge nor split into separate elements (#96).
+            wanted = [normalized(line) for line in lines]
+
+            def holds(block):
+                position = 0
+                for line in block:
+                    if position < len(wanted) and line == wanted[position]:
+                        position += 1
+                return position == len(wanted)
+            if not any(holds(block) for block in page.get('preformattedLines', [])):
+                errors.append(f'Page {number}: no preformatted block with the lines {lines!r}')
         for phrase in item.get('notes', []):
             if not isinstance(phrase, str) or not normalized(phrase):
                 raise ValueError('Empty or invalid footnote phrase')

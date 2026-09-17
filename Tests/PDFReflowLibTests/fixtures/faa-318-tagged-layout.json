@@ -1,0 +1,1971 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "13-8"
+        }
+      ],
+      "text" : "13-8"
+    },
+    {
+      "rect" : [
+        36.5,
+        84.441000000000003,
+        484.00010000000009,
+        291.8347
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36,
+        64.31280000000001,
+        160.63330000000002,
+        10.811999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 13-7."
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : " PIREP encoding and decoding."
+        }
+      ],
+      "text" : "Figure 13-7. PIREP encoding and decoding."
+    },
+    {
+      "rect" : [
+        36,
+        719.56640000000004,
+        51.110000000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Explanation:"
+        }
+      ],
+      "text" : "Explanation:"
+    },
+    {
+      "rect" : [
+        36,
+        707.06640000000004,
+        236.87,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Routine METAR for Gregg County Airport for the 16th"
+        }
+      ],
+      "text" : "Routine METAR for Gregg County Airport for the 16th"
+    },
+    {
+      "rect" : [
+        36,
+        694.56640000000004,
+        237.10300000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "day of the month at 1753Z automated source. Winds are"
+        }
+      ],
+      "text" : "day of the month at 1753Z automated source. Winds are"
+    },
+    {
+      "rect" : [
+        36,
+        682.06640000000004,
+        237.02299999999985,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "140 at 21 knots gusting to 26. Visibility is ¾ statute mile."
+        }
+      ],
+      "text" : "140 at 21 knots gusting to 26. Visibility is ¾ statute mile."
+    },
+    {
+      "rect" : [
+        36,
+        669.56640000000004,
+        237.01400000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Thunderstorms with heavy rain and mist. Ceiling is broken"
+        }
+      ],
+      "text" : "Thunderstorms with heavy rain and mist. Ceiling is broken"
+    },
+    {
+      "rect" : [
+        36,
+        657.06640000000004,
+        236.89999999999986,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "at 800 feet, overcast at 1,200 feet with cumulonimbus clouds."
+        }
+      ],
+      "text" : "at 800 feet, overcast at 1,200 feet with cumulonimbus clouds."
+    },
+    {
+      "rect" : [
+        36,
+        644.56640000000004,
+        237.07500000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Temperature 18 °C and dew point 17 °C. Barometric pressure"
+        }
+      ],
+      "text" : "Temperature 18 °C and dew point 17 °C. Barometric pressure"
+    },
+    {
+      "rect" : [
+        36,
+        632.06640000000004,
+        129.35000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is 29.70 \"Hg and falling rapidly."
+        }
+      ],
+      "text" : "is 29.70 \"Hg and falling rapidly."
+    },
+    {
+      "rect" : [
+        36,
+        606.49639999999999,
+        149.47,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Pilot Weather Reports (PIREPs)"
+        }
+      ],
+      "text" : "Pilot Weather Reports (PIREPs)"
+    },
+    {
+      "rect" : [
+        36,
+        594.06640000000004,
+        237.01999999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "PIREPs provide valuable information regarding the"
+        }
+      ],
+      "text" : "PIREPs provide valuable information regarding the"
+    },
+    {
+      "rect" : [
+        36,
+        581.56640000000004,
+        237.012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "conditions as they actually exist in the air, which cannot be"
+        }
+      ],
+      "text" : "conditions as they actually exist in the air, which cannot be"
+    },
+    {
+      "rect" : [
+        36,
+        569.06640000000004,
+        236.92999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "gathered from any other source. Pilots can confirm the height"
+        }
+      ],
+      "text" : "gathered from any other source. Pilots can confirm the height"
+    },
+    {
+      "rect" : [
+        36,
+        556.56640000000004,
+        237.12999999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of bases and tops of clouds, locations of wind shear and"
+        }
+      ],
+      "text" : "of bases and tops of clouds, locations of wind shear and"
+    },
+    {
+      "rect" : [
+        36,
+        544.06640000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "turbulence, and the location of inflight icing. If the ceiling is"
+        }
+      ],
+      "text" : "turbulence, and the location of inflight icing. If the ceiling is"
+    },
+    {
+      "rect" : [
+        36,
+        531.56640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "below 5,000 feet, or visibility is at or below five miles, ATC"
+        }
+      ],
+      "text" : "below 5,000 feet, or visibility is at or below five miles, ATC"
+    },
+    {
+      "rect" : [
+        36,
+        519.06640000000004,
+        237.03899999999982,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "facilities are required to solicit PIREPs from pilots in the area."
+        }
+      ],
+      "text" : "facilities are required to solicit PIREPs from pilots in the area."
+    },
+    {
+      "rect" : [
+        36,
+        506.56640000000004,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When unexpected weather conditions are encountered, pilots"
+        }
+      ],
+      "text" : "When unexpected weather conditions are encountered, pilots"
+    },
+    {
+      "rect" : [
+        36,
+        494.06640000000004,
+        236.99700000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are encouraged to make a report to a FSS or ATC. When a"
+        }
+      ],
+      "text" : "are encouraged to make a report to a FSS or ATC. When a"
+    },
+    {
+      "rect" : [
+        36,
+        481.56640000000004,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "pilot weather report is filed, the ATC facility or FSS adds it"
+        }
+      ],
+      "text" : "pilot weather report is filed, the ATC facility or FSS adds it"
+    },
+    {
+      "rect" : [
+        36,
+        469.06640000000004,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to the distribution system to brief other pilots and provide"
+        }
+      ],
+      "text" : "to the distribution system to brief other pilots and provide"
+    },
+    {
+      "rect" : [
+        36,
+        456.56640000000004,
+        75,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "inflight advisories."
+        }
+      ],
+      "text" : "inflight advisories."
+    },
+    {
+      "rect" : [
+        36,
+        431.56640000000004,
+        237.09500000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "PIREPs are easy to file and a standard reporting form outlines"
+        }
+      ],
+      "text" : "PIREPs are easy to file and a standard reporting form outlines"
+    },
+    {
+      "rect" : [
+        36,
+        419.06640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the manner in which they should be filed. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "Figure 13-7"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " shows"
+        }
+      ],
+      "text" : "the manner in which they should be filed. Figure 13-7 shows"
+    },
+    {
+      "rect" : [
+        36,
+        406.56640000000004,
+        237.02300000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the elements of a PIREP form. Item numbers 1 through 5 are"
+        }
+      ],
+      "text" : "the elements of a PIREP form. Item numbers 1 through 5 are"
+    },
+    {
+      "rect" : [
+        36,
+        394.06640000000004,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "required information when making a report, as well as at least"
+        }
+      ],
+      "text" : "required information when making a report, as well as at least"
+    },
+    {
+      "rect" : [
+        285,
+        719.56640000000004,
+        237.02000000000021,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "one weather phenomenon encountered. A PIREP is normally"
+        }
+      ],
+      "text" : "one weather phenomenon encountered. A PIREP is normally"
+    },
+    {
+      "rect" : [
+        285,
+        707.06640000000004,
+        237.01700000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "transmitted as an individual report but may be appended to"
+        }
+      ],
+      "text" : "transmitted as an individual report but may be appended to"
+    },
+    {
+      "rect" : [
+        285,
+        694.56640000000004,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a surface report. Pilot reports are easily decoded, and most"
+        }
+      ],
+      "text" : "a surface report. Pilot reports are easily decoded, and most"
+    },
+    {
+      "rect" : [
+        285,
+        682.06640000000004,
+        209.66999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "contractions used in the reports are self-explanatory."
+        }
+      ],
+      "text" : "contractions used in the reports are self-explanatory."
+    },
+    {
+      "rect" : [
+        285,
+        657.06640000000004,
+        38.329999999999984,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Example:"
+        }
+      ],
+      "text" : "Example:"
+    },
+    {
+      "rect" : [
+        285,
+        644.56640000000004,
+        214.73000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "UA/OV GGG 090025/TM 1450/FL 060/TP C182/SK"
+        }
+      ],
+      "text" : "UA/OV GGG 090025/TM 1450/FL 060/TP C182/SK"
+    },
+    {
+      "rect" : [
+        285,
+        632.06640000000004,
+        237.06000000000017,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "080 OVC/WX FV04SM RA/TA 05/WV 270030KT/TB"
+        }
+      ],
+      "text" : "080 OVC/WX FV04SM RA/TA 05/WV 270030KT/TB"
+    },
+    {
+      "rect" : [
+        285,
+        619.56640000000004,
+        88.879999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "LGT/RM HVY RAIN"
+        }
+      ],
+      "text" : "LGT/RM HVY RAIN"
+    },
+    {
+      "rect" : [
+        285,
+        594.56640000000004,
+        51.110000000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Explanation:"
+        }
+      ],
+      "text" : "Explanation:"
+    },
+    {
+      "rect" : [
+        285,
+        582.06640000000004,
+        187.21999999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Type: .................................Routine pilot report"
+        }
+      ],
+      "text" : "Type: .................................Routine pilot report"
+    },
+    {
+      "rect" : [
+        285,
+        569.56640000000004,
+        228.38,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Location: .......................... 25 NM out on the 090° radial,"
+        }
+      ],
+      "text" : "Location: .......................... 25 NM out on the 090° radial,"
+    },
+    {
+      "rect" : [
+        393,
+        557.06640000000004,
+        80.549999999999955,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Gregg County VOR"
+        }
+      ],
+      "text" : "Gregg County VOR"
+    },
+    {
+      "rect" : [
+        285,
+        544.56640000000004,
+        149.38999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Time: ................................ 1450 Zulu"
+        }
+      ],
+      "text" : "Time: ................................ 1450 Zulu"
+    },
+    {
+      "rect" : [
+        285,
+        532.06640000000004,
+        147.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Altitude or Flight Level: 6,000 feet"
+        }
+      ],
+      "text" : "Altitude or Flight Level: 6,000 feet"
+    },
+    {
+      "rect" : [
+        285,
+        519.56640000000004,
+        153.82999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Aircraft Type: ................... Cessna 182"
+        }
+      ],
+      "text" : "Aircraft Type: ................... Cessna 182"
+    },
+    {
+      "rect" : [
+        285,
+        507.06640000000004,
+        166.31999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Sky Cover: ........................ 8,000 overcast"
+        }
+      ],
+      "text" : "Sky Cover: ........................ 8,000 overcast"
+    },
+    {
+      "rect" : [
+        285,
+        494.56640000000004,
+        165.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Visibility/Weather: ........... 4 miles in rain"
+        }
+      ],
+      "text" : "Visibility/Weather: ........... 4 miles in rain"
+    },
+    {
+      "rect" : [
+        285,
+        482.06640000000004,
+        149.82000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Temperature: .....................5 °Celsius"
+        }
+      ],
+      "text" : "Temperature: .....................5 °Celsius"
+    },
+    {
+      "rect" : [
+        285,
+        469.56640000000004,
+        173.38999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Wind: ................................ 270° at 30 knots"
+        }
+      ],
+      "text" : "Wind: ................................ 270° at 30 knots"
+    },
+    {
+      "rect" : [
+        285,
+        457.06640000000004,
+        129.99000000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Turbulence: .......................Light"
+        }
+      ],
+      "text" : "Turbulence: .......................Light"
+    },
+    {
+      "rect" : [
+        285,
+        444.56640000000004,
+        165.48000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Icing: ................................ None reported"
+        }
+      ],
+      "text" : "Icing: ................................ None reported"
+    },
+    {
+      "rect" : [
+        285,
+        432.06640000000004,
+        162.44,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Remarks: .......................... Rain is heavy"
+        }
+      ],
+      "text" : "Remarks: .......................... Rain is heavy"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+    [
+      36,
+      83.24150000000003,
+      485,
+      293.85849999999999
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "text" : "13-8"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        64.31280000000001,
+        160.63330000000002,
+        10.811999999999998
+      ],
+      "text" : "Figure 13-7. PIREP encoding and decoding."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        719.56640000000004,
+        51.110000000000014,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4615,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22727
+      },
+      "text" : "Explanation:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        707.06640000000004,
+        236.87,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4616,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22728
+      },
+      "text" : "Routine METAR for Gregg County Airport for the 16th"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        694.56640000000004,
+        237.10300000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4616,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22729
+      },
+      "text" : "day of the month at 1753Z automated source. Winds are"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        682.06640000000004,
+        237.02299999999985,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4616,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22730
+      },
+      "text" : "140 at 21 knots gusting to 26. Visibility is ¾ statute mile."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        669.56640000000004,
+        237.01400000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4616,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22731
+      },
+      "text" : "Thunderstorms with heavy rain and mist. Ceiling is broken"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        657.06640000000004,
+        236.89999999999986,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4616,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22732
+      },
+      "text" : "at 800 feet, overcast at 1,200 feet with cumulonimbus clouds."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        644.56640000000004,
+        237.07500000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4616,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22733
+      },
+      "text" : "Temperature 18 °C and dew point 17 °C. Barometric pressure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        632.06640000000004,
+        129.35000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4616,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22734
+      },
+      "text" : "is 29.70 \"Hg and falling rapidly."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        606.49639999999999,
+        149.47,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 4617,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22735
+      },
+      "text" : "Pilot Weather Reports (PIREPs)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        594.06640000000004,
+        237.01999999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4618,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22736
+      },
+      "text" : "PIREPs provide valuable information regarding the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        581.56640000000004,
+        237.012,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4618,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22737
+      },
+      "text" : "conditions as they actually exist in the air, which cannot be"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        569.06640000000004,
+        236.92999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4618,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22738
+      },
+      "text" : "gathered from any other source. Pilots can confirm the height"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        556.56640000000004,
+        237.12999999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4618,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22739
+      },
+      "text" : "of bases and tops of clouds, locations of wind shear and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        544.06640000000004,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4618,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22740
+      },
+      "text" : "turbulence, and the location of inflight icing. If the ceiling is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        531.56640000000004,
+        237.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4618,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22741
+      },
+      "text" : "below 5,000 feet, or visibility is at or below five miles, ATC"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        519.06640000000004,
+        237.03899999999982,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4618,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22742
+      },
+      "text" : "facilities are required to solicit PIREPs from pilots in the area."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        506.56640000000004,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4618,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22743
+      },
+      "text" : "When unexpected weather conditions are encountered, pilots"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        494.06640000000004,
+        236.99700000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4618,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22744
+      },
+      "text" : "are encouraged to make a report to a FSS or ATC. When a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        481.56640000000004,
+        236.99999999999989,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4618,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22745
+      },
+      "text" : "pilot weather report is filed, the ATC facility or FSS adds it"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        469.06640000000004,
+        237.02999999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4618,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22746
+      },
+      "text" : "to the distribution system to brief other pilots and provide"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        456.56640000000004,
+        75,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4618,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22747
+      },
+      "text" : "inflight advisories."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        431.56640000000004,
+        237.09500000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4620,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22749
+      },
+      "text" : "PIREPs are easy to file and a standard reporting form outlines"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        419.06640000000004,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4620,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22750
+      },
+      "text" : "the manner in which they should be filed. Figure 13-7 shows"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        406.56640000000004,
+        237.02300000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4620,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22753
+      },
+      "text" : "the elements of a PIREP form. Item numbers 1 through 5 are"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        394.06640000000004,
+        236.98000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4620,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22754
+      },
+      "text" : "required information when making a report, as well as at least"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        719.56640000000004,
+        237.02000000000021,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4620,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22755
+      },
+      "text" : "one weather phenomenon encountered. A PIREP is normally"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        707.06640000000004,
+        237.01700000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4620,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22756
+      },
+      "text" : "transmitted as an individual report but may be appended to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        694.56640000000004,
+        236.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4620,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22757
+      },
+      "text" : "a surface report. Pilot reports are easily decoded, and most"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        682.06640000000004,
+        209.66999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4620,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22758
+      },
+      "text" : "contractions used in the reports are self-explanatory."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        657.06640000000004,
+        38.329999999999984,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4621,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22759
+      },
+      "text" : "Example:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        644.56640000000004,
+        214.73000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4622,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22760
+      },
+      "text" : "UA/OV GGG 090025/TM 1450/FL 060/TP C182/SK"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        632.06640000000004,
+        237.06000000000017,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4623,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 22761
+      },
+      "text" : "080 OVC/WX FV04SM RA/TA 05/WV 270030KT/TB"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        619.56640000000004,
+        88.879999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4623,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 22762
+      },
+      "text" : "LGT/RM HVY RAIN"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        594.56640000000004,
+        51.110000000000014,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4624,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22763
+      },
+      "text" : "Explanation:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        582.06640000000004,
+        187.21999999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4625,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22764
+      },
+      "text" : "Type: .................................Routine pilot report"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        569.56640000000004,
+        228.38,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4626,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 22765
+      },
+      "text" : "Location: .......................... 25 NM out on the 090° radial,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        393,
+        557.06640000000004,
+        80.549999999999955,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4626,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 22766
+      },
+      "text" : "Gregg County VOR"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        544.56640000000004,
+        149.38999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4627,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22767
+      },
+      "text" : "Time: ................................ 1450 Zulu"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        532.06640000000004,
+        147.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4628,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22768
+      },
+      "text" : "Altitude or Flight Level: 6,000 feet"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        519.56640000000004,
+        153.82999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4629,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22769
+      },
+      "text" : "Aircraft Type: ................... Cessna 182"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        507.06640000000004,
+        166.31999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4630,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22770
+      },
+      "text" : "Sky Cover: ........................ 8,000 overcast"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        494.56640000000004,
+        165.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4631,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22771
+      },
+      "text" : "Visibility/Weather: ........... 4 miles in rain"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        482.06640000000004,
+        149.82000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4632,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22772
+      },
+      "text" : "Temperature: .....................5 °Celsius"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        469.56640000000004,
+        173.38999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4633,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22773
+      },
+      "text" : "Wind: ................................ 270° at 30 knots"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        457.06640000000004,
+        129.99000000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4634,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22774
+      },
+      "text" : "Turbulence: .......................Light"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        444.56640000000004,
+        165.48000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4635,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22775
+      },
+      "text" : "Icing: ................................ None reported"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        432.06640000000004,
+        162.44,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4636,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22776
+      },
+      "text" : "Remarks: .......................... Rain is heavy"
+    }
+  ],
+  "page" : 318,
+  "paints" : [
+    {
+      "frame" : false,
+      "rect" : [
+        36.75,
+        84.691199999999981,
+        483.5,
+        291.30680000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        36.75,
+        84.691199999999981,
+        483.5,
+        291.30680000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        36.75,
+        84.691199999999981,
+        483.5,
+        291.30680000000001
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        36,
+        83.409000000000006,
+        485,
+        293.69100000000003
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37,
+        84.941199999999995,
+        482.99900000000002,
+        21.979800000000012
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37,
+        84.941199999999995,
+        482.99900000000002,
+        21.980800000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37,
+        129.63399999999999,
+        482.99900000000002,
+        31.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37,
+        129.63399999999999,
+        482.99900000000002,
+        31.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37,
+        349.63299999999998,
+        482.99900000000002,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37,
+        349.63299999999998,
+        482.99900000000002,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37,
+        304.63299999999998,
+        482.99900000000002,
+        32.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37,
+        304.63299999999998,
+        482.99900000000002,
+        32.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37,
+        282.63299999999998,
+        482.99900000000002,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37,
+        282.63299999999998,
+        482.99900000000002,
+        10.980000000000018
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37,
+        227.614,
+        482.99900000000002,
+        44.186000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37,
+        227.614,
+        482.99900000000002,
+        44.186000000000007
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37,
+        184.63200000000001,
+        482.99900000000002,
+        10.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        37,
+        184.63200000000001,
+        482.99900000000002,
+        10.980999999999995
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        36,
+        358.77570000000003,
+        485,
+        18.324299999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        36,
+        358.77570000000003,
+        485,
+        18.324299999999994
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        84,
+        83.24150000000003,
+        4,
+        279.02100000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        56,
+        83.24150000000003,
+        4,
+        279.02100000000002
+      ]
+    },
+    {
+      "frame" : false,
+      "rect" : [
+        223.667,
+        83.24150000000003,
+        4,
+        279.02100000000002
+      ]
+    }
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

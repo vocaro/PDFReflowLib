@@ -89,9 +89,10 @@ private func preformatted(_ blocks: [ReflowBlock]) -> [String] {
 @Test func sourceMinusLinesOutsideJoinedRowsStayListLines() throws {
     let page2 = try sourceBlocks("algebra-2")
     let list = preformatted(page2)
-    #expect(list.contains("− Your fair dealing or fair use rights, or other applicable copyright exceptions and"))
+    // Each item holds its wrapped line (#115).
+    #expect(list.contains("− Your fair dealing or fair use rights, or other applicable copyright exceptions and limitations;"))
     #expect(list.contains("− The author’s moral rights;"))
-    #expect(list.contains("− Rights other persons may have either in the work itself or in how the work is used"))
+    #expect(list.contains("− Rights other persons may have either in the work itself or in how the work is used such as publicity or privacy rights"))
     #expect(list.filter { $0.hasPrefix("• ") }.count == 7)
     #expect(paragraphs(page2).contains("You are free:"))
     #expect(paragraphs(page2).contains("Under the following conditions:"))

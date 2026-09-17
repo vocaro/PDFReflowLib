@@ -1,0 +1,3655 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "13-6"
+        }
+      ],
+      "text" : "13-6"
+    },
+    {
+      "rect" : [
+        36,
+        718.14969999999994,
+        201.67000000000004,
+        13.190000000000055
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Aviation Routine Weather Report (METAR)"
+        }
+      ],
+      "text" : "Aviation Routine Weather Report (METAR)"
+    },
+    {
+      "rect" : [
+        36,
+        705.71969999999999,
+        237.06100000000021,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A METAR is an observation of current surface weather"
+        }
+      ],
+      "text" : "A METAR is an observation of current surface weather"
+    },
+    {
+      "rect" : [
+        36,
+        693.21969999999999,
+        236.88,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "reported in a standard international format. While the"
+        }
+      ],
+      "text" : "reported in a standard international format. While the"
+    },
+    {
+      "rect" : [
+        36,
+        680.71969999999999,
+        237.00899999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "METAR code has been adopted worldwide, each country is"
+        }
+      ],
+      "text" : "METAR code has been adopted worldwide, each country is"
+    },
+    {
+      "rect" : [
+        36,
+        668.21969999999999,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "allowed to make modifications to the code. Normally, these"
+        }
+      ],
+      "text" : "allowed to make modifications to the code. Normally, these"
+    },
+    {
+      "rect" : [
+        36,
+        655.71969999999999,
+        237.02299999999991,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "differences are minor but necessary to accommodate local"
+        }
+      ],
+      "text" : "differences are minor but necessary to accommodate local"
+    },
+    {
+      "rect" : [
+        36,
+        643.21969999999999,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "procedures or particular units of measure. This discussion of"
+        }
+      ],
+      "text" : "procedures or particular units of measure. This discussion of"
+    },
+    {
+      "rect" : [
+        36,
+        630.71969999999999,
+        206.08999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "METAR covers elements used in the United States."
+        }
+      ],
+      "text" : "METAR covers elements used in the United States."
+    },
+    {
+      "rect" : [
+        36,
+        605.71969999999999,
+        236.98999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "METARs are issued on a regularly scheduled basis unless"
+        }
+      ],
+      "text" : "METARs are issued on a regularly scheduled basis unless"
+    },
+    {
+      "rect" : [
+        36,
+        593.21969999999999,
+        237.04600000000028,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "significant weather changes have occurred. A special"
+        }
+      ],
+      "text" : "significant weather changes have occurred. A special"
+    },
+    {
+      "rect" : [
+        36,
+        580.71969999999999,
+        237.00899999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "METAR (SPECI) can be issued at any time between routine"
+        }
+      ],
+      "text" : "METAR (SPECI) can be issued at any time between routine"
+    },
+    {
+      "rect" : [
+        36,
+        568.21969999999999,
+        67.769999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "METAR reports."
+        }
+      ],
+      "text" : "METAR reports."
+    },
+    {
+      "rect" : [
+        36,
+        543.21969999999999,
+        38.329999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Example:"
+        }
+      ],
+      "text" : "Example:"
+    },
+    {
+      "rect" : [
+        36,
+        530.71969999999999,
+        223.03999999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "METAR KGGG 161753Z AUTO 14021G26KT 3/4SM"
+        }
+      ],
+      "text" : "METAR KGGG 161753Z AUTO 14021G26KT 3/4SM"
+    },
+    {
+      "rect" : [
+        36,
+        518.21969999999999,
+        217.88,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "+TSRA BR BKN008 OVC012CB 18/17 A2970 RMK"
+        }
+      ],
+      "text" : "+TSRA BR BKN008 OVC012CB 18/17 A2970 RMK"
+    },
+    {
+      "rect" : [
+        36,
+        505.71969999999999,
+        36.129999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "PRESFR"
+        }
+      ],
+      "text" : "PRESFR"
+    },
+    {
+      "rect" : [
+        36,
+        480.71969999999999,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A typical METAR report contains the following information"
+        }
+      ],
+      "text" : "A typical METAR report contains the following information"
+    },
+    {
+      "rect" : [
+        36,
+        468.21969999999999,
+        77.210000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in sequential order:"
+        }
+      ],
+      "text" : "in sequential order:"
+    },
+    {
+      "rect" : [
+        45,
+        451.21970000000005,
+        7.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "1. "
+        }
+      ],
+      "text" : "1. "
+    },
+    {
+      "rect" : [
+        63,
+        451.21970000000005,
+        209.88999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Type of report—there are two types of METAR"
+        }
+      ],
+      "text" : "Type of report—there are two types of METAR"
+    },
+    {
+      "rect" : [
+        63,
+        438.71970000000005,
+        210.01099999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "reports. The first is the routine METAR report that is"
+        }
+      ],
+      "text" : "reports. The first is the routine METAR report that is"
+    },
+    {
+      "rect" : [
+        63,
+        426.21970000000005,
+        210.00100000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "transmitted on a regular time interval. The second is"
+        }
+      ],
+      "text" : "transmitted on a regular time interval. The second is"
+    },
+    {
+      "rect" : [
+        63,
+        413.71970000000005,
+        210.01299999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the aviation selected SPECI. This is a special report"
+        }
+      ],
+      "text" : "the aviation selected SPECI. This is a special report"
+    },
+    {
+      "rect" : [
+        63,
+        401.21970000000005,
+        210.02800000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "that can be given at any time to update the METAR for"
+        }
+      ],
+      "text" : "that can be given at any time to update the METAR for"
+    },
+    {
+      "rect" : [
+        63,
+        388.71970000000005,
+        210.07000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "rapidly changing weather conditions, aircraft mishaps,"
+        }
+      ],
+      "text" : "rapidly changing weather conditions, aircraft mishaps,"
+    },
+    {
+      "rect" : [
+        63,
+        376.21970000000005,
+        113.87000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "or other critical information."
+        }
+      ],
+      "text" : "or other critical information."
+    },
+    {
+      "rect" : [
+        45,
+        359.21970000000005,
+        7.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "2. "
+        }
+      ],
+      "text" : "2. "
+    },
+    {
+      "rect" : [
+        63,
+        359.21970000000005,
+        210.1049999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Station identifier—a four-letter code as established by"
+        }
+      ],
+      "text" : "Station identifier—a four-letter code as established by"
+    },
+    {
+      "rect" : [
+        63,
+        346.71970000000005,
+        209.90000000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the International Civil Aviation Organization (ICAO)."
+        }
+      ],
+      "text" : "the International Civil Aviation Organization (ICAO)."
+    },
+    {
+      "rect" : [
+        63,
+        334.21970000000005,
+        210.07400000000007,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "In the 48 contiguous states, a unique three-letter"
+        }
+      ],
+      "text" : "In the 48 contiguous states, a unique three-letter"
+    },
+    {
+      "rect" : [
+        63,
+        321.71970000000005,
+        210.00599999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "identifier is preceded by the letter “K.” For example,"
+        }
+      ],
+      "text" : "identifier is preceded by the letter “K.” For example,"
+    },
+    {
+      "rect" : [
+        63,
+        309.21970000000005,
+        210,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Gregg County Airport in Longview, Texas, is"
+        }
+      ],
+      "text" : "Gregg County Airport in Longview, Texas, is"
+    },
+    {
+      "rect" : [
+        63,
+        296.71970000000005,
+        209.90000000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "identified by the letters “KGGG,” K being the country"
+        }
+      ],
+      "text" : "identified by the letters “KGGG,” K being the country"
+    },
+    {
+      "rect" : [
+        63,
+        284.21970000000005,
+        210.04700000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "designation and GGG being the airport identifier."
+        }
+      ],
+      "text" : "designation and GGG being the airport identifier."
+    },
+    {
+      "rect" : [
+        63,
+        271.71970000000005,
+        210.01300000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "In other regions of the world, including Alaska and"
+        }
+      ],
+      "text" : "In other regions of the world, including Alaska and"
+    },
+    {
+      "rect" : [
+        63,
+        259.21970000000005,
+        210.005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Hawaii, the first two letters of the four-letter ICAO"
+        }
+      ],
+      "text" : "Hawaii, the first two letters of the four-letter ICAO"
+    },
+    {
+      "rect" : [
+        63,
+        246.71970000000005,
+        210.01999999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "identifier indicate the region, country, or state. Alaska"
+        }
+      ],
+      "text" : "identifier indicate the region, country, or state. Alaska"
+    },
+    {
+      "rect" : [
+        63,
+        234.21970000000005,
+        210.03400000000011,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "identifiers always begin with the letters “PA” and"
+        }
+      ],
+      "text" : "identifiers always begin with the letters “PA” and"
+    },
+    {
+      "rect" : [
+        63,
+        221.71970000000005,
+        210.04999999999995,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Hawaii identifiers always begin with the letters “PH.”"
+        }
+      ],
+      "text" : "Hawaii identifiers always begin with the letters “PH.”"
+    },
+    {
+      "rect" : [
+        63,
+        209.21970000000005,
+        209.99799999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Station identifiers can be found by calling the FSS, a"
+        }
+      ],
+      "text" : "Station identifiers can be found by calling the FSS, a"
+    },
+    {
+      "rect" : [
+        63,
+        196.71970000000005,
+        210,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "NWS office, or by searching various websites such"
+        }
+      ],
+      "text" : "NWS office, or by searching various websites such"
+    },
+    {
+      "rect" : [
+        63,
+        184.21970000000005,
+        210.01199999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "as DUATS and NOAA's Aviation Weather Aviation"
+        }
+      ],
+      "text" : "as DUATS and NOAA's Aviation Weather Aviation"
+    },
+    {
+      "rect" : [
+        63,
+        171.71970000000005,
+        124.41999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Digital Data Services (ADDS)."
+        }
+      ],
+      "text" : "Digital Data Services (ADDS)."
+    },
+    {
+      "rect" : [
+        45,
+        154.71970000000002,
+        228.03800000000001,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "3. Date and time of report—depicted in a six-digit group"
+        }
+      ],
+      "text" : "3. Date and time of report—depicted in a six-digit group"
+    },
+    {
+      "rect" : [
+        63,
+        142.21970000000002,
+        210,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(161753Z). The first two digits are the date. The last"
+        }
+      ],
+      "text" : "(161753Z). The first two digits are the date. The last"
+    },
+    {
+      "rect" : [
+        63,
+        129.71970000000002,
+        210.02999999999997,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "four digits are the time of the METAR/SPECI, which"
+        }
+      ],
+      "text" : "four digits are the time of the METAR/SPECI, which"
+    },
+    {
+      "rect" : [
+        63,
+        117.21970000000002,
+        209.93999999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is always given in coordinated universal time (UTC)."
+        }
+      ],
+      "text" : "is always given in coordinated universal time (UTC)."
+    },
+    {
+      "rect" : [
+        63,
+        104.71970000000002,
+        210.03999999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "A “Z” is appended to the end of the time to denote"
+        }
+      ],
+      "text" : "A “Z” is appended to the end of the time to denote"
+    },
+    {
+      "rect" : [
+        63,
+        92.219700000000017,
+        209.9899999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the time is given in Zulu time (UTC) as opposed to"
+        }
+      ],
+      "text" : "the time is given in Zulu time (UTC) as opposed to"
+    },
+    {
+      "rect" : [
+        63,
+        79.719700000000017,
+        42.719999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "local time."
+        }
+      ],
+      "text" : "local time."
+    },
+    {
+      "rect" : [
+        294,
+        719.56640000000004,
+        7.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "4. "
+        }
+      ],
+      "text" : "4. "
+    },
+    {
+      "rect" : [
+        312,
+        719.56640000000004,
+        210.01000000000022,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Modifier—denotes that the METAR/SPECI came from"
+        }
+      ],
+      "text" : "Modifier—denotes that the METAR/SPECI came from"
+    },
+    {
+      "rect" : [
+        312,
+        707.06640000000004,
+        209.96000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "an automated source or that the report was corrected. If"
+        }
+      ],
+      "text" : "an automated source or that the report was corrected. If"
+    },
+    {
+      "rect" : [
+        312,
+        694.56640000000004,
+        210.08499999999981,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the notation “AUTO” is listed in the METAR/SPECI,"
+        }
+      ],
+      "text" : "the notation “AUTO” is listed in the METAR/SPECI,"
+    },
+    {
+      "rect" : [
+        312,
+        682.06640000000004,
+        209.9799999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the report came from an automated source. It also lists"
+        }
+      ],
+      "text" : "the report came from an automated source. It also lists"
+    },
+    {
+      "rect" : [
+        312,
+        669.56640000000004,
+        209.99200000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "“AO1” (for no precipitation discriminator) or “AO2”"
+        }
+      ],
+      "text" : "“AO1” (for no precipitation discriminator) or “AO2”"
+    },
+    {
+      "rect" : [
+        312,
+        657.06640000000004,
+        210.01400000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(with precipitation discriminator) in the “Remarks”"
+        }
+      ],
+      "text" : "(with precipitation discriminator) in the “Remarks”"
+    },
+    {
+      "rect" : [
+        312,
+        644.56640000000004,
+        210.00299999999993,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "section to indicate the type of precipitation sensors"
+        }
+      ],
+      "text" : "section to indicate the type of precipitation sensors"
+    },
+    {
+      "rect" : [
+        312,
+        632.06640000000004,
+        139.71000000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "employed at the automated station."
+        }
+      ],
+      "text" : "employed at the automated station."
+    },
+    {
+      "rect" : [
+        312,
+        615.06640000000004,
+        209.87,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "When the modifier “COR” is used, it identifies a"
+        }
+      ],
+      "text" : "When the modifier “COR” is used, it identifies a"
+    },
+    {
+      "rect" : [
+        312,
+        602.56640000000004,
+        210.01599999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "corrected report sent out to replace an earlier report"
+        }
+      ],
+      "text" : "corrected report sent out to replace an earlier report"
+    },
+    {
+      "rect" : [
+        312,
+        588.16640000000007,
+        209.9742,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "that contained an error (for example:"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 12,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "METAR KGGG"
+        }
+      ],
+      "text" : "that contained an error (for example: METAR KGGG"
+    },
+    {
+      "rect" : [
+        312.00420000000003,
+        575.66640000000007,
+        65,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "161753Z COR)."
+        }
+      ],
+      "text" : "161753Z COR)."
+    },
+    {
+      "rect" : [
+        294,
+        558.66640000000007,
+        7.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "5. "
+        }
+      ],
+      "text" : "5. "
+    },
+    {
+      "rect" : [
+        312,
+        558.66640000000007,
+        209.85199999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Wind—reported with five digits (14021KT) unless"
+        }
+      ],
+      "text" : "Wind—reported with five digits (14021KT) unless"
+    },
+    {
+      "rect" : [
+        312,
+        546.16640000000007,
+        210.01499999999987,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the speed is greater than 99 knots, in which case the"
+        }
+      ],
+      "text" : "the speed is greater than 99 knots, in which case the"
+    },
+    {
+      "rect" : [
+        312,
+        533.66640000000007,
+        210.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "wind is reported with six digits. The first three digits"
+        }
+      ],
+      "text" : "wind is reported with six digits. The first three digits"
+    },
+    {
+      "rect" : [
+        312,
+        521.16640000000007,
+        210.08500000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "indicate the direction the true wind is blowing from in"
+        }
+      ],
+      "text" : "indicate the direction the true wind is blowing from in"
+    },
+    {
+      "rect" : [
+        312,
+        508.66640000000007,
+        209.9849999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "tens of degrees. If the wind is variable, it is reported"
+        }
+      ],
+      "text" : "tens of degrees. If the wind is variable, it is reported"
+    },
+    {
+      "rect" : [
+        312,
+        496.16640000000007,
+        209.995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "as “VRB.” The last two digits indicate the speed of"
+        }
+      ],
+      "text" : "as “VRB.” The last two digits indicate the speed of"
+    },
+    {
+      "rect" : [
+        312,
+        483.66640000000007,
+        210.01599999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the wind in knots unless the wind is greater than 99"
+        }
+      ],
+      "text" : "the wind in knots unless the wind is greater than 99"
+    },
+    {
+      "rect" : [
+        312,
+        471.16640000000007,
+        210.01199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "knots, in which case it is indicated by three digits. If"
+        }
+      ],
+      "text" : "knots, in which case it is indicated by three digits. If"
+    },
+    {
+      "rect" : [
+        312,
+        458.66640000000007,
+        209.99000000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the winds are gusting, the letter “G” follows the wind"
+        }
+      ],
+      "text" : "the winds are gusting, the letter “G” follows the wind"
+    },
+    {
+      "rect" : [
+        312,
+        446.16640000000007,
+        209.99400000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "speed (G26KT). After the letter “G,” the peak gust"
+        }
+      ],
+      "text" : "speed (G26KT). After the letter “G,” the peak gust"
+    },
+    {
+      "rect" : [
+        312,
+        433.66640000000007,
+        209.83900000000006,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "recorded is provided. If the wind direction varies more"
+        }
+      ],
+      "text" : "recorded is provided. If the wind direction varies more"
+    },
+    {
+      "rect" : [
+        312,
+        421.16640000000007,
+        210.01700000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "than 60° and the wind speed is greater than six knots,"
+        }
+      ],
+      "text" : "than 60° and the wind speed is greater than six knots,"
+    },
+    {
+      "rect" : [
+        312,
+        408.66640000000007,
+        210.00100000000009,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a separate group of numbers, separated by a “V,” will"
+        }
+      ],
+      "text" : "a separate group of numbers, separated by a “V,” will"
+    },
+    {
+      "rect" : [
+        312,
+        396.16640000000007,
+        177.47000000000003,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "indicate the extremes of the wind directions."
+        }
+      ],
+      "text" : "indicate the extremes of the wind directions."
+    },
+    {
+      "rect" : [
+        294,
+        379.16640000000001,
+        7.5,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "6. "
+        }
+      ],
+      "text" : "6. "
+    },
+    {
+      "rect" : [
+        312,
+        379.16640000000001,
+        210.03800000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Visibility—the prevailing visibility (¾ SM) is reported"
+        }
+      ],
+      "text" : "Visibility—the prevailing visibility (¾ SM) is reported"
+    },
+    {
+      "rect" : [
+        312,
+        366.66640000000001,
+        210.00800000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in statute miles as denoted by the letters “SM.” It is"
+        }
+      ],
+      "text" : "in statute miles as denoted by the letters “SM.” It is"
+    },
+    {
+      "rect" : [
+        312,
+        354.16640000000001,
+        210.05999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "reported in both miles and fractions of miles. At times,"
+        }
+      ],
+      "text" : "reported in both miles and fractions of miles. At times,"
+    },
+    {
+      "rect" : [
+        312,
+        341.66640000000001,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "runway visual range (RVR) is reported following the"
+        }
+      ],
+      "text" : "runway visual range (RVR) is reported following the"
+    },
+    {
+      "rect" : [
+        312,
+        329.16640000000001,
+        210.00799999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "prevailing visibility. RVR is the distance a pilot can"
+        }
+      ],
+      "text" : "prevailing visibility. RVR is the distance a pilot can"
+    },
+    {
+      "rect" : [
+        312,
+        316.66640000000001,
+        210.08199999999988,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "see down the runway in a moving aircraft. When RVR"
+        }
+      ],
+      "text" : "see down the runway in a moving aircraft. When RVR"
+    },
+    {
+      "rect" : [
+        312,
+        304.16640000000001,
+        210.01199999999994,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "is reported, it is shown with an R, then the runway"
+        }
+      ],
+      "text" : "is reported, it is shown with an R, then the runway"
+    },
+    {
+      "rect" : [
+        312,
+        291.66640000000001,
+        209.87000000000012,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "number followed by a slant, then the visual range"
+        }
+      ],
+      "text" : "number followed by a slant, then the visual range"
+    },
+    {
+      "rect" : [
+        312,
+        279.16640000000001,
+        209.98699999999997,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "in feet. For example, when the RVR is reported as"
+        }
+      ],
+      "text" : "in feet. For example, when the RVR is reported as"
+    },
+    {
+      "rect" : [
+        312,
+        266.66640000000001,
+        210.00300000000004,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "R17L/1400FT, it translates to a visual range of 1,400"
+        }
+      ],
+      "text" : "R17L/1400FT, it translates to a visual range of 1,400"
+    },
+    {
+      "rect" : [
+        312,
+        254.16640000000001,
+        90.810000000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "feet on runway 17 left."
+        }
+      ],
+      "text" : "feet on runway 17 left."
+    },
+    {
+      "rect" : [
+        294,
+        237.16640000000001,
+        7.5,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "7. "
+        }
+      ],
+      "text" : "7. "
+    },
+    {
+      "rect" : [
+        312,
+        237.16640000000001,
+        209.95000000000005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Weather—can be broken down into two different"
+        }
+      ],
+      "text" : "Weather—can be broken down into two different"
+    },
+    {
+      "rect" : [
+        312,
+        224.66640000000001,
+        210.11999999999989,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "categories: qualifiers and weather phenomenon"
+        }
+      ],
+      "text" : "categories: qualifiers and weather phenomenon"
+    },
+    {
+      "rect" : [
+        312,
+        212.16640000000001,
+        210.02100000000019,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(+TSRA BR). First, the qualifiers of intensity,"
+        }
+      ],
+      "text" : "(+TSRA BR). First, the qualifiers of intensity,"
+    },
+    {
+      "rect" : [
+        312,
+        199.66640000000001,
+        210.03500000000008,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "proximity, and the descriptor of the weather are given."
+        }
+      ],
+      "text" : "proximity, and the descriptor of the weather are given."
+    },
+    {
+      "rect" : [
+        312,
+        187.16640000000001,
+        210.01699999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The intensity may be light (–), moderate ( ), or heavy"
+        }
+      ],
+      "text" : "The intensity may be light (–), moderate ( ), or heavy"
+    },
+    {
+      "rect" : [
+        312,
+        174.66640000000001,
+        210.00999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "(+). Proximity only depicts weather phenomena that"
+        }
+      ],
+      "text" : "(+). Proximity only depicts weather phenomena that"
+    },
+    {
+      "rect" : [
+        312,
+        162.16640000000001,
+        210.03599999999994,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are in the airport vicinity. The notation “VC” indicates"
+        }
+      ],
+      "text" : "are in the airport vicinity. The notation “VC” indicates"
+    },
+    {
+      "rect" : [
+        312,
+        149.66640000000001,
+        209.85599999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "a specific weather phenomenon is in the vicinity"
+        }
+      ],
+      "text" : "a specific weather phenomenon is in the vicinity"
+    },
+    {
+      "rect" : [
+        312,
+        137.16640000000001,
+        209.82600000000002,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of five to ten miles from the airport. Descriptors"
+        }
+      ],
+      "text" : "of five to ten miles from the airport. Descriptors"
+    },
+    {
+      "rect" : [
+        312,
+        124.66640000000001,
+        210.09000000000015,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are used to describe certain types of precipitation"
+        }
+      ],
+      "text" : "are used to describe certain types of precipitation"
+    },
+    {
+      "rect" : [
+        312,
+        112.16640000000001,
+        210.09000000000015,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "and obscurations. Weather phenomena may be"
+        }
+      ],
+      "text" : "and obscurations. Weather phenomena may be"
+    },
+    {
+      "rect" : [
+        312,
+        99.66640000000001,
+        210.01999999999998,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "reported as being precipitation, obscurations, and"
+        }
+      ],
+      "text" : "reported as being precipitation, obscurations, and"
+    },
+    {
+      "rect" : [
+        312,
+        87.16640000000001,
+        210.0139999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "other phenomena, such as squalls or funnel clouds."
+        }
+      ],
+      "text" : "other phenomena, such as squalls or funnel clouds."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "graphics" : [
+
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "text" : "13-6"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        718.14969999999994,
+        201.67000000000004,
+        13.190000000000055
+      ],
+      "structure" : {
+        "group" : 4590,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22571
+      },
+      "text" : "Aviation Routine Weather Report (METAR)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        705.71969999999999,
+        237.06100000000021,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4591,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22572
+      },
+      "text" : "A METAR is an observation of current surface weather"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        693.21969999999999,
+        236.88,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4591,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22573
+      },
+      "text" : "reported in a standard international format. While the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        680.71969999999999,
+        237.00899999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4591,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22574
+      },
+      "text" : "METAR code has been adopted worldwide, each country is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        668.21969999999999,
+        237.01199999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4591,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22575
+      },
+      "text" : "allowed to make modifications to the code. Normally, these"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        655.71969999999999,
+        237.02299999999991,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4591,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22576
+      },
+      "text" : "differences are minor but necessary to accommodate local"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        643.21969999999999,
+        237.01099999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4591,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22577
+      },
+      "text" : "procedures or particular units of measure. This discussion of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        630.71969999999999,
+        206.08999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4591,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "opensWithSplitMarker" : false,
+        "order" : 22578
+      },
+      "text" : "METAR covers elements used in the United States."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        605.71969999999999,
+        236.98999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4592,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22579
+      },
+      "text" : "METARs are issued on a regularly scheduled basis unless"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        593.21969999999999,
+        237.04600000000028,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4592,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22580
+      },
+      "text" : "significant weather changes have occurred. A special"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        580.71969999999999,
+        237.00899999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4592,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22581
+      },
+      "text" : "METAR (SPECI) can be issued at any time between routine"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        568.21969999999999,
+        67.769999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4592,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22582
+      },
+      "text" : "METAR reports."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        543.21969999999999,
+        38.329999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4593,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22583
+      },
+      "text" : "Example:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        530.71969999999999,
+        223.03999999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4594,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22584
+      },
+      "text" : "METAR KGGG 161753Z AUTO 14021G26KT 3/4SM"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        518.21969999999999,
+        217.88,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4595,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22585
+      },
+      "text" : "+TSRA BR BKN008 OVC012CB 18/17 A2970 RMK"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        505.71969999999999,
+        36.129999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4596,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "opensWithSplitMarker" : false,
+        "order" : 22586
+      },
+      "text" : "PRESFR"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        480.71969999999999,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4597,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 22587
+      },
+      "text" : "A typical METAR report contains the following information"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        468.21969999999999,
+        77.210000000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4597,
+        "headingLevel" : 0,
+        "lineCount" : 2,
+        "opensWithSplitMarker" : false,
+        "order" : 22588
+      },
+      "text" : "in sequential order:"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        451.21970000000005,
+        7.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4598,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22589
+      },
+      "text" : "1."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        451.21970000000005,
+        209.88999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4598,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22590
+      },
+      "text" : "Type of report—there are two types of METAR"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        438.71970000000005,
+        210.01099999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4598,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22591
+      },
+      "text" : "reports. The first is the routine METAR report that is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        426.21970000000005,
+        210.00100000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4598,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22592
+      },
+      "text" : "transmitted on a regular time interval. The second is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        413.71970000000005,
+        210.01299999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4598,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22593
+      },
+      "text" : "the aviation selected SPECI. This is a special report"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        401.21970000000005,
+        210.02800000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4598,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22594
+      },
+      "text" : "that can be given at any time to update the METAR for"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        388.71970000000005,
+        210.07000000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4598,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22595
+      },
+      "text" : "rapidly changing weather conditions, aircraft mishaps,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        376.21970000000005,
+        113.87000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4598,
+        "headingLevel" : 0,
+        "lineCount" : 8,
+        "opensWithSplitMarker" : false,
+        "order" : 22596
+      },
+      "text" : "or other critical information."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        359.21970000000005,
+        7.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22597
+      },
+      "text" : "2."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        359.21970000000005,
+        210.1049999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22598
+      },
+      "text" : "Station identifier—a four-letter code as established by"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        346.71970000000005,
+        209.90000000000009,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22599
+      },
+      "text" : "the International Civil Aviation Organization (ICAO)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        334.21970000000005,
+        210.07400000000007,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22600
+      },
+      "text" : "In the 48 contiguous states, a unique three-letter"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        321.71970000000005,
+        210.00599999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22601
+      },
+      "text" : "identifier is preceded by the letter “K.” For example,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        309.21970000000005,
+        210,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22602
+      },
+      "text" : "Gregg County Airport in Longview, Texas, is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        296.71970000000005,
+        209.90000000000009,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22603
+      },
+      "text" : "identified by the letters “KGGG,” K being the country"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        284.21970000000005,
+        210.04700000000014,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22604
+      },
+      "text" : "designation and GGG being the airport identifier."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        271.71970000000005,
+        210.01300000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22605
+      },
+      "text" : "In other regions of the world, including Alaska and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        259.21970000000005,
+        210.005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22606
+      },
+      "text" : "Hawaii, the first two letters of the four-letter ICAO"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        246.71970000000005,
+        210.01999999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22607
+      },
+      "text" : "identifier indicate the region, country, or state. Alaska"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        234.21970000000005,
+        210.03400000000011,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22608
+      },
+      "text" : "identifiers always begin with the letters “PA” and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        221.71970000000005,
+        210.04999999999995,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22609
+      },
+      "text" : "Hawaii identifiers always begin with the letters “PH.”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        209.21970000000005,
+        209.99799999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22610
+      },
+      "text" : "Station identifiers can be found by calling the FSS, a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        196.71970000000005,
+        210,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22611
+      },
+      "text" : "NWS office, or by searching various websites such"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        184.21970000000005,
+        210.01199999999989,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22612
+      },
+      "text" : "as DUATS and NOAA's Aviation Weather Aviation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        171.71970000000005,
+        124.41999999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4599,
+        "headingLevel" : 0,
+        "lineCount" : 17,
+        "opensWithSplitMarker" : false,
+        "order" : 22613
+      },
+      "text" : "Digital Data Services (ADDS)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        45,
+        154.71970000000002,
+        228.03800000000001,
+        11.469999999999999
+      ],
+      "text" : "3. Date and time of report—depicted in a six-digit group"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        142.21970000000002,
+        210,
+        11.469999999999999
+      ],
+      "text" : "(161753Z). The first two digits are the date. The last"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        129.71970000000002,
+        210.02999999999997,
+        11.469999999999999
+      ],
+      "text" : "four digits are the time of the METAR/SPECI, which"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        117.21970000000002,
+        209.93999999999994,
+        11.469999999999999
+      ],
+      "text" : "is always given in coordinated universal time (UTC)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        104.71970000000002,
+        210.03999999999996,
+        11.469999999999999
+      ],
+      "text" : "A “Z” is appended to the end of the time to denote"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        92.219700000000017,
+        209.9899999999999,
+        11.469999999999999
+      ],
+      "text" : "the time is given in Zulu time (UTC) as opposed to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        63,
+        79.719700000000017,
+        42.719999999999999,
+        11.469999999999999
+      ],
+      "text" : "local time."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        719.56640000000004,
+        7.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4601,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22621
+      },
+      "text" : "4."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        719.56640000000004,
+        210.01000000000022,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4601,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22622
+      },
+      "text" : "Modifier—denotes that the METAR/SPECI came from"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        707.06640000000004,
+        209.96000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4601,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22623
+      },
+      "text" : "an automated source or that the report was corrected. If"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        694.56640000000004,
+        210.08499999999981,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4601,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22624
+      },
+      "text" : "the notation “AUTO” is listed in the METAR/SPECI,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        682.06640000000004,
+        209.9799999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4601,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22625
+      },
+      "text" : "the report came from an automated source. It also lists"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        669.56640000000004,
+        209.99200000000008,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4601,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22626
+      },
+      "text" : "“AO1” (for no precipitation discriminator) or “AO2”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        657.06640000000004,
+        210.01400000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4601,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22627
+      },
+      "text" : "(with precipitation discriminator) in the “Remarks”"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        644.56640000000004,
+        210.00299999999993,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4601,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22628
+      },
+      "text" : "section to indicate the type of precipitation sensors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        632.06640000000004,
+        139.71000000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4601,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "opensWithSplitMarker" : false,
+        "order" : 22629
+      },
+      "text" : "employed at the automated station."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        615.06640000000004,
+        209.87,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4602,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22630
+      },
+      "text" : "When the modifier “COR” is used, it identifies a"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        602.56640000000004,
+        210.01599999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4602,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22631
+      },
+      "text" : "corrected report sent out to replace an earlier report"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        588.16640000000007,
+        209.9742,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4602,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22632
+      },
+      "text" : "that contained an error (for example: METAR KGGG"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312.00420000000003,
+        575.66640000000007,
+        65,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4602,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "opensWithSplitMarker" : false,
+        "order" : 22635
+      },
+      "text" : "161753Z COR)."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        558.66640000000007,
+        7.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4603,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 22636
+      },
+      "text" : "5."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        558.66640000000007,
+        209.85199999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4603,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 22637
+      },
+      "text" : "Wind—reported with five digits (14021KT) unless"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        546.16640000000007,
+        210.01499999999987,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4603,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 22638
+      },
+      "text" : "the speed is greater than 99 knots, in which case the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        533.66640000000007,
+        210.00999999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4603,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 22639
+      },
+      "text" : "wind is reported with six digits. The first three digits"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        521.16640000000007,
+        210.08500000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4603,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 22640
+      },
+      "text" : "indicate the direction the true wind is blowing from in"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        508.66640000000007,
+        209.9849999999999,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4603,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 22641
+      },
+      "text" : "tens of degrees. If the wind is variable, it is reported"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        496.16640000000007,
+        209.995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4603,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 22642
+      },
+      "text" : "as “VRB.” The last two digits indicate the speed of"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        483.66640000000007,
+        210.01599999999996,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4603,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 22643
+      },
+      "text" : "the wind in knots unless the wind is greater than 99"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        471.16640000000007,
+        210.01199999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4603,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 22644
+      },
+      "text" : "knots, in which case it is indicated by three digits. If"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        458.66640000000007,
+        209.99000000000012,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4603,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 22645
+      },
+      "text" : "the winds are gusting, the letter “G” follows the wind"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        446.16640000000007,
+        209.99400000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4603,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 22646
+      },
+      "text" : "speed (G26KT). After the letter “G,” the peak gust"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        433.66640000000007,
+        209.83900000000006,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4603,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 22647
+      },
+      "text" : "recorded is provided. If the wind direction varies more"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        421.16640000000007,
+        210.01700000000005,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4603,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 22648
+      },
+      "text" : "than 60° and the wind speed is greater than six knots,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        408.66640000000007,
+        210.00100000000009,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4603,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 22649
+      },
+      "text" : "a separate group of numbers, separated by a “V,” will"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        396.16640000000007,
+        177.47000000000003,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4603,
+        "headingLevel" : 0,
+        "lineCount" : 15,
+        "opensWithSplitMarker" : false,
+        "order" : 22650
+      },
+      "text" : "indicate the extremes of the wind directions."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        379.16640000000001,
+        7.5,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4604,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22651
+      },
+      "text" : "6."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        379.16640000000001,
+        210.03800000000001,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4604,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22652
+      },
+      "text" : "Visibility—the prevailing visibility (¾ SM) is reported"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        366.66640000000001,
+        210.00800000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4604,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22653
+      },
+      "text" : "in statute miles as denoted by the letters “SM.” It is"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        354.16640000000001,
+        210.05999999999995,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4604,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22654
+      },
+      "text" : "reported in both miles and fractions of miles. At times,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        341.66640000000001,
+        210.01999999999998,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4604,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22655
+      },
+      "text" : "runway visual range (RVR) is reported following the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        329.16640000000001,
+        210.00799999999992,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4604,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22656
+      },
+      "text" : "prevailing visibility. RVR is the distance a pilot can"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        316.66640000000001,
+        210.08199999999988,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4604,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22657
+      },
+      "text" : "see down the runway in a moving aircraft. When RVR"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        304.16640000000001,
+        210.01199999999994,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4604,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22658
+      },
+      "text" : "is reported, it is shown with an R, then the runway"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        291.66640000000001,
+        209.87000000000012,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4604,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22659
+      },
+      "text" : "number followed by a slant, then the visual range"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        279.16640000000001,
+        209.98699999999997,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4604,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22660
+      },
+      "text" : "in feet. For example, when the RVR is reported as"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        266.66640000000001,
+        210.00300000000004,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4604,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22661
+      },
+      "text" : "R17L/1400FT, it translates to a visual range of 1,400"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        254.16640000000001,
+        90.810000000000002,
+        11.470000000000027
+      ],
+      "structure" : {
+        "group" : 4604,
+        "headingLevel" : 0,
+        "lineCount" : 12,
+        "opensWithSplitMarker" : false,
+        "order" : 22662
+      },
+      "text" : "feet on runway 17 left."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        294,
+        237.16640000000001,
+        7.5,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22663
+      },
+      "text" : "7."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        237.16640000000001,
+        209.95000000000005,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22664
+      },
+      "text" : "Weather—can be broken down into two different"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        224.66640000000001,
+        210.11999999999989,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22665
+      },
+      "text" : "categories: qualifiers and weather phenomenon"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        212.16640000000001,
+        210.02100000000019,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22666
+      },
+      "text" : "(+TSRA BR). First, the qualifiers of intensity,"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        199.66640000000001,
+        210.03500000000008,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22667
+      },
+      "text" : "proximity, and the descriptor of the weather are given."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        187.16640000000001,
+        210.01699999999994,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22668
+      },
+      "text" : "The intensity may be light (–), moderate ( ), or heavy"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        174.66640000000001,
+        210.00999999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22669
+      },
+      "text" : "(+). Proximity only depicts weather phenomena that"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        162.16640000000001,
+        210.03599999999994,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22670
+      },
+      "text" : "are in the airport vicinity. The notation “VC” indicates"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        149.66640000000001,
+        209.85599999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22671
+      },
+      "text" : "a specific weather phenomenon is in the vicinity"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        137.16640000000001,
+        209.82600000000002,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22672
+      },
+      "text" : "of five to ten miles from the airport. Descriptors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        124.66640000000001,
+        210.09000000000015,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22673
+      },
+      "text" : "are used to describe certain types of precipitation"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        112.16640000000001,
+        210.09000000000015,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22674
+      },
+      "text" : "and obscurations. Weather phenomena may be"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        99.66640000000001,
+        210.01999999999998,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22675
+      },
+      "text" : "reported as being precipitation, obscurations, and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        312,
+        87.16640000000001,
+        210.0139999999999,
+        11.469999999999999
+      ],
+      "structure" : {
+        "group" : 4605,
+        "headingLevel" : 0,
+        "lineCount" : 14,
+        "opensWithSplitMarker" : false,
+        "order" : 22676
+      },
+      "text" : "other phenomena, such as squalls or funnel clouds."
+    }
+  ],
+  "page" : 316,
+  "paints" : [
+
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

@@ -1,0 +1,8 @@
+# gpo-our-flag-2003
+kept    p28 machine- + made flags, individuals were h -> machine-made forms=[] prefixWord=false suffixWord=true
+kept    p30 service- + man or veteran and his family, -> service-man forms=[] prefixWord=true suffixWord=true
+kept    p38 sage- + brush the state flower, form a -> sage-brush forms=[] prefixWord=true suffixWord=false
+kept    p40 non- + rectangular State flag has sta -> non-rectangular forms=[] prefixWord=false suffixWord=false
+kept    p44 nick- + name. -> nick-name forms=[] prefixWord=false suffixWord=true
+kept    p50 much- + needed preservative work was d -> much-needed forms=[] prefixWord=false suffixWord=false
+breaks 14, joined decides 7, compound decides 1, reach tier 6, tier removes 0

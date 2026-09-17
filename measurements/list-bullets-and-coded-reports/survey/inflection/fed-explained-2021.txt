@@ -1,0 +1,28 @@
+# fed-explained-2021
+REMOVED p16 ap- + proves the budgets of each of  -> approves forms=[approve,approved] prefixWord=false suffixWord=false
+REMOVED p17 inter- + preted as requiring familiarit -> interpreted forms=[interpret,interprets] prefixWord=false suffixWord=false
+REMOVED p19 distribut- + ing the nation’s currency and  -> distributing forms=[distribute,distributes] prefixWord=false suffixWord=false
+kept    p19 small- + and large-dollar payments) tha -> small-and forms=[] prefixWord=true suffixWord=true
+REMOVED p19 con- + nections to, and interactions  -> connections forms=[connection] prefixWord=false suffixWord=false
+kept    p27 expendi- + tures, is most consistent over -> expendi-tures forms=[] prefixWord=false suffixWord=false
+REMOVED p31 alter- + natively, policymakers can att -> alternatively forms=[alternative] prefixWord=false suffixWord=false
+kept    p34 policy- + related topics that receive a  -> policy-related forms=[] prefixWord=true suffixWord=true
+kept    p43 trans- + late into movements in the fed -> trans-late forms=[] prefixWord=true suffixWord=true
+REMOVED p54 fundamen- + tals. As a result, analysis ty -> fundamentals forms=[fundamental,fundamentally] prefixWord=false suffixWord=false
+REMOVED p60 de- + teriorate. It augments minimum -> deteriorate forms=[deteriorating] prefixWord=false suffixWord=false
+kept    p63 Swe- + den’s Riksbank was formed. -> swe-den forms=[] prefixWord=false suffixWord=false
+kept    p72 foreign- + exchange settlement systems, a -> foreign-exchange forms=[] prefixWord=true suffixWord=true
+kept    p86 per- + ceived to be relatively risky, -> per-ceived forms=[] prefixWord=false suffixWord=false
+kept    p86 world- + wide for the purpose of enhanc -> world-wide forms=[] prefixWord=true suffixWord=true
+kept    p86 three- + pillar framework for assessing -> three-pillar forms=[] prefixWord=true suffixWord=true
+kept    p95 sim- + ply demand that original check -> sim-ply forms=[] prefixWord=false suffixWord=false
+kept    p100 remit- + tance payments, and to complet -> remit-tance forms=[] prefixWord=false suffixWord=false
+kept    p103 verti- + cally to the left of the portr -> verti-cally forms=[] prefixWord=false suffixWord=false
+kept    p104 ar- + ranges and pays the cost of tr -> ar-ranges forms=[] prefixWord=false suffixWord=false
+kept    p104 carri- + ers that operate coin terminal -> carri-ers forms=[] prefixWord=false suffixWord=false
+REMOVED p122 tailor- + ing examination focus most int -> tailoring forms=[tailor,tailored] prefixWord=true suffixWord=false
+kept    p123 newslet- + ters, and other means to suppo -> newslet-ters forms=[] prefixWord=false suffixWord=false
+kept    p125 affirma- + tive obligation to help meet t -> affirma-tive forms=[] prefixWord=false suffixWord=false
+kept    p125 submit- + ting comments, see https://www -> submit-ting forms=[] prefixWord=true suffixWord=false
+kept    p130 support- + ive of investment, lending and -> support-ive forms=[] prefixWord=true suffixWord=false
+breaks 459, joined decides 416, compound decides 17, reach tier 26, tier removes 8

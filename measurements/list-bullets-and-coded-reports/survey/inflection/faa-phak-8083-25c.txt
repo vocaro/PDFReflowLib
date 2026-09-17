@@ -1,0 +1,45 @@
+# faa-phak-8083-25c
+kept    p17 heavier-than- + air vehicle supported by kite- -> than-air forms=[] prefixWord=true suffixWord=true
+kept    p21 civil- + military system of air navigat -> civil-military forms=[] prefixWord=true suffixWord=true
+kept    p37 task- + specific knowledge and risk ma -> task-specific forms=[] prefixWord=true suffixWord=true
+kept    p47 Pilot- + in-command (PIC), Aircraft, en -> pilot-in forms=[] prefixWord=true suffixWord=true
+kept    p48 (“get- + home-itis,” “get-there-itis,”  -> get-home forms=[] prefixWord=true suffixWord=true
+kept    p70 double- + check the system and verbal ca -> double-check forms=[] prefixWord=true suffixWord=true
+kept    p79 trailing- + edge surfaces called elevators -> trailing-edge forms=[] prefixWord=true suffixWord=true
+kept    p79 well- + braced framework. Vertical and -> well-braced forms=[] prefixWord=true suffixWord=false
+kept    p80 high- + temperature properties. There  -> high-temperature forms=[] prefixWord=true suffixWord=true
+kept    p81 load- + carrying structure lighter tha -> load-carrying forms=[] prefixWord=true suffixWord=true
+kept    p81 well- + designed carbon fiber structur -> well-designed forms=[] prefixWord=true suffixWord=true
+kept    p121 straight- + and-level flight. For the foll -> straight-and forms=[] prefixWord=true suffixWord=true
+kept    p131 present- + day utility category aircraft, -> present-day forms=[] prefixWord=true suffixWord=true
+kept    p139 load- + carrying capability of these a -> load-carrying forms=[] prefixWord=true suffixWord=true
+kept    p147 well- + rounded almost blunt shape tha -> well-rounded forms=[] prefixWord=true suffixWord=true
+kept    p154 fuselage- + mounted engines because the T- -> fuselage-mounted forms=[] prefixWord=true suffixWord=true
+kept    p164 re- + engine the Cessna 172 models a -> re-engine forms=[] prefixWord=true suffixWord=true
+kept    p177 high- + power, low-airspeed operation. -> high-power forms=[] prefixWord=true suffixWord=true
+kept    p188 anti- + contamination systems. While a -> anti-contamination forms=[] prefixWord=false suffixWord=true
+kept    p189 space- + heating device. The fuel is br -> space-heating forms=[] prefixWord=true suffixWord=true
+kept    p228 pendulous- + type mounting, the aft end of  -> pendulous-type forms=[] prefixWord=false suffixWord=true
+kept    p229 shaft- + mounted magnet, and the nose o -> shaft-mounted forms=[] prefixWord=true suffixWord=true
+kept    p241 weight-and- + balance computation is involve -> and-balance forms=[] prefixWord=true suffixWord=true
+kept    p276 two- + thirds of the way up between t -> two-thirds forms=[] prefixWord=true suffixWord=false
+kept    p303 south- + southwest. With warming temper -> south-southwest forms=[] prefixWord=true suffixWord=true
+kept    p304 west- + northwest. Temperatures remain -> west-northwest forms=[] prefixWord=true suffixWord=true
+kept    p315 specialist- + provided preflight briefings. -> specialist-provided forms=[] prefixWord=true suffixWord=true
+kept    p322 non- + convective weather that is pot -> non-convective forms=[] prefixWord=true suffixWord=true
+kept    p336 privately- + owned. -> privately-owned forms=[] prefixWord=true suffixWord=true
+kept    p360 roll- + control authority of the encou -> roll-control forms=[] prefixWord=true suffixWord=true
+kept    p362 right-of- + way, a pilot should yield if a -> of-way forms=[] prefixWord=true suffixWord=true
+kept    p364 traffic- + alerting feature can help mini -> traffic-alerting forms=[] prefixWord=true suffixWord=true
+kept    p398 pounds-of-fuel- + per-hour value which, when div -> fuel-per forms=[] prefixWord=true suffixWord=true
+kept    p419 listen- + only mode. The receiver uses d -> listen-only forms=[] prefixWord=true suffixWord=true
+kept    p420 stand- + alone VFR waypoint is portraye -> stand-alone forms=[] prefixWord=true suffixWord=true
+kept    p425 oxygen- + containing air and potentially -> oxygen-containing forms=[] prefixWord=true suffixWord=true
+kept    p431 straight- + and-level attitude, the instru -> straight-and forms=[] prefixWord=true suffixWord=true
+kept    p432 wider-than- + usual runway can have the oppo -> than-usual forms=[] prefixWord=true suffixWord=true
+kept    p449 lower- + than-normal approach. Elements -> lower-than forms=[] prefixWord=true suffixWord=true
+kept    p488 short- + range sensors. -> short-range forms=[] prefixWord=true suffixWord=true
+kept    p492 straight- + and-level flight while in situ -> straight-and forms=[] prefixWord=true suffixWord=true
+kept    p498 pitch-and- + bank condition. -> and-bank forms=[] prefixWord=true suffixWord=true
+kept    p501 fixed- + card ADF, zero is always indic -> fixed-card forms=[] prefixWord=true suffixWord=true
+breaks 103, joined decides 3, compound decides 57, reach tier 43, tier removes 0

@@ -1,0 +1,12 @@
+list-no-allowance: KILLED ['sourceMinusLinesOutsideJoinedRowsStayListLines', 'sourceTallLicenseBulletsKeepTheirWrappedLines', 'syntheticTallMarkerLineKeepsItsWrappedLine'] Test run with 54 tests in 0 suites failed after 2.133 seconds with 11 issues.
+list-no-sentence-guard: KILLED ['sourceExerciseColumnsKeepTheirRowPiecesApart', 'syntheticTallMarkerLineKeepsItsWrappedLine'] Test run with 54 tests in 0 suites failed after 2.112 seconds with 4 issues.
+no-display-cap: KILLED ['syntheticTallInlineLineKeepsItsParagraph', 'syntheticTallMarkerLineKeepsItsWrappedLine'] Test run with 54 tests in 0 suites failed after 2.111 seconds with 2 issues.
+inflection-off: KILLED ['inflectedFormsVouchOnlyForAWordBrokenInsideItself', 'sourceSeparatesJoinsWhereTheBookUsesAnotherForm'] Test run with 54 tests in 0 suites failed after 2.078 seconds with 6 issues.
+inflection-no-halves-guard: KILLED ['inflectedFormsVouchOnlyForAWordBrokenInsideItself'] Test run with 54 tests in 0 suites failed after 2.082 seconds with 2 issues.
+inflection-no-compound-forms: KILLED ['inflectedFormsVouchOnlyForAWordBrokenInsideItself'] Test run with 54 tests in 0 suites failed after 2.018 seconds with 1 issue.
+inflection-no-length-floor: KILLED ['inflectedFormsVouchOnlyForAWordBrokenInsideItself'] Test run with 54 tests in 0 suites failed after 3.056 seconds with 1 issue.
+reports-no-change-group-break: KILLED ['codedReportsListsAndTableRowsStayApartAtTheirTagBoundaries', 'sourceTafKeepsItsChangeGroupsOnSeparateLines', 'syntheticCodedReportRunsFollowTheFormatNotTheGeometry'] Test run with 54 tests in 0 suites failed after 2.142 seconds with 4 issues.
+reports-no-opens-report: KILLED ['syntheticCodedReportRunsFollowTheFormatNotTheGeometry'] Test run with 54 tests in 0 suites failed after 2.078 seconds with 1 issue.
+reports-free-capitals: KILLED ['syntheticCodedReportRunsFollowTheFormatNotTheGeometry'] Test run with 54 tests in 0 suites failed after 2.078 seconds with 1 issue.
+reports-no-geometry: KILLED ['syntheticCodedReportRunsFollowTheFormatNotTheGeometry'] Test run with 54 tests in 0 suites failed after 2.093 seconds with 2 issues.
+reports-two-groups-open: KILLED ['syntheticCodedReportRunsFollowTheFormatNotTheGeometry'] Test run with 54 tests in 0 suites failed after 2.105 seconds with 1 issue.

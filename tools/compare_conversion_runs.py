@@ -224,6 +224,10 @@ class Evaluation:
 
     def __init__(self, epub, report):
         self.raw, self.markers = read_pages(epub)  # Bounded ZIP admission checks come first.
+        for page in self.raw.values():
+            # The reader's block sequence serves `captionedImages`; the normalized markup already
+            # carries element types and order, so it would only repeat that comparison by asset name.
+            page.pop('blocks', None)
         self.package = Package(epub)
         anchors = {key: anchor for page in self.raw.values() for key, anchor in page['anchors'].items()}
         paragraphs = continuity(self.raw, self.markers, 'paragraphIDs')

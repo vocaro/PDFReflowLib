@@ -1,0 +1,23 @@
+{
+  "case": "usgs-mcs2025-copper",
+  "sourceSHA256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
+  "page": 2,
+  "regionPoints": [
+    40.0,
+    272.0,
+    565.0,
+    512.0
+  ],
+  "target": "World mine and refinery production and reserves table: spanning headers, nineteen country rows and every figure, full resolution",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 180,
+  "kind": "glyph",
+  "mode": "L",
+  "inkThreshold": 200,
+  "pixels": [
+    1247,
+    585
+  ],
+  "sha256": "f5f27651ee16752505358b84e81f75fb61113750571da2a481a974080f0c2200"
+}

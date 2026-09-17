@@ -485,6 +485,68 @@ class CorpusContentTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             read_pages(self.epub(body, '', missing_image=True))
 
+    def test_block_sequence_records_images_and_outermost_blocks_only(self):
+        body = ('<span epub:type="pagebreak" id="page-1"/><h2>title</h2>'
+                '<figure><img src="picture.png"/><figcaption>generic caption</figcaption></figure>'
+                '<p>Figure 1. the rake</p>'
+                '<table><tr><td>cell one</td><td>cell two</td></tr></table>')
+        pages, _ = read_pages(self.epub(body, ''))
+        # The figure's own generic caption never enters, and a table's cells do not become
+        # blocks of their own beside it.
+        self.assertEqual(pages[1]['blocks'],
+                         [('text', 'title'), ('image', 'EPUB/picture.png'),
+                          ('text', 'Figure 1. the rake'), ('text', 'cell one cell two')])
+
+    def test_block_sequence_keeps_only_what_a_split_block_holds_on_its_own_page(self):
+        path = self.epub('<span epub:type="pagebreak" id="page-1"/><p>opens here'
+                         '<span epub:type="pagebreak" id="page-2"/>and closes there</p>', '<p>later</p>')
+        pages, _ = read_pages(path)
+        self.assertEqual(pages[1]['blocks'], [('text', 'opens here')])
+        self.assertEqual(pages[2]['blocks'], [('text', 'later')])
+
+    def test_captioned_image_requires_the_caption_beside_its_figure(self):
+        self.contract['pages'] = [{'page': 1, 'captionedImages': [
+            {'caption': 'Figure 3. Illustration of instrumentation rake'}]}]
+        marker = '<span epub:type="pagebreak" id="page-1"/>'
+        rest = '<span epub:type="pagebreak" id="page-2"/><p>omega</p>'
+        figure = '<figure><img src="picture.png"/><figcaption>Preserved region from page 1</figcaption></figure>'
+        caption = '<p>Figure 3. Illustration of instrumentation rake with instrument locations</p>'
+        prose = '<p>Target Profile Determination</p>'
+        for body, passes in [(marker + figure + caption, True),
+                             # The caption drifted away from its figure.
+                             (marker + figure + prose + caption, False),
+                             # The figure is gone, although the caption text survives.
+                             (marker + prose + caption, False),
+                             # The caption reads before the figure, not after it.
+                             (marker + caption + figure, False)]:
+            pages, markers = read_pages(self.epub(body, rest))
+            result = self.check(pages=pages, markers=markers)
+            self.assertEqual(result['passed'], passes, result['errors'])
+        # A caption the page does not hold at all is reported as missing, not as misplaced.
+        pages, markers = read_pages(self.epub(marker + figure + prose, rest))
+        result = self.check(pages=pages, markers=markers)
+        self.assertIn("Page 1: no block holds the caption 'Figure 3. Illustration of "
+                      "instrumentation rake'", result['errors'])
+        # A table caption set above its table is the same assertion the other way round.
+        self.contract['pages'][0]['captionedImages'] = [
+            {'caption': 'TABLE I: A 6-flight example.', 'position': 'before'}]
+        table = '<p>TABLE I: A 6-flight example.</p>'
+        for body, passes in [(marker + table + figure, True), (marker + figure + table, False),
+                             (marker + table + prose + figure, False)]:
+            pages, markers = read_pages(self.epub(body, rest))
+            result = self.check(pages=pages, markers=markers)
+            self.assertEqual(result['passed'], passes, result['errors'])
+        # The same caption on another page cannot satisfy this one.
+        self.contract['pages'][0]['captionedImages'] = [{'caption': 'TABLE I: A 6-flight example.'}]
+        pages, markers = read_pages(self.epub(marker, '<span epub:type="pagebreak" id="page-2"/>'
+                                              + figure + table))
+        self.assertFalse(self.check(pages=pages, markers=markers)['passed'])
+        for invalid in [{}, {'position': 'after'}, {'caption': ''}, {'caption': 3},
+                        {'caption': 'x', 'position': 'beside'}, {'caption': 'x', 'page': 1}, 'x']:
+            self.contract['pages'][0]['captionedImages'] = [invalid]
+            with self.assertRaises(ValueError):
+                self.check()
+
     def test_duplicate_anchors_are_rejected(self):
         marker = '<span epub:type="pagebreak" id="page-1"/>'
         with self.assertRaises(ValueError):

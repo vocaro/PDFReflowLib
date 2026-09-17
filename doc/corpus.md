@@ -559,8 +559,9 @@ python3 tools/run_corpus_regressions.py --converter .build/release/pdf-reflow \
 
 The run passes EPUBCheck, progress and the 128 MiB Mac RSS gate (64 MiB peak). The
 [review points](../corpus/uscourts-pro-se-1-2016-review.json) cover all five pages. The
-contract holds 142 checks: headings, caption and field-label order, whole instruction
-paragraphs, the running header's removal, and the page-5 push buttons kept out of the text.
+contract holds 162 checks: headings, caption and field-label order, whole instruction
+paragraphs, the running header's removal, the page-5 push buttons kept out of the text, and no
+page recognized, called damaged or implausible, or dropped to a whole-page image.
 The empty widgets, unchecked boxes and push buttons show nothing beyond the printed page, so no page
 gets a source-page image; each page warns that its form fields are not interactive, and the box
 glyphs under the checkbox widgets read `☐` ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)).
@@ -599,10 +600,12 @@ python3 tools/run_corpus_regressions.py --converter .build/release/pdf-reflow \
 
 The run passes EPUBCheck, progress and the 256 MiB Mac RSS gate (127–129 MiB peak). The
 [review points](../corpus/ntrs-20200002975-gwl-2020-review.json) cover all 20 pages. The
-contract holds 149 checks, all on output that matches the source: headings, pages 3, 4, 6 and 12
+contract holds 285 checks, all on output that matches the source: headings, pages 3, 4, 6 and 12
 where the columns read in order, figure presence and captions, the `V_ref` subscript and the
 Reynolds-number exponents, the paragraph continuing from page 9 through the top of figure page 10,
-the appendix captions, reference order and the biographies. Pages 1–12 and 19 report
+the appendix captions, each standing directly beneath its plot, reference order and the
+biographies; and, on every page, no source-page image and no recognition, damaged-encoding,
+implausible-layer, unverified-layer or page-image-fallback warning. Pages 1–12 and 19 report
 `structureFallback`. Where columns sit side by side, on pages 1, 2, 5 and 8–11, the prose
 interleaves line by line, pages 7 and 8 read right-column blocks first, and the figures on pages
 10–11 are out of order ([#153](https://github.com/vocaro/PDFReflowLib/issues/153)). Section titles
@@ -646,10 +649,13 @@ python3 tools/run_corpus_regressions.py --converter .build/release/pdf-reflow \
 
 The run passes EPUBCheck, progress and the 512 MiB Mac RSS gate (276–314 MiB peak). The
 [review points](../corpus/usda-ars-agresearch-2012-11-review.json) cover all 24 pages. The
-contract holds 99 checks on 21 pages, all on output that matches the source: the cover lines and
-headings, the masthead date lines, photo presence and printed credits, whole captions on pages 6,
-9 and 12, reflowed sentences in source order on pages 6, 9, 12, 13, 15, 18 and 19, and the
-back-cover mailing instruction.
+contract holds 164 checks on all 24 pages, all on output that matches the source: the cover lines
+and headings, the masthead date lines, photo presence and printed credits, whole captions on pages
+6, 9 and 12, reflowed sentences in source order on pages 6, 9, 12, 13, 15, 18 and 19, the
+back-cover mailing instruction, and, on every page, no recognition, damaged-encoding or
+implausible-layer warning, with the whole-page fallback confined to pages 20–21 and the
+source-page image to pages 1 and 13. Pages 14, 22 and 23 hold their preserved regions and that
+disclosure only: #158 keeps all of their body text inside crops, so no reflowed text is pinned.
 
 Most of the text does not reflow. The EPUB carries 29,882 of about 83,400 source characters, and
 no article title reaches the contents:
@@ -693,10 +699,12 @@ python3 tools/run_corpus_regressions.py --converter .build/release/pdf-reflow \
 
 The run passes EPUBCheck, progress and the 128 MiB Mac RSS gate (49–51 MiB peak). The
 [review points](../corpus/ntrs-20190030725-dasc-2019-review.json) cover all 10 pages. The contract
-holds 173 checks, all on output that matches the source: the title heading, author blocks,
+holds 208 checks, all on output that matches the source: the title heading, author blocks,
 abstract and index terms, whole prose paragraphs in column order, the page 1 to 2 continuation,
 the order of section, step, bullet and requirement openings, separate dash items, figure, table and display crops,
-captions, footnote text and reference order.
+captions (Fig. 1 beneath its figure, TABLE I and TABLE III above their tables), footnote text and
+reference order; and, on every page, no source-page image and no recognition, damaged-encoding,
+implausible-layer, unverified-layer, structure-fallback or page-image-fallback warning.
 
 The paper reflows with no structure fallbacks, but these defects remain:
 - The title is the only heading. Section and appendix headings are `<p>` or `<pre>`, and
@@ -746,7 +754,7 @@ python3 tools/run_corpus_regressions.py --converter .build/release/pdf-reflow \
 
 The run passes EPUBCheck, progress and the 128 MiB Mac RSS gate (41 MiB peak). The
 [review points](../corpus/ntrs-20180003024-earthdata-slides-2018-review.json) cover all 21 slides.
-The contract holds 135 checks, all on output that matches the source:
+The contract holds 213 checks, all on output that matches the source:
 
 - the title slide's heading and byline;
 - the slide titles that are headings;
@@ -754,9 +762,12 @@ The contract holds 135 checks, all on output that matches the source:
 - line order on the title-less slides;
 - the diagram box labels in pipeline order;
 - the AODS superscript;
-- image presence on slides 2–5.
+- image presence on slides 2–5;
+- no slide recognized, called damaged or implausible, or dropped to a whole-page image.
 
-Slide 5's question has no text layer, so only its image carries it. The known defects are:
+Slide 5's question has no text layer, so only its image carries it; it is exempt from the
+no-recognition assertion, because its text never reaches the EPUB at all
+([#176](https://github.com/vocaro/PDFReflowLib/issues/176)). The known defects are:
 
 - The full-bleed background counts as a page-sized graphic, so all 21 slides get
   `unverifiedTextLayer` and a source-page image
@@ -809,13 +820,15 @@ python3 tools/run_corpus_regressions.py --converter .build/release/pdf-reflow \
 
 The run passes EPUBCheck, progress and the 128 MiB Mac RSS gate (61 MiB peak). The
 [review points](../corpus/ntrs-20210020887-techport-thm-2021-review.json) cover all five pages. The
-contract holds 48 checks, all on output that matches the source:
+contract holds 64 checks, all on output that matches the source:
 
 - the main-column headings;
 - the Project Introduction paragraphs, whole and separate;
 - every bullet item's text in order, including the nested items;
-- the page-4 closeout and Figure 1 text;
-- image presence.
+- the page-4 closeout and Figure 1 text, the caption standing directly beneath its diagram;
+- image presence, including all three page-5 gallery pictures;
+- every page warning that its links are not interactive, with no source-page image and no
+  recognition, damaged-encoding, implausible-layer, unverified-layer or fallback warning.
 
 The known defects are:
 
@@ -826,5 +839,5 @@ The known defects are:
 - Bullet markers become tiny image crops before paragraph items, and nesting is lost.
 - "Closeout Documentation" and "Images" are not headings
   ([#167](https://github.com/vocaro/PDFReflowLib/issues/167)).
-- The borderless links force a source-page image on all five pages
-  ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)).
+The 27 borderless links draw nothing beyond the printed page, so no page takes a source-page image
+and each warns `annotationsNotConverted` ([#151](https://github.com/vocaro/PDFReflowLib/issues/151)).

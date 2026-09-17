@@ -115,7 +115,7 @@ are, in the page markup). Evidence and negative controls on real output are in
 ## Current content coverage
 
 <!-- counts:coverage -->
-[corpus/regressions.json](../corpus/regressions.json) has 2915 targeted checks on 535 reviewed pages
+[corpus/regressions.json](../corpus/regressions.json) has 3103 targeted checks on 539 reviewed pages
 across 21 documents: *Pilot's Handbook of Aeronautical Knowledge*, *Beginning and Intermediate
 Algebra*, *The 9/11 Commission Report*, *The Fed Explained*, *Dietary Guidelines for Americans*,
 *Our Flag*, *Preparedness 101*, *Project Blue Book Special Report No. 14*, *Mineral Commodity
@@ -127,10 +127,10 @@ Scheduling Algorithm Compatible with a Distributed Management of Arrivals in the
 System*, *Agricultural Research*, *Earthdata Cloud Analytics Project* and *Tank Health Monitoring*.
 They comprise 1083 ordered-text, 205 text, 381 paragraph, 244 absent-text, 249 heading,
 20 heading-level, 50 absent-heading, 82 list-item, 1 preformatted-lines, 28 script, 6 absent-script,
-11 footnote, 34 note-link, 57 paragraph-continuation, 1 list-item-continuation,
-8 paragraph-separation, 81 distinct-paragraph, 186 image-presence, 42 page-reference, 89 warning,
-25 absent-warning, 17 source-region, 3 glyph-structure, 3 image-appearance and 9 table-cell checks,
-counted as `tools/check_corpus_content.py` counts them.
+11 footnote, 34 note-link, 61 paragraph-continuation, 1 list-item-continuation,
+8 paragraph-separation, 81 distinct-paragraph, 189 image-presence, 35 captioned-image,
+86 page-reference, 102 warning, 111 absent-warning, 17 source-region, 5 glyph-structure,
+4 image-appearance and 9 table-cell checks, counted as `tools/check_corpus_content.py` counts them.
 <!-- counts:end -->
 
 All source-page anchors must also remain complete and ordered, and semantic text must contain no image attachment placeholders.
@@ -140,8 +140,11 @@ contracts or tests, run `python3 tools/update_doc_counts.py`; `scripts/check-all
 while they are stale.
 
 The checks preserve selected correct words, paragraph semantics and cross-page continuity, paragraph/list order, license attribution, image
-presence, source-region content, glyph-level equation and table structure, image scale/contrast/color
-and explicit transcription/fallback warnings. They read the actual EPUB spine, track
+presence, a caption's place beside its figure, source-region content, glyph-level equation and table structure, image scale/contrast/color
+and explicit transcription/fallback warnings. They also pin what a conversion must not do to a page:
+`absentWarningCodes` on every reviewed page of the born-digital documents refuses fresh recognition,
+a damaged or implausible text layer and a whole-page image fallback, and `pageReference` refuses a
+source-page image nothing on the page needs. They read the actual EPUB spine, track
 page boundaries inside styled text, preserve ownership across chapter-file continuations, and
 exclude navigation/captions from source-text matching. They do not freeze serialization details
 or broken output such as interleaved columns and flattened exponents.
@@ -227,8 +230,12 @@ components, splits them into 16-pixel tiles, and requires every tile's footprint
 `maximumExtraInk` (default 0.12) outside the reference's ink. Ink mass is conserved by blur and
 resampling but not by erasure, so a 1.5-pixel blur or a 180→120→180 DPI resample still passes.
 
-Three references cover the Wallace page-343 quadratic-formula solution line (exponent, radical sign
-and fraction bar), exercise 35 on page 347 and the USGS Salient Statistics table (932 components).
+Five references cover the Wallace page-343 quadratic-formula solution line (exponent, radical sign
+and fraction bar), exercise 35 on page 347, the USGS Salient Statistics table (932 components), the
+USGS page-2 world production and reserves table (every figure of nineteen country rows under
+spanning headers, with the raised estimate markers and underlined totals) and the Our Flag page-27
+flag-size table, whose every digit #36 keeps as an image (coverage 0.73 and 0.97, no extra ink;
+erasing one country's figures, the spanning headers or one row's flag size scores 0.000).
 Correct crops score 0.59–1.05 coverage with under 0.01 extra ink. Erasing the b² exponent scores
 0.001, the fraction bar 0.000, the radical's check stroke 0.000, exercise 35's final exponent 0.003
 and its minus sign 0.064; substituting the similar preceding line or another exercise fails on both
@@ -244,11 +251,18 @@ grayscale region reference. `tools/image_appearance.py` locates it and measures 
 image's pixel size against the reviewed region at 180 DPI, minimum 0.95), ink contrast (2nd–98th
 percentile spread, minimum 0.4) and, for color references, color agreement (the fraction of colored
 reference samples whose converted hue is within 30° with at least half the chroma, minimum 0.8).
-The Colorado flag on Our Flag page 33, FAA figure 5-36 and the USGS statistics table are checked.
-Correct crops score 0.98–1.00 scale, 0.55–0.70 contrast and 0.99+ color agreement; grayscale,
+The Colorado flag on Our Flag page 33, FAA figure 5-36, the USGS statistics table and the CDC comic's
+image-only page 13 are checked; page 13 is the first colour check on artwork rather than a chart or a
+flag (the lamp's yellow glow over blue-grey night panels), and its crop scores 1.00 scale, 0.99
+contrast and 1.00 agreement over 1,247 colored samples.
+Correct crops score 0.98–1.00 scale, 0.55–0.99 contrast and 0.99+ color agreement; grayscale,
 channel-swapped, level-compressed and downscaled crops fail (agreement ≤ 0.36, contrast ≤ 0.18,
-scale ≤ 0.79). Scale is a pixel-dimension check, not a sharpness measure. See the
-[image-appearance evidence](../measurements/image-appearance/record.md).
+scale ≤ 0.79). Scale is a pixel-dimension check, not a sharpness measure. Glyph structure stays a
+born-digital check: a scanned NBS display equation keeps 0.84 of its reference ink but carries 0.44
+extra ink, because Paper Capture's background is grey rather than white, so no glyph reference was
+committed for it. See the
+[image-appearance evidence](../measurements/image-appearance/record.md) and the
+[caption-pairing and page-policy evidence](../measurements/figure-captions-and-page-policy/record.md).
 
 ## Table cell checks
 
@@ -282,7 +296,31 @@ spine reader separates cell text with spaces and parses each table into a grid. 
 [table-cells record](../measurements/table-cells/record.md).
 
 A `pageReference` expectation (a boolean) requires the page to carry, or not to carry, the
-converter's `Original page N` image, independently of its region crops (#151).
+converter's `Original page N` image, independently of its region crops (#151). Since #27's coverage
+pass it also covers every page of the TechPort print and the IEEEtran paper, pages 2–20 of the Word
+paper and eight more magazine pages (all false: their annotations draw nothing), and all seven NBS
+pages (true: the scan keeps its source page beside the inherited OCR).
+
+## Figure and caption pairing
+
+A caption a reading-order defect moves away from its figure still satisfies `text`, `orderedText`
+and `paragraphs`, which ask only that the page holds the phrase. A `captionedImages` expectation
+(`{"caption"}`, with an optional `"position"` of `after` — the default — or `before`) adds the
+placement: the reader records each page's own outermost blocks (`p`, `pre`, `li`, `table`,
+`h1`–`h6`) and its images in document order, and some block holding the phrase must be the
+immediate neighbour of an image on that side. The converter's generic `<figcaption>` never enters
+that sequence, so a preserved region's own caption cannot separate a figure from the caption the
+source printed; a block a page marker interrupts keeps only the text it holds on the page it opened,
+so a caption is judged on its own page.
+
+Thirty-five pairs are checked: 23 FAA `Figure N-M.` captions on sixteen pages, the Word paper's
+Figure 3 and its five appendix captions, the IEEEtran paper's Fig. 1 (below its figure) and the
+TABLE I and TABLE III captions (above their tables), the TechPort Figure 1 and NBS Figures 1 and 2.
+Python controls reject a stray block pushed between figure and caption, a removed figure whose
+caption survives, a removed caption, a caption on the wrong side and a caption on another page; the
+same mutations on real output fail on FAA page 262, the Word paper's page 14, the IEEEtran page 7
+and NBS page 2. The check proves the pairing survived, not that a caption sits beside the right
+figure. See the [caption-pairing and page-policy evidence](../measurements/figure-captions-and-page-policy/record.md).
 
 A `maximumImages` expectation (a non-negative integer) fails a page with more images than that,
 including source-page reference images; it pins decoration that must not become an image. The Fed
@@ -560,7 +598,7 @@ the page's structure validates, each line also records the tag the pipeline appl
 since #89/#90); older fixtures and untagged lines have none, and `SourceLayoutFixture` restores it.
 Source review, baseline failures, cross-document safeguards and full-run evidence are retained
 in [the three-fix measurement](../measurements/three-fidelity-fixes/record.md). The suite contains
-<!-- counts:swift-tests -->826 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->239 Python tests<!-- counts:end -->.
+<!-- counts:swift-tests -->826 Swift tests<!-- counts:end --> with no known-issue wrappers, and <!-- counts:python-tests -->242 Python tests<!-- counts:end -->.
 The comparison tests include a real-Poppler image URL check through the safe HTTP handler
 (simple and positioned modes, paths with spaces); absent Poppler is an explicit skip.
 
@@ -1123,9 +1161,11 @@ directly, including a field whose value the page does print beneath it, and `mar
 `’` as `☐`/`☒` only where every occurrence in the line lies under a checkbox (`the Clerk’s Office`
 is untouched). Negative controls: the old "any annotation" rule fails 11 expectations, and judging
 every annotation by ink alone, with widget values and annotation flags ignored, fails 13.
-Contracts: Pro Se 1 pages 1–5, the NASA ground-wind-loads page 1, USDA pages 2–19 and 24, Fed 5, 11,
+Contracts: Pro Se 1 pages 1–5, all 20 NASA ground-wind-loads pages, all ten IEEEtran pages, all five
+TechPort pages (its 27 borderless links), USDA pages 2–12, 14–19 and 22–24, Fed 5, 11,
 109 and 123, 9/11 581–583, FAA 6, 7, 12, 15 and 362 and Replay Clocks 1, 3, 4, 6 and 10 carry no
-page reference; 9/11 pages 570 and 571, whose links draw a border, still do. See the
+page reference; 9/11 pages 570 and 571, whose links draw a border, still do, and all seven NBS pages
+keep theirs beside the inherited OCR. See the
 [annotation evidence](../measurements/annotation-page-images/record.md).
 
 ## Blank pages

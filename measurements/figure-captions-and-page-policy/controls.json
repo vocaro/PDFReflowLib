@@ -1,0 +1,191 @@
+{
+  "controls": [
+    {
+      "case": "ntrs-20200002975-gwl-2020",
+      "control": "GWL page 14: a stray line pushed between Figure A1 and its caption",
+      "expected": "does not stand after an image",
+      "failedAsRequired": true,
+      "error": "Page 14: caption 'Figure A1. Peak bending moment due to lift, research model, segregated by azimuth angle regions' does not stand after an image",
+      "otherErrors": []
+    },
+    {
+      "case": "ntrs-20200002975-gwl-2020",
+      "control": "GWL page 14: the figure removed, its caption text kept",
+      "expected": "does not stand after an image",
+      "failedAsRequired": true,
+      "error": "Page 14: caption 'Figure A1. Peak bending moment due to lift, research model, segregated by azimuth angle regions' does not stand after an image",
+      "otherErrors": []
+    },
+    {
+      "case": "ntrs-20200002975-gwl-2020",
+      "control": "GWL page 14: the caption text removed, its figure kept",
+      "expected": "no block holds the caption",
+      "failedAsRequired": true,
+      "error": "Page 14: no block holds the caption 'Figure A1. Peak bending moment due to lift, research model, segregated by azimuth angle regions'",
+      "otherErrors": []
+    },
+    {
+      "case": "ntrs-20190030725-dasc-2019",
+      "control": "DASC page 7: the TABLE I caption pushed below its table",
+      "expected": "does not stand before an image",
+      "failedAsRequired": true,
+      "error": "Page 7: caption 'TABLE I: A 6-flight example.' does not stand before an image",
+      "otherErrors": []
+    },
+    {
+      "case": "faa-phak-8083-25c",
+      "control": "FAA page 262: Figure 11-5 caption pushed away from its figure",
+      "expected": "does not stand after an image",
+      "failedAsRequired": true,
+      "error": "Page 262: caption 'Figure 11-5. Drag versus speed.' does not stand after an image",
+      "otherErrors": []
+    },
+    {
+      "case": "nbs-jres-geltman-1977",
+      "control": "NBS page 2: FIGURE 1 crop removed, its caption kept",
+      "expected": "does not stand after an image",
+      "failedAsRequired": true,
+      "error": "Page 2: caption 'FIGURE 1. Trajectory of an electron' does not stand after an image",
+      "otherErrors": []
+    },
+    {
+      "case": "ntrs-20210020887-techport-thm-2021",
+      "control": "TechPort page 3: a source-page image appears",
+      "expected": "unexpected source-page reference image",
+      "failedAsRequired": true,
+      "error": "Page 3: unexpected source-page reference image",
+      "otherErrors": []
+    },
+    {
+      "case": "usda-ars-agresearch-2012-11",
+      "control": "USDA page 22: a source-page image appears on the index page",
+      "expected": "unexpected source-page reference image",
+      "failedAsRequired": true,
+      "error": "Page 22: unexpected source-page reference image",
+      "otherErrors": []
+    },
+    {
+      "case": "ntrs-20190030725-dasc-2019",
+      "control": "DASC page 5: the page reports fresh recognition",
+      "expected": "unexpected quality warning ocrUsed",
+      "failedAsRequired": true,
+      "error": "Page 5: unexpected quality warning ocrUsed",
+      "otherErrors": []
+    },
+    {
+      "case": "ntrs-20200002975-gwl-2020",
+      "control": "GWL page 9: the page falls back to a whole-page image",
+      "expected": "unexpected quality warning pageImageFallback",
+      "failedAsRequired": true,
+      "error": "Page 9: unexpected quality warning pageImageFallback",
+      "otherErrors": []
+    },
+    {
+      "case": "ntrs-20180003024-earthdata-slides-2018",
+      "control": "Slides 12: the deck text layer is called implausible",
+      "expected": "unexpected quality warning implausibleTextLayer",
+      "failedAsRequired": true,
+      "error": "Page 12: unexpected quality warning implausibleTextLayer",
+      "otherErrors": []
+    },
+    {
+      "case": "uscourts-pro-se-1-2016",
+      "control": "Pro Se 1 page 2: the form reports a damaged encoding",
+      "expected": "unexpected quality warning damagedTextEncoding",
+      "failedAsRequired": true,
+      "error": "Page 2: unexpected quality warning damagedTextEncoding",
+      "otherErrors": []
+    },
+    {
+      "case": "ntrs-20210020887-techport-thm-2021",
+      "control": "TechPort page 2: the lost-interaction warning disappears",
+      "expected": "Page 2: missing quality warning",
+      "failedAsRequired": true,
+      "error": "Page 2: missing quality warning",
+      "otherErrors": []
+    },
+    {
+      "case": "usda-ars-agresearch-2012-11",
+      "control": "USDA page 23: the preserved-region disclosure disappears",
+      "expected": "Page 23: missing quality warning",
+      "failedAsRequired": true,
+      "error": "Page 23: missing quality warning",
+      "otherErrors": []
+    },
+    {
+      "case": "ntrs-20210020887-techport-thm-2021",
+      "control": "TechPort page 5: one gallery image dropped",
+      "expected": "Page 5: missing preserved images",
+      "failedAsRequired": true,
+      "error": "Page 5: missing preserved images",
+      "otherErrors": []
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "control": "USGS page 2: Chile's production figures erased from the table crop",
+      "expected": "no image shows every stroke",
+      "failedAsRequired": true,
+      "error": "Page 2: no image shows every stroke of corpus/references/usgs-mcs2025-copper/page-2-world-production-glyphs.png (coverage 0.000, extra ink 0.000, sharpness 1.000, weakest [1181, 128, 1184, 134])",
+      "otherErrors": []
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "control": "USGS page 2: the spanning column headers erased",
+      "expected": "no image shows every stroke",
+      "failedAsRequired": true,
+      "error": "Page 2: no image shows every stroke of corpus/references/usgs-mcs2025-copper/page-2-world-production-glyphs.png (coverage 0.000, extra ink 0.000, sharpness 1.000, weakest [405, 7, 416, 16])",
+      "otherErrors": []
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "control": "Our Flag page 27: the 125 ft row's flag size erased",
+      "expected": "no image shows every stroke",
+      "failedAsRequired": true,
+      "error": "Page 27: no image shows every stroke of corpus/references/gpo-our-flag-2003/page-27-flag-size-table-glyphs.png (coverage 0.000, extra ink 0.000, sharpness 1.000, weakest [344, 253, 352, 256])",
+      "otherErrors": []
+    },
+    {
+      "case": "cdc-zombie-pandemic-2011",
+      "control": "CDC page 13: the comic page converted to grayscale",
+      "expected": "no image keeps the appearance",
+      "failedAsRequired": true,
+      "error": "Page 13: no image keeps the appearance of corpus/references/cdc-zombie-pandemic-2011/page-13-page-color.png (scale 1.000, contrast 0.988, color agreement 0.0)",
+      "otherErrors": []
+    },
+    {
+      "case": "cdc-zombie-pandemic-2011",
+      "control": "CDC page 13: the comic page's colour channels swapped",
+      "expected": "no image keeps the appearance",
+      "failedAsRequired": true,
+      "error": "Page 13: no image keeps the appearance of corpus/references/cdc-zombie-pandemic-2011/page-13-page-color.png (scale 1.000, contrast 0.988, color agreement 0.0)",
+      "otherErrors": []
+    },
+    {
+      "case": "cdc-zombie-pandemic-2011",
+      "control": "CDC page 13: the comic page rasterized at half scale",
+      "expected": "no image keeps the appearance",
+      "failedAsRequired": true,
+      "error": "Page 13: no image keeps the appearance of corpus/references/cdc-zombie-pandemic-2011/page-13-page-color.png (scale 0.500, contrast 0.965, color agreement 0.0449)",
+      "otherErrors": []
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "control": "Our Flag page 10: the 50-star paragraph split at the page marker",
+      "expected": "does not continue onto page 11",
+      "failedAsRequired": true,
+      "error": "Page 10: paragraph does not continue onto page 11 {'end': 'Alaska added a 49th in 1959, and Hawaii a 50th star in 1960. With the 50-star flag came', 'next': 'a new design and arrangement of the stars in the union'}",
+      "otherErrors": []
+    },
+    {
+      "case": "nbs-jres-geltman-1977",
+      "control": "NBS page 6: the conclusion paragraph split at the page marker",
+      "expected": "does not continue onto page 7",
+      "failedAsRequired": true,
+      "error": "Page 6: paragraph does not continue onto page 7 {'end': 'with a maximum in the region where the magnitude of the applied electric field', 'next': 'the mean atomic'}",
+      "otherErrors": []
+    }
+  ],
+  "skipped": [],
+  "failedAsRequired": 23,
+  "total": 23
+}

@@ -18,6 +18,9 @@ OPF = '{http://www.idpf.org/2007/opf}'
 EPUB = '{http://www.idpf.org/2007/ops}'
 HEADINGS = {HTML + 'h' + str(n) for n in range(1, 7)}
 BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'figure', 'li', 'table', 'caption', 'tr', 'th', 'td')}
+# The outermost blocks a page's content reads as, in document order, beside its images: the
+# sequence a caption's placement beside its figure is judged in (`captionedImages`).
+SEQUENCE_BLOCKS = HEADINGS | {HTML + tag for tag in ('p', 'pre', 'li', 'table')}
 DEFAULT_MAX_ENTRIES = 10_000
 DEFAULT_MAX_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
 # Every expectation key `assess` counts, as (documented name, keys, counted once per page). List
@@ -42,6 +45,7 @@ CHECK_TYPES = (
     ('paragraph-separation', ('separateParagraphs',), False),
     ('distinct-paragraph', ('distinctParagraphs',), False),
     ('image-presence', ('minimumImages', 'maximumImages'), True),
+    ('captioned-image', ('captionedImages',), False),
     ('page-reference', ('pageReference',), True),
     ('warning', ('warningCodesAnyOf',), True),
     ('absent-warning', ('absentWarningCodes',), True),
@@ -101,6 +105,7 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
     inspection_limit(max_uncompressed_bytes, 'max_uncompressed_bytes')
     pages, markers = {}, []
     current = None
+    sequence_depth = 0
     heading_id = 0
     paragraph_id = 0
     item_id = 0
@@ -144,7 +149,7 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                             spans.append({'tag': script, 'start': start, 'end': start + len(text)})
 
             def walk(element, script=None, heading=None, paragraph=None, note=None, item=None):
-                nonlocal current, heading_id, paragraph_id, note_id, item_id
+                nonlocal current, heading_id, paragraph_id, note_id, item_id, sequence_depth
                 pagebreak = 'pagebreak' in element.get(EPUB + 'type', '').split()
                 if pagebreak:
                     marker_id = element.get('id', '')
@@ -155,12 +160,13 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                         raise ValueError('Duplicate page boundary')
                     markers.append(current)
                     pages[current] = {'text': '', 'images': [], 'scripts': [], 'headings': {}, 'paragraphs': {}, 'listItems': {}, 'notes': {}, 'tables': [],
-                                      'noterefs': [], 'anchors': {}}
+                                      'noterefs': [], 'anchors': {}, 'blocks': []}
                 if element.tag == HTML + 'img' and current is not None:
                     asset = str(chapter.parent / element.attrib['src'])
                     if asset not in names:
                         raise ValueError('Missing image asset: ' + asset)
                     pages[current]['images'].append(asset)
+                    pages[current]['blocks'].append({'kind': 'image', 'asset': asset})
                     # The converter's supplementary source-page image, which contains every region.
                     if element.get('alt') == f'Original page {current}':
                         pages[current].setdefault('pageReferences', []).append(asset)
@@ -198,10 +204,23 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                 if element.get('role') == 'doc-footnote':
                     note_id += 1
                     note = note_id
+                # The page's own outermost blocks, in document order beside its images, so a
+                # caption's place next to its figure can be read (`captionedImages`). A block a
+                # page marker interrupts keeps only the text it holds on the page it opened.
+                sequence = None
+                if element.tag in SEQUENCE_BLOCKS:
+                    if current is not None and sequence_depth == 0:
+                        sequence = (current, {'kind': 'text', 'start': len(pages[current]['text'])})
+                        pages[current]['blocks'].append(sequence[1])
+                    sequence_depth += 1
                 append(element.text, script, heading, paragraph, note, item)
                 for child in element:
                     walk(child, script, heading, paragraph, note, item)
                     append(child.tail, script, heading, paragraph, note, item)
+                if element.tag in SEQUENCE_BLOCKS:
+                    sequence_depth -= 1
+                if sequence is not None:
+                    sequence[1]['end'] = len(pages[sequence[0]]['text'])
                 if reference is not None:
                     reference['end'] = len(pages[current]['text'])
                 if anchor is not None:
@@ -222,6 +241,11 @@ def read_pages(path, *, max_entries=DEFAULT_MAX_ENTRIES,
                             for ref in page['noterefs'] if 'end' in ref]
         for anchor in page['anchors'].values():
             anchor['text'] = normalized(anchor['text'])
+        # ('image', asset) and ('text', block text) in document order. Generic figcaptions never
+        # enter, so a preserved region's own caption does not separate a figure from its caption.
+        page['blocks'] = [('image', block['asset']) if block['kind'] == 'image'
+                          else ('text', normalized(raw[block['start']:block.get('end', len(raw))]))
+                          for block in page['blocks']]
         page['text'] = normalized(raw)
         # Each heading's text with the level it is written at, so a contract can pin `<h2>` against
         # `<h3>` (a deck whose slide titles ranked h2, h3 and h4 by type size, #165).
@@ -619,6 +643,28 @@ def assess(case, contract, result, report, pages, markers, image_data=None, refe
             checks += 1
             if len(page['images']) > maximum:
                 errors.append(f'Page {number}: {len(page["images"])} images, at most {maximum} expected')
+        # A caption that must stand beside the figure it names: some image on the page and the
+        # block holding the phrase must be neighbours in the page's own block order, with no other
+        # text block between them. A caption that drifted away from its figure, or whose figure is
+        # gone, fails where a text or ordered-text check still passes (#27).
+        for pairing in item.get('captionedImages', []):
+            if (not isinstance(pairing, dict) or not set(pairing) <= {'caption', 'position'}
+                    or not isinstance(pairing.get('caption'), str) or not normalized(pairing['caption'])
+                    or pairing.get('position', 'after') not in ('after', 'before')):
+                raise ValueError("Captioned image requires a nonempty caption and position 'after' or 'before'")
+            checks += 1
+            caption = normalized(pairing['caption'])
+            blocks = page.get('blocks', [])
+            after = pairing.get('position', 'after') == 'after'
+            neighbours = [(blocks[index - 1] if after else blocks[index + 1])
+                          for index, (kind, value) in enumerate(blocks)
+                          if kind == 'text' and caption in value
+                          and (index > 0 if after else index + 1 < len(blocks))]
+            if not any(kind == 'text' and caption in value for kind, value in blocks):
+                errors.append(f'Page {number}: no block holds the caption {pairing["caption"]!r}')
+            elif not any(kind == 'image' for kind, _ in neighbours):
+                errors.append(f'Page {number}: caption {pairing["caption"]!r} does not stand '
+                              + ('after' if after else 'before') + ' an image')
         if 'pageReference' in item:
             # Whether the converter's `Original page N` source-page image accompanies the page:
             # true where visible content needs it, false where nothing on the page does (#151).

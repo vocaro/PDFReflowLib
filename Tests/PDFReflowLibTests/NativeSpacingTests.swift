@@ -96,9 +96,18 @@ private func spacingEvidence(_ show: String, prefix: String = "", suffix: String
 
 @Test func unsupportedSourceSpacingStateFallsBack() throws {
     let show = "[(Dair)-5(y)] TJ"
-    for prefix in ["1 Tc", "1 Tw", "1 Ts", "3 Tr", "90 Tz", "/G gs", "Q", "q", "/Missing Do"] {
+    for prefix in ["1 Ts", "3 Tr", "90 Tz", "/G gs", "Q", "q", "/Missing Do"] {
         #expect(try spacingEvidence(show, prefix: prefix).isEmpty)
     }
+    // Character and word spacing are measured for word boundaries (#119), but Type3 space removal
+    // does not model them: its show supplies no removal evidence.
+    for prefix in ["1 Tc", "1 Tw", "-0.5 Tc"] {
+        let evidence = try spacingEvidence(show, prefix: prefix)
+        #expect(evidence.count == 1)
+        #expect(evidence.first?.text == nil)
+        #expect(evidence.first?.extraSpaces(in: "Dair y") == nil)
+    }
+    #expect(try spacingEvidence(show, prefix: "1001 Tc").isEmpty)
     // A Form XObject is opaque: its text is neither evidence nor a contradiction, so the
     // page's own shows keep their evidence (#43); a Form drawn inside a text object is not.
     #expect(try spacingEvidence(show, prefix: "/Nested Do").first?.extraSpaces(in: "Dair y") == [4])
@@ -319,7 +328,7 @@ private func repairedBoundary(_ evidence: [NativeSpacingReader.Evidence], _ nati
     #expect(NativeSpacingReader.apply(evidence, to: NSAttributedString(string: "event emust"), bounds: boundaryRect,
                                       allBounds: [boundaryRect, overlapping]).string == "event emust")
     // Unsupported text state still disqualifies the page for insertion as it does for removal.
-    for prefix in ["1 Tc ", "1 Tw ", "90 Tz ", "/G gs "] {
+    for prefix in ["1 Ts ", "90 Tz ", "/G gs "] {
         #expect(try boundaryEvidence(prefix + upright).isEmpty)
     }
 }
@@ -465,10 +474,13 @@ private func wallaceFont(_ name: String, encoding: String = "<< /Type /Encoding 
     for prefix in ["/WithFont gs ", "/Missing gs ", "/NotADictionary gs ", "gs "] {
         #expect(try boundaryEvidence(prefix + upright, extGState: states).isEmpty)
     }
-    // Nonzero character or word spacing still disqualifies the page, as before.
-    for prefix in ["/R7 gs 1 Tc ", "/R7 gs 1 Tw "] {
-        #expect(try boundaryEvidence(prefix + upright, extGState: states).isEmpty)
-    }
+    // Character and word spacing are measured since #119: 1 Tc (0.1 em per glyph) widens each
+    // advance and leaves the glyphs after the last one alone; 1 Tw widens only code 32.
+    let spaced = try boundaryEvidence("/R7 gs 1 Tc " + upright, extGState: states)
+    #expect(spaced.map(\.end) == [69, 73, 99])
+    #expect(repairedBoundary(spaced, "event emust") == "event e must")
+    let words = try boundaryEvidence("/R7 gs 1 Tw " + upright.replacingOccurrences(of: "(event)", with: "(ev ent)"), extGState: states)
+    #expect(words.map(\.end) == [71, 73, 96])
 }
 
 @Test func onlyWinAnsiEncodedType1FontsWithoutToUnicodeDecodeThroughTheirEncoding() throws {
@@ -513,4 +525,176 @@ private func wallaceFont(_ name: String, encoding: String = "<< /Type /Encoding 
     }
     // A page whose simple fonts lack both ToUnicode and a supported encoding is not scanned.
     #expect(try boundaryEvidence(ops, fonts: [BoundaryFont(name: "Fa", map: nil), BoundaryFont(name: "Fb", map: nil)]).isEmpty)
+}
+
+// MARK: - Same-font word spaces (#119)
+
+private struct NineElevenSource: Decodable {
+    struct Font: Decodable {
+        var resourceName: String
+        var subtype: String
+        var firstChar: Int?
+        var widths: [Double]?
+        var toUnicode: String?
+    }
+    struct Line: Decodable { var text: String; var rect: [Double] }
+    struct Page: Decodable {
+        var page: Int
+        var fonts: [Font]
+        var extGStates: [String: String]
+        var operators: String
+        var lines: [Line]
+    }
+    var sourceSHA256: String
+    var pages: [Page]
+    static func load() throws -> Self {
+        try JSONDecoder().decode(Self.self, from: Data(contentsOf: Bundle.module.resourceURL!
+            .appendingPathComponent("fixtures/911-text-operators.json")))
+    }
+}
+
+/// The two words around every space `repaired` adds to `native`, in order (`went.8 They`).
+private func insertedPairs(_ native: String, _ repaired: String) -> [String] {
+    let before = Array(native), after = Array(repaired)
+    var i = 0, j = 0, pairs: [String] = []
+    while i < before.count, j < after.count {
+        if before[i] == after[j] { i += 1; j += 1; continue }
+        guard after[j] == " ", j > 0 else { return ["mismatch: \(repaired)"] }
+        let start = after[..<(j - 1)].lastIndex(of: " ").map { $0 + 1 } ?? 0
+        let end = after[(j + 1)...].firstIndex(of: " ") ?? after.count
+        pairs.append(String(after[start..<end]))
+        j += 1
+    }
+    return i == before.count && j == after.count ? pairs : ["mismatch: \(repaired)"]
+}
+
+/// A fixture page rebuilt from its source fonts, graphics states and content stream, with PDFKit's
+/// native lines repaired as NativeTextReader does: the inserted pairs and the repaired lines.
+private func nineElevenRepairs(_ page: NineElevenSource.Page, operators: String? = nil) throws -> (pairs: [String], text: [String]) {
+    let fonts = page.fonts.map {
+        BoundaryFont(name: $0.resourceName, firstChar: $0.firstChar, widths: $0.widths, map: $0.toUnicode, subtype: $0.subtype)
+    }
+    let states = page.extGStates.sorted { $0.key < $1.key }.map { "/\($0.key) \($0.value)" }.joined(separator: " ")
+    let document = try boundaryPDF(fonts: fonts, operators: operators ?? page.operators, extGState: states)
+    let evidence = NativeSpacingReader.read(try #require(document.page(at: 1)))
+    let bounds = page.lines.map { CGRect(x: $0.rect[0], y: $0.rect[1], width: $0.rect[2], height: $0.rect[3]) }
+    var pairs: [String] = [], text: [String] = []
+    for (index, line) in page.lines.enumerated() {
+        let repaired = NativeSpacingReader.apply(evidence, to: NSAttributedString(string: line.text), bounds: bounds[index], allBounds: bounds).string
+        pairs += insertedPairs(line.text, repaired)
+        text.append(repaired)
+    }
+    return (pairs, text)
+}
+
+@Test func nineElevenSameFontWordSpacesAreRestoredOnSourcePages() throws {
+    let source = try NineElevenSource.load()
+    #expect(source.sourceSHA256 == (try SourceLayoutFixture.load("911-19")).sourceSHA256)
+    // Every insertion on these pages, reviewed on 200-dpi renders of the original (#119 record):
+    // spaces after punctuation set as a TJ adjustment (`mosques.)-108.9(He`), before capitals whose
+    // kern takes the space (`New|York`), before `(`, and the note reference `went.8They`.
+    let expected: [Int: [String]] = [
+        19: ["work. Some", "Towers, the", "World Trade", "New York", "City. Others", "Pentagon. Across", "journey. Among", "Boston: American", "Boston, Atta", "later, Atta", "Airport. They"],
+        45: ["9:23: “Okay", ". These", "New York.", "York. The", "area. The", "liaison, NEADS", "NEADS: “We’re", "77.” The", "Washington: “Latest", "report. Aircraft", "fighters: “Okay,", "“Okay, we’re", "instructed, but", "said. “Damn", "order, this", "location. Second,", "Second, a", "“generic” flight", "Washington. The", "9:38. The", "aircraft. It", "all. After", "second World", "World Trade", "crash, Boston"],
+        48: ["seconds, the", "aircraft, and", "D.C. The", "radar, the", "Uh, who,", "who, it", "10:07. Unaware"],
+        57: ["to Vice", "Cheney, Dr.", "Dr. Rice,", "Rice, New", "New York", "airport. The", "9:30, the", "missing. Staff", "the White", "determine, no", "9:45. During", "the Vice", "President: “Sounds", "Pentagon. We’re", "time, Card,", "Card, the", "agent, the", "aide, and", "The Vice", "to Washington.", "Washington. Air", "destination. The", "us.” This", "time. As", "minute, before"],
+        234: ["mosques. He", "research, which", "instructed, they", "Airport, we", "went.8 They", "community, specifically", "evening, Abdullah", "private. The", "them. This", "Angeles. This", "community, Thumairy"],
+        489: ["v. Ali", "Davies, “Saudis", "(London), Aug.", "later. Testimony", "88. “World", "U.S. Attorney", "Odeh, Aug.", "U.S. Attorney", "interview, “To", "U.S. Attorney", "93. ABC", "interview, “Terror", "Suspect: An", "1. Brief", "v. Ramzi", "Ahmed Yousef,", "Yousef, Lead", "No. 98-1041", "Cir. filed", "Aug. 25,", "25, 2000),", "War: The", "CIA, Afghanistan,", "3. Trial", "v. Rahman,", "Rahman, 189", "88, 104", "Cir. 1999);", "1999); Brief", "v. Siddig", "No. 96-1044", "Cir. filed", "3, 1997),", "1997), pp.", "pp. 10,", "10, 15.", "15. See", "report, “Review"],
+    ]
+    var texts: [Int: String] = [:]
+    for page in source.pages {
+        let result = try nineElevenRepairs(page)
+        #expect(result.pairs == expected[page.page] ?? [], "page \(page.page)")
+        texts[page.page] = result.text.joined(separator: "\n")
+    }
+    // Negative controls on the same pages: letter-spaced small caps (Tc), a time whose adjustment
+    // Tc cancels (`9:|34`, +31 against -0.031 em), the `f|’` kern at +0.125 em, ellipsis dots,
+    // initials inside an abbreviation, a kerned space glyph, and a sentence space narrower than
+    // the overhang threshold (`dispute.|The`) all stay as PDFKit read them.
+    #expect(texts[19]?.contains("Tuesday, September 11, 2001, dawned temperate") == true)
+    #expect(texts[57]?.contains("White House, at 9:34. It") == true)
+    #expect(texts[48]?.contains("Commission staff’s analysis") == true)
+    #expect(texts[48]?.contains("subject of some dispute.The 10:03:11") == true)
+    #expect(texts[45]?.contains("crank it up. . . . Run them") == true)
+    #expect(texts[489]?.contains("(S.D. N.Y.), Oct. 20, 2000") == true)
+    #expect(texts[234]?.contains("Customs at Los Angeles International") == true)
+    // Without character and word spacing the producer model does not hold, so the same arrays
+    // yield no word spaces; the separately positioned note reference is still restored.
+    let page234 = try #require(source.pages.first { $0.page == 234 })
+    let unspaced = page234.operators.replacingOccurrences(of: #"-?[0-9]*\.?[0-9]+ T([cw])"#, with: "0 T$1 ", options: .regularExpression)
+    #expect(unspaced != page234.operators && !unspaced.contains("-0.0687 Tw"))
+    #expect(try nineElevenRepairs(page234, operators: unspaced).pairs == ["went.8 They"])
+}
+
+@Test func sameFontWordSpaceSeparatesTheMeasuredGapModes() {
+    func space(_ left: Unicode.Scalar, _ right: Unicode.Scalar, _ gap: CGFloat, after before: Unicode.Scalar? = "a") -> Bool {
+        NativeSpacingReader.sameFontWordSpace(before: before, left: left, right: right, gap: gap)
+    }
+    // Before a letter, digit or `(`: 9/11 kerns end at 0.059 em, word spaces begin at 0.075 em.
+    #expect(space(".", "H", 0.108) && space(",", "w", 0.075) && space(",", "2", 0.11) && space("\u{201D}", "t", 0.1))
+    #expect(space(".", "(", 0.105) && space("w", "t", 0.1))
+    #expect(!space("r", "i", 0.0586) && !space(".", "S", 0.06) && !space(".", "(", 0.05))
+    // After a lowercase letter or punctuation, an overhanging capital or opening quote: kerns and
+    // abbreviations lie at or below 0.001 em, word spaces from 0.003 em; the threshold is 0.005.
+    #expect(space("w", "Y", 0.0235) && space(".", "T", 0.006) && space(",", "\u{201C}", 0.0085) && space(";", "\u{2018}", 0.01))
+    #expect(!space(".", "Y", -0.0004) && !space(".", "W", 0.001) && !space("w", "Y", 0.004))
+    // Between capitals the narrow mode is kerning (Replay's Libertine small caps `WI|TH`).
+    #expect(!space("I", "T", 0.037) && space("I", "T", 0.0835) && !space("3", "T", 0.03))
+    // Decimals and times never split; a comma between digits does at a word gap (`11, 2001`).
+    #expect(!space(".", "5", 0.2, after: "3") && !space(":", "4", 0.2, after: "8") && space(",", "2", 0.11, after: "1"))
+    // Not word boundaries: ellipsis dots, closing quotes after a letter, dashes, mathematical
+    // letters, and gaps beyond an em.
+    #expect(!space(".", ".", 0.13) && !space("f", "\u{2019}", 0.125) && !space("\u{2014}", "T", 0.2) && !space("e", "-", 0.2))
+    #expect(!space(".", "\u{1D453}", 0.1) && !space("\u{1D43B}", "\u{1D43F}", 0.1) && !space("\u{210E}", "l", 0.1))
+    #expect(!space(".", "T", 1.01) && !space(".", "T", .infinity) && !space(".", "T", .nan))
+}
+
+@Test func tjAdjustmentsInJustifiedShowsRestoreWordSpacesAndLetterSpacingStaysJoined() throws {
+    // 10-point fonts with 500-unit advances. Nonzero Tc and Tw make the show a justified one; the
+    // adjustment of 110 thousandths is a word space after the period.
+    func words(_ show: String, spacing: String = "0.001 Tc -0.2 Tw") throws -> [NativeSpacingReader.Evidence] {
+        try boundaryEvidence("BT \(spacing) /Fa 10 Tf 1 0 0 1 40 700 Tm \(show) ET")
+    }
+    let sentence = try words("[(went.)-110(They)] TJ")
+    #expect(sentence.first?.wordSpaces == [5])
+    #expect(repairedBoundary(sentence, "went.They") == "went. They")
+    #expect(repairedBoundary(sentence, "went. They") == "went. They")
+    for native in ["went.Them", "went.They extra", "wentThey"] {
+        #expect(repairedBoundary(sentence, native) == native)
+    }
+    // A trailing space glyph that PDFKit trims still matches; any other difference does not.
+    #expect(repairedBoundary(try words("[(went.)-110(They )] TJ"), "went.They") == "went. They")
+    #expect(repairedBoundary(try words("[(went.)-110(Vir=)] TJ"), "went.Vir-") == "went.Vir-")
+    #expect(repairedBoundary(try words("[(went.)-110(They)] TJ"), "went.They ") == "went. They ")
+    // Negative character spacing that cancels the adjustment leaves no gap (9/11's `9:|34`, +31
+    // against Tc -0.031 em); a smaller one leaves the word gap.
+    #expect(try words("[(went.)-110(They)] TJ", spacing: "-1.1 Tc -0.2 Tw").first?.wordSpaces == [])
+    #expect(try words("[(went.)-110(They)] TJ", spacing: "-0.2 Tc -0.2 Tw").first?.wordSpaces == [5])
+    // Letter-spaced type adjusts every glyph alike: no single boundary is a word space.
+    #expect(try words("[(C)-100(H)-100(A)-100(P)] TJ").first?.wordSpaces == [])
+    #expect(try words("[(to)-100(a)-100(b)] TJ").first?.wordSpaces == [])
+    #expect(try words("[(went.)-110(A)-5(nd)] TJ").first?.wordSpaces == [5])
+    // A show without character or word spacing (TeX, NOAA's Lora `E.|A.` at +0.027 em) is not read.
+    #expect(try words("[(went.)-110(They)] TJ", spacing: "0 Tc 0 Tw").first?.wordSpaces == [])
+    // An empty string between the adjustment and the glyphs keeps the boundary.
+    #expect(try words("[(went.)-110()(They)] TJ").first?.wordSpaces == [5])
+}
+
+@Test func noteReferenceBeforeACapitalRestoresItsWordSpaceOnly() throws {
+    // 9/11 page 234: `ent.` at 10.25 points, the reference `8` at 7.175 points raised 2.25 points,
+    // then `They` 0.6 point after the reference's advance. Fonts have 500-unit advances.
+    func line(_ note: String, raise: CGFloat = 2.25, gap: CGFloat = 0.6, size: CGFloat = 7.175, next: String = "They") throws -> [NativeSpacingReader.Evidence] {
+        let end = 60 + 0.5 * size * CGFloat(note.count)
+        return try boundaryEvidence("BT 0.001 Tc -0.07 Tw /Fa 10.25 Tf 1 0 0 1 40 700 Tm (ent.) Tj /Fa \(size) Tf 1 0 0 1 60 \(700 + raise) Tm (\(note)) Tj "
+            + "/Fa 10.25 Tf 1 0 0 1 \(end + gap) 700 Tm (\(next)) Tj ET")
+    }
+    #expect(repairedBoundary(try line("8"), "ent.8They") == "ent.8 They")
+    #expect(repairedBoundary(try line("135"), "ent.135They") == "ent.135 They")
+    // A reference set tight against the text, on the baseline, before a lowercase continuation, at
+    // nearly the text's size, or anything but digits stays joined.
+    #expect(repairedBoundary(try line("8", gap: 0.2), "ent.8They") == "ent.8They")
+    #expect(repairedBoundary(try line("8", raise: 0), "ent.8They") == "ent.8They")
+    #expect(repairedBoundary(try line("8", next: "they"), "ent.8they") == "ent.8they")
+    #expect(repairedBoundary(try line("8", size: 9), "ent.8They") == "ent.8They")
+    #expect(repairedBoundary(try line("a"), "ent.aThey") == "ent.aThey")
 }

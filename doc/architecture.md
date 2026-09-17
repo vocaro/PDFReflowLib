@@ -103,23 +103,32 @@ jump by more than the inline-script range and one carries a full-line offset, na
 inserts a missing word boundary. Existing whitespace and line-ending hyphens remain unchanged;
 drop caps with different sizes and opposite inline scripts do not supply this evidence. This
 handles PDFKit selections that concatenate multiple visual lines, not arbitrary within-line
-spacing or OCR spelling repair. `NativeSpacingReader` scans a page's text-show operators for two
-bounded word-boundary repairs: a Type3 TJ array whose tiny adjustment contradicts a PDFKit space
+spacing or OCR spelling repair. `NativeSpacingReader` scans a page's text-show operators for bounded
+word-boundary repairs: a Type3 TJ array whose tiny adjustment contradicts a PDFKit space
 removes that space, and a font change on one baseline whose measured gap (simple-font Widths, Tm
-scale, TJ adjustments that precede a string; a trailing adjustment moves no glyph of its show) is
-at least 0.15 em between a letter or digit on either side inserts the space PDFKit drops after a
-mathematical variable or digit set in its own font (#43; Wallace's CMR12 digits before EC-font
-prose, #110). Shows are decoded
+scale, character and word spacing, TJ adjustments that precede a string; a trailing adjustment or
+character spacing moves no glyph of its show) is at least 0.15 em between a letter or digit on
+either side inserts the space PDFKit drops after a mathematical variable or digit set in its own
+font (#43; Wallace's CMR12 digits before EC-font prose, #110). Same-font spaces are inserted in two
+forms (#119, the 9/11 report). Inside one show that sets nonzero `Tc` or `Tw` (a justified
+Distiller line), a TJ adjustment between two glyphs with no space glyph is a word space when
+min(adjustment, adjustment + Tc) reaches the book's word-space mode: 0.066 em before a letter,
+digit or `(`, or 0.005 em before an overhanging `A T V W Y` or opening quote after a lowercase
+letter or punctuation, where the space's kern falls into the gap; a period or colon between digits,
+mathematical letters and letter-spaced one-glyph runs are excluded. And a raised show of one to
+four digits at most 0.8 of the next show's size, followed by a capital at a 0.066 em gap of its
+own size, is a note reference whose space PDFKit drops. PDFKit keeps every space glyph and spaces
+adjustments from about 0.14 em, so only narrower ones are repaired. Shows are decoded
 through one-byte ToUnicode maps (bfchar and bfrange, ligatures and surrogate pairs; for a simple
 font, Adobe PDF Library's one-byte entries under a `<0000> <FFFF>` codespace are read as one byte,
 as `MarkedTextReader` reads its space codes, #104), or, for a Type1 font with no ToUnicode map,
 through a `WinAnsiEncoding` (codes 32–126 as ASCII, `Differences` names from a small glyph-name
 table, #110), and must spell
-the line exactly apart from PDFKit's own spaces; rotated shows, Form XObjects and fonts without
-Widths or maps supply no evidence, and unsupported text state still disqualifies the page: a `gs`
-whose ExtGState sets a font or does not resolve, nonzero `Tc`/`Tw`/`Ts`, `Tr`, `Tz`, and shows
-without their own positioning (so Adobe, Word and GPO books with character or word spacing still
-yield no evidence, #110).
+the line exactly apart from PDFKit's own spaces (a trailing source space glyph PDFKit trims is
+allowed); rotated shows, Form XObjects and fonts without Widths or maps supply no evidence, Type3
+space removal ignores shows with character or word spacing, and unsupported text state still
+disqualifies the page: a `gs` whose ExtGState sets a font or does not resolve, nonzero `Ts`, `Tr`,
+`Tz`, `Tc` or `Tw` beyond 1000 units, and shows without their own positioning (Fed and FAA, #110).
 Object-only selections are discarded before attributed-string access
 to avoid unnecessary PDFKit image-attachment decoding. `GraphicsReader` scans bounded Core Graphics paint
 operations and nested Form XObjects. It resolves shading resources and bounds gradient regions

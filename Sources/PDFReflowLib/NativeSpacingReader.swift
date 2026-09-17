@@ -20,6 +20,9 @@ enum NativeSpacingReader {
         /// Font size in page space and the font resource's identity, for gap and boundary tests.
         var size: CGFloat = 0
         var font: Int = 0
+        /// UTF-16 offsets in `unicode` where a TJ adjustment between two glyphs of this show sets
+        /// a word space without a space glyph (`sameFontWordSpace`), #119.
+        var wordSpaces: Set<Int> = []
 
         func extraSpaces(in native: String) -> [Int]? {
             guard let text else { return nil }
@@ -42,6 +45,10 @@ enum NativeSpacingReader {
     /// shrink to about 0.17 em), with a letter or digit on either side. Returns the UTF-16
     /// offsets in `native` where a space is missing, or nil unless the shows spell the line
     /// exactly apart from PDFKit's own spaces.
+    ///
+    /// Two same-font boundaries are also restored (#119, the 9/11 report): a word space that a
+    /// TJ adjustment sets between two glyphs of one show (`Evidence.wordSpaces`), and a note
+    /// reference, a raised show of digits in a smaller size, followed by a capital at a word gap.
     static func missingSpaces(in native: String, shows: [Evidence]) -> [Int]? {
         var source: [UInt16] = [], boundaries: Set<Int> = []
         var previous: Evidence?
@@ -53,6 +60,12 @@ enum NativeSpacingReader {
                show.origin.x - end >= max(previous.size, show.size) * 0.15,
                word(previous.unicode?.last), word(unicode.first) {
                 boundaries.insert(source.count)
+            }
+            if let previous, let end = previous.end, noteReference(previous, before: show, end: end) {
+                boundaries.insert(source.count)
+            }
+            for offset in show.wordSpaces where offset > 0 && offset < unicode.utf16.count {
+                boundaries.insert(source.count + offset)
             }
             source += unicode.utf16
             previous = show
@@ -72,7 +85,55 @@ enum NativeSpacingReader {
             } else { return nil }
         }
         while j < extracted.count, whitespace(extracted[j]) { j += 1 }
+        // A space glyph that ends the source line draws nothing; PDFKit trims it (9/11, #119).
+        while i < source.count, j == extracted.count, whitespace(source[i]) { i += 1 }
         return i == source.count && j == extracted.count && !inserted.isEmpty ? inserted : nil
+    }
+
+    /// Word-space gaps measured on the 9/11 report's TJ arrays (#119), as min(adjustment,
+    /// adjustment + Tc) in em between two glyphs of one show with no space glyph. Before a
+    /// letter, a digit or `(`, kerns end at 0.059 em and word spaces begin at 0.075 em. After a
+    /// lowercase letter or punctuation, a capital that overhangs to the left (A T V W Y) or an
+    /// opening quote takes the space's kern into the gap: kerns, abbreviations and initials
+    /// (`N.Y.`, `W. W.`) lie at or below 0.001 em and word spaces begin at 0.003 em. Between
+    /// capitals the narrow mode is kerning (Replay Clocks' Libertine small caps, `WI|TH`,
+    /// +0.037 em), so it takes the letter threshold.
+    static let wordSpaceGap: CGFloat = 0.066
+    static let overhangWordSpaceGap: CGFloat = 0.005
+
+    /// Whether a same-font gap of `gap` em between `left` and `right` (after `before`, the
+    /// character preceding `left`) is a word space. The left side ends a word (a letter, a digit,
+    /// sentence punctuation or a closing quote or parenthesis) and the right side starts one (a
+    /// letter, a digit, an opening quote or parenthesis). A period or colon between digits (`3.5`, `8:46`)
+    /// is never a boundary, nor is a mathematical letter (TeX math italic sets kerns and italic
+    /// corrections, Replay Clocks' `ℎ𝑙𝑐.𝑓`), and gaps above one em are not word spaces.
+    static func sameFontWordSpace(before: Unicode.Scalar?, left: Unicode.Scalar, right: Unicode.Scalar, gap: CGFloat) -> Bool {
+        func mathematical(_ scalar: Unicode.Scalar) -> Bool {
+            (0x1D400...0x1D7FF).contains(scalar.value) || (0x2100...0x214F).contains(scalar.value)
+        }
+        let letters = CharacterSet.letters, digits = CharacterSet.decimalDigits
+        let closing = ".,;:?!\u{201D}\u{2019})".unicodeScalars.contains(left)
+        let leftWord = letters.contains(left) || digits.contains(left) || closing
+        let overhang = "ATVWY\u{201C}\u{2018}".unicodeScalars.contains(right)
+        let rightWord = overhang || letters.contains(right) || digits.contains(right) || right == "("
+        guard leftWord, rightWord, !mathematical(left), !mathematical(right), gap.isFinite, gap <= 1 else { return false }
+        if ".:".unicodeScalars.contains(left), let before, digits.contains(before), digits.contains(right) { return false }
+        let narrow = overhang && (closing || CharacterSet.lowercaseLetters.contains(left))
+        return gap >= (narrow ? overhangWordSpaceGap : wordSpaceGap)
+    }
+
+    /// A note reference set as its own show (9/11: a 7.2-point digit raised 2.25 points before
+    /// 10.25-point text): one to four digits at most 0.8 of the next show's size, raised by 0.15
+    /// to 0.6 of it, followed on the text's baseline by a capital or an opening quote at a word
+    /// gap in em of the reference's size.
+    static func noteReference(_ note: Evidence, before show: Evidence, end: CGFloat) -> Bool {
+        guard let digits = note.unicode, (1...4).contains(digits.unicodeScalars.count),
+              digits.unicodeScalars.allSatisfy({ ("0"..."9").contains($0) }),
+              let first = show.unicode?.unicodeScalars.first,
+              CharacterSet.uppercaseLetters.contains(first) || first == "\u{201C}",
+              note.size > 0, show.size > 0, note.size <= show.size * 0.8 else { return false }
+        let raise = note.origin.y - show.origin.y, gap = (show.origin.x - end) / note.size
+        return raise >= show.size * 0.15 && raise <= show.size * 0.6 && gap >= wordSpaceGap && gap <= 1
     }
 
     /// Only complete one-byte bfchar maps are supported. Ranges, inherited maps, duplicate
@@ -296,7 +357,10 @@ enum NativeSpacingReader {
         var font: Font?
         var size: CGFloat = 0
         var leading: CGFloat = 0
-        var saved: [(CGAffineTransform, Font?, CGFloat, CGFloat)] = []
+        /// Character and word spacing (`Tc`, `Tw`) in unscaled text space units (#119).
+        var characterSpacing: CGFloat = 0
+        var wordSpacing: CGFloat = 0
+        var saved: [(CGAffineTransform, Font?, CGFloat, CGFloat, CGFloat, CGFloat)] = []
         var inText = false
         var positioned = false
         var invalid = false
@@ -329,9 +393,11 @@ enum NativeSpacingReader {
             // does not disqualify the page's upright text.
             guard transform.b == 0, transform.c == 0, transform.a > 0, transform.d > 0 else { return }
             var item = Evidence(origin: CGPoint(x: transform.tx, y: transform.ty), size: size * transform.a, font: font?.id ?? 0)
-            var value = "", gaps: Set<Int> = [], valid = font?.map != nil && size > 0
-            var unicode = "", advance: CGFloat = 0
+            // Type3 space removal models no character or word spacing.
+            var value = "", gaps: Set<Int> = [], valid = font?.map != nil && size > 0 && characterSpacing == 0 && wordSpacing == 0
+            var unicode = "", advance: CGFloat = 0, trailingSpacing: CGFloat = 0
             var decodable = font?.unicode != nil && size > 0, measurable = font?.widths != nil && size > 0
+            let spacing = (characterSpacing, wordSpacing)
             func append(_ string: CGPDFStringRef) {
                 let count = CGPDFStringGetLength(string)
                 guard count <= 4096, value.utf16.count + count <= 4096,
@@ -344,22 +410,39 @@ enum NativeSpacingReader {
                     if decodable, let decoded = font.unicode?[code], unicode.utf16.count + decoded.utf16.count <= 4096 {
                         unicode += decoded
                     } else { decodable = false }
-                    if measurable, let width = font.widths?[code] { advance += width * size } else { measurable = false }
+                    // A simple font's code 32 is the space that word spacing widens.
+                    trailingSpacing = spacing.0 + (code == 32 ? spacing.1 : 0)
+                    if measurable, let width = font.widths?[code] { advance += width * size + trailingSpacing } else { measurable = false }
                 }
             }
+            /// Adjusted boundaries between strings: the UTF-16 offset, the gap in em, the index of
+            /// the non-empty string after it and the code count of the one before it.
+            var boundaries: [(offset: Int, gap: CGFloat, string: Int, before: Int)] = []
             if let values {
                 var previousWasString = false
                 // An adjustment moves the glyphs after it. A trailing one moves none of this show's
                 // glyphs, and every accepted show is positioned on its own, so it cannot shorten the
                 // measured end (#110: Ghostscript ends each TeX math show with one, `[(5)178.4]TJ`).
                 var pending: CGFloat = 0
+                // Adjustment units since the last glyph, the number of non-empty strings so far,
+                // and the code count of the last one.
+                var sinceGlyph: CGFloat = 0, strings = 0, lastCount = 0
                 for i in 0..<CGPDFArrayGetCount(values) {
                     var string: CGPDFStringRef?
                     var number: CGPDFReal = 0
                     if CGPDFArrayGetString(values, i, &string), let string {
                         advance -= pending; pending = 0
+                        let offset = unicode.utf16.count, count = CGPDFStringGetLength(string)
+                        if count > 0, strings > 0, sinceGlyph != 0, size > 0 {
+                            // The glyphs' own gap in em: the adjustment, less any negative character
+                            // spacing that cancels it (9/11's `9:34` sets +31 against Tc -0.031 em).
+                            let adjustment = -sinceGlyph / 1000
+                            boundaries.append((offset, min(adjustment, adjustment + spacing.0 / size), strings, lastCount))
+                        }
                         append(string); previousWasString = true
+                        if count > 0 { strings += 1; lastCount = count; sinceGlyph = 0 }
                     } else if CGPDFArrayGetNumber(values, i, &number), number.isFinite {
+                        sinceGlyph += number
                         // Consecutive/initial adjustments and actual word-size gaps are ambiguous.
                         if !previousWasString || number < -10 { valid = false }
                         if number < 0 && number >= -10 { gaps.insert(value.utf16.count) }
@@ -374,8 +457,40 @@ enum NativeSpacingReader {
             if valid, !value.isEmpty, value.utf16.allSatisfy({ (32...126).contains($0) }) {
                 item.text = value; item.smallGaps = gaps
             }
-            if decodable, !unicode.isEmpty { item.unicode = unicode }
-            if measurable, advance.isFinite, advance >= 0 { item.end = transform.tx + advance * transform.a }
+            if decodable, !unicode.isEmpty {
+                item.unicode = unicode
+            }
+            // Word spaces inside a show are read only where the producer justifies with character or
+            // word spacing and folds a kerned space into an adjustment (9/11's Distiller output: 99.9%
+            // of its dropped spaces). Without that state, TeX and InDesign write word spaces as space
+            // glyphs or full adjustments that PDFKit keeps, and narrow gaps are kerns: NOAA's Lora
+            // `E.|A.` at +0.027 em, Wallace's juxtaposed CMMI variables `x|y`.
+            if decodable, !unicode.isEmpty, spacing.0 != 0 || spacing.1 != 0 {
+                let scalars = unicode.utf16
+                func scalar(before offset: Int) -> (Unicode.Scalar, Int)? {
+                    guard offset > 0 else { return nil }
+                    let index = String.Index(utf16Offset: offset, in: unicode)
+                    guard let previous = unicode.unicodeScalars.index(index, offsetBy: -1, limitedBy: unicode.unicodeScalars.startIndex) else { return nil }
+                    return (unicode.unicodeScalars[previous], previous.utf16Offset(in: unicode))
+                }
+                let words = boundaries.map { boundary -> Bool in
+                    guard boundary.offset > 0, boundary.offset < scalars.count,
+                          let (left, leftOffset) = scalar(before: boundary.offset) else { return false }
+                    let right = unicode.unicodeScalars[String.Index(utf16Offset: boundary.offset, in: unicode)]
+                    return NativeSpacingReader.sameFontWordSpace(before: scalar(before: leftOffset)?.0, left: left, right: right, gap: boundary.gap)
+                }
+                // Letter-spaced type (`C H A P`) adjusts every glyph alike: a boundary beside a
+                // one-glyph string whose other side is also a word gap is not a word space.
+                for (k, boundary) in boundaries.enumerated() where words[k] {
+                    let spaced = boundaries.indices.contains { n in
+                        words[n] && (boundaries[n].string == boundary.string - 1 && boundary.before == 1
+                            || boundaries[n].string == boundary.string + 1 && boundaries[n].before == 1)
+                    }
+                    if !spaced { item.wordSpaces.insert(boundary.offset) }
+                }
+            }
+            // A glyph's ink ends at its width; the spacing after the last one moves no glyph.
+            if measurable, advance.isFinite, advance >= 0 { item.end = transform.tx + (advance - trailingSpacing) * transform.a }
             evidence.append(item)
         }
     }
@@ -474,12 +589,12 @@ enum NativeSpacingReader {
         CGPDFOperatorTableSetCallback(table, "q") { scanner, info in
             let s = Self.state(info)
             guard s.accept(scanner), !s.inText, s.saved.count < 128 else { s.invalid = true; return }
-            s.saved.append((s.matrix, s.font, s.size, s.leading))
+            s.saved.append((s.matrix, s.font, s.size, s.leading, s.characterSpacing, s.wordSpacing))
         }
         CGPDFOperatorTableSetCallback(table, "Q") { scanner, info in
             let s = Self.state(info)
             guard s.accept(scanner), !s.inText, let saved = s.saved.popLast() else { s.invalid = true; return }
-            (s.matrix, s.font, s.size, s.leading) = saved
+            (s.matrix, s.font, s.size, s.leading, s.characterSpacing, s.wordSpacing) = saved
         }
         CGPDFOperatorTableSetCallback(table, "cm") { scanner, info in
             let s = Self.state(info)
@@ -540,8 +655,20 @@ enum NativeSpacingReader {
             guard s.accept(scanner), let n = Self.numbers(scanner, 1) else { s.invalid = true; return }
             s.leading = n[0]
         }
+        // Character and word spacing move glyphs along the baseline and are measured (#119: every
+        // 9/11 page justifies with them). A value beyond one em per glyph is not typesetting.
+        CGPDFOperatorTableSetCallback(table, "Tc") { scanner, info in
+            let s = Self.state(info)
+            guard s.accept(scanner), let n = Self.numbers(scanner, 1), abs(n[0]) <= 1000 else { s.invalid = true; return }
+            s.characterSpacing = n[0]
+        }
+        CGPDFOperatorTableSetCallback(table, "Tw") { scanner, info in
+            let s = Self.state(info)
+            guard s.accept(scanner), let n = Self.numbers(scanner, 1), abs(n[0]) <= 1000 else { s.invalid = true; return }
+            s.wordSpacing = n[0]
+        }
         // State or placement that this reader does not model disqualifies the whole page.
-        for op in ["Tc", "Tw", "Ts", "Tr"] {
+        for op in ["Ts", "Tr"] {
             CGPDFOperatorTableSetCallback(table, op) { scanner, info in
                 let s = Self.state(info)
                 if !s.accept(scanner) || Self.numbers(scanner, 1) != [0] { s.invalid = true }
@@ -604,7 +731,8 @@ enum NativeSpacingReader {
             for offset in offsets.reversed() { repaired.deleteCharacters(in: NSRange(location: offset, length: 1)) }
             return repaired
         }
-        guard matches.count >= 2, let offsets = missingSpaces(in: attributed.string, shows: matches) else { return attributed }
+        // One show can carry word spaces of its own (#119); a font change needs two.
+        guard let offsets = missingSpaces(in: attributed.string, shows: matches) else { return attributed }
         for offset in offsets.reversed() {
             let attributes = repaired.attributes(at: offset - 1, effectiveRange: nil)
             repaired.insert(NSAttributedString(string: " ", attributes: attributes), at: offset)

@@ -1,0 +1,4433 @@
+{
+ "caseID": "gpo-911-2004",
+ "pages": [
+  {
+   "extGStates": {
+    "GS1": "<< /Type /ExtGState /SA false /OP false /SM .02 /op false /OPM 1 >>"
+   },
+   "fonts": [
+    {
+     "baseFont": "KAFHKN+Bembo",
+     "firstChar": 32,
+     "resourceName": "F1",
+     "sourceObject": "2481",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F1+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F1+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <eb> endcodespacerange\n12 beginbfchar\n<3d> <003D>\n<3f> <003F>\n<5d> <005D>\n<5f> <005F>\n<80> <2022>\n<84> <2014>\n<85> <2013>\n<a7> <00A7>\n<a9> <00A9>\n<b1> <00B1>\n<e9> <00E9>\n<eb> <00EB>\nendbfchar\n6 beginbfrange\n<20> <2a> <0020>\n<2c> <3b> <002C>\n<41> <5b> <0041>\n<61> <7a> <0061>\n<8d> <8e> <201C>\n<8f> <90> <2018>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      278.0,
+      260.0,
+      406.0,
+      668.0,
+      458.0,
+      719.0,
+      729.0,
+      177.0,
+      302.0,
+      302.0,
+      510.0,
+      278.0,
+      260.0,
+      396.0,
+      260.0,
+      458.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      260.0,
+      260.0,
+      278.0,
+      667.0,
+      278.0,
+      354.0,
+      278.0,
+      677.0,
+      635.0,
+      729.0,
+      760.0,
+      594.0,
+      531.0,
+      740.0,
+      792.0,
+      333.0,
+      302.0,
+      698.0,
+      552.0,
+      917.0,
+      813.0,
+      823.0,
+      563.0,
+      823.0,
+      802.0,
+      490.0,
+      677.0,
+      792.0,
+      688.0,
+      1000.0,
+      750.0,
+      708.0,
+      677.0,
+      302.0,
+      278.0,
+      302.0,
+      278.0,
+      500.0,
+      278.0,
+      396.0,
+      500.0,
+      427.0,
+      500.0,
+      438.0,
+      271.0,
+      469.0,
+      521.0,
+      260.0,
+      250.0,
+      500.0,
+      240.0,
+      792.0,
+      521.0,
+      521.0,
+      500.0,
+      500.0,
+      333.0,
+      302.0,
+      292.0,
+      521.0,
+      479.0,
+      740.0,
+      490.0,
+      469.0,
+      406.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      354.0,
+      278.0,
+      278.0,
+      278.0,
+      1000.0,
+      500.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      479.0,
+      479.0,
+      260.0,
+      260.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      469.0,
+      278.0,
+      760.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      667.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      438.0,
+      278.0,
+      438.0
+     ]
+    },
+    {
+     "baseFont": "KAFIIG+Bembo-SC",
+     "firstChar": 32,
+     "resourceName": "F2",
+     "sourceObject": "2166",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F2+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F2+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <79> endcodespacerange\n7 beginbfchar\n<20> <0020>\n<2c> <002C>\n<39> <0039>\n<41> <0041>\n<46> <0046>\n<57> <0057>\n<79> <0079>\nendbfchar\n6 beginbfrange\n<2f> <34> <002F>\n<48> <49> <0048>\n<53> <54> <0053>\n<61> <69> <0061>\n<6b> <70> <006B>\n<72> <76> <0072>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      260.0,
+      278.0,
+      278.0,
+      458.0,
+      469.0,
+      469.0,
+      469.0,
+      469.0,
+      469.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      469.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      677.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      531.0,
+      278.0,
+      792.0,
+      333.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      490.0,
+      677.0,
+      278.0,
+      278.0,
+      1000.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      521.0,
+      469.0,
+      521.0,
+      573.0,
+      417.0,
+      365.0,
+      521.0,
+      573.0,
+      271.0,
+      278.0,
+      521.0,
+      417.0,
+      677.0,
+      573.0,
+      573.0,
+      417.0,
+      278.0,
+      469.0,
+      365.0,
+      469.0,
+      573.0,
+      521.0,
+      278.0,
+      278.0,
+      521.0
+     ]
+    },
+    {
+     "baseFont": "KAGBEE+Bembo-Bold",
+     "firstChar": 32,
+     "resourceName": "F6",
+     "sourceObject": "2173",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F6+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F6+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <90> endcodespacerange\n6 beginbfchar\n<20> <0020>\n<3f> <003F>\n<80> <2022>\n<84> <2014>\n<85> <2013>\n<90> <2019>\nendbfchar\n5 beginbfrange\n<28> <29> <0028>\n<2c> <3b> <002C>\n<41> <5a> <0041>\n<61> <7a> <0061>\n<8d> <8e> <201C>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      354.0,
+      354.0,
+      333.0,
+      333.0,
+      313.0,
+      417.0,
+      313.0,
+      531.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      313.0,
+      313.0,
+      333.0,
+      333.0,
+      333.0,
+      365.0,
+      333.0,
+      740.0,
+      698.0,
+      740.0,
+      823.0,
+      646.0,
+      594.0,
+      781.0,
+      833.0,
+      365.0,
+      344.0,
+      740.0,
+      604.0,
+      927.0,
+      813.0,
+      844.0,
+      646.0,
+      844.0,
+      771.0,
+      563.0,
+      729.0,
+      771.0,
+      750.0,
+      1000.0,
+      802.0,
+      750.0,
+      750.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      479.0,
+      573.0,
+      490.0,
+      573.0,
+      479.0,
+      323.0,
+      552.0,
+      563.0,
+      292.0,
+      281.0,
+      542.0,
+      271.0,
+      927.0,
+      573.0,
+      573.0,
+      573.0,
+      573.0,
+      396.0,
+      375.0,
+      344.0,
+      573.0,
+      521.0,
+      781.0,
+      531.0,
+      521.0,
+      510.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      354.0,
+      333.0,
+      333.0,
+      333.0,
+      1000.0,
+      500.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      583.0,
+      583.0,
+      333.0,
+      313.0
+     ]
+    }
+   ],
+   "lines": [
+    {
+     "rect": [
+      196.7801,
+      484.6464,
+      7.84,
+      14.496
+     ],
+     "text": "1"
+    },
+    {
+     "rect": [
+      160.6889,
+      444.6464,
+      80.032,
+      14.496
+     ],
+     "text": "“WE HAVE"
+    },
+    {
+     "rect": [
+      142.5481,
+      424.6464,
+      116.3536,
+      14.496
+     ],
+     "text": "SOME PLANES”"
+    },
+    {
+     "rect": [
+      44.7,
+      381.8526,
+      312.0859,
+      9.2865
+     ],
+     "text": "Tuesday, September 11, 2001, dawned temperate and nearly cloudless in"
+    },
+    {
+     "rect": [
+      44.699,
+      370.6022,
+      312.0131,
+      9.2865
+     ],
+     "text": "the eastern United States. Millions of men and women readied themselves for"
+    },
+    {
+     "rect": [
+      44.699,
+      359.3518,
+      312.0295,
+      9.2865
+     ],
+     "text": "work.Some made their way to the Twin Towers,the signature structures of the"
+    },
+    {
+     "rect": [
+      44.701,
+      348.1013,
+      312.0233,
+      9.2865
+     ],
+     "text": "WorldTrade Center complex in NewYork City.Others went to Arlington,Vir-"
+    },
+    {
+     "rect": [
+      44.702,
+      336.8509,
+      311.969,
+      9.2865
+     ],
+     "text": "ginia, to the Pentagon.Across the Potomac River, the United States Congress"
+    },
+    {
+     "rect": [
+      44.702,
+      325.6005,
+      312.0418,
+      9.2865
+     ],
+     "text": "was back in session. At the other end of Pennsylvania Avenue, people began to"
+    },
+    {
+     "rect": [
+      44.702,
+      314.3501,
+      312.0254,
+      9.2865
+     ],
+     "text": "line up for a White House tour. In Sarasota, Florida, President George W. Bush"
+    },
+    {
+     "rect": [
+      44.702,
+      303.0997,
+      126.8376,
+      9.2865
+     ],
+     "text": "went for an early morning run."
+    },
+    {
+     "rect": [
+      56.6997,
+      291.8493,
+      300.0185,
+      9.2865
+     ],
+     "text": "For those heading to an airport, weather conditions could not have been"
+    },
+    {
+     "rect": [
+      44.701,
+      280.5989,
+      312.008,
+      9.2865
+     ],
+     "text": "better for a safe and pleasant journey.Among the travelers were Mohamed Atta"
+    },
+    {
+     "rect": [
+      44.702,
+      269.3485,
+      291.6074,
+      9.2865
+     ],
+     "text": "and Abdul Aziz al Omari, who arrived at the airport in Portland, Maine."
+    },
+    {
+     "rect": [
+      44.7,
+      230.9448,
+      176.0448,
+      10.872
+     ],
+     "text": "1.1 INSIDE THE FOUR FLIGHTS"
+    },
+    {
+     "rect": [
+      44.7,
+      208.9141,
+      93.9064,
+      9.2148
+     ],
+     "text": "Boarding the Flights"
+    },
+    {
+     "rect": [
+      44.7,
+      195.6024,
+      312.0009,
+      9.2867
+     ],
+     "text": "Boston:American 11 and United 175. Atta and Omari boarded a 6:00 A.M."
+    },
+    {
+     "rect": [
+      44.7001,
+      184.3522,
+      243.3219,
+      9.4724
+     ],
+     "text": "flight from Portland to Boston’s Logan International Airport.1"
+    },
+    {
+     "rect": [
+      56.7,
+      173.1026,
+      299.999,
+      9.2865
+     ],
+     "text": "When he checked in for his flight to Boston,Atta was selected by a com-"
+    },
+    {
+     "rect": [
+      44.7003,
+      161.8522,
+      312.011,
+      9.2865
+     ],
+     "text": "puterized prescreening system known as CAPPS (Computer Assisted Passen-"
+    },
+    {
+     "rect": [
+      44.7003,
+      150.6017,
+      311.9946,
+      9.2865
+     ],
+     "text": "ger Prescreening System), created to identify passengers who should be"
+    },
+    {
+     "rect": [
+      44.6993,
+      139.3513,
+      311.9516,
+      9.2865
+     ],
+     "text": "subject to special security measures. Under security rules in place at the time,"
+    },
+    {
+     "rect": [
+      44.7003,
+      128.1009,
+      312.011,
+      9.2865
+     ],
+     "text": "the only consequence of Atta’s selection by CAPPS was that his checked bags"
+    },
+    {
+     "rect": [
+      44.7003,
+      116.8505,
+      311.9864,
+      9.2865
+     ],
+     "text": "were held off the plane until it was confirmed that he had boarded the air-"
+    },
+    {
+     "rect": [
+      44.7003,
+      105.6001,
+      157.5112,
+      9.4744
+     ],
+     "text": "craft. This did not hinder Atta’s plans.2"
+    },
+    {
+     "rect": [
+      56.7,
+      94.3527,
+      299.9376,
+      9.2865
+     ],
+     "text": "Atta and Omari arrived in Boston at 6:45. Seven minutes later,Atta appar-"
+    },
+    {
+     "rect": [
+      44.7003,
+      83.1023,
+      311.9926,
+      9.2865
+     ],
+     "text": "ently took a call from Marwan al Shehhi, a longtime colleague who was at"
+    },
+    {
+     "rect": [
+      44.7003,
+      71.8519,
+      312.0166,
+      9.4727
+     ],
+     "text": "another terminal at Logan Airport.They spoke for three minutes.3 It would be"
+    },
+    {
+     "rect": [
+      44.6997,
+      60.6023,
+      95.2984,
+      9.2865
+     ],
+     "text": "their final conversation."
+    },
+    {
+     "rect": [
+      352.0451,
+      45.5344,
+      4.655,
+      8.607
+     ],
+     "text": "1"
+    }
+   ],
+   "operators": "q\r/RelativeColorimetric ri \r/GS1 gs\rBT\r/F1 1 Tf\r16 0 0 16 196.7801 488.3744 Tm\r0 g\r0.0002 Tc\r0 Tw\r(1 )Tj\r-2.2557 -2.5 TD\r0.0003 Tc\r-0.0002 Tw\r[(\\215WE HA)101.9(VE )]TJ\r-1.1338 -1.25 TD\r0.0002 Tc\r-0.0001 Tw\r(SOME PLANES\\216 )Tj\r/F2 1 Tf\r10.25 0 0 10.25 44.7 384.2408 Tm\r0.0937 Tc\r-0.0549 Tw\r[(T)125.1(u)19.7(e)-19.9(s)19.7(d)59.7(a)109.8(y)79.7(,)-216.7(Se)-19.9(pt)19.7(embe)-19.9(r 1)79.7(1)39.7(,)-216.7(2)-0.1(0)-29.9(0)39.7(1)39.7(,)]TJ\r/F1 1 Tf\r14.2559 0 TD\r0.0002 Tc\r-0.0552 Tw\r[(da)30.3(wned temperate and nearly cloudless in )]TJ\r-14.256 -1.0976 TD\r-0.0151 Tw\r[(the easter)-37.5(n)0( United States. )103.5(Millions of men and w)44.6(o)0(men r)21.3(eadied themselv)43.5(es for )]TJ\rT*\r-0.0414 Tw\r[(w)40(o)0(rk.)-135.8(Some made their w)33.8(a)30(y to the )126.4(T)150.3(w)-0.1(in )125.9(T)150.3(o)40(w)40(e)0.2(r)-19.4(s)0.7(,)-136.6(t)0.1(he signatur)22.6(e str)-24(uctur)21.1(es of the )]TJ\r0.0002 -1.0976 TD\r-0.0683 Tw\r[(W)125.2(o)0(rld)-84(T)100.3(r)0.1(ade Center complex in Ne)25.7(w)-34.9(Y)160.3(ork City)121.8(.)-109.5(O)-0.1(ther)-18.4(s w)40.2(ent to )81.1(Arlington,)67.5(Vir-)]TJ\r0.0001 -1.0976 TD\r0.0001 Tc\r-0.0029 Tw\r[(g)-29.7(i)0(nia,)-174.2(to the P)51.3(entagon.)-93.3(Acr)30.5(o)-0.1(ss the P)51.5(o)-0.1(tomac Ri)22.1(v)40.1(e)0.1(r)40.1(,)-174.9(the United States Cong)-24.6(r)20.1(e)0.1(ss )]TJ\rT*\r0.0002 Tc\r-0.0304 Tw\r[(w)30(a)0(s back in session. )85.8(At the other end of P)54.2(ennsylv)31.6(ania )80.8(A)60.3(v)40.2(en)15.4(ue)30.3(, )100.3(people began to )]TJ\rT*\r-0.0347 Tw\r[(line up for a )127.5(White House tour)43.8(.)-143.1(I)0.1(n Sarasota,)-140.7(Flor)-43.9(ida,)-142.6(Pr)20.3(esident George )128.5(W)175(.)-143.1(Bush )]TJ\rT*\r-0.0001 Tw\r[(w)40(ent for an early mor)-34.7(n)0(ing r)-23.4(un. )]TJ\r1.1705 -1.0976 TD\r0.0574 Tw\r[(F)20.2(o)0(r those heading to an air)-34.2(por)-24.1(t, )100.3(w)40(eather conditions could not ha)36.7(v)40.2(e)0.2( been )]TJ\r-1.1706 -1.0976 TD\r-0.0529 Tw\r[(better for a safe and pleasant jour)-32.4(ne)20.3(y)120.1(.)-45.1(Among the tra)33(v)40.2(e)0(ler)-18.9(s)0.1( w)40.2(e)0.2(r)20.2(e)0.2( Mohamed )82.2(Atta )]TJ\r0.0001 -1.0976 TD\r-0.0001 Tw\r[(and )80.7(Abdul )81.3(Aziz al Omar)-41.6(i, )100.4(who ar)-38.2(r)-44.5(i)20.2(v)40.2(ed at the air)-36.6(por)-24.1(t in P)51.2(o)0.2(r)-24.5(tland, )101.4(Maine)31.2(.)0.1( )]TJ\r12 0 0 12 44.7 233.7408 Tm\r-0.0003 Tc\r0.0001 Tw\r[(1.1 INSIDE )123.2(THE FOUR FLIGHTS )]TJ\r/F6 1 Tf\r10.25 0 0 10.25 44.7 211.2408 Tm\r0.0002 Tc\r-0.0001 Tw\r[(Boar)21(ding the Flights )]TJ\r0 -1.2927 TD\r-0.0004 Tc\r-0.0829 Tw\r[(Boston:)-69.9(Amer)-45(ican 11 and United 175. )]TJ\r/F1 1 Tf\r16.5458 0 TD\r-0.0691 Tw\r[(Atta and Omar)-45(i boar)19.7(ded a 6)9.9(:)9.8(0)9.9(0)-0.6( )]TJ\r7.687 0 0 7.687 339.4333 197.9908 Tm\r0 Tc\r0 Tw\r(A)Tj\r10.25 0 0 10.25 344.5319 197.9908 Tm\r(.)Tj\r7.687 0 0 7.687 347.0905 197.9908 Tm\r(M)Tj\r10.25 0 0 10.25 354.0359 197.9908 Tm\r0.0001 Tc\r(. )Tj\r-30.1791 -1.0976 TD\r-0.0099 Tc\r[(flight fr)29.7(om P)49.7(o)0.1(r)-25(tland to Boston\\220)99.7(s Lo)19.7(gan Inter)-39.9(national )79.7(Air)-39.9(por)-25(t.)]TJ\r7.175 0 0 7.175 284.5063 188.9958 Tm\r-0.0002 Tc\r(1 )Tj\r10.25 0 0 10.25 56.7 175.4908 Tm\r0.0048 Tc\r0.0022 Tw\r[(When he check)29.6(ed in for his flight to Boston,)-105.6(Atta w)29.7(as selected b)24.7(y)0( a com-)]TJ\r-1.1707 -1.0976 TD\r-0.0215 Tw\r[(puter)-45(ized pr)19.7(escr)19.7(eening system kno)39.6(wn as C)9.7(APPS \\(Computer )79.6(Assisted P)29.6(assen-)]TJ\rT*\r0.238 Tw\r[(ger Pr)19.7(escr)19.7(eening System\\), )99.7(cr)19.7(eated to identify passenger)-20.1(s who should be )]TJ\r-0.0001 -1.0976 TD\r0.0047 Tc\r-0.0449 Tw\r[(subject to special secur)-45.3(ity measur)19.5(es. )-46.1(Under secur)-45.2(ity r)-25.1(ules in place at the time)29.4(, )]TJ\r0.0001 -1.0976 TD\r0.0048 Tc\r-0.035 Tw\r[(the only consequence of )79.3(Atta\\220)99.8(s selection b)24.7(y)-4.7( C)9.7(APPS w)29.7(as that his check)29.6(ed bags )]TJ\rT*\r0.0435 Tw\r[(w)39.7(e)0.1(r)19.7(e)0( held off the plane until it w)29.5(as confir)-45.1(med that he had boar)19.6(ded the air-)]TJ\rT*\r0 Tw\r[(craft. This did not hinder )79.3(Atta\\220)99.8(s plans.)]TJ\r7.175 0 0 7.175 198.6958 110.2458 Tm\r-0.0002 Tc\r(2 )Tj\r10.25 0 0 10.25 56.7 96.7409 Tm\r0 Tc\r-0.0029 Tw\r[(Atta and Omar)-41.9(i)-0.1( ar)-39.4(r)-44.7(i)20(v)40(ed in Boston at 6:45.)-170.8(Se)20.1(v)40(en min)16.1(u)-0.2(tes later)41.8(,)-95.1(Atta appar-)]TJ\r-1.1707 -1.0976 TD\r0.0002 Tc\r0.0867 Tw\r[(ently took a call fr)33.8(om Marw)31.6(an al Shehhi, )102.7(a longtime colleague who w)35.9(a)0(s at )]TJ\rT*\r-0.0416 Tw\r[(another ter)-42.3(m)-0.1(inal at Lo)22.2(gan )80.5(Air)-39(por)-24.1(t.)-11.3(The)20.7(y)0( spok)31.1(e for thr)21.6(ee min)16.2(u)0(tes.)]TJ\r7.175 0 0 7.175 304.451 76.4958 Tm\r-0.0002 Tc\r0 Tw\r(3 )Tj\r10.25 0 0 10.25 310.391 74.2409 Tm\r0.0002 Tc\r-0.0416 Tw\r[(It w)40.2(ould be )]TJ\r-25.9211 -1.0976 TD\r0.0001 Tc\r0 Tw\r[(their final con)43.3(v)40.1(e)0.1(r)-19.5(s)0(ation. )]TJ\r9.5 0 0 9.5 352.0451 47.7479 Tm\r0.0003 Tc\r(1 )Tj\rET\rQ\r",
+   "page": 19
+  },
+  {
+   "extGStates": {
+    "GS1": "<< /Type /ExtGState /SA false /OP false /SM .02 /op false /OPM 1 >>"
+   },
+   "fonts": [
+    {
+     "baseFont": "KAFHKN+Bembo",
+     "firstChar": 32,
+     "resourceName": "F1",
+     "sourceObject": "2481",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F1+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F1+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <eb> endcodespacerange\n12 beginbfchar\n<3d> <003D>\n<3f> <003F>\n<5d> <005D>\n<5f> <005F>\n<80> <2022>\n<84> <2014>\n<85> <2013>\n<a7> <00A7>\n<a9> <00A9>\n<b1> <00B1>\n<e9> <00E9>\n<eb> <00EB>\nendbfchar\n6 beginbfrange\n<20> <2a> <0020>\n<2c> <3b> <002C>\n<41> <5b> <0041>\n<61> <7a> <0061>\n<8d> <8e> <201C>\n<8f> <90> <2018>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      278.0,
+      260.0,
+      406.0,
+      668.0,
+      458.0,
+      719.0,
+      729.0,
+      177.0,
+      302.0,
+      302.0,
+      510.0,
+      278.0,
+      260.0,
+      396.0,
+      260.0,
+      458.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      260.0,
+      260.0,
+      278.0,
+      667.0,
+      278.0,
+      354.0,
+      278.0,
+      677.0,
+      635.0,
+      729.0,
+      760.0,
+      594.0,
+      531.0,
+      740.0,
+      792.0,
+      333.0,
+      302.0,
+      698.0,
+      552.0,
+      917.0,
+      813.0,
+      823.0,
+      563.0,
+      823.0,
+      802.0,
+      490.0,
+      677.0,
+      792.0,
+      688.0,
+      1000.0,
+      750.0,
+      708.0,
+      677.0,
+      302.0,
+      278.0,
+      302.0,
+      278.0,
+      500.0,
+      278.0,
+      396.0,
+      500.0,
+      427.0,
+      500.0,
+      438.0,
+      271.0,
+      469.0,
+      521.0,
+      260.0,
+      250.0,
+      500.0,
+      240.0,
+      792.0,
+      521.0,
+      521.0,
+      500.0,
+      500.0,
+      333.0,
+      302.0,
+      292.0,
+      521.0,
+      479.0,
+      740.0,
+      490.0,
+      469.0,
+      406.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      354.0,
+      278.0,
+      278.0,
+      278.0,
+      1000.0,
+      500.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      479.0,
+      479.0,
+      260.0,
+      260.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      469.0,
+      278.0,
+      760.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      667.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      438.0,
+      278.0,
+      438.0
+     ]
+    }
+   ],
+   "lines": [
+    {
+     "rect": [
+      141.0954,
+      562.5344,
+      215.6016,
+      8.607
+     ],
+     "text": "“WE HAVE SOME PLANES” 27"
+    },
+    {
+     "rect": [
+      56.7,
+      537.8551,
+      299.997,
+      9.2865
+     ],
+     "text": "After consulting with NEADS command, the crew commander issued the"
+    },
+    {
+     "rect": [
+      44.7003,
+      526.6047,
+      312.0274,
+      9.2865
+     ],
+     "text": "order at 9:23:“Okay . . . scramble Langley. Head them towards the Washington"
+    },
+    {
+     "rect": [
+      44.7003,
+      515.3543,
+      311.9772,
+      9.2865
+     ],
+     "text": "area. . . . [I]f they’re there then we’ll run on them. . . .These guys are smart.”"
+    },
+    {
+     "rect": [
+      44.7003,
+      504.1038,
+      312.05,
+      9.2865
+     ],
+     "text": "That order was processed and transmitted to Langley Air Force Base at 9:24."
+    },
+    {
+     "rect": [
+      44.7024,
+      492.8534,
+      312.0397,
+      9.2865
+     ],
+     "text": "Radar data show the Langley fighters airborne at 9:30. NEADS decided to"
+    },
+    {
+     "rect": [
+      44.7014,
+      481.603,
+      312.0244,
+      9.2865
+     ],
+     "text": "keep the Otis fighters over NewYork.The heading of the Langley fighters was"
+    },
+    {
+     "rect": [
+      44.7024,
+      470.3526,
+      312.0243,
+      9.2865
+     ],
+     "text": "adjusted to send them to the Baltimore area.The mission crew commander"
+    },
+    {
+     "rect": [
+      44.7024,
+      459.1022,
+      312.0131,
+      9.2865
+     ],
+     "text": "explained to us that the purpose was to position the Langley fighters between"
+    },
+    {
+     "rect": [
+      44.7024,
+      447.8518,
+      264.247,
+      9.4752
+     ],
+     "text": "the reported southbound American 11 and the nation’s capital.150"
+    },
+    {
+     "rect": [
+      56.7,
+      436.6051,
+      300.0339,
+      9.2865
+     ],
+     "text": "At the suggestion of the Boston Center’s military liaison,NEADS contacted"
+    },
+    {
+     "rect": [
+      44.7003,
+      425.3547,
+      312.2417,
+      9.2865
+     ],
+     "text": "the FAA’s Washington Center to ask about American 11. In the course of the"
+    },
+    {
+     "rect": [
+      44.7003,
+      414.1043,
+      312.0162,
+      9.2865
+     ],
+     "text": "conversation, a Washington Center manager informed NEADS:“We’re look-"
+    },
+    {
+     "rect": [
+      44.7003,
+      402.8538,
+      312.0167,
+      9.4732
+     ],
+     "text": "ing—we also lost American 77.”The time was 9:34.151 This was the first notice"
+    },
+    {
+     "rect": [
+      44.6998,
+      391.6047,
+      312.008,
+      9.2865
+     ],
+     "text": "to the military that American 77 was missing, and it had come by chance. If"
+    },
+    {
+     "rect": [
+      44.6998,
+      380.3543,
+      311.9895,
+      9.2865
+     ],
+     "text": "NEADS had not placed that call, the NEADS air defenders would have"
+    },
+    {
+     "rect": [
+      44.6998,
+      369.1038,
+      312.0295,
+      9.2865
+     ],
+     "text": "received no information whatsoever that the flight was even missing, although"
+    },
+    {
+     "rect": [
+      44.6998,
+      357.8534,
+      312.0284,
+      9.2865
+     ],
+     "text": "the FAA had been searching for it. No one at FAA headquarters ever asked for"
+    },
+    {
+     "rect": [
+      44.6998,
+      346.603,
+      150.4833,
+      9.2865
+     ],
+     "text": "military assistance with American 77."
+    },
+    {
+     "rect": [
+      56.6984,
+      335.3526,
+      300.0226,
+      9.2865
+     ],
+     "text": "At 9:36, the FAA’s Boston Center called NEADS and relayed the discovery"
+    },
+    {
+     "rect": [
+      44.7008,
+      324.1022,
+      312.0408,
+      9.2865
+     ],
+     "text": "about an unidentified aircraft closing in on Washington:“Latest report.Aircraft"
+    },
+    {
+     "rect": [
+      44.7008,
+      312.8518,
+      312.011,
+      9.2865
+     ],
+     "text": "VFR [visual flight rules] six miles southeast of the White House....Six,south-"
+    },
+    {
+     "rect": [
+      44.7008,
+      301.6014,
+      311.9946,
+      9.2865
+     ],
+     "text": "west. Six, southwest of the White House, deviating away.” This startling news"
+    },
+    {
+     "rect": [
+      44.7008,
+      290.351,
+      312.0039,
+      9.2865
+     ],
+     "text": "prompted the mission crew commander at NEADS to take immediate control"
+    },
+    {
+     "rect": [
+      44.7008,
+      279.1006,
+      312.0244,
+      9.2865
+     ],
+     "text": "of the airspace to clear a flight path for the Langley fighters:“Okay,we’re going"
+    },
+    {
+     "rect": [
+      44.7018,
+      267.8502,
+      312.009,
+      9.2865
+     ],
+     "text": "to turn it . . . crank it up. . . . Run them to the White House.” He then discov-"
+    },
+    {
+     "rect": [
+      44.6988,
+      256.5998,
+      312.0121,
+      9.2865
+     ],
+     "text": "ered, to his surprise, that the Langley fighters were not headed north toward"
+    },
+    {
+     "rect": [
+      44.7008,
+      245.3494,
+      312.091,
+      9.2865
+     ],
+     "text": "the Baltimore area as instructed,but east over the ocean.“I don’t care how many"
+    },
+    {
+     "rect": [
+      44.7008,
+      234.099,
+      282.036,
+      9.478
+     ],
+     "text": "windows you break,” he said.“Damn it. ...Okay.Push them back.”152"
+    },
+    {
+     "rect": [
+      56.7,
+      222.8551,
+      300.0267,
+      9.2865
+     ],
+     "text": "The Langley fighters were heading east, not north, for three reasons. First,"
+    },
+    {
+     "rect": [
+      44.7014,
+      211.6047,
+      312.1023,
+      9.2865
+     ],
+     "text": "unlike a normal scramble order,this order did not include a distance to the tar-"
+    },
+    {
+     "rect": [
+      44.7014,
+      200.3542,
+      312.0336,
+      9.2865
+     ],
+     "text": "get or the target’s location.Second,a “generic”flight plan—prepared to get the"
+    },
+    {
+     "rect": [
+      44.7024,
+      189.1038,
+      312.0572,
+      9.2865
+     ],
+     "text": "aircraft airborne and out of local airspace quickly—incorrectly led the Lang-"
+    },
+    {
+     "rect": [
+      44.7034,
+      177.8534,
+      311.9926,
+      9.2865
+     ],
+     "text": "ley fighters to believe they were ordered to fly due east (090) for 60 miles.Third,"
+    },
+    {
+     "rect": [
+      44.7034,
+      166.603,
+      312.0695,
+      9.2865
+     ],
+     "text": "the lead pilot and local FAA controller incorrectly assumed the flight plan"
+    },
+    {
+     "rect": [
+      44.7034,
+      155.3526,
+      292.8314,
+      9.4744
+     ],
+     "text": "instruction to go “090 for 60” superseded the original scramble order.153"
+    },
+    {
+     "rect": [
+      56.7,
+      144.1051,
+      300.0206,
+      9.2865
+     ],
+     "text": "After the 9:36 call to NEADS about the unidentified aircraft a few miles"
+    },
+    {
+     "rect": [
+      44.7003,
+      132.8547,
+      312.0069,
+      9.2865
+     ],
+     "text": "from the White House, the Langley fighters were ordered to Washington, D.C."
+    },
+    {
+     "rect": [
+      44.7003,
+      121.6043,
+      312.0264,
+      9.2865
+     ],
+     "text": "Controllers at NEADS located an unknown primary radar track, but “it kind"
+    },
+    {
+     "rect": [
+      44.7024,
+      110.3539,
+      312.012,
+      9.2865
+     ],
+     "text": "of faded” over Washington.The time was 9:38.The Pentagon had been struck"
+    },
+    {
+     "rect": [
+      44.7024,
+      99.1035,
+      311.9954,
+      9.4736
+     ],
+     "text": "by American 77 at 9:37:46.The Langley fighters were about 150 miles away.154"
+    },
+    {
+     "rect": [
+      56.7,
+      87.8551,
+      300.0052,
+      9.2865
+     ],
+     "text": "Right after the Pentagon was hit, NEADS learned of another possible"
+    },
+    {
+     "rect": [
+      44.6983,
+      76.6047,
+      312.0377,
+      9.2865
+     ],
+     "text": "hijacked aircraft.It was an aircraft that in fact had not been hijacked at all.After"
+    },
+    {
+     "rect": [
+      44.6993,
+      65.3543,
+      312.0438,
+      9.2865
+     ],
+     "text": "the secondWorldTrade Center crash,Boston Center managers recognized that"
+    }
+   ],
+   "operators": "q\r/RelativeColorimetric ri \r/GS1 gs\rBT\r/F1 1 Tf\r9.5 0 0 9.5 141.0954 564.7479 Tm\r0 g\r0.0004 Tc\r-0.0002 Tw\r[(\\215WE HA)102.9(VE SOME PLANES\\216 )-8881.4(27 )]TJ\r10.25 0 0 10.25 56.7 540.2433 Tm\r0.0001 Tc\r-0.0016 Tw\r[(After consulting with NEADS command, )109.2(the cr)20.9(e)19.9(w)0.1( commander issued the )]TJ\r-1.1707 -1.0976 TD\r0.0002 Tc\r-0.0276 Tw\r[(or)20.3(der at 9:23:)-48.2(\\215Oka)31(y .)-150.1(.)-150.2(.)-150.2(s)0.1(cramb)16.5(l)0.1(e Langle)21.9(y)120.1(.)-150.2(H)-0.1(ead them to)42.7(w)30(a)0.2(r)20.2(d)0(s the )126.4(W)125.2(a)0(shington )]TJ\rT*\r0.0001 Tc\r0.0402 Tw\r[(ar)20.2(ea. )99.9(. )100.1(. )100.1(. )100.1([I]f the)21.4(y)-0.1(\\220)80.2(r)20.1(e ther)20.8(e then w)41.3(e)-0.1(\\220ll r)-24.8(un on them. )102.4(. )100.1(. )100.1(.)-93.2(T)-0.2(hese guys ar)22.7(e smar)-23.7(t.)125.3(\\216 )]TJ\rT*\r0.0002 Tc\r0.0344 Tw\r[(That or)21.4(der w)30.8(a)0(s pr)30.8(ocessed and transmitted to Langle)27.5(y)0( )80(Air F)20.8(o)0.2(r)20.2(ce Base at 9:24. )]TJ\r0.0002 -1.0976 TD\r0.0887 Tw\r[(Radar data sho)43(w)-0.1( the Langle)22.6(y)0( fighter)-17.8(s airbor)-38.1(ne at 9:30. )102.2(NEADS decided to )]TJ\r-0.0001 -1.0976 TD\r-0.0338 Tw\r[(k)30(eep the Otis fighter)-15.4(s o)40.2(v)40.2(e)0(r Ne)20.9(w)-69.3(Y)160.3(ork.)-18.4(The heading of the Langle)25.5(y)0( fighter)-17.8(s w)30.2(a)0.2(s )]TJ\r0.0001 -1.0976 TD\r0.075 Tw\r[(adjusted to send them to the Baltimor)28.2(e ar)20.5(ea.)-127.6(The mission cr)23.1(e)20(w)0.2( commander )]TJ\rT*\r-0.014 Tw\r[(explained to us that the pur)-33.7(pose w)31.1(a)0(s to position the Langle)25.3(y)0( fighter)-17.8(s betw)41(een )]TJ\rT*\r-0.0001 Tw\r[(the r)20.9(epor)-23.8(ted southbound )83.7(Amer)-43.7(i)0.1(can 11 and the nation\\220)105.4(s capital.)]TJ\r7.175 0 0 7.175 298.405 452.4983 Tm\r-0.0002 Tc\r0 Tw\r(150 )Tj\r10.25 0 0 10.25 56.7 438.9933 Tm\r-0.0009 Tc\r-0.0686 Tw\r[(At the suggestion of the Boston Center\\220)99.7(s militar)-29.9(y liaison,)-108.6(NEADS contacted )]TJ\r-1.1707 -1.0976 TD\r0.0006 Tc\r0.0046 Tw\r[(the F)41.2(AA\\220)101.2(s )125.1(W)125.6(a)0.4(shington Center to ask about )86.5(Amer)-43.3(i)0.5(can 11. )101.7(In the cour)-16.9(se of the )]TJ\rT*\r0.0002 Tc\r0.0107 Tw\r[(con)40.6(v)40.2(e)0.2(r)-19.4(s)0.1(ation,)-187.3(a )125.2(W)125.2(a)0(shington Center manager infor)-37.5(m)-0.1(ed NEADS:)-86.2(\\215)0(W)125.5(e)0(\\220)80.3(r)20.2(e look-)]TJ\rT*\r-0.0558 Tw\r[(ing\\204w)41.3(e)0( also lost )81.9(Amer)-43.7(i)0.1(can 77.)126.8(\\216)-95(T)-0.1(he time w)32.1(a)0(s 9:34.)]TJ\r7.175 0 0 7.175 250.4142 407.4983 Tm\r-0.0002 Tc\r0 Tw\r(151)Tj\r10.25 0 0 10.25 261.9588 405.2433 Tm\r0.0001 Tc\r-0.0557 Tw\r[(This w)31(a)-0.1(s the fir)-18(st notice )]TJ\r-21.196 -1.0976 TD\r0.0002 Tc\r0.0483 Tw\r[(to the militar)-26.8(y)0( that )81(Amer)-43.7(i)0.1(can 77 w)31.7(a)0(s missing, )102.4(and it had come b)28.5(y)0.2( chance)31.6(. )100.2(If )]TJ\rT*\r0.2046 Tw\r[(NEADS had not placed that call, )107(the NEADS air defender)-14.3(s w)40.2(ould ha)31.5(v)40.2(e)0( )]TJ\rT*\r-0.0323 Tw\r[(r)20.2(ecei)20.8(v)40.2(ed no infor)-42.4(m)-0.1(ation whatsoe)23.4(v)40.2(er that the flight w)33.7(a)0(s e)20.5(v)40.2(en missing, )102.6(although )]TJ\rT*\r-0.0404 Tw\r[(the F)40.8(AA had been sear)23.5(ching for it. )102.7(No one at F)42.1(AA headquar)-21.9(ter)-19.1(s)0.1( e)20.2(v)40.2(er ask)31(ed for )]TJ\rT*\r-0.0001 Tw\r[(militar)-28.1(y)0( assistance with )84.2(Amer)-43.7(i)0.1(can 77. )]TJ\r1.1706 -1.0976 TD\r-0.0357 Tw\r[(At 9:36, )101.7(the F)40.8(AA\\220)100.8(s Boston Center called NEADS and r)27.8(e)0(la)30.5(y)40(ed the disco)42.4(v)40.2(er)-29.4(y )]TJ\r-1.1705 -1.0976 TD\r-0.0352 Tw\r[(about an unidentified air)25.6(c)0(raft closing in on )129(W)125.2(a)0(shington:)-40.6(\\215Latest r)21.8(epor)-23.8(t.)-62.8(Air)20.6(c)0(raft )]TJ\rT*\r0.1313 Tc\r-0.1776 Tw\r[(V)131(F)131.1(R)131( [)131.2(v)131.1(i)131.2(s)131.2(u)131.1(a)131.1(l)131.2( f)131.2(l)131.2(i)131.2(g)131.1(h)131.1(t)131.2( r)110.7(u)131.1(l)131.2(e)131.1(s)131.2(])131.2( s)131.2(i)131.2(x)131.1( m)131(i)131.2(l)131.2(e)131.1(s)131.2( s)131.2(o)131.1(u)131.1(t)131.2(h)131.1(e)131.1(a)131.1(s)131.2(t)131.2( o)131.1(f)131.2( t)131.2(h)131.1(e)131.1( )131.8(W)130.9(h)131.1(i)131.2(t)131.2(e)131.1( H)131(o)131.1(u)131.1(s)131.2(e)163.9(.)-0.6(...S)131.1(i)131.2(x)131.1(,s)131.2(o)131.1(u)131.1(t)131.2(h)131.1(-)]TJ\rT*\r0.0002 Tc\r0.0251 Tw\r[(w)40(e)0(st. )100.8(Six, )100.9(southw)41.3(est of the )127.1(White House)32.8(,)0.1( )100.3(de)20(viating )]TJ\r20.3323 0 TD\r-0.0298 Tc\r0.055 Tw\r[(away)89.7(.)95.4(\\216)-30( )78.3(T)-30.1(h)-30(i)-29.6(s)-29.9( s)-29.9(t)-29.9(a)-29.6(r)-52.9(t)-29.9(l)-29.9(i)-29.6(n)-30(g)-29.6( n)-30(e)-8.6(w)-30.1(s)-29.9( )]TJ\r-20.3323 -1.0976 TD\r0.0002 Tc\r-0.0436 Tw\r[(pr)30.3(ompted the mission cr)24.8(e)20(w)0.2( commander at NEADS to tak)36.2(e)0( immediate contr)33.9(o)0(l )]TJ\rT*\r-0.0546 Tw\r[(of the air)-17.8(s)0.1(pace to clear a flight path for the Langle)28.8(y)0( fighter)-17.8(s:)-23.4(\\215Oka)31(y)120.1(,)-123.2(w)40(e)0.2(\\220)80.2(r)20.2(e going )]TJ\r0.0001 -1.0976 TD\r-0.0122 Tw\r[(to tur)-38.6(n)0( it . )100.8(. )100.3(. )100.2(crank it up)62.4(. )100.3(. )100.2(. )100.3(. )100.3(Run them to the )128.5(White House)32.8(.)125.4(\\216 )100.4(He then disco)42.8(v)0(-)]TJ\r-0.0003 -1.0976 TD\r0.0426 Tw\r[(er)20.3(ed, )100.6(to his sur)-37.8(p)0(r)-44.4(ise)30.4(, )100.2(that the Langle)23.2(y)0( fighter)-17.8(s w)40.2(e)0.2(r)20.2(e)0.2( not headed nor)-21.4(th to)40.7(w)30(a)0.2(r)20.2(d)0( )]TJ\r0.0002 -1.0976 TD\r-0.0039 Tc\r-0.0656 Tw\r[(the Baltimor)19.9(e ar)19.9(ea as instr)-24.8(ucted,)-108.4(b)14.9(ut east o)39.9(v)40.1(er the ocean.)-8.5(\\215I don\\220)75(t car)19.9(e ho)39.9(w man)19.9(y )]TJ\rT*\r0.0002 Tc\r-0.0001 Tw\r[(windo)41.2(ws y)40.8(ou br)21.1(eak,)126(\\216)-177.5(he said.)-76.1(\\215)0(Damn it.)]TJ\r15.7562 0 TD\r0.1777 Tc\r-0.1776 Tw\r[(...O)177.4(k)177.5(a)208.2(y)297.6(.)0(P)177.5(u)177.5(s)177.6(h)177.5( t)177.6(h)177.5(e)177.5(m)177.4( )]TJ\r8.2966 0 TD\r0.0002 Tc\r0 Tw\r[(back.)129.1(\\216)]TJ\r7.175 0 0 7.175 316.1924 238.7483 Tm\r-0.0002 Tc\r(152 )Tj\r10.25 0 0 10.25 56.7 225.2433 Tm\r0.0002 Tc\r0.0217 Tw\r[(The Langle)22.4(y)0( fighter)-17.8(s w)40.2(e)0.2(r)20.2(e)0.2( heading east, )103(not nor)-23.3(th, )100.5(for thr)21.2(ee r)20.5(easons. )101.6(Fir)-19.1(st, )]TJ\r-1.1706 -1.0976 TD\r-0.0555 Tw\r[(unlik)31(e a nor)-43.5(mal scramb)17.4(le or)20.8(der)40.6(,)-122.3(t)0.1(his or)21.2(der did not include a distance to the tar-)]TJ\rT*\r-0.061 Tw\r[(get or the target\\220)103.7(s)0.1( location.)-114.8(Second,)-115.3(a )100.1(\\215gener)-43.3(ic\\216)-116.5(flight plan\\204pr)23.3(epar)20.8(ed to get the )]TJ\r0.0001 -1.0976 TD\r0.0233 Tw\r[(air)20.4(c)0(raft airbor)-37.1(ne and out of local air)-15.1(s)0.1(pace quickly\\204incor)-34.9(r)20.2(ectly led the Lang-)]TJ\r0.0001 -1.0976 TD\r-0.005 Tc\r-0.0645 Tw\r[(le)19.7(y fighter)-19.9(s to belie)19.7(v)39.9(e)-0.1( the)19.6(y w)39.7(e)0.1(r)19.7(e)0( or)19.7(der)19.6(ed to fly due east \\(090\\) for 60 miles.)16.4(Thir)19.6(d, )]TJ\rT*\r0.0002 Tc\r0.1209 Tw\r[(the lead pilot and local F)45.2(AA contr)31.8(o)0(ller incor)-37.3(r)20.2(ectly assumed the flight plan )]TJ\rT*\r-0.0001 Tw\r[(instr)-23.8(uction to go )103.2(\\215090 for 60\\216 )103.2(super)-18.5(seded the or)-41.8(ig)-29.4(inal scramb)17.7(le or)21(der)40.6(.)]TJ\r7.175 0 0 7.175 326.9904 159.9983 Tm\r-0.0002 Tc\r0 Tw\r(153 )Tj\r10.25 0 0 10.25 56.7 146.4933 Tm\r0.0002 Tc\r0.057 Tw\r[(After the 9:36 call to NEADS about the unidentified air)32.2(c)0(raft a fe)21.7(w miles )]TJ\r-1.1707 -1.0976 TD\r-0.0345 Tw\r[(fr)30.2(om the )126.4(White House)32.8(,)-143.3(the Langle)22(y)0( fighter)-17.8(s w)40.2(e)0.2(r)20.2(e)0.2( or)20.4(der)20.6(ed to )126(W)125.2(a)0(shington,)-141.2(D)105.4(.)0.7(C)30(.)0.1( )]TJ\rT*\r0.012 Tw\r[(Contr)31.2(o)0(ller)-18.7(s)0.1( at NEADS located an unkno)46.2(wn pr)-43.7(imar)-28.7(y radar track, )103(b)15.1(u)0(t )100.3(\\215it kind )]TJ\r0.0002 -1.0976 TD\r-0.0073 Tw\r[(of f)-24.2(aded\\216 )101.2(o)40(v)40.2(er )125.4(W)125.2(a)0(shington.)-43.4(The time w)32.1(a)0(s 9:38.)-44.2(The P)50.9(entagon had been str)-20.2(uck )]TJ\rT*\r-0.0525 Tw\r[(b)25.1(y)0( )80.1(Amer)-43.7(i)0.1(can 77 at 9:37:46.The Langle)26.5(y)0( fighter)-17.8(s w)40.2(e)0.2(r)20.2(e)0.2( about 150 miles )]TJ\r27.3586 0 TD\r-0.0298 Tc\r0 Tw\r[(away)90.1(.)]TJ\r7.175 0 0 7.175 346.1534 103.7483 Tm\r-0.0002 Tc\r(154 )Tj\r10.25 0 0 10.25 56.7 90.2433 Tm\r0.0002 Tc\r0.1751 Tw\r[(Right after the P)53.4(entagon w)32(a)0(s hit, )101.3(NEADS lear)-37(ned of another possib)19.7(le )]TJ\r-1.1709 -1.0976 TD\r-0.049 Tw\r[(hijack)31.2(ed air)21(c)0(raft.)-127.8(It w)30.4(a)0(s an air)21.6(c)0(raft that in f)-22(act had not been hijack)34.9(ed at all.)-47.4(After )]TJ\r0.0001 -1.0976 TD\r-0.0634 Tw\r[(the second)-87.4(W)125.2(o)0(rld)-88.8(T)100.3(r)0.1(ade Center crash,)-110.6(Boston Center manager)-14.4(s r)20.2(eco)20.5(gnized that )]TJ\rET\rQ\r",
+   "page": 45
+  },
+  {
+   "extGStates": {
+    "GS1": "<< /Type /ExtGState /SA false /OP false /SM .02 /op false /OPM 1 >>"
+   },
+   "fonts": [
+    {
+     "baseFont": "KAFHKN+Bembo",
+     "firstChar": 32,
+     "resourceName": "F1",
+     "sourceObject": "2481",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F1+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F1+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <eb> endcodespacerange\n12 beginbfchar\n<3d> <003D>\n<3f> <003F>\n<5d> <005D>\n<5f> <005F>\n<80> <2022>\n<84> <2014>\n<85> <2013>\n<a7> <00A7>\n<a9> <00A9>\n<b1> <00B1>\n<e9> <00E9>\n<eb> <00EB>\nendbfchar\n6 beginbfrange\n<20> <2a> <0020>\n<2c> <3b> <002C>\n<41> <5b> <0041>\n<61> <7a> <0061>\n<8d> <8e> <201C>\n<8f> <90> <2018>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      278.0,
+      260.0,
+      406.0,
+      668.0,
+      458.0,
+      719.0,
+      729.0,
+      177.0,
+      302.0,
+      302.0,
+      510.0,
+      278.0,
+      260.0,
+      396.0,
+      260.0,
+      458.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      260.0,
+      260.0,
+      278.0,
+      667.0,
+      278.0,
+      354.0,
+      278.0,
+      677.0,
+      635.0,
+      729.0,
+      760.0,
+      594.0,
+      531.0,
+      740.0,
+      792.0,
+      333.0,
+      302.0,
+      698.0,
+      552.0,
+      917.0,
+      813.0,
+      823.0,
+      563.0,
+      823.0,
+      802.0,
+      490.0,
+      677.0,
+      792.0,
+      688.0,
+      1000.0,
+      750.0,
+      708.0,
+      677.0,
+      302.0,
+      278.0,
+      302.0,
+      278.0,
+      500.0,
+      278.0,
+      396.0,
+      500.0,
+      427.0,
+      500.0,
+      438.0,
+      271.0,
+      469.0,
+      521.0,
+      260.0,
+      250.0,
+      500.0,
+      240.0,
+      792.0,
+      521.0,
+      521.0,
+      500.0,
+      500.0,
+      333.0,
+      302.0,
+      292.0,
+      521.0,
+      479.0,
+      740.0,
+      490.0,
+      469.0,
+      406.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      354.0,
+      278.0,
+      278.0,
+      278.0,
+      1000.0,
+      500.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      479.0,
+      479.0,
+      260.0,
+      260.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      469.0,
+      278.0,
+      760.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      667.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      438.0,
+      278.0,
+      438.0
+     ]
+    },
+    {
+     "baseFont": "KAGBEE+Bembo-Bold",
+     "firstChar": 32,
+     "resourceName": "F6",
+     "sourceObject": "2173",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F6+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F6+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <90> endcodespacerange\n6 beginbfchar\n<20> <0020>\n<3f> <003F>\n<80> <2022>\n<84> <2014>\n<85> <2013>\n<90> <2019>\nendbfchar\n5 beginbfrange\n<28> <29> <0028>\n<2c> <3b> <002C>\n<41> <5a> <0041>\n<61> <7a> <0061>\n<8d> <8e> <201C>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      354.0,
+      354.0,
+      333.0,
+      333.0,
+      313.0,
+      417.0,
+      313.0,
+      531.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      313.0,
+      313.0,
+      333.0,
+      333.0,
+      333.0,
+      365.0,
+      333.0,
+      740.0,
+      698.0,
+      740.0,
+      823.0,
+      646.0,
+      594.0,
+      781.0,
+      833.0,
+      365.0,
+      344.0,
+      740.0,
+      604.0,
+      927.0,
+      813.0,
+      844.0,
+      646.0,
+      844.0,
+      771.0,
+      563.0,
+      729.0,
+      771.0,
+      750.0,
+      1000.0,
+      802.0,
+      750.0,
+      750.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      479.0,
+      573.0,
+      490.0,
+      573.0,
+      479.0,
+      323.0,
+      552.0,
+      563.0,
+      292.0,
+      281.0,
+      542.0,
+      271.0,
+      927.0,
+      573.0,
+      573.0,
+      573.0,
+      573.0,
+      396.0,
+      375.0,
+      344.0,
+      573.0,
+      521.0,
+      781.0,
+      531.0,
+      521.0,
+      510.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      354.0,
+      333.0,
+      333.0,
+      333.0,
+      1000.0,
+      500.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      583.0,
+      583.0,
+      333.0,
+      313.0
+     ]
+    },
+    {
+     "baseFont": "KAGIPE+Bembo-Semibold",
+     "firstChar": 32,
+     "resourceName": "F8",
+     "sourceObject": "2183",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F8+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F8+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <77> endcodespacerange\n9 beginbfchar\n<20> <0020>\n<2c> <002C>\n<35> <0035>\n<37> <0037>\n<48> <0048>\n<4a> <004A>\n<50> <0050>\n<61> <0061>\n<77> <0077>\nendbfchar\n9 beginbfrange\n<28> <29> <0028>\n<30> <32> <0030>\n<39> <3a> <0039>\n<41> <46> <0041>\n<4c> <4e> <004C>\n<52> <56> <0052>\n<59> <5a> <0059>\n<63> <69> <0063>\n<6b> <75> <006B>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      351.0,
+      351.0,
+      333.0,
+      333.0,
+      289.0,
+      333.0,
+      333.0,
+      333.0,
+      510.0,
+      514.0,
+      514.0,
+      333.0,
+      333.0,
+      514.0,
+      333.0,
+      514.0,
+      333.0,
+      514.0,
+      289.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      711.0,
+      649.0,
+      739.0,
+      784.0,
+      576.0,
+      550.0,
+      333.0,
+      810.0,
+      333.0,
+      351.0,
+      333.0,
+      577.0,
+      928.0,
+      820.0,
+      333.0,
+      558.0,
+      333.0,
+      793.0,
+      523.0,
+      684.0,
+      802.0,
+      730.0,
+      333.0,
+      333.0,
+      739.0,
+      676.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      442.0,
+      333.0,
+      451.0,
+      531.0,
+      469.0,
+      306.0,
+      514.0,
+      541.0,
+      261.0,
+      333.0,
+      531.0,
+      271.0,
+      820.0,
+      541.0,
+      541.0,
+      523.0,
+      531.0,
+      360.0,
+      351.0,
+      316.0,
+      541.0,
+      333.0,
+      775.0
+     ]
+    }
+   ],
+   "lines": [
+    {
+     "rect": [
+      39.66,
+      562.5344,
+      230.3408,
+      8.607
+     ],
+     "text": "30 THE 9/11 COMMISSION REPORT"
+    },
+    {
+     "rect": [
+      39.66,
+      537.8551,
+      312.0059,
+      9.2865
+     ],
+     "text": "aircraft. Then the Command Center informed headquarters that controllers"
+    },
+    {
+     "rect": [
+      39.66,
+      526.6047,
+      312.0541,
+      9.2865
+     ],
+     "text": "had lost track of United 93 over the Pittsburgh area.Within seconds,the Com-"
+    },
+    {
+     "rect": [
+      39.66,
+      515.3543,
+      311.9998,
+      9.2865
+     ],
+     "text": "mand Center received a visual report from another aircraft,and informed head-"
+    },
+    {
+     "rect": [
+      39.66,
+      504.1038,
+      312.0285,
+      9.2865
+     ],
+     "text": "quarters that the aircraft was 20 miles northwest of Johnstown. United 93 was"
+    },
+    {
+     "rect": [
+      39.661,
+      492.8534,
+      312.011,
+      9.2865
+     ],
+     "text": "spotted by another aircraft, and, at 10:01, the Command Center advised FAA"
+    },
+    {
+     "rect": [
+      39.661,
+      481.603,
+      312.011,
+      9.2865
+     ],
+     "text": "headquarters that one of the aircraft had seen United 93 “waving his wings.”"
+    },
+    {
+     "rect": [
+      39.6631,
+      470.3526,
+      312.0377,
+      9.2865
+     ],
+     "text": "The aircraft had witnessed the hijackers’ efforts to defeat the passengers’ coun-"
+    },
+    {
+     "rect": [
+      39.6641,
+      459.1022,
+      47.699,
+      9.4748
+     ],
+     "text": "terattack.167"
+    },
+    {
+     "rect": [
+      51.66,
+      447.8551,
+      300.0226,
+      9.2865
+     ],
+     "text": "United 93 crashed in Pennsylvania at 10:03:11, 125 miles from Washington,"
+    },
+    {
+     "rect": [
+      39.6593,
+      436.6047,
+      312.0459,
+      9.2865
+     ],
+     "text": "D.C.The precise crash time has been the subject of some dispute.The 10:03:11"
+    },
+    {
+     "rect": [
+      39.6593,
+      425.3543,
+      312.008,
+      9.2865
+     ],
+     "text": "impact time is supported by previous National Transportation Safety Board"
+    },
+    {
+     "rect": [
+      39.6593,
+      414.1038,
+      311.9977,
+      9.2865
+     ],
+     "text": "analysis and by evidence from the Commission staff’s analysis of radar,the flight"
+    },
+    {
+     "rect": [
+      39.6593,
+      402.8534,
+      312.05,
+      9.2865
+     ],
+     "text": "data recorder, the cockpit voice recorder, infrared satellite data, and air traffic"
+    },
+    {
+     "rect": [
+      39.6614,
+      391.603,
+      97.3051,
+      9.474
+     ],
+     "text": "control transmissions.168"
+    },
+    {
+     "rect": [
+      51.66,
+      380.3551,
+      300.0462,
+      9.2865
+     ],
+     "text": "Five minutes later, the Command Center forwarded this update to head-"
+    },
+    {
+     "rect": [
+      39.6603,
+      369.1047,
+      35.0366,
+      9.2865
+     ],
+     "text": "quarters:"
+    },
+    {
+     "rect": [
+      51.66,
+      346.6049,
+      252.5426,
+      9.2865
+     ],
+     "text": "Command Center: O.K. Uh, there is now on that United 93."
+    },
+    {
+     "rect": [
+      51.661,
+      335.3545,
+      100.9625,
+      9.2865
+     ],
+     "text": "FAA Headquarters:Yes."
+    },
+    {
+     "rect": [
+      51.661,
+      324.1041,
+      288.0609,
+      9.2865
+     ],
+     "text": "Command Center: There is a report of black smoke in the last position"
+    },
+    {
+     "rect": [
+      63.6597,
+      312.8537,
+      179.619,
+      9.2865
+     ],
+     "text": "I gave you, fifteen miles south of Johnstown."
+    },
+    {
+     "rect": [
+      51.661,
+      301.6033,
+      244.7362,
+      9.2865
+     ],
+     "text": "FAA Headquarters: From the airplane or from the ground?"
+    },
+    {
+     "rect": [
+      51.661,
+      290.3529,
+      254.2943,
+      9.2865
+     ],
+     "text": "Command Center: Uh, they’re speculating it’s from the aircraft."
+    },
+    {
+     "rect": [
+      51.661,
+      279.1025,
+      110.4417,
+      9.2865
+     ],
+     "text": "FAA Headquarters: Okay."
+    },
+    {
+     "rect": [
+      51.661,
+      267.8521,
+      288.0106,
+      9.2865
+     ],
+     "text": "Command Center: Uh,who,it hit the ground.That’s what they’re spec-"
+    },
+    {
+     "rect": [
+      63.6607,
+      256.6017,
+      133.1633,
+      9.4754
+     ],
+     "text": "ulating, that’s speculation only.169"
+    },
+    {
+     "rect": [
+      51.66,
+      234.1051,
+      300.0124,
+      9.2865
+     ],
+     "text": "The aircraft that spotted the “black smoke” was the same unarmed Air"
+    },
+    {
+     "rect": [
+      39.6614,
+      222.8547,
+      312.0059,
+      9.2865
+     ],
+     "text": "National Guard cargo plane that had seen American 77 crash into the Penta-"
+    },
+    {
+     "rect": [
+      39.6614,
+      211.6043,
+      311.8809,
+      9.2865
+     ],
+     "text": "gon 27 minutes earlier. It had resumed its flight to Minnesota and saw the"
+    },
+    {
+     "rect": [
+      39.6614,
+      200.3538,
+      312.0223,
+      9.2865
+     ],
+     "text": "smoke from the crash of United 93, less than two minutes after the plane went"
+    },
+    {
+     "rect": [
+      39.6624,
+      189.1034,
+      312.052,
+      9.2865
+     ],
+     "text": "down. At 10:17, the Command Center advised headquarters of its conclusion"
+    },
+    {
+     "rect": [
+      39.6624,
+      177.853,
+      153.2487,
+      9.474
+     ],
+     "text": "that United 93 had indeed crashed.170"
+    },
+    {
+     "rect": [
+      51.66,
+      166.6051,
+      300.04,
+      9.2865
+     ],
+     "text": "Despite the discussions about military assistance, no one from FAA head-"
+    },
+    {
+     "rect": [
+      39.6603,
+      155.3547,
+      312.0736,
+      9.2865
+     ],
+     "text": "quarters requested military assistance regarding United 93. Nor did any man-"
+    },
+    {
+     "rect": [
+      39.6614,
+      144.1042,
+      312.1156,
+      9.2865
+     ],
+     "text": "ager at FAA headquarters pass any of the information it had about United 93"
+    },
+    {
+     "rect": [
+      39.6614,
+      132.8538,
+      59.7565,
+      9.2865
+     ],
+     "text": "to the military."
+    },
+    {
+     "rect": [
+      39.6603,
+      110.3541,
+      312.0356,
+      9.2865
+     ],
+     "text": "Military Notification and Response. NEADS first received a call about"
+    },
+    {
+     "rect": [
+      39.6603,
+      99.1037,
+      312.0223,
+      9.2865
+     ],
+     "text": "United 93 from the military liaison at Cleveland Center at 10:07.Unaware that"
+    },
+    {
+     "rect": [
+      39.6603,
+      87.8533,
+      312.0295,
+      9.2865
+     ],
+     "text": "the aircraft had already crashed, Cleveland passed to NEADS the aircraft’s last"
+    },
+    {
+     "rect": [
+      39.6603,
+      76.6029,
+      312.0469,
+      9.2865
+     ],
+     "text": "known latitude and longitude. NEADS was never able to locate United 93 on"
+    },
+    {
+     "rect": [
+      39.6624,
+      65.3525,
+      182.6574,
+      9.4746
+     ],
+     "text": "radar because it was already in the ground.171"
+    }
+   ],
+   "operators": "q\r/RelativeColorimetric ri \r/GS1 gs\rBT\r/F1 1 Tf\r9.5 0 0 9.5 39.66 564.7479 Tm\r0 g\r0.0004 Tc\r-0.0002 Tw\r[(30 )-7336.3(THE 9/11 COMMISSION REPOR)112.3(T)0( )]TJ\r10.25 0 0 10.25 39.66 540.2433 Tm\r0.0002 Tc\r0.0913 Tw\r[(air)20.4(c)0(raft. )226.2(Then the Command Center infor)-37.5(m)-0.1(ed headquar)-21.7(ter)-19.1(s)0.1( that contr)32.4(o)0(ller)-18.7(s)0.1( )]TJ\r0 -1.0976 TD\r-0.0558 Tw\r[(had lost track of United 93 o)45.9(v)40.2(er the Pittsb)17.6(urgh ar)21.4(ea.W)15.8(ithin seconds,)-119.1(t)0.1(he Com-)]TJ\rT*\r-0.0026 Tc\r-0.0669 Tw\r[(mand Center r)19.6(ecei)19.7(v)39.9(ed a visual r)19.6(epor)-25(t fr)29.7(om another air)19.6(craft,)-108.6(and infor)-45.1(med head-)]TJ\rT*\r0.0002 Tc\r-0.0228 Tw\r[(quar)-23.9(ter)-19.1(s)0.1( that the air)22.5(c)0(raft w)31.3(a)0(s 20 miles nor)-21.7(thw)40.5(e)0(st of J)31.3(ohnsto)41.3(wn. United 93 w)32.3(a)0.2(s )]TJ\r0.0001 -1.0976 TD\r0.0097 Tw\r[(spotted b)27(y)0.2( another air)22.5(c)0(raft, )101.3(and, )100.9(at 10:01, )101.9(the Command Center advised F)46.7(A)0.7(A )]TJ\rT*\r0.0255 Tw\r[(headquar)-22.8(ter)-19.1(s)0.1( that one of the air)23.9(c)0(raft had seen United 93 )105.1(\\215w)30.3(a)30(v)0(ing his wings.)128.4(\\216)0( )]TJ\r0.0002 -1.0976 TD\r-0.036 Tw\r[(The air)21.5(c)0(raft had witnessed the hijack)36.5(er)-19.3(s\\220 )100.2(effor)-23.7(ts to defeat the passenger)-14.1(s\\220 )100.2(coun-)]TJ\r0.0001 -1.0976 TD\r0 Tw\r(terattack.)Tj\r7.175 0 0 7.175 76.8187 463.7483 Tm\r-0.0002 Tc\r(167 )Tj\r10.25 0 0 10.25 51.66 450.2433 Tm\r-0.0148 Tc\r0.0388 Tw\r[(United 93 crashed in P)49.6(ennsylv)29.7(ania at 10:03:11, )99.8(125 miles fr)29.7(om )124.9(W)109.9(a)-15(s)-14.9(h)-15(i)-14.9(n)-15(g)-15(t)-14.9(o)-15(n)-15(,)-14.9( )]TJ\r-1.1708 -1.0976 TD\r0.0002 Tc\r-0.0691 Tw\r[(D)105.4(.)0.7(C)30(.)-130.7(The pr)21.2(ecise crash time has been the subject of some dispute)41.5(.)16.3(The 10:03:11 )]TJ\rT*\r0.1015 Tw\r[(impact time is suppor)-20.1(ted b)25.9(y)0.2( pr)20.4(e)20(v)0(ious National )128.4(T)100.3(r)0.1(anspor)-23.1(tation Safety Boar)24(d)0( )]TJ\rT*\r0.0001 Tc\r-0.0421 Tw\r[(analysis and b)27.8(y)0.1( e)20.1(v)-0.1(idence fr)32.1(om the Com)]TJ\r15.3209 0 TD\r-0.0099 Tc\r-0.042 Tw\r[(mission staff)-125.4(\\220)100(s)0( analysis of radar)39.8(,)-126(the flight )]TJ\r-15.3209 -1.0976 TD\r0.0608 Tw\r[(data r)19.7(ecor)19.7(der)39.7(,)-10( )110(the cockpit v)30(o)-10.1(i)-10(c)-10.1(e)-10.1( )-9.7(r)]TJ\r12.9903 0 TD\r0.0002 Tc\r0.0604 Tw\r[(ecor)20.8(der)40.6(, )100.2(infrar)21.2(ed satellite data, )103.6(and air traffic )]TJ\r-12.9901 -1.0976 TD\r0.0001 Tc\r0 Tw\r[(contr)31(o)-0.1(l transmissions.)]TJ\r7.175 0 0 7.175 126.4221 396.2483 Tm\r-0.0002 Tc\r(168 )Tj\r10.25 0 0 10.25 51.66 382.7433 Tm\r0.0002 Tc\r0.059 Tw\r[(Fi)20.3(v)40.2(e)0.2( min)15.8(u)0(tes later)42(,)0.1( )100.2(the Command Center forw)35.7(ar)20.3(ded this update to head-)]TJ\r-1.1707 -1.0976 TD\r-0.0001 Tc\r0 Tw\r[(quar)-24.6(ter)-19.2(s)-0.2(: )]TJ\r/F8 1 Tf\r1.1707 -2.1951 TD\r0.0001 Tc\r-0.0003 Tw\r[(Command Center)-20.8(: )]TJ\r/F1 1 Tf\r8.2053 0 TD\r0.0002 Tc\r-0.0001 Tw\r[(O)100(.)0.1(K. )100.8(Uh, )100.9(ther)20.8(e is no)41.4(w on that United 93. )]TJ\r/F8 1 Tf\r-8.2052 -1.0976 TD\r0.0001 Tc\r-0.0003 Tw\r[(F)40.1(AA Headquar)-21.4(ters:)]TJ\r/F1 1 Tf\r8.3018 0 TD\r-0.1601 Tc\r0 Tw\r[(Ye)-160.3(s)-160.2(.)-159.9( )]TJ\r/F8 1 Tf\r-8.3018 -1.0976 TD\r0.0001 Tc\r-0.0368 Tw\r[(Command Center)-20.8(: )]TJ\r/F1 1 Tf\r8.0581 0 TD\r0.0002 Tc\r-0.0308 Tw\r[(Ther)20.9(e is a r)21(epor)-23.8(t of b)15.8(l)0.1(ack smok)32(e in the last position )]TJ\r-6.8875 -1.0976 TD\r-0.0001 Tw\r[(I ga)30.7(v)40.2(e)0.2( y)40.3(ou, )100.8(fifteen miles south of J)35.8(ohnsto)41.3(wn. )]TJ\r/F8 1 Tf\r-1.1706 -1.0976 TD\r0.0001 Tc\r-0.0003 Tw\r[(F)40.1(AA Headquar)-21.4(ters: )]TJ\r/F1 1 Tf\r8.4766 0 TD\r0.0002 Tc\r-0.0001 Tw\r[(Fr)30.3(om the air)-37.4(p)0(lane or fr)32.3(om the g)-27.9(r)30.2(ound? )]TJ\r/F8 1 Tf\r-8.4766 -1.0976 TD\r0.0001 Tc\r-0.0003 Tw\r[(Command Center)-20.8(: )]TJ\r/F1 1 Tf\r8.2502 0 TD\r-0.0148 Tc\r0 Tw\r[(Uh, )99.8(the)19.7(y\\220)79.7(r)19.9(e)0( speculating it\\220)99.7(s fr)29.7(om the air)19.7(craft. )]TJ\r/F8 1 Tf\r-8.2502 -1.0976 TD\r0.0001 Tc\r-0.0003 Tw\r[(F)40.1(AA Headquar)-21.4(ters: )]TJ\r/F1 1 Tf\r8.4766 0 TD\r0.0002 Tc\r0 Tw\r[(Oka)30.5(y)120.1(. )]TJ\r/F8 1 Tf\r-8.4766 -1.0976 TD\r-0.0003 Tc\r-0.0831 Tw\r[(Command Center)-24.9(: )]TJ\r/F1 1 Tf\r8.0962 0 TD\r0.0001 Tc\r-0.0696 Tw\r[(Uh,)-107.4(w)-0.2(ho)50.9(,)-108.1(i)0.3(t hit the g)-27.5(r)30.2(ound.)17.9(T)-0.2(hat\\220)101.3(s what the)22.2(y)0.3(\\220)80(r)20.2(e spec-)]TJ\r-6.9255 -1.0976 TD\r0.0002 Tc\r-0.0001 Tw\r[(ulating, )102(that\\220)101.1(s)0.1( speculation only)124.4(.)]TJ\r7.175 0 0 7.175 186.2796 261.2483 Tm\r-0.0002 Tc\r0 Tw\r(169 )Tj\r10.25 0 0 10.25 51.66 236.4933 Tm\r0.0002 Tc\r0.1489 Tw\r[(The air)21.4(c)0(raft that spotted the )104.5(\\215b)15.4(lack smok)32(e\\216 )100.2(w)30(a)0(s the same unar)-41.4(med )80.7(Air )]TJ\r-1.1706 -1.0976 TD\r0.014 Tw\r[(National Guar)23.1(d cargo plane that had seen )85.7(Amer)-43.7(i)0.1(can 77 crash into the P)54.8(enta-)]TJ\rT*\r-0.0009 Tc\r0.1084 Tw\r[(gon 27 min)14(utes earlier)38.9(. )99.5(It had r)18.9(esumed its flight to Minnesota and sa)33.8(w the )]TJ\rT*\r-0.0066 Tc\r0.0004 Tw\r[(smok)28.1(e fr)28.1(om the crash of United 93, )97(less than tw)38.2(o min)13.2(utes after the plane w)43.2(ent )]TJ\r0.0001 -1.0976 TD\r-0.0099 Tc\r0.014 Tw\r[(do)39.7(wn. )32.7(At 10:17, )99.8(the Command Center )]TJ\r15.478 0 TD\r0.0002 Tc\r0.0137 Tw\r[(advised headquar)-20.9(ter)-19.1(s)0.1( of its conclusion )]TJ\r-15.478 -1.0976 TD\r-0.0001 Tw\r(that United 93 had indeed crashed.)Tj\r7.175 0 0 7.175 182.3667 182.4983 Tm\r-0.0002 Tc\r0 Tw\r(170 )Tj\r10.25 0 0 10.25 51.66 168.9933 Tm\r0.0002 Tc\r0.046 Tw\r[(Despite the discussions about militar)-21.2(y)0( assistance)32.5(, )100.2(no one fr)31.8(om F)40.7(AA head-)]TJ\r-1.1707 -1.0976 TD\r0.0003 Tc\r0.003 Tw\r[(quar)-23.8(ter)-19(s)0.2( r)20.3(equested militar)-25.8(y)0.1( assistance r)22.9(egar)20.9(ding United 93. )103.3(Nor did an)22.2(y man-)]TJ\r0.0001 -1.0976 TD\r0.0013 Tw\r[(ager at F)41.7(AA headquar)-21.8(ter)-19(s)0.2( pass an)21.6(y of the infor)-41.9(m)0(ation it had about United 93 )]TJ\rT*\r0.0001 Tc\r0 Tw\r[(to the militar)-26.4(y)120(. )]TJ\r/F6 1 Tf\r-0.0001 -2.1951 TD\r0.0002 Tc\r0.0979 Tw\r[(Militar)-28(y)0( Notification and Response)36.8(.)0.1( )]TJ\r/F1 1 Tf\r16.6682 0 TD\r0.0816 Tw\r[(NEADS fir)-17.3(st r)20.4(ecei)20.8(v)40.2(ed a call about )]TJ\r-16.6682 -1.0976 TD\r-0.0003 Tc\r-0.0692 Tw\r[(United 93 fr)29.9(om the militar)-29.7(y liaison at Cle)19.9(v)40(eland Center at 10:07.)-108.4(Una)29.7(w)29.8(a)0.2(r)19.7(e)-0.3( that )]TJ\rT*\r0.0002 Tc\r0.0056 Tw\r[(the air)21.2(c)0(raft had alr)22.5(eady crashed, )103(Cle)20.6(v)40.2(eland passed to NEADS the air)26.5(c)0(raft\\220)101.3(s last )]TJ\rT*\r-0.0283 Tw\r[(kno)40.6(wn latitude and long)-25.3(itude)31(. )100.3(NEADS w)31.8(a)0(s ne)20.8(v)40.2(e)0(r ab)15.8(le to locate United 93 on )]TJ\r0.0002 -1.0976 TD\r-0.0001 Tw\r[(radar because it w)34.2(a)0(s alr)21.1(eady in the g)-26.5(r)30.2(ound.)]TJ\r7.175 0 0 7.175 211.7754 69.9983 Tm\r-0.0002 Tc\r0 Tw\r(171 )Tj\rET\rQ\r",
+   "page": 48
+  },
+  {
+   "extGStates": {
+    "GS1": "<< /Type /ExtGState /SA false /OP false /SM .02 /op false /OPM 1 >>"
+   },
+   "fonts": [
+    {
+     "baseFont": "KAFHKN+Bembo",
+     "firstChar": 32,
+     "resourceName": "F1",
+     "sourceObject": "2481",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F1+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F1+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <eb> endcodespacerange\n12 beginbfchar\n<3d> <003D>\n<3f> <003F>\n<5d> <005D>\n<5f> <005F>\n<80> <2022>\n<84> <2014>\n<85> <2013>\n<a7> <00A7>\n<a9> <00A9>\n<b1> <00B1>\n<e9> <00E9>\n<eb> <00EB>\nendbfchar\n6 beginbfrange\n<20> <2a> <0020>\n<2c> <3b> <002C>\n<41> <5b> <0041>\n<61> <7a> <0061>\n<8d> <8e> <201C>\n<8f> <90> <2018>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      278.0,
+      260.0,
+      406.0,
+      668.0,
+      458.0,
+      719.0,
+      729.0,
+      177.0,
+      302.0,
+      302.0,
+      510.0,
+      278.0,
+      260.0,
+      396.0,
+      260.0,
+      458.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      260.0,
+      260.0,
+      278.0,
+      667.0,
+      278.0,
+      354.0,
+      278.0,
+      677.0,
+      635.0,
+      729.0,
+      760.0,
+      594.0,
+      531.0,
+      740.0,
+      792.0,
+      333.0,
+      302.0,
+      698.0,
+      552.0,
+      917.0,
+      813.0,
+      823.0,
+      563.0,
+      823.0,
+      802.0,
+      490.0,
+      677.0,
+      792.0,
+      688.0,
+      1000.0,
+      750.0,
+      708.0,
+      677.0,
+      302.0,
+      278.0,
+      302.0,
+      278.0,
+      500.0,
+      278.0,
+      396.0,
+      500.0,
+      427.0,
+      500.0,
+      438.0,
+      271.0,
+      469.0,
+      521.0,
+      260.0,
+      250.0,
+      500.0,
+      240.0,
+      792.0,
+      521.0,
+      521.0,
+      500.0,
+      500.0,
+      333.0,
+      302.0,
+      292.0,
+      521.0,
+      479.0,
+      740.0,
+      490.0,
+      469.0,
+      406.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      354.0,
+      278.0,
+      278.0,
+      278.0,
+      1000.0,
+      500.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      479.0,
+      479.0,
+      260.0,
+      260.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      469.0,
+      278.0,
+      760.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      667.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      438.0,
+      278.0,
+      438.0
+     ]
+    }
+   ],
+   "lines": [
+    {
+     "rect": [
+      141.0954,
+      562.5344,
+      215.6016,
+      8.607
+     ],
+     "text": "“WE HAVE SOME PLANES” 39"
+    },
+    {
+     "rect": [
+      44.7,
+      537.8551,
+      312.008,
+      9.2865
+     ],
+     "text": "while the children continued reading. He then returned to a holding room"
+    },
+    {
+     "rect": [
+      44.701,
+      526.6047,
+      312.0203,
+      9.2865
+     ],
+     "text": "shortly before 9:15, where he was briefed by staff and saw television coverage."
+    },
+    {
+     "rect": [
+      44.701,
+      515.3543,
+      312.0192,
+      9.2865
+     ],
+     "text": "He next spoke toVice President Cheney,Dr.Rice,NewYork Governor George"
+    },
+    {
+     "rect": [
+      44.701,
+      504.1038,
+      312.0202,
+      9.2865
+     ],
+     "text": "Pataki, and FBI Director Robert Mueller. He decided to make a brief state-"
+    },
+    {
+     "rect": [
+      44.701,
+      492.8534,
+      312.0449,
+      9.2865
+     ],
+     "text": "ment from the school before leaving for the airport.The Secret Service told us"
+    },
+    {
+     "rect": [
+      44.701,
+      481.603,
+      312.0377,
+      9.2865
+     ],
+     "text": "they were anxious to move the President to a safer location, but did not think"
+    },
+    {
+     "rect": [
+      44.701,
+      470.3526,
+      179.5833,
+      9.4744
+     ],
+     "text": "it imperative for him to run out the door.204"
+    },
+    {
+     "rect": [
+      56.7,
+      459.1051,
+      299.9949,
+      9.2865
+     ],
+     "text": "Between 9:15 and 9:30,the staff was busy arranging a return to Washington,"
+    },
+    {
+     "rect": [
+      44.7014,
+      447.8547,
+      312.0038,
+      9.2865
+     ],
+     "text": "while the President consulted his senior advisers about his remarks. No one in"
+    },
+    {
+     "rect": [
+      44.7014,
+      436.6043,
+      311.9946,
+      9.2865
+     ],
+     "text": "the traveling party had any information during this time that other aircraft were"
+    },
+    {
+     "rect": [
+      44.7014,
+      425.3539,
+      312.0243,
+      9.2865
+     ],
+     "text": "hijacked or missing.Staff was in contact with theWhite House Situation Room,"
+    },
+    {
+     "rect": [
+      44.7014,
+      414.1034,
+      311.9905,
+      9.2865
+     ],
+     "text": "but as far as we could determine,no one with the President was in contact with"
+    },
+    {
+     "rect": [
+      44.7034,
+      402.853,
+      311.9813,
+      9.2865
+     ],
+     "text": "the Pentagon.The focus was on the President’s statement to the nation.The only"
+    },
+    {
+     "rect": [
+      44.7024,
+      391.6026,
+      253.1308,
+      9.4744
+     ],
+     "text": "decision made during this time was to return to Washington.205"
+    },
+    {
+     "rect": [
+      56.7,
+      380.3551,
+      300.0103,
+      9.2865
+     ],
+     "text": "The President’s motorcade departed at 9:35, and arrived at the airport"
+    },
+    {
+     "rect": [
+      44.7024,
+      369.1047,
+      312.0448,
+      9.2865
+     ],
+     "text": "between 9:42 and 9:45.During the ride the President learned about the attack"
+    },
+    {
+     "rect": [
+      44.7024,
+      357.8543,
+      312.0408,
+      9.2865
+     ],
+     "text": "on the Pentagon. He boarded the aircraft, asked the Secret Service about the"
+    },
+    {
+     "rect": [
+      44.7034,
+      346.6038,
+      312.0028,
+      9.2865
+     ],
+     "text": "safety of his family, and called the Vice President. According to notes of the"
+    },
+    {
+     "rect": [
+      44.7044,
+      335.3534,
+      312.0039,
+      9.2865
+     ],
+     "text": "call, at about 9:45 the President told theVice President:“Sounds like we have"
+    },
+    {
+     "rect": [
+      44.7044,
+      324.103,
+      312.0264,
+      9.2865
+     ],
+     "text": "a minor war going on here, I heard about the Pentagon.We’re at war . . . some-"
+    },
+    {
+     "rect": [
+      44.7044,
+      312.8526,
+      94.2492,
+      9.4744
+     ],
+     "text": "body’s going to pay.”206"
+    },
+    {
+     "rect": [
+      56.7,
+      301.6051,
+      300.0247,
+      9.2865
+     ],
+     "text": "About this time,Card,the lead Secret Service agent,the President’s military"
+    },
+    {
+     "rect": [
+      44.7014,
+      290.3547,
+      312.0254,
+      9.2865
+     ],
+     "text": "aide,and the pilot were conferring on a possible destination for Air Force One."
+    },
+    {
+     "rect": [
+      44.7024,
+      279.1043,
+      312.0223,
+      9.2865
+     ],
+     "text": "The Secret Service agent felt strongly that the situation in Washington was too"
+    },
+    {
+     "rect": [
+      44.7024,
+      267.8538,
+      312.0243,
+      9.2865
+     ],
+     "text": "unstable for the President to return there, and Card agreed. The President"
+    },
+    {
+     "rect": [
+      44.7044,
+      256.6034,
+      312.01,
+      9.2865
+     ],
+     "text": "strongly wanted to return to Washington and only grudgingly agreed to go"
+    },
+    {
+     "rect": [
+      44.7055,
+      245.353,
+      312.0377,
+      9.2865
+     ],
+     "text": "elsewhere.The issue was still undecided when the President conferred with the"
+    },
+    {
+     "rect": [
+      44.7055,
+      234.1026,
+      312.0213,
+      9.2865
+     ],
+     "text": "Vice President at about the time Air Force One was taking off. TheVice Pres-"
+    },
+    {
+     "rect": [
+      44.7065,
+      222.8522,
+      312.0315,
+      9.2865
+     ],
+     "text": "ident recalled urging the President not to return toWashington.Air Force One"
+    },
+    {
+     "rect": [
+      44.7065,
+      211.6018,
+      312.0274,
+      9.2865
+     ],
+     "text": "departed at about 9:54 without any fixed destination.The objective was to get"
+    },
+    {
+     "rect": [
+      44.7075,
+      200.3514,
+      311.99,
+      9.4756
+     ],
+     "text": "up in the air—as fast and as high as possible—and then decide where to go.207"
+    },
+    {
+     "rect": [
+      56.7,
+      189.1051,
+      300.0001,
+      9.2865
+     ],
+     "text": "At 9:33, the tower supervisor at Reagan National Airport picked up a"
+    },
+    {
+     "rect": [
+      44.6993,
+      177.8547,
+      311.9967,
+      9.2865
+     ],
+     "text": "hotline to the Secret Service and told the Service’s operations center that"
+    },
+    {
+     "rect": [
+      44.6993,
+      166.6042,
+      312.0018,
+      9.2865
+     ],
+     "text": "“an aircraft [is] coming at you and not talking with us.”This was the first"
+    },
+    {
+     "rect": [
+      44.6983,
+      155.3538,
+      312.0018,
+      9.2865
+     ],
+     "text": "specific report to the Secret Service of a direct threat to the White House."
+    },
+    {
+     "rect": [
+      44.6962,
+      144.1034,
+      311.8839,
+      9.2865
+     ],
+     "text": "No move was made to evacuate the Vice President at this time.As the offi-"
+    },
+    {
+     "rect": [
+      44.6962,
+      132.853,
+      311.9721,
+      9.2865
+     ],
+     "text": "cer who took the call explained, “[I was] about to push the alert button"
+    },
+    {
+     "rect": [
+      44.6962,
+      121.6026,
+      311.9864,
+      9.2865
+     ],
+     "text": "when the tower advised that the aircraft was turning south and approach-"
+    },
+    {
+     "rect": [
+      44.6962,
+      110.3522,
+      138.7154,
+      9.4748
+     ],
+     "text": "ing Reagan National Airport.”208"
+    },
+    {
+     "rect": [
+      56.7,
+      99.1051,
+      299.9857,
+      9.2865
+     ],
+     "text": "American 77 began turning south, away from the White House, at 9:34. It"
+    },
+    {
+     "rect": [
+      44.7013,
+      87.8547,
+      312.0131,
+      9.2865
+     ],
+     "text": "continued heading south for roughly a minute,before turning west and begin-"
+    },
+    {
+     "rect": [
+      44.7034,
+      76.6043,
+      312.0551,
+      9.2865
+     ],
+     "text": "ning to circle back.This news prompted the Secret Service to order the imme-"
+    },
+    {
+     "rect": [
+      44.7034,
+      65.3539,
+      312.0336,
+      9.2865
+     ],
+     "text": "diate evacuation of the Vice President just before 9:36. Agents propelled him"
+    }
+   ],
+   "operators": "q\r/RelativeColorimetric ri \r/GS1 gs\rBT\r/F1 1 Tf\r9.5 0 0 9.5 141.0954 564.7479 Tm\r0 g\r0.0004 Tc\r-0.0002 Tw\r[(\\215WE HA)102.9(VE SOME PLANES\\216 )-8881.4(39 )]TJ\r10.25 0 0 10.25 44.7 540.2433 Tm\r0.0002 Tc\r0.0812 Tw\r[(while the childr)23.5(en contin)17(ued r)20.9(eading. )101.6(He then r)21.8(e)0(tur)-38.8(ned to a holding r)33.6(oom )]TJ\r0.0001 -1.0976 TD\r-0.0212 Tw\r[(shor)-23.9(tly befor)21.8(e 9:15, )101.4(wher)20.9(e he w)30.9(a)0(s br)-43.9(iefed b)26.4(y)0.2( staff and sa)32.3(w tele)21(vision co)41.9(v)40.2(e)0(rage)31(. )]TJ\rT*\r-0.0038 Tc\r-0.0657 Tw\r[(He next spok)29.8(e to)-33.7(Vice Pr)19.7(esident Chene)19.8(y)119.8(,)-108.4(Dr)39.7(.)-108.4(Rice)29.7(,)-108.4(N)-0.1(e)19.7(w)-33.6(Y)160.1(ork Go)39.8(v)40(e)0.2(r)-39.9(nor George )]TJ\rT*\r0.0002 Tc\r0.049 Tw\r[(P)30(a)0(taki, )101.1(and FBI Dir)22.4(ector Rober)-22.1(t Mueller)42(.)0.1( )100.2(He decided to mak)33.8(e)0( a br)-43.9(ief state-)]TJ\rT*\r-0.0423 Tw\r[(ment fr)31.4(om the school befor)24.3(e lea)30.7(v)0(ing for the air)-36.5(por)-24.1(t.)-10.5(The Secr)21.8(et Ser)-23.7(vice told us )]TJ\rT*\r-0.0119 Tw\r[(the)20.5(y)0( w)40.3(e)0.2(r)20.2(e)0.2( anxious to mo)43(v)40.2(e)0.2( the Pr)21.3(esident to a safer location, )105.9(b)15.1(u)0(t did not think )]TJ\rT*\r-0.0001 Tw\r[(it imperati)22.6(v)40.2(e for him to r)-21.5(un out the door)43.8(.)]TJ\r7.175 0 0 7.175 213.7399 474.9983 Tm\r-0.0002 Tc\r0 Tw\r(204 )Tj\r10.25 0 0 10.25 56.7 461.4933 Tm\r-0.005 Tc\r-0.0345 Tw\r[(Betw)39.7(een 9:15 and 9:30,)-138.5(the staff w)29.8(as b)14.8(usy ar)-39.9(rang)-29.9(ing a r)19.7(etur)-39.9(n to )125(W)124.9(ashington, )]TJ\r-1.1706 -1.0976 TD\r0.0016 Tw\r[(while the Pr)19.8(esident consulted his senior adviser)-19.7(s about his r)19.8(emarks. )99.9(No one in )]TJ\rT*\r-0.0523 Tw\r[(the tra)29.7(v)39.9(eling par)-25(ty had an)19.8(y infor)-45(mation dur)-44.9(ing this time that other air)19.9(craft w)39.7(e)0.1(r)19.7(e)-5.2( )]TJ\rT*\r-0.0068 Tc\r-0.0676 Tw\r[(hijack)29.8(ed or missing.)-103.5(Staff w)29.8(as in contact with the)-78.5(White House Situation Room, )]TJ\rT*\r-0.005 Tc\r-0.0458 Tw\r[(b)14.8(ut as f)-25(ar as w)39.7(e)0( could deter)-44.9(mine)29.7(,)-127.1(no one with the Pr)19.8(esident w)29.7(as in contact with )]TJ\r0.0002 -1.0976 TD\r-0.006 Tc\r-0.0684 Tw\r[(the P)49.7(entagon.)21.3(The focus w)29.7(as on the Pr)19.7(esident\\220)99.8(s statement to the nation.)21.2(The only )]TJ\r-0.0001 -1.0976 TD\r-0.005 Tc\r0 Tw\r[(decision made dur)-44.9(ing this time w)29.8(as to r)19.7(etur)-39.9(n to )124.9(W)124.9(ashington.)]TJ\r7.175 0 0 7.175 287.3577 396.2483 Tm\r(205 )Tj\r10.25 0 0 10.25 56.7 382.7433 Tm\r0.0002 Tc\r0.1746 Tw\r[(The Pr)21.2(esident\\220)101.8(s)0.1( motor)21.4(cade depar)-22.4(ted at 9:35, )102.4(and ar)-38.5(r)-44.5(i)20.2(v)40.2(ed at the air)-37.3(por)-24.1(t )]TJ\r-1.1705 -1.0976 TD\r-0.0469 Tw\r[(betw)40.8(een 9:42 and 9:45.)-127.2(Dur)-44(i)0.1(ng the r)-43(i)0.1(de the Pr)21.9(esident lear)-37(ned about the attack )]TJ\rT*\r0.0298 Tw\r[(on the P)51.4(entagon. )102.1(He boar)21.5(ded the air)22.2(c)0(raft, )101.3(ask)30.5(ed the Secr)22.3(et Ser)-23.7(vice about the )]TJ\r0.0001 -1.0976 TD\r0.0412 Tw\r[(safety of his f)-22(a)0(mily)121.1(, )100.2(and called the )177.9(Vice Pr)21.4(es)]TJ\r17.2521 0 TD\r0.0146 Tc\r0.0416 Tw\r[(ident. )179.7(Accor)19.7(ding to notes of the )]TJ\r-17.252 -1.0976 TD\r-0.0387 Tw\r[(call, )100(at about 9:45 the Pr)19.6(esident told t)14.5(h)14.4(e)-49.1(V)14.3(i)14.5(c)14.4(e)14.4( )14.9(P)14.4(r)35.9(e)14.4(s)14.5(i)]TJ\r20.0295 0 TD\r0.0002 Tc\r-0.0392 Tw\r[(dent:)-37.3(\\215Sounds lik)32.5(e w)40.3(e)0.2( ha)30.4(v)40.2(e)0( )]TJ\r-20.0295 -1.0976 TD\r-0.0387 Tw\r[(a minor w)31.8(a)0(r going on her)23.1(e)30(,)0.1( )100.4(I hear)21.1(d about the P)52.5(entagon.)-12.3(W)125.2(e)0.2(\\220)80.2(r)20.2(e at w)30.8(a)0(r . )100.6(. )100.4(. )100.3(some-)]TJ\rT*\r-0.0001 Tw\r[(body\\220)101.3(s going to pa)33.1(y)120.1(.)125.4(\\216)]TJ\r7.175 0 0 7.175 128.4092 317.4983 Tm\r-0.0002 Tc\r0 Tw\r(206 )Tj\r10.25 0 0 10.25 56.7 303.9933 Tm\r0.0002 Tc\r-0.0439 Tw\r[(About this time)33.3(,)-133.9(Car)20.6(d)0(,)-133.8(t)0.1(he lead Secr)22.7(et Ser)-23.7(vice agent,)-131.7(t)0.1(he Pr)21.1(esident\\220)101.8(s)0.1( militar)-27.8(y)0( )]TJ\r-1.1706 -1.0976 TD\r-0.0593 Tw\r[(aide)30.7(,)-118.5(and the pilot w)42.9(e)0.2(r)20.2(e)0.2( confer)-38.1(r)-44.5(i)0.1(ng on a possib)18(le destination for )83.8(Air F)20.8(o)0.2(r)20.2(ce One)31.3(.)0.1( )]TJ\r0.0001 -1.0976 TD\r-0.0405 Tw\r[(The Secr)21.8(et Ser)-23.6(vice agent felt str)33.7(ongly that the situation in )130.9(W)125.2(a)0(shington w)32.4(a)0(s too )]TJ\rT*\r0.1404 Tw\r[(unstab)16.4(l)0.1(e for the Pr)22.4(esident to r)22.4(e)0(tur)-38.8(n)0( ther)21.1(e)30(,)0.1( )100.3(and Car)21.5(d)0( ag)-29.1(r)20.2(eed. )225.8(The Pr)21.2(esident )]TJ\r0.0002 -1.0976 TD\r0.08 Tw\r[(str)30.4(ongly w)31.3(anted to r)21.9(e)0(tur)-38.8(n)0( to )125.7(W)125.2(a)0(shington and only g)-25.2(r)-24.5(udg)-29(ingly ag)-28(r)20.2(eed to go )]TJ\r0.0001 -1.0976 TD\r-0.0672 Tw\r[(else)20.7(wher)20.9(e)30(.)14.4(The issue w)32.2(a)0(s still undecided when the Pr)26.5(esident confer)-36.4(r)20.2(ed with the )]TJ\rT*\r-0.0308 Tw\r[(Vice Pr)21.4(esident at about the time )85.3(Air F)20.8(o)0.2(r)20.2(ce One w)31.6(a)0(s taking off)-27(.)-169(The)-71.7(V)-0.1(ice Pr)21.4(es-)]TJ\r0.0001 -1.0976 TD\r-0.0576 Tw\r[(ident r)21.3(ecalled urg)-27.3(i)0.1(ng the Pr)22(esident not to r)23.2(e)0(tur)-38.8(n)0( to)-94.8(W)125.2(a)0(shington.)-38.2(Air F)20.8(o)0.2(r)20.2(ce One )]TJ\rT*\r-0.028 Tw\r[(depar)-23.6(ted at about 9:54 without an)26(y fix)40.7(ed destination.)-21.6(The objecti)22.6(v)40.2(e w)30.2(a)0(s to get )]TJ\r0.0001 -1.0976 TD\r-0.0252 Tw\r[(up in the air\\204as f)-21.1(a)0(st and as high as possib)20(le\\204and then decide wher)25.6(e to go)51.2(.)]TJ\r7.175 0 0 7.175 346.1531 204.9983 Tm\r-0.0002 Tc\r0 Tw\r(207 )Tj\r10.25 0 0 10.25 56.7 191.4933 Tm\r0.0146 Tc\r0.0728 Tw\r[(At 9:33, )99.8(the to)39.7(w)39.7(er super)-25(visor at Reagan National )79.7(Air)-39.9(por)-25(t pick)29.7(ed up a )]TJ\r-1.1708 -1.0976 TD\r0.0498 Tw\r[(hotline to the Secr)19.7(et Ser)-25(vice and told the Ser)-25(vice\\220)99.8(s operations center that )]TJ\rT*\r0.0501 Tw\r[(\\215an air)19.7(craft [is] coming at y)39.7(ou and not talking with us.)125(\\216)-117.7(This w)29.7(as the fir)-19.9(st )]TJ\r-0.0001 -1.0976 TD\r0.0112 Tw\r[(specific r)19.7(epor)-25(t to the Secr)19.7(et Ser)-25(vice of a dir)19.7(ect thr)19.7(eat to the )124.9(White House)29.7(.)14.5( )]TJ\r-0.0002 -1.0976 TD\r0.0144 Tc\r-0.0034 Tw\r[(No mo)39.5(v)39.7(e)-14.6( )14.4(w)29.5(as made to e)19.4(v)29.7(acuate the )174.7(Vice Pr)19.5(esident at this time)29.5(.)-109.4(As the offi-)]TJ\rT*\r0.0146 Tc\r0.0966 Tw\r[(cer who took the call explained, )199.6(\\215[I w)29.7(as] about to push the aler)-25(t b)14.8(utton )]TJ\rT*\r0.0375 Tw\r[(when the to)39.7(w)39.7(er advised that the air)19.6(craft w)29.7(as tur)-39.9(ning south and appr)29.6(oach-)]TJ\rT*\r0 Tw\r[(ing Reagan National )79.8(Air)-39.9(por)-25(t.)124.9(\\216)]TJ\r7.175 0 0 7.175 172.6549 114.9983 Tm\r(208 )Tj\r10.25 0 0 10.25 56.7 101.4933 Tm\r0.0002 Tc\r0.0104 Tw\r[(Amer)-43.7(i)0.1(can 77 began tur)-36(n)0(ing south, )]TJ\r13.9074 0 TD\r-0.0306 Tc\r0.041 Tw\r[(away )-29.9(f)-30.6(r)-0.6(o)-30.6(m)-30.9( t)-30.7(h)-30.8(e)-30.8( )125.5(W)-31(h)-30.8(i)-30.7(t)-30.7(e)-30.8( H)-30.9(o)-30.8(u)-30.8(s)-30.7(e,)-30.7( )100.1(a)-30.8(t)-30.7( 9)-30.8(:)-30.7(3)-30.8(4)-30.8(.)-30.7( )101.5(I)-30.7(t)-30.7( )]TJ\r-15.078 -1.0976 TD\r0.0002 Tc\r-0.0518 Tw\r[(contin)16.4(ued heading south for r)34.9(oughly a min)17.7(u)0(te)30.5(,)-126(befor)21.1(e tur)-38.8(n)0(ing w)41.1(e)0(st and beg)-27.4(in-)]TJ\r0.0002 -1.0976 TD\r-0.0532 Tw\r[(ning to cir)22.1(c)0(le back.This ne)23.5(ws pr)30.9(ompted the Secr)23.5(et Ser)-23.7(vice to or)21.9(der the imme-)]TJ\rT*\r0.0211 Tw\r[(diate e)21.2(v)30.2(acuation of the )178.1(Vice Pr)21.5(esident just befor)23.8(e 9:36. )34.2(Agents pr)32(opelled him )]TJ\rET\rQ\r",
+   "page": 57
+  },
+  {
+   "extGStates": {
+    "GS1": "<< /Type /ExtGState /SA false /OP false /SM .02 /op false /OPM 1 >>"
+   },
+   "fonts": [
+    {
+     "baseFont": "KAFHKN+Bembo",
+     "firstChar": 32,
+     "resourceName": "F1",
+     "sourceObject": "2481",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F1+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F1+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <eb> endcodespacerange\n12 beginbfchar\n<3d> <003D>\n<3f> <003F>\n<5d> <005D>\n<5f> <005F>\n<80> <2022>\n<84> <2014>\n<85> <2013>\n<a7> <00A7>\n<a9> <00A9>\n<b1> <00B1>\n<e9> <00E9>\n<eb> <00EB>\nendbfchar\n6 beginbfrange\n<20> <2a> <0020>\n<2c> <3b> <002C>\n<41> <5b> <0041>\n<61> <7a> <0061>\n<8d> <8e> <201C>\n<8f> <90> <2018>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      278.0,
+      260.0,
+      406.0,
+      668.0,
+      458.0,
+      719.0,
+      729.0,
+      177.0,
+      302.0,
+      302.0,
+      510.0,
+      278.0,
+      260.0,
+      396.0,
+      260.0,
+      458.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      260.0,
+      260.0,
+      278.0,
+      667.0,
+      278.0,
+      354.0,
+      278.0,
+      677.0,
+      635.0,
+      729.0,
+      760.0,
+      594.0,
+      531.0,
+      740.0,
+      792.0,
+      333.0,
+      302.0,
+      698.0,
+      552.0,
+      917.0,
+      813.0,
+      823.0,
+      563.0,
+      823.0,
+      802.0,
+      490.0,
+      677.0,
+      792.0,
+      688.0,
+      1000.0,
+      750.0,
+      708.0,
+      677.0,
+      302.0,
+      278.0,
+      302.0,
+      278.0,
+      500.0,
+      278.0,
+      396.0,
+      500.0,
+      427.0,
+      500.0,
+      438.0,
+      271.0,
+      469.0,
+      521.0,
+      260.0,
+      250.0,
+      500.0,
+      240.0,
+      792.0,
+      521.0,
+      521.0,
+      500.0,
+      500.0,
+      333.0,
+      302.0,
+      292.0,
+      521.0,
+      479.0,
+      740.0,
+      490.0,
+      469.0,
+      406.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      354.0,
+      278.0,
+      278.0,
+      278.0,
+      1000.0,
+      500.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      479.0,
+      479.0,
+      260.0,
+      260.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      469.0,
+      278.0,
+      760.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      667.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      438.0,
+      278.0,
+      438.0
+     ]
+    }
+   ],
+   "lines": [
+    {
+     "rect": [
+      39.66,
+      562.5344,
+      230.3408,
+      8.607
+     ],
+     "text": "216 THE 9/11 COMMISSION REPORT"
+    },
+    {
+     "rect": [
+      39.66,
+      537.8551,
+      314.8185,
+      9.2865
+     ],
+     "text": "Saudi students and seek assistance at local mosques.He counted on their break="
+    },
+    {
+     "rect": [
+      39.66,
+      526.6047,
+      314.7952,
+      9.4724
+     ],
+     "text": "ing off any such relationships once they moved to the East Coast.6 Our inabil="
+    },
+    {
+     "rect": [
+      39.6603,
+      515.3547,
+      312.0336,
+      9.2865
+     ],
+     "text": "ity to ascertain the activities of Hazmi and Mihdhar during their first two weeks"
+    },
+    {
+     "rect": [
+      39.6603,
+      504.1042,
+      312.0172,
+      9.2865
+     ],
+     "text": "in the United States may reflect al Qaeda tradecraft designed to protect the"
+    },
+    {
+     "rect": [
+      39.6603,
+      492.8538,
+      270.8327,
+      9.2865
+     ],
+     "text": "identity of anyone who may have assisted them during that period."
+    },
+    {
+     "rect": [
+      51.66,
+      481.6034,
+      299.9888,
+      9.2865
+     ],
+     "text": "Hazmi and Mihdhar were directed to enroll in English-language classes upon"
+    },
+    {
+     "rect": [
+      39.6603,
+      470.353,
+      311.9957,
+      9.2865
+     ],
+     "text": "arriving in Southern California, so that they could begin pilot training as soon"
+    },
+    {
+     "rect": [
+      39.6614,
+      459.1026,
+      311.9936,
+      9.2865
+     ],
+     "text": "as possible. KSM claims to have steered the two to San Diego on the basis of his"
+    },
+    {
+     "rect": [
+      39.6624,
+      447.8522,
+      311.9854,
+      9.2865
+     ],
+     "text": "own research,which supposedly included thumbing through a San Diego phone"
+    },
+    {
+     "rect": [
+      39.6624,
+      436.6018,
+      311.9895,
+      9.2865
+     ],
+     "text": "book acquired at a Karachi flea market. Contradicting himself, he also says that,"
+    },
+    {
+     "rect": [
+      39.6624,
+      425.3514,
+      311.998,
+      9.4756
+     ],
+     "text": "as instructed,they attempted to enroll in three language schools in Los Angeles.7"
+    },
+    {
+     "rect": [
+      51.66,
+      414.1051,
+      299.997,
+      9.2865
+     ],
+     "text": "After the pair cleared Immigration and Customs at Los Angeles International"
+    },
+    {
+     "rect": [
+      39.6603,
+      402.8547,
+      314.7757,
+      9.4724
+     ],
+     "text": "Airport,we do not know where they went.8They appear to have obtained assis="
+    },
+    {
+     "rect": [
+      39.6595,
+      391.6047,
+      311.9823,
+      9.2865
+     ],
+     "text": "tance from the Muslim community,specifically the community surrounding the"
+    },
+    {
+     "rect": [
+      39.6606,
+      380.3543,
+      311.9874,
+      9.2865
+     ],
+     "text": "King Fahd mosque in Culver City, one of the most prominent mosques in"
+    },
+    {
+     "rect": [
+      39.6606,
+      369.1038,
+      82.8897,
+      9.2865
+     ],
+     "text": "Southern California."
+    },
+    {
+     "rect": [
+      51.6592,
+      357.8534,
+      300.1282,
+      9.2865
+     ],
+     "text": "It is fairly certain that Hazmi and Mihdhar spent time at the King Fahd"
+    },
+    {
+     "rect": [
+      39.6595,
+      346.603,
+      311.9024,
+      9.2865
+     ],
+     "text": "mosque and made some acquaintances there. One witness interviewed by the"
+    },
+    {
+     "rect": [
+      39.6595,
+      335.3526,
+      312.0264,
+      9.2865
+     ],
+     "text": "FBI after the September 11 attacks has said he first met the hijackers at the"
+    },
+    {
+     "rect": [
+      39.6595,
+      324.1022,
+      311.9967,
+      9.2865
+     ],
+     "text": "mosque in early 2000. Furthermore, one of the people who would befriend"
+    },
+    {
+     "rect": [
+      39.6595,
+      312.8518,
+      312.0203,
+      9.2865
+     ],
+     "text": "them—a man named Mohdar Abdullah—recalled a trip with Hazmi and"
+    },
+    {
+     "rect": [
+      39.6595,
+      301.6014,
+      312.0285,
+      9.2865
+     ],
+     "text": "Mihdhar to Los Angeles in June when, on their arrival, the three went to the"
+    },
+    {
+     "rect": [
+      39.6595,
+      290.351,
+      312.0182,
+      9.2865
+     ],
+     "text": "King Fahd mosque. There Hazmi and Mihdhar greeted various individuals"
+    },
+    {
+     "rect": [
+      39.6595,
+      279.1006,
+      314.7775,
+      9.2865
+     ],
+     "text": "whom they appeared to have met previously, including a man named “Khal="
+    },
+    {
+     "rect": [
+      39.6575,
+      267.8502,
+      312.009,
+      9.2865
+     ],
+     "text": "lam.” In Abdullah’s telling, when Khallam visited the al Qaeda operatives at"
+    },
+    {
+     "rect": [
+      39.6575,
+      256.5998,
+      312.0192,
+      9.2865
+     ],
+     "text": "their motel that evening,Abdullah was asked to leave the room so that Hazmi,"
+    },
+    {
+     "rect": [
+      39.6585,
+      245.3494,
+      311.8962,
+      9.2865
+     ],
+     "text": "Mihdhar, and Khallam could meet in private.The identity of Khallam and his"
+    },
+    {
+     "rect": [
+      39.6585,
+      234.099,
+      264.6344,
+      9.478
+     ],
+     "text": "purpose in meeting with Hazmi and Mihdhar remain unknown.9"
+    },
+    {
+     "rect": [
+      51.66,
+      222.8551,
+      300.0237,
+      9.2865
+     ],
+     "text": "To understand what Hazmi and Mihdhar did in their first weeks in the"
+    },
+    {
+     "rect": [
+      39.6603,
+      211.6047,
+      312.049,
+      9.2865
+     ],
+     "text": "United States, evidently staying in Los Angeles, we have investigated whether"
+    },
+    {
+     "rect": [
+      39.6603,
+      200.3542,
+      312.0366,
+      9.2865
+     ],
+     "text": "anyone associated with the King Fahd mosque assisted them.This subject has"
+    },
+    {
+     "rect": [
+      39.6603,
+      189.1038,
+      312.0531,
+      9.2865
+     ],
+     "text": "received substantial attention in the media. Some have speculated that Fahad"
+    },
+    {
+     "rect": [
+      39.6603,
+      177.8534,
+      312.0654,
+      9.2865
+     ],
+     "text": "al Thumairy—an imam at the mosque and an accredited diplomat at the Saudi"
+    },
+    {
+     "rect": [
+      39.6603,
+      166.603,
+      312.0233,
+      9.2865
+     ],
+     "text": "Arabian consulate from 1996 until 2003—may have played a role in helping"
+    },
+    {
+     "rect": [
+      39.6624,
+      155.3526,
+      314.8421,
+      9.2865
+     ],
+     "text": "the hijackers establish themselves on their arrival in Los Angeles.This specula="
+    },
+    {
+     "rect": [
+      39.6614,
+      144.1022,
+      314.7498,
+      9.2865
+     ],
+     "text": "tion is based, at least in part, on Thumairy’s reported leadership of an extrem="
+    },
+    {
+     "rect": [
+      39.6614,
+      132.8518,
+      108.7079,
+      9.4752
+     ],
+     "text": "ist faction at the mosque.10"
+    },
+    {
+     "rect": [
+      51.66,
+      121.6051,
+      302.7758,
+      9.2865
+     ],
+     "text": "A well-known figure at the King Fahd mosque and within the Los Ange="
+    },
+    {
+     "rect": [
+      39.6614,
+      110.3547,
+      314.9579,
+      9.2865
+     ],
+     "text": "les Muslim community,Thumairy was reputed to be an Islamic fundamental="
+    },
+    {
+     "rect": [
+      39.6614,
+      99.1043,
+      312.0367,
+      9.2865
+     ],
+     "text": "ist and a strict adherent to orthodox Wahhabi doctrine. Some Muslims"
+    },
+    {
+     "rect": [
+      39.6614,
+      87.8539,
+      312.09,
+      9.2865
+     ],
+     "text": "concerned about his preaching have said he “injected non-Islamic themes into"
+    },
+    {
+     "rect": [
+      39.6614,
+      76.6035,
+      314.799,
+      9.2865
+     ],
+     "text": "his guidance/prayers at the [King Fahd] Mosque” and had followers “support="
+    },
+    {
+     "rect": [
+      39.6624,
+      65.3531,
+      312.0182,
+      9.474
+     ],
+     "text": "ive of the events of September 11, 2001.”11 Thumairy appears to have associ-"
+    }
+   ],
+   "operators": "q\r/RelativeColorimetric ri \r/GS1 gs\rBT\r/F1 1 Tf\r9.5 0 0 9.5 39.66 564.7479 Tm\r0 g\r0.0004 Tc\r-0.0002 Tw\r[(216 )-6845.9(THE 9/11 COMMISSION REPOR)112.3(T)0( )]TJ\r10.25 0 0 10.25 39.66 540.2433 Tm\r-0.0008 Tc\r-0.0687 Tw\r[(Saudi students and seek assistance at local mosques.)-108.9(He counted on their br)19.6(eak=)]TJ\r0 -1.0976 TD\r0.0002 Tc\r-0.0375 Tw\r[(ing off an)21.8(y such r)21.5(e)0(lationships once the)24.7(y)0( mo)40.7(v)40.2(ed to the East Coast.)]TJ\r7.175 0 0 7.175 299.6564 531.2483 Tm\r-0.0002 Tc\r0 Tw\r(6 )Tj\r10.25 0 0 10.25 305.6386 528.9933 Tm\r0.0001 Tc\r-0.0374 Tw\r(Our inabil=)Tj\r-25.9491 -1.0976 TD\r-0.0044 Tc\r-0.0651 Tw\r[(ity to ascer)-25(tain the acti)19.7(vities of Hazmi and Mihdhar dur)-45(ing their fir)-19.9(st tw)39.8(o w)39.8(eeks )]TJ\rT*\r0.0002 Tc\r0.0734 Tw\r[(in the United States ma)34.9(y r)20.3(e)0(flect al Qaeda tradecraft designed to pr)38.9(otect the )]TJ\rT*\r-0.0001 Tw\r[(identity of an)23(y)40(one who ma)32.6(y ha)30.7(v)40.2(e)0.2( assisted them dur)-40.5(ing that per)-42.1(iod. )]TJ\r1.1707 -1.0976 TD\r-0.0099 Tc\r-0.0439 Tw\r[(Hazmi and Mihdhar w)39.8(e)0.1(r)19.7(e)0.1( dir)19.7(ected to enr)29.7(oll in English-language classes upon )]TJ\r-1.1707 -1.0976 TD\r0.0254 Tw\r[(ar)-39.9(r)-44.8(i)19.9(ving in Souther)-39.9(n Califor)-39.9(nia, )99.9(so that the)19.7(y could beg)-29.9(in pilot training as soon )]TJ\r0.0001 -1.0976 TD\r-0.0178 Tw\r[(as possib)14.8(le)29.7(.)-150.2(KSM claims to ha)29.8(v)39.9(e)0( steer)19.7(ed the tw)39.7(o to San Diego on the basis of his )]TJ\r0.0001 -1.0976 TD\r-0.0616 Tw\r[(o)39.7(wn r)19.7(esear)19.7(ch,)-106.6(which supposedly included thumbing thr)29.7(ough a San Diego phone )]TJ\rT*\r0.0002 Tw\r[(book acquir)19.7(ed at a Karachi flea mark)29.8(et. )99.9(Contradicting himself)-29.8(,)-10( )110.1(he also sa)29.7(ys that, )]TJ\rT*\r-0.0344 Tw\r[(as instr)-25(ucted,)-133.8(the)19.7(y attempted to enr)29.7(oll in thr)19.7(ee language schools in Los )79.9(Angeles.)]TJ\r7.175 0 0 7.175 348.1446 429.9983 Tm\r-0.0002 Tc\r0 Tw\r(7 )Tj\r10.25 0 0 10.25 51.66 416.4933 Tm\r-0.005 Tc\r-0.0692 Tw\r[(After the pair clear)19.8(ed Immig)-29.9(ration and Customs at Los )79.9(Angeles Inter)-39.8(national )]TJ\r-1.1707 -1.0976 TD\r-0.0665 Tw\r[(Air)-39.9(por)-25(t,)-106.6(w)39.7(e)-0.1( do not kno)39.7(w wher)19.7(e the)19.7(y w)39.7(ent.)]TJ\r7.175 0 0 7.175 208.9782 407.4983 Tm\r0 Tc\r0 Tw\r(8)Tj\r10.25 0 0 10.25 213.2925 405.2433 Tm\r-0.005 Tc\r-0.0665 Tw\r[(The)19.7(y appear to ha)29.8(v)39.9(e)0( obtained assis=)]TJ\r-16.9398 -1.0976 TD\r-0.0059 Tc\r-0.0685 Tw\r[(tance fr)29.7(om the Muslim comm)15(unity)119.8(,)-103.5(specifically the comm)15(unity sur)-39.9(r)29.9(ounding the )]TJ\r0.0001 -1.0976 TD\r-0.005 Tc\r0.1221 Tw\r[(King Fahd mosque in Culv)39.8(er City)119.8(,)-5.1( )105.1(one of the most pr)29.8(ominent mosques in )]TJ\rT*\r0 Tw\r[(Souther)-39.9(n Califor)-39.9(nia. )]TJ\r1.1706 -1.0976 TD\r0.0002 Tc\r0.0847 Tw\r[(It is f)-23.8(a)0(irly cer)-22.9(tain that Hazmi and Mihdhar spent time at the King Fahd )]TJ\r-1.1707 -1.0976 TD\r0 Tc\r-0.0032 Tw\r[(mosque and made some acquaintances ther)29.2(e)29.8(.)-0.1( )100.3(One witness inter)-21.1(v)-0.2(ie)20.3(w)39.8(ed b)25.5(y)0( the )]TJ\rT*\r0.0002 Tc\r0.0729 Tw\r[(FBI after the September 11 attacks has said he fir)-8.9(st met the hijack)33.4(er)-19.3(s at the )]TJ\rT*\r0.0516 Tw\r[(mosque in early 2000. )104.8(Fur)-24.1(ther)-43.9(mor)20.7(e)30(, )100.2(one of the people who w)44.9(ould befr)-42.8(i)0.1(end )]TJ\rT*\r0.194 Tw\r[(them\\204a man named Mohdar )86(Abdullah\\204r)22.8(ecalled a tr)-42.4(ip with Hazmi and )]TJ\rT*\r0.0149 Tw\r[(Mihdhar to Los )83.2(Angeles in J)32.5(une when, )102.3(on their ar)-37.4(r)-44.5(i)20.2(v)30.2(al, )100.5(the thr)21.3(ee w)40.5(ent to the )]TJ\rT*\r0.1105 Tw\r[(King Fahd mosque)33.9(. )117(Ther)20.9(e Hazmi and Mihdhar g)-24.8(r)20.2(eeted v)31.4(a)0.2(r)-44.5(i)0.1(ous indi)21.9(viduals )]TJ\rT*\r0.033 Tw\r[(whom the)22(y)0( appear)21.7(ed to ha)31.5(v)40.2(e)0.2( met pr)21.4(e)20(v)0(iously)121.7(, )100.3(including a man named )105(\\215Khal=)]TJ\r-0.0002 -1.0976 TD\r0.0844 Tw\r[(lam.)126(\\216 )100.3(In )80.2(Abdullah\\220)102.4(s telling, )102(when Khallam visited the al Qaeda operati)29.4(v)40.2(es at )]TJ\rT*\r0.0044 Tc\r-0.0575 Tw\r[(their motel that e)19.4(v)39.5(ening,)-45.6(Abdullah w)29.4(as ask)29.3(ed to lea)29.3(v)39.5(e)0( the r)29.3(oom so that Hazmi, )]TJ\r0.0001 -1.0976 TD\r-0.0001 Tc\r-0.0042 Tw\r[(Mihdhar)41.6(, )100.3(and Khallam could meet in pr)-38.7(i)19.9(v)29.9(ate)30.2(.)-48.6(The identity of Khallam and his )]TJ\rT*\r0.0002 Tc\r-0.0001 Tw\r[(pur)-39(pose in meeting with Hazmi and Mihdhar r)29.9(e)0(main unkno)42.8(wn.)]TJ\r7.175 0 0 7.175 300.7772 238.7483 Tm\r-0.0002 Tc\r0 Tw\r(9 )Tj\r10.25 0 0 10.25 51.66 225.2433 Tm\r0.0002 Tc\r0.1091 Tw\r[(T)150.3(o)0.2( under)-18.3(stand what Hazmi and Mihdhar did in their fir)-9.6(st w)40.4(eeks in the )]TJ\r-1.1707 -1.0976 TD\r0.0118 Tw\r[(United States, )103.2(e)20(v)0(idently sta)32.5(ying in Los )82.2(Angeles, )102(w)40(e)0.2( ha)30.4(v)40.2(e)0.2( in)40.3(v)40.2(e)0(stigated whether )]TJ\rT*\r[(an)20.3(y)40(one associated with the King Fahd mosque assisted them.)-52.2(T)-0.1(his subject has )]TJ\rT*\r0.0391 Tw\r[(r)20.2(ecei)20.8(v)40.2(ed substantial attention in the media. )108.5(Some ha)31.7(v)40.2(e)0.2( speculated that Fahad )]TJ\rT*\r-0.0422 Tw\r[(al )125.4(Thumair)-27.7(y)0(\\204an imam at the mosque and an accr)27.9(edited diplomat at the Saudi )]TJ\rT*\r0.0461 Tw\r[(Arabian consulate fr)34.5(om 1996 until 2003\\204ma)35.2(y ha)30.6(v)40.2(e)0.2( pla)30.5(y)40(ed a r)30.8(o)0(le in helping )]TJ\r0.0002 -1.0976 TD\r-0.0231 Tw\r[(the hijack)32.1(er)-19.3(s estab)16.3(lish themselv)42.9(es on their ar)-37(r)-44.5(i)20.2(v)30.2(a)0(l in Los )81.7(Angeles.)-28(T)-0.1(his specula=)]TJ\r-0.0001 -1.0976 TD\r0.0001 Tc\r-0.0015 Tw\r[(tion is based,)-173.8(at least in par)-22.1(t,)-176.4(on )125.5(Thumair)-27.8(y)-0.1(\\220)100.3(s)0( r)20.1(epor)-23.9(ted leader)-17.6(ship of an extr)22.8(e)-0.1(m=)]TJ\rT*\r0.0002 Tc\r-0.0001 Tw\r[(ist f)-23.9(action at the mosque)35(.)]TJ\r7.175 0 0 7.175 141.3392 137.4983 Tm\r-0.0002 Tc\r0 Tw\r(10 )Tj\r10.25 0 0 10.25 51.66 123.9933 Tm\r0.0002 Tc\r0.0199 Tw\r[(A w)40.4(e)0(ll-kno)41.5(wn figur)21.7(e at the King Fahd mosque and within the Los )89.5(Ange=)]TJ\r-1.1706 -1.0976 TD\r0.0004 Tc\r0.004 Tw\r[(les Muslim comm)18.8(unity)121.3(,)-56.9(T)0.1(humair)-27.5(y)0.2( w)30.5(a)0.2(s r)20.7(eputed to be an Islamic fundamental=)]TJ\rT*\r0.0002 Tc\r0.2741 Tw\r[(ist and a str)-42.5(ict adher)21.9(ent to or)-23(thodo)41.1(x )125.2(W)125.2(ahhabi doctr)-41.9(i)0.1(ne)30.5(. )100.2(Some Muslims )]TJ\rT*\r-0.0434 Tw\r[(concer)-38.2(ned about his pr)23.3(eaching ha)32.3(v)40.2(e)0.2( said he )101.4(\\215injected non-Islamic themes into )]TJ\rT*\r-0.0297 Tw\r[(his guidance/pra)33.7(y)40(er)-19.4(s at the [King Fahd] Mosque\\216)-142.1(and had follo)42.7(w)40(e)0.2(r)-19.4(s)-148(\\215suppor)-23(t=)]TJ\r0.0001 -1.0976 TD\r0.0152 Tw\r[(i)20.2(v)40.2(e of the e)21.6(v)40.2(ents of September 11, )104.8(2001.)126.3(\\216)]TJ\r7.175 0 0 7.175 207.2376 69.9983 Tm\r-0.0002 Tc\r0 Tw\r(11 )Tj\r10.25 0 0 10.25 215.9941 67.7433 Tm\r0.0002 Tc\r0.0151 Tw\r[(Thumair)-27.7(y)0( appear)-17.9(s to ha)31.1(v)40.2(e)0.2( associ-)]TJ\rET\rQ\r",
+   "page": 234
+  },
+  {
+   "extGStates": {
+    "GS1": "<< /Type /ExtGState /SA false /OP false /SM .02 /op false /OPM 1 >>"
+   },
+   "fonts": [
+    {
+     "baseFont": "KAFHKN+Bembo",
+     "firstChar": 32,
+     "resourceName": "F1",
+     "sourceObject": "2191",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F1+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F1+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <eb> endcodespacerange\n12 beginbfchar\n<3d> <003D>\n<3f> <003F>\n<5d> <005D>\n<5f> <005F>\n<80> <2022>\n<84> <2014>\n<85> <2013>\n<a7> <00A7>\n<a9> <00A9>\n<b1> <00B1>\n<e9> <00E9>\n<eb> <00EB>\nendbfchar\n6 beginbfrange\n<20> <2a> <0020>\n<2c> <3b> <002C>\n<41> <5b> <0041>\n<61> <7a> <0061>\n<8d> <8e> <201C>\n<8f> <90> <2018>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      278.0,
+      260.0,
+      406.0,
+      668.0,
+      458.0,
+      719.0,
+      729.0,
+      177.0,
+      302.0,
+      302.0,
+      510.0,
+      278.0,
+      260.0,
+      396.0,
+      260.0,
+      458.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      490.0,
+      260.0,
+      260.0,
+      278.0,
+      667.0,
+      278.0,
+      354.0,
+      278.0,
+      677.0,
+      635.0,
+      729.0,
+      760.0,
+      594.0,
+      531.0,
+      740.0,
+      792.0,
+      333.0,
+      302.0,
+      698.0,
+      552.0,
+      917.0,
+      813.0,
+      823.0,
+      563.0,
+      823.0,
+      802.0,
+      490.0,
+      677.0,
+      792.0,
+      688.0,
+      1000.0,
+      750.0,
+      708.0,
+      677.0,
+      302.0,
+      278.0,
+      302.0,
+      278.0,
+      500.0,
+      278.0,
+      396.0,
+      500.0,
+      427.0,
+      500.0,
+      438.0,
+      271.0,
+      469.0,
+      521.0,
+      260.0,
+      250.0,
+      500.0,
+      240.0,
+      792.0,
+      521.0,
+      521.0,
+      500.0,
+      500.0,
+      333.0,
+      302.0,
+      292.0,
+      521.0,
+      479.0,
+      740.0,
+      490.0,
+      469.0,
+      406.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      354.0,
+      278.0,
+      278.0,
+      278.0,
+      1000.0,
+      500.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      479.0,
+      479.0,
+      260.0,
+      260.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      469.0,
+      278.0,
+      760.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      667.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      438.0,
+      278.0,
+      438.0
+     ]
+    },
+    {
+     "baseFont": "KAFJDA+Bembo-Italic",
+     "firstChar": 32,
+     "resourceName": "F5",
+     "sourceObject": "2193",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F5+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F5+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <a9> endcodespacerange\n6 beginbfchar\n<20> <0020>\n<26> <0026>\n<84> <2014>\n<85> <2013>\n<90> <2019>\n<a9> <00A9>\nendbfchar\n5 beginbfrange\n<2c> <3b> <002C>\n<41> <57> <0041>\n<59> <5a> <0059>\n<61> <7a> <0061>\n<8d> <8e> <201C>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      708.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      292.0,
+      333.0,
+      292.0,
+      458.0,
+      510.0,
+      510.0,
+      510.0,
+      510.0,
+      510.0,
+      510.0,
+      510.0,
+      510.0,
+      510.0,
+      510.0,
+      292.0,
+      292.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      698.0,
+      615.0,
+      729.0,
+      760.0,
+      625.0,
+      563.0,
+      781.0,
+      760.0,
+      323.0,
+      302.0,
+      708.0,
+      583.0,
+      854.0,
+      771.0,
+      792.0,
+      563.0,
+      792.0,
+      698.0,
+      531.0,
+      656.0,
+      729.0,
+      698.0,
+      958.0,
+      278.0,
+      625.0,
+      688.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      406.0,
+      406.0,
+      271.0,
+      438.0,
+      344.0,
+      229.0,
+      375.0,
+      458.0,
+      240.0,
+      240.0,
+      458.0,
+      229.0,
+      677.0,
+      469.0,
+      396.0,
+      438.0,
+      417.0,
+      271.0,
+      302.0,
+      260.0,
+      469.0,
+      406.0,
+      604.0,
+      490.0,
+      438.0,
+      500.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      1000.0,
+      500.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      500.0,
+      500.0,
+      278.0,
+      292.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      278.0,
+      760.0
+     ]
+    },
+    {
+     "baseFont": "KAGBEE+Bembo-Bold",
+     "firstChar": 32,
+     "resourceName": "F6",
+     "sourceObject": "2194",
+     "subtype": "Type1",
+     "toUnicode": "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo <<\n/Registry (AAAAAA+F6+0) /Ordering (T1UV) /Supplement 0 >> def\n/CMapName /AAAAAA+F6+0 def\n/CMapType 2 def\n1 begincodespacerange <20> <90> endcodespacerange\n6 beginbfchar\n<20> <0020>\n<3f> <003F>\n<80> <2022>\n<84> <2014>\n<85> <2013>\n<90> <2019>\nendbfchar\n5 beginbfrange\n<28> <29> <0028>\n<2c> <3b> <002C>\n<41> <5a> <0041>\n<61> <7a> <0061>\n<8d> <8e> <201C>\nendbfrange\nendcmap CMapName currentdict /CMap defineresource pop end end\n",
+     "widths": [
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      354.0,
+      354.0,
+      333.0,
+      333.0,
+      313.0,
+      417.0,
+      313.0,
+      531.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      313.0,
+      313.0,
+      333.0,
+      333.0,
+      333.0,
+      365.0,
+      333.0,
+      740.0,
+      698.0,
+      740.0,
+      823.0,
+      646.0,
+      594.0,
+      781.0,
+      833.0,
+      365.0,
+      344.0,
+      740.0,
+      604.0,
+      927.0,
+      813.0,
+      844.0,
+      646.0,
+      844.0,
+      771.0,
+      563.0,
+      729.0,
+      771.0,
+      750.0,
+      1000.0,
+      802.0,
+      750.0,
+      750.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      479.0,
+      573.0,
+      490.0,
+      573.0,
+      479.0,
+      323.0,
+      552.0,
+      563.0,
+      292.0,
+      281.0,
+      542.0,
+      271.0,
+      927.0,
+      573.0,
+      573.0,
+      573.0,
+      573.0,
+      396.0,
+      375.0,
+      344.0,
+      573.0,
+      521.0,
+      781.0,
+      531.0,
+      521.0,
+      510.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      354.0,
+      333.0,
+      333.0,
+      333.0,
+      1000.0,
+      500.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      333.0,
+      583.0,
+      583.0,
+      333.0,
+      313.0
+     ]
+    }
+   ],
+   "lines": [
+    {
+     "rect": [
+      149.0751,
+      562.5344,
+      207.6301,
+      8.607
+     ],
+     "text": "NOTES TO CHAPTER 2 471"
+    },
+    {
+     "rect": [
+      44.7,
+      540.7989,
+      311.9753,
+      6.342
+     ],
+     "text": "Usama Bin Ladin, Iran, and the NIF, Jan. 31, 1997; Intelligence report, Cooperation Among Usama Bin Ladin’s"
+    },
+    {
+     "rect": [
+      44.7007,
+      532.7986,
+      311.9956,
+      6.342
+     ],
+     "text": "Islamic Army, Iran, and the NIF, Jan. 31 1997; FBI report of investigation, interview of Fadl, Nov. 10, 1996. Bin"
+    },
+    {
+     "rect": [
+      44.7021,
+      524.7983,
+      311.9879,
+      6.342
+     ],
+     "text": "Ladin told his operatives he wanted them to study Hezbollah’s 1983 truck bombing of U.S. marines in Lebanon"
+    },
+    {
+     "rect": [
+      44.7021,
+      516.798,
+      311.9655,
+      6.342
+     ],
+     "text": "that killed 241 and led to the American pullout from Lebanon. See, e.g., statement of Ali Mohamed in support of"
+    },
+    {
+     "rect": [
+      44.7028,
+      508.7977,
+      311.9914,
+      6.342
+     ],
+     "text": "change of plea, United States v.Ali Mohamed, No. S(7) 98 Cr. 1023 (S.D. N.Y.), Oct. 20, 2000 (transcript p. 30); trial"
+    },
+    {
+     "rect": [
+      44.7049,
+      500.7974,
+      312.0068,
+      6.342
+     ],
+     "text": "testimony of Fadl, United States v. bin Laden, Feb. 6, 2001 (transcript pp. 292–293); FBI report of investigation, inter-"
+    },
+    {
+     "rect": [
+      44.7049,
+      492.7971,
+      286.1789,
+      6.342
+     ],
+     "text": "view of Fadl, Mar. 10, 1997; FBI report of investigation, interview of confidential source, Sept. 16, 1999."
+    },
+    {
+     "rect": [
+      56.7001,
+      484.7968,
+      299.9969,
+      6.342
+     ],
+     "text": "86. Hugh Davies,“Saudis Detain Member of Anti-American Terror Group,” Daily Telegraph (London),Aug. 2,"
+    },
+    {
+     "rect": [
+      44.7014,
+      476.7965,
+      15.5484,
+      6.342
+     ],
+     "text": "1997."
+    },
+    {
+     "rect": [
+      56.7001,
+      468.7962,
+      299.9724,
+      6.342
+     ],
+     "text": "87. For general information on Hage, see Oriana Gill, “Hunting Bin Laden: A Portrait of Wadih El Hage,"
+    },
+    {
+     "rect": [
+      44.7,
+      460.7959,
+      312.0026,
+      6.342
+     ],
+     "text": "Accused Terrorist,” PBS Frontline broadcast, Sept. 12, 2001. On returning to the United States, Hage was met at the"
+    },
+    {
+     "rect": [
+      44.7007,
+      452.7956,
+      311.9935,
+      6.342
+     ],
+     "text": "airport by FBI agents, interrogated, and called the next day before the federal grand jury then investigating Bin"
+    },
+    {
+     "rect": [
+      44.7021,
+      444.7953,
+      312.004,
+      6.342
+     ],
+     "text": "Ladin. Because he lied to the grand jury about his association with Bin Ladin and al Qaeda, he was arrested imme-"
+    },
+    {
+     "rect": [
+      44.7021,
+      436.795,
+      312.1034,
+      6.342
+     ],
+     "text": "diately after the embassy bombings a year later.Testimony of Patrick Fitzgerald before the Senate Judiciary Com-"
+    },
+    {
+     "rect": [
+      44.7035,
+      428.7947,
+      311.8556,
+      6.342
+     ],
+     "text": "mittee, Oct. 21, 2003, pp. 3–4. On Hage’s phone taps, see introduction of stipulation (government exhibit no. 36),"
+    },
+    {
+     "rect": [
+      44.7035,
+      420.7944,
+      311.9949,
+      6.342
+     ],
+     "text": "United States v. bin Laden, Feb. 27, 2001 (transcript pp. 1575–1576). For Harun’s fax, see government exhibit no."
+    },
+    {
+     "rect": [
+      44.7049,
+      412.7941,
+      93.1154,
+      6.342
+     ],
+     "text": "300A-T, United States v. bin Laden."
+    },
+    {
+     "rect": [
+      56.6994,
+      404.7938,
+      300.0074,
+      6.342
+     ],
+     "text": "88.“World Islamic Front’s Statement Urging Jihad,” Al Quds al Arabi, Feb. 23, 1998; closing statement by Asst."
+    },
+    {
+     "rect": [
+      44.7,
+      396.7935,
+      312.0019,
+      6.342
+     ],
+     "text": "U.S.Attorney Ken Karas, United States v. bin Laden, May 1, 2001 (transcript pp. 5369, 5376–5377). On related activ-"
+    },
+    {
+     "rect": [
+      44.7014,
+      388.7932,
+      311.9851,
+      6.342
+     ],
+     "text": "ities in Kenya and Tanzania, see FBI report of investigation, interviews of Mohamed Sadeeq Odeh, Aug. 15–28,"
+    },
+    {
+     "rect": [
+      44.7021,
+      380.7929,
+      15.5484,
+      6.342
+     ],
+     "text": "1998."
+    },
+    {
+     "rect": [
+      56.6994,
+      372.7926,
+      299.9759,
+      6.342
+     ],
+     "text": "89. FBI report of investigation, interviews of Mohamed Sadeeq Odeh,Aug. 15–28, 1998; closing statement by"
+    },
+    {
+     "rect": [
+      44.7007,
+      364.7923,
+      281.5148,
+      6.342
+     ],
+     "text": "Asst. U.S.Attorney Ken Karas, United States v. bin Laden, May 1, 2001 (transcript pp. 5239, 5408, 5417)."
+    },
+    {
+     "rect": [
+      56.6994,
+      356.792,
+      300.0025,
+      6.342
+     ],
+     "text": "90. For the Atef fax, see government exhibit no. 1636-T, United States v. bin Laden. For the fatwa, see govern-"
+    },
+    {
+     "rect": [
+      44.7021,
+      348.7917,
+      311.9662,
+      6.342
+     ],
+     "text": "ment exhibit no. 1602-T, United States v. bin Laden (translation of “Clergymen in Afghanistan Issue a Fatwa calling"
+    },
+    {
+     "rect": [
+      44.7028,
+      340.7914,
+      312.0054,
+      6.342
+     ],
+     "text": "for the Removal of American Forces from the Gulf,” Al Quds al Arabi, May 14, 1998). For the interview, see ABC"
+    },
+    {
+     "rect": [
+      44.7049,
+      332.7911,
+      144.1265,
+      6.342
+     ],
+     "text": "News interview,“To Terror’s Source,” May 28, 1998."
+    },
+    {
+     "rect": [
+      56.6994,
+      324.7908,
+      300.0088,
+      6.342
+     ],
+     "text": "91. See closing statement by Asst. U.S.Attorney Ken Karas, United States v. bin Laden, May 2, 2001 (transcript"
+    },
+    {
+     "rect": [
+      44.7007,
+      316.7905,
+      311.9753,
+      6.342
+     ],
+     "text": "pp. 5426–5439); see also FBI report of investigation, interviews of Mohammad Rashed Daoud al ‘Owhali, Aug."
+    },
+    {
+     "rect": [
+      44.7014,
+      308.7902,
+      312.0523,
+      6.342
+     ],
+     "text": "22–25, 1998, p. 9. Copies of the declarations issued by “The Islamic Army for the Liberation of the Holy Places”"
+    },
+    {
+     "rect": [
+      44.7028,
+      300.7899,
+      312.0243,
+      6.342
+     ],
+     "text": "taking credit for the operation were recovered from a raid in Baku, Azerbaijan, after the bombings in September"
+    },
+    {
+     "rect": [
+      44.7028,
+      292.7896,
+      312.0012,
+      6.342
+     ],
+     "text": "1998. See also government exhibit no. 1557C-T, United States v. bin Laden (“The formation of the Islamic Army"
+    },
+    {
+     "rect": [
+      44.7042,
+      284.7893,
+      312.0152,
+      6.342
+     ],
+     "text": "for the Liberation of the Holy Places”); government exhibit no. 1557D-T, United States v. bin Laden (“Al-Aqsa"
+    },
+    {
+     "rect": [
+      44.7049,
+      276.789,
+      308.4529,
+      6.342
+     ],
+     "text": "Mosque operation”); government exhibit no. 1557E-T, United States v. bin Laden (“The Holy Ka’ba operation”)."
+    },
+    {
+     "rect": [
+      56.7001,
+      268.7887,
+      300.0053,
+      6.342
+     ],
+     "text": "92. Closing statement by Asst. U.S. Attorney Ken Karas, United States v. bin Laden, May 2, 2001 (transcript p."
+    },
+    {
+     "rect": [
+      44.7028,
+      260.7884,
+      17.661,
+      6.342
+     ],
+     "text": "5445)."
+    },
+    {
+     "rect": [
+      56.7008,
+      252.7881,
+      300.0585,
+      6.342
+     ],
+     "text": "93.ABC News interview,“Terror Suspect:An Interview with Osama Bin Laden,” Dec. 22, 1998 (conducted"
+    },
+    {
+     "rect": [
+      44.7014,
+      244.7878,
+      171.9508,
+      6.342
+     ],
+     "text": "in Afghanistan by ABC News producer Rahimullah Yousafsai)."
+    },
+    {
+     "rect": [
+      44.7,
+      220.0465,
+      132.1236,
+      9.4395
+     ],
+     "text": "3 Counterterrorism Evolves"
+    },
+    {
+     "rect": [
+      56.7,
+      212.799,
+      300.0221,
+      6.342
+     ],
+     "text": "1.Brief of the United States, United States v.Ramzi AhmedYousef,Lead No.98-1041 (2d Cir.filed Aug.25,2000),"
+    },
+    {
+     "rect": [
+      44.7013,
+      204.7987,
+      312.0257,
+      6.342
+     ],
+     "text": "pp. 42–43; John Miller and Michael Stone, with Chris Mitchell, The Cell: Inside the 9/11 Plot, and Why the FBI and"
+    },
+    {
+     "rect": [
+      44.702,
+      196.7984,
+      136.8927,
+      6.342
+     ],
+     "text": "CIA Failed to Stop It (Hyperion, 2002), pp. 95, 99."
+    },
+    {
+     "rect": [
+      56.7,
+      188.7981,
+      300.0025,
+      6.342
+     ],
+     "text": "2. On President Clinton’s tasking the NSC, see Richard Clarke interview (Dec. 18, 2003). On the role of dif-"
+    },
+    {
+     "rect": [
+      44.702,
+      180.7978,
+      312.0292,
+      6.342
+     ],
+     "text": "ferent U.S. government agencies, see Steve Coll, Ghost War:The Secret History of the CIA,Afghanistan, and bin Laden,"
+    },
+    {
+     "rect": [
+      44.7027,
+      172.7975,
+      187.7071,
+      6.342
+     ],
+     "text": "from the Soviet Invasion to September 10, 2001 (Penguin, 2004), p. 251."
+    },
+    {
+     "rect": [
+      56.7,
+      164.7972,
+      300.0081,
+      6.342
+     ],
+     "text": "3.Trial testimony of Brian Parr, United States v.Yousef, No. S12 93 CR 180 (KTD) (S.D. N.Y.), Oct. 22, 1997"
+    },
+    {
+     "rect": [
+      44.7013,
+      156.7969,
+      53.7649,
+      6.342
+     ],
+     "text": "(transcript p. 4694)."
+    },
+    {
+     "rect": [
+      56.7007,
+      148.7966,
+      222.495,
+      6.342
+     ],
+     "text": "4. On the process of identification, see Joseph Malone interview (May 25, 2004)."
+    },
+    {
+     "rect": [
+      56.7007,
+      140.7963,
+      300.0123,
+      6.342
+     ],
+     "text": "5. United States v. Salameh, 152 F.3d 88, 107–108 (2d Cir. 1998); Miller and Stone, The Cell, pp. 104–105, 107,"
+    },
+    {
+     "rect": [
+      44.7013,
+      132.796,
+      311.969,
+      6.342
+     ],
+     "text": "109. Abouhalima had fled to the Middle East after the bombing, and was picked up by Egyptian authorities and"
+    },
+    {
+     "rect": [
+      44.7027,
+      124.7957,
+      312.0026,
+      6.342
+     ],
+     "text": "returned to the United States in late March 1993. Brief of the United States, United States v. Mohammed A. Salameh,"
+    },
+    {
+     "rect": [
+      44.7034,
+      116.7954,
+      175.6769,
+      6.342
+     ],
+     "text": "Lead No. 94-1312 (2d Cir. filed Jan. 17, 1997), p. 64 and n. ***."
+    },
+    {
+     "rect": [
+      56.7007,
+      108.7951,
+      300.0305,
+      6.342
+     ],
+     "text": "6. United States v. Salameh, 152 F.3d at 107–108, n. 2; United States v.Yousef, 327 F.3d 56, 78–79 (2d Cir. 2003);"
+    },
+    {
+     "rect": [
+      44.7027,
+      100.7948,
+      312.0012,
+      6.342
+     ],
+     "text": "Miller and Stone, The Cell, p. 119; Daniel Benjamin and Steven Simon, The Age of Sacred Terror (Random House,"
+    },
+    {
+     "rect": [
+      44.7041,
+      92.7945,
+      33.7281,
+      6.342
+     ],
+     "text": "2002), p. 12."
+    },
+    {
+     "rect": [
+      56.7014,
+      84.7942,
+      299.992,
+      6.342
+     ],
+     "text": "7. On Rahman’s ties to the Farouq mosque, see Miller and Stone, The Cell, pp. 54–55. On Rahman’s message,"
+    },
+    {
+     "rect": [
+      44.7027,
+      76.7939,
+      312.0082,
+      6.342
+     ],
+     "text": "see United States v.Rahman,189 F.3d 88,104 (2d Cir.1999);Brief for the United States, United States v.Siddig Ibrahim"
+    },
+    {
+     "rect": [
+      44.7027,
+      68.7936,
+      312.0061,
+      6.342
+     ],
+     "text": "Siddig Ali, Lead No.96-1044 (2d Cir.filed July 3,1997),pp.10,15.See also DOS Inspector General report,“Review"
+    }
+   ],
+   "operators": "q\r/RelativeColorimetric ri \r/GS1 gs\rBT\r/F1 1 Tf\r9.5 0 0 9.5 149.0751 564.7479 Tm\r0 g\r0.0004 Tc\r-0.0002 Tw\r[(NO)30.9(TES )126.7(T)30.4(O)0.4( CHAPTER 2 )-9233.6(471 )]TJ\r7 0 0 7 44.7 542.4299 Tm\r0.0002 Tc\r0.0654 Tw\r[(Usama Bin Ladin, )104.9(Iran, )101.3(and the NIF)178(,)0.1( )100.2(J)30.2(a)0(n. )100.7(31, )100.8(1997; )101.5(Intelligence r)23.8(e)0(por)-23.6(t, )100.3(Cooperation )83.6(Among Usama Bin Ladin\\220)106.9(s )]TJ\r0.0001 -1.1429 TD\r0.0566 Tw\r[(Islamic )81.9(Ar)-44.2(m)30(y)120.1(, )100.2(Iran, )101.2(and the NIF)178(,)0.1( )100.2(J)30.2(a)0(n. )100.6(31 1997; )102.2(FBI r)21.1(e)0(por)-23.6(t of in)41.1(v)40.2(estigation, )103.1(inter)-23.5(vie)20.6(w)-0.2( of Fadl, )102.5(No)40.5(v)100.3(.)0.1( )100.2(10, )100.7(1996. )101.4(Bin )]TJ\r0.0002 -1.1429 TD\r0.0294 Tw\r[(Ladin told his operati)26(v)40.2(es he w)31.4(a)0(nted them to study Hezbollah\\220)108.8(s 1983 tr)-22.6(uck bombing of U)84.4(.)0.2(S)40.3(.)0.1( )100.3(mar)-43.9(i)0.1(nes in Lebanon )]TJ\rT*\r-0.0007 Tw\r[(that killed 241 and led to the )87.7(Amer)-43.4(i)0.1(can pullout fr)33.8(om Lebanon. )103.7(See)30.7(,)0.1( )100.3(e)30(.)0.1(g., )101(statement of )83.5(Ali Mohamed in suppor)-18.4(t of )]TJ\r0.0001 -1.1429 TD\r-0.0051 Tw\r[(change of plea, )]TJ\r/F5 1 Tf\r6.1166 0 TD\r-0.0004 Tc\r-0.0046 Tw\r[(United States v)137(.)-83.7(Ali Mohamed)]TJ\r/F1 1 Tf\r10.7853 0 TD\r-0.0002 Tc\r[(, )100.3(No)49.6(. )100.3(S\\(7\\) 98 Cr)39.6(. )100.3(1023 \\(S)39.6(.D)104.8(. )100.3(N)39.6(.)0.1(Y)159.7(.\\), )99.7(Oct. )99.7(20, )99.7(2000 \\(transcr)-45(ipt p)59.6(.)-0.3( )100.3(30\\); )99.7(tr)-45.1(ial )]TJ\r-16.9016 -1.1429 TD\r0.0002 Tc\r-0.0385 Tw\r[(testimon)22.4(y)-0.1( of Fadl, )]TJ\r/F5 1 Tf\r7.2043 0 TD\r0 Tc\r[(United States v)137.4(.)-0.2( )100(bin Laden)]TJ\r/F1 1 Tf\r9.3573 0 TD\r0.0002 Tc\r[(, )100.2(F)20.2(e)0(b)50.3(.)0.1( )100.2(6, )100.2(2001 \\(transcr)-41(ipt pp)61.2(. )100.2(292\\205293\\); )103(FBI r)21.1(e)0(por)-23.6(t of in)41.1(v)40.3(estigation, )103.2(inter-)]TJ\r-16.5616 -1.1429 TD\r-0.0001 Tw\r[(vie)20.6(w)-0.2( of Fadl, )103.3(Mar)40.9(.)0.1( )100.5(10, )101(1997; )101.7(FBI r)21.4(e)0(por)-23.6(t of in)41.6(v)40.2(estigation, )103.4(inter)-23.5(vie)20.6(w)-0.2( of confidential sour)26.7(ce)30.3(, )100.5(Sept. )101.6(16, )101(1999. )]TJ\r1.7136 -1.1429 TD\r0.0003 Tc\r0.0004 Tw\r[(86.)-177.8(Hugh Da)32.3(vies,)-77.5(\\215Saudis Detain Member of )87.3(Anti-Amer)-41.5(i)0.2(can )126.1(T)150.4(e)0.3(r)-39.2(r)30.3(or Gr)31.3(oup)60.9(,)125.5(\\216)0( )]TJ\r/F5 1 Tf\r30.0791 0 TD\r0.0001 Tc\r-0.1492 Tw\r[(Dail)26.4(y T)130.6(e)0.3(legr)20.2(aph )]TJ\r/F1 1 Tf\r5.8252 0 TD\r0 Tw\r[(\\(London\\),)-95.8(A)-0.3(ug.)-177.7(2)-0.2(, )]TJ\r-37.6184 -1.1429 TD\r0.0003 Tc\r(1997. )Tj\r1.7141 -1.1429 TD\r0.0002 Tc\r0.0896 Tw\r[(87. )100.8(F)20.2(o)-0.1(r general infor)-40.5(m)-0.2(ation on Hage)34.2(, )100.2(see Or)-43.2(iana Gill, )202.4(\\215Hunting Bin Laden: )185.7(A P)50.5(o)0.2(r)-24.5(trait of )127(W)125.2(a)0(dih El Hage)33.3(, )]TJ\r-1.7143 -1.1429 TD\r-0.1595 Tw\r[(Accused T)153(e)0.2(r)-39.4(r)30.2(or)-44.2(ist,)125.9(\\216)-143.2(PBS )]TJ\r/F5 1 Tf\r9.4906 0 TD\r0 Tw\r(Frontline )Tj\r/F1 1 Tf\r3.484 0 TD\r-0.0345 Tw\r[(br)30.4(oadcast, )102.5(Sept. )101.5(12, )100.9(2001. )101.6(On r)20.9(etur)-38.6(n)-0.1(ing to the United States, )107.2(Hage w)31.5(as met at the )]TJ\r-12.9745 -1.1429 TD\r0.0548 Tw\r[(air)-39(por)-23.9(t b)25.4(y)0.2( FBI agents, )103.3(inter)-38.4(r)30.2(o)20(gated, )101.7(and called the next da)35.8(y befor)21.7(e)0( the federal g)-26.1(rand jur)-27.6(y)-0.1( then in)42.1(v)40.2(estigating Bin )]TJ\r0.0002 -1.1429 TD\r-0.0337 Tw\r[(Ladin. )101.9(Because he lied to the g)-23.5(rand jur)-27.6(y)-0.1( about his association with Bin Ladin and al Qaeda, )114.5(he w)30.7(as ar)-38.7(r)20.2(ested imme-)]TJ\rT*\r0.0004 Tc\r0.0025 Tw\r[(diately after the embassy bombings a y)50.5(ear later)42.3(.)-55.3(T)150.6(estimon)22.2(y)0.1( of P)31.2(atr)-43.9(ick Fitzgerald befor)25.7(e)0.2( the Senate J)33.6(udiciar)-27.5(y Com-)]TJ\r0.0002 -1.1429 TD\r0 Tc\r-0.0047 Tw\r[(mittee)31.5(, )100.2(Oct. )101.2(21, )100.8(2003, )101.5(pp)60.2(. )100.2(3\\2054. )101.1(On Hage\\220)102.3(s)-0.2( phone taps, )103.5(see intr)31.7(oduction of stipulation \\(go)47.3(v)40(er)-39.6(nment exhibit no)54.4(. )100.2(36\\), )]TJ\r/F5 1 Tf\rT*\r0.055 Tw\r[(United States v)137.4(.)-0.2( )100.1(bin Laden)]TJ\r/F1 1 Tf\r9.7307 0 TD\r0.0002 Tc\r[(, )100.3(F)20.2(e)0(b)50.3(.)0.1( )100.3(27, )100.9(2001 \\(transcr)-41.1(ipt pp)61.2(. )100.3(1575\\2051576\\). )103.8(F)20.2(o)-0.1(r Har)-23.2(un\\220)100.9(s f)-24.4(a)0(x, )100.7(see go)41.3(v)40.2(e)0.2(r)-39.4(n)-0.1(ment exhibit no)54.6(. )]TJ\r-9.7305 -1.1429 TD\r0 Tw\r[(300A-T)127.1(, )]TJ\r/F5 1 Tf\r3.5322 0 TD\r0 Tc\r0.0002 Tw\r[(United States v)137.9(.)-0.2( )100.4(bin Laden)]TJ\r/F1 1 Tf\r9.51 0 TD\r0.0001 Tc\r0 Tw\r(. )Tj\r-11.3287 -1.1429 TD\r0.0003 Tc\r-0.012 Tw\r[(88.)-65.5(\\215W)125.7(orld Islamic Fr)34(ont\\220)101.1(s)0.1( Statement Urg)-25.3(i)0.2(ng Jihad,)127.9(\\216 )]TJ\r/F5 1 Tf\r20.5456 0 TD\r[(Al Quds al )92.5(Ar)20.6(abi)]TJ\r/F1 1 Tf\r6.2714 0 TD\r0.0002 Tc\r-0.1126 Tw\r[(, F)20.2(e)0(b)50.3(.)0.1( 23, 1998; closing )-100.7(statement )-100.7(b)30.3(y)-0.1( )-20.4(Asst. )]TJ\r-28.5312 -1.1429 TD\r0.0003 Tc\r-0.0348 Tw\r[(U)80.1(.)0.3(S)40.4(.)-63.2(Attor)-38.1(n)0(e)20.5(y)0( K)30.5(e)0.1(n Karas, )]TJ\r/F5 1 Tf\r9.95 0 TD\r0 Tc\r-0.0346 Tw\r[(United States v)137.4(.)-0.2( )100.1(bin Laden)]TJ\r/F1 1 Tf\r9.3722 0 TD\r0.0002 Tc\r[(, )100.3(Ma)30(y 1, )100.5(2001 \\(transcr)-41.1(ipt pp)61.2(. )100.3(5369, )101.6(5376\\2055377\\). )103.7(On r)20.9(e)0(lated acti)22.9(v-)]TJ\r-19.322 -1.1429 TD\r0.0523 Tw\r[(ities in K)32(e)0.2(n)20(y)30(a and )126.2(T)110.3(a)0(nzania, )102.2(see FBI r)22.1(e)0(por)-23.6(t of in)41.2(v)40.2(estigation, )103.1(inter)-23.5(vie)20.6(w)-0.2(s of Mohamed Sadeeq Odeh, )188(Aug. )101.1(15\\20528, )]TJ\r0.0001 -1.1429 TD\r0.0003 Tc\r0 Tw\r(1998. )Tj\r1.7139 -1.1429 TD\r0.0002 Tc\r-0.0224 Tw\r[(89.)-154.9(FBI r)21.1(e)0(por)-23.6(t of in)41.1(v)40.2(estigation,)-152.5(inter)-23.5(vie)20.6(w)-0.2(s of Mohamed Sadeeq Odeh,)-67.6(A)-0.2(ug.)-154.4(15\\20528,)-153.8(1998;)-154.1(closing statement b)30.3(y)-0.1( )]TJ\r-1.7141 -1.1429 TD\r0 Tw\r[(Asst.)-176.6(U)80(.)0.2(S)40.3(.)-97.7(Attor)-38.2(n)-0.1(e)20.4(y)-0.1( K)30.6(e)0(n Karas, )]TJ\r/F5 1 Tf\r12.0978 0 TD\r0 Tc\r0.0001 Tw\r[(United States v)137.9(.)-0.2( )100.3(bin Laden)]TJ\r/F1 1 Tf\r9.51 0 TD\r0.0002 Tc\r-0.0001 Tw\r[(, )100.5(Ma)30(y 1, )100.9(2001 \\(transcr)-40.8(ipt pp)61.5(. )100.5(5239, )101.7(5408, )101.7(5417\\). )]TJ\r-19.8937 -1.1429 TD\r0.0125 Tw\r[(90. )100.8(F)20.2(o)-0.1(r the )81.3(Atef f)-23.4(a)0(x, )100.8(see go)41.3(v)40.2(e)0.2(r)-39.4(n)-0.1(ment exhibit no)54.6(. )100.3(1636-T)127(,)0.1( )]TJ\r/F5 1 Tf\r22.5232 0 TD\r0 Tc\r[(United States v)137.3(.)-0.2( )100.1(bin Laden)]TJ\r/F1 1 Tf\r9.5611 0 TD\r0.0002 Tc\r[(. )100.3(F)20.2(o)-0.1(r the f)-23.1(atw)30.6(a, )100.3(see go)41.3(v)40.2(e)0.2(r)-39.4(n)0.2(-)]TJ\r-33.7982 -1.1429 TD\r0.0001 Tc\r-0.0027 Tw\r[(ment exhibit no)54.1(. )100.3(1602-T)126.9(,)0( )]TJ\r/F5 1 Tf\r10.1246 0 TD\r-0.0002 Tc\r-0.0025 Tw\r[(United States v)137.2(.)-0.4( )100(bin Laden )]TJ\r/F1 1 Tf\r9.7752 0 TD\r0.0001 Tc\r-0.0027 Tw\r[(\\(translation of )104.1(\\215Clergymen in )84.2(Afghanistan Issue a Fatw)36.5(a calling )]TJ\r-19.8997 -1.1429 TD\r0.0002 Tc\r-0.0067 Tw\r[(for the Remo)43.4(v)30.2(a)0(l of )81(Amer)-43.4(i)0.1(can F)21.3(o)0.2(r)20.2(ces fr)31.2(om the Gulf)-26.5(,)125.4(\\216)-0.1( )]TJ\r/F5 1 Tf\r20.981 0 TD\r0.0003 Tc\r-0.0069 Tw\r[(Al Quds al )92.5(Ar)20.6(abi)]TJ\r/F1 1 Tf\r6.2874 0 TD\r0.0002 Tc\r[(, Ma)30.8(y 14, )100.9(1998\\). )101.8(F)20.2(o)-0.1(r the inter)-21.7(vie)20.6(w)120.1(, )100.2(see )80.6(ABC )]TJ\r-27.2681 -1.1429 TD\r0.0003 Tc\r-0.0002 Tw\r[(Ne)20.6(ws inter)-22.3(vie)20.7(w)120.2(,)-77.6(\\215)0(T)150.6(o)0( )125.5(T)150.4(e)0.3(r)-39.3(r)30.3(or\\220)100.8(s)0.1( Sour)21.7(ce)30.4(,)125.5(\\216)-177.4(Ma)30.7(y 28,)-176.4(1998. )]TJ\r1.7135 -1.1429 TD\r0.0002 Tc\r0.0193 Tw\r[(91. )100.8(See closing statement b)31.4(y)-0.1( )80.2(Asst. )101.3(U)80(.)0.2(S)40.2(.)-117.4(Attor)-38.2(n)-0.1(e)20.4(y)-0.1( K)30.4(e)0(n Karas, )]TJ\r/F5 1 Tf\r23.5555 0 TD\r0 Tc\r[(United States v)137.4(.)-0.2( )100(bin Laden)]TJ\r/F1 1 Tf\r9.5885 0 TD\r0.0002 Tc\r[(, )100.2(Ma)30(y 2, )100.5(2001 \\(transcr)-41.1(ipt )]TJ\r-34.8581 -1.1429 TD\r0.0564 Tw\r[(pp)60.4(. )100.2(5426\\2055439\\); )103.6(see also FBI r)23.3(e)0(por)-23.6(t of in)41.1(v)40.2(estigation, )103.2(inter)-23.5(vie)20.6(w)-0.2(s of Mohammad Rashed Daoud al )109.4(\\217Owhali, )182.4(Aug. )]TJ\r0.0001 -1.1429 TD\r0.0151 Tw\r[(22\\20525, )101.9(1998, )101.5(p)60(.)0.1( )100.2(9. )100.4(Copies of the declarations issued b)34.5(y)-0.1( )100.2(\\215The Islamic )83.5(Ar)-44.2(m)30(y)0.2( for the Liberation of the Holy Places\\216 )]TJ\r0.0002 -1.1429 TD\r0.0279 Tw\r[(taking cr)22.4(edit for the operation w)46.1(e)0.2(r)20.2(e)0.2( r)20.3(eco)40.7(v)40.2(e)0.2(r)20.2(e)0(d fr)31(om a raid in Baku, )184.4(Azerbaijan, )103.3(after the bombings in September )]TJ\rT*\r0.039 Tw\r[(1998. )101.6(See also go)42.7(v)40.2(e)0.2(r)-39.4(n)-0.1(ment exhibit no)54.6(. )100.3(1557C-T)127.5(, )]TJ\r/F5 1 Tf\r19.6368 0 TD\r0 Tc\r[(United States v)137.4(.)-0.2( )100.1(bin Laden )]TJ\r/F1 1 Tf\r9.984 0 TD\r0.0002 Tc\r[(\\(\\215The for)-42.3(m)-0.2(ation of the Islamic )85.7(Ar)-44.2(m)30(y)-0.1( )]TJ\r-29.6206 -1.1429 TD\r0.0895 Tw\r[(for the Liberation of the Holy Places\\216\\); )111(go)40.4(v)40.2(e)0.2(r)-39.4(n)-0.1(ment exhibit no)54.6(. )100.2(1557D-T)127.6(, )]TJ\r/F5 1 Tf\r30.3667 0 TD\r0 Tc\r0.0897 Tw\r[(United States v)137.4(.)-0.2( )100.1(bin Laden )]TJ\r/F1 1 Tf\r10.2371 0 TD\r0.0001 Tc\r0 Tw\r(\\(\\215Al-Aqsa )Tj\r-40.6037 -1.1429 TD\r0.0002 Tc\r[(Mosque operation\\216\\); )106.6(go)40.4(v)40.2(e)0.2(r)-39.4(n)-0.1(ment exhibit no)55.1(. )100.6(1557E-T)127.4(,)0.1( )]TJ\r/F5 1 Tf\r21.9256 0 TD\r0 Tc\r0.0002 Tw\r[(United States v)137.9(.)-0.2( )100.4(bin Laden )]TJ\r/F1 1 Tf\r9.7878 0 TD\r0.0002 Tc\r-0.0001 Tw\r(\\(\\215The Holy Ka\\220ba operation\\216\\). )Tj\r-29.9998 -1.1429 TD\r0.0395 Tw\r[(92. )100.8(Closing statement b)30.5(y)-0.1( )80.2(Asst. )101.3(U)80(.)0.2(S)40.3(.)0.1( )180(Attor)-38.2(n)-0.1(e)20.4(y)-0.1( K)30.4(e)0(n Karas, )]TJ\r/F5 1 Tf\r22.3761 0 TD\r0 Tc\r0.0397 Tw\r[(United States v)137.4(.)-0.2( )100.1(bin Laden)]TJ\r/F1 1 Tf\r9.6695 0 TD\r0.0002 Tc\r0.0395 Tw\r[(, )100.2(Ma)30(y 2, )100.5(2001 \\(transcr)-41(ipt p)60.9(.)0.1( )]TJ\r-33.7595 -1.1429 TD\r0 Tw\r(5445\\). )Tj\r1.714 -1.1429 TD\r0.0003 Tc\r0.0257 Tw\r[(93.)-123.3(ABC Ne)21.9(ws inter)-22.5(vie)20.7(w)120.2(,)-103.8(\\215)0(T)150.6(e)0.1(r)-39.2(r)30.3(or Suspect:)-120.9(An Inter)-22.4(vie)20.7(w)-0.1( with Osama Bin Laden,)132.2(\\216)-203.6(D)0.3(ec)30.6(.)-203.6(22,)-203.2(1998 \\(conducted )]TJ\r-1.7142 -1.1429 TD\r0.0001 Tc\r-0.0799 Tw\r[(in Afghanistan )-75.4(b)25(y)0.1( ABC )-78(Ne)20.4(ws )-78.8(pr)30.3(oducer )-77.6(Rahim)16.5(u)-0.2(llah )96.5(Y)160.2(ousafsai\\). )]TJ\r/F6 1 Tf\r10.5 0 0 10.5 44.7 222.43 Tm\r-0.0001 Tc\r0.1672 Tw\r[(3 Counter)-24.8(ter)-39.9(r)19.7(o)-0.1(r)-44.9(ism )167.2(Ev)39.8(olv)39.7(es )]TJ\r/F1 1 Tf\r7 0 0 7 56.7 214.43 Tm\r0.0002 Tc\r-0.0691 Tw\r[(1.)-108.6(Br)-44.3(ief of the United States, )]TJ\r/F5 1 Tf\r11.1006 0 TD\r0.0001 Tc\r[(United States v)137.5(.)-109.1(Ramzi )91.5(Ahmed)-9(Y)99.9(ousef)]TJ\r/F1 1 Tf\r13.1995 0 TD\r0.0003 Tc\r-0.0692 Tw\r[(,)-108.6(L)0(ead No)52.1(.)-108.6(98-1041 \\(2d Cir)44.4(.)-108.6(filed )81.1(Aug.)-107.7(25,)-108.2(2000\\), )]TJ\r-26.0142 -1.1429 TD\r0.0002 Tc\r-0.0164 Tw\r[(pp)60.4(. )100.3(42\\20543; )101.9(J)30.2(ohn Miller and Michael Stone)38(, )100.3(with Chr)-42.4(i)0.1(s Mitchell, )]TJ\r/F5 1 Tf\r25.1036 0 TD\r[(The Cell:)-159.3(Inside the 9/11 Plot,)-156.3(a)0(nd )150.8(Wh)25.7(y the FBI and )]TJ\r-25.1035 -1.1429 TD\r-0.0001 Tw\r[(CIA F)21.5(a)0(iled to Stop It )]TJ\r/F1 1 Tf\r8.2021 0 TD\r0.0003 Tc\r0 Tw\r[(\\(Hyper)-42.4(i)0.2(on,)-176.7(2002\\),)-176(p)0(p)60.5(.)-177.4(95,)-177(99. )]TJ\r-6.4881 -1.1429 TD\r0.0002 Tc\r-0.0093 Tw\r[(2. )100.4(On Pr)21.3(esident Clinton\\220)104.8(s tasking the NSC)34.4(,)0.1( )100.3(see Richar)22.8(d Clark)31.7(e inter)-23.1(vie)20.6(w)-0.2( \\(Dec)31.6(. )100.3(18, )100.8(2003\\). )101.8(On the r)32(o)-0.1(le of dif-)]TJ\r-1.714 -1.1429 TD\r-0.0217 Tw\r[(fer)20.6(e)0(nt U)81(.)0.2(S)40.3(.)0.1( )100.3(go)40.4(v)40.2(e)0.2(r)-39.4(n)-0.1(ment agencies, )104.6(see Ste)21.6(v)40.2(e Coll, )]TJ\r/F5 1 Tf\r18.9685 0 TD\r[(Ghost )151.5(W)100.3(a)0(r:)-5.9(The Secret Histor)-10.3(y of the CIA,)-63.4(Afghanistan,)-152.9(and bin Laden, )]TJ\r-18.9684 -1.1429 TD\r0 Tw\r[(from the Soviet Inv)45.4(asion to September 10, )107(2001 )]TJ\r/F1 1 Tf\r17.5239 0 TD\r0.0003 Tc\r[(\\(P)50.4(enguin,)-175.5(2004\\),)-176(p)60.1(.)-177.4(251. )]TJ\r-15.81 -1.1429 TD\r0.0002 Tc\r0.0242 Tw\r[(3.)-76.9(T)100.3(r)-44.5(ial testimon)23(y)-0.1( of Br)-43.3(ian P)30.9(a)0.2(r)-39.4(r)40.2(, )]TJ\r/F5 1 Tf\r12.7922 0 TD\r0 Tc\r[(United States v)137.4(.)-2.6(Y)99.9(ousef)]TJ\r/F1 1 Tf\r8.0163 0 TD\r0.0002 Tc\r[(, )100.1(No)50(. )100.1(S12 93 CR 180 \\(KTD\\) \\(S)47.7(.D)105.2(. )100.1(N)40(.)0.4(Y)160.1(.)0.4(\\), )100(Oct. )101(22, )100.5(1997 )]TJ\r-22.5226 -1.1429 TD\r0 Tw\r[(\\(transcr)-42.5(ipt p)61.1(.)0.1( )100.6(4694\\). )]TJ\r1.7142 -1.1429 TD\r-0.0001 Tw\r[(4. )100.6(On the pr)32.9(ocess of identification, )107.4(see J)31.2(o)-0.1(seph Malone inter)-18.9(vie)20.6(w)-0.2( \\(Ma)31.6(y)-0.1( 25, )101.6(2004\\). )]TJ\rT*\r0.0001 Tc\r0 Tw\r(5. )Tj\r/F5 1 Tf\r0.9304 0 TD\r0.0003 Tc\r0.0022 Tw\r[(United States v)137.7(.)0.1( )100.1(Salameh)]TJ\r/F1 1 Tf\r8.935 0 TD\r0.0002 Tc\r0.0023 Tw\r[(, )99.8(152 F)176.1(.)0.1(3d 88, )101.8(107\\205108 \\(2d Cir)44.4(.)0.1( )100.2(1998\\); )101.8(Miller and Stone)34.5(, )]TJ\r/F5 1 Tf\r22.2925 0 TD\r0 Tc\r0.0024 Tw\r(The Cell)Tj\r/F1 1 Tf\r3.268 0 TD\r0.0003 Tc\r0 Tw\r[(,)-180.4(p)0.3(p)60.1(.)-180.1(104\\205105,)-178.4(107, )]TJ\r-37.1401 -1.1429 TD\r0.0002 Tc\r0.0354 Tw\r[(109. )181(Abouhalima had fled to the Middle East after the bombing, )116.3(and w)31.1(as pick)31.5(ed up b)26.6(y)0.2( Egyptian author)-40.1(ities and )]TJ\r0.0002 -1.1429 TD\r-0.0328 Tw\r[(r)20.2(etur)-38.6(n)-0.1(ed to the United States in late Mar)29.5(c)0(h 1993. )102.4(Br)-44.3(ief of the United States, )]TJ\r/F5 1 Tf\r29.9425 0 TD\r0.0001 Tc\r[(United States v)137.5(.)-0.1( )100.1(Mohammed )92.3(A. )100.6(Salameh)]TJ\r/F1 1 Tf\r14.3693 0 TD\r0 Tw\r(, )Tj\r-44.3117 -1.1429 TD\r0.0002 Tc\r[(Lead No)52.2(. )100.6(94-1312 \\(2d Cir)44.8(.)0.1( )100.6(filed J)31.8(a)0(n. )101(17, )101.1(1997\\), )102.1(p)60(.)0.1( )100.6(64 and n. )103.1(***. )]TJ\r1.7139 -1.1429 TD\r0.0001 Tc\r(6. )Tj\r/F5 1 Tf\r0.9385 0 TD\r0.0105 Tw\r[(United States v)137.5(.)-0.1( )100.1(Salameh)]TJ\r/F1 1 Tf\r8.9593 0 TD\r0.0002 Tc\r[(, )100(152 F)176.1(.)0.1(3d at 107\\205108, )104.4(n. )100.5(2; )]TJ\r/F5 1 Tf\r10.8747 0 TD\r0 Tc\r[(United States v)137.4(.)11.2(Y)99.9(ousef)]TJ\r/F1 1 Tf\r7.9748 0 TD\r0.0003 Tc\r[(, )100.3(327 F)176.2(.)0.2(3d 56, )101.8(78\\20579 \\(2d Cir)43.8(.)0.2( )100.3(2003\\); )]TJ\r-30.4613 -1.1429 TD\r0.0002 Tc\r0.028 Tw\r[(Miller and Stone)34.5(, )]TJ\r/F5 1 Tf\r7.155 0 TD\r0 Tc\r(The Cell)Tj\r/F1 1 Tf\r3.2937 0 TD\r0.0002 Tc\r[(, )100(p)60(.)0.1( )100.3(119; )101.1(Daniel Benjamin and Ste)26.6(v)40.2(en Simon, )]TJ\r/F5 1 Tf\r18.0251 0 TD\r[(The )90.9(Age of Sacred )153.3(T)130.3(e)0.2(r)-24.7(r)0.1(or )]TJ\r/F1 1 Tf\r9.1544 0 TD\r0.0003 Tc\r0.0279 Tw\r[(\\(Random House)34.4(,)0.2( )]TJ\r-37.628 -1.1429 TD\r0 Tw\r[(2002\\),)-176(p)60.1(.)-177.4(12. )]TJ\r1.7139 -1.1429 TD\r0.0002 Tc\r-0.0136 Tw\r[(7. )100.5(On Rahman\\220)103.6(s)0( ties to the Far)33.8(ouq mosque)33.2(, )100.3(see Miller and Stone)35.4(, )]TJ\r/F5 1 Tf\r25.8028 0 TD\r0 Tc\r(The Cell)Tj\r/F1 1 Tf\r3.2521 0 TD\r0.0002 Tc\r[(, )100.1(pp)60(. )100.3(54\\20555. )102(On Rahman\\220)103.5(s)0( message)32.4(, )]TJ\r-30.769 -1.1429 TD\r0 Tw\r(see )Tj\r/F5 1 Tf\r1.3994 0 TD\r0.0001 Tc\r-0.0564 Tw\r[(United States v)137.5(.)-121.7(Rahman)]TJ\r/F1 1 Tf\r8.8225 0 TD\r0.0003 Tc\r[(,)-121.3(189 F)176.2(.)0.2(3d 88,)-119.7(104 \\(2d Cir)43(.)-121.3(1999\\);)-119.8(B)0(r)-44.2(i)0.2(ef for the United States, )]TJ\r/F5 1 Tf\r23.4114 0 TD\r0.0001 Tc\r[(United States v)137.4(.)-121.7(Sid)15.8(d)-0.1(ig Ibr)21.1(a)-0.1(him )]TJ\r-33.6333 -1.1429 TD\r-0.0003 Tc\r-0.159 Tw\r[(Sid)14.8(dig Ali, )]TJ\r/F1 1 Tf\r4.0304 0 TD\r-0.0692 Tw\r[(Lead No)49.7(.)-108.4(96-1044 \\(2d Cir)39.7(.)-108.4(filed J)29.7(uly 3,)-108.6(1997\\),)-108.7(pp)59.7(.)-108.4(10,)-108.6(15.)-108.6(See also DOS Inspector General r)19.7(epor)-25(t,)-8.8(\\215Re)19.6(vie)19.7(w )]TJ\rET\rQ\r",
+   "page": 489
+  }
+ ],
+ "provenance": "Unmodified page font dictionaries (Subtype, BaseFont, FirstChar, Widths, decoded ToUnicode streams), ExtGState entries and complete decoded page content streams, read with mutool show from the checksum-pinned original; Encoding Differences and font programs are excluded. Native lines are PDFKit selectionsByLine strings and bounds on macOS 27.0.",
+ "rightsBasis": "Official U.S. Government commission report, retained as external development material. Source PDF is not bundled or relicensed under MIT.",
+ "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
+ "sourceTitle": "The 9/11 Commission Report",
+ "sourceURL": "https://www.govinfo.gov/content/pkg/GPO-911REPORT/pdf/GPO-911REPORT.pdf"
+}
